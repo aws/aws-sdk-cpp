@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
@@ -1159,6 +1149,481 @@ namespace Model
 
 
     /**
+     * <p> The category of an RDS event. </p>
+     */
+    inline const Aws::String& GetRdsEventCategories() const{ return m_rdsEventCategories; }
+
+    /**
+     * <p> The category of an RDS event. </p>
+     */
+    inline bool RdsEventCategoriesHasBeenSet() const { return m_rdsEventCategoriesHasBeenSet; }
+
+    /**
+     * <p> The category of an RDS event. </p>
+     */
+    inline void SetRdsEventCategories(const Aws::String& value) { m_rdsEventCategoriesHasBeenSet = true; m_rdsEventCategories = value; }
+
+    /**
+     * <p> The category of an RDS event. </p>
+     */
+    inline void SetRdsEventCategories(Aws::String&& value) { m_rdsEventCategoriesHasBeenSet = true; m_rdsEventCategories = std::move(value); }
+
+    /**
+     * <p> The category of an RDS event. </p>
+     */
+    inline void SetRdsEventCategories(const char* value) { m_rdsEventCategoriesHasBeenSet = true; m_rdsEventCategories.assign(value); }
+
+    /**
+     * <p> The category of an RDS event. </p>
+     */
+    inline Observation& WithRdsEventCategories(const Aws::String& value) { SetRdsEventCategories(value); return *this;}
+
+    /**
+     * <p> The category of an RDS event. </p>
+     */
+    inline Observation& WithRdsEventCategories(Aws::String&& value) { SetRdsEventCategories(std::move(value)); return *this;}
+
+    /**
+     * <p> The category of an RDS event. </p>
+     */
+    inline Observation& WithRdsEventCategories(const char* value) { SetRdsEventCategories(value); return *this;}
+
+
+    /**
+     * <p> The message of an RDS event. </p>
+     */
+    inline const Aws::String& GetRdsEventMessage() const{ return m_rdsEventMessage; }
+
+    /**
+     * <p> The message of an RDS event. </p>
+     */
+    inline bool RdsEventMessageHasBeenSet() const { return m_rdsEventMessageHasBeenSet; }
+
+    /**
+     * <p> The message of an RDS event. </p>
+     */
+    inline void SetRdsEventMessage(const Aws::String& value) { m_rdsEventMessageHasBeenSet = true; m_rdsEventMessage = value; }
+
+    /**
+     * <p> The message of an RDS event. </p>
+     */
+    inline void SetRdsEventMessage(Aws::String&& value) { m_rdsEventMessageHasBeenSet = true; m_rdsEventMessage = std::move(value); }
+
+    /**
+     * <p> The message of an RDS event. </p>
+     */
+    inline void SetRdsEventMessage(const char* value) { m_rdsEventMessageHasBeenSet = true; m_rdsEventMessage.assign(value); }
+
+    /**
+     * <p> The message of an RDS event. </p>
+     */
+    inline Observation& WithRdsEventMessage(const Aws::String& value) { SetRdsEventMessage(value); return *this;}
+
+    /**
+     * <p> The message of an RDS event. </p>
+     */
+    inline Observation& WithRdsEventMessage(Aws::String&& value) { SetRdsEventMessage(std::move(value)); return *this;}
+
+    /**
+     * <p> The message of an RDS event. </p>
+     */
+    inline Observation& WithRdsEventMessage(const char* value) { SetRdsEventMessage(value); return *this;}
+
+
+    /**
+     * <p> The name of the S3 CloudWatch Event-based observation. </p>
+     */
+    inline const Aws::String& GetS3EventName() const{ return m_s3EventName; }
+
+    /**
+     * <p> The name of the S3 CloudWatch Event-based observation. </p>
+     */
+    inline bool S3EventNameHasBeenSet() const { return m_s3EventNameHasBeenSet; }
+
+    /**
+     * <p> The name of the S3 CloudWatch Event-based observation. </p>
+     */
+    inline void SetS3EventName(const Aws::String& value) { m_s3EventNameHasBeenSet = true; m_s3EventName = value; }
+
+    /**
+     * <p> The name of the S3 CloudWatch Event-based observation. </p>
+     */
+    inline void SetS3EventName(Aws::String&& value) { m_s3EventNameHasBeenSet = true; m_s3EventName = std::move(value); }
+
+    /**
+     * <p> The name of the S3 CloudWatch Event-based observation. </p>
+     */
+    inline void SetS3EventName(const char* value) { m_s3EventNameHasBeenSet = true; m_s3EventName.assign(value); }
+
+    /**
+     * <p> The name of the S3 CloudWatch Event-based observation. </p>
+     */
+    inline Observation& WithS3EventName(const Aws::String& value) { SetS3EventName(value); return *this;}
+
+    /**
+     * <p> The name of the S3 CloudWatch Event-based observation. </p>
+     */
+    inline Observation& WithS3EventName(Aws::String&& value) { SetS3EventName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name of the S3 CloudWatch Event-based observation. </p>
+     */
+    inline Observation& WithS3EventName(const char* value) { SetS3EventName(value); return *this;}
+
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the step function execution-based
+     * observation. </p>
+     */
+    inline const Aws::String& GetStatesExecutionArn() const{ return m_statesExecutionArn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the step function execution-based
+     * observation. </p>
+     */
+    inline bool StatesExecutionArnHasBeenSet() const { return m_statesExecutionArnHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the step function execution-based
+     * observation. </p>
+     */
+    inline void SetStatesExecutionArn(const Aws::String& value) { m_statesExecutionArnHasBeenSet = true; m_statesExecutionArn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the step function execution-based
+     * observation. </p>
+     */
+    inline void SetStatesExecutionArn(Aws::String&& value) { m_statesExecutionArnHasBeenSet = true; m_statesExecutionArn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the step function execution-based
+     * observation. </p>
+     */
+    inline void SetStatesExecutionArn(const char* value) { m_statesExecutionArnHasBeenSet = true; m_statesExecutionArn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the step function execution-based
+     * observation. </p>
+     */
+    inline Observation& WithStatesExecutionArn(const Aws::String& value) { SetStatesExecutionArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the step function execution-based
+     * observation. </p>
+     */
+    inline Observation& WithStatesExecutionArn(Aws::String&& value) { SetStatesExecutionArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the step function execution-based
+     * observation. </p>
+     */
+    inline Observation& WithStatesExecutionArn(const char* value) { SetStatesExecutionArn(value); return *this;}
+
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the step function-based observation. </p>
+     */
+    inline const Aws::String& GetStatesArn() const{ return m_statesArn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the step function-based observation. </p>
+     */
+    inline bool StatesArnHasBeenSet() const { return m_statesArnHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the step function-based observation. </p>
+     */
+    inline void SetStatesArn(const Aws::String& value) { m_statesArnHasBeenSet = true; m_statesArn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the step function-based observation. </p>
+     */
+    inline void SetStatesArn(Aws::String&& value) { m_statesArnHasBeenSet = true; m_statesArn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the step function-based observation. </p>
+     */
+    inline void SetStatesArn(const char* value) { m_statesArnHasBeenSet = true; m_statesArn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the step function-based observation. </p>
+     */
+    inline Observation& WithStatesArn(const Aws::String& value) { SetStatesArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the step function-based observation. </p>
+     */
+    inline Observation& WithStatesArn(Aws::String&& value) { SetStatesArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the step function-based observation. </p>
+     */
+    inline Observation& WithStatesArn(const char* value) { SetStatesArn(value); return *this;}
+
+
+    /**
+     * <p> The status of the step function-related observation. </p>
+     */
+    inline const Aws::String& GetStatesStatus() const{ return m_statesStatus; }
+
+    /**
+     * <p> The status of the step function-related observation. </p>
+     */
+    inline bool StatesStatusHasBeenSet() const { return m_statesStatusHasBeenSet; }
+
+    /**
+     * <p> The status of the step function-related observation. </p>
+     */
+    inline void SetStatesStatus(const Aws::String& value) { m_statesStatusHasBeenSet = true; m_statesStatus = value; }
+
+    /**
+     * <p> The status of the step function-related observation. </p>
+     */
+    inline void SetStatesStatus(Aws::String&& value) { m_statesStatusHasBeenSet = true; m_statesStatus = std::move(value); }
+
+    /**
+     * <p> The status of the step function-related observation. </p>
+     */
+    inline void SetStatesStatus(const char* value) { m_statesStatusHasBeenSet = true; m_statesStatus.assign(value); }
+
+    /**
+     * <p> The status of the step function-related observation. </p>
+     */
+    inline Observation& WithStatesStatus(const Aws::String& value) { SetStatesStatus(value); return *this;}
+
+    /**
+     * <p> The status of the step function-related observation. </p>
+     */
+    inline Observation& WithStatesStatus(Aws::String&& value) { SetStatesStatus(std::move(value)); return *this;}
+
+    /**
+     * <p> The status of the step function-related observation. </p>
+     */
+    inline Observation& WithStatesStatus(const char* value) { SetStatesStatus(value); return *this;}
+
+
+    /**
+     * <p> The input to the step function-based observation. </p>
+     */
+    inline const Aws::String& GetStatesInput() const{ return m_statesInput; }
+
+    /**
+     * <p> The input to the step function-based observation. </p>
+     */
+    inline bool StatesInputHasBeenSet() const { return m_statesInputHasBeenSet; }
+
+    /**
+     * <p> The input to the step function-based observation. </p>
+     */
+    inline void SetStatesInput(const Aws::String& value) { m_statesInputHasBeenSet = true; m_statesInput = value; }
+
+    /**
+     * <p> The input to the step function-based observation. </p>
+     */
+    inline void SetStatesInput(Aws::String&& value) { m_statesInputHasBeenSet = true; m_statesInput = std::move(value); }
+
+    /**
+     * <p> The input to the step function-based observation. </p>
+     */
+    inline void SetStatesInput(const char* value) { m_statesInputHasBeenSet = true; m_statesInput.assign(value); }
+
+    /**
+     * <p> The input to the step function-based observation. </p>
+     */
+    inline Observation& WithStatesInput(const Aws::String& value) { SetStatesInput(value); return *this;}
+
+    /**
+     * <p> The input to the step function-based observation. </p>
+     */
+    inline Observation& WithStatesInput(Aws::String&& value) { SetStatesInput(std::move(value)); return *this;}
+
+    /**
+     * <p> The input to the step function-based observation. </p>
+     */
+    inline Observation& WithStatesInput(const char* value) { SetStatesInput(value); return *this;}
+
+
+    /**
+     * <p> The type of EBS CloudWatch event, such as <code>createVolume</code>,
+     * <code>deleteVolume</code> or <code>attachVolume</code>. </p>
+     */
+    inline const Aws::String& GetEbsEvent() const{ return m_ebsEvent; }
+
+    /**
+     * <p> The type of EBS CloudWatch event, such as <code>createVolume</code>,
+     * <code>deleteVolume</code> or <code>attachVolume</code>. </p>
+     */
+    inline bool EbsEventHasBeenSet() const { return m_ebsEventHasBeenSet; }
+
+    /**
+     * <p> The type of EBS CloudWatch event, such as <code>createVolume</code>,
+     * <code>deleteVolume</code> or <code>attachVolume</code>. </p>
+     */
+    inline void SetEbsEvent(const Aws::String& value) { m_ebsEventHasBeenSet = true; m_ebsEvent = value; }
+
+    /**
+     * <p> The type of EBS CloudWatch event, such as <code>createVolume</code>,
+     * <code>deleteVolume</code> or <code>attachVolume</code>. </p>
+     */
+    inline void SetEbsEvent(Aws::String&& value) { m_ebsEventHasBeenSet = true; m_ebsEvent = std::move(value); }
+
+    /**
+     * <p> The type of EBS CloudWatch event, such as <code>createVolume</code>,
+     * <code>deleteVolume</code> or <code>attachVolume</code>. </p>
+     */
+    inline void SetEbsEvent(const char* value) { m_ebsEventHasBeenSet = true; m_ebsEvent.assign(value); }
+
+    /**
+     * <p> The type of EBS CloudWatch event, such as <code>createVolume</code>,
+     * <code>deleteVolume</code> or <code>attachVolume</code>. </p>
+     */
+    inline Observation& WithEbsEvent(const Aws::String& value) { SetEbsEvent(value); return *this;}
+
+    /**
+     * <p> The type of EBS CloudWatch event, such as <code>createVolume</code>,
+     * <code>deleteVolume</code> or <code>attachVolume</code>. </p>
+     */
+    inline Observation& WithEbsEvent(Aws::String&& value) { SetEbsEvent(std::move(value)); return *this;}
+
+    /**
+     * <p> The type of EBS CloudWatch event, such as <code>createVolume</code>,
+     * <code>deleteVolume</code> or <code>attachVolume</code>. </p>
+     */
+    inline Observation& WithEbsEvent(const char* value) { SetEbsEvent(value); return *this;}
+
+
+    /**
+     * <p> The result of an EBS CloudWatch event, such as <code>failed</code> or
+     * <code>succeeded</code>. </p>
+     */
+    inline const Aws::String& GetEbsResult() const{ return m_ebsResult; }
+
+    /**
+     * <p> The result of an EBS CloudWatch event, such as <code>failed</code> or
+     * <code>succeeded</code>. </p>
+     */
+    inline bool EbsResultHasBeenSet() const { return m_ebsResultHasBeenSet; }
+
+    /**
+     * <p> The result of an EBS CloudWatch event, such as <code>failed</code> or
+     * <code>succeeded</code>. </p>
+     */
+    inline void SetEbsResult(const Aws::String& value) { m_ebsResultHasBeenSet = true; m_ebsResult = value; }
+
+    /**
+     * <p> The result of an EBS CloudWatch event, such as <code>failed</code> or
+     * <code>succeeded</code>. </p>
+     */
+    inline void SetEbsResult(Aws::String&& value) { m_ebsResultHasBeenSet = true; m_ebsResult = std::move(value); }
+
+    /**
+     * <p> The result of an EBS CloudWatch event, such as <code>failed</code> or
+     * <code>succeeded</code>. </p>
+     */
+    inline void SetEbsResult(const char* value) { m_ebsResultHasBeenSet = true; m_ebsResult.assign(value); }
+
+    /**
+     * <p> The result of an EBS CloudWatch event, such as <code>failed</code> or
+     * <code>succeeded</code>. </p>
+     */
+    inline Observation& WithEbsResult(const Aws::String& value) { SetEbsResult(value); return *this;}
+
+    /**
+     * <p> The result of an EBS CloudWatch event, such as <code>failed</code> or
+     * <code>succeeded</code>. </p>
+     */
+    inline Observation& WithEbsResult(Aws::String&& value) { SetEbsResult(std::move(value)); return *this;}
+
+    /**
+     * <p> The result of an EBS CloudWatch event, such as <code>failed</code> or
+     * <code>succeeded</code>. </p>
+     */
+    inline Observation& WithEbsResult(const char* value) { SetEbsResult(value); return *this;}
+
+
+    /**
+     * <p> The cause of an EBS CloudWatch event. </p>
+     */
+    inline const Aws::String& GetEbsCause() const{ return m_ebsCause; }
+
+    /**
+     * <p> The cause of an EBS CloudWatch event. </p>
+     */
+    inline bool EbsCauseHasBeenSet() const { return m_ebsCauseHasBeenSet; }
+
+    /**
+     * <p> The cause of an EBS CloudWatch event. </p>
+     */
+    inline void SetEbsCause(const Aws::String& value) { m_ebsCauseHasBeenSet = true; m_ebsCause = value; }
+
+    /**
+     * <p> The cause of an EBS CloudWatch event. </p>
+     */
+    inline void SetEbsCause(Aws::String&& value) { m_ebsCauseHasBeenSet = true; m_ebsCause = std::move(value); }
+
+    /**
+     * <p> The cause of an EBS CloudWatch event. </p>
+     */
+    inline void SetEbsCause(const char* value) { m_ebsCauseHasBeenSet = true; m_ebsCause.assign(value); }
+
+    /**
+     * <p> The cause of an EBS CloudWatch event. </p>
+     */
+    inline Observation& WithEbsCause(const Aws::String& value) { SetEbsCause(value); return *this;}
+
+    /**
+     * <p> The cause of an EBS CloudWatch event. </p>
+     */
+    inline Observation& WithEbsCause(Aws::String&& value) { SetEbsCause(std::move(value)); return *this;}
+
+    /**
+     * <p> The cause of an EBS CloudWatch event. </p>
+     */
+    inline Observation& WithEbsCause(const char* value) { SetEbsCause(value); return *this;}
+
+
+    /**
+     * <p> The request ID of an EBS CloudWatch event. </p>
+     */
+    inline const Aws::String& GetEbsRequestId() const{ return m_ebsRequestId; }
+
+    /**
+     * <p> The request ID of an EBS CloudWatch event. </p>
+     */
+    inline bool EbsRequestIdHasBeenSet() const { return m_ebsRequestIdHasBeenSet; }
+
+    /**
+     * <p> The request ID of an EBS CloudWatch event. </p>
+     */
+    inline void SetEbsRequestId(const Aws::String& value) { m_ebsRequestIdHasBeenSet = true; m_ebsRequestId = value; }
+
+    /**
+     * <p> The request ID of an EBS CloudWatch event. </p>
+     */
+    inline void SetEbsRequestId(Aws::String&& value) { m_ebsRequestIdHasBeenSet = true; m_ebsRequestId = std::move(value); }
+
+    /**
+     * <p> The request ID of an EBS CloudWatch event. </p>
+     */
+    inline void SetEbsRequestId(const char* value) { m_ebsRequestIdHasBeenSet = true; m_ebsRequestId.assign(value); }
+
+    /**
+     * <p> The request ID of an EBS CloudWatch event. </p>
+     */
+    inline Observation& WithEbsRequestId(const Aws::String& value) { SetEbsRequestId(value); return *this;}
+
+    /**
+     * <p> The request ID of an EBS CloudWatch event. </p>
+     */
+    inline Observation& WithEbsRequestId(Aws::String&& value) { SetEbsRequestId(std::move(value)); return *this;}
+
+    /**
+     * <p> The request ID of an EBS CloudWatch event. </p>
+     */
+    inline Observation& WithEbsRequestId(const char* value) { SetEbsRequestId(value); return *this;}
+
+
+    /**
      * <p> The X-Ray request fault percentage for this node. </p>
      */
     inline int GetXRayFaultPercent() const{ return m_xRayFaultPercent; }
@@ -1426,6 +1891,39 @@ namespace Model
 
     Aws::String m_ec2State;
     bool m_ec2StateHasBeenSet;
+
+    Aws::String m_rdsEventCategories;
+    bool m_rdsEventCategoriesHasBeenSet;
+
+    Aws::String m_rdsEventMessage;
+    bool m_rdsEventMessageHasBeenSet;
+
+    Aws::String m_s3EventName;
+    bool m_s3EventNameHasBeenSet;
+
+    Aws::String m_statesExecutionArn;
+    bool m_statesExecutionArnHasBeenSet;
+
+    Aws::String m_statesArn;
+    bool m_statesArnHasBeenSet;
+
+    Aws::String m_statesStatus;
+    bool m_statesStatusHasBeenSet;
+
+    Aws::String m_statesInput;
+    bool m_statesInputHasBeenSet;
+
+    Aws::String m_ebsEvent;
+    bool m_ebsEventHasBeenSet;
+
+    Aws::String m_ebsResult;
+    bool m_ebsResultHasBeenSet;
+
+    Aws::String m_ebsCause;
+    bool m_ebsCauseHasBeenSet;
+
+    Aws::String m_ebsRequestId;
+    bool m_ebsRequestIdHasBeenSet;
 
     int m_xRayFaultPercent;
     bool m_xRayFaultPercentHasBeenSet;

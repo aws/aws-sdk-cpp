@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mq/model/BrokerSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -37,6 +27,8 @@ BrokerSummary::BrokerSummary() :
     m_createdHasBeenSet(false),
     m_deploymentMode(DeploymentMode::NOT_SET),
     m_deploymentModeHasBeenSet(false),
+    m_engineType(EngineType::NOT_SET),
+    m_engineTypeHasBeenSet(false),
     m_hostInstanceTypeHasBeenSet(false)
 {
 }
@@ -50,6 +42,8 @@ BrokerSummary::BrokerSummary(JsonView jsonValue) :
     m_createdHasBeenSet(false),
     m_deploymentMode(DeploymentMode::NOT_SET),
     m_deploymentModeHasBeenSet(false),
+    m_engineType(EngineType::NOT_SET),
+    m_engineTypeHasBeenSet(false),
     m_hostInstanceTypeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -99,6 +93,13 @@ BrokerSummary& BrokerSummary::operator =(JsonView jsonValue)
     m_deploymentModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("engineType"))
+  {
+    m_engineType = EngineTypeMapper::GetEngineTypeForName(jsonValue.GetString("engineType"));
+
+    m_engineTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("hostInstanceType"))
   {
     m_hostInstanceType = jsonValue.GetString("hostInstanceType");
@@ -144,6 +145,11 @@ JsonValue BrokerSummary::Jsonize() const
   if(m_deploymentModeHasBeenSet)
   {
    payload.WithString("deploymentMode", DeploymentModeMapper::GetNameForDeploymentMode(m_deploymentMode));
+  }
+
+  if(m_engineTypeHasBeenSet)
+  {
+   payload.WithString("engineType", EngineTypeMapper::GetNameForEngineType(m_engineType));
   }
 
   if(m_hostInstanceTypeHasBeenSet)

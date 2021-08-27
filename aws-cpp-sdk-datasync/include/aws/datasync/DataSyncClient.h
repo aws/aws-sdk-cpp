@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/datasync/DataSync_EXPORTS.h>
@@ -26,6 +16,7 @@
 #include <aws/datasync/model/CreateLocationEfsResult.h>
 #include <aws/datasync/model/CreateLocationFsxWindowsResult.h>
 #include <aws/datasync/model/CreateLocationNfsResult.h>
+#include <aws/datasync/model/CreateLocationObjectStorageResult.h>
 #include <aws/datasync/model/CreateLocationS3Result.h>
 #include <aws/datasync/model/CreateLocationSmbResult.h>
 #include <aws/datasync/model/CreateTaskResult.h>
@@ -36,6 +27,7 @@
 #include <aws/datasync/model/DescribeLocationEfsResult.h>
 #include <aws/datasync/model/DescribeLocationFsxWindowsResult.h>
 #include <aws/datasync/model/DescribeLocationNfsResult.h>
+#include <aws/datasync/model/DescribeLocationObjectStorageResult.h>
 #include <aws/datasync/model/DescribeLocationS3Result.h>
 #include <aws/datasync/model/DescribeLocationSmbResult.h>
 #include <aws/datasync/model/DescribeTaskResult.h>
@@ -50,6 +42,7 @@
 #include <aws/datasync/model/UntagResourceResult.h>
 #include <aws/datasync/model/UpdateAgentResult.h>
 #include <aws/datasync/model/UpdateTaskResult.h>
+#include <aws/datasync/model/UpdateTaskExecutionResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -94,6 +87,7 @@ namespace Model
         class CreateLocationEfsRequest;
         class CreateLocationFsxWindowsRequest;
         class CreateLocationNfsRequest;
+        class CreateLocationObjectStorageRequest;
         class CreateLocationS3Request;
         class CreateLocationSmbRequest;
         class CreateTaskRequest;
@@ -104,6 +98,7 @@ namespace Model
         class DescribeLocationEfsRequest;
         class DescribeLocationFsxWindowsRequest;
         class DescribeLocationNfsRequest;
+        class DescribeLocationObjectStorageRequest;
         class DescribeLocationS3Request;
         class DescribeLocationSmbRequest;
         class DescribeTaskRequest;
@@ -118,42 +113,47 @@ namespace Model
         class UntagResourceRequest;
         class UpdateAgentRequest;
         class UpdateTaskRequest;
+        class UpdateTaskExecutionRequest;
 
-        typedef Aws::Utils::Outcome<CancelTaskExecutionResult, Aws::Client::AWSError<DataSyncErrors>> CancelTaskExecutionOutcome;
-        typedef Aws::Utils::Outcome<CreateAgentResult, Aws::Client::AWSError<DataSyncErrors>> CreateAgentOutcome;
-        typedef Aws::Utils::Outcome<CreateLocationEfsResult, Aws::Client::AWSError<DataSyncErrors>> CreateLocationEfsOutcome;
-        typedef Aws::Utils::Outcome<CreateLocationFsxWindowsResult, Aws::Client::AWSError<DataSyncErrors>> CreateLocationFsxWindowsOutcome;
-        typedef Aws::Utils::Outcome<CreateLocationNfsResult, Aws::Client::AWSError<DataSyncErrors>> CreateLocationNfsOutcome;
-        typedef Aws::Utils::Outcome<CreateLocationS3Result, Aws::Client::AWSError<DataSyncErrors>> CreateLocationS3Outcome;
-        typedef Aws::Utils::Outcome<CreateLocationSmbResult, Aws::Client::AWSError<DataSyncErrors>> CreateLocationSmbOutcome;
-        typedef Aws::Utils::Outcome<CreateTaskResult, Aws::Client::AWSError<DataSyncErrors>> CreateTaskOutcome;
-        typedef Aws::Utils::Outcome<DeleteAgentResult, Aws::Client::AWSError<DataSyncErrors>> DeleteAgentOutcome;
-        typedef Aws::Utils::Outcome<DeleteLocationResult, Aws::Client::AWSError<DataSyncErrors>> DeleteLocationOutcome;
-        typedef Aws::Utils::Outcome<DeleteTaskResult, Aws::Client::AWSError<DataSyncErrors>> DeleteTaskOutcome;
-        typedef Aws::Utils::Outcome<DescribeAgentResult, Aws::Client::AWSError<DataSyncErrors>> DescribeAgentOutcome;
-        typedef Aws::Utils::Outcome<DescribeLocationEfsResult, Aws::Client::AWSError<DataSyncErrors>> DescribeLocationEfsOutcome;
-        typedef Aws::Utils::Outcome<DescribeLocationFsxWindowsResult, Aws::Client::AWSError<DataSyncErrors>> DescribeLocationFsxWindowsOutcome;
-        typedef Aws::Utils::Outcome<DescribeLocationNfsResult, Aws::Client::AWSError<DataSyncErrors>> DescribeLocationNfsOutcome;
-        typedef Aws::Utils::Outcome<DescribeLocationS3Result, Aws::Client::AWSError<DataSyncErrors>> DescribeLocationS3Outcome;
-        typedef Aws::Utils::Outcome<DescribeLocationSmbResult, Aws::Client::AWSError<DataSyncErrors>> DescribeLocationSmbOutcome;
-        typedef Aws::Utils::Outcome<DescribeTaskResult, Aws::Client::AWSError<DataSyncErrors>> DescribeTaskOutcome;
-        typedef Aws::Utils::Outcome<DescribeTaskExecutionResult, Aws::Client::AWSError<DataSyncErrors>> DescribeTaskExecutionOutcome;
-        typedef Aws::Utils::Outcome<ListAgentsResult, Aws::Client::AWSError<DataSyncErrors>> ListAgentsOutcome;
-        typedef Aws::Utils::Outcome<ListLocationsResult, Aws::Client::AWSError<DataSyncErrors>> ListLocationsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<DataSyncErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTaskExecutionsResult, Aws::Client::AWSError<DataSyncErrors>> ListTaskExecutionsOutcome;
-        typedef Aws::Utils::Outcome<ListTasksResult, Aws::Client::AWSError<DataSyncErrors>> ListTasksOutcome;
-        typedef Aws::Utils::Outcome<StartTaskExecutionResult, Aws::Client::AWSError<DataSyncErrors>> StartTaskExecutionOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<DataSyncErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<DataSyncErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateAgentResult, Aws::Client::AWSError<DataSyncErrors>> UpdateAgentOutcome;
-        typedef Aws::Utils::Outcome<UpdateTaskResult, Aws::Client::AWSError<DataSyncErrors>> UpdateTaskOutcome;
+        typedef Aws::Utils::Outcome<CancelTaskExecutionResult, DataSyncError> CancelTaskExecutionOutcome;
+        typedef Aws::Utils::Outcome<CreateAgentResult, DataSyncError> CreateAgentOutcome;
+        typedef Aws::Utils::Outcome<CreateLocationEfsResult, DataSyncError> CreateLocationEfsOutcome;
+        typedef Aws::Utils::Outcome<CreateLocationFsxWindowsResult, DataSyncError> CreateLocationFsxWindowsOutcome;
+        typedef Aws::Utils::Outcome<CreateLocationNfsResult, DataSyncError> CreateLocationNfsOutcome;
+        typedef Aws::Utils::Outcome<CreateLocationObjectStorageResult, DataSyncError> CreateLocationObjectStorageOutcome;
+        typedef Aws::Utils::Outcome<CreateLocationS3Result, DataSyncError> CreateLocationS3Outcome;
+        typedef Aws::Utils::Outcome<CreateLocationSmbResult, DataSyncError> CreateLocationSmbOutcome;
+        typedef Aws::Utils::Outcome<CreateTaskResult, DataSyncError> CreateTaskOutcome;
+        typedef Aws::Utils::Outcome<DeleteAgentResult, DataSyncError> DeleteAgentOutcome;
+        typedef Aws::Utils::Outcome<DeleteLocationResult, DataSyncError> DeleteLocationOutcome;
+        typedef Aws::Utils::Outcome<DeleteTaskResult, DataSyncError> DeleteTaskOutcome;
+        typedef Aws::Utils::Outcome<DescribeAgentResult, DataSyncError> DescribeAgentOutcome;
+        typedef Aws::Utils::Outcome<DescribeLocationEfsResult, DataSyncError> DescribeLocationEfsOutcome;
+        typedef Aws::Utils::Outcome<DescribeLocationFsxWindowsResult, DataSyncError> DescribeLocationFsxWindowsOutcome;
+        typedef Aws::Utils::Outcome<DescribeLocationNfsResult, DataSyncError> DescribeLocationNfsOutcome;
+        typedef Aws::Utils::Outcome<DescribeLocationObjectStorageResult, DataSyncError> DescribeLocationObjectStorageOutcome;
+        typedef Aws::Utils::Outcome<DescribeLocationS3Result, DataSyncError> DescribeLocationS3Outcome;
+        typedef Aws::Utils::Outcome<DescribeLocationSmbResult, DataSyncError> DescribeLocationSmbOutcome;
+        typedef Aws::Utils::Outcome<DescribeTaskResult, DataSyncError> DescribeTaskOutcome;
+        typedef Aws::Utils::Outcome<DescribeTaskExecutionResult, DataSyncError> DescribeTaskExecutionOutcome;
+        typedef Aws::Utils::Outcome<ListAgentsResult, DataSyncError> ListAgentsOutcome;
+        typedef Aws::Utils::Outcome<ListLocationsResult, DataSyncError> ListLocationsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, DataSyncError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListTaskExecutionsResult, DataSyncError> ListTaskExecutionsOutcome;
+        typedef Aws::Utils::Outcome<ListTasksResult, DataSyncError> ListTasksOutcome;
+        typedef Aws::Utils::Outcome<StartTaskExecutionResult, DataSyncError> StartTaskExecutionOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, DataSyncError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, DataSyncError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateAgentResult, DataSyncError> UpdateAgentOutcome;
+        typedef Aws::Utils::Outcome<UpdateTaskResult, DataSyncError> UpdateTaskOutcome;
+        typedef Aws::Utils::Outcome<UpdateTaskExecutionResult, DataSyncError> UpdateTaskExecutionOutcome;
 
         typedef std::future<CancelTaskExecutionOutcome> CancelTaskExecutionOutcomeCallable;
         typedef std::future<CreateAgentOutcome> CreateAgentOutcomeCallable;
         typedef std::future<CreateLocationEfsOutcome> CreateLocationEfsOutcomeCallable;
         typedef std::future<CreateLocationFsxWindowsOutcome> CreateLocationFsxWindowsOutcomeCallable;
         typedef std::future<CreateLocationNfsOutcome> CreateLocationNfsOutcomeCallable;
+        typedef std::future<CreateLocationObjectStorageOutcome> CreateLocationObjectStorageOutcomeCallable;
         typedef std::future<CreateLocationS3Outcome> CreateLocationS3OutcomeCallable;
         typedef std::future<CreateLocationSmbOutcome> CreateLocationSmbOutcomeCallable;
         typedef std::future<CreateTaskOutcome> CreateTaskOutcomeCallable;
@@ -164,6 +164,7 @@ namespace Model
         typedef std::future<DescribeLocationEfsOutcome> DescribeLocationEfsOutcomeCallable;
         typedef std::future<DescribeLocationFsxWindowsOutcome> DescribeLocationFsxWindowsOutcomeCallable;
         typedef std::future<DescribeLocationNfsOutcome> DescribeLocationNfsOutcomeCallable;
+        typedef std::future<DescribeLocationObjectStorageOutcome> DescribeLocationObjectStorageOutcomeCallable;
         typedef std::future<DescribeLocationS3Outcome> DescribeLocationS3OutcomeCallable;
         typedef std::future<DescribeLocationSmbOutcome> DescribeLocationSmbOutcomeCallable;
         typedef std::future<DescribeTaskOutcome> DescribeTaskOutcomeCallable;
@@ -178,6 +179,7 @@ namespace Model
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateAgentOutcome> UpdateAgentOutcomeCallable;
         typedef std::future<UpdateTaskOutcome> UpdateTaskOutcomeCallable;
+        typedef std::future<UpdateTaskExecutionOutcome> UpdateTaskExecutionOutcomeCallable;
 } // namespace Model
 
   class DataSyncClient;
@@ -187,6 +189,7 @@ namespace Model
     typedef std::function<void(const DataSyncClient*, const Model::CreateLocationEfsRequest&, const Model::CreateLocationEfsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocationEfsResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::CreateLocationFsxWindowsRequest&, const Model::CreateLocationFsxWindowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocationFsxWindowsResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::CreateLocationNfsRequest&, const Model::CreateLocationNfsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocationNfsResponseReceivedHandler;
+    typedef std::function<void(const DataSyncClient*, const Model::CreateLocationObjectStorageRequest&, const Model::CreateLocationObjectStorageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocationObjectStorageResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::CreateLocationS3Request&, const Model::CreateLocationS3Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocationS3ResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::CreateLocationSmbRequest&, const Model::CreateLocationSmbOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocationSmbResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::CreateTaskRequest&, const Model::CreateTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTaskResponseReceivedHandler;
@@ -197,6 +200,7 @@ namespace Model
     typedef std::function<void(const DataSyncClient*, const Model::DescribeLocationEfsRequest&, const Model::DescribeLocationEfsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocationEfsResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::DescribeLocationFsxWindowsRequest&, const Model::DescribeLocationFsxWindowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocationFsxWindowsResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::DescribeLocationNfsRequest&, const Model::DescribeLocationNfsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocationNfsResponseReceivedHandler;
+    typedef std::function<void(const DataSyncClient*, const Model::DescribeLocationObjectStorageRequest&, const Model::DescribeLocationObjectStorageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocationObjectStorageResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::DescribeLocationS3Request&, const Model::DescribeLocationS3Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocationS3ResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::DescribeLocationSmbRequest&, const Model::DescribeLocationSmbOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocationSmbResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::DescribeTaskRequest&, const Model::DescribeTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTaskResponseReceivedHandler;
@@ -211,6 +215,7 @@ namespace Model
     typedef std::function<void(const DataSyncClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::UpdateAgentRequest&, const Model::UpdateAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAgentResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::UpdateTaskRequest&, const Model::UpdateTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTaskResponseReceivedHandler;
+    typedef std::function<void(const DataSyncClient*, const Model::UpdateTaskExecutionRequest&, const Model::UpdateTaskExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTaskExecutionResponseReceivedHandler;
 
   /**
    * <fullname>AWS DataSync</fullname> <p>AWS DataSync is a managed data transfer
@@ -246,12 +251,10 @@ namespace Model
 
         virtual ~DataSyncClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "DataSync"; }
-
 
         /**
          * <p>Cancels execution of a task. </p> <p>When you cancel a task execution, the
-         * transfer of some files are abruptly interrupted. The contents of files that are
+         * transfer of some files is abruptly interrupted. The contents of files that are
          * transferred to the destination might be incomplete or inconsistent with the
          * source files. However, if you start a new task execution on the same task and
          * you allow the task execution to complete, file content on the destination is
@@ -266,7 +269,7 @@ namespace Model
 
         /**
          * <p>Cancels execution of a task. </p> <p>When you cancel a task execution, the
-         * transfer of some files are abruptly interrupted. The contents of files that are
+         * transfer of some files is abruptly interrupted. The contents of files that are
          * transferred to the destination might be incomplete or inconsistent with the
          * source files. However, if you start a new task execution on the same task and
          * you allow the task execution to complete, file content on the destination is
@@ -283,7 +286,7 @@ namespace Model
 
         /**
          * <p>Cancels execution of a task. </p> <p>When you cancel a task execution, the
-         * transfer of some files are abruptly interrupted. The contents of files that are
+         * transfer of some files is abruptly interrupted. The contents of files that are
          * transferred to the destination might be incomplete or inconsistent with the
          * source files. However, if you start a new task execution on the same task and
          * you allow the task execution to complete, file content on the destination is
@@ -304,9 +307,9 @@ namespace Model
          * process, you specify information such as the AWS Region that you want to
          * activate the agent in. You activate the agent in the AWS Region where your
          * target locations (in Amazon S3 or Amazon EFS) reside. Your tasks are created in
-         * this AWS Region.</p> <p>You can activate the agent in a VPC (Virtual private
-         * Cloud) or provide the agent access to a VPC endpoint so you can run tasks
-         * without going over the public Internet.</p> <p>You can use an agent for more
+         * this AWS Region.</p> <p>You can activate the agent in a VPC (virtual private
+         * cloud) or provide the agent access to a VPC endpoint so you can run tasks
+         * without going over the public internet.</p> <p>You can use an agent for more
          * than one location. If a task uses multiple agents, all of them need to have
          * status AVAILABLE for the task to run. If you use multiple agents for a source
          * location, the status of all the agents must be AVAILABLE for the task to run.
@@ -324,9 +327,9 @@ namespace Model
          * process, you specify information such as the AWS Region that you want to
          * activate the agent in. You activate the agent in the AWS Region where your
          * target locations (in Amazon S3 or Amazon EFS) reside. Your tasks are created in
-         * this AWS Region.</p> <p>You can activate the agent in a VPC (Virtual private
-         * Cloud) or provide the agent access to a VPC endpoint so you can run tasks
-         * without going over the public Internet.</p> <p>You can use an agent for more
+         * this AWS Region.</p> <p>You can activate the agent in a VPC (virtual private
+         * cloud) or provide the agent access to a VPC endpoint so you can run tasks
+         * without going over the public internet.</p> <p>You can use an agent for more
          * than one location. If a task uses multiple agents, all of them need to have
          * status AVAILABLE for the task to run. If you use multiple agents for a source
          * location, the status of all the agents must be AVAILABLE for the task to run.
@@ -346,9 +349,9 @@ namespace Model
          * process, you specify information such as the AWS Region that you want to
          * activate the agent in. You activate the agent in the AWS Region where your
          * target locations (in Amazon S3 or Amazon EFS) reside. Your tasks are created in
-         * this AWS Region.</p> <p>You can activate the agent in a VPC (Virtual private
-         * Cloud) or provide the agent access to a VPC endpoint so you can run tasks
-         * without going over the public Internet.</p> <p>You can use an agent for more
+         * this AWS Region.</p> <p>You can activate the agent in a VPC (virtual private
+         * cloud) or provide the agent access to a VPC endpoint so you can run tasks
+         * without going over the public internet.</p> <p>You can use an agent for more
          * than one location. If a task uses multiple agents, all of them need to have
          * status AVAILABLE for the task to run. If you use multiple agents for a source
          * location, the status of all the agents must be AVAILABLE for the task to run.
@@ -420,7 +423,7 @@ namespace Model
 
         /**
          * <p>Defines a file system on a Network File System (NFS) server that can be read
-         * from or written to</p><p><h3>See Also:</h3>   <a
+         * from or written to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationNfs">AWS
          * API Reference</a></p>
          */
@@ -428,7 +431,7 @@ namespace Model
 
         /**
          * <p>Defines a file system on a Network File System (NFS) server that can be read
-         * from or written to</p><p><h3>See Also:</h3>   <a
+         * from or written to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationNfs">AWS
          * API Reference</a></p>
          *
@@ -438,7 +441,7 @@ namespace Model
 
         /**
          * <p>Defines a file system on a Network File System (NFS) server that can be read
-         * from or written to</p><p><h3>See Also:</h3>   <a
+         * from or written to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationNfs">AWS
          * API Reference</a></p>
          *
@@ -447,28 +450,49 @@ namespace Model
         virtual void CreateLocationNfsAsync(const Model::CreateLocationNfsRequest& request, const CreateLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an endpoint for an Amazon S3 bucket.</p> <p>For AWS DataSync to
-         * access a destination S3 bucket, it needs an AWS Identity and Access Management
-         * (IAM) role that has the required permissions. You can set up the required
-         * permissions by creating an IAM policy that grants the required permissions and
-         * attaching the policy to the role. An example of such a policy is shown in the
-         * examples section.</p> <p>For more information, see
-         * https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location
-         * in the <i>AWS DataSync User Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * <p>Creates an endpoint for a self-managed object storage bucket. For more
+         * information about self-managed object storage locations, see
+         * <a>create-object-location</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationObjectStorage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLocationObjectStorageOutcome CreateLocationObjectStorage(const Model::CreateLocationObjectStorageRequest& request) const;
+
+        /**
+         * <p>Creates an endpoint for a self-managed object storage bucket. For more
+         * information about self-managed object storage locations, see
+         * <a>create-object-location</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationObjectStorage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateLocationObjectStorageOutcomeCallable CreateLocationObjectStorageCallable(const Model::CreateLocationObjectStorageRequest& request) const;
+
+        /**
+         * <p>Creates an endpoint for a self-managed object storage bucket. For more
+         * information about self-managed object storage locations, see
+         * <a>create-object-location</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationObjectStorage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateLocationObjectStorageAsync(const Model::CreateLocationObjectStorageRequest& request, const CreateLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an endpoint for an Amazon S3 bucket.</p> <p>For more information, see
+         * https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli
+         * in the <i>AWS DataSync User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationS3">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateLocationS3Outcome CreateLocationS3(const Model::CreateLocationS3Request& request) const;
 
         /**
-         * <p>Creates an endpoint for an Amazon S3 bucket.</p> <p>For AWS DataSync to
-         * access a destination S3 bucket, it needs an AWS Identity and Access Management
-         * (IAM) role that has the required permissions. You can set up the required
-         * permissions by creating an IAM policy that grants the required permissions and
-         * attaching the policy to the role. An example of such a policy is shown in the
-         * examples section.</p> <p>For more information, see
-         * https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location
-         * in the <i>AWS DataSync User Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * <p>Creates an endpoint for an Amazon S3 bucket.</p> <p>For more information, see
+         * https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli
+         * in the <i>AWS DataSync User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationS3">AWS
          * API Reference</a></p>
          *
@@ -477,14 +501,9 @@ namespace Model
         virtual Model::CreateLocationS3OutcomeCallable CreateLocationS3Callable(const Model::CreateLocationS3Request& request) const;
 
         /**
-         * <p>Creates an endpoint for an Amazon S3 bucket.</p> <p>For AWS DataSync to
-         * access a destination S3 bucket, it needs an AWS Identity and Access Management
-         * (IAM) role that has the required permissions. You can set up the required
-         * permissions by creating an IAM policy that grants the required permissions and
-         * attaching the policy to the role. An example of such a policy is shown in the
-         * examples section.</p> <p>For more information, see
-         * https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location
-         * in the <i>AWS DataSync User Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * <p>Creates an endpoint for an Amazon S3 bucket.</p> <p>For more information, see
+         * https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli
+         * in the <i>AWS DataSync User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationS3">AWS
          * API Reference</a></p>
          *
@@ -493,16 +512,16 @@ namespace Model
         virtual void CreateLocationS3Async(const Model::CreateLocationS3Request& request, const CreateLocationS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Defines a file system on an Server Message Block (SMB) server that can be
-         * read from or written to.</p><p><h3>See Also:</h3>   <a
+         * <p>Defines a file system on a Server Message Block (SMB) server that can be read
+         * from or written to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationSmb">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateLocationSmbOutcome CreateLocationSmb(const Model::CreateLocationSmbRequest& request) const;
 
         /**
-         * <p>Defines a file system on an Server Message Block (SMB) server that can be
-         * read from or written to.</p><p><h3>See Also:</h3>   <a
+         * <p>Defines a file system on a Server Message Block (SMB) server that can be read
+         * from or written to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationSmb">AWS
          * API Reference</a></p>
          *
@@ -511,8 +530,8 @@ namespace Model
         virtual Model::CreateLocationSmbOutcomeCallable CreateLocationSmbCallable(const Model::CreateLocationSmbRequest& request) const;
 
         /**
-         * <p>Defines a file system on an Server Message Block (SMB) server that can be
-         * read from or written to.</p><p><h3>See Also:</h3>   <a
+         * <p>Defines a file system on a Server Message Block (SMB) server that can be read
+         * from or written to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationSmb">AWS
          * API Reference</a></p>
          *
@@ -534,7 +553,7 @@ namespace Model
          * for more than a few minutes, it means that your agent might be having trouble
          * mounting the source NFS file system. Check the task's ErrorCode and ErrorDetail.
          * Mount issues are often caused by either a misconfigured firewall or a mistyped
-         * NFS server host name.</p><p><h3>See Also:</h3>   <a
+         * NFS server hostname.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateTask">AWS
          * API Reference</a></p>
          */
@@ -554,7 +573,7 @@ namespace Model
          * for more than a few minutes, it means that your agent might be having trouble
          * mounting the source NFS file system. Check the task's ErrorCode and ErrorDetail.
          * Mount issues are often caused by either a misconfigured firewall or a mistyped
-         * NFS server host name.</p><p><h3>See Also:</h3>   <a
+         * NFS server hostname.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateTask">AWS
          * API Reference</a></p>
          *
@@ -576,7 +595,7 @@ namespace Model
          * for more than a few minutes, it means that your agent might be having trouble
          * mounting the source NFS file system. Check the task's ErrorCode and ErrorDetail.
          * Mount issues are often caused by either a misconfigured firewall or a mistyped
-         * NFS server host name.</p><p><h3>See Also:</h3>   <a
+         * NFS server hostname.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateTask">AWS
          * API Reference</a></p>
          *
@@ -762,7 +781,7 @@ namespace Model
         virtual void DescribeLocationFsxWindowsAsync(const Model::DescribeLocationFsxWindowsRequest& request, const DescribeLocationFsxWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns metadata, such as the path information, about a NFS
+         * <p>Returns metadata, such as the path information, about an NFS
          * location.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationNfs">AWS
          * API Reference</a></p>
@@ -770,7 +789,7 @@ namespace Model
         virtual Model::DescribeLocationNfsOutcome DescribeLocationNfs(const Model::DescribeLocationNfsRequest& request) const;
 
         /**
-         * <p>Returns metadata, such as the path information, about a NFS
+         * <p>Returns metadata, such as the path information, about an NFS
          * location.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationNfs">AWS
          * API Reference</a></p>
@@ -780,7 +799,7 @@ namespace Model
         virtual Model::DescribeLocationNfsOutcomeCallable DescribeLocationNfsCallable(const Model::DescribeLocationNfsRequest& request) const;
 
         /**
-         * <p>Returns metadata, such as the path information, about a NFS
+         * <p>Returns metadata, such as the path information, about an NFS
          * location.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationNfs">AWS
          * API Reference</a></p>
@@ -788,6 +807,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeLocationNfsAsync(const Model::DescribeLocationNfsRequest& request, const DescribeLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns metadata about a self-managed object storage server location. For
+         * more information about self-managed object storage locations, see
+         * <a>create-object-location</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationObjectStorage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeLocationObjectStorageOutcome DescribeLocationObjectStorage(const Model::DescribeLocationObjectStorageRequest& request) const;
+
+        /**
+         * <p>Returns metadata about a self-managed object storage server location. For
+         * more information about self-managed object storage locations, see
+         * <a>create-object-location</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationObjectStorage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeLocationObjectStorageOutcomeCallable DescribeLocationObjectStorageCallable(const Model::DescribeLocationObjectStorageRequest& request) const;
+
+        /**
+         * <p>Returns metadata about a self-managed object storage server location. For
+         * more information about self-managed object storage locations, see
+         * <a>create-object-location</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationObjectStorage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeLocationObjectStorageAsync(const Model::DescribeLocationObjectStorageRequest& request, const DescribeLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns metadata, such as bucket name, about an Amazon S3 bucket
@@ -818,7 +868,7 @@ namespace Model
         virtual void DescribeLocationS3Async(const Model::DescribeLocationS3Request& request, const DescribeLocationS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns metadata, such as the path and user information about a SMB
+         * <p>Returns metadata, such as the path and user information about an SMB
          * location.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationSmb">AWS
          * API Reference</a></p>
@@ -826,7 +876,7 @@ namespace Model
         virtual Model::DescribeLocationSmbOutcome DescribeLocationSmb(const Model::DescribeLocationSmbRequest& request) const;
 
         /**
-         * <p>Returns metadata, such as the path and user information about a SMB
+         * <p>Returns metadata, such as the path and user information about an SMB
          * location.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationSmb">AWS
          * API Reference</a></p>
@@ -836,7 +886,7 @@ namespace Model
         virtual Model::DescribeLocationSmbOutcomeCallable DescribeLocationSmbCallable(const Model::DescribeLocationSmbRequest& request) const;
 
         /**
-         * <p>Returns metadata, such as the path and user information about a SMB
+         * <p>Returns metadata, such as the path and user information about an SMB
          * location.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationSmb">AWS
          * API Reference</a></p>
@@ -945,7 +995,7 @@ namespace Model
         virtual void ListAgentsAsync(const Model::ListAgentsRequest& request, const ListAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a lists of source and destination locations.</p> <p>If you have more
+         * <p>Returns a list of source and destination locations.</p> <p>If you have more
          * locations than are returned in a response (that is, the response returns only a
          * truncated list of your agents), the response contains a token that you can
          * specify in your next request to fetch the next page of locations.</p><p><h3>See
@@ -956,7 +1006,7 @@ namespace Model
         virtual Model::ListLocationsOutcome ListLocations(const Model::ListLocationsRequest& request) const;
 
         /**
-         * <p>Returns a lists of source and destination locations.</p> <p>If you have more
+         * <p>Returns a list of source and destination locations.</p> <p>If you have more
          * locations than are returned in a response (that is, the response returns only a
          * truncated list of your agents), the response contains a token that you can
          * specify in your next request to fetch the next page of locations.</p><p><h3>See
@@ -969,7 +1019,7 @@ namespace Model
         virtual Model::ListLocationsOutcomeCallable ListLocationsCallable(const Model::ListLocationsRequest& request) const;
 
         /**
-         * <p>Returns a lists of source and destination locations.</p> <p>If you have more
+         * <p>Returns a list of source and destination locations.</p> <p>If you have more
          * locations than are returned in a response (that is, the response returns only a
          * truncated list of your agents), the response contains a token that you can
          * specify in your next request to fetch the next page of locations.</p><p><h3>See
@@ -982,7 +1032,7 @@ namespace Model
         virtual void ListLocationsAsync(const Model::ListLocationsRequest& request, const ListLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns all the tags associated with a specified resources. </p><p><h3>See
+         * <p>Returns all the tags associated with a specified resource. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -990,7 +1040,7 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns all the tags associated with a specified resources. </p><p><h3>See
+         * <p>Returns all the tags associated with a specified resource. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1000,7 +1050,7 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns all the tags associated with a specified resources. </p><p><h3>See
+         * <p>Returns all the tags associated with a specified resource. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1202,6 +1252,52 @@ namespace Model
          */
         virtual void UpdateTaskAsync(const Model::UpdateTaskRequest& request, const UpdateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates execution of a task.</p> <p>You can modify bandwidth throttling for a
+         * task execution that is running or queued. For more information, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting
+         * Bandwidth Throttling for a Task Execution</a>.</p>  <p>The only
+         * <code>Option</code> that can be modified by <code>UpdateTaskExecution</code> is
+         * <code> <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a>
+         * </code>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTaskExecutionOutcome UpdateTaskExecution(const Model::UpdateTaskExecutionRequest& request) const;
+
+        /**
+         * <p>Updates execution of a task.</p> <p>You can modify bandwidth throttling for a
+         * task execution that is running or queued. For more information, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting
+         * Bandwidth Throttling for a Task Execution</a>.</p>  <p>The only
+         * <code>Option</code> that can be modified by <code>UpdateTaskExecution</code> is
+         * <code> <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a>
+         * </code>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateTaskExecutionOutcomeCallable UpdateTaskExecutionCallable(const Model::UpdateTaskExecutionRequest& request) const;
+
+        /**
+         * <p>Updates execution of a task.</p> <p>You can modify bandwidth throttling for a
+         * task execution that is running or queued. For more information, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting
+         * Bandwidth Throttling for a Task Execution</a>.</p>  <p>The only
+         * <code>Option</code> that can be modified by <code>UpdateTaskExecution</code> is
+         * <code> <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a>
+         * </code>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateTaskExecutionAsync(const Model::UpdateTaskExecutionRequest& request, const UpdateTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -1211,6 +1307,7 @@ namespace Model
         void CreateLocationEfsAsyncHelper(const Model::CreateLocationEfsRequest& request, const CreateLocationEfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLocationFsxWindowsAsyncHelper(const Model::CreateLocationFsxWindowsRequest& request, const CreateLocationFsxWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLocationNfsAsyncHelper(const Model::CreateLocationNfsRequest& request, const CreateLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateLocationObjectStorageAsyncHelper(const Model::CreateLocationObjectStorageRequest& request, const CreateLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLocationS3AsyncHelper(const Model::CreateLocationS3Request& request, const CreateLocationS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLocationSmbAsyncHelper(const Model::CreateLocationSmbRequest& request, const CreateLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTaskAsyncHelper(const Model::CreateTaskRequest& request, const CreateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1221,6 +1318,7 @@ namespace Model
         void DescribeLocationEfsAsyncHelper(const Model::DescribeLocationEfsRequest& request, const DescribeLocationEfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLocationFsxWindowsAsyncHelper(const Model::DescribeLocationFsxWindowsRequest& request, const DescribeLocationFsxWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLocationNfsAsyncHelper(const Model::DescribeLocationNfsRequest& request, const DescribeLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeLocationObjectStorageAsyncHelper(const Model::DescribeLocationObjectStorageRequest& request, const DescribeLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLocationS3AsyncHelper(const Model::DescribeLocationS3Request& request, const DescribeLocationS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLocationSmbAsyncHelper(const Model::DescribeLocationSmbRequest& request, const DescribeLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTaskAsyncHelper(const Model::DescribeTaskRequest& request, const DescribeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1235,6 +1333,7 @@ namespace Model
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAgentAsyncHelper(const Model::UpdateAgentRequest& request, const UpdateAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTaskAsyncHelper(const Model::UpdateTaskRequest& request, const UpdateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateTaskExecutionAsyncHelper(const Model::UpdateTaskExecutionRequest& request, const UpdateTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

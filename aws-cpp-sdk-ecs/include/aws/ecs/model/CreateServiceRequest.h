@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -184,7 +174,8 @@ namespace Model
      * (<code>family:revision</code>) or full ARN of the task definition to run in your
      * service. If a <code>revision</code> is not specified, the latest
      * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
-     * if the service is using the <code>ECS</code> deployment controller.</p>
+     * if the service is using either the <code>ECS</code> or <code>CODE_DEPLOY</code>
+     * deployment controllers.</p>
      */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
 
@@ -193,7 +184,8 @@ namespace Model
      * (<code>family:revision</code>) or full ARN of the task definition to run in your
      * service. If a <code>revision</code> is not specified, the latest
      * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
-     * if the service is using the <code>ECS</code> deployment controller.</p>
+     * if the service is using either the <code>ECS</code> or <code>CODE_DEPLOY</code>
+     * deployment controllers.</p>
      */
     inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
 
@@ -202,7 +194,8 @@ namespace Model
      * (<code>family:revision</code>) or full ARN of the task definition to run in your
      * service. If a <code>revision</code> is not specified, the latest
      * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
-     * if the service is using the <code>ECS</code> deployment controller.</p>
+     * if the service is using either the <code>ECS</code> or <code>CODE_DEPLOY</code>
+     * deployment controllers.</p>
      */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
@@ -211,7 +204,8 @@ namespace Model
      * (<code>family:revision</code>) or full ARN of the task definition to run in your
      * service. If a <code>revision</code> is not specified, the latest
      * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
-     * if the service is using the <code>ECS</code> deployment controller.</p>
+     * if the service is using either the <code>ECS</code> or <code>CODE_DEPLOY</code>
+     * deployment controllers.</p>
      */
     inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
 
@@ -220,7 +214,8 @@ namespace Model
      * (<code>family:revision</code>) or full ARN of the task definition to run in your
      * service. If a <code>revision</code> is not specified, the latest
      * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
-     * if the service is using the <code>ECS</code> deployment controller.</p>
+     * if the service is using either the <code>ECS</code> or <code>CODE_DEPLOY</code>
+     * deployment controllers.</p>
      */
     inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
 
@@ -229,7 +224,8 @@ namespace Model
      * (<code>family:revision</code>) or full ARN of the task definition to run in your
      * service. If a <code>revision</code> is not specified, the latest
      * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
-     * if the service is using the <code>ECS</code> deployment controller.</p>
+     * if the service is using either the <code>ECS</code> or <code>CODE_DEPLOY</code>
+     * deployment controllers.</p>
      */
     inline CreateServiceRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
 
@@ -238,7 +234,8 @@ namespace Model
      * (<code>family:revision</code>) or full ARN of the task definition to run in your
      * service. If a <code>revision</code> is not specified, the latest
      * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
-     * if the service is using the <code>ECS</code> deployment controller.</p>
+     * if the service is using either the <code>ECS</code> or <code>CODE_DEPLOY</code>
+     * deployment controllers.</p>
      */
     inline CreateServiceRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
@@ -247,7 +244,8 @@ namespace Model
      * (<code>family:revision</code>) or full ARN of the task definition to run in your
      * service. If a <code>revision</code> is not specified, the latest
      * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
-     * if the service is using the <code>ECS</code> deployment controller.</p>
+     * if the service is using either the <code>ECS</code> or <code>CODE_DEPLOY</code>
+     * deployment controllers.</p>
      */
     inline CreateServiceRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
@@ -259,9 +257,9 @@ namespace Model
      * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service is using the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
-     * Load Balancer, you can specify multiple target groups to attach to the service.
-     * The service-linked role is required for services that make use of multiple
-     * target groups. For more information, see <a
+     * Load Balancer, you must specify one or more target group ARNs to attach to the
+     * service. The service-linked role is required for services that make use of
+     * multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>If the service is using the
@@ -281,19 +279,20 @@ namespace Model
      * these values can be changed when updating the service.</p> <p>For Application
      * Load Balancers and Network Load Balancers, this object must contain the load
      * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
+     * definition), and the container port to access from the load balancer. The load
+     * balancer name parameter must be omitted. When a task from this service is placed
+     * on a container instance, the container instance and port combination is
+     * registered as a target in the target group specified here.</p> <p>For Classic
+     * Load Balancers, this object must contain the load balancer name, the container
+     * name (as it appears in a container definition), and the container port to access
+     * from the load balancer. The target group ARN parameter must be omitted. When a
      * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p> <p>For Classic Load Balancers, this object must contain the load
-     * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer. When a task from this
-     * service is placed on a container instance, the container instance is registered
-     * with the load balancer specified here.</p> <p>Services with tasks that use the
-     * <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers.
-     * Classic Load Balancers are not supported. Also, when you create any target
-     * groups for these services, you must choose <code>ip</code> as the target type,
-     * not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * is registered with the load balancer specified here.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers. Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
      * network mode are associated with an elastic network interface, not an Amazon EC2
      * instance.</p>
      */
@@ -306,9 +305,9 @@ namespace Model
      * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service is using the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
-     * Load Balancer, you can specify multiple target groups to attach to the service.
-     * The service-linked role is required for services that make use of multiple
-     * target groups. For more information, see <a
+     * Load Balancer, you must specify one or more target group ARNs to attach to the
+     * service. The service-linked role is required for services that make use of
+     * multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>If the service is using the
@@ -328,19 +327,20 @@ namespace Model
      * these values can be changed when updating the service.</p> <p>For Application
      * Load Balancers and Network Load Balancers, this object must contain the load
      * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
+     * definition), and the container port to access from the load balancer. The load
+     * balancer name parameter must be omitted. When a task from this service is placed
+     * on a container instance, the container instance and port combination is
+     * registered as a target in the target group specified here.</p> <p>For Classic
+     * Load Balancers, this object must contain the load balancer name, the container
+     * name (as it appears in a container definition), and the container port to access
+     * from the load balancer. The target group ARN parameter must be omitted. When a
      * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p> <p>For Classic Load Balancers, this object must contain the load
-     * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer. When a task from this
-     * service is placed on a container instance, the container instance is registered
-     * with the load balancer specified here.</p> <p>Services with tasks that use the
-     * <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers.
-     * Classic Load Balancers are not supported. Also, when you create any target
-     * groups for these services, you must choose <code>ip</code> as the target type,
-     * not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * is registered with the load balancer specified here.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers. Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
      * network mode are associated with an elastic network interface, not an Amazon EC2
      * instance.</p>
      */
@@ -353,9 +353,9 @@ namespace Model
      * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service is using the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
-     * Load Balancer, you can specify multiple target groups to attach to the service.
-     * The service-linked role is required for services that make use of multiple
-     * target groups. For more information, see <a
+     * Load Balancer, you must specify one or more target group ARNs to attach to the
+     * service. The service-linked role is required for services that make use of
+     * multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>If the service is using the
@@ -375,19 +375,20 @@ namespace Model
      * these values can be changed when updating the service.</p> <p>For Application
      * Load Balancers and Network Load Balancers, this object must contain the load
      * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
+     * definition), and the container port to access from the load balancer. The load
+     * balancer name parameter must be omitted. When a task from this service is placed
+     * on a container instance, the container instance and port combination is
+     * registered as a target in the target group specified here.</p> <p>For Classic
+     * Load Balancers, this object must contain the load balancer name, the container
+     * name (as it appears in a container definition), and the container port to access
+     * from the load balancer. The target group ARN parameter must be omitted. When a
      * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p> <p>For Classic Load Balancers, this object must contain the load
-     * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer. When a task from this
-     * service is placed on a container instance, the container instance is registered
-     * with the load balancer specified here.</p> <p>Services with tasks that use the
-     * <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers.
-     * Classic Load Balancers are not supported. Also, when you create any target
-     * groups for these services, you must choose <code>ip</code> as the target type,
-     * not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * is registered with the load balancer specified here.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers. Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
      * network mode are associated with an elastic network interface, not an Amazon EC2
      * instance.</p>
      */
@@ -400,9 +401,9 @@ namespace Model
      * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service is using the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
-     * Load Balancer, you can specify multiple target groups to attach to the service.
-     * The service-linked role is required for services that make use of multiple
-     * target groups. For more information, see <a
+     * Load Balancer, you must specify one or more target group ARNs to attach to the
+     * service. The service-linked role is required for services that make use of
+     * multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>If the service is using the
@@ -422,19 +423,20 @@ namespace Model
      * these values can be changed when updating the service.</p> <p>For Application
      * Load Balancers and Network Load Balancers, this object must contain the load
      * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
+     * definition), and the container port to access from the load balancer. The load
+     * balancer name parameter must be omitted. When a task from this service is placed
+     * on a container instance, the container instance and port combination is
+     * registered as a target in the target group specified here.</p> <p>For Classic
+     * Load Balancers, this object must contain the load balancer name, the container
+     * name (as it appears in a container definition), and the container port to access
+     * from the load balancer. The target group ARN parameter must be omitted. When a
      * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p> <p>For Classic Load Balancers, this object must contain the load
-     * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer. When a task from this
-     * service is placed on a container instance, the container instance is registered
-     * with the load balancer specified here.</p> <p>Services with tasks that use the
-     * <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers.
-     * Classic Load Balancers are not supported. Also, when you create any target
-     * groups for these services, you must choose <code>ip</code> as the target type,
-     * not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * is registered with the load balancer specified here.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers. Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
      * network mode are associated with an elastic network interface, not an Amazon EC2
      * instance.</p>
      */
@@ -447,9 +449,9 @@ namespace Model
      * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service is using the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
-     * Load Balancer, you can specify multiple target groups to attach to the service.
-     * The service-linked role is required for services that make use of multiple
-     * target groups. For more information, see <a
+     * Load Balancer, you must specify one or more target group ARNs to attach to the
+     * service. The service-linked role is required for services that make use of
+     * multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>If the service is using the
@@ -469,19 +471,20 @@ namespace Model
      * these values can be changed when updating the service.</p> <p>For Application
      * Load Balancers and Network Load Balancers, this object must contain the load
      * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
+     * definition), and the container port to access from the load balancer. The load
+     * balancer name parameter must be omitted. When a task from this service is placed
+     * on a container instance, the container instance and port combination is
+     * registered as a target in the target group specified here.</p> <p>For Classic
+     * Load Balancers, this object must contain the load balancer name, the container
+     * name (as it appears in a container definition), and the container port to access
+     * from the load balancer. The target group ARN parameter must be omitted. When a
      * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p> <p>For Classic Load Balancers, this object must contain the load
-     * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer. When a task from this
-     * service is placed on a container instance, the container instance is registered
-     * with the load balancer specified here.</p> <p>Services with tasks that use the
-     * <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers.
-     * Classic Load Balancers are not supported. Also, when you create any target
-     * groups for these services, you must choose <code>ip</code> as the target type,
-     * not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * is registered with the load balancer specified here.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers. Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
      * network mode are associated with an elastic network interface, not an Amazon EC2
      * instance.</p>
      */
@@ -494,9 +497,9 @@ namespace Model
      * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service is using the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
-     * Load Balancer, you can specify multiple target groups to attach to the service.
-     * The service-linked role is required for services that make use of multiple
-     * target groups. For more information, see <a
+     * Load Balancer, you must specify one or more target group ARNs to attach to the
+     * service. The service-linked role is required for services that make use of
+     * multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>If the service is using the
@@ -516,19 +519,20 @@ namespace Model
      * these values can be changed when updating the service.</p> <p>For Application
      * Load Balancers and Network Load Balancers, this object must contain the load
      * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
+     * definition), and the container port to access from the load balancer. The load
+     * balancer name parameter must be omitted. When a task from this service is placed
+     * on a container instance, the container instance and port combination is
+     * registered as a target in the target group specified here.</p> <p>For Classic
+     * Load Balancers, this object must contain the load balancer name, the container
+     * name (as it appears in a container definition), and the container port to access
+     * from the load balancer. The target group ARN parameter must be omitted. When a
      * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p> <p>For Classic Load Balancers, this object must contain the load
-     * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer. When a task from this
-     * service is placed on a container instance, the container instance is registered
-     * with the load balancer specified here.</p> <p>Services with tasks that use the
-     * <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers.
-     * Classic Load Balancers are not supported. Also, when you create any target
-     * groups for these services, you must choose <code>ip</code> as the target type,
-     * not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * is registered with the load balancer specified here.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers. Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
      * network mode are associated with an elastic network interface, not an Amazon EC2
      * instance.</p>
      */
@@ -541,9 +545,9 @@ namespace Model
      * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service is using the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
-     * Load Balancer, you can specify multiple target groups to attach to the service.
-     * The service-linked role is required for services that make use of multiple
-     * target groups. For more information, see <a
+     * Load Balancer, you must specify one or more target group ARNs to attach to the
+     * service. The service-linked role is required for services that make use of
+     * multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>If the service is using the
@@ -563,19 +567,20 @@ namespace Model
      * these values can be changed when updating the service.</p> <p>For Application
      * Load Balancers and Network Load Balancers, this object must contain the load
      * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
+     * definition), and the container port to access from the load balancer. The load
+     * balancer name parameter must be omitted. When a task from this service is placed
+     * on a container instance, the container instance and port combination is
+     * registered as a target in the target group specified here.</p> <p>For Classic
+     * Load Balancers, this object must contain the load balancer name, the container
+     * name (as it appears in a container definition), and the container port to access
+     * from the load balancer. The target group ARN parameter must be omitted. When a
      * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p> <p>For Classic Load Balancers, this object must contain the load
-     * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer. When a task from this
-     * service is placed on a container instance, the container instance is registered
-     * with the load balancer specified here.</p> <p>Services with tasks that use the
-     * <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers.
-     * Classic Load Balancers are not supported. Also, when you create any target
-     * groups for these services, you must choose <code>ip</code> as the target type,
-     * not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * is registered with the load balancer specified here.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers. Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
      * network mode are associated with an elastic network interface, not an Amazon EC2
      * instance.</p>
      */
@@ -588,9 +593,9 @@ namespace Model
      * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service is using the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
-     * Load Balancer, you can specify multiple target groups to attach to the service.
-     * The service-linked role is required for services that make use of multiple
-     * target groups. For more information, see <a
+     * Load Balancer, you must specify one or more target group ARNs to attach to the
+     * service. The service-linked role is required for services that make use of
+     * multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>If the service is using the
@@ -610,19 +615,20 @@ namespace Model
      * these values can be changed when updating the service.</p> <p>For Application
      * Load Balancers and Network Load Balancers, this object must contain the load
      * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
+     * definition), and the container port to access from the load balancer. The load
+     * balancer name parameter must be omitted. When a task from this service is placed
+     * on a container instance, the container instance and port combination is
+     * registered as a target in the target group specified here.</p> <p>For Classic
+     * Load Balancers, this object must contain the load balancer name, the container
+     * name (as it appears in a container definition), and the container port to access
+     * from the load balancer. The target group ARN parameter must be omitted. When a
      * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p> <p>For Classic Load Balancers, this object must contain the load
-     * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer. When a task from this
-     * service is placed on a container instance, the container instance is registered
-     * with the load balancer specified here.</p> <p>Services with tasks that use the
-     * <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers.
-     * Classic Load Balancers are not supported. Also, when you create any target
-     * groups for these services, you must choose <code>ip</code> as the target type,
-     * not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * is registered with the load balancer specified here.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers. Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
      * network mode are associated with an elastic network interface, not an Amazon EC2
      * instance.</p>
      */
@@ -633,10 +639,10 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> </note>
+     * Fargate Platform Versions</a>.</p> 
      */
     inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const{ return m_serviceRegistries; }
 
@@ -644,10 +650,10 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> </note>
+     * Fargate Platform Versions</a>.</p> 
      */
     inline bool ServiceRegistriesHasBeenSet() const { return m_serviceRegistriesHasBeenSet; }
 
@@ -655,10 +661,10 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> </note>
+     * Fargate Platform Versions</a>.</p> 
      */
     inline void SetServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = value; }
 
@@ -666,10 +672,10 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> </note>
+     * Fargate Platform Versions</a>.</p> 
      */
     inline void SetServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = std::move(value); }
 
@@ -677,10 +683,10 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> </note>
+     * Fargate Platform Versions</a>.</p> 
      */
     inline CreateServiceRequest& WithServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { SetServiceRegistries(value); return *this;}
 
@@ -688,10 +694,10 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> </note>
+     * Fargate Platform Versions</a>.</p> 
      */
     inline CreateServiceRequest& WithServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { SetServiceRegistries(std::move(value)); return *this;}
 
@@ -699,10 +705,10 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> </note>
+     * Fargate Platform Versions</a>.</p> 
      */
     inline CreateServiceRequest& AddServiceRegistries(const ServiceRegistry& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(value); return *this; }
 
@@ -710,10 +716,10 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> </note>
+     * Fargate Platform Versions</a>.</p> 
      */
     inline CreateServiceRequest& AddServiceRegistries(ServiceRegistry&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(std::move(value)); return *this; }
 
@@ -1147,7 +1153,7 @@ namespace Model
      * only permitted if you are using a load balancer with your service and your task
      * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * the <code>loadBalancers</code> parameter.</p>  <p>If your account has
      * already created the Amazon ECS service-linked role, that role is used by default
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
@@ -1156,7 +1162,7 @@ namespace Model
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
-     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
@@ -1173,7 +1179,7 @@ namespace Model
      * only permitted if you are using a load balancer with your service and your task
      * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * the <code>loadBalancers</code> parameter.</p>  <p>If your account has
      * already created the Amazon ECS service-linked role, that role is used by default
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
@@ -1182,7 +1188,7 @@ namespace Model
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
-     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
@@ -1199,7 +1205,7 @@ namespace Model
      * only permitted if you are using a load balancer with your service and your task
      * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * the <code>loadBalancers</code> parameter.</p>  <p>If your account has
      * already created the Amazon ECS service-linked role, that role is used by default
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
@@ -1208,7 +1214,7 @@ namespace Model
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
-     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
@@ -1225,7 +1231,7 @@ namespace Model
      * only permitted if you are using a load balancer with your service and your task
      * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * the <code>loadBalancers</code> parameter.</p>  <p>If your account has
      * already created the Amazon ECS service-linked role, that role is used by default
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
@@ -1234,7 +1240,7 @@ namespace Model
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
-     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
@@ -1251,7 +1257,7 @@ namespace Model
      * only permitted if you are using a load balancer with your service and your task
      * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * the <code>loadBalancers</code> parameter.</p>  <p>If your account has
      * already created the Amazon ECS service-linked role, that role is used by default
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
@@ -1260,7 +1266,7 @@ namespace Model
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
-     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
@@ -1277,7 +1283,7 @@ namespace Model
      * only permitted if you are using a load balancer with your service and your task
      * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * the <code>loadBalancers</code> parameter.</p>  <p>If your account has
      * already created the Amazon ECS service-linked role, that role is used by default
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
@@ -1286,7 +1292,7 @@ namespace Model
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
-     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
@@ -1303,7 +1309,7 @@ namespace Model
      * only permitted if you are using a load balancer with your service and your task
      * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * the <code>loadBalancers</code> parameter.</p>  <p>If your account has
      * already created the Amazon ECS service-linked role, that role is used by default
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
@@ -1312,7 +1318,7 @@ namespace Model
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
-     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
@@ -1329,7 +1335,7 @@ namespace Model
      * only permitted if you are using a load balancer with your service and your task
      * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * the <code>loadBalancers</code> parameter.</p>  <p>If your account has
      * already created the Amazon ECS service-linked role, that role is used by default
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
@@ -1338,7 +1344,7 @@ namespace Model
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
-     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
@@ -1637,9 +1643,9 @@ namespace Model
      * placement constraints for running tasks and will stop tasks that do not meet the
      * placement constraints. When you're using this strategy, you don't need to
      * specify a desired number of tasks, a task placement strategy, or use Service
-     * Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type or the
+     * Auto Scaling policies.</p>  <p>Tasks using the Fargate launch type or the
      * <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types
-     * don't support the <code>DAEMON</code> scheduling strategy.</p> </note> </li>
+     * don't support the <code>DAEMON</code> scheduling strategy.</p>  </li>
      * </ul>
      */
     inline const SchedulingStrategy& GetSchedulingStrategy() const{ return m_schedulingStrategy; }
@@ -1660,9 +1666,9 @@ namespace Model
      * placement constraints for running tasks and will stop tasks that do not meet the
      * placement constraints. When you're using this strategy, you don't need to
      * specify a desired number of tasks, a task placement strategy, or use Service
-     * Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type or the
+     * Auto Scaling policies.</p>  <p>Tasks using the Fargate launch type or the
      * <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types
-     * don't support the <code>DAEMON</code> scheduling strategy.</p> </note> </li>
+     * don't support the <code>DAEMON</code> scheduling strategy.</p>  </li>
      * </ul>
      */
     inline bool SchedulingStrategyHasBeenSet() const { return m_schedulingStrategyHasBeenSet; }
@@ -1683,9 +1689,9 @@ namespace Model
      * placement constraints for running tasks and will stop tasks that do not meet the
      * placement constraints. When you're using this strategy, you don't need to
      * specify a desired number of tasks, a task placement strategy, or use Service
-     * Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type or the
+     * Auto Scaling policies.</p>  <p>Tasks using the Fargate launch type or the
      * <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types
-     * don't support the <code>DAEMON</code> scheduling strategy.</p> </note> </li>
+     * don't support the <code>DAEMON</code> scheduling strategy.</p>  </li>
      * </ul>
      */
     inline void SetSchedulingStrategy(const SchedulingStrategy& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = value; }
@@ -1706,9 +1712,9 @@ namespace Model
      * placement constraints for running tasks and will stop tasks that do not meet the
      * placement constraints. When you're using this strategy, you don't need to
      * specify a desired number of tasks, a task placement strategy, or use Service
-     * Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type or the
+     * Auto Scaling policies.</p>  <p>Tasks using the Fargate launch type or the
      * <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types
-     * don't support the <code>DAEMON</code> scheduling strategy.</p> </note> </li>
+     * don't support the <code>DAEMON</code> scheduling strategy.</p>  </li>
      * </ul>
      */
     inline void SetSchedulingStrategy(SchedulingStrategy&& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = std::move(value); }
@@ -1729,9 +1735,9 @@ namespace Model
      * placement constraints for running tasks and will stop tasks that do not meet the
      * placement constraints. When you're using this strategy, you don't need to
      * specify a desired number of tasks, a task placement strategy, or use Service
-     * Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type or the
+     * Auto Scaling policies.</p>  <p>Tasks using the Fargate launch type or the
      * <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types
-     * don't support the <code>DAEMON</code> scheduling strategy.</p> </note> </li>
+     * don't support the <code>DAEMON</code> scheduling strategy.</p>  </li>
      * </ul>
      */
     inline CreateServiceRequest& WithSchedulingStrategy(const SchedulingStrategy& value) { SetSchedulingStrategy(value); return *this;}
@@ -1752,9 +1758,9 @@ namespace Model
      * placement constraints for running tasks and will stop tasks that do not meet the
      * placement constraints. When you're using this strategy, you don't need to
      * specify a desired number of tasks, a task placement strategy, or use Service
-     * Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type or the
+     * Auto Scaling policies.</p>  <p>Tasks using the Fargate launch type or the
      * <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types
-     * don't support the <code>DAEMON</code> scheduling strategy.</p> </note> </li>
+     * don't support the <code>DAEMON</code> scheduling strategy.</p>  </li>
      * </ul>
      */
     inline CreateServiceRequest& WithSchedulingStrategy(SchedulingStrategy&& value) { SetSchedulingStrategy(std::move(value)); return *this;}

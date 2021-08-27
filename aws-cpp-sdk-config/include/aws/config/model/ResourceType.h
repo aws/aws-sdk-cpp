@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -91,6 +81,9 @@ namespace Model
     AWS_CloudFront_Distribution,
     AWS_CloudFront_StreamingDistribution,
     AWS_Lambda_Function,
+    AWS_NetworkFirewall_Firewall,
+    AWS_NetworkFirewall_FirewallPolicy,
+    AWS_NetworkFirewall_RuleGroup,
     AWS_ElasticBeanstalk_Application,
     AWS_ElasticBeanstalk_ApplicationVersion,
     AWS_ElasticBeanstalk_Environment,
@@ -115,7 +108,10 @@ namespace Model
     AWS_ServiceCatalog_Portfolio,
     AWS_SQS_Queue,
     AWS_KMS_Key,
-    AWS_QLDB_Ledger
+    AWS_QLDB_Ledger,
+    AWS_SecretsManager_Secret,
+    AWS_SNS_Topic,
+    AWS_SSM_FileData
   };
 
 namespace ResourceTypeMapper

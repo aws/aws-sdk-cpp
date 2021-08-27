@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
@@ -29,6 +19,7 @@
 #include <aws/ds/model/RadiusSettings.h>
 #include <aws/ds/model/RadiusStatus.h>
 #include <aws/ds/model/OwnerDirectoryDescription.h>
+#include <aws/ds/model/RegionsInfo.h>
 #include <utility>
 
 namespace Aws
@@ -1039,6 +1030,37 @@ namespace Model
      */
     inline DirectoryDescription& WithOwnerDirectoryDescription(OwnerDirectoryDescription&& value) { SetOwnerDirectoryDescription(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Lists the Regions where the directory has replicated.</p>
+     */
+    inline const RegionsInfo& GetRegionsInfo() const{ return m_regionsInfo; }
+
+    /**
+     * <p>Lists the Regions where the directory has replicated.</p>
+     */
+    inline bool RegionsInfoHasBeenSet() const { return m_regionsInfoHasBeenSet; }
+
+    /**
+     * <p>Lists the Regions where the directory has replicated.</p>
+     */
+    inline void SetRegionsInfo(const RegionsInfo& value) { m_regionsInfoHasBeenSet = true; m_regionsInfo = value; }
+
+    /**
+     * <p>Lists the Regions where the directory has replicated.</p>
+     */
+    inline void SetRegionsInfo(RegionsInfo&& value) { m_regionsInfoHasBeenSet = true; m_regionsInfo = std::move(value); }
+
+    /**
+     * <p>Lists the Regions where the directory has replicated.</p>
+     */
+    inline DirectoryDescription& WithRegionsInfo(const RegionsInfo& value) { SetRegionsInfo(value); return *this;}
+
+    /**
+     * <p>Lists the Regions where the directory has replicated.</p>
+     */
+    inline DirectoryDescription& WithRegionsInfo(RegionsInfo&& value) { SetRegionsInfo(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_directoryId;
@@ -1112,6 +1134,9 @@ namespace Model
 
     OwnerDirectoryDescription m_ownerDirectoryDescription;
     bool m_ownerDirectoryDescriptionHasBeenSet;
+
+    RegionsInfo m_regionsInfo;
+    bool m_regionsInfoHasBeenSet;
   };
 
 } // namespace Model

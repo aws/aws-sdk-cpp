@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/guardduty/model/Resource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,6 +20,7 @@ namespace Model
 
 Resource::Resource() : 
     m_accessKeyDetailsHasBeenSet(false),
+    m_s3BucketDetailsHasBeenSet(false),
     m_instanceDetailsHasBeenSet(false),
     m_resourceTypeHasBeenSet(false)
 {
@@ -37,6 +28,7 @@ Resource::Resource() :
 
 Resource::Resource(JsonView jsonValue) : 
     m_accessKeyDetailsHasBeenSet(false),
+    m_s3BucketDetailsHasBeenSet(false),
     m_instanceDetailsHasBeenSet(false),
     m_resourceTypeHasBeenSet(false)
 {
@@ -50,6 +42,16 @@ Resource& Resource::operator =(JsonView jsonValue)
     m_accessKeyDetails = jsonValue.GetObject("accessKeyDetails");
 
     m_accessKeyDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("s3BucketDetails"))
+  {
+    Array<JsonView> s3BucketDetailsJsonList = jsonValue.GetArray("s3BucketDetails");
+    for(unsigned s3BucketDetailsIndex = 0; s3BucketDetailsIndex < s3BucketDetailsJsonList.GetLength(); ++s3BucketDetailsIndex)
+    {
+      m_s3BucketDetails.push_back(s3BucketDetailsJsonList[s3BucketDetailsIndex].AsObject());
+    }
+    m_s3BucketDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("instanceDetails"))
@@ -76,6 +78,17 @@ JsonValue Resource::Jsonize() const
   if(m_accessKeyDetailsHasBeenSet)
   {
    payload.WithObject("accessKeyDetails", m_accessKeyDetails.Jsonize());
+
+  }
+
+  if(m_s3BucketDetailsHasBeenSet)
+  {
+   Array<JsonValue> s3BucketDetailsJsonList(m_s3BucketDetails.size());
+   for(unsigned s3BucketDetailsIndex = 0; s3BucketDetailsIndex < s3BucketDetailsJsonList.GetLength(); ++s3BucketDetailsIndex)
+   {
+     s3BucketDetailsJsonList[s3BucketDetailsIndex].AsObject(m_s3BucketDetails[s3BucketDetailsIndex].Jsonize());
+   }
+   payload.WithArray("s3BucketDetails", std::move(s3BucketDetailsJsonList));
 
   }
 

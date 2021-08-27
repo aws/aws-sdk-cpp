@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
@@ -274,6 +264,31 @@ namespace Model
     inline DomainPackageDetails& WithDomainPackageStatus(DomainPackageStatus&& value) { SetDomainPackageStatus(std::move(value)); return *this;}
 
 
+    
+    inline const Aws::String& GetPackageVersion() const{ return m_packageVersion; }
+
+    
+    inline bool PackageVersionHasBeenSet() const { return m_packageVersionHasBeenSet; }
+
+    
+    inline void SetPackageVersion(const Aws::String& value) { m_packageVersionHasBeenSet = true; m_packageVersion = value; }
+
+    
+    inline void SetPackageVersion(Aws::String&& value) { m_packageVersionHasBeenSet = true; m_packageVersion = std::move(value); }
+
+    
+    inline void SetPackageVersion(const char* value) { m_packageVersionHasBeenSet = true; m_packageVersion.assign(value); }
+
+    
+    inline DomainPackageDetails& WithPackageVersion(const Aws::String& value) { SetPackageVersion(value); return *this;}
+
+    
+    inline DomainPackageDetails& WithPackageVersion(Aws::String&& value) { SetPackageVersion(std::move(value)); return *this;}
+
+    
+    inline DomainPackageDetails& WithPackageVersion(const char* value) { SetPackageVersion(value); return *this;}
+
+
     /**
      * <p>The relative path on Amazon ES nodes, which can be used as synonym_path when
      * the package is synonym file.</p>
@@ -378,6 +393,9 @@ namespace Model
 
     DomainPackageStatus m_domainPackageStatus;
     bool m_domainPackageStatusHasBeenSet;
+
+    Aws::String m_packageVersion;
+    bool m_packageVersionHasBeenSet;
 
     Aws::String m_referencePath;
     bool m_referencePathHasBeenSet;

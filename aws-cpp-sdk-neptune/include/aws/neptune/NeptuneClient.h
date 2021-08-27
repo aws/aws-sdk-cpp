@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/neptune/Neptune_EXPORTS.h>
@@ -28,6 +18,7 @@
 #include <aws/neptune/model/CopyDBClusterSnapshotResult.h>
 #include <aws/neptune/model/CopyDBParameterGroupResult.h>
 #include <aws/neptune/model/CreateDBClusterResult.h>
+#include <aws/neptune/model/CreateDBClusterEndpointResult.h>
 #include <aws/neptune/model/CreateDBClusterParameterGroupResult.h>
 #include <aws/neptune/model/CreateDBClusterSnapshotResult.h>
 #include <aws/neptune/model/CreateDBInstanceResult.h>
@@ -35,9 +26,11 @@
 #include <aws/neptune/model/CreateDBSubnetGroupResult.h>
 #include <aws/neptune/model/CreateEventSubscriptionResult.h>
 #include <aws/neptune/model/DeleteDBClusterResult.h>
+#include <aws/neptune/model/DeleteDBClusterEndpointResult.h>
 #include <aws/neptune/model/DeleteDBClusterSnapshotResult.h>
 #include <aws/neptune/model/DeleteDBInstanceResult.h>
 #include <aws/neptune/model/DeleteEventSubscriptionResult.h>
+#include <aws/neptune/model/DescribeDBClusterEndpointsResult.h>
 #include <aws/neptune/model/DescribeDBClusterParameterGroupsResult.h>
 #include <aws/neptune/model/DescribeDBClusterParametersResult.h>
 #include <aws/neptune/model/DescribeDBClusterSnapshotAttributesResult.h>
@@ -59,6 +52,7 @@
 #include <aws/neptune/model/FailoverDBClusterResult.h>
 #include <aws/neptune/model/ListTagsForResourceResult.h>
 #include <aws/neptune/model/ModifyDBClusterResult.h>
+#include <aws/neptune/model/ModifyDBClusterEndpointResult.h>
 #include <aws/neptune/model/ModifyDBClusterParameterGroupResult.h>
 #include <aws/neptune/model/ModifyDBClusterSnapshotAttributeResult.h>
 #include <aws/neptune/model/ModifyDBInstanceResult.h>
@@ -128,6 +122,7 @@ namespace Model
         class CopyDBClusterSnapshotRequest;
         class CopyDBParameterGroupRequest;
         class CreateDBClusterRequest;
+        class CreateDBClusterEndpointRequest;
         class CreateDBClusterParameterGroupRequest;
         class CreateDBClusterSnapshotRequest;
         class CreateDBInstanceRequest;
@@ -135,12 +130,14 @@ namespace Model
         class CreateDBSubnetGroupRequest;
         class CreateEventSubscriptionRequest;
         class DeleteDBClusterRequest;
+        class DeleteDBClusterEndpointRequest;
         class DeleteDBClusterParameterGroupRequest;
         class DeleteDBClusterSnapshotRequest;
         class DeleteDBInstanceRequest;
         class DeleteDBParameterGroupRequest;
         class DeleteDBSubnetGroupRequest;
         class DeleteEventSubscriptionRequest;
+        class DescribeDBClusterEndpointsRequest;
         class DescribeDBClusterParameterGroupsRequest;
         class DescribeDBClusterParametersRequest;
         class DescribeDBClusterSnapshotAttributesRequest;
@@ -162,6 +159,7 @@ namespace Model
         class FailoverDBClusterRequest;
         class ListTagsForResourceRequest;
         class ModifyDBClusterRequest;
+        class ModifyDBClusterEndpointRequest;
         class ModifyDBClusterParameterGroupRequest;
         class ModifyDBClusterSnapshotAttributeRequest;
         class ModifyDBInstanceRequest;
@@ -180,65 +178,69 @@ namespace Model
         class StartDBClusterRequest;
         class StopDBClusterRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<NeptuneErrors>> AddRoleToDBClusterOutcome;
-        typedef Aws::Utils::Outcome<AddSourceIdentifierToSubscriptionResult, Aws::Client::AWSError<NeptuneErrors>> AddSourceIdentifierToSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<NeptuneErrors>> AddTagsToResourceOutcome;
-        typedef Aws::Utils::Outcome<ApplyPendingMaintenanceActionResult, Aws::Client::AWSError<NeptuneErrors>> ApplyPendingMaintenanceActionOutcome;
-        typedef Aws::Utils::Outcome<CopyDBClusterParameterGroupResult, Aws::Client::AWSError<NeptuneErrors>> CopyDBClusterParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<CopyDBClusterSnapshotResult, Aws::Client::AWSError<NeptuneErrors>> CopyDBClusterSnapshotOutcome;
-        typedef Aws::Utils::Outcome<CopyDBParameterGroupResult, Aws::Client::AWSError<NeptuneErrors>> CopyDBParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateDBClusterResult, Aws::Client::AWSError<NeptuneErrors>> CreateDBClusterOutcome;
-        typedef Aws::Utils::Outcome<CreateDBClusterParameterGroupResult, Aws::Client::AWSError<NeptuneErrors>> CreateDBClusterParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateDBClusterSnapshotResult, Aws::Client::AWSError<NeptuneErrors>> CreateDBClusterSnapshotOutcome;
-        typedef Aws::Utils::Outcome<CreateDBInstanceResult, Aws::Client::AWSError<NeptuneErrors>> CreateDBInstanceOutcome;
-        typedef Aws::Utils::Outcome<CreateDBParameterGroupResult, Aws::Client::AWSError<NeptuneErrors>> CreateDBParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateDBSubnetGroupResult, Aws::Client::AWSError<NeptuneErrors>> CreateDBSubnetGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateEventSubscriptionResult, Aws::Client::AWSError<NeptuneErrors>> CreateEventSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<DeleteDBClusterResult, Aws::Client::AWSError<NeptuneErrors>> DeleteDBClusterOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<NeptuneErrors>> DeleteDBClusterParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteDBClusterSnapshotResult, Aws::Client::AWSError<NeptuneErrors>> DeleteDBClusterSnapshotOutcome;
-        typedef Aws::Utils::Outcome<DeleteDBInstanceResult, Aws::Client::AWSError<NeptuneErrors>> DeleteDBInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<NeptuneErrors>> DeleteDBParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<NeptuneErrors>> DeleteDBSubnetGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteEventSubscriptionResult, Aws::Client::AWSError<NeptuneErrors>> DeleteEventSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBClusterParameterGroupsResult, Aws::Client::AWSError<NeptuneErrors>> DescribeDBClusterParameterGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBClusterParametersResult, Aws::Client::AWSError<NeptuneErrors>> DescribeDBClusterParametersOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBClusterSnapshotAttributesResult, Aws::Client::AWSError<NeptuneErrors>> DescribeDBClusterSnapshotAttributesOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBClusterSnapshotsResult, Aws::Client::AWSError<NeptuneErrors>> DescribeDBClusterSnapshotsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBClustersResult, Aws::Client::AWSError<NeptuneErrors>> DescribeDBClustersOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBEngineVersionsResult, Aws::Client::AWSError<NeptuneErrors>> DescribeDBEngineVersionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBInstancesResult, Aws::Client::AWSError<NeptuneErrors>> DescribeDBInstancesOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBParameterGroupsResult, Aws::Client::AWSError<NeptuneErrors>> DescribeDBParameterGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBParametersResult, Aws::Client::AWSError<NeptuneErrors>> DescribeDBParametersOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBSubnetGroupsResult, Aws::Client::AWSError<NeptuneErrors>> DescribeDBSubnetGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeEngineDefaultClusterParametersResult, Aws::Client::AWSError<NeptuneErrors>> DescribeEngineDefaultClusterParametersOutcome;
-        typedef Aws::Utils::Outcome<DescribeEngineDefaultParametersResult, Aws::Client::AWSError<NeptuneErrors>> DescribeEngineDefaultParametersOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventCategoriesResult, Aws::Client::AWSError<NeptuneErrors>> DescribeEventCategoriesOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventSubscriptionsResult, Aws::Client::AWSError<NeptuneErrors>> DescribeEventSubscriptionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventsResult, Aws::Client::AWSError<NeptuneErrors>> DescribeEventsOutcome;
-        typedef Aws::Utils::Outcome<DescribeOrderableDBInstanceOptionsResult, Aws::Client::AWSError<NeptuneErrors>> DescribeOrderableDBInstanceOptionsOutcome;
-        typedef Aws::Utils::Outcome<DescribePendingMaintenanceActionsResult, Aws::Client::AWSError<NeptuneErrors>> DescribePendingMaintenanceActionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeValidDBInstanceModificationsResult, Aws::Client::AWSError<NeptuneErrors>> DescribeValidDBInstanceModificationsOutcome;
-        typedef Aws::Utils::Outcome<FailoverDBClusterResult, Aws::Client::AWSError<NeptuneErrors>> FailoverDBClusterOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<NeptuneErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBClusterResult, Aws::Client::AWSError<NeptuneErrors>> ModifyDBClusterOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBClusterParameterGroupResult, Aws::Client::AWSError<NeptuneErrors>> ModifyDBClusterParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBClusterSnapshotAttributeResult, Aws::Client::AWSError<NeptuneErrors>> ModifyDBClusterSnapshotAttributeOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBInstanceResult, Aws::Client::AWSError<NeptuneErrors>> ModifyDBInstanceOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBParameterGroupResult, Aws::Client::AWSError<NeptuneErrors>> ModifyDBParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBSubnetGroupResult, Aws::Client::AWSError<NeptuneErrors>> ModifyDBSubnetGroupOutcome;
-        typedef Aws::Utils::Outcome<ModifyEventSubscriptionResult, Aws::Client::AWSError<NeptuneErrors>> ModifyEventSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<PromoteReadReplicaDBClusterResult, Aws::Client::AWSError<NeptuneErrors>> PromoteReadReplicaDBClusterOutcome;
-        typedef Aws::Utils::Outcome<RebootDBInstanceResult, Aws::Client::AWSError<NeptuneErrors>> RebootDBInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<NeptuneErrors>> RemoveRoleFromDBClusterOutcome;
-        typedef Aws::Utils::Outcome<RemoveSourceIdentifierFromSubscriptionResult, Aws::Client::AWSError<NeptuneErrors>> RemoveSourceIdentifierFromSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<NeptuneErrors>> RemoveTagsFromResourceOutcome;
-        typedef Aws::Utils::Outcome<ResetDBClusterParameterGroupResult, Aws::Client::AWSError<NeptuneErrors>> ResetDBClusterParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<ResetDBParameterGroupResult, Aws::Client::AWSError<NeptuneErrors>> ResetDBParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<RestoreDBClusterFromSnapshotResult, Aws::Client::AWSError<NeptuneErrors>> RestoreDBClusterFromSnapshotOutcome;
-        typedef Aws::Utils::Outcome<RestoreDBClusterToPointInTimeResult, Aws::Client::AWSError<NeptuneErrors>> RestoreDBClusterToPointInTimeOutcome;
-        typedef Aws::Utils::Outcome<StartDBClusterResult, Aws::Client::AWSError<NeptuneErrors>> StartDBClusterOutcome;
-        typedef Aws::Utils::Outcome<StopDBClusterResult, Aws::Client::AWSError<NeptuneErrors>> StopDBClusterOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, NeptuneError> AddRoleToDBClusterOutcome;
+        typedef Aws::Utils::Outcome<AddSourceIdentifierToSubscriptionResult, NeptuneError> AddSourceIdentifierToSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, NeptuneError> AddTagsToResourceOutcome;
+        typedef Aws::Utils::Outcome<ApplyPendingMaintenanceActionResult, NeptuneError> ApplyPendingMaintenanceActionOutcome;
+        typedef Aws::Utils::Outcome<CopyDBClusterParameterGroupResult, NeptuneError> CopyDBClusterParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<CopyDBClusterSnapshotResult, NeptuneError> CopyDBClusterSnapshotOutcome;
+        typedef Aws::Utils::Outcome<CopyDBParameterGroupResult, NeptuneError> CopyDBParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateDBClusterResult, NeptuneError> CreateDBClusterOutcome;
+        typedef Aws::Utils::Outcome<CreateDBClusterEndpointResult, NeptuneError> CreateDBClusterEndpointOutcome;
+        typedef Aws::Utils::Outcome<CreateDBClusterParameterGroupResult, NeptuneError> CreateDBClusterParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateDBClusterSnapshotResult, NeptuneError> CreateDBClusterSnapshotOutcome;
+        typedef Aws::Utils::Outcome<CreateDBInstanceResult, NeptuneError> CreateDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<CreateDBParameterGroupResult, NeptuneError> CreateDBParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateDBSubnetGroupResult, NeptuneError> CreateDBSubnetGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateEventSubscriptionResult, NeptuneError> CreateEventSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<DeleteDBClusterResult, NeptuneError> DeleteDBClusterOutcome;
+        typedef Aws::Utils::Outcome<DeleteDBClusterEndpointResult, NeptuneError> DeleteDBClusterEndpointOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, NeptuneError> DeleteDBClusterParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteDBClusterSnapshotResult, NeptuneError> DeleteDBClusterSnapshotOutcome;
+        typedef Aws::Utils::Outcome<DeleteDBInstanceResult, NeptuneError> DeleteDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, NeptuneError> DeleteDBParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, NeptuneError> DeleteDBSubnetGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteEventSubscriptionResult, NeptuneError> DeleteEventSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBClusterEndpointsResult, NeptuneError> DescribeDBClusterEndpointsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBClusterParameterGroupsResult, NeptuneError> DescribeDBClusterParameterGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBClusterParametersResult, NeptuneError> DescribeDBClusterParametersOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBClusterSnapshotAttributesResult, NeptuneError> DescribeDBClusterSnapshotAttributesOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBClusterSnapshotsResult, NeptuneError> DescribeDBClusterSnapshotsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBClustersResult, NeptuneError> DescribeDBClustersOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBEngineVersionsResult, NeptuneError> DescribeDBEngineVersionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBInstancesResult, NeptuneError> DescribeDBInstancesOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBParameterGroupsResult, NeptuneError> DescribeDBParameterGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBParametersResult, NeptuneError> DescribeDBParametersOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBSubnetGroupsResult, NeptuneError> DescribeDBSubnetGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEngineDefaultClusterParametersResult, NeptuneError> DescribeEngineDefaultClusterParametersOutcome;
+        typedef Aws::Utils::Outcome<DescribeEngineDefaultParametersResult, NeptuneError> DescribeEngineDefaultParametersOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventCategoriesResult, NeptuneError> DescribeEventCategoriesOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventSubscriptionsResult, NeptuneError> DescribeEventSubscriptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventsResult, NeptuneError> DescribeEventsOutcome;
+        typedef Aws::Utils::Outcome<DescribeOrderableDBInstanceOptionsResult, NeptuneError> DescribeOrderableDBInstanceOptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribePendingMaintenanceActionsResult, NeptuneError> DescribePendingMaintenanceActionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeValidDBInstanceModificationsResult, NeptuneError> DescribeValidDBInstanceModificationsOutcome;
+        typedef Aws::Utils::Outcome<FailoverDBClusterResult, NeptuneError> FailoverDBClusterOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, NeptuneError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBClusterResult, NeptuneError> ModifyDBClusterOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBClusterEndpointResult, NeptuneError> ModifyDBClusterEndpointOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBClusterParameterGroupResult, NeptuneError> ModifyDBClusterParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBClusterSnapshotAttributeResult, NeptuneError> ModifyDBClusterSnapshotAttributeOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBInstanceResult, NeptuneError> ModifyDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBParameterGroupResult, NeptuneError> ModifyDBParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBSubnetGroupResult, NeptuneError> ModifyDBSubnetGroupOutcome;
+        typedef Aws::Utils::Outcome<ModifyEventSubscriptionResult, NeptuneError> ModifyEventSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<PromoteReadReplicaDBClusterResult, NeptuneError> PromoteReadReplicaDBClusterOutcome;
+        typedef Aws::Utils::Outcome<RebootDBInstanceResult, NeptuneError> RebootDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, NeptuneError> RemoveRoleFromDBClusterOutcome;
+        typedef Aws::Utils::Outcome<RemoveSourceIdentifierFromSubscriptionResult, NeptuneError> RemoveSourceIdentifierFromSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, NeptuneError> RemoveTagsFromResourceOutcome;
+        typedef Aws::Utils::Outcome<ResetDBClusterParameterGroupResult, NeptuneError> ResetDBClusterParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<ResetDBParameterGroupResult, NeptuneError> ResetDBParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<RestoreDBClusterFromSnapshotResult, NeptuneError> RestoreDBClusterFromSnapshotOutcome;
+        typedef Aws::Utils::Outcome<RestoreDBClusterToPointInTimeResult, NeptuneError> RestoreDBClusterToPointInTimeOutcome;
+        typedef Aws::Utils::Outcome<StartDBClusterResult, NeptuneError> StartDBClusterOutcome;
+        typedef Aws::Utils::Outcome<StopDBClusterResult, NeptuneError> StopDBClusterOutcome;
 
         typedef std::future<AddRoleToDBClusterOutcome> AddRoleToDBClusterOutcomeCallable;
         typedef std::future<AddSourceIdentifierToSubscriptionOutcome> AddSourceIdentifierToSubscriptionOutcomeCallable;
@@ -248,6 +250,7 @@ namespace Model
         typedef std::future<CopyDBClusterSnapshotOutcome> CopyDBClusterSnapshotOutcomeCallable;
         typedef std::future<CopyDBParameterGroupOutcome> CopyDBParameterGroupOutcomeCallable;
         typedef std::future<CreateDBClusterOutcome> CreateDBClusterOutcomeCallable;
+        typedef std::future<CreateDBClusterEndpointOutcome> CreateDBClusterEndpointOutcomeCallable;
         typedef std::future<CreateDBClusterParameterGroupOutcome> CreateDBClusterParameterGroupOutcomeCallable;
         typedef std::future<CreateDBClusterSnapshotOutcome> CreateDBClusterSnapshotOutcomeCallable;
         typedef std::future<CreateDBInstanceOutcome> CreateDBInstanceOutcomeCallable;
@@ -255,12 +258,14 @@ namespace Model
         typedef std::future<CreateDBSubnetGroupOutcome> CreateDBSubnetGroupOutcomeCallable;
         typedef std::future<CreateEventSubscriptionOutcome> CreateEventSubscriptionOutcomeCallable;
         typedef std::future<DeleteDBClusterOutcome> DeleteDBClusterOutcomeCallable;
+        typedef std::future<DeleteDBClusterEndpointOutcome> DeleteDBClusterEndpointOutcomeCallable;
         typedef std::future<DeleteDBClusterParameterGroupOutcome> DeleteDBClusterParameterGroupOutcomeCallable;
         typedef std::future<DeleteDBClusterSnapshotOutcome> DeleteDBClusterSnapshotOutcomeCallable;
         typedef std::future<DeleteDBInstanceOutcome> DeleteDBInstanceOutcomeCallable;
         typedef std::future<DeleteDBParameterGroupOutcome> DeleteDBParameterGroupOutcomeCallable;
         typedef std::future<DeleteDBSubnetGroupOutcome> DeleteDBSubnetGroupOutcomeCallable;
         typedef std::future<DeleteEventSubscriptionOutcome> DeleteEventSubscriptionOutcomeCallable;
+        typedef std::future<DescribeDBClusterEndpointsOutcome> DescribeDBClusterEndpointsOutcomeCallable;
         typedef std::future<DescribeDBClusterParameterGroupsOutcome> DescribeDBClusterParameterGroupsOutcomeCallable;
         typedef std::future<DescribeDBClusterParametersOutcome> DescribeDBClusterParametersOutcomeCallable;
         typedef std::future<DescribeDBClusterSnapshotAttributesOutcome> DescribeDBClusterSnapshotAttributesOutcomeCallable;
@@ -282,6 +287,7 @@ namespace Model
         typedef std::future<FailoverDBClusterOutcome> FailoverDBClusterOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ModifyDBClusterOutcome> ModifyDBClusterOutcomeCallable;
+        typedef std::future<ModifyDBClusterEndpointOutcome> ModifyDBClusterEndpointOutcomeCallable;
         typedef std::future<ModifyDBClusterParameterGroupOutcome> ModifyDBClusterParameterGroupOutcomeCallable;
         typedef std::future<ModifyDBClusterSnapshotAttributeOutcome> ModifyDBClusterSnapshotAttributeOutcomeCallable;
         typedef std::future<ModifyDBInstanceOutcome> ModifyDBInstanceOutcomeCallable;
@@ -311,6 +317,7 @@ namespace Model
     typedef std::function<void(const NeptuneClient*, const Model::CopyDBClusterSnapshotRequest&, const Model::CopyDBClusterSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyDBClusterSnapshotResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::CopyDBParameterGroupRequest&, const Model::CopyDBParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyDBParameterGroupResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::CreateDBClusterRequest&, const Model::CreateDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDBClusterResponseReceivedHandler;
+    typedef std::function<void(const NeptuneClient*, const Model::CreateDBClusterEndpointRequest&, const Model::CreateDBClusterEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDBClusterEndpointResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::CreateDBClusterParameterGroupRequest&, const Model::CreateDBClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDBClusterParameterGroupResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::CreateDBClusterSnapshotRequest&, const Model::CreateDBClusterSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDBClusterSnapshotResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::CreateDBInstanceRequest&, const Model::CreateDBInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDBInstanceResponseReceivedHandler;
@@ -318,12 +325,14 @@ namespace Model
     typedef std::function<void(const NeptuneClient*, const Model::CreateDBSubnetGroupRequest&, const Model::CreateDBSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDBSubnetGroupResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::CreateEventSubscriptionRequest&, const Model::CreateEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventSubscriptionResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DeleteDBClusterRequest&, const Model::DeleteDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBClusterResponseReceivedHandler;
+    typedef std::function<void(const NeptuneClient*, const Model::DeleteDBClusterEndpointRequest&, const Model::DeleteDBClusterEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBClusterEndpointResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DeleteDBClusterParameterGroupRequest&, const Model::DeleteDBClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBClusterParameterGroupResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DeleteDBClusterSnapshotRequest&, const Model::DeleteDBClusterSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBClusterSnapshotResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DeleteDBInstanceRequest&, const Model::DeleteDBInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBInstanceResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DeleteDBParameterGroupRequest&, const Model::DeleteDBParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBParameterGroupResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DeleteDBSubnetGroupRequest&, const Model::DeleteDBSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBSubnetGroupResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DeleteEventSubscriptionRequest&, const Model::DeleteEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventSubscriptionResponseReceivedHandler;
+    typedef std::function<void(const NeptuneClient*, const Model::DescribeDBClusterEndpointsRequest&, const Model::DescribeDBClusterEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBClusterEndpointsResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DescribeDBClusterParameterGroupsRequest&, const Model::DescribeDBClusterParameterGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBClusterParameterGroupsResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DescribeDBClusterParametersRequest&, const Model::DescribeDBClusterParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBClusterParametersResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DescribeDBClusterSnapshotAttributesRequest&, const Model::DescribeDBClusterSnapshotAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBClusterSnapshotAttributesResponseReceivedHandler;
@@ -345,6 +354,7 @@ namespace Model
     typedef std::function<void(const NeptuneClient*, const Model::FailoverDBClusterRequest&, const Model::FailoverDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FailoverDBClusterResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::ModifyDBClusterRequest&, const Model::ModifyDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBClusterResponseReceivedHandler;
+    typedef std::function<void(const NeptuneClient*, const Model::ModifyDBClusterEndpointRequest&, const Model::ModifyDBClusterEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBClusterEndpointResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::ModifyDBClusterParameterGroupRequest&, const Model::ModifyDBClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBClusterParameterGroupResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::ModifyDBClusterSnapshotAttributeRequest&, const Model::ModifyDBClusterSnapshotAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBClusterSnapshotAttributeResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::ModifyDBInstanceRequest&, const Model::ModifyDBInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBInstanceResponseReceivedHandler;
@@ -408,8 +418,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~NeptuneClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "Neptune"; }
 
 
        /**
@@ -670,6 +678,34 @@ namespace Model
         virtual void CreateDBClusterAsync(const Model::CreateDBClusterRequest& request, const CreateDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a new custom endpoint and associates it with an Amazon Neptune DB
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDBClusterEndpointOutcome CreateDBClusterEndpoint(const Model::CreateDBClusterEndpointRequest& request) const;
+
+        /**
+         * <p>Creates a new custom endpoint and associates it with an Amazon Neptune DB
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterEndpoint">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateDBClusterEndpointOutcomeCallable CreateDBClusterEndpointCallable(const Model::CreateDBClusterEndpointRequest& request) const;
+
+        /**
+         * <p>Creates a new custom endpoint and associates it with an Amazon Neptune DB
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterEndpoint">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateDBClusterEndpointAsync(const Model::CreateDBClusterEndpointRequest& request, const CreateDBClusterEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a new DB cluster parameter group.</p> <p>Parameters in a DB cluster
          * parameter group apply to all of the instances in a DB cluster.</p> <p> A DB
          * cluster parameter group is initially created with the default parameters for the
@@ -680,7 +716,7 @@ namespace Model
          * <a>ModifyDBCluster</a>. When you associate a new DB cluster parameter group with
          * a running DB cluster, you need to reboot the DB instances in the DB cluster
          * without failover for the new DB cluster parameter group and associated settings
-         * to take effect.</p> <important> <p>After you create a DB cluster parameter
+         * to take effect.</p>  <p>After you create a DB cluster parameter
          * group, you should wait at least 5 minutes before creating your first DB cluster
          * that uses that DB cluster parameter group as the default parameter group. This
          * allows Amazon Neptune to fully complete the create action before the DB cluster
@@ -691,7 +727,7 @@ namespace Model
          * Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
          * Neptune console</a> or the <a>DescribeDBClusterParameters</a> command to verify
          * that your DB cluster parameter group has been created or modified.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>
          */
@@ -708,7 +744,7 @@ namespace Model
          * <a>ModifyDBCluster</a>. When you associate a new DB cluster parameter group with
          * a running DB cluster, you need to reboot the DB instances in the DB cluster
          * without failover for the new DB cluster parameter group and associated settings
-         * to take effect.</p> <important> <p>After you create a DB cluster parameter
+         * to take effect.</p>  <p>After you create a DB cluster parameter
          * group, you should wait at least 5 minutes before creating your first DB cluster
          * that uses that DB cluster parameter group as the default parameter group. This
          * allows Amazon Neptune to fully complete the create action before the DB cluster
@@ -719,7 +755,7 @@ namespace Model
          * Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
          * Neptune console</a> or the <a>DescribeDBClusterParameters</a> command to verify
          * that your DB cluster parameter group has been created or modified.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -738,7 +774,7 @@ namespace Model
          * <a>ModifyDBCluster</a>. When you associate a new DB cluster parameter group with
          * a running DB cluster, you need to reboot the DB instances in the DB cluster
          * without failover for the new DB cluster parameter group and associated settings
-         * to take effect.</p> <important> <p>After you create a DB cluster parameter
+         * to take effect.</p>  <p>After you create a DB cluster parameter
          * group, you should wait at least 5 minutes before creating your first DB cluster
          * that uses that DB cluster parameter group as the default parameter group. This
          * allows Amazon Neptune to fully complete the create action before the DB cluster
@@ -749,7 +785,7 @@ namespace Model
          * Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
          * Neptune console</a> or the <a>DescribeDBClusterParameters</a> command to verify
          * that your DB cluster parameter group has been created or modified.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -816,7 +852,7 @@ namespace Model
          * using <i>ModifyDBInstance</i>. When you associate a new DB parameter group with
          * a running DB instance, you need to reboot the DB instance without failover for
          * the new DB parameter group and associated settings to take effect.</p>
-         * <important> <p>After you create a DB parameter group, you should wait at least 5
+         *  <p>After you create a DB parameter group, you should wait at least 5
          * minutes before creating your first DB instance that uses that DB parameter group
          * as the default parameter group. This allows Amazon Neptune to fully complete the
          * create action before the parameter group is used as the default for a new DB
@@ -825,7 +861,7 @@ namespace Model
          * the default database defined by the <code>character_set_database</code>
          * parameter. You can use the <i>Parameter Groups</i> option of the Amazon Neptune
          * console or the <i>DescribeDBParameters</i> command to verify that your DB
-         * parameter group has been created or modified.</p> </important><p><h3>See
+         * parameter group has been created or modified.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBParameterGroup">AWS
          * API Reference</a></p>
@@ -841,7 +877,7 @@ namespace Model
          * using <i>ModifyDBInstance</i>. When you associate a new DB parameter group with
          * a running DB instance, you need to reboot the DB instance without failover for
          * the new DB parameter group and associated settings to take effect.</p>
-         * <important> <p>After you create a DB parameter group, you should wait at least 5
+         *  <p>After you create a DB parameter group, you should wait at least 5
          * minutes before creating your first DB instance that uses that DB parameter group
          * as the default parameter group. This allows Amazon Neptune to fully complete the
          * create action before the parameter group is used as the default for a new DB
@@ -850,7 +886,7 @@ namespace Model
          * the default database defined by the <code>character_set_database</code>
          * parameter. You can use the <i>Parameter Groups</i> option of the Amazon Neptune
          * console or the <i>DescribeDBParameters</i> command to verify that your DB
-         * parameter group has been created or modified.</p> </important><p><h3>See
+         * parameter group has been created or modified.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBParameterGroup">AWS
          * API Reference</a></p>
@@ -868,7 +904,7 @@ namespace Model
          * using <i>ModifyDBInstance</i>. When you associate a new DB parameter group with
          * a running DB instance, you need to reboot the DB instance without failover for
          * the new DB parameter group and associated settings to take effect.</p>
-         * <important> <p>After you create a DB parameter group, you should wait at least 5
+         *  <p>After you create a DB parameter group, you should wait at least 5
          * minutes before creating your first DB instance that uses that DB parameter group
          * as the default parameter group. This allows Amazon Neptune to fully complete the
          * create action before the parameter group is used as the default for a new DB
@@ -877,7 +913,7 @@ namespace Model
          * the default database defined by the <code>character_set_database</code>
          * parameter. You can use the <i>Parameter Groups</i> option of the Amazon Neptune
          * console or the <i>DescribeDBParameters</i> command to verify that your DB
-         * parameter group has been created or modified.</p> </important><p><h3>See
+         * parameter group has been created or modified.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBParameterGroup">AWS
          * API Reference</a></p>
@@ -1028,6 +1064,34 @@ namespace Model
         virtual void DeleteDBClusterAsync(const Model::DeleteDBClusterRequest& request, const DeleteDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a custom endpoint and removes it from an Amazon Neptune DB
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDBClusterEndpointOutcome DeleteDBClusterEndpoint(const Model::DeleteDBClusterEndpointRequest& request) const;
+
+        /**
+         * <p>Deletes a custom endpoint and removes it from an Amazon Neptune DB
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterEndpoint">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteDBClusterEndpointOutcomeCallable DeleteDBClusterEndpointCallable(const Model::DeleteDBClusterEndpointRequest& request) const;
+
+        /**
+         * <p>Deletes a custom endpoint and removes it from an Amazon Neptune DB
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterEndpoint">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteDBClusterEndpointAsync(const Model::DeleteDBClusterEndpointRequest& request, const DeleteDBClusterEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a specified DB cluster parameter group. The DB cluster parameter
          * group to be deleted can't be associated with any DB clusters.</p><p><h3>See
          * Also:</h3>   <a
@@ -1060,8 +1124,8 @@ namespace Model
 
         /**
          * <p>Deletes a DB cluster snapshot. If the snapshot is being copied, the copy
-         * operation is terminated.</p> <note> <p>The DB cluster snapshot must be in the
-         * <code>available</code> state to be deleted.</p> </note><p><h3>See Also:</h3>  
+         * operation is terminated.</p>  <p>The DB cluster snapshot must be in the
+         * <code>available</code> state to be deleted.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterSnapshot">AWS
          * API Reference</a></p>
@@ -1070,8 +1134,8 @@ namespace Model
 
         /**
          * <p>Deletes a DB cluster snapshot. If the snapshot is being copied, the copy
-         * operation is terminated.</p> <note> <p>The DB cluster snapshot must be in the
-         * <code>available</code> state to be deleted.</p> </note><p><h3>See Also:</h3>  
+         * operation is terminated.</p>  <p>The DB cluster snapshot must be in the
+         * <code>available</code> state to be deleted.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterSnapshot">AWS
          * API Reference</a></p>
@@ -1082,8 +1146,8 @@ namespace Model
 
         /**
          * <p>Deletes a DB cluster snapshot. If the snapshot is being copied, the copy
-         * operation is terminated.</p> <note> <p>The DB cluster snapshot must be in the
-         * <code>available</code> state to be deleted.</p> </note><p><h3>See Also:</h3>  
+         * operation is terminated.</p>  <p>The DB cluster snapshot must be in the
+         * <code>available</code> state to be deleted.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterSnapshot">AWS
          * API Reference</a></p>
@@ -1185,8 +1249,8 @@ namespace Model
         virtual void DeleteDBParameterGroupAsync(const Model::DeleteDBParameterGroupRequest& request, const DeleteDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a DB subnet group.</p> <note> <p>The specified database subnet group
-         * must not be associated with any DB instances.</p> </note><p><h3>See Also:</h3>  
+         * <p>Deletes a DB subnet group.</p>  <p>The specified database subnet group
+         * must not be associated with any DB instances.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBSubnetGroup">AWS
          * API Reference</a></p>
@@ -1194,8 +1258,8 @@ namespace Model
         virtual Model::DeleteDBSubnetGroupOutcome DeleteDBSubnetGroup(const Model::DeleteDBSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes a DB subnet group.</p> <note> <p>The specified database subnet group
-         * must not be associated with any DB instances.</p> </note><p><h3>See Also:</h3>  
+         * <p>Deletes a DB subnet group.</p>  <p>The specified database subnet group
+         * must not be associated with any DB instances.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBSubnetGroup">AWS
          * API Reference</a></p>
@@ -1205,8 +1269,8 @@ namespace Model
         virtual Model::DeleteDBSubnetGroupOutcomeCallable DeleteDBSubnetGroupCallable(const Model::DeleteDBSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes a DB subnet group.</p> <note> <p>The specified database subnet group
-         * must not be associated with any DB instances.</p> </note><p><h3>See Also:</h3>  
+         * <p>Deletes a DB subnet group.</p>  <p>The specified database subnet group
+         * must not be associated with any DB instances.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBSubnetGroup">AWS
          * API Reference</a></p>
@@ -1239,6 +1303,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteEventSubscriptionAsync(const Model::DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about endpoints for an Amazon Neptune DB cluster.</p>
+         *  <p>This operation can also return information for Amazon RDS clusters and
+         * Amazon DocDB clusters.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterEndpoints">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDBClusterEndpointsOutcome DescribeDBClusterEndpoints(const Model::DescribeDBClusterEndpointsRequest& request) const;
+
+        /**
+         * <p>Returns information about endpoints for an Amazon Neptune DB cluster.</p>
+         *  <p>This operation can also return information for Amazon RDS clusters and
+         * Amazon DocDB clusters.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterEndpoints">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeDBClusterEndpointsOutcomeCallable DescribeDBClusterEndpointsCallable(const Model::DescribeDBClusterEndpointsRequest& request) const;
+
+        /**
+         * <p>Returns information about endpoints for an Amazon Neptune DB cluster.</p>
+         *  <p>This operation can also return information for Amazon RDS clusters and
+         * Amazon DocDB clusters.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterEndpoints">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeDBClusterEndpointsAsync(const Model::DescribeDBClusterEndpointsRequest& request, const DescribeDBClusterEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a
@@ -1390,8 +1485,8 @@ namespace Model
 
         /**
          * <p>Returns information about provisioned DB clusters, and supports
-         * pagination.</p> <note> <p>This operation can also return information for Amazon
-         * RDS clusters and Amazon DocDB clusters.</p> </note><p><h3>See Also:</h3>   <a
+         * pagination.</p>  <p>This operation can also return information for Amazon
+         * RDS clusters and Amazon DocDB clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusters">AWS
          * API Reference</a></p>
          */
@@ -1399,8 +1494,8 @@ namespace Model
 
         /**
          * <p>Returns information about provisioned DB clusters, and supports
-         * pagination.</p> <note> <p>This operation can also return information for Amazon
-         * RDS clusters and Amazon DocDB clusters.</p> </note><p><h3>See Also:</h3>   <a
+         * pagination.</p>  <p>This operation can also return information for Amazon
+         * RDS clusters and Amazon DocDB clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusters">AWS
          * API Reference</a></p>
          *
@@ -1410,8 +1505,8 @@ namespace Model
 
         /**
          * <p>Returns information about provisioned DB clusters, and supports
-         * pagination.</p> <note> <p>This operation can also return information for Amazon
-         * RDS clusters and Amazon DocDB clusters.</p> </note><p><h3>See Also:</h3>   <a
+         * pagination.</p>  <p>This operation can also return information for Amazon
+         * RDS clusters and Amazon DocDB clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusters">AWS
          * API Reference</a></p>
          *
@@ -1446,8 +1541,8 @@ namespace Model
 
         /**
          * <p>Returns information about provisioned instances, and supports pagination.</p>
-         * <note> <p>This operation can also return information for Amazon RDS instances
-         * and Amazon DocDB instances.</p> </note><p><h3>See Also:</h3>   <a
+         *  <p>This operation can also return information for Amazon RDS instances
+         * and Amazon DocDB instances.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBInstances">AWS
          * API Reference</a></p>
          */
@@ -1455,8 +1550,8 @@ namespace Model
 
         /**
          * <p>Returns information about provisioned instances, and supports pagination.</p>
-         * <note> <p>This operation can also return information for Amazon RDS instances
-         * and Amazon DocDB instances.</p> </note><p><h3>See Also:</h3>   <a
+         *  <p>This operation can also return information for Amazon RDS instances
+         * and Amazon DocDB instances.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBInstances">AWS
          * API Reference</a></p>
          *
@@ -1466,8 +1561,8 @@ namespace Model
 
         /**
          * <p>Returns information about provisioned instances, and supports pagination.</p>
-         * <note> <p>This operation can also return information for Amazon RDS instances
-         * and Amazon DocDB instances.</p> </note><p><h3>See Also:</h3>   <a
+         *  <p>This operation can also return information for Amazon RDS instances
+         * and Amazon DocDB instances.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBInstances">AWS
          * API Reference</a></p>
          *
@@ -1922,13 +2017,41 @@ namespace Model
         virtual void ModifyDBClusterAsync(const Model::ModifyDBClusterRequest& request, const ModifyDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies the properties of an endpoint in an Amazon Neptune DB
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyDBClusterEndpointOutcome ModifyDBClusterEndpoint(const Model::ModifyDBClusterEndpointRequest& request) const;
+
+        /**
+         * <p>Modifies the properties of an endpoint in an Amazon Neptune DB
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterEndpoint">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyDBClusterEndpointOutcomeCallable ModifyDBClusterEndpointCallable(const Model::ModifyDBClusterEndpointRequest& request) const;
+
+        /**
+         * <p>Modifies the properties of an endpoint in an Amazon Neptune DB
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterEndpoint">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyDBClusterEndpointAsync(const Model::ModifyDBClusterEndpointRequest& request, const ModifyDBClusterEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Modifies the parameters of a DB cluster parameter group. To modify more than
          * one parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
-         * parameters can be modified in a single request.</p> <note> <p>Changes to dynamic
+         * parameters can be modified in a single request.</p>  <p>Changes to dynamic
          * parameters are applied immediately. Changes to static parameters require a
          * reboot without failover to the DB cluster associated with the parameter group
-         * before the change can take effect.</p> </note> <important> <p>After you create a
+         * before the change can take effect.</p>   <p>After you create a
          * DB cluster parameter group, you should wait at least 5 minutes before creating
          * your first DB cluster that uses that DB cluster parameter group as the default
          * parameter group. This allows Amazon Neptune to fully complete the create action
@@ -1938,7 +2061,7 @@ namespace Model
          * defined by the <code>character_set_database</code> parameter. You can use the
          * <i>Parameter Groups</i> option of the Amazon Neptune console or the
          * <a>DescribeDBClusterParameters</a> command to verify that your DB cluster
-         * parameter group has been created or modified.</p> </important><p><h3>See
+         * parameter group has been created or modified.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterParameterGroup">AWS
          * API Reference</a></p>
@@ -1949,10 +2072,10 @@ namespace Model
          * <p> Modifies the parameters of a DB cluster parameter group. To modify more than
          * one parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
-         * parameters can be modified in a single request.</p> <note> <p>Changes to dynamic
+         * parameters can be modified in a single request.</p>  <p>Changes to dynamic
          * parameters are applied immediately. Changes to static parameters require a
          * reboot without failover to the DB cluster associated with the parameter group
-         * before the change can take effect.</p> </note> <important> <p>After you create a
+         * before the change can take effect.</p>   <p>After you create a
          * DB cluster parameter group, you should wait at least 5 minutes before creating
          * your first DB cluster that uses that DB cluster parameter group as the default
          * parameter group. This allows Amazon Neptune to fully complete the create action
@@ -1962,7 +2085,7 @@ namespace Model
          * defined by the <code>character_set_database</code> parameter. You can use the
          * <i>Parameter Groups</i> option of the Amazon Neptune console or the
          * <a>DescribeDBClusterParameters</a> command to verify that your DB cluster
-         * parameter group has been created or modified.</p> </important><p><h3>See
+         * parameter group has been created or modified.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterParameterGroup">AWS
          * API Reference</a></p>
@@ -1975,10 +2098,10 @@ namespace Model
          * <p> Modifies the parameters of a DB cluster parameter group. To modify more than
          * one parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
-         * parameters can be modified in a single request.</p> <note> <p>Changes to dynamic
+         * parameters can be modified in a single request.</p>  <p>Changes to dynamic
          * parameters are applied immediately. Changes to static parameters require a
          * reboot without failover to the DB cluster associated with the parameter group
-         * before the change can take effect.</p> </note> <important> <p>After you create a
+         * before the change can take effect.</p>   <p>After you create a
          * DB cluster parameter group, you should wait at least 5 minutes before creating
          * your first DB cluster that uses that DB cluster parameter group as the default
          * parameter group. This allows Amazon Neptune to fully complete the create action
@@ -1988,7 +2111,7 @@ namespace Model
          * defined by the <code>character_set_database</code> parameter. You can use the
          * <i>Parameter Groups</i> option of the Amazon Neptune console or the
          * <a>DescribeDBClusterParameters</a> command to verify that your DB cluster
-         * parameter group has been created or modified.</p> </important><p><h3>See
+         * parameter group has been created or modified.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterParameterGroup">AWS
          * API Reference</a></p>
@@ -2108,10 +2231,10 @@ namespace Model
          * <p>Modifies the parameters of a DB parameter group. To modify more than one
          * parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
-         * parameters can be modified in a single request.</p> <note> <p>Changes to dynamic
+         * parameters can be modified in a single request.</p>  <p>Changes to dynamic
          * parameters are applied immediately. Changes to static parameters require a
          * reboot without failover to the DB instance associated with the parameter group
-         * before the change can take effect.</p> </note> <important> <p>After you modify a
+         * before the change can take effect.</p>   <p>After you modify a
          * DB parameter group, you should wait at least 5 minutes before creating your
          * first DB instance that uses that DB parameter group as the default parameter
          * group. This allows Amazon Neptune to fully complete the modify action before the
@@ -2121,7 +2244,7 @@ namespace Model
          * the <code>character_set_database</code> parameter. You can use the <i>Parameter
          * Groups</i> option of the Amazon Neptune console or the
          * <i>DescribeDBParameters</i> command to verify that your DB parameter group has
-         * been created or modified.</p> </important><p><h3>See Also:</h3>   <a
+         * been created or modified.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBParameterGroup">AWS
          * API Reference</a></p>
          */
@@ -2131,10 +2254,10 @@ namespace Model
          * <p>Modifies the parameters of a DB parameter group. To modify more than one
          * parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
-         * parameters can be modified in a single request.</p> <note> <p>Changes to dynamic
+         * parameters can be modified in a single request.</p>  <p>Changes to dynamic
          * parameters are applied immediately. Changes to static parameters require a
          * reboot without failover to the DB instance associated with the parameter group
-         * before the change can take effect.</p> </note> <important> <p>After you modify a
+         * before the change can take effect.</p>   <p>After you modify a
          * DB parameter group, you should wait at least 5 minutes before creating your
          * first DB instance that uses that DB parameter group as the default parameter
          * group. This allows Amazon Neptune to fully complete the modify action before the
@@ -2144,7 +2267,7 @@ namespace Model
          * the <code>character_set_database</code> parameter. You can use the <i>Parameter
          * Groups</i> option of the Amazon Neptune console or the
          * <i>DescribeDBParameters</i> command to verify that your DB parameter group has
-         * been created or modified.</p> </important><p><h3>See Also:</h3>   <a
+         * been created or modified.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -2156,10 +2279,10 @@ namespace Model
          * <p>Modifies the parameters of a DB parameter group. To modify more than one
          * parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
-         * parameters can be modified in a single request.</p> <note> <p>Changes to dynamic
+         * parameters can be modified in a single request.</p>  <p>Changes to dynamic
          * parameters are applied immediately. Changes to static parameters require a
          * reboot without failover to the DB instance associated with the parameter group
-         * before the change can take effect.</p> </note> <important> <p>After you modify a
+         * before the change can take effect.</p>   <p>After you modify a
          * DB parameter group, you should wait at least 5 minutes before creating your
          * first DB instance that uses that DB parameter group as the default parameter
          * group. This allows Amazon Neptune to fully complete the modify action before the
@@ -2169,7 +2292,7 @@ namespace Model
          * the <code>character_set_database</code> parameter. You can use the <i>Parameter
          * Groups</i> option of the Amazon Neptune console or the
          * <i>DescribeDBParameters</i> command to verify that your DB parameter group has
-         * been created or modified.</p> </important><p><h3>See Also:</h3>   <a
+         * been created or modified.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -2544,13 +2667,13 @@ namespace Model
          * <code>BackupRetentionPeriod</code> days. The target DB cluster is created from
          * the source DB cluster with the same configuration as the original DB cluster,
          * except that the new DB cluster is created with the default DB security
-         * group.</p> <note> <p>This action only restores the DB cluster, not the DB
+         * group.</p>  <p>This action only restores the DB cluster, not the DB
          * instances for that DB cluster. You must invoke the <a>CreateDBInstance</a>
          * action to create DB instances for the restored DB cluster, specifying the
          * identifier of the restored DB cluster in <code>DBClusterIdentifier</code>. You
          * can create DB instances only after the
          * <code>RestoreDBClusterToPointInTime</code> action has completed and the DB
-         * cluster is available.</p> </note><p><h3>See Also:</h3>   <a
+         * cluster is available.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RestoreDBClusterToPointInTime">AWS
          * API Reference</a></p>
          */
@@ -2562,13 +2685,13 @@ namespace Model
          * <code>BackupRetentionPeriod</code> days. The target DB cluster is created from
          * the source DB cluster with the same configuration as the original DB cluster,
          * except that the new DB cluster is created with the default DB security
-         * group.</p> <note> <p>This action only restores the DB cluster, not the DB
+         * group.</p>  <p>This action only restores the DB cluster, not the DB
          * instances for that DB cluster. You must invoke the <a>CreateDBInstance</a>
          * action to create DB instances for the restored DB cluster, specifying the
          * identifier of the restored DB cluster in <code>DBClusterIdentifier</code>. You
          * can create DB instances only after the
          * <code>RestoreDBClusterToPointInTime</code> action has completed and the DB
-         * cluster is available.</p> </note><p><h3>See Also:</h3>   <a
+         * cluster is available.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RestoreDBClusterToPointInTime">AWS
          * API Reference</a></p>
          *
@@ -2582,13 +2705,13 @@ namespace Model
          * <code>BackupRetentionPeriod</code> days. The target DB cluster is created from
          * the source DB cluster with the same configuration as the original DB cluster,
          * except that the new DB cluster is created with the default DB security
-         * group.</p> <note> <p>This action only restores the DB cluster, not the DB
+         * group.</p>  <p>This action only restores the DB cluster, not the DB
          * instances for that DB cluster. You must invoke the <a>CreateDBInstance</a>
          * action to create DB instances for the restored DB cluster, specifying the
          * identifier of the restored DB cluster in <code>DBClusterIdentifier</code>. You
          * can create DB instances only after the
          * <code>RestoreDBClusterToPointInTime</code> action has completed and the DB
-         * cluster is available.</p> </note><p><h3>See Also:</h3>   <a
+         * cluster is available.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RestoreDBClusterToPointInTime">AWS
          * API Reference</a></p>
          *
@@ -2661,7 +2784,7 @@ namespace Model
          */
         virtual void StopDBClusterAsync(const Model::StopDBClusterRequest& request, const StopDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-      
+
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
@@ -2673,6 +2796,7 @@ namespace Model
         void CopyDBClusterSnapshotAsyncHelper(const Model::CopyDBClusterSnapshotRequest& request, const CopyDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CopyDBParameterGroupAsyncHelper(const Model::CopyDBParameterGroupRequest& request, const CopyDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDBClusterAsyncHelper(const Model::CreateDBClusterRequest& request, const CreateDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateDBClusterEndpointAsyncHelper(const Model::CreateDBClusterEndpointRequest& request, const CreateDBClusterEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDBClusterParameterGroupAsyncHelper(const Model::CreateDBClusterParameterGroupRequest& request, const CreateDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDBClusterSnapshotAsyncHelper(const Model::CreateDBClusterSnapshotRequest& request, const CreateDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDBInstanceAsyncHelper(const Model::CreateDBInstanceRequest& request, const CreateDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2680,12 +2804,14 @@ namespace Model
         void CreateDBSubnetGroupAsyncHelper(const Model::CreateDBSubnetGroupRequest& request, const CreateDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEventSubscriptionAsyncHelper(const Model::CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBClusterAsyncHelper(const Model::DeleteDBClusterRequest& request, const DeleteDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteDBClusterEndpointAsyncHelper(const Model::DeleteDBClusterEndpointRequest& request, const DeleteDBClusterEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBClusterParameterGroupAsyncHelper(const Model::DeleteDBClusterParameterGroupRequest& request, const DeleteDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBClusterSnapshotAsyncHelper(const Model::DeleteDBClusterSnapshotRequest& request, const DeleteDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBInstanceAsyncHelper(const Model::DeleteDBInstanceRequest& request, const DeleteDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBParameterGroupAsyncHelper(const Model::DeleteDBParameterGroupRequest& request, const DeleteDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBSubnetGroupAsyncHelper(const Model::DeleteDBSubnetGroupRequest& request, const DeleteDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventSubscriptionAsyncHelper(const Model::DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeDBClusterEndpointsAsyncHelper(const Model::DescribeDBClusterEndpointsRequest& request, const DescribeDBClusterEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDBClusterParameterGroupsAsyncHelper(const Model::DescribeDBClusterParameterGroupsRequest& request, const DescribeDBClusterParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDBClusterParametersAsyncHelper(const Model::DescribeDBClusterParametersRequest& request, const DescribeDBClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDBClusterSnapshotAttributesAsyncHelper(const Model::DescribeDBClusterSnapshotAttributesRequest& request, const DescribeDBClusterSnapshotAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2707,6 +2833,7 @@ namespace Model
         void FailoverDBClusterAsyncHelper(const Model::FailoverDBClusterRequest& request, const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyDBClusterAsyncHelper(const Model::ModifyDBClusterRequest& request, const ModifyDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyDBClusterEndpointAsyncHelper(const Model::ModifyDBClusterEndpointRequest& request, const ModifyDBClusterEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyDBClusterParameterGroupAsyncHelper(const Model::ModifyDBClusterParameterGroupRequest& request, const ModifyDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyDBClusterSnapshotAttributeAsyncHelper(const Model::ModifyDBClusterSnapshotAttributeRequest& request, const ModifyDBClusterSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyDBInstanceAsyncHelper(const Model::ModifyDBInstanceRequest& request, const ModifyDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ce/model/CurrentInstance.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,6 +20,7 @@ namespace Model
 
 CurrentInstance::CurrentInstance() : 
     m_resourceIdHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_resourceDetailsHasBeenSet(false),
     m_resourceUtilizationHasBeenSet(false),
@@ -44,6 +35,7 @@ CurrentInstance::CurrentInstance() :
 
 CurrentInstance::CurrentInstance(JsonView jsonValue) : 
     m_resourceIdHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_resourceDetailsHasBeenSet(false),
     m_resourceUtilizationHasBeenSet(false),
@@ -64,6 +56,13 @@ CurrentInstance& CurrentInstance::operator =(JsonView jsonValue)
     m_resourceId = jsonValue.GetString("ResourceId");
 
     m_resourceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InstanceName"))
+  {
+    m_instanceName = jsonValue.GetString("InstanceName");
+
+    m_instanceNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Tags"))
@@ -142,6 +141,12 @@ JsonValue CurrentInstance::Jsonize() const
   if(m_resourceIdHasBeenSet)
   {
    payload.WithString("ResourceId", m_resourceId);
+
+  }
+
+  if(m_instanceNameHasBeenSet)
+  {
+   payload.WithString("InstanceName", m_instanceName);
 
   }
 

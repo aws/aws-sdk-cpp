@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -563,7 +553,7 @@ namespace Model
      * <p>The state of the Spot Instance request. Spot status information helps track
      * your Spot Instance requests. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline const SpotInstanceState& GetState() const{ return m_state; }
 
@@ -571,7 +561,7 @@ namespace Model
      * <p>The state of the Spot Instance request. Spot status information helps track
      * your Spot Instance requests. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
@@ -579,7 +569,7 @@ namespace Model
      * <p>The state of the Spot Instance request. Spot status information helps track
      * your Spot Instance requests. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetState(const SpotInstanceState& value) { m_stateHasBeenSet = true; m_state = value; }
 
@@ -587,7 +577,7 @@ namespace Model
      * <p>The state of the Spot Instance request. Spot status information helps track
      * your Spot Instance requests. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetState(SpotInstanceState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
@@ -595,7 +585,7 @@ namespace Model
      * <p>The state of the Spot Instance request. Spot status information helps track
      * your Spot Instance requests. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline SpotInstanceRequest& WithState(const SpotInstanceState& value) { SetState(value); return *this;}
 
@@ -603,7 +593,7 @@ namespace Model
      * <p>The state of the Spot Instance request. Spot status information helps track
      * your Spot Instance requests. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline SpotInstanceRequest& WithState(SpotInstanceState&& value) { SetState(std::move(value)); return *this;}
 
@@ -755,62 +745,74 @@ namespace Model
 
 
     /**
-     * <p>The end date of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If this is a
-     * one-time request, it remains active until all instances launch, the request is
-     * canceled, or this date is reached. If the request is persistent, it remains
-     * active until it is canceled or this date is reached. The default end date is 7
-     * days from the current date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> <ul> <li>
+     * <p>For a persistent request, the request remains active until the
+     * <code>validUntil</code> date and time is reached. Otherwise, the request remains
+     * active until you cancel it. </p> </li> <li> <p>For a one-time request, the
+     * request remains active until all instances launch, the request is canceled, or
+     * the <code>validUntil</code> date and time is reached. By default, the request is
+     * valid for 7 days from the date the request was created.</p> </li> </ul>
      */
     inline const Aws::Utils::DateTime& GetValidUntil() const{ return m_validUntil; }
 
     /**
-     * <p>The end date of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If this is a
-     * one-time request, it remains active until all instances launch, the request is
-     * canceled, or this date is reached. If the request is persistent, it remains
-     * active until it is canceled or this date is reached. The default end date is 7
-     * days from the current date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> <ul> <li>
+     * <p>For a persistent request, the request remains active until the
+     * <code>validUntil</code> date and time is reached. Otherwise, the request remains
+     * active until you cancel it. </p> </li> <li> <p>For a one-time request, the
+     * request remains active until all instances launch, the request is canceled, or
+     * the <code>validUntil</code> date and time is reached. By default, the request is
+     * valid for 7 days from the date the request was created.</p> </li> </ul>
      */
     inline bool ValidUntilHasBeenSet() const { return m_validUntilHasBeenSet; }
 
     /**
-     * <p>The end date of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If this is a
-     * one-time request, it remains active until all instances launch, the request is
-     * canceled, or this date is reached. If the request is persistent, it remains
-     * active until it is canceled or this date is reached. The default end date is 7
-     * days from the current date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> <ul> <li>
+     * <p>For a persistent request, the request remains active until the
+     * <code>validUntil</code> date and time is reached. Otherwise, the request remains
+     * active until you cancel it. </p> </li> <li> <p>For a one-time request, the
+     * request remains active until all instances launch, the request is canceled, or
+     * the <code>validUntil</code> date and time is reached. By default, the request is
+     * valid for 7 days from the date the request was created.</p> </li> </ul>
      */
     inline void SetValidUntil(const Aws::Utils::DateTime& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
 
     /**
-     * <p>The end date of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If this is a
-     * one-time request, it remains active until all instances launch, the request is
-     * canceled, or this date is reached. If the request is persistent, it remains
-     * active until it is canceled or this date is reached. The default end date is 7
-     * days from the current date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> <ul> <li>
+     * <p>For a persistent request, the request remains active until the
+     * <code>validUntil</code> date and time is reached. Otherwise, the request remains
+     * active until you cancel it. </p> </li> <li> <p>For a one-time request, the
+     * request remains active until all instances launch, the request is canceled, or
+     * the <code>validUntil</code> date and time is reached. By default, the request is
+     * valid for 7 days from the date the request was created.</p> </li> </ul>
      */
     inline void SetValidUntil(Aws::Utils::DateTime&& value) { m_validUntilHasBeenSet = true; m_validUntil = std::move(value); }
 
     /**
-     * <p>The end date of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If this is a
-     * one-time request, it remains active until all instances launch, the request is
-     * canceled, or this date is reached. If the request is persistent, it remains
-     * active until it is canceled or this date is reached. The default end date is 7
-     * days from the current date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> <ul> <li>
+     * <p>For a persistent request, the request remains active until the
+     * <code>validUntil</code> date and time is reached. Otherwise, the request remains
+     * active until you cancel it. </p> </li> <li> <p>For a one-time request, the
+     * request remains active until all instances launch, the request is canceled, or
+     * the <code>validUntil</code> date and time is reached. By default, the request is
+     * valid for 7 days from the date the request was created.</p> </li> </ul>
      */
     inline SpotInstanceRequest& WithValidUntil(const Aws::Utils::DateTime& value) { SetValidUntil(value); return *this;}
 
     /**
-     * <p>The end date of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If this is a
-     * one-time request, it remains active until all instances launch, the request is
-     * canceled, or this date is reached. If the request is persistent, it remains
-     * active until it is canceled or this date is reached. The default end date is 7
-     * days from the current date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> <ul> <li>
+     * <p>For a persistent request, the request remains active until the
+     * <code>validUntil</code> date and time is reached. Otherwise, the request remains
+     * active until you cancel it. </p> </li> <li> <p>For a one-time request, the
+     * request remains active until all instances launch, the request is canceled, or
+     * the <code>validUntil</code> date and time is reached. By default, the request is
+     * valid for 7 days from the date the request was created.</p> </li> </ul>
      */
     inline SpotInstanceRequest& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(std::move(value)); return *this;}
 

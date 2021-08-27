@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/workmail/WorkMail_EXPORTS.h>
@@ -130,6 +120,47 @@ namespace Model
 
 
     /**
+     * <p>The default email domain associated with the organization.</p>
+     */
+    inline const Aws::String& GetDefaultMailDomain() const{ return m_defaultMailDomain; }
+
+    /**
+     * <p>The default email domain associated with the organization.</p>
+     */
+    inline bool DefaultMailDomainHasBeenSet() const { return m_defaultMailDomainHasBeenSet; }
+
+    /**
+     * <p>The default email domain associated with the organization.</p>
+     */
+    inline void SetDefaultMailDomain(const Aws::String& value) { m_defaultMailDomainHasBeenSet = true; m_defaultMailDomain = value; }
+
+    /**
+     * <p>The default email domain associated with the organization.</p>
+     */
+    inline void SetDefaultMailDomain(Aws::String&& value) { m_defaultMailDomainHasBeenSet = true; m_defaultMailDomain = std::move(value); }
+
+    /**
+     * <p>The default email domain associated with the organization.</p>
+     */
+    inline void SetDefaultMailDomain(const char* value) { m_defaultMailDomainHasBeenSet = true; m_defaultMailDomain.assign(value); }
+
+    /**
+     * <p>The default email domain associated with the organization.</p>
+     */
+    inline OrganizationSummary& WithDefaultMailDomain(const Aws::String& value) { SetDefaultMailDomain(value); return *this;}
+
+    /**
+     * <p>The default email domain associated with the organization.</p>
+     */
+    inline OrganizationSummary& WithDefaultMailDomain(Aws::String&& value) { SetDefaultMailDomain(std::move(value)); return *this;}
+
+    /**
+     * <p>The default email domain associated with the organization.</p>
+     */
+    inline OrganizationSummary& WithDefaultMailDomain(const char* value) { SetDefaultMailDomain(value); return *this;}
+
+
+    /**
      * <p>The error message associated with the organization. It is only present if
      * unexpected behavior has occurred with regards to the organization. It provides
      * insight or solutions regarding unexpected behavior.</p>
@@ -233,6 +264,9 @@ namespace Model
 
     Aws::String m_alias;
     bool m_aliasHasBeenSet;
+
+    Aws::String m_defaultMailDomain;
+    bool m_defaultMailDomainHasBeenSet;
 
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet;

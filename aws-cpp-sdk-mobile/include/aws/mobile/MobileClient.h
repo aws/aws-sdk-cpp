@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mobile/Mobile_EXPORTS.h>
@@ -79,15 +69,15 @@ namespace Model
         class ListProjectsRequest;
         class UpdateProjectRequest;
 
-        typedef Aws::Utils::Outcome<CreateProjectResult, Aws::Client::AWSError<MobileErrors>> CreateProjectOutcome;
-        typedef Aws::Utils::Outcome<DeleteProjectResult, Aws::Client::AWSError<MobileErrors>> DeleteProjectOutcome;
-        typedef Aws::Utils::Outcome<DescribeBundleResult, Aws::Client::AWSError<MobileErrors>> DescribeBundleOutcome;
-        typedef Aws::Utils::Outcome<DescribeProjectResult, Aws::Client::AWSError<MobileErrors>> DescribeProjectOutcome;
-        typedef Aws::Utils::Outcome<ExportBundleResult, Aws::Client::AWSError<MobileErrors>> ExportBundleOutcome;
-        typedef Aws::Utils::Outcome<ExportProjectResult, Aws::Client::AWSError<MobileErrors>> ExportProjectOutcome;
-        typedef Aws::Utils::Outcome<ListBundlesResult, Aws::Client::AWSError<MobileErrors>> ListBundlesOutcome;
-        typedef Aws::Utils::Outcome<ListProjectsResult, Aws::Client::AWSError<MobileErrors>> ListProjectsOutcome;
-        typedef Aws::Utils::Outcome<UpdateProjectResult, Aws::Client::AWSError<MobileErrors>> UpdateProjectOutcome;
+        typedef Aws::Utils::Outcome<CreateProjectResult, MobileError> CreateProjectOutcome;
+        typedef Aws::Utils::Outcome<DeleteProjectResult, MobileError> DeleteProjectOutcome;
+        typedef Aws::Utils::Outcome<DescribeBundleResult, MobileError> DescribeBundleOutcome;
+        typedef Aws::Utils::Outcome<DescribeProjectResult, MobileError> DescribeProjectOutcome;
+        typedef Aws::Utils::Outcome<ExportBundleResult, MobileError> ExportBundleOutcome;
+        typedef Aws::Utils::Outcome<ExportProjectResult, MobileError> ExportProjectOutcome;
+        typedef Aws::Utils::Outcome<ListBundlesResult, MobileError> ListBundlesOutcome;
+        typedef Aws::Utils::Outcome<ListProjectsResult, MobileError> ListProjectsOutcome;
+        typedef Aws::Utils::Outcome<UpdateProjectResult, MobileError> UpdateProjectOutcome;
 
         typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
         typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
@@ -143,8 +133,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~MobileClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "mobile"; }
 
 
         /**

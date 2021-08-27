@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/email/SES_EXPORTS.h>
@@ -64,9 +54,9 @@ namespace Model
      * in the <code>BouncedRecipientInfo</code> structure. Either
      * <code>FinalRecipient</code> or the recipient in
      * <code>BouncedRecipientInfo</code> must be a recipient of the original bounced
-     * message.</p> <note> <p>Do not prepend the <code>FinalRecipient</code> email
+     * message.</p>  <p>Do not prepend the <code>FinalRecipient</code> email
      * address with <code>rfc 822;</code>, as described in <a
-     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p> </note>
+     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p> 
      */
     inline const Aws::String& GetFinalRecipient() const{ return m_finalRecipient; }
 
@@ -77,9 +67,9 @@ namespace Model
      * in the <code>BouncedRecipientInfo</code> structure. Either
      * <code>FinalRecipient</code> or the recipient in
      * <code>BouncedRecipientInfo</code> must be a recipient of the original bounced
-     * message.</p> <note> <p>Do not prepend the <code>FinalRecipient</code> email
+     * message.</p>  <p>Do not prepend the <code>FinalRecipient</code> email
      * address with <code>rfc 822;</code>, as described in <a
-     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p> </note>
+     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p> 
      */
     inline bool FinalRecipientHasBeenSet() const { return m_finalRecipientHasBeenSet; }
 
@@ -90,9 +80,9 @@ namespace Model
      * in the <code>BouncedRecipientInfo</code> structure. Either
      * <code>FinalRecipient</code> or the recipient in
      * <code>BouncedRecipientInfo</code> must be a recipient of the original bounced
-     * message.</p> <note> <p>Do not prepend the <code>FinalRecipient</code> email
+     * message.</p>  <p>Do not prepend the <code>FinalRecipient</code> email
      * address with <code>rfc 822;</code>, as described in <a
-     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p> </note>
+     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p> 
      */
     inline void SetFinalRecipient(const Aws::String& value) { m_finalRecipientHasBeenSet = true; m_finalRecipient = value; }
 
@@ -103,9 +93,9 @@ namespace Model
      * in the <code>BouncedRecipientInfo</code> structure. Either
      * <code>FinalRecipient</code> or the recipient in
      * <code>BouncedRecipientInfo</code> must be a recipient of the original bounced
-     * message.</p> <note> <p>Do not prepend the <code>FinalRecipient</code> email
+     * message.</p>  <p>Do not prepend the <code>FinalRecipient</code> email
      * address with <code>rfc 822;</code>, as described in <a
-     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p> </note>
+     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p> 
      */
     inline void SetFinalRecipient(Aws::String&& value) { m_finalRecipientHasBeenSet = true; m_finalRecipient = std::move(value); }
 
@@ -116,9 +106,9 @@ namespace Model
      * in the <code>BouncedRecipientInfo</code> structure. Either
      * <code>FinalRecipient</code> or the recipient in
      * <code>BouncedRecipientInfo</code> must be a recipient of the original bounced
-     * message.</p> <note> <p>Do not prepend the <code>FinalRecipient</code> email
+     * message.</p>  <p>Do not prepend the <code>FinalRecipient</code> email
      * address with <code>rfc 822;</code>, as described in <a
-     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p> </note>
+     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p> 
      */
     inline void SetFinalRecipient(const char* value) { m_finalRecipientHasBeenSet = true; m_finalRecipient.assign(value); }
 
@@ -129,9 +119,9 @@ namespace Model
      * in the <code>BouncedRecipientInfo</code> structure. Either
      * <code>FinalRecipient</code> or the recipient in
      * <code>BouncedRecipientInfo</code> must be a recipient of the original bounced
-     * message.</p> <note> <p>Do not prepend the <code>FinalRecipient</code> email
+     * message.</p>  <p>Do not prepend the <code>FinalRecipient</code> email
      * address with <code>rfc 822;</code>, as described in <a
-     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p> </note>
+     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p> 
      */
     inline RecipientDsnFields& WithFinalRecipient(const Aws::String& value) { SetFinalRecipient(value); return *this;}
 
@@ -142,9 +132,9 @@ namespace Model
      * in the <code>BouncedRecipientInfo</code> structure. Either
      * <code>FinalRecipient</code> or the recipient in
      * <code>BouncedRecipientInfo</code> must be a recipient of the original bounced
-     * message.</p> <note> <p>Do not prepend the <code>FinalRecipient</code> email
+     * message.</p>  <p>Do not prepend the <code>FinalRecipient</code> email
      * address with <code>rfc 822;</code>, as described in <a
-     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p> </note>
+     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p> 
      */
     inline RecipientDsnFields& WithFinalRecipient(Aws::String&& value) { SetFinalRecipient(std::move(value)); return *this;}
 
@@ -155,9 +145,9 @@ namespace Model
      * in the <code>BouncedRecipientInfo</code> structure. Either
      * <code>FinalRecipient</code> or the recipient in
      * <code>BouncedRecipientInfo</code> must be a recipient of the original bounced
-     * message.</p> <note> <p>Do not prepend the <code>FinalRecipient</code> email
+     * message.</p>  <p>Do not prepend the <code>FinalRecipient</code> email
      * address with <code>rfc 822;</code>, as described in <a
-     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p> </note>
+     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p> 
      */
     inline RecipientDsnFields& WithFinalRecipient(const char* value) { SetFinalRecipient(value); return *this;}
 

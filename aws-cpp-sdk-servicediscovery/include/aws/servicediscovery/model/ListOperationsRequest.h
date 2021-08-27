@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
@@ -51,11 +41,11 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListOperations</code> request to get the next group of results. Specify
      * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p> <note> <p>AWS Cloud Map gets <code>MaxResults</code> operations and
+     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> operations and
      * then filters them based on the specified criteria. It's possible that no
      * operations in the first <code>MaxResults</code> operations matched the specified
      * criteria but that subsequent groups of <code>MaxResults</code> operations do
-     * contain operations that match the criteria.</p> </note>
+     * contain operations that match the criteria.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -64,11 +54,11 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListOperations</code> request to get the next group of results. Specify
      * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p> <note> <p>AWS Cloud Map gets <code>MaxResults</code> operations and
+     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> operations and
      * then filters them based on the specified criteria. It's possible that no
      * operations in the first <code>MaxResults</code> operations matched the specified
      * criteria but that subsequent groups of <code>MaxResults</code> operations do
-     * contain operations that match the criteria.</p> </note>
+     * contain operations that match the criteria.</p> 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -77,11 +67,11 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListOperations</code> request to get the next group of results. Specify
      * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p> <note> <p>AWS Cloud Map gets <code>MaxResults</code> operations and
+     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> operations and
      * then filters them based on the specified criteria. It's possible that no
      * operations in the first <code>MaxResults</code> operations matched the specified
      * criteria but that subsequent groups of <code>MaxResults</code> operations do
-     * contain operations that match the criteria.</p> </note>
+     * contain operations that match the criteria.</p> 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -90,11 +80,11 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListOperations</code> request to get the next group of results. Specify
      * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p> <note> <p>AWS Cloud Map gets <code>MaxResults</code> operations and
+     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> operations and
      * then filters them based on the specified criteria. It's possible that no
      * operations in the first <code>MaxResults</code> operations matched the specified
      * criteria but that subsequent groups of <code>MaxResults</code> operations do
-     * contain operations that match the criteria.</p> </note>
+     * contain operations that match the criteria.</p> 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -103,11 +93,11 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListOperations</code> request to get the next group of results. Specify
      * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p> <note> <p>AWS Cloud Map gets <code>MaxResults</code> operations and
+     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> operations and
      * then filters them based on the specified criteria. It's possible that no
      * operations in the first <code>MaxResults</code> operations matched the specified
      * criteria but that subsequent groups of <code>MaxResults</code> operations do
-     * contain operations that match the criteria.</p> </note>
+     * contain operations that match the criteria.</p> 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -116,11 +106,11 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListOperations</code> request to get the next group of results. Specify
      * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p> <note> <p>AWS Cloud Map gets <code>MaxResults</code> operations and
+     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> operations and
      * then filters them based on the specified criteria. It's possible that no
      * operations in the first <code>MaxResults</code> operations matched the specified
      * criteria but that subsequent groups of <code>MaxResults</code> operations do
-     * contain operations that match the criteria.</p> </note>
+     * contain operations that match the criteria.</p> 
      */
     inline ListOperationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -129,11 +119,11 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListOperations</code> request to get the next group of results. Specify
      * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p> <note> <p>AWS Cloud Map gets <code>MaxResults</code> operations and
+     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> operations and
      * then filters them based on the specified criteria. It's possible that no
      * operations in the first <code>MaxResults</code> operations matched the specified
      * criteria but that subsequent groups of <code>MaxResults</code> operations do
-     * contain operations that match the criteria.</p> </note>
+     * contain operations that match the criteria.</p> 
      */
     inline ListOperationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -142,11 +132,11 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListOperations</code> request to get the next group of results. Specify
      * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p> <note> <p>AWS Cloud Map gets <code>MaxResults</code> operations and
+     * request.</p>  <p>AWS Cloud Map gets <code>MaxResults</code> operations and
      * then filters them based on the specified criteria. It's possible that no
      * operations in the first <code>MaxResults</code> operations matched the specified
      * criteria but that subsequent groups of <code>MaxResults</code> operations do
-     * contain operations that match the criteria.</p> </note>
+     * contain operations that match the criteria.</p> 
      */
     inline ListOperationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

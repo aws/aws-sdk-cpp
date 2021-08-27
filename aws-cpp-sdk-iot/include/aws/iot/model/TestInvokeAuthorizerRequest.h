@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -129,49 +119,49 @@ namespace Model
 
     /**
      * <p>The signature made with the token and your custom authentication service's
-     * private key.</p>
+     * private key. This value must be Base-64-encoded.</p>
      */
     inline const Aws::String& GetTokenSignature() const{ return m_tokenSignature; }
 
     /**
      * <p>The signature made with the token and your custom authentication service's
-     * private key.</p>
+     * private key. This value must be Base-64-encoded.</p>
      */
     inline bool TokenSignatureHasBeenSet() const { return m_tokenSignatureHasBeenSet; }
 
     /**
      * <p>The signature made with the token and your custom authentication service's
-     * private key.</p>
+     * private key. This value must be Base-64-encoded.</p>
      */
     inline void SetTokenSignature(const Aws::String& value) { m_tokenSignatureHasBeenSet = true; m_tokenSignature = value; }
 
     /**
      * <p>The signature made with the token and your custom authentication service's
-     * private key.</p>
+     * private key. This value must be Base-64-encoded.</p>
      */
     inline void SetTokenSignature(Aws::String&& value) { m_tokenSignatureHasBeenSet = true; m_tokenSignature = std::move(value); }
 
     /**
      * <p>The signature made with the token and your custom authentication service's
-     * private key.</p>
+     * private key. This value must be Base-64-encoded.</p>
      */
     inline void SetTokenSignature(const char* value) { m_tokenSignatureHasBeenSet = true; m_tokenSignature.assign(value); }
 
     /**
      * <p>The signature made with the token and your custom authentication service's
-     * private key.</p>
+     * private key. This value must be Base-64-encoded.</p>
      */
     inline TestInvokeAuthorizerRequest& WithTokenSignature(const Aws::String& value) { SetTokenSignature(value); return *this;}
 
     /**
      * <p>The signature made with the token and your custom authentication service's
-     * private key.</p>
+     * private key. This value must be Base-64-encoded.</p>
      */
     inline TestInvokeAuthorizerRequest& WithTokenSignature(Aws::String&& value) { SetTokenSignature(std::move(value)); return *this;}
 
     /**
      * <p>The signature made with the token and your custom authentication service's
-     * private key.</p>
+     * private key. This value must be Base-64-encoded.</p>
      */
     inline TestInvokeAuthorizerRequest& WithTokenSignature(const char* value) { SetTokenSignature(value); return *this;}
 

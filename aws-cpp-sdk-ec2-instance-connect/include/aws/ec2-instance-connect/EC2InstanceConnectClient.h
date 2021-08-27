@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2-instance-connect/EC2InstanceConnect_EXPORTS.h>
@@ -63,7 +53,7 @@ namespace Model
 {
         class SendSSHPublicKeyRequest;
 
-        typedef Aws::Utils::Outcome<SendSSHPublicKeyResult, Aws::Client::AWSError<EC2InstanceConnectErrors>> SendSSHPublicKeyOutcome;
+        typedef Aws::Utils::Outcome<SendSSHPublicKeyResult, EC2InstanceConnectError> SendSSHPublicKeyOutcome;
 
         typedef std::future<SendSSHPublicKeyOutcome> SendSSHPublicKeyOutcomeCallable;
 } // namespace Model
@@ -103,8 +93,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~EC2InstanceConnectClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "EC2 Instance Connect"; }
 
 
         /**

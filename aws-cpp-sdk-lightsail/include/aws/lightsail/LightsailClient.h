@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -22,17 +12,23 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lightsail/model/AllocateStaticIpResult.h>
+#include <aws/lightsail/model/AttachCertificateToDistributionResult.h>
 #include <aws/lightsail/model/AttachDiskResult.h>
 #include <aws/lightsail/model/AttachInstancesToLoadBalancerResult.h>
 #include <aws/lightsail/model/AttachLoadBalancerTlsCertificateResult.h>
 #include <aws/lightsail/model/AttachStaticIpResult.h>
 #include <aws/lightsail/model/CloseInstancePublicPortsResult.h>
 #include <aws/lightsail/model/CopySnapshotResult.h>
+#include <aws/lightsail/model/CreateCertificateResult.h>
 #include <aws/lightsail/model/CreateCloudFormationStackResult.h>
 #include <aws/lightsail/model/CreateContactMethodResult.h>
+#include <aws/lightsail/model/CreateContainerServiceResult.h>
+#include <aws/lightsail/model/CreateContainerServiceDeploymentResult.h>
+#include <aws/lightsail/model/CreateContainerServiceRegistryLoginResult.h>
 #include <aws/lightsail/model/CreateDiskResult.h>
 #include <aws/lightsail/model/CreateDiskFromSnapshotResult.h>
 #include <aws/lightsail/model/CreateDiskSnapshotResult.h>
+#include <aws/lightsail/model/CreateDistributionResult.h>
 #include <aws/lightsail/model/CreateDomainResult.h>
 #include <aws/lightsail/model/CreateDomainEntryResult.h>
 #include <aws/lightsail/model/CreateInstanceSnapshotResult.h>
@@ -46,9 +42,13 @@
 #include <aws/lightsail/model/CreateRelationalDatabaseSnapshotResult.h>
 #include <aws/lightsail/model/DeleteAlarmResult.h>
 #include <aws/lightsail/model/DeleteAutoSnapshotResult.h>
+#include <aws/lightsail/model/DeleteCertificateResult.h>
 #include <aws/lightsail/model/DeleteContactMethodResult.h>
+#include <aws/lightsail/model/DeleteContainerImageResult.h>
+#include <aws/lightsail/model/DeleteContainerServiceResult.h>
 #include <aws/lightsail/model/DeleteDiskResult.h>
 #include <aws/lightsail/model/DeleteDiskSnapshotResult.h>
+#include <aws/lightsail/model/DeleteDistributionResult.h>
 #include <aws/lightsail/model/DeleteDomainResult.h>
 #include <aws/lightsail/model/DeleteDomainEntryResult.h>
 #include <aws/lightsail/model/DeleteInstanceResult.h>
@@ -59,6 +59,7 @@
 #include <aws/lightsail/model/DeleteLoadBalancerTlsCertificateResult.h>
 #include <aws/lightsail/model/DeleteRelationalDatabaseResult.h>
 #include <aws/lightsail/model/DeleteRelationalDatabaseSnapshotResult.h>
+#include <aws/lightsail/model/DetachCertificateFromDistributionResult.h>
 #include <aws/lightsail/model/DetachDiskResult.h>
 #include <aws/lightsail/model/DetachInstancesFromLoadBalancerResult.h>
 #include <aws/lightsail/model/DetachStaticIpResult.h>
@@ -71,12 +72,24 @@
 #include <aws/lightsail/model/GetAutoSnapshotsResult.h>
 #include <aws/lightsail/model/GetBlueprintsResult.h>
 #include <aws/lightsail/model/GetBundlesResult.h>
+#include <aws/lightsail/model/GetCertificatesResult.h>
 #include <aws/lightsail/model/GetCloudFormationStackRecordsResult.h>
 #include <aws/lightsail/model/GetContactMethodsResult.h>
+#include <aws/lightsail/model/GetContainerAPIMetadataResult.h>
+#include <aws/lightsail/model/GetContainerImagesResult.h>
+#include <aws/lightsail/model/GetContainerLogResult.h>
+#include <aws/lightsail/model/GetContainerServiceDeploymentsResult.h>
+#include <aws/lightsail/model/GetContainerServiceMetricDataResult.h>
+#include <aws/lightsail/model/GetContainerServicePowersResult.h>
+#include <aws/lightsail/model/GetContainerServicesResult.h>
 #include <aws/lightsail/model/GetDiskResult.h>
 #include <aws/lightsail/model/GetDiskSnapshotResult.h>
 #include <aws/lightsail/model/GetDiskSnapshotsResult.h>
 #include <aws/lightsail/model/GetDisksResult.h>
+#include <aws/lightsail/model/GetDistributionBundlesResult.h>
+#include <aws/lightsail/model/GetDistributionLatestCacheResetResult.h>
+#include <aws/lightsail/model/GetDistributionMetricDataResult.h>
+#include <aws/lightsail/model/GetDistributionsResult.h>
 #include <aws/lightsail/model/GetDomainResult.h>
 #include <aws/lightsail/model/GetDomainsResult.h>
 #include <aws/lightsail/model/GetExportSnapshotRecordsResult.h>
@@ -120,7 +133,9 @@
 #include <aws/lightsail/model/PutInstancePublicPortsResult.h>
 #include <aws/lightsail/model/RebootInstanceResult.h>
 #include <aws/lightsail/model/RebootRelationalDatabaseResult.h>
+#include <aws/lightsail/model/RegisterContainerImageResult.h>
 #include <aws/lightsail/model/ReleaseStaticIpResult.h>
+#include <aws/lightsail/model/ResetDistributionCacheResult.h>
 #include <aws/lightsail/model/SendContactMethodVerificationResult.h>
 #include <aws/lightsail/model/StartInstanceResult.h>
 #include <aws/lightsail/model/StartRelationalDatabaseResult.h>
@@ -130,6 +145,9 @@
 #include <aws/lightsail/model/TestAlarmResult.h>
 #include <aws/lightsail/model/UnpeerVpcResult.h>
 #include <aws/lightsail/model/UntagResourceResult.h>
+#include <aws/lightsail/model/UpdateContainerServiceResult.h>
+#include <aws/lightsail/model/UpdateDistributionResult.h>
+#include <aws/lightsail/model/UpdateDistributionBundleResult.h>
 #include <aws/lightsail/model/UpdateDomainEntryResult.h>
 #include <aws/lightsail/model/UpdateLoadBalancerAttributeResult.h>
 #include <aws/lightsail/model/UpdateRelationalDatabaseResult.h>
@@ -174,17 +192,23 @@ namespace Lightsail
 namespace Model
 {
         class AllocateStaticIpRequest;
+        class AttachCertificateToDistributionRequest;
         class AttachDiskRequest;
         class AttachInstancesToLoadBalancerRequest;
         class AttachLoadBalancerTlsCertificateRequest;
         class AttachStaticIpRequest;
         class CloseInstancePublicPortsRequest;
         class CopySnapshotRequest;
+        class CreateCertificateRequest;
         class CreateCloudFormationStackRequest;
         class CreateContactMethodRequest;
+        class CreateContainerServiceRequest;
+        class CreateContainerServiceDeploymentRequest;
+        class CreateContainerServiceRegistryLoginRequest;
         class CreateDiskRequest;
         class CreateDiskFromSnapshotRequest;
         class CreateDiskSnapshotRequest;
+        class CreateDistributionRequest;
         class CreateDomainRequest;
         class CreateDomainEntryRequest;
         class CreateInstanceSnapshotRequest;
@@ -198,9 +222,13 @@ namespace Model
         class CreateRelationalDatabaseSnapshotRequest;
         class DeleteAlarmRequest;
         class DeleteAutoSnapshotRequest;
+        class DeleteCertificateRequest;
         class DeleteContactMethodRequest;
+        class DeleteContainerImageRequest;
+        class DeleteContainerServiceRequest;
         class DeleteDiskRequest;
         class DeleteDiskSnapshotRequest;
+        class DeleteDistributionRequest;
         class DeleteDomainRequest;
         class DeleteDomainEntryRequest;
         class DeleteInstanceRequest;
@@ -211,6 +239,7 @@ namespace Model
         class DeleteLoadBalancerTlsCertificateRequest;
         class DeleteRelationalDatabaseRequest;
         class DeleteRelationalDatabaseSnapshotRequest;
+        class DetachCertificateFromDistributionRequest;
         class DetachDiskRequest;
         class DetachInstancesFromLoadBalancerRequest;
         class DetachStaticIpRequest;
@@ -223,12 +252,24 @@ namespace Model
         class GetAutoSnapshotsRequest;
         class GetBlueprintsRequest;
         class GetBundlesRequest;
+        class GetCertificatesRequest;
         class GetCloudFormationStackRecordsRequest;
         class GetContactMethodsRequest;
+        class GetContainerAPIMetadataRequest;
+        class GetContainerImagesRequest;
+        class GetContainerLogRequest;
+        class GetContainerServiceDeploymentsRequest;
+        class GetContainerServiceMetricDataRequest;
+        class GetContainerServicePowersRequest;
+        class GetContainerServicesRequest;
         class GetDiskRequest;
         class GetDiskSnapshotRequest;
         class GetDiskSnapshotsRequest;
         class GetDisksRequest;
+        class GetDistributionBundlesRequest;
+        class GetDistributionLatestCacheResetRequest;
+        class GetDistributionMetricDataRequest;
+        class GetDistributionsRequest;
         class GetDomainRequest;
         class GetDomainsRequest;
         class GetExportSnapshotRecordsRequest;
@@ -272,7 +313,9 @@ namespace Model
         class PutInstancePublicPortsRequest;
         class RebootInstanceRequest;
         class RebootRelationalDatabaseRequest;
+        class RegisterContainerImageRequest;
         class ReleaseStaticIpRequest;
+        class ResetDistributionCacheRequest;
         class SendContactMethodVerificationRequest;
         class StartInstanceRequest;
         class StartRelationalDatabaseRequest;
@@ -282,137 +325,174 @@ namespace Model
         class TestAlarmRequest;
         class UnpeerVpcRequest;
         class UntagResourceRequest;
+        class UpdateContainerServiceRequest;
+        class UpdateDistributionRequest;
+        class UpdateDistributionBundleRequest;
         class UpdateDomainEntryRequest;
         class UpdateLoadBalancerAttributeRequest;
         class UpdateRelationalDatabaseRequest;
         class UpdateRelationalDatabaseParametersRequest;
 
-        typedef Aws::Utils::Outcome<AllocateStaticIpResult, Aws::Client::AWSError<LightsailErrors>> AllocateStaticIpOutcome;
-        typedef Aws::Utils::Outcome<AttachDiskResult, Aws::Client::AWSError<LightsailErrors>> AttachDiskOutcome;
-        typedef Aws::Utils::Outcome<AttachInstancesToLoadBalancerResult, Aws::Client::AWSError<LightsailErrors>> AttachInstancesToLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<AttachLoadBalancerTlsCertificateResult, Aws::Client::AWSError<LightsailErrors>> AttachLoadBalancerTlsCertificateOutcome;
-        typedef Aws::Utils::Outcome<AttachStaticIpResult, Aws::Client::AWSError<LightsailErrors>> AttachStaticIpOutcome;
-        typedef Aws::Utils::Outcome<CloseInstancePublicPortsResult, Aws::Client::AWSError<LightsailErrors>> CloseInstancePublicPortsOutcome;
-        typedef Aws::Utils::Outcome<CopySnapshotResult, Aws::Client::AWSError<LightsailErrors>> CopySnapshotOutcome;
-        typedef Aws::Utils::Outcome<CreateCloudFormationStackResult, Aws::Client::AWSError<LightsailErrors>> CreateCloudFormationStackOutcome;
-        typedef Aws::Utils::Outcome<CreateContactMethodResult, Aws::Client::AWSError<LightsailErrors>> CreateContactMethodOutcome;
-        typedef Aws::Utils::Outcome<CreateDiskResult, Aws::Client::AWSError<LightsailErrors>> CreateDiskOutcome;
-        typedef Aws::Utils::Outcome<CreateDiskFromSnapshotResult, Aws::Client::AWSError<LightsailErrors>> CreateDiskFromSnapshotOutcome;
-        typedef Aws::Utils::Outcome<CreateDiskSnapshotResult, Aws::Client::AWSError<LightsailErrors>> CreateDiskSnapshotOutcome;
-        typedef Aws::Utils::Outcome<CreateDomainResult, Aws::Client::AWSError<LightsailErrors>> CreateDomainOutcome;
-        typedef Aws::Utils::Outcome<CreateDomainEntryResult, Aws::Client::AWSError<LightsailErrors>> CreateDomainEntryOutcome;
-        typedef Aws::Utils::Outcome<CreateInstanceSnapshotResult, Aws::Client::AWSError<LightsailErrors>> CreateInstanceSnapshotOutcome;
-        typedef Aws::Utils::Outcome<CreateInstancesResult, Aws::Client::AWSError<LightsailErrors>> CreateInstancesOutcome;
-        typedef Aws::Utils::Outcome<CreateInstancesFromSnapshotResult, Aws::Client::AWSError<LightsailErrors>> CreateInstancesFromSnapshotOutcome;
-        typedef Aws::Utils::Outcome<CreateKeyPairResult, Aws::Client::AWSError<LightsailErrors>> CreateKeyPairOutcome;
-        typedef Aws::Utils::Outcome<CreateLoadBalancerResult, Aws::Client::AWSError<LightsailErrors>> CreateLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<CreateLoadBalancerTlsCertificateResult, Aws::Client::AWSError<LightsailErrors>> CreateLoadBalancerTlsCertificateOutcome;
-        typedef Aws::Utils::Outcome<CreateRelationalDatabaseResult, Aws::Client::AWSError<LightsailErrors>> CreateRelationalDatabaseOutcome;
-        typedef Aws::Utils::Outcome<CreateRelationalDatabaseFromSnapshotResult, Aws::Client::AWSError<LightsailErrors>> CreateRelationalDatabaseFromSnapshotOutcome;
-        typedef Aws::Utils::Outcome<CreateRelationalDatabaseSnapshotResult, Aws::Client::AWSError<LightsailErrors>> CreateRelationalDatabaseSnapshotOutcome;
-        typedef Aws::Utils::Outcome<DeleteAlarmResult, Aws::Client::AWSError<LightsailErrors>> DeleteAlarmOutcome;
-        typedef Aws::Utils::Outcome<DeleteAutoSnapshotResult, Aws::Client::AWSError<LightsailErrors>> DeleteAutoSnapshotOutcome;
-        typedef Aws::Utils::Outcome<DeleteContactMethodResult, Aws::Client::AWSError<LightsailErrors>> DeleteContactMethodOutcome;
-        typedef Aws::Utils::Outcome<DeleteDiskResult, Aws::Client::AWSError<LightsailErrors>> DeleteDiskOutcome;
-        typedef Aws::Utils::Outcome<DeleteDiskSnapshotResult, Aws::Client::AWSError<LightsailErrors>> DeleteDiskSnapshotOutcome;
-        typedef Aws::Utils::Outcome<DeleteDomainResult, Aws::Client::AWSError<LightsailErrors>> DeleteDomainOutcome;
-        typedef Aws::Utils::Outcome<DeleteDomainEntryResult, Aws::Client::AWSError<LightsailErrors>> DeleteDomainEntryOutcome;
-        typedef Aws::Utils::Outcome<DeleteInstanceResult, Aws::Client::AWSError<LightsailErrors>> DeleteInstanceOutcome;
-        typedef Aws::Utils::Outcome<DeleteInstanceSnapshotResult, Aws::Client::AWSError<LightsailErrors>> DeleteInstanceSnapshotOutcome;
-        typedef Aws::Utils::Outcome<DeleteKeyPairResult, Aws::Client::AWSError<LightsailErrors>> DeleteKeyPairOutcome;
-        typedef Aws::Utils::Outcome<DeleteKnownHostKeysResult, Aws::Client::AWSError<LightsailErrors>> DeleteKnownHostKeysOutcome;
-        typedef Aws::Utils::Outcome<DeleteLoadBalancerResult, Aws::Client::AWSError<LightsailErrors>> DeleteLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<DeleteLoadBalancerTlsCertificateResult, Aws::Client::AWSError<LightsailErrors>> DeleteLoadBalancerTlsCertificateOutcome;
-        typedef Aws::Utils::Outcome<DeleteRelationalDatabaseResult, Aws::Client::AWSError<LightsailErrors>> DeleteRelationalDatabaseOutcome;
-        typedef Aws::Utils::Outcome<DeleteRelationalDatabaseSnapshotResult, Aws::Client::AWSError<LightsailErrors>> DeleteRelationalDatabaseSnapshotOutcome;
-        typedef Aws::Utils::Outcome<DetachDiskResult, Aws::Client::AWSError<LightsailErrors>> DetachDiskOutcome;
-        typedef Aws::Utils::Outcome<DetachInstancesFromLoadBalancerResult, Aws::Client::AWSError<LightsailErrors>> DetachInstancesFromLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<DetachStaticIpResult, Aws::Client::AWSError<LightsailErrors>> DetachStaticIpOutcome;
-        typedef Aws::Utils::Outcome<DisableAddOnResult, Aws::Client::AWSError<LightsailErrors>> DisableAddOnOutcome;
-        typedef Aws::Utils::Outcome<DownloadDefaultKeyPairResult, Aws::Client::AWSError<LightsailErrors>> DownloadDefaultKeyPairOutcome;
-        typedef Aws::Utils::Outcome<EnableAddOnResult, Aws::Client::AWSError<LightsailErrors>> EnableAddOnOutcome;
-        typedef Aws::Utils::Outcome<ExportSnapshotResult, Aws::Client::AWSError<LightsailErrors>> ExportSnapshotOutcome;
-        typedef Aws::Utils::Outcome<GetActiveNamesResult, Aws::Client::AWSError<LightsailErrors>> GetActiveNamesOutcome;
-        typedef Aws::Utils::Outcome<GetAlarmsResult, Aws::Client::AWSError<LightsailErrors>> GetAlarmsOutcome;
-        typedef Aws::Utils::Outcome<GetAutoSnapshotsResult, Aws::Client::AWSError<LightsailErrors>> GetAutoSnapshotsOutcome;
-        typedef Aws::Utils::Outcome<GetBlueprintsResult, Aws::Client::AWSError<LightsailErrors>> GetBlueprintsOutcome;
-        typedef Aws::Utils::Outcome<GetBundlesResult, Aws::Client::AWSError<LightsailErrors>> GetBundlesOutcome;
-        typedef Aws::Utils::Outcome<GetCloudFormationStackRecordsResult, Aws::Client::AWSError<LightsailErrors>> GetCloudFormationStackRecordsOutcome;
-        typedef Aws::Utils::Outcome<GetContactMethodsResult, Aws::Client::AWSError<LightsailErrors>> GetContactMethodsOutcome;
-        typedef Aws::Utils::Outcome<GetDiskResult, Aws::Client::AWSError<LightsailErrors>> GetDiskOutcome;
-        typedef Aws::Utils::Outcome<GetDiskSnapshotResult, Aws::Client::AWSError<LightsailErrors>> GetDiskSnapshotOutcome;
-        typedef Aws::Utils::Outcome<GetDiskSnapshotsResult, Aws::Client::AWSError<LightsailErrors>> GetDiskSnapshotsOutcome;
-        typedef Aws::Utils::Outcome<GetDisksResult, Aws::Client::AWSError<LightsailErrors>> GetDisksOutcome;
-        typedef Aws::Utils::Outcome<GetDomainResult, Aws::Client::AWSError<LightsailErrors>> GetDomainOutcome;
-        typedef Aws::Utils::Outcome<GetDomainsResult, Aws::Client::AWSError<LightsailErrors>> GetDomainsOutcome;
-        typedef Aws::Utils::Outcome<GetExportSnapshotRecordsResult, Aws::Client::AWSError<LightsailErrors>> GetExportSnapshotRecordsOutcome;
-        typedef Aws::Utils::Outcome<GetInstanceResult, Aws::Client::AWSError<LightsailErrors>> GetInstanceOutcome;
-        typedef Aws::Utils::Outcome<GetInstanceAccessDetailsResult, Aws::Client::AWSError<LightsailErrors>> GetInstanceAccessDetailsOutcome;
-        typedef Aws::Utils::Outcome<GetInstanceMetricDataResult, Aws::Client::AWSError<LightsailErrors>> GetInstanceMetricDataOutcome;
-        typedef Aws::Utils::Outcome<GetInstancePortStatesResult, Aws::Client::AWSError<LightsailErrors>> GetInstancePortStatesOutcome;
-        typedef Aws::Utils::Outcome<GetInstanceSnapshotResult, Aws::Client::AWSError<LightsailErrors>> GetInstanceSnapshotOutcome;
-        typedef Aws::Utils::Outcome<GetInstanceSnapshotsResult, Aws::Client::AWSError<LightsailErrors>> GetInstanceSnapshotsOutcome;
-        typedef Aws::Utils::Outcome<GetInstanceStateResult, Aws::Client::AWSError<LightsailErrors>> GetInstanceStateOutcome;
-        typedef Aws::Utils::Outcome<GetInstancesResult, Aws::Client::AWSError<LightsailErrors>> GetInstancesOutcome;
-        typedef Aws::Utils::Outcome<GetKeyPairResult, Aws::Client::AWSError<LightsailErrors>> GetKeyPairOutcome;
-        typedef Aws::Utils::Outcome<GetKeyPairsResult, Aws::Client::AWSError<LightsailErrors>> GetKeyPairsOutcome;
-        typedef Aws::Utils::Outcome<GetLoadBalancerResult, Aws::Client::AWSError<LightsailErrors>> GetLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<GetLoadBalancerMetricDataResult, Aws::Client::AWSError<LightsailErrors>> GetLoadBalancerMetricDataOutcome;
-        typedef Aws::Utils::Outcome<GetLoadBalancerTlsCertificatesResult, Aws::Client::AWSError<LightsailErrors>> GetLoadBalancerTlsCertificatesOutcome;
-        typedef Aws::Utils::Outcome<GetLoadBalancersResult, Aws::Client::AWSError<LightsailErrors>> GetLoadBalancersOutcome;
-        typedef Aws::Utils::Outcome<GetOperationResult, Aws::Client::AWSError<LightsailErrors>> GetOperationOutcome;
-        typedef Aws::Utils::Outcome<GetOperationsResult, Aws::Client::AWSError<LightsailErrors>> GetOperationsOutcome;
-        typedef Aws::Utils::Outcome<GetOperationsForResourceResult, Aws::Client::AWSError<LightsailErrors>> GetOperationsForResourceOutcome;
-        typedef Aws::Utils::Outcome<GetRegionsResult, Aws::Client::AWSError<LightsailErrors>> GetRegionsOutcome;
-        typedef Aws::Utils::Outcome<GetRelationalDatabaseResult, Aws::Client::AWSError<LightsailErrors>> GetRelationalDatabaseOutcome;
-        typedef Aws::Utils::Outcome<GetRelationalDatabaseBlueprintsResult, Aws::Client::AWSError<LightsailErrors>> GetRelationalDatabaseBlueprintsOutcome;
-        typedef Aws::Utils::Outcome<GetRelationalDatabaseBundlesResult, Aws::Client::AWSError<LightsailErrors>> GetRelationalDatabaseBundlesOutcome;
-        typedef Aws::Utils::Outcome<GetRelationalDatabaseEventsResult, Aws::Client::AWSError<LightsailErrors>> GetRelationalDatabaseEventsOutcome;
-        typedef Aws::Utils::Outcome<GetRelationalDatabaseLogEventsResult, Aws::Client::AWSError<LightsailErrors>> GetRelationalDatabaseLogEventsOutcome;
-        typedef Aws::Utils::Outcome<GetRelationalDatabaseLogStreamsResult, Aws::Client::AWSError<LightsailErrors>> GetRelationalDatabaseLogStreamsOutcome;
-        typedef Aws::Utils::Outcome<GetRelationalDatabaseMasterUserPasswordResult, Aws::Client::AWSError<LightsailErrors>> GetRelationalDatabaseMasterUserPasswordOutcome;
-        typedef Aws::Utils::Outcome<GetRelationalDatabaseMetricDataResult, Aws::Client::AWSError<LightsailErrors>> GetRelationalDatabaseMetricDataOutcome;
-        typedef Aws::Utils::Outcome<GetRelationalDatabaseParametersResult, Aws::Client::AWSError<LightsailErrors>> GetRelationalDatabaseParametersOutcome;
-        typedef Aws::Utils::Outcome<GetRelationalDatabaseSnapshotResult, Aws::Client::AWSError<LightsailErrors>> GetRelationalDatabaseSnapshotOutcome;
-        typedef Aws::Utils::Outcome<GetRelationalDatabaseSnapshotsResult, Aws::Client::AWSError<LightsailErrors>> GetRelationalDatabaseSnapshotsOutcome;
-        typedef Aws::Utils::Outcome<GetRelationalDatabasesResult, Aws::Client::AWSError<LightsailErrors>> GetRelationalDatabasesOutcome;
-        typedef Aws::Utils::Outcome<GetStaticIpResult, Aws::Client::AWSError<LightsailErrors>> GetStaticIpOutcome;
-        typedef Aws::Utils::Outcome<GetStaticIpsResult, Aws::Client::AWSError<LightsailErrors>> GetStaticIpsOutcome;
-        typedef Aws::Utils::Outcome<ImportKeyPairResult, Aws::Client::AWSError<LightsailErrors>> ImportKeyPairOutcome;
-        typedef Aws::Utils::Outcome<IsVpcPeeredResult, Aws::Client::AWSError<LightsailErrors>> IsVpcPeeredOutcome;
-        typedef Aws::Utils::Outcome<OpenInstancePublicPortsResult, Aws::Client::AWSError<LightsailErrors>> OpenInstancePublicPortsOutcome;
-        typedef Aws::Utils::Outcome<PeerVpcResult, Aws::Client::AWSError<LightsailErrors>> PeerVpcOutcome;
-        typedef Aws::Utils::Outcome<PutAlarmResult, Aws::Client::AWSError<LightsailErrors>> PutAlarmOutcome;
-        typedef Aws::Utils::Outcome<PutInstancePublicPortsResult, Aws::Client::AWSError<LightsailErrors>> PutInstancePublicPortsOutcome;
-        typedef Aws::Utils::Outcome<RebootInstanceResult, Aws::Client::AWSError<LightsailErrors>> RebootInstanceOutcome;
-        typedef Aws::Utils::Outcome<RebootRelationalDatabaseResult, Aws::Client::AWSError<LightsailErrors>> RebootRelationalDatabaseOutcome;
-        typedef Aws::Utils::Outcome<ReleaseStaticIpResult, Aws::Client::AWSError<LightsailErrors>> ReleaseStaticIpOutcome;
-        typedef Aws::Utils::Outcome<SendContactMethodVerificationResult, Aws::Client::AWSError<LightsailErrors>> SendContactMethodVerificationOutcome;
-        typedef Aws::Utils::Outcome<StartInstanceResult, Aws::Client::AWSError<LightsailErrors>> StartInstanceOutcome;
-        typedef Aws::Utils::Outcome<StartRelationalDatabaseResult, Aws::Client::AWSError<LightsailErrors>> StartRelationalDatabaseOutcome;
-        typedef Aws::Utils::Outcome<StopInstanceResult, Aws::Client::AWSError<LightsailErrors>> StopInstanceOutcome;
-        typedef Aws::Utils::Outcome<StopRelationalDatabaseResult, Aws::Client::AWSError<LightsailErrors>> StopRelationalDatabaseOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<LightsailErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<TestAlarmResult, Aws::Client::AWSError<LightsailErrors>> TestAlarmOutcome;
-        typedef Aws::Utils::Outcome<UnpeerVpcResult, Aws::Client::AWSError<LightsailErrors>> UnpeerVpcOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<LightsailErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateDomainEntryResult, Aws::Client::AWSError<LightsailErrors>> UpdateDomainEntryOutcome;
-        typedef Aws::Utils::Outcome<UpdateLoadBalancerAttributeResult, Aws::Client::AWSError<LightsailErrors>> UpdateLoadBalancerAttributeOutcome;
-        typedef Aws::Utils::Outcome<UpdateRelationalDatabaseResult, Aws::Client::AWSError<LightsailErrors>> UpdateRelationalDatabaseOutcome;
-        typedef Aws::Utils::Outcome<UpdateRelationalDatabaseParametersResult, Aws::Client::AWSError<LightsailErrors>> UpdateRelationalDatabaseParametersOutcome;
+        typedef Aws::Utils::Outcome<AllocateStaticIpResult, LightsailError> AllocateStaticIpOutcome;
+        typedef Aws::Utils::Outcome<AttachCertificateToDistributionResult, LightsailError> AttachCertificateToDistributionOutcome;
+        typedef Aws::Utils::Outcome<AttachDiskResult, LightsailError> AttachDiskOutcome;
+        typedef Aws::Utils::Outcome<AttachInstancesToLoadBalancerResult, LightsailError> AttachInstancesToLoadBalancerOutcome;
+        typedef Aws::Utils::Outcome<AttachLoadBalancerTlsCertificateResult, LightsailError> AttachLoadBalancerTlsCertificateOutcome;
+        typedef Aws::Utils::Outcome<AttachStaticIpResult, LightsailError> AttachStaticIpOutcome;
+        typedef Aws::Utils::Outcome<CloseInstancePublicPortsResult, LightsailError> CloseInstancePublicPortsOutcome;
+        typedef Aws::Utils::Outcome<CopySnapshotResult, LightsailError> CopySnapshotOutcome;
+        typedef Aws::Utils::Outcome<CreateCertificateResult, LightsailError> CreateCertificateOutcome;
+        typedef Aws::Utils::Outcome<CreateCloudFormationStackResult, LightsailError> CreateCloudFormationStackOutcome;
+        typedef Aws::Utils::Outcome<CreateContactMethodResult, LightsailError> CreateContactMethodOutcome;
+        typedef Aws::Utils::Outcome<CreateContainerServiceResult, LightsailError> CreateContainerServiceOutcome;
+        typedef Aws::Utils::Outcome<CreateContainerServiceDeploymentResult, LightsailError> CreateContainerServiceDeploymentOutcome;
+        typedef Aws::Utils::Outcome<CreateContainerServiceRegistryLoginResult, LightsailError> CreateContainerServiceRegistryLoginOutcome;
+        typedef Aws::Utils::Outcome<CreateDiskResult, LightsailError> CreateDiskOutcome;
+        typedef Aws::Utils::Outcome<CreateDiskFromSnapshotResult, LightsailError> CreateDiskFromSnapshotOutcome;
+        typedef Aws::Utils::Outcome<CreateDiskSnapshotResult, LightsailError> CreateDiskSnapshotOutcome;
+        typedef Aws::Utils::Outcome<CreateDistributionResult, LightsailError> CreateDistributionOutcome;
+        typedef Aws::Utils::Outcome<CreateDomainResult, LightsailError> CreateDomainOutcome;
+        typedef Aws::Utils::Outcome<CreateDomainEntryResult, LightsailError> CreateDomainEntryOutcome;
+        typedef Aws::Utils::Outcome<CreateInstanceSnapshotResult, LightsailError> CreateInstanceSnapshotOutcome;
+        typedef Aws::Utils::Outcome<CreateInstancesResult, LightsailError> CreateInstancesOutcome;
+        typedef Aws::Utils::Outcome<CreateInstancesFromSnapshotResult, LightsailError> CreateInstancesFromSnapshotOutcome;
+        typedef Aws::Utils::Outcome<CreateKeyPairResult, LightsailError> CreateKeyPairOutcome;
+        typedef Aws::Utils::Outcome<CreateLoadBalancerResult, LightsailError> CreateLoadBalancerOutcome;
+        typedef Aws::Utils::Outcome<CreateLoadBalancerTlsCertificateResult, LightsailError> CreateLoadBalancerTlsCertificateOutcome;
+        typedef Aws::Utils::Outcome<CreateRelationalDatabaseResult, LightsailError> CreateRelationalDatabaseOutcome;
+        typedef Aws::Utils::Outcome<CreateRelationalDatabaseFromSnapshotResult, LightsailError> CreateRelationalDatabaseFromSnapshotOutcome;
+        typedef Aws::Utils::Outcome<CreateRelationalDatabaseSnapshotResult, LightsailError> CreateRelationalDatabaseSnapshotOutcome;
+        typedef Aws::Utils::Outcome<DeleteAlarmResult, LightsailError> DeleteAlarmOutcome;
+        typedef Aws::Utils::Outcome<DeleteAutoSnapshotResult, LightsailError> DeleteAutoSnapshotOutcome;
+        typedef Aws::Utils::Outcome<DeleteCertificateResult, LightsailError> DeleteCertificateOutcome;
+        typedef Aws::Utils::Outcome<DeleteContactMethodResult, LightsailError> DeleteContactMethodOutcome;
+        typedef Aws::Utils::Outcome<DeleteContainerImageResult, LightsailError> DeleteContainerImageOutcome;
+        typedef Aws::Utils::Outcome<DeleteContainerServiceResult, LightsailError> DeleteContainerServiceOutcome;
+        typedef Aws::Utils::Outcome<DeleteDiskResult, LightsailError> DeleteDiskOutcome;
+        typedef Aws::Utils::Outcome<DeleteDiskSnapshotResult, LightsailError> DeleteDiskSnapshotOutcome;
+        typedef Aws::Utils::Outcome<DeleteDistributionResult, LightsailError> DeleteDistributionOutcome;
+        typedef Aws::Utils::Outcome<DeleteDomainResult, LightsailError> DeleteDomainOutcome;
+        typedef Aws::Utils::Outcome<DeleteDomainEntryResult, LightsailError> DeleteDomainEntryOutcome;
+        typedef Aws::Utils::Outcome<DeleteInstanceResult, LightsailError> DeleteInstanceOutcome;
+        typedef Aws::Utils::Outcome<DeleteInstanceSnapshotResult, LightsailError> DeleteInstanceSnapshotOutcome;
+        typedef Aws::Utils::Outcome<DeleteKeyPairResult, LightsailError> DeleteKeyPairOutcome;
+        typedef Aws::Utils::Outcome<DeleteKnownHostKeysResult, LightsailError> DeleteKnownHostKeysOutcome;
+        typedef Aws::Utils::Outcome<DeleteLoadBalancerResult, LightsailError> DeleteLoadBalancerOutcome;
+        typedef Aws::Utils::Outcome<DeleteLoadBalancerTlsCertificateResult, LightsailError> DeleteLoadBalancerTlsCertificateOutcome;
+        typedef Aws::Utils::Outcome<DeleteRelationalDatabaseResult, LightsailError> DeleteRelationalDatabaseOutcome;
+        typedef Aws::Utils::Outcome<DeleteRelationalDatabaseSnapshotResult, LightsailError> DeleteRelationalDatabaseSnapshotOutcome;
+        typedef Aws::Utils::Outcome<DetachCertificateFromDistributionResult, LightsailError> DetachCertificateFromDistributionOutcome;
+        typedef Aws::Utils::Outcome<DetachDiskResult, LightsailError> DetachDiskOutcome;
+        typedef Aws::Utils::Outcome<DetachInstancesFromLoadBalancerResult, LightsailError> DetachInstancesFromLoadBalancerOutcome;
+        typedef Aws::Utils::Outcome<DetachStaticIpResult, LightsailError> DetachStaticIpOutcome;
+        typedef Aws::Utils::Outcome<DisableAddOnResult, LightsailError> DisableAddOnOutcome;
+        typedef Aws::Utils::Outcome<DownloadDefaultKeyPairResult, LightsailError> DownloadDefaultKeyPairOutcome;
+        typedef Aws::Utils::Outcome<EnableAddOnResult, LightsailError> EnableAddOnOutcome;
+        typedef Aws::Utils::Outcome<ExportSnapshotResult, LightsailError> ExportSnapshotOutcome;
+        typedef Aws::Utils::Outcome<GetActiveNamesResult, LightsailError> GetActiveNamesOutcome;
+        typedef Aws::Utils::Outcome<GetAlarmsResult, LightsailError> GetAlarmsOutcome;
+        typedef Aws::Utils::Outcome<GetAutoSnapshotsResult, LightsailError> GetAutoSnapshotsOutcome;
+        typedef Aws::Utils::Outcome<GetBlueprintsResult, LightsailError> GetBlueprintsOutcome;
+        typedef Aws::Utils::Outcome<GetBundlesResult, LightsailError> GetBundlesOutcome;
+        typedef Aws::Utils::Outcome<GetCertificatesResult, LightsailError> GetCertificatesOutcome;
+        typedef Aws::Utils::Outcome<GetCloudFormationStackRecordsResult, LightsailError> GetCloudFormationStackRecordsOutcome;
+        typedef Aws::Utils::Outcome<GetContactMethodsResult, LightsailError> GetContactMethodsOutcome;
+        typedef Aws::Utils::Outcome<GetContainerAPIMetadataResult, LightsailError> GetContainerAPIMetadataOutcome;
+        typedef Aws::Utils::Outcome<GetContainerImagesResult, LightsailError> GetContainerImagesOutcome;
+        typedef Aws::Utils::Outcome<GetContainerLogResult, LightsailError> GetContainerLogOutcome;
+        typedef Aws::Utils::Outcome<GetContainerServiceDeploymentsResult, LightsailError> GetContainerServiceDeploymentsOutcome;
+        typedef Aws::Utils::Outcome<GetContainerServiceMetricDataResult, LightsailError> GetContainerServiceMetricDataOutcome;
+        typedef Aws::Utils::Outcome<GetContainerServicePowersResult, LightsailError> GetContainerServicePowersOutcome;
+        typedef Aws::Utils::Outcome<GetContainerServicesResult, LightsailError> GetContainerServicesOutcome;
+        typedef Aws::Utils::Outcome<GetDiskResult, LightsailError> GetDiskOutcome;
+        typedef Aws::Utils::Outcome<GetDiskSnapshotResult, LightsailError> GetDiskSnapshotOutcome;
+        typedef Aws::Utils::Outcome<GetDiskSnapshotsResult, LightsailError> GetDiskSnapshotsOutcome;
+        typedef Aws::Utils::Outcome<GetDisksResult, LightsailError> GetDisksOutcome;
+        typedef Aws::Utils::Outcome<GetDistributionBundlesResult, LightsailError> GetDistributionBundlesOutcome;
+        typedef Aws::Utils::Outcome<GetDistributionLatestCacheResetResult, LightsailError> GetDistributionLatestCacheResetOutcome;
+        typedef Aws::Utils::Outcome<GetDistributionMetricDataResult, LightsailError> GetDistributionMetricDataOutcome;
+        typedef Aws::Utils::Outcome<GetDistributionsResult, LightsailError> GetDistributionsOutcome;
+        typedef Aws::Utils::Outcome<GetDomainResult, LightsailError> GetDomainOutcome;
+        typedef Aws::Utils::Outcome<GetDomainsResult, LightsailError> GetDomainsOutcome;
+        typedef Aws::Utils::Outcome<GetExportSnapshotRecordsResult, LightsailError> GetExportSnapshotRecordsOutcome;
+        typedef Aws::Utils::Outcome<GetInstanceResult, LightsailError> GetInstanceOutcome;
+        typedef Aws::Utils::Outcome<GetInstanceAccessDetailsResult, LightsailError> GetInstanceAccessDetailsOutcome;
+        typedef Aws::Utils::Outcome<GetInstanceMetricDataResult, LightsailError> GetInstanceMetricDataOutcome;
+        typedef Aws::Utils::Outcome<GetInstancePortStatesResult, LightsailError> GetInstancePortStatesOutcome;
+        typedef Aws::Utils::Outcome<GetInstanceSnapshotResult, LightsailError> GetInstanceSnapshotOutcome;
+        typedef Aws::Utils::Outcome<GetInstanceSnapshotsResult, LightsailError> GetInstanceSnapshotsOutcome;
+        typedef Aws::Utils::Outcome<GetInstanceStateResult, LightsailError> GetInstanceStateOutcome;
+        typedef Aws::Utils::Outcome<GetInstancesResult, LightsailError> GetInstancesOutcome;
+        typedef Aws::Utils::Outcome<GetKeyPairResult, LightsailError> GetKeyPairOutcome;
+        typedef Aws::Utils::Outcome<GetKeyPairsResult, LightsailError> GetKeyPairsOutcome;
+        typedef Aws::Utils::Outcome<GetLoadBalancerResult, LightsailError> GetLoadBalancerOutcome;
+        typedef Aws::Utils::Outcome<GetLoadBalancerMetricDataResult, LightsailError> GetLoadBalancerMetricDataOutcome;
+        typedef Aws::Utils::Outcome<GetLoadBalancerTlsCertificatesResult, LightsailError> GetLoadBalancerTlsCertificatesOutcome;
+        typedef Aws::Utils::Outcome<GetLoadBalancersResult, LightsailError> GetLoadBalancersOutcome;
+        typedef Aws::Utils::Outcome<GetOperationResult, LightsailError> GetOperationOutcome;
+        typedef Aws::Utils::Outcome<GetOperationsResult, LightsailError> GetOperationsOutcome;
+        typedef Aws::Utils::Outcome<GetOperationsForResourceResult, LightsailError> GetOperationsForResourceOutcome;
+        typedef Aws::Utils::Outcome<GetRegionsResult, LightsailError> GetRegionsOutcome;
+        typedef Aws::Utils::Outcome<GetRelationalDatabaseResult, LightsailError> GetRelationalDatabaseOutcome;
+        typedef Aws::Utils::Outcome<GetRelationalDatabaseBlueprintsResult, LightsailError> GetRelationalDatabaseBlueprintsOutcome;
+        typedef Aws::Utils::Outcome<GetRelationalDatabaseBundlesResult, LightsailError> GetRelationalDatabaseBundlesOutcome;
+        typedef Aws::Utils::Outcome<GetRelationalDatabaseEventsResult, LightsailError> GetRelationalDatabaseEventsOutcome;
+        typedef Aws::Utils::Outcome<GetRelationalDatabaseLogEventsResult, LightsailError> GetRelationalDatabaseLogEventsOutcome;
+        typedef Aws::Utils::Outcome<GetRelationalDatabaseLogStreamsResult, LightsailError> GetRelationalDatabaseLogStreamsOutcome;
+        typedef Aws::Utils::Outcome<GetRelationalDatabaseMasterUserPasswordResult, LightsailError> GetRelationalDatabaseMasterUserPasswordOutcome;
+        typedef Aws::Utils::Outcome<GetRelationalDatabaseMetricDataResult, LightsailError> GetRelationalDatabaseMetricDataOutcome;
+        typedef Aws::Utils::Outcome<GetRelationalDatabaseParametersResult, LightsailError> GetRelationalDatabaseParametersOutcome;
+        typedef Aws::Utils::Outcome<GetRelationalDatabaseSnapshotResult, LightsailError> GetRelationalDatabaseSnapshotOutcome;
+        typedef Aws::Utils::Outcome<GetRelationalDatabaseSnapshotsResult, LightsailError> GetRelationalDatabaseSnapshotsOutcome;
+        typedef Aws::Utils::Outcome<GetRelationalDatabasesResult, LightsailError> GetRelationalDatabasesOutcome;
+        typedef Aws::Utils::Outcome<GetStaticIpResult, LightsailError> GetStaticIpOutcome;
+        typedef Aws::Utils::Outcome<GetStaticIpsResult, LightsailError> GetStaticIpsOutcome;
+        typedef Aws::Utils::Outcome<ImportKeyPairResult, LightsailError> ImportKeyPairOutcome;
+        typedef Aws::Utils::Outcome<IsVpcPeeredResult, LightsailError> IsVpcPeeredOutcome;
+        typedef Aws::Utils::Outcome<OpenInstancePublicPortsResult, LightsailError> OpenInstancePublicPortsOutcome;
+        typedef Aws::Utils::Outcome<PeerVpcResult, LightsailError> PeerVpcOutcome;
+        typedef Aws::Utils::Outcome<PutAlarmResult, LightsailError> PutAlarmOutcome;
+        typedef Aws::Utils::Outcome<PutInstancePublicPortsResult, LightsailError> PutInstancePublicPortsOutcome;
+        typedef Aws::Utils::Outcome<RebootInstanceResult, LightsailError> RebootInstanceOutcome;
+        typedef Aws::Utils::Outcome<RebootRelationalDatabaseResult, LightsailError> RebootRelationalDatabaseOutcome;
+        typedef Aws::Utils::Outcome<RegisterContainerImageResult, LightsailError> RegisterContainerImageOutcome;
+        typedef Aws::Utils::Outcome<ReleaseStaticIpResult, LightsailError> ReleaseStaticIpOutcome;
+        typedef Aws::Utils::Outcome<ResetDistributionCacheResult, LightsailError> ResetDistributionCacheOutcome;
+        typedef Aws::Utils::Outcome<SendContactMethodVerificationResult, LightsailError> SendContactMethodVerificationOutcome;
+        typedef Aws::Utils::Outcome<StartInstanceResult, LightsailError> StartInstanceOutcome;
+        typedef Aws::Utils::Outcome<StartRelationalDatabaseResult, LightsailError> StartRelationalDatabaseOutcome;
+        typedef Aws::Utils::Outcome<StopInstanceResult, LightsailError> StopInstanceOutcome;
+        typedef Aws::Utils::Outcome<StopRelationalDatabaseResult, LightsailError> StopRelationalDatabaseOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, LightsailError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<TestAlarmResult, LightsailError> TestAlarmOutcome;
+        typedef Aws::Utils::Outcome<UnpeerVpcResult, LightsailError> UnpeerVpcOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, LightsailError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateContainerServiceResult, LightsailError> UpdateContainerServiceOutcome;
+        typedef Aws::Utils::Outcome<UpdateDistributionResult, LightsailError> UpdateDistributionOutcome;
+        typedef Aws::Utils::Outcome<UpdateDistributionBundleResult, LightsailError> UpdateDistributionBundleOutcome;
+        typedef Aws::Utils::Outcome<UpdateDomainEntryResult, LightsailError> UpdateDomainEntryOutcome;
+        typedef Aws::Utils::Outcome<UpdateLoadBalancerAttributeResult, LightsailError> UpdateLoadBalancerAttributeOutcome;
+        typedef Aws::Utils::Outcome<UpdateRelationalDatabaseResult, LightsailError> UpdateRelationalDatabaseOutcome;
+        typedef Aws::Utils::Outcome<UpdateRelationalDatabaseParametersResult, LightsailError> UpdateRelationalDatabaseParametersOutcome;
 
         typedef std::future<AllocateStaticIpOutcome> AllocateStaticIpOutcomeCallable;
+        typedef std::future<AttachCertificateToDistributionOutcome> AttachCertificateToDistributionOutcomeCallable;
         typedef std::future<AttachDiskOutcome> AttachDiskOutcomeCallable;
         typedef std::future<AttachInstancesToLoadBalancerOutcome> AttachInstancesToLoadBalancerOutcomeCallable;
         typedef std::future<AttachLoadBalancerTlsCertificateOutcome> AttachLoadBalancerTlsCertificateOutcomeCallable;
         typedef std::future<AttachStaticIpOutcome> AttachStaticIpOutcomeCallable;
         typedef std::future<CloseInstancePublicPortsOutcome> CloseInstancePublicPortsOutcomeCallable;
         typedef std::future<CopySnapshotOutcome> CopySnapshotOutcomeCallable;
+        typedef std::future<CreateCertificateOutcome> CreateCertificateOutcomeCallable;
         typedef std::future<CreateCloudFormationStackOutcome> CreateCloudFormationStackOutcomeCallable;
         typedef std::future<CreateContactMethodOutcome> CreateContactMethodOutcomeCallable;
+        typedef std::future<CreateContainerServiceOutcome> CreateContainerServiceOutcomeCallable;
+        typedef std::future<CreateContainerServiceDeploymentOutcome> CreateContainerServiceDeploymentOutcomeCallable;
+        typedef std::future<CreateContainerServiceRegistryLoginOutcome> CreateContainerServiceRegistryLoginOutcomeCallable;
         typedef std::future<CreateDiskOutcome> CreateDiskOutcomeCallable;
         typedef std::future<CreateDiskFromSnapshotOutcome> CreateDiskFromSnapshotOutcomeCallable;
         typedef std::future<CreateDiskSnapshotOutcome> CreateDiskSnapshotOutcomeCallable;
+        typedef std::future<CreateDistributionOutcome> CreateDistributionOutcomeCallable;
         typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
         typedef std::future<CreateDomainEntryOutcome> CreateDomainEntryOutcomeCallable;
         typedef std::future<CreateInstanceSnapshotOutcome> CreateInstanceSnapshotOutcomeCallable;
@@ -426,9 +506,13 @@ namespace Model
         typedef std::future<CreateRelationalDatabaseSnapshotOutcome> CreateRelationalDatabaseSnapshotOutcomeCallable;
         typedef std::future<DeleteAlarmOutcome> DeleteAlarmOutcomeCallable;
         typedef std::future<DeleteAutoSnapshotOutcome> DeleteAutoSnapshotOutcomeCallable;
+        typedef std::future<DeleteCertificateOutcome> DeleteCertificateOutcomeCallable;
         typedef std::future<DeleteContactMethodOutcome> DeleteContactMethodOutcomeCallable;
+        typedef std::future<DeleteContainerImageOutcome> DeleteContainerImageOutcomeCallable;
+        typedef std::future<DeleteContainerServiceOutcome> DeleteContainerServiceOutcomeCallable;
         typedef std::future<DeleteDiskOutcome> DeleteDiskOutcomeCallable;
         typedef std::future<DeleteDiskSnapshotOutcome> DeleteDiskSnapshotOutcomeCallable;
+        typedef std::future<DeleteDistributionOutcome> DeleteDistributionOutcomeCallable;
         typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
         typedef std::future<DeleteDomainEntryOutcome> DeleteDomainEntryOutcomeCallable;
         typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
@@ -439,6 +523,7 @@ namespace Model
         typedef std::future<DeleteLoadBalancerTlsCertificateOutcome> DeleteLoadBalancerTlsCertificateOutcomeCallable;
         typedef std::future<DeleteRelationalDatabaseOutcome> DeleteRelationalDatabaseOutcomeCallable;
         typedef std::future<DeleteRelationalDatabaseSnapshotOutcome> DeleteRelationalDatabaseSnapshotOutcomeCallable;
+        typedef std::future<DetachCertificateFromDistributionOutcome> DetachCertificateFromDistributionOutcomeCallable;
         typedef std::future<DetachDiskOutcome> DetachDiskOutcomeCallable;
         typedef std::future<DetachInstancesFromLoadBalancerOutcome> DetachInstancesFromLoadBalancerOutcomeCallable;
         typedef std::future<DetachStaticIpOutcome> DetachStaticIpOutcomeCallable;
@@ -451,12 +536,24 @@ namespace Model
         typedef std::future<GetAutoSnapshotsOutcome> GetAutoSnapshotsOutcomeCallable;
         typedef std::future<GetBlueprintsOutcome> GetBlueprintsOutcomeCallable;
         typedef std::future<GetBundlesOutcome> GetBundlesOutcomeCallable;
+        typedef std::future<GetCertificatesOutcome> GetCertificatesOutcomeCallable;
         typedef std::future<GetCloudFormationStackRecordsOutcome> GetCloudFormationStackRecordsOutcomeCallable;
         typedef std::future<GetContactMethodsOutcome> GetContactMethodsOutcomeCallable;
+        typedef std::future<GetContainerAPIMetadataOutcome> GetContainerAPIMetadataOutcomeCallable;
+        typedef std::future<GetContainerImagesOutcome> GetContainerImagesOutcomeCallable;
+        typedef std::future<GetContainerLogOutcome> GetContainerLogOutcomeCallable;
+        typedef std::future<GetContainerServiceDeploymentsOutcome> GetContainerServiceDeploymentsOutcomeCallable;
+        typedef std::future<GetContainerServiceMetricDataOutcome> GetContainerServiceMetricDataOutcomeCallable;
+        typedef std::future<GetContainerServicePowersOutcome> GetContainerServicePowersOutcomeCallable;
+        typedef std::future<GetContainerServicesOutcome> GetContainerServicesOutcomeCallable;
         typedef std::future<GetDiskOutcome> GetDiskOutcomeCallable;
         typedef std::future<GetDiskSnapshotOutcome> GetDiskSnapshotOutcomeCallable;
         typedef std::future<GetDiskSnapshotsOutcome> GetDiskSnapshotsOutcomeCallable;
         typedef std::future<GetDisksOutcome> GetDisksOutcomeCallable;
+        typedef std::future<GetDistributionBundlesOutcome> GetDistributionBundlesOutcomeCallable;
+        typedef std::future<GetDistributionLatestCacheResetOutcome> GetDistributionLatestCacheResetOutcomeCallable;
+        typedef std::future<GetDistributionMetricDataOutcome> GetDistributionMetricDataOutcomeCallable;
+        typedef std::future<GetDistributionsOutcome> GetDistributionsOutcomeCallable;
         typedef std::future<GetDomainOutcome> GetDomainOutcomeCallable;
         typedef std::future<GetDomainsOutcome> GetDomainsOutcomeCallable;
         typedef std::future<GetExportSnapshotRecordsOutcome> GetExportSnapshotRecordsOutcomeCallable;
@@ -500,7 +597,9 @@ namespace Model
         typedef std::future<PutInstancePublicPortsOutcome> PutInstancePublicPortsOutcomeCallable;
         typedef std::future<RebootInstanceOutcome> RebootInstanceOutcomeCallable;
         typedef std::future<RebootRelationalDatabaseOutcome> RebootRelationalDatabaseOutcomeCallable;
+        typedef std::future<RegisterContainerImageOutcome> RegisterContainerImageOutcomeCallable;
         typedef std::future<ReleaseStaticIpOutcome> ReleaseStaticIpOutcomeCallable;
+        typedef std::future<ResetDistributionCacheOutcome> ResetDistributionCacheOutcomeCallable;
         typedef std::future<SendContactMethodVerificationOutcome> SendContactMethodVerificationOutcomeCallable;
         typedef std::future<StartInstanceOutcome> StartInstanceOutcomeCallable;
         typedef std::future<StartRelationalDatabaseOutcome> StartRelationalDatabaseOutcomeCallable;
@@ -510,6 +609,9 @@ namespace Model
         typedef std::future<TestAlarmOutcome> TestAlarmOutcomeCallable;
         typedef std::future<UnpeerVpcOutcome> UnpeerVpcOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateContainerServiceOutcome> UpdateContainerServiceOutcomeCallable;
+        typedef std::future<UpdateDistributionOutcome> UpdateDistributionOutcomeCallable;
+        typedef std::future<UpdateDistributionBundleOutcome> UpdateDistributionBundleOutcomeCallable;
         typedef std::future<UpdateDomainEntryOutcome> UpdateDomainEntryOutcomeCallable;
         typedef std::future<UpdateLoadBalancerAttributeOutcome> UpdateLoadBalancerAttributeOutcomeCallable;
         typedef std::future<UpdateRelationalDatabaseOutcome> UpdateRelationalDatabaseOutcomeCallable;
@@ -519,17 +621,23 @@ namespace Model
   class LightsailClient;
 
     typedef std::function<void(const LightsailClient*, const Model::AllocateStaticIpRequest&, const Model::AllocateStaticIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AllocateStaticIpResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::AttachCertificateToDistributionRequest&, const Model::AttachCertificateToDistributionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachCertificateToDistributionResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::AttachDiskRequest&, const Model::AttachDiskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachDiskResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::AttachInstancesToLoadBalancerRequest&, const Model::AttachInstancesToLoadBalancerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachInstancesToLoadBalancerResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::AttachLoadBalancerTlsCertificateRequest&, const Model::AttachLoadBalancerTlsCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachLoadBalancerTlsCertificateResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::AttachStaticIpRequest&, const Model::AttachStaticIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachStaticIpResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CloseInstancePublicPortsRequest&, const Model::CloseInstancePublicPortsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CloseInstancePublicPortsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CopySnapshotRequest&, const Model::CopySnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopySnapshotResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::CreateCertificateRequest&, const Model::CreateCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCertificateResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateCloudFormationStackRequest&, const Model::CreateCloudFormationStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCloudFormationStackResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateContactMethodRequest&, const Model::CreateContactMethodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContactMethodResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::CreateContainerServiceRequest&, const Model::CreateContainerServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContainerServiceResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::CreateContainerServiceDeploymentRequest&, const Model::CreateContainerServiceDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContainerServiceDeploymentResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::CreateContainerServiceRegistryLoginRequest&, const Model::CreateContainerServiceRegistryLoginOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContainerServiceRegistryLoginResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateDiskRequest&, const Model::CreateDiskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDiskResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateDiskFromSnapshotRequest&, const Model::CreateDiskFromSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDiskFromSnapshotResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateDiskSnapshotRequest&, const Model::CreateDiskSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDiskSnapshotResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::CreateDistributionRequest&, const Model::CreateDistributionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDistributionResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateDomainRequest&, const Model::CreateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateDomainEntryRequest&, const Model::CreateDomainEntryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainEntryResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateInstanceSnapshotRequest&, const Model::CreateInstanceSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceSnapshotResponseReceivedHandler;
@@ -543,9 +651,13 @@ namespace Model
     typedef std::function<void(const LightsailClient*, const Model::CreateRelationalDatabaseSnapshotRequest&, const Model::CreateRelationalDatabaseSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRelationalDatabaseSnapshotResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteAlarmRequest&, const Model::DeleteAlarmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAlarmResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteAutoSnapshotRequest&, const Model::DeleteAutoSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAutoSnapshotResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::DeleteCertificateRequest&, const Model::DeleteCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCertificateResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteContactMethodRequest&, const Model::DeleteContactMethodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContactMethodResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::DeleteContainerImageRequest&, const Model::DeleteContainerImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContainerImageResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::DeleteContainerServiceRequest&, const Model::DeleteContainerServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContainerServiceResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteDiskRequest&, const Model::DeleteDiskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDiskResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteDiskSnapshotRequest&, const Model::DeleteDiskSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDiskSnapshotResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::DeleteDistributionRequest&, const Model::DeleteDistributionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDistributionResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteDomainEntryRequest&, const Model::DeleteDomainEntryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainEntryResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteInstanceRequest&, const Model::DeleteInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInstanceResponseReceivedHandler;
@@ -556,6 +668,7 @@ namespace Model
     typedef std::function<void(const LightsailClient*, const Model::DeleteLoadBalancerTlsCertificateRequest&, const Model::DeleteLoadBalancerTlsCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLoadBalancerTlsCertificateResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteRelationalDatabaseRequest&, const Model::DeleteRelationalDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRelationalDatabaseResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteRelationalDatabaseSnapshotRequest&, const Model::DeleteRelationalDatabaseSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRelationalDatabaseSnapshotResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::DetachCertificateFromDistributionRequest&, const Model::DetachCertificateFromDistributionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachCertificateFromDistributionResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DetachDiskRequest&, const Model::DetachDiskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachDiskResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DetachInstancesFromLoadBalancerRequest&, const Model::DetachInstancesFromLoadBalancerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachInstancesFromLoadBalancerResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DetachStaticIpRequest&, const Model::DetachStaticIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachStaticIpResponseReceivedHandler;
@@ -568,12 +681,24 @@ namespace Model
     typedef std::function<void(const LightsailClient*, const Model::GetAutoSnapshotsRequest&, const Model::GetAutoSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAutoSnapshotsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetBlueprintsRequest&, const Model::GetBlueprintsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBlueprintsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetBundlesRequest&, const Model::GetBundlesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBundlesResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetCertificatesRequest&, const Model::GetCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCertificatesResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetCloudFormationStackRecordsRequest&, const Model::GetCloudFormationStackRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCloudFormationStackRecordsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetContactMethodsRequest&, const Model::GetContactMethodsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContactMethodsResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetContainerAPIMetadataRequest&, const Model::GetContainerAPIMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContainerAPIMetadataResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetContainerImagesRequest&, const Model::GetContainerImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContainerImagesResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetContainerLogRequest&, const Model::GetContainerLogOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContainerLogResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetContainerServiceDeploymentsRequest&, const Model::GetContainerServiceDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContainerServiceDeploymentsResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetContainerServiceMetricDataRequest&, const Model::GetContainerServiceMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContainerServiceMetricDataResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetContainerServicePowersRequest&, const Model::GetContainerServicePowersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContainerServicePowersResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetContainerServicesRequest&, const Model::GetContainerServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContainerServicesResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetDiskRequest&, const Model::GetDiskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiskResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetDiskSnapshotRequest&, const Model::GetDiskSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiskSnapshotResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetDiskSnapshotsRequest&, const Model::GetDiskSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiskSnapshotsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetDisksRequest&, const Model::GetDisksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDisksResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetDistributionBundlesRequest&, const Model::GetDistributionBundlesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDistributionBundlesResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetDistributionLatestCacheResetRequest&, const Model::GetDistributionLatestCacheResetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDistributionLatestCacheResetResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetDistributionMetricDataRequest&, const Model::GetDistributionMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDistributionMetricDataResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetDistributionsRequest&, const Model::GetDistributionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDistributionsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetDomainRequest&, const Model::GetDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetDomainsRequest&, const Model::GetDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetExportSnapshotRecordsRequest&, const Model::GetExportSnapshotRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExportSnapshotRecordsResponseReceivedHandler;
@@ -617,7 +742,9 @@ namespace Model
     typedef std::function<void(const LightsailClient*, const Model::PutInstancePublicPortsRequest&, const Model::PutInstancePublicPortsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutInstancePublicPortsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::RebootInstanceRequest&, const Model::RebootInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootInstanceResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::RebootRelationalDatabaseRequest&, const Model::RebootRelationalDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootRelationalDatabaseResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::RegisterContainerImageRequest&, const Model::RegisterContainerImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterContainerImageResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::ReleaseStaticIpRequest&, const Model::ReleaseStaticIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReleaseStaticIpResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::ResetDistributionCacheRequest&, const Model::ResetDistributionCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetDistributionCacheResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::SendContactMethodVerificationRequest&, const Model::SendContactMethodVerificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendContactMethodVerificationResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::StartInstanceRequest&, const Model::StartInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInstanceResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::StartRelationalDatabaseRequest&, const Model::StartRelationalDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartRelationalDatabaseResponseReceivedHandler;
@@ -627,25 +754,31 @@ namespace Model
     typedef std::function<void(const LightsailClient*, const Model::TestAlarmRequest&, const Model::TestAlarmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestAlarmResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::UnpeerVpcRequest&, const Model::UnpeerVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnpeerVpcResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::UpdateContainerServiceRequest&, const Model::UpdateContainerServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContainerServiceResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::UpdateDistributionRequest&, const Model::UpdateDistributionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDistributionResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::UpdateDistributionBundleRequest&, const Model::UpdateDistributionBundleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDistributionBundleResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::UpdateDomainEntryRequest&, const Model::UpdateDomainEntryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainEntryResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::UpdateLoadBalancerAttributeRequest&, const Model::UpdateLoadBalancerAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLoadBalancerAttributeResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::UpdateRelationalDatabaseRequest&, const Model::UpdateRelationalDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRelationalDatabaseResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::UpdateRelationalDatabaseParametersRequest&, const Model::UpdateRelationalDatabaseParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRelationalDatabaseParametersResponseReceivedHandler;
 
   /**
-   * <p>Amazon Lightsail is the easiest way to get started with AWS for developers
-   * who just need virtual private servers. Lightsail includes everything you need to
-   * launch your project quickly - a virtual machine, a managed database, SSD-based
-   * storage, data transfer, DNS management, and a static IP - for a low, predictable
-   * price. You manage those Lightsail servers through the Lightsail console or by
-   * using the API or command-line interface (CLI).</p> <p>For more information about
-   * Lightsail concepts and tasks, see the <a
-   * href="https://lightsail.aws.amazon.com/ls/docs/all">Lightsail Dev Guide</a>.</p>
-   * <p>To use the Lightsail API or the CLI, you will need to use AWS Identity and
-   * Access Management (IAM) to generate access keys. For details about how to set
-   * this up, see the <a
+   * <p>Amazon Lightsail is the easiest way to get started with Amazon Web Services
+   * (AWS) for developers who need to build websites or web applications. It includes
+   * everything you need to launch your project quickly - instances (virtual private
+   * servers), container services, managed databases, SSD-based block storage, static
+   * IP addresses, load balancers, content delivery network (CDN) distributions, DNS
+   * management of registered domains, and resource snapshots (backups) - for a low,
+   * predictable monthly price.</p> <p>You can manage your Lightsail resources using
+   * the Lightsail console, Lightsail API, AWS Command Line Interface (AWS CLI), or
+   * SDKs. For more information about Lightsail concepts and tasks, see the <a
    * href="http://lightsail.aws.amazon.com/ls/docs/how-to/article/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli">Lightsail
-   * Dev Guide</a>.</p>
+   * Dev Guide</a>.</p> <p>This API Reference provides detailed information about the
+   * actions, data types, parameters, and errors of the Lightsail service. For more
+   * information about the supported AWS Regions, endpoints, and service quotas of
+   * the Lightsail service, see <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon
+   * Lightsail Endpoints and Quotas</a> in the <i>AWS General Reference</i>.</p>
    */
   class AWS_LIGHTSAIL_API LightsailClient : public Aws::Client::AWSJsonClient
   {
@@ -673,8 +806,6 @@ namespace Model
 
         virtual ~LightsailClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Lightsail"; }
-
 
         /**
          * <p>Allocates a static IP address.</p><p><h3>See Also:</h3>   <a
@@ -700,6 +831,58 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AllocateStaticIpAsync(const Model::AllocateStaticIpRequest& request, const AllocateStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Attaches an SSL/TLS certificate to your Amazon Lightsail content delivery
+         * network (CDN) distribution.</p> <p>After the certificate is attached, your
+         * distribution accepts HTTPS traffic for all of the domains that are associated
+         * with the certificate.</p> <p>Use the <code>CreateCertificate</code> action to
+         * create a certificate that you can attach to your distribution.</p> 
+         * <p>Only certificates created in the <code>us-east-1</code> AWS Region can be
+         * attached to Lightsail distributions. Lightsail distributions are global
+         * resources that can reference an origin in any AWS Region, and distribute its
+         * content globally. However, all distributions are located in the
+         * <code>us-east-1</code> Region.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachCertificateToDistribution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AttachCertificateToDistributionOutcome AttachCertificateToDistribution(const Model::AttachCertificateToDistributionRequest& request) const;
+
+        /**
+         * <p>Attaches an SSL/TLS certificate to your Amazon Lightsail content delivery
+         * network (CDN) distribution.</p> <p>After the certificate is attached, your
+         * distribution accepts HTTPS traffic for all of the domains that are associated
+         * with the certificate.</p> <p>Use the <code>CreateCertificate</code> action to
+         * create a certificate that you can attach to your distribution.</p> 
+         * <p>Only certificates created in the <code>us-east-1</code> AWS Region can be
+         * attached to Lightsail distributions. Lightsail distributions are global
+         * resources that can reference an origin in any AWS Region, and distribute its
+         * content globally. However, all distributions are located in the
+         * <code>us-east-1</code> Region.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachCertificateToDistribution">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AttachCertificateToDistributionOutcomeCallable AttachCertificateToDistributionCallable(const Model::AttachCertificateToDistributionRequest& request) const;
+
+        /**
+         * <p>Attaches an SSL/TLS certificate to your Amazon Lightsail content delivery
+         * network (CDN) distribution.</p> <p>After the certificate is attached, your
+         * distribution accepts HTTPS traffic for all of the domains that are associated
+         * with the certificate.</p> <p>Use the <code>CreateCertificate</code> action to
+         * create a certificate that you can attach to your distribution.</p> 
+         * <p>Only certificates created in the <code>us-east-1</code> AWS Region can be
+         * attached to Lightsail distributions. Lightsail distributions are global
+         * resources that can reference an origin in any AWS Region, and distribute its
+         * content globally. However, all distributions are located in the
+         * <code>us-east-1</code> Region.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachCertificateToDistribution">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AttachCertificateToDistributionAsync(const Model::AttachCertificateToDistributionRequest& request, const AttachCertificateToDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches a block storage disk to a running or stopped Lightsail instance and
@@ -877,10 +1060,10 @@ namespace Model
         virtual void AttachStaticIpAsync(const Model::AttachStaticIpRequest& request, const AttachStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Closes the public ports on a specific Amazon Lightsail instance.</p> <p>The
-         * <code>close instance public ports</code> operation supports tag-based access
-         * control via resource tags applied to the resource identified by <code>instance
-         * name</code>. For more information, see the <a
+         * <p>Closes ports for a specific Amazon Lightsail instance.</p> <p>The
+         * <code>CloseInstancePublicPorts</code> action supports tag-based access control
+         * via resource tags applied to the resource identified by
+         * <code>instanceName</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">AWS
@@ -889,10 +1072,10 @@ namespace Model
         virtual Model::CloseInstancePublicPortsOutcome CloseInstancePublicPorts(const Model::CloseInstancePublicPortsRequest& request) const;
 
         /**
-         * <p>Closes the public ports on a specific Amazon Lightsail instance.</p> <p>The
-         * <code>close instance public ports</code> operation supports tag-based access
-         * control via resource tags applied to the resource identified by <code>instance
-         * name</code>. For more information, see the <a
+         * <p>Closes ports for a specific Amazon Lightsail instance.</p> <p>The
+         * <code>CloseInstancePublicPorts</code> action supports tag-based access control
+         * via resource tags applied to the resource identified by
+         * <code>instanceName</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">AWS
@@ -903,10 +1086,10 @@ namespace Model
         virtual Model::CloseInstancePublicPortsOutcomeCallable CloseInstancePublicPortsCallable(const Model::CloseInstancePublicPortsRequest& request) const;
 
         /**
-         * <p>Closes the public ports on a specific Amazon Lightsail instance.</p> <p>The
-         * <code>close instance public ports</code> operation supports tag-based access
-         * control via resource tags applied to the resource identified by <code>instance
-         * name</code>. For more information, see the <a
+         * <p>Closes ports for a specific Amazon Lightsail instance.</p> <p>The
+         * <code>CloseInstancePublicPorts</code> action supports tag-based access control
+         * via resource tags applied to the resource identified by
+         * <code>instanceName</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">AWS
@@ -972,14 +1155,63 @@ namespace Model
         virtual void CopySnapshotAsync(const Model::CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates an SSL/TLS certificate for a Amazon Lightsail content delivery
+         * network (CDN) distribution.</p> <p>After the certificate is created, use the
+         * <code>AttachCertificateToDistribution</code> action to attach the certificate to
+         * your distribution.</p>  <p>Only certificates created in the
+         * <code>us-east-1</code> AWS Region can be attached to Lightsail distributions.
+         * Lightsail distributions are global resources that can reference an origin in any
+         * AWS Region, and distribute its content globally. However, all distributions are
+         * located in the <code>us-east-1</code> Region.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCertificate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCertificateOutcome CreateCertificate(const Model::CreateCertificateRequest& request) const;
+
+        /**
+         * <p>Creates an SSL/TLS certificate for a Amazon Lightsail content delivery
+         * network (CDN) distribution.</p> <p>After the certificate is created, use the
+         * <code>AttachCertificateToDistribution</code> action to attach the certificate to
+         * your distribution.</p>  <p>Only certificates created in the
+         * <code>us-east-1</code> AWS Region can be attached to Lightsail distributions.
+         * Lightsail distributions are global resources that can reference an origin in any
+         * AWS Region, and distribute its content globally. However, all distributions are
+         * located in the <code>us-east-1</code> Region.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCertificate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateCertificateOutcomeCallable CreateCertificateCallable(const Model::CreateCertificateRequest& request) const;
+
+        /**
+         * <p>Creates an SSL/TLS certificate for a Amazon Lightsail content delivery
+         * network (CDN) distribution.</p> <p>After the certificate is created, use the
+         * <code>AttachCertificateToDistribution</code> action to attach the certificate to
+         * your distribution.</p>  <p>Only certificates created in the
+         * <code>us-east-1</code> AWS Region can be attached to Lightsail distributions.
+         * Lightsail distributions are global resources that can reference an origin in any
+         * AWS Region, and distribute its content globally. However, all distributions are
+         * located in the <code>us-east-1</code> Region.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCertificate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateCertificateAsync(const Model::CreateCertificateRequest& request, const CreateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an AWS CloudFormation stack, which creates a new Amazon EC2 instance
          * from an exported Amazon Lightsail snapshot. This operation results in a
          * CloudFormation stack record that can be used to track the AWS CloudFormation
          * stack created. Use the <code>get cloud formation stack records</code> operation
-         * to get a list of the CloudFormation stacks created.</p> <important> <p>Wait
+         * to get a list of the CloudFormation stacks created.</p>  <p>Wait
          * until after your new Amazon EC2 instance is created before running the
          * <code>create cloud formation stack</code> operation again with the same export
-         * snapshot record.</p> </important><p><h3>See Also:</h3>   <a
+         * snapshot record.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCloudFormationStack">AWS
          * API Reference</a></p>
          */
@@ -990,10 +1222,10 @@ namespace Model
          * from an exported Amazon Lightsail snapshot. This operation results in a
          * CloudFormation stack record that can be used to track the AWS CloudFormation
          * stack created. Use the <code>get cloud formation stack records</code> operation
-         * to get a list of the CloudFormation stacks created.</p> <important> <p>Wait
+         * to get a list of the CloudFormation stacks created.</p>  <p>Wait
          * until after your new Amazon EC2 instance is created before running the
          * <code>create cloud formation stack</code> operation again with the same export
-         * snapshot record.</p> </important><p><h3>See Also:</h3>   <a
+         * snapshot record.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCloudFormationStack">AWS
          * API Reference</a></p>
          *
@@ -1006,10 +1238,10 @@ namespace Model
          * from an exported Amazon Lightsail snapshot. This operation results in a
          * CloudFormation stack record that can be used to track the AWS CloudFormation
          * stack created. Use the <code>get cloud formation stack records</code> operation
-         * to get a list of the CloudFormation stacks created.</p> <important> <p>Wait
+         * to get a list of the CloudFormation stacks created.</p>  <p>Wait
          * until after your new Amazon EC2 instance is created before running the
          * <code>create cloud formation stack</code> operation again with the same export
-         * snapshot record.</p> </important><p><h3>See Also:</h3>   <a
+         * snapshot record.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCloudFormationStack">AWS
          * API Reference</a></p>
          *
@@ -1062,6 +1294,180 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateContactMethodAsync(const Model::CreateContactMethodRequest& request, const CreateContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an Amazon Lightsail container service.</p> <p>A Lightsail container
+         * service is a compute resource to which you can deploy containers. For more
+         * information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-containers">Container
+         * services in Amazon Lightsail</a> in the <i>Lightsail Dev
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerService">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateContainerServiceOutcome CreateContainerService(const Model::CreateContainerServiceRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon Lightsail container service.</p> <p>A Lightsail container
+         * service is a compute resource to which you can deploy containers. For more
+         * information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-containers">Container
+         * services in Amazon Lightsail</a> in the <i>Lightsail Dev
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerService">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateContainerServiceOutcomeCallable CreateContainerServiceCallable(const Model::CreateContainerServiceRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon Lightsail container service.</p> <p>A Lightsail container
+         * service is a compute resource to which you can deploy containers. For more
+         * information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-containers">Container
+         * services in Amazon Lightsail</a> in the <i>Lightsail Dev
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerService">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateContainerServiceAsync(const Model::CreateContainerServiceRequest& request, const CreateContainerServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a deployment for your Amazon Lightsail container service.</p> <p>A
+         * deployment specifies the containers that will be launched on the container
+         * service and their settings, such as the ports to open, the environment variables
+         * to apply, and the launch command to run. It also specifies the container that
+         * will serve as the public endpoint of the deployment and its settings, such as
+         * the HTTP or HTTPS port to use, and the health check configuration.</p> <p>You
+         * can deploy containers to your container service using container images from a
+         * public registry like Docker Hub, or from your local machine. For more
+         * information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images">Creating
+         * container images for your Amazon Lightsail container services</a> in the
+         * <i>Lightsail Dev Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerServiceDeployment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateContainerServiceDeploymentOutcome CreateContainerServiceDeployment(const Model::CreateContainerServiceDeploymentRequest& request) const;
+
+        /**
+         * <p>Creates a deployment for your Amazon Lightsail container service.</p> <p>A
+         * deployment specifies the containers that will be launched on the container
+         * service and their settings, such as the ports to open, the environment variables
+         * to apply, and the launch command to run. It also specifies the container that
+         * will serve as the public endpoint of the deployment and its settings, such as
+         * the HTTP or HTTPS port to use, and the health check configuration.</p> <p>You
+         * can deploy containers to your container service using container images from a
+         * public registry like Docker Hub, or from your local machine. For more
+         * information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images">Creating
+         * container images for your Amazon Lightsail container services</a> in the
+         * <i>Lightsail Dev Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerServiceDeployment">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateContainerServiceDeploymentOutcomeCallable CreateContainerServiceDeploymentCallable(const Model::CreateContainerServiceDeploymentRequest& request) const;
+
+        /**
+         * <p>Creates a deployment for your Amazon Lightsail container service.</p> <p>A
+         * deployment specifies the containers that will be launched on the container
+         * service and their settings, such as the ports to open, the environment variables
+         * to apply, and the launch command to run. It also specifies the container that
+         * will serve as the public endpoint of the deployment and its settings, such as
+         * the HTTP or HTTPS port to use, and the health check configuration.</p> <p>You
+         * can deploy containers to your container service using container images from a
+         * public registry like Docker Hub, or from your local machine. For more
+         * information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images">Creating
+         * container images for your Amazon Lightsail container services</a> in the
+         * <i>Lightsail Dev Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerServiceDeployment">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateContainerServiceDeploymentAsync(const Model::CreateContainerServiceDeploymentRequest& request, const CreateContainerServiceDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a temporary set of log in credentials that you can use to log in to
+         * the Docker process on your local machine. After you're logged in, you can use
+         * the native Docker commands to push your local container images to the container
+         * image registry of your Amazon Lightsail account so that you can use them with
+         * your Lightsail container service. The log in credentials expire 12 hours after
+         * they are created, at which point you will need to create a new set of log in
+         * credentials.</p>  <p>You can only push container images to the container
+         * service registry of your Lightsail account. You cannot pull container images
+         * perform any other container image management actions on the container service
+         * registry of your Lightsail account.</p>  <p>After you push your container
+         * images to the container image registry of your Lightsail account, use the
+         * <code>RegisterContainerImage</code> action to register the pushed images to a
+         * specific Lightsail container service.</p>  <p>This action is not required
+         * if you install and use the Lightsail Control (lightsailctl) plugin to push
+         * container images to your Lightsail container service. For more information, see
+         * <a href="amazon-lightsail-pushing-container-images">Pushing and managing
+         * container images on your Amazon Lightsail container services</a> in the
+         * <i>Lightsail Dev Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerServiceRegistryLogin">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateContainerServiceRegistryLoginOutcome CreateContainerServiceRegistryLogin(const Model::CreateContainerServiceRegistryLoginRequest& request) const;
+
+        /**
+         * <p>Creates a temporary set of log in credentials that you can use to log in to
+         * the Docker process on your local machine. After you're logged in, you can use
+         * the native Docker commands to push your local container images to the container
+         * image registry of your Amazon Lightsail account so that you can use them with
+         * your Lightsail container service. The log in credentials expire 12 hours after
+         * they are created, at which point you will need to create a new set of log in
+         * credentials.</p>  <p>You can only push container images to the container
+         * service registry of your Lightsail account. You cannot pull container images
+         * perform any other container image management actions on the container service
+         * registry of your Lightsail account.</p>  <p>After you push your container
+         * images to the container image registry of your Lightsail account, use the
+         * <code>RegisterContainerImage</code> action to register the pushed images to a
+         * specific Lightsail container service.</p>  <p>This action is not required
+         * if you install and use the Lightsail Control (lightsailctl) plugin to push
+         * container images to your Lightsail container service. For more information, see
+         * <a href="amazon-lightsail-pushing-container-images">Pushing and managing
+         * container images on your Amazon Lightsail container services</a> in the
+         * <i>Lightsail Dev Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerServiceRegistryLogin">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateContainerServiceRegistryLoginOutcomeCallable CreateContainerServiceRegistryLoginCallable(const Model::CreateContainerServiceRegistryLoginRequest& request) const;
+
+        /**
+         * <p>Creates a temporary set of log in credentials that you can use to log in to
+         * the Docker process on your local machine. After you're logged in, you can use
+         * the native Docker commands to push your local container images to the container
+         * image registry of your Amazon Lightsail account so that you can use them with
+         * your Lightsail container service. The log in credentials expire 12 hours after
+         * they are created, at which point you will need to create a new set of log in
+         * credentials.</p>  <p>You can only push container images to the container
+         * service registry of your Lightsail account. You cannot pull container images
+         * perform any other container image management actions on the container service
+         * registry of your Lightsail account.</p>  <p>After you push your container
+         * images to the container image registry of your Lightsail account, use the
+         * <code>RegisterContainerImage</code> action to register the pushed images to a
+         * specific Lightsail container service.</p>  <p>This action is not required
+         * if you install and use the Lightsail Control (lightsailctl) plugin to push
+         * container images to your Lightsail container service. For more information, see
+         * <a href="amazon-lightsail-pushing-container-images">Pushing and managing
+         * container images on your Amazon Lightsail container services</a> in the
+         * <i>Lightsail Dev Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerServiceRegistryLogin">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateContainerServiceRegistryLoginAsync(const Model::CreateContainerServiceRegistryLoginRequest& request, const CreateContainerServiceRegistryLoginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a block storage disk that can be attached to an Amazon Lightsail
@@ -1241,6 +1647,46 @@ namespace Model
         virtual void CreateDiskSnapshotAsync(const Model::CreateDiskSnapshotRequest& request, const CreateDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates an Amazon Lightsail content delivery network (CDN) distribution.</p>
+         * <p>A distribution is a globally distributed network of caching servers that
+         * improve the performance of your website or web application hosted on a Lightsail
+         * instance. For more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-content-delivery-network-distributions">Content
+         * delivery networks in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDistribution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDistributionOutcome CreateDistribution(const Model::CreateDistributionRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon Lightsail content delivery network (CDN) distribution.</p>
+         * <p>A distribution is a globally distributed network of caching servers that
+         * improve the performance of your website or web application hosted on a Lightsail
+         * instance. For more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-content-delivery-network-distributions">Content
+         * delivery networks in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDistribution">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateDistributionOutcomeCallable CreateDistributionCallable(const Model::CreateDistributionRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon Lightsail content delivery network (CDN) distribution.</p>
+         * <p>A distribution is a globally distributed network of caching servers that
+         * improve the performance of your website or web application hosted on a Lightsail
+         * instance. For more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-content-delivery-network-distributions">Content
+         * delivery networks in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDistribution">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateDistributionAsync(const Model::CreateDistributionRequest& request, const CreateDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a domain resource for the specified domain (e.g., example.com).</p>
          * <p>The <code>create domain</code> operation supports tag-based access control
          * via request tags. For more information, see the <a
@@ -1278,9 +1724,9 @@ namespace Model
         virtual void CreateDomainAsync(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates one of the following entry records associated with the domain:
-         * Address (A), canonical name (CNAME), mail exchanger (MX), name server (NS),
-         * start of authority (SOA), service locator (SRV), or text (TXT).</p> <p>The
+         * <p>Creates one of the following domain name system (DNS) records in a domain DNS
+         * zone: Address (A), canonical name (CNAME), mail exchanger (MX), name server
+         * (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p> <p>The
          * <code>create domain entry</code> operation supports tag-based access control via
          * resource tags applied to the resource identified by <code>domain name</code>.
          * For more information, see the <a
@@ -1292,9 +1738,9 @@ namespace Model
         virtual Model::CreateDomainEntryOutcome CreateDomainEntry(const Model::CreateDomainEntryRequest& request) const;
 
         /**
-         * <p>Creates one of the following entry records associated with the domain:
-         * Address (A), canonical name (CNAME), mail exchanger (MX), name server (NS),
-         * start of authority (SOA), service locator (SRV), or text (TXT).</p> <p>The
+         * <p>Creates one of the following domain name system (DNS) records in a domain DNS
+         * zone: Address (A), canonical name (CNAME), mail exchanger (MX), name server
+         * (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p> <p>The
          * <code>create domain entry</code> operation supports tag-based access control via
          * resource tags applied to the resource identified by <code>domain name</code>.
          * For more information, see the <a
@@ -1308,9 +1754,9 @@ namespace Model
         virtual Model::CreateDomainEntryOutcomeCallable CreateDomainEntryCallable(const Model::CreateDomainEntryRequest& request) const;
 
         /**
-         * <p>Creates one of the following entry records associated with the domain:
-         * Address (A), canonical name (CNAME), mail exchanger (MX), name server (NS),
-         * start of authority (SOA), service locator (SRV), or text (TXT).</p> <p>The
+         * <p>Creates one of the following domain name system (DNS) records in a domain DNS
+         * zone: Address (A), canonical name (CNAME), mail exchanger (MX), name server
+         * (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p> <p>The
          * <code>create domain entry</code> operation supports tag-based access control via
          * resource tags applied to the resource identified by <code>domain name</code>.
          * For more information, see the <a
@@ -1782,6 +2228,43 @@ namespace Model
         virtual void DeleteAutoSnapshotAsync(const Model::DeleteAutoSnapshotRequest& request, const DeleteAutoSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes an SSL/TLS certificate for your Amazon Lightsail content delivery
+         * network (CDN) distribution.</p> <p>Certificates that are currently attached to a
+         * distribution cannot be deleted. Use the
+         * <code>DetachCertificateFromDistribution</code> action to detach a certificate
+         * from a distribution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteCertificate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCertificateOutcome DeleteCertificate(const Model::DeleteCertificateRequest& request) const;
+
+        /**
+         * <p>Deletes an SSL/TLS certificate for your Amazon Lightsail content delivery
+         * network (CDN) distribution.</p> <p>Certificates that are currently attached to a
+         * distribution cannot be deleted. Use the
+         * <code>DetachCertificateFromDistribution</code> action to detach a certificate
+         * from a distribution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteCertificate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteCertificateOutcomeCallable DeleteCertificateCallable(const Model::DeleteCertificateRequest& request) const;
+
+        /**
+         * <p>Deletes an SSL/TLS certificate for your Amazon Lightsail content delivery
+         * network (CDN) distribution.</p> <p>Certificates that are currently attached to a
+         * distribution cannot be deleted. Use the
+         * <code>DetachCertificateFromDistribution</code> action to detach a certificate
+         * from a distribution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteCertificate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteCertificateAsync(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a contact method.</p> <p>A contact method is used to send you
          * notifications about your Amazon Lightsail resources. You can add one email
          * address and one mobile phone number contact method in each AWS Region. However,
@@ -1825,10 +2308,66 @@ namespace Model
         virtual void DeleteContactMethodAsync(const Model::DeleteContactMethodRequest& request, const DeleteContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a container image that is registered to your Amazon Lightsail
+         * container service.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContainerImage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteContainerImageOutcome DeleteContainerImage(const Model::DeleteContainerImageRequest& request) const;
+
+        /**
+         * <p>Deletes a container image that is registered to your Amazon Lightsail
+         * container service.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContainerImage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteContainerImageOutcomeCallable DeleteContainerImageCallable(const Model::DeleteContainerImageRequest& request) const;
+
+        /**
+         * <p>Deletes a container image that is registered to your Amazon Lightsail
+         * container service.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContainerImage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteContainerImageAsync(const Model::DeleteContainerImageRequest& request, const DeleteContainerImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes your Amazon Lightsail container service.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContainerService">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteContainerServiceOutcome DeleteContainerService(const Model::DeleteContainerServiceRequest& request) const;
+
+        /**
+         * <p>Deletes your Amazon Lightsail container service.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContainerService">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteContainerServiceOutcomeCallable DeleteContainerServiceCallable(const Model::DeleteContainerServiceRequest& request) const;
+
+        /**
+         * <p>Deletes your Amazon Lightsail container service.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContainerService">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteContainerServiceAsync(const Model::DeleteContainerServiceRequest& request, const DeleteContainerServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified block storage disk. The disk must be in the
-         * <code>available</code> state (not attached to a Lightsail instance).</p> <note>
+         * <code>available</code> state (not attached to a Lightsail instance).</p> 
          * <p>The disk may remain in the <code>deleting</code> state for several
-         * minutes.</p> </note> <p>The <code>delete disk</code> operation supports
+         * minutes.</p>  <p>The <code>delete disk</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>disk name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -1840,9 +2379,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified block storage disk. The disk must be in the
-         * <code>available</code> state (not attached to a Lightsail instance).</p> <note>
+         * <code>available</code> state (not attached to a Lightsail instance).</p> 
          * <p>The disk may remain in the <code>deleting</code> state for several
-         * minutes.</p> </note> <p>The <code>delete disk</code> operation supports
+         * minutes.</p>  <p>The <code>delete disk</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>disk name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -1856,9 +2395,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified block storage disk. The disk must be in the
-         * <code>available</code> state (not attached to a Lightsail instance).</p> <note>
+         * <code>available</code> state (not attached to a Lightsail instance).</p> 
          * <p>The disk may remain in the <code>deleting</code> state for several
-         * minutes.</p> </note> <p>The <code>delete disk</code> operation supports
+         * minutes.</p>  <p>The <code>delete disk</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>disk name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -1924,6 +2463,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDiskSnapshotAsync(const Model::DeleteDiskSnapshotRequest& request, const DeleteDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes your Amazon Lightsail content delivery network (CDN)
+         * distribution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDistribution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDistributionOutcome DeleteDistribution(const Model::DeleteDistributionRequest& request) const;
+
+        /**
+         * <p>Deletes your Amazon Lightsail content delivery network (CDN)
+         * distribution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDistribution">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteDistributionOutcomeCallable DeleteDistributionCallable(const Model::DeleteDistributionRequest& request) const;
+
+        /**
+         * <p>Deletes your Amazon Lightsail content delivery network (CDN)
+         * distribution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDistribution">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteDistributionAsync(const Model::DeleteDistributionRequest& request, const DeleteDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified domain recordset and all of its domain records.</p>
@@ -2132,13 +2699,13 @@ namespace Model
          * <p>Deletes the known host key or certificate used by the Amazon Lightsail
          * browser-based SSH or RDP clients to authenticate an instance. This operation
          * enables the Lightsail browser-based SSH or RDP clients to connect to the
-         * instance after a host key mismatch.</p> <important> <p>Perform this operation
+         * instance after a host key mismatch.</p>  <p>Perform this operation
          * only if you were expecting the host key or certificate mismatch or if you are
          * familiar with the new host key or certificate on the instance. For more
          * information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection">Troubleshooting
          * connection issues when using the Amazon Lightsail browser-based SSH or RDP
-         * client</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * client</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKnownHostKeys">AWS
          * API Reference</a></p>
          */
@@ -2148,13 +2715,13 @@ namespace Model
          * <p>Deletes the known host key or certificate used by the Amazon Lightsail
          * browser-based SSH or RDP clients to authenticate an instance. This operation
          * enables the Lightsail browser-based SSH or RDP clients to connect to the
-         * instance after a host key mismatch.</p> <important> <p>Perform this operation
+         * instance after a host key mismatch.</p>  <p>Perform this operation
          * only if you were expecting the host key or certificate mismatch or if you are
          * familiar with the new host key or certificate on the instance. For more
          * information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection">Troubleshooting
          * connection issues when using the Amazon Lightsail browser-based SSH or RDP
-         * client</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * client</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKnownHostKeys">AWS
          * API Reference</a></p>
          *
@@ -2166,13 +2733,13 @@ namespace Model
          * <p>Deletes the known host key or certificate used by the Amazon Lightsail
          * browser-based SSH or RDP clients to authenticate an instance. This operation
          * enables the Lightsail browser-based SSH or RDP clients to connect to the
-         * instance after a host key mismatch.</p> <important> <p>Perform this operation
+         * instance after a host key mismatch.</p>  <p>Perform this operation
          * only if you were expecting the host key or certificate mismatch or if you are
          * familiar with the new host key or certificate on the instance. For more
          * information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection">Troubleshooting
          * connection issues when using the Amazon Lightsail browser-based SSH or RDP
-         * client</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * client</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKnownHostKeys">AWS
          * API Reference</a></p>
          *
@@ -2345,6 +2912,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteRelationalDatabaseSnapshotAsync(const Model::DeleteRelationalDatabaseSnapshotRequest& request, const DeleteRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Detaches an SSL/TLS certificate from your Amazon Lightsail content delivery
+         * network (CDN) distribution.</p> <p>After the certificate is detached, your
+         * distribution stops accepting traffic for all of the domains that are associated
+         * with the certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachCertificateFromDistribution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DetachCertificateFromDistributionOutcome DetachCertificateFromDistribution(const Model::DetachCertificateFromDistributionRequest& request) const;
+
+        /**
+         * <p>Detaches an SSL/TLS certificate from your Amazon Lightsail content delivery
+         * network (CDN) distribution.</p> <p>After the certificate is detached, your
+         * distribution stops accepting traffic for all of the domains that are associated
+         * with the certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachCertificateFromDistribution">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DetachCertificateFromDistributionOutcomeCallable DetachCertificateFromDistributionCallable(const Model::DetachCertificateFromDistributionRequest& request) const;
+
+        /**
+         * <p>Detaches an SSL/TLS certificate from your Amazon Lightsail content delivery
+         * network (CDN) distribution.</p> <p>After the certificate is detached, your
+         * distribution stops accepting traffic for all of the domains that are associated
+         * with the certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachCertificateFromDistribution">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DetachCertificateFromDistributionAsync(const Model::DetachCertificateFromDistributionRequest& request, const DetachCertificateFromDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detaches a stopped block storage disk from a Lightsail instance. Make sure to
@@ -2575,9 +3176,9 @@ namespace Model
          * tag-based access control via resource tags applied to the resource identified by
          * <code>source snapshot name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-         * Dev Guide</a>.</p> <note> <p>Use the <code>get instance snapshots</code> or
+         * Dev Guide</a>.</p>  <p>Use the <code>get instance snapshots</code> or
          * <code>get disk snapshots</code> operations to get a list of snapshots that you
-         * can export to Amazon EC2.</p> </note><p><h3>See Also:</h3>   <a
+         * can export to Amazon EC2.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ExportSnapshot">AWS
          * API Reference</a></p>
          */
@@ -2596,9 +3197,9 @@ namespace Model
          * tag-based access control via resource tags applied to the resource identified by
          * <code>source snapshot name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-         * Dev Guide</a>.</p> <note> <p>Use the <code>get instance snapshots</code> or
+         * Dev Guide</a>.</p>  <p>Use the <code>get instance snapshots</code> or
          * <code>get disk snapshots</code> operations to get a list of snapshots that you
-         * can export to Amazon EC2.</p> </note><p><h3>See Also:</h3>   <a
+         * can export to Amazon EC2.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ExportSnapshot">AWS
          * API Reference</a></p>
          *
@@ -2619,9 +3220,9 @@ namespace Model
          * tag-based access control via resource tags applied to the resource identified by
          * <code>source snapshot name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-         * Dev Guide</a>.</p> <note> <p>Use the <code>get instance snapshots</code> or
+         * Dev Guide</a>.</p>  <p>Use the <code>get instance snapshots</code> or
          * <code>get disk snapshots</code> operations to get a list of snapshots that you
-         * can export to Amazon EC2.</p> </note><p><h3>See Also:</h3>   <a
+         * can export to Amazon EC2.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ExportSnapshot">AWS
          * API Reference</a></p>
          *
@@ -2744,12 +3345,12 @@ namespace Model
          * <p>Returns the list of available instance images, or <i>blueprints</i>. You can
          * use a blueprint to create a new instance already running a specific operating
          * system, as well as a preinstalled app or development stack. The software each
-         * instance is running depends on the blueprint image you choose.</p> <note> <p>Use
+         * instance is running depends on the blueprint image you choose.</p>  <p>Use
          * active blueprints when creating new instances. Inactive blueprints are listed to
          * support customers with existing instances and are not necessarily available to
          * create new instances. Blueprints are marked inactive when they become outdated
          * due to operating system updates or new application releases.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints">AWS
          * API Reference</a></p>
          */
@@ -2759,12 +3360,12 @@ namespace Model
          * <p>Returns the list of available instance images, or <i>blueprints</i>. You can
          * use a blueprint to create a new instance already running a specific operating
          * system, as well as a preinstalled app or development stack. The software each
-         * instance is running depends on the blueprint image you choose.</p> <note> <p>Use
+         * instance is running depends on the blueprint image you choose.</p>  <p>Use
          * active blueprints when creating new instances. Inactive blueprints are listed to
          * support customers with existing instances and are not necessarily available to
          * create new instances. Blueprints are marked inactive when they become outdated
          * due to operating system updates or new application releases.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints">AWS
          * API Reference</a></p>
          *
@@ -2776,12 +3377,12 @@ namespace Model
          * <p>Returns the list of available instance images, or <i>blueprints</i>. You can
          * use a blueprint to create a new instance already running a specific operating
          * system, as well as a preinstalled app or development stack. The software each
-         * instance is running depends on the blueprint image you choose.</p> <note> <p>Use
+         * instance is running depends on the blueprint image you choose.</p>  <p>Use
          * active blueprints when creating new instances. Inactive blueprints are listed to
          * support customers with existing instances and are not necessarily available to
          * create new instances. Blueprints are marked inactive when they become outdated
          * due to operating system updates or new application releases.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints">AWS
          * API Reference</a></p>
          *
@@ -2819,6 +3420,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetBundlesAsync(const Model::GetBundlesRequest& request, const GetBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about one or more Amazon Lightsail SSL/TLS
+         * certificates.</p>  <p>To get a summary of a certificate, ommit
+         * <code>includeCertificateDetails</code> from your request. The response will
+         * include only the certificate Amazon Resource Name (ARN), certificate name,
+         * domain name, and tags.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCertificates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCertificatesOutcome GetCertificates(const Model::GetCertificatesRequest& request) const;
+
+        /**
+         * <p>Returns information about one or more Amazon Lightsail SSL/TLS
+         * certificates.</p>  <p>To get a summary of a certificate, ommit
+         * <code>includeCertificateDetails</code> from your request. The response will
+         * include only the certificate Amazon Resource Name (ARN), certificate name,
+         * domain name, and tags.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCertificates">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetCertificatesOutcomeCallable GetCertificatesCallable(const Model::GetCertificatesRequest& request) const;
+
+        /**
+         * <p>Returns information about one or more Amazon Lightsail SSL/TLS
+         * certificates.</p>  <p>To get a summary of a certificate, ommit
+         * <code>includeCertificateDetails</code> from your request. The response will
+         * include only the certificate Amazon Resource Name (ARN), certificate name,
+         * domain name, and tags.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCertificates">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetCertificatesAsync(const Model::GetCertificatesRequest& request, const GetCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the CloudFormation stack record created as a result of the
@@ -2902,6 +3540,271 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetContactMethodsAsync(const Model::GetContactMethodsRequest& request, const GetContactMethodsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about Amazon Lightsail containers, such as the current
+         * version of the Lightsail Control (lightsailctl) plugin.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerAPIMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetContainerAPIMetadataOutcome GetContainerAPIMetadata(const Model::GetContainerAPIMetadataRequest& request) const;
+
+        /**
+         * <p>Returns information about Amazon Lightsail containers, such as the current
+         * version of the Lightsail Control (lightsailctl) plugin.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerAPIMetadata">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetContainerAPIMetadataOutcomeCallable GetContainerAPIMetadataCallable(const Model::GetContainerAPIMetadataRequest& request) const;
+
+        /**
+         * <p>Returns information about Amazon Lightsail containers, such as the current
+         * version of the Lightsail Control (lightsailctl) plugin.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerAPIMetadata">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetContainerAPIMetadataAsync(const Model::GetContainerAPIMetadataRequest& request, const GetContainerAPIMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the container images that are registered to your Amazon Lightsail
+         * container service.</p>  <p>If you created a deployment on your Lightsail
+         * container service that uses container images from a public registry like Docker
+         * Hub, those images are not returned as part of this action. Those images are not
+         * registered to your Lightsail container service.</p> <p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerImages">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetContainerImagesOutcome GetContainerImages(const Model::GetContainerImagesRequest& request) const;
+
+        /**
+         * <p>Returns the container images that are registered to your Amazon Lightsail
+         * container service.</p>  <p>If you created a deployment on your Lightsail
+         * container service that uses container images from a public registry like Docker
+         * Hub, those images are not returned as part of this action. Those images are not
+         * registered to your Lightsail container service.</p> <p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerImages">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetContainerImagesOutcomeCallable GetContainerImagesCallable(const Model::GetContainerImagesRequest& request) const;
+
+        /**
+         * <p>Returns the container images that are registered to your Amazon Lightsail
+         * container service.</p>  <p>If you created a deployment on your Lightsail
+         * container service that uses container images from a public registry like Docker
+         * Hub, those images are not returned as part of this action. Those images are not
+         * registered to your Lightsail container service.</p> <p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerImages">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetContainerImagesAsync(const Model::GetContainerImagesRequest& request, const GetContainerImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the log events of a container of your Amazon Lightsail container
+         * service.</p> <p>If your container service has more than one node (i.e., a scale
+         * greater than 1), then the log events that are returned for the specified
+         * container are merged from all nodes on your container service.</p> 
+         * <p>Container logs are retained for a certain amount of time. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon
+         * Lightsail endpoints and quotas</a> in the <i>AWS General Reference</i>.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerLog">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetContainerLogOutcome GetContainerLog(const Model::GetContainerLogRequest& request) const;
+
+        /**
+         * <p>Returns the log events of a container of your Amazon Lightsail container
+         * service.</p> <p>If your container service has more than one node (i.e., a scale
+         * greater than 1), then the log events that are returned for the specified
+         * container are merged from all nodes on your container service.</p> 
+         * <p>Container logs are retained for a certain amount of time. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon
+         * Lightsail endpoints and quotas</a> in the <i>AWS General Reference</i>.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerLog">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetContainerLogOutcomeCallable GetContainerLogCallable(const Model::GetContainerLogRequest& request) const;
+
+        /**
+         * <p>Returns the log events of a container of your Amazon Lightsail container
+         * service.</p> <p>If your container service has more than one node (i.e., a scale
+         * greater than 1), then the log events that are returned for the specified
+         * container are merged from all nodes on your container service.</p> 
+         * <p>Container logs are retained for a certain amount of time. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon
+         * Lightsail endpoints and quotas</a> in the <i>AWS General Reference</i>.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerLog">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetContainerLogAsync(const Model::GetContainerLogRequest& request, const GetContainerLogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the deployments for your Amazon Lightsail container service</p> <p>A
+         * deployment specifies the settings, such as the ports and launch command, of
+         * containers that are deployed to your container service.</p> <p>The deployments
+         * are ordered by version in ascending order. The newest version is listed at the
+         * top of the response.</p>  <p>A set number of deployments are kept before
+         * the oldest one is replaced with the newest one. For more information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon
+         * Lightsail endpoints and quotas</a> in the <i>AWS General Reference</i>.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServiceDeployments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetContainerServiceDeploymentsOutcome GetContainerServiceDeployments(const Model::GetContainerServiceDeploymentsRequest& request) const;
+
+        /**
+         * <p>Returns the deployments for your Amazon Lightsail container service</p> <p>A
+         * deployment specifies the settings, such as the ports and launch command, of
+         * containers that are deployed to your container service.</p> <p>The deployments
+         * are ordered by version in ascending order. The newest version is listed at the
+         * top of the response.</p>  <p>A set number of deployments are kept before
+         * the oldest one is replaced with the newest one. For more information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon
+         * Lightsail endpoints and quotas</a> in the <i>AWS General Reference</i>.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServiceDeployments">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetContainerServiceDeploymentsOutcomeCallable GetContainerServiceDeploymentsCallable(const Model::GetContainerServiceDeploymentsRequest& request) const;
+
+        /**
+         * <p>Returns the deployments for your Amazon Lightsail container service</p> <p>A
+         * deployment specifies the settings, such as the ports and launch command, of
+         * containers that are deployed to your container service.</p> <p>The deployments
+         * are ordered by version in ascending order. The newest version is listed at the
+         * top of the response.</p>  <p>A set number of deployments are kept before
+         * the oldest one is replaced with the newest one. For more information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon
+         * Lightsail endpoints and quotas</a> in the <i>AWS General Reference</i>.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServiceDeployments">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetContainerServiceDeploymentsAsync(const Model::GetContainerServiceDeploymentsRequest& request, const GetContainerServiceDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the data points of a specific metric of your Amazon Lightsail
+         * container service.</p> <p>Metrics report the utilization of your resources.
+         * Monitor and collect metric data regularly to maintain the reliability,
+         * availability, and performance of your resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServiceMetricData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetContainerServiceMetricDataOutcome GetContainerServiceMetricData(const Model::GetContainerServiceMetricDataRequest& request) const;
+
+        /**
+         * <p>Returns the data points of a specific metric of your Amazon Lightsail
+         * container service.</p> <p>Metrics report the utilization of your resources.
+         * Monitor and collect metric data regularly to maintain the reliability,
+         * availability, and performance of your resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServiceMetricData">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetContainerServiceMetricDataOutcomeCallable GetContainerServiceMetricDataCallable(const Model::GetContainerServiceMetricDataRequest& request) const;
+
+        /**
+         * <p>Returns the data points of a specific metric of your Amazon Lightsail
+         * container service.</p> <p>Metrics report the utilization of your resources.
+         * Monitor and collect metric data regularly to maintain the reliability,
+         * availability, and performance of your resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServiceMetricData">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetContainerServiceMetricDataAsync(const Model::GetContainerServiceMetricDataRequest& request, const GetContainerServiceMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the list of powers that can be specified for your Amazon Lightsail
+         * container services.</p> <p>The power specifies the amount of memory, the number
+         * of vCPUs, and the base price of the container service.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServicePowers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetContainerServicePowersOutcome GetContainerServicePowers(const Model::GetContainerServicePowersRequest& request) const;
+
+        /**
+         * <p>Returns the list of powers that can be specified for your Amazon Lightsail
+         * container services.</p> <p>The power specifies the amount of memory, the number
+         * of vCPUs, and the base price of the container service.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServicePowers">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetContainerServicePowersOutcomeCallable GetContainerServicePowersCallable(const Model::GetContainerServicePowersRequest& request) const;
+
+        /**
+         * <p>Returns the list of powers that can be specified for your Amazon Lightsail
+         * container services.</p> <p>The power specifies the amount of memory, the number
+         * of vCPUs, and the base price of the container service.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServicePowers">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetContainerServicePowersAsync(const Model::GetContainerServicePowersRequest& request, const GetContainerServicePowersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about one or more of your Amazon Lightsail container
+         * services.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServices">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetContainerServicesOutcome GetContainerServices(const Model::GetContainerServicesRequest& request) const;
+
+        /**
+         * <p>Returns information about one or more of your Amazon Lightsail container
+         * services.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServices">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetContainerServicesOutcomeCallable GetContainerServicesCallable(const Model::GetContainerServicesRequest& request) const;
+
+        /**
+         * <p>Returns information about one or more of your Amazon Lightsail container
+         * services.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServices">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetContainerServicesAsync(const Model::GetContainerServicesRequest& request, const GetContainerServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a specific block storage disk.</p><p><h3>See
@@ -3014,6 +3917,136 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDisksAsync(const Model::GetDisksRequest& request, const GetDisksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the list bundles that can be applied to you Amazon Lightsail content
+         * delivery network (CDN) distributions.</p> <p>A distribution bundle specifies the
+         * monthly network transfer quota and monthly cost of your
+         * dsitribution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionBundles">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDistributionBundlesOutcome GetDistributionBundles(const Model::GetDistributionBundlesRequest& request) const;
+
+        /**
+         * <p>Returns the list bundles that can be applied to you Amazon Lightsail content
+         * delivery network (CDN) distributions.</p> <p>A distribution bundle specifies the
+         * monthly network transfer quota and monthly cost of your
+         * dsitribution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionBundles">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDistributionBundlesOutcomeCallable GetDistributionBundlesCallable(const Model::GetDistributionBundlesRequest& request) const;
+
+        /**
+         * <p>Returns the list bundles that can be applied to you Amazon Lightsail content
+         * delivery network (CDN) distributions.</p> <p>A distribution bundle specifies the
+         * monthly network transfer quota and monthly cost of your
+         * dsitribution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionBundles">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDistributionBundlesAsync(const Model::GetDistributionBundlesRequest& request, const GetDistributionBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the timestamp and status of the last cache reset of a specific Amazon
+         * Lightsail content delivery network (CDN) distribution.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionLatestCacheReset">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDistributionLatestCacheResetOutcome GetDistributionLatestCacheReset(const Model::GetDistributionLatestCacheResetRequest& request) const;
+
+        /**
+         * <p>Returns the timestamp and status of the last cache reset of a specific Amazon
+         * Lightsail content delivery network (CDN) distribution.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionLatestCacheReset">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDistributionLatestCacheResetOutcomeCallable GetDistributionLatestCacheResetCallable(const Model::GetDistributionLatestCacheResetRequest& request) const;
+
+        /**
+         * <p>Returns the timestamp and status of the last cache reset of a specific Amazon
+         * Lightsail content delivery network (CDN) distribution.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionLatestCacheReset">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDistributionLatestCacheResetAsync(const Model::GetDistributionLatestCacheResetRequest& request, const GetDistributionLatestCacheResetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the data points of a specific metric for an Amazon Lightsail content
+         * delivery network (CDN) distribution.</p> <p>Metrics report the utilization of
+         * your resources, and the error counts generated by them. Monitor and collect
+         * metric data regularly to maintain the reliability, availability, and performance
+         * of your resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionMetricData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDistributionMetricDataOutcome GetDistributionMetricData(const Model::GetDistributionMetricDataRequest& request) const;
+
+        /**
+         * <p>Returns the data points of a specific metric for an Amazon Lightsail content
+         * delivery network (CDN) distribution.</p> <p>Metrics report the utilization of
+         * your resources, and the error counts generated by them. Monitor and collect
+         * metric data regularly to maintain the reliability, availability, and performance
+         * of your resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionMetricData">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDistributionMetricDataOutcomeCallable GetDistributionMetricDataCallable(const Model::GetDistributionMetricDataRequest& request) const;
+
+        /**
+         * <p>Returns the data points of a specific metric for an Amazon Lightsail content
+         * delivery network (CDN) distribution.</p> <p>Metrics report the utilization of
+         * your resources, and the error counts generated by them. Monitor and collect
+         * metric data regularly to maintain the reliability, availability, and performance
+         * of your resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionMetricData">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDistributionMetricDataAsync(const Model::GetDistributionMetricDataRequest& request, const GetDistributionMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about one or more of your Amazon Lightsail content
+         * delivery network (CDN) distributions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDistributionsOutcome GetDistributions(const Model::GetDistributionsRequest& request) const;
+
+        /**
+         * <p>Returns information about one or more of your Amazon Lightsail content
+         * delivery network (CDN) distributions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDistributionsOutcomeCallable GetDistributionsCallable(const Model::GetDistributionsRequest& request) const;
+
+        /**
+         * <p>Returns information about one or more of your Amazon Lightsail content
+         * delivery network (CDN) distributions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDistributionsAsync(const Model::GetDistributionsRequest& request, const GetDistributionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a specific domain recordset.</p><p><h3>See
@@ -3178,7 +4211,10 @@ namespace Model
 
         /**
          * <p>Returns the data points for the specified Amazon Lightsail instance metric,
-         * given an instance name.</p><p><h3>See Also:</h3>   <a
+         * given an instance name.</p> <p>Metrics report the utilization of your resources,
+         * and the error counts generated by them. Monitor and collect metric data
+         * regularly to maintain the reliability, availability, and performance of your
+         * resources.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceMetricData">AWS
          * API Reference</a></p>
          */
@@ -3186,7 +4222,10 @@ namespace Model
 
         /**
          * <p>Returns the data points for the specified Amazon Lightsail instance metric,
-         * given an instance name.</p><p><h3>See Also:</h3>   <a
+         * given an instance name.</p> <p>Metrics report the utilization of your resources,
+         * and the error counts generated by them. Monitor and collect metric data
+         * regularly to maintain the reliability, availability, and performance of your
+         * resources.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceMetricData">AWS
          * API Reference</a></p>
          *
@@ -3196,7 +4235,10 @@ namespace Model
 
         /**
          * <p>Returns the data points for the specified Amazon Lightsail instance metric,
-         * given an instance name.</p><p><h3>See Also:</h3>   <a
+         * given an instance name.</p> <p>Metrics report the utilization of your resources,
+         * and the error counts generated by them. Monitor and collect metric data
+         * regularly to maintain the reliability, availability, and performance of your
+         * resources.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceMetricData">AWS
          * API Reference</a></p>
          *
@@ -3205,16 +4247,18 @@ namespace Model
         virtual void GetInstanceMetricDataAsync(const Model::GetInstanceMetricDataRequest& request, const GetInstanceMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the port states for a specific virtual private server, or
-         * <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the firewall port states for a specific Amazon Lightsail instance,
+         * the IP addresses allowed to connect to the instance through the ports, and the
+         * protocol.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates">AWS
          * API Reference</a></p>
          */
         virtual Model::GetInstancePortStatesOutcome GetInstancePortStates(const Model::GetInstancePortStatesRequest& request) const;
 
         /**
-         * <p>Returns the port states for a specific virtual private server, or
-         * <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the firewall port states for a specific Amazon Lightsail instance,
+         * the IP addresses allowed to connect to the instance through the ports, and the
+         * protocol.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates">AWS
          * API Reference</a></p>
          *
@@ -3223,8 +4267,9 @@ namespace Model
         virtual Model::GetInstancePortStatesOutcomeCallable GetInstancePortStatesCallable(const Model::GetInstancePortStatesRequest& request) const;
 
         /**
-         * <p>Returns the port states for a specific virtual private server, or
-         * <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the firewall port states for a specific Amazon Lightsail instance,
+         * the IP addresses allowed to connect to the instance through the ports, and the
+         * protocol.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates">AWS
          * API Reference</a></p>
          *
@@ -3427,7 +4472,10 @@ namespace Model
 
         /**
          * <p>Returns information about health metrics for your Lightsail load
-         * balancer.</p><p><h3>See Also:</h3>   <a
+         * balancer.</p> <p>Metrics report the utilization of your resources, and the error
+         * counts generated by them. Monitor and collect metric data regularly to maintain
+         * the reliability, availability, and performance of your resources.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerMetricData">AWS
          * API Reference</a></p>
          */
@@ -3435,7 +4483,10 @@ namespace Model
 
         /**
          * <p>Returns information about health metrics for your Lightsail load
-         * balancer.</p><p><h3>See Also:</h3>   <a
+         * balancer.</p> <p>Metrics report the utilization of your resources, and the error
+         * counts generated by them. Monitor and collect metric data regularly to maintain
+         * the reliability, availability, and performance of your resources.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerMetricData">AWS
          * API Reference</a></p>
          *
@@ -3445,7 +4496,10 @@ namespace Model
 
         /**
          * <p>Returns information about health metrics for your Lightsail load
-         * balancer.</p><p><h3>See Also:</h3>   <a
+         * balancer.</p> <p>Metrics report the utilization of your resources, and the error
+         * counts generated by them. Monitor and collect metric data regularly to maintain
+         * the reliability, availability, and performance of your resources.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerMetricData">AWS
          * API Reference</a></p>
          *
@@ -3864,7 +4918,10 @@ namespace Model
 
         /**
          * <p>Returns the data points of the specified metric for a database in Amazon
-         * Lightsail.</p><p><h3>See Also:</h3>   <a
+         * Lightsail.</p> <p>Metrics report the utilization of your resources, and the
+         * error counts generated by them. Monitor and collect metric data regularly to
+         * maintain the reliability, availability, and performance of your
+         * resources.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseMetricData">AWS
          * API Reference</a></p>
          */
@@ -3872,7 +4929,10 @@ namespace Model
 
         /**
          * <p>Returns the data points of the specified metric for a database in Amazon
-         * Lightsail.</p><p><h3>See Also:</h3>   <a
+         * Lightsail.</p> <p>Metrics report the utilization of your resources, and the
+         * error counts generated by them. Monitor and collect metric data regularly to
+         * maintain the reliability, availability, and performance of your
+         * resources.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseMetricData">AWS
          * API Reference</a></p>
          *
@@ -3882,7 +4942,10 @@ namespace Model
 
         /**
          * <p>Returns the data points of the specified metric for a database in Amazon
-         * Lightsail.</p><p><h3>See Also:</h3>   <a
+         * Lightsail.</p> <p>Metrics report the utilization of your resources, and the
+         * error counts generated by them. Monitor and collect metric data regularly to
+         * maintain the reliability, availability, and performance of your
+         * resources.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseMetricData">AWS
          * API Reference</a></p>
          *
@@ -4124,10 +5187,11 @@ namespace Model
         virtual void IsVpcPeeredAsync(const Model::IsVpcPeeredRequest& request, const IsVpcPeeredResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds public ports to an Amazon Lightsail instance.</p> <p>The <code>open
-         * instance public ports</code> operation supports tag-based access control via
-         * resource tags applied to the resource identified by <code>instance name</code>.
-         * For more information, see the <a
+         * <p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP
+         * addresses allowed to connect to the instance through the ports, and the
+         * protocol.</p> <p>The <code>OpenInstancePublicPorts</code> action supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * <code>instanceName</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">AWS
@@ -4136,10 +5200,11 @@ namespace Model
         virtual Model::OpenInstancePublicPortsOutcome OpenInstancePublicPorts(const Model::OpenInstancePublicPortsRequest& request) const;
 
         /**
-         * <p>Adds public ports to an Amazon Lightsail instance.</p> <p>The <code>open
-         * instance public ports</code> operation supports tag-based access control via
-         * resource tags applied to the resource identified by <code>instance name</code>.
-         * For more information, see the <a
+         * <p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP
+         * addresses allowed to connect to the instance through the ports, and the
+         * protocol.</p> <p>The <code>OpenInstancePublicPorts</code> action supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * <code>instanceName</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">AWS
@@ -4150,10 +5215,11 @@ namespace Model
         virtual Model::OpenInstancePublicPortsOutcomeCallable OpenInstancePublicPortsCallable(const Model::OpenInstancePublicPortsRequest& request) const;
 
         /**
-         * <p>Adds public ports to an Amazon Lightsail instance.</p> <p>The <code>open
-         * instance public ports</code> operation supports tag-based access control via
-         * resource tags applied to the resource identified by <code>instance name</code>.
-         * For more information, see the <a
+         * <p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP
+         * addresses allowed to connect to the instance through the ports, and the
+         * protocol.</p> <p>The <code>OpenInstancePublicPorts</code> action supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * <code>instanceName</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">AWS
@@ -4253,11 +5319,15 @@ namespace Model
         virtual void PutAlarmAsync(const Model::PutAlarmRequest& request, const PutAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets the specified open ports for an Amazon Lightsail instance, and closes
-         * all ports for every protocol not included in the current request.</p> <p>The
-         * <code>put instance public ports</code> operation supports tag-based access
-         * control via resource tags applied to the resource identified by <code>instance
-         * name</code>. For more information, see the <a
+         * <p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP
+         * addresses allowed to connect to the instance through the ports, and the
+         * protocol. This action also closes all currently open ports that are not included
+         * in the request. Include all of the ports and the protocols you want to open in
+         * your <code>PutInstancePublicPorts</code>request. Or use the
+         * <code>OpenInstancePublicPorts</code> action to open ports without closing
+         * currently open ports.</p> <p>The <code>PutInstancePublicPorts</code> action
+         * supports tag-based access control via resource tags applied to the resource
+         * identified by <code>instanceName</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutInstancePublicPorts">AWS
@@ -4266,11 +5336,15 @@ namespace Model
         virtual Model::PutInstancePublicPortsOutcome PutInstancePublicPorts(const Model::PutInstancePublicPortsRequest& request) const;
 
         /**
-         * <p>Sets the specified open ports for an Amazon Lightsail instance, and closes
-         * all ports for every protocol not included in the current request.</p> <p>The
-         * <code>put instance public ports</code> operation supports tag-based access
-         * control via resource tags applied to the resource identified by <code>instance
-         * name</code>. For more information, see the <a
+         * <p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP
+         * addresses allowed to connect to the instance through the ports, and the
+         * protocol. This action also closes all currently open ports that are not included
+         * in the request. Include all of the ports and the protocols you want to open in
+         * your <code>PutInstancePublicPorts</code>request. Or use the
+         * <code>OpenInstancePublicPorts</code> action to open ports without closing
+         * currently open ports.</p> <p>The <code>PutInstancePublicPorts</code> action
+         * supports tag-based access control via resource tags applied to the resource
+         * identified by <code>instanceName</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutInstancePublicPorts">AWS
@@ -4281,11 +5355,15 @@ namespace Model
         virtual Model::PutInstancePublicPortsOutcomeCallable PutInstancePublicPortsCallable(const Model::PutInstancePublicPortsRequest& request) const;
 
         /**
-         * <p>Sets the specified open ports for an Amazon Lightsail instance, and closes
-         * all ports for every protocol not included in the current request.</p> <p>The
-         * <code>put instance public ports</code> operation supports tag-based access
-         * control via resource tags applied to the resource identified by <code>instance
-         * name</code>. For more information, see the <a
+         * <p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP
+         * addresses allowed to connect to the instance through the ports, and the
+         * protocol. This action also closes all currently open ports that are not included
+         * in the request. Include all of the ports and the protocols you want to open in
+         * your <code>PutInstancePublicPorts</code>request. Or use the
+         * <code>OpenInstancePublicPorts</code> action to open ports without closing
+         * currently open ports.</p> <p>The <code>PutInstancePublicPorts</code> action
+         * supports tag-based access control via resource tags applied to the resource
+         * identified by <code>instanceName</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutInstancePublicPorts">AWS
@@ -4376,6 +5454,49 @@ namespace Model
         virtual void RebootRelationalDatabaseAsync(const Model::RebootRelationalDatabaseRequest& request, const RebootRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Registers a container image to your Amazon Lightsail container service.</p>
+         *  <p>This action is not required if you install and use the Lightsail
+         * Control (lightsailctl) plugin to push container images to your Lightsail
+         * container service. For more information, see <a
+         * href="amazon-lightsail-pushing-container-images">Pushing and managing container
+         * images on your Amazon Lightsail container services</a> in the <i>Lightsail Dev
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RegisterContainerImage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RegisterContainerImageOutcome RegisterContainerImage(const Model::RegisterContainerImageRequest& request) const;
+
+        /**
+         * <p>Registers a container image to your Amazon Lightsail container service.</p>
+         *  <p>This action is not required if you install and use the Lightsail
+         * Control (lightsailctl) plugin to push container images to your Lightsail
+         * container service. For more information, see <a
+         * href="amazon-lightsail-pushing-container-images">Pushing and managing container
+         * images on your Amazon Lightsail container services</a> in the <i>Lightsail Dev
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RegisterContainerImage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RegisterContainerImageOutcomeCallable RegisterContainerImageCallable(const Model::RegisterContainerImageRequest& request) const;
+
+        /**
+         * <p>Registers a container image to your Amazon Lightsail container service.</p>
+         *  <p>This action is not required if you install and use the Lightsail
+         * Control (lightsailctl) plugin to push container images to your Lightsail
+         * container service. For more information, see <a
+         * href="amazon-lightsail-pushing-container-images">Pushing and managing container
+         * images on your Amazon Lightsail container services</a> in the <i>Lightsail Dev
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RegisterContainerImage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RegisterContainerImageAsync(const Model::RegisterContainerImageRequest& request, const RegisterContainerImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a specific static IP from your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ReleaseStaticIp">AWS
          * API Reference</a></p>
@@ -4401,8 +5522,42 @@ namespace Model
         virtual void ReleaseStaticIpAsync(const Model::ReleaseStaticIpRequest& request, const ReleaseStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sends a verification request to an email contact method to ensure it’s owned
-         * by the requester. SMS contact methods don’t need to be verified.</p> <p>A
+         * <p>Deletes currently cached content from your Amazon Lightsail content delivery
+         * network (CDN) distribution.</p> <p>After resetting the cache, the next time a
+         * content request is made, your distribution pulls, serves, and caches it from the
+         * origin.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ResetDistributionCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResetDistributionCacheOutcome ResetDistributionCache(const Model::ResetDistributionCacheRequest& request) const;
+
+        /**
+         * <p>Deletes currently cached content from your Amazon Lightsail content delivery
+         * network (CDN) distribution.</p> <p>After resetting the cache, the next time a
+         * content request is made, your distribution pulls, serves, and caches it from the
+         * origin.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ResetDistributionCache">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ResetDistributionCacheOutcomeCallable ResetDistributionCacheCallable(const Model::ResetDistributionCacheRequest& request) const;
+
+        /**
+         * <p>Deletes currently cached content from your Amazon Lightsail content delivery
+         * network (CDN) distribution.</p> <p>After resetting the cache, the next time a
+         * content request is made, your distribution pulls, serves, and caches it from the
+         * origin.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ResetDistributionCache">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ResetDistributionCacheAsync(const Model::ResetDistributionCacheRequest& request, const ResetDistributionCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Sends a verification request to an email contact method to ensure it's owned
+         * by the requester. SMS contact methods don't need to be verified.</p> <p>A
          * contact method is used to send you notifications about your Amazon Lightsail
          * resources. You can add one email address and one mobile phone number contact
          * method in each AWS Region. However, SMS text messaging is not supported in some
@@ -4412,17 +5567,17 @@ namespace Model
          * in Amazon Lightsail</a>.</p> <p>A verification request is sent to the contact
          * method when you initially create it. Use this action to send another
          * verification request if a previous verification request was deleted, or has
-         * expired.</p> <important> <p>Notifications are not sent to an email contact
+         * expired.</p>  <p>Notifications are not sent to an email contact
          * method until after it is verified, and confirmed as valid.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SendContactMethodVerification">AWS
          * API Reference</a></p>
          */
         virtual Model::SendContactMethodVerificationOutcome SendContactMethodVerification(const Model::SendContactMethodVerificationRequest& request) const;
 
         /**
-         * <p>Sends a verification request to an email contact method to ensure it’s owned
-         * by the requester. SMS contact methods don’t need to be verified.</p> <p>A
+         * <p>Sends a verification request to an email contact method to ensure it's owned
+         * by the requester. SMS contact methods don't need to be verified.</p> <p>A
          * contact method is used to send you notifications about your Amazon Lightsail
          * resources. You can add one email address and one mobile phone number contact
          * method in each AWS Region. However, SMS text messaging is not supported in some
@@ -4432,9 +5587,9 @@ namespace Model
          * in Amazon Lightsail</a>.</p> <p>A verification request is sent to the contact
          * method when you initially create it. Use this action to send another
          * verification request if a previous verification request was deleted, or has
-         * expired.</p> <important> <p>Notifications are not sent to an email contact
+         * expired.</p>  <p>Notifications are not sent to an email contact
          * method until after it is verified, and confirmed as valid.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SendContactMethodVerification">AWS
          * API Reference</a></p>
          *
@@ -4443,8 +5598,8 @@ namespace Model
         virtual Model::SendContactMethodVerificationOutcomeCallable SendContactMethodVerificationCallable(const Model::SendContactMethodVerificationRequest& request) const;
 
         /**
-         * <p>Sends a verification request to an email contact method to ensure it’s owned
-         * by the requester. SMS contact methods don’t need to be verified.</p> <p>A
+         * <p>Sends a verification request to an email contact method to ensure it's owned
+         * by the requester. SMS contact methods don't need to be verified.</p> <p>A
          * contact method is used to send you notifications about your Amazon Lightsail
          * resources. You can add one email address and one mobile phone number contact
          * method in each AWS Region. However, SMS text messaging is not supported in some
@@ -4454,9 +5609,9 @@ namespace Model
          * in Amazon Lightsail</a>.</p> <p>A verification request is sent to the contact
          * method when you initially create it. Use this action to send another
          * verification request if a previous verification request was deleted, or has
-         * expired.</p> <important> <p>Notifications are not sent to an email contact
+         * expired.</p>  <p>Notifications are not sent to an email contact
          * method until after it is verified, and confirmed as valid.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SendContactMethodVerification">AWS
          * API Reference</a></p>
          *
@@ -4466,13 +5621,13 @@ namespace Model
 
         /**
          * <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart
-         * an instance, use the <code>reboot instance</code> operation.</p> <note> <p>When
+         * an instance, use the <code>reboot instance</code> operation.</p>  <p>When
          * you start a stopped instance, Lightsail assigns a new public IP address to the
          * instance. To use the same IP address after stopping and starting an instance,
          * create a static IP address and attach it to the instance. For more information,
          * see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
-         * Dev Guide</a>.</p> </note> <p>The <code>start instance</code> operation supports
+         * Dev Guide</a>.</p>  <p>The <code>start instance</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>instance name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -4484,13 +5639,13 @@ namespace Model
 
         /**
          * <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart
-         * an instance, use the <code>reboot instance</code> operation.</p> <note> <p>When
+         * an instance, use the <code>reboot instance</code> operation.</p>  <p>When
          * you start a stopped instance, Lightsail assigns a new public IP address to the
          * instance. To use the same IP address after stopping and starting an instance,
          * create a static IP address and attach it to the instance. For more information,
          * see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
-         * Dev Guide</a>.</p> </note> <p>The <code>start instance</code> operation supports
+         * Dev Guide</a>.</p>  <p>The <code>start instance</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>instance name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -4504,13 +5659,13 @@ namespace Model
 
         /**
          * <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart
-         * an instance, use the <code>reboot instance</code> operation.</p> <note> <p>When
+         * an instance, use the <code>reboot instance</code> operation.</p>  <p>When
          * you start a stopped instance, Lightsail assigns a new public IP address to the
          * instance. To use the same IP address after stopping and starting an instance,
          * create a static IP address and attach it to the instance. For more information,
          * see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
-         * Dev Guide</a>.</p> </note> <p>The <code>start instance</code> operation supports
+         * Dev Guide</a>.</p>  <p>The <code>start instance</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>instance name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -4567,12 +5722,12 @@ namespace Model
 
         /**
          * <p>Stops a specific Amazon Lightsail instance that is currently running.</p>
-         * <note> <p>When you start a stopped instance, Lightsail assigns a new public IP
+         *  <p>When you start a stopped instance, Lightsail assigns a new public IP
          * address to the instance. To use the same IP address after stopping and starting
          * an instance, create a static IP address and attach it to the instance. For more
          * information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
-         * Dev Guide</a>.</p> </note> <p>The <code>stop instance</code> operation supports
+         * Dev Guide</a>.</p>  <p>The <code>stop instance</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>instance name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -4584,12 +5739,12 @@ namespace Model
 
         /**
          * <p>Stops a specific Amazon Lightsail instance that is currently running.</p>
-         * <note> <p>When you start a stopped instance, Lightsail assigns a new public IP
+         *  <p>When you start a stopped instance, Lightsail assigns a new public IP
          * address to the instance. To use the same IP address after stopping and starting
          * an instance, create a static IP address and attach it to the instance. For more
          * information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
-         * Dev Guide</a>.</p> </note> <p>The <code>stop instance</code> operation supports
+         * Dev Guide</a>.</p>  <p>The <code>stop instance</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>instance name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -4603,12 +5758,12 @@ namespace Model
 
         /**
          * <p>Stops a specific Amazon Lightsail instance that is currently running.</p>
-         * <note> <p>When you start a stopped instance, Lightsail assigns a new public IP
+         *  <p>When you start a stopped instance, Lightsail assigns a new public IP
          * address to the instance. To use the same IP address after stopping and starting
          * an instance, create a static IP address and attach it to the instance. For more
          * information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
-         * Dev Guide</a>.</p> </note> <p>The <code>stop instance</code> operation supports
+         * Dev Guide</a>.</p>  <p>The <code>stop instance</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>instance name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -4833,6 +5988,117 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the configuration of your Amazon Lightsail container service, such as
+         * its power, scale, and public domain names.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateContainerService">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateContainerServiceOutcome UpdateContainerService(const Model::UpdateContainerServiceRequest& request) const;
+
+        /**
+         * <p>Updates the configuration of your Amazon Lightsail container service, such as
+         * its power, scale, and public domain names.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateContainerService">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateContainerServiceOutcomeCallable UpdateContainerServiceCallable(const Model::UpdateContainerServiceRequest& request) const;
+
+        /**
+         * <p>Updates the configuration of your Amazon Lightsail container service, such as
+         * its power, scale, and public domain names.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateContainerService">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateContainerServiceAsync(const Model::UpdateContainerServiceRequest& request, const UpdateContainerServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates an existing Amazon Lightsail content delivery network (CDN)
+         * distribution.</p> <p>Use this action to update the configuration of your
+         * existing distribution</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDistribution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDistributionOutcome UpdateDistribution(const Model::UpdateDistributionRequest& request) const;
+
+        /**
+         * <p>Updates an existing Amazon Lightsail content delivery network (CDN)
+         * distribution.</p> <p>Use this action to update the configuration of your
+         * existing distribution</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDistribution">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateDistributionOutcomeCallable UpdateDistributionCallable(const Model::UpdateDistributionRequest& request) const;
+
+        /**
+         * <p>Updates an existing Amazon Lightsail content delivery network (CDN)
+         * distribution.</p> <p>Use this action to update the configuration of your
+         * existing distribution</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDistribution">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateDistributionAsync(const Model::UpdateDistributionRequest& request, const UpdateDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the bundle of your Amazon Lightsail content delivery network (CDN)
+         * distribution.</p> <p>A distribution bundle specifies the monthly network
+         * transfer quota and monthly cost of your dsitribution.</p> <p>Update your
+         * distribution's bundle if your distribution is going over its monthly network
+         * transfer quota and is incurring an overage fee.</p> <p>You can update your
+         * distribution's bundle only one time within your monthly AWS billing cycle. To
+         * determine if you can update your distribution's bundle, use the
+         * <code>GetDistributions</code> action. The <code>ableToUpdateBundle</code>
+         * parameter in the result will indicate whether you can currently update your
+         * distribution's bundle.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDistributionBundle">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDistributionBundleOutcome UpdateDistributionBundle(const Model::UpdateDistributionBundleRequest& request) const;
+
+        /**
+         * <p>Updates the bundle of your Amazon Lightsail content delivery network (CDN)
+         * distribution.</p> <p>A distribution bundle specifies the monthly network
+         * transfer quota and monthly cost of your dsitribution.</p> <p>Update your
+         * distribution's bundle if your distribution is going over its monthly network
+         * transfer quota and is incurring an overage fee.</p> <p>You can update your
+         * distribution's bundle only one time within your monthly AWS billing cycle. To
+         * determine if you can update your distribution's bundle, use the
+         * <code>GetDistributions</code> action. The <code>ableToUpdateBundle</code>
+         * parameter in the result will indicate whether you can currently update your
+         * distribution's bundle.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDistributionBundle">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateDistributionBundleOutcomeCallable UpdateDistributionBundleCallable(const Model::UpdateDistributionBundleRequest& request) const;
+
+        /**
+         * <p>Updates the bundle of your Amazon Lightsail content delivery network (CDN)
+         * distribution.</p> <p>A distribution bundle specifies the monthly network
+         * transfer quota and monthly cost of your dsitribution.</p> <p>Update your
+         * distribution's bundle if your distribution is going over its monthly network
+         * transfer quota and is incurring an overage fee.</p> <p>You can update your
+         * distribution's bundle only one time within your monthly AWS billing cycle. To
+         * determine if you can update your distribution's bundle, use the
+         * <code>GetDistributions</code> action. The <code>ableToUpdateBundle</code>
+         * parameter in the result will indicate whether you can currently update your
+         * distribution's bundle.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDistributionBundle">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateDistributionBundleAsync(const Model::UpdateDistributionBundleRequest& request, const UpdateDistributionBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a domain recordset after it is created.</p> <p>The <code>update
          * domain entry</code> operation supports tag-based access control via resource
          * tags applied to the resource identified by <code>domain name</code>. For more
@@ -5027,17 +6293,23 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AllocateStaticIpAsyncHelper(const Model::AllocateStaticIpRequest& request, const AllocateStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AttachCertificateToDistributionAsyncHelper(const Model::AttachCertificateToDistributionRequest& request, const AttachCertificateToDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AttachDiskAsyncHelper(const Model::AttachDiskRequest& request, const AttachDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AttachInstancesToLoadBalancerAsyncHelper(const Model::AttachInstancesToLoadBalancerRequest& request, const AttachInstancesToLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AttachLoadBalancerTlsCertificateAsyncHelper(const Model::AttachLoadBalancerTlsCertificateRequest& request, const AttachLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AttachStaticIpAsyncHelper(const Model::AttachStaticIpRequest& request, const AttachStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CloseInstancePublicPortsAsyncHelper(const Model::CloseInstancePublicPortsRequest& request, const CloseInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CopySnapshotAsyncHelper(const Model::CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateCertificateAsyncHelper(const Model::CreateCertificateRequest& request, const CreateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCloudFormationStackAsyncHelper(const Model::CreateCloudFormationStackRequest& request, const CreateCloudFormationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateContactMethodAsyncHelper(const Model::CreateContactMethodRequest& request, const CreateContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateContainerServiceAsyncHelper(const Model::CreateContainerServiceRequest& request, const CreateContainerServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateContainerServiceDeploymentAsyncHelper(const Model::CreateContainerServiceDeploymentRequest& request, const CreateContainerServiceDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateContainerServiceRegistryLoginAsyncHelper(const Model::CreateContainerServiceRegistryLoginRequest& request, const CreateContainerServiceRegistryLoginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDiskAsyncHelper(const Model::CreateDiskRequest& request, const CreateDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDiskFromSnapshotAsyncHelper(const Model::CreateDiskFromSnapshotRequest& request, const CreateDiskFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDiskSnapshotAsyncHelper(const Model::CreateDiskSnapshotRequest& request, const CreateDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateDistributionAsyncHelper(const Model::CreateDistributionRequest& request, const CreateDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDomainAsyncHelper(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDomainEntryAsyncHelper(const Model::CreateDomainEntryRequest& request, const CreateDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInstanceSnapshotAsyncHelper(const Model::CreateInstanceSnapshotRequest& request, const CreateInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5051,9 +6323,13 @@ namespace Model
         void CreateRelationalDatabaseSnapshotAsyncHelper(const Model::CreateRelationalDatabaseSnapshotRequest& request, const CreateRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAlarmAsyncHelper(const Model::DeleteAlarmRequest& request, const DeleteAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAutoSnapshotAsyncHelper(const Model::DeleteAutoSnapshotRequest& request, const DeleteAutoSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteCertificateAsyncHelper(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteContactMethodAsyncHelper(const Model::DeleteContactMethodRequest& request, const DeleteContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteContainerImageAsyncHelper(const Model::DeleteContainerImageRequest& request, const DeleteContainerImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteContainerServiceAsyncHelper(const Model::DeleteContainerServiceRequest& request, const DeleteContainerServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDiskAsyncHelper(const Model::DeleteDiskRequest& request, const DeleteDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDiskSnapshotAsyncHelper(const Model::DeleteDiskSnapshotRequest& request, const DeleteDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteDistributionAsyncHelper(const Model::DeleteDistributionRequest& request, const DeleteDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDomainAsyncHelper(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDomainEntryAsyncHelper(const Model::DeleteDomainEntryRequest& request, const DeleteDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInstanceAsyncHelper(const Model::DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5064,6 +6340,7 @@ namespace Model
         void DeleteLoadBalancerTlsCertificateAsyncHelper(const Model::DeleteLoadBalancerTlsCertificateRequest& request, const DeleteLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRelationalDatabaseAsyncHelper(const Model::DeleteRelationalDatabaseRequest& request, const DeleteRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRelationalDatabaseSnapshotAsyncHelper(const Model::DeleteRelationalDatabaseSnapshotRequest& request, const DeleteRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DetachCertificateFromDistributionAsyncHelper(const Model::DetachCertificateFromDistributionRequest& request, const DetachCertificateFromDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetachDiskAsyncHelper(const Model::DetachDiskRequest& request, const DetachDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetachInstancesFromLoadBalancerAsyncHelper(const Model::DetachInstancesFromLoadBalancerRequest& request, const DetachInstancesFromLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetachStaticIpAsyncHelper(const Model::DetachStaticIpRequest& request, const DetachStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5076,12 +6353,24 @@ namespace Model
         void GetAutoSnapshotsAsyncHelper(const Model::GetAutoSnapshotsRequest& request, const GetAutoSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBlueprintsAsyncHelper(const Model::GetBlueprintsRequest& request, const GetBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBundlesAsyncHelper(const Model::GetBundlesRequest& request, const GetBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetCertificatesAsyncHelper(const Model::GetCertificatesRequest& request, const GetCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCloudFormationStackRecordsAsyncHelper(const Model::GetCloudFormationStackRecordsRequest& request, const GetCloudFormationStackRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetContactMethodsAsyncHelper(const Model::GetContactMethodsRequest& request, const GetContactMethodsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetContainerAPIMetadataAsyncHelper(const Model::GetContainerAPIMetadataRequest& request, const GetContainerAPIMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetContainerImagesAsyncHelper(const Model::GetContainerImagesRequest& request, const GetContainerImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetContainerLogAsyncHelper(const Model::GetContainerLogRequest& request, const GetContainerLogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetContainerServiceDeploymentsAsyncHelper(const Model::GetContainerServiceDeploymentsRequest& request, const GetContainerServiceDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetContainerServiceMetricDataAsyncHelper(const Model::GetContainerServiceMetricDataRequest& request, const GetContainerServiceMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetContainerServicePowersAsyncHelper(const Model::GetContainerServicePowersRequest& request, const GetContainerServicePowersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetContainerServicesAsyncHelper(const Model::GetContainerServicesRequest& request, const GetContainerServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDiskAsyncHelper(const Model::GetDiskRequest& request, const GetDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDiskSnapshotAsyncHelper(const Model::GetDiskSnapshotRequest& request, const GetDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDiskSnapshotsAsyncHelper(const Model::GetDiskSnapshotsRequest& request, const GetDiskSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDisksAsyncHelper(const Model::GetDisksRequest& request, const GetDisksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDistributionBundlesAsyncHelper(const Model::GetDistributionBundlesRequest& request, const GetDistributionBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDistributionLatestCacheResetAsyncHelper(const Model::GetDistributionLatestCacheResetRequest& request, const GetDistributionLatestCacheResetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDistributionMetricDataAsyncHelper(const Model::GetDistributionMetricDataRequest& request, const GetDistributionMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDistributionsAsyncHelper(const Model::GetDistributionsRequest& request, const GetDistributionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDomainAsyncHelper(const Model::GetDomainRequest& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDomainsAsyncHelper(const Model::GetDomainsRequest& request, const GetDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetExportSnapshotRecordsAsyncHelper(const Model::GetExportSnapshotRecordsRequest& request, const GetExportSnapshotRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5125,7 +6414,9 @@ namespace Model
         void PutInstancePublicPortsAsyncHelper(const Model::PutInstancePublicPortsRequest& request, const PutInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebootInstanceAsyncHelper(const Model::RebootInstanceRequest& request, const RebootInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebootRelationalDatabaseAsyncHelper(const Model::RebootRelationalDatabaseRequest& request, const RebootRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RegisterContainerImageAsyncHelper(const Model::RegisterContainerImageRequest& request, const RegisterContainerImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ReleaseStaticIpAsyncHelper(const Model::ReleaseStaticIpRequest& request, const ReleaseStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ResetDistributionCacheAsyncHelper(const Model::ResetDistributionCacheRequest& request, const ResetDistributionCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendContactMethodVerificationAsyncHelper(const Model::SendContactMethodVerificationRequest& request, const SendContactMethodVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartInstanceAsyncHelper(const Model::StartInstanceRequest& request, const StartInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartRelationalDatabaseAsyncHelper(const Model::StartRelationalDatabaseRequest& request, const StartRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5135,6 +6426,9 @@ namespace Model
         void TestAlarmAsyncHelper(const Model::TestAlarmRequest& request, const TestAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UnpeerVpcAsyncHelper(const Model::UnpeerVpcRequest& request, const UnpeerVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateContainerServiceAsyncHelper(const Model::UpdateContainerServiceRequest& request, const UpdateContainerServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateDistributionAsyncHelper(const Model::UpdateDistributionRequest& request, const UpdateDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateDistributionBundleAsyncHelper(const Model::UpdateDistributionBundleRequest& request, const UpdateDistributionBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDomainEntryAsyncHelper(const Model::UpdateDomainEntryRequest& request, const UpdateDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateLoadBalancerAttributeAsyncHelper(const Model::UpdateLoadBalancerAttributeRequest& request, const UpdateLoadBalancerAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRelationalDatabaseAsyncHelper(const Model::UpdateRelationalDatabaseRequest& request, const UpdateRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

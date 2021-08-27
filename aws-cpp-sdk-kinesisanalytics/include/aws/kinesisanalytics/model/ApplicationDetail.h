@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
@@ -41,11 +31,11 @@ namespace Model
 {
 
   /**
-   * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+   *  <p>This documentation is for version 1 of the Amazon Kinesis Data
    * Analytics API, which only supports SQL applications. Version 2 of the API
    * supports SQL and Java applications. For more information about version 2, see <a
    * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-   * API V2 Documentation</a>.</p> </note> <p>Provides a description of the
+   * API V2 Documentation</a>.</p>  <p>Provides a description of the
    * application, including the application Amazon Resource Name (ARN), status,
    * latest version, and input and output configuration.</p><p><h3>See Also:</h3>  
    * <a

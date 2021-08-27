@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kendra/model/FaqStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/kendra/model/FaqFileFormat.h>
 #include <utility>
 
 namespace Aws
@@ -230,6 +221,37 @@ namespace Model
      */
     inline FaqSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The file type used to create the FAQ. </p>
+     */
+    inline const FaqFileFormat& GetFileFormat() const{ return m_fileFormat; }
+
+    /**
+     * <p>The file type used to create the FAQ. </p>
+     */
+    inline bool FileFormatHasBeenSet() const { return m_fileFormatHasBeenSet; }
+
+    /**
+     * <p>The file type used to create the FAQ. </p>
+     */
+    inline void SetFileFormat(const FaqFileFormat& value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
+
+    /**
+     * <p>The file type used to create the FAQ. </p>
+     */
+    inline void SetFileFormat(FaqFileFormat&& value) { m_fileFormatHasBeenSet = true; m_fileFormat = std::move(value); }
+
+    /**
+     * <p>The file type used to create the FAQ. </p>
+     */
+    inline FaqSummary& WithFileFormat(const FaqFileFormat& value) { SetFileFormat(value); return *this;}
+
+    /**
+     * <p>The file type used to create the FAQ. </p>
+     */
+    inline FaqSummary& WithFileFormat(FaqFileFormat&& value) { SetFileFormat(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -246,6 +268,9 @@ namespace Model
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet;
+
+    FaqFileFormat m_fileFormat;
+    bool m_fileFormatHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
@@ -69,26 +59,30 @@ namespace Model
 
 
     /**
-     * <p>The number of requests subtracted from the given limit in the initial time
-     * period.</p>
+     * <p>The day that a time period starts. For example, with a time period of
+     * <code>WEEK</code>, an offset of <code>0</code> starts on Sunday, and an offset
+     * of <code>1</code> starts on Monday.</p>
      */
     inline int GetOffset() const{ return m_offset; }
 
     /**
-     * <p>The number of requests subtracted from the given limit in the initial time
-     * period.</p>
+     * <p>The day that a time period starts. For example, with a time period of
+     * <code>WEEK</code>, an offset of <code>0</code> starts on Sunday, and an offset
+     * of <code>1</code> starts on Monday.</p>
      */
     inline bool OffsetHasBeenSet() const { return m_offsetHasBeenSet; }
 
     /**
-     * <p>The number of requests subtracted from the given limit in the initial time
-     * period.</p>
+     * <p>The day that a time period starts. For example, with a time period of
+     * <code>WEEK</code>, an offset of <code>0</code> starts on Sunday, and an offset
+     * of <code>1</code> starts on Monday.</p>
      */
     inline void SetOffset(int value) { m_offsetHasBeenSet = true; m_offset = value; }
 
     /**
-     * <p>The number of requests subtracted from the given limit in the initial time
-     * period.</p>
+     * <p>The day that a time period starts. For example, with a time period of
+     * <code>WEEK</code>, an offset of <code>0</code> starts on Sunday, and an offset
+     * of <code>1</code> starts on Monday.</p>
      */
     inline QuotaSettings& WithOffset(int value) { SetOffset(value); return *this;}
 

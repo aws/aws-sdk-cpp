@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/comprehend/Comprehend_EXPORTS.h>
@@ -47,7 +37,10 @@ namespace Model
      * <p>A collection of entities identified in the input text. For each entity, the
      * response provides the entity text, entity type, where the entity text begins and
      * ends, and the level of confidence that Amazon Comprehend has in the detection.
-     * For a list of entity types, see <a>how-entities</a>. </p>
+     * </p> <p>If your request uses a custom entity recognition model, Amazon
+     * Comprehend detects the entities that the model is trained to recognize.
+     * Otherwise, it detects the default entity types. For a list of default entity
+     * types, see <a>how-entities</a>.</p>
      */
     inline const Aws::Vector<Entity>& GetEntities() const{ return m_entities; }
 
@@ -55,7 +48,10 @@ namespace Model
      * <p>A collection of entities identified in the input text. For each entity, the
      * response provides the entity text, entity type, where the entity text begins and
      * ends, and the level of confidence that Amazon Comprehend has in the detection.
-     * For a list of entity types, see <a>how-entities</a>. </p>
+     * </p> <p>If your request uses a custom entity recognition model, Amazon
+     * Comprehend detects the entities that the model is trained to recognize.
+     * Otherwise, it detects the default entity types. For a list of default entity
+     * types, see <a>how-entities</a>.</p>
      */
     inline void SetEntities(const Aws::Vector<Entity>& value) { m_entities = value; }
 
@@ -63,7 +59,10 @@ namespace Model
      * <p>A collection of entities identified in the input text. For each entity, the
      * response provides the entity text, entity type, where the entity text begins and
      * ends, and the level of confidence that Amazon Comprehend has in the detection.
-     * For a list of entity types, see <a>how-entities</a>. </p>
+     * </p> <p>If your request uses a custom entity recognition model, Amazon
+     * Comprehend detects the entities that the model is trained to recognize.
+     * Otherwise, it detects the default entity types. For a list of default entity
+     * types, see <a>how-entities</a>.</p>
      */
     inline void SetEntities(Aws::Vector<Entity>&& value) { m_entities = std::move(value); }
 
@@ -71,7 +70,10 @@ namespace Model
      * <p>A collection of entities identified in the input text. For each entity, the
      * response provides the entity text, entity type, where the entity text begins and
      * ends, and the level of confidence that Amazon Comprehend has in the detection.
-     * For a list of entity types, see <a>how-entities</a>. </p>
+     * </p> <p>If your request uses a custom entity recognition model, Amazon
+     * Comprehend detects the entities that the model is trained to recognize.
+     * Otherwise, it detects the default entity types. For a list of default entity
+     * types, see <a>how-entities</a>.</p>
      */
     inline DetectEntitiesResult& WithEntities(const Aws::Vector<Entity>& value) { SetEntities(value); return *this;}
 
@@ -79,7 +81,10 @@ namespace Model
      * <p>A collection of entities identified in the input text. For each entity, the
      * response provides the entity text, entity type, where the entity text begins and
      * ends, and the level of confidence that Amazon Comprehend has in the detection.
-     * For a list of entity types, see <a>how-entities</a>. </p>
+     * </p> <p>If your request uses a custom entity recognition model, Amazon
+     * Comprehend detects the entities that the model is trained to recognize.
+     * Otherwise, it detects the default entity types. For a list of default entity
+     * types, see <a>how-entities</a>.</p>
      */
     inline DetectEntitiesResult& WithEntities(Aws::Vector<Entity>&& value) { SetEntities(std::move(value)); return *this;}
 
@@ -87,7 +92,10 @@ namespace Model
      * <p>A collection of entities identified in the input text. For each entity, the
      * response provides the entity text, entity type, where the entity text begins and
      * ends, and the level of confidence that Amazon Comprehend has in the detection.
-     * For a list of entity types, see <a>how-entities</a>. </p>
+     * </p> <p>If your request uses a custom entity recognition model, Amazon
+     * Comprehend detects the entities that the model is trained to recognize.
+     * Otherwise, it detects the default entity types. For a list of default entity
+     * types, see <a>how-entities</a>.</p>
      */
     inline DetectEntitiesResult& AddEntities(const Entity& value) { m_entities.push_back(value); return *this; }
 
@@ -95,7 +103,10 @@ namespace Model
      * <p>A collection of entities identified in the input text. For each entity, the
      * response provides the entity text, entity type, where the entity text begins and
      * ends, and the level of confidence that Amazon Comprehend has in the detection.
-     * For a list of entity types, see <a>how-entities</a>. </p>
+     * </p> <p>If your request uses a custom entity recognition model, Amazon
+     * Comprehend detects the entities that the model is trained to recognize.
+     * Otherwise, it detects the default entity types. For a list of default entity
+     * types, see <a>how-entities</a>.</p>
      */
     inline DetectEntitiesResult& AddEntities(Entity&& value) { m_entities.push_back(std::move(value)); return *this; }
 

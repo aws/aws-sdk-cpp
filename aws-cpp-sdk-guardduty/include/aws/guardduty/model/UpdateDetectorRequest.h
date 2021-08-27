@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/GuardDutyRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/model/FindingPublishingFrequency.h>
+#include <aws/guardduty/model/DataSourceConfigurations.h>
 #include <utility>
 
 namespace Aws
@@ -141,6 +132,37 @@ namespace Model
      */
     inline UpdateDetectorRequest& WithFindingPublishingFrequency(FindingPublishingFrequency&& value) { SetFindingPublishingFrequency(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes which data sources will be updated.</p>
+     */
+    inline const DataSourceConfigurations& GetDataSources() const{ return m_dataSources; }
+
+    /**
+     * <p>Describes which data sources will be updated.</p>
+     */
+    inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
+
+    /**
+     * <p>Describes which data sources will be updated.</p>
+     */
+    inline void SetDataSources(const DataSourceConfigurations& value) { m_dataSourcesHasBeenSet = true; m_dataSources = value; }
+
+    /**
+     * <p>Describes which data sources will be updated.</p>
+     */
+    inline void SetDataSources(DataSourceConfigurations&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::move(value); }
+
+    /**
+     * <p>Describes which data sources will be updated.</p>
+     */
+    inline UpdateDetectorRequest& WithDataSources(const DataSourceConfigurations& value) { SetDataSources(value); return *this;}
+
+    /**
+     * <p>Describes which data sources will be updated.</p>
+     */
+    inline UpdateDetectorRequest& WithDataSources(DataSourceConfigurations&& value) { SetDataSources(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_detectorId;
@@ -151,6 +173,9 @@ namespace Model
 
     FindingPublishingFrequency m_findingPublishingFrequency;
     bool m_findingPublishingFrequencyHasBeenSet;
+
+    DataSourceConfigurations m_dataSources;
+    bool m_dataSourcesHasBeenSet;
   };
 
 } // namespace Model

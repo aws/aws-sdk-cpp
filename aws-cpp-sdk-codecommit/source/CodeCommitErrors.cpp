@@ -1,25 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/codecommit/CodeCommitErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::CodeCommit;
 using namespace Aws::Utils;
+using namespace Aws::CodeCommit;
 
 namespace Aws
 {
@@ -40,6 +30,7 @@ static const int COMMIT_MESSAGE_LENGTH_EXCEEDED_HASH = HashingUtils::HashString(
 static const int REVISION_ID_REQUIRED_HASH = HashingUtils::HashString("RevisionIdRequiredException");
 static const int COMMENT_CONTENT_REQUIRED_HASH = HashingUtils::HashString("CommentContentRequiredException");
 static const int INVALID_MAX_MERGE_HUNKS_HASH = HashingUtils::HashString("InvalidMaxMergeHunksException");
+static const int REACTION_VALUE_REQUIRED_HASH = HashingUtils::HashString("ReactionValueRequiredException");
 static const int INVALID_CONTINUATION_TOKEN_HASH = HashingUtils::HashString("InvalidContinuationTokenException");
 static const int MERGE_OPTION_REQUIRED_HASH = HashingUtils::HashString("MergeOptionRequiredException");
 static const int INVALID_AUTHOR_ARN_HASH = HashingUtils::HashString("InvalidAuthorArnException");
@@ -51,6 +42,7 @@ static const int APPROVAL_RULE_TEMPLATE_NAME_ALREADY_EXISTS_HASH = HashingUtils:
 static const int INVALID_ACTOR_ARN_HASH = HashingUtils::HashString("InvalidActorArnException");
 static const int INVALID_REPOSITORY_TRIGGER_EVENTS_HASH = HashingUtils::HashString("InvalidRepositoryTriggerEventsException");
 static const int COMMIT_DOES_NOT_EXIST_HASH = HashingUtils::HashString("CommitDoesNotExistException");
+static const int INVALID_REACTION_USER_ARN_HASH = HashingUtils::HashString("InvalidReactionUserArnException");
 static const int BRANCH_DOES_NOT_EXIST_HASH = HashingUtils::HashString("BranchDoesNotExistException");
 static const int TAGS_MAP_REQUIRED_HASH = HashingUtils::HashString("TagsMapRequiredException");
 static const int REPOSITORY_TRIGGER_DESTINATION_ARN_REQUIRED_HASH = HashingUtils::HashString("RepositoryTriggerDestinationArnRequiredException");
@@ -192,7 +184,9 @@ static const int FILE_TOO_LARGE_HASH = HashingUtils::HashString("FileTooLargeExc
 static const int MAXIMUM_REPOSITORY_TRIGGERS_EXCEEDED_HASH = HashingUtils::HashString("MaximumRepositoryTriggersExceededException");
 static const int INVALID_CONFLICT_DETAIL_LEVEL_HASH = HashingUtils::HashString("InvalidConflictDetailLevelException");
 static const int BLOB_ID_DOES_NOT_EXIST_HASH = HashingUtils::HashString("BlobIdDoesNotExistException");
+static const int INVALID_REACTION_VALUE_HASH = HashingUtils::HashString("InvalidReactionValueException");
 static const int PUT_FILE_ENTRY_CONFLICT_HASH = HashingUtils::HashString("PutFileEntryConflictException");
+static const int REACTION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ReactionLimitExceededException");
 static const int CANNOT_DELETE_APPROVAL_RULE_FROM_TEMPLATE_HASH = HashingUtils::HashString("CannotDeleteApprovalRuleFromTemplateException");
 static const int AUTHOR_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AuthorDoesNotExistException");
 static const int FILE_NAME_CONFLICTS_WITH_DIRECTORY_NAME_HASH = HashingUtils::HashString("FileNameConflictsWithDirectoryNameException");
@@ -279,6 +273,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_MAX_MERGE_HUNKS), false);
     return true;
   }
+  else if (hashCode == REACTION_VALUE_REQUIRED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REACTION_VALUE_REQUIRED), false);
+    return true;
+  }
   else if (hashCode == INVALID_CONTINUATION_TOKEN_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_CONTINUATION_TOKEN), false);
@@ -332,6 +331,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == COMMIT_DOES_NOT_EXIST_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMIT_DOES_NOT_EXIST), false);
+    return true;
+  }
+  else if (hashCode == INVALID_REACTION_USER_ARN_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REACTION_USER_ARN), false);
     return true;
   }
   else if (hashCode == BRANCH_DOES_NOT_EXIST_HASH)
@@ -819,7 +823,12 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_NOT_ASSOCIATED_WITH_PULL_REQUEST), false);
     return true;
   }
-  else if (hashCode == INVALID_SOURCE_COMMIT_SPECIFIER_HASH)
+  return false;
+}
+
+static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
+{
+  if (hashCode == INVALID_SOURCE_COMMIT_SPECIFIER_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_SOURCE_COMMIT_SPECIFIER), false);
     return true;
@@ -829,12 +838,7 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_PATH_CONFLICTS_WITH_SUBMODULE_PATH), false);
     return true;
   }
-  return false;
-}
-
-static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
-{
-  if (hashCode == RESOURCE_ARN_REQUIRED_HASH)
+  else if (hashCode == RESOURCE_ARN_REQUIRED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::RESOURCE_ARN_REQUIRED), false);
     return true;
@@ -1044,9 +1048,19 @@ static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::BLOB_ID_DOES_NOT_EXIST), false);
     return true;
   }
+  else if (hashCode == INVALID_REACTION_VALUE_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REACTION_VALUE), false);
+    return true;
+  }
   else if (hashCode == PUT_FILE_ENTRY_CONFLICT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PUT_FILE_ENTRY_CONFLICT), false);
+    return true;
+  }
+  else if (hashCode == REACTION_LIMIT_EXCEEDED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REACTION_LIMIT_EXCEEDED), false);
     return true;
   }
   else if (hashCode == CANNOT_DELETE_APPROVAL_RULE_FROM_TEMPLATE_HASH)

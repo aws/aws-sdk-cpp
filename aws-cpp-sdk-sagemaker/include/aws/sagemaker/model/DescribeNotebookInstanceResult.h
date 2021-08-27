@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -910,46 +900,46 @@ namespace Model
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance.</p> <note> <p>Lifecycle configurations need root access to be able to
+     * instance.</p>  <p>Lifecycle configurations need root access to be able to
      * set up a notebook instance. Because of this, lifecycle configurations associated
      * with a notebook instance always run with root access even if you disable root
-     * access for users.</p> </note>
+     * access for users.</p> 
      */
     inline const RootAccess& GetRootAccess() const{ return m_rootAccess; }
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance.</p> <note> <p>Lifecycle configurations need root access to be able to
+     * instance.</p>  <p>Lifecycle configurations need root access to be able to
      * set up a notebook instance. Because of this, lifecycle configurations associated
      * with a notebook instance always run with root access even if you disable root
-     * access for users.</p> </note>
+     * access for users.</p> 
      */
     inline void SetRootAccess(const RootAccess& value) { m_rootAccess = value; }
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance.</p> <note> <p>Lifecycle configurations need root access to be able to
+     * instance.</p>  <p>Lifecycle configurations need root access to be able to
      * set up a notebook instance. Because of this, lifecycle configurations associated
      * with a notebook instance always run with root access even if you disable root
-     * access for users.</p> </note>
+     * access for users.</p> 
      */
     inline void SetRootAccess(RootAccess&& value) { m_rootAccess = std::move(value); }
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance.</p> <note> <p>Lifecycle configurations need root access to be able to
+     * instance.</p>  <p>Lifecycle configurations need root access to be able to
      * set up a notebook instance. Because of this, lifecycle configurations associated
      * with a notebook instance always run with root access even if you disable root
-     * access for users.</p> </note>
+     * access for users.</p> 
      */
     inline DescribeNotebookInstanceResult& WithRootAccess(const RootAccess& value) { SetRootAccess(value); return *this;}
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance.</p> <note> <p>Lifecycle configurations need root access to be able to
+     * instance.</p>  <p>Lifecycle configurations need root access to be able to
      * set up a notebook instance. Because of this, lifecycle configurations associated
      * with a notebook instance always run with root access even if you disable root
-     * access for users.</p> </note>
+     * access for users.</p> 
      */
     inline DescribeNotebookInstanceResult& WithRootAccess(RootAccess&& value) { SetRootAccess(std::move(value)); return *this;}
 

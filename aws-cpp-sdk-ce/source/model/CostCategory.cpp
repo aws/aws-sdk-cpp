@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ce/model/CostCategory.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,7 +25,8 @@ CostCategory::CostCategory() :
     m_nameHasBeenSet(false),
     m_ruleVersion(CostCategoryRuleVersion::NOT_SET),
     m_ruleVersionHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_processingStatusHasBeenSet(false)
 {
 }
 
@@ -46,7 +37,8 @@ CostCategory::CostCategory(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_ruleVersion(CostCategoryRuleVersion::NOT_SET),
     m_ruleVersionHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_processingStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +90,16 @@ CostCategory& CostCategory::operator =(JsonView jsonValue)
     m_rulesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProcessingStatus"))
+  {
+    Array<JsonView> processingStatusJsonList = jsonValue.GetArray("ProcessingStatus");
+    for(unsigned processingStatusIndex = 0; processingStatusIndex < processingStatusJsonList.GetLength(); ++processingStatusIndex)
+    {
+      m_processingStatus.push_back(processingStatusJsonList[processingStatusIndex].AsObject());
+    }
+    m_processingStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -142,6 +144,17 @@ JsonValue CostCategory::Jsonize() const
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
    }
    payload.WithArray("Rules", std::move(rulesJsonList));
+
+  }
+
+  if(m_processingStatusHasBeenSet)
+  {
+   Array<JsonValue> processingStatusJsonList(m_processingStatus.size());
+   for(unsigned processingStatusIndex = 0; processingStatusIndex < processingStatusJsonList.GetLength(); ++processingStatusIndex)
+   {
+     processingStatusJsonList[processingStatusIndex].AsObject(m_processingStatus[processingStatusIndex].Jsonize());
+   }
+   payload.WithArray("ProcessingStatus", std::move(processingStatusJsonList));
 
   }
 

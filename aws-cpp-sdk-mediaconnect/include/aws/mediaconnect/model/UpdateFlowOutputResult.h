@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
@@ -79,19 +69,29 @@ namespace Model
     inline UpdateFlowOutputResult& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
 
 
-    
+    /**
+     * The new settings of the output that you updated.
+     */
     inline const Output& GetOutput() const{ return m_output; }
 
-    
+    /**
+     * The new settings of the output that you updated.
+     */
     inline void SetOutput(const Output& value) { m_output = value; }
 
-    
+    /**
+     * The new settings of the output that you updated.
+     */
     inline void SetOutput(Output&& value) { m_output = std::move(value); }
 
-    
+    /**
+     * The new settings of the output that you updated.
+     */
     inline UpdateFlowOutputResult& WithOutput(const Output& value) { SetOutput(value); return *this;}
 
-    
+    /**
+     * The new settings of the output that you updated.
+     */
     inline UpdateFlowOutputResult& WithOutput(Output&& value) { SetOutput(std::move(value)); return *this;}
 
   private:

@@ -1,30 +1,56 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/iot1click-projects/IoT1ClickProjectsErrors.h>
+#include <aws/iot1click-projects/model/ResourceNotFoundException.h>
+#include <aws/iot1click-projects/model/ResourceConflictException.h>
+#include <aws/iot1click-projects/model/TooManyRequestsException.h>
+#include <aws/iot1click-projects/model/InternalFailureException.h>
+#include <aws/iot1click-projects/model/InvalidRequestException.h>
 
 using namespace Aws::Client;
-using namespace Aws::IoT1ClickProjects;
 using namespace Aws::Utils;
+using namespace Aws::IoT1ClickProjects;
+using namespace Aws::IoT1ClickProjects::Model;
 
 namespace Aws
 {
 namespace IoT1ClickProjects
 {
+template<> AWS_IOT1CLICKPROJECTS_API ResourceNotFoundException IoT1ClickProjectsError::GetModeledError()
+{
+  assert(this->GetErrorType() == IoT1ClickProjectsErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_IOT1CLICKPROJECTS_API ResourceConflictException IoT1ClickProjectsError::GetModeledError()
+{
+  assert(this->GetErrorType() == IoT1ClickProjectsErrors::RESOURCE_CONFLICT);
+  return ResourceConflictException(this->GetJsonPayload().View());
+}
+
+template<> AWS_IOT1CLICKPROJECTS_API TooManyRequestsException IoT1ClickProjectsError::GetModeledError()
+{
+  assert(this->GetErrorType() == IoT1ClickProjectsErrors::TOO_MANY_REQUESTS);
+  return TooManyRequestsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_IOT1CLICKPROJECTS_API InternalFailureException IoT1ClickProjectsError::GetModeledError()
+{
+  assert(this->GetErrorType() == IoT1ClickProjectsErrors::INTERNAL_FAILURE);
+  return InternalFailureException(this->GetJsonPayload().View());
+}
+
+template<> AWS_IOT1CLICKPROJECTS_API InvalidRequestException IoT1ClickProjectsError::GetModeledError()
+{
+  assert(this->GetErrorType() == IoT1ClickProjectsErrors::INVALID_REQUEST);
+  return InvalidRequestException(this->GetJsonPayload().View());
+}
+
 namespace IoT1ClickProjectsErrorMapper
 {
 
@@ -43,7 +69,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoT1ClickProjectsErrors::TOO_MANY_REQUESTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoT1ClickProjectsErrors::TOO_MANY_REQUESTS), true);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {

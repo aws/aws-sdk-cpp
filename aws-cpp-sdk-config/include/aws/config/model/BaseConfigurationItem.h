@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -166,32 +156,80 @@ namespace Model
 
 
     /**
-     * <p>The configuration item status.</p>
+     * <p>The configuration item status. The valid values are:</p> <ul> <li> <p>OK –
+     * The resource configuration has been updated</p> </li> <li> <p>ResourceDiscovered
+     * – The resource was newly discovered</p> </li> <li> <p>ResourceNotRecorded – The
+     * resource was discovered but its configuration was not recorded since the
+     * recorder excludes the recording of resources of this type</p> </li> <li>
+     * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
+     * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
+     * was not recorded since the recorder excludes the recording of resources of this
+     * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
      */
     inline const ConfigurationItemStatus& GetConfigurationItemStatus() const{ return m_configurationItemStatus; }
 
     /**
-     * <p>The configuration item status.</p>
+     * <p>The configuration item status. The valid values are:</p> <ul> <li> <p>OK –
+     * The resource configuration has been updated</p> </li> <li> <p>ResourceDiscovered
+     * – The resource was newly discovered</p> </li> <li> <p>ResourceNotRecorded – The
+     * resource was discovered but its configuration was not recorded since the
+     * recorder excludes the recording of resources of this type</p> </li> <li>
+     * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
+     * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
+     * was not recorded since the recorder excludes the recording of resources of this
+     * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
      */
     inline bool ConfigurationItemStatusHasBeenSet() const { return m_configurationItemStatusHasBeenSet; }
 
     /**
-     * <p>The configuration item status.</p>
+     * <p>The configuration item status. The valid values are:</p> <ul> <li> <p>OK –
+     * The resource configuration has been updated</p> </li> <li> <p>ResourceDiscovered
+     * – The resource was newly discovered</p> </li> <li> <p>ResourceNotRecorded – The
+     * resource was discovered but its configuration was not recorded since the
+     * recorder excludes the recording of resources of this type</p> </li> <li>
+     * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
+     * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
+     * was not recorded since the recorder excludes the recording of resources of this
+     * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
      */
     inline void SetConfigurationItemStatus(const ConfigurationItemStatus& value) { m_configurationItemStatusHasBeenSet = true; m_configurationItemStatus = value; }
 
     /**
-     * <p>The configuration item status.</p>
+     * <p>The configuration item status. The valid values are:</p> <ul> <li> <p>OK –
+     * The resource configuration has been updated</p> </li> <li> <p>ResourceDiscovered
+     * – The resource was newly discovered</p> </li> <li> <p>ResourceNotRecorded – The
+     * resource was discovered but its configuration was not recorded since the
+     * recorder excludes the recording of resources of this type</p> </li> <li>
+     * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
+     * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
+     * was not recorded since the recorder excludes the recording of resources of this
+     * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
      */
     inline void SetConfigurationItemStatus(ConfigurationItemStatus&& value) { m_configurationItemStatusHasBeenSet = true; m_configurationItemStatus = std::move(value); }
 
     /**
-     * <p>The configuration item status.</p>
+     * <p>The configuration item status. The valid values are:</p> <ul> <li> <p>OK –
+     * The resource configuration has been updated</p> </li> <li> <p>ResourceDiscovered
+     * – The resource was newly discovered</p> </li> <li> <p>ResourceNotRecorded – The
+     * resource was discovered but its configuration was not recorded since the
+     * recorder excludes the recording of resources of this type</p> </li> <li>
+     * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
+     * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
+     * was not recorded since the recorder excludes the recording of resources of this
+     * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
      */
     inline BaseConfigurationItem& WithConfigurationItemStatus(const ConfigurationItemStatus& value) { SetConfigurationItemStatus(value); return *this;}
 
     /**
-     * <p>The configuration item status.</p>
+     * <p>The configuration item status. The valid values are:</p> <ul> <li> <p>OK –
+     * The resource configuration has been updated</p> </li> <li> <p>ResourceDiscovered
+     * – The resource was newly discovered</p> </li> <li> <p>ResourceNotRecorded – The
+     * resource was discovered but its configuration was not recorded since the
+     * recorder excludes the recording of resources of this type</p> </li> <li>
+     * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
+     * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
+     * was not recorded since the recorder excludes the recording of resources of this
+     * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
      */
     inline BaseConfigurationItem& WithConfigurationItemStatus(ConfigurationItemStatus&& value) { SetConfigurationItemStatus(std::move(value)); return *this;}
 

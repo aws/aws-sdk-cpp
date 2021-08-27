@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
@@ -217,7 +207,7 @@ namespace Model
      * <p>The configuration specifies details about how the anomaly detection model is
      * to be trained, including time ranges to exclude when training and updating the
      * model. You can specify as many as 10 time ranges.</p> <p>The configuration can
-     * also include the time zone to use for the metric.</p> <p>You can in</p>
+     * also include the time zone to use for the metric.</p>
      */
     inline const AnomalyDetectorConfiguration& GetConfiguration() const{ return m_configuration; }
 
@@ -225,7 +215,7 @@ namespace Model
      * <p>The configuration specifies details about how the anomaly detection model is
      * to be trained, including time ranges to exclude when training and updating the
      * model. You can specify as many as 10 time ranges.</p> <p>The configuration can
-     * also include the time zone to use for the metric.</p> <p>You can in</p>
+     * also include the time zone to use for the metric.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
@@ -233,7 +223,7 @@ namespace Model
      * <p>The configuration specifies details about how the anomaly detection model is
      * to be trained, including time ranges to exclude when training and updating the
      * model. You can specify as many as 10 time ranges.</p> <p>The configuration can
-     * also include the time zone to use for the metric.</p> <p>You can in</p>
+     * also include the time zone to use for the metric.</p>
      */
     inline void SetConfiguration(const AnomalyDetectorConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
@@ -241,7 +231,7 @@ namespace Model
      * <p>The configuration specifies details about how the anomaly detection model is
      * to be trained, including time ranges to exclude when training and updating the
      * model. You can specify as many as 10 time ranges.</p> <p>The configuration can
-     * also include the time zone to use for the metric.</p> <p>You can in</p>
+     * also include the time zone to use for the metric.</p>
      */
     inline void SetConfiguration(AnomalyDetectorConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
@@ -249,7 +239,7 @@ namespace Model
      * <p>The configuration specifies details about how the anomaly detection model is
      * to be trained, including time ranges to exclude when training and updating the
      * model. You can specify as many as 10 time ranges.</p> <p>The configuration can
-     * also include the time zone to use for the metric.</p> <p>You can in</p>
+     * also include the time zone to use for the metric.</p>
      */
     inline PutAnomalyDetectorRequest& WithConfiguration(const AnomalyDetectorConfiguration& value) { SetConfiguration(value); return *this;}
 
@@ -257,7 +247,7 @@ namespace Model
      * <p>The configuration specifies details about how the anomaly detection model is
      * to be trained, including time ranges to exclude when training and updating the
      * model. You can specify as many as 10 time ranges.</p> <p>The configuration can
-     * also include the time zone to use for the metric.</p> <p>You can in</p>
+     * also include the time zone to use for the metric.</p>
      */
     inline PutAnomalyDetectorRequest& WithConfiguration(AnomalyDetectorConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 

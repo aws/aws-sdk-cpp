@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/fsx/model/FileSystem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -49,7 +39,8 @@ FileSystem::FileSystem() :
     m_resourceARNHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_windowsConfigurationHasBeenSet(false),
-    m_lustreConfigurationHasBeenSet(false)
+    m_lustreConfigurationHasBeenSet(false),
+    m_administrativeActionsHasBeenSet(false)
 {
 }
 
@@ -74,7 +65,8 @@ FileSystem::FileSystem(JsonView jsonValue) :
     m_resourceARNHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_windowsConfigurationHasBeenSet(false),
-    m_lustreConfigurationHasBeenSet(false)
+    m_lustreConfigurationHasBeenSet(false),
+    m_administrativeActionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -209,6 +201,16 @@ FileSystem& FileSystem::operator =(JsonView jsonValue)
     m_lustreConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdministrativeActions"))
+  {
+    Array<JsonView> administrativeActionsJsonList = jsonValue.GetArray("AdministrativeActions");
+    for(unsigned administrativeActionsIndex = 0; administrativeActionsIndex < administrativeActionsJsonList.GetLength(); ++administrativeActionsIndex)
+    {
+      m_administrativeActions.push_back(administrativeActionsJsonList[administrativeActionsIndex].AsObject());
+    }
+    m_administrativeActionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -326,6 +328,17 @@ JsonValue FileSystem::Jsonize() const
   if(m_lustreConfigurationHasBeenSet)
   {
    payload.WithObject("LustreConfiguration", m_lustreConfiguration.Jsonize());
+
+  }
+
+  if(m_administrativeActionsHasBeenSet)
+  {
+   Array<JsonValue> administrativeActionsJsonList(m_administrativeActions.size());
+   for(unsigned administrativeActionsIndex = 0; administrativeActionsIndex < administrativeActionsJsonList.GetLength(); ++administrativeActionsIndex)
+   {
+     administrativeActionsJsonList[administrativeActionsIndex].AsObject(m_administrativeActions[administrativeActionsIndex].Jsonize());
+   }
+   payload.WithArray("AdministrativeActions", std::move(administrativeActionsJsonList));
 
   }
 

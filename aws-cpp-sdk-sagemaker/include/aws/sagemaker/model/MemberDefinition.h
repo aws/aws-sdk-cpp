@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/CognitoMemberDefinition.h>
+#include <aws/sagemaker/model/OidcMemberDefinition.h>
 #include <utility>
 
 namespace Aws
@@ -34,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Defines the Amazon Cognito user group that is part of a work
-   * team.</p><p><h3>See Also:</h3>   <a
+   * <p>Defines an Amazon Cognito or your own OIDC IdP user group that is part of a
+   * work team.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MemberDefinition">AWS
    * API Reference</a></p>
    */
@@ -78,10 +69,68 @@ namespace Model
      */
     inline MemberDefinition& WithCognitoMemberDefinition(CognitoMemberDefinition&& value) { SetCognitoMemberDefinition(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list user groups that exist in your OIDC Identity Provider (IdP). One to
+     * ten groups can be used to create a single private work team. When you add a user
+     * group to the list of <code>Groups</code>, you can add that user group to one or
+     * more private work teams. If you add a user group to a private work team, all
+     * workers in that user group are added to the work team.</p>
+     */
+    inline const OidcMemberDefinition& GetOidcMemberDefinition() const{ return m_oidcMemberDefinition; }
+
+    /**
+     * <p>A list user groups that exist in your OIDC Identity Provider (IdP). One to
+     * ten groups can be used to create a single private work team. When you add a user
+     * group to the list of <code>Groups</code>, you can add that user group to one or
+     * more private work teams. If you add a user group to a private work team, all
+     * workers in that user group are added to the work team.</p>
+     */
+    inline bool OidcMemberDefinitionHasBeenSet() const { return m_oidcMemberDefinitionHasBeenSet; }
+
+    /**
+     * <p>A list user groups that exist in your OIDC Identity Provider (IdP). One to
+     * ten groups can be used to create a single private work team. When you add a user
+     * group to the list of <code>Groups</code>, you can add that user group to one or
+     * more private work teams. If you add a user group to a private work team, all
+     * workers in that user group are added to the work team.</p>
+     */
+    inline void SetOidcMemberDefinition(const OidcMemberDefinition& value) { m_oidcMemberDefinitionHasBeenSet = true; m_oidcMemberDefinition = value; }
+
+    /**
+     * <p>A list user groups that exist in your OIDC Identity Provider (IdP). One to
+     * ten groups can be used to create a single private work team. When you add a user
+     * group to the list of <code>Groups</code>, you can add that user group to one or
+     * more private work teams. If you add a user group to a private work team, all
+     * workers in that user group are added to the work team.</p>
+     */
+    inline void SetOidcMemberDefinition(OidcMemberDefinition&& value) { m_oidcMemberDefinitionHasBeenSet = true; m_oidcMemberDefinition = std::move(value); }
+
+    /**
+     * <p>A list user groups that exist in your OIDC Identity Provider (IdP). One to
+     * ten groups can be used to create a single private work team. When you add a user
+     * group to the list of <code>Groups</code>, you can add that user group to one or
+     * more private work teams. If you add a user group to a private work team, all
+     * workers in that user group are added to the work team.</p>
+     */
+    inline MemberDefinition& WithOidcMemberDefinition(const OidcMemberDefinition& value) { SetOidcMemberDefinition(value); return *this;}
+
+    /**
+     * <p>A list user groups that exist in your OIDC Identity Provider (IdP). One to
+     * ten groups can be used to create a single private work team. When you add a user
+     * group to the list of <code>Groups</code>, you can add that user group to one or
+     * more private work teams. If you add a user group to a private work team, all
+     * workers in that user group are added to the work team.</p>
+     */
+    inline MemberDefinition& WithOidcMemberDefinition(OidcMemberDefinition&& value) { SetOidcMemberDefinition(std::move(value)); return *this;}
+
   private:
 
     CognitoMemberDefinition m_cognitoMemberDefinition;
     bool m_cognitoMemberDefinitionHasBeenSet;
+
+    OidcMemberDefinition m_oidcMemberDefinition;
+    bool m_oidcMemberDefinitionHasBeenSet;
   };
 
 } // namespace Model

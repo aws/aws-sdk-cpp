@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
@@ -106,8 +96,8 @@ namespace Model
      * example is <code>OU=FSx,DC=yourdomain,DC=corp,DC=com</code>. To learn more, see
      * <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none is provided,
      * the FSx file system is created in the default location of your self-managed AD
-     * directory. </p> <important> <p>Only Organizational Unit (OU) objects can be the
-     * direct parent of the file system that you're creating.</p> </important>
+     * directory. </p>  <p>Only Organizational Unit (OU) objects can be the
+     * direct parent of the file system that you're creating.</p> 
      */
     inline const Aws::String& GetOrganizationalUnitDistinguishedName() const{ return m_organizationalUnitDistinguishedName; }
 
@@ -118,8 +108,8 @@ namespace Model
      * example is <code>OU=FSx,DC=yourdomain,DC=corp,DC=com</code>. To learn more, see
      * <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none is provided,
      * the FSx file system is created in the default location of your self-managed AD
-     * directory. </p> <important> <p>Only Organizational Unit (OU) objects can be the
-     * direct parent of the file system that you're creating.</p> </important>
+     * directory. </p>  <p>Only Organizational Unit (OU) objects can be the
+     * direct parent of the file system that you're creating.</p> 
      */
     inline bool OrganizationalUnitDistinguishedNameHasBeenSet() const { return m_organizationalUnitDistinguishedNameHasBeenSet; }
 
@@ -130,8 +120,8 @@ namespace Model
      * example is <code>OU=FSx,DC=yourdomain,DC=corp,DC=com</code>. To learn more, see
      * <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none is provided,
      * the FSx file system is created in the default location of your self-managed AD
-     * directory. </p> <important> <p>Only Organizational Unit (OU) objects can be the
-     * direct parent of the file system that you're creating.</p> </important>
+     * directory. </p>  <p>Only Organizational Unit (OU) objects can be the
+     * direct parent of the file system that you're creating.</p> 
      */
     inline void SetOrganizationalUnitDistinguishedName(const Aws::String& value) { m_organizationalUnitDistinguishedNameHasBeenSet = true; m_organizationalUnitDistinguishedName = value; }
 
@@ -142,8 +132,8 @@ namespace Model
      * example is <code>OU=FSx,DC=yourdomain,DC=corp,DC=com</code>. To learn more, see
      * <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none is provided,
      * the FSx file system is created in the default location of your self-managed AD
-     * directory. </p> <important> <p>Only Organizational Unit (OU) objects can be the
-     * direct parent of the file system that you're creating.</p> </important>
+     * directory. </p>  <p>Only Organizational Unit (OU) objects can be the
+     * direct parent of the file system that you're creating.</p> 
      */
     inline void SetOrganizationalUnitDistinguishedName(Aws::String&& value) { m_organizationalUnitDistinguishedNameHasBeenSet = true; m_organizationalUnitDistinguishedName = std::move(value); }
 
@@ -154,8 +144,8 @@ namespace Model
      * example is <code>OU=FSx,DC=yourdomain,DC=corp,DC=com</code>. To learn more, see
      * <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none is provided,
      * the FSx file system is created in the default location of your self-managed AD
-     * directory. </p> <important> <p>Only Organizational Unit (OU) objects can be the
-     * direct parent of the file system that you're creating.</p> </important>
+     * directory. </p>  <p>Only Organizational Unit (OU) objects can be the
+     * direct parent of the file system that you're creating.</p> 
      */
     inline void SetOrganizationalUnitDistinguishedName(const char* value) { m_organizationalUnitDistinguishedNameHasBeenSet = true; m_organizationalUnitDistinguishedName.assign(value); }
 
@@ -166,8 +156,8 @@ namespace Model
      * example is <code>OU=FSx,DC=yourdomain,DC=corp,DC=com</code>. To learn more, see
      * <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none is provided,
      * the FSx file system is created in the default location of your self-managed AD
-     * directory. </p> <important> <p>Only Organizational Unit (OU) objects can be the
-     * direct parent of the file system that you're creating.</p> </important>
+     * directory. </p>  <p>Only Organizational Unit (OU) objects can be the
+     * direct parent of the file system that you're creating.</p> 
      */
     inline SelfManagedActiveDirectoryConfiguration& WithOrganizationalUnitDistinguishedName(const Aws::String& value) { SetOrganizationalUnitDistinguishedName(value); return *this;}
 
@@ -178,8 +168,8 @@ namespace Model
      * example is <code>OU=FSx,DC=yourdomain,DC=corp,DC=com</code>. To learn more, see
      * <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none is provided,
      * the FSx file system is created in the default location of your self-managed AD
-     * directory. </p> <important> <p>Only Organizational Unit (OU) objects can be the
-     * direct parent of the file system that you're creating.</p> </important>
+     * directory. </p>  <p>Only Organizational Unit (OU) objects can be the
+     * direct parent of the file system that you're creating.</p> 
      */
     inline SelfManagedActiveDirectoryConfiguration& WithOrganizationalUnitDistinguishedName(Aws::String&& value) { SetOrganizationalUnitDistinguishedName(std::move(value)); return *this;}
 
@@ -190,8 +180,8 @@ namespace Model
      * example is <code>OU=FSx,DC=yourdomain,DC=corp,DC=com</code>. To learn more, see
      * <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none is provided,
      * the FSx file system is created in the default location of your self-managed AD
-     * directory. </p> <important> <p>Only Organizational Unit (OU) objects can be the
-     * direct parent of the file system that you're creating.</p> </important>
+     * directory. </p>  <p>Only Organizational Unit (OU) objects can be the
+     * direct parent of the file system that you're creating.</p> 
      */
     inline SelfManagedActiveDirectoryConfiguration& WithOrganizationalUnitDistinguishedName(const char* value) { SetOrganizationalUnitDistinguishedName(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -93,16 +83,16 @@ namespace Model
      * to a document. The format for <b>Value</b> depends on the type of key you
      * specify.</p> <ul> <li> <p>For the key <i>SourceUrl</i>, the value is an S3
      * bucket location. For example:</p> <p> <code>"Values": [
-     * "s3://my-bucket/my-folder" ]</code> </p> </li> <li> <p>For the key
+     * "s3://doc-example-bucket/my-folder" ]</code> </p> </li> <li> <p>For the key
      * <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:</p> <p>
-     * <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code> </p> </li> <li>
-     * <p>For the key <i>AttachmentReference</i>, the value is constructed from the
-     * name of another SSM document in your account, a version number of that document,
-     * and a file attached to that document version that you want to reuse. For
-     * example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code>
-     * </p> <p>However, if the SSM document is shared with you from another account,
-     * the full SSM document ARN must be specified instead of the document name only.
-     * For example:</p> <p> <code>"Values": [
+     * <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code> </p>
+     * </li> <li> <p>For the key <i>AttachmentReference</i>, the value is constructed
+     * from the name of another SSM document in your account, a version number of that
+     * document, and a file attached to that document version that you want to reuse.
+     * For example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py"
+     * ]</code> </p> <p>However, if the SSM document is shared with you from another
+     * account, the full SSM document ARN must be specified instead of the document
+     * name only. For example:</p> <p> <code>"Values": [
      * "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py"
      * ]</code> </p> </li> </ul>
      */
@@ -113,16 +103,16 @@ namespace Model
      * to a document. The format for <b>Value</b> depends on the type of key you
      * specify.</p> <ul> <li> <p>For the key <i>SourceUrl</i>, the value is an S3
      * bucket location. For example:</p> <p> <code>"Values": [
-     * "s3://my-bucket/my-folder" ]</code> </p> </li> <li> <p>For the key
+     * "s3://doc-example-bucket/my-folder" ]</code> </p> </li> <li> <p>For the key
      * <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:</p> <p>
-     * <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code> </p> </li> <li>
-     * <p>For the key <i>AttachmentReference</i>, the value is constructed from the
-     * name of another SSM document in your account, a version number of that document,
-     * and a file attached to that document version that you want to reuse. For
-     * example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code>
-     * </p> <p>However, if the SSM document is shared with you from another account,
-     * the full SSM document ARN must be specified instead of the document name only.
-     * For example:</p> <p> <code>"Values": [
+     * <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code> </p>
+     * </li> <li> <p>For the key <i>AttachmentReference</i>, the value is constructed
+     * from the name of another SSM document in your account, a version number of that
+     * document, and a file attached to that document version that you want to reuse.
+     * For example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py"
+     * ]</code> </p> <p>However, if the SSM document is shared with you from another
+     * account, the full SSM document ARN must be specified instead of the document
+     * name only. For example:</p> <p> <code>"Values": [
      * "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py"
      * ]</code> </p> </li> </ul>
      */
@@ -133,16 +123,16 @@ namespace Model
      * to a document. The format for <b>Value</b> depends on the type of key you
      * specify.</p> <ul> <li> <p>For the key <i>SourceUrl</i>, the value is an S3
      * bucket location. For example:</p> <p> <code>"Values": [
-     * "s3://my-bucket/my-folder" ]</code> </p> </li> <li> <p>For the key
+     * "s3://doc-example-bucket/my-folder" ]</code> </p> </li> <li> <p>For the key
      * <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:</p> <p>
-     * <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code> </p> </li> <li>
-     * <p>For the key <i>AttachmentReference</i>, the value is constructed from the
-     * name of another SSM document in your account, a version number of that document,
-     * and a file attached to that document version that you want to reuse. For
-     * example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code>
-     * </p> <p>However, if the SSM document is shared with you from another account,
-     * the full SSM document ARN must be specified instead of the document name only.
-     * For example:</p> <p> <code>"Values": [
+     * <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code> </p>
+     * </li> <li> <p>For the key <i>AttachmentReference</i>, the value is constructed
+     * from the name of another SSM document in your account, a version number of that
+     * document, and a file attached to that document version that you want to reuse.
+     * For example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py"
+     * ]</code> </p> <p>However, if the SSM document is shared with you from another
+     * account, the full SSM document ARN must be specified instead of the document
+     * name only. For example:</p> <p> <code>"Values": [
      * "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py"
      * ]</code> </p> </li> </ul>
      */
@@ -153,16 +143,16 @@ namespace Model
      * to a document. The format for <b>Value</b> depends on the type of key you
      * specify.</p> <ul> <li> <p>For the key <i>SourceUrl</i>, the value is an S3
      * bucket location. For example:</p> <p> <code>"Values": [
-     * "s3://my-bucket/my-folder" ]</code> </p> </li> <li> <p>For the key
+     * "s3://doc-example-bucket/my-folder" ]</code> </p> </li> <li> <p>For the key
      * <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:</p> <p>
-     * <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code> </p> </li> <li>
-     * <p>For the key <i>AttachmentReference</i>, the value is constructed from the
-     * name of another SSM document in your account, a version number of that document,
-     * and a file attached to that document version that you want to reuse. For
-     * example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code>
-     * </p> <p>However, if the SSM document is shared with you from another account,
-     * the full SSM document ARN must be specified instead of the document name only.
-     * For example:</p> <p> <code>"Values": [
+     * <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code> </p>
+     * </li> <li> <p>For the key <i>AttachmentReference</i>, the value is constructed
+     * from the name of another SSM document in your account, a version number of that
+     * document, and a file attached to that document version that you want to reuse.
+     * For example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py"
+     * ]</code> </p> <p>However, if the SSM document is shared with you from another
+     * account, the full SSM document ARN must be specified instead of the document
+     * name only. For example:</p> <p> <code>"Values": [
      * "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py"
      * ]</code> </p> </li> </ul>
      */
@@ -173,16 +163,16 @@ namespace Model
      * to a document. The format for <b>Value</b> depends on the type of key you
      * specify.</p> <ul> <li> <p>For the key <i>SourceUrl</i>, the value is an S3
      * bucket location. For example:</p> <p> <code>"Values": [
-     * "s3://my-bucket/my-folder" ]</code> </p> </li> <li> <p>For the key
+     * "s3://doc-example-bucket/my-folder" ]</code> </p> </li> <li> <p>For the key
      * <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:</p> <p>
-     * <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code> </p> </li> <li>
-     * <p>For the key <i>AttachmentReference</i>, the value is constructed from the
-     * name of another SSM document in your account, a version number of that document,
-     * and a file attached to that document version that you want to reuse. For
-     * example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code>
-     * </p> <p>However, if the SSM document is shared with you from another account,
-     * the full SSM document ARN must be specified instead of the document name only.
-     * For example:</p> <p> <code>"Values": [
+     * <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code> </p>
+     * </li> <li> <p>For the key <i>AttachmentReference</i>, the value is constructed
+     * from the name of another SSM document in your account, a version number of that
+     * document, and a file attached to that document version that you want to reuse.
+     * For example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py"
+     * ]</code> </p> <p>However, if the SSM document is shared with you from another
+     * account, the full SSM document ARN must be specified instead of the document
+     * name only. For example:</p> <p> <code>"Values": [
      * "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py"
      * ]</code> </p> </li> </ul>
      */
@@ -193,16 +183,16 @@ namespace Model
      * to a document. The format for <b>Value</b> depends on the type of key you
      * specify.</p> <ul> <li> <p>For the key <i>SourceUrl</i>, the value is an S3
      * bucket location. For example:</p> <p> <code>"Values": [
-     * "s3://my-bucket/my-folder" ]</code> </p> </li> <li> <p>For the key
+     * "s3://doc-example-bucket/my-folder" ]</code> </p> </li> <li> <p>For the key
      * <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:</p> <p>
-     * <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code> </p> </li> <li>
-     * <p>For the key <i>AttachmentReference</i>, the value is constructed from the
-     * name of another SSM document in your account, a version number of that document,
-     * and a file attached to that document version that you want to reuse. For
-     * example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code>
-     * </p> <p>However, if the SSM document is shared with you from another account,
-     * the full SSM document ARN must be specified instead of the document name only.
-     * For example:</p> <p> <code>"Values": [
+     * <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code> </p>
+     * </li> <li> <p>For the key <i>AttachmentReference</i>, the value is constructed
+     * from the name of another SSM document in your account, a version number of that
+     * document, and a file attached to that document version that you want to reuse.
+     * For example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py"
+     * ]</code> </p> <p>However, if the SSM document is shared with you from another
+     * account, the full SSM document ARN must be specified instead of the document
+     * name only. For example:</p> <p> <code>"Values": [
      * "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py"
      * ]</code> </p> </li> </ul>
      */
@@ -213,16 +203,16 @@ namespace Model
      * to a document. The format for <b>Value</b> depends on the type of key you
      * specify.</p> <ul> <li> <p>For the key <i>SourceUrl</i>, the value is an S3
      * bucket location. For example:</p> <p> <code>"Values": [
-     * "s3://my-bucket/my-folder" ]</code> </p> </li> <li> <p>For the key
+     * "s3://doc-example-bucket/my-folder" ]</code> </p> </li> <li> <p>For the key
      * <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:</p> <p>
-     * <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code> </p> </li> <li>
-     * <p>For the key <i>AttachmentReference</i>, the value is constructed from the
-     * name of another SSM document in your account, a version number of that document,
-     * and a file attached to that document version that you want to reuse. For
-     * example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code>
-     * </p> <p>However, if the SSM document is shared with you from another account,
-     * the full SSM document ARN must be specified instead of the document name only.
-     * For example:</p> <p> <code>"Values": [
+     * <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code> </p>
+     * </li> <li> <p>For the key <i>AttachmentReference</i>, the value is constructed
+     * from the name of another SSM document in your account, a version number of that
+     * document, and a file attached to that document version that you want to reuse.
+     * For example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py"
+     * ]</code> </p> <p>However, if the SSM document is shared with you from another
+     * account, the full SSM document ARN must be specified instead of the document
+     * name only. For example:</p> <p> <code>"Values": [
      * "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py"
      * ]</code> </p> </li> </ul>
      */
@@ -233,16 +223,16 @@ namespace Model
      * to a document. The format for <b>Value</b> depends on the type of key you
      * specify.</p> <ul> <li> <p>For the key <i>SourceUrl</i>, the value is an S3
      * bucket location. For example:</p> <p> <code>"Values": [
-     * "s3://my-bucket/my-folder" ]</code> </p> </li> <li> <p>For the key
+     * "s3://doc-example-bucket/my-folder" ]</code> </p> </li> <li> <p>For the key
      * <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:</p> <p>
-     * <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code> </p> </li> <li>
-     * <p>For the key <i>AttachmentReference</i>, the value is constructed from the
-     * name of another SSM document in your account, a version number of that document,
-     * and a file attached to that document version that you want to reuse. For
-     * example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code>
-     * </p> <p>However, if the SSM document is shared with you from another account,
-     * the full SSM document ARN must be specified instead of the document name only.
-     * For example:</p> <p> <code>"Values": [
+     * <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code> </p>
+     * </li> <li> <p>For the key <i>AttachmentReference</i>, the value is constructed
+     * from the name of another SSM document in your account, a version number of that
+     * document, and a file attached to that document version that you want to reuse.
+     * For example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py"
+     * ]</code> </p> <p>However, if the SSM document is shared with you from another
+     * account, the full SSM document ARN must be specified instead of the document
+     * name only. For example:</p> <p> <code>"Values": [
      * "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py"
      * ]</code> </p> </li> </ul>
      */
@@ -253,16 +243,16 @@ namespace Model
      * to a document. The format for <b>Value</b> depends on the type of key you
      * specify.</p> <ul> <li> <p>For the key <i>SourceUrl</i>, the value is an S3
      * bucket location. For example:</p> <p> <code>"Values": [
-     * "s3://my-bucket/my-folder" ]</code> </p> </li> <li> <p>For the key
+     * "s3://doc-example-bucket/my-folder" ]</code> </p> </li> <li> <p>For the key
      * <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:</p> <p>
-     * <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code> </p> </li> <li>
-     * <p>For the key <i>AttachmentReference</i>, the value is constructed from the
-     * name of another SSM document in your account, a version number of that document,
-     * and a file attached to that document version that you want to reuse. For
-     * example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code>
-     * </p> <p>However, if the SSM document is shared with you from another account,
-     * the full SSM document ARN must be specified instead of the document name only.
-     * For example:</p> <p> <code>"Values": [
+     * <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code> </p>
+     * </li> <li> <p>For the key <i>AttachmentReference</i>, the value is constructed
+     * from the name of another SSM document in your account, a version number of that
+     * document, and a file attached to that document version that you want to reuse.
+     * For example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py"
+     * ]</code> </p> <p>However, if the SSM document is shared with you from another
+     * account, the full SSM document ARN must be specified instead of the document
+     * name only. For example:</p> <p> <code>"Values": [
      * "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py"
      * ]</code> </p> </li> </ul>
      */

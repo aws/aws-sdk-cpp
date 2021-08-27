@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -60,7 +50,7 @@ static const char* ALLOCATION_TAG = "ServerlessApplicationRepositoryClient";
 ServerlessApplicationRepositoryClient::ServerlessApplicationRepositoryClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ServerlessApplicationRepositoryErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -70,7 +60,7 @@ ServerlessApplicationRepositoryClient::ServerlessApplicationRepositoryClient(con
 ServerlessApplicationRepositoryClient::ServerlessApplicationRepositoryClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ServerlessApplicationRepositoryErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -81,7 +71,7 @@ ServerlessApplicationRepositoryClient::ServerlessApplicationRepositoryClient(con
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ServerlessApplicationRepositoryErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -94,6 +84,7 @@ ServerlessApplicationRepositoryClient::~ServerlessApplicationRepositoryClient()
 
 void ServerlessApplicationRepositoryClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("ServerlessApplicationRepository");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -123,15 +114,7 @@ CreateApplicationOutcome ServerlessApplicationRepositoryClient::CreateApplicatio
   Aws::StringStream ss;
   ss << "/applications";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateApplicationOutcome(CreateApplicationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateApplicationOutcome(outcome.GetError());
-  }
+  return CreateApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateApplicationOutcomeCallable ServerlessApplicationRepositoryClient::CreateApplicationCallable(const CreateApplicationRequest& request) const
@@ -171,15 +154,7 @@ CreateApplicationVersionOutcome ServerlessApplicationRepositoryClient::CreateApp
   ss << "/versions/";
   ss << request.GetSemanticVersion();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateApplicationVersionOutcome(CreateApplicationVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateApplicationVersionOutcome(outcome.GetError());
-  }
+  return CreateApplicationVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateApplicationVersionOutcomeCallable ServerlessApplicationRepositoryClient::CreateApplicationVersionCallable(const CreateApplicationVersionRequest& request) const
@@ -213,15 +188,7 @@ CreateCloudFormationChangeSetOutcome ServerlessApplicationRepositoryClient::Crea
   ss << request.GetApplicationId();
   ss << "/changesets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateCloudFormationChangeSetOutcome(CreateCloudFormationChangeSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateCloudFormationChangeSetOutcome(outcome.GetError());
-  }
+  return CreateCloudFormationChangeSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateCloudFormationChangeSetOutcomeCallable ServerlessApplicationRepositoryClient::CreateCloudFormationChangeSetCallable(const CreateCloudFormationChangeSetRequest& request) const
@@ -255,15 +222,7 @@ CreateCloudFormationTemplateOutcome ServerlessApplicationRepositoryClient::Creat
   ss << request.GetApplicationId();
   ss << "/templates";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateCloudFormationTemplateOutcome(CreateCloudFormationTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateCloudFormationTemplateOutcome(outcome.GetError());
-  }
+  return CreateCloudFormationTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateCloudFormationTemplateOutcomeCallable ServerlessApplicationRepositoryClient::CreateCloudFormationTemplateCallable(const CreateCloudFormationTemplateRequest& request) const
@@ -296,15 +255,7 @@ DeleteApplicationOutcome ServerlessApplicationRepositoryClient::DeleteApplicatio
   ss << "/applications/";
   ss << request.GetApplicationId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteApplicationOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteApplicationOutcome(outcome.GetError());
-  }
+  return DeleteApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteApplicationOutcomeCallable ServerlessApplicationRepositoryClient::DeleteApplicationCallable(const DeleteApplicationRequest& request) const
@@ -337,15 +288,7 @@ GetApplicationOutcome ServerlessApplicationRepositoryClient::GetApplication(cons
   ss << "/applications/";
   ss << request.GetApplicationId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetApplicationOutcome(GetApplicationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetApplicationOutcome(outcome.GetError());
-  }
+  return GetApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetApplicationOutcomeCallable ServerlessApplicationRepositoryClient::GetApplicationCallable(const GetApplicationRequest& request) const
@@ -379,15 +322,7 @@ GetApplicationPolicyOutcome ServerlessApplicationRepositoryClient::GetApplicatio
   ss << request.GetApplicationId();
   ss << "/policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetApplicationPolicyOutcome(GetApplicationPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetApplicationPolicyOutcome(outcome.GetError());
-  }
+  return GetApplicationPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetApplicationPolicyOutcomeCallable ServerlessApplicationRepositoryClient::GetApplicationPolicyCallable(const GetApplicationPolicyRequest& request) const
@@ -427,15 +362,7 @@ GetCloudFormationTemplateOutcome ServerlessApplicationRepositoryClient::GetCloud
   ss << "/templates/";
   ss << request.GetTemplateId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetCloudFormationTemplateOutcome(GetCloudFormationTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetCloudFormationTemplateOutcome(outcome.GetError());
-  }
+  return GetCloudFormationTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCloudFormationTemplateOutcomeCallable ServerlessApplicationRepositoryClient::GetCloudFormationTemplateCallable(const GetCloudFormationTemplateRequest& request) const
@@ -469,15 +396,7 @@ ListApplicationDependenciesOutcome ServerlessApplicationRepositoryClient::ListAp
   ss << request.GetApplicationId();
   ss << "/dependencies";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListApplicationDependenciesOutcome(ListApplicationDependenciesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListApplicationDependenciesOutcome(outcome.GetError());
-  }
+  return ListApplicationDependenciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListApplicationDependenciesOutcomeCallable ServerlessApplicationRepositoryClient::ListApplicationDependenciesCallable(const ListApplicationDependenciesRequest& request) const
@@ -511,15 +430,7 @@ ListApplicationVersionsOutcome ServerlessApplicationRepositoryClient::ListApplic
   ss << request.GetApplicationId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListApplicationVersionsOutcome(ListApplicationVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListApplicationVersionsOutcome(outcome.GetError());
-  }
+  return ListApplicationVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListApplicationVersionsOutcomeCallable ServerlessApplicationRepositoryClient::ListApplicationVersionsCallable(const ListApplicationVersionsRequest& request) const
@@ -546,15 +457,7 @@ ListApplicationsOutcome ServerlessApplicationRepositoryClient::ListApplications(
   Aws::StringStream ss;
   ss << "/applications";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListApplicationsOutcome(ListApplicationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListApplicationsOutcome(outcome.GetError());
-  }
+  return ListApplicationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListApplicationsOutcomeCallable ServerlessApplicationRepositoryClient::ListApplicationsCallable(const ListApplicationsRequest& request) const
@@ -588,15 +491,7 @@ PutApplicationPolicyOutcome ServerlessApplicationRepositoryClient::PutApplicatio
   ss << request.GetApplicationId();
   ss << "/policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutApplicationPolicyOutcome(PutApplicationPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutApplicationPolicyOutcome(outcome.GetError());
-  }
+  return PutApplicationPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutApplicationPolicyOutcomeCallable ServerlessApplicationRepositoryClient::PutApplicationPolicyCallable(const PutApplicationPolicyRequest& request) const
@@ -630,15 +525,7 @@ UnshareApplicationOutcome ServerlessApplicationRepositoryClient::UnshareApplicat
   ss << request.GetApplicationId();
   ss << "/unshare";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UnshareApplicationOutcome(NoResult());
-  }
-  else
-  {
-    return UnshareApplicationOutcome(outcome.GetError());
-  }
+  return UnshareApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UnshareApplicationOutcomeCallable ServerlessApplicationRepositoryClient::UnshareApplicationCallable(const UnshareApplicationRequest& request) const
@@ -671,15 +558,7 @@ UpdateApplicationOutcome ServerlessApplicationRepositoryClient::UpdateApplicatio
   ss << "/applications/";
   ss << request.GetApplicationId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateApplicationOutcome(UpdateApplicationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateApplicationOutcome(outcome.GetError());
-  }
+  return UpdateApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateApplicationOutcomeCallable ServerlessApplicationRepositoryClient::UpdateApplicationCallable(const UpdateApplicationRequest& request) const

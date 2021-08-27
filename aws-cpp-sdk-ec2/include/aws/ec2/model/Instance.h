@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -35,6 +25,7 @@
 #include <aws/ec2/model/CapacityReservationSpecificationResponse.h>
 #include <aws/ec2/model/HibernationOptions.h>
 #include <aws/ec2/model/InstanceMetadataOptionsResponse.h>
+#include <aws/ec2/model/EnclaveOptions.h>
 #include <aws/ec2/model/ProductCode.h>
 #include <aws/ec2/model/InstanceBlockDeviceMapping.h>
 #include <aws/ec2/model/ElasticGpuAssociation.h>
@@ -656,42 +647,58 @@ namespace Model
 
 
     /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address, or the Carrier IP address assigned to the instance,
+     * if applicable.</p> <p>A Carrier IP address only applies to an instance launched
+     * in a subnet associated with a Wavelength Zone.</p>
      */
     inline const Aws::String& GetPublicIpAddress() const{ return m_publicIpAddress; }
 
     /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address, or the Carrier IP address assigned to the instance,
+     * if applicable.</p> <p>A Carrier IP address only applies to an instance launched
+     * in a subnet associated with a Wavelength Zone.</p>
      */
     inline bool PublicIpAddressHasBeenSet() const { return m_publicIpAddressHasBeenSet; }
 
     /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address, or the Carrier IP address assigned to the instance,
+     * if applicable.</p> <p>A Carrier IP address only applies to an instance launched
+     * in a subnet associated with a Wavelength Zone.</p>
      */
     inline void SetPublicIpAddress(const Aws::String& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = value; }
 
     /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address, or the Carrier IP address assigned to the instance,
+     * if applicable.</p> <p>A Carrier IP address only applies to an instance launched
+     * in a subnet associated with a Wavelength Zone.</p>
      */
     inline void SetPublicIpAddress(Aws::String&& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = std::move(value); }
 
     /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address, or the Carrier IP address assigned to the instance,
+     * if applicable.</p> <p>A Carrier IP address only applies to an instance launched
+     * in a subnet associated with a Wavelength Zone.</p>
      */
     inline void SetPublicIpAddress(const char* value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress.assign(value); }
 
     /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address, or the Carrier IP address assigned to the instance,
+     * if applicable.</p> <p>A Carrier IP address only applies to an instance launched
+     * in a subnet associated with a Wavelength Zone.</p>
      */
     inline Instance& WithPublicIpAddress(const Aws::String& value) { SetPublicIpAddress(value); return *this;}
 
     /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address, or the Carrier IP address assigned to the instance,
+     * if applicable.</p> <p>A Carrier IP address only applies to an instance launched
+     * in a subnet associated with a Wavelength Zone.</p>
      */
     inline Instance& WithPublicIpAddress(Aws::String&& value) { SetPublicIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address, or the Carrier IP address assigned to the instance,
+     * if applicable.</p> <p>A Carrier IP address only applies to an instance launched
+     * in a subnet associated with a Wavelength Zone.</p>
      */
     inline Instance& WithPublicIpAddress(const char* value) { SetPublicIpAddress(value); return *this;}
 
@@ -1911,6 +1918,37 @@ namespace Model
      */
     inline Instance& WithMetadataOptions(InstanceMetadataOptionsResponse&& value) { SetMetadataOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline const EnclaveOptions& GetEnclaveOptions() const{ return m_enclaveOptions; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline bool EnclaveOptionsHasBeenSet() const { return m_enclaveOptionsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline void SetEnclaveOptions(const EnclaveOptions& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = value; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline void SetEnclaveOptions(EnclaveOptions&& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = std::move(value); }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline Instance& WithEnclaveOptions(const EnclaveOptions& value) { SetEnclaveOptions(value); return *this;}
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline Instance& WithEnclaveOptions(EnclaveOptions&& value) { SetEnclaveOptions(std::move(value)); return *this;}
+
   private:
 
     int m_amiLaunchIndex;
@@ -2053,6 +2091,9 @@ namespace Model
 
     InstanceMetadataOptionsResponse m_metadataOptions;
     bool m_metadataOptionsHasBeenSet;
+
+    EnclaveOptions m_enclaveOptions;
+    bool m_enclaveOptionsHasBeenSet;
   };
 
 } // namespace Model

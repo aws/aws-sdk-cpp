@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -19,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/RestoreWindow.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/DBInstanceAutomatedBackupsReplication.h>
 #include <utility>
 
 namespace Aws
@@ -36,9 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>An automated backup of a DB instance. It it consists of system backups,
+   * <p>An automated backup of a DB instance. It consists of system backups,
    * transaction logs, and the database instance properties that existed at the time
-   * you deleted the source instance. </p><p><h3>See Also:</h3>   <a
+   * you deleted the source instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBInstanceAutomatedBackup">AWS
    * API Reference</a></p>
    */
@@ -54,42 +46,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the automated backup.</p>
+     * <p>The Amazon Resource Name (ARN) for the automated backups.</p>
      */
     inline const Aws::String& GetDBInstanceArn() const{ return m_dBInstanceArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the automated backup.</p>
+     * <p>The Amazon Resource Name (ARN) for the automated backups.</p>
      */
     inline bool DBInstanceArnHasBeenSet() const { return m_dBInstanceArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the automated backup.</p>
+     * <p>The Amazon Resource Name (ARN) for the automated backups.</p>
      */
     inline void SetDBInstanceArn(const Aws::String& value) { m_dBInstanceArnHasBeenSet = true; m_dBInstanceArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the automated backup.</p>
+     * <p>The Amazon Resource Name (ARN) for the automated backups.</p>
      */
     inline void SetDBInstanceArn(Aws::String&& value) { m_dBInstanceArnHasBeenSet = true; m_dBInstanceArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the automated backup.</p>
+     * <p>The Amazon Resource Name (ARN) for the automated backups.</p>
      */
     inline void SetDBInstanceArn(const char* value) { m_dBInstanceArnHasBeenSet = true; m_dBInstanceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the automated backup.</p>
+     * <p>The Amazon Resource Name (ARN) for the automated backups.</p>
      */
     inline DBInstanceAutomatedBackup& WithDBInstanceArn(const Aws::String& value) { SetDBInstanceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the automated backup.</p>
+     * <p>The Amazon Resource Name (ARN) for the automated backups.</p>
      */
     inline DBInstanceAutomatedBackup& WithDBInstanceArn(Aws::String&& value) { SetDBInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the automated backup.</p>
+     * <p>The Amazon Resource Name (ARN) for the automated backups.</p>
      */
     inline DBInstanceAutomatedBackup& WithDBInstanceArn(const char* value) { SetDBInstanceArn(value); return *this;}
 
@@ -870,58 +862,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key ID for an automated backup. The KMS key ID is the Amazon
-     * Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p>
+     * <p>The AWS KMS key ID for an automated backup.</p> <p>The AWS KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
+     * key (CMK).</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS key ID for an automated backup. The KMS key ID is the Amazon
-     * Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p>
+     * <p>The AWS KMS key ID for an automated backup.</p> <p>The AWS KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
+     * key (CMK).</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key ID for an automated backup. The KMS key ID is the Amazon
-     * Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p>
+     * <p>The AWS KMS key ID for an automated backup.</p> <p>The AWS KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
+     * key (CMK).</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key ID for an automated backup. The KMS key ID is the Amazon
-     * Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p>
+     * <p>The AWS KMS key ID for an automated backup.</p> <p>The AWS KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
+     * key (CMK).</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key ID for an automated backup. The KMS key ID is the Amazon
-     * Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p>
+     * <p>The AWS KMS key ID for an automated backup.</p> <p>The AWS KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
+     * key (CMK).</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key ID for an automated backup. The KMS key ID is the Amazon
-     * Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p>
+     * <p>The AWS KMS key ID for an automated backup.</p> <p>The AWS KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
+     * key (CMK).</p>
      */
     inline DBInstanceAutomatedBackup& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key ID for an automated backup. The KMS key ID is the Amazon
-     * Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p>
+     * <p>The AWS KMS key ID for an automated backup.</p> <p>The AWS KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
+     * key (CMK).</p>
      */
     inline DBInstanceAutomatedBackup& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key ID for an automated backup. The KMS key ID is the Amazon
-     * Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p>
+     * <p>The AWS KMS key ID for an automated backup.</p> <p>The AWS KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
+     * key (CMK).</p>
      */
     inline DBInstanceAutomatedBackup& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -1015,6 +1007,117 @@ namespace Model
      */
     inline DBInstanceAutomatedBackup& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 
+
+    /**
+     * <p>The retention period for the automated backups.</p>
+     */
+    inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
+
+    /**
+     * <p>The retention period for the automated backups.</p>
+     */
+    inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
+
+    /**
+     * <p>The retention period for the automated backups.</p>
+     */
+    inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
+
+    /**
+     * <p>The retention period for the automated backups.</p>
+     */
+    inline DBInstanceAutomatedBackup& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the replicated automated backups.</p>
+     */
+    inline const Aws::String& GetDBInstanceAutomatedBackupsArn() const{ return m_dBInstanceAutomatedBackupsArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the replicated automated backups.</p>
+     */
+    inline bool DBInstanceAutomatedBackupsArnHasBeenSet() const { return m_dBInstanceAutomatedBackupsArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the replicated automated backups.</p>
+     */
+    inline void SetDBInstanceAutomatedBackupsArn(const Aws::String& value) { m_dBInstanceAutomatedBackupsArnHasBeenSet = true; m_dBInstanceAutomatedBackupsArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the replicated automated backups.</p>
+     */
+    inline void SetDBInstanceAutomatedBackupsArn(Aws::String&& value) { m_dBInstanceAutomatedBackupsArnHasBeenSet = true; m_dBInstanceAutomatedBackupsArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the replicated automated backups.</p>
+     */
+    inline void SetDBInstanceAutomatedBackupsArn(const char* value) { m_dBInstanceAutomatedBackupsArnHasBeenSet = true; m_dBInstanceAutomatedBackupsArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the replicated automated backups.</p>
+     */
+    inline DBInstanceAutomatedBackup& WithDBInstanceAutomatedBackupsArn(const Aws::String& value) { SetDBInstanceAutomatedBackupsArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the replicated automated backups.</p>
+     */
+    inline DBInstanceAutomatedBackup& WithDBInstanceAutomatedBackupsArn(Aws::String&& value) { SetDBInstanceAutomatedBackupsArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the replicated automated backups.</p>
+     */
+    inline DBInstanceAutomatedBackup& WithDBInstanceAutomatedBackupsArn(const char* value) { SetDBInstanceAutomatedBackupsArn(value); return *this;}
+
+
+    /**
+     * <p>The list of replications to different AWS Regions associated with the
+     * automated backup.</p>
+     */
+    inline const Aws::Vector<DBInstanceAutomatedBackupsReplication>& GetDBInstanceAutomatedBackupsReplications() const{ return m_dBInstanceAutomatedBackupsReplications; }
+
+    /**
+     * <p>The list of replications to different AWS Regions associated with the
+     * automated backup.</p>
+     */
+    inline bool DBInstanceAutomatedBackupsReplicationsHasBeenSet() const { return m_dBInstanceAutomatedBackupsReplicationsHasBeenSet; }
+
+    /**
+     * <p>The list of replications to different AWS Regions associated with the
+     * automated backup.</p>
+     */
+    inline void SetDBInstanceAutomatedBackupsReplications(const Aws::Vector<DBInstanceAutomatedBackupsReplication>& value) { m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true; m_dBInstanceAutomatedBackupsReplications = value; }
+
+    /**
+     * <p>The list of replications to different AWS Regions associated with the
+     * automated backup.</p>
+     */
+    inline void SetDBInstanceAutomatedBackupsReplications(Aws::Vector<DBInstanceAutomatedBackupsReplication>&& value) { m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true; m_dBInstanceAutomatedBackupsReplications = std::move(value); }
+
+    /**
+     * <p>The list of replications to different AWS Regions associated with the
+     * automated backup.</p>
+     */
+    inline DBInstanceAutomatedBackup& WithDBInstanceAutomatedBackupsReplications(const Aws::Vector<DBInstanceAutomatedBackupsReplication>& value) { SetDBInstanceAutomatedBackupsReplications(value); return *this;}
+
+    /**
+     * <p>The list of replications to different AWS Regions associated with the
+     * automated backup.</p>
+     */
+    inline DBInstanceAutomatedBackup& WithDBInstanceAutomatedBackupsReplications(Aws::Vector<DBInstanceAutomatedBackupsReplication>&& value) { SetDBInstanceAutomatedBackupsReplications(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of replications to different AWS Regions associated with the
+     * automated backup.</p>
+     */
+    inline DBInstanceAutomatedBackup& AddDBInstanceAutomatedBackupsReplications(const DBInstanceAutomatedBackupsReplication& value) { m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true; m_dBInstanceAutomatedBackupsReplications.push_back(value); return *this; }
+
+    /**
+     * <p>The list of replications to different AWS Regions associated with the
+     * automated backup.</p>
+     */
+    inline DBInstanceAutomatedBackup& AddDBInstanceAutomatedBackupsReplications(DBInstanceAutomatedBackupsReplication&& value) { m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true; m_dBInstanceAutomatedBackupsReplications.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_dBInstanceArn;
@@ -1085,6 +1188,15 @@ namespace Model
 
     bool m_iAMDatabaseAuthenticationEnabled;
     bool m_iAMDatabaseAuthenticationEnabledHasBeenSet;
+
+    int m_backupRetentionPeriod;
+    bool m_backupRetentionPeriodHasBeenSet;
+
+    Aws::String m_dBInstanceAutomatedBackupsArn;
+    bool m_dBInstanceAutomatedBackupsArnHasBeenSet;
+
+    Aws::Vector<DBInstanceAutomatedBackupsReplication> m_dBInstanceAutomatedBackupsReplications;
+    bool m_dBInstanceAutomatedBackupsReplicationsHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -22,6 +12,10 @@
 #include <aws/sagemaker/model/ModelPackageValidationSpecification.h>
 #include <aws/sagemaker/model/ModelPackageStatus.h>
 #include <aws/sagemaker/model/ModelPackageStatusDetails.h>
+#include <aws/sagemaker/model/ModelApprovalStatus.h>
+#include <aws/sagemaker/model/UserContext.h>
+#include <aws/sagemaker/model/MetadataProperties.h>
+#include <aws/sagemaker/model/ModelMetrics.h>
 #include <utility>
 
 namespace Aws
@@ -82,6 +76,65 @@ namespace Model
      * <p>The name of the model package being described.</p>
      */
     inline DescribeModelPackageResult& WithModelPackageName(const char* value) { SetModelPackageName(value); return *this;}
+
+
+    /**
+     * <p>If the model is a versioned model, the name of the model group that the
+     * versioned model belongs to.</p>
+     */
+    inline const Aws::String& GetModelPackageGroupName() const{ return m_modelPackageGroupName; }
+
+    /**
+     * <p>If the model is a versioned model, the name of the model group that the
+     * versioned model belongs to.</p>
+     */
+    inline void SetModelPackageGroupName(const Aws::String& value) { m_modelPackageGroupName = value; }
+
+    /**
+     * <p>If the model is a versioned model, the name of the model group that the
+     * versioned model belongs to.</p>
+     */
+    inline void SetModelPackageGroupName(Aws::String&& value) { m_modelPackageGroupName = std::move(value); }
+
+    /**
+     * <p>If the model is a versioned model, the name of the model group that the
+     * versioned model belongs to.</p>
+     */
+    inline void SetModelPackageGroupName(const char* value) { m_modelPackageGroupName.assign(value); }
+
+    /**
+     * <p>If the model is a versioned model, the name of the model group that the
+     * versioned model belongs to.</p>
+     */
+    inline DescribeModelPackageResult& WithModelPackageGroupName(const Aws::String& value) { SetModelPackageGroupName(value); return *this;}
+
+    /**
+     * <p>If the model is a versioned model, the name of the model group that the
+     * versioned model belongs to.</p>
+     */
+    inline DescribeModelPackageResult& WithModelPackageGroupName(Aws::String&& value) { SetModelPackageGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>If the model is a versioned model, the name of the model group that the
+     * versioned model belongs to.</p>
+     */
+    inline DescribeModelPackageResult& WithModelPackageGroupName(const char* value) { SetModelPackageGroupName(value); return *this;}
+
+
+    /**
+     * <p>The version of the model package.</p>
+     */
+    inline int GetModelPackageVersion() const{ return m_modelPackageVersion; }
+
+    /**
+     * <p>The version of the model package.</p>
+     */
+    inline void SetModelPackageVersion(int value) { m_modelPackageVersion = value; }
+
+    /**
+     * <p>The version of the model package.</p>
+     */
+    inline DescribeModelPackageResult& WithModelPackageVersion(int value) { SetModelPackageVersion(value); return *this;}
 
 
     /**
@@ -337,9 +390,175 @@ namespace Model
      */
     inline DescribeModelPackageResult& WithCertifyForMarketplace(bool value) { SetCertifyForMarketplace(value); return *this;}
 
+
+    /**
+     * <p>The approval status of the model package.</p>
+     */
+    inline const ModelApprovalStatus& GetModelApprovalStatus() const{ return m_modelApprovalStatus; }
+
+    /**
+     * <p>The approval status of the model package.</p>
+     */
+    inline void SetModelApprovalStatus(const ModelApprovalStatus& value) { m_modelApprovalStatus = value; }
+
+    /**
+     * <p>The approval status of the model package.</p>
+     */
+    inline void SetModelApprovalStatus(ModelApprovalStatus&& value) { m_modelApprovalStatus = std::move(value); }
+
+    /**
+     * <p>The approval status of the model package.</p>
+     */
+    inline DescribeModelPackageResult& WithModelApprovalStatus(const ModelApprovalStatus& value) { SetModelApprovalStatus(value); return *this;}
+
+    /**
+     * <p>The approval status of the model package.</p>
+     */
+    inline DescribeModelPackageResult& WithModelApprovalStatus(ModelApprovalStatus&& value) { SetModelApprovalStatus(std::move(value)); return *this;}
+
+
+    
+    inline const UserContext& GetCreatedBy() const{ return m_createdBy; }
+
+    
+    inline void SetCreatedBy(const UserContext& value) { m_createdBy = value; }
+
+    
+    inline void SetCreatedBy(UserContext&& value) { m_createdBy = std::move(value); }
+
+    
+    inline DescribeModelPackageResult& WithCreatedBy(const UserContext& value) { SetCreatedBy(value); return *this;}
+
+    
+    inline DescribeModelPackageResult& WithCreatedBy(UserContext&& value) { SetCreatedBy(std::move(value)); return *this;}
+
+
+    
+    inline const MetadataProperties& GetMetadataProperties() const{ return m_metadataProperties; }
+
+    
+    inline void SetMetadataProperties(const MetadataProperties& value) { m_metadataProperties = value; }
+
+    
+    inline void SetMetadataProperties(MetadataProperties&& value) { m_metadataProperties = std::move(value); }
+
+    
+    inline DescribeModelPackageResult& WithMetadataProperties(const MetadataProperties& value) { SetMetadataProperties(value); return *this;}
+
+    
+    inline DescribeModelPackageResult& WithMetadataProperties(MetadataProperties&& value) { SetMetadataProperties(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Metrics for the model.</p>
+     */
+    inline const ModelMetrics& GetModelMetrics() const{ return m_modelMetrics; }
+
+    /**
+     * <p>Metrics for the model.</p>
+     */
+    inline void SetModelMetrics(const ModelMetrics& value) { m_modelMetrics = value; }
+
+    /**
+     * <p>Metrics for the model.</p>
+     */
+    inline void SetModelMetrics(ModelMetrics&& value) { m_modelMetrics = std::move(value); }
+
+    /**
+     * <p>Metrics for the model.</p>
+     */
+    inline DescribeModelPackageResult& WithModelMetrics(const ModelMetrics& value) { SetModelMetrics(value); return *this;}
+
+    /**
+     * <p>Metrics for the model.</p>
+     */
+    inline DescribeModelPackageResult& WithModelMetrics(ModelMetrics&& value) { SetModelMetrics(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The last time the model package was modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>The last time the model package was modified.</p>
+     */
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
+
+    /**
+     * <p>The last time the model package was modified.</p>
+     */
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
+
+    /**
+     * <p>The last time the model package was modified.</p>
+     */
+    inline DescribeModelPackageResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+
+    /**
+     * <p>The last time the model package was modified.</p>
+     */
+    inline DescribeModelPackageResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+
+
+    
+    inline const UserContext& GetLastModifiedBy() const{ return m_lastModifiedBy; }
+
+    
+    inline void SetLastModifiedBy(const UserContext& value) { m_lastModifiedBy = value; }
+
+    
+    inline void SetLastModifiedBy(UserContext&& value) { m_lastModifiedBy = std::move(value); }
+
+    
+    inline DescribeModelPackageResult& WithLastModifiedBy(const UserContext& value) { SetLastModifiedBy(value); return *this;}
+
+    
+    inline DescribeModelPackageResult& WithLastModifiedBy(UserContext&& value) { SetLastModifiedBy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A description provided for the model approval.</p>
+     */
+    inline const Aws::String& GetApprovalDescription() const{ return m_approvalDescription; }
+
+    /**
+     * <p>A description provided for the model approval.</p>
+     */
+    inline void SetApprovalDescription(const Aws::String& value) { m_approvalDescription = value; }
+
+    /**
+     * <p>A description provided for the model approval.</p>
+     */
+    inline void SetApprovalDescription(Aws::String&& value) { m_approvalDescription = std::move(value); }
+
+    /**
+     * <p>A description provided for the model approval.</p>
+     */
+    inline void SetApprovalDescription(const char* value) { m_approvalDescription.assign(value); }
+
+    /**
+     * <p>A description provided for the model approval.</p>
+     */
+    inline DescribeModelPackageResult& WithApprovalDescription(const Aws::String& value) { SetApprovalDescription(value); return *this;}
+
+    /**
+     * <p>A description provided for the model approval.</p>
+     */
+    inline DescribeModelPackageResult& WithApprovalDescription(Aws::String&& value) { SetApprovalDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description provided for the model approval.</p>
+     */
+    inline DescribeModelPackageResult& WithApprovalDescription(const char* value) { SetApprovalDescription(value); return *this;}
+
   private:
 
     Aws::String m_modelPackageName;
+
+    Aws::String m_modelPackageGroupName;
+
+    int m_modelPackageVersion;
 
     Aws::String m_modelPackageArn;
 
@@ -358,6 +577,20 @@ namespace Model
     ModelPackageStatusDetails m_modelPackageStatusDetails;
 
     bool m_certifyForMarketplace;
+
+    ModelApprovalStatus m_modelApprovalStatus;
+
+    UserContext m_createdBy;
+
+    MetadataProperties m_metadataProperties;
+
+    ModelMetrics m_modelMetrics;
+
+    Aws::Utils::DateTime m_lastModifiedTime;
+
+    UserContext m_lastModifiedBy;
+
+    Aws::String m_approvalDescription;
   };
 
 } // namespace Model

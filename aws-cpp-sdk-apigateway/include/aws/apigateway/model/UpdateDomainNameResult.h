@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
@@ -21,6 +11,7 @@
 #include <aws/apigateway/model/DomainNameStatus.h>
 #include <aws/apigateway/model/SecurityPolicy.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/apigateway/model/MutualTlsAuthentication.h>
 #include <utility>
 
 namespace Aws
@@ -603,31 +594,31 @@ namespace Model
 
     /**
      * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * types of the domain name.</p>
      */
     inline const EndpointConfiguration& GetEndpointConfiguration() const{ return m_endpointConfiguration; }
 
     /**
      * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * types of the domain name.</p>
      */
     inline void SetEndpointConfiguration(const EndpointConfiguration& value) { m_endpointConfiguration = value; }
 
     /**
      * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * types of the domain name.</p>
      */
     inline void SetEndpointConfiguration(EndpointConfiguration&& value) { m_endpointConfiguration = std::move(value); }
 
     /**
      * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * types of the domain name.</p>
      */
     inline UpdateDomainNameResult& WithEndpointConfiguration(const EndpointConfiguration& value) { SetEndpointConfiguration(value); return *this;}
 
     /**
      * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * types of the domain name.</p>
      */
     inline UpdateDomainNameResult& WithEndpointConfiguration(EndpointConfiguration&& value) { SetEndpointConfiguration(std::move(value)); return *this;}
 
@@ -829,6 +820,42 @@ namespace Model
      */
     inline UpdateDomainNameResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The mutual TLS authentication configuration for a custom domain name. If
+     * specified, API Gateway performs two-way authentication between the client and
+     * the server. Clients must present a trusted certificate to access your API.</p>
+     */
+    inline const MutualTlsAuthentication& GetMutualTlsAuthentication() const{ return m_mutualTlsAuthentication; }
+
+    /**
+     * <p>The mutual TLS authentication configuration for a custom domain name. If
+     * specified, API Gateway performs two-way authentication between the client and
+     * the server. Clients must present a trusted certificate to access your API.</p>
+     */
+    inline void SetMutualTlsAuthentication(const MutualTlsAuthentication& value) { m_mutualTlsAuthentication = value; }
+
+    /**
+     * <p>The mutual TLS authentication configuration for a custom domain name. If
+     * specified, API Gateway performs two-way authentication between the client and
+     * the server. Clients must present a trusted certificate to access your API.</p>
+     */
+    inline void SetMutualTlsAuthentication(MutualTlsAuthentication&& value) { m_mutualTlsAuthentication = std::move(value); }
+
+    /**
+     * <p>The mutual TLS authentication configuration for a custom domain name. If
+     * specified, API Gateway performs two-way authentication between the client and
+     * the server. Clients must present a trusted certificate to access your API.</p>
+     */
+    inline UpdateDomainNameResult& WithMutualTlsAuthentication(const MutualTlsAuthentication& value) { SetMutualTlsAuthentication(value); return *this;}
+
+    /**
+     * <p>The mutual TLS authentication configuration for a custom domain name. If
+     * specified, API Gateway performs two-way authentication between the client and
+     * the server. Clients must present a trusted certificate to access your API.</p>
+     */
+    inline UpdateDomainNameResult& WithMutualTlsAuthentication(MutualTlsAuthentication&& value) { SetMutualTlsAuthentication(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -860,6 +887,8 @@ namespace Model
     SecurityPolicy m_securityPolicy;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    MutualTlsAuthentication m_mutualTlsAuthentication;
   };
 
 } // namespace Model

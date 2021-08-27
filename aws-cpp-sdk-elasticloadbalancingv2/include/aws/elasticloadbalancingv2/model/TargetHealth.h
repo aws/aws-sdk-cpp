@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
@@ -94,15 +84,15 @@ namespace Model
      * status.</p> </li> </ul> <p>If the target state is <code>unhealthy</code>, the
      * reason code can be one of the following values:</p> <ul> <li> <p>
      * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an
-     * expected HTTP code. Applies only to Application Load Balancers.</p> </li> <li>
-     * <p> <code>Target.Timeout</code> - The health check requests timed out. Applies
-     * only to Application Load Balancers.</p> </li> <li> <p>
-     * <code>Target.FailedHealthChecks</code> - The load balancer received an error
-     * while establishing a connection to the target or the target response was
-     * malformed.</p> </li> <li> <p> <code>Elb.InternalError</code> - The health checks
-     * failed due to an internal error. Applies only to Application Load Balancers.</p>
-     * </li> </ul> <p>If the target state is <code>unused</code>, the reason code can
-     * be one of the following values:</p> <ul> <li> <p>
+     * expected HTTP code. Applies only to Application Load Balancers and Gateway Load
+     * Balancers.</p> </li> <li> <p> <code>Target.Timeout</code> - The health check
+     * requests timed out. Applies only to Application Load Balancers and Gateway Load
+     * Balancers.</p> </li> <li> <p> <code>Target.FailedHealthChecks</code> - The load
+     * balancer received an error while establishing a connection to the target or the
+     * target response was malformed.</p> </li> <li> <p> <code>Elb.InternalError</code>
+     * - The health checks failed due to an internal error. Applies only to Application
+     * Load Balancers.</p> </li> </ul> <p>If the target state is <code>unused</code>,
+     * the reason code can be one of the following values:</p> <ul> <li> <p>
      * <code>Target.NotRegistered</code> - The target is not registered with the target
      * group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The target group is not
      * used by any load balancer or the target is in an Availability Zone that is not
@@ -133,15 +123,15 @@ namespace Model
      * status.</p> </li> </ul> <p>If the target state is <code>unhealthy</code>, the
      * reason code can be one of the following values:</p> <ul> <li> <p>
      * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an
-     * expected HTTP code. Applies only to Application Load Balancers.</p> </li> <li>
-     * <p> <code>Target.Timeout</code> - The health check requests timed out. Applies
-     * only to Application Load Balancers.</p> </li> <li> <p>
-     * <code>Target.FailedHealthChecks</code> - The load balancer received an error
-     * while establishing a connection to the target or the target response was
-     * malformed.</p> </li> <li> <p> <code>Elb.InternalError</code> - The health checks
-     * failed due to an internal error. Applies only to Application Load Balancers.</p>
-     * </li> </ul> <p>If the target state is <code>unused</code>, the reason code can
-     * be one of the following values:</p> <ul> <li> <p>
+     * expected HTTP code. Applies only to Application Load Balancers and Gateway Load
+     * Balancers.</p> </li> <li> <p> <code>Target.Timeout</code> - The health check
+     * requests timed out. Applies only to Application Load Balancers and Gateway Load
+     * Balancers.</p> </li> <li> <p> <code>Target.FailedHealthChecks</code> - The load
+     * balancer received an error while establishing a connection to the target or the
+     * target response was malformed.</p> </li> <li> <p> <code>Elb.InternalError</code>
+     * - The health checks failed due to an internal error. Applies only to Application
+     * Load Balancers.</p> </li> </ul> <p>If the target state is <code>unused</code>,
+     * the reason code can be one of the following values:</p> <ul> <li> <p>
      * <code>Target.NotRegistered</code> - The target is not registered with the target
      * group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The target group is not
      * used by any load balancer or the target is in an Availability Zone that is not
@@ -172,15 +162,15 @@ namespace Model
      * status.</p> </li> </ul> <p>If the target state is <code>unhealthy</code>, the
      * reason code can be one of the following values:</p> <ul> <li> <p>
      * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an
-     * expected HTTP code. Applies only to Application Load Balancers.</p> </li> <li>
-     * <p> <code>Target.Timeout</code> - The health check requests timed out. Applies
-     * only to Application Load Balancers.</p> </li> <li> <p>
-     * <code>Target.FailedHealthChecks</code> - The load balancer received an error
-     * while establishing a connection to the target or the target response was
-     * malformed.</p> </li> <li> <p> <code>Elb.InternalError</code> - The health checks
-     * failed due to an internal error. Applies only to Application Load Balancers.</p>
-     * </li> </ul> <p>If the target state is <code>unused</code>, the reason code can
-     * be one of the following values:</p> <ul> <li> <p>
+     * expected HTTP code. Applies only to Application Load Balancers and Gateway Load
+     * Balancers.</p> </li> <li> <p> <code>Target.Timeout</code> - The health check
+     * requests timed out. Applies only to Application Load Balancers and Gateway Load
+     * Balancers.</p> </li> <li> <p> <code>Target.FailedHealthChecks</code> - The load
+     * balancer received an error while establishing a connection to the target or the
+     * target response was malformed.</p> </li> <li> <p> <code>Elb.InternalError</code>
+     * - The health checks failed due to an internal error. Applies only to Application
+     * Load Balancers.</p> </li> </ul> <p>If the target state is <code>unused</code>,
+     * the reason code can be one of the following values:</p> <ul> <li> <p>
      * <code>Target.NotRegistered</code> - The target is not registered with the target
      * group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The target group is not
      * used by any load balancer or the target is in an Availability Zone that is not
@@ -211,15 +201,15 @@ namespace Model
      * status.</p> </li> </ul> <p>If the target state is <code>unhealthy</code>, the
      * reason code can be one of the following values:</p> <ul> <li> <p>
      * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an
-     * expected HTTP code. Applies only to Application Load Balancers.</p> </li> <li>
-     * <p> <code>Target.Timeout</code> - The health check requests timed out. Applies
-     * only to Application Load Balancers.</p> </li> <li> <p>
-     * <code>Target.FailedHealthChecks</code> - The load balancer received an error
-     * while establishing a connection to the target or the target response was
-     * malformed.</p> </li> <li> <p> <code>Elb.InternalError</code> - The health checks
-     * failed due to an internal error. Applies only to Application Load Balancers.</p>
-     * </li> </ul> <p>If the target state is <code>unused</code>, the reason code can
-     * be one of the following values:</p> <ul> <li> <p>
+     * expected HTTP code. Applies only to Application Load Balancers and Gateway Load
+     * Balancers.</p> </li> <li> <p> <code>Target.Timeout</code> - The health check
+     * requests timed out. Applies only to Application Load Balancers and Gateway Load
+     * Balancers.</p> </li> <li> <p> <code>Target.FailedHealthChecks</code> - The load
+     * balancer received an error while establishing a connection to the target or the
+     * target response was malformed.</p> </li> <li> <p> <code>Elb.InternalError</code>
+     * - The health checks failed due to an internal error. Applies only to Application
+     * Load Balancers.</p> </li> </ul> <p>If the target state is <code>unused</code>,
+     * the reason code can be one of the following values:</p> <ul> <li> <p>
      * <code>Target.NotRegistered</code> - The target is not registered with the target
      * group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The target group is not
      * used by any load balancer or the target is in an Availability Zone that is not
@@ -250,15 +240,15 @@ namespace Model
      * status.</p> </li> </ul> <p>If the target state is <code>unhealthy</code>, the
      * reason code can be one of the following values:</p> <ul> <li> <p>
      * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an
-     * expected HTTP code. Applies only to Application Load Balancers.</p> </li> <li>
-     * <p> <code>Target.Timeout</code> - The health check requests timed out. Applies
-     * only to Application Load Balancers.</p> </li> <li> <p>
-     * <code>Target.FailedHealthChecks</code> - The load balancer received an error
-     * while establishing a connection to the target or the target response was
-     * malformed.</p> </li> <li> <p> <code>Elb.InternalError</code> - The health checks
-     * failed due to an internal error. Applies only to Application Load Balancers.</p>
-     * </li> </ul> <p>If the target state is <code>unused</code>, the reason code can
-     * be one of the following values:</p> <ul> <li> <p>
+     * expected HTTP code. Applies only to Application Load Balancers and Gateway Load
+     * Balancers.</p> </li> <li> <p> <code>Target.Timeout</code> - The health check
+     * requests timed out. Applies only to Application Load Balancers and Gateway Load
+     * Balancers.</p> </li> <li> <p> <code>Target.FailedHealthChecks</code> - The load
+     * balancer received an error while establishing a connection to the target or the
+     * target response was malformed.</p> </li> <li> <p> <code>Elb.InternalError</code>
+     * - The health checks failed due to an internal error. Applies only to Application
+     * Load Balancers.</p> </li> </ul> <p>If the target state is <code>unused</code>,
+     * the reason code can be one of the following values:</p> <ul> <li> <p>
      * <code>Target.NotRegistered</code> - The target is not registered with the target
      * group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The target group is not
      * used by any load balancer or the target is in an Availability Zone that is not
@@ -289,15 +279,15 @@ namespace Model
      * status.</p> </li> </ul> <p>If the target state is <code>unhealthy</code>, the
      * reason code can be one of the following values:</p> <ul> <li> <p>
      * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an
-     * expected HTTP code. Applies only to Application Load Balancers.</p> </li> <li>
-     * <p> <code>Target.Timeout</code> - The health check requests timed out. Applies
-     * only to Application Load Balancers.</p> </li> <li> <p>
-     * <code>Target.FailedHealthChecks</code> - The load balancer received an error
-     * while establishing a connection to the target or the target response was
-     * malformed.</p> </li> <li> <p> <code>Elb.InternalError</code> - The health checks
-     * failed due to an internal error. Applies only to Application Load Balancers.</p>
-     * </li> </ul> <p>If the target state is <code>unused</code>, the reason code can
-     * be one of the following values:</p> <ul> <li> <p>
+     * expected HTTP code. Applies only to Application Load Balancers and Gateway Load
+     * Balancers.</p> </li> <li> <p> <code>Target.Timeout</code> - The health check
+     * requests timed out. Applies only to Application Load Balancers and Gateway Load
+     * Balancers.</p> </li> <li> <p> <code>Target.FailedHealthChecks</code> - The load
+     * balancer received an error while establishing a connection to the target or the
+     * target response was malformed.</p> </li> <li> <p> <code>Elb.InternalError</code>
+     * - The health checks failed due to an internal error. Applies only to Application
+     * Load Balancers.</p> </li> </ul> <p>If the target state is <code>unused</code>,
+     * the reason code can be one of the following values:</p> <ul> <li> <p>
      * <code>Target.NotRegistered</code> - The target is not registered with the target
      * group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The target group is not
      * used by any load balancer or the target is in an Availability Zone that is not

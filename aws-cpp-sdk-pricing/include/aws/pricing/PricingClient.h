@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pricing/Pricing_EXPORTS.h>
@@ -67,9 +57,9 @@ namespace Model
         class GetAttributeValuesRequest;
         class GetProductsRequest;
 
-        typedef Aws::Utils::Outcome<DescribeServicesResult, Aws::Client::AWSError<PricingErrors>> DescribeServicesOutcome;
-        typedef Aws::Utils::Outcome<GetAttributeValuesResult, Aws::Client::AWSError<PricingErrors>> GetAttributeValuesOutcome;
-        typedef Aws::Utils::Outcome<GetProductsResult, Aws::Client::AWSError<PricingErrors>> GetProductsOutcome;
+        typedef Aws::Utils::Outcome<DescribeServicesResult, PricingError> DescribeServicesOutcome;
+        typedef Aws::Utils::Outcome<GetAttributeValuesResult, PricingError> GetAttributeValuesOutcome;
+        typedef Aws::Utils::Outcome<GetProductsResult, PricingError> GetProductsOutcome;
 
         typedef std::future<DescribeServicesOutcome> DescribeServicesOutcomeCallable;
         typedef std::future<GetAttributeValuesOutcome> GetAttributeValuesOutcomeCallable;
@@ -128,8 +118,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~PricingClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "api.pricing"; }
 
 
         /**

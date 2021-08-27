@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/kendra/model/DataSourceSyncJobStatus.h>
 #include <aws/kendra/model/ErrorCode.h>
+#include <aws/kendra/model/DataSourceSyncJobMetrics.h>
 #include <utility>
 
 namespace Aws
@@ -359,6 +350,49 @@ namespace Model
      */
     inline DataSourceSyncJob& WithDataSourceErrorCode(const char* value) { SetDataSourceErrorCode(value); return *this;}
 
+
+    /**
+     * <p>Maps a batch delete document request to a specific data source sync job. This
+     * is optional and should only be supplied when documents are deleted by a data
+     * source connector.</p>
+     */
+    inline const DataSourceSyncJobMetrics& GetMetrics() const{ return m_metrics; }
+
+    /**
+     * <p>Maps a batch delete document request to a specific data source sync job. This
+     * is optional and should only be supplied when documents are deleted by a data
+     * source connector.</p>
+     */
+    inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
+
+    /**
+     * <p>Maps a batch delete document request to a specific data source sync job. This
+     * is optional and should only be supplied when documents are deleted by a data
+     * source connector.</p>
+     */
+    inline void SetMetrics(const DataSourceSyncJobMetrics& value) { m_metricsHasBeenSet = true; m_metrics = value; }
+
+    /**
+     * <p>Maps a batch delete document request to a specific data source sync job. This
+     * is optional and should only be supplied when documents are deleted by a data
+     * source connector.</p>
+     */
+    inline void SetMetrics(DataSourceSyncJobMetrics&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
+
+    /**
+     * <p>Maps a batch delete document request to a specific data source sync job. This
+     * is optional and should only be supplied when documents are deleted by a data
+     * source connector.</p>
+     */
+    inline DataSourceSyncJob& WithMetrics(const DataSourceSyncJobMetrics& value) { SetMetrics(value); return *this;}
+
+    /**
+     * <p>Maps a batch delete document request to a specific data source sync job. This
+     * is optional and should only be supplied when documents are deleted by a data
+     * source connector.</p>
+     */
+    inline DataSourceSyncJob& WithMetrics(DataSourceSyncJobMetrics&& value) { SetMetrics(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_executionId;
@@ -381,6 +415,9 @@ namespace Model
 
     Aws::String m_dataSourceErrorCode;
     bool m_dataSourceErrorCodeHasBeenSet;
+
+    DataSourceSyncJobMetrics m_metrics;
+    bool m_metricsHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
@@ -51,73 +41,73 @@ namespace Model
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1-63 alphanumeric
+     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline const Aws::String& GetReplicationInstanceIdentifier() const{ return m_replicationInstanceIdentifier; }
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1-63 alphanumeric
+     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline bool ReplicationInstanceIdentifierHasBeenSet() const { return m_replicationInstanceIdentifierHasBeenSet; }
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1-63 alphanumeric
+     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline void SetReplicationInstanceIdentifier(const Aws::String& value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier = value; }
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1-63 alphanumeric
+     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline void SetReplicationInstanceIdentifier(Aws::String&& value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1-63 alphanumeric
+     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline void SetReplicationInstanceIdentifier(const char* value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier.assign(value); }
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1-63 alphanumeric
+     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithReplicationInstanceIdentifier(const Aws::String& value) { SetReplicationInstanceIdentifier(value); return *this;}
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1-63 alphanumeric
+     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithReplicationInstanceIdentifier(Aws::String&& value) { SetReplicationInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1-63 alphanumeric
+     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithReplicationInstanceIdentifier(const char* value) { SetReplicationInstanceIdentifier(value); return *this;}
 
@@ -148,66 +138,90 @@ namespace Model
 
 
     /**
-     * <p>The compute and memory capacity of the replication instance as specified by
-     * the replication instance class.</p> <p> Valid Values: <code>dms.t2.micro |
-     * dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge |
-     * dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline const Aws::String& GetReplicationInstanceClass() const{ return m_replicationInstanceClass; }
 
     /**
-     * <p>The compute and memory capacity of the replication instance as specified by
-     * the replication instance class.</p> <p> Valid Values: <code>dms.t2.micro |
-     * dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge |
-     * dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline bool ReplicationInstanceClassHasBeenSet() const { return m_replicationInstanceClassHasBeenSet; }
 
     /**
-     * <p>The compute and memory capacity of the replication instance as specified by
-     * the replication instance class.</p> <p> Valid Values: <code>dms.t2.micro |
-     * dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge |
-     * dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(const Aws::String& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = value; }
 
     /**
-     * <p>The compute and memory capacity of the replication instance as specified by
-     * the replication instance class.</p> <p> Valid Values: <code>dms.t2.micro |
-     * dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge |
-     * dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(Aws::String&& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = std::move(value); }
 
     /**
-     * <p>The compute and memory capacity of the replication instance as specified by
-     * the replication instance class.</p> <p> Valid Values: <code>dms.t2.micro |
-     * dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge |
-     * dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(const char* value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass.assign(value); }
 
     /**
-     * <p>The compute and memory capacity of the replication instance as specified by
-     * the replication instance class.</p> <p> Valid Values: <code>dms.t2.micro |
-     * dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge |
-     * dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline CreateReplicationInstanceRequest& WithReplicationInstanceClass(const Aws::String& value) { SetReplicationInstanceClass(value); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the replication instance as specified by
-     * the replication instance class.</p> <p> Valid Values: <code>dms.t2.micro |
-     * dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge |
-     * dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline CreateReplicationInstanceRequest& WithReplicationInstanceClass(Aws::String&& value) { SetReplicationInstanceClass(std::move(value)); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the replication instance as specified by
-     * the replication instance class.</p> <p> Valid Values: <code>dms.t2.micro |
-     * dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge |
-     * dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline CreateReplicationInstanceRequest& WithReplicationInstanceClass(const char* value) { SetReplicationInstanceClass(value); return *this;}
 
@@ -485,42 +499,58 @@ namespace Model
 
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>If an engine
+     * version number is not specified when a replication instance is created, the
+     * default is the latest engine version available.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>If an engine
+     * version number is not specified when a replication instance is created, the
+     * default is the latest engine version available.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>If an engine
+     * version number is not specified when a replication instance is created, the
+     * default is the latest engine version available.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>If an engine
+     * version number is not specified when a replication instance is created, the
+     * default is the latest engine version available.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>If an engine
+     * version number is not specified when a replication instance is created, the
+     * default is the latest engine version available.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>If an engine
+     * version number is not specified when a replication instance is created, the
+     * default is the latest engine version available.</p>
      */
     inline CreateReplicationInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>If an engine
+     * version number is not specified when a replication instance is created, the
+     * default is the latest engine version available.</p>
      */
     inline CreateReplicationInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>If an engine
+     * version number is not specified when a replication instance is created, the
+     * default is the latest engine version available.</p>
      */
     inline CreateReplicationInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -702,44 +732,189 @@ namespace Model
 
 
     /**
-     * <p>A list of DNS name servers supported for the replication instance.</p>
+     * <p>A list of custom DNS name servers supported for the replication instance to
+     * access your on-premise source or target database. This list overrides the
+     * default name servers supported by the replication instance. You can specify a
+     * comma-separated list of internet addresses for up to four on-premise DNS name
+     * servers. For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code> </p>
      */
     inline const Aws::String& GetDnsNameServers() const{ return m_dnsNameServers; }
 
     /**
-     * <p>A list of DNS name servers supported for the replication instance.</p>
+     * <p>A list of custom DNS name servers supported for the replication instance to
+     * access your on-premise source or target database. This list overrides the
+     * default name servers supported by the replication instance. You can specify a
+     * comma-separated list of internet addresses for up to four on-premise DNS name
+     * servers. For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code> </p>
      */
     inline bool DnsNameServersHasBeenSet() const { return m_dnsNameServersHasBeenSet; }
 
     /**
-     * <p>A list of DNS name servers supported for the replication instance.</p>
+     * <p>A list of custom DNS name servers supported for the replication instance to
+     * access your on-premise source or target database. This list overrides the
+     * default name servers supported by the replication instance. You can specify a
+     * comma-separated list of internet addresses for up to four on-premise DNS name
+     * servers. For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code> </p>
      */
     inline void SetDnsNameServers(const Aws::String& value) { m_dnsNameServersHasBeenSet = true; m_dnsNameServers = value; }
 
     /**
-     * <p>A list of DNS name servers supported for the replication instance.</p>
+     * <p>A list of custom DNS name servers supported for the replication instance to
+     * access your on-premise source or target database. This list overrides the
+     * default name servers supported by the replication instance. You can specify a
+     * comma-separated list of internet addresses for up to four on-premise DNS name
+     * servers. For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code> </p>
      */
     inline void SetDnsNameServers(Aws::String&& value) { m_dnsNameServersHasBeenSet = true; m_dnsNameServers = std::move(value); }
 
     /**
-     * <p>A list of DNS name servers supported for the replication instance.</p>
+     * <p>A list of custom DNS name servers supported for the replication instance to
+     * access your on-premise source or target database. This list overrides the
+     * default name servers supported by the replication instance. You can specify a
+     * comma-separated list of internet addresses for up to four on-premise DNS name
+     * servers. For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code> </p>
      */
     inline void SetDnsNameServers(const char* value) { m_dnsNameServersHasBeenSet = true; m_dnsNameServers.assign(value); }
 
     /**
-     * <p>A list of DNS name servers supported for the replication instance.</p>
+     * <p>A list of custom DNS name servers supported for the replication instance to
+     * access your on-premise source or target database. This list overrides the
+     * default name servers supported by the replication instance. You can specify a
+     * comma-separated list of internet addresses for up to four on-premise DNS name
+     * servers. For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithDnsNameServers(const Aws::String& value) { SetDnsNameServers(value); return *this;}
 
     /**
-     * <p>A list of DNS name servers supported for the replication instance.</p>
+     * <p>A list of custom DNS name servers supported for the replication instance to
+     * access your on-premise source or target database. This list overrides the
+     * default name servers supported by the replication instance. You can specify a
+     * comma-separated list of internet addresses for up to four on-premise DNS name
+     * servers. For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithDnsNameServers(Aws::String&& value) { SetDnsNameServers(std::move(value)); return *this;}
 
     /**
-     * <p>A list of DNS name servers supported for the replication instance.</p>
+     * <p>A list of custom DNS name servers supported for the replication instance to
+     * access your on-premise source or target database. This list overrides the
+     * default name servers supported by the replication instance. You can specify a
+     * comma-separated list of internet addresses for up to four on-premise DNS name
+     * servers. For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithDnsNameServers(const char* value) { SetDnsNameServers(value); return *this;}
+
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline CreateReplicationInstanceRequest& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline CreateReplicationInstanceRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline CreateReplicationInstanceRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
 
   private:
 
@@ -784,6 +959,9 @@ namespace Model
 
     Aws::String m_dnsNameServers;
     bool m_dnsNameServersHasBeenSet;
+
+    Aws::String m_resourceIdentifier;
+    bool m_resourceIdentifierHasBeenSet;
   };
 
 } // namespace Model

@@ -1,23 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connectparticipant/model/ChatItemType.h>
 #include <aws/connectparticipant/model/ParticipantRole.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/connectparticipant/model/AttachmentItem.h>
 #include <utility>
 
 namespace Aws
@@ -373,6 +365,47 @@ namespace Model
      */
     inline Item& WithParticipantRole(ParticipantRole&& value) { SetParticipantRole(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides information about the attachments.</p>
+     */
+    inline const Aws::Vector<AttachmentItem>& GetAttachments() const{ return m_attachments; }
+
+    /**
+     * <p>Provides information about the attachments.</p>
+     */
+    inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
+
+    /**
+     * <p>Provides information about the attachments.</p>
+     */
+    inline void SetAttachments(const Aws::Vector<AttachmentItem>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
+
+    /**
+     * <p>Provides information about the attachments.</p>
+     */
+    inline void SetAttachments(Aws::Vector<AttachmentItem>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
+
+    /**
+     * <p>Provides information about the attachments.</p>
+     */
+    inline Item& WithAttachments(const Aws::Vector<AttachmentItem>& value) { SetAttachments(value); return *this;}
+
+    /**
+     * <p>Provides information about the attachments.</p>
+     */
+    inline Item& WithAttachments(Aws::Vector<AttachmentItem>&& value) { SetAttachments(std::move(value)); return *this;}
+
+    /**
+     * <p>Provides information about the attachments.</p>
+     */
+    inline Item& AddAttachments(const AttachmentItem& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
+
+    /**
+     * <p>Provides information about the attachments.</p>
+     */
+    inline Item& AddAttachments(AttachmentItem&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_absoluteTime;
@@ -398,6 +431,9 @@ namespace Model
 
     ParticipantRole m_participantRole;
     bool m_participantRoleHasBeenSet;
+
+    Aws::Vector<AttachmentItem> m_attachments;
+    bool m_attachmentsHasBeenSet;
   };
 
 } // namespace Model

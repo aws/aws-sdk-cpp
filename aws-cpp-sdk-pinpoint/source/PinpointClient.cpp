@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -158,7 +148,7 @@ static const char* ALLOCATION_TAG = "PinpointClient";
 PinpointClient::PinpointClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<PinpointErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -168,7 +158,7 @@ PinpointClient::PinpointClient(const Client::ClientConfiguration& clientConfigur
 PinpointClient::PinpointClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<PinpointErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -179,7 +169,7 @@ PinpointClient::PinpointClient(const std::shared_ptr<AWSCredentialsProvider>& cr
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<PinpointErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -192,6 +182,7 @@ PinpointClient::~PinpointClient()
 
 void PinpointClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Pinpoint");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -221,15 +212,7 @@ CreateAppOutcome PinpointClient::CreateApp(const CreateAppRequest& request) cons
   Aws::StringStream ss;
   ss << "/v1/apps";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateAppOutcome(CreateAppResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateAppOutcome(outcome.GetError());
-  }
+  return CreateAppOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateAppOutcomeCallable PinpointClient::CreateAppCallable(const CreateAppRequest& request) const
@@ -263,15 +246,7 @@ CreateCampaignOutcome PinpointClient::CreateCampaign(const CreateCampaignRequest
   ss << request.GetApplicationId();
   ss << "/campaigns";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateCampaignOutcome(CreateCampaignResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateCampaignOutcome(outcome.GetError());
-  }
+  return CreateCampaignOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateCampaignOutcomeCallable PinpointClient::CreateCampaignCallable(const CreateCampaignRequest& request) const
@@ -305,15 +280,7 @@ CreateEmailTemplateOutcome PinpointClient::CreateEmailTemplate(const CreateEmail
   ss << request.GetTemplateName();
   ss << "/email";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateEmailTemplateOutcome(CreateEmailTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateEmailTemplateOutcome(outcome.GetError());
-  }
+  return CreateEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateEmailTemplateOutcomeCallable PinpointClient::CreateEmailTemplateCallable(const CreateEmailTemplateRequest& request) const
@@ -347,15 +314,7 @@ CreateExportJobOutcome PinpointClient::CreateExportJob(const CreateExportJobRequ
   ss << request.GetApplicationId();
   ss << "/jobs/export";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateExportJobOutcome(CreateExportJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateExportJobOutcome(outcome.GetError());
-  }
+  return CreateExportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateExportJobOutcomeCallable PinpointClient::CreateExportJobCallable(const CreateExportJobRequest& request) const
@@ -389,15 +348,7 @@ CreateImportJobOutcome PinpointClient::CreateImportJob(const CreateImportJobRequ
   ss << request.GetApplicationId();
   ss << "/jobs/import";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateImportJobOutcome(CreateImportJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateImportJobOutcome(outcome.GetError());
-  }
+  return CreateImportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateImportJobOutcomeCallable PinpointClient::CreateImportJobCallable(const CreateImportJobRequest& request) const
@@ -431,15 +382,7 @@ CreateJourneyOutcome PinpointClient::CreateJourney(const CreateJourneyRequest& r
   ss << request.GetApplicationId();
   ss << "/journeys";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateJourneyOutcome(CreateJourneyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateJourneyOutcome(outcome.GetError());
-  }
+  return CreateJourneyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateJourneyOutcomeCallable PinpointClient::CreateJourneyCallable(const CreateJourneyRequest& request) const
@@ -473,15 +416,7 @@ CreatePushTemplateOutcome PinpointClient::CreatePushTemplate(const CreatePushTem
   ss << request.GetTemplateName();
   ss << "/push";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreatePushTemplateOutcome(CreatePushTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreatePushTemplateOutcome(outcome.GetError());
-  }
+  return CreatePushTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreatePushTemplateOutcomeCallable PinpointClient::CreatePushTemplateCallable(const CreatePushTemplateRequest& request) const
@@ -508,15 +443,7 @@ CreateRecommenderConfigurationOutcome PinpointClient::CreateRecommenderConfigura
   Aws::StringStream ss;
   ss << "/v1/recommenders";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateRecommenderConfigurationOutcome(CreateRecommenderConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateRecommenderConfigurationOutcome(outcome.GetError());
-  }
+  return CreateRecommenderConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateRecommenderConfigurationOutcomeCallable PinpointClient::CreateRecommenderConfigurationCallable(const CreateRecommenderConfigurationRequest& request) const
@@ -550,15 +477,7 @@ CreateSegmentOutcome PinpointClient::CreateSegment(const CreateSegmentRequest& r
   ss << request.GetApplicationId();
   ss << "/segments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateSegmentOutcome(CreateSegmentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateSegmentOutcome(outcome.GetError());
-  }
+  return CreateSegmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateSegmentOutcomeCallable PinpointClient::CreateSegmentCallable(const CreateSegmentRequest& request) const
@@ -592,15 +511,7 @@ CreateSmsTemplateOutcome PinpointClient::CreateSmsTemplate(const CreateSmsTempla
   ss << request.GetTemplateName();
   ss << "/sms";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateSmsTemplateOutcome(CreateSmsTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateSmsTemplateOutcome(outcome.GetError());
-  }
+  return CreateSmsTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateSmsTemplateOutcomeCallable PinpointClient::CreateSmsTemplateCallable(const CreateSmsTemplateRequest& request) const
@@ -634,15 +545,7 @@ CreateVoiceTemplateOutcome PinpointClient::CreateVoiceTemplate(const CreateVoice
   ss << request.GetTemplateName();
   ss << "/voice";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateVoiceTemplateOutcome(CreateVoiceTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateVoiceTemplateOutcome(outcome.GetError());
-  }
+  return CreateVoiceTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateVoiceTemplateOutcomeCallable PinpointClient::CreateVoiceTemplateCallable(const CreateVoiceTemplateRequest& request) const
@@ -676,15 +579,7 @@ DeleteAdmChannelOutcome PinpointClient::DeleteAdmChannel(const DeleteAdmChannelR
   ss << request.GetApplicationId();
   ss << "/channels/adm";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAdmChannelOutcome(DeleteAdmChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteAdmChannelOutcome(outcome.GetError());
-  }
+  return DeleteAdmChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAdmChannelOutcomeCallable PinpointClient::DeleteAdmChannelCallable(const DeleteAdmChannelRequest& request) const
@@ -718,15 +613,7 @@ DeleteApnsChannelOutcome PinpointClient::DeleteApnsChannel(const DeleteApnsChann
   ss << request.GetApplicationId();
   ss << "/channels/apns";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteApnsChannelOutcome(DeleteApnsChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteApnsChannelOutcome(outcome.GetError());
-  }
+  return DeleteApnsChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteApnsChannelOutcomeCallable PinpointClient::DeleteApnsChannelCallable(const DeleteApnsChannelRequest& request) const
@@ -760,15 +647,7 @@ DeleteApnsSandboxChannelOutcome PinpointClient::DeleteApnsSandboxChannel(const D
   ss << request.GetApplicationId();
   ss << "/channels/apns_sandbox";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteApnsSandboxChannelOutcome(DeleteApnsSandboxChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteApnsSandboxChannelOutcome(outcome.GetError());
-  }
+  return DeleteApnsSandboxChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteApnsSandboxChannelOutcomeCallable PinpointClient::DeleteApnsSandboxChannelCallable(const DeleteApnsSandboxChannelRequest& request) const
@@ -802,15 +681,7 @@ DeleteApnsVoipChannelOutcome PinpointClient::DeleteApnsVoipChannel(const DeleteA
   ss << request.GetApplicationId();
   ss << "/channels/apns_voip";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteApnsVoipChannelOutcome(DeleteApnsVoipChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteApnsVoipChannelOutcome(outcome.GetError());
-  }
+  return DeleteApnsVoipChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteApnsVoipChannelOutcomeCallable PinpointClient::DeleteApnsVoipChannelCallable(const DeleteApnsVoipChannelRequest& request) const
@@ -844,15 +715,7 @@ DeleteApnsVoipSandboxChannelOutcome PinpointClient::DeleteApnsVoipSandboxChannel
   ss << request.GetApplicationId();
   ss << "/channels/apns_voip_sandbox";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteApnsVoipSandboxChannelOutcome(DeleteApnsVoipSandboxChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteApnsVoipSandboxChannelOutcome(outcome.GetError());
-  }
+  return DeleteApnsVoipSandboxChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteApnsVoipSandboxChannelOutcomeCallable PinpointClient::DeleteApnsVoipSandboxChannelCallable(const DeleteApnsVoipSandboxChannelRequest& request) const
@@ -885,15 +748,7 @@ DeleteAppOutcome PinpointClient::DeleteApp(const DeleteAppRequest& request) cons
   ss << "/v1/apps/";
   ss << request.GetApplicationId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAppOutcome(DeleteAppResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteAppOutcome(outcome.GetError());
-  }
+  return DeleteAppOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAppOutcomeCallable PinpointClient::DeleteAppCallable(const DeleteAppRequest& request) const
@@ -927,15 +782,7 @@ DeleteBaiduChannelOutcome PinpointClient::DeleteBaiduChannel(const DeleteBaiduCh
   ss << request.GetApplicationId();
   ss << "/channels/baidu";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteBaiduChannelOutcome(DeleteBaiduChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteBaiduChannelOutcome(outcome.GetError());
-  }
+  return DeleteBaiduChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteBaiduChannelOutcomeCallable PinpointClient::DeleteBaiduChannelCallable(const DeleteBaiduChannelRequest& request) const
@@ -975,15 +822,7 @@ DeleteCampaignOutcome PinpointClient::DeleteCampaign(const DeleteCampaignRequest
   ss << "/campaigns/";
   ss << request.GetCampaignId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteCampaignOutcome(DeleteCampaignResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteCampaignOutcome(outcome.GetError());
-  }
+  return DeleteCampaignOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteCampaignOutcomeCallable PinpointClient::DeleteCampaignCallable(const DeleteCampaignRequest& request) const
@@ -1017,15 +856,7 @@ DeleteEmailChannelOutcome PinpointClient::DeleteEmailChannel(const DeleteEmailCh
   ss << request.GetApplicationId();
   ss << "/channels/email";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteEmailChannelOutcome(DeleteEmailChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteEmailChannelOutcome(outcome.GetError());
-  }
+  return DeleteEmailChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteEmailChannelOutcomeCallable PinpointClient::DeleteEmailChannelCallable(const DeleteEmailChannelRequest& request) const
@@ -1059,15 +890,7 @@ DeleteEmailTemplateOutcome PinpointClient::DeleteEmailTemplate(const DeleteEmail
   ss << request.GetTemplateName();
   ss << "/email";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteEmailTemplateOutcome(DeleteEmailTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteEmailTemplateOutcome(outcome.GetError());
-  }
+  return DeleteEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteEmailTemplateOutcomeCallable PinpointClient::DeleteEmailTemplateCallable(const DeleteEmailTemplateRequest& request) const
@@ -1107,15 +930,7 @@ DeleteEndpointOutcome PinpointClient::DeleteEndpoint(const DeleteEndpointRequest
   ss << "/endpoints/";
   ss << request.GetEndpointId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteEndpointOutcome(DeleteEndpointResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteEndpointOutcome(outcome.GetError());
-  }
+  return DeleteEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteEndpointOutcomeCallable PinpointClient::DeleteEndpointCallable(const DeleteEndpointRequest& request) const
@@ -1149,15 +964,7 @@ DeleteEventStreamOutcome PinpointClient::DeleteEventStream(const DeleteEventStre
   ss << request.GetApplicationId();
   ss << "/eventstream";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteEventStreamOutcome(DeleteEventStreamResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteEventStreamOutcome(outcome.GetError());
-  }
+  return DeleteEventStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteEventStreamOutcomeCallable PinpointClient::DeleteEventStreamCallable(const DeleteEventStreamRequest& request) const
@@ -1191,15 +998,7 @@ DeleteGcmChannelOutcome PinpointClient::DeleteGcmChannel(const DeleteGcmChannelR
   ss << request.GetApplicationId();
   ss << "/channels/gcm";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteGcmChannelOutcome(DeleteGcmChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteGcmChannelOutcome(outcome.GetError());
-  }
+  return DeleteGcmChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteGcmChannelOutcomeCallable PinpointClient::DeleteGcmChannelCallable(const DeleteGcmChannelRequest& request) const
@@ -1239,15 +1038,7 @@ DeleteJourneyOutcome PinpointClient::DeleteJourney(const DeleteJourneyRequest& r
   ss << "/journeys/";
   ss << request.GetJourneyId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteJourneyOutcome(DeleteJourneyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteJourneyOutcome(outcome.GetError());
-  }
+  return DeleteJourneyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteJourneyOutcomeCallable PinpointClient::DeleteJourneyCallable(const DeleteJourneyRequest& request) const
@@ -1281,15 +1072,7 @@ DeletePushTemplateOutcome PinpointClient::DeletePushTemplate(const DeletePushTem
   ss << request.GetTemplateName();
   ss << "/push";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeletePushTemplateOutcome(DeletePushTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeletePushTemplateOutcome(outcome.GetError());
-  }
+  return DeletePushTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeletePushTemplateOutcomeCallable PinpointClient::DeletePushTemplateCallable(const DeletePushTemplateRequest& request) const
@@ -1322,15 +1105,7 @@ DeleteRecommenderConfigurationOutcome PinpointClient::DeleteRecommenderConfigura
   ss << "/v1/recommenders/";
   ss << request.GetRecommenderId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRecommenderConfigurationOutcome(DeleteRecommenderConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteRecommenderConfigurationOutcome(outcome.GetError());
-  }
+  return DeleteRecommenderConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRecommenderConfigurationOutcomeCallable PinpointClient::DeleteRecommenderConfigurationCallable(const DeleteRecommenderConfigurationRequest& request) const
@@ -1370,15 +1145,7 @@ DeleteSegmentOutcome PinpointClient::DeleteSegment(const DeleteSegmentRequest& r
   ss << "/segments/";
   ss << request.GetSegmentId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteSegmentOutcome(DeleteSegmentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteSegmentOutcome(outcome.GetError());
-  }
+  return DeleteSegmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteSegmentOutcomeCallable PinpointClient::DeleteSegmentCallable(const DeleteSegmentRequest& request) const
@@ -1412,15 +1179,7 @@ DeleteSmsChannelOutcome PinpointClient::DeleteSmsChannel(const DeleteSmsChannelR
   ss << request.GetApplicationId();
   ss << "/channels/sms";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteSmsChannelOutcome(DeleteSmsChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteSmsChannelOutcome(outcome.GetError());
-  }
+  return DeleteSmsChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteSmsChannelOutcomeCallable PinpointClient::DeleteSmsChannelCallable(const DeleteSmsChannelRequest& request) const
@@ -1454,15 +1213,7 @@ DeleteSmsTemplateOutcome PinpointClient::DeleteSmsTemplate(const DeleteSmsTempla
   ss << request.GetTemplateName();
   ss << "/sms";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteSmsTemplateOutcome(DeleteSmsTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteSmsTemplateOutcome(outcome.GetError());
-  }
+  return DeleteSmsTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteSmsTemplateOutcomeCallable PinpointClient::DeleteSmsTemplateCallable(const DeleteSmsTemplateRequest& request) const
@@ -1502,15 +1253,7 @@ DeleteUserEndpointsOutcome PinpointClient::DeleteUserEndpoints(const DeleteUserE
   ss << "/users/";
   ss << request.GetUserId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteUserEndpointsOutcome(DeleteUserEndpointsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteUserEndpointsOutcome(outcome.GetError());
-  }
+  return DeleteUserEndpointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteUserEndpointsOutcomeCallable PinpointClient::DeleteUserEndpointsCallable(const DeleteUserEndpointsRequest& request) const
@@ -1544,15 +1287,7 @@ DeleteVoiceChannelOutcome PinpointClient::DeleteVoiceChannel(const DeleteVoiceCh
   ss << request.GetApplicationId();
   ss << "/channels/voice";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteVoiceChannelOutcome(DeleteVoiceChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteVoiceChannelOutcome(outcome.GetError());
-  }
+  return DeleteVoiceChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteVoiceChannelOutcomeCallable PinpointClient::DeleteVoiceChannelCallable(const DeleteVoiceChannelRequest& request) const
@@ -1586,15 +1321,7 @@ DeleteVoiceTemplateOutcome PinpointClient::DeleteVoiceTemplate(const DeleteVoice
   ss << request.GetTemplateName();
   ss << "/voice";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteVoiceTemplateOutcome(DeleteVoiceTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteVoiceTemplateOutcome(outcome.GetError());
-  }
+  return DeleteVoiceTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteVoiceTemplateOutcomeCallable PinpointClient::DeleteVoiceTemplateCallable(const DeleteVoiceTemplateRequest& request) const
@@ -1628,15 +1355,7 @@ GetAdmChannelOutcome PinpointClient::GetAdmChannel(const GetAdmChannelRequest& r
   ss << request.GetApplicationId();
   ss << "/channels/adm";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAdmChannelOutcome(GetAdmChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAdmChannelOutcome(outcome.GetError());
-  }
+  return GetAdmChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAdmChannelOutcomeCallable PinpointClient::GetAdmChannelCallable(const GetAdmChannelRequest& request) const
@@ -1670,15 +1389,7 @@ GetApnsChannelOutcome PinpointClient::GetApnsChannel(const GetApnsChannelRequest
   ss << request.GetApplicationId();
   ss << "/channels/apns";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetApnsChannelOutcome(GetApnsChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetApnsChannelOutcome(outcome.GetError());
-  }
+  return GetApnsChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetApnsChannelOutcomeCallable PinpointClient::GetApnsChannelCallable(const GetApnsChannelRequest& request) const
@@ -1712,15 +1423,7 @@ GetApnsSandboxChannelOutcome PinpointClient::GetApnsSandboxChannel(const GetApns
   ss << request.GetApplicationId();
   ss << "/channels/apns_sandbox";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetApnsSandboxChannelOutcome(GetApnsSandboxChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetApnsSandboxChannelOutcome(outcome.GetError());
-  }
+  return GetApnsSandboxChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetApnsSandboxChannelOutcomeCallable PinpointClient::GetApnsSandboxChannelCallable(const GetApnsSandboxChannelRequest& request) const
@@ -1754,15 +1457,7 @@ GetApnsVoipChannelOutcome PinpointClient::GetApnsVoipChannel(const GetApnsVoipCh
   ss << request.GetApplicationId();
   ss << "/channels/apns_voip";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetApnsVoipChannelOutcome(GetApnsVoipChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetApnsVoipChannelOutcome(outcome.GetError());
-  }
+  return GetApnsVoipChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetApnsVoipChannelOutcomeCallable PinpointClient::GetApnsVoipChannelCallable(const GetApnsVoipChannelRequest& request) const
@@ -1796,15 +1491,7 @@ GetApnsVoipSandboxChannelOutcome PinpointClient::GetApnsVoipSandboxChannel(const
   ss << request.GetApplicationId();
   ss << "/channels/apns_voip_sandbox";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetApnsVoipSandboxChannelOutcome(GetApnsVoipSandboxChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetApnsVoipSandboxChannelOutcome(outcome.GetError());
-  }
+  return GetApnsVoipSandboxChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetApnsVoipSandboxChannelOutcomeCallable PinpointClient::GetApnsVoipSandboxChannelCallable(const GetApnsVoipSandboxChannelRequest& request) const
@@ -1837,15 +1524,7 @@ GetAppOutcome PinpointClient::GetApp(const GetAppRequest& request) const
   ss << "/v1/apps/";
   ss << request.GetApplicationId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAppOutcome(GetAppResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAppOutcome(outcome.GetError());
-  }
+  return GetAppOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAppOutcomeCallable PinpointClient::GetAppCallable(const GetAppRequest& request) const
@@ -1885,15 +1564,7 @@ GetApplicationDateRangeKpiOutcome PinpointClient::GetApplicationDateRangeKpi(con
   ss << "/kpis/daterange/";
   ss << request.GetKpiName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetApplicationDateRangeKpiOutcome(GetApplicationDateRangeKpiResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetApplicationDateRangeKpiOutcome(outcome.GetError());
-  }
+  return GetApplicationDateRangeKpiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetApplicationDateRangeKpiOutcomeCallable PinpointClient::GetApplicationDateRangeKpiCallable(const GetApplicationDateRangeKpiRequest& request) const
@@ -1927,15 +1598,7 @@ GetApplicationSettingsOutcome PinpointClient::GetApplicationSettings(const GetAp
   ss << request.GetApplicationId();
   ss << "/settings";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetApplicationSettingsOutcome(GetApplicationSettingsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetApplicationSettingsOutcome(outcome.GetError());
-  }
+  return GetApplicationSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetApplicationSettingsOutcomeCallable PinpointClient::GetApplicationSettingsCallable(const GetApplicationSettingsRequest& request) const
@@ -1962,15 +1625,7 @@ GetAppsOutcome PinpointClient::GetApps(const GetAppsRequest& request) const
   Aws::StringStream ss;
   ss << "/v1/apps";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAppsOutcome(GetAppsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAppsOutcome(outcome.GetError());
-  }
+  return GetAppsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAppsOutcomeCallable PinpointClient::GetAppsCallable(const GetAppsRequest& request) const
@@ -2004,15 +1659,7 @@ GetBaiduChannelOutcome PinpointClient::GetBaiduChannel(const GetBaiduChannelRequ
   ss << request.GetApplicationId();
   ss << "/channels/baidu";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBaiduChannelOutcome(GetBaiduChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBaiduChannelOutcome(outcome.GetError());
-  }
+  return GetBaiduChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBaiduChannelOutcomeCallable PinpointClient::GetBaiduChannelCallable(const GetBaiduChannelRequest& request) const
@@ -2052,15 +1699,7 @@ GetCampaignOutcome PinpointClient::GetCampaign(const GetCampaignRequest& request
   ss << "/campaigns/";
   ss << request.GetCampaignId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetCampaignOutcome(GetCampaignResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetCampaignOutcome(outcome.GetError());
-  }
+  return GetCampaignOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCampaignOutcomeCallable PinpointClient::GetCampaignCallable(const GetCampaignRequest& request) const
@@ -2101,15 +1740,7 @@ GetCampaignActivitiesOutcome PinpointClient::GetCampaignActivities(const GetCamp
   ss << request.GetCampaignId();
   ss << "/activities";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetCampaignActivitiesOutcome(GetCampaignActivitiesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetCampaignActivitiesOutcome(outcome.GetError());
-  }
+  return GetCampaignActivitiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCampaignActivitiesOutcomeCallable PinpointClient::GetCampaignActivitiesCallable(const GetCampaignActivitiesRequest& request) const
@@ -2156,15 +1787,7 @@ GetCampaignDateRangeKpiOutcome PinpointClient::GetCampaignDateRangeKpi(const Get
   ss << "/kpis/daterange/";
   ss << request.GetKpiName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetCampaignDateRangeKpiOutcome(GetCampaignDateRangeKpiResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetCampaignDateRangeKpiOutcome(outcome.GetError());
-  }
+  return GetCampaignDateRangeKpiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCampaignDateRangeKpiOutcomeCallable PinpointClient::GetCampaignDateRangeKpiCallable(const GetCampaignDateRangeKpiRequest& request) const
@@ -2211,15 +1834,7 @@ GetCampaignVersionOutcome PinpointClient::GetCampaignVersion(const GetCampaignVe
   ss << "/versions/";
   ss << request.GetVersion();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetCampaignVersionOutcome(GetCampaignVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetCampaignVersionOutcome(outcome.GetError());
-  }
+  return GetCampaignVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCampaignVersionOutcomeCallable PinpointClient::GetCampaignVersionCallable(const GetCampaignVersionRequest& request) const
@@ -2260,15 +1875,7 @@ GetCampaignVersionsOutcome PinpointClient::GetCampaignVersions(const GetCampaign
   ss << request.GetCampaignId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetCampaignVersionsOutcome(GetCampaignVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetCampaignVersionsOutcome(outcome.GetError());
-  }
+  return GetCampaignVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCampaignVersionsOutcomeCallable PinpointClient::GetCampaignVersionsCallable(const GetCampaignVersionsRequest& request) const
@@ -2302,15 +1909,7 @@ GetCampaignsOutcome PinpointClient::GetCampaigns(const GetCampaignsRequest& requ
   ss << request.GetApplicationId();
   ss << "/campaigns";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetCampaignsOutcome(GetCampaignsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetCampaignsOutcome(outcome.GetError());
-  }
+  return GetCampaignsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCampaignsOutcomeCallable PinpointClient::GetCampaignsCallable(const GetCampaignsRequest& request) const
@@ -2344,15 +1943,7 @@ GetChannelsOutcome PinpointClient::GetChannels(const GetChannelsRequest& request
   ss << request.GetApplicationId();
   ss << "/channels";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetChannelsOutcome(GetChannelsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetChannelsOutcome(outcome.GetError());
-  }
+  return GetChannelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetChannelsOutcomeCallable PinpointClient::GetChannelsCallable(const GetChannelsRequest& request) const
@@ -2386,15 +1977,7 @@ GetEmailChannelOutcome PinpointClient::GetEmailChannel(const GetEmailChannelRequ
   ss << request.GetApplicationId();
   ss << "/channels/email";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetEmailChannelOutcome(GetEmailChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetEmailChannelOutcome(outcome.GetError());
-  }
+  return GetEmailChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetEmailChannelOutcomeCallable PinpointClient::GetEmailChannelCallable(const GetEmailChannelRequest& request) const
@@ -2428,15 +2011,7 @@ GetEmailTemplateOutcome PinpointClient::GetEmailTemplate(const GetEmailTemplateR
   ss << request.GetTemplateName();
   ss << "/email";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetEmailTemplateOutcome(GetEmailTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetEmailTemplateOutcome(outcome.GetError());
-  }
+  return GetEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetEmailTemplateOutcomeCallable PinpointClient::GetEmailTemplateCallable(const GetEmailTemplateRequest& request) const
@@ -2476,15 +2051,7 @@ GetEndpointOutcome PinpointClient::GetEndpoint(const GetEndpointRequest& request
   ss << "/endpoints/";
   ss << request.GetEndpointId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetEndpointOutcome(GetEndpointResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetEndpointOutcome(outcome.GetError());
-  }
+  return GetEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetEndpointOutcomeCallable PinpointClient::GetEndpointCallable(const GetEndpointRequest& request) const
@@ -2518,15 +2085,7 @@ GetEventStreamOutcome PinpointClient::GetEventStream(const GetEventStreamRequest
   ss << request.GetApplicationId();
   ss << "/eventstream";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetEventStreamOutcome(GetEventStreamResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetEventStreamOutcome(outcome.GetError());
-  }
+  return GetEventStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetEventStreamOutcomeCallable PinpointClient::GetEventStreamCallable(const GetEventStreamRequest& request) const
@@ -2566,15 +2125,7 @@ GetExportJobOutcome PinpointClient::GetExportJob(const GetExportJobRequest& requ
   ss << "/jobs/export/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetExportJobOutcome(GetExportJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetExportJobOutcome(outcome.GetError());
-  }
+  return GetExportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetExportJobOutcomeCallable PinpointClient::GetExportJobCallable(const GetExportJobRequest& request) const
@@ -2608,15 +2159,7 @@ GetExportJobsOutcome PinpointClient::GetExportJobs(const GetExportJobsRequest& r
   ss << request.GetApplicationId();
   ss << "/jobs/export";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetExportJobsOutcome(GetExportJobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetExportJobsOutcome(outcome.GetError());
-  }
+  return GetExportJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetExportJobsOutcomeCallable PinpointClient::GetExportJobsCallable(const GetExportJobsRequest& request) const
@@ -2650,15 +2193,7 @@ GetGcmChannelOutcome PinpointClient::GetGcmChannel(const GetGcmChannelRequest& r
   ss << request.GetApplicationId();
   ss << "/channels/gcm";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetGcmChannelOutcome(GetGcmChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetGcmChannelOutcome(outcome.GetError());
-  }
+  return GetGcmChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetGcmChannelOutcomeCallable PinpointClient::GetGcmChannelCallable(const GetGcmChannelRequest& request) const
@@ -2698,15 +2233,7 @@ GetImportJobOutcome PinpointClient::GetImportJob(const GetImportJobRequest& requ
   ss << "/jobs/import/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetImportJobOutcome(GetImportJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetImportJobOutcome(outcome.GetError());
-  }
+  return GetImportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetImportJobOutcomeCallable PinpointClient::GetImportJobCallable(const GetImportJobRequest& request) const
@@ -2740,15 +2267,7 @@ GetImportJobsOutcome PinpointClient::GetImportJobs(const GetImportJobsRequest& r
   ss << request.GetApplicationId();
   ss << "/jobs/import";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetImportJobsOutcome(GetImportJobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetImportJobsOutcome(outcome.GetError());
-  }
+  return GetImportJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetImportJobsOutcomeCallable PinpointClient::GetImportJobsCallable(const GetImportJobsRequest& request) const
@@ -2788,15 +2307,7 @@ GetJourneyOutcome PinpointClient::GetJourney(const GetJourneyRequest& request) c
   ss << "/journeys/";
   ss << request.GetJourneyId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetJourneyOutcome(GetJourneyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetJourneyOutcome(outcome.GetError());
-  }
+  return GetJourneyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetJourneyOutcomeCallable PinpointClient::GetJourneyCallable(const GetJourneyRequest& request) const
@@ -2843,15 +2354,7 @@ GetJourneyDateRangeKpiOutcome PinpointClient::GetJourneyDateRangeKpi(const GetJo
   ss << "/kpis/daterange/";
   ss << request.GetKpiName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetJourneyDateRangeKpiOutcome(GetJourneyDateRangeKpiResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetJourneyDateRangeKpiOutcome(outcome.GetError());
-  }
+  return GetJourneyDateRangeKpiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetJourneyDateRangeKpiOutcomeCallable PinpointClient::GetJourneyDateRangeKpiCallable(const GetJourneyDateRangeKpiRequest& request) const
@@ -2899,15 +2402,7 @@ GetJourneyExecutionActivityMetricsOutcome PinpointClient::GetJourneyExecutionAct
   ss << request.GetJourneyActivityId();
   ss << "/execution-metrics";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetJourneyExecutionActivityMetricsOutcome(GetJourneyExecutionActivityMetricsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetJourneyExecutionActivityMetricsOutcome(outcome.GetError());
-  }
+  return GetJourneyExecutionActivityMetricsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetJourneyExecutionActivityMetricsOutcomeCallable PinpointClient::GetJourneyExecutionActivityMetricsCallable(const GetJourneyExecutionActivityMetricsRequest& request) const
@@ -2948,15 +2443,7 @@ GetJourneyExecutionMetricsOutcome PinpointClient::GetJourneyExecutionMetrics(con
   ss << request.GetJourneyId();
   ss << "/execution-metrics";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetJourneyExecutionMetricsOutcome(GetJourneyExecutionMetricsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetJourneyExecutionMetricsOutcome(outcome.GetError());
-  }
+  return GetJourneyExecutionMetricsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetJourneyExecutionMetricsOutcomeCallable PinpointClient::GetJourneyExecutionMetricsCallable(const GetJourneyExecutionMetricsRequest& request) const
@@ -2990,15 +2477,7 @@ GetPushTemplateOutcome PinpointClient::GetPushTemplate(const GetPushTemplateRequ
   ss << request.GetTemplateName();
   ss << "/push";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetPushTemplateOutcome(GetPushTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetPushTemplateOutcome(outcome.GetError());
-  }
+  return GetPushTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetPushTemplateOutcomeCallable PinpointClient::GetPushTemplateCallable(const GetPushTemplateRequest& request) const
@@ -3031,15 +2510,7 @@ GetRecommenderConfigurationOutcome PinpointClient::GetRecommenderConfiguration(c
   ss << "/v1/recommenders/";
   ss << request.GetRecommenderId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRecommenderConfigurationOutcome(GetRecommenderConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRecommenderConfigurationOutcome(outcome.GetError());
-  }
+  return GetRecommenderConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRecommenderConfigurationOutcomeCallable PinpointClient::GetRecommenderConfigurationCallable(const GetRecommenderConfigurationRequest& request) const
@@ -3066,15 +2537,7 @@ GetRecommenderConfigurationsOutcome PinpointClient::GetRecommenderConfigurations
   Aws::StringStream ss;
   ss << "/v1/recommenders";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRecommenderConfigurationsOutcome(GetRecommenderConfigurationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRecommenderConfigurationsOutcome(outcome.GetError());
-  }
+  return GetRecommenderConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRecommenderConfigurationsOutcomeCallable PinpointClient::GetRecommenderConfigurationsCallable(const GetRecommenderConfigurationsRequest& request) const
@@ -3114,15 +2577,7 @@ GetSegmentOutcome PinpointClient::GetSegment(const GetSegmentRequest& request) c
   ss << "/segments/";
   ss << request.GetSegmentId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSegmentOutcome(GetSegmentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSegmentOutcome(outcome.GetError());
-  }
+  return GetSegmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSegmentOutcomeCallable PinpointClient::GetSegmentCallable(const GetSegmentRequest& request) const
@@ -3163,15 +2618,7 @@ GetSegmentExportJobsOutcome PinpointClient::GetSegmentExportJobs(const GetSegmen
   ss << request.GetSegmentId();
   ss << "/jobs/export";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSegmentExportJobsOutcome(GetSegmentExportJobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSegmentExportJobsOutcome(outcome.GetError());
-  }
+  return GetSegmentExportJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSegmentExportJobsOutcomeCallable PinpointClient::GetSegmentExportJobsCallable(const GetSegmentExportJobsRequest& request) const
@@ -3212,15 +2659,7 @@ GetSegmentImportJobsOutcome PinpointClient::GetSegmentImportJobs(const GetSegmen
   ss << request.GetSegmentId();
   ss << "/jobs/import";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSegmentImportJobsOutcome(GetSegmentImportJobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSegmentImportJobsOutcome(outcome.GetError());
-  }
+  return GetSegmentImportJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSegmentImportJobsOutcomeCallable PinpointClient::GetSegmentImportJobsCallable(const GetSegmentImportJobsRequest& request) const
@@ -3267,15 +2706,7 @@ GetSegmentVersionOutcome PinpointClient::GetSegmentVersion(const GetSegmentVersi
   ss << "/versions/";
   ss << request.GetVersion();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSegmentVersionOutcome(GetSegmentVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSegmentVersionOutcome(outcome.GetError());
-  }
+  return GetSegmentVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSegmentVersionOutcomeCallable PinpointClient::GetSegmentVersionCallable(const GetSegmentVersionRequest& request) const
@@ -3316,15 +2747,7 @@ GetSegmentVersionsOutcome PinpointClient::GetSegmentVersions(const GetSegmentVer
   ss << request.GetSegmentId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSegmentVersionsOutcome(GetSegmentVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSegmentVersionsOutcome(outcome.GetError());
-  }
+  return GetSegmentVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSegmentVersionsOutcomeCallable PinpointClient::GetSegmentVersionsCallable(const GetSegmentVersionsRequest& request) const
@@ -3358,15 +2781,7 @@ GetSegmentsOutcome PinpointClient::GetSegments(const GetSegmentsRequest& request
   ss << request.GetApplicationId();
   ss << "/segments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSegmentsOutcome(GetSegmentsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSegmentsOutcome(outcome.GetError());
-  }
+  return GetSegmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSegmentsOutcomeCallable PinpointClient::GetSegmentsCallable(const GetSegmentsRequest& request) const
@@ -3400,15 +2815,7 @@ GetSmsChannelOutcome PinpointClient::GetSmsChannel(const GetSmsChannelRequest& r
   ss << request.GetApplicationId();
   ss << "/channels/sms";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSmsChannelOutcome(GetSmsChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSmsChannelOutcome(outcome.GetError());
-  }
+  return GetSmsChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSmsChannelOutcomeCallable PinpointClient::GetSmsChannelCallable(const GetSmsChannelRequest& request) const
@@ -3442,15 +2849,7 @@ GetSmsTemplateOutcome PinpointClient::GetSmsTemplate(const GetSmsTemplateRequest
   ss << request.GetTemplateName();
   ss << "/sms";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSmsTemplateOutcome(GetSmsTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSmsTemplateOutcome(outcome.GetError());
-  }
+  return GetSmsTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSmsTemplateOutcomeCallable PinpointClient::GetSmsTemplateCallable(const GetSmsTemplateRequest& request) const
@@ -3490,15 +2889,7 @@ GetUserEndpointsOutcome PinpointClient::GetUserEndpoints(const GetUserEndpointsR
   ss << "/users/";
   ss << request.GetUserId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetUserEndpointsOutcome(GetUserEndpointsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetUserEndpointsOutcome(outcome.GetError());
-  }
+  return GetUserEndpointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetUserEndpointsOutcomeCallable PinpointClient::GetUserEndpointsCallable(const GetUserEndpointsRequest& request) const
@@ -3532,15 +2923,7 @@ GetVoiceChannelOutcome PinpointClient::GetVoiceChannel(const GetVoiceChannelRequ
   ss << request.GetApplicationId();
   ss << "/channels/voice";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetVoiceChannelOutcome(GetVoiceChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetVoiceChannelOutcome(outcome.GetError());
-  }
+  return GetVoiceChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetVoiceChannelOutcomeCallable PinpointClient::GetVoiceChannelCallable(const GetVoiceChannelRequest& request) const
@@ -3574,15 +2957,7 @@ GetVoiceTemplateOutcome PinpointClient::GetVoiceTemplate(const GetVoiceTemplateR
   ss << request.GetTemplateName();
   ss << "/voice";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetVoiceTemplateOutcome(GetVoiceTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetVoiceTemplateOutcome(outcome.GetError());
-  }
+  return GetVoiceTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetVoiceTemplateOutcomeCallable PinpointClient::GetVoiceTemplateCallable(const GetVoiceTemplateRequest& request) const
@@ -3616,15 +2991,7 @@ ListJourneysOutcome PinpointClient::ListJourneys(const ListJourneysRequest& requ
   ss << request.GetApplicationId();
   ss << "/journeys";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListJourneysOutcome(ListJourneysResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListJourneysOutcome(outcome.GetError());
-  }
+  return ListJourneysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListJourneysOutcomeCallable PinpointClient::ListJourneysCallable(const ListJourneysRequest& request) const
@@ -3657,15 +3024,7 @@ ListTagsForResourceOutcome PinpointClient::ListTagsForResource(const ListTagsFor
   ss << "/v1/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable PinpointClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -3706,15 +3065,7 @@ ListTemplateVersionsOutcome PinpointClient::ListTemplateVersions(const ListTempl
   ss << request.GetTemplateType();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTemplateVersionsOutcome(ListTemplateVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTemplateVersionsOutcome(outcome.GetError());
-  }
+  return ListTemplateVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTemplateVersionsOutcomeCallable PinpointClient::ListTemplateVersionsCallable(const ListTemplateVersionsRequest& request) const
@@ -3741,15 +3092,7 @@ ListTemplatesOutcome PinpointClient::ListTemplates(const ListTemplatesRequest& r
   Aws::StringStream ss;
   ss << "/v1/templates";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTemplatesOutcome(ListTemplatesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTemplatesOutcome(outcome.GetError());
-  }
+  return ListTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTemplatesOutcomeCallable PinpointClient::ListTemplatesCallable(const ListTemplatesRequest& request) const
@@ -3776,15 +3119,7 @@ PhoneNumberValidateOutcome PinpointClient::PhoneNumberValidate(const PhoneNumber
   Aws::StringStream ss;
   ss << "/v1/phone/number/validate";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PhoneNumberValidateOutcome(PhoneNumberValidateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PhoneNumberValidateOutcome(outcome.GetError());
-  }
+  return PhoneNumberValidateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PhoneNumberValidateOutcomeCallable PinpointClient::PhoneNumberValidateCallable(const PhoneNumberValidateRequest& request) const
@@ -3818,15 +3153,7 @@ PutEventStreamOutcome PinpointClient::PutEventStream(const PutEventStreamRequest
   ss << request.GetApplicationId();
   ss << "/eventstream";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutEventStreamOutcome(PutEventStreamResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutEventStreamOutcome(outcome.GetError());
-  }
+  return PutEventStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutEventStreamOutcomeCallable PinpointClient::PutEventStreamCallable(const PutEventStreamRequest& request) const
@@ -3860,15 +3187,7 @@ PutEventsOutcome PinpointClient::PutEvents(const PutEventsRequest& request) cons
   ss << request.GetApplicationId();
   ss << "/events";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutEventsOutcome(PutEventsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutEventsOutcome(outcome.GetError());
-  }
+  return PutEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutEventsOutcomeCallable PinpointClient::PutEventsCallable(const PutEventsRequest& request) const
@@ -3908,15 +3227,7 @@ RemoveAttributesOutcome PinpointClient::RemoveAttributes(const RemoveAttributesR
   ss << "/attributes/";
   ss << request.GetAttributeType();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RemoveAttributesOutcome(RemoveAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RemoveAttributesOutcome(outcome.GetError());
-  }
+  return RemoveAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 RemoveAttributesOutcomeCallable PinpointClient::RemoveAttributesCallable(const RemoveAttributesRequest& request) const
@@ -3950,15 +3261,7 @@ SendMessagesOutcome PinpointClient::SendMessages(const SendMessagesRequest& requ
   ss << request.GetApplicationId();
   ss << "/messages";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SendMessagesOutcome(SendMessagesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SendMessagesOutcome(outcome.GetError());
-  }
+  return SendMessagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SendMessagesOutcomeCallable PinpointClient::SendMessagesCallable(const SendMessagesRequest& request) const
@@ -3992,15 +3295,7 @@ SendUsersMessagesOutcome PinpointClient::SendUsersMessages(const SendUsersMessag
   ss << request.GetApplicationId();
   ss << "/users-messages";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SendUsersMessagesOutcome(SendUsersMessagesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SendUsersMessagesOutcome(outcome.GetError());
-  }
+  return SendUsersMessagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SendUsersMessagesOutcomeCallable PinpointClient::SendUsersMessagesCallable(const SendUsersMessagesRequest& request) const
@@ -4033,15 +3328,7 @@ TagResourceOutcome PinpointClient::TagResource(const TagResourceRequest& request
   ss << "/v1/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable PinpointClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -4079,15 +3366,7 @@ UntagResourceOutcome PinpointClient::UntagResource(const UntagResourceRequest& r
   ss << "/v1/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable PinpointClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -4121,15 +3400,7 @@ UpdateAdmChannelOutcome PinpointClient::UpdateAdmChannel(const UpdateAdmChannelR
   ss << request.GetApplicationId();
   ss << "/channels/adm";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateAdmChannelOutcome(UpdateAdmChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateAdmChannelOutcome(outcome.GetError());
-  }
+  return UpdateAdmChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAdmChannelOutcomeCallable PinpointClient::UpdateAdmChannelCallable(const UpdateAdmChannelRequest& request) const
@@ -4163,15 +3434,7 @@ UpdateApnsChannelOutcome PinpointClient::UpdateApnsChannel(const UpdateApnsChann
   ss << request.GetApplicationId();
   ss << "/channels/apns";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateApnsChannelOutcome(UpdateApnsChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateApnsChannelOutcome(outcome.GetError());
-  }
+  return UpdateApnsChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateApnsChannelOutcomeCallable PinpointClient::UpdateApnsChannelCallable(const UpdateApnsChannelRequest& request) const
@@ -4205,15 +3468,7 @@ UpdateApnsSandboxChannelOutcome PinpointClient::UpdateApnsSandboxChannel(const U
   ss << request.GetApplicationId();
   ss << "/channels/apns_sandbox";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateApnsSandboxChannelOutcome(UpdateApnsSandboxChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateApnsSandboxChannelOutcome(outcome.GetError());
-  }
+  return UpdateApnsSandboxChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateApnsSandboxChannelOutcomeCallable PinpointClient::UpdateApnsSandboxChannelCallable(const UpdateApnsSandboxChannelRequest& request) const
@@ -4247,15 +3502,7 @@ UpdateApnsVoipChannelOutcome PinpointClient::UpdateApnsVoipChannel(const UpdateA
   ss << request.GetApplicationId();
   ss << "/channels/apns_voip";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateApnsVoipChannelOutcome(UpdateApnsVoipChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateApnsVoipChannelOutcome(outcome.GetError());
-  }
+  return UpdateApnsVoipChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateApnsVoipChannelOutcomeCallable PinpointClient::UpdateApnsVoipChannelCallable(const UpdateApnsVoipChannelRequest& request) const
@@ -4289,15 +3536,7 @@ UpdateApnsVoipSandboxChannelOutcome PinpointClient::UpdateApnsVoipSandboxChannel
   ss << request.GetApplicationId();
   ss << "/channels/apns_voip_sandbox";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateApnsVoipSandboxChannelOutcome(UpdateApnsVoipSandboxChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateApnsVoipSandboxChannelOutcome(outcome.GetError());
-  }
+  return UpdateApnsVoipSandboxChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateApnsVoipSandboxChannelOutcomeCallable PinpointClient::UpdateApnsVoipSandboxChannelCallable(const UpdateApnsVoipSandboxChannelRequest& request) const
@@ -4331,15 +3570,7 @@ UpdateApplicationSettingsOutcome PinpointClient::UpdateApplicationSettings(const
   ss << request.GetApplicationId();
   ss << "/settings";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateApplicationSettingsOutcome(UpdateApplicationSettingsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateApplicationSettingsOutcome(outcome.GetError());
-  }
+  return UpdateApplicationSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateApplicationSettingsOutcomeCallable PinpointClient::UpdateApplicationSettingsCallable(const UpdateApplicationSettingsRequest& request) const
@@ -4373,15 +3604,7 @@ UpdateBaiduChannelOutcome PinpointClient::UpdateBaiduChannel(const UpdateBaiduCh
   ss << request.GetApplicationId();
   ss << "/channels/baidu";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateBaiduChannelOutcome(UpdateBaiduChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateBaiduChannelOutcome(outcome.GetError());
-  }
+  return UpdateBaiduChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateBaiduChannelOutcomeCallable PinpointClient::UpdateBaiduChannelCallable(const UpdateBaiduChannelRequest& request) const
@@ -4421,15 +3644,7 @@ UpdateCampaignOutcome PinpointClient::UpdateCampaign(const UpdateCampaignRequest
   ss << "/campaigns/";
   ss << request.GetCampaignId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateCampaignOutcome(UpdateCampaignResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateCampaignOutcome(outcome.GetError());
-  }
+  return UpdateCampaignOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateCampaignOutcomeCallable PinpointClient::UpdateCampaignCallable(const UpdateCampaignRequest& request) const
@@ -4463,15 +3678,7 @@ UpdateEmailChannelOutcome PinpointClient::UpdateEmailChannel(const UpdateEmailCh
   ss << request.GetApplicationId();
   ss << "/channels/email";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateEmailChannelOutcome(UpdateEmailChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateEmailChannelOutcome(outcome.GetError());
-  }
+  return UpdateEmailChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateEmailChannelOutcomeCallable PinpointClient::UpdateEmailChannelCallable(const UpdateEmailChannelRequest& request) const
@@ -4505,15 +3712,7 @@ UpdateEmailTemplateOutcome PinpointClient::UpdateEmailTemplate(const UpdateEmail
   ss << request.GetTemplateName();
   ss << "/email";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateEmailTemplateOutcome(UpdateEmailTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateEmailTemplateOutcome(outcome.GetError());
-  }
+  return UpdateEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateEmailTemplateOutcomeCallable PinpointClient::UpdateEmailTemplateCallable(const UpdateEmailTemplateRequest& request) const
@@ -4553,15 +3752,7 @@ UpdateEndpointOutcome PinpointClient::UpdateEndpoint(const UpdateEndpointRequest
   ss << "/endpoints/";
   ss << request.GetEndpointId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateEndpointOutcome(UpdateEndpointResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateEndpointOutcome(outcome.GetError());
-  }
+  return UpdateEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateEndpointOutcomeCallable PinpointClient::UpdateEndpointCallable(const UpdateEndpointRequest& request) const
@@ -4595,15 +3786,7 @@ UpdateEndpointsBatchOutcome PinpointClient::UpdateEndpointsBatch(const UpdateEnd
   ss << request.GetApplicationId();
   ss << "/endpoints";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateEndpointsBatchOutcome(UpdateEndpointsBatchResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateEndpointsBatchOutcome(outcome.GetError());
-  }
+  return UpdateEndpointsBatchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateEndpointsBatchOutcomeCallable PinpointClient::UpdateEndpointsBatchCallable(const UpdateEndpointsBatchRequest& request) const
@@ -4637,15 +3820,7 @@ UpdateGcmChannelOutcome PinpointClient::UpdateGcmChannel(const UpdateGcmChannelR
   ss << request.GetApplicationId();
   ss << "/channels/gcm";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateGcmChannelOutcome(UpdateGcmChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateGcmChannelOutcome(outcome.GetError());
-  }
+  return UpdateGcmChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateGcmChannelOutcomeCallable PinpointClient::UpdateGcmChannelCallable(const UpdateGcmChannelRequest& request) const
@@ -4685,15 +3860,7 @@ UpdateJourneyOutcome PinpointClient::UpdateJourney(const UpdateJourneyRequest& r
   ss << "/journeys/";
   ss << request.GetJourneyId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateJourneyOutcome(UpdateJourneyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateJourneyOutcome(outcome.GetError());
-  }
+  return UpdateJourneyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateJourneyOutcomeCallable PinpointClient::UpdateJourneyCallable(const UpdateJourneyRequest& request) const
@@ -4734,15 +3901,7 @@ UpdateJourneyStateOutcome PinpointClient::UpdateJourneyState(const UpdateJourney
   ss << request.GetJourneyId();
   ss << "/state";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateJourneyStateOutcome(UpdateJourneyStateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateJourneyStateOutcome(outcome.GetError());
-  }
+  return UpdateJourneyStateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateJourneyStateOutcomeCallable PinpointClient::UpdateJourneyStateCallable(const UpdateJourneyStateRequest& request) const
@@ -4776,15 +3935,7 @@ UpdatePushTemplateOutcome PinpointClient::UpdatePushTemplate(const UpdatePushTem
   ss << request.GetTemplateName();
   ss << "/push";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdatePushTemplateOutcome(UpdatePushTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdatePushTemplateOutcome(outcome.GetError());
-  }
+  return UpdatePushTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdatePushTemplateOutcomeCallable PinpointClient::UpdatePushTemplateCallable(const UpdatePushTemplateRequest& request) const
@@ -4817,15 +3968,7 @@ UpdateRecommenderConfigurationOutcome PinpointClient::UpdateRecommenderConfigura
   ss << "/v1/recommenders/";
   ss << request.GetRecommenderId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateRecommenderConfigurationOutcome(UpdateRecommenderConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateRecommenderConfigurationOutcome(outcome.GetError());
-  }
+  return UpdateRecommenderConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRecommenderConfigurationOutcomeCallable PinpointClient::UpdateRecommenderConfigurationCallable(const UpdateRecommenderConfigurationRequest& request) const
@@ -4865,15 +4008,7 @@ UpdateSegmentOutcome PinpointClient::UpdateSegment(const UpdateSegmentRequest& r
   ss << "/segments/";
   ss << request.GetSegmentId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateSegmentOutcome(UpdateSegmentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateSegmentOutcome(outcome.GetError());
-  }
+  return UpdateSegmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateSegmentOutcomeCallable PinpointClient::UpdateSegmentCallable(const UpdateSegmentRequest& request) const
@@ -4907,15 +4042,7 @@ UpdateSmsChannelOutcome PinpointClient::UpdateSmsChannel(const UpdateSmsChannelR
   ss << request.GetApplicationId();
   ss << "/channels/sms";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateSmsChannelOutcome(UpdateSmsChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateSmsChannelOutcome(outcome.GetError());
-  }
+  return UpdateSmsChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateSmsChannelOutcomeCallable PinpointClient::UpdateSmsChannelCallable(const UpdateSmsChannelRequest& request) const
@@ -4949,15 +4076,7 @@ UpdateSmsTemplateOutcome PinpointClient::UpdateSmsTemplate(const UpdateSmsTempla
   ss << request.GetTemplateName();
   ss << "/sms";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateSmsTemplateOutcome(UpdateSmsTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateSmsTemplateOutcome(outcome.GetError());
-  }
+  return UpdateSmsTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateSmsTemplateOutcomeCallable PinpointClient::UpdateSmsTemplateCallable(const UpdateSmsTemplateRequest& request) const
@@ -4998,15 +4117,7 @@ UpdateTemplateActiveVersionOutcome PinpointClient::UpdateTemplateActiveVersion(c
   ss << request.GetTemplateType();
   ss << "/active-version";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateTemplateActiveVersionOutcome(UpdateTemplateActiveVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateTemplateActiveVersionOutcome(outcome.GetError());
-  }
+  return UpdateTemplateActiveVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateTemplateActiveVersionOutcomeCallable PinpointClient::UpdateTemplateActiveVersionCallable(const UpdateTemplateActiveVersionRequest& request) const
@@ -5040,15 +4151,7 @@ UpdateVoiceChannelOutcome PinpointClient::UpdateVoiceChannel(const UpdateVoiceCh
   ss << request.GetApplicationId();
   ss << "/channels/voice";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateVoiceChannelOutcome(UpdateVoiceChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateVoiceChannelOutcome(outcome.GetError());
-  }
+  return UpdateVoiceChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateVoiceChannelOutcomeCallable PinpointClient::UpdateVoiceChannelCallable(const UpdateVoiceChannelRequest& request) const
@@ -5082,15 +4185,7 @@ UpdateVoiceTemplateOutcome PinpointClient::UpdateVoiceTemplate(const UpdateVoice
   ss << request.GetTemplateName();
   ss << "/voice";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateVoiceTemplateOutcome(UpdateVoiceTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateVoiceTemplateOutcome(outcome.GetError());
-  }
+  return UpdateVoiceTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateVoiceTemplateOutcomeCallable PinpointClient::UpdateVoiceTemplateCallable(const UpdateVoiceTemplateRequest& request) const

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -52,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>A list of architectures supported by the instance type.</p>
+     * <p>The architectures supported by the instance type.</p>
      */
     inline const Aws::Vector<ArchitectureType>& GetSupportedArchitectures() const{ return m_supportedArchitectures; }
 
     /**
-     * <p>A list of architectures supported by the instance type.</p>
+     * <p>The architectures supported by the instance type.</p>
      */
     inline bool SupportedArchitecturesHasBeenSet() const { return m_supportedArchitecturesHasBeenSet; }
 
     /**
-     * <p>A list of architectures supported by the instance type.</p>
+     * <p>The architectures supported by the instance type.</p>
      */
     inline void SetSupportedArchitectures(const Aws::Vector<ArchitectureType>& value) { m_supportedArchitecturesHasBeenSet = true; m_supportedArchitectures = value; }
 
     /**
-     * <p>A list of architectures supported by the instance type.</p>
+     * <p>The architectures supported by the instance type.</p>
      */
     inline void SetSupportedArchitectures(Aws::Vector<ArchitectureType>&& value) { m_supportedArchitecturesHasBeenSet = true; m_supportedArchitectures = std::move(value); }
 
     /**
-     * <p>A list of architectures supported by the instance type.</p>
+     * <p>The architectures supported by the instance type.</p>
      */
     inline ProcessorInfo& WithSupportedArchitectures(const Aws::Vector<ArchitectureType>& value) { SetSupportedArchitectures(value); return *this;}
 
     /**
-     * <p>A list of architectures supported by the instance type.</p>
+     * <p>The architectures supported by the instance type.</p>
      */
     inline ProcessorInfo& WithSupportedArchitectures(Aws::Vector<ArchitectureType>&& value) { SetSupportedArchitectures(std::move(value)); return *this;}
 
     /**
-     * <p>A list of architectures supported by the instance type.</p>
+     * <p>The architectures supported by the instance type.</p>
      */
     inline ProcessorInfo& AddSupportedArchitectures(const ArchitectureType& value) { m_supportedArchitecturesHasBeenSet = true; m_supportedArchitectures.push_back(value); return *this; }
 
     /**
-     * <p>A list of architectures supported by the instance type.</p>
+     * <p>The architectures supported by the instance type.</p>
      */
     inline ProcessorInfo& AddSupportedArchitectures(ArchitectureType&& value) { m_supportedArchitecturesHasBeenSet = true; m_supportedArchitectures.push_back(std::move(value)); return *this; }
 

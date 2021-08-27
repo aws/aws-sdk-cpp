@@ -1,30 +1,84 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/ssm/SSMErrors.h>
+#include <aws/ssm/model/ResourceDataSyncNotFoundException.h>
+#include <aws/ssm/model/OpsItemAlreadyExistsException.h>
+#include <aws/ssm/model/ItemSizeLimitExceededException.h>
+#include <aws/ssm/model/UnsupportedInventoryItemContextException.h>
+#include <aws/ssm/model/ResourceDataSyncAlreadyExistsException.h>
+#include <aws/ssm/model/OpsItemLimitExceededException.h>
+#include <aws/ssm/model/ItemContentMismatchException.h>
+#include <aws/ssm/model/InvalidItemContentException.h>
+#include <aws/ssm/model/OpsItemInvalidParameterException.h>
 
 using namespace Aws::Client;
-using namespace Aws::SSM;
 using namespace Aws::Utils;
+using namespace Aws::SSM;
+using namespace Aws::SSM::Model;
 
 namespace Aws
 {
 namespace SSM
 {
+template<> AWS_SSM_API ResourceDataSyncNotFoundException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::RESOURCE_DATA_SYNC_NOT_FOUND);
+  return ResourceDataSyncNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSM_API OpsItemAlreadyExistsException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::OPS_ITEM_ALREADY_EXISTS);
+  return OpsItemAlreadyExistsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSM_API ItemSizeLimitExceededException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::ITEM_SIZE_LIMIT_EXCEEDED);
+  return ItemSizeLimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSM_API UnsupportedInventoryItemContextException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::UNSUPPORTED_INVENTORY_ITEM_CONTEXT);
+  return UnsupportedInventoryItemContextException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSM_API ResourceDataSyncAlreadyExistsException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::RESOURCE_DATA_SYNC_ALREADY_EXISTS);
+  return ResourceDataSyncAlreadyExistsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSM_API OpsItemLimitExceededException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::OPS_ITEM_LIMIT_EXCEEDED);
+  return OpsItemLimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSM_API ItemContentMismatchException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::ITEM_CONTENT_MISMATCH);
+  return ItemContentMismatchException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSM_API InvalidItemContentException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::INVALID_ITEM_CONTENT);
+  return InvalidItemContentException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSM_API OpsItemInvalidParameterException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::OPS_ITEM_INVALID_PARAMETER);
+  return OpsItemInvalidParameterException(this->GetJsonPayload().View());
+}
+
 namespace SSMErrorMapper
 {
 
@@ -35,6 +89,7 @@ static const int INVALID_POLICY_TYPE_HASH = HashingUtils::HashString("InvalidPol
 static const int INVALID_AGGREGATOR_HASH = HashingUtils::HashString("InvalidAggregatorException");
 static const int INVALID_INVENTORY_REQUEST_HASH = HashingUtils::HashString("InvalidInventoryRequestException");
 static const int DUPLICATE_DOCUMENT_VERSION_NAME_HASH = HashingUtils::HashString("DuplicateDocumentVersionName");
+static const int OPS_METADATA_INVALID_ARGUMENT_HASH = HashingUtils::HashString("OpsMetadataInvalidArgumentException");
 static const int INVALID_TYPE_NAME_HASH = HashingUtils::HashString("InvalidTypeNameException");
 static const int UNSUPPORTED_INVENTORY_SCHEMA_VERSION_HASH = HashingUtils::HashString("UnsupportedInventorySchemaVersionException");
 static const int ASSOCIATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AssociationDoesNotExist");
@@ -55,10 +110,12 @@ static const int RESOURCE_DATA_SYNC_NOT_FOUND_HASH = HashingUtils::HashString("R
 static const int INVALID_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidFilterValue");
 static const int OPS_ITEM_ALREADY_EXISTS_HASH = HashingUtils::HashString("OpsItemAlreadyExistsException");
 static const int INVALID_DELETE_INVENTORY_PARAMETERS_HASH = HashingUtils::HashString("InvalidDeleteInventoryParametersException");
+static const int OPS_METADATA_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OpsMetadataLimitExceededException");
 static const int FEATURE_NOT_AVAILABLE_HASH = HashingUtils::HashString("FeatureNotAvailableException");
 static const int INVALID_PLUGIN_NAME_HASH = HashingUtils::HashString("InvalidPluginName");
 static const int INVALID_DOCUMENT_HASH = HashingUtils::HashString("InvalidDocument");
 static const int INVALID_AUTOMATION_SIGNAL_HASH = HashingUtils::HashString("InvalidAutomationSignalException");
+static const int AUTOMATION_DEFINITION_NOT_APPROVED_HASH = HashingUtils::HashString("AutomationDefinitionNotApprovedException");
 static const int AUTOMATION_EXECUTION_NOT_FOUND_HASH = HashingUtils::HashString("AutomationExecutionNotFoundException");
 static const int INVALID_INVENTORY_ITEM_CONTEXT_HASH = HashingUtils::HashString("InvalidInventoryItemContextException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
@@ -66,10 +123,12 @@ static const int ASSOCIATION_EXECUTION_DOES_NOT_EXIST_HASH = HashingUtils::HashS
 static const int INVALID_RESOURCE_ID_HASH = HashingUtils::HashString("InvalidResourceId");
 static const int INVALID_INSTANCE_ID_HASH = HashingUtils::HashString("InvalidInstanceId");
 static const int ASSOCIATED_INSTANCES_HASH = HashingUtils::HashString("AssociatedInstances");
+static const int OPS_METADATA_ALREADY_EXISTS_HASH = HashingUtils::HashString("OpsMetadataAlreadyExistsException");
 static const int TARGET_IN_USE_HASH = HashingUtils::HashString("TargetInUseException");
 static const int INVALID_KEY_ID_HASH = HashingUtils::HashString("InvalidKeyId");
 static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
 static const int ITEM_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ItemSizeLimitExceededException");
+static const int OPS_METADATA_TOO_MANY_UPDATES_HASH = HashingUtils::HashString("OpsMetadataTooManyUpdatesException");
 static const int PARAMETER_VERSION_LABEL_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ParameterVersionLabelLimitExceeded");
 static const int INVALID_RESOURCE_TYPE_HASH = HashingUtils::HashString("InvalidResourceType");
 static const int DOCUMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DocumentLimitExceeded");
@@ -117,6 +176,7 @@ static const int INVALID_ASSOCIATION_HASH = HashingUtils::HashString("InvalidAss
 static const int HIERARCHY_TYPE_MISMATCH_HASH = HashingUtils::HashString("HierarchyTypeMismatchException");
 static const int DOES_NOT_EXIST_HASH = HashingUtils::HashString("DoesNotExistException");
 static const int INVALID_DOCUMENT_OPERATION_HASH = HashingUtils::HashString("InvalidDocumentOperation");
+static const int OPS_METADATA_NOT_FOUND_HASH = HashingUtils::HashString("OpsMetadataNotFoundException");
 static const int OPS_ITEM_NOT_FOUND_HASH = HashingUtils::HashString("OpsItemNotFoundException");
 static const int INVALID_UPDATE_HASH = HashingUtils::HashString("InvalidUpdate");
 static const int INVALID_FILTER_OPTION_HASH = HashingUtils::HashString("InvalidFilterOption");
@@ -129,6 +189,7 @@ static const int INVALID_NOTIFICATION_CONFIG_HASH = HashingUtils::HashString("In
 static const int INVALID_SCHEDULE_HASH = HashingUtils::HashString("InvalidSchedule");
 static const int INVALID_ACTIVATION_ID_HASH = HashingUtils::HashString("InvalidActivationId");
 static const int RESOURCE_DATA_SYNC_CONFLICT_HASH = HashingUtils::HashString("ResourceDataSyncConflictException");
+static const int OPS_METADATA_KEY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OpsMetadataKeyLimitExceededException");
 static const int INVALID_FILTER_HASH = HashingUtils::HashString("InvalidFilter");
 static const int OPS_ITEM_INVALID_PARAMETER_HASH = HashingUtils::HashString("OpsItemInvalidParameterException");
 static const int INVALID_INVENTORY_GROUP_HASH = HashingUtils::HashString("InvalidInventoryGroupException");
@@ -173,6 +234,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DUPLICATE_DOCUMENT_VERSION_NAME_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_DOCUMENT_VERSION_NAME), false);
+  }
+  else if (hashCode == OPS_METADATA_INVALID_ARGUMENT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_INVALID_ARGUMENT), false);
   }
   else if (hashCode == INVALID_TYPE_NAME_HASH)
   {
@@ -254,6 +319,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DELETE_INVENTORY_PARAMETERS), false);
   }
+  else if (hashCode == OPS_METADATA_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_LIMIT_EXCEEDED), false);
+  }
   else if (hashCode == FEATURE_NOT_AVAILABLE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::FEATURE_NOT_AVAILABLE), false);
@@ -269,6 +338,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_AUTOMATION_SIGNAL_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AUTOMATION_SIGNAL), false);
+  }
+  else if (hashCode == AUTOMATION_DEFINITION_NOT_APPROVED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_DEFINITION_NOT_APPROVED), false);
   }
   else if (hashCode == AUTOMATION_EXECUTION_NOT_FOUND_HASH)
   {
@@ -298,6 +371,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATED_INSTANCES), false);
   }
+  else if (hashCode == OPS_METADATA_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_ALREADY_EXISTS), false);
+  }
   else if (hashCode == TARGET_IN_USE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TARGET_IN_USE), false);
@@ -313,6 +390,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ITEM_SIZE_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ITEM_SIZE_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == OPS_METADATA_TOO_MANY_UPDATES_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_TOO_MANY_UPDATES), false);
   }
   else if (hashCode == PARAMETER_VERSION_LABEL_LIMIT_EXCEEDED_HASH)
   {
@@ -502,6 +583,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_OPERATION), false);
   }
+  else if (hashCode == OPS_METADATA_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_NOT_FOUND), false);
+  }
   else if (hashCode == OPS_ITEM_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_NOT_FOUND), false);
@@ -549,6 +634,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == RESOURCE_DATA_SYNC_CONFLICT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_CONFLICT), false);
+  }
+  else if (hashCode == OPS_METADATA_KEY_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_KEY_LIMIT_EXCEEDED), false);
   }
   else if (hashCode == INVALID_FILTER_HASH)
   {

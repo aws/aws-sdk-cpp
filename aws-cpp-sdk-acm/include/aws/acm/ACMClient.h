@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/acm/ACM_EXPORTS.h>
@@ -82,19 +72,19 @@ namespace Model
         class ResendValidationEmailRequest;
         class UpdateCertificateOptionsRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMErrors>> AddTagsToCertificateOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMErrors>> DeleteCertificateOutcome;
-        typedef Aws::Utils::Outcome<DescribeCertificateResult, Aws::Client::AWSError<ACMErrors>> DescribeCertificateOutcome;
-        typedef Aws::Utils::Outcome<ExportCertificateResult, Aws::Client::AWSError<ACMErrors>> ExportCertificateOutcome;
-        typedef Aws::Utils::Outcome<GetCertificateResult, Aws::Client::AWSError<ACMErrors>> GetCertificateOutcome;
-        typedef Aws::Utils::Outcome<ImportCertificateResult, Aws::Client::AWSError<ACMErrors>> ImportCertificateOutcome;
-        typedef Aws::Utils::Outcome<ListCertificatesResult, Aws::Client::AWSError<ACMErrors>> ListCertificatesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForCertificateResult, Aws::Client::AWSError<ACMErrors>> ListTagsForCertificateOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMErrors>> RemoveTagsFromCertificateOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMErrors>> RenewCertificateOutcome;
-        typedef Aws::Utils::Outcome<RequestCertificateResult, Aws::Client::AWSError<ACMErrors>> RequestCertificateOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMErrors>> ResendValidationEmailOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMErrors>> UpdateCertificateOptionsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> AddTagsToCertificateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> DeleteCertificateOutcome;
+        typedef Aws::Utils::Outcome<DescribeCertificateResult, ACMError> DescribeCertificateOutcome;
+        typedef Aws::Utils::Outcome<ExportCertificateResult, ACMError> ExportCertificateOutcome;
+        typedef Aws::Utils::Outcome<GetCertificateResult, ACMError> GetCertificateOutcome;
+        typedef Aws::Utils::Outcome<ImportCertificateResult, ACMError> ImportCertificateOutcome;
+        typedef Aws::Utils::Outcome<ListCertificatesResult, ACMError> ListCertificatesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForCertificateResult, ACMError> ListTagsForCertificateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> RemoveTagsFromCertificateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> RenewCertificateOutcome;
+        typedef Aws::Utils::Outcome<RequestCertificateResult, ACMError> RequestCertificateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> ResendValidationEmailOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> UpdateCertificateOptionsOutcome;
 
         typedef std::future<AddTagsToCertificateOutcome> AddTagsToCertificateOutcomeCallable;
         typedef std::future<DeleteCertificateOutcome> DeleteCertificateOutcomeCallable;
@@ -160,8 +150,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~ACMClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "ACM"; }
 
 
         /**
@@ -242,10 +230,10 @@ namespace Model
          * succeeds, the certificate no longer appears in the list that can be displayed by
          * calling the <a>ListCertificates</a> action or be retrieved by calling the
          * <a>GetCertificate</a> action. The certificate will not be available for use by
-         * AWS services integrated with ACM. </p> <note> <p>You cannot delete an ACM
+         * AWS services integrated with ACM. </p>  <p>You cannot delete an ACM
          * certificate that is being used by another AWS service. To delete a certificate
          * that is in use, the certificate association must first be removed.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">AWS
          * API Reference</a></p>
          */
@@ -256,10 +244,10 @@ namespace Model
          * succeeds, the certificate no longer appears in the list that can be displayed by
          * calling the <a>ListCertificates</a> action or be retrieved by calling the
          * <a>GetCertificate</a> action. The certificate will not be available for use by
-         * AWS services integrated with ACM. </p> <note> <p>You cannot delete an ACM
+         * AWS services integrated with ACM. </p>  <p>You cannot delete an ACM
          * certificate that is being used by another AWS service. To delete a certificate
          * that is in use, the certificate association must first be removed.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">AWS
          * API Reference</a></p>
          *
@@ -272,10 +260,10 @@ namespace Model
          * succeeds, the certificate no longer appears in the list that can be displayed by
          * calling the <a>ListCertificates</a> action or be retrieved by calling the
          * <a>GetCertificate</a> action. The certificate will not be available for use by
-         * AWS services integrated with ACM. </p> <note> <p>You cannot delete an ACM
+         * AWS services integrated with ACM. </p>  <p>You cannot delete an ACM
          * certificate that is being used by another AWS service. To delete a certificate
          * that is in use, the certificate association must first be removed.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">AWS
          * API Reference</a></p>
          *
@@ -410,10 +398,10 @@ namespace Model
          * documentation for each service. For more information about importing
          * certificates into ACM, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p> <note>
+         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p> 
          * <p>ACM does not provide <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
-         * renewal</a> for certificates that you import.</p> </note> <p>Note the following
+         * renewal</a> for certificates that you import.</p>  <p>Note the following
          * guidelines when importing third party certificates:</p> <ul> <li> <p>You must
          * enter the private key that matches the certificate you are importing.</p> </li>
          * <li> <p>The private key must be unencrypted. You cannot import a private key
@@ -459,10 +447,10 @@ namespace Model
          * documentation for each service. For more information about importing
          * certificates into ACM, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p> <note>
+         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p> 
          * <p>ACM does not provide <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
-         * renewal</a> for certificates that you import.</p> </note> <p>Note the following
+         * renewal</a> for certificates that you import.</p>  <p>Note the following
          * guidelines when importing third party certificates:</p> <ul> <li> <p>You must
          * enter the private key that matches the certificate you are importing.</p> </li>
          * <li> <p>The private key must be unencrypted. You cannot import a private key
@@ -510,10 +498,10 @@ namespace Model
          * documentation for each service. For more information about importing
          * certificates into ACM, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p> <note>
+         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p> 
          * <p>ACM does not provide <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
-         * renewal</a> for certificates that you import.</p> </note> <p>Note the following
+         * renewal</a> for certificates that you import.</p>  <p>Note the following
          * guidelines when importing third party certificates:</p> <ul> <li> <p>You must
          * enter the private key that matches the certificate you are importing.</p> </li>
          * <li> <p>The private key must be unencrypted. You cannot import a private key

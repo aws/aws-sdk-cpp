@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/polly/Polly_EXPORTS.h>
@@ -79,15 +69,15 @@ namespace Model
         class StartSpeechSynthesisTaskRequest;
         class SynthesizeSpeechRequest;
 
-        typedef Aws::Utils::Outcome<DeleteLexiconResult, Aws::Client::AWSError<PollyErrors>> DeleteLexiconOutcome;
-        typedef Aws::Utils::Outcome<DescribeVoicesResult, Aws::Client::AWSError<PollyErrors>> DescribeVoicesOutcome;
-        typedef Aws::Utils::Outcome<GetLexiconResult, Aws::Client::AWSError<PollyErrors>> GetLexiconOutcome;
-        typedef Aws::Utils::Outcome<GetSpeechSynthesisTaskResult, Aws::Client::AWSError<PollyErrors>> GetSpeechSynthesisTaskOutcome;
-        typedef Aws::Utils::Outcome<ListLexiconsResult, Aws::Client::AWSError<PollyErrors>> ListLexiconsOutcome;
-        typedef Aws::Utils::Outcome<ListSpeechSynthesisTasksResult, Aws::Client::AWSError<PollyErrors>> ListSpeechSynthesisTasksOutcome;
-        typedef Aws::Utils::Outcome<PutLexiconResult, Aws::Client::AWSError<PollyErrors>> PutLexiconOutcome;
-        typedef Aws::Utils::Outcome<StartSpeechSynthesisTaskResult, Aws::Client::AWSError<PollyErrors>> StartSpeechSynthesisTaskOutcome;
-        typedef Aws::Utils::Outcome<SynthesizeSpeechResult, Aws::Client::AWSError<PollyErrors>> SynthesizeSpeechOutcome;
+        typedef Aws::Utils::Outcome<DeleteLexiconResult, PollyError> DeleteLexiconOutcome;
+        typedef Aws::Utils::Outcome<DescribeVoicesResult, PollyError> DescribeVoicesOutcome;
+        typedef Aws::Utils::Outcome<GetLexiconResult, PollyError> GetLexiconOutcome;
+        typedef Aws::Utils::Outcome<GetSpeechSynthesisTaskResult, PollyError> GetSpeechSynthesisTaskOutcome;
+        typedef Aws::Utils::Outcome<ListLexiconsResult, PollyError> ListLexiconsOutcome;
+        typedef Aws::Utils::Outcome<ListSpeechSynthesisTasksResult, PollyError> ListSpeechSynthesisTasksOutcome;
+        typedef Aws::Utils::Outcome<PutLexiconResult, PollyError> PutLexiconOutcome;
+        typedef Aws::Utils::Outcome<StartSpeechSynthesisTaskResult, PollyError> StartSpeechSynthesisTaskOutcome;
+        typedef Aws::Utils::Outcome<SynthesizeSpeechResult, PollyError> SynthesizeSpeechOutcome;
 
         typedef std::future<DeleteLexiconOutcome> DeleteLexiconOutcomeCallable;
         typedef std::future<DescribeVoicesOutcome> DescribeVoicesOutcomeCallable;
@@ -144,8 +134,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~PollyClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "Polly"; }
 
 
         /**

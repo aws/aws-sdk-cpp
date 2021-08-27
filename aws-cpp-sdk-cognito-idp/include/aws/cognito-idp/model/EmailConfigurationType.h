@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -35,7 +25,12 @@ namespace Model
 {
 
   /**
-   * <p>The email configuration type.</p><p><h3>See Also:</h3>   <a
+   * <p>The email configuration type. </p>  <p>Amazon Cognito has specific
+   * regions for use with Amazon SES. For more information on the supported regions,
+   * see <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html">Email
+   * Settings for Amazon Cognito User Pools</a>.</p> <p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/EmailConfigurationType">AWS
    * API Reference</a></p>
    */
@@ -200,19 +195,29 @@ namespace Model
      * in Amazon Cognito</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <p>The
      * default FROM address is no-reply@verificationemail.com. To customize the FROM
      * address, provide the ARN of an Amazon SES verified email address for the
-     * <code>SourceArn</code> parameter.</p> </dd> <dt>DEVELOPER</dt> <dd> <p>When
-     * Amazon Cognito emails your users, it uses your Amazon SES configuration. Amazon
-     * Cognito calls Amazon SES on your behalf to send email from your verified email
-     * address. When you use this option, the email delivery limits are the same limits
-     * that apply to your Amazon SES verified email address in your AWS account.</p>
-     * <p>If you use this option, you must provide the ARN of an Amazon SES verified
-     * email address for the <code>SourceArn</code> parameter.</p> <p>Before Amazon
-     * Cognito can email your users, it requires additional permissions to call Amazon
-     * SES on your behalf. When you update your user pool with this option, Amazon
-     * Cognito creates a <i>service-linked role</i>, which is a type of IAM role, in
-     * your AWS account. This role contains the permissions that allow Amazon Cognito
-     * to access Amazon SES and send email messages with your address. For more
-     * information about the service-linked role that Amazon Cognito creates, see <a
+     * <code>SourceArn</code> parameter.</p> <p> If EmailSendingAccount is
+     * COGNITO_DEFAULT, the following parameters aren't allowed:</p> <ul> <li>
+     * <p>EmailVerificationMessage</p> </li> <li> <p>EmailVerificationSubject</p> </li>
+     * <li> <p>InviteMessageTemplate.EmailMessage</p> </li> <li>
+     * <p>InviteMessageTemplate.EmailSubject</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailMessage</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailMessageByLink</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailSubject,</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailSubjectByLink</p> </li> </ul> 
+     * <p>DEVELOPER EmailSendingAccount is required.</p>  </dd>
+     * <dt>DEVELOPER</dt> <dd> <p>When Amazon Cognito emails your users, it uses your
+     * Amazon SES configuration. Amazon Cognito calls Amazon SES on your behalf to send
+     * email from your verified email address. When you use this option, the email
+     * delivery limits are the same limits that apply to your Amazon SES verified email
+     * address in your AWS account.</p> <p>If you use this option, you must provide the
+     * ARN of an Amazon SES verified email address for the <code>SourceArn</code>
+     * parameter.</p> <p>Before Amazon Cognito can email your users, it requires
+     * additional permissions to call Amazon SES on your behalf. When you update your
+     * user pool with this option, Amazon Cognito creates a <i>service-linked role</i>,
+     * which is a type of IAM role, in your AWS account. This role contains the
+     * permissions that allow Amazon Cognito to access Amazon SES and send email
+     * messages with your address. For more information about the service-linked role
+     * that Amazon Cognito creates, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> </dd> </dl>
@@ -233,19 +238,29 @@ namespace Model
      * in Amazon Cognito</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <p>The
      * default FROM address is no-reply@verificationemail.com. To customize the FROM
      * address, provide the ARN of an Amazon SES verified email address for the
-     * <code>SourceArn</code> parameter.</p> </dd> <dt>DEVELOPER</dt> <dd> <p>When
-     * Amazon Cognito emails your users, it uses your Amazon SES configuration. Amazon
-     * Cognito calls Amazon SES on your behalf to send email from your verified email
-     * address. When you use this option, the email delivery limits are the same limits
-     * that apply to your Amazon SES verified email address in your AWS account.</p>
-     * <p>If you use this option, you must provide the ARN of an Amazon SES verified
-     * email address for the <code>SourceArn</code> parameter.</p> <p>Before Amazon
-     * Cognito can email your users, it requires additional permissions to call Amazon
-     * SES on your behalf. When you update your user pool with this option, Amazon
-     * Cognito creates a <i>service-linked role</i>, which is a type of IAM role, in
-     * your AWS account. This role contains the permissions that allow Amazon Cognito
-     * to access Amazon SES and send email messages with your address. For more
-     * information about the service-linked role that Amazon Cognito creates, see <a
+     * <code>SourceArn</code> parameter.</p> <p> If EmailSendingAccount is
+     * COGNITO_DEFAULT, the following parameters aren't allowed:</p> <ul> <li>
+     * <p>EmailVerificationMessage</p> </li> <li> <p>EmailVerificationSubject</p> </li>
+     * <li> <p>InviteMessageTemplate.EmailMessage</p> </li> <li>
+     * <p>InviteMessageTemplate.EmailSubject</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailMessage</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailMessageByLink</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailSubject,</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailSubjectByLink</p> </li> </ul> 
+     * <p>DEVELOPER EmailSendingAccount is required.</p>  </dd>
+     * <dt>DEVELOPER</dt> <dd> <p>When Amazon Cognito emails your users, it uses your
+     * Amazon SES configuration. Amazon Cognito calls Amazon SES on your behalf to send
+     * email from your verified email address. When you use this option, the email
+     * delivery limits are the same limits that apply to your Amazon SES verified email
+     * address in your AWS account.</p> <p>If you use this option, you must provide the
+     * ARN of an Amazon SES verified email address for the <code>SourceArn</code>
+     * parameter.</p> <p>Before Amazon Cognito can email your users, it requires
+     * additional permissions to call Amazon SES on your behalf. When you update your
+     * user pool with this option, Amazon Cognito creates a <i>service-linked role</i>,
+     * which is a type of IAM role, in your AWS account. This role contains the
+     * permissions that allow Amazon Cognito to access Amazon SES and send email
+     * messages with your address. For more information about the service-linked role
+     * that Amazon Cognito creates, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> </dd> </dl>
@@ -266,19 +281,29 @@ namespace Model
      * in Amazon Cognito</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <p>The
      * default FROM address is no-reply@verificationemail.com. To customize the FROM
      * address, provide the ARN of an Amazon SES verified email address for the
-     * <code>SourceArn</code> parameter.</p> </dd> <dt>DEVELOPER</dt> <dd> <p>When
-     * Amazon Cognito emails your users, it uses your Amazon SES configuration. Amazon
-     * Cognito calls Amazon SES on your behalf to send email from your verified email
-     * address. When you use this option, the email delivery limits are the same limits
-     * that apply to your Amazon SES verified email address in your AWS account.</p>
-     * <p>If you use this option, you must provide the ARN of an Amazon SES verified
-     * email address for the <code>SourceArn</code> parameter.</p> <p>Before Amazon
-     * Cognito can email your users, it requires additional permissions to call Amazon
-     * SES on your behalf. When you update your user pool with this option, Amazon
-     * Cognito creates a <i>service-linked role</i>, which is a type of IAM role, in
-     * your AWS account. This role contains the permissions that allow Amazon Cognito
-     * to access Amazon SES and send email messages with your address. For more
-     * information about the service-linked role that Amazon Cognito creates, see <a
+     * <code>SourceArn</code> parameter.</p> <p> If EmailSendingAccount is
+     * COGNITO_DEFAULT, the following parameters aren't allowed:</p> <ul> <li>
+     * <p>EmailVerificationMessage</p> </li> <li> <p>EmailVerificationSubject</p> </li>
+     * <li> <p>InviteMessageTemplate.EmailMessage</p> </li> <li>
+     * <p>InviteMessageTemplate.EmailSubject</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailMessage</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailMessageByLink</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailSubject,</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailSubjectByLink</p> </li> </ul> 
+     * <p>DEVELOPER EmailSendingAccount is required.</p>  </dd>
+     * <dt>DEVELOPER</dt> <dd> <p>When Amazon Cognito emails your users, it uses your
+     * Amazon SES configuration. Amazon Cognito calls Amazon SES on your behalf to send
+     * email from your verified email address. When you use this option, the email
+     * delivery limits are the same limits that apply to your Amazon SES verified email
+     * address in your AWS account.</p> <p>If you use this option, you must provide the
+     * ARN of an Amazon SES verified email address for the <code>SourceArn</code>
+     * parameter.</p> <p>Before Amazon Cognito can email your users, it requires
+     * additional permissions to call Amazon SES on your behalf. When you update your
+     * user pool with this option, Amazon Cognito creates a <i>service-linked role</i>,
+     * which is a type of IAM role, in your AWS account. This role contains the
+     * permissions that allow Amazon Cognito to access Amazon SES and send email
+     * messages with your address. For more information about the service-linked role
+     * that Amazon Cognito creates, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> </dd> </dl>
@@ -299,19 +324,29 @@ namespace Model
      * in Amazon Cognito</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <p>The
      * default FROM address is no-reply@verificationemail.com. To customize the FROM
      * address, provide the ARN of an Amazon SES verified email address for the
-     * <code>SourceArn</code> parameter.</p> </dd> <dt>DEVELOPER</dt> <dd> <p>When
-     * Amazon Cognito emails your users, it uses your Amazon SES configuration. Amazon
-     * Cognito calls Amazon SES on your behalf to send email from your verified email
-     * address. When you use this option, the email delivery limits are the same limits
-     * that apply to your Amazon SES verified email address in your AWS account.</p>
-     * <p>If you use this option, you must provide the ARN of an Amazon SES verified
-     * email address for the <code>SourceArn</code> parameter.</p> <p>Before Amazon
-     * Cognito can email your users, it requires additional permissions to call Amazon
-     * SES on your behalf. When you update your user pool with this option, Amazon
-     * Cognito creates a <i>service-linked role</i>, which is a type of IAM role, in
-     * your AWS account. This role contains the permissions that allow Amazon Cognito
-     * to access Amazon SES and send email messages with your address. For more
-     * information about the service-linked role that Amazon Cognito creates, see <a
+     * <code>SourceArn</code> parameter.</p> <p> If EmailSendingAccount is
+     * COGNITO_DEFAULT, the following parameters aren't allowed:</p> <ul> <li>
+     * <p>EmailVerificationMessage</p> </li> <li> <p>EmailVerificationSubject</p> </li>
+     * <li> <p>InviteMessageTemplate.EmailMessage</p> </li> <li>
+     * <p>InviteMessageTemplate.EmailSubject</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailMessage</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailMessageByLink</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailSubject,</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailSubjectByLink</p> </li> </ul> 
+     * <p>DEVELOPER EmailSendingAccount is required.</p>  </dd>
+     * <dt>DEVELOPER</dt> <dd> <p>When Amazon Cognito emails your users, it uses your
+     * Amazon SES configuration. Amazon Cognito calls Amazon SES on your behalf to send
+     * email from your verified email address. When you use this option, the email
+     * delivery limits are the same limits that apply to your Amazon SES verified email
+     * address in your AWS account.</p> <p>If you use this option, you must provide the
+     * ARN of an Amazon SES verified email address for the <code>SourceArn</code>
+     * parameter.</p> <p>Before Amazon Cognito can email your users, it requires
+     * additional permissions to call Amazon SES on your behalf. When you update your
+     * user pool with this option, Amazon Cognito creates a <i>service-linked role</i>,
+     * which is a type of IAM role, in your AWS account. This role contains the
+     * permissions that allow Amazon Cognito to access Amazon SES and send email
+     * messages with your address. For more information about the service-linked role
+     * that Amazon Cognito creates, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> </dd> </dl>
@@ -332,19 +367,29 @@ namespace Model
      * in Amazon Cognito</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <p>The
      * default FROM address is no-reply@verificationemail.com. To customize the FROM
      * address, provide the ARN of an Amazon SES verified email address for the
-     * <code>SourceArn</code> parameter.</p> </dd> <dt>DEVELOPER</dt> <dd> <p>When
-     * Amazon Cognito emails your users, it uses your Amazon SES configuration. Amazon
-     * Cognito calls Amazon SES on your behalf to send email from your verified email
-     * address. When you use this option, the email delivery limits are the same limits
-     * that apply to your Amazon SES verified email address in your AWS account.</p>
-     * <p>If you use this option, you must provide the ARN of an Amazon SES verified
-     * email address for the <code>SourceArn</code> parameter.</p> <p>Before Amazon
-     * Cognito can email your users, it requires additional permissions to call Amazon
-     * SES on your behalf. When you update your user pool with this option, Amazon
-     * Cognito creates a <i>service-linked role</i>, which is a type of IAM role, in
-     * your AWS account. This role contains the permissions that allow Amazon Cognito
-     * to access Amazon SES and send email messages with your address. For more
-     * information about the service-linked role that Amazon Cognito creates, see <a
+     * <code>SourceArn</code> parameter.</p> <p> If EmailSendingAccount is
+     * COGNITO_DEFAULT, the following parameters aren't allowed:</p> <ul> <li>
+     * <p>EmailVerificationMessage</p> </li> <li> <p>EmailVerificationSubject</p> </li>
+     * <li> <p>InviteMessageTemplate.EmailMessage</p> </li> <li>
+     * <p>InviteMessageTemplate.EmailSubject</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailMessage</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailMessageByLink</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailSubject,</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailSubjectByLink</p> </li> </ul> 
+     * <p>DEVELOPER EmailSendingAccount is required.</p>  </dd>
+     * <dt>DEVELOPER</dt> <dd> <p>When Amazon Cognito emails your users, it uses your
+     * Amazon SES configuration. Amazon Cognito calls Amazon SES on your behalf to send
+     * email from your verified email address. When you use this option, the email
+     * delivery limits are the same limits that apply to your Amazon SES verified email
+     * address in your AWS account.</p> <p>If you use this option, you must provide the
+     * ARN of an Amazon SES verified email address for the <code>SourceArn</code>
+     * parameter.</p> <p>Before Amazon Cognito can email your users, it requires
+     * additional permissions to call Amazon SES on your behalf. When you update your
+     * user pool with this option, Amazon Cognito creates a <i>service-linked role</i>,
+     * which is a type of IAM role, in your AWS account. This role contains the
+     * permissions that allow Amazon Cognito to access Amazon SES and send email
+     * messages with your address. For more information about the service-linked role
+     * that Amazon Cognito creates, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> </dd> </dl>
@@ -365,19 +410,29 @@ namespace Model
      * in Amazon Cognito</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <p>The
      * default FROM address is no-reply@verificationemail.com. To customize the FROM
      * address, provide the ARN of an Amazon SES verified email address for the
-     * <code>SourceArn</code> parameter.</p> </dd> <dt>DEVELOPER</dt> <dd> <p>When
-     * Amazon Cognito emails your users, it uses your Amazon SES configuration. Amazon
-     * Cognito calls Amazon SES on your behalf to send email from your verified email
-     * address. When you use this option, the email delivery limits are the same limits
-     * that apply to your Amazon SES verified email address in your AWS account.</p>
-     * <p>If you use this option, you must provide the ARN of an Amazon SES verified
-     * email address for the <code>SourceArn</code> parameter.</p> <p>Before Amazon
-     * Cognito can email your users, it requires additional permissions to call Amazon
-     * SES on your behalf. When you update your user pool with this option, Amazon
-     * Cognito creates a <i>service-linked role</i>, which is a type of IAM role, in
-     * your AWS account. This role contains the permissions that allow Amazon Cognito
-     * to access Amazon SES and send email messages with your address. For more
-     * information about the service-linked role that Amazon Cognito creates, see <a
+     * <code>SourceArn</code> parameter.</p> <p> If EmailSendingAccount is
+     * COGNITO_DEFAULT, the following parameters aren't allowed:</p> <ul> <li>
+     * <p>EmailVerificationMessage</p> </li> <li> <p>EmailVerificationSubject</p> </li>
+     * <li> <p>InviteMessageTemplate.EmailMessage</p> </li> <li>
+     * <p>InviteMessageTemplate.EmailSubject</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailMessage</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailMessageByLink</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailSubject,</p> </li> <li>
+     * <p>VerificationMessageTemplate.EmailSubjectByLink</p> </li> </ul> 
+     * <p>DEVELOPER EmailSendingAccount is required.</p>  </dd>
+     * <dt>DEVELOPER</dt> <dd> <p>When Amazon Cognito emails your users, it uses your
+     * Amazon SES configuration. Amazon Cognito calls Amazon SES on your behalf to send
+     * email from your verified email address. When you use this option, the email
+     * delivery limits are the same limits that apply to your Amazon SES verified email
+     * address in your AWS account.</p> <p>If you use this option, you must provide the
+     * ARN of an Amazon SES verified email address for the <code>SourceArn</code>
+     * parameter.</p> <p>Before Amazon Cognito can email your users, it requires
+     * additional permissions to call Amazon SES on your behalf. When you update your
+     * user pool with this option, Amazon Cognito creates a <i>service-linked role</i>,
+     * which is a type of IAM role, in your AWS account. This role contains the
+     * permissions that allow Amazon Cognito to access Amazon SES and send email
+     * messages with your address. For more information about the service-linked role
+     * that Amazon Cognito creates, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> </dd> </dl>

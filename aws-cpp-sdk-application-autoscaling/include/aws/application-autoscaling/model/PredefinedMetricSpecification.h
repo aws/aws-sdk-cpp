@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/application-autoscaling/ApplicationAutoScaling_EXPORTS.h>
@@ -96,12 +86,20 @@ namespace Model
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
      * and there is a target group attached to the Spot Fleet request or ECS
-     * service.</p> <p>The format is
+     * service.</p> <p>You create the resource label by appending the final portion of
+     * the load balancer ARN and the final portion of the target group ARN into a
+     * single value, separated by a forward slash (/). The format is
      * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
      * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
      * is the final portion of the load balancer ARN</p> </li> <li>
      * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
-     * portion of the target group ARN.</p> </li> </ul>
+     * portion of the target group ARN.</p> </li> </ul> <p>This is an example:
+     * app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
+     * <p>To find the ARN for an Application Load Balancer, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
+     * API operation. To find the ARN for the target group, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
+     * API operation.</p>
      */
     inline const Aws::String& GetResourceLabel() const{ return m_resourceLabel; }
 
@@ -109,12 +107,20 @@ namespace Model
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
      * and there is a target group attached to the Spot Fleet request or ECS
-     * service.</p> <p>The format is
+     * service.</p> <p>You create the resource label by appending the final portion of
+     * the load balancer ARN and the final portion of the target group ARN into a
+     * single value, separated by a forward slash (/). The format is
      * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
      * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
      * is the final portion of the load balancer ARN</p> </li> <li>
      * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
-     * portion of the target group ARN.</p> </li> </ul>
+     * portion of the target group ARN.</p> </li> </ul> <p>This is an example:
+     * app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
+     * <p>To find the ARN for an Application Load Balancer, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
+     * API operation. To find the ARN for the target group, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
+     * API operation.</p>
      */
     inline bool ResourceLabelHasBeenSet() const { return m_resourceLabelHasBeenSet; }
 
@@ -122,12 +128,20 @@ namespace Model
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
      * and there is a target group attached to the Spot Fleet request or ECS
-     * service.</p> <p>The format is
+     * service.</p> <p>You create the resource label by appending the final portion of
+     * the load balancer ARN and the final portion of the target group ARN into a
+     * single value, separated by a forward slash (/). The format is
      * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
      * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
      * is the final portion of the load balancer ARN</p> </li> <li>
      * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
-     * portion of the target group ARN.</p> </li> </ul>
+     * portion of the target group ARN.</p> </li> </ul> <p>This is an example:
+     * app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
+     * <p>To find the ARN for an Application Load Balancer, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
+     * API operation. To find the ARN for the target group, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
+     * API operation.</p>
      */
     inline void SetResourceLabel(const Aws::String& value) { m_resourceLabelHasBeenSet = true; m_resourceLabel = value; }
 
@@ -135,12 +149,20 @@ namespace Model
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
      * and there is a target group attached to the Spot Fleet request or ECS
-     * service.</p> <p>The format is
+     * service.</p> <p>You create the resource label by appending the final portion of
+     * the load balancer ARN and the final portion of the target group ARN into a
+     * single value, separated by a forward slash (/). The format is
      * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
      * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
      * is the final portion of the load balancer ARN</p> </li> <li>
      * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
-     * portion of the target group ARN.</p> </li> </ul>
+     * portion of the target group ARN.</p> </li> </ul> <p>This is an example:
+     * app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
+     * <p>To find the ARN for an Application Load Balancer, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
+     * API operation. To find the ARN for the target group, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
+     * API operation.</p>
      */
     inline void SetResourceLabel(Aws::String&& value) { m_resourceLabelHasBeenSet = true; m_resourceLabel = std::move(value); }
 
@@ -148,12 +170,20 @@ namespace Model
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
      * and there is a target group attached to the Spot Fleet request or ECS
-     * service.</p> <p>The format is
+     * service.</p> <p>You create the resource label by appending the final portion of
+     * the load balancer ARN and the final portion of the target group ARN into a
+     * single value, separated by a forward slash (/). The format is
      * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
      * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
      * is the final portion of the load balancer ARN</p> </li> <li>
      * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
-     * portion of the target group ARN.</p> </li> </ul>
+     * portion of the target group ARN.</p> </li> </ul> <p>This is an example:
+     * app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
+     * <p>To find the ARN for an Application Load Balancer, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
+     * API operation. To find the ARN for the target group, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
+     * API operation.</p>
      */
     inline void SetResourceLabel(const char* value) { m_resourceLabelHasBeenSet = true; m_resourceLabel.assign(value); }
 
@@ -161,12 +191,20 @@ namespace Model
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
      * and there is a target group attached to the Spot Fleet request or ECS
-     * service.</p> <p>The format is
+     * service.</p> <p>You create the resource label by appending the final portion of
+     * the load balancer ARN and the final portion of the target group ARN into a
+     * single value, separated by a forward slash (/). The format is
      * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
      * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
      * is the final portion of the load balancer ARN</p> </li> <li>
      * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
-     * portion of the target group ARN.</p> </li> </ul>
+     * portion of the target group ARN.</p> </li> </ul> <p>This is an example:
+     * app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
+     * <p>To find the ARN for an Application Load Balancer, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
+     * API operation. To find the ARN for the target group, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
+     * API operation.</p>
      */
     inline PredefinedMetricSpecification& WithResourceLabel(const Aws::String& value) { SetResourceLabel(value); return *this;}
 
@@ -174,12 +212,20 @@ namespace Model
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
      * and there is a target group attached to the Spot Fleet request or ECS
-     * service.</p> <p>The format is
+     * service.</p> <p>You create the resource label by appending the final portion of
+     * the load balancer ARN and the final portion of the target group ARN into a
+     * single value, separated by a forward slash (/). The format is
      * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
      * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
      * is the final portion of the load balancer ARN</p> </li> <li>
      * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
-     * portion of the target group ARN.</p> </li> </ul>
+     * portion of the target group ARN.</p> </li> </ul> <p>This is an example:
+     * app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
+     * <p>To find the ARN for an Application Load Balancer, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
+     * API operation. To find the ARN for the target group, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
+     * API operation.</p>
      */
     inline PredefinedMetricSpecification& WithResourceLabel(Aws::String&& value) { SetResourceLabel(std::move(value)); return *this;}
 
@@ -187,12 +233,20 @@ namespace Model
      * <p>Identifies the resource associated with the metric type. You can't specify a
      * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
      * and there is a target group attached to the Spot Fleet request or ECS
-     * service.</p> <p>The format is
+     * service.</p> <p>You create the resource label by appending the final portion of
+     * the load balancer ARN and the final portion of the target group ARN into a
+     * single value, separated by a forward slash (/). The format is
      * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
      * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
      * is the final portion of the load balancer ARN</p> </li> <li>
      * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
-     * portion of the target group ARN.</p> </li> </ul>
+     * portion of the target group ARN.</p> </li> </ul> <p>This is an example:
+     * app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
+     * <p>To find the ARN for an Application Load Balancer, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
+     * API operation. To find the ARN for the target group, use the <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
+     * API operation.</p>
      */
     inline PredefinedMetricSpecification& WithResourceLabel(const char* value) { SetResourceLabel(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
@@ -100,27 +90,27 @@ namespace Model
         class UntagResourceRequest;
         class UpdateIdentityPoolRequest;
 
-        typedef Aws::Utils::Outcome<CreateIdentityPoolResult, Aws::Client::AWSError<CognitoIdentityErrors>> CreateIdentityPoolOutcome;
-        typedef Aws::Utils::Outcome<DeleteIdentitiesResult, Aws::Client::AWSError<CognitoIdentityErrors>> DeleteIdentitiesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityErrors>> DeleteIdentityPoolOutcome;
-        typedef Aws::Utils::Outcome<DescribeIdentityResult, Aws::Client::AWSError<CognitoIdentityErrors>> DescribeIdentityOutcome;
-        typedef Aws::Utils::Outcome<DescribeIdentityPoolResult, Aws::Client::AWSError<CognitoIdentityErrors>> DescribeIdentityPoolOutcome;
-        typedef Aws::Utils::Outcome<GetCredentialsForIdentityResult, Aws::Client::AWSError<CognitoIdentityErrors>> GetCredentialsForIdentityOutcome;
-        typedef Aws::Utils::Outcome<GetIdResult, Aws::Client::AWSError<CognitoIdentityErrors>> GetIdOutcome;
-        typedef Aws::Utils::Outcome<GetIdentityPoolRolesResult, Aws::Client::AWSError<CognitoIdentityErrors>> GetIdentityPoolRolesOutcome;
-        typedef Aws::Utils::Outcome<GetOpenIdTokenResult, Aws::Client::AWSError<CognitoIdentityErrors>> GetOpenIdTokenOutcome;
-        typedef Aws::Utils::Outcome<GetOpenIdTokenForDeveloperIdentityResult, Aws::Client::AWSError<CognitoIdentityErrors>> GetOpenIdTokenForDeveloperIdentityOutcome;
-        typedef Aws::Utils::Outcome<ListIdentitiesResult, Aws::Client::AWSError<CognitoIdentityErrors>> ListIdentitiesOutcome;
-        typedef Aws::Utils::Outcome<ListIdentityPoolsResult, Aws::Client::AWSError<CognitoIdentityErrors>> ListIdentityPoolsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<CognitoIdentityErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<LookupDeveloperIdentityResult, Aws::Client::AWSError<CognitoIdentityErrors>> LookupDeveloperIdentityOutcome;
-        typedef Aws::Utils::Outcome<MergeDeveloperIdentitiesResult, Aws::Client::AWSError<CognitoIdentityErrors>> MergeDeveloperIdentitiesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityErrors>> SetIdentityPoolRolesOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<CognitoIdentityErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityErrors>> UnlinkDeveloperIdentityOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityErrors>> UnlinkIdentityOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<CognitoIdentityErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateIdentityPoolResult, Aws::Client::AWSError<CognitoIdentityErrors>> UpdateIdentityPoolOutcome;
+        typedef Aws::Utils::Outcome<CreateIdentityPoolResult, CognitoIdentityError> CreateIdentityPoolOutcome;
+        typedef Aws::Utils::Outcome<DeleteIdentitiesResult, CognitoIdentityError> DeleteIdentitiesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityError> DeleteIdentityPoolOutcome;
+        typedef Aws::Utils::Outcome<DescribeIdentityResult, CognitoIdentityError> DescribeIdentityOutcome;
+        typedef Aws::Utils::Outcome<DescribeIdentityPoolResult, CognitoIdentityError> DescribeIdentityPoolOutcome;
+        typedef Aws::Utils::Outcome<GetCredentialsForIdentityResult, CognitoIdentityError> GetCredentialsForIdentityOutcome;
+        typedef Aws::Utils::Outcome<GetIdResult, CognitoIdentityError> GetIdOutcome;
+        typedef Aws::Utils::Outcome<GetIdentityPoolRolesResult, CognitoIdentityError> GetIdentityPoolRolesOutcome;
+        typedef Aws::Utils::Outcome<GetOpenIdTokenResult, CognitoIdentityError> GetOpenIdTokenOutcome;
+        typedef Aws::Utils::Outcome<GetOpenIdTokenForDeveloperIdentityResult, CognitoIdentityError> GetOpenIdTokenForDeveloperIdentityOutcome;
+        typedef Aws::Utils::Outcome<ListIdentitiesResult, CognitoIdentityError> ListIdentitiesOutcome;
+        typedef Aws::Utils::Outcome<ListIdentityPoolsResult, CognitoIdentityError> ListIdentityPoolsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CognitoIdentityError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<LookupDeveloperIdentityResult, CognitoIdentityError> LookupDeveloperIdentityOutcome;
+        typedef Aws::Utils::Outcome<MergeDeveloperIdentitiesResult, CognitoIdentityError> MergeDeveloperIdentitiesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityError> SetIdentityPoolRolesOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, CognitoIdentityError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityError> UnlinkDeveloperIdentityOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityError> UnlinkIdentityOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, CognitoIdentityError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateIdentityPoolResult, CognitoIdentityError> UpdateIdentityPoolOutcome;
 
         typedef std::future<CreateIdentityPoolOutcome> CreateIdentityPoolOutcomeCallable;
         typedef std::future<DeleteIdentitiesOutcome> DeleteIdentitiesOutcomeCallable;
@@ -212,8 +202,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CognitoIdentityClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "Cognito Identity"; }
 
 
         /**

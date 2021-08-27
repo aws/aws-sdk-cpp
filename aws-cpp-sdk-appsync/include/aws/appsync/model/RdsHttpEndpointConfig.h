@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appsync/AppSync_EXPORTS.h>
@@ -89,42 +79,42 @@ namespace Model
 
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster ARN.</p>
      */
     inline const Aws::String& GetDbClusterIdentifier() const{ return m_dbClusterIdentifier; }
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster ARN.</p>
      */
     inline bool DbClusterIdentifierHasBeenSet() const { return m_dbClusterIdentifierHasBeenSet; }
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster ARN.</p>
      */
     inline void SetDbClusterIdentifier(const Aws::String& value) { m_dbClusterIdentifierHasBeenSet = true; m_dbClusterIdentifier = value; }
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster ARN.</p>
      */
     inline void SetDbClusterIdentifier(Aws::String&& value) { m_dbClusterIdentifierHasBeenSet = true; m_dbClusterIdentifier = std::move(value); }
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster ARN.</p>
      */
     inline void SetDbClusterIdentifier(const char* value) { m_dbClusterIdentifierHasBeenSet = true; m_dbClusterIdentifier.assign(value); }
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster ARN.</p>
      */
     inline RdsHttpEndpointConfig& WithDbClusterIdentifier(const Aws::String& value) { SetDbClusterIdentifier(value); return *this;}
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster ARN.</p>
      */
     inline RdsHttpEndpointConfig& WithDbClusterIdentifier(Aws::String&& value) { SetDbClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster ARN.</p>
      */
     inline RdsHttpEndpointConfig& WithDbClusterIdentifier(const char* value) { SetDbClusterIdentifier(value); return *this;}
 

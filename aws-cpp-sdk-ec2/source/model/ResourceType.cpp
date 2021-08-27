@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/ResourceType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -34,18 +24,27 @@ namespace Aws
         static const int customer_gateway_HASH = HashingUtils::HashString("customer-gateway");
         static const int dedicated_host_HASH = HashingUtils::HashString("dedicated-host");
         static const int dhcp_options_HASH = HashingUtils::HashString("dhcp-options");
+        static const int egress_only_internet_gateway_HASH = HashingUtils::HashString("egress-only-internet-gateway");
         static const int elastic_ip_HASH = HashingUtils::HashString("elastic-ip");
+        static const int elastic_gpu_HASH = HashingUtils::HashString("elastic-gpu");
+        static const int export_image_task_HASH = HashingUtils::HashString("export-image-task");
+        static const int export_instance_task_HASH = HashingUtils::HashString("export-instance-task");
         static const int fleet_HASH = HashingUtils::HashString("fleet");
         static const int fpga_image_HASH = HashingUtils::HashString("fpga-image");
         static const int host_reservation_HASH = HashingUtils::HashString("host-reservation");
         static const int image_HASH = HashingUtils::HashString("image");
+        static const int import_image_task_HASH = HashingUtils::HashString("import-image-task");
+        static const int import_snapshot_task_HASH = HashingUtils::HashString("import-snapshot-task");
         static const int instance_HASH = HashingUtils::HashString("instance");
         static const int internet_gateway_HASH = HashingUtils::HashString("internet-gateway");
         static const int key_pair_HASH = HashingUtils::HashString("key-pair");
         static const int launch_template_HASH = HashingUtils::HashString("launch-template");
+        static const int local_gateway_route_table_vpc_association_HASH = HashingUtils::HashString("local-gateway-route-table-vpc-association");
         static const int natgateway_HASH = HashingUtils::HashString("natgateway");
         static const int network_acl_HASH = HashingUtils::HashString("network-acl");
         static const int network_interface_HASH = HashingUtils::HashString("network-interface");
+        static const int network_insights_analysis_HASH = HashingUtils::HashString("network-insights-analysis");
+        static const int network_insights_path_HASH = HashingUtils::HashString("network-insights-path");
         static const int placement_group_HASH = HashingUtils::HashString("placement-group");
         static const int reserved_instances_HASH = HashingUtils::HashString("reserved-instances");
         static const int route_table_HASH = HashingUtils::HashString("route-table");
@@ -59,6 +58,7 @@ namespace Aws
         static const int traffic_mirror_target_HASH = HashingUtils::HashString("traffic-mirror-target");
         static const int transit_gateway_HASH = HashingUtils::HashString("transit-gateway");
         static const int transit_gateway_attachment_HASH = HashingUtils::HashString("transit-gateway-attachment");
+        static const int transit_gateway_connect_peer_HASH = HashingUtils::HashString("transit-gateway-connect-peer");
         static const int transit_gateway_multicast_domain_HASH = HashingUtils::HashString("transit-gateway-multicast-domain");
         static const int transit_gateway_route_table_HASH = HashingUtils::HashString("transit-gateway-route-table");
         static const int volume_HASH = HashingUtils::HashString("volume");
@@ -88,9 +88,25 @@ namespace Aws
           {
             return ResourceType::dhcp_options;
           }
+          else if (hashCode == egress_only_internet_gateway_HASH)
+          {
+            return ResourceType::egress_only_internet_gateway;
+          }
           else if (hashCode == elastic_ip_HASH)
           {
             return ResourceType::elastic_ip;
+          }
+          else if (hashCode == elastic_gpu_HASH)
+          {
+            return ResourceType::elastic_gpu;
+          }
+          else if (hashCode == export_image_task_HASH)
+          {
+            return ResourceType::export_image_task;
+          }
+          else if (hashCode == export_instance_task_HASH)
+          {
+            return ResourceType::export_instance_task;
           }
           else if (hashCode == fleet_HASH)
           {
@@ -108,6 +124,14 @@ namespace Aws
           {
             return ResourceType::image;
           }
+          else if (hashCode == import_image_task_HASH)
+          {
+            return ResourceType::import_image_task;
+          }
+          else if (hashCode == import_snapshot_task_HASH)
+          {
+            return ResourceType::import_snapshot_task;
+          }
           else if (hashCode == instance_HASH)
           {
             return ResourceType::instance;
@@ -124,6 +148,10 @@ namespace Aws
           {
             return ResourceType::launch_template;
           }
+          else if (hashCode == local_gateway_route_table_vpc_association_HASH)
+          {
+            return ResourceType::local_gateway_route_table_vpc_association;
+          }
           else if (hashCode == natgateway_HASH)
           {
             return ResourceType::natgateway;
@@ -135,6 +163,14 @@ namespace Aws
           else if (hashCode == network_interface_HASH)
           {
             return ResourceType::network_interface;
+          }
+          else if (hashCode == network_insights_analysis_HASH)
+          {
+            return ResourceType::network_insights_analysis;
+          }
+          else if (hashCode == network_insights_path_HASH)
+          {
+            return ResourceType::network_insights_path;
           }
           else if (hashCode == placement_group_HASH)
           {
@@ -187,6 +223,10 @@ namespace Aws
           else if (hashCode == transit_gateway_attachment_HASH)
           {
             return ResourceType::transit_gateway_attachment;
+          }
+          else if (hashCode == transit_gateway_connect_peer_HASH)
+          {
+            return ResourceType::transit_gateway_connect_peer;
           }
           else if (hashCode == transit_gateway_multicast_domain_HASH)
           {
@@ -242,8 +282,16 @@ namespace Aws
             return "dedicated-host";
           case ResourceType::dhcp_options:
             return "dhcp-options";
+          case ResourceType::egress_only_internet_gateway:
+            return "egress-only-internet-gateway";
           case ResourceType::elastic_ip:
             return "elastic-ip";
+          case ResourceType::elastic_gpu:
+            return "elastic-gpu";
+          case ResourceType::export_image_task:
+            return "export-image-task";
+          case ResourceType::export_instance_task:
+            return "export-instance-task";
           case ResourceType::fleet:
             return "fleet";
           case ResourceType::fpga_image:
@@ -252,6 +300,10 @@ namespace Aws
             return "host-reservation";
           case ResourceType::image:
             return "image";
+          case ResourceType::import_image_task:
+            return "import-image-task";
+          case ResourceType::import_snapshot_task:
+            return "import-snapshot-task";
           case ResourceType::instance:
             return "instance";
           case ResourceType::internet_gateway:
@@ -260,12 +312,18 @@ namespace Aws
             return "key-pair";
           case ResourceType::launch_template:
             return "launch-template";
+          case ResourceType::local_gateway_route_table_vpc_association:
+            return "local-gateway-route-table-vpc-association";
           case ResourceType::natgateway:
             return "natgateway";
           case ResourceType::network_acl:
             return "network-acl";
           case ResourceType::network_interface:
             return "network-interface";
+          case ResourceType::network_insights_analysis:
+            return "network-insights-analysis";
+          case ResourceType::network_insights_path:
+            return "network-insights-path";
           case ResourceType::placement_group:
             return "placement-group";
           case ResourceType::reserved_instances:
@@ -292,6 +350,8 @@ namespace Aws
             return "transit-gateway";
           case ResourceType::transit_gateway_attachment:
             return "transit-gateway-attachment";
+          case ResourceType::transit_gateway_connect_peer:
+            return "transit-gateway-connect-peer";
           case ResourceType::transit_gateway_multicast_domain:
             return "transit-gateway-multicast-domain";
           case ResourceType::transit_gateway_route_table:

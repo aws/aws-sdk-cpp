@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/acm-pca/model/KeyAlgorithm.h>
 #include <aws/acm-pca/model/SigningAlgorithm.h>
 #include <aws/acm-pca/model/ASN1Subject.h>
+#include <aws/acm-pca/model/CsrExtensions.h>
 #include <utility>
 
 namespace Aws
@@ -40,8 +31,9 @@ namespace Model
    * (CA). This includes information about the class of public key algorithm and the
    * key pair that your private CA creates when it issues a certificate. It also
    * includes the signature algorithm that it uses when issuing certificates, and its
-   * X.500 distinguished name. You must specify this information when you call the
-   * <a>CreateCertificateAuthority</a> action. </p><p><h3>See Also:</h3>   <a
+   * X.500 distinguished name. You must specify this information when you call the <a
+   * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
+   * action. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CertificateAuthorityConfiguration">AWS
    * API Reference</a></p>
    */
@@ -99,31 +91,43 @@ namespace Model
 
     /**
      * <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
+     * <p>This parameter should not be confused with the <code>SigningAlgorithm</code>
+     * parameter used to sign certificates when they are issued.</p>
      */
     inline const SigningAlgorithm& GetSigningAlgorithm() const{ return m_signingAlgorithm; }
 
     /**
      * <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
+     * <p>This parameter should not be confused with the <code>SigningAlgorithm</code>
+     * parameter used to sign certificates when they are issued.</p>
      */
     inline bool SigningAlgorithmHasBeenSet() const { return m_signingAlgorithmHasBeenSet; }
 
     /**
      * <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
+     * <p>This parameter should not be confused with the <code>SigningAlgorithm</code>
+     * parameter used to sign certificates when they are issued.</p>
      */
     inline void SetSigningAlgorithm(const SigningAlgorithm& value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = value; }
 
     /**
      * <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
+     * <p>This parameter should not be confused with the <code>SigningAlgorithm</code>
+     * parameter used to sign certificates when they are issued.</p>
      */
     inline void SetSigningAlgorithm(SigningAlgorithm&& value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = std::move(value); }
 
     /**
      * <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
+     * <p>This parameter should not be confused with the <code>SigningAlgorithm</code>
+     * parameter used to sign certificates when they are issued.</p>
      */
     inline CertificateAuthorityConfiguration& WithSigningAlgorithm(const SigningAlgorithm& value) { SetSigningAlgorithm(value); return *this;}
 
     /**
      * <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
+     * <p>This parameter should not be confused with the <code>SigningAlgorithm</code>
+     * parameter used to sign certificates when they are issued.</p>
      */
     inline CertificateAuthorityConfiguration& WithSigningAlgorithm(SigningAlgorithm&& value) { SetSigningAlgorithm(std::move(value)); return *this;}
 
@@ -164,6 +168,43 @@ namespace Model
      */
     inline CertificateAuthorityConfiguration& WithSubject(ASN1Subject&& value) { SetSubject(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies information to be added to the extension section of the certificate
+     * signing request (CSR).</p>
+     */
+    inline const CsrExtensions& GetCsrExtensions() const{ return m_csrExtensions; }
+
+    /**
+     * <p>Specifies information to be added to the extension section of the certificate
+     * signing request (CSR).</p>
+     */
+    inline bool CsrExtensionsHasBeenSet() const { return m_csrExtensionsHasBeenSet; }
+
+    /**
+     * <p>Specifies information to be added to the extension section of the certificate
+     * signing request (CSR).</p>
+     */
+    inline void SetCsrExtensions(const CsrExtensions& value) { m_csrExtensionsHasBeenSet = true; m_csrExtensions = value; }
+
+    /**
+     * <p>Specifies information to be added to the extension section of the certificate
+     * signing request (CSR).</p>
+     */
+    inline void SetCsrExtensions(CsrExtensions&& value) { m_csrExtensionsHasBeenSet = true; m_csrExtensions = std::move(value); }
+
+    /**
+     * <p>Specifies information to be added to the extension section of the certificate
+     * signing request (CSR).</p>
+     */
+    inline CertificateAuthorityConfiguration& WithCsrExtensions(const CsrExtensions& value) { SetCsrExtensions(value); return *this;}
+
+    /**
+     * <p>Specifies information to be added to the extension section of the certificate
+     * signing request (CSR).</p>
+     */
+    inline CertificateAuthorityConfiguration& WithCsrExtensions(CsrExtensions&& value) { SetCsrExtensions(std::move(value)); return *this;}
+
   private:
 
     KeyAlgorithm m_keyAlgorithm;
@@ -174,6 +215,9 @@ namespace Model
 
     ASN1Subject m_subject;
     bool m_subjectHasBeenSet;
+
+    CsrExtensions m_csrExtensions;
+    bool m_csrExtensionsHasBeenSet;
   };
 
 } // namespace Model

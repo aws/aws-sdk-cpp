@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ce/model/MatchOption.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -31,6 +21,7 @@ namespace Aws
       {
 
         static const int EQUALS_HASH = HashingUtils::HashString("EQUALS");
+        static const int ABSENT_HASH = HashingUtils::HashString("ABSENT");
         static const int STARTS_WITH_HASH = HashingUtils::HashString("STARTS_WITH");
         static const int ENDS_WITH_HASH = HashingUtils::HashString("ENDS_WITH");
         static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
@@ -44,6 +35,10 @@ namespace Aws
           if (hashCode == EQUALS_HASH)
           {
             return MatchOption::EQUALS;
+          }
+          else if (hashCode == ABSENT_HASH)
+          {
+            return MatchOption::ABSENT;
           }
           else if (hashCode == STARTS_WITH_HASH)
           {
@@ -81,6 +76,8 @@ namespace Aws
           {
           case MatchOption::EQUALS:
             return "EQUALS";
+          case MatchOption::ABSENT:
+            return "ABSENT";
           case MatchOption::STARTS_WITH:
             return "STARTS_WITH";
           case MatchOption::ENDS_WITH:

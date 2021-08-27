@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elastic-inference/ElasticInference_EXPORTS.h>
@@ -73,12 +63,12 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
 
-        typedef Aws::Utils::Outcome<DescribeAcceleratorOfferingsResult, Aws::Client::AWSError<ElasticInferenceErrors>> DescribeAcceleratorOfferingsOutcome;
-        typedef Aws::Utils::Outcome<DescribeAcceleratorTypesResult, Aws::Client::AWSError<ElasticInferenceErrors>> DescribeAcceleratorTypesOutcome;
-        typedef Aws::Utils::Outcome<DescribeAcceleratorsResult, Aws::Client::AWSError<ElasticInferenceErrors>> DescribeAcceleratorsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<ElasticInferenceErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<ElasticInferenceErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<ElasticInferenceErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<DescribeAcceleratorOfferingsResult, ElasticInferenceError> DescribeAcceleratorOfferingsOutcome;
+        typedef Aws::Utils::Outcome<DescribeAcceleratorTypesResult, ElasticInferenceError> DescribeAcceleratorTypesOutcome;
+        typedef Aws::Utils::Outcome<DescribeAcceleratorsResult, ElasticInferenceError> DescribeAcceleratorsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ElasticInferenceError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, ElasticInferenceError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, ElasticInferenceError> UntagResourceOutcome;
 
         typedef std::future<DescribeAcceleratorOfferingsOutcome> DescribeAcceleratorOfferingsOutcomeCallable;
         typedef std::future<DescribeAcceleratorTypesOutcome> DescribeAcceleratorTypesOutcomeCallable;
@@ -125,8 +115,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~ElasticInferenceClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "Elastic Inference"; }
 
 
         /**

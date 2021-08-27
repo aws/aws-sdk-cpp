@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
@@ -23,6 +13,7 @@
 #include <aws/transcribestreaming/model/MediaEncoding.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/transcribestreaming/model/AudioStream.h>
+#include <aws/transcribestreaming/model/VocabularyFilterMethod.h>
 #include <utility>
 
 namespace Aws
@@ -130,32 +121,32 @@ namespace Model
 
 
     /**
-     * <p>The encoding used for the input audio. </p>
+     * <p>The encoding used for the input audio.</p>
      */
     inline const MediaEncoding& GetMediaEncoding() const{ return m_mediaEncoding; }
 
     /**
-     * <p>The encoding used for the input audio. </p>
+     * <p>The encoding used for the input audio.</p>
      */
     inline bool MediaEncodingHasBeenSet() const { return m_mediaEncodingHasBeenSet; }
 
     /**
-     * <p>The encoding used for the input audio. </p>
+     * <p>The encoding used for the input audio.</p>
      */
     inline void SetMediaEncoding(const MediaEncoding& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = value; }
 
     /**
-     * <p>The encoding used for the input audio. </p>
+     * <p>The encoding used for the input audio.</p>
      */
     inline void SetMediaEncoding(MediaEncoding&& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = std::move(value); }
 
     /**
-     * <p>The encoding used for the input audio. </p>
+     * <p>The encoding used for the input audio.</p>
      */
     inline StartStreamTranscriptionRequest& WithMediaEncoding(const MediaEncoding& value) { SetMediaEncoding(value); return *this;}
 
     /**
-     * <p>The encoding used for the input audio. </p>
+     * <p>The encoding used for the input audio.</p>
      */
     inline StartStreamTranscriptionRequest& WithMediaEncoding(MediaEncoding&& value) { SetMediaEncoding(std::move(value)); return *this;}
 
@@ -276,6 +267,207 @@ namespace Model
      */
     StartStreamTranscriptionRequest& WithAudioStream(const std::shared_ptr<AudioStream>& value) { SetAudioStream(value); return *this;}
 
+
+    /**
+     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * account. Provide the name in this field to successfully use it in a stream.</p>
+     */
+    inline const Aws::String& GetVocabularyFilterName() const{ return m_vocabularyFilterName; }
+
+    /**
+     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * account. Provide the name in this field to successfully use it in a stream.</p>
+     */
+    inline bool VocabularyFilterNameHasBeenSet() const { return m_vocabularyFilterNameHasBeenSet; }
+
+    /**
+     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * account. Provide the name in this field to successfully use it in a stream.</p>
+     */
+    inline void SetVocabularyFilterName(const Aws::String& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = value; }
+
+    /**
+     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * account. Provide the name in this field to successfully use it in a stream.</p>
+     */
+    inline void SetVocabularyFilterName(Aws::String&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::move(value); }
+
+    /**
+     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * account. Provide the name in this field to successfully use it in a stream.</p>
+     */
+    inline void SetVocabularyFilterName(const char* value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName.assign(value); }
+
+    /**
+     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * account. Provide the name in this field to successfully use it in a stream.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithVocabularyFilterName(const Aws::String& value) { SetVocabularyFilterName(value); return *this;}
+
+    /**
+     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * account. Provide the name in this field to successfully use it in a stream.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithVocabularyFilterName(Aws::String&& value) { SetVocabularyFilterName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * account. Provide the name in this field to successfully use it in a stream.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithVocabularyFilterName(const char* value) { SetVocabularyFilterName(value); return *this;}
+
+
+    /**
+     * <p>The manner in which you use your vocabulary filter to filter words in your
+     * transcript. <code>Remove</code> removes filtered words from your transcription
+     * results. <code>Mask</code> masks those words with a <code>***</code> in your
+     * transcription results. <code>Tag</code> keeps the filtered words in your
+     * transcription results and tags them. The tag appears as
+     * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
+     */
+    inline const VocabularyFilterMethod& GetVocabularyFilterMethod() const{ return m_vocabularyFilterMethod; }
+
+    /**
+     * <p>The manner in which you use your vocabulary filter to filter words in your
+     * transcript. <code>Remove</code> removes filtered words from your transcription
+     * results. <code>Mask</code> masks those words with a <code>***</code> in your
+     * transcription results. <code>Tag</code> keeps the filtered words in your
+     * transcription results and tags them. The tag appears as
+     * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
+     */
+    inline bool VocabularyFilterMethodHasBeenSet() const { return m_vocabularyFilterMethodHasBeenSet; }
+
+    /**
+     * <p>The manner in which you use your vocabulary filter to filter words in your
+     * transcript. <code>Remove</code> removes filtered words from your transcription
+     * results. <code>Mask</code> masks those words with a <code>***</code> in your
+     * transcription results. <code>Tag</code> keeps the filtered words in your
+     * transcription results and tags them. The tag appears as
+     * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
+     */
+    inline void SetVocabularyFilterMethod(const VocabularyFilterMethod& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = value; }
+
+    /**
+     * <p>The manner in which you use your vocabulary filter to filter words in your
+     * transcript. <code>Remove</code> removes filtered words from your transcription
+     * results. <code>Mask</code> masks those words with a <code>***</code> in your
+     * transcription results. <code>Tag</code> keeps the filtered words in your
+     * transcription results and tags them. The tag appears as
+     * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
+     */
+    inline void SetVocabularyFilterMethod(VocabularyFilterMethod&& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = std::move(value); }
+
+    /**
+     * <p>The manner in which you use your vocabulary filter to filter words in your
+     * transcript. <code>Remove</code> removes filtered words from your transcription
+     * results. <code>Mask</code> masks those words with a <code>***</code> in your
+     * transcription results. <code>Tag</code> keeps the filtered words in your
+     * transcription results and tags them. The tag appears as
+     * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
+     */
+    inline StartStreamTranscriptionRequest& WithVocabularyFilterMethod(const VocabularyFilterMethod& value) { SetVocabularyFilterMethod(value); return *this;}
+
+    /**
+     * <p>The manner in which you use your vocabulary filter to filter words in your
+     * transcript. <code>Remove</code> removes filtered words from your transcription
+     * results. <code>Mask</code> masks those words with a <code>***</code> in your
+     * transcription results. <code>Tag</code> keeps the filtered words in your
+     * transcription results and tags them. The tag appears as
+     * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
+     */
+    inline StartStreamTranscriptionRequest& WithVocabularyFilterMethod(VocabularyFilterMethod&& value) { SetVocabularyFilterMethod(std::move(value)); return *this;}
+
+
+    /**
+     * <p>When <code>true</code>, enables speaker identification in your real-time
+     * stream.</p>
+     */
+    inline bool GetShowSpeakerLabel() const{ return m_showSpeakerLabel; }
+
+    /**
+     * <p>When <code>true</code>, enables speaker identification in your real-time
+     * stream.</p>
+     */
+    inline bool ShowSpeakerLabelHasBeenSet() const { return m_showSpeakerLabelHasBeenSet; }
+
+    /**
+     * <p>When <code>true</code>, enables speaker identification in your real-time
+     * stream.</p>
+     */
+    inline void SetShowSpeakerLabel(bool value) { m_showSpeakerLabelHasBeenSet = true; m_showSpeakerLabel = value; }
+
+    /**
+     * <p>When <code>true</code>, enables speaker identification in your real-time
+     * stream.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithShowSpeakerLabel(bool value) { SetShowSpeakerLabel(value); return *this;}
+
+
+    /**
+     * <p>When <code>true</code>, instructs Amazon Transcribe to process each audio
+     * channel separately and then merge the transcription output of each channel into
+     * a single transcription.</p> <p>Amazon Transcribe also produces a transcription
+     * of each item. An item includes the start time, end time, and any alternative
+     * transcriptions.</p> <p>You can't set both <code>ShowSpeakerLabel</code> and
+     * <code>EnableChannelIdentification</code> in the same request. If you set both,
+     * your request returns a <code>BadRequestException</code>.</p>
+     */
+    inline bool GetEnableChannelIdentification() const{ return m_enableChannelIdentification; }
+
+    /**
+     * <p>When <code>true</code>, instructs Amazon Transcribe to process each audio
+     * channel separately and then merge the transcription output of each channel into
+     * a single transcription.</p> <p>Amazon Transcribe also produces a transcription
+     * of each item. An item includes the start time, end time, and any alternative
+     * transcriptions.</p> <p>You can't set both <code>ShowSpeakerLabel</code> and
+     * <code>EnableChannelIdentification</code> in the same request. If you set both,
+     * your request returns a <code>BadRequestException</code>.</p>
+     */
+    inline bool EnableChannelIdentificationHasBeenSet() const { return m_enableChannelIdentificationHasBeenSet; }
+
+    /**
+     * <p>When <code>true</code>, instructs Amazon Transcribe to process each audio
+     * channel separately and then merge the transcription output of each channel into
+     * a single transcription.</p> <p>Amazon Transcribe also produces a transcription
+     * of each item. An item includes the start time, end time, and any alternative
+     * transcriptions.</p> <p>You can't set both <code>ShowSpeakerLabel</code> and
+     * <code>EnableChannelIdentification</code> in the same request. If you set both,
+     * your request returns a <code>BadRequestException</code>.</p>
+     */
+    inline void SetEnableChannelIdentification(bool value) { m_enableChannelIdentificationHasBeenSet = true; m_enableChannelIdentification = value; }
+
+    /**
+     * <p>When <code>true</code>, instructs Amazon Transcribe to process each audio
+     * channel separately and then merge the transcription output of each channel into
+     * a single transcription.</p> <p>Amazon Transcribe also produces a transcription
+     * of each item. An item includes the start time, end time, and any alternative
+     * transcriptions.</p> <p>You can't set both <code>ShowSpeakerLabel</code> and
+     * <code>EnableChannelIdentification</code> in the same request. If you set both,
+     * your request returns a <code>BadRequestException</code>.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithEnableChannelIdentification(bool value) { SetEnableChannelIdentification(value); return *this;}
+
+
+    /**
+     * <p>The number of channels that are in your audio stream.</p>
+     */
+    inline int GetNumberOfChannels() const{ return m_numberOfChannels; }
+
+    /**
+     * <p>The number of channels that are in your audio stream.</p>
+     */
+    inline bool NumberOfChannelsHasBeenSet() const { return m_numberOfChannelsHasBeenSet; }
+
+    /**
+     * <p>The number of channels that are in your audio stream.</p>
+     */
+    inline void SetNumberOfChannels(int value) { m_numberOfChannelsHasBeenSet = true; m_numberOfChannels = value; }
+
+    /**
+     * <p>The number of channels that are in your audio stream.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithNumberOfChannels(int value) { SetNumberOfChannels(value); return *this;}
+
   private:
 
     LanguageCode m_languageCode;
@@ -294,6 +486,21 @@ namespace Model
     bool m_sessionIdHasBeenSet;
 
     std::shared_ptr<AudioStream> m_audioStream;
+
+    Aws::String m_vocabularyFilterName;
+    bool m_vocabularyFilterNameHasBeenSet;
+
+    VocabularyFilterMethod m_vocabularyFilterMethod;
+    bool m_vocabularyFilterMethodHasBeenSet;
+
+    bool m_showSpeakerLabel;
+    bool m_showSpeakerLabelHasBeenSet;
+
+    bool m_enableChannelIdentification;
+    bool m_enableChannelIdentificationHasBeenSet;
+
+    int m_numberOfChannels;
+    bool m_numberOfChannelsHasBeenSet;
     Aws::Utils::Event::EventStreamDecoder m_decoder;
     StartStreamTranscriptionHandler m_handler;
 

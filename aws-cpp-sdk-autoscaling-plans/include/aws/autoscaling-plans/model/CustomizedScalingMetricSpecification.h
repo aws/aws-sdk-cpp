@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling-plans/AutoScalingPlans_EXPORTS.h>
@@ -48,9 +38,11 @@ namespace Model
    * <p>Choose a metric that changes proportionally with capacity. The value of the
    * metric should increase or decrease in inverse proportion to the number of
    * capacity units. That is, the value of the metric should decrease when capacity
-   * increases. </p> </li> </ul> <p>For more information about CloudWatch, see <a
+   * increases. </p> </li> </ul> <p>For information about terminology, available
+   * metrics, or how to publish new metrics, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon
-   * CloudWatch Concepts</a>. </p><p><h3>See Also:</h3>   <a
+   * CloudWatch Concepts</a> in the <i>Amazon CloudWatch User Guide</i>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/CustomizedScalingMetricSpecification">AWS
    * API Reference</a></p>
    */

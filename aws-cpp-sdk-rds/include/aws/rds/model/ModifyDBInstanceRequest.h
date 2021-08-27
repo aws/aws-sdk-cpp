@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/CloudwatchLogsExportConfiguration.h>
+#include <aws/rds/model/ReplicaMode.h>
 #include <aws/rds/model/ProcessorFeature.h>
 #include <utility>
 
@@ -260,8 +251,8 @@ namespace Model
      * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
-     * the VPC for a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>. </p> <p>Constraints: If supplied, must match the
@@ -275,8 +266,8 @@ namespace Model
      * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
-     * the VPC for a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>. </p> <p>Constraints: If supplied, must match the
@@ -290,8 +281,8 @@ namespace Model
      * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
-     * the VPC for a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>. </p> <p>Constraints: If supplied, must match the
@@ -305,8 +296,8 @@ namespace Model
      * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
-     * the VPC for a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>. </p> <p>Constraints: If supplied, must match the
@@ -320,8 +311,8 @@ namespace Model
      * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
-     * the VPC for a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>. </p> <p>Constraints: If supplied, must match the
@@ -335,8 +326,8 @@ namespace Model
      * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
-     * the VPC for a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>. </p> <p>Constraints: If supplied, must match the
@@ -350,8 +341,8 @@ namespace Model
      * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
-     * the VPC for a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>. </p> <p>Constraints: If supplied, must match the
@@ -365,8 +356,8 @@ namespace Model
      * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
-     * the VPC for a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>. </p> <p>Constraints: If supplied, must match the
@@ -620,10 +611,10 @@ namespace Model
      * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
      * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
      * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
-     * to 128 characters.</p> <note> <p>Amazon RDS API actions never return the
+     * to 128 characters.</p>  <p>Amazon RDS API actions never return the
      * password, so this action provides a way to regain access to a primary instance
      * user if the password is lost. This includes restoring privileges that might have
-     * been accidentally revoked. </p> </note>
+     * been accidentally revoked. </p> 
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
@@ -642,10 +633,10 @@ namespace Model
      * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
      * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
      * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
-     * to 128 characters.</p> <note> <p>Amazon RDS API actions never return the
+     * to 128 characters.</p>  <p>Amazon RDS API actions never return the
      * password, so this action provides a way to regain access to a primary instance
      * user if the password is lost. This includes restoring privileges that might have
-     * been accidentally revoked. </p> </note>
+     * been accidentally revoked. </p> 
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
@@ -664,10 +655,10 @@ namespace Model
      * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
      * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
      * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
-     * to 128 characters.</p> <note> <p>Amazon RDS API actions never return the
+     * to 128 characters.</p>  <p>Amazon RDS API actions never return the
      * password, so this action provides a way to regain access to a primary instance
      * user if the password is lost. This includes restoring privileges that might have
-     * been accidentally revoked. </p> </note>
+     * been accidentally revoked. </p> 
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
@@ -686,10 +677,10 @@ namespace Model
      * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
      * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
      * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
-     * to 128 characters.</p> <note> <p>Amazon RDS API actions never return the
+     * to 128 characters.</p>  <p>Amazon RDS API actions never return the
      * password, so this action provides a way to regain access to a primary instance
      * user if the password is lost. This includes restoring privileges that might have
-     * been accidentally revoked. </p> </note>
+     * been accidentally revoked. </p> 
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
@@ -708,10 +699,10 @@ namespace Model
      * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
      * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
      * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
-     * to 128 characters.</p> <note> <p>Amazon RDS API actions never return the
+     * to 128 characters.</p>  <p>Amazon RDS API actions never return the
      * password, so this action provides a way to regain access to a primary instance
      * user if the password is lost. This includes restoring privileges that might have
-     * been accidentally revoked. </p> </note>
+     * been accidentally revoked. </p> 
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
@@ -730,10 +721,10 @@ namespace Model
      * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
      * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
      * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
-     * to 128 characters.</p> <note> <p>Amazon RDS API actions never return the
+     * to 128 characters.</p>  <p>Amazon RDS API actions never return the
      * password, so this action provides a way to regain access to a primary instance
      * user if the password is lost. This includes restoring privileges that might have
-     * been accidentally revoked. </p> </note>
+     * been accidentally revoked. </p> 
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
@@ -752,10 +743,10 @@ namespace Model
      * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
      * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
      * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
-     * to 128 characters.</p> <note> <p>Amazon RDS API actions never return the
+     * to 128 characters.</p>  <p>Amazon RDS API actions never return the
      * password, so this action provides a way to regain access to a primary instance
      * user if the password is lost. This includes restoring privileges that might have
-     * been accidentally revoked. </p> </note>
+     * been accidentally revoked. </p> 
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
@@ -774,10 +765,10 @@ namespace Model
      * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
      * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
      * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
-     * to 128 characters.</p> <note> <p>Amazon RDS API actions never return the
+     * to 128 characters.</p>  <p>Amazon RDS API actions never return the
      * password, so this action provides a way to regain access to a primary instance
      * user if the password is lost. This includes restoring privileges that might have
-     * been accidentally revoked. </p> </note>
+     * been accidentally revoked. </p> 
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -1230,7 +1221,7 @@ namespace Model
     /**
      * <p> The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is eanbled
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
      * for this request. </p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
@@ -1244,7 +1235,7 @@ namespace Model
     /**
      * <p> The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is eanbled
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
      * for this request. </p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
@@ -1258,7 +1249,7 @@ namespace Model
     /**
      * <p> The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is eanbled
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
      * for this request. </p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
@@ -1272,7 +1263,7 @@ namespace Model
     /**
      * <p> The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is eanbled
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
      * for this request. </p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
@@ -1286,7 +1277,7 @@ namespace Model
     /**
      * <p> The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is eanbled
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
      * for this request. </p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
@@ -1300,7 +1291,7 @@ namespace Model
     /**
      * <p> The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is eanbled
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
      * for this request. </p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
@@ -1314,7 +1305,7 @@ namespace Model
     /**
      * <p> The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is eanbled
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
      * for this request. </p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
@@ -1328,7 +1319,7 @@ namespace Model
     /**
      * <p> The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is eanbled
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
      * for this request. </p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
@@ -2101,152 +2092,88 @@ namespace Model
     /**
      * <p>The Active Directory directory ID to move the DB instance to. Specify
      * <code>none</code> to remove the instance from its current domain. The domain
-     * must be created prior to this operation. Currently, only Microsoft SQL Server
-     * and Oracle DB instances can be created in an Active Directory Domain. </p>
-     * <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
-     * Authentication to authenticate users that connect to the DB instance. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * must be created prior to this operation. Currently, only MySQL, Microsoft SQL
+     * Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
      * <p>The Active Directory directory ID to move the DB instance to. Specify
      * <code>none</code> to remove the instance from its current domain. The domain
-     * must be created prior to this operation. Currently, only Microsoft SQL Server
-     * and Oracle DB instances can be created in an Active Directory Domain. </p>
-     * <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
-     * Authentication to authenticate users that connect to the DB instance. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * must be created prior to this operation. Currently, only MySQL, Microsoft SQL
+     * Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
      * <p>The Active Directory directory ID to move the DB instance to. Specify
      * <code>none</code> to remove the instance from its current domain. The domain
-     * must be created prior to this operation. Currently, only Microsoft SQL Server
-     * and Oracle DB instances can be created in an Active Directory Domain. </p>
-     * <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
-     * Authentication to authenticate users that connect to the DB instance. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * must be created prior to this operation. Currently, only MySQL, Microsoft SQL
+     * Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
      * <p>The Active Directory directory ID to move the DB instance to. Specify
      * <code>none</code> to remove the instance from its current domain. The domain
-     * must be created prior to this operation. Currently, only Microsoft SQL Server
-     * and Oracle DB instances can be created in an Active Directory Domain. </p>
-     * <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
-     * Authentication to authenticate users that connect to the DB instance. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * must be created prior to this operation. Currently, only MySQL, Microsoft SQL
+     * Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>The Active Directory directory ID to move the DB instance to. Specify
      * <code>none</code> to remove the instance from its current domain. The domain
-     * must be created prior to this operation. Currently, only Microsoft SQL Server
-     * and Oracle DB instances can be created in an Active Directory Domain. </p>
-     * <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
-     * Authentication to authenticate users that connect to the DB instance. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * must be created prior to this operation. Currently, only MySQL, Microsoft SQL
+     * Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
      * <p>The Active Directory directory ID to move the DB instance to. Specify
      * <code>none</code> to remove the instance from its current domain. The domain
-     * must be created prior to this operation. Currently, only Microsoft SQL Server
-     * and Oracle DB instances can be created in an Active Directory Domain. </p>
-     * <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
-     * Authentication to authenticate users that connect to the DB instance. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * must be created prior to this operation. Currently, only MySQL, Microsoft SQL
+     * Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline ModifyDBInstanceRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
      * <p>The Active Directory directory ID to move the DB instance to. Specify
      * <code>none</code> to remove the instance from its current domain. The domain
-     * must be created prior to this operation. Currently, only Microsoft SQL Server
-     * and Oracle DB instances can be created in an Active Directory Domain. </p>
-     * <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
-     * Authentication to authenticate users that connect to the DB instance. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * must be created prior to this operation. Currently, only MySQL, Microsoft SQL
+     * Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline ModifyDBInstanceRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>The Active Directory directory ID to move the DB instance to. Specify
      * <code>none</code> to remove the instance from its current domain. The domain
-     * must be created prior to this operation. Currently, only Microsoft SQL Server
-     * and Oracle DB instances can be created in an Active Directory Domain. </p>
-     * <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
-     * Authentication to authenticate users that connect to the DB instance. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * must be created prior to this operation. Currently, only MySQL, Microsoft SQL
+     * Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline ModifyDBInstanceRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
@@ -2407,58 +2334,70 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance isn't publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address. </p> <p> <code>PubliclyAccessible</code>
-     * only applies to DB instances in a VPC. The DB instance must be part of a public
-     * subnet and <code>PubliclyAccessible</code> must be enabled for it to be publicly
-     * accessible. </p> <p>Changes to the <code>PubliclyAccessible</code> parameter are
-     * applied immediately regardless of the value of the <code>ApplyImmediately</code>
-     * parameter.</p>
+     * <p>A value that indicates whether the DB instance is publicly accessible. </p>
+     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
+     * private IP address from within the DB instance's VPC, and to the public IP
+     * address from outside of the DB instance's VPC. Access to the DB instance is
+     * ultimately controlled by the security group it uses, and that public access is
+     * not permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>
+     * <code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB
+     * instance must be part of a public subnet and <code>PubliclyAccessible</code>
+     * must be enabled for it to be publicly accessible. </p> <p>Changes to the
+     * <code>PubliclyAccessible</code> parameter are applied immediately regardless of
+     * the value of the <code>ApplyImmediately</code> parameter.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance isn't publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address. </p> <p> <code>PubliclyAccessible</code>
-     * only applies to DB instances in a VPC. The DB instance must be part of a public
-     * subnet and <code>PubliclyAccessible</code> must be enabled for it to be publicly
-     * accessible. </p> <p>Changes to the <code>PubliclyAccessible</code> parameter are
-     * applied immediately regardless of the value of the <code>ApplyImmediately</code>
-     * parameter.</p>
+     * <p>A value that indicates whether the DB instance is publicly accessible. </p>
+     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
+     * private IP address from within the DB instance's VPC, and to the public IP
+     * address from outside of the DB instance's VPC. Access to the DB instance is
+     * ultimately controlled by the security group it uses, and that public access is
+     * not permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>
+     * <code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB
+     * instance must be part of a public subnet and <code>PubliclyAccessible</code>
+     * must be enabled for it to be publicly accessible. </p> <p>Changes to the
+     * <code>PubliclyAccessible</code> parameter are applied immediately regardless of
+     * the value of the <code>ApplyImmediately</code> parameter.</p>
      */
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance isn't publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address. </p> <p> <code>PubliclyAccessible</code>
-     * only applies to DB instances in a VPC. The DB instance must be part of a public
-     * subnet and <code>PubliclyAccessible</code> must be enabled for it to be publicly
-     * accessible. </p> <p>Changes to the <code>PubliclyAccessible</code> parameter are
-     * applied immediately regardless of the value of the <code>ApplyImmediately</code>
-     * parameter.</p>
+     * <p>A value that indicates whether the DB instance is publicly accessible. </p>
+     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
+     * private IP address from within the DB instance's VPC, and to the public IP
+     * address from outside of the DB instance's VPC. Access to the DB instance is
+     * ultimately controlled by the security group it uses, and that public access is
+     * not permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>
+     * <code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB
+     * instance must be part of a public subnet and <code>PubliclyAccessible</code>
+     * must be enabled for it to be publicly accessible. </p> <p>Changes to the
+     * <code>PubliclyAccessible</code> parameter are applied immediately regardless of
+     * the value of the <code>ApplyImmediately</code> parameter.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance isn't publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address. </p> <p> <code>PubliclyAccessible</code>
-     * only applies to DB instances in a VPC. The DB instance must be part of a public
-     * subnet and <code>PubliclyAccessible</code> must be enabled for it to be publicly
-     * accessible. </p> <p>Changes to the <code>PubliclyAccessible</code> parameter are
-     * applied immediately regardless of the value of the <code>ApplyImmediately</code>
-     * parameter.</p>
+     * <p>A value that indicates whether the DB instance is publicly accessible. </p>
+     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
+     * private IP address from within the DB instance's VPC, and to the public IP
+     * address from outside of the DB instance's VPC. Access to the DB instance is
+     * ultimately controlled by the security group it uses, and that public access is
+     * not permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>
+     * <code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB
+     * instance must be part of a public subnet and <code>PubliclyAccessible</code>
+     * must be enabled for it to be publicly accessible. </p> <p>Changes to the
+     * <code>PubliclyAccessible</code> parameter are applied immediately regardless of
+     * the value of the <code>ApplyImmediately</code> parameter.</p>
      */
     inline ModifyDBInstanceRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
@@ -2652,9 +2591,10 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is disabled.
-     * For information about the supported DB engines, see <a>CreateDBInstance</a>.</p>
-     * <p>For more information about IAM database authentication, see <a
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM
+     * accounts to database accounts is managed by the DB cluster.</p> <p>For more
+     * information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -2663,9 +2603,10 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is disabled.
-     * For information about the supported DB engines, see <a>CreateDBInstance</a>.</p>
-     * <p>For more information about IAM database authentication, see <a
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM
+     * accounts to database accounts is managed by the DB cluster.</p> <p>For more
+     * information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -2674,9 +2615,10 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is disabled.
-     * For information about the supported DB engines, see <a>CreateDBInstance</a>.</p>
-     * <p>For more information about IAM database authentication, see <a
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM
+     * accounts to database accounts is managed by the DB cluster.</p> <p>For more
+     * information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -2685,9 +2627,10 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is disabled.
-     * For information about the supported DB engines, see <a>CreateDBInstance</a>.</p>
-     * <p>For more information about IAM database authentication, see <a
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM
+     * accounts to database accounts is managed by the DB cluster.</p> <p>For more
+     * information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -2733,82 +2676,82 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
@@ -3033,8 +2976,8 @@ namespace Model
      * <p>A value that indicates whether the DB instance is restarted when you rotate
      * your SSL/TLS certificate.</p> <p>By default, the DB instance is restarted when
      * you rotate your SSL/TLS certificate. The certificate is not updated until the DB
-     * instance is restarted.</p> <important> <p>Set this parameter only if you are
-     * <i>not</i> using SSL/TLS to connect to the DB instance.</p> </important> <p>If
+     * instance is restarted.</p>  <p>Set this parameter only if you are
+     * <i>not</i> using SSL/TLS to connect to the DB instance.</p>  <p>If
      * you are using SSL/TLS to connect to the DB instance, follow the appropriate
      * instructions for your DB engine to rotate your SSL/TLS certificate:</p> <ul>
      * <li> <p>For more information about rotating your SSL/TLS certificate for RDS DB
@@ -3053,8 +2996,8 @@ namespace Model
      * <p>A value that indicates whether the DB instance is restarted when you rotate
      * your SSL/TLS certificate.</p> <p>By default, the DB instance is restarted when
      * you rotate your SSL/TLS certificate. The certificate is not updated until the DB
-     * instance is restarted.</p> <important> <p>Set this parameter only if you are
-     * <i>not</i> using SSL/TLS to connect to the DB instance.</p> </important> <p>If
+     * instance is restarted.</p>  <p>Set this parameter only if you are
+     * <i>not</i> using SSL/TLS to connect to the DB instance.</p>  <p>If
      * you are using SSL/TLS to connect to the DB instance, follow the appropriate
      * instructions for your DB engine to rotate your SSL/TLS certificate:</p> <ul>
      * <li> <p>For more information about rotating your SSL/TLS certificate for RDS DB
@@ -3073,8 +3016,8 @@ namespace Model
      * <p>A value that indicates whether the DB instance is restarted when you rotate
      * your SSL/TLS certificate.</p> <p>By default, the DB instance is restarted when
      * you rotate your SSL/TLS certificate. The certificate is not updated until the DB
-     * instance is restarted.</p> <important> <p>Set this parameter only if you are
-     * <i>not</i> using SSL/TLS to connect to the DB instance.</p> </important> <p>If
+     * instance is restarted.</p>  <p>Set this parameter only if you are
+     * <i>not</i> using SSL/TLS to connect to the DB instance.</p>  <p>If
      * you are using SSL/TLS to connect to the DB instance, follow the appropriate
      * instructions for your DB engine to rotate your SSL/TLS certificate:</p> <ul>
      * <li> <p>For more information about rotating your SSL/TLS certificate for RDS DB
@@ -3093,8 +3036,8 @@ namespace Model
      * <p>A value that indicates whether the DB instance is restarted when you rotate
      * your SSL/TLS certificate.</p> <p>By default, the DB instance is restarted when
      * you rotate your SSL/TLS certificate. The certificate is not updated until the DB
-     * instance is restarted.</p> <important> <p>Set this parameter only if you are
-     * <i>not</i> using SSL/TLS to connect to the DB instance.</p> </important> <p>If
+     * instance is restarted.</p>  <p>Set this parameter only if you are
+     * <i>not</i> using SSL/TLS to connect to the DB instance.</p>  <p>If
      * you are using SSL/TLS to connect to the DB instance, follow the appropriate
      * instructions for your DB engine to rotate your SSL/TLS certificate:</p> <ul>
      * <li> <p>For more information about rotating your SSL/TLS certificate for RDS DB
@@ -3108,6 +3051,158 @@ namespace Model
      * </p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithCertificateRotationRestart(bool value) { SetCertificateRotationRestart(value); return *this;}
+
+
+    /**
+     * <p>A value that sets the open mode of a replica database to either mounted or
+     * read-only.</p>  <p>Currently, this parameter is only supported for Oracle
+     * DB instances.</p>  <p>Mounted DB replicas are included in Oracle
+     * Enterprise Edition. The main use case for mounted replicas is cross-Region
+     * disaster recovery. The primary database doesn't use Active Data Guard to
+     * transmit information to the mounted replica. Because it doesn't accept user
+     * connections, a mounted replica can't serve a read-only workload. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline const ReplicaMode& GetReplicaMode() const{ return m_replicaMode; }
+
+    /**
+     * <p>A value that sets the open mode of a replica database to either mounted or
+     * read-only.</p>  <p>Currently, this parameter is only supported for Oracle
+     * DB instances.</p>  <p>Mounted DB replicas are included in Oracle
+     * Enterprise Edition. The main use case for mounted replicas is cross-Region
+     * disaster recovery. The primary database doesn't use Active Data Guard to
+     * transmit information to the mounted replica. Because it doesn't accept user
+     * connections, a mounted replica can't serve a read-only workload. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline bool ReplicaModeHasBeenSet() const { return m_replicaModeHasBeenSet; }
+
+    /**
+     * <p>A value that sets the open mode of a replica database to either mounted or
+     * read-only.</p>  <p>Currently, this parameter is only supported for Oracle
+     * DB instances.</p>  <p>Mounted DB replicas are included in Oracle
+     * Enterprise Edition. The main use case for mounted replicas is cross-Region
+     * disaster recovery. The primary database doesn't use Active Data Guard to
+     * transmit information to the mounted replica. Because it doesn't accept user
+     * connections, a mounted replica can't serve a read-only workload. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline void SetReplicaMode(const ReplicaMode& value) { m_replicaModeHasBeenSet = true; m_replicaMode = value; }
+
+    /**
+     * <p>A value that sets the open mode of a replica database to either mounted or
+     * read-only.</p>  <p>Currently, this parameter is only supported for Oracle
+     * DB instances.</p>  <p>Mounted DB replicas are included in Oracle
+     * Enterprise Edition. The main use case for mounted replicas is cross-Region
+     * disaster recovery. The primary database doesn't use Active Data Guard to
+     * transmit information to the mounted replica. Because it doesn't accept user
+     * connections, a mounted replica can't serve a read-only workload. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline void SetReplicaMode(ReplicaMode&& value) { m_replicaModeHasBeenSet = true; m_replicaMode = std::move(value); }
+
+    /**
+     * <p>A value that sets the open mode of a replica database to either mounted or
+     * read-only.</p>  <p>Currently, this parameter is only supported for Oracle
+     * DB instances.</p>  <p>Mounted DB replicas are included in Oracle
+     * Enterprise Edition. The main use case for mounted replicas is cross-Region
+     * disaster recovery. The primary database doesn't use Active Data Guard to
+     * transmit information to the mounted replica. Because it doesn't accept user
+     * connections, a mounted replica can't serve a read-only workload. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline ModifyDBInstanceRequest& WithReplicaMode(const ReplicaMode& value) { SetReplicaMode(value); return *this;}
+
+    /**
+     * <p>A value that sets the open mode of a replica database to either mounted or
+     * read-only.</p>  <p>Currently, this parameter is only supported for Oracle
+     * DB instances.</p>  <p>Mounted DB replicas are included in Oracle
+     * Enterprise Edition. The main use case for mounted replicas is cross-Region
+     * disaster recovery. The primary database doesn't use Active Data Guard to
+     * transmit information to the mounted replica. Because it doesn't accept user
+     * connections, a mounted replica can't serve a read-only workload. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline ModifyDBInstanceRequest& WithReplicaMode(ReplicaMode&& value) { SetReplicaMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
+     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
+     * external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for
+     * connections to the DB instance from outside of its virtual private cloud (VPC)
+     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     */
+    inline bool GetEnableCustomerOwnedIp() const{ return m_enableCustomerOwnedIp; }
+
+    /**
+     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
+     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
+     * external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for
+     * connections to the DB instance from outside of its virtual private cloud (VPC)
+     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     */
+    inline bool EnableCustomerOwnedIpHasBeenSet() const { return m_enableCustomerOwnedIpHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
+     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
+     * external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for
+     * connections to the DB instance from outside of its virtual private cloud (VPC)
+     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     */
+    inline void SetEnableCustomerOwnedIp(bool value) { m_enableCustomerOwnedIpHasBeenSet = true; m_enableCustomerOwnedIp = value; }
+
+    /**
+     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
+     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
+     * external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for
+     * connections to the DB instance from outside of its virtual private cloud (VPC)
+     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     */
+    inline ModifyDBInstanceRequest& WithEnableCustomerOwnedIp(bool value) { SetEnableCustomerOwnedIp(value); return *this;}
 
   private:
 
@@ -3236,6 +3331,12 @@ namespace Model
 
     bool m_certificateRotationRestart;
     bool m_certificateRotationRestartHasBeenSet;
+
+    ReplicaMode m_replicaMode;
+    bool m_replicaModeHasBeenSet;
+
+    bool m_enableCustomerOwnedIp;
+    bool m_enableCustomerOwnedIpHasBeenSet;
   };
 
 } // namespace Model

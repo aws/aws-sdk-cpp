@@ -1,22 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
-#include <aws/frauddetector/model/ModelInputDataFormat.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/frauddetector/model/ModelInputDataFormat.h>
 #include <utility>
 
 namespace Aws
@@ -35,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The model input configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>The Amazon SageMaker model input configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ModelInputConfiguration">AWS
    * API Reference</a></p>
    */
@@ -46,6 +36,47 @@ namespace Model
     ModelInputConfiguration(Aws::Utils::Json::JsonView jsonValue);
     ModelInputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline const Aws::String& GetEventTypeName() const{ return m_eventTypeName; }
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline bool EventTypeNameHasBeenSet() const { return m_eventTypeNameHasBeenSet; }
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline void SetEventTypeName(const Aws::String& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = value; }
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline void SetEventTypeName(Aws::String&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::move(value); }
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline void SetEventTypeName(const char* value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName.assign(value); }
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline ModelInputConfiguration& WithEventTypeName(const Aws::String& value) { SetEventTypeName(value); return *this;}
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline ModelInputConfiguration& WithEventTypeName(Aws::String&& value) { SetEventTypeName(std::move(value)); return *this;}
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline ModelInputConfiguration& WithEventTypeName(const char* value) { SetEventTypeName(value); return *this;}
 
 
     /**
@@ -92,36 +123,24 @@ namespace Model
 
 
     /**
-     * <p> For an opaque-model, the input to the model will be a ByteBuffer blob
-     * provided in the getPrediction request, and will be passed to SageMaker as-is.
-     * For non-opaque models, the input will be constructed by Amazon Fraud Detector
-     * based on the model-configuration. </p>
+     * <p>The event variables.</p>
      */
-    inline bool GetIsOpaque() const{ return m_isOpaque; }
+    inline bool GetUseEventVariables() const{ return m_useEventVariables; }
 
     /**
-     * <p> For an opaque-model, the input to the model will be a ByteBuffer blob
-     * provided in the getPrediction request, and will be passed to SageMaker as-is.
-     * For non-opaque models, the input will be constructed by Amazon Fraud Detector
-     * based on the model-configuration. </p>
+     * <p>The event variables.</p>
      */
-    inline bool IsOpaqueHasBeenSet() const { return m_isOpaqueHasBeenSet; }
+    inline bool UseEventVariablesHasBeenSet() const { return m_useEventVariablesHasBeenSet; }
 
     /**
-     * <p> For an opaque-model, the input to the model will be a ByteBuffer blob
-     * provided in the getPrediction request, and will be passed to SageMaker as-is.
-     * For non-opaque models, the input will be constructed by Amazon Fraud Detector
-     * based on the model-configuration. </p>
+     * <p>The event variables.</p>
      */
-    inline void SetIsOpaque(bool value) { m_isOpaqueHasBeenSet = true; m_isOpaque = value; }
+    inline void SetUseEventVariables(bool value) { m_useEventVariablesHasBeenSet = true; m_useEventVariables = value; }
 
     /**
-     * <p> For an opaque-model, the input to the model will be a ByteBuffer blob
-     * provided in the getPrediction request, and will be passed to SageMaker as-is.
-     * For non-opaque models, the input will be constructed by Amazon Fraud Detector
-     * based on the model-configuration. </p>
+     * <p>The event variables.</p>
      */
-    inline ModelInputConfiguration& WithIsOpaque(bool value) { SetIsOpaque(value); return *this;}
+    inline ModelInputConfiguration& WithUseEventVariables(bool value) { SetUseEventVariables(value); return *this;}
 
 
     /**
@@ -239,11 +258,14 @@ namespace Model
 
   private:
 
+    Aws::String m_eventTypeName;
+    bool m_eventTypeNameHasBeenSet;
+
     ModelInputDataFormat m_format;
     bool m_formatHasBeenSet;
 
-    bool m_isOpaque;
-    bool m_isOpaqueHasBeenSet;
+    bool m_useEventVariables;
+    bool m_useEventVariablesHasBeenSet;
 
     Aws::String m_jsonInputTemplate;
     bool m_jsonInputTemplateHasBeenSet;

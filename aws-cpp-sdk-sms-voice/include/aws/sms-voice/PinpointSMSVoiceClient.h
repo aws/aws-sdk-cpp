@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sms-voice/PinpointSMSVoice_EXPORTS.h>
@@ -77,14 +67,14 @@ namespace Model
         class SendVoiceMessageRequest;
         class UpdateConfigurationSetEventDestinationRequest;
 
-        typedef Aws::Utils::Outcome<CreateConfigurationSetResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> CreateConfigurationSetOutcome;
-        typedef Aws::Utils::Outcome<CreateConfigurationSetEventDestinationResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> CreateConfigurationSetEventDestinationOutcome;
-        typedef Aws::Utils::Outcome<DeleteConfigurationSetResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> DeleteConfigurationSetOutcome;
-        typedef Aws::Utils::Outcome<DeleteConfigurationSetEventDestinationResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> DeleteConfigurationSetEventDestinationOutcome;
-        typedef Aws::Utils::Outcome<GetConfigurationSetEventDestinationsResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> GetConfigurationSetEventDestinationsOutcome;
-        typedef Aws::Utils::Outcome<ListConfigurationSetsResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> ListConfigurationSetsOutcome;
-        typedef Aws::Utils::Outcome<SendVoiceMessageResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> SendVoiceMessageOutcome;
-        typedef Aws::Utils::Outcome<UpdateConfigurationSetEventDestinationResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> UpdateConfigurationSetEventDestinationOutcome;
+        typedef Aws::Utils::Outcome<CreateConfigurationSetResult, PinpointSMSVoiceError> CreateConfigurationSetOutcome;
+        typedef Aws::Utils::Outcome<CreateConfigurationSetEventDestinationResult, PinpointSMSVoiceError> CreateConfigurationSetEventDestinationOutcome;
+        typedef Aws::Utils::Outcome<DeleteConfigurationSetResult, PinpointSMSVoiceError> DeleteConfigurationSetOutcome;
+        typedef Aws::Utils::Outcome<DeleteConfigurationSetEventDestinationResult, PinpointSMSVoiceError> DeleteConfigurationSetEventDestinationOutcome;
+        typedef Aws::Utils::Outcome<GetConfigurationSetEventDestinationsResult, PinpointSMSVoiceError> GetConfigurationSetEventDestinationsOutcome;
+        typedef Aws::Utils::Outcome<ListConfigurationSetsResult, PinpointSMSVoiceError> ListConfigurationSetsOutcome;
+        typedef Aws::Utils::Outcome<SendVoiceMessageResult, PinpointSMSVoiceError> SendVoiceMessageOutcome;
+        typedef Aws::Utils::Outcome<UpdateConfigurationSetEventDestinationResult, PinpointSMSVoiceError> UpdateConfigurationSetEventDestinationOutcome;
 
         typedef std::future<CreateConfigurationSetOutcome> CreateConfigurationSetOutcomeCallable;
         typedef std::future<CreateConfigurationSetEventDestinationOutcome> CreateConfigurationSetEventDestinationOutcomeCallable;
@@ -135,8 +125,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~PinpointSMSVoiceClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "Pinpoint SMS Voice"; }
 
 
         /**

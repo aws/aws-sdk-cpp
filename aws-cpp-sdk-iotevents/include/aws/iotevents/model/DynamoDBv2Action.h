@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotevents/IoTEvents_EXPORTS.h>
@@ -41,8 +31,8 @@ namespace Model
    * action. You can also customize the <a
    * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
    * A separate column of the DynamoDB table receives one attribute-value pair in the
-   * payload that you specify.</p> <important> <p>The <code>type</code> value for
-   * <code>Payload</code> must be <code>JSON</code>.</p> </important> <p>You can use
+   * payload that you specify.</p>  <p>The <code>type</code> value for
+   * <code>Payload</code> must be <code>JSON</code>.</p>  <p>You can use
    * expressions for parameters that are strings. For more information, see <a
    * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a>
    * in the <i>AWS IoT Events Developer Guide</i>.</p><p><h3>See Also:</h3>   <a

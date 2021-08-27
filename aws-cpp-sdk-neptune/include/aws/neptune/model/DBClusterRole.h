@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/neptune/Neptune_EXPORTS.h>
@@ -195,6 +185,63 @@ namespace Model
      */
     inline DBClusterRole& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
+    /**
+     * <p>The name of the feature associated with the AWS Identity and Access
+     * Management (IAM) role. For the list of supported feature names, see
+     * <a>DBEngineVersion</a>. </p>
+     */
+    inline const Aws::String& GetFeatureName() const{ return m_featureName; }
+
+    /**
+     * <p>The name of the feature associated with the AWS Identity and Access
+     * Management (IAM) role. For the list of supported feature names, see
+     * <a>DBEngineVersion</a>. </p>
+     */
+    inline bool FeatureNameHasBeenSet() const { return m_featureNameHasBeenSet; }
+
+    /**
+     * <p>The name of the feature associated with the AWS Identity and Access
+     * Management (IAM) role. For the list of supported feature names, see
+     * <a>DBEngineVersion</a>. </p>
+     */
+    inline void SetFeatureName(const Aws::String& value) { m_featureNameHasBeenSet = true; m_featureName = value; }
+
+    /**
+     * <p>The name of the feature associated with the AWS Identity and Access
+     * Management (IAM) role. For the list of supported feature names, see
+     * <a>DBEngineVersion</a>. </p>
+     */
+    inline void SetFeatureName(Aws::String&& value) { m_featureNameHasBeenSet = true; m_featureName = std::move(value); }
+
+    /**
+     * <p>The name of the feature associated with the AWS Identity and Access
+     * Management (IAM) role. For the list of supported feature names, see
+     * <a>DBEngineVersion</a>. </p>
+     */
+    inline void SetFeatureName(const char* value) { m_featureNameHasBeenSet = true; m_featureName.assign(value); }
+
+    /**
+     * <p>The name of the feature associated with the AWS Identity and Access
+     * Management (IAM) role. For the list of supported feature names, see
+     * <a>DBEngineVersion</a>. </p>
+     */
+    inline DBClusterRole& WithFeatureName(const Aws::String& value) { SetFeatureName(value); return *this;}
+
+    /**
+     * <p>The name of the feature associated with the AWS Identity and Access
+     * Management (IAM) role. For the list of supported feature names, see
+     * <a>DBEngineVersion</a>. </p>
+     */
+    inline DBClusterRole& WithFeatureName(Aws::String&& value) { SetFeatureName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the feature associated with the AWS Identity and Access
+     * Management (IAM) role. For the list of supported feature names, see
+     * <a>DBEngineVersion</a>. </p>
+     */
+    inline DBClusterRole& WithFeatureName(const char* value) { SetFeatureName(value); return *this;}
+
   private:
 
     Aws::String m_roleArn;
@@ -202,6 +249,9 @@ namespace Model
 
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
+    Aws::String m_featureName;
+    bool m_featureNameHasBeenSet;
   };
 
 } // namespace Model

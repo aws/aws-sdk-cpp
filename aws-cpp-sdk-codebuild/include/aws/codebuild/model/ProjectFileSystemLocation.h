@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
@@ -89,7 +79,7 @@ namespace Model
 
 
     /**
-     * <p> A string that specifies the location of the file system created by Amazon
+     * <p>A string that specifies the location of the file system created by Amazon
      * EFS. Its format is <code>efs-dns-name:/directory-path</code>. You can find the
      * DNS name of file system when you view it in the AWS EFS console. The directory
      * path is a path to a directory in the file system that CodeBuild mounts. For
@@ -97,7 +87,7 @@ namespace Model
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com</code>, and its mount directory is
      * <code>my-efs-mount-directory</code>, then the <code>location</code> is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com:/my-efs-mount-directory</code>.
-     * </p> <p> The directory path in the format
+     * </p> <p>The directory path in the format
      * <code>efs-dns-name:/directory-path</code> is optional. If you do not specify a
      * directory path, the location is only the DNS name and CodeBuild mounts the
      * entire file system. </p>
@@ -105,7 +95,7 @@ namespace Model
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p> A string that specifies the location of the file system created by Amazon
+     * <p>A string that specifies the location of the file system created by Amazon
      * EFS. Its format is <code>efs-dns-name:/directory-path</code>. You can find the
      * DNS name of file system when you view it in the AWS EFS console. The directory
      * path is a path to a directory in the file system that CodeBuild mounts. For
@@ -113,7 +103,7 @@ namespace Model
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com</code>, and its mount directory is
      * <code>my-efs-mount-directory</code>, then the <code>location</code> is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com:/my-efs-mount-directory</code>.
-     * </p> <p> The directory path in the format
+     * </p> <p>The directory path in the format
      * <code>efs-dns-name:/directory-path</code> is optional. If you do not specify a
      * directory path, the location is only the DNS name and CodeBuild mounts the
      * entire file system. </p>
@@ -121,7 +111,7 @@ namespace Model
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * <p> A string that specifies the location of the file system created by Amazon
+     * <p>A string that specifies the location of the file system created by Amazon
      * EFS. Its format is <code>efs-dns-name:/directory-path</code>. You can find the
      * DNS name of file system when you view it in the AWS EFS console. The directory
      * path is a path to a directory in the file system that CodeBuild mounts. For
@@ -129,7 +119,7 @@ namespace Model
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com</code>, and its mount directory is
      * <code>my-efs-mount-directory</code>, then the <code>location</code> is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com:/my-efs-mount-directory</code>.
-     * </p> <p> The directory path in the format
+     * </p> <p>The directory path in the format
      * <code>efs-dns-name:/directory-path</code> is optional. If you do not specify a
      * directory path, the location is only the DNS name and CodeBuild mounts the
      * entire file system. </p>
@@ -137,7 +127,7 @@ namespace Model
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p> A string that specifies the location of the file system created by Amazon
+     * <p>A string that specifies the location of the file system created by Amazon
      * EFS. Its format is <code>efs-dns-name:/directory-path</code>. You can find the
      * DNS name of file system when you view it in the AWS EFS console. The directory
      * path is a path to a directory in the file system that CodeBuild mounts. For
@@ -145,7 +135,7 @@ namespace Model
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com</code>, and its mount directory is
      * <code>my-efs-mount-directory</code>, then the <code>location</code> is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com:/my-efs-mount-directory</code>.
-     * </p> <p> The directory path in the format
+     * </p> <p>The directory path in the format
      * <code>efs-dns-name:/directory-path</code> is optional. If you do not specify a
      * directory path, the location is only the DNS name and CodeBuild mounts the
      * entire file system. </p>
@@ -153,7 +143,7 @@ namespace Model
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p> A string that specifies the location of the file system created by Amazon
+     * <p>A string that specifies the location of the file system created by Amazon
      * EFS. Its format is <code>efs-dns-name:/directory-path</code>. You can find the
      * DNS name of file system when you view it in the AWS EFS console. The directory
      * path is a path to a directory in the file system that CodeBuild mounts. For
@@ -161,7 +151,7 @@ namespace Model
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com</code>, and its mount directory is
      * <code>my-efs-mount-directory</code>, then the <code>location</code> is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com:/my-efs-mount-directory</code>.
-     * </p> <p> The directory path in the format
+     * </p> <p>The directory path in the format
      * <code>efs-dns-name:/directory-path</code> is optional. If you do not specify a
      * directory path, the location is only the DNS name and CodeBuild mounts the
      * entire file system. </p>
@@ -169,7 +159,7 @@ namespace Model
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
-     * <p> A string that specifies the location of the file system created by Amazon
+     * <p>A string that specifies the location of the file system created by Amazon
      * EFS. Its format is <code>efs-dns-name:/directory-path</code>. You can find the
      * DNS name of file system when you view it in the AWS EFS console. The directory
      * path is a path to a directory in the file system that CodeBuild mounts. For
@@ -177,7 +167,7 @@ namespace Model
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com</code>, and its mount directory is
      * <code>my-efs-mount-directory</code>, then the <code>location</code> is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com:/my-efs-mount-directory</code>.
-     * </p> <p> The directory path in the format
+     * </p> <p>The directory path in the format
      * <code>efs-dns-name:/directory-path</code> is optional. If you do not specify a
      * directory path, the location is only the DNS name and CodeBuild mounts the
      * entire file system. </p>
@@ -185,7 +175,7 @@ namespace Model
     inline ProjectFileSystemLocation& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p> A string that specifies the location of the file system created by Amazon
+     * <p>A string that specifies the location of the file system created by Amazon
      * EFS. Its format is <code>efs-dns-name:/directory-path</code>. You can find the
      * DNS name of file system when you view it in the AWS EFS console. The directory
      * path is a path to a directory in the file system that CodeBuild mounts. For
@@ -193,7 +183,7 @@ namespace Model
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com</code>, and its mount directory is
      * <code>my-efs-mount-directory</code>, then the <code>location</code> is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com:/my-efs-mount-directory</code>.
-     * </p> <p> The directory path in the format
+     * </p> <p>The directory path in the format
      * <code>efs-dns-name:/directory-path</code> is optional. If you do not specify a
      * directory path, the location is only the DNS name and CodeBuild mounts the
      * entire file system. </p>
@@ -201,7 +191,7 @@ namespace Model
     inline ProjectFileSystemLocation& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p> A string that specifies the location of the file system created by Amazon
+     * <p>A string that specifies the location of the file system created by Amazon
      * EFS. Its format is <code>efs-dns-name:/directory-path</code>. You can find the
      * DNS name of file system when you view it in the AWS EFS console. The directory
      * path is a path to a directory in the file system that CodeBuild mounts. For
@@ -209,7 +199,7 @@ namespace Model
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com</code>, and its mount directory is
      * <code>my-efs-mount-directory</code>, then the <code>location</code> is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com:/my-efs-mount-directory</code>.
-     * </p> <p> The directory path in the format
+     * </p> <p>The directory path in the format
      * <code>efs-dns-name:/directory-path</code> is optional. If you do not specify a
      * directory path, the location is only the DNS name and CodeBuild mounts the
      * entire file system. </p>
@@ -218,122 +208,122 @@ namespace Model
 
 
     /**
-     * <p> The location in the container where you mount the file system. </p>
+     * <p>The location in the container where you mount the file system. </p>
      */
     inline const Aws::String& GetMountPoint() const{ return m_mountPoint; }
 
     /**
-     * <p> The location in the container where you mount the file system. </p>
+     * <p>The location in the container where you mount the file system. </p>
      */
     inline bool MountPointHasBeenSet() const { return m_mountPointHasBeenSet; }
 
     /**
-     * <p> The location in the container where you mount the file system. </p>
+     * <p>The location in the container where you mount the file system. </p>
      */
     inline void SetMountPoint(const Aws::String& value) { m_mountPointHasBeenSet = true; m_mountPoint = value; }
 
     /**
-     * <p> The location in the container where you mount the file system. </p>
+     * <p>The location in the container where you mount the file system. </p>
      */
     inline void SetMountPoint(Aws::String&& value) { m_mountPointHasBeenSet = true; m_mountPoint = std::move(value); }
 
     /**
-     * <p> The location in the container where you mount the file system. </p>
+     * <p>The location in the container where you mount the file system. </p>
      */
     inline void SetMountPoint(const char* value) { m_mountPointHasBeenSet = true; m_mountPoint.assign(value); }
 
     /**
-     * <p> The location in the container where you mount the file system. </p>
+     * <p>The location in the container where you mount the file system. </p>
      */
     inline ProjectFileSystemLocation& WithMountPoint(const Aws::String& value) { SetMountPoint(value); return *this;}
 
     /**
-     * <p> The location in the container where you mount the file system. </p>
+     * <p>The location in the container where you mount the file system. </p>
      */
     inline ProjectFileSystemLocation& WithMountPoint(Aws::String&& value) { SetMountPoint(std::move(value)); return *this;}
 
     /**
-     * <p> The location in the container where you mount the file system. </p>
+     * <p>The location in the container where you mount the file system. </p>
      */
     inline ProjectFileSystemLocation& WithMountPoint(const char* value) { SetMountPoint(value); return *this;}
 
 
     /**
-     * <p> The name used to access a file system created by Amazon EFS. CodeBuild
+     * <p>The name used to access a file system created by Amazon EFS. CodeBuild
      * creates an environment variable by appending the <code>identifier</code> in all
      * capital letters to <code>CODEBUILD_</code>. For example, if you specify
-     * <code>my-efs</code> for <code>identifier</code>, a new environment variable is
-     * create named <code>CODEBUILD_MY-EFS</code>. </p> <p> The <code>identifier</code>
+     * <code>my_efs</code> for <code>identifier</code>, a new environment variable is
+     * create named <code>CODEBUILD_MY_EFS</code>. </p> <p> The <code>identifier</code>
      * is used to mount your file system. </p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
 
     /**
-     * <p> The name used to access a file system created by Amazon EFS. CodeBuild
+     * <p>The name used to access a file system created by Amazon EFS. CodeBuild
      * creates an environment variable by appending the <code>identifier</code> in all
      * capital letters to <code>CODEBUILD_</code>. For example, if you specify
-     * <code>my-efs</code> for <code>identifier</code>, a new environment variable is
-     * create named <code>CODEBUILD_MY-EFS</code>. </p> <p> The <code>identifier</code>
+     * <code>my_efs</code> for <code>identifier</code>, a new environment variable is
+     * create named <code>CODEBUILD_MY_EFS</code>. </p> <p> The <code>identifier</code>
      * is used to mount your file system. </p>
      */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
 
     /**
-     * <p> The name used to access a file system created by Amazon EFS. CodeBuild
+     * <p>The name used to access a file system created by Amazon EFS. CodeBuild
      * creates an environment variable by appending the <code>identifier</code> in all
      * capital letters to <code>CODEBUILD_</code>. For example, if you specify
-     * <code>my-efs</code> for <code>identifier</code>, a new environment variable is
-     * create named <code>CODEBUILD_MY-EFS</code>. </p> <p> The <code>identifier</code>
+     * <code>my_efs</code> for <code>identifier</code>, a new environment variable is
+     * create named <code>CODEBUILD_MY_EFS</code>. </p> <p> The <code>identifier</code>
      * is used to mount your file system. </p>
      */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
 
     /**
-     * <p> The name used to access a file system created by Amazon EFS. CodeBuild
+     * <p>The name used to access a file system created by Amazon EFS. CodeBuild
      * creates an environment variable by appending the <code>identifier</code> in all
      * capital letters to <code>CODEBUILD_</code>. For example, if you specify
-     * <code>my-efs</code> for <code>identifier</code>, a new environment variable is
-     * create named <code>CODEBUILD_MY-EFS</code>. </p> <p> The <code>identifier</code>
+     * <code>my_efs</code> for <code>identifier</code>, a new environment variable is
+     * create named <code>CODEBUILD_MY_EFS</code>. </p> <p> The <code>identifier</code>
      * is used to mount your file system. </p>
      */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
 
     /**
-     * <p> The name used to access a file system created by Amazon EFS. CodeBuild
+     * <p>The name used to access a file system created by Amazon EFS. CodeBuild
      * creates an environment variable by appending the <code>identifier</code> in all
      * capital letters to <code>CODEBUILD_</code>. For example, if you specify
-     * <code>my-efs</code> for <code>identifier</code>, a new environment variable is
-     * create named <code>CODEBUILD_MY-EFS</code>. </p> <p> The <code>identifier</code>
+     * <code>my_efs</code> for <code>identifier</code>, a new environment variable is
+     * create named <code>CODEBUILD_MY_EFS</code>. </p> <p> The <code>identifier</code>
      * is used to mount your file system. </p>
      */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
 
     /**
-     * <p> The name used to access a file system created by Amazon EFS. CodeBuild
+     * <p>The name used to access a file system created by Amazon EFS. CodeBuild
      * creates an environment variable by appending the <code>identifier</code> in all
      * capital letters to <code>CODEBUILD_</code>. For example, if you specify
-     * <code>my-efs</code> for <code>identifier</code>, a new environment variable is
-     * create named <code>CODEBUILD_MY-EFS</code>. </p> <p> The <code>identifier</code>
+     * <code>my_efs</code> for <code>identifier</code>, a new environment variable is
+     * create named <code>CODEBUILD_MY_EFS</code>. </p> <p> The <code>identifier</code>
      * is used to mount your file system. </p>
      */
     inline ProjectFileSystemLocation& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
 
     /**
-     * <p> The name used to access a file system created by Amazon EFS. CodeBuild
+     * <p>The name used to access a file system created by Amazon EFS. CodeBuild
      * creates an environment variable by appending the <code>identifier</code> in all
      * capital letters to <code>CODEBUILD_</code>. For example, if you specify
-     * <code>my-efs</code> for <code>identifier</code>, a new environment variable is
-     * create named <code>CODEBUILD_MY-EFS</code>. </p> <p> The <code>identifier</code>
+     * <code>my_efs</code> for <code>identifier</code>, a new environment variable is
+     * create named <code>CODEBUILD_MY_EFS</code>. </p> <p> The <code>identifier</code>
      * is used to mount your file system. </p>
      */
     inline ProjectFileSystemLocation& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p> The name used to access a file system created by Amazon EFS. CodeBuild
+     * <p>The name used to access a file system created by Amazon EFS. CodeBuild
      * creates an environment variable by appending the <code>identifier</code> in all
      * capital letters to <code>CODEBUILD_</code>. For example, if you specify
-     * <code>my-efs</code> for <code>identifier</code>, a new environment variable is
-     * create named <code>CODEBUILD_MY-EFS</code>. </p> <p> The <code>identifier</code>
+     * <code>my_efs</code> for <code>identifier</code>, a new environment variable is
+     * create named <code>CODEBUILD_MY_EFS</code>. </p> <p> The <code>identifier</code>
      * is used to mount your file system. </p>
      */
     inline ProjectFileSystemLocation& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}

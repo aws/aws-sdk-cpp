@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
@@ -19,7 +9,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kendra/model/DataSourceType.h>
 #include <aws/kendra/model/DataSourceConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kendra/model/Tag.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -177,37 +170,55 @@ namespace Model
 
     /**
      * <p>The connector configuration information that is required to access the
-     * repository.</p>
+     * repository.</p> <p>You can't specify the <code>Configuration</code> parameter
+     * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
+     * you receive a <code>ValidationException</code> exception.</p> <p>The
+     * <code>Configuration</code> parameter is required for all other data sources.</p>
      */
     inline const DataSourceConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
      * <p>The connector configuration information that is required to access the
-     * repository.</p>
+     * repository.</p> <p>You can't specify the <code>Configuration</code> parameter
+     * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
+     * you receive a <code>ValidationException</code> exception.</p> <p>The
+     * <code>Configuration</code> parameter is required for all other data sources.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
      * <p>The connector configuration information that is required to access the
-     * repository.</p>
+     * repository.</p> <p>You can't specify the <code>Configuration</code> parameter
+     * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
+     * you receive a <code>ValidationException</code> exception.</p> <p>The
+     * <code>Configuration</code> parameter is required for all other data sources.</p>
      */
     inline void SetConfiguration(const DataSourceConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
      * <p>The connector configuration information that is required to access the
-     * repository.</p>
+     * repository.</p> <p>You can't specify the <code>Configuration</code> parameter
+     * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
+     * you receive a <code>ValidationException</code> exception.</p> <p>The
+     * <code>Configuration</code> parameter is required for all other data sources.</p>
      */
     inline void SetConfiguration(DataSourceConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
      * <p>The connector configuration information that is required to access the
-     * repository.</p>
+     * repository.</p> <p>You can't specify the <code>Configuration</code> parameter
+     * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
+     * you receive a <code>ValidationException</code> exception.</p> <p>The
+     * <code>Configuration</code> parameter is required for all other data sources.</p>
      */
     inline CreateDataSourceRequest& WithConfiguration(const DataSourceConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
      * <p>The connector configuration information that is required to access the
-     * repository.</p>
+     * repository.</p> <p>You can't specify the <code>Configuration</code> parameter
+     * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
+     * you receive a <code>ValidationException</code> exception.</p> <p>The
+     * <code>Configuration</code> parameter is required for all other data sources.</p>
      */
     inline CreateDataSourceRequest& WithConfiguration(DataSourceConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
@@ -257,7 +268,10 @@ namespace Model
      * <p>Sets the frequency that Amazon Kendra will check the documents in your
      * repository and update the index. If you don't set a schedule Amazon Kendra will
      * not periodically update the index. You can call the
-     * <code>StartDataSourceSyncJob</code> operation to update the index.</p>
+     * <code>StartDataSourceSyncJob</code> operation to update the index.</p> <p>You
+     * can't specify the <code>Schedule</code> parameter when the <code>Type</code>
+     * parameter is set to <code>CUSTOM</code>. If you do, you receive a
+     * <code>ValidationException</code> exception.</p>
      */
     inline const Aws::String& GetSchedule() const{ return m_schedule; }
 
@@ -265,7 +279,10 @@ namespace Model
      * <p>Sets the frequency that Amazon Kendra will check the documents in your
      * repository and update the index. If you don't set a schedule Amazon Kendra will
      * not periodically update the index. You can call the
-     * <code>StartDataSourceSyncJob</code> operation to update the index.</p>
+     * <code>StartDataSourceSyncJob</code> operation to update the index.</p> <p>You
+     * can't specify the <code>Schedule</code> parameter when the <code>Type</code>
+     * parameter is set to <code>CUSTOM</code>. If you do, you receive a
+     * <code>ValidationException</code> exception.</p>
      */
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
 
@@ -273,7 +290,10 @@ namespace Model
      * <p>Sets the frequency that Amazon Kendra will check the documents in your
      * repository and update the index. If you don't set a schedule Amazon Kendra will
      * not periodically update the index. You can call the
-     * <code>StartDataSourceSyncJob</code> operation to update the index.</p>
+     * <code>StartDataSourceSyncJob</code> operation to update the index.</p> <p>You
+     * can't specify the <code>Schedule</code> parameter when the <code>Type</code>
+     * parameter is set to <code>CUSTOM</code>. If you do, you receive a
+     * <code>ValidationException</code> exception.</p>
      */
     inline void SetSchedule(const Aws::String& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
@@ -281,7 +301,10 @@ namespace Model
      * <p>Sets the frequency that Amazon Kendra will check the documents in your
      * repository and update the index. If you don't set a schedule Amazon Kendra will
      * not periodically update the index. You can call the
-     * <code>StartDataSourceSyncJob</code> operation to update the index.</p>
+     * <code>StartDataSourceSyncJob</code> operation to update the index.</p> <p>You
+     * can't specify the <code>Schedule</code> parameter when the <code>Type</code>
+     * parameter is set to <code>CUSTOM</code>. If you do, you receive a
+     * <code>ValidationException</code> exception.</p>
      */
     inline void SetSchedule(Aws::String&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
 
@@ -289,7 +312,10 @@ namespace Model
      * <p>Sets the frequency that Amazon Kendra will check the documents in your
      * repository and update the index. If you don't set a schedule Amazon Kendra will
      * not periodically update the index. You can call the
-     * <code>StartDataSourceSyncJob</code> operation to update the index.</p>
+     * <code>StartDataSourceSyncJob</code> operation to update the index.</p> <p>You
+     * can't specify the <code>Schedule</code> parameter when the <code>Type</code>
+     * parameter is set to <code>CUSTOM</code>. If you do, you receive a
+     * <code>ValidationException</code> exception.</p>
      */
     inline void SetSchedule(const char* value) { m_scheduleHasBeenSet = true; m_schedule.assign(value); }
 
@@ -297,7 +323,10 @@ namespace Model
      * <p>Sets the frequency that Amazon Kendra will check the documents in your
      * repository and update the index. If you don't set a schedule Amazon Kendra will
      * not periodically update the index. You can call the
-     * <code>StartDataSourceSyncJob</code> operation to update the index.</p>
+     * <code>StartDataSourceSyncJob</code> operation to update the index.</p> <p>You
+     * can't specify the <code>Schedule</code> parameter when the <code>Type</code>
+     * parameter is set to <code>CUSTOM</code>. If you do, you receive a
+     * <code>ValidationException</code> exception.</p>
      */
     inline CreateDataSourceRequest& WithSchedule(const Aws::String& value) { SetSchedule(value); return *this;}
 
@@ -305,7 +334,10 @@ namespace Model
      * <p>Sets the frequency that Amazon Kendra will check the documents in your
      * repository and update the index. If you don't set a schedule Amazon Kendra will
      * not periodically update the index. You can call the
-     * <code>StartDataSourceSyncJob</code> operation to update the index.</p>
+     * <code>StartDataSourceSyncJob</code> operation to update the index.</p> <p>You
+     * can't specify the <code>Schedule</code> parameter when the <code>Type</code>
+     * parameter is set to <code>CUSTOM</code>. If you do, you receive a
+     * <code>ValidationException</code> exception.</p>
      */
     inline CreateDataSourceRequest& WithSchedule(Aws::String&& value) { SetSchedule(std::move(value)); return *this;}
 
@@ -313,7 +345,10 @@ namespace Model
      * <p>Sets the frequency that Amazon Kendra will check the documents in your
      * repository and update the index. If you don't set a schedule Amazon Kendra will
      * not periodically update the index. You can call the
-     * <code>StartDataSourceSyncJob</code> operation to update the index.</p>
+     * <code>StartDataSourceSyncJob</code> operation to update the index.</p> <p>You
+     * can't specify the <code>Schedule</code> parameter when the <code>Type</code>
+     * parameter is set to <code>CUSTOM</code>. If you do, you receive a
+     * <code>ValidationException</code> exception.</p>
      */
     inline CreateDataSourceRequest& WithSchedule(const char* value) { SetSchedule(value); return *this;}
 
@@ -322,7 +357,10 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
      * source. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
-     * Amazon Kendra</a>.</p>
+     * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
+     * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
+     * you receive a <code>ValidationException</code> exception.</p> <p>The
+     * <code>RoleArn</code> parameter is required for all other data sources.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
@@ -330,7 +368,10 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
      * source. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
-     * Amazon Kendra</a>.</p>
+     * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
+     * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
+     * you receive a <code>ValidationException</code> exception.</p> <p>The
+     * <code>RoleArn</code> parameter is required for all other data sources.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
@@ -338,7 +379,10 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
      * source. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
-     * Amazon Kendra</a>.</p>
+     * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
+     * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
+     * you receive a <code>ValidationException</code> exception.</p> <p>The
+     * <code>RoleArn</code> parameter is required for all other data sources.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
@@ -346,7 +390,10 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
      * source. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
-     * Amazon Kendra</a>.</p>
+     * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
+     * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
+     * you receive a <code>ValidationException</code> exception.</p> <p>The
+     * <code>RoleArn</code> parameter is required for all other data sources.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
@@ -354,7 +401,10 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
      * source. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
-     * Amazon Kendra</a>.</p>
+     * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
+     * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
+     * you receive a <code>ValidationException</code> exception.</p> <p>The
+     * <code>RoleArn</code> parameter is required for all other data sources.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
@@ -362,7 +412,10 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
      * source. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
-     * Amazon Kendra</a>.</p>
+     * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
+     * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
+     * you receive a <code>ValidationException</code> exception.</p> <p>The
+     * <code>RoleArn</code> parameter is required for all other data sources.</p>
      */
     inline CreateDataSourceRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
@@ -370,7 +423,10 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
      * source. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
-     * Amazon Kendra</a>.</p>
+     * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
+     * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
+     * you receive a <code>ValidationException</code> exception.</p> <p>The
+     * <code>RoleArn</code> parameter is required for all other data sources.</p>
      */
     inline CreateDataSourceRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
@@ -378,9 +434,118 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
      * source. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
-     * Amazon Kendra</a>.</p>
+     * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
+     * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
+     * you receive a <code>ValidationException</code> exception.</p> <p>The
+     * <code>RoleArn</code> parameter is required for all other data sources.</p>
      */
     inline CreateDataSourceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
+
+    /**
+     * <p>A list of key-value pairs that identify the data source. You can use the tags
+     * to identify and organize your resources and to control access to resources.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of key-value pairs that identify the data source. You can use the tags
+     * to identify and organize your resources and to control access to resources.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of key-value pairs that identify the data source. You can use the tags
+     * to identify and organize your resources and to control access to resources.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of key-value pairs that identify the data source. You can use the tags
+     * to identify and organize your resources and to control access to resources.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of key-value pairs that identify the data source. You can use the tags
+     * to identify and organize your resources and to control access to resources.</p>
+     */
+    inline CreateDataSourceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of key-value pairs that identify the data source. You can use the tags
+     * to identify and organize your resources and to control access to resources.</p>
+     */
+    inline CreateDataSourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of key-value pairs that identify the data source. You can use the tags
+     * to identify and organize your resources and to control access to resources.</p>
+     */
+    inline CreateDataSourceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of key-value pairs that identify the data source. You can use the tags
+     * to identify and organize your resources and to control access to resources.</p>
+     */
+    inline CreateDataSourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A token that you provide to identify the request to create a data source.
+     * Multiple calls to the <code>CreateDataSource</code> operation with the same
+     * client token will create only one data source.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>A token that you provide to identify the request to create a data source.
+     * Multiple calls to the <code>CreateDataSource</code> operation with the same
+     * client token will create only one data source.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>A token that you provide to identify the request to create a data source.
+     * Multiple calls to the <code>CreateDataSource</code> operation with the same
+     * client token will create only one data source.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>A token that you provide to identify the request to create a data source.
+     * Multiple calls to the <code>CreateDataSource</code> operation with the same
+     * client token will create only one data source.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>A token that you provide to identify the request to create a data source.
+     * Multiple calls to the <code>CreateDataSource</code> operation with the same
+     * client token will create only one data source.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>A token that you provide to identify the request to create a data source.
+     * Multiple calls to the <code>CreateDataSource</code> operation with the same
+     * client token will create only one data source.</p>
+     */
+    inline CreateDataSourceRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>A token that you provide to identify the request to create a data source.
+     * Multiple calls to the <code>CreateDataSource</code> operation with the same
+     * client token will create only one data source.</p>
+     */
+    inline CreateDataSourceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A token that you provide to identify the request to create a data source.
+     * Multiple calls to the <code>CreateDataSource</code> operation with the same
+     * client token will create only one data source.</p>
+     */
+    inline CreateDataSourceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
   private:
 
@@ -404,6 +569,12 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet;
   };
 
 } // namespace Model

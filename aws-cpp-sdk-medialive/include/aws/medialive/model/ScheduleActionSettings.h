@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/HlsId3SegmentTaggingScheduleActionSettings.h>
 #include <aws/medialive/model/HlsTimedMetadataScheduleActionSettings.h>
+#include <aws/medialive/model/InputPrepareScheduleActionSettings.h>
 #include <aws/medialive/model/InputSwitchScheduleActionSettings.h>
 #include <aws/medialive/model/PauseStateScheduleActionSettings.h>
 #include <aws/medialive/model/Scte35ReturnToNetworkScheduleActionSettings.h>
@@ -115,6 +106,37 @@ namespace Model
      * Action to insert HLS metadata
      */
     inline ScheduleActionSettings& WithHlsTimedMetadataSettings(HlsTimedMetadataScheduleActionSettings&& value) { SetHlsTimedMetadataSettings(std::move(value)); return *this;}
+
+
+    /**
+     * Action to prepare an input for a future immediate input switch
+     */
+    inline const InputPrepareScheduleActionSettings& GetInputPrepareSettings() const{ return m_inputPrepareSettings; }
+
+    /**
+     * Action to prepare an input for a future immediate input switch
+     */
+    inline bool InputPrepareSettingsHasBeenSet() const { return m_inputPrepareSettingsHasBeenSet; }
+
+    /**
+     * Action to prepare an input for a future immediate input switch
+     */
+    inline void SetInputPrepareSettings(const InputPrepareScheduleActionSettings& value) { m_inputPrepareSettingsHasBeenSet = true; m_inputPrepareSettings = value; }
+
+    /**
+     * Action to prepare an input for a future immediate input switch
+     */
+    inline void SetInputPrepareSettings(InputPrepareScheduleActionSettings&& value) { m_inputPrepareSettingsHasBeenSet = true; m_inputPrepareSettings = std::move(value); }
+
+    /**
+     * Action to prepare an input for a future immediate input switch
+     */
+    inline ScheduleActionSettings& WithInputPrepareSettings(const InputPrepareScheduleActionSettings& value) { SetInputPrepareSettings(value); return *this;}
+
+    /**
+     * Action to prepare an input for a future immediate input switch
+     */
+    inline ScheduleActionSettings& WithInputPrepareSettings(InputPrepareScheduleActionSettings&& value) { SetInputPrepareSettings(std::move(value)); return *this;}
 
 
     /**
@@ -340,6 +362,9 @@ namespace Model
 
     HlsTimedMetadataScheduleActionSettings m_hlsTimedMetadataSettings;
     bool m_hlsTimedMetadataSettingsHasBeenSet;
+
+    InputPrepareScheduleActionSettings m_inputPrepareSettings;
+    bool m_inputPrepareSettingsHasBeenSet;
 
     InputSwitchScheduleActionSettings m_inputSwitchSettings;
     bool m_inputSwitchSettingsHasBeenSet;

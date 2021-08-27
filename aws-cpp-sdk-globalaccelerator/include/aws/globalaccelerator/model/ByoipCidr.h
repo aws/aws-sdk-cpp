@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
@@ -154,50 +144,50 @@ namespace Model
 
 
     /**
-     * <p>A history of status changes for an IP address range that that you bring to
-     * AWS Global Accelerator through bring your own IP address (BYOIP).</p>
+     * <p>A history of status changes for an IP address range that you bring to AWS
+     * Global Accelerator through bring your own IP address (BYOIP).</p>
      */
     inline const Aws::Vector<ByoipCidrEvent>& GetEvents() const{ return m_events; }
 
     /**
-     * <p>A history of status changes for an IP address range that that you bring to
-     * AWS Global Accelerator through bring your own IP address (BYOIP).</p>
+     * <p>A history of status changes for an IP address range that you bring to AWS
+     * Global Accelerator through bring your own IP address (BYOIP).</p>
      */
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
 
     /**
-     * <p>A history of status changes for an IP address range that that you bring to
-     * AWS Global Accelerator through bring your own IP address (BYOIP).</p>
+     * <p>A history of status changes for an IP address range that you bring to AWS
+     * Global Accelerator through bring your own IP address (BYOIP).</p>
      */
     inline void SetEvents(const Aws::Vector<ByoipCidrEvent>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     /**
-     * <p>A history of status changes for an IP address range that that you bring to
-     * AWS Global Accelerator through bring your own IP address (BYOIP).</p>
+     * <p>A history of status changes for an IP address range that you bring to AWS
+     * Global Accelerator through bring your own IP address (BYOIP).</p>
      */
     inline void SetEvents(Aws::Vector<ByoipCidrEvent>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
     /**
-     * <p>A history of status changes for an IP address range that that you bring to
-     * AWS Global Accelerator through bring your own IP address (BYOIP).</p>
+     * <p>A history of status changes for an IP address range that you bring to AWS
+     * Global Accelerator through bring your own IP address (BYOIP).</p>
      */
     inline ByoipCidr& WithEvents(const Aws::Vector<ByoipCidrEvent>& value) { SetEvents(value); return *this;}
 
     /**
-     * <p>A history of status changes for an IP address range that that you bring to
-     * AWS Global Accelerator through bring your own IP address (BYOIP).</p>
+     * <p>A history of status changes for an IP address range that you bring to AWS
+     * Global Accelerator through bring your own IP address (BYOIP).</p>
      */
     inline ByoipCidr& WithEvents(Aws::Vector<ByoipCidrEvent>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
-     * <p>A history of status changes for an IP address range that that you bring to
-     * AWS Global Accelerator through bring your own IP address (BYOIP).</p>
+     * <p>A history of status changes for an IP address range that you bring to AWS
+     * Global Accelerator through bring your own IP address (BYOIP).</p>
      */
     inline ByoipCidr& AddEvents(const ByoipCidrEvent& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
     /**
-     * <p>A history of status changes for an IP address range that that you bring to
-     * AWS Global Accelerator through bring your own IP address (BYOIP).</p>
+     * <p>A history of status changes for an IP address range that you bring to AWS
+     * Global Accelerator through bring your own IP address (BYOIP).</p>
      */
     inline ByoipCidr& AddEvents(ByoipCidrEvent&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 

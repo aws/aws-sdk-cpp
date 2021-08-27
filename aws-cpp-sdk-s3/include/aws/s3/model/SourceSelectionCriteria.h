@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/SseKmsEncryptedObjects.h>
+#include <aws/s3/model/ReplicaModifications.h>
 #include <utility>
 
 namespace Aws
@@ -94,10 +85,86 @@ namespace Model
      */
     inline SourceSelectionCriteria& WithSseKmsEncryptedObjects(SseKmsEncryptedObjects&& value) { SetSseKmsEncryptedObjects(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A filter that you can specify for selections for modifications on replicas.
+     * Amazon S3 doesn't replicate replica modifications by default. In the latest
+     * version of replication configuration (when <code>Filter</code> is specified),
+     * you can specify this element and set the status to <code>Enabled</code> to
+     * replicate modifications on replicas. </p>  <p> If you don't specify the
+     * <code>Filter</code> element, Amazon S3 assumes that the replication
+     * configuration is the earlier version, V1. In the earlier version, this element
+     * is not allowed</p> 
+     */
+    inline const ReplicaModifications& GetReplicaModifications() const{ return m_replicaModifications; }
+
+    /**
+     * <p>A filter that you can specify for selections for modifications on replicas.
+     * Amazon S3 doesn't replicate replica modifications by default. In the latest
+     * version of replication configuration (when <code>Filter</code> is specified),
+     * you can specify this element and set the status to <code>Enabled</code> to
+     * replicate modifications on replicas. </p>  <p> If you don't specify the
+     * <code>Filter</code> element, Amazon S3 assumes that the replication
+     * configuration is the earlier version, V1. In the earlier version, this element
+     * is not allowed</p> 
+     */
+    inline bool ReplicaModificationsHasBeenSet() const { return m_replicaModificationsHasBeenSet; }
+
+    /**
+     * <p>A filter that you can specify for selections for modifications on replicas.
+     * Amazon S3 doesn't replicate replica modifications by default. In the latest
+     * version of replication configuration (when <code>Filter</code> is specified),
+     * you can specify this element and set the status to <code>Enabled</code> to
+     * replicate modifications on replicas. </p>  <p> If you don't specify the
+     * <code>Filter</code> element, Amazon S3 assumes that the replication
+     * configuration is the earlier version, V1. In the earlier version, this element
+     * is not allowed</p> 
+     */
+    inline void SetReplicaModifications(const ReplicaModifications& value) { m_replicaModificationsHasBeenSet = true; m_replicaModifications = value; }
+
+    /**
+     * <p>A filter that you can specify for selections for modifications on replicas.
+     * Amazon S3 doesn't replicate replica modifications by default. In the latest
+     * version of replication configuration (when <code>Filter</code> is specified),
+     * you can specify this element and set the status to <code>Enabled</code> to
+     * replicate modifications on replicas. </p>  <p> If you don't specify the
+     * <code>Filter</code> element, Amazon S3 assumes that the replication
+     * configuration is the earlier version, V1. In the earlier version, this element
+     * is not allowed</p> 
+     */
+    inline void SetReplicaModifications(ReplicaModifications&& value) { m_replicaModificationsHasBeenSet = true; m_replicaModifications = std::move(value); }
+
+    /**
+     * <p>A filter that you can specify for selections for modifications on replicas.
+     * Amazon S3 doesn't replicate replica modifications by default. In the latest
+     * version of replication configuration (when <code>Filter</code> is specified),
+     * you can specify this element and set the status to <code>Enabled</code> to
+     * replicate modifications on replicas. </p>  <p> If you don't specify the
+     * <code>Filter</code> element, Amazon S3 assumes that the replication
+     * configuration is the earlier version, V1. In the earlier version, this element
+     * is not allowed</p> 
+     */
+    inline SourceSelectionCriteria& WithReplicaModifications(const ReplicaModifications& value) { SetReplicaModifications(value); return *this;}
+
+    /**
+     * <p>A filter that you can specify for selections for modifications on replicas.
+     * Amazon S3 doesn't replicate replica modifications by default. In the latest
+     * version of replication configuration (when <code>Filter</code> is specified),
+     * you can specify this element and set the status to <code>Enabled</code> to
+     * replicate modifications on replicas. </p>  <p> If you don't specify the
+     * <code>Filter</code> element, Amazon S3 assumes that the replication
+     * configuration is the earlier version, V1. In the earlier version, this element
+     * is not allowed</p> 
+     */
+    inline SourceSelectionCriteria& WithReplicaModifications(ReplicaModifications&& value) { SetReplicaModifications(std::move(value)); return *this;}
+
   private:
 
     SseKmsEncryptedObjects m_sseKmsEncryptedObjects;
     bool m_sseKmsEncryptedObjectsHasBeenSet;
+
+    ReplicaModifications m_replicaModifications;
+    bool m_replicaModificationsHasBeenSet;
   };
 
 } // namespace Model

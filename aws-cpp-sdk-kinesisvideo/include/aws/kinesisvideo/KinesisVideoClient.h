@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
@@ -99,25 +89,25 @@ namespace Model
         class UpdateSignalingChannelRequest;
         class UpdateStreamRequest;
 
-        typedef Aws::Utils::Outcome<CreateSignalingChannelResult, Aws::Client::AWSError<KinesisVideoErrors>> CreateSignalingChannelOutcome;
-        typedef Aws::Utils::Outcome<CreateStreamResult, Aws::Client::AWSError<KinesisVideoErrors>> CreateStreamOutcome;
-        typedef Aws::Utils::Outcome<DeleteSignalingChannelResult, Aws::Client::AWSError<KinesisVideoErrors>> DeleteSignalingChannelOutcome;
-        typedef Aws::Utils::Outcome<DeleteStreamResult, Aws::Client::AWSError<KinesisVideoErrors>> DeleteStreamOutcome;
-        typedef Aws::Utils::Outcome<DescribeSignalingChannelResult, Aws::Client::AWSError<KinesisVideoErrors>> DescribeSignalingChannelOutcome;
-        typedef Aws::Utils::Outcome<DescribeStreamResult, Aws::Client::AWSError<KinesisVideoErrors>> DescribeStreamOutcome;
-        typedef Aws::Utils::Outcome<GetDataEndpointResult, Aws::Client::AWSError<KinesisVideoErrors>> GetDataEndpointOutcome;
-        typedef Aws::Utils::Outcome<GetSignalingChannelEndpointResult, Aws::Client::AWSError<KinesisVideoErrors>> GetSignalingChannelEndpointOutcome;
-        typedef Aws::Utils::Outcome<ListSignalingChannelsResult, Aws::Client::AWSError<KinesisVideoErrors>> ListSignalingChannelsOutcome;
-        typedef Aws::Utils::Outcome<ListStreamsResult, Aws::Client::AWSError<KinesisVideoErrors>> ListStreamsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<KinesisVideoErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForStreamResult, Aws::Client::AWSError<KinesisVideoErrors>> ListTagsForStreamOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<KinesisVideoErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<TagStreamResult, Aws::Client::AWSError<KinesisVideoErrors>> TagStreamOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<KinesisVideoErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagStreamResult, Aws::Client::AWSError<KinesisVideoErrors>> UntagStreamOutcome;
-        typedef Aws::Utils::Outcome<UpdateDataRetentionResult, Aws::Client::AWSError<KinesisVideoErrors>> UpdateDataRetentionOutcome;
-        typedef Aws::Utils::Outcome<UpdateSignalingChannelResult, Aws::Client::AWSError<KinesisVideoErrors>> UpdateSignalingChannelOutcome;
-        typedef Aws::Utils::Outcome<UpdateStreamResult, Aws::Client::AWSError<KinesisVideoErrors>> UpdateStreamOutcome;
+        typedef Aws::Utils::Outcome<CreateSignalingChannelResult, KinesisVideoError> CreateSignalingChannelOutcome;
+        typedef Aws::Utils::Outcome<CreateStreamResult, KinesisVideoError> CreateStreamOutcome;
+        typedef Aws::Utils::Outcome<DeleteSignalingChannelResult, KinesisVideoError> DeleteSignalingChannelOutcome;
+        typedef Aws::Utils::Outcome<DeleteStreamResult, KinesisVideoError> DeleteStreamOutcome;
+        typedef Aws::Utils::Outcome<DescribeSignalingChannelResult, KinesisVideoError> DescribeSignalingChannelOutcome;
+        typedef Aws::Utils::Outcome<DescribeStreamResult, KinesisVideoError> DescribeStreamOutcome;
+        typedef Aws::Utils::Outcome<GetDataEndpointResult, KinesisVideoError> GetDataEndpointOutcome;
+        typedef Aws::Utils::Outcome<GetSignalingChannelEndpointResult, KinesisVideoError> GetSignalingChannelEndpointOutcome;
+        typedef Aws::Utils::Outcome<ListSignalingChannelsResult, KinesisVideoError> ListSignalingChannelsOutcome;
+        typedef Aws::Utils::Outcome<ListStreamsResult, KinesisVideoError> ListStreamsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, KinesisVideoError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForStreamResult, KinesisVideoError> ListTagsForStreamOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, KinesisVideoError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<TagStreamResult, KinesisVideoError> TagStreamOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, KinesisVideoError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagStreamResult, KinesisVideoError> UntagStreamOutcome;
+        typedef Aws::Utils::Outcome<UpdateDataRetentionResult, KinesisVideoError> UpdateDataRetentionOutcome;
+        typedef Aws::Utils::Outcome<UpdateSignalingChannelResult, KinesisVideoError> UpdateSignalingChannelOutcome;
+        typedef Aws::Utils::Outcome<UpdateStreamResult, KinesisVideoError> UpdateStreamOutcome;
 
         typedef std::future<CreateSignalingChannelOutcome> CreateSignalingChannelOutcomeCallable;
         typedef std::future<CreateStreamOutcome> CreateStreamOutcomeCallable;
@@ -190,8 +180,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~KinesisVideoClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "Kinesis Video"; }
 
 
         /**
@@ -350,8 +338,8 @@ namespace Model
 
         /**
          * <p>Returns the most current information about the signaling channel. You must
-         * specify either the name or the ARN of the channel that you want to
-         * describe.</p><p><h3>See Also:</h3>   <a
+         * specify either the name or the Amazon Resource Name (ARN) of the channel that
+         * you want to describe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeSignalingChannel">AWS
          * API Reference</a></p>
          */
@@ -359,8 +347,8 @@ namespace Model
 
         /**
          * <p>Returns the most current information about the signaling channel. You must
-         * specify either the name or the ARN of the channel that you want to
-         * describe.</p><p><h3>See Also:</h3>   <a
+         * specify either the name or the Amazon Resource Name (ARN) of the channel that
+         * you want to describe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeSignalingChannel">AWS
          * API Reference</a></p>
          *
@@ -370,8 +358,8 @@ namespace Model
 
         /**
          * <p>Returns the most current information about the signaling channel. You must
-         * specify either the name or the ARN of the channel that you want to
-         * describe.</p><p><h3>See Also:</h3>   <a
+         * specify either the name or the Amazon Resource Name (ARN) of the channel that
+         * you want to describe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeSignalingChannel">AWS
          * API Reference</a></p>
          *
@@ -414,9 +402,9 @@ namespace Model
          * <p>Gets an endpoint for a specified stream for either reading or writing. Use
          * this endpoint in your application to read from the specified stream (using the
          * <code>GetMedia</code> or <code>GetMediaForFragmentList</code> operations) or
-         * write to it (using the <code>PutMedia</code> operation). </p> <note> <p>The
+         * write to it (using the <code>PutMedia</code> operation). </p>  <p>The
          * returned endpoint does not have the API name appended. The client needs to add
-         * the API name to the returned endpoint.</p> </note> <p>In the request, specify
+         * the API name to the returned endpoint.</p>  <p>In the request, specify
          * the stream either by <code>StreamName</code> or
          * <code>StreamARN</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetDataEndpoint">AWS
@@ -428,9 +416,9 @@ namespace Model
          * <p>Gets an endpoint for a specified stream for either reading or writing. Use
          * this endpoint in your application to read from the specified stream (using the
          * <code>GetMedia</code> or <code>GetMediaForFragmentList</code> operations) or
-         * write to it (using the <code>PutMedia</code> operation). </p> <note> <p>The
+         * write to it (using the <code>PutMedia</code> operation). </p>  <p>The
          * returned endpoint does not have the API name appended. The client needs to add
-         * the API name to the returned endpoint.</p> </note> <p>In the request, specify
+         * the API name to the returned endpoint.</p>  <p>In the request, specify
          * the stream either by <code>StreamName</code> or
          * <code>StreamARN</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetDataEndpoint">AWS
@@ -444,9 +432,9 @@ namespace Model
          * <p>Gets an endpoint for a specified stream for either reading or writing. Use
          * this endpoint in your application to read from the specified stream (using the
          * <code>GetMedia</code> or <code>GetMediaForFragmentList</code> operations) or
-         * write to it (using the <code>PutMedia</code> operation). </p> <note> <p>The
+         * write to it (using the <code>PutMedia</code> operation). </p>  <p>The
          * returned endpoint does not have the API name appended. The client needs to add
-         * the API name to the returned endpoint.</p> </note> <p>In the request, specify
+         * the API name to the returned endpoint.</p>  <p>In the request, specify
          * the stream either by <code>StreamName</code> or
          * <code>StreamARN</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetDataEndpoint">AWS
@@ -462,14 +450,14 @@ namespace Model
          * <code>SingleMasterChannelEndpointConfiguration</code> input parameter, which
          * consists of the <code>Protocols</code> and <code>Role</code> properties.</p> <p>
          * <code>Protocols</code> is used to determine the communication mechanism. For
-         * example, specifying <code>WSS</code> as the protocol, results in this API
-         * producing a secure websocket endpoint, and specifying <code>HTTPS</code> as the
-         * protocol, results in this API generating an HTTPS endpoint. </p> <p>
-         * <code>Role</code> determines the messaging permissions. A <code>MASTER</code>
-         * role results in this API generating an endpoint that a client can use to
-         * communicate with any of the viewers on the channel. A <code>VIEWER</code> role
-         * results in this API generating an endpoint that a client can use to communicate
-         * only with a <code>MASTER</code>. </p><p><h3>See Also:</h3>   <a
+         * example, if you specify <code>WSS</code> as the protocol, this API produces a
+         * secure websocket endpoint. If you specify <code>HTTPS</code> as the protocol,
+         * this API generates an HTTPS endpoint. </p> <p> <code>Role</code> determines the
+         * messaging permissions. A <code>MASTER</code> role results in this API generating
+         * an endpoint that a client can use to communicate with any of the viewers on the
+         * channel. A <code>VIEWER</code> role results in this API generating an endpoint
+         * that a client can use to communicate only with a <code>MASTER</code>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetSignalingChannelEndpoint">AWS
          * API Reference</a></p>
          */
@@ -481,14 +469,14 @@ namespace Model
          * <code>SingleMasterChannelEndpointConfiguration</code> input parameter, which
          * consists of the <code>Protocols</code> and <code>Role</code> properties.</p> <p>
          * <code>Protocols</code> is used to determine the communication mechanism. For
-         * example, specifying <code>WSS</code> as the protocol, results in this API
-         * producing a secure websocket endpoint, and specifying <code>HTTPS</code> as the
-         * protocol, results in this API generating an HTTPS endpoint. </p> <p>
-         * <code>Role</code> determines the messaging permissions. A <code>MASTER</code>
-         * role results in this API generating an endpoint that a client can use to
-         * communicate with any of the viewers on the channel. A <code>VIEWER</code> role
-         * results in this API generating an endpoint that a client can use to communicate
-         * only with a <code>MASTER</code>. </p><p><h3>See Also:</h3>   <a
+         * example, if you specify <code>WSS</code> as the protocol, this API produces a
+         * secure websocket endpoint. If you specify <code>HTTPS</code> as the protocol,
+         * this API generates an HTTPS endpoint. </p> <p> <code>Role</code> determines the
+         * messaging permissions. A <code>MASTER</code> role results in this API generating
+         * an endpoint that a client can use to communicate with any of the viewers on the
+         * channel. A <code>VIEWER</code> role results in this API generating an endpoint
+         * that a client can use to communicate only with a <code>MASTER</code>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetSignalingChannelEndpoint">AWS
          * API Reference</a></p>
          *
@@ -502,14 +490,14 @@ namespace Model
          * <code>SingleMasterChannelEndpointConfiguration</code> input parameter, which
          * consists of the <code>Protocols</code> and <code>Role</code> properties.</p> <p>
          * <code>Protocols</code> is used to determine the communication mechanism. For
-         * example, specifying <code>WSS</code> as the protocol, results in this API
-         * producing a secure websocket endpoint, and specifying <code>HTTPS</code> as the
-         * protocol, results in this API generating an HTTPS endpoint. </p> <p>
-         * <code>Role</code> determines the messaging permissions. A <code>MASTER</code>
-         * role results in this API generating an endpoint that a client can use to
-         * communicate with any of the viewers on the channel. A <code>VIEWER</code> role
-         * results in this API generating an endpoint that a client can use to communicate
-         * only with a <code>MASTER</code>. </p><p><h3>See Also:</h3>   <a
+         * example, if you specify <code>WSS</code> as the protocol, this API produces a
+         * secure websocket endpoint. If you specify <code>HTTPS</code> as the protocol,
+         * this API generates an HTTPS endpoint. </p> <p> <code>Role</code> determines the
+         * messaging permissions. A <code>MASTER</code> role results in this API generating
+         * an endpoint that a client can use to communicate with any of the viewers on the
+         * channel. A <code>VIEWER</code> role results in this API generating an endpoint
+         * that a client can use to communicate only with a <code>MASTER</code>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetSignalingChannelEndpoint">AWS
          * API Reference</a></p>
          *
@@ -806,8 +794,8 @@ namespace Model
          * you specify. To indicate whether you want to increase or decrease the data
          * retention period, specify the <code>Operation</code> parameter in the request
          * body. In the request, you must specify either the <code>StreamName</code> or the
-         * <code>StreamARN</code>. </p> <note> <p>The retention period that you specify
-         * replaces the current value.</p> </note> <p>This operation requires permission
+         * <code>StreamARN</code>. </p>  <p>The retention period that you specify
+         * replaces the current value.</p>  <p>This operation requires permission
          * for the <code>KinesisVideo:UpdateDataRetention</code> action.</p> <p>Changing
          * the data retention period affects the data in the stream as follows:</p> <ul>
          * <li> <p>If the data retention period is increased, existing data is retained for
@@ -828,8 +816,8 @@ namespace Model
          * you specify. To indicate whether you want to increase or decrease the data
          * retention period, specify the <code>Operation</code> parameter in the request
          * body. In the request, you must specify either the <code>StreamName</code> or the
-         * <code>StreamARN</code>. </p> <note> <p>The retention period that you specify
-         * replaces the current value.</p> </note> <p>This operation requires permission
+         * <code>StreamARN</code>. </p>  <p>The retention period that you specify
+         * replaces the current value.</p>  <p>This operation requires permission
          * for the <code>KinesisVideo:UpdateDataRetention</code> action.</p> <p>Changing
          * the data retention period affects the data in the stream as follows:</p> <ul>
          * <li> <p>If the data retention period is increased, existing data is retained for
@@ -852,8 +840,8 @@ namespace Model
          * you specify. To indicate whether you want to increase or decrease the data
          * retention period, specify the <code>Operation</code> parameter in the request
          * body. In the request, you must specify either the <code>StreamName</code> or the
-         * <code>StreamARN</code>. </p> <note> <p>The retention period that you specify
-         * replaces the current value.</p> </note> <p>This operation requires permission
+         * <code>StreamARN</code>. </p>  <p>The retention period that you specify
+         * replaces the current value.</p>  <p>This operation requires permission
          * for the <code>KinesisVideo:UpdateDataRetention</code> action.</p> <p>Changing
          * the data retention period affects the data in the stream as follows:</p> <ul>
          * <li> <p>If the data retention period is increased, existing data is retained for
@@ -874,10 +862,9 @@ namespace Model
         /**
          * <p>Updates the existing signaling channel. This is an asynchronous operation and
          * takes time to complete. </p> <p>If the <code>MessageTtlSeconds</code> value is
-         * updated (either increased or reduced), then it only applies to new messages sent
-         * via this channel after it's been updated. Existing messages are still expire as
-         * per the previous <code>MessageTtlSeconds</code> value.</p><p><h3>See Also:</h3> 
-         * <a
+         * updated (either increased or reduced), it only applies to new messages sent via
+         * this channel after it's been updated. Existing messages are still expired as per
+         * the previous <code>MessageTtlSeconds</code> value.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateSignalingChannel">AWS
          * API Reference</a></p>
          */
@@ -886,10 +873,9 @@ namespace Model
         /**
          * <p>Updates the existing signaling channel. This is an asynchronous operation and
          * takes time to complete. </p> <p>If the <code>MessageTtlSeconds</code> value is
-         * updated (either increased or reduced), then it only applies to new messages sent
-         * via this channel after it's been updated. Existing messages are still expire as
-         * per the previous <code>MessageTtlSeconds</code> value.</p><p><h3>See Also:</h3> 
-         * <a
+         * updated (either increased or reduced), it only applies to new messages sent via
+         * this channel after it's been updated. Existing messages are still expired as per
+         * the previous <code>MessageTtlSeconds</code> value.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateSignalingChannel">AWS
          * API Reference</a></p>
          *
@@ -900,10 +886,9 @@ namespace Model
         /**
          * <p>Updates the existing signaling channel. This is an asynchronous operation and
          * takes time to complete. </p> <p>If the <code>MessageTtlSeconds</code> value is
-         * updated (either increased or reduced), then it only applies to new messages sent
-         * via this channel after it's been updated. Existing messages are still expire as
-         * per the previous <code>MessageTtlSeconds</code> value.</p><p><h3>See Also:</h3> 
-         * <a
+         * updated (either increased or reduced), it only applies to new messages sent via
+         * this channel after it's been updated. Existing messages are still expired as per
+         * the previous <code>MessageTtlSeconds</code> value.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateSignalingChannel">AWS
          * API Reference</a></p>
          *

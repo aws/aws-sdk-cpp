@@ -1,14 +1,29 @@
 #set($startIndex = 0)
 #set($skipFirst = false)
 #if($virtualAddressingSupported || $arnEndpointSupported)
+#if($operation.hasOutpostIdMember)
+#set($outpostIdParam = "request.${CppViewHelper.convertToUpperCamel($operation.outpostIdMemberName)}HasBeenSet()")
+#else
+#set($outpostIdParam = "false")
+#end
+#if($operation.arnLocation.equals("uri"))
+#set($uriParts = $operation.http.requestUriParts)
+#set($uriPartString = ${uriParts.get($startIndex)})
+#else
+#set($uriPartString = "")
+#end
 #if($operation.virtualAddressAllowed)
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.Get${CppViewHelper.convertToUpperCamel($operation.virtualAddressMemberName)}());
 #set($startIndex = 1)
 #set($skipFirst = true)
 #elseif($operation.arnEndpointAllowed)
-  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.Get${CppViewHelper.convertToUpperCamel($operation.arnEndpointMemberName)}());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.Get${CppViewHelper.convertToUpperCamel($operation.arnEndpointMemberName)}(), $outpostIdParam, "$uriPartString");
+#if($operation.arnLocation.equals("uri"))
 #set($startIndex = 1)
 #set($skipFirst = true)
+#end
+#elseif($operation.hasOutpostIdMember)
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString($outpostIdParam);
 #else
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
 #end
@@ -16,18 +31,7 @@
   {
     return ${operation.name}Outcome(computeEndpointOutcome.GetError());
   }
-  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
-#elseif($accountIdInHostnameSupported)
-#if($operation.hasAccountIdInHostname)
-  Aws::String endpointString(ComputeEndpointString(request.GetAccountId()));
-  if (endpointString.empty())
-  {
-      return ${operation.name}Outcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Account ID provided is not a valid [RFC 1123 2.1] host domain name label.", false/*retryable*/));
-  }
-  Aws::Http::URI uri = endpointString;
-#else
-  Aws::Http::URI uri = ComputeEndpointString();
-#end
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
 #else
 #if($metadata.hasEndpointTrait)
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
@@ -59,7 +63,7 @@
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("${operation.name}", "Making request to cached endpoint: " << endpoint);
-      uri = endpoint;
+      uri = m_configScheme + "://" + endpoint;
     }
     else
     {
@@ -78,7 +82,7 @@
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = item.GetAddress();
+        uri = m_configScheme + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("${operation.name}", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
       }
       else
@@ -94,7 +98,12 @@
   }
 #end
 #if($operation.hasEndpointTrait)
-  if (m_enableHostPrefixInjection)
+#if($operation.arnEndpointAllowed)
+#set($arnInRequestParameters=" && !${metadata.classNamePrefix}ARN(request.Get${CppViewHelper.convertToUpperCamel($operation.arnEndpointMemberName)}())")
+#else
+#set($arnInRequestParameters="")
+#end
+  if (m_enableHostPrefixInjection${arnInRequestParameters})
   {
 #foreach($member in $operation.endpoint.getMemberReferences())
     if (request.Get${member}().empty())
@@ -109,5 +118,13 @@
       AWS_LOGSTREAM_ERROR("${operation.name}", "Invalid DNS host: " << uri.GetAuthority());
       return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
+  }
+#end
+#if($operation.hasPreSignedUrl)
+  ${operation.request.shape.name} newRequest = request;
+  if (request.SourceRegionHasBeenSet() && !request.PreSignedUrlHasBeenSet())
+  {
+    Aws::Http::URI sourceUri(m_configScheme + "://" + ${metadata.classNamePrefix}Endpoint::ForRegion(request.GetSourceRegion(), m_useDualStack));
+    newRequest.SetPreSignedUrl(GeneratePresignedUrl(request, sourceUri, Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(), {{ "DestinationRegion", m_region }}, 3600));
   }
 #end

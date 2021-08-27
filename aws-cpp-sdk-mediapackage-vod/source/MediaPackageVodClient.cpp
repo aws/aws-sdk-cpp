@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -45,6 +35,7 @@
 #include <aws/mediapackage-vod/model/ListTagsForResourceRequest.h>
 #include <aws/mediapackage-vod/model/TagResourceRequest.h>
 #include <aws/mediapackage-vod/model/UntagResourceRequest.h>
+#include <aws/mediapackage-vod/model/UpdatePackagingGroupRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -61,7 +52,7 @@ static const char* ALLOCATION_TAG = "MediaPackageVodClient";
 MediaPackageVodClient::MediaPackageVodClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<MediaPackageVodErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -71,7 +62,7 @@ MediaPackageVodClient::MediaPackageVodClient(const Client::ClientConfiguration& 
 MediaPackageVodClient::MediaPackageVodClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<MediaPackageVodErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -82,7 +73,7 @@ MediaPackageVodClient::MediaPackageVodClient(const std::shared_ptr<AWSCredential
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<MediaPackageVodErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -95,6 +86,7 @@ MediaPackageVodClient::~MediaPackageVodClient()
 
 void MediaPackageVodClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("MediaPackage Vod");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -124,15 +116,7 @@ CreateAssetOutcome MediaPackageVodClient::CreateAsset(const CreateAssetRequest& 
   Aws::StringStream ss;
   ss << "/assets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateAssetOutcome(CreateAssetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateAssetOutcome(outcome.GetError());
-  }
+  return CreateAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateAssetOutcomeCallable MediaPackageVodClient::CreateAssetCallable(const CreateAssetRequest& request) const
@@ -159,15 +143,7 @@ CreatePackagingConfigurationOutcome MediaPackageVodClient::CreatePackagingConfig
   Aws::StringStream ss;
   ss << "/packaging_configurations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreatePackagingConfigurationOutcome(CreatePackagingConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreatePackagingConfigurationOutcome(outcome.GetError());
-  }
+  return CreatePackagingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreatePackagingConfigurationOutcomeCallable MediaPackageVodClient::CreatePackagingConfigurationCallable(const CreatePackagingConfigurationRequest& request) const
@@ -194,15 +170,7 @@ CreatePackagingGroupOutcome MediaPackageVodClient::CreatePackagingGroup(const Cr
   Aws::StringStream ss;
   ss << "/packaging_groups";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreatePackagingGroupOutcome(CreatePackagingGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreatePackagingGroupOutcome(outcome.GetError());
-  }
+  return CreatePackagingGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreatePackagingGroupOutcomeCallable MediaPackageVodClient::CreatePackagingGroupCallable(const CreatePackagingGroupRequest& request) const
@@ -235,15 +203,7 @@ DeleteAssetOutcome MediaPackageVodClient::DeleteAsset(const DeleteAssetRequest& 
   ss << "/assets/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAssetOutcome(DeleteAssetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteAssetOutcome(outcome.GetError());
-  }
+  return DeleteAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAssetOutcomeCallable MediaPackageVodClient::DeleteAssetCallable(const DeleteAssetRequest& request) const
@@ -276,15 +236,7 @@ DeletePackagingConfigurationOutcome MediaPackageVodClient::DeletePackagingConfig
   ss << "/packaging_configurations/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeletePackagingConfigurationOutcome(DeletePackagingConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeletePackagingConfigurationOutcome(outcome.GetError());
-  }
+  return DeletePackagingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeletePackagingConfigurationOutcomeCallable MediaPackageVodClient::DeletePackagingConfigurationCallable(const DeletePackagingConfigurationRequest& request) const
@@ -317,15 +269,7 @@ DeletePackagingGroupOutcome MediaPackageVodClient::DeletePackagingGroup(const De
   ss << "/packaging_groups/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeletePackagingGroupOutcome(DeletePackagingGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeletePackagingGroupOutcome(outcome.GetError());
-  }
+  return DeletePackagingGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeletePackagingGroupOutcomeCallable MediaPackageVodClient::DeletePackagingGroupCallable(const DeletePackagingGroupRequest& request) const
@@ -358,15 +302,7 @@ DescribeAssetOutcome MediaPackageVodClient::DescribeAsset(const DescribeAssetReq
   ss << "/assets/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeAssetOutcome(DescribeAssetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeAssetOutcome(outcome.GetError());
-  }
+  return DescribeAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAssetOutcomeCallable MediaPackageVodClient::DescribeAssetCallable(const DescribeAssetRequest& request) const
@@ -399,15 +335,7 @@ DescribePackagingConfigurationOutcome MediaPackageVodClient::DescribePackagingCo
   ss << "/packaging_configurations/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribePackagingConfigurationOutcome(DescribePackagingConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribePackagingConfigurationOutcome(outcome.GetError());
-  }
+  return DescribePackagingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribePackagingConfigurationOutcomeCallable MediaPackageVodClient::DescribePackagingConfigurationCallable(const DescribePackagingConfigurationRequest& request) const
@@ -440,15 +368,7 @@ DescribePackagingGroupOutcome MediaPackageVodClient::DescribePackagingGroup(cons
   ss << "/packaging_groups/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribePackagingGroupOutcome(DescribePackagingGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribePackagingGroupOutcome(outcome.GetError());
-  }
+  return DescribePackagingGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribePackagingGroupOutcomeCallable MediaPackageVodClient::DescribePackagingGroupCallable(const DescribePackagingGroupRequest& request) const
@@ -475,15 +395,7 @@ ListAssetsOutcome MediaPackageVodClient::ListAssets(const ListAssetsRequest& req
   Aws::StringStream ss;
   ss << "/assets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAssetsOutcome(ListAssetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAssetsOutcome(outcome.GetError());
-  }
+  return ListAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAssetsOutcomeCallable MediaPackageVodClient::ListAssetsCallable(const ListAssetsRequest& request) const
@@ -510,15 +422,7 @@ ListPackagingConfigurationsOutcome MediaPackageVodClient::ListPackagingConfigura
   Aws::StringStream ss;
   ss << "/packaging_configurations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPackagingConfigurationsOutcome(ListPackagingConfigurationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPackagingConfigurationsOutcome(outcome.GetError());
-  }
+  return ListPackagingConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPackagingConfigurationsOutcomeCallable MediaPackageVodClient::ListPackagingConfigurationsCallable(const ListPackagingConfigurationsRequest& request) const
@@ -545,15 +449,7 @@ ListPackagingGroupsOutcome MediaPackageVodClient::ListPackagingGroups(const List
   Aws::StringStream ss;
   ss << "/packaging_groups";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPackagingGroupsOutcome(ListPackagingGroupsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPackagingGroupsOutcome(outcome.GetError());
-  }
+  return ListPackagingGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPackagingGroupsOutcomeCallable MediaPackageVodClient::ListPackagingGroupsCallable(const ListPackagingGroupsRequest& request) const
@@ -586,15 +482,7 @@ ListTagsForResourceOutcome MediaPackageVodClient::ListTagsForResource(const List
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable MediaPackageVodClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -627,15 +515,7 @@ TagResourceOutcome MediaPackageVodClient::TagResource(const TagResourceRequest& 
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable MediaPackageVodClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -673,15 +553,7 @@ UntagResourceOutcome MediaPackageVodClient::UntagResource(const UntagResourceReq
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable MediaPackageVodClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -700,5 +572,38 @@ void MediaPackageVodClient::UntagResourceAsync(const UntagResourceRequest& reque
 void MediaPackageVodClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdatePackagingGroupOutcome MediaPackageVodClient::UpdatePackagingGroup(const UpdatePackagingGroupRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePackagingGroup", "Required field: Id, is not set");
+    return UpdatePackagingGroupOutcome(Aws::Client::AWSError<MediaPackageVodErrors>(MediaPackageVodErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/packaging_groups/";
+  ss << request.GetId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdatePackagingGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdatePackagingGroupOutcomeCallable MediaPackageVodClient::UpdatePackagingGroupCallable(const UpdatePackagingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePackagingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePackagingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaPackageVodClient::UpdatePackagingGroupAsync(const UpdatePackagingGroupRequest& request, const UpdatePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePackagingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void MediaPackageVodClient::UpdatePackagingGroupAsyncHelper(const UpdatePackagingGroupRequest& request, const UpdatePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePackagingGroup(request), context);
 }
 

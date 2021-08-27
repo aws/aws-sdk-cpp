@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -70,7 +60,7 @@ namespace Model
 
 
     /**
-     * <p>The layer's compatible runtimes. Maximum number of 5 items.</p> <p>Valid
+     * <p>The layer's compatible runtimes. Maximum number of five items.</p> <p>Valid
      * values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
      * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
      * <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> |
@@ -80,7 +70,7 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetCompatibleRuntimes() const{ return m_compatibleRuntimes; }
 
     /**
-     * <p>The layer's compatible runtimes. Maximum number of 5 items.</p> <p>Valid
+     * <p>The layer's compatible runtimes. Maximum number of five items.</p> <p>Valid
      * values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
      * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
      * <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> |
@@ -90,7 +80,7 @@ namespace Model
     inline bool CompatibleRuntimesHasBeenSet() const { return m_compatibleRuntimesHasBeenSet; }
 
     /**
-     * <p>The layer's compatible runtimes. Maximum number of 5 items.</p> <p>Valid
+     * <p>The layer's compatible runtimes. Maximum number of five items.</p> <p>Valid
      * values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
      * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
      * <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> |
@@ -100,7 +90,7 @@ namespace Model
     inline void SetCompatibleRuntimes(const Aws::Vector<Aws::String>& value) { m_compatibleRuntimesHasBeenSet = true; m_compatibleRuntimes = value; }
 
     /**
-     * <p>The layer's compatible runtimes. Maximum number of 5 items.</p> <p>Valid
+     * <p>The layer's compatible runtimes. Maximum number of five items.</p> <p>Valid
      * values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
      * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
      * <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> |
@@ -110,7 +100,7 @@ namespace Model
     inline void SetCompatibleRuntimes(Aws::Vector<Aws::String>&& value) { m_compatibleRuntimesHasBeenSet = true; m_compatibleRuntimes = std::move(value); }
 
     /**
-     * <p>The layer's compatible runtimes. Maximum number of 5 items.</p> <p>Valid
+     * <p>The layer's compatible runtimes. Maximum number of five items.</p> <p>Valid
      * values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
      * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
      * <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> |
@@ -120,7 +110,7 @@ namespace Model
     inline AwsLambdaLayerVersionDetails& WithCompatibleRuntimes(const Aws::Vector<Aws::String>& value) { SetCompatibleRuntimes(value); return *this;}
 
     /**
-     * <p>The layer's compatible runtimes. Maximum number of 5 items.</p> <p>Valid
+     * <p>The layer's compatible runtimes. Maximum number of five items.</p> <p>Valid
      * values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
      * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
      * <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> |
@@ -130,7 +120,7 @@ namespace Model
     inline AwsLambdaLayerVersionDetails& WithCompatibleRuntimes(Aws::Vector<Aws::String>&& value) { SetCompatibleRuntimes(std::move(value)); return *this;}
 
     /**
-     * <p>The layer's compatible runtimes. Maximum number of 5 items.</p> <p>Valid
+     * <p>The layer's compatible runtimes. Maximum number of five items.</p> <p>Valid
      * values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
      * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
      * <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> |
@@ -140,7 +130,7 @@ namespace Model
     inline AwsLambdaLayerVersionDetails& AddCompatibleRuntimes(const Aws::String& value) { m_compatibleRuntimesHasBeenSet = true; m_compatibleRuntimes.push_back(value); return *this; }
 
     /**
-     * <p>The layer's compatible runtimes. Maximum number of 5 items.</p> <p>Valid
+     * <p>The layer's compatible runtimes. Maximum number of five items.</p> <p>Valid
      * values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
      * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
      * <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> |
@@ -150,7 +140,7 @@ namespace Model
     inline AwsLambdaLayerVersionDetails& AddCompatibleRuntimes(Aws::String&& value) { m_compatibleRuntimesHasBeenSet = true; m_compatibleRuntimes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The layer's compatible runtimes. Maximum number of 5 items.</p> <p>Valid
+     * <p>The layer's compatible runtimes. Maximum number of five items.</p> <p>Valid
      * values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
      * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
      * <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> |
@@ -161,50 +151,74 @@ namespace Model
 
 
     /**
-     * <p>The date that the version was created, in ISO 8601 format. For example,
-     * 2018-11-27T15:10:45.123+0000. </p>
+     * <p>Indicates when the version was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetCreatedDate() const{ return m_createdDate; }
 
     /**
-     * <p>The date that the version was created, in ISO 8601 format. For example,
-     * 2018-11-27T15:10:45.123+0000. </p>
+     * <p>Indicates when the version was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
 
     /**
-     * <p>The date that the version was created, in ISO 8601 format. For example,
-     * 2018-11-27T15:10:45.123+0000. </p>
+     * <p>Indicates when the version was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreatedDate(const Aws::String& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
-     * <p>The date that the version was created, in ISO 8601 format. For example,
-     * 2018-11-27T15:10:45.123+0000. </p>
+     * <p>Indicates when the version was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreatedDate(Aws::String&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
 
     /**
-     * <p>The date that the version was created, in ISO 8601 format. For example,
-     * 2018-11-27T15:10:45.123+0000. </p>
+     * <p>Indicates when the version was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreatedDate(const char* value) { m_createdDateHasBeenSet = true; m_createdDate.assign(value); }
 
     /**
-     * <p>The date that the version was created, in ISO 8601 format. For example,
-     * 2018-11-27T15:10:45.123+0000. </p>
+     * <p>Indicates when the version was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsLambdaLayerVersionDetails& WithCreatedDate(const Aws::String& value) { SetCreatedDate(value); return *this;}
 
     /**
-     * <p>The date that the version was created, in ISO 8601 format. For example,
-     * 2018-11-27T15:10:45.123+0000. </p>
+     * <p>Indicates when the version was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsLambdaLayerVersionDetails& WithCreatedDate(Aws::String&& value) { SetCreatedDate(std::move(value)); return *this;}
 
     /**
-     * <p>The date that the version was created, in ISO 8601 format. For example,
-     * 2018-11-27T15:10:45.123+0000. </p>
+     * <p>Indicates when the version was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsLambdaLayerVersionDetails& WithCreatedDate(const char* value) { SetCreatedDate(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/dms/model/S3Settings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -62,7 +52,19 @@ S3Settings::S3Settings() :
     m_parquetTimestampInMillisecond(false),
     m_parquetTimestampInMillisecondHasBeenSet(false),
     m_cdcInsertsAndUpdates(false),
-    m_cdcInsertsAndUpdatesHasBeenSet(false)
+    m_cdcInsertsAndUpdatesHasBeenSet(false),
+    m_datePartitionEnabled(false),
+    m_datePartitionEnabledHasBeenSet(false),
+    m_datePartitionSequence(DatePartitionSequenceValue::NOT_SET),
+    m_datePartitionSequenceHasBeenSet(false),
+    m_datePartitionDelimiter(DatePartitionDelimiterValue::NOT_SET),
+    m_datePartitionDelimiterHasBeenSet(false),
+    m_useCsvNoSupValue(false),
+    m_useCsvNoSupValueHasBeenSet(false),
+    m_csvNoSupValueHasBeenSet(false),
+    m_preserveTransactions(false),
+    m_preserveTransactionsHasBeenSet(false),
+    m_cdcPathHasBeenSet(false)
 {
 }
 
@@ -100,7 +102,19 @@ S3Settings::S3Settings(JsonView jsonValue) :
     m_parquetTimestampInMillisecond(false),
     m_parquetTimestampInMillisecondHasBeenSet(false),
     m_cdcInsertsAndUpdates(false),
-    m_cdcInsertsAndUpdatesHasBeenSet(false)
+    m_cdcInsertsAndUpdatesHasBeenSet(false),
+    m_datePartitionEnabled(false),
+    m_datePartitionEnabledHasBeenSet(false),
+    m_datePartitionSequence(DatePartitionSequenceValue::NOT_SET),
+    m_datePartitionSequenceHasBeenSet(false),
+    m_datePartitionDelimiter(DatePartitionDelimiterValue::NOT_SET),
+    m_datePartitionDelimiterHasBeenSet(false),
+    m_useCsvNoSupValue(false),
+    m_useCsvNoSupValueHasBeenSet(false),
+    m_csvNoSupValueHasBeenSet(false),
+    m_preserveTransactions(false),
+    m_preserveTransactionsHasBeenSet(false),
+    m_cdcPathHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -254,6 +268,55 @@ S3Settings& S3Settings::operator =(JsonView jsonValue)
     m_cdcInsertsAndUpdatesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DatePartitionEnabled"))
+  {
+    m_datePartitionEnabled = jsonValue.GetBool("DatePartitionEnabled");
+
+    m_datePartitionEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DatePartitionSequence"))
+  {
+    m_datePartitionSequence = DatePartitionSequenceValueMapper::GetDatePartitionSequenceValueForName(jsonValue.GetString("DatePartitionSequence"));
+
+    m_datePartitionSequenceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DatePartitionDelimiter"))
+  {
+    m_datePartitionDelimiter = DatePartitionDelimiterValueMapper::GetDatePartitionDelimiterValueForName(jsonValue.GetString("DatePartitionDelimiter"));
+
+    m_datePartitionDelimiterHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UseCsvNoSupValue"))
+  {
+    m_useCsvNoSupValue = jsonValue.GetBool("UseCsvNoSupValue");
+
+    m_useCsvNoSupValueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CsvNoSupValue"))
+  {
+    m_csvNoSupValue = jsonValue.GetString("CsvNoSupValue");
+
+    m_csvNoSupValueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PreserveTransactions"))
+  {
+    m_preserveTransactions = jsonValue.GetBool("PreserveTransactions");
+
+    m_preserveTransactionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CdcPath"))
+  {
+    m_cdcPath = jsonValue.GetString("CdcPath");
+
+    m_cdcPathHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -379,6 +442,46 @@ JsonValue S3Settings::Jsonize() const
   if(m_cdcInsertsAndUpdatesHasBeenSet)
   {
    payload.WithBool("CdcInsertsAndUpdates", m_cdcInsertsAndUpdates);
+
+  }
+
+  if(m_datePartitionEnabledHasBeenSet)
+  {
+   payload.WithBool("DatePartitionEnabled", m_datePartitionEnabled);
+
+  }
+
+  if(m_datePartitionSequenceHasBeenSet)
+  {
+   payload.WithString("DatePartitionSequence", DatePartitionSequenceValueMapper::GetNameForDatePartitionSequenceValue(m_datePartitionSequence));
+  }
+
+  if(m_datePartitionDelimiterHasBeenSet)
+  {
+   payload.WithString("DatePartitionDelimiter", DatePartitionDelimiterValueMapper::GetNameForDatePartitionDelimiterValue(m_datePartitionDelimiter));
+  }
+
+  if(m_useCsvNoSupValueHasBeenSet)
+  {
+   payload.WithBool("UseCsvNoSupValue", m_useCsvNoSupValue);
+
+  }
+
+  if(m_csvNoSupValueHasBeenSet)
+  {
+   payload.WithString("CsvNoSupValue", m_csvNoSupValue);
+
+  }
+
+  if(m_preserveTransactionsHasBeenSet)
+  {
+   payload.WithBool("PreserveTransactions", m_preserveTransactions);
+
+  }
+
+  if(m_cdcPathHasBeenSet)
+  {
+   payload.WithString("CdcPath", m_cdcPath);
 
   }
 

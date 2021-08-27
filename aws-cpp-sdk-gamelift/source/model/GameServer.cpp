@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/gamelift/model/GameServer.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,7 +25,6 @@ GameServer::GameServer() :
     m_instanceIdHasBeenSet(false),
     m_connectionInfoHasBeenSet(false),
     m_gameServerDataHasBeenSet(false),
-    m_customSortKeyHasBeenSet(false),
     m_claimStatus(GameServerClaimStatus::NOT_SET),
     m_claimStatusHasBeenSet(false),
     m_utilizationStatus(GameServerUtilizationStatus::NOT_SET),
@@ -53,7 +42,6 @@ GameServer::GameServer(JsonView jsonValue) :
     m_instanceIdHasBeenSet(false),
     m_connectionInfoHasBeenSet(false),
     m_gameServerDataHasBeenSet(false),
-    m_customSortKeyHasBeenSet(false),
     m_claimStatus(GameServerClaimStatus::NOT_SET),
     m_claimStatusHasBeenSet(false),
     m_utilizationStatus(GameServerUtilizationStatus::NOT_SET),
@@ -107,13 +95,6 @@ GameServer& GameServer::operator =(JsonView jsonValue)
     m_gameServerData = jsonValue.GetString("GameServerData");
 
     m_gameServerDataHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("CustomSortKey"))
-  {
-    m_customSortKey = jsonValue.GetString("CustomSortKey");
-
-    m_customSortKeyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ClaimStatus"))
@@ -191,12 +172,6 @@ JsonValue GameServer::Jsonize() const
   if(m_gameServerDataHasBeenSet)
   {
    payload.WithString("GameServerData", m_gameServerData);
-
-  }
-
-  if(m_customSortKeyHasBeenSet)
-  {
-   payload.WithString("CustomSortKey", m_customSortKey);
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -831,29 +821,37 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
-     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * <p>If specified, this value must be set to a number from 0 to 259,200 (72
+     * hours).</p> </li> </ul>
      */
     inline long long GetBacktrackWindow() const{ return m_backtrackWindow; }
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
-     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * <p>If specified, this value must be set to a number from 0 to 259,200 (72
+     * hours).</p> </li> </ul>
      */
     inline bool BacktrackWindowHasBeenSet() const { return m_backtrackWindowHasBeenSet; }
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
-     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * <p>If specified, this value must be set to a number from 0 to 259,200 (72
+     * hours).</p> </li> </ul>
      */
     inline void SetBacktrackWindow(long long value) { m_backtrackWindowHasBeenSet = true; m_backtrackWindow = value; }
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
-     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * <p>If specified, this value must be set to a number from 0 to 259,200 (72
+     * hours).</p> </li> </ul>
      */
     inline ModifyDBClusterRequest& WithBacktrackWindow(long long value) { SetBacktrackWindow(value); return *this;}
 
@@ -1075,10 +1073,10 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group to apply to all instances of the DB
-     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
      * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * maintenance window but instead are applied immediately.</p>  <p>Default:
      * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
      * group must be in the same DB parameter group family as this DB cluster.</p>
      * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
@@ -1089,10 +1087,10 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group to apply to all instances of the DB
-     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
      * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * maintenance window but instead are applied immediately.</p>  <p>Default:
      * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
      * group must be in the same DB parameter group family as this DB cluster.</p>
      * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
@@ -1103,10 +1101,10 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group to apply to all instances of the DB
-     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
      * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * maintenance window but instead are applied immediately.</p>  <p>Default:
      * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
      * group must be in the same DB parameter group family as this DB cluster.</p>
      * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
@@ -1117,10 +1115,10 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group to apply to all instances of the DB
-     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
      * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * maintenance window but instead are applied immediately.</p>  <p>Default:
      * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
      * group must be in the same DB parameter group family as this DB cluster.</p>
      * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
@@ -1131,10 +1129,10 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group to apply to all instances of the DB
-     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
      * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * maintenance window but instead are applied immediately.</p>  <p>Default:
      * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
      * group must be in the same DB parameter group family as this DB cluster.</p>
      * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
@@ -1145,10 +1143,10 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group to apply to all instances of the DB
-     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
      * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * maintenance window but instead are applied immediately.</p>  <p>Default:
      * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
      * group must be in the same DB parameter group family as this DB cluster.</p>
      * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
@@ -1159,10 +1157,10 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group to apply to all instances of the DB
-     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
      * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * maintenance window but instead are applied immediately.</p>  <p>Default:
      * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
      * group must be in the same DB parameter group family as this DB cluster.</p>
      * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
@@ -1173,10 +1171,10 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group to apply to all instances of the DB
-     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
      * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * maintenance window but instead are applied immediately.</p>  <p>Default:
      * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
      * group must be in the same DB parameter group family as this DB cluster.</p>
      * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
@@ -1189,56 +1187,72 @@ namespace Model
     /**
      * <p>The Active Directory directory ID to move the DB cluster to. Specify
      * <code>none</code> to remove the cluster from its current domain. The domain must
-     * be created prior to this operation. </p>
+     * be created prior to this operation. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
      * <p>The Active Directory directory ID to move the DB cluster to. Specify
      * <code>none</code> to remove the cluster from its current domain. The domain must
-     * be created prior to this operation. </p>
+     * be created prior to this operation. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
      * <p>The Active Directory directory ID to move the DB cluster to. Specify
      * <code>none</code> to remove the cluster from its current domain. The domain must
-     * be created prior to this operation. </p>
+     * be created prior to this operation. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
      * <p>The Active Directory directory ID to move the DB cluster to. Specify
      * <code>none</code> to remove the cluster from its current domain. The domain must
-     * be created prior to this operation. </p>
+     * be created prior to this operation. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>The Active Directory directory ID to move the DB cluster to. Specify
      * <code>none</code> to remove the cluster from its current domain. The domain must
-     * be created prior to this operation. </p>
+     * be created prior to this operation. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
      * <p>The Active Directory directory ID to move the DB cluster to. Specify
      * <code>none</code> to remove the cluster from its current domain. The domain must
-     * be created prior to this operation. </p>
+     * be created prior to this operation. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline ModifyDBClusterRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
      * <p>The Active Directory directory ID to move the DB cluster to. Specify
      * <code>none</code> to remove the cluster from its current domain. The domain must
-     * be created prior to this operation. </p>
+     * be created prior to this operation. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline ModifyDBClusterRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>The Active Directory directory ID to move the DB cluster to. Specify
      * <code>none</code> to remove the cluster from its current domain. The domain must
-     * be created prior to this operation. </p>
+     * be created prior to this operation. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline ModifyDBClusterRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
@@ -1435,6 +1449,43 @@ namespace Model
      */
     inline ModifyDBClusterRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
+
+    /**
+     * <p>A value that indicates whether to enable write operations to be forwarded
+     * from this cluster to the primary cluster in an Aurora global database. The
+     * resulting changes are replicated back to this cluster. This parameter only
+     * applies to DB clusters that are secondary clusters in an Aurora global database.
+     * By default, Aurora disallows write operations for secondary clusters.</p>
+     */
+    inline bool GetEnableGlobalWriteForwarding() const{ return m_enableGlobalWriteForwarding; }
+
+    /**
+     * <p>A value that indicates whether to enable write operations to be forwarded
+     * from this cluster to the primary cluster in an Aurora global database. The
+     * resulting changes are replicated back to this cluster. This parameter only
+     * applies to DB clusters that are secondary clusters in an Aurora global database.
+     * By default, Aurora disallows write operations for secondary clusters.</p>
+     */
+    inline bool EnableGlobalWriteForwardingHasBeenSet() const { return m_enableGlobalWriteForwardingHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether to enable write operations to be forwarded
+     * from this cluster to the primary cluster in an Aurora global database. The
+     * resulting changes are replicated back to this cluster. This parameter only
+     * applies to DB clusters that are secondary clusters in an Aurora global database.
+     * By default, Aurora disallows write operations for secondary clusters.</p>
+     */
+    inline void SetEnableGlobalWriteForwarding(bool value) { m_enableGlobalWriteForwardingHasBeenSet = true; m_enableGlobalWriteForwarding = value; }
+
+    /**
+     * <p>A value that indicates whether to enable write operations to be forwarded
+     * from this cluster to the primary cluster in an Aurora global database. The
+     * resulting changes are replicated back to this cluster. This parameter only
+     * applies to DB clusters that are secondary clusters in an Aurora global database.
+     * By default, Aurora disallows write operations for secondary clusters.</p>
+     */
+    inline ModifyDBClusterRequest& WithEnableGlobalWriteForwarding(bool value) { SetEnableGlobalWriteForwarding(value); return *this;}
+
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -1505,6 +1556,9 @@ namespace Model
 
     bool m_copyTagsToSnapshot;
     bool m_copyTagsToSnapshotHasBeenSet;
+
+    bool m_enableGlobalWriteForwarding;
+    bool m_enableGlobalWriteForwardingHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/worklink/WorkLink_EXPORTS.h>
@@ -40,11 +30,14 @@
 #include <aws/worklink/model/ListDevicesResult.h>
 #include <aws/worklink/model/ListDomainsResult.h>
 #include <aws/worklink/model/ListFleetsResult.h>
+#include <aws/worklink/model/ListTagsForResourceResult.h>
 #include <aws/worklink/model/ListWebsiteAuthorizationProvidersResult.h>
 #include <aws/worklink/model/ListWebsiteCertificateAuthoritiesResult.h>
 #include <aws/worklink/model/RestoreDomainAccessResult.h>
 #include <aws/worklink/model/RevokeDomainAccessResult.h>
 #include <aws/worklink/model/SignOutUserResult.h>
+#include <aws/worklink/model/TagResourceResult.h>
+#include <aws/worklink/model/UntagResourceResult.h>
 #include <aws/worklink/model/UpdateAuditStreamConfigurationResult.h>
 #include <aws/worklink/model/UpdateCompanyNetworkConfigurationResult.h>
 #include <aws/worklink/model/UpdateDevicePolicyConfigurationResult.h>
@@ -109,11 +102,14 @@ namespace Model
         class ListDevicesRequest;
         class ListDomainsRequest;
         class ListFleetsRequest;
+        class ListTagsForResourceRequest;
         class ListWebsiteAuthorizationProvidersRequest;
         class ListWebsiteCertificateAuthoritiesRequest;
         class RestoreDomainAccessRequest;
         class RevokeDomainAccessRequest;
         class SignOutUserRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateAuditStreamConfigurationRequest;
         class UpdateCompanyNetworkConfigurationRequest;
         class UpdateDevicePolicyConfigurationRequest;
@@ -121,36 +117,39 @@ namespace Model
         class UpdateFleetMetadataRequest;
         class UpdateIdentityProviderConfigurationRequest;
 
-        typedef Aws::Utils::Outcome<AssociateDomainResult, Aws::Client::AWSError<WorkLinkErrors>> AssociateDomainOutcome;
-        typedef Aws::Utils::Outcome<AssociateWebsiteAuthorizationProviderResult, Aws::Client::AWSError<WorkLinkErrors>> AssociateWebsiteAuthorizationProviderOutcome;
-        typedef Aws::Utils::Outcome<AssociateWebsiteCertificateAuthorityResult, Aws::Client::AWSError<WorkLinkErrors>> AssociateWebsiteCertificateAuthorityOutcome;
-        typedef Aws::Utils::Outcome<CreateFleetResult, Aws::Client::AWSError<WorkLinkErrors>> CreateFleetOutcome;
-        typedef Aws::Utils::Outcome<DeleteFleetResult, Aws::Client::AWSError<WorkLinkErrors>> DeleteFleetOutcome;
-        typedef Aws::Utils::Outcome<DescribeAuditStreamConfigurationResult, Aws::Client::AWSError<WorkLinkErrors>> DescribeAuditStreamConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DescribeCompanyNetworkConfigurationResult, Aws::Client::AWSError<WorkLinkErrors>> DescribeCompanyNetworkConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DescribeDeviceResult, Aws::Client::AWSError<WorkLinkErrors>> DescribeDeviceOutcome;
-        typedef Aws::Utils::Outcome<DescribeDevicePolicyConfigurationResult, Aws::Client::AWSError<WorkLinkErrors>> DescribeDevicePolicyConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DescribeDomainResult, Aws::Client::AWSError<WorkLinkErrors>> DescribeDomainOutcome;
-        typedef Aws::Utils::Outcome<DescribeFleetMetadataResult, Aws::Client::AWSError<WorkLinkErrors>> DescribeFleetMetadataOutcome;
-        typedef Aws::Utils::Outcome<DescribeIdentityProviderConfigurationResult, Aws::Client::AWSError<WorkLinkErrors>> DescribeIdentityProviderConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DescribeWebsiteCertificateAuthorityResult, Aws::Client::AWSError<WorkLinkErrors>> DescribeWebsiteCertificateAuthorityOutcome;
-        typedef Aws::Utils::Outcome<DisassociateDomainResult, Aws::Client::AWSError<WorkLinkErrors>> DisassociateDomainOutcome;
-        typedef Aws::Utils::Outcome<DisassociateWebsiteAuthorizationProviderResult, Aws::Client::AWSError<WorkLinkErrors>> DisassociateWebsiteAuthorizationProviderOutcome;
-        typedef Aws::Utils::Outcome<DisassociateWebsiteCertificateAuthorityResult, Aws::Client::AWSError<WorkLinkErrors>> DisassociateWebsiteCertificateAuthorityOutcome;
-        typedef Aws::Utils::Outcome<ListDevicesResult, Aws::Client::AWSError<WorkLinkErrors>> ListDevicesOutcome;
-        typedef Aws::Utils::Outcome<ListDomainsResult, Aws::Client::AWSError<WorkLinkErrors>> ListDomainsOutcome;
-        typedef Aws::Utils::Outcome<ListFleetsResult, Aws::Client::AWSError<WorkLinkErrors>> ListFleetsOutcome;
-        typedef Aws::Utils::Outcome<ListWebsiteAuthorizationProvidersResult, Aws::Client::AWSError<WorkLinkErrors>> ListWebsiteAuthorizationProvidersOutcome;
-        typedef Aws::Utils::Outcome<ListWebsiteCertificateAuthoritiesResult, Aws::Client::AWSError<WorkLinkErrors>> ListWebsiteCertificateAuthoritiesOutcome;
-        typedef Aws::Utils::Outcome<RestoreDomainAccessResult, Aws::Client::AWSError<WorkLinkErrors>> RestoreDomainAccessOutcome;
-        typedef Aws::Utils::Outcome<RevokeDomainAccessResult, Aws::Client::AWSError<WorkLinkErrors>> RevokeDomainAccessOutcome;
-        typedef Aws::Utils::Outcome<SignOutUserResult, Aws::Client::AWSError<WorkLinkErrors>> SignOutUserOutcome;
-        typedef Aws::Utils::Outcome<UpdateAuditStreamConfigurationResult, Aws::Client::AWSError<WorkLinkErrors>> UpdateAuditStreamConfigurationOutcome;
-        typedef Aws::Utils::Outcome<UpdateCompanyNetworkConfigurationResult, Aws::Client::AWSError<WorkLinkErrors>> UpdateCompanyNetworkConfigurationOutcome;
-        typedef Aws::Utils::Outcome<UpdateDevicePolicyConfigurationResult, Aws::Client::AWSError<WorkLinkErrors>> UpdateDevicePolicyConfigurationOutcome;
-        typedef Aws::Utils::Outcome<UpdateDomainMetadataResult, Aws::Client::AWSError<WorkLinkErrors>> UpdateDomainMetadataOutcome;
-        typedef Aws::Utils::Outcome<UpdateFleetMetadataResult, Aws::Client::AWSError<WorkLinkErrors>> UpdateFleetMetadataOutcome;
-        typedef Aws::Utils::Outcome<UpdateIdentityProviderConfigurationResult, Aws::Client::AWSError<WorkLinkErrors>> UpdateIdentityProviderConfigurationOutcome;
+        typedef Aws::Utils::Outcome<AssociateDomainResult, WorkLinkError> AssociateDomainOutcome;
+        typedef Aws::Utils::Outcome<AssociateWebsiteAuthorizationProviderResult, WorkLinkError> AssociateWebsiteAuthorizationProviderOutcome;
+        typedef Aws::Utils::Outcome<AssociateWebsiteCertificateAuthorityResult, WorkLinkError> AssociateWebsiteCertificateAuthorityOutcome;
+        typedef Aws::Utils::Outcome<CreateFleetResult, WorkLinkError> CreateFleetOutcome;
+        typedef Aws::Utils::Outcome<DeleteFleetResult, WorkLinkError> DeleteFleetOutcome;
+        typedef Aws::Utils::Outcome<DescribeAuditStreamConfigurationResult, WorkLinkError> DescribeAuditStreamConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DescribeCompanyNetworkConfigurationResult, WorkLinkError> DescribeCompanyNetworkConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DescribeDeviceResult, WorkLinkError> DescribeDeviceOutcome;
+        typedef Aws::Utils::Outcome<DescribeDevicePolicyConfigurationResult, WorkLinkError> DescribeDevicePolicyConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DescribeDomainResult, WorkLinkError> DescribeDomainOutcome;
+        typedef Aws::Utils::Outcome<DescribeFleetMetadataResult, WorkLinkError> DescribeFleetMetadataOutcome;
+        typedef Aws::Utils::Outcome<DescribeIdentityProviderConfigurationResult, WorkLinkError> DescribeIdentityProviderConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DescribeWebsiteCertificateAuthorityResult, WorkLinkError> DescribeWebsiteCertificateAuthorityOutcome;
+        typedef Aws::Utils::Outcome<DisassociateDomainResult, WorkLinkError> DisassociateDomainOutcome;
+        typedef Aws::Utils::Outcome<DisassociateWebsiteAuthorizationProviderResult, WorkLinkError> DisassociateWebsiteAuthorizationProviderOutcome;
+        typedef Aws::Utils::Outcome<DisassociateWebsiteCertificateAuthorityResult, WorkLinkError> DisassociateWebsiteCertificateAuthorityOutcome;
+        typedef Aws::Utils::Outcome<ListDevicesResult, WorkLinkError> ListDevicesOutcome;
+        typedef Aws::Utils::Outcome<ListDomainsResult, WorkLinkError> ListDomainsOutcome;
+        typedef Aws::Utils::Outcome<ListFleetsResult, WorkLinkError> ListFleetsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, WorkLinkError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListWebsiteAuthorizationProvidersResult, WorkLinkError> ListWebsiteAuthorizationProvidersOutcome;
+        typedef Aws::Utils::Outcome<ListWebsiteCertificateAuthoritiesResult, WorkLinkError> ListWebsiteCertificateAuthoritiesOutcome;
+        typedef Aws::Utils::Outcome<RestoreDomainAccessResult, WorkLinkError> RestoreDomainAccessOutcome;
+        typedef Aws::Utils::Outcome<RevokeDomainAccessResult, WorkLinkError> RevokeDomainAccessOutcome;
+        typedef Aws::Utils::Outcome<SignOutUserResult, WorkLinkError> SignOutUserOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, WorkLinkError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, WorkLinkError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateAuditStreamConfigurationResult, WorkLinkError> UpdateAuditStreamConfigurationOutcome;
+        typedef Aws::Utils::Outcome<UpdateCompanyNetworkConfigurationResult, WorkLinkError> UpdateCompanyNetworkConfigurationOutcome;
+        typedef Aws::Utils::Outcome<UpdateDevicePolicyConfigurationResult, WorkLinkError> UpdateDevicePolicyConfigurationOutcome;
+        typedef Aws::Utils::Outcome<UpdateDomainMetadataResult, WorkLinkError> UpdateDomainMetadataOutcome;
+        typedef Aws::Utils::Outcome<UpdateFleetMetadataResult, WorkLinkError> UpdateFleetMetadataOutcome;
+        typedef Aws::Utils::Outcome<UpdateIdentityProviderConfigurationResult, WorkLinkError> UpdateIdentityProviderConfigurationOutcome;
 
         typedef std::future<AssociateDomainOutcome> AssociateDomainOutcomeCallable;
         typedef std::future<AssociateWebsiteAuthorizationProviderOutcome> AssociateWebsiteAuthorizationProviderOutcomeCallable;
@@ -171,11 +170,14 @@ namespace Model
         typedef std::future<ListDevicesOutcome> ListDevicesOutcomeCallable;
         typedef std::future<ListDomainsOutcome> ListDomainsOutcomeCallable;
         typedef std::future<ListFleetsOutcome> ListFleetsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListWebsiteAuthorizationProvidersOutcome> ListWebsiteAuthorizationProvidersOutcomeCallable;
         typedef std::future<ListWebsiteCertificateAuthoritiesOutcome> ListWebsiteCertificateAuthoritiesOutcomeCallable;
         typedef std::future<RestoreDomainAccessOutcome> RestoreDomainAccessOutcomeCallable;
         typedef std::future<RevokeDomainAccessOutcome> RevokeDomainAccessOutcomeCallable;
         typedef std::future<SignOutUserOutcome> SignOutUserOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateAuditStreamConfigurationOutcome> UpdateAuditStreamConfigurationOutcomeCallable;
         typedef std::future<UpdateCompanyNetworkConfigurationOutcome> UpdateCompanyNetworkConfigurationOutcomeCallable;
         typedef std::future<UpdateDevicePolicyConfigurationOutcome> UpdateDevicePolicyConfigurationOutcomeCallable;
@@ -205,11 +207,14 @@ namespace Model
     typedef std::function<void(const WorkLinkClient*, const Model::ListDevicesRequest&, const Model::ListDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevicesResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::ListDomainsRequest&, const Model::ListDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainsResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::ListFleetsRequest&, const Model::ListFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFleetsResponseReceivedHandler;
+    typedef std::function<void(const WorkLinkClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::ListWebsiteAuthorizationProvidersRequest&, const Model::ListWebsiteAuthorizationProvidersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWebsiteAuthorizationProvidersResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::ListWebsiteCertificateAuthoritiesRequest&, const Model::ListWebsiteCertificateAuthoritiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWebsiteCertificateAuthoritiesResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::RestoreDomainAccessRequest&, const Model::RestoreDomainAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreDomainAccessResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::RevokeDomainAccessRequest&, const Model::RevokeDomainAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeDomainAccessResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::SignOutUserRequest&, const Model::SignOutUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SignOutUserResponseReceivedHandler;
+    typedef std::function<void(const WorkLinkClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const WorkLinkClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::UpdateAuditStreamConfigurationRequest&, const Model::UpdateAuditStreamConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAuditStreamConfigurationResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::UpdateCompanyNetworkConfigurationRequest&, const Model::UpdateCompanyNetworkConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCompanyNetworkConfigurationResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::UpdateDevicePolicyConfigurationRequest&, const Model::UpdateDevicePolicyConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDevicePolicyConfigurationResponseReceivedHandler;
@@ -219,13 +224,13 @@ namespace Model
 
   /**
    * <p>Amazon WorkLink is a cloud-based service that provides secure access to
-   * internal websites and web apps from iOS phones. In a single step, your users,
-   * such as employees, can access internal websites as efficiently as they access
-   * any other public website. They enter a URL in their web browser, or choose a
-   * link to an internal website in an email. Amazon WorkLink authenticates the
-   * user's access and securely renders authorized internal web content in a secure
-   * rendering service in the AWS cloud. Amazon WorkLink doesn't download or store
-   * any internal web content on mobile devices.</p>
+   * internal websites and web apps from iOS and Android phones. In a single step,
+   * your users, such as employees, can access internal websites as efficiently as
+   * they access any other public website. They enter a URL in their web browser, or
+   * choose a link to an internal website in an email. Amazon WorkLink authenticates
+   * the user's access and securely renders authorized internal web content in a
+   * secure rendering service in the AWS cloud. Amazon WorkLink doesn't download or
+   * store any internal web content on mobile devices.</p>
    */
   class AWS_WORKLINK_API WorkLinkClient : public Aws::Client::AWSJsonClient
   {
@@ -252,8 +257,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~WorkLinkClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "WorkLink"; }
 
 
         /**
@@ -795,6 +798,34 @@ namespace Model
         virtual void ListFleetsAsync(const Model::ListFleetsRequest& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves a list of tags for the specified resource.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of tags for the specified resource.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of tags for the specified resource.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves a list of website authorization providers associated with a
          * specified fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders">AWS
@@ -933,6 +964,68 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SignOutUserAsync(const Model::SignOutUserRequest& request, const SignOutUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds or overwrites one or more tags for the specified resource, such as a
+         * fleet. Each tag consists of a key and an optional value. If a resource already
+         * has a tag with the same key, this operation updates its value.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds or overwrites one or more tags for the specified resource, such as a
+         * fleet. Each tag consists of a key and an optional value. If a resource already
+         * has a tag with the same key, this operation updates its value.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds or overwrites one or more tags for the specified resource, such as a
+         * fleet. Each tag consists of a key and an optional value. If a resource already
+         * has a tag with the same key, this operation updates its value.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes one or more tags from the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes one or more tags from the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes one or more tags from the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the audit stream configuration for the fleet.</p><p><h3>See
@@ -1119,11 +1212,14 @@ namespace Model
         void ListDevicesAsyncHelper(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDomainsAsyncHelper(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFleetsAsyncHelper(const Model::ListFleetsRequest& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWebsiteAuthorizationProvidersAsyncHelper(const Model::ListWebsiteAuthorizationProvidersRequest& request, const ListWebsiteAuthorizationProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWebsiteCertificateAuthoritiesAsyncHelper(const Model::ListWebsiteCertificateAuthoritiesRequest& request, const ListWebsiteCertificateAuthoritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreDomainAccessAsyncHelper(const Model::RestoreDomainAccessRequest& request, const RestoreDomainAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RevokeDomainAccessAsyncHelper(const Model::RevokeDomainAccessRequest& request, const RevokeDomainAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SignOutUserAsyncHelper(const Model::SignOutUserRequest& request, const SignOutUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAuditStreamConfigurationAsyncHelper(const Model::UpdateAuditStreamConfigurationRequest& request, const UpdateAuditStreamConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateCompanyNetworkConfigurationAsyncHelper(const Model::UpdateCompanyNetworkConfigurationRequest& request, const UpdateCompanyNetworkConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDevicePolicyConfigurationAsyncHelper(const Model::UpdateDevicePolicyConfigurationRequest& request, const UpdateDevicePolicyConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

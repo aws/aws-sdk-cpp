@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -132,97 +122,113 @@ namespace Model
 
     /**
      * <p>Filters specify one or more snapshot exports to describe. The filters are
-     * specified as name-value pairs that define what to include in the output.</p>
-     * <p>Supported filters include the following: </p> <ul> <li> <p>
-     * <code>export-task-identifier</code> - An identifier for the snapshot export
-     * task.</p> </li> <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the
-     * snapshot is exported to.</p> </li> <li> <p> <code>source-arn</code> - The Amazon
-     * Resource Name (ARN) of the snapshot exported to Amazon S3</p> </li> <li> <p>
-     * <code>status</code> - The status of the export task.</p> </li> </ul>
+     * specified as name-value pairs that define what to include in the output. Filter
+     * names and values are case-sensitive.</p> <p>Supported filters include the
+     * following: </p> <ul> <li> <p> <code>export-task-identifier</code> - An
+     * identifier for the snapshot export task.</p> </li> <li> <p>
+     * <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.</p>
+     * </li> <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the
+     * snapshot exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The
+     * status of the export task. Must be lowercase, for example,
+     * <code>complete</code>.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>Filters specify one or more snapshot exports to describe. The filters are
-     * specified as name-value pairs that define what to include in the output.</p>
-     * <p>Supported filters include the following: </p> <ul> <li> <p>
-     * <code>export-task-identifier</code> - An identifier for the snapshot export
-     * task.</p> </li> <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the
-     * snapshot is exported to.</p> </li> <li> <p> <code>source-arn</code> - The Amazon
-     * Resource Name (ARN) of the snapshot exported to Amazon S3</p> </li> <li> <p>
-     * <code>status</code> - The status of the export task.</p> </li> </ul>
+     * specified as name-value pairs that define what to include in the output. Filter
+     * names and values are case-sensitive.</p> <p>Supported filters include the
+     * following: </p> <ul> <li> <p> <code>export-task-identifier</code> - An
+     * identifier for the snapshot export task.</p> </li> <li> <p>
+     * <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.</p>
+     * </li> <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the
+     * snapshot exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The
+     * status of the export task. Must be lowercase, for example,
+     * <code>complete</code>.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>Filters specify one or more snapshot exports to describe. The filters are
-     * specified as name-value pairs that define what to include in the output.</p>
-     * <p>Supported filters include the following: </p> <ul> <li> <p>
-     * <code>export-task-identifier</code> - An identifier for the snapshot export
-     * task.</p> </li> <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the
-     * snapshot is exported to.</p> </li> <li> <p> <code>source-arn</code> - The Amazon
-     * Resource Name (ARN) of the snapshot exported to Amazon S3</p> </li> <li> <p>
-     * <code>status</code> - The status of the export task.</p> </li> </ul>
+     * specified as name-value pairs that define what to include in the output. Filter
+     * names and values are case-sensitive.</p> <p>Supported filters include the
+     * following: </p> <ul> <li> <p> <code>export-task-identifier</code> - An
+     * identifier for the snapshot export task.</p> </li> <li> <p>
+     * <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.</p>
+     * </li> <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the
+     * snapshot exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The
+     * status of the export task. Must be lowercase, for example,
+     * <code>complete</code>.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>Filters specify one or more snapshot exports to describe. The filters are
-     * specified as name-value pairs that define what to include in the output.</p>
-     * <p>Supported filters include the following: </p> <ul> <li> <p>
-     * <code>export-task-identifier</code> - An identifier for the snapshot export
-     * task.</p> </li> <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the
-     * snapshot is exported to.</p> </li> <li> <p> <code>source-arn</code> - The Amazon
-     * Resource Name (ARN) of the snapshot exported to Amazon S3</p> </li> <li> <p>
-     * <code>status</code> - The status of the export task.</p> </li> </ul>
+     * specified as name-value pairs that define what to include in the output. Filter
+     * names and values are case-sensitive.</p> <p>Supported filters include the
+     * following: </p> <ul> <li> <p> <code>export-task-identifier</code> - An
+     * identifier for the snapshot export task.</p> </li> <li> <p>
+     * <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.</p>
+     * </li> <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the
+     * snapshot exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The
+     * status of the export task. Must be lowercase, for example,
+     * <code>complete</code>.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>Filters specify one or more snapshot exports to describe. The filters are
-     * specified as name-value pairs that define what to include in the output.</p>
-     * <p>Supported filters include the following: </p> <ul> <li> <p>
-     * <code>export-task-identifier</code> - An identifier for the snapshot export
-     * task.</p> </li> <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the
-     * snapshot is exported to.</p> </li> <li> <p> <code>source-arn</code> - The Amazon
-     * Resource Name (ARN) of the snapshot exported to Amazon S3</p> </li> <li> <p>
-     * <code>status</code> - The status of the export task.</p> </li> </ul>
+     * specified as name-value pairs that define what to include in the output. Filter
+     * names and values are case-sensitive.</p> <p>Supported filters include the
+     * following: </p> <ul> <li> <p> <code>export-task-identifier</code> - An
+     * identifier for the snapshot export task.</p> </li> <li> <p>
+     * <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.</p>
+     * </li> <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the
+     * snapshot exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The
+     * status of the export task. Must be lowercase, for example,
+     * <code>complete</code>.</p> </li> </ul>
      */
     inline DescribeExportTasksRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>Filters specify one or more snapshot exports to describe. The filters are
-     * specified as name-value pairs that define what to include in the output.</p>
-     * <p>Supported filters include the following: </p> <ul> <li> <p>
-     * <code>export-task-identifier</code> - An identifier for the snapshot export
-     * task.</p> </li> <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the
-     * snapshot is exported to.</p> </li> <li> <p> <code>source-arn</code> - The Amazon
-     * Resource Name (ARN) of the snapshot exported to Amazon S3</p> </li> <li> <p>
-     * <code>status</code> - The status of the export task.</p> </li> </ul>
+     * specified as name-value pairs that define what to include in the output. Filter
+     * names and values are case-sensitive.</p> <p>Supported filters include the
+     * following: </p> <ul> <li> <p> <code>export-task-identifier</code> - An
+     * identifier for the snapshot export task.</p> </li> <li> <p>
+     * <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.</p>
+     * </li> <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the
+     * snapshot exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The
+     * status of the export task. Must be lowercase, for example,
+     * <code>complete</code>.</p> </li> </ul>
      */
     inline DescribeExportTasksRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>Filters specify one or more snapshot exports to describe. The filters are
-     * specified as name-value pairs that define what to include in the output.</p>
-     * <p>Supported filters include the following: </p> <ul> <li> <p>
-     * <code>export-task-identifier</code> - An identifier for the snapshot export
-     * task.</p> </li> <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the
-     * snapshot is exported to.</p> </li> <li> <p> <code>source-arn</code> - The Amazon
-     * Resource Name (ARN) of the snapshot exported to Amazon S3</p> </li> <li> <p>
-     * <code>status</code> - The status of the export task.</p> </li> </ul>
+     * specified as name-value pairs that define what to include in the output. Filter
+     * names and values are case-sensitive.</p> <p>Supported filters include the
+     * following: </p> <ul> <li> <p> <code>export-task-identifier</code> - An
+     * identifier for the snapshot export task.</p> </li> <li> <p>
+     * <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.</p>
+     * </li> <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the
+     * snapshot exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The
+     * status of the export task. Must be lowercase, for example,
+     * <code>complete</code>.</p> </li> </ul>
      */
     inline DescribeExportTasksRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>Filters specify one or more snapshot exports to describe. The filters are
-     * specified as name-value pairs that define what to include in the output.</p>
-     * <p>Supported filters include the following: </p> <ul> <li> <p>
-     * <code>export-task-identifier</code> - An identifier for the snapshot export
-     * task.</p> </li> <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the
-     * snapshot is exported to.</p> </li> <li> <p> <code>source-arn</code> - The Amazon
-     * Resource Name (ARN) of the snapshot exported to Amazon S3</p> </li> <li> <p>
-     * <code>status</code> - The status of the export task.</p> </li> </ul>
+     * specified as name-value pairs that define what to include in the output. Filter
+     * names and values are case-sensitive.</p> <p>Supported filters include the
+     * following: </p> <ul> <li> <p> <code>export-task-identifier</code> - An
+     * identifier for the snapshot export task.</p> </li> <li> <p>
+     * <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.</p>
+     * </li> <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the
+     * snapshot exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The
+     * status of the export task. Must be lowercase, for example,
+     * <code>complete</code>.</p> </li> </ul>
      */
     inline DescribeExportTasksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

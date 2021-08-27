@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/EphemeralNvmeSupport.h>
 #include <aws/ec2/model/DiskInfo.h>
 #include <utility>
 
@@ -73,44 +64,81 @@ namespace Model
 
 
     /**
-     * <p>Array describing the disks that are available for the instance type.</p>
+     * <p>Describes the disks that are available for the instance type.</p>
      */
     inline const Aws::Vector<DiskInfo>& GetDisks() const{ return m_disks; }
 
     /**
-     * <p>Array describing the disks that are available for the instance type.</p>
+     * <p>Describes the disks that are available for the instance type.</p>
      */
     inline bool DisksHasBeenSet() const { return m_disksHasBeenSet; }
 
     /**
-     * <p>Array describing the disks that are available for the instance type.</p>
+     * <p>Describes the disks that are available for the instance type.</p>
      */
     inline void SetDisks(const Aws::Vector<DiskInfo>& value) { m_disksHasBeenSet = true; m_disks = value; }
 
     /**
-     * <p>Array describing the disks that are available for the instance type.</p>
+     * <p>Describes the disks that are available for the instance type.</p>
      */
     inline void SetDisks(Aws::Vector<DiskInfo>&& value) { m_disksHasBeenSet = true; m_disks = std::move(value); }
 
     /**
-     * <p>Array describing the disks that are available for the instance type.</p>
+     * <p>Describes the disks that are available for the instance type.</p>
      */
     inline InstanceStorageInfo& WithDisks(const Aws::Vector<DiskInfo>& value) { SetDisks(value); return *this;}
 
     /**
-     * <p>Array describing the disks that are available for the instance type.</p>
+     * <p>Describes the disks that are available for the instance type.</p>
      */
     inline InstanceStorageInfo& WithDisks(Aws::Vector<DiskInfo>&& value) { SetDisks(std::move(value)); return *this;}
 
     /**
-     * <p>Array describing the disks that are available for the instance type.</p>
+     * <p>Describes the disks that are available for the instance type.</p>
      */
     inline InstanceStorageInfo& AddDisks(const DiskInfo& value) { m_disksHasBeenSet = true; m_disks.push_back(value); return *this; }
 
     /**
-     * <p>Array describing the disks that are available for the instance type.</p>
+     * <p>Describes the disks that are available for the instance type.</p>
      */
     inline InstanceStorageInfo& AddDisks(DiskInfo&& value) { m_disksHasBeenSet = true; m_disks.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported for
+     * instance store.</p>
+     */
+    inline const EphemeralNvmeSupport& GetNvmeSupport() const{ return m_nvmeSupport; }
+
+    /**
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported for
+     * instance store.</p>
+     */
+    inline bool NvmeSupportHasBeenSet() const { return m_nvmeSupportHasBeenSet; }
+
+    /**
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported for
+     * instance store.</p>
+     */
+    inline void SetNvmeSupport(const EphemeralNvmeSupport& value) { m_nvmeSupportHasBeenSet = true; m_nvmeSupport = value; }
+
+    /**
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported for
+     * instance store.</p>
+     */
+    inline void SetNvmeSupport(EphemeralNvmeSupport&& value) { m_nvmeSupportHasBeenSet = true; m_nvmeSupport = std::move(value); }
+
+    /**
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported for
+     * instance store.</p>
+     */
+    inline InstanceStorageInfo& WithNvmeSupport(const EphemeralNvmeSupport& value) { SetNvmeSupport(value); return *this;}
+
+    /**
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported for
+     * instance store.</p>
+     */
+    inline InstanceStorageInfo& WithNvmeSupport(EphemeralNvmeSupport&& value) { SetNvmeSupport(std::move(value)); return *this;}
 
   private:
 
@@ -119,6 +147,9 @@ namespace Model
 
     Aws::Vector<DiskInfo> m_disks;
     bool m_disksHasBeenSet;
+
+    EphemeralNvmeSupport m_nvmeSupport;
+    bool m_nvmeSupportHasBeenSet;
   };
 
 } // namespace Model

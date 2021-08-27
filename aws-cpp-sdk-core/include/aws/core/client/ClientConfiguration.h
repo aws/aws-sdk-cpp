@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
@@ -45,6 +35,19 @@ namespace Aws
         class RetryStrategy; // forward declare
 
         /**
+         * Sets the behaviors of the underlying HTTP clients handling response with 30x status code.
+         * By default, HTTP clients will always redirect the 30x response automatically, except when
+         * specifying aws-global as the client region, then SDK will handle 30x response and redirect
+         * the request manually.
+         */
+        enum class FollowRedirectsPolicy
+        {
+            DEFAULT,
+            ALWAYS,
+            NEVER
+        };
+
+        /**
         * Dynamic configuration per each request.
         */
         struct AWS_CORE_API ClientConfigurationPerRequest
@@ -66,9 +69,9 @@ namespace Aws
         };
 
         /**
-          * This mutable structure is used to configure any of the AWS clients.
-          * Default values can only be overwritten prior to passing to the client constructors.
-          */
+         * This mutable structure is used to configure any of the AWS clients.
+         * Default values can only be overwritten prior to passing to the client constructors.
+         */
         struct AWS_CORE_API ClientConfiguration
         {
             ClientConfiguration();
@@ -124,7 +127,7 @@ namespace Aws
             bool enableTcpKeepAlive;
             /**
              * Interval to send a keep-alive packet over the connection. Default 30 seconds. Minimum 15 seconds.
-             * WinHTTP & libcurl support this option.
+             * WinHTTP & libcurl support this option. Note that for Curl, this value will be rounded to an integer with second granularity.
              * No-op for WinINet and IXMLHTTPRequest2 client.
              */
             unsigned long tcpKeepAliveIntervalMs;
@@ -220,9 +223,9 @@ namespace Aws
              */
             Aws::Http::TransferLibType httpLibOverride;
             /**
-             * If set to true the http stack will follow 300 redirect codes.
+             * Sets the behavior how http stack handles 30x redirect codes.
              */
-            bool followRedirects;
+            FollowRedirectsPolicy followRedirects;
 
             /**
              * Only works for Curl http client.
@@ -272,5 +275,3 @@ namespace Aws
 
     } // namespace Client
 } // namespace Aws
-
-

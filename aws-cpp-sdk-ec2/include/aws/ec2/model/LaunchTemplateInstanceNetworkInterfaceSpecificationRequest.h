@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -50,6 +40,47 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+
+    /**
+     * <p>Associates a Carrier IP address with eth0 for a new network interface.</p>
+     * <p>Use this option when you launch an instance in a Wavelength Zone and want to
+     * associate a Carrier IP address with the network interface. For more information
+     * about Carrier IP addresses, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier
+     * IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.</p>
+     */
+    inline bool GetAssociateCarrierIpAddress() const{ return m_associateCarrierIpAddress; }
+
+    /**
+     * <p>Associates a Carrier IP address with eth0 for a new network interface.</p>
+     * <p>Use this option when you launch an instance in a Wavelength Zone and want to
+     * associate a Carrier IP address with the network interface. For more information
+     * about Carrier IP addresses, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier
+     * IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.</p>
+     */
+    inline bool AssociateCarrierIpAddressHasBeenSet() const { return m_associateCarrierIpAddressHasBeenSet; }
+
+    /**
+     * <p>Associates a Carrier IP address with eth0 for a new network interface.</p>
+     * <p>Use this option when you launch an instance in a Wavelength Zone and want to
+     * associate a Carrier IP address with the network interface. For more information
+     * about Carrier IP addresses, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier
+     * IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.</p>
+     */
+    inline void SetAssociateCarrierIpAddress(bool value) { m_associateCarrierIpAddressHasBeenSet = true; m_associateCarrierIpAddress = value; }
+
+    /**
+     * <p>Associates a Carrier IP address with eth0 for a new network interface.</p>
+     * <p>Use this option when you launch an instance in a Wavelength Zone and want to
+     * associate a Carrier IP address with the network interface. For more information
+     * about Carrier IP addresses, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier
+     * IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& WithAssociateCarrierIpAddress(bool value) { SetAssociateCarrierIpAddress(value); return *this;}
 
 
     /**
@@ -561,7 +592,39 @@ namespace Model
      */
     inline LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
+
+    /**
+     * <p>The index of the network card. Some instance types support multiple network
+     * cards. The primary network interface must be assigned to network card index 0.
+     * The default is network card index 0.</p>
+     */
+    inline int GetNetworkCardIndex() const{ return m_networkCardIndex; }
+
+    /**
+     * <p>The index of the network card. Some instance types support multiple network
+     * cards. The primary network interface must be assigned to network card index 0.
+     * The default is network card index 0.</p>
+     */
+    inline bool NetworkCardIndexHasBeenSet() const { return m_networkCardIndexHasBeenSet; }
+
+    /**
+     * <p>The index of the network card. Some instance types support multiple network
+     * cards. The primary network interface must be assigned to network card index 0.
+     * The default is network card index 0.</p>
+     */
+    inline void SetNetworkCardIndex(int value) { m_networkCardIndexHasBeenSet = true; m_networkCardIndex = value; }
+
+    /**
+     * <p>The index of the network card. Some instance types support multiple network
+     * cards. The primary network interface must be assigned to network card index 0.
+     * The default is network card index 0.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& WithNetworkCardIndex(int value) { SetNetworkCardIndex(value); return *this;}
+
   private:
+
+    bool m_associateCarrierIpAddress;
+    bool m_associateCarrierIpAddressHasBeenSet;
 
     bool m_associatePublicIpAddress;
     bool m_associatePublicIpAddressHasBeenSet;
@@ -601,6 +664,9 @@ namespace Model
 
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
+    int m_networkCardIndex;
+    bool m_networkCardIndexHasBeenSet;
   };
 
 } // namespace Model

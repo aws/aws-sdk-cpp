@@ -1,17 +1,7 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration;
 
@@ -51,8 +41,12 @@ public class Shape {
     private String timestampFormat;
     private boolean eventStream;
     private boolean event;
+    private String eventPayloadMemberName;
+    private String eventPayloadType;
+    private boolean isOutgoingEventStream;
     private boolean exception;
     private boolean sensitive;
+    private boolean hasPreSignedUrl;
 
     public boolean isMap() {
         return "map".equals(type.toLowerCase());
@@ -90,6 +84,16 @@ public class Shape {
 
     public boolean isPrimitive() {
         return !isMap() && !isList() && !isStructure() && !isString() && !isEnum() && !isBlob() && !isTimeStamp();
+    }
+
+    public boolean isXmlModeledException() {
+        if (!exception) return false;
+        return members.keySet().parallelStream().anyMatch(key -> !key.equals("Message") && !key.equals("message") && !key.equals("Code") && !key.equals("code"));
+    }
+
+    public boolean isJsonModeledException() {
+        if (!exception) return false;
+        return members.keySet().parallelStream().anyMatch(key -> !key.equals("Message") && !key.equals("message"));
     }
 
     public boolean isMemberRequired(String member) {
@@ -139,8 +143,8 @@ public class Shape {
         return members.values().parallelStream().anyMatch(member -> member.isEventPayload());
     }
 
-    public boolean hasAccountIdMembers() {
-        return members.keySet().stream().anyMatch(key -> key.equals("AccountId"));
+    public boolean hasMember(String member) {
+        return members.keySet().stream().anyMatch(key -> key.equals(member));
     }
 
     public ShapeMember getMemberByLocationName(String locationName) {
@@ -189,13 +193,6 @@ public class Shape {
       }
 
       return "null";
-    }
-
-    public boolean hasNestedEventPayloadMembers() {
-        if (members == null) return false;
-        // some shapes have a circular graph (e.g. cost-explorer service)
-        // so we can't simply call hasNestedEventPayloadMembers recursively
-        return members.values().parallelStream().anyMatch(member -> member.isEventPayload() || member.shape.hasEventPayloadMembers());
     }
 
     // Some shapes are mutually referenced with each other, e.g. Statement and NotStatement in wafv2.

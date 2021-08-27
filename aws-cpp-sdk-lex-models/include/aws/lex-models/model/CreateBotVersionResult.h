@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
@@ -196,31 +186,31 @@ namespace Model
 
 
     /**
-     * <p>The message that Amazon Lex uses to abort a conversation. For more
+     * <p>The message that Amazon Lex uses to cancel a conversation. For more
      * information, see <a>PutBot</a>.</p>
      */
     inline const Statement& GetAbortStatement() const{ return m_abortStatement; }
 
     /**
-     * <p>The message that Amazon Lex uses to abort a conversation. For more
+     * <p>The message that Amazon Lex uses to cancel a conversation. For more
      * information, see <a>PutBot</a>.</p>
      */
     inline void SetAbortStatement(const Statement& value) { m_abortStatement = value; }
 
     /**
-     * <p>The message that Amazon Lex uses to abort a conversation. For more
+     * <p>The message that Amazon Lex uses to cancel a conversation. For more
      * information, see <a>PutBot</a>.</p>
      */
     inline void SetAbortStatement(Statement&& value) { m_abortStatement = std::move(value); }
 
     /**
-     * <p>The message that Amazon Lex uses to abort a conversation. For more
+     * <p>The message that Amazon Lex uses to cancel a conversation. For more
      * information, see <a>PutBot</a>.</p>
      */
     inline CreateBotVersionResult& WithAbortStatement(const Statement& value) { SetAbortStatement(value); return *this;}
 
     /**
-     * <p>The message that Amazon Lex uses to abort a conversation. For more
+     * <p>The message that Amazon Lex uses to cancel a conversation. For more
      * information, see <a>PutBot</a>.</p>
      */
     inline CreateBotVersionResult& WithAbortStatement(Statement&& value) { SetAbortStatement(std::move(value)); return *this;}
@@ -615,6 +605,28 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether the bot uses accuracy improvements. <code>true</code>
+     * indicates that the bot is using the improvements, otherwise,
+     * <code>false</code>.</p>
+     */
+    inline bool GetEnableModelImprovements() const{ return m_enableModelImprovements; }
+
+    /**
+     * <p>Indicates whether the bot uses accuracy improvements. <code>true</code>
+     * indicates that the bot is using the improvements, otherwise,
+     * <code>false</code>.</p>
+     */
+    inline void SetEnableModelImprovements(bool value) { m_enableModelImprovements = value; }
+
+    /**
+     * <p>Indicates whether the bot uses accuracy improvements. <code>true</code>
+     * indicates that the bot is using the improvements, otherwise,
+     * <code>false</code>.</p>
+     */
+    inline CreateBotVersionResult& WithEnableModelImprovements(bool value) { SetEnableModelImprovements(value); return *this;}
+
+
+    /**
      * <p>Indicates whether utterances entered by the user should be sent to Amazon
      * Comprehend for sentiment analysis.</p>
      */
@@ -663,6 +675,8 @@ namespace Model
     Locale m_locale;
 
     bool m_childDirected;
+
+    bool m_enableModelImprovements;
 
     bool m_detectSentiment;
   };

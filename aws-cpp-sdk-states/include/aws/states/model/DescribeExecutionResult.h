@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/states/model/ExecutionStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/states/model/CloudWatchEventsExecutionDataDetails.h>
 #include <utility>
 
 namespace Aws
@@ -45,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) that id entifies the execution.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
      */
     inline const Aws::String& GetExecutionArn() const{ return m_executionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that id entifies the execution.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
      */
     inline void SetExecutionArn(const Aws::String& value) { m_executionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that id entifies the execution.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
      */
     inline void SetExecutionArn(Aws::String&& value) { m_executionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that id entifies the execution.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
      */
     inline void SetExecutionArn(const char* value) { m_executionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that id entifies the execution.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
      */
     inline DescribeExecutionResult& WithExecutionArn(const Aws::String& value) { SetExecutionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that id entifies the execution.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
      */
     inline DescribeExecutionResult& WithExecutionArn(Aws::String&& value) { SetExecutionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that id entifies the execution.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
      */
     inline DescribeExecutionResult& WithExecutionArn(const char* value) { SetExecutionArn(value); return *this;}
 
@@ -273,89 +264,178 @@ namespace Model
 
 
     /**
-     * <p>The string that contains the JSON input data of the execution.</p>
+     * <p>The string that contains the JSON input data of the execution. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline const Aws::String& GetInput() const{ return m_input; }
 
     /**
-     * <p>The string that contains the JSON input data of the execution.</p>
+     * <p>The string that contains the JSON input data of the execution. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline void SetInput(const Aws::String& value) { m_input = value; }
 
     /**
-     * <p>The string that contains the JSON input data of the execution.</p>
+     * <p>The string that contains the JSON input data of the execution. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline void SetInput(Aws::String&& value) { m_input = std::move(value); }
 
     /**
-     * <p>The string that contains the JSON input data of the execution.</p>
+     * <p>The string that contains the JSON input data of the execution. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline void SetInput(const char* value) { m_input.assign(value); }
 
     /**
-     * <p>The string that contains the JSON input data of the execution.</p>
+     * <p>The string that contains the JSON input data of the execution. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline DescribeExecutionResult& WithInput(const Aws::String& value) { SetInput(value); return *this;}
 
     /**
-     * <p>The string that contains the JSON input data of the execution.</p>
+     * <p>The string that contains the JSON input data of the execution. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline DescribeExecutionResult& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
 
     /**
-     * <p>The string that contains the JSON input data of the execution.</p>
+     * <p>The string that contains the JSON input data of the execution. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline DescribeExecutionResult& WithInput(const char* value) { SetInput(value); return *this;}
 
 
+    
+    inline const CloudWatchEventsExecutionDataDetails& GetInputDetails() const{ return m_inputDetails; }
+
+    
+    inline void SetInputDetails(const CloudWatchEventsExecutionDataDetails& value) { m_inputDetails = value; }
+
+    
+    inline void SetInputDetails(CloudWatchEventsExecutionDataDetails&& value) { m_inputDetails = std::move(value); }
+
+    
+    inline DescribeExecutionResult& WithInputDetails(const CloudWatchEventsExecutionDataDetails& value) { SetInputDetails(value); return *this;}
+
+    
+    inline DescribeExecutionResult& WithInputDetails(CloudWatchEventsExecutionDataDetails&& value) { SetInputDetails(std::move(value)); return *this;}
+
+
     /**
-     * <p>The JSON output data of the execution.</p> <note> <p>This field is set only
-     * if the execution succeeds. If the execution fails, this field is null.</p>
-     * </note>
+     * <p>The JSON output data of the execution. Length constraints apply to the
+     * payload size, and are expressed as bytes in UTF-8 encoding.</p>  <p>This
+     * field is set only if the execution succeeds. If the execution fails, this field
+     * is null.</p> 
      */
     inline const Aws::String& GetOutput() const{ return m_output; }
 
     /**
-     * <p>The JSON output data of the execution.</p> <note> <p>This field is set only
-     * if the execution succeeds. If the execution fails, this field is null.</p>
-     * </note>
+     * <p>The JSON output data of the execution. Length constraints apply to the
+     * payload size, and are expressed as bytes in UTF-8 encoding.</p>  <p>This
+     * field is set only if the execution succeeds. If the execution fails, this field
+     * is null.</p> 
      */
     inline void SetOutput(const Aws::String& value) { m_output = value; }
 
     /**
-     * <p>The JSON output data of the execution.</p> <note> <p>This field is set only
-     * if the execution succeeds. If the execution fails, this field is null.</p>
-     * </note>
+     * <p>The JSON output data of the execution. Length constraints apply to the
+     * payload size, and are expressed as bytes in UTF-8 encoding.</p>  <p>This
+     * field is set only if the execution succeeds. If the execution fails, this field
+     * is null.</p> 
      */
     inline void SetOutput(Aws::String&& value) { m_output = std::move(value); }
 
     /**
-     * <p>The JSON output data of the execution.</p> <note> <p>This field is set only
-     * if the execution succeeds. If the execution fails, this field is null.</p>
-     * </note>
+     * <p>The JSON output data of the execution. Length constraints apply to the
+     * payload size, and are expressed as bytes in UTF-8 encoding.</p>  <p>This
+     * field is set only if the execution succeeds. If the execution fails, this field
+     * is null.</p> 
      */
     inline void SetOutput(const char* value) { m_output.assign(value); }
 
     /**
-     * <p>The JSON output data of the execution.</p> <note> <p>This field is set only
-     * if the execution succeeds. If the execution fails, this field is null.</p>
-     * </note>
+     * <p>The JSON output data of the execution. Length constraints apply to the
+     * payload size, and are expressed as bytes in UTF-8 encoding.</p>  <p>This
+     * field is set only if the execution succeeds. If the execution fails, this field
+     * is null.</p> 
      */
     inline DescribeExecutionResult& WithOutput(const Aws::String& value) { SetOutput(value); return *this;}
 
     /**
-     * <p>The JSON output data of the execution.</p> <note> <p>This field is set only
-     * if the execution succeeds. If the execution fails, this field is null.</p>
-     * </note>
+     * <p>The JSON output data of the execution. Length constraints apply to the
+     * payload size, and are expressed as bytes in UTF-8 encoding.</p>  <p>This
+     * field is set only if the execution succeeds. If the execution fails, this field
+     * is null.</p> 
      */
     inline DescribeExecutionResult& WithOutput(Aws::String&& value) { SetOutput(std::move(value)); return *this;}
 
     /**
-     * <p>The JSON output data of the execution.</p> <note> <p>This field is set only
-     * if the execution succeeds. If the execution fails, this field is null.</p>
-     * </note>
+     * <p>The JSON output data of the execution. Length constraints apply to the
+     * payload size, and are expressed as bytes in UTF-8 encoding.</p>  <p>This
+     * field is set only if the execution succeeds. If the execution fails, this field
+     * is null.</p> 
      */
     inline DescribeExecutionResult& WithOutput(const char* value) { SetOutput(value); return *this;}
+
+
+    
+    inline const CloudWatchEventsExecutionDataDetails& GetOutputDetails() const{ return m_outputDetails; }
+
+    
+    inline void SetOutputDetails(const CloudWatchEventsExecutionDataDetails& value) { m_outputDetails = value; }
+
+    
+    inline void SetOutputDetails(CloudWatchEventsExecutionDataDetails&& value) { m_outputDetails = std::move(value); }
+
+    
+    inline DescribeExecutionResult& WithOutputDetails(const CloudWatchEventsExecutionDataDetails& value) { SetOutputDetails(value); return *this;}
+
+    
+    inline DescribeExecutionResult& WithOutputDetails(CloudWatchEventsExecutionDataDetails&& value) { SetOutputDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
+     */
+    inline const Aws::String& GetTraceHeader() const{ return m_traceHeader; }
+
+    /**
+     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
+     */
+    inline void SetTraceHeader(const Aws::String& value) { m_traceHeader = value; }
+
+    /**
+     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
+     */
+    inline void SetTraceHeader(Aws::String&& value) { m_traceHeader = std::move(value); }
+
+    /**
+     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
+     */
+    inline void SetTraceHeader(const char* value) { m_traceHeader.assign(value); }
+
+    /**
+     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
+     */
+    inline DescribeExecutionResult& WithTraceHeader(const Aws::String& value) { SetTraceHeader(value); return *this;}
+
+    /**
+     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
+     */
+    inline DescribeExecutionResult& WithTraceHeader(Aws::String&& value) { SetTraceHeader(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
+     */
+    inline DescribeExecutionResult& WithTraceHeader(const char* value) { SetTraceHeader(value); return *this;}
 
   private:
 
@@ -373,7 +453,13 @@ namespace Model
 
     Aws::String m_input;
 
+    CloudWatchEventsExecutionDataDetails m_inputDetails;
+
     Aws::String m_output;
+
+    CloudWatchEventsExecutionDataDetails m_outputDetails;
+
+    Aws::String m_traceHeader;
   };
 
 } // namespace Model

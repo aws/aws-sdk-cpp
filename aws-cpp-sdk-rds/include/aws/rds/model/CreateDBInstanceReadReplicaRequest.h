@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/ReplicaMode.h>
 #include <aws/rds/model/Tag.h>
 #include <aws/rds/model/ProcessorFeature.h>
 #include <utility>
@@ -599,57 +590,57 @@ namespace Model
 
     /**
      * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance is used.</p> <note> <p>For SQL Server,
-     * you must use the option group associated with the source instance.</p> </note>
+     * group associated with the source instance is used.</p>  <p>For SQL Server,
+     * you must use the option group associated with the source instance.</p> 
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
     /**
      * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance is used.</p> <note> <p>For SQL Server,
-     * you must use the option group associated with the source instance.</p> </note>
+     * group associated with the source instance is used.</p>  <p>For SQL Server,
+     * you must use the option group associated with the source instance.</p> 
      */
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
     /**
      * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance is used.</p> <note> <p>For SQL Server,
-     * you must use the option group associated with the source instance.</p> </note>
+     * group associated with the source instance is used.</p>  <p>For SQL Server,
+     * you must use the option group associated with the source instance.</p> 
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
      * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance is used.</p> <note> <p>For SQL Server,
-     * you must use the option group associated with the source instance.</p> </note>
+     * group associated with the source instance is used.</p>  <p>For SQL Server,
+     * you must use the option group associated with the source instance.</p> 
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
      * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance is used.</p> <note> <p>For SQL Server,
-     * you must use the option group associated with the source instance.</p> </note>
+     * group associated with the source instance is used.</p>  <p>For SQL Server,
+     * you must use the option group associated with the source instance.</p> 
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /**
      * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance is used.</p> <note> <p>For SQL Server,
-     * you must use the option group associated with the source instance.</p> </note>
+     * group associated with the source instance is used.</p>  <p>For SQL Server,
+     * you must use the option group associated with the source instance.</p> 
      */
     inline CreateDBInstanceReadReplicaRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
     /**
      * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance is used.</p> <note> <p>For SQL Server,
-     * you must use the option group associated with the source instance.</p> </note>
+     * group associated with the source instance is used.</p>  <p>For SQL Server,
+     * you must use the option group associated with the source instance.</p> 
      */
     inline CreateDBInstanceReadReplicaRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance is used.</p> <note> <p>For SQL Server,
-     * you must use the option group associated with the source instance.</p> </note>
+     * group associated with the source instance is used.</p>  <p>For SQL Server,
+     * you must use the option group associated with the source instance.</p> 
      */
     inline CreateDBInstanceReadReplicaRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
@@ -659,9 +650,9 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region read replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region read replica.</p> <note> <p>Currently,
+     * specified DB engine for a cross region read replica.</p>  <p>Currently,
      * specifying a parameter group for this operation is only supported for Oracle DB
-     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * instances.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul>
@@ -673,9 +664,9 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region read replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region read replica.</p> <note> <p>Currently,
+     * specified DB engine for a cross region read replica.</p>  <p>Currently,
      * specifying a parameter group for this operation is only supported for Oracle DB
-     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * instances.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul>
@@ -687,9 +678,9 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region read replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region read replica.</p> <note> <p>Currently,
+     * specified DB engine for a cross region read replica.</p>  <p>Currently,
      * specifying a parameter group for this operation is only supported for Oracle DB
-     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * instances.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul>
@@ -701,9 +692,9 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region read replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region read replica.</p> <note> <p>Currently,
+     * specified DB engine for a cross region read replica.</p>  <p>Currently,
      * specifying a parameter group for this operation is only supported for Oracle DB
-     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * instances.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul>
@@ -715,9 +706,9 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region read replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region read replica.</p> <note> <p>Currently,
+     * specified DB engine for a cross region read replica.</p>  <p>Currently,
      * specifying a parameter group for this operation is only supported for Oracle DB
-     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * instances.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul>
@@ -729,9 +720,9 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region read replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region read replica.</p> <note> <p>Currently,
+     * specified DB engine for a cross region read replica.</p>  <p>Currently,
      * specifying a parameter group for this operation is only supported for Oracle DB
-     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * instances.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul>
@@ -743,9 +734,9 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region read replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region read replica.</p> <note> <p>Currently,
+     * specified DB engine for a cross region read replica.</p>  <p>Currently,
      * specifying a parameter group for this operation is only supported for Oracle DB
-     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * instances.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul>
@@ -757,9 +748,9 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region read replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region read replica.</p> <note> <p>Currently,
+     * specified DB engine for a cross region read replica.</p>  <p>Currently,
      * specifying a parameter group for this operation is only supported for Oracle DB
-     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * instances.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul>
@@ -768,42 +759,54 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance isn't publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address. For more information, see
-     * <a>CreateDBInstance</a>.</p>
+     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
+     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
+     * private IP address from within the DB instance's VPC, and to the public IP
+     * address from outside of the DB instance's VPC. Access to the DB instance is
+     * ultimately controlled by the security group it uses, and that public access is
+     * not permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
+     * information, see <a>CreateDBInstance</a>.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance isn't publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address. For more information, see
-     * <a>CreateDBInstance</a>.</p>
+     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
+     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
+     * private IP address from within the DB instance's VPC, and to the public IP
+     * address from outside of the DB instance's VPC. Access to the DB instance is
+     * ultimately controlled by the security group it uses, and that public access is
+     * not permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
+     * information, see <a>CreateDBInstance</a>.</p>
      */
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance isn't publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address. For more information, see
-     * <a>CreateDBInstance</a>.</p>
+     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
+     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
+     * private IP address from within the DB instance's VPC, and to the public IP
+     * address from outside of the DB instance's VPC. Access to the DB instance is
+     * ultimately controlled by the security group it uses, and that public access is
+     * not permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
+     * information, see <a>CreateDBInstance</a>.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance isn't publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address. For more information, see
-     * <a>CreateDBInstance</a>.</p>
+     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
+     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
+     * private IP address from within the DB instance's VPC, and to the public IP
+     * address from outside of the DB instance's VPC. Access to the DB instance is
+     * ultimately controlled by the security group it uses, and that public access is
+     * not permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
+     * information, see <a>CreateDBInstance</a>.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
@@ -1267,120 +1270,120 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key ID for an encrypted read replica. The KMS key ID is the
-     * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key.</p> <p>If you create an encrypted read replica in the same AWS
-     * Region as the source DB instance, then you do not have to specify a value for
-     * this parameter. The read replica is encrypted with the same KMS key as the
+     * <p>The AWS KMS key identifier for an encrypted read replica.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * CMK.</p> <p>If you create an encrypted read replica in the same AWS Region as
+     * the source DB instance, then do not specify a value for this parameter. A read
+     * replica in the same Region is always encrypted with the same AWS KMS CMK as the
      * source DB instance.</p> <p>If you create an encrypted read replica in a
-     * different AWS Region, then you must specify a KMS key for the destination AWS
-     * Region. KMS encryption keys are specific to the AWS Region that they are created
-     * in, and you can't use encryption keys from one AWS Region in another AWS
+     * different AWS Region, then you must specify a AWS KMS key identifier for the
+     * destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they
+     * are created in, and you can't use CMKs from one AWS Region in another AWS
      * Region.</p> <p>You can't create an encrypted read replica from an unencrypted DB
      * instance.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS key ID for an encrypted read replica. The KMS key ID is the
-     * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key.</p> <p>If you create an encrypted read replica in the same AWS
-     * Region as the source DB instance, then you do not have to specify a value for
-     * this parameter. The read replica is encrypted with the same KMS key as the
+     * <p>The AWS KMS key identifier for an encrypted read replica.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * CMK.</p> <p>If you create an encrypted read replica in the same AWS Region as
+     * the source DB instance, then do not specify a value for this parameter. A read
+     * replica in the same Region is always encrypted with the same AWS KMS CMK as the
      * source DB instance.</p> <p>If you create an encrypted read replica in a
-     * different AWS Region, then you must specify a KMS key for the destination AWS
-     * Region. KMS encryption keys are specific to the AWS Region that they are created
-     * in, and you can't use encryption keys from one AWS Region in another AWS
+     * different AWS Region, then you must specify a AWS KMS key identifier for the
+     * destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they
+     * are created in, and you can't use CMKs from one AWS Region in another AWS
      * Region.</p> <p>You can't create an encrypted read replica from an unencrypted DB
      * instance.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key ID for an encrypted read replica. The KMS key ID is the
-     * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key.</p> <p>If you create an encrypted read replica in the same AWS
-     * Region as the source DB instance, then you do not have to specify a value for
-     * this parameter. The read replica is encrypted with the same KMS key as the
+     * <p>The AWS KMS key identifier for an encrypted read replica.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * CMK.</p> <p>If you create an encrypted read replica in the same AWS Region as
+     * the source DB instance, then do not specify a value for this parameter. A read
+     * replica in the same Region is always encrypted with the same AWS KMS CMK as the
      * source DB instance.</p> <p>If you create an encrypted read replica in a
-     * different AWS Region, then you must specify a KMS key for the destination AWS
-     * Region. KMS encryption keys are specific to the AWS Region that they are created
-     * in, and you can't use encryption keys from one AWS Region in another AWS
+     * different AWS Region, then you must specify a AWS KMS key identifier for the
+     * destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they
+     * are created in, and you can't use CMKs from one AWS Region in another AWS
      * Region.</p> <p>You can't create an encrypted read replica from an unencrypted DB
      * instance.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key ID for an encrypted read replica. The KMS key ID is the
-     * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key.</p> <p>If you create an encrypted read replica in the same AWS
-     * Region as the source DB instance, then you do not have to specify a value for
-     * this parameter. The read replica is encrypted with the same KMS key as the
+     * <p>The AWS KMS key identifier for an encrypted read replica.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * CMK.</p> <p>If you create an encrypted read replica in the same AWS Region as
+     * the source DB instance, then do not specify a value for this parameter. A read
+     * replica in the same Region is always encrypted with the same AWS KMS CMK as the
      * source DB instance.</p> <p>If you create an encrypted read replica in a
-     * different AWS Region, then you must specify a KMS key for the destination AWS
-     * Region. KMS encryption keys are specific to the AWS Region that they are created
-     * in, and you can't use encryption keys from one AWS Region in another AWS
+     * different AWS Region, then you must specify a AWS KMS key identifier for the
+     * destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they
+     * are created in, and you can't use CMKs from one AWS Region in another AWS
      * Region.</p> <p>You can't create an encrypted read replica from an unencrypted DB
      * instance.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key ID for an encrypted read replica. The KMS key ID is the
-     * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key.</p> <p>If you create an encrypted read replica in the same AWS
-     * Region as the source DB instance, then you do not have to specify a value for
-     * this parameter. The read replica is encrypted with the same KMS key as the
+     * <p>The AWS KMS key identifier for an encrypted read replica.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * CMK.</p> <p>If you create an encrypted read replica in the same AWS Region as
+     * the source DB instance, then do not specify a value for this parameter. A read
+     * replica in the same Region is always encrypted with the same AWS KMS CMK as the
      * source DB instance.</p> <p>If you create an encrypted read replica in a
-     * different AWS Region, then you must specify a KMS key for the destination AWS
-     * Region. KMS encryption keys are specific to the AWS Region that they are created
-     * in, and you can't use encryption keys from one AWS Region in another AWS
+     * different AWS Region, then you must specify a AWS KMS key identifier for the
+     * destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they
+     * are created in, and you can't use CMKs from one AWS Region in another AWS
      * Region.</p> <p>You can't create an encrypted read replica from an unencrypted DB
      * instance.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key ID for an encrypted read replica. The KMS key ID is the
-     * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key.</p> <p>If you create an encrypted read replica in the same AWS
-     * Region as the source DB instance, then you do not have to specify a value for
-     * this parameter. The read replica is encrypted with the same KMS key as the
+     * <p>The AWS KMS key identifier for an encrypted read replica.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * CMK.</p> <p>If you create an encrypted read replica in the same AWS Region as
+     * the source DB instance, then do not specify a value for this parameter. A read
+     * replica in the same Region is always encrypted with the same AWS KMS CMK as the
      * source DB instance.</p> <p>If you create an encrypted read replica in a
-     * different AWS Region, then you must specify a KMS key for the destination AWS
-     * Region. KMS encryption keys are specific to the AWS Region that they are created
-     * in, and you can't use encryption keys from one AWS Region in another AWS
+     * different AWS Region, then you must specify a AWS KMS key identifier for the
+     * destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they
+     * are created in, and you can't use CMKs from one AWS Region in another AWS
      * Region.</p> <p>You can't create an encrypted read replica from an unencrypted DB
      * instance.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key ID for an encrypted read replica. The KMS key ID is the
-     * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key.</p> <p>If you create an encrypted read replica in the same AWS
-     * Region as the source DB instance, then you do not have to specify a value for
-     * this parameter. The read replica is encrypted with the same KMS key as the
+     * <p>The AWS KMS key identifier for an encrypted read replica.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * CMK.</p> <p>If you create an encrypted read replica in the same AWS Region as
+     * the source DB instance, then do not specify a value for this parameter. A read
+     * replica in the same Region is always encrypted with the same AWS KMS CMK as the
      * source DB instance.</p> <p>If you create an encrypted read replica in a
-     * different AWS Region, then you must specify a KMS key for the destination AWS
-     * Region. KMS encryption keys are specific to the AWS Region that they are created
-     * in, and you can't use encryption keys from one AWS Region in another AWS
+     * different AWS Region, then you must specify a AWS KMS key identifier for the
+     * destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they
+     * are created in, and you can't use CMKs from one AWS Region in another AWS
      * Region.</p> <p>You can't create an encrypted read replica from an unencrypted DB
      * instance.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key ID for an encrypted read replica. The KMS key ID is the
-     * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key.</p> <p>If you create an encrypted read replica in the same AWS
-     * Region as the source DB instance, then you do not have to specify a value for
-     * this parameter. The read replica is encrypted with the same KMS key as the
+     * <p>The AWS KMS key identifier for an encrypted read replica.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * CMK.</p> <p>If you create an encrypted read replica in the same AWS Region as
+     * the source DB instance, then do not specify a value for this parameter. A read
+     * replica in the same Region is always encrypted with the same AWS KMS CMK as the
      * source DB instance.</p> <p>If you create an encrypted read replica in a
-     * different AWS Region, then you must specify a KMS key for the destination AWS
-     * Region. KMS encryption keys are specific to the AWS Region that they are created
-     * in, and you can't use encryption keys from one AWS Region in another AWS
+     * different AWS Region, then you must specify a AWS KMS key identifier for the
+     * destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they
+     * are created in, and you can't use CMKs from one AWS Region in another AWS
      * Region.</p> <p>You can't create an encrypted read replica from an unencrypted DB
      * instance.</p>
      */
@@ -1423,14 +1426,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * Version 4 Signing Process</a>. </p>  <p>If you are using an AWS SDK tool
      * or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
      * be executed in the source AWS Region.</p> <p> <code>SourceRegion</code> isn't
      * supported for SQL Server, because SQL Server on Amazon RDS doesn't support
-     * cross-region read replicas.</p> </note>
+     * cross-region read replicas.</p> 
      */
     inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
 
@@ -1470,14 +1473,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * Version 4 Signing Process</a>. </p>  <p>If you are using an AWS SDK tool
      * or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
      * be executed in the source AWS Region.</p> <p> <code>SourceRegion</code> isn't
      * supported for SQL Server, because SQL Server on Amazon RDS doesn't support
-     * cross-region read replicas.</p> </note>
+     * cross-region read replicas.</p> 
      */
     inline bool PreSignedUrlHasBeenSet() const { return m_preSignedUrlHasBeenSet; }
 
@@ -1517,14 +1520,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * Version 4 Signing Process</a>. </p>  <p>If you are using an AWS SDK tool
      * or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
      * be executed in the source AWS Region.</p> <p> <code>SourceRegion</code> isn't
      * supported for SQL Server, because SQL Server on Amazon RDS doesn't support
-     * cross-region read replicas.</p> </note>
+     * cross-region read replicas.</p> 
      */
     inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = value; }
 
@@ -1564,14 +1567,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * Version 4 Signing Process</a>. </p>  <p>If you are using an AWS SDK tool
      * or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
      * be executed in the source AWS Region.</p> <p> <code>SourceRegion</code> isn't
      * supported for SQL Server, because SQL Server on Amazon RDS doesn't support
-     * cross-region read replicas.</p> </note>
+     * cross-region read replicas.</p> 
      */
     inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = std::move(value); }
 
@@ -1611,14 +1614,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * Version 4 Signing Process</a>. </p>  <p>If you are using an AWS SDK tool
      * or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
      * be executed in the source AWS Region.</p> <p> <code>SourceRegion</code> isn't
      * supported for SQL Server, because SQL Server on Amazon RDS doesn't support
-     * cross-region read replicas.</p> </note>
+     * cross-region read replicas.</p> 
      */
     inline void SetPreSignedUrl(const char* value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl.assign(value); }
 
@@ -1658,14 +1661,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * Version 4 Signing Process</a>. </p>  <p>If you are using an AWS SDK tool
      * or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
      * be executed in the source AWS Region.</p> <p> <code>SourceRegion</code> isn't
      * supported for SQL Server, because SQL Server on Amazon RDS doesn't support
-     * cross-region read replicas.</p> </note>
+     * cross-region read replicas.</p> 
      */
     inline CreateDBInstanceReadReplicaRequest& WithPreSignedUrl(const Aws::String& value) { SetPreSignedUrl(value); return *this;}
 
@@ -1705,14 +1708,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * Version 4 Signing Process</a>. </p>  <p>If you are using an AWS SDK tool
      * or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
      * be executed in the source AWS Region.</p> <p> <code>SourceRegion</code> isn't
      * supported for SQL Server, because SQL Server on Amazon RDS doesn't support
-     * cross-region read replicas.</p> </note>
+     * cross-region read replicas.</p> 
      */
     inline CreateDBInstanceReadReplicaRequest& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(std::move(value)); return *this;}
 
@@ -1752,23 +1755,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * Version 4 Signing Process</a>. </p>  <p>If you are using an AWS SDK tool
      * or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
      * be executed in the source AWS Region.</p> <p> <code>SourceRegion</code> isn't
      * supported for SQL Server, because SQL Server on Amazon RDS doesn't support
-     * cross-region read replicas.</p> </note>
+     * cross-region read replicas.</p> 
      */
     inline CreateDBInstanceReadReplicaRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 
 
     /**
      * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is disabled.
-     * For information about the supported DB engines, see <a>CreateDBInstance</a>.</p>
-     * <p>For more information about IAM database authentication, see <a
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -1777,9 +1779,8 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is disabled.
-     * For information about the supported DB engines, see <a>CreateDBInstance</a>.</p>
-     * <p>For more information about IAM database authentication, see <a
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -1788,9 +1789,8 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is disabled.
-     * For information about the supported DB engines, see <a>CreateDBInstance</a>.</p>
-     * <p>For more information about IAM database authentication, see <a
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -1799,9 +1799,8 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is disabled.
-     * For information about the supported DB engines, see <a>CreateDBInstance</a>.</p>
-     * <p>For more information about IAM database authentication, see <a
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -1843,82 +1842,82 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
@@ -2151,122 +2150,74 @@ namespace Model
 
 
     /**
-     * <p>The Active Directory directory ID to create the DB instance in.</p> <p>For
-     * Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate
-     * users that connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>The Active Directory directory ID to create the DB instance in. Currently,
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>The Active Directory directory ID to create the DB instance in.</p> <p>For
-     * Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate
-     * users that connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>The Active Directory directory ID to create the DB instance in. Currently,
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>The Active Directory directory ID to create the DB instance in.</p> <p>For
-     * Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate
-     * users that connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>The Active Directory directory ID to create the DB instance in. Currently,
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>The Active Directory directory ID to create the DB instance in.</p> <p>For
-     * Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate
-     * users that connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>The Active Directory directory ID to create the DB instance in. Currently,
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>The Active Directory directory ID to create the DB instance in.</p> <p>For
-     * Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate
-     * users that connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>The Active Directory directory ID to create the DB instance in. Currently,
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>The Active Directory directory ID to create the DB instance in.</p> <p>For
-     * Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate
-     * users that connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>The Active Directory directory ID to create the DB instance in. Currently,
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>The Active Directory directory ID to create the DB instance in.</p> <p>For
-     * Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate
-     * users that connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>The Active Directory directory ID to create the DB instance in. Currently,
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>The Active Directory directory ID to create the DB instance in.</p> <p>For
-     * Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate
-     * users that connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>The Active Directory directory ID to create the DB instance in. Currently,
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
@@ -2318,6 +2269,169 @@ namespace Model
      * Directory Service.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
+
+
+    /**
+     * <p>The open mode of the replica database: mounted or read-only.</p> 
+     * <p>This parameter is only supported for Oracle DB instances.</p> 
+     * <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use
+     * case for mounted replicas is cross-Region disaster recovery. The primary
+     * database doesn't use Active Data Guard to transmit information to the mounted
+     * replica. Because it doesn't accept user connections, a mounted replica can't
+     * serve a read-only workload.</p> <p>You can create a combination of mounted and
+     * read-only DB replicas for the same primary DB instance. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline const ReplicaMode& GetReplicaMode() const{ return m_replicaMode; }
+
+    /**
+     * <p>The open mode of the replica database: mounted or read-only.</p> 
+     * <p>This parameter is only supported for Oracle DB instances.</p> 
+     * <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use
+     * case for mounted replicas is cross-Region disaster recovery. The primary
+     * database doesn't use Active Data Guard to transmit information to the mounted
+     * replica. Because it doesn't accept user connections, a mounted replica can't
+     * serve a read-only workload.</p> <p>You can create a combination of mounted and
+     * read-only DB replicas for the same primary DB instance. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline bool ReplicaModeHasBeenSet() const { return m_replicaModeHasBeenSet; }
+
+    /**
+     * <p>The open mode of the replica database: mounted or read-only.</p> 
+     * <p>This parameter is only supported for Oracle DB instances.</p> 
+     * <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use
+     * case for mounted replicas is cross-Region disaster recovery. The primary
+     * database doesn't use Active Data Guard to transmit information to the mounted
+     * replica. Because it doesn't accept user connections, a mounted replica can't
+     * serve a read-only workload.</p> <p>You can create a combination of mounted and
+     * read-only DB replicas for the same primary DB instance. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline void SetReplicaMode(const ReplicaMode& value) { m_replicaModeHasBeenSet = true; m_replicaMode = value; }
+
+    /**
+     * <p>The open mode of the replica database: mounted or read-only.</p> 
+     * <p>This parameter is only supported for Oracle DB instances.</p> 
+     * <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use
+     * case for mounted replicas is cross-Region disaster recovery. The primary
+     * database doesn't use Active Data Guard to transmit information to the mounted
+     * replica. Because it doesn't accept user connections, a mounted replica can't
+     * serve a read-only workload.</p> <p>You can create a combination of mounted and
+     * read-only DB replicas for the same primary DB instance. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline void SetReplicaMode(ReplicaMode&& value) { m_replicaModeHasBeenSet = true; m_replicaMode = std::move(value); }
+
+    /**
+     * <p>The open mode of the replica database: mounted or read-only.</p> 
+     * <p>This parameter is only supported for Oracle DB instances.</p> 
+     * <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use
+     * case for mounted replicas is cross-Region disaster recovery. The primary
+     * database doesn't use Active Data Guard to transmit information to the mounted
+     * replica. Because it doesn't accept user connections, a mounted replica can't
+     * serve a read-only workload.</p> <p>You can create a combination of mounted and
+     * read-only DB replicas for the same primary DB instance. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithReplicaMode(const ReplicaMode& value) { SetReplicaMode(value); return *this;}
+
+    /**
+     * <p>The open mode of the replica database: mounted or read-only.</p> 
+     * <p>This parameter is only supported for Oracle DB instances.</p> 
+     * <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use
+     * case for mounted replicas is cross-Region disaster recovery. The primary
+     * database doesn't use Active Data Guard to transmit information to the mounted
+     * replica. Because it doesn't accept user connections, a mounted replica can't
+     * serve a read-only workload.</p> <p>You can create a combination of mounted and
+     * read-only DB replicas for the same primary DB instance. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithReplicaMode(ReplicaMode&& value) { SetReplicaMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
+     * the DB instance.</p>
+     */
+    inline int GetMaxAllocatedStorage() const{ return m_maxAllocatedStorage; }
+
+    /**
+     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
+     * the DB instance.</p>
+     */
+    inline bool MaxAllocatedStorageHasBeenSet() const { return m_maxAllocatedStorageHasBeenSet; }
+
+    /**
+     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
+     * the DB instance.</p>
+     */
+    inline void SetMaxAllocatedStorage(int value) { m_maxAllocatedStorageHasBeenSet = true; m_maxAllocatedStorage = value; }
+
+    /**
+     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
+     * the DB instance.</p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithMaxAllocatedStorage(int value) { SetMaxAllocatedStorage(value); return *this;}
+
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline bool SourceRegionHasBeenSet() const { return m_sourceRegionHasBeenSet; }
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline void SetSourceRegion(const Aws::String& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline void SetSourceRegion(Aws::String&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::move(value); }
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline void SetSourceRegion(const char* value) { m_sourceRegionHasBeenSet = true; m_sourceRegion.assign(value); }
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithSourceRegion(const Aws::String& value) { SetSourceRegion(value); return *this;}
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithSourceRegion(Aws::String&& value) { SetSourceRegion(std::move(value)); return *this;}
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithSourceRegion(const char* value) { SetSourceRegion(value); return *this;}
 
   private:
 
@@ -2410,6 +2524,15 @@ namespace Model
 
     Aws::String m_domainIAMRoleName;
     bool m_domainIAMRoleNameHasBeenSet;
+
+    ReplicaMode m_replicaMode;
+    bool m_replicaModeHasBeenSet;
+
+    int m_maxAllocatedStorage;
+    bool m_maxAllocatedStorageHasBeenSet;
+
+    Aws::String m_sourceRegion;
+    bool m_sourceRegionHasBeenSet;
   };
 
 } // namespace Model

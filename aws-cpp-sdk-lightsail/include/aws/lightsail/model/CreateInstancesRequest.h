@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -196,11 +186,11 @@ namespace Model
      * <p>The ID for a virtual private server image (e.g.,
      * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
      * blueprints</code> operation to return a list of available images (or
-     * <i>blueprints</i>).</p> <note> <p>Use active blueprints when creating new
+     * <i>blueprints</i>).</p>  <p>Use active blueprints when creating new
      * instances. Inactive blueprints are listed to support customers with existing
      * instances and are not necessarily available to create new instances. Blueprints
      * are marked inactive when they become outdated due to operating system updates or
-     * new application releases.</p> </note>
+     * new application releases.</p> 
      */
     inline const Aws::String& GetBlueprintId() const{ return m_blueprintId; }
 
@@ -208,11 +198,11 @@ namespace Model
      * <p>The ID for a virtual private server image (e.g.,
      * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
      * blueprints</code> operation to return a list of available images (or
-     * <i>blueprints</i>).</p> <note> <p>Use active blueprints when creating new
+     * <i>blueprints</i>).</p>  <p>Use active blueprints when creating new
      * instances. Inactive blueprints are listed to support customers with existing
      * instances and are not necessarily available to create new instances. Blueprints
      * are marked inactive when they become outdated due to operating system updates or
-     * new application releases.</p> </note>
+     * new application releases.</p> 
      */
     inline bool BlueprintIdHasBeenSet() const { return m_blueprintIdHasBeenSet; }
 
@@ -220,11 +210,11 @@ namespace Model
      * <p>The ID for a virtual private server image (e.g.,
      * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
      * blueprints</code> operation to return a list of available images (or
-     * <i>blueprints</i>).</p> <note> <p>Use active blueprints when creating new
+     * <i>blueprints</i>).</p>  <p>Use active blueprints when creating new
      * instances. Inactive blueprints are listed to support customers with existing
      * instances and are not necessarily available to create new instances. Blueprints
      * are marked inactive when they become outdated due to operating system updates or
-     * new application releases.</p> </note>
+     * new application releases.</p> 
      */
     inline void SetBlueprintId(const Aws::String& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = value; }
 
@@ -232,11 +222,11 @@ namespace Model
      * <p>The ID for a virtual private server image (e.g.,
      * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
      * blueprints</code> operation to return a list of available images (or
-     * <i>blueprints</i>).</p> <note> <p>Use active blueprints when creating new
+     * <i>blueprints</i>).</p>  <p>Use active blueprints when creating new
      * instances. Inactive blueprints are listed to support customers with existing
      * instances and are not necessarily available to create new instances. Blueprints
      * are marked inactive when they become outdated due to operating system updates or
-     * new application releases.</p> </note>
+     * new application releases.</p> 
      */
     inline void SetBlueprintId(Aws::String&& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = std::move(value); }
 
@@ -244,11 +234,11 @@ namespace Model
      * <p>The ID for a virtual private server image (e.g.,
      * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
      * blueprints</code> operation to return a list of available images (or
-     * <i>blueprints</i>).</p> <note> <p>Use active blueprints when creating new
+     * <i>blueprints</i>).</p>  <p>Use active blueprints when creating new
      * instances. Inactive blueprints are listed to support customers with existing
      * instances and are not necessarily available to create new instances. Blueprints
      * are marked inactive when they become outdated due to operating system updates or
-     * new application releases.</p> </note>
+     * new application releases.</p> 
      */
     inline void SetBlueprintId(const char* value) { m_blueprintIdHasBeenSet = true; m_blueprintId.assign(value); }
 
@@ -256,11 +246,11 @@ namespace Model
      * <p>The ID for a virtual private server image (e.g.,
      * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
      * blueprints</code> operation to return a list of available images (or
-     * <i>blueprints</i>).</p> <note> <p>Use active blueprints when creating new
+     * <i>blueprints</i>).</p>  <p>Use active blueprints when creating new
      * instances. Inactive blueprints are listed to support customers with existing
      * instances and are not necessarily available to create new instances. Blueprints
      * are marked inactive when they become outdated due to operating system updates or
-     * new application releases.</p> </note>
+     * new application releases.</p> 
      */
     inline CreateInstancesRequest& WithBlueprintId(const Aws::String& value) { SetBlueprintId(value); return *this;}
 
@@ -268,11 +258,11 @@ namespace Model
      * <p>The ID for a virtual private server image (e.g.,
      * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
      * blueprints</code> operation to return a list of available images (or
-     * <i>blueprints</i>).</p> <note> <p>Use active blueprints when creating new
+     * <i>blueprints</i>).</p>  <p>Use active blueprints when creating new
      * instances. Inactive blueprints are listed to support customers with existing
      * instances and are not necessarily available to create new instances. Blueprints
      * are marked inactive when they become outdated due to operating system updates or
-     * new application releases.</p> </note>
+     * new application releases.</p> 
      */
     inline CreateInstancesRequest& WithBlueprintId(Aws::String&& value) { SetBlueprintId(std::move(value)); return *this;}
 
@@ -280,11 +270,11 @@ namespace Model
      * <p>The ID for a virtual private server image (e.g.,
      * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
      * blueprints</code> operation to return a list of available images (or
-     * <i>blueprints</i>).</p> <note> <p>Use active blueprints when creating new
+     * <i>blueprints</i>).</p>  <p>Use active blueprints when creating new
      * instances. Inactive blueprints are listed to support customers with existing
      * instances and are not necessarily available to create new instances. Blueprints
      * are marked inactive when they become outdated due to operating system updates or
-     * new application releases.</p> </note>
+     * new application releases.</p> 
      */
     inline CreateInstancesRequest& WithBlueprintId(const char* value) { SetBlueprintId(value); return *this;}
 
@@ -341,96 +331,96 @@ namespace Model
     /**
      * <p>A launch script you can create that configures a server with additional user
      * data. For example, you might want to run <code>apt-get -y update</code>.</p>
-     * <note> <p>Depending on the machine image you choose, the command to get software
+     *  <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> </note>
+     * Guide</a>.</p> 
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
     /**
      * <p>A launch script you can create that configures a server with additional user
      * data. For example, you might want to run <code>apt-get -y update</code>.</p>
-     * <note> <p>Depending on the machine image you choose, the command to get software
+     *  <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> </note>
+     * Guide</a>.</p> 
      */
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
     /**
      * <p>A launch script you can create that configures a server with additional user
      * data. For example, you might want to run <code>apt-get -y update</code>.</p>
-     * <note> <p>Depending on the machine image you choose, the command to get software
+     *  <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> </note>
+     * Guide</a>.</p> 
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
      * <p>A launch script you can create that configures a server with additional user
      * data. For example, you might want to run <code>apt-get -y update</code>.</p>
-     * <note> <p>Depending on the machine image you choose, the command to get software
+     *  <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> </note>
+     * Guide</a>.</p> 
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
      * <p>A launch script you can create that configures a server with additional user
      * data. For example, you might want to run <code>apt-get -y update</code>.</p>
-     * <note> <p>Depending on the machine image you choose, the command to get software
+     *  <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> </note>
+     * Guide</a>.</p> 
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
     /**
      * <p>A launch script you can create that configures a server with additional user
      * data. For example, you might want to run <code>apt-get -y update</code>.</p>
-     * <note> <p>Depending on the machine image you choose, the command to get software
+     *  <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> </note>
+     * Guide</a>.</p> 
      */
     inline CreateInstancesRequest& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
     /**
      * <p>A launch script you can create that configures a server with additional user
      * data. For example, you might want to run <code>apt-get -y update</code>.</p>
-     * <note> <p>Depending on the machine image you choose, the command to get software
+     *  <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> </note>
+     * Guide</a>.</p> 
      */
     inline CreateInstancesRequest& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
      * <p>A launch script you can create that configures a server with additional user
      * data. For example, you might want to run <code>apt-get -y update</code>.</p>
-     * <note> <p>Depending on the machine image you choose, the command to get software
+     *  <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> </note>
+     * Guide</a>.</p> 
      */
     inline CreateInstancesRequest& WithUserData(const char* value) { SetUserData(value); return *this;}
 
@@ -478,57 +468,57 @@ namespace Model
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline CreateInstancesRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline CreateInstancesRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline CreateInstancesRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline CreateInstancesRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
@@ -182,58 +172,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the device that is writing to the stream. </p> <note> <p> In the
+     * <p>The name of the device that is writing to the stream. </p>  <p> In the
      * current implementation, Kinesis Video Streams does not use this name. </p>
-     * </note>
+     * 
      */
     inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
 
     /**
-     * <p>The name of the device that is writing to the stream. </p> <note> <p> In the
+     * <p>The name of the device that is writing to the stream. </p>  <p> In the
      * current implementation, Kinesis Video Streams does not use this name. </p>
-     * </note>
+     * 
      */
     inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
 
     /**
-     * <p>The name of the device that is writing to the stream. </p> <note> <p> In the
+     * <p>The name of the device that is writing to the stream. </p>  <p> In the
      * current implementation, Kinesis Video Streams does not use this name. </p>
-     * </note>
+     * 
      */
     inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
 
     /**
-     * <p>The name of the device that is writing to the stream. </p> <note> <p> In the
+     * <p>The name of the device that is writing to the stream. </p>  <p> In the
      * current implementation, Kinesis Video Streams does not use this name. </p>
-     * </note>
+     * 
      */
     inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
 
     /**
-     * <p>The name of the device that is writing to the stream. </p> <note> <p> In the
+     * <p>The name of the device that is writing to the stream. </p>  <p> In the
      * current implementation, Kinesis Video Streams does not use this name. </p>
-     * </note>
+     * 
      */
     inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
 
     /**
-     * <p>The name of the device that is writing to the stream. </p> <note> <p> In the
+     * <p>The name of the device that is writing to the stream. </p>  <p> In the
      * current implementation, Kinesis Video Streams does not use this name. </p>
-     * </note>
+     * 
      */
     inline UpdateStreamRequest& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
 
     /**
-     * <p>The name of the device that is writing to the stream. </p> <note> <p> In the
+     * <p>The name of the device that is writing to the stream. </p>  <p> In the
      * current implementation, Kinesis Video Streams does not use this name. </p>
-     * </note>
+     * 
      */
     inline UpdateStreamRequest& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the device that is writing to the stream. </p> <note> <p> In the
+     * <p>The name of the device that is writing to the stream. </p>  <p> In the
      * current implementation, Kinesis Video Streams does not use this name. </p>
-     * </note>
+     * 
      */
     inline UpdateStreamRequest& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
@@ -126,43 +116,43 @@ namespace Model
         class UnsubscribeFromEventRequest;
         class UpdateAssessmentTargetRequest;
 
-        typedef Aws::Utils::Outcome<AddAttributesToFindingsResult, Aws::Client::AWSError<InspectorErrors>> AddAttributesToFindingsOutcome;
-        typedef Aws::Utils::Outcome<CreateAssessmentTargetResult, Aws::Client::AWSError<InspectorErrors>> CreateAssessmentTargetOutcome;
-        typedef Aws::Utils::Outcome<CreateAssessmentTemplateResult, Aws::Client::AWSError<InspectorErrors>> CreateAssessmentTemplateOutcome;
-        typedef Aws::Utils::Outcome<CreateExclusionsPreviewResult, Aws::Client::AWSError<InspectorErrors>> CreateExclusionsPreviewOutcome;
-        typedef Aws::Utils::Outcome<CreateResourceGroupResult, Aws::Client::AWSError<InspectorErrors>> CreateResourceGroupOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<InspectorErrors>> DeleteAssessmentRunOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<InspectorErrors>> DeleteAssessmentTargetOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<InspectorErrors>> DeleteAssessmentTemplateOutcome;
-        typedef Aws::Utils::Outcome<DescribeAssessmentRunsResult, Aws::Client::AWSError<InspectorErrors>> DescribeAssessmentRunsOutcome;
-        typedef Aws::Utils::Outcome<DescribeAssessmentTargetsResult, Aws::Client::AWSError<InspectorErrors>> DescribeAssessmentTargetsOutcome;
-        typedef Aws::Utils::Outcome<DescribeAssessmentTemplatesResult, Aws::Client::AWSError<InspectorErrors>> DescribeAssessmentTemplatesOutcome;
-        typedef Aws::Utils::Outcome<DescribeCrossAccountAccessRoleResult, Aws::Client::AWSError<InspectorErrors>> DescribeCrossAccountAccessRoleOutcome;
-        typedef Aws::Utils::Outcome<DescribeExclusionsResult, Aws::Client::AWSError<InspectorErrors>> DescribeExclusionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeFindingsResult, Aws::Client::AWSError<InspectorErrors>> DescribeFindingsOutcome;
-        typedef Aws::Utils::Outcome<DescribeResourceGroupsResult, Aws::Client::AWSError<InspectorErrors>> DescribeResourceGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeRulesPackagesResult, Aws::Client::AWSError<InspectorErrors>> DescribeRulesPackagesOutcome;
-        typedef Aws::Utils::Outcome<GetAssessmentReportResult, Aws::Client::AWSError<InspectorErrors>> GetAssessmentReportOutcome;
-        typedef Aws::Utils::Outcome<GetExclusionsPreviewResult, Aws::Client::AWSError<InspectorErrors>> GetExclusionsPreviewOutcome;
-        typedef Aws::Utils::Outcome<GetTelemetryMetadataResult, Aws::Client::AWSError<InspectorErrors>> GetTelemetryMetadataOutcome;
-        typedef Aws::Utils::Outcome<ListAssessmentRunAgentsResult, Aws::Client::AWSError<InspectorErrors>> ListAssessmentRunAgentsOutcome;
-        typedef Aws::Utils::Outcome<ListAssessmentRunsResult, Aws::Client::AWSError<InspectorErrors>> ListAssessmentRunsOutcome;
-        typedef Aws::Utils::Outcome<ListAssessmentTargetsResult, Aws::Client::AWSError<InspectorErrors>> ListAssessmentTargetsOutcome;
-        typedef Aws::Utils::Outcome<ListAssessmentTemplatesResult, Aws::Client::AWSError<InspectorErrors>> ListAssessmentTemplatesOutcome;
-        typedef Aws::Utils::Outcome<ListEventSubscriptionsResult, Aws::Client::AWSError<InspectorErrors>> ListEventSubscriptionsOutcome;
-        typedef Aws::Utils::Outcome<ListExclusionsResult, Aws::Client::AWSError<InspectorErrors>> ListExclusionsOutcome;
-        typedef Aws::Utils::Outcome<ListFindingsResult, Aws::Client::AWSError<InspectorErrors>> ListFindingsOutcome;
-        typedef Aws::Utils::Outcome<ListRulesPackagesResult, Aws::Client::AWSError<InspectorErrors>> ListRulesPackagesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<InspectorErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PreviewAgentsResult, Aws::Client::AWSError<InspectorErrors>> PreviewAgentsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<InspectorErrors>> RegisterCrossAccountAccessRoleOutcome;
-        typedef Aws::Utils::Outcome<RemoveAttributesFromFindingsResult, Aws::Client::AWSError<InspectorErrors>> RemoveAttributesFromFindingsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<InspectorErrors>> SetTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<StartAssessmentRunResult, Aws::Client::AWSError<InspectorErrors>> StartAssessmentRunOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<InspectorErrors>> StopAssessmentRunOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<InspectorErrors>> SubscribeToEventOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<InspectorErrors>> UnsubscribeFromEventOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<InspectorErrors>> UpdateAssessmentTargetOutcome;
+        typedef Aws::Utils::Outcome<AddAttributesToFindingsResult, InspectorError> AddAttributesToFindingsOutcome;
+        typedef Aws::Utils::Outcome<CreateAssessmentTargetResult, InspectorError> CreateAssessmentTargetOutcome;
+        typedef Aws::Utils::Outcome<CreateAssessmentTemplateResult, InspectorError> CreateAssessmentTemplateOutcome;
+        typedef Aws::Utils::Outcome<CreateExclusionsPreviewResult, InspectorError> CreateExclusionsPreviewOutcome;
+        typedef Aws::Utils::Outcome<CreateResourceGroupResult, InspectorError> CreateResourceGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, InspectorError> DeleteAssessmentRunOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, InspectorError> DeleteAssessmentTargetOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, InspectorError> DeleteAssessmentTemplateOutcome;
+        typedef Aws::Utils::Outcome<DescribeAssessmentRunsResult, InspectorError> DescribeAssessmentRunsOutcome;
+        typedef Aws::Utils::Outcome<DescribeAssessmentTargetsResult, InspectorError> DescribeAssessmentTargetsOutcome;
+        typedef Aws::Utils::Outcome<DescribeAssessmentTemplatesResult, InspectorError> DescribeAssessmentTemplatesOutcome;
+        typedef Aws::Utils::Outcome<DescribeCrossAccountAccessRoleResult, InspectorError> DescribeCrossAccountAccessRoleOutcome;
+        typedef Aws::Utils::Outcome<DescribeExclusionsResult, InspectorError> DescribeExclusionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeFindingsResult, InspectorError> DescribeFindingsOutcome;
+        typedef Aws::Utils::Outcome<DescribeResourceGroupsResult, InspectorError> DescribeResourceGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeRulesPackagesResult, InspectorError> DescribeRulesPackagesOutcome;
+        typedef Aws::Utils::Outcome<GetAssessmentReportResult, InspectorError> GetAssessmentReportOutcome;
+        typedef Aws::Utils::Outcome<GetExclusionsPreviewResult, InspectorError> GetExclusionsPreviewOutcome;
+        typedef Aws::Utils::Outcome<GetTelemetryMetadataResult, InspectorError> GetTelemetryMetadataOutcome;
+        typedef Aws::Utils::Outcome<ListAssessmentRunAgentsResult, InspectorError> ListAssessmentRunAgentsOutcome;
+        typedef Aws::Utils::Outcome<ListAssessmentRunsResult, InspectorError> ListAssessmentRunsOutcome;
+        typedef Aws::Utils::Outcome<ListAssessmentTargetsResult, InspectorError> ListAssessmentTargetsOutcome;
+        typedef Aws::Utils::Outcome<ListAssessmentTemplatesResult, InspectorError> ListAssessmentTemplatesOutcome;
+        typedef Aws::Utils::Outcome<ListEventSubscriptionsResult, InspectorError> ListEventSubscriptionsOutcome;
+        typedef Aws::Utils::Outcome<ListExclusionsResult, InspectorError> ListExclusionsOutcome;
+        typedef Aws::Utils::Outcome<ListFindingsResult, InspectorError> ListFindingsOutcome;
+        typedef Aws::Utils::Outcome<ListRulesPackagesResult, InspectorError> ListRulesPackagesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, InspectorError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<PreviewAgentsResult, InspectorError> PreviewAgentsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, InspectorError> RegisterCrossAccountAccessRoleOutcome;
+        typedef Aws::Utils::Outcome<RemoveAttributesFromFindingsResult, InspectorError> RemoveAttributesFromFindingsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, InspectorError> SetTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<StartAssessmentRunResult, InspectorError> StartAssessmentRunOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, InspectorError> StopAssessmentRunOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, InspectorError> SubscribeToEventOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, InspectorError> UnsubscribeFromEventOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, InspectorError> UpdateAssessmentTargetOutcome;
 
         typedef std::future<AddAttributesToFindingsOutcome> AddAttributesToFindingsOutcomeCallable;
         typedef std::future<CreateAssessmentTargetOutcome> CreateAssessmentTargetOutcomeCallable;
@@ -275,8 +265,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~InspectorClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "Inspector"; }
 
 
         /**

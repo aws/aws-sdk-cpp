@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -173,54 +163,54 @@ namespace Model
     /**
      * <p>This parameter enables or disables the HTTP metadata endpoint on your
      * instances. If the parameter is not specified, the default state is
-     * <code>enabled</code>.</p> <note> <p>If you specify a value of
+     * <code>enabled</code>.</p>  <p>If you specify a value of
      * <code>disabled</code>, you will not be able to access your instance
-     * metadata.</p> </note>
+     * metadata.</p> 
      */
     inline const InstanceMetadataEndpointState& GetHttpEndpoint() const{ return m_httpEndpoint; }
 
     /**
      * <p>This parameter enables or disables the HTTP metadata endpoint on your
      * instances. If the parameter is not specified, the default state is
-     * <code>enabled</code>.</p> <note> <p>If you specify a value of
+     * <code>enabled</code>.</p>  <p>If you specify a value of
      * <code>disabled</code>, you will not be able to access your instance
-     * metadata.</p> </note>
+     * metadata.</p> 
      */
     inline bool HttpEndpointHasBeenSet() const { return m_httpEndpointHasBeenSet; }
 
     /**
      * <p>This parameter enables or disables the HTTP metadata endpoint on your
      * instances. If the parameter is not specified, the default state is
-     * <code>enabled</code>.</p> <note> <p>If you specify a value of
+     * <code>enabled</code>.</p>  <p>If you specify a value of
      * <code>disabled</code>, you will not be able to access your instance
-     * metadata.</p> </note>
+     * metadata.</p> 
      */
     inline void SetHttpEndpoint(const InstanceMetadataEndpointState& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = value; }
 
     /**
      * <p>This parameter enables or disables the HTTP metadata endpoint on your
      * instances. If the parameter is not specified, the default state is
-     * <code>enabled</code>.</p> <note> <p>If you specify a value of
+     * <code>enabled</code>.</p>  <p>If you specify a value of
      * <code>disabled</code>, you will not be able to access your instance
-     * metadata.</p> </note>
+     * metadata.</p> 
      */
     inline void SetHttpEndpoint(InstanceMetadataEndpointState&& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = std::move(value); }
 
     /**
      * <p>This parameter enables or disables the HTTP metadata endpoint on your
      * instances. If the parameter is not specified, the default state is
-     * <code>enabled</code>.</p> <note> <p>If you specify a value of
+     * <code>enabled</code>.</p>  <p>If you specify a value of
      * <code>disabled</code>, you will not be able to access your instance
-     * metadata.</p> </note>
+     * metadata.</p> 
      */
     inline InstanceMetadataOptionsRequest& WithHttpEndpoint(const InstanceMetadataEndpointState& value) { SetHttpEndpoint(value); return *this;}
 
     /**
      * <p>This parameter enables or disables the HTTP metadata endpoint on your
      * instances. If the parameter is not specified, the default state is
-     * <code>enabled</code>.</p> <note> <p>If you specify a value of
+     * <code>enabled</code>.</p>  <p>If you specify a value of
      * <code>disabled</code>, you will not be able to access your instance
-     * metadata.</p> </note>
+     * metadata.</p> 
      */
     inline InstanceMetadataOptionsRequest& WithHttpEndpoint(InstanceMetadataEndpointState&& value) { SetHttpEndpoint(std::move(value)); return *this;}
 

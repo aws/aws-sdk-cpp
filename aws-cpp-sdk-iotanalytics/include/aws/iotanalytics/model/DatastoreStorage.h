@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
@@ -35,10 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Where data store data is stored. You may choose one of "serviceManagedS3" or
-   * "customerManagedS3" storage. If not specified, the default is
-   * "serviceManagedS3". This cannot be changed after the data store is
-   * created.</p><p><h3>See Also:</h3>   <a
+   * <p>Where data store data is stored. You can choose one of
+   * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
+   * specified, the default is <code>serviceManagedS3</code>. You cannot change this
+   * storage option after the data store is created.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatastoreStorage">AWS
    * API Reference</a></p>
    */
@@ -52,93 +42,93 @@ namespace Model
 
 
     /**
-     * <p>Use this to store data store data in an S3 bucket managed by the AWS IoT
-     * Analytics service. The choice of service-managed or customer-managed S3 storage
-     * cannot be changed after creation of the data store.</p>
+     * <p>Use this to store data store data in an S3 bucket managed by AWS IoT
+     * Analytics. You cannot change the choice of service-managed or customer-managed
+     * S3 storage after the data store is created.</p>
      */
     inline const ServiceManagedDatastoreS3Storage& GetServiceManagedS3() const{ return m_serviceManagedS3; }
 
     /**
-     * <p>Use this to store data store data in an S3 bucket managed by the AWS IoT
-     * Analytics service. The choice of service-managed or customer-managed S3 storage
-     * cannot be changed after creation of the data store.</p>
+     * <p>Use this to store data store data in an S3 bucket managed by AWS IoT
+     * Analytics. You cannot change the choice of service-managed or customer-managed
+     * S3 storage after the data store is created.</p>
      */
     inline bool ServiceManagedS3HasBeenSet() const { return m_serviceManagedS3HasBeenSet; }
 
     /**
-     * <p>Use this to store data store data in an S3 bucket managed by the AWS IoT
-     * Analytics service. The choice of service-managed or customer-managed S3 storage
-     * cannot be changed after creation of the data store.</p>
+     * <p>Use this to store data store data in an S3 bucket managed by AWS IoT
+     * Analytics. You cannot change the choice of service-managed or customer-managed
+     * S3 storage after the data store is created.</p>
      */
     inline void SetServiceManagedS3(const ServiceManagedDatastoreS3Storage& value) { m_serviceManagedS3HasBeenSet = true; m_serviceManagedS3 = value; }
 
     /**
-     * <p>Use this to store data store data in an S3 bucket managed by the AWS IoT
-     * Analytics service. The choice of service-managed or customer-managed S3 storage
-     * cannot be changed after creation of the data store.</p>
+     * <p>Use this to store data store data in an S3 bucket managed by AWS IoT
+     * Analytics. You cannot change the choice of service-managed or customer-managed
+     * S3 storage after the data store is created.</p>
      */
     inline void SetServiceManagedS3(ServiceManagedDatastoreS3Storage&& value) { m_serviceManagedS3HasBeenSet = true; m_serviceManagedS3 = std::move(value); }
 
     /**
-     * <p>Use this to store data store data in an S3 bucket managed by the AWS IoT
-     * Analytics service. The choice of service-managed or customer-managed S3 storage
-     * cannot be changed after creation of the data store.</p>
+     * <p>Use this to store data store data in an S3 bucket managed by AWS IoT
+     * Analytics. You cannot change the choice of service-managed or customer-managed
+     * S3 storage after the data store is created.</p>
      */
     inline DatastoreStorage& WithServiceManagedS3(const ServiceManagedDatastoreS3Storage& value) { SetServiceManagedS3(value); return *this;}
 
     /**
-     * <p>Use this to store data store data in an S3 bucket managed by the AWS IoT
-     * Analytics service. The choice of service-managed or customer-managed S3 storage
-     * cannot be changed after creation of the data store.</p>
+     * <p>Use this to store data store data in an S3 bucket managed by AWS IoT
+     * Analytics. You cannot change the choice of service-managed or customer-managed
+     * S3 storage after the data store is created.</p>
      */
     inline DatastoreStorage& WithServiceManagedS3(ServiceManagedDatastoreS3Storage&& value) { SetServiceManagedS3(std::move(value)); return *this;}
 
 
     /**
      * <p>Use this to store data store data in an S3 bucket that you manage. When
-     * customer managed storage is selected, the "retentionPeriod" parameter is
-     * ignored. The choice of service-managed or customer-managed S3 storage cannot be
-     * changed after creation of the data store.</p>
+     * customer managed storage is selected, the <code>retentionPeriod</code> parameter
+     * is ignored. The choice of service-managed or customer-managed S3 storage cannot
+     * be changed after creation of the data store.</p>
      */
     inline const CustomerManagedDatastoreS3Storage& GetCustomerManagedS3() const{ return m_customerManagedS3; }
 
     /**
      * <p>Use this to store data store data in an S3 bucket that you manage. When
-     * customer managed storage is selected, the "retentionPeriod" parameter is
-     * ignored. The choice of service-managed or customer-managed S3 storage cannot be
-     * changed after creation of the data store.</p>
+     * customer managed storage is selected, the <code>retentionPeriod</code> parameter
+     * is ignored. The choice of service-managed or customer-managed S3 storage cannot
+     * be changed after creation of the data store.</p>
      */
     inline bool CustomerManagedS3HasBeenSet() const { return m_customerManagedS3HasBeenSet; }
 
     /**
      * <p>Use this to store data store data in an S3 bucket that you manage. When
-     * customer managed storage is selected, the "retentionPeriod" parameter is
-     * ignored. The choice of service-managed or customer-managed S3 storage cannot be
-     * changed after creation of the data store.</p>
+     * customer managed storage is selected, the <code>retentionPeriod</code> parameter
+     * is ignored. The choice of service-managed or customer-managed S3 storage cannot
+     * be changed after creation of the data store.</p>
      */
     inline void SetCustomerManagedS3(const CustomerManagedDatastoreS3Storage& value) { m_customerManagedS3HasBeenSet = true; m_customerManagedS3 = value; }
 
     /**
      * <p>Use this to store data store data in an S3 bucket that you manage. When
-     * customer managed storage is selected, the "retentionPeriod" parameter is
-     * ignored. The choice of service-managed or customer-managed S3 storage cannot be
-     * changed after creation of the data store.</p>
+     * customer managed storage is selected, the <code>retentionPeriod</code> parameter
+     * is ignored. The choice of service-managed or customer-managed S3 storage cannot
+     * be changed after creation of the data store.</p>
      */
     inline void SetCustomerManagedS3(CustomerManagedDatastoreS3Storage&& value) { m_customerManagedS3HasBeenSet = true; m_customerManagedS3 = std::move(value); }
 
     /**
      * <p>Use this to store data store data in an S3 bucket that you manage. When
-     * customer managed storage is selected, the "retentionPeriod" parameter is
-     * ignored. The choice of service-managed or customer-managed S3 storage cannot be
-     * changed after creation of the data store.</p>
+     * customer managed storage is selected, the <code>retentionPeriod</code> parameter
+     * is ignored. The choice of service-managed or customer-managed S3 storage cannot
+     * be changed after creation of the data store.</p>
      */
     inline DatastoreStorage& WithCustomerManagedS3(const CustomerManagedDatastoreS3Storage& value) { SetCustomerManagedS3(value); return *this;}
 
     /**
      * <p>Use this to store data store data in an S3 bucket that you manage. When
-     * customer managed storage is selected, the "retentionPeriod" parameter is
-     * ignored. The choice of service-managed or customer-managed S3 storage cannot be
-     * changed after creation of the data store.</p>
+     * customer managed storage is selected, the <code>retentionPeriod</code> parameter
+     * is ignored. The choice of service-managed or customer-managed S3 storage cannot
+     * be changed after creation of the data store.</p>
      */
     inline DatastoreStorage& WithCustomerManagedS3(CustomerManagedDatastoreS3Storage&& value) { SetCustomerManagedS3(std::move(value)); return *this;}
 

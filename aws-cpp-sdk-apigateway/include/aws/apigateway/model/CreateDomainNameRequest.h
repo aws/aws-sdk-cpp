@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/apigateway/model/EndpointConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/apigateway/model/SecurityPolicy.h>
+#include <aws/apigateway/model/MutualTlsAuthenticationInput.h>
 #include <utility>
 
 namespace Aws
@@ -498,37 +489,37 @@ namespace Model
 
     /**
      * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * types of the domain name.</p>
      */
     inline const EndpointConfiguration& GetEndpointConfiguration() const{ return m_endpointConfiguration; }
 
     /**
      * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * types of the domain name.</p>
      */
     inline bool EndpointConfigurationHasBeenSet() const { return m_endpointConfigurationHasBeenSet; }
 
     /**
      * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * types of the domain name.</p>
      */
     inline void SetEndpointConfiguration(const EndpointConfiguration& value) { m_endpointConfigurationHasBeenSet = true; m_endpointConfiguration = value; }
 
     /**
      * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * types of the domain name.</p>
      */
     inline void SetEndpointConfiguration(EndpointConfiguration&& value) { m_endpointConfigurationHasBeenSet = true; m_endpointConfiguration = std::move(value); }
 
     /**
      * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * types of the domain name.</p>
      */
     inline CreateDomainNameRequest& WithEndpointConfiguration(const EndpointConfiguration& value) { SetEndpointConfiguration(value); return *this;}
 
     /**
      * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * types of the domain name.</p>
      */
     inline CreateDomainNameRequest& WithEndpointConfiguration(EndpointConfiguration&& value) { SetEndpointConfiguration(std::move(value)); return *this;}
 
@@ -667,6 +658,25 @@ namespace Model
      */
     inline CreateDomainNameRequest& WithSecurityPolicy(SecurityPolicy&& value) { SetSecurityPolicy(std::move(value)); return *this;}
 
+
+    
+    inline const MutualTlsAuthenticationInput& GetMutualTlsAuthentication() const{ return m_mutualTlsAuthentication; }
+
+    
+    inline bool MutualTlsAuthenticationHasBeenSet() const { return m_mutualTlsAuthenticationHasBeenSet; }
+
+    
+    inline void SetMutualTlsAuthentication(const MutualTlsAuthenticationInput& value) { m_mutualTlsAuthenticationHasBeenSet = true; m_mutualTlsAuthentication = value; }
+
+    
+    inline void SetMutualTlsAuthentication(MutualTlsAuthenticationInput&& value) { m_mutualTlsAuthenticationHasBeenSet = true; m_mutualTlsAuthentication = std::move(value); }
+
+    
+    inline CreateDomainNameRequest& WithMutualTlsAuthentication(const MutualTlsAuthenticationInput& value) { SetMutualTlsAuthentication(value); return *this;}
+
+    
+    inline CreateDomainNameRequest& WithMutualTlsAuthentication(MutualTlsAuthenticationInput&& value) { SetMutualTlsAuthentication(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -701,6 +711,9 @@ namespace Model
 
     SecurityPolicy m_securityPolicy;
     bool m_securityPolicyHasBeenSet;
+
+    MutualTlsAuthenticationInput m_mutualTlsAuthentication;
+    bool m_mutualTlsAuthenticationHasBeenSet;
   };
 
 } // namespace Model

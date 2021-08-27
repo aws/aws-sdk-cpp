@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/AWSMigrationHub/MigrationHub_EXPORTS.h>
@@ -95,23 +85,23 @@ namespace Model
         class NotifyMigrationTaskStateRequest;
         class PutResourceAttributesRequest;
 
-        typedef Aws::Utils::Outcome<AssociateCreatedArtifactResult, Aws::Client::AWSError<MigrationHubErrors>> AssociateCreatedArtifactOutcome;
-        typedef Aws::Utils::Outcome<AssociateDiscoveredResourceResult, Aws::Client::AWSError<MigrationHubErrors>> AssociateDiscoveredResourceOutcome;
-        typedef Aws::Utils::Outcome<CreateProgressUpdateStreamResult, Aws::Client::AWSError<MigrationHubErrors>> CreateProgressUpdateStreamOutcome;
-        typedef Aws::Utils::Outcome<DeleteProgressUpdateStreamResult, Aws::Client::AWSError<MigrationHubErrors>> DeleteProgressUpdateStreamOutcome;
-        typedef Aws::Utils::Outcome<DescribeApplicationStateResult, Aws::Client::AWSError<MigrationHubErrors>> DescribeApplicationStateOutcome;
-        typedef Aws::Utils::Outcome<DescribeMigrationTaskResult, Aws::Client::AWSError<MigrationHubErrors>> DescribeMigrationTaskOutcome;
-        typedef Aws::Utils::Outcome<DisassociateCreatedArtifactResult, Aws::Client::AWSError<MigrationHubErrors>> DisassociateCreatedArtifactOutcome;
-        typedef Aws::Utils::Outcome<DisassociateDiscoveredResourceResult, Aws::Client::AWSError<MigrationHubErrors>> DisassociateDiscoveredResourceOutcome;
-        typedef Aws::Utils::Outcome<ImportMigrationTaskResult, Aws::Client::AWSError<MigrationHubErrors>> ImportMigrationTaskOutcome;
-        typedef Aws::Utils::Outcome<ListApplicationStatesResult, Aws::Client::AWSError<MigrationHubErrors>> ListApplicationStatesOutcome;
-        typedef Aws::Utils::Outcome<ListCreatedArtifactsResult, Aws::Client::AWSError<MigrationHubErrors>> ListCreatedArtifactsOutcome;
-        typedef Aws::Utils::Outcome<ListDiscoveredResourcesResult, Aws::Client::AWSError<MigrationHubErrors>> ListDiscoveredResourcesOutcome;
-        typedef Aws::Utils::Outcome<ListMigrationTasksResult, Aws::Client::AWSError<MigrationHubErrors>> ListMigrationTasksOutcome;
-        typedef Aws::Utils::Outcome<ListProgressUpdateStreamsResult, Aws::Client::AWSError<MigrationHubErrors>> ListProgressUpdateStreamsOutcome;
-        typedef Aws::Utils::Outcome<NotifyApplicationStateResult, Aws::Client::AWSError<MigrationHubErrors>> NotifyApplicationStateOutcome;
-        typedef Aws::Utils::Outcome<NotifyMigrationTaskStateResult, Aws::Client::AWSError<MigrationHubErrors>> NotifyMigrationTaskStateOutcome;
-        typedef Aws::Utils::Outcome<PutResourceAttributesResult, Aws::Client::AWSError<MigrationHubErrors>> PutResourceAttributesOutcome;
+        typedef Aws::Utils::Outcome<AssociateCreatedArtifactResult, MigrationHubError> AssociateCreatedArtifactOutcome;
+        typedef Aws::Utils::Outcome<AssociateDiscoveredResourceResult, MigrationHubError> AssociateDiscoveredResourceOutcome;
+        typedef Aws::Utils::Outcome<CreateProgressUpdateStreamResult, MigrationHubError> CreateProgressUpdateStreamOutcome;
+        typedef Aws::Utils::Outcome<DeleteProgressUpdateStreamResult, MigrationHubError> DeleteProgressUpdateStreamOutcome;
+        typedef Aws::Utils::Outcome<DescribeApplicationStateResult, MigrationHubError> DescribeApplicationStateOutcome;
+        typedef Aws::Utils::Outcome<DescribeMigrationTaskResult, MigrationHubError> DescribeMigrationTaskOutcome;
+        typedef Aws::Utils::Outcome<DisassociateCreatedArtifactResult, MigrationHubError> DisassociateCreatedArtifactOutcome;
+        typedef Aws::Utils::Outcome<DisassociateDiscoveredResourceResult, MigrationHubError> DisassociateDiscoveredResourceOutcome;
+        typedef Aws::Utils::Outcome<ImportMigrationTaskResult, MigrationHubError> ImportMigrationTaskOutcome;
+        typedef Aws::Utils::Outcome<ListApplicationStatesResult, MigrationHubError> ListApplicationStatesOutcome;
+        typedef Aws::Utils::Outcome<ListCreatedArtifactsResult, MigrationHubError> ListCreatedArtifactsOutcome;
+        typedef Aws::Utils::Outcome<ListDiscoveredResourcesResult, MigrationHubError> ListDiscoveredResourcesOutcome;
+        typedef Aws::Utils::Outcome<ListMigrationTasksResult, MigrationHubError> ListMigrationTasksOutcome;
+        typedef Aws::Utils::Outcome<ListProgressUpdateStreamsResult, MigrationHubError> ListProgressUpdateStreamsOutcome;
+        typedef Aws::Utils::Outcome<NotifyApplicationStateResult, MigrationHubError> NotifyApplicationStateOutcome;
+        typedef Aws::Utils::Outcome<NotifyMigrationTaskStateResult, MigrationHubError> NotifyMigrationTaskStateOutcome;
+        typedef Aws::Utils::Outcome<PutResourceAttributesResult, MigrationHubError> PutResourceAttributesOutcome;
 
         typedef std::future<AssociateCreatedArtifactOutcome> AssociateCreatedArtifactOutcomeCallable;
         typedef std::future<AssociateDiscoveredResourceOutcome> AssociateDiscoveredResourceOutcomeCallable;
@@ -185,8 +175,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~MigrationHubClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "Migration Hub"; }
 
 
         /**
@@ -809,7 +797,7 @@ namespace Model
          * <p>Provides identifying details of the resource being migrated so that it can be
          * associated in the Application Discovery Service repository. This association
          * occurs asynchronously after <code>PutResourceAttributes</code> returns.</p>
-         * <important> <ul> <li> <p>Keep in mind that subsequent calls to
+         *  <ul> <li> <p>Keep in mind that subsequent calls to
          * PutResourceAttributes will override previously stored attributes. For example,
          * if it is first called with a MAC address, but later, it is desired to <i>add</i>
          * an IP address, it will then be required to call it with <i>both</i> the IP and
@@ -817,10 +805,10 @@ namespace Model
          * instructions regarding the special use case of the <a
          * href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#migrationhub-PutResourceAttributes-request-ResourceAttributeList">
          * <code>ResourceAttributeList</code> </a> parameter when specifying any "VM"
-         * related value.</p> </li> </ul> </important> <note> <p>Because this is an
+         * related value.</p> </li> </ul>   <p>Because this is an
          * asynchronous call, it will always return 200, whether an association occurs or
          * not. To confirm if an association was found based on the provided details, call
-         * <code>ListDiscoveredResources</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * <code>ListDiscoveredResources</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/PutResourceAttributes">AWS
          * API Reference</a></p>
          */
@@ -830,7 +818,7 @@ namespace Model
          * <p>Provides identifying details of the resource being migrated so that it can be
          * associated in the Application Discovery Service repository. This association
          * occurs asynchronously after <code>PutResourceAttributes</code> returns.</p>
-         * <important> <ul> <li> <p>Keep in mind that subsequent calls to
+         *  <ul> <li> <p>Keep in mind that subsequent calls to
          * PutResourceAttributes will override previously stored attributes. For example,
          * if it is first called with a MAC address, but later, it is desired to <i>add</i>
          * an IP address, it will then be required to call it with <i>both</i> the IP and
@@ -838,10 +826,10 @@ namespace Model
          * instructions regarding the special use case of the <a
          * href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#migrationhub-PutResourceAttributes-request-ResourceAttributeList">
          * <code>ResourceAttributeList</code> </a> parameter when specifying any "VM"
-         * related value.</p> </li> </ul> </important> <note> <p>Because this is an
+         * related value.</p> </li> </ul>   <p>Because this is an
          * asynchronous call, it will always return 200, whether an association occurs or
          * not. To confirm if an association was found based on the provided details, call
-         * <code>ListDiscoveredResources</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * <code>ListDiscoveredResources</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/PutResourceAttributes">AWS
          * API Reference</a></p>
          *
@@ -853,7 +841,7 @@ namespace Model
          * <p>Provides identifying details of the resource being migrated so that it can be
          * associated in the Application Discovery Service repository. This association
          * occurs asynchronously after <code>PutResourceAttributes</code> returns.</p>
-         * <important> <ul> <li> <p>Keep in mind that subsequent calls to
+         *  <ul> <li> <p>Keep in mind that subsequent calls to
          * PutResourceAttributes will override previously stored attributes. For example,
          * if it is first called with a MAC address, but later, it is desired to <i>add</i>
          * an IP address, it will then be required to call it with <i>both</i> the IP and
@@ -861,10 +849,10 @@ namespace Model
          * instructions regarding the special use case of the <a
          * href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#migrationhub-PutResourceAttributes-request-ResourceAttributeList">
          * <code>ResourceAttributeList</code> </a> parameter when specifying any "VM"
-         * related value.</p> </li> </ul> </important> <note> <p>Because this is an
+         * related value.</p> </li> </ul>   <p>Because this is an
          * asynchronous call, it will always return 200, whether an association occurs or
          * not. To confirm if an association was found based on the provided details, call
-         * <code>ListDiscoveredResources</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * <code>ListDiscoveredResources</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/PutResourceAttributes">AWS
          * API Reference</a></p>
          *

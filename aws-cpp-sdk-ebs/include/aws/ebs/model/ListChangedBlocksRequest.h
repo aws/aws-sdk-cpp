@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ebs/EBS_EXPORTS.h>
@@ -49,131 +39,131 @@ namespace Model
 
 
     /**
-     * <p>The ID of the first snapshot to use for the comparison.</p> <important>
+     * <p>The ID of the first snapshot to use for the comparison.</p> 
      * <p>The <code>FirstSnapshotID</code> parameter must be specified with a
      * <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
-     * </important>
+     * 
      */
     inline const Aws::String& GetFirstSnapshotId() const{ return m_firstSnapshotId; }
 
     /**
-     * <p>The ID of the first snapshot to use for the comparison.</p> <important>
+     * <p>The ID of the first snapshot to use for the comparison.</p> 
      * <p>The <code>FirstSnapshotID</code> parameter must be specified with a
      * <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
-     * </important>
+     * 
      */
     inline bool FirstSnapshotIdHasBeenSet() const { return m_firstSnapshotIdHasBeenSet; }
 
     /**
-     * <p>The ID of the first snapshot to use for the comparison.</p> <important>
+     * <p>The ID of the first snapshot to use for the comparison.</p> 
      * <p>The <code>FirstSnapshotID</code> parameter must be specified with a
      * <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
-     * </important>
+     * 
      */
     inline void SetFirstSnapshotId(const Aws::String& value) { m_firstSnapshotIdHasBeenSet = true; m_firstSnapshotId = value; }
 
     /**
-     * <p>The ID of the first snapshot to use for the comparison.</p> <important>
+     * <p>The ID of the first snapshot to use for the comparison.</p> 
      * <p>The <code>FirstSnapshotID</code> parameter must be specified with a
      * <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
-     * </important>
+     * 
      */
     inline void SetFirstSnapshotId(Aws::String&& value) { m_firstSnapshotIdHasBeenSet = true; m_firstSnapshotId = std::move(value); }
 
     /**
-     * <p>The ID of the first snapshot to use for the comparison.</p> <important>
+     * <p>The ID of the first snapshot to use for the comparison.</p> 
      * <p>The <code>FirstSnapshotID</code> parameter must be specified with a
      * <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
-     * </important>
+     * 
      */
     inline void SetFirstSnapshotId(const char* value) { m_firstSnapshotIdHasBeenSet = true; m_firstSnapshotId.assign(value); }
 
     /**
-     * <p>The ID of the first snapshot to use for the comparison.</p> <important>
+     * <p>The ID of the first snapshot to use for the comparison.</p> 
      * <p>The <code>FirstSnapshotID</code> parameter must be specified with a
      * <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
-     * </important>
+     * 
      */
     inline ListChangedBlocksRequest& WithFirstSnapshotId(const Aws::String& value) { SetFirstSnapshotId(value); return *this;}
 
     /**
-     * <p>The ID of the first snapshot to use for the comparison.</p> <important>
+     * <p>The ID of the first snapshot to use for the comparison.</p> 
      * <p>The <code>FirstSnapshotID</code> parameter must be specified with a
      * <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
-     * </important>
+     * 
      */
     inline ListChangedBlocksRequest& WithFirstSnapshotId(Aws::String&& value) { SetFirstSnapshotId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the first snapshot to use for the comparison.</p> <important>
+     * <p>The ID of the first snapshot to use for the comparison.</p> 
      * <p>The <code>FirstSnapshotID</code> parameter must be specified with a
      * <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
-     * </important>
+     * 
      */
     inline ListChangedBlocksRequest& WithFirstSnapshotId(const char* value) { SetFirstSnapshotId(value); return *this;}
 
 
     /**
-     * <p>The ID of the second snapshot to use for the comparison.</p> <important>
+     * <p>The ID of the second snapshot to use for the comparison.</p> 
      * <p>The <code>SecondSnapshotId</code> parameter must be specified with a
      * <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
-     * </important>
+     * 
      */
     inline const Aws::String& GetSecondSnapshotId() const{ return m_secondSnapshotId; }
 
     /**
-     * <p>The ID of the second snapshot to use for the comparison.</p> <important>
+     * <p>The ID of the second snapshot to use for the comparison.</p> 
      * <p>The <code>SecondSnapshotId</code> parameter must be specified with a
      * <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
-     * </important>
+     * 
      */
     inline bool SecondSnapshotIdHasBeenSet() const { return m_secondSnapshotIdHasBeenSet; }
 
     /**
-     * <p>The ID of the second snapshot to use for the comparison.</p> <important>
+     * <p>The ID of the second snapshot to use for the comparison.</p> 
      * <p>The <code>SecondSnapshotId</code> parameter must be specified with a
      * <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
-     * </important>
+     * 
      */
     inline void SetSecondSnapshotId(const Aws::String& value) { m_secondSnapshotIdHasBeenSet = true; m_secondSnapshotId = value; }
 
     /**
-     * <p>The ID of the second snapshot to use for the comparison.</p> <important>
+     * <p>The ID of the second snapshot to use for the comparison.</p> 
      * <p>The <code>SecondSnapshotId</code> parameter must be specified with a
      * <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
-     * </important>
+     * 
      */
     inline void SetSecondSnapshotId(Aws::String&& value) { m_secondSnapshotIdHasBeenSet = true; m_secondSnapshotId = std::move(value); }
 
     /**
-     * <p>The ID of the second snapshot to use for the comparison.</p> <important>
+     * <p>The ID of the second snapshot to use for the comparison.</p> 
      * <p>The <code>SecondSnapshotId</code> parameter must be specified with a
      * <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
-     * </important>
+     * 
      */
     inline void SetSecondSnapshotId(const char* value) { m_secondSnapshotIdHasBeenSet = true; m_secondSnapshotId.assign(value); }
 
     /**
-     * <p>The ID of the second snapshot to use for the comparison.</p> <important>
+     * <p>The ID of the second snapshot to use for the comparison.</p> 
      * <p>The <code>SecondSnapshotId</code> parameter must be specified with a
      * <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
-     * </important>
+     * 
      */
     inline ListChangedBlocksRequest& WithSecondSnapshotId(const Aws::String& value) { SetSecondSnapshotId(value); return *this;}
 
     /**
-     * <p>The ID of the second snapshot to use for the comparison.</p> <important>
+     * <p>The ID of the second snapshot to use for the comparison.</p> 
      * <p>The <code>SecondSnapshotId</code> parameter must be specified with a
      * <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
-     * </important>
+     * 
      */
     inline ListChangedBlocksRequest& WithSecondSnapshotId(Aws::String&& value) { SetSecondSnapshotId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the second snapshot to use for the comparison.</p> <important>
+     * <p>The ID of the second snapshot to use for the comparison.</p> 
      * <p>The <code>SecondSnapshotId</code> parameter must be specified with a
      * <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
-     * </important>
+     * 
      */
     inline ListChangedBlocksRequest& WithSecondSnapshotId(const char* value) { SetSecondSnapshotId(value); return *this;}
 

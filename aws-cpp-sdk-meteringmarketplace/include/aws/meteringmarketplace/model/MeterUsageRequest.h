@@ -1,23 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
 #include <aws/meteringmarketplace/MarketplaceMeteringRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/meteringmarketplace/model/UsageAllocation.h>
 #include <utility>
 
 namespace Aws
@@ -251,6 +243,63 @@ namespace Model
      */
     inline MeterUsageRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>The set of UsageAllocations to submit.</p> <p>The sum of all UsageAllocation
+     * quantities must equal the UsageQuantity of the MeterUsage request, and each
+     * UsageAllocation must have a unique set of tags (include no tags).</p>
+     */
+    inline const Aws::Vector<UsageAllocation>& GetUsageAllocations() const{ return m_usageAllocations; }
+
+    /**
+     * <p>The set of UsageAllocations to submit.</p> <p>The sum of all UsageAllocation
+     * quantities must equal the UsageQuantity of the MeterUsage request, and each
+     * UsageAllocation must have a unique set of tags (include no tags).</p>
+     */
+    inline bool UsageAllocationsHasBeenSet() const { return m_usageAllocationsHasBeenSet; }
+
+    /**
+     * <p>The set of UsageAllocations to submit.</p> <p>The sum of all UsageAllocation
+     * quantities must equal the UsageQuantity of the MeterUsage request, and each
+     * UsageAllocation must have a unique set of tags (include no tags).</p>
+     */
+    inline void SetUsageAllocations(const Aws::Vector<UsageAllocation>& value) { m_usageAllocationsHasBeenSet = true; m_usageAllocations = value; }
+
+    /**
+     * <p>The set of UsageAllocations to submit.</p> <p>The sum of all UsageAllocation
+     * quantities must equal the UsageQuantity of the MeterUsage request, and each
+     * UsageAllocation must have a unique set of tags (include no tags).</p>
+     */
+    inline void SetUsageAllocations(Aws::Vector<UsageAllocation>&& value) { m_usageAllocationsHasBeenSet = true; m_usageAllocations = std::move(value); }
+
+    /**
+     * <p>The set of UsageAllocations to submit.</p> <p>The sum of all UsageAllocation
+     * quantities must equal the UsageQuantity of the MeterUsage request, and each
+     * UsageAllocation must have a unique set of tags (include no tags).</p>
+     */
+    inline MeterUsageRequest& WithUsageAllocations(const Aws::Vector<UsageAllocation>& value) { SetUsageAllocations(value); return *this;}
+
+    /**
+     * <p>The set of UsageAllocations to submit.</p> <p>The sum of all UsageAllocation
+     * quantities must equal the UsageQuantity of the MeterUsage request, and each
+     * UsageAllocation must have a unique set of tags (include no tags).</p>
+     */
+    inline MeterUsageRequest& WithUsageAllocations(Aws::Vector<UsageAllocation>&& value) { SetUsageAllocations(std::move(value)); return *this;}
+
+    /**
+     * <p>The set of UsageAllocations to submit.</p> <p>The sum of all UsageAllocation
+     * quantities must equal the UsageQuantity of the MeterUsage request, and each
+     * UsageAllocation must have a unique set of tags (include no tags).</p>
+     */
+    inline MeterUsageRequest& AddUsageAllocations(const UsageAllocation& value) { m_usageAllocationsHasBeenSet = true; m_usageAllocations.push_back(value); return *this; }
+
+    /**
+     * <p>The set of UsageAllocations to submit.</p> <p>The sum of all UsageAllocation
+     * quantities must equal the UsageQuantity of the MeterUsage request, and each
+     * UsageAllocation must have a unique set of tags (include no tags).</p>
+     */
+    inline MeterUsageRequest& AddUsageAllocations(UsageAllocation&& value) { m_usageAllocationsHasBeenSet = true; m_usageAllocations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_productCode;
@@ -267,6 +316,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    Aws::Vector<UsageAllocation> m_usageAllocations;
+    bool m_usageAllocationsHasBeenSet;
   };
 
 } // namespace Model

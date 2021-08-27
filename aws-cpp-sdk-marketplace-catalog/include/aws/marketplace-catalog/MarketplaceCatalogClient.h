@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
@@ -73,12 +63,12 @@ namespace Model
         class ListEntitiesRequest;
         class StartChangeSetRequest;
 
-        typedef Aws::Utils::Outcome<CancelChangeSetResult, Aws::Client::AWSError<MarketplaceCatalogErrors>> CancelChangeSetOutcome;
-        typedef Aws::Utils::Outcome<DescribeChangeSetResult, Aws::Client::AWSError<MarketplaceCatalogErrors>> DescribeChangeSetOutcome;
-        typedef Aws::Utils::Outcome<DescribeEntityResult, Aws::Client::AWSError<MarketplaceCatalogErrors>> DescribeEntityOutcome;
-        typedef Aws::Utils::Outcome<ListChangeSetsResult, Aws::Client::AWSError<MarketplaceCatalogErrors>> ListChangeSetsOutcome;
-        typedef Aws::Utils::Outcome<ListEntitiesResult, Aws::Client::AWSError<MarketplaceCatalogErrors>> ListEntitiesOutcome;
-        typedef Aws::Utils::Outcome<StartChangeSetResult, Aws::Client::AWSError<MarketplaceCatalogErrors>> StartChangeSetOutcome;
+        typedef Aws::Utils::Outcome<CancelChangeSetResult, MarketplaceCatalogError> CancelChangeSetOutcome;
+        typedef Aws::Utils::Outcome<DescribeChangeSetResult, MarketplaceCatalogError> DescribeChangeSetOutcome;
+        typedef Aws::Utils::Outcome<DescribeEntityResult, MarketplaceCatalogError> DescribeEntityOutcome;
+        typedef Aws::Utils::Outcome<ListChangeSetsResult, MarketplaceCatalogError> ListChangeSetsOutcome;
+        typedef Aws::Utils::Outcome<ListEntitiesResult, MarketplaceCatalogError> ListEntitiesOutcome;
+        typedef Aws::Utils::Outcome<StartChangeSetResult, MarketplaceCatalogError> StartChangeSetOutcome;
 
         typedef std::future<CancelChangeSetOutcome> CancelChangeSetOutcomeCallable;
         typedef std::future<DescribeChangeSetOutcome> DescribeChangeSetOutcomeCallable;
@@ -98,9 +88,9 @@ namespace Model
     typedef std::function<void(const MarketplaceCatalogClient*, const Model::StartChangeSetRequest&, const Model::StartChangeSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartChangeSetResponseReceivedHandler;
 
   /**
-   * <p>Catalog API actions allow you to create, describe, list, and delete changes
-   * to your published entities. An entity is a product or an offer on AWS
-   * Marketplace.</p> <p>You can automate your entity update process by integrating
+   * <p>Catalog API actions allow you to manage your entities through list, describe,
+   * and update capabilities. An entity can be a product or an offer on AWS
+   * Marketplace. </p> <p>You can automate your entity update process by integrating
    * the AWS Marketplace Catalog API with your AWS Marketplace product build or
    * deployment pipelines. You can also create your own applications on top of the
    * Catalog API to manage your products on AWS Marketplace.</p>
@@ -130,8 +120,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~MarketplaceCatalogClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "Marketplace Catalog"; }
 
 
         /**
@@ -284,16 +272,36 @@ namespace Model
         virtual void ListEntitiesAsync(const Model::ListEntitiesRequest& request, const ListEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This operation allows you to request changes in your entities.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>This operation allows you to request changes for your entities. Within a
+         * single ChangeSet, you cannot start the same change type against the same entity
+         * multiple times. Additionally, when a ChangeSet is running, all the entities
+         * targeted by the different changes are locked until the ChangeSet has completed
+         * (either succeeded, cancelled, or failed). If you try to start a ChangeSet
+         * containing a change against an entity that is already locked, you will receive a
+         * <code>ResourceInUseException</code>.</p> <p>For example, you cannot start the
+         * ChangeSet described in the <a
+         * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a>
+         * below because it contains two changes to execute the same change type
+         * (<code>AddRevisions</code>) against the same entity
+         * (<code>entity-id@1)</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/StartChangeSet">AWS
          * API Reference</a></p>
          */
         virtual Model::StartChangeSetOutcome StartChangeSet(const Model::StartChangeSetRequest& request) const;
 
         /**
-         * <p>This operation allows you to request changes in your entities.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>This operation allows you to request changes for your entities. Within a
+         * single ChangeSet, you cannot start the same change type against the same entity
+         * multiple times. Additionally, when a ChangeSet is running, all the entities
+         * targeted by the different changes are locked until the ChangeSet has completed
+         * (either succeeded, cancelled, or failed). If you try to start a ChangeSet
+         * containing a change against an entity that is already locked, you will receive a
+         * <code>ResourceInUseException</code>.</p> <p>For example, you cannot start the
+         * ChangeSet described in the <a
+         * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a>
+         * below because it contains two changes to execute the same change type
+         * (<code>AddRevisions</code>) against the same entity
+         * (<code>entity-id@1)</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/StartChangeSet">AWS
          * API Reference</a></p>
          *
@@ -302,8 +310,18 @@ namespace Model
         virtual Model::StartChangeSetOutcomeCallable StartChangeSetCallable(const Model::StartChangeSetRequest& request) const;
 
         /**
-         * <p>This operation allows you to request changes in your entities.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>This operation allows you to request changes for your entities. Within a
+         * single ChangeSet, you cannot start the same change type against the same entity
+         * multiple times. Additionally, when a ChangeSet is running, all the entities
+         * targeted by the different changes are locked until the ChangeSet has completed
+         * (either succeeded, cancelled, or failed). If you try to start a ChangeSet
+         * containing a change against an entity that is already locked, you will receive a
+         * <code>ResourceInUseException</code>.</p> <p>For example, you cannot start the
+         * ChangeSet described in the <a
+         * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a>
+         * below because it contains two changes to execute the same change type
+         * (<code>AddRevisions</code>) against the same entity
+         * (<code>entity-id@1)</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/StartChangeSet">AWS
          * API Reference</a></p>
          *

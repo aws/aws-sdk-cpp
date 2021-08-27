@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -36,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request action.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleetInput">AWS
    * API Reference</a></p>
    */
@@ -1132,105 +1122,105 @@ namespace Model
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
+     * services. Fleets with an instance role ARN allow applications that are running
+     * on the fleet's instances to assume the role. Learn more about using on-box
+     * credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * Access external resources from a game server</a>. To call this operation with
+     * instance role ARN, you must have IAM PassRole permissions. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html">IAM
+     * policy examples for GameLift</a>. </p>
      */
     inline const Aws::String& GetInstanceRoleArn() const{ return m_instanceRoleArn; }
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
+     * services. Fleets with an instance role ARN allow applications that are running
+     * on the fleet's instances to assume the role. Learn more about using on-box
+     * credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * Access external resources from a game server</a>. To call this operation with
+     * instance role ARN, you must have IAM PassRole permissions. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html">IAM
+     * policy examples for GameLift</a>. </p>
      */
     inline bool InstanceRoleArnHasBeenSet() const { return m_instanceRoleArnHasBeenSet; }
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
+     * services. Fleets with an instance role ARN allow applications that are running
+     * on the fleet's instances to assume the role. Learn more about using on-box
+     * credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * Access external resources from a game server</a>. To call this operation with
+     * instance role ARN, you must have IAM PassRole permissions. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html">IAM
+     * policy examples for GameLift</a>. </p>
      */
     inline void SetInstanceRoleArn(const Aws::String& value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn = value; }
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
+     * services. Fleets with an instance role ARN allow applications that are running
+     * on the fleet's instances to assume the role. Learn more about using on-box
+     * credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * Access external resources from a game server</a>. To call this operation with
+     * instance role ARN, you must have IAM PassRole permissions. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html">IAM
+     * policy examples for GameLift</a>. </p>
      */
     inline void SetInstanceRoleArn(Aws::String&& value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn = std::move(value); }
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
+     * services. Fleets with an instance role ARN allow applications that are running
+     * on the fleet's instances to assume the role. Learn more about using on-box
+     * credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * Access external resources from a game server</a>. To call this operation with
+     * instance role ARN, you must have IAM PassRole permissions. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html">IAM
+     * policy examples for GameLift</a>. </p>
      */
     inline void SetInstanceRoleArn(const char* value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn.assign(value); }
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
+     * services. Fleets with an instance role ARN allow applications that are running
+     * on the fleet's instances to assume the role. Learn more about using on-box
+     * credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * Access external resources from a game server</a>. To call this operation with
+     * instance role ARN, you must have IAM PassRole permissions. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html">IAM
+     * policy examples for GameLift</a>. </p>
      */
     inline CreateFleetRequest& WithInstanceRoleArn(const Aws::String& value) { SetInstanceRoleArn(value); return *this;}
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
+     * services. Fleets with an instance role ARN allow applications that are running
+     * on the fleet's instances to assume the role. Learn more about using on-box
+     * credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * Access external resources from a game server</a>. To call this operation with
+     * instance role ARN, you must have IAM PassRole permissions. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html">IAM
+     * policy examples for GameLift</a>. </p>
      */
     inline CreateFleetRequest& WithInstanceRoleArn(Aws::String&& value) { SetInstanceRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
+     * services. Fleets with an instance role ARN allow applications that are running
+     * on the fleet's instances to assume the role. Learn more about using on-box
+     * credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * Access external resources from a game server</a>. To call this operation with
+     * instance role ARN, you must have IAM PassRole permissions. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html">IAM
+     * policy examples for GameLift</a>. </p>
      */
     inline CreateFleetRequest& WithInstanceRoleArn(const char* value) { SetInstanceRoleArn(value); return *this;}
 

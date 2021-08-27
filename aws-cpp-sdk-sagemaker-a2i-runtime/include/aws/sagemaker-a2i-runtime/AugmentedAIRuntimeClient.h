@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntime_EXPORTS.h>
@@ -71,11 +61,11 @@ namespace Model
         class StartHumanLoopRequest;
         class StopHumanLoopRequest;
 
-        typedef Aws::Utils::Outcome<DeleteHumanLoopResult, Aws::Client::AWSError<AugmentedAIRuntimeErrors>> DeleteHumanLoopOutcome;
-        typedef Aws::Utils::Outcome<DescribeHumanLoopResult, Aws::Client::AWSError<AugmentedAIRuntimeErrors>> DescribeHumanLoopOutcome;
-        typedef Aws::Utils::Outcome<ListHumanLoopsResult, Aws::Client::AWSError<AugmentedAIRuntimeErrors>> ListHumanLoopsOutcome;
-        typedef Aws::Utils::Outcome<StartHumanLoopResult, Aws::Client::AWSError<AugmentedAIRuntimeErrors>> StartHumanLoopOutcome;
-        typedef Aws::Utils::Outcome<StopHumanLoopResult, Aws::Client::AWSError<AugmentedAIRuntimeErrors>> StopHumanLoopOutcome;
+        typedef Aws::Utils::Outcome<DeleteHumanLoopResult, AugmentedAIRuntimeError> DeleteHumanLoopOutcome;
+        typedef Aws::Utils::Outcome<DescribeHumanLoopResult, AugmentedAIRuntimeError> DescribeHumanLoopOutcome;
+        typedef Aws::Utils::Outcome<ListHumanLoopsResult, AugmentedAIRuntimeError> ListHumanLoopsOutcome;
+        typedef Aws::Utils::Outcome<StartHumanLoopResult, AugmentedAIRuntimeError> StartHumanLoopOutcome;
+        typedef Aws::Utils::Outcome<StopHumanLoopResult, AugmentedAIRuntimeError> StopHumanLoopOutcome;
 
         typedef std::future<DeleteHumanLoopOutcome> DeleteHumanLoopOutcomeCallable;
         typedef std::future<DescribeHumanLoopOutcome> DescribeHumanLoopOutcomeCallable;
@@ -93,9 +83,9 @@ namespace Model
     typedef std::function<void(const AugmentedAIRuntimeClient*, const Model::StopHumanLoopRequest&, const Model::StopHumanLoopOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopHumanLoopResponseReceivedHandler;
 
   /**
-   * <important> <p>Amazon Augmented AI is in preview release and is subject to
+   *  <p>Amazon Augmented AI is in preview release and is subject to
    * change. We do not recommend using this product in production environments.</p>
-   * </important> <p>Amazon Augmented AI (Amazon A2I) adds the benefit of human
+   *  <p>Amazon Augmented AI (Amazon A2I) adds the benefit of human
    * judgment to any machine learning application. When an AI application can't
    * evaluate data with a high degree of confidence, human reviewers can take over.
    * This human review is called a human review workflow. To create and start a human
@@ -150,8 +140,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~AugmentedAIRuntimeClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "SageMaker A2I Runtime"; }
 
 
         /**

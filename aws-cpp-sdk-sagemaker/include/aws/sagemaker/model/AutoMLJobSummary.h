@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -226,32 +216,32 @@ namespace Model
 
 
     /**
-     * <p>The end time.</p>
+     * <p>The end time of an AutoML job.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The end time.</p>
+     * <p>The end time of an AutoML job.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>The end time.</p>
+     * <p>The end time of an AutoML job.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The end time.</p>
+     * <p>The end time of an AutoML job.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The end time.</p>
+     * <p>The end time of an AutoML job.</p>
      */
     inline AutoMLJobSummary& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The end time.</p>
+     * <p>The end time of an AutoML job.</p>
      */
     inline AutoMLJobSummary& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
@@ -288,42 +278,42 @@ namespace Model
 
 
     /**
-     * <p>The failure reason.</p>
+     * <p>The failure reason of a job.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p>The failure reason.</p>
+     * <p>The failure reason of a job.</p>
      */
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
     /**
-     * <p>The failure reason.</p>
+     * <p>The failure reason of a job.</p>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
     /**
-     * <p>The failure reason.</p>
+     * <p>The failure reason of a job.</p>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
     /**
-     * <p>The failure reason.</p>
+     * <p>The failure reason of a job.</p>
      */
     inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
 
     /**
-     * <p>The failure reason.</p>
+     * <p>The failure reason of a job.</p>
      */
     inline AutoMLJobSummary& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p>The failure reason.</p>
+     * <p>The failure reason of a job.</p>
      */
     inline AutoMLJobSummary& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
-     * <p>The failure reason.</p>
+     * <p>The failure reason of a job.</p>
      */
     inline AutoMLJobSummary& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 

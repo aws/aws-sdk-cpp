@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/pinpoint/model/StartCondition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,12 +20,14 @@ namespace Model
 
 StartCondition::StartCondition() : 
     m_descriptionHasBeenSet(false),
+    m_eventStartConditionHasBeenSet(false),
     m_segmentStartConditionHasBeenSet(false)
 {
 }
 
 StartCondition::StartCondition(JsonView jsonValue) : 
     m_descriptionHasBeenSet(false),
+    m_eventStartConditionHasBeenSet(false),
     m_segmentStartConditionHasBeenSet(false)
 {
   *this = jsonValue;
@@ -48,6 +40,13 @@ StartCondition& StartCondition::operator =(JsonView jsonValue)
     m_description = jsonValue.GetString("Description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EventStartCondition"))
+  {
+    m_eventStartCondition = jsonValue.GetObject("EventStartCondition");
+
+    m_eventStartConditionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SegmentStartCondition"))
@@ -67,6 +66,12 @@ JsonValue StartCondition::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_eventStartConditionHasBeenSet)
+  {
+   payload.WithObject("EventStartCondition", m_eventStartCondition.Jsonize());
 
   }
 

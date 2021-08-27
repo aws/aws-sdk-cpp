@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/worklink/WorkLink_EXPORTS.h>
@@ -43,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline void SetFleetArn(Aws::String&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::move(value); }
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline void SetFleetArn(const char* value) { m_fleetArnHasBeenSet = true; m_fleetArn.assign(value); }
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline DescribeFleetMetadataRequest& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline DescribeFleetMetadataRequest& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline DescribeFleetMetadataRequest& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
 

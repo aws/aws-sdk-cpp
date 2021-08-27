@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -141,8 +131,7 @@ namespace Model
      * <p> <i>This response parameter is no longer supported.</i> It provides
      * information only about SMS MFA configurations. It doesn't provide information
      * about TOTP software token MFA configurations. To look up information about
-     * either type of MFA configuration, use the use the
-     * <a>GetUserResponse$UserMFASettingList</a> response instead.</p>
+     * either type of MFA configuration, use UserMFASettingList instead.</p>
      */
     inline const Aws::Vector<MFAOptionType>& GetMFAOptions() const{ return m_mFAOptions; }
 
@@ -150,8 +139,7 @@ namespace Model
      * <p> <i>This response parameter is no longer supported.</i> It provides
      * information only about SMS MFA configurations. It doesn't provide information
      * about TOTP software token MFA configurations. To look up information about
-     * either type of MFA configuration, use the use the
-     * <a>GetUserResponse$UserMFASettingList</a> response instead.</p>
+     * either type of MFA configuration, use UserMFASettingList instead.</p>
      */
     inline void SetMFAOptions(const Aws::Vector<MFAOptionType>& value) { m_mFAOptions = value; }
 
@@ -159,8 +147,7 @@ namespace Model
      * <p> <i>This response parameter is no longer supported.</i> It provides
      * information only about SMS MFA configurations. It doesn't provide information
      * about TOTP software token MFA configurations. To look up information about
-     * either type of MFA configuration, use the use the
-     * <a>GetUserResponse$UserMFASettingList</a> response instead.</p>
+     * either type of MFA configuration, use UserMFASettingList instead.</p>
      */
     inline void SetMFAOptions(Aws::Vector<MFAOptionType>&& value) { m_mFAOptions = std::move(value); }
 
@@ -168,8 +155,7 @@ namespace Model
      * <p> <i>This response parameter is no longer supported.</i> It provides
      * information only about SMS MFA configurations. It doesn't provide information
      * about TOTP software token MFA configurations. To look up information about
-     * either type of MFA configuration, use the use the
-     * <a>GetUserResponse$UserMFASettingList</a> response instead.</p>
+     * either type of MFA configuration, use UserMFASettingList instead.</p>
      */
     inline GetUserResult& WithMFAOptions(const Aws::Vector<MFAOptionType>& value) { SetMFAOptions(value); return *this;}
 
@@ -177,8 +163,7 @@ namespace Model
      * <p> <i>This response parameter is no longer supported.</i> It provides
      * information only about SMS MFA configurations. It doesn't provide information
      * about TOTP software token MFA configurations. To look up information about
-     * either type of MFA configuration, use the use the
-     * <a>GetUserResponse$UserMFASettingList</a> response instead.</p>
+     * either type of MFA configuration, use UserMFASettingList instead.</p>
      */
     inline GetUserResult& WithMFAOptions(Aws::Vector<MFAOptionType>&& value) { SetMFAOptions(std::move(value)); return *this;}
 
@@ -186,8 +171,7 @@ namespace Model
      * <p> <i>This response parameter is no longer supported.</i> It provides
      * information only about SMS MFA configurations. It doesn't provide information
      * about TOTP software token MFA configurations. To look up information about
-     * either type of MFA configuration, use the use the
-     * <a>GetUserResponse$UserMFASettingList</a> response instead.</p>
+     * either type of MFA configuration, use UserMFASettingList instead.</p>
      */
     inline GetUserResult& AddMFAOptions(const MFAOptionType& value) { m_mFAOptions.push_back(value); return *this; }
 
@@ -195,8 +179,7 @@ namespace Model
      * <p> <i>This response parameter is no longer supported.</i> It provides
      * information only about SMS MFA configurations. It doesn't provide information
      * about TOTP software token MFA configurations. To look up information about
-     * either type of MFA configuration, use the use the
-     * <a>GetUserResponse$UserMFASettingList</a> response instead.</p>
+     * either type of MFA configuration, use UserMFASettingList instead.</p>
      */
     inline GetUserResult& AddMFAOptions(MFAOptionType&& value) { m_mFAOptions.push_back(std::move(value)); return *this; }
 

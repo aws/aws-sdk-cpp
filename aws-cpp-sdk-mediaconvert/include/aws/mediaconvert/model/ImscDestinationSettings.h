@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -50,48 +40,48 @@ namespace Model
     /**
      * Keep this setting enabled to have MediaConvert use the font style and position
      * information from the captions source in the output. This option is available
-     * only when your input captions are CFF-TT, IMSC, SMPTE-TT, or TTML. Disable this
-     * setting for simplified output captions.
+     * only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting
+     * for simplified output captions.
      */
     inline const ImscStylePassthrough& GetStylePassthrough() const{ return m_stylePassthrough; }
 
     /**
      * Keep this setting enabled to have MediaConvert use the font style and position
      * information from the captions source in the output. This option is available
-     * only when your input captions are CFF-TT, IMSC, SMPTE-TT, or TTML. Disable this
-     * setting for simplified output captions.
+     * only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting
+     * for simplified output captions.
      */
     inline bool StylePassthroughHasBeenSet() const { return m_stylePassthroughHasBeenSet; }
 
     /**
      * Keep this setting enabled to have MediaConvert use the font style and position
      * information from the captions source in the output. This option is available
-     * only when your input captions are CFF-TT, IMSC, SMPTE-TT, or TTML. Disable this
-     * setting for simplified output captions.
+     * only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting
+     * for simplified output captions.
      */
     inline void SetStylePassthrough(const ImscStylePassthrough& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = value; }
 
     /**
      * Keep this setting enabled to have MediaConvert use the font style and position
      * information from the captions source in the output. This option is available
-     * only when your input captions are CFF-TT, IMSC, SMPTE-TT, or TTML. Disable this
-     * setting for simplified output captions.
+     * only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting
+     * for simplified output captions.
      */
     inline void SetStylePassthrough(ImscStylePassthrough&& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = std::move(value); }
 
     /**
      * Keep this setting enabled to have MediaConvert use the font style and position
      * information from the captions source in the output. This option is available
-     * only when your input captions are CFF-TT, IMSC, SMPTE-TT, or TTML. Disable this
-     * setting for simplified output captions.
+     * only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting
+     * for simplified output captions.
      */
     inline ImscDestinationSettings& WithStylePassthrough(const ImscStylePassthrough& value) { SetStylePassthrough(value); return *this;}
 
     /**
      * Keep this setting enabled to have MediaConvert use the font style and position
      * information from the captions source in the output. This option is available
-     * only when your input captions are CFF-TT, IMSC, SMPTE-TT, or TTML. Disable this
-     * setting for simplified output captions.
+     * only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting
+     * for simplified output captions.
      */
     inline ImscDestinationSettings& WithStylePassthrough(ImscStylePassthrough&& value) { SetStylePassthrough(std::move(value)); return *this;}
 

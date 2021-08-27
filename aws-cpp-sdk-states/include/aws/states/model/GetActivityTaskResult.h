@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/states/SFN_EXPORTS.h>
@@ -100,37 +90,44 @@ namespace Model
 
 
     /**
-     * <p>The string that contains the JSON input data for the task.</p>
+     * <p>The string that contains the JSON input data for the task. Length constraints
+     * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline const Aws::String& GetInput() const{ return m_input; }
 
     /**
-     * <p>The string that contains the JSON input data for the task.</p>
+     * <p>The string that contains the JSON input data for the task. Length constraints
+     * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline void SetInput(const Aws::String& value) { m_input = value; }
 
     /**
-     * <p>The string that contains the JSON input data for the task.</p>
+     * <p>The string that contains the JSON input data for the task. Length constraints
+     * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline void SetInput(Aws::String&& value) { m_input = std::move(value); }
 
     /**
-     * <p>The string that contains the JSON input data for the task.</p>
+     * <p>The string that contains the JSON input data for the task. Length constraints
+     * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline void SetInput(const char* value) { m_input.assign(value); }
 
     /**
-     * <p>The string that contains the JSON input data for the task.</p>
+     * <p>The string that contains the JSON input data for the task. Length constraints
+     * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline GetActivityTaskResult& WithInput(const Aws::String& value) { SetInput(value); return *this;}
 
     /**
-     * <p>The string that contains the JSON input data for the task.</p>
+     * <p>The string that contains the JSON input data for the task. Length constraints
+     * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline GetActivityTaskResult& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
 
     /**
-     * <p>The string that contains the JSON input data for the task.</p>
+     * <p>The string that contains the JSON input data for the task. Length constraints
+     * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline GetActivityTaskResult& WithInput(const char* value) { SetInput(value); return *this;}
 

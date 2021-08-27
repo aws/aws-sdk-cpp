@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
@@ -46,50 +36,50 @@ namespace Model
 
 
     /**
-     * <p>The event bus associated with the rule. If you omit this, the default event
-     * bus is used.</p>
+     * <p>The name of the event bus associated with the rule. If you omit this, the
+     * default event bus is used.</p>
      */
     inline const Aws::String& GetEventBusName() const{ return m_eventBusName; }
 
     /**
-     * <p>The event bus associated with the rule. If you omit this, the default event
-     * bus is used.</p>
+     * <p>The name of the event bus associated with the rule. If you omit this, the
+     * default event bus is used.</p>
      */
     inline bool EventBusNameHasBeenSet() const { return m_eventBusNameHasBeenSet; }
 
     /**
-     * <p>The event bus associated with the rule. If you omit this, the default event
-     * bus is used.</p>
+     * <p>The name of the event bus associated with the rule. If you omit this, the
+     * default event bus is used.</p>
      */
     inline void SetEventBusName(const Aws::String& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = value; }
 
     /**
-     * <p>The event bus associated with the rule. If you omit this, the default event
-     * bus is used.</p>
+     * <p>The name of the event bus associated with the rule. If you omit this, the
+     * default event bus is used.</p>
      */
     inline void SetEventBusName(Aws::String&& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = std::move(value); }
 
     /**
-     * <p>The event bus associated with the rule. If you omit this, the default event
-     * bus is used.</p>
+     * <p>The name of the event bus associated with the rule. If you omit this, the
+     * default event bus is used.</p>
      */
     inline void SetEventBusName(const char* value) { m_eventBusNameHasBeenSet = true; m_eventBusName.assign(value); }
 
     /**
-     * <p>The event bus associated with the rule. If you omit this, the default event
-     * bus is used.</p>
+     * <p>The name of the event bus associated with the rule. If you omit this, the
+     * default event bus is used.</p>
      */
     inline PutPermissionRequest& WithEventBusName(const Aws::String& value) { SetEventBusName(value); return *this;}
 
     /**
-     * <p>The event bus associated with the rule. If you omit this, the default event
-     * bus is used.</p>
+     * <p>The name of the event bus associated with the rule. If you omit this, the
+     * default event bus is used.</p>
      */
     inline PutPermissionRequest& WithEventBusName(Aws::String&& value) { SetEventBusName(std::move(value)); return *this;}
 
     /**
-     * <p>The event bus associated with the rule. If you omit this, the default event
-     * bus is used.</p>
+     * <p>The name of the event bus associated with the rule. If you omit this, the
+     * default event bus is used.</p>
      */
     inline PutPermissionRequest& WithEventBusName(const char* value) { SetEventBusName(value); return *this;}
 
@@ -389,6 +379,71 @@ namespace Model
      */
     inline PutPermissionRequest& WithCondition(Condition&& value) { SetCondition(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A JSON string that describes the permission policy statement. You can include
+     * a <code>Policy</code> parameter in the request instead of using the
+     * <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or
+     * <code>Condition</code> parameters.</p>
+     */
+    inline const Aws::String& GetPolicy() const{ return m_policy; }
+
+    /**
+     * <p>A JSON string that describes the permission policy statement. You can include
+     * a <code>Policy</code> parameter in the request instead of using the
+     * <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or
+     * <code>Condition</code> parameters.</p>
+     */
+    inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
+
+    /**
+     * <p>A JSON string that describes the permission policy statement. You can include
+     * a <code>Policy</code> parameter in the request instead of using the
+     * <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or
+     * <code>Condition</code> parameters.</p>
+     */
+    inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
+
+    /**
+     * <p>A JSON string that describes the permission policy statement. You can include
+     * a <code>Policy</code> parameter in the request instead of using the
+     * <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or
+     * <code>Condition</code> parameters.</p>
+     */
+    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
+
+    /**
+     * <p>A JSON string that describes the permission policy statement. You can include
+     * a <code>Policy</code> parameter in the request instead of using the
+     * <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or
+     * <code>Condition</code> parameters.</p>
+     */
+    inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
+
+    /**
+     * <p>A JSON string that describes the permission policy statement. You can include
+     * a <code>Policy</code> parameter in the request instead of using the
+     * <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or
+     * <code>Condition</code> parameters.</p>
+     */
+    inline PutPermissionRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
+
+    /**
+     * <p>A JSON string that describes the permission policy statement. You can include
+     * a <code>Policy</code> parameter in the request instead of using the
+     * <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or
+     * <code>Condition</code> parameters.</p>
+     */
+    inline PutPermissionRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
+
+    /**
+     * <p>A JSON string that describes the permission policy statement. You can include
+     * a <code>Policy</code> parameter in the request instead of using the
+     * <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or
+     * <code>Condition</code> parameters.</p>
+     */
+    inline PutPermissionRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+
   private:
 
     Aws::String m_eventBusName;
@@ -405,6 +460,9 @@ namespace Model
 
     Condition m_condition;
     bool m_conditionHasBeenSet;
+
+    Aws::String m_policy;
+    bool m_policyHasBeenSet;
   };
 
 } // namespace Model

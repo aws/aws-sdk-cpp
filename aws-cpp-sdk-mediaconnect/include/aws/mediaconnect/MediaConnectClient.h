@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
@@ -27,10 +17,15 @@
 #include <aws/mediaconnect/model/CreateFlowResult.h>
 #include <aws/mediaconnect/model/DeleteFlowResult.h>
 #include <aws/mediaconnect/model/DescribeFlowResult.h>
+#include <aws/mediaconnect/model/DescribeOfferingResult.h>
+#include <aws/mediaconnect/model/DescribeReservationResult.h>
 #include <aws/mediaconnect/model/GrantFlowEntitlementsResult.h>
 #include <aws/mediaconnect/model/ListEntitlementsResult.h>
 #include <aws/mediaconnect/model/ListFlowsResult.h>
+#include <aws/mediaconnect/model/ListOfferingsResult.h>
+#include <aws/mediaconnect/model/ListReservationsResult.h>
 #include <aws/mediaconnect/model/ListTagsForResourceResult.h>
+#include <aws/mediaconnect/model/PurchaseOfferingResult.h>
 #include <aws/mediaconnect/model/RemoveFlowOutputResult.h>
 #include <aws/mediaconnect/model/RemoveFlowSourceResult.h>
 #include <aws/mediaconnect/model/RemoveFlowVpcInterfaceResult.h>
@@ -87,10 +82,15 @@ namespace Model
         class CreateFlowRequest;
         class DeleteFlowRequest;
         class DescribeFlowRequest;
+        class DescribeOfferingRequest;
+        class DescribeReservationRequest;
         class GrantFlowEntitlementsRequest;
         class ListEntitlementsRequest;
         class ListFlowsRequest;
+        class ListOfferingsRequest;
+        class ListReservationsRequest;
         class ListTagsForResourceRequest;
+        class PurchaseOfferingRequest;
         class RemoveFlowOutputRequest;
         class RemoveFlowSourceRequest;
         class RemoveFlowVpcInterfaceRequest;
@@ -104,28 +104,33 @@ namespace Model
         class UpdateFlowOutputRequest;
         class UpdateFlowSourceRequest;
 
-        typedef Aws::Utils::Outcome<AddFlowOutputsResult, Aws::Client::AWSError<MediaConnectErrors>> AddFlowOutputsOutcome;
-        typedef Aws::Utils::Outcome<AddFlowSourcesResult, Aws::Client::AWSError<MediaConnectErrors>> AddFlowSourcesOutcome;
-        typedef Aws::Utils::Outcome<AddFlowVpcInterfacesResult, Aws::Client::AWSError<MediaConnectErrors>> AddFlowVpcInterfacesOutcome;
-        typedef Aws::Utils::Outcome<CreateFlowResult, Aws::Client::AWSError<MediaConnectErrors>> CreateFlowOutcome;
-        typedef Aws::Utils::Outcome<DeleteFlowResult, Aws::Client::AWSError<MediaConnectErrors>> DeleteFlowOutcome;
-        typedef Aws::Utils::Outcome<DescribeFlowResult, Aws::Client::AWSError<MediaConnectErrors>> DescribeFlowOutcome;
-        typedef Aws::Utils::Outcome<GrantFlowEntitlementsResult, Aws::Client::AWSError<MediaConnectErrors>> GrantFlowEntitlementsOutcome;
-        typedef Aws::Utils::Outcome<ListEntitlementsResult, Aws::Client::AWSError<MediaConnectErrors>> ListEntitlementsOutcome;
-        typedef Aws::Utils::Outcome<ListFlowsResult, Aws::Client::AWSError<MediaConnectErrors>> ListFlowsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<MediaConnectErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<RemoveFlowOutputResult, Aws::Client::AWSError<MediaConnectErrors>> RemoveFlowOutputOutcome;
-        typedef Aws::Utils::Outcome<RemoveFlowSourceResult, Aws::Client::AWSError<MediaConnectErrors>> RemoveFlowSourceOutcome;
-        typedef Aws::Utils::Outcome<RemoveFlowVpcInterfaceResult, Aws::Client::AWSError<MediaConnectErrors>> RemoveFlowVpcInterfaceOutcome;
-        typedef Aws::Utils::Outcome<RevokeFlowEntitlementResult, Aws::Client::AWSError<MediaConnectErrors>> RevokeFlowEntitlementOutcome;
-        typedef Aws::Utils::Outcome<StartFlowResult, Aws::Client::AWSError<MediaConnectErrors>> StartFlowOutcome;
-        typedef Aws::Utils::Outcome<StopFlowResult, Aws::Client::AWSError<MediaConnectErrors>> StopFlowOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MediaConnectErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MediaConnectErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateFlowResult, Aws::Client::AWSError<MediaConnectErrors>> UpdateFlowOutcome;
-        typedef Aws::Utils::Outcome<UpdateFlowEntitlementResult, Aws::Client::AWSError<MediaConnectErrors>> UpdateFlowEntitlementOutcome;
-        typedef Aws::Utils::Outcome<UpdateFlowOutputResult, Aws::Client::AWSError<MediaConnectErrors>> UpdateFlowOutputOutcome;
-        typedef Aws::Utils::Outcome<UpdateFlowSourceResult, Aws::Client::AWSError<MediaConnectErrors>> UpdateFlowSourceOutcome;
+        typedef Aws::Utils::Outcome<AddFlowOutputsResult, MediaConnectError> AddFlowOutputsOutcome;
+        typedef Aws::Utils::Outcome<AddFlowSourcesResult, MediaConnectError> AddFlowSourcesOutcome;
+        typedef Aws::Utils::Outcome<AddFlowVpcInterfacesResult, MediaConnectError> AddFlowVpcInterfacesOutcome;
+        typedef Aws::Utils::Outcome<CreateFlowResult, MediaConnectError> CreateFlowOutcome;
+        typedef Aws::Utils::Outcome<DeleteFlowResult, MediaConnectError> DeleteFlowOutcome;
+        typedef Aws::Utils::Outcome<DescribeFlowResult, MediaConnectError> DescribeFlowOutcome;
+        typedef Aws::Utils::Outcome<DescribeOfferingResult, MediaConnectError> DescribeOfferingOutcome;
+        typedef Aws::Utils::Outcome<DescribeReservationResult, MediaConnectError> DescribeReservationOutcome;
+        typedef Aws::Utils::Outcome<GrantFlowEntitlementsResult, MediaConnectError> GrantFlowEntitlementsOutcome;
+        typedef Aws::Utils::Outcome<ListEntitlementsResult, MediaConnectError> ListEntitlementsOutcome;
+        typedef Aws::Utils::Outcome<ListFlowsResult, MediaConnectError> ListFlowsOutcome;
+        typedef Aws::Utils::Outcome<ListOfferingsResult, MediaConnectError> ListOfferingsOutcome;
+        typedef Aws::Utils::Outcome<ListReservationsResult, MediaConnectError> ListReservationsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, MediaConnectError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<PurchaseOfferingResult, MediaConnectError> PurchaseOfferingOutcome;
+        typedef Aws::Utils::Outcome<RemoveFlowOutputResult, MediaConnectError> RemoveFlowOutputOutcome;
+        typedef Aws::Utils::Outcome<RemoveFlowSourceResult, MediaConnectError> RemoveFlowSourceOutcome;
+        typedef Aws::Utils::Outcome<RemoveFlowVpcInterfaceResult, MediaConnectError> RemoveFlowVpcInterfaceOutcome;
+        typedef Aws::Utils::Outcome<RevokeFlowEntitlementResult, MediaConnectError> RevokeFlowEntitlementOutcome;
+        typedef Aws::Utils::Outcome<StartFlowResult, MediaConnectError> StartFlowOutcome;
+        typedef Aws::Utils::Outcome<StopFlowResult, MediaConnectError> StopFlowOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, MediaConnectError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, MediaConnectError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateFlowResult, MediaConnectError> UpdateFlowOutcome;
+        typedef Aws::Utils::Outcome<UpdateFlowEntitlementResult, MediaConnectError> UpdateFlowEntitlementOutcome;
+        typedef Aws::Utils::Outcome<UpdateFlowOutputResult, MediaConnectError> UpdateFlowOutputOutcome;
+        typedef Aws::Utils::Outcome<UpdateFlowSourceResult, MediaConnectError> UpdateFlowSourceOutcome;
 
         typedef std::future<AddFlowOutputsOutcome> AddFlowOutputsOutcomeCallable;
         typedef std::future<AddFlowSourcesOutcome> AddFlowSourcesOutcomeCallable;
@@ -133,10 +138,15 @@ namespace Model
         typedef std::future<CreateFlowOutcome> CreateFlowOutcomeCallable;
         typedef std::future<DeleteFlowOutcome> DeleteFlowOutcomeCallable;
         typedef std::future<DescribeFlowOutcome> DescribeFlowOutcomeCallable;
+        typedef std::future<DescribeOfferingOutcome> DescribeOfferingOutcomeCallable;
+        typedef std::future<DescribeReservationOutcome> DescribeReservationOutcomeCallable;
         typedef std::future<GrantFlowEntitlementsOutcome> GrantFlowEntitlementsOutcomeCallable;
         typedef std::future<ListEntitlementsOutcome> ListEntitlementsOutcomeCallable;
         typedef std::future<ListFlowsOutcome> ListFlowsOutcomeCallable;
+        typedef std::future<ListOfferingsOutcome> ListOfferingsOutcomeCallable;
+        typedef std::future<ListReservationsOutcome> ListReservationsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<PurchaseOfferingOutcome> PurchaseOfferingOutcomeCallable;
         typedef std::future<RemoveFlowOutputOutcome> RemoveFlowOutputOutcomeCallable;
         typedef std::future<RemoveFlowSourceOutcome> RemoveFlowSourceOutcomeCallable;
         typedef std::future<RemoveFlowVpcInterfaceOutcome> RemoveFlowVpcInterfaceOutcomeCallable;
@@ -159,10 +169,15 @@ namespace Model
     typedef std::function<void(const MediaConnectClient*, const Model::CreateFlowRequest&, const Model::CreateFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFlowResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::DeleteFlowRequest&, const Model::DeleteFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFlowResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::DescribeFlowRequest&, const Model::DescribeFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFlowResponseReceivedHandler;
+    typedef std::function<void(const MediaConnectClient*, const Model::DescribeOfferingRequest&, const Model::DescribeOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOfferingResponseReceivedHandler;
+    typedef std::function<void(const MediaConnectClient*, const Model::DescribeReservationRequest&, const Model::DescribeReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservationResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::GrantFlowEntitlementsRequest&, const Model::GrantFlowEntitlementsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GrantFlowEntitlementsResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::ListEntitlementsRequest&, const Model::ListEntitlementsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEntitlementsResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::ListFlowsRequest&, const Model::ListFlowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFlowsResponseReceivedHandler;
+    typedef std::function<void(const MediaConnectClient*, const Model::ListOfferingsRequest&, const Model::ListOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOfferingsResponseReceivedHandler;
+    typedef std::function<void(const MediaConnectClient*, const Model::ListReservationsRequest&, const Model::ListReservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReservationsResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const MediaConnectClient*, const Model::PurchaseOfferingRequest&, const Model::PurchaseOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseOfferingResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::RemoveFlowOutputRequest&, const Model::RemoveFlowOutputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveFlowOutputResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::RemoveFlowSourceRequest&, const Model::RemoveFlowSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveFlowSourceResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::RemoveFlowVpcInterfaceRequest&, const Model::RemoveFlowVpcInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveFlowVpcInterfaceResponseReceivedHandler;
@@ -204,8 +219,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~MediaConnectClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "MediaConnect"; }
 
 
         /**
@@ -377,6 +390,71 @@ namespace Model
         virtual void DescribeFlowAsync(const Model::DescribeFlowRequest& request, const DescribeFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Displays the details of an offering. The response includes the offering
+         * description, duration, outbound bandwidth, price, and Amazon Resource Name
+         * (ARN).<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeOffering">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeOfferingOutcome DescribeOffering(const Model::DescribeOfferingRequest& request) const;
+
+        /**
+         * Displays the details of an offering. The response includes the offering
+         * description, duration, outbound bandwidth, price, and Amazon Resource Name
+         * (ARN).<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeOffering">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeOfferingOutcomeCallable DescribeOfferingCallable(const Model::DescribeOfferingRequest& request) const;
+
+        /**
+         * Displays the details of an offering. The response includes the offering
+         * description, duration, outbound bandwidth, price, and Amazon Resource Name
+         * (ARN).<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeOffering">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeOfferingAsync(const Model::DescribeOfferingRequest& request, const DescribeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Displays the details of a reservation. The response includes the reservation
+         * name, state, start date and time, and the details of the offering that make up
+         * the rest of the reservation (such as price, duration, and outbound
+         * bandwidth).<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeReservation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeReservationOutcome DescribeReservation(const Model::DescribeReservationRequest& request) const;
+
+        /**
+         * Displays the details of a reservation. The response includes the reservation
+         * name, state, start date and time, and the details of the offering that make up
+         * the rest of the reservation (such as price, duration, and outbound
+         * bandwidth).<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeReservation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeReservationOutcomeCallable DescribeReservationCallable(const Model::DescribeReservationRequest& request) const;
+
+        /**
+         * Displays the details of a reservation. The response includes the reservation
+         * name, state, start date and time, and the details of the offering that make up
+         * the rest of the reservation (such as price, duration, and outbound
+         * bandwidth).<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeReservation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeReservationAsync(const Model::DescribeReservationRequest& request, const DescribeReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Grants entitlements to an existing flow.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GrantFlowEntitlements">AWS
          * API Reference</a></p>
@@ -458,6 +536,71 @@ namespace Model
         virtual void ListFlowsAsync(const Model::ListFlowsRequest& request, const ListFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Displays a list of all offerings that are available to this account in the
+         * current AWS Region. If you have an active reservation (which means you've
+         * purchased an offering that has already started and hasn't expired yet), your
+         * account isn't eligible for other offerings.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListOfferings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListOfferingsOutcome ListOfferings(const Model::ListOfferingsRequest& request) const;
+
+        /**
+         * Displays a list of all offerings that are available to this account in the
+         * current AWS Region. If you have an active reservation (which means you've
+         * purchased an offering that has already started and hasn't expired yet), your
+         * account isn't eligible for other offerings.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListOfferings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListOfferingsOutcomeCallable ListOfferingsCallable(const Model::ListOfferingsRequest& request) const;
+
+        /**
+         * Displays a list of all offerings that are available to this account in the
+         * current AWS Region. If you have an active reservation (which means you've
+         * purchased an offering that has already started and hasn't expired yet), your
+         * account isn't eligible for other offerings.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListOfferings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListOfferingsAsync(const Model::ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Displays a list of all reservations that have been purchased by this account in
+         * the current AWS Region. This list includes all reservations in all states (such
+         * as active and expired).<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListReservations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListReservationsOutcome ListReservations(const Model::ListReservationsRequest& request) const;
+
+        /**
+         * Displays a list of all reservations that have been purchased by this account in
+         * the current AWS Region. This list includes all reservations in all states (such
+         * as active and expired).<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListReservations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListReservationsOutcomeCallable ListReservationsCallable(const Model::ListReservationsRequest& request) const;
+
+        /**
+         * Displays a list of all reservations that have been purchased by this account in
+         * the current AWS Region. This list includes all reservations in all states (such
+         * as active and expired).<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListReservations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListReservationsAsync(const Model::ListReservationsRequest& request, const ListReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * List all tags on an AWS Elemental MediaConnect resource<p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListTagsForResource">AWS
@@ -484,6 +627,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Submits a request to purchase an offering. If you already have an active
+         * reservation, you can't purchase another offering.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/PurchaseOffering">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PurchaseOfferingOutcome PurchaseOffering(const Model::PurchaseOfferingRequest& request) const;
+
+        /**
+         * Submits a request to purchase an offering. If you already have an active
+         * reservation, you can't purchase another offering.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/PurchaseOffering">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PurchaseOfferingOutcomeCallable PurchaseOfferingCallable(const Model::PurchaseOfferingRequest& request) const;
+
+        /**
+         * Submits a request to purchase an offering. If you already have an active
+         * reservation, you can't purchase another offering.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/PurchaseOffering">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PurchaseOfferingAsync(const Model::PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Removes an output from an existing flow. This request can be made only on an
@@ -843,10 +1014,15 @@ namespace Model
         void CreateFlowAsyncHelper(const Model::CreateFlowRequest& request, const CreateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFlowAsyncHelper(const Model::DeleteFlowRequest& request, const DeleteFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFlowAsyncHelper(const Model::DescribeFlowRequest& request, const DescribeFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeOfferingAsyncHelper(const Model::DescribeOfferingRequest& request, const DescribeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeReservationAsyncHelper(const Model::DescribeReservationRequest& request, const DescribeReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GrantFlowEntitlementsAsyncHelper(const Model::GrantFlowEntitlementsRequest& request, const GrantFlowEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEntitlementsAsyncHelper(const Model::ListEntitlementsRequest& request, const ListEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFlowsAsyncHelper(const Model::ListFlowsRequest& request, const ListFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListOfferingsAsyncHelper(const Model::ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListReservationsAsyncHelper(const Model::ListReservationsRequest& request, const ListReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PurchaseOfferingAsyncHelper(const Model::PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveFlowOutputAsyncHelper(const Model::RemoveFlowOutputRequest& request, const RemoveFlowOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveFlowSourceAsyncHelper(const Model::RemoveFlowSourceRequest& request, const RemoveFlowSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveFlowVpcInterfaceAsyncHelper(const Model::RemoveFlowVpcInterfaceRequest& request, const RemoveFlowVpcInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

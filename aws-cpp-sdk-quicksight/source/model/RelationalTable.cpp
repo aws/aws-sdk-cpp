@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/quicksight/model/RelationalTable.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,6 +20,7 @@ namespace Model
 
 RelationalTable::RelationalTable() : 
     m_dataSourceArnHasBeenSet(false),
+    m_catalogHasBeenSet(false),
     m_schemaHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_inputColumnsHasBeenSet(false)
@@ -38,6 +29,7 @@ RelationalTable::RelationalTable() :
 
 RelationalTable::RelationalTable(JsonView jsonValue) : 
     m_dataSourceArnHasBeenSet(false),
+    m_catalogHasBeenSet(false),
     m_schemaHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_inputColumnsHasBeenSet(false)
@@ -52,6 +44,13 @@ RelationalTable& RelationalTable::operator =(JsonView jsonValue)
     m_dataSourceArn = jsonValue.GetString("DataSourceArn");
 
     m_dataSourceArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Catalog"))
+  {
+    m_catalog = jsonValue.GetString("Catalog");
+
+    m_catalogHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Schema"))
@@ -88,6 +87,12 @@ JsonValue RelationalTable::Jsonize() const
   if(m_dataSourceArnHasBeenSet)
   {
    payload.WithString("DataSourceArn", m_dataSourceArn);
+
+  }
+
+  if(m_catalogHasBeenSet)
+  {
+   payload.WithString("Catalog", m_catalog);
 
   }
 

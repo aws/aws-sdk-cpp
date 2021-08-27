@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
@@ -93,49 +83,97 @@ namespace Model
 
     /**
      * <p>An array of objects that describe the projected utilization metrics of the
-     * instance recommendation option.</p>
+     * instance recommendation option.</p>  <p>The <code>Cpu</code> and
+     * <code>Memory</code> metrics are the only projected utilization metrics returned.
+     * Additionally, the <code>Memory</code> metric is returned only for resources that
+     * have the unified CloudWatch agent installed on them. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+     * Memory Utilization with the CloudWatch Agent</a>.</p> 
      */
     inline const Aws::Vector<UtilizationMetric>& GetProjectedUtilizationMetrics() const{ return m_projectedUtilizationMetrics; }
 
     /**
      * <p>An array of objects that describe the projected utilization metrics of the
-     * instance recommendation option.</p>
+     * instance recommendation option.</p>  <p>The <code>Cpu</code> and
+     * <code>Memory</code> metrics are the only projected utilization metrics returned.
+     * Additionally, the <code>Memory</code> metric is returned only for resources that
+     * have the unified CloudWatch agent installed on them. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+     * Memory Utilization with the CloudWatch Agent</a>.</p> 
      */
     inline bool ProjectedUtilizationMetricsHasBeenSet() const { return m_projectedUtilizationMetricsHasBeenSet; }
 
     /**
      * <p>An array of objects that describe the projected utilization metrics of the
-     * instance recommendation option.</p>
+     * instance recommendation option.</p>  <p>The <code>Cpu</code> and
+     * <code>Memory</code> metrics are the only projected utilization metrics returned.
+     * Additionally, the <code>Memory</code> metric is returned only for resources that
+     * have the unified CloudWatch agent installed on them. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+     * Memory Utilization with the CloudWatch Agent</a>.</p> 
      */
     inline void SetProjectedUtilizationMetrics(const Aws::Vector<UtilizationMetric>& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics = value; }
 
     /**
      * <p>An array of objects that describe the projected utilization metrics of the
-     * instance recommendation option.</p>
+     * instance recommendation option.</p>  <p>The <code>Cpu</code> and
+     * <code>Memory</code> metrics are the only projected utilization metrics returned.
+     * Additionally, the <code>Memory</code> metric is returned only for resources that
+     * have the unified CloudWatch agent installed on them. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+     * Memory Utilization with the CloudWatch Agent</a>.</p> 
      */
     inline void SetProjectedUtilizationMetrics(Aws::Vector<UtilizationMetric>&& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics = std::move(value); }
 
     /**
      * <p>An array of objects that describe the projected utilization metrics of the
-     * instance recommendation option.</p>
+     * instance recommendation option.</p>  <p>The <code>Cpu</code> and
+     * <code>Memory</code> metrics are the only projected utilization metrics returned.
+     * Additionally, the <code>Memory</code> metric is returned only for resources that
+     * have the unified CloudWatch agent installed on them. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+     * Memory Utilization with the CloudWatch Agent</a>.</p> 
      */
     inline InstanceRecommendationOption& WithProjectedUtilizationMetrics(const Aws::Vector<UtilizationMetric>& value) { SetProjectedUtilizationMetrics(value); return *this;}
 
     /**
      * <p>An array of objects that describe the projected utilization metrics of the
-     * instance recommendation option.</p>
+     * instance recommendation option.</p>  <p>The <code>Cpu</code> and
+     * <code>Memory</code> metrics are the only projected utilization metrics returned.
+     * Additionally, the <code>Memory</code> metric is returned only for resources that
+     * have the unified CloudWatch agent installed on them. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+     * Memory Utilization with the CloudWatch Agent</a>.</p> 
      */
     inline InstanceRecommendationOption& WithProjectedUtilizationMetrics(Aws::Vector<UtilizationMetric>&& value) { SetProjectedUtilizationMetrics(std::move(value)); return *this;}
 
     /**
      * <p>An array of objects that describe the projected utilization metrics of the
-     * instance recommendation option.</p>
+     * instance recommendation option.</p>  <p>The <code>Cpu</code> and
+     * <code>Memory</code> metrics are the only projected utilization metrics returned.
+     * Additionally, the <code>Memory</code> metric is returned only for resources that
+     * have the unified CloudWatch agent installed on them. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+     * Memory Utilization with the CloudWatch Agent</a>.</p> 
      */
     inline InstanceRecommendationOption& AddProjectedUtilizationMetrics(const UtilizationMetric& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics.push_back(value); return *this; }
 
     /**
      * <p>An array of objects that describe the projected utilization metrics of the
-     * instance recommendation option.</p>
+     * instance recommendation option.</p>  <p>The <code>Cpu</code> and
+     * <code>Memory</code> metrics are the only projected utilization metrics returned.
+     * Additionally, the <code>Memory</code> metric is returned only for resources that
+     * have the unified CloudWatch agent installed on them. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+     * Memory Utilization with the CloudWatch Agent</a>.</p> 
      */
     inline InstanceRecommendationOption& AddProjectedUtilizationMetrics(UtilizationMetric&& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics.push_back(std::move(value)); return *this; }
 

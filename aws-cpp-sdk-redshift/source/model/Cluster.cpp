@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/redshift/model/Cluster.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -84,7 +74,9 @@ Cluster::Cluster() :
     m_expectedNextSnapshotScheduleTimeHasBeenSet(false),
     m_expectedNextSnapshotScheduleTimeStatusHasBeenSet(false),
     m_nextMaintenanceWindowStartTimeHasBeenSet(false),
-    m_resizeInfoHasBeenSet(false)
+    m_resizeInfoHasBeenSet(false),
+    m_availabilityZoneRelocationStatusHasBeenSet(false),
+    m_clusterNamespaceArnHasBeenSet(false)
 {
 }
 
@@ -142,7 +134,9 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_expectedNextSnapshotScheduleTimeHasBeenSet(false),
     m_expectedNextSnapshotScheduleTimeStatusHasBeenSet(false),
     m_nextMaintenanceWindowStartTimeHasBeenSet(false),
-    m_resizeInfoHasBeenSet(false)
+    m_resizeInfoHasBeenSet(false),
+    m_availabilityZoneRelocationStatusHasBeenSet(false),
+    m_clusterNamespaceArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -477,6 +471,18 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_resizeInfo = resizeInfoNode;
       m_resizeInfoHasBeenSet = true;
     }
+    XmlNode availabilityZoneRelocationStatusNode = resultNode.FirstChild("AvailabilityZoneRelocationStatus");
+    if(!availabilityZoneRelocationStatusNode.IsNull())
+    {
+      m_availabilityZoneRelocationStatus = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneRelocationStatusNode.GetText());
+      m_availabilityZoneRelocationStatusHasBeenSet = true;
+    }
+    XmlNode clusterNamespaceArnNode = resultNode.FirstChild("ClusterNamespaceArn");
+    if(!clusterNamespaceArnNode.IsNull())
+    {
+      m_clusterNamespaceArn = Aws::Utils::Xml::DecodeEscapedXmlText(clusterNamespaceArnNode.GetText());
+      m_clusterNamespaceArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -776,6 +782,16 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       m_resizeInfo.OutputToStream(oStream, resizeInfoLocationAndMemberSs.str().c_str());
   }
 
+  if(m_availabilityZoneRelocationStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZoneRelocationStatus=" << StringUtils::URLEncode(m_availabilityZoneRelocationStatus.c_str()) << "&";
+  }
+
+  if(m_clusterNamespaceArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ClusterNamespaceArn=" << StringUtils::URLEncode(m_clusterNamespaceArn.c_str()) << "&";
+  }
+
 }
 
 void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1025,6 +1041,14 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String resizeInfoLocationAndMember(location);
       resizeInfoLocationAndMember += ".ResizeInfo";
       m_resizeInfo.OutputToStream(oStream, resizeInfoLocationAndMember.c_str());
+  }
+  if(m_availabilityZoneRelocationStatusHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZoneRelocationStatus=" << StringUtils::URLEncode(m_availabilityZoneRelocationStatus.c_str()) << "&";
+  }
+  if(m_clusterNamespaceArnHasBeenSet)
+  {
+      oStream << location << ".ClusterNamespaceArn=" << StringUtils::URLEncode(m_clusterNamespaceArn.c_str()) << "&";
   }
 }
 

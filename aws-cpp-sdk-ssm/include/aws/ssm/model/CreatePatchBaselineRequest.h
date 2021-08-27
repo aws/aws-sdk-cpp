@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -197,9 +187,9 @@ namespace Model
      * <p>A list of explicitly approved patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetApprovedPatches() const{ return m_approvedPatches; }
 
@@ -207,9 +197,9 @@ namespace Model
      * <p>A list of explicitly approved patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline bool ApprovedPatchesHasBeenSet() const { return m_approvedPatchesHasBeenSet; }
 
@@ -217,9 +207,9 @@ namespace Model
      * <p>A list of explicitly approved patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline void SetApprovedPatches(const Aws::Vector<Aws::String>& value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches = value; }
 
@@ -227,9 +217,9 @@ namespace Model
      * <p>A list of explicitly approved patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline void SetApprovedPatches(Aws::Vector<Aws::String>&& value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches = std::move(value); }
 
@@ -237,9 +227,9 @@ namespace Model
      * <p>A list of explicitly approved patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreatePatchBaselineRequest& WithApprovedPatches(const Aws::Vector<Aws::String>& value) { SetApprovedPatches(value); return *this;}
 
@@ -247,9 +237,9 @@ namespace Model
      * <p>A list of explicitly approved patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreatePatchBaselineRequest& WithApprovedPatches(Aws::Vector<Aws::String>&& value) { SetApprovedPatches(std::move(value)); return *this;}
 
@@ -257,9 +247,9 @@ namespace Model
      * <p>A list of explicitly approved patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreatePatchBaselineRequest& AddApprovedPatches(const Aws::String& value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches.push_back(value); return *this; }
 
@@ -267,9 +257,9 @@ namespace Model
      * <p>A list of explicitly approved patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreatePatchBaselineRequest& AddApprovedPatches(Aws::String&& value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches.push_back(std::move(value)); return *this; }
 
@@ -277,9 +267,9 @@ namespace Model
      * <p>A list of explicitly approved patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreatePatchBaselineRequest& AddApprovedPatches(const char* value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches.push_back(value); return *this; }
 
@@ -360,9 +350,9 @@ namespace Model
      * <p>A list of explicitly rejected patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRejectedPatches() const{ return m_rejectedPatches; }
 
@@ -370,9 +360,9 @@ namespace Model
      * <p>A list of explicitly rejected patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline bool RejectedPatchesHasBeenSet() const { return m_rejectedPatchesHasBeenSet; }
 
@@ -380,9 +370,9 @@ namespace Model
      * <p>A list of explicitly rejected patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline void SetRejectedPatches(const Aws::Vector<Aws::String>& value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches = value; }
 
@@ -390,9 +380,9 @@ namespace Model
      * <p>A list of explicitly rejected patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline void SetRejectedPatches(Aws::Vector<Aws::String>&& value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches = std::move(value); }
 
@@ -400,9 +390,9 @@ namespace Model
      * <p>A list of explicitly rejected patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreatePatchBaselineRequest& WithRejectedPatches(const Aws::Vector<Aws::String>& value) { SetRejectedPatches(value); return *this;}
 
@@ -410,9 +400,9 @@ namespace Model
      * <p>A list of explicitly rejected patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreatePatchBaselineRequest& WithRejectedPatches(Aws::Vector<Aws::String>&& value) { SetRejectedPatches(std::move(value)); return *this;}
 
@@ -420,9 +410,9 @@ namespace Model
      * <p>A list of explicitly rejected patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreatePatchBaselineRequest& AddRejectedPatches(const Aws::String& value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches.push_back(value); return *this; }
 
@@ -430,9 +420,9 @@ namespace Model
      * <p>A list of explicitly rejected patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreatePatchBaselineRequest& AddRejectedPatches(Aws::String&& value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches.push_back(std::move(value)); return *this; }
 
@@ -440,9 +430,9 @@ namespace Model
      * <p>A list of explicitly rejected patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreatePatchBaselineRequest& AddRejectedPatches(const char* value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches.push_back(value); return *this; }
 
@@ -678,9 +668,9 @@ namespace Model
      * severity level of patches it specifies and the operating system family it
      * applies to. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
-     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To
      * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * action.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -691,9 +681,9 @@ namespace Model
      * severity level of patches it specifies and the operating system family it
      * applies to. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
-     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To
      * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * action.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -704,9 +694,9 @@ namespace Model
      * severity level of patches it specifies and the operating system family it
      * applies to. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
-     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To
      * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * action.</p> 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -717,9 +707,9 @@ namespace Model
      * severity level of patches it specifies and the operating system family it
      * applies to. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
-     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To
      * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * action.</p> 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -730,9 +720,9 @@ namespace Model
      * severity level of patches it specifies and the operating system family it
      * applies to. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
-     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To
      * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * action.</p> 
      */
     inline CreatePatchBaselineRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -743,9 +733,9 @@ namespace Model
      * severity level of patches it specifies and the operating system family it
      * applies to. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
-     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To
      * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * action.</p> 
      */
     inline CreatePatchBaselineRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -756,9 +746,9 @@ namespace Model
      * severity level of patches it specifies and the operating system family it
      * applies to. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
-     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To
      * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * action.</p> 
      */
     inline CreatePatchBaselineRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -769,9 +759,9 @@ namespace Model
      * severity level of patches it specifies and the operating system family it
      * applies to. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
-     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To
      * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * action.</p> 
      */
     inline CreatePatchBaselineRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/route53/model/ResourceRecordSetRegion.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -51,6 +41,8 @@ namespace Aws
         static const int ap_east_1_HASH = HashingUtils::HashString("ap-east-1");
         static const int me_south_1_HASH = HashingUtils::HashString("me-south-1");
         static const int ap_south_1_HASH = HashingUtils::HashString("ap-south-1");
+        static const int af_south_1_HASH = HashingUtils::HashString("af-south-1");
+        static const int eu_south_1_HASH = HashingUtils::HashString("eu-south-1");
 
 
         ResourceRecordSetRegion GetResourceRecordSetRegionForName(const Aws::String& name)
@@ -140,6 +132,14 @@ namespace Aws
           {
             return ResourceRecordSetRegion::ap_south_1;
           }
+          else if (hashCode == af_south_1_HASH)
+          {
+            return ResourceRecordSetRegion::af_south_1;
+          }
+          else if (hashCode == eu_south_1_HASH)
+          {
+            return ResourceRecordSetRegion::eu_south_1;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -196,6 +196,10 @@ namespace Aws
             return "me-south-1";
           case ResourceRecordSetRegion::ap_south_1:
             return "ap-south-1";
+          case ResourceRecordSetRegion::af_south_1:
+            return "af-south-1";
+          case ResourceRecordSetRegion::eu_south_1:
+            return "eu-south-1";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

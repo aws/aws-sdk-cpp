@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
@@ -35,8 +25,10 @@ namespace Model
 
   /**
    * <p>An automatic tape creation policy consists of automatic tape creation rules
-   * where each rule defines when and how to create new tapes.</p><p><h3>See
-   * Also:</h3>   <a
+   * where each rule defines when and how to create new tapes. For more information
+   * about automatic tape creation, see <a
+   * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating
+   * Tapes Automatically</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AutomaticTapeCreationRule">AWS
    * API Reference</a></p>
    */
@@ -51,65 +43,65 @@ namespace Model
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape that you are
-     * creating. This prefix makes the barcode unique.</p> <note> <p>The prefix must be
+     * creating. This prefix makes the barcode unique.</p>  <p>The prefix must be
      * 1-4 characters in length and must be one of the uppercase letters from A to
-     * Z.</p> </note>
+     * Z.</p> 
      */
     inline const Aws::String& GetTapeBarcodePrefix() const{ return m_tapeBarcodePrefix; }
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape that you are
-     * creating. This prefix makes the barcode unique.</p> <note> <p>The prefix must be
+     * creating. This prefix makes the barcode unique.</p>  <p>The prefix must be
      * 1-4 characters in length and must be one of the uppercase letters from A to
-     * Z.</p> </note>
+     * Z.</p> 
      */
     inline bool TapeBarcodePrefixHasBeenSet() const { return m_tapeBarcodePrefixHasBeenSet; }
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape that you are
-     * creating. This prefix makes the barcode unique.</p> <note> <p>The prefix must be
+     * creating. This prefix makes the barcode unique.</p>  <p>The prefix must be
      * 1-4 characters in length and must be one of the uppercase letters from A to
-     * Z.</p> </note>
+     * Z.</p> 
      */
     inline void SetTapeBarcodePrefix(const Aws::String& value) { m_tapeBarcodePrefixHasBeenSet = true; m_tapeBarcodePrefix = value; }
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape that you are
-     * creating. This prefix makes the barcode unique.</p> <note> <p>The prefix must be
+     * creating. This prefix makes the barcode unique.</p>  <p>The prefix must be
      * 1-4 characters in length and must be one of the uppercase letters from A to
-     * Z.</p> </note>
+     * Z.</p> 
      */
     inline void SetTapeBarcodePrefix(Aws::String&& value) { m_tapeBarcodePrefixHasBeenSet = true; m_tapeBarcodePrefix = std::move(value); }
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape that you are
-     * creating. This prefix makes the barcode unique.</p> <note> <p>The prefix must be
+     * creating. This prefix makes the barcode unique.</p>  <p>The prefix must be
      * 1-4 characters in length and must be one of the uppercase letters from A to
-     * Z.</p> </note>
+     * Z.</p> 
      */
     inline void SetTapeBarcodePrefix(const char* value) { m_tapeBarcodePrefixHasBeenSet = true; m_tapeBarcodePrefix.assign(value); }
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape that you are
-     * creating. This prefix makes the barcode unique.</p> <note> <p>The prefix must be
+     * creating. This prefix makes the barcode unique.</p>  <p>The prefix must be
      * 1-4 characters in length and must be one of the uppercase letters from A to
-     * Z.</p> </note>
+     * Z.</p> 
      */
     inline AutomaticTapeCreationRule& WithTapeBarcodePrefix(const Aws::String& value) { SetTapeBarcodePrefix(value); return *this;}
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape that you are
-     * creating. This prefix makes the barcode unique.</p> <note> <p>The prefix must be
+     * creating. This prefix makes the barcode unique.</p>  <p>The prefix must be
      * 1-4 characters in length and must be one of the uppercase letters from A to
-     * Z.</p> </note>
+     * Z.</p> 
      */
     inline AutomaticTapeCreationRule& WithTapeBarcodePrefix(Aws::String&& value) { SetTapeBarcodePrefix(std::move(value)); return *this;}
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape that you are
-     * creating. This prefix makes the barcode unique.</p> <note> <p>The prefix must be
+     * creating. This prefix makes the barcode unique.</p>  <p>The prefix must be
      * 1-4 characters in length and must be one of the uppercase letters from A to
-     * Z.</p> </note>
+     * Z.</p> 
      */
     inline AutomaticTapeCreationRule& WithTapeBarcodePrefix(const char* value) { SetTapeBarcodePrefix(value); return *this;}
 
@@ -119,7 +111,8 @@ namespace Model
      * in this pool is archived in the Amazon S3 storage class that is associated with
      * the pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline const Aws::String& GetPoolId() const{ return m_poolId; }
 
@@ -128,7 +121,8 @@ namespace Model
      * in this pool is archived in the Amazon S3 storage class that is associated with
      * the pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
 
@@ -137,7 +131,8 @@ namespace Model
      * in this pool is archived in the Amazon S3 storage class that is associated with
      * the pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline void SetPoolId(const Aws::String& value) { m_poolIdHasBeenSet = true; m_poolId = value; }
 
@@ -146,7 +141,8 @@ namespace Model
      * in this pool is archived in the Amazon S3 storage class that is associated with
      * the pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline void SetPoolId(Aws::String&& value) { m_poolIdHasBeenSet = true; m_poolId = std::move(value); }
 
@@ -155,7 +151,8 @@ namespace Model
      * in this pool is archived in the Amazon S3 storage class that is associated with
      * the pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline void SetPoolId(const char* value) { m_poolIdHasBeenSet = true; m_poolId.assign(value); }
 
@@ -164,7 +161,8 @@ namespace Model
      * in this pool is archived in the Amazon S3 storage class that is associated with
      * the pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline AutomaticTapeCreationRule& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
 
@@ -173,7 +171,8 @@ namespace Model
      * in this pool is archived in the Amazon S3 storage class that is associated with
      * the pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline AutomaticTapeCreationRule& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
 
@@ -182,7 +181,8 @@ namespace Model
      * in this pool is archived in the Amazon S3 storage class that is associated with
      * the pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline AutomaticTapeCreationRule& WithPoolId(const char* value) { SetPoolId(value); return *this;}
 
@@ -212,7 +212,10 @@ namespace Model
      * <p>The minimum number of available virtual tapes that the gateway maintains at
      * all times. If the number of tapes on the gateway goes below this value, the
      * gateway creates as many new tapes as are needed to have
-     * <code>MinimumNumTapes</code> on the gateway.</p>
+     * <code>MinimumNumTapes</code> on the gateway. For more information about
+     * automatic tape creation, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating
+     * Tapes Automatically</a>.</p>
      */
     inline int GetMinimumNumTapes() const{ return m_minimumNumTapes; }
 
@@ -220,7 +223,10 @@ namespace Model
      * <p>The minimum number of available virtual tapes that the gateway maintains at
      * all times. If the number of tapes on the gateway goes below this value, the
      * gateway creates as many new tapes as are needed to have
-     * <code>MinimumNumTapes</code> on the gateway.</p>
+     * <code>MinimumNumTapes</code> on the gateway. For more information about
+     * automatic tape creation, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating
+     * Tapes Automatically</a>.</p>
      */
     inline bool MinimumNumTapesHasBeenSet() const { return m_minimumNumTapesHasBeenSet; }
 
@@ -228,7 +234,10 @@ namespace Model
      * <p>The minimum number of available virtual tapes that the gateway maintains at
      * all times. If the number of tapes on the gateway goes below this value, the
      * gateway creates as many new tapes as are needed to have
-     * <code>MinimumNumTapes</code> on the gateway.</p>
+     * <code>MinimumNumTapes</code> on the gateway. For more information about
+     * automatic tape creation, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating
+     * Tapes Automatically</a>.</p>
      */
     inline void SetMinimumNumTapes(int value) { m_minimumNumTapesHasBeenSet = true; m_minimumNumTapes = value; }
 
@@ -236,9 +245,41 @@ namespace Model
      * <p>The minimum number of available virtual tapes that the gateway maintains at
      * all times. If the number of tapes on the gateway goes below this value, the
      * gateway creates as many new tapes as are needed to have
-     * <code>MinimumNumTapes</code> on the gateway.</p>
+     * <code>MinimumNumTapes</code> on the gateway. For more information about
+     * automatic tape creation, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating
+     * Tapes Automatically</a>.</p>
      */
     inline AutomaticTapeCreationRule& WithMinimumNumTapes(int value) { SetMinimumNumTapes(value); return *this;}
+
+
+    /**
+     * <p>Set to <code>true</code> to indicate that tapes are to be archived as
+     * write-once-read-many (WORM). Set to <code>false</code> when WORM is not enabled
+     * for tapes.</p>
+     */
+    inline bool GetWorm() const{ return m_worm; }
+
+    /**
+     * <p>Set to <code>true</code> to indicate that tapes are to be archived as
+     * write-once-read-many (WORM). Set to <code>false</code> when WORM is not enabled
+     * for tapes.</p>
+     */
+    inline bool WormHasBeenSet() const { return m_wormHasBeenSet; }
+
+    /**
+     * <p>Set to <code>true</code> to indicate that tapes are to be archived as
+     * write-once-read-many (WORM). Set to <code>false</code> when WORM is not enabled
+     * for tapes.</p>
+     */
+    inline void SetWorm(bool value) { m_wormHasBeenSet = true; m_worm = value; }
+
+    /**
+     * <p>Set to <code>true</code> to indicate that tapes are to be archived as
+     * write-once-read-many (WORM). Set to <code>false</code> when WORM is not enabled
+     * for tapes.</p>
+     */
+    inline AutomaticTapeCreationRule& WithWorm(bool value) { SetWorm(value); return *this;}
 
   private:
 
@@ -253,6 +294,9 @@ namespace Model
 
     int m_minimumNumTapes;
     bool m_minimumNumTapesHasBeenSet;
+
+    bool m_worm;
+    bool m_wormHasBeenSet;
   };
 
 } // namespace Model

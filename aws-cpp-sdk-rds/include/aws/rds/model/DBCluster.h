@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -22,11 +12,14 @@
 #include <aws/rds/model/ScalingConfigurationInfo.h>
 #include <aws/rds/model/ActivityStreamMode.h>
 #include <aws/rds/model/ActivityStreamStatus.h>
+#include <aws/rds/model/WriteForwardingStatus.h>
+#include <aws/rds/model/ClusterPendingModifiedValues.h>
 #include <aws/rds/model/DBClusterOptionGroupStatus.h>
 #include <aws/rds/model/DBClusterMember.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
 #include <aws/rds/model/DBClusterRole.h>
 #include <aws/rds/model/DomainMembership.h>
+#include <aws/rds/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -765,42 +758,42 @@ namespace Model
 
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB cluster.</p>
+     * <p>The name of the database engine to be used for this DB cluster.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB cluster.</p>
+     * <p>The name of the database engine to be used for this DB cluster.</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB cluster.</p>
+     * <p>The name of the database engine to be used for this DB cluster.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB cluster.</p>
+     * <p>The name of the database engine to be used for this DB cluster.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB cluster.</p>
+     * <p>The name of the database engine to be used for this DB cluster.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB cluster.</p>
+     * <p>The name of the database engine to be used for this DB cluster.</p>
      */
     inline DBCluster& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB cluster.</p>
+     * <p>The name of the database engine to be used for this DB cluster.</p>
      */
     inline DBCluster& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB cluster.</p>
+     * <p>The name of the database engine to be used for this DB cluster.</p>
      */
     inline DBCluster& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -1350,105 +1343,113 @@ namespace Model
 
     /**
      * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * the encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * the encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * the encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * the encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * the encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * the encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline DBCluster& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * the encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline DBCluster& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * the encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline DBCluster& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
      * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS CMK for
      * the DB cluster is accessed.</p>
      */
     inline const Aws::String& GetDbClusterResourceId() const{ return m_dbClusterResourceId; }
 
     /**
      * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS CMK for
      * the DB cluster is accessed.</p>
      */
     inline bool DbClusterResourceIdHasBeenSet() const { return m_dbClusterResourceIdHasBeenSet; }
 
     /**
      * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS CMK for
      * the DB cluster is accessed.</p>
      */
     inline void SetDbClusterResourceId(const Aws::String& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = value; }
 
     /**
      * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS CMK for
      * the DB cluster is accessed.</p>
      */
     inline void SetDbClusterResourceId(Aws::String&& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = std::move(value); }
 
     /**
      * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS CMK for
      * the DB cluster is accessed.</p>
      */
     inline void SetDbClusterResourceId(const char* value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId.assign(value); }
 
     /**
      * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS CMK for
      * the DB cluster is accessed.</p>
      */
     inline DBCluster& WithDbClusterResourceId(const Aws::String& value) { SetDbClusterResourceId(value); return *this;}
 
     /**
      * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS CMK for
      * the DB cluster is accessed.</p>
      */
     inline DBCluster& WithDbClusterResourceId(Aws::String&& value) { SetDbClusterResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS CMK for
      * the DB cluster is accessed.</p>
      */
     inline DBCluster& WithDbClusterResourceId(const char* value) { SetDbClusterResourceId(value); return *this;}
@@ -1866,104 +1867,72 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * </note>
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * </note>
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * </note>
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * </note>
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline void SetEngineMode(Aws::String&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::move(value); }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * </note>
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline void SetEngineMode(const char* value) { m_engineModeHasBeenSet = true; m_engineMode.assign(value); }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * </note>
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline DBCluster& WithEngineMode(const Aws::String& value) { SetEngineMode(value); return *this;}
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * </note>
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline DBCluster& WithEngineMode(Aws::String&& value) { SetEngineMode(std::move(value)); return *this;}
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * </note>
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline DBCluster& WithEngineMode(const char* value) { SetEngineMode(value); return *this;}
 
@@ -2137,49 +2106,57 @@ namespace Model
 
     /**
      * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p>
+     * activity stream.</p> <p>The AWS KMS key identifier is the key ARN, key ID, alias
+     * ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline const Aws::String& GetActivityStreamKmsKeyId() const{ return m_activityStreamKmsKeyId; }
 
     /**
      * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p>
+     * activity stream.</p> <p>The AWS KMS key identifier is the key ARN, key ID, alias
+     * ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline bool ActivityStreamKmsKeyIdHasBeenSet() const { return m_activityStreamKmsKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p>
+     * activity stream.</p> <p>The AWS KMS key identifier is the key ARN, key ID, alias
+     * ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline void SetActivityStreamKmsKeyId(const Aws::String& value) { m_activityStreamKmsKeyIdHasBeenSet = true; m_activityStreamKmsKeyId = value; }
 
     /**
      * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p>
+     * activity stream.</p> <p>The AWS KMS key identifier is the key ARN, key ID, alias
+     * ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline void SetActivityStreamKmsKeyId(Aws::String&& value) { m_activityStreamKmsKeyIdHasBeenSet = true; m_activityStreamKmsKeyId = std::move(value); }
 
     /**
      * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p>
+     * activity stream.</p> <p>The AWS KMS key identifier is the key ARN, key ID, alias
+     * ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline void SetActivityStreamKmsKeyId(const char* value) { m_activityStreamKmsKeyIdHasBeenSet = true; m_activityStreamKmsKeyId.assign(value); }
 
     /**
      * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p>
+     * activity stream.</p> <p>The AWS KMS key identifier is the key ARN, key ID, alias
+     * ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline DBCluster& WithActivityStreamKmsKeyId(const Aws::String& value) { SetActivityStreamKmsKeyId(value); return *this;}
 
     /**
      * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p>
+     * activity stream.</p> <p>The AWS KMS key identifier is the key ARN, key ID, alias
+     * ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline DBCluster& WithActivityStreamKmsKeyId(Aws::String&& value) { SetActivityStreamKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p>
+     * activity stream.</p> <p>The AWS KMS key identifier is the key ARN, key ID, alias
+     * ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline DBCluster& WithActivityStreamKmsKeyId(const char* value) { SetActivityStreamKmsKeyId(value); return *this;}
 
@@ -2330,6 +2307,148 @@ namespace Model
      * cluster.</p>
      */
     inline DBCluster& AddDomainMemberships(DomainMembership&& value) { m_domainMembershipsHasBeenSet = true; m_domainMemberships.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+
+    
+    inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
+
+    
+    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
+
+    
+    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
+
+    
+    inline DBCluster& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
+
+    
+    inline DBCluster& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
+
+    
+    inline DBCluster& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
+
+    
+    inline DBCluster& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline const WriteForwardingStatus& GetGlobalWriteForwardingStatus() const{ return m_globalWriteForwardingStatus; }
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline bool GlobalWriteForwardingStatusHasBeenSet() const { return m_globalWriteForwardingStatusHasBeenSet; }
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline void SetGlobalWriteForwardingStatus(const WriteForwardingStatus& value) { m_globalWriteForwardingStatusHasBeenSet = true; m_globalWriteForwardingStatus = value; }
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline void SetGlobalWriteForwardingStatus(WriteForwardingStatus&& value) { m_globalWriteForwardingStatusHasBeenSet = true; m_globalWriteForwardingStatus = std::move(value); }
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline DBCluster& WithGlobalWriteForwardingStatus(const WriteForwardingStatus& value) { SetGlobalWriteForwardingStatus(value); return *this;}
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline DBCluster& WithGlobalWriteForwardingStatus(WriteForwardingStatus&& value) { SetGlobalWriteForwardingStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies whether you have requested to enable write forwarding for a
+     * secondary cluster in an Aurora global database. Because write forwarding takes
+     * time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to
+     * confirm that the request has completed before using the write forwarding feature
+     * for this cluster.</p>
+     */
+    inline bool GetGlobalWriteForwardingRequested() const{ return m_globalWriteForwardingRequested; }
+
+    /**
+     * <p>Specifies whether you have requested to enable write forwarding for a
+     * secondary cluster in an Aurora global database. Because write forwarding takes
+     * time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to
+     * confirm that the request has completed before using the write forwarding feature
+     * for this cluster.</p>
+     */
+    inline bool GlobalWriteForwardingRequestedHasBeenSet() const { return m_globalWriteForwardingRequestedHasBeenSet; }
+
+    /**
+     * <p>Specifies whether you have requested to enable write forwarding for a
+     * secondary cluster in an Aurora global database. Because write forwarding takes
+     * time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to
+     * confirm that the request has completed before using the write forwarding feature
+     * for this cluster.</p>
+     */
+    inline void SetGlobalWriteForwardingRequested(bool value) { m_globalWriteForwardingRequestedHasBeenSet = true; m_globalWriteForwardingRequested = value; }
+
+    /**
+     * <p>Specifies whether you have requested to enable write forwarding for a
+     * secondary cluster in an Aurora global database. Because write forwarding takes
+     * time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to
+     * confirm that the request has completed before using the write forwarding feature
+     * for this cluster.</p>
+     */
+    inline DBCluster& WithGlobalWriteForwardingRequested(bool value) { SetGlobalWriteForwardingRequested(value); return *this;}
+
+
+    /**
+     * <p>Specifies that changes to the DB cluster are pending. This element is only
+     * included when changes are pending. Specific changes are identified by
+     * subelements.</p>
+     */
+    inline const ClusterPendingModifiedValues& GetPendingModifiedValues() const{ return m_pendingModifiedValues; }
+
+    /**
+     * <p>Specifies that changes to the DB cluster are pending. This element is only
+     * included when changes are pending. Specific changes are identified by
+     * subelements.</p>
+     */
+    inline bool PendingModifiedValuesHasBeenSet() const { return m_pendingModifiedValuesHasBeenSet; }
+
+    /**
+     * <p>Specifies that changes to the DB cluster are pending. This element is only
+     * included when changes are pending. Specific changes are identified by
+     * subelements.</p>
+     */
+    inline void SetPendingModifiedValues(const ClusterPendingModifiedValues& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = value; }
+
+    /**
+     * <p>Specifies that changes to the DB cluster are pending. This element is only
+     * included when changes are pending. Specific changes are identified by
+     * subelements.</p>
+     */
+    inline void SetPendingModifiedValues(ClusterPendingModifiedValues&& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = std::move(value); }
+
+    /**
+     * <p>Specifies that changes to the DB cluster are pending. This element is only
+     * included when changes are pending. Specific changes are identified by
+     * subelements.</p>
+     */
+    inline DBCluster& WithPendingModifiedValues(const ClusterPendingModifiedValues& value) { SetPendingModifiedValues(value); return *this;}
+
+    /**
+     * <p>Specifies that changes to the DB cluster are pending. This element is only
+     * included when changes are pending. Specific changes are identified by
+     * subelements.</p>
+     */
+    inline DBCluster& WithPendingModifiedValues(ClusterPendingModifiedValues&& value) { SetPendingModifiedValues(std::move(value)); return *this;}
 
   private:
 
@@ -2488,6 +2607,18 @@ namespace Model
 
     Aws::Vector<DomainMembership> m_domainMemberships;
     bool m_domainMembershipsHasBeenSet;
+
+    Aws::Vector<Tag> m_tagList;
+    bool m_tagListHasBeenSet;
+
+    WriteForwardingStatus m_globalWriteForwardingStatus;
+    bool m_globalWriteForwardingStatusHasBeenSet;
+
+    bool m_globalWriteForwardingRequested;
+    bool m_globalWriteForwardingRequestedHasBeenSet;
+
+    ClusterPendingModifiedValues m_pendingModifiedValues;
+    bool m_pendingModifiedValuesHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/medialive/model/MultiplexStatmuxVideoSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,7 +22,9 @@ MultiplexStatmuxVideoSettings::MultiplexStatmuxVideoSettings() :
     m_maximumBitrate(0),
     m_maximumBitrateHasBeenSet(false),
     m_minimumBitrate(0),
-    m_minimumBitrateHasBeenSet(false)
+    m_minimumBitrateHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false)
 {
 }
 
@@ -40,7 +32,9 @@ MultiplexStatmuxVideoSettings::MultiplexStatmuxVideoSettings(JsonView jsonValue)
     m_maximumBitrate(0),
     m_maximumBitrateHasBeenSet(false),
     m_minimumBitrate(0),
-    m_minimumBitrateHasBeenSet(false)
+    m_minimumBitrateHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +55,13 @@ MultiplexStatmuxVideoSettings& MultiplexStatmuxVideoSettings::operator =(JsonVie
     m_minimumBitrateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("priority"))
+  {
+    m_priority = jsonValue.GetInteger("priority");
+
+    m_priorityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -77,6 +78,12 @@ JsonValue MultiplexStatmuxVideoSettings::Jsonize() const
   if(m_minimumBitrateHasBeenSet)
   {
    payload.WithInteger("minimumBitrate", m_minimumBitrate);
+
+  }
+
+  if(m_priorityHasBeenSet)
+  {
+   payload.WithInteger("priority", m_priority);
 
   }
 

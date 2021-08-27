@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
@@ -182,6 +172,84 @@ namespace Model
      */
     inline Item& WithContent(const char* value) { SetContent(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether a word in the item matches a word in the vocabulary filter
+     * you've chosen for your real-time stream. If <code>true</code> then a word in the
+     * item matches your vocabulary filter.</p>
+     */
+    inline bool GetVocabularyFilterMatch() const{ return m_vocabularyFilterMatch; }
+
+    /**
+     * <p>Indicates whether a word in the item matches a word in the vocabulary filter
+     * you've chosen for your real-time stream. If <code>true</code> then a word in the
+     * item matches your vocabulary filter.</p>
+     */
+    inline bool VocabularyFilterMatchHasBeenSet() const { return m_vocabularyFilterMatchHasBeenSet; }
+
+    /**
+     * <p>Indicates whether a word in the item matches a word in the vocabulary filter
+     * you've chosen for your real-time stream. If <code>true</code> then a word in the
+     * item matches your vocabulary filter.</p>
+     */
+    inline void SetVocabularyFilterMatch(bool value) { m_vocabularyFilterMatchHasBeenSet = true; m_vocabularyFilterMatch = value; }
+
+    /**
+     * <p>Indicates whether a word in the item matches a word in the vocabulary filter
+     * you've chosen for your real-time stream. If <code>true</code> then a word in the
+     * item matches your vocabulary filter.</p>
+     */
+    inline Item& WithVocabularyFilterMatch(bool value) { SetVocabularyFilterMatch(value); return *this;}
+
+
+    /**
+     * <p>If speaker identification is enabled, shows the speakers identified in the
+     * real-time stream.</p>
+     */
+    inline const Aws::String& GetSpeaker() const{ return m_speaker; }
+
+    /**
+     * <p>If speaker identification is enabled, shows the speakers identified in the
+     * real-time stream.</p>
+     */
+    inline bool SpeakerHasBeenSet() const { return m_speakerHasBeenSet; }
+
+    /**
+     * <p>If speaker identification is enabled, shows the speakers identified in the
+     * real-time stream.</p>
+     */
+    inline void SetSpeaker(const Aws::String& value) { m_speakerHasBeenSet = true; m_speaker = value; }
+
+    /**
+     * <p>If speaker identification is enabled, shows the speakers identified in the
+     * real-time stream.</p>
+     */
+    inline void SetSpeaker(Aws::String&& value) { m_speakerHasBeenSet = true; m_speaker = std::move(value); }
+
+    /**
+     * <p>If speaker identification is enabled, shows the speakers identified in the
+     * real-time stream.</p>
+     */
+    inline void SetSpeaker(const char* value) { m_speakerHasBeenSet = true; m_speaker.assign(value); }
+
+    /**
+     * <p>If speaker identification is enabled, shows the speakers identified in the
+     * real-time stream.</p>
+     */
+    inline Item& WithSpeaker(const Aws::String& value) { SetSpeaker(value); return *this;}
+
+    /**
+     * <p>If speaker identification is enabled, shows the speakers identified in the
+     * real-time stream.</p>
+     */
+    inline Item& WithSpeaker(Aws::String&& value) { SetSpeaker(std::move(value)); return *this;}
+
+    /**
+     * <p>If speaker identification is enabled, shows the speakers identified in the
+     * real-time stream.</p>
+     */
+    inline Item& WithSpeaker(const char* value) { SetSpeaker(value); return *this;}
+
   private:
 
     double m_startTime;
@@ -195,6 +263,12 @@ namespace Model
 
     Aws::String m_content;
     bool m_contentHasBeenSet;
+
+    bool m_vocabularyFilterMatch;
+    bool m_vocabularyFilterMatchHasBeenSet;
+
+    Aws::String m_speaker;
+    bool m_speakerHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
@@ -179,38 +169,38 @@ namespace Model
 
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1.0</code>,
+     * <code>FLINK-1_6</code>, or <code>FLINK-1_8</code>).</p>
      */
     inline const RuntimeEnvironment& GetRuntimeEnvironment() const{ return m_runtimeEnvironment; }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1.0</code>,
+     * <code>FLINK-1_6</code>, or <code>FLINK-1_8</code>).</p>
      */
     inline bool RuntimeEnvironmentHasBeenSet() const { return m_runtimeEnvironmentHasBeenSet; }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1.0</code>,
+     * <code>FLINK-1_6</code>, or <code>FLINK-1_8</code>).</p>
      */
     inline void SetRuntimeEnvironment(const RuntimeEnvironment& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = value; }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1.0</code>,
+     * <code>FLINK-1_6</code>, or <code>FLINK-1_8</code>).</p>
      */
     inline void SetRuntimeEnvironment(RuntimeEnvironment&& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = std::move(value); }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1.0</code>,
+     * <code>FLINK-1_6</code>, or <code>FLINK-1_8</code>).</p>
      */
     inline ApplicationDetail& WithRuntimeEnvironment(const RuntimeEnvironment& value) { SetRuntimeEnvironment(value); return *this;}
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1.0</code>,
+     * <code>FLINK-1_6</code>, or <code>FLINK-1_8</code>).</p>
      */
     inline ApplicationDetail& WithRuntimeEnvironment(RuntimeEnvironment&& value) { SetRuntimeEnvironment(std::move(value)); return *this;}
 
@@ -383,38 +373,38 @@ namespace Model
 
 
     /**
-     * <p>Provides details about the application's SQL or Java code and starting
-     * parameters.</p>
+     * <p>Provides details about the application's Java, SQL, or Scala code and
+     * starting parameters.</p>
      */
     inline const ApplicationConfigurationDescription& GetApplicationConfigurationDescription() const{ return m_applicationConfigurationDescription; }
 
     /**
-     * <p>Provides details about the application's SQL or Java code and starting
-     * parameters.</p>
+     * <p>Provides details about the application's Java, SQL, or Scala code and
+     * starting parameters.</p>
      */
     inline bool ApplicationConfigurationDescriptionHasBeenSet() const { return m_applicationConfigurationDescriptionHasBeenSet; }
 
     /**
-     * <p>Provides details about the application's SQL or Java code and starting
-     * parameters.</p>
+     * <p>Provides details about the application's Java, SQL, or Scala code and
+     * starting parameters.</p>
      */
     inline void SetApplicationConfigurationDescription(const ApplicationConfigurationDescription& value) { m_applicationConfigurationDescriptionHasBeenSet = true; m_applicationConfigurationDescription = value; }
 
     /**
-     * <p>Provides details about the application's SQL or Java code and starting
-     * parameters.</p>
+     * <p>Provides details about the application's Java, SQL, or Scala code and
+     * starting parameters.</p>
      */
     inline void SetApplicationConfigurationDescription(ApplicationConfigurationDescription&& value) { m_applicationConfigurationDescriptionHasBeenSet = true; m_applicationConfigurationDescription = std::move(value); }
 
     /**
-     * <p>Provides details about the application's SQL or Java code and starting
-     * parameters.</p>
+     * <p>Provides details about the application's Java, SQL, or Scala code and
+     * starting parameters.</p>
      */
     inline ApplicationDetail& WithApplicationConfigurationDescription(const ApplicationConfigurationDescription& value) { SetApplicationConfigurationDescription(value); return *this;}
 
     /**
-     * <p>Provides details about the application's SQL or Java code and starting
-     * parameters.</p>
+     * <p>Provides details about the application's Java, SQL, or Scala code and
+     * starting parameters.</p>
      */
     inline ApplicationDetail& WithApplicationConfigurationDescription(ApplicationConfigurationDescription&& value) { SetApplicationConfigurationDescription(std::move(value)); return *this;}
 

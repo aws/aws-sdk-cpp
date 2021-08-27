@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
@@ -30,8 +20,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a ListDeployments operation.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Represents the input of a <code>ListDeployments</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentsInput">AWS
    * API Reference</a></p>
    */
@@ -53,219 +43,284 @@ namespace Model
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p> <note> <p>If <code>applicationName</code> is specified, then
+     * account.</p>  <p>If <code>applicationName</code> is specified, then
      * <code>deploymentGroupName</code> must be specified. If it is not specified, then
-     * <code>deploymentGroupName</code> must not be specified. </p> </note>
+     * <code>deploymentGroupName</code> must not be specified. </p> 
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p> <note> <p>If <code>applicationName</code> is specified, then
+     * account.</p>  <p>If <code>applicationName</code> is specified, then
      * <code>deploymentGroupName</code> must be specified. If it is not specified, then
-     * <code>deploymentGroupName</code> must not be specified. </p> </note>
+     * <code>deploymentGroupName</code> must not be specified. </p> 
      */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p> <note> <p>If <code>applicationName</code> is specified, then
+     * account.</p>  <p>If <code>applicationName</code> is specified, then
      * <code>deploymentGroupName</code> must be specified. If it is not specified, then
-     * <code>deploymentGroupName</code> must not be specified. </p> </note>
+     * <code>deploymentGroupName</code> must not be specified. </p> 
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p> <note> <p>If <code>applicationName</code> is specified, then
+     * account.</p>  <p>If <code>applicationName</code> is specified, then
      * <code>deploymentGroupName</code> must be specified. If it is not specified, then
-     * <code>deploymentGroupName</code> must not be specified. </p> </note>
+     * <code>deploymentGroupName</code> must not be specified. </p> 
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p> <note> <p>If <code>applicationName</code> is specified, then
+     * account.</p>  <p>If <code>applicationName</code> is specified, then
      * <code>deploymentGroupName</code> must be specified. If it is not specified, then
-     * <code>deploymentGroupName</code> must not be specified. </p> </note>
+     * <code>deploymentGroupName</code> must not be specified. </p> 
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p> <note> <p>If <code>applicationName</code> is specified, then
+     * account.</p>  <p>If <code>applicationName</code> is specified, then
      * <code>deploymentGroupName</code> must be specified. If it is not specified, then
-     * <code>deploymentGroupName</code> must not be specified. </p> </note>
+     * <code>deploymentGroupName</code> must not be specified. </p> 
      */
     inline ListDeploymentsRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p> <note> <p>If <code>applicationName</code> is specified, then
+     * account.</p>  <p>If <code>applicationName</code> is specified, then
      * <code>deploymentGroupName</code> must be specified. If it is not specified, then
-     * <code>deploymentGroupName</code> must not be specified. </p> </note>
+     * <code>deploymentGroupName</code> must not be specified. </p> 
      */
     inline ListDeploymentsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p> <note> <p>If <code>applicationName</code> is specified, then
+     * account.</p>  <p>If <code>applicationName</code> is specified, then
      * <code>deploymentGroupName</code> must be specified. If it is not specified, then
-     * <code>deploymentGroupName</code> must not be specified. </p> </note>
+     * <code>deploymentGroupName</code> must not be specified. </p> 
      */
     inline ListDeploymentsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
 
     /**
-     * <p>The name of a deployment group for the specified application.</p> <note>
+     * <p>The name of a deployment group for the specified application.</p> 
      * <p>If <code>deploymentGroupName</code> is specified, then
      * <code>applicationName</code> must be specified. If it is not specified, then
-     * <code>applicationName</code> must not be specified. </p> </note>
+     * <code>applicationName</code> must not be specified. </p> 
      */
     inline const Aws::String& GetDeploymentGroupName() const{ return m_deploymentGroupName; }
 
     /**
-     * <p>The name of a deployment group for the specified application.</p> <note>
+     * <p>The name of a deployment group for the specified application.</p> 
      * <p>If <code>deploymentGroupName</code> is specified, then
      * <code>applicationName</code> must be specified. If it is not specified, then
-     * <code>applicationName</code> must not be specified. </p> </note>
+     * <code>applicationName</code> must not be specified. </p> 
      */
     inline bool DeploymentGroupNameHasBeenSet() const { return m_deploymentGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of a deployment group for the specified application.</p> <note>
+     * <p>The name of a deployment group for the specified application.</p> 
      * <p>If <code>deploymentGroupName</code> is specified, then
      * <code>applicationName</code> must be specified. If it is not specified, then
-     * <code>applicationName</code> must not be specified. </p> </note>
+     * <code>applicationName</code> must not be specified. </p> 
      */
     inline void SetDeploymentGroupName(const Aws::String& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = value; }
 
     /**
-     * <p>The name of a deployment group for the specified application.</p> <note>
+     * <p>The name of a deployment group for the specified application.</p> 
      * <p>If <code>deploymentGroupName</code> is specified, then
      * <code>applicationName</code> must be specified. If it is not specified, then
-     * <code>applicationName</code> must not be specified. </p> </note>
+     * <code>applicationName</code> must not be specified. </p> 
      */
     inline void SetDeploymentGroupName(Aws::String&& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = std::move(value); }
 
     /**
-     * <p>The name of a deployment group for the specified application.</p> <note>
+     * <p>The name of a deployment group for the specified application.</p> 
      * <p>If <code>deploymentGroupName</code> is specified, then
      * <code>applicationName</code> must be specified. If it is not specified, then
-     * <code>applicationName</code> must not be specified. </p> </note>
+     * <code>applicationName</code> must not be specified. </p> 
      */
     inline void SetDeploymentGroupName(const char* value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName.assign(value); }
 
     /**
-     * <p>The name of a deployment group for the specified application.</p> <note>
+     * <p>The name of a deployment group for the specified application.</p> 
      * <p>If <code>deploymentGroupName</code> is specified, then
      * <code>applicationName</code> must be specified. If it is not specified, then
-     * <code>applicationName</code> must not be specified. </p> </note>
+     * <code>applicationName</code> must not be specified. </p> 
      */
     inline ListDeploymentsRequest& WithDeploymentGroupName(const Aws::String& value) { SetDeploymentGroupName(value); return *this;}
 
     /**
-     * <p>The name of a deployment group for the specified application.</p> <note>
+     * <p>The name of a deployment group for the specified application.</p> 
      * <p>If <code>deploymentGroupName</code> is specified, then
      * <code>applicationName</code> must be specified. If it is not specified, then
-     * <code>applicationName</code> must not be specified. </p> </note>
+     * <code>applicationName</code> must not be specified. </p> 
      */
     inline ListDeploymentsRequest& WithDeploymentGroupName(Aws::String&& value) { SetDeploymentGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a deployment group for the specified application.</p> <note>
+     * <p>The name of a deployment group for the specified application.</p> 
      * <p>If <code>deploymentGroupName</code> is specified, then
      * <code>applicationName</code> must be specified. If it is not specified, then
-     * <code>applicationName</code> must not be specified. </p> </note>
+     * <code>applicationName</code> must not be specified. </p> 
      */
     inline ListDeploymentsRequest& WithDeploymentGroupName(const char* value) { SetDeploymentGroupName(value); return *this;}
 
 
     /**
-     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
-     * created deployments in the resulting list.</p> </li> <li> <p>Queued: Include
-     * queued deployments in the resulting list.</p> </li> <li> <p>In Progress: Include
-     * in-progress deployments in the resulting list.</p> </li> <li> <p>Succeeded:
-     * Include successful deployments in the resulting list.</p> </li> <li> <p>Failed:
-     * Include failed deployments in the resulting list.</p> </li> <li> <p>Stopped:
-     * Include stopped deployments in the resulting list.</p> </li> </ul>
+     * <p>The unique ID of an external resource for returning deployments linked to the
+     * external resource.</p>
+     */
+    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+
+    /**
+     * <p>The unique ID of an external resource for returning deployments linked to the
+     * external resource.</p>
+     */
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
+
+    /**
+     * <p>The unique ID of an external resource for returning deployments linked to the
+     * external resource.</p>
+     */
+    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
+
+    /**
+     * <p>The unique ID of an external resource for returning deployments linked to the
+     * external resource.</p>
+     */
+    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
+
+    /**
+     * <p>The unique ID of an external resource for returning deployments linked to the
+     * external resource.</p>
+     */
+    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
+
+    /**
+     * <p>The unique ID of an external resource for returning deployments linked to the
+     * external resource.</p>
+     */
+    inline ListDeploymentsRequest& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
+
+    /**
+     * <p>The unique ID of an external resource for returning deployments linked to the
+     * external resource.</p>
+     */
+    inline ListDeploymentsRequest& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique ID of an external resource for returning deployments linked to the
+     * external resource.</p>
+     */
+    inline ListDeploymentsRequest& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+
+
+    /**
+     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>
+     * <code>Created</code>: Include created deployments in the resulting list.</p>
+     * </li> <li> <p> <code>Queued</code>: Include queued deployments in the resulting
+     * list.</p> </li> <li> <p> <code>In Progress</code>: Include in-progress
+     * deployments in the resulting list.</p> </li> <li> <p> <code>Succeeded</code>:
+     * Include successful deployments in the resulting list.</p> </li> <li> <p>
+     * <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
+     * <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting
+     * list.</p> </li> </ul>
      */
     inline const Aws::Vector<DeploymentStatus>& GetIncludeOnlyStatuses() const{ return m_includeOnlyStatuses; }
 
     /**
-     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
-     * created deployments in the resulting list.</p> </li> <li> <p>Queued: Include
-     * queued deployments in the resulting list.</p> </li> <li> <p>In Progress: Include
-     * in-progress deployments in the resulting list.</p> </li> <li> <p>Succeeded:
-     * Include successful deployments in the resulting list.</p> </li> <li> <p>Failed:
-     * Include failed deployments in the resulting list.</p> </li> <li> <p>Stopped:
-     * Include stopped deployments in the resulting list.</p> </li> </ul>
+     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>
+     * <code>Created</code>: Include created deployments in the resulting list.</p>
+     * </li> <li> <p> <code>Queued</code>: Include queued deployments in the resulting
+     * list.</p> </li> <li> <p> <code>In Progress</code>: Include in-progress
+     * deployments in the resulting list.</p> </li> <li> <p> <code>Succeeded</code>:
+     * Include successful deployments in the resulting list.</p> </li> <li> <p>
+     * <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
+     * <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting
+     * list.</p> </li> </ul>
      */
     inline bool IncludeOnlyStatusesHasBeenSet() const { return m_includeOnlyStatusesHasBeenSet; }
 
     /**
-     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
-     * created deployments in the resulting list.</p> </li> <li> <p>Queued: Include
-     * queued deployments in the resulting list.</p> </li> <li> <p>In Progress: Include
-     * in-progress deployments in the resulting list.</p> </li> <li> <p>Succeeded:
-     * Include successful deployments in the resulting list.</p> </li> <li> <p>Failed:
-     * Include failed deployments in the resulting list.</p> </li> <li> <p>Stopped:
-     * Include stopped deployments in the resulting list.</p> </li> </ul>
+     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>
+     * <code>Created</code>: Include created deployments in the resulting list.</p>
+     * </li> <li> <p> <code>Queued</code>: Include queued deployments in the resulting
+     * list.</p> </li> <li> <p> <code>In Progress</code>: Include in-progress
+     * deployments in the resulting list.</p> </li> <li> <p> <code>Succeeded</code>:
+     * Include successful deployments in the resulting list.</p> </li> <li> <p>
+     * <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
+     * <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting
+     * list.</p> </li> </ul>
      */
     inline void SetIncludeOnlyStatuses(const Aws::Vector<DeploymentStatus>& value) { m_includeOnlyStatusesHasBeenSet = true; m_includeOnlyStatuses = value; }
 
     /**
-     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
-     * created deployments in the resulting list.</p> </li> <li> <p>Queued: Include
-     * queued deployments in the resulting list.</p> </li> <li> <p>In Progress: Include
-     * in-progress deployments in the resulting list.</p> </li> <li> <p>Succeeded:
-     * Include successful deployments in the resulting list.</p> </li> <li> <p>Failed:
-     * Include failed deployments in the resulting list.</p> </li> <li> <p>Stopped:
-     * Include stopped deployments in the resulting list.</p> </li> </ul>
+     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>
+     * <code>Created</code>: Include created deployments in the resulting list.</p>
+     * </li> <li> <p> <code>Queued</code>: Include queued deployments in the resulting
+     * list.</p> </li> <li> <p> <code>In Progress</code>: Include in-progress
+     * deployments in the resulting list.</p> </li> <li> <p> <code>Succeeded</code>:
+     * Include successful deployments in the resulting list.</p> </li> <li> <p>
+     * <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
+     * <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting
+     * list.</p> </li> </ul>
      */
     inline void SetIncludeOnlyStatuses(Aws::Vector<DeploymentStatus>&& value) { m_includeOnlyStatusesHasBeenSet = true; m_includeOnlyStatuses = std::move(value); }
 
     /**
-     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
-     * created deployments in the resulting list.</p> </li> <li> <p>Queued: Include
-     * queued deployments in the resulting list.</p> </li> <li> <p>In Progress: Include
-     * in-progress deployments in the resulting list.</p> </li> <li> <p>Succeeded:
-     * Include successful deployments in the resulting list.</p> </li> <li> <p>Failed:
-     * Include failed deployments in the resulting list.</p> </li> <li> <p>Stopped:
-     * Include stopped deployments in the resulting list.</p> </li> </ul>
+     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>
+     * <code>Created</code>: Include created deployments in the resulting list.</p>
+     * </li> <li> <p> <code>Queued</code>: Include queued deployments in the resulting
+     * list.</p> </li> <li> <p> <code>In Progress</code>: Include in-progress
+     * deployments in the resulting list.</p> </li> <li> <p> <code>Succeeded</code>:
+     * Include successful deployments in the resulting list.</p> </li> <li> <p>
+     * <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
+     * <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting
+     * list.</p> </li> </ul>
      */
     inline ListDeploymentsRequest& WithIncludeOnlyStatuses(const Aws::Vector<DeploymentStatus>& value) { SetIncludeOnlyStatuses(value); return *this;}
 
     /**
-     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
-     * created deployments in the resulting list.</p> </li> <li> <p>Queued: Include
-     * queued deployments in the resulting list.</p> </li> <li> <p>In Progress: Include
-     * in-progress deployments in the resulting list.</p> </li> <li> <p>Succeeded:
-     * Include successful deployments in the resulting list.</p> </li> <li> <p>Failed:
-     * Include failed deployments in the resulting list.</p> </li> <li> <p>Stopped:
-     * Include stopped deployments in the resulting list.</p> </li> </ul>
+     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>
+     * <code>Created</code>: Include created deployments in the resulting list.</p>
+     * </li> <li> <p> <code>Queued</code>: Include queued deployments in the resulting
+     * list.</p> </li> <li> <p> <code>In Progress</code>: Include in-progress
+     * deployments in the resulting list.</p> </li> <li> <p> <code>Succeeded</code>:
+     * Include successful deployments in the resulting list.</p> </li> <li> <p>
+     * <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
+     * <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting
+     * list.</p> </li> </ul>
      */
     inline ListDeploymentsRequest& WithIncludeOnlyStatuses(Aws::Vector<DeploymentStatus>&& value) { SetIncludeOnlyStatuses(std::move(value)); return *this;}
 
     /**
-     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
-     * created deployments in the resulting list.</p> </li> <li> <p>Queued: Include
-     * queued deployments in the resulting list.</p> </li> <li> <p>In Progress: Include
-     * in-progress deployments in the resulting list.</p> </li> <li> <p>Succeeded:
-     * Include successful deployments in the resulting list.</p> </li> <li> <p>Failed:
-     * Include failed deployments in the resulting list.</p> </li> <li> <p>Stopped:
-     * Include stopped deployments in the resulting list.</p> </li> </ul>
+     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>
+     * <code>Created</code>: Include created deployments in the resulting list.</p>
+     * </li> <li> <p> <code>Queued</code>: Include queued deployments in the resulting
+     * list.</p> </li> <li> <p> <code>In Progress</code>: Include in-progress
+     * deployments in the resulting list.</p> </li> <li> <p> <code>Succeeded</code>:
+     * Include successful deployments in the resulting list.</p> </li> <li> <p>
+     * <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
+     * <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting
+     * list.</p> </li> </ul>
      */
     inline ListDeploymentsRequest& AddIncludeOnlyStatuses(const DeploymentStatus& value) { m_includeOnlyStatusesHasBeenSet = true; m_includeOnlyStatuses.push_back(value); return *this; }
 
     /**
-     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
-     * created deployments in the resulting list.</p> </li> <li> <p>Queued: Include
-     * queued deployments in the resulting list.</p> </li> <li> <p>In Progress: Include
-     * in-progress deployments in the resulting list.</p> </li> <li> <p>Succeeded:
-     * Include successful deployments in the resulting list.</p> </li> <li> <p>Failed:
-     * Include failed deployments in the resulting list.</p> </li> <li> <p>Stopped:
-     * Include stopped deployments in the resulting list.</p> </li> </ul>
+     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>
+     * <code>Created</code>: Include created deployments in the resulting list.</p>
+     * </li> <li> <p> <code>Queued</code>: Include queued deployments in the resulting
+     * list.</p> </li> <li> <p> <code>In Progress</code>: Include in-progress
+     * deployments in the resulting list.</p> </li> <li> <p> <code>Succeeded</code>:
+     * Include successful deployments in the resulting list.</p> </li> <li> <p>
+     * <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
+     * <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting
+     * list.</p> </li> </ul>
      */
     inline ListDeploymentsRequest& AddIncludeOnlyStatuses(DeploymentStatus&& value) { m_includeOnlyStatusesHasBeenSet = true; m_includeOnlyStatuses.push_back(std::move(value)); return *this; }
 
@@ -362,6 +417,9 @@ namespace Model
 
     Aws::String m_deploymentGroupName;
     bool m_deploymentGroupNameHasBeenSet;
+
+    Aws::String m_externalId;
+    bool m_externalIdHasBeenSet;
 
     Aws::Vector<DeploymentStatus> m_includeOnlyStatuses;
     bool m_includeOnlyStatusesHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/accessanalyzer/model/FindingSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -42,6 +32,7 @@ FindingSummary::FindingSummary() :
     m_resourceOwnerAccountHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
+    m_sourcesHasBeenSet(false),
     m_status(FindingStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
@@ -62,6 +53,7 @@ FindingSummary::FindingSummary(JsonView jsonValue) :
     m_resourceOwnerAccountHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
+    m_sourcesHasBeenSet(false),
     m_status(FindingStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
@@ -155,6 +147,16 @@ FindingSummary& FindingSummary::operator =(JsonView jsonValue)
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
 
     m_resourceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sources"))
+  {
+    Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
+    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
+    {
+      m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
+    }
+    m_sourcesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -254,6 +256,17 @@ JsonValue FindingSummary::Jsonize() const
   if(m_resourceTypeHasBeenSet)
   {
    payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  }
+
+  if(m_sourcesHasBeenSet)
+  {
+   Array<JsonValue> sourcesJsonList(m_sources.size());
+   for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
+   {
+     sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
+   }
+   payload.WithArray("sources", std::move(sourcesJsonList));
+
   }
 
   if(m_statusHasBeenSet)

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/ssm/model/DocumentType.h>
 #include <aws/ssm/model/DocumentFormat.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/ReviewStatus.h>
 #include <aws/ssm/model/DocumentRequires.h>
 #include <aws/ssm/model/AttachmentContent.h>
 #include <utility>
@@ -403,45 +394,96 @@ namespace Model
 
     /**
      * <p>A description of the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline const Aws::Vector<AttachmentContent>& GetAttachmentsContent() const{ return m_attachmentsContent; }
 
     /**
      * <p>A description of the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline void SetAttachmentsContent(const Aws::Vector<AttachmentContent>& value) { m_attachmentsContent = value; }
 
     /**
      * <p>A description of the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline void SetAttachmentsContent(Aws::Vector<AttachmentContent>&& value) { m_attachmentsContent = std::move(value); }
 
     /**
      * <p>A description of the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline GetDocumentResult& WithAttachmentsContent(const Aws::Vector<AttachmentContent>& value) { SetAttachmentsContent(value); return *this;}
 
     /**
      * <p>A description of the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline GetDocumentResult& WithAttachmentsContent(Aws::Vector<AttachmentContent>&& value) { SetAttachmentsContent(std::move(value)); return *this;}
 
     /**
      * <p>A description of the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline GetDocumentResult& AddAttachmentsContent(const AttachmentContent& value) { m_attachmentsContent.push_back(value); return *this; }
 
     /**
      * <p>A description of the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline GetDocumentResult& AddAttachmentsContent(AttachmentContent&& value) { m_attachmentsContent.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The current review status of a new custom Systems Manager document (SSM
+     * document) created by a member of your organization, or of the latest version of
+     * an existing SSM document.</p> <p>Only one version of an SSM document can be in
+     * the APPROVED state at a time. When a new version is approved, the status of the
+     * previous version changes to REJECTED.</p> <p>Only one version of an SSM document
+     * can be in review, or PENDING, at a time.</p>
+     */
+    inline const ReviewStatus& GetReviewStatus() const{ return m_reviewStatus; }
+
+    /**
+     * <p>The current review status of a new custom Systems Manager document (SSM
+     * document) created by a member of your organization, or of the latest version of
+     * an existing SSM document.</p> <p>Only one version of an SSM document can be in
+     * the APPROVED state at a time. When a new version is approved, the status of the
+     * previous version changes to REJECTED.</p> <p>Only one version of an SSM document
+     * can be in review, or PENDING, at a time.</p>
+     */
+    inline void SetReviewStatus(const ReviewStatus& value) { m_reviewStatus = value; }
+
+    /**
+     * <p>The current review status of a new custom Systems Manager document (SSM
+     * document) created by a member of your organization, or of the latest version of
+     * an existing SSM document.</p> <p>Only one version of an SSM document can be in
+     * the APPROVED state at a time. When a new version is approved, the status of the
+     * previous version changes to REJECTED.</p> <p>Only one version of an SSM document
+     * can be in review, or PENDING, at a time.</p>
+     */
+    inline void SetReviewStatus(ReviewStatus&& value) { m_reviewStatus = std::move(value); }
+
+    /**
+     * <p>The current review status of a new custom Systems Manager document (SSM
+     * document) created by a member of your organization, or of the latest version of
+     * an existing SSM document.</p> <p>Only one version of an SSM document can be in
+     * the APPROVED state at a time. When a new version is approved, the status of the
+     * previous version changes to REJECTED.</p> <p>Only one version of an SSM document
+     * can be in review, or PENDING, at a time.</p>
+     */
+    inline GetDocumentResult& WithReviewStatus(const ReviewStatus& value) { SetReviewStatus(value); return *this;}
+
+    /**
+     * <p>The current review status of a new custom Systems Manager document (SSM
+     * document) created by a member of your organization, or of the latest version of
+     * an existing SSM document.</p> <p>Only one version of an SSM document can be in
+     * the APPROVED state at a time. When a new version is approved, the status of the
+     * previous version changes to REJECTED.</p> <p>Only one version of an SSM document
+     * can be in review, or PENDING, at a time.</p>
+     */
+    inline GetDocumentResult& WithReviewStatus(ReviewStatus&& value) { SetReviewStatus(std::move(value)); return *this;}
 
   private:
 
@@ -464,6 +506,8 @@ namespace Model
     Aws::Vector<DocumentRequires> m_requires;
 
     Aws::Vector<AttachmentContent> m_attachmentsContent;
+
+    ReviewStatus m_reviewStatus;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
@@ -56,181 +46,269 @@ namespace Model
 
 
     /**
-     * <p>The format of the profile to return. You can choose
-     * <code>application/json</code> or the default
-     * <code>application/x-amzn-ion</code>. </p>
+     * <p> The format of the returned profiling data. The format maps to the
+     * <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request.
+     * You can specify one of the following: or the default . </p> <pre><code>
+     * &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; —
+     * standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
+     * &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format.
+     * For more information, see &lt;a
+     * href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;.
+     * &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code></pre>
      */
     inline const Aws::String& GetAccept() const{ return m_accept; }
 
     /**
-     * <p>The format of the profile to return. You can choose
-     * <code>application/json</code> or the default
-     * <code>application/x-amzn-ion</code>. </p>
+     * <p> The format of the returned profiling data. The format maps to the
+     * <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request.
+     * You can specify one of the following: or the default . </p> <pre><code>
+     * &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; —
+     * standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
+     * &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format.
+     * For more information, see &lt;a
+     * href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;.
+     * &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code></pre>
      */
     inline bool AcceptHasBeenSet() const { return m_acceptHasBeenSet; }
 
     /**
-     * <p>The format of the profile to return. You can choose
-     * <code>application/json</code> or the default
-     * <code>application/x-amzn-ion</code>. </p>
+     * <p> The format of the returned profiling data. The format maps to the
+     * <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request.
+     * You can specify one of the following: or the default . </p> <pre><code>
+     * &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; —
+     * standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
+     * &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format.
+     * For more information, see &lt;a
+     * href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;.
+     * &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code></pre>
      */
     inline void SetAccept(const Aws::String& value) { m_acceptHasBeenSet = true; m_accept = value; }
 
     /**
-     * <p>The format of the profile to return. You can choose
-     * <code>application/json</code> or the default
-     * <code>application/x-amzn-ion</code>. </p>
+     * <p> The format of the returned profiling data. The format maps to the
+     * <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request.
+     * You can specify one of the following: or the default . </p> <pre><code>
+     * &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; —
+     * standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
+     * &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format.
+     * For more information, see &lt;a
+     * href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;.
+     * &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code></pre>
      */
     inline void SetAccept(Aws::String&& value) { m_acceptHasBeenSet = true; m_accept = std::move(value); }
 
     /**
-     * <p>The format of the profile to return. You can choose
-     * <code>application/json</code> or the default
-     * <code>application/x-amzn-ion</code>. </p>
+     * <p> The format of the returned profiling data. The format maps to the
+     * <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request.
+     * You can specify one of the following: or the default . </p> <pre><code>
+     * &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; —
+     * standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
+     * &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format.
+     * For more information, see &lt;a
+     * href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;.
+     * &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code></pre>
      */
     inline void SetAccept(const char* value) { m_acceptHasBeenSet = true; m_accept.assign(value); }
 
     /**
-     * <p>The format of the profile to return. You can choose
-     * <code>application/json</code> or the default
-     * <code>application/x-amzn-ion</code>. </p>
+     * <p> The format of the returned profiling data. The format maps to the
+     * <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request.
+     * You can specify one of the following: or the default . </p> <pre><code>
+     * &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; —
+     * standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
+     * &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format.
+     * For more information, see &lt;a
+     * href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;.
+     * &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code></pre>
      */
     inline GetProfileRequest& WithAccept(const Aws::String& value) { SetAccept(value); return *this;}
 
     /**
-     * <p>The format of the profile to return. You can choose
-     * <code>application/json</code> or the default
-     * <code>application/x-amzn-ion</code>. </p>
+     * <p> The format of the returned profiling data. The format maps to the
+     * <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request.
+     * You can specify one of the following: or the default . </p> <pre><code>
+     * &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; —
+     * standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
+     * &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format.
+     * For more information, see &lt;a
+     * href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;.
+     * &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code></pre>
      */
     inline GetProfileRequest& WithAccept(Aws::String&& value) { SetAccept(std::move(value)); return *this;}
 
     /**
-     * <p>The format of the profile to return. You can choose
-     * <code>application/json</code> or the default
-     * <code>application/x-amzn-ion</code>. </p>
+     * <p> The format of the returned profiling data. The format maps to the
+     * <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request.
+     * You can specify one of the following: or the default . </p> <pre><code>
+     * &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; —
+     * standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
+     * &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format.
+     * For more information, see &lt;a
+     * href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;.
+     * &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code></pre>
      */
     inline GetProfileRequest& WithAccept(const char* value) { SetAccept(value); return *this;}
 
 
     /**
-     * <p/> <p>You must specify exactly two of the following parameters:
-     * <code>startTime</code>, <code>period</code>, and <code>endTime</code>. </p>
+     * <p> The end time of the requested profile. Specify using the ISO 8601 format.
+     * For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020
+     * 1:15:02 PM UTC. </p> <p> If you specify <code>endTime</code>, then you must also
+     * specify <code>period</code> or <code>startTime</code>, but not both. </p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p/> <p>You must specify exactly two of the following parameters:
-     * <code>startTime</code>, <code>period</code>, and <code>endTime</code>. </p>
+     * <p> The end time of the requested profile. Specify using the ISO 8601 format.
+     * For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020
+     * 1:15:02 PM UTC. </p> <p> If you specify <code>endTime</code>, then you must also
+     * specify <code>period</code> or <code>startTime</code>, but not both. </p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p/> <p>You must specify exactly two of the following parameters:
-     * <code>startTime</code>, <code>period</code>, and <code>endTime</code>. </p>
+     * <p> The end time of the requested profile. Specify using the ISO 8601 format.
+     * For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020
+     * 1:15:02 PM UTC. </p> <p> If you specify <code>endTime</code>, then you must also
+     * specify <code>period</code> or <code>startTime</code>, but not both. </p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p/> <p>You must specify exactly two of the following parameters:
-     * <code>startTime</code>, <code>period</code>, and <code>endTime</code>. </p>
+     * <p> The end time of the requested profile. Specify using the ISO 8601 format.
+     * For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020
+     * 1:15:02 PM UTC. </p> <p> If you specify <code>endTime</code>, then you must also
+     * specify <code>period</code> or <code>startTime</code>, but not both. </p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p/> <p>You must specify exactly two of the following parameters:
-     * <code>startTime</code>, <code>period</code>, and <code>endTime</code>. </p>
+     * <p> The end time of the requested profile. Specify using the ISO 8601 format.
+     * For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020
+     * 1:15:02 PM UTC. </p> <p> If you specify <code>endTime</code>, then you must also
+     * specify <code>period</code> or <code>startTime</code>, but not both. </p>
      */
     inline GetProfileRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p/> <p>You must specify exactly two of the following parameters:
-     * <code>startTime</code>, <code>period</code>, and <code>endTime</code>. </p>
+     * <p> The end time of the requested profile. Specify using the ISO 8601 format.
+     * For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020
+     * 1:15:02 PM UTC. </p> <p> If you specify <code>endTime</code>, then you must also
+     * specify <code>period</code> or <code>startTime</code>, but not both. </p>
      */
     inline GetProfileRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The maximum depth of the graph.</p>
+     * <p> The maximum depth of the stacks in the code that is represented in the
+     * aggregated profile. For example, if CodeGuru Profiler finds a method
+     * <code>A</code>, which calls method <code>B</code>, which calls method
+     * <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the
+     * <code>maxDepth</code> is set to 2, then the aggregated profile contains
+     * representations of methods <code>A</code> and <code>B</code>. </p>
      */
     inline int GetMaxDepth() const{ return m_maxDepth; }
 
     /**
-     * <p>The maximum depth of the graph.</p>
+     * <p> The maximum depth of the stacks in the code that is represented in the
+     * aggregated profile. For example, if CodeGuru Profiler finds a method
+     * <code>A</code>, which calls method <code>B</code>, which calls method
+     * <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the
+     * <code>maxDepth</code> is set to 2, then the aggregated profile contains
+     * representations of methods <code>A</code> and <code>B</code>. </p>
      */
     inline bool MaxDepthHasBeenSet() const { return m_maxDepthHasBeenSet; }
 
     /**
-     * <p>The maximum depth of the graph.</p>
+     * <p> The maximum depth of the stacks in the code that is represented in the
+     * aggregated profile. For example, if CodeGuru Profiler finds a method
+     * <code>A</code>, which calls method <code>B</code>, which calls method
+     * <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the
+     * <code>maxDepth</code> is set to 2, then the aggregated profile contains
+     * representations of methods <code>A</code> and <code>B</code>. </p>
      */
     inline void SetMaxDepth(int value) { m_maxDepthHasBeenSet = true; m_maxDepth = value; }
 
     /**
-     * <p>The maximum depth of the graph.</p>
+     * <p> The maximum depth of the stacks in the code that is represented in the
+     * aggregated profile. For example, if CodeGuru Profiler finds a method
+     * <code>A</code>, which calls method <code>B</code>, which calls method
+     * <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the
+     * <code>maxDepth</code> is set to 2, then the aggregated profile contains
+     * representations of methods <code>A</code> and <code>B</code>. </p>
      */
     inline GetProfileRequest& WithMaxDepth(int value) { SetMaxDepth(value); return *this;}
 
 
     /**
-     * <p>The period of the profile to get. The time range must be in the past and not
-     * longer than one week. </p> <p>You must specify exactly two of the following
-     * parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>. </p>
+     * <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time
+     * range for the returned aggregated profile. Specify using the ISO 8601 format.
+     * For example, <code>P1DT1H1M1S</code>. </p> <pre><code> &lt;p&gt; To get the
+     * latest aggregated profile, specify only &lt;code&gt;period&lt;/code&gt;.
+     * &lt;/p&gt; </code></pre>
      */
     inline const Aws::String& GetPeriod() const{ return m_period; }
 
     /**
-     * <p>The period of the profile to get. The time range must be in the past and not
-     * longer than one week. </p> <p>You must specify exactly two of the following
-     * parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>. </p>
+     * <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time
+     * range for the returned aggregated profile. Specify using the ISO 8601 format.
+     * For example, <code>P1DT1H1M1S</code>. </p> <pre><code> &lt;p&gt; To get the
+     * latest aggregated profile, specify only &lt;code&gt;period&lt;/code&gt;.
+     * &lt;/p&gt; </code></pre>
      */
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
 
     /**
-     * <p>The period of the profile to get. The time range must be in the past and not
-     * longer than one week. </p> <p>You must specify exactly two of the following
-     * parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>. </p>
+     * <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time
+     * range for the returned aggregated profile. Specify using the ISO 8601 format.
+     * For example, <code>P1DT1H1M1S</code>. </p> <pre><code> &lt;p&gt; To get the
+     * latest aggregated profile, specify only &lt;code&gt;period&lt;/code&gt;.
+     * &lt;/p&gt; </code></pre>
      */
     inline void SetPeriod(const Aws::String& value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
-     * <p>The period of the profile to get. The time range must be in the past and not
-     * longer than one week. </p> <p>You must specify exactly two of the following
-     * parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>. </p>
+     * <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time
+     * range for the returned aggregated profile. Specify using the ISO 8601 format.
+     * For example, <code>P1DT1H1M1S</code>. </p> <pre><code> &lt;p&gt; To get the
+     * latest aggregated profile, specify only &lt;code&gt;period&lt;/code&gt;.
+     * &lt;/p&gt; </code></pre>
      */
     inline void SetPeriod(Aws::String&& value) { m_periodHasBeenSet = true; m_period = std::move(value); }
 
     /**
-     * <p>The period of the profile to get. The time range must be in the past and not
-     * longer than one week. </p> <p>You must specify exactly two of the following
-     * parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>. </p>
+     * <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time
+     * range for the returned aggregated profile. Specify using the ISO 8601 format.
+     * For example, <code>P1DT1H1M1S</code>. </p> <pre><code> &lt;p&gt; To get the
+     * latest aggregated profile, specify only &lt;code&gt;period&lt;/code&gt;.
+     * &lt;/p&gt; </code></pre>
      */
     inline void SetPeriod(const char* value) { m_periodHasBeenSet = true; m_period.assign(value); }
 
     /**
-     * <p>The period of the profile to get. The time range must be in the past and not
-     * longer than one week. </p> <p>You must specify exactly two of the following
-     * parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>. </p>
+     * <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time
+     * range for the returned aggregated profile. Specify using the ISO 8601 format.
+     * For example, <code>P1DT1H1M1S</code>. </p> <pre><code> &lt;p&gt; To get the
+     * latest aggregated profile, specify only &lt;code&gt;period&lt;/code&gt;.
+     * &lt;/p&gt; </code></pre>
      */
     inline GetProfileRequest& WithPeriod(const Aws::String& value) { SetPeriod(value); return *this;}
 
     /**
-     * <p>The period of the profile to get. The time range must be in the past and not
-     * longer than one week. </p> <p>You must specify exactly two of the following
-     * parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>. </p>
+     * <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time
+     * range for the returned aggregated profile. Specify using the ISO 8601 format.
+     * For example, <code>P1DT1H1M1S</code>. </p> <pre><code> &lt;p&gt; To get the
+     * latest aggregated profile, specify only &lt;code&gt;period&lt;/code&gt;.
+     * &lt;/p&gt; </code></pre>
      */
     inline GetProfileRequest& WithPeriod(Aws::String&& value) { SetPeriod(std::move(value)); return *this;}
 
     /**
-     * <p>The period of the profile to get. The time range must be in the past and not
-     * longer than one week. </p> <p>You must specify exactly two of the following
-     * parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>. </p>
+     * <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time
+     * range for the returned aggregated profile. Specify using the ISO 8601 format.
+     * For example, <code>P1DT1H1M1S</code>. </p> <pre><code> &lt;p&gt; To get the
+     * latest aggregated profile, specify only &lt;code&gt;period&lt;/code&gt;.
+     * &lt;/p&gt; </code></pre>
      */
     inline GetProfileRequest& WithPeriod(const char* value) { SetPeriod(value); return *this;}
 
@@ -277,44 +355,62 @@ namespace Model
 
 
     /**
-     * <p>The start time of the profile to get.</p> <p>You must specify exactly two of
-     * the following parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>. </p>
+     * <p>The start time of the profile to get. Specify using the ISO 8601 format. For
+     * example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020
+     * 1:15:02 PM UTC.</p> <pre><code> &lt;p&gt; If you specify
+     * &lt;code&gt;startTime&lt;/code&gt;, then you must also specify
+     * &lt;code&gt;period&lt;/code&gt; or &lt;code&gt;endTime&lt;/code&gt;, but not
+     * both. &lt;/p&gt; </code></pre>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The start time of the profile to get.</p> <p>You must specify exactly two of
-     * the following parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>. </p>
+     * <p>The start time of the profile to get. Specify using the ISO 8601 format. For
+     * example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020
+     * 1:15:02 PM UTC.</p> <pre><code> &lt;p&gt; If you specify
+     * &lt;code&gt;startTime&lt;/code&gt;, then you must also specify
+     * &lt;code&gt;period&lt;/code&gt; or &lt;code&gt;endTime&lt;/code&gt;, but not
+     * both. &lt;/p&gt; </code></pre>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>The start time of the profile to get.</p> <p>You must specify exactly two of
-     * the following parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>. </p>
+     * <p>The start time of the profile to get. Specify using the ISO 8601 format. For
+     * example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020
+     * 1:15:02 PM UTC.</p> <pre><code> &lt;p&gt; If you specify
+     * &lt;code&gt;startTime&lt;/code&gt;, then you must also specify
+     * &lt;code&gt;period&lt;/code&gt; or &lt;code&gt;endTime&lt;/code&gt;, but not
+     * both. &lt;/p&gt; </code></pre>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The start time of the profile to get.</p> <p>You must specify exactly two of
-     * the following parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>. </p>
+     * <p>The start time of the profile to get. Specify using the ISO 8601 format. For
+     * example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020
+     * 1:15:02 PM UTC.</p> <pre><code> &lt;p&gt; If you specify
+     * &lt;code&gt;startTime&lt;/code&gt;, then you must also specify
+     * &lt;code&gt;period&lt;/code&gt; or &lt;code&gt;endTime&lt;/code&gt;, but not
+     * both. &lt;/p&gt; </code></pre>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The start time of the profile to get.</p> <p>You must specify exactly two of
-     * the following parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>. </p>
+     * <p>The start time of the profile to get. Specify using the ISO 8601 format. For
+     * example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020
+     * 1:15:02 PM UTC.</p> <pre><code> &lt;p&gt; If you specify
+     * &lt;code&gt;startTime&lt;/code&gt;, then you must also specify
+     * &lt;code&gt;period&lt;/code&gt; or &lt;code&gt;endTime&lt;/code&gt;, but not
+     * both. &lt;/p&gt; </code></pre>
      */
     inline GetProfileRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The start time of the profile to get.</p> <p>You must specify exactly two of
-     * the following parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>. </p>
+     * <p>The start time of the profile to get. Specify using the ISO 8601 format. For
+     * example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020
+     * 1:15:02 PM UTC.</p> <pre><code> &lt;p&gt; If you specify
+     * &lt;code&gt;startTime&lt;/code&gt;, then you must also specify
+     * &lt;code&gt;period&lt;/code&gt; or &lt;code&gt;endTime&lt;/code&gt;, but not
+     * both. &lt;/p&gt; </code></pre>
      */
     inline GetProfileRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
@@ -92,6 +82,55 @@ namespace Model
      * are configured, tested, and assessed. </p>
      */
     inline CreateImageRequest& WithImageRecipeArn(const char* value) { SetImageRecipeArn(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that defines how
+     * images are configured and tested.</p>
+     */
+    inline const Aws::String& GetContainerRecipeArn() const{ return m_containerRecipeArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that defines how
+     * images are configured and tested.</p>
+     */
+    inline bool ContainerRecipeArnHasBeenSet() const { return m_containerRecipeArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that defines how
+     * images are configured and tested.</p>
+     */
+    inline void SetContainerRecipeArn(const Aws::String& value) { m_containerRecipeArnHasBeenSet = true; m_containerRecipeArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that defines how
+     * images are configured and tested.</p>
+     */
+    inline void SetContainerRecipeArn(Aws::String&& value) { m_containerRecipeArnHasBeenSet = true; m_containerRecipeArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that defines how
+     * images are configured and tested.</p>
+     */
+    inline void SetContainerRecipeArn(const char* value) { m_containerRecipeArnHasBeenSet = true; m_containerRecipeArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that defines how
+     * images are configured and tested.</p>
+     */
+    inline CreateImageRequest& WithContainerRecipeArn(const Aws::String& value) { SetContainerRecipeArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that defines how
+     * images are configured and tested.</p>
+     */
+    inline CreateImageRequest& WithContainerRecipeArn(Aws::String&& value) { SetContainerRecipeArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that defines how
+     * images are configured and tested.</p>
+     */
+    inline CreateImageRequest& WithContainerRecipeArn(const char* value) { SetContainerRecipeArn(value); return *this;}
 
 
     /**
@@ -366,6 +405,9 @@ namespace Model
 
     Aws::String m_imageRecipeArn;
     bool m_imageRecipeArnHasBeenSet;
+
+    Aws::String m_containerRecipeArn;
+    bool m_containerRecipeArnHasBeenSet;
 
     Aws::String m_distributionConfigurationArn;
     bool m_distributionConfigurationArnHasBeenSet;

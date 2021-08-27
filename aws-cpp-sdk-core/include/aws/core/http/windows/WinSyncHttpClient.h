@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
@@ -48,13 +38,6 @@ namespace Aws
             /**
              * Makes request and receives response synchronously
              */
-            std::shared_ptr<HttpResponse> MakeRequest(HttpRequest& request,
-                    Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
-                    Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override;
-
-            /**
-             * Makes request and receives response synchronously
-             */
             std::shared_ptr<HttpResponse> MakeRequest(const std::shared_ptr<HttpRequest>& request,
                     Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
                     Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override;
@@ -83,19 +66,24 @@ namespace Aws
             /**
              * Return call from implementation specific openrequest call.
              */
-            void* AllocateWindowsHttpRequest(const Aws::Http::HttpRequest& request, void* connection) const;
+            void* AllocateWindowsHttpRequest(const std::shared_ptr<Aws::Http::HttpRequest>& request, void* connection) const;
+            /**
+             * Override any configuration on connection handle.
+             * The usage is override this function in the subclass to configure whatever you want on connection handle.
+             */
+            virtual void OverrideOptionsOnConnectionHandle(void*) const {}
+            /**
+             * Override any configuration on request handle.
+             * The usage is override this function in the subclass to configure whatever you want on request handle.
+             */
+            virtual void OverrideOptionsOnRequestHandle(void*) const {}
             /**
              * config flag for whether or not to tell apis to allow redirects.
              */
             bool m_allowRedirects;
+
         private:
-
-            void MakeRequestInternal(HttpRequest& request,
-                    std::shared_ptr<HttpResponse>& response,
-                    Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
-                    Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const;
-
-            virtual void* OpenRequest(const Aws::Http::HttpRequest& request, void* connection, const Aws::StringStream& ss) const = 0;
+            virtual void* OpenRequest(const std::shared_ptr<HttpRequest>& request, void* connection, const Aws::StringStream& ss) const = 0;
             virtual void DoAddHeaders(void* hHttpRequest, Aws::String& headerStr) const = 0;
             virtual uint64_t DoWriteData(void* hHttpRequest, char* streamBuffer, uint64_t bytesRead, bool isChunked) const = 0;
             virtual uint64_t FinalizeWriteData(void* hHttpRequest) const = 0;
@@ -105,10 +93,10 @@ namespace Aws
             virtual bool DoReadData(void* hHttpRequest, char* body, uint64_t size, uint64_t& read) const = 0;
             virtual void* GetClientModule() const = 0;
 
-            bool StreamPayloadToRequest(const HttpRequest& request, void* hHttpRequest, Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const;
+            bool StreamPayloadToRequest(const std::shared_ptr<HttpRequest>& request, void* hHttpRequest, Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const;
             void LogRequestInternalFailure() const;
-            bool BuildSuccessResponse(const Aws::Http::HttpRequest& request, std::shared_ptr<Aws::Http::HttpResponse>& response, void* hHttpRequest, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter) const;
-            void AddHeadersToRequest(const HttpRequest& request, void* hHttpRequest) const;
+            bool BuildSuccessResponse(const std::shared_ptr<HttpRequest>& request, std::shared_ptr<Aws::Http::HttpResponse>& response, void* hHttpRequest, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter) const;
+            void AddHeadersToRequest(const std::shared_ptr<HttpRequest>& request, void* hHttpRequest) const;
 
             void* m_openHandle;
             //we need control over the order in which this gets cleaned up

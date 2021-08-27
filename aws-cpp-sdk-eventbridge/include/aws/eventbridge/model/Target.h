@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
@@ -22,6 +12,10 @@
 #include <aws/eventbridge/model/EcsParameters.h>
 #include <aws/eventbridge/model/BatchParameters.h>
 #include <aws/eventbridge/model/SqsParameters.h>
+#include <aws/eventbridge/model/HttpParameters.h>
+#include <aws/eventbridge/model/RedshiftDataParameters.h>
+#include <aws/eventbridge/model/DeadLetterConfig.h>
+#include <aws/eventbridge/model/RetryPolicy.h>
 #include <utility>
 
 namespace Aws
@@ -600,6 +594,178 @@ namespace Model
      */
     inline Target& WithSqsParameters(SqsParameters&& value) { SetSqsParameters(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
+     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
+     * this parameter to specify headers, path parameter, query string keys/values as
+     * part of your target invoking request.</p>
+     */
+    inline const HttpParameters& GetHttpParameters() const{ return m_httpParameters; }
+
+    /**
+     * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
+     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
+     * this parameter to specify headers, path parameter, query string keys/values as
+     * part of your target invoking request.</p>
+     */
+    inline bool HttpParametersHasBeenSet() const { return m_httpParametersHasBeenSet; }
+
+    /**
+     * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
+     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
+     * this parameter to specify headers, path parameter, query string keys/values as
+     * part of your target invoking request.</p>
+     */
+    inline void SetHttpParameters(const HttpParameters& value) { m_httpParametersHasBeenSet = true; m_httpParameters = value; }
+
+    /**
+     * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
+     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
+     * this parameter to specify headers, path parameter, query string keys/values as
+     * part of your target invoking request.</p>
+     */
+    inline void SetHttpParameters(HttpParameters&& value) { m_httpParametersHasBeenSet = true; m_httpParameters = std::move(value); }
+
+    /**
+     * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
+     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
+     * this parameter to specify headers, path parameter, query string keys/values as
+     * part of your target invoking request.</p>
+     */
+    inline Target& WithHttpParameters(const HttpParameters& value) { SetHttpParameters(value); return *this;}
+
+    /**
+     * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
+     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
+     * this parameter to specify headers, path parameter, query string keys/values as
+     * part of your target invoking request.</p>
+     */
+    inline Target& WithHttpParameters(HttpParameters&& value) { SetHttpParameters(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains the Redshift Data API parameters to use when the target is a
+     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
+     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
+     * based on EventBridge events.</p>
+     */
+    inline const RedshiftDataParameters& GetRedshiftDataParameters() const{ return m_redshiftDataParameters; }
+
+    /**
+     * <p>Contains the Redshift Data API parameters to use when the target is a
+     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
+     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
+     * based on EventBridge events.</p>
+     */
+    inline bool RedshiftDataParametersHasBeenSet() const { return m_redshiftDataParametersHasBeenSet; }
+
+    /**
+     * <p>Contains the Redshift Data API parameters to use when the target is a
+     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
+     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
+     * based on EventBridge events.</p>
+     */
+    inline void SetRedshiftDataParameters(const RedshiftDataParameters& value) { m_redshiftDataParametersHasBeenSet = true; m_redshiftDataParameters = value; }
+
+    /**
+     * <p>Contains the Redshift Data API parameters to use when the target is a
+     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
+     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
+     * based on EventBridge events.</p>
+     */
+    inline void SetRedshiftDataParameters(RedshiftDataParameters&& value) { m_redshiftDataParametersHasBeenSet = true; m_redshiftDataParameters = std::move(value); }
+
+    /**
+     * <p>Contains the Redshift Data API parameters to use when the target is a
+     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
+     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
+     * based on EventBridge events.</p>
+     */
+    inline Target& WithRedshiftDataParameters(const RedshiftDataParameters& value) { SetRedshiftDataParameters(value); return *this;}
+
+    /**
+     * <p>Contains the Redshift Data API parameters to use when the target is a
+     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
+     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
+     * based on EventBridge events.</p>
+     */
+    inline Target& WithRedshiftDataParameters(RedshiftDataParameters&& value) { SetRedshiftDataParameters(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The <code>DeadLetterConfig</code> that defines the target queue to send
+     * dead-letter queue events to.</p>
+     */
+    inline const DeadLetterConfig& GetDeadLetterConfig() const{ return m_deadLetterConfig; }
+
+    /**
+     * <p>The <code>DeadLetterConfig</code> that defines the target queue to send
+     * dead-letter queue events to.</p>
+     */
+    inline bool DeadLetterConfigHasBeenSet() const { return m_deadLetterConfigHasBeenSet; }
+
+    /**
+     * <p>The <code>DeadLetterConfig</code> that defines the target queue to send
+     * dead-letter queue events to.</p>
+     */
+    inline void SetDeadLetterConfig(const DeadLetterConfig& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
+
+    /**
+     * <p>The <code>DeadLetterConfig</code> that defines the target queue to send
+     * dead-letter queue events to.</p>
+     */
+    inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = std::move(value); }
+
+    /**
+     * <p>The <code>DeadLetterConfig</code> that defines the target queue to send
+     * dead-letter queue events to.</p>
+     */
+    inline Target& WithDeadLetterConfig(const DeadLetterConfig& value) { SetDeadLetterConfig(value); return *this;}
+
+    /**
+     * <p>The <code>DeadLetterConfig</code> that defines the target queue to send
+     * dead-letter queue events to.</p>
+     */
+    inline Target& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The <code>RetryPolicy</code> object that contains the retry policy
+     * configuration to use for the dead-letter queue.</p>
+     */
+    inline const RetryPolicy& GetRetryPolicy() const{ return m_retryPolicy; }
+
+    /**
+     * <p>The <code>RetryPolicy</code> object that contains the retry policy
+     * configuration to use for the dead-letter queue.</p>
+     */
+    inline bool RetryPolicyHasBeenSet() const { return m_retryPolicyHasBeenSet; }
+
+    /**
+     * <p>The <code>RetryPolicy</code> object that contains the retry policy
+     * configuration to use for the dead-letter queue.</p>
+     */
+    inline void SetRetryPolicy(const RetryPolicy& value) { m_retryPolicyHasBeenSet = true; m_retryPolicy = value; }
+
+    /**
+     * <p>The <code>RetryPolicy</code> object that contains the retry policy
+     * configuration to use for the dead-letter queue.</p>
+     */
+    inline void SetRetryPolicy(RetryPolicy&& value) { m_retryPolicyHasBeenSet = true; m_retryPolicy = std::move(value); }
+
+    /**
+     * <p>The <code>RetryPolicy</code> object that contains the retry policy
+     * configuration to use for the dead-letter queue.</p>
+     */
+    inline Target& WithRetryPolicy(const RetryPolicy& value) { SetRetryPolicy(value); return *this;}
+
+    /**
+     * <p>The <code>RetryPolicy</code> object that contains the retry policy
+     * configuration to use for the dead-letter queue.</p>
+     */
+    inline Target& WithRetryPolicy(RetryPolicy&& value) { SetRetryPolicy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -634,6 +800,18 @@ namespace Model
 
     SqsParameters m_sqsParameters;
     bool m_sqsParametersHasBeenSet;
+
+    HttpParameters m_httpParameters;
+    bool m_httpParametersHasBeenSet;
+
+    RedshiftDataParameters m_redshiftDataParameters;
+    bool m_redshiftDataParametersHasBeenSet;
+
+    DeadLetterConfig m_deadLetterConfig;
+    bool m_deadLetterConfigHasBeenSet;
+
+    RetryPolicy m_retryPolicy;
+    bool m_retryPolicyHasBeenSet;
   };
 
 } // namespace Model

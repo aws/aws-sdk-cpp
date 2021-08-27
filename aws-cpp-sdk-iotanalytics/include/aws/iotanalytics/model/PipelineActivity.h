@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
@@ -349,32 +339,32 @@ namespace Model
 
 
     /**
-     * <p>Adds information from the AWS IoT Device Shadows service to a message.</p>
+     * <p>Adds information from the AWS IoT Device Shadow service to a message.</p>
      */
     inline const DeviceShadowEnrichActivity& GetDeviceShadowEnrich() const{ return m_deviceShadowEnrich; }
 
     /**
-     * <p>Adds information from the AWS IoT Device Shadows service to a message.</p>
+     * <p>Adds information from the AWS IoT Device Shadow service to a message.</p>
      */
     inline bool DeviceShadowEnrichHasBeenSet() const { return m_deviceShadowEnrichHasBeenSet; }
 
     /**
-     * <p>Adds information from the AWS IoT Device Shadows service to a message.</p>
+     * <p>Adds information from the AWS IoT Device Shadow service to a message.</p>
      */
     inline void SetDeviceShadowEnrich(const DeviceShadowEnrichActivity& value) { m_deviceShadowEnrichHasBeenSet = true; m_deviceShadowEnrich = value; }
 
     /**
-     * <p>Adds information from the AWS IoT Device Shadows service to a message.</p>
+     * <p>Adds information from the AWS IoT Device Shadow service to a message.</p>
      */
     inline void SetDeviceShadowEnrich(DeviceShadowEnrichActivity&& value) { m_deviceShadowEnrichHasBeenSet = true; m_deviceShadowEnrich = std::move(value); }
 
     /**
-     * <p>Adds information from the AWS IoT Device Shadows service to a message.</p>
+     * <p>Adds information from the AWS IoT Device Shadow service to a message.</p>
      */
     inline PipelineActivity& WithDeviceShadowEnrich(const DeviceShadowEnrichActivity& value) { SetDeviceShadowEnrich(value); return *this;}
 
     /**
-     * <p>Adds information from the AWS IoT Device Shadows service to a message.</p>
+     * <p>Adds information from the AWS IoT Device Shadow service to a message.</p>
      */
     inline PipelineActivity& WithDeviceShadowEnrich(DeviceShadowEnrichActivity&& value) { SetDeviceShadowEnrich(std::move(value)); return *this;}
 

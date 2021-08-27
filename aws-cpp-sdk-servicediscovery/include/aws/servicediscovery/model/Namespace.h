@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
@@ -183,38 +173,74 @@ namespace Model
 
 
     /**
-     * <p>The type of the namespace. Valid values are <code>DNS_PUBLIC</code> and
-     * <code>DNS_PRIVATE</code>.</p>
+     * <p>The type of the namespace. The methods for discovering instances depends on
+     * the value that you specify:</p> <ul> <li> <p> <code>HTTP</code>: Instances can
+     * be discovered only programmatically, using the AWS Cloud Map
+     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PUBLIC</code>:
+     * Instances can be discovered using public DNS queries and using the
+     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PRIVATE</code>:
+     * Instances can be discovered using DNS queries in VPCs and using the
+     * <code>DiscoverInstances</code> API.</p> </li> </ul>
      */
     inline const NamespaceType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the namespace. Valid values are <code>DNS_PUBLIC</code> and
-     * <code>DNS_PRIVATE</code>.</p>
+     * <p>The type of the namespace. The methods for discovering instances depends on
+     * the value that you specify:</p> <ul> <li> <p> <code>HTTP</code>: Instances can
+     * be discovered only programmatically, using the AWS Cloud Map
+     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PUBLIC</code>:
+     * Instances can be discovered using public DNS queries and using the
+     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PRIVATE</code>:
+     * Instances can be discovered using DNS queries in VPCs and using the
+     * <code>DiscoverInstances</code> API.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the namespace. Valid values are <code>DNS_PUBLIC</code> and
-     * <code>DNS_PRIVATE</code>.</p>
+     * <p>The type of the namespace. The methods for discovering instances depends on
+     * the value that you specify:</p> <ul> <li> <p> <code>HTTP</code>: Instances can
+     * be discovered only programmatically, using the AWS Cloud Map
+     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PUBLIC</code>:
+     * Instances can be discovered using public DNS queries and using the
+     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PRIVATE</code>:
+     * Instances can be discovered using DNS queries in VPCs and using the
+     * <code>DiscoverInstances</code> API.</p> </li> </ul>
      */
     inline void SetType(const NamespaceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the namespace. Valid values are <code>DNS_PUBLIC</code> and
-     * <code>DNS_PRIVATE</code>.</p>
+     * <p>The type of the namespace. The methods for discovering instances depends on
+     * the value that you specify:</p> <ul> <li> <p> <code>HTTP</code>: Instances can
+     * be discovered only programmatically, using the AWS Cloud Map
+     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PUBLIC</code>:
+     * Instances can be discovered using public DNS queries and using the
+     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PRIVATE</code>:
+     * Instances can be discovered using DNS queries in VPCs and using the
+     * <code>DiscoverInstances</code> API.</p> </li> </ul>
      */
     inline void SetType(NamespaceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the namespace. Valid values are <code>DNS_PUBLIC</code> and
-     * <code>DNS_PRIVATE</code>.</p>
+     * <p>The type of the namespace. The methods for discovering instances depends on
+     * the value that you specify:</p> <ul> <li> <p> <code>HTTP</code>: Instances can
+     * be discovered only programmatically, using the AWS Cloud Map
+     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PUBLIC</code>:
+     * Instances can be discovered using public DNS queries and using the
+     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PRIVATE</code>:
+     * Instances can be discovered using DNS queries in VPCs and using the
+     * <code>DiscoverInstances</code> API.</p> </li> </ul>
      */
     inline Namespace& WithType(const NamespaceType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the namespace. Valid values are <code>DNS_PUBLIC</code> and
-     * <code>DNS_PRIVATE</code>.</p>
+     * <p>The type of the namespace. The methods for discovering instances depends on
+     * the value that you specify:</p> <ul> <li> <p> <code>HTTP</code>: Instances can
+     * be discovered only programmatically, using the AWS Cloud Map
+     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PUBLIC</code>:
+     * Instances can be discovered using public DNS queries and using the
+     * <code>DiscoverInstances</code> API.</p> </li> <li> <p> <code>DNS_PRIVATE</code>:
+     * Instances can be discovered using DNS queries in VPCs and using the
+     * <code>DiscoverInstances</code> API.</p> </li> </ul>
      */
     inline Namespace& WithType(NamespaceType&& value) { SetType(std::move(value)); return *this;}
 

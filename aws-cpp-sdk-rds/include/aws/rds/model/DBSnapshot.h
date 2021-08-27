@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/ProcessorFeature.h>
+#include <aws/rds/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -145,37 +136,37 @@ namespace Model
 
 
     /**
-     * <p>Provides the time when the snapshot was taken, in Universal Coordinated Time
+     * <p>Specifies when the snapshot was taken in Coordinated Universal Time
      * (UTC).</p>
      */
     inline const Aws::Utils::DateTime& GetSnapshotCreateTime() const{ return m_snapshotCreateTime; }
 
     /**
-     * <p>Provides the time when the snapshot was taken, in Universal Coordinated Time
+     * <p>Specifies when the snapshot was taken in Coordinated Universal Time
      * (UTC).</p>
      */
     inline bool SnapshotCreateTimeHasBeenSet() const { return m_snapshotCreateTimeHasBeenSet; }
 
     /**
-     * <p>Provides the time when the snapshot was taken, in Universal Coordinated Time
+     * <p>Specifies when the snapshot was taken in Coordinated Universal Time
      * (UTC).</p>
      */
     inline void SetSnapshotCreateTime(const Aws::Utils::DateTime& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
 
     /**
-     * <p>Provides the time when the snapshot was taken, in Universal Coordinated Time
+     * <p>Specifies when the snapshot was taken in Coordinated Universal Time
      * (UTC).</p>
      */
     inline void SetSnapshotCreateTime(Aws::Utils::DateTime&& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = std::move(value); }
 
     /**
-     * <p>Provides the time when the snapshot was taken, in Universal Coordinated Time
+     * <p>Specifies when the snapshot was taken in Coordinated Universal Time
      * (UTC).</p>
      */
     inline DBSnapshot& WithSnapshotCreateTime(const Aws::Utils::DateTime& value) { SetSnapshotCreateTime(value); return *this;}
 
     /**
-     * <p>Provides the time when the snapshot was taken, in Universal Coordinated Time
+     * <p>Specifies when the snapshot was taken in Coordinated Universal Time
      * (UTC).</p>
      */
     inline DBSnapshot& WithSnapshotCreateTime(Aws::Utils::DateTime&& value) { SetSnapshotCreateTime(std::move(value)); return *this;}
@@ -400,38 +391,38 @@ namespace Model
 
 
     /**
-     * <p>Specifies the time when the snapshot was taken, in Universal Coordinated Time
-     * (UTC).</p>
+     * <p>Specifies the time in Coordinated Universal Time (UTC) when the DB instance,
+     * from which the snapshot was taken, was created.</p>
      */
     inline const Aws::Utils::DateTime& GetInstanceCreateTime() const{ return m_instanceCreateTime; }
 
     /**
-     * <p>Specifies the time when the snapshot was taken, in Universal Coordinated Time
-     * (UTC).</p>
+     * <p>Specifies the time in Coordinated Universal Time (UTC) when the DB instance,
+     * from which the snapshot was taken, was created.</p>
      */
     inline bool InstanceCreateTimeHasBeenSet() const { return m_instanceCreateTimeHasBeenSet; }
 
     /**
-     * <p>Specifies the time when the snapshot was taken, in Universal Coordinated Time
-     * (UTC).</p>
+     * <p>Specifies the time in Coordinated Universal Time (UTC) when the DB instance,
+     * from which the snapshot was taken, was created.</p>
      */
     inline void SetInstanceCreateTime(const Aws::Utils::DateTime& value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = value; }
 
     /**
-     * <p>Specifies the time when the snapshot was taken, in Universal Coordinated Time
-     * (UTC).</p>
+     * <p>Specifies the time in Coordinated Universal Time (UTC) when the DB instance,
+     * from which the snapshot was taken, was created.</p>
      */
     inline void SetInstanceCreateTime(Aws::Utils::DateTime&& value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = std::move(value); }
 
     /**
-     * <p>Specifies the time when the snapshot was taken, in Universal Coordinated Time
-     * (UTC).</p>
+     * <p>Specifies the time in Coordinated Universal Time (UTC) when the DB instance,
+     * from which the snapshot was taken, was created.</p>
      */
     inline DBSnapshot& WithInstanceCreateTime(const Aws::Utils::DateTime& value) { SetInstanceCreateTime(value); return *this;}
 
     /**
-     * <p>Specifies the time when the snapshot was taken, in Universal Coordinated Time
-     * (UTC).</p>
+     * <p>Specifies the time in Coordinated Universal Time (UTC) when the DB instance,
+     * from which the snapshot was taken, was created.</p>
      */
     inline DBSnapshot& WithInstanceCreateTime(Aws::Utils::DateTime&& value) { SetInstanceCreateTime(std::move(value)); return *this;}
 
@@ -890,49 +881,57 @@ namespace Model
 
     /**
      * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB snapshot. </p>
+     * encrypted DB snapshot. </p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB snapshot. </p>
+     * encrypted DB snapshot. </p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB snapshot. </p>
+     * encrypted DB snapshot. </p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB snapshot. </p>
+     * encrypted DB snapshot. </p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB snapshot. </p>
+     * encrypted DB snapshot. </p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB snapshot. </p>
+     * encrypted DB snapshot. </p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline DBSnapshot& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB snapshot. </p>
+     * encrypted DB snapshot. </p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline DBSnapshot& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB snapshot. </p>
+     * encrypted DB snapshot. </p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline DBSnapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -1165,6 +1164,31 @@ namespace Model
      */
     inline DBSnapshot& WithDbiResourceId(const char* value) { SetDbiResourceId(value); return *this;}
 
+
+    
+    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+
+    
+    inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
+
+    
+    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
+
+    
+    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
+
+    
+    inline DBSnapshot& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
+
+    
+    inline DBSnapshot& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
+
+    
+    inline DBSnapshot& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
+
+    
+    inline DBSnapshot& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_dBSnapshotIdentifier;
@@ -1250,6 +1274,9 @@ namespace Model
 
     Aws::String m_dbiResourceId;
     bool m_dbiResourceIdHasBeenSet;
+
+    Aws::Vector<Tag> m_tagList;
+    bool m_tagListHasBeenSet;
   };
 
 } // namespace Model

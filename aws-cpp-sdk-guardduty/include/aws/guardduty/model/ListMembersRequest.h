@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
@@ -180,66 +170,50 @@ namespace Model
 
 
     /**
-     * <p>Specifies what member accounts the response includes based on their
-     * relationship status with the master account. The default value is "true". If set
-     * to "false" the response includes all existing member accounts (including members
-     * who haven't been invited yet or have been disassociated).</p>
+     * <p>Specifies whether to only return associated members or to return all members
+     * (including members who haven't been invited yet or have been disassociated).</p>
      */
     inline const Aws::String& GetOnlyAssociated() const{ return m_onlyAssociated; }
 
     /**
-     * <p>Specifies what member accounts the response includes based on their
-     * relationship status with the master account. The default value is "true". If set
-     * to "false" the response includes all existing member accounts (including members
-     * who haven't been invited yet or have been disassociated).</p>
+     * <p>Specifies whether to only return associated members or to return all members
+     * (including members who haven't been invited yet or have been disassociated).</p>
      */
     inline bool OnlyAssociatedHasBeenSet() const { return m_onlyAssociatedHasBeenSet; }
 
     /**
-     * <p>Specifies what member accounts the response includes based on their
-     * relationship status with the master account. The default value is "true". If set
-     * to "false" the response includes all existing member accounts (including members
-     * who haven't been invited yet or have been disassociated).</p>
+     * <p>Specifies whether to only return associated members or to return all members
+     * (including members who haven't been invited yet or have been disassociated).</p>
      */
     inline void SetOnlyAssociated(const Aws::String& value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated = value; }
 
     /**
-     * <p>Specifies what member accounts the response includes based on their
-     * relationship status with the master account. The default value is "true". If set
-     * to "false" the response includes all existing member accounts (including members
-     * who haven't been invited yet or have been disassociated).</p>
+     * <p>Specifies whether to only return associated members or to return all members
+     * (including members who haven't been invited yet or have been disassociated).</p>
      */
     inline void SetOnlyAssociated(Aws::String&& value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated = std::move(value); }
 
     /**
-     * <p>Specifies what member accounts the response includes based on their
-     * relationship status with the master account. The default value is "true". If set
-     * to "false" the response includes all existing member accounts (including members
-     * who haven't been invited yet or have been disassociated).</p>
+     * <p>Specifies whether to only return associated members or to return all members
+     * (including members who haven't been invited yet or have been disassociated).</p>
      */
     inline void SetOnlyAssociated(const char* value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated.assign(value); }
 
     /**
-     * <p>Specifies what member accounts the response includes based on their
-     * relationship status with the master account. The default value is "true". If set
-     * to "false" the response includes all existing member accounts (including members
-     * who haven't been invited yet or have been disassociated).</p>
+     * <p>Specifies whether to only return associated members or to return all members
+     * (including members who haven't been invited yet or have been disassociated).</p>
      */
     inline ListMembersRequest& WithOnlyAssociated(const Aws::String& value) { SetOnlyAssociated(value); return *this;}
 
     /**
-     * <p>Specifies what member accounts the response includes based on their
-     * relationship status with the master account. The default value is "true". If set
-     * to "false" the response includes all existing member accounts (including members
-     * who haven't been invited yet or have been disassociated).</p>
+     * <p>Specifies whether to only return associated members or to return all members
+     * (including members who haven't been invited yet or have been disassociated).</p>
      */
     inline ListMembersRequest& WithOnlyAssociated(Aws::String&& value) { SetOnlyAssociated(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies what member accounts the response includes based on their
-     * relationship status with the master account. The default value is "true". If set
-     * to "false" the response includes all existing member accounts (including members
-     * who haven't been invited yet or have been disassociated).</p>
+     * <p>Specifies whether to only return associated members or to return all members
+     * (including members who haven't been invited yet or have been disassociated).</p>
      */
     inline ListMembersRequest& WithOnlyAssociated(const char* value) { SetOnlyAssociated(value); return *this;}
 

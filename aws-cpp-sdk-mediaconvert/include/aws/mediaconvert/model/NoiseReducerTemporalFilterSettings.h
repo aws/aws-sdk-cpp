@@ -1,20 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/NoiseFilterPostTemporalSharpening.h>
+#include <utility>
 
 namespace Aws
 {
@@ -72,6 +64,67 @@ namespace Model
      * aggressively and creates better VQ for low bitrate outputs.
      */
     inline NoiseReducerTemporalFilterSettings& WithAggressiveMode(int value) { SetAggressiveMode(value); return *this;}
+
+
+    /**
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you
+     * can use this setting to apply sharpening. The default behavior, Auto (AUTO),
+     * allows the transcoder to determine whether to apply filtering, depending on
+     * input type and quality. When you set Noise reducer to Temporal, your output
+     * bandwidth is reduced. When Post temporal sharpening is also enabled, that
+     * bandwidth reduction is smaller.
+     */
+    inline const NoiseFilterPostTemporalSharpening& GetPostTemporalSharpening() const{ return m_postTemporalSharpening; }
+
+    /**
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you
+     * can use this setting to apply sharpening. The default behavior, Auto (AUTO),
+     * allows the transcoder to determine whether to apply filtering, depending on
+     * input type and quality. When you set Noise reducer to Temporal, your output
+     * bandwidth is reduced. When Post temporal sharpening is also enabled, that
+     * bandwidth reduction is smaller.
+     */
+    inline bool PostTemporalSharpeningHasBeenSet() const { return m_postTemporalSharpeningHasBeenSet; }
+
+    /**
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you
+     * can use this setting to apply sharpening. The default behavior, Auto (AUTO),
+     * allows the transcoder to determine whether to apply filtering, depending on
+     * input type and quality. When you set Noise reducer to Temporal, your output
+     * bandwidth is reduced. When Post temporal sharpening is also enabled, that
+     * bandwidth reduction is smaller.
+     */
+    inline void SetPostTemporalSharpening(const NoiseFilterPostTemporalSharpening& value) { m_postTemporalSharpeningHasBeenSet = true; m_postTemporalSharpening = value; }
+
+    /**
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you
+     * can use this setting to apply sharpening. The default behavior, Auto (AUTO),
+     * allows the transcoder to determine whether to apply filtering, depending on
+     * input type and quality. When you set Noise reducer to Temporal, your output
+     * bandwidth is reduced. When Post temporal sharpening is also enabled, that
+     * bandwidth reduction is smaller.
+     */
+    inline void SetPostTemporalSharpening(NoiseFilterPostTemporalSharpening&& value) { m_postTemporalSharpeningHasBeenSet = true; m_postTemporalSharpening = std::move(value); }
+
+    /**
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you
+     * can use this setting to apply sharpening. The default behavior, Auto (AUTO),
+     * allows the transcoder to determine whether to apply filtering, depending on
+     * input type and quality. When you set Noise reducer to Temporal, your output
+     * bandwidth is reduced. When Post temporal sharpening is also enabled, that
+     * bandwidth reduction is smaller.
+     */
+    inline NoiseReducerTemporalFilterSettings& WithPostTemporalSharpening(const NoiseFilterPostTemporalSharpening& value) { SetPostTemporalSharpening(value); return *this;}
+
+    /**
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you
+     * can use this setting to apply sharpening. The default behavior, Auto (AUTO),
+     * allows the transcoder to determine whether to apply filtering, depending on
+     * input type and quality. When you set Noise reducer to Temporal, your output
+     * bandwidth is reduced. When Post temporal sharpening is also enabled, that
+     * bandwidth reduction is smaller.
+     */
+    inline NoiseReducerTemporalFilterSettings& WithPostTemporalSharpening(NoiseFilterPostTemporalSharpening&& value) { SetPostTemporalSharpening(std::move(value)); return *this;}
 
 
     /**
@@ -143,6 +196,9 @@ namespace Model
 
     int m_aggressiveMode;
     bool m_aggressiveModeHasBeenSet;
+
+    NoiseFilterPostTemporalSharpening m_postTemporalSharpening;
+    bool m_postTemporalSharpeningHasBeenSet;
 
     int m_speed;
     bool m_speedHasBeenSet;

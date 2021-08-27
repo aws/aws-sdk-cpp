@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticfilesystem/model/MountTargetDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -38,7 +28,8 @@ MountTargetDescription::MountTargetDescription() :
     m_ipAddressHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
-    m_availabilityZoneNameHasBeenSet(false)
+    m_availabilityZoneNameHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -52,7 +43,8 @@ MountTargetDescription::MountTargetDescription(JsonView jsonValue) :
     m_ipAddressHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
-    m_availabilityZoneNameHasBeenSet(false)
+    m_availabilityZoneNameHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -122,6 +114,13 @@ MountTargetDescription& MountTargetDescription::operator =(JsonView jsonValue)
     m_availabilityZoneNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VpcId"))
+  {
+    m_vpcId = jsonValue.GetString("VpcId");
+
+    m_vpcIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -179,6 +178,12 @@ JsonValue MountTargetDescription::Jsonize() const
   if(m_availabilityZoneNameHasBeenSet)
   {
    payload.WithString("AvailabilityZoneName", m_availabilityZoneName);
+
+  }
+
+  if(m_vpcIdHasBeenSet)
+  {
+   payload.WithString("VpcId", m_vpcId);
 
   }
 

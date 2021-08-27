@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/application-autoscaling/model/ServiceNamespace.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -41,6 +31,7 @@ namespace Aws
         static const int comprehend_HASH = HashingUtils::HashString("comprehend");
         static const int lambda_HASH = HashingUtils::HashString("lambda");
         static const int cassandra_HASH = HashingUtils::HashString("cassandra");
+        static const int kafka_HASH = HashingUtils::HashString("kafka");
 
 
         ServiceNamespace GetServiceNamespaceForName(const Aws::String& name)
@@ -90,6 +81,10 @@ namespace Aws
           {
             return ServiceNamespace::cassandra;
           }
+          else if (hashCode == kafka_HASH)
+          {
+            return ServiceNamespace::kafka;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -126,6 +121,8 @@ namespace Aws
             return "lambda";
           case ServiceNamespace::cassandra:
             return "cassandra";
+          case ServiceNamespace::kafka:
+            return "kafka";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

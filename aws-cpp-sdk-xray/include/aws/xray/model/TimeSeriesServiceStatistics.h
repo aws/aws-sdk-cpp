@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/xray/XRay_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/xray/model/EdgeStatistics.h>
 #include <aws/xray/model/ServiceStatistics.h>
+#include <aws/xray/model/ForecastStatistics.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/xray/model/HistogramEntry.h>
 #include <utility>
@@ -121,6 +112,37 @@ namespace Model
 
 
     /**
+     * <p>The forecasted high and low fault count values.</p>
+     */
+    inline const ForecastStatistics& GetServiceForecastStatistics() const{ return m_serviceForecastStatistics; }
+
+    /**
+     * <p>The forecasted high and low fault count values.</p>
+     */
+    inline bool ServiceForecastStatisticsHasBeenSet() const { return m_serviceForecastStatisticsHasBeenSet; }
+
+    /**
+     * <p>The forecasted high and low fault count values.</p>
+     */
+    inline void SetServiceForecastStatistics(const ForecastStatistics& value) { m_serviceForecastStatisticsHasBeenSet = true; m_serviceForecastStatistics = value; }
+
+    /**
+     * <p>The forecasted high and low fault count values.</p>
+     */
+    inline void SetServiceForecastStatistics(ForecastStatistics&& value) { m_serviceForecastStatisticsHasBeenSet = true; m_serviceForecastStatistics = std::move(value); }
+
+    /**
+     * <p>The forecasted high and low fault count values.</p>
+     */
+    inline TimeSeriesServiceStatistics& WithServiceForecastStatistics(const ForecastStatistics& value) { SetServiceForecastStatistics(value); return *this;}
+
+    /**
+     * <p>The forecasted high and low fault count values.</p>
+     */
+    inline TimeSeriesServiceStatistics& WithServiceForecastStatistics(ForecastStatistics&& value) { SetServiceForecastStatistics(std::move(value)); return *this;}
+
+
+    /**
      * <p>The response time histogram for the selected entities.</p>
      */
     inline const Aws::Vector<HistogramEntry>& GetResponseTimeHistogram() const{ return m_responseTimeHistogram; }
@@ -170,6 +192,9 @@ namespace Model
 
     ServiceStatistics m_serviceSummaryStatistics;
     bool m_serviceSummaryStatisticsHasBeenSet;
+
+    ForecastStatistics m_serviceForecastStatistics;
+    bool m_serviceForecastStatisticsHasBeenSet;
 
     Aws::Vector<HistogramEntry> m_responseTimeHistogram;
     bool m_responseTimeHistogramHasBeenSet;

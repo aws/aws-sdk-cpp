@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/TrialComponentSourceDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,14 +21,16 @@ namespace Model
 TrialComponentSourceDetail::TrialComponentSourceDetail() : 
     m_sourceArnHasBeenSet(false),
     m_trainingJobHasBeenSet(false),
-    m_processingJobHasBeenSet(false)
+    m_processingJobHasBeenSet(false),
+    m_transformJobHasBeenSet(false)
 {
 }
 
 TrialComponentSourceDetail::TrialComponentSourceDetail(JsonView jsonValue) : 
     m_sourceArnHasBeenSet(false),
     m_trainingJobHasBeenSet(false),
-    m_processingJobHasBeenSet(false)
+    m_processingJobHasBeenSet(false),
+    m_transformJobHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +58,13 @@ TrialComponentSourceDetail& TrialComponentSourceDetail::operator =(JsonView json
     m_processingJobHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TransformJob"))
+  {
+    m_transformJob = jsonValue.GetObject("TransformJob");
+
+    m_transformJobHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +87,12 @@ JsonValue TrialComponentSourceDetail::Jsonize() const
   if(m_processingJobHasBeenSet)
   {
    payload.WithObject("ProcessingJob", m_processingJob.Jsonize());
+
+  }
+
+  if(m_transformJobHasBeenSet)
+  {
+   payload.WithObject("TransformJob", m_transformJob.Jsonize());
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
@@ -36,8 +26,15 @@ namespace Model
 
   /**
    * <p>The user-defined preferences that will be applied when updating a provisioned
-   * product. Not all preferences are applicable to all provisioned product
-   * types.</p><p><h3>See Also:</h3>   <a
+   * product. Not all preferences are applicable to all provisioned product type</p>
+   * <p>One or more AWS accounts that will have access to the provisioned
+   * product.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+   * product type.</p> <p>The AWS accounts specified should be within the list of
+   * accounts in the <code>STACKSET</code> constraint. To get the list of accounts in
+   * the <code>STACKSET</code> constraint, use the
+   * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
+   * specified, the default value is all accounts from the <code>STACKSET</code>
+   * constraint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningPreferences">AWS
    * API Reference</a></p>
    */
@@ -51,109 +48,109 @@ namespace Model
 
 
     /**
-     * <p>One or more AWS accounts that will have access to the provisioned
-     * product.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
-     * product type.</p> <p>The AWS accounts specified should be within the list of
-     * accounts in the <code>STACKSET</code> constraint. To get the list of accounts in
-     * the <code>STACKSET</code> constraint, use the
+     * <p>One or more AWS accounts where the provisioned product will be available.</p>
+     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+     * <p>The specified accounts should be within the list of accounts from the
+     * <code>STACKSET</code> constraint. To get the list of accounts in the
+     * <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
-     * specified, the default value is all accounts from the <code>STACKSET</code>
+     * specified, the default value is all acounts from the <code>STACKSET</code>
      * constraint.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStackSetAccounts() const{ return m_stackSetAccounts; }
 
     /**
-     * <p>One or more AWS accounts that will have access to the provisioned
-     * product.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
-     * product type.</p> <p>The AWS accounts specified should be within the list of
-     * accounts in the <code>STACKSET</code> constraint. To get the list of accounts in
-     * the <code>STACKSET</code> constraint, use the
+     * <p>One or more AWS accounts where the provisioned product will be available.</p>
+     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+     * <p>The specified accounts should be within the list of accounts from the
+     * <code>STACKSET</code> constraint. To get the list of accounts in the
+     * <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
-     * specified, the default value is all accounts from the <code>STACKSET</code>
+     * specified, the default value is all acounts from the <code>STACKSET</code>
      * constraint.</p>
      */
     inline bool StackSetAccountsHasBeenSet() const { return m_stackSetAccountsHasBeenSet; }
 
     /**
-     * <p>One or more AWS accounts that will have access to the provisioned
-     * product.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
-     * product type.</p> <p>The AWS accounts specified should be within the list of
-     * accounts in the <code>STACKSET</code> constraint. To get the list of accounts in
-     * the <code>STACKSET</code> constraint, use the
+     * <p>One or more AWS accounts where the provisioned product will be available.</p>
+     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+     * <p>The specified accounts should be within the list of accounts from the
+     * <code>STACKSET</code> constraint. To get the list of accounts in the
+     * <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
-     * specified, the default value is all accounts from the <code>STACKSET</code>
+     * specified, the default value is all acounts from the <code>STACKSET</code>
      * constraint.</p>
      */
     inline void SetStackSetAccounts(const Aws::Vector<Aws::String>& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts = value; }
 
     /**
-     * <p>One or more AWS accounts that will have access to the provisioned
-     * product.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
-     * product type.</p> <p>The AWS accounts specified should be within the list of
-     * accounts in the <code>STACKSET</code> constraint. To get the list of accounts in
-     * the <code>STACKSET</code> constraint, use the
+     * <p>One or more AWS accounts where the provisioned product will be available.</p>
+     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+     * <p>The specified accounts should be within the list of accounts from the
+     * <code>STACKSET</code> constraint. To get the list of accounts in the
+     * <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
-     * specified, the default value is all accounts from the <code>STACKSET</code>
+     * specified, the default value is all acounts from the <code>STACKSET</code>
      * constraint.</p>
      */
     inline void SetStackSetAccounts(Aws::Vector<Aws::String>&& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts = std::move(value); }
 
     /**
-     * <p>One or more AWS accounts that will have access to the provisioned
-     * product.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
-     * product type.</p> <p>The AWS accounts specified should be within the list of
-     * accounts in the <code>STACKSET</code> constraint. To get the list of accounts in
-     * the <code>STACKSET</code> constraint, use the
+     * <p>One or more AWS accounts where the provisioned product will be available.</p>
+     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+     * <p>The specified accounts should be within the list of accounts from the
+     * <code>STACKSET</code> constraint. To get the list of accounts in the
+     * <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
-     * specified, the default value is all accounts from the <code>STACKSET</code>
+     * specified, the default value is all acounts from the <code>STACKSET</code>
      * constraint.</p>
      */
     inline ProvisioningPreferences& WithStackSetAccounts(const Aws::Vector<Aws::String>& value) { SetStackSetAccounts(value); return *this;}
 
     /**
-     * <p>One or more AWS accounts that will have access to the provisioned
-     * product.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
-     * product type.</p> <p>The AWS accounts specified should be within the list of
-     * accounts in the <code>STACKSET</code> constraint. To get the list of accounts in
-     * the <code>STACKSET</code> constraint, use the
+     * <p>One or more AWS accounts where the provisioned product will be available.</p>
+     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+     * <p>The specified accounts should be within the list of accounts from the
+     * <code>STACKSET</code> constraint. To get the list of accounts in the
+     * <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
-     * specified, the default value is all accounts from the <code>STACKSET</code>
+     * specified, the default value is all acounts from the <code>STACKSET</code>
      * constraint.</p>
      */
     inline ProvisioningPreferences& WithStackSetAccounts(Aws::Vector<Aws::String>&& value) { SetStackSetAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>One or more AWS accounts that will have access to the provisioned
-     * product.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
-     * product type.</p> <p>The AWS accounts specified should be within the list of
-     * accounts in the <code>STACKSET</code> constraint. To get the list of accounts in
-     * the <code>STACKSET</code> constraint, use the
+     * <p>One or more AWS accounts where the provisioned product will be available.</p>
+     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+     * <p>The specified accounts should be within the list of accounts from the
+     * <code>STACKSET</code> constraint. To get the list of accounts in the
+     * <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
-     * specified, the default value is all accounts from the <code>STACKSET</code>
+     * specified, the default value is all acounts from the <code>STACKSET</code>
      * constraint.</p>
      */
     inline ProvisioningPreferences& AddStackSetAccounts(const Aws::String& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts.push_back(value); return *this; }
 
     /**
-     * <p>One or more AWS accounts that will have access to the provisioned
-     * product.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
-     * product type.</p> <p>The AWS accounts specified should be within the list of
-     * accounts in the <code>STACKSET</code> constraint. To get the list of accounts in
-     * the <code>STACKSET</code> constraint, use the
+     * <p>One or more AWS accounts where the provisioned product will be available.</p>
+     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+     * <p>The specified accounts should be within the list of accounts from the
+     * <code>STACKSET</code> constraint. To get the list of accounts in the
+     * <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
-     * specified, the default value is all accounts from the <code>STACKSET</code>
+     * specified, the default value is all acounts from the <code>STACKSET</code>
      * constraint.</p>
      */
     inline ProvisioningPreferences& AddStackSetAccounts(Aws::String&& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more AWS accounts that will have access to the provisioned
-     * product.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
-     * product type.</p> <p>The AWS accounts specified should be within the list of
-     * accounts in the <code>STACKSET</code> constraint. To get the list of accounts in
-     * the <code>STACKSET</code> constraint, use the
+     * <p>One or more AWS accounts where the provisioned product will be available.</p>
+     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+     * <p>The specified accounts should be within the list of accounts from the
+     * <code>STACKSET</code> constraint. To get the list of accounts in the
+     * <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
-     * specified, the default value is all accounts from the <code>STACKSET</code>
+     * specified, the default value is all acounts from the <code>STACKSET</code>
      * constraint.</p>
      */
     inline ProvisioningPreferences& AddStackSetAccounts(const char* value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts.push_back(value); return *this; }

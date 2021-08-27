@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
@@ -36,8 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>In an <a>UpdateResolverRule</a> request, information about the changes that
-   * you want to make.</p><p><h3>See Also:</h3>   <a
+   * <p>In an <a
+   * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverRule.html">UpdateResolverRule</a>
+   * request, information about the changes that you want to make.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ResolverRuleConfig">AWS
    * API Reference</a></p>
    */
@@ -51,49 +43,49 @@ namespace Model
 
 
     /**
-     * <p>The new name for the resolver rule. The name that you specify appears in the
+     * <p>The new name for the Resolver rule. The name that you specify appears in the
      * Resolver dashboard in the Route 53 console. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The new name for the resolver rule. The name that you specify appears in the
+     * <p>The new name for the Resolver rule. The name that you specify appears in the
      * Resolver dashboard in the Route 53 console. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The new name for the resolver rule. The name that you specify appears in the
+     * <p>The new name for the Resolver rule. The name that you specify appears in the
      * Resolver dashboard in the Route 53 console. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The new name for the resolver rule. The name that you specify appears in the
+     * <p>The new name for the Resolver rule. The name that you specify appears in the
      * Resolver dashboard in the Route 53 console. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The new name for the resolver rule. The name that you specify appears in the
+     * <p>The new name for the Resolver rule. The name that you specify appears in the
      * Resolver dashboard in the Route 53 console. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The new name for the resolver rule. The name that you specify appears in the
+     * <p>The new name for the Resolver rule. The name that you specify appears in the
      * Resolver dashboard in the Route 53 console. </p>
      */
     inline ResolverRuleConfig& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The new name for the resolver rule. The name that you specify appears in the
+     * <p>The new name for the Resolver rule. The name that you specify appears in the
      * Resolver dashboard in the Route 53 console. </p>
      */
     inline ResolverRuleConfig& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The new name for the resolver rule. The name that you specify appears in the
+     * <p>The new name for the Resolver rule. The name that you specify appears in the
      * Resolver dashboard in the Route 53 console. </p>
      */
     inline ResolverRuleConfig& WithName(const char* value) { SetName(value); return *this;}
@@ -149,49 +141,49 @@ namespace Model
 
 
     /**
-     * <p>The ID of the new outbound resolver endpoint that you want to use to route
+     * <p>The ID of the new outbound Resolver endpoint that you want to use to route
      * DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
      */
     inline const Aws::String& GetResolverEndpointId() const{ return m_resolverEndpointId; }
 
     /**
-     * <p>The ID of the new outbound resolver endpoint that you want to use to route
+     * <p>The ID of the new outbound Resolver endpoint that you want to use to route
      * DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
      */
     inline bool ResolverEndpointIdHasBeenSet() const { return m_resolverEndpointIdHasBeenSet; }
 
     /**
-     * <p>The ID of the new outbound resolver endpoint that you want to use to route
+     * <p>The ID of the new outbound Resolver endpoint that you want to use to route
      * DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
      */
     inline void SetResolverEndpointId(const Aws::String& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = value; }
 
     /**
-     * <p>The ID of the new outbound resolver endpoint that you want to use to route
+     * <p>The ID of the new outbound Resolver endpoint that you want to use to route
      * DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
      */
     inline void SetResolverEndpointId(Aws::String&& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = std::move(value); }
 
     /**
-     * <p>The ID of the new outbound resolver endpoint that you want to use to route
+     * <p>The ID of the new outbound Resolver endpoint that you want to use to route
      * DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
      */
     inline void SetResolverEndpointId(const char* value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId.assign(value); }
 
     /**
-     * <p>The ID of the new outbound resolver endpoint that you want to use to route
+     * <p>The ID of the new outbound Resolver endpoint that you want to use to route
      * DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
      */
     inline ResolverRuleConfig& WithResolverEndpointId(const Aws::String& value) { SetResolverEndpointId(value); return *this;}
 
     /**
-     * <p>The ID of the new outbound resolver endpoint that you want to use to route
+     * <p>The ID of the new outbound Resolver endpoint that you want to use to route
      * DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
      */
     inline ResolverRuleConfig& WithResolverEndpointId(Aws::String&& value) { SetResolverEndpointId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the new outbound resolver endpoint that you want to use to route
+     * <p>The ID of the new outbound Resolver endpoint that you want to use to route
      * DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
      */
     inline ResolverRuleConfig& WithResolverEndpointId(const char* value) { SetResolverEndpointId(value); return *this;}

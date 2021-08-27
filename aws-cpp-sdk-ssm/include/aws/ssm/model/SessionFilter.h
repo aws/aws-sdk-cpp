@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -93,7 +83,8 @@ namespace Model
      * that status. Status values you can specify include:</p> <ul> <li>
      * <p>Connected</p> </li> <li> <p>Connecting</p> </li> <li> <p>Disconnected</p>
      * </li> <li> <p>Terminated</p> </li> <li> <p>Terminating</p> </li> <li>
-     * <p>Failed</p> </li> </ul> </li> </ul>
+     * <p>Failed</p> </li> </ul> </li> <li> <p>SessionId: Specify a session ID to
+     * return details about the session.</p> </li> </ul>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
@@ -110,7 +101,8 @@ namespace Model
      * that status. Status values you can specify include:</p> <ul> <li>
      * <p>Connected</p> </li> <li> <p>Connecting</p> </li> <li> <p>Disconnected</p>
      * </li> <li> <p>Terminated</p> </li> <li> <p>Terminating</p> </li> <li>
-     * <p>Failed</p> </li> </ul> </li> </ul>
+     * <p>Failed</p> </li> </ul> </li> <li> <p>SessionId: Specify a session ID to
+     * return details about the session.</p> </li> </ul>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
@@ -127,7 +119,8 @@ namespace Model
      * that status. Status values you can specify include:</p> <ul> <li>
      * <p>Connected</p> </li> <li> <p>Connecting</p> </li> <li> <p>Disconnected</p>
      * </li> <li> <p>Terminated</p> </li> <li> <p>Terminating</p> </li> <li>
-     * <p>Failed</p> </li> </ul> </li> </ul>
+     * <p>Failed</p> </li> </ul> </li> <li> <p>SessionId: Specify a session ID to
+     * return details about the session.</p> </li> </ul>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
@@ -144,7 +137,8 @@ namespace Model
      * that status. Status values you can specify include:</p> <ul> <li>
      * <p>Connected</p> </li> <li> <p>Connecting</p> </li> <li> <p>Disconnected</p>
      * </li> <li> <p>Terminated</p> </li> <li> <p>Terminating</p> </li> <li>
-     * <p>Failed</p> </li> </ul> </li> </ul>
+     * <p>Failed</p> </li> </ul> </li> <li> <p>SessionId: Specify a session ID to
+     * return details about the session.</p> </li> </ul>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
@@ -161,7 +155,8 @@ namespace Model
      * that status. Status values you can specify include:</p> <ul> <li>
      * <p>Connected</p> </li> <li> <p>Connecting</p> </li> <li> <p>Disconnected</p>
      * </li> <li> <p>Terminated</p> </li> <li> <p>Terminating</p> </li> <li>
-     * <p>Failed</p> </li> </ul> </li> </ul>
+     * <p>Failed</p> </li> </ul> </li> <li> <p>SessionId: Specify a session ID to
+     * return details about the session.</p> </li> </ul>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
@@ -178,7 +173,8 @@ namespace Model
      * that status. Status values you can specify include:</p> <ul> <li>
      * <p>Connected</p> </li> <li> <p>Connecting</p> </li> <li> <p>Disconnected</p>
      * </li> <li> <p>Terminated</p> </li> <li> <p>Terminating</p> </li> <li>
-     * <p>Failed</p> </li> </ul> </li> </ul>
+     * <p>Failed</p> </li> </ul> </li> <li> <p>SessionId: Specify a session ID to
+     * return details about the session.</p> </li> </ul>
      */
     inline SessionFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
@@ -195,7 +191,8 @@ namespace Model
      * that status. Status values you can specify include:</p> <ul> <li>
      * <p>Connected</p> </li> <li> <p>Connecting</p> </li> <li> <p>Disconnected</p>
      * </li> <li> <p>Terminated</p> </li> <li> <p>Terminating</p> </li> <li>
-     * <p>Failed</p> </li> </ul> </li> </ul>
+     * <p>Failed</p> </li> </ul> </li> <li> <p>SessionId: Specify a session ID to
+     * return details about the session.</p> </li> </ul>
      */
     inline SessionFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
@@ -212,7 +209,8 @@ namespace Model
      * that status. Status values you can specify include:</p> <ul> <li>
      * <p>Connected</p> </li> <li> <p>Connecting</p> </li> <li> <p>Disconnected</p>
      * </li> <li> <p>Terminated</p> </li> <li> <p>Terminating</p> </li> <li>
-     * <p>Failed</p> </li> </ul> </li> </ul>
+     * <p>Failed</p> </li> </ul> </li> <li> <p>SessionId: Specify a session ID to
+     * return details about the session.</p> </li> </ul>
      */
     inline SessionFilter& WithValue(const char* value) { SetValue(value); return *this;}
 

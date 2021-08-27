@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
@@ -110,50 +100,58 @@ namespace Model
 
 
     /**
-     * <p>The report ID returned by calling the
-     * <a>CreateCertificateAuthorityAuditReport</a> action.</p>
+     * <p>The report ID returned by calling the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a>
+     * action.</p>
      */
     inline const Aws::String& GetAuditReportId() const{ return m_auditReportId; }
 
     /**
-     * <p>The report ID returned by calling the
-     * <a>CreateCertificateAuthorityAuditReport</a> action.</p>
+     * <p>The report ID returned by calling the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a>
+     * action.</p>
      */
     inline bool AuditReportIdHasBeenSet() const { return m_auditReportIdHasBeenSet; }
 
     /**
-     * <p>The report ID returned by calling the
-     * <a>CreateCertificateAuthorityAuditReport</a> action.</p>
+     * <p>The report ID returned by calling the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a>
+     * action.</p>
      */
     inline void SetAuditReportId(const Aws::String& value) { m_auditReportIdHasBeenSet = true; m_auditReportId = value; }
 
     /**
-     * <p>The report ID returned by calling the
-     * <a>CreateCertificateAuthorityAuditReport</a> action.</p>
+     * <p>The report ID returned by calling the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a>
+     * action.</p>
      */
     inline void SetAuditReportId(Aws::String&& value) { m_auditReportIdHasBeenSet = true; m_auditReportId = std::move(value); }
 
     /**
-     * <p>The report ID returned by calling the
-     * <a>CreateCertificateAuthorityAuditReport</a> action.</p>
+     * <p>The report ID returned by calling the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a>
+     * action.</p>
      */
     inline void SetAuditReportId(const char* value) { m_auditReportIdHasBeenSet = true; m_auditReportId.assign(value); }
 
     /**
-     * <p>The report ID returned by calling the
-     * <a>CreateCertificateAuthorityAuditReport</a> action.</p>
+     * <p>The report ID returned by calling the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a>
+     * action.</p>
      */
     inline DescribeCertificateAuthorityAuditReportRequest& WithAuditReportId(const Aws::String& value) { SetAuditReportId(value); return *this;}
 
     /**
-     * <p>The report ID returned by calling the
-     * <a>CreateCertificateAuthorityAuditReport</a> action.</p>
+     * <p>The report ID returned by calling the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a>
+     * action.</p>
      */
     inline DescribeCertificateAuthorityAuditReportRequest& WithAuditReportId(Aws::String&& value) { SetAuditReportId(std::move(value)); return *this;}
 
     /**
-     * <p>The report ID returned by calling the
-     * <a>CreateCertificateAuthorityAuditReport</a> action.</p>
+     * <p>The report ID returned by calling the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a>
+     * action.</p>
      */
     inline DescribeCertificateAuthorityAuditReportRequest& WithAuditReportId(const char* value) { SetAuditReportId(value); return *this;}
 

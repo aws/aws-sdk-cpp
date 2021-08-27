@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
@@ -195,42 +185,50 @@ namespace Model
 
 
     /**
-     * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
+     * <p>The state of the gateway.</p> <p>Valid Values: <code>DISABLED</code> |
+     * <code>ACTIVE</code> </p>
      */
     inline const Aws::String& GetGatewayOperationalState() const{ return m_gatewayOperationalState; }
 
     /**
-     * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
+     * <p>The state of the gateway.</p> <p>Valid Values: <code>DISABLED</code> |
+     * <code>ACTIVE</code> </p>
      */
     inline bool GatewayOperationalStateHasBeenSet() const { return m_gatewayOperationalStateHasBeenSet; }
 
     /**
-     * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
+     * <p>The state of the gateway.</p> <p>Valid Values: <code>DISABLED</code> |
+     * <code>ACTIVE</code> </p>
      */
     inline void SetGatewayOperationalState(const Aws::String& value) { m_gatewayOperationalStateHasBeenSet = true; m_gatewayOperationalState = value; }
 
     /**
-     * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
+     * <p>The state of the gateway.</p> <p>Valid Values: <code>DISABLED</code> |
+     * <code>ACTIVE</code> </p>
      */
     inline void SetGatewayOperationalState(Aws::String&& value) { m_gatewayOperationalStateHasBeenSet = true; m_gatewayOperationalState = std::move(value); }
 
     /**
-     * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
+     * <p>The state of the gateway.</p> <p>Valid Values: <code>DISABLED</code> |
+     * <code>ACTIVE</code> </p>
      */
     inline void SetGatewayOperationalState(const char* value) { m_gatewayOperationalStateHasBeenSet = true; m_gatewayOperationalState.assign(value); }
 
     /**
-     * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
+     * <p>The state of the gateway.</p> <p>Valid Values: <code>DISABLED</code> |
+     * <code>ACTIVE</code> </p>
      */
     inline GatewayInfo& WithGatewayOperationalState(const Aws::String& value) { SetGatewayOperationalState(value); return *this;}
 
     /**
-     * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
+     * <p>The state of the gateway.</p> <p>Valid Values: <code>DISABLED</code> |
+     * <code>ACTIVE</code> </p>
      */
     inline GatewayInfo& WithGatewayOperationalState(Aws::String&& value) { SetGatewayOperationalState(std::move(value)); return *this;}
 
     /**
-     * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
+     * <p>The state of the gateway.</p> <p>Valid Values: <code>DISABLED</code> |
+     * <code>ACTIVE</code> </p>
      */
     inline GatewayInfo& WithGatewayOperationalState(const char* value) { SetGatewayOperationalState(value); return *this;}
 

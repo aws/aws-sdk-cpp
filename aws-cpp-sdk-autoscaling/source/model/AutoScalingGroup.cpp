@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/autoscaling/model/AutoScalingGroup.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -63,7 +53,9 @@ AutoScalingGroup::AutoScalingGroup() :
     m_newInstancesProtectedFromScaleInHasBeenSet(false),
     m_serviceLinkedRoleARNHasBeenSet(false),
     m_maxInstanceLifetime(0),
-    m_maxInstanceLifetimeHasBeenSet(false)
+    m_maxInstanceLifetimeHasBeenSet(false),
+    m_capacityRebalance(false),
+    m_capacityRebalanceHasBeenSet(false)
 {
 }
 
@@ -100,7 +92,9 @@ AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) :
     m_newInstancesProtectedFromScaleInHasBeenSet(false),
     m_serviceLinkedRoleARNHasBeenSet(false),
     m_maxInstanceLifetime(0),
-    m_maxInstanceLifetimeHasBeenSet(false)
+    m_maxInstanceLifetimeHasBeenSet(false),
+    m_capacityRebalance(false),
+    m_capacityRebalanceHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -315,6 +309,12 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       m_maxInstanceLifetime = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxInstanceLifetimeNode.GetText()).c_str()).c_str());
       m_maxInstanceLifetimeHasBeenSet = true;
     }
+    XmlNode capacityRebalanceNode = resultNode.FirstChild("CapacityRebalance");
+    if(!capacityRebalanceNode.IsNull())
+    {
+      m_capacityRebalance = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityRebalanceNode.GetText()).c_str()).c_str());
+      m_capacityRebalanceHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -496,6 +496,11 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".MaxInstanceLifetime=" << m_maxInstanceLifetime << "&";
   }
 
+  if(m_capacityRebalanceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CapacityRebalance=" << std::boolalpha << m_capacityRebalance << "&";
+  }
+
 }
 
 void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -647,6 +652,10 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_maxInstanceLifetimeHasBeenSet)
   {
       oStream << location << ".MaxInstanceLifetime=" << m_maxInstanceLifetime << "&";
+  }
+  if(m_capacityRebalanceHasBeenSet)
+  {
+      oStream << location << ".CapacityRebalance=" << std::boolalpha << m_capacityRebalance << "&";
   }
 }
 

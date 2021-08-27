@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -175,61 +165,61 @@ namespace Model
         class UpdateTerminationProtectionRequest;
         class ValidateTemplateRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFormationErrors>> CancelUpdateStackOutcome;
-        typedef Aws::Utils::Outcome<ContinueUpdateRollbackResult, Aws::Client::AWSError<CloudFormationErrors>> ContinueUpdateRollbackOutcome;
-        typedef Aws::Utils::Outcome<CreateChangeSetResult, Aws::Client::AWSError<CloudFormationErrors>> CreateChangeSetOutcome;
-        typedef Aws::Utils::Outcome<CreateStackResult, Aws::Client::AWSError<CloudFormationErrors>> CreateStackOutcome;
-        typedef Aws::Utils::Outcome<CreateStackInstancesResult, Aws::Client::AWSError<CloudFormationErrors>> CreateStackInstancesOutcome;
-        typedef Aws::Utils::Outcome<CreateStackSetResult, Aws::Client::AWSError<CloudFormationErrors>> CreateStackSetOutcome;
-        typedef Aws::Utils::Outcome<DeleteChangeSetResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteChangeSetOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteStackOutcome;
-        typedef Aws::Utils::Outcome<DeleteStackInstancesResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteStackInstancesOutcome;
-        typedef Aws::Utils::Outcome<DeleteStackSetResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteStackSetOutcome;
-        typedef Aws::Utils::Outcome<DeregisterTypeResult, Aws::Client::AWSError<CloudFormationErrors>> DeregisterTypeOutcome;
-        typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeAccountLimitsOutcome;
-        typedef Aws::Utils::Outcome<DescribeChangeSetResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeChangeSetOutcome;
-        typedef Aws::Utils::Outcome<DescribeStackDriftDetectionStatusResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackDriftDetectionStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribeStackEventsResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackEventsOutcome;
-        typedef Aws::Utils::Outcome<DescribeStackInstanceResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackInstanceOutcome;
-        typedef Aws::Utils::Outcome<DescribeStackResourceResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackResourceOutcome;
-        typedef Aws::Utils::Outcome<DescribeStackResourceDriftsResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackResourceDriftsOutcome;
-        typedef Aws::Utils::Outcome<DescribeStackResourcesResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackResourcesOutcome;
-        typedef Aws::Utils::Outcome<DescribeStackSetResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackSetOutcome;
-        typedef Aws::Utils::Outcome<DescribeStackSetOperationResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackSetOperationOutcome;
-        typedef Aws::Utils::Outcome<DescribeStacksResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStacksOutcome;
-        typedef Aws::Utils::Outcome<DescribeTypeResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeTypeOutcome;
-        typedef Aws::Utils::Outcome<DescribeTypeRegistrationResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeTypeRegistrationOutcome;
-        typedef Aws::Utils::Outcome<DetectStackDriftResult, Aws::Client::AWSError<CloudFormationErrors>> DetectStackDriftOutcome;
-        typedef Aws::Utils::Outcome<DetectStackResourceDriftResult, Aws::Client::AWSError<CloudFormationErrors>> DetectStackResourceDriftOutcome;
-        typedef Aws::Utils::Outcome<DetectStackSetDriftResult, Aws::Client::AWSError<CloudFormationErrors>> DetectStackSetDriftOutcome;
-        typedef Aws::Utils::Outcome<EstimateTemplateCostResult, Aws::Client::AWSError<CloudFormationErrors>> EstimateTemplateCostOutcome;
-        typedef Aws::Utils::Outcome<ExecuteChangeSetResult, Aws::Client::AWSError<CloudFormationErrors>> ExecuteChangeSetOutcome;
-        typedef Aws::Utils::Outcome<GetStackPolicyResult, Aws::Client::AWSError<CloudFormationErrors>> GetStackPolicyOutcome;
-        typedef Aws::Utils::Outcome<GetTemplateResult, Aws::Client::AWSError<CloudFormationErrors>> GetTemplateOutcome;
-        typedef Aws::Utils::Outcome<GetTemplateSummaryResult, Aws::Client::AWSError<CloudFormationErrors>> GetTemplateSummaryOutcome;
-        typedef Aws::Utils::Outcome<ListChangeSetsResult, Aws::Client::AWSError<CloudFormationErrors>> ListChangeSetsOutcome;
-        typedef Aws::Utils::Outcome<ListExportsResult, Aws::Client::AWSError<CloudFormationErrors>> ListExportsOutcome;
-        typedef Aws::Utils::Outcome<ListImportsResult, Aws::Client::AWSError<CloudFormationErrors>> ListImportsOutcome;
-        typedef Aws::Utils::Outcome<ListStackInstancesResult, Aws::Client::AWSError<CloudFormationErrors>> ListStackInstancesOutcome;
-        typedef Aws::Utils::Outcome<ListStackResourcesResult, Aws::Client::AWSError<CloudFormationErrors>> ListStackResourcesOutcome;
-        typedef Aws::Utils::Outcome<ListStackSetOperationResultsResult, Aws::Client::AWSError<CloudFormationErrors>> ListStackSetOperationResultsOutcome;
-        typedef Aws::Utils::Outcome<ListStackSetOperationsResult, Aws::Client::AWSError<CloudFormationErrors>> ListStackSetOperationsOutcome;
-        typedef Aws::Utils::Outcome<ListStackSetsResult, Aws::Client::AWSError<CloudFormationErrors>> ListStackSetsOutcome;
-        typedef Aws::Utils::Outcome<ListStacksResult, Aws::Client::AWSError<CloudFormationErrors>> ListStacksOutcome;
-        typedef Aws::Utils::Outcome<ListTypeRegistrationsResult, Aws::Client::AWSError<CloudFormationErrors>> ListTypeRegistrationsOutcome;
-        typedef Aws::Utils::Outcome<ListTypeVersionsResult, Aws::Client::AWSError<CloudFormationErrors>> ListTypeVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListTypesResult, Aws::Client::AWSError<CloudFormationErrors>> ListTypesOutcome;
-        typedef Aws::Utils::Outcome<RecordHandlerProgressResult, Aws::Client::AWSError<CloudFormationErrors>> RecordHandlerProgressOutcome;
-        typedef Aws::Utils::Outcome<RegisterTypeResult, Aws::Client::AWSError<CloudFormationErrors>> RegisterTypeOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFormationErrors>> SetStackPolicyOutcome;
-        typedef Aws::Utils::Outcome<SetTypeDefaultVersionResult, Aws::Client::AWSError<CloudFormationErrors>> SetTypeDefaultVersionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFormationErrors>> SignalResourceOutcome;
-        typedef Aws::Utils::Outcome<StopStackSetOperationResult, Aws::Client::AWSError<CloudFormationErrors>> StopStackSetOperationOutcome;
-        typedef Aws::Utils::Outcome<UpdateStackResult, Aws::Client::AWSError<CloudFormationErrors>> UpdateStackOutcome;
-        typedef Aws::Utils::Outcome<UpdateStackInstancesResult, Aws::Client::AWSError<CloudFormationErrors>> UpdateStackInstancesOutcome;
-        typedef Aws::Utils::Outcome<UpdateStackSetResult, Aws::Client::AWSError<CloudFormationErrors>> UpdateStackSetOutcome;
-        typedef Aws::Utils::Outcome<UpdateTerminationProtectionResult, Aws::Client::AWSError<CloudFormationErrors>> UpdateTerminationProtectionOutcome;
-        typedef Aws::Utils::Outcome<ValidateTemplateResult, Aws::Client::AWSError<CloudFormationErrors>> ValidateTemplateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFormationError> CancelUpdateStackOutcome;
+        typedef Aws::Utils::Outcome<ContinueUpdateRollbackResult, CloudFormationError> ContinueUpdateRollbackOutcome;
+        typedef Aws::Utils::Outcome<CreateChangeSetResult, CloudFormationError> CreateChangeSetOutcome;
+        typedef Aws::Utils::Outcome<CreateStackResult, CloudFormationError> CreateStackOutcome;
+        typedef Aws::Utils::Outcome<CreateStackInstancesResult, CloudFormationError> CreateStackInstancesOutcome;
+        typedef Aws::Utils::Outcome<CreateStackSetResult, CloudFormationError> CreateStackSetOutcome;
+        typedef Aws::Utils::Outcome<DeleteChangeSetResult, CloudFormationError> DeleteChangeSetOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFormationError> DeleteStackOutcome;
+        typedef Aws::Utils::Outcome<DeleteStackInstancesResult, CloudFormationError> DeleteStackInstancesOutcome;
+        typedef Aws::Utils::Outcome<DeleteStackSetResult, CloudFormationError> DeleteStackSetOutcome;
+        typedef Aws::Utils::Outcome<DeregisterTypeResult, CloudFormationError> DeregisterTypeOutcome;
+        typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, CloudFormationError> DescribeAccountLimitsOutcome;
+        typedef Aws::Utils::Outcome<DescribeChangeSetResult, CloudFormationError> DescribeChangeSetOutcome;
+        typedef Aws::Utils::Outcome<DescribeStackDriftDetectionStatusResult, CloudFormationError> DescribeStackDriftDetectionStatusOutcome;
+        typedef Aws::Utils::Outcome<DescribeStackEventsResult, CloudFormationError> DescribeStackEventsOutcome;
+        typedef Aws::Utils::Outcome<DescribeStackInstanceResult, CloudFormationError> DescribeStackInstanceOutcome;
+        typedef Aws::Utils::Outcome<DescribeStackResourceResult, CloudFormationError> DescribeStackResourceOutcome;
+        typedef Aws::Utils::Outcome<DescribeStackResourceDriftsResult, CloudFormationError> DescribeStackResourceDriftsOutcome;
+        typedef Aws::Utils::Outcome<DescribeStackResourcesResult, CloudFormationError> DescribeStackResourcesOutcome;
+        typedef Aws::Utils::Outcome<DescribeStackSetResult, CloudFormationError> DescribeStackSetOutcome;
+        typedef Aws::Utils::Outcome<DescribeStackSetOperationResult, CloudFormationError> DescribeStackSetOperationOutcome;
+        typedef Aws::Utils::Outcome<DescribeStacksResult, CloudFormationError> DescribeStacksOutcome;
+        typedef Aws::Utils::Outcome<DescribeTypeResult, CloudFormationError> DescribeTypeOutcome;
+        typedef Aws::Utils::Outcome<DescribeTypeRegistrationResult, CloudFormationError> DescribeTypeRegistrationOutcome;
+        typedef Aws::Utils::Outcome<DetectStackDriftResult, CloudFormationError> DetectStackDriftOutcome;
+        typedef Aws::Utils::Outcome<DetectStackResourceDriftResult, CloudFormationError> DetectStackResourceDriftOutcome;
+        typedef Aws::Utils::Outcome<DetectStackSetDriftResult, CloudFormationError> DetectStackSetDriftOutcome;
+        typedef Aws::Utils::Outcome<EstimateTemplateCostResult, CloudFormationError> EstimateTemplateCostOutcome;
+        typedef Aws::Utils::Outcome<ExecuteChangeSetResult, CloudFormationError> ExecuteChangeSetOutcome;
+        typedef Aws::Utils::Outcome<GetStackPolicyResult, CloudFormationError> GetStackPolicyOutcome;
+        typedef Aws::Utils::Outcome<GetTemplateResult, CloudFormationError> GetTemplateOutcome;
+        typedef Aws::Utils::Outcome<GetTemplateSummaryResult, CloudFormationError> GetTemplateSummaryOutcome;
+        typedef Aws::Utils::Outcome<ListChangeSetsResult, CloudFormationError> ListChangeSetsOutcome;
+        typedef Aws::Utils::Outcome<ListExportsResult, CloudFormationError> ListExportsOutcome;
+        typedef Aws::Utils::Outcome<ListImportsResult, CloudFormationError> ListImportsOutcome;
+        typedef Aws::Utils::Outcome<ListStackInstancesResult, CloudFormationError> ListStackInstancesOutcome;
+        typedef Aws::Utils::Outcome<ListStackResourcesResult, CloudFormationError> ListStackResourcesOutcome;
+        typedef Aws::Utils::Outcome<ListStackSetOperationResultsResult, CloudFormationError> ListStackSetOperationResultsOutcome;
+        typedef Aws::Utils::Outcome<ListStackSetOperationsResult, CloudFormationError> ListStackSetOperationsOutcome;
+        typedef Aws::Utils::Outcome<ListStackSetsResult, CloudFormationError> ListStackSetsOutcome;
+        typedef Aws::Utils::Outcome<ListStacksResult, CloudFormationError> ListStacksOutcome;
+        typedef Aws::Utils::Outcome<ListTypeRegistrationsResult, CloudFormationError> ListTypeRegistrationsOutcome;
+        typedef Aws::Utils::Outcome<ListTypeVersionsResult, CloudFormationError> ListTypeVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListTypesResult, CloudFormationError> ListTypesOutcome;
+        typedef Aws::Utils::Outcome<RecordHandlerProgressResult, CloudFormationError> RecordHandlerProgressOutcome;
+        typedef Aws::Utils::Outcome<RegisterTypeResult, CloudFormationError> RegisterTypeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFormationError> SetStackPolicyOutcome;
+        typedef Aws::Utils::Outcome<SetTypeDefaultVersionResult, CloudFormationError> SetTypeDefaultVersionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFormationError> SignalResourceOutcome;
+        typedef Aws::Utils::Outcome<StopStackSetOperationResult, CloudFormationError> StopStackSetOperationOutcome;
+        typedef Aws::Utils::Outcome<UpdateStackResult, CloudFormationError> UpdateStackOutcome;
+        typedef Aws::Utils::Outcome<UpdateStackInstancesResult, CloudFormationError> UpdateStackInstancesOutcome;
+        typedef Aws::Utils::Outcome<UpdateStackSetResult, CloudFormationError> UpdateStackSetOutcome;
+        typedef Aws::Utils::Outcome<UpdateTerminationProtectionResult, CloudFormationError> UpdateTerminationProtectionOutcome;
+        typedef Aws::Utils::Outcome<ValidateTemplateResult, CloudFormationError> ValidateTemplateOutcome;
 
         typedef std::future<CancelUpdateStackOutcome> CancelUpdateStackOutcomeCallable;
         typedef std::future<ContinueUpdateRollbackOutcome> ContinueUpdateRollbackOutcomeCallable;
@@ -390,8 +380,6 @@ namespace Model
 
         virtual ~CloudFormationClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "CloudFormation"; }
-
 
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
@@ -402,8 +390,8 @@ namespace Model
         /**
          * <p>Cancels an update on the specified stack. If the call completes successfully,
          * the stack rolls back the update and reverts to the previous stack
-         * configuration.</p> <note> <p>You can cancel only stacks that are in the
-         * UPDATE_IN_PROGRESS state.</p> </note><p><h3>See Also:</h3>   <a
+         * configuration.</p>  <p>You can cancel only stacks that are in the
+         * UPDATE_IN_PROGRESS state.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CancelUpdateStack">AWS
          * API Reference</a></p>
          */
@@ -412,8 +400,8 @@ namespace Model
         /**
          * <p>Cancels an update on the specified stack. If the call completes successfully,
          * the stack rolls back the update and reverts to the previous stack
-         * configuration.</p> <note> <p>You can cancel only stacks that are in the
-         * UPDATE_IN_PROGRESS state.</p> </note><p><h3>See Also:</h3>   <a
+         * configuration.</p>  <p>You can cancel only stacks that are in the
+         * UPDATE_IN_PROGRESS state.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CancelUpdateStack">AWS
          * API Reference</a></p>
          *
@@ -424,8 +412,8 @@ namespace Model
         /**
          * <p>Cancels an update on the specified stack. If the call completes successfully,
          * the stack rolls back the update and reverts to the previous stack
-         * configuration.</p> <note> <p>You can cancel only stacks that are in the
-         * UPDATE_IN_PROGRESS state.</p> </note><p><h3>See Also:</h3>   <a
+         * configuration.</p>  <p>You can cancel only stacks that are in the
+         * UPDATE_IN_PROGRESS state.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CancelUpdateStack">AWS
          * API Reference</a></p>
          *
@@ -514,7 +502,9 @@ namespace Model
          * change set or to review it, use the <a>DescribeChangeSet</a> action.</p> <p>When
          * you are satisfied with the changes the change set will make, execute the change
          * set by using the <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make
-         * changes until you execute the change set.</p><p><h3>See Also:</h3>   <a
+         * changes until you execute the change set.</p> <p>To create a change set for the
+         * entire stack hierachy, set <code>IncludeNestedStacks</code> to
+         * <code>True</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">AWS
          * API Reference</a></p>
          */
@@ -540,7 +530,9 @@ namespace Model
          * change set or to review it, use the <a>DescribeChangeSet</a> action.</p> <p>When
          * you are satisfied with the changes the change set will make, execute the change
          * set by using the <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make
-         * changes until you execute the change set.</p><p><h3>See Also:</h3>   <a
+         * changes until you execute the change set.</p> <p>To create a change set for the
+         * entire stack hierachy, set <code>IncludeNestedStacks</code> to
+         * <code>True</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">AWS
          * API Reference</a></p>
          *
@@ -568,7 +560,9 @@ namespace Model
          * change set or to review it, use the <a>DescribeChangeSet</a> action.</p> <p>When
          * you are satisfied with the changes the change set will make, execute the change
          * set by using the <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make
-         * changes until you execute the change set.</p><p><h3>See Also:</h3>   <a
+         * changes until you execute the change set.</p> <p>To create a change set for the
+         * entire stack hierachy, set <code>IncludeNestedStacks</code> to
+         * <code>True</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">AWS
          * API Reference</a></p>
          *
@@ -672,8 +666,12 @@ namespace Model
         /**
          * <p>Deletes the specified change set. Deleting change sets ensures that no one
          * executes the wrong change set.</p> <p>If the call successfully completes, AWS
-         * CloudFormation successfully deleted the change set.</p><p><h3>See Also:</h3>  
-         * <a
+         * CloudFormation successfully deleted the change set.</p> <p>If
+         * <code>IncludeNestedStacks</code> specifies <code>True</code> during the creation
+         * of the nested change set, then <code>DeleteChangeSet</code> will delete all
+         * change sets that belong to the stacks hierarchy and will also delete all change
+         * sets for nested stacks with the status of
+         * <code>REVIEW_IN_PROGRESS</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteChangeSet">AWS
          * API Reference</a></p>
          */
@@ -682,8 +680,12 @@ namespace Model
         /**
          * <p>Deletes the specified change set. Deleting change sets ensures that no one
          * executes the wrong change set.</p> <p>If the call successfully completes, AWS
-         * CloudFormation successfully deleted the change set.</p><p><h3>See Also:</h3>  
-         * <a
+         * CloudFormation successfully deleted the change set.</p> <p>If
+         * <code>IncludeNestedStacks</code> specifies <code>True</code> during the creation
+         * of the nested change set, then <code>DeleteChangeSet</code> will delete all
+         * change sets that belong to the stacks hierarchy and will also delete all change
+         * sets for nested stacks with the status of
+         * <code>REVIEW_IN_PROGRESS</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteChangeSet">AWS
          * API Reference</a></p>
          *
@@ -694,8 +696,12 @@ namespace Model
         /**
          * <p>Deletes the specified change set. Deleting change sets ensures that no one
          * executes the wrong change set.</p> <p>If the call successfully completes, AWS
-         * CloudFormation successfully deleted the change set.</p><p><h3>See Also:</h3>  
-         * <a
+         * CloudFormation successfully deleted the change set.</p> <p>If
+         * <code>IncludeNestedStacks</code> specifies <code>True</code> during the creation
+         * of the nested change set, then <code>DeleteChangeSet</code> will delete all
+         * change sets that belong to the stacks hierarchy and will also delete all change
+         * sets for nested stacks with the status of
+         * <code>REVIEW_IN_PROGRESS</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteChangeSet">AWS
          * API Reference</a></p>
          *
@@ -988,9 +994,9 @@ namespace Model
          * chronological order. For more information about a stack's event history, go to
          * <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
-         * in the AWS CloudFormation User Guide.</p> <note> <p>You can list events for
+         * in the AWS CloudFormation User Guide.</p>  <p>You can list events for
          * stacks that have failed to create or have been deleted by specifying the unique
-         * stack identifier (stack ID).</p> </note><p><h3>See Also:</h3>   <a
+         * stack identifier (stack ID).</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackEvents">AWS
          * API Reference</a></p>
          */
@@ -1001,9 +1007,9 @@ namespace Model
          * chronological order. For more information about a stack's event history, go to
          * <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
-         * in the AWS CloudFormation User Guide.</p> <note> <p>You can list events for
+         * in the AWS CloudFormation User Guide.</p>  <p>You can list events for
          * stacks that have failed to create or have been deleted by specifying the unique
-         * stack identifier (stack ID).</p> </note><p><h3>See Also:</h3>   <a
+         * stack identifier (stack ID).</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackEvents">AWS
          * API Reference</a></p>
          *
@@ -1016,9 +1022,9 @@ namespace Model
          * chronological order. For more information about a stack's event history, go to
          * <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
-         * in the AWS CloudFormation User Guide.</p> <note> <p>You can list events for
+         * in the AWS CloudFormation User Guide.</p>  <p>You can list events for
          * stacks that have failed to create or have been deleted by specifying the unique
-         * stack identifier (stack ID).</p> </note><p><h3>See Also:</h3>   <a
+         * stack identifier (stack ID).</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackEvents">AWS
          * API Reference</a></p>
          *
@@ -1154,9 +1160,9 @@ namespace Model
          * <code>StackName</code> is specified, all the associated resources that are part
          * of the stack are returned. If <code>PhysicalResourceId</code> is specified, the
          * associated resources of the stack that the resource belongs to are returned.</p>
-         * <note> <p>Only the first 100 resources will be returned. If your stack has more
+         *  <p>Only the first 100 resources will be returned. If your stack has more
          * resources than this, you should use <code>ListStackResources</code> instead.</p>
-         * </note> <p>For deleted stacks, <code>DescribeStackResources</code> returns
+         *  <p>For deleted stacks, <code>DescribeStackResources</code> returns
          * resource information for up to 90 days after the stack has been deleted.</p>
          * <p>You must specify either <code>StackName</code> or
          * <code>PhysicalResourceId</code>, but not both. In addition, you can specify
@@ -1164,9 +1170,9 @@ namespace Model
          * information about resources, the <code>LogicalResourceId</code> and
          * <code>PhysicalResourceId</code>, go to the <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
-         * CloudFormation User Guide</a>.</p> <note> <p>A <code>ValidationError</code> is
+         * CloudFormation User Guide</a>.</p>  <p>A <code>ValidationError</code> is
          * returned if you specify both <code>StackName</code> and
-         * <code>PhysicalResourceId</code> in the same request.</p> </note><p><h3>See
+         * <code>PhysicalResourceId</code> in the same request.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResources">AWS
          * API Reference</a></p>
@@ -1178,9 +1184,9 @@ namespace Model
          * <code>StackName</code> is specified, all the associated resources that are part
          * of the stack are returned. If <code>PhysicalResourceId</code> is specified, the
          * associated resources of the stack that the resource belongs to are returned.</p>
-         * <note> <p>Only the first 100 resources will be returned. If your stack has more
+         *  <p>Only the first 100 resources will be returned. If your stack has more
          * resources than this, you should use <code>ListStackResources</code> instead.</p>
-         * </note> <p>For deleted stacks, <code>DescribeStackResources</code> returns
+         *  <p>For deleted stacks, <code>DescribeStackResources</code> returns
          * resource information for up to 90 days after the stack has been deleted.</p>
          * <p>You must specify either <code>StackName</code> or
          * <code>PhysicalResourceId</code>, but not both. In addition, you can specify
@@ -1188,9 +1194,9 @@ namespace Model
          * information about resources, the <code>LogicalResourceId</code> and
          * <code>PhysicalResourceId</code>, go to the <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
-         * CloudFormation User Guide</a>.</p> <note> <p>A <code>ValidationError</code> is
+         * CloudFormation User Guide</a>.</p>  <p>A <code>ValidationError</code> is
          * returned if you specify both <code>StackName</code> and
-         * <code>PhysicalResourceId</code> in the same request.</p> </note><p><h3>See
+         * <code>PhysicalResourceId</code> in the same request.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResources">AWS
          * API Reference</a></p>
@@ -1204,9 +1210,9 @@ namespace Model
          * <code>StackName</code> is specified, all the associated resources that are part
          * of the stack are returned. If <code>PhysicalResourceId</code> is specified, the
          * associated resources of the stack that the resource belongs to are returned.</p>
-         * <note> <p>Only the first 100 resources will be returned. If your stack has more
+         *  <p>Only the first 100 resources will be returned. If your stack has more
          * resources than this, you should use <code>ListStackResources</code> instead.</p>
-         * </note> <p>For deleted stacks, <code>DescribeStackResources</code> returns
+         *  <p>For deleted stacks, <code>DescribeStackResources</code> returns
          * resource information for up to 90 days after the stack has been deleted.</p>
          * <p>You must specify either <code>StackName</code> or
          * <code>PhysicalResourceId</code>, but not both. In addition, you can specify
@@ -1214,9 +1220,9 @@ namespace Model
          * information about resources, the <code>LogicalResourceId</code> and
          * <code>PhysicalResourceId</code>, go to the <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
-         * CloudFormation User Guide</a>.</p> <note> <p>A <code>ValidationError</code> is
+         * CloudFormation User Guide</a>.</p>  <p>A <code>ValidationError</code> is
          * returned if you specify both <code>StackName</code> and
-         * <code>PhysicalResourceId</code> in the same request.</p> </note><p><h3>See
+         * <code>PhysicalResourceId</code> in the same request.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResources">AWS
          * API Reference</a></p>
@@ -1284,8 +1290,8 @@ namespace Model
         /**
          * <p>Returns the description for the specified stack; if no stack name was
          * specified, then it returns the description for all the stacks created.</p>
-         * <note> <p>If the stack does not exist, an
-         * <code>AmazonCloudFormationException</code> is returned.</p> </note><p><h3>See
+         *  <p>If the stack does not exist, an
+         * <code>AmazonCloudFormationException</code> is returned.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">AWS
          * API Reference</a></p>
@@ -1295,8 +1301,8 @@ namespace Model
         /**
          * <p>Returns the description for the specified stack; if no stack name was
          * specified, then it returns the description for all the stacks created.</p>
-         * <note> <p>If the stack does not exist, an
-         * <code>AmazonCloudFormationException</code> is returned.</p> </note><p><h3>See
+         *  <p>If the stack does not exist, an
+         * <code>AmazonCloudFormationException</code> is returned.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">AWS
          * API Reference</a></p>
@@ -1308,8 +1314,8 @@ namespace Model
         /**
          * <p>Returns the description for the specified stack; if no stack name was
          * specified, then it returns the description for all the stacks created.</p>
-         * <note> <p>If the stack does not exist, an
-         * <code>AmazonCloudFormationException</code> is returned.</p> </note><p><h3>See
+         *  <p>If the stack does not exist, an
+         * <code>AmazonCloudFormationException</code> is returned.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">AWS
          * API Reference</a></p>
@@ -1704,8 +1710,10 @@ namespace Model
          * CloudFormation deletes all other change sets associated with the stack because
          * they aren't valid for the updated stack.</p> <p>If a stack policy is associated
          * with the stack, AWS CloudFormation enforces the policy during the update. You
-         * can't specify a temporary stack policy that overrides the current
-         * policy.</p><p><h3>See Also:</h3>   <a
+         * can't specify a temporary stack policy that overrides the current policy.</p>
+         * <p>To create a change set for the entire stack hierachy,
+         * <code>IncludeNestedStacks</code> must have been set to
+         * <code>True</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteChangeSet">AWS
          * API Reference</a></p>
          */
@@ -1719,8 +1727,10 @@ namespace Model
          * CloudFormation deletes all other change sets associated with the stack because
          * they aren't valid for the updated stack.</p> <p>If a stack policy is associated
          * with the stack, AWS CloudFormation enforces the policy during the update. You
-         * can't specify a temporary stack policy that overrides the current
-         * policy.</p><p><h3>See Also:</h3>   <a
+         * can't specify a temporary stack policy that overrides the current policy.</p>
+         * <p>To create a change set for the entire stack hierachy,
+         * <code>IncludeNestedStacks</code> must have been set to
+         * <code>True</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteChangeSet">AWS
          * API Reference</a></p>
          *
@@ -1736,8 +1746,10 @@ namespace Model
          * CloudFormation deletes all other change sets associated with the stack because
          * they aren't valid for the updated stack.</p> <p>If a stack policy is associated
          * with the stack, AWS CloudFormation enforces the policy during the update. You
-         * can't specify a temporary stack policy that overrides the current
-         * policy.</p><p><h3>See Also:</h3>   <a
+         * can't specify a temporary stack policy that overrides the current policy.</p>
+         * <p>To create a change set for the entire stack hierachy,
+         * <code>IncludeNestedStacks</code> must have been set to
+         * <code>True</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteChangeSet">AWS
          * API Reference</a></p>
          *
@@ -1776,9 +1788,9 @@ namespace Model
         /**
          * <p>Returns the template body for a specified stack. You can get the template for
          * running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the
-         * template for up to 90 days after the stack has been deleted.</p> <note> <p> If
+         * template for up to 90 days after the stack has been deleted.</p>  <p> If
          * the template does not exist, a <code>ValidationError</code> is returned. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">AWS
          * API Reference</a></p>
          */
@@ -1787,9 +1799,9 @@ namespace Model
         /**
          * <p>Returns the template body for a specified stack. You can get the template for
          * running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the
-         * template for up to 90 days after the stack has been deleted.</p> <note> <p> If
+         * template for up to 90 days after the stack has been deleted.</p>  <p> If
          * the template does not exist, a <code>ValidationError</code> is returned. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">AWS
          * API Reference</a></p>
          *
@@ -1800,9 +1812,9 @@ namespace Model
         /**
          * <p>Returns the template body for a specified stack. You can get the template for
          * running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the
-         * template for up to 90 days after the stack has been deleted.</p> <note> <p> If
+         * template for up to 90 days after the stack has been deleted.</p>  <p> If
          * the template does not exist, a <code>ValidationError</code> is returned. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">AWS
          * API Reference</a></p>
          *
@@ -1985,7 +1997,8 @@ namespace Model
         /**
          * <p>Returns summary information about stack instances that are associated with
          * the specified stack set. You can filter for stack instances that are associated
-         * with a specific AWS account name or Region.</p><p><h3>See Also:</h3>   <a
+         * with a specific AWS account name or Region, or that have a specific
+         * status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">AWS
          * API Reference</a></p>
          */
@@ -1994,7 +2007,8 @@ namespace Model
         /**
          * <p>Returns summary information about stack instances that are associated with
          * the specified stack set. You can filter for stack instances that are associated
-         * with a specific AWS account name or Region.</p><p><h3>See Also:</h3>   <a
+         * with a specific AWS account name or Region, or that have a specific
+         * status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">AWS
          * API Reference</a></p>
          *
@@ -2005,7 +2019,8 @@ namespace Model
         /**
          * <p>Returns summary information about stack instances that are associated with
          * the specified stack set. You can filter for stack instances that are associated
-         * with a specific AWS account name or Region.</p><p><h3>See Also:</h3>   <a
+         * with a specific AWS account name or Region, or that have a specific
+         * status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">AWS
          * API Reference</a></p>
          *
@@ -2722,7 +2737,7 @@ namespace Model
          */
         virtual void ValidateTemplateAsync(const Model::ValidateTemplateRequest& request, const ValidateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-      
+
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -116,30 +106,30 @@ namespace Model
     /**
      * <p>The number of instances with patches installed that are specified in a
      * RejectedPatches list. Patches with a status of <i>INSTALLED_REJECTED</i> were
-     * typically installed before they were added to a RejectedPatches list.</p> <note>
+     * typically installed before they were added to a RejectedPatches list.</p> 
      * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
      * value of InstancesWithInstalledRejectedPatches will always be 0 (zero).</p>
-     * </note>
+     * 
      */
     inline int GetInstancesWithInstalledRejectedPatches() const{ return m_instancesWithInstalledRejectedPatches; }
 
     /**
      * <p>The number of instances with patches installed that are specified in a
      * RejectedPatches list. Patches with a status of <i>INSTALLED_REJECTED</i> were
-     * typically installed before they were added to a RejectedPatches list.</p> <note>
+     * typically installed before they were added to a RejectedPatches list.</p> 
      * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
      * value of InstancesWithInstalledRejectedPatches will always be 0 (zero).</p>
-     * </note>
+     * 
      */
     inline void SetInstancesWithInstalledRejectedPatches(int value) { m_instancesWithInstalledRejectedPatches = value; }
 
     /**
      * <p>The number of instances with patches installed that are specified in a
      * RejectedPatches list. Patches with a status of <i>INSTALLED_REJECTED</i> were
-     * typically installed before they were added to a RejectedPatches list.</p> <note>
+     * typically installed before they were added to a RejectedPatches list.</p> 
      * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
      * value of InstancesWithInstalledRejectedPatches will always be 0 (zero).</p>
-     * </note>
+     * 
      */
     inline DescribePatchGroupStateResult& WithInstancesWithInstalledRejectedPatches(int value) { SetInstancesWithInstalledRejectedPatches(value); return *this;}
 

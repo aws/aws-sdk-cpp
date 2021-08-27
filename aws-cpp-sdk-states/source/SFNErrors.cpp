@@ -1,30 +1,35 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/states/SFNErrors.h>
+#include <aws/states/model/ResourceNotFound.h>
+#include <aws/states/model/TooManyTags.h>
 
 using namespace Aws::Client;
-using namespace Aws::SFN;
 using namespace Aws::Utils;
+using namespace Aws::SFN;
+using namespace Aws::SFN::Model;
 
 namespace Aws
 {
 namespace SFN
 {
+template<> AWS_SFN_API ResourceNotFound SFNError::GetModeledError()
+{
+  assert(this->GetErrorType() == SFNErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFound(this->GetJsonPayload().View());
+}
+
+template<> AWS_SFN_API TooManyTags SFNError::GetModeledError()
+{
+  assert(this->GetErrorType() == SFNErrors::TOO_MANY_TAGS);
+  return TooManyTags(this->GetJsonPayload().View());
+}
+
 namespace SFNErrorMapper
 {
 
@@ -43,6 +48,7 @@ static const int STATE_MACHINE_DELETING_HASH = HashingUtils::HashString("StateMa
 static const int INVALID_EXECUTION_INPUT_HASH = HashingUtils::HashString("InvalidExecutionInput");
 static const int EXECUTION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ExecutionDoesNotExist");
 static const int STATE_MACHINE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("StateMachineDoesNotExist");
+static const int INVALID_TRACING_CONFIGURATION_HASH = HashingUtils::HashString("InvalidTracingConfiguration");
 static const int INVALID_DEFINITION_HASH = HashingUtils::HashString("InvalidDefinition");
 static const int EXECUTION_ALREADY_EXISTS_HASH = HashingUtils::HashString("ExecutionAlreadyExists");
 static const int ACTIVITY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ActivityLimitExceeded");
@@ -115,6 +121,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == STATE_MACHINE_DOES_NOT_EXIST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::STATE_MACHINE_DOES_NOT_EXIST), false);
+  }
+  else if (hashCode == INVALID_TRACING_CONFIGURATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::INVALID_TRACING_CONFIGURATION), false);
   }
   else if (hashCode == INVALID_DEFINITION_HASH)
   {

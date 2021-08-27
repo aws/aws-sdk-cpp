@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
@@ -159,92 +149,132 @@ namespace Model
 
 
     /**
-     * <p>A CRON expression specifying when AWS Backup initiates a backup job.</p>
+     * <p>A CRON expression specifying when AWS Backup initiates a backup job. For more
+     * information about cron expressions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>.
+     * Prior to specifying a value for this parameter, we recommend testing your cron
+     * expression using one of the many available cron generator and testing tools.</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
 
     /**
-     * <p>A CRON expression specifying when AWS Backup initiates a backup job.</p>
+     * <p>A CRON expression specifying when AWS Backup initiates a backup job. For more
+     * information about cron expressions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>.
+     * Prior to specifying a value for this parameter, we recommend testing your cron
+     * expression using one of the many available cron generator and testing tools.</p>
      */
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
 
     /**
-     * <p>A CRON expression specifying when AWS Backup initiates a backup job.</p>
+     * <p>A CRON expression specifying when AWS Backup initiates a backup job. For more
+     * information about cron expressions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>.
+     * Prior to specifying a value for this parameter, we recommend testing your cron
+     * expression using one of the many available cron generator and testing tools.</p>
      */
     inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
 
     /**
-     * <p>A CRON expression specifying when AWS Backup initiates a backup job.</p>
+     * <p>A CRON expression specifying when AWS Backup initiates a backup job. For more
+     * information about cron expressions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>.
+     * Prior to specifying a value for this parameter, we recommend testing your cron
+     * expression using one of the many available cron generator and testing tools.</p>
      */
     inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
 
     /**
-     * <p>A CRON expression specifying when AWS Backup initiates a backup job.</p>
+     * <p>A CRON expression specifying when AWS Backup initiates a backup job. For more
+     * information about cron expressions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>.
+     * Prior to specifying a value for this parameter, we recommend testing your cron
+     * expression using one of the many available cron generator and testing tools.</p>
      */
     inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
 
     /**
-     * <p>A CRON expression specifying when AWS Backup initiates a backup job.</p>
+     * <p>A CRON expression specifying when AWS Backup initiates a backup job. For more
+     * information about cron expressions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>.
+     * Prior to specifying a value for this parameter, we recommend testing your cron
+     * expression using one of the many available cron generator and testing tools.</p>
      */
     inline BackupRule& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
 
     /**
-     * <p>A CRON expression specifying when AWS Backup initiates a backup job.</p>
+     * <p>A CRON expression specifying when AWS Backup initiates a backup job. For more
+     * information about cron expressions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>.
+     * Prior to specifying a value for this parameter, we recommend testing your cron
+     * expression using one of the many available cron generator and testing tools.</p>
      */
     inline BackupRule& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
 
     /**
-     * <p>A CRON expression specifying when AWS Backup initiates a backup job.</p>
+     * <p>A CRON expression specifying when AWS Backup initiates a backup job. For more
+     * information about cron expressions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>.
+     * Prior to specifying a value for this parameter, we recommend testing your cron
+     * expression using one of the many available cron generator and testing tools.</p>
      */
     inline BackupRule& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 
 
     /**
-     * <p>An optional value that specifies a period of time in minutes after a backup
-     * is scheduled before a job is canceled if it doesn't start successfully.</p>
+     * <p>A value in minutes after a backup is scheduled before a job will be canceled
+     * if it doesn't start successfully. This value is optional.</p>
      */
     inline long long GetStartWindowMinutes() const{ return m_startWindowMinutes; }
 
     /**
-     * <p>An optional value that specifies a period of time in minutes after a backup
-     * is scheduled before a job is canceled if it doesn't start successfully.</p>
+     * <p>A value in minutes after a backup is scheduled before a job will be canceled
+     * if it doesn't start successfully. This value is optional.</p>
      */
     inline bool StartWindowMinutesHasBeenSet() const { return m_startWindowMinutesHasBeenSet; }
 
     /**
-     * <p>An optional value that specifies a period of time in minutes after a backup
-     * is scheduled before a job is canceled if it doesn't start successfully.</p>
+     * <p>A value in minutes after a backup is scheduled before a job will be canceled
+     * if it doesn't start successfully. This value is optional.</p>
      */
     inline void SetStartWindowMinutes(long long value) { m_startWindowMinutesHasBeenSet = true; m_startWindowMinutes = value; }
 
     /**
-     * <p>An optional value that specifies a period of time in minutes after a backup
-     * is scheduled before a job is canceled if it doesn't start successfully.</p>
+     * <p>A value in minutes after a backup is scheduled before a job will be canceled
+     * if it doesn't start successfully. This value is optional.</p>
      */
     inline BackupRule& WithStartWindowMinutes(long long value) { SetStartWindowMinutes(value); return *this;}
 
 
     /**
      * <p>A value in minutes after a backup job is successfully started before it must
-     * be completed or it is canceled by AWS Backup. This value is optional.</p>
+     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
      */
     inline long long GetCompletionWindowMinutes() const{ return m_completionWindowMinutes; }
 
     /**
      * <p>A value in minutes after a backup job is successfully started before it must
-     * be completed or it is canceled by AWS Backup. This value is optional.</p>
+     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
      */
     inline bool CompletionWindowMinutesHasBeenSet() const { return m_completionWindowMinutesHasBeenSet; }
 
     /**
      * <p>A value in minutes after a backup job is successfully started before it must
-     * be completed or it is canceled by AWS Backup. This value is optional.</p>
+     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
      */
     inline void SetCompletionWindowMinutes(long long value) { m_completionWindowMinutesHasBeenSet = true; m_completionWindowMinutes = value; }
 
     /**
      * <p>A value in minutes after a backup job is successfully started before it must
-     * be completed or it is canceled by AWS Backup. This value is optional.</p>
+     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
      */
     inline BackupRule& WithCompletionWindowMinutes(long long value) { SetCompletionWindowMinutes(value); return *this;}
 

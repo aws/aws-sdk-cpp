@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
@@ -230,42 +220,46 @@ namespace Model
 
 
     /**
-     * <p>The size, in bytes, of the image in the repository.</p> <note> <p>Beginning
-     * with Docker version 1.9, the Docker client compresses image layers before
-     * pushing them to a V2 Docker registry. The output of the <code>docker
-     * images</code> command shows the uncompressed image size, so it may return a
-     * larger image size than the image sizes returned by <a>DescribeImages</a>.</p>
-     * </note>
+     * <p>The size, in bytes, of the image in the repository.</p> <p>If the image is a
+     * manifest list, this will be the max size of all manifests in the list.</p>
+     *  <p>Beginning with Docker version 1.9, the Docker client compresses image
+     * layers before pushing them to a V2 Docker registry. The output of the
+     * <code>docker images</code> command shows the uncompressed image size, so it may
+     * return a larger image size than the image sizes returned by
+     * <a>DescribeImages</a>.</p> 
      */
     inline long long GetImageSizeInBytes() const{ return m_imageSizeInBytes; }
 
     /**
-     * <p>The size, in bytes, of the image in the repository.</p> <note> <p>Beginning
-     * with Docker version 1.9, the Docker client compresses image layers before
-     * pushing them to a V2 Docker registry. The output of the <code>docker
-     * images</code> command shows the uncompressed image size, so it may return a
-     * larger image size than the image sizes returned by <a>DescribeImages</a>.</p>
-     * </note>
+     * <p>The size, in bytes, of the image in the repository.</p> <p>If the image is a
+     * manifest list, this will be the max size of all manifests in the list.</p>
+     *  <p>Beginning with Docker version 1.9, the Docker client compresses image
+     * layers before pushing them to a V2 Docker registry. The output of the
+     * <code>docker images</code> command shows the uncompressed image size, so it may
+     * return a larger image size than the image sizes returned by
+     * <a>DescribeImages</a>.</p> 
      */
     inline bool ImageSizeInBytesHasBeenSet() const { return m_imageSizeInBytesHasBeenSet; }
 
     /**
-     * <p>The size, in bytes, of the image in the repository.</p> <note> <p>Beginning
-     * with Docker version 1.9, the Docker client compresses image layers before
-     * pushing them to a V2 Docker registry. The output of the <code>docker
-     * images</code> command shows the uncompressed image size, so it may return a
-     * larger image size than the image sizes returned by <a>DescribeImages</a>.</p>
-     * </note>
+     * <p>The size, in bytes, of the image in the repository.</p> <p>If the image is a
+     * manifest list, this will be the max size of all manifests in the list.</p>
+     *  <p>Beginning with Docker version 1.9, the Docker client compresses image
+     * layers before pushing them to a V2 Docker registry. The output of the
+     * <code>docker images</code> command shows the uncompressed image size, so it may
+     * return a larger image size than the image sizes returned by
+     * <a>DescribeImages</a>.</p> 
      */
     inline void SetImageSizeInBytes(long long value) { m_imageSizeInBytesHasBeenSet = true; m_imageSizeInBytes = value; }
 
     /**
-     * <p>The size, in bytes, of the image in the repository.</p> <note> <p>Beginning
-     * with Docker version 1.9, the Docker client compresses image layers before
-     * pushing them to a V2 Docker registry. The output of the <code>docker
-     * images</code> command shows the uncompressed image size, so it may return a
-     * larger image size than the image sizes returned by <a>DescribeImages</a>.</p>
-     * </note>
+     * <p>The size, in bytes, of the image in the repository.</p> <p>If the image is a
+     * manifest list, this will be the max size of all manifests in the list.</p>
+     *  <p>Beginning with Docker version 1.9, the Docker client compresses image
+     * layers before pushing them to a V2 Docker registry. The output of the
+     * <code>docker images</code> command shows the uncompressed image size, so it may
+     * return a larger image size than the image sizes returned by
+     * <a>DescribeImages</a>.</p> 
      */
     inline ImageDetail& WithImageSizeInBytes(long long value) { SetImageSizeInBytes(value); return *this;}
 
@@ -368,6 +362,88 @@ namespace Model
      */
     inline ImageDetail& WithImageScanFindingsSummary(ImageScanFindingsSummary&& value) { SetImageScanFindingsSummary(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The media type of the image manifest.</p>
+     */
+    inline const Aws::String& GetImageManifestMediaType() const{ return m_imageManifestMediaType; }
+
+    /**
+     * <p>The media type of the image manifest.</p>
+     */
+    inline bool ImageManifestMediaTypeHasBeenSet() const { return m_imageManifestMediaTypeHasBeenSet; }
+
+    /**
+     * <p>The media type of the image manifest.</p>
+     */
+    inline void SetImageManifestMediaType(const Aws::String& value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType = value; }
+
+    /**
+     * <p>The media type of the image manifest.</p>
+     */
+    inline void SetImageManifestMediaType(Aws::String&& value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType = std::move(value); }
+
+    /**
+     * <p>The media type of the image manifest.</p>
+     */
+    inline void SetImageManifestMediaType(const char* value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType.assign(value); }
+
+    /**
+     * <p>The media type of the image manifest.</p>
+     */
+    inline ImageDetail& WithImageManifestMediaType(const Aws::String& value) { SetImageManifestMediaType(value); return *this;}
+
+    /**
+     * <p>The media type of the image manifest.</p>
+     */
+    inline ImageDetail& WithImageManifestMediaType(Aws::String&& value) { SetImageManifestMediaType(std::move(value)); return *this;}
+
+    /**
+     * <p>The media type of the image manifest.</p>
+     */
+    inline ImageDetail& WithImageManifestMediaType(const char* value) { SetImageManifestMediaType(value); return *this;}
+
+
+    /**
+     * <p>The artifact media type of the image.</p>
+     */
+    inline const Aws::String& GetArtifactMediaType() const{ return m_artifactMediaType; }
+
+    /**
+     * <p>The artifact media type of the image.</p>
+     */
+    inline bool ArtifactMediaTypeHasBeenSet() const { return m_artifactMediaTypeHasBeenSet; }
+
+    /**
+     * <p>The artifact media type of the image.</p>
+     */
+    inline void SetArtifactMediaType(const Aws::String& value) { m_artifactMediaTypeHasBeenSet = true; m_artifactMediaType = value; }
+
+    /**
+     * <p>The artifact media type of the image.</p>
+     */
+    inline void SetArtifactMediaType(Aws::String&& value) { m_artifactMediaTypeHasBeenSet = true; m_artifactMediaType = std::move(value); }
+
+    /**
+     * <p>The artifact media type of the image.</p>
+     */
+    inline void SetArtifactMediaType(const char* value) { m_artifactMediaTypeHasBeenSet = true; m_artifactMediaType.assign(value); }
+
+    /**
+     * <p>The artifact media type of the image.</p>
+     */
+    inline ImageDetail& WithArtifactMediaType(const Aws::String& value) { SetArtifactMediaType(value); return *this;}
+
+    /**
+     * <p>The artifact media type of the image.</p>
+     */
+    inline ImageDetail& WithArtifactMediaType(Aws::String&& value) { SetArtifactMediaType(std::move(value)); return *this;}
+
+    /**
+     * <p>The artifact media type of the image.</p>
+     */
+    inline ImageDetail& WithArtifactMediaType(const char* value) { SetArtifactMediaType(value); return *this;}
+
   private:
 
     Aws::String m_registryId;
@@ -393,6 +469,12 @@ namespace Model
 
     ImageScanFindingsSummary m_imageScanFindingsSummary;
     bool m_imageScanFindingsSummaryHasBeenSet;
+
+    Aws::String m_imageManifestMediaType;
+    bool m_imageManifestMediaTypeHasBeenSet;
+
+    Aws::String m_artifactMediaType;
+    bool m_artifactMediaTypeHasBeenSet;
   };
 
 } // namespace Model

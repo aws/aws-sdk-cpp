@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/RequestLaunchTemplateData.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -60,7 +50,8 @@ RequestLaunchTemplateData::RequestLaunchTemplateData() :
     m_capacityReservationSpecificationHasBeenSet(false),
     m_licenseSpecificationsHasBeenSet(false),
     m_hibernationOptionsHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false)
+    m_metadataOptionsHasBeenSet(false),
+    m_enclaveOptionsHasBeenSet(false)
 {
 }
 
@@ -94,7 +85,8 @@ RequestLaunchTemplateData::RequestLaunchTemplateData(const XmlNode& xmlNode) :
     m_capacityReservationSpecificationHasBeenSet(false),
     m_licenseSpecificationsHasBeenSet(false),
     m_hibernationOptionsHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false)
+    m_metadataOptionsHasBeenSet(false),
+    m_enclaveOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -309,6 +301,12 @@ RequestLaunchTemplateData& RequestLaunchTemplateData::operator =(const XmlNode& 
       m_metadataOptions = metadataOptionsNode;
       m_metadataOptionsHasBeenSet = true;
     }
+    XmlNode enclaveOptionsNode = resultNode.FirstChild("EnclaveOptions");
+    if(!enclaveOptionsNode.IsNull())
+    {
+      m_enclaveOptions = enclaveOptionsNode;
+      m_enclaveOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -508,6 +506,13 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
       m_metadataOptions.OutputToStream(oStream, metadataOptionsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_enclaveOptionsHasBeenSet)
+  {
+      Aws::StringStream enclaveOptionsLocationAndMemberSs;
+      enclaveOptionsLocationAndMemberSs << location << index << locationValue << ".EnclaveOptions";
+      m_enclaveOptions.OutputToStream(oStream, enclaveOptionsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -677,6 +682,12 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
       Aws::String metadataOptionsLocationAndMember(location);
       metadataOptionsLocationAndMember += ".MetadataOptions";
       m_metadataOptions.OutputToStream(oStream, metadataOptionsLocationAndMember.c_str());
+  }
+  if(m_enclaveOptionsHasBeenSet)
+  {
+      Aws::String enclaveOptionsLocationAndMember(location);
+      enclaveOptionsLocationAndMember += ".EnclaveOptions";
+      m_enclaveOptions.OutputToStream(oStream, enclaveOptionsLocationAndMember.c_str());
   }
 }
 

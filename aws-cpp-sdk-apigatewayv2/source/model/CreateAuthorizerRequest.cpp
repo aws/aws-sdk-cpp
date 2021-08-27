@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/apigatewayv2/model/CreateAuthorizerRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -25,11 +15,14 @@ using namespace Aws::Utils;
 CreateAuthorizerRequest::CreateAuthorizerRequest() : 
     m_apiIdHasBeenSet(false),
     m_authorizerCredentialsArnHasBeenSet(false),
+    m_authorizerPayloadFormatVersionHasBeenSet(false),
     m_authorizerResultTtlInSeconds(0),
     m_authorizerResultTtlInSecondsHasBeenSet(false),
     m_authorizerType(AuthorizerType::NOT_SET),
     m_authorizerTypeHasBeenSet(false),
     m_authorizerUriHasBeenSet(false),
+    m_enableSimpleResponses(false),
+    m_enableSimpleResponsesHasBeenSet(false),
     m_identitySourceHasBeenSet(false),
     m_identityValidationExpressionHasBeenSet(false),
     m_jwtConfigurationHasBeenSet(false),
@@ -47,6 +40,12 @@ Aws::String CreateAuthorizerRequest::SerializePayload() const
 
   }
 
+  if(m_authorizerPayloadFormatVersionHasBeenSet)
+  {
+   payload.WithString("authorizerPayloadFormatVersion", m_authorizerPayloadFormatVersion);
+
+  }
+
   if(m_authorizerResultTtlInSecondsHasBeenSet)
   {
    payload.WithInteger("authorizerResultTtlInSeconds", m_authorizerResultTtlInSeconds);
@@ -61,6 +60,12 @@ Aws::String CreateAuthorizerRequest::SerializePayload() const
   if(m_authorizerUriHasBeenSet)
   {
    payload.WithString("authorizerUri", m_authorizerUri);
+
+  }
+
+  if(m_enableSimpleResponsesHasBeenSet)
+  {
+   payload.WithBool("enableSimpleResponses", m_enableSimpleResponses);
 
   }
 

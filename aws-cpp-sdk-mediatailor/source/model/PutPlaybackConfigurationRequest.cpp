@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediatailor/model/PutPlaybackConfigurationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -25,9 +15,11 @@ using namespace Aws::Utils;
 PutPlaybackConfigurationRequest::PutPlaybackConfigurationRequest() : 
     m_adDecisionServerUrlHasBeenSet(false),
     m_availSuppressionHasBeenSet(false),
+    m_bumperHasBeenSet(false),
     m_cdnConfigurationHasBeenSet(false),
     m_dashConfigurationHasBeenSet(false),
     m_livePreRollConfigurationHasBeenSet(false),
+    m_manifestProcessingRulesHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_personalizationThresholdSeconds(0),
     m_personalizationThresholdSecondsHasBeenSet(false),
@@ -54,6 +46,12 @@ Aws::String PutPlaybackConfigurationRequest::SerializePayload() const
 
   }
 
+  if(m_bumperHasBeenSet)
+  {
+   payload.WithObject("Bumper", m_bumper.Jsonize());
+
+  }
+
   if(m_cdnConfigurationHasBeenSet)
   {
    payload.WithObject("CdnConfiguration", m_cdnConfiguration.Jsonize());
@@ -69,6 +67,12 @@ Aws::String PutPlaybackConfigurationRequest::SerializePayload() const
   if(m_livePreRollConfigurationHasBeenSet)
   {
    payload.WithObject("LivePreRollConfiguration", m_livePreRollConfiguration.Jsonize());
+
+  }
+
+  if(m_manifestProcessingRulesHasBeenSet)
+  {
+   payload.WithObject("ManifestProcessingRules", m_manifestProcessingRules.Jsonize());
 
   }
 

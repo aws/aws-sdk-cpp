@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/Workforce.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,7 +22,11 @@ Workforce::Workforce() :
     m_workforceNameHasBeenSet(false),
     m_workforceArnHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false),
-    m_sourceIpConfigHasBeenSet(false)
+    m_sourceIpConfigHasBeenSet(false),
+    m_subDomainHasBeenSet(false),
+    m_cognitoConfigHasBeenSet(false),
+    m_oidcConfigHasBeenSet(false),
+    m_createDateHasBeenSet(false)
 {
 }
 
@@ -40,7 +34,11 @@ Workforce::Workforce(JsonView jsonValue) :
     m_workforceNameHasBeenSet(false),
     m_workforceArnHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false),
-    m_sourceIpConfigHasBeenSet(false)
+    m_sourceIpConfigHasBeenSet(false),
+    m_subDomainHasBeenSet(false),
+    m_cognitoConfigHasBeenSet(false),
+    m_oidcConfigHasBeenSet(false),
+    m_createDateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -75,6 +73,34 @@ Workforce& Workforce::operator =(JsonView jsonValue)
     m_sourceIpConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SubDomain"))
+  {
+    m_subDomain = jsonValue.GetString("SubDomain");
+
+    m_subDomainHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CognitoConfig"))
+  {
+    m_cognitoConfig = jsonValue.GetObject("CognitoConfig");
+
+    m_cognitoConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OidcConfig"))
+  {
+    m_oidcConfig = jsonValue.GetObject("OidcConfig");
+
+    m_oidcConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CreateDate"))
+  {
+    m_createDate = jsonValue.GetDouble("CreateDate");
+
+    m_createDateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +129,29 @@ JsonValue Workforce::Jsonize() const
   {
    payload.WithObject("SourceIpConfig", m_sourceIpConfig.Jsonize());
 
+  }
+
+  if(m_subDomainHasBeenSet)
+  {
+   payload.WithString("SubDomain", m_subDomain);
+
+  }
+
+  if(m_cognitoConfigHasBeenSet)
+  {
+   payload.WithObject("CognitoConfig", m_cognitoConfig.Jsonize());
+
+  }
+
+  if(m_oidcConfigHasBeenSet)
+  {
+   payload.WithObject("OidcConfig", m_oidcConfig.Jsonize());
+
+  }
+
+  if(m_createDateHasBeenSet)
+  {
+   payload.WithDouble("CreateDate", m_createDate.SecondsWithMSPrecision());
   }
 
   return payload;

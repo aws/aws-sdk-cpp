@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ssm/model/DocumentType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -39,6 +29,7 @@ namespace Aws
         static const int ApplicationConfigurationSchema_HASH = HashingUtils::HashString("ApplicationConfigurationSchema");
         static const int DeploymentStrategy_HASH = HashingUtils::HashString("DeploymentStrategy");
         static const int ChangeCalendar_HASH = HashingUtils::HashString("ChangeCalendar");
+        static const int Automation_ChangeTemplate_HASH = HashingUtils::HashString("Automation.ChangeTemplate");
 
 
         DocumentType GetDocumentTypeForName(const Aws::String& name)
@@ -80,6 +71,10 @@ namespace Aws
           {
             return DocumentType::ChangeCalendar;
           }
+          else if (hashCode == Automation_ChangeTemplate_HASH)
+          {
+            return DocumentType::Automation_ChangeTemplate;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -112,6 +107,8 @@ namespace Aws
             return "DeploymentStrategy";
           case DocumentType::ChangeCalendar:
             return "ChangeCalendar";
+          case DocumentType::Automation_ChangeTemplate:
+            return "Automation.ChangeTemplate";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

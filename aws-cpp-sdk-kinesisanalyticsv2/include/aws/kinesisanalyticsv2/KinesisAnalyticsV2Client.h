@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
@@ -28,6 +18,7 @@
 #include <aws/kinesisanalyticsv2/model/AddApplicationReferenceDataSourceResult.h>
 #include <aws/kinesisanalyticsv2/model/AddApplicationVpcConfigurationResult.h>
 #include <aws/kinesisanalyticsv2/model/CreateApplicationResult.h>
+#include <aws/kinesisanalyticsv2/model/CreateApplicationPresignedUrlResult.h>
 #include <aws/kinesisanalyticsv2/model/CreateApplicationSnapshotResult.h>
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationResult.h>
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationCloudWatchLoggingOptionResult.h>
@@ -93,6 +84,7 @@ namespace Model
         class AddApplicationReferenceDataSourceRequest;
         class AddApplicationVpcConfigurationRequest;
         class CreateApplicationRequest;
+        class CreateApplicationPresignedUrlRequest;
         class CreateApplicationSnapshotRequest;
         class DeleteApplicationRequest;
         class DeleteApplicationCloudWatchLoggingOptionRequest;
@@ -113,32 +105,33 @@ namespace Model
         class UntagResourceRequest;
         class UpdateApplicationRequest;
 
-        typedef Aws::Utils::Outcome<AddApplicationCloudWatchLoggingOptionResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> AddApplicationCloudWatchLoggingOptionOutcome;
-        typedef Aws::Utils::Outcome<AddApplicationInputResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> AddApplicationInputOutcome;
-        typedef Aws::Utils::Outcome<AddApplicationInputProcessingConfigurationResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> AddApplicationInputProcessingConfigurationOutcome;
-        typedef Aws::Utils::Outcome<AddApplicationOutputResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> AddApplicationOutputOutcome;
-        typedef Aws::Utils::Outcome<AddApplicationReferenceDataSourceResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> AddApplicationReferenceDataSourceOutcome;
-        typedef Aws::Utils::Outcome<AddApplicationVpcConfigurationResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> AddApplicationVpcConfigurationOutcome;
-        typedef Aws::Utils::Outcome<CreateApplicationResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> CreateApplicationOutcome;
-        typedef Aws::Utils::Outcome<CreateApplicationSnapshotResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> CreateApplicationSnapshotOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> DeleteApplicationOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationCloudWatchLoggingOptionResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> DeleteApplicationCloudWatchLoggingOptionOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationInputProcessingConfigurationResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> DeleteApplicationInputProcessingConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationOutputResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> DeleteApplicationOutputOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationReferenceDataSourceResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> DeleteApplicationReferenceDataSourceOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationSnapshotResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> DeleteApplicationSnapshotOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationVpcConfigurationResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> DeleteApplicationVpcConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DescribeApplicationResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> DescribeApplicationOutcome;
-        typedef Aws::Utils::Outcome<DescribeApplicationSnapshotResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> DescribeApplicationSnapshotOutcome;
-        typedef Aws::Utils::Outcome<DiscoverInputSchemaResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> DiscoverInputSchemaOutcome;
-        typedef Aws::Utils::Outcome<ListApplicationSnapshotsResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> ListApplicationSnapshotsOutcome;
-        typedef Aws::Utils::Outcome<ListApplicationsResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> ListApplicationsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<StartApplicationResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> StartApplicationOutcome;
-        typedef Aws::Utils::Outcome<StopApplicationResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> StopApplicationOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateApplicationResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> UpdateApplicationOutcome;
+        typedef Aws::Utils::Outcome<AddApplicationCloudWatchLoggingOptionResult, KinesisAnalyticsV2Error> AddApplicationCloudWatchLoggingOptionOutcome;
+        typedef Aws::Utils::Outcome<AddApplicationInputResult, KinesisAnalyticsV2Error> AddApplicationInputOutcome;
+        typedef Aws::Utils::Outcome<AddApplicationInputProcessingConfigurationResult, KinesisAnalyticsV2Error> AddApplicationInputProcessingConfigurationOutcome;
+        typedef Aws::Utils::Outcome<AddApplicationOutputResult, KinesisAnalyticsV2Error> AddApplicationOutputOutcome;
+        typedef Aws::Utils::Outcome<AddApplicationReferenceDataSourceResult, KinesisAnalyticsV2Error> AddApplicationReferenceDataSourceOutcome;
+        typedef Aws::Utils::Outcome<AddApplicationVpcConfigurationResult, KinesisAnalyticsV2Error> AddApplicationVpcConfigurationOutcome;
+        typedef Aws::Utils::Outcome<CreateApplicationResult, KinesisAnalyticsV2Error> CreateApplicationOutcome;
+        typedef Aws::Utils::Outcome<CreateApplicationPresignedUrlResult, KinesisAnalyticsV2Error> CreateApplicationPresignedUrlOutcome;
+        typedef Aws::Utils::Outcome<CreateApplicationSnapshotResult, KinesisAnalyticsV2Error> CreateApplicationSnapshotOutcome;
+        typedef Aws::Utils::Outcome<DeleteApplicationResult, KinesisAnalyticsV2Error> DeleteApplicationOutcome;
+        typedef Aws::Utils::Outcome<DeleteApplicationCloudWatchLoggingOptionResult, KinesisAnalyticsV2Error> DeleteApplicationCloudWatchLoggingOptionOutcome;
+        typedef Aws::Utils::Outcome<DeleteApplicationInputProcessingConfigurationResult, KinesisAnalyticsV2Error> DeleteApplicationInputProcessingConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DeleteApplicationOutputResult, KinesisAnalyticsV2Error> DeleteApplicationOutputOutcome;
+        typedef Aws::Utils::Outcome<DeleteApplicationReferenceDataSourceResult, KinesisAnalyticsV2Error> DeleteApplicationReferenceDataSourceOutcome;
+        typedef Aws::Utils::Outcome<DeleteApplicationSnapshotResult, KinesisAnalyticsV2Error> DeleteApplicationSnapshotOutcome;
+        typedef Aws::Utils::Outcome<DeleteApplicationVpcConfigurationResult, KinesisAnalyticsV2Error> DeleteApplicationVpcConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DescribeApplicationResult, KinesisAnalyticsV2Error> DescribeApplicationOutcome;
+        typedef Aws::Utils::Outcome<DescribeApplicationSnapshotResult, KinesisAnalyticsV2Error> DescribeApplicationSnapshotOutcome;
+        typedef Aws::Utils::Outcome<DiscoverInputSchemaResult, KinesisAnalyticsV2Error> DiscoverInputSchemaOutcome;
+        typedef Aws::Utils::Outcome<ListApplicationSnapshotsResult, KinesisAnalyticsV2Error> ListApplicationSnapshotsOutcome;
+        typedef Aws::Utils::Outcome<ListApplicationsResult, KinesisAnalyticsV2Error> ListApplicationsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, KinesisAnalyticsV2Error> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<StartApplicationResult, KinesisAnalyticsV2Error> StartApplicationOutcome;
+        typedef Aws::Utils::Outcome<StopApplicationResult, KinesisAnalyticsV2Error> StopApplicationOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, KinesisAnalyticsV2Error> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, KinesisAnalyticsV2Error> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateApplicationResult, KinesisAnalyticsV2Error> UpdateApplicationOutcome;
 
         typedef std::future<AddApplicationCloudWatchLoggingOptionOutcome> AddApplicationCloudWatchLoggingOptionOutcomeCallable;
         typedef std::future<AddApplicationInputOutcome> AddApplicationInputOutcomeCallable;
@@ -147,6 +140,7 @@ namespace Model
         typedef std::future<AddApplicationReferenceDataSourceOutcome> AddApplicationReferenceDataSourceOutcomeCallable;
         typedef std::future<AddApplicationVpcConfigurationOutcome> AddApplicationVpcConfigurationOutcomeCallable;
         typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
+        typedef std::future<CreateApplicationPresignedUrlOutcome> CreateApplicationPresignedUrlOutcomeCallable;
         typedef std::future<CreateApplicationSnapshotOutcome> CreateApplicationSnapshotOutcomeCallable;
         typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
         typedef std::future<DeleteApplicationCloudWatchLoggingOptionOutcome> DeleteApplicationCloudWatchLoggingOptionOutcomeCallable;
@@ -177,6 +171,7 @@ namespace Model
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::AddApplicationReferenceDataSourceRequest&, const Model::AddApplicationReferenceDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationReferenceDataSourceResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::AddApplicationVpcConfigurationRequest&, const Model::AddApplicationVpcConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationVpcConfigurationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
+    typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::CreateApplicationPresignedUrlRequest&, const Model::CreateApplicationPresignedUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationPresignedUrlResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::CreateApplicationSnapshotRequest&, const Model::CreateApplicationSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationSnapshotResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DeleteApplicationCloudWatchLoggingOptionRequest&, const Model::DeleteApplicationCloudWatchLoggingOptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationCloudWatchLoggingOptionResponseReceivedHandler;
@@ -199,10 +194,10 @@ namespace Model
 
   /**
    * <p>Amazon Kinesis Data Analytics is a fully managed service that you can use to
-   * process and analyze streaming data using SQL or Java. The service enables you to
-   * quickly author and run SQL or Java code against streaming sources to perform
-   * time series analytics, feed real-time dashboards, and create real-time
-   * metrics.</p>
+   * process and analyze streaming data using Java, SQL, or Scala. The service
+   * enables you to quickly author and run Java, SQL, or Scala code against streaming
+   * sources to perform time series analytics, feed real-time dashboards, and create
+   * real-time metrics.</p>
    */
   class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Client : public Aws::Client::AWSJsonClient
   {
@@ -229,8 +224,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~KinesisAnalyticsV2Client();
-
-        inline virtual const char* GetServiceClientName() const override { return "Kinesis Analytics V2"; }
 
 
         /**
@@ -262,7 +255,7 @@ namespace Model
         virtual void AddApplicationCloudWatchLoggingOptionAsync(const Model::AddApplicationCloudWatchLoggingOptionRequest& request, const AddApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Adds a streaming source to your SQL-based Amazon Kinesis Data Analytics
+         * <p> Adds a streaming source to your SQL-based Kinesis Data Analytics
          * application. </p> <p>You can add a streaming source when you create an
          * application, or you can use this operation to add a streaming source after you
          * create an application. For more information, see <a>CreateApplication</a>.</p>
@@ -276,7 +269,7 @@ namespace Model
         virtual Model::AddApplicationInputOutcome AddApplicationInput(const Model::AddApplicationInputRequest& request) const;
 
         /**
-         * <p> Adds a streaming source to your SQL-based Amazon Kinesis Data Analytics
+         * <p> Adds a streaming source to your SQL-based Kinesis Data Analytics
          * application. </p> <p>You can add a streaming source when you create an
          * application, or you can use this operation to add a streaming source after you
          * create an application. For more information, see <a>CreateApplication</a>.</p>
@@ -292,7 +285,7 @@ namespace Model
         virtual Model::AddApplicationInputOutcomeCallable AddApplicationInputCallable(const Model::AddApplicationInputRequest& request) const;
 
         /**
-         * <p> Adds a streaming source to your SQL-based Amazon Kinesis Data Analytics
+         * <p> Adds a streaming source to your SQL-based Kinesis Data Analytics
          * application. </p> <p>You can add a streaming source when you create an
          * application, or you can use this operation to add a streaming source after you
          * create an application. For more information, see <a>CreateApplication</a>.</p>
@@ -308,11 +301,10 @@ namespace Model
         virtual void AddApplicationInputAsync(const Model::AddApplicationInputRequest& request, const AddApplicationInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds an <a>InputProcessingConfiguration</a> to an SQL-based Kinesis Data
+         * <p>Adds an <a>InputProcessingConfiguration</a> to a SQL-based Kinesis Data
          * Analytics application. An input processor pre-processes records on the input
          * stream before the application's SQL code executes. Currently, the only input
-         * processor available is <a
-         * href="https://aws.amazon.com/documentation/lambda/">AWS
+         * processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS
          * Lambda</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationInputProcessingConfiguration">AWS
          * API Reference</a></p>
@@ -320,11 +312,10 @@ namespace Model
         virtual Model::AddApplicationInputProcessingConfigurationOutcome AddApplicationInputProcessingConfiguration(const Model::AddApplicationInputProcessingConfigurationRequest& request) const;
 
         /**
-         * <p>Adds an <a>InputProcessingConfiguration</a> to an SQL-based Kinesis Data
+         * <p>Adds an <a>InputProcessingConfiguration</a> to a SQL-based Kinesis Data
          * Analytics application. An input processor pre-processes records on the input
          * stream before the application's SQL code executes. Currently, the only input
-         * processor available is <a
-         * href="https://aws.amazon.com/documentation/lambda/">AWS
+         * processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS
          * Lambda</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationInputProcessingConfiguration">AWS
          * API Reference</a></p>
@@ -334,11 +325,10 @@ namespace Model
         virtual Model::AddApplicationInputProcessingConfigurationOutcomeCallable AddApplicationInputProcessingConfigurationCallable(const Model::AddApplicationInputProcessingConfigurationRequest& request) const;
 
         /**
-         * <p>Adds an <a>InputProcessingConfiguration</a> to an SQL-based Kinesis Data
+         * <p>Adds an <a>InputProcessingConfiguration</a> to a SQL-based Kinesis Data
          * Analytics application. An input processor pre-processes records on the input
          * stream before the application's SQL code executes. Currently, the only input
-         * processor available is <a
-         * href="https://aws.amazon.com/documentation/lambda/">AWS
+         * processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS
          * Lambda</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationInputProcessingConfiguration">AWS
          * API Reference</a></p>
@@ -348,7 +338,7 @@ namespace Model
         virtual void AddApplicationInputProcessingConfigurationAsync(const Model::AddApplicationInputProcessingConfigurationRequest& request, const AddApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds an external destination to your SQL-based Amazon Kinesis Data Analytics
+         * <p>Adds an external destination to your SQL-based Kinesis Data Analytics
          * application.</p> <p>If you want Kinesis Data Analytics to deliver data from an
          * in-application stream within your application to an external destination (such
          * as an Kinesis data stream, a Kinesis Data Firehose delivery stream, or an AWS
@@ -367,7 +357,7 @@ namespace Model
         virtual Model::AddApplicationOutputOutcome AddApplicationOutput(const Model::AddApplicationOutputRequest& request) const;
 
         /**
-         * <p>Adds an external destination to your SQL-based Amazon Kinesis Data Analytics
+         * <p>Adds an external destination to your SQL-based Kinesis Data Analytics
          * application.</p> <p>If you want Kinesis Data Analytics to deliver data from an
          * in-application stream within your application to an external destination (such
          * as an Kinesis data stream, a Kinesis Data Firehose delivery stream, or an AWS
@@ -388,7 +378,7 @@ namespace Model
         virtual Model::AddApplicationOutputOutcomeCallable AddApplicationOutputCallable(const Model::AddApplicationOutputRequest& request) const;
 
         /**
-         * <p>Adds an external destination to your SQL-based Amazon Kinesis Data Analytics
+         * <p>Adds an external destination to your SQL-based Kinesis Data Analytics
          * application.</p> <p>If you want Kinesis Data Analytics to deliver data from an
          * in-application stream within your application to an external destination (such
          * as an Kinesis data stream, a Kinesis Data Firehose delivery stream, or an AWS
@@ -409,11 +399,11 @@ namespace Model
         virtual void AddApplicationOutputAsync(const Model::AddApplicationOutputRequest& request, const AddApplicationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds a reference data source to an existing SQL-based Amazon Kinesis Data
-         * Analytics application.</p> <p>Kinesis Data Analytics reads reference data (that
-         * is, an Amazon S3 object) and creates an in-application table within your
-         * application. In the request, you provide the source (S3 bucket name and object
-         * key name), name of the in-application table to create, and the necessary mapping
+         * <p>Adds a reference data source to an existing SQL-based Kinesis Data Analytics
+         * application.</p> <p>Kinesis Data Analytics reads reference data (that is, an
+         * Amazon S3 object) and creates an in-application table within your application.
+         * In the request, you provide the source (S3 bucket name and object key name),
+         * name of the in-application table to create, and the necessary mapping
          * information that describes how data in an Amazon S3 object maps to columns in
          * the resulting in-application table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationReferenceDataSource">AWS
@@ -422,11 +412,11 @@ namespace Model
         virtual Model::AddApplicationReferenceDataSourceOutcome AddApplicationReferenceDataSource(const Model::AddApplicationReferenceDataSourceRequest& request) const;
 
         /**
-         * <p>Adds a reference data source to an existing SQL-based Amazon Kinesis Data
-         * Analytics application.</p> <p>Kinesis Data Analytics reads reference data (that
-         * is, an Amazon S3 object) and creates an in-application table within your
-         * application. In the request, you provide the source (S3 bucket name and object
-         * key name), name of the in-application table to create, and the necessary mapping
+         * <p>Adds a reference data source to an existing SQL-based Kinesis Data Analytics
+         * application.</p> <p>Kinesis Data Analytics reads reference data (that is, an
+         * Amazon S3 object) and creates an in-application table within your application.
+         * In the request, you provide the source (S3 bucket name and object key name),
+         * name of the in-application table to create, and the necessary mapping
          * information that describes how data in an Amazon S3 object maps to columns in
          * the resulting in-application table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationReferenceDataSource">AWS
@@ -437,11 +427,11 @@ namespace Model
         virtual Model::AddApplicationReferenceDataSourceOutcomeCallable AddApplicationReferenceDataSourceCallable(const Model::AddApplicationReferenceDataSourceRequest& request) const;
 
         /**
-         * <p>Adds a reference data source to an existing SQL-based Amazon Kinesis Data
-         * Analytics application.</p> <p>Kinesis Data Analytics reads reference data (that
-         * is, an Amazon S3 object) and creates an in-application table within your
-         * application. In the request, you provide the source (S3 bucket name and object
-         * key name), name of the in-application table to create, and the necessary mapping
+         * <p>Adds a reference data source to an existing SQL-based Kinesis Data Analytics
+         * application.</p> <p>Kinesis Data Analytics reads reference data (that is, an
+         * Amazon S3 object) and creates an in-application table within your application.
+         * In the request, you provide the source (S3 bucket name and object key name),
+         * name of the in-application table to create, and the necessary mapping
          * information that describes how data in an Amazon S3 object maps to columns in
          * the resulting in-application table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationReferenceDataSource">AWS
@@ -498,20 +488,20 @@ namespace Model
         virtual void AddApplicationVpcConfigurationAsync(const Model::AddApplicationVpcConfigurationRequest& request, const AddApplicationVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an Amazon Kinesis Data Analytics application. For information about
-         * creating a Kinesis Data Analytics application, see <a
+         * <p>Creates a Kinesis Data Analytics application. For information about creating
+         * a Kinesis Data Analytics application, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating
-         * an Application</a>. </p><p><h3>See Also:</h3>   <a
+         * an Application</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplication">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
 
         /**
-         * <p>Creates an Amazon Kinesis Data Analytics application. For information about
-         * creating a Kinesis Data Analytics application, see <a
+         * <p>Creates a Kinesis Data Analytics application. For information about creating
+         * a Kinesis Data Analytics application, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating
-         * an Application</a>. </p><p><h3>See Also:</h3>   <a
+         * an Application</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplication">AWS
          * API Reference</a></p>
          *
@@ -520,16 +510,68 @@ namespace Model
         virtual Model::CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request) const;
 
         /**
-         * <p>Creates an Amazon Kinesis Data Analytics application. For information about
-         * creating a Kinesis Data Analytics application, see <a
+         * <p>Creates a Kinesis Data Analytics application. For information about creating
+         * a Kinesis Data Analytics application, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating
-         * an Application</a>. </p><p><h3>See Also:</h3>   <a
+         * an Application</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplication">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates and returns a URL that you can use to connect to an application's
+         * extension. Currently, the only available extension is the Apache Flink
+         * dashboard.</p> <p>The IAM role or user used to call this API defines the
+         * permissions to access the extension. Once the presigned URL is created, no
+         * additional permission is required to access this URL. IAM authorization policies
+         * for this API are also enforced for every HTTP request that attempts to connect
+         * to the extension. </p>  <p>The URL that you get from a call to
+         * CreateApplicationPresignedUrl must be used within 3 minutes to be valid. If you
+         * first try to use the URL after the 3-minute limit expires, the service returns
+         * an HTTP 403 Forbidden error.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationPresignedUrl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateApplicationPresignedUrlOutcome CreateApplicationPresignedUrl(const Model::CreateApplicationPresignedUrlRequest& request) const;
+
+        /**
+         * <p>Creates and returns a URL that you can use to connect to an application's
+         * extension. Currently, the only available extension is the Apache Flink
+         * dashboard.</p> <p>The IAM role or user used to call this API defines the
+         * permissions to access the extension. Once the presigned URL is created, no
+         * additional permission is required to access this URL. IAM authorization policies
+         * for this API are also enforced for every HTTP request that attempts to connect
+         * to the extension. </p>  <p>The URL that you get from a call to
+         * CreateApplicationPresignedUrl must be used within 3 minutes to be valid. If you
+         * first try to use the URL after the 3-minute limit expires, the service returns
+         * an HTTP 403 Forbidden error.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationPresignedUrl">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateApplicationPresignedUrlOutcomeCallable CreateApplicationPresignedUrlCallable(const Model::CreateApplicationPresignedUrlRequest& request) const;
+
+        /**
+         * <p>Creates and returns a URL that you can use to connect to an application's
+         * extension. Currently, the only available extension is the Apache Flink
+         * dashboard.</p> <p>The IAM role or user used to call this API defines the
+         * permissions to access the extension. Once the presigned URL is created, no
+         * additional permission is required to access this URL. IAM authorization policies
+         * for this API are also enforced for every HTTP request that attempts to connect
+         * to the extension. </p>  <p>The URL that you get from a call to
+         * CreateApplicationPresignedUrl must be used within 3 minutes to be valid. If you
+         * first try to use the URL after the 3-minute limit expires, the service returns
+         * an HTTP 403 Forbidden error.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationPresignedUrl">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateApplicationPresignedUrlAsync(const Model::CreateApplicationPresignedUrlRequest& request, const CreateApplicationPresignedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a snapshot of the application's state data.</p><p><h3>See Also:</h3> 
@@ -588,7 +630,7 @@ namespace Model
         virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an Amazon CloudWatch log stream from an Amazon Kinesis Data Analytics
+         * <p>Deletes an Amazon CloudWatch log stream from an Kinesis Data Analytics
          * application. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationCloudWatchLoggingOption">AWS
          * API Reference</a></p>
@@ -596,7 +638,7 @@ namespace Model
         virtual Model::DeleteApplicationCloudWatchLoggingOptionOutcome DeleteApplicationCloudWatchLoggingOption(const Model::DeleteApplicationCloudWatchLoggingOptionRequest& request) const;
 
         /**
-         * <p>Deletes an Amazon CloudWatch log stream from an Amazon Kinesis Data Analytics
+         * <p>Deletes an Amazon CloudWatch log stream from an Kinesis Data Analytics
          * application. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationCloudWatchLoggingOption">AWS
          * API Reference</a></p>
@@ -606,7 +648,7 @@ namespace Model
         virtual Model::DeleteApplicationCloudWatchLoggingOptionOutcomeCallable DeleteApplicationCloudWatchLoggingOptionCallable(const Model::DeleteApplicationCloudWatchLoggingOptionRequest& request) const;
 
         /**
-         * <p>Deletes an Amazon CloudWatch log stream from an Amazon Kinesis Data Analytics
+         * <p>Deletes an Amazon CloudWatch log stream from an Kinesis Data Analytics
          * application. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationCloudWatchLoggingOption">AWS
          * API Reference</a></p>
@@ -644,20 +686,20 @@ namespace Model
         virtual void DeleteApplicationInputProcessingConfigurationAsync(const Model::DeleteApplicationInputProcessingConfigurationRequest& request, const DeleteApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the output destination configuration from your SQL-based Amazon
-         * Kinesis Data Analytics application's configuration. Kinesis Data Analytics will
-         * no longer write data from the corresponding in-application stream to the
-         * external output destination.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the output destination configuration from your SQL-based Kinesis Data
+         * Analytics application's configuration. Kinesis Data Analytics will no longer
+         * write data from the corresponding in-application stream to the external output
+         * destination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationOutput">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteApplicationOutputOutcome DeleteApplicationOutput(const Model::DeleteApplicationOutputRequest& request) const;
 
         /**
-         * <p>Deletes the output destination configuration from your SQL-based Amazon
-         * Kinesis Data Analytics application's configuration. Kinesis Data Analytics will
-         * no longer write data from the corresponding in-application stream to the
-         * external output destination.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the output destination configuration from your SQL-based Kinesis Data
+         * Analytics application's configuration. Kinesis Data Analytics will no longer
+         * write data from the corresponding in-application stream to the external output
+         * destination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationOutput">AWS
          * API Reference</a></p>
          *
@@ -666,10 +708,10 @@ namespace Model
         virtual Model::DeleteApplicationOutputOutcomeCallable DeleteApplicationOutputCallable(const Model::DeleteApplicationOutputRequest& request) const;
 
         /**
-         * <p>Deletes the output destination configuration from your SQL-based Amazon
-         * Kinesis Data Analytics application's configuration. Kinesis Data Analytics will
-         * no longer write data from the corresponding in-application stream to the
-         * external output destination.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the output destination configuration from your SQL-based Kinesis Data
+         * Analytics application's configuration. Kinesis Data Analytics will no longer
+         * write data from the corresponding in-application stream to the external output
+         * destination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationOutput">AWS
          * API Reference</a></p>
          *
@@ -679,11 +721,10 @@ namespace Model
 
         /**
          * <p>Deletes a reference data source configuration from the specified SQL-based
-         * Amazon Kinesis Data Analytics application's configuration.</p> <p>If the
-         * application is running, Kinesis Data Analytics immediately removes the
-         * in-application table that you created using the
-         * <a>AddApplicationReferenceDataSource</a> operation. </p><p><h3>See Also:</h3>  
-         * <a
+         * Kinesis Data Analytics application's configuration.</p> <p>If the application is
+         * running, Kinesis Data Analytics immediately removes the in-application table
+         * that you created using the <a>AddApplicationReferenceDataSource</a> operation.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationReferenceDataSource">AWS
          * API Reference</a></p>
          */
@@ -691,11 +732,10 @@ namespace Model
 
         /**
          * <p>Deletes a reference data source configuration from the specified SQL-based
-         * Amazon Kinesis Data Analytics application's configuration.</p> <p>If the
-         * application is running, Kinesis Data Analytics immediately removes the
-         * in-application table that you created using the
-         * <a>AddApplicationReferenceDataSource</a> operation. </p><p><h3>See Also:</h3>  
-         * <a
+         * Kinesis Data Analytics application's configuration.</p> <p>If the application is
+         * running, Kinesis Data Analytics immediately removes the in-application table
+         * that you created using the <a>AddApplicationReferenceDataSource</a> operation.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationReferenceDataSource">AWS
          * API Reference</a></p>
          *
@@ -705,11 +745,10 @@ namespace Model
 
         /**
          * <p>Deletes a reference data source configuration from the specified SQL-based
-         * Amazon Kinesis Data Analytics application's configuration.</p> <p>If the
-         * application is running, Kinesis Data Analytics immediately removes the
-         * in-application table that you created using the
-         * <a>AddApplicationReferenceDataSource</a> operation. </p><p><h3>See Also:</h3>  
-         * <a
+         * Kinesis Data Analytics application's configuration.</p> <p>If the application is
+         * running, Kinesis Data Analytics immediately removes the in-application table
+         * that you created using the <a>AddApplicationReferenceDataSource</a> operation.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationReferenceDataSource">AWS
          * API Reference</a></p>
          *
@@ -771,20 +810,18 @@ namespace Model
         virtual void DeleteApplicationVpcConfigurationAsync(const Model::DeleteApplicationVpcConfigurationRequest& request, const DeleteApplicationVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about a specific Amazon Kinesis Data Analytics
-         * application.</p> <p>If you want to retrieve a list of all applications in your
-         * account, use the <a>ListApplications</a> operation.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns information about a specific Kinesis Data Analytics application.</p>
+         * <p>If you want to retrieve a list of all applications in your account, use the
+         * <a>ListApplications</a> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplication">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeApplicationOutcome DescribeApplication(const Model::DescribeApplicationRequest& request) const;
 
         /**
-         * <p>Returns information about a specific Amazon Kinesis Data Analytics
-         * application.</p> <p>If you want to retrieve a list of all applications in your
-         * account, use the <a>ListApplications</a> operation.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns information about a specific Kinesis Data Analytics application.</p>
+         * <p>If you want to retrieve a list of all applications in your account, use the
+         * <a>ListApplications</a> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplication">AWS
          * API Reference</a></p>
          *
@@ -793,10 +830,9 @@ namespace Model
         virtual Model::DescribeApplicationOutcomeCallable DescribeApplicationCallable(const Model::DescribeApplicationRequest& request) const;
 
         /**
-         * <p>Returns information about a specific Amazon Kinesis Data Analytics
-         * application.</p> <p>If you want to retrieve a list of all applications in your
-         * account, use the <a>ListApplications</a> operation.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns information about a specific Kinesis Data Analytics application.</p>
+         * <p>If you want to retrieve a list of all applications in your account, use the
+         * <a>ListApplications</a> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplication">AWS
          * API Reference</a></p>
          *
@@ -833,7 +869,7 @@ namespace Model
         virtual void DescribeApplicationSnapshotAsync(const Model::DescribeApplicationSnapshotRequest& request, const DescribeApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Infers a schema for an SQL-based Amazon Kinesis Data Analytics application by
+         * <p>Infers a schema for a SQL-based Kinesis Data Analytics application by
          * evaluating sample records on the specified streaming source (Kinesis data stream
          * or Kinesis Data Firehose delivery stream) or Amazon S3 object. In the response,
          * the operation returns the inferred schema and also the sample records that the
@@ -848,7 +884,7 @@ namespace Model
         virtual Model::DiscoverInputSchemaOutcome DiscoverInputSchema(const Model::DiscoverInputSchemaRequest& request) const;
 
         /**
-         * <p>Infers a schema for an SQL-based Amazon Kinesis Data Analytics application by
+         * <p>Infers a schema for a SQL-based Kinesis Data Analytics application by
          * evaluating sample records on the specified streaming source (Kinesis data stream
          * or Kinesis Data Firehose delivery stream) or Amazon S3 object. In the response,
          * the operation returns the inferred schema and also the sample records that the
@@ -865,7 +901,7 @@ namespace Model
         virtual Model::DiscoverInputSchemaOutcomeCallable DiscoverInputSchemaCallable(const Model::DiscoverInputSchemaRequest& request) const;
 
         /**
-         * <p>Infers a schema for an SQL-based Amazon Kinesis Data Analytics application by
+         * <p>Infers a schema for a SQL-based Kinesis Data Analytics application by
          * evaluating sample records on the specified streaming source (Kinesis data stream
          * or Kinesis Data Firehose delivery stream) or Amazon S3 object. In the response,
          * the operation returns the inferred schema and also the sample records that the
@@ -910,10 +946,10 @@ namespace Model
         virtual void ListApplicationSnapshotsAsync(const Model::ListApplicationSnapshotsRequest& request, const ListApplicationSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of Amazon Kinesis Data Analytics applications in your account.
-         * For each application, the response includes the application name, Amazon
-         * Resource Name (ARN), and status. </p> <p>If you want detailed information about
-         * a specific application, use <a>DescribeApplication</a>.</p><p><h3>See Also:</h3>
+         * <p>Returns a list of Kinesis Data Analytics applications in your account. For
+         * each application, the response includes the application name, Amazon Resource
+         * Name (ARN), and status. </p> <p>If you want detailed information about a
+         * specific application, use <a>DescribeApplication</a>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplications">AWS
          * API Reference</a></p>
@@ -921,10 +957,10 @@ namespace Model
         virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
 
         /**
-         * <p>Returns a list of Amazon Kinesis Data Analytics applications in your account.
-         * For each application, the response includes the application name, Amazon
-         * Resource Name (ARN), and status. </p> <p>If you want detailed information about
-         * a specific application, use <a>DescribeApplication</a>.</p><p><h3>See Also:</h3>
+         * <p>Returns a list of Kinesis Data Analytics applications in your account. For
+         * each application, the response includes the application name, Amazon Resource
+         * Name (ARN), and status. </p> <p>If you want detailed information about a
+         * specific application, use <a>DescribeApplication</a>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplications">AWS
          * API Reference</a></p>
@@ -934,10 +970,10 @@ namespace Model
         virtual Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const Model::ListApplicationsRequest& request) const;
 
         /**
-         * <p>Returns a list of Amazon Kinesis Data Analytics applications in your account.
-         * For each application, the response includes the application name, Amazon
-         * Resource Name (ARN), and status. </p> <p>If you want detailed information about
-         * a specific application, use <a>DescribeApplication</a>.</p><p><h3>See Also:</h3>
+         * <p>Returns a list of Kinesis Data Analytics applications in your account. For
+         * each application, the response includes the application name, Amazon Resource
+         * Name (ARN), and status. </p> <p>If you want detailed information about a
+         * specific application, use <a>DescribeApplication</a>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplications">AWS
          * API Reference</a></p>
@@ -981,8 +1017,8 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts the specified Amazon Kinesis Data Analytics application. After
-         * creating an application, you must exclusively call this operation to start your
+         * <p>Starts the specified Kinesis Data Analytics application. After creating an
+         * application, you must exclusively call this operation to start your
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StartApplication">AWS
          * API Reference</a></p>
@@ -990,8 +1026,8 @@ namespace Model
         virtual Model::StartApplicationOutcome StartApplication(const Model::StartApplicationRequest& request) const;
 
         /**
-         * <p>Starts the specified Amazon Kinesis Data Analytics application. After
-         * creating an application, you must exclusively call this operation to start your
+         * <p>Starts the specified Kinesis Data Analytics application. After creating an
+         * application, you must exclusively call this operation to start your
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StartApplication">AWS
          * API Reference</a></p>
@@ -1001,8 +1037,8 @@ namespace Model
         virtual Model::StartApplicationOutcomeCallable StartApplicationCallable(const Model::StartApplicationRequest& request) const;
 
         /**
-         * <p>Starts the specified Amazon Kinesis Data Analytics application. After
-         * creating an application, you must exclusively call this operation to start your
+         * <p>Starts the specified Kinesis Data Analytics application. After creating an
+         * application, you must exclusively call this operation to start your
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StartApplication">AWS
          * API Reference</a></p>
@@ -1013,8 +1049,11 @@ namespace Model
 
         /**
          * <p>Stops the application from processing data. You can stop an application only
-         * if it is in the running state. You can use the <a>DescribeApplication</a>
-         * operation to find the application state. </p><p><h3>See Also:</h3>   <a
+         * if it is in the running status, unless you set the <code>Force</code> parameter
+         * to <code>true</code>.</p> <p>You can use the <a>DescribeApplication</a>
+         * operation to find the application status. </p> <p>Kinesis Data Analytics takes a
+         * snapshot when the application is stopped, unless <code>Force</code> is set to
+         * <code>true</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StopApplication">AWS
          * API Reference</a></p>
          */
@@ -1022,8 +1061,11 @@ namespace Model
 
         /**
          * <p>Stops the application from processing data. You can stop an application only
-         * if it is in the running state. You can use the <a>DescribeApplication</a>
-         * operation to find the application state. </p><p><h3>See Also:</h3>   <a
+         * if it is in the running status, unless you set the <code>Force</code> parameter
+         * to <code>true</code>.</p> <p>You can use the <a>DescribeApplication</a>
+         * operation to find the application status. </p> <p>Kinesis Data Analytics takes a
+         * snapshot when the application is stopped, unless <code>Force</code> is set to
+         * <code>true</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StopApplication">AWS
          * API Reference</a></p>
          *
@@ -1033,8 +1075,11 @@ namespace Model
 
         /**
          * <p>Stops the application from processing data. You can stop an application only
-         * if it is in the running state. You can use the <a>DescribeApplication</a>
-         * operation to find the application state. </p><p><h3>See Also:</h3>   <a
+         * if it is in the running status, unless you set the <code>Force</code> parameter
+         * to <code>true</code>.</p> <p>You can use the <a>DescribeApplication</a>
+         * operation to find the application status. </p> <p>Kinesis Data Analytics takes a
+         * snapshot when the application is stopped, unless <code>Force</code> is set to
+         * <code>true</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StopApplication">AWS
          * API Reference</a></p>
          *
@@ -1043,9 +1088,9 @@ namespace Model
         virtual void StopApplicationAsync(const Model::StopApplicationRequest& request, const StopApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds one or more key-value tags to a Kinesis Analytics application. Note that
-         * the maximum number of application tags includes system tags. The maximum number
-         * of user-defined application tags is 50. For more information, see <a
+         * <p>Adds one or more key-value tags to a Kinesis Data Analytics application. Note
+         * that the maximum number of application tags includes system tags. The maximum
+         * number of user-defined application tags is 50. For more information, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
          * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/TagResource">AWS
@@ -1054,9 +1099,9 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds one or more key-value tags to a Kinesis Analytics application. Note that
-         * the maximum number of application tags includes system tags. The maximum number
-         * of user-defined application tags is 50. For more information, see <a
+         * <p>Adds one or more key-value tags to a Kinesis Data Analytics application. Note
+         * that the maximum number of application tags includes system tags. The maximum
+         * number of user-defined application tags is 50. For more information, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
          * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/TagResource">AWS
@@ -1067,9 +1112,9 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds one or more key-value tags to a Kinesis Analytics application. Note that
-         * the maximum number of application tags includes system tags. The maximum number
-         * of user-defined application tags is 50. For more information, see <a
+         * <p>Adds one or more key-value tags to a Kinesis Data Analytics application. Note
+         * that the maximum number of application tags includes system tags. The maximum
+         * number of user-defined application tags is 50. For more information, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
          * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/TagResource">AWS
@@ -1080,7 +1125,7 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes one or more tags from a Kinesis Analytics application. For more
+         * <p>Removes one or more tags from a Kinesis Data Analytics application. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
          * Tagging</a>.</p><p><h3>See Also:</h3>   <a
@@ -1090,7 +1135,7 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from a Kinesis Analytics application. For more
+         * <p>Removes one or more tags from a Kinesis Data Analytics application. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
          * Tagging</a>.</p><p><h3>See Also:</h3>   <a
@@ -1102,7 +1147,7 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from a Kinesis Analytics application. For more
+         * <p>Removes one or more tags from a Kinesis Data Analytics application. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
          * Tagging</a>.</p><p><h3>See Also:</h3>   <a
@@ -1114,22 +1159,26 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing Amazon Kinesis Data Analytics application. Using this
-         * operation, you can update application code, input configuration, and output
-         * configuration. </p> <p>Kinesis Data Analytics updates the
-         * <code>ApplicationVersionId</code> each time you update your application.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing Kinesis Data Analytics application. Using this operation,
+         * you can update application code, input configuration, and output configuration.
+         * </p> <p>Kinesis Data Analytics updates the <code>ApplicationVersionId</code>
+         * each time you update your application. </p>  <p>You cannot update the
+         * <code>RuntimeEnvironment</code> of an existing application. If you need to
+         * update an application's <code>RuntimeEnvironment</code>, you must delete the
+         * application and create it again.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplication">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
 
         /**
-         * <p>Updates an existing Amazon Kinesis Data Analytics application. Using this
-         * operation, you can update application code, input configuration, and output
-         * configuration. </p> <p>Kinesis Data Analytics updates the
-         * <code>ApplicationVersionId</code> each time you update your application.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing Kinesis Data Analytics application. Using this operation,
+         * you can update application code, input configuration, and output configuration.
+         * </p> <p>Kinesis Data Analytics updates the <code>ApplicationVersionId</code>
+         * each time you update your application. </p>  <p>You cannot update the
+         * <code>RuntimeEnvironment</code> of an existing application. If you need to
+         * update an application's <code>RuntimeEnvironment</code>, you must delete the
+         * application and create it again.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplication">AWS
          * API Reference</a></p>
          *
@@ -1138,11 +1187,13 @@ namespace Model
         virtual Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
 
         /**
-         * <p>Updates an existing Amazon Kinesis Data Analytics application. Using this
-         * operation, you can update application code, input configuration, and output
-         * configuration. </p> <p>Kinesis Data Analytics updates the
-         * <code>ApplicationVersionId</code> each time you update your application.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing Kinesis Data Analytics application. Using this operation,
+         * you can update application code, input configuration, and output configuration.
+         * </p> <p>Kinesis Data Analytics updates the <code>ApplicationVersionId</code>
+         * each time you update your application. </p>  <p>You cannot update the
+         * <code>RuntimeEnvironment</code> of an existing application. If you need to
+         * update an application's <code>RuntimeEnvironment</code>, you must delete the
+         * application and create it again.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplication">AWS
          * API Reference</a></p>
          *
@@ -1161,6 +1212,7 @@ namespace Model
         void AddApplicationReferenceDataSourceAsyncHelper(const Model::AddApplicationReferenceDataSourceRequest& request, const AddApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddApplicationVpcConfigurationAsyncHelper(const Model::AddApplicationVpcConfigurationRequest& request, const AddApplicationVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateApplicationPresignedUrlAsyncHelper(const Model::CreateApplicationPresignedUrlRequest& request, const CreateApplicationPresignedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateApplicationSnapshotAsyncHelper(const Model::CreateApplicationSnapshotRequest& request, const CreateApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApplicationAsyncHelper(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApplicationCloudWatchLoggingOptionAsyncHelper(const Model::DeleteApplicationCloudWatchLoggingOptionRequest& request, const DeleteApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -1,17 +1,7 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 #pragma once
 
 #include <aws/core/Aws.h>
@@ -173,10 +163,77 @@ namespace Aws
                     m_contentCryptoScheme = contentCryptoScheme;
                 }
 
+                /**
+                * Sets the underlying AAD for GCM if needed.
+                */
+                inline void SetGCMAAD(const Aws::Utils::CryptoBuffer& aad)
+                {
+                    m_gcmAAD = aad;
+                }
+                /**
+                * Gets the underlying aad for GCM if needed.
+                */
+                inline const Aws::Utils::CryptoBuffer& GetGCMAAD() const
+                {
+                    return m_gcmAAD;
+                }
+
+                /**
+                * Sets the underlying tag for decrypting CEK if it's GCM encrypted.
+                */
+                inline void SetCEKGCMTag(const Aws::Utils::CryptoBuffer& tag)
+                {
+                    m_cekGCMTag = tag;
+                }
+                /**
+                * Gets the underlying aad for GCM if needed.
+                */
+                inline const Aws::Utils::CryptoBuffer& GetCEKGCMTag() const
+                {
+                    return m_cekGCMTag;
+                }
+
+                /**
+                * Sets the underlying initialization vector for CEK if it's GCM encrypted.
+                */
+                inline void SetCekIV(const Aws::Utils::CryptoBuffer& iv)
+                {
+                    m_cekIV = iv;
+                }
+                /**
+                * Gets the underlying CEK initialization vector.
+                */
+                inline const Aws::Utils::CryptoBuffer& GetCekIV() const
+                {
+                    return m_cekIV;
+                }
+
+                /**
+                 * Sets the underlying final CEK
+                 */
+                inline void SetFinalCEK(const Aws::Utils::CryptoBuffer& finalCEK)
+                {
+                    m_finalCEK = finalCEK;
+                }
+                /**
+                * Gets the underlying final CEK.
+                */
+                inline const Aws::Utils::CryptoBuffer& GetFinalCEK() const
+                {
+                    return m_finalCEK;
+                }
+
             private:
                 Aws::Utils::CryptoBuffer m_contentEncryptionKey;
                 Aws::Utils::CryptoBuffer m_encryptedContentEncryptionKey;
+                /* if using AES_GCM key wrap algorithm, then final CEK is iv + encrypted_key + tag
+                 * otherwise it's the same as m_encryptedContentEncryptionKey
+                 */
+                Aws::Utils::CryptoBuffer m_finalCEK;
                 Aws::Utils::CryptoBuffer m_iv;
+                Aws::Utils::CryptoBuffer m_cekIV;
+                Aws::Utils::CryptoBuffer m_gcmAAD;
+                Aws::Utils::CryptoBuffer m_cekGCMTag;
                 size_t m_cryptoTagLength;
                 Aws::Map<Aws::String, Aws::String> m_materialsDescription;
                 KeyWrapAlgorithm m_keyWrapAlgorithm;

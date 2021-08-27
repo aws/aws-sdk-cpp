@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
@@ -59,9 +49,9 @@ namespace Model
      * <p> <code>HE-AACv2</code>: Not supported on some players and devices. Use for
      * bit rates less than 48 kbps.</p> </li> </ul> <p>All outputs in a
      * <code>Smooth</code> playlist must have the same value for
-     * <code>Profile</code>.</p> <note> <p>If you created any presets before AAC
+     * <code>Profile</code>.</p>  <p>If you created any presets before AAC
      * profiles were added, Elastic Transcoder automatically updated your presets to
-     * use AAC-LC. You can change the value as required.</p> </note>
+     * use AAC-LC. You can change the value as required.</p> 
      */
     inline const Aws::String& GetProfile() const{ return m_profile; }
 
@@ -77,9 +67,9 @@ namespace Model
      * <p> <code>HE-AACv2</code>: Not supported on some players and devices. Use for
      * bit rates less than 48 kbps.</p> </li> </ul> <p>All outputs in a
      * <code>Smooth</code> playlist must have the same value for
-     * <code>Profile</code>.</p> <note> <p>If you created any presets before AAC
+     * <code>Profile</code>.</p>  <p>If you created any presets before AAC
      * profiles were added, Elastic Transcoder automatically updated your presets to
-     * use AAC-LC. You can change the value as required.</p> </note>
+     * use AAC-LC. You can change the value as required.</p> 
      */
     inline bool ProfileHasBeenSet() const { return m_profileHasBeenSet; }
 
@@ -95,9 +85,9 @@ namespace Model
      * <p> <code>HE-AACv2</code>: Not supported on some players and devices. Use for
      * bit rates less than 48 kbps.</p> </li> </ul> <p>All outputs in a
      * <code>Smooth</code> playlist must have the same value for
-     * <code>Profile</code>.</p> <note> <p>If you created any presets before AAC
+     * <code>Profile</code>.</p>  <p>If you created any presets before AAC
      * profiles were added, Elastic Transcoder automatically updated your presets to
-     * use AAC-LC. You can change the value as required.</p> </note>
+     * use AAC-LC. You can change the value as required.</p> 
      */
     inline void SetProfile(const Aws::String& value) { m_profileHasBeenSet = true; m_profile = value; }
 
@@ -113,9 +103,9 @@ namespace Model
      * <p> <code>HE-AACv2</code>: Not supported on some players and devices. Use for
      * bit rates less than 48 kbps.</p> </li> </ul> <p>All outputs in a
      * <code>Smooth</code> playlist must have the same value for
-     * <code>Profile</code>.</p> <note> <p>If you created any presets before AAC
+     * <code>Profile</code>.</p>  <p>If you created any presets before AAC
      * profiles were added, Elastic Transcoder automatically updated your presets to
-     * use AAC-LC. You can change the value as required.</p> </note>
+     * use AAC-LC. You can change the value as required.</p> 
      */
     inline void SetProfile(Aws::String&& value) { m_profileHasBeenSet = true; m_profile = std::move(value); }
 
@@ -131,9 +121,9 @@ namespace Model
      * <p> <code>HE-AACv2</code>: Not supported on some players and devices. Use for
      * bit rates less than 48 kbps.</p> </li> </ul> <p>All outputs in a
      * <code>Smooth</code> playlist must have the same value for
-     * <code>Profile</code>.</p> <note> <p>If you created any presets before AAC
+     * <code>Profile</code>.</p>  <p>If you created any presets before AAC
      * profiles were added, Elastic Transcoder automatically updated your presets to
-     * use AAC-LC. You can change the value as required.</p> </note>
+     * use AAC-LC. You can change the value as required.</p> 
      */
     inline void SetProfile(const char* value) { m_profileHasBeenSet = true; m_profile.assign(value); }
 
@@ -149,9 +139,9 @@ namespace Model
      * <p> <code>HE-AACv2</code>: Not supported on some players and devices. Use for
      * bit rates less than 48 kbps.</p> </li> </ul> <p>All outputs in a
      * <code>Smooth</code> playlist must have the same value for
-     * <code>Profile</code>.</p> <note> <p>If you created any presets before AAC
+     * <code>Profile</code>.</p>  <p>If you created any presets before AAC
      * profiles were added, Elastic Transcoder automatically updated your presets to
-     * use AAC-LC. You can change the value as required.</p> </note>
+     * use AAC-LC. You can change the value as required.</p> 
      */
     inline AudioCodecOptions& WithProfile(const Aws::String& value) { SetProfile(value); return *this;}
 
@@ -167,9 +157,9 @@ namespace Model
      * <p> <code>HE-AACv2</code>: Not supported on some players and devices. Use for
      * bit rates less than 48 kbps.</p> </li> </ul> <p>All outputs in a
      * <code>Smooth</code> playlist must have the same value for
-     * <code>Profile</code>.</p> <note> <p>If you created any presets before AAC
+     * <code>Profile</code>.</p>  <p>If you created any presets before AAC
      * profiles were added, Elastic Transcoder automatically updated your presets to
-     * use AAC-LC. You can change the value as required.</p> </note>
+     * use AAC-LC. You can change the value as required.</p> 
      */
     inline AudioCodecOptions& WithProfile(Aws::String&& value) { SetProfile(std::move(value)); return *this;}
 
@@ -185,9 +175,9 @@ namespace Model
      * <p> <code>HE-AACv2</code>: Not supported on some players and devices. Use for
      * bit rates less than 48 kbps.</p> </li> </ul> <p>All outputs in a
      * <code>Smooth</code> playlist must have the same value for
-     * <code>Profile</code>.</p> <note> <p>If you created any presets before AAC
+     * <code>Profile</code>.</p>  <p>If you created any presets before AAC
      * profiles were added, Elastic Transcoder automatically updated your presets to
-     * use AAC-LC. You can change the value as required.</p> </note>
+     * use AAC-LC. You can change the value as required.</p> 
      */
     inline AudioCodecOptions& WithProfile(const char* value) { SetProfile(value); return *this;}
 

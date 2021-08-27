@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
@@ -218,11 +208,18 @@ namespace Model
      * the current generation types provide more memory and computational power at
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
-     * generation: </p> <p> <b>M5 node types:</b> <code>cache.m5.large</code>,
-     * <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
-     * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
-     * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
+     * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
+     * available in the following regions: us-east-1, us-west-2, us-east-2,
+     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
+     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
+     * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
+     * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
      * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
@@ -237,11 +234,18 @@ namespace Model
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R5 node types:</b> <code>cache.r5.large</code>,
-     * <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
-     * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
-     * <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b>
-     * <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6
+     * onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
+     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
+     * available in the following regions: us-east-1, us-west-2, us-east-2,
+     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
+     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
+     * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
+     * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
@@ -266,11 +270,18 @@ namespace Model
      * the current generation types provide more memory and computational power at
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
-     * generation: </p> <p> <b>M5 node types:</b> <code>cache.m5.large</code>,
-     * <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
-     * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
-     * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
+     * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
+     * available in the following regions: us-east-1, us-west-2, us-east-2,
+     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
+     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
+     * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
+     * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
      * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
@@ -285,11 +296,18 @@ namespace Model
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R5 node types:</b> <code>cache.r5.large</code>,
-     * <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
-     * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
-     * <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b>
-     * <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6
+     * onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
+     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
+     * available in the following regions: us-east-1, us-west-2, us-east-2,
+     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
+     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
+     * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
+     * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
@@ -314,11 +332,18 @@ namespace Model
      * the current generation types provide more memory and computational power at
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
-     * generation: </p> <p> <b>M5 node types:</b> <code>cache.m5.large</code>,
-     * <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
-     * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
-     * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
+     * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
+     * available in the following regions: us-east-1, us-west-2, us-east-2,
+     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
+     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
+     * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
+     * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
      * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
@@ -333,11 +358,18 @@ namespace Model
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R5 node types:</b> <code>cache.r5.large</code>,
-     * <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
-     * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
-     * <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b>
-     * <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6
+     * onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
+     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
+     * available in the following regions: us-east-1, us-west-2, us-east-2,
+     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
+     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
+     * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
+     * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
@@ -362,11 +394,18 @@ namespace Model
      * the current generation types provide more memory and computational power at
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
-     * generation: </p> <p> <b>M5 node types:</b> <code>cache.m5.large</code>,
-     * <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
-     * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
-     * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
+     * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
+     * available in the following regions: us-east-1, us-west-2, us-east-2,
+     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
+     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
+     * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
+     * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
      * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
@@ -381,11 +420,18 @@ namespace Model
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R5 node types:</b> <code>cache.r5.large</code>,
-     * <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
-     * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
-     * <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b>
-     * <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6
+     * onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
+     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
+     * available in the following regions: us-east-1, us-west-2, us-east-2,
+     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
+     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
+     * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
+     * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
@@ -410,11 +456,18 @@ namespace Model
      * the current generation types provide more memory and computational power at
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
-     * generation: </p> <p> <b>M5 node types:</b> <code>cache.m5.large</code>,
-     * <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
-     * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
-     * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
+     * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
+     * available in the following regions: us-east-1, us-west-2, us-east-2,
+     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
+     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
+     * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
+     * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
      * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
@@ -429,11 +482,18 @@ namespace Model
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R5 node types:</b> <code>cache.r5.large</code>,
-     * <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
-     * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
-     * <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b>
-     * <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6
+     * onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
+     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
+     * available in the following regions: us-east-1, us-west-2, us-east-2,
+     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
+     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
+     * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
+     * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
@@ -458,11 +518,18 @@ namespace Model
      * the current generation types provide more memory and computational power at
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
-     * generation: </p> <p> <b>M5 node types:</b> <code>cache.m5.large</code>,
-     * <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
-     * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
-     * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
+     * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
+     * available in the following regions: us-east-1, us-west-2, us-east-2,
+     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
+     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
+     * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
+     * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
      * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
@@ -477,11 +544,18 @@ namespace Model
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R5 node types:</b> <code>cache.r5.large</code>,
-     * <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
-     * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
-     * <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b>
-     * <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6
+     * onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
+     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
+     * available in the following regions: us-east-1, us-west-2, us-east-2,
+     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
+     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
+     * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
+     * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
@@ -506,11 +580,18 @@ namespace Model
      * the current generation types provide more memory and computational power at
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
-     * generation: </p> <p> <b>M5 node types:</b> <code>cache.m5.large</code>,
-     * <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
-     * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
-     * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
+     * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
+     * available in the following regions: us-east-1, us-west-2, us-east-2,
+     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
+     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
+     * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
+     * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
      * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
@@ -525,11 +606,18 @@ namespace Model
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R5 node types:</b> <code>cache.r5.large</code>,
-     * <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
-     * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
-     * <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b>
-     * <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6
+     * onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
+     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
+     * available in the following regions: us-east-1, us-west-2, us-east-2,
+     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
+     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
+     * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
+     * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
@@ -554,11 +642,18 @@ namespace Model
      * the current generation types provide more memory and computational power at
      * lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
-     * generation: </p> <p> <b>M5 node types:</b> <code>cache.m5.large</code>,
-     * <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
-     * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
-     * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
+     * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>At this time, M6g node types are
+     * available in the following regions: us-east-1, us-west-2, us-east-2,
+     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>M5 node
+     * types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
+     * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
+     * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
      * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
@@ -573,11 +668,18 @@ namespace Model
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R5 node types:</b> <code>cache.r5.large</code>,
-     * <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
-     * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
-     * <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b>
-     * <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6
+     * onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
+     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>At this time, R6g node types are
+     * available in the following regions: us-east-1, us-west-2, us-east-2,
+     * eu-central-1, eu-west-1 and ap-northeast-1.</p>  <p> <b>R5 node
+     * types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
+     * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
+     * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
@@ -836,6 +938,47 @@ namespace Model
      * "Multiple" if the cache nodes are located in different Availability Zones.</p>
      */
     inline CacheCluster& WithPreferredAvailabilityZone(const char* value) { SetPreferredAvailabilityZone(value); return *this;}
+
+
+    /**
+     * <p>The outpost ARN in which the cache cluster is created.</p>
+     */
+    inline const Aws::String& GetPreferredOutpostArn() const{ return m_preferredOutpostArn; }
+
+    /**
+     * <p>The outpost ARN in which the cache cluster is created.</p>
+     */
+    inline bool PreferredOutpostArnHasBeenSet() const { return m_preferredOutpostArnHasBeenSet; }
+
+    /**
+     * <p>The outpost ARN in which the cache cluster is created.</p>
+     */
+    inline void SetPreferredOutpostArn(const Aws::String& value) { m_preferredOutpostArnHasBeenSet = true; m_preferredOutpostArn = value; }
+
+    /**
+     * <p>The outpost ARN in which the cache cluster is created.</p>
+     */
+    inline void SetPreferredOutpostArn(Aws::String&& value) { m_preferredOutpostArnHasBeenSet = true; m_preferredOutpostArn = std::move(value); }
+
+    /**
+     * <p>The outpost ARN in which the cache cluster is created.</p>
+     */
+    inline void SetPreferredOutpostArn(const char* value) { m_preferredOutpostArnHasBeenSet = true; m_preferredOutpostArn.assign(value); }
+
+    /**
+     * <p>The outpost ARN in which the cache cluster is created.</p>
+     */
+    inline CacheCluster& WithPreferredOutpostArn(const Aws::String& value) { SetPreferredOutpostArn(value); return *this;}
+
+    /**
+     * <p>The outpost ARN in which the cache cluster is created.</p>
+     */
+    inline CacheCluster& WithPreferredOutpostArn(Aws::String&& value) { SetPreferredOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The outpost ARN in which the cache cluster is created.</p>
+     */
+    inline CacheCluster& WithPreferredOutpostArn(const char* value) { SetPreferredOutpostArn(value); return *this;}
 
 
     /**
@@ -1305,9 +1448,9 @@ namespace Model
      * <p>The number of days for which ElastiCache retains automatic cluster snapshots
      * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     * retained for 5 days before being deleted.</p> <important> <p> If the value of
+     * retained for 5 days before being deleted.</p>  <p> If the value of
      * SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
-     * </important>
+     * 
      */
     inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
 
@@ -1315,9 +1458,9 @@ namespace Model
      * <p>The number of days for which ElastiCache retains automatic cluster snapshots
      * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     * retained for 5 days before being deleted.</p> <important> <p> If the value of
+     * retained for 5 days before being deleted.</p>  <p> If the value of
      * SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
-     * </important>
+     * 
      */
     inline bool SnapshotRetentionLimitHasBeenSet() const { return m_snapshotRetentionLimitHasBeenSet; }
 
@@ -1325,9 +1468,9 @@ namespace Model
      * <p>The number of days for which ElastiCache retains automatic cluster snapshots
      * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     * retained for 5 days before being deleted.</p> <important> <p> If the value of
+     * retained for 5 days before being deleted.</p>  <p> If the value of
      * SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
-     * </important>
+     * 
      */
     inline void SetSnapshotRetentionLimit(int value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
 
@@ -1335,9 +1478,9 @@ namespace Model
      * <p>The number of days for which ElastiCache retains automatic cluster snapshots
      * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     * retained for 5 days before being deleted.</p> <important> <p> If the value of
+     * retained for 5 days before being deleted.</p>  <p> If the value of
      * SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
-     * </important>
+     * 
      */
     inline CacheCluster& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
 
@@ -1536,6 +1679,47 @@ namespace Model
      */
     inline CacheCluster& WithAtRestEncryptionEnabled(bool value) { SetAtRestEncryptionEnabled(value); return *this;}
 
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache cluster.</p>
+     */
+    inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache cluster.</p>
+     */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache cluster.</p>
+     */
+    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache cluster.</p>
+     */
+    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache cluster.</p>
+     */
+    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache cluster.</p>
+     */
+    inline CacheCluster& WithARN(const Aws::String& value) { SetARN(value); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache cluster.</p>
+     */
+    inline CacheCluster& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache cluster.</p>
+     */
+    inline CacheCluster& WithARN(const char* value) { SetARN(value); return *this;}
+
   private:
 
     Aws::String m_cacheClusterId;
@@ -1564,6 +1748,9 @@ namespace Model
 
     Aws::String m_preferredAvailabilityZone;
     bool m_preferredAvailabilityZoneHasBeenSet;
+
+    Aws::String m_preferredOutpostArn;
+    bool m_preferredOutpostArnHasBeenSet;
 
     Aws::Utils::DateTime m_cacheClusterCreateTime;
     bool m_cacheClusterCreateTimeHasBeenSet;
@@ -1615,6 +1802,9 @@ namespace Model
 
     bool m_atRestEncryptionEnabled;
     bool m_atRestEncryptionEnabledHasBeenSet;
+
+    Aws::String m_aRN;
+    bool m_aRNHasBeenSet;
   };
 
 } // namespace Model

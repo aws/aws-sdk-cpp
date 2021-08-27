@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
@@ -48,22 +38,22 @@ namespace Model
 
 
     /**
-     * <p>The estimated size of the resource in bytes.</p>
+     * <p>The estimated size of the resource, in bytes.</p>
      */
     inline double GetEstimatedSizeInBytes() const{ return m_estimatedSizeInBytes; }
 
     /**
-     * <p>The estimated size of the resource in bytes.</p>
+     * <p>The estimated size of the resource, in bytes.</p>
      */
     inline bool EstimatedSizeInBytesHasBeenSet() const { return m_estimatedSizeInBytesHasBeenSet; }
 
     /**
-     * <p>The estimated size of the resource in bytes.</p>
+     * <p>The estimated size of the resource, in bytes.</p>
      */
     inline void SetEstimatedSizeInBytes(double value) { m_estimatedSizeInBytesHasBeenSet = true; m_estimatedSizeInBytes = value; }
 
     /**
-     * <p>The estimated size of the resource in bytes.</p>
+     * <p>The estimated size of the resource, in bytes.</p>
      */
     inline EstimatedResourceSize& WithEstimatedSizeInBytes(double value) { SetEstimatedSizeInBytes(value); return *this;}
 

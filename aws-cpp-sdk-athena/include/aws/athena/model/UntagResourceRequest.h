@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/athena/Athena_EXPORTS.h>
@@ -46,105 +36,97 @@ namespace Model
 
 
     /**
-     * <p>Removes one or more tags from the workgroup resource for the specified
-     * ARN.</p>
+     * <p>Specifies the ARN of the resource from which tags are to be removed.</p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
 
     /**
-     * <p>Removes one or more tags from the workgroup resource for the specified
-     * ARN.</p>
+     * <p>Specifies the ARN of the resource from which tags are to be removed.</p>
      */
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
 
     /**
-     * <p>Removes one or more tags from the workgroup resource for the specified
-     * ARN.</p>
+     * <p>Specifies the ARN of the resource from which tags are to be removed.</p>
      */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
-     * <p>Removes one or more tags from the workgroup resource for the specified
-     * ARN.</p>
+     * <p>Specifies the ARN of the resource from which tags are to be removed.</p>
      */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
 
     /**
-     * <p>Removes one or more tags from the workgroup resource for the specified
-     * ARN.</p>
+     * <p>Specifies the ARN of the resource from which tags are to be removed.</p>
      */
     inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
 
     /**
-     * <p>Removes one or more tags from the workgroup resource for the specified
-     * ARN.</p>
+     * <p>Specifies the ARN of the resource from which tags are to be removed.</p>
      */
     inline UntagResourceRequest& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
 
     /**
-     * <p>Removes one or more tags from the workgroup resource for the specified
-     * ARN.</p>
+     * <p>Specifies the ARN of the resource from which tags are to be removed.</p>
      */
     inline UntagResourceRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
 
     /**
-     * <p>Removes one or more tags from the workgroup resource for the specified
-     * ARN.</p>
+     * <p>Specifies the ARN of the resource from which tags are to be removed.</p>
      */
     inline UntagResourceRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
 
 
     /**
-     * <p>Removes the tags associated with one or more tag keys from the workgroup
-     * resource.</p>
+     * <p>A comma-separated list of one or more tag keys whose tags are to be removed
+     * from the specified resource.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
 
     /**
-     * <p>Removes the tags associated with one or more tag keys from the workgroup
-     * resource.</p>
+     * <p>A comma-separated list of one or more tag keys whose tags are to be removed
+     * from the specified resource.</p>
      */
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
-     * <p>Removes the tags associated with one or more tag keys from the workgroup
-     * resource.</p>
+     * <p>A comma-separated list of one or more tag keys whose tags are to be removed
+     * from the specified resource.</p>
      */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
 
     /**
-     * <p>Removes the tags associated with one or more tag keys from the workgroup
-     * resource.</p>
+     * <p>A comma-separated list of one or more tag keys whose tags are to be removed
+     * from the specified resource.</p>
      */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
-     * <p>Removes the tags associated with one or more tag keys from the workgroup
-     * resource.</p>
+     * <p>A comma-separated list of one or more tag keys whose tags are to be removed
+     * from the specified resource.</p>
      */
     inline UntagResourceRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
 
     /**
-     * <p>Removes the tags associated with one or more tag keys from the workgroup
-     * resource.</p>
+     * <p>A comma-separated list of one or more tag keys whose tags are to be removed
+     * from the specified resource.</p>
      */
     inline UntagResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
-     * <p>Removes the tags associated with one or more tag keys from the workgroup
-     * resource.</p>
+     * <p>A comma-separated list of one or more tag keys whose tags are to be removed
+     * from the specified resource.</p>
      */
     inline UntagResourceRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
     /**
-     * <p>Removes the tags associated with one or more tag keys from the workgroup
-     * resource.</p>
+     * <p>A comma-separated list of one or more tag keys whose tags are to be removed
+     * from the specified resource.</p>
      */
     inline UntagResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Removes the tags associated with one or more tag keys from the workgroup
-     * resource.</p>
+     * <p>A comma-separated list of one or more tag keys whose tags are to be removed
+     * from the specified resource.</p>
      */
     inline UntagResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 

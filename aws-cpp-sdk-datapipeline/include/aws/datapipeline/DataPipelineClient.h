@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
@@ -98,25 +88,25 @@ namespace Model
         class SetTaskStatusRequest;
         class ValidatePipelineDefinitionRequest;
 
-        typedef Aws::Utils::Outcome<ActivatePipelineResult, Aws::Client::AWSError<DataPipelineErrors>> ActivatePipelineOutcome;
-        typedef Aws::Utils::Outcome<AddTagsResult, Aws::Client::AWSError<DataPipelineErrors>> AddTagsOutcome;
-        typedef Aws::Utils::Outcome<CreatePipelineResult, Aws::Client::AWSError<DataPipelineErrors>> CreatePipelineOutcome;
-        typedef Aws::Utils::Outcome<DeactivatePipelineResult, Aws::Client::AWSError<DataPipelineErrors>> DeactivatePipelineOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DataPipelineErrors>> DeletePipelineOutcome;
-        typedef Aws::Utils::Outcome<DescribeObjectsResult, Aws::Client::AWSError<DataPipelineErrors>> DescribeObjectsOutcome;
-        typedef Aws::Utils::Outcome<DescribePipelinesResult, Aws::Client::AWSError<DataPipelineErrors>> DescribePipelinesOutcome;
-        typedef Aws::Utils::Outcome<EvaluateExpressionResult, Aws::Client::AWSError<DataPipelineErrors>> EvaluateExpressionOutcome;
-        typedef Aws::Utils::Outcome<GetPipelineDefinitionResult, Aws::Client::AWSError<DataPipelineErrors>> GetPipelineDefinitionOutcome;
-        typedef Aws::Utils::Outcome<ListPipelinesResult, Aws::Client::AWSError<DataPipelineErrors>> ListPipelinesOutcome;
-        typedef Aws::Utils::Outcome<PollForTaskResult, Aws::Client::AWSError<DataPipelineErrors>> PollForTaskOutcome;
-        typedef Aws::Utils::Outcome<PutPipelineDefinitionResult, Aws::Client::AWSError<DataPipelineErrors>> PutPipelineDefinitionOutcome;
-        typedef Aws::Utils::Outcome<QueryObjectsResult, Aws::Client::AWSError<DataPipelineErrors>> QueryObjectsOutcome;
-        typedef Aws::Utils::Outcome<RemoveTagsResult, Aws::Client::AWSError<DataPipelineErrors>> RemoveTagsOutcome;
-        typedef Aws::Utils::Outcome<ReportTaskProgressResult, Aws::Client::AWSError<DataPipelineErrors>> ReportTaskProgressOutcome;
-        typedef Aws::Utils::Outcome<ReportTaskRunnerHeartbeatResult, Aws::Client::AWSError<DataPipelineErrors>> ReportTaskRunnerHeartbeatOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DataPipelineErrors>> SetStatusOutcome;
-        typedef Aws::Utils::Outcome<SetTaskStatusResult, Aws::Client::AWSError<DataPipelineErrors>> SetTaskStatusOutcome;
-        typedef Aws::Utils::Outcome<ValidatePipelineDefinitionResult, Aws::Client::AWSError<DataPipelineErrors>> ValidatePipelineDefinitionOutcome;
+        typedef Aws::Utils::Outcome<ActivatePipelineResult, DataPipelineError> ActivatePipelineOutcome;
+        typedef Aws::Utils::Outcome<AddTagsResult, DataPipelineError> AddTagsOutcome;
+        typedef Aws::Utils::Outcome<CreatePipelineResult, DataPipelineError> CreatePipelineOutcome;
+        typedef Aws::Utils::Outcome<DeactivatePipelineResult, DataPipelineError> DeactivatePipelineOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DataPipelineError> DeletePipelineOutcome;
+        typedef Aws::Utils::Outcome<DescribeObjectsResult, DataPipelineError> DescribeObjectsOutcome;
+        typedef Aws::Utils::Outcome<DescribePipelinesResult, DataPipelineError> DescribePipelinesOutcome;
+        typedef Aws::Utils::Outcome<EvaluateExpressionResult, DataPipelineError> EvaluateExpressionOutcome;
+        typedef Aws::Utils::Outcome<GetPipelineDefinitionResult, DataPipelineError> GetPipelineDefinitionOutcome;
+        typedef Aws::Utils::Outcome<ListPipelinesResult, DataPipelineError> ListPipelinesOutcome;
+        typedef Aws::Utils::Outcome<PollForTaskResult, DataPipelineError> PollForTaskOutcome;
+        typedef Aws::Utils::Outcome<PutPipelineDefinitionResult, DataPipelineError> PutPipelineDefinitionOutcome;
+        typedef Aws::Utils::Outcome<QueryObjectsResult, DataPipelineError> QueryObjectsOutcome;
+        typedef Aws::Utils::Outcome<RemoveTagsResult, DataPipelineError> RemoveTagsOutcome;
+        typedef Aws::Utils::Outcome<ReportTaskProgressResult, DataPipelineError> ReportTaskProgressOutcome;
+        typedef Aws::Utils::Outcome<ReportTaskRunnerHeartbeatResult, DataPipelineError> ReportTaskRunnerHeartbeatOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DataPipelineError> SetStatusOutcome;
+        typedef Aws::Utils::Outcome<SetTaskStatusResult, DataPipelineError> SetTaskStatusOutcome;
+        typedef Aws::Utils::Outcome<ValidatePipelineDefinitionResult, DataPipelineError> ValidatePipelineDefinitionOutcome;
 
         typedef std::future<ActivatePipelineOutcome> ActivatePipelineOutcomeCallable;
         typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
@@ -206,8 +196,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~DataPipelineClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "datapipeline"; }
 
 
         /**

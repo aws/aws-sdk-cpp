@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codestar/CodeStar_EXPORTS.h>
@@ -97,24 +87,24 @@ namespace Model
         class UpdateTeamMemberRequest;
         class UpdateUserProfileRequest;
 
-        typedef Aws::Utils::Outcome<AssociateTeamMemberResult, Aws::Client::AWSError<CodeStarErrors>> AssociateTeamMemberOutcome;
-        typedef Aws::Utils::Outcome<CreateProjectResult, Aws::Client::AWSError<CodeStarErrors>> CreateProjectOutcome;
-        typedef Aws::Utils::Outcome<CreateUserProfileResult, Aws::Client::AWSError<CodeStarErrors>> CreateUserProfileOutcome;
-        typedef Aws::Utils::Outcome<DeleteProjectResult, Aws::Client::AWSError<CodeStarErrors>> DeleteProjectOutcome;
-        typedef Aws::Utils::Outcome<DeleteUserProfileResult, Aws::Client::AWSError<CodeStarErrors>> DeleteUserProfileOutcome;
-        typedef Aws::Utils::Outcome<DescribeProjectResult, Aws::Client::AWSError<CodeStarErrors>> DescribeProjectOutcome;
-        typedef Aws::Utils::Outcome<DescribeUserProfileResult, Aws::Client::AWSError<CodeStarErrors>> DescribeUserProfileOutcome;
-        typedef Aws::Utils::Outcome<DisassociateTeamMemberResult, Aws::Client::AWSError<CodeStarErrors>> DisassociateTeamMemberOutcome;
-        typedef Aws::Utils::Outcome<ListProjectsResult, Aws::Client::AWSError<CodeStarErrors>> ListProjectsOutcome;
-        typedef Aws::Utils::Outcome<ListResourcesResult, Aws::Client::AWSError<CodeStarErrors>> ListResourcesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForProjectResult, Aws::Client::AWSError<CodeStarErrors>> ListTagsForProjectOutcome;
-        typedef Aws::Utils::Outcome<ListTeamMembersResult, Aws::Client::AWSError<CodeStarErrors>> ListTeamMembersOutcome;
-        typedef Aws::Utils::Outcome<ListUserProfilesResult, Aws::Client::AWSError<CodeStarErrors>> ListUserProfilesOutcome;
-        typedef Aws::Utils::Outcome<TagProjectResult, Aws::Client::AWSError<CodeStarErrors>> TagProjectOutcome;
-        typedef Aws::Utils::Outcome<UntagProjectResult, Aws::Client::AWSError<CodeStarErrors>> UntagProjectOutcome;
-        typedef Aws::Utils::Outcome<UpdateProjectResult, Aws::Client::AWSError<CodeStarErrors>> UpdateProjectOutcome;
-        typedef Aws::Utils::Outcome<UpdateTeamMemberResult, Aws::Client::AWSError<CodeStarErrors>> UpdateTeamMemberOutcome;
-        typedef Aws::Utils::Outcome<UpdateUserProfileResult, Aws::Client::AWSError<CodeStarErrors>> UpdateUserProfileOutcome;
+        typedef Aws::Utils::Outcome<AssociateTeamMemberResult, CodeStarError> AssociateTeamMemberOutcome;
+        typedef Aws::Utils::Outcome<CreateProjectResult, CodeStarError> CreateProjectOutcome;
+        typedef Aws::Utils::Outcome<CreateUserProfileResult, CodeStarError> CreateUserProfileOutcome;
+        typedef Aws::Utils::Outcome<DeleteProjectResult, CodeStarError> DeleteProjectOutcome;
+        typedef Aws::Utils::Outcome<DeleteUserProfileResult, CodeStarError> DeleteUserProfileOutcome;
+        typedef Aws::Utils::Outcome<DescribeProjectResult, CodeStarError> DescribeProjectOutcome;
+        typedef Aws::Utils::Outcome<DescribeUserProfileResult, CodeStarError> DescribeUserProfileOutcome;
+        typedef Aws::Utils::Outcome<DisassociateTeamMemberResult, CodeStarError> DisassociateTeamMemberOutcome;
+        typedef Aws::Utils::Outcome<ListProjectsResult, CodeStarError> ListProjectsOutcome;
+        typedef Aws::Utils::Outcome<ListResourcesResult, CodeStarError> ListResourcesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForProjectResult, CodeStarError> ListTagsForProjectOutcome;
+        typedef Aws::Utils::Outcome<ListTeamMembersResult, CodeStarError> ListTeamMembersOutcome;
+        typedef Aws::Utils::Outcome<ListUserProfilesResult, CodeStarError> ListUserProfilesOutcome;
+        typedef Aws::Utils::Outcome<TagProjectResult, CodeStarError> TagProjectOutcome;
+        typedef Aws::Utils::Outcome<UntagProjectResult, CodeStarError> UntagProjectOutcome;
+        typedef Aws::Utils::Outcome<UpdateProjectResult, CodeStarError> UpdateProjectOutcome;
+        typedef Aws::Utils::Outcome<UpdateTeamMemberResult, CodeStarError> UpdateTeamMemberOutcome;
+        typedef Aws::Utils::Outcome<UpdateUserProfileResult, CodeStarError> UpdateUserProfileOutcome;
 
         typedef std::future<AssociateTeamMemberOutcome> AssociateTeamMemberOutcomeCallable;
         typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
@@ -214,8 +204,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CodeStarClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "CodeStar"; }
 
 
         /**

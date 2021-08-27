@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -46,32 +36,32 @@ namespace Model
 
 
     /**
-     * <p>The resource name you want to list the account settings for.</p>
+     * <p>The name of the account setting you want to list the settings for.</p>
      */
     inline const SettingName& GetName() const{ return m_name; }
 
     /**
-     * <p>The resource name you want to list the account settings for.</p>
+     * <p>The name of the account setting you want to list the settings for.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The resource name you want to list the account settings for.</p>
+     * <p>The name of the account setting you want to list the settings for.</p>
      */
     inline void SetName(const SettingName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The resource name you want to list the account settings for.</p>
+     * <p>The name of the account setting you want to list the settings for.</p>
      */
     inline void SetName(SettingName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The resource name you want to list the account settings for.</p>
+     * <p>The name of the account setting you want to list the settings for.</p>
      */
     inline ListAccountSettingsRequest& WithName(const SettingName& value) { SetName(value); return *this;}
 
     /**
-     * <p>The resource name you want to list the account settings for.</p>
+     * <p>The name of the account setting you want to list the settings for.</p>
      */
     inline ListAccountSettingsRequest& WithName(SettingName&& value) { SetName(std::move(value)); return *this;}
 
@@ -224,9 +214,9 @@ namespace Model
      * <code>ListAccountSettings</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
      * <code>maxResults</code> was provided, it is possible the number of results to be
-     * fewer than <code>maxResults</code>.</p> <note> <p>This token should be treated
+     * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
-     * and not for other programmatic purposes.</p> </note>
+     * and not for other programmatic purposes.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -235,9 +225,9 @@ namespace Model
      * <code>ListAccountSettings</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
      * <code>maxResults</code> was provided, it is possible the number of results to be
-     * fewer than <code>maxResults</code>.</p> <note> <p>This token should be treated
+     * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
-     * and not for other programmatic purposes.</p> </note>
+     * and not for other programmatic purposes.</p> 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -246,9 +236,9 @@ namespace Model
      * <code>ListAccountSettings</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
      * <code>maxResults</code> was provided, it is possible the number of results to be
-     * fewer than <code>maxResults</code>.</p> <note> <p>This token should be treated
+     * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
-     * and not for other programmatic purposes.</p> </note>
+     * and not for other programmatic purposes.</p> 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -257,9 +247,9 @@ namespace Model
      * <code>ListAccountSettings</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
      * <code>maxResults</code> was provided, it is possible the number of results to be
-     * fewer than <code>maxResults</code>.</p> <note> <p>This token should be treated
+     * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
-     * and not for other programmatic purposes.</p> </note>
+     * and not for other programmatic purposes.</p> 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -268,9 +258,9 @@ namespace Model
      * <code>ListAccountSettings</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
      * <code>maxResults</code> was provided, it is possible the number of results to be
-     * fewer than <code>maxResults</code>.</p> <note> <p>This token should be treated
+     * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
-     * and not for other programmatic purposes.</p> </note>
+     * and not for other programmatic purposes.</p> 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -279,9 +269,9 @@ namespace Model
      * <code>ListAccountSettings</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
      * <code>maxResults</code> was provided, it is possible the number of results to be
-     * fewer than <code>maxResults</code>.</p> <note> <p>This token should be treated
+     * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
-     * and not for other programmatic purposes.</p> </note>
+     * and not for other programmatic purposes.</p> 
      */
     inline ListAccountSettingsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -290,9 +280,9 @@ namespace Model
      * <code>ListAccountSettings</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
      * <code>maxResults</code> was provided, it is possible the number of results to be
-     * fewer than <code>maxResults</code>.</p> <note> <p>This token should be treated
+     * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
-     * and not for other programmatic purposes.</p> </note>
+     * and not for other programmatic purposes.</p> 
      */
     inline ListAccountSettingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -301,9 +291,9 @@ namespace Model
      * <code>ListAccountSettings</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
      * <code>maxResults</code> was provided, it is possible the number of results to be
-     * fewer than <code>maxResults</code>.</p> <note> <p>This token should be treated
+     * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
-     * and not for other programmatic purposes.</p> </note>
+     * and not for other programmatic purposes.</p> 
      */
     inline ListAccountSettingsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

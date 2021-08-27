@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/datasync/model/Options.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -52,7 +42,9 @@ Options::Options() :
     m_taskQueueing(TaskQueueing::NOT_SET),
     m_taskQueueingHasBeenSet(false),
     m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false)
+    m_logLevelHasBeenSet(false),
+    m_transferMode(TransferMode::NOT_SET),
+    m_transferModeHasBeenSet(false)
 {
 }
 
@@ -80,7 +72,9 @@ Options::Options(JsonView jsonValue) :
     m_taskQueueing(TaskQueueing::NOT_SET),
     m_taskQueueingHasBeenSet(false),
     m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false)
+    m_logLevelHasBeenSet(false),
+    m_transferMode(TransferMode::NOT_SET),
+    m_transferModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -171,6 +165,13 @@ Options& Options::operator =(JsonView jsonValue)
     m_logLevelHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TransferMode"))
+  {
+    m_transferMode = TransferModeMapper::GetTransferModeForName(jsonValue.GetString("TransferMode"));
+
+    m_transferModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -237,6 +238,11 @@ JsonValue Options::Jsonize() const
   if(m_logLevelHasBeenSet)
   {
    payload.WithString("LogLevel", LogLevelMapper::GetNameForLogLevel(m_logLevel));
+  }
+
+  if(m_transferModeHasBeenSet)
+  {
+   payload.WithString("TransferMode", TransferModeMapper::GetNameForTransferMode(m_transferMode));
   }
 
   return payload;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
@@ -50,7 +40,7 @@ namespace Model
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p> <note> <p>If you specify an ARN, we generally
+     * secret must already exist.</p>  <p>If you specify an ARN, we generally
      * recommend that you specify a complete ARN. You can specify a partial ARN too—for
      * example, if you don’t include the final hyphen and six random characters that
      * Secrets Manager adds at the end of the ARN when you created the secret. A
@@ -60,15 +50,19 @@ namespace Model
      * ARN) and you try to use that as a partial ARN, then those characters cause
      * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
      * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names that end with a hyphen followed by six characters.</p>
-     * </note>
+     * don’t create secret names ending with a hyphen followed by six characters.</p>
+     * <p>If you specify an incomplete ARN without the random suffix, and instead
+     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
+     * you do include the random suffix added by Secrets Manager, you receive either a
+     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
+     * depending on your permissions.</p> 
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
 
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p> <note> <p>If you specify an ARN, we generally
+     * secret must already exist.</p>  <p>If you specify an ARN, we generally
      * recommend that you specify a complete ARN. You can specify a partial ARN too—for
      * example, if you don’t include the final hyphen and six random characters that
      * Secrets Manager adds at the end of the ARN when you created the secret. A
@@ -78,15 +72,19 @@ namespace Model
      * ARN) and you try to use that as a partial ARN, then those characters cause
      * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
      * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names that end with a hyphen followed by six characters.</p>
-     * </note>
+     * don’t create secret names ending with a hyphen followed by six characters.</p>
+     * <p>If you specify an incomplete ARN without the random suffix, and instead
+     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
+     * you do include the random suffix added by Secrets Manager, you receive either a
+     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
+     * depending on your permissions.</p> 
      */
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
 
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p> <note> <p>If you specify an ARN, we generally
+     * secret must already exist.</p>  <p>If you specify an ARN, we generally
      * recommend that you specify a complete ARN. You can specify a partial ARN too—for
      * example, if you don’t include the final hyphen and six random characters that
      * Secrets Manager adds at the end of the ARN when you created the secret. A
@@ -96,15 +94,19 @@ namespace Model
      * ARN) and you try to use that as a partial ARN, then those characters cause
      * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
      * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names that end with a hyphen followed by six characters.</p>
-     * </note>
+     * don’t create secret names ending with a hyphen followed by six characters.</p>
+     * <p>If you specify an incomplete ARN without the random suffix, and instead
+     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
+     * you do include the random suffix added by Secrets Manager, you receive either a
+     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
+     * depending on your permissions.</p> 
      */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
 
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p> <note> <p>If you specify an ARN, we generally
+     * secret must already exist.</p>  <p>If you specify an ARN, we generally
      * recommend that you specify a complete ARN. You can specify a partial ARN too—for
      * example, if you don’t include the final hyphen and six random characters that
      * Secrets Manager adds at the end of the ARN when you created the secret. A
@@ -114,15 +116,19 @@ namespace Model
      * ARN) and you try to use that as a partial ARN, then those characters cause
      * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
      * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names that end with a hyphen followed by six characters.</p>
-     * </note>
+     * don’t create secret names ending with a hyphen followed by six characters.</p>
+     * <p>If you specify an incomplete ARN without the random suffix, and instead
+     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
+     * you do include the random suffix added by Secrets Manager, you receive either a
+     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
+     * depending on your permissions.</p> 
      */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
 
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p> <note> <p>If you specify an ARN, we generally
+     * secret must already exist.</p>  <p>If you specify an ARN, we generally
      * recommend that you specify a complete ARN. You can specify a partial ARN too—for
      * example, if you don’t include the final hyphen and six random characters that
      * Secrets Manager adds at the end of the ARN when you created the secret. A
@@ -132,15 +138,19 @@ namespace Model
      * ARN) and you try to use that as a partial ARN, then those characters cause
      * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
      * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names that end with a hyphen followed by six characters.</p>
-     * </note>
+     * don’t create secret names ending with a hyphen followed by six characters.</p>
+     * <p>If you specify an incomplete ARN without the random suffix, and instead
+     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
+     * you do include the random suffix added by Secrets Manager, you receive either a
+     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
+     * depending on your permissions.</p> 
      */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
 
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p> <note> <p>If you specify an ARN, we generally
+     * secret must already exist.</p>  <p>If you specify an ARN, we generally
      * recommend that you specify a complete ARN. You can specify a partial ARN too—for
      * example, if you don’t include the final hyphen and six random characters that
      * Secrets Manager adds at the end of the ARN when you created the secret. A
@@ -150,15 +160,19 @@ namespace Model
      * ARN) and you try to use that as a partial ARN, then those characters cause
      * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
      * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names that end with a hyphen followed by six characters.</p>
-     * </note>
+     * don’t create secret names ending with a hyphen followed by six characters.</p>
+     * <p>If you specify an incomplete ARN without the random suffix, and instead
+     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
+     * you do include the random suffix added by Secrets Manager, you receive either a
+     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
+     * depending on your permissions.</p> 
      */
     inline PutSecretValueRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
 
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p> <note> <p>If you specify an ARN, we generally
+     * secret must already exist.</p>  <p>If you specify an ARN, we generally
      * recommend that you specify a complete ARN. You can specify a partial ARN too—for
      * example, if you don’t include the final hyphen and six random characters that
      * Secrets Manager adds at the end of the ARN when you created the secret. A
@@ -168,15 +182,19 @@ namespace Model
      * ARN) and you try to use that as a partial ARN, then those characters cause
      * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
      * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names that end with a hyphen followed by six characters.</p>
-     * </note>
+     * don’t create secret names ending with a hyphen followed by six characters.</p>
+     * <p>If you specify an incomplete ARN without the random suffix, and instead
+     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
+     * you do include the random suffix added by Secrets Manager, you receive either a
+     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
+     * depending on your permissions.</p> 
      */
     inline PutSecretValueRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p> <note> <p>If you specify an ARN, we generally
+     * secret must already exist.</p>  <p>If you specify an ARN, we generally
      * recommend that you specify a complete ARN. You can specify a partial ARN too—for
      * example, if you don’t include the final hyphen and six random characters that
      * Secrets Manager adds at the end of the ARN when you created the secret. A
@@ -186,20 +204,24 @@ namespace Model
      * ARN) and you try to use that as a partial ARN, then those characters cause
      * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
      * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names that end with a hyphen followed by six characters.</p>
-     * </note>
+     * don’t create secret names ending with a hyphen followed by six characters.</p>
+     * <p>If you specify an incomplete ARN without the random suffix, and instead
+     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
+     * you do include the random suffix added by Secrets Manager, you receive either a
+     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
+     * depending on your permissions.</p> 
      */
     inline PutSecretValueRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
 
 
     /**
      * <p>(Optional) Specifies a unique identifier for the new version of the secret.
-     * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
+     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes that in the request. If you don't use the SDK
      * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
      * then you must generate a <code>ClientRequestToken</code> yourself for new
-     * versions and include that value in the request. </p> </note> <p>This value helps
+     * versions and include that value in the request. </p>  <p>This value helps
      * ensure idempotency. Secrets Manager uses this value to prevent the accidental
      * creation of duplicate versions if there are failures and retries during the
      * Lambda rotation function's processing. We recommend that you generate a <a
@@ -210,8 +232,8 @@ namespace Model
      * version with this value already exists and that version's
      * <code>SecretString</code> or <code>SecretBinary</code> values are the same as
      * those in the request then the request is ignored (the operation is idempotent).
-     * </p> </li> <li> <p>If a version with this value already exists and that
-     * version's <code>SecretString</code> and <code>SecretBinary</code> values are
+     * </p> </li> <li> <p>If a version with this value already exists and the version
+     * of the <code>SecretString</code> and <code>SecretBinary</code> values are
      * different from those in the request then the request fails because you cannot
      * modify an existing secret version. You can only create new versions to store new
      * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
@@ -221,12 +243,12 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies a unique identifier for the new version of the secret.
-     * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
+     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes that in the request. If you don't use the SDK
      * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
      * then you must generate a <code>ClientRequestToken</code> yourself for new
-     * versions and include that value in the request. </p> </note> <p>This value helps
+     * versions and include that value in the request. </p>  <p>This value helps
      * ensure idempotency. Secrets Manager uses this value to prevent the accidental
      * creation of duplicate versions if there are failures and retries during the
      * Lambda rotation function's processing. We recommend that you generate a <a
@@ -237,8 +259,8 @@ namespace Model
      * version with this value already exists and that version's
      * <code>SecretString</code> or <code>SecretBinary</code> values are the same as
      * those in the request then the request is ignored (the operation is idempotent).
-     * </p> </li> <li> <p>If a version with this value already exists and that
-     * version's <code>SecretString</code> and <code>SecretBinary</code> values are
+     * </p> </li> <li> <p>If a version with this value already exists and the version
+     * of the <code>SecretString</code> and <code>SecretBinary</code> values are
      * different from those in the request then the request fails because you cannot
      * modify an existing secret version. You can only create new versions to store new
      * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
@@ -248,12 +270,12 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies a unique identifier for the new version of the secret.
-     * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
+     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes that in the request. If you don't use the SDK
      * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
      * then you must generate a <code>ClientRequestToken</code> yourself for new
-     * versions and include that value in the request. </p> </note> <p>This value helps
+     * versions and include that value in the request. </p>  <p>This value helps
      * ensure idempotency. Secrets Manager uses this value to prevent the accidental
      * creation of duplicate versions if there are failures and retries during the
      * Lambda rotation function's processing. We recommend that you generate a <a
@@ -264,8 +286,8 @@ namespace Model
      * version with this value already exists and that version's
      * <code>SecretString</code> or <code>SecretBinary</code> values are the same as
      * those in the request then the request is ignored (the operation is idempotent).
-     * </p> </li> <li> <p>If a version with this value already exists and that
-     * version's <code>SecretString</code> and <code>SecretBinary</code> values are
+     * </p> </li> <li> <p>If a version with this value already exists and the version
+     * of the <code>SecretString</code> and <code>SecretBinary</code> values are
      * different from those in the request then the request fails because you cannot
      * modify an existing secret version. You can only create new versions to store new
      * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
@@ -275,12 +297,12 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies a unique identifier for the new version of the secret.
-     * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
+     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes that in the request. If you don't use the SDK
      * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
      * then you must generate a <code>ClientRequestToken</code> yourself for new
-     * versions and include that value in the request. </p> </note> <p>This value helps
+     * versions and include that value in the request. </p>  <p>This value helps
      * ensure idempotency. Secrets Manager uses this value to prevent the accidental
      * creation of duplicate versions if there are failures and retries during the
      * Lambda rotation function's processing. We recommend that you generate a <a
@@ -291,8 +313,8 @@ namespace Model
      * version with this value already exists and that version's
      * <code>SecretString</code> or <code>SecretBinary</code> values are the same as
      * those in the request then the request is ignored (the operation is idempotent).
-     * </p> </li> <li> <p>If a version with this value already exists and that
-     * version's <code>SecretString</code> and <code>SecretBinary</code> values are
+     * </p> </li> <li> <p>If a version with this value already exists and the version
+     * of the <code>SecretString</code> and <code>SecretBinary</code> values are
      * different from those in the request then the request fails because you cannot
      * modify an existing secret version. You can only create new versions to store new
      * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
@@ -302,12 +324,12 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies a unique identifier for the new version of the secret.
-     * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
+     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes that in the request. If you don't use the SDK
      * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
      * then you must generate a <code>ClientRequestToken</code> yourself for new
-     * versions and include that value in the request. </p> </note> <p>This value helps
+     * versions and include that value in the request. </p>  <p>This value helps
      * ensure idempotency. Secrets Manager uses this value to prevent the accidental
      * creation of duplicate versions if there are failures and retries during the
      * Lambda rotation function's processing. We recommend that you generate a <a
@@ -318,8 +340,8 @@ namespace Model
      * version with this value already exists and that version's
      * <code>SecretString</code> or <code>SecretBinary</code> values are the same as
      * those in the request then the request is ignored (the operation is idempotent).
-     * </p> </li> <li> <p>If a version with this value already exists and that
-     * version's <code>SecretString</code> and <code>SecretBinary</code> values are
+     * </p> </li> <li> <p>If a version with this value already exists and the version
+     * of the <code>SecretString</code> and <code>SecretBinary</code> values are
      * different from those in the request then the request fails because you cannot
      * modify an existing secret version. You can only create new versions to store new
      * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
@@ -329,12 +351,12 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies a unique identifier for the new version of the secret.
-     * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
+     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes that in the request. If you don't use the SDK
      * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
      * then you must generate a <code>ClientRequestToken</code> yourself for new
-     * versions and include that value in the request. </p> </note> <p>This value helps
+     * versions and include that value in the request. </p>  <p>This value helps
      * ensure idempotency. Secrets Manager uses this value to prevent the accidental
      * creation of duplicate versions if there are failures and retries during the
      * Lambda rotation function's processing. We recommend that you generate a <a
@@ -345,8 +367,8 @@ namespace Model
      * version with this value already exists and that version's
      * <code>SecretString</code> or <code>SecretBinary</code> values are the same as
      * those in the request then the request is ignored (the operation is idempotent).
-     * </p> </li> <li> <p>If a version with this value already exists and that
-     * version's <code>SecretString</code> and <code>SecretBinary</code> values are
+     * </p> </li> <li> <p>If a version with this value already exists and the version
+     * of the <code>SecretString</code> and <code>SecretBinary</code> values are
      * different from those in the request then the request fails because you cannot
      * modify an existing secret version. You can only create new versions to store new
      * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
@@ -356,12 +378,12 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies a unique identifier for the new version of the secret.
-     * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
+     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes that in the request. If you don't use the SDK
      * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
      * then you must generate a <code>ClientRequestToken</code> yourself for new
-     * versions and include that value in the request. </p> </note> <p>This value helps
+     * versions and include that value in the request. </p>  <p>This value helps
      * ensure idempotency. Secrets Manager uses this value to prevent the accidental
      * creation of duplicate versions if there are failures and retries during the
      * Lambda rotation function's processing. We recommend that you generate a <a
@@ -372,8 +394,8 @@ namespace Model
      * version with this value already exists and that version's
      * <code>SecretString</code> or <code>SecretBinary</code> values are the same as
      * those in the request then the request is ignored (the operation is idempotent).
-     * </p> </li> <li> <p>If a version with this value already exists and that
-     * version's <code>SecretString</code> and <code>SecretBinary</code> values are
+     * </p> </li> <li> <p>If a version with this value already exists and the version
+     * of the <code>SecretString</code> and <code>SecretBinary</code> values are
      * different from those in the request then the request fails because you cannot
      * modify an existing secret version. You can only create new versions to store new
      * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
@@ -383,12 +405,12 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies a unique identifier for the new version of the secret.
-     * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
+     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes that in the request. If you don't use the SDK
      * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
      * then you must generate a <code>ClientRequestToken</code> yourself for new
-     * versions and include that value in the request. </p> </note> <p>This value helps
+     * versions and include that value in the request. </p>  <p>This value helps
      * ensure idempotency. Secrets Manager uses this value to prevent the accidental
      * creation of duplicate versions if there are failures and retries during the
      * Lambda rotation function's processing. We recommend that you generate a <a
@@ -399,8 +421,8 @@ namespace Model
      * version with this value already exists and that version's
      * <code>SecretString</code> or <code>SecretBinary</code> values are the same as
      * those in the request then the request is ignored (the operation is idempotent).
-     * </p> </li> <li> <p>If a version with this value already exists and that
-     * version's <code>SecretString</code> and <code>SecretBinary</code> values are
+     * </p> </li> <li> <p>If a version with this value already exists and the version
+     * of the <code>SecretString</code> and <code>SecretBinary</code> values are
      * different from those in the request then the request fails because you cannot
      * modify an existing secret version. You can only create new versions to store new
      * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>

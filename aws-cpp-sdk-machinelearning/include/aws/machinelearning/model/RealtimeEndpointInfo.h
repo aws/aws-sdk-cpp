@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
@@ -114,57 +104,57 @@ namespace Model
 
     /**
      * <p>The URI that specifies where to send real-time prediction requests for the
-     * <code>MLModel</code>.</p> <note><title>Note</title> <p>The application must wait
-     * until the real-time endpoint is ready before using this URI.</p> </note>
+     * <code>MLModel</code>.</p> <title>Note</title> <p>The application must wait
+     * until the real-time endpoint is ready before using this URI.</p> 
      */
     inline const Aws::String& GetEndpointUrl() const{ return m_endpointUrl; }
 
     /**
      * <p>The URI that specifies where to send real-time prediction requests for the
-     * <code>MLModel</code>.</p> <note><title>Note</title> <p>The application must wait
-     * until the real-time endpoint is ready before using this URI.</p> </note>
+     * <code>MLModel</code>.</p> <title>Note</title> <p>The application must wait
+     * until the real-time endpoint is ready before using this URI.</p> 
      */
     inline bool EndpointUrlHasBeenSet() const { return m_endpointUrlHasBeenSet; }
 
     /**
      * <p>The URI that specifies where to send real-time prediction requests for the
-     * <code>MLModel</code>.</p> <note><title>Note</title> <p>The application must wait
-     * until the real-time endpoint is ready before using this URI.</p> </note>
+     * <code>MLModel</code>.</p> <title>Note</title> <p>The application must wait
+     * until the real-time endpoint is ready before using this URI.</p> 
      */
     inline void SetEndpointUrl(const Aws::String& value) { m_endpointUrlHasBeenSet = true; m_endpointUrl = value; }
 
     /**
      * <p>The URI that specifies where to send real-time prediction requests for the
-     * <code>MLModel</code>.</p> <note><title>Note</title> <p>The application must wait
-     * until the real-time endpoint is ready before using this URI.</p> </note>
+     * <code>MLModel</code>.</p> <title>Note</title> <p>The application must wait
+     * until the real-time endpoint is ready before using this URI.</p> 
      */
     inline void SetEndpointUrl(Aws::String&& value) { m_endpointUrlHasBeenSet = true; m_endpointUrl = std::move(value); }
 
     /**
      * <p>The URI that specifies where to send real-time prediction requests for the
-     * <code>MLModel</code>.</p> <note><title>Note</title> <p>The application must wait
-     * until the real-time endpoint is ready before using this URI.</p> </note>
+     * <code>MLModel</code>.</p> <title>Note</title> <p>The application must wait
+     * until the real-time endpoint is ready before using this URI.</p> 
      */
     inline void SetEndpointUrl(const char* value) { m_endpointUrlHasBeenSet = true; m_endpointUrl.assign(value); }
 
     /**
      * <p>The URI that specifies where to send real-time prediction requests for the
-     * <code>MLModel</code>.</p> <note><title>Note</title> <p>The application must wait
-     * until the real-time endpoint is ready before using this URI.</p> </note>
+     * <code>MLModel</code>.</p> <title>Note</title> <p>The application must wait
+     * until the real-time endpoint is ready before using this URI.</p> 
      */
     inline RealtimeEndpointInfo& WithEndpointUrl(const Aws::String& value) { SetEndpointUrl(value); return *this;}
 
     /**
      * <p>The URI that specifies where to send real-time prediction requests for the
-     * <code>MLModel</code>.</p> <note><title>Note</title> <p>The application must wait
-     * until the real-time endpoint is ready before using this URI.</p> </note>
+     * <code>MLModel</code>.</p> <title>Note</title> <p>The application must wait
+     * until the real-time endpoint is ready before using this URI.</p> 
      */
     inline RealtimeEndpointInfo& WithEndpointUrl(Aws::String&& value) { SetEndpointUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URI that specifies where to send real-time prediction requests for the
-     * <code>MLModel</code>.</p> <note><title>Note</title> <p>The application must wait
-     * until the real-time endpoint is ready before using this URI.</p> </note>
+     * <code>MLModel</code>.</p> <title>Note</title> <p>The application must wait
+     * until the real-time endpoint is ready before using this URI.</p> 
      */
     inline RealtimeEndpointInfo& WithEndpointUrl(const char* value) { SetEndpointUrl(value); return *this;}
 

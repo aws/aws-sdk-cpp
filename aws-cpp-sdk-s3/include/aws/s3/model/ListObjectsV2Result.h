@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -105,99 +95,162 @@ namespace Model
 
 
     /**
-     * <p>Bucket name. </p> <p>When using this API with an access point, you must
+     * <p>The bucket name.</p> <p>When using this API with an access point, you must
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Bucket name. </p> <p>When using this API with an access point, you must
+     * <p>The bucket name.</p> <p>When using this API with an access point, you must
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>Bucket name. </p> <p>When using this API with an access point, you must
+     * <p>The bucket name.</p> <p>When using this API with an access point, you must
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>Bucket name. </p> <p>When using this API with an access point, you must
+     * <p>The bucket name.</p> <p>When using this API with an access point, you must
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>Bucket name. </p> <p>When using this API with an access point, you must
+     * <p>The bucket name.</p> <p>When using this API with an access point, you must
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
     inline ListObjectsV2Result& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Bucket name. </p> <p>When using this API with an access point, you must
+     * <p>The bucket name.</p> <p>When using this API with an access point, you must
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
     inline ListObjectsV2Result& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Bucket name. </p> <p>When using this API with an access point, you must
+     * <p>The bucket name.</p> <p>When using this API with an access point, you must
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
     inline ListObjectsV2Result& WithName(const char* value) { SetName(value); return *this;}
@@ -304,20 +357,23 @@ namespace Model
 
 
     /**
-     * <p>Sets the maximum number of keys returned in the response. The response might
-     * contain fewer keys but will never contain more.</p>
+     * <p>Sets the maximum number of keys returned in the response. By default the API
+     * returns up to 1,000 key names. The response might contain fewer keys but will
+     * never contain more.</p>
      */
     inline int GetMaxKeys() const{ return m_maxKeys; }
 
     /**
-     * <p>Sets the maximum number of keys returned in the response. The response might
-     * contain fewer keys but will never contain more.</p>
+     * <p>Sets the maximum number of keys returned in the response. By default the API
+     * returns up to 1,000 key names. The response might contain fewer keys but will
+     * never contain more.</p>
      */
     inline void SetMaxKeys(int value) { m_maxKeys = value; }
 
     /**
-     * <p>Sets the maximum number of keys returned in the response. The response might
-     * contain fewer keys but will never contain more.</p>
+     * <p>Sets the maximum number of keys returned in the response. By default the API
+     * returns up to 1,000 key names. The response might contain fewer keys but will
+     * never contain more.</p>
      */
     inline ListObjectsV2Result& WithMaxKeys(int value) { SetMaxKeys(value); return *this;}
 

@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/worklink/WorkLink_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/worklink/model/FleetStatus.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -50,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline void SetFleetArn(Aws::String&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::move(value); }
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline void SetFleetArn(const char* value) { m_fleetArnHasBeenSet = true; m_fleetArn.assign(value); }
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline FleetSummary& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline FleetSummary& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline FleetSummary& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
 
@@ -194,42 +185,42 @@ namespace Model
 
 
     /**
-     * <p>The name to display.</p>
+     * <p>The name of the fleet to display.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The name to display.</p>
+     * <p>The name of the fleet to display.</p>
      */
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
-     * <p>The name to display.</p>
+     * <p>The name of the fleet to display.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The name to display.</p>
+     * <p>The name of the fleet to display.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The name to display.</p>
+     * <p>The name of the fleet to display.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The name to display.</p>
+     * <p>The name of the fleet to display.</p>
      */
     inline FleetSummary& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The name to display.</p>
+     * <p>The name of the fleet to display.</p>
      */
     inline FleetSummary& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The name to display.</p>
+     * <p>The name of the fleet to display.</p>
      */
     inline FleetSummary& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
@@ -305,6 +296,72 @@ namespace Model
      */
     inline FleetSummary& WithFleetStatus(FleetStatus&& value) { SetFleetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline FleetSummary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline FleetSummary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline FleetSummary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline FleetSummary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline FleetSummary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline FleetSummary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline FleetSummary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline FleetSummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline FleetSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_fleetArn;
@@ -327,6 +384,9 @@ namespace Model
 
     FleetStatus m_fleetStatus;
     bool m_fleetStatusHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

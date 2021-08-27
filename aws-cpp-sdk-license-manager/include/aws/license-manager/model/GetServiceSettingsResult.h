@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
@@ -123,48 +113,48 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether AWS Organizations has been integrated with License Manager
-     * for cross-account discovery.</p>
+     * <p>Indicates whether AWS Organizations is integrated with License Manager for
+     * cross-account discovery.</p>
      */
     inline const OrganizationConfiguration& GetOrganizationConfiguration() const{ return m_organizationConfiguration; }
 
     /**
-     * <p>Indicates whether AWS Organizations has been integrated with License Manager
-     * for cross-account discovery.</p>
+     * <p>Indicates whether AWS Organizations is integrated with License Manager for
+     * cross-account discovery.</p>
      */
     inline void SetOrganizationConfiguration(const OrganizationConfiguration& value) { m_organizationConfiguration = value; }
 
     /**
-     * <p>Indicates whether AWS Organizations has been integrated with License Manager
-     * for cross-account discovery.</p>
+     * <p>Indicates whether AWS Organizations is integrated with License Manager for
+     * cross-account discovery.</p>
      */
     inline void SetOrganizationConfiguration(OrganizationConfiguration&& value) { m_organizationConfiguration = std::move(value); }
 
     /**
-     * <p>Indicates whether AWS Organizations has been integrated with License Manager
-     * for cross-account discovery.</p>
+     * <p>Indicates whether AWS Organizations is integrated with License Manager for
+     * cross-account discovery.</p>
      */
     inline GetServiceSettingsResult& WithOrganizationConfiguration(const OrganizationConfiguration& value) { SetOrganizationConfiguration(value); return *this;}
 
     /**
-     * <p>Indicates whether AWS Organizations has been integrated with License Manager
-     * for cross-account discovery.</p>
+     * <p>Indicates whether AWS Organizations is integrated with License Manager for
+     * cross-account discovery.</p>
      */
     inline GetServiceSettingsResult& WithOrganizationConfiguration(OrganizationConfiguration&& value) { SetOrganizationConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Indicates whether cross-account discovery has been enabled.</p>
+     * <p>Indicates whether cross-account discovery is enabled.</p>
      */
     inline bool GetEnableCrossAccountsDiscovery() const{ return m_enableCrossAccountsDiscovery; }
 
     /**
-     * <p>Indicates whether cross-account discovery has been enabled.</p>
+     * <p>Indicates whether cross-account discovery is enabled.</p>
      */
     inline void SetEnableCrossAccountsDiscovery(bool value) { m_enableCrossAccountsDiscovery = value; }
 
     /**
-     * <p>Indicates whether cross-account discovery has been enabled.</p>
+     * <p>Indicates whether cross-account discovery is enabled.</p>
      */
     inline GetServiceSettingsResult& WithEnableCrossAccountsDiscovery(bool value) { SetEnableCrossAccountsDiscovery(value); return *this;}
 

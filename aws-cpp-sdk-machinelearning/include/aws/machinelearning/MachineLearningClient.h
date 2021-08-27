@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
@@ -117,34 +107,34 @@ namespace Model
         class UpdateEvaluationRequest;
         class UpdateMLModelRequest;
 
-        typedef Aws::Utils::Outcome<AddTagsResult, Aws::Client::AWSError<MachineLearningErrors>> AddTagsOutcome;
-        typedef Aws::Utils::Outcome<CreateBatchPredictionResult, Aws::Client::AWSError<MachineLearningErrors>> CreateBatchPredictionOutcome;
-        typedef Aws::Utils::Outcome<CreateDataSourceFromRDSResult, Aws::Client::AWSError<MachineLearningErrors>> CreateDataSourceFromRDSOutcome;
-        typedef Aws::Utils::Outcome<CreateDataSourceFromRedshiftResult, Aws::Client::AWSError<MachineLearningErrors>> CreateDataSourceFromRedshiftOutcome;
-        typedef Aws::Utils::Outcome<CreateDataSourceFromS3Result, Aws::Client::AWSError<MachineLearningErrors>> CreateDataSourceFromS3Outcome;
-        typedef Aws::Utils::Outcome<CreateEvaluationResult, Aws::Client::AWSError<MachineLearningErrors>> CreateEvaluationOutcome;
-        typedef Aws::Utils::Outcome<CreateMLModelResult, Aws::Client::AWSError<MachineLearningErrors>> CreateMLModelOutcome;
-        typedef Aws::Utils::Outcome<CreateRealtimeEndpointResult, Aws::Client::AWSError<MachineLearningErrors>> CreateRealtimeEndpointOutcome;
-        typedef Aws::Utils::Outcome<DeleteBatchPredictionResult, Aws::Client::AWSError<MachineLearningErrors>> DeleteBatchPredictionOutcome;
-        typedef Aws::Utils::Outcome<DeleteDataSourceResult, Aws::Client::AWSError<MachineLearningErrors>> DeleteDataSourceOutcome;
-        typedef Aws::Utils::Outcome<DeleteEvaluationResult, Aws::Client::AWSError<MachineLearningErrors>> DeleteEvaluationOutcome;
-        typedef Aws::Utils::Outcome<DeleteMLModelResult, Aws::Client::AWSError<MachineLearningErrors>> DeleteMLModelOutcome;
-        typedef Aws::Utils::Outcome<DeleteRealtimeEndpointResult, Aws::Client::AWSError<MachineLearningErrors>> DeleteRealtimeEndpointOutcome;
-        typedef Aws::Utils::Outcome<DeleteTagsResult, Aws::Client::AWSError<MachineLearningErrors>> DeleteTagsOutcome;
-        typedef Aws::Utils::Outcome<DescribeBatchPredictionsResult, Aws::Client::AWSError<MachineLearningErrors>> DescribeBatchPredictionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDataSourcesResult, Aws::Client::AWSError<MachineLearningErrors>> DescribeDataSourcesOutcome;
-        typedef Aws::Utils::Outcome<DescribeEvaluationsResult, Aws::Client::AWSError<MachineLearningErrors>> DescribeEvaluationsOutcome;
-        typedef Aws::Utils::Outcome<DescribeMLModelsResult, Aws::Client::AWSError<MachineLearningErrors>> DescribeMLModelsOutcome;
-        typedef Aws::Utils::Outcome<DescribeTagsResult, Aws::Client::AWSError<MachineLearningErrors>> DescribeTagsOutcome;
-        typedef Aws::Utils::Outcome<GetBatchPredictionResult, Aws::Client::AWSError<MachineLearningErrors>> GetBatchPredictionOutcome;
-        typedef Aws::Utils::Outcome<GetDataSourceResult, Aws::Client::AWSError<MachineLearningErrors>> GetDataSourceOutcome;
-        typedef Aws::Utils::Outcome<GetEvaluationResult, Aws::Client::AWSError<MachineLearningErrors>> GetEvaluationOutcome;
-        typedef Aws::Utils::Outcome<GetMLModelResult, Aws::Client::AWSError<MachineLearningErrors>> GetMLModelOutcome;
-        typedef Aws::Utils::Outcome<PredictResult, Aws::Client::AWSError<MachineLearningErrors>> PredictOutcome;
-        typedef Aws::Utils::Outcome<UpdateBatchPredictionResult, Aws::Client::AWSError<MachineLearningErrors>> UpdateBatchPredictionOutcome;
-        typedef Aws::Utils::Outcome<UpdateDataSourceResult, Aws::Client::AWSError<MachineLearningErrors>> UpdateDataSourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateEvaluationResult, Aws::Client::AWSError<MachineLearningErrors>> UpdateEvaluationOutcome;
-        typedef Aws::Utils::Outcome<UpdateMLModelResult, Aws::Client::AWSError<MachineLearningErrors>> UpdateMLModelOutcome;
+        typedef Aws::Utils::Outcome<AddTagsResult, MachineLearningError> AddTagsOutcome;
+        typedef Aws::Utils::Outcome<CreateBatchPredictionResult, MachineLearningError> CreateBatchPredictionOutcome;
+        typedef Aws::Utils::Outcome<CreateDataSourceFromRDSResult, MachineLearningError> CreateDataSourceFromRDSOutcome;
+        typedef Aws::Utils::Outcome<CreateDataSourceFromRedshiftResult, MachineLearningError> CreateDataSourceFromRedshiftOutcome;
+        typedef Aws::Utils::Outcome<CreateDataSourceFromS3Result, MachineLearningError> CreateDataSourceFromS3Outcome;
+        typedef Aws::Utils::Outcome<CreateEvaluationResult, MachineLearningError> CreateEvaluationOutcome;
+        typedef Aws::Utils::Outcome<CreateMLModelResult, MachineLearningError> CreateMLModelOutcome;
+        typedef Aws::Utils::Outcome<CreateRealtimeEndpointResult, MachineLearningError> CreateRealtimeEndpointOutcome;
+        typedef Aws::Utils::Outcome<DeleteBatchPredictionResult, MachineLearningError> DeleteBatchPredictionOutcome;
+        typedef Aws::Utils::Outcome<DeleteDataSourceResult, MachineLearningError> DeleteDataSourceOutcome;
+        typedef Aws::Utils::Outcome<DeleteEvaluationResult, MachineLearningError> DeleteEvaluationOutcome;
+        typedef Aws::Utils::Outcome<DeleteMLModelResult, MachineLearningError> DeleteMLModelOutcome;
+        typedef Aws::Utils::Outcome<DeleteRealtimeEndpointResult, MachineLearningError> DeleteRealtimeEndpointOutcome;
+        typedef Aws::Utils::Outcome<DeleteTagsResult, MachineLearningError> DeleteTagsOutcome;
+        typedef Aws::Utils::Outcome<DescribeBatchPredictionsResult, MachineLearningError> DescribeBatchPredictionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDataSourcesResult, MachineLearningError> DescribeDataSourcesOutcome;
+        typedef Aws::Utils::Outcome<DescribeEvaluationsResult, MachineLearningError> DescribeEvaluationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeMLModelsResult, MachineLearningError> DescribeMLModelsOutcome;
+        typedef Aws::Utils::Outcome<DescribeTagsResult, MachineLearningError> DescribeTagsOutcome;
+        typedef Aws::Utils::Outcome<GetBatchPredictionResult, MachineLearningError> GetBatchPredictionOutcome;
+        typedef Aws::Utils::Outcome<GetDataSourceResult, MachineLearningError> GetDataSourceOutcome;
+        typedef Aws::Utils::Outcome<GetEvaluationResult, MachineLearningError> GetEvaluationOutcome;
+        typedef Aws::Utils::Outcome<GetMLModelResult, MachineLearningError> GetMLModelOutcome;
+        typedef Aws::Utils::Outcome<PredictResult, MachineLearningError> PredictOutcome;
+        typedef Aws::Utils::Outcome<UpdateBatchPredictionResult, MachineLearningError> UpdateBatchPredictionOutcome;
+        typedef Aws::Utils::Outcome<UpdateDataSourceResult, MachineLearningError> UpdateDataSourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateEvaluationResult, MachineLearningError> UpdateEvaluationOutcome;
+        typedef Aws::Utils::Outcome<UpdateMLModelResult, MachineLearningError> UpdateMLModelOutcome;
 
         typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
         typedef std::future<CreateBatchPredictionOutcome> CreateBatchPredictionOutcomeCallable;
@@ -235,8 +225,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~MachineLearningClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "machinelearning"; }
 
 
         /**
@@ -1326,9 +1314,9 @@ namespace Model
 
         /**
          * <p>Generates a prediction for the observation using the specified <code>ML
-         * Model</code>.</p> <note><title>Note</title> <p>Not all response parameters will
+         * Model</code>.</p> <title>Note</title> <p>Not all response parameters will
          * be populated. Whether a response parameter is populated depends on the type of
-         * model requested.</p></note><p><h3>See Also:</h3>   <a
+         * model requested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Predict">AWS
          * API Reference</a></p>
          */
@@ -1336,9 +1324,9 @@ namespace Model
 
         /**
          * <p>Generates a prediction for the observation using the specified <code>ML
-         * Model</code>.</p> <note><title>Note</title> <p>Not all response parameters will
+         * Model</code>.</p> <title>Note</title> <p>Not all response parameters will
          * be populated. Whether a response parameter is populated depends on the type of
-         * model requested.</p></note><p><h3>See Also:</h3>   <a
+         * model requested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Predict">AWS
          * API Reference</a></p>
          *
@@ -1348,9 +1336,9 @@ namespace Model
 
         /**
          * <p>Generates a prediction for the observation using the specified <code>ML
-         * Model</code>.</p> <note><title>Note</title> <p>Not all response parameters will
+         * Model</code>.</p> <title>Note</title> <p>Not all response parameters will
          * be populated. Whether a response parameter is populated depends on the type of
-         * model requested.</p></note><p><h3>See Also:</h3>   <a
+         * model requested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Predict">AWS
          * API Reference</a></p>
          *

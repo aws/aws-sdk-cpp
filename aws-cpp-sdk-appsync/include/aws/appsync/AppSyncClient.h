@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appsync/AppSync_EXPORTS.h>
@@ -143,47 +133,47 @@ namespace Model
         class UpdateResolverRequest;
         class UpdateTypeRequest;
 
-        typedef Aws::Utils::Outcome<CreateApiCacheResult, Aws::Client::AWSError<AppSyncErrors>> CreateApiCacheOutcome;
-        typedef Aws::Utils::Outcome<CreateApiKeyResult, Aws::Client::AWSError<AppSyncErrors>> CreateApiKeyOutcome;
-        typedef Aws::Utils::Outcome<CreateDataSourceResult, Aws::Client::AWSError<AppSyncErrors>> CreateDataSourceOutcome;
-        typedef Aws::Utils::Outcome<CreateFunctionResult, Aws::Client::AWSError<AppSyncErrors>> CreateFunctionOutcome;
-        typedef Aws::Utils::Outcome<CreateGraphqlApiResult, Aws::Client::AWSError<AppSyncErrors>> CreateGraphqlApiOutcome;
-        typedef Aws::Utils::Outcome<CreateResolverResult, Aws::Client::AWSError<AppSyncErrors>> CreateResolverOutcome;
-        typedef Aws::Utils::Outcome<CreateTypeResult, Aws::Client::AWSError<AppSyncErrors>> CreateTypeOutcome;
-        typedef Aws::Utils::Outcome<DeleteApiCacheResult, Aws::Client::AWSError<AppSyncErrors>> DeleteApiCacheOutcome;
-        typedef Aws::Utils::Outcome<DeleteApiKeyResult, Aws::Client::AWSError<AppSyncErrors>> DeleteApiKeyOutcome;
-        typedef Aws::Utils::Outcome<DeleteDataSourceResult, Aws::Client::AWSError<AppSyncErrors>> DeleteDataSourceOutcome;
-        typedef Aws::Utils::Outcome<DeleteFunctionResult, Aws::Client::AWSError<AppSyncErrors>> DeleteFunctionOutcome;
-        typedef Aws::Utils::Outcome<DeleteGraphqlApiResult, Aws::Client::AWSError<AppSyncErrors>> DeleteGraphqlApiOutcome;
-        typedef Aws::Utils::Outcome<DeleteResolverResult, Aws::Client::AWSError<AppSyncErrors>> DeleteResolverOutcome;
-        typedef Aws::Utils::Outcome<DeleteTypeResult, Aws::Client::AWSError<AppSyncErrors>> DeleteTypeOutcome;
-        typedef Aws::Utils::Outcome<FlushApiCacheResult, Aws::Client::AWSError<AppSyncErrors>> FlushApiCacheOutcome;
-        typedef Aws::Utils::Outcome<GetApiCacheResult, Aws::Client::AWSError<AppSyncErrors>> GetApiCacheOutcome;
-        typedef Aws::Utils::Outcome<GetDataSourceResult, Aws::Client::AWSError<AppSyncErrors>> GetDataSourceOutcome;
-        typedef Aws::Utils::Outcome<GetFunctionResult, Aws::Client::AWSError<AppSyncErrors>> GetFunctionOutcome;
-        typedef Aws::Utils::Outcome<GetGraphqlApiResult, Aws::Client::AWSError<AppSyncErrors>> GetGraphqlApiOutcome;
-        typedef Aws::Utils::Outcome<GetIntrospectionSchemaResult, Aws::Client::AWSError<AppSyncErrors>> GetIntrospectionSchemaOutcome;
-        typedef Aws::Utils::Outcome<GetResolverResult, Aws::Client::AWSError<AppSyncErrors>> GetResolverOutcome;
-        typedef Aws::Utils::Outcome<GetSchemaCreationStatusResult, Aws::Client::AWSError<AppSyncErrors>> GetSchemaCreationStatusOutcome;
-        typedef Aws::Utils::Outcome<GetTypeResult, Aws::Client::AWSError<AppSyncErrors>> GetTypeOutcome;
-        typedef Aws::Utils::Outcome<ListApiKeysResult, Aws::Client::AWSError<AppSyncErrors>> ListApiKeysOutcome;
-        typedef Aws::Utils::Outcome<ListDataSourcesResult, Aws::Client::AWSError<AppSyncErrors>> ListDataSourcesOutcome;
-        typedef Aws::Utils::Outcome<ListFunctionsResult, Aws::Client::AWSError<AppSyncErrors>> ListFunctionsOutcome;
-        typedef Aws::Utils::Outcome<ListGraphqlApisResult, Aws::Client::AWSError<AppSyncErrors>> ListGraphqlApisOutcome;
-        typedef Aws::Utils::Outcome<ListResolversResult, Aws::Client::AWSError<AppSyncErrors>> ListResolversOutcome;
-        typedef Aws::Utils::Outcome<ListResolversByFunctionResult, Aws::Client::AWSError<AppSyncErrors>> ListResolversByFunctionOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<AppSyncErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTypesResult, Aws::Client::AWSError<AppSyncErrors>> ListTypesOutcome;
-        typedef Aws::Utils::Outcome<StartSchemaCreationResult, Aws::Client::AWSError<AppSyncErrors>> StartSchemaCreationOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<AppSyncErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<AppSyncErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateApiCacheResult, Aws::Client::AWSError<AppSyncErrors>> UpdateApiCacheOutcome;
-        typedef Aws::Utils::Outcome<UpdateApiKeyResult, Aws::Client::AWSError<AppSyncErrors>> UpdateApiKeyOutcome;
-        typedef Aws::Utils::Outcome<UpdateDataSourceResult, Aws::Client::AWSError<AppSyncErrors>> UpdateDataSourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateFunctionResult, Aws::Client::AWSError<AppSyncErrors>> UpdateFunctionOutcome;
-        typedef Aws::Utils::Outcome<UpdateGraphqlApiResult, Aws::Client::AWSError<AppSyncErrors>> UpdateGraphqlApiOutcome;
-        typedef Aws::Utils::Outcome<UpdateResolverResult, Aws::Client::AWSError<AppSyncErrors>> UpdateResolverOutcome;
-        typedef Aws::Utils::Outcome<UpdateTypeResult, Aws::Client::AWSError<AppSyncErrors>> UpdateTypeOutcome;
+        typedef Aws::Utils::Outcome<CreateApiCacheResult, AppSyncError> CreateApiCacheOutcome;
+        typedef Aws::Utils::Outcome<CreateApiKeyResult, AppSyncError> CreateApiKeyOutcome;
+        typedef Aws::Utils::Outcome<CreateDataSourceResult, AppSyncError> CreateDataSourceOutcome;
+        typedef Aws::Utils::Outcome<CreateFunctionResult, AppSyncError> CreateFunctionOutcome;
+        typedef Aws::Utils::Outcome<CreateGraphqlApiResult, AppSyncError> CreateGraphqlApiOutcome;
+        typedef Aws::Utils::Outcome<CreateResolverResult, AppSyncError> CreateResolverOutcome;
+        typedef Aws::Utils::Outcome<CreateTypeResult, AppSyncError> CreateTypeOutcome;
+        typedef Aws::Utils::Outcome<DeleteApiCacheResult, AppSyncError> DeleteApiCacheOutcome;
+        typedef Aws::Utils::Outcome<DeleteApiKeyResult, AppSyncError> DeleteApiKeyOutcome;
+        typedef Aws::Utils::Outcome<DeleteDataSourceResult, AppSyncError> DeleteDataSourceOutcome;
+        typedef Aws::Utils::Outcome<DeleteFunctionResult, AppSyncError> DeleteFunctionOutcome;
+        typedef Aws::Utils::Outcome<DeleteGraphqlApiResult, AppSyncError> DeleteGraphqlApiOutcome;
+        typedef Aws::Utils::Outcome<DeleteResolverResult, AppSyncError> DeleteResolverOutcome;
+        typedef Aws::Utils::Outcome<DeleteTypeResult, AppSyncError> DeleteTypeOutcome;
+        typedef Aws::Utils::Outcome<FlushApiCacheResult, AppSyncError> FlushApiCacheOutcome;
+        typedef Aws::Utils::Outcome<GetApiCacheResult, AppSyncError> GetApiCacheOutcome;
+        typedef Aws::Utils::Outcome<GetDataSourceResult, AppSyncError> GetDataSourceOutcome;
+        typedef Aws::Utils::Outcome<GetFunctionResult, AppSyncError> GetFunctionOutcome;
+        typedef Aws::Utils::Outcome<GetGraphqlApiResult, AppSyncError> GetGraphqlApiOutcome;
+        typedef Aws::Utils::Outcome<GetIntrospectionSchemaResult, AppSyncError> GetIntrospectionSchemaOutcome;
+        typedef Aws::Utils::Outcome<GetResolverResult, AppSyncError> GetResolverOutcome;
+        typedef Aws::Utils::Outcome<GetSchemaCreationStatusResult, AppSyncError> GetSchemaCreationStatusOutcome;
+        typedef Aws::Utils::Outcome<GetTypeResult, AppSyncError> GetTypeOutcome;
+        typedef Aws::Utils::Outcome<ListApiKeysResult, AppSyncError> ListApiKeysOutcome;
+        typedef Aws::Utils::Outcome<ListDataSourcesResult, AppSyncError> ListDataSourcesOutcome;
+        typedef Aws::Utils::Outcome<ListFunctionsResult, AppSyncError> ListFunctionsOutcome;
+        typedef Aws::Utils::Outcome<ListGraphqlApisResult, AppSyncError> ListGraphqlApisOutcome;
+        typedef Aws::Utils::Outcome<ListResolversResult, AppSyncError> ListResolversOutcome;
+        typedef Aws::Utils::Outcome<ListResolversByFunctionResult, AppSyncError> ListResolversByFunctionOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, AppSyncError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListTypesResult, AppSyncError> ListTypesOutcome;
+        typedef Aws::Utils::Outcome<StartSchemaCreationResult, AppSyncError> StartSchemaCreationOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, AppSyncError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, AppSyncError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateApiCacheResult, AppSyncError> UpdateApiCacheOutcome;
+        typedef Aws::Utils::Outcome<UpdateApiKeyResult, AppSyncError> UpdateApiKeyOutcome;
+        typedef Aws::Utils::Outcome<UpdateDataSourceResult, AppSyncError> UpdateDataSourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateFunctionResult, AppSyncError> UpdateFunctionOutcome;
+        typedef Aws::Utils::Outcome<UpdateGraphqlApiResult, AppSyncError> UpdateGraphqlApiOutcome;
+        typedef Aws::Utils::Outcome<UpdateResolverResult, AppSyncError> UpdateResolverOutcome;
+        typedef Aws::Utils::Outcome<UpdateTypeResult, AppSyncError> UpdateTypeOutcome;
 
         typedef std::future<CreateApiCacheOutcome> CreateApiCacheOutcomeCallable;
         typedef std::future<CreateApiKeyOutcome> CreateApiKeyOutcomeCallable;
@@ -301,8 +291,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~AppSyncClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "AppSync"; }
 
 
         /**
@@ -902,22 +890,22 @@ namespace Model
         virtual void GetTypeAsync(const Model::GetTypeRequest& request, const GetTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the API keys for a given API.</p> <note> <p>API keys are deleted
-         * automatically sometime after they expire. However, they may still be included in
+         * <p>Lists the API keys for a given API.</p>  <p>API keys are deleted
+         * automatically 60 days after they expire. However, they may still be included in
          * the response until they have actually been deleted. You can safely call
          * <code>DeleteApiKey</code> to manually delete a key before it's automatically
-         * deleted.</p> </note><p><h3>See Also:</h3>   <a
+         * deleted.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListApiKeys">AWS
          * API Reference</a></p>
          */
         virtual Model::ListApiKeysOutcome ListApiKeys(const Model::ListApiKeysRequest& request) const;
 
         /**
-         * <p>Lists the API keys for a given API.</p> <note> <p>API keys are deleted
-         * automatically sometime after they expire. However, they may still be included in
+         * <p>Lists the API keys for a given API.</p>  <p>API keys are deleted
+         * automatically 60 days after they expire. However, they may still be included in
          * the response until they have actually been deleted. You can safely call
          * <code>DeleteApiKey</code> to manually delete a key before it's automatically
-         * deleted.</p> </note><p><h3>See Also:</h3>   <a
+         * deleted.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListApiKeys">AWS
          * API Reference</a></p>
          *
@@ -926,11 +914,11 @@ namespace Model
         virtual Model::ListApiKeysOutcomeCallable ListApiKeysCallable(const Model::ListApiKeysRequest& request) const;
 
         /**
-         * <p>Lists the API keys for a given API.</p> <note> <p>API keys are deleted
-         * automatically sometime after they expire. However, they may still be included in
+         * <p>Lists the API keys for a given API.</p>  <p>API keys are deleted
+         * automatically 60 days after they expire. However, they may still be included in
          * the response until they have actually been deleted. You can safely call
          * <code>DeleteApiKey</code> to manually delete a key before it's automatically
-         * deleted.</p> </note><p><h3>See Also:</h3>   <a
+         * deleted.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListApiKeys">AWS
          * API Reference</a></p>
          *
@@ -1220,14 +1208,16 @@ namespace Model
         virtual void UpdateApiCacheAsync(const Model::UpdateApiCacheRequest& request, const UpdateApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an API key.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an API key. The key can be updated while it is not
+         * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateApiKeyOutcome UpdateApiKey(const Model::UpdateApiKeyRequest& request) const;
 
         /**
-         * <p>Updates an API key.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an API key. The key can be updated while it is not
+         * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">AWS
          * API Reference</a></p>
          *
@@ -1236,7 +1226,8 @@ namespace Model
         virtual Model::UpdateApiKeyOutcomeCallable UpdateApiKeyCallable(const Model::UpdateApiKeyRequest& request) const;
 
         /**
-         * <p>Updates an API key.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an API key. The key can be updated while it is not
+         * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">AWS
          * API Reference</a></p>
          *

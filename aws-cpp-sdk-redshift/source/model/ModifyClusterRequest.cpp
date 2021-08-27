@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/redshift/model/ModifyClusterRequest.h>
 #include <aws/core/utils/StringUtils.h>
@@ -49,7 +39,12 @@ ModifyClusterRequest::ModifyClusterRequest() :
     m_maintenanceTrackNameHasBeenSet(false),
     m_encrypted(false),
     m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_availabilityZoneRelocation(false),
+    m_availabilityZoneRelocationHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false),
+    m_port(0),
+    m_portHasBeenSet(false)
 {
 }
 
@@ -177,6 +172,21 @@ Aws::String ModifyClusterRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+
+  if(m_availabilityZoneRelocationHasBeenSet)
+  {
+    ss << "AvailabilityZoneRelocation=" << std::boolalpha << m_availabilityZoneRelocation << "&";
+  }
+
+  if(m_availabilityZoneHasBeenSet)
+  {
+    ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+
+  if(m_portHasBeenSet)
+  {
+    ss << "Port=" << m_port << "&";
   }
 
   ss << "Version=2012-12-01";

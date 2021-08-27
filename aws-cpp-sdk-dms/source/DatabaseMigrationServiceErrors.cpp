@@ -1,30 +1,28 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/dms/DatabaseMigrationServiceErrors.h>
+#include <aws/dms/model/ResourceAlreadyExistsFault.h>
 
 using namespace Aws::Client;
-using namespace Aws::DatabaseMigrationService;
 using namespace Aws::Utils;
+using namespace Aws::DatabaseMigrationService;
+using namespace Aws::DatabaseMigrationService::Model;
 
 namespace Aws
 {
 namespace DatabaseMigrationService
 {
+template<> AWS_DATABASEMIGRATIONSERVICE_API ResourceAlreadyExistsFault DatabaseMigrationServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DatabaseMigrationServiceErrors::RESOURCE_ALREADY_EXISTS_FAULT);
+  return ResourceAlreadyExistsFault(this->GetJsonPayload().View());
+}
+
 namespace DatabaseMigrationServiceErrorMapper
 {
 
@@ -35,12 +33,15 @@ static const int STORAGE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("S
 static const int RESOURCE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ResourceAlreadyExistsFault");
 static const int K_M_S_INVALID_STATE_FAULT_HASH = HashingUtils::HashString("KMSInvalidStateFault");
 static const int INVALID_RESOURCE_STATE_FAULT_HASH = HashingUtils::HashString("InvalidResourceStateFault");
+static const int S3_ACCESS_DENIED_FAULT_HASH = HashingUtils::HashString("S3AccessDeniedFault");
 static const int INVALID_CERTIFICATE_FAULT_HASH = HashingUtils::HashString("InvalidCertificateFault");
 static const int K_M_S_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("KMSNotFoundFault");
 static const int INSUFFICIENT_RESOURCE_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientResourceCapacityFault");
+static const int S3_RESOURCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("S3ResourceNotFoundFault");
 static const int SUBNET_ALREADY_IN_USE_HASH = HashingUtils::HashString("SubnetAlreadyInUse");
 static const int S_N_S_INVALID_TOPIC_FAULT_HASH = HashingUtils::HashString("SNSInvalidTopicFault");
 static const int RESOURCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ResourceNotFoundFault");
+static const int K_M_S_FAULT_HASH = HashingUtils::HashString("KMSFault");
 static const int K_M_S_ACCESS_DENIED_FAULT_HASH = HashingUtils::HashString("KMSAccessDeniedFault");
 static const int ACCESS_DENIED_FAULT_HASH = HashingUtils::HashString("AccessDeniedFault");
 static const int INVALID_SUBNET_HASH = HashingUtils::HashString("InvalidSubnet");
@@ -82,6 +83,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::INVALID_RESOURCE_STATE_FAULT), false);
   }
+  else if (hashCode == S3_ACCESS_DENIED_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::S3_ACCESS_DENIED_FAULT), false);
+  }
   else if (hashCode == INVALID_CERTIFICATE_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::INVALID_CERTIFICATE_FAULT), false);
@@ -94,6 +99,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::INSUFFICIENT_RESOURCE_CAPACITY_FAULT), false);
   }
+  else if (hashCode == S3_RESOURCE_NOT_FOUND_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::S3_RESOURCE_NOT_FOUND_FAULT), false);
+  }
   else if (hashCode == SUBNET_ALREADY_IN_USE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::SUBNET_ALREADY_IN_USE), false);
@@ -105,6 +114,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == RESOURCE_NOT_FOUND_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::RESOURCE_NOT_FOUND_FAULT), false);
+  }
+  else if (hashCode == K_M_S_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::K_M_S_FAULT), false);
   }
   else if (hashCode == K_M_S_ACCESS_DENIED_FAULT_HASH)
   {

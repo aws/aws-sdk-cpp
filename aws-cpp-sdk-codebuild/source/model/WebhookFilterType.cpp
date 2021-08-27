@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/codebuild/model/WebhookFilterType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -35,6 +25,7 @@ namespace Aws
         static const int HEAD_REF_HASH = HashingUtils::HashString("HEAD_REF");
         static const int ACTOR_ACCOUNT_ID_HASH = HashingUtils::HashString("ACTOR_ACCOUNT_ID");
         static const int FILE_PATH_HASH = HashingUtils::HashString("FILE_PATH");
+        static const int COMMIT_MESSAGE_HASH = HashingUtils::HashString("COMMIT_MESSAGE");
 
 
         WebhookFilterType GetWebhookFilterTypeForName(const Aws::String& name)
@@ -60,6 +51,10 @@ namespace Aws
           {
             return WebhookFilterType::FILE_PATH;
           }
+          else if (hashCode == COMMIT_MESSAGE_HASH)
+          {
+            return WebhookFilterType::COMMIT_MESSAGE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +79,8 @@ namespace Aws
             return "ACTOR_ACCOUNT_ID";
           case WebhookFilterType::FILE_PATH:
             return "FILE_PATH";
+          case WebhookFilterType::COMMIT_MESSAGE:
+            return "COMMIT_MESSAGE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

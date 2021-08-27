@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/ContainerType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -39,6 +29,7 @@ namespace Aws
         static const int MP4_HASH = HashingUtils::HashString("MP4");
         static const int MPD_HASH = HashingUtils::HashString("MPD");
         static const int MXF_HASH = HashingUtils::HashString("MXF");
+        static const int WEBM_HASH = HashingUtils::HashString("WEBM");
         static const int RAW_HASH = HashingUtils::HashString("RAW");
 
 
@@ -81,6 +72,10 @@ namespace Aws
           {
             return ContainerType::MXF;
           }
+          else if (hashCode == WEBM_HASH)
+          {
+            return ContainerType::WEBM;
+          }
           else if (hashCode == RAW_HASH)
           {
             return ContainerType::RAW;
@@ -117,6 +112,8 @@ namespace Aws
             return "MPD";
           case ContainerType::MXF:
             return "MXF";
+          case ContainerType::WEBM:
+            return "WEBM";
           case ContainerType::RAW:
             return "RAW";
           default:

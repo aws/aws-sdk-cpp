@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
 #include <aws/mq/MQRequest.h>
+#include <aws/mq/model/AuthenticationStrategy.h>
 #include <aws/mq/model/EngineType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -50,38 +41,69 @@ namespace Model
 
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * The authentication strategy associated with the configuration.
+     */
+    inline const AuthenticationStrategy& GetAuthenticationStrategy() const{ return m_authenticationStrategy; }
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline bool AuthenticationStrategyHasBeenSet() const { return m_authenticationStrategyHasBeenSet; }
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline void SetAuthenticationStrategy(const AuthenticationStrategy& value) { m_authenticationStrategyHasBeenSet = true; m_authenticationStrategy = value; }
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline void SetAuthenticationStrategy(AuthenticationStrategy&& value) { m_authenticationStrategyHasBeenSet = true; m_authenticationStrategy = std::move(value); }
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline CreateConfigurationRequest& WithAuthenticationStrategy(const AuthenticationStrategy& value) { SetAuthenticationStrategy(value); return *this;}
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline CreateConfigurationRequest& WithAuthenticationStrategy(AuthenticationStrategy&& value) { SetAuthenticationStrategy(std::move(value)); return *this;}
+
+
+    /**
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline const EngineType& GetEngineType() const{ return m_engineType; }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline bool EngineTypeHasBeenSet() const { return m_engineTypeHasBeenSet; }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline void SetEngineType(const EngineType& value) { m_engineTypeHasBeenSet = true; m_engineType = value; }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline void SetEngineType(EngineType&& value) { m_engineTypeHasBeenSet = true; m_engineType = std::move(value); }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline CreateConfigurationRequest& WithEngineType(const EngineType& value) { SetEngineType(value); return *this;}
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline CreateConfigurationRequest& WithEngineType(EngineType&& value) { SetEngineType(std::move(value)); return *this;}
 
@@ -266,6 +288,9 @@ namespace Model
     inline CreateConfigurationRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
+
+    AuthenticationStrategy m_authenticationStrategy;
+    bool m_authenticationStrategyHasBeenSet;
 
     EngineType m_engineType;
     bool m_engineTypeHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -89,57 +79,73 @@ namespace Model
 
     /**
      * <p>The name of the SSM document to define the parameters and plugin settings for
-     * the session. For example, <code>SSM-SessionManagerRunShell</code>. If no
-     * document name is provided, a shell to the instance is launched by default.</p>
+     * the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call
+     * the <a>GetDocument</a> API to verify the document exists before attempting to
+     * start a session. If no document name is provided, a shell to the instance is
+     * launched by default.</p>
      */
     inline const Aws::String& GetDocumentName() const{ return m_documentName; }
 
     /**
      * <p>The name of the SSM document to define the parameters and plugin settings for
-     * the session. For example, <code>SSM-SessionManagerRunShell</code>. If no
-     * document name is provided, a shell to the instance is launched by default.</p>
+     * the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call
+     * the <a>GetDocument</a> API to verify the document exists before attempting to
+     * start a session. If no document name is provided, a shell to the instance is
+     * launched by default.</p>
      */
     inline bool DocumentNameHasBeenSet() const { return m_documentNameHasBeenSet; }
 
     /**
      * <p>The name of the SSM document to define the parameters and plugin settings for
-     * the session. For example, <code>SSM-SessionManagerRunShell</code>. If no
-     * document name is provided, a shell to the instance is launched by default.</p>
+     * the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call
+     * the <a>GetDocument</a> API to verify the document exists before attempting to
+     * start a session. If no document name is provided, a shell to the instance is
+     * launched by default.</p>
      */
     inline void SetDocumentName(const Aws::String& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
 
     /**
      * <p>The name of the SSM document to define the parameters and plugin settings for
-     * the session. For example, <code>SSM-SessionManagerRunShell</code>. If no
-     * document name is provided, a shell to the instance is launched by default.</p>
+     * the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call
+     * the <a>GetDocument</a> API to verify the document exists before attempting to
+     * start a session. If no document name is provided, a shell to the instance is
+     * launched by default.</p>
      */
     inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = std::move(value); }
 
     /**
      * <p>The name of the SSM document to define the parameters and plugin settings for
-     * the session. For example, <code>SSM-SessionManagerRunShell</code>. If no
-     * document name is provided, a shell to the instance is launched by default.</p>
+     * the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call
+     * the <a>GetDocument</a> API to verify the document exists before attempting to
+     * start a session. If no document name is provided, a shell to the instance is
+     * launched by default.</p>
      */
     inline void SetDocumentName(const char* value) { m_documentNameHasBeenSet = true; m_documentName.assign(value); }
 
     /**
      * <p>The name of the SSM document to define the parameters and plugin settings for
-     * the session. For example, <code>SSM-SessionManagerRunShell</code>. If no
-     * document name is provided, a shell to the instance is launched by default.</p>
+     * the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call
+     * the <a>GetDocument</a> API to verify the document exists before attempting to
+     * start a session. If no document name is provided, a shell to the instance is
+     * launched by default.</p>
      */
     inline StartSessionRequest& WithDocumentName(const Aws::String& value) { SetDocumentName(value); return *this;}
 
     /**
      * <p>The name of the SSM document to define the parameters and plugin settings for
-     * the session. For example, <code>SSM-SessionManagerRunShell</code>. If no
-     * document name is provided, a shell to the instance is launched by default.</p>
+     * the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call
+     * the <a>GetDocument</a> API to verify the document exists before attempting to
+     * start a session. If no document name is provided, a shell to the instance is
+     * launched by default.</p>
      */
     inline StartSessionRequest& WithDocumentName(Aws::String&& value) { SetDocumentName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the SSM document to define the parameters and plugin settings for
-     * the session. For example, <code>SSM-SessionManagerRunShell</code>. If no
-     * document name is provided, a shell to the instance is launched by default.</p>
+     * the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call
+     * the <a>GetDocument</a> API to verify the document exists before attempting to
+     * start a session. If no document name is provided, a shell to the instance is
+     * launched by default.</p>
      */
     inline StartSessionRequest& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
 

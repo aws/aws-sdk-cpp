@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -72,9 +62,12 @@ namespace Model
    * account. The used value is the count of the DB subnet groups in the account.</p>
    * </li> <li> <p> <code>EventSubscriptions</code> - The number of event
    * subscriptions per account. The used value is the count of the event
-   * subscriptions in the account.</p> </li> <li> <p> <code>ManualSnapshots</code> -
-   * The number of manual DB snapshots per account. The used value is the count of
-   * the manual DB snapshots in the account.</p> </li> <li> <p>
+   * subscriptions in the account.</p> </li> <li> <p>
+   * <code>ManualClusterSnapshots</code> - The number of manual DB cluster snapshots
+   * per account. The used value is the count of the manual DB cluster snapshots in
+   * the account.</p> </li> <li> <p> <code>ManualSnapshots</code> - The number of
+   * manual DB instance snapshots per account. The used value is the count of the
+   * manual DB instance snapshots in the account.</p> </li> <li> <p>
    * <code>OptionGroups</code> - The number of DB option groups per account,
    * excluding default option groups. The used value is the count of nondefault DB
    * option groups in the account.</p> </li> <li> <p>

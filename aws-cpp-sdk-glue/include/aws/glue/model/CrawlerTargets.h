@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/S3Target.h>
 #include <aws/glue/model/JdbcTarget.h>
+#include <aws/glue/model/MongoDBTarget.h>
 #include <aws/glue/model/DynamoDBTarget.h>
 #include <aws/glue/model/CatalogTarget.h>
 #include <utility>
@@ -134,6 +125,47 @@ namespace Model
 
 
     /**
+     * <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
+     */
+    inline const Aws::Vector<MongoDBTarget>& GetMongoDBTargets() const{ return m_mongoDBTargets; }
+
+    /**
+     * <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
+     */
+    inline bool MongoDBTargetsHasBeenSet() const { return m_mongoDBTargetsHasBeenSet; }
+
+    /**
+     * <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
+     */
+    inline void SetMongoDBTargets(const Aws::Vector<MongoDBTarget>& value) { m_mongoDBTargetsHasBeenSet = true; m_mongoDBTargets = value; }
+
+    /**
+     * <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
+     */
+    inline void SetMongoDBTargets(Aws::Vector<MongoDBTarget>&& value) { m_mongoDBTargetsHasBeenSet = true; m_mongoDBTargets = std::move(value); }
+
+    /**
+     * <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
+     */
+    inline CrawlerTargets& WithMongoDBTargets(const Aws::Vector<MongoDBTarget>& value) { SetMongoDBTargets(value); return *this;}
+
+    /**
+     * <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
+     */
+    inline CrawlerTargets& WithMongoDBTargets(Aws::Vector<MongoDBTarget>&& value) { SetMongoDBTargets(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
+     */
+    inline CrawlerTargets& AddMongoDBTargets(const MongoDBTarget& value) { m_mongoDBTargetsHasBeenSet = true; m_mongoDBTargets.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
+     */
+    inline CrawlerTargets& AddMongoDBTargets(MongoDBTarget&& value) { m_mongoDBTargetsHasBeenSet = true; m_mongoDBTargets.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Specifies Amazon DynamoDB targets.</p>
      */
     inline const Aws::Vector<DynamoDBTarget>& GetDynamoDBTargets() const{ return m_dynamoDBTargets; }
@@ -221,6 +253,9 @@ namespace Model
 
     Aws::Vector<JdbcTarget> m_jdbcTargets;
     bool m_jdbcTargetsHasBeenSet;
+
+    Aws::Vector<MongoDBTarget> m_mongoDBTargets;
+    bool m_mongoDBTargetsHasBeenSet;
 
     Aws::Vector<DynamoDBTarget> m_dynamoDBTargets;
     bool m_dynamoDBTargetsHasBeenSet;

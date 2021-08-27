@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/wafv2/model/RateBasedStatement.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wafv2/model/Statement.h>
 
 #include <utility>
 
@@ -33,7 +24,8 @@ RateBasedStatement::RateBasedStatement() :
     m_limitHasBeenSet(false),
     m_aggregateKeyType(RateBasedStatementAggregateKeyType::NOT_SET),
     m_aggregateKeyTypeHasBeenSet(false),
-    m_scopeDownStatementHasBeenSet(false)
+    m_scopeDownStatementHasBeenSet(false),
+    m_forwardedIPConfigHasBeenSet(false)
 {
 }
 
@@ -42,15 +34,16 @@ RateBasedStatement::RateBasedStatement(JsonView jsonValue) :
     m_limitHasBeenSet(false),
     m_aggregateKeyType(RateBasedStatementAggregateKeyType::NOT_SET),
     m_aggregateKeyTypeHasBeenSet(false),
-    m_scopeDownStatementHasBeenSet(false)
+    m_scopeDownStatementHasBeenSet(false),
+    m_forwardedIPConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-const Statement& RateBasedStatement::GetScopeDownStatement() const{ return m_scopeDownStatement[0]; }
+const Statement& RateBasedStatement::GetScopeDownStatement() const{ return *m_scopeDownStatement; }
 bool RateBasedStatement::ScopeDownStatementHasBeenSet() const { return m_scopeDownStatementHasBeenSet; }
-void RateBasedStatement::SetScopeDownStatement(const Statement& value) { m_scopeDownStatementHasBeenSet = true; m_scopeDownStatement.resize(1); m_scopeDownStatement[0] = value; }
-void RateBasedStatement::SetScopeDownStatement(Statement&& value) { m_scopeDownStatementHasBeenSet = true; m_scopeDownStatement.resize(1); m_scopeDownStatement[0] = std::move(value); }
+void RateBasedStatement::SetScopeDownStatement(const Statement& value) { m_scopeDownStatementHasBeenSet = true; m_scopeDownStatement = Aws::MakeShared<Statement>("RateBasedStatement", value); }
+void RateBasedStatement::SetScopeDownStatement(Statement&& value) { m_scopeDownStatementHasBeenSet = true; m_scopeDownStatement = Aws::MakeShared<Statement>("RateBasedStatement", std::move(value)); }
 RateBasedStatement& RateBasedStatement::WithScopeDownStatement(const Statement& value) { SetScopeDownStatement(value); return *this;}
 RateBasedStatement& RateBasedStatement::WithScopeDownStatement(Statement&& value) { SetScopeDownStatement(std::move(value)); return *this;}
 
@@ -72,10 +65,16 @@ RateBasedStatement& RateBasedStatement::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ScopeDownStatement"))
   {
-    m_scopeDownStatement.resize(1);
-    m_scopeDownStatement[0] = jsonValue.GetObject("ScopeDownStatement");
+    m_scopeDownStatement = Aws::MakeShared<Statement>("RateBasedStatement", jsonValue.GetObject("ScopeDownStatement"));
 
     m_scopeDownStatementHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ForwardedIPConfig"))
+  {
+    m_forwardedIPConfig = jsonValue.GetObject("ForwardedIPConfig");
+
+    m_forwardedIPConfigHasBeenSet = true;
   }
 
   return *this;
@@ -98,7 +97,13 @@ JsonValue RateBasedStatement::Jsonize() const
 
   if(m_scopeDownStatementHasBeenSet)
   {
-   payload.WithObject("ScopeDownStatement", m_scopeDownStatement[0].Jsonize());
+   payload.WithObject("ScopeDownStatement", m_scopeDownStatement->Jsonize());
+
+  }
+
+  if(m_forwardedIPConfigHasBeenSet)
+  {
+   payload.WithObject("ForwardedIPConfig", m_forwardedIPConfig.Jsonize());
 
   }
 

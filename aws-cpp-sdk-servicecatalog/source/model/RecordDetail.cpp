@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/servicecatalog/model/RecordDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -42,7 +32,8 @@ RecordDetail::RecordDetail() :
     m_provisioningArtifactIdHasBeenSet(false),
     m_pathIdHasBeenSet(false),
     m_recordErrorsHasBeenSet(false),
-    m_recordTagsHasBeenSet(false)
+    m_recordTagsHasBeenSet(false),
+    m_launchRoleArnHasBeenSet(false)
 {
 }
 
@@ -60,7 +51,8 @@ RecordDetail::RecordDetail(JsonView jsonValue) :
     m_provisioningArtifactIdHasBeenSet(false),
     m_pathIdHasBeenSet(false),
     m_recordErrorsHasBeenSet(false),
-    m_recordTagsHasBeenSet(false)
+    m_recordTagsHasBeenSet(false),
+    m_launchRoleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -164,6 +156,13 @@ RecordDetail& RecordDetail::operator =(JsonView jsonValue)
     m_recordTagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LaunchRoleArn"))
+  {
+    m_launchRoleArn = jsonValue.GetString("LaunchRoleArn");
+
+    m_launchRoleArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -253,6 +252,12 @@ JsonValue RecordDetail::Jsonize() const
      recordTagsJsonList[recordTagsIndex].AsObject(m_recordTags[recordTagsIndex].Jsonize());
    }
    payload.WithArray("RecordTags", std::move(recordTagsJsonList));
+
+  }
+
+  if(m_launchRoleArnHasBeenSet)
+  {
+   payload.WithString("LaunchRoleArn", m_launchRoleArn);
 
   }
 

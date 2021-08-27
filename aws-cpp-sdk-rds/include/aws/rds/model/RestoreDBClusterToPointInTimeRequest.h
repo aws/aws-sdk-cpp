@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -583,18 +573,17 @@ namespace Model
 
     /**
      * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
-     * an encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource
-     * Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with
-     * the same AWS account that owns the KMS encryption key used to encrypt the new DB
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
-     * DB cluster with a KMS key that is different than the KMS key used to encrypt the
-     * source DB cluster. The new DB cluster is encrypted with the KMS key identified
-     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
-     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
-     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
-     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
+     * an encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). To use a
+     * CMK in a different AWS account, specify the key ARN or alias ARN.</p> <p>You can
+     * restore to a new DB cluster and encrypt the new DB cluster with a AWS KMS CMK
+     * that is different than the AWS KMS key used to encrypt the source DB cluster.
+     * The new DB cluster is encrypted with the AWS KMS CMK identified by the
+     * <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
+     * the DB cluster is encrypted, then the restored DB cluster is encrypted using the
+     * AWS KMS CMK that was used to encrypt the source DB cluster.</p> </li> <li> <p>If
+     * the DB cluster isn't encrypted, then the restored DB cluster isn't
      * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
      * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
@@ -602,18 +591,17 @@ namespace Model
 
     /**
      * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
-     * an encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource
-     * Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with
-     * the same AWS account that owns the KMS encryption key used to encrypt the new DB
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
-     * DB cluster with a KMS key that is different than the KMS key used to encrypt the
-     * source DB cluster. The new DB cluster is encrypted with the KMS key identified
-     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
-     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
-     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
-     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
+     * an encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). To use a
+     * CMK in a different AWS account, specify the key ARN or alias ARN.</p> <p>You can
+     * restore to a new DB cluster and encrypt the new DB cluster with a AWS KMS CMK
+     * that is different than the AWS KMS key used to encrypt the source DB cluster.
+     * The new DB cluster is encrypted with the AWS KMS CMK identified by the
+     * <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
+     * the DB cluster is encrypted, then the restored DB cluster is encrypted using the
+     * AWS KMS CMK that was used to encrypt the source DB cluster.</p> </li> <li> <p>If
+     * the DB cluster isn't encrypted, then the restored DB cluster isn't
      * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
      * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
@@ -621,18 +609,17 @@ namespace Model
 
     /**
      * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
-     * an encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource
-     * Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with
-     * the same AWS account that owns the KMS encryption key used to encrypt the new DB
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
-     * DB cluster with a KMS key that is different than the KMS key used to encrypt the
-     * source DB cluster. The new DB cluster is encrypted with the KMS key identified
-     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
-     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
-     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
-     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
+     * an encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). To use a
+     * CMK in a different AWS account, specify the key ARN or alias ARN.</p> <p>You can
+     * restore to a new DB cluster and encrypt the new DB cluster with a AWS KMS CMK
+     * that is different than the AWS KMS key used to encrypt the source DB cluster.
+     * The new DB cluster is encrypted with the AWS KMS CMK identified by the
+     * <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
+     * the DB cluster is encrypted, then the restored DB cluster is encrypted using the
+     * AWS KMS CMK that was used to encrypt the source DB cluster.</p> </li> <li> <p>If
+     * the DB cluster isn't encrypted, then the restored DB cluster isn't
      * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
      * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
@@ -640,18 +627,17 @@ namespace Model
 
     /**
      * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
-     * an encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource
-     * Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with
-     * the same AWS account that owns the KMS encryption key used to encrypt the new DB
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
-     * DB cluster with a KMS key that is different than the KMS key used to encrypt the
-     * source DB cluster. The new DB cluster is encrypted with the KMS key identified
-     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
-     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
-     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
-     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
+     * an encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). To use a
+     * CMK in a different AWS account, specify the key ARN or alias ARN.</p> <p>You can
+     * restore to a new DB cluster and encrypt the new DB cluster with a AWS KMS CMK
+     * that is different than the AWS KMS key used to encrypt the source DB cluster.
+     * The new DB cluster is encrypted with the AWS KMS CMK identified by the
+     * <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
+     * the DB cluster is encrypted, then the restored DB cluster is encrypted using the
+     * AWS KMS CMK that was used to encrypt the source DB cluster.</p> </li> <li> <p>If
+     * the DB cluster isn't encrypted, then the restored DB cluster isn't
      * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
      * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
@@ -659,18 +645,17 @@ namespace Model
 
     /**
      * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
-     * an encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource
-     * Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with
-     * the same AWS account that owns the KMS encryption key used to encrypt the new DB
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
-     * DB cluster with a KMS key that is different than the KMS key used to encrypt the
-     * source DB cluster. The new DB cluster is encrypted with the KMS key identified
-     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
-     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
-     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
-     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
+     * an encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). To use a
+     * CMK in a different AWS account, specify the key ARN or alias ARN.</p> <p>You can
+     * restore to a new DB cluster and encrypt the new DB cluster with a AWS KMS CMK
+     * that is different than the AWS KMS key used to encrypt the source DB cluster.
+     * The new DB cluster is encrypted with the AWS KMS CMK identified by the
+     * <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
+     * the DB cluster is encrypted, then the restored DB cluster is encrypted using the
+     * AWS KMS CMK that was used to encrypt the source DB cluster.</p> </li> <li> <p>If
+     * the DB cluster isn't encrypted, then the restored DB cluster isn't
      * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
      * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
@@ -678,18 +663,17 @@ namespace Model
 
     /**
      * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
-     * an encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource
-     * Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with
-     * the same AWS account that owns the KMS encryption key used to encrypt the new DB
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
-     * DB cluster with a KMS key that is different than the KMS key used to encrypt the
-     * source DB cluster. The new DB cluster is encrypted with the KMS key identified
-     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
-     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
-     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
-     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
+     * an encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). To use a
+     * CMK in a different AWS account, specify the key ARN or alias ARN.</p> <p>You can
+     * restore to a new DB cluster and encrypt the new DB cluster with a AWS KMS CMK
+     * that is different than the AWS KMS key used to encrypt the source DB cluster.
+     * The new DB cluster is encrypted with the AWS KMS CMK identified by the
+     * <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
+     * the DB cluster is encrypted, then the restored DB cluster is encrypted using the
+     * AWS KMS CMK that was used to encrypt the source DB cluster.</p> </li> <li> <p>If
+     * the DB cluster isn't encrypted, then the restored DB cluster isn't
      * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
      * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
@@ -697,18 +681,17 @@ namespace Model
 
     /**
      * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
-     * an encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource
-     * Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with
-     * the same AWS account that owns the KMS encryption key used to encrypt the new DB
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
-     * DB cluster with a KMS key that is different than the KMS key used to encrypt the
-     * source DB cluster. The new DB cluster is encrypted with the KMS key identified
-     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
-     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
-     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
-     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
+     * an encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). To use a
+     * CMK in a different AWS account, specify the key ARN or alias ARN.</p> <p>You can
+     * restore to a new DB cluster and encrypt the new DB cluster with a AWS KMS CMK
+     * that is different than the AWS KMS key used to encrypt the source DB cluster.
+     * The new DB cluster is encrypted with the AWS KMS CMK identified by the
+     * <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
+     * the DB cluster is encrypted, then the restored DB cluster is encrypted using the
+     * AWS KMS CMK that was used to encrypt the source DB cluster.</p> </li> <li> <p>If
+     * the DB cluster isn't encrypted, then the restored DB cluster isn't
      * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
      * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
@@ -716,18 +699,17 @@ namespace Model
 
     /**
      * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
-     * an encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource
-     * Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with
-     * the same AWS account that owns the KMS encryption key used to encrypt the new DB
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
-     * DB cluster with a KMS key that is different than the KMS key used to encrypt the
-     * source DB cluster. The new DB cluster is encrypted with the KMS key identified
-     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
-     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
-     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
-     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
+     * an encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). To use a
+     * CMK in a different AWS account, specify the key ARN or alias ARN.</p> <p>You can
+     * restore to a new DB cluster and encrypt the new DB cluster with a AWS KMS CMK
+     * that is different than the AWS KMS key used to encrypt the source DB cluster.
+     * The new DB cluster is encrypted with the AWS KMS CMK identified by the
+     * <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
+     * the DB cluster is encrypted, then the restored DB cluster is encrypted using the
+     * AWS KMS CMK that was used to encrypt the source DB cluster.</p> </li> <li> <p>If
+     * the DB cluster isn't encrypted, then the restored DB cluster isn't
      * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
      * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
@@ -773,29 +755,37 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
-     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * <p>If specified, this value must be set to a number from 0 to 259,200 (72
+     * hours).</p> </li> </ul>
      */
     inline long long GetBacktrackWindow() const{ return m_backtrackWindow; }
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
-     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * <p>If specified, this value must be set to a number from 0 to 259,200 (72
+     * hours).</p> </li> </ul>
      */
     inline bool BacktrackWindowHasBeenSet() const { return m_backtrackWindowHasBeenSet; }
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
-     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * <p>If specified, this value must be set to a number from 0 to 259,200 (72
+     * hours).</p> </li> </ul>
      */
     inline void SetBacktrackWindow(long long value) { m_backtrackWindowHasBeenSet = true; m_backtrackWindow = value; }
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
-     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * <p>If specified, this value must be set to a number from 0 to 259,200 (72
+     * hours).</p> </li> </ul>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithBacktrackWindow(long long value) { SetBacktrackWindow(value); return *this;}
 

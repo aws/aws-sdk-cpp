@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/amplify/Amplify_EXPORTS.h>
@@ -36,7 +26,8 @@ namespace Amplify
 namespace Model
 {
   /**
-   * <p> Response for list tags. </p><p><h3>See Also:</h3>   <a
+   * <p> The response for the list tags for resource request. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListTagsForResourceResponse">AWS
    * API Reference</a></p>
    */
@@ -49,62 +40,62 @@ namespace Model
 
 
     /**
-     * <p> Tags result for response. </p>
+     * <p> A list of tags for the specified The Amazon Resource Name (ARN). </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p> Tags result for response. </p>
+     * <p> A list of tags for the specified The Amazon Resource Name (ARN). </p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p> Tags result for response. </p>
+     * <p> A list of tags for the specified The Amazon Resource Name (ARN). </p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p> Tags result for response. </p>
+     * <p> A list of tags for the specified The Amazon Resource Name (ARN). </p>
      */
     inline ListTagsForResourceResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p> Tags result for response. </p>
+     * <p> A list of tags for the specified The Amazon Resource Name (ARN). </p>
      */
     inline ListTagsForResourceResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p> Tags result for response. </p>
+     * <p> A list of tags for the specified The Amazon Resource Name (ARN). </p>
      */
     inline ListTagsForResourceResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p> Tags result for response. </p>
+     * <p> A list of tags for the specified The Amazon Resource Name (ARN). </p>
      */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> Tags result for response. </p>
+     * <p> A list of tags for the specified The Amazon Resource Name (ARN). </p>
      */
     inline ListTagsForResourceResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> Tags result for response. </p>
+     * <p> A list of tags for the specified The Amazon Resource Name (ARN). </p>
      */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p> Tags result for response. </p>
+     * <p> A list of tags for the specified The Amazon Resource Name (ARN). </p>
      */
     inline ListTagsForResourceResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> Tags result for response. </p>
+     * <p> A list of tags for the specified The Amazon Resource Name (ARN). </p>
      */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> Tags result for response. </p>
+     * <p> A list of tags for the specified The Amazon Resource Name (ARN). </p>
      */
     inline ListTagsForResourceResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 

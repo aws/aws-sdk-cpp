@@ -1,23 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/frauddetector/model/ModelSource.h>
-#include <aws/frauddetector/model/Role.h>
 #include <aws/frauddetector/model/ModelInputConfiguration.h>
 #include <aws/frauddetector/model/ModelOutputConfiguration.h>
 #include <aws/frauddetector/model/ModelEndpointStatus.h>
@@ -127,32 +116,42 @@ namespace Model
     /**
      * <p>The role used to invoke the model. </p>
      */
-    inline const Role& GetRole() const{ return m_role; }
+    inline const Aws::String& GetInvokeModelEndpointRoleArn() const{ return m_invokeModelEndpointRoleArn; }
 
     /**
      * <p>The role used to invoke the model. </p>
      */
-    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
+    inline bool InvokeModelEndpointRoleArnHasBeenSet() const { return m_invokeModelEndpointRoleArnHasBeenSet; }
 
     /**
      * <p>The role used to invoke the model. </p>
      */
-    inline void SetRole(const Role& value) { m_roleHasBeenSet = true; m_role = value; }
+    inline void SetInvokeModelEndpointRoleArn(const Aws::String& value) { m_invokeModelEndpointRoleArnHasBeenSet = true; m_invokeModelEndpointRoleArn = value; }
 
     /**
      * <p>The role used to invoke the model. </p>
      */
-    inline void SetRole(Role&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
+    inline void SetInvokeModelEndpointRoleArn(Aws::String&& value) { m_invokeModelEndpointRoleArnHasBeenSet = true; m_invokeModelEndpointRoleArn = std::move(value); }
 
     /**
      * <p>The role used to invoke the model. </p>
      */
-    inline ExternalModel& WithRole(const Role& value) { SetRole(value); return *this;}
+    inline void SetInvokeModelEndpointRoleArn(const char* value) { m_invokeModelEndpointRoleArnHasBeenSet = true; m_invokeModelEndpointRoleArn.assign(value); }
 
     /**
      * <p>The role used to invoke the model. </p>
      */
-    inline ExternalModel& WithRole(Role&& value) { SetRole(std::move(value)); return *this;}
+    inline ExternalModel& WithInvokeModelEndpointRoleArn(const Aws::String& value) { SetInvokeModelEndpointRoleArn(value); return *this;}
+
+    /**
+     * <p>The role used to invoke the model. </p>
+     */
+    inline ExternalModel& WithInvokeModelEndpointRoleArn(Aws::String&& value) { SetInvokeModelEndpointRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The role used to invoke the model. </p>
+     */
+    inline ExternalModel& WithInvokeModelEndpointRoleArn(const char* value) { SetInvokeModelEndpointRoleArn(value); return *this;}
 
 
     /**
@@ -329,6 +328,47 @@ namespace Model
      */
     inline ExternalModel& WithCreatedTime(const char* value) { SetCreatedTime(value); return *this;}
 
+
+    /**
+     * <p>The model ARN.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The model ARN.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The model ARN.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The model ARN.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The model ARN.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The model ARN.</p>
+     */
+    inline ExternalModel& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The model ARN.</p>
+     */
+    inline ExternalModel& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The model ARN.</p>
+     */
+    inline ExternalModel& WithArn(const char* value) { SetArn(value); return *this;}
+
   private:
 
     Aws::String m_modelEndpoint;
@@ -337,8 +377,8 @@ namespace Model
     ModelSource m_modelSource;
     bool m_modelSourceHasBeenSet;
 
-    Role m_role;
-    bool m_roleHasBeenSet;
+    Aws::String m_invokeModelEndpointRoleArn;
+    bool m_invokeModelEndpointRoleArnHasBeenSet;
 
     ModelInputConfiguration m_inputConfiguration;
     bool m_inputConfigurationHasBeenSet;
@@ -354,6 +394,9 @@ namespace Model
 
     Aws::String m_createdTime;
     bool m_createdTimeHasBeenSet;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -111,31 +101,31 @@ namespace Model
         class UpdatePresetRequest;
         class UpdateQueueRequest;
 
-        typedef Aws::Utils::Outcome<AssociateCertificateResult, Aws::Client::AWSError<MediaConvertErrors>> AssociateCertificateOutcome;
-        typedef Aws::Utils::Outcome<CancelJobResult, Aws::Client::AWSError<MediaConvertErrors>> CancelJobOutcome;
-        typedef Aws::Utils::Outcome<CreateJobResult, Aws::Client::AWSError<MediaConvertErrors>> CreateJobOutcome;
-        typedef Aws::Utils::Outcome<CreateJobTemplateResult, Aws::Client::AWSError<MediaConvertErrors>> CreateJobTemplateOutcome;
-        typedef Aws::Utils::Outcome<CreatePresetResult, Aws::Client::AWSError<MediaConvertErrors>> CreatePresetOutcome;
-        typedef Aws::Utils::Outcome<CreateQueueResult, Aws::Client::AWSError<MediaConvertErrors>> CreateQueueOutcome;
-        typedef Aws::Utils::Outcome<DeleteJobTemplateResult, Aws::Client::AWSError<MediaConvertErrors>> DeleteJobTemplateOutcome;
-        typedef Aws::Utils::Outcome<DeletePresetResult, Aws::Client::AWSError<MediaConvertErrors>> DeletePresetOutcome;
-        typedef Aws::Utils::Outcome<DeleteQueueResult, Aws::Client::AWSError<MediaConvertErrors>> DeleteQueueOutcome;
-        typedef Aws::Utils::Outcome<DescribeEndpointsResult, Aws::Client::AWSError<MediaConvertErrors>> DescribeEndpointsOutcome;
-        typedef Aws::Utils::Outcome<DisassociateCertificateResult, Aws::Client::AWSError<MediaConvertErrors>> DisassociateCertificateOutcome;
-        typedef Aws::Utils::Outcome<GetJobResult, Aws::Client::AWSError<MediaConvertErrors>> GetJobOutcome;
-        typedef Aws::Utils::Outcome<GetJobTemplateResult, Aws::Client::AWSError<MediaConvertErrors>> GetJobTemplateOutcome;
-        typedef Aws::Utils::Outcome<GetPresetResult, Aws::Client::AWSError<MediaConvertErrors>> GetPresetOutcome;
-        typedef Aws::Utils::Outcome<GetQueueResult, Aws::Client::AWSError<MediaConvertErrors>> GetQueueOutcome;
-        typedef Aws::Utils::Outcome<ListJobTemplatesResult, Aws::Client::AWSError<MediaConvertErrors>> ListJobTemplatesOutcome;
-        typedef Aws::Utils::Outcome<ListJobsResult, Aws::Client::AWSError<MediaConvertErrors>> ListJobsOutcome;
-        typedef Aws::Utils::Outcome<ListPresetsResult, Aws::Client::AWSError<MediaConvertErrors>> ListPresetsOutcome;
-        typedef Aws::Utils::Outcome<ListQueuesResult, Aws::Client::AWSError<MediaConvertErrors>> ListQueuesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<MediaConvertErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<MediaConvertErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<MediaConvertErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateJobTemplateResult, Aws::Client::AWSError<MediaConvertErrors>> UpdateJobTemplateOutcome;
-        typedef Aws::Utils::Outcome<UpdatePresetResult, Aws::Client::AWSError<MediaConvertErrors>> UpdatePresetOutcome;
-        typedef Aws::Utils::Outcome<UpdateQueueResult, Aws::Client::AWSError<MediaConvertErrors>> UpdateQueueOutcome;
+        typedef Aws::Utils::Outcome<AssociateCertificateResult, MediaConvertError> AssociateCertificateOutcome;
+        typedef Aws::Utils::Outcome<CancelJobResult, MediaConvertError> CancelJobOutcome;
+        typedef Aws::Utils::Outcome<CreateJobResult, MediaConvertError> CreateJobOutcome;
+        typedef Aws::Utils::Outcome<CreateJobTemplateResult, MediaConvertError> CreateJobTemplateOutcome;
+        typedef Aws::Utils::Outcome<CreatePresetResult, MediaConvertError> CreatePresetOutcome;
+        typedef Aws::Utils::Outcome<CreateQueueResult, MediaConvertError> CreateQueueOutcome;
+        typedef Aws::Utils::Outcome<DeleteJobTemplateResult, MediaConvertError> DeleteJobTemplateOutcome;
+        typedef Aws::Utils::Outcome<DeletePresetResult, MediaConvertError> DeletePresetOutcome;
+        typedef Aws::Utils::Outcome<DeleteQueueResult, MediaConvertError> DeleteQueueOutcome;
+        typedef Aws::Utils::Outcome<DescribeEndpointsResult, MediaConvertError> DescribeEndpointsOutcome;
+        typedef Aws::Utils::Outcome<DisassociateCertificateResult, MediaConvertError> DisassociateCertificateOutcome;
+        typedef Aws::Utils::Outcome<GetJobResult, MediaConvertError> GetJobOutcome;
+        typedef Aws::Utils::Outcome<GetJobTemplateResult, MediaConvertError> GetJobTemplateOutcome;
+        typedef Aws::Utils::Outcome<GetPresetResult, MediaConvertError> GetPresetOutcome;
+        typedef Aws::Utils::Outcome<GetQueueResult, MediaConvertError> GetQueueOutcome;
+        typedef Aws::Utils::Outcome<ListJobTemplatesResult, MediaConvertError> ListJobTemplatesOutcome;
+        typedef Aws::Utils::Outcome<ListJobsResult, MediaConvertError> ListJobsOutcome;
+        typedef Aws::Utils::Outcome<ListPresetsResult, MediaConvertError> ListPresetsOutcome;
+        typedef Aws::Utils::Outcome<ListQueuesResult, MediaConvertError> ListQueuesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, MediaConvertError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, MediaConvertError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, MediaConvertError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateJobTemplateResult, MediaConvertError> UpdateJobTemplateOutcome;
+        typedef Aws::Utils::Outcome<UpdatePresetResult, MediaConvertError> UpdatePresetOutcome;
+        typedef Aws::Utils::Outcome<UpdateQueueResult, MediaConvertError> UpdateQueueOutcome;
 
         typedef std::future<AssociateCertificateOutcome> AssociateCertificateOutcomeCallable;
         typedef std::future<CancelJobOutcome> CancelJobOutcomeCallable;
@@ -220,8 +210,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~MediaConvertClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "MediaConvert"; }
 
 
         /**

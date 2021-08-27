@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/acm-pca/model/CertificateAuthorityConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -33,7 +23,8 @@ CertificateAuthorityConfiguration::CertificateAuthorityConfiguration() :
     m_keyAlgorithmHasBeenSet(false),
     m_signingAlgorithm(SigningAlgorithm::NOT_SET),
     m_signingAlgorithmHasBeenSet(false),
-    m_subjectHasBeenSet(false)
+    m_subjectHasBeenSet(false),
+    m_csrExtensionsHasBeenSet(false)
 {
 }
 
@@ -42,7 +33,8 @@ CertificateAuthorityConfiguration::CertificateAuthorityConfiguration(JsonView js
     m_keyAlgorithmHasBeenSet(false),
     m_signingAlgorithm(SigningAlgorithm::NOT_SET),
     m_signingAlgorithmHasBeenSet(false),
-    m_subjectHasBeenSet(false)
+    m_subjectHasBeenSet(false),
+    m_csrExtensionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,6 +62,13 @@ CertificateAuthorityConfiguration& CertificateAuthorityConfiguration::operator =
     m_subjectHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CsrExtensions"))
+  {
+    m_csrExtensions = jsonValue.GetObject("CsrExtensions");
+
+    m_csrExtensionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -90,6 +89,12 @@ JsonValue CertificateAuthorityConfiguration::Jsonize() const
   if(m_subjectHasBeenSet)
   {
    payload.WithObject("Subject", m_subject.Jsonize());
+
+  }
+
+  if(m_csrExtensionsHasBeenSet)
+  {
+   payload.WithObject("CsrExtensions", m_csrExtensions.Jsonize());
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/budgets/Budgets_EXPORTS.h>
@@ -46,7 +36,7 @@ namespace Model
    * <p>Represents the output of the <code>CreateBudget</code> operation. The content
    * consists of the detailed metadata and data file information, and the current
    * status of the <code>budget</code> object.</p> <p>This is the ARN pattern for a
-   * budget: </p> <p> <code>arn:aws:budgetservice::AccountId:budget/budgetName</code>
+   * budget: </p> <p> <code>arn:aws:budgets::AccountId:budget/budgetName</code>
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/Budget">AWS API
    * Reference</a></p>
@@ -675,7 +665,7 @@ namespace Model
     /**
      * <p>The types of costs that are included in this <code>COST</code> budget.</p>
      * <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>,
-     * <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code>
+     * <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code>
      * budgets do not have <code>CostTypes</code>.</p>
      */
     inline const CostTypes& GetCostTypes() const{ return m_costTypes; }
@@ -683,7 +673,7 @@ namespace Model
     /**
      * <p>The types of costs that are included in this <code>COST</code> budget.</p>
      * <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>,
-     * <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code>
+     * <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code>
      * budgets do not have <code>CostTypes</code>.</p>
      */
     inline bool CostTypesHasBeenSet() const { return m_costTypesHasBeenSet; }
@@ -691,7 +681,7 @@ namespace Model
     /**
      * <p>The types of costs that are included in this <code>COST</code> budget.</p>
      * <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>,
-     * <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code>
+     * <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code>
      * budgets do not have <code>CostTypes</code>.</p>
      */
     inline void SetCostTypes(const CostTypes& value) { m_costTypesHasBeenSet = true; m_costTypes = value; }
@@ -699,7 +689,7 @@ namespace Model
     /**
      * <p>The types of costs that are included in this <code>COST</code> budget.</p>
      * <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>,
-     * <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code>
+     * <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code>
      * budgets do not have <code>CostTypes</code>.</p>
      */
     inline void SetCostTypes(CostTypes&& value) { m_costTypesHasBeenSet = true; m_costTypes = std::move(value); }
@@ -707,7 +697,7 @@ namespace Model
     /**
      * <p>The types of costs that are included in this <code>COST</code> budget.</p>
      * <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>,
-     * <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code>
+     * <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code>
      * budgets do not have <code>CostTypes</code>.</p>
      */
     inline Budget& WithCostTypes(const CostTypes& value) { SetCostTypes(value); return *this;}
@@ -715,57 +705,39 @@ namespace Model
     /**
      * <p>The types of costs that are included in this <code>COST</code> budget.</p>
      * <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>,
-     * <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code>
+     * <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code>
      * budgets do not have <code>CostTypes</code>.</p>
      */
     inline Budget& WithCostTypes(CostTypes&& value) { SetCostTypes(std::move(value)); return *this;}
 
 
     /**
-     * <p>The length of time until a budget resets the actual and forecasted spend.
-     * <code>DAILY</code> is available only for <code>RI_UTILIZATION</code>,
-     * <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and
-     * <code>Savings_Plans_Coverage</code> budgets.</p>
+     * <p>The length of time until a budget resets the actual and forecasted spend.</p>
      */
     inline const TimeUnit& GetTimeUnit() const{ return m_timeUnit; }
 
     /**
-     * <p>The length of time until a budget resets the actual and forecasted spend.
-     * <code>DAILY</code> is available only for <code>RI_UTILIZATION</code>,
-     * <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and
-     * <code>Savings_Plans_Coverage</code> budgets.</p>
+     * <p>The length of time until a budget resets the actual and forecasted spend.</p>
      */
     inline bool TimeUnitHasBeenSet() const { return m_timeUnitHasBeenSet; }
 
     /**
-     * <p>The length of time until a budget resets the actual and forecasted spend.
-     * <code>DAILY</code> is available only for <code>RI_UTILIZATION</code>,
-     * <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and
-     * <code>Savings_Plans_Coverage</code> budgets.</p>
+     * <p>The length of time until a budget resets the actual and forecasted spend.</p>
      */
     inline void SetTimeUnit(const TimeUnit& value) { m_timeUnitHasBeenSet = true; m_timeUnit = value; }
 
     /**
-     * <p>The length of time until a budget resets the actual and forecasted spend.
-     * <code>DAILY</code> is available only for <code>RI_UTILIZATION</code>,
-     * <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and
-     * <code>Savings_Plans_Coverage</code> budgets.</p>
+     * <p>The length of time until a budget resets the actual and forecasted spend.</p>
      */
     inline void SetTimeUnit(TimeUnit&& value) { m_timeUnitHasBeenSet = true; m_timeUnit = std::move(value); }
 
     /**
-     * <p>The length of time until a budget resets the actual and forecasted spend.
-     * <code>DAILY</code> is available only for <code>RI_UTILIZATION</code>,
-     * <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and
-     * <code>Savings_Plans_Coverage</code> budgets.</p>
+     * <p>The length of time until a budget resets the actual and forecasted spend.</p>
      */
     inline Budget& WithTimeUnit(const TimeUnit& value) { SetTimeUnit(value); return *this;}
 
     /**
-     * <p>The length of time until a budget resets the actual and forecasted spend.
-     * <code>DAILY</code> is available only for <code>RI_UTILIZATION</code>,
-     * <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and
-     * <code>Savings_Plans_Coverage</code> budgets.</p>
+     * <p>The length of time until a budget resets the actual and forecasted spend.</p>
      */
     inline Budget& WithTimeUnit(TimeUnit&& value) { SetTimeUnit(std::move(value)); return *this;}
 

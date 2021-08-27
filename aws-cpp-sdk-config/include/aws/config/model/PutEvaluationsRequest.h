@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -159,10 +149,10 @@ namespace Model
      * <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You
      * can verify whether your AWS Lambda function will deliver evaluation results to
      * AWS Config. No updates occur to your existing evaluations, and evaluation
-     * results are not sent to AWS Config.</p> <note> <p>When <code>TestMode</code> is
+     * results are not sent to AWS Config.</p>  <p>When <code>TestMode</code> is
      * <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for
      * the <code>ResultToken</code> parameter, but the value cannot be null.</p>
-     * </note>
+     * 
      */
     inline bool GetTestMode() const{ return m_testMode; }
 
@@ -170,10 +160,10 @@ namespace Model
      * <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You
      * can verify whether your AWS Lambda function will deliver evaluation results to
      * AWS Config. No updates occur to your existing evaluations, and evaluation
-     * results are not sent to AWS Config.</p> <note> <p>When <code>TestMode</code> is
+     * results are not sent to AWS Config.</p>  <p>When <code>TestMode</code> is
      * <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for
      * the <code>ResultToken</code> parameter, but the value cannot be null.</p>
-     * </note>
+     * 
      */
     inline bool TestModeHasBeenSet() const { return m_testModeHasBeenSet; }
 
@@ -181,10 +171,10 @@ namespace Model
      * <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You
      * can verify whether your AWS Lambda function will deliver evaluation results to
      * AWS Config. No updates occur to your existing evaluations, and evaluation
-     * results are not sent to AWS Config.</p> <note> <p>When <code>TestMode</code> is
+     * results are not sent to AWS Config.</p>  <p>When <code>TestMode</code> is
      * <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for
      * the <code>ResultToken</code> parameter, but the value cannot be null.</p>
-     * </note>
+     * 
      */
     inline void SetTestMode(bool value) { m_testModeHasBeenSet = true; m_testMode = value; }
 
@@ -192,10 +182,10 @@ namespace Model
      * <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You
      * can verify whether your AWS Lambda function will deliver evaluation results to
      * AWS Config. No updates occur to your existing evaluations, and evaluation
-     * results are not sent to AWS Config.</p> <note> <p>When <code>TestMode</code> is
+     * results are not sent to AWS Config.</p>  <p>When <code>TestMode</code> is
      * <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for
      * the <code>ResultToken</code> parameter, but the value cannot be null.</p>
-     * </note>
+     * 
      */
     inline PutEvaluationsRequest& WithTestMode(bool value) { SetTestMode(value); return *this;}
 

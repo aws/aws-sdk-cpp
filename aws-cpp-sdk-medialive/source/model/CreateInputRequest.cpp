@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/medialive/model/CreateInputRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -24,6 +14,7 @@ using namespace Aws::Utils;
 
 CreateInputRequest::CreateInputRequest() : 
     m_destinationsHasBeenSet(false),
+    m_inputDevicesHasBeenSet(false),
     m_inputSecurityGroupsHasBeenSet(false),
     m_mediaConnectFlowsHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -50,6 +41,17 @@ Aws::String CreateInputRequest::SerializePayload() const
      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
    }
    payload.WithArray("destinations", std::move(destinationsJsonList));
+
+  }
+
+  if(m_inputDevicesHasBeenSet)
+  {
+   Array<JsonValue> inputDevicesJsonList(m_inputDevices.size());
+   for(unsigned inputDevicesIndex = 0; inputDevicesIndex < inputDevicesJsonList.GetLength(); ++inputDevicesIndex)
+   {
+     inputDevicesJsonList[inputDevicesIndex].AsObject(m_inputDevices[inputDevicesIndex].Jsonize());
+   }
+   payload.WithArray("inputDevices", std::move(inputDevicesJsonList));
 
   }
 

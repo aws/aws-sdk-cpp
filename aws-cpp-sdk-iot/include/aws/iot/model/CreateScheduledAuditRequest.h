@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -47,152 +37,172 @@ namespace Model
 
 
     /**
-     * <p>How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY",
-     * "BIWEEKLY" or "MONTHLY". The start time of each audit is determined by the
-     * system.</p>
+     * <p>How often the scheduled audit takes place, either <code>DAILY</code>,
+     * <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start
+     * time of each audit is determined by the system.</p>
      */
     inline const AuditFrequency& GetFrequency() const{ return m_frequency; }
 
     /**
-     * <p>How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY",
-     * "BIWEEKLY" or "MONTHLY". The start time of each audit is determined by the
-     * system.</p>
+     * <p>How often the scheduled audit takes place, either <code>DAILY</code>,
+     * <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start
+     * time of each audit is determined by the system.</p>
      */
     inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
 
     /**
-     * <p>How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY",
-     * "BIWEEKLY" or "MONTHLY". The start time of each audit is determined by the
-     * system.</p>
+     * <p>How often the scheduled audit takes place, either <code>DAILY</code>,
+     * <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start
+     * time of each audit is determined by the system.</p>
      */
     inline void SetFrequency(const AuditFrequency& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
 
     /**
-     * <p>How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY",
-     * "BIWEEKLY" or "MONTHLY". The start time of each audit is determined by the
-     * system.</p>
+     * <p>How often the scheduled audit takes place, either <code>DAILY</code>,
+     * <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start
+     * time of each audit is determined by the system.</p>
      */
     inline void SetFrequency(AuditFrequency&& value) { m_frequencyHasBeenSet = true; m_frequency = std::move(value); }
 
     /**
-     * <p>How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY",
-     * "BIWEEKLY" or "MONTHLY". The start time of each audit is determined by the
-     * system.</p>
+     * <p>How often the scheduled audit takes place, either <code>DAILY</code>,
+     * <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start
+     * time of each audit is determined by the system.</p>
      */
     inline CreateScheduledAuditRequest& WithFrequency(const AuditFrequency& value) { SetFrequency(value); return *this;}
 
     /**
-     * <p>How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY",
-     * "BIWEEKLY" or "MONTHLY". The start time of each audit is determined by the
-     * system.</p>
+     * <p>How often the scheduled audit takes place, either <code>DAILY</code>,
+     * <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start
+     * time of each audit is determined by the system.</p>
      */
     inline CreateScheduledAuditRequest& WithFrequency(AuditFrequency&& value) { SetFrequency(std::move(value)); return *this;}
 
 
     /**
-     * <p>The day of the month on which the scheduled audit takes place. Can be "1"
-     * through "31" or "LAST". This field is required if the "frequency" parameter is
-     * set to "MONTHLY". If days 29-31 are specified, and the month does not have that
-     * many days, the audit takes place on the "LAST" day of the month.</p>
+     * <p>The day of the month on which the scheduled audit takes place. This can be
+     * "1" through "31" or "LAST". This field is required if the "frequency" parameter
+     * is set to <code>MONTHLY</code>. If days 29 to 31 are specified, and the month
+     * doesn't have that many days, the audit takes place on the <code>LAST</code> day
+     * of the month.</p>
      */
     inline const Aws::String& GetDayOfMonth() const{ return m_dayOfMonth; }
 
     /**
-     * <p>The day of the month on which the scheduled audit takes place. Can be "1"
-     * through "31" or "LAST". This field is required if the "frequency" parameter is
-     * set to "MONTHLY". If days 29-31 are specified, and the month does not have that
-     * many days, the audit takes place on the "LAST" day of the month.</p>
+     * <p>The day of the month on which the scheduled audit takes place. This can be
+     * "1" through "31" or "LAST". This field is required if the "frequency" parameter
+     * is set to <code>MONTHLY</code>. If days 29 to 31 are specified, and the month
+     * doesn't have that many days, the audit takes place on the <code>LAST</code> day
+     * of the month.</p>
      */
     inline bool DayOfMonthHasBeenSet() const { return m_dayOfMonthHasBeenSet; }
 
     /**
-     * <p>The day of the month on which the scheduled audit takes place. Can be "1"
-     * through "31" or "LAST". This field is required if the "frequency" parameter is
-     * set to "MONTHLY". If days 29-31 are specified, and the month does not have that
-     * many days, the audit takes place on the "LAST" day of the month.</p>
+     * <p>The day of the month on which the scheduled audit takes place. This can be
+     * "1" through "31" or "LAST". This field is required if the "frequency" parameter
+     * is set to <code>MONTHLY</code>. If days 29 to 31 are specified, and the month
+     * doesn't have that many days, the audit takes place on the <code>LAST</code> day
+     * of the month.</p>
      */
     inline void SetDayOfMonth(const Aws::String& value) { m_dayOfMonthHasBeenSet = true; m_dayOfMonth = value; }
 
     /**
-     * <p>The day of the month on which the scheduled audit takes place. Can be "1"
-     * through "31" or "LAST". This field is required if the "frequency" parameter is
-     * set to "MONTHLY". If days 29-31 are specified, and the month does not have that
-     * many days, the audit takes place on the "LAST" day of the month.</p>
+     * <p>The day of the month on which the scheduled audit takes place. This can be
+     * "1" through "31" or "LAST". This field is required if the "frequency" parameter
+     * is set to <code>MONTHLY</code>. If days 29 to 31 are specified, and the month
+     * doesn't have that many days, the audit takes place on the <code>LAST</code> day
+     * of the month.</p>
      */
     inline void SetDayOfMonth(Aws::String&& value) { m_dayOfMonthHasBeenSet = true; m_dayOfMonth = std::move(value); }
 
     /**
-     * <p>The day of the month on which the scheduled audit takes place. Can be "1"
-     * through "31" or "LAST". This field is required if the "frequency" parameter is
-     * set to "MONTHLY". If days 29-31 are specified, and the month does not have that
-     * many days, the audit takes place on the "LAST" day of the month.</p>
+     * <p>The day of the month on which the scheduled audit takes place. This can be
+     * "1" through "31" or "LAST". This field is required if the "frequency" parameter
+     * is set to <code>MONTHLY</code>. If days 29 to 31 are specified, and the month
+     * doesn't have that many days, the audit takes place on the <code>LAST</code> day
+     * of the month.</p>
      */
     inline void SetDayOfMonth(const char* value) { m_dayOfMonthHasBeenSet = true; m_dayOfMonth.assign(value); }
 
     /**
-     * <p>The day of the month on which the scheduled audit takes place. Can be "1"
-     * through "31" or "LAST". This field is required if the "frequency" parameter is
-     * set to "MONTHLY". If days 29-31 are specified, and the month does not have that
-     * many days, the audit takes place on the "LAST" day of the month.</p>
+     * <p>The day of the month on which the scheduled audit takes place. This can be
+     * "1" through "31" or "LAST". This field is required if the "frequency" parameter
+     * is set to <code>MONTHLY</code>. If days 29 to 31 are specified, and the month
+     * doesn't have that many days, the audit takes place on the <code>LAST</code> day
+     * of the month.</p>
      */
     inline CreateScheduledAuditRequest& WithDayOfMonth(const Aws::String& value) { SetDayOfMonth(value); return *this;}
 
     /**
-     * <p>The day of the month on which the scheduled audit takes place. Can be "1"
-     * through "31" or "LAST". This field is required if the "frequency" parameter is
-     * set to "MONTHLY". If days 29-31 are specified, and the month does not have that
-     * many days, the audit takes place on the "LAST" day of the month.</p>
+     * <p>The day of the month on which the scheduled audit takes place. This can be
+     * "1" through "31" or "LAST". This field is required if the "frequency" parameter
+     * is set to <code>MONTHLY</code>. If days 29 to 31 are specified, and the month
+     * doesn't have that many days, the audit takes place on the <code>LAST</code> day
+     * of the month.</p>
      */
     inline CreateScheduledAuditRequest& WithDayOfMonth(Aws::String&& value) { SetDayOfMonth(std::move(value)); return *this;}
 
     /**
-     * <p>The day of the month on which the scheduled audit takes place. Can be "1"
-     * through "31" or "LAST". This field is required if the "frequency" parameter is
-     * set to "MONTHLY". If days 29-31 are specified, and the month does not have that
-     * many days, the audit takes place on the "LAST" day of the month.</p>
+     * <p>The day of the month on which the scheduled audit takes place. This can be
+     * "1" through "31" or "LAST". This field is required if the "frequency" parameter
+     * is set to <code>MONTHLY</code>. If days 29 to 31 are specified, and the month
+     * doesn't have that many days, the audit takes place on the <code>LAST</code> day
+     * of the month.</p>
      */
     inline CreateScheduledAuditRequest& WithDayOfMonth(const char* value) { SetDayOfMonth(value); return *this;}
 
 
     /**
-     * <p>The day of the week on which the scheduled audit takes place. Can be one of
-     * "SUN", "MON", "TUE", "WED", "THU", "FRI", or "SAT". This field is required if
-     * the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".</p>
+     * <p>The day of the week on which the scheduled audit takes place, either
+     * <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>,
+     * <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required
+     * if the <code>frequency</code> parameter is set to <code>WEEKLY</code> or
+     * <code>BIWEEKLY</code>.</p>
      */
     inline const DayOfWeek& GetDayOfWeek() const{ return m_dayOfWeek; }
 
     /**
-     * <p>The day of the week on which the scheduled audit takes place. Can be one of
-     * "SUN", "MON", "TUE", "WED", "THU", "FRI", or "SAT". This field is required if
-     * the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".</p>
+     * <p>The day of the week on which the scheduled audit takes place, either
+     * <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>,
+     * <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required
+     * if the <code>frequency</code> parameter is set to <code>WEEKLY</code> or
+     * <code>BIWEEKLY</code>.</p>
      */
     inline bool DayOfWeekHasBeenSet() const { return m_dayOfWeekHasBeenSet; }
 
     /**
-     * <p>The day of the week on which the scheduled audit takes place. Can be one of
-     * "SUN", "MON", "TUE", "WED", "THU", "FRI", or "SAT". This field is required if
-     * the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".</p>
+     * <p>The day of the week on which the scheduled audit takes place, either
+     * <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>,
+     * <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required
+     * if the <code>frequency</code> parameter is set to <code>WEEKLY</code> or
+     * <code>BIWEEKLY</code>.</p>
      */
     inline void SetDayOfWeek(const DayOfWeek& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
 
     /**
-     * <p>The day of the week on which the scheduled audit takes place. Can be one of
-     * "SUN", "MON", "TUE", "WED", "THU", "FRI", or "SAT". This field is required if
-     * the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".</p>
+     * <p>The day of the week on which the scheduled audit takes place, either
+     * <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>,
+     * <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required
+     * if the <code>frequency</code> parameter is set to <code>WEEKLY</code> or
+     * <code>BIWEEKLY</code>.</p>
      */
     inline void SetDayOfWeek(DayOfWeek&& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = std::move(value); }
 
     /**
-     * <p>The day of the week on which the scheduled audit takes place. Can be one of
-     * "SUN", "MON", "TUE", "WED", "THU", "FRI", or "SAT". This field is required if
-     * the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".</p>
+     * <p>The day of the week on which the scheduled audit takes place, either
+     * <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>,
+     * <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required
+     * if the <code>frequency</code> parameter is set to <code>WEEKLY</code> or
+     * <code>BIWEEKLY</code>.</p>
      */
     inline CreateScheduledAuditRequest& WithDayOfWeek(const DayOfWeek& value) { SetDayOfWeek(value); return *this;}
 
     /**
-     * <p>The day of the week on which the scheduled audit takes place. Can be one of
-     * "SUN", "MON", "TUE", "WED", "THU", "FRI", or "SAT". This field is required if
-     * the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".</p>
+     * <p>The day of the week on which the scheduled audit takes place, either
+     * <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>,
+     * <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required
+     * if the <code>frequency</code> parameter is set to <code>WEEKLY</code> or
+     * <code>BIWEEKLY</code>.</p>
      */
     inline CreateScheduledAuditRequest& WithDayOfWeek(DayOfWeek&& value) { SetDayOfWeek(std::move(value)); return *this;}
 

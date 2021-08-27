@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -303,16 +293,18 @@ namespace Model
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
      * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>DEVICE_KEY</code> </p> </li> </ul>
+     * <code>DEVICE_KEY</code>. To start the authentication flow with password
+     * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
+     * SRP_A Value)</code>.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAuthParameters() const{ return m_authParameters; }
 
@@ -322,16 +314,18 @@ namespace Model
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
      * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>DEVICE_KEY</code> </p> </li> </ul>
+     * <code>DEVICE_KEY</code>. To start the authentication flow with password
+     * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
+     * SRP_A Value)</code>.</p> </li> </ul>
      */
     inline bool AuthParametersHasBeenSet() const { return m_authParametersHasBeenSet; }
 
@@ -341,16 +335,18 @@ namespace Model
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
      * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>DEVICE_KEY</code> </p> </li> </ul>
+     * <code>DEVICE_KEY</code>. To start the authentication flow with password
+     * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
+     * SRP_A Value)</code>.</p> </li> </ul>
      */
     inline void SetAuthParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_authParametersHasBeenSet = true; m_authParameters = value; }
 
@@ -360,16 +356,18 @@ namespace Model
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
      * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>DEVICE_KEY</code> </p> </li> </ul>
+     * <code>DEVICE_KEY</code>. To start the authentication flow with password
+     * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
+     * SRP_A Value)</code>.</p> </li> </ul>
      */
     inline void SetAuthParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_authParametersHasBeenSet = true; m_authParameters = std::move(value); }
 
@@ -379,16 +377,18 @@ namespace Model
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
      * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>DEVICE_KEY</code> </p> </li> </ul>
+     * <code>DEVICE_KEY</code>. To start the authentication flow with password
+     * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
+     * SRP_A Value)</code>.</p> </li> </ul>
      */
     inline AdminInitiateAuthRequest& WithAuthParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetAuthParameters(value); return *this;}
 
@@ -398,16 +398,18 @@ namespace Model
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
      * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>DEVICE_KEY</code> </p> </li> </ul>
+     * <code>DEVICE_KEY</code>. To start the authentication flow with password
+     * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
+     * SRP_A Value)</code>.</p> </li> </ul>
      */
     inline AdminInitiateAuthRequest& WithAuthParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetAuthParameters(std::move(value)); return *this;}
 
@@ -417,16 +419,18 @@ namespace Model
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
      * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>DEVICE_KEY</code> </p> </li> </ul>
+     * <code>DEVICE_KEY</code>. To start the authentication flow with password
+     * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
+     * SRP_A Value)</code>.</p> </li> </ul>
      */
     inline AdminInitiateAuthRequest& AddAuthParameters(const Aws::String& key, const Aws::String& value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(key, value); return *this; }
 
@@ -436,16 +440,18 @@ namespace Model
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
      * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>DEVICE_KEY</code> </p> </li> </ul>
+     * <code>DEVICE_KEY</code>. To start the authentication flow with password
+     * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
+     * SRP_A Value)</code>.</p> </li> </ul>
      */
     inline AdminInitiateAuthRequest& AddAuthParameters(Aws::String&& key, const Aws::String& value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(std::move(key), value); return *this; }
 
@@ -455,16 +461,18 @@ namespace Model
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
      * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>DEVICE_KEY</code> </p> </li> </ul>
+     * <code>DEVICE_KEY</code>. To start the authentication flow with password
+     * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
+     * SRP_A Value)</code>.</p> </li> </ul>
      */
     inline AdminInitiateAuthRequest& AddAuthParameters(const Aws::String& key, Aws::String&& value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(key, std::move(value)); return *this; }
 
@@ -474,16 +482,18 @@ namespace Model
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
      * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>DEVICE_KEY</code> </p> </li> </ul>
+     * <code>DEVICE_KEY</code>. To start the authentication flow with password
+     * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
+     * SRP_A Value)</code>.</p> </li> </ul>
      */
     inline AdminInitiateAuthRequest& AddAuthParameters(Aws::String&& key, Aws::String&& value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -493,16 +503,18 @@ namespace Model
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
      * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>DEVICE_KEY</code> </p> </li> </ul>
+     * <code>DEVICE_KEY</code>. To start the authentication flow with password
+     * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
+     * SRP_A Value)</code>.</p> </li> </ul>
      */
     inline AdminInitiateAuthRequest& AddAuthParameters(const char* key, Aws::String&& value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(key, std::move(value)); return *this; }
 
@@ -512,16 +524,18 @@ namespace Model
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
      * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>DEVICE_KEY</code> </p> </li> </ul>
+     * <code>DEVICE_KEY</code>. To start the authentication flow with password
+     * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
+     * SRP_A Value)</code>.</p> </li> </ul>
      */
     inline AdminInitiateAuthRequest& AddAuthParameters(Aws::String&& key, const char* value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(std::move(key), value); return *this; }
 
@@ -531,16 +545,18 @@ namespace Model
      * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
      * (required), <code>SECRET_HASH</code> (required if the app client is configured
-     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * with a client secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
      * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
-     * <code>DEVICE_KEY</code> </p> </li> </ul>
+     * <code>DEVICE_KEY</code>. To start the authentication flow with password
+     * verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
+     * SRP_A Value)</code>.</p> </li> </ul>
      */
     inline AdminInitiateAuthRequest& AddAuthParameters(const char* key, const char* value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(key, value); return *this; }
 
@@ -567,7 +583,7 @@ namespace Model
      * <p>Verify auth challenge</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -575,7 +591,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const{ return m_clientMetadata; }
 
@@ -601,7 +617,7 @@ namespace Model
      * <p>Verify auth challenge</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -609,7 +625,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline bool ClientMetadataHasBeenSet() const { return m_clientMetadataHasBeenSet; }
 
@@ -635,7 +651,7 @@ namespace Model
      * <p>Verify auth challenge</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -643,7 +659,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline void SetClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = value; }
 
@@ -669,7 +685,7 @@ namespace Model
      * <p>Verify auth challenge</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -677,7 +693,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline void SetClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = std::move(value); }
 
@@ -703,7 +719,7 @@ namespace Model
      * <p>Verify auth challenge</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -711,7 +727,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline AdminInitiateAuthRequest& WithClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetClientMetadata(value); return *this;}
 
@@ -737,7 +753,7 @@ namespace Model
      * <p>Verify auth challenge</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -745,7 +761,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline AdminInitiateAuthRequest& WithClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetClientMetadata(std::move(value)); return *this;}
 
@@ -771,7 +787,7 @@ namespace Model
      * <p>Verify auth challenge</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -779,7 +795,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline AdminInitiateAuthRequest& AddClientMetadata(const Aws::String& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
 
@@ -805,7 +821,7 @@ namespace Model
      * <p>Verify auth challenge</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -813,7 +829,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline AdminInitiateAuthRequest& AddClientMetadata(Aws::String&& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
 
@@ -839,7 +855,7 @@ namespace Model
      * <p>Verify auth challenge</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -847,7 +863,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline AdminInitiateAuthRequest& AddClientMetadata(const Aws::String& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
 
@@ -873,7 +889,7 @@ namespace Model
      * <p>Verify auth challenge</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -881,7 +897,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline AdminInitiateAuthRequest& AddClientMetadata(Aws::String&& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -907,7 +923,7 @@ namespace Model
      * <p>Verify auth challenge</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -915,7 +931,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline AdminInitiateAuthRequest& AddClientMetadata(const char* key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
 
@@ -941,7 +957,7 @@ namespace Model
      * <p>Verify auth challenge</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -949,7 +965,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline AdminInitiateAuthRequest& AddClientMetadata(Aws::String&& key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
 
@@ -975,7 +991,7 @@ namespace Model
      * <p>Verify auth challenge</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -983,7 +999,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline AdminInitiateAuthRequest& AddClientMetadata(const char* key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
 

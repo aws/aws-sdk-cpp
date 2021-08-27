@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/Behavior.h>
 #include <aws/iot/model/MetricValue.h>
+#include <aws/iot/model/ViolationEventAdditionalInfo.h>
 #include <aws/iot/model/ViolationEventType.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
@@ -176,32 +167,32 @@ namespace Model
 
 
     /**
-     * <p>The behavior which was violated.</p>
+     * <p>The behavior that was violated.</p>
      */
     inline const Behavior& GetBehavior() const{ return m_behavior; }
 
     /**
-     * <p>The behavior which was violated.</p>
+     * <p>The behavior that was violated.</p>
      */
     inline bool BehaviorHasBeenSet() const { return m_behaviorHasBeenSet; }
 
     /**
-     * <p>The behavior which was violated.</p>
+     * <p>The behavior that was violated.</p>
      */
     inline void SetBehavior(const Behavior& value) { m_behaviorHasBeenSet = true; m_behavior = value; }
 
     /**
-     * <p>The behavior which was violated.</p>
+     * <p>The behavior that was violated.</p>
      */
     inline void SetBehavior(Behavior&& value) { m_behaviorHasBeenSet = true; m_behavior = std::move(value); }
 
     /**
-     * <p>The behavior which was violated.</p>
+     * <p>The behavior that was violated.</p>
      */
     inline ViolationEvent& WithBehavior(const Behavior& value) { SetBehavior(value); return *this;}
 
     /**
-     * <p>The behavior which was violated.</p>
+     * <p>The behavior that was violated.</p>
      */
     inline ViolationEvent& WithBehavior(Behavior&& value) { SetBehavior(std::move(value)); return *this;}
 
@@ -235,6 +226,37 @@ namespace Model
      * <p>The value of the metric (the measurement).</p>
      */
     inline ViolationEvent& WithMetricValue(MetricValue&& value) { SetMetricValue(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The details of a violation event. </p>
+     */
+    inline const ViolationEventAdditionalInfo& GetViolationEventAdditionalInfo() const{ return m_violationEventAdditionalInfo; }
+
+    /**
+     * <p> The details of a violation event. </p>
+     */
+    inline bool ViolationEventAdditionalInfoHasBeenSet() const { return m_violationEventAdditionalInfoHasBeenSet; }
+
+    /**
+     * <p> The details of a violation event. </p>
+     */
+    inline void SetViolationEventAdditionalInfo(const ViolationEventAdditionalInfo& value) { m_violationEventAdditionalInfoHasBeenSet = true; m_violationEventAdditionalInfo = value; }
+
+    /**
+     * <p> The details of a violation event. </p>
+     */
+    inline void SetViolationEventAdditionalInfo(ViolationEventAdditionalInfo&& value) { m_violationEventAdditionalInfoHasBeenSet = true; m_violationEventAdditionalInfo = std::move(value); }
+
+    /**
+     * <p> The details of a violation event. </p>
+     */
+    inline ViolationEvent& WithViolationEventAdditionalInfo(const ViolationEventAdditionalInfo& value) { SetViolationEventAdditionalInfo(value); return *this;}
+
+    /**
+     * <p> The details of a violation event. </p>
+     */
+    inline ViolationEvent& WithViolationEventAdditionalInfo(ViolationEventAdditionalInfo&& value) { SetViolationEventAdditionalInfo(std::move(value)); return *this;}
 
 
     /**
@@ -314,6 +336,9 @@ namespace Model
 
     MetricValue m_metricValue;
     bool m_metricValueHasBeenSet;
+
+    ViolationEventAdditionalInfo m_violationEventAdditionalInfo;
+    bool m_violationEventAdditionalInfoHasBeenSet;
 
     ViolationEventType m_violationEventType;
     bool m_violationEventTypeHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/groundstation/GroundStation_EXPORTS.h>
@@ -79,22 +69,26 @@ namespace Model
 
 
     /**
-     * <p>Frequency value.</p>
+     * <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400
+     * MHz for downlink and 2025 to 2120 MHz for uplink.</p>
      */
     inline double GetValue() const{ return m_value; }
 
     /**
-     * <p>Frequency value.</p>
+     * <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400
+     * MHz for downlink and 2025 to 2120 MHz for uplink.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>Frequency value.</p>
+     * <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400
+     * MHz for downlink and 2025 to 2120 MHz for uplink.</p>
      */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>Frequency value.</p>
+     * <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400
+     * MHz for downlink and 2025 to 2120 MHz for uplink.</p>
      */
     inline Frequency& WithValue(double value) { SetValue(value); return *this;}
 

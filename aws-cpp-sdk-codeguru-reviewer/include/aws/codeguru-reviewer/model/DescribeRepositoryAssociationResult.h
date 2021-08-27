@@ -1,21 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
 #include <aws/codeguru-reviewer/model/RepositoryAssociation.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -67,9 +59,156 @@ namespace Model
      */
     inline DescribeRepositoryAssociationResult& WithRepositoryAssociation(RepositoryAssociation&& value) { SetRepositoryAssociation(std::move(value)); return *this;}
 
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline DescribeRepositoryAssociationResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline DescribeRepositoryAssociationResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline DescribeRepositoryAssociationResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline DescribeRepositoryAssociationResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline DescribeRepositoryAssociationResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline DescribeRepositoryAssociationResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline DescribeRepositoryAssociationResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline DescribeRepositoryAssociationResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline DescribeRepositoryAssociationResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+
   private:
 
     RepositoryAssociation m_repositoryAssociation;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/transcribe/model/MediaFormat.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -34,6 +24,9 @@ namespace Aws
         static const int mp4_HASH = HashingUtils::HashString("mp4");
         static const int wav_HASH = HashingUtils::HashString("wav");
         static const int flac_HASH = HashingUtils::HashString("flac");
+        static const int ogg_HASH = HashingUtils::HashString("ogg");
+        static const int amr_HASH = HashingUtils::HashString("amr");
+        static const int webm_HASH = HashingUtils::HashString("webm");
 
 
         MediaFormat GetMediaFormatForName(const Aws::String& name)
@@ -54,6 +47,18 @@ namespace Aws
           else if (hashCode == flac_HASH)
           {
             return MediaFormat::flac;
+          }
+          else if (hashCode == ogg_HASH)
+          {
+            return MediaFormat::ogg;
+          }
+          else if (hashCode == amr_HASH)
+          {
+            return MediaFormat::amr;
+          }
+          else if (hashCode == webm_HASH)
+          {
+            return MediaFormat::webm;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +82,12 @@ namespace Aws
             return "wav";
           case MediaFormat::flac:
             return "flac";
+          case MediaFormat::ogg:
+            return "ogg";
+          case MediaFormat::amr:
+            return "amr";
+          case MediaFormat::webm:
+            return "webm";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

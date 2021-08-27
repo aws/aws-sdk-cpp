@@ -1,20 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/MpdAccessibilityCaptionHints.h>
+#include <aws/mediaconvert/model/MpdAudioDuration.h>
 #include <aws/mediaconvert/model/MpdCaptionContainerType.h>
 #include <aws/mediaconvert/model/MpdScte35Esam.h>
 #include <aws/mediaconvert/model/MpdScte35Source.h>
@@ -47,6 +39,176 @@ namespace Model
     MpdSettings(Aws::Utils::Json::JsonView jsonValue);
     MpdSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH
+     * manifest with <Accessibility> elements for embedded 608 captions. This markup
+     * isn't generally required, but some video players require it to discover and play
+     * embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these
+     * elements out. When you enable this setting, this is the markup that MediaConvert
+     * includes in your manifest: <Accessibility
+     * schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+     */
+    inline const MpdAccessibilityCaptionHints& GetAccessibilityCaptionHints() const{ return m_accessibilityCaptionHints; }
+
+    /**
+     * Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH
+     * manifest with <Accessibility> elements for embedded 608 captions. This markup
+     * isn't generally required, but some video players require it to discover and play
+     * embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these
+     * elements out. When you enable this setting, this is the markup that MediaConvert
+     * includes in your manifest: <Accessibility
+     * schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+     */
+    inline bool AccessibilityCaptionHintsHasBeenSet() const { return m_accessibilityCaptionHintsHasBeenSet; }
+
+    /**
+     * Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH
+     * manifest with <Accessibility> elements for embedded 608 captions. This markup
+     * isn't generally required, but some video players require it to discover and play
+     * embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these
+     * elements out. When you enable this setting, this is the markup that MediaConvert
+     * includes in your manifest: <Accessibility
+     * schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+     */
+    inline void SetAccessibilityCaptionHints(const MpdAccessibilityCaptionHints& value) { m_accessibilityCaptionHintsHasBeenSet = true; m_accessibilityCaptionHints = value; }
+
+    /**
+     * Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH
+     * manifest with <Accessibility> elements for embedded 608 captions. This markup
+     * isn't generally required, but some video players require it to discover and play
+     * embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these
+     * elements out. When you enable this setting, this is the markup that MediaConvert
+     * includes in your manifest: <Accessibility
+     * schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+     */
+    inline void SetAccessibilityCaptionHints(MpdAccessibilityCaptionHints&& value) { m_accessibilityCaptionHintsHasBeenSet = true; m_accessibilityCaptionHints = std::move(value); }
+
+    /**
+     * Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH
+     * manifest with <Accessibility> elements for embedded 608 captions. This markup
+     * isn't generally required, but some video players require it to discover and play
+     * embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these
+     * elements out. When you enable this setting, this is the markup that MediaConvert
+     * includes in your manifest: <Accessibility
+     * schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+     */
+    inline MpdSettings& WithAccessibilityCaptionHints(const MpdAccessibilityCaptionHints& value) { SetAccessibilityCaptionHints(value); return *this;}
+
+    /**
+     * Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH
+     * manifest with <Accessibility> elements for embedded 608 captions. This markup
+     * isn't generally required, but some video players require it to discover and play
+     * embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these
+     * elements out. When you enable this setting, this is the markup that MediaConvert
+     * includes in your manifest: <Accessibility
+     * schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+     */
+    inline MpdSettings& WithAccessibilityCaptionHints(MpdAccessibilityCaptionHints&& value) { SetAccessibilityCaptionHints(std::move(value)); return *this;}
+
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline const MpdAudioDuration& GetAudioDuration() const{ return m_audioDuration; }
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline bool AudioDurationHasBeenSet() const { return m_audioDurationHasBeenSet; }
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline void SetAudioDuration(const MpdAudioDuration& value) { m_audioDurationHasBeenSet = true; m_audioDuration = value; }
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline void SetAudioDuration(MpdAudioDuration&& value) { m_audioDurationHasBeenSet = true; m_audioDuration = std::move(value); }
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline MpdSettings& WithAudioDuration(const MpdAudioDuration& value) { SetAudioDuration(value); return *this;}
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline MpdSettings& WithAudioDuration(MpdAudioDuration&& value) { SetAudioDuration(std::move(value)); return *this;}
 
 
     /**
@@ -202,6 +364,12 @@ namespace Model
     inline MpdSettings& WithScte35Source(MpdScte35Source&& value) { SetScte35Source(std::move(value)); return *this;}
 
   private:
+
+    MpdAccessibilityCaptionHints m_accessibilityCaptionHints;
+    bool m_accessibilityCaptionHintsHasBeenSet;
+
+    MpdAudioDuration m_audioDuration;
+    bool m_audioDurationHasBeenSet;
 
     MpdCaptionContainerType m_captionContainerType;
     bool m_captionContainerTypeHasBeenSet;

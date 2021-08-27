@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/DashIsoGroupSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -40,6 +30,8 @@ DashIsoGroupSettings::DashIsoGroupSettings() :
     m_hbbtvComplianceHasBeenSet(false),
     m_minBufferTime(0),
     m_minBufferTimeHasBeenSet(false),
+    m_minFinalSegmentLength(0.0),
+    m_minFinalSegmentLengthHasBeenSet(false),
     m_mpdProfile(DashIsoMpdProfile::NOT_SET),
     m_mpdProfileHasBeenSet(false),
     m_segmentControl(DashIsoSegmentControl::NOT_SET),
@@ -63,6 +55,8 @@ DashIsoGroupSettings::DashIsoGroupSettings(JsonView jsonValue) :
     m_hbbtvComplianceHasBeenSet(false),
     m_minBufferTime(0),
     m_minBufferTimeHasBeenSet(false),
+    m_minFinalSegmentLength(0.0),
+    m_minFinalSegmentLengthHasBeenSet(false),
     m_mpdProfile(DashIsoMpdProfile::NOT_SET),
     m_mpdProfileHasBeenSet(false),
     m_segmentControl(DashIsoSegmentControl::NOT_SET),
@@ -134,6 +128,13 @@ DashIsoGroupSettings& DashIsoGroupSettings::operator =(JsonView jsonValue)
     m_minBufferTime = jsonValue.GetInteger("minBufferTime");
 
     m_minBufferTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("minFinalSegmentLength"))
+  {
+    m_minFinalSegmentLength = jsonValue.GetDouble("minFinalSegmentLength");
+
+    m_minFinalSegmentLengthHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("mpdProfile"))
@@ -220,6 +221,12 @@ JsonValue DashIsoGroupSettings::Jsonize() const
   if(m_minBufferTimeHasBeenSet)
   {
    payload.WithInteger("minBufferTime", m_minBufferTime);
+
+  }
+
+  if(m_minFinalSegmentLengthHasBeenSet)
+  {
+   payload.WithDouble("minFinalSegmentLength", m_minFinalSegmentLength);
 
   }
 

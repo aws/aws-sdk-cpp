@@ -1,23 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/organizations/model/HandshakeParty.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/organizations/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -47,7 +39,7 @@ namespace Model
 
     /**
      * <p>The identifier (ID) of the AWS account that you want to invite to join your
-     * organization. This is a JSON object that contains the following elements: </p>
+     * organization. This is a JSON object that contains the following elements:</p>
      * <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;"
      * }</code> </p> <p>If you use the AWS CLI, you can submit this as a single string,
      * similar to the following example:</p> <p> <code>--target
@@ -61,7 +53,7 @@ namespace Model
 
     /**
      * <p>The identifier (ID) of the AWS account that you want to invite to join your
-     * organization. This is a JSON object that contains the following elements: </p>
+     * organization. This is a JSON object that contains the following elements:</p>
      * <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;"
      * }</code> </p> <p>If you use the AWS CLI, you can submit this as a single string,
      * similar to the following example:</p> <p> <code>--target
@@ -75,7 +67,7 @@ namespace Model
 
     /**
      * <p>The identifier (ID) of the AWS account that you want to invite to join your
-     * organization. This is a JSON object that contains the following elements: </p>
+     * organization. This is a JSON object that contains the following elements:</p>
      * <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;"
      * }</code> </p> <p>If you use the AWS CLI, you can submit this as a single string,
      * similar to the following example:</p> <p> <code>--target
@@ -89,7 +81,7 @@ namespace Model
 
     /**
      * <p>The identifier (ID) of the AWS account that you want to invite to join your
-     * organization. This is a JSON object that contains the following elements: </p>
+     * organization. This is a JSON object that contains the following elements:</p>
      * <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;"
      * }</code> </p> <p>If you use the AWS CLI, you can submit this as a single string,
      * similar to the following example:</p> <p> <code>--target
@@ -103,7 +95,7 @@ namespace Model
 
     /**
      * <p>The identifier (ID) of the AWS account that you want to invite to join your
-     * organization. This is a JSON object that contains the following elements: </p>
+     * organization. This is a JSON object that contains the following elements:</p>
      * <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;"
      * }</code> </p> <p>If you use the AWS CLI, you can submit this as a single string,
      * similar to the following example:</p> <p> <code>--target
@@ -117,7 +109,7 @@ namespace Model
 
     /**
      * <p>The identifier (ID) of the AWS account that you want to invite to join your
-     * organization. This is a JSON object that contains the following elements: </p>
+     * organization. This is a JSON object that contains the following elements:</p>
      * <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;"
      * }</code> </p> <p>If you use the AWS CLI, you can submit this as a single string,
      * similar to the following example:</p> <p> <code>--target
@@ -178,6 +170,159 @@ namespace Model
      */
     inline InviteAccountToOrganizationRequest& WithNotes(const char* value) { SetNotes(value); return *this;}
 
+
+    /**
+     * <p>A list of tags that you want to attach to the account when it becomes a
+     * member of the organization. For each tag in the list, you must specify both a
+     * tag key and a value. You can set the value to an empty string, but you can't set
+     * it to <code>null</code>. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
+     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p>
+     *  <p>Any tags in the request are checked for compliance with any
+     * applicable tag policies when the request is made. The request is rejected if the
+     * tags in the request don't match the requirements of the policy at that time. Tag
+     * policy compliance is <i> <b>not</b> </i> checked again when the invitation is
+     * accepted and the tags are actually attached to the account. That means that if
+     * the tag policy changes between the invitation and the acceptance, then that tags
+     * could potentially be non-compliant.</p>   <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags for an account, then
+     * the entire request fails and invitations are not sent.</p> 
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags that you want to attach to the account when it becomes a
+     * member of the organization. For each tag in the list, you must specify both a
+     * tag key and a value. You can set the value to an empty string, but you can't set
+     * it to <code>null</code>. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
+     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p>
+     *  <p>Any tags in the request are checked for compliance with any
+     * applicable tag policies when the request is made. The request is rejected if the
+     * tags in the request don't match the requirements of the policy at that time. Tag
+     * policy compliance is <i> <b>not</b> </i> checked again when the invitation is
+     * accepted and the tags are actually attached to the account. That means that if
+     * the tag policy changes between the invitation and the acceptance, then that tags
+     * could potentially be non-compliant.</p>   <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags for an account, then
+     * the entire request fails and invitations are not sent.</p> 
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of tags that you want to attach to the account when it becomes a
+     * member of the organization. For each tag in the list, you must specify both a
+     * tag key and a value. You can set the value to an empty string, but you can't set
+     * it to <code>null</code>. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
+     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p>
+     *  <p>Any tags in the request are checked for compliance with any
+     * applicable tag policies when the request is made. The request is rejected if the
+     * tags in the request don't match the requirements of the policy at that time. Tag
+     * policy compliance is <i> <b>not</b> </i> checked again when the invitation is
+     * accepted and the tags are actually attached to the account. That means that if
+     * the tag policy changes between the invitation and the acceptance, then that tags
+     * could potentially be non-compliant.</p>   <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags for an account, then
+     * the entire request fails and invitations are not sent.</p> 
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of tags that you want to attach to the account when it becomes a
+     * member of the organization. For each tag in the list, you must specify both a
+     * tag key and a value. You can set the value to an empty string, but you can't set
+     * it to <code>null</code>. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
+     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p>
+     *  <p>Any tags in the request are checked for compliance with any
+     * applicable tag policies when the request is made. The request is rejected if the
+     * tags in the request don't match the requirements of the policy at that time. Tag
+     * policy compliance is <i> <b>not</b> </i> checked again when the invitation is
+     * accepted and the tags are actually attached to the account. That means that if
+     * the tag policy changes between the invitation and the acceptance, then that tags
+     * could potentially be non-compliant.</p>   <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags for an account, then
+     * the entire request fails and invitations are not sent.</p> 
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of tags that you want to attach to the account when it becomes a
+     * member of the organization. For each tag in the list, you must specify both a
+     * tag key and a value. You can set the value to an empty string, but you can't set
+     * it to <code>null</code>. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
+     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p>
+     *  <p>Any tags in the request are checked for compliance with any
+     * applicable tag policies when the request is made. The request is rejected if the
+     * tags in the request don't match the requirements of the policy at that time. Tag
+     * policy compliance is <i> <b>not</b> </i> checked again when the invitation is
+     * accepted and the tags are actually attached to the account. That means that if
+     * the tag policy changes between the invitation and the acceptance, then that tags
+     * could potentially be non-compliant.</p>   <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags for an account, then
+     * the entire request fails and invitations are not sent.</p> 
+     */
+    inline InviteAccountToOrganizationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags that you want to attach to the account when it becomes a
+     * member of the organization. For each tag in the list, you must specify both a
+     * tag key and a value. You can set the value to an empty string, but you can't set
+     * it to <code>null</code>. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
+     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p>
+     *  <p>Any tags in the request are checked for compliance with any
+     * applicable tag policies when the request is made. The request is rejected if the
+     * tags in the request don't match the requirements of the policy at that time. Tag
+     * policy compliance is <i> <b>not</b> </i> checked again when the invitation is
+     * accepted and the tags are actually attached to the account. That means that if
+     * the tag policy changes between the invitation and the acceptance, then that tags
+     * could potentially be non-compliant.</p>   <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags for an account, then
+     * the entire request fails and invitations are not sent.</p> 
+     */
+    inline InviteAccountToOrganizationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tags that you want to attach to the account when it becomes a
+     * member of the organization. For each tag in the list, you must specify both a
+     * tag key and a value. You can set the value to an empty string, but you can't set
+     * it to <code>null</code>. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
+     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p>
+     *  <p>Any tags in the request are checked for compliance with any
+     * applicable tag policies when the request is made. The request is rejected if the
+     * tags in the request don't match the requirements of the policy at that time. Tag
+     * policy compliance is <i> <b>not</b> </i> checked again when the invitation is
+     * accepted and the tags are actually attached to the account. That means that if
+     * the tag policy changes between the invitation and the acceptance, then that tags
+     * could potentially be non-compliant.</p>   <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags for an account, then
+     * the entire request fails and invitations are not sent.</p> 
+     */
+    inline InviteAccountToOrganizationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of tags that you want to attach to the account when it becomes a
+     * member of the organization. For each tag in the list, you must specify both a
+     * tag key and a value. You can set the value to an empty string, but you can't set
+     * it to <code>null</code>. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
+     * AWS Organizations resources</a> in the AWS Organizations User Guide.</p>
+     *  <p>Any tags in the request are checked for compliance with any
+     * applicable tag policies when the request is made. The request is rejected if the
+     * tags in the request don't match the requirements of the policy at that time. Tag
+     * policy compliance is <i> <b>not</b> </i> checked again when the invitation is
+     * accepted and the tags are actually attached to the account. That means that if
+     * the tag policy changes between the invitation and the acceptance, then that tags
+     * could potentially be non-compliant.</p>   <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags for an account, then
+     * the entire request fails and invitations are not sent.</p> 
+     */
+    inline InviteAccountToOrganizationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     HandshakeParty m_target;
@@ -185,6 +330,9 @@ namespace Model
 
     Aws::String m_notes;
     bool m_notesHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/eks/model/Nodegroup.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -38,6 +28,8 @@ Nodegroup::Nodegroup() :
     m_modifiedAtHasBeenSet(false),
     m_status(NodegroupStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_capacityType(CapacityTypes::NOT_SET),
+    m_capacityTypeHasBeenSet(false),
     m_scalingConfigHasBeenSet(false),
     m_instanceTypesHasBeenSet(false),
     m_subnetsHasBeenSet(false),
@@ -50,6 +42,7 @@ Nodegroup::Nodegroup() :
     m_diskSize(0),
     m_diskSizeHasBeenSet(false),
     m_healthHasBeenSet(false),
+    m_launchTemplateHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -64,6 +57,8 @@ Nodegroup::Nodegroup(JsonView jsonValue) :
     m_modifiedAtHasBeenSet(false),
     m_status(NodegroupStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_capacityType(CapacityTypes::NOT_SET),
+    m_capacityTypeHasBeenSet(false),
     m_scalingConfigHasBeenSet(false),
     m_instanceTypesHasBeenSet(false),
     m_subnetsHasBeenSet(false),
@@ -76,6 +71,7 @@ Nodegroup::Nodegroup(JsonView jsonValue) :
     m_diskSize(0),
     m_diskSizeHasBeenSet(false),
     m_healthHasBeenSet(false),
+    m_launchTemplateHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -137,6 +133,13 @@ Nodegroup& Nodegroup::operator =(JsonView jsonValue)
     m_status = NodegroupStatusMapper::GetNodegroupStatusForName(jsonValue.GetString("status"));
 
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("capacityType"))
+  {
+    m_capacityType = CapacityTypesMapper::GetCapacityTypesForName(jsonValue.GetString("capacityType"));
+
+    m_capacityTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("scalingConfig"))
@@ -218,6 +221,13 @@ Nodegroup& Nodegroup::operator =(JsonView jsonValue)
     m_healthHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("launchTemplate"))
+  {
+    m_launchTemplate = jsonValue.GetObject("launchTemplate");
+
+    m_launchTemplateHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -278,6 +288,11 @@ JsonValue Nodegroup::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", NodegroupStatusMapper::GetNameForNodegroupStatus(m_status));
+  }
+
+  if(m_capacityTypeHasBeenSet)
+  {
+   payload.WithString("capacityType", CapacityTypesMapper::GetNameForCapacityTypes(m_capacityType));
   }
 
   if(m_scalingConfigHasBeenSet)
@@ -351,6 +366,12 @@ JsonValue Nodegroup::Jsonize() const
   if(m_healthHasBeenSet)
   {
    payload.WithObject("health", m_health.Jsonize());
+
+  }
+
+  if(m_launchTemplateHasBeenSet)
+  {
+   payload.WithObject("launchTemplate", m_launchTemplate.Jsonize());
 
   }
 

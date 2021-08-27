@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
@@ -609,6 +599,31 @@ namespace Model
      */
     inline SharePointConfiguration& WithDocumentTitleFieldName(const char* value) { SetDocumentTitleFieldName(value); return *this;}
 
+
+    /**
+     * <p>A Boolean value that specifies whether local groups are disabled
+     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     */
+    inline bool GetDisableLocalGroups() const{ return m_disableLocalGroups; }
+
+    /**
+     * <p>A Boolean value that specifies whether local groups are disabled
+     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     */
+    inline bool DisableLocalGroupsHasBeenSet() const { return m_disableLocalGroupsHasBeenSet; }
+
+    /**
+     * <p>A Boolean value that specifies whether local groups are disabled
+     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     */
+    inline void SetDisableLocalGroups(bool value) { m_disableLocalGroupsHasBeenSet = true; m_disableLocalGroups = value; }
+
+    /**
+     * <p>A Boolean value that specifies whether local groups are disabled
+     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     */
+    inline SharePointConfiguration& WithDisableLocalGroups(bool value) { SetDisableLocalGroups(value); return *this;}
+
   private:
 
     SharePointVersion m_sharePointVersion;
@@ -640,6 +655,9 @@ namespace Model
 
     Aws::String m_documentTitleFieldName;
     bool m_documentTitleFieldNameHasBeenSet;
+
+    bool m_disableLocalGroups;
+    bool m_disableLocalGroupsHasBeenSet;
   };
 
 } // namespace Model

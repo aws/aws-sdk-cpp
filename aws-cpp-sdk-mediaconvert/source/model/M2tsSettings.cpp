@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/M2tsSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,6 +21,8 @@ namespace Model
 M2tsSettings::M2tsSettings() : 
     m_audioBufferModel(M2tsAudioBufferModel::NOT_SET),
     m_audioBufferModelHasBeenSet(false),
+    m_audioDuration(M2tsAudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
     m_audioFramesPerPes(0),
     m_audioFramesPerPesHasBeenSet(false),
     m_audioPidsHasBeenSet(false),
@@ -101,6 +93,8 @@ M2tsSettings::M2tsSettings() :
 M2tsSettings::M2tsSettings(JsonView jsonValue) : 
     m_audioBufferModel(M2tsAudioBufferModel::NOT_SET),
     m_audioBufferModelHasBeenSet(false),
+    m_audioDuration(M2tsAudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
     m_audioFramesPerPes(0),
     m_audioFramesPerPesHasBeenSet(false),
     m_audioPidsHasBeenSet(false),
@@ -176,6 +170,13 @@ M2tsSettings& M2tsSettings::operator =(JsonView jsonValue)
     m_audioBufferModel = M2tsAudioBufferModelMapper::GetM2tsAudioBufferModelForName(jsonValue.GetString("audioBufferModel"));
 
     m_audioBufferModelHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("audioDuration"))
+  {
+    m_audioDuration = M2tsAudioDurationMapper::GetM2tsAudioDurationForName(jsonValue.GetString("audioDuration"));
+
+    m_audioDurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("audioFramesPerPes"))
@@ -439,6 +440,11 @@ JsonValue M2tsSettings::Jsonize() const
   if(m_audioBufferModelHasBeenSet)
   {
    payload.WithString("audioBufferModel", M2tsAudioBufferModelMapper::GetNameForM2tsAudioBufferModel(m_audioBufferModel));
+  }
+
+  if(m_audioDurationHasBeenSet)
+  {
+   payload.WithString("audioDuration", M2tsAudioDurationMapper::GetNameForM2tsAudioDuration(m_audioDuration));
   }
 
   if(m_audioFramesPerPesHasBeenSet)

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
@@ -54,56 +44,56 @@ namespace Model
     /**
      * <p>The tag filter key, type, and value used to identify Amazon EC2 instances in
      * a replacement environment for a blue/green deployment. Cannot be used in the
-     * same call as ec2TagSet.</p>
+     * same call as <code>ec2TagSet</code>.</p>
      */
     inline const Aws::Vector<EC2TagFilter>& GetTagFilters() const{ return m_tagFilters; }
 
     /**
      * <p>The tag filter key, type, and value used to identify Amazon EC2 instances in
      * a replacement environment for a blue/green deployment. Cannot be used in the
-     * same call as ec2TagSet.</p>
+     * same call as <code>ec2TagSet</code>.</p>
      */
     inline bool TagFiltersHasBeenSet() const { return m_tagFiltersHasBeenSet; }
 
     /**
      * <p>The tag filter key, type, and value used to identify Amazon EC2 instances in
      * a replacement environment for a blue/green deployment. Cannot be used in the
-     * same call as ec2TagSet.</p>
+     * same call as <code>ec2TagSet</code>.</p>
      */
     inline void SetTagFilters(const Aws::Vector<EC2TagFilter>& value) { m_tagFiltersHasBeenSet = true; m_tagFilters = value; }
 
     /**
      * <p>The tag filter key, type, and value used to identify Amazon EC2 instances in
      * a replacement environment for a blue/green deployment. Cannot be used in the
-     * same call as ec2TagSet.</p>
+     * same call as <code>ec2TagSet</code>.</p>
      */
     inline void SetTagFilters(Aws::Vector<EC2TagFilter>&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters = std::move(value); }
 
     /**
      * <p>The tag filter key, type, and value used to identify Amazon EC2 instances in
      * a replacement environment for a blue/green deployment. Cannot be used in the
-     * same call as ec2TagSet.</p>
+     * same call as <code>ec2TagSet</code>.</p>
      */
     inline TargetInstances& WithTagFilters(const Aws::Vector<EC2TagFilter>& value) { SetTagFilters(value); return *this;}
 
     /**
      * <p>The tag filter key, type, and value used to identify Amazon EC2 instances in
      * a replacement environment for a blue/green deployment. Cannot be used in the
-     * same call as ec2TagSet.</p>
+     * same call as <code>ec2TagSet</code>.</p>
      */
     inline TargetInstances& WithTagFilters(Aws::Vector<EC2TagFilter>&& value) { SetTagFilters(std::move(value)); return *this;}
 
     /**
      * <p>The tag filter key, type, and value used to identify Amazon EC2 instances in
      * a replacement environment for a blue/green deployment. Cannot be used in the
-     * same call as ec2TagSet.</p>
+     * same call as <code>ec2TagSet</code>.</p>
      */
     inline TargetInstances& AddTagFilters(const EC2TagFilter& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.push_back(value); return *this; }
 
     /**
      * <p>The tag filter key, type, and value used to identify Amazon EC2 instances in
      * a replacement environment for a blue/green deployment. Cannot be used in the
-     * same call as ec2TagSet.</p>
+     * same call as <code>ec2TagSet</code>.</p>
      */
     inline TargetInstances& AddTagFilters(EC2TagFilter&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.push_back(std::move(value)); return *this; }
 
@@ -166,42 +156,48 @@ namespace Model
     /**
      * <p>Information about the groups of EC2 instance tags that an instance must be
      * identified by in order for it to be included in the replacement environment for
-     * a blue/green deployment. Cannot be used in the same call as tagFilters.</p>
+     * a blue/green deployment. Cannot be used in the same call as
+     * <code>tagFilters</code>.</p>
      */
     inline const EC2TagSet& GetEc2TagSet() const{ return m_ec2TagSet; }
 
     /**
      * <p>Information about the groups of EC2 instance tags that an instance must be
      * identified by in order for it to be included in the replacement environment for
-     * a blue/green deployment. Cannot be used in the same call as tagFilters.</p>
+     * a blue/green deployment. Cannot be used in the same call as
+     * <code>tagFilters</code>.</p>
      */
     inline bool Ec2TagSetHasBeenSet() const { return m_ec2TagSetHasBeenSet; }
 
     /**
      * <p>Information about the groups of EC2 instance tags that an instance must be
      * identified by in order for it to be included in the replacement environment for
-     * a blue/green deployment. Cannot be used in the same call as tagFilters.</p>
+     * a blue/green deployment. Cannot be used in the same call as
+     * <code>tagFilters</code>.</p>
      */
     inline void SetEc2TagSet(const EC2TagSet& value) { m_ec2TagSetHasBeenSet = true; m_ec2TagSet = value; }
 
     /**
      * <p>Information about the groups of EC2 instance tags that an instance must be
      * identified by in order for it to be included in the replacement environment for
-     * a blue/green deployment. Cannot be used in the same call as tagFilters.</p>
+     * a blue/green deployment. Cannot be used in the same call as
+     * <code>tagFilters</code>.</p>
      */
     inline void SetEc2TagSet(EC2TagSet&& value) { m_ec2TagSetHasBeenSet = true; m_ec2TagSet = std::move(value); }
 
     /**
      * <p>Information about the groups of EC2 instance tags that an instance must be
      * identified by in order for it to be included in the replacement environment for
-     * a blue/green deployment. Cannot be used in the same call as tagFilters.</p>
+     * a blue/green deployment. Cannot be used in the same call as
+     * <code>tagFilters</code>.</p>
      */
     inline TargetInstances& WithEc2TagSet(const EC2TagSet& value) { SetEc2TagSet(value); return *this;}
 
     /**
      * <p>Information about the groups of EC2 instance tags that an instance must be
      * identified by in order for it to be included in the replacement environment for
-     * a blue/green deployment. Cannot be used in the same call as tagFilters.</p>
+     * a blue/green deployment. Cannot be used in the same call as
+     * <code>tagFilters</code>.</p>
      */
     inline TargetInstances& WithEc2TagSet(EC2TagSet&& value) { SetEc2TagSet(std::move(value)); return *this;}
 

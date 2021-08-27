@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
@@ -256,8 +246,8 @@ namespace Model
 
     /**
      * <p>The Amazon S3 bucket and key that identify the location of the source bundle
-     * for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region
-     * as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in
+     * for this version.</p>  <p>The Amazon S3 bucket must be in the same region
+     * as the environment.</p>  <p>Specify a source bundle in S3 or a commit in
      * an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not
      * both. If neither <code>SourceBundle</code> nor
      * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a
@@ -267,8 +257,8 @@ namespace Model
 
     /**
      * <p>The Amazon S3 bucket and key that identify the location of the source bundle
-     * for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region
-     * as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in
+     * for this version.</p>  <p>The Amazon S3 bucket must be in the same region
+     * as the environment.</p>  <p>Specify a source bundle in S3 or a commit in
      * an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not
      * both. If neither <code>SourceBundle</code> nor
      * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a
@@ -278,8 +268,8 @@ namespace Model
 
     /**
      * <p>The Amazon S3 bucket and key that identify the location of the source bundle
-     * for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region
-     * as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in
+     * for this version.</p>  <p>The Amazon S3 bucket must be in the same region
+     * as the environment.</p>  <p>Specify a source bundle in S3 or a commit in
      * an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not
      * both. If neither <code>SourceBundle</code> nor
      * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a
@@ -289,8 +279,8 @@ namespace Model
 
     /**
      * <p>The Amazon S3 bucket and key that identify the location of the source bundle
-     * for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region
-     * as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in
+     * for this version.</p>  <p>The Amazon S3 bucket must be in the same region
+     * as the environment.</p>  <p>Specify a source bundle in S3 or a commit in
      * an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not
      * both. If neither <code>SourceBundle</code> nor
      * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a
@@ -300,8 +290,8 @@ namespace Model
 
     /**
      * <p>The Amazon S3 bucket and key that identify the location of the source bundle
-     * for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region
-     * as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in
+     * for this version.</p>  <p>The Amazon S3 bucket must be in the same region
+     * as the environment.</p>  <p>Specify a source bundle in S3 or a commit in
      * an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not
      * both. If neither <code>SourceBundle</code> nor
      * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a
@@ -311,8 +301,8 @@ namespace Model
 
     /**
      * <p>The Amazon S3 bucket and key that identify the location of the source bundle
-     * for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region
-     * as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in
+     * for this version.</p>  <p>The Amazon S3 bucket must be in the same region
+     * as the environment.</p>  <p>Specify a source bundle in S3 or a commit in
      * an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not
      * both. If neither <code>SourceBundle</code> nor
      * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a
@@ -385,9 +375,9 @@ namespace Model
      * version to an environment.</p> <p>You must turn processing on for application
      * versions that you create using AWS CodeBuild or AWS CodeCommit. For application
      * versions built from a source bundle in Amazon S3, processing is optional.</p>
-     * <note> <p>The <code>Process</code> option validates Elastic Beanstalk
+     *  <p>The <code>Process</code> option validates Elastic Beanstalk
      * configuration files. It doesn't validate your application's configuration files,
-     * like proxy server or Docker configuration.</p> </note>
+     * like proxy server or Docker configuration.</p> 
      */
     inline bool GetProcess() const{ return m_process; }
 
@@ -399,9 +389,9 @@ namespace Model
      * version to an environment.</p> <p>You must turn processing on for application
      * versions that you create using AWS CodeBuild or AWS CodeCommit. For application
      * versions built from a source bundle in Amazon S3, processing is optional.</p>
-     * <note> <p>The <code>Process</code> option validates Elastic Beanstalk
+     *  <p>The <code>Process</code> option validates Elastic Beanstalk
      * configuration files. It doesn't validate your application's configuration files,
-     * like proxy server or Docker configuration.</p> </note>
+     * like proxy server or Docker configuration.</p> 
      */
     inline bool ProcessHasBeenSet() const { return m_processHasBeenSet; }
 
@@ -413,9 +403,9 @@ namespace Model
      * version to an environment.</p> <p>You must turn processing on for application
      * versions that you create using AWS CodeBuild or AWS CodeCommit. For application
      * versions built from a source bundle in Amazon S3, processing is optional.</p>
-     * <note> <p>The <code>Process</code> option validates Elastic Beanstalk
+     *  <p>The <code>Process</code> option validates Elastic Beanstalk
      * configuration files. It doesn't validate your application's configuration files,
-     * like proxy server or Docker configuration.</p> </note>
+     * like proxy server or Docker configuration.</p> 
      */
     inline void SetProcess(bool value) { m_processHasBeenSet = true; m_process = value; }
 
@@ -427,9 +417,9 @@ namespace Model
      * version to an environment.</p> <p>You must turn processing on for application
      * versions that you create using AWS CodeBuild or AWS CodeCommit. For application
      * versions built from a source bundle in Amazon S3, processing is optional.</p>
-     * <note> <p>The <code>Process</code> option validates Elastic Beanstalk
+     *  <p>The <code>Process</code> option validates Elastic Beanstalk
      * configuration files. It doesn't validate your application's configuration files,
-     * like proxy server or Docker configuration.</p> </note>
+     * like proxy server or Docker configuration.</p> 
      */
     inline CreateApplicationVersionRequest& WithProcess(bool value) { SetProcess(value); return *this;}
 

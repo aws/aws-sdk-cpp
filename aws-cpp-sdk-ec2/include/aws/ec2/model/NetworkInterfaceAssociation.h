@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -34,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes association information for an Elastic IP address (IPv4
-   * only).</p><p><h3>See Also:</h3>   <a
+   * <p>Describes association information for an Elastic IP address (IPv4 only), or a
+   * Carrier IP address (for a network interface which resides in a subnet in a
+   * Wavelength Zone).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NetworkInterfaceAssociation">AWS
    * API Reference</a></p>
    */
@@ -254,6 +245,104 @@ namespace Model
      */
     inline NetworkInterfaceAssociation& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
+
+    /**
+     * <p>The customer-owned IP address associated with the network interface.</p>
+     */
+    inline const Aws::String& GetCustomerOwnedIp() const{ return m_customerOwnedIp; }
+
+    /**
+     * <p>The customer-owned IP address associated with the network interface.</p>
+     */
+    inline bool CustomerOwnedIpHasBeenSet() const { return m_customerOwnedIpHasBeenSet; }
+
+    /**
+     * <p>The customer-owned IP address associated with the network interface.</p>
+     */
+    inline void SetCustomerOwnedIp(const Aws::String& value) { m_customerOwnedIpHasBeenSet = true; m_customerOwnedIp = value; }
+
+    /**
+     * <p>The customer-owned IP address associated with the network interface.</p>
+     */
+    inline void SetCustomerOwnedIp(Aws::String&& value) { m_customerOwnedIpHasBeenSet = true; m_customerOwnedIp = std::move(value); }
+
+    /**
+     * <p>The customer-owned IP address associated with the network interface.</p>
+     */
+    inline void SetCustomerOwnedIp(const char* value) { m_customerOwnedIpHasBeenSet = true; m_customerOwnedIp.assign(value); }
+
+    /**
+     * <p>The customer-owned IP address associated with the network interface.</p>
+     */
+    inline NetworkInterfaceAssociation& WithCustomerOwnedIp(const Aws::String& value) { SetCustomerOwnedIp(value); return *this;}
+
+    /**
+     * <p>The customer-owned IP address associated with the network interface.</p>
+     */
+    inline NetworkInterfaceAssociation& WithCustomerOwnedIp(Aws::String&& value) { SetCustomerOwnedIp(std::move(value)); return *this;}
+
+    /**
+     * <p>The customer-owned IP address associated with the network interface.</p>
+     */
+    inline NetworkInterfaceAssociation& WithCustomerOwnedIp(const char* value) { SetCustomerOwnedIp(value); return *this;}
+
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p> <p>This
+     * option is only available when the network interface is in a subnet which is
+     * associated with a Wavelength Zone.</p>
+     */
+    inline const Aws::String& GetCarrierIp() const{ return m_carrierIp; }
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p> <p>This
+     * option is only available when the network interface is in a subnet which is
+     * associated with a Wavelength Zone.</p>
+     */
+    inline bool CarrierIpHasBeenSet() const { return m_carrierIpHasBeenSet; }
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p> <p>This
+     * option is only available when the network interface is in a subnet which is
+     * associated with a Wavelength Zone.</p>
+     */
+    inline void SetCarrierIp(const Aws::String& value) { m_carrierIpHasBeenSet = true; m_carrierIp = value; }
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p> <p>This
+     * option is only available when the network interface is in a subnet which is
+     * associated with a Wavelength Zone.</p>
+     */
+    inline void SetCarrierIp(Aws::String&& value) { m_carrierIpHasBeenSet = true; m_carrierIp = std::move(value); }
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p> <p>This
+     * option is only available when the network interface is in a subnet which is
+     * associated with a Wavelength Zone.</p>
+     */
+    inline void SetCarrierIp(const char* value) { m_carrierIpHasBeenSet = true; m_carrierIp.assign(value); }
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p> <p>This
+     * option is only available when the network interface is in a subnet which is
+     * associated with a Wavelength Zone.</p>
+     */
+    inline NetworkInterfaceAssociation& WithCarrierIp(const Aws::String& value) { SetCarrierIp(value); return *this;}
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p> <p>This
+     * option is only available when the network interface is in a subnet which is
+     * associated with a Wavelength Zone.</p>
+     */
+    inline NetworkInterfaceAssociation& WithCarrierIp(Aws::String&& value) { SetCarrierIp(std::move(value)); return *this;}
+
+    /**
+     * <p>The carrier IP address associated with the network interface.</p> <p>This
+     * option is only available when the network interface is in a subnet which is
+     * associated with a Wavelength Zone.</p>
+     */
+    inline NetworkInterfaceAssociation& WithCarrierIp(const char* value) { SetCarrierIp(value); return *this;}
+
   private:
 
     Aws::String m_allocationId;
@@ -270,6 +359,12 @@ namespace Model
 
     Aws::String m_publicIp;
     bool m_publicIpHasBeenSet;
+
+    Aws::String m_customerOwnedIp;
+    bool m_customerOwnedIpHasBeenSet;
+
+    Aws::String m_carrierIp;
+    bool m_carrierIpHasBeenSet;
   };
 
 } // namespace Model

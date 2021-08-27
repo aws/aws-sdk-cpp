@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -275,7 +265,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline const Aws::String& GetSessionName() const{ return m_sessionName; }
@@ -287,7 +277,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline bool SessionNameHasBeenSet() const { return m_sessionNameHasBeenSet; }
@@ -299,7 +289,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline void SetSessionName(const Aws::String& value) { m_sessionNameHasBeenSet = true; m_sessionName = value; }
@@ -311,7 +301,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline void SetSessionName(Aws::String&& value) { m_sessionNameHasBeenSet = true; m_sessionName = std::move(value); }
@@ -323,7 +313,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline void SetSessionName(const char* value) { m_sessionNameHasBeenSet = true; m_sessionName.assign(value); }
@@ -335,7 +325,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline RegisterUserRequest& WithSessionName(const Aws::String& value) { SetSessionName(value); return *this;}
@@ -347,7 +337,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline RegisterUserRequest& WithSessionName(Aws::String&& value) { SetSessionName(std::move(value)); return *this;}
@@ -359,7 +349,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline RegisterUserRequest& WithSessionName(const char* value) { SetSessionName(value); return *this;}
@@ -503,6 +493,167 @@ namespace Model
      */
     inline RegisterUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
+    /**
+     * <p>(Enterprise edition only) The name of the custom permissions profile that you
+     * want to assign to this user. Customized permissions allows you to control a
+     * user's access by restricting access the following operations:</p> <ul> <li>
+     * <p>Create and update data sources</p> </li> <li> <p>Create and update
+     * datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li>
+     * <p>Subscribe to email reports</p> </li> </ul> <p>To add custom permissions to an
+     * existing user, use <code> <a>UpdateUser</a> </code> instead.</p> <p>A set of
+     * custom permissions includes any combination of these restrictions. Currently,
+     * you need to create the profile names for custom permission sets by using the
+     * QuickSight console. Then, you use the <code>RegisterUser</code> API operation to
+     * assign the named set of permissions to a QuickSight user. </p> <p>QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning QuickSight users to one of the
+     * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
+     * feature is available only to QuickSight Enterprise edition subscriptions that
+     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
+     */
+    inline const Aws::String& GetCustomPermissionsName() const{ return m_customPermissionsName; }
+
+    /**
+     * <p>(Enterprise edition only) The name of the custom permissions profile that you
+     * want to assign to this user. Customized permissions allows you to control a
+     * user's access by restricting access the following operations:</p> <ul> <li>
+     * <p>Create and update data sources</p> </li> <li> <p>Create and update
+     * datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li>
+     * <p>Subscribe to email reports</p> </li> </ul> <p>To add custom permissions to an
+     * existing user, use <code> <a>UpdateUser</a> </code> instead.</p> <p>A set of
+     * custom permissions includes any combination of these restrictions. Currently,
+     * you need to create the profile names for custom permission sets by using the
+     * QuickSight console. Then, you use the <code>RegisterUser</code> API operation to
+     * assign the named set of permissions to a QuickSight user. </p> <p>QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning QuickSight users to one of the
+     * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
+     * feature is available only to QuickSight Enterprise edition subscriptions that
+     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
+     */
+    inline bool CustomPermissionsNameHasBeenSet() const { return m_customPermissionsNameHasBeenSet; }
+
+    /**
+     * <p>(Enterprise edition only) The name of the custom permissions profile that you
+     * want to assign to this user. Customized permissions allows you to control a
+     * user's access by restricting access the following operations:</p> <ul> <li>
+     * <p>Create and update data sources</p> </li> <li> <p>Create and update
+     * datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li>
+     * <p>Subscribe to email reports</p> </li> </ul> <p>To add custom permissions to an
+     * existing user, use <code> <a>UpdateUser</a> </code> instead.</p> <p>A set of
+     * custom permissions includes any combination of these restrictions. Currently,
+     * you need to create the profile names for custom permission sets by using the
+     * QuickSight console. Then, you use the <code>RegisterUser</code> API operation to
+     * assign the named set of permissions to a QuickSight user. </p> <p>QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning QuickSight users to one of the
+     * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
+     * feature is available only to QuickSight Enterprise edition subscriptions that
+     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
+     */
+    inline void SetCustomPermissionsName(const Aws::String& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = value; }
+
+    /**
+     * <p>(Enterprise edition only) The name of the custom permissions profile that you
+     * want to assign to this user. Customized permissions allows you to control a
+     * user's access by restricting access the following operations:</p> <ul> <li>
+     * <p>Create and update data sources</p> </li> <li> <p>Create and update
+     * datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li>
+     * <p>Subscribe to email reports</p> </li> </ul> <p>To add custom permissions to an
+     * existing user, use <code> <a>UpdateUser</a> </code> instead.</p> <p>A set of
+     * custom permissions includes any combination of these restrictions. Currently,
+     * you need to create the profile names for custom permission sets by using the
+     * QuickSight console. Then, you use the <code>RegisterUser</code> API operation to
+     * assign the named set of permissions to a QuickSight user. </p> <p>QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning QuickSight users to one of the
+     * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
+     * feature is available only to QuickSight Enterprise edition subscriptions that
+     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
+     */
+    inline void SetCustomPermissionsName(Aws::String&& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = std::move(value); }
+
+    /**
+     * <p>(Enterprise edition only) The name of the custom permissions profile that you
+     * want to assign to this user. Customized permissions allows you to control a
+     * user's access by restricting access the following operations:</p> <ul> <li>
+     * <p>Create and update data sources</p> </li> <li> <p>Create and update
+     * datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li>
+     * <p>Subscribe to email reports</p> </li> </ul> <p>To add custom permissions to an
+     * existing user, use <code> <a>UpdateUser</a> </code> instead.</p> <p>A set of
+     * custom permissions includes any combination of these restrictions. Currently,
+     * you need to create the profile names for custom permission sets by using the
+     * QuickSight console. Then, you use the <code>RegisterUser</code> API operation to
+     * assign the named set of permissions to a QuickSight user. </p> <p>QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning QuickSight users to one of the
+     * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
+     * feature is available only to QuickSight Enterprise edition subscriptions that
+     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
+     */
+    inline void SetCustomPermissionsName(const char* value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName.assign(value); }
+
+    /**
+     * <p>(Enterprise edition only) The name of the custom permissions profile that you
+     * want to assign to this user. Customized permissions allows you to control a
+     * user's access by restricting access the following operations:</p> <ul> <li>
+     * <p>Create and update data sources</p> </li> <li> <p>Create and update
+     * datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li>
+     * <p>Subscribe to email reports</p> </li> </ul> <p>To add custom permissions to an
+     * existing user, use <code> <a>UpdateUser</a> </code> instead.</p> <p>A set of
+     * custom permissions includes any combination of these restrictions. Currently,
+     * you need to create the profile names for custom permission sets by using the
+     * QuickSight console. Then, you use the <code>RegisterUser</code> API operation to
+     * assign the named set of permissions to a QuickSight user. </p> <p>QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning QuickSight users to one of the
+     * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
+     * feature is available only to QuickSight Enterprise edition subscriptions that
+     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
+     */
+    inline RegisterUserRequest& WithCustomPermissionsName(const Aws::String& value) { SetCustomPermissionsName(value); return *this;}
+
+    /**
+     * <p>(Enterprise edition only) The name of the custom permissions profile that you
+     * want to assign to this user. Customized permissions allows you to control a
+     * user's access by restricting access the following operations:</p> <ul> <li>
+     * <p>Create and update data sources</p> </li> <li> <p>Create and update
+     * datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li>
+     * <p>Subscribe to email reports</p> </li> </ul> <p>To add custom permissions to an
+     * existing user, use <code> <a>UpdateUser</a> </code> instead.</p> <p>A set of
+     * custom permissions includes any combination of these restrictions. Currently,
+     * you need to create the profile names for custom permission sets by using the
+     * QuickSight console. Then, you use the <code>RegisterUser</code> API operation to
+     * assign the named set of permissions to a QuickSight user. </p> <p>QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning QuickSight users to one of the
+     * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
+     * feature is available only to QuickSight Enterprise edition subscriptions that
+     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
+     */
+    inline RegisterUserRequest& WithCustomPermissionsName(Aws::String&& value) { SetCustomPermissionsName(std::move(value)); return *this;}
+
+    /**
+     * <p>(Enterprise edition only) The name of the custom permissions profile that you
+     * want to assign to this user. Customized permissions allows you to control a
+     * user's access by restricting access the following operations:</p> <ul> <li>
+     * <p>Create and update data sources</p> </li> <li> <p>Create and update
+     * datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li>
+     * <p>Subscribe to email reports</p> </li> </ul> <p>To add custom permissions to an
+     * existing user, use <code> <a>UpdateUser</a> </code> instead.</p> <p>A set of
+     * custom permissions includes any combination of these restrictions. Currently,
+     * you need to create the profile names for custom permission sets by using the
+     * QuickSight console. Then, you use the <code>RegisterUser</code> API operation to
+     * assign the named set of permissions to a QuickSight user. </p> <p>QuickSight
+     * custom permissions are applied through IAM policies. Therefore, they override
+     * the permissions typically granted by assigning QuickSight users to one of the
+     * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
+     * feature is available only to QuickSight Enterprise edition subscriptions that
+     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
+     */
+    inline RegisterUserRequest& WithCustomPermissionsName(const char* value) { SetCustomPermissionsName(value); return *this;}
+
   private:
 
     IdentityType m_identityType;
@@ -528,6 +679,9 @@ namespace Model
 
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
+    Aws::String m_customPermissionsName;
+    bool m_customPermissionsNameHasBeenSet;
   };
 
 } // namespace Model

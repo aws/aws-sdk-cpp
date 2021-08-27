@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/states/SFN_EXPORTS.h>
@@ -223,6 +213,31 @@ namespace Model
      */
     inline GetExecutionHistoryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>You can select whether execution data (input or output of a history event) is
+     * returned. The default is <code>true</code>.</p>
+     */
+    inline bool GetIncludeExecutionData() const{ return m_includeExecutionData; }
+
+    /**
+     * <p>You can select whether execution data (input or output of a history event) is
+     * returned. The default is <code>true</code>.</p>
+     */
+    inline bool IncludeExecutionDataHasBeenSet() const { return m_includeExecutionDataHasBeenSet; }
+
+    /**
+     * <p>You can select whether execution data (input or output of a history event) is
+     * returned. The default is <code>true</code>.</p>
+     */
+    inline void SetIncludeExecutionData(bool value) { m_includeExecutionDataHasBeenSet = true; m_includeExecutionData = value; }
+
+    /**
+     * <p>You can select whether execution data (input or output of a history event) is
+     * returned. The default is <code>true</code>.</p>
+     */
+    inline GetExecutionHistoryRequest& WithIncludeExecutionData(bool value) { SetIncludeExecutionData(value); return *this;}
+
   private:
 
     Aws::String m_executionArn;
@@ -236,6 +251,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    bool m_includeExecutionData;
+    bool m_includeExecutionDataHasBeenSet;
   };
 
 } // namespace Model

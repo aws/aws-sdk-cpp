@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lex/model/PutSessionResult.h>
 #include <aws/core/AmazonWebServiceResult.h>
@@ -42,7 +32,8 @@ PutSessionResult::PutSessionResult(PutSessionResult&& toMove) :
     m_dialogState(toMove.m_dialogState),
     m_slotToElicit(std::move(toMove.m_slotToElicit)),
     m_audioStream(std::move(toMove.m_audioStream)),
-    m_sessionId(std::move(toMove.m_sessionId))
+    m_sessionId(std::move(toMove.m_sessionId)),
+    m_activeContexts(std::move(toMove.m_activeContexts))
 {
 }
 
@@ -63,6 +54,7 @@ PutSessionResult& PutSessionResult::operator=(PutSessionResult&& toMove)
    m_slotToElicit = std::move(toMove.m_slotToElicit);
    m_audioStream = std::move(toMove.m_audioStream);
    m_sessionId = std::move(toMove.m_sessionId);
+   m_activeContexts = std::move(toMove.m_activeContexts);
 
    return *this;
 }
@@ -131,6 +123,12 @@ PutSessionResult& PutSessionResult::operator =(Aws::AmazonWebServiceResult<Respo
   if(sessionIdIter != headers.end())
   {
     m_sessionId = sessionIdIter->second;
+  }
+
+  const auto& activeContextsIter = headers.find("x-amz-lex-active-contexts");
+  if(activeContextsIter != headers.end())
+  {
+    m_activeContexts = activeContextsIter->second;
   }
 
    return *this;

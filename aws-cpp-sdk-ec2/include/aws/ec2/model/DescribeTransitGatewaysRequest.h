@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -116,11 +106,10 @@ namespace Model
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
      * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
      * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> </ul>
+     * transit gateway (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
+     * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
+     * gateway.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -146,11 +135,10 @@ namespace Model
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
      * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
      * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> </ul>
+     * transit gateway (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
+     * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
+     * gateway.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -176,11 +164,10 @@ namespace Model
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
      * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
      * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> </ul>
+     * transit gateway (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
+     * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
+     * gateway.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -206,11 +193,10 @@ namespace Model
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
      * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
      * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> </ul>
+     * transit gateway (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
+     * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
+     * gateway.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -236,11 +222,10 @@ namespace Model
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
      * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
      * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> </ul>
+     * transit gateway (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
+     * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
+     * gateway.</p> </li> </ul>
      */
     inline DescribeTransitGatewaysRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -266,11 +251,10 @@ namespace Model
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
      * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
      * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> </ul>
+     * transit gateway (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
+     * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
+     * gateway.</p> </li> </ul>
      */
     inline DescribeTransitGatewaysRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -296,11 +280,10 @@ namespace Model
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
      * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
      * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> </ul>
+     * transit gateway (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
+     * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
+     * gateway.</p> </li> </ul>
      */
     inline DescribeTransitGatewaysRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -326,11 +309,10 @@ namespace Model
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
      * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
      * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> </ul>
+     * transit gateway (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
+     * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
+     * gateway.</p> </li> </ul>
      */
     inline DescribeTransitGatewaysRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

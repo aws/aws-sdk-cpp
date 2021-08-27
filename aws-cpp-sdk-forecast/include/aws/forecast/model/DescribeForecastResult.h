@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/forecast/ForecastService_EXPORTS.h>
@@ -117,42 +107,42 @@ namespace Model
 
 
     /**
-     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     * <p>The quantiles at which probabilistic forecasts were generated.</p>
      */
     inline const Aws::Vector<Aws::String>& GetForecastTypes() const{ return m_forecastTypes; }
 
     /**
-     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     * <p>The quantiles at which probabilistic forecasts were generated.</p>
      */
     inline void SetForecastTypes(const Aws::Vector<Aws::String>& value) { m_forecastTypes = value; }
 
     /**
-     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     * <p>The quantiles at which probabilistic forecasts were generated.</p>
      */
     inline void SetForecastTypes(Aws::Vector<Aws::String>&& value) { m_forecastTypes = std::move(value); }
 
     /**
-     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     * <p>The quantiles at which probabilistic forecasts were generated.</p>
      */
     inline DescribeForecastResult& WithForecastTypes(const Aws::Vector<Aws::String>& value) { SetForecastTypes(value); return *this;}
 
     /**
-     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     * <p>The quantiles at which probabilistic forecasts were generated.</p>
      */
     inline DescribeForecastResult& WithForecastTypes(Aws::Vector<Aws::String>&& value) { SetForecastTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     * <p>The quantiles at which probabilistic forecasts were generated.</p>
      */
     inline DescribeForecastResult& AddForecastTypes(const Aws::String& value) { m_forecastTypes.push_back(value); return *this; }
 
     /**
-     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     * <p>The quantiles at which probabilistic forecasts were generated.</p>
      */
     inline DescribeForecastResult& AddForecastTypes(Aws::String&& value) { m_forecastTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     * <p>The quantiles at which probabilistic forecasts were generated.</p>
      */
     inline DescribeForecastResult& AddForecastTypes(const char* value) { m_forecastTypes.push_back(value); return *this; }
 
@@ -241,9 +231,9 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
+     * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast must be <code>ACTIVE</code> before you can query or export the
-     * forecast.</p> </note>
+     * forecast.</p> 
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
@@ -252,9 +242,9 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
+     * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast must be <code>ACTIVE</code> before you can query or export the
-     * forecast.</p> </note>
+     * forecast.</p> 
      */
     inline void SetStatus(const Aws::String& value) { m_status = value; }
 
@@ -263,9 +253,9 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
+     * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast must be <code>ACTIVE</code> before you can query or export the
-     * forecast.</p> </note>
+     * forecast.</p> 
      */
     inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
 
@@ -274,9 +264,9 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
+     * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast must be <code>ACTIVE</code> before you can query or export the
-     * forecast.</p> </note>
+     * forecast.</p> 
      */
     inline void SetStatus(const char* value) { m_status.assign(value); }
 
@@ -285,9 +275,9 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
+     * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast must be <code>ACTIVE</code> before you can query or export the
-     * forecast.</p> </note>
+     * forecast.</p> 
      */
     inline DescribeForecastResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
@@ -296,9 +286,9 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
+     * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast must be <code>ACTIVE</code> before you can query or export the
-     * forecast.</p> </note>
+     * forecast.</p> 
      */
     inline DescribeForecastResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -307,9 +297,9 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
+     * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast must be <code>ACTIVE</code> before you can query or export the
-     * forecast.</p> </note>
+     * forecast.</p> 
      */
     inline DescribeForecastResult& WithStatus(const char* value) { SetStatus(value); return *this;}
 

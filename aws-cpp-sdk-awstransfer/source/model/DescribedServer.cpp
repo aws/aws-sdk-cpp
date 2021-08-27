@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/awstransfer/model/DescribedServer.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,6 +21,8 @@ namespace Model
 DescribedServer::DescribedServer() : 
     m_arnHasBeenSet(false),
     m_certificateHasBeenSet(false),
+    m_domain(Domain::NOT_SET),
+    m_domainHasBeenSet(false),
     m_endpointDetailsHasBeenSet(false),
     m_endpointType(EndpointType::NOT_SET),
     m_endpointTypeHasBeenSet(false),
@@ -40,6 +32,7 @@ DescribedServer::DescribedServer() :
     m_identityProviderTypeHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
     m_protocolsHasBeenSet(false),
+    m_securityPolicyNameHasBeenSet(false),
     m_serverIdHasBeenSet(false),
     m_state(State::NOT_SET),
     m_stateHasBeenSet(false),
@@ -52,6 +45,8 @@ DescribedServer::DescribedServer() :
 DescribedServer::DescribedServer(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_certificateHasBeenSet(false),
+    m_domain(Domain::NOT_SET),
+    m_domainHasBeenSet(false),
     m_endpointDetailsHasBeenSet(false),
     m_endpointType(EndpointType::NOT_SET),
     m_endpointTypeHasBeenSet(false),
@@ -61,6 +56,7 @@ DescribedServer::DescribedServer(JsonView jsonValue) :
     m_identityProviderTypeHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
     m_protocolsHasBeenSet(false),
+    m_securityPolicyNameHasBeenSet(false),
     m_serverIdHasBeenSet(false),
     m_state(State::NOT_SET),
     m_stateHasBeenSet(false),
@@ -85,6 +81,13 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     m_certificate = jsonValue.GetString("Certificate");
 
     m_certificateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Domain"))
+  {
+    m_domain = DomainMapper::GetDomainForName(jsonValue.GetString("Domain"));
+
+    m_domainHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EndpointDetails"))
@@ -139,6 +142,13 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     m_protocolsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecurityPolicyName"))
+  {
+    m_securityPolicyName = jsonValue.GetString("SecurityPolicyName");
+
+    m_securityPolicyNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ServerId"))
   {
     m_serverId = jsonValue.GetString("ServerId");
@@ -189,6 +199,11 @@ JsonValue DescribedServer::Jsonize() const
 
   }
 
+  if(m_domainHasBeenSet)
+  {
+   payload.WithString("Domain", DomainMapper::GetNameForDomain(m_domain));
+  }
+
   if(m_endpointDetailsHasBeenSet)
   {
    payload.WithObject("EndpointDetails", m_endpointDetails.Jsonize());
@@ -231,6 +246,12 @@ JsonValue DescribedServer::Jsonize() const
      protocolsJsonList[protocolsIndex].AsString(ProtocolMapper::GetNameForProtocol(m_protocols[protocolsIndex]));
    }
    payload.WithArray("Protocols", std::move(protocolsJsonList));
+
+  }
+
+  if(m_securityPolicyNameHasBeenSet)
+  {
+   payload.WithString("SecurityPolicyName", m_securityPolicyName);
 
   }
 

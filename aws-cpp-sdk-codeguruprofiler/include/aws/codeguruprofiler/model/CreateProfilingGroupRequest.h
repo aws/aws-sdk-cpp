@@ -1,23 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
 #include <aws/codeguruprofiler/CodeGuruProfilerRequest.h>
 #include <aws/codeguruprofiler/model/AgentOrchestrationConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/codeguruprofiler/model/ComputePlatform.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -55,132 +47,259 @@ namespace Model
 
 
     /**
-     * <p>The agent orchestration configuration.</p>
+     * <p> Specifies whether profiling is enabled or disabled for the created profiling
+     * group. </p>
      */
     inline const AgentOrchestrationConfig& GetAgentOrchestrationConfig() const{ return m_agentOrchestrationConfig; }
 
     /**
-     * <p>The agent orchestration configuration.</p>
+     * <p> Specifies whether profiling is enabled or disabled for the created profiling
+     * group. </p>
      */
     inline bool AgentOrchestrationConfigHasBeenSet() const { return m_agentOrchestrationConfigHasBeenSet; }
 
     /**
-     * <p>The agent orchestration configuration.</p>
+     * <p> Specifies whether profiling is enabled or disabled for the created profiling
+     * group. </p>
      */
     inline void SetAgentOrchestrationConfig(const AgentOrchestrationConfig& value) { m_agentOrchestrationConfigHasBeenSet = true; m_agentOrchestrationConfig = value; }
 
     /**
-     * <p>The agent orchestration configuration.</p>
+     * <p> Specifies whether profiling is enabled or disabled for the created profiling
+     * group. </p>
      */
     inline void SetAgentOrchestrationConfig(AgentOrchestrationConfig&& value) { m_agentOrchestrationConfigHasBeenSet = true; m_agentOrchestrationConfig = std::move(value); }
 
     /**
-     * <p>The agent orchestration configuration.</p>
+     * <p> Specifies whether profiling is enabled or disabled for the created profiling
+     * group. </p>
      */
     inline CreateProfilingGroupRequest& WithAgentOrchestrationConfig(const AgentOrchestrationConfig& value) { SetAgentOrchestrationConfig(value); return *this;}
 
     /**
-     * <p>The agent orchestration configuration.</p>
+     * <p> Specifies whether profiling is enabled or disabled for the created profiling
+     * group. </p>
      */
     inline CreateProfilingGroupRequest& WithAgentOrchestrationConfig(AgentOrchestrationConfig&& value) { SetAgentOrchestrationConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>This parameter specifies a unique identifier for the new
-     * profiling group that helps ensure idempotency.</p>
+     * <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to
+     * prevent the accidental creation of duplicate profiling groups if there are
+     * failures and retries. </p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>This parameter specifies a unique identifier for the new
-     * profiling group that helps ensure idempotency.</p>
+     * <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to
+     * prevent the accidental creation of duplicate profiling groups if there are
+     * failures and retries. </p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>This parameter specifies a unique identifier for the new
-     * profiling group that helps ensure idempotency.</p>
+     * <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to
+     * prevent the accidental creation of duplicate profiling groups if there are
+     * failures and retries. </p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>This parameter specifies a unique identifier for the new
-     * profiling group that helps ensure idempotency.</p>
+     * <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to
+     * prevent the accidental creation of duplicate profiling groups if there are
+     * failures and retries. </p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>This parameter specifies a unique identifier for the new
-     * profiling group that helps ensure idempotency.</p>
+     * <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to
+     * prevent the accidental creation of duplicate profiling groups if there are
+     * failures and retries. </p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>This parameter specifies a unique identifier for the new
-     * profiling group that helps ensure idempotency.</p>
+     * <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to
+     * prevent the accidental creation of duplicate profiling groups if there are
+     * failures and retries. </p>
      */
     inline CreateProfilingGroupRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>This parameter specifies a unique identifier for the new
-     * profiling group that helps ensure idempotency.</p>
+     * <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to
+     * prevent the accidental creation of duplicate profiling groups if there are
+     * failures and retries. </p>
      */
     inline CreateProfilingGroupRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>This parameter specifies a unique identifier for the new
-     * profiling group that helps ensure idempotency.</p>
+     * <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to
+     * prevent the accidental creation of duplicate profiling groups if there are
+     * failures and retries. </p>
      */
     inline CreateProfilingGroupRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
-     * <p>The name of the profiling group.</p>
+     * <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if
+     * your application runs on AWS Lambda. Use <code>Default</code> if your
+     * application runs on a compute platform that is not AWS Lambda, such an Amazon
+     * EC2 instance, an on-premises server, or a different platform. If not specified,
+     * <code>Default</code> is used. </p>
+     */
+    inline const ComputePlatform& GetComputePlatform() const{ return m_computePlatform; }
+
+    /**
+     * <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if
+     * your application runs on AWS Lambda. Use <code>Default</code> if your
+     * application runs on a compute platform that is not AWS Lambda, such an Amazon
+     * EC2 instance, an on-premises server, or a different platform. If not specified,
+     * <code>Default</code> is used. </p>
+     */
+    inline bool ComputePlatformHasBeenSet() const { return m_computePlatformHasBeenSet; }
+
+    /**
+     * <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if
+     * your application runs on AWS Lambda. Use <code>Default</code> if your
+     * application runs on a compute platform that is not AWS Lambda, such an Amazon
+     * EC2 instance, an on-premises server, or a different platform. If not specified,
+     * <code>Default</code> is used. </p>
+     */
+    inline void SetComputePlatform(const ComputePlatform& value) { m_computePlatformHasBeenSet = true; m_computePlatform = value; }
+
+    /**
+     * <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if
+     * your application runs on AWS Lambda. Use <code>Default</code> if your
+     * application runs on a compute platform that is not AWS Lambda, such an Amazon
+     * EC2 instance, an on-premises server, or a different platform. If not specified,
+     * <code>Default</code> is used. </p>
+     */
+    inline void SetComputePlatform(ComputePlatform&& value) { m_computePlatformHasBeenSet = true; m_computePlatform = std::move(value); }
+
+    /**
+     * <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if
+     * your application runs on AWS Lambda. Use <code>Default</code> if your
+     * application runs on a compute platform that is not AWS Lambda, such an Amazon
+     * EC2 instance, an on-premises server, or a different platform. If not specified,
+     * <code>Default</code> is used. </p>
+     */
+    inline CreateProfilingGroupRequest& WithComputePlatform(const ComputePlatform& value) { SetComputePlatform(value); return *this;}
+
+    /**
+     * <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if
+     * your application runs on AWS Lambda. Use <code>Default</code> if your
+     * application runs on a compute platform that is not AWS Lambda, such an Amazon
+     * EC2 instance, an on-premises server, or a different platform. If not specified,
+     * <code>Default</code> is used. </p>
+     */
+    inline CreateProfilingGroupRequest& WithComputePlatform(ComputePlatform&& value) { SetComputePlatform(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The name of the profiling group to create.</p>
      */
     inline const Aws::String& GetProfilingGroupName() const{ return m_profilingGroupName; }
 
     /**
-     * <p>The name of the profiling group.</p>
+     * <p>The name of the profiling group to create.</p>
      */
     inline bool ProfilingGroupNameHasBeenSet() const { return m_profilingGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the profiling group.</p>
+     * <p>The name of the profiling group to create.</p>
      */
     inline void SetProfilingGroupName(const Aws::String& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = value; }
 
     /**
-     * <p>The name of the profiling group.</p>
+     * <p>The name of the profiling group to create.</p>
      */
     inline void SetProfilingGroupName(Aws::String&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::move(value); }
 
     /**
-     * <p>The name of the profiling group.</p>
+     * <p>The name of the profiling group to create.</p>
      */
     inline void SetProfilingGroupName(const char* value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName.assign(value); }
 
     /**
-     * <p>The name of the profiling group.</p>
+     * <p>The name of the profiling group to create.</p>
      */
     inline CreateProfilingGroupRequest& WithProfilingGroupName(const Aws::String& value) { SetProfilingGroupName(value); return *this;}
 
     /**
-     * <p>The name of the profiling group.</p>
+     * <p>The name of the profiling group to create.</p>
      */
     inline CreateProfilingGroupRequest& WithProfilingGroupName(Aws::String&& value) { SetProfilingGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the profiling group.</p>
+     * <p>The name of the profiling group to create.</p>
      */
     inline CreateProfilingGroupRequest& WithProfilingGroupName(const char* value) { SetProfilingGroupName(value); return *this;}
+
+
+    /**
+     * <p> A list of tags to add to the created profiling group. </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p> A list of tags to add to the created profiling group. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p> A list of tags to add to the created profiling group. </p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p> A list of tags to add to the created profiling group. </p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p> A list of tags to add to the created profiling group. </p>
+     */
+    inline CreateProfilingGroupRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p> A list of tags to add to the created profiling group. </p>
+     */
+    inline CreateProfilingGroupRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p> A list of tags to add to the created profiling group. </p>
+     */
+    inline CreateProfilingGroupRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p> A list of tags to add to the created profiling group. </p>
+     */
+    inline CreateProfilingGroupRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> A list of tags to add to the created profiling group. </p>
+     */
+    inline CreateProfilingGroupRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> A list of tags to add to the created profiling group. </p>
+     */
+    inline CreateProfilingGroupRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p> A list of tags to add to the created profiling group. </p>
+     */
+    inline CreateProfilingGroupRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> A list of tags to add to the created profiling group. </p>
+     */
+    inline CreateProfilingGroupRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> A list of tags to add to the created profiling group. </p>
+     */
+    inline CreateProfilingGroupRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
 
@@ -190,8 +309,14 @@ namespace Model
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
 
+    ComputePlatform m_computePlatform;
+    bool m_computePlatformHasBeenSet;
+
     Aws::String m_profilingGroupName;
     bool m_profilingGroupNameHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

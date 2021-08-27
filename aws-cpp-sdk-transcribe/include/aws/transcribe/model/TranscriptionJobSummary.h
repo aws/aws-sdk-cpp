@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
@@ -21,6 +11,7 @@
 #include <aws/transcribe/model/TranscriptionJobStatus.h>
 #include <aws/transcribe/model/OutputLocationType.h>
 #include <aws/transcribe/model/ContentRedaction.h>
+#include <aws/transcribe/model/ModelSettings.h>
 #include <utility>
 
 namespace Aws
@@ -413,6 +404,79 @@ namespace Model
      */
     inline TranscriptionJobSummary& WithContentRedaction(ContentRedaction&& value) { SetContentRedaction(std::move(value)); return *this;}
 
+
+    
+    inline const ModelSettings& GetModelSettings() const{ return m_modelSettings; }
+
+    
+    inline bool ModelSettingsHasBeenSet() const { return m_modelSettingsHasBeenSet; }
+
+    
+    inline void SetModelSettings(const ModelSettings& value) { m_modelSettingsHasBeenSet = true; m_modelSettings = value; }
+
+    
+    inline void SetModelSettings(ModelSettings&& value) { m_modelSettingsHasBeenSet = true; m_modelSettings = std::move(value); }
+
+    
+    inline TranscriptionJobSummary& WithModelSettings(const ModelSettings& value) { SetModelSettings(value); return *this;}
+
+    
+    inline TranscriptionJobSummary& WithModelSettings(ModelSettings&& value) { SetModelSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Whether automatic language identification was enabled for a transcription
+     * job.</p>
+     */
+    inline bool GetIdentifyLanguage() const{ return m_identifyLanguage; }
+
+    /**
+     * <p>Whether automatic language identification was enabled for a transcription
+     * job.</p>
+     */
+    inline bool IdentifyLanguageHasBeenSet() const { return m_identifyLanguageHasBeenSet; }
+
+    /**
+     * <p>Whether automatic language identification was enabled for a transcription
+     * job.</p>
+     */
+    inline void SetIdentifyLanguage(bool value) { m_identifyLanguageHasBeenSet = true; m_identifyLanguage = value; }
+
+    /**
+     * <p>Whether automatic language identification was enabled for a transcription
+     * job.</p>
+     */
+    inline TranscriptionJobSummary& WithIdentifyLanguage(bool value) { SetIdentifyLanguage(value); return *this;}
+
+
+    /**
+     * <p>A value between zero and one that Amazon Transcribe assigned to the language
+     * it identified in the source audio. A higher score indicates that Amazon
+     * Transcribe is more confident in the language it identified.</p>
+     */
+    inline double GetIdentifiedLanguageScore() const{ return m_identifiedLanguageScore; }
+
+    /**
+     * <p>A value between zero and one that Amazon Transcribe assigned to the language
+     * it identified in the source audio. A higher score indicates that Amazon
+     * Transcribe is more confident in the language it identified.</p>
+     */
+    inline bool IdentifiedLanguageScoreHasBeenSet() const { return m_identifiedLanguageScoreHasBeenSet; }
+
+    /**
+     * <p>A value between zero and one that Amazon Transcribe assigned to the language
+     * it identified in the source audio. A higher score indicates that Amazon
+     * Transcribe is more confident in the language it identified.</p>
+     */
+    inline void SetIdentifiedLanguageScore(double value) { m_identifiedLanguageScoreHasBeenSet = true; m_identifiedLanguageScore = value; }
+
+    /**
+     * <p>A value between zero and one that Amazon Transcribe assigned to the language
+     * it identified in the source audio. A higher score indicates that Amazon
+     * Transcribe is more confident in the language it identified.</p>
+     */
+    inline TranscriptionJobSummary& WithIdentifiedLanguageScore(double value) { SetIdentifiedLanguageScore(value); return *this;}
+
   private:
 
     Aws::String m_transcriptionJobName;
@@ -441,6 +505,15 @@ namespace Model
 
     ContentRedaction m_contentRedaction;
     bool m_contentRedactionHasBeenSet;
+
+    ModelSettings m_modelSettings;
+    bool m_modelSettingsHasBeenSet;
+
+    bool m_identifyLanguage;
+    bool m_identifyLanguageHasBeenSet;
+
+    double m_identifiedLanguageScore;
+    bool m_identifiedLanguageScoreHasBeenSet;
   };
 
 } // namespace Model

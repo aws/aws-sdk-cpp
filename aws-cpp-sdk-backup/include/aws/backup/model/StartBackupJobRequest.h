@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
@@ -257,47 +247,51 @@ namespace Model
 
 
     /**
-     * <p>The amount of time in minutes before beginning a backup.</p>
+     * <p>A value in minutes after a backup is scheduled before a job will be canceled
+     * if it doesn't start successfully. This value is optional.</p>
      */
     inline long long GetStartWindowMinutes() const{ return m_startWindowMinutes; }
 
     /**
-     * <p>The amount of time in minutes before beginning a backup.</p>
+     * <p>A value in minutes after a backup is scheduled before a job will be canceled
+     * if it doesn't start successfully. This value is optional.</p>
      */
     inline bool StartWindowMinutesHasBeenSet() const { return m_startWindowMinutesHasBeenSet; }
 
     /**
-     * <p>The amount of time in minutes before beginning a backup.</p>
+     * <p>A value in minutes after a backup is scheduled before a job will be canceled
+     * if it doesn't start successfully. This value is optional.</p>
      */
     inline void SetStartWindowMinutes(long long value) { m_startWindowMinutesHasBeenSet = true; m_startWindowMinutes = value; }
 
     /**
-     * <p>The amount of time in minutes before beginning a backup.</p>
+     * <p>A value in minutes after a backup is scheduled before a job will be canceled
+     * if it doesn't start successfully. This value is optional.</p>
      */
     inline StartBackupJobRequest& WithStartWindowMinutes(long long value) { SetStartWindowMinutes(value); return *this;}
 
 
     /**
-     * <p>The amount of time AWS Backup attempts a backup before canceling the job and
-     * returning an error.</p>
+     * <p>A value in minutes after a backup job is successfully started before it must
+     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
      */
     inline long long GetCompleteWindowMinutes() const{ return m_completeWindowMinutes; }
 
     /**
-     * <p>The amount of time AWS Backup attempts a backup before canceling the job and
-     * returning an error.</p>
+     * <p>A value in minutes after a backup job is successfully started before it must
+     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
      */
     inline bool CompleteWindowMinutesHasBeenSet() const { return m_completeWindowMinutesHasBeenSet; }
 
     /**
-     * <p>The amount of time AWS Backup attempts a backup before canceling the job and
-     * returning an error.</p>
+     * <p>A value in minutes after a backup job is successfully started before it must
+     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
      */
     inline void SetCompleteWindowMinutes(long long value) { m_completeWindowMinutesHasBeenSet = true; m_completeWindowMinutes = value; }
 
     /**
-     * <p>The amount of time AWS Backup attempts a backup before canceling the job and
-     * returning an error.</p>
+     * <p>A value in minutes after a backup job is successfully started before it must
+     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
      */
     inline StartBackupJobRequest& WithCompleteWindowMinutes(long long value) { SetCompleteWindowMinutes(value); return *this;}
 
@@ -447,6 +441,124 @@ namespace Model
      */
     inline StartBackupJobRequest& AddRecoveryPointTags(const char* key, const char* value) { m_recoveryPointTagsHasBeenSet = true; m_recoveryPointTags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
+     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
+     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
+     * backup. The WindowsVSS option is not enabled by default.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetBackupOptions() const{ return m_backupOptions; }
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
+     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
+     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
+     * backup. The WindowsVSS option is not enabled by default.</p>
+     */
+    inline bool BackupOptionsHasBeenSet() const { return m_backupOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
+     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
+     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
+     * backup. The WindowsVSS option is not enabled by default.</p>
+     */
+    inline void SetBackupOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_backupOptionsHasBeenSet = true; m_backupOptions = value; }
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
+     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
+     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
+     * backup. The WindowsVSS option is not enabled by default.</p>
+     */
+    inline void SetBackupOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions = std::move(value); }
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
+     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
+     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
+     * backup. The WindowsVSS option is not enabled by default.</p>
+     */
+    inline StartBackupJobRequest& WithBackupOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetBackupOptions(value); return *this;}
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
+     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
+     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
+     * backup. The WindowsVSS option is not enabled by default.</p>
+     */
+    inline StartBackupJobRequest& WithBackupOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetBackupOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
+     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
+     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
+     * backup. The WindowsVSS option is not enabled by default.</p>
+     */
+    inline StartBackupJobRequest& AddBackupOptions(const Aws::String& key, const Aws::String& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(key, value); return *this; }
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
+     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
+     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
+     * backup. The WindowsVSS option is not enabled by default.</p>
+     */
+    inline StartBackupJobRequest& AddBackupOptions(Aws::String&& key, const Aws::String& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
+     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
+     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
+     * backup. The WindowsVSS option is not enabled by default.</p>
+     */
+    inline StartBackupJobRequest& AddBackupOptions(const Aws::String& key, Aws::String&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
+     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
+     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
+     * backup. The WindowsVSS option is not enabled by default.</p>
+     */
+    inline StartBackupJobRequest& AddBackupOptions(Aws::String&& key, Aws::String&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
+     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
+     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
+     * backup. The WindowsVSS option is not enabled by default.</p>
+     */
+    inline StartBackupJobRequest& AddBackupOptions(const char* key, Aws::String&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
+     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
+     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
+     * backup. The WindowsVSS option is not enabled by default.</p>
+     */
+    inline StartBackupJobRequest& AddBackupOptions(Aws::String&& key, const char* value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
+     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
+     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
+     * backup. The WindowsVSS option is not enabled by default.</p>
+     */
+    inline StartBackupJobRequest& AddBackupOptions(const char* key, const char* value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_backupVaultName;
@@ -472,6 +584,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_recoveryPointTags;
     bool m_recoveryPointTagsHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_backupOptions;
+    bool m_backupOptionsHasBeenSet;
   };
 
 } // namespace Model

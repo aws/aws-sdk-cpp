@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
@@ -48,49 +38,57 @@ namespace Model
 
     /**
      * <p>The vocabulary filter name. The name must be unique within the account that
-     * contains it.</p>
+     * contains it. If you try to create a vocabulary filter with the same name as
+     * another vocabulary filter, you get a <code>ConflictException</code> error.</p>
      */
     inline const Aws::String& GetVocabularyFilterName() const{ return m_vocabularyFilterName; }
 
     /**
      * <p>The vocabulary filter name. The name must be unique within the account that
-     * contains it.</p>
+     * contains it. If you try to create a vocabulary filter with the same name as
+     * another vocabulary filter, you get a <code>ConflictException</code> error.</p>
      */
     inline bool VocabularyFilterNameHasBeenSet() const { return m_vocabularyFilterNameHasBeenSet; }
 
     /**
      * <p>The vocabulary filter name. The name must be unique within the account that
-     * contains it.</p>
+     * contains it. If you try to create a vocabulary filter with the same name as
+     * another vocabulary filter, you get a <code>ConflictException</code> error.</p>
      */
     inline void SetVocabularyFilterName(const Aws::String& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = value; }
 
     /**
      * <p>The vocabulary filter name. The name must be unique within the account that
-     * contains it.</p>
+     * contains it. If you try to create a vocabulary filter with the same name as
+     * another vocabulary filter, you get a <code>ConflictException</code> error.</p>
      */
     inline void SetVocabularyFilterName(Aws::String&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::move(value); }
 
     /**
      * <p>The vocabulary filter name. The name must be unique within the account that
-     * contains it.</p>
+     * contains it. If you try to create a vocabulary filter with the same name as
+     * another vocabulary filter, you get a <code>ConflictException</code> error.</p>
      */
     inline void SetVocabularyFilterName(const char* value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName.assign(value); }
 
     /**
      * <p>The vocabulary filter name. The name must be unique within the account that
-     * contains it.</p>
+     * contains it. If you try to create a vocabulary filter with the same name as
+     * another vocabulary filter, you get a <code>ConflictException</code> error.</p>
      */
     inline CreateVocabularyFilterRequest& WithVocabularyFilterName(const Aws::String& value) { SetVocabularyFilterName(value); return *this;}
 
     /**
      * <p>The vocabulary filter name. The name must be unique within the account that
-     * contains it.</p>
+     * contains it. If you try to create a vocabulary filter with the same name as
+     * another vocabulary filter, you get a <code>ConflictException</code> error.</p>
      */
     inline CreateVocabularyFilterRequest& WithVocabularyFilterName(Aws::String&& value) { SetVocabularyFilterName(std::move(value)); return *this;}
 
     /**
      * <p>The vocabulary filter name. The name must be unique within the account that
-     * contains it.</p>
+     * contains it. If you try to create a vocabulary filter with the same name as
+     * another vocabulary filter, you get a <code>ConflictException</code> error.</p>
      */
     inline CreateVocabularyFilterRequest& WithVocabularyFilterName(const char* value) { SetVocabularyFilterName(value); return *this;}
 

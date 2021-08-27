@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
@@ -48,7 +38,7 @@ namespace Model
 
     /**
      * <p>Specifies the secret that you want to rotate. You can specify either the
-     * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <note> <p>If
+     * Amazon Resource Name (ARN) or the friendly name of the secret.</p>  <p>If
      * you specify an ARN, we generally recommend that you specify a complete ARN. You
      * can specify a partial ARN too—for example, if you don’t include the final hyphen
      * and six random characters that Secrets Manager adds at the end of the ARN when
@@ -58,14 +48,18 @@ namespace Model
      * six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete
      * ARN. This confusion can cause unexpected results. To avoid this situation, we
-     * recommend that you don’t create secret names that end with a hyphen followed by
-     * six characters.</p> </note>
+     * recommend that you don’t create secret names ending with a hyphen followed by
+     * six characters.</p> <p>If you specify an incomplete ARN without the random
+     * suffix, and instead provide the 'friendly name', you <i>must</i> not include the
+     * random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
 
     /**
      * <p>Specifies the secret that you want to rotate. You can specify either the
-     * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <note> <p>If
+     * Amazon Resource Name (ARN) or the friendly name of the secret.</p>  <p>If
      * you specify an ARN, we generally recommend that you specify a complete ARN. You
      * can specify a partial ARN too—for example, if you don’t include the final hyphen
      * and six random characters that Secrets Manager adds at the end of the ARN when
@@ -75,14 +69,18 @@ namespace Model
      * six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete
      * ARN. This confusion can cause unexpected results. To avoid this situation, we
-     * recommend that you don’t create secret names that end with a hyphen followed by
-     * six characters.</p> </note>
+     * recommend that you don’t create secret names ending with a hyphen followed by
+     * six characters.</p> <p>If you specify an incomplete ARN without the random
+     * suffix, and instead provide the 'friendly name', you <i>must</i> not include the
+     * random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
 
     /**
      * <p>Specifies the secret that you want to rotate. You can specify either the
-     * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <note> <p>If
+     * Amazon Resource Name (ARN) or the friendly name of the secret.</p>  <p>If
      * you specify an ARN, we generally recommend that you specify a complete ARN. You
      * can specify a partial ARN too—for example, if you don’t include the final hyphen
      * and six random characters that Secrets Manager adds at the end of the ARN when
@@ -92,14 +90,18 @@ namespace Model
      * six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete
      * ARN. This confusion can cause unexpected results. To avoid this situation, we
-     * recommend that you don’t create secret names that end with a hyphen followed by
-     * six characters.</p> </note>
+     * recommend that you don’t create secret names ending with a hyphen followed by
+     * six characters.</p> <p>If you specify an incomplete ARN without the random
+     * suffix, and instead provide the 'friendly name', you <i>must</i> not include the
+     * random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
 
     /**
      * <p>Specifies the secret that you want to rotate. You can specify either the
-     * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <note> <p>If
+     * Amazon Resource Name (ARN) or the friendly name of the secret.</p>  <p>If
      * you specify an ARN, we generally recommend that you specify a complete ARN. You
      * can specify a partial ARN too—for example, if you don’t include the final hyphen
      * and six random characters that Secrets Manager adds at the end of the ARN when
@@ -109,14 +111,18 @@ namespace Model
      * six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete
      * ARN. This confusion can cause unexpected results. To avoid this situation, we
-     * recommend that you don’t create secret names that end with a hyphen followed by
-     * six characters.</p> </note>
+     * recommend that you don’t create secret names ending with a hyphen followed by
+     * six characters.</p> <p>If you specify an incomplete ARN without the random
+     * suffix, and instead provide the 'friendly name', you <i>must</i> not include the
+     * random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
 
     /**
      * <p>Specifies the secret that you want to rotate. You can specify either the
-     * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <note> <p>If
+     * Amazon Resource Name (ARN) or the friendly name of the secret.</p>  <p>If
      * you specify an ARN, we generally recommend that you specify a complete ARN. You
      * can specify a partial ARN too—for example, if you don’t include the final hyphen
      * and six random characters that Secrets Manager adds at the end of the ARN when
@@ -126,14 +132,18 @@ namespace Model
      * six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete
      * ARN. This confusion can cause unexpected results. To avoid this situation, we
-     * recommend that you don’t create secret names that end with a hyphen followed by
-     * six characters.</p> </note>
+     * recommend that you don’t create secret names ending with a hyphen followed by
+     * six characters.</p> <p>If you specify an incomplete ARN without the random
+     * suffix, and instead provide the 'friendly name', you <i>must</i> not include the
+     * random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
 
     /**
      * <p>Specifies the secret that you want to rotate. You can specify either the
-     * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <note> <p>If
+     * Amazon Resource Name (ARN) or the friendly name of the secret.</p>  <p>If
      * you specify an ARN, we generally recommend that you specify a complete ARN. You
      * can specify a partial ARN too—for example, if you don’t include the final hyphen
      * and six random characters that Secrets Manager adds at the end of the ARN when
@@ -143,14 +153,18 @@ namespace Model
      * six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete
      * ARN. This confusion can cause unexpected results. To avoid this situation, we
-     * recommend that you don’t create secret names that end with a hyphen followed by
-     * six characters.</p> </note>
+     * recommend that you don’t create secret names ending with a hyphen followed by
+     * six characters.</p> <p>If you specify an incomplete ARN without the random
+     * suffix, and instead provide the 'friendly name', you <i>must</i> not include the
+     * random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline RotateSecretRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
 
     /**
      * <p>Specifies the secret that you want to rotate. You can specify either the
-     * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <note> <p>If
+     * Amazon Resource Name (ARN) or the friendly name of the secret.</p>  <p>If
      * you specify an ARN, we generally recommend that you specify a complete ARN. You
      * can specify a partial ARN too—for example, if you don’t include the final hyphen
      * and six random characters that Secrets Manager adds at the end of the ARN when
@@ -160,14 +174,18 @@ namespace Model
      * six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete
      * ARN. This confusion can cause unexpected results. To avoid this situation, we
-     * recommend that you don’t create secret names that end with a hyphen followed by
-     * six characters.</p> </note>
+     * recommend that you don’t create secret names ending with a hyphen followed by
+     * six characters.</p> <p>If you specify an incomplete ARN without the random
+     * suffix, and instead provide the 'friendly name', you <i>must</i> not include the
+     * random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline RotateSecretRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the secret that you want to rotate. You can specify either the
-     * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <note> <p>If
+     * Amazon Resource Name (ARN) or the friendly name of the secret.</p>  <p>If
      * you specify an ARN, we generally recommend that you specify a complete ARN. You
      * can specify a partial ARN too—for example, if you don’t include the final hyphen
      * and six random characters that Secrets Manager adds at the end of the ARN when
@@ -177,8 +195,12 @@ namespace Model
      * six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete
      * ARN. This confusion can cause unexpected results. To avoid this situation, we
-     * recommend that you don’t create secret names that end with a hyphen followed by
-     * six characters.</p> </note>
+     * recommend that you don’t create secret names ending with a hyphen followed by
+     * six characters.</p> <p>If you specify an incomplete ARN without the random
+     * suffix, and instead provide the 'friendly name', you <i>must</i> not include the
+     * random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline RotateSecretRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
 
@@ -191,9 +213,9 @@ namespace Model
      * parameter. If you don't use the SDK and instead generate a raw HTTP request to
      * the Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for new versions and include that value
-     * in the request.</p> <p>You only need to specify your own value if you are
-     * implementing your own retry logic and want to ensure that a given secret is not
-     * created twice. We recommend that you generate a <a
+     * in the request.</p> <p>You only need to specify your own value if you implement
+     * your own retry logic and want to ensure that a given secret is not created
+     * twice. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -210,9 +232,9 @@ namespace Model
      * parameter. If you don't use the SDK and instead generate a raw HTTP request to
      * the Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for new versions and include that value
-     * in the request.</p> <p>You only need to specify your own value if you are
-     * implementing your own retry logic and want to ensure that a given secret is not
-     * created twice. We recommend that you generate a <a
+     * in the request.</p> <p>You only need to specify your own value if you implement
+     * your own retry logic and want to ensure that a given secret is not created
+     * twice. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -229,9 +251,9 @@ namespace Model
      * parameter. If you don't use the SDK and instead generate a raw HTTP request to
      * the Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for new versions and include that value
-     * in the request.</p> <p>You only need to specify your own value if you are
-     * implementing your own retry logic and want to ensure that a given secret is not
-     * created twice. We recommend that you generate a <a
+     * in the request.</p> <p>You only need to specify your own value if you implement
+     * your own retry logic and want to ensure that a given secret is not created
+     * twice. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -248,9 +270,9 @@ namespace Model
      * parameter. If you don't use the SDK and instead generate a raw HTTP request to
      * the Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for new versions and include that value
-     * in the request.</p> <p>You only need to specify your own value if you are
-     * implementing your own retry logic and want to ensure that a given secret is not
-     * created twice. We recommend that you generate a <a
+     * in the request.</p> <p>You only need to specify your own value if you implement
+     * your own retry logic and want to ensure that a given secret is not created
+     * twice. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -267,9 +289,9 @@ namespace Model
      * parameter. If you don't use the SDK and instead generate a raw HTTP request to
      * the Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for new versions and include that value
-     * in the request.</p> <p>You only need to specify your own value if you are
-     * implementing your own retry logic and want to ensure that a given secret is not
-     * created twice. We recommend that you generate a <a
+     * in the request.</p> <p>You only need to specify your own value if you implement
+     * your own retry logic and want to ensure that a given secret is not created
+     * twice. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -286,9 +308,9 @@ namespace Model
      * parameter. If you don't use the SDK and instead generate a raw HTTP request to
      * the Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for new versions and include that value
-     * in the request.</p> <p>You only need to specify your own value if you are
-     * implementing your own retry logic and want to ensure that a given secret is not
-     * created twice. We recommend that you generate a <a
+     * in the request.</p> <p>You only need to specify your own value if you implement
+     * your own retry logic and want to ensure that a given secret is not created
+     * twice. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -305,9 +327,9 @@ namespace Model
      * parameter. If you don't use the SDK and instead generate a raw HTTP request to
      * the Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for new versions and include that value
-     * in the request.</p> <p>You only need to specify your own value if you are
-     * implementing your own retry logic and want to ensure that a given secret is not
-     * created twice. We recommend that you generate a <a
+     * in the request.</p> <p>You only need to specify your own value if you implement
+     * your own retry logic and want to ensure that a given secret is not created
+     * twice. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -324,9 +346,9 @@ namespace Model
      * parameter. If you don't use the SDK and instead generate a raw HTTP request to
      * the Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for new versions and include that value
-     * in the request.</p> <p>You only need to specify your own value if you are
-     * implementing your own retry logic and want to ensure that a given secret is not
-     * created twice. We recommend that you generate a <a
+     * in the request.</p> <p>You only need to specify your own value if you implement
+     * your own retry logic and want to ensure that a given secret is not created
+     * twice. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if

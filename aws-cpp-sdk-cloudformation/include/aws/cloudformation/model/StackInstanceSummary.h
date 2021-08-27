@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudformation/model/StackInstanceStatus.h>
+#include <aws/cloudformation/model/StackInstanceComprehensiveStatus.h>
 #include <aws/cloudformation/model/StackDriftStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
@@ -398,42 +389,89 @@ namespace Model
 
 
     /**
-     * <p>Reserved for internal use. No data returned.</p>
+     * <p>The detailed status of the stack instance.</p>
+     */
+    inline const StackInstanceComprehensiveStatus& GetStackInstanceStatus() const{ return m_stackInstanceStatus; }
+
+    /**
+     * <p>The detailed status of the stack instance.</p>
+     */
+    inline bool StackInstanceStatusHasBeenSet() const { return m_stackInstanceStatusHasBeenSet; }
+
+    /**
+     * <p>The detailed status of the stack instance.</p>
+     */
+    inline void SetStackInstanceStatus(const StackInstanceComprehensiveStatus& value) { m_stackInstanceStatusHasBeenSet = true; m_stackInstanceStatus = value; }
+
+    /**
+     * <p>The detailed status of the stack instance.</p>
+     */
+    inline void SetStackInstanceStatus(StackInstanceComprehensiveStatus&& value) { m_stackInstanceStatusHasBeenSet = true; m_stackInstanceStatus = std::move(value); }
+
+    /**
+     * <p>The detailed status of the stack instance.</p>
+     */
+    inline StackInstanceSummary& WithStackInstanceStatus(const StackInstanceComprehensiveStatus& value) { SetStackInstanceStatus(value); return *this;}
+
+    /**
+     * <p>The detailed status of the stack instance.</p>
+     */
+    inline StackInstanceSummary& WithStackInstanceStatus(StackInstanceComprehensiveStatus&& value) { SetStackInstanceStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>[<code>Service-managed</code> permissions] The organization root ID or
+     * organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline const Aws::String& GetOrganizationalUnitId() const{ return m_organizationalUnitId; }
 
     /**
-     * <p>Reserved for internal use. No data returned.</p>
+     * <p>[<code>Service-managed</code> permissions] The organization root ID or
+     * organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline bool OrganizationalUnitIdHasBeenSet() const { return m_organizationalUnitIdHasBeenSet; }
 
     /**
-     * <p>Reserved for internal use. No data returned.</p>
+     * <p>[<code>Service-managed</code> permissions] The organization root ID or
+     * organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline void SetOrganizationalUnitId(const Aws::String& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = value; }
 
     /**
-     * <p>Reserved for internal use. No data returned.</p>
+     * <p>[<code>Service-managed</code> permissions] The organization root ID or
+     * organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline void SetOrganizationalUnitId(Aws::String&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::move(value); }
 
     /**
-     * <p>Reserved for internal use. No data returned.</p>
+     * <p>[<code>Service-managed</code> permissions] The organization root ID or
+     * organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline void SetOrganizationalUnitId(const char* value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId.assign(value); }
 
     /**
-     * <p>Reserved for internal use. No data returned.</p>
+     * <p>[<code>Service-managed</code> permissions] The organization root ID or
+     * organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackInstanceSummary& WithOrganizationalUnitId(const Aws::String& value) { SetOrganizationalUnitId(value); return *this;}
 
     /**
-     * <p>Reserved for internal use. No data returned.</p>
+     * <p>[<code>Service-managed</code> permissions] The organization root ID or
+     * organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackInstanceSummary& WithOrganizationalUnitId(Aws::String&& value) { SetOrganizationalUnitId(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved for internal use. No data returned.</p>
+     * <p>[<code>Service-managed</code> permissions] The organization root ID or
+     * organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackInstanceSummary& WithOrganizationalUnitId(const char* value) { SetOrganizationalUnitId(value); return *this;}
 
@@ -590,6 +628,9 @@ namespace Model
 
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet;
+
+    StackInstanceComprehensiveStatus m_stackInstanceStatus;
+    bool m_stackInstanceStatusHasBeenSet;
 
     Aws::String m_organizationalUnitId;
     bool m_organizationalUnitIdHasBeenSet;

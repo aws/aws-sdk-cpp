@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/model/LustreDeploymentType.h>
+#include <aws/fsx/model/AutoImportPolicyType.h>
+#include <aws/fsx/model/DriveCacheType.h>
 #include <utility>
 
 namespace Aws
@@ -50,42 +42,58 @@ namespace Model
 
 
     /**
-     * <p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>
+     * <p>(Optional) The preferred start time to perform weekly maintenance, formatted
+     * d:HH:MM in the UTC time zone, where d is the weekday number, from 1 through 7,
+     * beginning with Monday and ending with Sunday.</p>
      */
     inline const Aws::String& GetWeeklyMaintenanceStartTime() const{ return m_weeklyMaintenanceStartTime; }
 
     /**
-     * <p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>
+     * <p>(Optional) The preferred start time to perform weekly maintenance, formatted
+     * d:HH:MM in the UTC time zone, where d is the weekday number, from 1 through 7,
+     * beginning with Monday and ending with Sunday.</p>
      */
     inline bool WeeklyMaintenanceStartTimeHasBeenSet() const { return m_weeklyMaintenanceStartTimeHasBeenSet; }
 
     /**
-     * <p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>
+     * <p>(Optional) The preferred start time to perform weekly maintenance, formatted
+     * d:HH:MM in the UTC time zone, where d is the weekday number, from 1 through 7,
+     * beginning with Monday and ending with Sunday.</p>
      */
     inline void SetWeeklyMaintenanceStartTime(const Aws::String& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = value; }
 
     /**
-     * <p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>
+     * <p>(Optional) The preferred start time to perform weekly maintenance, formatted
+     * d:HH:MM in the UTC time zone, where d is the weekday number, from 1 through 7,
+     * beginning with Monday and ending with Sunday.</p>
      */
     inline void SetWeeklyMaintenanceStartTime(Aws::String&& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = std::move(value); }
 
     /**
-     * <p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>
+     * <p>(Optional) The preferred start time to perform weekly maintenance, formatted
+     * d:HH:MM in the UTC time zone, where d is the weekday number, from 1 through 7,
+     * beginning with Monday and ending with Sunday.</p>
      */
     inline void SetWeeklyMaintenanceStartTime(const char* value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime.assign(value); }
 
     /**
-     * <p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>
+     * <p>(Optional) The preferred start time to perform weekly maintenance, formatted
+     * d:HH:MM in the UTC time zone, where d is the weekday number, from 1 through 7,
+     * beginning with Monday and ending with Sunday.</p>
      */
     inline CreateFileSystemLustreConfiguration& WithWeeklyMaintenanceStartTime(const Aws::String& value) { SetWeeklyMaintenanceStartTime(value); return *this;}
 
     /**
-     * <p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>
+     * <p>(Optional) The preferred start time to perform weekly maintenance, formatted
+     * d:HH:MM in the UTC time zone, where d is the weekday number, from 1 through 7,
+     * beginning with Monday and ending with Sunday.</p>
      */
     inline CreateFileSystemLustreConfiguration& WithWeeklyMaintenanceStartTime(Aws::String&& value) { SetWeeklyMaintenanceStartTime(std::move(value)); return *this;}
 
     /**
-     * <p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>
+     * <p>(Optional) The preferred start time to perform weekly maintenance, formatted
+     * d:HH:MM in the UTC time zone, where d is the weekday number, from 1 through 7,
+     * beginning with Monday and ending with Sunday.</p>
      */
     inline CreateFileSystemLustreConfiguration& WithWeeklyMaintenanceStartTime(const char* value) { SetWeeklyMaintenanceStartTime(value); return *this;}
 
@@ -374,13 +382,12 @@ namespace Model
 
 
     /**
-     * <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code>
-     * deployment types when you need temporary storage and shorter-term processing of
-     * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
-     * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
-     * <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and
-     * workloads and encryption of data in transit. To learn more about deployment
-     * types, see <a
+     * <p> Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
+     * when you need temporary storage and shorter-term processing of data. The
+     * <code>SCRATCH_2</code> deployment type provides in-transit encryption of data
+     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <p>Choose
+     * <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads
+     * and encryption of data in transit. To learn more about deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
      * FSx for Lustre Deployment Options</a>.</p> <p>Encryption of data in-transit is
      * automatically enabled when you access a <code>SCRATCH_2</code> or
@@ -396,13 +403,12 @@ namespace Model
     inline const LustreDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
 
     /**
-     * <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code>
-     * deployment types when you need temporary storage and shorter-term processing of
-     * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
-     * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
-     * <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and
-     * workloads and encryption of data in transit. To learn more about deployment
-     * types, see <a
+     * <p> Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
+     * when you need temporary storage and shorter-term processing of data. The
+     * <code>SCRATCH_2</code> deployment type provides in-transit encryption of data
+     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <p>Choose
+     * <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads
+     * and encryption of data in transit. To learn more about deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
      * FSx for Lustre Deployment Options</a>.</p> <p>Encryption of data in-transit is
      * automatically enabled when you access a <code>SCRATCH_2</code> or
@@ -418,13 +424,12 @@ namespace Model
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
 
     /**
-     * <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code>
-     * deployment types when you need temporary storage and shorter-term processing of
-     * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
-     * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
-     * <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and
-     * workloads and encryption of data in transit. To learn more about deployment
-     * types, see <a
+     * <p> Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
+     * when you need temporary storage and shorter-term processing of data. The
+     * <code>SCRATCH_2</code> deployment type provides in-transit encryption of data
+     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <p>Choose
+     * <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads
+     * and encryption of data in transit. To learn more about deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
      * FSx for Lustre Deployment Options</a>.</p> <p>Encryption of data in-transit is
      * automatically enabled when you access a <code>SCRATCH_2</code> or
@@ -440,13 +445,12 @@ namespace Model
     inline void SetDeploymentType(const LustreDeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
-     * <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code>
-     * deployment types when you need temporary storage and shorter-term processing of
-     * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
-     * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
-     * <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and
-     * workloads and encryption of data in transit. To learn more about deployment
-     * types, see <a
+     * <p> Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
+     * when you need temporary storage and shorter-term processing of data. The
+     * <code>SCRATCH_2</code> deployment type provides in-transit encryption of data
+     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <p>Choose
+     * <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads
+     * and encryption of data in transit. To learn more about deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
      * FSx for Lustre Deployment Options</a>.</p> <p>Encryption of data in-transit is
      * automatically enabled when you access a <code>SCRATCH_2</code> or
@@ -462,13 +466,12 @@ namespace Model
     inline void SetDeploymentType(LustreDeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
     /**
-     * <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code>
-     * deployment types when you need temporary storage and shorter-term processing of
-     * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
-     * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
-     * <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and
-     * workloads and encryption of data in transit. To learn more about deployment
-     * types, see <a
+     * <p> Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
+     * when you need temporary storage and shorter-term processing of data. The
+     * <code>SCRATCH_2</code> deployment type provides in-transit encryption of data
+     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <p>Choose
+     * <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads
+     * and encryption of data in transit. To learn more about deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
      * FSx for Lustre Deployment Options</a>.</p> <p>Encryption of data in-transit is
      * automatically enabled when you access a <code>SCRATCH_2</code> or
@@ -484,13 +487,12 @@ namespace Model
     inline CreateFileSystemLustreConfiguration& WithDeploymentType(const LustreDeploymentType& value) { SetDeploymentType(value); return *this;}
 
     /**
-     * <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code>
-     * deployment types when you need temporary storage and shorter-term processing of
-     * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
-     * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
-     * <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and
-     * workloads and encryption of data in transit. To learn more about deployment
-     * types, see <a
+     * <p> Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
+     * when you need temporary storage and shorter-term processing of data. The
+     * <code>SCRATCH_2</code> deployment type provides in-transit encryption of data
+     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <p>Choose
+     * <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads
+     * and encryption of data in transit. To learn more about deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
      * FSx for Lustre Deployment Options</a>.</p> <p>Encryption of data in-transit is
      * automatically enabled when you access a <code>SCRATCH_2</code> or
@@ -507,13 +509,141 @@ namespace Model
 
 
     /**
+     * <p> (Optional) When you create your file system, your existing S3 objects appear
+     * as file and directory listings. Use this property to choose how Amazon FSx keeps
+     * your file and directory listings up to date as you add or modify objects in your
+     * linked S3 bucket. <code>AutoImportPolicy</code> can have the following
+     * values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport is off.
+     * Amazon FSx only updates file and directory listings from the linked S3 bucket
+     * when the file system is created. FSx does not update file and directory listings
+     * for any new or changed objects after choosing this option.</p> </li> <li> <p>
+     * <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory
+     * listings of any new objects added to the linked S3 bucket that do not currently
+     * exist in the FSx file system. </p> </li> <li> <p> <code>NEW_CHANGED</code> -
+     * AutoImport is on. Amazon FSx automatically imports file and directory listings
+     * of any new objects added to the S3 bucket and any existing objects that are
+     * changed in the S3 bucket after you choose this option. </p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
+     * import updates from your S3 bucket</a>.</p>
+     */
+    inline const AutoImportPolicyType& GetAutoImportPolicy() const{ return m_autoImportPolicy; }
+
+    /**
+     * <p> (Optional) When you create your file system, your existing S3 objects appear
+     * as file and directory listings. Use this property to choose how Amazon FSx keeps
+     * your file and directory listings up to date as you add or modify objects in your
+     * linked S3 bucket. <code>AutoImportPolicy</code> can have the following
+     * values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport is off.
+     * Amazon FSx only updates file and directory listings from the linked S3 bucket
+     * when the file system is created. FSx does not update file and directory listings
+     * for any new or changed objects after choosing this option.</p> </li> <li> <p>
+     * <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory
+     * listings of any new objects added to the linked S3 bucket that do not currently
+     * exist in the FSx file system. </p> </li> <li> <p> <code>NEW_CHANGED</code> -
+     * AutoImport is on. Amazon FSx automatically imports file and directory listings
+     * of any new objects added to the S3 bucket and any existing objects that are
+     * changed in the S3 bucket after you choose this option. </p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
+     * import updates from your S3 bucket</a>.</p>
+     */
+    inline bool AutoImportPolicyHasBeenSet() const { return m_autoImportPolicyHasBeenSet; }
+
+    /**
+     * <p> (Optional) When you create your file system, your existing S3 objects appear
+     * as file and directory listings. Use this property to choose how Amazon FSx keeps
+     * your file and directory listings up to date as you add or modify objects in your
+     * linked S3 bucket. <code>AutoImportPolicy</code> can have the following
+     * values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport is off.
+     * Amazon FSx only updates file and directory listings from the linked S3 bucket
+     * when the file system is created. FSx does not update file and directory listings
+     * for any new or changed objects after choosing this option.</p> </li> <li> <p>
+     * <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory
+     * listings of any new objects added to the linked S3 bucket that do not currently
+     * exist in the FSx file system. </p> </li> <li> <p> <code>NEW_CHANGED</code> -
+     * AutoImport is on. Amazon FSx automatically imports file and directory listings
+     * of any new objects added to the S3 bucket and any existing objects that are
+     * changed in the S3 bucket after you choose this option. </p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
+     * import updates from your S3 bucket</a>.</p>
+     */
+    inline void SetAutoImportPolicy(const AutoImportPolicyType& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = value; }
+
+    /**
+     * <p> (Optional) When you create your file system, your existing S3 objects appear
+     * as file and directory listings. Use this property to choose how Amazon FSx keeps
+     * your file and directory listings up to date as you add or modify objects in your
+     * linked S3 bucket. <code>AutoImportPolicy</code> can have the following
+     * values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport is off.
+     * Amazon FSx only updates file and directory listings from the linked S3 bucket
+     * when the file system is created. FSx does not update file and directory listings
+     * for any new or changed objects after choosing this option.</p> </li> <li> <p>
+     * <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory
+     * listings of any new objects added to the linked S3 bucket that do not currently
+     * exist in the FSx file system. </p> </li> <li> <p> <code>NEW_CHANGED</code> -
+     * AutoImport is on. Amazon FSx automatically imports file and directory listings
+     * of any new objects added to the S3 bucket and any existing objects that are
+     * changed in the S3 bucket after you choose this option. </p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
+     * import updates from your S3 bucket</a>.</p>
+     */
+    inline void SetAutoImportPolicy(AutoImportPolicyType&& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = std::move(value); }
+
+    /**
+     * <p> (Optional) When you create your file system, your existing S3 objects appear
+     * as file and directory listings. Use this property to choose how Amazon FSx keeps
+     * your file and directory listings up to date as you add or modify objects in your
+     * linked S3 bucket. <code>AutoImportPolicy</code> can have the following
+     * values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport is off.
+     * Amazon FSx only updates file and directory listings from the linked S3 bucket
+     * when the file system is created. FSx does not update file and directory listings
+     * for any new or changed objects after choosing this option.</p> </li> <li> <p>
+     * <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory
+     * listings of any new objects added to the linked S3 bucket that do not currently
+     * exist in the FSx file system. </p> </li> <li> <p> <code>NEW_CHANGED</code> -
+     * AutoImport is on. Amazon FSx automatically imports file and directory listings
+     * of any new objects added to the S3 bucket and any existing objects that are
+     * changed in the S3 bucket after you choose this option. </p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
+     * import updates from your S3 bucket</a>.</p>
+     */
+    inline CreateFileSystemLustreConfiguration& WithAutoImportPolicy(const AutoImportPolicyType& value) { SetAutoImportPolicy(value); return *this;}
+
+    /**
+     * <p> (Optional) When you create your file system, your existing S3 objects appear
+     * as file and directory listings. Use this property to choose how Amazon FSx keeps
+     * your file and directory listings up to date as you add or modify objects in your
+     * linked S3 bucket. <code>AutoImportPolicy</code> can have the following
+     * values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport is off.
+     * Amazon FSx only updates file and directory listings from the linked S3 bucket
+     * when the file system is created. FSx does not update file and directory listings
+     * for any new or changed objects after choosing this option.</p> </li> <li> <p>
+     * <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory
+     * listings of any new objects added to the linked S3 bucket that do not currently
+     * exist in the FSx file system. </p> </li> <li> <p> <code>NEW_CHANGED</code> -
+     * AutoImport is on. Amazon FSx automatically imports file and directory listings
+     * of any new objects added to the S3 bucket and any existing objects that are
+     * changed in the S3 bucket after you choose this option. </p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
+     * import updates from your S3 bucket</a>.</p>
+     */
+    inline CreateFileSystemLustreConfiguration& WithAutoImportPolicy(AutoImportPolicyType&& value) { SetAutoImportPolicy(std::move(value)); return *this;}
+
+
+    /**
      * <p> Required for the <code>PERSISTENT_1</code> deployment type, describes the
      * amount of read and write throughput for each 1 tebibyte of storage, in MB/s/TiB.
      * File system throughput capacity is calculated by multiplying ﬁle system storage
      * capacity (TiB) by the PerUnitStorageThroughput (MB/s/TiB). For a 2.4 TiB ﬁle
-     * system, provisioning 50 MB/s/TiB of PerUnitStorageThroughput yields 117 MB/s of
+     * system, provisioning 50 MB/s/TiB of PerUnitStorageThroughput yields 120 MB/s of
      * ﬁle system throughput. You pay for the amount of throughput that you provision.
-     * </p> <p>Valid values are 50, 100, 200.</p>
+     * </p> <p>Valid values for SSD storage: 50, 100, 200. Valid values for HDD
+     * storage: 12, 40.</p>
      */
     inline int GetPerUnitStorageThroughput() const{ return m_perUnitStorageThroughput; }
 
@@ -522,9 +652,10 @@ namespace Model
      * amount of read and write throughput for each 1 tebibyte of storage, in MB/s/TiB.
      * File system throughput capacity is calculated by multiplying ﬁle system storage
      * capacity (TiB) by the PerUnitStorageThroughput (MB/s/TiB). For a 2.4 TiB ﬁle
-     * system, provisioning 50 MB/s/TiB of PerUnitStorageThroughput yields 117 MB/s of
+     * system, provisioning 50 MB/s/TiB of PerUnitStorageThroughput yields 120 MB/s of
      * ﬁle system throughput. You pay for the amount of throughput that you provision.
-     * </p> <p>Valid values are 50, 100, 200.</p>
+     * </p> <p>Valid values for SSD storage: 50, 100, 200. Valid values for HDD
+     * storage: 12, 40.</p>
      */
     inline bool PerUnitStorageThroughputHasBeenSet() const { return m_perUnitStorageThroughputHasBeenSet; }
 
@@ -533,9 +664,10 @@ namespace Model
      * amount of read and write throughput for each 1 tebibyte of storage, in MB/s/TiB.
      * File system throughput capacity is calculated by multiplying ﬁle system storage
      * capacity (TiB) by the PerUnitStorageThroughput (MB/s/TiB). For a 2.4 TiB ﬁle
-     * system, provisioning 50 MB/s/TiB of PerUnitStorageThroughput yields 117 MB/s of
+     * system, provisioning 50 MB/s/TiB of PerUnitStorageThroughput yields 120 MB/s of
      * ﬁle system throughput. You pay for the amount of throughput that you provision.
-     * </p> <p>Valid values are 50, 100, 200.</p>
+     * </p> <p>Valid values for SSD storage: 50, 100, 200. Valid values for HDD
+     * storage: 12, 40.</p>
      */
     inline void SetPerUnitStorageThroughput(int value) { m_perUnitStorageThroughputHasBeenSet = true; m_perUnitStorageThroughput = value; }
 
@@ -544,11 +676,172 @@ namespace Model
      * amount of read and write throughput for each 1 tebibyte of storage, in MB/s/TiB.
      * File system throughput capacity is calculated by multiplying ﬁle system storage
      * capacity (TiB) by the PerUnitStorageThroughput (MB/s/TiB). For a 2.4 TiB ﬁle
-     * system, provisioning 50 MB/s/TiB of PerUnitStorageThroughput yields 117 MB/s of
+     * system, provisioning 50 MB/s/TiB of PerUnitStorageThroughput yields 120 MB/s of
      * ﬁle system throughput. You pay for the amount of throughput that you provision.
-     * </p> <p>Valid values are 50, 100, 200.</p>
+     * </p> <p>Valid values for SSD storage: 50, 100, 200. Valid values for HDD
+     * storage: 12, 40.</p>
      */
     inline CreateFileSystemLustreConfiguration& WithPerUnitStorageThroughput(int value) { SetPerUnitStorageThroughput(value); return *this;}
+
+
+    
+    inline const Aws::String& GetDailyAutomaticBackupStartTime() const{ return m_dailyAutomaticBackupStartTime; }
+
+    
+    inline bool DailyAutomaticBackupStartTimeHasBeenSet() const { return m_dailyAutomaticBackupStartTimeHasBeenSet; }
+
+    
+    inline void SetDailyAutomaticBackupStartTime(const Aws::String& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = value; }
+
+    
+    inline void SetDailyAutomaticBackupStartTime(Aws::String&& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = std::move(value); }
+
+    
+    inline void SetDailyAutomaticBackupStartTime(const char* value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime.assign(value); }
+
+    
+    inline CreateFileSystemLustreConfiguration& WithDailyAutomaticBackupStartTime(const Aws::String& value) { SetDailyAutomaticBackupStartTime(value); return *this;}
+
+    
+    inline CreateFileSystemLustreConfiguration& WithDailyAutomaticBackupStartTime(Aws::String&& value) { SetDailyAutomaticBackupStartTime(std::move(value)); return *this;}
+
+    
+    inline CreateFileSystemLustreConfiguration& WithDailyAutomaticBackupStartTime(const char* value) { SetDailyAutomaticBackupStartTime(value); return *this;}
+
+
+    
+    inline int GetAutomaticBackupRetentionDays() const{ return m_automaticBackupRetentionDays; }
+
+    
+    inline bool AutomaticBackupRetentionDaysHasBeenSet() const { return m_automaticBackupRetentionDaysHasBeenSet; }
+
+    
+    inline void SetAutomaticBackupRetentionDays(int value) { m_automaticBackupRetentionDaysHasBeenSet = true; m_automaticBackupRetentionDays = value; }
+
+    
+    inline CreateFileSystemLustreConfiguration& WithAutomaticBackupRetentionDays(int value) { SetAutomaticBackupRetentionDays(value); return *this;}
+
+
+    /**
+     * <p>(Optional) Not available to use with file systems that are linked to a data
+     * repository. A boolean flag indicating whether tags for the file system should be
+     * copied to backups. The default value is false. If it's set to true, all file
+     * system tags are copied to all automatic and user-initiated backups when the user
+     * doesn't specify any backup-specific tags. If this value is true, and you specify
+     * one or more backup tags, only the specified tags are copied to backups. If you
+     * specify one or more tags when creating a user-initiated backup, no tags are
+     * copied from the file system, regardless of this value.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
+     * with backups</a>.</p>
+     */
+    inline bool GetCopyTagsToBackups() const{ return m_copyTagsToBackups; }
+
+    /**
+     * <p>(Optional) Not available to use with file systems that are linked to a data
+     * repository. A boolean flag indicating whether tags for the file system should be
+     * copied to backups. The default value is false. If it's set to true, all file
+     * system tags are copied to all automatic and user-initiated backups when the user
+     * doesn't specify any backup-specific tags. If this value is true, and you specify
+     * one or more backup tags, only the specified tags are copied to backups. If you
+     * specify one or more tags when creating a user-initiated backup, no tags are
+     * copied from the file system, regardless of this value.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
+     * with backups</a>.</p>
+     */
+    inline bool CopyTagsToBackupsHasBeenSet() const { return m_copyTagsToBackupsHasBeenSet; }
+
+    /**
+     * <p>(Optional) Not available to use with file systems that are linked to a data
+     * repository. A boolean flag indicating whether tags for the file system should be
+     * copied to backups. The default value is false. If it's set to true, all file
+     * system tags are copied to all automatic and user-initiated backups when the user
+     * doesn't specify any backup-specific tags. If this value is true, and you specify
+     * one or more backup tags, only the specified tags are copied to backups. If you
+     * specify one or more tags when creating a user-initiated backup, no tags are
+     * copied from the file system, regardless of this value.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
+     * with backups</a>.</p>
+     */
+    inline void SetCopyTagsToBackups(bool value) { m_copyTagsToBackupsHasBeenSet = true; m_copyTagsToBackups = value; }
+
+    /**
+     * <p>(Optional) Not available to use with file systems that are linked to a data
+     * repository. A boolean flag indicating whether tags for the file system should be
+     * copied to backups. The default value is false. If it's set to true, all file
+     * system tags are copied to all automatic and user-initiated backups when the user
+     * doesn't specify any backup-specific tags. If this value is true, and you specify
+     * one or more backup tags, only the specified tags are copied to backups. If you
+     * specify one or more tags when creating a user-initiated backup, no tags are
+     * copied from the file system, regardless of this value.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
+     * with backups</a>.</p>
+     */
+    inline CreateFileSystemLustreConfiguration& WithCopyTagsToBackups(bool value) { SetCopyTagsToBackups(value); return *this;}
+
+
+    /**
+     * <p>The type of drive cache used by PERSISTENT_1 file systems that are
+     * provisioned with HDD storage devices. This parameter is required when storage
+     * type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system
+     * to be cached. </p> <p>This parameter is required when <code>StorageType</code>
+     * is set to HDD.</p>
+     */
+    inline const DriveCacheType& GetDriveCacheType() const{ return m_driveCacheType; }
+
+    /**
+     * <p>The type of drive cache used by PERSISTENT_1 file systems that are
+     * provisioned with HDD storage devices. This parameter is required when storage
+     * type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system
+     * to be cached. </p> <p>This parameter is required when <code>StorageType</code>
+     * is set to HDD.</p>
+     */
+    inline bool DriveCacheTypeHasBeenSet() const { return m_driveCacheTypeHasBeenSet; }
+
+    /**
+     * <p>The type of drive cache used by PERSISTENT_1 file systems that are
+     * provisioned with HDD storage devices. This parameter is required when storage
+     * type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system
+     * to be cached. </p> <p>This parameter is required when <code>StorageType</code>
+     * is set to HDD.</p>
+     */
+    inline void SetDriveCacheType(const DriveCacheType& value) { m_driveCacheTypeHasBeenSet = true; m_driveCacheType = value; }
+
+    /**
+     * <p>The type of drive cache used by PERSISTENT_1 file systems that are
+     * provisioned with HDD storage devices. This parameter is required when storage
+     * type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system
+     * to be cached. </p> <p>This parameter is required when <code>StorageType</code>
+     * is set to HDD.</p>
+     */
+    inline void SetDriveCacheType(DriveCacheType&& value) { m_driveCacheTypeHasBeenSet = true; m_driveCacheType = std::move(value); }
+
+    /**
+     * <p>The type of drive cache used by PERSISTENT_1 file systems that are
+     * provisioned with HDD storage devices. This parameter is required when storage
+     * type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system
+     * to be cached. </p> <p>This parameter is required when <code>StorageType</code>
+     * is set to HDD.</p>
+     */
+    inline CreateFileSystemLustreConfiguration& WithDriveCacheType(const DriveCacheType& value) { SetDriveCacheType(value); return *this;}
+
+    /**
+     * <p>The type of drive cache used by PERSISTENT_1 file systems that are
+     * provisioned with HDD storage devices. This parameter is required when storage
+     * type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system
+     * to be cached. </p> <p>This parameter is required when <code>StorageType</code>
+     * is set to HDD.</p>
+     */
+    inline CreateFileSystemLustreConfiguration& WithDriveCacheType(DriveCacheType&& value) { SetDriveCacheType(std::move(value)); return *this;}
 
   private:
 
@@ -567,8 +860,23 @@ namespace Model
     LustreDeploymentType m_deploymentType;
     bool m_deploymentTypeHasBeenSet;
 
+    AutoImportPolicyType m_autoImportPolicy;
+    bool m_autoImportPolicyHasBeenSet;
+
     int m_perUnitStorageThroughput;
     bool m_perUnitStorageThroughputHasBeenSet;
+
+    Aws::String m_dailyAutomaticBackupStartTime;
+    bool m_dailyAutomaticBackupStartTimeHasBeenSet;
+
+    int m_automaticBackupRetentionDays;
+    bool m_automaticBackupRetentionDaysHasBeenSet;
+
+    bool m_copyTagsToBackups;
+    bool m_copyTagsToBackupsHasBeenSet;
+
+    DriveCacheType m_driveCacheType;
+    bool m_driveCacheTypeHasBeenSet;
   };
 
 } // namespace Model

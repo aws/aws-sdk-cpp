@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cloudfront/model/Origin.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -36,7 +26,12 @@ Origin::Origin() :
     m_originPathHasBeenSet(false),
     m_customHeadersHasBeenSet(false),
     m_s3OriginConfigHasBeenSet(false),
-    m_customOriginConfigHasBeenSet(false)
+    m_customOriginConfigHasBeenSet(false),
+    m_connectionAttempts(0),
+    m_connectionAttemptsHasBeenSet(false),
+    m_connectionTimeout(0),
+    m_connectionTimeoutHasBeenSet(false),
+    m_originShieldHasBeenSet(false)
 {
 }
 
@@ -46,7 +41,12 @@ Origin::Origin(const XmlNode& xmlNode) :
     m_originPathHasBeenSet(false),
     m_customHeadersHasBeenSet(false),
     m_s3OriginConfigHasBeenSet(false),
-    m_customOriginConfigHasBeenSet(false)
+    m_customOriginConfigHasBeenSet(false),
+    m_connectionAttempts(0),
+    m_connectionAttemptsHasBeenSet(false),
+    m_connectionTimeout(0),
+    m_connectionTimeoutHasBeenSet(false),
+    m_originShieldHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -93,6 +93,24 @@ Origin& Origin::operator =(const XmlNode& xmlNode)
       m_customOriginConfig = customOriginConfigNode;
       m_customOriginConfigHasBeenSet = true;
     }
+    XmlNode connectionAttemptsNode = resultNode.FirstChild("ConnectionAttempts");
+    if(!connectionAttemptsNode.IsNull())
+    {
+      m_connectionAttempts = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionAttemptsNode.GetText()).c_str()).c_str());
+      m_connectionAttemptsHasBeenSet = true;
+    }
+    XmlNode connectionTimeoutNode = resultNode.FirstChild("ConnectionTimeout");
+    if(!connectionTimeoutNode.IsNull())
+    {
+      m_connectionTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionTimeoutNode.GetText()).c_str()).c_str());
+      m_connectionTimeoutHasBeenSet = true;
+    }
+    XmlNode originShieldNode = resultNode.FirstChild("OriginShield");
+    if(!originShieldNode.IsNull())
+    {
+      m_originShield = originShieldNode;
+      m_originShieldHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -135,6 +153,28 @@ void Origin::AddToNode(XmlNode& parentNode) const
   {
    XmlNode customOriginConfigNode = parentNode.CreateChildElement("CustomOriginConfig");
    m_customOriginConfig.AddToNode(customOriginConfigNode);
+  }
+
+  if(m_connectionAttemptsHasBeenSet)
+  {
+   XmlNode connectionAttemptsNode = parentNode.CreateChildElement("ConnectionAttempts");
+   ss << m_connectionAttempts;
+   connectionAttemptsNode.SetText(ss.str());
+   ss.str("");
+  }
+
+  if(m_connectionTimeoutHasBeenSet)
+  {
+   XmlNode connectionTimeoutNode = parentNode.CreateChildElement("ConnectionTimeout");
+   ss << m_connectionTimeout;
+   connectionTimeoutNode.SetText(ss.str());
+   ss.str("");
+  }
+
+  if(m_originShieldHasBeenSet)
+  {
+   XmlNode originShieldNode = parentNode.CreateChildElement("OriginShield");
+   m_originShield.AddToNode(originShieldNode);
   }
 
 }

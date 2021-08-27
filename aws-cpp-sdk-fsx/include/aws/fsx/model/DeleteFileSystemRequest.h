@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/fsx/FSxRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/model/DeleteFileSystemWindowsConfiguration.h>
+#include <aws/fsx/model/DeleteFileSystemLustreConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -92,58 +83,58 @@ namespace Model
 
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent deletion. This is automatically filled on your behalf when
-     * using the AWS CLI or SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent deletion. This is automatically filled on your behalf when using the
+     * AWS CLI or SDK.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent deletion. This is automatically filled on your behalf when
-     * using the AWS CLI or SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent deletion. This is automatically filled on your behalf when using the
+     * AWS CLI or SDK.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent deletion. This is automatically filled on your behalf when
-     * using the AWS CLI or SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent deletion. This is automatically filled on your behalf when using the
+     * AWS CLI or SDK.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent deletion. This is automatically filled on your behalf when
-     * using the AWS CLI or SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent deletion. This is automatically filled on your behalf when using the
+     * AWS CLI or SDK.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent deletion. This is automatically filled on your behalf when
-     * using the AWS CLI or SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent deletion. This is automatically filled on your behalf when using the
+     * AWS CLI or SDK.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent deletion. This is automatically filled on your behalf when
-     * using the AWS CLI or SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent deletion. This is automatically filled on your behalf when using the
+     * AWS CLI or SDK.</p>
      */
     inline DeleteFileSystemRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent deletion. This is automatically filled on your behalf when
-     * using the AWS CLI or SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent deletion. This is automatically filled on your behalf when using the
+     * AWS CLI or SDK.</p>
      */
     inline DeleteFileSystemRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent deletion. This is automatically filled on your behalf when
-     * using the AWS CLI or SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent deletion. This is automatically filled on your behalf when using the
+     * AWS CLI or SDK.</p>
      */
     inline DeleteFileSystemRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
@@ -166,6 +157,25 @@ namespace Model
     
     inline DeleteFileSystemRequest& WithWindowsConfiguration(DeleteFileSystemWindowsConfiguration&& value) { SetWindowsConfiguration(std::move(value)); return *this;}
 
+
+    
+    inline const DeleteFileSystemLustreConfiguration& GetLustreConfiguration() const{ return m_lustreConfiguration; }
+
+    
+    inline bool LustreConfigurationHasBeenSet() const { return m_lustreConfigurationHasBeenSet; }
+
+    
+    inline void SetLustreConfiguration(const DeleteFileSystemLustreConfiguration& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = value; }
+
+    
+    inline void SetLustreConfiguration(DeleteFileSystemLustreConfiguration&& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = std::move(value); }
+
+    
+    inline DeleteFileSystemRequest& WithLustreConfiguration(const DeleteFileSystemLustreConfiguration& value) { SetLustreConfiguration(value); return *this;}
+
+    
+    inline DeleteFileSystemRequest& WithLustreConfiguration(DeleteFileSystemLustreConfiguration&& value) { SetLustreConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_fileSystemId;
@@ -176,6 +186,9 @@ namespace Model
 
     DeleteFileSystemWindowsConfiguration m_windowsConfiguration;
     bool m_windowsConfigurationHasBeenSet;
+
+    DeleteFileSystemLustreConfiguration m_lustreConfiguration;
+    bool m_lustreConfigurationHasBeenSet;
   };
 
 } // namespace Model

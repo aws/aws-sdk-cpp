@@ -1,25 +1,13 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-
-#include <utility>
 
 namespace Aws
 {
@@ -49,7 +37,6 @@ namespace Aws
                  * Takes ownership of an underlying stream.
                  */
                 ResponseStream(IOStream* underlyingStreamToManage);
-                ResponseStream(IStream* underlyingStreamToManage);
                 ResponseStream(const ResponseStream&) = delete;
                 ~ResponseStream();
 
@@ -62,14 +49,12 @@ namespace Aws
                 /**
                  * Gives access to underlying stream, but keep in mind that this changes state of the stream
                  */
-                inline Aws::IStream & GetUnderlyingStream() const { return *m_underlyingStream; }
+                inline Aws::IOStream& GetUnderlyingStream() const { return *m_underlyingStream; }
 
-                /**
-                 * Set underlying stream
-                 */
-                void SetUnderlyingStream(std::shared_ptr<Aws::IStream> stream) { m_underlyingStream = std::move(stream); }
             private:
-                std::shared_ptr<Aws::IStream> m_underlyingStream;
+                void ReleaseStream();
+
+                Aws::IOStream* m_underlyingStream;
             };
 
             class AWS_CORE_API DefaultUnderlyingStream : public Aws::IOStream

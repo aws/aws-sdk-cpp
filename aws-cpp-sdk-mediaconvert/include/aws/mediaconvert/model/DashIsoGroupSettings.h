@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -417,6 +407,67 @@ namespace Model
 
 
     /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a
+     * problem with how devices play back the end of your video asset. If you know that
+     * player devices are hanging on the final segment of your video because the length
+     * of your final segment is too short, use this setting to specify a minimum final
+     * segment length, in seconds. Choose a value that is greater than or equal to 1
+     * and less than your segment length. When you specify a value for this setting,
+     * the encoder will combine any final segment that is shorter than the length that
+     * you specify with the previous segment. For example, your segment length is 3
+     * seconds and your final segment is .5 seconds without a minimum final segment
+     * length; when you set the minimum final segment length to 1, your final segment
+     * is 3.5 seconds.
+     */
+    inline double GetMinFinalSegmentLength() const{ return m_minFinalSegmentLength; }
+
+    /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a
+     * problem with how devices play back the end of your video asset. If you know that
+     * player devices are hanging on the final segment of your video because the length
+     * of your final segment is too short, use this setting to specify a minimum final
+     * segment length, in seconds. Choose a value that is greater than or equal to 1
+     * and less than your segment length. When you specify a value for this setting,
+     * the encoder will combine any final segment that is shorter than the length that
+     * you specify with the previous segment. For example, your segment length is 3
+     * seconds and your final segment is .5 seconds without a minimum final segment
+     * length; when you set the minimum final segment length to 1, your final segment
+     * is 3.5 seconds.
+     */
+    inline bool MinFinalSegmentLengthHasBeenSet() const { return m_minFinalSegmentLengthHasBeenSet; }
+
+    /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a
+     * problem with how devices play back the end of your video asset. If you know that
+     * player devices are hanging on the final segment of your video because the length
+     * of your final segment is too short, use this setting to specify a minimum final
+     * segment length, in seconds. Choose a value that is greater than or equal to 1
+     * and less than your segment length. When you specify a value for this setting,
+     * the encoder will combine any final segment that is shorter than the length that
+     * you specify with the previous segment. For example, your segment length is 3
+     * seconds and your final segment is .5 seconds without a minimum final segment
+     * length; when you set the minimum final segment length to 1, your final segment
+     * is 3.5 seconds.
+     */
+    inline void SetMinFinalSegmentLength(double value) { m_minFinalSegmentLengthHasBeenSet = true; m_minFinalSegmentLength = value; }
+
+    /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a
+     * problem with how devices play back the end of your video asset. If you know that
+     * player devices are hanging on the final segment of your video because the length
+     * of your final segment is too short, use this setting to specify a minimum final
+     * segment length, in seconds. Choose a value that is greater than or equal to 1
+     * and less than your segment length. When you specify a value for this setting,
+     * the encoder will combine any final segment that is shorter than the length that
+     * you specify with the previous segment. For example, your segment length is 3
+     * seconds and your final segment is .5 seconds without a minimum final segment
+     * length; when you set the minimum final segment length to 1, your final segment
+     * is 3.5 seconds.
+     */
+    inline DashIsoGroupSettings& WithMinFinalSegmentLength(double value) { SetMinFinalSegmentLength(value); return *this;}
+
+
+    /**
      * Specify whether your DASH profile is on-demand or main. When you choose Main
      * profile (MAIN_PROFILE), the service signals 
      * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you
@@ -648,6 +699,9 @@ namespace Model
 
     int m_minBufferTime;
     bool m_minBufferTimeHasBeenSet;
+
+    double m_minFinalSegmentLength;
+    bool m_minFinalSegmentLengthHasBeenSet;
 
     DashIsoMpdProfile m_mpdProfile;
     bool m_mpdProfileHasBeenSet;

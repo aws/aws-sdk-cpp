@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
@@ -289,6 +279,43 @@ namespace Model
      */
     inline TerminateProvisionedProductRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
+
+    /**
+     * <p>When this boolean parameter is set to true, the
+     * <code>TerminateProvisionedProduct</code> API deletes the Service Catalog
+     * provisioned product. However, it does not remove the CloudFormation stack, stack
+     * set, or the underlying resources of the deleted provisioned product. The default
+     * value is false.</p>
+     */
+    inline bool GetRetainPhysicalResources() const{ return m_retainPhysicalResources; }
+
+    /**
+     * <p>When this boolean parameter is set to true, the
+     * <code>TerminateProvisionedProduct</code> API deletes the Service Catalog
+     * provisioned product. However, it does not remove the CloudFormation stack, stack
+     * set, or the underlying resources of the deleted provisioned product. The default
+     * value is false.</p>
+     */
+    inline bool RetainPhysicalResourcesHasBeenSet() const { return m_retainPhysicalResourcesHasBeenSet; }
+
+    /**
+     * <p>When this boolean parameter is set to true, the
+     * <code>TerminateProvisionedProduct</code> API deletes the Service Catalog
+     * provisioned product. However, it does not remove the CloudFormation stack, stack
+     * set, or the underlying resources of the deleted provisioned product. The default
+     * value is false.</p>
+     */
+    inline void SetRetainPhysicalResources(bool value) { m_retainPhysicalResourcesHasBeenSet = true; m_retainPhysicalResources = value; }
+
+    /**
+     * <p>When this boolean parameter is set to true, the
+     * <code>TerminateProvisionedProduct</code> API deletes the Service Catalog
+     * provisioned product. However, it does not remove the CloudFormation stack, stack
+     * set, or the underlying resources of the deleted provisioned product. The default
+     * value is false.</p>
+     */
+    inline TerminateProvisionedProductRequest& WithRetainPhysicalResources(bool value) { SetRetainPhysicalResources(value); return *this;}
+
   private:
 
     Aws::String m_provisionedProductName;
@@ -305,6 +332,9 @@ namespace Model
 
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
+    bool m_retainPhysicalResources;
+    bool m_retainPhysicalResourcesHasBeenSet;
   };
 
 } // namespace Model

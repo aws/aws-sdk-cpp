@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/kinesis/KinesisRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/kinesis/model/ShardFilter.h>
 #include <utility>
 
 namespace Aws
@@ -109,11 +100,11 @@ namespace Model
      * shards that the operation returns if you don't specify <code>MaxResults</code>,
      * the response will contain a new <code>NextToken</code> value. You can use the
      * new <code>NextToken</code> value in a subsequent call to the
-     * <code>ListShards</code> operation.</p> <important> <p>Tokens expire after 300
+     * <code>ListShards</code> operation.</p>  <p>Tokens expire after 300
      * seconds. When you obtain a value for <code>NextToken</code> in the response to a
      * call to <code>ListShards</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListShards</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -132,11 +123,11 @@ namespace Model
      * shards that the operation returns if you don't specify <code>MaxResults</code>,
      * the response will contain a new <code>NextToken</code> value. You can use the
      * new <code>NextToken</code> value in a subsequent call to the
-     * <code>ListShards</code> operation.</p> <important> <p>Tokens expire after 300
+     * <code>ListShards</code> operation.</p>  <p>Tokens expire after 300
      * seconds. When you obtain a value for <code>NextToken</code> in the response to a
      * call to <code>ListShards</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListShards</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -155,11 +146,11 @@ namespace Model
      * shards that the operation returns if you don't specify <code>MaxResults</code>,
      * the response will contain a new <code>NextToken</code> value. You can use the
      * new <code>NextToken</code> value in a subsequent call to the
-     * <code>ListShards</code> operation.</p> <important> <p>Tokens expire after 300
+     * <code>ListShards</code> operation.</p>  <p>Tokens expire after 300
      * seconds. When you obtain a value for <code>NextToken</code> in the response to a
      * call to <code>ListShards</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListShards</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -178,11 +169,11 @@ namespace Model
      * shards that the operation returns if you don't specify <code>MaxResults</code>,
      * the response will contain a new <code>NextToken</code> value. You can use the
      * new <code>NextToken</code> value in a subsequent call to the
-     * <code>ListShards</code> operation.</p> <important> <p>Tokens expire after 300
+     * <code>ListShards</code> operation.</p>  <p>Tokens expire after 300
      * seconds. When you obtain a value for <code>NextToken</code> in the response to a
      * call to <code>ListShards</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListShards</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -201,11 +192,11 @@ namespace Model
      * shards that the operation returns if you don't specify <code>MaxResults</code>,
      * the response will contain a new <code>NextToken</code> value. You can use the
      * new <code>NextToken</code> value in a subsequent call to the
-     * <code>ListShards</code> operation.</p> <important> <p>Tokens expire after 300
+     * <code>ListShards</code> operation.</p>  <p>Tokens expire after 300
      * seconds. When you obtain a value for <code>NextToken</code> in the response to a
      * call to <code>ListShards</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListShards</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -224,11 +215,11 @@ namespace Model
      * shards that the operation returns if you don't specify <code>MaxResults</code>,
      * the response will contain a new <code>NextToken</code> value. You can use the
      * new <code>NextToken</code> value in a subsequent call to the
-     * <code>ListShards</code> operation.</p> <important> <p>Tokens expire after 300
+     * <code>ListShards</code> operation.</p>  <p>Tokens expire after 300
      * seconds. When you obtain a value for <code>NextToken</code> in the response to a
      * call to <code>ListShards</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListShards</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline ListShardsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -247,11 +238,11 @@ namespace Model
      * shards that the operation returns if you don't specify <code>MaxResults</code>,
      * the response will contain a new <code>NextToken</code> value. You can use the
      * new <code>NextToken</code> value in a subsequent call to the
-     * <code>ListShards</code> operation.</p> <important> <p>Tokens expire after 300
+     * <code>ListShards</code> operation.</p>  <p>Tokens expire after 300
      * seconds. When you obtain a value for <code>NextToken</code> in the response to a
      * call to <code>ListShards</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListShards</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline ListShardsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -270,11 +261,11 @@ namespace Model
      * shards that the operation returns if you don't specify <code>MaxResults</code>,
      * the response will contain a new <code>NextToken</code> value. You can use the
      * new <code>NextToken</code> value in a subsequent call to the
-     * <code>ListShards</code> operation.</p> <important> <p>Tokens expire after 300
+     * <code>ListShards</code> operation.</p>  <p>Tokens expire after 300
      * seconds. When you obtain a value for <code>NextToken</code> in the response to a
      * call to <code>ListShards</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListShards</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline ListShardsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
@@ -363,7 +354,7 @@ namespace Model
     /**
      * <p>The maximum number of shards to return in a single call to
      * <code>ListShards</code>. The minimum value you can specify for this parameter is
-     * 1, and the maximum is 1,000, which is also the default.</p> <p>When the number
+     * 1, and the maximum is 10,000, which is also the default.</p> <p>When the number
      * of shards to be listed is greater than the value of <code>MaxResults</code>, the
      * response contains a <code>NextToken</code> value that you can use in a
      * subsequent call to <code>ListShards</code> to list the next set of shards.</p>
@@ -373,7 +364,7 @@ namespace Model
     /**
      * <p>The maximum number of shards to return in a single call to
      * <code>ListShards</code>. The minimum value you can specify for this parameter is
-     * 1, and the maximum is 1,000, which is also the default.</p> <p>When the number
+     * 1, and the maximum is 10,000, which is also the default.</p> <p>When the number
      * of shards to be listed is greater than the value of <code>MaxResults</code>, the
      * response contains a <code>NextToken</code> value that you can use in a
      * subsequent call to <code>ListShards</code> to list the next set of shards.</p>
@@ -383,7 +374,7 @@ namespace Model
     /**
      * <p>The maximum number of shards to return in a single call to
      * <code>ListShards</code>. The minimum value you can specify for this parameter is
-     * 1, and the maximum is 1,000, which is also the default.</p> <p>When the number
+     * 1, and the maximum is 10,000, which is also the default.</p> <p>When the number
      * of shards to be listed is greater than the value of <code>MaxResults</code>, the
      * response contains a <code>NextToken</code> value that you can use in a
      * subsequent call to <code>ListShards</code> to list the next set of shards.</p>
@@ -393,7 +384,7 @@ namespace Model
     /**
      * <p>The maximum number of shards to return in a single call to
      * <code>ListShards</code>. The minimum value you can specify for this parameter is
-     * 1, and the maximum is 1,000, which is also the default.</p> <p>When the number
+     * 1, and the maximum is 10,000, which is also the default.</p> <p>When the number
      * of shards to be listed is greater than the value of <code>MaxResults</code>, the
      * response contains a <code>NextToken</code> value that you can use in a
      * subsequent call to <code>ListShards</code> to list the next set of shards.</p>
@@ -461,6 +452,25 @@ namespace Model
      */
     inline ListShardsRequest& WithStreamCreationTimestamp(Aws::Utils::DateTime&& value) { SetStreamCreationTimestamp(std::move(value)); return *this;}
 
+
+    
+    inline const ShardFilter& GetShardFilter() const{ return m_shardFilter; }
+
+    
+    inline bool ShardFilterHasBeenSet() const { return m_shardFilterHasBeenSet; }
+
+    
+    inline void SetShardFilter(const ShardFilter& value) { m_shardFilterHasBeenSet = true; m_shardFilter = value; }
+
+    
+    inline void SetShardFilter(ShardFilter&& value) { m_shardFilterHasBeenSet = true; m_shardFilter = std::move(value); }
+
+    
+    inline ListShardsRequest& WithShardFilter(const ShardFilter& value) { SetShardFilter(value); return *this;}
+
+    
+    inline ListShardsRequest& WithShardFilter(ShardFilter&& value) { SetShardFilter(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_streamName;
@@ -477,6 +487,9 @@ namespace Model
 
     Aws::Utils::DateTime m_streamCreationTimestamp;
     bool m_streamCreationTimestampHasBeenSet;
+
+    ShardFilter m_shardFilter;
+    bool m_shardFilterHasBeenSet;
   };
 
 } // namespace Model

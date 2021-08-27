@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/transcribe/model/StartTranscriptionJobRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,10 +22,15 @@ StartTranscriptionJobRequest::StartTranscriptionJobRequest() :
     m_mediaFormatHasBeenSet(false),
     m_mediaHasBeenSet(false),
     m_outputBucketNameHasBeenSet(false),
+    m_outputKeyHasBeenSet(false),
     m_outputEncryptionKMSKeyIdHasBeenSet(false),
     m_settingsHasBeenSet(false),
+    m_modelSettingsHasBeenSet(false),
     m_jobExecutionSettingsHasBeenSet(false),
-    m_contentRedactionHasBeenSet(false)
+    m_contentRedactionHasBeenSet(false),
+    m_identifyLanguage(false),
+    m_identifyLanguageHasBeenSet(false),
+    m_languageOptionsHasBeenSet(false)
 {
 }
 
@@ -77,6 +72,12 @@ Aws::String StartTranscriptionJobRequest::SerializePayload() const
 
   }
 
+  if(m_outputKeyHasBeenSet)
+  {
+   payload.WithString("OutputKey", m_outputKey);
+
+  }
+
   if(m_outputEncryptionKMSKeyIdHasBeenSet)
   {
    payload.WithString("OutputEncryptionKMSKeyId", m_outputEncryptionKMSKeyId);
@@ -89,6 +90,12 @@ Aws::String StartTranscriptionJobRequest::SerializePayload() const
 
   }
 
+  if(m_modelSettingsHasBeenSet)
+  {
+   payload.WithObject("ModelSettings", m_modelSettings.Jsonize());
+
+  }
+
   if(m_jobExecutionSettingsHasBeenSet)
   {
    payload.WithObject("JobExecutionSettings", m_jobExecutionSettings.Jsonize());
@@ -98,6 +105,23 @@ Aws::String StartTranscriptionJobRequest::SerializePayload() const
   if(m_contentRedactionHasBeenSet)
   {
    payload.WithObject("ContentRedaction", m_contentRedaction.Jsonize());
+
+  }
+
+  if(m_identifyLanguageHasBeenSet)
+  {
+   payload.WithBool("IdentifyLanguage", m_identifyLanguage);
+
+  }
+
+  if(m_languageOptionsHasBeenSet)
+  {
+   Array<JsonValue> languageOptionsJsonList(m_languageOptions.size());
+   for(unsigned languageOptionsIndex = 0; languageOptionsIndex < languageOptionsJsonList.GetLength(); ++languageOptionsIndex)
+   {
+     languageOptionsJsonList[languageOptionsIndex].AsString(LanguageCodeMapper::GetNameForLanguageCode(m_languageOptions[languageOptionsIndex]));
+   }
+   payload.WithArray("LanguageOptions", std::move(languageOptionsJsonList));
 
   }
 

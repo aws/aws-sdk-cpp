@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -43,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>Object that describes the newly created game server resource.</p>
+     * <p>Object that describes the newly registered game server.</p>
      */
     inline const GameServer& GetGameServer() const{ return m_gameServer; }
 
     /**
-     * <p>Object that describes the newly created game server resource.</p>
+     * <p>Object that describes the newly registered game server.</p>
      */
     inline void SetGameServer(const GameServer& value) { m_gameServer = value; }
 
     /**
-     * <p>Object that describes the newly created game server resource.</p>
+     * <p>Object that describes the newly registered game server.</p>
      */
     inline void SetGameServer(GameServer&& value) { m_gameServer = std::move(value); }
 
     /**
-     * <p>Object that describes the newly created game server resource.</p>
+     * <p>Object that describes the newly registered game server.</p>
      */
     inline RegisterGameServerResult& WithGameServer(const GameServer& value) { SetGameServer(value); return *this;}
 
     /**
-     * <p>Object that describes the newly created game server resource.</p>
+     * <p>Object that describes the newly registered game server.</p>
      */
     inline RegisterGameServerResult& WithGameServer(GameServer&& value) { SetGameServer(std::move(value)); return *this;}
 

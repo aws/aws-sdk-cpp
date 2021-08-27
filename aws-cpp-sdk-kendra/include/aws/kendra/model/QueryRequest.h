@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
@@ -20,6 +10,8 @@
 #include <aws/kendra/model/AttributeFilter.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/model/QueryResultType.h>
+#include <aws/kendra/model/SortingConfiguration.h>
+#include <aws/kendra/model/UserContext.h>
 #include <aws/kendra/model/Facet.h>
 #include <utility>
 
@@ -388,27 +380,188 @@ namespace Model
 
     /**
      * <p>Sets the number of results that are returned in each page of results. The
-     * default page size is 100.</p>
+     * default page size is 10. The maximum number of results returned is 100. If you
+     * ask for more than 100 results, only 100 are returned.</p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
 
     /**
      * <p>Sets the number of results that are returned in each page of results. The
-     * default page size is 100.</p>
+     * default page size is 10. The maximum number of results returned is 100. If you
+     * ask for more than 100 results, only 100 are returned.</p>
      */
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
 
     /**
      * <p>Sets the number of results that are returned in each page of results. The
-     * default page size is 100.</p>
+     * default page size is 10. The maximum number of results returned is 100. If you
+     * ask for more than 100 results, only 100 are returned.</p>
      */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
     /**
      * <p>Sets the number of results that are returned in each page of results. The
-     * default page size is 100.</p>
+     * default page size is 10. The maximum number of results returned is 100. If you
+     * ask for more than 100 results, only 100 are returned.</p>
      */
     inline QueryRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
+
+
+    /**
+     * <p>Provides information that determines how the results of the query are sorted.
+     * You can set the field that Amazon Kendra should sort the results on, and specify
+     * whether the results should be sorted in ascending or descending order. In the
+     * case of ties in sorting the results, the results are sorted by relevance.</p>
+     * <p>If you don't provide sorting configuration, the results are sorted by the
+     * relevance that Amazon Kendra determines for the result.</p>
+     */
+    inline const SortingConfiguration& GetSortingConfiguration() const{ return m_sortingConfiguration; }
+
+    /**
+     * <p>Provides information that determines how the results of the query are sorted.
+     * You can set the field that Amazon Kendra should sort the results on, and specify
+     * whether the results should be sorted in ascending or descending order. In the
+     * case of ties in sorting the results, the results are sorted by relevance.</p>
+     * <p>If you don't provide sorting configuration, the results are sorted by the
+     * relevance that Amazon Kendra determines for the result.</p>
+     */
+    inline bool SortingConfigurationHasBeenSet() const { return m_sortingConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides information that determines how the results of the query are sorted.
+     * You can set the field that Amazon Kendra should sort the results on, and specify
+     * whether the results should be sorted in ascending or descending order. In the
+     * case of ties in sorting the results, the results are sorted by relevance.</p>
+     * <p>If you don't provide sorting configuration, the results are sorted by the
+     * relevance that Amazon Kendra determines for the result.</p>
+     */
+    inline void SetSortingConfiguration(const SortingConfiguration& value) { m_sortingConfigurationHasBeenSet = true; m_sortingConfiguration = value; }
+
+    /**
+     * <p>Provides information that determines how the results of the query are sorted.
+     * You can set the field that Amazon Kendra should sort the results on, and specify
+     * whether the results should be sorted in ascending or descending order. In the
+     * case of ties in sorting the results, the results are sorted by relevance.</p>
+     * <p>If you don't provide sorting configuration, the results are sorted by the
+     * relevance that Amazon Kendra determines for the result.</p>
+     */
+    inline void SetSortingConfiguration(SortingConfiguration&& value) { m_sortingConfigurationHasBeenSet = true; m_sortingConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides information that determines how the results of the query are sorted.
+     * You can set the field that Amazon Kendra should sort the results on, and specify
+     * whether the results should be sorted in ascending or descending order. In the
+     * case of ties in sorting the results, the results are sorted by relevance.</p>
+     * <p>If you don't provide sorting configuration, the results are sorted by the
+     * relevance that Amazon Kendra determines for the result.</p>
+     */
+    inline QueryRequest& WithSortingConfiguration(const SortingConfiguration& value) { SetSortingConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides information that determines how the results of the query are sorted.
+     * You can set the field that Amazon Kendra should sort the results on, and specify
+     * whether the results should be sorted in ascending or descending order. In the
+     * case of ties in sorting the results, the results are sorted by relevance.</p>
+     * <p>If you don't provide sorting configuration, the results are sorted by the
+     * relevance that Amazon Kendra determines for the result.</p>
+     */
+    inline QueryRequest& WithSortingConfiguration(SortingConfiguration&& value) { SetSortingConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The user context token.</p>
+     */
+    inline const UserContext& GetUserContext() const{ return m_userContext; }
+
+    /**
+     * <p>The user context token.</p>
+     */
+    inline bool UserContextHasBeenSet() const { return m_userContextHasBeenSet; }
+
+    /**
+     * <p>The user context token.</p>
+     */
+    inline void SetUserContext(const UserContext& value) { m_userContextHasBeenSet = true; m_userContext = value; }
+
+    /**
+     * <p>The user context token.</p>
+     */
+    inline void SetUserContext(UserContext&& value) { m_userContextHasBeenSet = true; m_userContext = std::move(value); }
+
+    /**
+     * <p>The user context token.</p>
+     */
+    inline QueryRequest& WithUserContext(const UserContext& value) { SetUserContext(value); return *this;}
+
+    /**
+     * <p>The user context token.</p>
+     */
+    inline QueryRequest& WithUserContext(UserContext&& value) { SetUserContext(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides an identifier for a specific user. The <code>VisitorId</code> should
+     * be a unique identifier, such as a GUID. Don't use personally identifiable
+     * information, such as the user's email address, as the
+     * <code>VisitorId</code>.</p>
+     */
+    inline const Aws::String& GetVisitorId() const{ return m_visitorId; }
+
+    /**
+     * <p>Provides an identifier for a specific user. The <code>VisitorId</code> should
+     * be a unique identifier, such as a GUID. Don't use personally identifiable
+     * information, such as the user's email address, as the
+     * <code>VisitorId</code>.</p>
+     */
+    inline bool VisitorIdHasBeenSet() const { return m_visitorIdHasBeenSet; }
+
+    /**
+     * <p>Provides an identifier for a specific user. The <code>VisitorId</code> should
+     * be a unique identifier, such as a GUID. Don't use personally identifiable
+     * information, such as the user's email address, as the
+     * <code>VisitorId</code>.</p>
+     */
+    inline void SetVisitorId(const Aws::String& value) { m_visitorIdHasBeenSet = true; m_visitorId = value; }
+
+    /**
+     * <p>Provides an identifier for a specific user. The <code>VisitorId</code> should
+     * be a unique identifier, such as a GUID. Don't use personally identifiable
+     * information, such as the user's email address, as the
+     * <code>VisitorId</code>.</p>
+     */
+    inline void SetVisitorId(Aws::String&& value) { m_visitorIdHasBeenSet = true; m_visitorId = std::move(value); }
+
+    /**
+     * <p>Provides an identifier for a specific user. The <code>VisitorId</code> should
+     * be a unique identifier, such as a GUID. Don't use personally identifiable
+     * information, such as the user's email address, as the
+     * <code>VisitorId</code>.</p>
+     */
+    inline void SetVisitorId(const char* value) { m_visitorIdHasBeenSet = true; m_visitorId.assign(value); }
+
+    /**
+     * <p>Provides an identifier for a specific user. The <code>VisitorId</code> should
+     * be a unique identifier, such as a GUID. Don't use personally identifiable
+     * information, such as the user's email address, as the
+     * <code>VisitorId</code>.</p>
+     */
+    inline QueryRequest& WithVisitorId(const Aws::String& value) { SetVisitorId(value); return *this;}
+
+    /**
+     * <p>Provides an identifier for a specific user. The <code>VisitorId</code> should
+     * be a unique identifier, such as a GUID. Don't use personally identifiable
+     * information, such as the user's email address, as the
+     * <code>VisitorId</code>.</p>
+     */
+    inline QueryRequest& WithVisitorId(Aws::String&& value) { SetVisitorId(std::move(value)); return *this;}
+
+    /**
+     * <p>Provides an identifier for a specific user. The <code>VisitorId</code> should
+     * be a unique identifier, such as a GUID. Don't use personally identifiable
+     * information, such as the user's email address, as the
+     * <code>VisitorId</code>.</p>
+     */
+    inline QueryRequest& WithVisitorId(const char* value) { SetVisitorId(value); return *this;}
 
   private:
 
@@ -435,6 +588,15 @@ namespace Model
 
     int m_pageSize;
     bool m_pageSizeHasBeenSet;
+
+    SortingConfiguration m_sortingConfiguration;
+    bool m_sortingConfigurationHasBeenSet;
+
+    UserContext m_userContext;
+    bool m_userContextHasBeenSet;
+
+    Aws::String m_visitorId;
+    bool m_visitorIdHasBeenSet;
   };
 
 } // namespace Model

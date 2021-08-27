@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
@@ -36,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the API operation.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about the API action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AwsApiCallAction">AWS
    * API Reference</a></p>
    */
@@ -163,32 +153,79 @@ namespace Model
 
 
     /**
-     * <p>The remote IP information of the connection.</p>
+     * <p>The error code of the failed AWS API action.</p>
+     */
+    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p>The error code of the failed AWS API action.</p>
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+
+    /**
+     * <p>The error code of the failed AWS API action.</p>
+     */
+    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+
+    /**
+     * <p>The error code of the failed AWS API action.</p>
+     */
+    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
+
+    /**
+     * <p>The error code of the failed AWS API action.</p>
+     */
+    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
+
+    /**
+     * <p>The error code of the failed AWS API action.</p>
+     */
+    inline AwsApiCallAction& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
+
+    /**
+     * <p>The error code of the failed AWS API action.</p>
+     */
+    inline AwsApiCallAction& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
+
+    /**
+     * <p>The error code of the failed AWS API action.</p>
+     */
+    inline AwsApiCallAction& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+
+
+    /**
+     * <p>The remote IP information of the connection that initiated the AWS API
+     * call.</p>
      */
     inline const RemoteIpDetails& GetRemoteIpDetails() const{ return m_remoteIpDetails; }
 
     /**
-     * <p>The remote IP information of the connection.</p>
+     * <p>The remote IP information of the connection that initiated the AWS API
+     * call.</p>
      */
     inline bool RemoteIpDetailsHasBeenSet() const { return m_remoteIpDetailsHasBeenSet; }
 
     /**
-     * <p>The remote IP information of the connection.</p>
+     * <p>The remote IP information of the connection that initiated the AWS API
+     * call.</p>
      */
     inline void SetRemoteIpDetails(const RemoteIpDetails& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = value; }
 
     /**
-     * <p>The remote IP information of the connection.</p>
+     * <p>The remote IP information of the connection that initiated the AWS API
+     * call.</p>
      */
     inline void SetRemoteIpDetails(RemoteIpDetails&& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = std::move(value); }
 
     /**
-     * <p>The remote IP information of the connection.</p>
+     * <p>The remote IP information of the connection that initiated the AWS API
+     * call.</p>
      */
     inline AwsApiCallAction& WithRemoteIpDetails(const RemoteIpDetails& value) { SetRemoteIpDetails(value); return *this;}
 
     /**
-     * <p>The remote IP information of the connection.</p>
+     * <p>The remote IP information of the connection that initiated the AWS API
+     * call.</p>
      */
     inline AwsApiCallAction& WithRemoteIpDetails(RemoteIpDetails&& value) { SetRemoteIpDetails(std::move(value)); return *this;}
 
@@ -243,6 +280,9 @@ namespace Model
 
     DomainDetails m_domainDetails;
     bool m_domainDetailsHasBeenSet;
+
+    Aws::String m_errorCode;
+    bool m_errorCodeHasBeenSet;
 
     RemoteIpDetails m_remoteIpDetails;
     bool m_remoteIpDetailsHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/transcribestreaming/model/Result.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -36,7 +26,8 @@ Result::Result() :
     m_endTimeHasBeenSet(false),
     m_isPartial(false),
     m_isPartialHasBeenSet(false),
-    m_alternativesHasBeenSet(false)
+    m_alternativesHasBeenSet(false),
+    m_channelIdHasBeenSet(false)
 {
 }
 
@@ -48,7 +39,8 @@ Result::Result(JsonView jsonValue) :
     m_endTimeHasBeenSet(false),
     m_isPartial(false),
     m_isPartialHasBeenSet(false),
-    m_alternativesHasBeenSet(false)
+    m_alternativesHasBeenSet(false),
+    m_channelIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -93,6 +85,13 @@ Result& Result::operator =(JsonView jsonValue)
     m_alternativesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ChannelId"))
+  {
+    m_channelId = jsonValue.GetString("ChannelId");
+
+    m_channelIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -132,6 +131,12 @@ JsonValue Result::Jsonize() const
      alternativesJsonList[alternativesIndex].AsObject(m_alternatives[alternativesIndex].Jsonize());
    }
    payload.WithArray("Alternatives", std::move(alternativesJsonList));
+
+  }
+
+  if(m_channelIdHasBeenSet)
+  {
+   payload.WithString("ChannelId", m_channelId);
 
   }
 

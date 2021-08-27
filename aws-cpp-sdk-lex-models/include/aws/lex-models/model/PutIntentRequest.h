@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
@@ -23,7 +13,10 @@
 #include <aws/lex-models/model/FollowUpPrompt.h>
 #include <aws/lex-models/model/CodeHook.h>
 #include <aws/lex-models/model/FulfillmentActivity.h>
+#include <aws/lex-models/model/KendraConfiguration.h>
 #include <aws/lex-models/model/Slot.h>
+#include <aws/lex-models/model/InputContext.h>
+#include <aws/lex-models/model/OutputContext.h>
 #include <utility>
 
 namespace Aws
@@ -307,9 +300,9 @@ namespace Model
      * <code>OrderPizza</code> intent, you might want to confirm that the order is
      * correct before placing it. For other intents, such as intents that simply
      * respond to user questions, you might not need to ask the user for confirmation
-     * before providing the information. </p> <note> <p>You you must provide both the
+     * before providing the information. </p>  <p>You you must provide both the
      * <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline const Prompt& GetConfirmationPrompt() const{ return m_confirmationPrompt; }
 
@@ -320,9 +313,9 @@ namespace Model
      * <code>OrderPizza</code> intent, you might want to confirm that the order is
      * correct before placing it. For other intents, such as intents that simply
      * respond to user questions, you might not need to ask the user for confirmation
-     * before providing the information. </p> <note> <p>You you must provide both the
+     * before providing the information. </p>  <p>You you must provide both the
      * <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline bool ConfirmationPromptHasBeenSet() const { return m_confirmationPromptHasBeenSet; }
 
@@ -333,9 +326,9 @@ namespace Model
      * <code>OrderPizza</code> intent, you might want to confirm that the order is
      * correct before placing it. For other intents, such as intents that simply
      * respond to user questions, you might not need to ask the user for confirmation
-     * before providing the information. </p> <note> <p>You you must provide both the
+     * before providing the information. </p>  <p>You you must provide both the
      * <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline void SetConfirmationPrompt(const Prompt& value) { m_confirmationPromptHasBeenSet = true; m_confirmationPrompt = value; }
 
@@ -346,9 +339,9 @@ namespace Model
      * <code>OrderPizza</code> intent, you might want to confirm that the order is
      * correct before placing it. For other intents, such as intents that simply
      * respond to user questions, you might not need to ask the user for confirmation
-     * before providing the information. </p> <note> <p>You you must provide both the
+     * before providing the information. </p>  <p>You you must provide both the
      * <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline void SetConfirmationPrompt(Prompt&& value) { m_confirmationPromptHasBeenSet = true; m_confirmationPrompt = std::move(value); }
 
@@ -359,9 +352,9 @@ namespace Model
      * <code>OrderPizza</code> intent, you might want to confirm that the order is
      * correct before placing it. For other intents, such as intents that simply
      * respond to user questions, you might not need to ask the user for confirmation
-     * before providing the information. </p> <note> <p>You you must provide both the
+     * before providing the information. </p>  <p>You you must provide both the
      * <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline PutIntentRequest& WithConfirmationPrompt(const Prompt& value) { SetConfirmationPrompt(value); return *this;}
 
@@ -372,9 +365,9 @@ namespace Model
      * <code>OrderPizza</code> intent, you might want to confirm that the order is
      * correct before placing it. For other intents, such as intents that simply
      * respond to user questions, you might not need to ask the user for confirmation
-     * before providing the information. </p> <note> <p>You you must provide both the
+     * before providing the information. </p>  <p>You you must provide both the
      * <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline PutIntentRequest& WithConfirmationPrompt(Prompt&& value) { SetConfirmationPrompt(std::move(value)); return *this;}
 
@@ -382,54 +375,54 @@ namespace Model
     /**
      * <p>When the user answers "no" to the question defined in
      * <code>confirmationPrompt</code>, Amazon Lex responds with this statement to
-     * acknowledge that the intent was canceled. </p> <note> <p>You must provide both
+     * acknowledge that the intent was canceled. </p>  <p>You must provide both
      * the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline const Statement& GetRejectionStatement() const{ return m_rejectionStatement; }
 
     /**
      * <p>When the user answers "no" to the question defined in
      * <code>confirmationPrompt</code>, Amazon Lex responds with this statement to
-     * acknowledge that the intent was canceled. </p> <note> <p>You must provide both
+     * acknowledge that the intent was canceled. </p>  <p>You must provide both
      * the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline bool RejectionStatementHasBeenSet() const { return m_rejectionStatementHasBeenSet; }
 
     /**
      * <p>When the user answers "no" to the question defined in
      * <code>confirmationPrompt</code>, Amazon Lex responds with this statement to
-     * acknowledge that the intent was canceled. </p> <note> <p>You must provide both
+     * acknowledge that the intent was canceled. </p>  <p>You must provide both
      * the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline void SetRejectionStatement(const Statement& value) { m_rejectionStatementHasBeenSet = true; m_rejectionStatement = value; }
 
     /**
      * <p>When the user answers "no" to the question defined in
      * <code>confirmationPrompt</code>, Amazon Lex responds with this statement to
-     * acknowledge that the intent was canceled. </p> <note> <p>You must provide both
+     * acknowledge that the intent was canceled. </p>  <p>You must provide both
      * the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline void SetRejectionStatement(Statement&& value) { m_rejectionStatementHasBeenSet = true; m_rejectionStatement = std::move(value); }
 
     /**
      * <p>When the user answers "no" to the question defined in
      * <code>confirmationPrompt</code>, Amazon Lex responds with this statement to
-     * acknowledge that the intent was canceled. </p> <note> <p>You must provide both
+     * acknowledge that the intent was canceled. </p>  <p>You must provide both
      * the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline PutIntentRequest& WithRejectionStatement(const Statement& value) { SetRejectionStatement(value); return *this;}
 
     /**
      * <p>When the user answers "no" to the question defined in
      * <code>confirmationPrompt</code>, Amazon Lex responds with this statement to
-     * acknowledge that the intent was canceled. </p> <note> <p>You must provide both
+     * acknowledge that the intent was canceled. </p>  <p>You must provide both
      * the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline PutIntentRequest& WithRejectionStatement(Statement&& value) { SetRejectionStatement(std::move(value)); return *this;}
 
@@ -536,9 +529,9 @@ namespace Model
      * intent is successfully fulfilled by the Lambda function. </p> <p>This element is
      * relevant only if you provide a Lambda function in the
      * <code>fulfillmentActivity</code>. If you return the intent to the client
-     * application, you can't specify this element.</p> <note> <p>The
+     * application, you can't specify this element.</p>  <p>The
      * <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually
-     * exclusive. You can specify only one.</p> </note>
+     * exclusive. You can specify only one.</p> 
      */
     inline const Statement& GetConclusionStatement() const{ return m_conclusionStatement; }
 
@@ -547,9 +540,9 @@ namespace Model
      * intent is successfully fulfilled by the Lambda function. </p> <p>This element is
      * relevant only if you provide a Lambda function in the
      * <code>fulfillmentActivity</code>. If you return the intent to the client
-     * application, you can't specify this element.</p> <note> <p>The
+     * application, you can't specify this element.</p>  <p>The
      * <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually
-     * exclusive. You can specify only one.</p> </note>
+     * exclusive. You can specify only one.</p> 
      */
     inline bool ConclusionStatementHasBeenSet() const { return m_conclusionStatementHasBeenSet; }
 
@@ -558,9 +551,9 @@ namespace Model
      * intent is successfully fulfilled by the Lambda function. </p> <p>This element is
      * relevant only if you provide a Lambda function in the
      * <code>fulfillmentActivity</code>. If you return the intent to the client
-     * application, you can't specify this element.</p> <note> <p>The
+     * application, you can't specify this element.</p>  <p>The
      * <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually
-     * exclusive. You can specify only one.</p> </note>
+     * exclusive. You can specify only one.</p> 
      */
     inline void SetConclusionStatement(const Statement& value) { m_conclusionStatementHasBeenSet = true; m_conclusionStatement = value; }
 
@@ -569,9 +562,9 @@ namespace Model
      * intent is successfully fulfilled by the Lambda function. </p> <p>This element is
      * relevant only if you provide a Lambda function in the
      * <code>fulfillmentActivity</code>. If you return the intent to the client
-     * application, you can't specify this element.</p> <note> <p>The
+     * application, you can't specify this element.</p>  <p>The
      * <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually
-     * exclusive. You can specify only one.</p> </note>
+     * exclusive. You can specify only one.</p> 
      */
     inline void SetConclusionStatement(Statement&& value) { m_conclusionStatementHasBeenSet = true; m_conclusionStatement = std::move(value); }
 
@@ -580,9 +573,9 @@ namespace Model
      * intent is successfully fulfilled by the Lambda function. </p> <p>This element is
      * relevant only if you provide a Lambda function in the
      * <code>fulfillmentActivity</code>. If you return the intent to the client
-     * application, you can't specify this element.</p> <note> <p>The
+     * application, you can't specify this element.</p>  <p>The
      * <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually
-     * exclusive. You can specify only one.</p> </note>
+     * exclusive. You can specify only one.</p> 
      */
     inline PutIntentRequest& WithConclusionStatement(const Statement& value) { SetConclusionStatement(value); return *this;}
 
@@ -591,9 +584,9 @@ namespace Model
      * intent is successfully fulfilled by the Lambda function. </p> <p>This element is
      * relevant only if you provide a Lambda function in the
      * <code>fulfillmentActivity</code>. If you return the intent to the client
-     * application, you can't specify this element.</p> <note> <p>The
+     * application, you can't specify this element.</p>  <p>The
      * <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually
-     * exclusive. You can specify only one.</p> </note>
+     * exclusive. You can specify only one.</p> 
      */
     inline PutIntentRequest& WithConclusionStatement(Statement&& value) { SetConclusionStatement(std::move(value)); return *this;}
 
@@ -926,6 +919,167 @@ namespace Model
      */
     inline PutIntentRequest& WithCreateVersion(bool value) { SetCreateVersion(value); return *this;}
 
+
+    /**
+     * <p>Configuration information required to use the
+     * <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra
+     * index. For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     * AMAZON.KendraSearchIntent</a>.</p>
+     */
+    inline const KendraConfiguration& GetKendraConfiguration() const{ return m_kendraConfiguration; }
+
+    /**
+     * <p>Configuration information required to use the
+     * <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra
+     * index. For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     * AMAZON.KendraSearchIntent</a>.</p>
+     */
+    inline bool KendraConfigurationHasBeenSet() const { return m_kendraConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration information required to use the
+     * <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra
+     * index. For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     * AMAZON.KendraSearchIntent</a>.</p>
+     */
+    inline void SetKendraConfiguration(const KendraConfiguration& value) { m_kendraConfigurationHasBeenSet = true; m_kendraConfiguration = value; }
+
+    /**
+     * <p>Configuration information required to use the
+     * <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra
+     * index. For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     * AMAZON.KendraSearchIntent</a>.</p>
+     */
+    inline void SetKendraConfiguration(KendraConfiguration&& value) { m_kendraConfigurationHasBeenSet = true; m_kendraConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration information required to use the
+     * <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra
+     * index. For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     * AMAZON.KendraSearchIntent</a>.</p>
+     */
+    inline PutIntentRequest& WithKendraConfiguration(const KendraConfiguration& value) { SetKendraConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration information required to use the
+     * <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra
+     * index. For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     * AMAZON.KendraSearchIntent</a>.</p>
+     */
+    inline PutIntentRequest& WithKendraConfiguration(KendraConfiguration&& value) { SetKendraConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An array of <code>InputContext</code> objects that lists the contexts that
+     * must be active for Amazon Lex to choose the intent in a conversation with the
+     * user.</p>
+     */
+    inline const Aws::Vector<InputContext>& GetInputContexts() const{ return m_inputContexts; }
+
+    /**
+     * <p>An array of <code>InputContext</code> objects that lists the contexts that
+     * must be active for Amazon Lex to choose the intent in a conversation with the
+     * user.</p>
+     */
+    inline bool InputContextsHasBeenSet() const { return m_inputContextsHasBeenSet; }
+
+    /**
+     * <p>An array of <code>InputContext</code> objects that lists the contexts that
+     * must be active for Amazon Lex to choose the intent in a conversation with the
+     * user.</p>
+     */
+    inline void SetInputContexts(const Aws::Vector<InputContext>& value) { m_inputContextsHasBeenSet = true; m_inputContexts = value; }
+
+    /**
+     * <p>An array of <code>InputContext</code> objects that lists the contexts that
+     * must be active for Amazon Lex to choose the intent in a conversation with the
+     * user.</p>
+     */
+    inline void SetInputContexts(Aws::Vector<InputContext>&& value) { m_inputContextsHasBeenSet = true; m_inputContexts = std::move(value); }
+
+    /**
+     * <p>An array of <code>InputContext</code> objects that lists the contexts that
+     * must be active for Amazon Lex to choose the intent in a conversation with the
+     * user.</p>
+     */
+    inline PutIntentRequest& WithInputContexts(const Aws::Vector<InputContext>& value) { SetInputContexts(value); return *this;}
+
+    /**
+     * <p>An array of <code>InputContext</code> objects that lists the contexts that
+     * must be active for Amazon Lex to choose the intent in a conversation with the
+     * user.</p>
+     */
+    inline PutIntentRequest& WithInputContexts(Aws::Vector<InputContext>&& value) { SetInputContexts(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of <code>InputContext</code> objects that lists the contexts that
+     * must be active for Amazon Lex to choose the intent in a conversation with the
+     * user.</p>
+     */
+    inline PutIntentRequest& AddInputContexts(const InputContext& value) { m_inputContextsHasBeenSet = true; m_inputContexts.push_back(value); return *this; }
+
+    /**
+     * <p>An array of <code>InputContext</code> objects that lists the contexts that
+     * must be active for Amazon Lex to choose the intent in a conversation with the
+     * user.</p>
+     */
+    inline PutIntentRequest& AddInputContexts(InputContext&& value) { m_inputContextsHasBeenSet = true; m_inputContexts.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>An array of <code>OutputContext</code> objects that lists the contexts that
+     * the intent activates when the intent is fulfilled.</p>
+     */
+    inline const Aws::Vector<OutputContext>& GetOutputContexts() const{ return m_outputContexts; }
+
+    /**
+     * <p>An array of <code>OutputContext</code> objects that lists the contexts that
+     * the intent activates when the intent is fulfilled.</p>
+     */
+    inline bool OutputContextsHasBeenSet() const { return m_outputContextsHasBeenSet; }
+
+    /**
+     * <p>An array of <code>OutputContext</code> objects that lists the contexts that
+     * the intent activates when the intent is fulfilled.</p>
+     */
+    inline void SetOutputContexts(const Aws::Vector<OutputContext>& value) { m_outputContextsHasBeenSet = true; m_outputContexts = value; }
+
+    /**
+     * <p>An array of <code>OutputContext</code> objects that lists the contexts that
+     * the intent activates when the intent is fulfilled.</p>
+     */
+    inline void SetOutputContexts(Aws::Vector<OutputContext>&& value) { m_outputContextsHasBeenSet = true; m_outputContexts = std::move(value); }
+
+    /**
+     * <p>An array of <code>OutputContext</code> objects that lists the contexts that
+     * the intent activates when the intent is fulfilled.</p>
+     */
+    inline PutIntentRequest& WithOutputContexts(const Aws::Vector<OutputContext>& value) { SetOutputContexts(value); return *this;}
+
+    /**
+     * <p>An array of <code>OutputContext</code> objects that lists the contexts that
+     * the intent activates when the intent is fulfilled.</p>
+     */
+    inline PutIntentRequest& WithOutputContexts(Aws::Vector<OutputContext>&& value) { SetOutputContexts(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of <code>OutputContext</code> objects that lists the contexts that
+     * the intent activates when the intent is fulfilled.</p>
+     */
+    inline PutIntentRequest& AddOutputContexts(const OutputContext& value) { m_outputContextsHasBeenSet = true; m_outputContexts.push_back(value); return *this; }
+
+    /**
+     * <p>An array of <code>OutputContext</code> objects that lists the contexts that
+     * the intent activates when the intent is fulfilled.</p>
+     */
+    inline PutIntentRequest& AddOutputContexts(OutputContext&& value) { m_outputContextsHasBeenSet = true; m_outputContexts.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -966,6 +1120,15 @@ namespace Model
 
     bool m_createVersion;
     bool m_createVersionHasBeenSet;
+
+    KendraConfiguration m_kendraConfiguration;
+    bool m_kendraConfigurationHasBeenSet;
+
+    Aws::Vector<InputContext> m_inputContexts;
+    bool m_inputContextsHasBeenSet;
+
+    Aws::Vector<OutputContext> m_outputContexts;
+    bool m_outputContextsHasBeenSet;
   };
 
 } // namespace Model

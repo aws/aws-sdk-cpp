@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -44,8 +34,9 @@ namespace Model
 
   /**
    * <p>Describes the launch specification for one or more Spot Instances. If you
-   * include On-Demand capacity in your fleet request, you can't use
-   * <code>SpotFleetLaunchSpecification</code>; you must use <a
+   * include On-Demand capacity in your fleet request or want to specify an EFA
+   * network device, you can't use <code>SpotFleetLaunchSpecification</code>; you
+   * must use <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotFleetLaunchSpecification">AWS
@@ -489,48 +480,80 @@ namespace Model
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
      * specify subnet IDs and security group IDs using the network interface.</p>
+     *  <p> <code>SpotFleetLaunchSpecification</code> currently does not support
+     * Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+     * 
      */
     inline const Aws::Vector<InstanceNetworkInterfaceSpecification>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
 
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
      * specify subnet IDs and security group IDs using the network interface.</p>
+     *  <p> <code>SpotFleetLaunchSpecification</code> currently does not support
+     * Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+     * 
      */
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
      * specify subnet IDs and security group IDs using the network interface.</p>
+     *  <p> <code>SpotFleetLaunchSpecification</code> currently does not support
+     * Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+     * 
      */
     inline void SetNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
 
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
      * specify subnet IDs and security group IDs using the network interface.</p>
+     *  <p> <code>SpotFleetLaunchSpecification</code> currently does not support
+     * Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+     * 
      */
     inline void SetNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
 
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
      * specify subnet IDs and security group IDs using the network interface.</p>
+     *  <p> <code>SpotFleetLaunchSpecification</code> currently does not support
+     * Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+     * 
      */
     inline SpotFleetLaunchSpecification& WithNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { SetNetworkInterfaces(value); return *this;}
 
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
      * specify subnet IDs and security group IDs using the network interface.</p>
+     *  <p> <code>SpotFleetLaunchSpecification</code> currently does not support
+     * Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+     * 
      */
     inline SpotFleetLaunchSpecification& WithNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
 
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
      * specify subnet IDs and security group IDs using the network interface.</p>
+     *  <p> <code>SpotFleetLaunchSpecification</code> currently does not support
+     * Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+     * 
      */
     inline SpotFleetLaunchSpecification& AddNetworkInterfaces(const InstanceNetworkInterfaceSpecification& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
 
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
      * specify subnet IDs and security group IDs using the network interface.</p>
+     *  <p> <code>SpotFleetLaunchSpecification</code> currently does not support
+     * Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+     * 
      */
     inline SpotFleetLaunchSpecification& AddNetworkInterfaces(InstanceNetworkInterfaceSpecification&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 

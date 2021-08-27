@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
@@ -35,10 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes one or more scheduled scaling action updates for a specified Auto
-   * Scaling group. Used in combination with
-   * <a>BatchPutScheduledUpdateGroupAction</a>.</p> <p>When updating a scheduled
-   * scaling action, all optional parameters are left unchanged if not
+   * <p>Describes information used for one or more scheduled scaling action updates
+   * in a <a>BatchPutScheduledUpdateGroupAction</a> operation.</p> <p>When updating a
+   * scheduled scaling action, all optional parameters are left unchanged if not
    * specified.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ScheduledUpdateGroupActionRequest">AWS
    * API Reference</a></p>
@@ -297,64 +286,68 @@ namespace Model
 
 
     /**
-     * <p>The minimum number of instances in the Auto Scaling group.</p>
+     * <p>The minimum size of the Auto Scaling group.</p>
      */
     inline int GetMinSize() const{ return m_minSize; }
 
     /**
-     * <p>The minimum number of instances in the Auto Scaling group.</p>
+     * <p>The minimum size of the Auto Scaling group.</p>
      */
     inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
 
     /**
-     * <p>The minimum number of instances in the Auto Scaling group.</p>
+     * <p>The minimum size of the Auto Scaling group.</p>
      */
     inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
 
     /**
-     * <p>The minimum number of instances in the Auto Scaling group.</p>
+     * <p>The minimum size of the Auto Scaling group.</p>
      */
     inline ScheduledUpdateGroupActionRequest& WithMinSize(int value) { SetMinSize(value); return *this;}
 
 
     /**
-     * <p>The maximum number of instances in the Auto Scaling group.</p>
+     * <p>The maximum size of the Auto Scaling group.</p>
      */
     inline int GetMaxSize() const{ return m_maxSize; }
 
     /**
-     * <p>The maximum number of instances in the Auto Scaling group.</p>
+     * <p>The maximum size of the Auto Scaling group.</p>
      */
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
 
     /**
-     * <p>The maximum number of instances in the Auto Scaling group.</p>
+     * <p>The maximum size of the Auto Scaling group.</p>
      */
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
 
     /**
-     * <p>The maximum number of instances in the Auto Scaling group.</p>
+     * <p>The maximum size of the Auto Scaling group.</p>
      */
     inline ScheduledUpdateGroupActionRequest& WithMaxSize(int value) { SetMaxSize(value); return *this;}
 
 
     /**
-     * <p>The number of EC2 instances that should be running in the group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group after
+     * the scheduled action runs and the capacity it attempts to maintain.</p>
      */
     inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
 
     /**
-     * <p>The number of EC2 instances that should be running in the group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group after
+     * the scheduled action runs and the capacity it attempts to maintain.</p>
      */
     inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
 
     /**
-     * <p>The number of EC2 instances that should be running in the group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group after
+     * the scheduled action runs and the capacity it attempts to maintain.</p>
      */
     inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /**
-     * <p>The number of EC2 instances that should be running in the group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group after
+     * the scheduled action runs and the capacity it attempts to maintain.</p>
      */
     inline ScheduledUpdateGroupActionRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
 

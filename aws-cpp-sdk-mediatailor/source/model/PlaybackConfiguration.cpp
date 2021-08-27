@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediatailor/model/PlaybackConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,9 +21,11 @@ namespace Model
 PlaybackConfiguration::PlaybackConfiguration() : 
     m_adDecisionServerUrlHasBeenSet(false),
     m_availSuppressionHasBeenSet(false),
+    m_bumperHasBeenSet(false),
     m_cdnConfigurationHasBeenSet(false),
     m_dashConfigurationHasBeenSet(false),
     m_hlsConfigurationHasBeenSet(false),
+    m_manifestProcessingRulesHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_playbackConfigurationArnHasBeenSet(false),
     m_playbackEndpointPrefixHasBeenSet(false),
@@ -50,9 +42,11 @@ PlaybackConfiguration::PlaybackConfiguration() :
 PlaybackConfiguration::PlaybackConfiguration(JsonView jsonValue) : 
     m_adDecisionServerUrlHasBeenSet(false),
     m_availSuppressionHasBeenSet(false),
+    m_bumperHasBeenSet(false),
     m_cdnConfigurationHasBeenSet(false),
     m_dashConfigurationHasBeenSet(false),
     m_hlsConfigurationHasBeenSet(false),
+    m_manifestProcessingRulesHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_playbackConfigurationArnHasBeenSet(false),
     m_playbackEndpointPrefixHasBeenSet(false),
@@ -83,6 +77,13 @@ PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
     m_availSuppressionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Bumper"))
+  {
+    m_bumper = jsonValue.GetObject("Bumper");
+
+    m_bumperHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("CdnConfiguration"))
   {
     m_cdnConfiguration = jsonValue.GetObject("CdnConfiguration");
@@ -102,6 +103,13 @@ PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
     m_hlsConfiguration = jsonValue.GetObject("HlsConfiguration");
 
     m_hlsConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ManifestProcessingRules"))
+  {
+    m_manifestProcessingRules = jsonValue.GetObject("ManifestProcessingRules");
+
+    m_manifestProcessingRulesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Name"))
@@ -189,6 +197,12 @@ JsonValue PlaybackConfiguration::Jsonize() const
 
   }
 
+  if(m_bumperHasBeenSet)
+  {
+   payload.WithObject("Bumper", m_bumper.Jsonize());
+
+  }
+
   if(m_cdnConfigurationHasBeenSet)
   {
    payload.WithObject("CdnConfiguration", m_cdnConfiguration.Jsonize());
@@ -204,6 +218,12 @@ JsonValue PlaybackConfiguration::Jsonize() const
   if(m_hlsConfigurationHasBeenSet)
   {
    payload.WithObject("HlsConfiguration", m_hlsConfiguration.Jsonize());
+
+  }
+
+  if(m_manifestProcessingRulesHasBeenSet)
+  {
+   payload.WithObject("ManifestProcessingRules", m_manifestProcessingRules.Jsonize());
 
   }
 

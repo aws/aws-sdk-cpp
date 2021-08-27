@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
@@ -40,7 +30,7 @@ namespace Model
    * <p>Consists of a primary cluster that accepts writes and an associated secondary
    * cluster that resides in a different AWS region. The secondary cluster accepts
    * only reads. The primary cluster automatically replicates updates to the
-   * secondary cluster.</p> <ul> <li> <p>The <b>GlobalReplicationGroupId</b>
+   * secondary cluster.</p> <ul> <li> <p>The <b>GlobalReplicationGroupIdSuffix</b>
    * represents the name of the Global Datastore, which is what you use to associate
    * a secondary cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/GlobalReplicationGroup">AWS
@@ -222,91 +212,83 @@ namespace Model
 
 
     /**
-     * <p>The Elasticache engine. For preview, it is Redis only.</p>
+     * <p>The Elasticache engine. For Redis only.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>The Elasticache engine. For preview, it is Redis only.</p>
+     * <p>The Elasticache engine. For Redis only.</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>The Elasticache engine. For preview, it is Redis only.</p>
+     * <p>The Elasticache engine. For Redis only.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>The Elasticache engine. For preview, it is Redis only.</p>
+     * <p>The Elasticache engine. For Redis only.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>The Elasticache engine. For preview, it is Redis only.</p>
+     * <p>The Elasticache engine. For Redis only.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>The Elasticache engine. For preview, it is Redis only.</p>
+     * <p>The Elasticache engine. For Redis only.</p>
      */
     inline GlobalReplicationGroup& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The Elasticache engine. For preview, it is Redis only.</p>
+     * <p>The Elasticache engine. For Redis only.</p>
      */
     inline GlobalReplicationGroup& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>The Elasticache engine. For preview, it is Redis only.</p>
+     * <p>The Elasticache engine. For Redis only.</p>
      */
     inline GlobalReplicationGroup& WithEngine(const char* value) { SetEngine(value); return *this;}
 
 
     /**
-     * <p>The Elasticache Redis engine version. For preview, it is Redis version 5.0.5
-     * only.</p>
+     * <p>The Elasticache Redis engine version.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The Elasticache Redis engine version. For preview, it is Redis version 5.0.5
-     * only.</p>
+     * <p>The Elasticache Redis engine version.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
-     * <p>The Elasticache Redis engine version. For preview, it is Redis version 5.0.5
-     * only.</p>
+     * <p>The Elasticache Redis engine version.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The Elasticache Redis engine version. For preview, it is Redis version 5.0.5
-     * only.</p>
+     * <p>The Elasticache Redis engine version.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The Elasticache Redis engine version. For preview, it is Redis version 5.0.5
-     * only.</p>
+     * <p>The Elasticache Redis engine version.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The Elasticache Redis engine version. For preview, it is Redis version 5.0.5
-     * only.</p>
+     * <p>The Elasticache Redis engine version.</p>
      */
     inline GlobalReplicationGroup& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The Elasticache Redis engine version. For preview, it is Redis version 5.0.5
-     * only.</p>
+     * <p>The Elasticache Redis engine version.</p>
      */
     inline GlobalReplicationGroup& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The Elasticache Redis engine version. For preview, it is Redis version 5.0.5
-     * only.</p>
+     * <p>The Elasticache Redis engine version.</p>
      */
     inline GlobalReplicationGroup& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -524,6 +506,47 @@ namespace Model
      */
     inline GlobalReplicationGroup& WithAtRestEncryptionEnabled(bool value) { SetAtRestEncryptionEnabled(value); return *this;}
 
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the global replication group.</p>
+     */
+    inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the global replication group.</p>
+     */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the global replication group.</p>
+     */
+    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the global replication group.</p>
+     */
+    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the global replication group.</p>
+     */
+    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the global replication group.</p>
+     */
+    inline GlobalReplicationGroup& WithARN(const Aws::String& value) { SetARN(value); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the global replication group.</p>
+     */
+    inline GlobalReplicationGroup& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the global replication group.</p>
+     */
+    inline GlobalReplicationGroup& WithARN(const char* value) { SetARN(value); return *this;}
+
   private:
 
     Aws::String m_globalReplicationGroupId;
@@ -561,6 +584,9 @@ namespace Model
 
     bool m_atRestEncryptionEnabled;
     bool m_atRestEncryptionEnabledHasBeenSet;
+
+    Aws::String m_aRN;
+    bool m_aRNHasBeenSet;
   };
 
 } // namespace Model

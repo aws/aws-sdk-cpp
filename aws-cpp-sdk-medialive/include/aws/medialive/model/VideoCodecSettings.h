@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/FrameCaptureSettings.h>
 #include <aws/medialive/model/H264Settings.h>
 #include <aws/medialive/model/H265Settings.h>
+#include <aws/medialive/model/Mpeg2Settings.h>
 #include <utility>
 
 namespace Aws
@@ -105,6 +96,25 @@ namespace Model
     
     inline VideoCodecSettings& WithH265Settings(H265Settings&& value) { SetH265Settings(std::move(value)); return *this;}
 
+
+    
+    inline const Mpeg2Settings& GetMpeg2Settings() const{ return m_mpeg2Settings; }
+
+    
+    inline bool Mpeg2SettingsHasBeenSet() const { return m_mpeg2SettingsHasBeenSet; }
+
+    
+    inline void SetMpeg2Settings(const Mpeg2Settings& value) { m_mpeg2SettingsHasBeenSet = true; m_mpeg2Settings = value; }
+
+    
+    inline void SetMpeg2Settings(Mpeg2Settings&& value) { m_mpeg2SettingsHasBeenSet = true; m_mpeg2Settings = std::move(value); }
+
+    
+    inline VideoCodecSettings& WithMpeg2Settings(const Mpeg2Settings& value) { SetMpeg2Settings(value); return *this;}
+
+    
+    inline VideoCodecSettings& WithMpeg2Settings(Mpeg2Settings&& value) { SetMpeg2Settings(std::move(value)); return *this;}
+
   private:
 
     FrameCaptureSettings m_frameCaptureSettings;
@@ -115,6 +125,9 @@ namespace Model
 
     H265Settings m_h265Settings;
     bool m_h265SettingsHasBeenSet;
+
+    Mpeg2Settings m_mpeg2Settings;
+    bool m_mpeg2SettingsHasBeenSet;
   };
 
 } // namespace Model

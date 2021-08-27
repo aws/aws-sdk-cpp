@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/datasync/DataSync_EXPORTS.h>
@@ -136,81 +126,49 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
-     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
-     * User Guide.</i> </p>
+     * used to monitor and log events in the task. </p>
      */
     inline const Aws::String& GetCloudWatchLogGroupArn() const{ return m_cloudWatchLogGroupArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
-     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
-     * User Guide.</i> </p>
+     * used to monitor and log events in the task. </p>
      */
     inline bool CloudWatchLogGroupArnHasBeenSet() const { return m_cloudWatchLogGroupArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
-     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
-     * User Guide.</i> </p>
+     * used to monitor and log events in the task. </p>
      */
     inline void SetCloudWatchLogGroupArn(const Aws::String& value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
-     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
-     * User Guide.</i> </p>
+     * used to monitor and log events in the task. </p>
      */
     inline void SetCloudWatchLogGroupArn(Aws::String&& value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
-     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
-     * User Guide.</i> </p>
+     * used to monitor and log events in the task. </p>
      */
     inline void SetCloudWatchLogGroupArn(const char* value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
-     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
-     * User Guide.</i> </p>
+     * used to monitor and log events in the task. </p>
      */
     inline CreateTaskRequest& WithCloudWatchLogGroupArn(const Aws::String& value) { SetCloudWatchLogGroupArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
-     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
-     * User Guide.</i> </p>
+     * used to monitor and log events in the task. </p>
      */
     inline CreateTaskRequest& WithCloudWatchLogGroupArn(Aws::String&& value) { SetCloudWatchLogGroupArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
-     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
-     * User Guide.</i> </p>
+     * used to monitor and log events in the task. </p>
      */
     inline CreateTaskRequest& WithCloudWatchLogGroupArn(const char* value) { SetCloudWatchLogGroupArn(value); return *this;}
 
@@ -270,8 +228,8 @@ namespace Model
      * You can configure these options to preserve metadata such as user ID (UID) and
      * group ID (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
-     * specifying the <code>OverrideOptions</code> before starting a the task
-     * execution. For more information, see the operation. </p>
+     * specifying the <code>OverrideOptions</code> before starting the task execution.
+     * For more information, see the operation. </p>
      */
     inline const Options& GetOptions() const{ return m_options; }
 
@@ -281,8 +239,8 @@ namespace Model
      * You can configure these options to preserve metadata such as user ID (UID) and
      * group ID (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
-     * specifying the <code>OverrideOptions</code> before starting a the task
-     * execution. For more information, see the operation. </p>
+     * specifying the <code>OverrideOptions</code> before starting the task execution.
+     * For more information, see the operation. </p>
      */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
 
@@ -292,8 +250,8 @@ namespace Model
      * You can configure these options to preserve metadata such as user ID (UID) and
      * group ID (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
-     * specifying the <code>OverrideOptions</code> before starting a the task
-     * execution. For more information, see the operation. </p>
+     * specifying the <code>OverrideOptions</code> before starting the task execution.
+     * For more information, see the operation. </p>
      */
     inline void SetOptions(const Options& value) { m_optionsHasBeenSet = true; m_options = value; }
 
@@ -303,8 +261,8 @@ namespace Model
      * You can configure these options to preserve metadata such as user ID (UID) and
      * group ID (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
-     * specifying the <code>OverrideOptions</code> before starting a the task
-     * execution. For more information, see the operation. </p>
+     * specifying the <code>OverrideOptions</code> before starting the task execution.
+     * For more information, see the operation. </p>
      */
     inline void SetOptions(Options&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
@@ -314,8 +272,8 @@ namespace Model
      * You can configure these options to preserve metadata such as user ID (UID) and
      * group ID (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
-     * specifying the <code>OverrideOptions</code> before starting a the task
-     * execution. For more information, see the operation. </p>
+     * specifying the <code>OverrideOptions</code> before starting the task execution.
+     * For more information, see the operation. </p>
      */
     inline CreateTaskRequest& WithOptions(const Options& value) { SetOptions(value); return *this;}
 
@@ -325,8 +283,8 @@ namespace Model
      * You can configure these options to preserve metadata such as user ID (UID) and
      * group ID (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
-     * specifying the <code>OverrideOptions</code> before starting a the task
-     * execution. For more information, see the operation. </p>
+     * specifying the <code>OverrideOptions</code> before starting the task execution.
+     * For more information, see the operation. </p>
      */
     inline CreateTaskRequest& WithOptions(Options&& value) { SetOptions(std::move(value)); return *this;}
 
@@ -335,7 +293,7 @@ namespace Model
      * <p>A list of filter rules that determines which files to exclude from a task.
      * The list should contain a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline const Aws::Vector<FilterRule>& GetExcludes() const{ return m_excludes; }
 
@@ -343,7 +301,7 @@ namespace Model
      * <p>A list of filter rules that determines which files to exclude from a task.
      * The list should contain a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline bool ExcludesHasBeenSet() const { return m_excludesHasBeenSet; }
 
@@ -351,7 +309,7 @@ namespace Model
      * <p>A list of filter rules that determines which files to exclude from a task.
      * The list should contain a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline void SetExcludes(const Aws::Vector<FilterRule>& value) { m_excludesHasBeenSet = true; m_excludes = value; }
 
@@ -359,7 +317,7 @@ namespace Model
      * <p>A list of filter rules that determines which files to exclude from a task.
      * The list should contain a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline void SetExcludes(Aws::Vector<FilterRule>&& value) { m_excludesHasBeenSet = true; m_excludes = std::move(value); }
 
@@ -367,7 +325,7 @@ namespace Model
      * <p>A list of filter rules that determines which files to exclude from a task.
      * The list should contain a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline CreateTaskRequest& WithExcludes(const Aws::Vector<FilterRule>& value) { SetExcludes(value); return *this;}
 
@@ -375,7 +333,7 @@ namespace Model
      * <p>A list of filter rules that determines which files to exclude from a task.
      * The list should contain a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline CreateTaskRequest& WithExcludes(Aws::Vector<FilterRule>&& value) { SetExcludes(std::move(value)); return *this;}
 
@@ -383,7 +341,7 @@ namespace Model
      * <p>A list of filter rules that determines which files to exclude from a task.
      * The list should contain a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline CreateTaskRequest& AddExcludes(const FilterRule& value) { m_excludesHasBeenSet = true; m_excludes.push_back(value); return *this; }
 
@@ -391,7 +349,7 @@ namespace Model
      * <p>A list of filter rules that determines which files to exclude from a task.
      * The list should contain a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline CreateTaskRequest& AddExcludes(FilterRule&& value) { m_excludesHasBeenSet = true; m_excludes.push_back(std::move(value)); return *this; }
 

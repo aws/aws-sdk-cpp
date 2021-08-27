@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
@@ -21,8 +11,10 @@
 #include <aws/transcribe/model/MediaFormat.h>
 #include <aws/transcribe/model/Media.h>
 #include <aws/transcribe/model/Settings.h>
+#include <aws/transcribe/model/ModelSettings.h>
 #include <aws/transcribe/model/JobExecutionSettings.h>
 #include <aws/transcribe/model/ContentRedaction.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -51,58 +43,74 @@ namespace Model
 
 
     /**
-     * <p>The name of the job. Note that you can't use the strings "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * <p>The name of the job. You can't use the strings "<code>.</code>" or
+     * "<code>..</code>" by themselves as the job name. The name must also be unique
+     * within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline const Aws::String& GetTranscriptionJobName() const{ return m_transcriptionJobName; }
 
     /**
-     * <p>The name of the job. Note that you can't use the strings "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * <p>The name of the job. You can't use the strings "<code>.</code>" or
+     * "<code>..</code>" by themselves as the job name. The name must also be unique
+     * within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline bool TranscriptionJobNameHasBeenSet() const { return m_transcriptionJobNameHasBeenSet; }
 
     /**
-     * <p>The name of the job. Note that you can't use the strings "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * <p>The name of the job. You can't use the strings "<code>.</code>" or
+     * "<code>..</code>" by themselves as the job name. The name must also be unique
+     * within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline void SetTranscriptionJobName(const Aws::String& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = value; }
 
     /**
-     * <p>The name of the job. Note that you can't use the strings "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * <p>The name of the job. You can't use the strings "<code>.</code>" or
+     * "<code>..</code>" by themselves as the job name. The name must also be unique
+     * within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline void SetTranscriptionJobName(Aws::String&& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = std::move(value); }
 
     /**
-     * <p>The name of the job. Note that you can't use the strings "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * <p>The name of the job. You can't use the strings "<code>.</code>" or
+     * "<code>..</code>" by themselves as the job name. The name must also be unique
+     * within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline void SetTranscriptionJobName(const char* value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName.assign(value); }
 
     /**
-     * <p>The name of the job. Note that you can't use the strings "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * <p>The name of the job. You can't use the strings "<code>.</code>" or
+     * "<code>..</code>" by themselves as the job name. The name must also be unique
+     * within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline StartTranscriptionJobRequest& WithTranscriptionJobName(const Aws::String& value) { SetTranscriptionJobName(value); return *this;}
 
     /**
-     * <p>The name of the job. Note that you can't use the strings "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * <p>The name of the job. You can't use the strings "<code>.</code>" or
+     * "<code>..</code>" by themselves as the job name. The name must also be unique
+     * within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline StartTranscriptionJobRequest& WithTranscriptionJobName(Aws::String&& value) { SetTranscriptionJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job. Note that you can't use the strings "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * <p>The name of the job. You can't use the strings "<code>.</code>" or
+     * "<code>..</code>" by themselves as the job name. The name must also be unique
+     * within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline StartTranscriptionJobRequest& WithTranscriptionJobName(const char* value) { SetTranscriptionJobName(value); return *this;}
 
@@ -435,6 +443,143 @@ namespace Model
 
 
     /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * transcription job.</p> <p>If you don't specify an output key, Amazon Transcribe
+     * stores the output of your transcription job in the Amazon S3 bucket you
+     * specified. By default, the object key is "your-transcription-job-name.json".</p>
+     * <p>You can use output keys to specify the Amazon S3 prefix and file name of the
+     * transcription output. For example, specifying the Amazon S3 prefix,
+     * "folder1/folder2/", as an output key would lead to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline const Aws::String& GetOutputKey() const{ return m_outputKey; }
+
+    /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * transcription job.</p> <p>If you don't specify an output key, Amazon Transcribe
+     * stores the output of your transcription job in the Amazon S3 bucket you
+     * specified. By default, the object key is "your-transcription-job-name.json".</p>
+     * <p>You can use output keys to specify the Amazon S3 prefix and file name of the
+     * transcription output. For example, specifying the Amazon S3 prefix,
+     * "folder1/folder2/", as an output key would lead to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline bool OutputKeyHasBeenSet() const { return m_outputKeyHasBeenSet; }
+
+    /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * transcription job.</p> <p>If you don't specify an output key, Amazon Transcribe
+     * stores the output of your transcription job in the Amazon S3 bucket you
+     * specified. By default, the object key is "your-transcription-job-name.json".</p>
+     * <p>You can use output keys to specify the Amazon S3 prefix and file name of the
+     * transcription output. For example, specifying the Amazon S3 prefix,
+     * "folder1/folder2/", as an output key would lead to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline void SetOutputKey(const Aws::String& value) { m_outputKeyHasBeenSet = true; m_outputKey = value; }
+
+    /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * transcription job.</p> <p>If you don't specify an output key, Amazon Transcribe
+     * stores the output of your transcription job in the Amazon S3 bucket you
+     * specified. By default, the object key is "your-transcription-job-name.json".</p>
+     * <p>You can use output keys to specify the Amazon S3 prefix and file name of the
+     * transcription output. For example, specifying the Amazon S3 prefix,
+     * "folder1/folder2/", as an output key would lead to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline void SetOutputKey(Aws::String&& value) { m_outputKeyHasBeenSet = true; m_outputKey = std::move(value); }
+
+    /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * transcription job.</p> <p>If you don't specify an output key, Amazon Transcribe
+     * stores the output of your transcription job in the Amazon S3 bucket you
+     * specified. By default, the object key is "your-transcription-job-name.json".</p>
+     * <p>You can use output keys to specify the Amazon S3 prefix and file name of the
+     * transcription output. For example, specifying the Amazon S3 prefix,
+     * "folder1/folder2/", as an output key would lead to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline void SetOutputKey(const char* value) { m_outputKeyHasBeenSet = true; m_outputKey.assign(value); }
+
+    /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * transcription job.</p> <p>If you don't specify an output key, Amazon Transcribe
+     * stores the output of your transcription job in the Amazon S3 bucket you
+     * specified. By default, the object key is "your-transcription-job-name.json".</p>
+     * <p>You can use output keys to specify the Amazon S3 prefix and file name of the
+     * transcription output. For example, specifying the Amazon S3 prefix,
+     * "folder1/folder2/", as an output key would lead to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline StartTranscriptionJobRequest& WithOutputKey(const Aws::String& value) { SetOutputKey(value); return *this;}
+
+    /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * transcription job.</p> <p>If you don't specify an output key, Amazon Transcribe
+     * stores the output of your transcription job in the Amazon S3 bucket you
+     * specified. By default, the object key is "your-transcription-job-name.json".</p>
+     * <p>You can use output keys to specify the Amazon S3 prefix and file name of the
+     * transcription output. For example, specifying the Amazon S3 prefix,
+     * "folder1/folder2/", as an output key would lead to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline StartTranscriptionJobRequest& WithOutputKey(Aws::String&& value) { SetOutputKey(std::move(value)); return *this;}
+
+    /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * transcription job.</p> <p>If you don't specify an output key, Amazon Transcribe
+     * stores the output of your transcription job in the Amazon S3 bucket you
+     * specified. By default, the object key is "your-transcription-job-name.json".</p>
+     * <p>You can use output keys to specify the Amazon S3 prefix and file name of the
+     * transcription output. For example, specifying the Amazon S3 prefix,
+     * "folder1/folder2/", as an output key would lead to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline StartTranscriptionJobRequest& WithOutputKey(const char* value) { SetOutputKey(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key
      * used to encrypt the output of the transcription job. The user calling the
      * <code>StartTranscriptionJob</code> operation must have permission to use the
@@ -625,6 +770,43 @@ namespace Model
 
 
     /**
+     * <p>Choose the custom language model you use for your transcription job in this
+     * parameter.</p>
+     */
+    inline const ModelSettings& GetModelSettings() const{ return m_modelSettings; }
+
+    /**
+     * <p>Choose the custom language model you use for your transcription job in this
+     * parameter.</p>
+     */
+    inline bool ModelSettingsHasBeenSet() const { return m_modelSettingsHasBeenSet; }
+
+    /**
+     * <p>Choose the custom language model you use for your transcription job in this
+     * parameter.</p>
+     */
+    inline void SetModelSettings(const ModelSettings& value) { m_modelSettingsHasBeenSet = true; m_modelSettings = value; }
+
+    /**
+     * <p>Choose the custom language model you use for your transcription job in this
+     * parameter.</p>
+     */
+    inline void SetModelSettings(ModelSettings&& value) { m_modelSettingsHasBeenSet = true; m_modelSettings = std::move(value); }
+
+    /**
+     * <p>Choose the custom language model you use for your transcription job in this
+     * parameter.</p>
+     */
+    inline StartTranscriptionJobRequest& WithModelSettings(const ModelSettings& value) { SetModelSettings(value); return *this;}
+
+    /**
+     * <p>Choose the custom language model you use for your transcription job in this
+     * parameter.</p>
+     */
+    inline StartTranscriptionJobRequest& WithModelSettings(ModelSettings&& value) { SetModelSettings(std::move(value)); return *this;}
+
+
+    /**
      * <p>Provides information about how a transcription job is executed. Use this
      * field to indicate that the job can be queued for deferred execution if the
      * concurrency limit is reached and there are no slots available to immediately run
@@ -703,6 +885,96 @@ namespace Model
      */
     inline StartTranscriptionJobRequest& WithContentRedaction(ContentRedaction&& value) { SetContentRedaction(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Set this field to <code>true</code> to enable automatic language
+     * identification. Automatic language identification is disabled by default. You
+     * receive a <code>BadRequestException</code> error if you enter a value for a
+     * <code>LanguageCode</code>.</p>
+     */
+    inline bool GetIdentifyLanguage() const{ return m_identifyLanguage; }
+
+    /**
+     * <p>Set this field to <code>true</code> to enable automatic language
+     * identification. Automatic language identification is disabled by default. You
+     * receive a <code>BadRequestException</code> error if you enter a value for a
+     * <code>LanguageCode</code>.</p>
+     */
+    inline bool IdentifyLanguageHasBeenSet() const { return m_identifyLanguageHasBeenSet; }
+
+    /**
+     * <p>Set this field to <code>true</code> to enable automatic language
+     * identification. Automatic language identification is disabled by default. You
+     * receive a <code>BadRequestException</code> error if you enter a value for a
+     * <code>LanguageCode</code>.</p>
+     */
+    inline void SetIdentifyLanguage(bool value) { m_identifyLanguageHasBeenSet = true; m_identifyLanguage = value; }
+
+    /**
+     * <p>Set this field to <code>true</code> to enable automatic language
+     * identification. Automatic language identification is disabled by default. You
+     * receive a <code>BadRequestException</code> error if you enter a value for a
+     * <code>LanguageCode</code>.</p>
+     */
+    inline StartTranscriptionJobRequest& WithIdentifyLanguage(bool value) { SetIdentifyLanguage(value); return *this;}
+
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * collection of audio files. Automatic language identification chooses a language
+     * that best matches the source audio from that list.</p>
+     */
+    inline const Aws::Vector<LanguageCode>& GetLanguageOptions() const{ return m_languageOptions; }
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * collection of audio files. Automatic language identification chooses a language
+     * that best matches the source audio from that list.</p>
+     */
+    inline bool LanguageOptionsHasBeenSet() const { return m_languageOptionsHasBeenSet; }
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * collection of audio files. Automatic language identification chooses a language
+     * that best matches the source audio from that list.</p>
+     */
+    inline void SetLanguageOptions(const Aws::Vector<LanguageCode>& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = value; }
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * collection of audio files. Automatic language identification chooses a language
+     * that best matches the source audio from that list.</p>
+     */
+    inline void SetLanguageOptions(Aws::Vector<LanguageCode>&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = std::move(value); }
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * collection of audio files. Automatic language identification chooses a language
+     * that best matches the source audio from that list.</p>
+     */
+    inline StartTranscriptionJobRequest& WithLanguageOptions(const Aws::Vector<LanguageCode>& value) { SetLanguageOptions(value); return *this;}
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * collection of audio files. Automatic language identification chooses a language
+     * that best matches the source audio from that list.</p>
+     */
+    inline StartTranscriptionJobRequest& WithLanguageOptions(Aws::Vector<LanguageCode>&& value) { SetLanguageOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * collection of audio files. Automatic language identification chooses a language
+     * that best matches the source audio from that list.</p>
+     */
+    inline StartTranscriptionJobRequest& AddLanguageOptions(const LanguageCode& value) { m_languageOptionsHasBeenSet = true; m_languageOptions.push_back(value); return *this; }
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * collection of audio files. Automatic language identification chooses a language
+     * that best matches the source audio from that list.</p>
+     */
+    inline StartTranscriptionJobRequest& AddLanguageOptions(LanguageCode&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_transcriptionJobName;
@@ -723,17 +995,29 @@ namespace Model
     Aws::String m_outputBucketName;
     bool m_outputBucketNameHasBeenSet;
 
+    Aws::String m_outputKey;
+    bool m_outputKeyHasBeenSet;
+
     Aws::String m_outputEncryptionKMSKeyId;
     bool m_outputEncryptionKMSKeyIdHasBeenSet;
 
     Settings m_settings;
     bool m_settingsHasBeenSet;
 
+    ModelSettings m_modelSettings;
+    bool m_modelSettingsHasBeenSet;
+
     JobExecutionSettings m_jobExecutionSettings;
     bool m_jobExecutionSettingsHasBeenSet;
 
     ContentRedaction m_contentRedaction;
     bool m_contentRedactionHasBeenSet;
+
+    bool m_identifyLanguage;
+    bool m_identifyLanguageHasBeenSet;
+
+    Aws::Vector<LanguageCode> m_languageOptions;
+    bool m_languageOptionsHasBeenSet;
   };
 
 } // namespace Model

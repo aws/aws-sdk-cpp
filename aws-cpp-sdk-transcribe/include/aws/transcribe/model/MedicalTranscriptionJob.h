@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
@@ -43,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>The data structure that containts the information for a medical transcription
+   * <p>The data structure that contains the information for a medical transcription
    * job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/MedicalTranscriptionJob">AWS
    * API Reference</a></p>
@@ -420,7 +410,7 @@ namespace Model
      * <code>Invalid file size: file size too large</code>- The size of your audio file
      * is larger than what Amazon Transcribe Medical can process. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
      * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
      * <code>Invalid number of channels: number of channels too large</code>- Your
      * audio contains more channels than Amazon Transcribe Medical is configured to
@@ -452,7 +442,7 @@ namespace Model
      * <code>Invalid file size: file size too large</code>- The size of your audio file
      * is larger than what Amazon Transcribe Medical can process. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
      * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
      * <code>Invalid number of channels: number of channels too large</code>- Your
      * audio contains more channels than Amazon Transcribe Medical is configured to
@@ -484,7 +474,7 @@ namespace Model
      * <code>Invalid file size: file size too large</code>- The size of your audio file
      * is larger than what Amazon Transcribe Medical can process. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
      * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
      * <code>Invalid number of channels: number of channels too large</code>- Your
      * audio contains more channels than Amazon Transcribe Medical is configured to
@@ -516,7 +506,7 @@ namespace Model
      * <code>Invalid file size: file size too large</code>- The size of your audio file
      * is larger than what Amazon Transcribe Medical can process. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
      * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
      * <code>Invalid number of channels: number of channels too large</code>- Your
      * audio contains more channels than Amazon Transcribe Medical is configured to
@@ -548,7 +538,7 @@ namespace Model
      * <code>Invalid file size: file size too large</code>- The size of your audio file
      * is larger than what Amazon Transcribe Medical can process. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
      * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
      * <code>Invalid number of channels: number of channels too large</code>- Your
      * audio contains more channels than Amazon Transcribe Medical is configured to
@@ -580,7 +570,7 @@ namespace Model
      * <code>Invalid file size: file size too large</code>- The size of your audio file
      * is larger than what Amazon Transcribe Medical can process. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
      * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
      * <code>Invalid number of channels: number of channels too large</code>- Your
      * audio contains more channels than Amazon Transcribe Medical is configured to
@@ -612,7 +602,7 @@ namespace Model
      * <code>Invalid file size: file size too large</code>- The size of your audio file
      * is larger than what Amazon Transcribe Medical can process. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
      * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
      * <code>Invalid number of channels: number of channels too large</code>- Your
      * audio contains more channels than Amazon Transcribe Medical is configured to
@@ -644,7 +634,7 @@ namespace Model
      * <code>Invalid file size: file size too large</code>- The size of your audio file
      * is larger than what Amazon Transcribe Medical can process. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
      * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
      * <code>Invalid number of channels: number of channels too large</code>- Your
      * audio contains more channels than Amazon Transcribe Medical is configured to

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/transcribestreaming/model/StartStreamTranscriptionRequest.h>
 #include <aws/core/AmazonWebServiceResult.h>
@@ -33,6 +23,15 @@ StartStreamTranscriptionRequest::StartStreamTranscriptionRequest() :
     m_mediaEncodingHasBeenSet(false),
     m_vocabularyNameHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
+    m_vocabularyFilterNameHasBeenSet(false),
+    m_vocabularyFilterMethod(VocabularyFilterMethod::NOT_SET),
+    m_vocabularyFilterMethodHasBeenSet(false),
+    m_showSpeakerLabel(false),
+    m_showSpeakerLabelHasBeenSet(false),
+    m_enableChannelIdentification(false),
+    m_enableChannelIdentificationHasBeenSet(false),
+    m_numberOfChannels(0),
+    m_numberOfChannelsHasBeenSet(false),
     m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
@@ -76,6 +75,39 @@ Aws::Http::HeaderValueCollection StartStreamTranscriptionRequest::GetRequestSpec
   {
     ss << m_sessionId;
     headers.emplace("x-amzn-transcribe-session-id",  ss.str());
+    ss.str("");
+  }
+
+  if(m_vocabularyFilterNameHasBeenSet)
+  {
+    ss << m_vocabularyFilterName;
+    headers.emplace("x-amzn-transcribe-vocabulary-filter-name",  ss.str());
+    ss.str("");
+  }
+
+  if(m_vocabularyFilterMethodHasBeenSet)
+  {
+    headers.emplace("x-amzn-transcribe-vocabulary-filter-method", VocabularyFilterMethodMapper::GetNameForVocabularyFilterMethod(m_vocabularyFilterMethod));
+  }
+
+  if(m_showSpeakerLabelHasBeenSet)
+  {
+    ss << m_showSpeakerLabel;
+    headers.emplace("x-amzn-transcribe-show-speaker-label",  ss.str());
+    ss.str("");
+  }
+
+  if(m_enableChannelIdentificationHasBeenSet)
+  {
+    ss << m_enableChannelIdentification;
+    headers.emplace("x-amzn-transcribe-enable-channel-identification",  ss.str());
+    ss.str("");
+  }
+
+  if(m_numberOfChannelsHasBeenSet)
+  {
+    ss << m_numberOfChannels;
+    headers.emplace("x-amzn-transcribe-number-of-channels",  ss.str());
     ss.str("");
   }
 

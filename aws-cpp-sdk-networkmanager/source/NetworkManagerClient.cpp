@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -32,10 +22,13 @@
 #include <aws/networkmanager/NetworkManagerErrorMarshaller.h>
 #include <aws/networkmanager/model/AssociateCustomerGatewayRequest.h>
 #include <aws/networkmanager/model/AssociateLinkRequest.h>
+#include <aws/networkmanager/model/AssociateTransitGatewayConnectPeerRequest.h>
+#include <aws/networkmanager/model/CreateConnectionRequest.h>
 #include <aws/networkmanager/model/CreateDeviceRequest.h>
 #include <aws/networkmanager/model/CreateGlobalNetworkRequest.h>
 #include <aws/networkmanager/model/CreateLinkRequest.h>
 #include <aws/networkmanager/model/CreateSiteRequest.h>
+#include <aws/networkmanager/model/DeleteConnectionRequest.h>
 #include <aws/networkmanager/model/DeleteDeviceRequest.h>
 #include <aws/networkmanager/model/DeleteGlobalNetworkRequest.h>
 #include <aws/networkmanager/model/DeleteLinkRequest.h>
@@ -44,16 +37,20 @@
 #include <aws/networkmanager/model/DescribeGlobalNetworksRequest.h>
 #include <aws/networkmanager/model/DisassociateCustomerGatewayRequest.h>
 #include <aws/networkmanager/model/DisassociateLinkRequest.h>
+#include <aws/networkmanager/model/DisassociateTransitGatewayConnectPeerRequest.h>
+#include <aws/networkmanager/model/GetConnectionsRequest.h>
 #include <aws/networkmanager/model/GetCustomerGatewayAssociationsRequest.h>
 #include <aws/networkmanager/model/GetDevicesRequest.h>
 #include <aws/networkmanager/model/GetLinkAssociationsRequest.h>
 #include <aws/networkmanager/model/GetLinksRequest.h>
 #include <aws/networkmanager/model/GetSitesRequest.h>
+#include <aws/networkmanager/model/GetTransitGatewayConnectPeerAssociationsRequest.h>
 #include <aws/networkmanager/model/GetTransitGatewayRegistrationsRequest.h>
 #include <aws/networkmanager/model/ListTagsForResourceRequest.h>
 #include <aws/networkmanager/model/RegisterTransitGatewayRequest.h>
 #include <aws/networkmanager/model/TagResourceRequest.h>
 #include <aws/networkmanager/model/UntagResourceRequest.h>
+#include <aws/networkmanager/model/UpdateConnectionRequest.h>
 #include <aws/networkmanager/model/UpdateDeviceRequest.h>
 #include <aws/networkmanager/model/UpdateGlobalNetworkRequest.h>
 #include <aws/networkmanager/model/UpdateLinkRequest.h>
@@ -74,7 +71,7 @@ static const char* ALLOCATION_TAG = "NetworkManagerClient";
 NetworkManagerClient::NetworkManagerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<NetworkManagerErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -84,7 +81,7 @@ NetworkManagerClient::NetworkManagerClient(const Client::ClientConfiguration& cl
 NetworkManagerClient::NetworkManagerClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<NetworkManagerErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -95,7 +92,7 @@ NetworkManagerClient::NetworkManagerClient(const std::shared_ptr<AWSCredentialsP
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<NetworkManagerErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -108,6 +105,7 @@ NetworkManagerClient::~NetworkManagerClient()
 
 void NetworkManagerClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("NetworkManager");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -144,15 +142,7 @@ AssociateCustomerGatewayOutcome NetworkManagerClient::AssociateCustomerGateway(c
   ss << request.GetGlobalNetworkId();
   ss << "/customer-gateway-associations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateCustomerGatewayOutcome(AssociateCustomerGatewayResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AssociateCustomerGatewayOutcome(outcome.GetError());
-  }
+  return AssociateCustomerGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateCustomerGatewayOutcomeCallable NetworkManagerClient::AssociateCustomerGatewayCallable(const AssociateCustomerGatewayRequest& request) const
@@ -186,15 +176,7 @@ AssociateLinkOutcome NetworkManagerClient::AssociateLink(const AssociateLinkRequ
   ss << request.GetGlobalNetworkId();
   ss << "/link-associations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateLinkOutcome(AssociateLinkResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AssociateLinkOutcome(outcome.GetError());
-  }
+  return AssociateLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateLinkOutcomeCallable NetworkManagerClient::AssociateLinkCallable(const AssociateLinkRequest& request) const
@@ -215,6 +197,74 @@ void NetworkManagerClient::AssociateLinkAsyncHelper(const AssociateLinkRequest& 
   handler(this, request, AssociateLink(request), context);
 }
 
+AssociateTransitGatewayConnectPeerOutcome NetworkManagerClient::AssociateTransitGatewayConnectPeer(const AssociateTransitGatewayConnectPeerRequest& request) const
+{
+  if (!request.GlobalNetworkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateTransitGatewayConnectPeer", "Required field: GlobalNetworkId, is not set");
+    return AssociateTransitGatewayConnectPeerOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/global-networks/";
+  ss << request.GetGlobalNetworkId();
+  ss << "/transit-gateway-connect-peer-associations";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return AssociateTransitGatewayConnectPeerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateTransitGatewayConnectPeerOutcomeCallable NetworkManagerClient::AssociateTransitGatewayConnectPeerCallable(const AssociateTransitGatewayConnectPeerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateTransitGatewayConnectPeerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateTransitGatewayConnectPeer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::AssociateTransitGatewayConnectPeerAsync(const AssociateTransitGatewayConnectPeerRequest& request, const AssociateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateTransitGatewayConnectPeerAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::AssociateTransitGatewayConnectPeerAsyncHelper(const AssociateTransitGatewayConnectPeerRequest& request, const AssociateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateTransitGatewayConnectPeer(request), context);
+}
+
+CreateConnectionOutcome NetworkManagerClient::CreateConnection(const CreateConnectionRequest& request) const
+{
+  if (!request.GlobalNetworkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateConnection", "Required field: GlobalNetworkId, is not set");
+    return CreateConnectionOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/global-networks/";
+  ss << request.GetGlobalNetworkId();
+  ss << "/connections";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateConnectionOutcomeCallable NetworkManagerClient::CreateConnectionCallable(const CreateConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::CreateConnectionAsync(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::CreateConnectionAsyncHelper(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateConnection(request), context);
+}
+
 CreateDeviceOutcome NetworkManagerClient::CreateDevice(const CreateDeviceRequest& request) const
 {
   if (!request.GlobalNetworkIdHasBeenSet())
@@ -228,15 +278,7 @@ CreateDeviceOutcome NetworkManagerClient::CreateDevice(const CreateDeviceRequest
   ss << request.GetGlobalNetworkId();
   ss << "/devices";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDeviceOutcome(CreateDeviceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDeviceOutcome(outcome.GetError());
-  }
+  return CreateDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDeviceOutcomeCallable NetworkManagerClient::CreateDeviceCallable(const CreateDeviceRequest& request) const
@@ -263,15 +305,7 @@ CreateGlobalNetworkOutcome NetworkManagerClient::CreateGlobalNetwork(const Creat
   Aws::StringStream ss;
   ss << "/global-networks";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateGlobalNetworkOutcome(CreateGlobalNetworkResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateGlobalNetworkOutcome(outcome.GetError());
-  }
+  return CreateGlobalNetworkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateGlobalNetworkOutcomeCallable NetworkManagerClient::CreateGlobalNetworkCallable(const CreateGlobalNetworkRequest& request) const
@@ -305,15 +339,7 @@ CreateLinkOutcome NetworkManagerClient::CreateLink(const CreateLinkRequest& requ
   ss << request.GetGlobalNetworkId();
   ss << "/links";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateLinkOutcome(CreateLinkResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateLinkOutcome(outcome.GetError());
-  }
+  return CreateLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateLinkOutcomeCallable NetworkManagerClient::CreateLinkCallable(const CreateLinkRequest& request) const
@@ -347,15 +373,7 @@ CreateSiteOutcome NetworkManagerClient::CreateSite(const CreateSiteRequest& requ
   ss << request.GetGlobalNetworkId();
   ss << "/sites";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateSiteOutcome(CreateSiteResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateSiteOutcome(outcome.GetError());
-  }
+  return CreateSiteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateSiteOutcomeCallable NetworkManagerClient::CreateSiteCallable(const CreateSiteRequest& request) const
@@ -374,6 +392,46 @@ void NetworkManagerClient::CreateSiteAsync(const CreateSiteRequest& request, con
 void NetworkManagerClient::CreateSiteAsyncHelper(const CreateSiteRequest& request, const CreateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateSite(request), context);
+}
+
+DeleteConnectionOutcome NetworkManagerClient::DeleteConnection(const DeleteConnectionRequest& request) const
+{
+  if (!request.GlobalNetworkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteConnection", "Required field: GlobalNetworkId, is not set");
+    return DeleteConnectionOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
+  }
+  if (!request.ConnectionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteConnection", "Required field: ConnectionId, is not set");
+    return DeleteConnectionOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/global-networks/";
+  ss << request.GetGlobalNetworkId();
+  ss << "/connections/";
+  ss << request.GetConnectionId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteConnectionOutcomeCallable NetworkManagerClient::DeleteConnectionCallable(const DeleteConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::DeleteConnectionAsyncHelper(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteConnection(request), context);
 }
 
 DeleteDeviceOutcome NetworkManagerClient::DeleteDevice(const DeleteDeviceRequest& request) const
@@ -395,15 +453,7 @@ DeleteDeviceOutcome NetworkManagerClient::DeleteDevice(const DeleteDeviceRequest
   ss << "/devices/";
   ss << request.GetDeviceId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDeviceOutcome(DeleteDeviceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteDeviceOutcome(outcome.GetError());
-  }
+  return DeleteDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDeviceOutcomeCallable NetworkManagerClient::DeleteDeviceCallable(const DeleteDeviceRequest& request) const
@@ -436,15 +486,7 @@ DeleteGlobalNetworkOutcome NetworkManagerClient::DeleteGlobalNetwork(const Delet
   ss << "/global-networks/";
   ss << request.GetGlobalNetworkId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteGlobalNetworkOutcome(DeleteGlobalNetworkResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteGlobalNetworkOutcome(outcome.GetError());
-  }
+  return DeleteGlobalNetworkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteGlobalNetworkOutcomeCallable NetworkManagerClient::DeleteGlobalNetworkCallable(const DeleteGlobalNetworkRequest& request) const
@@ -484,15 +526,7 @@ DeleteLinkOutcome NetworkManagerClient::DeleteLink(const DeleteLinkRequest& requ
   ss << "/links/";
   ss << request.GetLinkId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteLinkOutcome(DeleteLinkResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteLinkOutcome(outcome.GetError());
-  }
+  return DeleteLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteLinkOutcomeCallable NetworkManagerClient::DeleteLinkCallable(const DeleteLinkRequest& request) const
@@ -532,15 +566,7 @@ DeleteSiteOutcome NetworkManagerClient::DeleteSite(const DeleteSiteRequest& requ
   ss << "/sites/";
   ss << request.GetSiteId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteSiteOutcome(DeleteSiteResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteSiteOutcome(outcome.GetError());
-  }
+  return DeleteSiteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteSiteOutcomeCallable NetworkManagerClient::DeleteSiteCallable(const DeleteSiteRequest& request) const
@@ -580,15 +606,7 @@ DeregisterTransitGatewayOutcome NetworkManagerClient::DeregisterTransitGateway(c
   ss << "/transit-gateway-registrations/";
   ss << request.GetTransitGatewayArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeregisterTransitGatewayOutcome(DeregisterTransitGatewayResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeregisterTransitGatewayOutcome(outcome.GetError());
-  }
+  return DeregisterTransitGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeregisterTransitGatewayOutcomeCallable NetworkManagerClient::DeregisterTransitGatewayCallable(const DeregisterTransitGatewayRequest& request) const
@@ -615,15 +633,7 @@ DescribeGlobalNetworksOutcome NetworkManagerClient::DescribeGlobalNetworks(const
   Aws::StringStream ss;
   ss << "/global-networks";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeGlobalNetworksOutcome(DescribeGlobalNetworksResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeGlobalNetworksOutcome(outcome.GetError());
-  }
+  return DescribeGlobalNetworksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeGlobalNetworksOutcomeCallable NetworkManagerClient::DescribeGlobalNetworksCallable(const DescribeGlobalNetworksRequest& request) const
@@ -663,15 +673,7 @@ DisassociateCustomerGatewayOutcome NetworkManagerClient::DisassociateCustomerGat
   ss << "/customer-gateway-associations/";
   ss << request.GetCustomerGatewayArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateCustomerGatewayOutcome(DisassociateCustomerGatewayResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisassociateCustomerGatewayOutcome(outcome.GetError());
-  }
+  return DisassociateCustomerGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateCustomerGatewayOutcomeCallable NetworkManagerClient::DisassociateCustomerGatewayCallable(const DisassociateCustomerGatewayRequest& request) const
@@ -715,15 +717,7 @@ DisassociateLinkOutcome NetworkManagerClient::DisassociateLink(const Disassociat
   ss << request.GetGlobalNetworkId();
   ss << "/link-associations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateLinkOutcome(DisassociateLinkResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisassociateLinkOutcome(outcome.GetError());
-  }
+  return DisassociateLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateLinkOutcomeCallable NetworkManagerClient::DisassociateLinkCallable(const DisassociateLinkRequest& request) const
@@ -744,6 +738,80 @@ void NetworkManagerClient::DisassociateLinkAsyncHelper(const DisassociateLinkReq
   handler(this, request, DisassociateLink(request), context);
 }
 
+DisassociateTransitGatewayConnectPeerOutcome NetworkManagerClient::DisassociateTransitGatewayConnectPeer(const DisassociateTransitGatewayConnectPeerRequest& request) const
+{
+  if (!request.GlobalNetworkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateTransitGatewayConnectPeer", "Required field: GlobalNetworkId, is not set");
+    return DisassociateTransitGatewayConnectPeerOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
+  }
+  if (!request.TransitGatewayConnectPeerArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateTransitGatewayConnectPeer", "Required field: TransitGatewayConnectPeerArn, is not set");
+    return DisassociateTransitGatewayConnectPeerOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TransitGatewayConnectPeerArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/global-networks/";
+  ss << request.GetGlobalNetworkId();
+  ss << "/transit-gateway-connect-peer-associations/";
+  ss << request.GetTransitGatewayConnectPeerArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DisassociateTransitGatewayConnectPeerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateTransitGatewayConnectPeerOutcomeCallable NetworkManagerClient::DisassociateTransitGatewayConnectPeerCallable(const DisassociateTransitGatewayConnectPeerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateTransitGatewayConnectPeerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateTransitGatewayConnectPeer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::DisassociateTransitGatewayConnectPeerAsync(const DisassociateTransitGatewayConnectPeerRequest& request, const DisassociateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateTransitGatewayConnectPeerAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::DisassociateTransitGatewayConnectPeerAsyncHelper(const DisassociateTransitGatewayConnectPeerRequest& request, const DisassociateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateTransitGatewayConnectPeer(request), context);
+}
+
+GetConnectionsOutcome NetworkManagerClient::GetConnections(const GetConnectionsRequest& request) const
+{
+  if (!request.GlobalNetworkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetConnections", "Required field: GlobalNetworkId, is not set");
+    return GetConnectionsOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/global-networks/";
+  ss << request.GetGlobalNetworkId();
+  ss << "/connections";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetConnectionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetConnectionsOutcomeCallable NetworkManagerClient::GetConnectionsCallable(const GetConnectionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetConnectionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetConnections(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::GetConnectionsAsync(const GetConnectionsRequest& request, const GetConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetConnectionsAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::GetConnectionsAsyncHelper(const GetConnectionsRequest& request, const GetConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetConnections(request), context);
+}
+
 GetCustomerGatewayAssociationsOutcome NetworkManagerClient::GetCustomerGatewayAssociations(const GetCustomerGatewayAssociationsRequest& request) const
 {
   if (!request.GlobalNetworkIdHasBeenSet())
@@ -757,15 +825,7 @@ GetCustomerGatewayAssociationsOutcome NetworkManagerClient::GetCustomerGatewayAs
   ss << request.GetGlobalNetworkId();
   ss << "/customer-gateway-associations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetCustomerGatewayAssociationsOutcome(GetCustomerGatewayAssociationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetCustomerGatewayAssociationsOutcome(outcome.GetError());
-  }
+  return GetCustomerGatewayAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCustomerGatewayAssociationsOutcomeCallable NetworkManagerClient::GetCustomerGatewayAssociationsCallable(const GetCustomerGatewayAssociationsRequest& request) const
@@ -799,15 +859,7 @@ GetDevicesOutcome NetworkManagerClient::GetDevices(const GetDevicesRequest& requ
   ss << request.GetGlobalNetworkId();
   ss << "/devices";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDevicesOutcome(GetDevicesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDevicesOutcome(outcome.GetError());
-  }
+  return GetDevicesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDevicesOutcomeCallable NetworkManagerClient::GetDevicesCallable(const GetDevicesRequest& request) const
@@ -841,15 +893,7 @@ GetLinkAssociationsOutcome NetworkManagerClient::GetLinkAssociations(const GetLi
   ss << request.GetGlobalNetworkId();
   ss << "/link-associations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetLinkAssociationsOutcome(GetLinkAssociationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetLinkAssociationsOutcome(outcome.GetError());
-  }
+  return GetLinkAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetLinkAssociationsOutcomeCallable NetworkManagerClient::GetLinkAssociationsCallable(const GetLinkAssociationsRequest& request) const
@@ -883,15 +927,7 @@ GetLinksOutcome NetworkManagerClient::GetLinks(const GetLinksRequest& request) c
   ss << request.GetGlobalNetworkId();
   ss << "/links";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetLinksOutcome(GetLinksResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetLinksOutcome(outcome.GetError());
-  }
+  return GetLinksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetLinksOutcomeCallable NetworkManagerClient::GetLinksCallable(const GetLinksRequest& request) const
@@ -925,15 +961,7 @@ GetSitesOutcome NetworkManagerClient::GetSites(const GetSitesRequest& request) c
   ss << request.GetGlobalNetworkId();
   ss << "/sites";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSitesOutcome(GetSitesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSitesOutcome(outcome.GetError());
-  }
+  return GetSitesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSitesOutcomeCallable NetworkManagerClient::GetSitesCallable(const GetSitesRequest& request) const
@@ -954,6 +982,40 @@ void NetworkManagerClient::GetSitesAsyncHelper(const GetSitesRequest& request, c
   handler(this, request, GetSites(request), context);
 }
 
+GetTransitGatewayConnectPeerAssociationsOutcome NetworkManagerClient::GetTransitGatewayConnectPeerAssociations(const GetTransitGatewayConnectPeerAssociationsRequest& request) const
+{
+  if (!request.GlobalNetworkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetTransitGatewayConnectPeerAssociations", "Required field: GlobalNetworkId, is not set");
+    return GetTransitGatewayConnectPeerAssociationsOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/global-networks/";
+  ss << request.GetGlobalNetworkId();
+  ss << "/transit-gateway-connect-peer-associations";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetTransitGatewayConnectPeerAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetTransitGatewayConnectPeerAssociationsOutcomeCallable NetworkManagerClient::GetTransitGatewayConnectPeerAssociationsCallable(const GetTransitGatewayConnectPeerAssociationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetTransitGatewayConnectPeerAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTransitGatewayConnectPeerAssociations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::GetTransitGatewayConnectPeerAssociationsAsync(const GetTransitGatewayConnectPeerAssociationsRequest& request, const GetTransitGatewayConnectPeerAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetTransitGatewayConnectPeerAssociationsAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::GetTransitGatewayConnectPeerAssociationsAsyncHelper(const GetTransitGatewayConnectPeerAssociationsRequest& request, const GetTransitGatewayConnectPeerAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetTransitGatewayConnectPeerAssociations(request), context);
+}
+
 GetTransitGatewayRegistrationsOutcome NetworkManagerClient::GetTransitGatewayRegistrations(const GetTransitGatewayRegistrationsRequest& request) const
 {
   if (!request.GlobalNetworkIdHasBeenSet())
@@ -967,15 +1029,7 @@ GetTransitGatewayRegistrationsOutcome NetworkManagerClient::GetTransitGatewayReg
   ss << request.GetGlobalNetworkId();
   ss << "/transit-gateway-registrations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetTransitGatewayRegistrationsOutcome(GetTransitGatewayRegistrationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetTransitGatewayRegistrationsOutcome(outcome.GetError());
-  }
+  return GetTransitGatewayRegistrationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetTransitGatewayRegistrationsOutcomeCallable NetworkManagerClient::GetTransitGatewayRegistrationsCallable(const GetTransitGatewayRegistrationsRequest& request) const
@@ -1008,15 +1062,7 @@ ListTagsForResourceOutcome NetworkManagerClient::ListTagsForResource(const ListT
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable NetworkManagerClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -1050,15 +1096,7 @@ RegisterTransitGatewayOutcome NetworkManagerClient::RegisterTransitGateway(const
   ss << request.GetGlobalNetworkId();
   ss << "/transit-gateway-registrations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RegisterTransitGatewayOutcome(RegisterTransitGatewayResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RegisterTransitGatewayOutcome(outcome.GetError());
-  }
+  return RegisterTransitGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RegisterTransitGatewayOutcomeCallable NetworkManagerClient::RegisterTransitGatewayCallable(const RegisterTransitGatewayRequest& request) const
@@ -1091,15 +1129,7 @@ TagResourceOutcome NetworkManagerClient::TagResource(const TagResourceRequest& r
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable NetworkManagerClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1137,15 +1167,7 @@ UntagResourceOutcome NetworkManagerClient::UntagResource(const UntagResourceRequ
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable NetworkManagerClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -1164,6 +1186,46 @@ void NetworkManagerClient::UntagResourceAsync(const UntagResourceRequest& reques
 void NetworkManagerClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateConnectionOutcome NetworkManagerClient::UpdateConnection(const UpdateConnectionRequest& request) const
+{
+  if (!request.GlobalNetworkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateConnection", "Required field: GlobalNetworkId, is not set");
+    return UpdateConnectionOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
+  }
+  if (!request.ConnectionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateConnection", "Required field: ConnectionId, is not set");
+    return UpdateConnectionOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/global-networks/";
+  ss << request.GetGlobalNetworkId();
+  ss << "/connections/";
+  ss << request.GetConnectionId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateConnectionOutcomeCallable NetworkManagerClient::UpdateConnectionCallable(const UpdateConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::UpdateConnectionAsync(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::UpdateConnectionAsyncHelper(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateConnection(request), context);
 }
 
 UpdateDeviceOutcome NetworkManagerClient::UpdateDevice(const UpdateDeviceRequest& request) const
@@ -1185,15 +1247,7 @@ UpdateDeviceOutcome NetworkManagerClient::UpdateDevice(const UpdateDeviceRequest
   ss << "/devices/";
   ss << request.GetDeviceId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDeviceOutcome(UpdateDeviceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDeviceOutcome(outcome.GetError());
-  }
+  return UpdateDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDeviceOutcomeCallable NetworkManagerClient::UpdateDeviceCallable(const UpdateDeviceRequest& request) const
@@ -1226,15 +1280,7 @@ UpdateGlobalNetworkOutcome NetworkManagerClient::UpdateGlobalNetwork(const Updat
   ss << "/global-networks/";
   ss << request.GetGlobalNetworkId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateGlobalNetworkOutcome(UpdateGlobalNetworkResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateGlobalNetworkOutcome(outcome.GetError());
-  }
+  return UpdateGlobalNetworkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateGlobalNetworkOutcomeCallable NetworkManagerClient::UpdateGlobalNetworkCallable(const UpdateGlobalNetworkRequest& request) const
@@ -1274,15 +1320,7 @@ UpdateLinkOutcome NetworkManagerClient::UpdateLink(const UpdateLinkRequest& requ
   ss << "/links/";
   ss << request.GetLinkId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateLinkOutcome(UpdateLinkResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateLinkOutcome(outcome.GetError());
-  }
+  return UpdateLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateLinkOutcomeCallable NetworkManagerClient::UpdateLinkCallable(const UpdateLinkRequest& request) const
@@ -1322,15 +1360,7 @@ UpdateSiteOutcome NetworkManagerClient::UpdateSite(const UpdateSiteRequest& requ
   ss << "/sites/";
   ss << request.GetSiteId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateSiteOutcome(UpdateSiteResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateSiteOutcome(outcome.GetError());
-  }
+  return UpdateSiteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateSiteOutcomeCallable NetworkManagerClient::UpdateSiteCallable(const UpdateSiteRequest& request) const

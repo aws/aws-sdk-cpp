@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/qldb-session/QLDBSession_EXPORTS.h>
@@ -49,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>Specifies the transaction id of the page to be fetched.</p>
+     * <p>Specifies the transaction ID of the page to be fetched.</p>
      */
     inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
 
     /**
-     * <p>Specifies the transaction id of the page to be fetched.</p>
+     * <p>Specifies the transaction ID of the page to be fetched.</p>
      */
     inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
 
     /**
-     * <p>Specifies the transaction id of the page to be fetched.</p>
+     * <p>Specifies the transaction ID of the page to be fetched.</p>
      */
     inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
 
     /**
-     * <p>Specifies the transaction id of the page to be fetched.</p>
+     * <p>Specifies the transaction ID of the page to be fetched.</p>
      */
     inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
 
     /**
-     * <p>Specifies the transaction id of the page to be fetched.</p>
+     * <p>Specifies the transaction ID of the page to be fetched.</p>
      */
     inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
 
     /**
-     * <p>Specifies the transaction id of the page to be fetched.</p>
+     * <p>Specifies the transaction ID of the page to be fetched.</p>
      */
     inline FetchPageRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
 
     /**
-     * <p>Specifies the transaction id of the page to be fetched.</p>
+     * <p>Specifies the transaction ID of the page to be fetched.</p>
      */
     inline FetchPageRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the transaction id of the page to be fetched.</p>
+     * <p>Specifies the transaction ID of the page to be fetched.</p>
      */
     inline FetchPageRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
 

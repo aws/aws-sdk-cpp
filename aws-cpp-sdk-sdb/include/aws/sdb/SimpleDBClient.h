@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sdb/SimpleDB_EXPORTS.h>
@@ -83,16 +73,16 @@ namespace Model
         class PutAttributesRequest;
         class SelectRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SimpleDBErrors>> BatchDeleteAttributesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SimpleDBErrors>> BatchPutAttributesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SimpleDBErrors>> CreateDomainOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SimpleDBErrors>> DeleteAttributesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SimpleDBErrors>> DeleteDomainOutcome;
-        typedef Aws::Utils::Outcome<DomainMetadataResult, Aws::Client::AWSError<SimpleDBErrors>> DomainMetadataOutcome;
-        typedef Aws::Utils::Outcome<GetAttributesResult, Aws::Client::AWSError<SimpleDBErrors>> GetAttributesOutcome;
-        typedef Aws::Utils::Outcome<ListDomainsResult, Aws::Client::AWSError<SimpleDBErrors>> ListDomainsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SimpleDBErrors>> PutAttributesOutcome;
-        typedef Aws::Utils::Outcome<SelectResult, Aws::Client::AWSError<SimpleDBErrors>> SelectOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SimpleDBError> BatchDeleteAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SimpleDBError> BatchPutAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SimpleDBError> CreateDomainOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SimpleDBError> DeleteAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SimpleDBError> DeleteDomainOutcome;
+        typedef Aws::Utils::Outcome<DomainMetadataResult, SimpleDBError> DomainMetadataOutcome;
+        typedef Aws::Utils::Outcome<GetAttributesResult, SimpleDBError> GetAttributesOutcome;
+        typedef Aws::Utils::Outcome<ListDomainsResult, SimpleDBError> ListDomainsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SimpleDBError> PutAttributesOutcome;
+        typedef Aws::Utils::Outcome<SelectResult, SimpleDBError> SelectOutcome;
 
         typedef std::future<BatchDeleteAttributesOutcome> BatchDeleteAttributesOutcomeCallable;
         typedef std::future<BatchPutAttributesOutcome> BatchPutAttributesOutcomeCallable;
@@ -160,8 +150,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~SimpleDBClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "sdb"; }
 
 
        /**
@@ -237,10 +225,10 @@ namespace Model
          * <code>{'I', 'b', '4' }</code> with the Replace parameter set to true, the final
          * attributes of the item will be <code>{ 'a', '1' }</code> and <code>{ 'b', '4'
          * }</code>, replacing the previous values of the 'b' attribute with the new value.
-         * </p> <important> This operation is vulnerable to exceeding the maximum URL size
+         * </p>  This operation is vulnerable to exceeding the maximum URL size
          * when making a REST request using the HTTP GET method. This operation does not
          * support conditions using <code>Expected.X.Name</code>,
-         * <code>Expected.X.Value</code>, or <code>Expected.X.Exists</code>. </important>
+         * <code>Expected.X.Value</code>, or <code>Expected.X.Exists</code>. 
          * <p> You can execute multiple <code>BatchPutAttributes</code> operations and
          * other operations in parallel. However, large numbers of concurrent
          * <code>BatchPutAttributes</code> calls can result in Service Unavailable (503)
@@ -281,10 +269,10 @@ namespace Model
          * <code>{'I', 'b', '4' }</code> with the Replace parameter set to true, the final
          * attributes of the item will be <code>{ 'a', '1' }</code> and <code>{ 'b', '4'
          * }</code>, replacing the previous values of the 'b' attribute with the new value.
-         * </p> <important> This operation is vulnerable to exceeding the maximum URL size
+         * </p>  This operation is vulnerable to exceeding the maximum URL size
          * when making a REST request using the HTTP GET method. This operation does not
          * support conditions using <code>Expected.X.Name</code>,
-         * <code>Expected.X.Value</code>, or <code>Expected.X.Exists</code>. </important>
+         * <code>Expected.X.Value</code>, or <code>Expected.X.Exists</code>. 
          * <p> You can execute multiple <code>BatchPutAttributes</code> operations and
          * other operations in parallel. However, large numbers of concurrent
          * <code>BatchPutAttributes</code> calls can result in Service Unavailable (503)
@@ -327,10 +315,10 @@ namespace Model
          * <code>{'I', 'b', '4' }</code> with the Replace parameter set to true, the final
          * attributes of the item will be <code>{ 'a', '1' }</code> and <code>{ 'b', '4'
          * }</code>, replacing the previous values of the 'b' attribute with the new value.
-         * </p> <important> This operation is vulnerable to exceeding the maximum URL size
+         * </p>  This operation is vulnerable to exceeding the maximum URL size
          * when making a REST request using the HTTP GET method. This operation does not
          * support conditions using <code>Expected.X.Name</code>,
-         * <code>Expected.X.Value</code>, or <code>Expected.X.Exists</code>. </important>
+         * <code>Expected.X.Value</code>, or <code>Expected.X.Exists</code>. 
          * <p> You can execute multiple <code>BatchPutAttributes</code> operations and
          * other operations in parallel. However, large numbers of concurrent
          * <code>BatchPutAttributes</code> calls can result in Service Unavailable (503)
@@ -753,7 +741,7 @@ namespace Model
          */
         virtual void SelectAsync(const Model::SelectRequest& request, const SelectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-      
+
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);

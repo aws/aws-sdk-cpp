@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -245,6 +235,76 @@ namespace Model
      * address.</p>
      */
     inline Subnet& WithMapPublicIpOnLaunch(bool value) { SetMapPublicIpOnLaunch(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether a network interface created in this subnet (including a
+     * network interface created by <a>RunInstances</a>) receives a customer-owned IPv4
+     * address.</p>
+     */
+    inline bool GetMapCustomerOwnedIpOnLaunch() const{ return m_mapCustomerOwnedIpOnLaunch; }
+
+    /**
+     * <p>Indicates whether a network interface created in this subnet (including a
+     * network interface created by <a>RunInstances</a>) receives a customer-owned IPv4
+     * address.</p>
+     */
+    inline bool MapCustomerOwnedIpOnLaunchHasBeenSet() const { return m_mapCustomerOwnedIpOnLaunchHasBeenSet; }
+
+    /**
+     * <p>Indicates whether a network interface created in this subnet (including a
+     * network interface created by <a>RunInstances</a>) receives a customer-owned IPv4
+     * address.</p>
+     */
+    inline void SetMapCustomerOwnedIpOnLaunch(bool value) { m_mapCustomerOwnedIpOnLaunchHasBeenSet = true; m_mapCustomerOwnedIpOnLaunch = value; }
+
+    /**
+     * <p>Indicates whether a network interface created in this subnet (including a
+     * network interface created by <a>RunInstances</a>) receives a customer-owned IPv4
+     * address.</p>
+     */
+    inline Subnet& WithMapCustomerOwnedIpOnLaunch(bool value) { SetMapCustomerOwnedIpOnLaunch(value); return *this;}
+
+
+    /**
+     * <p>The customer-owned IPv4 address pool associated with the subnet.</p>
+     */
+    inline const Aws::String& GetCustomerOwnedIpv4Pool() const{ return m_customerOwnedIpv4Pool; }
+
+    /**
+     * <p>The customer-owned IPv4 address pool associated with the subnet.</p>
+     */
+    inline bool CustomerOwnedIpv4PoolHasBeenSet() const { return m_customerOwnedIpv4PoolHasBeenSet; }
+
+    /**
+     * <p>The customer-owned IPv4 address pool associated with the subnet.</p>
+     */
+    inline void SetCustomerOwnedIpv4Pool(const Aws::String& value) { m_customerOwnedIpv4PoolHasBeenSet = true; m_customerOwnedIpv4Pool = value; }
+
+    /**
+     * <p>The customer-owned IPv4 address pool associated with the subnet.</p>
+     */
+    inline void SetCustomerOwnedIpv4Pool(Aws::String&& value) { m_customerOwnedIpv4PoolHasBeenSet = true; m_customerOwnedIpv4Pool = std::move(value); }
+
+    /**
+     * <p>The customer-owned IPv4 address pool associated with the subnet.</p>
+     */
+    inline void SetCustomerOwnedIpv4Pool(const char* value) { m_customerOwnedIpv4PoolHasBeenSet = true; m_customerOwnedIpv4Pool.assign(value); }
+
+    /**
+     * <p>The customer-owned IPv4 address pool associated with the subnet.</p>
+     */
+    inline Subnet& WithCustomerOwnedIpv4Pool(const Aws::String& value) { SetCustomerOwnedIpv4Pool(value); return *this;}
+
+    /**
+     * <p>The customer-owned IPv4 address pool associated with the subnet.</p>
+     */
+    inline Subnet& WithCustomerOwnedIpv4Pool(Aws::String&& value) { SetCustomerOwnedIpv4Pool(std::move(value)); return *this;}
+
+    /**
+     * <p>The customer-owned IPv4 address pool associated with the subnet.</p>
+     */
+    inline Subnet& WithCustomerOwnedIpv4Pool(const char* value) { SetCustomerOwnedIpv4Pool(value); return *this;}
 
 
     /**
@@ -608,6 +668,12 @@ namespace Model
 
     bool m_mapPublicIpOnLaunch;
     bool m_mapPublicIpOnLaunchHasBeenSet;
+
+    bool m_mapCustomerOwnedIpOnLaunch;
+    bool m_mapCustomerOwnedIpOnLaunchHasBeenSet;
+
+    Aws::String m_customerOwnedIpv4Pool;
+    bool m_customerOwnedIpv4PoolHasBeenSet;
 
     SubnetState m_state;
     bool m_stateHasBeenSet;

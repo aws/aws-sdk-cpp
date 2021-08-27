@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
@@ -35,8 +25,16 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the part of a web request that you want to inspect for snippets of
-   * malicious SQL code and indicates whether you want to add the specification to a
+   *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
+   * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
+   * WAF</b>, use the AWS WAFV2 API and see the <a
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+   * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
+   * endpoints for regional and global use. </p>  <p>Specifies the part of a
+   * web request that you want to inspect for snippets of malicious SQL code and
+   * indicates whether you want to add the specification to a
    * <a>SqlInjectionMatchSet</a> or delete it from a
    * <code>SqlInjectionMatchSet</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/SqlInjectionMatchSetUpdate">AWS

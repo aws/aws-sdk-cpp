@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/robomaker/RoboMaker_EXPORTS.h>
@@ -378,72 +368,72 @@ namespace Model
     /**
      * <p>Specify data sources to mount read-only files from S3 into your simulation.
      * These files are available under
-     * <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note> <p>There
+     * <code>/opt/robomaker/datasources/data_source_name</code>. </p>  <p>There
      * is a limit of 100 files and a combined size of 25GB for all
-     * <code>DataSourceConfig</code> objects. </p> </note>
+     * <code>DataSourceConfig</code> objects. </p> 
      */
     inline const Aws::Vector<DataSourceConfig>& GetDataSources() const{ return m_dataSources; }
 
     /**
      * <p>Specify data sources to mount read-only files from S3 into your simulation.
      * These files are available under
-     * <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note> <p>There
+     * <code>/opt/robomaker/datasources/data_source_name</code>. </p>  <p>There
      * is a limit of 100 files and a combined size of 25GB for all
-     * <code>DataSourceConfig</code> objects. </p> </note>
+     * <code>DataSourceConfig</code> objects. </p> 
      */
     inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
 
     /**
      * <p>Specify data sources to mount read-only files from S3 into your simulation.
      * These files are available under
-     * <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note> <p>There
+     * <code>/opt/robomaker/datasources/data_source_name</code>. </p>  <p>There
      * is a limit of 100 files and a combined size of 25GB for all
-     * <code>DataSourceConfig</code> objects. </p> </note>
+     * <code>DataSourceConfig</code> objects. </p> 
      */
     inline void SetDataSources(const Aws::Vector<DataSourceConfig>& value) { m_dataSourcesHasBeenSet = true; m_dataSources = value; }
 
     /**
      * <p>Specify data sources to mount read-only files from S3 into your simulation.
      * These files are available under
-     * <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note> <p>There
+     * <code>/opt/robomaker/datasources/data_source_name</code>. </p>  <p>There
      * is a limit of 100 files and a combined size of 25GB for all
-     * <code>DataSourceConfig</code> objects. </p> </note>
+     * <code>DataSourceConfig</code> objects. </p> 
      */
     inline void SetDataSources(Aws::Vector<DataSourceConfig>&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::move(value); }
 
     /**
      * <p>Specify data sources to mount read-only files from S3 into your simulation.
      * These files are available under
-     * <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note> <p>There
+     * <code>/opt/robomaker/datasources/data_source_name</code>. </p>  <p>There
      * is a limit of 100 files and a combined size of 25GB for all
-     * <code>DataSourceConfig</code> objects. </p> </note>
+     * <code>DataSourceConfig</code> objects. </p> 
      */
     inline CreateSimulationJobRequest& WithDataSources(const Aws::Vector<DataSourceConfig>& value) { SetDataSources(value); return *this;}
 
     /**
      * <p>Specify data sources to mount read-only files from S3 into your simulation.
      * These files are available under
-     * <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note> <p>There
+     * <code>/opt/robomaker/datasources/data_source_name</code>. </p>  <p>There
      * is a limit of 100 files and a combined size of 25GB for all
-     * <code>DataSourceConfig</code> objects. </p> </note>
+     * <code>DataSourceConfig</code> objects. </p> 
      */
     inline CreateSimulationJobRequest& WithDataSources(Aws::Vector<DataSourceConfig>&& value) { SetDataSources(std::move(value)); return *this;}
 
     /**
      * <p>Specify data sources to mount read-only files from S3 into your simulation.
      * These files are available under
-     * <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note> <p>There
+     * <code>/opt/robomaker/datasources/data_source_name</code>. </p>  <p>There
      * is a limit of 100 files and a combined size of 25GB for all
-     * <code>DataSourceConfig</code> objects. </p> </note>
+     * <code>DataSourceConfig</code> objects. </p> 
      */
     inline CreateSimulationJobRequest& AddDataSources(const DataSourceConfig& value) { m_dataSourcesHasBeenSet = true; m_dataSources.push_back(value); return *this; }
 
     /**
      * <p>Specify data sources to mount read-only files from S3 into your simulation.
      * These files are available under
-     * <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note> <p>There
+     * <code>/opt/robomaker/datasources/data_source_name</code>. </p>  <p>There
      * is a limit of 100 files and a combined size of 25GB for all
-     * <code>DataSourceConfig</code> objects. </p> </note>
+     * <code>DataSourceConfig</code> objects. </p> 
      */
     inline CreateSimulationJobRequest& AddDataSources(DataSourceConfig&& value) { m_dataSourcesHasBeenSet = true; m_dataSources.push_back(std::move(value)); return *this; }
 

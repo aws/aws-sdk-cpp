@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/signer/model/SigningProfileStatus.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,6 +22,7 @@ namespace Aws
 
         static const int Active_HASH = HashingUtils::HashString("Active");
         static const int Canceled_HASH = HashingUtils::HashString("Canceled");
+        static const int Revoked_HASH = HashingUtils::HashString("Revoked");
 
 
         SigningProfileStatus GetSigningProfileStatusForName(const Aws::String& name)
@@ -44,6 +35,10 @@ namespace Aws
           else if (hashCode == Canceled_HASH)
           {
             return SigningProfileStatus::Canceled;
+          }
+          else if (hashCode == Revoked_HASH)
+          {
+            return SigningProfileStatus::Revoked;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +58,8 @@ namespace Aws
             return "Active";
           case SigningProfileStatus::Canceled:
             return "Canceled";
+          case SigningProfileStatus::Revoked:
+            return "Revoked";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

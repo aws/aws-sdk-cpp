@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
@@ -202,7 +192,7 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. The only supported channel is <code>VOICE</code>.</p>
+     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
      */
     inline const Filters& GetFilters() const{ return m_filters; }
 
@@ -210,7 +200,7 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. The only supported channel is <code>VOICE</code>.</p>
+     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -218,7 +208,7 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. The only supported channel is <code>VOICE</code>.</p>
+     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
      */
     inline void SetFilters(const Filters& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -226,7 +216,7 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. The only supported channel is <code>VOICE</code>.</p>
+     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
      */
     inline void SetFilters(Filters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -234,7 +224,7 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. The only supported channel is <code>VOICE</code>.</p>
+     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
      */
     inline GetMetricDataRequest& WithFilters(const Filters& value) { SetFilters(value); return *this;}
 
@@ -242,7 +232,7 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. The only supported channel is <code>VOICE</code>.</p>
+     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
      */
     inline GetMetricDataRequest& WithFilters(Filters&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -322,8 +312,11 @@ namespace Model
 
     /**
      * <p>The metrics to retrieve. Specify the name, unit, and statistic for each
-     * metric. The following historical metrics are available:</p> <dl>
-     * <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
+     * metric. The following historical metrics are available. For a description of
+     * each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
      * <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p>
      * </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic:
      * SUM</p> </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
@@ -358,8 +351,11 @@ namespace Model
 
     /**
      * <p>The metrics to retrieve. Specify the name, unit, and statistic for each
-     * metric. The following historical metrics are available:</p> <dl>
-     * <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
+     * metric. The following historical metrics are available. For a description of
+     * each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
      * <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p>
      * </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic:
      * SUM</p> </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
@@ -394,8 +390,11 @@ namespace Model
 
     /**
      * <p>The metrics to retrieve. Specify the name, unit, and statistic for each
-     * metric. The following historical metrics are available:</p> <dl>
-     * <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
+     * metric. The following historical metrics are available. For a description of
+     * each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
      * <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p>
      * </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic:
      * SUM</p> </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
@@ -430,8 +429,11 @@ namespace Model
 
     /**
      * <p>The metrics to retrieve. Specify the name, unit, and statistic for each
-     * metric. The following historical metrics are available:</p> <dl>
-     * <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
+     * metric. The following historical metrics are available. For a description of
+     * each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
      * <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p>
      * </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic:
      * SUM</p> </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
@@ -466,8 +468,11 @@ namespace Model
 
     /**
      * <p>The metrics to retrieve. Specify the name, unit, and statistic for each
-     * metric. The following historical metrics are available:</p> <dl>
-     * <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
+     * metric. The following historical metrics are available. For a description of
+     * each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
      * <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p>
      * </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic:
      * SUM</p> </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
@@ -502,8 +507,11 @@ namespace Model
 
     /**
      * <p>The metrics to retrieve. Specify the name, unit, and statistic for each
-     * metric. The following historical metrics are available:</p> <dl>
-     * <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
+     * metric. The following historical metrics are available. For a description of
+     * each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
      * <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p>
      * </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic:
      * SUM</p> </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
@@ -538,8 +546,11 @@ namespace Model
 
     /**
      * <p>The metrics to retrieve. Specify the name, unit, and statistic for each
-     * metric. The following historical metrics are available:</p> <dl>
-     * <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
+     * metric. The following historical metrics are available. For a description of
+     * each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
      * <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p>
      * </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic:
      * SUM</p> </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
@@ -574,8 +585,11 @@ namespace Model
 
     /**
      * <p>The metrics to retrieve. Specify the name, unit, and statistic for each
-     * metric. The following historical metrics are available:</p> <dl>
-     * <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
+     * metric. The following historical metrics are available. For a description of
+     * each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
      * <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p>
      * </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic:
      * SUM</p> </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>

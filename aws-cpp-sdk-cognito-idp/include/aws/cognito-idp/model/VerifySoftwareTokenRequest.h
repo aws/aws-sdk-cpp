@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -135,42 +125,50 @@ namespace Model
 
 
     /**
-     * <p>The one time password computed using the secret code returned by </p>
+     * <p>The one time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
      */
     inline const Aws::String& GetUserCode() const{ return m_userCode; }
 
     /**
-     * <p>The one time password computed using the secret code returned by </p>
+     * <p>The one time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
      */
     inline bool UserCodeHasBeenSet() const { return m_userCodeHasBeenSet; }
 
     /**
-     * <p>The one time password computed using the secret code returned by </p>
+     * <p>The one time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
      */
     inline void SetUserCode(const Aws::String& value) { m_userCodeHasBeenSet = true; m_userCode = value; }
 
     /**
-     * <p>The one time password computed using the secret code returned by </p>
+     * <p>The one time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
      */
     inline void SetUserCode(Aws::String&& value) { m_userCodeHasBeenSet = true; m_userCode = std::move(value); }
 
     /**
-     * <p>The one time password computed using the secret code returned by </p>
+     * <p>The one time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
      */
     inline void SetUserCode(const char* value) { m_userCodeHasBeenSet = true; m_userCode.assign(value); }
 
     /**
-     * <p>The one time password computed using the secret code returned by </p>
+     * <p>The one time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
      */
     inline VerifySoftwareTokenRequest& WithUserCode(const Aws::String& value) { SetUserCode(value); return *this;}
 
     /**
-     * <p>The one time password computed using the secret code returned by </p>
+     * <p>The one time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
      */
     inline VerifySoftwareTokenRequest& WithUserCode(Aws::String&& value) { SetUserCode(std::move(value)); return *this;}
 
     /**
-     * <p>The one time password computed using the secret code returned by </p>
+     * <p>The one time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
      */
     inline VerifySoftwareTokenRequest& WithUserCode(const char* value) { SetUserCode(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lex/LexRuntimeService_EXPORTS.h>
@@ -537,6 +527,42 @@ namespace Model
      */
     inline PutSessionResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
 
+
+    /**
+     * <p>A list of active contexts for the session.</p>
+     */
+    inline const Aws::String& GetActiveContexts() const{ return m_activeContexts; }
+
+    /**
+     * <p>A list of active contexts for the session.</p>
+     */
+    inline void SetActiveContexts(const Aws::String& value) { m_activeContexts = value; }
+
+    /**
+     * <p>A list of active contexts for the session.</p>
+     */
+    inline void SetActiveContexts(Aws::String&& value) { m_activeContexts = std::move(value); }
+
+    /**
+     * <p>A list of active contexts for the session.</p>
+     */
+    inline void SetActiveContexts(const char* value) { m_activeContexts.assign(value); }
+
+    /**
+     * <p>A list of active contexts for the session.</p>
+     */
+    inline PutSessionResult& WithActiveContexts(const Aws::String& value) { SetActiveContexts(value); return *this;}
+
+    /**
+     * <p>A list of active contexts for the session.</p>
+     */
+    inline PutSessionResult& WithActiveContexts(Aws::String&& value) { SetActiveContexts(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of active contexts for the session.</p>
+     */
+    inline PutSessionResult& WithActiveContexts(const char* value) { SetActiveContexts(value); return *this;}
+
   private:
 
     Aws::String m_contentType;
@@ -558,6 +584,8 @@ namespace Model
   Aws::Utils::Stream::ResponseStream m_audioStream;
 
     Aws::String m_sessionId;
+
+    Aws::String m_activeContexts;
   };
 
 } // namespace Model

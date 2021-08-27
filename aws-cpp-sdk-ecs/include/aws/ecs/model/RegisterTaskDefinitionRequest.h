@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -202,50 +192,90 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
+     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
+     * task execution IAM role is required depending on the requirements of your task.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
+     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
+     * task execution IAM role is required depending on the requirements of your task.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
+     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
+     * task execution IAM role is required depending on the requirements of your task.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
+     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
+     * task execution IAM role is required depending on the requirements of your task.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
+     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
+     * task execution IAM role is required depending on the requirements of your task.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
+     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
+     * task execution IAM role is required depending on the requirements of your task.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline RegisterTaskDefinitionRequest& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
+     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
+     * task execution IAM role is required depending on the requirements of your task.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline RegisterTaskDefinitionRequest& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
+     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
+     * task execution IAM role is required depending on the requirements of your task.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline RegisterTaskDefinitionRequest& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
 
@@ -253,28 +283,31 @@ namespace Model
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
      * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
-     * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
-     * you are using the Fargate launch type, the <code>awsvpc</code> network mode is
-     * required. If you are using the EC2 launch type, any network mode can be used. If
-     * the network mode is set to <code>none</code>, you cannot specify port mappings
-     * in your container definitions, and the tasks containers do not have external
-     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
-     * the highest networking performance for containers because they use the EC2
-     * network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
-     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
-     * to the corresponding host port (for the <code>host</code> network mode) or the
-     * attached elastic network interface port (for the <code>awsvpc</code> network
-     * mode), so you cannot take advantage of dynamic host port mappings. </p> <p>If
-     * the network mode is <code>awsvpc</code>, the task is allocated an elastic
-     * network interface, and you must specify a <a>NetworkConfiguration</a> value when
-     * you create a service or run a task with the task definition. For more
-     * information, see <a
+     * <code>host</code>. If no network mode is specified, the default is
+     * <code>bridge</code>.</p> <p>For Amazon ECS tasks on Fargate, the
+     * <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2
+     * instances, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you cannot specify port mappings in your container
+     * definitions, and the tasks containers do not have external connectivity. The
+     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack
+     * instead of the virtualized network stack provided by the <code>bridge</code>
+     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
+     * exposed container ports are mapped directly to the corresponding host port (for
+     * the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
+     * dynamic host port mappings. </p>  <p>When using the <code>host</code>
+     * network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.</p>  <p>If the
+     * network mode is <code>awsvpc</code>, the task is allocated an elastic network
+     * interface, and you must specify a <a>NetworkConfiguration</a> value when you
+     * create a service or run a task with the task definition. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <note> <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
+     * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
      * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
-     * infrastructure support the <code>awsvpc</code> network mode. </p> </note> <p>If
+     * infrastructure support the <code>awsvpc</code> network mode. </p>  <p>If
      * the network mode is <code>host</code>, you cannot run multiple instantiations of
      * the same task on a single container instance when port mappings are used.</p>
      * <p>Docker for Windows uses different network modes than Docker for Linux. When
@@ -290,28 +323,31 @@ namespace Model
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
      * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
-     * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
-     * you are using the Fargate launch type, the <code>awsvpc</code> network mode is
-     * required. If you are using the EC2 launch type, any network mode can be used. If
-     * the network mode is set to <code>none</code>, you cannot specify port mappings
-     * in your container definitions, and the tasks containers do not have external
-     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
-     * the highest networking performance for containers because they use the EC2
-     * network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
-     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
-     * to the corresponding host port (for the <code>host</code> network mode) or the
-     * attached elastic network interface port (for the <code>awsvpc</code> network
-     * mode), so you cannot take advantage of dynamic host port mappings. </p> <p>If
-     * the network mode is <code>awsvpc</code>, the task is allocated an elastic
-     * network interface, and you must specify a <a>NetworkConfiguration</a> value when
-     * you create a service or run a task with the task definition. For more
-     * information, see <a
+     * <code>host</code>. If no network mode is specified, the default is
+     * <code>bridge</code>.</p> <p>For Amazon ECS tasks on Fargate, the
+     * <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2
+     * instances, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you cannot specify port mappings in your container
+     * definitions, and the tasks containers do not have external connectivity. The
+     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack
+     * instead of the virtualized network stack provided by the <code>bridge</code>
+     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
+     * exposed container ports are mapped directly to the corresponding host port (for
+     * the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
+     * dynamic host port mappings. </p>  <p>When using the <code>host</code>
+     * network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.</p>  <p>If the
+     * network mode is <code>awsvpc</code>, the task is allocated an elastic network
+     * interface, and you must specify a <a>NetworkConfiguration</a> value when you
+     * create a service or run a task with the task definition. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <note> <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
+     * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
      * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
-     * infrastructure support the <code>awsvpc</code> network mode. </p> </note> <p>If
+     * infrastructure support the <code>awsvpc</code> network mode. </p>  <p>If
      * the network mode is <code>host</code>, you cannot run multiple instantiations of
      * the same task on a single container instance when port mappings are used.</p>
      * <p>Docker for Windows uses different network modes than Docker for Linux. When
@@ -327,28 +363,31 @@ namespace Model
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
      * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
-     * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
-     * you are using the Fargate launch type, the <code>awsvpc</code> network mode is
-     * required. If you are using the EC2 launch type, any network mode can be used. If
-     * the network mode is set to <code>none</code>, you cannot specify port mappings
-     * in your container definitions, and the tasks containers do not have external
-     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
-     * the highest networking performance for containers because they use the EC2
-     * network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
-     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
-     * to the corresponding host port (for the <code>host</code> network mode) or the
-     * attached elastic network interface port (for the <code>awsvpc</code> network
-     * mode), so you cannot take advantage of dynamic host port mappings. </p> <p>If
-     * the network mode is <code>awsvpc</code>, the task is allocated an elastic
-     * network interface, and you must specify a <a>NetworkConfiguration</a> value when
-     * you create a service or run a task with the task definition. For more
-     * information, see <a
+     * <code>host</code>. If no network mode is specified, the default is
+     * <code>bridge</code>.</p> <p>For Amazon ECS tasks on Fargate, the
+     * <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2
+     * instances, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you cannot specify port mappings in your container
+     * definitions, and the tasks containers do not have external connectivity. The
+     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack
+     * instead of the virtualized network stack provided by the <code>bridge</code>
+     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
+     * exposed container ports are mapped directly to the corresponding host port (for
+     * the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
+     * dynamic host port mappings. </p>  <p>When using the <code>host</code>
+     * network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.</p>  <p>If the
+     * network mode is <code>awsvpc</code>, the task is allocated an elastic network
+     * interface, and you must specify a <a>NetworkConfiguration</a> value when you
+     * create a service or run a task with the task definition. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <note> <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
+     * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
      * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
-     * infrastructure support the <code>awsvpc</code> network mode. </p> </note> <p>If
+     * infrastructure support the <code>awsvpc</code> network mode. </p>  <p>If
      * the network mode is <code>host</code>, you cannot run multiple instantiations of
      * the same task on a single container instance when port mappings are used.</p>
      * <p>Docker for Windows uses different network modes than Docker for Linux. When
@@ -364,28 +403,31 @@ namespace Model
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
      * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
-     * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
-     * you are using the Fargate launch type, the <code>awsvpc</code> network mode is
-     * required. If you are using the EC2 launch type, any network mode can be used. If
-     * the network mode is set to <code>none</code>, you cannot specify port mappings
-     * in your container definitions, and the tasks containers do not have external
-     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
-     * the highest networking performance for containers because they use the EC2
-     * network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
-     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
-     * to the corresponding host port (for the <code>host</code> network mode) or the
-     * attached elastic network interface port (for the <code>awsvpc</code> network
-     * mode), so you cannot take advantage of dynamic host port mappings. </p> <p>If
-     * the network mode is <code>awsvpc</code>, the task is allocated an elastic
-     * network interface, and you must specify a <a>NetworkConfiguration</a> value when
-     * you create a service or run a task with the task definition. For more
-     * information, see <a
+     * <code>host</code>. If no network mode is specified, the default is
+     * <code>bridge</code>.</p> <p>For Amazon ECS tasks on Fargate, the
+     * <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2
+     * instances, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you cannot specify port mappings in your container
+     * definitions, and the tasks containers do not have external connectivity. The
+     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack
+     * instead of the virtualized network stack provided by the <code>bridge</code>
+     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
+     * exposed container ports are mapped directly to the corresponding host port (for
+     * the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
+     * dynamic host port mappings. </p>  <p>When using the <code>host</code>
+     * network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.</p>  <p>If the
+     * network mode is <code>awsvpc</code>, the task is allocated an elastic network
+     * interface, and you must specify a <a>NetworkConfiguration</a> value when you
+     * create a service or run a task with the task definition. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <note> <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
+     * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
      * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
-     * infrastructure support the <code>awsvpc</code> network mode. </p> </note> <p>If
+     * infrastructure support the <code>awsvpc</code> network mode. </p>  <p>If
      * the network mode is <code>host</code>, you cannot run multiple instantiations of
      * the same task on a single container instance when port mappings are used.</p>
      * <p>Docker for Windows uses different network modes than Docker for Linux. When
@@ -401,28 +443,31 @@ namespace Model
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
      * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
-     * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
-     * you are using the Fargate launch type, the <code>awsvpc</code> network mode is
-     * required. If you are using the EC2 launch type, any network mode can be used. If
-     * the network mode is set to <code>none</code>, you cannot specify port mappings
-     * in your container definitions, and the tasks containers do not have external
-     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
-     * the highest networking performance for containers because they use the EC2
-     * network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
-     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
-     * to the corresponding host port (for the <code>host</code> network mode) or the
-     * attached elastic network interface port (for the <code>awsvpc</code> network
-     * mode), so you cannot take advantage of dynamic host port mappings. </p> <p>If
-     * the network mode is <code>awsvpc</code>, the task is allocated an elastic
-     * network interface, and you must specify a <a>NetworkConfiguration</a> value when
-     * you create a service or run a task with the task definition. For more
-     * information, see <a
+     * <code>host</code>. If no network mode is specified, the default is
+     * <code>bridge</code>.</p> <p>For Amazon ECS tasks on Fargate, the
+     * <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2
+     * instances, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you cannot specify port mappings in your container
+     * definitions, and the tasks containers do not have external connectivity. The
+     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack
+     * instead of the virtualized network stack provided by the <code>bridge</code>
+     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
+     * exposed container ports are mapped directly to the corresponding host port (for
+     * the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
+     * dynamic host port mappings. </p>  <p>When using the <code>host</code>
+     * network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.</p>  <p>If the
+     * network mode is <code>awsvpc</code>, the task is allocated an elastic network
+     * interface, and you must specify a <a>NetworkConfiguration</a> value when you
+     * create a service or run a task with the task definition. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <note> <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
+     * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
      * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
-     * infrastructure support the <code>awsvpc</code> network mode. </p> </note> <p>If
+     * infrastructure support the <code>awsvpc</code> network mode. </p>  <p>If
      * the network mode is <code>host</code>, you cannot run multiple instantiations of
      * the same task on a single container instance when port mappings are used.</p>
      * <p>Docker for Windows uses different network modes than Docker for Linux. When
@@ -438,28 +483,31 @@ namespace Model
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
      * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
-     * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
-     * you are using the Fargate launch type, the <code>awsvpc</code> network mode is
-     * required. If you are using the EC2 launch type, any network mode can be used. If
-     * the network mode is set to <code>none</code>, you cannot specify port mappings
-     * in your container definitions, and the tasks containers do not have external
-     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
-     * the highest networking performance for containers because they use the EC2
-     * network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
-     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
-     * to the corresponding host port (for the <code>host</code> network mode) or the
-     * attached elastic network interface port (for the <code>awsvpc</code> network
-     * mode), so you cannot take advantage of dynamic host port mappings. </p> <p>If
-     * the network mode is <code>awsvpc</code>, the task is allocated an elastic
-     * network interface, and you must specify a <a>NetworkConfiguration</a> value when
-     * you create a service or run a task with the task definition. For more
-     * information, see <a
+     * <code>host</code>. If no network mode is specified, the default is
+     * <code>bridge</code>.</p> <p>For Amazon ECS tasks on Fargate, the
+     * <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2
+     * instances, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you cannot specify port mappings in your container
+     * definitions, and the tasks containers do not have external connectivity. The
+     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack
+     * instead of the virtualized network stack provided by the <code>bridge</code>
+     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
+     * exposed container ports are mapped directly to the corresponding host port (for
+     * the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
+     * dynamic host port mappings. </p>  <p>When using the <code>host</code>
+     * network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.</p>  <p>If the
+     * network mode is <code>awsvpc</code>, the task is allocated an elastic network
+     * interface, and you must specify a <a>NetworkConfiguration</a> value when you
+     * create a service or run a task with the task definition. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <note> <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
+     * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
      * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
-     * infrastructure support the <code>awsvpc</code> network mode. </p> </note> <p>If
+     * infrastructure support the <code>awsvpc</code> network mode. </p>  <p>If
      * the network mode is <code>host</code>, you cannot run multiple instantiations of
      * the same task on a single container instance when port mappings are used.</p>
      * <p>Docker for Windows uses different network modes than Docker for Linux. When
@@ -629,50 +677,66 @@ namespace Model
 
 
     /**
-     * <p>The launch type required by the task. If no value is specified, it defaults
-     * to <code>EC2</code>.</p>
+     * <p>The task launch type that Amazon ECS should validate the task definition
+     * against. This ensures that the task definition parameters are compatible with
+     * the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.</p>
      */
     inline const Aws::Vector<Compatibility>& GetRequiresCompatibilities() const{ return m_requiresCompatibilities; }
 
     /**
-     * <p>The launch type required by the task. If no value is specified, it defaults
-     * to <code>EC2</code>.</p>
+     * <p>The task launch type that Amazon ECS should validate the task definition
+     * against. This ensures that the task definition parameters are compatible with
+     * the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.</p>
      */
     inline bool RequiresCompatibilitiesHasBeenSet() const { return m_requiresCompatibilitiesHasBeenSet; }
 
     /**
-     * <p>The launch type required by the task. If no value is specified, it defaults
-     * to <code>EC2</code>.</p>
+     * <p>The task launch type that Amazon ECS should validate the task definition
+     * against. This ensures that the task definition parameters are compatible with
+     * the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.</p>
      */
     inline void SetRequiresCompatibilities(const Aws::Vector<Compatibility>& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities = value; }
 
     /**
-     * <p>The launch type required by the task. If no value is specified, it defaults
-     * to <code>EC2</code>.</p>
+     * <p>The task launch type that Amazon ECS should validate the task definition
+     * against. This ensures that the task definition parameters are compatible with
+     * the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.</p>
      */
     inline void SetRequiresCompatibilities(Aws::Vector<Compatibility>&& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities = std::move(value); }
 
     /**
-     * <p>The launch type required by the task. If no value is specified, it defaults
-     * to <code>EC2</code>.</p>
+     * <p>The task launch type that Amazon ECS should validate the task definition
+     * against. This ensures that the task definition parameters are compatible with
+     * the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.</p>
      */
     inline RegisterTaskDefinitionRequest& WithRequiresCompatibilities(const Aws::Vector<Compatibility>& value) { SetRequiresCompatibilities(value); return *this;}
 
     /**
-     * <p>The launch type required by the task. If no value is specified, it defaults
-     * to <code>EC2</code>.</p>
+     * <p>The task launch type that Amazon ECS should validate the task definition
+     * against. This ensures that the task definition parameters are compatible with
+     * the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.</p>
      */
     inline RegisterTaskDefinitionRequest& WithRequiresCompatibilities(Aws::Vector<Compatibility>&& value) { SetRequiresCompatibilities(std::move(value)); return *this;}
 
     /**
-     * <p>The launch type required by the task. If no value is specified, it defaults
-     * to <code>EC2</code>.</p>
+     * <p>The task launch type that Amazon ECS should validate the task definition
+     * against. This ensures that the task definition parameters are compatible with
+     * the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.</p>
      */
     inline RegisterTaskDefinitionRequest& AddRequiresCompatibilities(const Compatibility& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities.push_back(value); return *this; }
 
     /**
-     * <p>The launch type required by the task. If no value is specified, it defaults
-     * to <code>EC2</code>.</p>
+     * <p>The task launch type that Amazon ECS should validate the task definition
+     * against. This ensures that the task definition parameters are compatible with
+     * the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.</p>
      */
     inline RegisterTaskDefinitionRequest& AddRequiresCompatibilities(Compatibility&& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities.push_back(std::move(value)); return *this; }
 
@@ -682,9 +746,9 @@ namespace Model
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
      * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
      * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
+     * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
      * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
@@ -707,9 +771,9 @@ namespace Model
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
      * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
      * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
+     * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
      * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
@@ -732,9 +796,9 @@ namespace Model
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
      * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
      * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
+     * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
      * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
@@ -757,9 +821,9 @@ namespace Model
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
      * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
      * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
+     * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
      * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
@@ -782,9 +846,9 @@ namespace Model
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
      * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
      * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
+     * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
      * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
@@ -807,9 +871,9 @@ namespace Model
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
      * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
      * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
+     * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
      * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
@@ -832,9 +896,9 @@ namespace Model
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
      * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
      * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
+     * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
      * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
@@ -857,9 +921,9 @@ namespace Model
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
      * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
      * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
+     * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
      * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
@@ -883,9 +947,9 @@ namespace Model
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
      * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
+     * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
      * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
@@ -906,9 +970,9 @@ namespace Model
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
      * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
+     * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
      * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
@@ -929,9 +993,9 @@ namespace Model
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
      * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
+     * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
      * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
@@ -952,9 +1016,9 @@ namespace Model
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
      * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
+     * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
      * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
@@ -975,9 +1039,9 @@ namespace Model
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
      * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
+     * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
      * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
@@ -998,9 +1062,9 @@ namespace Model
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
      * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
+     * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
      * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
@@ -1021,9 +1085,9 @@ namespace Model
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
      * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
+     * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
      * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
@@ -1044,9 +1108,9 @@ namespace Model
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
      * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
+     * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
      * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
@@ -1237,8 +1301,8 @@ namespace Model
      * PID mode is used, be aware that there is a heightened risk of undesired process
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
-     * security</a>.</p> <note> <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> </note>
+     * security</a>.</p>  <p>This parameter is not supported for Windows
+     * containers or tasks using the Fargate launch type.</p> 
      */
     inline const PidMode& GetPidMode() const{ return m_pidMode; }
 
@@ -1255,8 +1319,8 @@ namespace Model
      * PID mode is used, be aware that there is a heightened risk of undesired process
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
-     * security</a>.</p> <note> <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> </note>
+     * security</a>.</p>  <p>This parameter is not supported for Windows
+     * containers or tasks using the Fargate launch type.</p> 
      */
     inline bool PidModeHasBeenSet() const { return m_pidModeHasBeenSet; }
 
@@ -1273,8 +1337,8 @@ namespace Model
      * PID mode is used, be aware that there is a heightened risk of undesired process
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
-     * security</a>.</p> <note> <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> </note>
+     * security</a>.</p>  <p>This parameter is not supported for Windows
+     * containers or tasks using the Fargate launch type.</p> 
      */
     inline void SetPidMode(const PidMode& value) { m_pidModeHasBeenSet = true; m_pidMode = value; }
 
@@ -1291,8 +1355,8 @@ namespace Model
      * PID mode is used, be aware that there is a heightened risk of undesired process
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
-     * security</a>.</p> <note> <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> </note>
+     * security</a>.</p>  <p>This parameter is not supported for Windows
+     * containers or tasks using the Fargate launch type.</p> 
      */
     inline void SetPidMode(PidMode&& value) { m_pidModeHasBeenSet = true; m_pidMode = std::move(value); }
 
@@ -1309,8 +1373,8 @@ namespace Model
      * PID mode is used, be aware that there is a heightened risk of undesired process
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
-     * security</a>.</p> <note> <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> </note>
+     * security</a>.</p>  <p>This parameter is not supported for Windows
+     * containers or tasks using the Fargate launch type.</p> 
      */
     inline RegisterTaskDefinitionRequest& WithPidMode(const PidMode& value) { SetPidMode(value); return *this;}
 
@@ -1327,8 +1391,8 @@ namespace Model
      * PID mode is used, be aware that there is a heightened risk of undesired process
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
-     * security</a>.</p> <note> <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> </note>
+     * security</a>.</p>  <p>This parameter is not supported for Windows
+     * containers or tasks using the Fargate launch type.</p> 
      */
     inline RegisterTaskDefinitionRequest& WithPidMode(PidMode&& value) { SetPidMode(std::move(value)); return *this;}
 
@@ -1359,8 +1423,8 @@ namespace Model
      * related <code>systemControls</code> are not supported.</p> </li> <li> <p>For
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
-     * </li> </ul> <note> <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> </note>
+     * </li> </ul>  <p>This parameter is not supported for Windows containers or
+     * tasks using the Fargate launch type.</p> 
      */
     inline const IpcMode& GetIpcMode() const{ return m_ipcMode; }
 
@@ -1390,8 +1454,8 @@ namespace Model
      * related <code>systemControls</code> are not supported.</p> </li> <li> <p>For
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
-     * </li> </ul> <note> <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> </note>
+     * </li> </ul>  <p>This parameter is not supported for Windows containers or
+     * tasks using the Fargate launch type.</p> 
      */
     inline bool IpcModeHasBeenSet() const { return m_ipcModeHasBeenSet; }
 
@@ -1421,8 +1485,8 @@ namespace Model
      * related <code>systemControls</code> are not supported.</p> </li> <li> <p>For
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
-     * </li> </ul> <note> <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> </note>
+     * </li> </ul>  <p>This parameter is not supported for Windows containers or
+     * tasks using the Fargate launch type.</p> 
      */
     inline void SetIpcMode(const IpcMode& value) { m_ipcModeHasBeenSet = true; m_ipcMode = value; }
 
@@ -1452,8 +1516,8 @@ namespace Model
      * related <code>systemControls</code> are not supported.</p> </li> <li> <p>For
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
-     * </li> </ul> <note> <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> </note>
+     * </li> </ul>  <p>This parameter is not supported for Windows containers or
+     * tasks using the Fargate launch type.</p> 
      */
     inline void SetIpcMode(IpcMode&& value) { m_ipcModeHasBeenSet = true; m_ipcMode = std::move(value); }
 
@@ -1483,8 +1547,8 @@ namespace Model
      * related <code>systemControls</code> are not supported.</p> </li> <li> <p>For
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
-     * </li> </ul> <note> <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> </note>
+     * </li> </ul>  <p>This parameter is not supported for Windows containers or
+     * tasks using the Fargate launch type.</p> 
      */
     inline RegisterTaskDefinitionRequest& WithIpcMode(const IpcMode& value) { SetIpcMode(value); return *this;}
 
@@ -1514,8 +1578,8 @@ namespace Model
      * related <code>systemControls</code> are not supported.</p> </li> <li> <p>For
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
-     * </li> </ul> <note> <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> </note>
+     * </li> </ul>  <p>This parameter is not supported for Windows containers or
+     * tasks using the Fargate launch type.</p> 
      */
     inline RegisterTaskDefinitionRequest& WithIpcMode(IpcMode&& value) { SetIpcMode(std::move(value)); return *this;}
 

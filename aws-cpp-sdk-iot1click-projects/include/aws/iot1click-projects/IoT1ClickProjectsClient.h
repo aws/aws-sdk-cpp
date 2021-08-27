@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot1click-projects/IoT1ClickProjects_EXPORTS.h>
@@ -93,22 +83,22 @@ namespace Model
         class UpdatePlacementRequest;
         class UpdateProjectRequest;
 
-        typedef Aws::Utils::Outcome<AssociateDeviceWithPlacementResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> AssociateDeviceWithPlacementOutcome;
-        typedef Aws::Utils::Outcome<CreatePlacementResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> CreatePlacementOutcome;
-        typedef Aws::Utils::Outcome<CreateProjectResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> CreateProjectOutcome;
-        typedef Aws::Utils::Outcome<DeletePlacementResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> DeletePlacementOutcome;
-        typedef Aws::Utils::Outcome<DeleteProjectResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> DeleteProjectOutcome;
-        typedef Aws::Utils::Outcome<DescribePlacementResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> DescribePlacementOutcome;
-        typedef Aws::Utils::Outcome<DescribeProjectResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> DescribeProjectOutcome;
-        typedef Aws::Utils::Outcome<DisassociateDeviceFromPlacementResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> DisassociateDeviceFromPlacementOutcome;
-        typedef Aws::Utils::Outcome<GetDevicesInPlacementResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> GetDevicesInPlacementOutcome;
-        typedef Aws::Utils::Outcome<ListPlacementsResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> ListPlacementsOutcome;
-        typedef Aws::Utils::Outcome<ListProjectsResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> ListProjectsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdatePlacementResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> UpdatePlacementOutcome;
-        typedef Aws::Utils::Outcome<UpdateProjectResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> UpdateProjectOutcome;
+        typedef Aws::Utils::Outcome<AssociateDeviceWithPlacementResult, IoT1ClickProjectsError> AssociateDeviceWithPlacementOutcome;
+        typedef Aws::Utils::Outcome<CreatePlacementResult, IoT1ClickProjectsError> CreatePlacementOutcome;
+        typedef Aws::Utils::Outcome<CreateProjectResult, IoT1ClickProjectsError> CreateProjectOutcome;
+        typedef Aws::Utils::Outcome<DeletePlacementResult, IoT1ClickProjectsError> DeletePlacementOutcome;
+        typedef Aws::Utils::Outcome<DeleteProjectResult, IoT1ClickProjectsError> DeleteProjectOutcome;
+        typedef Aws::Utils::Outcome<DescribePlacementResult, IoT1ClickProjectsError> DescribePlacementOutcome;
+        typedef Aws::Utils::Outcome<DescribeProjectResult, IoT1ClickProjectsError> DescribeProjectOutcome;
+        typedef Aws::Utils::Outcome<DisassociateDeviceFromPlacementResult, IoT1ClickProjectsError> DisassociateDeviceFromPlacementOutcome;
+        typedef Aws::Utils::Outcome<GetDevicesInPlacementResult, IoT1ClickProjectsError> GetDevicesInPlacementOutcome;
+        typedef Aws::Utils::Outcome<ListPlacementsResult, IoT1ClickProjectsError> ListPlacementsOutcome;
+        typedef Aws::Utils::Outcome<ListProjectsResult, IoT1ClickProjectsError> ListProjectsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoT1ClickProjectsError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, IoT1ClickProjectsError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, IoT1ClickProjectsError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdatePlacementResult, IoT1ClickProjectsError> UpdatePlacementOutcome;
+        typedef Aws::Utils::Outcome<UpdateProjectResult, IoT1ClickProjectsError> UpdateProjectOutcome;
 
         typedef std::future<AssociateDeviceWithPlacementOutcome> AssociateDeviceWithPlacementOutcomeCallable;
         typedef std::future<CreatePlacementOutcome> CreatePlacementOutcomeCallable;
@@ -175,8 +165,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~IoT1ClickProjectsClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "IoT 1Click Projects"; }
 
 
         /**
@@ -262,8 +250,8 @@ namespace Model
 
         /**
          * <p>Deletes a placement. To delete a placement, it must not have any devices
-         * associated with it.</p> <note> <p>When you delete a placement, all associated
-         * data becomes irretrievable.</p> </note><p><h3>See Also:</h3>   <a
+         * associated with it.</p>  <p>When you delete a placement, all associated
+         * data becomes irretrievable.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DeletePlacement">AWS
          * API Reference</a></p>
          */
@@ -271,8 +259,8 @@ namespace Model
 
         /**
          * <p>Deletes a placement. To delete a placement, it must not have any devices
-         * associated with it.</p> <note> <p>When you delete a placement, all associated
-         * data becomes irretrievable.</p> </note><p><h3>See Also:</h3>   <a
+         * associated with it.</p>  <p>When you delete a placement, all associated
+         * data becomes irretrievable.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DeletePlacement">AWS
          * API Reference</a></p>
          *
@@ -282,8 +270,8 @@ namespace Model
 
         /**
          * <p>Deletes a placement. To delete a placement, it must not have any devices
-         * associated with it.</p> <note> <p>When you delete a placement, all associated
-         * data becomes irretrievable.</p> </note><p><h3>See Also:</h3>   <a
+         * associated with it.</p>  <p>When you delete a placement, all associated
+         * data becomes irretrievable.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DeletePlacement">AWS
          * API Reference</a></p>
          *
@@ -293,8 +281,8 @@ namespace Model
 
         /**
          * <p>Deletes a project. To delete a project, it must not have any placements
-         * associated with it.</p> <note> <p>When you delete a project, all associated data
-         * becomes irretrievable.</p> </note><p><h3>See Also:</h3>   <a
+         * associated with it.</p>  <p>When you delete a project, all associated data
+         * becomes irretrievable.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DeleteProject">AWS
          * API Reference</a></p>
          */
@@ -302,8 +290,8 @@ namespace Model
 
         /**
          * <p>Deletes a project. To delete a project, it must not have any placements
-         * associated with it.</p> <note> <p>When you delete a project, all associated data
-         * becomes irretrievable.</p> </note><p><h3>See Also:</h3>   <a
+         * associated with it.</p>  <p>When you delete a project, all associated data
+         * becomes irretrievable.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DeleteProject">AWS
          * API Reference</a></p>
          *
@@ -313,8 +301,8 @@ namespace Model
 
         /**
          * <p>Deletes a project. To delete a project, it must not have any placements
-         * associated with it.</p> <note> <p>When you delete a project, all associated data
-         * becomes irretrievable.</p> </note><p><h3>See Also:</h3>   <a
+         * associated with it.</p>  <p>When you delete a project, all associated data
+         * becomes irretrievable.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DeleteProject">AWS
          * API Reference</a></p>
          *

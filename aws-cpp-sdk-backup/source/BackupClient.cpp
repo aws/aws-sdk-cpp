@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -42,8 +32,10 @@
 #include <aws/backup/model/DescribeBackupJobRequest.h>
 #include <aws/backup/model/DescribeBackupVaultRequest.h>
 #include <aws/backup/model/DescribeCopyJobRequest.h>
+#include <aws/backup/model/DescribeGlobalSettingsRequest.h>
 #include <aws/backup/model/DescribeProtectedResourceRequest.h>
 #include <aws/backup/model/DescribeRecoveryPointRequest.h>
+#include <aws/backup/model/DescribeRegionSettingsRequest.h>
 #include <aws/backup/model/DescribeRestoreJobRequest.h>
 #include <aws/backup/model/ExportBackupPlanTemplateRequest.h>
 #include <aws/backup/model/GetBackupPlanRequest.h>
@@ -74,7 +66,9 @@
 #include <aws/backup/model/TagResourceRequest.h>
 #include <aws/backup/model/UntagResourceRequest.h>
 #include <aws/backup/model/UpdateBackupPlanRequest.h>
+#include <aws/backup/model/UpdateGlobalSettingsRequest.h>
 #include <aws/backup/model/UpdateRecoveryPointLifecycleRequest.h>
+#include <aws/backup/model/UpdateRegionSettingsRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -91,7 +85,7 @@ static const char* ALLOCATION_TAG = "BackupClient";
 BackupClient::BackupClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<BackupErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -101,7 +95,7 @@ BackupClient::BackupClient(const Client::ClientConfiguration& clientConfiguratio
 BackupClient::BackupClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<BackupErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -112,7 +106,7 @@ BackupClient::BackupClient(const std::shared_ptr<AWSCredentialsProvider>& creden
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<BackupErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -125,6 +119,7 @@ BackupClient::~BackupClient()
 
 void BackupClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Backup");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -154,15 +149,7 @@ CreateBackupPlanOutcome BackupClient::CreateBackupPlan(const CreateBackupPlanReq
   Aws::StringStream ss;
   ss << "/backup/plans/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateBackupPlanOutcome(CreateBackupPlanResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateBackupPlanOutcome(outcome.GetError());
-  }
+  return CreateBackupPlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateBackupPlanOutcomeCallable BackupClient::CreateBackupPlanCallable(const CreateBackupPlanRequest& request) const
@@ -196,15 +183,7 @@ CreateBackupSelectionOutcome BackupClient::CreateBackupSelection(const CreateBac
   ss << request.GetBackupPlanId();
   ss << "/selections/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateBackupSelectionOutcome(CreateBackupSelectionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateBackupSelectionOutcome(outcome.GetError());
-  }
+  return CreateBackupSelectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateBackupSelectionOutcomeCallable BackupClient::CreateBackupSelectionCallable(const CreateBackupSelectionRequest& request) const
@@ -237,15 +216,7 @@ CreateBackupVaultOutcome BackupClient::CreateBackupVault(const CreateBackupVault
   ss << "/backup-vaults/";
   ss << request.GetBackupVaultName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateBackupVaultOutcome(CreateBackupVaultResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateBackupVaultOutcome(outcome.GetError());
-  }
+  return CreateBackupVaultOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateBackupVaultOutcomeCallable BackupClient::CreateBackupVaultCallable(const CreateBackupVaultRequest& request) const
@@ -278,15 +249,7 @@ DeleteBackupPlanOutcome BackupClient::DeleteBackupPlan(const DeleteBackupPlanReq
   ss << "/backup/plans/";
   ss << request.GetBackupPlanId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteBackupPlanOutcome(DeleteBackupPlanResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteBackupPlanOutcome(outcome.GetError());
-  }
+  return DeleteBackupPlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteBackupPlanOutcomeCallable BackupClient::DeleteBackupPlanCallable(const DeleteBackupPlanRequest& request) const
@@ -326,15 +289,7 @@ DeleteBackupSelectionOutcome BackupClient::DeleteBackupSelection(const DeleteBac
   ss << "/selections/";
   ss << request.GetSelectionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteBackupSelectionOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteBackupSelectionOutcome(outcome.GetError());
-  }
+  return DeleteBackupSelectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteBackupSelectionOutcomeCallable BackupClient::DeleteBackupSelectionCallable(const DeleteBackupSelectionRequest& request) const
@@ -367,15 +322,7 @@ DeleteBackupVaultOutcome BackupClient::DeleteBackupVault(const DeleteBackupVault
   ss << "/backup-vaults/";
   ss << request.GetBackupVaultName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteBackupVaultOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteBackupVaultOutcome(outcome.GetError());
-  }
+  return DeleteBackupVaultOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteBackupVaultOutcomeCallable BackupClient::DeleteBackupVaultCallable(const DeleteBackupVaultRequest& request) const
@@ -409,15 +356,7 @@ DeleteBackupVaultAccessPolicyOutcome BackupClient::DeleteBackupVaultAccessPolicy
   ss << request.GetBackupVaultName();
   ss << "/access-policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteBackupVaultAccessPolicyOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteBackupVaultAccessPolicyOutcome(outcome.GetError());
-  }
+  return DeleteBackupVaultAccessPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteBackupVaultAccessPolicyOutcomeCallable BackupClient::DeleteBackupVaultAccessPolicyCallable(const DeleteBackupVaultAccessPolicyRequest& request) const
@@ -451,15 +390,7 @@ DeleteBackupVaultNotificationsOutcome BackupClient::DeleteBackupVaultNotificatio
   ss << request.GetBackupVaultName();
   ss << "/notification-configuration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteBackupVaultNotificationsOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteBackupVaultNotificationsOutcome(outcome.GetError());
-  }
+  return DeleteBackupVaultNotificationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteBackupVaultNotificationsOutcomeCallable BackupClient::DeleteBackupVaultNotificationsCallable(const DeleteBackupVaultNotificationsRequest& request) const
@@ -499,15 +430,7 @@ DeleteRecoveryPointOutcome BackupClient::DeleteRecoveryPoint(const DeleteRecover
   ss << "/recovery-points/";
   ss << request.GetRecoveryPointArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRecoveryPointOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteRecoveryPointOutcome(outcome.GetError());
-  }
+  return DeleteRecoveryPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRecoveryPointOutcomeCallable BackupClient::DeleteRecoveryPointCallable(const DeleteRecoveryPointRequest& request) const
@@ -540,15 +463,7 @@ DescribeBackupJobOutcome BackupClient::DescribeBackupJob(const DescribeBackupJob
   ss << "/backup-jobs/";
   ss << request.GetBackupJobId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeBackupJobOutcome(DescribeBackupJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeBackupJobOutcome(outcome.GetError());
-  }
+  return DescribeBackupJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeBackupJobOutcomeCallable BackupClient::DescribeBackupJobCallable(const DescribeBackupJobRequest& request) const
@@ -581,15 +496,7 @@ DescribeBackupVaultOutcome BackupClient::DescribeBackupVault(const DescribeBacku
   ss << "/backup-vaults/";
   ss << request.GetBackupVaultName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeBackupVaultOutcome(DescribeBackupVaultResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeBackupVaultOutcome(outcome.GetError());
-  }
+  return DescribeBackupVaultOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeBackupVaultOutcomeCallable BackupClient::DescribeBackupVaultCallable(const DescribeBackupVaultRequest& request) const
@@ -622,15 +529,7 @@ DescribeCopyJobOutcome BackupClient::DescribeCopyJob(const DescribeCopyJobReques
   ss << "/copy-jobs/";
   ss << request.GetCopyJobId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeCopyJobOutcome(DescribeCopyJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeCopyJobOutcome(outcome.GetError());
-  }
+  return DescribeCopyJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeCopyJobOutcomeCallable BackupClient::DescribeCopyJobCallable(const DescribeCopyJobRequest& request) const
@@ -651,6 +550,33 @@ void BackupClient::DescribeCopyJobAsyncHelper(const DescribeCopyJobRequest& requ
   handler(this, request, DescribeCopyJob(request), context);
 }
 
+DescribeGlobalSettingsOutcome BackupClient::DescribeGlobalSettings(const DescribeGlobalSettingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/global-settings";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeGlobalSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeGlobalSettingsOutcomeCallable BackupClient::DescribeGlobalSettingsCallable(const DescribeGlobalSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeGlobalSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeGlobalSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::DescribeGlobalSettingsAsync(const DescribeGlobalSettingsRequest& request, const DescribeGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeGlobalSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::DescribeGlobalSettingsAsyncHelper(const DescribeGlobalSettingsRequest& request, const DescribeGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeGlobalSettings(request), context);
+}
+
 DescribeProtectedResourceOutcome BackupClient::DescribeProtectedResource(const DescribeProtectedResourceRequest& request) const
 {
   if (!request.ResourceArnHasBeenSet())
@@ -663,15 +589,7 @@ DescribeProtectedResourceOutcome BackupClient::DescribeProtectedResource(const D
   ss << "/resources/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeProtectedResourceOutcome(DescribeProtectedResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeProtectedResourceOutcome(outcome.GetError());
-  }
+  return DescribeProtectedResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeProtectedResourceOutcomeCallable BackupClient::DescribeProtectedResourceCallable(const DescribeProtectedResourceRequest& request) const
@@ -711,15 +629,7 @@ DescribeRecoveryPointOutcome BackupClient::DescribeRecoveryPoint(const DescribeR
   ss << "/recovery-points/";
   ss << request.GetRecoveryPointArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeRecoveryPointOutcome(DescribeRecoveryPointResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeRecoveryPointOutcome(outcome.GetError());
-  }
+  return DescribeRecoveryPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeRecoveryPointOutcomeCallable BackupClient::DescribeRecoveryPointCallable(const DescribeRecoveryPointRequest& request) const
@@ -740,6 +650,33 @@ void BackupClient::DescribeRecoveryPointAsyncHelper(const DescribeRecoveryPointR
   handler(this, request, DescribeRecoveryPoint(request), context);
 }
 
+DescribeRegionSettingsOutcome BackupClient::DescribeRegionSettings(const DescribeRegionSettingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/account-settings";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeRegionSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeRegionSettingsOutcomeCallable BackupClient::DescribeRegionSettingsCallable(const DescribeRegionSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRegionSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRegionSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::DescribeRegionSettingsAsync(const DescribeRegionSettingsRequest& request, const DescribeRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeRegionSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::DescribeRegionSettingsAsyncHelper(const DescribeRegionSettingsRequest& request, const DescribeRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeRegionSettings(request), context);
+}
+
 DescribeRestoreJobOutcome BackupClient::DescribeRestoreJob(const DescribeRestoreJobRequest& request) const
 {
   if (!request.RestoreJobIdHasBeenSet())
@@ -752,15 +689,7 @@ DescribeRestoreJobOutcome BackupClient::DescribeRestoreJob(const DescribeRestore
   ss << "/restore-jobs/";
   ss << request.GetRestoreJobId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeRestoreJobOutcome(DescribeRestoreJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeRestoreJobOutcome(outcome.GetError());
-  }
+  return DescribeRestoreJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeRestoreJobOutcomeCallable BackupClient::DescribeRestoreJobCallable(const DescribeRestoreJobRequest& request) const
@@ -794,15 +723,7 @@ ExportBackupPlanTemplateOutcome BackupClient::ExportBackupPlanTemplate(const Exp
   ss << request.GetBackupPlanId();
   ss << "/toTemplate/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ExportBackupPlanTemplateOutcome(ExportBackupPlanTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ExportBackupPlanTemplateOutcome(outcome.GetError());
-  }
+  return ExportBackupPlanTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ExportBackupPlanTemplateOutcomeCallable BackupClient::ExportBackupPlanTemplateCallable(const ExportBackupPlanTemplateRequest& request) const
@@ -836,15 +757,7 @@ GetBackupPlanOutcome BackupClient::GetBackupPlan(const GetBackupPlanRequest& req
   ss << request.GetBackupPlanId();
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBackupPlanOutcome(GetBackupPlanResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBackupPlanOutcome(outcome.GetError());
-  }
+  return GetBackupPlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBackupPlanOutcomeCallable BackupClient::GetBackupPlanCallable(const GetBackupPlanRequest& request) const
@@ -871,15 +784,7 @@ GetBackupPlanFromJSONOutcome BackupClient::GetBackupPlanFromJSON(const GetBackup
   Aws::StringStream ss;
   ss << "/backup/template/json/toPlan";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBackupPlanFromJSONOutcome(GetBackupPlanFromJSONResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBackupPlanFromJSONOutcome(outcome.GetError());
-  }
+  return GetBackupPlanFromJSONOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBackupPlanFromJSONOutcomeCallable BackupClient::GetBackupPlanFromJSONCallable(const GetBackupPlanFromJSONRequest& request) const
@@ -913,15 +818,7 @@ GetBackupPlanFromTemplateOutcome BackupClient::GetBackupPlanFromTemplate(const G
   ss << request.GetBackupPlanTemplateId();
   ss << "/toPlan";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBackupPlanFromTemplateOutcome(GetBackupPlanFromTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBackupPlanFromTemplateOutcome(outcome.GetError());
-  }
+  return GetBackupPlanFromTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBackupPlanFromTemplateOutcomeCallable BackupClient::GetBackupPlanFromTemplateCallable(const GetBackupPlanFromTemplateRequest& request) const
@@ -961,15 +858,7 @@ GetBackupSelectionOutcome BackupClient::GetBackupSelection(const GetBackupSelect
   ss << "/selections/";
   ss << request.GetSelectionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBackupSelectionOutcome(GetBackupSelectionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBackupSelectionOutcome(outcome.GetError());
-  }
+  return GetBackupSelectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBackupSelectionOutcomeCallable BackupClient::GetBackupSelectionCallable(const GetBackupSelectionRequest& request) const
@@ -1003,15 +892,7 @@ GetBackupVaultAccessPolicyOutcome BackupClient::GetBackupVaultAccessPolicy(const
   ss << request.GetBackupVaultName();
   ss << "/access-policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBackupVaultAccessPolicyOutcome(GetBackupVaultAccessPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBackupVaultAccessPolicyOutcome(outcome.GetError());
-  }
+  return GetBackupVaultAccessPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBackupVaultAccessPolicyOutcomeCallable BackupClient::GetBackupVaultAccessPolicyCallable(const GetBackupVaultAccessPolicyRequest& request) const
@@ -1045,15 +926,7 @@ GetBackupVaultNotificationsOutcome BackupClient::GetBackupVaultNotifications(con
   ss << request.GetBackupVaultName();
   ss << "/notification-configuration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBackupVaultNotificationsOutcome(GetBackupVaultNotificationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBackupVaultNotificationsOutcome(outcome.GetError());
-  }
+  return GetBackupVaultNotificationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBackupVaultNotificationsOutcomeCallable BackupClient::GetBackupVaultNotificationsCallable(const GetBackupVaultNotificationsRequest& request) const
@@ -1094,15 +967,7 @@ GetRecoveryPointRestoreMetadataOutcome BackupClient::GetRecoveryPointRestoreMeta
   ss << request.GetRecoveryPointArn();
   ss << "/restore-metadata";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRecoveryPointRestoreMetadataOutcome(GetRecoveryPointRestoreMetadataResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRecoveryPointRestoreMetadataOutcome(outcome.GetError());
-  }
+  return GetRecoveryPointRestoreMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRecoveryPointRestoreMetadataOutcomeCallable BackupClient::GetRecoveryPointRestoreMetadataCallable(const GetRecoveryPointRestoreMetadataRequest& request) const
@@ -1127,15 +992,7 @@ GetSupportedResourceTypesOutcome BackupClient::GetSupportedResourceTypes() const
 {
   Aws::StringStream ss;
   ss << m_uri << "/supported-resource-types";
-  JsonOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "GetSupportedResourceTypes");
-  if(outcome.IsSuccess())
-  {
-    return GetSupportedResourceTypesOutcome(GetSupportedResourceTypesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSupportedResourceTypesOutcome(outcome.GetError());
-  }
+  return GetSupportedResourceTypesOutcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "GetSupportedResourceTypes"));
 }
 
 GetSupportedResourceTypesOutcomeCallable BackupClient::GetSupportedResourceTypesCallable() const
@@ -1162,15 +1019,7 @@ ListBackupJobsOutcome BackupClient::ListBackupJobs(const ListBackupJobsRequest& 
   Aws::StringStream ss;
   ss << "/backup-jobs/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListBackupJobsOutcome(ListBackupJobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListBackupJobsOutcome(outcome.GetError());
-  }
+  return ListBackupJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListBackupJobsOutcomeCallable BackupClient::ListBackupJobsCallable(const ListBackupJobsRequest& request) const
@@ -1197,15 +1046,7 @@ ListBackupPlanTemplatesOutcome BackupClient::ListBackupPlanTemplates(const ListB
   Aws::StringStream ss;
   ss << "/backup/template/plans";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListBackupPlanTemplatesOutcome(ListBackupPlanTemplatesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListBackupPlanTemplatesOutcome(outcome.GetError());
-  }
+  return ListBackupPlanTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListBackupPlanTemplatesOutcomeCallable BackupClient::ListBackupPlanTemplatesCallable(const ListBackupPlanTemplatesRequest& request) const
@@ -1239,15 +1080,7 @@ ListBackupPlanVersionsOutcome BackupClient::ListBackupPlanVersions(const ListBac
   ss << request.GetBackupPlanId();
   ss << "/versions/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListBackupPlanVersionsOutcome(ListBackupPlanVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListBackupPlanVersionsOutcome(outcome.GetError());
-  }
+  return ListBackupPlanVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListBackupPlanVersionsOutcomeCallable BackupClient::ListBackupPlanVersionsCallable(const ListBackupPlanVersionsRequest& request) const
@@ -1274,15 +1107,7 @@ ListBackupPlansOutcome BackupClient::ListBackupPlans(const ListBackupPlansReques
   Aws::StringStream ss;
   ss << "/backup/plans/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListBackupPlansOutcome(ListBackupPlansResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListBackupPlansOutcome(outcome.GetError());
-  }
+  return ListBackupPlansOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListBackupPlansOutcomeCallable BackupClient::ListBackupPlansCallable(const ListBackupPlansRequest& request) const
@@ -1316,15 +1141,7 @@ ListBackupSelectionsOutcome BackupClient::ListBackupSelections(const ListBackupS
   ss << request.GetBackupPlanId();
   ss << "/selections/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListBackupSelectionsOutcome(ListBackupSelectionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListBackupSelectionsOutcome(outcome.GetError());
-  }
+  return ListBackupSelectionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListBackupSelectionsOutcomeCallable BackupClient::ListBackupSelectionsCallable(const ListBackupSelectionsRequest& request) const
@@ -1351,15 +1168,7 @@ ListBackupVaultsOutcome BackupClient::ListBackupVaults(const ListBackupVaultsReq
   Aws::StringStream ss;
   ss << "/backup-vaults/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListBackupVaultsOutcome(ListBackupVaultsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListBackupVaultsOutcome(outcome.GetError());
-  }
+  return ListBackupVaultsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListBackupVaultsOutcomeCallable BackupClient::ListBackupVaultsCallable(const ListBackupVaultsRequest& request) const
@@ -1386,15 +1195,7 @@ ListCopyJobsOutcome BackupClient::ListCopyJobs(const ListCopyJobsRequest& reques
   Aws::StringStream ss;
   ss << "/copy-jobs/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListCopyJobsOutcome(ListCopyJobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListCopyJobsOutcome(outcome.GetError());
-  }
+  return ListCopyJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListCopyJobsOutcomeCallable BackupClient::ListCopyJobsCallable(const ListCopyJobsRequest& request) const
@@ -1421,15 +1222,7 @@ ListProtectedResourcesOutcome BackupClient::ListProtectedResources(const ListPro
   Aws::StringStream ss;
   ss << "/resources/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListProtectedResourcesOutcome(ListProtectedResourcesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListProtectedResourcesOutcome(outcome.GetError());
-  }
+  return ListProtectedResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListProtectedResourcesOutcomeCallable BackupClient::ListProtectedResourcesCallable(const ListProtectedResourcesRequest& request) const
@@ -1463,15 +1256,7 @@ ListRecoveryPointsByBackupVaultOutcome BackupClient::ListRecoveryPointsByBackupV
   ss << request.GetBackupVaultName();
   ss << "/recovery-points/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListRecoveryPointsByBackupVaultOutcome(ListRecoveryPointsByBackupVaultResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRecoveryPointsByBackupVaultOutcome(outcome.GetError());
-  }
+  return ListRecoveryPointsByBackupVaultOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRecoveryPointsByBackupVaultOutcomeCallable BackupClient::ListRecoveryPointsByBackupVaultCallable(const ListRecoveryPointsByBackupVaultRequest& request) const
@@ -1505,15 +1290,7 @@ ListRecoveryPointsByResourceOutcome BackupClient::ListRecoveryPointsByResource(c
   ss << request.GetResourceArn();
   ss << "/recovery-points/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListRecoveryPointsByResourceOutcome(ListRecoveryPointsByResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRecoveryPointsByResourceOutcome(outcome.GetError());
-  }
+  return ListRecoveryPointsByResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRecoveryPointsByResourceOutcomeCallable BackupClient::ListRecoveryPointsByResourceCallable(const ListRecoveryPointsByResourceRequest& request) const
@@ -1540,15 +1317,7 @@ ListRestoreJobsOutcome BackupClient::ListRestoreJobs(const ListRestoreJobsReques
   Aws::StringStream ss;
   ss << "/restore-jobs/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListRestoreJobsOutcome(ListRestoreJobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRestoreJobsOutcome(outcome.GetError());
-  }
+  return ListRestoreJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRestoreJobsOutcomeCallable BackupClient::ListRestoreJobsCallable(const ListRestoreJobsRequest& request) const
@@ -1582,15 +1351,7 @@ ListTagsOutcome BackupClient::ListTags(const ListTagsRequest& request) const
   ss << request.GetResourceArn();
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsOutcome(ListTagsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsOutcome(outcome.GetError());
-  }
+  return ListTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsOutcomeCallable BackupClient::ListTagsCallable(const ListTagsRequest& request) const
@@ -1624,15 +1385,7 @@ PutBackupVaultAccessPolicyOutcome BackupClient::PutBackupVaultAccessPolicy(const
   ss << request.GetBackupVaultName();
   ss << "/access-policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutBackupVaultAccessPolicyOutcome(NoResult());
-  }
-  else
-  {
-    return PutBackupVaultAccessPolicyOutcome(outcome.GetError());
-  }
+  return PutBackupVaultAccessPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutBackupVaultAccessPolicyOutcomeCallable BackupClient::PutBackupVaultAccessPolicyCallable(const PutBackupVaultAccessPolicyRequest& request) const
@@ -1666,15 +1419,7 @@ PutBackupVaultNotificationsOutcome BackupClient::PutBackupVaultNotifications(con
   ss << request.GetBackupVaultName();
   ss << "/notification-configuration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutBackupVaultNotificationsOutcome(NoResult());
-  }
-  else
-  {
-    return PutBackupVaultNotificationsOutcome(outcome.GetError());
-  }
+  return PutBackupVaultNotificationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutBackupVaultNotificationsOutcomeCallable BackupClient::PutBackupVaultNotificationsCallable(const PutBackupVaultNotificationsRequest& request) const
@@ -1701,15 +1446,7 @@ StartBackupJobOutcome BackupClient::StartBackupJob(const StartBackupJobRequest& 
   Aws::StringStream ss;
   ss << "/backup-jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartBackupJobOutcome(StartBackupJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartBackupJobOutcome(outcome.GetError());
-  }
+  return StartBackupJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartBackupJobOutcomeCallable BackupClient::StartBackupJobCallable(const StartBackupJobRequest& request) const
@@ -1736,15 +1473,7 @@ StartCopyJobOutcome BackupClient::StartCopyJob(const StartCopyJobRequest& reques
   Aws::StringStream ss;
   ss << "/copy-jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartCopyJobOutcome(StartCopyJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartCopyJobOutcome(outcome.GetError());
-  }
+  return StartCopyJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartCopyJobOutcomeCallable BackupClient::StartCopyJobCallable(const StartCopyJobRequest& request) const
@@ -1771,15 +1500,7 @@ StartRestoreJobOutcome BackupClient::StartRestoreJob(const StartRestoreJobReques
   Aws::StringStream ss;
   ss << "/restore-jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartRestoreJobOutcome(StartRestoreJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartRestoreJobOutcome(outcome.GetError());
-  }
+  return StartRestoreJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartRestoreJobOutcomeCallable BackupClient::StartRestoreJobCallable(const StartRestoreJobRequest& request) const
@@ -1812,15 +1533,7 @@ StopBackupJobOutcome BackupClient::StopBackupJob(const StopBackupJobRequest& req
   ss << "/backup-jobs/";
   ss << request.GetBackupJobId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopBackupJobOutcome(NoResult());
-  }
-  else
-  {
-    return StopBackupJobOutcome(outcome.GetError());
-  }
+  return StopBackupJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopBackupJobOutcomeCallable BackupClient::StopBackupJobCallable(const StopBackupJobRequest& request) const
@@ -1853,15 +1566,7 @@ TagResourceOutcome BackupClient::TagResource(const TagResourceRequest& request) 
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable BackupClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1894,15 +1599,7 @@ UntagResourceOutcome BackupClient::UntagResource(const UntagResourceRequest& req
   ss << "/untag/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable BackupClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -1935,15 +1632,7 @@ UpdateBackupPlanOutcome BackupClient::UpdateBackupPlan(const UpdateBackupPlanReq
   ss << "/backup/plans/";
   ss << request.GetBackupPlanId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateBackupPlanOutcome(UpdateBackupPlanResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateBackupPlanOutcome(outcome.GetError());
-  }
+  return UpdateBackupPlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateBackupPlanOutcomeCallable BackupClient::UpdateBackupPlanCallable(const UpdateBackupPlanRequest& request) const
@@ -1962,6 +1651,33 @@ void BackupClient::UpdateBackupPlanAsync(const UpdateBackupPlanRequest& request,
 void BackupClient::UpdateBackupPlanAsyncHelper(const UpdateBackupPlanRequest& request, const UpdateBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateBackupPlan(request), context);
+}
+
+UpdateGlobalSettingsOutcome BackupClient::UpdateGlobalSettings(const UpdateGlobalSettingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/global-settings";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateGlobalSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateGlobalSettingsOutcomeCallable BackupClient::UpdateGlobalSettingsCallable(const UpdateGlobalSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateGlobalSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGlobalSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::UpdateGlobalSettingsAsync(const UpdateGlobalSettingsRequest& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateGlobalSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::UpdateGlobalSettingsAsyncHelper(const UpdateGlobalSettingsRequest& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateGlobalSettings(request), context);
 }
 
 UpdateRecoveryPointLifecycleOutcome BackupClient::UpdateRecoveryPointLifecycle(const UpdateRecoveryPointLifecycleRequest& request) const
@@ -1983,15 +1699,7 @@ UpdateRecoveryPointLifecycleOutcome BackupClient::UpdateRecoveryPointLifecycle(c
   ss << "/recovery-points/";
   ss << request.GetRecoveryPointArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateRecoveryPointLifecycleOutcome(UpdateRecoveryPointLifecycleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateRecoveryPointLifecycleOutcome(outcome.GetError());
-  }
+  return UpdateRecoveryPointLifecycleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRecoveryPointLifecycleOutcomeCallable BackupClient::UpdateRecoveryPointLifecycleCallable(const UpdateRecoveryPointLifecycleRequest& request) const
@@ -2010,5 +1718,32 @@ void BackupClient::UpdateRecoveryPointLifecycleAsync(const UpdateRecoveryPointLi
 void BackupClient::UpdateRecoveryPointLifecycleAsyncHelper(const UpdateRecoveryPointLifecycleRequest& request, const UpdateRecoveryPointLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateRecoveryPointLifecycle(request), context);
+}
+
+UpdateRegionSettingsOutcome BackupClient::UpdateRegionSettings(const UpdateRegionSettingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/account-settings";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateRegionSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateRegionSettingsOutcomeCallable BackupClient::UpdateRegionSettingsCallable(const UpdateRegionSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRegionSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRegionSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::UpdateRegionSettingsAsync(const UpdateRegionSettingsRequest& request, const UpdateRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateRegionSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::UpdateRegionSettingsAsyncHelper(const UpdateRegionSettingsRequest& request, const UpdateRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateRegionSettings(request), context);
 }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sms/model/ServerLaunchConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -38,7 +28,11 @@ ServerLaunchConfiguration::ServerLaunchConfiguration() :
     m_userDataHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_associatePublicIpAddress(false),
-    m_associatePublicIpAddressHasBeenSet(false)
+    m_associatePublicIpAddressHasBeenSet(false),
+    m_iamInstanceProfileNameHasBeenSet(false),
+    m_configureScriptHasBeenSet(false),
+    m_configureScriptType(ScriptType::NOT_SET),
+    m_configureScriptTypeHasBeenSet(false)
 {
 }
 
@@ -52,7 +46,11 @@ ServerLaunchConfiguration::ServerLaunchConfiguration(JsonView jsonValue) :
     m_userDataHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_associatePublicIpAddress(false),
-    m_associatePublicIpAddressHasBeenSet(false)
+    m_associatePublicIpAddressHasBeenSet(false),
+    m_iamInstanceProfileNameHasBeenSet(false),
+    m_configureScriptHasBeenSet(false),
+    m_configureScriptType(ScriptType::NOT_SET),
+    m_configureScriptTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -122,6 +120,27 @@ ServerLaunchConfiguration& ServerLaunchConfiguration::operator =(JsonView jsonVa
     m_associatePublicIpAddressHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("iamInstanceProfileName"))
+  {
+    m_iamInstanceProfileName = jsonValue.GetString("iamInstanceProfileName");
+
+    m_iamInstanceProfileNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("configureScript"))
+  {
+    m_configureScript = jsonValue.GetObject("configureScript");
+
+    m_configureScriptHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("configureScriptType"))
+  {
+    m_configureScriptType = ScriptTypeMapper::GetScriptTypeForName(jsonValue.GetString("configureScriptType"));
+
+    m_configureScriptTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -181,6 +200,23 @@ JsonValue ServerLaunchConfiguration::Jsonize() const
   {
    payload.WithBool("associatePublicIpAddress", m_associatePublicIpAddress);
 
+  }
+
+  if(m_iamInstanceProfileNameHasBeenSet)
+  {
+   payload.WithString("iamInstanceProfileName", m_iamInstanceProfileName);
+
+  }
+
+  if(m_configureScriptHasBeenSet)
+  {
+   payload.WithObject("configureScript", m_configureScript.Jsonize());
+
+  }
+
+  if(m_configureScriptTypeHasBeenSet)
+  {
+   payload.WithString("configureScriptType", ScriptTypeMapper::GetNameForScriptType(m_configureScriptType));
   }
 
   return payload;

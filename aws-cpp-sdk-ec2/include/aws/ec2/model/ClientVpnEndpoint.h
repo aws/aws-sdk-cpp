@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -22,6 +12,7 @@
 #include <aws/ec2/model/VpnProtocol.h>
 #include <aws/ec2/model/TransportProtocol.h>
 #include <aws/ec2/model/ConnectionLogResponseOptions.h>
+#include <aws/ec2/model/ClientConnectResponseOptions.h>
 #include <aws/ec2/model/ClientVpnAuthentication.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
@@ -769,6 +760,84 @@ namespace Model
      */
     inline ClientVpnEndpoint& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
+    /**
+     * <p>The URL of the self-service portal.</p>
+     */
+    inline const Aws::String& GetSelfServicePortalUrl() const{ return m_selfServicePortalUrl; }
+
+    /**
+     * <p>The URL of the self-service portal.</p>
+     */
+    inline bool SelfServicePortalUrlHasBeenSet() const { return m_selfServicePortalUrlHasBeenSet; }
+
+    /**
+     * <p>The URL of the self-service portal.</p>
+     */
+    inline void SetSelfServicePortalUrl(const Aws::String& value) { m_selfServicePortalUrlHasBeenSet = true; m_selfServicePortalUrl = value; }
+
+    /**
+     * <p>The URL of the self-service portal.</p>
+     */
+    inline void SetSelfServicePortalUrl(Aws::String&& value) { m_selfServicePortalUrlHasBeenSet = true; m_selfServicePortalUrl = std::move(value); }
+
+    /**
+     * <p>The URL of the self-service portal.</p>
+     */
+    inline void SetSelfServicePortalUrl(const char* value) { m_selfServicePortalUrlHasBeenSet = true; m_selfServicePortalUrl.assign(value); }
+
+    /**
+     * <p>The URL of the self-service portal.</p>
+     */
+    inline ClientVpnEndpoint& WithSelfServicePortalUrl(const Aws::String& value) { SetSelfServicePortalUrl(value); return *this;}
+
+    /**
+     * <p>The URL of the self-service portal.</p>
+     */
+    inline ClientVpnEndpoint& WithSelfServicePortalUrl(Aws::String&& value) { SetSelfServicePortalUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>The URL of the self-service portal.</p>
+     */
+    inline ClientVpnEndpoint& WithSelfServicePortalUrl(const char* value) { SetSelfServicePortalUrl(value); return *this;}
+
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline const ClientConnectResponseOptions& GetClientConnectOptions() const{ return m_clientConnectOptions; }
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline bool ClientConnectOptionsHasBeenSet() const { return m_clientConnectOptionsHasBeenSet; }
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline void SetClientConnectOptions(const ClientConnectResponseOptions& value) { m_clientConnectOptionsHasBeenSet = true; m_clientConnectOptions = value; }
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline void SetClientConnectOptions(ClientConnectResponseOptions&& value) { m_clientConnectOptionsHasBeenSet = true; m_clientConnectOptions = std::move(value); }
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline ClientVpnEndpoint& WithClientConnectOptions(const ClientConnectResponseOptions& value) { SetClientConnectOptions(value); return *this;}
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline ClientVpnEndpoint& WithClientConnectOptions(ClientConnectResponseOptions&& value) { SetClientConnectOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientVpnEndpointId;
@@ -824,6 +893,12 @@ namespace Model
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
+    Aws::String m_selfServicePortalUrl;
+    bool m_selfServicePortalUrlHasBeenSet;
+
+    ClientConnectResponseOptions m_clientConnectOptions;
+    bool m_clientConnectOptionsHasBeenSet;
   };
 
 } // namespace Model

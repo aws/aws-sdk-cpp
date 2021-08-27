@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/neptune/Neptune_EXPORTS.h>
@@ -107,9 +97,9 @@ namespace Model
      * <p> Determines whether a final DB cluster snapshot is created before the DB
      * cluster is deleted. If <code>true</code> is specified, no DB cluster snapshot is
      * created. If <code>false</code> is specified, a DB cluster snapshot is created
-     * before the DB cluster is deleted.</p> <note> <p>You must specify a
+     * before the DB cluster is deleted.</p>  <p>You must specify a
      * <code>FinalDBSnapshotIdentifier</code> parameter if
-     * <code>SkipFinalSnapshot</code> is <code>false</code>.</p> </note> <p>Default:
+     * <code>SkipFinalSnapshot</code> is <code>false</code>.</p>  <p>Default:
      * <code>false</code> </p>
      */
     inline bool GetSkipFinalSnapshot() const{ return m_skipFinalSnapshot; }
@@ -118,9 +108,9 @@ namespace Model
      * <p> Determines whether a final DB cluster snapshot is created before the DB
      * cluster is deleted. If <code>true</code> is specified, no DB cluster snapshot is
      * created. If <code>false</code> is specified, a DB cluster snapshot is created
-     * before the DB cluster is deleted.</p> <note> <p>You must specify a
+     * before the DB cluster is deleted.</p>  <p>You must specify a
      * <code>FinalDBSnapshotIdentifier</code> parameter if
-     * <code>SkipFinalSnapshot</code> is <code>false</code>.</p> </note> <p>Default:
+     * <code>SkipFinalSnapshot</code> is <code>false</code>.</p>  <p>Default:
      * <code>false</code> </p>
      */
     inline bool SkipFinalSnapshotHasBeenSet() const { return m_skipFinalSnapshotHasBeenSet; }
@@ -129,9 +119,9 @@ namespace Model
      * <p> Determines whether a final DB cluster snapshot is created before the DB
      * cluster is deleted. If <code>true</code> is specified, no DB cluster snapshot is
      * created. If <code>false</code> is specified, a DB cluster snapshot is created
-     * before the DB cluster is deleted.</p> <note> <p>You must specify a
+     * before the DB cluster is deleted.</p>  <p>You must specify a
      * <code>FinalDBSnapshotIdentifier</code> parameter if
-     * <code>SkipFinalSnapshot</code> is <code>false</code>.</p> </note> <p>Default:
+     * <code>SkipFinalSnapshot</code> is <code>false</code>.</p>  <p>Default:
      * <code>false</code> </p>
      */
     inline void SetSkipFinalSnapshot(bool value) { m_skipFinalSnapshotHasBeenSet = true; m_skipFinalSnapshot = value; }
@@ -140,9 +130,9 @@ namespace Model
      * <p> Determines whether a final DB cluster snapshot is created before the DB
      * cluster is deleted. If <code>true</code> is specified, no DB cluster snapshot is
      * created. If <code>false</code> is specified, a DB cluster snapshot is created
-     * before the DB cluster is deleted.</p> <note> <p>You must specify a
+     * before the DB cluster is deleted.</p>  <p>You must specify a
      * <code>FinalDBSnapshotIdentifier</code> parameter if
-     * <code>SkipFinalSnapshot</code> is <code>false</code>.</p> </note> <p>Default:
+     * <code>SkipFinalSnapshot</code> is <code>false</code>.</p>  <p>Default:
      * <code>false</code> </p>
      */
     inline DeleteDBClusterRequest& WithSkipFinalSnapshot(bool value) { SetSkipFinalSnapshot(value); return *this;}
@@ -150,9 +140,9 @@ namespace Model
 
     /**
      * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note> <p>
+     * when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p>  <p>
      * Specifying this parameter and also setting the <code>SkipFinalShapshot</code>
-     * parameter to true results in an error.</p> </note> <p>Constraints:</p> <ul> <li>
+     * parameter to true results in an error.</p>  <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
      * two consecutive hyphens</p> </li> </ul>
@@ -161,9 +151,9 @@ namespace Model
 
     /**
      * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note> <p>
+     * when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p>  <p>
      * Specifying this parameter and also setting the <code>SkipFinalShapshot</code>
-     * parameter to true results in an error.</p> </note> <p>Constraints:</p> <ul> <li>
+     * parameter to true results in an error.</p>  <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
      * two consecutive hyphens</p> </li> </ul>
@@ -172,9 +162,9 @@ namespace Model
 
     /**
      * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note> <p>
+     * when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p>  <p>
      * Specifying this parameter and also setting the <code>SkipFinalShapshot</code>
-     * parameter to true results in an error.</p> </note> <p>Constraints:</p> <ul> <li>
+     * parameter to true results in an error.</p>  <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
      * two consecutive hyphens</p> </li> </ul>
@@ -183,9 +173,9 @@ namespace Model
 
     /**
      * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note> <p>
+     * when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p>  <p>
      * Specifying this parameter and also setting the <code>SkipFinalShapshot</code>
-     * parameter to true results in an error.</p> </note> <p>Constraints:</p> <ul> <li>
+     * parameter to true results in an error.</p>  <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
      * two consecutive hyphens</p> </li> </ul>
@@ -194,9 +184,9 @@ namespace Model
 
     /**
      * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note> <p>
+     * when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p>  <p>
      * Specifying this parameter and also setting the <code>SkipFinalShapshot</code>
-     * parameter to true results in an error.</p> </note> <p>Constraints:</p> <ul> <li>
+     * parameter to true results in an error.</p>  <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
      * two consecutive hyphens</p> </li> </ul>
@@ -205,9 +195,9 @@ namespace Model
 
     /**
      * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note> <p>
+     * when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p>  <p>
      * Specifying this parameter and also setting the <code>SkipFinalShapshot</code>
-     * parameter to true results in an error.</p> </note> <p>Constraints:</p> <ul> <li>
+     * parameter to true results in an error.</p>  <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
      * two consecutive hyphens</p> </li> </ul>
@@ -216,9 +206,9 @@ namespace Model
 
     /**
      * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note> <p>
+     * when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p>  <p>
      * Specifying this parameter and also setting the <code>SkipFinalShapshot</code>
-     * parameter to true results in an error.</p> </note> <p>Constraints:</p> <ul> <li>
+     * parameter to true results in an error.</p>  <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
      * two consecutive hyphens</p> </li> </ul>
@@ -227,9 +217,9 @@ namespace Model
 
     /**
      * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note> <p>
+     * when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p>  <p>
      * Specifying this parameter and also setting the <code>SkipFinalShapshot</code>
-     * parameter to true results in an error.</p> </note> <p>Constraints:</p> <ul> <li>
+     * parameter to true results in an error.</p>  <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
      * two consecutive hyphens</p> </li> </ul>

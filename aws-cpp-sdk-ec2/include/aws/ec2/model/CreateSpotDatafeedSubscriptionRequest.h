@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -51,42 +41,66 @@ namespace Model
   public:
 
     /**
-     * <p>The Amazon S3 bucket in which to store the Spot Instance data feed.</p>
+     * <p>The name of the Amazon S3 bucket in which to store the Spot Instance data
+     * feed. For more information about bucket names, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules
+     * for bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The Amazon S3 bucket in which to store the Spot Instance data feed.</p>
+     * <p>The name of the Amazon S3 bucket in which to store the Spot Instance data
+     * feed. For more information about bucket names, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules
+     * for bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 bucket in which to store the Spot Instance data feed.</p>
+     * <p>The name of the Amazon S3 bucket in which to store the Spot Instance data
+     * feed. For more information about bucket names, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules
+     * for bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The Amazon S3 bucket in which to store the Spot Instance data feed.</p>
+     * <p>The name of the Amazon S3 bucket in which to store the Spot Instance data
+     * feed. For more information about bucket names, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules
+     * for bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The Amazon S3 bucket in which to store the Spot Instance data feed.</p>
+     * <p>The name of the Amazon S3 bucket in which to store the Spot Instance data
+     * feed. For more information about bucket names, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules
+     * for bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The Amazon S3 bucket in which to store the Spot Instance data feed.</p>
+     * <p>The name of the Amazon S3 bucket in which to store the Spot Instance data
+     * feed. For more information about bucket names, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules
+     * for bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline CreateSpotDatafeedSubscriptionRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket in which to store the Spot Instance data feed.</p>
+     * <p>The name of the Amazon S3 bucket in which to store the Spot Instance data
+     * feed. For more information about bucket names, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules
+     * for bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline CreateSpotDatafeedSubscriptionRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket in which to store the Spot Instance data feed.</p>
+     * <p>The name of the Amazon S3 bucket in which to store the Spot Instance data
+     * feed. For more information about bucket names, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules
+     * for bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline CreateSpotDatafeedSubscriptionRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -125,42 +139,42 @@ namespace Model
 
 
     /**
-     * <p>A prefix for the data feed file names.</p>
+     * <p>The prefix for the data feed file names.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * <p>A prefix for the data feed file names.</p>
+     * <p>The prefix for the data feed file names.</p>
      */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
-     * <p>A prefix for the data feed file names.</p>
+     * <p>The prefix for the data feed file names.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
-     * <p>A prefix for the data feed file names.</p>
+     * <p>The prefix for the data feed file names.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
-     * <p>A prefix for the data feed file names.</p>
+     * <p>The prefix for the data feed file names.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
-     * <p>A prefix for the data feed file names.</p>
+     * <p>The prefix for the data feed file names.</p>
      */
     inline CreateSpotDatafeedSubscriptionRequest& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * <p>A prefix for the data feed file names.</p>
+     * <p>The prefix for the data feed file names.</p>
      */
     inline CreateSpotDatafeedSubscriptionRequest& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>A prefix for the data feed file names.</p>
+     * <p>The prefix for the data feed file names.</p>
      */
     inline CreateSpotDatafeedSubscriptionRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 

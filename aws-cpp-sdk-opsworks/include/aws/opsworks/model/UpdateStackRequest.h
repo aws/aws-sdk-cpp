@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
@@ -1375,9 +1365,9 @@ namespace Model
      * <code>LATEST</code>. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
 
@@ -1393,9 +1383,9 @@ namespace Model
      * <code>LATEST</code>. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
 
@@ -1411,9 +1401,9 @@ namespace Model
      * <code>LATEST</code>. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
 
@@ -1429,9 +1419,9 @@ namespace Model
      * <code>LATEST</code>. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
 
@@ -1447,9 +1437,9 @@ namespace Model
      * <code>LATEST</code>. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
 
@@ -1465,9 +1455,9 @@ namespace Model
      * <code>LATEST</code>. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline UpdateStackRequest& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
 
@@ -1483,9 +1473,9 @@ namespace Model
      * <code>LATEST</code>. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline UpdateStackRequest& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
 
@@ -1501,9 +1491,9 @@ namespace Model
      * <code>LATEST</code>. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline UpdateStackRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
 

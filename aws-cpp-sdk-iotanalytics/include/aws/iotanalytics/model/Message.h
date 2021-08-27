@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
@@ -49,93 +39,93 @@ namespace Model
 
 
     /**
-     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
-     * within each batch sent.</p>
+     * <p>The ID you want to assign to the message. Each <code>messageId</code> must be
+     * unique within each batch sent.</p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
 
     /**
-     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
-     * within each batch sent.</p>
+     * <p>The ID you want to assign to the message. Each <code>messageId</code> must be
+     * unique within each batch sent.</p>
      */
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
 
     /**
-     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
-     * within each batch sent.</p>
+     * <p>The ID you want to assign to the message. Each <code>messageId</code> must be
+     * unique within each batch sent.</p>
      */
     inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
 
     /**
-     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
-     * within each batch sent.</p>
+     * <p>The ID you want to assign to the message. Each <code>messageId</code> must be
+     * unique within each batch sent.</p>
      */
     inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
 
     /**
-     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
-     * within each batch sent.</p>
+     * <p>The ID you want to assign to the message. Each <code>messageId</code> must be
+     * unique within each batch sent.</p>
      */
     inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
 
     /**
-     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
-     * within each batch sent.</p>
+     * <p>The ID you want to assign to the message. Each <code>messageId</code> must be
+     * unique within each batch sent.</p>
      */
     inline Message& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
 
     /**
-     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
-     * within each batch sent.</p>
+     * <p>The ID you want to assign to the message. Each <code>messageId</code> must be
+     * unique within each batch sent.</p>
      */
     inline Message& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
-     * within each batch sent.</p>
+     * <p>The ID you want to assign to the message. Each <code>messageId</code> must be
+     * unique within each batch sent.</p>
      */
     inline Message& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 
 
     /**
-     * <p>The payload of the message. This may be a JSON string or a Base64-encoded
-     * string representing binary data (in which case you must decode it by means of a
-     * pipeline activity).</p>
+     * <p>The payload of the message. This can be a JSON string or a base64-encoded
+     * string representing binary data, in which case you must decode it by means of a
+     * pipeline activity.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetPayload() const{ return m_payload; }
 
     /**
-     * <p>The payload of the message. This may be a JSON string or a Base64-encoded
-     * string representing binary data (in which case you must decode it by means of a
-     * pipeline activity).</p>
+     * <p>The payload of the message. This can be a JSON string or a base64-encoded
+     * string representing binary data, in which case you must decode it by means of a
+     * pipeline activity.</p>
      */
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
 
     /**
-     * <p>The payload of the message. This may be a JSON string or a Base64-encoded
-     * string representing binary data (in which case you must decode it by means of a
-     * pipeline activity).</p>
+     * <p>The payload of the message. This can be a JSON string or a base64-encoded
+     * string representing binary data, in which case you must decode it by means of a
+     * pipeline activity.</p>
      */
     inline void SetPayload(const Aws::Utils::ByteBuffer& value) { m_payloadHasBeenSet = true; m_payload = value; }
 
     /**
-     * <p>The payload of the message. This may be a JSON string or a Base64-encoded
-     * string representing binary data (in which case you must decode it by means of a
-     * pipeline activity).</p>
+     * <p>The payload of the message. This can be a JSON string or a base64-encoded
+     * string representing binary data, in which case you must decode it by means of a
+     * pipeline activity.</p>
      */
     inline void SetPayload(Aws::Utils::ByteBuffer&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
 
     /**
-     * <p>The payload of the message. This may be a JSON string or a Base64-encoded
-     * string representing binary data (in which case you must decode it by means of a
-     * pipeline activity).</p>
+     * <p>The payload of the message. This can be a JSON string or a base64-encoded
+     * string representing binary data, in which case you must decode it by means of a
+     * pipeline activity.</p>
      */
     inline Message& WithPayload(const Aws::Utils::ByteBuffer& value) { SetPayload(value); return *this;}
 
     /**
-     * <p>The payload of the message. This may be a JSON string or a Base64-encoded
-     * string representing binary data (in which case you must decode it by means of a
-     * pipeline activity).</p>
+     * <p>The payload of the message. This can be a JSON string or a base64-encoded
+     * string representing binary data, in which case you must decode it by means of a
+     * pipeline activity.</p>
      */
     inline Message& WithPayload(Aws::Utils::ByteBuffer&& value) { SetPayload(std::move(value)); return *this;}
 

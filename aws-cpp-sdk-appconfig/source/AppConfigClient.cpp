@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -34,21 +24,25 @@
 #include <aws/appconfig/model/CreateConfigurationProfileRequest.h>
 #include <aws/appconfig/model/CreateDeploymentStrategyRequest.h>
 #include <aws/appconfig/model/CreateEnvironmentRequest.h>
+#include <aws/appconfig/model/CreateHostedConfigurationVersionRequest.h>
 #include <aws/appconfig/model/DeleteApplicationRequest.h>
 #include <aws/appconfig/model/DeleteConfigurationProfileRequest.h>
 #include <aws/appconfig/model/DeleteDeploymentStrategyRequest.h>
 #include <aws/appconfig/model/DeleteEnvironmentRequest.h>
+#include <aws/appconfig/model/DeleteHostedConfigurationVersionRequest.h>
 #include <aws/appconfig/model/GetApplicationRequest.h>
 #include <aws/appconfig/model/GetConfigurationRequest.h>
 #include <aws/appconfig/model/GetConfigurationProfileRequest.h>
 #include <aws/appconfig/model/GetDeploymentRequest.h>
 #include <aws/appconfig/model/GetDeploymentStrategyRequest.h>
 #include <aws/appconfig/model/GetEnvironmentRequest.h>
+#include <aws/appconfig/model/GetHostedConfigurationVersionRequest.h>
 #include <aws/appconfig/model/ListApplicationsRequest.h>
 #include <aws/appconfig/model/ListConfigurationProfilesRequest.h>
 #include <aws/appconfig/model/ListDeploymentStrategiesRequest.h>
 #include <aws/appconfig/model/ListDeploymentsRequest.h>
 #include <aws/appconfig/model/ListEnvironmentsRequest.h>
+#include <aws/appconfig/model/ListHostedConfigurationVersionsRequest.h>
 #include <aws/appconfig/model/ListTagsForResourceRequest.h>
 #include <aws/appconfig/model/StartDeploymentRequest.h>
 #include <aws/appconfig/model/StopDeploymentRequest.h>
@@ -75,7 +69,7 @@ static const char* ALLOCATION_TAG = "AppConfigClient";
 AppConfigClient::AppConfigClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<AppConfigErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -85,7 +79,7 @@ AppConfigClient::AppConfigClient(const Client::ClientConfiguration& clientConfig
 AppConfigClient::AppConfigClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<AppConfigErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -96,7 +90,7 @@ AppConfigClient::AppConfigClient(const std::shared_ptr<AWSCredentialsProvider>& 
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<AppConfigErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -109,6 +103,7 @@ AppConfigClient::~AppConfigClient()
 
 void AppConfigClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("AppConfig");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -138,15 +133,7 @@ CreateApplicationOutcome AppConfigClient::CreateApplication(const CreateApplicat
   Aws::StringStream ss;
   ss << "/applications";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateApplicationOutcome(CreateApplicationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateApplicationOutcome(outcome.GetError());
-  }
+  return CreateApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateApplicationOutcomeCallable AppConfigClient::CreateApplicationCallable(const CreateApplicationRequest& request) const
@@ -180,15 +167,7 @@ CreateConfigurationProfileOutcome AppConfigClient::CreateConfigurationProfile(co
   ss << request.GetApplicationId();
   ss << "/configurationprofiles";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateConfigurationProfileOutcome(CreateConfigurationProfileResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateConfigurationProfileOutcome(outcome.GetError());
-  }
+  return CreateConfigurationProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateConfigurationProfileOutcomeCallable AppConfigClient::CreateConfigurationProfileCallable(const CreateConfigurationProfileRequest& request) const
@@ -215,15 +194,7 @@ CreateDeploymentStrategyOutcome AppConfigClient::CreateDeploymentStrategy(const 
   Aws::StringStream ss;
   ss << "/deploymentstrategies";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDeploymentStrategyOutcome(CreateDeploymentStrategyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDeploymentStrategyOutcome(outcome.GetError());
-  }
+  return CreateDeploymentStrategyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDeploymentStrategyOutcomeCallable AppConfigClient::CreateDeploymentStrategyCallable(const CreateDeploymentStrategyRequest& request) const
@@ -257,15 +228,7 @@ CreateEnvironmentOutcome AppConfigClient::CreateEnvironment(const CreateEnvironm
   ss << request.GetApplicationId();
   ss << "/environments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateEnvironmentOutcome(CreateEnvironmentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateEnvironmentOutcome(outcome.GetError());
-  }
+  return CreateEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateEnvironmentOutcomeCallable AppConfigClient::CreateEnvironmentCallable(const CreateEnvironmentRequest& request) const
@@ -286,6 +249,47 @@ void AppConfigClient::CreateEnvironmentAsyncHelper(const CreateEnvironmentReques
   handler(this, request, CreateEnvironment(request), context);
 }
 
+CreateHostedConfigurationVersionOutcome AppConfigClient::CreateHostedConfigurationVersion(const CreateHostedConfigurationVersionRequest& request) const
+{
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateHostedConfigurationVersion", "Required field: ApplicationId, is not set");
+    return CreateHostedConfigurationVersionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.ConfigurationProfileIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateHostedConfigurationVersion", "Required field: ConfigurationProfileId, is not set");
+    return CreateHostedConfigurationVersionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationProfileId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/applications/";
+  ss << request.GetApplicationId();
+  ss << "/configurationprofiles/";
+  ss << request.GetConfigurationProfileId();
+  ss << "/hostedconfigurationversions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateHostedConfigurationVersionOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateHostedConfigurationVersionOutcomeCallable AppConfigClient::CreateHostedConfigurationVersionCallable(const CreateHostedConfigurationVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateHostedConfigurationVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateHostedConfigurationVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::CreateHostedConfigurationVersionAsync(const CreateHostedConfigurationVersionRequest& request, const CreateHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateHostedConfigurationVersionAsyncHelper( request, handler, context ); } );
+}
+
+void AppConfigClient::CreateHostedConfigurationVersionAsyncHelper(const CreateHostedConfigurationVersionRequest& request, const CreateHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateHostedConfigurationVersion(request), context);
+}
+
 DeleteApplicationOutcome AppConfigClient::DeleteApplication(const DeleteApplicationRequest& request) const
 {
   if (!request.ApplicationIdHasBeenSet())
@@ -298,15 +302,7 @@ DeleteApplicationOutcome AppConfigClient::DeleteApplication(const DeleteApplicat
   ss << "/applications/";
   ss << request.GetApplicationId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteApplicationOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteApplicationOutcome(outcome.GetError());
-  }
+  return DeleteApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteApplicationOutcomeCallable AppConfigClient::DeleteApplicationCallable(const DeleteApplicationRequest& request) const
@@ -346,15 +342,7 @@ DeleteConfigurationProfileOutcome AppConfigClient::DeleteConfigurationProfile(co
   ss << "/configurationprofiles/";
   ss << request.GetConfigurationProfileId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteConfigurationProfileOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteConfigurationProfileOutcome(outcome.GetError());
-  }
+  return DeleteConfigurationProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteConfigurationProfileOutcomeCallable AppConfigClient::DeleteConfigurationProfileCallable(const DeleteConfigurationProfileRequest& request) const
@@ -387,15 +375,7 @@ DeleteDeploymentStrategyOutcome AppConfigClient::DeleteDeploymentStrategy(const 
   ss << "/deployementstrategies/";
   ss << request.GetDeploymentStrategyId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDeploymentStrategyOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteDeploymentStrategyOutcome(outcome.GetError());
-  }
+  return DeleteDeploymentStrategyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDeploymentStrategyOutcomeCallable AppConfigClient::DeleteDeploymentStrategyCallable(const DeleteDeploymentStrategyRequest& request) const
@@ -435,15 +415,7 @@ DeleteEnvironmentOutcome AppConfigClient::DeleteEnvironment(const DeleteEnvironm
   ss << "/environments/";
   ss << request.GetEnvironmentId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteEnvironmentOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteEnvironmentOutcome(outcome.GetError());
-  }
+  return DeleteEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteEnvironmentOutcomeCallable AppConfigClient::DeleteEnvironmentCallable(const DeleteEnvironmentRequest& request) const
@@ -464,6 +436,53 @@ void AppConfigClient::DeleteEnvironmentAsyncHelper(const DeleteEnvironmentReques
   handler(this, request, DeleteEnvironment(request), context);
 }
 
+DeleteHostedConfigurationVersionOutcome AppConfigClient::DeleteHostedConfigurationVersion(const DeleteHostedConfigurationVersionRequest& request) const
+{
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteHostedConfigurationVersion", "Required field: ApplicationId, is not set");
+    return DeleteHostedConfigurationVersionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.ConfigurationProfileIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteHostedConfigurationVersion", "Required field: ConfigurationProfileId, is not set");
+    return DeleteHostedConfigurationVersionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationProfileId]", false));
+  }
+  if (!request.VersionNumberHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteHostedConfigurationVersion", "Required field: VersionNumber, is not set");
+    return DeleteHostedConfigurationVersionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionNumber]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/applications/";
+  ss << request.GetApplicationId();
+  ss << "/configurationprofiles/";
+  ss << request.GetConfigurationProfileId();
+  ss << "/hostedconfigurationversions/";
+  ss << request.GetVersionNumber();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteHostedConfigurationVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteHostedConfigurationVersionOutcomeCallable AppConfigClient::DeleteHostedConfigurationVersionCallable(const DeleteHostedConfigurationVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteHostedConfigurationVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteHostedConfigurationVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::DeleteHostedConfigurationVersionAsync(const DeleteHostedConfigurationVersionRequest& request, const DeleteHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteHostedConfigurationVersionAsyncHelper( request, handler, context ); } );
+}
+
+void AppConfigClient::DeleteHostedConfigurationVersionAsyncHelper(const DeleteHostedConfigurationVersionRequest& request, const DeleteHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteHostedConfigurationVersion(request), context);
+}
+
 GetApplicationOutcome AppConfigClient::GetApplication(const GetApplicationRequest& request) const
 {
   if (!request.ApplicationIdHasBeenSet())
@@ -476,15 +495,7 @@ GetApplicationOutcome AppConfigClient::GetApplication(const GetApplicationReques
   ss << "/applications/";
   ss << request.GetApplicationId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetApplicationOutcome(GetApplicationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetApplicationOutcome(outcome.GetError());
-  }
+  return GetApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetApplicationOutcomeCallable AppConfigClient::GetApplicationCallable(const GetApplicationRequest& request) const
@@ -536,15 +547,7 @@ GetConfigurationOutcome AppConfigClient::GetConfiguration(const GetConfiguration
   ss << "/configurations/";
   ss << request.GetConfiguration();
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetConfigurationOutcome(GetConfigurationResult(outcome.GetResultWithOwnership()));
-  }
-  else
-  {
-    return GetConfigurationOutcome(outcome.GetError());
-  }
+  return GetConfigurationOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetConfigurationOutcomeCallable AppConfigClient::GetConfigurationCallable(const GetConfigurationRequest& request) const
@@ -584,15 +587,7 @@ GetConfigurationProfileOutcome AppConfigClient::GetConfigurationProfile(const Ge
   ss << "/configurationprofiles/";
   ss << request.GetConfigurationProfileId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetConfigurationProfileOutcome(GetConfigurationProfileResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetConfigurationProfileOutcome(outcome.GetError());
-  }
+  return GetConfigurationProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetConfigurationProfileOutcomeCallable AppConfigClient::GetConfigurationProfileCallable(const GetConfigurationProfileRequest& request) const
@@ -639,15 +634,7 @@ GetDeploymentOutcome AppConfigClient::GetDeployment(const GetDeploymentRequest& 
   ss << "/deployments/";
   ss << request.GetDeploymentNumber();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDeploymentOutcome(GetDeploymentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDeploymentOutcome(outcome.GetError());
-  }
+  return GetDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDeploymentOutcomeCallable AppConfigClient::GetDeploymentCallable(const GetDeploymentRequest& request) const
@@ -680,15 +667,7 @@ GetDeploymentStrategyOutcome AppConfigClient::GetDeploymentStrategy(const GetDep
   ss << "/deploymentstrategies/";
   ss << request.GetDeploymentStrategyId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDeploymentStrategyOutcome(GetDeploymentStrategyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDeploymentStrategyOutcome(outcome.GetError());
-  }
+  return GetDeploymentStrategyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDeploymentStrategyOutcomeCallable AppConfigClient::GetDeploymentStrategyCallable(const GetDeploymentStrategyRequest& request) const
@@ -728,15 +707,7 @@ GetEnvironmentOutcome AppConfigClient::GetEnvironment(const GetEnvironmentReques
   ss << "/environments/";
   ss << request.GetEnvironmentId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetEnvironmentOutcome(GetEnvironmentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetEnvironmentOutcome(outcome.GetError());
-  }
+  return GetEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetEnvironmentOutcomeCallable AppConfigClient::GetEnvironmentCallable(const GetEnvironmentRequest& request) const
@@ -757,21 +728,60 @@ void AppConfigClient::GetEnvironmentAsyncHelper(const GetEnvironmentRequest& req
   handler(this, request, GetEnvironment(request), context);
 }
 
+GetHostedConfigurationVersionOutcome AppConfigClient::GetHostedConfigurationVersion(const GetHostedConfigurationVersionRequest& request) const
+{
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetHostedConfigurationVersion", "Required field: ApplicationId, is not set");
+    return GetHostedConfigurationVersionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.ConfigurationProfileIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetHostedConfigurationVersion", "Required field: ConfigurationProfileId, is not set");
+    return GetHostedConfigurationVersionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationProfileId]", false));
+  }
+  if (!request.VersionNumberHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetHostedConfigurationVersion", "Required field: VersionNumber, is not set");
+    return GetHostedConfigurationVersionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionNumber]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/applications/";
+  ss << request.GetApplicationId();
+  ss << "/configurationprofiles/";
+  ss << request.GetConfigurationProfileId();
+  ss << "/hostedconfigurationversions/";
+  ss << request.GetVersionNumber();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetHostedConfigurationVersionOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+GetHostedConfigurationVersionOutcomeCallable AppConfigClient::GetHostedConfigurationVersionCallable(const GetHostedConfigurationVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetHostedConfigurationVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetHostedConfigurationVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::GetHostedConfigurationVersionAsync(const GetHostedConfigurationVersionRequest& request, const GetHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetHostedConfigurationVersionAsyncHelper( request, handler, context ); } );
+}
+
+void AppConfigClient::GetHostedConfigurationVersionAsyncHelper(const GetHostedConfigurationVersionRequest& request, const GetHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetHostedConfigurationVersion(request), context);
+}
+
 ListApplicationsOutcome AppConfigClient::ListApplications(const ListApplicationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/applications";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListApplicationsOutcome(ListApplicationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListApplicationsOutcome(outcome.GetError());
-  }
+  return ListApplicationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListApplicationsOutcomeCallable AppConfigClient::ListApplicationsCallable(const ListApplicationsRequest& request) const
@@ -805,15 +815,7 @@ ListConfigurationProfilesOutcome AppConfigClient::ListConfigurationProfiles(cons
   ss << request.GetApplicationId();
   ss << "/configurationprofiles";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListConfigurationProfilesOutcome(ListConfigurationProfilesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListConfigurationProfilesOutcome(outcome.GetError());
-  }
+  return ListConfigurationProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListConfigurationProfilesOutcomeCallable AppConfigClient::ListConfigurationProfilesCallable(const ListConfigurationProfilesRequest& request) const
@@ -840,15 +842,7 @@ ListDeploymentStrategiesOutcome AppConfigClient::ListDeploymentStrategies(const 
   Aws::StringStream ss;
   ss << "/deploymentstrategies";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDeploymentStrategiesOutcome(ListDeploymentStrategiesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDeploymentStrategiesOutcome(outcome.GetError());
-  }
+  return ListDeploymentStrategiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDeploymentStrategiesOutcomeCallable AppConfigClient::ListDeploymentStrategiesCallable(const ListDeploymentStrategiesRequest& request) const
@@ -889,15 +883,7 @@ ListDeploymentsOutcome AppConfigClient::ListDeployments(const ListDeploymentsReq
   ss << request.GetEnvironmentId();
   ss << "/deployments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDeploymentsOutcome(ListDeploymentsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDeploymentsOutcome(outcome.GetError());
-  }
+  return ListDeploymentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDeploymentsOutcomeCallable AppConfigClient::ListDeploymentsCallable(const ListDeploymentsRequest& request) const
@@ -931,15 +917,7 @@ ListEnvironmentsOutcome AppConfigClient::ListEnvironments(const ListEnvironments
   ss << request.GetApplicationId();
   ss << "/environments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListEnvironmentsOutcome(ListEnvironmentsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListEnvironmentsOutcome(outcome.GetError());
-  }
+  return ListEnvironmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListEnvironmentsOutcomeCallable AppConfigClient::ListEnvironmentsCallable(const ListEnvironmentsRequest& request) const
@@ -960,6 +938,47 @@ void AppConfigClient::ListEnvironmentsAsyncHelper(const ListEnvironmentsRequest&
   handler(this, request, ListEnvironments(request), context);
 }
 
+ListHostedConfigurationVersionsOutcome AppConfigClient::ListHostedConfigurationVersions(const ListHostedConfigurationVersionsRequest& request) const
+{
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListHostedConfigurationVersions", "Required field: ApplicationId, is not set");
+    return ListHostedConfigurationVersionsOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.ConfigurationProfileIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListHostedConfigurationVersions", "Required field: ConfigurationProfileId, is not set");
+    return ListHostedConfigurationVersionsOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationProfileId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/applications/";
+  ss << request.GetApplicationId();
+  ss << "/configurationprofiles/";
+  ss << request.GetConfigurationProfileId();
+  ss << "/hostedconfigurationversions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListHostedConfigurationVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListHostedConfigurationVersionsOutcomeCallable AppConfigClient::ListHostedConfigurationVersionsCallable(const ListHostedConfigurationVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListHostedConfigurationVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListHostedConfigurationVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::ListHostedConfigurationVersionsAsync(const ListHostedConfigurationVersionsRequest& request, const ListHostedConfigurationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListHostedConfigurationVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void AppConfigClient::ListHostedConfigurationVersionsAsyncHelper(const ListHostedConfigurationVersionsRequest& request, const ListHostedConfigurationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListHostedConfigurationVersions(request), context);
+}
+
 ListTagsForResourceOutcome AppConfigClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   if (!request.ResourceArnHasBeenSet())
@@ -972,15 +991,7 @@ ListTagsForResourceOutcome AppConfigClient::ListTagsForResource(const ListTagsFo
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable AppConfigClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -1021,15 +1032,7 @@ StartDeploymentOutcome AppConfigClient::StartDeployment(const StartDeploymentReq
   ss << request.GetEnvironmentId();
   ss << "/deployments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartDeploymentOutcome(StartDeploymentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartDeploymentOutcome(outcome.GetError());
-  }
+  return StartDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartDeploymentOutcomeCallable AppConfigClient::StartDeploymentCallable(const StartDeploymentRequest& request) const
@@ -1076,15 +1079,7 @@ StopDeploymentOutcome AppConfigClient::StopDeployment(const StopDeploymentReques
   ss << "/deployments/";
   ss << request.GetDeploymentNumber();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopDeploymentOutcome(StopDeploymentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StopDeploymentOutcome(outcome.GetError());
-  }
+  return StopDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopDeploymentOutcomeCallable AppConfigClient::StopDeploymentCallable(const StopDeploymentRequest& request) const
@@ -1117,15 +1112,7 @@ TagResourceOutcome AppConfigClient::TagResource(const TagResourceRequest& reques
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable AppConfigClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1163,15 +1150,7 @@ UntagResourceOutcome AppConfigClient::UntagResource(const UntagResourceRequest& 
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable AppConfigClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -1204,15 +1183,7 @@ UpdateApplicationOutcome AppConfigClient::UpdateApplication(const UpdateApplicat
   ss << "/applications/";
   ss << request.GetApplicationId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateApplicationOutcome(UpdateApplicationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateApplicationOutcome(outcome.GetError());
-  }
+  return UpdateApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateApplicationOutcomeCallable AppConfigClient::UpdateApplicationCallable(const UpdateApplicationRequest& request) const
@@ -1252,15 +1223,7 @@ UpdateConfigurationProfileOutcome AppConfigClient::UpdateConfigurationProfile(co
   ss << "/configurationprofiles/";
   ss << request.GetConfigurationProfileId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateConfigurationProfileOutcome(UpdateConfigurationProfileResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateConfigurationProfileOutcome(outcome.GetError());
-  }
+  return UpdateConfigurationProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateConfigurationProfileOutcomeCallable AppConfigClient::UpdateConfigurationProfileCallable(const UpdateConfigurationProfileRequest& request) const
@@ -1293,15 +1256,7 @@ UpdateDeploymentStrategyOutcome AppConfigClient::UpdateDeploymentStrategy(const 
   ss << "/deploymentstrategies/";
   ss << request.GetDeploymentStrategyId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDeploymentStrategyOutcome(UpdateDeploymentStrategyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDeploymentStrategyOutcome(outcome.GetError());
-  }
+  return UpdateDeploymentStrategyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDeploymentStrategyOutcomeCallable AppConfigClient::UpdateDeploymentStrategyCallable(const UpdateDeploymentStrategyRequest& request) const
@@ -1341,15 +1296,7 @@ UpdateEnvironmentOutcome AppConfigClient::UpdateEnvironment(const UpdateEnvironm
   ss << "/environments/";
   ss << request.GetEnvironmentId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateEnvironmentOutcome(UpdateEnvironmentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateEnvironmentOutcome(outcome.GetError());
-  }
+  return UpdateEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateEnvironmentOutcomeCallable AppConfigClient::UpdateEnvironmentCallable(const UpdateEnvironmentRequest& request) const
@@ -1395,15 +1342,7 @@ ValidateConfigurationOutcome AppConfigClient::ValidateConfiguration(const Valida
   ss << request.GetConfigurationProfileId();
   ss << "/validators";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ValidateConfigurationOutcome(NoResult());
-  }
-  else
-  {
-    return ValidateConfigurationOutcome(outcome.GetError());
-  }
+  return ValidateConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ValidateConfigurationOutcomeCallable AppConfigClient::ValidateConfigurationCallable(const ValidateConfigurationRequest& request) const

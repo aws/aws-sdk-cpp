@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/medialive/model/AudioSelectorSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,13 +20,15 @@ namespace Model
 
 AudioSelectorSettings::AudioSelectorSettings() : 
     m_audioLanguageSelectionHasBeenSet(false),
-    m_audioPidSelectionHasBeenSet(false)
+    m_audioPidSelectionHasBeenSet(false),
+    m_audioTrackSelectionHasBeenSet(false)
 {
 }
 
 AudioSelectorSettings::AudioSelectorSettings(JsonView jsonValue) : 
     m_audioLanguageSelectionHasBeenSet(false),
-    m_audioPidSelectionHasBeenSet(false)
+    m_audioPidSelectionHasBeenSet(false),
+    m_audioTrackSelectionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +49,13 @@ AudioSelectorSettings& AudioSelectorSettings::operator =(JsonView jsonValue)
     m_audioPidSelectionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("audioTrackSelection"))
+  {
+    m_audioTrackSelection = jsonValue.GetObject("audioTrackSelection");
+
+    m_audioTrackSelectionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +72,12 @@ JsonValue AudioSelectorSettings::Jsonize() const
   if(m_audioPidSelectionHasBeenSet)
   {
    payload.WithObject("audioPidSelection", m_audioPidSelection.Jsonize());
+
+  }
+
+  if(m_audioTrackSelectionHasBeenSet)
+  {
+   payload.WithObject("audioTrackSelection", m_audioTrackSelection.Jsonize());
 
   }
 

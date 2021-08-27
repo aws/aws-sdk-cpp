@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
@@ -90,9 +80,10 @@ namespace Model
      * <p>An array that contains the IDs of all the instances that you want to get the
      * health status for.</p> <p>If you omit <code>Instances</code>, AWS Cloud Map
      * returns the health status for all the instances that are associated with the
-     * specified service.</p> <note> <p>To get the IDs for the instances that you've
-     * registered by using a specified service, submit a <a>ListInstances</a>
-     * request.</p> </note>
+     * specified service.</p>  <p>To get the IDs for the instances that you've
+     * registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a>
+     * request.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetInstances() const{ return m_instances; }
 
@@ -100,9 +91,10 @@ namespace Model
      * <p>An array that contains the IDs of all the instances that you want to get the
      * health status for.</p> <p>If you omit <code>Instances</code>, AWS Cloud Map
      * returns the health status for all the instances that are associated with the
-     * specified service.</p> <note> <p>To get the IDs for the instances that you've
-     * registered by using a specified service, submit a <a>ListInstances</a>
-     * request.</p> </note>
+     * specified service.</p>  <p>To get the IDs for the instances that you've
+     * registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a>
+     * request.</p> 
      */
     inline bool InstancesHasBeenSet() const { return m_instancesHasBeenSet; }
 
@@ -110,9 +102,10 @@ namespace Model
      * <p>An array that contains the IDs of all the instances that you want to get the
      * health status for.</p> <p>If you omit <code>Instances</code>, AWS Cloud Map
      * returns the health status for all the instances that are associated with the
-     * specified service.</p> <note> <p>To get the IDs for the instances that you've
-     * registered by using a specified service, submit a <a>ListInstances</a>
-     * request.</p> </note>
+     * specified service.</p>  <p>To get the IDs for the instances that you've
+     * registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a>
+     * request.</p> 
      */
     inline void SetInstances(const Aws::Vector<Aws::String>& value) { m_instancesHasBeenSet = true; m_instances = value; }
 
@@ -120,9 +113,10 @@ namespace Model
      * <p>An array that contains the IDs of all the instances that you want to get the
      * health status for.</p> <p>If you omit <code>Instances</code>, AWS Cloud Map
      * returns the health status for all the instances that are associated with the
-     * specified service.</p> <note> <p>To get the IDs for the instances that you've
-     * registered by using a specified service, submit a <a>ListInstances</a>
-     * request.</p> </note>
+     * specified service.</p>  <p>To get the IDs for the instances that you've
+     * registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a>
+     * request.</p> 
      */
     inline void SetInstances(Aws::Vector<Aws::String>&& value) { m_instancesHasBeenSet = true; m_instances = std::move(value); }
 
@@ -130,9 +124,10 @@ namespace Model
      * <p>An array that contains the IDs of all the instances that you want to get the
      * health status for.</p> <p>If you omit <code>Instances</code>, AWS Cloud Map
      * returns the health status for all the instances that are associated with the
-     * specified service.</p> <note> <p>To get the IDs for the instances that you've
-     * registered by using a specified service, submit a <a>ListInstances</a>
-     * request.</p> </note>
+     * specified service.</p>  <p>To get the IDs for the instances that you've
+     * registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a>
+     * request.</p> 
      */
     inline GetInstancesHealthStatusRequest& WithInstances(const Aws::Vector<Aws::String>& value) { SetInstances(value); return *this;}
 
@@ -140,9 +135,10 @@ namespace Model
      * <p>An array that contains the IDs of all the instances that you want to get the
      * health status for.</p> <p>If you omit <code>Instances</code>, AWS Cloud Map
      * returns the health status for all the instances that are associated with the
-     * specified service.</p> <note> <p>To get the IDs for the instances that you've
-     * registered by using a specified service, submit a <a>ListInstances</a>
-     * request.</p> </note>
+     * specified service.</p>  <p>To get the IDs for the instances that you've
+     * registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a>
+     * request.</p> 
      */
     inline GetInstancesHealthStatusRequest& WithInstances(Aws::Vector<Aws::String>&& value) { SetInstances(std::move(value)); return *this;}
 
@@ -150,9 +146,10 @@ namespace Model
      * <p>An array that contains the IDs of all the instances that you want to get the
      * health status for.</p> <p>If you omit <code>Instances</code>, AWS Cloud Map
      * returns the health status for all the instances that are associated with the
-     * specified service.</p> <note> <p>To get the IDs for the instances that you've
-     * registered by using a specified service, submit a <a>ListInstances</a>
-     * request.</p> </note>
+     * specified service.</p>  <p>To get the IDs for the instances that you've
+     * registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a>
+     * request.</p> 
      */
     inline GetInstancesHealthStatusRequest& AddInstances(const Aws::String& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
 
@@ -160,9 +157,10 @@ namespace Model
      * <p>An array that contains the IDs of all the instances that you want to get the
      * health status for.</p> <p>If you omit <code>Instances</code>, AWS Cloud Map
      * returns the health status for all the instances that are associated with the
-     * specified service.</p> <note> <p>To get the IDs for the instances that you've
-     * registered by using a specified service, submit a <a>ListInstances</a>
-     * request.</p> </note>
+     * specified service.</p>  <p>To get the IDs for the instances that you've
+     * registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a>
+     * request.</p> 
      */
     inline GetInstancesHealthStatusRequest& AddInstances(Aws::String&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
 
@@ -170,9 +168,10 @@ namespace Model
      * <p>An array that contains the IDs of all the instances that you want to get the
      * health status for.</p> <p>If you omit <code>Instances</code>, AWS Cloud Map
      * returns the health status for all the instances that are associated with the
-     * specified service.</p> <note> <p>To get the IDs for the instances that you've
-     * registered by using a specified service, submit a <a>ListInstances</a>
-     * request.</p> </note>
+     * specified service.</p>  <p>To get the IDs for the instances that you've
+     * registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a>
+     * request.</p> 
      */
     inline GetInstancesHealthStatusRequest& AddInstances(const char* value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
 

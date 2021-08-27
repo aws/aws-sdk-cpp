@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -50,7 +40,7 @@ static const char* ALLOCATION_TAG = "SSOClient";
 SSOClient::SSOClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SSOErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -60,7 +50,7 @@ SSOClient::SSOClient(const Client::ClientConfiguration& clientConfiguration) :
 SSOClient::SSOClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SSOErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -71,7 +61,7 @@ SSOClient::SSOClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SSOErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -84,6 +74,7 @@ SSOClient::~SSOClient()
 
 void SSOClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("SSO");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -128,15 +119,7 @@ GetRoleCredentialsOutcome SSOClient::GetRoleCredentials(const GetRoleCredentials
   Aws::StringStream ss;
   ss << "/federation/credentials";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRoleCredentialsOutcome(GetRoleCredentialsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRoleCredentialsOutcome(outcome.GetError());
-  }
+  return GetRoleCredentialsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
 }
 
 GetRoleCredentialsOutcomeCallable SSOClient::GetRoleCredentialsCallable(const GetRoleCredentialsRequest& request) const
@@ -173,15 +156,7 @@ ListAccountRolesOutcome SSOClient::ListAccountRoles(const ListAccountRolesReques
   Aws::StringStream ss;
   ss << "/assignment/roles";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAccountRolesOutcome(ListAccountRolesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAccountRolesOutcome(outcome.GetError());
-  }
+  return ListAccountRolesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
 }
 
 ListAccountRolesOutcomeCallable SSOClient::ListAccountRolesCallable(const ListAccountRolesRequest& request) const
@@ -213,15 +188,7 @@ ListAccountsOutcome SSOClient::ListAccounts(const ListAccountsRequest& request) 
   Aws::StringStream ss;
   ss << "/assignment/accounts";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAccountsOutcome(ListAccountsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAccountsOutcome(outcome.GetError());
-  }
+  return ListAccountsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
 }
 
 ListAccountsOutcomeCallable SSOClient::ListAccountsCallable(const ListAccountsRequest& request) const
@@ -253,15 +220,7 @@ LogoutOutcome SSOClient::Logout(const LogoutRequest& request) const
   Aws::StringStream ss;
   ss << "/logout";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return LogoutOutcome(NoResult());
-  }
-  else
-  {
-    return LogoutOutcome(outcome.GetError());
-  }
+  return LogoutOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
 LogoutOutcomeCallable SSOClient::LogoutCallable(const LogoutRequest& request) const

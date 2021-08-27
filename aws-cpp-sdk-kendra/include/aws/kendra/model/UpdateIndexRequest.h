@@ -1,24 +1,17 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/kendra/KendraRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kendra/model/CapacityUnitsConfiguration.h>
+#include <aws/kendra/model/UserContextPolicy.h>
 #include <aws/kendra/model/DocumentMetadataConfiguration.h>
+#include <aws/kendra/model/UserTokenConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -258,6 +251,127 @@ namespace Model
      */
     inline UpdateIndexRequest& AddDocumentMetadataConfigurationUpdates(DocumentMetadataConfiguration&& value) { m_documentMetadataConfigurationUpdatesHasBeenSet = true; m_documentMetadataConfigurationUpdates.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Sets the number of addtional storage and query capacity units that should be
+     * used by the index. You can change the capacity of the index up to 5 times per
+     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
+     * capacity below that required to meet the storage needs for your index.</p>
+     */
+    inline const CapacityUnitsConfiguration& GetCapacityUnits() const{ return m_capacityUnits; }
+
+    /**
+     * <p>Sets the number of addtional storage and query capacity units that should be
+     * used by the index. You can change the capacity of the index up to 5 times per
+     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
+     * capacity below that required to meet the storage needs for your index.</p>
+     */
+    inline bool CapacityUnitsHasBeenSet() const { return m_capacityUnitsHasBeenSet; }
+
+    /**
+     * <p>Sets the number of addtional storage and query capacity units that should be
+     * used by the index. You can change the capacity of the index up to 5 times per
+     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
+     * capacity below that required to meet the storage needs for your index.</p>
+     */
+    inline void SetCapacityUnits(const CapacityUnitsConfiguration& value) { m_capacityUnitsHasBeenSet = true; m_capacityUnits = value; }
+
+    /**
+     * <p>Sets the number of addtional storage and query capacity units that should be
+     * used by the index. You can change the capacity of the index up to 5 times per
+     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
+     * capacity below that required to meet the storage needs for your index.</p>
+     */
+    inline void SetCapacityUnits(CapacityUnitsConfiguration&& value) { m_capacityUnitsHasBeenSet = true; m_capacityUnits = std::move(value); }
+
+    /**
+     * <p>Sets the number of addtional storage and query capacity units that should be
+     * used by the index. You can change the capacity of the index up to 5 times per
+     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
+     * capacity below that required to meet the storage needs for your index.</p>
+     */
+    inline UpdateIndexRequest& WithCapacityUnits(const CapacityUnitsConfiguration& value) { SetCapacityUnits(value); return *this;}
+
+    /**
+     * <p>Sets the number of addtional storage and query capacity units that should be
+     * used by the index. You can change the capacity of the index up to 5 times per
+     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
+     * capacity below that required to meet the storage needs for your index.</p>
+     */
+    inline UpdateIndexRequest& WithCapacityUnits(CapacityUnitsConfiguration&& value) { SetCapacityUnits(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline const Aws::Vector<UserTokenConfiguration>& GetUserTokenConfigurations() const{ return m_userTokenConfigurations; }
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline bool UserTokenConfigurationsHasBeenSet() const { return m_userTokenConfigurationsHasBeenSet; }
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline void SetUserTokenConfigurations(const Aws::Vector<UserTokenConfiguration>& value) { m_userTokenConfigurationsHasBeenSet = true; m_userTokenConfigurations = value; }
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline void SetUserTokenConfigurations(Aws::Vector<UserTokenConfiguration>&& value) { m_userTokenConfigurationsHasBeenSet = true; m_userTokenConfigurations = std::move(value); }
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline UpdateIndexRequest& WithUserTokenConfigurations(const Aws::Vector<UserTokenConfiguration>& value) { SetUserTokenConfigurations(value); return *this;}
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline UpdateIndexRequest& WithUserTokenConfigurations(Aws::Vector<UserTokenConfiguration>&& value) { SetUserTokenConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline UpdateIndexRequest& AddUserTokenConfigurations(const UserTokenConfiguration& value) { m_userTokenConfigurationsHasBeenSet = true; m_userTokenConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>The user token configuration.</p>
+     */
+    inline UpdateIndexRequest& AddUserTokenConfigurations(UserTokenConfiguration&& value) { m_userTokenConfigurationsHasBeenSet = true; m_userTokenConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The user user token context policy.</p>
+     */
+    inline const UserContextPolicy& GetUserContextPolicy() const{ return m_userContextPolicy; }
+
+    /**
+     * <p>The user user token context policy.</p>
+     */
+    inline bool UserContextPolicyHasBeenSet() const { return m_userContextPolicyHasBeenSet; }
+
+    /**
+     * <p>The user user token context policy.</p>
+     */
+    inline void SetUserContextPolicy(const UserContextPolicy& value) { m_userContextPolicyHasBeenSet = true; m_userContextPolicy = value; }
+
+    /**
+     * <p>The user user token context policy.</p>
+     */
+    inline void SetUserContextPolicy(UserContextPolicy&& value) { m_userContextPolicyHasBeenSet = true; m_userContextPolicy = std::move(value); }
+
+    /**
+     * <p>The user user token context policy.</p>
+     */
+    inline UpdateIndexRequest& WithUserContextPolicy(const UserContextPolicy& value) { SetUserContextPolicy(value); return *this;}
+
+    /**
+     * <p>The user user token context policy.</p>
+     */
+    inline UpdateIndexRequest& WithUserContextPolicy(UserContextPolicy&& value) { SetUserContextPolicy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -274,6 +388,15 @@ namespace Model
 
     Aws::Vector<DocumentMetadataConfiguration> m_documentMetadataConfigurationUpdates;
     bool m_documentMetadataConfigurationUpdatesHasBeenSet;
+
+    CapacityUnitsConfiguration m_capacityUnits;
+    bool m_capacityUnitsHasBeenSet;
+
+    Aws::Vector<UserTokenConfiguration> m_userTokenConfigurations;
+    bool m_userTokenConfigurationsHasBeenSet;
+
+    UserContextPolicy m_userContextPolicy;
+    bool m_userContextPolicyHasBeenSet;
   };
 
 } // namespace Model

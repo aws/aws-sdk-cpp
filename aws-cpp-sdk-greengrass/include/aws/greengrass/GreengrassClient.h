@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/greengrass/Greengrass_EXPORTS.h>
@@ -75,6 +65,7 @@
 #include <aws/greengrass/model/GetServiceRoleForAccountResult.h>
 #include <aws/greengrass/model/GetSubscriptionDefinitionResult.h>
 #include <aws/greengrass/model/GetSubscriptionDefinitionVersionResult.h>
+#include <aws/greengrass/model/GetThingRuntimeConfigurationResult.h>
 #include <aws/greengrass/model/ListBulkDeploymentDetailedReportsResult.h>
 #include <aws/greengrass/model/ListBulkDeploymentsResult.h>
 #include <aws/greengrass/model/ListConnectorDefinitionVersionsResult.h>
@@ -109,6 +100,7 @@
 #include <aws/greengrass/model/UpdateLoggerDefinitionResult.h>
 #include <aws/greengrass/model/UpdateResourceDefinitionResult.h>
 #include <aws/greengrass/model/UpdateSubscriptionDefinitionResult.h>
+#include <aws/greengrass/model/UpdateThingRuntimeConfigurationResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -203,6 +195,7 @@ namespace Model
         class GetServiceRoleForAccountRequest;
         class GetSubscriptionDefinitionRequest;
         class GetSubscriptionDefinitionVersionRequest;
+        class GetThingRuntimeConfigurationRequest;
         class ListBulkDeploymentDetailedReportsRequest;
         class ListBulkDeploymentsRequest;
         class ListConnectorDefinitionVersionsRequest;
@@ -239,97 +232,100 @@ namespace Model
         class UpdateLoggerDefinitionRequest;
         class UpdateResourceDefinitionRequest;
         class UpdateSubscriptionDefinitionRequest;
+        class UpdateThingRuntimeConfigurationRequest;
 
-        typedef Aws::Utils::Outcome<AssociateRoleToGroupResult, Aws::Client::AWSError<GreengrassErrors>> AssociateRoleToGroupOutcome;
-        typedef Aws::Utils::Outcome<AssociateServiceRoleToAccountResult, Aws::Client::AWSError<GreengrassErrors>> AssociateServiceRoleToAccountOutcome;
-        typedef Aws::Utils::Outcome<CreateConnectorDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> CreateConnectorDefinitionOutcome;
-        typedef Aws::Utils::Outcome<CreateConnectorDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> CreateConnectorDefinitionVersionOutcome;
-        typedef Aws::Utils::Outcome<CreateCoreDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> CreateCoreDefinitionOutcome;
-        typedef Aws::Utils::Outcome<CreateCoreDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> CreateCoreDefinitionVersionOutcome;
-        typedef Aws::Utils::Outcome<CreateDeploymentResult, Aws::Client::AWSError<GreengrassErrors>> CreateDeploymentOutcome;
-        typedef Aws::Utils::Outcome<CreateDeviceDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> CreateDeviceDefinitionOutcome;
-        typedef Aws::Utils::Outcome<CreateDeviceDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> CreateDeviceDefinitionVersionOutcome;
-        typedef Aws::Utils::Outcome<CreateFunctionDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> CreateFunctionDefinitionOutcome;
-        typedef Aws::Utils::Outcome<CreateFunctionDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> CreateFunctionDefinitionVersionOutcome;
-        typedef Aws::Utils::Outcome<CreateGroupResult, Aws::Client::AWSError<GreengrassErrors>> CreateGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateGroupCertificateAuthorityResult, Aws::Client::AWSError<GreengrassErrors>> CreateGroupCertificateAuthorityOutcome;
-        typedef Aws::Utils::Outcome<CreateGroupVersionResult, Aws::Client::AWSError<GreengrassErrors>> CreateGroupVersionOutcome;
-        typedef Aws::Utils::Outcome<CreateLoggerDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> CreateLoggerDefinitionOutcome;
-        typedef Aws::Utils::Outcome<CreateLoggerDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> CreateLoggerDefinitionVersionOutcome;
-        typedef Aws::Utils::Outcome<CreateResourceDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> CreateResourceDefinitionOutcome;
-        typedef Aws::Utils::Outcome<CreateResourceDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> CreateResourceDefinitionVersionOutcome;
-        typedef Aws::Utils::Outcome<CreateSoftwareUpdateJobResult, Aws::Client::AWSError<GreengrassErrors>> CreateSoftwareUpdateJobOutcome;
-        typedef Aws::Utils::Outcome<CreateSubscriptionDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> CreateSubscriptionDefinitionOutcome;
-        typedef Aws::Utils::Outcome<CreateSubscriptionDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> CreateSubscriptionDefinitionVersionOutcome;
-        typedef Aws::Utils::Outcome<DeleteConnectorDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> DeleteConnectorDefinitionOutcome;
-        typedef Aws::Utils::Outcome<DeleteCoreDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> DeleteCoreDefinitionOutcome;
-        typedef Aws::Utils::Outcome<DeleteDeviceDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> DeleteDeviceDefinitionOutcome;
-        typedef Aws::Utils::Outcome<DeleteFunctionDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> DeleteFunctionDefinitionOutcome;
-        typedef Aws::Utils::Outcome<DeleteGroupResult, Aws::Client::AWSError<GreengrassErrors>> DeleteGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteLoggerDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> DeleteLoggerDefinitionOutcome;
-        typedef Aws::Utils::Outcome<DeleteResourceDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> DeleteResourceDefinitionOutcome;
-        typedef Aws::Utils::Outcome<DeleteSubscriptionDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> DeleteSubscriptionDefinitionOutcome;
-        typedef Aws::Utils::Outcome<DisassociateRoleFromGroupResult, Aws::Client::AWSError<GreengrassErrors>> DisassociateRoleFromGroupOutcome;
-        typedef Aws::Utils::Outcome<DisassociateServiceRoleFromAccountResult, Aws::Client::AWSError<GreengrassErrors>> DisassociateServiceRoleFromAccountOutcome;
-        typedef Aws::Utils::Outcome<GetAssociatedRoleResult, Aws::Client::AWSError<GreengrassErrors>> GetAssociatedRoleOutcome;
-        typedef Aws::Utils::Outcome<GetBulkDeploymentStatusResult, Aws::Client::AWSError<GreengrassErrors>> GetBulkDeploymentStatusOutcome;
-        typedef Aws::Utils::Outcome<GetConnectivityInfoResult, Aws::Client::AWSError<GreengrassErrors>> GetConnectivityInfoOutcome;
-        typedef Aws::Utils::Outcome<GetConnectorDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> GetConnectorDefinitionOutcome;
-        typedef Aws::Utils::Outcome<GetConnectorDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> GetConnectorDefinitionVersionOutcome;
-        typedef Aws::Utils::Outcome<GetCoreDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> GetCoreDefinitionOutcome;
-        typedef Aws::Utils::Outcome<GetCoreDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> GetCoreDefinitionVersionOutcome;
-        typedef Aws::Utils::Outcome<GetDeploymentStatusResult, Aws::Client::AWSError<GreengrassErrors>> GetDeploymentStatusOutcome;
-        typedef Aws::Utils::Outcome<GetDeviceDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> GetDeviceDefinitionOutcome;
-        typedef Aws::Utils::Outcome<GetDeviceDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> GetDeviceDefinitionVersionOutcome;
-        typedef Aws::Utils::Outcome<GetFunctionDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> GetFunctionDefinitionOutcome;
-        typedef Aws::Utils::Outcome<GetFunctionDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> GetFunctionDefinitionVersionOutcome;
-        typedef Aws::Utils::Outcome<GetGroupResult, Aws::Client::AWSError<GreengrassErrors>> GetGroupOutcome;
-        typedef Aws::Utils::Outcome<GetGroupCertificateAuthorityResult, Aws::Client::AWSError<GreengrassErrors>> GetGroupCertificateAuthorityOutcome;
-        typedef Aws::Utils::Outcome<GetGroupCertificateConfigurationResult, Aws::Client::AWSError<GreengrassErrors>> GetGroupCertificateConfigurationOutcome;
-        typedef Aws::Utils::Outcome<GetGroupVersionResult, Aws::Client::AWSError<GreengrassErrors>> GetGroupVersionOutcome;
-        typedef Aws::Utils::Outcome<GetLoggerDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> GetLoggerDefinitionOutcome;
-        typedef Aws::Utils::Outcome<GetLoggerDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> GetLoggerDefinitionVersionOutcome;
-        typedef Aws::Utils::Outcome<GetResourceDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> GetResourceDefinitionOutcome;
-        typedef Aws::Utils::Outcome<GetResourceDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> GetResourceDefinitionVersionOutcome;
-        typedef Aws::Utils::Outcome<GetServiceRoleForAccountResult, Aws::Client::AWSError<GreengrassErrors>> GetServiceRoleForAccountOutcome;
-        typedef Aws::Utils::Outcome<GetSubscriptionDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> GetSubscriptionDefinitionOutcome;
-        typedef Aws::Utils::Outcome<GetSubscriptionDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> GetSubscriptionDefinitionVersionOutcome;
-        typedef Aws::Utils::Outcome<ListBulkDeploymentDetailedReportsResult, Aws::Client::AWSError<GreengrassErrors>> ListBulkDeploymentDetailedReportsOutcome;
-        typedef Aws::Utils::Outcome<ListBulkDeploymentsResult, Aws::Client::AWSError<GreengrassErrors>> ListBulkDeploymentsOutcome;
-        typedef Aws::Utils::Outcome<ListConnectorDefinitionVersionsResult, Aws::Client::AWSError<GreengrassErrors>> ListConnectorDefinitionVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListConnectorDefinitionsResult, Aws::Client::AWSError<GreengrassErrors>> ListConnectorDefinitionsOutcome;
-        typedef Aws::Utils::Outcome<ListCoreDefinitionVersionsResult, Aws::Client::AWSError<GreengrassErrors>> ListCoreDefinitionVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListCoreDefinitionsResult, Aws::Client::AWSError<GreengrassErrors>> ListCoreDefinitionsOutcome;
-        typedef Aws::Utils::Outcome<ListDeploymentsResult, Aws::Client::AWSError<GreengrassErrors>> ListDeploymentsOutcome;
-        typedef Aws::Utils::Outcome<ListDeviceDefinitionVersionsResult, Aws::Client::AWSError<GreengrassErrors>> ListDeviceDefinitionVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListDeviceDefinitionsResult, Aws::Client::AWSError<GreengrassErrors>> ListDeviceDefinitionsOutcome;
-        typedef Aws::Utils::Outcome<ListFunctionDefinitionVersionsResult, Aws::Client::AWSError<GreengrassErrors>> ListFunctionDefinitionVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListFunctionDefinitionsResult, Aws::Client::AWSError<GreengrassErrors>> ListFunctionDefinitionsOutcome;
-        typedef Aws::Utils::Outcome<ListGroupCertificateAuthoritiesResult, Aws::Client::AWSError<GreengrassErrors>> ListGroupCertificateAuthoritiesOutcome;
-        typedef Aws::Utils::Outcome<ListGroupVersionsResult, Aws::Client::AWSError<GreengrassErrors>> ListGroupVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListGroupsResult, Aws::Client::AWSError<GreengrassErrors>> ListGroupsOutcome;
-        typedef Aws::Utils::Outcome<ListLoggerDefinitionVersionsResult, Aws::Client::AWSError<GreengrassErrors>> ListLoggerDefinitionVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListLoggerDefinitionsResult, Aws::Client::AWSError<GreengrassErrors>> ListLoggerDefinitionsOutcome;
-        typedef Aws::Utils::Outcome<ListResourceDefinitionVersionsResult, Aws::Client::AWSError<GreengrassErrors>> ListResourceDefinitionVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListResourceDefinitionsResult, Aws::Client::AWSError<GreengrassErrors>> ListResourceDefinitionsOutcome;
-        typedef Aws::Utils::Outcome<ListSubscriptionDefinitionVersionsResult, Aws::Client::AWSError<GreengrassErrors>> ListSubscriptionDefinitionVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListSubscriptionDefinitionsResult, Aws::Client::AWSError<GreengrassErrors>> ListSubscriptionDefinitionsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<GreengrassErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ResetDeploymentsResult, Aws::Client::AWSError<GreengrassErrors>> ResetDeploymentsOutcome;
-        typedef Aws::Utils::Outcome<StartBulkDeploymentResult, Aws::Client::AWSError<GreengrassErrors>> StartBulkDeploymentOutcome;
-        typedef Aws::Utils::Outcome<StopBulkDeploymentResult, Aws::Client::AWSError<GreengrassErrors>> StopBulkDeploymentOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GreengrassErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GreengrassErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateConnectivityInfoResult, Aws::Client::AWSError<GreengrassErrors>> UpdateConnectivityInfoOutcome;
-        typedef Aws::Utils::Outcome<UpdateConnectorDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> UpdateConnectorDefinitionOutcome;
-        typedef Aws::Utils::Outcome<UpdateCoreDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> UpdateCoreDefinitionOutcome;
-        typedef Aws::Utils::Outcome<UpdateDeviceDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> UpdateDeviceDefinitionOutcome;
-        typedef Aws::Utils::Outcome<UpdateFunctionDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> UpdateFunctionDefinitionOutcome;
-        typedef Aws::Utils::Outcome<UpdateGroupResult, Aws::Client::AWSError<GreengrassErrors>> UpdateGroupOutcome;
-        typedef Aws::Utils::Outcome<UpdateGroupCertificateConfigurationResult, Aws::Client::AWSError<GreengrassErrors>> UpdateGroupCertificateConfigurationOutcome;
-        typedef Aws::Utils::Outcome<UpdateLoggerDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> UpdateLoggerDefinitionOutcome;
-        typedef Aws::Utils::Outcome<UpdateResourceDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> UpdateResourceDefinitionOutcome;
-        typedef Aws::Utils::Outcome<UpdateSubscriptionDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> UpdateSubscriptionDefinitionOutcome;
+        typedef Aws::Utils::Outcome<AssociateRoleToGroupResult, GreengrassError> AssociateRoleToGroupOutcome;
+        typedef Aws::Utils::Outcome<AssociateServiceRoleToAccountResult, GreengrassError> AssociateServiceRoleToAccountOutcome;
+        typedef Aws::Utils::Outcome<CreateConnectorDefinitionResult, GreengrassError> CreateConnectorDefinitionOutcome;
+        typedef Aws::Utils::Outcome<CreateConnectorDefinitionVersionResult, GreengrassError> CreateConnectorDefinitionVersionOutcome;
+        typedef Aws::Utils::Outcome<CreateCoreDefinitionResult, GreengrassError> CreateCoreDefinitionOutcome;
+        typedef Aws::Utils::Outcome<CreateCoreDefinitionVersionResult, GreengrassError> CreateCoreDefinitionVersionOutcome;
+        typedef Aws::Utils::Outcome<CreateDeploymentResult, GreengrassError> CreateDeploymentOutcome;
+        typedef Aws::Utils::Outcome<CreateDeviceDefinitionResult, GreengrassError> CreateDeviceDefinitionOutcome;
+        typedef Aws::Utils::Outcome<CreateDeviceDefinitionVersionResult, GreengrassError> CreateDeviceDefinitionVersionOutcome;
+        typedef Aws::Utils::Outcome<CreateFunctionDefinitionResult, GreengrassError> CreateFunctionDefinitionOutcome;
+        typedef Aws::Utils::Outcome<CreateFunctionDefinitionVersionResult, GreengrassError> CreateFunctionDefinitionVersionOutcome;
+        typedef Aws::Utils::Outcome<CreateGroupResult, GreengrassError> CreateGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateGroupCertificateAuthorityResult, GreengrassError> CreateGroupCertificateAuthorityOutcome;
+        typedef Aws::Utils::Outcome<CreateGroupVersionResult, GreengrassError> CreateGroupVersionOutcome;
+        typedef Aws::Utils::Outcome<CreateLoggerDefinitionResult, GreengrassError> CreateLoggerDefinitionOutcome;
+        typedef Aws::Utils::Outcome<CreateLoggerDefinitionVersionResult, GreengrassError> CreateLoggerDefinitionVersionOutcome;
+        typedef Aws::Utils::Outcome<CreateResourceDefinitionResult, GreengrassError> CreateResourceDefinitionOutcome;
+        typedef Aws::Utils::Outcome<CreateResourceDefinitionVersionResult, GreengrassError> CreateResourceDefinitionVersionOutcome;
+        typedef Aws::Utils::Outcome<CreateSoftwareUpdateJobResult, GreengrassError> CreateSoftwareUpdateJobOutcome;
+        typedef Aws::Utils::Outcome<CreateSubscriptionDefinitionResult, GreengrassError> CreateSubscriptionDefinitionOutcome;
+        typedef Aws::Utils::Outcome<CreateSubscriptionDefinitionVersionResult, GreengrassError> CreateSubscriptionDefinitionVersionOutcome;
+        typedef Aws::Utils::Outcome<DeleteConnectorDefinitionResult, GreengrassError> DeleteConnectorDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DeleteCoreDefinitionResult, GreengrassError> DeleteCoreDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DeleteDeviceDefinitionResult, GreengrassError> DeleteDeviceDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DeleteFunctionDefinitionResult, GreengrassError> DeleteFunctionDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DeleteGroupResult, GreengrassError> DeleteGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteLoggerDefinitionResult, GreengrassError> DeleteLoggerDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DeleteResourceDefinitionResult, GreengrassError> DeleteResourceDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DeleteSubscriptionDefinitionResult, GreengrassError> DeleteSubscriptionDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DisassociateRoleFromGroupResult, GreengrassError> DisassociateRoleFromGroupOutcome;
+        typedef Aws::Utils::Outcome<DisassociateServiceRoleFromAccountResult, GreengrassError> DisassociateServiceRoleFromAccountOutcome;
+        typedef Aws::Utils::Outcome<GetAssociatedRoleResult, GreengrassError> GetAssociatedRoleOutcome;
+        typedef Aws::Utils::Outcome<GetBulkDeploymentStatusResult, GreengrassError> GetBulkDeploymentStatusOutcome;
+        typedef Aws::Utils::Outcome<GetConnectivityInfoResult, GreengrassError> GetConnectivityInfoOutcome;
+        typedef Aws::Utils::Outcome<GetConnectorDefinitionResult, GreengrassError> GetConnectorDefinitionOutcome;
+        typedef Aws::Utils::Outcome<GetConnectorDefinitionVersionResult, GreengrassError> GetConnectorDefinitionVersionOutcome;
+        typedef Aws::Utils::Outcome<GetCoreDefinitionResult, GreengrassError> GetCoreDefinitionOutcome;
+        typedef Aws::Utils::Outcome<GetCoreDefinitionVersionResult, GreengrassError> GetCoreDefinitionVersionOutcome;
+        typedef Aws::Utils::Outcome<GetDeploymentStatusResult, GreengrassError> GetDeploymentStatusOutcome;
+        typedef Aws::Utils::Outcome<GetDeviceDefinitionResult, GreengrassError> GetDeviceDefinitionOutcome;
+        typedef Aws::Utils::Outcome<GetDeviceDefinitionVersionResult, GreengrassError> GetDeviceDefinitionVersionOutcome;
+        typedef Aws::Utils::Outcome<GetFunctionDefinitionResult, GreengrassError> GetFunctionDefinitionOutcome;
+        typedef Aws::Utils::Outcome<GetFunctionDefinitionVersionResult, GreengrassError> GetFunctionDefinitionVersionOutcome;
+        typedef Aws::Utils::Outcome<GetGroupResult, GreengrassError> GetGroupOutcome;
+        typedef Aws::Utils::Outcome<GetGroupCertificateAuthorityResult, GreengrassError> GetGroupCertificateAuthorityOutcome;
+        typedef Aws::Utils::Outcome<GetGroupCertificateConfigurationResult, GreengrassError> GetGroupCertificateConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetGroupVersionResult, GreengrassError> GetGroupVersionOutcome;
+        typedef Aws::Utils::Outcome<GetLoggerDefinitionResult, GreengrassError> GetLoggerDefinitionOutcome;
+        typedef Aws::Utils::Outcome<GetLoggerDefinitionVersionResult, GreengrassError> GetLoggerDefinitionVersionOutcome;
+        typedef Aws::Utils::Outcome<GetResourceDefinitionResult, GreengrassError> GetResourceDefinitionOutcome;
+        typedef Aws::Utils::Outcome<GetResourceDefinitionVersionResult, GreengrassError> GetResourceDefinitionVersionOutcome;
+        typedef Aws::Utils::Outcome<GetServiceRoleForAccountResult, GreengrassError> GetServiceRoleForAccountOutcome;
+        typedef Aws::Utils::Outcome<GetSubscriptionDefinitionResult, GreengrassError> GetSubscriptionDefinitionOutcome;
+        typedef Aws::Utils::Outcome<GetSubscriptionDefinitionVersionResult, GreengrassError> GetSubscriptionDefinitionVersionOutcome;
+        typedef Aws::Utils::Outcome<GetThingRuntimeConfigurationResult, GreengrassError> GetThingRuntimeConfigurationOutcome;
+        typedef Aws::Utils::Outcome<ListBulkDeploymentDetailedReportsResult, GreengrassError> ListBulkDeploymentDetailedReportsOutcome;
+        typedef Aws::Utils::Outcome<ListBulkDeploymentsResult, GreengrassError> ListBulkDeploymentsOutcome;
+        typedef Aws::Utils::Outcome<ListConnectorDefinitionVersionsResult, GreengrassError> ListConnectorDefinitionVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListConnectorDefinitionsResult, GreengrassError> ListConnectorDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<ListCoreDefinitionVersionsResult, GreengrassError> ListCoreDefinitionVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListCoreDefinitionsResult, GreengrassError> ListCoreDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<ListDeploymentsResult, GreengrassError> ListDeploymentsOutcome;
+        typedef Aws::Utils::Outcome<ListDeviceDefinitionVersionsResult, GreengrassError> ListDeviceDefinitionVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListDeviceDefinitionsResult, GreengrassError> ListDeviceDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<ListFunctionDefinitionVersionsResult, GreengrassError> ListFunctionDefinitionVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListFunctionDefinitionsResult, GreengrassError> ListFunctionDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<ListGroupCertificateAuthoritiesResult, GreengrassError> ListGroupCertificateAuthoritiesOutcome;
+        typedef Aws::Utils::Outcome<ListGroupVersionsResult, GreengrassError> ListGroupVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListGroupsResult, GreengrassError> ListGroupsOutcome;
+        typedef Aws::Utils::Outcome<ListLoggerDefinitionVersionsResult, GreengrassError> ListLoggerDefinitionVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListLoggerDefinitionsResult, GreengrassError> ListLoggerDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<ListResourceDefinitionVersionsResult, GreengrassError> ListResourceDefinitionVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListResourceDefinitionsResult, GreengrassError> ListResourceDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<ListSubscriptionDefinitionVersionsResult, GreengrassError> ListSubscriptionDefinitionVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListSubscriptionDefinitionsResult, GreengrassError> ListSubscriptionDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, GreengrassError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ResetDeploymentsResult, GreengrassError> ResetDeploymentsOutcome;
+        typedef Aws::Utils::Outcome<StartBulkDeploymentResult, GreengrassError> StartBulkDeploymentOutcome;
+        typedef Aws::Utils::Outcome<StopBulkDeploymentResult, GreengrassError> StopBulkDeploymentOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, GreengrassError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, GreengrassError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateConnectivityInfoResult, GreengrassError> UpdateConnectivityInfoOutcome;
+        typedef Aws::Utils::Outcome<UpdateConnectorDefinitionResult, GreengrassError> UpdateConnectorDefinitionOutcome;
+        typedef Aws::Utils::Outcome<UpdateCoreDefinitionResult, GreengrassError> UpdateCoreDefinitionOutcome;
+        typedef Aws::Utils::Outcome<UpdateDeviceDefinitionResult, GreengrassError> UpdateDeviceDefinitionOutcome;
+        typedef Aws::Utils::Outcome<UpdateFunctionDefinitionResult, GreengrassError> UpdateFunctionDefinitionOutcome;
+        typedef Aws::Utils::Outcome<UpdateGroupResult, GreengrassError> UpdateGroupOutcome;
+        typedef Aws::Utils::Outcome<UpdateGroupCertificateConfigurationResult, GreengrassError> UpdateGroupCertificateConfigurationOutcome;
+        typedef Aws::Utils::Outcome<UpdateLoggerDefinitionResult, GreengrassError> UpdateLoggerDefinitionOutcome;
+        typedef Aws::Utils::Outcome<UpdateResourceDefinitionResult, GreengrassError> UpdateResourceDefinitionOutcome;
+        typedef Aws::Utils::Outcome<UpdateSubscriptionDefinitionResult, GreengrassError> UpdateSubscriptionDefinitionOutcome;
+        typedef Aws::Utils::Outcome<UpdateThingRuntimeConfigurationResult, GreengrassError> UpdateThingRuntimeConfigurationOutcome;
 
         typedef std::future<AssociateRoleToGroupOutcome> AssociateRoleToGroupOutcomeCallable;
         typedef std::future<AssociateServiceRoleToAccountOutcome> AssociateServiceRoleToAccountOutcomeCallable;
@@ -385,6 +381,7 @@ namespace Model
         typedef std::future<GetServiceRoleForAccountOutcome> GetServiceRoleForAccountOutcomeCallable;
         typedef std::future<GetSubscriptionDefinitionOutcome> GetSubscriptionDefinitionOutcomeCallable;
         typedef std::future<GetSubscriptionDefinitionVersionOutcome> GetSubscriptionDefinitionVersionOutcomeCallable;
+        typedef std::future<GetThingRuntimeConfigurationOutcome> GetThingRuntimeConfigurationOutcomeCallable;
         typedef std::future<ListBulkDeploymentDetailedReportsOutcome> ListBulkDeploymentDetailedReportsOutcomeCallable;
         typedef std::future<ListBulkDeploymentsOutcome> ListBulkDeploymentsOutcomeCallable;
         typedef std::future<ListConnectorDefinitionVersionsOutcome> ListConnectorDefinitionVersionsOutcomeCallable;
@@ -421,6 +418,7 @@ namespace Model
         typedef std::future<UpdateLoggerDefinitionOutcome> UpdateLoggerDefinitionOutcomeCallable;
         typedef std::future<UpdateResourceDefinitionOutcome> UpdateResourceDefinitionOutcomeCallable;
         typedef std::future<UpdateSubscriptionDefinitionOutcome> UpdateSubscriptionDefinitionOutcomeCallable;
+        typedef std::future<UpdateThingRuntimeConfigurationOutcome> UpdateThingRuntimeConfigurationOutcomeCallable;
 } // namespace Model
 
   class GreengrassClient;
@@ -479,6 +477,7 @@ namespace Model
     typedef std::function<void(const GreengrassClient*, const Model::GetServiceRoleForAccountRequest&, const Model::GetServiceRoleForAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceRoleForAccountResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::GetSubscriptionDefinitionRequest&, const Model::GetSubscriptionDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionDefinitionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::GetSubscriptionDefinitionVersionRequest&, const Model::GetSubscriptionDefinitionVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionDefinitionVersionResponseReceivedHandler;
+    typedef std::function<void(const GreengrassClient*, const Model::GetThingRuntimeConfigurationRequest&, const Model::GetThingRuntimeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetThingRuntimeConfigurationResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::ListBulkDeploymentDetailedReportsRequest&, const Model::ListBulkDeploymentDetailedReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBulkDeploymentDetailedReportsResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::ListBulkDeploymentsRequest&, const Model::ListBulkDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBulkDeploymentsResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::ListConnectorDefinitionVersionsRequest&, const Model::ListConnectorDefinitionVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConnectorDefinitionVersionsResponseReceivedHandler;
@@ -515,6 +514,7 @@ namespace Model
     typedef std::function<void(const GreengrassClient*, const Model::UpdateLoggerDefinitionRequest&, const Model::UpdateLoggerDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLoggerDefinitionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::UpdateResourceDefinitionRequest&, const Model::UpdateResourceDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResourceDefinitionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::UpdateSubscriptionDefinitionRequest&, const Model::UpdateSubscriptionDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSubscriptionDefinitionResponseReceivedHandler;
+    typedef std::function<void(const GreengrassClient*, const Model::UpdateThingRuntimeConfigurationRequest&, const Model::UpdateThingRuntimeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThingRuntimeConfigurationResponseReceivedHandler;
 
   /**
    * AWS IoT Greengrass seamlessly extends AWS onto physical devices so they can act
@@ -549,8 +549,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~GreengrassClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "Greengrass"; }
 
 
         /**
@@ -2075,6 +2073,31 @@ namespace Model
         virtual void GetSubscriptionDefinitionVersionAsync(const Model::GetSubscriptionDefinitionVersionRequest& request, const GetSubscriptionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Get the runtime configuration of a thing.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetThingRuntimeConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetThingRuntimeConfigurationOutcome GetThingRuntimeConfiguration(const Model::GetThingRuntimeConfigurationRequest& request) const;
+
+        /**
+         * Get the runtime configuration of a thing.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetThingRuntimeConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetThingRuntimeConfigurationOutcomeCallable GetThingRuntimeConfigurationCallable(const Model::GetThingRuntimeConfigurationRequest& request) const;
+
+        /**
+         * Get the runtime configuration of a thing.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetThingRuntimeConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetThingRuntimeConfigurationAsync(const Model::GetThingRuntimeConfigurationRequest& request, const GetThingRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Gets a paginated list of the deployments that have been started in a bulk
          * deployment operation, and their current deployment status.<p><h3>See Also:</h3> 
          * <a
@@ -3031,6 +3054,31 @@ namespace Model
          */
         virtual void UpdateSubscriptionDefinitionAsync(const Model::UpdateSubscriptionDefinitionRequest& request, const UpdateSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * Updates the runtime configuration of a thing.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateThingRuntimeConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateThingRuntimeConfigurationOutcome UpdateThingRuntimeConfiguration(const Model::UpdateThingRuntimeConfigurationRequest& request) const;
+
+        /**
+         * Updates the runtime configuration of a thing.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateThingRuntimeConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateThingRuntimeConfigurationOutcomeCallable UpdateThingRuntimeConfigurationCallable(const Model::UpdateThingRuntimeConfigurationRequest& request) const;
+
+        /**
+         * Updates the runtime configuration of a thing.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateThingRuntimeConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateThingRuntimeConfigurationAsync(const Model::UpdateThingRuntimeConfigurationRequest& request, const UpdateThingRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -3089,6 +3137,7 @@ namespace Model
         void GetServiceRoleForAccountAsyncHelper(const Model::GetServiceRoleForAccountRequest& request, const GetServiceRoleForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSubscriptionDefinitionAsyncHelper(const Model::GetSubscriptionDefinitionRequest& request, const GetSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSubscriptionDefinitionVersionAsyncHelper(const Model::GetSubscriptionDefinitionVersionRequest& request, const GetSubscriptionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetThingRuntimeConfigurationAsyncHelper(const Model::GetThingRuntimeConfigurationRequest& request, const GetThingRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBulkDeploymentDetailedReportsAsyncHelper(const Model::ListBulkDeploymentDetailedReportsRequest& request, const ListBulkDeploymentDetailedReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBulkDeploymentsAsyncHelper(const Model::ListBulkDeploymentsRequest& request, const ListBulkDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListConnectorDefinitionVersionsAsyncHelper(const Model::ListConnectorDefinitionVersionsRequest& request, const ListConnectorDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3125,6 +3174,7 @@ namespace Model
         void UpdateLoggerDefinitionAsyncHelper(const Model::UpdateLoggerDefinitionRequest& request, const UpdateLoggerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateResourceDefinitionAsyncHelper(const Model::UpdateResourceDefinitionRequest& request, const UpdateResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSubscriptionDefinitionAsyncHelper(const Model::UpdateSubscriptionDefinitionRequest& request, const UpdateSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateThingRuntimeConfigurationAsyncHelper(const Model::UpdateThingRuntimeConfigurationRequest& request, const UpdateThingRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

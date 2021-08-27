@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/appmesh/model/MeshRef.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,17 +20,25 @@ namespace Model
 
 MeshRef::MeshRef() : 
     m_arnHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_lastUpdatedAtHasBeenSet(false),
     m_meshNameHasBeenSet(false),
     m_meshOwnerHasBeenSet(false),
-    m_resourceOwnerHasBeenSet(false)
+    m_resourceOwnerHasBeenSet(false),
+    m_version(0),
+    m_versionHasBeenSet(false)
 {
 }
 
 MeshRef::MeshRef(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_lastUpdatedAtHasBeenSet(false),
     m_meshNameHasBeenSet(false),
     m_meshOwnerHasBeenSet(false),
-    m_resourceOwnerHasBeenSet(false)
+    m_resourceOwnerHasBeenSet(false),
+    m_version(0),
+    m_versionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -52,6 +50,20 @@ MeshRef& MeshRef::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+
+    m_createdAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastUpdatedAt"))
+  {
+    m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
+
+    m_lastUpdatedAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("meshName"))
@@ -75,6 +87,13 @@ MeshRef& MeshRef::operator =(JsonView jsonValue)
     m_resourceOwnerHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("version"))
+  {
+    m_version = jsonValue.GetInt64("version");
+
+    m_versionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -86,6 +105,16 @@ JsonValue MeshRef::Jsonize() const
   {
    payload.WithString("arn", m_arn);
 
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if(m_lastUpdatedAtHasBeenSet)
+  {
+   payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
   }
 
   if(m_meshNameHasBeenSet)
@@ -103,6 +132,12 @@ JsonValue MeshRef::Jsonize() const
   if(m_resourceOwnerHasBeenSet)
   {
    payload.WithString("resourceOwner", m_resourceOwner);
+
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithInt64("version", m_version);
 
   }
 

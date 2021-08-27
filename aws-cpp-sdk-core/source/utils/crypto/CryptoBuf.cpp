@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/crypto/CryptoBuf.h>
 
@@ -104,7 +94,7 @@ namespace Aws
                     if (cryptoBuffer.GetLength() && m_cipher)
                     {
                         CryptoBuffer putBackArea(m_putBack);
-                                                
+
                         m_isBuf = CryptoBuffer({&putBackArea, &cryptoBuffer});
                         //in the very unlikely case that the cipher had less output than the source stream.
                         assert(seekTo <= index);
@@ -304,10 +294,19 @@ namespace Aws
                         if(cryptoBuf.GetLength())
                         {
                             //allow mid block decryption. We have to decrypt it, but we don't have to write it to the stream.
-                            //the assumption here is that tellp() will always be 0 or >= 16 bytes. The block offset should only 
+                            //the assumption here is that tellp() will always be 0 or >= 16 bytes. The block offset should only
                             //be the offset of the first block read.
-                            auto blockOffset = m_stream.tellp() > m_blockOffset ? 0 : m_blockOffset;
-                            m_stream.write(reinterpret_cast<char*>(cryptoBuf.GetUnderlyingData() + blockOffset), cryptoBuf.GetLength() - blockOffset);
+                            size_t len = cryptoBuf.GetLength();
+                            size_t blockOffset = m_stream.tellp() > m_blockOffset ? 0 : m_blockOffset;
+                            if (len > blockOffset)
+                            {
+                                m_stream.write(reinterpret_cast<char*>(cryptoBuf.GetUnderlyingData() + blockOffset), len - blockOffset);
+                                m_blockOffset = 0;
+                            }
+                            else
+                            {
+                                m_blockOffset -= static_cast<int16_t>(len);
+                            }
                         }
                         return true;
                     }

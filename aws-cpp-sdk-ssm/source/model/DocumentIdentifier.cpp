@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ssm/model/DocumentIdentifier.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -41,7 +31,10 @@ DocumentIdentifier::DocumentIdentifier() :
     m_documentFormatHasBeenSet(false),
     m_targetTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_requiresHasBeenSet(false)
+    m_requiresHasBeenSet(false),
+    m_reviewStatus(ReviewStatus::NOT_SET),
+    m_reviewStatusHasBeenSet(false),
+    m_authorHasBeenSet(false)
 {
 }
 
@@ -58,7 +51,10 @@ DocumentIdentifier::DocumentIdentifier(JsonView jsonValue) :
     m_documentFormatHasBeenSet(false),
     m_targetTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_requiresHasBeenSet(false)
+    m_requiresHasBeenSet(false),
+    m_reviewStatus(ReviewStatus::NOT_SET),
+    m_reviewStatusHasBeenSet(false),
+    m_authorHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -151,6 +147,20 @@ DocumentIdentifier& DocumentIdentifier::operator =(JsonView jsonValue)
     m_requiresHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ReviewStatus"))
+  {
+    m_reviewStatus = ReviewStatusMapper::GetReviewStatusForName(jsonValue.GetString("ReviewStatus"));
+
+    m_reviewStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Author"))
+  {
+    m_author = jsonValue.GetString("Author");
+
+    m_authorHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -234,6 +244,17 @@ JsonValue DocumentIdentifier::Jsonize() const
      requiresJsonList[requiresIndex].AsObject(m_requires[requiresIndex].Jsonize());
    }
    payload.WithArray("Requires", std::move(requiresJsonList));
+
+  }
+
+  if(m_reviewStatusHasBeenSet)
+  {
+   payload.WithString("ReviewStatus", ReviewStatusMapper::GetNameForReviewStatus(m_reviewStatus));
+  }
+
+  if(m_authorHasBeenSet)
+  {
+   payload.WithString("Author", m_author);
 
   }
 

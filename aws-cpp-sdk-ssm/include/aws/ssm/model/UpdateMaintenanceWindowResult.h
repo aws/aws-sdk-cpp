@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -296,8 +286,8 @@ namespace Model
     /**
      * <p>The time zone that the scheduled maintenance window executions are based on,
      * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
-     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
+     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
      * website.</p>
      */
     inline const Aws::String& GetScheduleTimezone() const{ return m_scheduleTimezone; }
@@ -305,8 +295,8 @@ namespace Model
     /**
      * <p>The time zone that the scheduled maintenance window executions are based on,
      * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
-     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
+     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
      * website.</p>
      */
     inline void SetScheduleTimezone(const Aws::String& value) { m_scheduleTimezone = value; }
@@ -314,8 +304,8 @@ namespace Model
     /**
      * <p>The time zone that the scheduled maintenance window executions are based on,
      * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
-     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
+     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
      * website.</p>
      */
     inline void SetScheduleTimezone(Aws::String&& value) { m_scheduleTimezone = std::move(value); }
@@ -323,8 +313,8 @@ namespace Model
     /**
      * <p>The time zone that the scheduled maintenance window executions are based on,
      * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
-     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
+     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
      * website.</p>
      */
     inline void SetScheduleTimezone(const char* value) { m_scheduleTimezone.assign(value); }
@@ -332,8 +322,8 @@ namespace Model
     /**
      * <p>The time zone that the scheduled maintenance window executions are based on,
      * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
-     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
+     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
      * website.</p>
      */
     inline UpdateMaintenanceWindowResult& WithScheduleTimezone(const Aws::String& value) { SetScheduleTimezone(value); return *this;}
@@ -341,8 +331,8 @@ namespace Model
     /**
      * <p>The time zone that the scheduled maintenance window executions are based on,
      * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
-     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
+     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
      * website.</p>
      */
     inline UpdateMaintenanceWindowResult& WithScheduleTimezone(Aws::String&& value) { SetScheduleTimezone(std::move(value)); return *this;}
@@ -350,11 +340,30 @@ namespace Model
     /**
      * <p>The time zone that the scheduled maintenance window executions are based on,
      * in Internet Assigned Numbers Authority (IANA) format. For example:
-     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
-     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a
+     * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
      * website.</p>
      */
     inline UpdateMaintenanceWindowResult& WithScheduleTimezone(const char* value) { SetScheduleTimezone(value); return *this;}
+
+
+    /**
+     * <p>The number of days to wait to run a maintenance window after the scheduled
+     * CRON expression date and time.</p>
+     */
+    inline int GetScheduleOffset() const{ return m_scheduleOffset; }
+
+    /**
+     * <p>The number of days to wait to run a maintenance window after the scheduled
+     * CRON expression date and time.</p>
+     */
+    inline void SetScheduleOffset(int value) { m_scheduleOffset = value; }
+
+    /**
+     * <p>The number of days to wait to run a maintenance window after the scheduled
+     * CRON expression date and time.</p>
+     */
+    inline UpdateMaintenanceWindowResult& WithScheduleOffset(int value) { SetScheduleOffset(value); return *this;}
 
 
     /**
@@ -441,6 +450,8 @@ namespace Model
     Aws::String m_schedule;
 
     Aws::String m_scheduleTimezone;
+
+    int m_scheduleOffset;
 
     int m_duration;
 

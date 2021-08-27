@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/TransitGatewayOptions.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -33,6 +23,7 @@ namespace Model
 TransitGatewayOptions::TransitGatewayOptions() : 
     m_amazonSideAsn(0),
     m_amazonSideAsnHasBeenSet(false),
+    m_transitGatewayCidrBlocksHasBeenSet(false),
     m_autoAcceptSharedAttachments(AutoAcceptSharedAttachmentsValue::NOT_SET),
     m_autoAcceptSharedAttachmentsHasBeenSet(false),
     m_defaultRouteTableAssociation(DefaultRouteTableAssociationValue::NOT_SET),
@@ -53,6 +44,7 @@ TransitGatewayOptions::TransitGatewayOptions() :
 TransitGatewayOptions::TransitGatewayOptions(const XmlNode& xmlNode) : 
     m_amazonSideAsn(0),
     m_amazonSideAsnHasBeenSet(false),
+    m_transitGatewayCidrBlocksHasBeenSet(false),
     m_autoAcceptSharedAttachments(AutoAcceptSharedAttachmentsValue::NOT_SET),
     m_autoAcceptSharedAttachmentsHasBeenSet(false),
     m_defaultRouteTableAssociation(DefaultRouteTableAssociationValue::NOT_SET),
@@ -82,6 +74,18 @@ TransitGatewayOptions& TransitGatewayOptions::operator =(const XmlNode& xmlNode)
     {
       m_amazonSideAsn = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(amazonSideAsnNode.GetText()).c_str()).c_str());
       m_amazonSideAsnHasBeenSet = true;
+    }
+    XmlNode transitGatewayCidrBlocksNode = resultNode.FirstChild("transitGatewayCidrBlocks");
+    if(!transitGatewayCidrBlocksNode.IsNull())
+    {
+      XmlNode transitGatewayCidrBlocksMember = transitGatewayCidrBlocksNode.FirstChild("item");
+      while(!transitGatewayCidrBlocksMember.IsNull())
+      {
+        m_transitGatewayCidrBlocks.push_back(transitGatewayCidrBlocksMember.GetText());
+        transitGatewayCidrBlocksMember = transitGatewayCidrBlocksMember.NextNode("item");
+      }
+
+      m_transitGatewayCidrBlocksHasBeenSet = true;
     }
     XmlNode autoAcceptSharedAttachmentsNode = resultNode.FirstChild("autoAcceptSharedAttachments");
     if(!autoAcceptSharedAttachmentsNode.IsNull())
@@ -143,6 +147,15 @@ void TransitGatewayOptions::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".AmazonSideAsn=" << m_amazonSideAsn << "&";
   }
 
+  if(m_transitGatewayCidrBlocksHasBeenSet)
+  {
+      unsigned transitGatewayCidrBlocksIdx = 1;
+      for(auto& item : m_transitGatewayCidrBlocks)
+      {
+        oStream << location << index << locationValue << ".TransitGatewayCidrBlocks." << transitGatewayCidrBlocksIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
   if(m_autoAcceptSharedAttachmentsHasBeenSet)
   {
       oStream << location << index << locationValue << ".AutoAcceptSharedAttachments=" << AutoAcceptSharedAttachmentsValueMapper::GetNameForAutoAcceptSharedAttachmentsValue(m_autoAcceptSharedAttachments) << "&";
@@ -190,6 +203,14 @@ void TransitGatewayOptions::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_amazonSideAsnHasBeenSet)
   {
       oStream << location << ".AmazonSideAsn=" << m_amazonSideAsn << "&";
+  }
+  if(m_transitGatewayCidrBlocksHasBeenSet)
+  {
+      unsigned transitGatewayCidrBlocksIdx = 1;
+      for(auto& item : m_transitGatewayCidrBlocks)
+      {
+        oStream << location << ".TransitGatewayCidrBlocks." << transitGatewayCidrBlocksIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
   if(m_autoAcceptSharedAttachmentsHasBeenSet)
   {

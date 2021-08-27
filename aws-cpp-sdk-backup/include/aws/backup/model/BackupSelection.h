@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
@@ -92,56 +82,56 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when restoring
+     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when backing up
      * the target resource; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
 
     /**
-     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when restoring
+     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when backing up
      * the target resource; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when restoring
+     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when backing up
      * the target resource; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
-     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when restoring
+     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when backing up
      * the target resource; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when restoring
+     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when backing up
      * the target resource; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
 
     /**
-     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when restoring
+     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when backing up
      * the target resource; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline BackupSelection& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when restoring
+     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when backing up
      * the target resource; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline BackupSelection& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when restoring
+     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when backing up
      * the target resource; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
@@ -205,56 +195,56 @@ namespace Model
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
-     * backup plan; for example, <code>"STRINGEQUALS": {"ec2:ResourceTag/Department":
+     * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
      * "accounting"</code>.</p>
      */
     inline const Aws::Vector<Condition>& GetListOfTags() const{ return m_listOfTags; }
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
-     * backup plan; for example, <code>"STRINGEQUALS": {"ec2:ResourceTag/Department":
+     * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
      * "accounting"</code>.</p>
      */
     inline bool ListOfTagsHasBeenSet() const { return m_listOfTagsHasBeenSet; }
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
-     * backup plan; for example, <code>"STRINGEQUALS": {"ec2:ResourceTag/Department":
+     * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
      * "accounting"</code>.</p>
      */
     inline void SetListOfTags(const Aws::Vector<Condition>& value) { m_listOfTagsHasBeenSet = true; m_listOfTags = value; }
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
-     * backup plan; for example, <code>"STRINGEQUALS": {"ec2:ResourceTag/Department":
+     * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
      * "accounting"</code>.</p>
      */
     inline void SetListOfTags(Aws::Vector<Condition>&& value) { m_listOfTagsHasBeenSet = true; m_listOfTags = std::move(value); }
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
-     * backup plan; for example, <code>"STRINGEQUALS": {"ec2:ResourceTag/Department":
+     * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
      * "accounting"</code>.</p>
      */
     inline BackupSelection& WithListOfTags(const Aws::Vector<Condition>& value) { SetListOfTags(value); return *this;}
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
-     * backup plan; for example, <code>"STRINGEQUALS": {"ec2:ResourceTag/Department":
+     * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
      * "accounting"</code>.</p>
      */
     inline BackupSelection& WithListOfTags(Aws::Vector<Condition>&& value) { SetListOfTags(std::move(value)); return *this;}
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
-     * backup plan; for example, <code>"STRINGEQUALS": {"ec2:ResourceTag/Department":
+     * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
      * "accounting"</code>.</p>
      */
     inline BackupSelection& AddListOfTags(const Condition& value) { m_listOfTagsHasBeenSet = true; m_listOfTags.push_back(value); return *this; }
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
-     * backup plan; for example, <code>"STRINGEQUALS": {"ec2:ResourceTag/Department":
+     * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
      * "accounting"</code>.</p>
      */
     inline BackupSelection& AddListOfTags(Condition&& value) { m_listOfTagsHasBeenSet = true; m_listOfTags.push_back(std::move(value)); return *this; }

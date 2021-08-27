@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
@@ -81,14 +71,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -96,14 +88,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -111,14 +105,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -126,14 +122,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -141,14 +139,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -156,14 +156,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -171,14 +173,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -186,14 +190,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -201,14 +207,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -216,14 +224,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -231,14 +241,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -246,14 +258,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -261,14 +275,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -340,18 +356,16 @@ namespace Model
 
 
     /**
-     * <p>Specifies the customer master key (CMK) that AWS KMS will use to decrypt the
+     * <p>Specifies the customer master key (CMK) that AWS KMS uses to decrypt the
      * ciphertext. Enter a key ID of the CMK that was used to encrypt the
-     * ciphertext.</p> <p>If you specify a <code>KeyId</code> value, the
-     * <code>Decrypt</code> operation succeeds only if the specified CMK was used to
-     * encrypt the ciphertext.</p> <p>This parameter is required only when the
-     * ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS KMS uses the
-     * metadata that it adds to the ciphertext blob to determine which CMK was used to
-     * encrypt the ciphertext. However, you can use this parameter to ensure that a
-     * particular CMK (of any kind) is used to decrypt the ciphertext.</p> <p>To
-     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-     * ARN. When using an alias name, prefix it with <code>"alias/"</code>.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
+     * ciphertext.</p> <p>This parameter is required only when the ciphertext was
+     * encrypted under an asymmetric CMK. If you used a symmetric CMK, AWS KMS can get
+     * the CMK from metadata that it adds to the symmetric ciphertext blob. However, it
+     * is always recommended as a best practice. This practice ensures that you use the
+     * CMK that you intend.</p> <p>To specify a CMK, use its key ID, Amazon Resource
+     * Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with
+     * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
+     * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -363,18 +377,16 @@ namespace Model
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>Specifies the customer master key (CMK) that AWS KMS will use to decrypt the
+     * <p>Specifies the customer master key (CMK) that AWS KMS uses to decrypt the
      * ciphertext. Enter a key ID of the CMK that was used to encrypt the
-     * ciphertext.</p> <p>If you specify a <code>KeyId</code> value, the
-     * <code>Decrypt</code> operation succeeds only if the specified CMK was used to
-     * encrypt the ciphertext.</p> <p>This parameter is required only when the
-     * ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS KMS uses the
-     * metadata that it adds to the ciphertext blob to determine which CMK was used to
-     * encrypt the ciphertext. However, you can use this parameter to ensure that a
-     * particular CMK (of any kind) is used to decrypt the ciphertext.</p> <p>To
-     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-     * ARN. When using an alias name, prefix it with <code>"alias/"</code>.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
+     * ciphertext.</p> <p>This parameter is required only when the ciphertext was
+     * encrypted under an asymmetric CMK. If you used a symmetric CMK, AWS KMS can get
+     * the CMK from metadata that it adds to the symmetric ciphertext blob. However, it
+     * is always recommended as a best practice. This practice ensures that you use the
+     * CMK that you intend.</p> <p>To specify a CMK, use its key ID, Amazon Resource
+     * Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with
+     * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
+     * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -386,18 +398,16 @@ namespace Model
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
-     * <p>Specifies the customer master key (CMK) that AWS KMS will use to decrypt the
+     * <p>Specifies the customer master key (CMK) that AWS KMS uses to decrypt the
      * ciphertext. Enter a key ID of the CMK that was used to encrypt the
-     * ciphertext.</p> <p>If you specify a <code>KeyId</code> value, the
-     * <code>Decrypt</code> operation succeeds only if the specified CMK was used to
-     * encrypt the ciphertext.</p> <p>This parameter is required only when the
-     * ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS KMS uses the
-     * metadata that it adds to the ciphertext blob to determine which CMK was used to
-     * encrypt the ciphertext. However, you can use this parameter to ensure that a
-     * particular CMK (of any kind) is used to decrypt the ciphertext.</p> <p>To
-     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-     * ARN. When using an alias name, prefix it with <code>"alias/"</code>.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
+     * ciphertext.</p> <p>This parameter is required only when the ciphertext was
+     * encrypted under an asymmetric CMK. If you used a symmetric CMK, AWS KMS can get
+     * the CMK from metadata that it adds to the symmetric ciphertext blob. However, it
+     * is always recommended as a best practice. This practice ensures that you use the
+     * CMK that you intend.</p> <p>To specify a CMK, use its key ID, Amazon Resource
+     * Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with
+     * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
+     * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -409,18 +419,16 @@ namespace Model
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>Specifies the customer master key (CMK) that AWS KMS will use to decrypt the
+     * <p>Specifies the customer master key (CMK) that AWS KMS uses to decrypt the
      * ciphertext. Enter a key ID of the CMK that was used to encrypt the
-     * ciphertext.</p> <p>If you specify a <code>KeyId</code> value, the
-     * <code>Decrypt</code> operation succeeds only if the specified CMK was used to
-     * encrypt the ciphertext.</p> <p>This parameter is required only when the
-     * ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS KMS uses the
-     * metadata that it adds to the ciphertext blob to determine which CMK was used to
-     * encrypt the ciphertext. However, you can use this parameter to ensure that a
-     * particular CMK (of any kind) is used to decrypt the ciphertext.</p> <p>To
-     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-     * ARN. When using an alias name, prefix it with <code>"alias/"</code>.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
+     * ciphertext.</p> <p>This parameter is required only when the ciphertext was
+     * encrypted under an asymmetric CMK. If you used a symmetric CMK, AWS KMS can get
+     * the CMK from metadata that it adds to the symmetric ciphertext blob. However, it
+     * is always recommended as a best practice. This practice ensures that you use the
+     * CMK that you intend.</p> <p>To specify a CMK, use its key ID, Amazon Resource
+     * Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with
+     * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
+     * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -432,18 +440,16 @@ namespace Model
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>Specifies the customer master key (CMK) that AWS KMS will use to decrypt the
+     * <p>Specifies the customer master key (CMK) that AWS KMS uses to decrypt the
      * ciphertext. Enter a key ID of the CMK that was used to encrypt the
-     * ciphertext.</p> <p>If you specify a <code>KeyId</code> value, the
-     * <code>Decrypt</code> operation succeeds only if the specified CMK was used to
-     * encrypt the ciphertext.</p> <p>This parameter is required only when the
-     * ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS KMS uses the
-     * metadata that it adds to the ciphertext blob to determine which CMK was used to
-     * encrypt the ciphertext. However, you can use this parameter to ensure that a
-     * particular CMK (of any kind) is used to decrypt the ciphertext.</p> <p>To
-     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-     * ARN. When using an alias name, prefix it with <code>"alias/"</code>.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
+     * ciphertext.</p> <p>This parameter is required only when the ciphertext was
+     * encrypted under an asymmetric CMK. If you used a symmetric CMK, AWS KMS can get
+     * the CMK from metadata that it adds to the symmetric ciphertext blob. However, it
+     * is always recommended as a best practice. This practice ensures that you use the
+     * CMK that you intend.</p> <p>To specify a CMK, use its key ID, Amazon Resource
+     * Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with
+     * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
+     * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -455,18 +461,16 @@ namespace Model
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>Specifies the customer master key (CMK) that AWS KMS will use to decrypt the
+     * <p>Specifies the customer master key (CMK) that AWS KMS uses to decrypt the
      * ciphertext. Enter a key ID of the CMK that was used to encrypt the
-     * ciphertext.</p> <p>If you specify a <code>KeyId</code> value, the
-     * <code>Decrypt</code> operation succeeds only if the specified CMK was used to
-     * encrypt the ciphertext.</p> <p>This parameter is required only when the
-     * ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS KMS uses the
-     * metadata that it adds to the ciphertext blob to determine which CMK was used to
-     * encrypt the ciphertext. However, you can use this parameter to ensure that a
-     * particular CMK (of any kind) is used to decrypt the ciphertext.</p> <p>To
-     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-     * ARN. When using an alias name, prefix it with <code>"alias/"</code>.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
+     * ciphertext.</p> <p>This parameter is required only when the ciphertext was
+     * encrypted under an asymmetric CMK. If you used a symmetric CMK, AWS KMS can get
+     * the CMK from metadata that it adds to the symmetric ciphertext blob. However, it
+     * is always recommended as a best practice. This practice ensures that you use the
+     * CMK that you intend.</p> <p>To specify a CMK, use its key ID, Amazon Resource
+     * Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with
+     * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
+     * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -478,18 +482,16 @@ namespace Model
     inline DecryptRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>Specifies the customer master key (CMK) that AWS KMS will use to decrypt the
+     * <p>Specifies the customer master key (CMK) that AWS KMS uses to decrypt the
      * ciphertext. Enter a key ID of the CMK that was used to encrypt the
-     * ciphertext.</p> <p>If you specify a <code>KeyId</code> value, the
-     * <code>Decrypt</code> operation succeeds only if the specified CMK was used to
-     * encrypt the ciphertext.</p> <p>This parameter is required only when the
-     * ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS KMS uses the
-     * metadata that it adds to the ciphertext blob to determine which CMK was used to
-     * encrypt the ciphertext. However, you can use this parameter to ensure that a
-     * particular CMK (of any kind) is used to decrypt the ciphertext.</p> <p>To
-     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-     * ARN. When using an alias name, prefix it with <code>"alias/"</code>.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
+     * ciphertext.</p> <p>This parameter is required only when the ciphertext was
+     * encrypted under an asymmetric CMK. If you used a symmetric CMK, AWS KMS can get
+     * the CMK from metadata that it adds to the symmetric ciphertext blob. However, it
+     * is always recommended as a best practice. This practice ensures that you use the
+     * CMK that you intend.</p> <p>To specify a CMK, use its key ID, Amazon Resource
+     * Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with
+     * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
+     * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -501,18 +503,16 @@ namespace Model
     inline DecryptRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the customer master key (CMK) that AWS KMS will use to decrypt the
+     * <p>Specifies the customer master key (CMK) that AWS KMS uses to decrypt the
      * ciphertext. Enter a key ID of the CMK that was used to encrypt the
-     * ciphertext.</p> <p>If you specify a <code>KeyId</code> value, the
-     * <code>Decrypt</code> operation succeeds only if the specified CMK was used to
-     * encrypt the ciphertext.</p> <p>This parameter is required only when the
-     * ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS KMS uses the
-     * metadata that it adds to the ciphertext blob to determine which CMK was used to
-     * encrypt the ciphertext. However, you can use this parameter to ensure that a
-     * particular CMK (of any kind) is used to decrypt the ciphertext.</p> <p>To
-     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-     * ARN. When using an alias name, prefix it with <code>"alias/"</code>.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
+     * ciphertext.</p> <p>This parameter is required only when the ciphertext was
+     * encrypted under an asymmetric CMK. If you used a symmetric CMK, AWS KMS can get
+     * the CMK from metadata that it adds to the symmetric ciphertext blob. However, it
+     * is always recommended as a best practice. This practice ensures that you use the
+     * CMK that you intend.</p> <p>To specify a CMK, use its key ID, Amazon Resource
+     * Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with
+     * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
+     * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>

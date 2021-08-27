@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
@@ -25,12 +15,14 @@
 #include <aws/elasticfilesystem/model/CreateFileSystemResult.h>
 #include <aws/elasticfilesystem/model/CreateMountTargetResult.h>
 #include <aws/elasticfilesystem/model/DescribeAccessPointsResult.h>
+#include <aws/elasticfilesystem/model/DescribeBackupPolicyResult.h>
 #include <aws/elasticfilesystem/model/DescribeFileSystemPolicyResult.h>
 #include <aws/elasticfilesystem/model/DescribeFileSystemsResult.h>
 #include <aws/elasticfilesystem/model/DescribeLifecycleConfigurationResult.h>
 #include <aws/elasticfilesystem/model/DescribeMountTargetSecurityGroupsResult.h>
 #include <aws/elasticfilesystem/model/DescribeMountTargetsResult.h>
 #include <aws/elasticfilesystem/model/ListTagsForResourceResult.h>
+#include <aws/elasticfilesystem/model/PutBackupPolicyResult.h>
 #include <aws/elasticfilesystem/model/PutFileSystemPolicyResult.h>
 #include <aws/elasticfilesystem/model/PutLifecycleConfigurationResult.h>
 #include <aws/elasticfilesystem/model/UpdateFileSystemResult.h>
@@ -82,6 +74,7 @@ namespace Model
         class DeleteFileSystemPolicyRequest;
         class DeleteMountTargetRequest;
         class DescribeAccessPointsRequest;
+        class DescribeBackupPolicyRequest;
         class DescribeFileSystemPolicyRequest;
         class DescribeFileSystemsRequest;
         class DescribeLifecycleConfigurationRequest;
@@ -89,32 +82,35 @@ namespace Model
         class DescribeMountTargetsRequest;
         class ListTagsForResourceRequest;
         class ModifyMountTargetSecurityGroupsRequest;
+        class PutBackupPolicyRequest;
         class PutFileSystemPolicyRequest;
         class PutLifecycleConfigurationRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateFileSystemRequest;
 
-        typedef Aws::Utils::Outcome<CreateAccessPointResult, Aws::Client::AWSError<EFSErrors>> CreateAccessPointOutcome;
-        typedef Aws::Utils::Outcome<CreateFileSystemResult, Aws::Client::AWSError<EFSErrors>> CreateFileSystemOutcome;
-        typedef Aws::Utils::Outcome<CreateMountTargetResult, Aws::Client::AWSError<EFSErrors>> CreateMountTargetOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> DeleteAccessPointOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> DeleteFileSystemOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> DeleteFileSystemPolicyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> DeleteMountTargetOutcome;
-        typedef Aws::Utils::Outcome<DescribeAccessPointsResult, Aws::Client::AWSError<EFSErrors>> DescribeAccessPointsOutcome;
-        typedef Aws::Utils::Outcome<DescribeFileSystemPolicyResult, Aws::Client::AWSError<EFSErrors>> DescribeFileSystemPolicyOutcome;
-        typedef Aws::Utils::Outcome<DescribeFileSystemsResult, Aws::Client::AWSError<EFSErrors>> DescribeFileSystemsOutcome;
-        typedef Aws::Utils::Outcome<DescribeLifecycleConfigurationResult, Aws::Client::AWSError<EFSErrors>> DescribeLifecycleConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DescribeMountTargetSecurityGroupsResult, Aws::Client::AWSError<EFSErrors>> DescribeMountTargetSecurityGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeMountTargetsResult, Aws::Client::AWSError<EFSErrors>> DescribeMountTargetsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<EFSErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> ModifyMountTargetSecurityGroupsOutcome;
-        typedef Aws::Utils::Outcome<PutFileSystemPolicyResult, Aws::Client::AWSError<EFSErrors>> PutFileSystemPolicyOutcome;
-        typedef Aws::Utils::Outcome<PutLifecycleConfigurationResult, Aws::Client::AWSError<EFSErrors>> PutLifecycleConfigurationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateFileSystemResult, Aws::Client::AWSError<EFSErrors>> UpdateFileSystemOutcome;
+        typedef Aws::Utils::Outcome<CreateAccessPointResult, EFSError> CreateAccessPointOutcome;
+        typedef Aws::Utils::Outcome<CreateFileSystemResult, EFSError> CreateFileSystemOutcome;
+        typedef Aws::Utils::Outcome<CreateMountTargetResult, EFSError> CreateMountTargetOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> DeleteAccessPointOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> DeleteFileSystemOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> DeleteFileSystemPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> DeleteMountTargetOutcome;
+        typedef Aws::Utils::Outcome<DescribeAccessPointsResult, EFSError> DescribeAccessPointsOutcome;
+        typedef Aws::Utils::Outcome<DescribeBackupPolicyResult, EFSError> DescribeBackupPolicyOutcome;
+        typedef Aws::Utils::Outcome<DescribeFileSystemPolicyResult, EFSError> DescribeFileSystemPolicyOutcome;
+        typedef Aws::Utils::Outcome<DescribeFileSystemsResult, EFSError> DescribeFileSystemsOutcome;
+        typedef Aws::Utils::Outcome<DescribeLifecycleConfigurationResult, EFSError> DescribeLifecycleConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DescribeMountTargetSecurityGroupsResult, EFSError> DescribeMountTargetSecurityGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeMountTargetsResult, EFSError> DescribeMountTargetsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, EFSError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> ModifyMountTargetSecurityGroupsOutcome;
+        typedef Aws::Utils::Outcome<PutBackupPolicyResult, EFSError> PutBackupPolicyOutcome;
+        typedef Aws::Utils::Outcome<PutFileSystemPolicyResult, EFSError> PutFileSystemPolicyOutcome;
+        typedef Aws::Utils::Outcome<PutLifecycleConfigurationResult, EFSError> PutLifecycleConfigurationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateFileSystemResult, EFSError> UpdateFileSystemOutcome;
 
         typedef std::future<CreateAccessPointOutcome> CreateAccessPointOutcomeCallable;
         typedef std::future<CreateFileSystemOutcome> CreateFileSystemOutcomeCallable;
@@ -124,6 +120,7 @@ namespace Model
         typedef std::future<DeleteFileSystemPolicyOutcome> DeleteFileSystemPolicyOutcomeCallable;
         typedef std::future<DeleteMountTargetOutcome> DeleteMountTargetOutcomeCallable;
         typedef std::future<DescribeAccessPointsOutcome> DescribeAccessPointsOutcomeCallable;
+        typedef std::future<DescribeBackupPolicyOutcome> DescribeBackupPolicyOutcomeCallable;
         typedef std::future<DescribeFileSystemPolicyOutcome> DescribeFileSystemPolicyOutcomeCallable;
         typedef std::future<DescribeFileSystemsOutcome> DescribeFileSystemsOutcomeCallable;
         typedef std::future<DescribeLifecycleConfigurationOutcome> DescribeLifecycleConfigurationOutcomeCallable;
@@ -131,6 +128,7 @@ namespace Model
         typedef std::future<DescribeMountTargetsOutcome> DescribeMountTargetsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ModifyMountTargetSecurityGroupsOutcome> ModifyMountTargetSecurityGroupsOutcomeCallable;
+        typedef std::future<PutBackupPolicyOutcome> PutBackupPolicyOutcomeCallable;
         typedef std::future<PutFileSystemPolicyOutcome> PutFileSystemPolicyOutcomeCallable;
         typedef std::future<PutLifecycleConfigurationOutcome> PutLifecycleConfigurationOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -148,6 +146,7 @@ namespace Model
     typedef std::function<void(const EFSClient*, const Model::DeleteFileSystemPolicyRequest&, const Model::DeleteFileSystemPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFileSystemPolicyResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DeleteMountTargetRequest&, const Model::DeleteMountTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMountTargetResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeAccessPointsRequest&, const Model::DescribeAccessPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccessPointsResponseReceivedHandler;
+    typedef std::function<void(const EFSClient*, const Model::DescribeBackupPolicyRequest&, const Model::DescribeBackupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBackupPolicyResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeFileSystemPolicyRequest&, const Model::DescribeFileSystemPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemPolicyResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeFileSystemsRequest&, const Model::DescribeFileSystemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemsResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeLifecycleConfigurationRequest&, const Model::DescribeLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLifecycleConfigurationResponseReceivedHandler;
@@ -155,6 +154,7 @@ namespace Model
     typedef std::function<void(const EFSClient*, const Model::DescribeMountTargetsRequest&, const Model::DescribeMountTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMountTargetsResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::ModifyMountTargetSecurityGroupsRequest&, const Model::ModifyMountTargetSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyMountTargetSecurityGroupsResponseReceivedHandler;
+    typedef std::function<void(const EFSClient*, const Model::PutBackupPolicyRequest&, const Model::PutBackupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBackupPolicyResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::PutFileSystemPolicyRequest&, const Model::PutFileSystemPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFileSystemPolicyResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::PutLifecycleConfigurationRequest&, const Model::PutLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLifecycleConfigurationResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
@@ -196,8 +196,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~EFSClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "EFS"; }
 
 
         /**
@@ -265,19 +263,19 @@ namespace Model
          * an initial lifecycle state <code>creating</code>.</p> </li> <li> <p>Returns with
          * the description of the created file system.</p> </li> </ul> <p>Otherwise, this
          * operation returns a <code>FileSystemAlreadyExists</code> error with the ID of
-         * the existing file system.</p> <note> <p>For basic use cases, you can use a
-         * randomly generated UUID for the creation token.</p> </note> <p> The idempotent
+         * the existing file system.</p>  <p>For basic use cases, you can use a
+         * randomly generated UUID for the creation token.</p>  <p> The idempotent
          * operation allows you to retry a <code>CreateFileSystem</code> call without risk
          * of creating an extra file system. This can happen when an initial call fails in
          * a way that leaves it uncertain whether or not a file system was actually
          * created. An example might be that a transport level timeout occurred or your
          * connection was reset. As long as you use the same creation token, if the initial
          * call had succeeded in creating a file system, the client can learn of its
-         * existence from the <code>FileSystemAlreadyExists</code> error.</p> <note> <p>The
+         * existence from the <code>FileSystemAlreadyExists</code> error.</p>  <p>The
          * <code>CreateFileSystem</code> call returns while the file system's lifecycle
          * state is still <code>creating</code>. You can check the file system creation
          * status by calling the <a>DescribeFileSystems</a> operation, which among other
-         * things returns the file system state.</p> </note> <p>This operation also takes
+         * things returns the file system state.</p>  <p>This operation also takes
          * an optional <code>PerformanceMode</code> parameter that you choose for your file
          * system. We recommend <code>generalPurpose</code> performance mode for most file
          * systems. File systems using the <code>maxIO</code> performance mode can scale to
@@ -311,19 +309,19 @@ namespace Model
          * an initial lifecycle state <code>creating</code>.</p> </li> <li> <p>Returns with
          * the description of the created file system.</p> </li> </ul> <p>Otherwise, this
          * operation returns a <code>FileSystemAlreadyExists</code> error with the ID of
-         * the existing file system.</p> <note> <p>For basic use cases, you can use a
-         * randomly generated UUID for the creation token.</p> </note> <p> The idempotent
+         * the existing file system.</p>  <p>For basic use cases, you can use a
+         * randomly generated UUID for the creation token.</p>  <p> The idempotent
          * operation allows you to retry a <code>CreateFileSystem</code> call without risk
          * of creating an extra file system. This can happen when an initial call fails in
          * a way that leaves it uncertain whether or not a file system was actually
          * created. An example might be that a transport level timeout occurred or your
          * connection was reset. As long as you use the same creation token, if the initial
          * call had succeeded in creating a file system, the client can learn of its
-         * existence from the <code>FileSystemAlreadyExists</code> error.</p> <note> <p>The
+         * existence from the <code>FileSystemAlreadyExists</code> error.</p>  <p>The
          * <code>CreateFileSystem</code> call returns while the file system's lifecycle
          * state is still <code>creating</code>. You can check the file system creation
          * status by calling the <a>DescribeFileSystems</a> operation, which among other
-         * things returns the file system state.</p> </note> <p>This operation also takes
+         * things returns the file system state.</p>  <p>This operation also takes
          * an optional <code>PerformanceMode</code> parameter that you choose for your file
          * system. We recommend <code>generalPurpose</code> performance mode for most file
          * systems. File systems using the <code>maxIO</code> performance mode can scale to
@@ -359,19 +357,19 @@ namespace Model
          * an initial lifecycle state <code>creating</code>.</p> </li> <li> <p>Returns with
          * the description of the created file system.</p> </li> </ul> <p>Otherwise, this
          * operation returns a <code>FileSystemAlreadyExists</code> error with the ID of
-         * the existing file system.</p> <note> <p>For basic use cases, you can use a
-         * randomly generated UUID for the creation token.</p> </note> <p> The idempotent
+         * the existing file system.</p>  <p>For basic use cases, you can use a
+         * randomly generated UUID for the creation token.</p>  <p> The idempotent
          * operation allows you to retry a <code>CreateFileSystem</code> call without risk
          * of creating an extra file system. This can happen when an initial call fails in
          * a way that leaves it uncertain whether or not a file system was actually
          * created. An example might be that a transport level timeout occurred or your
          * connection was reset. As long as you use the same creation token, if the initial
          * call had succeeded in creating a file system, the client can learn of its
-         * existence from the <code>FileSystemAlreadyExists</code> error.</p> <note> <p>The
+         * existence from the <code>FileSystemAlreadyExists</code> error.</p>  <p>The
          * <code>CreateFileSystem</code> call returns while the file system's lifecycle
          * state is still <code>creating</code>. You can check the file system creation
          * status by calling the <a>DescribeFileSystems</a> operation, which among other
-         * things returns the file system state.</p> </note> <p>This operation also takes
+         * things returns the file system state.</p>  <p>This operation also takes
          * an optional <code>PerformanceMode</code> parameter that you choose for your file
          * system. We recommend <code>generalPurpose</code> performance mode for most file
          * systems. File systems using the <code>maxIO</code> performance mode can scale to
@@ -451,11 +449,11 @@ namespace Model
          * in the mount target's description to the network interface ID, and the
          * <code>IpAddress</code> field to its address. If network interface creation
          * fails, the entire <code>CreateMountTarget</code> operation fails.</p> </li>
-         * </ul> <note> <p>The <code>CreateMountTarget</code> call returns only after
+         * </ul>  <p>The <code>CreateMountTarget</code> call returns only after
          * creating the network interface, but while the mount target state is still
          * <code>creating</code>, you can check the mount target creation status by calling
          * the <a>DescribeMountTargets</a> operation, which among other things returns the
-         * mount target state.</p> </note> <p>We recommend that you create a mount target
+         * mount target state.</p>  <p>We recommend that you create a mount target
          * in each of the Availability Zones. There are cost considerations for using a
          * file system in an Availability Zone through a mount target created in another
          * Availability Zone. For more information, see <a
@@ -529,11 +527,11 @@ namespace Model
          * in the mount target's description to the network interface ID, and the
          * <code>IpAddress</code> field to its address. If network interface creation
          * fails, the entire <code>CreateMountTarget</code> operation fails.</p> </li>
-         * </ul> <note> <p>The <code>CreateMountTarget</code> call returns only after
+         * </ul>  <p>The <code>CreateMountTarget</code> call returns only after
          * creating the network interface, but while the mount target state is still
          * <code>creating</code>, you can check the mount target creation status by calling
          * the <a>DescribeMountTargets</a> operation, which among other things returns the
-         * mount target state.</p> </note> <p>We recommend that you create a mount target
+         * mount target state.</p>  <p>We recommend that you create a mount target
          * in each of the Availability Zones. There are cost considerations for using a
          * file system in an Availability Zone through a mount target created in another
          * Availability Zone. For more information, see <a
@@ -609,11 +607,11 @@ namespace Model
          * in the mount target's description to the network interface ID, and the
          * <code>IpAddress</code> field to its address. If network interface creation
          * fails, the entire <code>CreateMountTarget</code> operation fails.</p> </li>
-         * </ul> <note> <p>The <code>CreateMountTarget</code> call returns only after
+         * </ul>  <p>The <code>CreateMountTarget</code> call returns only after
          * creating the network interface, but while the mount target state is still
          * <code>creating</code>, you can check the mount target creation status by calling
          * the <a>DescribeMountTargets</a> operation, which among other things returns the
-         * mount target state.</p> </note> <p>We recommend that you create a mount target
+         * mount target state.</p>  <p>We recommend that you create a mount target
          * in each of the Availability Zones. There are cost considerations for using a
          * file system in an Availability Zone through a mount target created in another
          * Availability Zone. For more information, see <a
@@ -681,13 +679,13 @@ namespace Model
          * the deleted file system.</p> <p> You can't delete a file system that is in use.
          * That is, if the file system has any mount targets, you must first delete them.
          * For more information, see <a>DescribeMountTargets</a> and
-         * <a>DeleteMountTarget</a>. </p> <note> <p>The <code>DeleteFileSystem</code> call
+         * <a>DeleteMountTarget</a>. </p>  <p>The <code>DeleteFileSystem</code> call
          * returns while the file system state is still <code>deleting</code>. You can
          * check the file system deletion status by calling the <a>DescribeFileSystems</a>
          * operation, which returns a list of file systems in your account. If you pass
          * file system ID or creation token for the deleted file system, the
          * <a>DescribeFileSystems</a> returns a <code>404 FileSystemNotFound</code>
-         * error.</p> </note> <p>This operation requires permissions for the
+         * error.</p>  <p>This operation requires permissions for the
          * <code>elasticfilesystem:DeleteFileSystem</code> action.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystem">AWS
@@ -701,13 +699,13 @@ namespace Model
          * the deleted file system.</p> <p> You can't delete a file system that is in use.
          * That is, if the file system has any mount targets, you must first delete them.
          * For more information, see <a>DescribeMountTargets</a> and
-         * <a>DeleteMountTarget</a>. </p> <note> <p>The <code>DeleteFileSystem</code> call
+         * <a>DeleteMountTarget</a>. </p>  <p>The <code>DeleteFileSystem</code> call
          * returns while the file system state is still <code>deleting</code>. You can
          * check the file system deletion status by calling the <a>DescribeFileSystems</a>
          * operation, which returns a list of file systems in your account. If you pass
          * file system ID or creation token for the deleted file system, the
          * <a>DescribeFileSystems</a> returns a <code>404 FileSystemNotFound</code>
-         * error.</p> </note> <p>This operation requires permissions for the
+         * error.</p>  <p>This operation requires permissions for the
          * <code>elasticfilesystem:DeleteFileSystem</code> action.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystem">AWS
@@ -723,13 +721,13 @@ namespace Model
          * the deleted file system.</p> <p> You can't delete a file system that is in use.
          * That is, if the file system has any mount targets, you must first delete them.
          * For more information, see <a>DescribeMountTargets</a> and
-         * <a>DeleteMountTarget</a>. </p> <note> <p>The <code>DeleteFileSystem</code> call
+         * <a>DeleteMountTarget</a>. </p>  <p>The <code>DeleteFileSystem</code> call
          * returns while the file system state is still <code>deleting</code>. You can
          * check the file system deletion status by calling the <a>DescribeFileSystems</a>
          * operation, which returns a list of file systems in your account. If you pass
          * file system ID or creation token for the deleted file system, the
          * <a>DescribeFileSystems</a> returns a <code>404 FileSystemNotFound</code>
-         * error.</p> </note> <p>This operation requires permissions for the
+         * error.</p>  <p>This operation requires permissions for the
          * <code>elasticfilesystem:DeleteFileSystem</code> action.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystem">AWS
@@ -793,11 +791,11 @@ namespace Model
          * you created remains. You can mount an EC2 instance in your VPC by using another
          * mount target.</p> <p>This operation requires permissions for the following
          * action on the file system:</p> <ul> <li> <p>
-         * <code>elasticfilesystem:DeleteMountTarget</code> </p> </li> </ul> <note> <p>The
+         * <code>elasticfilesystem:DeleteMountTarget</code> </p> </li> </ul>  <p>The
          * <code>DeleteMountTarget</code> call returns while the mount target state is
          * still <code>deleting</code>. You can check the mount target deletion by calling
          * the <a>DescribeMountTargets</a> operation, which returns a list of mount target
-         * descriptions for the given file system. </p> </note> <p>The operation also
+         * descriptions for the given file system. </p>  <p>The operation also
          * requires permissions for the following Amazon EC2 action on the mount target's
          * network interface:</p> <ul> <li> <p> <code>ec2:DeleteNetworkInterface</code>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -817,11 +815,11 @@ namespace Model
          * you created remains. You can mount an EC2 instance in your VPC by using another
          * mount target.</p> <p>This operation requires permissions for the following
          * action on the file system:</p> <ul> <li> <p>
-         * <code>elasticfilesystem:DeleteMountTarget</code> </p> </li> </ul> <note> <p>The
+         * <code>elasticfilesystem:DeleteMountTarget</code> </p> </li> </ul>  <p>The
          * <code>DeleteMountTarget</code> call returns while the mount target state is
          * still <code>deleting</code>. You can check the mount target deletion by calling
          * the <a>DescribeMountTargets</a> operation, which returns a list of mount target
-         * descriptions for the given file system. </p> </note> <p>The operation also
+         * descriptions for the given file system. </p>  <p>The operation also
          * requires permissions for the following Amazon EC2 action on the mount target's
          * network interface:</p> <ul> <li> <p> <code>ec2:DeleteNetworkInterface</code>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -843,11 +841,11 @@ namespace Model
          * you created remains. You can mount an EC2 instance in your VPC by using another
          * mount target.</p> <p>This operation requires permissions for the following
          * action on the file system:</p> <ul> <li> <p>
-         * <code>elasticfilesystem:DeleteMountTarget</code> </p> </li> </ul> <note> <p>The
+         * <code>elasticfilesystem:DeleteMountTarget</code> </p> </li> </ul>  <p>The
          * <code>DeleteMountTarget</code> call returns while the mount target state is
          * still <code>deleting</code>. You can check the mount target deletion by calling
          * the <a>DescribeMountTargets</a> operation, which returns a list of mount target
-         * descriptions for the given file system. </p> </note> <p>The operation also
+         * descriptions for the given file system. </p>  <p>The operation also
          * requires permissions for the following Amazon EC2 action on the mount target's
          * network interface:</p> <ul> <li> <p> <code>ec2:DeleteNetworkInterface</code>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -900,6 +898,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAccessPointsAsync(const Model::DescribeAccessPointsRequest& request, const DescribeAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the backup policy for the specified EFS file system.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeBackupPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeBackupPolicyOutcome DescribeBackupPolicy(const Model::DescribeBackupPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the backup policy for the specified EFS file system.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeBackupPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeBackupPolicyOutcomeCallable DescribeBackupPolicyCallable(const Model::DescribeBackupPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the backup policy for the specified EFS file system.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeBackupPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeBackupPolicyAsync(const Model::DescribeBackupPolicyRequest& request, const DescribeBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the <code>FileSystemPolicy</code> for the specified EFS file
@@ -1254,6 +1280,34 @@ namespace Model
         virtual void ModifyMountTargetSecurityGroupsAsync(const Model::ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the file system's backup policy. Use this action to start or stop
+         * automatic backups of the file system. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutBackupPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutBackupPolicyOutcome PutBackupPolicy(const Model::PutBackupPolicyRequest& request) const;
+
+        /**
+         * <p>Updates the file system's backup policy. Use this action to start or stop
+         * automatic backups of the file system. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutBackupPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutBackupPolicyOutcomeCallable PutBackupPolicyCallable(const Model::PutBackupPolicyRequest& request) const;
+
+        /**
+         * <p>Updates the file system's backup policy. Use this action to start or stop
+         * automatic backups of the file system. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutBackupPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutBackupPolicyAsync(const Model::PutBackupPolicyRequest& request, const PutBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Applies an Amazon EFS <code>FileSystemPolicy</code> to an Amazon EFS file
          * system. A file system policy is an IAM resource-based policy and can contain
          * multiple policy statements. A file system always has exactly one file system
@@ -1504,6 +1558,7 @@ namespace Model
         void DeleteFileSystemPolicyAsyncHelper(const Model::DeleteFileSystemPolicyRequest& request, const DeleteFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMountTargetAsyncHelper(const Model::DeleteMountTargetRequest& request, const DeleteMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccessPointsAsyncHelper(const Model::DescribeAccessPointsRequest& request, const DescribeAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeBackupPolicyAsyncHelper(const Model::DescribeBackupPolicyRequest& request, const DescribeBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFileSystemPolicyAsyncHelper(const Model::DescribeFileSystemPolicyRequest& request, const DescribeFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFileSystemsAsyncHelper(const Model::DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLifecycleConfigurationAsyncHelper(const Model::DescribeLifecycleConfigurationRequest& request, const DescribeLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1511,6 +1566,7 @@ namespace Model
         void DescribeMountTargetsAsyncHelper(const Model::DescribeMountTargetsRequest& request, const DescribeMountTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyMountTargetSecurityGroupsAsyncHelper(const Model::ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutBackupPolicyAsyncHelper(const Model::PutBackupPolicyRequest& request, const PutBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutFileSystemPolicyAsyncHelper(const Model::PutFileSystemPolicyRequest& request, const PutFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLifecycleConfigurationAsyncHelper(const Model::PutLifecycleConfigurationRequest& request, const PutLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

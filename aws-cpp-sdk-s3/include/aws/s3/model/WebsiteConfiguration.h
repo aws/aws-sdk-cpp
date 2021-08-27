@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -116,43 +106,43 @@ namespace Model
 
     /**
      * <p>The redirect behavior for every request to this bucket's website
-     * endpoint.</p> <important> <p>If you specify this property, you can't specify any
-     * other property.</p> </important>
+     * endpoint.</p>  <p>If you specify this property, you can't specify any
+     * other property.</p> 
      */
     inline const RedirectAllRequestsTo& GetRedirectAllRequestsTo() const{ return m_redirectAllRequestsTo; }
 
     /**
      * <p>The redirect behavior for every request to this bucket's website
-     * endpoint.</p> <important> <p>If you specify this property, you can't specify any
-     * other property.</p> </important>
+     * endpoint.</p>  <p>If you specify this property, you can't specify any
+     * other property.</p> 
      */
     inline bool RedirectAllRequestsToHasBeenSet() const { return m_redirectAllRequestsToHasBeenSet; }
 
     /**
      * <p>The redirect behavior for every request to this bucket's website
-     * endpoint.</p> <important> <p>If you specify this property, you can't specify any
-     * other property.</p> </important>
+     * endpoint.</p>  <p>If you specify this property, you can't specify any
+     * other property.</p> 
      */
     inline void SetRedirectAllRequestsTo(const RedirectAllRequestsTo& value) { m_redirectAllRequestsToHasBeenSet = true; m_redirectAllRequestsTo = value; }
 
     /**
      * <p>The redirect behavior for every request to this bucket's website
-     * endpoint.</p> <important> <p>If you specify this property, you can't specify any
-     * other property.</p> </important>
+     * endpoint.</p>  <p>If you specify this property, you can't specify any
+     * other property.</p> 
      */
     inline void SetRedirectAllRequestsTo(RedirectAllRequestsTo&& value) { m_redirectAllRequestsToHasBeenSet = true; m_redirectAllRequestsTo = std::move(value); }
 
     /**
      * <p>The redirect behavior for every request to this bucket's website
-     * endpoint.</p> <important> <p>If you specify this property, you can't specify any
-     * other property.</p> </important>
+     * endpoint.</p>  <p>If you specify this property, you can't specify any
+     * other property.</p> 
      */
     inline WebsiteConfiguration& WithRedirectAllRequestsTo(const RedirectAllRequestsTo& value) { SetRedirectAllRequestsTo(value); return *this;}
 
     /**
      * <p>The redirect behavior for every request to this bucket's website
-     * endpoint.</p> <important> <p>If you specify this property, you can't specify any
-     * other property.</p> </important>
+     * endpoint.</p>  <p>If you specify this property, you can't specify any
+     * other property.</p> 
      */
     inline WebsiteConfiguration& WithRedirectAllRequestsTo(RedirectAllRequestsTo&& value) { SetRedirectAllRequestsTo(std::move(value)); return *this;}
 

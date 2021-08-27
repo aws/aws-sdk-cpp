@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -1184,155 +1174,99 @@ namespace Model
 
 
     /**
-     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
-     * This includes auto-scaling.</p>
+     * <p>List of fleet activity that have been suspended using
+     * <a>StopFleetActions</a>. This includes auto-scaling.</p>
      */
     inline const Aws::Vector<FleetAction>& GetStoppedActions() const{ return m_stoppedActions; }
 
     /**
-     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
-     * This includes auto-scaling.</p>
+     * <p>List of fleet activity that have been suspended using
+     * <a>StopFleetActions</a>. This includes auto-scaling.</p>
      */
     inline bool StoppedActionsHasBeenSet() const { return m_stoppedActionsHasBeenSet; }
 
     /**
-     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
-     * This includes auto-scaling.</p>
+     * <p>List of fleet activity that have been suspended using
+     * <a>StopFleetActions</a>. This includes auto-scaling.</p>
      */
     inline void SetStoppedActions(const Aws::Vector<FleetAction>& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions = value; }
 
     /**
-     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
-     * This includes auto-scaling.</p>
+     * <p>List of fleet activity that have been suspended using
+     * <a>StopFleetActions</a>. This includes auto-scaling.</p>
      */
     inline void SetStoppedActions(Aws::Vector<FleetAction>&& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions = std::move(value); }
 
     /**
-     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
-     * This includes auto-scaling.</p>
+     * <p>List of fleet activity that have been suspended using
+     * <a>StopFleetActions</a>. This includes auto-scaling.</p>
      */
     inline FleetAttributes& WithStoppedActions(const Aws::Vector<FleetAction>& value) { SetStoppedActions(value); return *this;}
 
     /**
-     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
-     * This includes auto-scaling.</p>
+     * <p>List of fleet activity that have been suspended using
+     * <a>StopFleetActions</a>. This includes auto-scaling.</p>
      */
     inline FleetAttributes& WithStoppedActions(Aws::Vector<FleetAction>&& value) { SetStoppedActions(std::move(value)); return *this;}
 
     /**
-     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
-     * This includes auto-scaling.</p>
+     * <p>List of fleet activity that have been suspended using
+     * <a>StopFleetActions</a>. This includes auto-scaling.</p>
      */
     inline FleetAttributes& AddStoppedActions(const FleetAction& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions.push_back(value); return *this; }
 
     /**
-     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
-     * This includes auto-scaling.</p>
+     * <p>List of fleet activity that have been suspended using
+     * <a>StopFleetActions</a>. This includes auto-scaling.</p>
      */
     inline FleetAttributes& AddStoppedActions(FleetAction&& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * services.</p>
      */
     inline const Aws::String& GetInstanceRoleArn() const{ return m_instanceRoleArn; }
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * services.</p>
      */
     inline bool InstanceRoleArnHasBeenSet() const { return m_instanceRoleArnHasBeenSet; }
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * services.</p>
      */
     inline void SetInstanceRoleArn(const Aws::String& value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn = value; }
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * services.</p>
      */
     inline void SetInstanceRoleArn(Aws::String&& value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn = std::move(value); }
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * services.</p>
      */
     inline void SetInstanceRoleArn(const char* value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn.assign(value); }
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * services.</p>
      */
     inline FleetAttributes& WithInstanceRoleArn(const Aws::String& value) { SetInstanceRoleArn(value); return *this;}
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * services.</p>
      */
     inline FleetAttributes& WithInstanceRoleArn(Aws::String&& value) { SetInstanceRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's
-     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
-     * the AWS Management Console. Learn more about using on-box credentials for your
-     * game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Access external resources from a game server</a>.</p>
+     * services.</p>
      */
     inline FleetAttributes& WithInstanceRoleArn(const char* value) { SetInstanceRoleArn(value); return *this;}
 

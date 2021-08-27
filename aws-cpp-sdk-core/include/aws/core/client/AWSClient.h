@@ -1,16 +1,6 @@
-/*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
  */
 
 #pragma once
@@ -145,6 +135,12 @@ namespace Aws
              */
             Aws::String GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, long long expirationInSeconds = 0) const;
 
+            /**
+             * Generates a signed Uri using the injected signer. for the supplied uri, http method and customized headers. expirationInSeconds defaults
+             * to 0 which is the default 7 days.
+             */
+            Aws::String GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds = 0);
+
             Aws::String GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri, Aws::Http::HttpMethod method,
                 const Aws::Http::QueryStringParameterCollection& extraParams = Aws::Http::QueryStringParameterCollection(), long long expirationInSeconds = 0) const;
 
@@ -165,7 +161,13 @@ namespace Aws
              */
             void EnableRequestProcessing();
 
-            inline virtual const char* GetServiceClientName() const { return nullptr; }
+            inline virtual const char* GetServiceClientName() const { return m_serviceName.c_str(); }
+            /**
+             * service client name is part of userAgent.
+             * We need to update userAgent after setting this name if it's not pre-set by customer.
+             * Note: this API should only be called in your extended class constructors.
+             */
+            virtual void SetServiceClientName(const Aws::String& name);
 
         protected:
             /**
@@ -176,7 +178,8 @@ namespace Aws
                     const Aws::AmazonWebServiceRequest& request,
                     Http::HttpMethod httpMethod,
                     const char* signerName,
-                    const char* signerRegionOverride = nullptr) const;
+                    const char* signerRegionOverride = nullptr,
+                    const char* signerServiceNameOverride = nullptr) const;
 
             /**
              * Calls AttemptOneRequest until it either, succeeds, runs out of retries from the retry strategy,
@@ -189,7 +192,8 @@ namespace Aws
                     Http::HttpMethod httpMethod,
                     const char* signerName,
                     const char* requestName = "",
-                    const char* signerRegionOverride = nullptr) const;
+                    const char* signerRegionOverride = nullptr,
+                    const char* signerServiceNameOverride = nullptr) const;
 
             /**
              * Build an Http Request from the AmazonWebServiceRequest object. Signs the request, sends it accross the wire
@@ -198,7 +202,8 @@ namespace Aws
             HttpResponseOutcome AttemptOneRequest(const std::shared_ptr<Http::HttpRequest>& httpRequest,
                     const Aws::AmazonWebServiceRequest& request,
                     const char* signerName,
-                    const char* signerRegionOverride = nullptr) const;
+                    const char* signerRegionOverride = nullptr,
+                    const char* signerServiceNameOverride = nullptr) const;
 
             /**
              * Signs an Http Request, sends it accross the wire
@@ -210,7 +215,8 @@ namespace Aws
             HttpResponseOutcome AttemptOneRequest(const std::shared_ptr<Http::HttpRequest>& httpRequest,
                     const char* signerName,
                     const char* requestName = "",
-                    const char* signerRegionOverride = nullptr) const;
+                    const char* signerRegionOverride = nullptr,
+                    const char* signerServiceNameOverride = nullptr) const;
 
             /**
              * This is used for structureless response payloads (file streams, binary data etc...). It calls AttemptExhaustively, but upon
@@ -220,7 +226,8 @@ namespace Aws
                     const Aws::AmazonWebServiceRequest& request,
                     Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
                     const char* signerName = Aws::Auth::SIGV4_SIGNER,
-                    const char* signerRegionOverride = nullptr) const;
+                    const char* signerRegionOverride = nullptr,
+                    const char* signerServiceNameOverride = nullptr) const;
 
             /**
              * This is used for structureless response payloads (file streams, binary data etc...). It calls AttemptExhaustively, but upon
@@ -233,7 +240,8 @@ namespace Aws
                     Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
                     const char* signerName = Aws::Auth::SIGV4_SIGNER,
                     const char* requestName = "",
-                    const char* signerRegionOverride = nullptr) const;
+                    const char* signerRegionOverride = nullptr,
+                    const char* signerServiceNameOverride = nullptr) const;
 
             /**
              * Abstract.  Subclassing clients should override this to tell the client how to marshall error payloads
@@ -275,6 +283,7 @@ namespace Aws
              * Performs the HTTP request via the HTTP client while enforcing rate limiters
              */
             std::shared_ptr<Aws::Http::HttpResponse> MakeHttpRequest(std::shared_ptr<Aws::Http::HttpRequest>& request) const;
+            Aws::String m_region;
         private:
             /**
              * Try to adjust signer's clock
@@ -296,8 +305,11 @@ namespace Aws
             std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_writeRateLimiter;
             std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_readRateLimiter;
             Aws::String m_userAgent;
+            bool m_customizedUserAgent;
             std::shared_ptr<Aws::Utils::Crypto::Hash> m_hash;
+            long m_requestTimeoutMs;
             bool m_enableClockSkewAdjustment;
+            Aws::String m_serviceName;
         };
 
         typedef Utils::Outcome<AmazonWebServiceResult<Utils::Json::JsonValue>, AWSError<CoreErrors>> JsonOutcome;
@@ -344,7 +356,8 @@ namespace Aws
                 const Aws::AmazonWebServiceRequest& request,
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
                 const char* signerName = Aws::Auth::SIGV4_SIGNER,
-                const char* signerRegionOverride = nullptr) const;
+                const char* signerRegionOverride = nullptr,
+                const char* signerServiceNameOverride = nullptr) const;
 
             /**
              * Returns a Json document or an error from the request. Does some marshalling json and raw streams,
@@ -359,7 +372,8 @@ namespace Aws
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
                 const char* signerName = Aws::Auth::SIGV4_SIGNER,
                 const char* requestName = "",
-                const char* signerRegionOverride = nullptr) const;
+                const char* signerRegionOverride = nullptr,
+                const char* signerServiceNameOverride = nullptr) const;
 
             JsonOutcome MakeEventStreamRequest(std::shared_ptr<Aws::Http::HttpRequest>& request) const;
         };
@@ -402,7 +416,8 @@ namespace Aws
                 const Aws::AmazonWebServiceRequest& request,
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
                 const char* signerName = Aws::Auth::SIGV4_SIGNER,
-                const char* signerRegionOverride = nullptr) const;
+                const char* signerRegionOverride = nullptr,
+                const char* signerServiceNameOverride = nullptr) const;
 
 
             /**
@@ -418,7 +433,8 @@ namespace Aws
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
                 const char* signerName = Aws::Auth::SIGV4_SIGNER,
                 const char* requestName = "",
-                const char* signerRegionOverride = nullptr) const;
+                const char* signerRegionOverride = nullptr,
+                const char* signerServiceNameOverride = nullptr) const;
 
             /**
             * This is used for event stream response.
@@ -427,7 +443,8 @@ namespace Aws
                 const Aws::AmazonWebServiceRequest& request,
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
                 const char* singerName = Aws::Auth::SIGV4_SIGNER,
-                const char* signerRegionOverride = nullptr) const;
+                const char* signerRegionOverride = nullptr,
+                const char* signerServiceNameOverride = nullptr) const;
 
             /**
             * This is used for event stream response.
@@ -438,7 +455,8 @@ namespace Aws
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
                 const char* signerName = Aws::Auth::SIGV4_SIGNER,
                 const char* requestName = "",
-                const char* signerRegionOverride = nullptr) const;
+                const char* signerRegionOverride = nullptr,
+                const char* signerServiceNameOverride = nullptr) const;
         };
 
     } // namespace Client

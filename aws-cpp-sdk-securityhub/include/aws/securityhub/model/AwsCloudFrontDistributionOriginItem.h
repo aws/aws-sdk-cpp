@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/model/AwsCloudFrontDistributionOriginS3OriginConfig.h>
 #include <utility>
 
 namespace Aws
@@ -35,8 +26,8 @@ namespace Model
 
   /**
    * <p>A complex type that describes the Amazon S3 bucket, HTTP server (for example,
-   * a web server), Amazon MediaStore, or other server from which CloudFront gets
-   * your files.</p><p><h3>See Also:</h3>   <a
+   * a web server), Amazon Elemental MediaStore, or other server from which
+   * CloudFront gets your files.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionOriginItem">AWS
    * API Reference</a></p>
    */
@@ -187,6 +178,43 @@ namespace Model
      */
     inline AwsCloudFrontDistributionOriginItem& WithOriginPath(const char* value) { SetOriginPath(value); return *this;}
 
+
+    /**
+     * <p>An origin that is an S3 bucket that is not configured with static website
+     * hosting.</p>
+     */
+    inline const AwsCloudFrontDistributionOriginS3OriginConfig& GetS3OriginConfig() const{ return m_s3OriginConfig; }
+
+    /**
+     * <p>An origin that is an S3 bucket that is not configured with static website
+     * hosting.</p>
+     */
+    inline bool S3OriginConfigHasBeenSet() const { return m_s3OriginConfigHasBeenSet; }
+
+    /**
+     * <p>An origin that is an S3 bucket that is not configured with static website
+     * hosting.</p>
+     */
+    inline void SetS3OriginConfig(const AwsCloudFrontDistributionOriginS3OriginConfig& value) { m_s3OriginConfigHasBeenSet = true; m_s3OriginConfig = value; }
+
+    /**
+     * <p>An origin that is an S3 bucket that is not configured with static website
+     * hosting.</p>
+     */
+    inline void SetS3OriginConfig(AwsCloudFrontDistributionOriginS3OriginConfig&& value) { m_s3OriginConfigHasBeenSet = true; m_s3OriginConfig = std::move(value); }
+
+    /**
+     * <p>An origin that is an S3 bucket that is not configured with static website
+     * hosting.</p>
+     */
+    inline AwsCloudFrontDistributionOriginItem& WithS3OriginConfig(const AwsCloudFrontDistributionOriginS3OriginConfig& value) { SetS3OriginConfig(value); return *this;}
+
+    /**
+     * <p>An origin that is an S3 bucket that is not configured with static website
+     * hosting.</p>
+     */
+    inline AwsCloudFrontDistributionOriginItem& WithS3OriginConfig(AwsCloudFrontDistributionOriginS3OriginConfig&& value) { SetS3OriginConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -197,6 +225,9 @@ namespace Model
 
     Aws::String m_originPath;
     bool m_originPathHasBeenSet;
+
+    AwsCloudFrontDistributionOriginS3OriginConfig m_s3OriginConfig;
+    bool m_s3OriginConfigHasBeenSet;
   };
 
 } // namespace Model

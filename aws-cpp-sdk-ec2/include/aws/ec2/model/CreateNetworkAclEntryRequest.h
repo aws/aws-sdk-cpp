@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -51,49 +41,65 @@ namespace Model
 
     /**
      * <p>The IPv4 network range to allow or deny, in CIDR notation (for example
-     * <code>172.16.0.0/24</code>).</p>
+     * <code>172.16.0.0/24</code>). We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
      */
     inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
 
     /**
      * <p>The IPv4 network range to allow or deny, in CIDR notation (for example
-     * <code>172.16.0.0/24</code>).</p>
+     * <code>172.16.0.0/24</code>). We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
      */
     inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
 
     /**
      * <p>The IPv4 network range to allow or deny, in CIDR notation (for example
-     * <code>172.16.0.0/24</code>).</p>
+     * <code>172.16.0.0/24</code>). We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
      */
     inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
 
     /**
      * <p>The IPv4 network range to allow or deny, in CIDR notation (for example
-     * <code>172.16.0.0/24</code>).</p>
+     * <code>172.16.0.0/24</code>). We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
      */
     inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
 
     /**
      * <p>The IPv4 network range to allow or deny, in CIDR notation (for example
-     * <code>172.16.0.0/24</code>).</p>
+     * <code>172.16.0.0/24</code>). We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
      */
     inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
 
     /**
      * <p>The IPv4 network range to allow or deny, in CIDR notation (for example
-     * <code>172.16.0.0/24</code>).</p>
+     * <code>172.16.0.0/24</code>). We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
      */
     inline CreateNetworkAclEntryRequest& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
 
     /**
      * <p>The IPv4 network range to allow or deny, in CIDR notation (for example
-     * <code>172.16.0.0/24</code>).</p>
+     * <code>172.16.0.0/24</code>). We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
      */
     inline CreateNetworkAclEntryRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
 
     /**
      * <p>The IPv4 network range to allow or deny, in CIDR notation (for example
-     * <code>172.16.0.0/24</code>).</p>
+     * <code>172.16.0.0/24</code>). We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
      */
     inline CreateNetworkAclEntryRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
 

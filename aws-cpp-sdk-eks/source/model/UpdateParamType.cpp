@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/eks/model/UpdateParamType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -42,6 +32,9 @@ namespace Aws
         static const int MinSize_HASH = HashingUtils::HashString("MinSize");
         static const int ReleaseVersion_HASH = HashingUtils::HashString("ReleaseVersion");
         static const int PublicAccessCidrs_HASH = HashingUtils::HashString("PublicAccessCidrs");
+        static const int AddonVersion_HASH = HashingUtils::HashString("AddonVersion");
+        static const int ServiceAccountRoleArn_HASH = HashingUtils::HashString("ServiceAccountRoleArn");
+        static const int ResolveConflicts_HASH = HashingUtils::HashString("ResolveConflicts");
 
 
         UpdateParamType GetUpdateParamTypeForName(const Aws::String& name)
@@ -95,6 +88,18 @@ namespace Aws
           {
             return UpdateParamType::PublicAccessCidrs;
           }
+          else if (hashCode == AddonVersion_HASH)
+          {
+            return UpdateParamType::AddonVersion;
+          }
+          else if (hashCode == ServiceAccountRoleArn_HASH)
+          {
+            return UpdateParamType::ServiceAccountRoleArn;
+          }
+          else if (hashCode == ResolveConflicts_HASH)
+          {
+            return UpdateParamType::ResolveConflicts;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -133,6 +138,12 @@ namespace Aws
             return "ReleaseVersion";
           case UpdateParamType::PublicAccessCidrs:
             return "PublicAccessCidrs";
+          case UpdateParamType::AddonVersion:
+            return "AddonVersion";
+          case UpdateParamType::ServiceAccountRoleArn:
+            return "ServiceAccountRoleArn";
+          case UpdateParamType::ResolveConflicts:
+            return "ResolveConflicts";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

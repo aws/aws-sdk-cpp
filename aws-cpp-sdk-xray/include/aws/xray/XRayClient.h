@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/xray/XRay_EXPORTS.h>
@@ -29,6 +19,10 @@
 #include <aws/xray/model/GetEncryptionConfigResult.h>
 #include <aws/xray/model/GetGroupResult.h>
 #include <aws/xray/model/GetGroupsResult.h>
+#include <aws/xray/model/GetInsightResult.h>
+#include <aws/xray/model/GetInsightEventsResult.h>
+#include <aws/xray/model/GetInsightImpactGraphResult.h>
+#include <aws/xray/model/GetInsightSummariesResult.h>
 #include <aws/xray/model/GetSamplingRulesResult.h>
 #include <aws/xray/model/GetSamplingStatisticSummariesResult.h>
 #include <aws/xray/model/GetSamplingTargetsResult.h>
@@ -36,9 +30,12 @@
 #include <aws/xray/model/GetTimeSeriesServiceStatisticsResult.h>
 #include <aws/xray/model/GetTraceGraphResult.h>
 #include <aws/xray/model/GetTraceSummariesResult.h>
+#include <aws/xray/model/ListTagsForResourceResult.h>
 #include <aws/xray/model/PutEncryptionConfigResult.h>
 #include <aws/xray/model/PutTelemetryRecordsResult.h>
 #include <aws/xray/model/PutTraceSegmentsResult.h>
+#include <aws/xray/model/TagResourceResult.h>
+#include <aws/xray/model/UntagResourceResult.h>
 #include <aws/xray/model/UpdateGroupResult.h>
 #include <aws/xray/model/UpdateSamplingRuleResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -88,6 +85,10 @@ namespace Model
         class GetEncryptionConfigRequest;
         class GetGroupRequest;
         class GetGroupsRequest;
+        class GetInsightRequest;
+        class GetInsightEventsRequest;
+        class GetInsightImpactGraphRequest;
+        class GetInsightSummariesRequest;
         class GetSamplingRulesRequest;
         class GetSamplingStatisticSummariesRequest;
         class GetSamplingTargetsRequest;
@@ -95,32 +96,42 @@ namespace Model
         class GetTimeSeriesServiceStatisticsRequest;
         class GetTraceGraphRequest;
         class GetTraceSummariesRequest;
+        class ListTagsForResourceRequest;
         class PutEncryptionConfigRequest;
         class PutTelemetryRecordsRequest;
         class PutTraceSegmentsRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateGroupRequest;
         class UpdateSamplingRuleRequest;
 
-        typedef Aws::Utils::Outcome<BatchGetTracesResult, Aws::Client::AWSError<XRayErrors>> BatchGetTracesOutcome;
-        typedef Aws::Utils::Outcome<CreateGroupResult, Aws::Client::AWSError<XRayErrors>> CreateGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateSamplingRuleResult, Aws::Client::AWSError<XRayErrors>> CreateSamplingRuleOutcome;
-        typedef Aws::Utils::Outcome<DeleteGroupResult, Aws::Client::AWSError<XRayErrors>> DeleteGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteSamplingRuleResult, Aws::Client::AWSError<XRayErrors>> DeleteSamplingRuleOutcome;
-        typedef Aws::Utils::Outcome<GetEncryptionConfigResult, Aws::Client::AWSError<XRayErrors>> GetEncryptionConfigOutcome;
-        typedef Aws::Utils::Outcome<GetGroupResult, Aws::Client::AWSError<XRayErrors>> GetGroupOutcome;
-        typedef Aws::Utils::Outcome<GetGroupsResult, Aws::Client::AWSError<XRayErrors>> GetGroupsOutcome;
-        typedef Aws::Utils::Outcome<GetSamplingRulesResult, Aws::Client::AWSError<XRayErrors>> GetSamplingRulesOutcome;
-        typedef Aws::Utils::Outcome<GetSamplingStatisticSummariesResult, Aws::Client::AWSError<XRayErrors>> GetSamplingStatisticSummariesOutcome;
-        typedef Aws::Utils::Outcome<GetSamplingTargetsResult, Aws::Client::AWSError<XRayErrors>> GetSamplingTargetsOutcome;
-        typedef Aws::Utils::Outcome<GetServiceGraphResult, Aws::Client::AWSError<XRayErrors>> GetServiceGraphOutcome;
-        typedef Aws::Utils::Outcome<GetTimeSeriesServiceStatisticsResult, Aws::Client::AWSError<XRayErrors>> GetTimeSeriesServiceStatisticsOutcome;
-        typedef Aws::Utils::Outcome<GetTraceGraphResult, Aws::Client::AWSError<XRayErrors>> GetTraceGraphOutcome;
-        typedef Aws::Utils::Outcome<GetTraceSummariesResult, Aws::Client::AWSError<XRayErrors>> GetTraceSummariesOutcome;
-        typedef Aws::Utils::Outcome<PutEncryptionConfigResult, Aws::Client::AWSError<XRayErrors>> PutEncryptionConfigOutcome;
-        typedef Aws::Utils::Outcome<PutTelemetryRecordsResult, Aws::Client::AWSError<XRayErrors>> PutTelemetryRecordsOutcome;
-        typedef Aws::Utils::Outcome<PutTraceSegmentsResult, Aws::Client::AWSError<XRayErrors>> PutTraceSegmentsOutcome;
-        typedef Aws::Utils::Outcome<UpdateGroupResult, Aws::Client::AWSError<XRayErrors>> UpdateGroupOutcome;
-        typedef Aws::Utils::Outcome<UpdateSamplingRuleResult, Aws::Client::AWSError<XRayErrors>> UpdateSamplingRuleOutcome;
+        typedef Aws::Utils::Outcome<BatchGetTracesResult, XRayError> BatchGetTracesOutcome;
+        typedef Aws::Utils::Outcome<CreateGroupResult, XRayError> CreateGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateSamplingRuleResult, XRayError> CreateSamplingRuleOutcome;
+        typedef Aws::Utils::Outcome<DeleteGroupResult, XRayError> DeleteGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteSamplingRuleResult, XRayError> DeleteSamplingRuleOutcome;
+        typedef Aws::Utils::Outcome<GetEncryptionConfigResult, XRayError> GetEncryptionConfigOutcome;
+        typedef Aws::Utils::Outcome<GetGroupResult, XRayError> GetGroupOutcome;
+        typedef Aws::Utils::Outcome<GetGroupsResult, XRayError> GetGroupsOutcome;
+        typedef Aws::Utils::Outcome<GetInsightResult, XRayError> GetInsightOutcome;
+        typedef Aws::Utils::Outcome<GetInsightEventsResult, XRayError> GetInsightEventsOutcome;
+        typedef Aws::Utils::Outcome<GetInsightImpactGraphResult, XRayError> GetInsightImpactGraphOutcome;
+        typedef Aws::Utils::Outcome<GetInsightSummariesResult, XRayError> GetInsightSummariesOutcome;
+        typedef Aws::Utils::Outcome<GetSamplingRulesResult, XRayError> GetSamplingRulesOutcome;
+        typedef Aws::Utils::Outcome<GetSamplingStatisticSummariesResult, XRayError> GetSamplingStatisticSummariesOutcome;
+        typedef Aws::Utils::Outcome<GetSamplingTargetsResult, XRayError> GetSamplingTargetsOutcome;
+        typedef Aws::Utils::Outcome<GetServiceGraphResult, XRayError> GetServiceGraphOutcome;
+        typedef Aws::Utils::Outcome<GetTimeSeriesServiceStatisticsResult, XRayError> GetTimeSeriesServiceStatisticsOutcome;
+        typedef Aws::Utils::Outcome<GetTraceGraphResult, XRayError> GetTraceGraphOutcome;
+        typedef Aws::Utils::Outcome<GetTraceSummariesResult, XRayError> GetTraceSummariesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, XRayError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<PutEncryptionConfigResult, XRayError> PutEncryptionConfigOutcome;
+        typedef Aws::Utils::Outcome<PutTelemetryRecordsResult, XRayError> PutTelemetryRecordsOutcome;
+        typedef Aws::Utils::Outcome<PutTraceSegmentsResult, XRayError> PutTraceSegmentsOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, XRayError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, XRayError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateGroupResult, XRayError> UpdateGroupOutcome;
+        typedef Aws::Utils::Outcome<UpdateSamplingRuleResult, XRayError> UpdateSamplingRuleOutcome;
 
         typedef std::future<BatchGetTracesOutcome> BatchGetTracesOutcomeCallable;
         typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
@@ -130,6 +141,10 @@ namespace Model
         typedef std::future<GetEncryptionConfigOutcome> GetEncryptionConfigOutcomeCallable;
         typedef std::future<GetGroupOutcome> GetGroupOutcomeCallable;
         typedef std::future<GetGroupsOutcome> GetGroupsOutcomeCallable;
+        typedef std::future<GetInsightOutcome> GetInsightOutcomeCallable;
+        typedef std::future<GetInsightEventsOutcome> GetInsightEventsOutcomeCallable;
+        typedef std::future<GetInsightImpactGraphOutcome> GetInsightImpactGraphOutcomeCallable;
+        typedef std::future<GetInsightSummariesOutcome> GetInsightSummariesOutcomeCallable;
         typedef std::future<GetSamplingRulesOutcome> GetSamplingRulesOutcomeCallable;
         typedef std::future<GetSamplingStatisticSummariesOutcome> GetSamplingStatisticSummariesOutcomeCallable;
         typedef std::future<GetSamplingTargetsOutcome> GetSamplingTargetsOutcomeCallable;
@@ -137,9 +152,12 @@ namespace Model
         typedef std::future<GetTimeSeriesServiceStatisticsOutcome> GetTimeSeriesServiceStatisticsOutcomeCallable;
         typedef std::future<GetTraceGraphOutcome> GetTraceGraphOutcomeCallable;
         typedef std::future<GetTraceSummariesOutcome> GetTraceSummariesOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutEncryptionConfigOutcome> PutEncryptionConfigOutcomeCallable;
         typedef std::future<PutTelemetryRecordsOutcome> PutTelemetryRecordsOutcomeCallable;
         typedef std::future<PutTraceSegmentsOutcome> PutTraceSegmentsOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateGroupOutcome> UpdateGroupOutcomeCallable;
         typedef std::future<UpdateSamplingRuleOutcome> UpdateSamplingRuleOutcomeCallable;
 } // namespace Model
@@ -154,6 +172,10 @@ namespace Model
     typedef std::function<void(const XRayClient*, const Model::GetEncryptionConfigRequest&, const Model::GetEncryptionConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEncryptionConfigResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetGroupRequest&, const Model::GetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetGroupsRequest&, const Model::GetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupsResponseReceivedHandler;
+    typedef std::function<void(const XRayClient*, const Model::GetInsightRequest&, const Model::GetInsightOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightResponseReceivedHandler;
+    typedef std::function<void(const XRayClient*, const Model::GetInsightEventsRequest&, const Model::GetInsightEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightEventsResponseReceivedHandler;
+    typedef std::function<void(const XRayClient*, const Model::GetInsightImpactGraphRequest&, const Model::GetInsightImpactGraphOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightImpactGraphResponseReceivedHandler;
+    typedef std::function<void(const XRayClient*, const Model::GetInsightSummariesRequest&, const Model::GetInsightSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightSummariesResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetSamplingRulesRequest&, const Model::GetSamplingRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSamplingRulesResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetSamplingStatisticSummariesRequest&, const Model::GetSamplingStatisticSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSamplingStatisticSummariesResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetSamplingTargetsRequest&, const Model::GetSamplingTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSamplingTargetsResponseReceivedHandler;
@@ -161,9 +183,12 @@ namespace Model
     typedef std::function<void(const XRayClient*, const Model::GetTimeSeriesServiceStatisticsRequest&, const Model::GetTimeSeriesServiceStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTimeSeriesServiceStatisticsResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetTraceGraphRequest&, const Model::GetTraceGraphOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTraceGraphResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetTraceSummariesRequest&, const Model::GetTraceSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTraceSummariesResponseReceivedHandler;
+    typedef std::function<void(const XRayClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::PutEncryptionConfigRequest&, const Model::PutEncryptionConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEncryptionConfigResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::PutTelemetryRecordsRequest&, const Model::PutTelemetryRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutTelemetryRecordsResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::PutTraceSegmentsRequest&, const Model::PutTraceSegmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutTraceSegmentsResponseReceivedHandler;
+    typedef std::function<void(const XRayClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const XRayClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::UpdateGroupRequest&, const Model::UpdateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGroupResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::UpdateSamplingRuleRequest&, const Model::UpdateSamplingRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSamplingRuleResponseReceivedHandler;
 
@@ -196,8 +221,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~XRayClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "XRay"; }
 
 
         /**
@@ -435,6 +458,133 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetGroupsAsync(const Model::GetGroupsRequest& request, const GetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the summary information of an insight. This includes impact to
+         * clients and root cause services, the top anomalous services, the category, the
+         * state of the insight, and the start and end time of the insight.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsight">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::GetInsightOutcome GetInsight(const Model::GetInsightRequest& request) const;
+
+        /**
+         * <p>Retrieves the summary information of an insight. This includes impact to
+         * clients and root cause services, the top anomalous services, the category, the
+         * state of the insight, and the start and end time of the insight.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsight">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetInsightOutcomeCallable GetInsightCallable(const Model::GetInsightRequest& request) const;
+
+        /**
+         * <p>Retrieves the summary information of an insight. This includes impact to
+         * clients and root cause services, the top anomalous services, the category, the
+         * state of the insight, and the start and end time of the insight.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsight">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetInsightAsync(const Model::GetInsightRequest& request, const GetInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>X-Ray reevaluates insights periodically until they're resolved, and records
+         * each intermediate state as an event. You can review an insight's events in the
+         * Impact Timeline on the Inspect page in the X-Ray console.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightEvents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInsightEventsOutcome GetInsightEvents(const Model::GetInsightEventsRequest& request) const;
+
+        /**
+         * <p>X-Ray reevaluates insights periodically until they're resolved, and records
+         * each intermediate state as an event. You can review an insight's events in the
+         * Impact Timeline on the Inspect page in the X-Ray console.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightEvents">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetInsightEventsOutcomeCallable GetInsightEventsCallable(const Model::GetInsightEventsRequest& request) const;
+
+        /**
+         * <p>X-Ray reevaluates insights periodically until they're resolved, and records
+         * each intermediate state as an event. You can review an insight's events in the
+         * Impact Timeline on the Inspect page in the X-Ray console.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightEvents">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetInsightEventsAsync(const Model::GetInsightEventsRequest& request, const GetInsightEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a service graph structure filtered by the specified insight. The
+         * service graph is limited to only structural information. For a complete service
+         * graph, use this API with the GetServiceGraph API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightImpactGraph">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInsightImpactGraphOutcome GetInsightImpactGraph(const Model::GetInsightImpactGraphRequest& request) const;
+
+        /**
+         * <p>Retrieves a service graph structure filtered by the specified insight. The
+         * service graph is limited to only structural information. For a complete service
+         * graph, use this API with the GetServiceGraph API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightImpactGraph">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetInsightImpactGraphOutcomeCallable GetInsightImpactGraphCallable(const Model::GetInsightImpactGraphRequest& request) const;
+
+        /**
+         * <p>Retrieves a service graph structure filtered by the specified insight. The
+         * service graph is limited to only structural information. For a complete service
+         * graph, use this API with the GetServiceGraph API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightImpactGraph">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetInsightImpactGraphAsync(const Model::GetInsightImpactGraphRequest& request, const GetInsightImpactGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the summaries of all insights in the specified group matching the
+         * provided filter values.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightSummaries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInsightSummariesOutcome GetInsightSummaries(const Model::GetInsightSummariesRequest& request) const;
+
+        /**
+         * <p>Retrieves the summaries of all insights in the specified group matching the
+         * provided filter values.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightSummaries">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetInsightSummariesOutcomeCallable GetInsightSummariesCallable(const Model::GetInsightSummariesRequest& request) const;
+
+        /**
+         * <p>Retrieves the summaries of all insights in the specified group matching the
+         * provided filter values.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightSummaries">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetInsightSummariesAsync(const Model::GetInsightSummariesRequest& request, const GetInsightSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves all sampling rules.</p><p><h3>See Also:</h3>   <a
@@ -681,6 +831,34 @@ namespace Model
         virtual void GetTraceSummariesAsync(const Model::GetTraceSummariesRequest& request, const GetTraceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of tags that are applied to the specified AWS X-Ray group or
+         * sampling rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Returns a list of tags that are applied to the specified AWS X-Ray group or
+         * sampling rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Returns a list of tags that are applied to the specified AWS X-Ray group or
+         * sampling rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the encryption configuration for X-Ray data.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutEncryptionConfig">AWS
@@ -745,7 +923,7 @@ namespace Model
          * For the full segment document schema, see <a
          * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
          * X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.</p> <p
-         * class="title"> <b>Required Segment Document Fields</b> </p> <ul> <li> <p>
+         * class="title"> <b>Required segment document fields</b> </p> <ul> <li> <p>
          * <code>name</code> - The name of the service that handled the request.</p> </li>
          * <li> <p> <code>id</code> - A 64-bit identifier for the segment, unique among
          * segments in the same trace, in 16 hexadecimal digits.</p> </li> <li> <p>
@@ -759,13 +937,13 @@ namespace Model
          * <code>end_time</code> or <code>in_progress</code>.</p> </li> <li> <p>
          * <code>in_progress</code> - Set to <code>true</code> instead of specifying an
          * <code>end_time</code> to record that a segment has been started, but is not
-         * complete. Send an in progress segment when your application receives a request
-         * that will take a long time to serve, to trace the fact that the request was
-         * received. When the response is sent, send the complete segment to overwrite the
+         * complete. Send an in-progress segment when your application receives a request
+         * that will take a long time to serve, to trace that the request was received.
+         * When the response is sent, send the complete segment to overwrite the
          * in-progress segment.</p> </li> </ul> <p>A <code>trace_id</code> consists of
          * three numbers separated by hyphens. For example,
          * 1-58406520-a006649127e371903a2de979. This includes:</p> <p class="title">
-         * <b>Trace ID Format</b> </p> <ul> <li> <p>The version number, i.e.
+         * <b>Trace ID Format</b> </p> <ul> <li> <p>The version number, for instance,
          * <code>1</code>.</p> </li> <li> <p>The time of the original request, in Unix
          * epoch time, in 8 hexadecimal digits. For example, 10:00AM December 2nd, 2016 PST
          * in epoch time is <code>1480615200</code> seconds, or <code>58406520</code> in
@@ -785,7 +963,7 @@ namespace Model
          * For the full segment document schema, see <a
          * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
          * X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.</p> <p
-         * class="title"> <b>Required Segment Document Fields</b> </p> <ul> <li> <p>
+         * class="title"> <b>Required segment document fields</b> </p> <ul> <li> <p>
          * <code>name</code> - The name of the service that handled the request.</p> </li>
          * <li> <p> <code>id</code> - A 64-bit identifier for the segment, unique among
          * segments in the same trace, in 16 hexadecimal digits.</p> </li> <li> <p>
@@ -799,13 +977,13 @@ namespace Model
          * <code>end_time</code> or <code>in_progress</code>.</p> </li> <li> <p>
          * <code>in_progress</code> - Set to <code>true</code> instead of specifying an
          * <code>end_time</code> to record that a segment has been started, but is not
-         * complete. Send an in progress segment when your application receives a request
-         * that will take a long time to serve, to trace the fact that the request was
-         * received. When the response is sent, send the complete segment to overwrite the
+         * complete. Send an in-progress segment when your application receives a request
+         * that will take a long time to serve, to trace that the request was received.
+         * When the response is sent, send the complete segment to overwrite the
          * in-progress segment.</p> </li> </ul> <p>A <code>trace_id</code> consists of
          * three numbers separated by hyphens. For example,
          * 1-58406520-a006649127e371903a2de979. This includes:</p> <p class="title">
-         * <b>Trace ID Format</b> </p> <ul> <li> <p>The version number, i.e.
+         * <b>Trace ID Format</b> </p> <ul> <li> <p>The version number, for instance,
          * <code>1</code>.</p> </li> <li> <p>The time of the original request, in Unix
          * epoch time, in 8 hexadecimal digits. For example, 10:00AM December 2nd, 2016 PST
          * in epoch time is <code>1480615200</code> seconds, or <code>58406520</code> in
@@ -827,7 +1005,7 @@ namespace Model
          * For the full segment document schema, see <a
          * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
          * X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.</p> <p
-         * class="title"> <b>Required Segment Document Fields</b> </p> <ul> <li> <p>
+         * class="title"> <b>Required segment document fields</b> </p> <ul> <li> <p>
          * <code>name</code> - The name of the service that handled the request.</p> </li>
          * <li> <p> <code>id</code> - A 64-bit identifier for the segment, unique among
          * segments in the same trace, in 16 hexadecimal digits.</p> </li> <li> <p>
@@ -841,13 +1019,13 @@ namespace Model
          * <code>end_time</code> or <code>in_progress</code>.</p> </li> <li> <p>
          * <code>in_progress</code> - Set to <code>true</code> instead of specifying an
          * <code>end_time</code> to record that a segment has been started, but is not
-         * complete. Send an in progress segment when your application receives a request
-         * that will take a long time to serve, to trace the fact that the request was
-         * received. When the response is sent, send the complete segment to overwrite the
+         * complete. Send an in-progress segment when your application receives a request
+         * that will take a long time to serve, to trace that the request was received.
+         * When the response is sent, send the complete segment to overwrite the
          * in-progress segment.</p> </li> </ul> <p>A <code>trace_id</code> consists of
          * three numbers separated by hyphens. For example,
          * 1-58406520-a006649127e371903a2de979. This includes:</p> <p class="title">
-         * <b>Trace ID Format</b> </p> <ul> <li> <p>The version number, i.e.
+         * <b>Trace ID Format</b> </p> <ul> <li> <p>The version number, for instance,
          * <code>1</code>.</p> </li> <li> <p>The time of the original request, in Unix
          * epoch time, in 8 hexadecimal digits. For example, 10:00AM December 2nd, 2016 PST
          * in epoch time is <code>1480615200</code> seconds, or <code>58406520</code> in
@@ -859,6 +1037,65 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutTraceSegmentsAsync(const Model::PutTraceSegmentsRequest& request, const PutTraceSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Applies tags to an existing AWS X-Ray group or sampling rule.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Applies tags to an existing AWS X-Ray group or sampling rule.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Applies tags to an existing AWS X-Ray group or sampling rule.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes tags from an AWS X-Ray group or sampling rule. You cannot edit or
+         * delete system tags (those with an <code>aws:</code> prefix).</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from an AWS X-Ray group or sampling rule. You cannot edit or
+         * delete system tags (those with an <code>aws:</code> prefix).</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from an AWS X-Ray group or sampling rule. You cannot edit or
+         * delete system tags (those with an <code>aws:</code> prefix).</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a group resource.</p><p><h3>See Also:</h3>   <a
@@ -922,6 +1159,10 @@ namespace Model
         void GetEncryptionConfigAsyncHelper(const Model::GetEncryptionConfigRequest& request, const GetEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGroupAsyncHelper(const Model::GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGroupsAsyncHelper(const Model::GetGroupsRequest& request, const GetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetInsightAsyncHelper(const Model::GetInsightRequest& request, const GetInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetInsightEventsAsyncHelper(const Model::GetInsightEventsRequest& request, const GetInsightEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetInsightImpactGraphAsyncHelper(const Model::GetInsightImpactGraphRequest& request, const GetInsightImpactGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetInsightSummariesAsyncHelper(const Model::GetInsightSummariesRequest& request, const GetInsightSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSamplingRulesAsyncHelper(const Model::GetSamplingRulesRequest& request, const GetSamplingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSamplingStatisticSummariesAsyncHelper(const Model::GetSamplingStatisticSummariesRequest& request, const GetSamplingStatisticSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSamplingTargetsAsyncHelper(const Model::GetSamplingTargetsRequest& request, const GetSamplingTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -929,9 +1170,12 @@ namespace Model
         void GetTimeSeriesServiceStatisticsAsyncHelper(const Model::GetTimeSeriesServiceStatisticsRequest& request, const GetTimeSeriesServiceStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTraceGraphAsyncHelper(const Model::GetTraceGraphRequest& request, const GetTraceGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTraceSummariesAsyncHelper(const Model::GetTraceSummariesRequest& request, const GetTraceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEncryptionConfigAsyncHelper(const Model::PutEncryptionConfigRequest& request, const PutEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutTelemetryRecordsAsyncHelper(const Model::PutTelemetryRecordsRequest& request, const PutTelemetryRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutTraceSegmentsAsyncHelper(const Model::PutTraceSegmentsRequest& request, const PutTraceSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGroupAsyncHelper(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSamplingRuleAsyncHelper(const Model::UpdateSamplingRuleRequest& request, const UpdateSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

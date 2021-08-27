@@ -1,26 +1,18 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
 #include <aws/mq/MQRequest.h>
+#include <aws/mq/model/AuthenticationStrategy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mq/model/ConfigurationId.h>
 #include <aws/mq/model/DeploymentMode.h>
 #include <aws/mq/model/EncryptionOptions.h>
 #include <aws/mq/model/EngineType.h>
+#include <aws/mq/model/LdapServerMetadataInput.h>
 #include <aws/mq/model/Logs.h>
 #include <aws/mq/model/WeeklyStartTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -54,6 +46,37 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "CreateBroker"; }
 
     Aws::String SerializePayload() const override;
+
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline const AuthenticationStrategy& GetAuthenticationStrategy() const{ return m_authenticationStrategy; }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline bool AuthenticationStrategyHasBeenSet() const { return m_authenticationStrategyHasBeenSet; }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline void SetAuthenticationStrategy(const AuthenticationStrategy& value) { m_authenticationStrategyHasBeenSet = true; m_authenticationStrategy = value; }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline void SetAuthenticationStrategy(AuthenticationStrategy&& value) { m_authenticationStrategyHasBeenSet = true; m_authenticationStrategy = std::move(value); }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline CreateBrokerRequest& WithAuthenticationStrategy(const AuthenticationStrategy& value) { SetAuthenticationStrategy(value); return *this;}
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline CreateBrokerRequest& WithAuthenticationStrategy(AuthenticationStrategy&& value) { SetAuthenticationStrategy(std::move(value)); return *this;}
 
 
     /**
@@ -309,38 +332,38 @@ namespace Model
 
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline const EngineType& GetEngineType() const{ return m_engineType; }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline bool EngineTypeHasBeenSet() const { return m_engineTypeHasBeenSet; }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline void SetEngineType(const EngineType& value) { m_engineTypeHasBeenSet = true; m_engineType = value; }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline void SetEngineType(EngineType&& value) { m_engineTypeHasBeenSet = true; m_engineType = std::move(value); }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline CreateBrokerRequest& WithEngineType(const EngineType& value) { SetEngineType(value); return *this;}
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline CreateBrokerRequest& WithEngineType(EngineType&& value) { SetEngineType(std::move(value)); return *this;}
 
@@ -441,6 +464,43 @@ namespace Model
      * Required. The broker's instance type.
      */
     inline CreateBrokerRequest& WithHostInstanceType(const char* value) { SetHostInstanceType(value); return *this;}
+
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline const LdapServerMetadataInput& GetLdapServerMetadata() const{ return m_ldapServerMetadata; }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline bool LdapServerMetadataHasBeenSet() const { return m_ldapServerMetadataHasBeenSet; }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline void SetLdapServerMetadata(const LdapServerMetadataInput& value) { m_ldapServerMetadataHasBeenSet = true; m_ldapServerMetadata = value; }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline void SetLdapServerMetadata(LdapServerMetadataInput&& value) { m_ldapServerMetadataHasBeenSet = true; m_ldapServerMetadata = std::move(value); }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline CreateBrokerRequest& WithLdapServerMetadata(const LdapServerMetadataInput& value) { SetLdapServerMetadata(value); return *this;}
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline CreateBrokerRequest& WithLdapServerMetadata(LdapServerMetadataInput&& value) { SetLdapServerMetadata(std::move(value)); return *this;}
 
 
     /**
@@ -617,74 +677,92 @@ namespace Model
 
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline CreateBrokerRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline CreateBrokerRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline CreateBrokerRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline CreateBrokerRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline CreateBrokerRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
@@ -756,70 +834,97 @@ namespace Model
 
 
     /**
-     * Required. The list of ActiveMQ users (persons or applications) who can access
-     * queues and topics. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
-     * long.
+     * Required. The list of broker users (persons or applications) who can access
+     * queues and topics. For RabbitMQ brokers, one and only one administrative user is
+     * accepted and created when a broker is first provisioned. All subsequent broker
+     * users are created by making RabbitMQ API calls directly to brokers or via the
+     * RabbitMQ Web Console. This value can contain only alphanumeric characters,
+     * dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
+     * characters long.
      */
     inline const Aws::Vector<User>& GetUsers() const{ return m_users; }
 
     /**
-     * Required. The list of ActiveMQ users (persons or applications) who can access
-     * queues and topics. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
-     * long.
+     * Required. The list of broker users (persons or applications) who can access
+     * queues and topics. For RabbitMQ brokers, one and only one administrative user is
+     * accepted and created when a broker is first provisioned. All subsequent broker
+     * users are created by making RabbitMQ API calls directly to brokers or via the
+     * RabbitMQ Web Console. This value can contain only alphanumeric characters,
+     * dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
+     * characters long.
      */
     inline bool UsersHasBeenSet() const { return m_usersHasBeenSet; }
 
     /**
-     * Required. The list of ActiveMQ users (persons or applications) who can access
-     * queues and topics. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
-     * long.
+     * Required. The list of broker users (persons or applications) who can access
+     * queues and topics. For RabbitMQ brokers, one and only one administrative user is
+     * accepted and created when a broker is first provisioned. All subsequent broker
+     * users are created by making RabbitMQ API calls directly to brokers or via the
+     * RabbitMQ Web Console. This value can contain only alphanumeric characters,
+     * dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
+     * characters long.
      */
     inline void SetUsers(const Aws::Vector<User>& value) { m_usersHasBeenSet = true; m_users = value; }
 
     /**
-     * Required. The list of ActiveMQ users (persons or applications) who can access
-     * queues and topics. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
-     * long.
+     * Required. The list of broker users (persons or applications) who can access
+     * queues and topics. For RabbitMQ brokers, one and only one administrative user is
+     * accepted and created when a broker is first provisioned. All subsequent broker
+     * users are created by making RabbitMQ API calls directly to brokers or via the
+     * RabbitMQ Web Console. This value can contain only alphanumeric characters,
+     * dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
+     * characters long.
      */
     inline void SetUsers(Aws::Vector<User>&& value) { m_usersHasBeenSet = true; m_users = std::move(value); }
 
     /**
-     * Required. The list of ActiveMQ users (persons or applications) who can access
-     * queues and topics. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
-     * long.
+     * Required. The list of broker users (persons or applications) who can access
+     * queues and topics. For RabbitMQ brokers, one and only one administrative user is
+     * accepted and created when a broker is first provisioned. All subsequent broker
+     * users are created by making RabbitMQ API calls directly to brokers or via the
+     * RabbitMQ Web Console. This value can contain only alphanumeric characters,
+     * dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
+     * characters long.
      */
     inline CreateBrokerRequest& WithUsers(const Aws::Vector<User>& value) { SetUsers(value); return *this;}
 
     /**
-     * Required. The list of ActiveMQ users (persons or applications) who can access
-     * queues and topics. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
-     * long.
+     * Required. The list of broker users (persons or applications) who can access
+     * queues and topics. For RabbitMQ brokers, one and only one administrative user is
+     * accepted and created when a broker is first provisioned. All subsequent broker
+     * users are created by making RabbitMQ API calls directly to brokers or via the
+     * RabbitMQ Web Console. This value can contain only alphanumeric characters,
+     * dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
+     * characters long.
      */
     inline CreateBrokerRequest& WithUsers(Aws::Vector<User>&& value) { SetUsers(std::move(value)); return *this;}
 
     /**
-     * Required. The list of ActiveMQ users (persons or applications) who can access
-     * queues and topics. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
-     * long.
+     * Required. The list of broker users (persons or applications) who can access
+     * queues and topics. For RabbitMQ brokers, one and only one administrative user is
+     * accepted and created when a broker is first provisioned. All subsequent broker
+     * users are created by making RabbitMQ API calls directly to brokers or via the
+     * RabbitMQ Web Console. This value can contain only alphanumeric characters,
+     * dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
+     * characters long.
      */
     inline CreateBrokerRequest& AddUsers(const User& value) { m_usersHasBeenSet = true; m_users.push_back(value); return *this; }
 
     /**
-     * Required. The list of ActiveMQ users (persons or applications) who can access
-     * queues and topics. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
-     * long.
+     * Required. The list of broker users (persons or applications) who can access
+     * queues and topics. For RabbitMQ brokers, one and only one administrative user is
+     * accepted and created when a broker is first provisioned. All subsequent broker
+     * users are created by making RabbitMQ API calls directly to brokers or via the
+     * RabbitMQ Web Console. This value can contain only alphanumeric characters,
+     * dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
+     * characters long.
      */
     inline CreateBrokerRequest& AddUsers(User&& value) { m_usersHasBeenSet = true; m_users.push_back(std::move(value)); return *this; }
 
   private:
+
+    AuthenticationStrategy m_authenticationStrategy;
+    bool m_authenticationStrategyHasBeenSet;
 
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
@@ -847,6 +952,9 @@ namespace Model
 
     Aws::String m_hostInstanceType;
     bool m_hostInstanceTypeHasBeenSet;
+
+    LdapServerMetadataInput m_ldapServerMetadata;
+    bool m_ldapServerMetadataHasBeenSet;
 
     Logs m_logs;
     bool m_logsHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cloudformation/model/StackResourceDrift.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -41,7 +31,8 @@ StackResourceDrift::StackResourceDrift() :
     m_propertyDifferencesHasBeenSet(false),
     m_stackResourceDriftStatus(StackResourceDriftStatus::NOT_SET),
     m_stackResourceDriftStatusHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+    m_timestampHasBeenSet(false),
+    m_moduleInfoHasBeenSet(false)
 {
 }
 
@@ -56,7 +47,8 @@ StackResourceDrift::StackResourceDrift(const XmlNode& xmlNode) :
     m_propertyDifferencesHasBeenSet(false),
     m_stackResourceDriftStatus(StackResourceDriftStatus::NOT_SET),
     m_stackResourceDriftStatusHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+    m_timestampHasBeenSet(false),
+    m_moduleInfoHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -139,6 +131,12 @@ StackResourceDrift& StackResourceDrift::operator =(const XmlNode& xmlNode)
       m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
     }
+    XmlNode moduleInfoNode = resultNode.FirstChild("ModuleInfo");
+    if(!moduleInfoNode.IsNull())
+    {
+      m_moduleInfo = moduleInfoNode;
+      m_moduleInfoHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -208,6 +206,13 @@ void StackResourceDrift::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_moduleInfoHasBeenSet)
+  {
+      Aws::StringStream moduleInfoLocationAndMemberSs;
+      moduleInfoLocationAndMemberSs << location << index << locationValue << ".ModuleInfo";
+      m_moduleInfo.OutputToStream(oStream, moduleInfoLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void StackResourceDrift::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -263,6 +268,12 @@ void StackResourceDrift::OutputToStream(Aws::OStream& oStream, const char* locat
   if(m_timestampHasBeenSet)
   {
       oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_moduleInfoHasBeenSet)
+  {
+      Aws::String moduleInfoLocationAndMember(location);
+      moduleInfoLocationAndMember += ".ModuleInfo";
+      m_moduleInfo.OutputToStream(oStream, moduleInfoLocationAndMember.c_str());
   }
 }
 

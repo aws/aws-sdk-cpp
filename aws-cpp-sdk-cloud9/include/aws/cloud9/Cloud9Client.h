@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloud9/Cloud9_EXPORTS.h>
@@ -87,19 +77,19 @@ namespace Model
         class UpdateEnvironmentRequest;
         class UpdateEnvironmentMembershipRequest;
 
-        typedef Aws::Utils::Outcome<CreateEnvironmentEC2Result, Aws::Client::AWSError<Cloud9Errors>> CreateEnvironmentEC2Outcome;
-        typedef Aws::Utils::Outcome<CreateEnvironmentMembershipResult, Aws::Client::AWSError<Cloud9Errors>> CreateEnvironmentMembershipOutcome;
-        typedef Aws::Utils::Outcome<DeleteEnvironmentResult, Aws::Client::AWSError<Cloud9Errors>> DeleteEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<DeleteEnvironmentMembershipResult, Aws::Client::AWSError<Cloud9Errors>> DeleteEnvironmentMembershipOutcome;
-        typedef Aws::Utils::Outcome<DescribeEnvironmentMembershipsResult, Aws::Client::AWSError<Cloud9Errors>> DescribeEnvironmentMembershipsOutcome;
-        typedef Aws::Utils::Outcome<DescribeEnvironmentStatusResult, Aws::Client::AWSError<Cloud9Errors>> DescribeEnvironmentStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribeEnvironmentsResult, Aws::Client::AWSError<Cloud9Errors>> DescribeEnvironmentsOutcome;
-        typedef Aws::Utils::Outcome<ListEnvironmentsResult, Aws::Client::AWSError<Cloud9Errors>> ListEnvironmentsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<Cloud9Errors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<Cloud9Errors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<Cloud9Errors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateEnvironmentResult, Aws::Client::AWSError<Cloud9Errors>> UpdateEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<UpdateEnvironmentMembershipResult, Aws::Client::AWSError<Cloud9Errors>> UpdateEnvironmentMembershipOutcome;
+        typedef Aws::Utils::Outcome<CreateEnvironmentEC2Result, Cloud9Error> CreateEnvironmentEC2Outcome;
+        typedef Aws::Utils::Outcome<CreateEnvironmentMembershipResult, Cloud9Error> CreateEnvironmentMembershipOutcome;
+        typedef Aws::Utils::Outcome<DeleteEnvironmentResult, Cloud9Error> DeleteEnvironmentOutcome;
+        typedef Aws::Utils::Outcome<DeleteEnvironmentMembershipResult, Cloud9Error> DeleteEnvironmentMembershipOutcome;
+        typedef Aws::Utils::Outcome<DescribeEnvironmentMembershipsResult, Cloud9Error> DescribeEnvironmentMembershipsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEnvironmentStatusResult, Cloud9Error> DescribeEnvironmentStatusOutcome;
+        typedef Aws::Utils::Outcome<DescribeEnvironmentsResult, Cloud9Error> DescribeEnvironmentsOutcome;
+        typedef Aws::Utils::Outcome<ListEnvironmentsResult, Cloud9Error> ListEnvironmentsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Cloud9Error> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Cloud9Error> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Cloud9Error> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateEnvironmentResult, Cloud9Error> UpdateEnvironmentOutcome;
+        typedef Aws::Utils::Outcome<UpdateEnvironmentMembershipResult, Cloud9Error> UpdateEnvironmentMembershipOutcome;
 
         typedef std::future<CreateEnvironmentEC2Outcome> CreateEnvironmentEC2OutcomeCallable;
         typedef std::future<CreateEnvironmentMembershipOutcome> CreateEnvironmentMembershipOutcomeCallable;
@@ -185,8 +175,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~Cloud9Client();
-
-        inline virtual const char* GetServiceClientName() const override { return "Cloud9"; }
 
 
         /**
@@ -448,9 +436,9 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds tags to an AWS Cloud9 development environment.</p> <important> <p>Tags
+         * <p>Adds tags to an AWS Cloud9 development environment.</p>  <p>Tags
          * that you add to an AWS Cloud9 environment by using this method will NOT be
-         * automatically propagated to underlying resources.</p> </important><p><h3>See
+         * automatically propagated to underlying resources.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/TagResource">AWS
          * API Reference</a></p>
@@ -458,9 +446,9 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds tags to an AWS Cloud9 development environment.</p> <important> <p>Tags
+         * <p>Adds tags to an AWS Cloud9 development environment.</p>  <p>Tags
          * that you add to an AWS Cloud9 environment by using this method will NOT be
-         * automatically propagated to underlying resources.</p> </important><p><h3>See
+         * automatically propagated to underlying resources.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/TagResource">AWS
          * API Reference</a></p>
@@ -470,9 +458,9 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds tags to an AWS Cloud9 development environment.</p> <important> <p>Tags
+         * <p>Adds tags to an AWS Cloud9 development environment.</p>  <p>Tags
          * that you add to an AWS Cloud9 environment by using this method will NOT be
-         * automatically propagated to underlying resources.</p> </important><p><h3>See
+         * automatically propagated to underlying resources.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/TagResource">AWS
          * API Reference</a></p>

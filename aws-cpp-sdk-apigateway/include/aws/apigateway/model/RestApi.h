@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
@@ -409,7 +399,7 @@ namespace Model
      * Valid values are: <ul><li><code>HEADER</code> to read the API key from the
      * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
      * read the API key from the <code>UsageIdentifierKey</code> from a custom
-     * authorizer.</li></ul> </p>
+     * authorizer.</li></ul></p>
      */
     inline const ApiKeySourceType& GetApiKeySource() const{ return m_apiKeySource; }
 
@@ -418,7 +408,7 @@ namespace Model
      * Valid values are: <ul><li><code>HEADER</code> to read the API key from the
      * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
      * read the API key from the <code>UsageIdentifierKey</code> from a custom
-     * authorizer.</li></ul> </p>
+     * authorizer.</li></ul></p>
      */
     inline bool ApiKeySourceHasBeenSet() const { return m_apiKeySourceHasBeenSet; }
 
@@ -427,7 +417,7 @@ namespace Model
      * Valid values are: <ul><li><code>HEADER</code> to read the API key from the
      * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
      * read the API key from the <code>UsageIdentifierKey</code> from a custom
-     * authorizer.</li></ul> </p>
+     * authorizer.</li></ul></p>
      */
     inline void SetApiKeySource(const ApiKeySourceType& value) { m_apiKeySourceHasBeenSet = true; m_apiKeySource = value; }
 
@@ -436,7 +426,7 @@ namespace Model
      * Valid values are: <ul><li><code>HEADER</code> to read the API key from the
      * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
      * read the API key from the <code>UsageIdentifierKey</code> from a custom
-     * authorizer.</li></ul> </p>
+     * authorizer.</li></ul></p>
      */
     inline void SetApiKeySource(ApiKeySourceType&& value) { m_apiKeySourceHasBeenSet = true; m_apiKeySource = std::move(value); }
 
@@ -445,7 +435,7 @@ namespace Model
      * Valid values are: <ul><li><code>HEADER</code> to read the API key from the
      * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
      * read the API key from the <code>UsageIdentifierKey</code> from a custom
-     * authorizer.</li></ul> </p>
+     * authorizer.</li></ul></p>
      */
     inline RestApi& WithApiKeySource(const ApiKeySourceType& value) { SetApiKeySource(value); return *this;}
 
@@ -454,93 +444,93 @@ namespace Model
      * Valid values are: <ul><li><code>HEADER</code> to read the API key from the
      * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
      * read the API key from the <code>UsageIdentifierKey</code> from a custom
-     * authorizer.</li></ul> </p>
+     * authorizer.</li></ul></p>
      */
     inline RestApi& WithApiKeySource(ApiKeySourceType&& value) { SetApiKeySource(std::move(value)); return *this;}
 
 
     /**
      * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
-     * of the API. </p>
+     * of the API.</p>
      */
     inline const EndpointConfiguration& GetEndpointConfiguration() const{ return m_endpointConfiguration; }
 
     /**
      * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
-     * of the API. </p>
+     * of the API.</p>
      */
     inline bool EndpointConfigurationHasBeenSet() const { return m_endpointConfigurationHasBeenSet; }
 
     /**
      * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
-     * of the API. </p>
+     * of the API.</p>
      */
     inline void SetEndpointConfiguration(const EndpointConfiguration& value) { m_endpointConfigurationHasBeenSet = true; m_endpointConfiguration = value; }
 
     /**
      * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
-     * of the API. </p>
+     * of the API.</p>
      */
     inline void SetEndpointConfiguration(EndpointConfiguration&& value) { m_endpointConfigurationHasBeenSet = true; m_endpointConfiguration = std::move(value); }
 
     /**
      * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
-     * of the API. </p>
+     * of the API.</p>
      */
     inline RestApi& WithEndpointConfiguration(const EndpointConfiguration& value) { SetEndpointConfiguration(value); return *this;}
 
     /**
      * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
-     * of the API. </p>
+     * of the API.</p>
      */
     inline RestApi& WithEndpointConfiguration(EndpointConfiguration&& value) { SetEndpointConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and <a>Method</a> configuration.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and <a>Method</a> configuration.</p>
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and <a>Method</a> configuration.</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and <a>Method</a> configuration.</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and <a>Method</a> configuration.</p>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and <a>Method</a> configuration.</p>
      */
     inline RestApi& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and <a>Method</a> configuration.</p>
      */
     inline RestApi& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and <a>Method</a> configuration.</p>
      */
     inline RestApi& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
@@ -623,6 +613,43 @@ namespace Model
      */
     inline RestApi& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Specifies whether clients can invoke your API by using the default
+     * <code>execute-api</code> endpoint. By default, clients can invoke your API with
+     * the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To
+     * require that clients use a custom domain name to invoke your API, disable the
+     * default endpoint.</p>
+     */
+    inline bool GetDisableExecuteApiEndpoint() const{ return m_disableExecuteApiEndpoint; }
+
+    /**
+     * <p>Specifies whether clients can invoke your API by using the default
+     * <code>execute-api</code> endpoint. By default, clients can invoke your API with
+     * the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To
+     * require that clients use a custom domain name to invoke your API, disable the
+     * default endpoint.</p>
+     */
+    inline bool DisableExecuteApiEndpointHasBeenSet() const { return m_disableExecuteApiEndpointHasBeenSet; }
+
+    /**
+     * <p>Specifies whether clients can invoke your API by using the default
+     * <code>execute-api</code> endpoint. By default, clients can invoke your API with
+     * the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To
+     * require that clients use a custom domain name to invoke your API, disable the
+     * default endpoint.</p>
+     */
+    inline void SetDisableExecuteApiEndpoint(bool value) { m_disableExecuteApiEndpointHasBeenSet = true; m_disableExecuteApiEndpoint = value; }
+
+    /**
+     * <p>Specifies whether clients can invoke your API by using the default
+     * <code>execute-api</code> endpoint. By default, clients can invoke your API with
+     * the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To
+     * require that clients use a custom domain name to invoke your API, disable the
+     * default endpoint.</p>
+     */
+    inline RestApi& WithDisableExecuteApiEndpoint(bool value) { SetDisableExecuteApiEndpoint(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -660,6 +687,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    bool m_disableExecuteApiEndpoint;
+    bool m_disableExecuteApiEndpointHasBeenSet;
   };
 
 } // namespace Model

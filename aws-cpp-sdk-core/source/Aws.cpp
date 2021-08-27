@@ -1,17 +1,7 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 #include <aws/core/Version.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/Aws.h>
@@ -23,6 +13,7 @@
 #include <aws/core/monitoring/MonitoringManager.h>
 #include <aws/core/net/Net.h>
 #include <aws/core/config/AWSProfileConfigLoader.h>
+#include <aws/core/internal/AWSHttpResourceClient.h>
 
 namespace Aws
 {
@@ -111,12 +102,14 @@ namespace Aws
         hooks.free_fn = Aws::Free;
         cJSON_InitHooks(&hooks);
         Aws::Net::InitNetwork();
+        Aws::Internal::InitEC2MetadataClient();
         Aws::Monitoring::InitMonitoring(options.monitoringOptions.customizedMonitoringFactory_create_fn);
     }
 
     void ShutdownAPI(const SDKOptions& options)
     {
         Aws::Monitoring::CleanupMonitoring();
+        Aws::Internal::CleanupEC2MetadataClient();
         Aws::Net::CleanupNetwork();
         Aws::CleanupEnumOverflowContainer();
         Aws::Http::CleanupHttp();

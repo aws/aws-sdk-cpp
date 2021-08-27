@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
@@ -22,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/apigateway/model/ContentHandlingStrategy.h>
+#include <aws/apigateway/model/TlsConfig.h>
 #include <utility>
 
 namespace Aws
@@ -257,10 +248,9 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank"
-     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
-     * specification</a>, for either standard integration, where
-     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     * target="_blank">RFC-3986 specification</a>, for either standard integration,
+     * where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
      * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
      * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
@@ -290,10 +280,9 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank"
-     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
-     * specification</a>, for either standard integration, where
-     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     * target="_blank">RFC-3986 specification</a>, for either standard integration,
+     * where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
      * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
      * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
@@ -323,10 +312,9 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank"
-     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
-     * specification</a>, for either standard integration, where
-     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     * target="_blank">RFC-3986 specification</a>, for either standard integration,
+     * where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
      * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
      * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
@@ -356,10 +344,9 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank"
-     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
-     * specification</a>, for either standard integration, where
-     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     * target="_blank">RFC-3986 specification</a>, for either standard integration,
+     * where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
      * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
      * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
@@ -389,10 +376,9 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank"
-     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
-     * specification</a>, for either standard integration, where
-     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     * target="_blank">RFC-3986 specification</a>, for either standard integration,
+     * where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
      * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
      * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
@@ -422,10 +408,9 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank"
-     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
-     * specification</a>, for either standard integration, where
-     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     * target="_blank">RFC-3986 specification</a>, for either standard integration,
+     * where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
      * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
      * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
@@ -455,10 +440,9 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank"
-     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
-     * specification</a>, for either standard integration, where
-     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     * target="_blank">RFC-3986 specification</a>, for either standard integration,
+     * where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
      * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
      * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
@@ -488,10 +472,9 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank"
-     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
-     * specification</a>, for either standard integration, where
-     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     * target="_blank">RFC-3986 specification</a>, for either standard integration,
+     * where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
      * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
      * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
@@ -1079,88 +1062,130 @@ namespace Model
 
 
     /**
-     * <p>A list of request parameters whose values are to be cached.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline const Aws::String& GetCacheNamespace() const{ return m_cacheNamespace; }
 
     /**
-     * <p>A list of request parameters whose values are to be cached.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline bool CacheNamespaceHasBeenSet() const { return m_cacheNamespaceHasBeenSet; }
 
     /**
-     * <p>A list of request parameters whose values are to be cached.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline void SetCacheNamespace(const Aws::String& value) { m_cacheNamespaceHasBeenSet = true; m_cacheNamespace = value; }
 
     /**
-     * <p>A list of request parameters whose values are to be cached.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline void SetCacheNamespace(Aws::String&& value) { m_cacheNamespaceHasBeenSet = true; m_cacheNamespace = std::move(value); }
 
     /**
-     * <p>A list of request parameters whose values are to be cached.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline void SetCacheNamespace(const char* value) { m_cacheNamespaceHasBeenSet = true; m_cacheNamespace.assign(value); }
 
     /**
-     * <p>A list of request parameters whose values are to be cached.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline PutIntegrationRequest& WithCacheNamespace(const Aws::String& value) { SetCacheNamespace(value); return *this;}
 
     /**
-     * <p>A list of request parameters whose values are to be cached.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline PutIntegrationRequest& WithCacheNamespace(Aws::String&& value) { SetCacheNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>A list of request parameters whose values are to be cached.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline PutIntegrationRequest& WithCacheNamespace(const char* value) { SetCacheNamespace(value); return *this;}
 
 
     /**
-     * <p>An API-specific tag group of related cached parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCacheKeyParameters() const{ return m_cacheKeyParameters; }
 
     /**
-     * <p>An API-specific tag group of related cached parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline bool CacheKeyParametersHasBeenSet() const { return m_cacheKeyParametersHasBeenSet; }
 
     /**
-     * <p>An API-specific tag group of related cached parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline void SetCacheKeyParameters(const Aws::Vector<Aws::String>& value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters = value; }
 
     /**
-     * <p>An API-specific tag group of related cached parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline void SetCacheKeyParameters(Aws::Vector<Aws::String>&& value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters = std::move(value); }
 
     /**
-     * <p>An API-specific tag group of related cached parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline PutIntegrationRequest& WithCacheKeyParameters(const Aws::Vector<Aws::String>& value) { SetCacheKeyParameters(value); return *this;}
 
     /**
-     * <p>An API-specific tag group of related cached parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline PutIntegrationRequest& WithCacheKeyParameters(Aws::Vector<Aws::String>&& value) { SetCacheKeyParameters(std::move(value)); return *this;}
 
     /**
-     * <p>An API-specific tag group of related cached parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline PutIntegrationRequest& AddCacheKeyParameters(const Aws::String& value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters.push_back(value); return *this; }
 
     /**
-     * <p>An API-specific tag group of related cached parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline PutIntegrationRequest& AddCacheKeyParameters(Aws::String&& value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An API-specific tag group of related cached parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline PutIntegrationRequest& AddCacheKeyParameters(const char* value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters.push_back(value); return *this; }
 
@@ -1274,6 +1299,25 @@ namespace Model
      */
     inline PutIntegrationRequest& WithTimeoutInMillis(int value) { SetTimeoutInMillis(value); return *this;}
 
+
+    
+    inline const TlsConfig& GetTlsConfig() const{ return m_tlsConfig; }
+
+    
+    inline bool TlsConfigHasBeenSet() const { return m_tlsConfigHasBeenSet; }
+
+    
+    inline void SetTlsConfig(const TlsConfig& value) { m_tlsConfigHasBeenSet = true; m_tlsConfig = value; }
+
+    
+    inline void SetTlsConfig(TlsConfig&& value) { m_tlsConfigHasBeenSet = true; m_tlsConfig = std::move(value); }
+
+    
+    inline PutIntegrationRequest& WithTlsConfig(const TlsConfig& value) { SetTlsConfig(value); return *this;}
+
+    
+    inline PutIntegrationRequest& WithTlsConfig(TlsConfig&& value) { SetTlsConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_restApiId;
@@ -1323,6 +1367,9 @@ namespace Model
 
     int m_timeoutInMillis;
     bool m_timeoutInMillisHasBeenSet;
+
+    TlsConfig m_tlsConfig;
+    bool m_tlsConfigHasBeenSet;
   };
 
 } // namespace Model

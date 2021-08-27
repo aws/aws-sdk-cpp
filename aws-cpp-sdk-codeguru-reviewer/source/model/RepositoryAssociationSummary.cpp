@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/codeguru-reviewer/model/RepositoryAssociationSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,6 +20,7 @@ namespace Model
 
 RepositoryAssociationSummary::RepositoryAssociationSummary() : 
     m_associationArnHasBeenSet(false),
+    m_connectionArnHasBeenSet(false),
     m_lastUpdatedTimeStampHasBeenSet(false),
     m_associationIdHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -43,6 +34,7 @@ RepositoryAssociationSummary::RepositoryAssociationSummary() :
 
 RepositoryAssociationSummary::RepositoryAssociationSummary(JsonView jsonValue) : 
     m_associationArnHasBeenSet(false),
+    m_connectionArnHasBeenSet(false),
     m_lastUpdatedTimeStampHasBeenSet(false),
     m_associationIdHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -62,6 +54,13 @@ RepositoryAssociationSummary& RepositoryAssociationSummary::operator =(JsonView 
     m_associationArn = jsonValue.GetString("AssociationArn");
 
     m_associationArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConnectionArn"))
+  {
+    m_connectionArn = jsonValue.GetString("ConnectionArn");
+
+    m_connectionArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LastUpdatedTimeStamp"))
@@ -116,6 +115,12 @@ JsonValue RepositoryAssociationSummary::Jsonize() const
   if(m_associationArnHasBeenSet)
   {
    payload.WithString("AssociationArn", m_associationArn);
+
+  }
+
+  if(m_connectionArnHasBeenSet)
+  {
+   payload.WithString("ConnectionArn", m_connectionArn);
 
   }
 

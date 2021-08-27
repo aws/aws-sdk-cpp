@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/storagegateway/model/Tape.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -41,7 +31,11 @@ Tape::Tape() :
     m_tapeUsedInBytes(0),
     m_tapeUsedInBytesHasBeenSet(false),
     m_kMSKeyHasBeenSet(false),
-    m_poolIdHasBeenSet(false)
+    m_poolIdHasBeenSet(false),
+    m_worm(false),
+    m_wormHasBeenSet(false),
+    m_retentionStartDateHasBeenSet(false),
+    m_poolEntryDateHasBeenSet(false)
 {
 }
 
@@ -58,7 +52,11 @@ Tape::Tape(JsonView jsonValue) :
     m_tapeUsedInBytes(0),
     m_tapeUsedInBytesHasBeenSet(false),
     m_kMSKeyHasBeenSet(false),
-    m_poolIdHasBeenSet(false)
+    m_poolIdHasBeenSet(false),
+    m_worm(false),
+    m_wormHasBeenSet(false),
+    m_retentionStartDateHasBeenSet(false),
+    m_poolEntryDateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -135,6 +133,27 @@ Tape& Tape::operator =(JsonView jsonValue)
     m_poolIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Worm"))
+  {
+    m_worm = jsonValue.GetBool("Worm");
+
+    m_wormHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RetentionStartDate"))
+  {
+    m_retentionStartDate = jsonValue.GetDouble("RetentionStartDate");
+
+    m_retentionStartDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PoolEntryDate"))
+  {
+    m_poolEntryDate = jsonValue.GetDouble("PoolEntryDate");
+
+    m_poolEntryDateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -199,6 +218,22 @@ JsonValue Tape::Jsonize() const
   {
    payload.WithString("PoolId", m_poolId);
 
+  }
+
+  if(m_wormHasBeenSet)
+  {
+   payload.WithBool("Worm", m_worm);
+
+  }
+
+  if(m_retentionStartDateHasBeenSet)
+  {
+   payload.WithDouble("RetentionStartDate", m_retentionStartDate.SecondsWithMSPrecision());
+  }
+
+  if(m_poolEntryDateHasBeenSet)
+  {
+   payload.WithDouble("PoolEntryDate", m_poolEntryDate.SecondsWithMSPrecision());
   }
 
   return payload;

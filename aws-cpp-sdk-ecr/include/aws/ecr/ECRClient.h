@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
@@ -27,15 +17,18 @@
 #include <aws/ecr/model/CompleteLayerUploadResult.h>
 #include <aws/ecr/model/CreateRepositoryResult.h>
 #include <aws/ecr/model/DeleteLifecyclePolicyResult.h>
+#include <aws/ecr/model/DeleteRegistryPolicyResult.h>
 #include <aws/ecr/model/DeleteRepositoryResult.h>
 #include <aws/ecr/model/DeleteRepositoryPolicyResult.h>
 #include <aws/ecr/model/DescribeImageScanFindingsResult.h>
 #include <aws/ecr/model/DescribeImagesResult.h>
+#include <aws/ecr/model/DescribeRegistryResult.h>
 #include <aws/ecr/model/DescribeRepositoriesResult.h>
 #include <aws/ecr/model/GetAuthorizationTokenResult.h>
 #include <aws/ecr/model/GetDownloadUrlForLayerResult.h>
 #include <aws/ecr/model/GetLifecyclePolicyResult.h>
 #include <aws/ecr/model/GetLifecyclePolicyPreviewResult.h>
+#include <aws/ecr/model/GetRegistryPolicyResult.h>
 #include <aws/ecr/model/GetRepositoryPolicyResult.h>
 #include <aws/ecr/model/InitiateLayerUploadResult.h>
 #include <aws/ecr/model/ListImagesResult.h>
@@ -44,6 +37,8 @@
 #include <aws/ecr/model/PutImageScanningConfigurationResult.h>
 #include <aws/ecr/model/PutImageTagMutabilityResult.h>
 #include <aws/ecr/model/PutLifecyclePolicyResult.h>
+#include <aws/ecr/model/PutRegistryPolicyResult.h>
+#include <aws/ecr/model/PutReplicationConfigurationResult.h>
 #include <aws/ecr/model/SetRepositoryPolicyResult.h>
 #include <aws/ecr/model/StartImageScanResult.h>
 #include <aws/ecr/model/StartLifecyclePolicyPreviewResult.h>
@@ -95,15 +90,18 @@ namespace Model
         class CompleteLayerUploadRequest;
         class CreateRepositoryRequest;
         class DeleteLifecyclePolicyRequest;
+        class DeleteRegistryPolicyRequest;
         class DeleteRepositoryRequest;
         class DeleteRepositoryPolicyRequest;
         class DescribeImageScanFindingsRequest;
         class DescribeImagesRequest;
+        class DescribeRegistryRequest;
         class DescribeRepositoriesRequest;
         class GetAuthorizationTokenRequest;
         class GetDownloadUrlForLayerRequest;
         class GetLifecyclePolicyRequest;
         class GetLifecyclePolicyPreviewRequest;
+        class GetRegistryPolicyRequest;
         class GetRepositoryPolicyRequest;
         class InitiateLayerUploadRequest;
         class ListImagesRequest;
@@ -112,6 +110,8 @@ namespace Model
         class PutImageScanningConfigurationRequest;
         class PutImageTagMutabilityRequest;
         class PutLifecyclePolicyRequest;
+        class PutRegistryPolicyRequest;
+        class PutReplicationConfigurationRequest;
         class SetRepositoryPolicyRequest;
         class StartImageScanRequest;
         class StartLifecyclePolicyPreviewRequest;
@@ -119,35 +119,40 @@ namespace Model
         class UntagResourceRequest;
         class UploadLayerPartRequest;
 
-        typedef Aws::Utils::Outcome<BatchCheckLayerAvailabilityResult, Aws::Client::AWSError<ECRErrors>> BatchCheckLayerAvailabilityOutcome;
-        typedef Aws::Utils::Outcome<BatchDeleteImageResult, Aws::Client::AWSError<ECRErrors>> BatchDeleteImageOutcome;
-        typedef Aws::Utils::Outcome<BatchGetImageResult, Aws::Client::AWSError<ECRErrors>> BatchGetImageOutcome;
-        typedef Aws::Utils::Outcome<CompleteLayerUploadResult, Aws::Client::AWSError<ECRErrors>> CompleteLayerUploadOutcome;
-        typedef Aws::Utils::Outcome<CreateRepositoryResult, Aws::Client::AWSError<ECRErrors>> CreateRepositoryOutcome;
-        typedef Aws::Utils::Outcome<DeleteLifecyclePolicyResult, Aws::Client::AWSError<ECRErrors>> DeleteLifecyclePolicyOutcome;
-        typedef Aws::Utils::Outcome<DeleteRepositoryResult, Aws::Client::AWSError<ECRErrors>> DeleteRepositoryOutcome;
-        typedef Aws::Utils::Outcome<DeleteRepositoryPolicyResult, Aws::Client::AWSError<ECRErrors>> DeleteRepositoryPolicyOutcome;
-        typedef Aws::Utils::Outcome<DescribeImageScanFindingsResult, Aws::Client::AWSError<ECRErrors>> DescribeImageScanFindingsOutcome;
-        typedef Aws::Utils::Outcome<DescribeImagesResult, Aws::Client::AWSError<ECRErrors>> DescribeImagesOutcome;
-        typedef Aws::Utils::Outcome<DescribeRepositoriesResult, Aws::Client::AWSError<ECRErrors>> DescribeRepositoriesOutcome;
-        typedef Aws::Utils::Outcome<GetAuthorizationTokenResult, Aws::Client::AWSError<ECRErrors>> GetAuthorizationTokenOutcome;
-        typedef Aws::Utils::Outcome<GetDownloadUrlForLayerResult, Aws::Client::AWSError<ECRErrors>> GetDownloadUrlForLayerOutcome;
-        typedef Aws::Utils::Outcome<GetLifecyclePolicyResult, Aws::Client::AWSError<ECRErrors>> GetLifecyclePolicyOutcome;
-        typedef Aws::Utils::Outcome<GetLifecyclePolicyPreviewResult, Aws::Client::AWSError<ECRErrors>> GetLifecyclePolicyPreviewOutcome;
-        typedef Aws::Utils::Outcome<GetRepositoryPolicyResult, Aws::Client::AWSError<ECRErrors>> GetRepositoryPolicyOutcome;
-        typedef Aws::Utils::Outcome<InitiateLayerUploadResult, Aws::Client::AWSError<ECRErrors>> InitiateLayerUploadOutcome;
-        typedef Aws::Utils::Outcome<ListImagesResult, Aws::Client::AWSError<ECRErrors>> ListImagesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<ECRErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutImageResult, Aws::Client::AWSError<ECRErrors>> PutImageOutcome;
-        typedef Aws::Utils::Outcome<PutImageScanningConfigurationResult, Aws::Client::AWSError<ECRErrors>> PutImageScanningConfigurationOutcome;
-        typedef Aws::Utils::Outcome<PutImageTagMutabilityResult, Aws::Client::AWSError<ECRErrors>> PutImageTagMutabilityOutcome;
-        typedef Aws::Utils::Outcome<PutLifecyclePolicyResult, Aws::Client::AWSError<ECRErrors>> PutLifecyclePolicyOutcome;
-        typedef Aws::Utils::Outcome<SetRepositoryPolicyResult, Aws::Client::AWSError<ECRErrors>> SetRepositoryPolicyOutcome;
-        typedef Aws::Utils::Outcome<StartImageScanResult, Aws::Client::AWSError<ECRErrors>> StartImageScanOutcome;
-        typedef Aws::Utils::Outcome<StartLifecyclePolicyPreviewResult, Aws::Client::AWSError<ECRErrors>> StartLifecyclePolicyPreviewOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<ECRErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<ECRErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UploadLayerPartResult, Aws::Client::AWSError<ECRErrors>> UploadLayerPartOutcome;
+        typedef Aws::Utils::Outcome<BatchCheckLayerAvailabilityResult, ECRError> BatchCheckLayerAvailabilityOutcome;
+        typedef Aws::Utils::Outcome<BatchDeleteImageResult, ECRError> BatchDeleteImageOutcome;
+        typedef Aws::Utils::Outcome<BatchGetImageResult, ECRError> BatchGetImageOutcome;
+        typedef Aws::Utils::Outcome<CompleteLayerUploadResult, ECRError> CompleteLayerUploadOutcome;
+        typedef Aws::Utils::Outcome<CreateRepositoryResult, ECRError> CreateRepositoryOutcome;
+        typedef Aws::Utils::Outcome<DeleteLifecyclePolicyResult, ECRError> DeleteLifecyclePolicyOutcome;
+        typedef Aws::Utils::Outcome<DeleteRegistryPolicyResult, ECRError> DeleteRegistryPolicyOutcome;
+        typedef Aws::Utils::Outcome<DeleteRepositoryResult, ECRError> DeleteRepositoryOutcome;
+        typedef Aws::Utils::Outcome<DeleteRepositoryPolicyResult, ECRError> DeleteRepositoryPolicyOutcome;
+        typedef Aws::Utils::Outcome<DescribeImageScanFindingsResult, ECRError> DescribeImageScanFindingsOutcome;
+        typedef Aws::Utils::Outcome<DescribeImagesResult, ECRError> DescribeImagesOutcome;
+        typedef Aws::Utils::Outcome<DescribeRegistryResult, ECRError> DescribeRegistryOutcome;
+        typedef Aws::Utils::Outcome<DescribeRepositoriesResult, ECRError> DescribeRepositoriesOutcome;
+        typedef Aws::Utils::Outcome<GetAuthorizationTokenResult, ECRError> GetAuthorizationTokenOutcome;
+        typedef Aws::Utils::Outcome<GetDownloadUrlForLayerResult, ECRError> GetDownloadUrlForLayerOutcome;
+        typedef Aws::Utils::Outcome<GetLifecyclePolicyResult, ECRError> GetLifecyclePolicyOutcome;
+        typedef Aws::Utils::Outcome<GetLifecyclePolicyPreviewResult, ECRError> GetLifecyclePolicyPreviewOutcome;
+        typedef Aws::Utils::Outcome<GetRegistryPolicyResult, ECRError> GetRegistryPolicyOutcome;
+        typedef Aws::Utils::Outcome<GetRepositoryPolicyResult, ECRError> GetRepositoryPolicyOutcome;
+        typedef Aws::Utils::Outcome<InitiateLayerUploadResult, ECRError> InitiateLayerUploadOutcome;
+        typedef Aws::Utils::Outcome<ListImagesResult, ECRError> ListImagesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ECRError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<PutImageResult, ECRError> PutImageOutcome;
+        typedef Aws::Utils::Outcome<PutImageScanningConfigurationResult, ECRError> PutImageScanningConfigurationOutcome;
+        typedef Aws::Utils::Outcome<PutImageTagMutabilityResult, ECRError> PutImageTagMutabilityOutcome;
+        typedef Aws::Utils::Outcome<PutLifecyclePolicyResult, ECRError> PutLifecyclePolicyOutcome;
+        typedef Aws::Utils::Outcome<PutRegistryPolicyResult, ECRError> PutRegistryPolicyOutcome;
+        typedef Aws::Utils::Outcome<PutReplicationConfigurationResult, ECRError> PutReplicationConfigurationOutcome;
+        typedef Aws::Utils::Outcome<SetRepositoryPolicyResult, ECRError> SetRepositoryPolicyOutcome;
+        typedef Aws::Utils::Outcome<StartImageScanResult, ECRError> StartImageScanOutcome;
+        typedef Aws::Utils::Outcome<StartLifecyclePolicyPreviewResult, ECRError> StartLifecyclePolicyPreviewOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, ECRError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, ECRError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UploadLayerPartResult, ECRError> UploadLayerPartOutcome;
 
         typedef std::future<BatchCheckLayerAvailabilityOutcome> BatchCheckLayerAvailabilityOutcomeCallable;
         typedef std::future<BatchDeleteImageOutcome> BatchDeleteImageOutcomeCallable;
@@ -155,15 +160,18 @@ namespace Model
         typedef std::future<CompleteLayerUploadOutcome> CompleteLayerUploadOutcomeCallable;
         typedef std::future<CreateRepositoryOutcome> CreateRepositoryOutcomeCallable;
         typedef std::future<DeleteLifecyclePolicyOutcome> DeleteLifecyclePolicyOutcomeCallable;
+        typedef std::future<DeleteRegistryPolicyOutcome> DeleteRegistryPolicyOutcomeCallable;
         typedef std::future<DeleteRepositoryOutcome> DeleteRepositoryOutcomeCallable;
         typedef std::future<DeleteRepositoryPolicyOutcome> DeleteRepositoryPolicyOutcomeCallable;
         typedef std::future<DescribeImageScanFindingsOutcome> DescribeImageScanFindingsOutcomeCallable;
         typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
+        typedef std::future<DescribeRegistryOutcome> DescribeRegistryOutcomeCallable;
         typedef std::future<DescribeRepositoriesOutcome> DescribeRepositoriesOutcomeCallable;
         typedef std::future<GetAuthorizationTokenOutcome> GetAuthorizationTokenOutcomeCallable;
         typedef std::future<GetDownloadUrlForLayerOutcome> GetDownloadUrlForLayerOutcomeCallable;
         typedef std::future<GetLifecyclePolicyOutcome> GetLifecyclePolicyOutcomeCallable;
         typedef std::future<GetLifecyclePolicyPreviewOutcome> GetLifecyclePolicyPreviewOutcomeCallable;
+        typedef std::future<GetRegistryPolicyOutcome> GetRegistryPolicyOutcomeCallable;
         typedef std::future<GetRepositoryPolicyOutcome> GetRepositoryPolicyOutcomeCallable;
         typedef std::future<InitiateLayerUploadOutcome> InitiateLayerUploadOutcomeCallable;
         typedef std::future<ListImagesOutcome> ListImagesOutcomeCallable;
@@ -172,6 +180,8 @@ namespace Model
         typedef std::future<PutImageScanningConfigurationOutcome> PutImageScanningConfigurationOutcomeCallable;
         typedef std::future<PutImageTagMutabilityOutcome> PutImageTagMutabilityOutcomeCallable;
         typedef std::future<PutLifecyclePolicyOutcome> PutLifecyclePolicyOutcomeCallable;
+        typedef std::future<PutRegistryPolicyOutcome> PutRegistryPolicyOutcomeCallable;
+        typedef std::future<PutReplicationConfigurationOutcome> PutReplicationConfigurationOutcomeCallable;
         typedef std::future<SetRepositoryPolicyOutcome> SetRepositoryPolicyOutcomeCallable;
         typedef std::future<StartImageScanOutcome> StartImageScanOutcomeCallable;
         typedef std::future<StartLifecyclePolicyPreviewOutcome> StartLifecyclePolicyPreviewOutcomeCallable;
@@ -188,15 +198,18 @@ namespace Model
     typedef std::function<void(const ECRClient*, const Model::CompleteLayerUploadRequest&, const Model::CompleteLayerUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompleteLayerUploadResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::CreateRepositoryRequest&, const Model::CreateRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRepositoryResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::DeleteLifecyclePolicyRequest&, const Model::DeleteLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLifecyclePolicyResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::DeleteRegistryPolicyRequest&, const Model::DeleteRegistryPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRegistryPolicyResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::DeleteRepositoryRequest&, const Model::DeleteRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRepositoryResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::DeleteRepositoryPolicyRequest&, const Model::DeleteRepositoryPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRepositoryPolicyResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::DescribeImageScanFindingsRequest&, const Model::DescribeImageScanFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImageScanFindingsResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::DescribeImagesRequest&, const Model::DescribeImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImagesResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::DescribeRegistryRequest&, const Model::DescribeRegistryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRegistryResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::DescribeRepositoriesRequest&, const Model::DescribeRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRepositoriesResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::GetAuthorizationTokenRequest&, const Model::GetAuthorizationTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAuthorizationTokenResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::GetDownloadUrlForLayerRequest&, const Model::GetDownloadUrlForLayerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDownloadUrlForLayerResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::GetLifecyclePolicyRequest&, const Model::GetLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLifecyclePolicyResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::GetLifecyclePolicyPreviewRequest&, const Model::GetLifecyclePolicyPreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLifecyclePolicyPreviewResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::GetRegistryPolicyRequest&, const Model::GetRegistryPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRegistryPolicyResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::GetRepositoryPolicyRequest&, const Model::GetRepositoryPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRepositoryPolicyResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::InitiateLayerUploadRequest&, const Model::InitiateLayerUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InitiateLayerUploadResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::ListImagesRequest&, const Model::ListImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImagesResponseReceivedHandler;
@@ -205,6 +218,8 @@ namespace Model
     typedef std::function<void(const ECRClient*, const Model::PutImageScanningConfigurationRequest&, const Model::PutImageScanningConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutImageScanningConfigurationResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::PutImageTagMutabilityRequest&, const Model::PutImageTagMutabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutImageTagMutabilityResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::PutLifecyclePolicyRequest&, const Model::PutLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLifecyclePolicyResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::PutRegistryPolicyRequest&, const Model::PutRegistryPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRegistryPolicyResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::PutReplicationConfigurationRequest&, const Model::PutReplicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutReplicationConfigurationResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::SetRepositoryPolicyRequest&, const Model::SetRepositoryPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetRepositoryPolicyResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::StartImageScanRequest&, const Model::StartImageScanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImageScanResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::StartLifecyclePolicyPreviewRequest&, const Model::StartLifecyclePolicyPreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartLifecyclePolicyPreviewResponseReceivedHandler;
@@ -214,12 +229,12 @@ namespace Model
 
   /**
    * <fullname>Amazon Elastic Container Registry</fullname> <p>Amazon Elastic
-   * Container Registry (Amazon ECR) is a managed Docker registry service. Customers
-   * can use the familiar Docker CLI to push, pull, and manage images. Amazon ECR
-   * provides a secure, scalable, and reliable registry. Amazon ECR supports private
-   * Docker repositories with resource-based permissions using IAM so that specific
-   * users or Amazon EC2 instances can access repositories and images. Developers can
-   * use the Docker CLI to author and manage images.</p>
+   * Container Registry (Amazon ECR) is a managed container image registry service.
+   * Customers can use the familiar Docker CLI, or their preferred client, to push,
+   * pull, and manage images. Amazon ECR provides a secure, scalable, and reliable
+   * registry for your Docker or Open Container Initiative (OCI) images. Amazon ECR
+   * supports private repositories with resource-based permissions using IAM so that
+   * specific users or Amazon EC2 instances can access repositories and images.</p>
    */
   class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient
   {
@@ -247,19 +262,15 @@ namespace Model
 
         virtual ~ECRClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "ECR"; }
-
 
         /**
          * <p>Checks the availability of one or more image layers in a repository.</p>
          * <p>When an image is pushed to a repository, each image layer is checked to
-         * verify if it has been uploaded before. If it is, then the image layer is
-         * skipped.</p> <p>When an image is pulled from a repository, each image layer is
-         * checked once to verify it is available to be pulled.</p> <note> <p>This
-         * operation is used by the Amazon ECR proxy, and it is not intended for general
-         * use by customers for pulling and pushing images. In most cases, you should use
-         * the <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * verify if it has been uploaded before. If it has been uploaded, then the image
+         * layer is skipped.</p>  <p>This operation is used by the Amazon ECR proxy
+         * and is not generally used by customers for pulling and pushing images. In most
+         * cases, you should use the <code>docker</code> CLI to pull, tag, and push
+         * images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability">AWS
          * API Reference</a></p>
          */
@@ -268,13 +279,11 @@ namespace Model
         /**
          * <p>Checks the availability of one or more image layers in a repository.</p>
          * <p>When an image is pushed to a repository, each image layer is checked to
-         * verify if it has been uploaded before. If it is, then the image layer is
-         * skipped.</p> <p>When an image is pulled from a repository, each image layer is
-         * checked once to verify it is available to be pulled.</p> <note> <p>This
-         * operation is used by the Amazon ECR proxy, and it is not intended for general
-         * use by customers for pulling and pushing images. In most cases, you should use
-         * the <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * verify if it has been uploaded before. If it has been uploaded, then the image
+         * layer is skipped.</p>  <p>This operation is used by the Amazon ECR proxy
+         * and is not generally used by customers for pulling and pushing images. In most
+         * cases, you should use the <code>docker</code> CLI to pull, tag, and push
+         * images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability">AWS
          * API Reference</a></p>
          *
@@ -285,13 +294,11 @@ namespace Model
         /**
          * <p>Checks the availability of one or more image layers in a repository.</p>
          * <p>When an image is pushed to a repository, each image layer is checked to
-         * verify if it has been uploaded before. If it is, then the image layer is
-         * skipped.</p> <p>When an image is pulled from a repository, each image layer is
-         * checked once to verify it is available to be pulled.</p> <note> <p>This
-         * operation is used by the Amazon ECR proxy, and it is not intended for general
-         * use by customers for pulling and pushing images. In most cases, you should use
-         * the <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * verify if it has been uploaded before. If it has been uploaded, then the image
+         * layer is skipped.</p>  <p>This operation is used by the Amazon ECR proxy
+         * and is not generally used by customers for pulling and pushing images. In most
+         * cases, you should use the <code>docker</code> CLI to pull, tag, and push
+         * images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability">AWS
          * API Reference</a></p>
          *
@@ -378,10 +385,10 @@ namespace Model
          * registry, repository name, and upload ID. You can optionally provide a
          * <code>sha256</code> digest of the image layer for data validation purposes.</p>
          * <p>When an image is pushed, the CompleteLayerUpload API is called once per each
-         * new image layer to verify that the upload has completed.</p> <note> <p>This
-         * operation is used by the Amazon ECR proxy, and it is not intended for general
-         * use by customers for pulling and pushing images. In most cases, you should use
-         * the <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
+         * new image layer to verify that the upload has completed.</p>  <p>This
+         * operation is used by the Amazon ECR proxy and is not generally used by customers
+         * for pulling and pushing images. In most cases, you should use the
+         * <code>docker</code> CLI to pull, tag, and push images.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">AWS
          * API Reference</a></p>
@@ -393,10 +400,10 @@ namespace Model
          * registry, repository name, and upload ID. You can optionally provide a
          * <code>sha256</code> digest of the image layer for data validation purposes.</p>
          * <p>When an image is pushed, the CompleteLayerUpload API is called once per each
-         * new image layer to verify that the upload has completed.</p> <note> <p>This
-         * operation is used by the Amazon ECR proxy, and it is not intended for general
-         * use by customers for pulling and pushing images. In most cases, you should use
-         * the <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
+         * new image layer to verify that the upload has completed.</p>  <p>This
+         * operation is used by the Amazon ECR proxy and is not generally used by customers
+         * for pulling and pushing images. In most cases, you should use the
+         * <code>docker</code> CLI to pull, tag, and push images.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">AWS
          * API Reference</a></p>
@@ -410,10 +417,10 @@ namespace Model
          * registry, repository name, and upload ID. You can optionally provide a
          * <code>sha256</code> digest of the image layer for data validation purposes.</p>
          * <p>When an image is pushed, the CompleteLayerUpload API is called once per each
-         * new image layer to verify that the upload has completed.</p> <note> <p>This
-         * operation is used by the Amazon ECR proxy, and it is not intended for general
-         * use by customers for pulling and pushing images. In most cases, you should use
-         * the <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
+         * new image layer to verify that the upload has completed.</p>  <p>This
+         * operation is used by the Amazon ECR proxy and is not generally used by customers
+         * for pulling and pushing images. In most cases, you should use the
+         * <code>docker</code> CLI to pull, tag, and push images.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">AWS
          * API Reference</a></p>
@@ -483,6 +490,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteLifecyclePolicyAsync(const Model::DeleteLifecyclePolicyRequest& request, const DeleteLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the registry permissions policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRegistryPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRegistryPolicyOutcome DeleteRegistryPolicy(const Model::DeleteRegistryPolicyRequest& request) const;
+
+        /**
+         * <p>Deletes the registry permissions policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRegistryPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteRegistryPolicyOutcomeCallable DeleteRegistryPolicyCallable(const Model::DeleteRegistryPolicyRequest& request) const;
+
+        /**
+         * <p>Deletes the registry permissions policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRegistryPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteRegistryPolicyAsync(const Model::DeleteRegistryPolicyRequest& request, const DeleteRegistryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a repository. If the repository contains images, you must either
@@ -572,24 +604,24 @@ namespace Model
         virtual void DescribeImageScanFindingsAsync(const Model::DescribeImageScanFindingsRequest& request, const DescribeImageScanFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns metadata about the images in a repository.</p> <note> <p>Beginning
+         * <p>Returns metadata about the images in a repository.</p>  <p>Beginning
          * with Docker version 1.9, the Docker client compresses image layers before
          * pushing them to a V2 Docker registry. The output of the <code>docker
          * images</code> command shows the uncompressed image size, so it may return a
          * larger image size than the image sizes returned by <a>DescribeImages</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeImagesOutcome DescribeImages(const Model::DescribeImagesRequest& request) const;
 
         /**
-         * <p>Returns metadata about the images in a repository.</p> <note> <p>Beginning
+         * <p>Returns metadata about the images in a repository.</p>  <p>Beginning
          * with Docker version 1.9, the Docker client compresses image layers before
          * pushing them to a V2 Docker registry. The output of the <code>docker
          * images</code> command shows the uncompressed image size, so it may return a
          * larger image size than the image sizes returned by <a>DescribeImages</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages">AWS
          * API Reference</a></p>
          *
@@ -598,18 +630,49 @@ namespace Model
         virtual Model::DescribeImagesOutcomeCallable DescribeImagesCallable(const Model::DescribeImagesRequest& request) const;
 
         /**
-         * <p>Returns metadata about the images in a repository.</p> <note> <p>Beginning
+         * <p>Returns metadata about the images in a repository.</p>  <p>Beginning
          * with Docker version 1.9, the Docker client compresses image layers before
          * pushing them to a V2 Docker registry. The output of the <code>docker
          * images</code> command shows the uncompressed image size, so it may return a
          * larger image size than the image sizes returned by <a>DescribeImages</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeImagesAsync(const Model::DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the settings for a registry. The replication configuration for a
+         * repository can be created or updated with the <a>PutReplicationConfiguration</a>
+         * API action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRegistry">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRegistryOutcome DescribeRegistry(const Model::DescribeRegistryRequest& request) const;
+
+        /**
+         * <p>Describes the settings for a registry. The replication configuration for a
+         * repository can be created or updated with the <a>PutReplicationConfiguration</a>
+         * API action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRegistry">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeRegistryOutcomeCallable DescribeRegistryCallable(const Model::DescribeRegistryRequest& request) const;
+
+        /**
+         * <p>Describes the settings for a registry. The replication configuration for a
+         * repository can be created or updated with the <a>PutReplicationConfiguration</a>
+         * API action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRegistry">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeRegistryAsync(const Model::DescribeRegistryRequest& request, const DescribeRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes image repositories in a registry.</p><p><h3>See Also:</h3>   <a
@@ -695,10 +758,10 @@ namespace Model
          * <p>Retrieves the pre-signed Amazon S3 download URL corresponding to an image
          * layer. You can only get URLs for image layers that are referenced in an
          * image.</p> <p>When an image is pulled, the GetDownloadUrlForLayer API is called
-         * once per image layer.</p> <note> <p>This operation is used by the Amazon ECR
-         * proxy, and it is not intended for general use by customers for pulling and
-         * pushing images. In most cases, you should use the <code>docker</code> CLI to
-         * pull, tag, and push images.</p> </note><p><h3>See Also:</h3>   <a
+         * once per image layer that is not already cached.</p>  <p>This operation is
+         * used by the Amazon ECR proxy and is not generally used by customers for pulling
+         * and pushing images. In most cases, you should use the <code>docker</code> CLI to
+         * pull, tag, and push images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer">AWS
          * API Reference</a></p>
          */
@@ -708,10 +771,10 @@ namespace Model
          * <p>Retrieves the pre-signed Amazon S3 download URL corresponding to an image
          * layer. You can only get URLs for image layers that are referenced in an
          * image.</p> <p>When an image is pulled, the GetDownloadUrlForLayer API is called
-         * once per image layer.</p> <note> <p>This operation is used by the Amazon ECR
-         * proxy, and it is not intended for general use by customers for pulling and
-         * pushing images. In most cases, you should use the <code>docker</code> CLI to
-         * pull, tag, and push images.</p> </note><p><h3>See Also:</h3>   <a
+         * once per image layer that is not already cached.</p>  <p>This operation is
+         * used by the Amazon ECR proxy and is not generally used by customers for pulling
+         * and pushing images. In most cases, you should use the <code>docker</code> CLI to
+         * pull, tag, and push images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer">AWS
          * API Reference</a></p>
          *
@@ -723,10 +786,10 @@ namespace Model
          * <p>Retrieves the pre-signed Amazon S3 download URL corresponding to an image
          * layer. You can only get URLs for image layers that are referenced in an
          * image.</p> <p>When an image is pulled, the GetDownloadUrlForLayer API is called
-         * once per image layer.</p> <note> <p>This operation is used by the Amazon ECR
-         * proxy, and it is not intended for general use by customers for pulling and
-         * pushing images. In most cases, you should use the <code>docker</code> CLI to
-         * pull, tag, and push images.</p> </note><p><h3>See Also:</h3>   <a
+         * once per image layer that is not already cached.</p>  <p>This operation is
+         * used by the Amazon ECR proxy and is not generally used by customers for pulling
+         * and pushing images. In most cases, you should use the <code>docker</code> CLI to
+         * pull, tag, and push images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer">AWS
          * API Reference</a></p>
          *
@@ -791,6 +854,34 @@ namespace Model
         virtual void GetLifecyclePolicyPreviewAsync(const Model::GetLifecyclePolicyPreviewRequest& request, const GetLifecyclePolicyPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the permissions policy for a registry.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRegistryPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRegistryPolicyOutcome GetRegistryPolicy(const Model::GetRegistryPolicyRequest& request) const;
+
+        /**
+         * <p>Retrieves the permissions policy for a registry.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRegistryPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetRegistryPolicyOutcomeCallable GetRegistryPolicyCallable(const Model::GetRegistryPolicyRequest& request) const;
+
+        /**
+         * <p>Retrieves the permissions policy for a registry.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRegistryPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetRegistryPolicyAsync(const Model::GetRegistryPolicyRequest& request, const GetRegistryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves the repository policy for the specified repository.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy">AWS
@@ -821,12 +912,12 @@ namespace Model
         /**
          * <p>Notifies Amazon ECR that you intend to upload an image layer.</p> <p>When an
          * image is pushed, the InitiateLayerUpload API is called once per image layer that
-         * has not already been uploaded. Whether an image layer has been uploaded before
-         * is determined by the <a>BatchCheckLayerAvailability</a> API action.</p> <note>
-         * <p>This operation is used by the Amazon ECR proxy, and it is not intended for
-         * general use by customers for pulling and pushing images. In most cases, you
-         * should use the <code>docker</code> CLI to pull, tag, and push images.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * has not already been uploaded. Whether or not an image layer has been uploaded
+         * is determined by the BatchCheckLayerAvailability API action.</p>  <p>This
+         * operation is used by the Amazon ECR proxy and is not generally used by customers
+         * for pulling and pushing images. In most cases, you should use the
+         * <code>docker</code> CLI to pull, tag, and push images.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload">AWS
          * API Reference</a></p>
          */
@@ -835,12 +926,12 @@ namespace Model
         /**
          * <p>Notifies Amazon ECR that you intend to upload an image layer.</p> <p>When an
          * image is pushed, the InitiateLayerUpload API is called once per image layer that
-         * has not already been uploaded. Whether an image layer has been uploaded before
-         * is determined by the <a>BatchCheckLayerAvailability</a> API action.</p> <note>
-         * <p>This operation is used by the Amazon ECR proxy, and it is not intended for
-         * general use by customers for pulling and pushing images. In most cases, you
-         * should use the <code>docker</code> CLI to pull, tag, and push images.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * has not already been uploaded. Whether or not an image layer has been uploaded
+         * is determined by the BatchCheckLayerAvailability API action.</p>  <p>This
+         * operation is used by the Amazon ECR proxy and is not generally used by customers
+         * for pulling and pushing images. In most cases, you should use the
+         * <code>docker</code> CLI to pull, tag, and push images.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload">AWS
          * API Reference</a></p>
          *
@@ -851,12 +942,12 @@ namespace Model
         /**
          * <p>Notifies Amazon ECR that you intend to upload an image layer.</p> <p>When an
          * image is pushed, the InitiateLayerUpload API is called once per image layer that
-         * has not already been uploaded. Whether an image layer has been uploaded before
-         * is determined by the <a>BatchCheckLayerAvailability</a> API action.</p> <note>
-         * <p>This operation is used by the Amazon ECR proxy, and it is not intended for
-         * general use by customers for pulling and pushing images. In most cases, you
-         * should use the <code>docker</code> CLI to pull, tag, and push images.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * has not already been uploaded. Whether or not an image layer has been uploaded
+         * is determined by the BatchCheckLayerAvailability API action.</p>  <p>This
+         * operation is used by the Amazon ECR proxy and is not generally used by customers
+         * for pulling and pushing images. In most cases, you should use the
+         * <code>docker</code> CLI to pull, tag, and push images.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload">AWS
          * API Reference</a></p>
          *
@@ -938,11 +1029,11 @@ namespace Model
         /**
          * <p>Creates or updates the image manifest and tags associated with an image.</p>
          * <p>When an image is pushed and all new image layers have been uploaded, the
-         * PutImage API is called once to create or update the image manifest and tags
-         * associated with the image.</p> <note> <p>This operation is used by the Amazon
-         * ECR proxy, and it is not intended for general use by customers for pulling and
-         * pushing images. In most cases, you should use the <code>docker</code> CLI to
-         * pull, tag, and push images.</p> </note><p><h3>See Also:</h3>   <a
+         * PutImage API is called once to create or update the image manifest and the tags
+         * associated with the image.</p>  <p>This operation is used by the Amazon
+         * ECR proxy and is not generally used by customers for pulling and pushing images.
+         * In most cases, you should use the <code>docker</code> CLI to pull, tag, and push
+         * images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage">AWS API
          * Reference</a></p>
          */
@@ -951,11 +1042,11 @@ namespace Model
         /**
          * <p>Creates or updates the image manifest and tags associated with an image.</p>
          * <p>When an image is pushed and all new image layers have been uploaded, the
-         * PutImage API is called once to create or update the image manifest and tags
-         * associated with the image.</p> <note> <p>This operation is used by the Amazon
-         * ECR proxy, and it is not intended for general use by customers for pulling and
-         * pushing images. In most cases, you should use the <code>docker</code> CLI to
-         * pull, tag, and push images.</p> </note><p><h3>See Also:</h3>   <a
+         * PutImage API is called once to create or update the image manifest and the tags
+         * associated with the image.</p>  <p>This operation is used by the Amazon
+         * ECR proxy and is not generally used by customers for pulling and pushing images.
+         * In most cases, you should use the <code>docker</code> CLI to pull, tag, and push
+         * images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage">AWS API
          * Reference</a></p>
          *
@@ -966,11 +1057,11 @@ namespace Model
         /**
          * <p>Creates or updates the image manifest and tags associated with an image.</p>
          * <p>When an image is pushed and all new image layers have been uploaded, the
-         * PutImage API is called once to create or update the image manifest and tags
-         * associated with the image.</p> <note> <p>This operation is used by the Amazon
-         * ECR proxy, and it is not intended for general use by customers for pulling and
-         * pushing images. In most cases, you should use the <code>docker</code> CLI to
-         * pull, tag, and push images.</p> </note><p><h3>See Also:</h3>   <a
+         * PutImage API is called once to create or update the image manifest and the tags
+         * associated with the image.</p>  <p>This operation is used by the Amazon
+         * ECR proxy and is not generally used by customers for pulling and pushing images.
+         * In most cases, you should use the <code>docker</code> CLI to pull, tag, and push
+         * images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage">AWS API
          * Reference</a></p>
          *
@@ -1078,9 +1169,107 @@ namespace Model
         virtual void PutLifecyclePolicyAsync(const Model::PutLifecyclePolicyRequest& request, const PutLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates or updates the permissions policy for your registry.</p> <p>A
+         * registry policy is used to specify permissions for another AWS account and is
+         * used when configuring cross-account replication. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry
+         * permissions</a> in the <i>Amazon Elastic Container Registry User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutRegistryPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutRegistryPolicyOutcome PutRegistryPolicy(const Model::PutRegistryPolicyRequest& request) const;
+
+        /**
+         * <p>Creates or updates the permissions policy for your registry.</p> <p>A
+         * registry policy is used to specify permissions for another AWS account and is
+         * used when configuring cross-account replication. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry
+         * permissions</a> in the <i>Amazon Elastic Container Registry User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutRegistryPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutRegistryPolicyOutcomeCallable PutRegistryPolicyCallable(const Model::PutRegistryPolicyRequest& request) const;
+
+        /**
+         * <p>Creates or updates the permissions policy for your registry.</p> <p>A
+         * registry policy is used to specify permissions for another AWS account and is
+         * used when configuring cross-account replication. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry
+         * permissions</a> in the <i>Amazon Elastic Container Registry User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutRegistryPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutRegistryPolicyAsync(const Model::PutRegistryPolicyRequest& request, const PutRegistryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates or updates the replication configuration for a registry. The existing
+         * replication configuration for a repository can be retrieved with the
+         * <a>DescribeRegistry</a> API action. The first time the
+         * PutReplicationConfiguration API is called, a service-linked IAM role is created
+         * in your account for the replication process. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/using-service-linked-roles.html">Using
+         * Service-Linked Roles for Amazon ECR</a> in the <i>Amazon Elastic Container
+         * Registry User Guide</i>.</p>  <p>When configuring cross-account
+         * replication, the destination account must grant the source account permission to
+         * replicate. This permission is controlled using a registry permissions policy.
+         * For more information, see <a>PutRegistryPolicy</a>.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutReplicationConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutReplicationConfigurationOutcome PutReplicationConfiguration(const Model::PutReplicationConfigurationRequest& request) const;
+
+        /**
+         * <p>Creates or updates the replication configuration for a registry. The existing
+         * replication configuration for a repository can be retrieved with the
+         * <a>DescribeRegistry</a> API action. The first time the
+         * PutReplicationConfiguration API is called, a service-linked IAM role is created
+         * in your account for the replication process. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/using-service-linked-roles.html">Using
+         * Service-Linked Roles for Amazon ECR</a> in the <i>Amazon Elastic Container
+         * Registry User Guide</i>.</p>  <p>When configuring cross-account
+         * replication, the destination account must grant the source account permission to
+         * replicate. This permission is controlled using a registry permissions policy.
+         * For more information, see <a>PutRegistryPolicy</a>.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutReplicationConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutReplicationConfigurationOutcomeCallable PutReplicationConfigurationCallable(const Model::PutReplicationConfigurationRequest& request) const;
+
+        /**
+         * <p>Creates or updates the replication configuration for a registry. The existing
+         * replication configuration for a repository can be retrieved with the
+         * <a>DescribeRegistry</a> API action. The first time the
+         * PutReplicationConfiguration API is called, a service-linked IAM role is created
+         * in your account for the replication process. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/using-service-linked-roles.html">Using
+         * Service-Linked Roles for Amazon ECR</a> in the <i>Amazon Elastic Container
+         * Registry User Guide</i>.</p>  <p>When configuring cross-account
+         * replication, the destination account must grant the source account permission to
+         * replicate. This permission is controlled using a registry permissions policy.
+         * For more information, see <a>PutRegistryPolicy</a>.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutReplicationConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutReplicationConfigurationAsync(const Model::PutReplicationConfigurationRequest& request, const PutReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Applies a repository policy to the specified repository to control access
          * permissions. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policies.html">Amazon
          * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy">AWS
@@ -1091,7 +1280,7 @@ namespace Model
         /**
          * <p>Applies a repository policy to the specified repository to control access
          * permissions. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policies.html">Amazon
          * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy">AWS
@@ -1104,7 +1293,7 @@ namespace Model
         /**
          * <p>Applies a repository policy to the specified repository to control access
          * permissions. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policies.html">Amazon
          * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy">AWS
@@ -1245,11 +1434,10 @@ namespace Model
          * <p>Uploads an image layer part to Amazon ECR.</p> <p>When an image is pushed,
          * each new image layer is uploaded in parts. The maximum size of each image layer
          * part can be 20971520 bytes (or about 20MB). The UploadLayerPart API is called
-         * once per each new image layer part.</p> <note> <p>This operation is used by the
-         * Amazon ECR proxy, and it is not intended for general use by customers for
-         * pulling and pushing images. In most cases, you should use the
-         * <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * once per each new image layer part.</p>  <p>This operation is used by the
+         * Amazon ECR proxy and is not generally used by customers for pulling and pushing
+         * images. In most cases, you should use the <code>docker</code> CLI to pull, tag,
+         * and push images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart">AWS
          * API Reference</a></p>
          */
@@ -1259,11 +1447,10 @@ namespace Model
          * <p>Uploads an image layer part to Amazon ECR.</p> <p>When an image is pushed,
          * each new image layer is uploaded in parts. The maximum size of each image layer
          * part can be 20971520 bytes (or about 20MB). The UploadLayerPart API is called
-         * once per each new image layer part.</p> <note> <p>This operation is used by the
-         * Amazon ECR proxy, and it is not intended for general use by customers for
-         * pulling and pushing images. In most cases, you should use the
-         * <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * once per each new image layer part.</p>  <p>This operation is used by the
+         * Amazon ECR proxy and is not generally used by customers for pulling and pushing
+         * images. In most cases, you should use the <code>docker</code> CLI to pull, tag,
+         * and push images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart">AWS
          * API Reference</a></p>
          *
@@ -1275,11 +1462,10 @@ namespace Model
          * <p>Uploads an image layer part to Amazon ECR.</p> <p>When an image is pushed,
          * each new image layer is uploaded in parts. The maximum size of each image layer
          * part can be 20971520 bytes (or about 20MB). The UploadLayerPart API is called
-         * once per each new image layer part.</p> <note> <p>This operation is used by the
-         * Amazon ECR proxy, and it is not intended for general use by customers for
-         * pulling and pushing images. In most cases, you should use the
-         * <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * once per each new image layer part.</p>  <p>This operation is used by the
+         * Amazon ECR proxy and is not generally used by customers for pulling and pushing
+         * images. In most cases, you should use the <code>docker</code> CLI to pull, tag,
+         * and push images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart">AWS
          * API Reference</a></p>
          *
@@ -1297,15 +1483,18 @@ namespace Model
         void CompleteLayerUploadAsyncHelper(const Model::CompleteLayerUploadRequest& request, const CompleteLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRepositoryAsyncHelper(const Model::CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteLifecyclePolicyAsyncHelper(const Model::DeleteLifecyclePolicyRequest& request, const DeleteLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteRegistryPolicyAsyncHelper(const Model::DeleteRegistryPolicyRequest& request, const DeleteRegistryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRepositoryAsyncHelper(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRepositoryPolicyAsyncHelper(const Model::DeleteRepositoryPolicyRequest& request, const DeleteRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeImageScanFindingsAsyncHelper(const Model::DescribeImageScanFindingsRequest& request, const DescribeImageScanFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeImagesAsyncHelper(const Model::DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeRegistryAsyncHelper(const Model::DescribeRegistryRequest& request, const DescribeRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRepositoriesAsyncHelper(const Model::DescribeRepositoriesRequest& request, const DescribeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAuthorizationTokenAsyncHelper(const Model::GetAuthorizationTokenRequest& request, const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDownloadUrlForLayerAsyncHelper(const Model::GetDownloadUrlForLayerRequest& request, const GetDownloadUrlForLayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLifecyclePolicyAsyncHelper(const Model::GetLifecyclePolicyRequest& request, const GetLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLifecyclePolicyPreviewAsyncHelper(const Model::GetLifecyclePolicyPreviewRequest& request, const GetLifecyclePolicyPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetRegistryPolicyAsyncHelper(const Model::GetRegistryPolicyRequest& request, const GetRegistryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRepositoryPolicyAsyncHelper(const Model::GetRepositoryPolicyRequest& request, const GetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InitiateLayerUploadAsyncHelper(const Model::InitiateLayerUploadRequest& request, const InitiateLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListImagesAsyncHelper(const Model::ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1314,6 +1503,8 @@ namespace Model
         void PutImageScanningConfigurationAsyncHelper(const Model::PutImageScanningConfigurationRequest& request, const PutImageScanningConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutImageTagMutabilityAsyncHelper(const Model::PutImageTagMutabilityRequest& request, const PutImageTagMutabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLifecyclePolicyAsyncHelper(const Model::PutLifecyclePolicyRequest& request, const PutLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutRegistryPolicyAsyncHelper(const Model::PutRegistryPolicyRequest& request, const PutRegistryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutReplicationConfigurationAsyncHelper(const Model::PutReplicationConfigurationRequest& request, const PutReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetRepositoryPolicyAsyncHelper(const Model::SetRepositoryPolicyRequest& request, const SetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartImageScanAsyncHelper(const Model::StartImageScanRequest& request, const StartImageScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartLifecyclePolicyPreviewAsyncHelper(const Model::StartLifecyclePolicyPreviewRequest& request, const StartLifecyclePolicyPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

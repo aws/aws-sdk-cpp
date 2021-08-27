@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
@@ -21,6 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediapackage/model/ConfigureLogsResult.h>
 #include <aws/mediapackage/model/CreateChannelResult.h>
 #include <aws/mediapackage/model/CreateHarvestJobResult.h>
 #include <aws/mediapackage/model/CreateOriginEndpointResult.h>
@@ -76,6 +67,7 @@ namespace MediaPackage
 
 namespace Model
 {
+        class ConfigureLogsRequest;
         class CreateChannelRequest;
         class CreateHarvestJobRequest;
         class CreateOriginEndpointRequest;
@@ -94,24 +86,26 @@ namespace Model
         class UpdateChannelRequest;
         class UpdateOriginEndpointRequest;
 
-        typedef Aws::Utils::Outcome<CreateChannelResult, Aws::Client::AWSError<MediaPackageErrors>> CreateChannelOutcome;
-        typedef Aws::Utils::Outcome<CreateHarvestJobResult, Aws::Client::AWSError<MediaPackageErrors>> CreateHarvestJobOutcome;
-        typedef Aws::Utils::Outcome<CreateOriginEndpointResult, Aws::Client::AWSError<MediaPackageErrors>> CreateOriginEndpointOutcome;
-        typedef Aws::Utils::Outcome<DeleteChannelResult, Aws::Client::AWSError<MediaPackageErrors>> DeleteChannelOutcome;
-        typedef Aws::Utils::Outcome<DeleteOriginEndpointResult, Aws::Client::AWSError<MediaPackageErrors>> DeleteOriginEndpointOutcome;
-        typedef Aws::Utils::Outcome<DescribeChannelResult, Aws::Client::AWSError<MediaPackageErrors>> DescribeChannelOutcome;
-        typedef Aws::Utils::Outcome<DescribeHarvestJobResult, Aws::Client::AWSError<MediaPackageErrors>> DescribeHarvestJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeOriginEndpointResult, Aws::Client::AWSError<MediaPackageErrors>> DescribeOriginEndpointOutcome;
-        typedef Aws::Utils::Outcome<ListChannelsResult, Aws::Client::AWSError<MediaPackageErrors>> ListChannelsOutcome;
-        typedef Aws::Utils::Outcome<ListHarvestJobsResult, Aws::Client::AWSError<MediaPackageErrors>> ListHarvestJobsOutcome;
-        typedef Aws::Utils::Outcome<ListOriginEndpointsResult, Aws::Client::AWSError<MediaPackageErrors>> ListOriginEndpointsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<MediaPackageErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<RotateIngestEndpointCredentialsResult, Aws::Client::AWSError<MediaPackageErrors>> RotateIngestEndpointCredentialsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MediaPackageErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MediaPackageErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateChannelResult, Aws::Client::AWSError<MediaPackageErrors>> UpdateChannelOutcome;
-        typedef Aws::Utils::Outcome<UpdateOriginEndpointResult, Aws::Client::AWSError<MediaPackageErrors>> UpdateOriginEndpointOutcome;
+        typedef Aws::Utils::Outcome<ConfigureLogsResult, MediaPackageError> ConfigureLogsOutcome;
+        typedef Aws::Utils::Outcome<CreateChannelResult, MediaPackageError> CreateChannelOutcome;
+        typedef Aws::Utils::Outcome<CreateHarvestJobResult, MediaPackageError> CreateHarvestJobOutcome;
+        typedef Aws::Utils::Outcome<CreateOriginEndpointResult, MediaPackageError> CreateOriginEndpointOutcome;
+        typedef Aws::Utils::Outcome<DeleteChannelResult, MediaPackageError> DeleteChannelOutcome;
+        typedef Aws::Utils::Outcome<DeleteOriginEndpointResult, MediaPackageError> DeleteOriginEndpointOutcome;
+        typedef Aws::Utils::Outcome<DescribeChannelResult, MediaPackageError> DescribeChannelOutcome;
+        typedef Aws::Utils::Outcome<DescribeHarvestJobResult, MediaPackageError> DescribeHarvestJobOutcome;
+        typedef Aws::Utils::Outcome<DescribeOriginEndpointResult, MediaPackageError> DescribeOriginEndpointOutcome;
+        typedef Aws::Utils::Outcome<ListChannelsResult, MediaPackageError> ListChannelsOutcome;
+        typedef Aws::Utils::Outcome<ListHarvestJobsResult, MediaPackageError> ListHarvestJobsOutcome;
+        typedef Aws::Utils::Outcome<ListOriginEndpointsResult, MediaPackageError> ListOriginEndpointsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, MediaPackageError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<RotateIngestEndpointCredentialsResult, MediaPackageError> RotateIngestEndpointCredentialsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, MediaPackageError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, MediaPackageError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateChannelResult, MediaPackageError> UpdateChannelOutcome;
+        typedef Aws::Utils::Outcome<UpdateOriginEndpointResult, MediaPackageError> UpdateOriginEndpointOutcome;
 
+        typedef std::future<ConfigureLogsOutcome> ConfigureLogsOutcomeCallable;
         typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
         typedef std::future<CreateHarvestJobOutcome> CreateHarvestJobOutcomeCallable;
         typedef std::future<CreateOriginEndpointOutcome> CreateOriginEndpointOutcomeCallable;
@@ -133,6 +127,7 @@ namespace Model
 
   class MediaPackageClient;
 
+    typedef std::function<void(const MediaPackageClient*, const Model::ConfigureLogsRequest&, const Model::ConfigureLogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfigureLogsResponseReceivedHandler;
     typedef std::function<void(const MediaPackageClient*, const Model::CreateChannelRequest&, const Model::CreateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelResponseReceivedHandler;
     typedef std::function<void(const MediaPackageClient*, const Model::CreateHarvestJobRequest&, const Model::CreateHarvestJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHarvestJobResponseReceivedHandler;
     typedef std::function<void(const MediaPackageClient*, const Model::CreateOriginEndpointRequest&, const Model::CreateOriginEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateOriginEndpointResponseReceivedHandler;
@@ -180,8 +175,34 @@ namespace Model
 
         virtual ~MediaPackageClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "MediaPackage"; }
 
+        /**
+         * Changes the Channel's properities to configure log subscription<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ConfigureLogs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ConfigureLogsOutcome ConfigureLogs(const Model::ConfigureLogsRequest& request) const;
+
+        /**
+         * Changes the Channel's properities to configure log subscription<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ConfigureLogs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ConfigureLogsOutcomeCallable ConfigureLogsCallable(const Model::ConfigureLogsRequest& request) const;
+
+        /**
+         * Changes the Channel's properities to configure log subscription<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ConfigureLogs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ConfigureLogsAsync(const Model::ConfigureLogsRequest& request, const ConfigureLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Creates a new Channel.<p><h3>See Also:</h3>   <a
@@ -597,6 +618,7 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void ConfigureLogsAsyncHelper(const Model::ConfigureLogsRequest& request, const ConfigureLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateChannelAsyncHelper(const Model::CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateHarvestJobAsyncHelper(const Model::CreateHarvestJobRequest& request, const CreateHarvestJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateOriginEndpointAsyncHelper(const Model::CreateOriginEndpointRequest& request, const CreateOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

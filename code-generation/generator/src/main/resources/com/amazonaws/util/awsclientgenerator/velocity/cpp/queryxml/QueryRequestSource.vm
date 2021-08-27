@@ -33,7 +33,12 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #set($memberVarName = $CppViewHelper.computeMemberVariableName($member.key))
 #set($varName = $CppViewHelper.computeVariableName($member.key))
 #set($spaces = '')
-#if($member.value.usedForPayload)
+#if(!$member.value.usedForPayload || ($shape.hasPreSignedUrl && $member.key.equals("SourceRegion")))
+#set($shouldSkipSerialize = true)
+#else
+#set($shouldSkipSerialize = false)
+#end
+#if(!$shouldSkipSerialize)
 #if(!$member.value.required)
   if(${memberVarName}HasBeenSet)
   {
@@ -184,7 +189,6 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 
 #if($shape.hasQueryStringMembers())
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/AddQueryStringParametersToRequest.vm")
-
 #end
 
 #if($shape.supportsPresigning)

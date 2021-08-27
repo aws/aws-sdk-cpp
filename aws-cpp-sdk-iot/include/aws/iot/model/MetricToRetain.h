@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -91,32 +81,32 @@ namespace Model
 
 
     /**
-     * <p>The dimension of a metric.</p>
+     * <p>The dimension of a metric. This can't be used with custom metrics.</p>
      */
     inline const MetricDimension& GetMetricDimension() const{ return m_metricDimension; }
 
     /**
-     * <p>The dimension of a metric.</p>
+     * <p>The dimension of a metric. This can't be used with custom metrics.</p>
      */
     inline bool MetricDimensionHasBeenSet() const { return m_metricDimensionHasBeenSet; }
 
     /**
-     * <p>The dimension of a metric.</p>
+     * <p>The dimension of a metric. This can't be used with custom metrics.</p>
      */
     inline void SetMetricDimension(const MetricDimension& value) { m_metricDimensionHasBeenSet = true; m_metricDimension = value; }
 
     /**
-     * <p>The dimension of a metric.</p>
+     * <p>The dimension of a metric. This can't be used with custom metrics.</p>
      */
     inline void SetMetricDimension(MetricDimension&& value) { m_metricDimensionHasBeenSet = true; m_metricDimension = std::move(value); }
 
     /**
-     * <p>The dimension of a metric.</p>
+     * <p>The dimension of a metric. This can't be used with custom metrics.</p>
      */
     inline MetricToRetain& WithMetricDimension(const MetricDimension& value) { SetMetricDimension(value); return *this;}
 
     /**
-     * <p>The dimension of a metric.</p>
+     * <p>The dimension of a metric. This can't be used with custom metrics.</p>
      */
     inline MetricToRetain& WithMetricDimension(MetricDimension&& value) { SetMetricDimension(std::move(value)); return *this;}
 

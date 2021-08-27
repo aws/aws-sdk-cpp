@@ -1,23 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/model/MultiplexProgramSettings.h>
 #include <aws/medialive/model/MultiplexProgramPacketIdentifiersMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/medialive/model/MultiplexProgramPipelineDetail.h>
 #include <utility>
 
 namespace Aws
@@ -139,6 +131,63 @@ namespace Model
 
 
     /**
+     * Contains information about the current sources for the specified program in the
+     * specified multiplex. Keep in mind that each multiplex pipeline connects to both
+     * pipelines in a given source channel (the channel identified by the program). But
+     * only one of those channel pipelines is ever active at one time.
+     */
+    inline const Aws::Vector<MultiplexProgramPipelineDetail>& GetPipelineDetails() const{ return m_pipelineDetails; }
+
+    /**
+     * Contains information about the current sources for the specified program in the
+     * specified multiplex. Keep in mind that each multiplex pipeline connects to both
+     * pipelines in a given source channel (the channel identified by the program). But
+     * only one of those channel pipelines is ever active at one time.
+     */
+    inline void SetPipelineDetails(const Aws::Vector<MultiplexProgramPipelineDetail>& value) { m_pipelineDetails = value; }
+
+    /**
+     * Contains information about the current sources for the specified program in the
+     * specified multiplex. Keep in mind that each multiplex pipeline connects to both
+     * pipelines in a given source channel (the channel identified by the program). But
+     * only one of those channel pipelines is ever active at one time.
+     */
+    inline void SetPipelineDetails(Aws::Vector<MultiplexProgramPipelineDetail>&& value) { m_pipelineDetails = std::move(value); }
+
+    /**
+     * Contains information about the current sources for the specified program in the
+     * specified multiplex. Keep in mind that each multiplex pipeline connects to both
+     * pipelines in a given source channel (the channel identified by the program). But
+     * only one of those channel pipelines is ever active at one time.
+     */
+    inline DescribeMultiplexProgramResult& WithPipelineDetails(const Aws::Vector<MultiplexProgramPipelineDetail>& value) { SetPipelineDetails(value); return *this;}
+
+    /**
+     * Contains information about the current sources for the specified program in the
+     * specified multiplex. Keep in mind that each multiplex pipeline connects to both
+     * pipelines in a given source channel (the channel identified by the program). But
+     * only one of those channel pipelines is ever active at one time.
+     */
+    inline DescribeMultiplexProgramResult& WithPipelineDetails(Aws::Vector<MultiplexProgramPipelineDetail>&& value) { SetPipelineDetails(std::move(value)); return *this;}
+
+    /**
+     * Contains information about the current sources for the specified program in the
+     * specified multiplex. Keep in mind that each multiplex pipeline connects to both
+     * pipelines in a given source channel (the channel identified by the program). But
+     * only one of those channel pipelines is ever active at one time.
+     */
+    inline DescribeMultiplexProgramResult& AddPipelineDetails(const MultiplexProgramPipelineDetail& value) { m_pipelineDetails.push_back(value); return *this; }
+
+    /**
+     * Contains information about the current sources for the specified program in the
+     * specified multiplex. Keep in mind that each multiplex pipeline connects to both
+     * pipelines in a given source channel (the channel identified by the program). But
+     * only one of those channel pipelines is ever active at one time.
+     */
+    inline DescribeMultiplexProgramResult& AddPipelineDetails(MultiplexProgramPipelineDetail&& value) { m_pipelineDetails.push_back(std::move(value)); return *this; }
+
+
+    /**
      * The name of the multiplex program.
      */
     inline const Aws::String& GetProgramName() const{ return m_programName; }
@@ -180,6 +229,8 @@ namespace Model
     MultiplexProgramSettings m_multiplexProgramSettings;
 
     MultiplexProgramPacketIdentifiersMap m_packetIdentifiersMap;
+
+    Aws::Vector<MultiplexProgramPipelineDetail> m_pipelineDetails;
 
     Aws::String m_programName;
   };

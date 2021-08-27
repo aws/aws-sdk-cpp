@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/imagebuilder/model/Image.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,6 +20,8 @@ namespace Model
 
 Image::Image() : 
     m_arnHasBeenSet(false),
+    m_type(ImageType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
@@ -39,6 +31,7 @@ Image::Image() :
     m_osVersionHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_imageRecipeHasBeenSet(false),
+    m_containerRecipeHasBeenSet(false),
     m_sourcePipelineNameHasBeenSet(false),
     m_sourcePipelineArnHasBeenSet(false),
     m_infrastructureConfigurationHasBeenSet(false),
@@ -52,6 +45,8 @@ Image::Image() :
 
 Image::Image(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_type(ImageType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
@@ -61,6 +56,7 @@ Image::Image(JsonView jsonValue) :
     m_osVersionHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_imageRecipeHasBeenSet(false),
+    m_containerRecipeHasBeenSet(false),
     m_sourcePipelineNameHasBeenSet(false),
     m_sourcePipelineArnHasBeenSet(false),
     m_infrastructureConfigurationHasBeenSet(false),
@@ -80,6 +76,13 @@ Image& Image::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = ImageTypeMapper::GetImageTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -129,6 +132,13 @@ Image& Image::operator =(JsonView jsonValue)
     m_imageRecipe = jsonValue.GetObject("imageRecipe");
 
     m_imageRecipeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("containerRecipe"))
+  {
+    m_containerRecipe = jsonValue.GetObject("containerRecipe");
+
+    m_containerRecipeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sourcePipelineName"))
@@ -203,6 +213,11 @@ JsonValue Image::Jsonize() const
 
   }
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", ImageTypeMapper::GetNameForImageType(m_type));
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
@@ -241,6 +256,12 @@ JsonValue Image::Jsonize() const
   if(m_imageRecipeHasBeenSet)
   {
    payload.WithObject("imageRecipe", m_imageRecipe.Jsonize());
+
+  }
+
+  if(m_containerRecipeHasBeenSet)
+  {
+   payload.WithObject("containerRecipe", m_containerRecipe.Jsonize());
 
   }
 

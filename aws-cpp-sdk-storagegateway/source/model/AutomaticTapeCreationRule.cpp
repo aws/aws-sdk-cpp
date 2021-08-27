@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/storagegateway/model/AutomaticTapeCreationRule.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,9 @@ AutomaticTapeCreationRule::AutomaticTapeCreationRule() :
     m_tapeSizeInBytes(0),
     m_tapeSizeInBytesHasBeenSet(false),
     m_minimumNumTapes(0),
-    m_minimumNumTapesHasBeenSet(false)
+    m_minimumNumTapesHasBeenSet(false),
+    m_worm(false),
+    m_wormHasBeenSet(false)
 {
 }
 
@@ -44,7 +36,9 @@ AutomaticTapeCreationRule::AutomaticTapeCreationRule(JsonView jsonValue) :
     m_tapeSizeInBytes(0),
     m_tapeSizeInBytesHasBeenSet(false),
     m_minimumNumTapes(0),
-    m_minimumNumTapesHasBeenSet(false)
+    m_minimumNumTapesHasBeenSet(false),
+    m_worm(false),
+    m_wormHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,6 +73,13 @@ AutomaticTapeCreationRule& AutomaticTapeCreationRule::operator =(JsonView jsonVa
     m_minimumNumTapesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Worm"))
+  {
+    m_worm = jsonValue.GetBool("Worm");
+
+    m_wormHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -107,6 +108,12 @@ JsonValue AutomaticTapeCreationRule::Jsonize() const
   if(m_minimumNumTapesHasBeenSet)
   {
    payload.WithInteger("MinimumNumTapes", m_minimumNumTapes);
+
+  }
+
+  if(m_wormHasBeenSet)
+  {
+   payload.WithBool("Worm", m_worm);
 
   }
 

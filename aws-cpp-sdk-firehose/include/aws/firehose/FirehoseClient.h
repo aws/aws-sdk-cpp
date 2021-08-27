@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
@@ -85,18 +75,18 @@ namespace Model
         class UntagDeliveryStreamRequest;
         class UpdateDestinationRequest;
 
-        typedef Aws::Utils::Outcome<CreateDeliveryStreamResult, Aws::Client::AWSError<FirehoseErrors>> CreateDeliveryStreamOutcome;
-        typedef Aws::Utils::Outcome<DeleteDeliveryStreamResult, Aws::Client::AWSError<FirehoseErrors>> DeleteDeliveryStreamOutcome;
-        typedef Aws::Utils::Outcome<DescribeDeliveryStreamResult, Aws::Client::AWSError<FirehoseErrors>> DescribeDeliveryStreamOutcome;
-        typedef Aws::Utils::Outcome<ListDeliveryStreamsResult, Aws::Client::AWSError<FirehoseErrors>> ListDeliveryStreamsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForDeliveryStreamResult, Aws::Client::AWSError<FirehoseErrors>> ListTagsForDeliveryStreamOutcome;
-        typedef Aws::Utils::Outcome<PutRecordResult, Aws::Client::AWSError<FirehoseErrors>> PutRecordOutcome;
-        typedef Aws::Utils::Outcome<PutRecordBatchResult, Aws::Client::AWSError<FirehoseErrors>> PutRecordBatchOutcome;
-        typedef Aws::Utils::Outcome<StartDeliveryStreamEncryptionResult, Aws::Client::AWSError<FirehoseErrors>> StartDeliveryStreamEncryptionOutcome;
-        typedef Aws::Utils::Outcome<StopDeliveryStreamEncryptionResult, Aws::Client::AWSError<FirehoseErrors>> StopDeliveryStreamEncryptionOutcome;
-        typedef Aws::Utils::Outcome<TagDeliveryStreamResult, Aws::Client::AWSError<FirehoseErrors>> TagDeliveryStreamOutcome;
-        typedef Aws::Utils::Outcome<UntagDeliveryStreamResult, Aws::Client::AWSError<FirehoseErrors>> UntagDeliveryStreamOutcome;
-        typedef Aws::Utils::Outcome<UpdateDestinationResult, Aws::Client::AWSError<FirehoseErrors>> UpdateDestinationOutcome;
+        typedef Aws::Utils::Outcome<CreateDeliveryStreamResult, FirehoseError> CreateDeliveryStreamOutcome;
+        typedef Aws::Utils::Outcome<DeleteDeliveryStreamResult, FirehoseError> DeleteDeliveryStreamOutcome;
+        typedef Aws::Utils::Outcome<DescribeDeliveryStreamResult, FirehoseError> DescribeDeliveryStreamOutcome;
+        typedef Aws::Utils::Outcome<ListDeliveryStreamsResult, FirehoseError> ListDeliveryStreamsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForDeliveryStreamResult, FirehoseError> ListTagsForDeliveryStreamOutcome;
+        typedef Aws::Utils::Outcome<PutRecordResult, FirehoseError> PutRecordOutcome;
+        typedef Aws::Utils::Outcome<PutRecordBatchResult, FirehoseError> PutRecordBatchOutcome;
+        typedef Aws::Utils::Outcome<StartDeliveryStreamEncryptionResult, FirehoseError> StartDeliveryStreamEncryptionOutcome;
+        typedef Aws::Utils::Outcome<StopDeliveryStreamEncryptionResult, FirehoseError> StopDeliveryStreamEncryptionOutcome;
+        typedef Aws::Utils::Outcome<TagDeliveryStreamResult, FirehoseError> TagDeliveryStreamOutcome;
+        typedef Aws::Utils::Outcome<UntagDeliveryStreamResult, FirehoseError> UntagDeliveryStreamOutcome;
+        typedef Aws::Utils::Outcome<UpdateDestinationResult, FirehoseError> UpdateDestinationOutcome;
 
         typedef std::future<CreateDeliveryStreamOutcome> CreateDeliveryStreamOutcomeCallable;
         typedef std::future<DeleteDeliveryStreamOutcome> DeleteDeliveryStreamOutcomeCallable;
@@ -158,8 +148,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~FirehoseClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "Firehose"; }
 
 
         /**
@@ -588,10 +576,10 @@ namespace Model
          * for the delivery stream. </p> <p>Data records sent to Kinesis Data Firehose are
          * stored for 24 hours from the time they are added to a delivery stream as it
          * tries to send the records to the destination. If the destination is unreachable
-         * for more than 24 hours, the data is no longer available.</p> <important>
+         * for more than 24 hours, the data is no longer available.</p> 
          * <p>Don't concatenate two or more base64 strings to form the data fields of your
          * records. Instead, concatenate the raw data, then perform base64 encoding.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">AWS
          * API Reference</a></p>
          */
@@ -625,10 +613,10 @@ namespace Model
          * for the delivery stream. </p> <p>Data records sent to Kinesis Data Firehose are
          * stored for 24 hours from the time they are added to a delivery stream as it
          * tries to send the records to the destination. If the destination is unreachable
-         * for more than 24 hours, the data is no longer available.</p> <important>
+         * for more than 24 hours, the data is no longer available.</p> 
          * <p>Don't concatenate two or more base64 strings to form the data fields of your
          * records. Instead, concatenate the raw data, then perform base64 encoding.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">AWS
          * API Reference</a></p>
          *
@@ -664,10 +652,10 @@ namespace Model
          * for the delivery stream. </p> <p>Data records sent to Kinesis Data Firehose are
          * stored for 24 hours from the time they are added to a delivery stream as it
          * tries to send the records to the destination. If the destination is unreachable
-         * for more than 24 hours, the data is no longer available.</p> <important>
+         * for more than 24 hours, the data is no longer available.</p> 
          * <p>Don't concatenate two or more base64 strings to form the data fields of your
          * records. Instead, concatenate the raw data, then perform base64 encoding.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">AWS
          * API Reference</a></p>
          *
@@ -679,13 +667,10 @@ namespace Model
          * <p>Writes multiple data records into a delivery stream in a single call, which
          * can achieve higher throughput per producer than when writing single records. To
          * write single data records into a delivery stream, use <a>PutRecord</a>.
-         * Applications using these operations are referred to as producers.</p> <p>By
-         * default, each delivery stream can take in up to 2,000 transactions per second,
-         * 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and
-         * <a>PutRecordBatch</a>, the limits are an aggregate across these two operations
-         * for each delivery stream. For more information about limits, see <a
+         * Applications using these operations are referred to as producers.</p> <p>For
+         * information about service quota, see <a
          * href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
-         * Kinesis Data Firehose Limits</a>.</p> <p>Each <a>PutRecordBatch</a> request
+         * Kinesis Data Firehose Quota</a>.</p> <p>Each <a>PutRecordBatch</a> request
          * supports up to 500 records. Each record in the request can be as large as 1,000
          * KB (before 64-bit encoding), up to a limit of 4 MB for the entire request. These
          * limits cannot be changed.</p> <p>You must specify the name of the delivery
@@ -727,10 +712,10 @@ namespace Model
          * delivery stream.</p> <p>Data records sent to Kinesis Data Firehose are stored
          * for 24 hours from the time they are added to a delivery stream as it attempts to
          * send the records to the destination. If the destination is unreachable for more
-         * than 24 hours, the data is no longer available.</p> <important> <p>Don't
+         * than 24 hours, the data is no longer available.</p>  <p>Don't
          * concatenate two or more base64 strings to form the data fields of your records.
          * Instead, concatenate the raw data, then perform base64 encoding.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">AWS
          * API Reference</a></p>
          */
@@ -740,13 +725,10 @@ namespace Model
          * <p>Writes multiple data records into a delivery stream in a single call, which
          * can achieve higher throughput per producer than when writing single records. To
          * write single data records into a delivery stream, use <a>PutRecord</a>.
-         * Applications using these operations are referred to as producers.</p> <p>By
-         * default, each delivery stream can take in up to 2,000 transactions per second,
-         * 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and
-         * <a>PutRecordBatch</a>, the limits are an aggregate across these two operations
-         * for each delivery stream. For more information about limits, see <a
+         * Applications using these operations are referred to as producers.</p> <p>For
+         * information about service quota, see <a
          * href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
-         * Kinesis Data Firehose Limits</a>.</p> <p>Each <a>PutRecordBatch</a> request
+         * Kinesis Data Firehose Quota</a>.</p> <p>Each <a>PutRecordBatch</a> request
          * supports up to 500 records. Each record in the request can be as large as 1,000
          * KB (before 64-bit encoding), up to a limit of 4 MB for the entire request. These
          * limits cannot be changed.</p> <p>You must specify the name of the delivery
@@ -788,10 +770,10 @@ namespace Model
          * delivery stream.</p> <p>Data records sent to Kinesis Data Firehose are stored
          * for 24 hours from the time they are added to a delivery stream as it attempts to
          * send the records to the destination. If the destination is unreachable for more
-         * than 24 hours, the data is no longer available.</p> <important> <p>Don't
+         * than 24 hours, the data is no longer available.</p>  <p>Don't
          * concatenate two or more base64 strings to form the data fields of your records.
          * Instead, concatenate the raw data, then perform base64 encoding.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">AWS
          * API Reference</a></p>
          *
@@ -803,13 +785,10 @@ namespace Model
          * <p>Writes multiple data records into a delivery stream in a single call, which
          * can achieve higher throughput per producer than when writing single records. To
          * write single data records into a delivery stream, use <a>PutRecord</a>.
-         * Applications using these operations are referred to as producers.</p> <p>By
-         * default, each delivery stream can take in up to 2,000 transactions per second,
-         * 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and
-         * <a>PutRecordBatch</a>, the limits are an aggregate across these two operations
-         * for each delivery stream. For more information about limits, see <a
+         * Applications using these operations are referred to as producers.</p> <p>For
+         * information about service quota, see <a
          * href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
-         * Kinesis Data Firehose Limits</a>.</p> <p>Each <a>PutRecordBatch</a> request
+         * Kinesis Data Firehose Quota</a>.</p> <p>Each <a>PutRecordBatch</a> request
          * supports up to 500 records. Each record in the request can be as large as 1,000
          * KB (before 64-bit encoding), up to a limit of 4 MB for the entire request. These
          * limits cannot be changed.</p> <p>You must specify the name of the delivery
@@ -851,10 +830,10 @@ namespace Model
          * delivery stream.</p> <p>Data records sent to Kinesis Data Firehose are stored
          * for 24 hours from the time they are added to a delivery stream as it attempts to
          * send the records to the destination. If the destination is unreachable for more
-         * than 24 hours, the data is no longer available.</p> <important> <p>Don't
+         * than 24 hours, the data is no longer available.</p>  <p>Don't
          * concatenate two or more base64 strings to form the data fields of your records.
          * Instead, concatenate the raw data, then perform base64 encoding.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">AWS
          * API Reference</a></p>
          *

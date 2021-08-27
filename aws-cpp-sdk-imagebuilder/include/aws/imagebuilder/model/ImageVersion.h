@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/model/ImageType.h>
 #include <aws/imagebuilder/model/Platform.h>
 #include <utility>
 
@@ -128,6 +119,37 @@ namespace Model
      * <p>The name of the image semantic version.</p>
      */
     inline ImageVersion& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether this is an AMI or container image.</p>
+     */
+    inline const ImageType& GetType() const{ return m_type; }
+
+    /**
+     * <p>Specifies whether this is an AMI or container image.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether this is an AMI or container image.</p>
+     */
+    inline void SetType(const ImageType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>Specifies whether this is an AMI or container image.</p>
+     */
+    inline void SetType(ImageType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>Specifies whether this is an AMI or container image.</p>
+     */
+    inline ImageVersion& WithType(const ImageType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>Specifies whether this is an AMI or container image.</p>
+     */
+    inline ImageVersion& WithType(ImageType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
@@ -339,6 +361,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    ImageType m_type;
+    bool m_typeHasBeenSet;
 
     Aws::String m_version;
     bool m_versionHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
@@ -135,57 +125,49 @@ namespace Model
 
     /**
      * <p>The listener that the virtual node is expected to receive inbound traffic
-     * from.
-         You can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline const Aws::Vector<Listener>& GetListeners() const{ return m_listeners; }
 
     /**
      * <p>The listener that the virtual node is expected to receive inbound traffic
-     * from.
-         You can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline bool ListenersHasBeenSet() const { return m_listenersHasBeenSet; }
 
     /**
      * <p>The listener that the virtual node is expected to receive inbound traffic
-     * from.
-         You can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline void SetListeners(const Aws::Vector<Listener>& value) { m_listenersHasBeenSet = true; m_listeners = value; }
 
     /**
      * <p>The listener that the virtual node is expected to receive inbound traffic
-     * from.
-         You can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline void SetListeners(Aws::Vector<Listener>&& value) { m_listenersHasBeenSet = true; m_listeners = std::move(value); }
 
     /**
      * <p>The listener that the virtual node is expected to receive inbound traffic
-     * from.
-         You can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline VirtualNodeSpec& WithListeners(const Aws::Vector<Listener>& value) { SetListeners(value); return *this;}
 
     /**
      * <p>The listener that the virtual node is expected to receive inbound traffic
-     * from.
-         You can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline VirtualNodeSpec& WithListeners(Aws::Vector<Listener>&& value) { SetListeners(std::move(value)); return *this;}
 
     /**
      * <p>The listener that the virtual node is expected to receive inbound traffic
-     * from.
-         You can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline VirtualNodeSpec& AddListeners(const Listener& value) { m_listenersHasBeenSet = true; m_listeners.push_back(value); return *this; }
 
     /**
      * <p>The listener that the virtual node is expected to receive inbound traffic
-     * from.
-         You can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline VirtualNodeSpec& AddListeners(Listener&& value) { m_listenersHasBeenSet = true; m_listeners.push_back(std::move(value)); return *this; }
 
@@ -223,61 +205,43 @@ namespace Model
 
     /**
      * <p>The service discovery information for the virtual node. If your virtual node
-     * does not
-         expect ingress traffic, you can omit this parameter. If you
-     * specify a <code>listener</code>,
-         then you must specify service
-     * discovery information.</p>
+     * does not expect ingress traffic, you can omit this parameter. If you specify a
+     * <code>listener</code>, then you must specify service discovery information.</p>
      */
     inline const ServiceDiscovery& GetServiceDiscovery() const{ return m_serviceDiscovery; }
 
     /**
      * <p>The service discovery information for the virtual node. If your virtual node
-     * does not
-         expect ingress traffic, you can omit this parameter. If you
-     * specify a <code>listener</code>,
-         then you must specify service
-     * discovery information.</p>
+     * does not expect ingress traffic, you can omit this parameter. If you specify a
+     * <code>listener</code>, then you must specify service discovery information.</p>
      */
     inline bool ServiceDiscoveryHasBeenSet() const { return m_serviceDiscoveryHasBeenSet; }
 
     /**
      * <p>The service discovery information for the virtual node. If your virtual node
-     * does not
-         expect ingress traffic, you can omit this parameter. If you
-     * specify a <code>listener</code>,
-         then you must specify service
-     * discovery information.</p>
+     * does not expect ingress traffic, you can omit this parameter. If you specify a
+     * <code>listener</code>, then you must specify service discovery information.</p>
      */
     inline void SetServiceDiscovery(const ServiceDiscovery& value) { m_serviceDiscoveryHasBeenSet = true; m_serviceDiscovery = value; }
 
     /**
      * <p>The service discovery information for the virtual node. If your virtual node
-     * does not
-         expect ingress traffic, you can omit this parameter. If you
-     * specify a <code>listener</code>,
-         then you must specify service
-     * discovery information.</p>
+     * does not expect ingress traffic, you can omit this parameter. If you specify a
+     * <code>listener</code>, then you must specify service discovery information.</p>
      */
     inline void SetServiceDiscovery(ServiceDiscovery&& value) { m_serviceDiscoveryHasBeenSet = true; m_serviceDiscovery = std::move(value); }
 
     /**
      * <p>The service discovery information for the virtual node. If your virtual node
-     * does not
-         expect ingress traffic, you can omit this parameter. If you
-     * specify a <code>listener</code>,
-         then you must specify service
-     * discovery information.</p>
+     * does not expect ingress traffic, you can omit this parameter. If you specify a
+     * <code>listener</code>, then you must specify service discovery information.</p>
      */
     inline VirtualNodeSpec& WithServiceDiscovery(const ServiceDiscovery& value) { SetServiceDiscovery(value); return *this;}
 
     /**
      * <p>The service discovery information for the virtual node. If your virtual node
-     * does not
-         expect ingress traffic, you can omit this parameter. If you
-     * specify a <code>listener</code>,
-         then you must specify service
-     * discovery information.</p>
+     * does not expect ingress traffic, you can omit this parameter. If you specify a
+     * <code>listener</code>, then you must specify service discovery information.</p>
      */
     inline VirtualNodeSpec& WithServiceDiscovery(ServiceDiscovery&& value) { SetServiceDiscovery(std::move(value)); return *this;}
 

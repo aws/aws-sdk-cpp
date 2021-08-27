@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -251,106 +241,106 @@ namespace Model
         class VerifySoftwareTokenRequest;
         class VerifyUserAttributeRequest;
 
-        typedef Aws::Utils::Outcome<AddCustomAttributesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AddCustomAttributesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminAddUserToGroupOutcome;
-        typedef Aws::Utils::Outcome<AdminConfirmSignUpResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminConfirmSignUpOutcome;
-        typedef Aws::Utils::Outcome<AdminCreateUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminCreateUserOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminDeleteUserOutcome;
-        typedef Aws::Utils::Outcome<AdminDeleteUserAttributesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminDeleteUserAttributesOutcome;
-        typedef Aws::Utils::Outcome<AdminDisableProviderForUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminDisableProviderForUserOutcome;
-        typedef Aws::Utils::Outcome<AdminDisableUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminDisableUserOutcome;
-        typedef Aws::Utils::Outcome<AdminEnableUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminEnableUserOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminForgetDeviceOutcome;
-        typedef Aws::Utils::Outcome<AdminGetDeviceResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminGetDeviceOutcome;
-        typedef Aws::Utils::Outcome<AdminGetUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminGetUserOutcome;
-        typedef Aws::Utils::Outcome<AdminInitiateAuthResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminInitiateAuthOutcome;
-        typedef Aws::Utils::Outcome<AdminLinkProviderForUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminLinkProviderForUserOutcome;
-        typedef Aws::Utils::Outcome<AdminListDevicesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminListDevicesOutcome;
-        typedef Aws::Utils::Outcome<AdminListGroupsForUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminListGroupsForUserOutcome;
-        typedef Aws::Utils::Outcome<AdminListUserAuthEventsResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminListUserAuthEventsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminRemoveUserFromGroupOutcome;
-        typedef Aws::Utils::Outcome<AdminResetUserPasswordResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminResetUserPasswordOutcome;
-        typedef Aws::Utils::Outcome<AdminRespondToAuthChallengeResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminRespondToAuthChallengeOutcome;
-        typedef Aws::Utils::Outcome<AdminSetUserMFAPreferenceResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminSetUserMFAPreferenceOutcome;
-        typedef Aws::Utils::Outcome<AdminSetUserPasswordResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminSetUserPasswordOutcome;
-        typedef Aws::Utils::Outcome<AdminSetUserSettingsResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminSetUserSettingsOutcome;
-        typedef Aws::Utils::Outcome<AdminUpdateAuthEventFeedbackResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminUpdateAuthEventFeedbackOutcome;
-        typedef Aws::Utils::Outcome<AdminUpdateDeviceStatusResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminUpdateDeviceStatusOutcome;
-        typedef Aws::Utils::Outcome<AdminUpdateUserAttributesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminUpdateUserAttributesOutcome;
-        typedef Aws::Utils::Outcome<AdminUserGlobalSignOutResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminUserGlobalSignOutOutcome;
-        typedef Aws::Utils::Outcome<AssociateSoftwareTokenResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AssociateSoftwareTokenOutcome;
-        typedef Aws::Utils::Outcome<ChangePasswordResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ChangePasswordOutcome;
-        typedef Aws::Utils::Outcome<ConfirmDeviceResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ConfirmDeviceOutcome;
-        typedef Aws::Utils::Outcome<ConfirmForgotPasswordResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ConfirmForgotPasswordOutcome;
-        typedef Aws::Utils::Outcome<ConfirmSignUpResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ConfirmSignUpOutcome;
-        typedef Aws::Utils::Outcome<CreateGroupResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> CreateGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateIdentityProviderResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> CreateIdentityProviderOutcome;
-        typedef Aws::Utils::Outcome<CreateResourceServerResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> CreateResourceServerOutcome;
-        typedef Aws::Utils::Outcome<CreateUserImportJobResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> CreateUserImportJobOutcome;
-        typedef Aws::Utils::Outcome<CreateUserPoolResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> CreateUserPoolOutcome;
-        typedef Aws::Utils::Outcome<CreateUserPoolClientResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> CreateUserPoolClientOutcome;
-        typedef Aws::Utils::Outcome<CreateUserPoolDomainResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> CreateUserPoolDomainOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteGroupOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteIdentityProviderOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteResourceServerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteUserOutcome;
-        typedef Aws::Utils::Outcome<DeleteUserAttributesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteUserAttributesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteUserPoolOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteUserPoolClientOutcome;
-        typedef Aws::Utils::Outcome<DeleteUserPoolDomainResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteUserPoolDomainOutcome;
-        typedef Aws::Utils::Outcome<DescribeIdentityProviderResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeIdentityProviderOutcome;
-        typedef Aws::Utils::Outcome<DescribeResourceServerResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeResourceServerOutcome;
-        typedef Aws::Utils::Outcome<DescribeRiskConfigurationResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeRiskConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DescribeUserImportJobResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeUserImportJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeUserPoolResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeUserPoolOutcome;
-        typedef Aws::Utils::Outcome<DescribeUserPoolClientResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeUserPoolClientOutcome;
-        typedef Aws::Utils::Outcome<DescribeUserPoolDomainResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeUserPoolDomainOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ForgetDeviceOutcome;
-        typedef Aws::Utils::Outcome<ForgotPasswordResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ForgotPasswordOutcome;
-        typedef Aws::Utils::Outcome<GetCSVHeaderResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetCSVHeaderOutcome;
-        typedef Aws::Utils::Outcome<GetDeviceResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetDeviceOutcome;
-        typedef Aws::Utils::Outcome<GetGroupResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetGroupOutcome;
-        typedef Aws::Utils::Outcome<GetIdentityProviderByIdentifierResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetIdentityProviderByIdentifierOutcome;
-        typedef Aws::Utils::Outcome<GetSigningCertificateResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetSigningCertificateOutcome;
-        typedef Aws::Utils::Outcome<GetUICustomizationResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetUICustomizationOutcome;
-        typedef Aws::Utils::Outcome<GetUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetUserOutcome;
-        typedef Aws::Utils::Outcome<GetUserAttributeVerificationCodeResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetUserAttributeVerificationCodeOutcome;
-        typedef Aws::Utils::Outcome<GetUserPoolMfaConfigResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetUserPoolMfaConfigOutcome;
-        typedef Aws::Utils::Outcome<GlobalSignOutResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GlobalSignOutOutcome;
-        typedef Aws::Utils::Outcome<InitiateAuthResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> InitiateAuthOutcome;
-        typedef Aws::Utils::Outcome<ListDevicesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ListDevicesOutcome;
-        typedef Aws::Utils::Outcome<ListGroupsResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ListGroupsOutcome;
-        typedef Aws::Utils::Outcome<ListIdentityProvidersResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ListIdentityProvidersOutcome;
-        typedef Aws::Utils::Outcome<ListResourceServersResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ListResourceServersOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListUserImportJobsResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ListUserImportJobsOutcome;
-        typedef Aws::Utils::Outcome<ListUserPoolClientsResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ListUserPoolClientsOutcome;
-        typedef Aws::Utils::Outcome<ListUserPoolsResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ListUserPoolsOutcome;
-        typedef Aws::Utils::Outcome<ListUsersResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ListUsersOutcome;
-        typedef Aws::Utils::Outcome<ListUsersInGroupResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ListUsersInGroupOutcome;
-        typedef Aws::Utils::Outcome<ResendConfirmationCodeResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ResendConfirmationCodeOutcome;
-        typedef Aws::Utils::Outcome<RespondToAuthChallengeResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> RespondToAuthChallengeOutcome;
-        typedef Aws::Utils::Outcome<SetRiskConfigurationResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> SetRiskConfigurationOutcome;
-        typedef Aws::Utils::Outcome<SetUICustomizationResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> SetUICustomizationOutcome;
-        typedef Aws::Utils::Outcome<SetUserMFAPreferenceResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> SetUserMFAPreferenceOutcome;
-        typedef Aws::Utils::Outcome<SetUserPoolMfaConfigResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> SetUserPoolMfaConfigOutcome;
-        typedef Aws::Utils::Outcome<SetUserSettingsResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> SetUserSettingsOutcome;
-        typedef Aws::Utils::Outcome<SignUpResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> SignUpOutcome;
-        typedef Aws::Utils::Outcome<StartUserImportJobResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> StartUserImportJobOutcome;
-        typedef Aws::Utils::Outcome<StopUserImportJobResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> StopUserImportJobOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateAuthEventFeedbackResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateAuthEventFeedbackOutcome;
-        typedef Aws::Utils::Outcome<UpdateDeviceStatusResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateDeviceStatusOutcome;
-        typedef Aws::Utils::Outcome<UpdateGroupResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateGroupOutcome;
-        typedef Aws::Utils::Outcome<UpdateIdentityProviderResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateIdentityProviderOutcome;
-        typedef Aws::Utils::Outcome<UpdateResourceServerResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateResourceServerOutcome;
-        typedef Aws::Utils::Outcome<UpdateUserAttributesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateUserAttributesOutcome;
-        typedef Aws::Utils::Outcome<UpdateUserPoolResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateUserPoolOutcome;
-        typedef Aws::Utils::Outcome<UpdateUserPoolClientResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateUserPoolClientOutcome;
-        typedef Aws::Utils::Outcome<UpdateUserPoolDomainResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateUserPoolDomainOutcome;
-        typedef Aws::Utils::Outcome<VerifySoftwareTokenResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> VerifySoftwareTokenOutcome;
-        typedef Aws::Utils::Outcome<VerifyUserAttributeResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> VerifyUserAttributeOutcome;
+        typedef Aws::Utils::Outcome<AddCustomAttributesResult, CognitoIdentityProviderError> AddCustomAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> AdminAddUserToGroupOutcome;
+        typedef Aws::Utils::Outcome<AdminConfirmSignUpResult, CognitoIdentityProviderError> AdminConfirmSignUpOutcome;
+        typedef Aws::Utils::Outcome<AdminCreateUserResult, CognitoIdentityProviderError> AdminCreateUserOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> AdminDeleteUserOutcome;
+        typedef Aws::Utils::Outcome<AdminDeleteUserAttributesResult, CognitoIdentityProviderError> AdminDeleteUserAttributesOutcome;
+        typedef Aws::Utils::Outcome<AdminDisableProviderForUserResult, CognitoIdentityProviderError> AdminDisableProviderForUserOutcome;
+        typedef Aws::Utils::Outcome<AdminDisableUserResult, CognitoIdentityProviderError> AdminDisableUserOutcome;
+        typedef Aws::Utils::Outcome<AdminEnableUserResult, CognitoIdentityProviderError> AdminEnableUserOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> AdminForgetDeviceOutcome;
+        typedef Aws::Utils::Outcome<AdminGetDeviceResult, CognitoIdentityProviderError> AdminGetDeviceOutcome;
+        typedef Aws::Utils::Outcome<AdminGetUserResult, CognitoIdentityProviderError> AdminGetUserOutcome;
+        typedef Aws::Utils::Outcome<AdminInitiateAuthResult, CognitoIdentityProviderError> AdminInitiateAuthOutcome;
+        typedef Aws::Utils::Outcome<AdminLinkProviderForUserResult, CognitoIdentityProviderError> AdminLinkProviderForUserOutcome;
+        typedef Aws::Utils::Outcome<AdminListDevicesResult, CognitoIdentityProviderError> AdminListDevicesOutcome;
+        typedef Aws::Utils::Outcome<AdminListGroupsForUserResult, CognitoIdentityProviderError> AdminListGroupsForUserOutcome;
+        typedef Aws::Utils::Outcome<AdminListUserAuthEventsResult, CognitoIdentityProviderError> AdminListUserAuthEventsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> AdminRemoveUserFromGroupOutcome;
+        typedef Aws::Utils::Outcome<AdminResetUserPasswordResult, CognitoIdentityProviderError> AdminResetUserPasswordOutcome;
+        typedef Aws::Utils::Outcome<AdminRespondToAuthChallengeResult, CognitoIdentityProviderError> AdminRespondToAuthChallengeOutcome;
+        typedef Aws::Utils::Outcome<AdminSetUserMFAPreferenceResult, CognitoIdentityProviderError> AdminSetUserMFAPreferenceOutcome;
+        typedef Aws::Utils::Outcome<AdminSetUserPasswordResult, CognitoIdentityProviderError> AdminSetUserPasswordOutcome;
+        typedef Aws::Utils::Outcome<AdminSetUserSettingsResult, CognitoIdentityProviderError> AdminSetUserSettingsOutcome;
+        typedef Aws::Utils::Outcome<AdminUpdateAuthEventFeedbackResult, CognitoIdentityProviderError> AdminUpdateAuthEventFeedbackOutcome;
+        typedef Aws::Utils::Outcome<AdminUpdateDeviceStatusResult, CognitoIdentityProviderError> AdminUpdateDeviceStatusOutcome;
+        typedef Aws::Utils::Outcome<AdminUpdateUserAttributesResult, CognitoIdentityProviderError> AdminUpdateUserAttributesOutcome;
+        typedef Aws::Utils::Outcome<AdminUserGlobalSignOutResult, CognitoIdentityProviderError> AdminUserGlobalSignOutOutcome;
+        typedef Aws::Utils::Outcome<AssociateSoftwareTokenResult, CognitoIdentityProviderError> AssociateSoftwareTokenOutcome;
+        typedef Aws::Utils::Outcome<ChangePasswordResult, CognitoIdentityProviderError> ChangePasswordOutcome;
+        typedef Aws::Utils::Outcome<ConfirmDeviceResult, CognitoIdentityProviderError> ConfirmDeviceOutcome;
+        typedef Aws::Utils::Outcome<ConfirmForgotPasswordResult, CognitoIdentityProviderError> ConfirmForgotPasswordOutcome;
+        typedef Aws::Utils::Outcome<ConfirmSignUpResult, CognitoIdentityProviderError> ConfirmSignUpOutcome;
+        typedef Aws::Utils::Outcome<CreateGroupResult, CognitoIdentityProviderError> CreateGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateIdentityProviderResult, CognitoIdentityProviderError> CreateIdentityProviderOutcome;
+        typedef Aws::Utils::Outcome<CreateResourceServerResult, CognitoIdentityProviderError> CreateResourceServerOutcome;
+        typedef Aws::Utils::Outcome<CreateUserImportJobResult, CognitoIdentityProviderError> CreateUserImportJobOutcome;
+        typedef Aws::Utils::Outcome<CreateUserPoolResult, CognitoIdentityProviderError> CreateUserPoolOutcome;
+        typedef Aws::Utils::Outcome<CreateUserPoolClientResult, CognitoIdentityProviderError> CreateUserPoolClientOutcome;
+        typedef Aws::Utils::Outcome<CreateUserPoolDomainResult, CognitoIdentityProviderError> CreateUserPoolDomainOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteIdentityProviderOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteResourceServerOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteUserOutcome;
+        typedef Aws::Utils::Outcome<DeleteUserAttributesResult, CognitoIdentityProviderError> DeleteUserAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteUserPoolOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteUserPoolClientOutcome;
+        typedef Aws::Utils::Outcome<DeleteUserPoolDomainResult, CognitoIdentityProviderError> DeleteUserPoolDomainOutcome;
+        typedef Aws::Utils::Outcome<DescribeIdentityProviderResult, CognitoIdentityProviderError> DescribeIdentityProviderOutcome;
+        typedef Aws::Utils::Outcome<DescribeResourceServerResult, CognitoIdentityProviderError> DescribeResourceServerOutcome;
+        typedef Aws::Utils::Outcome<DescribeRiskConfigurationResult, CognitoIdentityProviderError> DescribeRiskConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DescribeUserImportJobResult, CognitoIdentityProviderError> DescribeUserImportJobOutcome;
+        typedef Aws::Utils::Outcome<DescribeUserPoolResult, CognitoIdentityProviderError> DescribeUserPoolOutcome;
+        typedef Aws::Utils::Outcome<DescribeUserPoolClientResult, CognitoIdentityProviderError> DescribeUserPoolClientOutcome;
+        typedef Aws::Utils::Outcome<DescribeUserPoolDomainResult, CognitoIdentityProviderError> DescribeUserPoolDomainOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> ForgetDeviceOutcome;
+        typedef Aws::Utils::Outcome<ForgotPasswordResult, CognitoIdentityProviderError> ForgotPasswordOutcome;
+        typedef Aws::Utils::Outcome<GetCSVHeaderResult, CognitoIdentityProviderError> GetCSVHeaderOutcome;
+        typedef Aws::Utils::Outcome<GetDeviceResult, CognitoIdentityProviderError> GetDeviceOutcome;
+        typedef Aws::Utils::Outcome<GetGroupResult, CognitoIdentityProviderError> GetGroupOutcome;
+        typedef Aws::Utils::Outcome<GetIdentityProviderByIdentifierResult, CognitoIdentityProviderError> GetIdentityProviderByIdentifierOutcome;
+        typedef Aws::Utils::Outcome<GetSigningCertificateResult, CognitoIdentityProviderError> GetSigningCertificateOutcome;
+        typedef Aws::Utils::Outcome<GetUICustomizationResult, CognitoIdentityProviderError> GetUICustomizationOutcome;
+        typedef Aws::Utils::Outcome<GetUserResult, CognitoIdentityProviderError> GetUserOutcome;
+        typedef Aws::Utils::Outcome<GetUserAttributeVerificationCodeResult, CognitoIdentityProviderError> GetUserAttributeVerificationCodeOutcome;
+        typedef Aws::Utils::Outcome<GetUserPoolMfaConfigResult, CognitoIdentityProviderError> GetUserPoolMfaConfigOutcome;
+        typedef Aws::Utils::Outcome<GlobalSignOutResult, CognitoIdentityProviderError> GlobalSignOutOutcome;
+        typedef Aws::Utils::Outcome<InitiateAuthResult, CognitoIdentityProviderError> InitiateAuthOutcome;
+        typedef Aws::Utils::Outcome<ListDevicesResult, CognitoIdentityProviderError> ListDevicesOutcome;
+        typedef Aws::Utils::Outcome<ListGroupsResult, CognitoIdentityProviderError> ListGroupsOutcome;
+        typedef Aws::Utils::Outcome<ListIdentityProvidersResult, CognitoIdentityProviderError> ListIdentityProvidersOutcome;
+        typedef Aws::Utils::Outcome<ListResourceServersResult, CognitoIdentityProviderError> ListResourceServersOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CognitoIdentityProviderError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListUserImportJobsResult, CognitoIdentityProviderError> ListUserImportJobsOutcome;
+        typedef Aws::Utils::Outcome<ListUserPoolClientsResult, CognitoIdentityProviderError> ListUserPoolClientsOutcome;
+        typedef Aws::Utils::Outcome<ListUserPoolsResult, CognitoIdentityProviderError> ListUserPoolsOutcome;
+        typedef Aws::Utils::Outcome<ListUsersResult, CognitoIdentityProviderError> ListUsersOutcome;
+        typedef Aws::Utils::Outcome<ListUsersInGroupResult, CognitoIdentityProviderError> ListUsersInGroupOutcome;
+        typedef Aws::Utils::Outcome<ResendConfirmationCodeResult, CognitoIdentityProviderError> ResendConfirmationCodeOutcome;
+        typedef Aws::Utils::Outcome<RespondToAuthChallengeResult, CognitoIdentityProviderError> RespondToAuthChallengeOutcome;
+        typedef Aws::Utils::Outcome<SetRiskConfigurationResult, CognitoIdentityProviderError> SetRiskConfigurationOutcome;
+        typedef Aws::Utils::Outcome<SetUICustomizationResult, CognitoIdentityProviderError> SetUICustomizationOutcome;
+        typedef Aws::Utils::Outcome<SetUserMFAPreferenceResult, CognitoIdentityProviderError> SetUserMFAPreferenceOutcome;
+        typedef Aws::Utils::Outcome<SetUserPoolMfaConfigResult, CognitoIdentityProviderError> SetUserPoolMfaConfigOutcome;
+        typedef Aws::Utils::Outcome<SetUserSettingsResult, CognitoIdentityProviderError> SetUserSettingsOutcome;
+        typedef Aws::Utils::Outcome<SignUpResult, CognitoIdentityProviderError> SignUpOutcome;
+        typedef Aws::Utils::Outcome<StartUserImportJobResult, CognitoIdentityProviderError> StartUserImportJobOutcome;
+        typedef Aws::Utils::Outcome<StopUserImportJobResult, CognitoIdentityProviderError> StopUserImportJobOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, CognitoIdentityProviderError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, CognitoIdentityProviderError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateAuthEventFeedbackResult, CognitoIdentityProviderError> UpdateAuthEventFeedbackOutcome;
+        typedef Aws::Utils::Outcome<UpdateDeviceStatusResult, CognitoIdentityProviderError> UpdateDeviceStatusOutcome;
+        typedef Aws::Utils::Outcome<UpdateGroupResult, CognitoIdentityProviderError> UpdateGroupOutcome;
+        typedef Aws::Utils::Outcome<UpdateIdentityProviderResult, CognitoIdentityProviderError> UpdateIdentityProviderOutcome;
+        typedef Aws::Utils::Outcome<UpdateResourceServerResult, CognitoIdentityProviderError> UpdateResourceServerOutcome;
+        typedef Aws::Utils::Outcome<UpdateUserAttributesResult, CognitoIdentityProviderError> UpdateUserAttributesOutcome;
+        typedef Aws::Utils::Outcome<UpdateUserPoolResult, CognitoIdentityProviderError> UpdateUserPoolOutcome;
+        typedef Aws::Utils::Outcome<UpdateUserPoolClientResult, CognitoIdentityProviderError> UpdateUserPoolClientOutcome;
+        typedef Aws::Utils::Outcome<UpdateUserPoolDomainResult, CognitoIdentityProviderError> UpdateUserPoolDomainOutcome;
+        typedef Aws::Utils::Outcome<VerifySoftwareTokenResult, CognitoIdentityProviderError> VerifySoftwareTokenOutcome;
+        typedef Aws::Utils::Outcome<VerifyUserAttributeResult, CognitoIdentityProviderError> VerifyUserAttributeOutcome;
 
         typedef std::future<AddCustomAttributesOutcome> AddCustomAttributesOutcomeCallable;
         typedef std::future<AdminAddUserToGroupOutcome> AdminAddUserToGroupOutcomeCallable;
@@ -590,8 +580,6 @@ namespace Model
 
         virtual ~CognitoIdentityProviderClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Cognito Identity Provider"; }
-
 
         /**
          * <p>Adds additional user attributes to the user pool schema.</p><p><h3>See
@@ -683,15 +671,15 @@ namespace Model
         /**
          * <p>Creates a new user in the specified user pool.</p> <p>If
          * <code>MessageAction</code> is not set, the default is to send a welcome message
-         * via email or phone (SMS).</p> <note> <p>This message is based on a template that
-         * you configured in your call to or . This template includes your custom sign-up
-         * instructions and placeholders for user name and temporary password.</p> </note>
-         * <p>Alternatively, you can call AdminCreateUser with “SUPPRESS” for the
-         * <code>MessageAction</code> parameter, and Amazon Cognito will not send any
-         * email. </p> <p>In either case, the user will be in the
+         * via email or phone (SMS).</p> <p>This message is based on a template that you
+         * configured in your call to create or update a user pool. This template includes
+         * your custom sign-up instructions and placeholders for user name and temporary
+         * password.</p> <p>Alternatively, you can call <code>AdminCreateUser</code> with
+         * “SUPPRESS” for the <code>MessageAction</code> parameter, and Amazon Cognito will
+         * not send any email. </p> <p>In either case, the user will be in the
          * <code>FORCE_CHANGE_PASSWORD</code> state until they sign in and change their
-         * password.</p> <p>AdminCreateUser requires developer credentials.</p><p><h3>See
-         * Also:</h3>   <a
+         * password.</p> <p> <code>AdminCreateUser</code> requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUser">AWS
          * API Reference</a></p>
          */
@@ -700,15 +688,15 @@ namespace Model
         /**
          * <p>Creates a new user in the specified user pool.</p> <p>If
          * <code>MessageAction</code> is not set, the default is to send a welcome message
-         * via email or phone (SMS).</p> <note> <p>This message is based on a template that
-         * you configured in your call to or . This template includes your custom sign-up
-         * instructions and placeholders for user name and temporary password.</p> </note>
-         * <p>Alternatively, you can call AdminCreateUser with “SUPPRESS” for the
-         * <code>MessageAction</code> parameter, and Amazon Cognito will not send any
-         * email. </p> <p>In either case, the user will be in the
+         * via email or phone (SMS).</p> <p>This message is based on a template that you
+         * configured in your call to create or update a user pool. This template includes
+         * your custom sign-up instructions and placeholders for user name and temporary
+         * password.</p> <p>Alternatively, you can call <code>AdminCreateUser</code> with
+         * “SUPPRESS” for the <code>MessageAction</code> parameter, and Amazon Cognito will
+         * not send any email. </p> <p>In either case, the user will be in the
          * <code>FORCE_CHANGE_PASSWORD</code> state until they sign in and change their
-         * password.</p> <p>AdminCreateUser requires developer credentials.</p><p><h3>See
-         * Also:</h3>   <a
+         * password.</p> <p> <code>AdminCreateUser</code> requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUser">AWS
          * API Reference</a></p>
          *
@@ -719,15 +707,15 @@ namespace Model
         /**
          * <p>Creates a new user in the specified user pool.</p> <p>If
          * <code>MessageAction</code> is not set, the default is to send a welcome message
-         * via email or phone (SMS).</p> <note> <p>This message is based on a template that
-         * you configured in your call to or . This template includes your custom sign-up
-         * instructions and placeholders for user name and temporary password.</p> </note>
-         * <p>Alternatively, you can call AdminCreateUser with “SUPPRESS” for the
-         * <code>MessageAction</code> parameter, and Amazon Cognito will not send any
-         * email. </p> <p>In either case, the user will be in the
+         * via email or phone (SMS).</p> <p>This message is based on a template that you
+         * configured in your call to create or update a user pool. This template includes
+         * your custom sign-up instructions and placeholders for user name and temporary
+         * password.</p> <p>Alternatively, you can call <code>AdminCreateUser</code> with
+         * “SUPPRESS” for the <code>MessageAction</code> parameter, and Amazon Cognito will
+         * not send any email. </p> <p>In either case, the user will be in the
          * <code>FORCE_CHANGE_PASSWORD</code> state until they sign in and change their
-         * password.</p> <p>AdminCreateUser requires developer credentials.</p><p><h3>See
-         * Also:</h3>   <a
+         * password.</p> <p> <code>AdminCreateUser</code> requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUser">AWS
          * API Reference</a></p>
          *
@@ -801,26 +789,28 @@ namespace Model
          * sign-in. If the user to disable is a linked external IdP user, any link between
          * that user and an existing user is removed. The next time the external user (no
          * longer attached to the previously linked <code>DestinationUser</code>) signs in,
-         * they must create a new user account. See .</p> <p>This action is enabled only
-         * for admin access and requires developer credentials.</p> <p>The
-         * <code>ProviderName</code> must match the value specified when creating an IdP
-         * for the pool. </p> <p>To disable a native username + password user, the
-         * <code>ProviderName</code> value must be <code>Cognito</code> and the
-         * <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>, with
-         * the <code>ProviderAttributeValue</code> being the name that is used in the user
-         * pool for the user.</p> <p>The <code>ProviderAttributeName</code> must always be
-         * <code>Cognito_Subject</code> for social identity providers. The
+         * they must create a new user account. See <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.</p>
+         * <p>This action is enabled only for admin access and requires developer
+         * credentials.</p> <p>The <code>ProviderName</code> must match the value specified
+         * when creating an IdP for the pool. </p> <p>To disable a native username +
+         * password user, the <code>ProviderName</code> value must be <code>Cognito</code>
+         * and the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>,
+         * with the <code>ProviderAttributeValue</code> being the name that is used in the
+         * user pool for the user.</p> <p>The <code>ProviderAttributeName</code> must
+         * always be <code>Cognito_Subject</code> for social identity providers. The
          * <code>ProviderAttributeValue</code> must always be the exact subject that was
          * used when the user was originally linked as a source user.</p> <p>For de-linking
          * a SAML identity, there are two scenarios. If the linked identity has not yet
          * been used to sign-in, the <code>ProviderAttributeName</code> and
          * <code>ProviderAttributeValue</code> must be the same values that were used for
-         * the <code>SourceUser</code> when the identities were originally linked in the
-         * call. (If the linking was done with <code>ProviderAttributeName</code> set to
-         * <code>Cognito_Subject</code>, the same applies here). However, if the user has
-         * already signed in, the <code>ProviderAttributeName</code> must be
-         * <code>Cognito_Subject</code> and <code>ProviderAttributeValue</code> must be the
-         * subject of the SAML assertion.</p><p><h3>See Also:</h3>   <a
+         * the <code>SourceUser</code> when the identities were originally linked using
+         * <code> AdminLinkProviderForUser</code> call. (If the linking was done with
+         * <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>, the same
+         * applies here). However, if the user has already signed in, the
+         * <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code> and
+         * <code>ProviderAttributeValue</code> must be the subject of the SAML
+         * assertion.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableProviderForUser">AWS
          * API Reference</a></p>
          */
@@ -833,26 +823,28 @@ namespace Model
          * sign-in. If the user to disable is a linked external IdP user, any link between
          * that user and an existing user is removed. The next time the external user (no
          * longer attached to the previously linked <code>DestinationUser</code>) signs in,
-         * they must create a new user account. See .</p> <p>This action is enabled only
-         * for admin access and requires developer credentials.</p> <p>The
-         * <code>ProviderName</code> must match the value specified when creating an IdP
-         * for the pool. </p> <p>To disable a native username + password user, the
-         * <code>ProviderName</code> value must be <code>Cognito</code> and the
-         * <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>, with
-         * the <code>ProviderAttributeValue</code> being the name that is used in the user
-         * pool for the user.</p> <p>The <code>ProviderAttributeName</code> must always be
-         * <code>Cognito_Subject</code> for social identity providers. The
+         * they must create a new user account. See <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.</p>
+         * <p>This action is enabled only for admin access and requires developer
+         * credentials.</p> <p>The <code>ProviderName</code> must match the value specified
+         * when creating an IdP for the pool. </p> <p>To disable a native username +
+         * password user, the <code>ProviderName</code> value must be <code>Cognito</code>
+         * and the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>,
+         * with the <code>ProviderAttributeValue</code> being the name that is used in the
+         * user pool for the user.</p> <p>The <code>ProviderAttributeName</code> must
+         * always be <code>Cognito_Subject</code> for social identity providers. The
          * <code>ProviderAttributeValue</code> must always be the exact subject that was
          * used when the user was originally linked as a source user.</p> <p>For de-linking
          * a SAML identity, there are two scenarios. If the linked identity has not yet
          * been used to sign-in, the <code>ProviderAttributeName</code> and
          * <code>ProviderAttributeValue</code> must be the same values that were used for
-         * the <code>SourceUser</code> when the identities were originally linked in the
-         * call. (If the linking was done with <code>ProviderAttributeName</code> set to
-         * <code>Cognito_Subject</code>, the same applies here). However, if the user has
-         * already signed in, the <code>ProviderAttributeName</code> must be
-         * <code>Cognito_Subject</code> and <code>ProviderAttributeValue</code> must be the
-         * subject of the SAML assertion.</p><p><h3>See Also:</h3>   <a
+         * the <code>SourceUser</code> when the identities were originally linked using
+         * <code> AdminLinkProviderForUser</code> call. (If the linking was done with
+         * <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>, the same
+         * applies here). However, if the user has already signed in, the
+         * <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code> and
+         * <code>ProviderAttributeValue</code> must be the subject of the SAML
+         * assertion.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableProviderForUser">AWS
          * API Reference</a></p>
          *
@@ -867,26 +859,28 @@ namespace Model
          * sign-in. If the user to disable is a linked external IdP user, any link between
          * that user and an existing user is removed. The next time the external user (no
          * longer attached to the previously linked <code>DestinationUser</code>) signs in,
-         * they must create a new user account. See .</p> <p>This action is enabled only
-         * for admin access and requires developer credentials.</p> <p>The
-         * <code>ProviderName</code> must match the value specified when creating an IdP
-         * for the pool. </p> <p>To disable a native username + password user, the
-         * <code>ProviderName</code> value must be <code>Cognito</code> and the
-         * <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>, with
-         * the <code>ProviderAttributeValue</code> being the name that is used in the user
-         * pool for the user.</p> <p>The <code>ProviderAttributeName</code> must always be
-         * <code>Cognito_Subject</code> for social identity providers. The
+         * they must create a new user account. See <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.</p>
+         * <p>This action is enabled only for admin access and requires developer
+         * credentials.</p> <p>The <code>ProviderName</code> must match the value specified
+         * when creating an IdP for the pool. </p> <p>To disable a native username +
+         * password user, the <code>ProviderName</code> value must be <code>Cognito</code>
+         * and the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>,
+         * with the <code>ProviderAttributeValue</code> being the name that is used in the
+         * user pool for the user.</p> <p>The <code>ProviderAttributeName</code> must
+         * always be <code>Cognito_Subject</code> for social identity providers. The
          * <code>ProviderAttributeValue</code> must always be the exact subject that was
          * used when the user was originally linked as a source user.</p> <p>For de-linking
          * a SAML identity, there are two scenarios. If the linked identity has not yet
          * been used to sign-in, the <code>ProviderAttributeName</code> and
          * <code>ProviderAttributeValue</code> must be the same values that were used for
-         * the <code>SourceUser</code> when the identities were originally linked in the
-         * call. (If the linking was done with <code>ProviderAttributeName</code> set to
-         * <code>Cognito_Subject</code>, the same applies here). However, if the user has
-         * already signed in, the <code>ProviderAttributeName</code> must be
-         * <code>Cognito_Subject</code> and <code>ProviderAttributeValue</code> must be the
-         * subject of the SAML assertion.</p><p><h3>See Also:</h3>   <a
+         * the <code>SourceUser</code> when the identities were originally linked using
+         * <code> AdminLinkProviderForUser</code> call. (If the linking was done with
+         * <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>, the same
+         * applies here). However, if the user has already signed in, the
+         * <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code> and
+         * <code>ProviderAttributeValue</code> must be the subject of the SAML
+         * assertion.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableProviderForUser">AWS
          * API Reference</a></p>
          *
@@ -1078,10 +1072,11 @@ namespace Model
          * </p> <p> For example, if there is an existing user with a username and password,
          * this API links that user to a federated user identity, so that when the
          * federated user identity is used, the user signs in as the existing user account.
-         * </p> <important> <p>Because this API allows a user with an external federated
-         * identity to sign in as an existing user in the user pool, it is critical that it
-         * only be used with external identity providers and provider attributes that have
-         * been trusted by the application owner.</p> </important> <p>See also .</p>
+         * </p>  <p>The maximum number of federated identities linked to a user is
+         * 5.</p>   <p>Because this API allows a user with an external
+         * federated identity to sign in as an existing user in the user pool, it is
+         * critical that it only be used with external identity providers and provider
+         * attributes that have been trusted by the application owner.</p> 
          * <p>This action is enabled only for admin access and requires developer
          * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminLinkProviderForUser">AWS
@@ -1099,10 +1094,11 @@ namespace Model
          * </p> <p> For example, if there is an existing user with a username and password,
          * this API links that user to a federated user identity, so that when the
          * federated user identity is used, the user signs in as the existing user account.
-         * </p> <important> <p>Because this API allows a user with an external federated
-         * identity to sign in as an existing user in the user pool, it is critical that it
-         * only be used with external identity providers and provider attributes that have
-         * been trusted by the application owner.</p> </important> <p>See also .</p>
+         * </p>  <p>The maximum number of federated identities linked to a user is
+         * 5.</p>   <p>Because this API allows a user with an external
+         * federated identity to sign in as an existing user in the user pool, it is
+         * critical that it only be used with external identity providers and provider
+         * attributes that have been trusted by the application owner.</p> 
          * <p>This action is enabled only for admin access and requires developer
          * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminLinkProviderForUser">AWS
@@ -1122,10 +1118,11 @@ namespace Model
          * </p> <p> For example, if there is an existing user with a username and password,
          * this API links that user to a federated user identity, so that when the
          * federated user identity is used, the user signs in as the existing user account.
-         * </p> <important> <p>Because this API allows a user with an external federated
-         * identity to sign in as an existing user in the user pool, it is critical that it
-         * only be used with external identity providers and provider attributes that have
-         * been trusted by the application owner.</p> </important> <p>See also .</p>
+         * </p>  <p>The maximum number of federated identities linked to a user is
+         * 5.</p>   <p>Because this API allows a user with an external
+         * federated identity to sign in as an existing user in the user pool, it is
+         * critical that it only be used with external identity providers and provider
+         * attributes that have been trusted by the application owner.</p> 
          * <p>This action is enabled only for admin access and requires developer
          * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminLinkProviderForUser">AWS
@@ -1425,7 +1422,8 @@ namespace Model
         /**
          * <p> <i>This action is no longer supported.</i> You can use it to configure only
          * SMS MFA. You can't use it to configure TOTP software token MFA. To configure
-         * either type of MFA, use the <a>AdminSetUserMFAPreference</a> action
+         * either type of MFA, use <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html">AdminSetUserMFAPreference</a>
          * instead.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserSettings">AWS
          * API Reference</a></p>
@@ -1435,7 +1433,8 @@ namespace Model
         /**
          * <p> <i>This action is no longer supported.</i> You can use it to configure only
          * SMS MFA. You can't use it to configure TOTP software token MFA. To configure
-         * either type of MFA, use the <a>AdminSetUserMFAPreference</a> action
+         * either type of MFA, use <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html">AdminSetUserMFAPreference</a>
          * instead.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserSettings">AWS
          * API Reference</a></p>
@@ -1447,7 +1446,8 @@ namespace Model
         /**
          * <p> <i>This action is no longer supported.</i> You can use it to configure only
          * SMS MFA. You can't use it to configure TOTP software token MFA. To configure
-         * either type of MFA, use the <a>AdminSetUserMFAPreference</a> action
+         * either type of MFA, use <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html">AdminSetUserMFAPreference</a>
          * instead.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserSettings">AWS
          * API Reference</a></p>
@@ -2345,11 +2345,14 @@ namespace Model
          * confirmation code that is required to change the user's password. For the
          * <code>Username</code> parameter, you can use the username or user alias. The
          * method used to send the confirmation code is sent according to the specified
-         * AccountRecoverySetting. For more information, see <a href="">Recovering User
-         * Accounts</a> in the <i>Amazon Cognito Developer Guide</i>. If neither a verified
-         * phone number nor a verified email exists, an
+         * AccountRecoverySetting. For more information, see <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-recover-a-user-account.html">Recovering
+         * User Accounts</a> in the <i>Amazon Cognito Developer Guide</i>. If neither a
+         * verified phone number nor a verified email exists, an
          * <code>InvalidParameterException</code> is thrown. To use the confirmation code
-         * for resetting the password, call .</p><p><h3>See Also:</h3>   <a
+         * for resetting the password, call <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword">AWS
          * API Reference</a></p>
          */
@@ -2360,11 +2363,14 @@ namespace Model
          * confirmation code that is required to change the user's password. For the
          * <code>Username</code> parameter, you can use the username or user alias. The
          * method used to send the confirmation code is sent according to the specified
-         * AccountRecoverySetting. For more information, see <a href="">Recovering User
-         * Accounts</a> in the <i>Amazon Cognito Developer Guide</i>. If neither a verified
-         * phone number nor a verified email exists, an
+         * AccountRecoverySetting. For more information, see <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-recover-a-user-account.html">Recovering
+         * User Accounts</a> in the <i>Amazon Cognito Developer Guide</i>. If neither a
+         * verified phone number nor a verified email exists, an
          * <code>InvalidParameterException</code> is thrown. To use the confirmation code
-         * for resetting the password, call .</p><p><h3>See Also:</h3>   <a
+         * for resetting the password, call <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword">AWS
          * API Reference</a></p>
          *
@@ -2377,11 +2383,14 @@ namespace Model
          * confirmation code that is required to change the user's password. For the
          * <code>Username</code> parameter, you can use the username or user alias. The
          * method used to send the confirmation code is sent according to the specified
-         * AccountRecoverySetting. For more information, see <a href="">Recovering User
-         * Accounts</a> in the <i>Amazon Cognito Developer Guide</i>. If neither a verified
-         * phone number nor a verified email exists, an
+         * AccountRecoverySetting. For more information, see <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-recover-a-user-account.html">Recovering
+         * User Accounts</a> in the <i>Amazon Cognito Developer Guide</i>. If neither a
+         * verified phone number nor a verified email exists, an
          * <code>InvalidParameterException</code> is thrown. To use the confirmation code
-         * for resetting the password, call .</p><p><h3>See Also:</h3>   <a
+         * for resetting the password, call <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword">AWS
          * API Reference</a></p>
          *
@@ -3041,7 +3050,7 @@ namespace Model
          * <code>UserPoolId</code> or <code>ClientId</code>, pass null values for all four
          * configuration types.</p> <p>To enable Amazon Cognito advanced security features,
          * update the user pool to include the <code>UserPoolAddOns</code>
-         * key<code>AdvancedSecurityMode</code>.</p> <p>See .</p><p><h3>See Also:</h3>   <a
+         * key<code>AdvancedSecurityMode</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetRiskConfiguration">AWS
          * API Reference</a></p>
          */
@@ -3052,7 +3061,7 @@ namespace Model
          * <code>UserPoolId</code> or <code>ClientId</code>, pass null values for all four
          * configuration types.</p> <p>To enable Amazon Cognito advanced security features,
          * update the user pool to include the <code>UserPoolAddOns</code>
-         * key<code>AdvancedSecurityMode</code>.</p> <p>See .</p><p><h3>See Also:</h3>   <a
+         * key<code>AdvancedSecurityMode</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetRiskConfiguration">AWS
          * API Reference</a></p>
          *
@@ -3065,7 +3074,7 @@ namespace Model
          * <code>UserPoolId</code> or <code>ClientId</code>, pass null values for all four
          * configuration types.</p> <p>To enable Amazon Cognito advanced security features,
          * update the user pool to include the <code>UserPoolAddOns</code>
-         * key<code>AdvancedSecurityMode</code>.</p> <p>See .</p><p><h3>See Also:</h3>   <a
+         * key<code>AdvancedSecurityMode</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetRiskConfiguration">AWS
          * API Reference</a></p>
          *
@@ -3081,9 +3090,9 @@ namespace Model
          * default configuration will be used for every client that has no UI customization
          * set previously. If you specify UI customization settings for a particular
          * client, it will no longer fall back to the <code>ALL</code> configuration. </p>
-         * <note> <p>To use this API, your user pool must have a domain associated with it.
+         *  <p>To use this API, your user pool must have a domain associated with it.
          * Otherwise, there is no place to host the app's pages, and the service will throw
-         * an error.</p> </note><p><h3>See Also:</h3>   <a
+         * an error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUICustomization">AWS
          * API Reference</a></p>
          */
@@ -3097,9 +3106,9 @@ namespace Model
          * default configuration will be used for every client that has no UI customization
          * set previously. If you specify UI customization settings for a particular
          * client, it will no longer fall back to the <code>ALL</code> configuration. </p>
-         * <note> <p>To use this API, your user pool must have a domain associated with it.
+         *  <p>To use this API, your user pool must have a domain associated with it.
          * Otherwise, there is no place to host the app's pages, and the service will throw
-         * an error.</p> </note><p><h3>See Also:</h3>   <a
+         * an error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUICustomization">AWS
          * API Reference</a></p>
          *
@@ -3115,9 +3124,9 @@ namespace Model
          * default configuration will be used for every client that has no UI customization
          * set previously. If you specify UI customization settings for a particular
          * client, it will no longer fall back to the <code>ALL</code> configuration. </p>
-         * <note> <p>To use this API, your user pool must have a domain associated with it.
+         *  <p>To use this API, your user pool must have a domain associated with it.
          * Otherwise, there is no place to host the app's pages, and the service will throw
-         * an error.</p> </note><p><h3>See Also:</h3>   <a
+         * an error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUICustomization">AWS
          * API Reference</a></p>
          *
@@ -3131,7 +3140,11 @@ namespace Model
          * set as preferred. The preferred MFA factor will be used to authenticate a user
          * if multiple factors are enabled. If multiple options are enabled and no
          * preference is set, a challenge to choose an MFA option will be returned during
-         * sign in.</p><p><h3>See Also:</h3>   <a
+         * sign in. If an MFA type is enabled for a user, the user will be prompted for MFA
+         * during all sign in attempts, unless device tracking is turned on and the device
+         * has been trusted. If you would like MFA to be applied selectively based on the
+         * assessed risk level of sign in attempts, disable MFA for users and turn on
+         * Adaptive Authentication for the user pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserMFAPreference">AWS
          * API Reference</a></p>
          */
@@ -3143,7 +3156,11 @@ namespace Model
          * set as preferred. The preferred MFA factor will be used to authenticate a user
          * if multiple factors are enabled. If multiple options are enabled and no
          * preference is set, a challenge to choose an MFA option will be returned during
-         * sign in.</p><p><h3>See Also:</h3>   <a
+         * sign in. If an MFA type is enabled for a user, the user will be prompted for MFA
+         * during all sign in attempts, unless device tracking is turned on and the device
+         * has been trusted. If you would like MFA to be applied selectively based on the
+         * assessed risk level of sign in attempts, disable MFA for users and turn on
+         * Adaptive Authentication for the user pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserMFAPreference">AWS
          * API Reference</a></p>
          *
@@ -3157,7 +3174,11 @@ namespace Model
          * set as preferred. The preferred MFA factor will be used to authenticate a user
          * if multiple factors are enabled. If multiple options are enabled and no
          * preference is set, a challenge to choose an MFA option will be returned during
-         * sign in.</p><p><h3>See Also:</h3>   <a
+         * sign in. If an MFA type is enabled for a user, the user will be prompted for MFA
+         * during all sign in attempts, unless device tracking is turned on and the device
+         * has been trusted. If you would like MFA to be applied selectively based on the
+         * assessed risk level of sign in attempts, disable MFA for users and turn on
+         * Adaptive Authentication for the user pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserMFAPreference">AWS
          * API Reference</a></p>
          *
@@ -3196,7 +3217,8 @@ namespace Model
         /**
          * <p> <i>This action is no longer supported.</i> You can use it to configure only
          * SMS MFA. You can't use it to configure TOTP software token MFA. To configure
-         * either type of MFA, use the <a>SetUserMFAPreference</a> action
+         * either type of MFA, use <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>
          * instead.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettings">AWS
          * API Reference</a></p>
@@ -3206,7 +3228,8 @@ namespace Model
         /**
          * <p> <i>This action is no longer supported.</i> You can use it to configure only
          * SMS MFA. You can't use it to configure TOTP software token MFA. To configure
-         * either type of MFA, use the <a>SetUserMFAPreference</a> action
+         * either type of MFA, use <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>
          * instead.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettings">AWS
          * API Reference</a></p>
@@ -3218,7 +3241,8 @@ namespace Model
         /**
          * <p> <i>This action is no longer supported.</i> You can use it to configure only
          * SMS MFA. You can't use it to configure TOTP software token MFA. To configure
-         * either type of MFA, use the <a>SetUserMFAPreference</a> action
+         * either type of MFA, use <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>
          * instead.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettings">AWS
          * API Reference</a></p>
@@ -3458,9 +3482,9 @@ namespace Model
 
         /**
          * <p>Updates the specified group with the specified attributes.</p> <p>Calling
-         * this action requires developer credentials.</p> <important> <p>If you don't
+         * this action requires developer credentials.</p>  <p>If you don't
          * provide a value for an attribute, it will be set to the default value.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">AWS
          * API Reference</a></p>
          */
@@ -3468,9 +3492,9 @@ namespace Model
 
         /**
          * <p>Updates the specified group with the specified attributes.</p> <p>Calling
-         * this action requires developer credentials.</p> <important> <p>If you don't
+         * this action requires developer credentials.</p>  <p>If you don't
          * provide a value for an attribute, it will be set to the default value.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">AWS
          * API Reference</a></p>
          *
@@ -3480,9 +3504,9 @@ namespace Model
 
         /**
          * <p>Updates the specified group with the specified attributes.</p> <p>Calling
-         * this action requires developer credentials.</p> <important> <p>If you don't
+         * this action requires developer credentials.</p>  <p>If you don't
          * provide a value for an attribute, it will be set to the default value.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">AWS
          * API Reference</a></p>
          *
@@ -3520,8 +3544,8 @@ namespace Model
 
         /**
          * <p>Updates the name and scopes of resource server. All other fields are
-         * read-only.</p> <important> <p>If you don't provide a value for an attribute, it
-         * will be set to the default value.</p> </important><p><h3>See Also:</h3>   <a
+         * read-only.</p>  <p>If you don't provide a value for an attribute, it
+         * will be set to the default value.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateResourceServer">AWS
          * API Reference</a></p>
          */
@@ -3529,8 +3553,8 @@ namespace Model
 
         /**
          * <p>Updates the name and scopes of resource server. All other fields are
-         * read-only.</p> <important> <p>If you don't provide a value for an attribute, it
-         * will be set to the default value.</p> </important><p><h3>See Also:</h3>   <a
+         * read-only.</p>  <p>If you don't provide a value for an attribute, it
+         * will be set to the default value.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateResourceServer">AWS
          * API Reference</a></p>
          *
@@ -3540,8 +3564,8 @@ namespace Model
 
         /**
          * <p>Updates the name and scopes of resource server. All other fields are
-         * read-only.</p> <important> <p>If you don't provide a value for an attribute, it
-         * will be set to the default value.</p> </important><p><h3>See Also:</h3>   <a
+         * read-only.</p>  <p>If you don't provide a value for an attribute, it
+         * will be set to the default value.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateResourceServer">AWS
          * API Reference</a></p>
          *
@@ -3579,9 +3603,10 @@ namespace Model
 
         /**
          * <p>Updates the specified user pool with the specified attributes. You can get a
-         * list of the current user pool settings with .</p> <important> <p>If you don't
-         * provide a value for an attribute, it will be set to the default value.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * list of the current user pool settings using <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.</p>
+         *  <p>If you don't provide a value for an attribute, it will be set to
+         * the default value.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool">AWS
          * API Reference</a></p>
          */
@@ -3589,9 +3614,10 @@ namespace Model
 
         /**
          * <p>Updates the specified user pool with the specified attributes. You can get a
-         * list of the current user pool settings with .</p> <important> <p>If you don't
-         * provide a value for an attribute, it will be set to the default value.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * list of the current user pool settings using <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.</p>
+         *  <p>If you don't provide a value for an attribute, it will be set to
+         * the default value.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool">AWS
          * API Reference</a></p>
          *
@@ -3601,9 +3627,10 @@ namespace Model
 
         /**
          * <p>Updates the specified user pool with the specified attributes. You can get a
-         * list of the current user pool settings with .</p> <important> <p>If you don't
-         * provide a value for an attribute, it will be set to the default value.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * list of the current user pool settings using <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.</p>
+         *  <p>If you don't provide a value for an attribute, it will be set to
+         * the default value.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool">AWS
          * API Reference</a></p>
          *
@@ -3613,9 +3640,10 @@ namespace Model
 
         /**
          * <p>Updates the specified user pool app client with the specified attributes. You
-         * can get a list of the current user pool app client settings with .</p>
-         * <important> <p>If you don't provide a value for an attribute, it will be set to
-         * the default value.</p> </important><p><h3>See Also:</h3>   <a
+         * can get a list of the current user pool app client settings using <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html">DescribeUserPoolClient</a>.</p>
+         *  <p>If you don't provide a value for an attribute, it will be set to
+         * the default value.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">AWS
          * API Reference</a></p>
          */
@@ -3623,9 +3651,10 @@ namespace Model
 
         /**
          * <p>Updates the specified user pool app client with the specified attributes. You
-         * can get a list of the current user pool app client settings with .</p>
-         * <important> <p>If you don't provide a value for an attribute, it will be set to
-         * the default value.</p> </important><p><h3>See Also:</h3>   <a
+         * can get a list of the current user pool app client settings using <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html">DescribeUserPoolClient</a>.</p>
+         *  <p>If you don't provide a value for an attribute, it will be set to
+         * the default value.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">AWS
          * API Reference</a></p>
          *
@@ -3635,9 +3664,10 @@ namespace Model
 
         /**
          * <p>Updates the specified user pool app client with the specified attributes. You
-         * can get a list of the current user pool app client settings with .</p>
-         * <important> <p>If you don't provide a value for an attribute, it will be set to
-         * the default value.</p> </important><p><h3>See Also:</h3>   <a
+         * can get a list of the current user pool app client settings using <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html">DescribeUserPoolClient</a>.</p>
+         *  <p>If you don't provide a value for an attribute, it will be set to
+         * the default value.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">AWS
          * API Reference</a></p>
          *

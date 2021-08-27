@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
@@ -51,127 +41,246 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>Identifies the file system that you are updating.</p>
+     */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
 
-    
+    /**
+     * <p>Identifies the file system that you are updating.</p>
+     */
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
 
-    
+    /**
+     * <p>Identifies the file system that you are updating.</p>
+     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
-    
+    /**
+     * <p>Identifies the file system that you are updating.</p>
+     */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
 
-    
+    /**
+     * <p>Identifies the file system that you are updating.</p>
+     */
     inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
 
-    
+    /**
+     * <p>Identifies the file system that you are updating.</p>
+     */
     inline UpdateFileSystemRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
 
-    
+    /**
+     * <p>Identifies the file system that you are updating.</p>
+     */
     inline UpdateFileSystemRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Identifies the file system that you are updating.</p>
+     */
     inline UpdateFileSystemRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
 
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent updates. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent updates. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent updates. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent updates. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent updates. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent updates. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent updates. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent updates. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent updates. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent updates. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent updates. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent updates. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline UpdateFileSystemRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent updates. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent updates. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline UpdateFileSystemRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent updates. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent updates. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline UpdateFileSystemRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
 
     /**
-     * <p>The configuration update for this Microsoft Windows file system. The only
-     * supported options are for backup and maintenance and for self-managed Active
-     * Directory configuration.</p>
+     * <p>Use this parameter to increase the storage capacity of an Amazon FSx file
+     * system. Specifies the storage capacity target value, GiB, to increase the
+     * storage capacity for the file system that you're updating. You cannot make a
+     * storage capacity increase request if there is an existing storage capacity
+     * increase request in progress.</p> <p>For Windows file systems, the storage
+     * capacity target value must be at least 10 percent (%) greater than the current
+     * storage capacity value. In order to increase storage capacity, the file system
+     * must have at least 16 MB/s of throughput capacity.</p> <p>For Lustre file
+     * systems, the storage capacity target value can be the following:</p> <ul> <li>
+     * <p>For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment
+     * types, valid values are in multiples of 2400 GiB. The value must be greater than
+     * the current storage capacity.</p> </li> <li> <p>For <code>PERSISTENT HDD</code>
+     * file systems, valid values are multiples of 6000 GiB for 12 MB/s/TiB file
+     * systems and multiples of 1800 GiB for 40 MB/s/TiB file systems. The values must
+     * be greater than the current storage capacity.</p> </li> <li> <p>For
+     * <code>SCRATCH_1</code> file systems, you cannot increase the storage
+     * capacity.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
+     * storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing
+     * storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User
+     * Guide</i>.</p>
+     */
+    inline int GetStorageCapacity() const{ return m_storageCapacity; }
+
+    /**
+     * <p>Use this parameter to increase the storage capacity of an Amazon FSx file
+     * system. Specifies the storage capacity target value, GiB, to increase the
+     * storage capacity for the file system that you're updating. You cannot make a
+     * storage capacity increase request if there is an existing storage capacity
+     * increase request in progress.</p> <p>For Windows file systems, the storage
+     * capacity target value must be at least 10 percent (%) greater than the current
+     * storage capacity value. In order to increase storage capacity, the file system
+     * must have at least 16 MB/s of throughput capacity.</p> <p>For Lustre file
+     * systems, the storage capacity target value can be the following:</p> <ul> <li>
+     * <p>For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment
+     * types, valid values are in multiples of 2400 GiB. The value must be greater than
+     * the current storage capacity.</p> </li> <li> <p>For <code>PERSISTENT HDD</code>
+     * file systems, valid values are multiples of 6000 GiB for 12 MB/s/TiB file
+     * systems and multiples of 1800 GiB for 40 MB/s/TiB file systems. The values must
+     * be greater than the current storage capacity.</p> </li> <li> <p>For
+     * <code>SCRATCH_1</code> file systems, you cannot increase the storage
+     * capacity.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
+     * storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing
+     * storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User
+     * Guide</i>.</p>
+     */
+    inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
+
+    /**
+     * <p>Use this parameter to increase the storage capacity of an Amazon FSx file
+     * system. Specifies the storage capacity target value, GiB, to increase the
+     * storage capacity for the file system that you're updating. You cannot make a
+     * storage capacity increase request if there is an existing storage capacity
+     * increase request in progress.</p> <p>For Windows file systems, the storage
+     * capacity target value must be at least 10 percent (%) greater than the current
+     * storage capacity value. In order to increase storage capacity, the file system
+     * must have at least 16 MB/s of throughput capacity.</p> <p>For Lustre file
+     * systems, the storage capacity target value can be the following:</p> <ul> <li>
+     * <p>For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment
+     * types, valid values are in multiples of 2400 GiB. The value must be greater than
+     * the current storage capacity.</p> </li> <li> <p>For <code>PERSISTENT HDD</code>
+     * file systems, valid values are multiples of 6000 GiB for 12 MB/s/TiB file
+     * systems and multiples of 1800 GiB for 40 MB/s/TiB file systems. The values must
+     * be greater than the current storage capacity.</p> </li> <li> <p>For
+     * <code>SCRATCH_1</code> file systems, you cannot increase the storage
+     * capacity.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
+     * storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing
+     * storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User
+     * Guide</i>.</p>
+     */
+    inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
+
+    /**
+     * <p>Use this parameter to increase the storage capacity of an Amazon FSx file
+     * system. Specifies the storage capacity target value, GiB, to increase the
+     * storage capacity for the file system that you're updating. You cannot make a
+     * storage capacity increase request if there is an existing storage capacity
+     * increase request in progress.</p> <p>For Windows file systems, the storage
+     * capacity target value must be at least 10 percent (%) greater than the current
+     * storage capacity value. In order to increase storage capacity, the file system
+     * must have at least 16 MB/s of throughput capacity.</p> <p>For Lustre file
+     * systems, the storage capacity target value can be the following:</p> <ul> <li>
+     * <p>For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment
+     * types, valid values are in multiples of 2400 GiB. The value must be greater than
+     * the current storage capacity.</p> </li> <li> <p>For <code>PERSISTENT HDD</code>
+     * file systems, valid values are multiples of 6000 GiB for 12 MB/s/TiB file
+     * systems and multiples of 1800 GiB for 40 MB/s/TiB file systems. The values must
+     * be greater than the current storage capacity.</p> </li> <li> <p>For
+     * <code>SCRATCH_1</code> file systems, you cannot increase the storage
+     * capacity.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
+     * storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing
+     * storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User
+     * Guide</i>.</p>
+     */
+    inline UpdateFileSystemRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
+
+
+    /**
+     * <p>The configuration updates for an Amazon FSx for Windows File Server file
+     * system.</p>
      */
     inline const UpdateFileSystemWindowsConfiguration& GetWindowsConfiguration() const{ return m_windowsConfiguration; }
 
     /**
-     * <p>The configuration update for this Microsoft Windows file system. The only
-     * supported options are for backup and maintenance and for self-managed Active
-     * Directory configuration.</p>
+     * <p>The configuration updates for an Amazon FSx for Windows File Server file
+     * system.</p>
      */
     inline bool WindowsConfigurationHasBeenSet() const { return m_windowsConfigurationHasBeenSet; }
 
     /**
-     * <p>The configuration update for this Microsoft Windows file system. The only
-     * supported options are for backup and maintenance and for self-managed Active
-     * Directory configuration.</p>
+     * <p>The configuration updates for an Amazon FSx for Windows File Server file
+     * system.</p>
      */
     inline void SetWindowsConfiguration(const UpdateFileSystemWindowsConfiguration& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = value; }
 
     /**
-     * <p>The configuration update for this Microsoft Windows file system. The only
-     * supported options are for backup and maintenance and for self-managed Active
-     * Directory configuration.</p>
+     * <p>The configuration updates for an Amazon FSx for Windows File Server file
+     * system.</p>
      */
     inline void SetWindowsConfiguration(UpdateFileSystemWindowsConfiguration&& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration update for this Microsoft Windows file system. The only
-     * supported options are for backup and maintenance and for self-managed Active
-     * Directory configuration.</p>
+     * <p>The configuration updates for an Amazon FSx for Windows File Server file
+     * system.</p>
      */
     inline UpdateFileSystemRequest& WithWindowsConfiguration(const UpdateFileSystemWindowsConfiguration& value) { SetWindowsConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration update for this Microsoft Windows file system. The only
-     * supported options are for backup and maintenance and for self-managed Active
-     * Directory configuration.</p>
+     * <p>The configuration updates for an Amazon FSx for Windows File Server file
+     * system.</p>
      */
     inline UpdateFileSystemRequest& WithWindowsConfiguration(UpdateFileSystemWindowsConfiguration&& value) { SetWindowsConfiguration(std::move(value)); return *this;}
 
@@ -201,6 +310,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
+
+    int m_storageCapacity;
+    bool m_storageCapacityHasBeenSet;
 
     UpdateFileSystemWindowsConfiguration m_windowsConfiguration;
     bool m_windowsConfigurationHasBeenSet;

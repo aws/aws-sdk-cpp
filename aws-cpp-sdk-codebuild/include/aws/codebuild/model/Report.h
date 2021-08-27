@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
@@ -21,6 +11,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/codebuild/model/ReportExportConfig.h>
 #include <aws/codebuild/model/TestReportSummary.h>
+#include <aws/codebuild/model/CodeCoverageReportSummary.h>
 #include <utility>
 
 namespace Aws
@@ -39,7 +30,7 @@ namespace Model
 {
 
   /**
-   * <p> Information about the results from running a series of test cases during the
+   * <p>Information about the results from running a series of test cases during the
    * run of a build project. The test cases are specified in the buildspec for the
    * build project using one or more paths to the test case files. You can specify
    * any type of tests you want, such as unit tests, integration tests, and
@@ -98,32 +89,44 @@ namespace Model
 
 
     /**
-     * <p> The type of the report that was run. </p>
+     * <p>The type of the report that was run.</p> <dl> <dt>CODE_COVERAGE</dt> <dd>
+     * <p>A code coverage report.</p> </dd> <dt>TEST</dt> <dd> <p>A test report.</p>
+     * </dd> </dl>
      */
     inline const ReportType& GetType() const{ return m_type; }
 
     /**
-     * <p> The type of the report that was run. </p>
+     * <p>The type of the report that was run.</p> <dl> <dt>CODE_COVERAGE</dt> <dd>
+     * <p>A code coverage report.</p> </dd> <dt>TEST</dt> <dd> <p>A test report.</p>
+     * </dd> </dl>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p> The type of the report that was run. </p>
+     * <p>The type of the report that was run.</p> <dl> <dt>CODE_COVERAGE</dt> <dd>
+     * <p>A code coverage report.</p> </dd> <dt>TEST</dt> <dd> <p>A test report.</p>
+     * </dd> </dl>
      */
     inline void SetType(const ReportType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p> The type of the report that was run. </p>
+     * <p>The type of the report that was run.</p> <dl> <dt>CODE_COVERAGE</dt> <dd>
+     * <p>A code coverage report.</p> </dd> <dt>TEST</dt> <dd> <p>A test report.</p>
+     * </dd> </dl>
      */
     inline void SetType(ReportType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p> The type of the report that was run. </p>
+     * <p>The type of the report that was run.</p> <dl> <dt>CODE_COVERAGE</dt> <dd>
+     * <p>A code coverage report.</p> </dd> <dt>TEST</dt> <dd> <p>A test report.</p>
+     * </dd> </dl>
      */
     inline Report& WithType(const ReportType& value) { SetType(value); return *this;}
 
     /**
-     * <p> The type of the report that was run. </p>
+     * <p>The type of the report that was run.</p> <dl> <dt>CODE_COVERAGE</dt> <dd>
+     * <p>A code coverage report.</p> </dd> <dt>TEST</dt> <dd> <p>A test report.</p>
+     * </dd> </dl>
      */
     inline Report& WithType(ReportType&& value) { SetType(std::move(value)); return *this;}
 
@@ -448,6 +451,43 @@ namespace Model
      */
     inline Report& WithTestSummary(TestReportSummary&& value) { SetTestSummary(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A <code>CodeCoverageReportSummary</code> object that contains a code coverage
+     * summary for this report.</p>
+     */
+    inline const CodeCoverageReportSummary& GetCodeCoverageSummary() const{ return m_codeCoverageSummary; }
+
+    /**
+     * <p>A <code>CodeCoverageReportSummary</code> object that contains a code coverage
+     * summary for this report.</p>
+     */
+    inline bool CodeCoverageSummaryHasBeenSet() const { return m_codeCoverageSummaryHasBeenSet; }
+
+    /**
+     * <p>A <code>CodeCoverageReportSummary</code> object that contains a code coverage
+     * summary for this report.</p>
+     */
+    inline void SetCodeCoverageSummary(const CodeCoverageReportSummary& value) { m_codeCoverageSummaryHasBeenSet = true; m_codeCoverageSummary = value; }
+
+    /**
+     * <p>A <code>CodeCoverageReportSummary</code> object that contains a code coverage
+     * summary for this report.</p>
+     */
+    inline void SetCodeCoverageSummary(CodeCoverageReportSummary&& value) { m_codeCoverageSummaryHasBeenSet = true; m_codeCoverageSummary = std::move(value); }
+
+    /**
+     * <p>A <code>CodeCoverageReportSummary</code> object that contains a code coverage
+     * summary for this report.</p>
+     */
+    inline Report& WithCodeCoverageSummary(const CodeCoverageReportSummary& value) { SetCodeCoverageSummary(value); return *this;}
+
+    /**
+     * <p>A <code>CodeCoverageReportSummary</code> object that contains a code coverage
+     * summary for this report.</p>
+     */
+    inline Report& WithCodeCoverageSummary(CodeCoverageReportSummary&& value) { SetCodeCoverageSummary(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -482,6 +522,9 @@ namespace Model
 
     TestReportSummary m_testSummary;
     bool m_testSummaryHasBeenSet;
+
+    CodeCoverageReportSummary m_codeCoverageSummary;
+    bool m_codeCoverageSummaryHasBeenSet;
   };
 
 } // namespace Model

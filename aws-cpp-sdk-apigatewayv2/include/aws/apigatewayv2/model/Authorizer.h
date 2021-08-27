@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
@@ -54,7 +44,8 @@ namespace Model
      * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
      * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
-     * function, specify null. Supported only for REQUEST authorizers.</p>
+     * function, don't specify this parameter. Supported only for REQUEST
+     * authorizers.</p>
      */
     inline const Aws::String& GetAuthorizerCredentialsArn() const{ return m_authorizerCredentialsArn; }
 
@@ -62,7 +53,8 @@ namespace Model
      * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
      * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
-     * function, specify null. Supported only for REQUEST authorizers.</p>
+     * function, don't specify this parameter. Supported only for REQUEST
+     * authorizers.</p>
      */
     inline bool AuthorizerCredentialsArnHasBeenSet() const { return m_authorizerCredentialsArnHasBeenSet; }
 
@@ -70,7 +62,8 @@ namespace Model
      * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
      * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
-     * function, specify null. Supported only for REQUEST authorizers.</p>
+     * function, don't specify this parameter. Supported only for REQUEST
+     * authorizers.</p>
      */
     inline void SetAuthorizerCredentialsArn(const Aws::String& value) { m_authorizerCredentialsArnHasBeenSet = true; m_authorizerCredentialsArn = value; }
 
@@ -78,7 +71,8 @@ namespace Model
      * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
      * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
-     * function, specify null. Supported only for REQUEST authorizers.</p>
+     * function, don't specify this parameter. Supported only for REQUEST
+     * authorizers.</p>
      */
     inline void SetAuthorizerCredentialsArn(Aws::String&& value) { m_authorizerCredentialsArnHasBeenSet = true; m_authorizerCredentialsArn = std::move(value); }
 
@@ -86,7 +80,8 @@ namespace Model
      * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
      * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
-     * function, specify null. Supported only for REQUEST authorizers.</p>
+     * function, don't specify this parameter. Supported only for REQUEST
+     * authorizers.</p>
      */
     inline void SetAuthorizerCredentialsArn(const char* value) { m_authorizerCredentialsArnHasBeenSet = true; m_authorizerCredentialsArn.assign(value); }
 
@@ -94,7 +89,8 @@ namespace Model
      * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
      * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
-     * function, specify null. Supported only for REQUEST authorizers.</p>
+     * function, don't specify this parameter. Supported only for REQUEST
+     * authorizers.</p>
      */
     inline Authorizer& WithAuthorizerCredentialsArn(const Aws::String& value) { SetAuthorizerCredentialsArn(value); return *this;}
 
@@ -102,7 +98,8 @@ namespace Model
      * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
      * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
-     * function, specify null. Supported only for REQUEST authorizers.</p>
+     * function, don't specify this parameter. Supported only for REQUEST
+     * authorizers.</p>
      */
     inline Authorizer& WithAuthorizerCredentialsArn(Aws::String&& value) { SetAuthorizerCredentialsArn(std::move(value)); return *this;}
 
@@ -110,7 +107,8 @@ namespace Model
      * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
      * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
-     * function, specify null. Supported only for REQUEST authorizers.</p>
+     * function, don't specify this parameter. Supported only for REQUEST
+     * authorizers.</p>
      */
     inline Authorizer& WithAuthorizerCredentialsArn(const char* value) { SetAuthorizerCredentialsArn(value); return *this;}
 
@@ -157,75 +155,156 @@ namespace Model
 
 
     /**
-     * <p>Authorizer caching is not currently supported. Don't specify this value for
-     * authorizers.</p>
+     * <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer.
+     * Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To
+     * learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
+     * with AWS Lambda authorizers for HTTP APIs</a>.</p>
+     */
+    inline const Aws::String& GetAuthorizerPayloadFormatVersion() const{ return m_authorizerPayloadFormatVersion; }
+
+    /**
+     * <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer.
+     * Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To
+     * learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
+     * with AWS Lambda authorizers for HTTP APIs</a>.</p>
+     */
+    inline bool AuthorizerPayloadFormatVersionHasBeenSet() const { return m_authorizerPayloadFormatVersionHasBeenSet; }
+
+    /**
+     * <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer.
+     * Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To
+     * learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
+     * with AWS Lambda authorizers for HTTP APIs</a>.</p>
+     */
+    inline void SetAuthorizerPayloadFormatVersion(const Aws::String& value) { m_authorizerPayloadFormatVersionHasBeenSet = true; m_authorizerPayloadFormatVersion = value; }
+
+    /**
+     * <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer.
+     * Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To
+     * learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
+     * with AWS Lambda authorizers for HTTP APIs</a>.</p>
+     */
+    inline void SetAuthorizerPayloadFormatVersion(Aws::String&& value) { m_authorizerPayloadFormatVersionHasBeenSet = true; m_authorizerPayloadFormatVersion = std::move(value); }
+
+    /**
+     * <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer.
+     * Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To
+     * learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
+     * with AWS Lambda authorizers for HTTP APIs</a>.</p>
+     */
+    inline void SetAuthorizerPayloadFormatVersion(const char* value) { m_authorizerPayloadFormatVersionHasBeenSet = true; m_authorizerPayloadFormatVersion.assign(value); }
+
+    /**
+     * <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer.
+     * Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To
+     * learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
+     * with AWS Lambda authorizers for HTTP APIs</a>.</p>
+     */
+    inline Authorizer& WithAuthorizerPayloadFormatVersion(const Aws::String& value) { SetAuthorizerPayloadFormatVersion(value); return *this;}
+
+    /**
+     * <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer.
+     * Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To
+     * learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
+     * with AWS Lambda authorizers for HTTP APIs</a>.</p>
+     */
+    inline Authorizer& WithAuthorizerPayloadFormatVersion(Aws::String&& value) { SetAuthorizerPayloadFormatVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer.
+     * Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To
+     * learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
+     * with AWS Lambda authorizers for HTTP APIs</a>.</p>
+     */
+    inline Authorizer& WithAuthorizerPayloadFormatVersion(const char* value) { SetAuthorizerPayloadFormatVersion(value); return *this;}
+
+
+    /**
+     * <p>The time to live (TTL) for cached authorizer results, in seconds. If it
+     * equals 0, authorization caching is disabled. If it is greater than 0, API
+     * Gateway caches authorizer responses. The maximum value is 3600, or 1 hour.
+     * Supported only for HTTP API Lambda authorizers.</p>
      */
     inline int GetAuthorizerResultTtlInSeconds() const{ return m_authorizerResultTtlInSeconds; }
 
     /**
-     * <p>Authorizer caching is not currently supported. Don't specify this value for
-     * authorizers.</p>
+     * <p>The time to live (TTL) for cached authorizer results, in seconds. If it
+     * equals 0, authorization caching is disabled. If it is greater than 0, API
+     * Gateway caches authorizer responses. The maximum value is 3600, or 1 hour.
+     * Supported only for HTTP API Lambda authorizers.</p>
      */
     inline bool AuthorizerResultTtlInSecondsHasBeenSet() const { return m_authorizerResultTtlInSecondsHasBeenSet; }
 
     /**
-     * <p>Authorizer caching is not currently supported. Don't specify this value for
-     * authorizers.</p>
+     * <p>The time to live (TTL) for cached authorizer results, in seconds. If it
+     * equals 0, authorization caching is disabled. If it is greater than 0, API
+     * Gateway caches authorizer responses. The maximum value is 3600, or 1 hour.
+     * Supported only for HTTP API Lambda authorizers.</p>
      */
     inline void SetAuthorizerResultTtlInSeconds(int value) { m_authorizerResultTtlInSecondsHasBeenSet = true; m_authorizerResultTtlInSeconds = value; }
 
     /**
-     * <p>Authorizer caching is not currently supported. Don't specify this value for
-     * authorizers.</p>
+     * <p>The time to live (TTL) for cached authorizer results, in seconds. If it
+     * equals 0, authorization caching is disabled. If it is greater than 0, API
+     * Gateway caches authorizer responses. The maximum value is 3600, or 1 hour.
+     * Supported only for HTTP API Lambda authorizers.</p>
      */
     inline Authorizer& WithAuthorizerResultTtlInSeconds(int value) { SetAuthorizerResultTtlInSeconds(value); return *this;}
 
 
     /**
-     * <p>The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda
-     * function using incoming request parameters. For HTTP APIs, specify JWT to use
-     * JSON Web Tokens.</p>
+     * <p>The authorizer type. Specify REQUEST for a Lambda function using incoming
+     * request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP
+     * APIs).</p>
      */
     inline const AuthorizerType& GetAuthorizerType() const{ return m_authorizerType; }
 
     /**
-     * <p>The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda
-     * function using incoming request parameters. For HTTP APIs, specify JWT to use
-     * JSON Web Tokens.</p>
+     * <p>The authorizer type. Specify REQUEST for a Lambda function using incoming
+     * request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP
+     * APIs).</p>
      */
     inline bool AuthorizerTypeHasBeenSet() const { return m_authorizerTypeHasBeenSet; }
 
     /**
-     * <p>The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda
-     * function using incoming request parameters. For HTTP APIs, specify JWT to use
-     * JSON Web Tokens.</p>
+     * <p>The authorizer type. Specify REQUEST for a Lambda function using incoming
+     * request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP
+     * APIs).</p>
      */
     inline void SetAuthorizerType(const AuthorizerType& value) { m_authorizerTypeHasBeenSet = true; m_authorizerType = value; }
 
     /**
-     * <p>The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda
-     * function using incoming request parameters. For HTTP APIs, specify JWT to use
-     * JSON Web Tokens.</p>
+     * <p>The authorizer type. Specify REQUEST for a Lambda function using incoming
+     * request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP
+     * APIs).</p>
      */
     inline void SetAuthorizerType(AuthorizerType&& value) { m_authorizerTypeHasBeenSet = true; m_authorizerType = std::move(value); }
 
     /**
-     * <p>The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda
-     * function using incoming request parameters. For HTTP APIs, specify JWT to use
-     * JSON Web Tokens.</p>
+     * <p>The authorizer type. Specify REQUEST for a Lambda function using incoming
+     * request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP
+     * APIs).</p>
      */
     inline Authorizer& WithAuthorizerType(const AuthorizerType& value) { SetAuthorizerType(value); return *this;}
 
     /**
-     * <p>The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda
-     * function using incoming request parameters. For HTTP APIs, specify JWT to use
-     * JSON Web Tokens.</p>
+     * <p>The authorizer type. Specify REQUEST for a Lambda function using incoming
+     * request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP
+     * APIs).</p>
      */
     inline Authorizer& WithAuthorizerType(AuthorizerType&& value) { SetAuthorizerType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The authorizer's Uniform Resource Identifier (URI). ForREQUEST authorizers,
+     * <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers,
      * this must be a well-formed Lambda function URI, for example,
      * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations.
      * In general, the URI has this form:
@@ -241,7 +320,7 @@ namespace Model
     inline const Aws::String& GetAuthorizerUri() const{ return m_authorizerUri; }
 
     /**
-     * <p>The authorizer's Uniform Resource Identifier (URI). ForREQUEST authorizers,
+     * <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers,
      * this must be a well-formed Lambda function URI, for example,
      * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations.
      * In general, the URI has this form:
@@ -257,7 +336,7 @@ namespace Model
     inline bool AuthorizerUriHasBeenSet() const { return m_authorizerUriHasBeenSet; }
 
     /**
-     * <p>The authorizer's Uniform Resource Identifier (URI). ForREQUEST authorizers,
+     * <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers,
      * this must be a well-formed Lambda function URI, for example,
      * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations.
      * In general, the URI has this form:
@@ -273,7 +352,7 @@ namespace Model
     inline void SetAuthorizerUri(const Aws::String& value) { m_authorizerUriHasBeenSet = true; m_authorizerUri = value; }
 
     /**
-     * <p>The authorizer's Uniform Resource Identifier (URI). ForREQUEST authorizers,
+     * <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers,
      * this must be a well-formed Lambda function URI, for example,
      * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations.
      * In general, the URI has this form:
@@ -289,7 +368,7 @@ namespace Model
     inline void SetAuthorizerUri(Aws::String&& value) { m_authorizerUriHasBeenSet = true; m_authorizerUri = std::move(value); }
 
     /**
-     * <p>The authorizer's Uniform Resource Identifier (URI). ForREQUEST authorizers,
+     * <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers,
      * this must be a well-formed Lambda function URI, for example,
      * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations.
      * In general, the URI has this form:
@@ -305,7 +384,7 @@ namespace Model
     inline void SetAuthorizerUri(const char* value) { m_authorizerUriHasBeenSet = true; m_authorizerUri.assign(value); }
 
     /**
-     * <p>The authorizer's Uniform Resource Identifier (URI). ForREQUEST authorizers,
+     * <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers,
      * this must be a well-formed Lambda function URI, for example,
      * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations.
      * In general, the URI has this form:
@@ -321,7 +400,7 @@ namespace Model
     inline Authorizer& WithAuthorizerUri(const Aws::String& value) { SetAuthorizerUri(value); return *this;}
 
     /**
-     * <p>The authorizer's Uniform Resource Identifier (URI). ForREQUEST authorizers,
+     * <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers,
      * this must be a well-formed Lambda function URI, for example,
      * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations.
      * In general, the URI has this form:
@@ -337,7 +416,7 @@ namespace Model
     inline Authorizer& WithAuthorizerUri(Aws::String&& value) { SetAuthorizerUri(std::move(value)); return *this;}
 
     /**
-     * <p>The authorizer's Uniform Resource Identifier (URI). ForREQUEST authorizers,
+     * <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers,
      * this must be a well-formed Lambda function URI, for example,
      * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations.
      * In general, the URI has this form:
@@ -354,173 +433,255 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether a Lambda authorizer returns a response in a simple format.
+     * If enabled, the Lambda authorizer can return a boolean value instead of an IAM
+     * policy. Supported only for HTTP APIs. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
+     * with AWS Lambda authorizers for HTTP APIs</a></p>
+     */
+    inline bool GetEnableSimpleResponses() const{ return m_enableSimpleResponses; }
+
+    /**
+     * <p>Specifies whether a Lambda authorizer returns a response in a simple format.
+     * If enabled, the Lambda authorizer can return a boolean value instead of an IAM
+     * policy. Supported only for HTTP APIs. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
+     * with AWS Lambda authorizers for HTTP APIs</a></p>
+     */
+    inline bool EnableSimpleResponsesHasBeenSet() const { return m_enableSimpleResponsesHasBeenSet; }
+
+    /**
+     * <p>Specifies whether a Lambda authorizer returns a response in a simple format.
+     * If enabled, the Lambda authorizer can return a boolean value instead of an IAM
+     * policy. Supported only for HTTP APIs. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
+     * with AWS Lambda authorizers for HTTP APIs</a></p>
+     */
+    inline void SetEnableSimpleResponses(bool value) { m_enableSimpleResponsesHasBeenSet = true; m_enableSimpleResponses = value; }
+
+    /**
+     * <p>Specifies whether a Lambda authorizer returns a response in a simple format.
+     * If enabled, the Lambda authorizer can return a boolean value instead of an IAM
+     * policy. Supported only for HTTP APIs. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
+     * with AWS Lambda authorizers for HTTP APIs</a></p>
+     */
+    inline Authorizer& WithEnableSimpleResponses(bool value) { SetEnableSimpleResponses(value); return *this;}
+
+
+    /**
      * <p>The identity source for which authorization is requested.</p> <p>For a
      * REQUEST authorizer, this is optional. The value is a set of one or more mapping
-     * expressions of the specified request parameters. Currently, the identity source
-     * can be headers, query string parameters, stage variables, and context
-     * parameters. For example, if an Auth header and a Name query string parameter are
-     * defined as identity sources, this value is route.request.header.Auth,
-     * route.request.querystring.Name. These parameters will be used to perform runtime
+     * expressions of the specified request parameters. The identity source can be
+     * headers, query string parameters, stage variables, and context parameters. For
+     * example, if an Auth header and a Name query string parameter are defined as
+     * identity sources, this value is route.request.header.Auth,
+     * route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection
+     * expressions prefixed with $, for example, $request.header.Auth,
+     * $request.querystring.Name. These parameters are used to perform runtime
      * validation for Lambda-based authorizers by verifying all of the identity-related
      * request parameters are present in the request, not null, and non-empty. Only
      * when this is true does the authorizer invoke the authorizer Lambda function.
      * Otherwise, it returns a 401 Unauthorized response without calling the Lambda
-     * function.</p> <p>For JWT, a single entry that specifies where to extract the
-     * JSON Web Token (JWT) from inbound requests. Currently only header-based and
-     * query parameter-based selections are supported, for example
-     * "$request.header.Authorization".</p>
+     * function. For HTTP APIs, identity sources are also used as the cache key when
+     * caching is enabled. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
+     * with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry
+     * that specifies where to extract the JSON Web Token (JWT) from inbound requests.
+     * Currently only header-based and query parameter-based selections are supported,
+     * for example $request.header.Authorization.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIdentitySource() const{ return m_identitySource; }
 
     /**
      * <p>The identity source for which authorization is requested.</p> <p>For a
      * REQUEST authorizer, this is optional. The value is a set of one or more mapping
-     * expressions of the specified request parameters. Currently, the identity source
-     * can be headers, query string parameters, stage variables, and context
-     * parameters. For example, if an Auth header and a Name query string parameter are
-     * defined as identity sources, this value is route.request.header.Auth,
-     * route.request.querystring.Name. These parameters will be used to perform runtime
+     * expressions of the specified request parameters. The identity source can be
+     * headers, query string parameters, stage variables, and context parameters. For
+     * example, if an Auth header and a Name query string parameter are defined as
+     * identity sources, this value is route.request.header.Auth,
+     * route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection
+     * expressions prefixed with $, for example, $request.header.Auth,
+     * $request.querystring.Name. These parameters are used to perform runtime
      * validation for Lambda-based authorizers by verifying all of the identity-related
      * request parameters are present in the request, not null, and non-empty. Only
      * when this is true does the authorizer invoke the authorizer Lambda function.
      * Otherwise, it returns a 401 Unauthorized response without calling the Lambda
-     * function.</p> <p>For JWT, a single entry that specifies where to extract the
-     * JSON Web Token (JWT) from inbound requests. Currently only header-based and
-     * query parameter-based selections are supported, for example
-     * "$request.header.Authorization".</p>
+     * function. For HTTP APIs, identity sources are also used as the cache key when
+     * caching is enabled. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
+     * with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry
+     * that specifies where to extract the JSON Web Token (JWT) from inbound requests.
+     * Currently only header-based and query parameter-based selections are supported,
+     * for example $request.header.Authorization.</p>
      */
     inline bool IdentitySourceHasBeenSet() const { return m_identitySourceHasBeenSet; }
 
     /**
      * <p>The identity source for which authorization is requested.</p> <p>For a
      * REQUEST authorizer, this is optional. The value is a set of one or more mapping
-     * expressions of the specified request parameters. Currently, the identity source
-     * can be headers, query string parameters, stage variables, and context
-     * parameters. For example, if an Auth header and a Name query string parameter are
-     * defined as identity sources, this value is route.request.header.Auth,
-     * route.request.querystring.Name. These parameters will be used to perform runtime
+     * expressions of the specified request parameters. The identity source can be
+     * headers, query string parameters, stage variables, and context parameters. For
+     * example, if an Auth header and a Name query string parameter are defined as
+     * identity sources, this value is route.request.header.Auth,
+     * route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection
+     * expressions prefixed with $, for example, $request.header.Auth,
+     * $request.querystring.Name. These parameters are used to perform runtime
      * validation for Lambda-based authorizers by verifying all of the identity-related
      * request parameters are present in the request, not null, and non-empty. Only
      * when this is true does the authorizer invoke the authorizer Lambda function.
      * Otherwise, it returns a 401 Unauthorized response without calling the Lambda
-     * function.</p> <p>For JWT, a single entry that specifies where to extract the
-     * JSON Web Token (JWT) from inbound requests. Currently only header-based and
-     * query parameter-based selections are supported, for example
-     * "$request.header.Authorization".</p>
+     * function. For HTTP APIs, identity sources are also used as the cache key when
+     * caching is enabled. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
+     * with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry
+     * that specifies where to extract the JSON Web Token (JWT) from inbound requests.
+     * Currently only header-based and query parameter-based selections are supported,
+     * for example $request.header.Authorization.</p>
      */
     inline void SetIdentitySource(const Aws::Vector<Aws::String>& value) { m_identitySourceHasBeenSet = true; m_identitySource = value; }
 
     /**
      * <p>The identity source for which authorization is requested.</p> <p>For a
      * REQUEST authorizer, this is optional. The value is a set of one or more mapping
-     * expressions of the specified request parameters. Currently, the identity source
-     * can be headers, query string parameters, stage variables, and context
-     * parameters. For example, if an Auth header and a Name query string parameter are
-     * defined as identity sources, this value is route.request.header.Auth,
-     * route.request.querystring.Name. These parameters will be used to perform runtime
+     * expressions of the specified request parameters. The identity source can be
+     * headers, query string parameters, stage variables, and context parameters. For
+     * example, if an Auth header and a Name query string parameter are defined as
+     * identity sources, this value is route.request.header.Auth,
+     * route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection
+     * expressions prefixed with $, for example, $request.header.Auth,
+     * $request.querystring.Name. These parameters are used to perform runtime
      * validation for Lambda-based authorizers by verifying all of the identity-related
      * request parameters are present in the request, not null, and non-empty. Only
      * when this is true does the authorizer invoke the authorizer Lambda function.
      * Otherwise, it returns a 401 Unauthorized response without calling the Lambda
-     * function.</p> <p>For JWT, a single entry that specifies where to extract the
-     * JSON Web Token (JWT) from inbound requests. Currently only header-based and
-     * query parameter-based selections are supported, for example
-     * "$request.header.Authorization".</p>
+     * function. For HTTP APIs, identity sources are also used as the cache key when
+     * caching is enabled. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
+     * with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry
+     * that specifies where to extract the JSON Web Token (JWT) from inbound requests.
+     * Currently only header-based and query parameter-based selections are supported,
+     * for example $request.header.Authorization.</p>
      */
     inline void SetIdentitySource(Aws::Vector<Aws::String>&& value) { m_identitySourceHasBeenSet = true; m_identitySource = std::move(value); }
 
     /**
      * <p>The identity source for which authorization is requested.</p> <p>For a
      * REQUEST authorizer, this is optional. The value is a set of one or more mapping
-     * expressions of the specified request parameters. Currently, the identity source
-     * can be headers, query string parameters, stage variables, and context
-     * parameters. For example, if an Auth header and a Name query string parameter are
-     * defined as identity sources, this value is route.request.header.Auth,
-     * route.request.querystring.Name. These parameters will be used to perform runtime
+     * expressions of the specified request parameters. The identity source can be
+     * headers, query string parameters, stage variables, and context parameters. For
+     * example, if an Auth header and a Name query string parameter are defined as
+     * identity sources, this value is route.request.header.Auth,
+     * route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection
+     * expressions prefixed with $, for example, $request.header.Auth,
+     * $request.querystring.Name. These parameters are used to perform runtime
      * validation for Lambda-based authorizers by verifying all of the identity-related
      * request parameters are present in the request, not null, and non-empty. Only
      * when this is true does the authorizer invoke the authorizer Lambda function.
      * Otherwise, it returns a 401 Unauthorized response without calling the Lambda
-     * function.</p> <p>For JWT, a single entry that specifies where to extract the
-     * JSON Web Token (JWT) from inbound requests. Currently only header-based and
-     * query parameter-based selections are supported, for example
-     * "$request.header.Authorization".</p>
+     * function. For HTTP APIs, identity sources are also used as the cache key when
+     * caching is enabled. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
+     * with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry
+     * that specifies where to extract the JSON Web Token (JWT) from inbound requests.
+     * Currently only header-based and query parameter-based selections are supported,
+     * for example $request.header.Authorization.</p>
      */
     inline Authorizer& WithIdentitySource(const Aws::Vector<Aws::String>& value) { SetIdentitySource(value); return *this;}
 
     /**
      * <p>The identity source for which authorization is requested.</p> <p>For a
      * REQUEST authorizer, this is optional. The value is a set of one or more mapping
-     * expressions of the specified request parameters. Currently, the identity source
-     * can be headers, query string parameters, stage variables, and context
-     * parameters. For example, if an Auth header and a Name query string parameter are
-     * defined as identity sources, this value is route.request.header.Auth,
-     * route.request.querystring.Name. These parameters will be used to perform runtime
+     * expressions of the specified request parameters. The identity source can be
+     * headers, query string parameters, stage variables, and context parameters. For
+     * example, if an Auth header and a Name query string parameter are defined as
+     * identity sources, this value is route.request.header.Auth,
+     * route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection
+     * expressions prefixed with $, for example, $request.header.Auth,
+     * $request.querystring.Name. These parameters are used to perform runtime
      * validation for Lambda-based authorizers by verifying all of the identity-related
      * request parameters are present in the request, not null, and non-empty. Only
      * when this is true does the authorizer invoke the authorizer Lambda function.
      * Otherwise, it returns a 401 Unauthorized response without calling the Lambda
-     * function.</p> <p>For JWT, a single entry that specifies where to extract the
-     * JSON Web Token (JWT) from inbound requests. Currently only header-based and
-     * query parameter-based selections are supported, for example
-     * "$request.header.Authorization".</p>
+     * function. For HTTP APIs, identity sources are also used as the cache key when
+     * caching is enabled. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
+     * with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry
+     * that specifies where to extract the JSON Web Token (JWT) from inbound requests.
+     * Currently only header-based and query parameter-based selections are supported,
+     * for example $request.header.Authorization.</p>
      */
     inline Authorizer& WithIdentitySource(Aws::Vector<Aws::String>&& value) { SetIdentitySource(std::move(value)); return *this;}
 
     /**
      * <p>The identity source for which authorization is requested.</p> <p>For a
      * REQUEST authorizer, this is optional. The value is a set of one or more mapping
-     * expressions of the specified request parameters. Currently, the identity source
-     * can be headers, query string parameters, stage variables, and context
-     * parameters. For example, if an Auth header and a Name query string parameter are
-     * defined as identity sources, this value is route.request.header.Auth,
-     * route.request.querystring.Name. These parameters will be used to perform runtime
+     * expressions of the specified request parameters. The identity source can be
+     * headers, query string parameters, stage variables, and context parameters. For
+     * example, if an Auth header and a Name query string parameter are defined as
+     * identity sources, this value is route.request.header.Auth,
+     * route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection
+     * expressions prefixed with $, for example, $request.header.Auth,
+     * $request.querystring.Name. These parameters are used to perform runtime
      * validation for Lambda-based authorizers by verifying all of the identity-related
      * request parameters are present in the request, not null, and non-empty. Only
      * when this is true does the authorizer invoke the authorizer Lambda function.
      * Otherwise, it returns a 401 Unauthorized response without calling the Lambda
-     * function.</p> <p>For JWT, a single entry that specifies where to extract the
-     * JSON Web Token (JWT) from inbound requests. Currently only header-based and
-     * query parameter-based selections are supported, for example
-     * "$request.header.Authorization".</p>
+     * function. For HTTP APIs, identity sources are also used as the cache key when
+     * caching is enabled. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
+     * with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry
+     * that specifies where to extract the JSON Web Token (JWT) from inbound requests.
+     * Currently only header-based and query parameter-based selections are supported,
+     * for example $request.header.Authorization.</p>
      */
     inline Authorizer& AddIdentitySource(const Aws::String& value) { m_identitySourceHasBeenSet = true; m_identitySource.push_back(value); return *this; }
 
     /**
      * <p>The identity source for which authorization is requested.</p> <p>For a
      * REQUEST authorizer, this is optional. The value is a set of one or more mapping
-     * expressions of the specified request parameters. Currently, the identity source
-     * can be headers, query string parameters, stage variables, and context
-     * parameters. For example, if an Auth header and a Name query string parameter are
-     * defined as identity sources, this value is route.request.header.Auth,
-     * route.request.querystring.Name. These parameters will be used to perform runtime
+     * expressions of the specified request parameters. The identity source can be
+     * headers, query string parameters, stage variables, and context parameters. For
+     * example, if an Auth header and a Name query string parameter are defined as
+     * identity sources, this value is route.request.header.Auth,
+     * route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection
+     * expressions prefixed with $, for example, $request.header.Auth,
+     * $request.querystring.Name. These parameters are used to perform runtime
      * validation for Lambda-based authorizers by verifying all of the identity-related
      * request parameters are present in the request, not null, and non-empty. Only
      * when this is true does the authorizer invoke the authorizer Lambda function.
      * Otherwise, it returns a 401 Unauthorized response without calling the Lambda
-     * function.</p> <p>For JWT, a single entry that specifies where to extract the
-     * JSON Web Token (JWT) from inbound requests. Currently only header-based and
-     * query parameter-based selections are supported, for example
-     * "$request.header.Authorization".</p>
+     * function. For HTTP APIs, identity sources are also used as the cache key when
+     * caching is enabled. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
+     * with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry
+     * that specifies where to extract the JSON Web Token (JWT) from inbound requests.
+     * Currently only header-based and query parameter-based selections are supported,
+     * for example $request.header.Authorization.</p>
      */
     inline Authorizer& AddIdentitySource(Aws::String&& value) { m_identitySourceHasBeenSet = true; m_identitySource.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The identity source for which authorization is requested.</p> <p>For a
      * REQUEST authorizer, this is optional. The value is a set of one or more mapping
-     * expressions of the specified request parameters. Currently, the identity source
-     * can be headers, query string parameters, stage variables, and context
-     * parameters. For example, if an Auth header and a Name query string parameter are
-     * defined as identity sources, this value is route.request.header.Auth,
-     * route.request.querystring.Name. These parameters will be used to perform runtime
+     * expressions of the specified request parameters. The identity source can be
+     * headers, query string parameters, stage variables, and context parameters. For
+     * example, if an Auth header and a Name query string parameter are defined as
+     * identity sources, this value is route.request.header.Auth,
+     * route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection
+     * expressions prefixed with $, for example, $request.header.Auth,
+     * $request.querystring.Name. These parameters are used to perform runtime
      * validation for Lambda-based authorizers by verifying all of the identity-related
      * request parameters are present in the request, not null, and non-empty. Only
      * when this is true does the authorizer invoke the authorizer Lambda function.
      * Otherwise, it returns a 401 Unauthorized response without calling the Lambda
-     * function.</p> <p>For JWT, a single entry that specifies where to extract the
-     * JSON Web Token (JWT) from inbound requests. Currently only header-based and
-     * query parameter-based selections are supported, for example
-     * "$request.header.Authorization".</p>
+     * function. For HTTP APIs, identity sources are also used as the cache key when
+     * caching is enabled. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
+     * with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry
+     * that specifies where to extract the JSON Web Token (JWT) from inbound requests.
+     * Currently only header-based and query parameter-based selections are supported,
+     * for example $request.header.Authorization.</p>
      */
     inline Authorizer& AddIdentitySource(const char* value) { m_identitySourceHasBeenSet = true; m_identitySource.push_back(value); return *this; }
 
@@ -651,6 +812,9 @@ namespace Model
     Aws::String m_authorizerId;
     bool m_authorizerIdHasBeenSet;
 
+    Aws::String m_authorizerPayloadFormatVersion;
+    bool m_authorizerPayloadFormatVersionHasBeenSet;
+
     int m_authorizerResultTtlInSeconds;
     bool m_authorizerResultTtlInSecondsHasBeenSet;
 
@@ -659,6 +823,9 @@ namespace Model
 
     Aws::String m_authorizerUri;
     bool m_authorizerUriHasBeenSet;
+
+    bool m_enableSimpleResponses;
+    bool m_enableSimpleResponsesHasBeenSet;
 
     Aws::Vector<Aws::String> m_identitySource;
     bool m_identitySourceHasBeenSet;

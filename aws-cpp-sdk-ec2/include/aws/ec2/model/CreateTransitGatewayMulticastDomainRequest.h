@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/CreateTransitGatewayMulticastDomainRequestOptions.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
@@ -87,6 +78,37 @@ namespace Model
      * <p>The ID of the transit gateway.</p>
      */
     inline CreateTransitGatewayMulticastDomainRequest& WithTransitGatewayId(const char* value) { SetTransitGatewayId(value); return *this;}
+
+
+    /**
+     * <p>The options for the transit gateway multicast domain.</p>
+     */
+    inline const CreateTransitGatewayMulticastDomainRequestOptions& GetOptions() const{ return m_options; }
+
+    /**
+     * <p>The options for the transit gateway multicast domain.</p>
+     */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    /**
+     * <p>The options for the transit gateway multicast domain.</p>
+     */
+    inline void SetOptions(const CreateTransitGatewayMulticastDomainRequestOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
+
+    /**
+     * <p>The options for the transit gateway multicast domain.</p>
+     */
+    inline void SetOptions(CreateTransitGatewayMulticastDomainRequestOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
+
+    /**
+     * <p>The options for the transit gateway multicast domain.</p>
+     */
+    inline CreateTransitGatewayMulticastDomainRequest& WithOptions(const CreateTransitGatewayMulticastDomainRequestOptions& value) { SetOptions(value); return *this;}
+
+    /**
+     * <p>The options for the transit gateway multicast domain.</p>
+     */
+    inline CreateTransitGatewayMulticastDomainRequest& WithOptions(CreateTransitGatewayMulticastDomainRequestOptions&& value) { SetOptions(std::move(value)); return *this;}
 
 
     /**
@@ -166,6 +188,9 @@ namespace Model
 
     Aws::String m_transitGatewayId;
     bool m_transitGatewayIdHasBeenSet;
+
+    CreateTransitGatewayMulticastDomainRequestOptions m_options;
+    bool m_optionsHasBeenSet;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet;

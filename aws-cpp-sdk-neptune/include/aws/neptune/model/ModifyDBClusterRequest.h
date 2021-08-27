@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/neptune/Neptune_EXPORTS.h>
@@ -743,74 +733,90 @@ namespace Model
 
 
     /**
-     * <p>The version number of the database engine. Currently, setting this parameter
-     * has no effect. To upgrade your database engine to the most recent release, use
-     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
-     * versions, see <a>CreateDBInstance</a>, or call
-     * <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
+     * set to true.</p> <p>For a list of valid engine versions, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
+     * Releases for Amazon Neptune</a>, or call <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The version number of the database engine. Currently, setting this parameter
-     * has no effect. To upgrade your database engine to the most recent release, use
-     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
-     * versions, see <a>CreateDBInstance</a>, or call
-     * <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
+     * set to true.</p> <p>For a list of valid engine versions, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
+     * Releases for Amazon Neptune</a>, or call <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
-     * <p>The version number of the database engine. Currently, setting this parameter
-     * has no effect. To upgrade your database engine to the most recent release, use
-     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
-     * versions, see <a>CreateDBInstance</a>, or call
-     * <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
+     * set to true.</p> <p>For a list of valid engine versions, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
+     * Releases for Amazon Neptune</a>, or call <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The version number of the database engine. Currently, setting this parameter
-     * has no effect. To upgrade your database engine to the most recent release, use
-     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
-     * versions, see <a>CreateDBInstance</a>, or call
-     * <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
+     * set to true.</p> <p>For a list of valid engine versions, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
+     * Releases for Amazon Neptune</a>, or call <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The version number of the database engine. Currently, setting this parameter
-     * has no effect. To upgrade your database engine to the most recent release, use
-     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
-     * versions, see <a>CreateDBInstance</a>, or call
-     * <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
+     * set to true.</p> <p>For a list of valid engine versions, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
+     * Releases for Amazon Neptune</a>, or call <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The version number of the database engine. Currently, setting this parameter
-     * has no effect. To upgrade your database engine to the most recent release, use
-     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
-     * versions, see <a>CreateDBInstance</a>, or call
-     * <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
+     * set to true.</p> <p>For a list of valid engine versions, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
+     * Releases for Amazon Neptune</a>, or call <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The version number of the database engine. Currently, setting this parameter
-     * has no effect. To upgrade your database engine to the most recent release, use
-     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
-     * versions, see <a>CreateDBInstance</a>, or call
-     * <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
+     * set to true.</p> <p>For a list of valid engine versions, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
+     * Releases for Amazon Neptune</a>, or call <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version number of the database engine. Currently, setting this parameter
-     * has no effect. To upgrade your database engine to the most recent release, use
-     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
-     * versions, see <a>CreateDBInstance</a>, or call
-     * <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
+     * set to true.</p> <p>For a list of valid engine versions, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
+     * Releases for Amazon Neptune</a>, or call <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconnect/model/Entitlement.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,6 +24,8 @@ Entitlement::Entitlement() :
     m_descriptionHasBeenSet(false),
     m_encryptionHasBeenSet(false),
     m_entitlementArnHasBeenSet(false),
+    m_entitlementStatus(EntitlementStatus::NOT_SET),
+    m_entitlementStatusHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_subscribersHasBeenSet(false)
 {
@@ -45,6 +37,8 @@ Entitlement::Entitlement(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_encryptionHasBeenSet(false),
     m_entitlementArnHasBeenSet(false),
+    m_entitlementStatus(EntitlementStatus::NOT_SET),
+    m_entitlementStatusHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_subscribersHasBeenSet(false)
 {
@@ -79,6 +73,13 @@ Entitlement& Entitlement::operator =(JsonView jsonValue)
     m_entitlementArn = jsonValue.GetString("entitlementArn");
 
     m_entitlementArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("entitlementStatus"))
+  {
+    m_entitlementStatus = EntitlementStatusMapper::GetEntitlementStatusForName(jsonValue.GetString("entitlementStatus"));
+
+    m_entitlementStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -127,6 +128,11 @@ JsonValue Entitlement::Jsonize() const
   {
    payload.WithString("entitlementArn", m_entitlementArn);
 
+  }
+
+  if(m_entitlementStatusHasBeenSet)
+  {
+   payload.WithString("entitlementStatus", EntitlementStatusMapper::GetNameForEntitlementStatus(m_entitlementStatus));
   }
 
   if(m_nameHasBeenSet)

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -94,8 +84,8 @@ namespace Model
      * <code>0.0.0.0/0</code> </p> </li> <li> <p>To add a route for a peered VPC, enter
      * the peered VPC's IPv4 CIDR range</p> </li> <li> <p>To add a route for an
      * on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR
-     * range</p> </li> </ul> <p>Route address ranges cannot overlap with the CIDR range
-     * specified for client allocation.</p>
+     * range</p> </li> <li> <p>To add a route for the local network, enter the client
+     * CIDR range</p> </li> </ul>
      */
     inline const Aws::String& GetDestinationCidrBlock() const{ return m_destinationCidrBlock; }
 
@@ -105,8 +95,8 @@ namespace Model
      * <code>0.0.0.0/0</code> </p> </li> <li> <p>To add a route for a peered VPC, enter
      * the peered VPC's IPv4 CIDR range</p> </li> <li> <p>To add a route for an
      * on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR
-     * range</p> </li> </ul> <p>Route address ranges cannot overlap with the CIDR range
-     * specified for client allocation.</p>
+     * range</p> </li> <li> <p>To add a route for the local network, enter the client
+     * CIDR range</p> </li> </ul>
      */
     inline bool DestinationCidrBlockHasBeenSet() const { return m_destinationCidrBlockHasBeenSet; }
 
@@ -116,8 +106,8 @@ namespace Model
      * <code>0.0.0.0/0</code> </p> </li> <li> <p>To add a route for a peered VPC, enter
      * the peered VPC's IPv4 CIDR range</p> </li> <li> <p>To add a route for an
      * on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR
-     * range</p> </li> </ul> <p>Route address ranges cannot overlap with the CIDR range
-     * specified for client allocation.</p>
+     * range</p> </li> <li> <p>To add a route for the local network, enter the client
+     * CIDR range</p> </li> </ul>
      */
     inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
 
@@ -127,8 +117,8 @@ namespace Model
      * <code>0.0.0.0/0</code> </p> </li> <li> <p>To add a route for a peered VPC, enter
      * the peered VPC's IPv4 CIDR range</p> </li> <li> <p>To add a route for an
      * on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR
-     * range</p> </li> </ul> <p>Route address ranges cannot overlap with the CIDR range
-     * specified for client allocation.</p>
+     * range</p> </li> <li> <p>To add a route for the local network, enter the client
+     * CIDR range</p> </li> </ul>
      */
     inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = std::move(value); }
 
@@ -138,8 +128,8 @@ namespace Model
      * <code>0.0.0.0/0</code> </p> </li> <li> <p>To add a route for a peered VPC, enter
      * the peered VPC's IPv4 CIDR range</p> </li> <li> <p>To add a route for an
      * on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR
-     * range</p> </li> </ul> <p>Route address ranges cannot overlap with the CIDR range
-     * specified for client allocation.</p>
+     * range</p> </li> <li> <p>To add a route for the local network, enter the client
+     * CIDR range</p> </li> </ul>
      */
     inline void SetDestinationCidrBlock(const char* value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock.assign(value); }
 
@@ -149,8 +139,8 @@ namespace Model
      * <code>0.0.0.0/0</code> </p> </li> <li> <p>To add a route for a peered VPC, enter
      * the peered VPC's IPv4 CIDR range</p> </li> <li> <p>To add a route for an
      * on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR
-     * range</p> </li> </ul> <p>Route address ranges cannot overlap with the CIDR range
-     * specified for client allocation.</p>
+     * range</p> </li> <li> <p>To add a route for the local network, enter the client
+     * CIDR range</p> </li> </ul>
      */
     inline CreateClientVpnRouteRequest& WithDestinationCidrBlock(const Aws::String& value) { SetDestinationCidrBlock(value); return *this;}
 
@@ -160,8 +150,8 @@ namespace Model
      * <code>0.0.0.0/0</code> </p> </li> <li> <p>To add a route for a peered VPC, enter
      * the peered VPC's IPv4 CIDR range</p> </li> <li> <p>To add a route for an
      * on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR
-     * range</p> </li> </ul> <p>Route address ranges cannot overlap with the CIDR range
-     * specified for client allocation.</p>
+     * range</p> </li> <li> <p>To add a route for the local network, enter the client
+     * CIDR range</p> </li> </ul>
      */
     inline CreateClientVpnRouteRequest& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(std::move(value)); return *this;}
 
@@ -171,8 +161,8 @@ namespace Model
      * <code>0.0.0.0/0</code> </p> </li> <li> <p>To add a route for a peered VPC, enter
      * the peered VPC's IPv4 CIDR range</p> </li> <li> <p>To add a route for an
      * on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR
-     * range</p> </li> </ul> <p>Route address ranges cannot overlap with the CIDR range
-     * specified for client allocation.</p>
+     * range</p> </li> <li> <p>To add a route for the local network, enter the client
+     * CIDR range</p> </li> </ul>
      */
     inline CreateClientVpnRouteRequest& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
 
@@ -180,48 +170,64 @@ namespace Model
     /**
      * <p>The ID of the subnet through which you want to route traffic. The specified
      * subnet must be an existing target network of the Client VPN endpoint.</p>
+     * <p>Alternatively, if you're adding a route for the local network, specify
+     * <code>local</code>.</p>
      */
     inline const Aws::String& GetTargetVpcSubnetId() const{ return m_targetVpcSubnetId; }
 
     /**
      * <p>The ID of the subnet through which you want to route traffic. The specified
      * subnet must be an existing target network of the Client VPN endpoint.</p>
+     * <p>Alternatively, if you're adding a route for the local network, specify
+     * <code>local</code>.</p>
      */
     inline bool TargetVpcSubnetIdHasBeenSet() const { return m_targetVpcSubnetIdHasBeenSet; }
 
     /**
      * <p>The ID of the subnet through which you want to route traffic. The specified
      * subnet must be an existing target network of the Client VPN endpoint.</p>
+     * <p>Alternatively, if you're adding a route for the local network, specify
+     * <code>local</code>.</p>
      */
     inline void SetTargetVpcSubnetId(const Aws::String& value) { m_targetVpcSubnetIdHasBeenSet = true; m_targetVpcSubnetId = value; }
 
     /**
      * <p>The ID of the subnet through which you want to route traffic. The specified
      * subnet must be an existing target network of the Client VPN endpoint.</p>
+     * <p>Alternatively, if you're adding a route for the local network, specify
+     * <code>local</code>.</p>
      */
     inline void SetTargetVpcSubnetId(Aws::String&& value) { m_targetVpcSubnetIdHasBeenSet = true; m_targetVpcSubnetId = std::move(value); }
 
     /**
      * <p>The ID of the subnet through which you want to route traffic. The specified
      * subnet must be an existing target network of the Client VPN endpoint.</p>
+     * <p>Alternatively, if you're adding a route for the local network, specify
+     * <code>local</code>.</p>
      */
     inline void SetTargetVpcSubnetId(const char* value) { m_targetVpcSubnetIdHasBeenSet = true; m_targetVpcSubnetId.assign(value); }
 
     /**
      * <p>The ID of the subnet through which you want to route traffic. The specified
      * subnet must be an existing target network of the Client VPN endpoint.</p>
+     * <p>Alternatively, if you're adding a route for the local network, specify
+     * <code>local</code>.</p>
      */
     inline CreateClientVpnRouteRequest& WithTargetVpcSubnetId(const Aws::String& value) { SetTargetVpcSubnetId(value); return *this;}
 
     /**
      * <p>The ID of the subnet through which you want to route traffic. The specified
      * subnet must be an existing target network of the Client VPN endpoint.</p>
+     * <p>Alternatively, if you're adding a route for the local network, specify
+     * <code>local</code>.</p>
      */
     inline CreateClientVpnRouteRequest& WithTargetVpcSubnetId(Aws::String&& value) { SetTargetVpcSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the subnet through which you want to route traffic. The specified
      * subnet must be an existing target network of the Client VPN endpoint.</p>
+     * <p>Alternatively, if you're adding a route for the local network, specify
+     * <code>local</code>.</p>
      */
     inline CreateClientVpnRouteRequest& WithTargetVpcSubnetId(const char* value) { SetTargetVpcSubnetId(value); return *this;}
 

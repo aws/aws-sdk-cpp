@@ -6,7 +6,6 @@
 #set($AdditionalServiceSpecificConfigLoadString = "LoadS3SpecificConfig(config.profileName);")
 #set($ForRegionExtraArgsString = ", m_USEast1RegionalEndpointOption == Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::REGIONAL")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/RestXmlServiceClientSource.vm")
-
 \#include<aws/core/platform/Environment.h>
 
 static const char US_EAST_1_REGIONAL_ENDPOINT_ENV_VAR[] = "AWS_S3_US_EAST_1_REGIONAL_ENDPOINT";
@@ -14,9 +13,9 @@ static const char US_EAST_1_REGIONAL_ENDPOINT_CONFIG_VAR[] = "s3_us_east_1_regio
 static const char S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE[] = "AWS_S3_USE_ARN_REGION";
 static const char S3_USE_ARN_REGION_CONFIG_FILE_OPTION[] = "s3_use_arn_region";
 
-void S3Client::LoadS3SpecificConfig(const Aws::String& profile)
+void ${className}::Load${metadata.classNamePrefix}SpecificConfig(const Aws::String& profile)
 {
-  if (m_USEast1RegionalEndpointOption == Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET)
+  if (m_USEast1RegionalEndpointOption == Aws::${metadata.classNamePrefix}::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET)
   {
     Aws::String option = Aws::Environment::GetEnv(US_EAST_1_REGIONAL_ENDPOINT_ENV_VAR);
     if (option.empty())
@@ -24,13 +23,13 @@ void S3Client::LoadS3SpecificConfig(const Aws::String& profile)
       option = Aws::Config::GetCachedConfigValue(profile, US_EAST_1_REGIONAL_ENDPOINT_CONFIG_VAR);
     }
 
-    if (Aws::Utils::StringUtils::ToLower(option.c_str()) == "regional")
+    if (Aws::Utils::StringUtils::ToLower(option.c_str()) == "legacy")
     {
-      m_USEast1RegionalEndpointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::REGIONAL;
+      m_USEast1RegionalEndpointOption = Aws::${metadata.classNamePrefix}::US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY;
     }
-    else // defaults is legacy
+    else // defaults is regional
     {
-      m_USEast1RegionalEndpointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY;
+      m_USEast1RegionalEndpointOption = Aws::${metadata.classNamePrefix}::US_EAST_1_REGIONAL_ENDPOINT_OPTION::REGIONAL;
     }
   }
 
@@ -48,7 +47,7 @@ void S3Client::LoadS3SpecificConfig(const Aws::String& profile)
   {
     if (!s3UseArnRegion.empty() && s3UseArnRegion != "false")
     {
-      AWS_LOGSTREAM_WARN("S3Client", "AWS_S3_USE_ARN_REGION in environment variables or s3_use_arn_region in config file"
+      AWS_LOGSTREAM_WARN("${className}", "AWS_S3_USE_ARN_REGION in environment variables or s3_use_arn_region in config file"
                                   << "should either be true of false if specified, otherwise turn off this flag by default.");
     }
     m_useArnRegion = false;
@@ -65,9 +64,9 @@ Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucket, const 
         return {};
     }
     Aws::StringStream ss;
-    ss << computeEndpointOutcome.GetResult().first << "/" << key;
+    ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
     URI uri(ss.str());
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().second.c_str(), expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), expirationInSeconds);
 }
 
 Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
@@ -79,9 +78,9 @@ Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucket, const 
         return {};
     }
     Aws::StringStream ss;
-    ss << computeEndpointOutcome.GetResult().first << "/" << key;
+    ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
     URI uri(ss.str());
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().second.c_str(), customizedHeaders, expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), customizedHeaders, expirationInSeconds);
 }
 
 Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, long long expirationInSeconds)
@@ -93,11 +92,11 @@ Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucket, c
         return {};
     }
     Aws::StringStream ss;
-    ss << computeEndpointOutcome.GetResult().first << "/" << key;
+    ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
     URI uri(ss.str());
     Aws::Http::HeaderValueCollection headers;
     headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256));
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().second.c_str(), headers, expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), headers, expirationInSeconds);
 }
 
 Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, long long expirationInSeconds)
@@ -109,10 +108,10 @@ Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucket, c
         return {};
     }
     Aws::StringStream ss;
-    ss << computeEndpointOutcome.GetResult().first << "/" << key;
+    ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
     URI uri(ss.str());
     customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256));
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().second.c_str(), customizedHeaders, expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), customizedHeaders, expirationInSeconds);
 }
 
 Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
@@ -124,12 +123,12 @@ Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket, 
         return {};
     }
     Aws::StringStream ss;
-    ss << computeEndpointOutcome.GetResult().first << "/" << key;
+    ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
     URI uri(ss.str());
     Aws::Http::HeaderValueCollection headers;
     headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::aws_kms));
     headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_AWS_KMS_KEY_ID, kmsMasterKeyId);
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().second.c_str(), headers, expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), headers, expirationInSeconds);
 }
 
 Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
@@ -141,11 +140,11 @@ Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket, 
         return {};
     }
     Aws::StringStream ss;
-    ss << computeEndpointOutcome.GetResult().first << "/" << key;
+    ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
     URI uri(ss.str());
     customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::aws_kms));
     customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_AWS_KMS_KEY_ID, kmsMasterKeyId);
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().second.c_str(), customizedHeaders, expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), customizedHeaders, expirationInSeconds);
 }
 
 Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
@@ -157,7 +156,7 @@ Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucket, co
         return {};
     }
     Aws::StringStream ss;
-    ss << computeEndpointOutcome.GetResult().first << "/" << key;
+    ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
     URI uri(ss.str());
     Aws::Http::HeaderValueCollection headers;
     headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256));
@@ -165,7 +164,7 @@ Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucket, co
     Aws::Utils::ByteBuffer buffer = Aws::Utils::HashingUtils::Base64Decode(base64EncodedAES256Key);
     Aws::String strBuffer(reinterpret_cast<char*>(buffer.GetUnderlyingData()), buffer.GetLength());
     headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5, Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateMD5(strBuffer)));
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().second.c_str(), headers, expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), headers, expirationInSeconds);
 }
 
 Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
@@ -177,51 +176,58 @@ Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucket, co
         return {};
     }
     Aws::StringStream ss;
-    ss << computeEndpointOutcome.GetResult().first << "/" << key;
+    ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
     URI uri(ss.str());
     customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256));
     customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY, base64EncodedAES256Key);
     Aws::Utils::ByteBuffer buffer = Aws::Utils::HashingUtils::Base64Decode(base64EncodedAES256Key);
     Aws::String strBuffer(reinterpret_cast<char*>(buffer.GetUnderlyingData()), buffer.GetLength());
     customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5, Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateMD5(strBuffer)));
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().second.c_str(), customizedHeaders, expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), customizedHeaders, expirationInSeconds);
 }
 
 ComputeEndpointOutcome ${className}::ComputeEndpointString(const Aws::String& bucketOrArn) const
 {
     Aws::StringStream ss;
+    ss << m_scheme << "://";
     Aws::String bucket = bucketOrArn;
-    Aws::String signerRegion = m_region;
-    S3ARN arn(bucketOrArn);
+    Aws::String signerRegion = Aws::Region::ComputeSignerRegion(m_region);
+    ${metadata.classNamePrefix}ARN arn(bucketOrArn);
 
     if (arn)
     {
         if (m_useCustomEndpoint)
         {
-            return ComputeEndpointOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::VALIDATION, "VALIDATION",
-                "Custom endpoint is not compatible with Access Point ARN in Bucket field.", false));
+            return ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::VALIDATION, "VALIDATION",
+                "Custom endpoint is not compatible with Access Point ARN or Outposts ARN in Bucket field.", false));
         }
 
         if (!m_useVirtualAddressing)
         {
-            return ComputeEndpointOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::VALIDATION, "VALIDATION",
-                "Path style addressing is not compatible with Access Point ARN in Bucket field, please consider using virtual addressing for this client instead.", false));
+            return ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::VALIDATION, "VALIDATION",
+                "Path style addressing is not compatible with Access Point ARN or Outposts ARN in Bucket field, please consider using virtual addressing for this client instead.", false));
         }
 
-        S3ARNOutcome s3ArnOutcome = m_useArnRegion ? arn.Validate() : arn.Validate(m_region.c_str());
+        ${metadata.classNamePrefix}ARNOutcome s3ArnOutcome = m_useArnRegion ? arn.Validate() : arn.Validate(m_region.c_str());
         if (!s3ArnOutcome.IsSuccess())
         {
             return ComputeEndpointOutcome(s3ArnOutcome.GetError());
         }
+        signerRegion = m_useArnRegion ? arn.GetRegion() : signerRegion;
         if (arn.GetResourceType() == ARNResourceType::ACCESSPOINT)
         {
-            ss << m_scheme << "://" << S3Endpoint::ForAccessPointArn(arn, m_useArnRegion ? "" : m_region, m_useDualStack);
-            signerRegion = m_useArnRegion ? arn.GetRegion() : m_region;
-            if (signerRegion == "fips-us-gov-west-1")
+            ss << ${metadata.classNamePrefix}Endpoint::ForAccessPointArn(arn, m_useArnRegion ? "" : m_region, m_useDualStack);
+            return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), signerRegion, SERVICE_NAME));
+        }
+        else if (arn.GetResourceType() == ARNResourceType::OUTPOST)
+        {
+            if (m_useDualStack)
             {
-                signerRegion = "us-gov-west-1";
+                return ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::VALIDATION, "VALIDATION",
+                    "Outposts Access Points do not support dualstack right now.", false));
             }
-            return ComputeEndpointOutcome(EndpointRegionPair(ss.str(), signerRegion));
+            ss << ${metadata.classNamePrefix}Endpoint::ForOutpostsArn(arn, m_useArnRegion ? "" : m_region);
+            return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), signerRegion, "s3-outposts"));
         }
     }
 
@@ -231,31 +237,21 @@ ComputeEndpointOutcome ${className}::ComputeEndpointString(const Aws::String& bu
     if(m_useVirtualAddressing && Aws::Utils::IsValidDnsLabel(bucket) &&
         bucket == Aws::Utils::StringUtils::ToLower(bucket.c_str()))
     {
-        ss << m_scheme << "://" << bucket << "." << m_baseUri;
+        ss << bucket << "." << m_baseUri;
     }
     else
     {
-        ss << m_scheme << "://" << m_baseUri << "/" << bucket;
+        ss << m_baseUri << "/" << bucket;
     }
 
-    if (m_region == "fips-us-gov-west-1")
-    {
-      signerRegion = "us-gov-west-1";
-    }
-
-    return ComputeEndpointOutcome(EndpointRegionPair(ss.str(), signerRegion));
+    return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), signerRegion, SERVICE_NAME));
 }
 
 ComputeEndpointOutcome ${className}::ComputeEndpointString() const
 {
-    Aws::String signerRegion = m_region;
     Aws::StringStream ss;
     ss << m_scheme << "://" << m_baseUri;
-    if (m_region == "fips-us-gov-west-1")
-    {
-      signerRegion = "us-gov-west-1";
-    }
-    return ComputeEndpointOutcome(EndpointRegionPair(ss.str(), signerRegion));
+    return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), Aws::Region::ComputeSignerRegion(m_region), SERVICE_NAME));
 }
 
 bool ${className}::MultipartUploadSupported() const

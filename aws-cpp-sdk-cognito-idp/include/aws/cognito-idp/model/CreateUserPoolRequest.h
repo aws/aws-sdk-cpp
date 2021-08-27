@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -138,7 +128,7 @@ namespace Model
 
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
-     * <note> <p>In a push model, event sources (such as Amazon S3 and custom
+     *  <p>In a push model, event sources (such as Amazon S3 and custom
      * applications) need permission to invoke a function. So you will need to make an
      * extra call to add permission for these event sources to invoke your Lambda
      * function.</p> <p/> <p>For more information on using the Lambda API to add
@@ -146,13 +136,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
      * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
-     * add-permission </a>.</p> </note>
+     * add-permission </a>.</p> 
      */
     inline const LambdaConfigType& GetLambdaConfig() const{ return m_lambdaConfig; }
 
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
-     * <note> <p>In a push model, event sources (such as Amazon S3 and custom
+     *  <p>In a push model, event sources (such as Amazon S3 and custom
      * applications) need permission to invoke a function. So you will need to make an
      * extra call to add permission for these event sources to invoke your Lambda
      * function.</p> <p/> <p>For more information on using the Lambda API to add
@@ -160,13 +150,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
      * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
-     * add-permission </a>.</p> </note>
+     * add-permission </a>.</p> 
      */
     inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }
 
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
-     * <note> <p>In a push model, event sources (such as Amazon S3 and custom
+     *  <p>In a push model, event sources (such as Amazon S3 and custom
      * applications) need permission to invoke a function. So you will need to make an
      * extra call to add permission for these event sources to invoke your Lambda
      * function.</p> <p/> <p>For more information on using the Lambda API to add
@@ -174,13 +164,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
      * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
-     * add-permission </a>.</p> </note>
+     * add-permission </a>.</p> 
      */
     inline void SetLambdaConfig(const LambdaConfigType& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = value; }
 
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
-     * <note> <p>In a push model, event sources (such as Amazon S3 and custom
+     *  <p>In a push model, event sources (such as Amazon S3 and custom
      * applications) need permission to invoke a function. So you will need to make an
      * extra call to add permission for these event sources to invoke your Lambda
      * function.</p> <p/> <p>For more information on using the Lambda API to add
@@ -188,13 +178,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
      * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
-     * add-permission </a>.</p> </note>
+     * add-permission </a>.</p> 
      */
     inline void SetLambdaConfig(LambdaConfigType&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::move(value); }
 
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
-     * <note> <p>In a push model, event sources (such as Amazon S3 and custom
+     *  <p>In a push model, event sources (such as Amazon S3 and custom
      * applications) need permission to invoke a function. So you will need to make an
      * extra call to add permission for these event sources to invoke your Lambda
      * function.</p> <p/> <p>For more information on using the Lambda API to add
@@ -202,13 +192,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
      * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
-     * add-permission </a>.</p> </note>
+     * add-permission </a>.</p> 
      */
     inline CreateUserPoolRequest& WithLambdaConfig(const LambdaConfigType& value) { SetLambdaConfig(value); return *this;}
 
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
-     * <note> <p>In a push model, event sources (such as Amazon S3 and custom
+     *  <p>In a push model, event sources (such as Amazon S3 and custom
      * applications) need permission to invoke a function. So you will need to make an
      * extra call to add permission for these event sources to invoke your Lambda
      * function.</p> <p/> <p>For more information on using the Lambda API to add
@@ -216,7 +206,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
      * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
-     * add-permission </a>.</p> </note>
+     * add-permission </a>.</p> 
      */
     inline CreateUserPoolRequest& WithLambdaConfig(LambdaConfigType&& value) { SetLambdaConfig(std::move(value)); return *this;}
 
@@ -410,83 +400,131 @@ namespace Model
 
 
     /**
-     * <p>A string representing the email verification message.</p>
+     * <p>A string representing the email verification message.
+     * EmailVerificationMessage is allowed only if <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is DEVELOPER. </p>
      */
     inline const Aws::String& GetEmailVerificationMessage() const{ return m_emailVerificationMessage; }
 
     /**
-     * <p>A string representing the email verification message.</p>
+     * <p>A string representing the email verification message.
+     * EmailVerificationMessage is allowed only if <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is DEVELOPER. </p>
      */
     inline bool EmailVerificationMessageHasBeenSet() const { return m_emailVerificationMessageHasBeenSet; }
 
     /**
-     * <p>A string representing the email verification message.</p>
+     * <p>A string representing the email verification message.
+     * EmailVerificationMessage is allowed only if <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is DEVELOPER. </p>
      */
     inline void SetEmailVerificationMessage(const Aws::String& value) { m_emailVerificationMessageHasBeenSet = true; m_emailVerificationMessage = value; }
 
     /**
-     * <p>A string representing the email verification message.</p>
+     * <p>A string representing the email verification message.
+     * EmailVerificationMessage is allowed only if <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is DEVELOPER. </p>
      */
     inline void SetEmailVerificationMessage(Aws::String&& value) { m_emailVerificationMessageHasBeenSet = true; m_emailVerificationMessage = std::move(value); }
 
     /**
-     * <p>A string representing the email verification message.</p>
+     * <p>A string representing the email verification message.
+     * EmailVerificationMessage is allowed only if <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is DEVELOPER. </p>
      */
     inline void SetEmailVerificationMessage(const char* value) { m_emailVerificationMessageHasBeenSet = true; m_emailVerificationMessage.assign(value); }
 
     /**
-     * <p>A string representing the email verification message.</p>
+     * <p>A string representing the email verification message.
+     * EmailVerificationMessage is allowed only if <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is DEVELOPER. </p>
      */
     inline CreateUserPoolRequest& WithEmailVerificationMessage(const Aws::String& value) { SetEmailVerificationMessage(value); return *this;}
 
     /**
-     * <p>A string representing the email verification message.</p>
+     * <p>A string representing the email verification message.
+     * EmailVerificationMessage is allowed only if <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is DEVELOPER. </p>
      */
     inline CreateUserPoolRequest& WithEmailVerificationMessage(Aws::String&& value) { SetEmailVerificationMessage(std::move(value)); return *this;}
 
     /**
-     * <p>A string representing the email verification message.</p>
+     * <p>A string representing the email verification message.
+     * EmailVerificationMessage is allowed only if <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is DEVELOPER. </p>
      */
     inline CreateUserPoolRequest& WithEmailVerificationMessage(const char* value) { SetEmailVerificationMessage(value); return *this;}
 
 
     /**
-     * <p>A string representing the email verification subject.</p>
+     * <p>A string representing the email verification subject.
+     * EmailVerificationSubject is allowed only if <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is DEVELOPER. </p>
      */
     inline const Aws::String& GetEmailVerificationSubject() const{ return m_emailVerificationSubject; }
 
     /**
-     * <p>A string representing the email verification subject.</p>
+     * <p>A string representing the email verification subject.
+     * EmailVerificationSubject is allowed only if <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is DEVELOPER. </p>
      */
     inline bool EmailVerificationSubjectHasBeenSet() const { return m_emailVerificationSubjectHasBeenSet; }
 
     /**
-     * <p>A string representing the email verification subject.</p>
+     * <p>A string representing the email verification subject.
+     * EmailVerificationSubject is allowed only if <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is DEVELOPER. </p>
      */
     inline void SetEmailVerificationSubject(const Aws::String& value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject = value; }
 
     /**
-     * <p>A string representing the email verification subject.</p>
+     * <p>A string representing the email verification subject.
+     * EmailVerificationSubject is allowed only if <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is DEVELOPER. </p>
      */
     inline void SetEmailVerificationSubject(Aws::String&& value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject = std::move(value); }
 
     /**
-     * <p>A string representing the email verification subject.</p>
+     * <p>A string representing the email verification subject.
+     * EmailVerificationSubject is allowed only if <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is DEVELOPER. </p>
      */
     inline void SetEmailVerificationSubject(const char* value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject.assign(value); }
 
     /**
-     * <p>A string representing the email verification subject.</p>
+     * <p>A string representing the email verification subject.
+     * EmailVerificationSubject is allowed only if <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is DEVELOPER. </p>
      */
     inline CreateUserPoolRequest& WithEmailVerificationSubject(const Aws::String& value) { SetEmailVerificationSubject(value); return *this;}
 
     /**
-     * <p>A string representing the email verification subject.</p>
+     * <p>A string representing the email verification subject.
+     * EmailVerificationSubject is allowed only if <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is DEVELOPER. </p>
      */
     inline CreateUserPoolRequest& WithEmailVerificationSubject(Aws::String&& value) { SetEmailVerificationSubject(std::move(value)); return *this;}
 
     /**
-     * <p>A string representing the email verification subject.</p>
+     * <p>A string representing the email verification subject.
+     * EmailVerificationSubject is allowed only if <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is DEVELOPER. </p>
      */
     inline CreateUserPoolRequest& WithEmailVerificationSubject(const char* value) { SetEmailVerificationSubject(value); return *this;}
 
@@ -906,7 +944,8 @@ namespace Model
      * <p>You can choose to set case sensitivity on the username input for the selected
      * sign-in option. For example, when this is set to <code>False</code>, users will
      * be able to sign in using either "username" or "Username". This configuration is
-     * immutable once it has been set. For more information, see .</p>
+     * immutable once it has been set. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline const UsernameConfigurationType& GetUsernameConfiguration() const{ return m_usernameConfiguration; }
 
@@ -914,7 +953,8 @@ namespace Model
      * <p>You can choose to set case sensitivity on the username input for the selected
      * sign-in option. For example, when this is set to <code>False</code>, users will
      * be able to sign in using either "username" or "Username". This configuration is
-     * immutable once it has been set. For more information, see .</p>
+     * immutable once it has been set. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline bool UsernameConfigurationHasBeenSet() const { return m_usernameConfigurationHasBeenSet; }
 
@@ -922,7 +962,8 @@ namespace Model
      * <p>You can choose to set case sensitivity on the username input for the selected
      * sign-in option. For example, when this is set to <code>False</code>, users will
      * be able to sign in using either "username" or "Username". This configuration is
-     * immutable once it has been set. For more information, see .</p>
+     * immutable once it has been set. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline void SetUsernameConfiguration(const UsernameConfigurationType& value) { m_usernameConfigurationHasBeenSet = true; m_usernameConfiguration = value; }
 
@@ -930,7 +971,8 @@ namespace Model
      * <p>You can choose to set case sensitivity on the username input for the selected
      * sign-in option. For example, when this is set to <code>False</code>, users will
      * be able to sign in using either "username" or "Username". This configuration is
-     * immutable once it has been set. For more information, see .</p>
+     * immutable once it has been set. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline void SetUsernameConfiguration(UsernameConfigurationType&& value) { m_usernameConfigurationHasBeenSet = true; m_usernameConfiguration = std::move(value); }
 
@@ -938,7 +980,8 @@ namespace Model
      * <p>You can choose to set case sensitivity on the username input for the selected
      * sign-in option. For example, when this is set to <code>False</code>, users will
      * be able to sign in using either "username" or "Username". This configuration is
-     * immutable once it has been set. For more information, see .</p>
+     * immutable once it has been set. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline CreateUserPoolRequest& WithUsernameConfiguration(const UsernameConfigurationType& value) { SetUsernameConfiguration(value); return *this;}
 
@@ -946,7 +989,8 @@ namespace Model
      * <p>You can choose to set case sensitivity on the username input for the selected
      * sign-in option. For example, when this is set to <code>False</code>, users will
      * be able to sign in using either "username" or "Username". This configuration is
-     * immutable once it has been set. For more information, see .</p>
+     * immutable once it has been set. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline CreateUserPoolRequest& WithUsernameConfiguration(UsernameConfigurationType&& value) { SetUsernameConfiguration(std::move(value)); return *this;}
 
@@ -958,10 +1002,7 @@ namespace Model
      * With this setting, SMS does not qualify for a valid password recovery mechanism
      * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
      * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p> <note> <p>Starting February 1, 2020, the value of
-     * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
-     * first and <code>verified_phone_number</code> as the second option for newly
-     * created user pools if no value is provided.</p> </note>
+     * over email.</p>
      */
     inline const AccountRecoverySettingType& GetAccountRecoverySetting() const{ return m_accountRecoverySetting; }
 
@@ -972,10 +1013,7 @@ namespace Model
      * With this setting, SMS does not qualify for a valid password recovery mechanism
      * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
      * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p> <note> <p>Starting February 1, 2020, the value of
-     * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
-     * first and <code>verified_phone_number</code> as the second option for newly
-     * created user pools if no value is provided.</p> </note>
+     * over email.</p>
      */
     inline bool AccountRecoverySettingHasBeenSet() const { return m_accountRecoverySettingHasBeenSet; }
 
@@ -986,10 +1024,7 @@ namespace Model
      * With this setting, SMS does not qualify for a valid password recovery mechanism
      * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
      * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p> <note> <p>Starting February 1, 2020, the value of
-     * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
-     * first and <code>verified_phone_number</code> as the second option for newly
-     * created user pools if no value is provided.</p> </note>
+     * over email.</p>
      */
     inline void SetAccountRecoverySetting(const AccountRecoverySettingType& value) { m_accountRecoverySettingHasBeenSet = true; m_accountRecoverySetting = value; }
 
@@ -1000,10 +1035,7 @@ namespace Model
      * With this setting, SMS does not qualify for a valid password recovery mechanism
      * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
      * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p> <note> <p>Starting February 1, 2020, the value of
-     * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
-     * first and <code>verified_phone_number</code> as the second option for newly
-     * created user pools if no value is provided.</p> </note>
+     * over email.</p>
      */
     inline void SetAccountRecoverySetting(AccountRecoverySettingType&& value) { m_accountRecoverySettingHasBeenSet = true; m_accountRecoverySetting = std::move(value); }
 
@@ -1014,10 +1046,7 @@ namespace Model
      * With this setting, SMS does not qualify for a valid password recovery mechanism
      * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
      * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p> <note> <p>Starting February 1, 2020, the value of
-     * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
-     * first and <code>verified_phone_number</code> as the second option for newly
-     * created user pools if no value is provided.</p> </note>
+     * over email.</p>
      */
     inline CreateUserPoolRequest& WithAccountRecoverySetting(const AccountRecoverySettingType& value) { SetAccountRecoverySetting(value); return *this;}
 
@@ -1028,10 +1057,7 @@ namespace Model
      * With this setting, SMS does not qualify for a valid password recovery mechanism
      * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
      * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p> <note> <p>Starting February 1, 2020, the value of
-     * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
-     * first and <code>verified_phone_number</code> as the second option for newly
-     * created user pools if no value is provided.</p> </note>
+     * over email.</p>
      */
     inline CreateUserPoolRequest& WithAccountRecoverySetting(AccountRecoverySettingType&& value) { SetAccountRecoverySetting(std::move(value)); return *this;}
 

@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/imagebuilder/model/LaunchPermissionConfiguration.h>
 #include <utility>
@@ -92,44 +83,98 @@ namespace Model
 
 
     /**
-     * <p>The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration. Minimum and maximum length
+     * are in characters.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration. Minimum and maximum length
+     * are in characters.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration. Minimum and maximum length
+     * are in characters.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration. Minimum and maximum length
+     * are in characters.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration. Minimum and maximum length
+     * are in characters.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration. Minimum and maximum length
+     * are in characters.</p>
      */
     inline AmiDistributionConfiguration& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration. Minimum and maximum length
+     * are in characters.</p>
      */
     inline AmiDistributionConfiguration& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration. Minimum and maximum length
+     * are in characters.</p>
      */
     inline AmiDistributionConfiguration& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p> The ID of an account to which you want to distribute an image. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTargetAccountIds() const{ return m_targetAccountIds; }
+
+    /**
+     * <p> The ID of an account to which you want to distribute an image. </p>
+     */
+    inline bool TargetAccountIdsHasBeenSet() const { return m_targetAccountIdsHasBeenSet; }
+
+    /**
+     * <p> The ID of an account to which you want to distribute an image. </p>
+     */
+    inline void SetTargetAccountIds(const Aws::Vector<Aws::String>& value) { m_targetAccountIdsHasBeenSet = true; m_targetAccountIds = value; }
+
+    /**
+     * <p> The ID of an account to which you want to distribute an image. </p>
+     */
+    inline void SetTargetAccountIds(Aws::Vector<Aws::String>&& value) { m_targetAccountIdsHasBeenSet = true; m_targetAccountIds = std::move(value); }
+
+    /**
+     * <p> The ID of an account to which you want to distribute an image. </p>
+     */
+    inline AmiDistributionConfiguration& WithTargetAccountIds(const Aws::Vector<Aws::String>& value) { SetTargetAccountIds(value); return *this;}
+
+    /**
+     * <p> The ID of an account to which you want to distribute an image. </p>
+     */
+    inline AmiDistributionConfiguration& WithTargetAccountIds(Aws::Vector<Aws::String>&& value) { SetTargetAccountIds(std::move(value)); return *this;}
+
+    /**
+     * <p> The ID of an account to which you want to distribute an image. </p>
+     */
+    inline AmiDistributionConfiguration& AddTargetAccountIds(const Aws::String& value) { m_targetAccountIdsHasBeenSet = true; m_targetAccountIds.push_back(value); return *this; }
+
+    /**
+     * <p> The ID of an account to which you want to distribute an image. </p>
+     */
+    inline AmiDistributionConfiguration& AddTargetAccountIds(Aws::String&& value) { m_targetAccountIdsHasBeenSet = true; m_targetAccountIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p> The ID of an account to which you want to distribute an image. </p>
+     */
+    inline AmiDistributionConfiguration& AddTargetAccountIds(const char* value) { m_targetAccountIdsHasBeenSet = true; m_targetAccountIds.push_back(value); return *this; }
 
 
     /**
@@ -199,6 +244,47 @@ namespace Model
 
 
     /**
+     * <p> The KMS key identifier used to encrypt the distributed image. </p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p> The KMS key identifier used to encrypt the distributed image. </p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    /**
+     * <p> The KMS key identifier used to encrypt the distributed image. </p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p> The KMS key identifier used to encrypt the distributed image. </p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p> The KMS key identifier used to encrypt the distributed image. </p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p> The KMS key identifier used to encrypt the distributed image. </p>
+     */
+    inline AmiDistributionConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p> The KMS key identifier used to encrypt the distributed image. </p>
+     */
+    inline AmiDistributionConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p> The KMS key identifier used to encrypt the distributed image. </p>
+     */
+    inline AmiDistributionConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
+
+    /**
      * <p> Launch permissions can be used to configure which AWS accounts can use the
      * AMI to launch instances. </p>
      */
@@ -242,8 +328,14 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
 
+    Aws::Vector<Aws::String> m_targetAccountIds;
+    bool m_targetAccountIdsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_amiTags;
     bool m_amiTagsHasBeenSet;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet;
 
     LaunchPermissionConfiguration m_launchPermission;
     bool m_launchPermissionHasBeenSet;

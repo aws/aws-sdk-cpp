@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -1195,8 +1185,8 @@ namespace Model
      * each active container instance that meets all of the task placement constraints
      * that you specify in your cluster. The service scheduler also evaluates the task
      * placement constraints for running tasks and will stop tasks that do not meet the
-     * placement constraints.</p> <note> <p>Fargate tasks do not support the
-     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     * placement constraints.</p>  <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p>  </li> </ul>
      */
     inline const SchedulingStrategy& GetSchedulingStrategy() const{ return m_schedulingStrategy; }
 
@@ -1212,8 +1202,8 @@ namespace Model
      * each active container instance that meets all of the task placement constraints
      * that you specify in your cluster. The service scheduler also evaluates the task
      * placement constraints for running tasks and will stop tasks that do not meet the
-     * placement constraints.</p> <note> <p>Fargate tasks do not support the
-     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     * placement constraints.</p>  <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p>  </li> </ul>
      */
     inline bool SchedulingStrategyHasBeenSet() const { return m_schedulingStrategyHasBeenSet; }
 
@@ -1229,8 +1219,8 @@ namespace Model
      * each active container instance that meets all of the task placement constraints
      * that you specify in your cluster. The service scheduler also evaluates the task
      * placement constraints for running tasks and will stop tasks that do not meet the
-     * placement constraints.</p> <note> <p>Fargate tasks do not support the
-     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     * placement constraints.</p>  <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p>  </li> </ul>
      */
     inline void SetSchedulingStrategy(const SchedulingStrategy& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = value; }
 
@@ -1246,8 +1236,8 @@ namespace Model
      * each active container instance that meets all of the task placement constraints
      * that you specify in your cluster. The service scheduler also evaluates the task
      * placement constraints for running tasks and will stop tasks that do not meet the
-     * placement constraints.</p> <note> <p>Fargate tasks do not support the
-     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     * placement constraints.</p>  <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p>  </li> </ul>
      */
     inline void SetSchedulingStrategy(SchedulingStrategy&& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = std::move(value); }
 
@@ -1263,8 +1253,8 @@ namespace Model
      * each active container instance that meets all of the task placement constraints
      * that you specify in your cluster. The service scheduler also evaluates the task
      * placement constraints for running tasks and will stop tasks that do not meet the
-     * placement constraints.</p> <note> <p>Fargate tasks do not support the
-     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     * placement constraints.</p>  <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p>  </li> </ul>
      */
     inline Service& WithSchedulingStrategy(const SchedulingStrategy& value) { SetSchedulingStrategy(value); return *this;}
 
@@ -1280,8 +1270,8 @@ namespace Model
      * each active container instance that meets all of the task placement constraints
      * that you specify in your cluster. The service scheduler also evaluates the task
      * placement constraints for running tasks and will stop tasks that do not meet the
-     * placement constraints.</p> <note> <p>Fargate tasks do not support the
-     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     * placement constraints.</p>  <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p>  </li> </ul>
      */
     inline Service& WithSchedulingStrategy(SchedulingStrategy&& value) { SetSchedulingStrategy(std::move(value)); return *this;}
 

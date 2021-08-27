@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -172,6 +162,31 @@ namespace Model
      */
     inline SourceRegion& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
+    /**
+     * <p>Whether the source AWS Region supports replicating automated backups to the
+     * current AWS Region.</p>
+     */
+    inline bool GetSupportsDBInstanceAutomatedBackupsReplication() const{ return m_supportsDBInstanceAutomatedBackupsReplication; }
+
+    /**
+     * <p>Whether the source AWS Region supports replicating automated backups to the
+     * current AWS Region.</p>
+     */
+    inline bool SupportsDBInstanceAutomatedBackupsReplicationHasBeenSet() const { return m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet; }
+
+    /**
+     * <p>Whether the source AWS Region supports replicating automated backups to the
+     * current AWS Region.</p>
+     */
+    inline void SetSupportsDBInstanceAutomatedBackupsReplication(bool value) { m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet = true; m_supportsDBInstanceAutomatedBackupsReplication = value; }
+
+    /**
+     * <p>Whether the source AWS Region supports replicating automated backups to the
+     * current AWS Region.</p>
+     */
+    inline SourceRegion& WithSupportsDBInstanceAutomatedBackupsReplication(bool value) { SetSupportsDBInstanceAutomatedBackupsReplication(value); return *this;}
+
   private:
 
     Aws::String m_regionName;
@@ -182,6 +197,9 @@ namespace Model
 
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
+    bool m_supportsDBInstanceAutomatedBackupsReplication;
+    bool m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet;
   };
 
 } // namespace Model

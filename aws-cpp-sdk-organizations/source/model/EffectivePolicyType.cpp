@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/organizations/model/EffectivePolicyType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -31,6 +21,8 @@ namespace Aws
       {
 
         static const int TAG_POLICY_HASH = HashingUtils::HashString("TAG_POLICY");
+        static const int BACKUP_POLICY_HASH = HashingUtils::HashString("BACKUP_POLICY");
+        static const int AISERVICES_OPT_OUT_POLICY_HASH = HashingUtils::HashString("AISERVICES_OPT_OUT_POLICY");
 
 
         EffectivePolicyType GetEffectivePolicyTypeForName(const Aws::String& name)
@@ -39,6 +31,14 @@ namespace Aws
           if (hashCode == TAG_POLICY_HASH)
           {
             return EffectivePolicyType::TAG_POLICY;
+          }
+          else if (hashCode == BACKUP_POLICY_HASH)
+          {
+            return EffectivePolicyType::BACKUP_POLICY;
+          }
+          else if (hashCode == AISERVICES_OPT_OUT_POLICY_HASH)
+          {
+            return EffectivePolicyType::AISERVICES_OPT_OUT_POLICY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +56,10 @@ namespace Aws
           {
           case EffectivePolicyType::TAG_POLICY:
             return "TAG_POLICY";
+          case EffectivePolicyType::BACKUP_POLICY:
+            return "BACKUP_POLICY";
+          case EffectivePolicyType::AISERVICES_OPT_OUT_POLICY:
+            return "AISERVICES_OPT_OUT_POLICY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

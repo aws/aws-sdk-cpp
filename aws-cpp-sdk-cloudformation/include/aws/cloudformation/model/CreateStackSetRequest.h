@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -55,65 +45,65 @@ namespace Model
 
     /**
      * <p>The name to associate with the stack set. The name must be unique in the
-     * Region where you create your stack set.</p> <note> <p>A stack name can contain
+     * Region where you create your stack set.</p>  <p>A stack name can contain
      * only alphanumeric characters (case-sensitive) and hyphens. It must start with an
-     * alphabetic character and can't be longer than 128 characters.</p> </note>
+     * alphabetic character and can't be longer than 128 characters.</p> 
      */
     inline const Aws::String& GetStackSetName() const{ return m_stackSetName; }
 
     /**
      * <p>The name to associate with the stack set. The name must be unique in the
-     * Region where you create your stack set.</p> <note> <p>A stack name can contain
+     * Region where you create your stack set.</p>  <p>A stack name can contain
      * only alphanumeric characters (case-sensitive) and hyphens. It must start with an
-     * alphabetic character and can't be longer than 128 characters.</p> </note>
+     * alphabetic character and can't be longer than 128 characters.</p> 
      */
     inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
 
     /**
      * <p>The name to associate with the stack set. The name must be unique in the
-     * Region where you create your stack set.</p> <note> <p>A stack name can contain
+     * Region where you create your stack set.</p>  <p>A stack name can contain
      * only alphanumeric characters (case-sensitive) and hyphens. It must start with an
-     * alphabetic character and can't be longer than 128 characters.</p> </note>
+     * alphabetic character and can't be longer than 128 characters.</p> 
      */
     inline void SetStackSetName(const Aws::String& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = value; }
 
     /**
      * <p>The name to associate with the stack set. The name must be unique in the
-     * Region where you create your stack set.</p> <note> <p>A stack name can contain
+     * Region where you create your stack set.</p>  <p>A stack name can contain
      * only alphanumeric characters (case-sensitive) and hyphens. It must start with an
-     * alphabetic character and can't be longer than 128 characters.</p> </note>
+     * alphabetic character and can't be longer than 128 characters.</p> 
      */
     inline void SetStackSetName(Aws::String&& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = std::move(value); }
 
     /**
      * <p>The name to associate with the stack set. The name must be unique in the
-     * Region where you create your stack set.</p> <note> <p>A stack name can contain
+     * Region where you create your stack set.</p>  <p>A stack name can contain
      * only alphanumeric characters (case-sensitive) and hyphens. It must start with an
-     * alphabetic character and can't be longer than 128 characters.</p> </note>
+     * alphabetic character and can't be longer than 128 characters.</p> 
      */
     inline void SetStackSetName(const char* value) { m_stackSetNameHasBeenSet = true; m_stackSetName.assign(value); }
 
     /**
      * <p>The name to associate with the stack set. The name must be unique in the
-     * Region where you create your stack set.</p> <note> <p>A stack name can contain
+     * Region where you create your stack set.</p>  <p>A stack name can contain
      * only alphanumeric characters (case-sensitive) and hyphens. It must start with an
-     * alphabetic character and can't be longer than 128 characters.</p> </note>
+     * alphabetic character and can't be longer than 128 characters.</p> 
      */
     inline CreateStackSetRequest& WithStackSetName(const Aws::String& value) { SetStackSetName(value); return *this;}
 
     /**
      * <p>The name to associate with the stack set. The name must be unique in the
-     * Region where you create your stack set.</p> <note> <p>A stack name can contain
+     * Region where you create your stack set.</p>  <p>A stack name can contain
      * only alphanumeric characters (case-sensitive) and hyphens. It must start with an
-     * alphabetic character and can't be longer than 128 characters.</p> </note>
+     * alphabetic character and can't be longer than 128 characters.</p> 
      */
     inline CreateStackSetRequest& WithStackSetName(Aws::String&& value) { SetStackSetName(std::move(value)); return *this;}
 
     /**
      * <p>The name to associate with the stack set. The name must be unique in the
-     * Region where you create your stack set.</p> <note> <p>A stack name can contain
+     * Region where you create your stack set.</p>  <p>A stack name can contain
      * only alphanumeric characters (case-sensitive) and hyphens. It must start with an
-     * alphabetic character and can't be longer than 128 characters.</p> </note>
+     * alphabetic character and can't be longer than 128 characters.</p> 
      */
     inline CreateStackSetRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
 
@@ -405,14 +395,14 @@ namespace Model
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
-     * <note> <p>Stack sets do not currently support macros in stack templates. (This
+     *  <p>Stack sets do not currently support macros in stack templates. (This
      * includes the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by AWS CloudFormation.) Even if you specify
      * this capability, if you include a macro in your template the stack set operation
-     * will fail.</p> </note> </li> </ul>
+     * will fail.</p>  </li> </ul>
      */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
 
@@ -459,14 +449,14 @@ namespace Model
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
-     * <note> <p>Stack sets do not currently support macros in stack templates. (This
+     *  <p>Stack sets do not currently support macros in stack templates. (This
      * includes the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by AWS CloudFormation.) Even if you specify
      * this capability, if you include a macro in your template the stack set operation
-     * will fail.</p> </note> </li> </ul>
+     * will fail.</p>  </li> </ul>
      */
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
 
@@ -513,14 +503,14 @@ namespace Model
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
-     * <note> <p>Stack sets do not currently support macros in stack templates. (This
+     *  <p>Stack sets do not currently support macros in stack templates. (This
      * includes the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by AWS CloudFormation.) Even if you specify
      * this capability, if you include a macro in your template the stack set operation
-     * will fail.</p> </note> </li> </ul>
+     * will fail.</p>  </li> </ul>
      */
     inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
 
@@ -567,14 +557,14 @@ namespace Model
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
-     * <note> <p>Stack sets do not currently support macros in stack templates. (This
+     *  <p>Stack sets do not currently support macros in stack templates. (This
      * includes the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by AWS CloudFormation.) Even if you specify
      * this capability, if you include a macro in your template the stack set operation
-     * will fail.</p> </note> </li> </ul>
+     * will fail.</p>  </li> </ul>
      */
     inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
 
@@ -621,14 +611,14 @@ namespace Model
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
-     * <note> <p>Stack sets do not currently support macros in stack templates. (This
+     *  <p>Stack sets do not currently support macros in stack templates. (This
      * includes the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by AWS CloudFormation.) Even if you specify
      * this capability, if you include a macro in your template the stack set operation
-     * will fail.</p> </note> </li> </ul>
+     * will fail.</p>  </li> </ul>
      */
     inline CreateStackSetRequest& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
 
@@ -675,14 +665,14 @@ namespace Model
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
-     * <note> <p>Stack sets do not currently support macros in stack templates. (This
+     *  <p>Stack sets do not currently support macros in stack templates. (This
      * includes the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by AWS CloudFormation.) Even if you specify
      * this capability, if you include a macro in your template the stack set operation
-     * will fail.</p> </note> </li> </ul>
+     * will fail.</p>  </li> </ul>
      */
     inline CreateStackSetRequest& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
 
@@ -729,14 +719,14 @@ namespace Model
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
-     * <note> <p>Stack sets do not currently support macros in stack templates. (This
+     *  <p>Stack sets do not currently support macros in stack templates. (This
      * includes the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by AWS CloudFormation.) Even if you specify
      * this capability, if you include a macro in your template the stack set operation
-     * will fail.</p> </note> </li> </ul>
+     * will fail.</p>  </li> </ul>
      */
     inline CreateStackSetRequest& AddCapabilities(const Capability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
 
@@ -783,14 +773,14 @@ namespace Model
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
-     * <note> <p>Stack sets do not currently support macros in stack templates. (This
+     *  <p>Stack sets do not currently support macros in stack templates. (This
      * includes the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by AWS CloudFormation.) Even if you specify
      * this capability, if you include a macro in your template the stack set operation
-     * will fail.</p> </note> </li> </ul>
+     * will fail.</p>  </li> </ul>
      */
     inline CreateStackSetRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
 

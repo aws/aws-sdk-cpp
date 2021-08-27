@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
@@ -164,29 +154,29 @@ namespace Model
 
     /**
      * <p> Last line where the recommendation is applicable in the source commit or
-     * source branch. For a single line comment the start line and end line values will
-     * be the same. </p>
+     * source branch. For a single line comment the start line and end line values are
+     * the same. </p>
      */
     inline int GetEndLine() const{ return m_endLine; }
 
     /**
      * <p> Last line where the recommendation is applicable in the source commit or
-     * source branch. For a single line comment the start line and end line values will
-     * be the same. </p>
+     * source branch. For a single line comment the start line and end line values are
+     * the same. </p>
      */
     inline bool EndLineHasBeenSet() const { return m_endLineHasBeenSet; }
 
     /**
      * <p> Last line where the recommendation is applicable in the source commit or
-     * source branch. For a single line comment the start line and end line values will
-     * be the same. </p>
+     * source branch. For a single line comment the start line and end line values are
+     * the same. </p>
      */
     inline void SetEndLine(int value) { m_endLineHasBeenSet = true; m_endLine = value; }
 
     /**
      * <p> Last line where the recommendation is applicable in the source commit or
-     * source branch. For a single line comment the start line and end line values will
-     * be the same. </p>
+     * source branch. For a single line comment the start line and end line values are
+     * the same. </p>
      */
     inline RecommendationSummary& WithEndLine(int value) { SetEndLine(value); return *this;}
 

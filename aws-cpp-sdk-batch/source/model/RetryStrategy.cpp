@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/batch/model/RetryStrategy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,13 +20,15 @@ namespace Model
 
 RetryStrategy::RetryStrategy() : 
     m_attempts(0),
-    m_attemptsHasBeenSet(false)
+    m_attemptsHasBeenSet(false),
+    m_evaluateOnExitHasBeenSet(false)
 {
 }
 
 RetryStrategy::RetryStrategy(JsonView jsonValue) : 
     m_attempts(0),
-    m_attemptsHasBeenSet(false)
+    m_attemptsHasBeenSet(false),
+    m_evaluateOnExitHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +42,16 @@ RetryStrategy& RetryStrategy::operator =(JsonView jsonValue)
     m_attemptsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("evaluateOnExit"))
+  {
+    Array<JsonView> evaluateOnExitJsonList = jsonValue.GetArray("evaluateOnExit");
+    for(unsigned evaluateOnExitIndex = 0; evaluateOnExitIndex < evaluateOnExitJsonList.GetLength(); ++evaluateOnExitIndex)
+    {
+      m_evaluateOnExit.push_back(evaluateOnExitJsonList[evaluateOnExitIndex].AsObject());
+    }
+    m_evaluateOnExitHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -60,6 +62,17 @@ JsonValue RetryStrategy::Jsonize() const
   if(m_attemptsHasBeenSet)
   {
    payload.WithInteger("attempts", m_attempts);
+
+  }
+
+  if(m_evaluateOnExitHasBeenSet)
+  {
+   Array<JsonValue> evaluateOnExitJsonList(m_evaluateOnExit.size());
+   for(unsigned evaluateOnExitIndex = 0; evaluateOnExitIndex < evaluateOnExitJsonList.GetLength(); ++evaluateOnExitIndex)
+   {
+     evaluateOnExitJsonList[evaluateOnExitIndex].AsObject(m_evaluateOnExit[evaluateOnExitIndex].Jsonize());
+   }
+   payload.WithArray("evaluateOnExit", std::move(evaluateOnExitJsonList));
 
   }
 

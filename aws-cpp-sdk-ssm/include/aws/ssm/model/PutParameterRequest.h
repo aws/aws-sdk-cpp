@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -62,15 +52,15 @@ namespace Model
      * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
      * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
      * values for parameter names, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
-     * capacity for additional system attributes that are not part of the name. The
-     * maximum length for a parameter name, including the full length of the parameter
-     * ARN, is 1011 characters. For example, the length of the following parameter name
-     * is 65 characters, not 20 characters:</p> <p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
+     * requirements and constraints for parameter names</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
+     * includes capacity for additional system attributes that are not part of the
+     * name. The maximum length for a parameter name, including the full length of the
+     * parameter ARN, is 1011 characters. For example, the length of the following
+     * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> </note>
+     * </p> 
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -88,15 +78,15 @@ namespace Model
      * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
      * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
      * values for parameter names, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
-     * capacity for additional system attributes that are not part of the name. The
-     * maximum length for a parameter name, including the full length of the parameter
-     * ARN, is 1011 characters. For example, the length of the following parameter name
-     * is 65 characters, not 20 characters:</p> <p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
+     * requirements and constraints for parameter names</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
+     * includes capacity for additional system attributes that are not part of the
+     * name. The maximum length for a parameter name, including the full length of the
+     * parameter ARN, is 1011 characters. For example, the length of the following
+     * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> </note>
+     * </p> 
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -114,15 +104,15 @@ namespace Model
      * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
      * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
      * values for parameter names, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
-     * capacity for additional system attributes that are not part of the name. The
-     * maximum length for a parameter name, including the full length of the parameter
-     * ARN, is 1011 characters. For example, the length of the following parameter name
-     * is 65 characters, not 20 characters:</p> <p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
+     * requirements and constraints for parameter names</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
+     * includes capacity for additional system attributes that are not part of the
+     * name. The maximum length for a parameter name, including the full length of the
+     * parameter ARN, is 1011 characters. For example, the length of the following
+     * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> </note>
+     * </p> 
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -140,15 +130,15 @@ namespace Model
      * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
      * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
      * values for parameter names, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
-     * capacity for additional system attributes that are not part of the name. The
-     * maximum length for a parameter name, including the full length of the parameter
-     * ARN, is 1011 characters. For example, the length of the following parameter name
-     * is 65 characters, not 20 characters:</p> <p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
+     * requirements and constraints for parameter names</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
+     * includes capacity for additional system attributes that are not part of the
+     * name. The maximum length for a parameter name, including the full length of the
+     * parameter ARN, is 1011 characters. For example, the length of the following
+     * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> </note>
+     * </p> 
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -166,15 +156,15 @@ namespace Model
      * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
      * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
      * values for parameter names, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
-     * capacity for additional system attributes that are not part of the name. The
-     * maximum length for a parameter name, including the full length of the parameter
-     * ARN, is 1011 characters. For example, the length of the following parameter name
-     * is 65 characters, not 20 characters:</p> <p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
+     * requirements and constraints for parameter names</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
+     * includes capacity for additional system attributes that are not part of the
+     * name. The maximum length for a parameter name, including the full length of the
+     * parameter ARN, is 1011 characters. For example, the length of the following
+     * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> </note>
+     * </p> 
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -192,15 +182,15 @@ namespace Model
      * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
      * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
      * values for parameter names, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
-     * capacity for additional system attributes that are not part of the name. The
-     * maximum length for a parameter name, including the full length of the parameter
-     * ARN, is 1011 characters. For example, the length of the following parameter name
-     * is 65 characters, not 20 characters:</p> <p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
+     * requirements and constraints for parameter names</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
+     * includes capacity for additional system attributes that are not part of the
+     * name. The maximum length for a parameter name, including the full length of the
+     * parameter ARN, is 1011 characters. For example, the length of the following
+     * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> </note>
+     * </p> 
      */
     inline PutParameterRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -218,15 +208,15 @@ namespace Model
      * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
      * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
      * values for parameter names, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
-     * capacity for additional system attributes that are not part of the name. The
-     * maximum length for a parameter name, including the full length of the parameter
-     * ARN, is 1011 characters. For example, the length of the following parameter name
-     * is 65 characters, not 20 characters:</p> <p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
+     * requirements and constraints for parameter names</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
+     * includes capacity for additional system attributes that are not part of the
+     * name. The maximum length for a parameter name, including the full length of the
+     * parameter ARN, is 1011 characters. For example, the length of the following
+     * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> </note>
+     * </p> 
      */
     inline PutParameterRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -244,72 +234,72 @@ namespace Model
      * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
      * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
      * values for parameter names, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
-     * capacity for additional system attributes that are not part of the name. The
-     * maximum length for a parameter name, including the full length of the parameter
-     * ARN, is 1011 characters. For example, the length of the following parameter name
-     * is 65 characters, not 20 characters:</p> <p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
+     * requirements and constraints for parameter names</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
+     * includes capacity for additional system attributes that are not part of the
+     * name. The maximum length for a parameter name, including the full length of the
+     * parameter ARN, is 1011 characters. For example, the length of the following
+     * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> </note>
+     * </p> 
      */
     inline PutParameterRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
      * <p>Information about the parameter that you want to add to the system. Optional
-     * but recommended.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * but recommended.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
      * <p>Information about the parameter that you want to add to the system. Optional
-     * but recommended.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * but recommended.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>Information about the parameter that you want to add to the system. Optional
-     * but recommended.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * but recommended.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
      * <p>Information about the parameter that you want to add to the system. Optional
-     * but recommended.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * but recommended.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>Information about the parameter that you want to add to the system. Optional
-     * but recommended.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * but recommended.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
      * <p>Information about the parameter that you want to add to the system. Optional
-     * but recommended.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * but recommended.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline PutParameterRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
      * <p>Information about the parameter that you want to add to the system. Optional
-     * but recommended.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * but recommended.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline PutParameterRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Information about the parameter that you want to add to the system. Optional
-     * but recommended.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * but recommended.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline PutParameterRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -317,109 +307,145 @@ namespace Model
     /**
      * <p>The parameter value that you want to add to the system. Standard parameters
      * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
+     *  <p>Parameters can't be referenced or nested in the values of other
+     * parameters. You can't include <code>{{}}</code> or
+     * <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p> 
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
      * <p>The parameter value that you want to add to the system. Standard parameters
      * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
+     *  <p>Parameters can't be referenced or nested in the values of other
+     * parameters. You can't include <code>{{}}</code> or
+     * <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p> 
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The parameter value that you want to add to the system. Standard parameters
      * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
+     *  <p>Parameters can't be referenced or nested in the values of other
+     * parameters. You can't include <code>{{}}</code> or
+     * <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p> 
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
      * <p>The parameter value that you want to add to the system. Standard parameters
      * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
+     *  <p>Parameters can't be referenced or nested in the values of other
+     * parameters. You can't include <code>{{}}</code> or
+     * <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p> 
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The parameter value that you want to add to the system. Standard parameters
      * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
+     *  <p>Parameters can't be referenced or nested in the values of other
+     * parameters. You can't include <code>{{}}</code> or
+     * <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p> 
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
      * <p>The parameter value that you want to add to the system. Standard parameters
      * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
+     *  <p>Parameters can't be referenced or nested in the values of other
+     * parameters. You can't include <code>{{}}</code> or
+     * <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p> 
      */
     inline PutParameterRequest& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
      * <p>The parameter value that you want to add to the system. Standard parameters
      * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
+     *  <p>Parameters can't be referenced or nested in the values of other
+     * parameters. You can't include <code>{{}}</code> or
+     * <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p> 
      */
     inline PutParameterRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The parameter value that you want to add to the system. Standard parameters
      * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
+     *  <p>Parameters can't be referenced or nested in the values of other
+     * parameters. You can't include <code>{{}}</code> or
+     * <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p> 
      */
     inline PutParameterRequest& WithValue(const char* value) { SetValue(value); return *this;}
 
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p> <p>Items in a
-     * <code>StringList</code> must be separated by a comma (,). You can't use other
-     * punctuation or special character to escape items in the list. If you have a
-     * parameter value that requires a comma, then use the <code>String</code> data
-     * type.</p> <note> <p> <code>SecureString</code> is not currently supported for
-     * AWS CloudFormation templates or in the China Regions.</p> </note>
+     * <p>The type of parameter that you want to add to the system.</p>  <p>
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation
+     * templates.</p>  <p>Items in a <code>StringList</code> must be separated
+     * by a comma (,). You can't use other punctuation or special character to escape
+     * items in the list. If you have a parameter value that requires a comma, then use
+     * the <code>String</code> data type.</p>  <p>Specifying a parameter
+     * type is not required when updating a parameter. You must specify a parameter
+     * type when creating a parameter.</p> 
      */
     inline const ParameterType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p> <p>Items in a
-     * <code>StringList</code> must be separated by a comma (,). You can't use other
-     * punctuation or special character to escape items in the list. If you have a
-     * parameter value that requires a comma, then use the <code>String</code> data
-     * type.</p> <note> <p> <code>SecureString</code> is not currently supported for
-     * AWS CloudFormation templates or in the China Regions.</p> </note>
+     * <p>The type of parameter that you want to add to the system.</p>  <p>
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation
+     * templates.</p>  <p>Items in a <code>StringList</code> must be separated
+     * by a comma (,). You can't use other punctuation or special character to escape
+     * items in the list. If you have a parameter value that requires a comma, then use
+     * the <code>String</code> data type.</p>  <p>Specifying a parameter
+     * type is not required when updating a parameter. You must specify a parameter
+     * type when creating a parameter.</p> 
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p> <p>Items in a
-     * <code>StringList</code> must be separated by a comma (,). You can't use other
-     * punctuation or special character to escape items in the list. If you have a
-     * parameter value that requires a comma, then use the <code>String</code> data
-     * type.</p> <note> <p> <code>SecureString</code> is not currently supported for
-     * AWS CloudFormation templates or in the China Regions.</p> </note>
+     * <p>The type of parameter that you want to add to the system.</p>  <p>
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation
+     * templates.</p>  <p>Items in a <code>StringList</code> must be separated
+     * by a comma (,). You can't use other punctuation or special character to escape
+     * items in the list. If you have a parameter value that requires a comma, then use
+     * the <code>String</code> data type.</p>  <p>Specifying a parameter
+     * type is not required when updating a parameter. You must specify a parameter
+     * type when creating a parameter.</p> 
      */
     inline void SetType(const ParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p> <p>Items in a
-     * <code>StringList</code> must be separated by a comma (,). You can't use other
-     * punctuation or special character to escape items in the list. If you have a
-     * parameter value that requires a comma, then use the <code>String</code> data
-     * type.</p> <note> <p> <code>SecureString</code> is not currently supported for
-     * AWS CloudFormation templates or in the China Regions.</p> </note>
+     * <p>The type of parameter that you want to add to the system.</p>  <p>
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation
+     * templates.</p>  <p>Items in a <code>StringList</code> must be separated
+     * by a comma (,). You can't use other punctuation or special character to escape
+     * items in the list. If you have a parameter value that requires a comma, then use
+     * the <code>String</code> data type.</p>  <p>Specifying a parameter
+     * type is not required when updating a parameter. You must specify a parameter
+     * type when creating a parameter.</p> 
      */
     inline void SetType(ParameterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p> <p>Items in a
-     * <code>StringList</code> must be separated by a comma (,). You can't use other
-     * punctuation or special character to escape items in the list. If you have a
-     * parameter value that requires a comma, then use the <code>String</code> data
-     * type.</p> <note> <p> <code>SecureString</code> is not currently supported for
-     * AWS CloudFormation templates or in the China Regions.</p> </note>
+     * <p>The type of parameter that you want to add to the system.</p>  <p>
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation
+     * templates.</p>  <p>Items in a <code>StringList</code> must be separated
+     * by a comma (,). You can't use other punctuation or special character to escape
+     * items in the list. If you have a parameter value that requires a comma, then use
+     * the <code>String</code> data type.</p>  <p>Specifying a parameter
+     * type is not required when updating a parameter. You must specify a parameter
+     * type when creating a parameter.</p> 
      */
     inline PutParameterRequest& WithType(const ParameterType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p> <p>Items in a
-     * <code>StringList</code> must be separated by a comma (,). You can't use other
-     * punctuation or special character to escape items in the list. If you have a
-     * parameter value that requires a comma, then use the <code>String</code> data
-     * type.</p> <note> <p> <code>SecureString</code> is not currently supported for
-     * AWS CloudFormation templates or in the China Regions.</p> </note>
+     * <p>The type of parameter that you want to add to the system.</p>  <p>
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation
+     * templates.</p>  <p>Items in a <code>StringList</code> must be separated
+     * by a comma (,). You can't use other punctuation or special character to escape
+     * items in the list. If you have a parameter value that requires a comma, then use
+     * the <code>String</code> data type.</p>  <p>Specifying a parameter
+     * type is not required when updating a parameter. You must specify a parameter
+     * type when creating a parameter.</p> 
      */
     inline PutParameterRequest& WithType(ParameterType&& value) { SetType(std::move(value)); return *this;}
 
@@ -636,9 +662,9 @@ namespace Model
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul>  <p>To
      * add tags to an existing Systems Manager parameter, use the
-     * <a>AddTagsToResource</a> action.</p> </note>
+     * <a>AddTagsToResource</a> action.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -651,9 +677,9 @@ namespace Model
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul>  <p>To
      * add tags to an existing Systems Manager parameter, use the
-     * <a>AddTagsToResource</a> action.</p> </note>
+     * <a>AddTagsToResource</a> action.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -666,9 +692,9 @@ namespace Model
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul>  <p>To
      * add tags to an existing Systems Manager parameter, use the
-     * <a>AddTagsToResource</a> action.</p> </note>
+     * <a>AddTagsToResource</a> action.</p> 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -681,9 +707,9 @@ namespace Model
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul>  <p>To
      * add tags to an existing Systems Manager parameter, use the
-     * <a>AddTagsToResource</a> action.</p> </note>
+     * <a>AddTagsToResource</a> action.</p> 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -696,9 +722,9 @@ namespace Model
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul>  <p>To
      * add tags to an existing Systems Manager parameter, use the
-     * <a>AddTagsToResource</a> action.</p> </note>
+     * <a>AddTagsToResource</a> action.</p> 
      */
     inline PutParameterRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -711,9 +737,9 @@ namespace Model
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul>  <p>To
      * add tags to an existing Systems Manager parameter, use the
-     * <a>AddTagsToResource</a> action.</p> </note>
+     * <a>AddTagsToResource</a> action.</p> 
      */
     inline PutParameterRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -726,9 +752,9 @@ namespace Model
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul>  <p>To
      * add tags to an existing Systems Manager parameter, use the
-     * <a>AddTagsToResource</a> action.</p> </note>
+     * <a>AddTagsToResource</a> action.</p> 
      */
     inline PutParameterRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -741,9 +767,9 @@ namespace Model
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul>  <p>To
      * add tags to an existing Systems Manager parameter, use the
-     * <a>AddTagsToResource</a> action.</p> </note>
+     * <a>AddTagsToResource</a> action.</p> 
      */
     inline PutParameterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -758,24 +784,24 @@ namespace Model
      * parameter policies. You can create a maximum of 100,000 advanced parameters for
      * each Region in an AWS account. Advanced parameters incur a charge. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
-     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>You
-     * can change a standard parameter to an advanced parameter any time. But you can't
-     * revert an advanced parameter to a standard parameter. Reverting an advanced
-     * parameter to a standard parameter would result in data loss because the system
-     * would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
-     * remove any policies attached to the parameter. Lastly, advanced parameters use a
-     * different form of encryption than standard parameters. </p> <p>If you no longer
-     * need an advanced parameter, or if you no longer want to incur charges for an
-     * advanced parameter, you must delete it and recreate it as a new standard
-     * parameter. </p> <p> <b>Using the Default Tier Configuration</b> </p> <p>In
-     * <code>PutParameter</code> requests, you can specify the tier to create the
-     * parameter in. Whenever you specify a tier in the request, Parameter Store
-     * creates or updates the parameter according to that request. However, if you do
-     * not specify a tier in a request, Parameter Store assigns the tier based on the
-     * current Parameter Store default tier configuration.</p> <p>The default tier when
-     * you begin using Parameter Store is the standard-parameter tier. If you use the
-     * advanced-parameter tier, you can specify one of the following as the
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
+     * and advanced parameter tiers</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <p>You can change a standard parameter to an advanced parameter
+     * any time. But you can't revert an advanced parameter to a standard parameter.
+     * Reverting an advanced parameter to a standard parameter would result in data
+     * loss because the system would truncate the size of the parameter from 8 KB to 4
+     * KB. Reverting would also remove any policies attached to the parameter. Lastly,
+     * advanced parameters use a different form of encryption than standard parameters.
+     * </p> <p>If you no longer need an advanced parameter, or if you no longer want to
+     * incur charges for an advanced parameter, you must delete it and recreate it as a
+     * new standard parameter. </p> <p> <b>Using the Default Tier Configuration</b>
+     * </p> <p>In <code>PutParameter</code> requests, you can specify the tier to
+     * create the parameter in. Whenever you specify a tier in the request, Parameter
+     * Store creates or updates the parameter according to that request. However, if
+     * you do not specify a tier in a request, Parameter Store assigns the tier based
+     * on the current Parameter Store default tier configuration.</p> <p>The default
+     * tier when you begin using Parameter Store is the standard-parameter tier. If you
+     * use the advanced-parameter tier, you can specify one of the following as the
      * default:</p> <ul> <li> <p> <b>Advanced</b>: With this option, Parameter Store
      * evaluates all requests as advanced parameters. </p> </li> <li> <p>
      * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
@@ -791,8 +817,8 @@ namespace Model
      * uses a parameter policy.</p> </li> <li> <p>More than 10,000 parameters already
      * exist in your AWS account in the current Region.</p> </li> </ul> <p>For more
      * information about configuring the default tier option, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
-     * a Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
+     * a default parameter tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline const ParameterTier& GetTier() const{ return m_tier; }
 
@@ -806,24 +832,24 @@ namespace Model
      * parameter policies. You can create a maximum of 100,000 advanced parameters for
      * each Region in an AWS account. Advanced parameters incur a charge. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
-     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>You
-     * can change a standard parameter to an advanced parameter any time. But you can't
-     * revert an advanced parameter to a standard parameter. Reverting an advanced
-     * parameter to a standard parameter would result in data loss because the system
-     * would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
-     * remove any policies attached to the parameter. Lastly, advanced parameters use a
-     * different form of encryption than standard parameters. </p> <p>If you no longer
-     * need an advanced parameter, or if you no longer want to incur charges for an
-     * advanced parameter, you must delete it and recreate it as a new standard
-     * parameter. </p> <p> <b>Using the Default Tier Configuration</b> </p> <p>In
-     * <code>PutParameter</code> requests, you can specify the tier to create the
-     * parameter in. Whenever you specify a tier in the request, Parameter Store
-     * creates or updates the parameter according to that request. However, if you do
-     * not specify a tier in a request, Parameter Store assigns the tier based on the
-     * current Parameter Store default tier configuration.</p> <p>The default tier when
-     * you begin using Parameter Store is the standard-parameter tier. If you use the
-     * advanced-parameter tier, you can specify one of the following as the
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
+     * and advanced parameter tiers</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <p>You can change a standard parameter to an advanced parameter
+     * any time. But you can't revert an advanced parameter to a standard parameter.
+     * Reverting an advanced parameter to a standard parameter would result in data
+     * loss because the system would truncate the size of the parameter from 8 KB to 4
+     * KB. Reverting would also remove any policies attached to the parameter. Lastly,
+     * advanced parameters use a different form of encryption than standard parameters.
+     * </p> <p>If you no longer need an advanced parameter, or if you no longer want to
+     * incur charges for an advanced parameter, you must delete it and recreate it as a
+     * new standard parameter. </p> <p> <b>Using the Default Tier Configuration</b>
+     * </p> <p>In <code>PutParameter</code> requests, you can specify the tier to
+     * create the parameter in. Whenever you specify a tier in the request, Parameter
+     * Store creates or updates the parameter according to that request. However, if
+     * you do not specify a tier in a request, Parameter Store assigns the tier based
+     * on the current Parameter Store default tier configuration.</p> <p>The default
+     * tier when you begin using Parameter Store is the standard-parameter tier. If you
+     * use the advanced-parameter tier, you can specify one of the following as the
      * default:</p> <ul> <li> <p> <b>Advanced</b>: With this option, Parameter Store
      * evaluates all requests as advanced parameters. </p> </li> <li> <p>
      * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
@@ -839,8 +865,8 @@ namespace Model
      * uses a parameter policy.</p> </li> <li> <p>More than 10,000 parameters already
      * exist in your AWS account in the current Region.</p> </li> </ul> <p>For more
      * information about configuring the default tier option, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
-     * a Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
+     * a default parameter tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
 
@@ -854,24 +880,24 @@ namespace Model
      * parameter policies. You can create a maximum of 100,000 advanced parameters for
      * each Region in an AWS account. Advanced parameters incur a charge. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
-     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>You
-     * can change a standard parameter to an advanced parameter any time. But you can't
-     * revert an advanced parameter to a standard parameter. Reverting an advanced
-     * parameter to a standard parameter would result in data loss because the system
-     * would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
-     * remove any policies attached to the parameter. Lastly, advanced parameters use a
-     * different form of encryption than standard parameters. </p> <p>If you no longer
-     * need an advanced parameter, or if you no longer want to incur charges for an
-     * advanced parameter, you must delete it and recreate it as a new standard
-     * parameter. </p> <p> <b>Using the Default Tier Configuration</b> </p> <p>In
-     * <code>PutParameter</code> requests, you can specify the tier to create the
-     * parameter in. Whenever you specify a tier in the request, Parameter Store
-     * creates or updates the parameter according to that request. However, if you do
-     * not specify a tier in a request, Parameter Store assigns the tier based on the
-     * current Parameter Store default tier configuration.</p> <p>The default tier when
-     * you begin using Parameter Store is the standard-parameter tier. If you use the
-     * advanced-parameter tier, you can specify one of the following as the
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
+     * and advanced parameter tiers</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <p>You can change a standard parameter to an advanced parameter
+     * any time. But you can't revert an advanced parameter to a standard parameter.
+     * Reverting an advanced parameter to a standard parameter would result in data
+     * loss because the system would truncate the size of the parameter from 8 KB to 4
+     * KB. Reverting would also remove any policies attached to the parameter. Lastly,
+     * advanced parameters use a different form of encryption than standard parameters.
+     * </p> <p>If you no longer need an advanced parameter, or if you no longer want to
+     * incur charges for an advanced parameter, you must delete it and recreate it as a
+     * new standard parameter. </p> <p> <b>Using the Default Tier Configuration</b>
+     * </p> <p>In <code>PutParameter</code> requests, you can specify the tier to
+     * create the parameter in. Whenever you specify a tier in the request, Parameter
+     * Store creates or updates the parameter according to that request. However, if
+     * you do not specify a tier in a request, Parameter Store assigns the tier based
+     * on the current Parameter Store default tier configuration.</p> <p>The default
+     * tier when you begin using Parameter Store is the standard-parameter tier. If you
+     * use the advanced-parameter tier, you can specify one of the following as the
      * default:</p> <ul> <li> <p> <b>Advanced</b>: With this option, Parameter Store
      * evaluates all requests as advanced parameters. </p> </li> <li> <p>
      * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
@@ -887,8 +913,8 @@ namespace Model
      * uses a parameter policy.</p> </li> <li> <p>More than 10,000 parameters already
      * exist in your AWS account in the current Region.</p> </li> </ul> <p>For more
      * information about configuring the default tier option, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
-     * a Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
+     * a default parameter tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetTier(const ParameterTier& value) { m_tierHasBeenSet = true; m_tier = value; }
 
@@ -902,24 +928,24 @@ namespace Model
      * parameter policies. You can create a maximum of 100,000 advanced parameters for
      * each Region in an AWS account. Advanced parameters incur a charge. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
-     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>You
-     * can change a standard parameter to an advanced parameter any time. But you can't
-     * revert an advanced parameter to a standard parameter. Reverting an advanced
-     * parameter to a standard parameter would result in data loss because the system
-     * would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
-     * remove any policies attached to the parameter. Lastly, advanced parameters use a
-     * different form of encryption than standard parameters. </p> <p>If you no longer
-     * need an advanced parameter, or if you no longer want to incur charges for an
-     * advanced parameter, you must delete it and recreate it as a new standard
-     * parameter. </p> <p> <b>Using the Default Tier Configuration</b> </p> <p>In
-     * <code>PutParameter</code> requests, you can specify the tier to create the
-     * parameter in. Whenever you specify a tier in the request, Parameter Store
-     * creates or updates the parameter according to that request. However, if you do
-     * not specify a tier in a request, Parameter Store assigns the tier based on the
-     * current Parameter Store default tier configuration.</p> <p>The default tier when
-     * you begin using Parameter Store is the standard-parameter tier. If you use the
-     * advanced-parameter tier, you can specify one of the following as the
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
+     * and advanced parameter tiers</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <p>You can change a standard parameter to an advanced parameter
+     * any time. But you can't revert an advanced parameter to a standard parameter.
+     * Reverting an advanced parameter to a standard parameter would result in data
+     * loss because the system would truncate the size of the parameter from 8 KB to 4
+     * KB. Reverting would also remove any policies attached to the parameter. Lastly,
+     * advanced parameters use a different form of encryption than standard parameters.
+     * </p> <p>If you no longer need an advanced parameter, or if you no longer want to
+     * incur charges for an advanced parameter, you must delete it and recreate it as a
+     * new standard parameter. </p> <p> <b>Using the Default Tier Configuration</b>
+     * </p> <p>In <code>PutParameter</code> requests, you can specify the tier to
+     * create the parameter in. Whenever you specify a tier in the request, Parameter
+     * Store creates or updates the parameter according to that request. However, if
+     * you do not specify a tier in a request, Parameter Store assigns the tier based
+     * on the current Parameter Store default tier configuration.</p> <p>The default
+     * tier when you begin using Parameter Store is the standard-parameter tier. If you
+     * use the advanced-parameter tier, you can specify one of the following as the
      * default:</p> <ul> <li> <p> <b>Advanced</b>: With this option, Parameter Store
      * evaluates all requests as advanced parameters. </p> </li> <li> <p>
      * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
@@ -935,8 +961,8 @@ namespace Model
      * uses a parameter policy.</p> </li> <li> <p>More than 10,000 parameters already
      * exist in your AWS account in the current Region.</p> </li> </ul> <p>For more
      * information about configuring the default tier option, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
-     * a Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
+     * a default parameter tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetTier(ParameterTier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
 
@@ -950,24 +976,24 @@ namespace Model
      * parameter policies. You can create a maximum of 100,000 advanced parameters for
      * each Region in an AWS account. Advanced parameters incur a charge. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
-     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>You
-     * can change a standard parameter to an advanced parameter any time. But you can't
-     * revert an advanced parameter to a standard parameter. Reverting an advanced
-     * parameter to a standard parameter would result in data loss because the system
-     * would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
-     * remove any policies attached to the parameter. Lastly, advanced parameters use a
-     * different form of encryption than standard parameters. </p> <p>If you no longer
-     * need an advanced parameter, or if you no longer want to incur charges for an
-     * advanced parameter, you must delete it and recreate it as a new standard
-     * parameter. </p> <p> <b>Using the Default Tier Configuration</b> </p> <p>In
-     * <code>PutParameter</code> requests, you can specify the tier to create the
-     * parameter in. Whenever you specify a tier in the request, Parameter Store
-     * creates or updates the parameter according to that request. However, if you do
-     * not specify a tier in a request, Parameter Store assigns the tier based on the
-     * current Parameter Store default tier configuration.</p> <p>The default tier when
-     * you begin using Parameter Store is the standard-parameter tier. If you use the
-     * advanced-parameter tier, you can specify one of the following as the
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
+     * and advanced parameter tiers</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <p>You can change a standard parameter to an advanced parameter
+     * any time. But you can't revert an advanced parameter to a standard parameter.
+     * Reverting an advanced parameter to a standard parameter would result in data
+     * loss because the system would truncate the size of the parameter from 8 KB to 4
+     * KB. Reverting would also remove any policies attached to the parameter. Lastly,
+     * advanced parameters use a different form of encryption than standard parameters.
+     * </p> <p>If you no longer need an advanced parameter, or if you no longer want to
+     * incur charges for an advanced parameter, you must delete it and recreate it as a
+     * new standard parameter. </p> <p> <b>Using the Default Tier Configuration</b>
+     * </p> <p>In <code>PutParameter</code> requests, you can specify the tier to
+     * create the parameter in. Whenever you specify a tier in the request, Parameter
+     * Store creates or updates the parameter according to that request. However, if
+     * you do not specify a tier in a request, Parameter Store assigns the tier based
+     * on the current Parameter Store default tier configuration.</p> <p>The default
+     * tier when you begin using Parameter Store is the standard-parameter tier. If you
+     * use the advanced-parameter tier, you can specify one of the following as the
      * default:</p> <ul> <li> <p> <b>Advanced</b>: With this option, Parameter Store
      * evaluates all requests as advanced parameters. </p> </li> <li> <p>
      * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
@@ -983,8 +1009,8 @@ namespace Model
      * uses a parameter policy.</p> </li> <li> <p>More than 10,000 parameters already
      * exist in your AWS account in the current Region.</p> </li> </ul> <p>For more
      * information about configuring the default tier option, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
-     * a Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
+     * a default parameter tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline PutParameterRequest& WithTier(const ParameterTier& value) { SetTier(value); return *this;}
 
@@ -998,24 +1024,24 @@ namespace Model
      * parameter policies. You can create a maximum of 100,000 advanced parameters for
      * each Region in an AWS account. Advanced parameters incur a charge. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
-     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>You
-     * can change a standard parameter to an advanced parameter any time. But you can't
-     * revert an advanced parameter to a standard parameter. Reverting an advanced
-     * parameter to a standard parameter would result in data loss because the system
-     * would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
-     * remove any policies attached to the parameter. Lastly, advanced parameters use a
-     * different form of encryption than standard parameters. </p> <p>If you no longer
-     * need an advanced parameter, or if you no longer want to incur charges for an
-     * advanced parameter, you must delete it and recreate it as a new standard
-     * parameter. </p> <p> <b>Using the Default Tier Configuration</b> </p> <p>In
-     * <code>PutParameter</code> requests, you can specify the tier to create the
-     * parameter in. Whenever you specify a tier in the request, Parameter Store
-     * creates or updates the parameter according to that request. However, if you do
-     * not specify a tier in a request, Parameter Store assigns the tier based on the
-     * current Parameter Store default tier configuration.</p> <p>The default tier when
-     * you begin using Parameter Store is the standard-parameter tier. If you use the
-     * advanced-parameter tier, you can specify one of the following as the
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
+     * and advanced parameter tiers</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <p>You can change a standard parameter to an advanced parameter
+     * any time. But you can't revert an advanced parameter to a standard parameter.
+     * Reverting an advanced parameter to a standard parameter would result in data
+     * loss because the system would truncate the size of the parameter from 8 KB to 4
+     * KB. Reverting would also remove any policies attached to the parameter. Lastly,
+     * advanced parameters use a different form of encryption than standard parameters.
+     * </p> <p>If you no longer need an advanced parameter, or if you no longer want to
+     * incur charges for an advanced parameter, you must delete it and recreate it as a
+     * new standard parameter. </p> <p> <b>Using the Default Tier Configuration</b>
+     * </p> <p>In <code>PutParameter</code> requests, you can specify the tier to
+     * create the parameter in. Whenever you specify a tier in the request, Parameter
+     * Store creates or updates the parameter according to that request. However, if
+     * you do not specify a tier in a request, Parameter Store assigns the tier based
+     * on the current Parameter Store default tier configuration.</p> <p>The default
+     * tier when you begin using Parameter Store is the standard-parameter tier. If you
+     * use the advanced-parameter tier, you can specify one of the following as the
      * default:</p> <ul> <li> <p> <b>Advanced</b>: With this option, Parameter Store
      * evaluates all requests as advanced parameters. </p> </li> <li> <p>
      * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
@@ -1031,8 +1057,8 @@ namespace Model
      * uses a parameter policy.</p> </li> <li> <p>More than 10,000 parameters already
      * exist in your AWS account in the current Region.</p> </li> </ul> <p>For more
      * information about configuring the default tier option, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
-     * a Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
+     * a default parameter tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline PutParameterRequest& WithTier(ParameterTier&& value) { SetTier(std::move(value)); return *this;}
 
@@ -1053,8 +1079,8 @@ namespace Model
      * needs to be changed within a period of time, but it has not been changed.</p>
      * <p>All existing policies are preserved until you send new policies or an empty
      * policy. For more information about parameter policies, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
-     * with Parameter Policies</a>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a>. </p>
      */
     inline const Aws::String& GetPolicies() const{ return m_policies; }
 
@@ -1074,8 +1100,8 @@ namespace Model
      * needs to be changed within a period of time, but it has not been changed.</p>
      * <p>All existing policies are preserved until you send new policies or an empty
      * policy. For more information about parameter policies, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
-     * with Parameter Policies</a>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a>. </p>
      */
     inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
 
@@ -1095,8 +1121,8 @@ namespace Model
      * needs to be changed within a period of time, but it has not been changed.</p>
      * <p>All existing policies are preserved until you send new policies or an empty
      * policy. For more information about parameter policies, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
-     * with Parameter Policies</a>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a>. </p>
      */
     inline void SetPolicies(const Aws::String& value) { m_policiesHasBeenSet = true; m_policies = value; }
 
@@ -1116,8 +1142,8 @@ namespace Model
      * needs to be changed within a period of time, but it has not been changed.</p>
      * <p>All existing policies are preserved until you send new policies or an empty
      * policy. For more information about parameter policies, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
-     * with Parameter Policies</a>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a>. </p>
      */
     inline void SetPolicies(Aws::String&& value) { m_policiesHasBeenSet = true; m_policies = std::move(value); }
 
@@ -1137,8 +1163,8 @@ namespace Model
      * needs to be changed within a period of time, but it has not been changed.</p>
      * <p>All existing policies are preserved until you send new policies or an empty
      * policy. For more information about parameter policies, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
-     * with Parameter Policies</a>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a>. </p>
      */
     inline void SetPolicies(const char* value) { m_policiesHasBeenSet = true; m_policies.assign(value); }
 
@@ -1158,8 +1184,8 @@ namespace Model
      * needs to be changed within a period of time, but it has not been changed.</p>
      * <p>All existing policies are preserved until you send new policies or an empty
      * policy. For more information about parameter policies, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
-     * with Parameter Policies</a>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a>. </p>
      */
     inline PutParameterRequest& WithPolicies(const Aws::String& value) { SetPolicies(value); return *this;}
 
@@ -1179,8 +1205,8 @@ namespace Model
      * needs to be changed within a period of time, but it has not been changed.</p>
      * <p>All existing policies are preserved until you send new policies or an empty
      * policy. For more information about parameter policies, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
-     * with Parameter Policies</a>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a>. </p>
      */
     inline PutParameterRequest& WithPolicies(Aws::String&& value) { SetPolicies(std::move(value)); return *this;}
 
@@ -1200,10 +1226,131 @@ namespace Model
      * needs to be changed within a period of time, but it has not been changed.</p>
      * <p>All existing policies are preserved until you send new policies or an empty
      * policy. For more information about parameter policies, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
-     * with Parameter Policies</a>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a>. </p>
      */
     inline PutParameterRequest& WithPolicies(const char* value) { SetPolicies(value); return *this;}
+
+
+    /**
+     * <p>The data type for a <code>String</code> parameter. Supported data types
+     * include plain text and Amazon Machine Image IDs.</p> <p> <b>The following data
+     * type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p> </li>
+     * <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems
+     * Manager validates the parameter value is in the required format, such as
+     * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
+     * your AWS account. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
+     */
+    inline const Aws::String& GetDataType() const{ return m_dataType; }
+
+    /**
+     * <p>The data type for a <code>String</code> parameter. Supported data types
+     * include plain text and Amazon Machine Image IDs.</p> <p> <b>The following data
+     * type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p> </li>
+     * <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems
+     * Manager validates the parameter value is in the required format, such as
+     * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
+     * your AWS account. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
+     */
+    inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
+
+    /**
+     * <p>The data type for a <code>String</code> parameter. Supported data types
+     * include plain text and Amazon Machine Image IDs.</p> <p> <b>The following data
+     * type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p> </li>
+     * <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems
+     * Manager validates the parameter value is in the required format, such as
+     * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
+     * your AWS account. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
+     */
+    inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
+
+    /**
+     * <p>The data type for a <code>String</code> parameter. Supported data types
+     * include plain text and Amazon Machine Image IDs.</p> <p> <b>The following data
+     * type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p> </li>
+     * <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems
+     * Manager validates the parameter value is in the required format, such as
+     * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
+     * your AWS account. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
+     */
+    inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
+
+    /**
+     * <p>The data type for a <code>String</code> parameter. Supported data types
+     * include plain text and Amazon Machine Image IDs.</p> <p> <b>The following data
+     * type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p> </li>
+     * <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems
+     * Manager validates the parameter value is in the required format, such as
+     * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
+     * your AWS account. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
+     */
+    inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
+
+    /**
+     * <p>The data type for a <code>String</code> parameter. Supported data types
+     * include plain text and Amazon Machine Image IDs.</p> <p> <b>The following data
+     * type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p> </li>
+     * <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems
+     * Manager validates the parameter value is in the required format, such as
+     * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
+     * your AWS account. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
+     */
+    inline PutParameterRequest& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
+
+    /**
+     * <p>The data type for a <code>String</code> parameter. Supported data types
+     * include plain text and Amazon Machine Image IDs.</p> <p> <b>The following data
+     * type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p> </li>
+     * <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems
+     * Manager validates the parameter value is in the required format, such as
+     * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
+     * your AWS account. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
+     */
+    inline PutParameterRequest& WithDataType(Aws::String&& value) { SetDataType(std::move(value)); return *this;}
+
+    /**
+     * <p>The data type for a <code>String</code> parameter. Supported data types
+     * include plain text and Amazon Machine Image IDs.</p> <p> <b>The following data
+     * type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p> </li>
+     * <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems
+     * Manager validates the parameter value is in the required format, such as
+     * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
+     * your AWS account. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
+     */
+    inline PutParameterRequest& WithDataType(const char* value) { SetDataType(value); return *this;}
 
   private:
 
@@ -1236,6 +1383,9 @@ namespace Model
 
     Aws::String m_policies;
     bool m_policiesHasBeenSet;
+
+    Aws::String m_dataType;
+    bool m_dataTypeHasBeenSet;
   };
 
 } // namespace Model

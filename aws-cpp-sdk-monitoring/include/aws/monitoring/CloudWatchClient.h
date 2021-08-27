@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
@@ -122,36 +112,36 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> DeleteAlarmsOutcome;
-        typedef Aws::Utils::Outcome<DeleteAnomalyDetectorResult, Aws::Client::AWSError<CloudWatchErrors>> DeleteAnomalyDetectorOutcome;
-        typedef Aws::Utils::Outcome<DeleteDashboardsResult, Aws::Client::AWSError<CloudWatchErrors>> DeleteDashboardsOutcome;
-        typedef Aws::Utils::Outcome<DeleteInsightRulesResult, Aws::Client::AWSError<CloudWatchErrors>> DeleteInsightRulesOutcome;
-        typedef Aws::Utils::Outcome<DescribeAlarmHistoryResult, Aws::Client::AWSError<CloudWatchErrors>> DescribeAlarmHistoryOutcome;
-        typedef Aws::Utils::Outcome<DescribeAlarmsResult, Aws::Client::AWSError<CloudWatchErrors>> DescribeAlarmsOutcome;
-        typedef Aws::Utils::Outcome<DescribeAlarmsForMetricResult, Aws::Client::AWSError<CloudWatchErrors>> DescribeAlarmsForMetricOutcome;
-        typedef Aws::Utils::Outcome<DescribeAnomalyDetectorsResult, Aws::Client::AWSError<CloudWatchErrors>> DescribeAnomalyDetectorsOutcome;
-        typedef Aws::Utils::Outcome<DescribeInsightRulesResult, Aws::Client::AWSError<CloudWatchErrors>> DescribeInsightRulesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> DisableAlarmActionsOutcome;
-        typedef Aws::Utils::Outcome<DisableInsightRulesResult, Aws::Client::AWSError<CloudWatchErrors>> DisableInsightRulesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> EnableAlarmActionsOutcome;
-        typedef Aws::Utils::Outcome<EnableInsightRulesResult, Aws::Client::AWSError<CloudWatchErrors>> EnableInsightRulesOutcome;
-        typedef Aws::Utils::Outcome<GetDashboardResult, Aws::Client::AWSError<CloudWatchErrors>> GetDashboardOutcome;
-        typedef Aws::Utils::Outcome<GetInsightRuleReportResult, Aws::Client::AWSError<CloudWatchErrors>> GetInsightRuleReportOutcome;
-        typedef Aws::Utils::Outcome<GetMetricDataResult, Aws::Client::AWSError<CloudWatchErrors>> GetMetricDataOutcome;
-        typedef Aws::Utils::Outcome<GetMetricStatisticsResult, Aws::Client::AWSError<CloudWatchErrors>> GetMetricStatisticsOutcome;
-        typedef Aws::Utils::Outcome<GetMetricWidgetImageResult, Aws::Client::AWSError<CloudWatchErrors>> GetMetricWidgetImageOutcome;
-        typedef Aws::Utils::Outcome<ListDashboardsResult, Aws::Client::AWSError<CloudWatchErrors>> ListDashboardsOutcome;
-        typedef Aws::Utils::Outcome<ListMetricsResult, Aws::Client::AWSError<CloudWatchErrors>> ListMetricsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<CloudWatchErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutAnomalyDetectorResult, Aws::Client::AWSError<CloudWatchErrors>> PutAnomalyDetectorOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> PutCompositeAlarmOutcome;
-        typedef Aws::Utils::Outcome<PutDashboardResult, Aws::Client::AWSError<CloudWatchErrors>> PutDashboardOutcome;
-        typedef Aws::Utils::Outcome<PutInsightRuleResult, Aws::Client::AWSError<CloudWatchErrors>> PutInsightRuleOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> PutMetricAlarmOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> PutMetricDataOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> SetAlarmStateOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<CloudWatchErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<CloudWatchErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> DeleteAlarmsOutcome;
+        typedef Aws::Utils::Outcome<DeleteAnomalyDetectorResult, CloudWatchError> DeleteAnomalyDetectorOutcome;
+        typedef Aws::Utils::Outcome<DeleteDashboardsResult, CloudWatchError> DeleteDashboardsOutcome;
+        typedef Aws::Utils::Outcome<DeleteInsightRulesResult, CloudWatchError> DeleteInsightRulesOutcome;
+        typedef Aws::Utils::Outcome<DescribeAlarmHistoryResult, CloudWatchError> DescribeAlarmHistoryOutcome;
+        typedef Aws::Utils::Outcome<DescribeAlarmsResult, CloudWatchError> DescribeAlarmsOutcome;
+        typedef Aws::Utils::Outcome<DescribeAlarmsForMetricResult, CloudWatchError> DescribeAlarmsForMetricOutcome;
+        typedef Aws::Utils::Outcome<DescribeAnomalyDetectorsResult, CloudWatchError> DescribeAnomalyDetectorsOutcome;
+        typedef Aws::Utils::Outcome<DescribeInsightRulesResult, CloudWatchError> DescribeInsightRulesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> DisableAlarmActionsOutcome;
+        typedef Aws::Utils::Outcome<DisableInsightRulesResult, CloudWatchError> DisableInsightRulesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> EnableAlarmActionsOutcome;
+        typedef Aws::Utils::Outcome<EnableInsightRulesResult, CloudWatchError> EnableInsightRulesOutcome;
+        typedef Aws::Utils::Outcome<GetDashboardResult, CloudWatchError> GetDashboardOutcome;
+        typedef Aws::Utils::Outcome<GetInsightRuleReportResult, CloudWatchError> GetInsightRuleReportOutcome;
+        typedef Aws::Utils::Outcome<GetMetricDataResult, CloudWatchError> GetMetricDataOutcome;
+        typedef Aws::Utils::Outcome<GetMetricStatisticsResult, CloudWatchError> GetMetricStatisticsOutcome;
+        typedef Aws::Utils::Outcome<GetMetricWidgetImageResult, CloudWatchError> GetMetricWidgetImageOutcome;
+        typedef Aws::Utils::Outcome<ListDashboardsResult, CloudWatchError> ListDashboardsOutcome;
+        typedef Aws::Utils::Outcome<ListMetricsResult, CloudWatchError> ListMetricsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CloudWatchError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<PutAnomalyDetectorResult, CloudWatchError> PutAnomalyDetectorOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> PutCompositeAlarmOutcome;
+        typedef Aws::Utils::Outcome<PutDashboardResult, CloudWatchError> PutDashboardOutcome;
+        typedef Aws::Utils::Outcome<PutInsightRuleResult, CloudWatchError> PutInsightRuleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> PutMetricAlarmOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> PutMetricDataOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> SetAlarmStateOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, CloudWatchError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, CloudWatchError> UntagResourceOutcome;
 
         typedef std::future<DeleteAlarmsOutcome> DeleteAlarmsOutcomeCallable;
         typedef std::future<DeleteAnomalyDetectorOutcome> DeleteAnomalyDetectorOutcomeCallable;
@@ -258,8 +248,6 @@ namespace Model
 
         virtual ~CloudWatchClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "CloudWatch"; }
-
 
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
@@ -272,7 +260,7 @@ namespace Model
          * operation. However, this total can include no more than one composite alarm. For
          * example, you could delete 99 metric alarms and one composite alarms with one
          * operation, but you can't delete two composite alarms with one operation.</p> <p>
-         * In the event of an error, no alarms are deleted.</p> <note> <p>It is possible to
+         * In the event of an error, no alarms are deleted.</p>  <p>It is possible to
          * create a loop or cycle of composite alarms, where composite alarm A depends on
          * composite alarm B, and composite alarm B also depends on composite alarm A. In
          * this scenario, you can't delete any composite alarm that is part of the cycle
@@ -283,7 +271,7 @@ namespace Model
          * cycle is to change the <code>AlarmRule</code> of one of the alarms to
          * <code>False</code>. </p> <p>Additionally, the evaluation of composite alarms
          * stops if CloudWatch detects a cycle in the evaluation path. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">AWS
          * API Reference</a></p>
          */
@@ -294,7 +282,7 @@ namespace Model
          * operation. However, this total can include no more than one composite alarm. For
          * example, you could delete 99 metric alarms and one composite alarms with one
          * operation, but you can't delete two composite alarms with one operation.</p> <p>
-         * In the event of an error, no alarms are deleted.</p> <note> <p>It is possible to
+         * In the event of an error, no alarms are deleted.</p>  <p>It is possible to
          * create a loop or cycle of composite alarms, where composite alarm A depends on
          * composite alarm B, and composite alarm B also depends on composite alarm A. In
          * this scenario, you can't delete any composite alarm that is part of the cycle
@@ -305,7 +293,7 @@ namespace Model
          * cycle is to change the <code>AlarmRule</code> of one of the alarms to
          * <code>False</code>. </p> <p>Additionally, the evaluation of composite alarms
          * stops if CloudWatch detects a cycle in the evaluation path. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">AWS
          * API Reference</a></p>
          *
@@ -318,7 +306,7 @@ namespace Model
          * operation. However, this total can include no more than one composite alarm. For
          * example, you could delete 99 metric alarms and one composite alarms with one
          * operation, but you can't delete two composite alarms with one operation.</p> <p>
-         * In the event of an error, no alarms are deleted.</p> <note> <p>It is possible to
+         * In the event of an error, no alarms are deleted.</p>  <p>It is possible to
          * create a loop or cycle of composite alarms, where composite alarm A depends on
          * composite alarm B, and composite alarm B also depends on composite alarm A. In
          * this scenario, you can't delete any composite alarm that is part of the cycle
@@ -329,7 +317,7 @@ namespace Model
          * cycle is to change the <code>AlarmRule</code> of one of the alarms to
          * <code>False</code>. </p> <p>Additionally, the evaluation of composite alarms
          * stops if CloudWatch detects a cycle in the evaluation path. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">AWS
          * API Reference</a></p>
          *
@@ -366,7 +354,7 @@ namespace Model
         virtual void DeleteAnomalyDetectorAsync(const Model::DeleteAnomalyDetectorRequest& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes all dashboards that you specify. You may specify up to 100 dashboards
+         * <p>Deletes all dashboards that you specify. You can specify up to 100 dashboards
          * to delete. If there is an error during this call, no dashboards are
          * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteDashboards">AWS
@@ -375,7 +363,7 @@ namespace Model
         virtual Model::DeleteDashboardsOutcome DeleteDashboards(const Model::DeleteDashboardsRequest& request) const;
 
         /**
-         * <p>Deletes all dashboards that you specify. You may specify up to 100 dashboards
+         * <p>Deletes all dashboards that you specify. You can specify up to 100 dashboards
          * to delete. If there is an error during this call, no dashboards are
          * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteDashboards">AWS
@@ -386,7 +374,7 @@ namespace Model
         virtual Model::DeleteDashboardsOutcomeCallable DeleteDashboardsCallable(const Model::DeleteDashboardsRequest& request) const;
 
         /**
-         * <p>Deletes all dashboards that you specify. You may specify up to 100 dashboards
+         * <p>Deletes all dashboards that you specify. You can specify up to 100 dashboards
          * to delete. If there is an error during this call, no dashboards are
          * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteDashboards">AWS
@@ -399,7 +387,7 @@ namespace Model
         /**
          * <p>Permanently deletes the specified Contributor Insights rules.</p> <p>If you
          * create a rule, delete it, and then re-create it with the same name, historical
-         * data from the first time the rule was created may or may not be
+         * data from the first time the rule was created might not be
          * available.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteInsightRules">AWS
          * API Reference</a></p>
@@ -409,7 +397,7 @@ namespace Model
         /**
          * <p>Permanently deletes the specified Contributor Insights rules.</p> <p>If you
          * create a rule, delete it, and then re-create it with the same name, historical
-         * data from the first time the rule was created may or may not be
+         * data from the first time the rule was created might not be
          * available.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteInsightRules">AWS
          * API Reference</a></p>
@@ -421,7 +409,7 @@ namespace Model
         /**
          * <p>Permanently deletes the specified Contributor Insights rules.</p> <p>If you
          * create a rule, delete it, and then re-create it with the same name, historical
-         * data from the first time the rule was created may or may not be
+         * data from the first time the rule was created might not be
          * available.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteInsightRules">AWS
          * API Reference</a></p>
@@ -468,7 +456,7 @@ namespace Model
         virtual void DescribeAlarmHistoryAsync(const Model::DescribeAlarmHistoryRequest& request, const DescribeAlarmHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the specified alarms. You can filter the results by specifying a a
+         * <p>Retrieves the specified alarms. You can filter the results by specifying a
          * prefix for the alarm name, the alarm state, or a prefix for any
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">AWS
@@ -477,7 +465,7 @@ namespace Model
         virtual Model::DescribeAlarmsOutcome DescribeAlarms(const Model::DescribeAlarmsRequest& request) const;
 
         /**
-         * <p>Retrieves the specified alarms. You can filter the results by specifying a a
+         * <p>Retrieves the specified alarms. You can filter the results by specifying a
          * prefix for the alarm name, the alarm state, or a prefix for any
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">AWS
@@ -488,7 +476,7 @@ namespace Model
         virtual Model::DescribeAlarmsOutcomeCallable DescribeAlarmsCallable(const Model::DescribeAlarmsRequest& request) const;
 
         /**
-         * <p>Retrieves the specified alarms. You can filter the results by specifying a a
+         * <p>Retrieves the specified alarms. You can filter the results by specifying a
          * prefix for the alarm name, the alarm state, or a prefix for any
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">AWS
@@ -500,7 +488,10 @@ namespace Model
 
         /**
          * <p>Retrieves the alarms for the specified metric. To filter the results, specify
-         * a statistic, period, or unit.</p><p><h3>See Also:</h3>   <a
+         * a statistic, period, or unit.</p> <p>This operation retrieves only standard
+         * alarms that are based on the specified metric. It does not return alarms based
+         * on math expressions that use the specified metric, or composite alarms that use
+         * the specified metric.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric">AWS
          * API Reference</a></p>
          */
@@ -508,7 +499,10 @@ namespace Model
 
         /**
          * <p>Retrieves the alarms for the specified metric. To filter the results, specify
-         * a statistic, period, or unit.</p><p><h3>See Also:</h3>   <a
+         * a statistic, period, or unit.</p> <p>This operation retrieves only standard
+         * alarms that are based on the specified metric. It does not return alarms based
+         * on math expressions that use the specified metric, or composite alarms that use
+         * the specified metric.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric">AWS
          * API Reference</a></p>
          *
@@ -518,7 +512,10 @@ namespace Model
 
         /**
          * <p>Retrieves the alarms for the specified metric. To filter the results, specify
-         * a statistic, period, or unit.</p><p><h3>See Also:</h3>   <a
+         * a statistic, period, or unit.</p> <p>This operation retrieves only standard
+         * alarms that are based on the specified metric. It does not return alarms based
+         * on math expressions that use the specified metric, or composite alarms that use
+         * the specified metric.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric">AWS
          * API Reference</a></p>
          *
@@ -561,9 +558,8 @@ namespace Model
         virtual void DescribeAnomalyDetectorsAsync(const Model::DescribeAnomalyDetectorsRequest& request, const DescribeAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of all the Contributor Insights rules in your account. All
-         * rules in your account are returned with a single operation.</p> <p>For more
-         * information about Contributor Insights, see <a
+         * <p>Returns a list of all the Contributor Insights rules in your account.</p>
+         * <p>For more information about Contributor Insights, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using
          * Contributor Insights to Analyze High-Cardinality Data</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -573,9 +569,8 @@ namespace Model
         virtual Model::DescribeInsightRulesOutcome DescribeInsightRules(const Model::DescribeInsightRulesRequest& request) const;
 
         /**
-         * <p>Returns a list of all the Contributor Insights rules in your account. All
-         * rules in your account are returned with a single operation.</p> <p>For more
-         * information about Contributor Insights, see <a
+         * <p>Returns a list of all the Contributor Insights rules in your account.</p>
+         * <p>For more information about Contributor Insights, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using
          * Contributor Insights to Analyze High-Cardinality Data</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -587,9 +582,8 @@ namespace Model
         virtual Model::DescribeInsightRulesOutcomeCallable DescribeInsightRulesCallable(const Model::DescribeInsightRulesRequest& request) const;
 
         /**
-         * <p>Returns a list of all the Contributor Insights rules in your account. All
-         * rules in your account are returned with a single operation.</p> <p>For more
-         * information about Contributor Insights, see <a
+         * <p>Returns a list of all the Contributor Insights rules in your account.</p>
+         * <p>For more information about Contributor Insights, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using
          * Contributor Insights to Analyze High-Cardinality Data</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -760,7 +754,7 @@ namespace Model
          * following:</p> <ul> <li> <p> <code>UniqueContributors</code> -- the number of
          * unique contributors for each data point.</p> </li> <li> <p>
          * <code>MaxContributorValue</code> -- the value of the top contributor for each
-         * data point. The identity of the contributor may change for each data point in
+         * data point. The identity of the contributor might change for each data point in
          * the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each
          * data point is the contributor with the most occurrences in that period. If the
          * rule aggregates by SUM, the top contributor is the contributor with the highest
@@ -788,7 +782,7 @@ namespace Model
          * following:</p> <ul> <li> <p> <code>UniqueContributors</code> -- the number of
          * unique contributors for each data point.</p> </li> <li> <p>
          * <code>MaxContributorValue</code> -- the value of the top contributor for each
-         * data point. The identity of the contributor may change for each data point in
+         * data point. The identity of the contributor might change for each data point in
          * the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each
          * data point is the contributor with the most occurrences in that period. If the
          * rule aggregates by SUM, the top contributor is the contributor with the highest
@@ -818,7 +812,7 @@ namespace Model
          * following:</p> <ul> <li> <p> <code>UniqueContributors</code> -- the number of
          * unique contributors for each data point.</p> </li> <li> <p>
          * <code>MaxContributorValue</code> -- the value of the top contributor for each
-         * data point. The identity of the contributor may change for each data point in
+         * data point. The identity of the contributor might change for each data point in
          * the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each
          * data point is the contributor with the most occurrences in that period. If the
          * rule aggregates by SUM, the top contributor is the contributor with the highest
@@ -870,10 +864,10 @@ namespace Model
          * resolution of 1 hour.</p> <p>If you omit <code>Unit</code> in your request, all
          * data that was collected with any unit is returned, along with the corresponding
          * units that were specified when the data was reported to CloudWatch. If you
-         * specify a unit, the operation returns only data data that was collected with
-         * that unit specified. If you specify a unit that does not match the data
-         * collected, the results of the operation are null. CloudWatch does not perform
-         * unit conversions.</p><p><h3>See Also:</h3>   <a
+         * specify a unit, the operation returns only data that was collected with that
+         * unit specified. If you specify a unit that does not match the data collected,
+         * the results of the operation are null. CloudWatch does not perform unit
+         * conversions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">AWS
          * API Reference</a></p>
          */
@@ -909,10 +903,10 @@ namespace Model
          * resolution of 1 hour.</p> <p>If you omit <code>Unit</code> in your request, all
          * data that was collected with any unit is returned, along with the corresponding
          * units that were specified when the data was reported to CloudWatch. If you
-         * specify a unit, the operation returns only data data that was collected with
-         * that unit specified. If you specify a unit that does not match the data
-         * collected, the results of the operation are null. CloudWatch does not perform
-         * unit conversions.</p><p><h3>See Also:</h3>   <a
+         * specify a unit, the operation returns only data that was collected with that
+         * unit specified. If you specify a unit that does not match the data collected,
+         * the results of the operation are null. CloudWatch does not perform unit
+         * conversions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">AWS
          * API Reference</a></p>
          *
@@ -950,10 +944,10 @@ namespace Model
          * resolution of 1 hour.</p> <p>If you omit <code>Unit</code> in your request, all
          * data that was collected with any unit is returned, along with the corresponding
          * units that were specified when the data was reported to CloudWatch. If you
-         * specify a unit, the operation returns only data data that was collected with
-         * that unit specified. If you specify a unit that does not match the data
-         * collected, the results of the operation are null. CloudWatch does not perform
-         * unit conversions.</p><p><h3>See Also:</h3>   <a
+         * specify a unit, the operation returns only data that was collected with that
+         * unit specified. If you specify a unit that does not match the data collected,
+         * the results of the operation are null. CloudWatch does not perform unit
+         * conversions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">AWS
          * API Reference</a></p>
          *
@@ -1196,9 +1190,14 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
          * to obtain statistical data.</p> <p>Up to 500 results are returned for any one
          * call. To retrieve additional results, use the returned token with subsequent
-         * calls.</p> <p>After you create a metric, allow up to fifteen minutes before the
-         * metric appears. Statistics about the metric, however, are available sooner using
-         * <a
+         * calls.</p> <p>After you create a metric, allow up to 15 minutes before the
+         * metric appears. You can see statistics about the metric sooner by using <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>
+         * <p> <code>ListMetrics</code> doesn't return information about metrics if those
+         * metrics haven't reported data in the past two weeks. To retrieve those metrics,
+         * use <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
          * or <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p><p><h3>See
@@ -1215,9 +1214,14 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
          * to obtain statistical data.</p> <p>Up to 500 results are returned for any one
          * call. To retrieve additional results, use the returned token with subsequent
-         * calls.</p> <p>After you create a metric, allow up to fifteen minutes before the
-         * metric appears. Statistics about the metric, however, are available sooner using
-         * <a
+         * calls.</p> <p>After you create a metric, allow up to 15 minutes before the
+         * metric appears. You can see statistics about the metric sooner by using <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>
+         * <p> <code>ListMetrics</code> doesn't return information about metrics if those
+         * metrics haven't reported data in the past two weeks. To retrieve those metrics,
+         * use <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
          * or <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p><p><h3>See
@@ -1236,9 +1240,14 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
          * to obtain statistical data.</p> <p>Up to 500 results are returned for any one
          * call. To retrieve additional results, use the returned token with subsequent
-         * calls.</p> <p>After you create a metric, allow up to fifteen minutes before the
-         * metric appears. Statistics about the metric, however, are available sooner using
-         * <a
+         * calls.</p> <p>After you create a metric, allow up to 15 minutes before the
+         * metric appears. You can see statistics about the metric sooner by using <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>
+         * <p> <code>ListMetrics</code> doesn't return information about metrics if those
+         * metrics haven't reported data in the past two weeks. To retrieve those metrics,
+         * use <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
          * or <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p><p><h3>See
@@ -1327,7 +1336,7 @@ namespace Model
          * composite alarm that goes into ALARM state only when more than one of the
          * underlying metric alarms are in ALARM state.</p> <p>Currently, the only alarm
          * actions that can be taken by composite alarms are notifying SNS topics.</p>
-         * <note> <p>It is possible to create a loop or cycle of composite alarms, where
+         *  <p>It is possible to create a loop or cycle of composite alarms, where
          * composite alarm A depends on composite alarm B, and composite alarm B also
          * depends on composite alarm A. In this scenario, you can't delete any composite
          * alarm that is part of the cycle because there is always still a composite alarm
@@ -1337,14 +1346,16 @@ namespace Model
          * change to make to break a cycle is to change the <code>AlarmRule</code> of one
          * of the alarms to <code>False</code>. </p> <p>Additionally, the evaluation of
          * composite alarms stops if CloudWatch detects a cycle in the evaluation path.
-         * </p> </note> <p>When this operation creates an alarm, the alarm state is
+         * </p>  <p>When this operation creates an alarm, the alarm state is
          * immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated
          * and its state is set appropriately. Any actions associated with the new state
          * are then executed. For a composite alarm, this initial time after creation is
          * the only time that the alarm can be in <code>INSUFFICIENT_DATA</code> state.</p>
          * <p>When you update an existing alarm, its state is left unchanged, but the
-         * update completely overwrites the previous configuration of the
-         * alarm.</p><p><h3>See Also:</h3>   <a
+         * update completely overwrites the previous configuration of the alarm.</p> <p>If
+         * you are an IAM user, you must have <code>iam:CreateServiceLinkedRole</code> to
+         * create a composite alarm that has Systems Manager OpsItem actions.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutCompositeAlarm">AWS
          * API Reference</a></p>
          */
@@ -1362,7 +1373,7 @@ namespace Model
          * composite alarm that goes into ALARM state only when more than one of the
          * underlying metric alarms are in ALARM state.</p> <p>Currently, the only alarm
          * actions that can be taken by composite alarms are notifying SNS topics.</p>
-         * <note> <p>It is possible to create a loop or cycle of composite alarms, where
+         *  <p>It is possible to create a loop or cycle of composite alarms, where
          * composite alarm A depends on composite alarm B, and composite alarm B also
          * depends on composite alarm A. In this scenario, you can't delete any composite
          * alarm that is part of the cycle because there is always still a composite alarm
@@ -1372,14 +1383,16 @@ namespace Model
          * change to make to break a cycle is to change the <code>AlarmRule</code> of one
          * of the alarms to <code>False</code>. </p> <p>Additionally, the evaluation of
          * composite alarms stops if CloudWatch detects a cycle in the evaluation path.
-         * </p> </note> <p>When this operation creates an alarm, the alarm state is
+         * </p>  <p>When this operation creates an alarm, the alarm state is
          * immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated
          * and its state is set appropriately. Any actions associated with the new state
          * are then executed. For a composite alarm, this initial time after creation is
          * the only time that the alarm can be in <code>INSUFFICIENT_DATA</code> state.</p>
          * <p>When you update an existing alarm, its state is left unchanged, but the
-         * update completely overwrites the previous configuration of the
-         * alarm.</p><p><h3>See Also:</h3>   <a
+         * update completely overwrites the previous configuration of the alarm.</p> <p>If
+         * you are an IAM user, you must have <code>iam:CreateServiceLinkedRole</code> to
+         * create a composite alarm that has Systems Manager OpsItem actions.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutCompositeAlarm">AWS
          * API Reference</a></p>
          *
@@ -1399,7 +1412,7 @@ namespace Model
          * composite alarm that goes into ALARM state only when more than one of the
          * underlying metric alarms are in ALARM state.</p> <p>Currently, the only alarm
          * actions that can be taken by composite alarms are notifying SNS topics.</p>
-         * <note> <p>It is possible to create a loop or cycle of composite alarms, where
+         *  <p>It is possible to create a loop or cycle of composite alarms, where
          * composite alarm A depends on composite alarm B, and composite alarm B also
          * depends on composite alarm A. In this scenario, you can't delete any composite
          * alarm that is part of the cycle because there is always still a composite alarm
@@ -1409,14 +1422,16 @@ namespace Model
          * change to make to break a cycle is to change the <code>AlarmRule</code> of one
          * of the alarms to <code>False</code>. </p> <p>Additionally, the evaluation of
          * composite alarms stops if CloudWatch detects a cycle in the evaluation path.
-         * </p> </note> <p>When this operation creates an alarm, the alarm state is
+         * </p>  <p>When this operation creates an alarm, the alarm state is
          * immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated
          * and its state is set appropriately. Any actions associated with the new state
          * are then executed. For a composite alarm, this initial time after creation is
          * the only time that the alarm can be in <code>INSUFFICIENT_DATA</code> state.</p>
          * <p>When you update an existing alarm, its state is left unchanged, but the
-         * update completely overwrites the previous configuration of the
-         * alarm.</p><p><h3>See Also:</h3>   <a
+         * update completely overwrites the previous configuration of the alarm.</p> <p>If
+         * you are an IAM user, you must have <code>iam:CreateServiceLinkedRole</code> to
+         * create a composite alarm that has Systems Manager OpsItem actions.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutCompositeAlarm">AWS
          * API Reference</a></p>
          *
@@ -1501,8 +1516,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using
          * Contributor Insights to Analyze High-Cardinality Data</a>.</p> <p>If you create
          * a rule, delete it, and then re-create it with the same name, historical data
-         * from the first time the rule was created may or may not be
-         * available.</p><p><h3>See Also:</h3>   <a
+         * from the first time the rule was created might not be available.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutInsightRule">AWS
          * API Reference</a></p>
          */
@@ -1515,8 +1530,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using
          * Contributor Insights to Analyze High-Cardinality Data</a>.</p> <p>If you create
          * a rule, delete it, and then re-create it with the same name, historical data
-         * from the first time the rule was created may or may not be
-         * available.</p><p><h3>See Also:</h3>   <a
+         * from the first time the rule was created might not be available.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutInsightRule">AWS
          * API Reference</a></p>
          *
@@ -1531,8 +1546,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using
          * Contributor Insights to Analyze High-Cardinality Data</a>.</p> <p>If you create
          * a rule, delete it, and then re-create it with the same name, historical data
-         * from the first time the rule was created may or may not be
-         * available.</p><p><h3>See Also:</h3>   <a
+         * from the first time the rule was created might not be available.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutInsightRule">AWS
          * API Reference</a></p>
          *
@@ -1550,26 +1565,15 @@ namespace Model
          * <p>When you update an existing alarm, its state is left unchanged, but the
          * update completely overwrites the previous configuration of the alarm.</p> <p>If
          * you are an IAM user, you must have Amazon EC2 permissions for some alarm
-         * operations:</p> <ul> <li> <p> <code>iam:CreateServiceLinkedRole</code> for all
-         * alarms with EC2 actions</p> </li> <li> <p>
-         * <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code>
-         * for all alarms on EC2 instance status metrics</p> </li> <li> <p>
-         * <code>ec2:StopInstances</code> for alarms with stop actions</p> </li> <li> <p>
-         * <code>ec2:TerminateInstances</code> for alarms with terminate actions</p> </li>
-         * <li> <p>No specific permissions are needed for alarms with recover actions</p>
-         * </li> </ul> <p>If you have read/write permissions for Amazon CloudWatch but not
-         * for Amazon EC2, you can still create an alarm, but the stop or terminate actions
-         * are not performed. However, if you are later granted the required permissions,
-         * the alarm actions that you created earlier are performed.</p> <p>If you are
-         * using an IAM role (for example, an EC2 instance profile), you cannot stop or
-         * terminate the instance using alarm actions. However, you can still see the alarm
-         * state and perform any other actions such as Amazon SNS notifications or Auto
-         * Scaling policies.</p> <p>If you are using temporary security credentials granted
-         * using AWS STS, you cannot stop or terminate an EC2 instance using alarm
-         * actions.</p> <p>The first time you create an alarm in the AWS Management
-         * Console, the CLI, or by using the PutMetricAlarm API, CloudWatch creates the
-         * necessary service-linked role for you. The service-linked role is called
-         * <code>AWSServiceRoleForCloudWatchEvents</code>. For more information, see <a
+         * operations:</p> <ul> <li> <p>The <code>iam:CreateServiceLinkedRole</code> for
+         * all alarms with EC2 actions</p> </li> <li> <p>The
+         * <code>iam:CreateServiceLinkedRole</code> to create an alarm with Systems Manager
+         * OpsItem actions.</p> </li> </ul> <p>The first time you create an alarm in the
+         * AWS Management Console, the CLI, or by using the PutMetricAlarm API, CloudWatch
+         * creates the necessary service-linked rolea for you. The service-linked roles are
+         * called <code>AWSServiceRoleForCloudWatchEvents</code> and
+         * <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
          * service-linked role</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">AWS
@@ -1587,26 +1591,15 @@ namespace Model
          * <p>When you update an existing alarm, its state is left unchanged, but the
          * update completely overwrites the previous configuration of the alarm.</p> <p>If
          * you are an IAM user, you must have Amazon EC2 permissions for some alarm
-         * operations:</p> <ul> <li> <p> <code>iam:CreateServiceLinkedRole</code> for all
-         * alarms with EC2 actions</p> </li> <li> <p>
-         * <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code>
-         * for all alarms on EC2 instance status metrics</p> </li> <li> <p>
-         * <code>ec2:StopInstances</code> for alarms with stop actions</p> </li> <li> <p>
-         * <code>ec2:TerminateInstances</code> for alarms with terminate actions</p> </li>
-         * <li> <p>No specific permissions are needed for alarms with recover actions</p>
-         * </li> </ul> <p>If you have read/write permissions for Amazon CloudWatch but not
-         * for Amazon EC2, you can still create an alarm, but the stop or terminate actions
-         * are not performed. However, if you are later granted the required permissions,
-         * the alarm actions that you created earlier are performed.</p> <p>If you are
-         * using an IAM role (for example, an EC2 instance profile), you cannot stop or
-         * terminate the instance using alarm actions. However, you can still see the alarm
-         * state and perform any other actions such as Amazon SNS notifications or Auto
-         * Scaling policies.</p> <p>If you are using temporary security credentials granted
-         * using AWS STS, you cannot stop or terminate an EC2 instance using alarm
-         * actions.</p> <p>The first time you create an alarm in the AWS Management
-         * Console, the CLI, or by using the PutMetricAlarm API, CloudWatch creates the
-         * necessary service-linked role for you. The service-linked role is called
-         * <code>AWSServiceRoleForCloudWatchEvents</code>. For more information, see <a
+         * operations:</p> <ul> <li> <p>The <code>iam:CreateServiceLinkedRole</code> for
+         * all alarms with EC2 actions</p> </li> <li> <p>The
+         * <code>iam:CreateServiceLinkedRole</code> to create an alarm with Systems Manager
+         * OpsItem actions.</p> </li> </ul> <p>The first time you create an alarm in the
+         * AWS Management Console, the CLI, or by using the PutMetricAlarm API, CloudWatch
+         * creates the necessary service-linked rolea for you. The service-linked roles are
+         * called <code>AWSServiceRoleForCloudWatchEvents</code> and
+         * <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
          * service-linked role</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">AWS
@@ -1626,26 +1619,15 @@ namespace Model
          * <p>When you update an existing alarm, its state is left unchanged, but the
          * update completely overwrites the previous configuration of the alarm.</p> <p>If
          * you are an IAM user, you must have Amazon EC2 permissions for some alarm
-         * operations:</p> <ul> <li> <p> <code>iam:CreateServiceLinkedRole</code> for all
-         * alarms with EC2 actions</p> </li> <li> <p>
-         * <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code>
-         * for all alarms on EC2 instance status metrics</p> </li> <li> <p>
-         * <code>ec2:StopInstances</code> for alarms with stop actions</p> </li> <li> <p>
-         * <code>ec2:TerminateInstances</code> for alarms with terminate actions</p> </li>
-         * <li> <p>No specific permissions are needed for alarms with recover actions</p>
-         * </li> </ul> <p>If you have read/write permissions for Amazon CloudWatch but not
-         * for Amazon EC2, you can still create an alarm, but the stop or terminate actions
-         * are not performed. However, if you are later granted the required permissions,
-         * the alarm actions that you created earlier are performed.</p> <p>If you are
-         * using an IAM role (for example, an EC2 instance profile), you cannot stop or
-         * terminate the instance using alarm actions. However, you can still see the alarm
-         * state and perform any other actions such as Amazon SNS notifications or Auto
-         * Scaling policies.</p> <p>If you are using temporary security credentials granted
-         * using AWS STS, you cannot stop or terminate an EC2 instance using alarm
-         * actions.</p> <p>The first time you create an alarm in the AWS Management
-         * Console, the CLI, or by using the PutMetricAlarm API, CloudWatch creates the
-         * necessary service-linked role for you. The service-linked role is called
-         * <code>AWSServiceRoleForCloudWatchEvents</code>. For more information, see <a
+         * operations:</p> <ul> <li> <p>The <code>iam:CreateServiceLinkedRole</code> for
+         * all alarms with EC2 actions</p> </li> <li> <p>The
+         * <code>iam:CreateServiceLinkedRole</code> to create an alarm with Systems Manager
+         * OpsItem actions.</p> </li> </ul> <p>The first time you create an alarm in the
+         * AWS Management Console, the CLI, or by using the PutMetricAlarm API, CloudWatch
+         * creates the necessary service-linked rolea for you. The service-linked roles are
+         * called <code>AWSServiceRoleForCloudWatchEvents</code> and
+         * <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
          * service-linked role</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">AWS
@@ -1678,9 +1660,11 @@ namespace Model
          * collects. Each dimension consists of a Name and Value pair. For more information
          * about specifying dimensions, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
-         * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with
-         * time stamps from 24 hours ago or longer can take at least 48 hours to become
-         * available for <a
+         * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>You specify the
+         * time stamp to be associated with each data point. You can specify time stamps
+         * that are as much as two weeks before the current date, and as much as 2 hours
+         * after the current day and time.</p> <p>Data points with time stamps from 24
+         * hours ago or longer can take at least 48 hours to become available for <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
          * or <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
@@ -1725,9 +1709,11 @@ namespace Model
          * collects. Each dimension consists of a Name and Value pair. For more information
          * about specifying dimensions, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
-         * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with
-         * time stamps from 24 hours ago or longer can take at least 48 hours to become
-         * available for <a
+         * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>You specify the
+         * time stamp to be associated with each data point. You can specify time stamps
+         * that are as much as two weeks before the current date, and as much as 2 hours
+         * after the current day and time.</p> <p>Data points with time stamps from 24
+         * hours ago or longer can take at least 48 hours to become available for <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
          * or <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
@@ -1774,9 +1760,11 @@ namespace Model
          * collects. Each dimension consists of a Name and Value pair. For more information
          * about specifying dimensions, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
-         * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with
-         * time stamps from 24 hours ago or longer can take at least 48 hours to become
-         * available for <a
+         * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>You specify the
+         * time stamp to be associated with each data point. You can specify time stamps
+         * that are as much as two weeks before the current date, and as much as 2 hours
+         * after the current day and time.</p> <p>Data points with time stamps from 24
+         * hours ago or longer can take at least 48 hours to become available for <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
          * or <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
@@ -1811,12 +1799,12 @@ namespace Model
          * <b>History</b> tab in the Amazon CloudWatch console or through <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html">DescribeAlarmHistory</a>.</p>
          * <p>If you use <code>SetAlarmState</code> on a composite alarm, the composite
-         * alarm is not guaranteed to return to its actual state. It will return to its
-         * actual state only once any of its children alarms change state. It is also
-         * re-evaluated if you update its configuration.</p> <p>If an alarm triggers EC2
-         * Auto Scaling policies or application Auto Scaling policies, you must include
-         * information in the <code>StateReasonData</code> parameter to enable the policy
-         * to take the correct action.</p><p><h3>See Also:</h3>   <a
+         * alarm is not guaranteed to return to its actual state. It returns to its actual
+         * state only once any of its children alarms change state. It is also reevaluated
+         * if you update its configuration.</p> <p>If an alarm triggers EC2 Auto Scaling
+         * policies or application Auto Scaling policies, you must include information in
+         * the <code>StateReasonData</code> parameter to enable the policy to take the
+         * correct action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">AWS
          * API Reference</a></p>
          */
@@ -1833,12 +1821,12 @@ namespace Model
          * <b>History</b> tab in the Amazon CloudWatch console or through <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html">DescribeAlarmHistory</a>.</p>
          * <p>If you use <code>SetAlarmState</code> on a composite alarm, the composite
-         * alarm is not guaranteed to return to its actual state. It will return to its
-         * actual state only once any of its children alarms change state. It is also
-         * re-evaluated if you update its configuration.</p> <p>If an alarm triggers EC2
-         * Auto Scaling policies or application Auto Scaling policies, you must include
-         * information in the <code>StateReasonData</code> parameter to enable the policy
-         * to take the correct action.</p><p><h3>See Also:</h3>   <a
+         * alarm is not guaranteed to return to its actual state. It returns to its actual
+         * state only once any of its children alarms change state. It is also reevaluated
+         * if you update its configuration.</p> <p>If an alarm triggers EC2 Auto Scaling
+         * policies or application Auto Scaling policies, you must include information in
+         * the <code>StateReasonData</code> parameter to enable the policy to take the
+         * correct action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">AWS
          * API Reference</a></p>
          *
@@ -1857,12 +1845,12 @@ namespace Model
          * <b>History</b> tab in the Amazon CloudWatch console or through <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html">DescribeAlarmHistory</a>.</p>
          * <p>If you use <code>SetAlarmState</code> on a composite alarm, the composite
-         * alarm is not guaranteed to return to its actual state. It will return to its
-         * actual state only once any of its children alarms change state. It is also
-         * re-evaluated if you update its configuration.</p> <p>If an alarm triggers EC2
-         * Auto Scaling policies or application Auto Scaling policies, you must include
-         * information in the <code>StateReasonData</code> parameter to enable the policy
-         * to take the correct action.</p><p><h3>See Also:</h3>   <a
+         * alarm is not guaranteed to return to its actual state. It returns to its actual
+         * state only once any of its children alarms change state. It is also reevaluated
+         * if you update its configuration.</p> <p>If an alarm triggers EC2 Auto Scaling
+         * policies or application Auto Scaling policies, you must include information in
+         * the <code>StateReasonData</code> parameter to enable the policy to take the
+         * correct action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">AWS
          * API Reference</a></p>
          *
@@ -1874,7 +1862,7 @@ namespace Model
          * <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch
          * resource. Currently, the only CloudWatch resources that can be tagged are alarms
          * and Contributor Insights rules.</p> <p>Tags can help you organize and categorize
-         * your resources. You can also use them to scope user permissions, by granting a
+         * your resources. You can also use them to scope user permissions by granting a
          * user permission to access or change only resources with certain tag values.</p>
          * <p>Tags don't have any semantic meaning to AWS and are interpreted strictly as
          * strings of characters.</p> <p>You can use the <code>TagResource</code> action
@@ -1893,7 +1881,7 @@ namespace Model
          * <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch
          * resource. Currently, the only CloudWatch resources that can be tagged are alarms
          * and Contributor Insights rules.</p> <p>Tags can help you organize and categorize
-         * your resources. You can also use them to scope user permissions, by granting a
+         * your resources. You can also use them to scope user permissions by granting a
          * user permission to access or change only resources with certain tag values.</p>
          * <p>Tags don't have any semantic meaning to AWS and are interpreted strictly as
          * strings of characters.</p> <p>You can use the <code>TagResource</code> action
@@ -1914,7 +1902,7 @@ namespace Model
          * <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch
          * resource. Currently, the only CloudWatch resources that can be tagged are alarms
          * and Contributor Insights rules.</p> <p>Tags can help you organize and categorize
-         * your resources. You can also use them to scope user permissions, by granting a
+         * your resources. You can also use them to scope user permissions by granting a
          * user permission to access or change only resources with certain tag values.</p>
          * <p>Tags don't have any semantic meaning to AWS and are interpreted strictly as
          * strings of characters.</p> <p>You can use the <code>TagResource</code> action
@@ -1959,7 +1947,7 @@ namespace Model
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-      
+
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);

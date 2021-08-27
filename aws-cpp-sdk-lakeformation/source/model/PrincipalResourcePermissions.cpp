@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lakeformation/model/PrincipalResourcePermissions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,7 +22,8 @@ PrincipalResourcePermissions::PrincipalResourcePermissions() :
     m_principalHasBeenSet(false),
     m_resourceHasBeenSet(false),
     m_permissionsHasBeenSet(false),
-    m_permissionsWithGrantOptionHasBeenSet(false)
+    m_permissionsWithGrantOptionHasBeenSet(false),
+    m_additionalDetailsHasBeenSet(false)
 {
 }
 
@@ -40,7 +31,8 @@ PrincipalResourcePermissions::PrincipalResourcePermissions(JsonView jsonValue) :
     m_principalHasBeenSet(false),
     m_resourceHasBeenSet(false),
     m_permissionsHasBeenSet(false),
-    m_permissionsWithGrantOptionHasBeenSet(false)
+    m_permissionsWithGrantOptionHasBeenSet(false),
+    m_additionalDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -81,6 +73,13 @@ PrincipalResourcePermissions& PrincipalResourcePermissions::operator =(JsonView 
     m_permissionsWithGrantOptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdditionalDetails"))
+  {
+    m_additionalDetails = jsonValue.GetObject("AdditionalDetails");
+
+    m_additionalDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -119,6 +118,12 @@ JsonValue PrincipalResourcePermissions::Jsonize() const
      permissionsWithGrantOptionJsonList[permissionsWithGrantOptionIndex].AsString(PermissionMapper::GetNameForPermission(m_permissionsWithGrantOption[permissionsWithGrantOptionIndex]));
    }
    payload.WithArray("PermissionsWithGrantOption", std::move(permissionsWithGrantOptionJsonList));
+
+  }
+
+  if(m_additionalDetailsHasBeenSet)
+  {
+   payload.WithObject("AdditionalDetails", m_additionalDetails.Jsonize());
 
   }
 

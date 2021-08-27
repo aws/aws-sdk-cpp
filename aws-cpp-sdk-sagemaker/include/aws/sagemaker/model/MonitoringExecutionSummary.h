@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/ExecutionStatus.h>
+#include <aws/sagemaker/model/MonitoringType.h>
 #include <utility>
 
 namespace Aws
@@ -257,42 +248,42 @@ namespace Model
 
 
     /**
-     * <p>The name of teh endpoint used to run the monitoring job.</p>
+     * <p>The name of the endpoint used to run the monitoring job.</p>
      */
     inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
 
     /**
-     * <p>The name of teh endpoint used to run the monitoring job.</p>
+     * <p>The name of the endpoint used to run the monitoring job.</p>
      */
     inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
 
     /**
-     * <p>The name of teh endpoint used to run the monitoring job.</p>
+     * <p>The name of the endpoint used to run the monitoring job.</p>
      */
     inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
 
     /**
-     * <p>The name of teh endpoint used to run the monitoring job.</p>
+     * <p>The name of the endpoint used to run the monitoring job.</p>
      */
     inline void SetEndpointName(Aws::String&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::move(value); }
 
     /**
-     * <p>The name of teh endpoint used to run the monitoring job.</p>
+     * <p>The name of the endpoint used to run the monitoring job.</p>
      */
     inline void SetEndpointName(const char* value) { m_endpointNameHasBeenSet = true; m_endpointName.assign(value); }
 
     /**
-     * <p>The name of teh endpoint used to run the monitoring job.</p>
+     * <p>The name of the endpoint used to run the monitoring job.</p>
      */
     inline MonitoringExecutionSummary& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
 
     /**
-     * <p>The name of teh endpoint used to run the monitoring job.</p>
+     * <p>The name of the endpoint used to run the monitoring job.</p>
      */
     inline MonitoringExecutionSummary& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of teh endpoint used to run the monitoring job.</p>
+     * <p>The name of the endpoint used to run the monitoring job.</p>
      */
     inline MonitoringExecutionSummary& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
 
@@ -337,6 +328,78 @@ namespace Model
      */
     inline MonitoringExecutionSummary& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
+
+    /**
+     * <p>The name of the monitoring job.</p>
+     */
+    inline const Aws::String& GetMonitoringJobDefinitionName() const{ return m_monitoringJobDefinitionName; }
+
+    /**
+     * <p>The name of the monitoring job.</p>
+     */
+    inline bool MonitoringJobDefinitionNameHasBeenSet() const { return m_monitoringJobDefinitionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the monitoring job.</p>
+     */
+    inline void SetMonitoringJobDefinitionName(const Aws::String& value) { m_monitoringJobDefinitionNameHasBeenSet = true; m_monitoringJobDefinitionName = value; }
+
+    /**
+     * <p>The name of the monitoring job.</p>
+     */
+    inline void SetMonitoringJobDefinitionName(Aws::String&& value) { m_monitoringJobDefinitionNameHasBeenSet = true; m_monitoringJobDefinitionName = std::move(value); }
+
+    /**
+     * <p>The name of the monitoring job.</p>
+     */
+    inline void SetMonitoringJobDefinitionName(const char* value) { m_monitoringJobDefinitionNameHasBeenSet = true; m_monitoringJobDefinitionName.assign(value); }
+
+    /**
+     * <p>The name of the monitoring job.</p>
+     */
+    inline MonitoringExecutionSummary& WithMonitoringJobDefinitionName(const Aws::String& value) { SetMonitoringJobDefinitionName(value); return *this;}
+
+    /**
+     * <p>The name of the monitoring job.</p>
+     */
+    inline MonitoringExecutionSummary& WithMonitoringJobDefinitionName(Aws::String&& value) { SetMonitoringJobDefinitionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the monitoring job.</p>
+     */
+    inline MonitoringExecutionSummary& WithMonitoringJobDefinitionName(const char* value) { SetMonitoringJobDefinitionName(value); return *this;}
+
+
+    /**
+     * <p>The type of the monitoring job.</p>
+     */
+    inline const MonitoringType& GetMonitoringType() const{ return m_monitoringType; }
+
+    /**
+     * <p>The type of the monitoring job.</p>
+     */
+    inline bool MonitoringTypeHasBeenSet() const { return m_monitoringTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the monitoring job.</p>
+     */
+    inline void SetMonitoringType(const MonitoringType& value) { m_monitoringTypeHasBeenSet = true; m_monitoringType = value; }
+
+    /**
+     * <p>The type of the monitoring job.</p>
+     */
+    inline void SetMonitoringType(MonitoringType&& value) { m_monitoringTypeHasBeenSet = true; m_monitoringType = std::move(value); }
+
+    /**
+     * <p>The type of the monitoring job.</p>
+     */
+    inline MonitoringExecutionSummary& WithMonitoringType(const MonitoringType& value) { SetMonitoringType(value); return *this;}
+
+    /**
+     * <p>The type of the monitoring job.</p>
+     */
+    inline MonitoringExecutionSummary& WithMonitoringType(MonitoringType&& value) { SetMonitoringType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_monitoringScheduleName;
@@ -362,6 +425,12 @@ namespace Model
 
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet;
+
+    Aws::String m_monitoringJobDefinitionName;
+    bool m_monitoringJobDefinitionNameHasBeenSet;
+
+    MonitoringType m_monitoringType;
+    bool m_monitoringTypeHasBeenSet;
   };
 
 } // namespace Model

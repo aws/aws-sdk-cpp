@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
@@ -54,8 +44,8 @@ namespace Model
     /**
      * <p>The type of build output artifact. Valid values include:</p> <ul> <li> <p>
      * <code>CODEPIPELINE</code>: The build project has build output generated through
-     * AWS CodePipeline. </p> <note> <p>The <code>CODEPIPELINE</code> type is not
-     * supported for <code>secondaryArtifacts</code>.</p> </note> </li> <li> <p>
+     * AWS CodePipeline. </p>  <p>The <code>CODEPIPELINE</code> type is not
+     * supported for <code>secondaryArtifacts</code>.</p>  </li> <li> <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build
      * output.</p> </li> <li> <p> <code>S3</code>: The build project stores build
      * output in Amazon Simple Storage Service (Amazon S3).</p> </li> </ul>
@@ -65,8 +55,8 @@ namespace Model
     /**
      * <p>The type of build output artifact. Valid values include:</p> <ul> <li> <p>
      * <code>CODEPIPELINE</code>: The build project has build output generated through
-     * AWS CodePipeline. </p> <note> <p>The <code>CODEPIPELINE</code> type is not
-     * supported for <code>secondaryArtifacts</code>.</p> </note> </li> <li> <p>
+     * AWS CodePipeline. </p>  <p>The <code>CODEPIPELINE</code> type is not
+     * supported for <code>secondaryArtifacts</code>.</p>  </li> <li> <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build
      * output.</p> </li> <li> <p> <code>S3</code>: The build project stores build
      * output in Amazon Simple Storage Service (Amazon S3).</p> </li> </ul>
@@ -76,8 +66,8 @@ namespace Model
     /**
      * <p>The type of build output artifact. Valid values include:</p> <ul> <li> <p>
      * <code>CODEPIPELINE</code>: The build project has build output generated through
-     * AWS CodePipeline. </p> <note> <p>The <code>CODEPIPELINE</code> type is not
-     * supported for <code>secondaryArtifacts</code>.</p> </note> </li> <li> <p>
+     * AWS CodePipeline. </p>  <p>The <code>CODEPIPELINE</code> type is not
+     * supported for <code>secondaryArtifacts</code>.</p>  </li> <li> <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build
      * output.</p> </li> <li> <p> <code>S3</code>: The build project stores build
      * output in Amazon Simple Storage Service (Amazon S3).</p> </li> </ul>
@@ -87,8 +77,8 @@ namespace Model
     /**
      * <p>The type of build output artifact. Valid values include:</p> <ul> <li> <p>
      * <code>CODEPIPELINE</code>: The build project has build output generated through
-     * AWS CodePipeline. </p> <note> <p>The <code>CODEPIPELINE</code> type is not
-     * supported for <code>secondaryArtifacts</code>.</p> </note> </li> <li> <p>
+     * AWS CodePipeline. </p>  <p>The <code>CODEPIPELINE</code> type is not
+     * supported for <code>secondaryArtifacts</code>.</p>  </li> <li> <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build
      * output.</p> </li> <li> <p> <code>S3</code>: The build project stores build
      * output in Amazon Simple Storage Service (Amazon S3).</p> </li> </ul>
@@ -98,8 +88,8 @@ namespace Model
     /**
      * <p>The type of build output artifact. Valid values include:</p> <ul> <li> <p>
      * <code>CODEPIPELINE</code>: The build project has build output generated through
-     * AWS CodePipeline. </p> <note> <p>The <code>CODEPIPELINE</code> type is not
-     * supported for <code>secondaryArtifacts</code>.</p> </note> </li> <li> <p>
+     * AWS CodePipeline. </p>  <p>The <code>CODEPIPELINE</code> type is not
+     * supported for <code>secondaryArtifacts</code>.</p>  </li> <li> <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build
      * output.</p> </li> <li> <p> <code>S3</code>: The build project stores build
      * output in Amazon Simple Storage Service (Amazon S3).</p> </li> </ul>
@@ -109,8 +99,8 @@ namespace Model
     /**
      * <p>The type of build output artifact. Valid values include:</p> <ul> <li> <p>
      * <code>CODEPIPELINE</code>: The build project has build output generated through
-     * AWS CodePipeline. </p> <note> <p>The <code>CODEPIPELINE</code> type is not
-     * supported for <code>secondaryArtifacts</code>.</p> </note> </li> <li> <p>
+     * AWS CodePipeline. </p>  <p>The <code>CODEPIPELINE</code> type is not
+     * supported for <code>secondaryArtifacts</code>.</p>  </li> <li> <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build
      * output.</p> </li> <li> <p> <code>S3</code>: The build project stores build
      * output in Amazon Simple Storage Service (Amazon S3).</p> </li> </ul>
@@ -368,7 +358,7 @@ namespace Model
      * example, if <code>path</code> is set to <code>MyArtifacts</code>,
      * <code>namespaceType</code> is set to <code>BUILD_ID</code>, and
      * <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is
-     * stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.</p>
+     * stored in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.</p>
      */
     inline const ArtifactNamespace& GetNamespaceType() const{ return m_namespaceType; }
 
@@ -388,7 +378,7 @@ namespace Model
      * example, if <code>path</code> is set to <code>MyArtifacts</code>,
      * <code>namespaceType</code> is set to <code>BUILD_ID</code>, and
      * <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is
-     * stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.</p>
+     * stored in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.</p>
      */
     inline bool NamespaceTypeHasBeenSet() const { return m_namespaceTypeHasBeenSet; }
 
@@ -408,7 +398,7 @@ namespace Model
      * example, if <code>path</code> is set to <code>MyArtifacts</code>,
      * <code>namespaceType</code> is set to <code>BUILD_ID</code>, and
      * <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is
-     * stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.</p>
+     * stored in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.</p>
      */
     inline void SetNamespaceType(const ArtifactNamespace& value) { m_namespaceTypeHasBeenSet = true; m_namespaceType = value; }
 
@@ -428,7 +418,7 @@ namespace Model
      * example, if <code>path</code> is set to <code>MyArtifacts</code>,
      * <code>namespaceType</code> is set to <code>BUILD_ID</code>, and
      * <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is
-     * stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.</p>
+     * stored in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.</p>
      */
     inline void SetNamespaceType(ArtifactNamespace&& value) { m_namespaceTypeHasBeenSet = true; m_namespaceType = std::move(value); }
 
@@ -448,7 +438,7 @@ namespace Model
      * example, if <code>path</code> is set to <code>MyArtifacts</code>,
      * <code>namespaceType</code> is set to <code>BUILD_ID</code>, and
      * <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is
-     * stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.</p>
+     * stored in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.</p>
      */
     inline ProjectArtifacts& WithNamespaceType(const ArtifactNamespace& value) { SetNamespaceType(value); return *this;}
 
@@ -468,7 +458,7 @@ namespace Model
      * example, if <code>path</code> is set to <code>MyArtifacts</code>,
      * <code>namespaceType</code> is set to <code>BUILD_ID</code>, and
      * <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is
-     * stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.</p>
+     * stored in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.</p>
      */
     inline ProjectArtifacts& WithNamespaceType(ArtifactNamespace&& value) { SetNamespaceType(std::move(value)); return *this;}
 
@@ -487,14 +477,14 @@ namespace Model
      * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
      * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
      * <code>MyArtifact.zip</code>, then the output artifact is stored in
-     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>. </p> </li> <li> <p> If
+     * <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>. </p> </li> <li> <p> If
      * <code>path</code> is empty, <code>namespaceType</code> is set to
      * <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", the output
      * artifact is stored in the root of the output bucket. </p> </li> <li> <p> If
      * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
      * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
      * "<code>/</code>", the output artifact is stored in
-     * <code>MyArtifacts/<i>build-ID</i> </code>. </p> </li> </ul>
+     * <code>MyArtifacts/&lt;build-ID&gt;</code>. </p> </li> </ul>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -512,14 +502,14 @@ namespace Model
      * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
      * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
      * <code>MyArtifact.zip</code>, then the output artifact is stored in
-     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>. </p> </li> <li> <p> If
+     * <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>. </p> </li> <li> <p> If
      * <code>path</code> is empty, <code>namespaceType</code> is set to
      * <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", the output
      * artifact is stored in the root of the output bucket. </p> </li> <li> <p> If
      * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
      * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
      * "<code>/</code>", the output artifact is stored in
-     * <code>MyArtifacts/<i>build-ID</i> </code>. </p> </li> </ul>
+     * <code>MyArtifacts/&lt;build-ID&gt;</code>. </p> </li> </ul>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -537,14 +527,14 @@ namespace Model
      * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
      * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
      * <code>MyArtifact.zip</code>, then the output artifact is stored in
-     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>. </p> </li> <li> <p> If
+     * <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>. </p> </li> <li> <p> If
      * <code>path</code> is empty, <code>namespaceType</code> is set to
      * <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", the output
      * artifact is stored in the root of the output bucket. </p> </li> <li> <p> If
      * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
      * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
      * "<code>/</code>", the output artifact is stored in
-     * <code>MyArtifacts/<i>build-ID</i> </code>. </p> </li> </ul>
+     * <code>MyArtifacts/&lt;build-ID&gt;</code>. </p> </li> </ul>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -562,14 +552,14 @@ namespace Model
      * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
      * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
      * <code>MyArtifact.zip</code>, then the output artifact is stored in
-     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>. </p> </li> <li> <p> If
+     * <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>. </p> </li> <li> <p> If
      * <code>path</code> is empty, <code>namespaceType</code> is set to
      * <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", the output
      * artifact is stored in the root of the output bucket. </p> </li> <li> <p> If
      * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
      * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
      * "<code>/</code>", the output artifact is stored in
-     * <code>MyArtifacts/<i>build-ID</i> </code>. </p> </li> </ul>
+     * <code>MyArtifacts/&lt;build-ID&gt;</code>. </p> </li> </ul>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -587,14 +577,14 @@ namespace Model
      * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
      * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
      * <code>MyArtifact.zip</code>, then the output artifact is stored in
-     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>. </p> </li> <li> <p> If
+     * <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>. </p> </li> <li> <p> If
      * <code>path</code> is empty, <code>namespaceType</code> is set to
      * <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", the output
      * artifact is stored in the root of the output bucket. </p> </li> <li> <p> If
      * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
      * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
      * "<code>/</code>", the output artifact is stored in
-     * <code>MyArtifacts/<i>build-ID</i> </code>. </p> </li> </ul>
+     * <code>MyArtifacts/&lt;build-ID&gt;</code>. </p> </li> </ul>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -612,14 +602,14 @@ namespace Model
      * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
      * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
      * <code>MyArtifact.zip</code>, then the output artifact is stored in
-     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>. </p> </li> <li> <p> If
+     * <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>. </p> </li> <li> <p> If
      * <code>path</code> is empty, <code>namespaceType</code> is set to
      * <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", the output
      * artifact is stored in the root of the output bucket. </p> </li> <li> <p> If
      * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
      * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
      * "<code>/</code>", the output artifact is stored in
-     * <code>MyArtifacts/<i>build-ID</i> </code>. </p> </li> </ul>
+     * <code>MyArtifacts/&lt;build-ID&gt;</code>. </p> </li> </ul>
      */
     inline ProjectArtifacts& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -637,14 +627,14 @@ namespace Model
      * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
      * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
      * <code>MyArtifact.zip</code>, then the output artifact is stored in
-     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>. </p> </li> <li> <p> If
+     * <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>. </p> </li> <li> <p> If
      * <code>path</code> is empty, <code>namespaceType</code> is set to
      * <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", the output
      * artifact is stored in the root of the output bucket. </p> </li> <li> <p> If
      * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
      * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
      * "<code>/</code>", the output artifact is stored in
-     * <code>MyArtifacts/<i>build-ID</i> </code>. </p> </li> </ul>
+     * <code>MyArtifacts/&lt;build-ID&gt;</code>. </p> </li> </ul>
      */
     inline ProjectArtifacts& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -662,14 +652,14 @@ namespace Model
      * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
      * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
      * <code>MyArtifact.zip</code>, then the output artifact is stored in
-     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>. </p> </li> <li> <p> If
+     * <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>. </p> </li> <li> <p> If
      * <code>path</code> is empty, <code>namespaceType</code> is set to
      * <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", the output
      * artifact is stored in the root of the output bucket. </p> </li> <li> <p> If
      * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
      * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
      * "<code>/</code>", the output artifact is stored in
-     * <code>MyArtifacts/<i>build-ID</i> </code>. </p> </li> </ul>
+     * <code>MyArtifacts/&lt;build-ID&gt;</code>. </p> </li> </ul>
      */
     inline ProjectArtifacts& WithName(const char* value) { SetName(value); return *this;}
 

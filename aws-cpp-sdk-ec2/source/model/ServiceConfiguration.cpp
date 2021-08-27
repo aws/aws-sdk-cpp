@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/ServiceConfiguration.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -42,6 +32,7 @@ ServiceConfiguration::ServiceConfiguration() :
     m_managesVpcEndpoints(false),
     m_managesVpcEndpointsHasBeenSet(false),
     m_networkLoadBalancerArnsHasBeenSet(false),
+    m_gatewayLoadBalancerArnsHasBeenSet(false),
     m_baseEndpointDnsNamesHasBeenSet(false),
     m_privateDnsNameHasBeenSet(false),
     m_privateDnsNameConfigurationHasBeenSet(false),
@@ -61,6 +52,7 @@ ServiceConfiguration::ServiceConfiguration(const XmlNode& xmlNode) :
     m_managesVpcEndpoints(false),
     m_managesVpcEndpointsHasBeenSet(false),
     m_networkLoadBalancerArnsHasBeenSet(false),
+    m_gatewayLoadBalancerArnsHasBeenSet(false),
     m_baseEndpointDnsNamesHasBeenSet(false),
     m_privateDnsNameHasBeenSet(false),
     m_privateDnsNameConfigurationHasBeenSet(false),
@@ -140,6 +132,18 @@ ServiceConfiguration& ServiceConfiguration::operator =(const XmlNode& xmlNode)
       }
 
       m_networkLoadBalancerArnsHasBeenSet = true;
+    }
+    XmlNode gatewayLoadBalancerArnsNode = resultNode.FirstChild("gatewayLoadBalancerArnSet");
+    if(!gatewayLoadBalancerArnsNode.IsNull())
+    {
+      XmlNode gatewayLoadBalancerArnsMember = gatewayLoadBalancerArnsNode.FirstChild("item");
+      while(!gatewayLoadBalancerArnsMember.IsNull())
+      {
+        m_gatewayLoadBalancerArns.push_back(gatewayLoadBalancerArnsMember.GetText());
+        gatewayLoadBalancerArnsMember = gatewayLoadBalancerArnsMember.NextNode("item");
+      }
+
+      m_gatewayLoadBalancerArnsHasBeenSet = true;
     }
     XmlNode baseEndpointDnsNamesNode = resultNode.FirstChild("baseEndpointDnsNameSet");
     if(!baseEndpointDnsNamesNode.IsNull())
@@ -238,6 +242,15 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
       }
   }
 
+  if(m_gatewayLoadBalancerArnsHasBeenSet)
+  {
+      unsigned gatewayLoadBalancerArnsIdx = 1;
+      for(auto& item : m_gatewayLoadBalancerArns)
+      {
+        oStream << location << index << locationValue << ".GatewayLoadBalancerArnSet." << gatewayLoadBalancerArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
   if(m_baseEndpointDnsNamesHasBeenSet)
   {
       unsigned baseEndpointDnsNamesIdx = 1;
@@ -318,6 +331,14 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
       for(auto& item : m_networkLoadBalancerArns)
       {
         oStream << location << ".NetworkLoadBalancerArnSet." << networkLoadBalancerArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_gatewayLoadBalancerArnsHasBeenSet)
+  {
+      unsigned gatewayLoadBalancerArnsIdx = 1;
+      for(auto& item : m_gatewayLoadBalancerArns)
+      {
+        oStream << location << ".GatewayLoadBalancerArnSet." << gatewayLoadBalancerArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_baseEndpointDnsNamesHasBeenSet)

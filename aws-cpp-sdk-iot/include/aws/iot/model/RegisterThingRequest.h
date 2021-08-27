@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -102,92 +92,92 @@ namespace Model
 
     /**
      * <p>The parameters for provisioning a thing. See <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
-     * Provisioning</a> for more information.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning
+     * Templates</a> for more information.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
     /**
      * <p>The parameters for provisioning a thing. See <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
-     * Provisioning</a> for more information.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning
+     * Templates</a> for more information.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>The parameters for provisioning a thing. See <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
-     * Provisioning</a> for more information.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning
+     * Templates</a> for more information.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
      * <p>The parameters for provisioning a thing. See <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
-     * Provisioning</a> for more information.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning
+     * Templates</a> for more information.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>The parameters for provisioning a thing. See <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
-     * Provisioning</a> for more information.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning
+     * Templates</a> for more information.</p>
      */
     inline RegisterThingRequest& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
     /**
      * <p>The parameters for provisioning a thing. See <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
-     * Provisioning</a> for more information.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning
+     * Templates</a> for more information.</p>
      */
     inline RegisterThingRequest& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>The parameters for provisioning a thing. See <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
-     * Provisioning</a> for more information.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning
+     * Templates</a> for more information.</p>
      */
     inline RegisterThingRequest& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>The parameters for provisioning a thing. See <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
-     * Provisioning</a> for more information.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning
+     * Templates</a> for more information.</p>
      */
     inline RegisterThingRequest& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The parameters for provisioning a thing. See <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
-     * Provisioning</a> for more information.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning
+     * Templates</a> for more information.</p>
      */
     inline RegisterThingRequest& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The parameters for provisioning a thing. See <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
-     * Provisioning</a> for more information.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning
+     * Templates</a> for more information.</p>
      */
     inline RegisterThingRequest& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The parameters for provisioning a thing. See <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
-     * Provisioning</a> for more information.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning
+     * Templates</a> for more information.</p>
      */
     inline RegisterThingRequest& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The parameters for provisioning a thing. See <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
-     * Provisioning</a> for more information.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning
+     * Templates</a> for more information.</p>
      */
     inline RegisterThingRequest& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The parameters for provisioning a thing. See <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
-     * Provisioning</a> for more information.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning
+     * Templates</a> for more information.</p>
      */
     inline RegisterThingRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 

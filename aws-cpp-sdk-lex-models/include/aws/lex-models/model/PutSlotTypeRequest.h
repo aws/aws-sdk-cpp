@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
@@ -180,13 +170,14 @@ namespace Model
      * <p>A list of <code>EnumerationValue</code> objects that defines the values that
      * the slot type can take. Each value can have a list of <code>synonyms</code>,
      * which are additional values that help train the machine learning model about the
-     * values that it resolves for a slot. </p> <p>When Amazon Lex resolves a slot
-     * value, it generates a resolution list that contains up to five possible values
-     * for the slot. If you are using a Lambda function, this resolution list is passed
-     * to the function. If you are not using a Lambda function you can choose to return
-     * the value that the user entered or the first value in the resolution list as the
-     * slot value. The <code>valueSelectionStrategy</code> field indicates the option
-     * to use. </p>
+     * values that it resolves for a slot. </p> <p>A regular expression slot type
+     * doesn't require enumeration values. All other slot types require a list of
+     * enumeration values.</p> <p>When Amazon Lex resolves a slot value, it generates a
+     * resolution list that contains up to five possible values for the slot. If you
+     * are using a Lambda function, this resolution list is passed to the function. If
+     * you are not using a Lambda function you can choose to return the value that the
+     * user entered or the first value in the resolution list as the slot value. The
+     * <code>valueSelectionStrategy</code> field indicates the option to use. </p>
      */
     inline const Aws::Vector<EnumerationValue>& GetEnumerationValues() const{ return m_enumerationValues; }
 
@@ -194,13 +185,14 @@ namespace Model
      * <p>A list of <code>EnumerationValue</code> objects that defines the values that
      * the slot type can take. Each value can have a list of <code>synonyms</code>,
      * which are additional values that help train the machine learning model about the
-     * values that it resolves for a slot. </p> <p>When Amazon Lex resolves a slot
-     * value, it generates a resolution list that contains up to five possible values
-     * for the slot. If you are using a Lambda function, this resolution list is passed
-     * to the function. If you are not using a Lambda function you can choose to return
-     * the value that the user entered or the first value in the resolution list as the
-     * slot value. The <code>valueSelectionStrategy</code> field indicates the option
-     * to use. </p>
+     * values that it resolves for a slot. </p> <p>A regular expression slot type
+     * doesn't require enumeration values. All other slot types require a list of
+     * enumeration values.</p> <p>When Amazon Lex resolves a slot value, it generates a
+     * resolution list that contains up to five possible values for the slot. If you
+     * are using a Lambda function, this resolution list is passed to the function. If
+     * you are not using a Lambda function you can choose to return the value that the
+     * user entered or the first value in the resolution list as the slot value. The
+     * <code>valueSelectionStrategy</code> field indicates the option to use. </p>
      */
     inline bool EnumerationValuesHasBeenSet() const { return m_enumerationValuesHasBeenSet; }
 
@@ -208,13 +200,14 @@ namespace Model
      * <p>A list of <code>EnumerationValue</code> objects that defines the values that
      * the slot type can take. Each value can have a list of <code>synonyms</code>,
      * which are additional values that help train the machine learning model about the
-     * values that it resolves for a slot. </p> <p>When Amazon Lex resolves a slot
-     * value, it generates a resolution list that contains up to five possible values
-     * for the slot. If you are using a Lambda function, this resolution list is passed
-     * to the function. If you are not using a Lambda function you can choose to return
-     * the value that the user entered or the first value in the resolution list as the
-     * slot value. The <code>valueSelectionStrategy</code> field indicates the option
-     * to use. </p>
+     * values that it resolves for a slot. </p> <p>A regular expression slot type
+     * doesn't require enumeration values. All other slot types require a list of
+     * enumeration values.</p> <p>When Amazon Lex resolves a slot value, it generates a
+     * resolution list that contains up to five possible values for the slot. If you
+     * are using a Lambda function, this resolution list is passed to the function. If
+     * you are not using a Lambda function you can choose to return the value that the
+     * user entered or the first value in the resolution list as the slot value. The
+     * <code>valueSelectionStrategy</code> field indicates the option to use. </p>
      */
     inline void SetEnumerationValues(const Aws::Vector<EnumerationValue>& value) { m_enumerationValuesHasBeenSet = true; m_enumerationValues = value; }
 
@@ -222,13 +215,14 @@ namespace Model
      * <p>A list of <code>EnumerationValue</code> objects that defines the values that
      * the slot type can take. Each value can have a list of <code>synonyms</code>,
      * which are additional values that help train the machine learning model about the
-     * values that it resolves for a slot. </p> <p>When Amazon Lex resolves a slot
-     * value, it generates a resolution list that contains up to five possible values
-     * for the slot. If you are using a Lambda function, this resolution list is passed
-     * to the function. If you are not using a Lambda function you can choose to return
-     * the value that the user entered or the first value in the resolution list as the
-     * slot value. The <code>valueSelectionStrategy</code> field indicates the option
-     * to use. </p>
+     * values that it resolves for a slot. </p> <p>A regular expression slot type
+     * doesn't require enumeration values. All other slot types require a list of
+     * enumeration values.</p> <p>When Amazon Lex resolves a slot value, it generates a
+     * resolution list that contains up to five possible values for the slot. If you
+     * are using a Lambda function, this resolution list is passed to the function. If
+     * you are not using a Lambda function you can choose to return the value that the
+     * user entered or the first value in the resolution list as the slot value. The
+     * <code>valueSelectionStrategy</code> field indicates the option to use. </p>
      */
     inline void SetEnumerationValues(Aws::Vector<EnumerationValue>&& value) { m_enumerationValuesHasBeenSet = true; m_enumerationValues = std::move(value); }
 
@@ -236,13 +230,14 @@ namespace Model
      * <p>A list of <code>EnumerationValue</code> objects that defines the values that
      * the slot type can take. Each value can have a list of <code>synonyms</code>,
      * which are additional values that help train the machine learning model about the
-     * values that it resolves for a slot. </p> <p>When Amazon Lex resolves a slot
-     * value, it generates a resolution list that contains up to five possible values
-     * for the slot. If you are using a Lambda function, this resolution list is passed
-     * to the function. If you are not using a Lambda function you can choose to return
-     * the value that the user entered or the first value in the resolution list as the
-     * slot value. The <code>valueSelectionStrategy</code> field indicates the option
-     * to use. </p>
+     * values that it resolves for a slot. </p> <p>A regular expression slot type
+     * doesn't require enumeration values. All other slot types require a list of
+     * enumeration values.</p> <p>When Amazon Lex resolves a slot value, it generates a
+     * resolution list that contains up to five possible values for the slot. If you
+     * are using a Lambda function, this resolution list is passed to the function. If
+     * you are not using a Lambda function you can choose to return the value that the
+     * user entered or the first value in the resolution list as the slot value. The
+     * <code>valueSelectionStrategy</code> field indicates the option to use. </p>
      */
     inline PutSlotTypeRequest& WithEnumerationValues(const Aws::Vector<EnumerationValue>& value) { SetEnumerationValues(value); return *this;}
 
@@ -250,13 +245,14 @@ namespace Model
      * <p>A list of <code>EnumerationValue</code> objects that defines the values that
      * the slot type can take. Each value can have a list of <code>synonyms</code>,
      * which are additional values that help train the machine learning model about the
-     * values that it resolves for a slot. </p> <p>When Amazon Lex resolves a slot
-     * value, it generates a resolution list that contains up to five possible values
-     * for the slot. If you are using a Lambda function, this resolution list is passed
-     * to the function. If you are not using a Lambda function you can choose to return
-     * the value that the user entered or the first value in the resolution list as the
-     * slot value. The <code>valueSelectionStrategy</code> field indicates the option
-     * to use. </p>
+     * values that it resolves for a slot. </p> <p>A regular expression slot type
+     * doesn't require enumeration values. All other slot types require a list of
+     * enumeration values.</p> <p>When Amazon Lex resolves a slot value, it generates a
+     * resolution list that contains up to five possible values for the slot. If you
+     * are using a Lambda function, this resolution list is passed to the function. If
+     * you are not using a Lambda function you can choose to return the value that the
+     * user entered or the first value in the resolution list as the slot value. The
+     * <code>valueSelectionStrategy</code> field indicates the option to use. </p>
      */
     inline PutSlotTypeRequest& WithEnumerationValues(Aws::Vector<EnumerationValue>&& value) { SetEnumerationValues(std::move(value)); return *this;}
 
@@ -264,13 +260,14 @@ namespace Model
      * <p>A list of <code>EnumerationValue</code> objects that defines the values that
      * the slot type can take. Each value can have a list of <code>synonyms</code>,
      * which are additional values that help train the machine learning model about the
-     * values that it resolves for a slot. </p> <p>When Amazon Lex resolves a slot
-     * value, it generates a resolution list that contains up to five possible values
-     * for the slot. If you are using a Lambda function, this resolution list is passed
-     * to the function. If you are not using a Lambda function you can choose to return
-     * the value that the user entered or the first value in the resolution list as the
-     * slot value. The <code>valueSelectionStrategy</code> field indicates the option
-     * to use. </p>
+     * values that it resolves for a slot. </p> <p>A regular expression slot type
+     * doesn't require enumeration values. All other slot types require a list of
+     * enumeration values.</p> <p>When Amazon Lex resolves a slot value, it generates a
+     * resolution list that contains up to five possible values for the slot. If you
+     * are using a Lambda function, this resolution list is passed to the function. If
+     * you are not using a Lambda function you can choose to return the value that the
+     * user entered or the first value in the resolution list as the slot value. The
+     * <code>valueSelectionStrategy</code> field indicates the option to use. </p>
      */
     inline PutSlotTypeRequest& AddEnumerationValues(const EnumerationValue& value) { m_enumerationValuesHasBeenSet = true; m_enumerationValues.push_back(value); return *this; }
 
@@ -278,13 +275,14 @@ namespace Model
      * <p>A list of <code>EnumerationValue</code> objects that defines the values that
      * the slot type can take. Each value can have a list of <code>synonyms</code>,
      * which are additional values that help train the machine learning model about the
-     * values that it resolves for a slot. </p> <p>When Amazon Lex resolves a slot
-     * value, it generates a resolution list that contains up to five possible values
-     * for the slot. If you are using a Lambda function, this resolution list is passed
-     * to the function. If you are not using a Lambda function you can choose to return
-     * the value that the user entered or the first value in the resolution list as the
-     * slot value. The <code>valueSelectionStrategy</code> field indicates the option
-     * to use. </p>
+     * values that it resolves for a slot. </p> <p>A regular expression slot type
+     * doesn't require enumeration values. All other slot types require a list of
+     * enumeration values.</p> <p>When Amazon Lex resolves a slot value, it generates a
+     * resolution list that contains up to five possible values for the slot. If you
+     * are using a Lambda function, this resolution list is passed to the function. If
+     * you are not using a Lambda function you can choose to return the value that the
+     * user entered or the first value in the resolution list as the slot value. The
+     * <code>valueSelectionStrategy</code> field indicates the option to use. </p>
      */
     inline PutSlotTypeRequest& AddEnumerationValues(EnumerationValue&& value) { m_enumerationValuesHasBeenSet = true; m_enumerationValues.push_back(std::move(value)); return *this; }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
@@ -328,49 +318,49 @@ namespace Model
 
     /**
      * <p>The port on the endpoint that you want Amazon Route 53 to perform health
-     * checks on.</p> <note> <p>Don't specify a value for <code>Port</code> when you
+     * checks on.</p>  <p>Don't specify a value for <code>Port</code> when you
      * specify a value for <code>Type</code> of <code>CLOUDWATCH_METRIC</code> or
-     * <code>CALCULATED</code>.</p> </note>
+     * <code>CALCULATED</code>.</p> 
      */
     inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port on the endpoint that you want Amazon Route 53 to perform health
-     * checks on.</p> <note> <p>Don't specify a value for <code>Port</code> when you
+     * checks on.</p>  <p>Don't specify a value for <code>Port</code> when you
      * specify a value for <code>Type</code> of <code>CLOUDWATCH_METRIC</code> or
-     * <code>CALCULATED</code>.</p> </note>
+     * <code>CALCULATED</code>.</p> 
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
      * <p>The port on the endpoint that you want Amazon Route 53 to perform health
-     * checks on.</p> <note> <p>Don't specify a value for <code>Port</code> when you
+     * checks on.</p>  <p>Don't specify a value for <code>Port</code> when you
      * specify a value for <code>Type</code> of <code>CLOUDWATCH_METRIC</code> or
-     * <code>CALCULATED</code>.</p> </note>
+     * <code>CALCULATED</code>.</p> 
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port on the endpoint that you want Amazon Route 53 to perform health
-     * checks on.</p> <note> <p>Don't specify a value for <code>Port</code> when you
+     * checks on.</p>  <p>Don't specify a value for <code>Port</code> when you
      * specify a value for <code>Type</code> of <code>CLOUDWATCH_METRIC</code> or
-     * <code>CALCULATED</code>.</p> </note>
+     * <code>CALCULATED</code>.</p> 
      */
     inline HealthCheckConfig& WithPort(int value) { SetPort(value); return *this;}
 
 
     /**
      * <p>The type of health check that you want to create, which indicates how Amazon
-     * Route 53 determines whether an endpoint is healthy.</p> <important> <p>You can't
+     * Route 53 determines whether an endpoint is healthy.</p>  <p>You can't
      * change the value of <code>Type</code> after you create a health check.</p>
-     * </important> <p>You can create the following types of health checks:</p> <ul>
+     *  <p>You can create the following types of health checks:</p> <ul>
      * <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If
      * successful, Route 53 submits an HTTP request and waits for an HTTP status code
      * of 200 or greater and less than 400.</p> </li> <li> <p> <b>HTTPS</b>: Route 53
      * tries to establish a TCP connection. If successful, Route 53 submits an HTTPS
      * request and waits for an HTTP status code of 200 or greater and less than
-     * 400.</p> <important> <p>If you specify <code>HTTPS</code> for the value of
-     * <code>Type</code>, the endpoint must support TLS v1.0 or later.</p> </important>
+     * 400.</p>  <p>If you specify <code>HTTPS</code> for the value of
+     * <code>Type</code>, the endpoint must support TLS v1.0 or later.</p> 
      * </li> <li> <p> <b>HTTP_STR_MATCH</b>: Route 53 tries to establish a TCP
      * connection. If successful, Route 53 submits an HTTP request and searches the
      * first 5,120 bytes of the response body for the string that you specify in
@@ -399,16 +389,16 @@ namespace Model
 
     /**
      * <p>The type of health check that you want to create, which indicates how Amazon
-     * Route 53 determines whether an endpoint is healthy.</p> <important> <p>You can't
+     * Route 53 determines whether an endpoint is healthy.</p>  <p>You can't
      * change the value of <code>Type</code> after you create a health check.</p>
-     * </important> <p>You can create the following types of health checks:</p> <ul>
+     *  <p>You can create the following types of health checks:</p> <ul>
      * <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If
      * successful, Route 53 submits an HTTP request and waits for an HTTP status code
      * of 200 or greater and less than 400.</p> </li> <li> <p> <b>HTTPS</b>: Route 53
      * tries to establish a TCP connection. If successful, Route 53 submits an HTTPS
      * request and waits for an HTTP status code of 200 or greater and less than
-     * 400.</p> <important> <p>If you specify <code>HTTPS</code> for the value of
-     * <code>Type</code>, the endpoint must support TLS v1.0 or later.</p> </important>
+     * 400.</p>  <p>If you specify <code>HTTPS</code> for the value of
+     * <code>Type</code>, the endpoint must support TLS v1.0 or later.</p> 
      * </li> <li> <p> <b>HTTP_STR_MATCH</b>: Route 53 tries to establish a TCP
      * connection. If successful, Route 53 submits an HTTP request and searches the
      * first 5,120 bytes of the response body for the string that you specify in
@@ -437,16 +427,16 @@ namespace Model
 
     /**
      * <p>The type of health check that you want to create, which indicates how Amazon
-     * Route 53 determines whether an endpoint is healthy.</p> <important> <p>You can't
+     * Route 53 determines whether an endpoint is healthy.</p>  <p>You can't
      * change the value of <code>Type</code> after you create a health check.</p>
-     * </important> <p>You can create the following types of health checks:</p> <ul>
+     *  <p>You can create the following types of health checks:</p> <ul>
      * <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If
      * successful, Route 53 submits an HTTP request and waits for an HTTP status code
      * of 200 or greater and less than 400.</p> </li> <li> <p> <b>HTTPS</b>: Route 53
      * tries to establish a TCP connection. If successful, Route 53 submits an HTTPS
      * request and waits for an HTTP status code of 200 or greater and less than
-     * 400.</p> <important> <p>If you specify <code>HTTPS</code> for the value of
-     * <code>Type</code>, the endpoint must support TLS v1.0 or later.</p> </important>
+     * 400.</p>  <p>If you specify <code>HTTPS</code> for the value of
+     * <code>Type</code>, the endpoint must support TLS v1.0 or later.</p> 
      * </li> <li> <p> <b>HTTP_STR_MATCH</b>: Route 53 tries to establish a TCP
      * connection. If successful, Route 53 submits an HTTP request and searches the
      * first 5,120 bytes of the response body for the string that you specify in
@@ -475,16 +465,16 @@ namespace Model
 
     /**
      * <p>The type of health check that you want to create, which indicates how Amazon
-     * Route 53 determines whether an endpoint is healthy.</p> <important> <p>You can't
+     * Route 53 determines whether an endpoint is healthy.</p>  <p>You can't
      * change the value of <code>Type</code> after you create a health check.</p>
-     * </important> <p>You can create the following types of health checks:</p> <ul>
+     *  <p>You can create the following types of health checks:</p> <ul>
      * <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If
      * successful, Route 53 submits an HTTP request and waits for an HTTP status code
      * of 200 or greater and less than 400.</p> </li> <li> <p> <b>HTTPS</b>: Route 53
      * tries to establish a TCP connection. If successful, Route 53 submits an HTTPS
      * request and waits for an HTTP status code of 200 or greater and less than
-     * 400.</p> <important> <p>If you specify <code>HTTPS</code> for the value of
-     * <code>Type</code>, the endpoint must support TLS v1.0 or later.</p> </important>
+     * 400.</p>  <p>If you specify <code>HTTPS</code> for the value of
+     * <code>Type</code>, the endpoint must support TLS v1.0 or later.</p> 
      * </li> <li> <p> <b>HTTP_STR_MATCH</b>: Route 53 tries to establish a TCP
      * connection. If successful, Route 53 submits an HTTP request and searches the
      * first 5,120 bytes of the response body for the string that you specify in
@@ -513,16 +503,16 @@ namespace Model
 
     /**
      * <p>The type of health check that you want to create, which indicates how Amazon
-     * Route 53 determines whether an endpoint is healthy.</p> <important> <p>You can't
+     * Route 53 determines whether an endpoint is healthy.</p>  <p>You can't
      * change the value of <code>Type</code> after you create a health check.</p>
-     * </important> <p>You can create the following types of health checks:</p> <ul>
+     *  <p>You can create the following types of health checks:</p> <ul>
      * <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If
      * successful, Route 53 submits an HTTP request and waits for an HTTP status code
      * of 200 or greater and less than 400.</p> </li> <li> <p> <b>HTTPS</b>: Route 53
      * tries to establish a TCP connection. If successful, Route 53 submits an HTTPS
      * request and waits for an HTTP status code of 200 or greater and less than
-     * 400.</p> <important> <p>If you specify <code>HTTPS</code> for the value of
-     * <code>Type</code>, the endpoint must support TLS v1.0 or later.</p> </important>
+     * 400.</p>  <p>If you specify <code>HTTPS</code> for the value of
+     * <code>Type</code>, the endpoint must support TLS v1.0 or later.</p> 
      * </li> <li> <p> <b>HTTP_STR_MATCH</b>: Route 53 tries to establish a TCP
      * connection. If successful, Route 53 submits an HTTP request and searches the
      * first 5,120 bytes of the response body for the string that you specify in
@@ -551,16 +541,16 @@ namespace Model
 
     /**
      * <p>The type of health check that you want to create, which indicates how Amazon
-     * Route 53 determines whether an endpoint is healthy.</p> <important> <p>You can't
+     * Route 53 determines whether an endpoint is healthy.</p>  <p>You can't
      * change the value of <code>Type</code> after you create a health check.</p>
-     * </important> <p>You can create the following types of health checks:</p> <ul>
+     *  <p>You can create the following types of health checks:</p> <ul>
      * <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If
      * successful, Route 53 submits an HTTP request and waits for an HTTP status code
      * of 200 or greater and less than 400.</p> </li> <li> <p> <b>HTTPS</b>: Route 53
      * tries to establish a TCP connection. If successful, Route 53 submits an HTTPS
      * request and waits for an HTTP status code of 200 or greater and less than
-     * 400.</p> <important> <p>If you specify <code>HTTPS</code> for the value of
-     * <code>Type</code>, the endpoint must support TLS v1.0 or later.</p> </important>
+     * 400.</p>  <p>If you specify <code>HTTPS</code> for the value of
+     * <code>Type</code>, the endpoint must support TLS v1.0 or later.</p> 
      * </li> <li> <p> <b>HTTP_STR_MATCH</b>: Route 53 tries to establish a TCP
      * connection. If successful, Route 53 submits an HTTP request and searches the
      * first 5,120 bytes of the response body for the string that you specify in
@@ -695,23 +685,23 @@ namespace Model
      * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
      * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
      * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
-     * returns, Route 53 then checks the health of the endpoint.</p> <note> <p>If you
+     * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
      * type of A for the name that you specify for
      * <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS
-     * resolution failed" error.</p> </note> <p>If you want to check the health of
+     * resolution failed" error.</p>  <p>If you want to check the health of
      * weighted, latency, or failover resource record sets and you choose to specify
      * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that
      * you create a separate health check for each endpoint. For example, create a
      * health check for each HTTP server that is serving content for www.example.com.
      * For the value of <code>FullyQualifiedDomainName</code>, specify the domain name
      * of the server (such as us-east-2-www.example.com), not the name of the resource
-     * record sets (www.example.com).</p> <important> <p>In this configuration, if you
+     * record sets (www.example.com).</p>  <p>In this configuration, if you
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record
      * sets and you then associate the health check with those resource record sets,
-     * health check results will be unpredictable.</p> </important> <p>In addition, if
+     * health check results will be unpredictable.</p>  <p>In addition, if
      * the value that you specify for <code>Type</code> is <code>HTTP</code>,
      * <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
      * <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of
@@ -748,23 +738,23 @@ namespace Model
      * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
      * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
      * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
-     * returns, Route 53 then checks the health of the endpoint.</p> <note> <p>If you
+     * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
      * type of A for the name that you specify for
      * <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS
-     * resolution failed" error.</p> </note> <p>If you want to check the health of
+     * resolution failed" error.</p>  <p>If you want to check the health of
      * weighted, latency, or failover resource record sets and you choose to specify
      * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that
      * you create a separate health check for each endpoint. For example, create a
      * health check for each HTTP server that is serving content for www.example.com.
      * For the value of <code>FullyQualifiedDomainName</code>, specify the domain name
      * of the server (such as us-east-2-www.example.com), not the name of the resource
-     * record sets (www.example.com).</p> <important> <p>In this configuration, if you
+     * record sets (www.example.com).</p>  <p>In this configuration, if you
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record
      * sets and you then associate the health check with those resource record sets,
-     * health check results will be unpredictable.</p> </important> <p>In addition, if
+     * health check results will be unpredictable.</p>  <p>In addition, if
      * the value that you specify for <code>Type</code> is <code>HTTP</code>,
      * <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
      * <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of
@@ -801,23 +791,23 @@ namespace Model
      * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
      * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
      * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
-     * returns, Route 53 then checks the health of the endpoint.</p> <note> <p>If you
+     * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
      * type of A for the name that you specify for
      * <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS
-     * resolution failed" error.</p> </note> <p>If you want to check the health of
+     * resolution failed" error.</p>  <p>If you want to check the health of
      * weighted, latency, or failover resource record sets and you choose to specify
      * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that
      * you create a separate health check for each endpoint. For example, create a
      * health check for each HTTP server that is serving content for www.example.com.
      * For the value of <code>FullyQualifiedDomainName</code>, specify the domain name
      * of the server (such as us-east-2-www.example.com), not the name of the resource
-     * record sets (www.example.com).</p> <important> <p>In this configuration, if you
+     * record sets (www.example.com).</p>  <p>In this configuration, if you
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record
      * sets and you then associate the health check with those resource record sets,
-     * health check results will be unpredictable.</p> </important> <p>In addition, if
+     * health check results will be unpredictable.</p>  <p>In addition, if
      * the value that you specify for <code>Type</code> is <code>HTTP</code>,
      * <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
      * <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of
@@ -854,23 +844,23 @@ namespace Model
      * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
      * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
      * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
-     * returns, Route 53 then checks the health of the endpoint.</p> <note> <p>If you
+     * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
      * type of A for the name that you specify for
      * <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS
-     * resolution failed" error.</p> </note> <p>If you want to check the health of
+     * resolution failed" error.</p>  <p>If you want to check the health of
      * weighted, latency, or failover resource record sets and you choose to specify
      * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that
      * you create a separate health check for each endpoint. For example, create a
      * health check for each HTTP server that is serving content for www.example.com.
      * For the value of <code>FullyQualifiedDomainName</code>, specify the domain name
      * of the server (such as us-east-2-www.example.com), not the name of the resource
-     * record sets (www.example.com).</p> <important> <p>In this configuration, if you
+     * record sets (www.example.com).</p>  <p>In this configuration, if you
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record
      * sets and you then associate the health check with those resource record sets,
-     * health check results will be unpredictable.</p> </important> <p>In addition, if
+     * health check results will be unpredictable.</p>  <p>In addition, if
      * the value that you specify for <code>Type</code> is <code>HTTP</code>,
      * <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
      * <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of
@@ -907,23 +897,23 @@ namespace Model
      * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
      * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
      * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
-     * returns, Route 53 then checks the health of the endpoint.</p> <note> <p>If you
+     * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
      * type of A for the name that you specify for
      * <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS
-     * resolution failed" error.</p> </note> <p>If you want to check the health of
+     * resolution failed" error.</p>  <p>If you want to check the health of
      * weighted, latency, or failover resource record sets and you choose to specify
      * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that
      * you create a separate health check for each endpoint. For example, create a
      * health check for each HTTP server that is serving content for www.example.com.
      * For the value of <code>FullyQualifiedDomainName</code>, specify the domain name
      * of the server (such as us-east-2-www.example.com), not the name of the resource
-     * record sets (www.example.com).</p> <important> <p>In this configuration, if you
+     * record sets (www.example.com).</p>  <p>In this configuration, if you
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record
      * sets and you then associate the health check with those resource record sets,
-     * health check results will be unpredictable.</p> </important> <p>In addition, if
+     * health check results will be unpredictable.</p>  <p>In addition, if
      * the value that you specify for <code>Type</code> is <code>HTTP</code>,
      * <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
      * <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of
@@ -960,23 +950,23 @@ namespace Model
      * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
      * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
      * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
-     * returns, Route 53 then checks the health of the endpoint.</p> <note> <p>If you
+     * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
      * type of A for the name that you specify for
      * <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS
-     * resolution failed" error.</p> </note> <p>If you want to check the health of
+     * resolution failed" error.</p>  <p>If you want to check the health of
      * weighted, latency, or failover resource record sets and you choose to specify
      * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that
      * you create a separate health check for each endpoint. For example, create a
      * health check for each HTTP server that is serving content for www.example.com.
      * For the value of <code>FullyQualifiedDomainName</code>, specify the domain name
      * of the server (such as us-east-2-www.example.com), not the name of the resource
-     * record sets (www.example.com).</p> <important> <p>In this configuration, if you
+     * record sets (www.example.com).</p>  <p>In this configuration, if you
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record
      * sets and you then associate the health check with those resource record sets,
-     * health check results will be unpredictable.</p> </important> <p>In addition, if
+     * health check results will be unpredictable.</p>  <p>In addition, if
      * the value that you specify for <code>Type</code> is <code>HTTP</code>,
      * <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
      * <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of
@@ -1013,23 +1003,23 @@ namespace Model
      * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
      * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
      * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
-     * returns, Route 53 then checks the health of the endpoint.</p> <note> <p>If you
+     * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
      * type of A for the name that you specify for
      * <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS
-     * resolution failed" error.</p> </note> <p>If you want to check the health of
+     * resolution failed" error.</p>  <p>If you want to check the health of
      * weighted, latency, or failover resource record sets and you choose to specify
      * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that
      * you create a separate health check for each endpoint. For example, create a
      * health check for each HTTP server that is serving content for www.example.com.
      * For the value of <code>FullyQualifiedDomainName</code>, specify the domain name
      * of the server (such as us-east-2-www.example.com), not the name of the resource
-     * record sets (www.example.com).</p> <important> <p>In this configuration, if you
+     * record sets (www.example.com).</p>  <p>In this configuration, if you
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record
      * sets and you then associate the health check with those resource record sets,
-     * health check results will be unpredictable.</p> </important> <p>In addition, if
+     * health check results will be unpredictable.</p>  <p>In addition, if
      * the value that you specify for <code>Type</code> is <code>HTTP</code>,
      * <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
      * <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of
@@ -1066,23 +1056,23 @@ namespace Model
      * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
      * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
      * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
-     * returns, Route 53 then checks the health of the endpoint.</p> <note> <p>If you
+     * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
      * type of A for the name that you specify for
      * <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS
-     * resolution failed" error.</p> </note> <p>If you want to check the health of
+     * resolution failed" error.</p>  <p>If you want to check the health of
      * weighted, latency, or failover resource record sets and you choose to specify
      * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that
      * you create a separate health check for each endpoint. For example, create a
      * health check for each HTTP server that is serving content for www.example.com.
      * For the value of <code>FullyQualifiedDomainName</code>, specify the domain name
      * of the server (such as us-east-2-www.example.com), not the name of the resource
-     * record sets (www.example.com).</p> <important> <p>In this configuration, if you
+     * record sets (www.example.com).</p>  <p>In this configuration, if you
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record
      * sets and you then associate the health check with those resource record sets,
-     * health check results will be unpredictable.</p> </important> <p>In addition, if
+     * health check results will be unpredictable.</p>  <p>In addition, if
      * the value that you specify for <code>Type</code> is <code>HTTP</code>,
      * <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
      * <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of
@@ -1178,9 +1168,9 @@ namespace Model
     /**
      * <p>The number of seconds between the time that Amazon Route 53 gets a response
      * from your endpoint and the time that it sends the next health check request.
-     * Each Route 53 health checker makes requests at this interval.</p> <important>
+     * Each Route 53 health checker makes requests at this interval.</p> 
      * <p>You can't change the value of <code>RequestInterval</code> after you create a
-     * health check.</p> </important> <p>If you don't specify a value for
+     * health check.</p>  <p>If you don't specify a value for
      * <code>RequestInterval</code>, the default value is <code>30</code> seconds.</p>
      */
     inline int GetRequestInterval() const{ return m_requestInterval; }
@@ -1188,9 +1178,9 @@ namespace Model
     /**
      * <p>The number of seconds between the time that Amazon Route 53 gets a response
      * from your endpoint and the time that it sends the next health check request.
-     * Each Route 53 health checker makes requests at this interval.</p> <important>
+     * Each Route 53 health checker makes requests at this interval.</p> 
      * <p>You can't change the value of <code>RequestInterval</code> after you create a
-     * health check.</p> </important> <p>If you don't specify a value for
+     * health check.</p>  <p>If you don't specify a value for
      * <code>RequestInterval</code>, the default value is <code>30</code> seconds.</p>
      */
     inline bool RequestIntervalHasBeenSet() const { return m_requestIntervalHasBeenSet; }
@@ -1198,9 +1188,9 @@ namespace Model
     /**
      * <p>The number of seconds between the time that Amazon Route 53 gets a response
      * from your endpoint and the time that it sends the next health check request.
-     * Each Route 53 health checker makes requests at this interval.</p> <important>
+     * Each Route 53 health checker makes requests at this interval.</p> 
      * <p>You can't change the value of <code>RequestInterval</code> after you create a
-     * health check.</p> </important> <p>If you don't specify a value for
+     * health check.</p>  <p>If you don't specify a value for
      * <code>RequestInterval</code>, the default value is <code>30</code> seconds.</p>
      */
     inline void SetRequestInterval(int value) { m_requestIntervalHasBeenSet = true; m_requestInterval = value; }
@@ -1208,9 +1198,9 @@ namespace Model
     /**
      * <p>The number of seconds between the time that Amazon Route 53 gets a response
      * from your endpoint and the time that it sends the next health check request.
-     * Each Route 53 health checker makes requests at this interval.</p> <important>
+     * Each Route 53 health checker makes requests at this interval.</p> 
      * <p>You can't change the value of <code>RequestInterval</code> after you create a
-     * health check.</p> </important> <p>If you don't specify a value for
+     * health check.</p>  <p>If you don't specify a value for
      * <code>RequestInterval</code>, the default value is <code>30</code> seconds.</p>
      */
     inline HealthCheckConfig& WithRequestInterval(int value) { SetRequestInterval(value); return *this;}
@@ -1265,8 +1255,8 @@ namespace Model
      * <p>Specify whether you want Amazon Route 53 to measure the latency between
      * health checkers in multiple AWS regions and your endpoint, and to display
      * CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53
-     * console.</p> <important> <p>You can't change the value of
-     * <code>MeasureLatency</code> after you create a health check.</p> </important>
+     * console.</p>  <p>You can't change the value of
+     * <code>MeasureLatency</code> after you create a health check.</p> 
      */
     inline bool GetMeasureLatency() const{ return m_measureLatency; }
 
@@ -1274,8 +1264,8 @@ namespace Model
      * <p>Specify whether you want Amazon Route 53 to measure the latency between
      * health checkers in multiple AWS regions and your endpoint, and to display
      * CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53
-     * console.</p> <important> <p>You can't change the value of
-     * <code>MeasureLatency</code> after you create a health check.</p> </important>
+     * console.</p>  <p>You can't change the value of
+     * <code>MeasureLatency</code> after you create a health check.</p> 
      */
     inline bool MeasureLatencyHasBeenSet() const { return m_measureLatencyHasBeenSet; }
 
@@ -1283,8 +1273,8 @@ namespace Model
      * <p>Specify whether you want Amazon Route 53 to measure the latency between
      * health checkers in multiple AWS regions and your endpoint, and to display
      * CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53
-     * console.</p> <important> <p>You can't change the value of
-     * <code>MeasureLatency</code> after you create a health check.</p> </important>
+     * console.</p>  <p>You can't change the value of
+     * <code>MeasureLatency</code> after you create a health check.</p> 
      */
     inline void SetMeasureLatency(bool value) { m_measureLatencyHasBeenSet = true; m_measureLatency = value; }
 
@@ -1292,8 +1282,8 @@ namespace Model
      * <p>Specify whether you want Amazon Route 53 to measure the latency between
      * health checkers in multiple AWS regions and your endpoint, and to display
      * CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53
-     * console.</p> <important> <p>You can't change the value of
-     * <code>MeasureLatency</code> after you create a health check.</p> </important>
+     * console.</p>  <p>You can't change the value of
+     * <code>MeasureLatency</code> after you create a health check.</p> 
      */
     inline HealthCheckConfig& WithMeasureLatency(bool value) { SetMeasureLatency(value); return *this;}
 

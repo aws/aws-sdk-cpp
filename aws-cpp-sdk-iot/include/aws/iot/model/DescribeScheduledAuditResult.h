@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -46,118 +36,130 @@ namespace Model
 
 
     /**
-     * <p>How often the scheduled audit takes place. One of "DAILY", "WEEKLY",
-     * "BIWEEKLY", or "MONTHLY". The start time of each audit is determined by the
-     * system.</p>
+     * <p>How often the scheduled audit takes place, either one of <code>DAILY</code>,
+     * <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start
+     * time of each audit is determined by the system.</p>
      */
     inline const AuditFrequency& GetFrequency() const{ return m_frequency; }
 
     /**
-     * <p>How often the scheduled audit takes place. One of "DAILY", "WEEKLY",
-     * "BIWEEKLY", or "MONTHLY". The start time of each audit is determined by the
-     * system.</p>
+     * <p>How often the scheduled audit takes place, either one of <code>DAILY</code>,
+     * <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start
+     * time of each audit is determined by the system.</p>
      */
     inline void SetFrequency(const AuditFrequency& value) { m_frequency = value; }
 
     /**
-     * <p>How often the scheduled audit takes place. One of "DAILY", "WEEKLY",
-     * "BIWEEKLY", or "MONTHLY". The start time of each audit is determined by the
-     * system.</p>
+     * <p>How often the scheduled audit takes place, either one of <code>DAILY</code>,
+     * <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start
+     * time of each audit is determined by the system.</p>
      */
     inline void SetFrequency(AuditFrequency&& value) { m_frequency = std::move(value); }
 
     /**
-     * <p>How often the scheduled audit takes place. One of "DAILY", "WEEKLY",
-     * "BIWEEKLY", or "MONTHLY". The start time of each audit is determined by the
-     * system.</p>
+     * <p>How often the scheduled audit takes place, either one of <code>DAILY</code>,
+     * <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start
+     * time of each audit is determined by the system.</p>
      */
     inline DescribeScheduledAuditResult& WithFrequency(const AuditFrequency& value) { SetFrequency(value); return *this;}
 
     /**
-     * <p>How often the scheduled audit takes place. One of "DAILY", "WEEKLY",
-     * "BIWEEKLY", or "MONTHLY". The start time of each audit is determined by the
-     * system.</p>
+     * <p>How often the scheduled audit takes place, either one of <code>DAILY</code>,
+     * <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start
+     * time of each audit is determined by the system.</p>
      */
     inline DescribeScheduledAuditResult& WithFrequency(AuditFrequency&& value) { SetFrequency(std::move(value)); return *this;}
 
 
     /**
-     * <p>The day of the month on which the scheduled audit takes place. Will be "1"
-     * through "31" or "LAST". If days 29-31 are specified, and the month does not have
-     * that many days, the audit takes place on the "LAST" day of the month.</p>
+     * <p>The day of the month on which the scheduled audit takes place. This is will
+     * be <code>1</code> through <code>31</code> or <code>LAST</code>. If days
+     * <code>29</code>-<code>31</code> are specified, and the month does not have that
+     * many days, the audit takes place on the <code>LAST</code> day of the month.</p>
      */
     inline const Aws::String& GetDayOfMonth() const{ return m_dayOfMonth; }
 
     /**
-     * <p>The day of the month on which the scheduled audit takes place. Will be "1"
-     * through "31" or "LAST". If days 29-31 are specified, and the month does not have
-     * that many days, the audit takes place on the "LAST" day of the month.</p>
+     * <p>The day of the month on which the scheduled audit takes place. This is will
+     * be <code>1</code> through <code>31</code> or <code>LAST</code>. If days
+     * <code>29</code>-<code>31</code> are specified, and the month does not have that
+     * many days, the audit takes place on the <code>LAST</code> day of the month.</p>
      */
     inline void SetDayOfMonth(const Aws::String& value) { m_dayOfMonth = value; }
 
     /**
-     * <p>The day of the month on which the scheduled audit takes place. Will be "1"
-     * through "31" or "LAST". If days 29-31 are specified, and the month does not have
-     * that many days, the audit takes place on the "LAST" day of the month.</p>
+     * <p>The day of the month on which the scheduled audit takes place. This is will
+     * be <code>1</code> through <code>31</code> or <code>LAST</code>. If days
+     * <code>29</code>-<code>31</code> are specified, and the month does not have that
+     * many days, the audit takes place on the <code>LAST</code> day of the month.</p>
      */
     inline void SetDayOfMonth(Aws::String&& value) { m_dayOfMonth = std::move(value); }
 
     /**
-     * <p>The day of the month on which the scheduled audit takes place. Will be "1"
-     * through "31" or "LAST". If days 29-31 are specified, and the month does not have
-     * that many days, the audit takes place on the "LAST" day of the month.</p>
+     * <p>The day of the month on which the scheduled audit takes place. This is will
+     * be <code>1</code> through <code>31</code> or <code>LAST</code>. If days
+     * <code>29</code>-<code>31</code> are specified, and the month does not have that
+     * many days, the audit takes place on the <code>LAST</code> day of the month.</p>
      */
     inline void SetDayOfMonth(const char* value) { m_dayOfMonth.assign(value); }
 
     /**
-     * <p>The day of the month on which the scheduled audit takes place. Will be "1"
-     * through "31" or "LAST". If days 29-31 are specified, and the month does not have
-     * that many days, the audit takes place on the "LAST" day of the month.</p>
+     * <p>The day of the month on which the scheduled audit takes place. This is will
+     * be <code>1</code> through <code>31</code> or <code>LAST</code>. If days
+     * <code>29</code>-<code>31</code> are specified, and the month does not have that
+     * many days, the audit takes place on the <code>LAST</code> day of the month.</p>
      */
     inline DescribeScheduledAuditResult& WithDayOfMonth(const Aws::String& value) { SetDayOfMonth(value); return *this;}
 
     /**
-     * <p>The day of the month on which the scheduled audit takes place. Will be "1"
-     * through "31" or "LAST". If days 29-31 are specified, and the month does not have
-     * that many days, the audit takes place on the "LAST" day of the month.</p>
+     * <p>The day of the month on which the scheduled audit takes place. This is will
+     * be <code>1</code> through <code>31</code> or <code>LAST</code>. If days
+     * <code>29</code>-<code>31</code> are specified, and the month does not have that
+     * many days, the audit takes place on the <code>LAST</code> day of the month.</p>
      */
     inline DescribeScheduledAuditResult& WithDayOfMonth(Aws::String&& value) { SetDayOfMonth(std::move(value)); return *this;}
 
     /**
-     * <p>The day of the month on which the scheduled audit takes place. Will be "1"
-     * through "31" or "LAST". If days 29-31 are specified, and the month does not have
-     * that many days, the audit takes place on the "LAST" day of the month.</p>
+     * <p>The day of the month on which the scheduled audit takes place. This is will
+     * be <code>1</code> through <code>31</code> or <code>LAST</code>. If days
+     * <code>29</code>-<code>31</code> are specified, and the month does not have that
+     * many days, the audit takes place on the <code>LAST</code> day of the month.</p>
      */
     inline DescribeScheduledAuditResult& WithDayOfMonth(const char* value) { SetDayOfMonth(value); return *this;}
 
 
     /**
-     * <p>The day of the week on which the scheduled audit takes place. One of "SUN",
-     * "MON", "TUE", "WED", "THU", "FRI", or "SAT".</p>
+     * <p>The day of the week on which the scheduled audit takes place, either one of
+     * <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>,
+     * <code>THU</code>, <code>FRI</code>, or <code>SAT</code>.</p>
      */
     inline const DayOfWeek& GetDayOfWeek() const{ return m_dayOfWeek; }
 
     /**
-     * <p>The day of the week on which the scheduled audit takes place. One of "SUN",
-     * "MON", "TUE", "WED", "THU", "FRI", or "SAT".</p>
+     * <p>The day of the week on which the scheduled audit takes place, either one of
+     * <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>,
+     * <code>THU</code>, <code>FRI</code>, or <code>SAT</code>.</p>
      */
     inline void SetDayOfWeek(const DayOfWeek& value) { m_dayOfWeek = value; }
 
     /**
-     * <p>The day of the week on which the scheduled audit takes place. One of "SUN",
-     * "MON", "TUE", "WED", "THU", "FRI", or "SAT".</p>
+     * <p>The day of the week on which the scheduled audit takes place, either one of
+     * <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>,
+     * <code>THU</code>, <code>FRI</code>, or <code>SAT</code>.</p>
      */
     inline void SetDayOfWeek(DayOfWeek&& value) { m_dayOfWeek = std::move(value); }
 
     /**
-     * <p>The day of the week on which the scheduled audit takes place. One of "SUN",
-     * "MON", "TUE", "WED", "THU", "FRI", or "SAT".</p>
+     * <p>The day of the week on which the scheduled audit takes place, either one of
+     * <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>,
+     * <code>THU</code>, <code>FRI</code>, or <code>SAT</code>.</p>
      */
     inline DescribeScheduledAuditResult& WithDayOfWeek(const DayOfWeek& value) { SetDayOfWeek(value); return *this;}
 
     /**
-     * <p>The day of the week on which the scheduled audit takes place. One of "SUN",
-     * "MON", "TUE", "WED", "THU", "FRI", or "SAT".</p>
+     * <p>The day of the week on which the scheduled audit takes place, either one of
+     * <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>,
+     * <code>THU</code>, <code>FRI</code>, or <code>SAT</code>.</p>
      */
     inline DescribeScheduledAuditResult& WithDayOfWeek(DayOfWeek&& value) { SetDayOfWeek(std::move(value)); return *this;}
 

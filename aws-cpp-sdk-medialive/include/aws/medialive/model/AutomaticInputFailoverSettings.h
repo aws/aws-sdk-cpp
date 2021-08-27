@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/model/InputPreference.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/model/FailoverCondition.h>
 #include <utility>
 
 namespace Aws
@@ -46,6 +38,92 @@ namespace Model
     AutomaticInputFailoverSettings(Aws::Utils::Json::JsonView jsonValue);
     AutomaticInputFailoverSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * This clear time defines the requirement a recovered input must meet to be
+     * considered healthy. The input must have no failover conditions for this length
+     * of time. Enter a time in milliseconds. This value is particularly important if
+     * the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED,
+     * because after this time, MediaLive will switch back to the primary input.
+     */
+    inline int GetErrorClearTimeMsec() const{ return m_errorClearTimeMsec; }
+
+    /**
+     * This clear time defines the requirement a recovered input must meet to be
+     * considered healthy. The input must have no failover conditions for this length
+     * of time. Enter a time in milliseconds. This value is particularly important if
+     * the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED,
+     * because after this time, MediaLive will switch back to the primary input.
+     */
+    inline bool ErrorClearTimeMsecHasBeenSet() const { return m_errorClearTimeMsecHasBeenSet; }
+
+    /**
+     * This clear time defines the requirement a recovered input must meet to be
+     * considered healthy. The input must have no failover conditions for this length
+     * of time. Enter a time in milliseconds. This value is particularly important if
+     * the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED,
+     * because after this time, MediaLive will switch back to the primary input.
+     */
+    inline void SetErrorClearTimeMsec(int value) { m_errorClearTimeMsecHasBeenSet = true; m_errorClearTimeMsec = value; }
+
+    /**
+     * This clear time defines the requirement a recovered input must meet to be
+     * considered healthy. The input must have no failover conditions for this length
+     * of time. Enter a time in milliseconds. This value is particularly important if
+     * the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED,
+     * because after this time, MediaLive will switch back to the primary input.
+     */
+    inline AutomaticInputFailoverSettings& WithErrorClearTimeMsec(int value) { SetErrorClearTimeMsec(value); return *this;}
+
+
+    /**
+     * A list of failover conditions. If any of these conditions occur, MediaLive will
+     * perform a failover to the other input.
+     */
+    inline const Aws::Vector<FailoverCondition>& GetFailoverConditions() const{ return m_failoverConditions; }
+
+    /**
+     * A list of failover conditions. If any of these conditions occur, MediaLive will
+     * perform a failover to the other input.
+     */
+    inline bool FailoverConditionsHasBeenSet() const { return m_failoverConditionsHasBeenSet; }
+
+    /**
+     * A list of failover conditions. If any of these conditions occur, MediaLive will
+     * perform a failover to the other input.
+     */
+    inline void SetFailoverConditions(const Aws::Vector<FailoverCondition>& value) { m_failoverConditionsHasBeenSet = true; m_failoverConditions = value; }
+
+    /**
+     * A list of failover conditions. If any of these conditions occur, MediaLive will
+     * perform a failover to the other input.
+     */
+    inline void SetFailoverConditions(Aws::Vector<FailoverCondition>&& value) { m_failoverConditionsHasBeenSet = true; m_failoverConditions = std::move(value); }
+
+    /**
+     * A list of failover conditions. If any of these conditions occur, MediaLive will
+     * perform a failover to the other input.
+     */
+    inline AutomaticInputFailoverSettings& WithFailoverConditions(const Aws::Vector<FailoverCondition>& value) { SetFailoverConditions(value); return *this;}
+
+    /**
+     * A list of failover conditions. If any of these conditions occur, MediaLive will
+     * perform a failover to the other input.
+     */
+    inline AutomaticInputFailoverSettings& WithFailoverConditions(Aws::Vector<FailoverCondition>&& value) { SetFailoverConditions(std::move(value)); return *this;}
+
+    /**
+     * A list of failover conditions. If any of these conditions occur, MediaLive will
+     * perform a failover to the other input.
+     */
+    inline AutomaticInputFailoverSettings& AddFailoverConditions(const FailoverCondition& value) { m_failoverConditionsHasBeenSet = true; m_failoverConditions.push_back(value); return *this; }
+
+    /**
+     * A list of failover conditions. If any of these conditions occur, MediaLive will
+     * perform a failover to the other input.
+     */
+    inline AutomaticInputFailoverSettings& AddFailoverConditions(FailoverCondition&& value) { m_failoverConditionsHasBeenSet = true; m_failoverConditions.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -126,6 +204,12 @@ namespace Model
     inline AutomaticInputFailoverSettings& WithSecondaryInputId(const char* value) { SetSecondaryInputId(value); return *this;}
 
   private:
+
+    int m_errorClearTimeMsec;
+    bool m_errorClearTimeMsecHasBeenSet;
+
+    Aws::Vector<FailoverCondition> m_failoverConditions;
+    bool m_failoverConditionsHasBeenSet;
 
     InputPreference m_inputPreference;
     bool m_inputPreferenceHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/VolumeType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,9 +22,11 @@ namespace Aws
 
         static const int standard_HASH = HashingUtils::HashString("standard");
         static const int io1_HASH = HashingUtils::HashString("io1");
+        static const int io2_HASH = HashingUtils::HashString("io2");
         static const int gp2_HASH = HashingUtils::HashString("gp2");
         static const int sc1_HASH = HashingUtils::HashString("sc1");
         static const int st1_HASH = HashingUtils::HashString("st1");
+        static const int gp3_HASH = HashingUtils::HashString("gp3");
 
 
         VolumeType GetVolumeTypeForName(const Aws::String& name)
@@ -48,6 +40,10 @@ namespace Aws
           {
             return VolumeType::io1;
           }
+          else if (hashCode == io2_HASH)
+          {
+            return VolumeType::io2;
+          }
           else if (hashCode == gp2_HASH)
           {
             return VolumeType::gp2;
@@ -59,6 +55,10 @@ namespace Aws
           else if (hashCode == st1_HASH)
           {
             return VolumeType::st1;
+          }
+          else if (hashCode == gp3_HASH)
+          {
+            return VolumeType::gp3;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -78,12 +78,16 @@ namespace Aws
             return "standard";
           case VolumeType::io1:
             return "io1";
+          case VolumeType::io2:
+            return "io2";
           case VolumeType::gp2:
             return "gp2";
           case VolumeType::sc1:
             return "sc1";
           case VolumeType::st1:
             return "st1";
+          case VolumeType::gp3:
+            return "gp3";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

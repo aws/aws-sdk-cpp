@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
@@ -192,6 +182,70 @@ namespace Model
 
 
     /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
+     * the resource was originally backed up in; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     * recovery is restored to the same AWS account or Region, this value will be
+     * <code>null</code>.</p>
+     */
+    inline const Aws::String& GetSourceBackupVaultArn() const{ return m_sourceBackupVaultArn; }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
+     * the resource was originally backed up in; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     * recovery is restored to the same AWS account or Region, this value will be
+     * <code>null</code>.</p>
+     */
+    inline void SetSourceBackupVaultArn(const Aws::String& value) { m_sourceBackupVaultArn = value; }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
+     * the resource was originally backed up in; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     * recovery is restored to the same AWS account or Region, this value will be
+     * <code>null</code>.</p>
+     */
+    inline void SetSourceBackupVaultArn(Aws::String&& value) { m_sourceBackupVaultArn = std::move(value); }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
+     * the resource was originally backed up in; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     * recovery is restored to the same AWS account or Region, this value will be
+     * <code>null</code>.</p>
+     */
+    inline void SetSourceBackupVaultArn(const char* value) { m_sourceBackupVaultArn.assign(value); }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
+     * the resource was originally backed up in; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     * recovery is restored to the same AWS account or Region, this value will be
+     * <code>null</code>.</p>
+     */
+    inline DescribeRecoveryPointResult& WithSourceBackupVaultArn(const Aws::String& value) { SetSourceBackupVaultArn(value); return *this;}
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
+     * the resource was originally backed up in; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     * recovery is restored to the same AWS account or Region, this value will be
+     * <code>null</code>.</p>
+     */
+    inline DescribeRecoveryPointResult& WithSourceBackupVaultArn(Aws::String&& value) { SetSourceBackupVaultArn(std::move(value)); return *this;}
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
+     * the resource was originally backed up in; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     * recovery is restored to the same AWS account or Region, this value will be
+     * <code>null</code>.</p>
+     */
+    inline DescribeRecoveryPointResult& WithSourceBackupVaultArn(const char* value) { SetSourceBackupVaultArn(value); return *this;}
+
+
+    /**
      * <p>An ARN that uniquely identifies a saved resource. The format of the ARN
      * depends on the resource type.</p>
      */
@@ -369,37 +423,37 @@ namespace Model
 
 
     /**
-     * <p>A status code specifying the state of the recovery point.</p> <note> <p>A
+     * <p>A status code specifying the state of the recovery point.</p>  <p>A
      * partial status indicates that the recovery point was not successfully re-created
-     * and must be retried.</p> </note>
+     * and must be retried.</p> 
      */
     inline const RecoveryPointStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>A status code specifying the state of the recovery point.</p> <note> <p>A
+     * <p>A status code specifying the state of the recovery point.</p>  <p>A
      * partial status indicates that the recovery point was not successfully re-created
-     * and must be retried.</p> </note>
+     * and must be retried.</p> 
      */
     inline void SetStatus(const RecoveryPointStatus& value) { m_status = value; }
 
     /**
-     * <p>A status code specifying the state of the recovery point.</p> <note> <p>A
+     * <p>A status code specifying the state of the recovery point.</p>  <p>A
      * partial status indicates that the recovery point was not successfully re-created
-     * and must be retried.</p> </note>
+     * and must be retried.</p> 
      */
     inline void SetStatus(RecoveryPointStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>A status code specifying the state of the recovery point.</p> <note> <p>A
+     * <p>A status code specifying the state of the recovery point.</p>  <p>A
      * partial status indicates that the recovery point was not successfully re-created
-     * and must be retried.</p> </note>
+     * and must be retried.</p> 
      */
     inline DescribeRecoveryPointResult& WithStatus(const RecoveryPointStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>A status code specifying the state of the recovery point.</p> <note> <p>A
+     * <p>A status code specifying the state of the recovery point.</p>  <p>A
      * partial status indicates that the recovery point was not successfully re-created
-     * and must be retried.</p> </note>
+     * and must be retried.</p> 
      */
     inline DescribeRecoveryPointResult& WithStatus(RecoveryPointStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -732,6 +786,8 @@ namespace Model
     Aws::String m_backupVaultName;
 
     Aws::String m_backupVaultArn;
+
+    Aws::String m_sourceBackupVaultArn;
 
     Aws::String m_resourceArn;
 

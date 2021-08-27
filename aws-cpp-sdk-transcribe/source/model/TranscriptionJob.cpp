@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/transcribe/model/TranscriptionJob.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -45,8 +35,14 @@ TranscriptionJob::TranscriptionJob() :
     m_completionTimeHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_settingsHasBeenSet(false),
+    m_modelSettingsHasBeenSet(false),
     m_jobExecutionSettingsHasBeenSet(false),
-    m_contentRedactionHasBeenSet(false)
+    m_contentRedactionHasBeenSet(false),
+    m_identifyLanguage(false),
+    m_identifyLanguageHasBeenSet(false),
+    m_languageOptionsHasBeenSet(false),
+    m_identifiedLanguageScore(0.0),
+    m_identifiedLanguageScoreHasBeenSet(false)
 {
 }
 
@@ -67,8 +63,14 @@ TranscriptionJob::TranscriptionJob(JsonView jsonValue) :
     m_completionTimeHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_settingsHasBeenSet(false),
+    m_modelSettingsHasBeenSet(false),
     m_jobExecutionSettingsHasBeenSet(false),
-    m_contentRedactionHasBeenSet(false)
+    m_contentRedactionHasBeenSet(false),
+    m_identifyLanguage(false),
+    m_identifyLanguageHasBeenSet(false),
+    m_languageOptionsHasBeenSet(false),
+    m_identifiedLanguageScore(0.0),
+    m_identifiedLanguageScoreHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -159,6 +161,13 @@ TranscriptionJob& TranscriptionJob::operator =(JsonView jsonValue)
     m_settingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelSettings"))
+  {
+    m_modelSettings = jsonValue.GetObject("ModelSettings");
+
+    m_modelSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("JobExecutionSettings"))
   {
     m_jobExecutionSettings = jsonValue.GetObject("JobExecutionSettings");
@@ -171,6 +180,30 @@ TranscriptionJob& TranscriptionJob::operator =(JsonView jsonValue)
     m_contentRedaction = jsonValue.GetObject("ContentRedaction");
 
     m_contentRedactionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IdentifyLanguage"))
+  {
+    m_identifyLanguage = jsonValue.GetBool("IdentifyLanguage");
+
+    m_identifyLanguageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LanguageOptions"))
+  {
+    Array<JsonView> languageOptionsJsonList = jsonValue.GetArray("LanguageOptions");
+    for(unsigned languageOptionsIndex = 0; languageOptionsIndex < languageOptionsJsonList.GetLength(); ++languageOptionsIndex)
+    {
+      m_languageOptions.push_back(LanguageCodeMapper::GetLanguageCodeForName(languageOptionsJsonList[languageOptionsIndex].AsString()));
+    }
+    m_languageOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IdentifiedLanguageScore"))
+  {
+    m_identifiedLanguageScore = jsonValue.GetDouble("IdentifiedLanguageScore");
+
+    m_identifiedLanguageScoreHasBeenSet = true;
   }
 
   return *this;
@@ -246,6 +279,12 @@ JsonValue TranscriptionJob::Jsonize() const
 
   }
 
+  if(m_modelSettingsHasBeenSet)
+  {
+   payload.WithObject("ModelSettings", m_modelSettings.Jsonize());
+
+  }
+
   if(m_jobExecutionSettingsHasBeenSet)
   {
    payload.WithObject("JobExecutionSettings", m_jobExecutionSettings.Jsonize());
@@ -255,6 +294,29 @@ JsonValue TranscriptionJob::Jsonize() const
   if(m_contentRedactionHasBeenSet)
   {
    payload.WithObject("ContentRedaction", m_contentRedaction.Jsonize());
+
+  }
+
+  if(m_identifyLanguageHasBeenSet)
+  {
+   payload.WithBool("IdentifyLanguage", m_identifyLanguage);
+
+  }
+
+  if(m_languageOptionsHasBeenSet)
+  {
+   Array<JsonValue> languageOptionsJsonList(m_languageOptions.size());
+   for(unsigned languageOptionsIndex = 0; languageOptionsIndex < languageOptionsJsonList.GetLength(); ++languageOptionsIndex)
+   {
+     languageOptionsJsonList[languageOptionsIndex].AsString(LanguageCodeMapper::GetNameForLanguageCode(m_languageOptions[languageOptionsIndex]));
+   }
+   payload.WithArray("LanguageOptions", std::move(languageOptionsJsonList));
+
+  }
+
+  if(m_identifiedLanguageScoreHasBeenSet)
+  {
+   payload.WithDouble("IdentifiedLanguageScore", m_identifiedLanguageScore);
 
   }
 

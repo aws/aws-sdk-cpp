@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -58,7 +48,7 @@ namespace Model
     /**
      * <p>Object data.</p>
      */
-    inline Aws::IStream& GetBody() { return m_body.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetBody() { return m_body.GetUnderlyingStream(); }
 
     /**
      * <p>Object data.</p>
@@ -919,32 +909,51 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption
+     * with AWS KMS (SSE-KMS).</p>
+     */
+    inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
+
+    /**
+     * <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption
+     * with AWS KMS (SSE-KMS).</p>
+     */
+    inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabled = value; }
+
+    /**
+     * <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption
+     * with AWS KMS (SSE-KMS).</p>
+     */
+    inline GetObjectResult& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
+
+
+    /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p>
+     * header for all objects except for S3 Standard storage class objects.</p>
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p>
+     * header for all objects except for S3 Standard storage class objects.</p>
      */
     inline void SetStorageClass(const StorageClass& value) { m_storageClass = value; }
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p>
+     * header for all objects except for S3 Standard storage class objects.</p>
      */
     inline void SetStorageClass(StorageClass&& value) { m_storageClass = std::move(value); }
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p>
+     * header for all objects except for S3 Standard storage class objects.</p>
      */
     inline GetObjectResult& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p>
+     * header for all objects except for S3 Standard storage class objects.</p>
      */
     inline GetObjectResult& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
@@ -1201,6 +1210,8 @@ namespace Model
     Aws::String m_sSECustomerKeyMD5;
 
     Aws::String m_sSEKMSKeyId;
+
+    bool m_bucketKeyEnabled;
 
     StorageClass m_storageClass;
 

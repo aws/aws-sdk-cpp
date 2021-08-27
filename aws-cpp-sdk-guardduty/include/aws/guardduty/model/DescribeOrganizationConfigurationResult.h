@@ -1,20 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
+#include <aws/guardduty/model/OrganizationDataSourceConfigurationsResult.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,27 +53,60 @@ namespace Model
 
     /**
      * <p>Indicates whether the maximum number of allowed member accounts are already
-     * associated with the delegated administrator master account.</p>
+     * associated with the delegated administrator account for your organization.</p>
      */
     inline bool GetMemberAccountLimitReached() const{ return m_memberAccountLimitReached; }
 
     /**
      * <p>Indicates whether the maximum number of allowed member accounts are already
-     * associated with the delegated administrator master account.</p>
+     * associated with the delegated administrator account for your organization.</p>
      */
     inline void SetMemberAccountLimitReached(bool value) { m_memberAccountLimitReached = value; }
 
     /**
      * <p>Indicates whether the maximum number of allowed member accounts are already
-     * associated with the delegated administrator master account.</p>
+     * associated with the delegated administrator account for your organization.</p>
      */
     inline DescribeOrganizationConfigurationResult& WithMemberAccountLimitReached(bool value) { SetMemberAccountLimitReached(value); return *this;}
+
+
+    /**
+     * <p>Describes which data sources are enabled automatically for member
+     * accounts.</p>
+     */
+    inline const OrganizationDataSourceConfigurationsResult& GetDataSources() const{ return m_dataSources; }
+
+    /**
+     * <p>Describes which data sources are enabled automatically for member
+     * accounts.</p>
+     */
+    inline void SetDataSources(const OrganizationDataSourceConfigurationsResult& value) { m_dataSources = value; }
+
+    /**
+     * <p>Describes which data sources are enabled automatically for member
+     * accounts.</p>
+     */
+    inline void SetDataSources(OrganizationDataSourceConfigurationsResult&& value) { m_dataSources = std::move(value); }
+
+    /**
+     * <p>Describes which data sources are enabled automatically for member
+     * accounts.</p>
+     */
+    inline DescribeOrganizationConfigurationResult& WithDataSources(const OrganizationDataSourceConfigurationsResult& value) { SetDataSources(value); return *this;}
+
+    /**
+     * <p>Describes which data sources are enabled automatically for member
+     * accounts.</p>
+     */
+    inline DescribeOrganizationConfigurationResult& WithDataSources(OrganizationDataSourceConfigurationsResult&& value) { SetDataSources(std::move(value)); return *this;}
 
   private:
 
     bool m_autoEnable;
 
     bool m_memberAccountLimitReached;
+
+    OrganizationDataSourceConfigurationsResult m_dataSources;
   };
 
 } // namespace Model

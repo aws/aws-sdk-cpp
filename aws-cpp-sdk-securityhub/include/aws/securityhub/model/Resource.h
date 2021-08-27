@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -237,6 +227,47 @@ namespace Model
 
 
     /**
+     * <p/>
+     */
+    inline const Aws::String& GetResourceRole() const{ return m_resourceRole; }
+
+    /**
+     * <p/>
+     */
+    inline bool ResourceRoleHasBeenSet() const { return m_resourceRoleHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetResourceRole(const Aws::String& value) { m_resourceRoleHasBeenSet = true; m_resourceRole = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetResourceRole(Aws::String&& value) { m_resourceRoleHasBeenSet = true; m_resourceRole = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline void SetResourceRole(const char* value) { m_resourceRoleHasBeenSet = true; m_resourceRole.assign(value); }
+
+    /**
+     * <p/>
+     */
+    inline Resource& WithResourceRole(const Aws::String& value) { SetResourceRole(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline Resource& WithResourceRole(Aws::String&& value) { SetResourceRole(std::move(value)); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline Resource& WithResourceRole(const char* value) { SetResourceRole(value); return *this;}
+
+
+    /**
      * <p>A list of AWS tags associated with a resource at the time the finding was
      * processed.</p>
      */
@@ -358,6 +389,9 @@ namespace Model
 
     Aws::String m_region;
     bool m_regionHasBeenSet;
+
+    Aws::String m_resourceRole;
+    bool m_resourceRoleHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

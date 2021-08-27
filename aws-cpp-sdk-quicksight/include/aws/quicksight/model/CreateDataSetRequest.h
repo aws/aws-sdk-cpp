@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -25,6 +15,7 @@
 #include <aws/quicksight/model/LogicalTable.h>
 #include <aws/quicksight/model/ColumnGroup.h>
 #include <aws/quicksight/model/ResourcePermission.h>
+#include <aws/quicksight/model/ColumnLevelPermissionRule.h>
 #include <aws/quicksight/model/Tag.h>
 #include <utility>
 
@@ -487,6 +478,55 @@ namespace Model
 
 
     /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline const Aws::Vector<ColumnLevelPermissionRule>& GetColumnLevelPermissionRules() const{ return m_columnLevelPermissionRules; }
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline bool ColumnLevelPermissionRulesHasBeenSet() const { return m_columnLevelPermissionRulesHasBeenSet; }
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline void SetColumnLevelPermissionRules(const Aws::Vector<ColumnLevelPermissionRule>& value) { m_columnLevelPermissionRulesHasBeenSet = true; m_columnLevelPermissionRules = value; }
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline void SetColumnLevelPermissionRules(Aws::Vector<ColumnLevelPermissionRule>&& value) { m_columnLevelPermissionRulesHasBeenSet = true; m_columnLevelPermissionRules = std::move(value); }
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline CreateDataSetRequest& WithColumnLevelPermissionRules(const Aws::Vector<ColumnLevelPermissionRule>& value) { SetColumnLevelPermissionRules(value); return *this;}
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline CreateDataSetRequest& WithColumnLevelPermissionRules(Aws::Vector<ColumnLevelPermissionRule>&& value) { SetColumnLevelPermissionRules(std::move(value)); return *this;}
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline CreateDataSetRequest& AddColumnLevelPermissionRules(const ColumnLevelPermissionRule& value) { m_columnLevelPermissionRulesHasBeenSet = true; m_columnLevelPermissionRules.push_back(value); return *this; }
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline CreateDataSetRequest& AddColumnLevelPermissionRules(ColumnLevelPermissionRule&& value) { m_columnLevelPermissionRulesHasBeenSet = true; m_columnLevelPermissionRules.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Contains a map of the key-value pairs for the resource tag or tags assigned
      * to the dataset.</p>
      */
@@ -562,6 +602,9 @@ namespace Model
 
     RowLevelPermissionDataSet m_rowLevelPermissionDataSet;
     bool m_rowLevelPermissionDataSetHasBeenSet;
+
+    Aws::Vector<ColumnLevelPermissionRule> m_columnLevelPermissionRules;
+    bool m_columnLevelPermissionRulesHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

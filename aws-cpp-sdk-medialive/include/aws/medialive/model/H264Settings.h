@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/medialive/model/H264ColorMetadata.h>
 #include <aws/medialive/model/H264ColorSpaceSettings.h>
 #include <aws/medialive/model/H264EntropyEncoding.h>
+#include <aws/medialive/model/H264FilterSettings.h>
 #include <aws/medialive/model/FixedAfd.h>
 #include <aws/medialive/model/H264FlickerAq.h>
 #include <aws/medialive/model/H264ForceFieldPictures.h>
@@ -30,6 +21,7 @@
 #include <aws/medialive/model/H264LookAheadRateControl.h>
 #include <aws/medialive/model/H264ParControl.h>
 #include <aws/medialive/model/H264Profile.h>
+#include <aws/medialive/model/H264QualityLevel.h>
 #include <aws/medialive/model/H264RateControlMode.h>
 #include <aws/medialive/model/H264ScanType.h>
 #include <aws/medialive/model/H264SceneChangeDetect.h>
@@ -320,6 +312,37 @@ namespace Model
 
 
     /**
+     * Optional filters that you can apply to an encode.
+     */
+    inline const H264FilterSettings& GetFilterSettings() const{ return m_filterSettings; }
+
+    /**
+     * Optional filters that you can apply to an encode.
+     */
+    inline bool FilterSettingsHasBeenSet() const { return m_filterSettingsHasBeenSet; }
+
+    /**
+     * Optional filters that you can apply to an encode.
+     */
+    inline void SetFilterSettings(const H264FilterSettings& value) { m_filterSettingsHasBeenSet = true; m_filterSettings = value; }
+
+    /**
+     * Optional filters that you can apply to an encode.
+     */
+    inline void SetFilterSettings(H264FilterSettings&& value) { m_filterSettingsHasBeenSet = true; m_filterSettings = std::move(value); }
+
+    /**
+     * Optional filters that you can apply to an encode.
+     */
+    inline H264Settings& WithFilterSettings(const H264FilterSettings& value) { SetFilterSettings(value); return *this;}
+
+    /**
+     * Optional filters that you can apply to an encode.
+     */
+    inline H264Settings& WithFilterSettings(H264FilterSettings&& value) { SetFilterSettings(std::move(value)); return *this;}
+
+
+    /**
      * Four bit AFD value to write on all frames of video in the output stream. Only
      * valid when afdSignaling is set to 'Fixed'.
      */
@@ -395,73 +418,79 @@ namespace Model
 
     /**
      * This setting applies only when scan type is "interlaced." It controls whether
-     * coding is on a field basis or a frame basis. (When the video is progressive, the
-     * coding is always on a frame basis.)
-enabled: Always code on a field basis, so
-     * that odd and even sets of fields are coded separately.
-disabled: Code the two
-     * sets of fields separately (on a field basis) or together (on a frame basis,
-     * using PAFF or MBAFF), depending on what is most appropriate for the content.
+     * coding is performed on a field basis or on a frame basis. (When the video is
+     * progressive, the coding is always performed on a frame basis.)
+enabled: Force
+     * MediaLive to code on a field basis, so that odd and even sets of fields are
+     * coded separately.
+disabled: Code the two sets of fields separately (on a field
+     * basis) or together (on a frame basis using PAFF), depending on what is most
+     * appropriate for the content.
      */
     inline const H264ForceFieldPictures& GetForceFieldPictures() const{ return m_forceFieldPictures; }
 
     /**
      * This setting applies only when scan type is "interlaced." It controls whether
-     * coding is on a field basis or a frame basis. (When the video is progressive, the
-     * coding is always on a frame basis.)
-enabled: Always code on a field basis, so
-     * that odd and even sets of fields are coded separately.
-disabled: Code the two
-     * sets of fields separately (on a field basis) or together (on a frame basis,
-     * using PAFF or MBAFF), depending on what is most appropriate for the content.
+     * coding is performed on a field basis or on a frame basis. (When the video is
+     * progressive, the coding is always performed on a frame basis.)
+enabled: Force
+     * MediaLive to code on a field basis, so that odd and even sets of fields are
+     * coded separately.
+disabled: Code the two sets of fields separately (on a field
+     * basis) or together (on a frame basis using PAFF), depending on what is most
+     * appropriate for the content.
      */
     inline bool ForceFieldPicturesHasBeenSet() const { return m_forceFieldPicturesHasBeenSet; }
 
     /**
      * This setting applies only when scan type is "interlaced." It controls whether
-     * coding is on a field basis or a frame basis. (When the video is progressive, the
-     * coding is always on a frame basis.)
-enabled: Always code on a field basis, so
-     * that odd and even sets of fields are coded separately.
-disabled: Code the two
-     * sets of fields separately (on a field basis) or together (on a frame basis,
-     * using PAFF or MBAFF), depending on what is most appropriate for the content.
+     * coding is performed on a field basis or on a frame basis. (When the video is
+     * progressive, the coding is always performed on a frame basis.)
+enabled: Force
+     * MediaLive to code on a field basis, so that odd and even sets of fields are
+     * coded separately.
+disabled: Code the two sets of fields separately (on a field
+     * basis) or together (on a frame basis using PAFF), depending on what is most
+     * appropriate for the content.
      */
     inline void SetForceFieldPictures(const H264ForceFieldPictures& value) { m_forceFieldPicturesHasBeenSet = true; m_forceFieldPictures = value; }
 
     /**
      * This setting applies only when scan type is "interlaced." It controls whether
-     * coding is on a field basis or a frame basis. (When the video is progressive, the
-     * coding is always on a frame basis.)
-enabled: Always code on a field basis, so
-     * that odd and even sets of fields are coded separately.
-disabled: Code the two
-     * sets of fields separately (on a field basis) or together (on a frame basis,
-     * using PAFF or MBAFF), depending on what is most appropriate for the content.
+     * coding is performed on a field basis or on a frame basis. (When the video is
+     * progressive, the coding is always performed on a frame basis.)
+enabled: Force
+     * MediaLive to code on a field basis, so that odd and even sets of fields are
+     * coded separately.
+disabled: Code the two sets of fields separately (on a field
+     * basis) or together (on a frame basis using PAFF), depending on what is most
+     * appropriate for the content.
      */
     inline void SetForceFieldPictures(H264ForceFieldPictures&& value) { m_forceFieldPicturesHasBeenSet = true; m_forceFieldPictures = std::move(value); }
 
     /**
      * This setting applies only when scan type is "interlaced." It controls whether
-     * coding is on a field basis or a frame basis. (When the video is progressive, the
-     * coding is always on a frame basis.)
-enabled: Always code on a field basis, so
-     * that odd and even sets of fields are coded separately.
-disabled: Code the two
-     * sets of fields separately (on a field basis) or together (on a frame basis,
-     * using PAFF or MBAFF), depending on what is most appropriate for the content.
+     * coding is performed on a field basis or on a frame basis. (When the video is
+     * progressive, the coding is always performed on a frame basis.)
+enabled: Force
+     * MediaLive to code on a field basis, so that odd and even sets of fields are
+     * coded separately.
+disabled: Code the two sets of fields separately (on a field
+     * basis) or together (on a frame basis using PAFF), depending on what is most
+     * appropriate for the content.
      */
     inline H264Settings& WithForceFieldPictures(const H264ForceFieldPictures& value) { SetForceFieldPictures(value); return *this;}
 
     /**
      * This setting applies only when scan type is "interlaced." It controls whether
-     * coding is on a field basis or a frame basis. (When the video is progressive, the
-     * coding is always on a frame basis.)
-enabled: Always code on a field basis, so
-     * that odd and even sets of fields are coded separately.
-disabled: Code the two
-     * sets of fields separately (on a field basis) or together (on a frame basis,
-     * using PAFF or MBAFF), depending on what is most appropriate for the content.
+     * coding is performed on a field basis or on a frame basis. (When the video is
+     * progressive, the coding is always performed on a frame basis.)
+enabled: Force
+     * MediaLive to code on a field basis, so that odd and even sets of fields are
+     * coded separately.
+disabled: Code the two sets of fields separately (on a field
+     * basis) or together (on a frame basis using PAFF), depending on what is most
+     * appropriate for the content.
      */
     inline H264Settings& WithForceFieldPictures(H264ForceFieldPictures&& value) { SetForceFieldPictures(std::move(value)); return *this;}
 
@@ -1019,6 +1048,79 @@ For VBR: Set the maximum bitrate in
      * H.264 Profile.
      */
     inline H264Settings& WithProfile(H264Profile&& value) { SetProfile(std::move(value)); return *this;}
+
+
+    /**
+     * Leave as STANDARD_QUALITY or choose a different value (which might result in
+     * additional costs to run the channel).
+- ENHANCED_QUALITY: Produces a slightly
+     * better video quality without an increase in the bitrate. Has an effect only when
+     * the Rate control mode is QVBR or CBR. If this channel is in a MediaLive
+     * multiplex, the value must be ENHANCED_QUALITY.
+- STANDARD_QUALITY: Valid for any
+     * Rate control mode.
+     */
+    inline const H264QualityLevel& GetQualityLevel() const{ return m_qualityLevel; }
+
+    /**
+     * Leave as STANDARD_QUALITY or choose a different value (which might result in
+     * additional costs to run the channel).
+- ENHANCED_QUALITY: Produces a slightly
+     * better video quality without an increase in the bitrate. Has an effect only when
+     * the Rate control mode is QVBR or CBR. If this channel is in a MediaLive
+     * multiplex, the value must be ENHANCED_QUALITY.
+- STANDARD_QUALITY: Valid for any
+     * Rate control mode.
+     */
+    inline bool QualityLevelHasBeenSet() const { return m_qualityLevelHasBeenSet; }
+
+    /**
+     * Leave as STANDARD_QUALITY or choose a different value (which might result in
+     * additional costs to run the channel).
+- ENHANCED_QUALITY: Produces a slightly
+     * better video quality without an increase in the bitrate. Has an effect only when
+     * the Rate control mode is QVBR or CBR. If this channel is in a MediaLive
+     * multiplex, the value must be ENHANCED_QUALITY.
+- STANDARD_QUALITY: Valid for any
+     * Rate control mode.
+     */
+    inline void SetQualityLevel(const H264QualityLevel& value) { m_qualityLevelHasBeenSet = true; m_qualityLevel = value; }
+
+    /**
+     * Leave as STANDARD_QUALITY or choose a different value (which might result in
+     * additional costs to run the channel).
+- ENHANCED_QUALITY: Produces a slightly
+     * better video quality without an increase in the bitrate. Has an effect only when
+     * the Rate control mode is QVBR or CBR. If this channel is in a MediaLive
+     * multiplex, the value must be ENHANCED_QUALITY.
+- STANDARD_QUALITY: Valid for any
+     * Rate control mode.
+     */
+    inline void SetQualityLevel(H264QualityLevel&& value) { m_qualityLevelHasBeenSet = true; m_qualityLevel = std::move(value); }
+
+    /**
+     * Leave as STANDARD_QUALITY or choose a different value (which might result in
+     * additional costs to run the channel).
+- ENHANCED_QUALITY: Produces a slightly
+     * better video quality without an increase in the bitrate. Has an effect only when
+     * the Rate control mode is QVBR or CBR. If this channel is in a MediaLive
+     * multiplex, the value must be ENHANCED_QUALITY.
+- STANDARD_QUALITY: Valid for any
+     * Rate control mode.
+     */
+    inline H264Settings& WithQualityLevel(const H264QualityLevel& value) { SetQualityLevel(value); return *this;}
+
+    /**
+     * Leave as STANDARD_QUALITY or choose a different value (which might result in
+     * additional costs to run the channel).
+- ENHANCED_QUALITY: Produces a slightly
+     * better video quality without an increase in the bitrate. Has an effect only when
+     * the Rate control mode is QVBR or CBR. If this channel is in a MediaLive
+     * multiplex, the value must be ENHANCED_QUALITY.
+- STANDARD_QUALITY: Valid for any
+     * Rate control mode.
+     */
+    inline H264Settings& WithQualityLevel(H264QualityLevel&& value) { SetQualityLevel(std::move(value)); return *this;}
 
 
     /**
@@ -1611,6 +1713,9 @@ This field is optional; when
     H264EntropyEncoding m_entropyEncoding;
     bool m_entropyEncodingHasBeenSet;
 
+    H264FilterSettings m_filterSettings;
+    bool m_filterSettingsHasBeenSet;
+
     FixedAfd m_fixedAfd;
     bool m_fixedAfdHasBeenSet;
 
@@ -1670,6 +1775,9 @@ This field is optional; when
 
     H264Profile m_profile;
     bool m_profileHasBeenSet;
+
+    H264QualityLevel m_qualityLevel;
+    bool m_qualityLevelHasBeenSet;
 
     int m_qvbrQualityLevel;
     bool m_qvbrQualityLevelHasBeenSet;

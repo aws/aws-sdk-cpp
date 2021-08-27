@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ce/model/Dimension.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -59,6 +49,8 @@ namespace Aws
         static const int SAVINGS_PLANS_TYPE_HASH = HashingUtils::HashString("SAVINGS_PLANS_TYPE");
         static const int SAVINGS_PLAN_ARN_HASH = HashingUtils::HashString("SAVINGS_PLAN_ARN");
         static const int PAYMENT_OPTION_HASH = HashingUtils::HashString("PAYMENT_OPTION");
+        static const int AGREEMENT_END_DATE_TIME_AFTER_HASH = HashingUtils::HashString("AGREEMENT_END_DATE_TIME_AFTER");
+        static const int AGREEMENT_END_DATE_TIME_BEFORE_HASH = HashingUtils::HashString("AGREEMENT_END_DATE_TIME_BEFORE");
 
 
         Dimension GetDimensionForName(const Aws::String& name)
@@ -180,6 +172,14 @@ namespace Aws
           {
             return Dimension::PAYMENT_OPTION;
           }
+          else if (hashCode == AGREEMENT_END_DATE_TIME_AFTER_HASH)
+          {
+            return Dimension::AGREEMENT_END_DATE_TIME_AFTER;
+          }
+          else if (hashCode == AGREEMENT_END_DATE_TIME_BEFORE_HASH)
+          {
+            return Dimension::AGREEMENT_END_DATE_TIME_BEFORE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -252,6 +252,10 @@ namespace Aws
             return "SAVINGS_PLAN_ARN";
           case Dimension::PAYMENT_OPTION:
             return "PAYMENT_OPTION";
+          case Dimension::AGREEMENT_END_DATE_TIME_AFTER:
+            return "AGREEMENT_END_DATE_TIME_AFTER";
+          case Dimension::AGREEMENT_END_DATE_TIME_BEFORE:
+            return "AGREEMENT_END_DATE_TIME_BEFORE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

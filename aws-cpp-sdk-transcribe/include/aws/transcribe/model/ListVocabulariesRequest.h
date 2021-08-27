@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
@@ -158,65 +148,65 @@ namespace Model
 
     /**
      * <p>When specified, the vocabularies returned in the list are limited to
-     * vocabularies whose name contains the specified string. The search is
-     * case-insensitive, <code>ListVocabularies</code> returns both "vocabularyname"
-     * and "VocabularyName" in the response list.</p>
+     * vocabularies whose name contains the specified string. The search is not case
+     * sensitive, <code>ListVocabularies</code> returns both "vocabularyname" and
+     * "VocabularyName" in the response list.</p>
      */
     inline const Aws::String& GetNameContains() const{ return m_nameContains; }
 
     /**
      * <p>When specified, the vocabularies returned in the list are limited to
-     * vocabularies whose name contains the specified string. The search is
-     * case-insensitive, <code>ListVocabularies</code> returns both "vocabularyname"
-     * and "VocabularyName" in the response list.</p>
+     * vocabularies whose name contains the specified string. The search is not case
+     * sensitive, <code>ListVocabularies</code> returns both "vocabularyname" and
+     * "VocabularyName" in the response list.</p>
      */
     inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
 
     /**
      * <p>When specified, the vocabularies returned in the list are limited to
-     * vocabularies whose name contains the specified string. The search is
-     * case-insensitive, <code>ListVocabularies</code> returns both "vocabularyname"
-     * and "VocabularyName" in the response list.</p>
+     * vocabularies whose name contains the specified string. The search is not case
+     * sensitive, <code>ListVocabularies</code> returns both "vocabularyname" and
+     * "VocabularyName" in the response list.</p>
      */
     inline void SetNameContains(const Aws::String& value) { m_nameContainsHasBeenSet = true; m_nameContains = value; }
 
     /**
      * <p>When specified, the vocabularies returned in the list are limited to
-     * vocabularies whose name contains the specified string. The search is
-     * case-insensitive, <code>ListVocabularies</code> returns both "vocabularyname"
-     * and "VocabularyName" in the response list.</p>
+     * vocabularies whose name contains the specified string. The search is not case
+     * sensitive, <code>ListVocabularies</code> returns both "vocabularyname" and
+     * "VocabularyName" in the response list.</p>
      */
     inline void SetNameContains(Aws::String&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::move(value); }
 
     /**
      * <p>When specified, the vocabularies returned in the list are limited to
-     * vocabularies whose name contains the specified string. The search is
-     * case-insensitive, <code>ListVocabularies</code> returns both "vocabularyname"
-     * and "VocabularyName" in the response list.</p>
+     * vocabularies whose name contains the specified string. The search is not case
+     * sensitive, <code>ListVocabularies</code> returns both "vocabularyname" and
+     * "VocabularyName" in the response list.</p>
      */
     inline void SetNameContains(const char* value) { m_nameContainsHasBeenSet = true; m_nameContains.assign(value); }
 
     /**
      * <p>When specified, the vocabularies returned in the list are limited to
-     * vocabularies whose name contains the specified string. The search is
-     * case-insensitive, <code>ListVocabularies</code> returns both "vocabularyname"
-     * and "VocabularyName" in the response list.</p>
+     * vocabularies whose name contains the specified string. The search is not case
+     * sensitive, <code>ListVocabularies</code> returns both "vocabularyname" and
+     * "VocabularyName" in the response list.</p>
      */
     inline ListVocabulariesRequest& WithNameContains(const Aws::String& value) { SetNameContains(value); return *this;}
 
     /**
      * <p>When specified, the vocabularies returned in the list are limited to
-     * vocabularies whose name contains the specified string. The search is
-     * case-insensitive, <code>ListVocabularies</code> returns both "vocabularyname"
-     * and "VocabularyName" in the response list.</p>
+     * vocabularies whose name contains the specified string. The search is not case
+     * sensitive, <code>ListVocabularies</code> returns both "vocabularyname" and
+     * "VocabularyName" in the response list.</p>
      */
     inline ListVocabulariesRequest& WithNameContains(Aws::String&& value) { SetNameContains(std::move(value)); return *this;}
 
     /**
      * <p>When specified, the vocabularies returned in the list are limited to
-     * vocabularies whose name contains the specified string. The search is
-     * case-insensitive, <code>ListVocabularies</code> returns both "vocabularyname"
-     * and "VocabularyName" in the response list.</p>
+     * vocabularies whose name contains the specified string. The search is not case
+     * sensitive, <code>ListVocabularies</code> returns both "vocabularyname" and
+     * "VocabularyName" in the response list.</p>
      */
     inline ListVocabulariesRequest& WithNameContains(const char* value) { SetNameContains(value); return *this;}
 

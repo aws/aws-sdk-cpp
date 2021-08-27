@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/meteringmarketplace/model/UsageRecord.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -33,7 +23,8 @@ UsageRecord::UsageRecord() :
     m_customerIdentifierHasBeenSet(false),
     m_dimensionHasBeenSet(false),
     m_quantity(0),
-    m_quantityHasBeenSet(false)
+    m_quantityHasBeenSet(false),
+    m_usageAllocationsHasBeenSet(false)
 {
 }
 
@@ -42,7 +33,8 @@ UsageRecord::UsageRecord(JsonView jsonValue) :
     m_customerIdentifierHasBeenSet(false),
     m_dimensionHasBeenSet(false),
     m_quantity(0),
-    m_quantityHasBeenSet(false)
+    m_quantityHasBeenSet(false),
+    m_usageAllocationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +69,16 @@ UsageRecord& UsageRecord::operator =(JsonView jsonValue)
     m_quantityHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UsageAllocations"))
+  {
+    Array<JsonView> usageAllocationsJsonList = jsonValue.GetArray("UsageAllocations");
+    for(unsigned usageAllocationsIndex = 0; usageAllocationsIndex < usageAllocationsJsonList.GetLength(); ++usageAllocationsIndex)
+    {
+      m_usageAllocations.push_back(usageAllocationsJsonList[usageAllocationsIndex].AsObject());
+    }
+    m_usageAllocationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -104,6 +106,17 @@ JsonValue UsageRecord::Jsonize() const
   if(m_quantityHasBeenSet)
   {
    payload.WithInteger("Quantity", m_quantity);
+
+  }
+
+  if(m_usageAllocationsHasBeenSet)
+  {
+   Array<JsonValue> usageAllocationsJsonList(m_usageAllocations.size());
+   for(unsigned usageAllocationsIndex = 0; usageAllocationsIndex < usageAllocationsJsonList.GetLength(); ++usageAllocationsIndex)
+   {
+     usageAllocationsJsonList[usageAllocationsIndex].AsObject(m_usageAllocations[usageAllocationsIndex].Jsonize());
+   }
+   payload.WithArray("UsageAllocations", std::move(usageAllocationsJsonList));
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/quicksight/model/DashboardVersion.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -37,7 +27,10 @@ DashboardVersion::DashboardVersion() :
     m_statusHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_sourceEntityArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_dataSetArnsHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_themeArnHasBeenSet(false),
+    m_sheetsHasBeenSet(false)
 {
 }
 
@@ -50,7 +43,10 @@ DashboardVersion::DashboardVersion(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_sourceEntityArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_dataSetArnsHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_themeArnHasBeenSet(false),
+    m_sheetsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -102,11 +98,38 @@ DashboardVersion& DashboardVersion::operator =(JsonView jsonValue)
     m_sourceEntityArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataSetArns"))
+  {
+    Array<JsonView> dataSetArnsJsonList = jsonValue.GetArray("DataSetArns");
+    for(unsigned dataSetArnsIndex = 0; dataSetArnsIndex < dataSetArnsJsonList.GetLength(); ++dataSetArnsIndex)
+    {
+      m_dataSetArns.push_back(dataSetArnsJsonList[dataSetArnsIndex].AsString());
+    }
+    m_dataSetArnsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ThemeArn"))
+  {
+    m_themeArn = jsonValue.GetString("ThemeArn");
+
+    m_themeArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Sheets"))
+  {
+    Array<JsonView> sheetsJsonList = jsonValue.GetArray("Sheets");
+    for(unsigned sheetsIndex = 0; sheetsIndex < sheetsJsonList.GetLength(); ++sheetsIndex)
+    {
+      m_sheets.push_back(sheetsJsonList[sheetsIndex].AsObject());
+    }
+    m_sheetsHasBeenSet = true;
   }
 
   return *this;
@@ -155,9 +178,37 @@ JsonValue DashboardVersion::Jsonize() const
 
   }
 
+  if(m_dataSetArnsHasBeenSet)
+  {
+   Array<JsonValue> dataSetArnsJsonList(m_dataSetArns.size());
+   for(unsigned dataSetArnsIndex = 0; dataSetArnsIndex < dataSetArnsJsonList.GetLength(); ++dataSetArnsIndex)
+   {
+     dataSetArnsJsonList[dataSetArnsIndex].AsString(m_dataSetArns[dataSetArnsIndex]);
+   }
+   payload.WithArray("DataSetArns", std::move(dataSetArnsJsonList));
+
+  }
+
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_themeArnHasBeenSet)
+  {
+   payload.WithString("ThemeArn", m_themeArn);
+
+  }
+
+  if(m_sheetsHasBeenSet)
+  {
+   Array<JsonValue> sheetsJsonList(m_sheets.size());
+   for(unsigned sheetsIndex = 0; sheetsIndex < sheetsJsonList.GetLength(); ++sheetsIndex)
+   {
+     sheetsJsonList[sheetsIndex].AsObject(m_sheets[sheetsIndex].Jsonize());
+   }
+   payload.WithArray("Sheets", std::move(sheetsJsonList));
 
   }
 

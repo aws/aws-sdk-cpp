@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/model/ProvisioningHook.h>
 #include <utility>
 
 namespace Aws
@@ -214,6 +205,58 @@ namespace Model
      */
     inline UpdateProvisioningTemplateRequest& WithProvisioningRoleArn(const char* value) { SetProvisioningRoleArn(value); return *this;}
 
+
+    /**
+     * <p>Updates the pre-provisioning hook template.</p>
+     */
+    inline const ProvisioningHook& GetPreProvisioningHook() const{ return m_preProvisioningHook; }
+
+    /**
+     * <p>Updates the pre-provisioning hook template.</p>
+     */
+    inline bool PreProvisioningHookHasBeenSet() const { return m_preProvisioningHookHasBeenSet; }
+
+    /**
+     * <p>Updates the pre-provisioning hook template.</p>
+     */
+    inline void SetPreProvisioningHook(const ProvisioningHook& value) { m_preProvisioningHookHasBeenSet = true; m_preProvisioningHook = value; }
+
+    /**
+     * <p>Updates the pre-provisioning hook template.</p>
+     */
+    inline void SetPreProvisioningHook(ProvisioningHook&& value) { m_preProvisioningHookHasBeenSet = true; m_preProvisioningHook = std::move(value); }
+
+    /**
+     * <p>Updates the pre-provisioning hook template.</p>
+     */
+    inline UpdateProvisioningTemplateRequest& WithPreProvisioningHook(const ProvisioningHook& value) { SetPreProvisioningHook(value); return *this;}
+
+    /**
+     * <p>Updates the pre-provisioning hook template.</p>
+     */
+    inline UpdateProvisioningTemplateRequest& WithPreProvisioningHook(ProvisioningHook&& value) { SetPreProvisioningHook(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Removes pre-provisioning hook template.</p>
+     */
+    inline bool GetRemovePreProvisioningHook() const{ return m_removePreProvisioningHook; }
+
+    /**
+     * <p>Removes pre-provisioning hook template.</p>
+     */
+    inline bool RemovePreProvisioningHookHasBeenSet() const { return m_removePreProvisioningHookHasBeenSet; }
+
+    /**
+     * <p>Removes pre-provisioning hook template.</p>
+     */
+    inline void SetRemovePreProvisioningHook(bool value) { m_removePreProvisioningHookHasBeenSet = true; m_removePreProvisioningHook = value; }
+
+    /**
+     * <p>Removes pre-provisioning hook template.</p>
+     */
+    inline UpdateProvisioningTemplateRequest& WithRemovePreProvisioningHook(bool value) { SetRemovePreProvisioningHook(value); return *this;}
+
   private:
 
     Aws::String m_templateName;
@@ -230,6 +273,12 @@ namespace Model
 
     Aws::String m_provisioningRoleArn;
     bool m_provisioningRoleArnHasBeenSet;
+
+    ProvisioningHook m_preProvisioningHook;
+    bool m_preProvisioningHookHasBeenSet;
+
+    bool m_removePreProvisioningHook;
+    bool m_removePreProvisioningHookHasBeenSet;
   };
 
 } // namespace Model

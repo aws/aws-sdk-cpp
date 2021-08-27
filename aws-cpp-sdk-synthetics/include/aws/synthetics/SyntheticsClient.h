@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/synthetics/Synthetics_EXPORTS.h>
@@ -87,19 +77,19 @@ namespace Model
         class UntagResourceRequest;
         class UpdateCanaryRequest;
 
-        typedef Aws::Utils::Outcome<CreateCanaryResult, Aws::Client::AWSError<SyntheticsErrors>> CreateCanaryOutcome;
-        typedef Aws::Utils::Outcome<DeleteCanaryResult, Aws::Client::AWSError<SyntheticsErrors>> DeleteCanaryOutcome;
-        typedef Aws::Utils::Outcome<DescribeCanariesResult, Aws::Client::AWSError<SyntheticsErrors>> DescribeCanariesOutcome;
-        typedef Aws::Utils::Outcome<DescribeCanariesLastRunResult, Aws::Client::AWSError<SyntheticsErrors>> DescribeCanariesLastRunOutcome;
-        typedef Aws::Utils::Outcome<DescribeRuntimeVersionsResult, Aws::Client::AWSError<SyntheticsErrors>> DescribeRuntimeVersionsOutcome;
-        typedef Aws::Utils::Outcome<GetCanaryResult, Aws::Client::AWSError<SyntheticsErrors>> GetCanaryOutcome;
-        typedef Aws::Utils::Outcome<GetCanaryRunsResult, Aws::Client::AWSError<SyntheticsErrors>> GetCanaryRunsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<SyntheticsErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<StartCanaryResult, Aws::Client::AWSError<SyntheticsErrors>> StartCanaryOutcome;
-        typedef Aws::Utils::Outcome<StopCanaryResult, Aws::Client::AWSError<SyntheticsErrors>> StopCanaryOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<SyntheticsErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<SyntheticsErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateCanaryResult, Aws::Client::AWSError<SyntheticsErrors>> UpdateCanaryOutcome;
+        typedef Aws::Utils::Outcome<CreateCanaryResult, SyntheticsError> CreateCanaryOutcome;
+        typedef Aws::Utils::Outcome<DeleteCanaryResult, SyntheticsError> DeleteCanaryOutcome;
+        typedef Aws::Utils::Outcome<DescribeCanariesResult, SyntheticsError> DescribeCanariesOutcome;
+        typedef Aws::Utils::Outcome<DescribeCanariesLastRunResult, SyntheticsError> DescribeCanariesLastRunOutcome;
+        typedef Aws::Utils::Outcome<DescribeRuntimeVersionsResult, SyntheticsError> DescribeRuntimeVersionsOutcome;
+        typedef Aws::Utils::Outcome<GetCanaryResult, SyntheticsError> GetCanaryOutcome;
+        typedef Aws::Utils::Outcome<GetCanaryRunsResult, SyntheticsError> GetCanaryRunsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, SyntheticsError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<StartCanaryResult, SyntheticsError> StartCanaryOutcome;
+        typedef Aws::Utils::Outcome<StopCanaryResult, SyntheticsError> StopCanaryOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, SyntheticsError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, SyntheticsError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateCanaryResult, SyntheticsError> UpdateCanaryOutcome;
 
         typedef std::future<CreateCanaryOutcome> CreateCanaryOutcomeCallable;
         typedef std::future<DeleteCanaryOutcome> DeleteCanaryOutcomeCallable;
@@ -175,8 +165,6 @@ namespace Model
 
         virtual ~SyntheticsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "synthetics"; }
-
 
         /**
          * <p>Creates a canary. Canaries are scripts that monitor your endpoints and APIs
@@ -184,11 +172,13 @@ namespace Model
          * your web services and troubleshoot anomalies by investigating load time data,
          * screenshots of the UI, logs, and metrics. You can set up a canary to run
          * continuously or just once. </p> <p>Do not use <code>CreateCanary</code> to
-         * modify an existing canary. Use <a>UpdateCanary</a> instead.</p> <p>To create
-         * canaries, you must have the <code>CloudWatchSyntheticsFullAccess</code> policy.
-         * If you are creating a new IAM role for the canary, you also need the the
-         * <code>iam:CreateRole</code>, <code>iam:CreatePolicy</code> and
-         * <code>iam:AttachRolePolicy</code> permissions. For more information, see <a
+         * modify an existing canary. Use <a
+         * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html">UpdateCanary</a>
+         * instead.</p> <p>To create canaries, you must have the
+         * <code>CloudWatchSyntheticsFullAccess</code> policy. If you are creating a new
+         * IAM role for the canary, you also need the the <code>iam:CreateRole</code>,
+         * <code>iam:CreatePolicy</code> and <code>iam:AttachRolePolicy</code> permissions.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles">Necessary
          * Roles and Permissions</a>.</p> <p>Do not include secrets or proprietary
          * information in your canary names. The canary name makes up part of the Amazon
@@ -207,11 +197,13 @@ namespace Model
          * your web services and troubleshoot anomalies by investigating load time data,
          * screenshots of the UI, logs, and metrics. You can set up a canary to run
          * continuously or just once. </p> <p>Do not use <code>CreateCanary</code> to
-         * modify an existing canary. Use <a>UpdateCanary</a> instead.</p> <p>To create
-         * canaries, you must have the <code>CloudWatchSyntheticsFullAccess</code> policy.
-         * If you are creating a new IAM role for the canary, you also need the the
-         * <code>iam:CreateRole</code>, <code>iam:CreatePolicy</code> and
-         * <code>iam:AttachRolePolicy</code> permissions. For more information, see <a
+         * modify an existing canary. Use <a
+         * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html">UpdateCanary</a>
+         * instead.</p> <p>To create canaries, you must have the
+         * <code>CloudWatchSyntheticsFullAccess</code> policy. If you are creating a new
+         * IAM role for the canary, you also need the the <code>iam:CreateRole</code>,
+         * <code>iam:CreatePolicy</code> and <code>iam:AttachRolePolicy</code> permissions.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles">Necessary
          * Roles and Permissions</a>.</p> <p>Do not include secrets or proprietary
          * information in your canary names. The canary name makes up part of the Amazon
@@ -232,11 +224,13 @@ namespace Model
          * your web services and troubleshoot anomalies by investigating load time data,
          * screenshots of the UI, logs, and metrics. You can set up a canary to run
          * continuously or just once. </p> <p>Do not use <code>CreateCanary</code> to
-         * modify an existing canary. Use <a>UpdateCanary</a> instead.</p> <p>To create
-         * canaries, you must have the <code>CloudWatchSyntheticsFullAccess</code> policy.
-         * If you are creating a new IAM role for the canary, you also need the the
-         * <code>iam:CreateRole</code>, <code>iam:CreatePolicy</code> and
-         * <code>iam:AttachRolePolicy</code> permissions. For more information, see <a
+         * modify an existing canary. Use <a
+         * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html">UpdateCanary</a>
+         * instead.</p> <p>To create canaries, you must have the
+         * <code>CloudWatchSyntheticsFullAccess</code> policy. If you are creating a new
+         * IAM role for the canary, you also need the the <code>iam:CreateRole</code>,
+         * <code>iam:CreatePolicy</code> and <code>iam:AttachRolePolicy</code> permissions.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles">Necessary
          * Roles and Permissions</a>.</p> <p>Do not include secrets or proprietary
          * information in your canary names. The canary name makes up part of the Amazon

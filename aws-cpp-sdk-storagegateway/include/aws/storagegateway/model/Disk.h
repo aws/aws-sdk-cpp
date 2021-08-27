@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
@@ -277,56 +267,56 @@ namespace Model
     /**
      * <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not
      * included in the response if the local disk is not defined as an iSCSI target.
-     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>. </p>
+     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>.</p>
      */
     inline const Aws::String& GetDiskAllocationResource() const{ return m_diskAllocationResource; }
 
     /**
      * <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not
      * included in the response if the local disk is not defined as an iSCSI target.
-     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>. </p>
+     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>.</p>
      */
     inline bool DiskAllocationResourceHasBeenSet() const { return m_diskAllocationResourceHasBeenSet; }
 
     /**
      * <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not
      * included in the response if the local disk is not defined as an iSCSI target.
-     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>. </p>
+     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>.</p>
      */
     inline void SetDiskAllocationResource(const Aws::String& value) { m_diskAllocationResourceHasBeenSet = true; m_diskAllocationResource = value; }
 
     /**
      * <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not
      * included in the response if the local disk is not defined as an iSCSI target.
-     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>. </p>
+     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>.</p>
      */
     inline void SetDiskAllocationResource(Aws::String&& value) { m_diskAllocationResourceHasBeenSet = true; m_diskAllocationResource = std::move(value); }
 
     /**
      * <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not
      * included in the response if the local disk is not defined as an iSCSI target.
-     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>. </p>
+     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>.</p>
      */
     inline void SetDiskAllocationResource(const char* value) { m_diskAllocationResourceHasBeenSet = true; m_diskAllocationResource.assign(value); }
 
     /**
      * <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not
      * included in the response if the local disk is not defined as an iSCSI target.
-     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>. </p>
+     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>.</p>
      */
     inline Disk& WithDiskAllocationResource(const Aws::String& value) { SetDiskAllocationResource(value); return *this;}
 
     /**
      * <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not
      * included in the response if the local disk is not defined as an iSCSI target.
-     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>. </p>
+     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>.</p>
      */
     inline Disk& WithDiskAllocationResource(Aws::String&& value) { SetDiskAllocationResource(std::move(value)); return *this;}
 
     /**
      * <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not
      * included in the response if the local disk is not defined as an iSCSI target.
-     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>. </p>
+     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>.</p>
      */
     inline Disk& WithDiskAllocationResource(const char* value) { SetDiskAllocationResource(value); return *this;}
 

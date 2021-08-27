@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pi/PI_EXPORTS.h>
@@ -49,103 +39,103 @@ namespace Model
 
 
     /**
-     * <p>The AWS service for which Performance Insights will return metrics. The only
-     * valid value for <i>ServiceType</i> is: <code>RDS</code> </p>
+     * <p>The AWS service for which Performance Insights returns metrics. The only
+     * valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
      */
     inline const ServiceType& GetServiceType() const{ return m_serviceType; }
 
     /**
-     * <p>The AWS service for which Performance Insights will return metrics. The only
-     * valid value for <i>ServiceType</i> is: <code>RDS</code> </p>
+     * <p>The AWS service for which Performance Insights returns metrics. The only
+     * valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
      */
     inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
 
     /**
-     * <p>The AWS service for which Performance Insights will return metrics. The only
-     * valid value for <i>ServiceType</i> is: <code>RDS</code> </p>
+     * <p>The AWS service for which Performance Insights returns metrics. The only
+     * valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
      */
     inline void SetServiceType(const ServiceType& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
 
     /**
-     * <p>The AWS service for which Performance Insights will return metrics. The only
-     * valid value for <i>ServiceType</i> is: <code>RDS</code> </p>
+     * <p>The AWS service for which Performance Insights returns metrics. The only
+     * valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
      */
     inline void SetServiceType(ServiceType&& value) { m_serviceTypeHasBeenSet = true; m_serviceType = std::move(value); }
 
     /**
-     * <p>The AWS service for which Performance Insights will return metrics. The only
-     * valid value for <i>ServiceType</i> is: <code>RDS</code> </p>
+     * <p>The AWS service for which Performance Insights returns metrics. The only
+     * valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
      */
     inline GetResourceMetricsRequest& WithServiceType(const ServiceType& value) { SetServiceType(value); return *this;}
 
     /**
-     * <p>The AWS service for which Performance Insights will return metrics. The only
-     * valid value for <i>ServiceType</i> is: <code>RDS</code> </p>
+     * <p>The AWS service for which Performance Insights returns metrics. The only
+     * valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
      */
     inline GetResourceMetricsRequest& WithServiceType(ServiceType&& value) { SetServiceType(std::move(value)); return *this;}
 
 
     /**
      * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value -
-     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
+     * data source, specify its <code>DbiResourceId</code> value. For example, specify
+     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
 
     /**
      * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value -
-     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
+     * data source, specify its <code>DbiResourceId</code> value. For example, specify
+     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
      */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
 
     /**
      * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value -
-     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
+     * data source, specify its <code>DbiResourceId</code> value. For example, specify
+     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
      */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
 
     /**
      * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value -
-     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
+     * data source, specify its <code>DbiResourceId</code> value. For example, specify
+     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
      */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
 
     /**
      * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value -
-     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
+     * data source, specify its <code>DbiResourceId</code> value. For example, specify
+     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
      */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
 
     /**
      * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value -
-     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
+     * data source, specify its <code>DbiResourceId</code> value. For example, specify
+     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
      */
     inline GetResourceMetricsRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
 
     /**
      * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value -
-     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
+     * data source, specify its <code>DbiResourceId</code> value. For example, specify
+     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
      */
     inline GetResourceMetricsRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value -
-     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
+     * data source, specify its <code>DbiResourceId</code> value. For example, specify
+     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
      */
     inline GetResourceMetricsRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
 
@@ -269,7 +259,7 @@ namespace Model
 
 
     /**
-     * <p>The date and time specifiying the end of the requested time series data. The
+     * <p>The date and time specifying the end of the requested time series data. The
      * value specified is <i>exclusive</i> - data points less than (but not equal to)
      * <code>EndTime</code> will be returned.</p> <p>The value for <code>EndTime</code>
      * must be later than the value for <code>StartTime</code>.</p>
@@ -277,7 +267,7 @@ namespace Model
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The date and time specifiying the end of the requested time series data. The
+     * <p>The date and time specifying the end of the requested time series data. The
      * value specified is <i>exclusive</i> - data points less than (but not equal to)
      * <code>EndTime</code> will be returned.</p> <p>The value for <code>EndTime</code>
      * must be later than the value for <code>StartTime</code>.</p>
@@ -285,7 +275,7 @@ namespace Model
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>The date and time specifiying the end of the requested time series data. The
+     * <p>The date and time specifying the end of the requested time series data. The
      * value specified is <i>exclusive</i> - data points less than (but not equal to)
      * <code>EndTime</code> will be returned.</p> <p>The value for <code>EndTime</code>
      * must be later than the value for <code>StartTime</code>.</p>
@@ -293,7 +283,7 @@ namespace Model
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The date and time specifiying the end of the requested time series data. The
+     * <p>The date and time specifying the end of the requested time series data. The
      * value specified is <i>exclusive</i> - data points less than (but not equal to)
      * <code>EndTime</code> will be returned.</p> <p>The value for <code>EndTime</code>
      * must be later than the value for <code>StartTime</code>.</p>
@@ -301,7 +291,7 @@ namespace Model
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The date and time specifiying the end of the requested time series data. The
+     * <p>The date and time specifying the end of the requested time series data. The
      * value specified is <i>exclusive</i> - data points less than (but not equal to)
      * <code>EndTime</code> will be returned.</p> <p>The value for <code>EndTime</code>
      * must be later than the value for <code>StartTime</code>.</p>
@@ -309,7 +299,7 @@ namespace Model
     inline GetResourceMetricsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The date and time specifiying the end of the requested time series data. The
+     * <p>The date and time specifying the end of the requested time series data. The
      * value specified is <i>exclusive</i> - data points less than (but not equal to)
      * <code>EndTime</code> will be returned.</p> <p>The value for <code>EndTime</code>
      * must be later than the value for <code>StartTime</code>.</p>

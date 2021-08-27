@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/xray/XRay_EXPORTS.h>
@@ -170,37 +160,37 @@ namespace Model
 
 
     /**
-     * <p>A paramater to indicate whether to enable sampling on trace summaries. Input
+     * <p>A parameter to indicate whether to enable sampling on trace summaries. Input
      * parameters are Name and Value.</p>
      */
     inline const SamplingStrategy& GetSamplingStrategy() const{ return m_samplingStrategy; }
 
     /**
-     * <p>A paramater to indicate whether to enable sampling on trace summaries. Input
+     * <p>A parameter to indicate whether to enable sampling on trace summaries. Input
      * parameters are Name and Value.</p>
      */
     inline bool SamplingStrategyHasBeenSet() const { return m_samplingStrategyHasBeenSet; }
 
     /**
-     * <p>A paramater to indicate whether to enable sampling on trace summaries. Input
+     * <p>A parameter to indicate whether to enable sampling on trace summaries. Input
      * parameters are Name and Value.</p>
      */
     inline void SetSamplingStrategy(const SamplingStrategy& value) { m_samplingStrategyHasBeenSet = true; m_samplingStrategy = value; }
 
     /**
-     * <p>A paramater to indicate whether to enable sampling on trace summaries. Input
+     * <p>A parameter to indicate whether to enable sampling on trace summaries. Input
      * parameters are Name and Value.</p>
      */
     inline void SetSamplingStrategy(SamplingStrategy&& value) { m_samplingStrategyHasBeenSet = true; m_samplingStrategy = std::move(value); }
 
     /**
-     * <p>A paramater to indicate whether to enable sampling on trace summaries. Input
+     * <p>A parameter to indicate whether to enable sampling on trace summaries. Input
      * parameters are Name and Value.</p>
      */
     inline GetTraceSummariesRequest& WithSamplingStrategy(const SamplingStrategy& value) { SetSamplingStrategy(value); return *this;}
 
     /**
-     * <p>A paramater to indicate whether to enable sampling on trace summaries. Input
+     * <p>A parameter to indicate whether to enable sampling on trace summaries. Input
      * parameters are Name and Value.</p>
      */
     inline GetTraceSummariesRequest& WithSamplingStrategy(SamplingStrategy&& value) { SetSamplingStrategy(std::move(value)); return *this;}

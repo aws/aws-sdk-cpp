@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kafka/model/Configuration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,9 @@ Configuration::Configuration() :
     m_descriptionHasBeenSet(false),
     m_kafkaVersionsHasBeenSet(false),
     m_latestRevisionHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_state(ConfigurationState::NOT_SET),
+    m_stateHasBeenSet(false)
 {
 }
 
@@ -44,7 +36,9 @@ Configuration::Configuration(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_kafkaVersionsHasBeenSet(false),
     m_latestRevisionHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_state(ConfigurationState::NOT_SET),
+    m_stateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -96,6 +90,13 @@ Configuration& Configuration::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("state"))
+  {
+    m_state = ConfigurationStateMapper::GetConfigurationStateForName(jsonValue.GetString("state"));
+
+    m_stateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -141,6 +142,11 @@ JsonValue Configuration::Jsonize() const
   {
    payload.WithString("name", m_name);
 
+  }
+
+  if(m_stateHasBeenSet)
+  {
+   payload.WithString("state", ConfigurationStateMapper::GetNameForConfigurationState(m_state));
   }
 
   return payload;

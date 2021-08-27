@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/backup/model/DescribeBackupJobResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -44,6 +34,12 @@ DescribeBackupJobResult::DescribeBackupJobResult(const Aws::AmazonWebServiceResu
 DescribeBackupJobResult& DescribeBackupJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("AccountId"))
+  {
+    m_accountId = jsonValue.GetString("AccountId");
+
+  }
+
   if(jsonValue.ValueExists("BackupJobId"))
   {
     m_backupJobId = jsonValue.GetString("BackupJobId");
@@ -143,6 +139,21 @@ DescribeBackupJobResult& DescribeBackupJobResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("StartBy"))
   {
     m_startBy = jsonValue.GetDouble("StartBy");
+
+  }
+
+  if(jsonValue.ValueExists("BackupOptions"))
+  {
+    Aws::Map<Aws::String, JsonView> backupOptionsJsonMap = jsonValue.GetObject("BackupOptions").GetAllObjects();
+    for(auto& backupOptionsItem : backupOptionsJsonMap)
+    {
+      m_backupOptions[backupOptionsItem.first] = backupOptionsItem.second.AsString();
+    }
+  }
+
+  if(jsonValue.ValueExists("BackupType"))
+  {
+    m_backupType = jsonValue.GetString("BackupType");
 
   }
 

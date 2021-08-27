@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -22,11 +12,13 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/DocumentType.h>
 #include <aws/ssm/model/DocumentFormat.h>
+#include <aws/ssm/model/ReviewStatus.h>
 #include <aws/ssm/model/DocumentParameter.h>
 #include <aws/ssm/model/PlatformType.h>
 #include <aws/ssm/model/Tag.h>
 #include <aws/ssm/model/AttachmentInformation.h>
 #include <aws/ssm/model/DocumentRequires.h>
+#include <aws/ssm/model/ReviewInformation.h>
 #include <utility>
 
 namespace Aws
@@ -101,86 +93,86 @@ namespace Model
 
     /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * </p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline const Aws::String& GetHash() const{ return m_hash; }
 
     /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * </p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline bool HashHasBeenSet() const { return m_hashHasBeenSet; }
 
     /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * </p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline void SetHash(const Aws::String& value) { m_hashHasBeenSet = true; m_hash = value; }
 
     /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * </p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline void SetHash(Aws::String&& value) { m_hashHasBeenSet = true; m_hash = std::move(value); }
 
     /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * </p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline void SetHash(const char* value) { m_hashHasBeenSet = true; m_hash.assign(value); }
 
     /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * </p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline DocumentDescription& WithHash(const Aws::String& value) { SetHash(value); return *this;}
 
     /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * </p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline DocumentDescription& WithHash(Aws::String&& value) { SetHash(std::move(value)); return *this;}
 
     /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * </p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline DocumentDescription& WithHash(const char* value) { SetHash(value); return *this;}
 
 
     /**
      * <p>The hash type of the document. Valid values include <code>Sha256</code> or
-     * <code>Sha1</code>.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * <code>Sha1</code>.</p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline const DocumentHashType& GetHashType() const{ return m_hashType; }
 
     /**
      * <p>The hash type of the document. Valid values include <code>Sha256</code> or
-     * <code>Sha1</code>.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * <code>Sha1</code>.</p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline bool HashTypeHasBeenSet() const { return m_hashTypeHasBeenSet; }
 
     /**
      * <p>The hash type of the document. Valid values include <code>Sha256</code> or
-     * <code>Sha1</code>.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * <code>Sha1</code>.</p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline void SetHashType(const DocumentHashType& value) { m_hashTypeHasBeenSet = true; m_hashType = value; }
 
     /**
      * <p>The hash type of the document. Valid values include <code>Sha256</code> or
-     * <code>Sha1</code>.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * <code>Sha1</code>.</p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline void SetHashType(DocumentHashType&& value) { m_hashTypeHasBeenSet = true; m_hashType = std::move(value); }
 
     /**
      * <p>The hash type of the document. Valid values include <code>Sha256</code> or
-     * <code>Sha1</code>.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * <code>Sha1</code>.</p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline DocumentDescription& WithHashType(const DocumentHashType& value) { SetHashType(value); return *this;}
 
     /**
      * <p>The hash type of the document. Valid values include <code>Sha256</code> or
-     * <code>Sha1</code>.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * <code>Sha1</code>.</p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline DocumentDescription& WithHashType(DocumentHashType&& value) { SetHashType(std::move(value)); return *this;}
 
@@ -788,7 +780,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline const Aws::String& GetTargetType() const{ return m_targetType; }
 
@@ -796,7 +789,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
 
@@ -804,7 +798,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline void SetTargetType(const Aws::String& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
 
@@ -812,7 +807,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline void SetTargetType(Aws::String&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
 
@@ -820,7 +816,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline void SetTargetType(const char* value) { m_targetTypeHasBeenSet = true; m_targetType.assign(value); }
 
@@ -828,7 +825,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline DocumentDescription& WithTargetType(const Aws::String& value) { SetTargetType(value); return *this;}
 
@@ -836,7 +834,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline DocumentDescription& WithTargetType(Aws::String&& value) { SetTargetType(std::move(value)); return *this;}
 
@@ -844,7 +843,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline DocumentDescription& WithTargetType(const char* value) { SetTargetType(value); return *this;}
 
@@ -892,49 +892,49 @@ namespace Model
 
     /**
      * <p>Details about the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline const Aws::Vector<AttachmentInformation>& GetAttachmentsInformation() const{ return m_attachmentsInformation; }
 
     /**
      * <p>Details about the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline bool AttachmentsInformationHasBeenSet() const { return m_attachmentsInformationHasBeenSet; }
 
     /**
      * <p>Details about the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline void SetAttachmentsInformation(const Aws::Vector<AttachmentInformation>& value) { m_attachmentsInformationHasBeenSet = true; m_attachmentsInformation = value; }
 
     /**
      * <p>Details about the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline void SetAttachmentsInformation(Aws::Vector<AttachmentInformation>&& value) { m_attachmentsInformationHasBeenSet = true; m_attachmentsInformation = std::move(value); }
 
     /**
      * <p>Details about the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline DocumentDescription& WithAttachmentsInformation(const Aws::Vector<AttachmentInformation>& value) { SetAttachmentsInformation(value); return *this;}
 
     /**
      * <p>Details about the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline DocumentDescription& WithAttachmentsInformation(Aws::Vector<AttachmentInformation>&& value) { SetAttachmentsInformation(std::move(value)); return *this;}
 
     /**
      * <p>Details about the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline DocumentDescription& AddAttachmentsInformation(const AttachmentInformation& value) { m_attachmentsInformationHasBeenSet = true; m_attachmentsInformation.push_back(value); return *this; }
 
     /**
      * <p>Details about the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline DocumentDescription& AddAttachmentsInformation(AttachmentInformation&& value) { m_attachmentsInformationHasBeenSet = true; m_attachmentsInformation.push_back(std::move(value)); return *this; }
 
@@ -994,6 +994,209 @@ namespace Model
      * <code>ApplicationConfigurationSchema</code> document.</p>
      */
     inline DocumentDescription& AddRequires(DocumentRequires&& value) { m_requiresHasBeenSet = true; m_requires.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline const Aws::String& GetAuthor() const{ return m_author; }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline bool AuthorHasBeenSet() const { return m_authorHasBeenSet; }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline void SetAuthor(const Aws::String& value) { m_authorHasBeenSet = true; m_author = value; }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline void SetAuthor(Aws::String&& value) { m_authorHasBeenSet = true; m_author = std::move(value); }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline void SetAuthor(const char* value) { m_authorHasBeenSet = true; m_author.assign(value); }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline DocumentDescription& WithAuthor(const Aws::String& value) { SetAuthor(value); return *this;}
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline DocumentDescription& WithAuthor(Aws::String&& value) { SetAuthor(std::move(value)); return *this;}
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline DocumentDescription& WithAuthor(const char* value) { SetAuthor(value); return *this;}
+
+
+    /**
+     * <p>Details about the review of a document.</p>
+     */
+    inline const Aws::Vector<ReviewInformation>& GetReviewInformation() const{ return m_reviewInformation; }
+
+    /**
+     * <p>Details about the review of a document.</p>
+     */
+    inline bool ReviewInformationHasBeenSet() const { return m_reviewInformationHasBeenSet; }
+
+    /**
+     * <p>Details about the review of a document.</p>
+     */
+    inline void SetReviewInformation(const Aws::Vector<ReviewInformation>& value) { m_reviewInformationHasBeenSet = true; m_reviewInformation = value; }
+
+    /**
+     * <p>Details about the review of a document.</p>
+     */
+    inline void SetReviewInformation(Aws::Vector<ReviewInformation>&& value) { m_reviewInformationHasBeenSet = true; m_reviewInformation = std::move(value); }
+
+    /**
+     * <p>Details about the review of a document.</p>
+     */
+    inline DocumentDescription& WithReviewInformation(const Aws::Vector<ReviewInformation>& value) { SetReviewInformation(value); return *this;}
+
+    /**
+     * <p>Details about the review of a document.</p>
+     */
+    inline DocumentDescription& WithReviewInformation(Aws::Vector<ReviewInformation>&& value) { SetReviewInformation(std::move(value)); return *this;}
+
+    /**
+     * <p>Details about the review of a document.</p>
+     */
+    inline DocumentDescription& AddReviewInformation(const ReviewInformation& value) { m_reviewInformationHasBeenSet = true; m_reviewInformation.push_back(value); return *this; }
+
+    /**
+     * <p>Details about the review of a document.</p>
+     */
+    inline DocumentDescription& AddReviewInformation(ReviewInformation&& value) { m_reviewInformationHasBeenSet = true; m_reviewInformation.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The version of the document currently approved for use in the
+     * organization.</p>
+     */
+    inline const Aws::String& GetApprovedVersion() const{ return m_approvedVersion; }
+
+    /**
+     * <p>The version of the document currently approved for use in the
+     * organization.</p>
+     */
+    inline bool ApprovedVersionHasBeenSet() const { return m_approvedVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the document currently approved for use in the
+     * organization.</p>
+     */
+    inline void SetApprovedVersion(const Aws::String& value) { m_approvedVersionHasBeenSet = true; m_approvedVersion = value; }
+
+    /**
+     * <p>The version of the document currently approved for use in the
+     * organization.</p>
+     */
+    inline void SetApprovedVersion(Aws::String&& value) { m_approvedVersionHasBeenSet = true; m_approvedVersion = std::move(value); }
+
+    /**
+     * <p>The version of the document currently approved for use in the
+     * organization.</p>
+     */
+    inline void SetApprovedVersion(const char* value) { m_approvedVersionHasBeenSet = true; m_approvedVersion.assign(value); }
+
+    /**
+     * <p>The version of the document currently approved for use in the
+     * organization.</p>
+     */
+    inline DocumentDescription& WithApprovedVersion(const Aws::String& value) { SetApprovedVersion(value); return *this;}
+
+    /**
+     * <p>The version of the document currently approved for use in the
+     * organization.</p>
+     */
+    inline DocumentDescription& WithApprovedVersion(Aws::String&& value) { SetApprovedVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the document currently approved for use in the
+     * organization.</p>
+     */
+    inline DocumentDescription& WithApprovedVersion(const char* value) { SetApprovedVersion(value); return *this;}
+
+
+    /**
+     * <p>The version of the document that is currently under review.</p>
+     */
+    inline const Aws::String& GetPendingReviewVersion() const{ return m_pendingReviewVersion; }
+
+    /**
+     * <p>The version of the document that is currently under review.</p>
+     */
+    inline bool PendingReviewVersionHasBeenSet() const { return m_pendingReviewVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the document that is currently under review.</p>
+     */
+    inline void SetPendingReviewVersion(const Aws::String& value) { m_pendingReviewVersionHasBeenSet = true; m_pendingReviewVersion = value; }
+
+    /**
+     * <p>The version of the document that is currently under review.</p>
+     */
+    inline void SetPendingReviewVersion(Aws::String&& value) { m_pendingReviewVersionHasBeenSet = true; m_pendingReviewVersion = std::move(value); }
+
+    /**
+     * <p>The version of the document that is currently under review.</p>
+     */
+    inline void SetPendingReviewVersion(const char* value) { m_pendingReviewVersionHasBeenSet = true; m_pendingReviewVersion.assign(value); }
+
+    /**
+     * <p>The version of the document that is currently under review.</p>
+     */
+    inline DocumentDescription& WithPendingReviewVersion(const Aws::String& value) { SetPendingReviewVersion(value); return *this;}
+
+    /**
+     * <p>The version of the document that is currently under review.</p>
+     */
+    inline DocumentDescription& WithPendingReviewVersion(Aws::String&& value) { SetPendingReviewVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the document that is currently under review.</p>
+     */
+    inline DocumentDescription& WithPendingReviewVersion(const char* value) { SetPendingReviewVersion(value); return *this;}
+
+
+    /**
+     * <p>The current status of the review.</p>
+     */
+    inline const ReviewStatus& GetReviewStatus() const{ return m_reviewStatus; }
+
+    /**
+     * <p>The current status of the review.</p>
+     */
+    inline bool ReviewStatusHasBeenSet() const { return m_reviewStatusHasBeenSet; }
+
+    /**
+     * <p>The current status of the review.</p>
+     */
+    inline void SetReviewStatus(const ReviewStatus& value) { m_reviewStatusHasBeenSet = true; m_reviewStatus = value; }
+
+    /**
+     * <p>The current status of the review.</p>
+     */
+    inline void SetReviewStatus(ReviewStatus&& value) { m_reviewStatusHasBeenSet = true; m_reviewStatus = std::move(value); }
+
+    /**
+     * <p>The current status of the review.</p>
+     */
+    inline DocumentDescription& WithReviewStatus(const ReviewStatus& value) { SetReviewStatus(value); return *this;}
+
+    /**
+     * <p>The current status of the review.</p>
+     */
+    inline DocumentDescription& WithReviewStatus(ReviewStatus&& value) { SetReviewStatus(std::move(value)); return *this;}
 
   private:
 
@@ -1062,6 +1265,21 @@ namespace Model
 
     Aws::Vector<DocumentRequires> m_requires;
     bool m_requiresHasBeenSet;
+
+    Aws::String m_author;
+    bool m_authorHasBeenSet;
+
+    Aws::Vector<ReviewInformation> m_reviewInformation;
+    bool m_reviewInformationHasBeenSet;
+
+    Aws::String m_approvedVersion;
+    bool m_approvedVersionHasBeenSet;
+
+    Aws::String m_pendingReviewVersion;
+    bool m_pendingReviewVersionHasBeenSet;
+
+    ReviewStatus m_reviewStatus;
+    bool m_reviewStatusHasBeenSet;
   };
 
 } // namespace Model

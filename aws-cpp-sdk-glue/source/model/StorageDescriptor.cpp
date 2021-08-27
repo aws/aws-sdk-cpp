@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/StorageDescriptor.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -43,7 +33,8 @@ StorageDescriptor::StorageDescriptor() :
     m_parametersHasBeenSet(false),
     m_skewedInfoHasBeenSet(false),
     m_storedAsSubDirectories(false),
-    m_storedAsSubDirectoriesHasBeenSet(false)
+    m_storedAsSubDirectoriesHasBeenSet(false),
+    m_schemaReferenceHasBeenSet(false)
 {
 }
 
@@ -62,7 +53,8 @@ StorageDescriptor::StorageDescriptor(JsonView jsonValue) :
     m_parametersHasBeenSet(false),
     m_skewedInfoHasBeenSet(false),
     m_storedAsSubDirectories(false),
-    m_storedAsSubDirectoriesHasBeenSet(false)
+    m_storedAsSubDirectoriesHasBeenSet(false),
+    m_schemaReferenceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -165,6 +157,13 @@ StorageDescriptor& StorageDescriptor::operator =(JsonView jsonValue)
     m_storedAsSubDirectoriesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SchemaReference"))
+  {
+    m_schemaReference = jsonValue.GetObject("SchemaReference");
+
+    m_schemaReferenceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -261,6 +260,12 @@ JsonValue StorageDescriptor::Jsonize() const
   if(m_storedAsSubDirectoriesHasBeenSet)
   {
    payload.WithBool("StoredAsSubDirectories", m_storedAsSubDirectories);
+
+  }
+
+  if(m_schemaReferenceHasBeenSet)
+  {
+   payload.WithObject("SchemaReference", m_schemaReference.Jsonize());
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
@@ -101,26 +91,26 @@ namespace Model
         class UntagResourceRequest;
         class UpdateApplicationRequest;
 
-        typedef Aws::Utils::Outcome<AddApplicationCloudWatchLoggingOptionResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> AddApplicationCloudWatchLoggingOptionOutcome;
-        typedef Aws::Utils::Outcome<AddApplicationInputResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> AddApplicationInputOutcome;
-        typedef Aws::Utils::Outcome<AddApplicationInputProcessingConfigurationResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> AddApplicationInputProcessingConfigurationOutcome;
-        typedef Aws::Utils::Outcome<AddApplicationOutputResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> AddApplicationOutputOutcome;
-        typedef Aws::Utils::Outcome<AddApplicationReferenceDataSourceResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> AddApplicationReferenceDataSourceOutcome;
-        typedef Aws::Utils::Outcome<CreateApplicationResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> CreateApplicationOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> DeleteApplicationOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationCloudWatchLoggingOptionResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> DeleteApplicationCloudWatchLoggingOptionOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationInputProcessingConfigurationResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> DeleteApplicationInputProcessingConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationOutputResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> DeleteApplicationOutputOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationReferenceDataSourceResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> DeleteApplicationReferenceDataSourceOutcome;
-        typedef Aws::Utils::Outcome<DescribeApplicationResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> DescribeApplicationOutcome;
-        typedef Aws::Utils::Outcome<DiscoverInputSchemaResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> DiscoverInputSchemaOutcome;
-        typedef Aws::Utils::Outcome<ListApplicationsResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> ListApplicationsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<StartApplicationResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> StartApplicationOutcome;
-        typedef Aws::Utils::Outcome<StopApplicationResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> StopApplicationOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateApplicationResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> UpdateApplicationOutcome;
+        typedef Aws::Utils::Outcome<AddApplicationCloudWatchLoggingOptionResult, KinesisAnalyticsError> AddApplicationCloudWatchLoggingOptionOutcome;
+        typedef Aws::Utils::Outcome<AddApplicationInputResult, KinesisAnalyticsError> AddApplicationInputOutcome;
+        typedef Aws::Utils::Outcome<AddApplicationInputProcessingConfigurationResult, KinesisAnalyticsError> AddApplicationInputProcessingConfigurationOutcome;
+        typedef Aws::Utils::Outcome<AddApplicationOutputResult, KinesisAnalyticsError> AddApplicationOutputOutcome;
+        typedef Aws::Utils::Outcome<AddApplicationReferenceDataSourceResult, KinesisAnalyticsError> AddApplicationReferenceDataSourceOutcome;
+        typedef Aws::Utils::Outcome<CreateApplicationResult, KinesisAnalyticsError> CreateApplicationOutcome;
+        typedef Aws::Utils::Outcome<DeleteApplicationResult, KinesisAnalyticsError> DeleteApplicationOutcome;
+        typedef Aws::Utils::Outcome<DeleteApplicationCloudWatchLoggingOptionResult, KinesisAnalyticsError> DeleteApplicationCloudWatchLoggingOptionOutcome;
+        typedef Aws::Utils::Outcome<DeleteApplicationInputProcessingConfigurationResult, KinesisAnalyticsError> DeleteApplicationInputProcessingConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DeleteApplicationOutputResult, KinesisAnalyticsError> DeleteApplicationOutputOutcome;
+        typedef Aws::Utils::Outcome<DeleteApplicationReferenceDataSourceResult, KinesisAnalyticsError> DeleteApplicationReferenceDataSourceOutcome;
+        typedef Aws::Utils::Outcome<DescribeApplicationResult, KinesisAnalyticsError> DescribeApplicationOutcome;
+        typedef Aws::Utils::Outcome<DiscoverInputSchemaResult, KinesisAnalyticsError> DiscoverInputSchemaOutcome;
+        typedef Aws::Utils::Outcome<ListApplicationsResult, KinesisAnalyticsError> ListApplicationsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, KinesisAnalyticsError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<StartApplicationResult, KinesisAnalyticsError> StartApplicationOutcome;
+        typedef Aws::Utils::Outcome<StopApplicationResult, KinesisAnalyticsError> StopApplicationOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, KinesisAnalyticsError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, KinesisAnalyticsError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateApplicationResult, KinesisAnalyticsError> UpdateApplicationOutcome;
 
         typedef std::future<AddApplicationCloudWatchLoggingOptionOutcome> AddApplicationCloudWatchLoggingOptionOutcomeCallable;
         typedef std::future<AddApplicationInputOutcome> AddApplicationInputOutcomeCallable;
@@ -168,12 +158,12 @@ namespace Model
     typedef std::function<void(const KinesisAnalyticsClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
 
   /**
-   * <fullname>Amazon Kinesis Analytics</fullname> <p> <b>Overview</b> </p> <note>
+   * <fullname>Amazon Kinesis Analytics</fullname> <p> <b>Overview</b> </p> 
    * <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API,
    * which only supports SQL applications. Version 2 of the API supports SQL and Java
    * applications. For more information about version 2, see <a
    * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-   * API V2 Documentation</a>.</p> </note> <p>This is the <i>Amazon Kinesis Analytics
+   * API V2 Documentation</a>.</p>  <p>This is the <i>Amazon Kinesis Analytics
    * v1 API Reference</i>. The Amazon Kinesis Analytics Developer Guide provides
    * additional information. </p>
    */
@@ -203,15 +193,13 @@ namespace Model
 
         virtual ~KinesisAnalyticsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Kinesis Analytics"; }
-
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Adds a CloudWatch log stream to monitor
+         * API V2 Documentation</a>.</p>  <p>Adds a CloudWatch log stream to monitor
          * application configuration errors. For more information about using CloudWatch
          * log streams with Amazon Kinesis Analytics applications, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
@@ -222,11 +210,11 @@ namespace Model
         virtual Model::AddApplicationCloudWatchLoggingOptionOutcome AddApplicationCloudWatchLoggingOption(const Model::AddApplicationCloudWatchLoggingOptionRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Adds a CloudWatch log stream to monitor
+         * API V2 Documentation</a>.</p>  <p>Adds a CloudWatch log stream to monitor
          * application configuration errors. For more information about using CloudWatch
          * log streams with Amazon Kinesis Analytics applications, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
@@ -239,11 +227,11 @@ namespace Model
         virtual Model::AddApplicationCloudWatchLoggingOptionOutcomeCallable AddApplicationCloudWatchLoggingOptionCallable(const Model::AddApplicationCloudWatchLoggingOptionRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Adds a CloudWatch log stream to monitor
+         * API V2 Documentation</a>.</p>  <p>Adds a CloudWatch log stream to monitor
          * application configuration errors. For more information about using CloudWatch
          * log streams with Amazon Kinesis Analytics applications, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
@@ -256,11 +244,11 @@ namespace Model
         virtual void AddApplicationCloudWatchLoggingOptionAsync(const Model::AddApplicationCloudWatchLoggingOptionRequest& request, const AddApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p> Adds a streaming source to your Amazon
+         * API V2 Documentation</a>.</p>  <p> Adds a streaming source to your Amazon
          * Kinesis application. For conceptual information, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
          * Application Input</a>. </p> <p>You can add a streaming source either when you
@@ -280,11 +268,11 @@ namespace Model
         virtual Model::AddApplicationInputOutcome AddApplicationInput(const Model::AddApplicationInputRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p> Adds a streaming source to your Amazon
+         * API V2 Documentation</a>.</p>  <p> Adds a streaming source to your Amazon
          * Kinesis application. For conceptual information, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
          * Application Input</a>. </p> <p>You can add a streaming source either when you
@@ -306,11 +294,11 @@ namespace Model
         virtual Model::AddApplicationInputOutcomeCallable AddApplicationInputCallable(const Model::AddApplicationInputRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p> Adds a streaming source to your Amazon
+         * API V2 Documentation</a>.</p>  <p> Adds a streaming source to your Amazon
          * Kinesis application. For conceptual information, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
          * Application Input</a>. </p> <p>You can add a streaming source either when you
@@ -332,11 +320,11 @@ namespace Model
         virtual void AddApplicationInputAsync(const Model::AddApplicationInputRequest& request, const AddApplicationInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Adds an <a
+         * API V2 Documentation</a>.</p>  <p>Adds an <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
          * to an application. An input processor preprocesses records on the input stream
          * before the application's SQL code executes. Currently, the only input processor
@@ -348,11 +336,11 @@ namespace Model
         virtual Model::AddApplicationInputProcessingConfigurationOutcome AddApplicationInputProcessingConfiguration(const Model::AddApplicationInputProcessingConfigurationRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Adds an <a
+         * API V2 Documentation</a>.</p>  <p>Adds an <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
          * to an application. An input processor preprocesses records on the input stream
          * before the application's SQL code executes. Currently, the only input processor
@@ -366,11 +354,11 @@ namespace Model
         virtual Model::AddApplicationInputProcessingConfigurationOutcomeCallable AddApplicationInputProcessingConfigurationCallable(const Model::AddApplicationInputProcessingConfigurationRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Adds an <a
+         * API V2 Documentation</a>.</p>  <p>Adds an <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
          * to an application. An input processor preprocesses records on the input stream
          * before the application's SQL code executes. Currently, the only input processor
@@ -384,11 +372,11 @@ namespace Model
         virtual void AddApplicationInputProcessingConfigurationAsync(const Model::AddApplicationInputProcessingConfigurationRequest& request, const AddApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Adds an external destination to your
+         * API V2 Documentation</a>.</p>  <p>Adds an external destination to your
          * Amazon Kinesis Analytics application.</p> <p>If you want Amazon Kinesis
          * Analytics to deliver data from an in-application stream within your application
          * to an external destination (such as an Amazon Kinesis stream, an Amazon Kinesis
@@ -416,11 +404,11 @@ namespace Model
         virtual Model::AddApplicationOutputOutcome AddApplicationOutput(const Model::AddApplicationOutputRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Adds an external destination to your
+         * API V2 Documentation</a>.</p>  <p>Adds an external destination to your
          * Amazon Kinesis Analytics application.</p> <p>If you want Amazon Kinesis
          * Analytics to deliver data from an in-application stream within your application
          * to an external destination (such as an Amazon Kinesis stream, an Amazon Kinesis
@@ -450,11 +438,11 @@ namespace Model
         virtual Model::AddApplicationOutputOutcomeCallable AddApplicationOutputCallable(const Model::AddApplicationOutputRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Adds an external destination to your
+         * API V2 Documentation</a>.</p>  <p>Adds an external destination to your
          * Amazon Kinesis Analytics application.</p> <p>If you want Amazon Kinesis
          * Analytics to deliver data from an in-application stream within your application
          * to an external destination (such as an Amazon Kinesis stream, an Amazon Kinesis
@@ -484,11 +472,11 @@ namespace Model
         virtual void AddApplicationOutputAsync(const Model::AddApplicationOutputRequest& request, const AddApplicationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Adds a reference data source to an
+         * API V2 Documentation</a>.</p>  <p>Adds a reference data source to an
          * existing application.</p> <p>Amazon Kinesis Analytics reads reference data (that
          * is, an Amazon S3 object) and creates an in-application table within your
          * application. In the request, you provide the source (S3 bucket name and object
@@ -508,11 +496,11 @@ namespace Model
         virtual Model::AddApplicationReferenceDataSourceOutcome AddApplicationReferenceDataSource(const Model::AddApplicationReferenceDataSourceRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Adds a reference data source to an
+         * API V2 Documentation</a>.</p>  <p>Adds a reference data source to an
          * existing application.</p> <p>Amazon Kinesis Analytics reads reference data (that
          * is, an Amazon S3 object) and creates an in-application table within your
          * application. In the request, you provide the source (S3 bucket name and object
@@ -534,11 +522,11 @@ namespace Model
         virtual Model::AddApplicationReferenceDataSourceOutcomeCallable AddApplicationReferenceDataSourceCallable(const Model::AddApplicationReferenceDataSourceRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Adds a reference data source to an
+         * API V2 Documentation</a>.</p>  <p>Adds a reference data source to an
          * existing application.</p> <p>Amazon Kinesis Analytics reads reference data (that
          * is, an Amazon S3 object) and creates an in-application table within your
          * application. In the request, you provide the source (S3 bucket name and object
@@ -560,11 +548,11 @@ namespace Model
         virtual void AddApplicationReferenceDataSourceAsync(const Model::AddApplicationReferenceDataSourceRequest& request, const AddApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p> Creates an Amazon Kinesis Analytics
+         * API V2 Documentation</a>.</p>  <p> Creates an Amazon Kinesis Analytics
          * application. You can configure each application with one streaming source as
          * input, application code to process the input, and up to three destinations where
          * you want Amazon Kinesis Analytics to write the output data from your
@@ -592,11 +580,11 @@ namespace Model
         virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p> Creates an Amazon Kinesis Analytics
+         * API V2 Documentation</a>.</p>  <p> Creates an Amazon Kinesis Analytics
          * application. You can configure each application with one streaming source as
          * input, application code to process the input, and up to three destinations where
          * you want Amazon Kinesis Analytics to write the output data from your
@@ -626,11 +614,11 @@ namespace Model
         virtual Model::CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p> Creates an Amazon Kinesis Analytics
+         * API V2 Documentation</a>.</p>  <p> Creates an Amazon Kinesis Analytics
          * application. You can configure each application with one streaming source as
          * input, application code to process the input, and up to three destinations where
          * you want Amazon Kinesis Analytics to write the output data from your
@@ -660,11 +648,11 @@ namespace Model
         virtual void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Deletes the specified application.
+         * API V2 Documentation</a>.</p>  <p>Deletes the specified application.
          * Amazon Kinesis Analytics halts application execution and deletes the
          * application, including any application artifacts (such as in-application
          * streams, reference table, and application code).</p> <p>This operation requires
@@ -676,11 +664,11 @@ namespace Model
         virtual Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Deletes the specified application.
+         * API V2 Documentation</a>.</p>  <p>Deletes the specified application.
          * Amazon Kinesis Analytics halts application execution and deletes the
          * application, including any application artifacts (such as in-application
          * streams, reference table, and application code).</p> <p>This operation requires
@@ -694,11 +682,11 @@ namespace Model
         virtual Model::DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Deletes the specified application.
+         * API V2 Documentation</a>.</p>  <p>Deletes the specified application.
          * Amazon Kinesis Analytics halts application execution and deletes the
          * application, including any application artifacts (such as in-application
          * streams, reference table, and application code).</p> <p>This operation requires
@@ -712,11 +700,11 @@ namespace Model
         virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Deletes a CloudWatch log stream from an
+         * API V2 Documentation</a>.</p>  <p>Deletes a CloudWatch log stream from an
          * application. For more information about using CloudWatch log streams with Amazon
          * Kinesis Analytics applications, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
@@ -727,11 +715,11 @@ namespace Model
         virtual Model::DeleteApplicationCloudWatchLoggingOptionOutcome DeleteApplicationCloudWatchLoggingOption(const Model::DeleteApplicationCloudWatchLoggingOptionRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Deletes a CloudWatch log stream from an
+         * API V2 Documentation</a>.</p>  <p>Deletes a CloudWatch log stream from an
          * application. For more information about using CloudWatch log streams with Amazon
          * Kinesis Analytics applications, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
@@ -744,11 +732,11 @@ namespace Model
         virtual Model::DeleteApplicationCloudWatchLoggingOptionOutcomeCallable DeleteApplicationCloudWatchLoggingOptionCallable(const Model::DeleteApplicationCloudWatchLoggingOptionRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Deletes a CloudWatch log stream from an
+         * API V2 Documentation</a>.</p>  <p>Deletes a CloudWatch log stream from an
          * application. For more information about using CloudWatch log streams with Amazon
          * Kinesis Analytics applications, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
@@ -761,11 +749,11 @@ namespace Model
         virtual void DeleteApplicationCloudWatchLoggingOptionAsync(const Model::DeleteApplicationCloudWatchLoggingOptionRequest& request, const DeleteApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Deletes an <a
+         * API V2 Documentation</a>.</p>  <p>Deletes an <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
          * from an input.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationInputProcessingConfiguration">AWS
@@ -774,11 +762,11 @@ namespace Model
         virtual Model::DeleteApplicationInputProcessingConfigurationOutcome DeleteApplicationInputProcessingConfiguration(const Model::DeleteApplicationInputProcessingConfigurationRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Deletes an <a
+         * API V2 Documentation</a>.</p>  <p>Deletes an <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
          * from an input.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationInputProcessingConfiguration">AWS
@@ -789,11 +777,11 @@ namespace Model
         virtual Model::DeleteApplicationInputProcessingConfigurationOutcomeCallable DeleteApplicationInputProcessingConfigurationCallable(const Model::DeleteApplicationInputProcessingConfigurationRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Deletes an <a
+         * API V2 Documentation</a>.</p>  <p>Deletes an <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
          * from an input.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationInputProcessingConfiguration">AWS
@@ -804,11 +792,11 @@ namespace Model
         virtual void DeleteApplicationInputProcessingConfigurationAsync(const Model::DeleteApplicationInputProcessingConfigurationRequest& request, const DeleteApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Deletes output destination
+         * API V2 Documentation</a>.</p>  <p>Deletes output destination
          * configuration from your application configuration. Amazon Kinesis Analytics will
          * no longer write data from the corresponding in-application stream to the
          * external output destination.</p> <p>This operation requires permissions to
@@ -820,11 +808,11 @@ namespace Model
         virtual Model::DeleteApplicationOutputOutcome DeleteApplicationOutput(const Model::DeleteApplicationOutputRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Deletes output destination
+         * API V2 Documentation</a>.</p>  <p>Deletes output destination
          * configuration from your application configuration. Amazon Kinesis Analytics will
          * no longer write data from the corresponding in-application stream to the
          * external output destination.</p> <p>This operation requires permissions to
@@ -838,11 +826,11 @@ namespace Model
         virtual Model::DeleteApplicationOutputOutcomeCallable DeleteApplicationOutputCallable(const Model::DeleteApplicationOutputRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Deletes output destination
+         * API V2 Documentation</a>.</p>  <p>Deletes output destination
          * configuration from your application configuration. Amazon Kinesis Analytics will
          * no longer write data from the corresponding in-application stream to the
          * external output destination.</p> <p>This operation requires permissions to
@@ -856,11 +844,11 @@ namespace Model
         virtual void DeleteApplicationOutputAsync(const Model::DeleteApplicationOutputRequest& request, const DeleteApplicationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Deletes a reference data source
+         * API V2 Documentation</a>.</p>  <p>Deletes a reference data source
          * configuration from the specified application configuration.</p> <p>If the
          * application is running, Amazon Kinesis Analytics immediately removes the
          * in-application table that you created using the <a
@@ -874,11 +862,11 @@ namespace Model
         virtual Model::DeleteApplicationReferenceDataSourceOutcome DeleteApplicationReferenceDataSource(const Model::DeleteApplicationReferenceDataSourceRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Deletes a reference data source
+         * API V2 Documentation</a>.</p>  <p>Deletes a reference data source
          * configuration from the specified application configuration.</p> <p>If the
          * application is running, Amazon Kinesis Analytics immediately removes the
          * in-application table that you created using the <a
@@ -894,11 +882,11 @@ namespace Model
         virtual Model::DeleteApplicationReferenceDataSourceOutcomeCallable DeleteApplicationReferenceDataSourceCallable(const Model::DeleteApplicationReferenceDataSourceRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Deletes a reference data source
+         * API V2 Documentation</a>.</p>  <p>Deletes a reference data source
          * configuration from the specified application configuration.</p> <p>If the
          * application is running, Amazon Kinesis Analytics immediately removes the
          * in-application table that you created using the <a
@@ -914,11 +902,11 @@ namespace Model
         virtual void DeleteApplicationReferenceDataSourceAsync(const Model::DeleteApplicationReferenceDataSourceRequest& request, const DeleteApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Returns information about a specific
+         * API V2 Documentation</a>.</p>  <p>Returns information about a specific
          * Amazon Kinesis Analytics application.</p> <p>If you want to retrieve a list of
          * all applications in your account, use the <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListApplications.html">ListApplications</a>
@@ -933,11 +921,11 @@ namespace Model
         virtual Model::DescribeApplicationOutcome DescribeApplication(const Model::DescribeApplicationRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Returns information about a specific
+         * API V2 Documentation</a>.</p>  <p>Returns information about a specific
          * Amazon Kinesis Analytics application.</p> <p>If you want to retrieve a list of
          * all applications in your account, use the <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListApplications.html">ListApplications</a>
@@ -954,11 +942,11 @@ namespace Model
         virtual Model::DescribeApplicationOutcomeCallable DescribeApplicationCallable(const Model::DescribeApplicationRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Returns information about a specific
+         * API V2 Documentation</a>.</p>  <p>Returns information about a specific
          * Amazon Kinesis Analytics application.</p> <p>If you want to retrieve a list of
          * all applications in your account, use the <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListApplications.html">ListApplications</a>
@@ -975,11 +963,11 @@ namespace Model
         virtual void DescribeApplicationAsync(const Model::DescribeApplicationRequest& request, const DescribeApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Infers a schema by evaluating sample
+         * API V2 Documentation</a>.</p>  <p>Infers a schema by evaluating sample
          * records on the specified streaming source (Amazon Kinesis stream or Amazon
          * Kinesis Firehose delivery stream) or S3 object. In the response, the operation
          * returns the inferred schema and also the sample records that the operation used
@@ -997,11 +985,11 @@ namespace Model
         virtual Model::DiscoverInputSchemaOutcome DiscoverInputSchema(const Model::DiscoverInputSchemaRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Infers a schema by evaluating sample
+         * API V2 Documentation</a>.</p>  <p>Infers a schema by evaluating sample
          * records on the specified streaming source (Amazon Kinesis stream or Amazon
          * Kinesis Firehose delivery stream) or S3 object. In the response, the operation
          * returns the inferred schema and also the sample records that the operation used
@@ -1021,11 +1009,11 @@ namespace Model
         virtual Model::DiscoverInputSchemaOutcomeCallable DiscoverInputSchemaCallable(const Model::DiscoverInputSchemaRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Infers a schema by evaluating sample
+         * API V2 Documentation</a>.</p>  <p>Infers a schema by evaluating sample
          * records on the specified streaming source (Amazon Kinesis stream or Amazon
          * Kinesis Firehose delivery stream) or S3 object. In the response, the operation
          * returns the inferred schema and also the sample records that the operation used
@@ -1045,11 +1033,11 @@ namespace Model
         virtual void DiscoverInputSchemaAsync(const Model::DiscoverInputSchemaRequest& request, const DiscoverInputSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Returns a list of Amazon Kinesis
+         * API V2 Documentation</a>.</p>  <p>Returns a list of Amazon Kinesis
          * Analytics applications in your account. For each application, the response
          * includes the application name, Amazon Resource Name (ARN), and status. If the
          * response returns the <code>HasMoreApplications</code> value as true, you can
@@ -1067,11 +1055,11 @@ namespace Model
         virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Returns a list of Amazon Kinesis
+         * API V2 Documentation</a>.</p>  <p>Returns a list of Amazon Kinesis
          * Analytics applications in your account. For each application, the response
          * includes the application name, Amazon Resource Name (ARN), and status. If the
          * response returns the <code>HasMoreApplications</code> value as true, you can
@@ -1091,11 +1079,11 @@ namespace Model
         virtual Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const Model::ListApplicationsRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Returns a list of Amazon Kinesis
+         * API V2 Documentation</a>.</p>  <p>Returns a list of Amazon Kinesis
          * Analytics applications in your account. For each application, the response
          * includes the application name, Amazon Resource Name (ARN), and status. If the
          * response returns the <code>HasMoreApplications</code> value as true, you can
@@ -1149,11 +1137,11 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Starts the specified Amazon Kinesis
+         * API V2 Documentation</a>.</p>  <p>Starts the specified Amazon Kinesis
          * Analytics application. After creating an application, you must exclusively call
          * this operation to start your application.</p> <p>After the application starts,
          * it begins consuming the input data, processes it, and writes the output to the
@@ -1173,11 +1161,11 @@ namespace Model
         virtual Model::StartApplicationOutcome StartApplication(const Model::StartApplicationRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Starts the specified Amazon Kinesis
+         * API V2 Documentation</a>.</p>  <p>Starts the specified Amazon Kinesis
          * Analytics application. After creating an application, you must exclusively call
          * this operation to start your application.</p> <p>After the application starts,
          * it begins consuming the input data, processes it, and writes the output to the
@@ -1199,11 +1187,11 @@ namespace Model
         virtual Model::StartApplicationOutcomeCallable StartApplicationCallable(const Model::StartApplicationRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Starts the specified Amazon Kinesis
+         * API V2 Documentation</a>.</p>  <p>Starts the specified Amazon Kinesis
          * Analytics application. After creating an application, you must exclusively call
          * this operation to start your application.</p> <p>After the application starts,
          * it begins consuming the input data, processes it, and writes the output to the
@@ -1225,11 +1213,11 @@ namespace Model
         virtual void StartApplicationAsync(const Model::StartApplicationRequest& request, const StartApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Stops the application from processing
+         * API V2 Documentation</a>.</p>  <p>Stops the application from processing
          * input data. You can stop an application only if it is in the running state. You
          * can use the <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
@@ -1245,11 +1233,11 @@ namespace Model
         virtual Model::StopApplicationOutcome StopApplication(const Model::StopApplicationRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Stops the application from processing
+         * API V2 Documentation</a>.</p>  <p>Stops the application from processing
          * input data. You can stop an application only if it is in the running state. You
          * can use the <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
@@ -1267,11 +1255,11 @@ namespace Model
         virtual Model::StopApplicationOutcomeCallable StopApplicationCallable(const Model::StopApplicationRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Stops the application from processing
+         * API V2 Documentation</a>.</p>  <p>Stops the application from processing
          * input data. You can stop an application only if it is in the running state. You
          * can use the <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
@@ -1360,11 +1348,11 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Updates an existing Amazon Kinesis
+         * API V2 Documentation</a>.</p>  <p>Updates an existing Amazon Kinesis
          * Analytics application. Using this API, you can update application code, input
          * configuration, and output configuration. </p> <p>Note that Amazon Kinesis
          * Analytics updates the <code>CurrentApplicationVersionId</code> each time you
@@ -1377,11 +1365,11 @@ namespace Model
         virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Updates an existing Amazon Kinesis
+         * API V2 Documentation</a>.</p>  <p>Updates an existing Amazon Kinesis
          * Analytics application. Using this API, you can update application code, input
          * configuration, and output configuration. </p> <p>Note that Amazon Kinesis
          * Analytics updates the <code>CurrentApplicationVersionId</code> each time you
@@ -1396,11 +1384,11 @@ namespace Model
         virtual Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
 
         /**
-         * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+         *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
          * supports SQL and Java applications. For more information about version 2, see <a
          * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
-         * API V2 Documentation</a>.</p> </note> <p>Updates an existing Amazon Kinesis
+         * API V2 Documentation</a>.</p>  <p>Updates an existing Amazon Kinesis
          * Analytics application. Using this API, you can update application code, input
          * configuration, and output configuration. </p> <p>Note that Amazon Kinesis
          * Analytics updates the <code>CurrentApplicationVersionId</code> each time you

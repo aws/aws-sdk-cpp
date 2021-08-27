@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/detective/Detective_EXPORTS.h>
@@ -80,18 +70,18 @@ namespace Model
         class RejectInvitationRequest;
         class StartMonitoringMemberRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DetectiveErrors>> AcceptInvitationOutcome;
-        typedef Aws::Utils::Outcome<CreateGraphResult, Aws::Client::AWSError<DetectiveErrors>> CreateGraphOutcome;
-        typedef Aws::Utils::Outcome<CreateMembersResult, Aws::Client::AWSError<DetectiveErrors>> CreateMembersOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DetectiveErrors>> DeleteGraphOutcome;
-        typedef Aws::Utils::Outcome<DeleteMembersResult, Aws::Client::AWSError<DetectiveErrors>> DeleteMembersOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DetectiveErrors>> DisassociateMembershipOutcome;
-        typedef Aws::Utils::Outcome<GetMembersResult, Aws::Client::AWSError<DetectiveErrors>> GetMembersOutcome;
-        typedef Aws::Utils::Outcome<ListGraphsResult, Aws::Client::AWSError<DetectiveErrors>> ListGraphsOutcome;
-        typedef Aws::Utils::Outcome<ListInvitationsResult, Aws::Client::AWSError<DetectiveErrors>> ListInvitationsOutcome;
-        typedef Aws::Utils::Outcome<ListMembersResult, Aws::Client::AWSError<DetectiveErrors>> ListMembersOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DetectiveErrors>> RejectInvitationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DetectiveErrors>> StartMonitoringMemberOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> AcceptInvitationOutcome;
+        typedef Aws::Utils::Outcome<CreateGraphResult, DetectiveError> CreateGraphOutcome;
+        typedef Aws::Utils::Outcome<CreateMembersResult, DetectiveError> CreateMembersOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> DeleteGraphOutcome;
+        typedef Aws::Utils::Outcome<DeleteMembersResult, DetectiveError> DeleteMembersOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> DisassociateMembershipOutcome;
+        typedef Aws::Utils::Outcome<GetMembersResult, DetectiveError> GetMembersOutcome;
+        typedef Aws::Utils::Outcome<ListGraphsResult, DetectiveError> ListGraphsOutcome;
+        typedef Aws::Utils::Outcome<ListInvitationsResult, DetectiveError> ListInvitationsOutcome;
+        typedef Aws::Utils::Outcome<ListMembersResult, DetectiveError> ListMembersOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> RejectInvitationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> StartMonitoringMemberOutcome;
 
         typedef std::future<AcceptInvitationOutcome> AcceptInvitationOutcomeCallable;
         typedef std::future<CreateGraphOutcome> CreateGraphOutcomeCallable;
@@ -172,8 +162,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~DetectiveClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "Detective"; }
 
 
         /**

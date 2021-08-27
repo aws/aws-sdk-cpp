@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/amplify/model/CreateDomainAssociationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -27,7 +17,9 @@ CreateDomainAssociationRequest::CreateDomainAssociationRequest() :
     m_domainNameHasBeenSet(false),
     m_enableAutoSubDomain(false),
     m_enableAutoSubDomainHasBeenSet(false),
-    m_subDomainSettingsHasBeenSet(false)
+    m_subDomainSettingsHasBeenSet(false),
+    m_autoSubDomainCreationPatternsHasBeenSet(false),
+    m_autoSubDomainIAMRoleHasBeenSet(false)
 {
 }
 
@@ -55,6 +47,23 @@ Aws::String CreateDomainAssociationRequest::SerializePayload() const
      subDomainSettingsJsonList[subDomainSettingsIndex].AsObject(m_subDomainSettings[subDomainSettingsIndex].Jsonize());
    }
    payload.WithArray("subDomainSettings", std::move(subDomainSettingsJsonList));
+
+  }
+
+  if(m_autoSubDomainCreationPatternsHasBeenSet)
+  {
+   Array<JsonValue> autoSubDomainCreationPatternsJsonList(m_autoSubDomainCreationPatterns.size());
+   for(unsigned autoSubDomainCreationPatternsIndex = 0; autoSubDomainCreationPatternsIndex < autoSubDomainCreationPatternsJsonList.GetLength(); ++autoSubDomainCreationPatternsIndex)
+   {
+     autoSubDomainCreationPatternsJsonList[autoSubDomainCreationPatternsIndex].AsString(m_autoSubDomainCreationPatterns[autoSubDomainCreationPatternsIndex]);
+   }
+   payload.WithArray("autoSubDomainCreationPatterns", std::move(autoSubDomainCreationPatternsJsonList));
+
+  }
+
+  if(m_autoSubDomainIAMRoleHasBeenSet)
+  {
+   payload.WithString("autoSubDomainIAMRole", m_autoSubDomainIAMRole);
 
   }
 

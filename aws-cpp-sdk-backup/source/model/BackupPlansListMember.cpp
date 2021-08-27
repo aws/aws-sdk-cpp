@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/backup/model/BackupPlansListMember.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -36,7 +26,8 @@ BackupPlansListMember::BackupPlansListMember() :
     m_versionIdHasBeenSet(false),
     m_backupPlanNameHasBeenSet(false),
     m_creatorRequestIdHasBeenSet(false),
-    m_lastExecutionDateHasBeenSet(false)
+    m_lastExecutionDateHasBeenSet(false),
+    m_advancedBackupSettingsHasBeenSet(false)
 {
 }
 
@@ -48,7 +39,8 @@ BackupPlansListMember::BackupPlansListMember(JsonView jsonValue) :
     m_versionIdHasBeenSet(false),
     m_backupPlanNameHasBeenSet(false),
     m_creatorRequestIdHasBeenSet(false),
-    m_lastExecutionDateHasBeenSet(false)
+    m_lastExecutionDateHasBeenSet(false),
+    m_advancedBackupSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -111,6 +103,16 @@ BackupPlansListMember& BackupPlansListMember::operator =(JsonView jsonValue)
     m_lastExecutionDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdvancedBackupSettings"))
+  {
+    Array<JsonView> advancedBackupSettingsJsonList = jsonValue.GetArray("AdvancedBackupSettings");
+    for(unsigned advancedBackupSettingsIndex = 0; advancedBackupSettingsIndex < advancedBackupSettingsJsonList.GetLength(); ++advancedBackupSettingsIndex)
+    {
+      m_advancedBackupSettings.push_back(advancedBackupSettingsJsonList[advancedBackupSettingsIndex].AsObject());
+    }
+    m_advancedBackupSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -161,6 +163,17 @@ JsonValue BackupPlansListMember::Jsonize() const
   if(m_lastExecutionDateHasBeenSet)
   {
    payload.WithDouble("LastExecutionDate", m_lastExecutionDate.SecondsWithMSPrecision());
+  }
+
+  if(m_advancedBackupSettingsHasBeenSet)
+  {
+   Array<JsonValue> advancedBackupSettingsJsonList(m_advancedBackupSettings.size());
+   for(unsigned advancedBackupSettingsIndex = 0; advancedBackupSettingsIndex < advancedBackupSettingsJsonList.GetLength(); ++advancedBackupSettingsIndex)
+   {
+     advancedBackupSettingsJsonList[advancedBackupSettingsIndex].AsObject(m_advancedBackupSettings[advancedBackupSettingsIndex].Jsonize());
+   }
+   payload.WithArray("AdvancedBackupSettings", std::move(advancedBackupSettingsJsonList));
+
   }
 
   return payload;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -47,7 +37,7 @@ namespace Model
 
 
     /**
-     * <p>One or more filters to limit the reponse.</p> <ul> <li> <p>Key:
+     * <p>One or more filters to limit the response.</p> <ul> <li> <p>Key:
      * CreatedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
      * LastModifiedBy</p> <p>Operations: Contains, Equals</p> </li> <li> <p>Key:
      * LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
@@ -66,7 +56,7 @@ namespace Model
     inline const Aws::Vector<OpsItemFilter>& GetOpsItemFilters() const{ return m_opsItemFilters; }
 
     /**
-     * <p>One or more filters to limit the reponse.</p> <ul> <li> <p>Key:
+     * <p>One or more filters to limit the response.</p> <ul> <li> <p>Key:
      * CreatedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
      * LastModifiedBy</p> <p>Operations: Contains, Equals</p> </li> <li> <p>Key:
      * LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
@@ -85,7 +75,7 @@ namespace Model
     inline bool OpsItemFiltersHasBeenSet() const { return m_opsItemFiltersHasBeenSet; }
 
     /**
-     * <p>One or more filters to limit the reponse.</p> <ul> <li> <p>Key:
+     * <p>One or more filters to limit the response.</p> <ul> <li> <p>Key:
      * CreatedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
      * LastModifiedBy</p> <p>Operations: Contains, Equals</p> </li> <li> <p>Key:
      * LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
@@ -104,7 +94,7 @@ namespace Model
     inline void SetOpsItemFilters(const Aws::Vector<OpsItemFilter>& value) { m_opsItemFiltersHasBeenSet = true; m_opsItemFilters = value; }
 
     /**
-     * <p>One or more filters to limit the reponse.</p> <ul> <li> <p>Key:
+     * <p>One or more filters to limit the response.</p> <ul> <li> <p>Key:
      * CreatedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
      * LastModifiedBy</p> <p>Operations: Contains, Equals</p> </li> <li> <p>Key:
      * LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
@@ -123,7 +113,7 @@ namespace Model
     inline void SetOpsItemFilters(Aws::Vector<OpsItemFilter>&& value) { m_opsItemFiltersHasBeenSet = true; m_opsItemFilters = std::move(value); }
 
     /**
-     * <p>One or more filters to limit the reponse.</p> <ul> <li> <p>Key:
+     * <p>One or more filters to limit the response.</p> <ul> <li> <p>Key:
      * CreatedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
      * LastModifiedBy</p> <p>Operations: Contains, Equals</p> </li> <li> <p>Key:
      * LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
@@ -142,7 +132,7 @@ namespace Model
     inline DescribeOpsItemsRequest& WithOpsItemFilters(const Aws::Vector<OpsItemFilter>& value) { SetOpsItemFilters(value); return *this;}
 
     /**
-     * <p>One or more filters to limit the reponse.</p> <ul> <li> <p>Key:
+     * <p>One or more filters to limit the response.</p> <ul> <li> <p>Key:
      * CreatedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
      * LastModifiedBy</p> <p>Operations: Contains, Equals</p> </li> <li> <p>Key:
      * LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
@@ -161,7 +151,7 @@ namespace Model
     inline DescribeOpsItemsRequest& WithOpsItemFilters(Aws::Vector<OpsItemFilter>&& value) { SetOpsItemFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters to limit the reponse.</p> <ul> <li> <p>Key:
+     * <p>One or more filters to limit the response.</p> <ul> <li> <p>Key:
      * CreatedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
      * LastModifiedBy</p> <p>Operations: Contains, Equals</p> </li> <li> <p>Key:
      * LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
@@ -180,7 +170,7 @@ namespace Model
     inline DescribeOpsItemsRequest& AddOpsItemFilters(const OpsItemFilter& value) { m_opsItemFiltersHasBeenSet = true; m_opsItemFilters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters to limit the reponse.</p> <ul> <li> <p>Key:
+     * <p>One or more filters to limit the response.</p> <ul> <li> <p>Key:
      * CreatedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
      * LastModifiedBy</p> <p>Operations: Contains, Equals</p> </li> <li> <p>Key:
      * LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:

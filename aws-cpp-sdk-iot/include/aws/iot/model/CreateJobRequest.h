@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -186,82 +176,82 @@ namespace Model
 
 
     /**
-     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
      * you must use a placeholder link when specifying the document.</p> <p>The
      * placeholder link is of the following form:</p> <p>
      * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
      * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> </note>
+     * the bucket to which you are linking.</p> 
      */
     inline const Aws::String& GetDocument() const{ return m_document; }
 
     /**
-     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
      * you must use a placeholder link when specifying the document.</p> <p>The
      * placeholder link is of the following form:</p> <p>
      * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
      * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> </note>
+     * the bucket to which you are linking.</p> 
      */
     inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
 
     /**
-     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
      * you must use a placeholder link when specifying the document.</p> <p>The
      * placeholder link is of the following form:</p> <p>
      * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
      * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> </note>
+     * the bucket to which you are linking.</p> 
      */
     inline void SetDocument(const Aws::String& value) { m_documentHasBeenSet = true; m_document = value; }
 
     /**
-     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
      * you must use a placeholder link when specifying the document.</p> <p>The
      * placeholder link is of the following form:</p> <p>
      * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
      * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> </note>
+     * the bucket to which you are linking.</p> 
      */
     inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
 
     /**
-     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
      * you must use a placeholder link when specifying the document.</p> <p>The
      * placeholder link is of the following form:</p> <p>
      * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
      * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> </note>
+     * the bucket to which you are linking.</p> 
      */
     inline void SetDocument(const char* value) { m_documentHasBeenSet = true; m_document.assign(value); }
 
     /**
-     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
      * you must use a placeholder link when specifying the document.</p> <p>The
      * placeholder link is of the following form:</p> <p>
      * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
      * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> </note>
+     * the bucket to which you are linking.</p> 
      */
     inline CreateJobRequest& WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
 
     /**
-     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
      * you must use a placeholder link when specifying the document.</p> <p>The
      * placeholder link is of the following form:</p> <p>
      * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
      * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> </note>
+     * the bucket to which you are linking.</p> 
      */
     inline CreateJobRequest& WithDocument(Aws::String&& value) { SetDocument(std::move(value)); return *this;}
 
     /**
-     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
      * you must use a placeholder link when specifying the document.</p> <p>The
      * placeholder link is of the following form:</p> <p>
      * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
      * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> </note>
+     * the bucket to which you are linking.</p> 
      */
     inline CreateJobRequest& WithDocument(const char* value) { SetDocument(value); return *this;}
 
@@ -556,6 +546,95 @@ namespace Model
      */
     inline CreateJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
+     * notifications to MQTT topics that contain the value in the following format.</p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline const Aws::String& GetNamespaceId() const{ return m_namespaceId; }
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
+     * notifications to MQTT topics that contain the value in the following format.</p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline bool NamespaceIdHasBeenSet() const { return m_namespaceIdHasBeenSet; }
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
+     * notifications to MQTT topics that contain the value in the following format.</p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline void SetNamespaceId(const Aws::String& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = value; }
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
+     * notifications to MQTT topics that contain the value in the following format.</p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline void SetNamespaceId(Aws::String&& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = std::move(value); }
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
+     * notifications to MQTT topics that contain the value in the following format.</p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline void SetNamespaceId(const char* value) { m_namespaceIdHasBeenSet = true; m_namespaceId.assign(value); }
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
+     * notifications to MQTT topics that contain the value in the following format.</p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline CreateJobRequest& WithNamespaceId(const Aws::String& value) { SetNamespaceId(value); return *this;}
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
+     * notifications to MQTT topics that contain the value in the following format.</p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline CreateJobRequest& WithNamespaceId(Aws::String&& value) { SetNamespaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
+     * notifications to MQTT topics that contain the value in the following format.</p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline CreateJobRequest& WithNamespaceId(const char* value) { SetNamespaceId(value); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -590,6 +669,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_namespaceId;
+    bool m_namespaceIdHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -21,7 +11,9 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/InstanceAssociationOutputLocation.h>
 #include <aws/ssm/model/AssociationComplianceSeverity.h>
+#include <aws/ssm/model/AssociationSyncCompliance.h>
 #include <aws/ssm/model/Target.h>
+#include <aws/ssm/model/TargetLocation.h>
 #include <utility>
 
 namespace Aws
@@ -757,6 +749,183 @@ namespace Model
      */
     inline AssociationVersionInfo& WithComplianceSeverity(AssociationComplianceSeverity&& value) { SetComplianceSeverity(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The mode for generating association compliance. You can specify
+     * <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system
+     * uses the status of the association execution to determine the compliance status.
+     * If the association execution runs successfully, then the association is
+     * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
+     * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
+     * mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
+     * managed by State Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
+     * <code>AUTO</code> mode.</p>
+     */
+    inline const AssociationSyncCompliance& GetSyncCompliance() const{ return m_syncCompliance; }
+
+    /**
+     * <p>The mode for generating association compliance. You can specify
+     * <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system
+     * uses the status of the association execution to determine the compliance status.
+     * If the association execution runs successfully, then the association is
+     * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
+     * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
+     * mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
+     * managed by State Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
+     * <code>AUTO</code> mode.</p>
+     */
+    inline bool SyncComplianceHasBeenSet() const { return m_syncComplianceHasBeenSet; }
+
+    /**
+     * <p>The mode for generating association compliance. You can specify
+     * <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system
+     * uses the status of the association execution to determine the compliance status.
+     * If the association execution runs successfully, then the association is
+     * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
+     * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
+     * mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
+     * managed by State Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
+     * <code>AUTO</code> mode.</p>
+     */
+    inline void SetSyncCompliance(const AssociationSyncCompliance& value) { m_syncComplianceHasBeenSet = true; m_syncCompliance = value; }
+
+    /**
+     * <p>The mode for generating association compliance. You can specify
+     * <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system
+     * uses the status of the association execution to determine the compliance status.
+     * If the association execution runs successfully, then the association is
+     * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
+     * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
+     * mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
+     * managed by State Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
+     * <code>AUTO</code> mode.</p>
+     */
+    inline void SetSyncCompliance(AssociationSyncCompliance&& value) { m_syncComplianceHasBeenSet = true; m_syncCompliance = std::move(value); }
+
+    /**
+     * <p>The mode for generating association compliance. You can specify
+     * <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system
+     * uses the status of the association execution to determine the compliance status.
+     * If the association execution runs successfully, then the association is
+     * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
+     * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
+     * mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
+     * managed by State Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
+     * <code>AUTO</code> mode.</p>
+     */
+    inline AssociationVersionInfo& WithSyncCompliance(const AssociationSyncCompliance& value) { SetSyncCompliance(value); return *this;}
+
+    /**
+     * <p>The mode for generating association compliance. You can specify
+     * <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system
+     * uses the status of the association execution to determine the compliance status.
+     * If the association execution runs successfully, then the association is
+     * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
+     * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
+     * mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
+     * managed by State Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
+     * <code>AUTO</code> mode.</p>
+     */
+    inline AssociationVersionInfo& WithSyncCompliance(AssociationSyncCompliance&& value) { SetSyncCompliance(std::move(value)); return *this;}
+
+
+    /**
+     * <p>By default, when you create a new associations, the system runs it
+     * immediately after it is created and then according to the schedule you
+     * specified. Specify this option if you don't want an association to run
+     * immediately after you create it. This parameter is not supported for rate
+     * expressions.</p>
+     */
+    inline bool GetApplyOnlyAtCronInterval() const{ return m_applyOnlyAtCronInterval; }
+
+    /**
+     * <p>By default, when you create a new associations, the system runs it
+     * immediately after it is created and then according to the schedule you
+     * specified. Specify this option if you don't want an association to run
+     * immediately after you create it. This parameter is not supported for rate
+     * expressions.</p>
+     */
+    inline bool ApplyOnlyAtCronIntervalHasBeenSet() const { return m_applyOnlyAtCronIntervalHasBeenSet; }
+
+    /**
+     * <p>By default, when you create a new associations, the system runs it
+     * immediately after it is created and then according to the schedule you
+     * specified. Specify this option if you don't want an association to run
+     * immediately after you create it. This parameter is not supported for rate
+     * expressions.</p>
+     */
+    inline void SetApplyOnlyAtCronInterval(bool value) { m_applyOnlyAtCronIntervalHasBeenSet = true; m_applyOnlyAtCronInterval = value; }
+
+    /**
+     * <p>By default, when you create a new associations, the system runs it
+     * immediately after it is created and then according to the schedule you
+     * specified. Specify this option if you don't want an association to run
+     * immediately after you create it. This parameter is not supported for rate
+     * expressions.</p>
+     */
+    inline AssociationVersionInfo& WithApplyOnlyAtCronInterval(bool value) { SetApplyOnlyAtCronInterval(value); return *this;}
+
+
+    /**
+     * <p>The combination of AWS Regions and AWS accounts where you wanted to run the
+     * association when this association version was created.</p>
+     */
+    inline const Aws::Vector<TargetLocation>& GetTargetLocations() const{ return m_targetLocations; }
+
+    /**
+     * <p>The combination of AWS Regions and AWS accounts where you wanted to run the
+     * association when this association version was created.</p>
+     */
+    inline bool TargetLocationsHasBeenSet() const { return m_targetLocationsHasBeenSet; }
+
+    /**
+     * <p>The combination of AWS Regions and AWS accounts where you wanted to run the
+     * association when this association version was created.</p>
+     */
+    inline void SetTargetLocations(const Aws::Vector<TargetLocation>& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = value; }
+
+    /**
+     * <p>The combination of AWS Regions and AWS accounts where you wanted to run the
+     * association when this association version was created.</p>
+     */
+    inline void SetTargetLocations(Aws::Vector<TargetLocation>&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = std::move(value); }
+
+    /**
+     * <p>The combination of AWS Regions and AWS accounts where you wanted to run the
+     * association when this association version was created.</p>
+     */
+    inline AssociationVersionInfo& WithTargetLocations(const Aws::Vector<TargetLocation>& value) { SetTargetLocations(value); return *this;}
+
+    /**
+     * <p>The combination of AWS Regions and AWS accounts where you wanted to run the
+     * association when this association version was created.</p>
+     */
+    inline AssociationVersionInfo& WithTargetLocations(Aws::Vector<TargetLocation>&& value) { SetTargetLocations(std::move(value)); return *this;}
+
+    /**
+     * <p>The combination of AWS Regions and AWS accounts where you wanted to run the
+     * association when this association version was created.</p>
+     */
+    inline AssociationVersionInfo& AddTargetLocations(const TargetLocation& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(value); return *this; }
+
+    /**
+     * <p>The combination of AWS Regions and AWS accounts where you wanted to run the
+     * association when this association version was created.</p>
+     */
+    inline AssociationVersionInfo& AddTargetLocations(TargetLocation&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_associationId;
@@ -797,6 +966,15 @@ namespace Model
 
     AssociationComplianceSeverity m_complianceSeverity;
     bool m_complianceSeverityHasBeenSet;
+
+    AssociationSyncCompliance m_syncCompliance;
+    bool m_syncComplianceHasBeenSet;
+
+    bool m_applyOnlyAtCronInterval;
+    bool m_applyOnlyAtCronIntervalHasBeenSet;
+
+    Aws::Vector<TargetLocation> m_targetLocations;
+    bool m_targetLocationsHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
@@ -317,6 +307,47 @@ namespace Model
 
 
     /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline const Aws::String& GetImageUri() const{ return m_imageUri; }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline bool ImageUriHasBeenSet() const { return m_imageUriHasBeenSet; }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline void SetImageUri(const Aws::String& value) { m_imageUriHasBeenSet = true; m_imageUri = value; }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline void SetImageUri(Aws::String&& value) { m_imageUriHasBeenSet = true; m_imageUri = std::move(value); }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline void SetImageUri(const char* value) { m_imageUriHasBeenSet = true; m_imageUri.assign(value); }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline UpdateFunctionCodeRequest& WithImageUri(const Aws::String& value) { SetImageUri(value); return *this;}
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline UpdateFunctionCodeRequest& WithImageUri(Aws::String&& value) { SetImageUri(std::move(value)); return *this;}
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline UpdateFunctionCodeRequest& WithImageUri(const char* value) { SetImageUri(value); return *this;}
+
+
+    /**
      * <p>Set to true to publish a new version of the function after updating the code.
      * This has the same effect as calling <a>PublishVersion</a> separately.</p>
      */
@@ -438,6 +469,9 @@ namespace Model
 
     Aws::String m_s3ObjectVersion;
     bool m_s3ObjectVersionHasBeenSet;
+
+    Aws::String m_imageUri;
+    bool m_imageUriHasBeenSet;
 
     bool m_publish;
     bool m_publishHasBeenSet;

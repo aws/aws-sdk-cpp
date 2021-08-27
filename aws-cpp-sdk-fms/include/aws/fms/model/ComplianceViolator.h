@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/fms/FMS_EXPORTS.h>
@@ -125,8 +115,9 @@ namespace Model
      * <p>The resource type. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::CloudFront::Distribution</code>, or
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
@@ -134,8 +125,9 @@ namespace Model
      * <p>The resource type. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::CloudFront::Distribution</code>, or
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
@@ -143,8 +135,9 @@ namespace Model
      * <p>The resource type. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::CloudFront::Distribution</code>, or
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
@@ -152,8 +145,9 @@ namespace Model
      * <p>The resource type. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::CloudFront::Distribution</code>, or
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
@@ -161,8 +155,9 @@ namespace Model
      * <p>The resource type. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::CloudFront::Distribution</code>, or
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
@@ -170,8 +165,9 @@ namespace Model
      * <p>The resource type. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::CloudFront::Distribution</code>, or
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
      */
     inline ComplianceViolator& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
@@ -179,8 +175,9 @@ namespace Model
      * <p>The resource type. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::CloudFront::Distribution</code>, or
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
      */
     inline ComplianceViolator& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
@@ -188,8 +185,9 @@ namespace Model
      * <p>The resource type. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::CloudFront::Distribution</code>, or
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
      */
     inline ComplianceViolator& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -49,42 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the notification target to which alerts are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
+     * sent.</p>
      */
     inline const Aws::String& GetAlertTargetArn() const{ return m_alertTargetArn; }
 
     /**
-     * <p>The ARN of the notification target to which alerts are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
+     * sent.</p>
      */
     inline bool AlertTargetArnHasBeenSet() const { return m_alertTargetArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the notification target to which alerts are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
+     * sent.</p>
      */
     inline void SetAlertTargetArn(const Aws::String& value) { m_alertTargetArnHasBeenSet = true; m_alertTargetArn = value; }
 
     /**
-     * <p>The ARN of the notification target to which alerts are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
+     * sent.</p>
      */
     inline void SetAlertTargetArn(Aws::String&& value) { m_alertTargetArnHasBeenSet = true; m_alertTargetArn = std::move(value); }
 
     /**
-     * <p>The ARN of the notification target to which alerts are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
+     * sent.</p>
      */
     inline void SetAlertTargetArn(const char* value) { m_alertTargetArnHasBeenSet = true; m_alertTargetArn.assign(value); }
 
     /**
-     * <p>The ARN of the notification target to which alerts are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
+     * sent.</p>
      */
     inline AlertTarget& WithAlertTargetArn(const Aws::String& value) { SetAlertTargetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the notification target to which alerts are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
+     * sent.</p>
      */
     inline AlertTarget& WithAlertTargetArn(Aws::String&& value) { SetAlertTargetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the notification target to which alerts are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
+     * sent.</p>
      */
     inline AlertTarget& WithAlertTargetArn(const char* value) { SetAlertTargetArn(value); return *this;}
 

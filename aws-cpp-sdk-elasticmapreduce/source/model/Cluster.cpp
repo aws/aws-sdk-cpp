@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticmapreduce/model/Cluster.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -36,6 +26,7 @@ Cluster::Cluster() :
     m_instanceCollectionType(InstanceCollectionType::NOT_SET),
     m_instanceCollectionTypeHasBeenSet(false),
     m_logUriHasBeenSet(false),
+    m_logEncryptionKmsKeyIdHasBeenSet(false),
     m_requestedAmiVersionHasBeenSet(false),
     m_runningAmiVersionHasBeenSet(false),
     m_releaseLabelHasBeenSet(false),
@@ -65,7 +56,8 @@ Cluster::Cluster() :
     m_clusterArnHasBeenSet(false),
     m_outpostArnHasBeenSet(false),
     m_stepConcurrencyLevel(0),
-    m_stepConcurrencyLevelHasBeenSet(false)
+    m_stepConcurrencyLevelHasBeenSet(false),
+    m_placementGroupsHasBeenSet(false)
 {
 }
 
@@ -77,6 +69,7 @@ Cluster::Cluster(JsonView jsonValue) :
     m_instanceCollectionType(InstanceCollectionType::NOT_SET),
     m_instanceCollectionTypeHasBeenSet(false),
     m_logUriHasBeenSet(false),
+    m_logEncryptionKmsKeyIdHasBeenSet(false),
     m_requestedAmiVersionHasBeenSet(false),
     m_runningAmiVersionHasBeenSet(false),
     m_releaseLabelHasBeenSet(false),
@@ -106,7 +99,8 @@ Cluster::Cluster(JsonView jsonValue) :
     m_clusterArnHasBeenSet(false),
     m_outpostArnHasBeenSet(false),
     m_stepConcurrencyLevel(0),
-    m_stepConcurrencyLevelHasBeenSet(false)
+    m_stepConcurrencyLevelHasBeenSet(false),
+    m_placementGroupsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -153,6 +147,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_logUri = jsonValue.GetString("LogUri");
 
     m_logUriHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LogEncryptionKmsKeyId"))
+  {
+    m_logEncryptionKmsKeyId = jsonValue.GetString("LogEncryptionKmsKeyId");
+
+    m_logEncryptionKmsKeyIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RequestedAmiVersion"))
@@ -318,6 +319,16 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_stepConcurrencyLevelHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PlacementGroups"))
+  {
+    Array<JsonView> placementGroupsJsonList = jsonValue.GetArray("PlacementGroups");
+    for(unsigned placementGroupsIndex = 0; placementGroupsIndex < placementGroupsJsonList.GetLength(); ++placementGroupsIndex)
+    {
+      m_placementGroups.push_back(placementGroupsJsonList[placementGroupsIndex].AsObject());
+    }
+    m_placementGroupsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -357,6 +368,12 @@ JsonValue Cluster::Jsonize() const
   if(m_logUriHasBeenSet)
   {
    payload.WithString("LogUri", m_logUri);
+
+  }
+
+  if(m_logEncryptionKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("LogEncryptionKmsKeyId", m_logEncryptionKmsKeyId);
 
   }
 
@@ -502,6 +519,17 @@ JsonValue Cluster::Jsonize() const
   if(m_stepConcurrencyLevelHasBeenSet)
   {
    payload.WithInteger("StepConcurrencyLevel", m_stepConcurrencyLevel);
+
+  }
+
+  if(m_placementGroupsHasBeenSet)
+  {
+   Array<JsonValue> placementGroupsJsonList(m_placementGroups.size());
+   for(unsigned placementGroupsIndex = 0; placementGroupsIndex < placementGroupsJsonList.GetLength(); ++placementGroupsIndex)
+   {
+     placementGroupsJsonList[placementGroupsIndex].AsObject(m_placementGroups[placementGroupsIndex].Jsonize());
+   }
+   payload.WithArray("PlacementGroups", std::move(placementGroupsJsonList));
 
   }
 

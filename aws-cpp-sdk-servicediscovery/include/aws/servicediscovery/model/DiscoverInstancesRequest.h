@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
@@ -145,137 +135,246 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of instances that you want Cloud Map to return in the
+     * <p>The maximum number of instances that you want AWS Cloud Map to return in the
      * response to a <code>DiscoverInstances</code> request. If you don't specify a
-     * value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
+     * value for <code>MaxResults</code>, AWS Cloud Map returns up to 100
+     * instances.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of instances that you want Cloud Map to return in the
+     * <p>The maximum number of instances that you want AWS Cloud Map to return in the
      * response to a <code>DiscoverInstances</code> request. If you don't specify a
-     * value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
+     * value for <code>MaxResults</code>, AWS Cloud Map returns up to 100
+     * instances.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of instances that you want Cloud Map to return in the
+     * <p>The maximum number of instances that you want AWS Cloud Map to return in the
      * response to a <code>DiscoverInstances</code> request. If you don't specify a
-     * value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
+     * value for <code>MaxResults</code>, AWS Cloud Map returns up to 100
+     * instances.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of instances that you want Cloud Map to return in the
+     * <p>The maximum number of instances that you want AWS Cloud Map to return in the
      * response to a <code>DiscoverInstances</code> request. If you don't specify a
-     * value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
+     * value for <code>MaxResults</code>, AWS Cloud Map returns up to 100
+     * instances.</p>
      */
     inline DiscoverInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance. For
+     * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
+     * specified key-value pairs will be returned.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetQueryParameters() const{ return m_queryParameters; }
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance. For
+     * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
+     * specified key-value pairs will be returned.</p>
      */
     inline bool QueryParametersHasBeenSet() const { return m_queryParametersHasBeenSet; }
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance. For
+     * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
+     * specified key-value pairs will be returned.</p>
      */
     inline void SetQueryParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_queryParametersHasBeenSet = true; m_queryParameters = value; }
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance. For
+     * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
+     * specified key-value pairs will be returned.</p>
      */
     inline void SetQueryParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_queryParametersHasBeenSet = true; m_queryParameters = std::move(value); }
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance. For
+     * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
+     * specified key-value pairs will be returned.</p>
      */
     inline DiscoverInstancesRequest& WithQueryParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetQueryParameters(value); return *this;}
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance. For
+     * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
+     * specified key-value pairs will be returned.</p>
      */
     inline DiscoverInstancesRequest& WithQueryParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetQueryParameters(std::move(value)); return *this;}
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance. For
+     * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
+     * specified key-value pairs will be returned.</p>
      */
     inline DiscoverInstancesRequest& AddQueryParameters(const Aws::String& key, const Aws::String& value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance. For
+     * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
+     * specified key-value pairs will be returned.</p>
      */
     inline DiscoverInstancesRequest& AddQueryParameters(Aws::String&& key, const Aws::String& value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance. For
+     * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
+     * specified key-value pairs will be returned.</p>
      */
     inline DiscoverInstancesRequest& AddQueryParameters(const Aws::String& key, Aws::String&& value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance. For
+     * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
+     * specified key-value pairs will be returned.</p>
      */
     inline DiscoverInstancesRequest& AddQueryParameters(Aws::String&& key, Aws::String&& value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance. For
+     * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
+     * specified key-value pairs will be returned.</p>
      */
     inline DiscoverInstancesRequest& AddQueryParameters(const char* key, Aws::String&& value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance. For
+     * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
+     * specified key-value pairs will be returned.</p>
      */
     inline DiscoverInstancesRequest& AddQueryParameters(Aws::String&& key, const char* value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance. For
+     * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
+     * specified key-value pairs will be returned.</p>
      */
     inline DiscoverInstancesRequest& AddQueryParameters(const char* key, const char* value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, they are returned.
+     * Otherwise, these filters are ignored and only instances that match the filters
+     * specified in the <code>QueryParameters</code> parameter are returned.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetOptionalParameters() const{ return m_optionalParameters; }
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, they are returned.
+     * Otherwise, these filters are ignored and only instances that match the filters
+     * specified in the <code>QueryParameters</code> parameter are returned.</p>
+     */
+    inline bool OptionalParametersHasBeenSet() const { return m_optionalParametersHasBeenSet; }
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, they are returned.
+     * Otherwise, these filters are ignored and only instances that match the filters
+     * specified in the <code>QueryParameters</code> parameter are returned.</p>
+     */
+    inline void SetOptionalParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters = value; }
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, they are returned.
+     * Otherwise, these filters are ignored and only instances that match the filters
+     * specified in the <code>QueryParameters</code> parameter are returned.</p>
+     */
+    inline void SetOptionalParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters = std::move(value); }
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, they are returned.
+     * Otherwise, these filters are ignored and only instances that match the filters
+     * specified in the <code>QueryParameters</code> parameter are returned.</p>
+     */
+    inline DiscoverInstancesRequest& WithOptionalParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetOptionalParameters(value); return *this;}
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, they are returned.
+     * Otherwise, these filters are ignored and only instances that match the filters
+     * specified in the <code>QueryParameters</code> parameter are returned.</p>
+     */
+    inline DiscoverInstancesRequest& WithOptionalParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetOptionalParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, they are returned.
+     * Otherwise, these filters are ignored and only instances that match the filters
+     * specified in the <code>QueryParameters</code> parameter are returned.</p>
+     */
+    inline DiscoverInstancesRequest& AddOptionalParameters(const Aws::String& key, const Aws::String& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(key, value); return *this; }
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, they are returned.
+     * Otherwise, these filters are ignored and only instances that match the filters
+     * specified in the <code>QueryParameters</code> parameter are returned.</p>
+     */
+    inline DiscoverInstancesRequest& AddOptionalParameters(Aws::String&& key, const Aws::String& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, they are returned.
+     * Otherwise, these filters are ignored and only instances that match the filters
+     * specified in the <code>QueryParameters</code> parameter are returned.</p>
+     */
+    inline DiscoverInstancesRequest& AddOptionalParameters(const Aws::String& key, Aws::String&& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, they are returned.
+     * Otherwise, these filters are ignored and only instances that match the filters
+     * specified in the <code>QueryParameters</code> parameter are returned.</p>
+     */
+    inline DiscoverInstancesRequest& AddOptionalParameters(Aws::String&& key, Aws::String&& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, they are returned.
+     * Otherwise, these filters are ignored and only instances that match the filters
+     * specified in the <code>QueryParameters</code> parameter are returned.</p>
+     */
+    inline DiscoverInstancesRequest& AddOptionalParameters(const char* key, Aws::String&& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, they are returned.
+     * Otherwise, these filters are ignored and only instances that match the filters
+     * specified in the <code>QueryParameters</code> parameter are returned.</p>
+     */
+    inline DiscoverInstancesRequest& AddOptionalParameters(Aws::String&& key, const char* value) { m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, they are returned.
+     * Otherwise, these filters are ignored and only instances that match the filters
+     * specified in the <code>QueryParameters</code> parameter are returned.</p>
+     */
+    inline DiscoverInstancesRequest& AddOptionalParameters(const char* key, const char* value) { m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(key, value); return *this; }
 
 
     /**
@@ -321,6 +420,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_queryParameters;
     bool m_queryParametersHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_optionalParameters;
+    bool m_optionalParametersHasBeenSet;
 
     HealthStatusFilter m_healthStatus;
     bool m_healthStatusHasBeenSet;

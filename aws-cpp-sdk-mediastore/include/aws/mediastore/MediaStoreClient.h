@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediastore/MediaStore_EXPORTS.h>
@@ -103,27 +93,27 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
 
-        typedef Aws::Utils::Outcome<CreateContainerResult, Aws::Client::AWSError<MediaStoreErrors>> CreateContainerOutcome;
-        typedef Aws::Utils::Outcome<DeleteContainerResult, Aws::Client::AWSError<MediaStoreErrors>> DeleteContainerOutcome;
-        typedef Aws::Utils::Outcome<DeleteContainerPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> DeleteContainerPolicyOutcome;
-        typedef Aws::Utils::Outcome<DeleteCorsPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> DeleteCorsPolicyOutcome;
-        typedef Aws::Utils::Outcome<DeleteLifecyclePolicyResult, Aws::Client::AWSError<MediaStoreErrors>> DeleteLifecyclePolicyOutcome;
-        typedef Aws::Utils::Outcome<DeleteMetricPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> DeleteMetricPolicyOutcome;
-        typedef Aws::Utils::Outcome<DescribeContainerResult, Aws::Client::AWSError<MediaStoreErrors>> DescribeContainerOutcome;
-        typedef Aws::Utils::Outcome<GetContainerPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> GetContainerPolicyOutcome;
-        typedef Aws::Utils::Outcome<GetCorsPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> GetCorsPolicyOutcome;
-        typedef Aws::Utils::Outcome<GetLifecyclePolicyResult, Aws::Client::AWSError<MediaStoreErrors>> GetLifecyclePolicyOutcome;
-        typedef Aws::Utils::Outcome<GetMetricPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> GetMetricPolicyOutcome;
-        typedef Aws::Utils::Outcome<ListContainersResult, Aws::Client::AWSError<MediaStoreErrors>> ListContainersOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<MediaStoreErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutContainerPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> PutContainerPolicyOutcome;
-        typedef Aws::Utils::Outcome<PutCorsPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> PutCorsPolicyOutcome;
-        typedef Aws::Utils::Outcome<PutLifecyclePolicyResult, Aws::Client::AWSError<MediaStoreErrors>> PutLifecyclePolicyOutcome;
-        typedef Aws::Utils::Outcome<PutMetricPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> PutMetricPolicyOutcome;
-        typedef Aws::Utils::Outcome<StartAccessLoggingResult, Aws::Client::AWSError<MediaStoreErrors>> StartAccessLoggingOutcome;
-        typedef Aws::Utils::Outcome<StopAccessLoggingResult, Aws::Client::AWSError<MediaStoreErrors>> StopAccessLoggingOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<MediaStoreErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<MediaStoreErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<CreateContainerResult, MediaStoreError> CreateContainerOutcome;
+        typedef Aws::Utils::Outcome<DeleteContainerResult, MediaStoreError> DeleteContainerOutcome;
+        typedef Aws::Utils::Outcome<DeleteContainerPolicyResult, MediaStoreError> DeleteContainerPolicyOutcome;
+        typedef Aws::Utils::Outcome<DeleteCorsPolicyResult, MediaStoreError> DeleteCorsPolicyOutcome;
+        typedef Aws::Utils::Outcome<DeleteLifecyclePolicyResult, MediaStoreError> DeleteLifecyclePolicyOutcome;
+        typedef Aws::Utils::Outcome<DeleteMetricPolicyResult, MediaStoreError> DeleteMetricPolicyOutcome;
+        typedef Aws::Utils::Outcome<DescribeContainerResult, MediaStoreError> DescribeContainerOutcome;
+        typedef Aws::Utils::Outcome<GetContainerPolicyResult, MediaStoreError> GetContainerPolicyOutcome;
+        typedef Aws::Utils::Outcome<GetCorsPolicyResult, MediaStoreError> GetCorsPolicyOutcome;
+        typedef Aws::Utils::Outcome<GetLifecyclePolicyResult, MediaStoreError> GetLifecyclePolicyOutcome;
+        typedef Aws::Utils::Outcome<GetMetricPolicyResult, MediaStoreError> GetMetricPolicyOutcome;
+        typedef Aws::Utils::Outcome<ListContainersResult, MediaStoreError> ListContainersOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, MediaStoreError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<PutContainerPolicyResult, MediaStoreError> PutContainerPolicyOutcome;
+        typedef Aws::Utils::Outcome<PutCorsPolicyResult, MediaStoreError> PutCorsPolicyOutcome;
+        typedef Aws::Utils::Outcome<PutLifecyclePolicyResult, MediaStoreError> PutLifecyclePolicyOutcome;
+        typedef Aws::Utils::Outcome<PutMetricPolicyResult, MediaStoreError> PutMetricPolicyOutcome;
+        typedef Aws::Utils::Outcome<StartAccessLoggingResult, MediaStoreError> StartAccessLoggingOutcome;
+        typedef Aws::Utils::Outcome<StopAccessLoggingResult, MediaStoreError> StopAccessLoggingOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, MediaStoreError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, MediaStoreError> UntagResourceOutcome;
 
         typedef std::future<CreateContainerOutcome> CreateContainerOutcomeCallable;
         typedef std::future<DeleteContainerOutcome> DeleteContainerOutcomeCallable;
@@ -201,8 +191,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~MediaStoreClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "MediaStore"; }
 
 
         /**

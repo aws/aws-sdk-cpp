@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -42,7 +32,9 @@ namespace Model
   /**
    * <p>A collection of attributes that are applied to all active Security
    * Hub-aggregated findings and that result in a subset of findings that are
-   * included in this insight.</p><p><h3>See Also:</h3>   <a
+   * included in this insight.</p> <p>You can filter by up to 10 finding attributes.
+   * For each attribute, you can provide up to 20 filter values.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecurityFindingFilters">AWS
    * API Reference</a></p>
    */
@@ -197,56 +189,56 @@ namespace Model
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc.</p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline const Aws::Vector<StringFilter>& GetGeneratorId() const{ return m_generatorId; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc.</p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline bool GeneratorIdHasBeenSet() const { return m_generatorIdHasBeenSet; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc.</p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline void SetGeneratorId(const Aws::Vector<StringFilter>& value) { m_generatorIdHasBeenSet = true; m_generatorId = value; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc.</p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline void SetGeneratorId(Aws::Vector<StringFilter>&& value) { m_generatorIdHasBeenSet = true; m_generatorId = std::move(value); }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc.</p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline AwsSecurityFindingFilters& WithGeneratorId(const Aws::Vector<StringFilter>& value) { SetGeneratorId(value); return *this;}
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc.</p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline AwsSecurityFindingFilters& WithGeneratorId(Aws::Vector<StringFilter>&& value) { SetGeneratorId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc.</p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline AwsSecurityFindingFilters& AddGeneratorId(const StringFilter& value) { m_generatorIdHasBeenSet = true; m_generatorId.push_back(value); return *this; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc.</p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline AwsSecurityFindingFilters& AddGeneratorId(StringFilter&& value) { m_generatorIdHasBeenSet = true; m_generatorId.push_back(std::move(value)); return *this; }
 
@@ -3363,42 +3355,58 @@ namespace Model
 
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline const Aws::Vector<StringFilter>& GetWorkflowState() const{ return m_workflowState; }
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline bool WorkflowStateHasBeenSet() const { return m_workflowStateHasBeenSet; }
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline void SetWorkflowState(const Aws::Vector<StringFilter>& value) { m_workflowStateHasBeenSet = true; m_workflowState = value; }
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline void SetWorkflowState(Aws::Vector<StringFilter>&& value) { m_workflowStateHasBeenSet = true; m_workflowState = std::move(value); }
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline AwsSecurityFindingFilters& WithWorkflowState(const Aws::Vector<StringFilter>& value) { SetWorkflowState(value); return *this;}
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline AwsSecurityFindingFilters& WithWorkflowState(Aws::Vector<StringFilter>&& value) { SetWorkflowState(std::move(value)); return *this;}
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline AwsSecurityFindingFilters& AddWorkflowState(const StringFilter& value) { m_workflowStateHasBeenSet = true; m_workflowState.push_back(value); return *this; }
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline AwsSecurityFindingFilters& AddWorkflowState(StringFilter&& value) { m_workflowStateHasBeenSet = true; m_workflowState.push_back(std::move(value)); return *this; }
 

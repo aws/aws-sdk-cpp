@@ -1,23 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/TopicRuleDestinationStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/iot/model/HttpUrlDestinationProperties.h>
+#include <aws/iot/model/VpcDestinationProperties.h>
 #include <utility>
 
 namespace Aws
@@ -224,6 +216,68 @@ namespace Model
 
 
     /**
+     * <p>The date and time when the topic rule destination was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The date and time when the topic rule destination was created.</p>
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The date and time when the topic rule destination was created.</p>
+     */
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p>The date and time when the topic rule destination was created.</p>
+     */
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+
+    /**
+     * <p>The date and time when the topic rule destination was created.</p>
+     */
+    inline TopicRuleDestination& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The date and time when the topic rule destination was created.</p>
+     */
+    inline TopicRuleDestination& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time when the topic rule destination was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+
+    /**
+     * <p>The date and time when the topic rule destination was last updated.</p>
+     */
+    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+
+    /**
+     * <p>The date and time when the topic rule destination was last updated.</p>
+     */
+    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
+
+    /**
+     * <p>The date and time when the topic rule destination was last updated.</p>
+     */
+    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
+
+    /**
+     * <p>The date and time when the topic rule destination was last updated.</p>
+     */
+    inline TopicRuleDestination& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
+
+    /**
+     * <p>The date and time when the topic rule destination was last updated.</p>
+     */
+    inline TopicRuleDestination& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+
+
+    /**
      * <p>Additional details or reason why the topic rule destination is in the current
      * status.</p>
      */
@@ -302,6 +356,37 @@ namespace Model
      */
     inline TopicRuleDestination& WithHttpUrlProperties(HttpUrlDestinationProperties&& value) { SetHttpUrlProperties(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Properties of the virtual private cloud (VPC) connection.</p>
+     */
+    inline const VpcDestinationProperties& GetVpcProperties() const{ return m_vpcProperties; }
+
+    /**
+     * <p>Properties of the virtual private cloud (VPC) connection.</p>
+     */
+    inline bool VpcPropertiesHasBeenSet() const { return m_vpcPropertiesHasBeenSet; }
+
+    /**
+     * <p>Properties of the virtual private cloud (VPC) connection.</p>
+     */
+    inline void SetVpcProperties(const VpcDestinationProperties& value) { m_vpcPropertiesHasBeenSet = true; m_vpcProperties = value; }
+
+    /**
+     * <p>Properties of the virtual private cloud (VPC) connection.</p>
+     */
+    inline void SetVpcProperties(VpcDestinationProperties&& value) { m_vpcPropertiesHasBeenSet = true; m_vpcProperties = std::move(value); }
+
+    /**
+     * <p>Properties of the virtual private cloud (VPC) connection.</p>
+     */
+    inline TopicRuleDestination& WithVpcProperties(const VpcDestinationProperties& value) { SetVpcProperties(value); return *this;}
+
+    /**
+     * <p>Properties of the virtual private cloud (VPC) connection.</p>
+     */
+    inline TopicRuleDestination& WithVpcProperties(VpcDestinationProperties&& value) { SetVpcProperties(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -310,11 +395,20 @@ namespace Model
     TopicRuleDestinationStatus m_status;
     bool m_statusHasBeenSet;
 
+    Aws::Utils::DateTime m_createdAt;
+    bool m_createdAtHasBeenSet;
+
+    Aws::Utils::DateTime m_lastUpdatedAt;
+    bool m_lastUpdatedAtHasBeenSet;
+
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet;
 
     HttpUrlDestinationProperties m_httpUrlProperties;
     bool m_httpUrlPropertiesHasBeenSet;
+
+    VpcDestinationProperties m_vpcProperties;
+    bool m_vpcPropertiesHasBeenSet;
   };
 
 } // namespace Model

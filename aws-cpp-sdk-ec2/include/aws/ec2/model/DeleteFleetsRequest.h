@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -127,26 +117,46 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether to terminate instances for an EC2 Fleet if it is deleted
-     * successfully.</p>
+     * <p>Indicates whether to terminate the instances when the EC2 Fleet is deleted.
+     * The default is to terminate the instances.</p> <p>To let the instances continue
+     * to run after the EC2 Fleet is deleted, specify
+     * <code>NoTerminateInstances</code>. Supported only for fleets of type
+     * <code>maintain</code> and <code>request</code>.</p> <p>For <code>instant</code>
+     * fleets, you cannot specify <code>NoTerminateInstances</code>. A deleted
+     * <code>instant</code> fleet with running instances is not supported.</p>
      */
     inline bool GetTerminateInstances() const{ return m_terminateInstances; }
 
     /**
-     * <p>Indicates whether to terminate instances for an EC2 Fleet if it is deleted
-     * successfully.</p>
+     * <p>Indicates whether to terminate the instances when the EC2 Fleet is deleted.
+     * The default is to terminate the instances.</p> <p>To let the instances continue
+     * to run after the EC2 Fleet is deleted, specify
+     * <code>NoTerminateInstances</code>. Supported only for fleets of type
+     * <code>maintain</code> and <code>request</code>.</p> <p>For <code>instant</code>
+     * fleets, you cannot specify <code>NoTerminateInstances</code>. A deleted
+     * <code>instant</code> fleet with running instances is not supported.</p>
      */
     inline bool TerminateInstancesHasBeenSet() const { return m_terminateInstancesHasBeenSet; }
 
     /**
-     * <p>Indicates whether to terminate instances for an EC2 Fleet if it is deleted
-     * successfully.</p>
+     * <p>Indicates whether to terminate the instances when the EC2 Fleet is deleted.
+     * The default is to terminate the instances.</p> <p>To let the instances continue
+     * to run after the EC2 Fleet is deleted, specify
+     * <code>NoTerminateInstances</code>. Supported only for fleets of type
+     * <code>maintain</code> and <code>request</code>.</p> <p>For <code>instant</code>
+     * fleets, you cannot specify <code>NoTerminateInstances</code>. A deleted
+     * <code>instant</code> fleet with running instances is not supported.</p>
      */
     inline void SetTerminateInstances(bool value) { m_terminateInstancesHasBeenSet = true; m_terminateInstances = value; }
 
     /**
-     * <p>Indicates whether to terminate instances for an EC2 Fleet if it is deleted
-     * successfully.</p>
+     * <p>Indicates whether to terminate the instances when the EC2 Fleet is deleted.
+     * The default is to terminate the instances.</p> <p>To let the instances continue
+     * to run after the EC2 Fleet is deleted, specify
+     * <code>NoTerminateInstances</code>. Supported only for fleets of type
+     * <code>maintain</code> and <code>request</code>.</p> <p>For <code>instant</code>
+     * fleets, you cannot specify <code>NoTerminateInstances</code>. A deleted
+     * <code>instant</code> fleet with running instances is not supported.</p>
      */
     inline DeleteFleetsRequest& WithTerminateInstances(bool value) { SetTerminateInstances(value); return *this;}
 

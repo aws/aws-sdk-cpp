@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -273,6 +263,79 @@ namespace Model
      */
     inline LabelingJobOutputConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>An Amazon Simple Notification Service (Amazon SNS) output topic ARN.</p>
+     * <p>When workers complete labeling tasks, Ground Truth will send labeling task
+     * output data to the SNS output topic you specify here.</p> <p>You must provide a
+     * value for this parameter if you provide an Amazon SNS input topic in
+     * <code>SnsDataSource</code> in <code>InputConfig</code>.</p>
+     */
+    inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
+
+    /**
+     * <p>An Amazon Simple Notification Service (Amazon SNS) output topic ARN.</p>
+     * <p>When workers complete labeling tasks, Ground Truth will send labeling task
+     * output data to the SNS output topic you specify here.</p> <p>You must provide a
+     * value for this parameter if you provide an Amazon SNS input topic in
+     * <code>SnsDataSource</code> in <code>InputConfig</code>.</p>
+     */
+    inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
+
+    /**
+     * <p>An Amazon Simple Notification Service (Amazon SNS) output topic ARN.</p>
+     * <p>When workers complete labeling tasks, Ground Truth will send labeling task
+     * output data to the SNS output topic you specify here.</p> <p>You must provide a
+     * value for this parameter if you provide an Amazon SNS input topic in
+     * <code>SnsDataSource</code> in <code>InputConfig</code>.</p>
+     */
+    inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
+
+    /**
+     * <p>An Amazon Simple Notification Service (Amazon SNS) output topic ARN.</p>
+     * <p>When workers complete labeling tasks, Ground Truth will send labeling task
+     * output data to the SNS output topic you specify here.</p> <p>You must provide a
+     * value for this parameter if you provide an Amazon SNS input topic in
+     * <code>SnsDataSource</code> in <code>InputConfig</code>.</p>
+     */
+    inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::move(value); }
+
+    /**
+     * <p>An Amazon Simple Notification Service (Amazon SNS) output topic ARN.</p>
+     * <p>When workers complete labeling tasks, Ground Truth will send labeling task
+     * output data to the SNS output topic you specify here.</p> <p>You must provide a
+     * value for this parameter if you provide an Amazon SNS input topic in
+     * <code>SnsDataSource</code> in <code>InputConfig</code>.</p>
+     */
+    inline void SetSnsTopicArn(const char* value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn.assign(value); }
+
+    /**
+     * <p>An Amazon Simple Notification Service (Amazon SNS) output topic ARN.</p>
+     * <p>When workers complete labeling tasks, Ground Truth will send labeling task
+     * output data to the SNS output topic you specify here.</p> <p>You must provide a
+     * value for this parameter if you provide an Amazon SNS input topic in
+     * <code>SnsDataSource</code> in <code>InputConfig</code>.</p>
+     */
+    inline LabelingJobOutputConfig& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
+
+    /**
+     * <p>An Amazon Simple Notification Service (Amazon SNS) output topic ARN.</p>
+     * <p>When workers complete labeling tasks, Ground Truth will send labeling task
+     * output data to the SNS output topic you specify here.</p> <p>You must provide a
+     * value for this parameter if you provide an Amazon SNS input topic in
+     * <code>SnsDataSource</code> in <code>InputConfig</code>.</p>
+     */
+    inline LabelingJobOutputConfig& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
+
+    /**
+     * <p>An Amazon Simple Notification Service (Amazon SNS) output topic ARN.</p>
+     * <p>When workers complete labeling tasks, Ground Truth will send labeling task
+     * output data to the SNS output topic you specify here.</p> <p>You must provide a
+     * value for this parameter if you provide an Amazon SNS input topic in
+     * <code>SnsDataSource</code> in <code>InputConfig</code>.</p>
+     */
+    inline LabelingJobOutputConfig& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
+
   private:
 
     Aws::String m_s3OutputPath;
@@ -280,6 +343,9 @@ namespace Model
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
+    Aws::String m_snsTopicArn;
+    bool m_snsTopicArnHasBeenSet;
   };
 
 } // namespace Model

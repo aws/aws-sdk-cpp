@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
@@ -21,16 +11,23 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eventbridge/model/CancelReplayResult.h>
+#include <aws/eventbridge/model/CreateArchiveResult.h>
 #include <aws/eventbridge/model/CreateEventBusResult.h>
 #include <aws/eventbridge/model/CreatePartnerEventSourceResult.h>
+#include <aws/eventbridge/model/DeleteArchiveResult.h>
+#include <aws/eventbridge/model/DescribeArchiveResult.h>
 #include <aws/eventbridge/model/DescribeEventBusResult.h>
 #include <aws/eventbridge/model/DescribeEventSourceResult.h>
 #include <aws/eventbridge/model/DescribePartnerEventSourceResult.h>
+#include <aws/eventbridge/model/DescribeReplayResult.h>
 #include <aws/eventbridge/model/DescribeRuleResult.h>
+#include <aws/eventbridge/model/ListArchivesResult.h>
 #include <aws/eventbridge/model/ListEventBusesResult.h>
 #include <aws/eventbridge/model/ListEventSourcesResult.h>
 #include <aws/eventbridge/model/ListPartnerEventSourceAccountsResult.h>
 #include <aws/eventbridge/model/ListPartnerEventSourcesResult.h>
+#include <aws/eventbridge/model/ListReplaysResult.h>
 #include <aws/eventbridge/model/ListRuleNamesByTargetResult.h>
 #include <aws/eventbridge/model/ListRulesResult.h>
 #include <aws/eventbridge/model/ListTagsForResourceResult.h>
@@ -40,9 +37,11 @@
 #include <aws/eventbridge/model/PutRuleResult.h>
 #include <aws/eventbridge/model/PutTargetsResult.h>
 #include <aws/eventbridge/model/RemoveTargetsResult.h>
+#include <aws/eventbridge/model/StartReplayResult.h>
 #include <aws/eventbridge/model/TagResourceResult.h>
 #include <aws/eventbridge/model/TestEventPatternResult.h>
 #include <aws/eventbridge/model/UntagResourceResult.h>
+#include <aws/eventbridge/model/UpdateArchiveResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -84,22 +83,29 @@ namespace EventBridge
 namespace Model
 {
         class ActivateEventSourceRequest;
+        class CancelReplayRequest;
+        class CreateArchiveRequest;
         class CreateEventBusRequest;
         class CreatePartnerEventSourceRequest;
         class DeactivateEventSourceRequest;
+        class DeleteArchiveRequest;
         class DeleteEventBusRequest;
         class DeletePartnerEventSourceRequest;
         class DeleteRuleRequest;
+        class DescribeArchiveRequest;
         class DescribeEventBusRequest;
         class DescribeEventSourceRequest;
         class DescribePartnerEventSourceRequest;
+        class DescribeReplayRequest;
         class DescribeRuleRequest;
         class DisableRuleRequest;
         class EnableRuleRequest;
+        class ListArchivesRequest;
         class ListEventBusesRequest;
         class ListEventSourcesRequest;
         class ListPartnerEventSourceAccountsRequest;
         class ListPartnerEventSourcesRequest;
+        class ListReplaysRequest;
         class ListRuleNamesByTargetRequest;
         class ListRulesRequest;
         class ListTagsForResourceRequest;
@@ -111,59 +117,77 @@ namespace Model
         class PutTargetsRequest;
         class RemovePermissionRequest;
         class RemoveTargetsRequest;
+        class StartReplayRequest;
         class TagResourceRequest;
         class TestEventPatternRequest;
         class UntagResourceRequest;
+        class UpdateArchiveRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EventBridgeErrors>> ActivateEventSourceOutcome;
-        typedef Aws::Utils::Outcome<CreateEventBusResult, Aws::Client::AWSError<EventBridgeErrors>> CreateEventBusOutcome;
-        typedef Aws::Utils::Outcome<CreatePartnerEventSourceResult, Aws::Client::AWSError<EventBridgeErrors>> CreatePartnerEventSourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EventBridgeErrors>> DeactivateEventSourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EventBridgeErrors>> DeleteEventBusOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EventBridgeErrors>> DeletePartnerEventSourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EventBridgeErrors>> DeleteRuleOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventBusResult, Aws::Client::AWSError<EventBridgeErrors>> DescribeEventBusOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventSourceResult, Aws::Client::AWSError<EventBridgeErrors>> DescribeEventSourceOutcome;
-        typedef Aws::Utils::Outcome<DescribePartnerEventSourceResult, Aws::Client::AWSError<EventBridgeErrors>> DescribePartnerEventSourceOutcome;
-        typedef Aws::Utils::Outcome<DescribeRuleResult, Aws::Client::AWSError<EventBridgeErrors>> DescribeRuleOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EventBridgeErrors>> DisableRuleOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EventBridgeErrors>> EnableRuleOutcome;
-        typedef Aws::Utils::Outcome<ListEventBusesResult, Aws::Client::AWSError<EventBridgeErrors>> ListEventBusesOutcome;
-        typedef Aws::Utils::Outcome<ListEventSourcesResult, Aws::Client::AWSError<EventBridgeErrors>> ListEventSourcesOutcome;
-        typedef Aws::Utils::Outcome<ListPartnerEventSourceAccountsResult, Aws::Client::AWSError<EventBridgeErrors>> ListPartnerEventSourceAccountsOutcome;
-        typedef Aws::Utils::Outcome<ListPartnerEventSourcesResult, Aws::Client::AWSError<EventBridgeErrors>> ListPartnerEventSourcesOutcome;
-        typedef Aws::Utils::Outcome<ListRuleNamesByTargetResult, Aws::Client::AWSError<EventBridgeErrors>> ListRuleNamesByTargetOutcome;
-        typedef Aws::Utils::Outcome<ListRulesResult, Aws::Client::AWSError<EventBridgeErrors>> ListRulesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<EventBridgeErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTargetsByRuleResult, Aws::Client::AWSError<EventBridgeErrors>> ListTargetsByRuleOutcome;
-        typedef Aws::Utils::Outcome<PutEventsResult, Aws::Client::AWSError<EventBridgeErrors>> PutEventsOutcome;
-        typedef Aws::Utils::Outcome<PutPartnerEventsResult, Aws::Client::AWSError<EventBridgeErrors>> PutPartnerEventsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EventBridgeErrors>> PutPermissionOutcome;
-        typedef Aws::Utils::Outcome<PutRuleResult, Aws::Client::AWSError<EventBridgeErrors>> PutRuleOutcome;
-        typedef Aws::Utils::Outcome<PutTargetsResult, Aws::Client::AWSError<EventBridgeErrors>> PutTargetsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EventBridgeErrors>> RemovePermissionOutcome;
-        typedef Aws::Utils::Outcome<RemoveTargetsResult, Aws::Client::AWSError<EventBridgeErrors>> RemoveTargetsOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<EventBridgeErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<TestEventPatternResult, Aws::Client::AWSError<EventBridgeErrors>> TestEventPatternOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<EventBridgeErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, EventBridgeError> ActivateEventSourceOutcome;
+        typedef Aws::Utils::Outcome<CancelReplayResult, EventBridgeError> CancelReplayOutcome;
+        typedef Aws::Utils::Outcome<CreateArchiveResult, EventBridgeError> CreateArchiveOutcome;
+        typedef Aws::Utils::Outcome<CreateEventBusResult, EventBridgeError> CreateEventBusOutcome;
+        typedef Aws::Utils::Outcome<CreatePartnerEventSourceResult, EventBridgeError> CreatePartnerEventSourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, EventBridgeError> DeactivateEventSourceOutcome;
+        typedef Aws::Utils::Outcome<DeleteArchiveResult, EventBridgeError> DeleteArchiveOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, EventBridgeError> DeleteEventBusOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, EventBridgeError> DeletePartnerEventSourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, EventBridgeError> DeleteRuleOutcome;
+        typedef Aws::Utils::Outcome<DescribeArchiveResult, EventBridgeError> DescribeArchiveOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventBusResult, EventBridgeError> DescribeEventBusOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventSourceResult, EventBridgeError> DescribeEventSourceOutcome;
+        typedef Aws::Utils::Outcome<DescribePartnerEventSourceResult, EventBridgeError> DescribePartnerEventSourceOutcome;
+        typedef Aws::Utils::Outcome<DescribeReplayResult, EventBridgeError> DescribeReplayOutcome;
+        typedef Aws::Utils::Outcome<DescribeRuleResult, EventBridgeError> DescribeRuleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, EventBridgeError> DisableRuleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, EventBridgeError> EnableRuleOutcome;
+        typedef Aws::Utils::Outcome<ListArchivesResult, EventBridgeError> ListArchivesOutcome;
+        typedef Aws::Utils::Outcome<ListEventBusesResult, EventBridgeError> ListEventBusesOutcome;
+        typedef Aws::Utils::Outcome<ListEventSourcesResult, EventBridgeError> ListEventSourcesOutcome;
+        typedef Aws::Utils::Outcome<ListPartnerEventSourceAccountsResult, EventBridgeError> ListPartnerEventSourceAccountsOutcome;
+        typedef Aws::Utils::Outcome<ListPartnerEventSourcesResult, EventBridgeError> ListPartnerEventSourcesOutcome;
+        typedef Aws::Utils::Outcome<ListReplaysResult, EventBridgeError> ListReplaysOutcome;
+        typedef Aws::Utils::Outcome<ListRuleNamesByTargetResult, EventBridgeError> ListRuleNamesByTargetOutcome;
+        typedef Aws::Utils::Outcome<ListRulesResult, EventBridgeError> ListRulesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, EventBridgeError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListTargetsByRuleResult, EventBridgeError> ListTargetsByRuleOutcome;
+        typedef Aws::Utils::Outcome<PutEventsResult, EventBridgeError> PutEventsOutcome;
+        typedef Aws::Utils::Outcome<PutPartnerEventsResult, EventBridgeError> PutPartnerEventsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, EventBridgeError> PutPermissionOutcome;
+        typedef Aws::Utils::Outcome<PutRuleResult, EventBridgeError> PutRuleOutcome;
+        typedef Aws::Utils::Outcome<PutTargetsResult, EventBridgeError> PutTargetsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, EventBridgeError> RemovePermissionOutcome;
+        typedef Aws::Utils::Outcome<RemoveTargetsResult, EventBridgeError> RemoveTargetsOutcome;
+        typedef Aws::Utils::Outcome<StartReplayResult, EventBridgeError> StartReplayOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, EventBridgeError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<TestEventPatternResult, EventBridgeError> TestEventPatternOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, EventBridgeError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateArchiveResult, EventBridgeError> UpdateArchiveOutcome;
 
         typedef std::future<ActivateEventSourceOutcome> ActivateEventSourceOutcomeCallable;
+        typedef std::future<CancelReplayOutcome> CancelReplayOutcomeCallable;
+        typedef std::future<CreateArchiveOutcome> CreateArchiveOutcomeCallable;
         typedef std::future<CreateEventBusOutcome> CreateEventBusOutcomeCallable;
         typedef std::future<CreatePartnerEventSourceOutcome> CreatePartnerEventSourceOutcomeCallable;
         typedef std::future<DeactivateEventSourceOutcome> DeactivateEventSourceOutcomeCallable;
+        typedef std::future<DeleteArchiveOutcome> DeleteArchiveOutcomeCallable;
         typedef std::future<DeleteEventBusOutcome> DeleteEventBusOutcomeCallable;
         typedef std::future<DeletePartnerEventSourceOutcome> DeletePartnerEventSourceOutcomeCallable;
         typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
+        typedef std::future<DescribeArchiveOutcome> DescribeArchiveOutcomeCallable;
         typedef std::future<DescribeEventBusOutcome> DescribeEventBusOutcomeCallable;
         typedef std::future<DescribeEventSourceOutcome> DescribeEventSourceOutcomeCallable;
         typedef std::future<DescribePartnerEventSourceOutcome> DescribePartnerEventSourceOutcomeCallable;
+        typedef std::future<DescribeReplayOutcome> DescribeReplayOutcomeCallable;
         typedef std::future<DescribeRuleOutcome> DescribeRuleOutcomeCallable;
         typedef std::future<DisableRuleOutcome> DisableRuleOutcomeCallable;
         typedef std::future<EnableRuleOutcome> EnableRuleOutcomeCallable;
+        typedef std::future<ListArchivesOutcome> ListArchivesOutcomeCallable;
         typedef std::future<ListEventBusesOutcome> ListEventBusesOutcomeCallable;
         typedef std::future<ListEventSourcesOutcome> ListEventSourcesOutcomeCallable;
         typedef std::future<ListPartnerEventSourceAccountsOutcome> ListPartnerEventSourceAccountsOutcomeCallable;
         typedef std::future<ListPartnerEventSourcesOutcome> ListPartnerEventSourcesOutcomeCallable;
+        typedef std::future<ListReplaysOutcome> ListReplaysOutcomeCallable;
         typedef std::future<ListRuleNamesByTargetOutcome> ListRuleNamesByTargetOutcomeCallable;
         typedef std::future<ListRulesOutcome> ListRulesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -175,30 +199,39 @@ namespace Model
         typedef std::future<PutTargetsOutcome> PutTargetsOutcomeCallable;
         typedef std::future<RemovePermissionOutcome> RemovePermissionOutcomeCallable;
         typedef std::future<RemoveTargetsOutcome> RemoveTargetsOutcomeCallable;
+        typedef std::future<StartReplayOutcome> StartReplayOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<TestEventPatternOutcome> TestEventPatternOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateArchiveOutcome> UpdateArchiveOutcomeCallable;
 } // namespace Model
 
   class EventBridgeClient;
 
     typedef std::function<void(const EventBridgeClient*, const Model::ActivateEventSourceRequest&, const Model::ActivateEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ActivateEventSourceResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::CancelReplayRequest&, const Model::CancelReplayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelReplayResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::CreateArchiveRequest&, const Model::CreateArchiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateArchiveResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::CreateEventBusRequest&, const Model::CreateEventBusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventBusResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::CreatePartnerEventSourceRequest&, const Model::CreatePartnerEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePartnerEventSourceResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DeactivateEventSourceRequest&, const Model::DeactivateEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeactivateEventSourceResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::DeleteArchiveRequest&, const Model::DeleteArchiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteArchiveResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DeleteEventBusRequest&, const Model::DeleteEventBusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventBusResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DeletePartnerEventSourceRequest&, const Model::DeletePartnerEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePartnerEventSourceResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DeleteRuleRequest&, const Model::DeleteRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRuleResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::DescribeArchiveRequest&, const Model::DescribeArchiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeArchiveResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DescribeEventBusRequest&, const Model::DescribeEventBusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventBusResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DescribeEventSourceRequest&, const Model::DescribeEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventSourceResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DescribePartnerEventSourceRequest&, const Model::DescribePartnerEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePartnerEventSourceResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::DescribeReplayRequest&, const Model::DescribeReplayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReplayResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DescribeRuleRequest&, const Model::DescribeRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRuleResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DisableRuleRequest&, const Model::DisableRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableRuleResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::EnableRuleRequest&, const Model::EnableRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableRuleResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::ListArchivesRequest&, const Model::ListArchivesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListArchivesResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::ListEventBusesRequest&, const Model::ListEventBusesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventBusesResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::ListEventSourcesRequest&, const Model::ListEventSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventSourcesResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::ListPartnerEventSourceAccountsRequest&, const Model::ListPartnerEventSourceAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPartnerEventSourceAccountsResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::ListPartnerEventSourcesRequest&, const Model::ListPartnerEventSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPartnerEventSourcesResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::ListReplaysRequest&, const Model::ListReplaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReplaysResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::ListRuleNamesByTargetRequest&, const Model::ListRuleNamesByTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRuleNamesByTargetResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::ListRulesRequest&, const Model::ListRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRulesResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
@@ -210,9 +243,11 @@ namespace Model
     typedef std::function<void(const EventBridgeClient*, const Model::PutTargetsRequest&, const Model::PutTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutTargetsResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::RemovePermissionRequest&, const Model::RemovePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemovePermissionResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::RemoveTargetsRequest&, const Model::RemoveTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTargetsResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::StartReplayRequest&, const Model::StartReplayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartReplayResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::TestEventPatternRequest&, const Model::TestEventPatternOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestEventPatternResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::UpdateArchiveRequest&, const Model::UpdateArchiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateArchiveResponseReceivedHandler;
 
   /**
    * <p>Amazon EventBridge helps you to respond to state changes in your AWS
@@ -256,8 +291,6 @@ namespace Model
 
         virtual ~EventBridgeClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "EventBridge"; }
-
 
         /**
          * <p>Activates a partner event source that has been deactivated. Once activated,
@@ -289,6 +322,71 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ActivateEventSourceAsync(const Model::ActivateEventSourceRequest& request, const ActivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Cancels the specified replay.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CancelReplay">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelReplayOutcome CancelReplay(const Model::CancelReplayRequest& request) const;
+
+        /**
+         * <p>Cancels the specified replay.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CancelReplay">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CancelReplayOutcomeCallable CancelReplayCallable(const Model::CancelReplayRequest& request) const;
+
+        /**
+         * <p>Cancels the specified replay.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CancelReplay">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CancelReplayAsync(const Model::CancelReplayRequest& request, const CancelReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an archive of events with the specified settings. When you create an
+         * archive, incoming events might not immediately start being sent to the archive.
+         * Allow a short period of time for changes to take effect. If you do not specify a
+         * pattern to filter events sent to the archive, all events are sent to the archive
+         * except replayed events. Replayed events are not sent to an
+         * archive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateArchive">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateArchiveOutcome CreateArchive(const Model::CreateArchiveRequest& request) const;
+
+        /**
+         * <p>Creates an archive of events with the specified settings. When you create an
+         * archive, incoming events might not immediately start being sent to the archive.
+         * Allow a short period of time for changes to take effect. If you do not specify a
+         * pattern to filter events sent to the archive, all events are sent to the archive
+         * except replayed events. Replayed events are not sent to an
+         * archive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateArchive">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateArchiveOutcomeCallable CreateArchiveCallable(const Model::CreateArchiveRequest& request) const;
+
+        /**
+         * <p>Creates an archive of events with the specified settings. When you create an
+         * archive, incoming events might not immediately start being sent to the archive.
+         * Allow a short period of time for changes to take effect. If you do not specify a
+         * pattern to filter events sent to the archive, all events are sent to the archive
+         * except replayed events. Replayed events are not sent to an
+         * archive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateArchive">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateArchiveAsync(const Model::CreateArchiveRequest& request, const CreateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new event bus within your account. This can be a custom event bus
@@ -441,6 +539,31 @@ namespace Model
         virtual void DeactivateEventSourceAsync(const Model::DeactivateEventSourceRequest& request, const DeactivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the specified archive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteArchive">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteArchiveOutcome DeleteArchive(const Model::DeleteArchiveRequest& request) const;
+
+        /**
+         * <p>Deletes the specified archive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteArchive">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteArchiveOutcomeCallable DeleteArchiveCallable(const Model::DeleteArchiveRequest& request) const;
+
+        /**
+         * <p>Deletes the specified archive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteArchive">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteArchiveAsync(const Model::DeleteArchiveRequest& request, const DeleteArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified custom event bus or partner event bus. All rules
          * associated with this event bus need to be deleted. You can't delete your
          * account's default event bus.</p><p><h3>See Also:</h3>   <a
@@ -555,6 +678,31 @@ namespace Model
         virtual void DeleteRuleAsync(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves details about an archive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeArchive">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeArchiveOutcome DescribeArchive(const Model::DescribeArchiveRequest& request) const;
+
+        /**
+         * <p>Retrieves details about an archive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeArchive">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeArchiveOutcomeCallable DescribeArchiveCallable(const Model::DescribeArchiveRequest& request) const;
+
+        /**
+         * <p>Retrieves details about an archive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeArchive">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeArchiveAsync(const Model::DescribeArchiveRequest& request, const DescribeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Displays details about an event bus in your account. This can include the
          * external AWS accounts that are permitted to write events to your default event
          * bus, and the associated policy. For custom event buses and partner event buses,
@@ -660,6 +808,58 @@ namespace Model
         virtual void DescribePartnerEventSourceAsync(const Model::DescribePartnerEventSourceRequest& request, const DescribePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves details about a replay. Use <code>DescribeReplay</code> to
+         * determine the progress of a running replay. A replay processes events to replay
+         * based on the time in the event, and replays them using 1 minute intervals. If
+         * you use <code>StartReplay</code> and specify an <code>EventStartTime</code> and
+         * an <code>EventEndTime</code> that covers a 20 minute time range, the events are
+         * replayed from the first minute of that 20 minute range first. Then the events
+         * from the second minute are replayed. You can use <code>DescribeReplay</code> to
+         * determine the progress of a replay. The value returned for
+         * <code>EventLastReplayedTime</code> indicates the time within the specified time
+         * range associated with the last event replayed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeReplay">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeReplayOutcome DescribeReplay(const Model::DescribeReplayRequest& request) const;
+
+        /**
+         * <p>Retrieves details about a replay. Use <code>DescribeReplay</code> to
+         * determine the progress of a running replay. A replay processes events to replay
+         * based on the time in the event, and replays them using 1 minute intervals. If
+         * you use <code>StartReplay</code> and specify an <code>EventStartTime</code> and
+         * an <code>EventEndTime</code> that covers a 20 minute time range, the events are
+         * replayed from the first minute of that 20 minute range first. Then the events
+         * from the second minute are replayed. You can use <code>DescribeReplay</code> to
+         * determine the progress of a replay. The value returned for
+         * <code>EventLastReplayedTime</code> indicates the time within the specified time
+         * range associated with the last event replayed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeReplay">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeReplayOutcomeCallable DescribeReplayCallable(const Model::DescribeReplayRequest& request) const;
+
+        /**
+         * <p>Retrieves details about a replay. Use <code>DescribeReplay</code> to
+         * determine the progress of a running replay. A replay processes events to replay
+         * based on the time in the event, and replays them using 1 minute intervals. If
+         * you use <code>StartReplay</code> and specify an <code>EventStartTime</code> and
+         * an <code>EventEndTime</code> that covers a 20 minute time range, the events are
+         * replayed from the first minute of that 20 minute range first. Then the events
+         * from the second minute are replayed. You can use <code>DescribeReplay</code> to
+         * determine the progress of a replay. The value returned for
+         * <code>EventLastReplayedTime</code> indicates the time within the specified time
+         * range associated with the last event replayed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeReplay">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeReplayAsync(const Model::DescribeReplayRequest& request, const DescribeReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the specified rule.</p> <p>DescribeRule does not list the targets
          * of a rule. To see the targets associated with a rule, use
          * <a>ListTargetsByRule</a>.</p><p><h3>See Also:</h3>   <a
@@ -757,6 +957,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void EnableRuleAsync(const Model::EnableRuleRequest& request, const EnableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists your archives. You can either list all the archives or you can provide
+         * a prefix to match to the archive names. Filter parameters are
+         * exclusive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListArchives">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListArchivesOutcome ListArchives(const Model::ListArchivesRequest& request) const;
+
+        /**
+         * <p>Lists your archives. You can either list all the archives or you can provide
+         * a prefix to match to the archive names. Filter parameters are
+         * exclusive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListArchives">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListArchivesOutcomeCallable ListArchivesCallable(const Model::ListArchivesRequest& request) const;
+
+        /**
+         * <p>Lists your archives. You can either list all the archives or you can provide
+         * a prefix to match to the archive names. Filter parameters are
+         * exclusive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListArchives">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListArchivesAsync(const Model::ListArchivesRequest& request, const ListArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the event buses in your account, including the default event bus,
@@ -878,6 +1109,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListPartnerEventSourcesAsync(const Model::ListPartnerEventSourcesRequest& request, const ListPartnerEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists your replays. You can either list all the replays or you can provide a
+         * prefix to match to the replay names. Filter parameters are
+         * exclusive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListReplays">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListReplaysOutcome ListReplays(const Model::ListReplaysRequest& request) const;
+
+        /**
+         * <p>Lists your replays. You can either list all the replays or you can provide a
+         * prefix to match to the replay names. Filter parameters are
+         * exclusive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListReplays">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListReplaysOutcomeCallable ListReplaysCallable(const Model::ListReplaysRequest& request) const;
+
+        /**
+         * <p>Lists your replays. You can either list all the replays or you can provide a
+         * prefix to match to the replay names. Filter parameters are
+         * exclusive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListReplays">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListReplaysAsync(const Model::ListReplaysRequest& request, const ListReplaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the rules for the specified target. You can see which of the rules in
@@ -1058,15 +1320,15 @@ namespace Model
 
         /**
          * <p>Running <code>PutPermission</code> permits the specified AWS account or AWS
-         * organization to put events to the specified <i>event bus</i>. CloudWatch Events
-         * rules in your account are triggered by these events arriving to an event bus in
-         * your account. </p> <p>For another account to send events to your account, that
-         * external account must have an EventBridge rule with your account's event bus as
-         * a target.</p> <p>To enable multiple AWS accounts to put events to your event
-         * bus, run <code>PutPermission</code> once for each of these accounts. Or, if all
-         * the accounts are members of the same AWS organization, you can run
-         * <code>PutPermission</code> once specifying <code>Principal</code> as "*" and
-         * specifying the AWS organization ID in <code>Condition</code>, to grant
+         * organization to put events to the specified <i>event bus</i>. Amazon EventBridge
+         * (CloudWatch Events) rules in your account are triggered by these events arriving
+         * to an event bus in your account. </p> <p>For another account to send events to
+         * your account, that external account must have an EventBridge rule with your
+         * account's event bus as a target.</p> <p>To enable multiple AWS accounts to put
+         * events to your event bus, run <code>PutPermission</code> once for each of these
+         * accounts. Or, if all the accounts are members of the same AWS organization, you
+         * can run <code>PutPermission</code> once specifying <code>Principal</code> as "*"
+         * and specifying the AWS organization ID in <code>Condition</code>, to grant
          * permissions to all accounts in that organization.</p> <p>If you grant
          * permissions using an organization, then accounts in that organization must
          * specify a <code>RoleArn</code> with proper permissions when they use
@@ -1083,15 +1345,15 @@ namespace Model
 
         /**
          * <p>Running <code>PutPermission</code> permits the specified AWS account or AWS
-         * organization to put events to the specified <i>event bus</i>. CloudWatch Events
-         * rules in your account are triggered by these events arriving to an event bus in
-         * your account. </p> <p>For another account to send events to your account, that
-         * external account must have an EventBridge rule with your account's event bus as
-         * a target.</p> <p>To enable multiple AWS accounts to put events to your event
-         * bus, run <code>PutPermission</code> once for each of these accounts. Or, if all
-         * the accounts are members of the same AWS organization, you can run
-         * <code>PutPermission</code> once specifying <code>Principal</code> as "*" and
-         * specifying the AWS organization ID in <code>Condition</code>, to grant
+         * organization to put events to the specified <i>event bus</i>. Amazon EventBridge
+         * (CloudWatch Events) rules in your account are triggered by these events arriving
+         * to an event bus in your account. </p> <p>For another account to send events to
+         * your account, that external account must have an EventBridge rule with your
+         * account's event bus as a target.</p> <p>To enable multiple AWS accounts to put
+         * events to your event bus, run <code>PutPermission</code> once for each of these
+         * accounts. Or, if all the accounts are members of the same AWS organization, you
+         * can run <code>PutPermission</code> once specifying <code>Principal</code> as "*"
+         * and specifying the AWS organization ID in <code>Condition</code>, to grant
          * permissions to all accounts in that organization.</p> <p>If you grant
          * permissions using an organization, then accounts in that organization must
          * specify a <code>RoleArn</code> with proper permissions when they use
@@ -1110,15 +1372,15 @@ namespace Model
 
         /**
          * <p>Running <code>PutPermission</code> permits the specified AWS account or AWS
-         * organization to put events to the specified <i>event bus</i>. CloudWatch Events
-         * rules in your account are triggered by these events arriving to an event bus in
-         * your account. </p> <p>For another account to send events to your account, that
-         * external account must have an EventBridge rule with your account's event bus as
-         * a target.</p> <p>To enable multiple AWS accounts to put events to your event
-         * bus, run <code>PutPermission</code> once for each of these accounts. Or, if all
-         * the accounts are members of the same AWS organization, you can run
-         * <code>PutPermission</code> once specifying <code>Principal</code> as "*" and
-         * specifying the AWS organization ID in <code>Condition</code>, to grant
+         * organization to put events to the specified <i>event bus</i>. Amazon EventBridge
+         * (CloudWatch Events) rules in your account are triggered by these events arriving
+         * to an event bus in your account. </p> <p>For another account to send events to
+         * your account, that external account must have an EventBridge rule with your
+         * account's event bus as a target.</p> <p>To enable multiple AWS accounts to put
+         * events to your event bus, run <code>PutPermission</code> once for each of these
+         * accounts. Or, if all the accounts are members of the same AWS organization, you
+         * can run <code>PutPermission</code> once specifying <code>Principal</code> as "*"
+         * and specifying the AWS organization ID in <code>Condition</code>, to grant
          * permissions to all accounts in that organization.</p> <p>If you grant
          * permissions using an organization, then accounts in that organization must
          * specify a <code>RoleArn</code> with proper permissions when they use
@@ -1299,22 +1561,23 @@ namespace Model
          * <li> <p>Pipelines in AWS CodePipeline</p> </li> <li> <p>Amazon Inspector
          * assessment templates</p> </li> <li> <p>Amazon SNS topics</p> </li> <li>
          * <p>Amazon SQS queues, including FIFO queues</p> </li> <li> <p>The default event
-         * bus of another AWS account</p> </li> </ul> <p>Creating rules with built-in
-         * targets is supported only in the AWS Management Console. The built-in targets
-         * are <code>EC2 CreateSnapshot API call</code>, <code>EC2 RebootInstances API
-         * call</code>, <code>EC2 StopInstances API call</code>, and <code>EC2
-         * TerminateInstances API call</code>. </p> <p>For some target types,
-         * <code>PutTargets</code> provides target-specific parameters. If the target is a
-         * Kinesis data stream, you can optionally specify which shard the event goes to by
-         * using the <code>KinesisParameters</code> argument. To invoke a command on
-         * multiple EC2 instances with one rule, you can use the
+         * bus of another AWS account</p> </li> <li> <p>Amazon API Gateway REST APIs</p>
+         * </li> <li> <p>Redshift Clusters to invoke Data API ExecuteStatement on</p> </li>
+         * </ul> <p>Creating rules with built-in targets is supported only in the AWS
+         * Management Console. The built-in targets are <code>EC2 CreateSnapshot API
+         * call</code>, <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances
+         * API call</code>, and <code>EC2 TerminateInstances API call</code>. </p> <p>For
+         * some target types, <code>PutTargets</code> provides target-specific parameters.
+         * If the target is a Kinesis data stream, you can optionally specify which shard
+         * the event goes to by using the <code>KinesisParameters</code> argument. To
+         * invoke a command on multiple EC2 instances with one rule, you can use the
          * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
-         * against the resources that you own, Amazon CloudWatch Events needs the
-         * appropriate permissions. For AWS Lambda and Amazon SNS resources, EventBridge
-         * relies on resource-based policies. For EC2 instances, Kinesis data streams, and
-         * AWS Step Functions state machines, EventBridge relies on IAM roles that you
-         * specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For
-         * more information, see <a
+         * against the resources that you own, Amazon EventBridge (CloudWatch Events) needs
+         * the appropriate permissions. For AWS Lambda and Amazon SNS resources,
+         * EventBridge relies on resource-based policies. For EC2 instances, Kinesis data
+         * streams, AWS Step Functions state machines and API Gateway REST APIs,
+         * EventBridge relies on IAM roles that you specify in the <code>RoleARN</code>
+         * argument in <code>PutTargets</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
          * and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.</p> <p>If
          * another AWS account is in the same region and has granted you permission (using
@@ -1325,14 +1588,15 @@ namespace Model
          * sends events to another account, your account is charged for each sent event.
          * Each event sent to another account is charged as a custom event. The account
          * receiving the event is not charged. For more information, see <a
-         * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-         * Pricing</a>.</p> <note> <p> <code>Input</code>, <code>InputPath</code>, and
-         * <code>InputTransformer</code> are not available with <code>PutTarget</code> if
-         * the target is an event bus of a different AWS account.</p> </note> <p>If you are
-         * setting the event bus of another account as the target, and that account granted
-         * permission to your account through an organization instead of directly by the
-         * account ID, then you must specify a <code>RoleArn</code> with proper permissions
-         * in the <code>Target</code> structure. For more information, see <a
+         * href="https://aws.amazon.com/eventbridge/pricing/">Amazon EventBridge
+         * (CloudWatch Events) Pricing</a>.</p>  <p> <code>Input</code>,
+         * <code>InputPath</code>, and <code>InputTransformer</code> are not available with
+         * <code>PutTarget</code> if the target is an event bus of a different AWS
+         * account.</p>  <p>If you are setting the event bus of another account as
+         * the target, and that account granted permission to your account through an
+         * organization instead of directly by the account ID, then you must specify a
+         * <code>RoleArn</code> with proper permissions in the <code>Target</code>
+         * structure. For more information, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
          * and Receiving Events Between AWS Accounts</a> in the <i>Amazon EventBridge User
          * Guide</i>.</p> <p>For more information about enabling cross-account events, see
@@ -1376,22 +1640,23 @@ namespace Model
          * <li> <p>Pipelines in AWS CodePipeline</p> </li> <li> <p>Amazon Inspector
          * assessment templates</p> </li> <li> <p>Amazon SNS topics</p> </li> <li>
          * <p>Amazon SQS queues, including FIFO queues</p> </li> <li> <p>The default event
-         * bus of another AWS account</p> </li> </ul> <p>Creating rules with built-in
-         * targets is supported only in the AWS Management Console. The built-in targets
-         * are <code>EC2 CreateSnapshot API call</code>, <code>EC2 RebootInstances API
-         * call</code>, <code>EC2 StopInstances API call</code>, and <code>EC2
-         * TerminateInstances API call</code>. </p> <p>For some target types,
-         * <code>PutTargets</code> provides target-specific parameters. If the target is a
-         * Kinesis data stream, you can optionally specify which shard the event goes to by
-         * using the <code>KinesisParameters</code> argument. To invoke a command on
-         * multiple EC2 instances with one rule, you can use the
+         * bus of another AWS account</p> </li> <li> <p>Amazon API Gateway REST APIs</p>
+         * </li> <li> <p>Redshift Clusters to invoke Data API ExecuteStatement on</p> </li>
+         * </ul> <p>Creating rules with built-in targets is supported only in the AWS
+         * Management Console. The built-in targets are <code>EC2 CreateSnapshot API
+         * call</code>, <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances
+         * API call</code>, and <code>EC2 TerminateInstances API call</code>. </p> <p>For
+         * some target types, <code>PutTargets</code> provides target-specific parameters.
+         * If the target is a Kinesis data stream, you can optionally specify which shard
+         * the event goes to by using the <code>KinesisParameters</code> argument. To
+         * invoke a command on multiple EC2 instances with one rule, you can use the
          * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
-         * against the resources that you own, Amazon CloudWatch Events needs the
-         * appropriate permissions. For AWS Lambda and Amazon SNS resources, EventBridge
-         * relies on resource-based policies. For EC2 instances, Kinesis data streams, and
-         * AWS Step Functions state machines, EventBridge relies on IAM roles that you
-         * specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For
-         * more information, see <a
+         * against the resources that you own, Amazon EventBridge (CloudWatch Events) needs
+         * the appropriate permissions. For AWS Lambda and Amazon SNS resources,
+         * EventBridge relies on resource-based policies. For EC2 instances, Kinesis data
+         * streams, AWS Step Functions state machines and API Gateway REST APIs,
+         * EventBridge relies on IAM roles that you specify in the <code>RoleARN</code>
+         * argument in <code>PutTargets</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
          * and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.</p> <p>If
          * another AWS account is in the same region and has granted you permission (using
@@ -1402,14 +1667,15 @@ namespace Model
          * sends events to another account, your account is charged for each sent event.
          * Each event sent to another account is charged as a custom event. The account
          * receiving the event is not charged. For more information, see <a
-         * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-         * Pricing</a>.</p> <note> <p> <code>Input</code>, <code>InputPath</code>, and
-         * <code>InputTransformer</code> are not available with <code>PutTarget</code> if
-         * the target is an event bus of a different AWS account.</p> </note> <p>If you are
-         * setting the event bus of another account as the target, and that account granted
-         * permission to your account through an organization instead of directly by the
-         * account ID, then you must specify a <code>RoleArn</code> with proper permissions
-         * in the <code>Target</code> structure. For more information, see <a
+         * href="https://aws.amazon.com/eventbridge/pricing/">Amazon EventBridge
+         * (CloudWatch Events) Pricing</a>.</p>  <p> <code>Input</code>,
+         * <code>InputPath</code>, and <code>InputTransformer</code> are not available with
+         * <code>PutTarget</code> if the target is an event bus of a different AWS
+         * account.</p>  <p>If you are setting the event bus of another account as
+         * the target, and that account granted permission to your account through an
+         * organization instead of directly by the account ID, then you must specify a
+         * <code>RoleArn</code> with proper permissions in the <code>Target</code>
+         * structure. For more information, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
          * and Receiving Events Between AWS Accounts</a> in the <i>Amazon EventBridge User
          * Guide</i>.</p> <p>For more information about enabling cross-account events, see
@@ -1455,22 +1721,23 @@ namespace Model
          * <li> <p>Pipelines in AWS CodePipeline</p> </li> <li> <p>Amazon Inspector
          * assessment templates</p> </li> <li> <p>Amazon SNS topics</p> </li> <li>
          * <p>Amazon SQS queues, including FIFO queues</p> </li> <li> <p>The default event
-         * bus of another AWS account</p> </li> </ul> <p>Creating rules with built-in
-         * targets is supported only in the AWS Management Console. The built-in targets
-         * are <code>EC2 CreateSnapshot API call</code>, <code>EC2 RebootInstances API
-         * call</code>, <code>EC2 StopInstances API call</code>, and <code>EC2
-         * TerminateInstances API call</code>. </p> <p>For some target types,
-         * <code>PutTargets</code> provides target-specific parameters. If the target is a
-         * Kinesis data stream, you can optionally specify which shard the event goes to by
-         * using the <code>KinesisParameters</code> argument. To invoke a command on
-         * multiple EC2 instances with one rule, you can use the
+         * bus of another AWS account</p> </li> <li> <p>Amazon API Gateway REST APIs</p>
+         * </li> <li> <p>Redshift Clusters to invoke Data API ExecuteStatement on</p> </li>
+         * </ul> <p>Creating rules with built-in targets is supported only in the AWS
+         * Management Console. The built-in targets are <code>EC2 CreateSnapshot API
+         * call</code>, <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances
+         * API call</code>, and <code>EC2 TerminateInstances API call</code>. </p> <p>For
+         * some target types, <code>PutTargets</code> provides target-specific parameters.
+         * If the target is a Kinesis data stream, you can optionally specify which shard
+         * the event goes to by using the <code>KinesisParameters</code> argument. To
+         * invoke a command on multiple EC2 instances with one rule, you can use the
          * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
-         * against the resources that you own, Amazon CloudWatch Events needs the
-         * appropriate permissions. For AWS Lambda and Amazon SNS resources, EventBridge
-         * relies on resource-based policies. For EC2 instances, Kinesis data streams, and
-         * AWS Step Functions state machines, EventBridge relies on IAM roles that you
-         * specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For
-         * more information, see <a
+         * against the resources that you own, Amazon EventBridge (CloudWatch Events) needs
+         * the appropriate permissions. For AWS Lambda and Amazon SNS resources,
+         * EventBridge relies on resource-based policies. For EC2 instances, Kinesis data
+         * streams, AWS Step Functions state machines and API Gateway REST APIs,
+         * EventBridge relies on IAM roles that you specify in the <code>RoleARN</code>
+         * argument in <code>PutTargets</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
          * and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.</p> <p>If
          * another AWS account is in the same region and has granted you permission (using
@@ -1481,14 +1748,15 @@ namespace Model
          * sends events to another account, your account is charged for each sent event.
          * Each event sent to another account is charged as a custom event. The account
          * receiving the event is not charged. For more information, see <a
-         * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-         * Pricing</a>.</p> <note> <p> <code>Input</code>, <code>InputPath</code>, and
-         * <code>InputTransformer</code> are not available with <code>PutTarget</code> if
-         * the target is an event bus of a different AWS account.</p> </note> <p>If you are
-         * setting the event bus of another account as the target, and that account granted
-         * permission to your account through an organization instead of directly by the
-         * account ID, then you must specify a <code>RoleArn</code> with proper permissions
-         * in the <code>Target</code> structure. For more information, see <a
+         * href="https://aws.amazon.com/eventbridge/pricing/">Amazon EventBridge
+         * (CloudWatch Events) Pricing</a>.</p>  <p> <code>Input</code>,
+         * <code>InputPath</code>, and <code>InputTransformer</code> are not available with
+         * <code>PutTarget</code> if the target is an event bus of a different AWS
+         * account.</p>  <p>If you are setting the event bus of another account as
+         * the target, and that account granted permission to your account through an
+         * organization instead of directly by the account ID, then you must specify a
+         * <code>RoleArn</code> with proper permissions in the <code>Target</code>
+         * structure. For more information, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
          * and Receiving Events Between AWS Accounts</a> in the <i>Amazon EventBridge User
          * Guide</i>.</p> <p>For more information about enabling cross-account events, see
@@ -1608,6 +1876,58 @@ namespace Model
         virtual void RemoveTargetsAsync(const Model::RemoveTargetsRequest& request, const RemoveTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts the specified replay. Events are not necessarily replayed in the exact
+         * same order that they were added to the archive. A replay processes events to
+         * replay based on the time in the event, and replays them using 1 minute
+         * intervals. If you specify an <code>EventStartTime</code> and an
+         * <code>EventEndTime</code> that covers a 20 minute time range, the events are
+         * replayed from the first minute of that 20 minute range first. Then the events
+         * from the second minute are replayed. You can use <code>DescribeReplay</code> to
+         * determine the progress of a replay. The value returned for
+         * <code>EventLastReplayedTime</code> indicates the time within the specified time
+         * range associated with the last event replayed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/StartReplay">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartReplayOutcome StartReplay(const Model::StartReplayRequest& request) const;
+
+        /**
+         * <p>Starts the specified replay. Events are not necessarily replayed in the exact
+         * same order that they were added to the archive. A replay processes events to
+         * replay based on the time in the event, and replays them using 1 minute
+         * intervals. If you specify an <code>EventStartTime</code> and an
+         * <code>EventEndTime</code> that covers a 20 minute time range, the events are
+         * replayed from the first minute of that 20 minute range first. Then the events
+         * from the second minute are replayed. You can use <code>DescribeReplay</code> to
+         * determine the progress of a replay. The value returned for
+         * <code>EventLastReplayedTime</code> indicates the time within the specified time
+         * range associated with the last event replayed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/StartReplay">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartReplayOutcomeCallable StartReplayCallable(const Model::StartReplayRequest& request) const;
+
+        /**
+         * <p>Starts the specified replay. Events are not necessarily replayed in the exact
+         * same order that they were added to the archive. A replay processes events to
+         * replay based on the time in the event, and replays them using 1 minute
+         * intervals. If you specify an <code>EventStartTime</code> and an
+         * <code>EventEndTime</code> that covers a 20 minute time range, the events are
+         * replayed from the first minute of that 20 minute range first. Then the events
+         * from the second minute are replayed. You can use <code>DescribeReplay</code> to
+         * determine the progress of a replay. The value returned for
+         * <code>EventLastReplayedTime</code> indicates the time within the specified time
+         * range associated with the last event replayed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/StartReplay">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartReplayAsync(const Model::StartReplayRequest& request, const StartReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Assigns one or more tags (key-value pairs) to the specified EventBridge
          * resource. Tags can help you organize and categorize your resources. You can also
          * use them to scope user permissions by granting a user permission to access or
@@ -1706,18 +2026,18 @@ namespace Model
         virtual void TestEventPatternAsync(const Model::TestEventPatternRequest& request, const TestEventPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes one or more tags from the specified EventBridge resource. In
-         * CloudWatch Events, rules and event buses can be tagged.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Removes one or more tags from the specified EventBridge resource. In Amazon
+         * EventBridge (CloudWatch Events, rules and event buses can be
+         * tagged.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from the specified EventBridge resource. In
-         * CloudWatch Events, rules and event buses can be tagged.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Removes one or more tags from the specified EventBridge resource. In Amazon
+         * EventBridge (CloudWatch Events, rules and event buses can be
+         * tagged.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1726,9 +2046,9 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from the specified EventBridge resource. In
-         * CloudWatch Events, rules and event buses can be tagged.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Removes one or more tags from the specified EventBridge resource. In Amazon
+         * EventBridge (CloudWatch Events, rules and event buses can be
+         * tagged.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1736,27 +2056,59 @@ namespace Model
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates the specified archive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateArchive">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateArchiveOutcome UpdateArchive(const Model::UpdateArchiveRequest& request) const;
+
+        /**
+         * <p>Updates the specified archive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateArchive">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateArchiveOutcomeCallable UpdateArchiveCallable(const Model::UpdateArchiveRequest& request) const;
+
+        /**
+         * <p>Updates the specified archive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateArchive">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateArchiveAsync(const Model::UpdateArchiveRequest& request, const UpdateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void ActivateEventSourceAsyncHelper(const Model::ActivateEventSourceRequest& request, const ActivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CancelReplayAsyncHelper(const Model::CancelReplayRequest& request, const CancelReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateArchiveAsyncHelper(const Model::CreateArchiveRequest& request, const CreateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEventBusAsyncHelper(const Model::CreateEventBusRequest& request, const CreateEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePartnerEventSourceAsyncHelper(const Model::CreatePartnerEventSourceRequest& request, const CreatePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeactivateEventSourceAsyncHelper(const Model::DeactivateEventSourceRequest& request, const DeactivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteArchiveAsyncHelper(const Model::DeleteArchiveRequest& request, const DeleteArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventBusAsyncHelper(const Model::DeleteEventBusRequest& request, const DeleteEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePartnerEventSourceAsyncHelper(const Model::DeletePartnerEventSourceRequest& request, const DeletePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRuleAsyncHelper(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeArchiveAsyncHelper(const Model::DescribeArchiveRequest& request, const DescribeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEventBusAsyncHelper(const Model::DescribeEventBusRequest& request, const DescribeEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEventSourceAsyncHelper(const Model::DescribeEventSourceRequest& request, const DescribeEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePartnerEventSourceAsyncHelper(const Model::DescribePartnerEventSourceRequest& request, const DescribePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeReplayAsyncHelper(const Model::DescribeReplayRequest& request, const DescribeReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRuleAsyncHelper(const Model::DescribeRuleRequest& request, const DescribeRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableRuleAsyncHelper(const Model::DisableRuleRequest& request, const DisableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableRuleAsyncHelper(const Model::EnableRuleRequest& request, const EnableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListArchivesAsyncHelper(const Model::ListArchivesRequest& request, const ListArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEventBusesAsyncHelper(const Model::ListEventBusesRequest& request, const ListEventBusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEventSourcesAsyncHelper(const Model::ListEventSourcesRequest& request, const ListEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPartnerEventSourceAccountsAsyncHelper(const Model::ListPartnerEventSourceAccountsRequest& request, const ListPartnerEventSourceAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPartnerEventSourcesAsyncHelper(const Model::ListPartnerEventSourcesRequest& request, const ListPartnerEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListReplaysAsyncHelper(const Model::ListReplaysRequest& request, const ListReplaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRuleNamesByTargetAsyncHelper(const Model::ListRuleNamesByTargetRequest& request, const ListRuleNamesByTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRulesAsyncHelper(const Model::ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1768,9 +2120,11 @@ namespace Model
         void PutTargetsAsyncHelper(const Model::PutTargetsRequest& request, const PutTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemovePermissionAsyncHelper(const Model::RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTargetsAsyncHelper(const Model::RemoveTargetsRequest& request, const RemoveTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartReplayAsyncHelper(const Model::StartReplayRequest& request, const StartReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TestEventPatternAsyncHelper(const Model::TestEventPatternRequest& request, const TestEventPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateArchiveAsyncHelper(const Model::UpdateArchiveRequest& request, const UpdateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

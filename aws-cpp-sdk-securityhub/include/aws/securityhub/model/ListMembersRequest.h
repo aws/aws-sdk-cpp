@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -53,9 +43,9 @@ namespace Model
      * relationship status with the master account. The default value is
      * <code>TRUE</code>.</p> <p>If <code>OnlyAssociated</code> is set to
      * <code>TRUE</code>, the response includes member accounts whose relationship
-     * status with the master is set to <code>ENABLED</code> or
-     * <code>DISABLED</code>.</p> <p>If <code>OnlyAssociated</code> is set to
-     * <code>FALSE</code>, the response includes all existing member accounts. </p>
+     * status with the master is set to <code>ENABLED</code>.</p> <p>If
+     * <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes
+     * all existing member accounts. </p>
      */
     inline bool GetOnlyAssociated() const{ return m_onlyAssociated; }
 
@@ -64,9 +54,9 @@ namespace Model
      * relationship status with the master account. The default value is
      * <code>TRUE</code>.</p> <p>If <code>OnlyAssociated</code> is set to
      * <code>TRUE</code>, the response includes member accounts whose relationship
-     * status with the master is set to <code>ENABLED</code> or
-     * <code>DISABLED</code>.</p> <p>If <code>OnlyAssociated</code> is set to
-     * <code>FALSE</code>, the response includes all existing member accounts. </p>
+     * status with the master is set to <code>ENABLED</code>.</p> <p>If
+     * <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes
+     * all existing member accounts. </p>
      */
     inline bool OnlyAssociatedHasBeenSet() const { return m_onlyAssociatedHasBeenSet; }
 
@@ -75,9 +65,9 @@ namespace Model
      * relationship status with the master account. The default value is
      * <code>TRUE</code>.</p> <p>If <code>OnlyAssociated</code> is set to
      * <code>TRUE</code>, the response includes member accounts whose relationship
-     * status with the master is set to <code>ENABLED</code> or
-     * <code>DISABLED</code>.</p> <p>If <code>OnlyAssociated</code> is set to
-     * <code>FALSE</code>, the response includes all existing member accounts. </p>
+     * status with the master is set to <code>ENABLED</code>.</p> <p>If
+     * <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes
+     * all existing member accounts. </p>
      */
     inline void SetOnlyAssociated(bool value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated = value; }
 
@@ -86,9 +76,9 @@ namespace Model
      * relationship status with the master account. The default value is
      * <code>TRUE</code>.</p> <p>If <code>OnlyAssociated</code> is set to
      * <code>TRUE</code>, the response includes member accounts whose relationship
-     * status with the master is set to <code>ENABLED</code> or
-     * <code>DISABLED</code>.</p> <p>If <code>OnlyAssociated</code> is set to
-     * <code>FALSE</code>, the response includes all existing member accounts. </p>
+     * status with the master is set to <code>ENABLED</code>.</p> <p>If
+     * <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes
+     * all existing member accounts. </p>
      */
     inline ListMembersRequest& WithOnlyAssociated(bool value) { SetOnlyAssociated(value); return *this;}
 

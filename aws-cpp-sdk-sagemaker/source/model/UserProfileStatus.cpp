@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/UserProfileStatus.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -34,6 +24,9 @@ namespace Aws
         static const int Failed_HASH = HashingUtils::HashString("Failed");
         static const int InService_HASH = HashingUtils::HashString("InService");
         static const int Pending_HASH = HashingUtils::HashString("Pending");
+        static const int Updating_HASH = HashingUtils::HashString("Updating");
+        static const int Update_Failed_HASH = HashingUtils::HashString("Update_Failed");
+        static const int Delete_Failed_HASH = HashingUtils::HashString("Delete_Failed");
 
 
         UserProfileStatus GetUserProfileStatusForName(const Aws::String& name)
@@ -54,6 +47,18 @@ namespace Aws
           else if (hashCode == Pending_HASH)
           {
             return UserProfileStatus::Pending;
+          }
+          else if (hashCode == Updating_HASH)
+          {
+            return UserProfileStatus::Updating;
+          }
+          else if (hashCode == Update_Failed_HASH)
+          {
+            return UserProfileStatus::Update_Failed;
+          }
+          else if (hashCode == Delete_Failed_HASH)
+          {
+            return UserProfileStatus::Delete_Failed;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +82,12 @@ namespace Aws
             return "InService";
           case UserProfileStatus::Pending:
             return "Pending";
+          case UserProfileStatus::Updating:
+            return "Updating";
+          case UserProfileStatus::Update_Failed:
+            return "Update_Failed";
+          case UserProfileStatus::Delete_Failed:
+            return "Delete_Failed";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

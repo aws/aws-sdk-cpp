@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dynamodbstreams/DynamoDBStreams_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodbstreams/model/OperationType.h>
 #include <aws/dynamodbstreams/model/StreamRecord.h>
+#include <aws/dynamodbstreams/model/Identity.h>
 #include <utility>
 
 namespace Aws
@@ -36,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>A description of a unique event within a stream.</p>
+   * <p>A description of a unique event within a stream.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/Record">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODBSTREAMS_API Record
   {
@@ -98,194 +92,226 @@ namespace Model
 
     /**
      * <p>The type of data modification that was performed on the DynamoDB table:</p>
-     * <ul> <li><p><code>INSERT</code> - a new item was added to the table.</p></li>
-     * <li><p><code>MODIFY</code> - one or more of the item's attributes were
-     * updated.</p></li> <li><p><code>REMOVE</code> - the item was deleted from the
-     * table</p></li> </ul>
+     * <ul> <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li>
+     * <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were
+     * modified.</p> </li> <li> <p> <code>REMOVE</code> - the item was deleted from the
+     * table</p> </li> </ul>
      */
     inline const OperationType& GetEventName() const{ return m_eventName; }
 
     /**
      * <p>The type of data modification that was performed on the DynamoDB table:</p>
-     * <ul> <li><p><code>INSERT</code> - a new item was added to the table.</p></li>
-     * <li><p><code>MODIFY</code> - one or more of the item's attributes were
-     * updated.</p></li> <li><p><code>REMOVE</code> - the item was deleted from the
-     * table</p></li> </ul>
+     * <ul> <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li>
+     * <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were
+     * modified.</p> </li> <li> <p> <code>REMOVE</code> - the item was deleted from the
+     * table</p> </li> </ul>
      */
     inline bool EventNameHasBeenSet() const { return m_eventNameHasBeenSet; }
 
     /**
      * <p>The type of data modification that was performed on the DynamoDB table:</p>
-     * <ul> <li><p><code>INSERT</code> - a new item was added to the table.</p></li>
-     * <li><p><code>MODIFY</code> - one or more of the item's attributes were
-     * updated.</p></li> <li><p><code>REMOVE</code> - the item was deleted from the
-     * table</p></li> </ul>
+     * <ul> <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li>
+     * <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were
+     * modified.</p> </li> <li> <p> <code>REMOVE</code> - the item was deleted from the
+     * table</p> </li> </ul>
      */
     inline void SetEventName(const OperationType& value) { m_eventNameHasBeenSet = true; m_eventName = value; }
 
     /**
      * <p>The type of data modification that was performed on the DynamoDB table:</p>
-     * <ul> <li><p><code>INSERT</code> - a new item was added to the table.</p></li>
-     * <li><p><code>MODIFY</code> - one or more of the item's attributes were
-     * updated.</p></li> <li><p><code>REMOVE</code> - the item was deleted from the
-     * table</p></li> </ul>
+     * <ul> <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li>
+     * <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were
+     * modified.</p> </li> <li> <p> <code>REMOVE</code> - the item was deleted from the
+     * table</p> </li> </ul>
      */
     inline void SetEventName(OperationType&& value) { m_eventNameHasBeenSet = true; m_eventName = std::move(value); }
 
     /**
      * <p>The type of data modification that was performed on the DynamoDB table:</p>
-     * <ul> <li><p><code>INSERT</code> - a new item was added to the table.</p></li>
-     * <li><p><code>MODIFY</code> - one or more of the item's attributes were
-     * updated.</p></li> <li><p><code>REMOVE</code> - the item was deleted from the
-     * table</p></li> </ul>
+     * <ul> <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li>
+     * <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were
+     * modified.</p> </li> <li> <p> <code>REMOVE</code> - the item was deleted from the
+     * table</p> </li> </ul>
      */
     inline Record& WithEventName(const OperationType& value) { SetEventName(value); return *this;}
 
     /**
      * <p>The type of data modification that was performed on the DynamoDB table:</p>
-     * <ul> <li><p><code>INSERT</code> - a new item was added to the table.</p></li>
-     * <li><p><code>MODIFY</code> - one or more of the item's attributes were
-     * updated.</p></li> <li><p><code>REMOVE</code> - the item was deleted from the
-     * table</p></li> </ul>
+     * <ul> <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li>
+     * <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were
+     * modified.</p> </li> <li> <p> <code>REMOVE</code> - the item was deleted from the
+     * table</p> </li> </ul>
      */
     inline Record& WithEventName(OperationType&& value) { SetEventName(std::move(value)); return *this;}
 
 
     /**
-     * <p>The version number of the stream record format. Currently, this is
-     * <i>1.0</i>.</p>
+     * <p>The version number of the stream record format. This number is updated
+     * whenever the structure of <code>Record</code> is modified.</p> <p>Client
+     * applications must not assume that <code>eventVersion</code> will remain at a
+     * particular value, as this number is subject to change at any time. In general,
+     * <code>eventVersion</code> will only increase as the low-level DynamoDB Streams
+     * API evolves.</p>
      */
     inline const Aws::String& GetEventVersion() const{ return m_eventVersion; }
 
     /**
-     * <p>The version number of the stream record format. Currently, this is
-     * <i>1.0</i>.</p>
+     * <p>The version number of the stream record format. This number is updated
+     * whenever the structure of <code>Record</code> is modified.</p> <p>Client
+     * applications must not assume that <code>eventVersion</code> will remain at a
+     * particular value, as this number is subject to change at any time. In general,
+     * <code>eventVersion</code> will only increase as the low-level DynamoDB Streams
+     * API evolves.</p>
      */
     inline bool EventVersionHasBeenSet() const { return m_eventVersionHasBeenSet; }
 
     /**
-     * <p>The version number of the stream record format. Currently, this is
-     * <i>1.0</i>.</p>
+     * <p>The version number of the stream record format. This number is updated
+     * whenever the structure of <code>Record</code> is modified.</p> <p>Client
+     * applications must not assume that <code>eventVersion</code> will remain at a
+     * particular value, as this number is subject to change at any time. In general,
+     * <code>eventVersion</code> will only increase as the low-level DynamoDB Streams
+     * API evolves.</p>
      */
     inline void SetEventVersion(const Aws::String& value) { m_eventVersionHasBeenSet = true; m_eventVersion = value; }
 
     /**
-     * <p>The version number of the stream record format. Currently, this is
-     * <i>1.0</i>.</p>
+     * <p>The version number of the stream record format. This number is updated
+     * whenever the structure of <code>Record</code> is modified.</p> <p>Client
+     * applications must not assume that <code>eventVersion</code> will remain at a
+     * particular value, as this number is subject to change at any time. In general,
+     * <code>eventVersion</code> will only increase as the low-level DynamoDB Streams
+     * API evolves.</p>
      */
     inline void SetEventVersion(Aws::String&& value) { m_eventVersionHasBeenSet = true; m_eventVersion = std::move(value); }
 
     /**
-     * <p>The version number of the stream record format. Currently, this is
-     * <i>1.0</i>.</p>
+     * <p>The version number of the stream record format. This number is updated
+     * whenever the structure of <code>Record</code> is modified.</p> <p>Client
+     * applications must not assume that <code>eventVersion</code> will remain at a
+     * particular value, as this number is subject to change at any time. In general,
+     * <code>eventVersion</code> will only increase as the low-level DynamoDB Streams
+     * API evolves.</p>
      */
     inline void SetEventVersion(const char* value) { m_eventVersionHasBeenSet = true; m_eventVersion.assign(value); }
 
     /**
-     * <p>The version number of the stream record format. Currently, this is
-     * <i>1.0</i>.</p>
+     * <p>The version number of the stream record format. This number is updated
+     * whenever the structure of <code>Record</code> is modified.</p> <p>Client
+     * applications must not assume that <code>eventVersion</code> will remain at a
+     * particular value, as this number is subject to change at any time. In general,
+     * <code>eventVersion</code> will only increase as the low-level DynamoDB Streams
+     * API evolves.</p>
      */
     inline Record& WithEventVersion(const Aws::String& value) { SetEventVersion(value); return *this;}
 
     /**
-     * <p>The version number of the stream record format. Currently, this is
-     * <i>1.0</i>.</p>
+     * <p>The version number of the stream record format. This number is updated
+     * whenever the structure of <code>Record</code> is modified.</p> <p>Client
+     * applications must not assume that <code>eventVersion</code> will remain at a
+     * particular value, as this number is subject to change at any time. In general,
+     * <code>eventVersion</code> will only increase as the low-level DynamoDB Streams
+     * API evolves.</p>
      */
     inline Record& WithEventVersion(Aws::String&& value) { SetEventVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version number of the stream record format. Currently, this is
-     * <i>1.0</i>.</p>
+     * <p>The version number of the stream record format. This number is updated
+     * whenever the structure of <code>Record</code> is modified.</p> <p>Client
+     * applications must not assume that <code>eventVersion</code> will remain at a
+     * particular value, as this number is subject to change at any time. In general,
+     * <code>eventVersion</code> will only increase as the low-level DynamoDB Streams
+     * API evolves.</p>
      */
     inline Record& WithEventVersion(const char* value) { SetEventVersion(value); return *this;}
 
 
     /**
      * <p>The AWS service from which the stream record originated. For DynamoDB
-     * Streams, this is <i>aws:dynamodb</i>.</p>
+     * Streams, this is <code>aws:dynamodb</code>.</p>
      */
     inline const Aws::String& GetEventSource() const{ return m_eventSource; }
 
     /**
      * <p>The AWS service from which the stream record originated. For DynamoDB
-     * Streams, this is <i>aws:dynamodb</i>.</p>
+     * Streams, this is <code>aws:dynamodb</code>.</p>
      */
     inline bool EventSourceHasBeenSet() const { return m_eventSourceHasBeenSet; }
 
     /**
      * <p>The AWS service from which the stream record originated. For DynamoDB
-     * Streams, this is <i>aws:dynamodb</i>.</p>
+     * Streams, this is <code>aws:dynamodb</code>.</p>
      */
     inline void SetEventSource(const Aws::String& value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
 
     /**
      * <p>The AWS service from which the stream record originated. For DynamoDB
-     * Streams, this is <i>aws:dynamodb</i>.</p>
+     * Streams, this is <code>aws:dynamodb</code>.</p>
      */
     inline void SetEventSource(Aws::String&& value) { m_eventSourceHasBeenSet = true; m_eventSource = std::move(value); }
 
     /**
      * <p>The AWS service from which the stream record originated. For DynamoDB
-     * Streams, this is <i>aws:dynamodb</i>.</p>
+     * Streams, this is <code>aws:dynamodb</code>.</p>
      */
     inline void SetEventSource(const char* value) { m_eventSourceHasBeenSet = true; m_eventSource.assign(value); }
 
     /**
      * <p>The AWS service from which the stream record originated. For DynamoDB
-     * Streams, this is <i>aws:dynamodb</i>.</p>
+     * Streams, this is <code>aws:dynamodb</code>.</p>
      */
     inline Record& WithEventSource(const Aws::String& value) { SetEventSource(value); return *this;}
 
     /**
      * <p>The AWS service from which the stream record originated. For DynamoDB
-     * Streams, this is <i>aws:dynamodb</i>.</p>
+     * Streams, this is <code>aws:dynamodb</code>.</p>
      */
     inline Record& WithEventSource(Aws::String&& value) { SetEventSource(std::move(value)); return *this;}
 
     /**
      * <p>The AWS service from which the stream record originated. For DynamoDB
-     * Streams, this is <i>aws:dynamodb</i>.</p>
+     * Streams, this is <code>aws:dynamodb</code>.</p>
      */
     inline Record& WithEventSource(const char* value) { SetEventSource(value); return *this;}
 
 
     /**
-     * <p>The region in which the <i>GetRecords</i> request was received.</p>
+     * <p>The region in which the <code>GetRecords</code> request was received.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
 
     /**
-     * <p>The region in which the <i>GetRecords</i> request was received.</p>
+     * <p>The region in which the <code>GetRecords</code> request was received.</p>
      */
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
-     * <p>The region in which the <i>GetRecords</i> request was received.</p>
+     * <p>The region in which the <code>GetRecords</code> request was received.</p>
      */
     inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
 
     /**
-     * <p>The region in which the <i>GetRecords</i> request was received.</p>
+     * <p>The region in which the <code>GetRecords</code> request was received.</p>
      */
     inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
 
     /**
-     * <p>The region in which the <i>GetRecords</i> request was received.</p>
+     * <p>The region in which the <code>GetRecords</code> request was received.</p>
      */
     inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
 
     /**
-     * <p>The region in which the <i>GetRecords</i> request was received.</p>
+     * <p>The region in which the <code>GetRecords</code> request was received.</p>
      */
     inline Record& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
 
     /**
-     * <p>The region in which the <i>GetRecords</i> request was received.</p>
+     * <p>The region in which the <code>GetRecords</code> request was received.</p>
      */
     inline Record& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The region in which the <i>GetRecords</i> request was received.</p>
+     * <p>The region in which the <code>GetRecords</code> request was received.</p>
      */
     inline Record& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
 
@@ -326,6 +352,55 @@ namespace Model
      */
     inline Record& WithDynamodb(StreamRecord&& value) { SetDynamodb(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Items that are deleted by the Time to Live process after expiration have the
+     * following fields: </p> <ul> <li> <p>Records[].userIdentity.type</p>
+     * <p>"Service"</p> </li> <li> <p>Records[].userIdentity.principalId</p>
+     * <p>"dynamodb.amazonaws.com"</p> </li> </ul>
+     */
+    inline const Identity& GetUserIdentity() const{ return m_userIdentity; }
+
+    /**
+     * <p>Items that are deleted by the Time to Live process after expiration have the
+     * following fields: </p> <ul> <li> <p>Records[].userIdentity.type</p>
+     * <p>"Service"</p> </li> <li> <p>Records[].userIdentity.principalId</p>
+     * <p>"dynamodb.amazonaws.com"</p> </li> </ul>
+     */
+    inline bool UserIdentityHasBeenSet() const { return m_userIdentityHasBeenSet; }
+
+    /**
+     * <p>Items that are deleted by the Time to Live process after expiration have the
+     * following fields: </p> <ul> <li> <p>Records[].userIdentity.type</p>
+     * <p>"Service"</p> </li> <li> <p>Records[].userIdentity.principalId</p>
+     * <p>"dynamodb.amazonaws.com"</p> </li> </ul>
+     */
+    inline void SetUserIdentity(const Identity& value) { m_userIdentityHasBeenSet = true; m_userIdentity = value; }
+
+    /**
+     * <p>Items that are deleted by the Time to Live process after expiration have the
+     * following fields: </p> <ul> <li> <p>Records[].userIdentity.type</p>
+     * <p>"Service"</p> </li> <li> <p>Records[].userIdentity.principalId</p>
+     * <p>"dynamodb.amazonaws.com"</p> </li> </ul>
+     */
+    inline void SetUserIdentity(Identity&& value) { m_userIdentityHasBeenSet = true; m_userIdentity = std::move(value); }
+
+    /**
+     * <p>Items that are deleted by the Time to Live process after expiration have the
+     * following fields: </p> <ul> <li> <p>Records[].userIdentity.type</p>
+     * <p>"Service"</p> </li> <li> <p>Records[].userIdentity.principalId</p>
+     * <p>"dynamodb.amazonaws.com"</p> </li> </ul>
+     */
+    inline Record& WithUserIdentity(const Identity& value) { SetUserIdentity(value); return *this;}
+
+    /**
+     * <p>Items that are deleted by the Time to Live process after expiration have the
+     * following fields: </p> <ul> <li> <p>Records[].userIdentity.type</p>
+     * <p>"Service"</p> </li> <li> <p>Records[].userIdentity.principalId</p>
+     * <p>"dynamodb.amazonaws.com"</p> </li> </ul>
+     */
+    inline Record& WithUserIdentity(Identity&& value) { SetUserIdentity(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_eventID;
@@ -345,6 +420,9 @@ namespace Model
 
     StreamRecord m_dynamodb;
     bool m_dynamodbHasBeenSet;
+
+    Identity m_userIdentity;
+    bool m_userIdentityHasBeenSet;
   };
 
 } // namespace Model

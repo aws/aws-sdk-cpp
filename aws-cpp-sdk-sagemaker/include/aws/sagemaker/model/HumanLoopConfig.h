@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -248,47 +238,51 @@ namespace Model
 
 
     /**
-     * <p>The length of time that a task remains available for labeling by human
+     * <p>The length of time that a task remains available for review by human
      * workers.</p>
      */
     inline int GetTaskAvailabilityLifetimeInSeconds() const{ return m_taskAvailabilityLifetimeInSeconds; }
 
     /**
-     * <p>The length of time that a task remains available for labeling by human
+     * <p>The length of time that a task remains available for review by human
      * workers.</p>
      */
     inline bool TaskAvailabilityLifetimeInSecondsHasBeenSet() const { return m_taskAvailabilityLifetimeInSecondsHasBeenSet; }
 
     /**
-     * <p>The length of time that a task remains available for labeling by human
+     * <p>The length of time that a task remains available for review by human
      * workers.</p>
      */
     inline void SetTaskAvailabilityLifetimeInSeconds(int value) { m_taskAvailabilityLifetimeInSecondsHasBeenSet = true; m_taskAvailabilityLifetimeInSeconds = value; }
 
     /**
-     * <p>The length of time that a task remains available for labeling by human
+     * <p>The length of time that a task remains available for review by human
      * workers.</p>
      */
     inline HumanLoopConfig& WithTaskAvailabilityLifetimeInSeconds(int value) { SetTaskAvailabilityLifetimeInSeconds(value); return *this;}
 
 
     /**
-     * <p>The amount of time that a worker has to complete a task.</p>
+     * <p>The amount of time that a worker has to complete a task. The default value is
+     * 3,600 seconds (1 hour)</p>
      */
     inline int GetTaskTimeLimitInSeconds() const{ return m_taskTimeLimitInSeconds; }
 
     /**
-     * <p>The amount of time that a worker has to complete a task.</p>
+     * <p>The amount of time that a worker has to complete a task. The default value is
+     * 3,600 seconds (1 hour)</p>
      */
     inline bool TaskTimeLimitInSecondsHasBeenSet() const { return m_taskTimeLimitInSecondsHasBeenSet; }
 
     /**
-     * <p>The amount of time that a worker has to complete a task.</p>
+     * <p>The amount of time that a worker has to complete a task. The default value is
+     * 3,600 seconds (1 hour)</p>
      */
     inline void SetTaskTimeLimitInSeconds(int value) { m_taskTimeLimitInSecondsHasBeenSet = true; m_taskTimeLimitInSeconds = value; }
 
     /**
-     * <p>The amount of time that a worker has to complete a task.</p>
+     * <p>The amount of time that a worker has to complete a task. The default value is
+     * 3,600 seconds (1 hour)</p>
      */
     inline HumanLoopConfig& WithTaskTimeLimitInSeconds(int value) { SetTaskTimeLimitInSeconds(value); return *this;}
 

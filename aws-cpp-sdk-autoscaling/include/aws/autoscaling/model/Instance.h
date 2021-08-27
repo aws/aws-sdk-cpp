@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
@@ -176,37 +166,49 @@ namespace Model
 
     /**
      * <p>A description of the current lifecycle state. The <code>Quarantined</code>
-     * state is not used.</p>
+     * state is not used. For information about lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
      */
     inline const LifecycleState& GetLifecycleState() const{ return m_lifecycleState; }
 
     /**
      * <p>A description of the current lifecycle state. The <code>Quarantined</code>
-     * state is not used.</p>
+     * state is not used. For information about lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
      */
     inline bool LifecycleStateHasBeenSet() const { return m_lifecycleStateHasBeenSet; }
 
     /**
      * <p>A description of the current lifecycle state. The <code>Quarantined</code>
-     * state is not used.</p>
+     * state is not used. For information about lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
      */
     inline void SetLifecycleState(const LifecycleState& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = value; }
 
     /**
      * <p>A description of the current lifecycle state. The <code>Quarantined</code>
-     * state is not used.</p>
+     * state is not used. For information about lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
      */
     inline void SetLifecycleState(LifecycleState&& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = std::move(value); }
 
     /**
      * <p>A description of the current lifecycle state. The <code>Quarantined</code>
-     * state is not used.</p>
+     * state is not used. For information about lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
      */
     inline Instance& WithLifecycleState(const LifecycleState& value) { SetLifecycleState(value); return *this;}
 
     /**
      * <p>A description of the current lifecycle state. The <code>Quarantined</code>
-     * state is not used.</p>
+     * state is not used. For information about lifecycle states, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
      */
     inline Instance& WithLifecycleState(LifecycleState&& value) { SetLifecycleState(std::move(value)); return *this;}
 

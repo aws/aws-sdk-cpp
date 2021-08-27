@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/imagebuilder/model/ImageVersion.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,6 +21,8 @@ namespace Model
 ImageVersion::ImageVersion() : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_type(ImageType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
@@ -43,6 +35,8 @@ ImageVersion::ImageVersion() :
 ImageVersion::ImageVersion(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_type(ImageType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
@@ -67,6 +61,13 @@ ImageVersion& ImageVersion::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = ImageTypeMapper::GetImageTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("version"))
@@ -121,6 +122,11 @@ JsonValue ImageVersion::Jsonize() const
   {
    payload.WithString("name", m_name);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", ImageTypeMapper::GetNameForImageType(m_type));
   }
 
   if(m_versionHasBeenSet)

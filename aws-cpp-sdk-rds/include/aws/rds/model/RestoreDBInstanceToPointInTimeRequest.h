@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -533,42 +523,54 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance isn't publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address. For more information, see
-     * <a>CreateDBInstance</a>.</p>
+     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
+     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
+     * private IP address from within the DB instance's VPC, and to the public IP
+     * address from outside of the DB instance's VPC. Access to the DB instance is
+     * ultimately controlled by the security group it uses, and that public access is
+     * not permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
+     * information, see <a>CreateDBInstance</a>.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance isn't publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address. For more information, see
-     * <a>CreateDBInstance</a>.</p>
+     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
+     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
+     * private IP address from within the DB instance's VPC, and to the public IP
+     * address from outside of the DB instance's VPC. Access to the DB instance is
+     * ultimately controlled by the security group it uses, and that public access is
+     * not permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
+     * information, see <a>CreateDBInstance</a>.</p>
      */
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance isn't publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address. For more information, see
-     * <a>CreateDBInstance</a>.</p>
+     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
+     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
+     * private IP address from within the DB instance's VPC, and to the public IP
+     * address from outside of the DB instance's VPC. Access to the DB instance is
+     * ultimately controlled by the security group it uses, and that public access is
+     * not permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
+     * information, see <a>CreateDBInstance</a>.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance isn't publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address. For more information, see
-     * <a>CreateDBInstance</a>.</p>
+     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
+     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
+     * private IP address from within the DB instance's VPC, and to the public IP
+     * address from outside of the DB instance's VPC. Access to the DB instance is
+     * ultimately controlled by the security group it uses, and that public access is
+     * not permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
+     * information, see <a>CreateDBInstance</a>.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
@@ -656,50 +658,50 @@ namespace Model
 
 
     /**
-     * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * isn't used for the MySQL or MariaDB engines.</p> </note>
+     * <p>The database name for the restored DB instance.</p>  <p>This parameter
+     * isn't used for the MySQL or MariaDB engines.</p> 
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
 
     /**
-     * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * isn't used for the MySQL or MariaDB engines.</p> </note>
+     * <p>The database name for the restored DB instance.</p>  <p>This parameter
+     * isn't used for the MySQL or MariaDB engines.</p> 
      */
     inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
 
     /**
-     * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * isn't used for the MySQL or MariaDB engines.</p> </note>
+     * <p>The database name for the restored DB instance.</p>  <p>This parameter
+     * isn't used for the MySQL or MariaDB engines.</p> 
      */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
     /**
-     * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * isn't used for the MySQL or MariaDB engines.</p> </note>
+     * <p>The database name for the restored DB instance.</p>  <p>This parameter
+     * isn't used for the MySQL or MariaDB engines.</p> 
      */
     inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
     /**
-     * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * isn't used for the MySQL or MariaDB engines.</p> </note>
+     * <p>The database name for the restored DB instance.</p>  <p>This parameter
+     * isn't used for the MySQL or MariaDB engines.</p> 
      */
     inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
 
     /**
-     * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * isn't used for the MySQL or MariaDB engines.</p> </note>
+     * <p>The database name for the restored DB instance.</p>  <p>This parameter
+     * isn't used for the MySQL or MariaDB engines.</p> 
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
 
     /**
-     * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * isn't used for the MySQL or MariaDB engines.</p> </note>
+     * <p>The database name for the restored DB instance.</p>  <p>This parameter
+     * isn't used for the MySQL or MariaDB engines.</p> 
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
     /**
-     * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * isn't used for the MySQL or MariaDB engines.</p> </note>
+     * <p>The database name for the restored DB instance.</p>  <p>This parameter
+     * isn't used for the MySQL or MariaDB engines.</p> 
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBName(const char* value) { SetDBName(value); return *this;}
 
@@ -1194,145 +1196,81 @@ namespace Model
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB instance in. The
-     * domain must be created prior to this operation. Currently, only Microsoft SQL
-     * Server and Oracle DB instances can be created in an Active Directory Domain.
-     * </p> <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
-     * Authentication to authenticate users that connect to the DB instance. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
+     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB instance in. The
-     * domain must be created prior to this operation. Currently, only Microsoft SQL
-     * Server and Oracle DB instances can be created in an Active Directory Domain.
-     * </p> <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
-     * Authentication to authenticate users that connect to the DB instance. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
+     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB instance in. The
-     * domain must be created prior to this operation. Currently, only Microsoft SQL
-     * Server and Oracle DB instances can be created in an Active Directory Domain.
-     * </p> <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
-     * Authentication to authenticate users that connect to the DB instance. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
+     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB instance in. The
-     * domain must be created prior to this operation. Currently, only Microsoft SQL
-     * Server and Oracle DB instances can be created in an Active Directory Domain.
-     * </p> <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
-     * Authentication to authenticate users that connect to the DB instance. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
+     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB instance in. The
-     * domain must be created prior to this operation. Currently, only Microsoft SQL
-     * Server and Oracle DB instances can be created in an Active Directory Domain.
-     * </p> <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
-     * Authentication to authenticate users that connect to the DB instance. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
+     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB instance in. The
-     * domain must be created prior to this operation. Currently, only Microsoft SQL
-     * Server and Oracle DB instances can be created in an Active Directory Domain.
-     * </p> <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
-     * Authentication to authenticate users that connect to the DB instance. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
+     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB instance in. The
-     * domain must be created prior to this operation. Currently, only Microsoft SQL
-     * Server and Oracle DB instances can be created in an Active Directory Domain.
-     * </p> <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
-     * Authentication to authenticate users that connect to the DB instance. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
+     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB instance in. The
-     * domain must be created prior to this operation. Currently, only Microsoft SQL
-     * Server and Oracle DB instances can be created in an Active Directory Domain.
-     * </p> <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
-     * Authentication to authenticate users that connect to the DB instance. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
+     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
@@ -1388,9 +1326,8 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is disabled.
-     * For information about the supported DB engines, see <a>CreateDBInstance</a>.</p>
-     * <p>For more information about IAM database authentication, see <a
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -1399,9 +1336,8 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is disabled.
-     * For information about the supported DB engines, see <a>CreateDBInstance</a>.</p>
-     * <p>For more information about IAM database authentication, see <a
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -1410,9 +1346,8 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is disabled.
-     * For information about the supported DB engines, see <a>CreateDBInstance</a>.</p>
-     * <p>For more information about IAM database authentication, see <a
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -1421,9 +1356,8 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is disabled.
-     * For information about the supported DB engines, see <a>CreateDBInstance</a>.</p>
-     * <p>For more information about IAM database authentication, see <a
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -1762,6 +1696,149 @@ namespace Model
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithSourceDbiResourceId(const char* value) { SetSourceDbiResourceId(value); return *this;}
 
+
+    /**
+     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
+     * the DB instance.</p>
+     */
+    inline int GetMaxAllocatedStorage() const{ return m_maxAllocatedStorage; }
+
+    /**
+     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
+     * the DB instance.</p>
+     */
+    inline bool MaxAllocatedStorageHasBeenSet() const { return m_maxAllocatedStorageHasBeenSet; }
+
+    /**
+     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
+     * the DB instance.</p>
+     */
+    inline void SetMaxAllocatedStorage(int value) { m_maxAllocatedStorageHasBeenSet = true; m_maxAllocatedStorage = value; }
+
+    /**
+     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
+     * the DB instance.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithMaxAllocatedStorage(int value) { SetMaxAllocatedStorage(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replicated automated backups from which
+     * to restore, for example,
+     * <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     */
+    inline const Aws::String& GetSourceDBInstanceAutomatedBackupsArn() const{ return m_sourceDBInstanceAutomatedBackupsArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replicated automated backups from which
+     * to restore, for example,
+     * <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     */
+    inline bool SourceDBInstanceAutomatedBackupsArnHasBeenSet() const { return m_sourceDBInstanceAutomatedBackupsArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replicated automated backups from which
+     * to restore, for example,
+     * <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     */
+    inline void SetSourceDBInstanceAutomatedBackupsArn(const Aws::String& value) { m_sourceDBInstanceAutomatedBackupsArnHasBeenSet = true; m_sourceDBInstanceAutomatedBackupsArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replicated automated backups from which
+     * to restore, for example,
+     * <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     */
+    inline void SetSourceDBInstanceAutomatedBackupsArn(Aws::String&& value) { m_sourceDBInstanceAutomatedBackupsArnHasBeenSet = true; m_sourceDBInstanceAutomatedBackupsArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replicated automated backups from which
+     * to restore, for example,
+     * <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     */
+    inline void SetSourceDBInstanceAutomatedBackupsArn(const char* value) { m_sourceDBInstanceAutomatedBackupsArnHasBeenSet = true; m_sourceDBInstanceAutomatedBackupsArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replicated automated backups from which
+     * to restore, for example,
+     * <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithSourceDBInstanceAutomatedBackupsArn(const Aws::String& value) { SetSourceDBInstanceAutomatedBackupsArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replicated automated backups from which
+     * to restore, for example,
+     * <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithSourceDBInstanceAutomatedBackupsArn(Aws::String&& value) { SetSourceDBInstanceAutomatedBackupsArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replicated automated backups from which
+     * to restore, for example,
+     * <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithSourceDBInstanceAutomatedBackupsArn(const char* value) { SetSourceDBInstanceAutomatedBackupsArn(value); return *this;}
+
+
+    /**
+     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
+     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
+     * external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for
+     * connections to the DB instance from outside of its virtual private cloud (VPC)
+     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     */
+    inline bool GetEnableCustomerOwnedIp() const{ return m_enableCustomerOwnedIp; }
+
+    /**
+     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
+     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
+     * external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for
+     * connections to the DB instance from outside of its virtual private cloud (VPC)
+     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     */
+    inline bool EnableCustomerOwnedIpHasBeenSet() const { return m_enableCustomerOwnedIpHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
+     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
+     * external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for
+     * connections to the DB instance from outside of its virtual private cloud (VPC)
+     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     */
+    inline void SetEnableCustomerOwnedIp(bool value) { m_enableCustomerOwnedIpHasBeenSet = true; m_enableCustomerOwnedIp = value; }
+
+    /**
+     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
+     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
+     * external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for
+     * connections to the DB instance from outside of its virtual private cloud (VPC)
+     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithEnableCustomerOwnedIp(bool value) { SetEnableCustomerOwnedIp(value); return *this;}
+
   private:
 
     Aws::String m_sourceDBInstanceIdentifier;
@@ -1856,6 +1933,15 @@ namespace Model
 
     Aws::String m_sourceDbiResourceId;
     bool m_sourceDbiResourceIdHasBeenSet;
+
+    int m_maxAllocatedStorage;
+    bool m_maxAllocatedStorageHasBeenSet;
+
+    Aws::String m_sourceDBInstanceAutomatedBackupsArn;
+    bool m_sourceDBInstanceAutomatedBackupsArnHasBeenSet;
+
+    bool m_enableCustomerOwnedIp;
+    bool m_enableCustomerOwnedIpHasBeenSet;
   };
 
 } // namespace Model

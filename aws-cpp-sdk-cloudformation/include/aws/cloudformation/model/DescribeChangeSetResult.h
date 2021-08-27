@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -705,6 +695,108 @@ namespace Model
     inline DescribeChangeSetResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
+    /**
+     * <p>Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.</p>
+     */
+    inline bool GetIncludeNestedStacks() const{ return m_includeNestedStacks; }
+
+    /**
+     * <p>Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.</p>
+     */
+    inline void SetIncludeNestedStacks(bool value) { m_includeNestedStacks = value; }
+
+    /**
+     * <p>Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.</p>
+     */
+    inline DescribeChangeSetResult& WithIncludeNestedStacks(bool value) { SetIncludeNestedStacks(value); return *this;}
+
+
+    /**
+     * <p>Specifies the change set ID of the parent change set in the current nested
+     * change set hierarchy.</p>
+     */
+    inline const Aws::String& GetParentChangeSetId() const{ return m_parentChangeSetId; }
+
+    /**
+     * <p>Specifies the change set ID of the parent change set in the current nested
+     * change set hierarchy.</p>
+     */
+    inline void SetParentChangeSetId(const Aws::String& value) { m_parentChangeSetId = value; }
+
+    /**
+     * <p>Specifies the change set ID of the parent change set in the current nested
+     * change set hierarchy.</p>
+     */
+    inline void SetParentChangeSetId(Aws::String&& value) { m_parentChangeSetId = std::move(value); }
+
+    /**
+     * <p>Specifies the change set ID of the parent change set in the current nested
+     * change set hierarchy.</p>
+     */
+    inline void SetParentChangeSetId(const char* value) { m_parentChangeSetId.assign(value); }
+
+    /**
+     * <p>Specifies the change set ID of the parent change set in the current nested
+     * change set hierarchy.</p>
+     */
+    inline DescribeChangeSetResult& WithParentChangeSetId(const Aws::String& value) { SetParentChangeSetId(value); return *this;}
+
+    /**
+     * <p>Specifies the change set ID of the parent change set in the current nested
+     * change set hierarchy.</p>
+     */
+    inline DescribeChangeSetResult& WithParentChangeSetId(Aws::String&& value) { SetParentChangeSetId(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the change set ID of the parent change set in the current nested
+     * change set hierarchy.</p>
+     */
+    inline DescribeChangeSetResult& WithParentChangeSetId(const char* value) { SetParentChangeSetId(value); return *this;}
+
+
+    /**
+     * <p>Specifies the change set ID of the root change set in the current nested
+     * change set hierarchy.</p>
+     */
+    inline const Aws::String& GetRootChangeSetId() const{ return m_rootChangeSetId; }
+
+    /**
+     * <p>Specifies the change set ID of the root change set in the current nested
+     * change set hierarchy.</p>
+     */
+    inline void SetRootChangeSetId(const Aws::String& value) { m_rootChangeSetId = value; }
+
+    /**
+     * <p>Specifies the change set ID of the root change set in the current nested
+     * change set hierarchy.</p>
+     */
+    inline void SetRootChangeSetId(Aws::String&& value) { m_rootChangeSetId = std::move(value); }
+
+    /**
+     * <p>Specifies the change set ID of the root change set in the current nested
+     * change set hierarchy.</p>
+     */
+    inline void SetRootChangeSetId(const char* value) { m_rootChangeSetId.assign(value); }
+
+    /**
+     * <p>Specifies the change set ID of the root change set in the current nested
+     * change set hierarchy.</p>
+     */
+    inline DescribeChangeSetResult& WithRootChangeSetId(const Aws::String& value) { SetRootChangeSetId(value); return *this;}
+
+    /**
+     * <p>Specifies the change set ID of the root change set in the current nested
+     * change set hierarchy.</p>
+     */
+    inline DescribeChangeSetResult& WithRootChangeSetId(Aws::String&& value) { SetRootChangeSetId(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the change set ID of the root change set in the current nested
+     * change set hierarchy.</p>
+     */
+    inline DescribeChangeSetResult& WithRootChangeSetId(const char* value) { SetRootChangeSetId(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -753,6 +845,12 @@ namespace Model
     Aws::Vector<Change> m_changes;
 
     Aws::String m_nextToken;
+
+    bool m_includeNestedStacks;
+
+    Aws::String m_parentChangeSetId;
+
+    Aws::String m_rootChangeSetId;
 
     ResponseMetadata m_responseMetadata;
   };

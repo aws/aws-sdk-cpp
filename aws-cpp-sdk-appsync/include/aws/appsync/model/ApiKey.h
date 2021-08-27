@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appsync/AppSync_EXPORTS.h>
@@ -50,13 +40,18 @@ namespace Model
    * table after February 21, 2018.</p> </li> </ul> <p> <b>da2</b>: This version was
    * introduced in February 2018 when AppSync added support to extend key
    * expiration.</p> <ul> <li> <p> <code>ListApiKeys</code> returns the expiration
-   * time in seconds.</p> </li> <li> <p> <code>CreateApiKey</code> returns the
-   * expiration time in seconds and accepts a user-provided expiration time in
-   * seconds.</p> </li> <li> <p> <code>UpdateApiKey</code> returns the expiration
-   * time in seconds and accepts a user-provided expiration time in seconds. Key
-   * expiration can only be updated while the key has not expired.</p> </li> <li> <p>
+   * time and deletion time in seconds.</p> </li> <li> <p> <code>CreateApiKey</code>
+   * returns the expiration time and deletion time in seconds and accepts a
+   * user-provided expiration time in seconds.</p> </li> <li> <p>
+   * <code>UpdateApiKey</code> returns the expiration time and and deletion time in
+   * seconds and accepts a user-provided expiration time in seconds. Expired API keys
+   * are kept for 60 days after the expiration time. Key expiration time can be
+   * updated while the key is not deleted. </p> </li> <li> <p>
    * <code>DeleteApiKey</code> deletes the item from the table.</p> </li> <li>
-   * <p>Expiration is stored in Amazon DynamoDB as seconds.</p> </li> </ul><p><h3>See
+   * <p>Expiration is stored in Amazon DynamoDB as seconds. After the expiration
+   * time, using the key to authenticate will fail. But the key can be reinstated
+   * before deletion.</p> </li> <li> <p>Deletion is stored in Amazon DynamoDB as
+   * seconds. The key will be deleted after deletion time. </p> </li> </ul><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ApiKey">AWS API
    * Reference</a></p>
@@ -176,6 +171,31 @@ namespace Model
      */
     inline ApiKey& WithExpires(long long value) { SetExpires(value); return *this;}
 
+
+    /**
+     * <p>The time after which the API key is deleted. The date is represented as
+     * seconds since the epoch, rounded down to the nearest hour.</p>
+     */
+    inline long long GetDeletes() const{ return m_deletes; }
+
+    /**
+     * <p>The time after which the API key is deleted. The date is represented as
+     * seconds since the epoch, rounded down to the nearest hour.</p>
+     */
+    inline bool DeletesHasBeenSet() const { return m_deletesHasBeenSet; }
+
+    /**
+     * <p>The time after which the API key is deleted. The date is represented as
+     * seconds since the epoch, rounded down to the nearest hour.</p>
+     */
+    inline void SetDeletes(long long value) { m_deletesHasBeenSet = true; m_deletes = value; }
+
+    /**
+     * <p>The time after which the API key is deleted. The date is represented as
+     * seconds since the epoch, rounded down to the nearest hour.</p>
+     */
+    inline ApiKey& WithDeletes(long long value) { SetDeletes(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -186,6 +206,9 @@ namespace Model
 
     long long m_expires;
     bool m_expiresHasBeenSet;
+
+    long long m_deletes;
+    bool m_deletesHasBeenSet;
   };
 
 } // namespace Model

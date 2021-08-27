@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/frauddetector/model/LabelSchema.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,13 +19,11 @@ namespace Model
 {
 
 LabelSchema::LabelSchema() : 
-    m_labelKeyHasBeenSet(false),
     m_labelMapperHasBeenSet(false)
 {
 }
 
 LabelSchema::LabelSchema(JsonView jsonValue) : 
-    m_labelKeyHasBeenSet(false),
     m_labelMapperHasBeenSet(false)
 {
   *this = jsonValue;
@@ -43,13 +31,6 @@ LabelSchema::LabelSchema(JsonView jsonValue) :
 
 LabelSchema& LabelSchema::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("labelKey"))
-  {
-    m_labelKey = jsonValue.GetString("labelKey");
-
-    m_labelKeyHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("labelMapper"))
   {
     Aws::Map<Aws::String, JsonView> labelMapperJsonMap = jsonValue.GetObject("labelMapper").GetAllObjects();
@@ -73,12 +54,6 @@ LabelSchema& LabelSchema::operator =(JsonView jsonValue)
 JsonValue LabelSchema::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_labelKeyHasBeenSet)
-  {
-   payload.WithString("labelKey", m_labelKey);
-
-  }
 
   if(m_labelMapperHasBeenSet)
   {

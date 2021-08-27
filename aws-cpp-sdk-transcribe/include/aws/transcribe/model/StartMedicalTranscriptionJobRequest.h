@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
@@ -51,58 +41,74 @@ namespace Model
 
 
     /**
-     * <p>The name of the medical transcription job. You can't use the strings "." or
-     * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * <p>The name of the medical transcription job. You can't use the strings
+     * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
+     * must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline const Aws::String& GetMedicalTranscriptionJobName() const{ return m_medicalTranscriptionJobName; }
 
     /**
-     * <p>The name of the medical transcription job. You can't use the strings "." or
-     * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * <p>The name of the medical transcription job. You can't use the strings
+     * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
+     * must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline bool MedicalTranscriptionJobNameHasBeenSet() const { return m_medicalTranscriptionJobNameHasBeenSet; }
 
     /**
-     * <p>The name of the medical transcription job. You can't use the strings "." or
-     * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * <p>The name of the medical transcription job. You can't use the strings
+     * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
+     * must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline void SetMedicalTranscriptionJobName(const Aws::String& value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName = value; }
 
     /**
-     * <p>The name of the medical transcription job. You can't use the strings "." or
-     * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * <p>The name of the medical transcription job. You can't use the strings
+     * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
+     * must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline void SetMedicalTranscriptionJobName(Aws::String&& value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName = std::move(value); }
 
     /**
-     * <p>The name of the medical transcription job. You can't use the strings "." or
-     * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * <p>The name of the medical transcription job. You can't use the strings
+     * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
+     * must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline void SetMedicalTranscriptionJobName(const char* value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName.assign(value); }
 
     /**
-     * <p>The name of the medical transcription job. You can't use the strings "." or
-     * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * <p>The name of the medical transcription job. You can't use the strings
+     * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
+     * must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(const Aws::String& value) { SetMedicalTranscriptionJobName(value); return *this;}
 
     /**
-     * <p>The name of the medical transcription job. You can't use the strings "." or
-     * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * <p>The name of the medical transcription job. You can't use the strings
+     * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
+     * must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(Aws::String&& value) { SetMedicalTranscriptionJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the medical transcription job. You can't use the strings "." or
-     * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * <p>The name of the medical transcription job. You can't use the strings
+     * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
+     * must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job,
+     * you get a <code>ConflictException</code> error.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(const char* value) { SetMedicalTranscriptionJobName(value); return *this;}
 
@@ -379,6 +385,151 @@ namespace Model
 
 
     /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * medical transcription job.</p> <p>If you don't specify an output key, Amazon
+     * Transcribe Medical stores the output of your transcription job in the Amazon S3
+     * bucket you specified. By default, the object key is
+     * "your-transcription-job-name.json".</p> <p>You can use output keys to specify
+     * the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead
+     * to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline const Aws::String& GetOutputKey() const{ return m_outputKey; }
+
+    /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * medical transcription job.</p> <p>If you don't specify an output key, Amazon
+     * Transcribe Medical stores the output of your transcription job in the Amazon S3
+     * bucket you specified. By default, the object key is
+     * "your-transcription-job-name.json".</p> <p>You can use output keys to specify
+     * the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead
+     * to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline bool OutputKeyHasBeenSet() const { return m_outputKeyHasBeenSet; }
+
+    /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * medical transcription job.</p> <p>If you don't specify an output key, Amazon
+     * Transcribe Medical stores the output of your transcription job in the Amazon S3
+     * bucket you specified. By default, the object key is
+     * "your-transcription-job-name.json".</p> <p>You can use output keys to specify
+     * the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead
+     * to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline void SetOutputKey(const Aws::String& value) { m_outputKeyHasBeenSet = true; m_outputKey = value; }
+
+    /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * medical transcription job.</p> <p>If you don't specify an output key, Amazon
+     * Transcribe Medical stores the output of your transcription job in the Amazon S3
+     * bucket you specified. By default, the object key is
+     * "your-transcription-job-name.json".</p> <p>You can use output keys to specify
+     * the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead
+     * to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline void SetOutputKey(Aws::String&& value) { m_outputKeyHasBeenSet = true; m_outputKey = std::move(value); }
+
+    /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * medical transcription job.</p> <p>If you don't specify an output key, Amazon
+     * Transcribe Medical stores the output of your transcription job in the Amazon S3
+     * bucket you specified. By default, the object key is
+     * "your-transcription-job-name.json".</p> <p>You can use output keys to specify
+     * the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead
+     * to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline void SetOutputKey(const char* value) { m_outputKeyHasBeenSet = true; m_outputKey.assign(value); }
+
+    /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * medical transcription job.</p> <p>If you don't specify an output key, Amazon
+     * Transcribe Medical stores the output of your transcription job in the Amazon S3
+     * bucket you specified. By default, the object key is
+     * "your-transcription-job-name.json".</p> <p>You can use output keys to specify
+     * the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead
+     * to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& WithOutputKey(const Aws::String& value) { SetOutputKey(value); return *this;}
+
+    /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * medical transcription job.</p> <p>If you don't specify an output key, Amazon
+     * Transcribe Medical stores the output of your transcription job in the Amazon S3
+     * bucket you specified. By default, the object key is
+     * "your-transcription-job-name.json".</p> <p>You can use output keys to specify
+     * the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead
+     * to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& WithOutputKey(Aws::String&& value) { SetOutputKey(std::move(value)); return *this;}
+
+    /**
+     * <p>You can specify a location in an Amazon S3 bucket to store the output of your
+     * medical transcription job.</p> <p>If you don't specify an output key, Amazon
+     * Transcribe Medical stores the output of your transcription job in the Amazon S3
+     * bucket you specified. By default, the object key is
+     * "your-transcription-job-name.json".</p> <p>You can use output keys to specify
+     * the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead
+     * to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify
+     * "my-other-job-name.json" as the output key, the object key is changed to
+     * "my-other-job-name.json". You can use an output key to change both the prefix
+     * and the file name, for example "folder/my-other-job-name.json".</p> <p>If you
+     * specify an output key, you must also specify an S3 bucket in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& WithOutputKey(const char* value) { SetOutputKey(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key
      * used to encrypt the output of the transcription job. The user calling the
      * <a>StartMedicalTranscriptionJob</a> operation must have permission to use the
@@ -602,44 +753,50 @@ namespace Model
 
 
     /**
-     * <p>The speech of clinician in the input audio. <code>CONVERSATION</code> refers
-     * to conversations clinicians have with patients. <code>DICTATION</code> refers to
-     * medical professionals dictating their notes about a patient encounter.</p>
+     * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
+     * conversations between two or more speakers, e.g., a conversations between
+     * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
+     * speech, e.g., for clinical notes.</p>
      */
     inline const Type& GetType() const{ return m_type; }
 
     /**
-     * <p>The speech of clinician in the input audio. <code>CONVERSATION</code> refers
-     * to conversations clinicians have with patients. <code>DICTATION</code> refers to
-     * medical professionals dictating their notes about a patient encounter.</p>
+     * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
+     * conversations between two or more speakers, e.g., a conversations between
+     * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
+     * speech, e.g., for clinical notes.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The speech of clinician in the input audio. <code>CONVERSATION</code> refers
-     * to conversations clinicians have with patients. <code>DICTATION</code> refers to
-     * medical professionals dictating their notes about a patient encounter.</p>
+     * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
+     * conversations between two or more speakers, e.g., a conversations between
+     * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
+     * speech, e.g., for clinical notes.</p>
      */
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The speech of clinician in the input audio. <code>CONVERSATION</code> refers
-     * to conversations clinicians have with patients. <code>DICTATION</code> refers to
-     * medical professionals dictating their notes about a patient encounter.</p>
+     * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
+     * conversations between two or more speakers, e.g., a conversations between
+     * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
+     * speech, e.g., for clinical notes.</p>
      */
     inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The speech of clinician in the input audio. <code>CONVERSATION</code> refers
-     * to conversations clinicians have with patients. <code>DICTATION</code> refers to
-     * medical professionals dictating their notes about a patient encounter.</p>
+     * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
+     * conversations between two or more speakers, e.g., a conversations between
+     * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
+     * speech, e.g., for clinical notes.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithType(const Type& value) { SetType(value); return *this;}
 
     /**
-     * <p>The speech of clinician in the input audio. <code>CONVERSATION</code> refers
-     * to conversations clinicians have with patients. <code>DICTATION</code> refers to
-     * medical professionals dictating their notes about a patient encounter.</p>
+     * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
+     * conversations between two or more speakers, e.g., a conversations between
+     * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
+     * speech, e.g., for clinical notes.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithType(Type&& value) { SetType(std::move(value)); return *this;}
 
@@ -662,6 +819,9 @@ namespace Model
 
     Aws::String m_outputBucketName;
     bool m_outputBucketNameHasBeenSet;
+
+    Aws::String m_outputKey;
+    bool m_outputKeyHasBeenSet;
 
     Aws::String m_outputEncryptionKMSKeyId;
     bool m_outputEncryptionKMSKeyIdHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/servicecatalog/model/ProvisionedProductAttribute.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -39,10 +29,14 @@ ProvisionedProductAttribute::ProvisionedProductAttribute() :
     m_createdTimeHasBeenSet(false),
     m_idempotencyTokenHasBeenSet(false),
     m_lastRecordIdHasBeenSet(false),
+    m_lastProvisioningRecordIdHasBeenSet(false),
+    m_lastSuccessfulProvisioningRecordIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_physicalIdHasBeenSet(false),
     m_productIdHasBeenSet(false),
+    m_productNameHasBeenSet(false),
     m_provisioningArtifactIdHasBeenSet(false),
+    m_provisioningArtifactNameHasBeenSet(false),
     m_userArnHasBeenSet(false),
     m_userArnSessionHasBeenSet(false)
 {
@@ -59,10 +53,14 @@ ProvisionedProductAttribute::ProvisionedProductAttribute(JsonView jsonValue) :
     m_createdTimeHasBeenSet(false),
     m_idempotencyTokenHasBeenSet(false),
     m_lastRecordIdHasBeenSet(false),
+    m_lastProvisioningRecordIdHasBeenSet(false),
+    m_lastSuccessfulProvisioningRecordIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_physicalIdHasBeenSet(false),
     m_productIdHasBeenSet(false),
+    m_productNameHasBeenSet(false),
     m_provisioningArtifactIdHasBeenSet(false),
+    m_provisioningArtifactNameHasBeenSet(false),
     m_userArnHasBeenSet(false),
     m_userArnSessionHasBeenSet(false)
 {
@@ -134,6 +132,20 @@ ProvisionedProductAttribute& ProvisionedProductAttribute::operator =(JsonView js
     m_lastRecordIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastProvisioningRecordId"))
+  {
+    m_lastProvisioningRecordId = jsonValue.GetString("LastProvisioningRecordId");
+
+    m_lastProvisioningRecordIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastSuccessfulProvisioningRecordId"))
+  {
+    m_lastSuccessfulProvisioningRecordId = jsonValue.GetString("LastSuccessfulProvisioningRecordId");
+
+    m_lastSuccessfulProvisioningRecordIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -158,11 +170,25 @@ ProvisionedProductAttribute& ProvisionedProductAttribute::operator =(JsonView js
     m_productIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProductName"))
+  {
+    m_productName = jsonValue.GetString("ProductName");
+
+    m_productNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ProvisioningArtifactId"))
   {
     m_provisioningArtifactId = jsonValue.GetString("ProvisioningArtifactId");
 
     m_provisioningArtifactIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProvisioningArtifactName"))
+  {
+    m_provisioningArtifactName = jsonValue.GetString("ProvisioningArtifactName");
+
+    m_provisioningArtifactNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UserArn"))
@@ -238,6 +264,18 @@ JsonValue ProvisionedProductAttribute::Jsonize() const
 
   }
 
+  if(m_lastProvisioningRecordIdHasBeenSet)
+  {
+   payload.WithString("LastProvisioningRecordId", m_lastProvisioningRecordId);
+
+  }
+
+  if(m_lastSuccessfulProvisioningRecordIdHasBeenSet)
+  {
+   payload.WithString("LastSuccessfulProvisioningRecordId", m_lastSuccessfulProvisioningRecordId);
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    Array<JsonValue> tagsJsonList(m_tags.size());
@@ -261,9 +299,21 @@ JsonValue ProvisionedProductAttribute::Jsonize() const
 
   }
 
+  if(m_productNameHasBeenSet)
+  {
+   payload.WithString("ProductName", m_productName);
+
+  }
+
   if(m_provisioningArtifactIdHasBeenSet)
   {
    payload.WithString("ProvisioningArtifactId", m_provisioningArtifactId);
+
+  }
+
+  if(m_provisioningArtifactNameHasBeenSet)
+  {
+   payload.WithString("ProvisioningArtifactName", m_provisioningArtifactName);
 
   }
 

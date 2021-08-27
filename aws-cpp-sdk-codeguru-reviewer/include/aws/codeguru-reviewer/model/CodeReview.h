@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
@@ -40,7 +30,8 @@ namespace Model
 {
 
   /**
-   * <p> Information about a code review. </p><p><h3>See Also:</h3>   <a
+   * <p> Information about a code review. A code review belongs to the associated
+   * repository that contains the reviewed code. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CodeReview">AWS
    * API Reference</a></p>
    */
@@ -95,42 +86,58 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the code review to describe. </p>
+     * <p>The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     * <code>CodeReview</code> </a> object. </p>
      */
     inline const Aws::String& GetCodeReviewArn() const{ return m_codeReviewArn; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the code review to describe. </p>
+     * <p>The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     * <code>CodeReview</code> </a> object. </p>
      */
     inline bool CodeReviewArnHasBeenSet() const { return m_codeReviewArnHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the code review to describe. </p>
+     * <p>The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     * <code>CodeReview</code> </a> object. </p>
      */
     inline void SetCodeReviewArn(const Aws::String& value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the code review to describe. </p>
+     * <p>The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     * <code>CodeReview</code> </a> object. </p>
      */
     inline void SetCodeReviewArn(Aws::String&& value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the code review to describe. </p>
+     * <p>The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     * <code>CodeReview</code> </a> object. </p>
      */
     inline void SetCodeReviewArn(const char* value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the code review to describe. </p>
+     * <p>The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     * <code>CodeReview</code> </a> object. </p>
      */
     inline CodeReview& WithCodeReviewArn(const Aws::String& value) { SetCodeReviewArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the code review to describe. </p>
+     * <p>The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     * <code>CodeReview</code> </a> object. </p>
      */
     inline CodeReview& WithCodeReviewArn(Aws::String&& value) { SetCodeReviewArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the code review to describe. </p>
+     * <p>The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     * <code>CodeReview</code> </a> object. </p>
      */
     inline CodeReview& WithCodeReviewArn(const char* value) { SetCodeReviewArn(value); return *this;}
 
@@ -177,104 +184,158 @@ namespace Model
 
 
     /**
-     * <p> The owner of the repository. </p>
+     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
-     * <p> The owner of the repository. </p>
+     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p> The owner of the repository. </p>
+     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p> The owner of the repository. </p>
+     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p> The owner of the repository. </p>
+     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
-     * <p> The owner of the repository. </p>
+     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline CodeReview& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
-     * <p> The owner of the repository. </p>
+     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline CodeReview& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
-     * <p> The owner of the repository. </p>
+     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline CodeReview& WithOwner(const char* value) { SetOwner(value); return *this;}
 
 
     /**
-     * <p> The provider type of the repository association. </p>
+     * <p> The type of repository that contains the reviewed code (for example, GitHub
+     * or Bitbucket). </p>
      */
     inline const ProviderType& GetProviderType() const{ return m_providerType; }
 
     /**
-     * <p> The provider type of the repository association. </p>
+     * <p> The type of repository that contains the reviewed code (for example, GitHub
+     * or Bitbucket). </p>
      */
     inline bool ProviderTypeHasBeenSet() const { return m_providerTypeHasBeenSet; }
 
     /**
-     * <p> The provider type of the repository association. </p>
+     * <p> The type of repository that contains the reviewed code (for example, GitHub
+     * or Bitbucket). </p>
      */
     inline void SetProviderType(const ProviderType& value) { m_providerTypeHasBeenSet = true; m_providerType = value; }
 
     /**
-     * <p> The provider type of the repository association. </p>
+     * <p> The type of repository that contains the reviewed code (for example, GitHub
+     * or Bitbucket). </p>
      */
     inline void SetProviderType(ProviderType&& value) { m_providerTypeHasBeenSet = true; m_providerType = std::move(value); }
 
     /**
-     * <p> The provider type of the repository association. </p>
+     * <p> The type of repository that contains the reviewed code (for example, GitHub
+     * or Bitbucket). </p>
      */
     inline CodeReview& WithProviderType(const ProviderType& value) { SetProviderType(value); return *this;}
 
     /**
-     * <p> The provider type of the repository association. </p>
+     * <p> The type of repository that contains the reviewed code (for example, GitHub
+     * or Bitbucket). </p>
      */
     inline CodeReview& WithProviderType(ProviderType&& value) { SetProviderType(std::move(value)); return *this;}
 
 
     /**
-     * <p> The state of the code review. </p>
+     * <p>The valid code review states are:</p> <ul> <li> <p> <code>Completed</code>:
+     * The code review is complete. </p> </li> <li> <p> <code>Pending</code>: The code
+     * review started and has not completed or failed. </p> </li> <li> <p>
+     * <code>Failed</code>: The code review failed. </p> </li> <li> <p>
+     * <code>Deleting</code>: The code review is being deleted. </p> </li> </ul>
      */
     inline const JobState& GetState() const{ return m_state; }
 
     /**
-     * <p> The state of the code review. </p>
+     * <p>The valid code review states are:</p> <ul> <li> <p> <code>Completed</code>:
+     * The code review is complete. </p> </li> <li> <p> <code>Pending</code>: The code
+     * review started and has not completed or failed. </p> </li> <li> <p>
+     * <code>Failed</code>: The code review failed. </p> </li> <li> <p>
+     * <code>Deleting</code>: The code review is being deleted. </p> </li> </ul>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p> The state of the code review. </p>
+     * <p>The valid code review states are:</p> <ul> <li> <p> <code>Completed</code>:
+     * The code review is complete. </p> </li> <li> <p> <code>Pending</code>: The code
+     * review started and has not completed or failed. </p> </li> <li> <p>
+     * <code>Failed</code>: The code review failed. </p> </li> <li> <p>
+     * <code>Deleting</code>: The code review is being deleted. </p> </li> </ul>
      */
     inline void SetState(const JobState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p> The state of the code review. </p>
+     * <p>The valid code review states are:</p> <ul> <li> <p> <code>Completed</code>:
+     * The code review is complete. </p> </li> <li> <p> <code>Pending</code>: The code
+     * review started and has not completed or failed. </p> </li> <li> <p>
+     * <code>Failed</code>: The code review failed. </p> </li> <li> <p>
+     * <code>Deleting</code>: The code review is being deleted. </p> </li> </ul>
      */
     inline void SetState(JobState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p> The state of the code review. </p>
+     * <p>The valid code review states are:</p> <ul> <li> <p> <code>Completed</code>:
+     * The code review is complete. </p> </li> <li> <p> <code>Pending</code>: The code
+     * review started and has not completed or failed. </p> </li> <li> <p>
+     * <code>Failed</code>: The code review failed. </p> </li> <li> <p>
+     * <code>Deleting</code>: The code review is being deleted. </p> </li> </ul>
      */
     inline CodeReview& WithState(const JobState& value) { SetState(value); return *this;}
 
     /**
-     * <p> The state of the code review. </p>
+     * <p>The valid code review states are:</p> <ul> <li> <p> <code>Completed</code>:
+     * The code review is complete. </p> </li> <li> <p> <code>Pending</code>: The code
+     * review started and has not completed or failed. </p> </li> <li> <p>
+     * <code>Failed</code>: The code review failed. </p> </li> <li> <p>
+     * <code>Deleting</code>: The code review is being deleted. </p> </li> </ul>
      */
     inline CodeReview& WithState(JobState&& value) { SetState(std::move(value)); return *this;}
 
@@ -498,6 +559,87 @@ namespace Model
 
 
     /**
+     * <p> The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code.
+     * You can retrieve associated repository ARNs by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
+     */
+    inline const Aws::String& GetAssociationArn() const{ return m_associationArn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code.
+     * You can retrieve associated repository ARNs by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
+     */
+    inline bool AssociationArnHasBeenSet() const { return m_associationArnHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code.
+     * You can retrieve associated repository ARNs by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
+     */
+    inline void SetAssociationArn(const Aws::String& value) { m_associationArnHasBeenSet = true; m_associationArn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code.
+     * You can retrieve associated repository ARNs by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
+     */
+    inline void SetAssociationArn(Aws::String&& value) { m_associationArnHasBeenSet = true; m_associationArn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code.
+     * You can retrieve associated repository ARNs by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
+     */
+    inline void SetAssociationArn(const char* value) { m_associationArnHasBeenSet = true; m_associationArn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code.
+     * You can retrieve associated repository ARNs by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
+     */
+    inline CodeReview& WithAssociationArn(const Aws::String& value) { SetAssociationArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code.
+     * You can retrieve associated repository ARNs by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
+     */
+    inline CodeReview& WithAssociationArn(Aws::String&& value) { SetAssociationArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code.
+     * You can retrieve associated repository ARNs by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>. </p>
+     */
+    inline CodeReview& WithAssociationArn(const char* value) { SetAssociationArn(value); return *this;}
+
+
+    /**
      * <p> The statistics from the code review. </p>
      */
     inline const Metrics& GetMetrics() const{ return m_metrics; }
@@ -564,6 +706,9 @@ namespace Model
 
     SourceCodeType m_sourceCodeType;
     bool m_sourceCodeTypeHasBeenSet;
+
+    Aws::String m_associationArn;
+    bool m_associationArnHasBeenSet;
 
     Metrics m_metrics;
     bool m_metricsHasBeenSet;

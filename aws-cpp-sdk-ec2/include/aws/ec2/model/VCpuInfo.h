@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -114,87 +104,80 @@ namespace Model
 
 
     /**
-     * <p>List of the valid number of cores that can be configured for the instance
-     * type.</p>
+     * <p>The valid number of cores that can be configured for the instance type.</p>
      */
     inline const Aws::Vector<int>& GetValidCores() const{ return m_validCores; }
 
     /**
-     * <p>List of the valid number of cores that can be configured for the instance
-     * type.</p>
+     * <p>The valid number of cores that can be configured for the instance type.</p>
      */
     inline bool ValidCoresHasBeenSet() const { return m_validCoresHasBeenSet; }
 
     /**
-     * <p>List of the valid number of cores that can be configured for the instance
-     * type.</p>
+     * <p>The valid number of cores that can be configured for the instance type.</p>
      */
     inline void SetValidCores(const Aws::Vector<int>& value) { m_validCoresHasBeenSet = true; m_validCores = value; }
 
     /**
-     * <p>List of the valid number of cores that can be configured for the instance
-     * type.</p>
+     * <p>The valid number of cores that can be configured for the instance type.</p>
      */
     inline void SetValidCores(Aws::Vector<int>&& value) { m_validCoresHasBeenSet = true; m_validCores = std::move(value); }
 
     /**
-     * <p>List of the valid number of cores that can be configured for the instance
-     * type.</p>
+     * <p>The valid number of cores that can be configured for the instance type.</p>
      */
     inline VCpuInfo& WithValidCores(const Aws::Vector<int>& value) { SetValidCores(value); return *this;}
 
     /**
-     * <p>List of the valid number of cores that can be configured for the instance
-     * type.</p>
+     * <p>The valid number of cores that can be configured for the instance type.</p>
      */
     inline VCpuInfo& WithValidCores(Aws::Vector<int>&& value) { SetValidCores(std::move(value)); return *this;}
 
     /**
-     * <p>List of the valid number of cores that can be configured for the instance
-     * type.</p>
+     * <p>The valid number of cores that can be configured for the instance type.</p>
      */
     inline VCpuInfo& AddValidCores(int value) { m_validCoresHasBeenSet = true; m_validCores.push_back(value); return *this; }
 
 
     /**
-     * <p>List of the valid number of threads per core that can be configured for the
-     * instance type. </p>
+     * <p>The valid number of threads per core that can be configured for the instance
+     * type. </p>
      */
     inline const Aws::Vector<int>& GetValidThreadsPerCore() const{ return m_validThreadsPerCore; }
 
     /**
-     * <p>List of the valid number of threads per core that can be configured for the
-     * instance type. </p>
+     * <p>The valid number of threads per core that can be configured for the instance
+     * type. </p>
      */
     inline bool ValidThreadsPerCoreHasBeenSet() const { return m_validThreadsPerCoreHasBeenSet; }
 
     /**
-     * <p>List of the valid number of threads per core that can be configured for the
-     * instance type. </p>
+     * <p>The valid number of threads per core that can be configured for the instance
+     * type. </p>
      */
     inline void SetValidThreadsPerCore(const Aws::Vector<int>& value) { m_validThreadsPerCoreHasBeenSet = true; m_validThreadsPerCore = value; }
 
     /**
-     * <p>List of the valid number of threads per core that can be configured for the
-     * instance type. </p>
+     * <p>The valid number of threads per core that can be configured for the instance
+     * type. </p>
      */
     inline void SetValidThreadsPerCore(Aws::Vector<int>&& value) { m_validThreadsPerCoreHasBeenSet = true; m_validThreadsPerCore = std::move(value); }
 
     /**
-     * <p>List of the valid number of threads per core that can be configured for the
-     * instance type. </p>
+     * <p>The valid number of threads per core that can be configured for the instance
+     * type. </p>
      */
     inline VCpuInfo& WithValidThreadsPerCore(const Aws::Vector<int>& value) { SetValidThreadsPerCore(value); return *this;}
 
     /**
-     * <p>List of the valid number of threads per core that can be configured for the
-     * instance type. </p>
+     * <p>The valid number of threads per core that can be configured for the instance
+     * type. </p>
      */
     inline VCpuInfo& WithValidThreadsPerCore(Aws::Vector<int>&& value) { SetValidThreadsPerCore(std::move(value)); return *this;}
 
     /**
-     * <p>List of the valid number of threads per core that can be configured for the
-     * instance type. </p>
+     * <p>The valid number of threads per core that can be configured for the instance
+     * type. </p>
      */
     inline VCpuInfo& AddValidThreadsPerCore(int value) { m_validThreadsPerCoreHasBeenSet = true; m_validThreadsPerCore.push_back(value); return *this; }
 

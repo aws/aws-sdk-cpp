@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
@@ -48,25 +38,25 @@ namespace Model
 
     /**
      * Enables audit logging. Every user management action made using JMX or the
-     * ActiveMQ Web Console is logged.
+     * ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.
      */
     inline bool GetAudit() const{ return m_audit; }
 
     /**
      * Enables audit logging. Every user management action made using JMX or the
-     * ActiveMQ Web Console is logged.
+     * ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.
      */
     inline bool AuditHasBeenSet() const { return m_auditHasBeenSet; }
 
     /**
      * Enables audit logging. Every user management action made using JMX or the
-     * ActiveMQ Web Console is logged.
+     * ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.
      */
     inline void SetAudit(bool value) { m_auditHasBeenSet = true; m_audit = value; }
 
     /**
      * Enables audit logging. Every user management action made using JMX or the
-     * ActiveMQ Web Console is logged.
+     * ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.
      */
     inline Logs& WithAudit(bool value) { SetAudit(value); return *this;}
 

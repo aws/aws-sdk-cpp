@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
@@ -52,41 +42,57 @@ namespace Model
 
     /**
      * <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
+     * <p>You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not
+     * both.</p>
      */
     inline const Aws::String& GetVirtualName() const{ return m_virtualName; }
 
     /**
      * <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
+     * <p>You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not
+     * both.</p>
      */
     inline bool VirtualNameHasBeenSet() const { return m_virtualNameHasBeenSet; }
 
     /**
      * <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
+     * <p>You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not
+     * both.</p>
      */
     inline void SetVirtualName(const Aws::String& value) { m_virtualNameHasBeenSet = true; m_virtualName = value; }
 
     /**
      * <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
+     * <p>You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not
+     * both.</p>
      */
     inline void SetVirtualName(Aws::String&& value) { m_virtualNameHasBeenSet = true; m_virtualName = std::move(value); }
 
     /**
      * <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
+     * <p>You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not
+     * both.</p>
      */
     inline void SetVirtualName(const char* value) { m_virtualNameHasBeenSet = true; m_virtualName.assign(value); }
 
     /**
      * <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
+     * <p>You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not
+     * both.</p>
      */
     inline BlockDeviceMapping& WithVirtualName(const Aws::String& value) { SetVirtualName(value); return *this;}
 
     /**
      * <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
+     * <p>You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not
+     * both.</p>
      */
     inline BlockDeviceMapping& WithVirtualName(Aws::String&& value) { SetVirtualName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
+     * <p>You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not
+     * both.</p>
      */
     inline BlockDeviceMapping& WithVirtualName(const char* value) { SetVirtualName(value); return *this;}
 
@@ -165,61 +171,85 @@ namespace Model
 
 
     /**
-     * <p>The information about the Amazon EBS volume.</p>
+     * <p>Parameters used to automatically set up EBS volumes when an instance is
+     * launched.</p> <p>You can specify either <code>VirtualName</code> or
+     * <code>Ebs</code>, but not both.</p>
      */
     inline const Ebs& GetEbs() const{ return m_ebs; }
 
     /**
-     * <p>The information about the Amazon EBS volume.</p>
+     * <p>Parameters used to automatically set up EBS volumes when an instance is
+     * launched.</p> <p>You can specify either <code>VirtualName</code> or
+     * <code>Ebs</code>, but not both.</p>
      */
     inline bool EbsHasBeenSet() const { return m_ebsHasBeenSet; }
 
     /**
-     * <p>The information about the Amazon EBS volume.</p>
+     * <p>Parameters used to automatically set up EBS volumes when an instance is
+     * launched.</p> <p>You can specify either <code>VirtualName</code> or
+     * <code>Ebs</code>, but not both.</p>
      */
     inline void SetEbs(const Ebs& value) { m_ebsHasBeenSet = true; m_ebs = value; }
 
     /**
-     * <p>The information about the Amazon EBS volume.</p>
+     * <p>Parameters used to automatically set up EBS volumes when an instance is
+     * launched.</p> <p>You can specify either <code>VirtualName</code> or
+     * <code>Ebs</code>, but not both.</p>
      */
     inline void SetEbs(Ebs&& value) { m_ebsHasBeenSet = true; m_ebs = std::move(value); }
 
     /**
-     * <p>The information about the Amazon EBS volume.</p>
+     * <p>Parameters used to automatically set up EBS volumes when an instance is
+     * launched.</p> <p>You can specify either <code>VirtualName</code> or
+     * <code>Ebs</code>, but not both.</p>
      */
     inline BlockDeviceMapping& WithEbs(const Ebs& value) { SetEbs(value); return *this;}
 
     /**
-     * <p>The information about the Amazon EBS volume.</p>
+     * <p>Parameters used to automatically set up EBS volumes when an instance is
+     * launched.</p> <p>You can specify either <code>VirtualName</code> or
+     * <code>Ebs</code>, but not both.</p>
      */
     inline BlockDeviceMapping& WithEbs(Ebs&& value) { SetEbs(std::move(value)); return *this;}
 
 
     /**
-     * <p>Suppresses a device mapping.</p> <p>If this parameter is true for the root
-     * device, the instance might fail the EC2 health check. In that case, Amazon EC2
-     * Auto Scaling launches a replacement instance.</p>
+     * <p>Setting this value to <code>true</code> suppresses the specified device
+     * included in the block device mapping of the AMI.</p> <p>If <code>NoDevice</code>
+     * is <code>true</code> for the root device, instances might fail the EC2 health
+     * check. In that case, Amazon EC2 Auto Scaling launches replacement instances.</p>
+     * <p>If you specify <code>NoDevice</code>, you cannot specify
+     * <code>Ebs</code>.</p>
      */
     inline bool GetNoDevice() const{ return m_noDevice; }
 
     /**
-     * <p>Suppresses a device mapping.</p> <p>If this parameter is true for the root
-     * device, the instance might fail the EC2 health check. In that case, Amazon EC2
-     * Auto Scaling launches a replacement instance.</p>
+     * <p>Setting this value to <code>true</code> suppresses the specified device
+     * included in the block device mapping of the AMI.</p> <p>If <code>NoDevice</code>
+     * is <code>true</code> for the root device, instances might fail the EC2 health
+     * check. In that case, Amazon EC2 Auto Scaling launches replacement instances.</p>
+     * <p>If you specify <code>NoDevice</code>, you cannot specify
+     * <code>Ebs</code>.</p>
      */
     inline bool NoDeviceHasBeenSet() const { return m_noDeviceHasBeenSet; }
 
     /**
-     * <p>Suppresses a device mapping.</p> <p>If this parameter is true for the root
-     * device, the instance might fail the EC2 health check. In that case, Amazon EC2
-     * Auto Scaling launches a replacement instance.</p>
+     * <p>Setting this value to <code>true</code> suppresses the specified device
+     * included in the block device mapping of the AMI.</p> <p>If <code>NoDevice</code>
+     * is <code>true</code> for the root device, instances might fail the EC2 health
+     * check. In that case, Amazon EC2 Auto Scaling launches replacement instances.</p>
+     * <p>If you specify <code>NoDevice</code>, you cannot specify
+     * <code>Ebs</code>.</p>
      */
     inline void SetNoDevice(bool value) { m_noDeviceHasBeenSet = true; m_noDevice = value; }
 
     /**
-     * <p>Suppresses a device mapping.</p> <p>If this parameter is true for the root
-     * device, the instance might fail the EC2 health check. In that case, Amazon EC2
-     * Auto Scaling launches a replacement instance.</p>
+     * <p>Setting this value to <code>true</code> suppresses the specified device
+     * included in the block device mapping of the AMI.</p> <p>If <code>NoDevice</code>
+     * is <code>true</code> for the root device, instances might fail the EC2 health
+     * check. In that case, Amazon EC2 Auto Scaling launches replacement instances.</p>
+     * <p>If you specify <code>NoDevice</code>, you cannot specify
+     * <code>Ebs</code>.</p>
      */
     inline BlockDeviceMapping& WithNoDevice(bool value) { SetNoDevice(value); return *this;}
 

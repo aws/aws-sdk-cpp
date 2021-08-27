@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ds/model/CertificateState.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ds/model/CertificateType.h>
 #include <utility>
 
 namespace Aws
@@ -193,6 +184,49 @@ namespace Model
      */
     inline CertificateInfo& WithExpiryDateTime(Aws::Utils::DateTime&& value) { SetExpiryDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The function that the registered certificate performs. Valid values include
+     * <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is
+     * <code>ClientLDAPS</code>.</p>
+     */
+    inline const CertificateType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The function that the registered certificate performs. Valid values include
+     * <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is
+     * <code>ClientLDAPS</code>.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The function that the registered certificate performs. Valid values include
+     * <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is
+     * <code>ClientLDAPS</code>.</p>
+     */
+    inline void SetType(const CertificateType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The function that the registered certificate performs. Valid values include
+     * <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is
+     * <code>ClientLDAPS</code>.</p>
+     */
+    inline void SetType(CertificateType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The function that the registered certificate performs. Valid values include
+     * <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is
+     * <code>ClientLDAPS</code>.</p>
+     */
+    inline CertificateInfo& WithType(const CertificateType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The function that the registered certificate performs. Valid values include
+     * <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is
+     * <code>ClientLDAPS</code>.</p>
+     */
+    inline CertificateInfo& WithType(CertificateType&& value) { SetType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_certificateId;
@@ -206,6 +240,9 @@ namespace Model
 
     Aws::Utils::DateTime m_expiryDateTime;
     bool m_expiryDateTimeHasBeenSet;
+
+    CertificateType m_type;
+    bool m_typeHasBeenSet;
   };
 
 } // namespace Model

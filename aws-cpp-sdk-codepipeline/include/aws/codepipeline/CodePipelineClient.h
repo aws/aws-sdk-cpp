@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
@@ -128,43 +118,43 @@ namespace Model
         class UntagResourceRequest;
         class UpdatePipelineRequest;
 
-        typedef Aws::Utils::Outcome<AcknowledgeJobResult, Aws::Client::AWSError<CodePipelineErrors>> AcknowledgeJobOutcome;
-        typedef Aws::Utils::Outcome<AcknowledgeThirdPartyJobResult, Aws::Client::AWSError<CodePipelineErrors>> AcknowledgeThirdPartyJobOutcome;
-        typedef Aws::Utils::Outcome<CreateCustomActionTypeResult, Aws::Client::AWSError<CodePipelineErrors>> CreateCustomActionTypeOutcome;
-        typedef Aws::Utils::Outcome<CreatePipelineResult, Aws::Client::AWSError<CodePipelineErrors>> CreatePipelineOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodePipelineErrors>> DeleteCustomActionTypeOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodePipelineErrors>> DeletePipelineOutcome;
-        typedef Aws::Utils::Outcome<DeleteWebhookResult, Aws::Client::AWSError<CodePipelineErrors>> DeleteWebhookOutcome;
-        typedef Aws::Utils::Outcome<DeregisterWebhookWithThirdPartyResult, Aws::Client::AWSError<CodePipelineErrors>> DeregisterWebhookWithThirdPartyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodePipelineErrors>> DisableStageTransitionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodePipelineErrors>> EnableStageTransitionOutcome;
-        typedef Aws::Utils::Outcome<GetJobDetailsResult, Aws::Client::AWSError<CodePipelineErrors>> GetJobDetailsOutcome;
-        typedef Aws::Utils::Outcome<GetPipelineResult, Aws::Client::AWSError<CodePipelineErrors>> GetPipelineOutcome;
-        typedef Aws::Utils::Outcome<GetPipelineExecutionResult, Aws::Client::AWSError<CodePipelineErrors>> GetPipelineExecutionOutcome;
-        typedef Aws::Utils::Outcome<GetPipelineStateResult, Aws::Client::AWSError<CodePipelineErrors>> GetPipelineStateOutcome;
-        typedef Aws::Utils::Outcome<GetThirdPartyJobDetailsResult, Aws::Client::AWSError<CodePipelineErrors>> GetThirdPartyJobDetailsOutcome;
-        typedef Aws::Utils::Outcome<ListActionExecutionsResult, Aws::Client::AWSError<CodePipelineErrors>> ListActionExecutionsOutcome;
-        typedef Aws::Utils::Outcome<ListActionTypesResult, Aws::Client::AWSError<CodePipelineErrors>> ListActionTypesOutcome;
-        typedef Aws::Utils::Outcome<ListPipelineExecutionsResult, Aws::Client::AWSError<CodePipelineErrors>> ListPipelineExecutionsOutcome;
-        typedef Aws::Utils::Outcome<ListPipelinesResult, Aws::Client::AWSError<CodePipelineErrors>> ListPipelinesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<CodePipelineErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListWebhooksResult, Aws::Client::AWSError<CodePipelineErrors>> ListWebhooksOutcome;
-        typedef Aws::Utils::Outcome<PollForJobsResult, Aws::Client::AWSError<CodePipelineErrors>> PollForJobsOutcome;
-        typedef Aws::Utils::Outcome<PollForThirdPartyJobsResult, Aws::Client::AWSError<CodePipelineErrors>> PollForThirdPartyJobsOutcome;
-        typedef Aws::Utils::Outcome<PutActionRevisionResult, Aws::Client::AWSError<CodePipelineErrors>> PutActionRevisionOutcome;
-        typedef Aws::Utils::Outcome<PutApprovalResultResult, Aws::Client::AWSError<CodePipelineErrors>> PutApprovalResultOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodePipelineErrors>> PutJobFailureResultOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodePipelineErrors>> PutJobSuccessResultOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodePipelineErrors>> PutThirdPartyJobFailureResultOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodePipelineErrors>> PutThirdPartyJobSuccessResultOutcome;
-        typedef Aws::Utils::Outcome<PutWebhookResult, Aws::Client::AWSError<CodePipelineErrors>> PutWebhookOutcome;
-        typedef Aws::Utils::Outcome<RegisterWebhookWithThirdPartyResult, Aws::Client::AWSError<CodePipelineErrors>> RegisterWebhookWithThirdPartyOutcome;
-        typedef Aws::Utils::Outcome<RetryStageExecutionResult, Aws::Client::AWSError<CodePipelineErrors>> RetryStageExecutionOutcome;
-        typedef Aws::Utils::Outcome<StartPipelineExecutionResult, Aws::Client::AWSError<CodePipelineErrors>> StartPipelineExecutionOutcome;
-        typedef Aws::Utils::Outcome<StopPipelineExecutionResult, Aws::Client::AWSError<CodePipelineErrors>> StopPipelineExecutionOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<CodePipelineErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<CodePipelineErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdatePipelineResult, Aws::Client::AWSError<CodePipelineErrors>> UpdatePipelineOutcome;
+        typedef Aws::Utils::Outcome<AcknowledgeJobResult, CodePipelineError> AcknowledgeJobOutcome;
+        typedef Aws::Utils::Outcome<AcknowledgeThirdPartyJobResult, CodePipelineError> AcknowledgeThirdPartyJobOutcome;
+        typedef Aws::Utils::Outcome<CreateCustomActionTypeResult, CodePipelineError> CreateCustomActionTypeOutcome;
+        typedef Aws::Utils::Outcome<CreatePipelineResult, CodePipelineError> CreatePipelineOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodePipelineError> DeleteCustomActionTypeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodePipelineError> DeletePipelineOutcome;
+        typedef Aws::Utils::Outcome<DeleteWebhookResult, CodePipelineError> DeleteWebhookOutcome;
+        typedef Aws::Utils::Outcome<DeregisterWebhookWithThirdPartyResult, CodePipelineError> DeregisterWebhookWithThirdPartyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodePipelineError> DisableStageTransitionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodePipelineError> EnableStageTransitionOutcome;
+        typedef Aws::Utils::Outcome<GetJobDetailsResult, CodePipelineError> GetJobDetailsOutcome;
+        typedef Aws::Utils::Outcome<GetPipelineResult, CodePipelineError> GetPipelineOutcome;
+        typedef Aws::Utils::Outcome<GetPipelineExecutionResult, CodePipelineError> GetPipelineExecutionOutcome;
+        typedef Aws::Utils::Outcome<GetPipelineStateResult, CodePipelineError> GetPipelineStateOutcome;
+        typedef Aws::Utils::Outcome<GetThirdPartyJobDetailsResult, CodePipelineError> GetThirdPartyJobDetailsOutcome;
+        typedef Aws::Utils::Outcome<ListActionExecutionsResult, CodePipelineError> ListActionExecutionsOutcome;
+        typedef Aws::Utils::Outcome<ListActionTypesResult, CodePipelineError> ListActionTypesOutcome;
+        typedef Aws::Utils::Outcome<ListPipelineExecutionsResult, CodePipelineError> ListPipelineExecutionsOutcome;
+        typedef Aws::Utils::Outcome<ListPipelinesResult, CodePipelineError> ListPipelinesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CodePipelineError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListWebhooksResult, CodePipelineError> ListWebhooksOutcome;
+        typedef Aws::Utils::Outcome<PollForJobsResult, CodePipelineError> PollForJobsOutcome;
+        typedef Aws::Utils::Outcome<PollForThirdPartyJobsResult, CodePipelineError> PollForThirdPartyJobsOutcome;
+        typedef Aws::Utils::Outcome<PutActionRevisionResult, CodePipelineError> PutActionRevisionOutcome;
+        typedef Aws::Utils::Outcome<PutApprovalResultResult, CodePipelineError> PutApprovalResultOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodePipelineError> PutJobFailureResultOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodePipelineError> PutJobSuccessResultOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodePipelineError> PutThirdPartyJobFailureResultOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodePipelineError> PutThirdPartyJobSuccessResultOutcome;
+        typedef Aws::Utils::Outcome<PutWebhookResult, CodePipelineError> PutWebhookOutcome;
+        typedef Aws::Utils::Outcome<RegisterWebhookWithThirdPartyResult, CodePipelineError> RegisterWebhookWithThirdPartyOutcome;
+        typedef Aws::Utils::Outcome<RetryStageExecutionResult, CodePipelineError> RetryStageExecutionOutcome;
+        typedef Aws::Utils::Outcome<StartPipelineExecutionResult, CodePipelineError> StartPipelineExecutionOutcome;
+        typedef Aws::Utils::Outcome<StopPipelineExecutionResult, CodePipelineError> StopPipelineExecutionOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, CodePipelineError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, CodePipelineError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdatePipelineResult, CodePipelineError> UpdatePipelineOutcome;
 
         typedef std::future<AcknowledgeJobOutcome> AcknowledgeJobOutcomeCallable;
         typedef std::future<AcknowledgeThirdPartyJobOutcome> AcknowledgeThirdPartyJobOutcomeCallable;
@@ -353,8 +343,6 @@ namespace Model
 
         virtual ~CodePipelineClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "CodePipeline"; }
-
 
         /**
          * <p>Returns information about a specified job and whether that job has been
@@ -444,10 +432,10 @@ namespace Model
         virtual void CreateCustomActionTypeAsync(const Model::CreateCustomActionTypeRequest& request, const CreateCustomActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a pipeline.</p> <note> <p>In the pipeline structure, you must include
+         * <p>Creates a pipeline.</p>  <p>In the pipeline structure, you must include
          * either <code>artifactStore</code> or <code>artifactStores</code> in your
          * pipeline, but you cannot use both. If you create a cross-region action in your
-         * pipeline, you must use <code>artifactStores</code>.</p> </note><p><h3>See
+         * pipeline, you must use <code>artifactStores</code>.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline">AWS
          * API Reference</a></p>
@@ -455,10 +443,10 @@ namespace Model
         virtual Model::CreatePipelineOutcome CreatePipeline(const Model::CreatePipelineRequest& request) const;
 
         /**
-         * <p>Creates a pipeline.</p> <note> <p>In the pipeline structure, you must include
+         * <p>Creates a pipeline.</p>  <p>In the pipeline structure, you must include
          * either <code>artifactStore</code> or <code>artifactStores</code> in your
          * pipeline, but you cannot use both. If you create a cross-region action in your
-         * pipeline, you must use <code>artifactStores</code>.</p> </note><p><h3>See
+         * pipeline, you must use <code>artifactStores</code>.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline">AWS
          * API Reference</a></p>
@@ -468,10 +456,10 @@ namespace Model
         virtual Model::CreatePipelineOutcomeCallable CreatePipelineCallable(const Model::CreatePipelineRequest& request) const;
 
         /**
-         * <p>Creates a pipeline.</p> <note> <p>In the pipeline structure, you must include
+         * <p>Creates a pipeline.</p>  <p>In the pipeline structure, you must include
          * either <code>artifactStore</code> or <code>artifactStores</code> in your
          * pipeline, but you cannot use both. If you create a cross-region action in your
-         * pipeline, you must use <code>artifactStores</code>.</p> </note><p><h3>See
+         * pipeline, you must use <code>artifactStores</code>.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline">AWS
          * API Reference</a></p>
@@ -483,11 +471,11 @@ namespace Model
         /**
          * <p>Marks a custom action as deleted. <code>PollForJobs</code> for the custom
          * action fails after the action is marked for deletion. Used for custom actions
-         * only.</p> <important> <p>To re-create a custom action after it has been deleted
+         * only.</p>  <p>To re-create a custom action after it has been deleted
          * you must use a string in the version field that has never been used before. This
          * string can be an incremented version number, for example. To restore a deleted
          * custom action, use a JSON file that is identical to the deleted action,
-         * including the original string in the version field.</p> </important><p><h3>See
+         * including the original string in the version field.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType">AWS
          * API Reference</a></p>
@@ -497,11 +485,11 @@ namespace Model
         /**
          * <p>Marks a custom action as deleted. <code>PollForJobs</code> for the custom
          * action fails after the action is marked for deletion. Used for custom actions
-         * only.</p> <important> <p>To re-create a custom action after it has been deleted
+         * only.</p>  <p>To re-create a custom action after it has been deleted
          * you must use a string in the version field that has never been used before. This
          * string can be an incremented version number, for example. To restore a deleted
          * custom action, use a JSON file that is identical to the deleted action,
-         * including the original string in the version field.</p> </important><p><h3>See
+         * including the original string in the version field.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType">AWS
          * API Reference</a></p>
@@ -513,11 +501,11 @@ namespace Model
         /**
          * <p>Marks a custom action as deleted. <code>PollForJobs</code> for the custom
          * action fails after the action is marked for deletion. Used for custom actions
-         * only.</p> <important> <p>To re-create a custom action after it has been deleted
+         * only.</p>  <p>To re-create a custom action after it has been deleted
          * you must use a string in the version field that has never been used before. This
          * string can be an incremented version number, for example. To restore a deleted
          * custom action, use a JSON file that is identical to the deleted action,
-         * including the original string in the version field.</p> </important><p><h3>See
+         * including the original string in the version field.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType">AWS
          * API Reference</a></p>
@@ -677,11 +665,11 @@ namespace Model
 
         /**
          * <p>Returns information about a job. Used for custom actions only.</p>
-         * <important> <p>When this API is called, AWS CodePipeline returns temporary
+         *  <p>When this API is called, AWS CodePipeline returns temporary
          * credentials for the S3 bucket used to store artifacts for the pipeline, if the
          * action requires access to that S3 bucket for input or output artifacts. This API
          * also returns any secret values defined for the action.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails">AWS
          * API Reference</a></p>
          */
@@ -689,11 +677,11 @@ namespace Model
 
         /**
          * <p>Returns information about a job. Used for custom actions only.</p>
-         * <important> <p>When this API is called, AWS CodePipeline returns temporary
+         *  <p>When this API is called, AWS CodePipeline returns temporary
          * credentials for the S3 bucket used to store artifacts for the pipeline, if the
          * action requires access to that S3 bucket for input or output artifacts. This API
          * also returns any secret values defined for the action.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails">AWS
          * API Reference</a></p>
          *
@@ -703,11 +691,11 @@ namespace Model
 
         /**
          * <p>Returns information about a job. Used for custom actions only.</p>
-         * <important> <p>When this API is called, AWS CodePipeline returns temporary
+         *  <p>When this API is called, AWS CodePipeline returns temporary
          * credentials for the S3 bucket used to store artifacts for the pipeline, if the
          * action requires access to that S3 bucket for input or output artifacts. This API
          * also returns any secret values defined for the action.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails">AWS
          * API Reference</a></p>
          *
@@ -782,9 +770,9 @@ namespace Model
 
         /**
          * <p>Returns information about the state of a pipeline, including the stages and
-         * actions.</p> <note> <p>Values returned in the <code>revisionId</code> and
+         * actions.</p>  <p>Values returned in the <code>revisionId</code> and
          * <code>revisionUrl</code> fields indicate the source revision information, such
-         * as the commit ID, for the current state.</p> </note><p><h3>See Also:</h3>   <a
+         * as the commit ID, for the current state.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">AWS
          * API Reference</a></p>
          */
@@ -792,9 +780,9 @@ namespace Model
 
         /**
          * <p>Returns information about the state of a pipeline, including the stages and
-         * actions.</p> <note> <p>Values returned in the <code>revisionId</code> and
+         * actions.</p>  <p>Values returned in the <code>revisionId</code> and
          * <code>revisionUrl</code> fields indicate the source revision information, such
-         * as the commit ID, for the current state.</p> </note><p><h3>See Also:</h3>   <a
+         * as the commit ID, for the current state.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">AWS
          * API Reference</a></p>
          *
@@ -804,9 +792,9 @@ namespace Model
 
         /**
          * <p>Returns information about the state of a pipeline, including the stages and
-         * actions.</p> <note> <p>Values returned in the <code>revisionId</code> and
+         * actions.</p>  <p>Values returned in the <code>revisionId</code> and
          * <code>revisionUrl</code> fields indicate the source revision information, such
-         * as the commit ID, for the current state.</p> </note><p><h3>See Also:</h3>   <a
+         * as the commit ID, for the current state.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">AWS
          * API Reference</a></p>
          *
@@ -816,11 +804,11 @@ namespace Model
 
         /**
          * <p>Requests the details of a job for a third party action. Used for partner
-         * actions only.</p> <important> <p>When this API is called, AWS CodePipeline
+         * actions only.</p>  <p>When this API is called, AWS CodePipeline
          * returns temporary credentials for the S3 bucket used to store artifacts for the
          * pipeline, if the action requires access to that S3 bucket for input or output
          * artifacts. This API also returns any secret values defined for the action.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails">AWS
          * API Reference</a></p>
          */
@@ -828,11 +816,11 @@ namespace Model
 
         /**
          * <p>Requests the details of a job for a third party action. Used for partner
-         * actions only.</p> <important> <p>When this API is called, AWS CodePipeline
+         * actions only.</p>  <p>When this API is called, AWS CodePipeline
          * returns temporary credentials for the S3 bucket used to store artifacts for the
          * pipeline, if the action requires access to that S3 bucket for input or output
          * artifacts. This API also returns any secret values defined for the action.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails">AWS
          * API Reference</a></p>
          *
@@ -842,11 +830,11 @@ namespace Model
 
         /**
          * <p>Requests the details of a job for a third party action. Used for partner
-         * actions only.</p> <important> <p>When this API is called, AWS CodePipeline
+         * actions only.</p>  <p>When this API is called, AWS CodePipeline
          * returns temporary credentials for the S3 bucket used to store artifacts for the
          * pipeline, if the action requires access to that S3 bucket for input or output
          * artifacts. This API also returns any secret values defined for the action.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails">AWS
          * API Reference</a></p>
          *
@@ -1029,11 +1017,11 @@ namespace Model
          * <p>Returns information about any jobs for AWS CodePipeline to act on.
          * <code>PollForJobs</code> is valid only for action types with "Custom" in the
          * owner field. If the action type contains "AWS" or "ThirdParty" in the owner
-         * field, the <code>PollForJobs</code> action returns an error.</p> <important>
+         * field, the <code>PollForJobs</code> action returns an error.</p> 
          * <p>When this API is called, AWS CodePipeline returns temporary credentials for
          * the S3 bucket used to store artifacts for the pipeline, if the action requires
          * access to that S3 bucket for input or output artifacts. This API also returns
-         * any secret values defined for the action.</p> </important><p><h3>See Also:</h3> 
+         * any secret values defined for the action.</p> <p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs">AWS
          * API Reference</a></p>
@@ -1044,11 +1032,11 @@ namespace Model
          * <p>Returns information about any jobs for AWS CodePipeline to act on.
          * <code>PollForJobs</code> is valid only for action types with "Custom" in the
          * owner field. If the action type contains "AWS" or "ThirdParty" in the owner
-         * field, the <code>PollForJobs</code> action returns an error.</p> <important>
+         * field, the <code>PollForJobs</code> action returns an error.</p> 
          * <p>When this API is called, AWS CodePipeline returns temporary credentials for
          * the S3 bucket used to store artifacts for the pipeline, if the action requires
          * access to that S3 bucket for input or output artifacts. This API also returns
-         * any secret values defined for the action.</p> </important><p><h3>See Also:</h3> 
+         * any secret values defined for the action.</p> <p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs">AWS
          * API Reference</a></p>
@@ -1061,11 +1049,11 @@ namespace Model
          * <p>Returns information about any jobs for AWS CodePipeline to act on.
          * <code>PollForJobs</code> is valid only for action types with "Custom" in the
          * owner field. If the action type contains "AWS" or "ThirdParty" in the owner
-         * field, the <code>PollForJobs</code> action returns an error.</p> <important>
+         * field, the <code>PollForJobs</code> action returns an error.</p> 
          * <p>When this API is called, AWS CodePipeline returns temporary credentials for
          * the S3 bucket used to store artifacts for the pipeline, if the action requires
          * access to that S3 bucket for input or output artifacts. This API also returns
-         * any secret values defined for the action.</p> </important><p><h3>See Also:</h3> 
+         * any secret values defined for the action.</p> <p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs">AWS
          * API Reference</a></p>
@@ -1076,10 +1064,10 @@ namespace Model
 
         /**
          * <p>Determines whether there are any third party jobs for a job worker to act on.
-         * Used for partner actions only.</p> <important> <p>When this API is called, AWS
+         * Used for partner actions only.</p>  <p>When this API is called, AWS
          * CodePipeline returns temporary credentials for the S3 bucket used to store
          * artifacts for the pipeline, if the action requires access to that S3 bucket for
-         * input or output artifacts.</p> </important><p><h3>See Also:</h3>   <a
+         * input or output artifacts.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobs">AWS
          * API Reference</a></p>
          */
@@ -1087,10 +1075,10 @@ namespace Model
 
         /**
          * <p>Determines whether there are any third party jobs for a job worker to act on.
-         * Used for partner actions only.</p> <important> <p>When this API is called, AWS
+         * Used for partner actions only.</p>  <p>When this API is called, AWS
          * CodePipeline returns temporary credentials for the S3 bucket used to store
          * artifacts for the pipeline, if the action requires access to that S3 bucket for
-         * input or output artifacts.</p> </important><p><h3>See Also:</h3>   <a
+         * input or output artifacts.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobs">AWS
          * API Reference</a></p>
          *
@@ -1100,10 +1088,10 @@ namespace Model
 
         /**
          * <p>Determines whether there are any third party jobs for a job worker to act on.
-         * Used for partner actions only.</p> <important> <p>When this API is called, AWS
+         * Used for partner actions only.</p>  <p>When this API is called, AWS
          * CodePipeline returns temporary credentials for the S3 bucket used to store
          * artifacts for the pipeline, if the action requires access to that S3 bucket for
-         * input or output artifacts.</p> </important><p><h3>See Also:</h3>   <a
+         * input or output artifacts.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobs">AWS
          * API Reference</a></p>
          *

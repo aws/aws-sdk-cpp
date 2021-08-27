@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/CmfcSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,6 +19,10 @@ namespace Model
 {
 
 CmfcSettings::CmfcSettings() : 
+    m_audioDuration(CmfcAudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
+    m_iFrameOnlyManifest(CmfcIFrameOnlyManifest::NOT_SET),
+    m_iFrameOnlyManifestHasBeenSet(false),
     m_scte35Esam(CmfcScte35Esam::NOT_SET),
     m_scte35EsamHasBeenSet(false),
     m_scte35Source(CmfcScte35Source::NOT_SET),
@@ -37,6 +31,10 @@ CmfcSettings::CmfcSettings() :
 }
 
 CmfcSettings::CmfcSettings(JsonView jsonValue) : 
+    m_audioDuration(CmfcAudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
+    m_iFrameOnlyManifest(CmfcIFrameOnlyManifest::NOT_SET),
+    m_iFrameOnlyManifestHasBeenSet(false),
     m_scte35Esam(CmfcScte35Esam::NOT_SET),
     m_scte35EsamHasBeenSet(false),
     m_scte35Source(CmfcScte35Source::NOT_SET),
@@ -47,6 +45,20 @@ CmfcSettings::CmfcSettings(JsonView jsonValue) :
 
 CmfcSettings& CmfcSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("audioDuration"))
+  {
+    m_audioDuration = CmfcAudioDurationMapper::GetCmfcAudioDurationForName(jsonValue.GetString("audioDuration"));
+
+    m_audioDurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("iFrameOnlyManifest"))
+  {
+    m_iFrameOnlyManifest = CmfcIFrameOnlyManifestMapper::GetCmfcIFrameOnlyManifestForName(jsonValue.GetString("iFrameOnlyManifest"));
+
+    m_iFrameOnlyManifestHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("scte35Esam"))
   {
     m_scte35Esam = CmfcScte35EsamMapper::GetCmfcScte35EsamForName(jsonValue.GetString("scte35Esam"));
@@ -67,6 +79,16 @@ CmfcSettings& CmfcSettings::operator =(JsonView jsonValue)
 JsonValue CmfcSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_audioDurationHasBeenSet)
+  {
+   payload.WithString("audioDuration", CmfcAudioDurationMapper::GetNameForCmfcAudioDuration(m_audioDuration));
+  }
+
+  if(m_iFrameOnlyManifestHasBeenSet)
+  {
+   payload.WithString("iFrameOnlyManifest", CmfcIFrameOnlyManifestMapper::GetNameForCmfcIFrameOnlyManifest(m_iFrameOnlyManifest));
+  }
 
   if(m_scte35EsamHasBeenSet)
   {

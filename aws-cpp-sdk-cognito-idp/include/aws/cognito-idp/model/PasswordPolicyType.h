@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -173,40 +163,40 @@ namespace Model
     /**
      * <p>In the password policy you have set, refers to the number of days a temporary
      * password is valid. If the user does not sign-in during this time, their password
-     * will need to be reset by an administrator.</p> <note> <p>When you set
+     * will need to be reset by an administrator.</p>  <p>When you set
      * <code>TemporaryPasswordValidityDays</code> for a user pool, you will no longer
      * be able to set the deprecated <code>UnusedAccountValidityDays</code> value for
-     * that user pool.</p> </note>
+     * that user pool.</p> 
      */
     inline int GetTemporaryPasswordValidityDays() const{ return m_temporaryPasswordValidityDays; }
 
     /**
      * <p>In the password policy you have set, refers to the number of days a temporary
      * password is valid. If the user does not sign-in during this time, their password
-     * will need to be reset by an administrator.</p> <note> <p>When you set
+     * will need to be reset by an administrator.</p>  <p>When you set
      * <code>TemporaryPasswordValidityDays</code> for a user pool, you will no longer
      * be able to set the deprecated <code>UnusedAccountValidityDays</code> value for
-     * that user pool.</p> </note>
+     * that user pool.</p> 
      */
     inline bool TemporaryPasswordValidityDaysHasBeenSet() const { return m_temporaryPasswordValidityDaysHasBeenSet; }
 
     /**
      * <p>In the password policy you have set, refers to the number of days a temporary
      * password is valid. If the user does not sign-in during this time, their password
-     * will need to be reset by an administrator.</p> <note> <p>When you set
+     * will need to be reset by an administrator.</p>  <p>When you set
      * <code>TemporaryPasswordValidityDays</code> for a user pool, you will no longer
      * be able to set the deprecated <code>UnusedAccountValidityDays</code> value for
-     * that user pool.</p> </note>
+     * that user pool.</p> 
      */
     inline void SetTemporaryPasswordValidityDays(int value) { m_temporaryPasswordValidityDaysHasBeenSet = true; m_temporaryPasswordValidityDays = value; }
 
     /**
      * <p>In the password policy you have set, refers to the number of days a temporary
      * password is valid. If the user does not sign-in during this time, their password
-     * will need to be reset by an administrator.</p> <note> <p>When you set
+     * will need to be reset by an administrator.</p>  <p>When you set
      * <code>TemporaryPasswordValidityDays</code> for a user pool, you will no longer
      * be able to set the deprecated <code>UnusedAccountValidityDays</code> value for
-     * that user pool.</p> </note>
+     * that user pool.</p> 
      */
     inline PasswordPolicyType& WithTemporaryPasswordValidityDays(int value) { SetTemporaryPasswordValidityDays(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
@@ -541,85 +531,85 @@ namespace Model
 
     /**
      * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
-     * your gateway. </p>
+     * your gateway.</p>
      */
     inline const Aws::String& GetVPCEndpoint() const{ return m_vPCEndpoint; }
 
     /**
      * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
-     * your gateway. </p>
+     * your gateway.</p>
      */
     inline void SetVPCEndpoint(const Aws::String& value) { m_vPCEndpoint = value; }
 
     /**
      * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
-     * your gateway. </p>
+     * your gateway.</p>
      */
     inline void SetVPCEndpoint(Aws::String&& value) { m_vPCEndpoint = std::move(value); }
 
     /**
      * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
-     * your gateway. </p>
+     * your gateway.</p>
      */
     inline void SetVPCEndpoint(const char* value) { m_vPCEndpoint.assign(value); }
 
     /**
      * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
-     * your gateway. </p>
+     * your gateway.</p>
      */
     inline DescribeGatewayInformationResult& WithVPCEndpoint(const Aws::String& value) { SetVPCEndpoint(value); return *this;}
 
     /**
      * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
-     * your gateway. </p>
+     * your gateway.</p>
      */
     inline DescribeGatewayInformationResult& WithVPCEndpoint(Aws::String&& value) { SetVPCEndpoint(std::move(value)); return *this;}
 
     /**
      * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
-     * your gateway. </p>
+     * your gateway.</p>
      */
     inline DescribeGatewayInformationResult& WithVPCEndpoint(const char* value) { SetVPCEndpoint(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor events in the gateway.</p>
      */
     inline const Aws::String& GetCloudWatchLogGroupARN() const{ return m_cloudWatchLogGroupARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor events in the gateway.</p>
      */
     inline void SetCloudWatchLogGroupARN(const Aws::String& value) { m_cloudWatchLogGroupARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor events in the gateway.</p>
      */
     inline void SetCloudWatchLogGroupARN(Aws::String&& value) { m_cloudWatchLogGroupARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor events in the gateway.</p>
      */
     inline void SetCloudWatchLogGroupARN(const char* value) { m_cloudWatchLogGroupARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor events in the gateway.</p>
      */
     inline DescribeGatewayInformationResult& WithCloudWatchLogGroupARN(const Aws::String& value) { SetCloudWatchLogGroupARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor events in the gateway.</p>
      */
     inline DescribeGatewayInformationResult& WithCloudWatchLogGroupARN(Aws::String&& value) { SetCloudWatchLogGroupARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor events in the gateway.</p>
      */
     inline DescribeGatewayInformationResult& WithCloudWatchLogGroupARN(const char* value) { SetCloudWatchLogGroupARN(value); return *this;}
@@ -649,6 +639,135 @@ namespace Model
      * <p>The type of hypervisor environment used by the host.</p>
      */
     inline DescribeGatewayInformationResult& WithHostEnvironment(HostEnvironment&& value) { SetHostEnvironment(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The type of endpoint for your gateway.</p> <p>Valid Values:
+     * <code>STANDARD</code> | <code>FIPS</code> </p>
+     */
+    inline const Aws::String& GetEndpointType() const{ return m_endpointType; }
+
+    /**
+     * <p>The type of endpoint for your gateway.</p> <p>Valid Values:
+     * <code>STANDARD</code> | <code>FIPS</code> </p>
+     */
+    inline void SetEndpointType(const Aws::String& value) { m_endpointType = value; }
+
+    /**
+     * <p>The type of endpoint for your gateway.</p> <p>Valid Values:
+     * <code>STANDARD</code> | <code>FIPS</code> </p>
+     */
+    inline void SetEndpointType(Aws::String&& value) { m_endpointType = std::move(value); }
+
+    /**
+     * <p>The type of endpoint for your gateway.</p> <p>Valid Values:
+     * <code>STANDARD</code> | <code>FIPS</code> </p>
+     */
+    inline void SetEndpointType(const char* value) { m_endpointType.assign(value); }
+
+    /**
+     * <p>The type of endpoint for your gateway.</p> <p>Valid Values:
+     * <code>STANDARD</code> | <code>FIPS</code> </p>
+     */
+    inline DescribeGatewayInformationResult& WithEndpointType(const Aws::String& value) { SetEndpointType(value); return *this;}
+
+    /**
+     * <p>The type of endpoint for your gateway.</p> <p>Valid Values:
+     * <code>STANDARD</code> | <code>FIPS</code> </p>
+     */
+    inline DescribeGatewayInformationResult& WithEndpointType(Aws::String&& value) { SetEndpointType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of endpoint for your gateway.</p> <p>Valid Values:
+     * <code>STANDARD</code> | <code>FIPS</code> </p>
+     */
+    inline DescribeGatewayInformationResult& WithEndpointType(const char* value) { SetEndpointType(value); return *this;}
+
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features.</p>
+     */
+    inline const Aws::String& GetSoftwareUpdatesEndDate() const{ return m_softwareUpdatesEndDate; }
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features.</p>
+     */
+    inline void SetSoftwareUpdatesEndDate(const Aws::String& value) { m_softwareUpdatesEndDate = value; }
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features.</p>
+     */
+    inline void SetSoftwareUpdatesEndDate(Aws::String&& value) { m_softwareUpdatesEndDate = std::move(value); }
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features.</p>
+     */
+    inline void SetSoftwareUpdatesEndDate(const char* value) { m_softwareUpdatesEndDate.assign(value); }
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features.</p>
+     */
+    inline DescribeGatewayInformationResult& WithSoftwareUpdatesEndDate(const Aws::String& value) { SetSoftwareUpdatesEndDate(value); return *this;}
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features.</p>
+     */
+    inline DescribeGatewayInformationResult& WithSoftwareUpdatesEndDate(Aws::String&& value) { SetSoftwareUpdatesEndDate(std::move(value)); return *this;}
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features.</p>
+     */
+    inline DescribeGatewayInformationResult& WithSoftwareUpdatesEndDate(const char* value) { SetSoftwareUpdatesEndDate(value); return *this;}
+
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline const Aws::String& GetDeprecationDate() const{ return m_deprecationDate; }
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline void SetDeprecationDate(const Aws::String& value) { m_deprecationDate = value; }
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline void SetDeprecationDate(Aws::String&& value) { m_deprecationDate = std::move(value); }
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline void SetDeprecationDate(const char* value) { m_deprecationDate.assign(value); }
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline DescribeGatewayInformationResult& WithDeprecationDate(const Aws::String& value) { SetDeprecationDate(value); return *this;}
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline DescribeGatewayInformationResult& WithDeprecationDate(Aws::String&& value) { SetDeprecationDate(std::move(value)); return *this;}
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline DescribeGatewayInformationResult& WithDeprecationDate(const char* value) { SetDeprecationDate(value); return *this;}
 
   private:
 
@@ -681,6 +800,12 @@ namespace Model
     Aws::String m_cloudWatchLogGroupARN;
 
     HostEnvironment m_hostEnvironment;
+
+    Aws::String m_endpointType;
+
+    Aws::String m_softwareUpdatesEndDate;
+
+    Aws::String m_deprecationDate;
   };
 
 } // namespace Model

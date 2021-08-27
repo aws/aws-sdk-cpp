@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 #include <fstream>
 
 #include <aws/external/gtest.h>
@@ -40,6 +30,7 @@
 #include <aws/lambda/model/GetEventSourceMappingRequest.h>
 #include <aws/lambda/model/UpdateEventSourceMappingRequest.h>
 #include <aws/lambda/model/DeleteEventSourceMappingRequest.h>
+#include <aws/lambda/model/ResourceNotFoundException.h>
 
 #include <aws/kinesis/KinesisClient.h>
 #include <aws/kinesis/model/CreateStreamRequest.h>
@@ -119,6 +110,7 @@ protected:
 
         // Create a client
         ClientConfiguration config;
+        config.region = Aws::Region::US_EAST_1;
         config.scheme = Scheme::HTTPS;
         config.connectTimeoutMs = 30000;
         config.requestTimeoutMs = 30000;
@@ -132,6 +124,7 @@ protected:
         //Create our IAM Role, so that the Lambda tests have the right policies.
         m_role = Aws::MakeShared<Aws::IAM::Model::Role>(ALLOCATION_TAG);
         ClientConfiguration clientConfig;
+        clientConfig.region = Aws::Region::US_EAST_1;
         m_iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, clientConfig);
         auto cognitoClient = Aws::MakeShared<CognitoIdentityClient>(ALLOCATION_TAG);
         m_accessManagementClient = Aws::MakeShared<Aws::AccessManagement::AccessManagementClient>(ALLOCATION_TAG, m_iamClient, cognitoClient);
@@ -471,6 +464,7 @@ TEST_F(FunctionTest, TestPermissions)
     if (!getRemovedPolicyOutcome.IsSuccess())
     {
        EXPECT_EQ(LambdaErrors::RESOURCE_NOT_FOUND, getRemovedPolicyOutcome.GetError().GetErrorType());
+       EXPECT_STREQ("User", getRemovedPolicyOutcome.GetError<ResourceNotFoundException>().GetType().c_str());
     }
     //Now we should get an empty policy a GetPolicy because we just removed it
     else
@@ -503,6 +497,10 @@ TEST_F(FunctionTest, TestEventSources)
         }
         else
         {
+#if ENABLE_CURL_CLIENT
+            ASSERT_FALSE(describeStreamOutcome.GetError().GetRemoteHostIpAddress().empty());
+#endif
+            ASSERT_FALSE(describeStreamOutcome.GetError().GetRequestId().empty());
             auto errCode = describeStreamOutcome.GetError().GetErrorType();
             ASSERT_TRUE(KinesisErrors::LIMIT_EXCEEDED == errCode);
             //If the limit was exceeded, wait and try again.
@@ -533,6 +531,10 @@ TEST_F(FunctionTest, TestEventSources)
     {
         //This means the mapping still exists from a previous failed test. We'll skip the CreatedResult test, but continue with the existing mapping.
         //This should only happen during dev after test failures
+#if ENABLE_CURL_CLIENT
+        ASSERT_FALSE(createOutcome.GetError().GetRemoteHostIpAddress().empty());
+#endif
+        ASSERT_FALSE(createOutcome.GetError().GetRequestId().empty());
         auto message = createOutcome.GetError().GetMessage();
         createdMappingUUID = message.substr(message.length()-36);
     }

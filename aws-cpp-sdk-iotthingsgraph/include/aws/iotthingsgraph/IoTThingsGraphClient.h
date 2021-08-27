@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotthingsgraph/IoTThingsGraph_EXPORTS.h>
@@ -131,41 +121,41 @@ namespace Model
         class UpdateSystemTemplateRequest;
         class UploadEntityDefinitionsRequest;
 
-        typedef Aws::Utils::Outcome<AssociateEntityToThingResult, Aws::Client::AWSError<IoTThingsGraphErrors>> AssociateEntityToThingOutcome;
-        typedef Aws::Utils::Outcome<CreateFlowTemplateResult, Aws::Client::AWSError<IoTThingsGraphErrors>> CreateFlowTemplateOutcome;
-        typedef Aws::Utils::Outcome<CreateSystemInstanceResult, Aws::Client::AWSError<IoTThingsGraphErrors>> CreateSystemInstanceOutcome;
-        typedef Aws::Utils::Outcome<CreateSystemTemplateResult, Aws::Client::AWSError<IoTThingsGraphErrors>> CreateSystemTemplateOutcome;
-        typedef Aws::Utils::Outcome<DeleteFlowTemplateResult, Aws::Client::AWSError<IoTThingsGraphErrors>> DeleteFlowTemplateOutcome;
-        typedef Aws::Utils::Outcome<DeleteNamespaceResult, Aws::Client::AWSError<IoTThingsGraphErrors>> DeleteNamespaceOutcome;
-        typedef Aws::Utils::Outcome<DeleteSystemInstanceResult, Aws::Client::AWSError<IoTThingsGraphErrors>> DeleteSystemInstanceOutcome;
-        typedef Aws::Utils::Outcome<DeleteSystemTemplateResult, Aws::Client::AWSError<IoTThingsGraphErrors>> DeleteSystemTemplateOutcome;
-        typedef Aws::Utils::Outcome<DeploySystemInstanceResult, Aws::Client::AWSError<IoTThingsGraphErrors>> DeploySystemInstanceOutcome;
-        typedef Aws::Utils::Outcome<DeprecateFlowTemplateResult, Aws::Client::AWSError<IoTThingsGraphErrors>> DeprecateFlowTemplateOutcome;
-        typedef Aws::Utils::Outcome<DeprecateSystemTemplateResult, Aws::Client::AWSError<IoTThingsGraphErrors>> DeprecateSystemTemplateOutcome;
-        typedef Aws::Utils::Outcome<DescribeNamespaceResult, Aws::Client::AWSError<IoTThingsGraphErrors>> DescribeNamespaceOutcome;
-        typedef Aws::Utils::Outcome<DissociateEntityFromThingResult, Aws::Client::AWSError<IoTThingsGraphErrors>> DissociateEntityFromThingOutcome;
-        typedef Aws::Utils::Outcome<GetEntitiesResult, Aws::Client::AWSError<IoTThingsGraphErrors>> GetEntitiesOutcome;
-        typedef Aws::Utils::Outcome<GetFlowTemplateResult, Aws::Client::AWSError<IoTThingsGraphErrors>> GetFlowTemplateOutcome;
-        typedef Aws::Utils::Outcome<GetFlowTemplateRevisionsResult, Aws::Client::AWSError<IoTThingsGraphErrors>> GetFlowTemplateRevisionsOutcome;
-        typedef Aws::Utils::Outcome<GetNamespaceDeletionStatusResult, Aws::Client::AWSError<IoTThingsGraphErrors>> GetNamespaceDeletionStatusOutcome;
-        typedef Aws::Utils::Outcome<GetSystemInstanceResult, Aws::Client::AWSError<IoTThingsGraphErrors>> GetSystemInstanceOutcome;
-        typedef Aws::Utils::Outcome<GetSystemTemplateResult, Aws::Client::AWSError<IoTThingsGraphErrors>> GetSystemTemplateOutcome;
-        typedef Aws::Utils::Outcome<GetSystemTemplateRevisionsResult, Aws::Client::AWSError<IoTThingsGraphErrors>> GetSystemTemplateRevisionsOutcome;
-        typedef Aws::Utils::Outcome<GetUploadStatusResult, Aws::Client::AWSError<IoTThingsGraphErrors>> GetUploadStatusOutcome;
-        typedef Aws::Utils::Outcome<ListFlowExecutionMessagesResult, Aws::Client::AWSError<IoTThingsGraphErrors>> ListFlowExecutionMessagesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<IoTThingsGraphErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<SearchEntitiesResult, Aws::Client::AWSError<IoTThingsGraphErrors>> SearchEntitiesOutcome;
-        typedef Aws::Utils::Outcome<SearchFlowExecutionsResult, Aws::Client::AWSError<IoTThingsGraphErrors>> SearchFlowExecutionsOutcome;
-        typedef Aws::Utils::Outcome<SearchFlowTemplatesResult, Aws::Client::AWSError<IoTThingsGraphErrors>> SearchFlowTemplatesOutcome;
-        typedef Aws::Utils::Outcome<SearchSystemInstancesResult, Aws::Client::AWSError<IoTThingsGraphErrors>> SearchSystemInstancesOutcome;
-        typedef Aws::Utils::Outcome<SearchSystemTemplatesResult, Aws::Client::AWSError<IoTThingsGraphErrors>> SearchSystemTemplatesOutcome;
-        typedef Aws::Utils::Outcome<SearchThingsResult, Aws::Client::AWSError<IoTThingsGraphErrors>> SearchThingsOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<IoTThingsGraphErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UndeploySystemInstanceResult, Aws::Client::AWSError<IoTThingsGraphErrors>> UndeploySystemInstanceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<IoTThingsGraphErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateFlowTemplateResult, Aws::Client::AWSError<IoTThingsGraphErrors>> UpdateFlowTemplateOutcome;
-        typedef Aws::Utils::Outcome<UpdateSystemTemplateResult, Aws::Client::AWSError<IoTThingsGraphErrors>> UpdateSystemTemplateOutcome;
-        typedef Aws::Utils::Outcome<UploadEntityDefinitionsResult, Aws::Client::AWSError<IoTThingsGraphErrors>> UploadEntityDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<AssociateEntityToThingResult, IoTThingsGraphError> AssociateEntityToThingOutcome;
+        typedef Aws::Utils::Outcome<CreateFlowTemplateResult, IoTThingsGraphError> CreateFlowTemplateOutcome;
+        typedef Aws::Utils::Outcome<CreateSystemInstanceResult, IoTThingsGraphError> CreateSystemInstanceOutcome;
+        typedef Aws::Utils::Outcome<CreateSystemTemplateResult, IoTThingsGraphError> CreateSystemTemplateOutcome;
+        typedef Aws::Utils::Outcome<DeleteFlowTemplateResult, IoTThingsGraphError> DeleteFlowTemplateOutcome;
+        typedef Aws::Utils::Outcome<DeleteNamespaceResult, IoTThingsGraphError> DeleteNamespaceOutcome;
+        typedef Aws::Utils::Outcome<DeleteSystemInstanceResult, IoTThingsGraphError> DeleteSystemInstanceOutcome;
+        typedef Aws::Utils::Outcome<DeleteSystemTemplateResult, IoTThingsGraphError> DeleteSystemTemplateOutcome;
+        typedef Aws::Utils::Outcome<DeploySystemInstanceResult, IoTThingsGraphError> DeploySystemInstanceOutcome;
+        typedef Aws::Utils::Outcome<DeprecateFlowTemplateResult, IoTThingsGraphError> DeprecateFlowTemplateOutcome;
+        typedef Aws::Utils::Outcome<DeprecateSystemTemplateResult, IoTThingsGraphError> DeprecateSystemTemplateOutcome;
+        typedef Aws::Utils::Outcome<DescribeNamespaceResult, IoTThingsGraphError> DescribeNamespaceOutcome;
+        typedef Aws::Utils::Outcome<DissociateEntityFromThingResult, IoTThingsGraphError> DissociateEntityFromThingOutcome;
+        typedef Aws::Utils::Outcome<GetEntitiesResult, IoTThingsGraphError> GetEntitiesOutcome;
+        typedef Aws::Utils::Outcome<GetFlowTemplateResult, IoTThingsGraphError> GetFlowTemplateOutcome;
+        typedef Aws::Utils::Outcome<GetFlowTemplateRevisionsResult, IoTThingsGraphError> GetFlowTemplateRevisionsOutcome;
+        typedef Aws::Utils::Outcome<GetNamespaceDeletionStatusResult, IoTThingsGraphError> GetNamespaceDeletionStatusOutcome;
+        typedef Aws::Utils::Outcome<GetSystemInstanceResult, IoTThingsGraphError> GetSystemInstanceOutcome;
+        typedef Aws::Utils::Outcome<GetSystemTemplateResult, IoTThingsGraphError> GetSystemTemplateOutcome;
+        typedef Aws::Utils::Outcome<GetSystemTemplateRevisionsResult, IoTThingsGraphError> GetSystemTemplateRevisionsOutcome;
+        typedef Aws::Utils::Outcome<GetUploadStatusResult, IoTThingsGraphError> GetUploadStatusOutcome;
+        typedef Aws::Utils::Outcome<ListFlowExecutionMessagesResult, IoTThingsGraphError> ListFlowExecutionMessagesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoTThingsGraphError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<SearchEntitiesResult, IoTThingsGraphError> SearchEntitiesOutcome;
+        typedef Aws::Utils::Outcome<SearchFlowExecutionsResult, IoTThingsGraphError> SearchFlowExecutionsOutcome;
+        typedef Aws::Utils::Outcome<SearchFlowTemplatesResult, IoTThingsGraphError> SearchFlowTemplatesOutcome;
+        typedef Aws::Utils::Outcome<SearchSystemInstancesResult, IoTThingsGraphError> SearchSystemInstancesOutcome;
+        typedef Aws::Utils::Outcome<SearchSystemTemplatesResult, IoTThingsGraphError> SearchSystemTemplatesOutcome;
+        typedef Aws::Utils::Outcome<SearchThingsResult, IoTThingsGraphError> SearchThingsOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, IoTThingsGraphError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UndeploySystemInstanceResult, IoTThingsGraphError> UndeploySystemInstanceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, IoTThingsGraphError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateFlowTemplateResult, IoTThingsGraphError> UpdateFlowTemplateOutcome;
+        typedef Aws::Utils::Outcome<UpdateSystemTemplateResult, IoTThingsGraphError> UpdateSystemTemplateOutcome;
+        typedef Aws::Utils::Outcome<UploadEntityDefinitionsResult, IoTThingsGraphError> UploadEntityDefinitionsOutcome;
 
         typedef std::future<AssociateEntityToThingOutcome> AssociateEntityToThingOutcomeCallable;
         typedef std::future<CreateFlowTemplateOutcome> CreateFlowTemplateOutcomeCallable;
@@ -278,8 +268,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~IoTThingsGraphClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "IoTThingsGraph"; }
 
 
         /**

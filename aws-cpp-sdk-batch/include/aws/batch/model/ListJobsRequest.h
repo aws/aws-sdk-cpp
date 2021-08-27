@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
@@ -28,6 +18,10 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for <code>ListJobs</code>.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_BATCH_API ListJobsRequest : public BatchRequest
   {
@@ -44,50 +38,50 @@ namespace Model
 
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the job queue used to list
+     * jobs.</p>
      */
     inline const Aws::String& GetJobQueue() const{ return m_jobQueue; }
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the job queue used to list
+     * jobs.</p>
      */
     inline bool JobQueueHasBeenSet() const { return m_jobQueueHasBeenSet; }
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the job queue used to list
+     * jobs.</p>
      */
     inline void SetJobQueue(const Aws::String& value) { m_jobQueueHasBeenSet = true; m_jobQueue = value; }
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the job queue used to list
+     * jobs.</p>
      */
     inline void SetJobQueue(Aws::String&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = std::move(value); }
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the job queue used to list
+     * jobs.</p>
      */
     inline void SetJobQueue(const char* value) { m_jobQueueHasBeenSet = true; m_jobQueue.assign(value); }
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the job queue used to list
+     * jobs.</p>
      */
     inline ListJobsRequest& WithJobQueue(const Aws::String& value) { SetJobQueue(value); return *this;}
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the job queue used to list
+     * jobs.</p>
      */
     inline ListJobsRequest& WithJobQueue(Aws::String&& value) { SetJobQueue(std::move(value)); return *this;}
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the job queue used to list
+     * jobs.</p>
      */
     inline ListJobsRequest& WithJobQueue(const char* value) { SetJobQueue(value); return *this;}
 
@@ -199,38 +193,38 @@ namespace Model
 
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue. If you do
-     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
+     * <p>The job status used to filter jobs in the specified queue. If you don't
+     * specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue. If you do
-     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
+     * <p>The job status used to filter jobs in the specified queue. If you don't
+     * specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue. If you do
-     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
+     * <p>The job status used to filter jobs in the specified queue. If you don't
+     * specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue. If you do
-     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
+     * <p>The job status used to filter jobs in the specified queue. If you don't
+     * specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline void SetJobStatus(JobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = std::move(value); }
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue. If you do
-     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
+     * <p>The job status used to filter jobs in the specified queue. If you don't
+     * specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline ListJobsRequest& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue. If you do
-     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
+     * <p>The job status used to filter jobs in the specified queue. If you don't
+     * specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline ListJobsRequest& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
 
@@ -242,7 +236,7 @@ namespace Model
      * <code>nextToken</code> response element. The remaining results of the initial
      * request can be seen by sending another <code>ListJobs</code> request with the
      * returned <code>nextToken</code> value. This value can be between 1 and 100. If
-     * this parameter is not used, then <code>ListJobs</code> returns up to 100 results
+     * this parameter isn't used, then <code>ListJobs</code> returns up to 100 results
      * and a <code>nextToken</code> value if applicable.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -254,7 +248,7 @@ namespace Model
      * <code>nextToken</code> response element. The remaining results of the initial
      * request can be seen by sending another <code>ListJobs</code> request with the
      * returned <code>nextToken</code> value. This value can be between 1 and 100. If
-     * this parameter is not used, then <code>ListJobs</code> returns up to 100 results
+     * this parameter isn't used, then <code>ListJobs</code> returns up to 100 results
      * and a <code>nextToken</code> value if applicable.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -266,7 +260,7 @@ namespace Model
      * <code>nextToken</code> response element. The remaining results of the initial
      * request can be seen by sending another <code>ListJobs</code> request with the
      * returned <code>nextToken</code> value. This value can be between 1 and 100. If
-     * this parameter is not used, then <code>ListJobs</code> returns up to 100 results
+     * this parameter isn't used, then <code>ListJobs</code> returns up to 100 results
      * and a <code>nextToken</code> value if applicable.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
@@ -278,7 +272,7 @@ namespace Model
      * <code>nextToken</code> response element. The remaining results of the initial
      * request can be seen by sending another <code>ListJobs</code> request with the
      * returned <code>nextToken</code> value. This value can be between 1 and 100. If
-     * this parameter is not used, then <code>ListJobs</code> returns up to 100 results
+     * this parameter isn't used, then <code>ListJobs</code> returns up to 100 results
      * and a <code>nextToken</code> value if applicable.</p>
      */
     inline ListJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -289,10 +283,10 @@ namespace Model
      * <code>ListJobs</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
-     * <p>This token should be treated as an opaque identifier that is only used to
+     * value is <code>null</code> when there are no more results to return.</p> 
+     * <p>This token should be treated as an opaque identifier that's only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -301,10 +295,10 @@ namespace Model
      * <code>ListJobs</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
-     * <p>This token should be treated as an opaque identifier that is only used to
+     * value is <code>null</code> when there are no more results to return.</p> 
+     * <p>This token should be treated as an opaque identifier that's only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -313,10 +307,10 @@ namespace Model
      * <code>ListJobs</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
-     * <p>This token should be treated as an opaque identifier that is only used to
+     * value is <code>null</code> when there are no more results to return.</p> 
+     * <p>This token should be treated as an opaque identifier that's only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -325,10 +319,10 @@ namespace Model
      * <code>ListJobs</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
-     * <p>This token should be treated as an opaque identifier that is only used to
+     * value is <code>null</code> when there are no more results to return.</p> 
+     * <p>This token should be treated as an opaque identifier that's only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -337,10 +331,10 @@ namespace Model
      * <code>ListJobs</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
-     * <p>This token should be treated as an opaque identifier that is only used to
+     * value is <code>null</code> when there are no more results to return.</p> 
+     * <p>This token should be treated as an opaque identifier that's only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -349,10 +343,10 @@ namespace Model
      * <code>ListJobs</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
-     * <p>This token should be treated as an opaque identifier that is only used to
+     * value is <code>null</code> when there are no more results to return.</p> 
+     * <p>This token should be treated as an opaque identifier that's only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * 
      */
     inline ListJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -361,10 +355,10 @@ namespace Model
      * <code>ListJobs</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
-     * <p>This token should be treated as an opaque identifier that is only used to
+     * value is <code>null</code> when there are no more results to return.</p> 
+     * <p>This token should be treated as an opaque identifier that's only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * 
      */
     inline ListJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -373,10 +367,10 @@ namespace Model
      * <code>ListJobs</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
-     * <p>This token should be treated as an opaque identifier that is only used to
+     * value is <code>null</code> when there are no more results to return.</p> 
+     * <p>This token should be treated as an opaque identifier that's only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * 
      */
     inline ListJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

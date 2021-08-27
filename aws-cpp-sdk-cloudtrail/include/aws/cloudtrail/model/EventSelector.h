@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
@@ -44,7 +34,8 @@ namespace Model
    * for all trails. For each trail, if the event matches any event selector, the
    * trail processes and logs the event. If the event doesn't match any event
    * selector, the trail doesn't log the event.</p> <p>You can configure up to five
-   * event selectors for a trail.</p><p><h3>See Also:</h3>   <a
+   * event selectors for a trail.</p> <p>You cannot apply both event selectors and
+   * advanced event selectors to a trail.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/EventSelector">AWS
    * API Reference</a></p>
    */
@@ -111,7 +102,11 @@ namespace Model
      * trail.</p> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p> <p>By default, the value
-     * is <code>true</code>.</p>
+     * is <code>true</code>.</p> <p>The first copy of management events is free. You
+     * are charged for additional copies of management events that you are logging on
+     * any subsequent trail in the same region. For more information about CloudTrail
+     * pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail
+     * Pricing</a>.</p>
      */
     inline bool GetIncludeManagementEvents() const{ return m_includeManagementEvents; }
 
@@ -120,7 +115,11 @@ namespace Model
      * trail.</p> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p> <p>By default, the value
-     * is <code>true</code>.</p>
+     * is <code>true</code>.</p> <p>The first copy of management events is free. You
+     * are charged for additional copies of management events that you are logging on
+     * any subsequent trail in the same region. For more information about CloudTrail
+     * pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail
+     * Pricing</a>.</p>
      */
     inline bool IncludeManagementEventsHasBeenSet() const { return m_includeManagementEventsHasBeenSet; }
 
@@ -129,7 +128,11 @@ namespace Model
      * trail.</p> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p> <p>By default, the value
-     * is <code>true</code>.</p>
+     * is <code>true</code>.</p> <p>The first copy of management events is free. You
+     * are charged for additional copies of management events that you are logging on
+     * any subsequent trail in the same region. For more information about CloudTrail
+     * pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail
+     * Pricing</a>.</p>
      */
     inline void SetIncludeManagementEvents(bool value) { m_includeManagementEventsHasBeenSet = true; m_includeManagementEvents = value; }
 
@@ -138,7 +141,11 @@ namespace Model
      * trail.</p> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p> <p>By default, the value
-     * is <code>true</code>.</p>
+     * is <code>true</code>.</p> <p>The first copy of management events is free. You
+     * are charged for additional copies of management events that you are logging on
+     * any subsequent trail in the same region. For more information about CloudTrail
+     * pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail
+     * Pricing</a>.</p>
      */
     inline EventSelector& WithIncludeManagementEvents(bool value) { SetIncludeManagementEvents(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/dataexchange/model/ExportAssetsToS3ResponseDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,6 +21,7 @@ namespace Model
 ExportAssetsToS3ResponseDetails::ExportAssetsToS3ResponseDetails() : 
     m_assetDestinationsHasBeenSet(false),
     m_dataSetIdHasBeenSet(false),
+    m_encryptionHasBeenSet(false),
     m_revisionIdHasBeenSet(false)
 {
 }
@@ -38,6 +29,7 @@ ExportAssetsToS3ResponseDetails::ExportAssetsToS3ResponseDetails() :
 ExportAssetsToS3ResponseDetails::ExportAssetsToS3ResponseDetails(JsonView jsonValue) : 
     m_assetDestinationsHasBeenSet(false),
     m_dataSetIdHasBeenSet(false),
+    m_encryptionHasBeenSet(false),
     m_revisionIdHasBeenSet(false)
 {
   *this = jsonValue;
@@ -60,6 +52,13 @@ ExportAssetsToS3ResponseDetails& ExportAssetsToS3ResponseDetails::operator =(Jso
     m_dataSetId = jsonValue.GetString("DataSetId");
 
     m_dataSetIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Encryption"))
+  {
+    m_encryption = jsonValue.GetObject("Encryption");
+
+    m_encryptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RevisionId"))
@@ -90,6 +89,12 @@ JsonValue ExportAssetsToS3ResponseDetails::Jsonize() const
   if(m_dataSetIdHasBeenSet)
   {
    payload.WithString("DataSetId", m_dataSetId);
+
+  }
+
+  if(m_encryptionHasBeenSet)
+  {
+   payload.WithObject("Encryption", m_encryption.Jsonize());
 
   }
 

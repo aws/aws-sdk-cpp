@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
@@ -111,10 +101,10 @@ namespace Model
      * exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
      * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
      * scanning rates apply to exported control plane logs. For more information, see
      * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-     * Pricing</a>.</p> </note>
+     * Pricing</a>.</p> 
      */
     inline const Logging& GetLogging() const{ return m_logging; }
 
@@ -124,10 +114,10 @@ namespace Model
      * exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
      * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
      * scanning rates apply to exported control plane logs. For more information, see
      * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-     * Pricing</a>.</p> </note>
+     * Pricing</a>.</p> 
      */
     inline bool LoggingHasBeenSet() const { return m_loggingHasBeenSet; }
 
@@ -137,10 +127,10 @@ namespace Model
      * exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
      * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
      * scanning rates apply to exported control plane logs. For more information, see
      * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-     * Pricing</a>.</p> </note>
+     * Pricing</a>.</p> 
      */
     inline void SetLogging(const Logging& value) { m_loggingHasBeenSet = true; m_logging = value; }
 
@@ -150,10 +140,10 @@ namespace Model
      * exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
      * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
      * scanning rates apply to exported control plane logs. For more information, see
      * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-     * Pricing</a>.</p> </note>
+     * Pricing</a>.</p> 
      */
     inline void SetLogging(Logging&& value) { m_loggingHasBeenSet = true; m_logging = std::move(value); }
 
@@ -163,10 +153,10 @@ namespace Model
      * exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
      * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
      * scanning rates apply to exported control plane logs. For more information, see
      * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-     * Pricing</a>.</p> </note>
+     * Pricing</a>.</p> 
      */
     inline UpdateClusterConfigRequest& WithLogging(const Logging& value) { SetLogging(value); return *this;}
 
@@ -176,10 +166,10 @@ namespace Model
      * exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
      * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
      * scanning rates apply to exported control plane logs. For more information, see
      * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-     * Pricing</a>.</p> </note>
+     * Pricing</a>.</p> 
      */
     inline UpdateClusterConfigRequest& WithLogging(Logging&& value) { SetLogging(std::move(value)); return *this;}
 

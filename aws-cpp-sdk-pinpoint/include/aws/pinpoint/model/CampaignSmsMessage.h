@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
@@ -91,50 +81,50 @@ namespace Model
 
 
     /**
-     * <p>The type of SMS message. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message isn't critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline const MessageType& GetMessageType() const{ return m_messageType; }
 
     /**
-     * <p>The type of SMS message. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message isn't critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline bool MessageTypeHasBeenSet() const { return m_messageTypeHasBeenSet; }
 
     /**
-     * <p>The type of SMS message. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message isn't critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline void SetMessageType(const MessageType& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
 
     /**
-     * <p>The type of SMS message. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message isn't critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline void SetMessageType(MessageType&& value) { m_messageTypeHasBeenSet = true; m_messageType = std::move(value); }
 
     /**
-     * <p>The type of SMS message. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message isn't critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline CampaignSmsMessage& WithMessageType(const MessageType& value) { SetMessageType(value); return *this;}
 
     /**
-     * <p>The type of SMS message. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message isn't critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline CampaignSmsMessage& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/xray/XRay_EXPORTS.h>
@@ -40,8 +30,8 @@ namespace Model
 
   /**
    * <p>Information about an application that processed requests, users that made
-   * requests, or downstream services, resources and applications that an application
-   * used.</p><p><h3>See Also:</h3>   <a
+   * requests, or downstream services, resources, and applications that an
+   * application used.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Service">AWS API
    * Reference</a></p>
    */
@@ -226,11 +216,11 @@ namespace Model
 
     /**
      * <p>The type of service.</p> <ul> <li> <p>AWS Resource - The type of an AWS
-     * resource. For example, <code>AWS::EC2::Instance</code> for a application running
-     * on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table
-     * that the application used.</p> </li> <li> <p>AWS Service - The type of an AWS
-     * service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon
-     * DynamoDB that didn't target a specific table.</p> </li> <li> <p>
+     * resource. For example, <code>AWS::EC2::Instance</code> for an application
+     * running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon
+     * DynamoDB table that the application used.</p> </li> <li> <p>AWS Service - The
+     * type of an AWS service. For example, <code>AWS::DynamoDB</code> for downstream
+     * calls to Amazon DynamoDB that didn't target a specific table.</p> </li> <li> <p>
      * <code>client</code> - Represents the clients that sent requests to a root
      * service.</p> </li> <li> <p> <code>remote</code> - A downstream service of
      * indeterminate type.</p> </li> </ul>
@@ -239,11 +229,11 @@ namespace Model
 
     /**
      * <p>The type of service.</p> <ul> <li> <p>AWS Resource - The type of an AWS
-     * resource. For example, <code>AWS::EC2::Instance</code> for a application running
-     * on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table
-     * that the application used.</p> </li> <li> <p>AWS Service - The type of an AWS
-     * service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon
-     * DynamoDB that didn't target a specific table.</p> </li> <li> <p>
+     * resource. For example, <code>AWS::EC2::Instance</code> for an application
+     * running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon
+     * DynamoDB table that the application used.</p> </li> <li> <p>AWS Service - The
+     * type of an AWS service. For example, <code>AWS::DynamoDB</code> for downstream
+     * calls to Amazon DynamoDB that didn't target a specific table.</p> </li> <li> <p>
      * <code>client</code> - Represents the clients that sent requests to a root
      * service.</p> </li> <li> <p> <code>remote</code> - A downstream service of
      * indeterminate type.</p> </li> </ul>
@@ -252,11 +242,11 @@ namespace Model
 
     /**
      * <p>The type of service.</p> <ul> <li> <p>AWS Resource - The type of an AWS
-     * resource. For example, <code>AWS::EC2::Instance</code> for a application running
-     * on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table
-     * that the application used.</p> </li> <li> <p>AWS Service - The type of an AWS
-     * service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon
-     * DynamoDB that didn't target a specific table.</p> </li> <li> <p>
+     * resource. For example, <code>AWS::EC2::Instance</code> for an application
+     * running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon
+     * DynamoDB table that the application used.</p> </li> <li> <p>AWS Service - The
+     * type of an AWS service. For example, <code>AWS::DynamoDB</code> for downstream
+     * calls to Amazon DynamoDB that didn't target a specific table.</p> </li> <li> <p>
      * <code>client</code> - Represents the clients that sent requests to a root
      * service.</p> </li> <li> <p> <code>remote</code> - A downstream service of
      * indeterminate type.</p> </li> </ul>
@@ -265,11 +255,11 @@ namespace Model
 
     /**
      * <p>The type of service.</p> <ul> <li> <p>AWS Resource - The type of an AWS
-     * resource. For example, <code>AWS::EC2::Instance</code> for a application running
-     * on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table
-     * that the application used.</p> </li> <li> <p>AWS Service - The type of an AWS
-     * service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon
-     * DynamoDB that didn't target a specific table.</p> </li> <li> <p>
+     * resource. For example, <code>AWS::EC2::Instance</code> for an application
+     * running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon
+     * DynamoDB table that the application used.</p> </li> <li> <p>AWS Service - The
+     * type of an AWS service. For example, <code>AWS::DynamoDB</code> for downstream
+     * calls to Amazon DynamoDB that didn't target a specific table.</p> </li> <li> <p>
      * <code>client</code> - Represents the clients that sent requests to a root
      * service.</p> </li> <li> <p> <code>remote</code> - A downstream service of
      * indeterminate type.</p> </li> </ul>
@@ -278,11 +268,11 @@ namespace Model
 
     /**
      * <p>The type of service.</p> <ul> <li> <p>AWS Resource - The type of an AWS
-     * resource. For example, <code>AWS::EC2::Instance</code> for a application running
-     * on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table
-     * that the application used.</p> </li> <li> <p>AWS Service - The type of an AWS
-     * service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon
-     * DynamoDB that didn't target a specific table.</p> </li> <li> <p>
+     * resource. For example, <code>AWS::EC2::Instance</code> for an application
+     * running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon
+     * DynamoDB table that the application used.</p> </li> <li> <p>AWS Service - The
+     * type of an AWS service. For example, <code>AWS::DynamoDB</code> for downstream
+     * calls to Amazon DynamoDB that didn't target a specific table.</p> </li> <li> <p>
      * <code>client</code> - Represents the clients that sent requests to a root
      * service.</p> </li> <li> <p> <code>remote</code> - A downstream service of
      * indeterminate type.</p> </li> </ul>
@@ -291,11 +281,11 @@ namespace Model
 
     /**
      * <p>The type of service.</p> <ul> <li> <p>AWS Resource - The type of an AWS
-     * resource. For example, <code>AWS::EC2::Instance</code> for a application running
-     * on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table
-     * that the application used.</p> </li> <li> <p>AWS Service - The type of an AWS
-     * service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon
-     * DynamoDB that didn't target a specific table.</p> </li> <li> <p>
+     * resource. For example, <code>AWS::EC2::Instance</code> for an application
+     * running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon
+     * DynamoDB table that the application used.</p> </li> <li> <p>AWS Service - The
+     * type of an AWS service. For example, <code>AWS::DynamoDB</code> for downstream
+     * calls to Amazon DynamoDB that didn't target a specific table.</p> </li> <li> <p>
      * <code>client</code> - Represents the clients that sent requests to a root
      * service.</p> </li> <li> <p> <code>remote</code> - A downstream service of
      * indeterminate type.</p> </li> </ul>
@@ -304,11 +294,11 @@ namespace Model
 
     /**
      * <p>The type of service.</p> <ul> <li> <p>AWS Resource - The type of an AWS
-     * resource. For example, <code>AWS::EC2::Instance</code> for a application running
-     * on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table
-     * that the application used.</p> </li> <li> <p>AWS Service - The type of an AWS
-     * service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon
-     * DynamoDB that didn't target a specific table.</p> </li> <li> <p>
+     * resource. For example, <code>AWS::EC2::Instance</code> for an application
+     * running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon
+     * DynamoDB table that the application used.</p> </li> <li> <p>AWS Service - The
+     * type of an AWS service. For example, <code>AWS::DynamoDB</code> for downstream
+     * calls to Amazon DynamoDB that didn't target a specific table.</p> </li> <li> <p>
      * <code>client</code> - Represents the clients that sent requests to a root
      * service.</p> </li> <li> <p> <code>remote</code> - A downstream service of
      * indeterminate type.</p> </li> </ul>
@@ -317,11 +307,11 @@ namespace Model
 
     /**
      * <p>The type of service.</p> <ul> <li> <p>AWS Resource - The type of an AWS
-     * resource. For example, <code>AWS::EC2::Instance</code> for a application running
-     * on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table
-     * that the application used.</p> </li> <li> <p>AWS Service - The type of an AWS
-     * service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon
-     * DynamoDB that didn't target a specific table.</p> </li> <li> <p>
+     * resource. For example, <code>AWS::EC2::Instance</code> for an application
+     * running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon
+     * DynamoDB table that the application used.</p> </li> <li> <p>AWS Service - The
+     * type of an AWS service. For example, <code>AWS::DynamoDB</code> for downstream
+     * calls to Amazon DynamoDB that didn't target a specific table.</p> </li> <li> <p>
      * <code>client</code> - Represents the clients that sent requests to a root
      * service.</p> </li> <li> <p> <code>remote</code> - A downstream service of
      * indeterminate type.</p> </li> </ul>

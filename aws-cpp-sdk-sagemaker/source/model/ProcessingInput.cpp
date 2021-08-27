@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/ProcessingInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,13 +20,19 @@ namespace Model
 
 ProcessingInput::ProcessingInput() : 
     m_inputNameHasBeenSet(false),
-    m_s3InputHasBeenSet(false)
+    m_appManaged(false),
+    m_appManagedHasBeenSet(false),
+    m_s3InputHasBeenSet(false),
+    m_datasetDefinitionHasBeenSet(false)
 {
 }
 
 ProcessingInput::ProcessingInput(JsonView jsonValue) : 
     m_inputNameHasBeenSet(false),
-    m_s3InputHasBeenSet(false)
+    m_appManaged(false),
+    m_appManagedHasBeenSet(false),
+    m_s3InputHasBeenSet(false),
+    m_datasetDefinitionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,11 +46,25 @@ ProcessingInput& ProcessingInput::operator =(JsonView jsonValue)
     m_inputNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AppManaged"))
+  {
+    m_appManaged = jsonValue.GetBool("AppManaged");
+
+    m_appManagedHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("S3Input"))
   {
     m_s3Input = jsonValue.GetObject("S3Input");
 
     m_s3InputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DatasetDefinition"))
+  {
+    m_datasetDefinition = jsonValue.GetObject("DatasetDefinition");
+
+    m_datasetDefinitionHasBeenSet = true;
   }
 
   return *this;
@@ -70,9 +80,21 @@ JsonValue ProcessingInput::Jsonize() const
 
   }
 
+  if(m_appManagedHasBeenSet)
+  {
+   payload.WithBool("AppManaged", m_appManaged);
+
+  }
+
   if(m_s3InputHasBeenSet)
   {
    payload.WithObject("S3Input", m_s3Input.Jsonize());
+
+  }
+
+  if(m_datasetDefinitionHasBeenSet)
+  {
+   payload.WithObject("DatasetDefinition", m_datasetDefinition.Jsonize());
 
   }
 

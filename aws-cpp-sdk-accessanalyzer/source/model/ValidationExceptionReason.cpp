@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/accessanalyzer/model/ValidationExceptionReason.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -30,16 +20,20 @@ namespace Aws
       namespace ValidationExceptionReasonMapper
       {
 
+        static const int unknownOperation_HASH = HashingUtils::HashString("unknownOperation");
         static const int cannotParse_HASH = HashingUtils::HashString("cannotParse");
         static const int fieldValidationFailed_HASH = HashingUtils::HashString("fieldValidationFailed");
         static const int other_HASH = HashingUtils::HashString("other");
-        static const int unknownOperation_HASH = HashingUtils::HashString("unknownOperation");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == cannotParse_HASH)
+          if (hashCode == unknownOperation_HASH)
+          {
+            return ValidationExceptionReason::unknownOperation;
+          }
+          else if (hashCode == cannotParse_HASH)
           {
             return ValidationExceptionReason::cannotParse;
           }
@@ -50,10 +44,6 @@ namespace Aws
           else if (hashCode == other_HASH)
           {
             return ValidationExceptionReason::other;
-          }
-          else if (hashCode == unknownOperation_HASH)
-          {
-            return ValidationExceptionReason::unknownOperation;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,14 +59,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidationExceptionReason::unknownOperation:
+            return "unknownOperation";
           case ValidationExceptionReason::cannotParse:
             return "cannotParse";
           case ValidationExceptionReason::fieldValidationFailed:
             return "fieldValidationFailed";
           case ValidationExceptionReason::other:
             return "other";
-          case ValidationExceptionReason::unknownOperation:
-            return "unknownOperation";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

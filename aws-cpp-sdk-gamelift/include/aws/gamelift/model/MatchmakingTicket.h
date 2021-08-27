@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -237,9 +227,9 @@ namespace Model
      * <a>StopMatchmaking</a> or a proposed match that one or more players failed to
      * accept.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not
      * successful within the duration specified in the matchmaking configuration. </p>
-     * </li> </ul> <note> <p>Matchmaking requests that fail to successfully complete
+     * </li> </ul>  <p>Matchmaking requests that fail to successfully complete
      * (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with
-     * new ticket IDs.</p> </note>
+     * new ticket IDs.</p> 
      */
     inline const MatchmakingConfigurationStatus& GetStatus() const{ return m_status; }
 
@@ -261,9 +251,9 @@ namespace Model
      * <a>StopMatchmaking</a> or a proposed match that one or more players failed to
      * accept.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not
      * successful within the duration specified in the matchmaking configuration. </p>
-     * </li> </ul> <note> <p>Matchmaking requests that fail to successfully complete
+     * </li> </ul>  <p>Matchmaking requests that fail to successfully complete
      * (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with
-     * new ticket IDs.</p> </note>
+     * new ticket IDs.</p> 
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -285,9 +275,9 @@ namespace Model
      * <a>StopMatchmaking</a> or a proposed match that one or more players failed to
      * accept.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not
      * successful within the duration specified in the matchmaking configuration. </p>
-     * </li> </ul> <note> <p>Matchmaking requests that fail to successfully complete
+     * </li> </ul>  <p>Matchmaking requests that fail to successfully complete
      * (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with
-     * new ticket IDs.</p> </note>
+     * new ticket IDs.</p> 
      */
     inline void SetStatus(const MatchmakingConfigurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -309,9 +299,9 @@ namespace Model
      * <a>StopMatchmaking</a> or a proposed match that one or more players failed to
      * accept.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not
      * successful within the duration specified in the matchmaking configuration. </p>
-     * </li> </ul> <note> <p>Matchmaking requests that fail to successfully complete
+     * </li> </ul>  <p>Matchmaking requests that fail to successfully complete
      * (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with
-     * new ticket IDs.</p> </note>
+     * new ticket IDs.</p> 
      */
     inline void SetStatus(MatchmakingConfigurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -333,9 +323,9 @@ namespace Model
      * <a>StopMatchmaking</a> or a proposed match that one or more players failed to
      * accept.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not
      * successful within the duration specified in the matchmaking configuration. </p>
-     * </li> </ul> <note> <p>Matchmaking requests that fail to successfully complete
+     * </li> </ul>  <p>Matchmaking requests that fail to successfully complete
      * (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with
-     * new ticket IDs.</p> </note>
+     * new ticket IDs.</p> 
      */
     inline MatchmakingTicket& WithStatus(const MatchmakingConfigurationStatus& value) { SetStatus(value); return *this;}
 
@@ -357,9 +347,9 @@ namespace Model
      * <a>StopMatchmaking</a> or a proposed match that one or more players failed to
      * accept.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not
      * successful within the duration specified in the matchmaking configuration. </p>
-     * </li> </ul> <note> <p>Matchmaking requests that fail to successfully complete
+     * </li> </ul>  <p>Matchmaking requests that fail to successfully complete
      * (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with
-     * new ticket IDs.</p> </note>
+     * new ticket IDs.</p> 
      */
     inline MatchmakingTicket& WithStatus(MatchmakingConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -624,42 +614,48 @@ namespace Model
     /**
      * <p>Identifier and connection information of the game session created for the
      * match. This information is added to the ticket only after the matchmaking
-     * request has been successfully completed.</p>
+     * request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.</p>
      */
     inline const GameSessionConnectionInfo& GetGameSessionConnectionInfo() const{ return m_gameSessionConnectionInfo; }
 
     /**
      * <p>Identifier and connection information of the game session created for the
      * match. This information is added to the ticket only after the matchmaking
-     * request has been successfully completed.</p>
+     * request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.</p>
      */
     inline bool GameSessionConnectionInfoHasBeenSet() const { return m_gameSessionConnectionInfoHasBeenSet; }
 
     /**
      * <p>Identifier and connection information of the game session created for the
      * match. This information is added to the ticket only after the matchmaking
-     * request has been successfully completed.</p>
+     * request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.</p>
      */
     inline void SetGameSessionConnectionInfo(const GameSessionConnectionInfo& value) { m_gameSessionConnectionInfoHasBeenSet = true; m_gameSessionConnectionInfo = value; }
 
     /**
      * <p>Identifier and connection information of the game session created for the
      * match. This information is added to the ticket only after the matchmaking
-     * request has been successfully completed.</p>
+     * request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.</p>
      */
     inline void SetGameSessionConnectionInfo(GameSessionConnectionInfo&& value) { m_gameSessionConnectionInfoHasBeenSet = true; m_gameSessionConnectionInfo = std::move(value); }
 
     /**
      * <p>Identifier and connection information of the game session created for the
      * match. This information is added to the ticket only after the matchmaking
-     * request has been successfully completed.</p>
+     * request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.</p>
      */
     inline MatchmakingTicket& WithGameSessionConnectionInfo(const GameSessionConnectionInfo& value) { SetGameSessionConnectionInfo(value); return *this;}
 
     /**
      * <p>Identifier and connection information of the game session created for the
      * match. This information is added to the ticket only after the matchmaking
-     * request has been successfully completed.</p>
+     * request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.</p>
      */
     inline MatchmakingTicket& WithGameSessionConnectionInfo(GameSessionConnectionInfo&& value) { SetGameSessionConnectionInfo(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -45,10 +35,10 @@ namespace Model
    * might not be in a state from which it can be saved. For example, if training has
    * just started, the model might not be ready to save. When saved, this
    * intermediate data is a valid model artifact. You can use it to create a model
-   * with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM)
+   * with <code>CreateModel</code>.</p>  <p>The Neural Topic Model (NTM)
    * currently does not support saving intermediate model artifacts. When training
    * NTMs, make sure that the maximum runtime is sufficient for the training job to
-   * complete.</p> </note><p><h3>See Also:</h3>   <a
+   * complete.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StoppingCondition">AWS
    * API Reference</a></p>
    */

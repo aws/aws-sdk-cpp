@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/Address.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -44,7 +34,8 @@ Address::Address() :
     m_publicIpv4PoolHasBeenSet(false),
     m_networkBorderGroupHasBeenSet(false),
     m_customerOwnedIpHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false)
+    m_customerOwnedIpv4PoolHasBeenSet(false),
+    m_carrierIpHasBeenSet(false)
 {
 }
 
@@ -62,7 +53,8 @@ Address::Address(const XmlNode& xmlNode) :
     m_publicIpv4PoolHasBeenSet(false),
     m_networkBorderGroupHasBeenSet(false),
     m_customerOwnedIpHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false)
+    m_customerOwnedIpv4PoolHasBeenSet(false),
+    m_carrierIpHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -157,6 +149,12 @@ Address& Address::operator =(const XmlNode& xmlNode)
       m_customerOwnedIpv4Pool = Aws::Utils::Xml::DecodeEscapedXmlText(customerOwnedIpv4PoolNode.GetText());
       m_customerOwnedIpv4PoolHasBeenSet = true;
     }
+    XmlNode carrierIpNode = resultNode.FirstChild("carrierIp");
+    if(!carrierIpNode.IsNull())
+    {
+      m_carrierIp = Aws::Utils::Xml::DecodeEscapedXmlText(carrierIpNode.GetText());
+      m_carrierIpHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -235,6 +233,11 @@ void Address::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".CustomerOwnedIpv4Pool=" << StringUtils::URLEncode(m_customerOwnedIpv4Pool.c_str()) << "&";
   }
 
+  if(m_carrierIpHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CarrierIp=" << StringUtils::URLEncode(m_carrierIp.c_str()) << "&";
+  }
+
 }
 
 void Address::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -296,6 +299,10 @@ void Address::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_customerOwnedIpv4PoolHasBeenSet)
   {
       oStream << location << ".CustomerOwnedIpv4Pool=" << StringUtils::URLEncode(m_customerOwnedIpv4Pool.c_str()) << "&";
+  }
+  if(m_carrierIpHasBeenSet)
+  {
+      oStream << location << ".CarrierIp=" << StringUtils::URLEncode(m_carrierIp.c_str()) << "&";
   }
 }
 

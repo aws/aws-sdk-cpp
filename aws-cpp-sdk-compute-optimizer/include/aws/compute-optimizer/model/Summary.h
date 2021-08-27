@@ -1,21 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/compute-optimizer/model/Finding.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/compute-optimizer/model/ReasonCodeSummary.h>
 #include <utility>
 
 namespace Aws
@@ -98,6 +90,47 @@ namespace Model
      */
     inline Summary& WithValue(double value) { SetValue(value); return *this;}
 
+
+    /**
+     * <p>An array of objects that summarize a finding reason code.</p>
+     */
+    inline const Aws::Vector<ReasonCodeSummary>& GetReasonCodeSummaries() const{ return m_reasonCodeSummaries; }
+
+    /**
+     * <p>An array of objects that summarize a finding reason code.</p>
+     */
+    inline bool ReasonCodeSummariesHasBeenSet() const { return m_reasonCodeSummariesHasBeenSet; }
+
+    /**
+     * <p>An array of objects that summarize a finding reason code.</p>
+     */
+    inline void SetReasonCodeSummaries(const Aws::Vector<ReasonCodeSummary>& value) { m_reasonCodeSummariesHasBeenSet = true; m_reasonCodeSummaries = value; }
+
+    /**
+     * <p>An array of objects that summarize a finding reason code.</p>
+     */
+    inline void SetReasonCodeSummaries(Aws::Vector<ReasonCodeSummary>&& value) { m_reasonCodeSummariesHasBeenSet = true; m_reasonCodeSummaries = std::move(value); }
+
+    /**
+     * <p>An array of objects that summarize a finding reason code.</p>
+     */
+    inline Summary& WithReasonCodeSummaries(const Aws::Vector<ReasonCodeSummary>& value) { SetReasonCodeSummaries(value); return *this;}
+
+    /**
+     * <p>An array of objects that summarize a finding reason code.</p>
+     */
+    inline Summary& WithReasonCodeSummaries(Aws::Vector<ReasonCodeSummary>&& value) { SetReasonCodeSummaries(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of objects that summarize a finding reason code.</p>
+     */
+    inline Summary& AddReasonCodeSummaries(const ReasonCodeSummary& value) { m_reasonCodeSummariesHasBeenSet = true; m_reasonCodeSummaries.push_back(value); return *this; }
+
+    /**
+     * <p>An array of objects that summarize a finding reason code.</p>
+     */
+    inline Summary& AddReasonCodeSummaries(ReasonCodeSummary&& value) { m_reasonCodeSummariesHasBeenSet = true; m_reasonCodeSummaries.push_back(std::move(value)); return *this; }
+
   private:
 
     Finding m_name;
@@ -105,6 +138,9 @@ namespace Model
 
     double m_value;
     bool m_valueHasBeenSet;
+
+    Aws::Vector<ReasonCodeSummary> m_reasonCodeSummaries;
+    bool m_reasonCodeSummariesHasBeenSet;
   };
 
 } // namespace Model

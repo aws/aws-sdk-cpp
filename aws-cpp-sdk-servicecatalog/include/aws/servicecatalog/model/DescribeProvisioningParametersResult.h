@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
@@ -21,6 +11,7 @@
 #include <aws/servicecatalog/model/ConstraintSummary.h>
 #include <aws/servicecatalog/model/UsageInstruction.h>
 #include <aws/servicecatalog/model/TagOptionSummary.h>
+#include <aws/servicecatalog/model/ProvisioningArtifactOutput.h>
 #include <utility>
 
 namespace Aws
@@ -235,6 +226,42 @@ namespace Model
      */
     inline DescribeProvisioningParametersResult& WithProvisioningArtifactPreferences(ProvisioningArtifactPreferences&& value) { SetProvisioningArtifactPreferences(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The output of the provisioning artifact.</p>
+     */
+    inline const Aws::Vector<ProvisioningArtifactOutput>& GetProvisioningArtifactOutputs() const{ return m_provisioningArtifactOutputs; }
+
+    /**
+     * <p>The output of the provisioning artifact.</p>
+     */
+    inline void SetProvisioningArtifactOutputs(const Aws::Vector<ProvisioningArtifactOutput>& value) { m_provisioningArtifactOutputs = value; }
+
+    /**
+     * <p>The output of the provisioning artifact.</p>
+     */
+    inline void SetProvisioningArtifactOutputs(Aws::Vector<ProvisioningArtifactOutput>&& value) { m_provisioningArtifactOutputs = std::move(value); }
+
+    /**
+     * <p>The output of the provisioning artifact.</p>
+     */
+    inline DescribeProvisioningParametersResult& WithProvisioningArtifactOutputs(const Aws::Vector<ProvisioningArtifactOutput>& value) { SetProvisioningArtifactOutputs(value); return *this;}
+
+    /**
+     * <p>The output of the provisioning artifact.</p>
+     */
+    inline DescribeProvisioningParametersResult& WithProvisioningArtifactOutputs(Aws::Vector<ProvisioningArtifactOutput>&& value) { SetProvisioningArtifactOutputs(std::move(value)); return *this;}
+
+    /**
+     * <p>The output of the provisioning artifact.</p>
+     */
+    inline DescribeProvisioningParametersResult& AddProvisioningArtifactOutputs(const ProvisioningArtifactOutput& value) { m_provisioningArtifactOutputs.push_back(value); return *this; }
+
+    /**
+     * <p>The output of the provisioning artifact.</p>
+     */
+    inline DescribeProvisioningParametersResult& AddProvisioningArtifactOutputs(ProvisioningArtifactOutput&& value) { m_provisioningArtifactOutputs.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<ProvisioningArtifactParameter> m_provisioningArtifactParameters;
@@ -246,6 +273,8 @@ namespace Model
     Aws::Vector<TagOptionSummary> m_tagOptions;
 
     ProvisioningArtifactPreferences m_provisioningArtifactPreferences;
+
+    Aws::Vector<ProvisioningArtifactOutput> m_provisioningArtifactOutputs;
   };
 
 } // namespace Model

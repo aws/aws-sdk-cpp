@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
@@ -193,43 +183,51 @@ namespace Model
 
 
     /**
-     * <p>The integer value of the first byte of the layer part.</p>
+     * <p>The position of the first byte of the layer part witin the overall image
+     * layer.</p>
      */
     inline long long GetPartFirstByte() const{ return m_partFirstByte; }
 
     /**
-     * <p>The integer value of the first byte of the layer part.</p>
+     * <p>The position of the first byte of the layer part witin the overall image
+     * layer.</p>
      */
     inline bool PartFirstByteHasBeenSet() const { return m_partFirstByteHasBeenSet; }
 
     /**
-     * <p>The integer value of the first byte of the layer part.</p>
+     * <p>The position of the first byte of the layer part witin the overall image
+     * layer.</p>
      */
     inline void SetPartFirstByte(long long value) { m_partFirstByteHasBeenSet = true; m_partFirstByte = value; }
 
     /**
-     * <p>The integer value of the first byte of the layer part.</p>
+     * <p>The position of the first byte of the layer part witin the overall image
+     * layer.</p>
      */
     inline UploadLayerPartRequest& WithPartFirstByte(long long value) { SetPartFirstByte(value); return *this;}
 
 
     /**
-     * <p>The integer value of the last byte of the layer part.</p>
+     * <p>The position of the last byte of the layer part within the overall image
+     * layer.</p>
      */
     inline long long GetPartLastByte() const{ return m_partLastByte; }
 
     /**
-     * <p>The integer value of the last byte of the layer part.</p>
+     * <p>The position of the last byte of the layer part within the overall image
+     * layer.</p>
      */
     inline bool PartLastByteHasBeenSet() const { return m_partLastByteHasBeenSet; }
 
     /**
-     * <p>The integer value of the last byte of the layer part.</p>
+     * <p>The position of the last byte of the layer part within the overall image
+     * layer.</p>
      */
     inline void SetPartLastByte(long long value) { m_partLastByteHasBeenSet = true; m_partLastByte = value; }
 
     /**
-     * <p>The integer value of the last byte of the layer part.</p>
+     * <p>The position of the last byte of the layer part within the overall image
+     * layer.</p>
      */
     inline UploadLayerPartRequest& WithPartLastByte(long long value) { SetPartLastByte(value); return *this;}
 

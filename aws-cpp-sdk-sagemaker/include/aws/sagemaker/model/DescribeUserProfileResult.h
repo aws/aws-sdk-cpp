@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -46,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain that contains the profile.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain that contains the profile.</p>
      */
     inline void SetDomainId(const Aws::String& value) { m_domainId = value; }
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain that contains the profile.</p>
      */
     inline void SetDomainId(Aws::String&& value) { m_domainId = std::move(value); }
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain that contains the profile.</p>
      */
     inline void SetDomainId(const char* value) { m_domainId.assign(value); }
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain that contains the profile.</p>
      */
     inline DescribeUserProfileResult& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain that contains the profile.</p>
      */
     inline DescribeUserProfileResult& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain that contains the profile.</p>
      */
     inline DescribeUserProfileResult& WithDomainId(const char* value) { SetDomainId(value); return *this;}
 
@@ -154,37 +144,44 @@ namespace Model
 
 
     /**
-     * <p>The homa Amazon Elastic File System (EFS) Uid.</p>
+     * <p>The ID of the user's profile in the Amazon Elastic File System (EFS)
+     * volume.</p>
      */
     inline const Aws::String& GetHomeEfsFileSystemUid() const{ return m_homeEfsFileSystemUid; }
 
     /**
-     * <p>The homa Amazon Elastic File System (EFS) Uid.</p>
+     * <p>The ID of the user's profile in the Amazon Elastic File System (EFS)
+     * volume.</p>
      */
     inline void SetHomeEfsFileSystemUid(const Aws::String& value) { m_homeEfsFileSystemUid = value; }
 
     /**
-     * <p>The homa Amazon Elastic File System (EFS) Uid.</p>
+     * <p>The ID of the user's profile in the Amazon Elastic File System (EFS)
+     * volume.</p>
      */
     inline void SetHomeEfsFileSystemUid(Aws::String&& value) { m_homeEfsFileSystemUid = std::move(value); }
 
     /**
-     * <p>The homa Amazon Elastic File System (EFS) Uid.</p>
+     * <p>The ID of the user's profile in the Amazon Elastic File System (EFS)
+     * volume.</p>
      */
     inline void SetHomeEfsFileSystemUid(const char* value) { m_homeEfsFileSystemUid.assign(value); }
 
     /**
-     * <p>The homa Amazon Elastic File System (EFS) Uid.</p>
+     * <p>The ID of the user's profile in the Amazon Elastic File System (EFS)
+     * volume.</p>
      */
     inline DescribeUserProfileResult& WithHomeEfsFileSystemUid(const Aws::String& value) { SetHomeEfsFileSystemUid(value); return *this;}
 
     /**
-     * <p>The homa Amazon Elastic File System (EFS) Uid.</p>
+     * <p>The ID of the user's profile in the Amazon Elastic File System (EFS)
+     * volume.</p>
      */
     inline DescribeUserProfileResult& WithHomeEfsFileSystemUid(Aws::String&& value) { SetHomeEfsFileSystemUid(std::move(value)); return *this;}
 
     /**
-     * <p>The homa Amazon Elastic File System (EFS) Uid.</p>
+     * <p>The ID of the user's profile in the Amazon Elastic File System (EFS)
+     * volume.</p>
      */
     inline DescribeUserProfileResult& WithHomeEfsFileSystemUid(const char* value) { SetHomeEfsFileSystemUid(value); return *this;}
 

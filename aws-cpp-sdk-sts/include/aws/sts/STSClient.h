@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sts/STS_EXPORTS.h>
@@ -84,14 +74,14 @@ namespace Model
         class GetFederationTokenRequest;
         class GetSessionTokenRequest;
 
-        typedef Aws::Utils::Outcome<AssumeRoleResult, Aws::Client::AWSError<STSErrors>> AssumeRoleOutcome;
-        typedef Aws::Utils::Outcome<AssumeRoleWithSAMLResult, Aws::Client::AWSError<STSErrors>> AssumeRoleWithSAMLOutcome;
-        typedef Aws::Utils::Outcome<AssumeRoleWithWebIdentityResult, Aws::Client::AWSError<STSErrors>> AssumeRoleWithWebIdentityOutcome;
-        typedef Aws::Utils::Outcome<DecodeAuthorizationMessageResult, Aws::Client::AWSError<STSErrors>> DecodeAuthorizationMessageOutcome;
-        typedef Aws::Utils::Outcome<GetAccessKeyInfoResult, Aws::Client::AWSError<STSErrors>> GetAccessKeyInfoOutcome;
-        typedef Aws::Utils::Outcome<GetCallerIdentityResult, Aws::Client::AWSError<STSErrors>> GetCallerIdentityOutcome;
-        typedef Aws::Utils::Outcome<GetFederationTokenResult, Aws::Client::AWSError<STSErrors>> GetFederationTokenOutcome;
-        typedef Aws::Utils::Outcome<GetSessionTokenResult, Aws::Client::AWSError<STSErrors>> GetSessionTokenOutcome;
+        typedef Aws::Utils::Outcome<AssumeRoleResult, STSError> AssumeRoleOutcome;
+        typedef Aws::Utils::Outcome<AssumeRoleWithSAMLResult, STSError> AssumeRoleWithSAMLOutcome;
+        typedef Aws::Utils::Outcome<AssumeRoleWithWebIdentityResult, STSError> AssumeRoleWithWebIdentityOutcome;
+        typedef Aws::Utils::Outcome<DecodeAuthorizationMessageResult, STSError> DecodeAuthorizationMessageOutcome;
+        typedef Aws::Utils::Outcome<GetAccessKeyInfoResult, STSError> GetAccessKeyInfoOutcome;
+        typedef Aws::Utils::Outcome<GetCallerIdentityResult, STSError> GetCallerIdentityOutcome;
+        typedef Aws::Utils::Outcome<GetFederationTokenResult, STSError> GetFederationTokenOutcome;
+        typedef Aws::Utils::Outcome<GetSessionTokenResult, STSError> GetSessionTokenOutcome;
 
         typedef std::future<AssumeRoleOutcome> AssumeRoleOutcomeCallable;
         typedef std::future<AssumeRoleWithSAMLOutcome> AssumeRoleWithSAMLOutcomeCallable;
@@ -115,81 +105,13 @@ namespace Model
     typedef std::function<void(const STSClient*, const Model::GetSessionTokenRequest&, const Model::GetSessionTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSessionTokenResponseReceivedHandler;
 
   /**
-   * <fullname>AWS Security Token Service</fullname> <p>The AWS Security Token
-   * Service (STS) is a web service that enables you to request temporary,
-   * limited-privilege credentials for AWS Identity and Access Management (IAM) users
-   * or for users that you authenticate (federated users). This guide provides
-   * descriptions of the STS API. For more detailed information about using this
-   * service, go to <a
+   * <fullname>AWS Security Token Service</fullname> <p>AWS Security Token Service
+   * (STS) enables you to request temporary, limited-privilege credentials for AWS
+   * Identity and Access Management (IAM) users or for users that you authenticate
+   * (federated users). This guide provides descriptions of the STS API. For more
+   * information about using this service, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html">Temporary
-   * Security Credentials</a>. </p> <p>For information about setting up signatures
-   * and authorization through the API, go to <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
-   * AWS API Requests</a> in the <i>AWS General Reference</i>. For general
-   * information about the Query API, go to <a
-   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-   * Query Requests</a> in <i>Using IAM</i>. For information about using security
-   * tokens with other AWS products, go to <a
-   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-   * Services That Work with IAM</a> in the <i>IAM User Guide</i>. </p> <p>If you're
-   * new to AWS and need additional technical information about a specific AWS
-   * product, you can find the product's technical documentation at <a
-   * href="http://aws.amazon.com/documentation/">http://aws.amazon.com/documentation/</a>.
-   * </p> <p> <b>Endpoints</b> </p> <p>By default, AWS Security Token Service (STS)
-   * is available as a global service, and all AWS STS requests go to a single
-   * endpoint at <code>https://sts.amazonaws.com</code>. Global requests map to the
-   * US East (N. Virginia) region. AWS recommends using Regional AWS STS endpoints
-   * instead of the global endpoint to reduce latency, build in redundancy, and
-   * increase session token validity. For more information, see <a
-   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Managing
-   * AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.</p> <p>Most AWS
-   * Regions are enabled for operations in all AWS services by default. Those Regions
-   * are automatically activated for use with AWS STS. Some Regions, such as Asia
-   * Pacific (Hong Kong), must be manually enabled. To learn more about enabling and
-   * disabling AWS Regions, see <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing
-   * AWS Regions</a> in the <i>AWS General Reference</i>. When you enable these AWS
-   * Regions, they are automatically activated for use with AWS STS. You cannot
-   * activate the STS endpoint for a Region that is disabled. Tokens that are valid
-   * in all AWS Regions are longer than tokens that are valid in Regions that are
-   * enabled by default. Changing this setting might affect existing systems where
-   * you temporarily store tokens. For more information, see <a
-   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html#sts-regions-manage-tokens">Managing
-   * Global Endpoint Session Tokens</a> in the <i>IAM User Guide</i>.</p> <p>After
-   * you activate a Region for use with AWS STS, you can direct AWS STS API calls to
-   * that Region. AWS STS recommends that you provide both the Region and endpoint
-   * when you make calls to a Regional endpoint. You can provide the Region alone for
-   * manually enabled Regions, such as Asia Pacific (Hong Kong). In this case, the
-   * calls are directed to the STS Regional endpoint. However, if you provide the
-   * Region alone for Regions enabled by default, the calls are directed to the
-   * global endpoint of <code>https://sts.amazonaws.com</code>.</p> <p>To view the
-   * list of AWS STS endpoints and whether they are active by default, see <a
-   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html#id_credentials_temp_enable-regions_writing_code">Writing
-   * Code to Use AWS STS Regions</a> in the <i>IAM User Guide</i>.</p> <p>
-   * <b>Recording API requests</b> </p> <p>STS supports AWS CloudTrail, which is a
-   * service that records AWS calls for your AWS account and delivers log files to an
-   * Amazon S3 bucket. By using information collected by CloudTrail, you can
-   * determine what requests were successfully made to STS, who made the request,
-   * when it was made, and so on.</p> <p>If you activate AWS STS endpoints in Regions
-   * other than the default global endpoint, then you must also turn on CloudTrail
-   * logging in those Regions. This is necessary to record any AWS STS API calls that
-   * are made in those Regions. For more information, see <a
-   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/aggregating_logs_regions_turn_on_ct.html">Turning
-   * On CloudTrail in Additional Regions</a> in the <i>AWS CloudTrail User
-   * Guide</i>.</p> <p>AWS Security Token Service (STS) is a global service with a
-   * single endpoint at <code>https://sts.amazonaws.com</code>. Calls to this
-   * endpoint are logged as calls to a global service. However, because this endpoint
-   * is physically located in the US East (N. Virginia) Region, your logs list
-   * <code>us-east-1</code> as the event Region. CloudTrail does not write these logs
-   * to the US East (Ohio) Region unless you choose to include global service logs in
-   * that Region. CloudTrail writes calls to all Regional endpoints to their
-   * respective Regions. For example, calls to sts.us-east-2.amazonaws.com are
-   * published to the US East (Ohio) Region and calls to
-   * sts.eu-central-1.amazonaws.com are published to the EU (Frankfurt) Region.</p>
-   * <p>To learn more about CloudTrail, including how to turn it on and find your log
-   * files, see the <a
-   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">AWS
-   * CloudTrail User Guide</a>.</p>
+   * Security Credentials</a>.</p>
    */
   class AWS_STS_API STSClient : public Aws::Client::AWSXMLClient
   {
@@ -217,8 +139,6 @@ namespace Model
 
         virtual ~STSClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "STS"; }
-
 
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
@@ -236,10 +156,10 @@ namespace Model
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
          * Temporary Security Credentials</a> and <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-         * the AWS STS API operations</a> in the <i>IAM User Guide</i>.</p> <important>
+         * the AWS STS API operations</a> in the <i>IAM User Guide</i>.</p> 
          * <p>You cannot use AWS account root user credentials to call
          * <code>AssumeRole</code>. You must use credentials for an IAM user or an IAM role
-         * to call <code>AssumeRole</code>.</p> </important> <p>For cross-account access,
+         * to call <code>AssumeRole</code>.</p>  <p>For cross-account access,
          * imagine that you own multiple accounts and need to access resources in each
          * account. You could create long-term credentials in each account to access those
          * resources. However, managing all those credentials and remembering which one can
@@ -343,10 +263,10 @@ namespace Model
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
          * Temporary Security Credentials</a> and <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-         * the AWS STS API operations</a> in the <i>IAM User Guide</i>.</p> <important>
+         * the AWS STS API operations</a> in the <i>IAM User Guide</i>.</p> 
          * <p>You cannot use AWS account root user credentials to call
          * <code>AssumeRole</code>. You must use credentials for an IAM user or an IAM role
-         * to call <code>AssumeRole</code>.</p> </important> <p>For cross-account access,
+         * to call <code>AssumeRole</code>.</p>  <p>For cross-account access,
          * imagine that you own multiple accounts and need to access resources in each
          * account. You could create long-term credentials in each account to access those
          * resources. However, managing all those credentials and remembering which one can
@@ -452,10 +372,10 @@ namespace Model
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
          * Temporary Security Credentials</a> and <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-         * the AWS STS API operations</a> in the <i>IAM User Guide</i>.</p> <important>
+         * the AWS STS API operations</a> in the <i>IAM User Guide</i>.</p> 
          * <p>You cannot use AWS account root user credentials to call
          * <code>AssumeRole</code>. You must use credentials for an IAM user or an IAM role
-         * to call <code>AssumeRole</code>.</p> </important> <p>For cross-account access,
+         * to call <code>AssumeRole</code>.</p>  <p>For cross-account access,
          * imagine that you own multiple accounts and need to access resources in each
          * account. You could create long-term credentials in each account to access those
          * resources. However, managing all those credentials and remembering which one can
@@ -605,14 +525,14 @@ namespace Model
          * <code>AssumeRoleWithSAML</code> does not require the use of AWS security
          * credentials. The identity of the caller is validated by using keys in the
          * metadata document that is uploaded for the SAML provider entity for your
-         * identity provider. </p> <important> <p>Calling <code>AssumeRoleWithSAML</code>
+         * identity provider. </p>  <p>Calling <code>AssumeRoleWithSAML</code>
          * can result in an entry in your AWS CloudTrail logs. The entry includes the value
          * in the <code>NameID</code> element of the SAML assertion. We recommend that you
          * use a <code>NameIDType</code> that is not associated with any personally
          * identifiable information (PII). For example, you could instead use the
          * persistent identifier
          * (<code>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</code>).</p>
-         * </important> <p> <b>Tags</b> </p> <p>(Optional) You can configure your IdP to
+         *  <p> <b>Tags</b> </p> <p>(Optional) You can configure your IdP to
          * pass attributes into your SAML assertion as session tags. Each session tag
          * consists of a key name and an associated value. For more information about
          * session tags, see <a
@@ -621,12 +541,12 @@ namespace Model
          * 50 session tags. The plain text session tag keys can’t exceed 128 characters and
          * the values can’t exceed 256 characters. For these and additional limits, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-         * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+         * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
          * conversion compresses the passed session policies and session tags into a packed
          * binary format that has a separate limit. Your request can fail for this limit
          * even if your plain text meets the other requirements. The
          * <code>PackedPolicySize</code> response element indicates by percentage how close
-         * the policies and tags for your request are to the upper size limit. </p> </note>
+         * the policies and tags for your request are to the upper size limit. </p> 
          * <p>You can pass a session tag with the same key as a tag that is attached to the
          * role. When you do, session tags override the role's tags with the same key.</p>
          * <p>An administrator must grant you the permissions necessary to pass session
@@ -715,14 +635,14 @@ namespace Model
          * <code>AssumeRoleWithSAML</code> does not require the use of AWS security
          * credentials. The identity of the caller is validated by using keys in the
          * metadata document that is uploaded for the SAML provider entity for your
-         * identity provider. </p> <important> <p>Calling <code>AssumeRoleWithSAML</code>
+         * identity provider. </p>  <p>Calling <code>AssumeRoleWithSAML</code>
          * can result in an entry in your AWS CloudTrail logs. The entry includes the value
          * in the <code>NameID</code> element of the SAML assertion. We recommend that you
          * use a <code>NameIDType</code> that is not associated with any personally
          * identifiable information (PII). For example, you could instead use the
          * persistent identifier
          * (<code>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</code>).</p>
-         * </important> <p> <b>Tags</b> </p> <p>(Optional) You can configure your IdP to
+         *  <p> <b>Tags</b> </p> <p>(Optional) You can configure your IdP to
          * pass attributes into your SAML assertion as session tags. Each session tag
          * consists of a key name and an associated value. For more information about
          * session tags, see <a
@@ -731,12 +651,12 @@ namespace Model
          * 50 session tags. The plain text session tag keys can’t exceed 128 characters and
          * the values can’t exceed 256 characters. For these and additional limits, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-         * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+         * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
          * conversion compresses the passed session policies and session tags into a packed
          * binary format that has a separate limit. Your request can fail for this limit
          * even if your plain text meets the other requirements. The
          * <code>PackedPolicySize</code> response element indicates by percentage how close
-         * the policies and tags for your request are to the upper size limit. </p> </note>
+         * the policies and tags for your request are to the upper size limit. </p> 
          * <p>You can pass a session tag with the same key as a tag that is attached to the
          * role. When you do, session tags override the role's tags with the same key.</p>
          * <p>An administrator must grant you the permissions necessary to pass session
@@ -827,14 +747,14 @@ namespace Model
          * <code>AssumeRoleWithSAML</code> does not require the use of AWS security
          * credentials. The identity of the caller is validated by using keys in the
          * metadata document that is uploaded for the SAML provider entity for your
-         * identity provider. </p> <important> <p>Calling <code>AssumeRoleWithSAML</code>
+         * identity provider. </p>  <p>Calling <code>AssumeRoleWithSAML</code>
          * can result in an entry in your AWS CloudTrail logs. The entry includes the value
          * in the <code>NameID</code> element of the SAML assertion. We recommend that you
          * use a <code>NameIDType</code> that is not associated with any personally
          * identifiable information (PII). For example, you could instead use the
          * persistent identifier
          * (<code>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</code>).</p>
-         * </important> <p> <b>Tags</b> </p> <p>(Optional) You can configure your IdP to
+         *  <p> <b>Tags</b> </p> <p>(Optional) You can configure your IdP to
          * pass attributes into your SAML assertion as session tags. Each session tag
          * consists of a key name and an associated value. For more information about
          * session tags, see <a
@@ -843,12 +763,12 @@ namespace Model
          * 50 session tags. The plain text session tag keys can’t exceed 128 characters and
          * the values can’t exceed 256 characters. For these and additional limits, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-         * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+         * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
          * conversion compresses the passed session policies and session tags into a packed
          * binary format that has a separate limit. Your request can fail for this limit
          * even if your plain text meets the other requirements. The
          * <code>PackedPolicySize</code> response element indicates by percentage how close
-         * the policies and tags for your request are to the upper size limit. </p> </note>
+         * the policies and tags for your request are to the upper size limit. </p> 
          * <p>You can pass a session tag with the same key as a tag that is attached to the
          * role. When you do, session tags override the role's tags with the same key.</p>
          * <p>An administrator must grant you the permissions necessary to pass session
@@ -889,7 +809,7 @@ namespace Model
          * <p>Returns a set of temporary security credentials for users who have been
          * authenticated in a mobile or web application with a web identity provider.
          * Example providers include Amazon Cognito, Login with Amazon, Facebook, Google,
-         * or any OpenID Connect-compatible identity provider.</p> <note> <p>For mobile
+         * or any OpenID Connect-compatible identity provider.</p>  <p>For mobile
          * applications, we recommend that you use Amazon Cognito. You can use Amazon
          * Cognito with the <a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS
          * Developer Guide</a> and the <a href="http://aws.amazon.com/sdkforandroid/">AWS
@@ -899,7 +819,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840">Amazon
          * Cognito Overview</a> in <i>AWS SDK for Android Developer Guide</i> and <a
          * href="https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664">Amazon
-         * Cognito Overview</a> in the <i>AWS SDK for iOS Developer Guide</i>.</p> </note>
+         * Cognito Overview</a> in the <i>AWS SDK for iOS Developer Guide</i>.</p> 
          * <p>Calling <code>AssumeRoleWithWebIdentity</code> does not require the use of
          * AWS security credentials. Therefore, you can distribute an application (for
          * example, on mobile devices) that requests temporary security credentials without
@@ -957,12 +877,12 @@ namespace Model
          * 50 session tags. The plain text session tag keys can’t exceed 128 characters and
          * the values can’t exceed 256 characters. For these and additional limits, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-         * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+         * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
          * conversion compresses the passed session policies and session tags into a packed
          * binary format that has a separate limit. Your request can fail for this limit
          * even if your plain text meets the other requirements. The
          * <code>PackedPolicySize</code> response element indicates by percentage how close
-         * the policies and tags for your request are to the upper size limit. </p> </note>
+         * the policies and tags for your request are to the upper size limit. </p> 
          * <p>You can pass a session tag with the same key as a tag that is attached to the
          * role. When you do, the session tag overrides the role tag with the same key.</p>
          * <p>An administrator must grant you the permissions necessary to pass session
@@ -979,7 +899,7 @@ namespace Model
          * supported identity provider and create a role that the application can assume.
          * The role that your application assumes must trust the identity provider that is
          * associated with the identity token. In other words, the identity provider must
-         * be specified in the role's trust policy. </p> <important> <p>Calling
+         * be specified in the role's trust policy. </p>  <p>Calling
          * <code>AssumeRoleWithWebIdentity</code> can result in an entry in your AWS
          * CloudTrail logs. The entry includes the <a
          * href="http://openid.net/specs/openid-connect-core-1_0.html#Claims">Subject</a>
@@ -987,7 +907,7 @@ namespace Model
          * personally identifiable information (PII) in this field. For example, you could
          * instead use a GUID or a pairwise identifier, as <a
          * href="http://openid.net/specs/openid-connect-core-1_0.html#SubjectIDTypes">suggested
-         * in the OIDC specification</a>.</p> </important> <p>For more information about
+         * in the OIDC specification</a>.</p>  <p>For more information about
          * how to use web identity federation and the
          * <code>AssumeRoleWithWebIdentity</code> API, see the following resources: </p>
          * <ul> <li> <p> <a
@@ -995,7 +915,7 @@ namespace Model
          * Web Identity Federation API Operations for Mobile Apps</a> and <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
          * Through a Web-based Identity Provider</a>. </p> </li> <li> <p> <a
-         * href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
+         * href="https://aws.amazon.com/blogs/aws/the-aws-web-identity-federation-playground/">
          * Web Identity Federation Playground</a>. Walk through the process of
          * authenticating through Login with Amazon, Facebook, or Google, getting temporary
          * security credentials, and then using those credentials to make a request to AWS.
@@ -1019,7 +939,7 @@ namespace Model
          * <p>Returns a set of temporary security credentials for users who have been
          * authenticated in a mobile or web application with a web identity provider.
          * Example providers include Amazon Cognito, Login with Amazon, Facebook, Google,
-         * or any OpenID Connect-compatible identity provider.</p> <note> <p>For mobile
+         * or any OpenID Connect-compatible identity provider.</p>  <p>For mobile
          * applications, we recommend that you use Amazon Cognito. You can use Amazon
          * Cognito with the <a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS
          * Developer Guide</a> and the <a href="http://aws.amazon.com/sdkforandroid/">AWS
@@ -1029,7 +949,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840">Amazon
          * Cognito Overview</a> in <i>AWS SDK for Android Developer Guide</i> and <a
          * href="https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664">Amazon
-         * Cognito Overview</a> in the <i>AWS SDK for iOS Developer Guide</i>.</p> </note>
+         * Cognito Overview</a> in the <i>AWS SDK for iOS Developer Guide</i>.</p> 
          * <p>Calling <code>AssumeRoleWithWebIdentity</code> does not require the use of
          * AWS security credentials. Therefore, you can distribute an application (for
          * example, on mobile devices) that requests temporary security credentials without
@@ -1087,12 +1007,12 @@ namespace Model
          * 50 session tags. The plain text session tag keys can’t exceed 128 characters and
          * the values can’t exceed 256 characters. For these and additional limits, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-         * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+         * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
          * conversion compresses the passed session policies and session tags into a packed
          * binary format that has a separate limit. Your request can fail for this limit
          * even if your plain text meets the other requirements. The
          * <code>PackedPolicySize</code> response element indicates by percentage how close
-         * the policies and tags for your request are to the upper size limit. </p> </note>
+         * the policies and tags for your request are to the upper size limit. </p> 
          * <p>You can pass a session tag with the same key as a tag that is attached to the
          * role. When you do, the session tag overrides the role tag with the same key.</p>
          * <p>An administrator must grant you the permissions necessary to pass session
@@ -1109,7 +1029,7 @@ namespace Model
          * supported identity provider and create a role that the application can assume.
          * The role that your application assumes must trust the identity provider that is
          * associated with the identity token. In other words, the identity provider must
-         * be specified in the role's trust policy. </p> <important> <p>Calling
+         * be specified in the role's trust policy. </p>  <p>Calling
          * <code>AssumeRoleWithWebIdentity</code> can result in an entry in your AWS
          * CloudTrail logs. The entry includes the <a
          * href="http://openid.net/specs/openid-connect-core-1_0.html#Claims">Subject</a>
@@ -1117,7 +1037,7 @@ namespace Model
          * personally identifiable information (PII) in this field. For example, you could
          * instead use a GUID or a pairwise identifier, as <a
          * href="http://openid.net/specs/openid-connect-core-1_0.html#SubjectIDTypes">suggested
-         * in the OIDC specification</a>.</p> </important> <p>For more information about
+         * in the OIDC specification</a>.</p>  <p>For more information about
          * how to use web identity federation and the
          * <code>AssumeRoleWithWebIdentity</code> API, see the following resources: </p>
          * <ul> <li> <p> <a
@@ -1125,7 +1045,7 @@ namespace Model
          * Web Identity Federation API Operations for Mobile Apps</a> and <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
          * Through a Web-based Identity Provider</a>. </p> </li> <li> <p> <a
-         * href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
+         * href="https://aws.amazon.com/blogs/aws/the-aws-web-identity-federation-playground/">
          * Web Identity Federation Playground</a>. Walk through the process of
          * authenticating through Login with Amazon, Facebook, or Google, getting temporary
          * security credentials, and then using those credentials to make a request to AWS.
@@ -1151,7 +1071,7 @@ namespace Model
          * <p>Returns a set of temporary security credentials for users who have been
          * authenticated in a mobile or web application with a web identity provider.
          * Example providers include Amazon Cognito, Login with Amazon, Facebook, Google,
-         * or any OpenID Connect-compatible identity provider.</p> <note> <p>For mobile
+         * or any OpenID Connect-compatible identity provider.</p>  <p>For mobile
          * applications, we recommend that you use Amazon Cognito. You can use Amazon
          * Cognito with the <a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS
          * Developer Guide</a> and the <a href="http://aws.amazon.com/sdkforandroid/">AWS
@@ -1161,7 +1081,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840">Amazon
          * Cognito Overview</a> in <i>AWS SDK for Android Developer Guide</i> and <a
          * href="https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664">Amazon
-         * Cognito Overview</a> in the <i>AWS SDK for iOS Developer Guide</i>.</p> </note>
+         * Cognito Overview</a> in the <i>AWS SDK for iOS Developer Guide</i>.</p> 
          * <p>Calling <code>AssumeRoleWithWebIdentity</code> does not require the use of
          * AWS security credentials. Therefore, you can distribute an application (for
          * example, on mobile devices) that requests temporary security credentials without
@@ -1219,12 +1139,12 @@ namespace Model
          * 50 session tags. The plain text session tag keys can’t exceed 128 characters and
          * the values can’t exceed 256 characters. For these and additional limits, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-         * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+         * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
          * conversion compresses the passed session policies and session tags into a packed
          * binary format that has a separate limit. Your request can fail for this limit
          * even if your plain text meets the other requirements. The
          * <code>PackedPolicySize</code> response element indicates by percentage how close
-         * the policies and tags for your request are to the upper size limit. </p> </note>
+         * the policies and tags for your request are to the upper size limit. </p> 
          * <p>You can pass a session tag with the same key as a tag that is attached to the
          * role. When you do, the session tag overrides the role tag with the same key.</p>
          * <p>An administrator must grant you the permissions necessary to pass session
@@ -1241,7 +1161,7 @@ namespace Model
          * supported identity provider and create a role that the application can assume.
          * The role that your application assumes must trust the identity provider that is
          * associated with the identity token. In other words, the identity provider must
-         * be specified in the role's trust policy. </p> <important> <p>Calling
+         * be specified in the role's trust policy. </p>  <p>Calling
          * <code>AssumeRoleWithWebIdentity</code> can result in an entry in your AWS
          * CloudTrail logs. The entry includes the <a
          * href="http://openid.net/specs/openid-connect-core-1_0.html#Claims">Subject</a>
@@ -1249,7 +1169,7 @@ namespace Model
          * personally identifiable information (PII) in this field. For example, you could
          * instead use a GUID or a pairwise identifier, as <a
          * href="http://openid.net/specs/openid-connect-core-1_0.html#SubjectIDTypes">suggested
-         * in the OIDC specification</a>.</p> </important> <p>For more information about
+         * in the OIDC specification</a>.</p>  <p>For more information about
          * how to use web identity federation and the
          * <code>AssumeRoleWithWebIdentity</code> API, see the following resources: </p>
          * <ul> <li> <p> <a
@@ -1257,7 +1177,7 @@ namespace Model
          * Web Identity Federation API Operations for Mobile Apps</a> and <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
          * Through a Web-based Identity Provider</a>. </p> </li> <li> <p> <a
-         * href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
+         * href="https://aws.amazon.com/blogs/aws/the-aws-web-identity-federation-playground/">
          * Web Identity Federation Playground</a>. Walk through the process of
          * authenticating through Login with Amazon, Facebook, or Google, getting temporary
          * security credentials, and then using those credentials to make a request to AWS.
@@ -1286,9 +1206,9 @@ namespace Model
          * requested, the request returns a <code>Client.UnauthorizedOperation</code>
          * response (an HTTP 403 response). Some AWS operations additionally return an
          * encoded message that can provide details about this authorization failure. </p>
-         * <note> <p>Only certain AWS operations return an encoded authorization message.
+         *  <p>Only certain AWS operations return an encoded authorization message.
          * The documentation for an individual operation indicates whether that operation
-         * returns an encoded message in addition to returning an HTTP code.</p> </note>
+         * returns an encoded message in addition to returning an HTTP code.</p> 
          * <p>The message is encoded because the details of the authorization status can
          * constitute privileged information that the user who requested the operation
          * should not see. To decode an authorization status message, a user must be
@@ -1316,9 +1236,9 @@ namespace Model
          * requested, the request returns a <code>Client.UnauthorizedOperation</code>
          * response (an HTTP 403 response). Some AWS operations additionally return an
          * encoded message that can provide details about this authorization failure. </p>
-         * <note> <p>Only certain AWS operations return an encoded authorization message.
+         *  <p>Only certain AWS operations return an encoded authorization message.
          * The documentation for an individual operation indicates whether that operation
-         * returns an encoded message in addition to returning an HTTP code.</p> </note>
+         * returns an encoded message in addition to returning an HTTP code.</p> 
          * <p>The message is encoded because the details of the authorization status can
          * constitute privileged information that the user who requested the operation
          * should not see. To decode an authorization status message, a user must be
@@ -1348,9 +1268,9 @@ namespace Model
          * requested, the request returns a <code>Client.UnauthorizedOperation</code>
          * response (an HTTP 403 response). Some AWS operations additionally return an
          * encoded message that can provide details about this authorization failure. </p>
-         * <note> <p>Only certain AWS operations return an encoded authorization message.
+         *  <p>Only certain AWS operations return an encoded authorization message.
          * The documentation for an individual operation indicates whether that operation
-         * returns an encoded message in addition to returning an HTTP code.</p> </note>
+         * returns an encoded message in addition to returning an HTTP code.</p> 
          * <p>The message is encoded because the details of the authorization status can
          * constitute privileged information that the user who requested the operation
          * should not see. To decode an authorization status message, a user must be
@@ -1469,7 +1389,7 @@ namespace Model
 
         /**
          * <p>Returns details about the IAM user or role whose credentials are used to call
-         * the operation.</p> <note> <p>No permissions are required to perform this
+         * the operation.</p>  <p>No permissions are required to perform this
          * operation. If an administrator adds a policy to your IAM user or role that
          * explicitly denies access to the <code>sts:GetCallerIdentity</code> action, you
          * can still perform this operation. Permissions are not required because the same
@@ -1477,7 +1397,7 @@ namespace Model
          * example response, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_access-denied-delete-mfa">I
          * Am Not Authorized to Perform: iam:DeleteVirtualMFADevice</a> in the <i>IAM User
-         * Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity">AWS
          * API Reference</a></p>
          */
@@ -1485,7 +1405,7 @@ namespace Model
 
         /**
          * <p>Returns details about the IAM user or role whose credentials are used to call
-         * the operation.</p> <note> <p>No permissions are required to perform this
+         * the operation.</p>  <p>No permissions are required to perform this
          * operation. If an administrator adds a policy to your IAM user or role that
          * explicitly denies access to the <code>sts:GetCallerIdentity</code> action, you
          * can still perform this operation. Permissions are not required because the same
@@ -1493,7 +1413,7 @@ namespace Model
          * example response, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_access-denied-delete-mfa">I
          * Am Not Authorized to Perform: iam:DeleteVirtualMFADevice</a> in the <i>IAM User
-         * Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity">AWS
          * API Reference</a></p>
          *
@@ -1503,7 +1423,7 @@ namespace Model
 
         /**
          * <p>Returns details about the IAM user or role whose credentials are used to call
-         * the operation.</p> <note> <p>No permissions are required to perform this
+         * the operation.</p>  <p>No permissions are required to perform this
          * operation. If an administrator adds a policy to your IAM user or role that
          * explicitly denies access to the <code>sts:GetCallerIdentity</code> action, you
          * can still perform this operation. Permissions are not required because the same
@@ -1511,7 +1431,7 @@ namespace Model
          * example response, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_access-denied-delete-mfa">I
          * Am Not Authorized to Perform: iam:DeleteVirtualMFADevice</a> in the <i>IAM User
-         * Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity">AWS
          * API Reference</a></p>
          *
@@ -1532,7 +1452,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
          * Temporary Security Credentials</a> and <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-         * the AWS STS API operations</a> in the <i>IAM User Guide</i>.</p> <note> <p>You
+         * the AWS STS API operations</a> in the <i>IAM User Guide</i>.</p>  <p>You
          * can create a mobile-based or browser-based app that can authenticate users using
          * a web identity provider like Login with Amazon, Facebook, Google, or an OpenID
          * Connect-compatible identity provider. In this case, we recommend that you use <a
@@ -1540,7 +1460,7 @@ namespace Model
          * <code>AssumeRoleWithWebIdentity</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
          * Through a Web-based Identity Provider</a> in the <i>IAM User Guide</i>.</p>
-         * </note> <p>You can also call <code>GetFederationToken</code> using the security
+         *  <p>You can also call <code>GetFederationToken</code> using the security
          * credentials of an AWS account root user, but we do not recommend it. Instead, we
          * recommend that you create an IAM user for the purpose of the proxy application.
          * Then attach a policy to the IAM user that limits federated users to only the
@@ -1615,7 +1535,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
          * Temporary Security Credentials</a> and <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-         * the AWS STS API operations</a> in the <i>IAM User Guide</i>.</p> <note> <p>You
+         * the AWS STS API operations</a> in the <i>IAM User Guide</i>.</p>  <p>You
          * can create a mobile-based or browser-based app that can authenticate users using
          * a web identity provider like Login with Amazon, Facebook, Google, or an OpenID
          * Connect-compatible identity provider. In this case, we recommend that you use <a
@@ -1623,7 +1543,7 @@ namespace Model
          * <code>AssumeRoleWithWebIdentity</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
          * Through a Web-based Identity Provider</a> in the <i>IAM User Guide</i>.</p>
-         * </note> <p>You can also call <code>GetFederationToken</code> using the security
+         *  <p>You can also call <code>GetFederationToken</code> using the security
          * credentials of an AWS account root user, but we do not recommend it. Instead, we
          * recommend that you create an IAM user for the purpose of the proxy application.
          * Then attach a policy to the IAM user that limits federated users to only the
@@ -1700,7 +1620,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
          * Temporary Security Credentials</a> and <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-         * the AWS STS API operations</a> in the <i>IAM User Guide</i>.</p> <note> <p>You
+         * the AWS STS API operations</a> in the <i>IAM User Guide</i>.</p>  <p>You
          * can create a mobile-based or browser-based app that can authenticate users using
          * a web identity provider like Login with Amazon, Facebook, Google, or an OpenID
          * Connect-compatible identity provider. In this case, we recommend that you use <a
@@ -1708,7 +1628,7 @@ namespace Model
          * <code>AssumeRoleWithWebIdentity</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
          * Through a Web-based Identity Provider</a> in the <i>IAM User Guide</i>.</p>
-         * </note> <p>You can also call <code>GetFederationToken</code> using the security
+         *  <p>You can also call <code>GetFederationToken</code> using the security
          * credentials of an AWS account root user, but we do not recommend it. Instead, we
          * recommend that you create an IAM user for the purpose of the proxy application.
          * Then attach a policy to the IAM user that limits federated users to only the
@@ -1801,12 +1721,12 @@ namespace Model
          * with the following exceptions:</p> <ul> <li> <p>You cannot call any IAM API
          * operations unless MFA authentication information is included in the request.</p>
          * </li> <li> <p>You cannot call any STS API <i>except</i> <code>AssumeRole</code>
-         * or <code>GetCallerIdentity</code>.</p> </li> </ul> <note> <p>We recommend that
+         * or <code>GetCallerIdentity</code>.</p> </li> </ul>  <p>We recommend that
          * you do not call <code>GetSessionToken</code> with AWS account root user
          * credentials. Instead, follow our <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users">best
          * practices</a> by creating one or more IAM users, giving them the necessary
-         * permissions, and using IAM users for everyday interaction with AWS. </p> </note>
+         * permissions, and using IAM users for everyday interaction with AWS. </p> 
          * <p>The credentials that are returned by <code>GetSessionToken</code> are based
          * on permissions associated with the user whose credentials were used to call the
          * operation. If <code>GetSessionToken</code> is called using AWS account root user
@@ -1852,12 +1772,12 @@ namespace Model
          * with the following exceptions:</p> <ul> <li> <p>You cannot call any IAM API
          * operations unless MFA authentication information is included in the request.</p>
          * </li> <li> <p>You cannot call any STS API <i>except</i> <code>AssumeRole</code>
-         * or <code>GetCallerIdentity</code>.</p> </li> </ul> <note> <p>We recommend that
+         * or <code>GetCallerIdentity</code>.</p> </li> </ul>  <p>We recommend that
          * you do not call <code>GetSessionToken</code> with AWS account root user
          * credentials. Instead, follow our <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users">best
          * practices</a> by creating one or more IAM users, giving them the necessary
-         * permissions, and using IAM users for everyday interaction with AWS. </p> </note>
+         * permissions, and using IAM users for everyday interaction with AWS. </p> 
          * <p>The credentials that are returned by <code>GetSessionToken</code> are based
          * on permissions associated with the user whose credentials were used to call the
          * operation. If <code>GetSessionToken</code> is called using AWS account root user
@@ -1905,12 +1825,12 @@ namespace Model
          * with the following exceptions:</p> <ul> <li> <p>You cannot call any IAM API
          * operations unless MFA authentication information is included in the request.</p>
          * </li> <li> <p>You cannot call any STS API <i>except</i> <code>AssumeRole</code>
-         * or <code>GetCallerIdentity</code>.</p> </li> </ul> <note> <p>We recommend that
+         * or <code>GetCallerIdentity</code>.</p> </li> </ul>  <p>We recommend that
          * you do not call <code>GetSessionToken</code> with AWS account root user
          * credentials. Instead, follow our <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users">best
          * practices</a> by creating one or more IAM users, giving them the necessary
-         * permissions, and using IAM users for everyday interaction with AWS. </p> </note>
+         * permissions, and using IAM users for everyday interaction with AWS. </p> 
          * <p>The credentials that are returned by <code>GetSessionToken</code> are based
          * on permissions associated with the user whose credentials were used to call the
          * operation. If <code>GetSessionToken</code> is called using AWS account root user
@@ -1929,7 +1849,7 @@ namespace Model
          */
         virtual void GetSessionTokenAsync(const Model::GetSessionTokenRequest& request, const GetSessionTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-      
+
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);

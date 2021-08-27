@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/macie/Macie_EXPORTS.h>
@@ -142,37 +132,37 @@ namespace Model
 
     /**
      * <p>The classification type that you want to update for the resource associated
-     * with Amazon Macie. </p>
+     * with Amazon Macie Classic. </p>
      */
     inline const ClassificationTypeUpdate& GetClassificationTypeUpdate() const{ return m_classificationTypeUpdate; }
 
     /**
      * <p>The classification type that you want to update for the resource associated
-     * with Amazon Macie. </p>
+     * with Amazon Macie Classic. </p>
      */
     inline bool ClassificationTypeUpdateHasBeenSet() const { return m_classificationTypeUpdateHasBeenSet; }
 
     /**
      * <p>The classification type that you want to update for the resource associated
-     * with Amazon Macie. </p>
+     * with Amazon Macie Classic. </p>
      */
     inline void SetClassificationTypeUpdate(const ClassificationTypeUpdate& value) { m_classificationTypeUpdateHasBeenSet = true; m_classificationTypeUpdate = value; }
 
     /**
      * <p>The classification type that you want to update for the resource associated
-     * with Amazon Macie. </p>
+     * with Amazon Macie Classic. </p>
      */
     inline void SetClassificationTypeUpdate(ClassificationTypeUpdate&& value) { m_classificationTypeUpdateHasBeenSet = true; m_classificationTypeUpdate = std::move(value); }
 
     /**
      * <p>The classification type that you want to update for the resource associated
-     * with Amazon Macie. </p>
+     * with Amazon Macie Classic. </p>
      */
     inline S3ResourceClassificationUpdate& WithClassificationTypeUpdate(const ClassificationTypeUpdate& value) { SetClassificationTypeUpdate(value); return *this;}
 
     /**
      * <p>The classification type that you want to update for the resource associated
-     * with Amazon Macie. </p>
+     * with Amazon Macie Classic. </p>
      */
     inline S3ResourceClassificationUpdate& WithClassificationTypeUpdate(ClassificationTypeUpdate&& value) { SetClassificationTypeUpdate(std::move(value)); return *this;}
 

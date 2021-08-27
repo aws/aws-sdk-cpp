@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
@@ -102,8 +92,8 @@ namespace Model
      * <dt>.es</dt> <dd> <ul> <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>Specify
      * the applicable value:</p> <ul> <li> <p> <b>For contacts inside Spain:</b> Enter
      * your passport ID.</p> </li> <li> <p> <b>For contacts outside of Spain:</b> Enter
-     * the VAT identification number for the company.</p> <note> <p>For .es domains,
-     * the value of <code>ContactType</code> must be <code>PERSON</code>.</p> </note>
+     * the VAT identification number for the company.</p>  <p>For .es domains,
+     * the value of <code>ContactType</code> must be <code>PERSON</code>.</p> 
      * </li> </ul> </li> <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid
      * values include the following:</p> <ul> <li> <p> <code>DNI_AND_NIF</code> (For
      * Spanish contacts)</p> </li> <li> <p> <code>NIE</code> (For foreigners with legal
@@ -252,8 +242,8 @@ namespace Model
      * <dt>.es</dt> <dd> <ul> <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>Specify
      * the applicable value:</p> <ul> <li> <p> <b>For contacts inside Spain:</b> Enter
      * your passport ID.</p> </li> <li> <p> <b>For contacts outside of Spain:</b> Enter
-     * the VAT identification number for the company.</p> <note> <p>For .es domains,
-     * the value of <code>ContactType</code> must be <code>PERSON</code>.</p> </note>
+     * the VAT identification number for the company.</p>  <p>For .es domains,
+     * the value of <code>ContactType</code> must be <code>PERSON</code>.</p> 
      * </li> </ul> </li> <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid
      * values include the following:</p> <ul> <li> <p> <code>DNI_AND_NIF</code> (For
      * Spanish contacts)</p> </li> <li> <p> <code>NIE</code> (For foreigners with legal
@@ -402,8 +392,8 @@ namespace Model
      * <dt>.es</dt> <dd> <ul> <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>Specify
      * the applicable value:</p> <ul> <li> <p> <b>For contacts inside Spain:</b> Enter
      * your passport ID.</p> </li> <li> <p> <b>For contacts outside of Spain:</b> Enter
-     * the VAT identification number for the company.</p> <note> <p>For .es domains,
-     * the value of <code>ContactType</code> must be <code>PERSON</code>.</p> </note>
+     * the VAT identification number for the company.</p>  <p>For .es domains,
+     * the value of <code>ContactType</code> must be <code>PERSON</code>.</p> 
      * </li> </ul> </li> <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid
      * values include the following:</p> <ul> <li> <p> <code>DNI_AND_NIF</code> (For
      * Spanish contacts)</p> </li> <li> <p> <code>NIE</code> (For foreigners with legal
@@ -552,8 +542,8 @@ namespace Model
      * <dt>.es</dt> <dd> <ul> <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>Specify
      * the applicable value:</p> <ul> <li> <p> <b>For contacts inside Spain:</b> Enter
      * your passport ID.</p> </li> <li> <p> <b>For contacts outside of Spain:</b> Enter
-     * the VAT identification number for the company.</p> <note> <p>For .es domains,
-     * the value of <code>ContactType</code> must be <code>PERSON</code>.</p> </note>
+     * the VAT identification number for the company.</p>  <p>For .es domains,
+     * the value of <code>ContactType</code> must be <code>PERSON</code>.</p> 
      * </li> </ul> </li> <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid
      * values include the following:</p> <ul> <li> <p> <code>DNI_AND_NIF</code> (For
      * Spanish contacts)</p> </li> <li> <p> <code>NIE</code> (For foreigners with legal
@@ -702,8 +692,8 @@ namespace Model
      * <dt>.es</dt> <dd> <ul> <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>Specify
      * the applicable value:</p> <ul> <li> <p> <b>For contacts inside Spain:</b> Enter
      * your passport ID.</p> </li> <li> <p> <b>For contacts outside of Spain:</b> Enter
-     * the VAT identification number for the company.</p> <note> <p>For .es domains,
-     * the value of <code>ContactType</code> must be <code>PERSON</code>.</p> </note>
+     * the VAT identification number for the company.</p>  <p>For .es domains,
+     * the value of <code>ContactType</code> must be <code>PERSON</code>.</p> 
      * </li> </ul> </li> <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid
      * values include the following:</p> <ul> <li> <p> <code>DNI_AND_NIF</code> (For
      * Spanish contacts)</p> </li> <li> <p> <code>NIE</code> (For foreigners with legal
@@ -852,8 +842,8 @@ namespace Model
      * <dt>.es</dt> <dd> <ul> <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>Specify
      * the applicable value:</p> <ul> <li> <p> <b>For contacts inside Spain:</b> Enter
      * your passport ID.</p> </li> <li> <p> <b>For contacts outside of Spain:</b> Enter
-     * the VAT identification number for the company.</p> <note> <p>For .es domains,
-     * the value of <code>ContactType</code> must be <code>PERSON</code>.</p> </note>
+     * the VAT identification number for the company.</p>  <p>For .es domains,
+     * the value of <code>ContactType</code> must be <code>PERSON</code>.</p> 
      * </li> </ul> </li> <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid
      * values include the following:</p> <ul> <li> <p> <code>DNI_AND_NIF</code> (For
      * Spanish contacts)</p> </li> <li> <p> <code>NIE</code> (For foreigners with legal

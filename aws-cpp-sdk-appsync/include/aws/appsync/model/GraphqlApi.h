@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appsync/AppSync_EXPORTS.h>
@@ -506,6 +496,55 @@ namespace Model
      */
     inline GraphqlApi& WithXrayEnabled(bool value) { SetXrayEnabled(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the AWS Web Application Firewall (WAF) ACL associated with this
+     * <code>GraphqlApi</code>, if one exists.</p>
+     */
+    inline const Aws::String& GetWafWebAclArn() const{ return m_wafWebAclArn; }
+
+    /**
+     * <p>The ARN of the AWS Web Application Firewall (WAF) ACL associated with this
+     * <code>GraphqlApi</code>, if one exists.</p>
+     */
+    inline bool WafWebAclArnHasBeenSet() const { return m_wafWebAclArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the AWS Web Application Firewall (WAF) ACL associated with this
+     * <code>GraphqlApi</code>, if one exists.</p>
+     */
+    inline void SetWafWebAclArn(const Aws::String& value) { m_wafWebAclArnHasBeenSet = true; m_wafWebAclArn = value; }
+
+    /**
+     * <p>The ARN of the AWS Web Application Firewall (WAF) ACL associated with this
+     * <code>GraphqlApi</code>, if one exists.</p>
+     */
+    inline void SetWafWebAclArn(Aws::String&& value) { m_wafWebAclArnHasBeenSet = true; m_wafWebAclArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the AWS Web Application Firewall (WAF) ACL associated with this
+     * <code>GraphqlApi</code>, if one exists.</p>
+     */
+    inline void SetWafWebAclArn(const char* value) { m_wafWebAclArnHasBeenSet = true; m_wafWebAclArn.assign(value); }
+
+    /**
+     * <p>The ARN of the AWS Web Application Firewall (WAF) ACL associated with this
+     * <code>GraphqlApi</code>, if one exists.</p>
+     */
+    inline GraphqlApi& WithWafWebAclArn(const Aws::String& value) { SetWafWebAclArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the AWS Web Application Firewall (WAF) ACL associated with this
+     * <code>GraphqlApi</code>, if one exists.</p>
+     */
+    inline GraphqlApi& WithWafWebAclArn(Aws::String&& value) { SetWafWebAclArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the AWS Web Application Firewall (WAF) ACL associated with this
+     * <code>GraphqlApi</code>, if one exists.</p>
+     */
+    inline GraphqlApi& WithWafWebAclArn(const char* value) { SetWafWebAclArn(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -540,6 +579,9 @@ namespace Model
 
     bool m_xrayEnabled;
     bool m_xrayEnabledHasBeenSet;
+
+    Aws::String m_wafWebAclArn;
+    bool m_wafWebAclArnHasBeenSet;
   };
 
 } // namespace Model

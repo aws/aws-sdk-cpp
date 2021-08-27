@@ -1,25 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/codedeploy/CodeDeployErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::CodeDeploy;
 using namespace Aws::Utils;
+using namespace Aws::CodeDeploy;
 
 namespace Aws
 {
@@ -55,6 +45,7 @@ static const int DEPLOYMENT_TARGET_LIST_SIZE_EXCEEDED_HASH = HashingUtils::HashS
 static const int INVALID_TRAFFIC_ROUTING_CONFIGURATION_HASH = HashingUtils::HashString("InvalidTrafficRoutingConfigurationException");
 static const int INVALID_GIT_HUB_ACCOUNT_TOKEN_HASH = HashingUtils::HashString("InvalidGitHubAccountTokenException");
 static const int INVALID_ON_PREMISES_TAG_COMBINATION_HASH = HashingUtils::HashString("InvalidOnPremisesTagCombinationException");
+static const int INVALID_EXTERNAL_ID_HASH = HashingUtils::HashString("InvalidExternalIdException");
 static const int DEPLOYMENT_CONFIG_ALREADY_EXISTS_HASH = HashingUtils::HashString("DeploymentConfigAlreadyExistsException");
 static const int INVALID_ROLE_HASH = HashingUtils::HashString("InvalidRoleException");
 static const int INVALID_BLUE_GREEN_DEPLOYMENT_CONFIGURATION_HASH = HashingUtils::HashString("InvalidBlueGreenDeploymentConfigurationException");
@@ -124,6 +115,7 @@ static const int INVALID_BUCKET_NAME_FILTER_HASH = HashingUtils::HashString("Inv
 static const int INVALID_ALARM_CONFIG_HASH = HashingUtils::HashString("InvalidAlarmConfigException");
 static const int IAM_ARN_REQUIRED_HASH = HashingUtils::HashString("IamArnRequiredException");
 static const int APPLICATION_NAME_REQUIRED_HASH = HashingUtils::HashString("ApplicationNameRequiredException");
+static const int INSTANCE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("InstanceDoesNotExistException");
 static const int APPLICATION_ALREADY_EXISTS_HASH = HashingUtils::HashString("ApplicationAlreadyExistsException");
 static const int INVALID_E_C2_TAG_HASH = HashingUtils::HashString("InvalidEC2TagException");
 static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnException");
@@ -245,6 +237,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_ON_PREMISES_TAG_COMBINATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_ON_PREMISES_TAG_COMBINATION), false);
+  }
+  else if (hashCode == INVALID_EXTERNAL_ID_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_EXTERNAL_ID), false);
   }
   else if (hashCode == DEPLOYMENT_CONFIG_ALREADY_EXISTS_HASH)
   {
@@ -521,6 +517,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == APPLICATION_NAME_REQUIRED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::APPLICATION_NAME_REQUIRED), false);
+  }
+  else if (hashCode == INSTANCE_DOES_NOT_EXIST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INSTANCE_DOES_NOT_EXIST), false);
   }
   else if (hashCode == APPLICATION_ALREADY_EXISTS_HASH)
   {

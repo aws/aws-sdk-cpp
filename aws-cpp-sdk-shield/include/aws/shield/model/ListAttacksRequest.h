@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/shield/Shield_EXPORTS.h>
@@ -267,46 +257,46 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of <a>AttackSummary</a> objects to be returned. If this is
-     * left blank, the first 20 results will be returned.</p> <p>This is a maximum
-     * value; it is possible that AWS WAF will return the results in smaller batches.
-     * That is, the number of <a>AttackSummary</a> objects returned could be less than
-     * <code>MaxResults</code>, even if there are still more <a>AttackSummary</a>
-     * objects yet to return. If there are more <a>AttackSummary</a> objects to return,
-     * AWS WAF will always also return a <code>NextToken</code>.</p>
+     * <p>The maximum number of <a>AttackSummary</a> objects to return. If you leave
+     * this blank, Shield Advanced returns the first 20 results.</p> <p>This is a
+     * maximum value. Shield Advanced might return the results in smaller batches. That
+     * is, the number of objects returned could be less than <code>MaxResults</code>,
+     * even if there are still more objects yet to return. If there are more objects to
+     * return, Shield Advanced returns a value in <code>NextToken</code> that you can
+     * use in your next request, to get the next batch of objects.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of <a>AttackSummary</a> objects to be returned. If this is
-     * left blank, the first 20 results will be returned.</p> <p>This is a maximum
-     * value; it is possible that AWS WAF will return the results in smaller batches.
-     * That is, the number of <a>AttackSummary</a> objects returned could be less than
-     * <code>MaxResults</code>, even if there are still more <a>AttackSummary</a>
-     * objects yet to return. If there are more <a>AttackSummary</a> objects to return,
-     * AWS WAF will always also return a <code>NextToken</code>.</p>
+     * <p>The maximum number of <a>AttackSummary</a> objects to return. If you leave
+     * this blank, Shield Advanced returns the first 20 results.</p> <p>This is a
+     * maximum value. Shield Advanced might return the results in smaller batches. That
+     * is, the number of objects returned could be less than <code>MaxResults</code>,
+     * even if there are still more objects yet to return. If there are more objects to
+     * return, Shield Advanced returns a value in <code>NextToken</code> that you can
+     * use in your next request, to get the next batch of objects.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of <a>AttackSummary</a> objects to be returned. If this is
-     * left blank, the first 20 results will be returned.</p> <p>This is a maximum
-     * value; it is possible that AWS WAF will return the results in smaller batches.
-     * That is, the number of <a>AttackSummary</a> objects returned could be less than
-     * <code>MaxResults</code>, even if there are still more <a>AttackSummary</a>
-     * objects yet to return. If there are more <a>AttackSummary</a> objects to return,
-     * AWS WAF will always also return a <code>NextToken</code>.</p>
+     * <p>The maximum number of <a>AttackSummary</a> objects to return. If you leave
+     * this blank, Shield Advanced returns the first 20 results.</p> <p>This is a
+     * maximum value. Shield Advanced might return the results in smaller batches. That
+     * is, the number of objects returned could be less than <code>MaxResults</code>,
+     * even if there are still more objects yet to return. If there are more objects to
+     * return, Shield Advanced returns a value in <code>NextToken</code> that you can
+     * use in your next request, to get the next batch of objects.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of <a>AttackSummary</a> objects to be returned. If this is
-     * left blank, the first 20 results will be returned.</p> <p>This is a maximum
-     * value; it is possible that AWS WAF will return the results in smaller batches.
-     * That is, the number of <a>AttackSummary</a> objects returned could be less than
-     * <code>MaxResults</code>, even if there are still more <a>AttackSummary</a>
-     * objects yet to return. If there are more <a>AttackSummary</a> objects to return,
-     * AWS WAF will always also return a <code>NextToken</code>.</p>
+     * <p>The maximum number of <a>AttackSummary</a> objects to return. If you leave
+     * this blank, Shield Advanced returns the first 20 results.</p> <p>This is a
+     * maximum value. Shield Advanced might return the results in smaller batches. That
+     * is, the number of objects returned could be less than <code>MaxResults</code>,
+     * even if there are still more objects yet to return. If there are more objects to
+     * return, Shield Advanced returns a value in <code>NextToken</code> that you can
+     * use in your next request, to get the next batch of objects.</p>
      */
     inline ListAttacksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

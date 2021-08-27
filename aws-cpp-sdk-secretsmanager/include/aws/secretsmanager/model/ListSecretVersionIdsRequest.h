@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
@@ -47,7 +37,7 @@ namespace Model
     /**
      * <p>The identifier for the secret containing the versions you want to list. You
      * can specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
+     * secret.</p>  <p>If you specify an ARN, we generally recommend that you
      * specify a complete ARN. You can specify a partial ARN too—for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
@@ -56,15 +46,20 @@ namespace Model
      * adds the hyphen and six characters to the ARN) and you try to use that as a
      * partial ARN, then those characters cause Secrets Manager to assume that you’re
      * specifying a complete ARN. This confusion can cause unexpected results. To avoid
-     * this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * this situation, we recommend that you don’t create secret names ending with a
+     * hyphen followed by six characters.</p> <p>If you specify an incomplete ARN
+     * without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix
+     * added by Secrets Manager, you receive either a <i>ResourceNotFoundException</i>
+     * or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
+     * 
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
 
     /**
      * <p>The identifier for the secret containing the versions you want to list. You
      * can specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
+     * secret.</p>  <p>If you specify an ARN, we generally recommend that you
      * specify a complete ARN. You can specify a partial ARN too—for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
@@ -73,15 +68,20 @@ namespace Model
      * adds the hyphen and six characters to the ARN) and you try to use that as a
      * partial ARN, then those characters cause Secrets Manager to assume that you’re
      * specifying a complete ARN. This confusion can cause unexpected results. To avoid
-     * this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * this situation, we recommend that you don’t create secret names ending with a
+     * hyphen followed by six characters.</p> <p>If you specify an incomplete ARN
+     * without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix
+     * added by Secrets Manager, you receive either a <i>ResourceNotFoundException</i>
+     * or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
+     * 
      */
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
 
     /**
      * <p>The identifier for the secret containing the versions you want to list. You
      * can specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
+     * secret.</p>  <p>If you specify an ARN, we generally recommend that you
      * specify a complete ARN. You can specify a partial ARN too—for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
@@ -90,15 +90,20 @@ namespace Model
      * adds the hyphen and six characters to the ARN) and you try to use that as a
      * partial ARN, then those characters cause Secrets Manager to assume that you’re
      * specifying a complete ARN. This confusion can cause unexpected results. To avoid
-     * this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * this situation, we recommend that you don’t create secret names ending with a
+     * hyphen followed by six characters.</p> <p>If you specify an incomplete ARN
+     * without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix
+     * added by Secrets Manager, you receive either a <i>ResourceNotFoundException</i>
+     * or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
+     * 
      */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
 
     /**
      * <p>The identifier for the secret containing the versions you want to list. You
      * can specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
+     * secret.</p>  <p>If you specify an ARN, we generally recommend that you
      * specify a complete ARN. You can specify a partial ARN too—for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
@@ -107,15 +112,20 @@ namespace Model
      * adds the hyphen and six characters to the ARN) and you try to use that as a
      * partial ARN, then those characters cause Secrets Manager to assume that you’re
      * specifying a complete ARN. This confusion can cause unexpected results. To avoid
-     * this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * this situation, we recommend that you don’t create secret names ending with a
+     * hyphen followed by six characters.</p> <p>If you specify an incomplete ARN
+     * without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix
+     * added by Secrets Manager, you receive either a <i>ResourceNotFoundException</i>
+     * or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
+     * 
      */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
 
     /**
      * <p>The identifier for the secret containing the versions you want to list. You
      * can specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
+     * secret.</p>  <p>If you specify an ARN, we generally recommend that you
      * specify a complete ARN. You can specify a partial ARN too—for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
@@ -124,15 +134,20 @@ namespace Model
      * adds the hyphen and six characters to the ARN) and you try to use that as a
      * partial ARN, then those characters cause Secrets Manager to assume that you’re
      * specifying a complete ARN. This confusion can cause unexpected results. To avoid
-     * this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * this situation, we recommend that you don’t create secret names ending with a
+     * hyphen followed by six characters.</p> <p>If you specify an incomplete ARN
+     * without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix
+     * added by Secrets Manager, you receive either a <i>ResourceNotFoundException</i>
+     * or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
+     * 
      */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
 
     /**
      * <p>The identifier for the secret containing the versions you want to list. You
      * can specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
+     * secret.</p>  <p>If you specify an ARN, we generally recommend that you
      * specify a complete ARN. You can specify a partial ARN too—for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
@@ -141,15 +156,20 @@ namespace Model
      * adds the hyphen and six characters to the ARN) and you try to use that as a
      * partial ARN, then those characters cause Secrets Manager to assume that you’re
      * specifying a complete ARN. This confusion can cause unexpected results. To avoid
-     * this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * this situation, we recommend that you don’t create secret names ending with a
+     * hyphen followed by six characters.</p> <p>If you specify an incomplete ARN
+     * without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix
+     * added by Secrets Manager, you receive either a <i>ResourceNotFoundException</i>
+     * or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
+     * 
      */
     inline ListSecretVersionIdsRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
 
     /**
      * <p>The identifier for the secret containing the versions you want to list. You
      * can specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
+     * secret.</p>  <p>If you specify an ARN, we generally recommend that you
      * specify a complete ARN. You can specify a partial ARN too—for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
@@ -158,15 +178,20 @@ namespace Model
      * adds the hyphen and six characters to the ARN) and you try to use that as a
      * partial ARN, then those characters cause Secrets Manager to assume that you’re
      * specifying a complete ARN. This confusion can cause unexpected results. To avoid
-     * this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * this situation, we recommend that you don’t create secret names ending with a
+     * hyphen followed by six characters.</p> <p>If you specify an incomplete ARN
+     * without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix
+     * added by Secrets Manager, you receive either a <i>ResourceNotFoundException</i>
+     * or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
+     * 
      */
     inline ListSecretVersionIdsRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the secret containing the versions you want to list. You
      * can specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
+     * secret.</p>  <p>If you specify an ARN, we generally recommend that you
      * specify a complete ARN. You can specify a partial ARN too—for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
@@ -175,134 +200,139 @@ namespace Model
      * adds the hyphen and six characters to the ARN) and you try to use that as a
      * partial ARN, then those characters cause Secrets Manager to assume that you’re
      * specifying a complete ARN. This confusion can cause unexpected results. To avoid
-     * this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * this situation, we recommend that you don’t create secret names ending with a
+     * hyphen followed by six characters.</p> <p>If you specify an incomplete ARN
+     * without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix
+     * added by Secrets Manager, you receive either a <i>ResourceNotFoundException</i>
+     * or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
+     * 
      */
     inline ListSecretVersionIdsRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
 
 
     /**
-     * <p>(Optional) Limits the number of results that you want to include in the
-     * response. If you don't include this parameter, it defaults to a value that's
-     * specific to the operation. If additional items exist beyond the maximum you
-     * specify, the <code>NextToken</code> response element is present and has a value
-     * (isn't null). Include that value as the <code>NextToken</code> request parameter
-     * in the next call to the operation to get the next part of the results. Note that
-     * Secrets Manager might return fewer results than the maximum even when there are
-     * more results available. You should check <code>NextToken</code> after every
-     * operation to ensure that you receive all of the results.</p>
+     * <p>(Optional) Limits the number of results you want to include in the response.
+     * If you don't include this parameter, it defaults to a value that's specific to
+     * the operation. If additional items exist beyond the maximum you specify, the
+     * <code>NextToken</code> response element is present and has a value (isn't null).
+     * Include that value as the <code>NextToken</code> request parameter in the next
+     * call to the operation to get the next part of the results. Note that Secrets
+     * Manager might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation
+     * to ensure that you receive all of the results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>(Optional) Limits the number of results that you want to include in the
-     * response. If you don't include this parameter, it defaults to a value that's
-     * specific to the operation. If additional items exist beyond the maximum you
-     * specify, the <code>NextToken</code> response element is present and has a value
-     * (isn't null). Include that value as the <code>NextToken</code> request parameter
-     * in the next call to the operation to get the next part of the results. Note that
-     * Secrets Manager might return fewer results than the maximum even when there are
-     * more results available. You should check <code>NextToken</code> after every
-     * operation to ensure that you receive all of the results.</p>
+     * <p>(Optional) Limits the number of results you want to include in the response.
+     * If you don't include this parameter, it defaults to a value that's specific to
+     * the operation. If additional items exist beyond the maximum you specify, the
+     * <code>NextToken</code> response element is present and has a value (isn't null).
+     * Include that value as the <code>NextToken</code> request parameter in the next
+     * call to the operation to get the next part of the results. Note that Secrets
+     * Manager might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation
+     * to ensure that you receive all of the results.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>(Optional) Limits the number of results that you want to include in the
-     * response. If you don't include this parameter, it defaults to a value that's
-     * specific to the operation. If additional items exist beyond the maximum you
-     * specify, the <code>NextToken</code> response element is present and has a value
-     * (isn't null). Include that value as the <code>NextToken</code> request parameter
-     * in the next call to the operation to get the next part of the results. Note that
-     * Secrets Manager might return fewer results than the maximum even when there are
-     * more results available. You should check <code>NextToken</code> after every
-     * operation to ensure that you receive all of the results.</p>
+     * <p>(Optional) Limits the number of results you want to include in the response.
+     * If you don't include this parameter, it defaults to a value that's specific to
+     * the operation. If additional items exist beyond the maximum you specify, the
+     * <code>NextToken</code> response element is present and has a value (isn't null).
+     * Include that value as the <code>NextToken</code> request parameter in the next
+     * call to the operation to get the next part of the results. Note that Secrets
+     * Manager might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation
+     * to ensure that you receive all of the results.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>(Optional) Limits the number of results that you want to include in the
-     * response. If you don't include this parameter, it defaults to a value that's
-     * specific to the operation. If additional items exist beyond the maximum you
-     * specify, the <code>NextToken</code> response element is present and has a value
-     * (isn't null). Include that value as the <code>NextToken</code> request parameter
-     * in the next call to the operation to get the next part of the results. Note that
-     * Secrets Manager might return fewer results than the maximum even when there are
-     * more results available. You should check <code>NextToken</code> after every
-     * operation to ensure that you receive all of the results.</p>
+     * <p>(Optional) Limits the number of results you want to include in the response.
+     * If you don't include this parameter, it defaults to a value that's specific to
+     * the operation. If additional items exist beyond the maximum you specify, the
+     * <code>NextToken</code> response element is present and has a value (isn't null).
+     * Include that value as the <code>NextToken</code> request parameter in the next
+     * call to the operation to get the next part of the results. Note that Secrets
+     * Manager might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation
+     * to ensure that you receive all of the results.</p>
      */
     inline ListSecretVersionIdsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
      * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from.</p>
+     * <code>NextToken</code> response in a previous request indicating there's more
+     * output available. In a subsequent call, set it to the value of the previous call
+     * <code>NextToken</code> response to indicate where the output should continue
+     * from.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from.</p>
+     * <code>NextToken</code> response in a previous request indicating there's more
+     * output available. In a subsequent call, set it to the value of the previous call
+     * <code>NextToken</code> response to indicate where the output should continue
+     * from.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from.</p>
+     * <code>NextToken</code> response in a previous request indicating there's more
+     * output available. In a subsequent call, set it to the value of the previous call
+     * <code>NextToken</code> response to indicate where the output should continue
+     * from.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from.</p>
+     * <code>NextToken</code> response in a previous request indicating there's more
+     * output available. In a subsequent call, set it to the value of the previous call
+     * <code>NextToken</code> response to indicate where the output should continue
+     * from.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from.</p>
+     * <code>NextToken</code> response in a previous request indicating there's more
+     * output available. In a subsequent call, set it to the value of the previous call
+     * <code>NextToken</code> response to indicate where the output should continue
+     * from.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from.</p>
+     * <code>NextToken</code> response in a previous request indicating there's more
+     * output available. In a subsequent call, set it to the value of the previous call
+     * <code>NextToken</code> response to indicate where the output should continue
+     * from.</p>
      */
     inline ListSecretVersionIdsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from.</p>
+     * <code>NextToken</code> response in a previous request indicating there's more
+     * output available. In a subsequent call, set it to the value of the previous call
+     * <code>NextToken</code> response to indicate where the output should continue
+     * from.</p>
      */
     inline ListSecretVersionIdsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from.</p>
+     * <code>NextToken</code> response in a previous request indicating there's more
+     * output available. In a subsequent call, set it to the value of the previous call
+     * <code>NextToken</code> response to indicate where the output should continue
+     * from.</p>
      */
     inline ListSecretVersionIdsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

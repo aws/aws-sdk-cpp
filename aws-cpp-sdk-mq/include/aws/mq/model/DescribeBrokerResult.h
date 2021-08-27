@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
+#include <aws/mq/model/AuthenticationStrategy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mq/model/BrokerState.h>
@@ -23,6 +14,7 @@
 #include <aws/mq/model/DeploymentMode.h>
 #include <aws/mq/model/EncryptionOptions.h>
 #include <aws/mq/model/EngineType.h>
+#include <aws/mq/model/LdapServerMetadataOutput.h>
 #include <aws/mq/model/LogsSummary.h>
 #include <aws/mq/model/WeeklyStartTime.h>
 #include <aws/mq/model/BrokerStorageType.h>
@@ -53,6 +45,32 @@ namespace Model
     DescribeBrokerResult();
     DescribeBrokerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeBrokerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline const AuthenticationStrategy& GetAuthenticationStrategy() const{ return m_authenticationStrategy; }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline void SetAuthenticationStrategy(const AuthenticationStrategy& value) { m_authenticationStrategy = value; }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline void SetAuthenticationStrategy(AuthenticationStrategy&& value) { m_authenticationStrategy = std::move(value); }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline DescribeBrokerResult& WithAuthenticationStrategy(const AuthenticationStrategy& value) { SetAuthenticationStrategy(value); return *this;}
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline DescribeBrokerResult& WithAuthenticationStrategy(AuthenticationStrategy&& value) { SetAuthenticationStrategy(std::move(value)); return *this;}
 
 
     /**
@@ -373,32 +391,32 @@ namespace Model
 
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline const EngineType& GetEngineType() const{ return m_engineType; }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline void SetEngineType(const EngineType& value) { m_engineType = value; }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline void SetEngineType(EngineType&& value) { m_engineType = std::move(value); }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline DescribeBrokerResult& WithEngineType(const EngineType& value) { SetEngineType(value); return *this;}
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
-     * ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports
+     * ACTIVEMQ and RABBITMQ.
      */
     inline DescribeBrokerResult& WithEngineType(EngineType&& value) { SetEngineType(std::move(value)); return *this;}
 
@@ -483,6 +501,37 @@ namespace Model
 
 
     /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline const LdapServerMetadataOutput& GetLdapServerMetadata() const{ return m_ldapServerMetadata; }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline void SetLdapServerMetadata(const LdapServerMetadataOutput& value) { m_ldapServerMetadata = value; }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline void SetLdapServerMetadata(LdapServerMetadataOutput&& value) { m_ldapServerMetadata = std::move(value); }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline DescribeBrokerResult& WithLdapServerMetadata(const LdapServerMetadataOutput& value) { SetLdapServerMetadata(value); return *this;}
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline DescribeBrokerResult& WithLdapServerMetadata(LdapServerMetadataOutput&& value) { SetLdapServerMetadata(std::move(value)); return *this;}
+
+
+    /**
      * The list of information about logs currently enabled and pending to be deployed
      * for the specified broker.
      */
@@ -537,6 +586,32 @@ namespace Model
      * The parameters that determine the WeeklyStartTime.
      */
     inline DescribeBrokerResult& WithMaintenanceWindowStartTime(WeeklyStartTime&& value) { SetMaintenanceWindowStartTime(std::move(value)); return *this;}
+
+
+    /**
+     * The authentication strategy that will be applied when the broker is rebooted.
+     */
+    inline const AuthenticationStrategy& GetPendingAuthenticationStrategy() const{ return m_pendingAuthenticationStrategy; }
+
+    /**
+     * The authentication strategy that will be applied when the broker is rebooted.
+     */
+    inline void SetPendingAuthenticationStrategy(const AuthenticationStrategy& value) { m_pendingAuthenticationStrategy = value; }
+
+    /**
+     * The authentication strategy that will be applied when the broker is rebooted.
+     */
+    inline void SetPendingAuthenticationStrategy(AuthenticationStrategy&& value) { m_pendingAuthenticationStrategy = std::move(value); }
+
+    /**
+     * The authentication strategy that will be applied when the broker is rebooted.
+     */
+    inline DescribeBrokerResult& WithPendingAuthenticationStrategy(const AuthenticationStrategy& value) { SetPendingAuthenticationStrategy(value); return *this;}
+
+    /**
+     * The authentication strategy that will be applied when the broker is rebooted.
+     */
+    inline DescribeBrokerResult& WithPendingAuthenticationStrategy(AuthenticationStrategy&& value) { SetPendingAuthenticationStrategy(std::move(value)); return *this;}
 
 
     /**
@@ -637,6 +712,37 @@ namespace Model
      * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
      */
     inline DescribeBrokerResult& WithPendingHostInstanceType(const char* value) { SetPendingHostInstanceType(value); return *this;}
+
+
+    /**
+     * The metadata of the LDAP server that will be used to authenticate and authorize
+     * connections to the broker once it is rebooted.
+     */
+    inline const LdapServerMetadataOutput& GetPendingLdapServerMetadata() const{ return m_pendingLdapServerMetadata; }
+
+    /**
+     * The metadata of the LDAP server that will be used to authenticate and authorize
+     * connections to the broker once it is rebooted.
+     */
+    inline void SetPendingLdapServerMetadata(const LdapServerMetadataOutput& value) { m_pendingLdapServerMetadata = value; }
+
+    /**
+     * The metadata of the LDAP server that will be used to authenticate and authorize
+     * connections to the broker once it is rebooted.
+     */
+    inline void SetPendingLdapServerMetadata(LdapServerMetadataOutput&& value) { m_pendingLdapServerMetadata = std::move(value); }
+
+    /**
+     * The metadata of the LDAP server that will be used to authenticate and authorize
+     * connections to the broker once it is rebooted.
+     */
+    inline DescribeBrokerResult& WithPendingLdapServerMetadata(const LdapServerMetadataOutput& value) { SetPendingLdapServerMetadata(value); return *this;}
+
+    /**
+     * The metadata of the LDAP server that will be used to authenticate and authorize
+     * connections to the broker once it is rebooted.
+     */
+    inline DescribeBrokerResult& WithPendingLdapServerMetadata(LdapServerMetadataOutput&& value) { SetPendingLdapServerMetadata(std::move(value)); return *this;}
 
 
     /**
@@ -775,66 +881,82 @@ namespace Model
 
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIds = value; }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIds = std::move(value); }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline DescribeBrokerResult& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline DescribeBrokerResult& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline DescribeBrokerResult& AddSubnetIds(const Aws::String& value) { m_subnetIds.push_back(value); return *this; }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline DescribeBrokerResult& AddSubnetIds(Aws::String&& value) { m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the
-     * broker can use from different Availability Zones. A SINGLE_INSTANCE deployment
-     * requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use
+     * from different Availability Zones. A SINGLE_INSTANCE deployment requires one
+     * subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment
+     * (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no
+     * subnet requirements when deployed with public accessibility, deployment without
+     * public accessibility requires at least one subnet.
      */
     inline DescribeBrokerResult& AddSubnetIds(const char* value) { m_subnetIds.push_back(value); return *this; }
 
@@ -901,41 +1023,43 @@ namespace Model
 
 
     /**
-     * The list of all ActiveMQ usernames for the specified broker.
+     * The list of all broker usernames for the specified broker.
      */
     inline const Aws::Vector<UserSummary>& GetUsers() const{ return m_users; }
 
     /**
-     * The list of all ActiveMQ usernames for the specified broker.
+     * The list of all broker usernames for the specified broker.
      */
     inline void SetUsers(const Aws::Vector<UserSummary>& value) { m_users = value; }
 
     /**
-     * The list of all ActiveMQ usernames for the specified broker.
+     * The list of all broker usernames for the specified broker.
      */
     inline void SetUsers(Aws::Vector<UserSummary>&& value) { m_users = std::move(value); }
 
     /**
-     * The list of all ActiveMQ usernames for the specified broker.
+     * The list of all broker usernames for the specified broker.
      */
     inline DescribeBrokerResult& WithUsers(const Aws::Vector<UserSummary>& value) { SetUsers(value); return *this;}
 
     /**
-     * The list of all ActiveMQ usernames for the specified broker.
+     * The list of all broker usernames for the specified broker.
      */
     inline DescribeBrokerResult& WithUsers(Aws::Vector<UserSummary>&& value) { SetUsers(std::move(value)); return *this;}
 
     /**
-     * The list of all ActiveMQ usernames for the specified broker.
+     * The list of all broker usernames for the specified broker.
      */
     inline DescribeBrokerResult& AddUsers(const UserSummary& value) { m_users.push_back(value); return *this; }
 
     /**
-     * The list of all ActiveMQ usernames for the specified broker.
+     * The list of all broker usernames for the specified broker.
      */
     inline DescribeBrokerResult& AddUsers(UserSummary&& value) { m_users.push_back(std::move(value)); return *this; }
 
   private:
+
+    AuthenticationStrategy m_authenticationStrategy;
 
     bool m_autoMinorVersionUpgrade;
 
@@ -963,13 +1087,19 @@ namespace Model
 
     Aws::String m_hostInstanceType;
 
+    LdapServerMetadataOutput m_ldapServerMetadata;
+
     LogsSummary m_logs;
 
     WeeklyStartTime m_maintenanceWindowStartTime;
 
+    AuthenticationStrategy m_pendingAuthenticationStrategy;
+
     Aws::String m_pendingEngineVersion;
 
     Aws::String m_pendingHostInstanceType;
+
+    LdapServerMetadataOutput m_pendingLdapServerMetadata;
 
     Aws::Vector<Aws::String> m_pendingSecurityGroups;
 

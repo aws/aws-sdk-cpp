@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -223,43 +213,64 @@ namespace Model
 
     /**
      * <p>The current status of the endpoint. One of: <code>creating</code>,
-     * <code>available</code>, <code>deleting</code>, <code>modifying</code>.</p>
+     * <code>available</code>, <code>deleting</code>, <code>inactive</code>,
+     * <code>modifying</code>. The <code>inactive</code> state applies to an endpoint
+     * that can't be used for a certain kind of cluster, such as a <code>writer</code>
+     * endpoint for a read-only secondary cluster in a global database.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
      * <p>The current status of the endpoint. One of: <code>creating</code>,
-     * <code>available</code>, <code>deleting</code>, <code>modifying</code>.</p>
+     * <code>available</code>, <code>deleting</code>, <code>inactive</code>,
+     * <code>modifying</code>. The <code>inactive</code> state applies to an endpoint
+     * that can't be used for a certain kind of cluster, such as a <code>writer</code>
+     * endpoint for a read-only secondary cluster in a global database.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_status = value; }
 
     /**
      * <p>The current status of the endpoint. One of: <code>creating</code>,
-     * <code>available</code>, <code>deleting</code>, <code>modifying</code>.</p>
+     * <code>available</code>, <code>deleting</code>, <code>inactive</code>,
+     * <code>modifying</code>. The <code>inactive</code> state applies to an endpoint
+     * that can't be used for a certain kind of cluster, such as a <code>writer</code>
+     * endpoint for a read-only secondary cluster in a global database.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
 
     /**
      * <p>The current status of the endpoint. One of: <code>creating</code>,
-     * <code>available</code>, <code>deleting</code>, <code>modifying</code>.</p>
+     * <code>available</code>, <code>deleting</code>, <code>inactive</code>,
+     * <code>modifying</code>. The <code>inactive</code> state applies to an endpoint
+     * that can't be used for a certain kind of cluster, such as a <code>writer</code>
+     * endpoint for a read-only secondary cluster in a global database.</p>
      */
     inline void SetStatus(const char* value) { m_status.assign(value); }
 
     /**
      * <p>The current status of the endpoint. One of: <code>creating</code>,
-     * <code>available</code>, <code>deleting</code>, <code>modifying</code>.</p>
+     * <code>available</code>, <code>deleting</code>, <code>inactive</code>,
+     * <code>modifying</code>. The <code>inactive</code> state applies to an endpoint
+     * that can't be used for a certain kind of cluster, such as a <code>writer</code>
+     * endpoint for a read-only secondary cluster in a global database.</p>
      */
     inline CreateDBClusterEndpointResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The current status of the endpoint. One of: <code>creating</code>,
-     * <code>available</code>, <code>deleting</code>, <code>modifying</code>.</p>
+     * <code>available</code>, <code>deleting</code>, <code>inactive</code>,
+     * <code>modifying</code>. The <code>inactive</code> state applies to an endpoint
+     * that can't be used for a certain kind of cluster, such as a <code>writer</code>
+     * endpoint for a read-only secondary cluster in a global database.</p>
      */
     inline CreateDBClusterEndpointResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The current status of the endpoint. One of: <code>creating</code>,
-     * <code>available</code>, <code>deleting</code>, <code>modifying</code>.</p>
+     * <code>available</code>, <code>deleting</code>, <code>inactive</code>,
+     * <code>modifying</code>. The <code>inactive</code> state applies to an endpoint
+     * that can't be used for a certain kind of cluster, such as a <code>writer</code>
+     * endpoint for a read-only secondary cluster in a global database.</p>
      */
     inline CreateDBClusterEndpointResult& WithStatus(const char* value) { SetStatus(value); return *this;}
 

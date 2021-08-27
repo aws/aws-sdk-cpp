@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -88,7 +78,7 @@ namespace Model
 
 
     /**
-     * <p>The token to advance to the next page of resutls from your request.</p> <p>A
+     * <p>The token to advance to the next page of results from your request.</p> <p>A
      * next page token is not returned if there are no more results to display.</p>
      * <p>To get the next page of results, perform another <code>GetBlueprints</code>
      * request and specify the next page token using the <code>pageToken</code>
@@ -97,7 +87,7 @@ namespace Model
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
-     * <p>The token to advance to the next page of resutls from your request.</p> <p>A
+     * <p>The token to advance to the next page of results from your request.</p> <p>A
      * next page token is not returned if there are no more results to display.</p>
      * <p>To get the next page of results, perform another <code>GetBlueprints</code>
      * request and specify the next page token using the <code>pageToken</code>
@@ -106,7 +96,7 @@ namespace Model
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
 
     /**
-     * <p>The token to advance to the next page of resutls from your request.</p> <p>A
+     * <p>The token to advance to the next page of results from your request.</p> <p>A
      * next page token is not returned if there are no more results to display.</p>
      * <p>To get the next page of results, perform another <code>GetBlueprints</code>
      * request and specify the next page token using the <code>pageToken</code>
@@ -115,7 +105,7 @@ namespace Model
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
-     * <p>The token to advance to the next page of resutls from your request.</p> <p>A
+     * <p>The token to advance to the next page of results from your request.</p> <p>A
      * next page token is not returned if there are no more results to display.</p>
      * <p>To get the next page of results, perform another <code>GetBlueprints</code>
      * request and specify the next page token using the <code>pageToken</code>
@@ -124,7 +114,7 @@ namespace Model
     inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
 
     /**
-     * <p>The token to advance to the next page of resutls from your request.</p> <p>A
+     * <p>The token to advance to the next page of results from your request.</p> <p>A
      * next page token is not returned if there are no more results to display.</p>
      * <p>To get the next page of results, perform another <code>GetBlueprints</code>
      * request and specify the next page token using the <code>pageToken</code>
@@ -133,7 +123,7 @@ namespace Model
     inline GetBlueprintsResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p>The token to advance to the next page of resutls from your request.</p> <p>A
+     * <p>The token to advance to the next page of results from your request.</p> <p>A
      * next page token is not returned if there are no more results to display.</p>
      * <p>To get the next page of results, perform another <code>GetBlueprints</code>
      * request and specify the next page token using the <code>pageToken</code>
@@ -142,7 +132,7 @@ namespace Model
     inline GetBlueprintsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to advance to the next page of resutls from your request.</p> <p>A
+     * <p>The token to advance to the next page of results from your request.</p> <p>A
      * next page token is not returned if there are no more results to display.</p>
      * <p>To get the next page of results, perform another <code>GetBlueprints</code>
      * request and specify the next page token using the <code>pageToken</code>

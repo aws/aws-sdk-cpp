@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ram/RAM_EXPORTS.h>
@@ -109,30 +99,30 @@ namespace Model
         class UntagResourceRequest;
         class UpdateResourceShareRequest;
 
-        typedef Aws::Utils::Outcome<AcceptResourceShareInvitationResult, Aws::Client::AWSError<RAMErrors>> AcceptResourceShareInvitationOutcome;
-        typedef Aws::Utils::Outcome<AssociateResourceShareResult, Aws::Client::AWSError<RAMErrors>> AssociateResourceShareOutcome;
-        typedef Aws::Utils::Outcome<AssociateResourceSharePermissionResult, Aws::Client::AWSError<RAMErrors>> AssociateResourceSharePermissionOutcome;
-        typedef Aws::Utils::Outcome<CreateResourceShareResult, Aws::Client::AWSError<RAMErrors>> CreateResourceShareOutcome;
-        typedef Aws::Utils::Outcome<DeleteResourceShareResult, Aws::Client::AWSError<RAMErrors>> DeleteResourceShareOutcome;
-        typedef Aws::Utils::Outcome<DisassociateResourceShareResult, Aws::Client::AWSError<RAMErrors>> DisassociateResourceShareOutcome;
-        typedef Aws::Utils::Outcome<DisassociateResourceSharePermissionResult, Aws::Client::AWSError<RAMErrors>> DisassociateResourceSharePermissionOutcome;
-        typedef Aws::Utils::Outcome<EnableSharingWithAwsOrganizationResult, Aws::Client::AWSError<RAMErrors>> EnableSharingWithAwsOrganizationOutcome;
-        typedef Aws::Utils::Outcome<GetPermissionResult, Aws::Client::AWSError<RAMErrors>> GetPermissionOutcome;
-        typedef Aws::Utils::Outcome<GetResourcePoliciesResult, Aws::Client::AWSError<RAMErrors>> GetResourcePoliciesOutcome;
-        typedef Aws::Utils::Outcome<GetResourceShareAssociationsResult, Aws::Client::AWSError<RAMErrors>> GetResourceShareAssociationsOutcome;
-        typedef Aws::Utils::Outcome<GetResourceShareInvitationsResult, Aws::Client::AWSError<RAMErrors>> GetResourceShareInvitationsOutcome;
-        typedef Aws::Utils::Outcome<GetResourceSharesResult, Aws::Client::AWSError<RAMErrors>> GetResourceSharesOutcome;
-        typedef Aws::Utils::Outcome<ListPendingInvitationResourcesResult, Aws::Client::AWSError<RAMErrors>> ListPendingInvitationResourcesOutcome;
-        typedef Aws::Utils::Outcome<ListPermissionsResult, Aws::Client::AWSError<RAMErrors>> ListPermissionsOutcome;
-        typedef Aws::Utils::Outcome<ListPrincipalsResult, Aws::Client::AWSError<RAMErrors>> ListPrincipalsOutcome;
-        typedef Aws::Utils::Outcome<ListResourceSharePermissionsResult, Aws::Client::AWSError<RAMErrors>> ListResourceSharePermissionsOutcome;
-        typedef Aws::Utils::Outcome<ListResourceTypesResult, Aws::Client::AWSError<RAMErrors>> ListResourceTypesOutcome;
-        typedef Aws::Utils::Outcome<ListResourcesResult, Aws::Client::AWSError<RAMErrors>> ListResourcesOutcome;
-        typedef Aws::Utils::Outcome<PromoteResourceShareCreatedFromPolicyResult, Aws::Client::AWSError<RAMErrors>> PromoteResourceShareCreatedFromPolicyOutcome;
-        typedef Aws::Utils::Outcome<RejectResourceShareInvitationResult, Aws::Client::AWSError<RAMErrors>> RejectResourceShareInvitationOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<RAMErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<RAMErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateResourceShareResult, Aws::Client::AWSError<RAMErrors>> UpdateResourceShareOutcome;
+        typedef Aws::Utils::Outcome<AcceptResourceShareInvitationResult, RAMError> AcceptResourceShareInvitationOutcome;
+        typedef Aws::Utils::Outcome<AssociateResourceShareResult, RAMError> AssociateResourceShareOutcome;
+        typedef Aws::Utils::Outcome<AssociateResourceSharePermissionResult, RAMError> AssociateResourceSharePermissionOutcome;
+        typedef Aws::Utils::Outcome<CreateResourceShareResult, RAMError> CreateResourceShareOutcome;
+        typedef Aws::Utils::Outcome<DeleteResourceShareResult, RAMError> DeleteResourceShareOutcome;
+        typedef Aws::Utils::Outcome<DisassociateResourceShareResult, RAMError> DisassociateResourceShareOutcome;
+        typedef Aws::Utils::Outcome<DisassociateResourceSharePermissionResult, RAMError> DisassociateResourceSharePermissionOutcome;
+        typedef Aws::Utils::Outcome<EnableSharingWithAwsOrganizationResult, RAMError> EnableSharingWithAwsOrganizationOutcome;
+        typedef Aws::Utils::Outcome<GetPermissionResult, RAMError> GetPermissionOutcome;
+        typedef Aws::Utils::Outcome<GetResourcePoliciesResult, RAMError> GetResourcePoliciesOutcome;
+        typedef Aws::Utils::Outcome<GetResourceShareAssociationsResult, RAMError> GetResourceShareAssociationsOutcome;
+        typedef Aws::Utils::Outcome<GetResourceShareInvitationsResult, RAMError> GetResourceShareInvitationsOutcome;
+        typedef Aws::Utils::Outcome<GetResourceSharesResult, RAMError> GetResourceSharesOutcome;
+        typedef Aws::Utils::Outcome<ListPendingInvitationResourcesResult, RAMError> ListPendingInvitationResourcesOutcome;
+        typedef Aws::Utils::Outcome<ListPermissionsResult, RAMError> ListPermissionsOutcome;
+        typedef Aws::Utils::Outcome<ListPrincipalsResult, RAMError> ListPrincipalsOutcome;
+        typedef Aws::Utils::Outcome<ListResourceSharePermissionsResult, RAMError> ListResourceSharePermissionsOutcome;
+        typedef Aws::Utils::Outcome<ListResourceTypesResult, RAMError> ListResourceTypesOutcome;
+        typedef Aws::Utils::Outcome<ListResourcesResult, RAMError> ListResourcesOutcome;
+        typedef Aws::Utils::Outcome<PromoteResourceShareCreatedFromPolicyResult, RAMError> PromoteResourceShareCreatedFromPolicyOutcome;
+        typedef Aws::Utils::Outcome<RejectResourceShareInvitationResult, RAMError> RejectResourceShareInvitationOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, RAMError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, RAMError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateResourceShareResult, RAMError> UpdateResourceShareOutcome;
 
         typedef std::future<AcceptResourceShareInvitationOutcome> AcceptResourceShareInvitationOutcomeCallable;
         typedef std::future<AssociateResourceShareOutcome> AssociateResourceShareOutcomeCallable;
@@ -222,8 +212,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~RAMClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "RAM"; }
 
 
         /**

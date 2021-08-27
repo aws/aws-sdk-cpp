@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
@@ -20,11 +10,14 @@
 #include <aws/lambda/model/Runtime.h>
 #include <aws/lambda/model/FunctionCode.h>
 #include <aws/lambda/model/VpcConfig.h>
+#include <aws/lambda/model/PackageType.h>
 #include <aws/lambda/model/DeadLetterConfig.h>
 #include <aws/lambda/model/Environment.h>
 #include <aws/lambda/model/TracingConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lambda/model/ImageConfig.h>
+#include <aws/lambda/model/FileSystemConfig.h>
 #include <utility>
 
 namespace Aws
@@ -396,30 +389,30 @@ namespace Model
 
 
     /**
-     * <p>The amount of memory that your function has access to. Increasing the
+     * <p>The amount of memory available to the function at runtime. Increasing the
      * function's memory also increases its CPU allocation. The default value is 128
-     * MB. The value must be a multiple of 64 MB.</p>
+     * MB. The value can be any multiple of 1 MB.</p>
      */
     inline int GetMemorySize() const{ return m_memorySize; }
 
     /**
-     * <p>The amount of memory that your function has access to. Increasing the
+     * <p>The amount of memory available to the function at runtime. Increasing the
      * function's memory also increases its CPU allocation. The default value is 128
-     * MB. The value must be a multiple of 64 MB.</p>
+     * MB. The value can be any multiple of 1 MB.</p>
      */
     inline bool MemorySizeHasBeenSet() const { return m_memorySizeHasBeenSet; }
 
     /**
-     * <p>The amount of memory that your function has access to. Increasing the
+     * <p>The amount of memory available to the function at runtime. Increasing the
      * function's memory also increases its CPU allocation. The default value is 128
-     * MB. The value must be a multiple of 64 MB.</p>
+     * MB. The value can be any multiple of 1 MB.</p>
      */
     inline void SetMemorySize(int value) { m_memorySizeHasBeenSet = true; m_memorySize = value; }
 
     /**
-     * <p>The amount of memory that your function has access to. Increasing the
+     * <p>The amount of memory available to the function at runtime. Increasing the
      * function's memory also increases its CPU allocation. The default value is 128
-     * MB. The value must be a multiple of 64 MB.</p>
+     * MB. The value can be any multiple of 1 MB.</p>
      */
     inline CreateFunctionRequest& WithMemorySize(int value) { SetMemorySize(value); return *this;}
 
@@ -504,6 +497,43 @@ namespace Model
      * Settings</a>.</p>
      */
     inline CreateFunctionRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline const PackageType& GetPackageType() const{ return m_packageType; }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline bool PackageTypeHasBeenSet() const { return m_packageTypeHasBeenSet; }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline void SetPackageType(const PackageType& value) { m_packageTypeHasBeenSet = true; m_packageType = value; }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline void SetPackageType(PackageType&& value) { m_packageTypeHasBeenSet = true; m_packageType = std::move(value); }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline CreateFunctionRequest& WithPackageType(const PackageType& value) { SetPackageType(value); return *this;}
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for ZIP archive.</p>
+     */
+    inline CreateFunctionRequest& WithPackageType(PackageType&& value) { SetPackageType(std::move(value)); return *this;}
 
 
     /**
@@ -856,6 +886,135 @@ namespace Model
      */
     inline CreateFunctionRequest& AddLayers(const char* value) { m_layersHasBeenSet = true; m_layers.push_back(value); return *this; }
 
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline const Aws::Vector<FileSystemConfig>& GetFileSystemConfigs() const{ return m_fileSystemConfigs; }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline bool FileSystemConfigsHasBeenSet() const { return m_fileSystemConfigsHasBeenSet; }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline void SetFileSystemConfigs(const Aws::Vector<FileSystemConfig>& value) { m_fileSystemConfigsHasBeenSet = true; m_fileSystemConfigs = value; }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline void SetFileSystemConfigs(Aws::Vector<FileSystemConfig>&& value) { m_fileSystemConfigsHasBeenSet = true; m_fileSystemConfigs = std::move(value); }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline CreateFunctionRequest& WithFileSystemConfigs(const Aws::Vector<FileSystemConfig>& value) { SetFileSystemConfigs(value); return *this;}
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline CreateFunctionRequest& WithFileSystemConfigs(Aws::Vector<FileSystemConfig>&& value) { SetFileSystemConfigs(std::move(value)); return *this;}
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline CreateFunctionRequest& AddFileSystemConfigs(const FileSystemConfig& value) { m_fileSystemConfigsHasBeenSet = true; m_fileSystemConfigs.push_back(value); return *this; }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline CreateFunctionRequest& AddFileSystemConfigs(FileSystemConfig&& value) { m_fileSystemConfigsHasBeenSet = true; m_fileSystemConfigs.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Configuration values that override the container image Dockerfile.</p>
+     */
+    inline const ImageConfig& GetImageConfig() const{ return m_imageConfig; }
+
+    /**
+     * <p>Configuration values that override the container image Dockerfile.</p>
+     */
+    inline bool ImageConfigHasBeenSet() const { return m_imageConfigHasBeenSet; }
+
+    /**
+     * <p>Configuration values that override the container image Dockerfile.</p>
+     */
+    inline void SetImageConfig(const ImageConfig& value) { m_imageConfigHasBeenSet = true; m_imageConfig = value; }
+
+    /**
+     * <p>Configuration values that override the container image Dockerfile.</p>
+     */
+    inline void SetImageConfig(ImageConfig&& value) { m_imageConfigHasBeenSet = true; m_imageConfig = std::move(value); }
+
+    /**
+     * <p>Configuration values that override the container image Dockerfile.</p>
+     */
+    inline CreateFunctionRequest& WithImageConfig(const ImageConfig& value) { SetImageConfig(value); return *this;}
+
+    /**
+     * <p>Configuration values that override the container image Dockerfile.</p>
+     */
+    inline CreateFunctionRequest& WithImageConfig(ImageConfig&& value) { SetImageConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>To enable code signing for this function, specify the ARN of a code-signing
+     * configuration. A code-signing configuration includes a set of signing profiles,
+     * which define the trusted publishers for this function.</p>
+     */
+    inline const Aws::String& GetCodeSigningConfigArn() const{ return m_codeSigningConfigArn; }
+
+    /**
+     * <p>To enable code signing for this function, specify the ARN of a code-signing
+     * configuration. A code-signing configuration includes a set of signing profiles,
+     * which define the trusted publishers for this function.</p>
+     */
+    inline bool CodeSigningConfigArnHasBeenSet() const { return m_codeSigningConfigArnHasBeenSet; }
+
+    /**
+     * <p>To enable code signing for this function, specify the ARN of a code-signing
+     * configuration. A code-signing configuration includes a set of signing profiles,
+     * which define the trusted publishers for this function.</p>
+     */
+    inline void SetCodeSigningConfigArn(const Aws::String& value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn = value; }
+
+    /**
+     * <p>To enable code signing for this function, specify the ARN of a code-signing
+     * configuration. A code-signing configuration includes a set of signing profiles,
+     * which define the trusted publishers for this function.</p>
+     */
+    inline void SetCodeSigningConfigArn(Aws::String&& value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn = std::move(value); }
+
+    /**
+     * <p>To enable code signing for this function, specify the ARN of a code-signing
+     * configuration. A code-signing configuration includes a set of signing profiles,
+     * which define the trusted publishers for this function.</p>
+     */
+    inline void SetCodeSigningConfigArn(const char* value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn.assign(value); }
+
+    /**
+     * <p>To enable code signing for this function, specify the ARN of a code-signing
+     * configuration. A code-signing configuration includes a set of signing profiles,
+     * which define the trusted publishers for this function.</p>
+     */
+    inline CreateFunctionRequest& WithCodeSigningConfigArn(const Aws::String& value) { SetCodeSigningConfigArn(value); return *this;}
+
+    /**
+     * <p>To enable code signing for this function, specify the ARN of a code-signing
+     * configuration. A code-signing configuration includes a set of signing profiles,
+     * which define the trusted publishers for this function.</p>
+     */
+    inline CreateFunctionRequest& WithCodeSigningConfigArn(Aws::String&& value) { SetCodeSigningConfigArn(std::move(value)); return *this;}
+
+    /**
+     * <p>To enable code signing for this function, specify the ARN of a code-signing
+     * configuration. A code-signing configuration includes a set of signing profiles,
+     * which define the trusted publishers for this function.</p>
+     */
+    inline CreateFunctionRequest& WithCodeSigningConfigArn(const char* value) { SetCodeSigningConfigArn(value); return *this;}
+
   private:
 
     Aws::String m_functionName;
@@ -888,6 +1047,9 @@ namespace Model
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
 
+    PackageType m_packageType;
+    bool m_packageTypeHasBeenSet;
+
     DeadLetterConfig m_deadLetterConfig;
     bool m_deadLetterConfigHasBeenSet;
 
@@ -905,6 +1067,15 @@ namespace Model
 
     Aws::Vector<Aws::String> m_layers;
     bool m_layersHasBeenSet;
+
+    Aws::Vector<FileSystemConfig> m_fileSystemConfigs;
+    bool m_fileSystemConfigsHasBeenSet;
+
+    ImageConfig m_imageConfig;
+    bool m_imageConfigHasBeenSet;
+
+    Aws::String m_codeSigningConfigArn;
+    bool m_codeSigningConfigArnHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
@@ -91,65 +81,65 @@ namespace Model
 
     /**
      * <p>The tracking number for this job. Using this tracking number with your
-     * region's carrier's website, you can track a Snowball as the carrier transports
-     * it.</p> <p>For India, the carrier is Amazon Logistics. For all other regions,
-     * UPS is the carrier.</p>
+     * region's carrier's website, you can track a Snow device as the carrier
+     * transports it.</p> <p>For India, the carrier is Amazon Logistics. For all other
+     * regions, UPS is the carrier.</p>
      */
     inline const Aws::String& GetTrackingNumber() const{ return m_trackingNumber; }
 
     /**
      * <p>The tracking number for this job. Using this tracking number with your
-     * region's carrier's website, you can track a Snowball as the carrier transports
-     * it.</p> <p>For India, the carrier is Amazon Logistics. For all other regions,
-     * UPS is the carrier.</p>
+     * region's carrier's website, you can track a Snow device as the carrier
+     * transports it.</p> <p>For India, the carrier is Amazon Logistics. For all other
+     * regions, UPS is the carrier.</p>
      */
     inline bool TrackingNumberHasBeenSet() const { return m_trackingNumberHasBeenSet; }
 
     /**
      * <p>The tracking number for this job. Using this tracking number with your
-     * region's carrier's website, you can track a Snowball as the carrier transports
-     * it.</p> <p>For India, the carrier is Amazon Logistics. For all other regions,
-     * UPS is the carrier.</p>
+     * region's carrier's website, you can track a Snow device as the carrier
+     * transports it.</p> <p>For India, the carrier is Amazon Logistics. For all other
+     * regions, UPS is the carrier.</p>
      */
     inline void SetTrackingNumber(const Aws::String& value) { m_trackingNumberHasBeenSet = true; m_trackingNumber = value; }
 
     /**
      * <p>The tracking number for this job. Using this tracking number with your
-     * region's carrier's website, you can track a Snowball as the carrier transports
-     * it.</p> <p>For India, the carrier is Amazon Logistics. For all other regions,
-     * UPS is the carrier.</p>
+     * region's carrier's website, you can track a Snow device as the carrier
+     * transports it.</p> <p>For India, the carrier is Amazon Logistics. For all other
+     * regions, UPS is the carrier.</p>
      */
     inline void SetTrackingNumber(Aws::String&& value) { m_trackingNumberHasBeenSet = true; m_trackingNumber = std::move(value); }
 
     /**
      * <p>The tracking number for this job. Using this tracking number with your
-     * region's carrier's website, you can track a Snowball as the carrier transports
-     * it.</p> <p>For India, the carrier is Amazon Logistics. For all other regions,
-     * UPS is the carrier.</p>
+     * region's carrier's website, you can track a Snow device as the carrier
+     * transports it.</p> <p>For India, the carrier is Amazon Logistics. For all other
+     * regions, UPS is the carrier.</p>
      */
     inline void SetTrackingNumber(const char* value) { m_trackingNumberHasBeenSet = true; m_trackingNumber.assign(value); }
 
     /**
      * <p>The tracking number for this job. Using this tracking number with your
-     * region's carrier's website, you can track a Snowball as the carrier transports
-     * it.</p> <p>For India, the carrier is Amazon Logistics. For all other regions,
-     * UPS is the carrier.</p>
+     * region's carrier's website, you can track a Snow device as the carrier
+     * transports it.</p> <p>For India, the carrier is Amazon Logistics. For all other
+     * regions, UPS is the carrier.</p>
      */
     inline Shipment& WithTrackingNumber(const Aws::String& value) { SetTrackingNumber(value); return *this;}
 
     /**
      * <p>The tracking number for this job. Using this tracking number with your
-     * region's carrier's website, you can track a Snowball as the carrier transports
-     * it.</p> <p>For India, the carrier is Amazon Logistics. For all other regions,
-     * UPS is the carrier.</p>
+     * region's carrier's website, you can track a Snow device as the carrier
+     * transports it.</p> <p>For India, the carrier is Amazon Logistics. For all other
+     * regions, UPS is the carrier.</p>
      */
     inline Shipment& WithTrackingNumber(Aws::String&& value) { SetTrackingNumber(std::move(value)); return *this;}
 
     /**
      * <p>The tracking number for this job. Using this tracking number with your
-     * region's carrier's website, you can track a Snowball as the carrier transports
-     * it.</p> <p>For India, the carrier is Amazon Logistics. For all other regions,
-     * UPS is the carrier.</p>
+     * region's carrier's website, you can track a Snow device as the carrier
+     * transports it.</p> <p>For India, the carrier is Amazon Logistics. For all other
+     * regions, UPS is the carrier.</p>
      */
     inline Shipment& WithTrackingNumber(const char* value) { SetTrackingNumber(value); return *this;}
 

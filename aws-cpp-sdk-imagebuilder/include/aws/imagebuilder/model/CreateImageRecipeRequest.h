@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
@@ -214,104 +204,88 @@ namespace Model
     /**
      * <p>The parent image of the image recipe. The value of the string can be the ARN
      * of the parent image or an AMI ID. The format for the ARN follows this example:
-     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
-     * The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image
-     * Builder that you want to use the latest AMI created in 20xx (year). You can
-     * provide the specific version that you want to use, or you can use a wildcard in
-     * all of the fields. If you enter an AMI ID for the string value, you must have
-     * access to the AMI, and the AMI must be in the same Region in which you are using
-     * Image Builder. </p>
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/xxxx.x.x</code>.
+     * You can provide the specific version that you want to use, or you can use a
+     * wildcard in all of the fields. If you enter an AMI ID for the string value, you
+     * must have access to the AMI, and the AMI must be in the same Region in which you
+     * are using Image Builder. </p>
      */
     inline const Aws::String& GetParentImage() const{ return m_parentImage; }
 
     /**
      * <p>The parent image of the image recipe. The value of the string can be the ARN
      * of the parent image or an AMI ID. The format for the ARN follows this example:
-     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
-     * The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image
-     * Builder that you want to use the latest AMI created in 20xx (year). You can
-     * provide the specific version that you want to use, or you can use a wildcard in
-     * all of the fields. If you enter an AMI ID for the string value, you must have
-     * access to the AMI, and the AMI must be in the same Region in which you are using
-     * Image Builder. </p>
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/xxxx.x.x</code>.
+     * You can provide the specific version that you want to use, or you can use a
+     * wildcard in all of the fields. If you enter an AMI ID for the string value, you
+     * must have access to the AMI, and the AMI must be in the same Region in which you
+     * are using Image Builder. </p>
      */
     inline bool ParentImageHasBeenSet() const { return m_parentImageHasBeenSet; }
 
     /**
      * <p>The parent image of the image recipe. The value of the string can be the ARN
      * of the parent image or an AMI ID. The format for the ARN follows this example:
-     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
-     * The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image
-     * Builder that you want to use the latest AMI created in 20xx (year). You can
-     * provide the specific version that you want to use, or you can use a wildcard in
-     * all of the fields. If you enter an AMI ID for the string value, you must have
-     * access to the AMI, and the AMI must be in the same Region in which you are using
-     * Image Builder. </p>
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/xxxx.x.x</code>.
+     * You can provide the specific version that you want to use, or you can use a
+     * wildcard in all of the fields. If you enter an AMI ID for the string value, you
+     * must have access to the AMI, and the AMI must be in the same Region in which you
+     * are using Image Builder. </p>
      */
     inline void SetParentImage(const Aws::String& value) { m_parentImageHasBeenSet = true; m_parentImage = value; }
 
     /**
      * <p>The parent image of the image recipe. The value of the string can be the ARN
      * of the parent image or an AMI ID. The format for the ARN follows this example:
-     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
-     * The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image
-     * Builder that you want to use the latest AMI created in 20xx (year). You can
-     * provide the specific version that you want to use, or you can use a wildcard in
-     * all of the fields. If you enter an AMI ID for the string value, you must have
-     * access to the AMI, and the AMI must be in the same Region in which you are using
-     * Image Builder. </p>
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/xxxx.x.x</code>.
+     * You can provide the specific version that you want to use, or you can use a
+     * wildcard in all of the fields. If you enter an AMI ID for the string value, you
+     * must have access to the AMI, and the AMI must be in the same Region in which you
+     * are using Image Builder. </p>
      */
     inline void SetParentImage(Aws::String&& value) { m_parentImageHasBeenSet = true; m_parentImage = std::move(value); }
 
     /**
      * <p>The parent image of the image recipe. The value of the string can be the ARN
      * of the parent image or an AMI ID. The format for the ARN follows this example:
-     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
-     * The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image
-     * Builder that you want to use the latest AMI created in 20xx (year). You can
-     * provide the specific version that you want to use, or you can use a wildcard in
-     * all of the fields. If you enter an AMI ID for the string value, you must have
-     * access to the AMI, and the AMI must be in the same Region in which you are using
-     * Image Builder. </p>
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/xxxx.x.x</code>.
+     * You can provide the specific version that you want to use, or you can use a
+     * wildcard in all of the fields. If you enter an AMI ID for the string value, you
+     * must have access to the AMI, and the AMI must be in the same Region in which you
+     * are using Image Builder. </p>
      */
     inline void SetParentImage(const char* value) { m_parentImageHasBeenSet = true; m_parentImage.assign(value); }
 
     /**
      * <p>The parent image of the image recipe. The value of the string can be the ARN
      * of the parent image or an AMI ID. The format for the ARN follows this example:
-     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
-     * The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image
-     * Builder that you want to use the latest AMI created in 20xx (year). You can
-     * provide the specific version that you want to use, or you can use a wildcard in
-     * all of the fields. If you enter an AMI ID for the string value, you must have
-     * access to the AMI, and the AMI must be in the same Region in which you are using
-     * Image Builder. </p>
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/xxxx.x.x</code>.
+     * You can provide the specific version that you want to use, or you can use a
+     * wildcard in all of the fields. If you enter an AMI ID for the string value, you
+     * must have access to the AMI, and the AMI must be in the same Region in which you
+     * are using Image Builder. </p>
      */
     inline CreateImageRecipeRequest& WithParentImage(const Aws::String& value) { SetParentImage(value); return *this;}
 
     /**
      * <p>The parent image of the image recipe. The value of the string can be the ARN
      * of the parent image or an AMI ID. The format for the ARN follows this example:
-     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
-     * The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image
-     * Builder that you want to use the latest AMI created in 20xx (year). You can
-     * provide the specific version that you want to use, or you can use a wildcard in
-     * all of the fields. If you enter an AMI ID for the string value, you must have
-     * access to the AMI, and the AMI must be in the same Region in which you are using
-     * Image Builder. </p>
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/xxxx.x.x</code>.
+     * You can provide the specific version that you want to use, or you can use a
+     * wildcard in all of the fields. If you enter an AMI ID for the string value, you
+     * must have access to the AMI, and the AMI must be in the same Region in which you
+     * are using Image Builder. </p>
      */
     inline CreateImageRecipeRequest& WithParentImage(Aws::String&& value) { SetParentImage(std::move(value)); return *this;}
 
     /**
      * <p>The parent image of the image recipe. The value of the string can be the ARN
      * of the parent image or an AMI ID. The format for the ARN follows this example:
-     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
-     * The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image
-     * Builder that you want to use the latest AMI created in 20xx (year). You can
-     * provide the specific version that you want to use, or you can use a wildcard in
-     * all of the fields. If you enter an AMI ID for the string value, you must have
-     * access to the AMI, and the AMI must be in the same Region in which you are using
-     * Image Builder. </p>
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/xxxx.x.x</code>.
+     * You can provide the specific version that you want to use, or you can use a
+     * wildcard in all of the fields. If you enter an AMI ID for the string value, you
+     * must have access to the AMI, and the AMI must be in the same Region in which you
+     * are using Image Builder. </p>
      */
     inline CreateImageRecipeRequest& WithParentImage(const char* value) { SetParentImage(value); return *this;}
 
@@ -424,6 +398,47 @@ namespace Model
 
 
     /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline const Aws::String& GetWorkingDirectory() const{ return m_workingDirectory; }
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline bool WorkingDirectoryHasBeenSet() const { return m_workingDirectoryHasBeenSet; }
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline void SetWorkingDirectory(const Aws::String& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = value; }
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline void SetWorkingDirectory(Aws::String&& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = std::move(value); }
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline void SetWorkingDirectory(const char* value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory.assign(value); }
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline CreateImageRecipeRequest& WithWorkingDirectory(const Aws::String& value) { SetWorkingDirectory(value); return *this;}
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline CreateImageRecipeRequest& WithWorkingDirectory(Aws::String&& value) { SetWorkingDirectory(std::move(value)); return *this;}
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline CreateImageRecipeRequest& WithWorkingDirectory(const char* value) { SetWorkingDirectory(value); return *this;}
+
+
+    /**
      * <p>The idempotency token used to make this request idempotent. </p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
@@ -485,6 +500,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_workingDirectory;
+    bool m_workingDirectoryHasBeenSet;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;

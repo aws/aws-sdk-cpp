@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 #include <aws/resource-groups/model/Group.h>
 #include <aws/resource-groups/model/ResourceQuery.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/resource-groups/model/GroupConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -46,53 +37,68 @@ namespace Model
 
 
     /**
-     * <p>A full description of the resource group after it is created.</p>
+     * <p>The description of the resource group.</p>
      */
     inline const Group& GetGroup() const{ return m_group; }
 
     /**
-     * <p>A full description of the resource group after it is created.</p>
+     * <p>The description of the resource group.</p>
      */
     inline void SetGroup(const Group& value) { m_group = value; }
 
     /**
-     * <p>A full description of the resource group after it is created.</p>
+     * <p>The description of the resource group.</p>
      */
     inline void SetGroup(Group&& value) { m_group = std::move(value); }
 
     /**
-     * <p>A full description of the resource group after it is created.</p>
+     * <p>The description of the resource group.</p>
      */
     inline CreateGroupResult& WithGroup(const Group& value) { SetGroup(value); return *this;}
 
     /**
-     * <p>A full description of the resource group after it is created.</p>
+     * <p>The description of the resource group.</p>
      */
     inline CreateGroupResult& WithGroup(Group&& value) { SetGroup(std::move(value)); return *this;}
 
 
     /**
-     * <p>The resource query associated with the group.</p>
+     * <p>The resource query associated with the group. For more information about
+     * resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+     * a tag-based group in Resource Groups</a>. </p>
      */
     inline const ResourceQuery& GetResourceQuery() const{ return m_resourceQuery; }
 
     /**
-     * <p>The resource query associated with the group.</p>
+     * <p>The resource query associated with the group. For more information about
+     * resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+     * a tag-based group in Resource Groups</a>. </p>
      */
     inline void SetResourceQuery(const ResourceQuery& value) { m_resourceQuery = value; }
 
     /**
-     * <p>The resource query associated with the group.</p>
+     * <p>The resource query associated with the group. For more information about
+     * resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+     * a tag-based group in Resource Groups</a>. </p>
      */
     inline void SetResourceQuery(ResourceQuery&& value) { m_resourceQuery = std::move(value); }
 
     /**
-     * <p>The resource query associated with the group.</p>
+     * <p>The resource query associated with the group. For more information about
+     * resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+     * a tag-based group in Resource Groups</a>. </p>
      */
     inline CreateGroupResult& WithResourceQuery(const ResourceQuery& value) { SetResourceQuery(value); return *this;}
 
     /**
-     * <p>The resource query associated with the group.</p>
+     * <p>The resource query associated with the group. For more information about
+     * resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+     * a tag-based group in Resource Groups</a>. </p>
      */
     inline CreateGroupResult& WithResourceQuery(ResourceQuery&& value) { SetResourceQuery(std::move(value)); return *this;}
 
@@ -157,6 +163,47 @@ namespace Model
      */
     inline CreateGroupResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The service configuration associated with the resource group. For details
+     * about the syntax of a service configuration, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>
+     */
+    inline const GroupConfiguration& GetGroupConfiguration() const{ return m_groupConfiguration; }
+
+    /**
+     * <p>The service configuration associated with the resource group. For details
+     * about the syntax of a service configuration, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>
+     */
+    inline void SetGroupConfiguration(const GroupConfiguration& value) { m_groupConfiguration = value; }
+
+    /**
+     * <p>The service configuration associated with the resource group. For details
+     * about the syntax of a service configuration, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>
+     */
+    inline void SetGroupConfiguration(GroupConfiguration&& value) { m_groupConfiguration = std::move(value); }
+
+    /**
+     * <p>The service configuration associated with the resource group. For details
+     * about the syntax of a service configuration, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>
+     */
+    inline CreateGroupResult& WithGroupConfiguration(const GroupConfiguration& value) { SetGroupConfiguration(value); return *this;}
+
+    /**
+     * <p>The service configuration associated with the resource group. For details
+     * about the syntax of a service configuration, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.</p>
+     */
+    inline CreateGroupResult& WithGroupConfiguration(GroupConfiguration&& value) { SetGroupConfiguration(std::move(value)); return *this;}
+
   private:
 
     Group m_group;
@@ -164,6 +211,8 @@ namespace Model
     ResourceQuery m_resourceQuery;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    GroupConfiguration m_groupConfiguration;
   };
 
 } // namespace Model

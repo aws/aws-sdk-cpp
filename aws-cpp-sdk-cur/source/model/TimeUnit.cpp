@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cur/model/TimeUnit.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,6 +22,7 @@ namespace Aws
 
         static const int HOURLY_HASH = HashingUtils::HashString("HOURLY");
         static const int DAILY_HASH = HashingUtils::HashString("DAILY");
+        static const int MONTHLY_HASH = HashingUtils::HashString("MONTHLY");
 
 
         TimeUnit GetTimeUnitForName(const Aws::String& name)
@@ -44,6 +35,10 @@ namespace Aws
           else if (hashCode == DAILY_HASH)
           {
             return TimeUnit::DAILY;
+          }
+          else if (hashCode == MONTHLY_HASH)
+          {
+            return TimeUnit::MONTHLY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +58,8 @@ namespace Aws
             return "HOURLY";
           case TimeUnit::DAILY:
             return "DAILY";
+          case TimeUnit::MONTHLY:
+            return "MONTHLY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

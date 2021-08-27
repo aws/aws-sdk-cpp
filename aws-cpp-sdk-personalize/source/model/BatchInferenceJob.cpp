@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/personalize/model/BatchInferenceJob.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,12 +21,14 @@ namespace Model
 BatchInferenceJob::BatchInferenceJob() : 
     m_jobNameHasBeenSet(false),
     m_batchInferenceJobArnHasBeenSet(false),
+    m_filterArnHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_solutionVersionArnHasBeenSet(false),
     m_numResults(0),
     m_numResultsHasBeenSet(false),
     m_jobInputHasBeenSet(false),
     m_jobOutputHasBeenSet(false),
+    m_batchInferenceJobConfigHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
@@ -47,12 +39,14 @@ BatchInferenceJob::BatchInferenceJob() :
 BatchInferenceJob::BatchInferenceJob(JsonView jsonValue) : 
     m_jobNameHasBeenSet(false),
     m_batchInferenceJobArnHasBeenSet(false),
+    m_filterArnHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_solutionVersionArnHasBeenSet(false),
     m_numResults(0),
     m_numResultsHasBeenSet(false),
     m_jobInputHasBeenSet(false),
     m_jobOutputHasBeenSet(false),
+    m_batchInferenceJobConfigHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
@@ -75,6 +69,13 @@ BatchInferenceJob& BatchInferenceJob::operator =(JsonView jsonValue)
     m_batchInferenceJobArn = jsonValue.GetString("batchInferenceJobArn");
 
     m_batchInferenceJobArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("filterArn"))
+  {
+    m_filterArn = jsonValue.GetString("filterArn");
+
+    m_filterArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("failureReason"))
@@ -110,6 +111,13 @@ BatchInferenceJob& BatchInferenceJob::operator =(JsonView jsonValue)
     m_jobOutput = jsonValue.GetObject("jobOutput");
 
     m_jobOutputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("batchInferenceJobConfig"))
+  {
+    m_batchInferenceJobConfig = jsonValue.GetObject("batchInferenceJobConfig");
+
+    m_batchInferenceJobConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("roleArn"))
@@ -159,6 +167,12 @@ JsonValue BatchInferenceJob::Jsonize() const
 
   }
 
+  if(m_filterArnHasBeenSet)
+  {
+   payload.WithString("filterArn", m_filterArn);
+
+  }
+
   if(m_failureReasonHasBeenSet)
   {
    payload.WithString("failureReason", m_failureReason);
@@ -186,6 +200,12 @@ JsonValue BatchInferenceJob::Jsonize() const
   if(m_jobOutputHasBeenSet)
   {
    payload.WithObject("jobOutput", m_jobOutput.Jsonize());
+
+  }
+
+  if(m_batchInferenceJobConfigHasBeenSet)
+  {
+   payload.WithObject("batchInferenceJobConfig", m_batchInferenceJobConfig.Jsonize());
 
   }
 

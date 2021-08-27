@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lambda/model/Runtime.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -37,6 +27,7 @@ namespace Aws
         static const int nodejs10_x_HASH = HashingUtils::HashString("nodejs10.x");
         static const int nodejs12_x_HASH = HashingUtils::HashString("nodejs12.x");
         static const int java8_HASH = HashingUtils::HashString("java8");
+        static const int java8_al2_HASH = HashingUtils::HashString("java8.al2");
         static const int java11_HASH = HashingUtils::HashString("java11");
         static const int python2_7_HASH = HashingUtils::HashString("python2.7");
         static const int python3_6_HASH = HashingUtils::HashString("python3.6");
@@ -51,6 +42,7 @@ namespace Aws
         static const int ruby2_5_HASH = HashingUtils::HashString("ruby2.5");
         static const int ruby2_7_HASH = HashingUtils::HashString("ruby2.7");
         static const int provided_HASH = HashingUtils::HashString("provided");
+        static const int provided_al2_HASH = HashingUtils::HashString("provided.al2");
 
 
         Runtime GetRuntimeForName(const Aws::String& name)
@@ -83,6 +75,10 @@ namespace Aws
           else if (hashCode == java8_HASH)
           {
             return Runtime::java8;
+          }
+          else if (hashCode == java8_al2_HASH)
+          {
+            return Runtime::java8_al2;
           }
           else if (hashCode == java11_HASH)
           {
@@ -140,6 +136,10 @@ namespace Aws
           {
             return Runtime::provided;
           }
+          else if (hashCode == provided_al2_HASH)
+          {
+            return Runtime::provided_al2;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -168,6 +168,8 @@ namespace Aws
             return "nodejs12.x";
           case Runtime::java8:
             return "java8";
+          case Runtime::java8_al2:
+            return "java8.al2";
           case Runtime::java11:
             return "java11";
           case Runtime::python2_7:
@@ -196,6 +198,8 @@ namespace Aws
             return "ruby2.7";
           case Runtime::provided:
             return "provided";
+          case Runtime::provided_al2:
+            return "provided.al2";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

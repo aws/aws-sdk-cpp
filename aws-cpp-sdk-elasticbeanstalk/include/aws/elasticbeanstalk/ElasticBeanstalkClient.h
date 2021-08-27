@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
@@ -105,6 +95,7 @@ namespace Model
 {
         class AbortEnvironmentUpdateRequest;
         class ApplyEnvironmentManagedActionRequest;
+        class AssociateEnvironmentOperationsRoleRequest;
         class CheckDNSAvailabilityRequest;
         class ComposeEnvironmentsRequest;
         class CreateApplicationRequest;
@@ -131,6 +122,7 @@ namespace Model
         class DescribeEventsRequest;
         class DescribeInstancesHealthRequest;
         class DescribePlatformVersionRequest;
+        class DisassociateEnvironmentOperationsRoleRequest;
         class ListAvailableSolutionStacksRequest;
         class ListPlatformBranchesRequest;
         class ListPlatformVersionsRequest;
@@ -149,54 +141,57 @@ namespace Model
         class UpdateTagsForResourceRequest;
         class ValidateConfigurationSettingsRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> AbortEnvironmentUpdateOutcome;
-        typedef Aws::Utils::Outcome<ApplyEnvironmentManagedActionResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ApplyEnvironmentManagedActionOutcome;
-        typedef Aws::Utils::Outcome<CheckDNSAvailabilityResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CheckDNSAvailabilityOutcome;
-        typedef Aws::Utils::Outcome<ComposeEnvironmentsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ComposeEnvironmentsOutcome;
-        typedef Aws::Utils::Outcome<CreateApplicationResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CreateApplicationOutcome;
-        typedef Aws::Utils::Outcome<CreateApplicationVersionResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CreateApplicationVersionOutcome;
-        typedef Aws::Utils::Outcome<CreateConfigurationTemplateResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CreateConfigurationTemplateOutcome;
-        typedef Aws::Utils::Outcome<CreateEnvironmentResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CreateEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<CreatePlatformVersionResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CreatePlatformVersionOutcome;
-        typedef Aws::Utils::Outcome<CreateStorageLocationResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CreateStorageLocationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DeleteApplicationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DeleteApplicationVersionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DeleteConfigurationTemplateOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DeleteEnvironmentConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeletePlatformVersionResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DeletePlatformVersionOutcome;
-        typedef Aws::Utils::Outcome<DescribeAccountAttributesResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeAccountAttributesOutcome;
-        typedef Aws::Utils::Outcome<DescribeApplicationVersionsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeApplicationVersionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeApplicationsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeApplicationsOutcome;
-        typedef Aws::Utils::Outcome<DescribeConfigurationOptionsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeConfigurationOptionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeConfigurationSettingsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeConfigurationSettingsOutcome;
-        typedef Aws::Utils::Outcome<DescribeEnvironmentHealthResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeEnvironmentHealthOutcome;
-        typedef Aws::Utils::Outcome<DescribeEnvironmentManagedActionHistoryResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeEnvironmentManagedActionHistoryOutcome;
-        typedef Aws::Utils::Outcome<DescribeEnvironmentManagedActionsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeEnvironmentManagedActionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeEnvironmentResourcesResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeEnvironmentResourcesOutcome;
-        typedef Aws::Utils::Outcome<DescribeEnvironmentsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeEnvironmentsOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeEventsOutcome;
-        typedef Aws::Utils::Outcome<DescribeInstancesHealthResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeInstancesHealthOutcome;
-        typedef Aws::Utils::Outcome<DescribePlatformVersionResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribePlatformVersionOutcome;
-        typedef Aws::Utils::Outcome<ListAvailableSolutionStacksResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ListAvailableSolutionStacksOutcome;
-        typedef Aws::Utils::Outcome<ListPlatformBranchesResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ListPlatformBranchesOutcome;
-        typedef Aws::Utils::Outcome<ListPlatformVersionsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ListPlatformVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> RebuildEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> RequestEnvironmentInfoOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> RestartAppServerOutcome;
-        typedef Aws::Utils::Outcome<RetrieveEnvironmentInfoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> RetrieveEnvironmentInfoOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> SwapEnvironmentCNAMEsOutcome;
-        typedef Aws::Utils::Outcome<TerminateEnvironmentResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> TerminateEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<UpdateApplicationResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateApplicationOutcome;
-        typedef Aws::Utils::Outcome<UpdateApplicationResourceLifecycleResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateApplicationResourceLifecycleOutcome;
-        typedef Aws::Utils::Outcome<UpdateApplicationVersionResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateApplicationVersionOutcome;
-        typedef Aws::Utils::Outcome<UpdateConfigurationTemplateResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateConfigurationTemplateOutcome;
-        typedef Aws::Utils::Outcome<UpdateEnvironmentResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ValidateConfigurationSettingsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ValidateConfigurationSettingsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ElasticBeanstalkError> AbortEnvironmentUpdateOutcome;
+        typedef Aws::Utils::Outcome<ApplyEnvironmentManagedActionResult, ElasticBeanstalkError> ApplyEnvironmentManagedActionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ElasticBeanstalkError> AssociateEnvironmentOperationsRoleOutcome;
+        typedef Aws::Utils::Outcome<CheckDNSAvailabilityResult, ElasticBeanstalkError> CheckDNSAvailabilityOutcome;
+        typedef Aws::Utils::Outcome<ComposeEnvironmentsResult, ElasticBeanstalkError> ComposeEnvironmentsOutcome;
+        typedef Aws::Utils::Outcome<CreateApplicationResult, ElasticBeanstalkError> CreateApplicationOutcome;
+        typedef Aws::Utils::Outcome<CreateApplicationVersionResult, ElasticBeanstalkError> CreateApplicationVersionOutcome;
+        typedef Aws::Utils::Outcome<CreateConfigurationTemplateResult, ElasticBeanstalkError> CreateConfigurationTemplateOutcome;
+        typedef Aws::Utils::Outcome<CreateEnvironmentResult, ElasticBeanstalkError> CreateEnvironmentOutcome;
+        typedef Aws::Utils::Outcome<CreatePlatformVersionResult, ElasticBeanstalkError> CreatePlatformVersionOutcome;
+        typedef Aws::Utils::Outcome<CreateStorageLocationResult, ElasticBeanstalkError> CreateStorageLocationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ElasticBeanstalkError> DeleteApplicationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ElasticBeanstalkError> DeleteApplicationVersionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ElasticBeanstalkError> DeleteConfigurationTemplateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ElasticBeanstalkError> DeleteEnvironmentConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DeletePlatformVersionResult, ElasticBeanstalkError> DeletePlatformVersionOutcome;
+        typedef Aws::Utils::Outcome<DescribeAccountAttributesResult, ElasticBeanstalkError> DescribeAccountAttributesOutcome;
+        typedef Aws::Utils::Outcome<DescribeApplicationVersionsResult, ElasticBeanstalkError> DescribeApplicationVersionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeApplicationsResult, ElasticBeanstalkError> DescribeApplicationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeConfigurationOptionsResult, ElasticBeanstalkError> DescribeConfigurationOptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeConfigurationSettingsResult, ElasticBeanstalkError> DescribeConfigurationSettingsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEnvironmentHealthResult, ElasticBeanstalkError> DescribeEnvironmentHealthOutcome;
+        typedef Aws::Utils::Outcome<DescribeEnvironmentManagedActionHistoryResult, ElasticBeanstalkError> DescribeEnvironmentManagedActionHistoryOutcome;
+        typedef Aws::Utils::Outcome<DescribeEnvironmentManagedActionsResult, ElasticBeanstalkError> DescribeEnvironmentManagedActionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEnvironmentResourcesResult, ElasticBeanstalkError> DescribeEnvironmentResourcesOutcome;
+        typedef Aws::Utils::Outcome<DescribeEnvironmentsResult, ElasticBeanstalkError> DescribeEnvironmentsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventsResult, ElasticBeanstalkError> DescribeEventsOutcome;
+        typedef Aws::Utils::Outcome<DescribeInstancesHealthResult, ElasticBeanstalkError> DescribeInstancesHealthOutcome;
+        typedef Aws::Utils::Outcome<DescribePlatformVersionResult, ElasticBeanstalkError> DescribePlatformVersionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ElasticBeanstalkError> DisassociateEnvironmentOperationsRoleOutcome;
+        typedef Aws::Utils::Outcome<ListAvailableSolutionStacksResult, ElasticBeanstalkError> ListAvailableSolutionStacksOutcome;
+        typedef Aws::Utils::Outcome<ListPlatformBranchesResult, ElasticBeanstalkError> ListPlatformBranchesOutcome;
+        typedef Aws::Utils::Outcome<ListPlatformVersionsResult, ElasticBeanstalkError> ListPlatformVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ElasticBeanstalkError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ElasticBeanstalkError> RebuildEnvironmentOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ElasticBeanstalkError> RequestEnvironmentInfoOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ElasticBeanstalkError> RestartAppServerOutcome;
+        typedef Aws::Utils::Outcome<RetrieveEnvironmentInfoResult, ElasticBeanstalkError> RetrieveEnvironmentInfoOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ElasticBeanstalkError> SwapEnvironmentCNAMEsOutcome;
+        typedef Aws::Utils::Outcome<TerminateEnvironmentResult, ElasticBeanstalkError> TerminateEnvironmentOutcome;
+        typedef Aws::Utils::Outcome<UpdateApplicationResult, ElasticBeanstalkError> UpdateApplicationOutcome;
+        typedef Aws::Utils::Outcome<UpdateApplicationResourceLifecycleResult, ElasticBeanstalkError> UpdateApplicationResourceLifecycleOutcome;
+        typedef Aws::Utils::Outcome<UpdateApplicationVersionResult, ElasticBeanstalkError> UpdateApplicationVersionOutcome;
+        typedef Aws::Utils::Outcome<UpdateConfigurationTemplateResult, ElasticBeanstalkError> UpdateConfigurationTemplateOutcome;
+        typedef Aws::Utils::Outcome<UpdateEnvironmentResult, ElasticBeanstalkError> UpdateEnvironmentOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ElasticBeanstalkError> UpdateTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ValidateConfigurationSettingsResult, ElasticBeanstalkError> ValidateConfigurationSettingsOutcome;
 
         typedef std::future<AbortEnvironmentUpdateOutcome> AbortEnvironmentUpdateOutcomeCallable;
         typedef std::future<ApplyEnvironmentManagedActionOutcome> ApplyEnvironmentManagedActionOutcomeCallable;
+        typedef std::future<AssociateEnvironmentOperationsRoleOutcome> AssociateEnvironmentOperationsRoleOutcomeCallable;
         typedef std::future<CheckDNSAvailabilityOutcome> CheckDNSAvailabilityOutcomeCallable;
         typedef std::future<ComposeEnvironmentsOutcome> ComposeEnvironmentsOutcomeCallable;
         typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
@@ -223,6 +218,7 @@ namespace Model
         typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
         typedef std::future<DescribeInstancesHealthOutcome> DescribeInstancesHealthOutcomeCallable;
         typedef std::future<DescribePlatformVersionOutcome> DescribePlatformVersionOutcomeCallable;
+        typedef std::future<DisassociateEnvironmentOperationsRoleOutcome> DisassociateEnvironmentOperationsRoleOutcomeCallable;
         typedef std::future<ListAvailableSolutionStacksOutcome> ListAvailableSolutionStacksOutcomeCallable;
         typedef std::future<ListPlatformBranchesOutcome> ListPlatformBranchesOutcomeCallable;
         typedef std::future<ListPlatformVersionsOutcome> ListPlatformVersionsOutcomeCallable;
@@ -246,6 +242,7 @@ namespace Model
 
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::AbortEnvironmentUpdateRequest&, const Model::AbortEnvironmentUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AbortEnvironmentUpdateResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::ApplyEnvironmentManagedActionRequest&, const Model::ApplyEnvironmentManagedActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ApplyEnvironmentManagedActionResponseReceivedHandler;
+    typedef std::function<void(const ElasticBeanstalkClient*, const Model::AssociateEnvironmentOperationsRoleRequest&, const Model::AssociateEnvironmentOperationsRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateEnvironmentOperationsRoleResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::CheckDNSAvailabilityRequest&, const Model::CheckDNSAvailabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CheckDNSAvailabilityResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::ComposeEnvironmentsRequest&, const Model::ComposeEnvironmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ComposeEnvironmentsResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
@@ -272,6 +269,7 @@ namespace Model
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::DescribeEventsRequest&, const Model::DescribeEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventsResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::DescribeInstancesHealthRequest&, const Model::DescribeInstancesHealthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstancesHealthResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::DescribePlatformVersionRequest&, const Model::DescribePlatformVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePlatformVersionResponseReceivedHandler;
+    typedef std::function<void(const ElasticBeanstalkClient*, const Model::DisassociateEnvironmentOperationsRoleRequest&, const Model::DisassociateEnvironmentOperationsRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateEnvironmentOperationsRoleResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::ListAvailableSolutionStacksRequest&, const Model::ListAvailableSolutionStacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAvailableSolutionStacksResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::ListPlatformBranchesRequest&, const Model::ListPlatformBranchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPlatformBranchesResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::ListPlatformVersionsRequest&, const Model::ListPlatformVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPlatformVersionsResponseReceivedHandler;
@@ -297,7 +295,7 @@ namespace Model
    * product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS Elastic
    * Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk
    * WSDL is <a
-   * href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
+   * href="https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
    * To install the Software Development Kits (SDKs), Integrated Development
    * Environment (IDE) Toolkits, and command line tools that enable you to access the
    * API, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon Web
@@ -331,8 +329,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~ElasticBeanstalkClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "Elastic Beanstalk"; }
 
 
        /**
@@ -402,6 +398,49 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ApplyEnvironmentManagedActionAsync(const Model::ApplyEnvironmentManagedActionRequest& request, const ApplyEnvironmentManagedActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Add or change the operations role used by an environment. After this call is
+         * made, Elastic Beanstalk uses the associated operations role for permissions to
+         * downstream services during subsequent calls acting on this environment. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+         * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateEnvironmentOperationsRoleOutcome AssociateEnvironmentOperationsRole(const Model::AssociateEnvironmentOperationsRoleRequest& request) const;
+
+        /**
+         * <p>Add or change the operations role used by an environment. After this call is
+         * made, Elastic Beanstalk uses the associated operations role for permissions to
+         * downstream services during subsequent calls acting on this environment. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+         * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateEnvironmentOperationsRoleOutcomeCallable AssociateEnvironmentOperationsRoleCallable(const Model::AssociateEnvironmentOperationsRoleRequest& request) const;
+
+        /**
+         * <p>Add or change the operations role used by an environment. After this call is
+         * made, Elastic Beanstalk uses the associated operations role for permissions to
+         * downstream services during subsequent calls acting on this environment. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+         * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateEnvironmentOperationsRoleAsync(const Model::AssociateEnvironmentOperationsRoleRequest& request, const AssociateEnvironmentOperationsRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Checks if the specified CNAME is available.</p><p><h3>See Also:</h3>   <a
@@ -508,11 +547,11 @@ namespace Model
          * with <code>SourceBuildInformation</code> and
          * <code>BuildConfiguration</code>.</p> <p>Specify a source bundle in S3 with
          * <code>SourceBundle</code> </p> <p>Omit both <code>SourceBuildInformation</code>
-         * and <code>SourceBundle</code> to use the default sample application.</p> <note>
+         * and <code>SourceBundle</code> to use the default sample application.</p> 
          * <p>After you create an application version with a specified Amazon S3 bucket and
          * key location, you can't change that Amazon S3 location. If you change the Amazon
          * S3 location, you receive an exception when you attempt to launch an environment
-         * from the application version.</p> </note><p><h3>See Also:</h3>   <a
+         * from the application version.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion">AWS
          * API Reference</a></p>
          */
@@ -527,11 +566,11 @@ namespace Model
          * with <code>SourceBuildInformation</code> and
          * <code>BuildConfiguration</code>.</p> <p>Specify a source bundle in S3 with
          * <code>SourceBundle</code> </p> <p>Omit both <code>SourceBuildInformation</code>
-         * and <code>SourceBundle</code> to use the default sample application.</p> <note>
+         * and <code>SourceBundle</code> to use the default sample application.</p> 
          * <p>After you create an application version with a specified Amazon S3 bucket and
          * key location, you can't change that Amazon S3 location. If you change the Amazon
          * S3 location, you receive an exception when you attempt to launch an environment
-         * from the application version.</p> </note><p><h3>See Also:</h3>   <a
+         * from the application version.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion">AWS
          * API Reference</a></p>
          *
@@ -548,11 +587,11 @@ namespace Model
          * with <code>SourceBuildInformation</code> and
          * <code>BuildConfiguration</code>.</p> <p>Specify a source bundle in S3 with
          * <code>SourceBundle</code> </p> <p>Omit both <code>SourceBuildInformation</code>
-         * and <code>SourceBundle</code> to use the default sample application.</p> <note>
+         * and <code>SourceBundle</code> to use the default sample application.</p> 
          * <p>After you create an application version with a specified Amazon S3 bucket and
          * key location, you can't change that Amazon S3 location. If you change the Amazon
          * S3 location, you receive an exception when you attempt to launch an environment
-         * from the application version.</p> </note><p><h3>See Also:</h3>   <a
+         * from the application version.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion">AWS
          * API Reference</a></p>
          *
@@ -708,8 +747,8 @@ namespace Model
         /**
          * <p>Deletes the specified application along with all associated versions and
          * configurations. The application versions will not be deleted from your Amazon S3
-         * bucket.</p> <note> <p>You cannot delete an application that has a running
-         * environment.</p> </note><p><h3>See Also:</h3>   <a
+         * bucket.</p>  <p>You cannot delete an application that has a running
+         * environment.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication">AWS
          * API Reference</a></p>
          */
@@ -718,8 +757,8 @@ namespace Model
         /**
          * <p>Deletes the specified application along with all associated versions and
          * configurations. The application versions will not be deleted from your Amazon S3
-         * bucket.</p> <note> <p>You cannot delete an application that has a running
-         * environment.</p> </note><p><h3>See Also:</h3>   <a
+         * bucket.</p>  <p>You cannot delete an application that has a running
+         * environment.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication">AWS
          * API Reference</a></p>
          *
@@ -730,8 +769,8 @@ namespace Model
         /**
          * <p>Deletes the specified application along with all associated versions and
          * configurations. The application versions will not be deleted from your Amazon S3
-         * bucket.</p> <note> <p>You cannot delete an application that has a running
-         * environment.</p> </note><p><h3>See Also:</h3>   <a
+         * bucket.</p>  <p>You cannot delete an application that has a running
+         * environment.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication">AWS
          * API Reference</a></p>
          *
@@ -740,18 +779,18 @@ namespace Model
         virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified version from the specified application.</p> <note>
+         * <p>Deletes the specified version from the specified application.</p> 
          * <p>You cannot delete an application version that is associated with a running
-         * environment.</p> </note><p><h3>See Also:</h3>   <a
+         * environment.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteApplicationVersionOutcome DeleteApplicationVersion(const Model::DeleteApplicationVersionRequest& request) const;
 
         /**
-         * <p>Deletes the specified version from the specified application.</p> <note>
+         * <p>Deletes the specified version from the specified application.</p> 
          * <p>You cannot delete an application version that is associated with a running
-         * environment.</p> </note><p><h3>See Also:</h3>   <a
+         * environment.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion">AWS
          * API Reference</a></p>
          *
@@ -760,9 +799,9 @@ namespace Model
         virtual Model::DeleteApplicationVersionOutcomeCallable DeleteApplicationVersionCallable(const Model::DeleteApplicationVersionRequest& request) const;
 
         /**
-         * <p>Deletes the specified version from the specified application.</p> <note>
+         * <p>Deletes the specified version from the specified application.</p> 
          * <p>You cannot delete an application version that is associated with a running
-         * environment.</p> </note><p><h3>See Also:</h3>   <a
+         * environment.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion">AWS
          * API Reference</a></p>
          *
@@ -771,20 +810,20 @@ namespace Model
         virtual void DeleteApplicationVersionAsync(const Model::DeleteApplicationVersionRequest& request, const DeleteApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified configuration template.</p> <note> <p>When you launch
+         * <p>Deletes the specified configuration template.</p>  <p>When you launch
          * an environment using a configuration template, the environment gets a copy of
          * the template. You can delete or modify the environment's copy of the template
-         * without affecting the running environment.</p> </note><p><h3>See Also:</h3>   <a
+         * without affecting the running environment.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteConfigurationTemplateOutcome DeleteConfigurationTemplate(const Model::DeleteConfigurationTemplateRequest& request) const;
 
         /**
-         * <p>Deletes the specified configuration template.</p> <note> <p>When you launch
+         * <p>Deletes the specified configuration template.</p>  <p>When you launch
          * an environment using a configuration template, the environment gets a copy of
          * the template. You can delete or modify the environment's copy of the template
-         * without affecting the running environment.</p> </note><p><h3>See Also:</h3>   <a
+         * without affecting the running environment.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate">AWS
          * API Reference</a></p>
          *
@@ -793,10 +832,10 @@ namespace Model
         virtual Model::DeleteConfigurationTemplateOutcomeCallable DeleteConfigurationTemplateCallable(const Model::DeleteConfigurationTemplateRequest& request) const;
 
         /**
-         * <p>Deletes the specified configuration template.</p> <note> <p>When you launch
+         * <p>Deletes the specified configuration template.</p>  <p>When you launch
          * an environment using a configuration template, the environment gets a copy of
          * the template. You can delete or modify the environment's copy of the template
-         * without affecting the running environment.</p> </note><p><h3>See Also:</h3>   <a
+         * without affecting the running environment.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate">AWS
          * API Reference</a></p>
          *
@@ -1187,8 +1226,8 @@ namespace Model
 
         /**
          * <p>Returns list of event descriptions matching criteria up to the last 6
-         * weeks.</p> <note> <p>This action returns the most recent 1,000 events from the
-         * specified <code>NextToken</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * weeks.</p>  <p>This action returns the most recent 1,000 events from the
+         * specified <code>NextToken</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">AWS
          * API Reference</a></p>
          */
@@ -1196,8 +1235,8 @@ namespace Model
 
         /**
          * <p>Returns list of event descriptions matching criteria up to the last 6
-         * weeks.</p> <note> <p>This action returns the most recent 1,000 events from the
-         * specified <code>NextToken</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * weeks.</p>  <p>This action returns the most recent 1,000 events from the
+         * specified <code>NextToken</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">AWS
          * API Reference</a></p>
          *
@@ -1207,8 +1246,8 @@ namespace Model
 
         /**
          * <p>Returns list of event descriptions matching criteria up to the last 6
-         * weeks.</p> <note> <p>This action returns the most recent 1,000 events from the
-         * specified <code>NextToken</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * weeks.</p>  <p>This action returns the most recent 1,000 events from the
+         * specified <code>NextToken</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">AWS
          * API Reference</a></p>
          *
@@ -1289,6 +1328,49 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribePlatformVersionAsync(const Model::DescribePlatformVersionRequest& request, const DescribePlatformVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Disassociate the operations role from an environment. After this call is
+         * made, Elastic Beanstalk uses the caller's permissions for permissions to
+         * downstream services during subsequent calls acting on this environment. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+         * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateEnvironmentOperationsRoleOutcome DisassociateEnvironmentOperationsRole(const Model::DisassociateEnvironmentOperationsRoleRequest& request) const;
+
+        /**
+         * <p>Disassociate the operations role from an environment. After this call is
+         * made, Elastic Beanstalk uses the caller's permissions for permissions to
+         * downstream services during subsequent calls acting on this environment. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+         * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateEnvironmentOperationsRoleOutcomeCallable DisassociateEnvironmentOperationsRoleCallable(const Model::DisassociateEnvironmentOperationsRoleRequest& request) const;
+
+        /**
+         * <p>Disassociate the operations role from an environment. After this call is
+         * made, Elastic Beanstalk uses the caller's permissions for permissions to
+         * downstream services during subsequent calls acting on this environment. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+         * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateEnvironmentOperationsRoleAsync(const Model::DisassociateEnvironmentOperationsRoleRequest& request, const DisassociateEnvironmentOperationsRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the available solution stack names, with the public version
@@ -1629,9 +1711,9 @@ namespace Model
 
         /**
          * <p>Updates the specified application to have the specified properties.</p>
-         * <note> <p>If a property (for example, <code>description</code>) is not provided,
+         *  <p>If a property (for example, <code>description</code>) is not provided,
          * the value remains unchanged. To clear these properties, specify an empty
-         * string.</p> </note><p><h3>See Also:</h3>   <a
+         * string.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication">AWS
          * API Reference</a></p>
          */
@@ -1639,9 +1721,9 @@ namespace Model
 
         /**
          * <p>Updates the specified application to have the specified properties.</p>
-         * <note> <p>If a property (for example, <code>description</code>) is not provided,
+         *  <p>If a property (for example, <code>description</code>) is not provided,
          * the value remains unchanged. To clear these properties, specify an empty
-         * string.</p> </note><p><h3>See Also:</h3>   <a
+         * string.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication">AWS
          * API Reference</a></p>
          *
@@ -1651,9 +1733,9 @@ namespace Model
 
         /**
          * <p>Updates the specified application to have the specified properties.</p>
-         * <note> <p>If a property (for example, <code>description</code>) is not provided,
+         *  <p>If a property (for example, <code>description</code>) is not provided,
          * the value remains unchanged. To clear these properties, specify an empty
-         * string.</p> </note><p><h3>See Also:</h3>   <a
+         * string.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication">AWS
          * API Reference</a></p>
          *
@@ -1688,9 +1770,9 @@ namespace Model
 
         /**
          * <p>Updates the specified application version to have the specified
-         * properties.</p> <note> <p>If a property (for example, <code>description</code>)
+         * properties.</p>  <p>If a property (for example, <code>description</code>)
          * is not provided, the value remains unchanged. To clear properties, specify an
-         * empty string.</p> </note><p><h3>See Also:</h3>   <a
+         * empty string.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion">AWS
          * API Reference</a></p>
          */
@@ -1698,9 +1780,9 @@ namespace Model
 
         /**
          * <p>Updates the specified application version to have the specified
-         * properties.</p> <note> <p>If a property (for example, <code>description</code>)
+         * properties.</p>  <p>If a property (for example, <code>description</code>)
          * is not provided, the value remains unchanged. To clear properties, specify an
-         * empty string.</p> </note><p><h3>See Also:</h3>   <a
+         * empty string.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion">AWS
          * API Reference</a></p>
          *
@@ -1710,9 +1792,9 @@ namespace Model
 
         /**
          * <p>Updates the specified application version to have the specified
-         * properties.</p> <note> <p>If a property (for example, <code>description</code>)
+         * properties.</p>  <p>If a property (for example, <code>description</code>)
          * is not provided, the value remains unchanged. To clear properties, specify an
-         * empty string.</p> </note><p><h3>See Also:</h3>   <a
+         * empty string.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion">AWS
          * API Reference</a></p>
          *
@@ -1722,9 +1804,9 @@ namespace Model
 
         /**
          * <p>Updates the specified configuration template to have the specified properties
-         * or configuration option values.</p> <note> <p>If a property (for example,
+         * or configuration option values.</p>  <p>If a property (for example,
          * <code>ApplicationName</code>) is not provided, its value remains unchanged. To
-         * clear such properties, specify an empty string.</p> </note> <p>Related
+         * clear such properties, specify an empty string.</p>  <p>Related
          * Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate">AWS
@@ -1734,9 +1816,9 @@ namespace Model
 
         /**
          * <p>Updates the specified configuration template to have the specified properties
-         * or configuration option values.</p> <note> <p>If a property (for example,
+         * or configuration option values.</p>  <p>If a property (for example,
          * <code>ApplicationName</code>) is not provided, its value remains unchanged. To
-         * clear such properties, specify an empty string.</p> </note> <p>Related
+         * clear such properties, specify an empty string.</p>  <p>Related
          * Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate">AWS
@@ -1748,9 +1830,9 @@ namespace Model
 
         /**
          * <p>Updates the specified configuration template to have the specified properties
-         * or configuration option values.</p> <note> <p>If a property (for example,
+         * or configuration option values.</p>  <p>If a property (for example,
          * <code>ApplicationName</code>) is not provided, its value remains unchanged. To
-         * clear such properties, specify an empty string.</p> </note> <p>Related
+         * clear such properties, specify an empty string.</p>  <p>Related
          * Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate">AWS
@@ -1916,12 +1998,13 @@ namespace Model
          */
         virtual void ValidateConfigurationSettingsAsync(const Model::ValidateConfigurationSettingsRequest& request, const ValidateConfigurationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-      
+
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AbortEnvironmentUpdateAsyncHelper(const Model::AbortEnvironmentUpdateRequest& request, const AbortEnvironmentUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ApplyEnvironmentManagedActionAsyncHelper(const Model::ApplyEnvironmentManagedActionRequest& request, const ApplyEnvironmentManagedActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateEnvironmentOperationsRoleAsyncHelper(const Model::AssociateEnvironmentOperationsRoleRequest& request, const AssociateEnvironmentOperationsRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CheckDNSAvailabilityAsyncHelper(const Model::CheckDNSAvailabilityRequest& request, const CheckDNSAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ComposeEnvironmentsAsyncHelper(const Model::ComposeEnvironmentsRequest& request, const ComposeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1948,6 +2031,7 @@ namespace Model
         void DescribeEventsAsyncHelper(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstancesHealthAsyncHelper(const Model::DescribeInstancesHealthRequest& request, const DescribeInstancesHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePlatformVersionAsyncHelper(const Model::DescribePlatformVersionRequest& request, const DescribePlatformVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateEnvironmentOperationsRoleAsyncHelper(const Model::DisassociateEnvironmentOperationsRoleRequest& request, const DisassociateEnvironmentOperationsRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAvailableSolutionStacksAsyncHelper(const Model::ListAvailableSolutionStacksRequest& request, const ListAvailableSolutionStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPlatformBranchesAsyncHelper(const Model::ListPlatformBranchesRequest& request, const ListPlatformBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPlatformVersionsAsyncHelper(const Model::ListPlatformVersionsRequest& request, const ListPlatformVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

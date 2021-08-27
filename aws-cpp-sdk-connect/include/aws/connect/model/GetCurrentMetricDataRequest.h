@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
@@ -91,7 +81,7 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. The only supported channel is <code>VOICE</code>.</p>
+     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
      */
     inline const Filters& GetFilters() const{ return m_filters; }
 
@@ -99,7 +89,7 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. The only supported channel is <code>VOICE</code>.</p>
+     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -107,7 +97,7 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. The only supported channel is <code>VOICE</code>.</p>
+     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
      */
     inline void SetFilters(const Filters& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -115,7 +105,7 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. The only supported channel is <code>VOICE</code>.</p>
+     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
      */
     inline void SetFilters(Filters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -123,7 +113,7 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. The only supported channel is <code>VOICE</code>.</p>
+     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
      */
     inline GetCurrentMetricDataRequest& WithFilters(const Filters& value) { SetFilters(value); return *this;}
 
@@ -131,7 +121,7 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. The only supported channel is <code>VOICE</code>.</p>
+     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
      */
     inline GetCurrentMetricDataRequest& WithFilters(Filters&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -140,7 +130,7 @@ namespace Model
      * <p>The grouping applied to the metrics returned. For example, when grouped by
      * <code>QUEUE</code>, the metrics returned apply to each queue rather than
      * aggregated for all queues. If you group by <code>CHANNEL</code>, you should
-     * include a Channels filter. The only supported channel is <code>VOICE</code>.</p>
+     * include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
      * <p>If no <code>Grouping</code> is included in the request, a summary of metrics
      * is returned.</p>
      */
@@ -150,7 +140,7 @@ namespace Model
      * <p>The grouping applied to the metrics returned. For example, when grouped by
      * <code>QUEUE</code>, the metrics returned apply to each queue rather than
      * aggregated for all queues. If you group by <code>CHANNEL</code>, you should
-     * include a Channels filter. The only supported channel is <code>VOICE</code>.</p>
+     * include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
      * <p>If no <code>Grouping</code> is included in the request, a summary of metrics
      * is returned.</p>
      */
@@ -160,7 +150,7 @@ namespace Model
      * <p>The grouping applied to the metrics returned. For example, when grouped by
      * <code>QUEUE</code>, the metrics returned apply to each queue rather than
      * aggregated for all queues. If you group by <code>CHANNEL</code>, you should
-     * include a Channels filter. The only supported channel is <code>VOICE</code>.</p>
+     * include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
      * <p>If no <code>Grouping</code> is included in the request, a summary of metrics
      * is returned.</p>
      */
@@ -170,7 +160,7 @@ namespace Model
      * <p>The grouping applied to the metrics returned. For example, when grouped by
      * <code>QUEUE</code>, the metrics returned apply to each queue rather than
      * aggregated for all queues. If you group by <code>CHANNEL</code>, you should
-     * include a Channels filter. The only supported channel is <code>VOICE</code>.</p>
+     * include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
      * <p>If no <code>Grouping</code> is included in the request, a summary of metrics
      * is returned.</p>
      */
@@ -180,7 +170,7 @@ namespace Model
      * <p>The grouping applied to the metrics returned. For example, when grouped by
      * <code>QUEUE</code>, the metrics returned apply to each queue rather than
      * aggregated for all queues. If you group by <code>CHANNEL</code>, you should
-     * include a Channels filter. The only supported channel is <code>VOICE</code>.</p>
+     * include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
      * <p>If no <code>Grouping</code> is included in the request, a summary of metrics
      * is returned.</p>
      */
@@ -190,7 +180,7 @@ namespace Model
      * <p>The grouping applied to the metrics returned. For example, when grouped by
      * <code>QUEUE</code>, the metrics returned apply to each queue rather than
      * aggregated for all queues. If you group by <code>CHANNEL</code>, you should
-     * include a Channels filter. The only supported channel is <code>VOICE</code>.</p>
+     * include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
      * <p>If no <code>Grouping</code> is included in the request, a summary of metrics
      * is returned.</p>
      */
@@ -200,7 +190,7 @@ namespace Model
      * <p>The grouping applied to the metrics returned. For example, when grouped by
      * <code>QUEUE</code>, the metrics returned apply to each queue rather than
      * aggregated for all queues. If you group by <code>CHANNEL</code>, you should
-     * include a Channels filter. The only supported channel is <code>VOICE</code>.</p>
+     * include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
      * <p>If no <code>Grouping</code> is included in the request, a summary of metrics
      * is returned.</p>
      */
@@ -210,7 +200,7 @@ namespace Model
      * <p>The grouping applied to the metrics returned. For example, when grouped by
      * <code>QUEUE</code>, the metrics returned apply to each queue rather than
      * aggregated for all queues. If you group by <code>CHANNEL</code>, you should
-     * include a Channels filter. The only supported channel is <code>VOICE</code>.</p>
+     * include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
      * <p>If no <code>Grouping</code> is included in the request, a summary of metrics
      * is returned.</p>
      */
@@ -219,137 +209,417 @@ namespace Model
 
     /**
      * <p>The metrics to retrieve. Specify the name and unit for each metric. The
-     * following metrics are available:</p> <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p>
-     * </dd> <dt>AGENTS_ERROR</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ON_CONTACT</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ONLINE</dt> <dd> <p>Unit: COUNT</p>
-     * </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>CONTACTS_IN_QUEUE</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> </dd>
-     * <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>SLOTS_AVAILABLE</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> </dl>
+     * following metrics are available. For a description of all the metrics, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a>
+     * </p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a>
+     * </p> </dd> <dt>AGENTS_ERROR</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a>
+     * </p> </dd> <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT
+     * (Non-Productive Time)</a> </p> </dd> <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit:
+     * COUNT</p> <p>Name in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
+     * contact</a> </p> </dd> <dt>AGENTS_ON_CONTACT</dt> <dd> <p>Unit: COUNT</p>
+     * <p>Name in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
+     * contact</a> </p> </dd> <dt>AGENTS_ONLINE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a>
+     * </p> </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a>
+     * </p> </dd> <dt>CONTACTS_IN_QUEUE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In
+     * queue</a> </p> </dd> <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> <p>Name
+     * in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
+     * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
+     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
+     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
+     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
+     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
+     * report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
+     * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a>
+     * </p> </dd> <dt>SLOTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a>
+     * </p> </dd> </dl>
      */
     inline const Aws::Vector<CurrentMetric>& GetCurrentMetrics() const{ return m_currentMetrics; }
 
     /**
      * <p>The metrics to retrieve. Specify the name and unit for each metric. The
-     * following metrics are available:</p> <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p>
-     * </dd> <dt>AGENTS_ERROR</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ON_CONTACT</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ONLINE</dt> <dd> <p>Unit: COUNT</p>
-     * </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>CONTACTS_IN_QUEUE</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> </dd>
-     * <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>SLOTS_AVAILABLE</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> </dl>
+     * following metrics are available. For a description of all the metrics, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a>
+     * </p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a>
+     * </p> </dd> <dt>AGENTS_ERROR</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a>
+     * </p> </dd> <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT
+     * (Non-Productive Time)</a> </p> </dd> <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit:
+     * COUNT</p> <p>Name in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
+     * contact</a> </p> </dd> <dt>AGENTS_ON_CONTACT</dt> <dd> <p>Unit: COUNT</p>
+     * <p>Name in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
+     * contact</a> </p> </dd> <dt>AGENTS_ONLINE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a>
+     * </p> </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a>
+     * </p> </dd> <dt>CONTACTS_IN_QUEUE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In
+     * queue</a> </p> </dd> <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> <p>Name
+     * in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
+     * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
+     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
+     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
+     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
+     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
+     * report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
+     * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a>
+     * </p> </dd> <dt>SLOTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a>
+     * </p> </dd> </dl>
      */
     inline bool CurrentMetricsHasBeenSet() const { return m_currentMetricsHasBeenSet; }
 
     /**
      * <p>The metrics to retrieve. Specify the name and unit for each metric. The
-     * following metrics are available:</p> <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p>
-     * </dd> <dt>AGENTS_ERROR</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ON_CONTACT</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ONLINE</dt> <dd> <p>Unit: COUNT</p>
-     * </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>CONTACTS_IN_QUEUE</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> </dd>
-     * <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>SLOTS_AVAILABLE</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> </dl>
+     * following metrics are available. For a description of all the metrics, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a>
+     * </p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a>
+     * </p> </dd> <dt>AGENTS_ERROR</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a>
+     * </p> </dd> <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT
+     * (Non-Productive Time)</a> </p> </dd> <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit:
+     * COUNT</p> <p>Name in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
+     * contact</a> </p> </dd> <dt>AGENTS_ON_CONTACT</dt> <dd> <p>Unit: COUNT</p>
+     * <p>Name in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
+     * contact</a> </p> </dd> <dt>AGENTS_ONLINE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a>
+     * </p> </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a>
+     * </p> </dd> <dt>CONTACTS_IN_QUEUE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In
+     * queue</a> </p> </dd> <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> <p>Name
+     * in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
+     * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
+     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
+     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
+     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
+     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
+     * report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
+     * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a>
+     * </p> </dd> <dt>SLOTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a>
+     * </p> </dd> </dl>
      */
     inline void SetCurrentMetrics(const Aws::Vector<CurrentMetric>& value) { m_currentMetricsHasBeenSet = true; m_currentMetrics = value; }
 
     /**
      * <p>The metrics to retrieve. Specify the name and unit for each metric. The
-     * following metrics are available:</p> <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p>
-     * </dd> <dt>AGENTS_ERROR</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ON_CONTACT</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ONLINE</dt> <dd> <p>Unit: COUNT</p>
-     * </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>CONTACTS_IN_QUEUE</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> </dd>
-     * <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>SLOTS_AVAILABLE</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> </dl>
+     * following metrics are available. For a description of all the metrics, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a>
+     * </p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a>
+     * </p> </dd> <dt>AGENTS_ERROR</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a>
+     * </p> </dd> <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT
+     * (Non-Productive Time)</a> </p> </dd> <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit:
+     * COUNT</p> <p>Name in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
+     * contact</a> </p> </dd> <dt>AGENTS_ON_CONTACT</dt> <dd> <p>Unit: COUNT</p>
+     * <p>Name in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
+     * contact</a> </p> </dd> <dt>AGENTS_ONLINE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a>
+     * </p> </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a>
+     * </p> </dd> <dt>CONTACTS_IN_QUEUE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In
+     * queue</a> </p> </dd> <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> <p>Name
+     * in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
+     * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
+     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
+     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
+     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
+     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
+     * report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
+     * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a>
+     * </p> </dd> <dt>SLOTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a>
+     * </p> </dd> </dl>
      */
     inline void SetCurrentMetrics(Aws::Vector<CurrentMetric>&& value) { m_currentMetricsHasBeenSet = true; m_currentMetrics = std::move(value); }
 
     /**
      * <p>The metrics to retrieve. Specify the name and unit for each metric. The
-     * following metrics are available:</p> <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p>
-     * </dd> <dt>AGENTS_ERROR</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ON_CONTACT</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ONLINE</dt> <dd> <p>Unit: COUNT</p>
-     * </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>CONTACTS_IN_QUEUE</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> </dd>
-     * <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>SLOTS_AVAILABLE</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> </dl>
+     * following metrics are available. For a description of all the metrics, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a>
+     * </p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a>
+     * </p> </dd> <dt>AGENTS_ERROR</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a>
+     * </p> </dd> <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT
+     * (Non-Productive Time)</a> </p> </dd> <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit:
+     * COUNT</p> <p>Name in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
+     * contact</a> </p> </dd> <dt>AGENTS_ON_CONTACT</dt> <dd> <p>Unit: COUNT</p>
+     * <p>Name in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
+     * contact</a> </p> </dd> <dt>AGENTS_ONLINE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a>
+     * </p> </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a>
+     * </p> </dd> <dt>CONTACTS_IN_QUEUE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In
+     * queue</a> </p> </dd> <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> <p>Name
+     * in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
+     * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
+     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
+     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
+     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
+     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
+     * report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
+     * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a>
+     * </p> </dd> <dt>SLOTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a>
+     * </p> </dd> </dl>
      */
     inline GetCurrentMetricDataRequest& WithCurrentMetrics(const Aws::Vector<CurrentMetric>& value) { SetCurrentMetrics(value); return *this;}
 
     /**
      * <p>The metrics to retrieve. Specify the name and unit for each metric. The
-     * following metrics are available:</p> <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p>
-     * </dd> <dt>AGENTS_ERROR</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ON_CONTACT</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ONLINE</dt> <dd> <p>Unit: COUNT</p>
-     * </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>CONTACTS_IN_QUEUE</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> </dd>
-     * <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>SLOTS_AVAILABLE</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> </dl>
+     * following metrics are available. For a description of all the metrics, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a>
+     * </p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a>
+     * </p> </dd> <dt>AGENTS_ERROR</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a>
+     * </p> </dd> <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT
+     * (Non-Productive Time)</a> </p> </dd> <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit:
+     * COUNT</p> <p>Name in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
+     * contact</a> </p> </dd> <dt>AGENTS_ON_CONTACT</dt> <dd> <p>Unit: COUNT</p>
+     * <p>Name in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
+     * contact</a> </p> </dd> <dt>AGENTS_ONLINE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a>
+     * </p> </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a>
+     * </p> </dd> <dt>CONTACTS_IN_QUEUE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In
+     * queue</a> </p> </dd> <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> <p>Name
+     * in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
+     * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
+     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
+     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
+     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
+     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
+     * report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
+     * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a>
+     * </p> </dd> <dt>SLOTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a>
+     * </p> </dd> </dl>
      */
     inline GetCurrentMetricDataRequest& WithCurrentMetrics(Aws::Vector<CurrentMetric>&& value) { SetCurrentMetrics(std::move(value)); return *this;}
 
     /**
      * <p>The metrics to retrieve. Specify the name and unit for each metric. The
-     * following metrics are available:</p> <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p>
-     * </dd> <dt>AGENTS_ERROR</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ON_CONTACT</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ONLINE</dt> <dd> <p>Unit: COUNT</p>
-     * </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>CONTACTS_IN_QUEUE</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> </dd>
-     * <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>SLOTS_AVAILABLE</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> </dl>
+     * following metrics are available. For a description of all the metrics, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a>
+     * </p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a>
+     * </p> </dd> <dt>AGENTS_ERROR</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a>
+     * </p> </dd> <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT
+     * (Non-Productive Time)</a> </p> </dd> <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit:
+     * COUNT</p> <p>Name in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
+     * contact</a> </p> </dd> <dt>AGENTS_ON_CONTACT</dt> <dd> <p>Unit: COUNT</p>
+     * <p>Name in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
+     * contact</a> </p> </dd> <dt>AGENTS_ONLINE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a>
+     * </p> </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a>
+     * </p> </dd> <dt>CONTACTS_IN_QUEUE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In
+     * queue</a> </p> </dd> <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> <p>Name
+     * in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
+     * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
+     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
+     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
+     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
+     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
+     * report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
+     * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a>
+     * </p> </dd> <dt>SLOTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a>
+     * </p> </dd> </dl>
      */
     inline GetCurrentMetricDataRequest& AddCurrentMetrics(const CurrentMetric& value) { m_currentMetricsHasBeenSet = true; m_currentMetrics.push_back(value); return *this; }
 
     /**
      * <p>The metrics to retrieve. Specify the name and unit for each metric. The
-     * following metrics are available:</p> <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p>
-     * </dd> <dt>AGENTS_ERROR</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ON_CONTACT</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ONLINE</dt> <dd> <p>Unit: COUNT</p>
-     * </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>CONTACTS_IN_QUEUE</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> </dd>
-     * <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> </dd>
-     * <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>SLOTS_AVAILABLE</dt>
-     * <dd> <p>Unit: COUNT</p> </dd> </dl>
+     * following metrics are available. For a description of all the metrics, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a>
+     * </p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a>
+     * </p> </dd> <dt>AGENTS_ERROR</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a>
+     * </p> </dd> <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT
+     * (Non-Productive Time)</a> </p> </dd> <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit:
+     * COUNT</p> <p>Name in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
+     * contact</a> </p> </dd> <dt>AGENTS_ON_CONTACT</dt> <dd> <p>Unit: COUNT</p>
+     * <p>Name in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
+     * contact</a> </p> </dd> <dt>AGENTS_ONLINE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a>
+     * </p> </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a>
+     * </p> </dd> <dt>CONTACTS_IN_QUEUE</dt> <dd> <p>Unit: COUNT</p> <p>Name in
+     * real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In
+     * queue</a> </p> </dd> <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> <p>Name
+     * in real-time metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
+     * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
+     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
+     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
+     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
+     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
+     * report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
+     * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a>
+     * </p> </dd> <dt>SLOTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
+     * metrics report: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a>
+     * </p> </dd> </dl>
      */
     inline GetCurrentMetricDataRequest& AddCurrentMetrics(CurrentMetric&& value) { m_currentMetricsHasBeenSet = true; m_currentMetrics.push_back(std::move(value)); return *this; }
 

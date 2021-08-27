@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticache/model/CacheNode.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -37,7 +27,8 @@ CacheNode::CacheNode() :
     m_endpointHasBeenSet(false),
     m_parameterGroupStatusHasBeenSet(false),
     m_sourceCacheNodeIdHasBeenSet(false),
-    m_customerAvailabilityZoneHasBeenSet(false)
+    m_customerAvailabilityZoneHasBeenSet(false),
+    m_customerOutpostArnHasBeenSet(false)
 {
 }
 
@@ -48,7 +39,8 @@ CacheNode::CacheNode(const XmlNode& xmlNode) :
     m_endpointHasBeenSet(false),
     m_parameterGroupStatusHasBeenSet(false),
     m_sourceCacheNodeIdHasBeenSet(false),
-    m_customerAvailabilityZoneHasBeenSet(false)
+    m_customerAvailabilityZoneHasBeenSet(false),
+    m_customerOutpostArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -101,6 +93,12 @@ CacheNode& CacheNode::operator =(const XmlNode& xmlNode)
       m_customerAvailabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(customerAvailabilityZoneNode.GetText());
       m_customerAvailabilityZoneHasBeenSet = true;
     }
+    XmlNode customerOutpostArnNode = resultNode.FirstChild("CustomerOutpostArn");
+    if(!customerOutpostArnNode.IsNull())
+    {
+      m_customerOutpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(customerOutpostArnNode.GetText());
+      m_customerOutpostArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -145,6 +143,11 @@ void CacheNode::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".CustomerAvailabilityZone=" << StringUtils::URLEncode(m_customerAvailabilityZone.c_str()) << "&";
   }
 
+  if(m_customerOutpostArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CustomerOutpostArn=" << StringUtils::URLEncode(m_customerOutpostArn.c_str()) << "&";
+  }
+
 }
 
 void CacheNode::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -178,6 +181,10 @@ void CacheNode::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_customerAvailabilityZoneHasBeenSet)
   {
       oStream << location << ".CustomerAvailabilityZone=" << StringUtils::URLEncode(m_customerAvailabilityZone.c_str()) << "&";
+  }
+  if(m_customerOutpostArnHasBeenSet)
+  {
+      oStream << location << ".CustomerOutpostArn=" << StringUtils::URLEncode(m_customerOutpostArn.c_str()) << "&";
   }
 }
 

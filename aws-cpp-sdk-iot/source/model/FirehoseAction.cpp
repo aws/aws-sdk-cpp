@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/iot/model/FirehoseAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,14 +21,18 @@ namespace Model
 FirehoseAction::FirehoseAction() : 
     m_roleArnHasBeenSet(false),
     m_deliveryStreamNameHasBeenSet(false),
-    m_separatorHasBeenSet(false)
+    m_separatorHasBeenSet(false),
+    m_batchMode(false),
+    m_batchModeHasBeenSet(false)
 {
 }
 
 FirehoseAction::FirehoseAction(JsonView jsonValue) : 
     m_roleArnHasBeenSet(false),
     m_deliveryStreamNameHasBeenSet(false),
-    m_separatorHasBeenSet(false)
+    m_separatorHasBeenSet(false),
+    m_batchMode(false),
+    m_batchModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +60,13 @@ FirehoseAction& FirehoseAction::operator =(JsonView jsonValue)
     m_separatorHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("batchMode"))
+  {
+    m_batchMode = jsonValue.GetBool("batchMode");
+
+    m_batchModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +89,12 @@ JsonValue FirehoseAction::Jsonize() const
   if(m_separatorHasBeenSet)
   {
    payload.WithString("separator", m_separator);
+
+  }
+
+  if(m_batchModeHasBeenSet)
+  {
+   payload.WithBool("batchMode", m_batchMode);
 
   }
 

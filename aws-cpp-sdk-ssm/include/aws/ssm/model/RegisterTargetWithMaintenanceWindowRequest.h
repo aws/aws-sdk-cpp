@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -135,13 +125,13 @@ namespace Model
      * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p>
      * <p> <b>Example 5</b>: Use filters for resource group types</p> <p>
      * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
-     * </code> </p> <note> <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
+     * </code> </p>  <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
      * specify resource types in the following format</p> <p>
      * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
-     * </code> </p> </note> <p>For more information about these examples formats,
+     * </code> </p>  <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
@@ -161,13 +151,13 @@ namespace Model
      * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p>
      * <p> <b>Example 5</b>: Use filters for resource group types</p> <p>
      * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
-     * </code> </p> <note> <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
+     * </code> </p>  <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
      * specify resource types in the following format</p> <p>
      * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
-     * </code> </p> </note> <p>For more information about these examples formats,
+     * </code> </p>  <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
@@ -187,13 +177,13 @@ namespace Model
      * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p>
      * <p> <b>Example 5</b>: Use filters for resource group types</p> <p>
      * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
-     * </code> </p> <note> <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
+     * </code> </p>  <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
      * specify resource types in the following format</p> <p>
      * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
-     * </code> </p> </note> <p>For more information about these examples formats,
+     * </code> </p>  <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
@@ -213,13 +203,13 @@ namespace Model
      * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p>
      * <p> <b>Example 5</b>: Use filters for resource group types</p> <p>
      * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
-     * </code> </p> <note> <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
+     * </code> </p>  <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
      * specify resource types in the following format</p> <p>
      * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
-     * </code> </p> </note> <p>For more information about these examples formats,
+     * </code> </p>  <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
@@ -239,13 +229,13 @@ namespace Model
      * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p>
      * <p> <b>Example 5</b>: Use filters for resource group types</p> <p>
      * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
-     * </code> </p> <note> <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
+     * </code> </p>  <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
      * specify resource types in the following format</p> <p>
      * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
-     * </code> </p> </note> <p>For more information about these examples formats,
+     * </code> </p>  <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
@@ -265,13 +255,13 @@ namespace Model
      * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p>
      * <p> <b>Example 5</b>: Use filters for resource group types</p> <p>
      * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
-     * </code> </p> <note> <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
+     * </code> </p>  <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
      * specify resource types in the following format</p> <p>
      * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
-     * </code> </p> </note> <p>For more information about these examples formats,
+     * </code> </p>  <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
@@ -291,13 +281,13 @@ namespace Model
      * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p>
      * <p> <b>Example 5</b>: Use filters for resource group types</p> <p>
      * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
-     * </code> </p> <note> <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
+     * </code> </p>  <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
      * specify resource types in the following format</p> <p>
      * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
-     * </code> </p> </note> <p>For more information about these examples formats,
+     * </code> </p>  <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
@@ -317,13 +307,13 @@ namespace Model
      * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p>
      * <p> <b>Example 5</b>: Use filters for resource group types</p> <p>
      * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
-     * </code> </p> <note> <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
+     * </code> </p>  <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
      * specify resource types in the following format</p> <p>
      * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
-     * </code> </p> </note> <p>For more information about these examples formats,
+     * </code> </p>  <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/wafv2/model/ParameterExceptionField.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -68,6 +58,11 @@ namespace Aws
         static const int TAG_KEYS_HASH = HashingUtils::HashString("TAG_KEYS");
         static const int METRIC_NAME_HASH = HashingUtils::HashString("METRIC_NAME");
         static const int FIREWALL_MANAGER_STATEMENT_HASH = HashingUtils::HashString("FIREWALL_MANAGER_STATEMENT");
+        static const int FALLBACK_BEHAVIOR_HASH = HashingUtils::HashString("FALLBACK_BEHAVIOR");
+        static const int POSITION_HASH = HashingUtils::HashString("POSITION");
+        static const int FORWARDED_IP_CONFIG_HASH = HashingUtils::HashString("FORWARDED_IP_CONFIG");
+        static const int IP_SET_FORWARDED_IP_CONFIG_HASH = HashingUtils::HashString("IP_SET_FORWARDED_IP_CONFIG");
+        static const int HEADER_NAME_HASH = HashingUtils::HashString("HEADER_NAME");
 
 
         ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name)
@@ -225,6 +220,26 @@ namespace Aws
           {
             return ParameterExceptionField::FIREWALL_MANAGER_STATEMENT;
           }
+          else if (hashCode == FALLBACK_BEHAVIOR_HASH)
+          {
+            return ParameterExceptionField::FALLBACK_BEHAVIOR;
+          }
+          else if (hashCode == POSITION_HASH)
+          {
+            return ParameterExceptionField::POSITION;
+          }
+          else if (hashCode == FORWARDED_IP_CONFIG_HASH)
+          {
+            return ParameterExceptionField::FORWARDED_IP_CONFIG;
+          }
+          else if (hashCode == IP_SET_FORWARDED_IP_CONFIG_HASH)
+          {
+            return ParameterExceptionField::IP_SET_FORWARDED_IP_CONFIG;
+          }
+          else if (hashCode == HEADER_NAME_HASH)
+          {
+            return ParameterExceptionField::HEADER_NAME;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -315,6 +330,16 @@ namespace Aws
             return "METRIC_NAME";
           case ParameterExceptionField::FIREWALL_MANAGER_STATEMENT:
             return "FIREWALL_MANAGER_STATEMENT";
+          case ParameterExceptionField::FALLBACK_BEHAVIOR:
+            return "FALLBACK_BEHAVIOR";
+          case ParameterExceptionField::POSITION:
+            return "POSITION";
+          case ParameterExceptionField::FORWARDED_IP_CONFIG:
+            return "FORWARDED_IP_CONFIG";
+          case ParameterExceptionField::IP_SET_FORWARDED_IP_CONFIG:
+            return "IP_SET_FORWARDED_IP_CONFIG";
+          case ParameterExceptionField::HEADER_NAME:
+            return "HEADER_NAME";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

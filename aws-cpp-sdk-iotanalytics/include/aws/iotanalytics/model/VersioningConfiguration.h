@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
@@ -32,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about the versioning of data set contents.</p><p><h3>See
+   * <p>Information about the versioning of dataset contents.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/VersioningConfiguration">AWS
    * API Reference</a></p>
@@ -47,47 +37,47 @@ namespace Model
 
 
     /**
-     * <p>If true, unlimited versions of data set contents will be kept.</p>
+     * <p>If true, unlimited versions of dataset contents are kept.</p>
      */
     inline bool GetUnlimited() const{ return m_unlimited; }
 
     /**
-     * <p>If true, unlimited versions of data set contents will be kept.</p>
+     * <p>If true, unlimited versions of dataset contents are kept.</p>
      */
     inline bool UnlimitedHasBeenSet() const { return m_unlimitedHasBeenSet; }
 
     /**
-     * <p>If true, unlimited versions of data set contents will be kept.</p>
+     * <p>If true, unlimited versions of dataset contents are kept.</p>
      */
     inline void SetUnlimited(bool value) { m_unlimitedHasBeenSet = true; m_unlimited = value; }
 
     /**
-     * <p>If true, unlimited versions of data set contents will be kept.</p>
+     * <p>If true, unlimited versions of dataset contents are kept.</p>
      */
     inline VersioningConfiguration& WithUnlimited(bool value) { SetUnlimited(value); return *this;}
 
 
     /**
-     * <p>How many versions of data set contents will be kept. The "unlimited"
-     * parameter must be false.</p>
+     * <p>How many versions of dataset contents are kept. The <code>unlimited</code>
+     * parameter must be <code>false</code>.</p>
      */
     inline int GetMaxVersions() const{ return m_maxVersions; }
 
     /**
-     * <p>How many versions of data set contents will be kept. The "unlimited"
-     * parameter must be false.</p>
+     * <p>How many versions of dataset contents are kept. The <code>unlimited</code>
+     * parameter must be <code>false</code>.</p>
      */
     inline bool MaxVersionsHasBeenSet() const { return m_maxVersionsHasBeenSet; }
 
     /**
-     * <p>How many versions of data set contents will be kept. The "unlimited"
-     * parameter must be false.</p>
+     * <p>How many versions of dataset contents are kept. The <code>unlimited</code>
+     * parameter must be <code>false</code>.</p>
      */
     inline void SetMaxVersions(int value) { m_maxVersionsHasBeenSet = true; m_maxVersions = value; }
 
     /**
-     * <p>How many versions of data set contents will be kept. The "unlimited"
-     * parameter must be false.</p>
+     * <p>How many versions of dataset contents are kept. The <code>unlimited</code>
+     * parameter must be <code>false</code>.</p>
      */
     inline VersioningConfiguration& WithMaxVersions(int value) { SetMaxVersions(value); return *this;}
 

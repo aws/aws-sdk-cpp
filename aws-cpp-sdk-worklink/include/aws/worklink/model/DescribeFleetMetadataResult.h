@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/worklink/WorkLink_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/worklink/model/FleetStatus.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -248,6 +239,67 @@ namespace Model
      */
     inline DescribeFleetMetadataResult& WithFleetStatus(FleetStatus&& value) { SetFleetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline DescribeFleetMetadataResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline DescribeFleetMetadataResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline DescribeFleetMetadataResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline DescribeFleetMetadataResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline DescribeFleetMetadataResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline DescribeFleetMetadataResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline DescribeFleetMetadataResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline DescribeFleetMetadataResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags attached to the resource. A tag is a key-value pair.</p>
+     */
+    inline DescribeFleetMetadataResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::Utils::DateTime m_createdTime;
@@ -263,6 +315,8 @@ namespace Model
     Aws::String m_companyCode;
 
     FleetStatus m_fleetStatus;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -201,7 +191,7 @@ namespace Model
 
 
     /**
-     * <p> The storage class to use when replicating objects, such as standard or
+     * <p> The storage class to use when replicating objects, such as S3 Standard or
      * reduced redundancy. By default, Amazon S3 uses the storage class of the source
      * object to create the object replica. </p> <p>For valid values, see the
      * <code>StorageClass</code> element of the <a
@@ -212,7 +202,7 @@ namespace Model
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * <p> The storage class to use when replicating objects, such as standard or
+     * <p> The storage class to use when replicating objects, such as S3 Standard or
      * reduced redundancy. By default, Amazon S3 uses the storage class of the source
      * object to create the object replica. </p> <p>For valid values, see the
      * <code>StorageClass</code> element of the <a
@@ -223,7 +213,7 @@ namespace Model
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
 
     /**
-     * <p> The storage class to use when replicating objects, such as standard or
+     * <p> The storage class to use when replicating objects, such as S3 Standard or
      * reduced redundancy. By default, Amazon S3 uses the storage class of the source
      * object to create the object replica. </p> <p>For valid values, see the
      * <code>StorageClass</code> element of the <a
@@ -234,7 +224,7 @@ namespace Model
     inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
-     * <p> The storage class to use when replicating objects, such as standard or
+     * <p> The storage class to use when replicating objects, such as S3 Standard or
      * reduced redundancy. By default, Amazon S3 uses the storage class of the source
      * object to create the object replica. </p> <p>For valid values, see the
      * <code>StorageClass</code> element of the <a
@@ -245,7 +235,7 @@ namespace Model
     inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
-     * <p> The storage class to use when replicating objects, such as standard or
+     * <p> The storage class to use when replicating objects, such as S3 Standard or
      * reduced redundancy. By default, Amazon S3 uses the storage class of the source
      * object to create the object replica. </p> <p>For valid values, see the
      * <code>StorageClass</code> element of the <a
@@ -256,7 +246,7 @@ namespace Model
     inline Destination& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
-     * <p> The storage class to use when replicating objects, such as standard or
+     * <p> The storage class to use when replicating objects, such as S3 Standard or
      * reduced redundancy. By default, Amazon S3 uses the storage class of the source
      * object to create the object replica. </p> <p>For valid values, see the
      * <code>StorageClass</code> element of the <a
@@ -415,44 +405,38 @@ namespace Model
 
 
     /**
-     * <p> A container specifying replication metrics-related settings enabling metrics
-     * and Amazon S3 events for S3 Replication Time Control (S3 RTC). Must be specified
-     * together with a <code>ReplicationTime</code> block. </p>
+     * <p> A container specifying replication metrics-related settings enabling
+     * replication metrics and events. </p>
      */
     inline const Metrics& GetMetrics() const{ return m_metrics; }
 
     /**
-     * <p> A container specifying replication metrics-related settings enabling metrics
-     * and Amazon S3 events for S3 Replication Time Control (S3 RTC). Must be specified
-     * together with a <code>ReplicationTime</code> block. </p>
+     * <p> A container specifying replication metrics-related settings enabling
+     * replication metrics and events. </p>
      */
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
     /**
-     * <p> A container specifying replication metrics-related settings enabling metrics
-     * and Amazon S3 events for S3 Replication Time Control (S3 RTC). Must be specified
-     * together with a <code>ReplicationTime</code> block. </p>
+     * <p> A container specifying replication metrics-related settings enabling
+     * replication metrics and events. </p>
      */
     inline void SetMetrics(const Metrics& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
     /**
-     * <p> A container specifying replication metrics-related settings enabling metrics
-     * and Amazon S3 events for S3 Replication Time Control (S3 RTC). Must be specified
-     * together with a <code>ReplicationTime</code> block. </p>
+     * <p> A container specifying replication metrics-related settings enabling
+     * replication metrics and events. </p>
      */
     inline void SetMetrics(Metrics&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
 
     /**
-     * <p> A container specifying replication metrics-related settings enabling metrics
-     * and Amazon S3 events for S3 Replication Time Control (S3 RTC). Must be specified
-     * together with a <code>ReplicationTime</code> block. </p>
+     * <p> A container specifying replication metrics-related settings enabling
+     * replication metrics and events. </p>
      */
     inline Destination& WithMetrics(const Metrics& value) { SetMetrics(value); return *this;}
 
     /**
-     * <p> A container specifying replication metrics-related settings enabling metrics
-     * and Amazon S3 events for S3 Replication Time Control (S3 RTC). Must be specified
-     * together with a <code>ReplicationTime</code> block. </p>
+     * <p> A container specifying replication metrics-related settings enabling
+     * replication metrics and events. </p>
      */
     inline Destination& WithMetrics(Metrics&& value) { SetMetrics(std::move(value)); return *this;}
 

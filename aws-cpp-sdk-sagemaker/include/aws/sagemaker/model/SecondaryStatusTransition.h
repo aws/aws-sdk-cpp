@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -298,9 +288,9 @@ namespace Model
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
      * <dd> <ul> <li> <p>Downloading the training image.</p> </li> <li> <p>Training
      * image download completed. Training in progress.</p> </li> </ul> </dd> </dl>
-     * <important> <p>Status messages are subject to change. Therefore, we recommend
+     *  <p>Status messages are subject to change. Therefore, we recommend
      * not including them in code that programmatically initiates actions. For
-     * examples, don't use status messages in if statements.</p> </important> <p>To
+     * examples, don't use status messages in if statements.</p>  <p>To
      * have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in
      * <a>DescribeTrainingJob</a>, and <code>StatusMessage</code> together. For
@@ -321,9 +311,9 @@ namespace Model
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
      * <dd> <ul> <li> <p>Downloading the training image.</p> </li> <li> <p>Training
      * image download completed. Training in progress.</p> </li> </ul> </dd> </dl>
-     * <important> <p>Status messages are subject to change. Therefore, we recommend
+     *  <p>Status messages are subject to change. Therefore, we recommend
      * not including them in code that programmatically initiates actions. For
-     * examples, don't use status messages in if statements.</p> </important> <p>To
+     * examples, don't use status messages in if statements.</p>  <p>To
      * have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in
      * <a>DescribeTrainingJob</a>, and <code>StatusMessage</code> together. For
@@ -344,9 +334,9 @@ namespace Model
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
      * <dd> <ul> <li> <p>Downloading the training image.</p> </li> <li> <p>Training
      * image download completed. Training in progress.</p> </li> </ul> </dd> </dl>
-     * <important> <p>Status messages are subject to change. Therefore, we recommend
+     *  <p>Status messages are subject to change. Therefore, we recommend
      * not including them in code that programmatically initiates actions. For
-     * examples, don't use status messages in if statements.</p> </important> <p>To
+     * examples, don't use status messages in if statements.</p>  <p>To
      * have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in
      * <a>DescribeTrainingJob</a>, and <code>StatusMessage</code> together. For
@@ -367,9 +357,9 @@ namespace Model
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
      * <dd> <ul> <li> <p>Downloading the training image.</p> </li> <li> <p>Training
      * image download completed. Training in progress.</p> </li> </ul> </dd> </dl>
-     * <important> <p>Status messages are subject to change. Therefore, we recommend
+     *  <p>Status messages are subject to change. Therefore, we recommend
      * not including them in code that programmatically initiates actions. For
-     * examples, don't use status messages in if statements.</p> </important> <p>To
+     * examples, don't use status messages in if statements.</p>  <p>To
      * have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in
      * <a>DescribeTrainingJob</a>, and <code>StatusMessage</code> together. For
@@ -390,9 +380,9 @@ namespace Model
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
      * <dd> <ul> <li> <p>Downloading the training image.</p> </li> <li> <p>Training
      * image download completed. Training in progress.</p> </li> </ul> </dd> </dl>
-     * <important> <p>Status messages are subject to change. Therefore, we recommend
+     *  <p>Status messages are subject to change. Therefore, we recommend
      * not including them in code that programmatically initiates actions. For
-     * examples, don't use status messages in if statements.</p> </important> <p>To
+     * examples, don't use status messages in if statements.</p>  <p>To
      * have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in
      * <a>DescribeTrainingJob</a>, and <code>StatusMessage</code> together. For
@@ -413,9 +403,9 @@ namespace Model
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
      * <dd> <ul> <li> <p>Downloading the training image.</p> </li> <li> <p>Training
      * image download completed. Training in progress.</p> </li> </ul> </dd> </dl>
-     * <important> <p>Status messages are subject to change. Therefore, we recommend
+     *  <p>Status messages are subject to change. Therefore, we recommend
      * not including them in code that programmatically initiates actions. For
-     * examples, don't use status messages in if statements.</p> </important> <p>To
+     * examples, don't use status messages in if statements.</p>  <p>To
      * have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in
      * <a>DescribeTrainingJob</a>, and <code>StatusMessage</code> together. For
@@ -436,9 +426,9 @@ namespace Model
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
      * <dd> <ul> <li> <p>Downloading the training image.</p> </li> <li> <p>Training
      * image download completed. Training in progress.</p> </li> </ul> </dd> </dl>
-     * <important> <p>Status messages are subject to change. Therefore, we recommend
+     *  <p>Status messages are subject to change. Therefore, we recommend
      * not including them in code that programmatically initiates actions. For
-     * examples, don't use status messages in if statements.</p> </important> <p>To
+     * examples, don't use status messages in if statements.</p>  <p>To
      * have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in
      * <a>DescribeTrainingJob</a>, and <code>StatusMessage</code> together. For
@@ -459,9 +449,9 @@ namespace Model
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
      * <dd> <ul> <li> <p>Downloading the training image.</p> </li> <li> <p>Training
      * image download completed. Training in progress.</p> </li> </ul> </dd> </dl>
-     * <important> <p>Status messages are subject to change. Therefore, we recommend
+     *  <p>Status messages are subject to change. Therefore, we recommend
      * not including them in code that programmatically initiates actions. For
-     * examples, don't use status messages in if statements.</p> </important> <p>To
+     * examples, don't use status messages in if statements.</p>  <p>To
      * have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in
      * <a>DescribeTrainingJob</a>, and <code>StatusMessage</code> together. For

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3control/S3Control_EXPORTS.h>
@@ -279,37 +269,37 @@ namespace Model
 
 
     /**
-     * <p>The operation that the specified job is configured to execute on the objects
+     * <p>The operation that the specified job is configured to run on the objects
      * listed in the manifest.</p>
      */
     inline const JobOperation& GetOperation() const{ return m_operation; }
 
     /**
-     * <p>The operation that the specified job is configured to execute on the objects
+     * <p>The operation that the specified job is configured to run on the objects
      * listed in the manifest.</p>
      */
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
 
     /**
-     * <p>The operation that the specified job is configured to execute on the objects
+     * <p>The operation that the specified job is configured to run on the objects
      * listed in the manifest.</p>
      */
     inline void SetOperation(const JobOperation& value) { m_operationHasBeenSet = true; m_operation = value; }
 
     /**
-     * <p>The operation that the specified job is configured to execute on the objects
+     * <p>The operation that the specified job is configured to run on the objects
      * listed in the manifest.</p>
      */
     inline void SetOperation(JobOperation&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
 
     /**
-     * <p>The operation that the specified job is configured to execute on the objects
+     * <p>The operation that the specified job is configured to run on the objects
      * listed in the manifest.</p>
      */
     inline JobDescriptor& WithOperation(const JobOperation& value) { SetOperation(value); return *this;}
 
     /**
-     * <p>The operation that the specified job is configured to execute on the objects
+     * <p>The operation that the specified job is configured to run on the objects
      * listed in the manifest.</p>
      */
     inline JobDescriptor& WithOperation(JobOperation&& value) { SetOperation(std::move(value)); return *this;}
@@ -337,79 +327,79 @@ namespace Model
 
 
     /**
-     * <p>Describes the total number of tasks that the specified job has executed, the
+     * <p>Describes the total number of tasks that the specified job has run, the
      * number of tasks that succeeded, and the number of tasks that failed.</p>
      */
     inline const JobProgressSummary& GetProgressSummary() const{ return m_progressSummary; }
 
     /**
-     * <p>Describes the total number of tasks that the specified job has executed, the
+     * <p>Describes the total number of tasks that the specified job has run, the
      * number of tasks that succeeded, and the number of tasks that failed.</p>
      */
     inline bool ProgressSummaryHasBeenSet() const { return m_progressSummaryHasBeenSet; }
 
     /**
-     * <p>Describes the total number of tasks that the specified job has executed, the
+     * <p>Describes the total number of tasks that the specified job has run, the
      * number of tasks that succeeded, and the number of tasks that failed.</p>
      */
     inline void SetProgressSummary(const JobProgressSummary& value) { m_progressSummaryHasBeenSet = true; m_progressSummary = value; }
 
     /**
-     * <p>Describes the total number of tasks that the specified job has executed, the
+     * <p>Describes the total number of tasks that the specified job has run, the
      * number of tasks that succeeded, and the number of tasks that failed.</p>
      */
     inline void SetProgressSummary(JobProgressSummary&& value) { m_progressSummaryHasBeenSet = true; m_progressSummary = std::move(value); }
 
     /**
-     * <p>Describes the total number of tasks that the specified job has executed, the
+     * <p>Describes the total number of tasks that the specified job has run, the
      * number of tasks that succeeded, and the number of tasks that failed.</p>
      */
     inline JobDescriptor& WithProgressSummary(const JobProgressSummary& value) { SetProgressSummary(value); return *this;}
 
     /**
-     * <p>Describes the total number of tasks that the specified job has executed, the
+     * <p>Describes the total number of tasks that the specified job has run, the
      * number of tasks that succeeded, and the number of tasks that failed.</p>
      */
     inline JobDescriptor& WithProgressSummary(JobProgressSummary&& value) { SetProgressSummary(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The reason for updating the job.</p>
      */
     inline const Aws::String& GetStatusUpdateReason() const{ return m_statusUpdateReason; }
 
     /**
-     * <p/>
+     * <p>The reason for updating the job.</p>
      */
     inline bool StatusUpdateReasonHasBeenSet() const { return m_statusUpdateReasonHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The reason for updating the job.</p>
      */
     inline void SetStatusUpdateReason(const Aws::String& value) { m_statusUpdateReasonHasBeenSet = true; m_statusUpdateReason = value; }
 
     /**
-     * <p/>
+     * <p>The reason for updating the job.</p>
      */
     inline void SetStatusUpdateReason(Aws::String&& value) { m_statusUpdateReasonHasBeenSet = true; m_statusUpdateReason = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The reason for updating the job.</p>
      */
     inline void SetStatusUpdateReason(const char* value) { m_statusUpdateReasonHasBeenSet = true; m_statusUpdateReason.assign(value); }
 
     /**
-     * <p/>
+     * <p>The reason for updating the job.</p>
      */
     inline JobDescriptor& WithStatusUpdateReason(const Aws::String& value) { SetStatusUpdateReason(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The reason for updating the job.</p>
      */
     inline JobDescriptor& WithStatusUpdateReason(Aws::String&& value) { SetStatusUpdateReason(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The reason for updating the job.</p>
      */
     inline JobDescriptor& WithStatusUpdateReason(const char* value) { SetStatusUpdateReason(value); return *this;}
 
@@ -569,50 +559,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
-     * Role assigned to execute the tasks for this job.</p>
+     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
+     * (IAM) role assigned to run the tasks for this job.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
-     * Role assigned to execute the tasks for this job.</p>
+     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
+     * (IAM) role assigned to run the tasks for this job.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
-     * Role assigned to execute the tasks for this job.</p>
+     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
+     * (IAM) role assigned to run the tasks for this job.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
-     * Role assigned to execute the tasks for this job.</p>
+     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
+     * (IAM) role assigned to run the tasks for this job.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
-     * Role assigned to execute the tasks for this job.</p>
+     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
+     * (IAM) role assigned to run the tasks for this job.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
-     * Role assigned to execute the tasks for this job.</p>
+     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
+     * (IAM) role assigned to run the tasks for this job.</p>
      */
     inline JobDescriptor& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
-     * Role assigned to execute the tasks for this job.</p>
+     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
+     * (IAM) role assigned to run the tasks for this job.</p>
      */
     inline JobDescriptor& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
-     * Role assigned to execute the tasks for this job.</p>
+     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
+     * (IAM) role assigned to run the tasks for this job.</p>
      */
     inline JobDescriptor& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

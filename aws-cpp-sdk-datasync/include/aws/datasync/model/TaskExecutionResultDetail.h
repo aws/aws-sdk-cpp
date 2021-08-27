@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/datasync/DataSync_EXPORTS.h>
@@ -157,32 +147,32 @@ namespace Model
 
 
     /**
-     * <p>The status of the TRANSFERRING Phase.</p>
+     * <p>The status of the TRANSFERRING phase.</p>
      */
     inline const PhaseStatus& GetTransferStatus() const{ return m_transferStatus; }
 
     /**
-     * <p>The status of the TRANSFERRING Phase.</p>
+     * <p>The status of the TRANSFERRING phase.</p>
      */
     inline bool TransferStatusHasBeenSet() const { return m_transferStatusHasBeenSet; }
 
     /**
-     * <p>The status of the TRANSFERRING Phase.</p>
+     * <p>The status of the TRANSFERRING phase.</p>
      */
     inline void SetTransferStatus(const PhaseStatus& value) { m_transferStatusHasBeenSet = true; m_transferStatus = value; }
 
     /**
-     * <p>The status of the TRANSFERRING Phase.</p>
+     * <p>The status of the TRANSFERRING phase.</p>
      */
     inline void SetTransferStatus(PhaseStatus&& value) { m_transferStatusHasBeenSet = true; m_transferStatus = std::move(value); }
 
     /**
-     * <p>The status of the TRANSFERRING Phase.</p>
+     * <p>The status of the TRANSFERRING phase.</p>
      */
     inline TaskExecutionResultDetail& WithTransferStatus(const PhaseStatus& value) { SetTransferStatus(value); return *this;}
 
     /**
-     * <p>The status of the TRANSFERRING Phase.</p>
+     * <p>The status of the TRANSFERRING phase.</p>
      */
     inline TaskExecutionResultDetail& WithTransferStatus(PhaseStatus&& value) { SetTransferStatus(std::move(value)); return *this;}
 
@@ -213,32 +203,32 @@ namespace Model
 
 
     /**
-     * <p>The status of the VERIFYING Phase.</p>
+     * <p>The status of the VERIFYING phase.</p>
      */
     inline const PhaseStatus& GetVerifyStatus() const{ return m_verifyStatus; }
 
     /**
-     * <p>The status of the VERIFYING Phase.</p>
+     * <p>The status of the VERIFYING phase.</p>
      */
     inline bool VerifyStatusHasBeenSet() const { return m_verifyStatusHasBeenSet; }
 
     /**
-     * <p>The status of the VERIFYING Phase.</p>
+     * <p>The status of the VERIFYING phase.</p>
      */
     inline void SetVerifyStatus(const PhaseStatus& value) { m_verifyStatusHasBeenSet = true; m_verifyStatus = value; }
 
     /**
-     * <p>The status of the VERIFYING Phase.</p>
+     * <p>The status of the VERIFYING phase.</p>
      */
     inline void SetVerifyStatus(PhaseStatus&& value) { m_verifyStatusHasBeenSet = true; m_verifyStatus = std::move(value); }
 
     /**
-     * <p>The status of the VERIFYING Phase.</p>
+     * <p>The status of the VERIFYING phase.</p>
      */
     inline TaskExecutionResultDetail& WithVerifyStatus(const PhaseStatus& value) { SetVerifyStatus(value); return *this;}
 
     /**
-     * <p>The status of the VERIFYING Phase.</p>
+     * <p>The status of the VERIFYING phase.</p>
      */
     inline TaskExecutionResultDetail& WithVerifyStatus(PhaseStatus&& value) { SetVerifyStatus(std::move(value)); return *this;}
 

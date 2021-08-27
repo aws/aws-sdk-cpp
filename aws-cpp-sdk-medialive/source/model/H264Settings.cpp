@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/medialive/model/H264Settings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -44,6 +34,7 @@ H264Settings::H264Settings() :
     m_colorSpaceSettingsHasBeenSet(false),
     m_entropyEncoding(H264EntropyEncoding::NOT_SET),
     m_entropyEncodingHasBeenSet(false),
+    m_filterSettingsHasBeenSet(false),
     m_fixedAfd(FixedAfd::NOT_SET),
     m_fixedAfdHasBeenSet(false),
     m_flickerAq(H264FlickerAq::NOT_SET),
@@ -84,6 +75,8 @@ H264Settings::H264Settings() :
     m_parNumeratorHasBeenSet(false),
     m_profile(H264Profile::NOT_SET),
     m_profileHasBeenSet(false),
+    m_qualityLevel(H264QualityLevel::NOT_SET),
+    m_qualityLevelHasBeenSet(false),
     m_qvbrQualityLevel(0),
     m_qvbrQualityLevelHasBeenSet(false),
     m_rateControlMode(H264RateControlMode::NOT_SET),
@@ -125,6 +118,7 @@ H264Settings::H264Settings(JsonView jsonValue) :
     m_colorSpaceSettingsHasBeenSet(false),
     m_entropyEncoding(H264EntropyEncoding::NOT_SET),
     m_entropyEncodingHasBeenSet(false),
+    m_filterSettingsHasBeenSet(false),
     m_fixedAfd(FixedAfd::NOT_SET),
     m_fixedAfdHasBeenSet(false),
     m_flickerAq(H264FlickerAq::NOT_SET),
@@ -165,6 +159,8 @@ H264Settings::H264Settings(JsonView jsonValue) :
     m_parNumeratorHasBeenSet(false),
     m_profile(H264Profile::NOT_SET),
     m_profileHasBeenSet(false),
+    m_qualityLevel(H264QualityLevel::NOT_SET),
+    m_qualityLevelHasBeenSet(false),
     m_qvbrQualityLevel(0),
     m_qvbrQualityLevelHasBeenSet(false),
     m_rateControlMode(H264RateControlMode::NOT_SET),
@@ -247,6 +243,13 @@ H264Settings& H264Settings::operator =(JsonView jsonValue)
     m_entropyEncoding = H264EntropyEncodingMapper::GetH264EntropyEncodingForName(jsonValue.GetString("entropyEncoding"));
 
     m_entropyEncodingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("filterSettings"))
+  {
+    m_filterSettings = jsonValue.GetObject("filterSettings");
+
+    m_filterSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("fixedAfd"))
@@ -389,6 +392,13 @@ H264Settings& H264Settings::operator =(JsonView jsonValue)
     m_profileHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("qualityLevel"))
+  {
+    m_qualityLevel = H264QualityLevelMapper::GetH264QualityLevelForName(jsonValue.GetString("qualityLevel"));
+
+    m_qualityLevelHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("qvbrQualityLevel"))
   {
     m_qvbrQualityLevel = jsonValue.GetInteger("qvbrQualityLevel");
@@ -517,6 +527,12 @@ JsonValue H264Settings::Jsonize() const
    payload.WithString("entropyEncoding", H264EntropyEncodingMapper::GetNameForH264EntropyEncoding(m_entropyEncoding));
   }
 
+  if(m_filterSettingsHasBeenSet)
+  {
+   payload.WithObject("filterSettings", m_filterSettings.Jsonize());
+
+  }
+
   if(m_fixedAfdHasBeenSet)
   {
    payload.WithString("fixedAfd", FixedAfdMapper::GetNameForFixedAfd(m_fixedAfd));
@@ -625,6 +641,11 @@ JsonValue H264Settings::Jsonize() const
   if(m_profileHasBeenSet)
   {
    payload.WithString("profile", H264ProfileMapper::GetNameForH264Profile(m_profile));
+  }
+
+  if(m_qualityLevelHasBeenSet)
+  {
+   payload.WithString("qualityLevel", H264QualityLevelMapper::GetNameForH264QualityLevel(m_qualityLevel));
   }
 
   if(m_qvbrQualityLevelHasBeenSet)

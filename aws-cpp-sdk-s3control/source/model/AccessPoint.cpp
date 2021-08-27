@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/s3control/model/AccessPoint.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -35,7 +25,8 @@ AccessPoint::AccessPoint() :
     m_networkOrigin(NetworkOrigin::NOT_SET),
     m_networkOriginHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
-    m_bucketHasBeenSet(false)
+    m_bucketHasBeenSet(false),
+    m_accessPointArnHasBeenSet(false)
 {
 }
 
@@ -44,7 +35,8 @@ AccessPoint::AccessPoint(const XmlNode& xmlNode) :
     m_networkOrigin(NetworkOrigin::NOT_SET),
     m_networkOriginHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
-    m_bucketHasBeenSet(false)
+    m_bucketHasBeenSet(false),
+    m_accessPointArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -79,6 +71,12 @@ AccessPoint& AccessPoint::operator =(const XmlNode& xmlNode)
       m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
       m_bucketHasBeenSet = true;
     }
+    XmlNode accessPointArnNode = resultNode.FirstChild("AccessPointArn");
+    if(!accessPointArnNode.IsNull())
+    {
+      m_accessPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(accessPointArnNode.GetText());
+      m_accessPointArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -109,6 +107,12 @@ void AccessPoint::AddToNode(XmlNode& parentNode) const
   {
    XmlNode bucketNode = parentNode.CreateChildElement("Bucket");
    bucketNode.SetText(m_bucket);
+  }
+
+  if(m_accessPointArnHasBeenSet)
+  {
+   XmlNode accessPointArnNode = parentNode.CreateChildElement("AccessPointArn");
+   accessPointArnNode.SetText(m_accessPointArn);
   }
 
 }

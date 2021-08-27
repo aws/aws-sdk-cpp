@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/budgets/Budgets_EXPORTS.h>
@@ -37,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>A notification that is associated with a budget. A budget can have up to five
+   * <p>A notification that is associated with a budget. A budget can have up to ten
    * notifications. </p> <p>Each notification must have at least one subscriber. A
    * notification can have one SNS subscriber and up to 10 email subscribers, for a
    * total of 11 subscribers.</p> <p>For example, if you have a budget for 200
@@ -130,25 +120,33 @@ namespace Model
 
     /**
      * <p>The threshold that is associated with a notification. Thresholds are always a
-     * percentage.</p>
+     * percentage, and many customers find value being alerted between 50% - 200% of
+     * the budgeted amount. The maximum limit for your threshold is 1,000,000% above
+     * the budgeted amount.</p>
      */
     inline double GetThreshold() const{ return m_threshold; }
 
     /**
      * <p>The threshold that is associated with a notification. Thresholds are always a
-     * percentage.</p>
+     * percentage, and many customers find value being alerted between 50% - 200% of
+     * the budgeted amount. The maximum limit for your threshold is 1,000,000% above
+     * the budgeted amount.</p>
      */
     inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
 
     /**
      * <p>The threshold that is associated with a notification. Thresholds are always a
-     * percentage.</p>
+     * percentage, and many customers find value being alerted between 50% - 200% of
+     * the budgeted amount. The maximum limit for your threshold is 1,000,000% above
+     * the budgeted amount.</p>
      */
     inline void SetThreshold(double value) { m_thresholdHasBeenSet = true; m_threshold = value; }
 
     /**
      * <p>The threshold that is associated with a notification. Thresholds are always a
-     * percentage.</p>
+     * percentage, and many customers find value being alerted between 50% - 200% of
+     * the budgeted amount. The maximum limit for your threshold is 1,000,000% above
+     * the budgeted amount.</p>
      */
     inline Notification& WithThreshold(double value) { SetThreshold(value); return *this;}
 

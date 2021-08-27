@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -113,7 +103,7 @@ namespace Model
      * true), you can use the key name in this field as marker in the subsequent
      * request to get next set of objects. Amazon S3 lists objects in alphabetical
      * order Note: This element is returned only if you have delimiter request
-     * parameter specified. If response does not include the NextMaker and it is
+     * parameter specified. If response does not include the NextMarker and it is
      * truncated, you can use the value of the last Key in the response as the marker
      * in the subsequent request to get the next set of object keys.</p>
      */
@@ -124,7 +114,7 @@ namespace Model
      * true), you can use the key name in this field as marker in the subsequent
      * request to get next set of objects. Amazon S3 lists objects in alphabetical
      * order Note: This element is returned only if you have delimiter request
-     * parameter specified. If response does not include the NextMaker and it is
+     * parameter specified. If response does not include the NextMarker and it is
      * truncated, you can use the value of the last Key in the response as the marker
      * in the subsequent request to get the next set of object keys.</p>
      */
@@ -135,7 +125,7 @@ namespace Model
      * true), you can use the key name in this field as marker in the subsequent
      * request to get next set of objects. Amazon S3 lists objects in alphabetical
      * order Note: This element is returned only if you have delimiter request
-     * parameter specified. If response does not include the NextMaker and it is
+     * parameter specified. If response does not include the NextMarker and it is
      * truncated, you can use the value of the last Key in the response as the marker
      * in the subsequent request to get the next set of object keys.</p>
      */
@@ -146,7 +136,7 @@ namespace Model
      * true), you can use the key name in this field as marker in the subsequent
      * request to get next set of objects. Amazon S3 lists objects in alphabetical
      * order Note: This element is returned only if you have delimiter request
-     * parameter specified. If response does not include the NextMaker and it is
+     * parameter specified. If response does not include the NextMarker and it is
      * truncated, you can use the value of the last Key in the response as the marker
      * in the subsequent request to get the next set of object keys.</p>
      */
@@ -157,7 +147,7 @@ namespace Model
      * true), you can use the key name in this field as marker in the subsequent
      * request to get next set of objects. Amazon S3 lists objects in alphabetical
      * order Note: This element is returned only if you have delimiter request
-     * parameter specified. If response does not include the NextMaker and it is
+     * parameter specified. If response does not include the NextMarker and it is
      * truncated, you can use the value of the last Key in the response as the marker
      * in the subsequent request to get the next set of object keys.</p>
      */
@@ -168,7 +158,7 @@ namespace Model
      * true), you can use the key name in this field as marker in the subsequent
      * request to get next set of objects. Amazon S3 lists objects in alphabetical
      * order Note: This element is returned only if you have delimiter request
-     * parameter specified. If response does not include the NextMaker and it is
+     * parameter specified. If response does not include the NextMarker and it is
      * truncated, you can use the value of the last Key in the response as the marker
      * in the subsequent request to get the next set of object keys.</p>
      */
@@ -179,7 +169,7 @@ namespace Model
      * true), you can use the key name in this field as marker in the subsequent
      * request to get next set of objects. Amazon S3 lists objects in alphabetical
      * order Note: This element is returned only if you have delimiter request
-     * parameter specified. If response does not include the NextMaker and it is
+     * parameter specified. If response does not include the NextMarker and it is
      * truncated, you can use the value of the last Key in the response as the marker
      * in the subsequent request to get the next set of object keys.</p>
      */
@@ -223,37 +213,37 @@ namespace Model
 
 
     /**
-     * <p>Bucket name.</p>
+     * <p>The bucket name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Bucket name.</p>
+     * <p>The bucket name.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>Bucket name.</p>
+     * <p>The bucket name.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>Bucket name.</p>
+     * <p>The bucket name.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>Bucket name.</p>
+     * <p>The bucket name.</p>
      */
     inline ListObjectsResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Bucket name.</p>
+     * <p>The bucket name.</p>
      */
     inline ListObjectsResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Bucket name.</p>
+     * <p>The bucket name.</p>
      */
     inline ListObjectsResult& WithName(const char* value) { SetName(value); return *this;}
 

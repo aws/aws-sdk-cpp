@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
@@ -52,8 +42,9 @@ namespace Model
      * <p>The contents of the <code>host</code> parameter determine whether your data
      * volume persists on the host container instance and where it is stored. If the
      * host parameter is empty, then the Docker daemon assigns a host path for your
-     * data volume. However, the data is not guaranteed to persist after the containers
-     * associated with it stop running.</p>
+     * data volume. However, the data isn't guaranteed to persist after the containers
+     * associated with it stop running.</p>  <p>This parameter isn't applicable
+     * to jobs running on Fargate resources and shouldn't be provided.</p> 
      */
     inline const Host& GetHost() const{ return m_host; }
 
@@ -61,8 +52,9 @@ namespace Model
      * <p>The contents of the <code>host</code> parameter determine whether your data
      * volume persists on the host container instance and where it is stored. If the
      * host parameter is empty, then the Docker daemon assigns a host path for your
-     * data volume. However, the data is not guaranteed to persist after the containers
-     * associated with it stop running.</p>
+     * data volume. However, the data isn't guaranteed to persist after the containers
+     * associated with it stop running.</p>  <p>This parameter isn't applicable
+     * to jobs running on Fargate resources and shouldn't be provided.</p> 
      */
     inline bool HostHasBeenSet() const { return m_hostHasBeenSet; }
 
@@ -70,8 +62,9 @@ namespace Model
      * <p>The contents of the <code>host</code> parameter determine whether your data
      * volume persists on the host container instance and where it is stored. If the
      * host parameter is empty, then the Docker daemon assigns a host path for your
-     * data volume. However, the data is not guaranteed to persist after the containers
-     * associated with it stop running.</p>
+     * data volume. However, the data isn't guaranteed to persist after the containers
+     * associated with it stop running.</p>  <p>This parameter isn't applicable
+     * to jobs running on Fargate resources and shouldn't be provided.</p> 
      */
     inline void SetHost(const Host& value) { m_hostHasBeenSet = true; m_host = value; }
 
@@ -79,8 +72,9 @@ namespace Model
      * <p>The contents of the <code>host</code> parameter determine whether your data
      * volume persists on the host container instance and where it is stored. If the
      * host parameter is empty, then the Docker daemon assigns a host path for your
-     * data volume. However, the data is not guaranteed to persist after the containers
-     * associated with it stop running.</p>
+     * data volume. However, the data isn't guaranteed to persist after the containers
+     * associated with it stop running.</p>  <p>This parameter isn't applicable
+     * to jobs running on Fargate resources and shouldn't be provided.</p> 
      */
     inline void SetHost(Host&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
 
@@ -88,8 +82,9 @@ namespace Model
      * <p>The contents of the <code>host</code> parameter determine whether your data
      * volume persists on the host container instance and where it is stored. If the
      * host parameter is empty, then the Docker daemon assigns a host path for your
-     * data volume. However, the data is not guaranteed to persist after the containers
-     * associated with it stop running.</p>
+     * data volume. However, the data isn't guaranteed to persist after the containers
+     * associated with it stop running.</p>  <p>This parameter isn't applicable
+     * to jobs running on Fargate resources and shouldn't be provided.</p> 
      */
     inline Volume& WithHost(const Host& value) { SetHost(value); return *this;}
 
@@ -97,8 +92,9 @@ namespace Model
      * <p>The contents of the <code>host</code> parameter determine whether your data
      * volume persists on the host container instance and where it is stored. If the
      * host parameter is empty, then the Docker daemon assigns a host path for your
-     * data volume. However, the data is not guaranteed to persist after the containers
-     * associated with it stop running.</p>
+     * data volume. However, the data isn't guaranteed to persist after the containers
+     * associated with it stop running.</p>  <p>This parameter isn't applicable
+     * to jobs running on Fargate resources and shouldn't be provided.</p> 
      */
     inline Volume& WithHost(Host&& value) { SetHost(std::move(value)); return *this;}
 

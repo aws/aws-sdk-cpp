@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/iot/model/CertificateDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -43,7 +33,9 @@ CertificateDescription::CertificateDescription() :
     m_customerVersionHasBeenSet(false),
     m_transferDataHasBeenSet(false),
     m_generationIdHasBeenSet(false),
-    m_validityHasBeenSet(false)
+    m_validityHasBeenSet(false),
+    m_certificateMode(CertificateMode::NOT_SET),
+    m_certificateModeHasBeenSet(false)
 {
 }
 
@@ -62,7 +54,9 @@ CertificateDescription::CertificateDescription(JsonView jsonValue) :
     m_customerVersionHasBeenSet(false),
     m_transferDataHasBeenSet(false),
     m_generationIdHasBeenSet(false),
-    m_validityHasBeenSet(false)
+    m_validityHasBeenSet(false),
+    m_certificateMode(CertificateMode::NOT_SET),
+    m_certificateModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -160,6 +154,13 @@ CertificateDescription& CertificateDescription::operator =(JsonView jsonValue)
     m_validityHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("certificateMode"))
+  {
+    m_certificateMode = CertificateModeMapper::GetCertificateModeForName(jsonValue.GetString("certificateMode"));
+
+    m_certificateModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -240,6 +241,11 @@ JsonValue CertificateDescription::Jsonize() const
   {
    payload.WithObject("validity", m_validity.Jsonize());
 
+  }
+
+  if(m_certificateModeHasBeenSet)
+  {
+   payload.WithString("certificateMode", CertificateModeMapper::GetNameForCertificateMode(m_certificateMode));
   }
 
   return payload;

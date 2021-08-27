@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -53,73 +43,73 @@ namespace Model
 
     /**
      * <p>The name or the unique ID of the stack that you want to continue rolling
-     * back.</p> <note> <p>Don't specify the name of a nested stack (a stack that was
+     * back.</p>  <p>Don't specify the name of a nested stack (a stack that was
      * created by using the <code>AWS::CloudFormation::Stack</code> resource). Instead,
      * use this operation on the parent stack (the stack that contains the
-     * <code>AWS::CloudFormation::Stack</code> resource).</p> </note>
+     * <code>AWS::CloudFormation::Stack</code> resource).</p> 
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
 
     /**
      * <p>The name or the unique ID of the stack that you want to continue rolling
-     * back.</p> <note> <p>Don't specify the name of a nested stack (a stack that was
+     * back.</p>  <p>Don't specify the name of a nested stack (a stack that was
      * created by using the <code>AWS::CloudFormation::Stack</code> resource). Instead,
      * use this operation on the parent stack (the stack that contains the
-     * <code>AWS::CloudFormation::Stack</code> resource).</p> </note>
+     * <code>AWS::CloudFormation::Stack</code> resource).</p> 
      */
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
 
     /**
      * <p>The name or the unique ID of the stack that you want to continue rolling
-     * back.</p> <note> <p>Don't specify the name of a nested stack (a stack that was
+     * back.</p>  <p>Don't specify the name of a nested stack (a stack that was
      * created by using the <code>AWS::CloudFormation::Stack</code> resource). Instead,
      * use this operation on the parent stack (the stack that contains the
-     * <code>AWS::CloudFormation::Stack</code> resource).</p> </note>
+     * <code>AWS::CloudFormation::Stack</code> resource).</p> 
      */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
      * <p>The name or the unique ID of the stack that you want to continue rolling
-     * back.</p> <note> <p>Don't specify the name of a nested stack (a stack that was
+     * back.</p>  <p>Don't specify the name of a nested stack (a stack that was
      * created by using the <code>AWS::CloudFormation::Stack</code> resource). Instead,
      * use this operation on the parent stack (the stack that contains the
-     * <code>AWS::CloudFormation::Stack</code> resource).</p> </note>
+     * <code>AWS::CloudFormation::Stack</code> resource).</p> 
      */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
      * <p>The name or the unique ID of the stack that you want to continue rolling
-     * back.</p> <note> <p>Don't specify the name of a nested stack (a stack that was
+     * back.</p>  <p>Don't specify the name of a nested stack (a stack that was
      * created by using the <code>AWS::CloudFormation::Stack</code> resource). Instead,
      * use this operation on the parent stack (the stack that contains the
-     * <code>AWS::CloudFormation::Stack</code> resource).</p> </note>
+     * <code>AWS::CloudFormation::Stack</code> resource).</p> 
      */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
 
     /**
      * <p>The name or the unique ID of the stack that you want to continue rolling
-     * back.</p> <note> <p>Don't specify the name of a nested stack (a stack that was
+     * back.</p>  <p>Don't specify the name of a nested stack (a stack that was
      * created by using the <code>AWS::CloudFormation::Stack</code> resource). Instead,
      * use this operation on the parent stack (the stack that contains the
-     * <code>AWS::CloudFormation::Stack</code> resource).</p> </note>
+     * <code>AWS::CloudFormation::Stack</code> resource).</p> 
      */
     inline ContinueUpdateRollbackRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
 
     /**
      * <p>The name or the unique ID of the stack that you want to continue rolling
-     * back.</p> <note> <p>Don't specify the name of a nested stack (a stack that was
+     * back.</p>  <p>Don't specify the name of a nested stack (a stack that was
      * created by using the <code>AWS::CloudFormation::Stack</code> resource). Instead,
      * use this operation on the parent stack (the stack that contains the
-     * <code>AWS::CloudFormation::Stack</code> resource).</p> </note>
+     * <code>AWS::CloudFormation::Stack</code> resource).</p> 
      */
     inline ContinueUpdateRollbackRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
      * <p>The name or the unique ID of the stack that you want to continue rolling
-     * back.</p> <note> <p>Don't specify the name of a nested stack (a stack that was
+     * back.</p>  <p>Don't specify the name of a nested stack (a stack that was
      * created by using the <code>AWS::CloudFormation::Stack</code> resource). Instead,
      * use this operation on the parent stack (the stack that contains the
-     * <code>AWS::CloudFormation::Stack</code> resource).</p> </note>
+     * <code>AWS::CloudFormation::Stack</code> resource).</p> 
      */
     inline ContinueUpdateRollbackRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
@@ -244,7 +234,7 @@ namespace Model
      * can't specify resources that are in the <code>UPDATE_FAILED</code> state for
      * other reasons, for example, because an update was cancelled. To check why a
      * resource update failed, use the <a>DescribeStackResources</a> action, and view
-     * the resource status reason. </p> <important> <p>Specify this property to skip
+     * the resource status reason. </p>  <p>Specify this property to skip
      * rolling back resources that AWS CloudFormation can't successfully roll back. We
      * recommend that you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
@@ -254,7 +244,7 @@ namespace Model
      * resources will be inconsistent with the state of the resources in the stack
      * template. Before performing another stack update, you must update the stack or
      * resources to be consistent with each other. If you don't, subsequent stack
-     * updates might fail, and the stack will become unrecoverable. </p> </important>
+     * updates might fail, and the stack will become unrecoverable. </p> 
      * <p>Specify the minimum number of resources required to successfully roll back
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
@@ -264,11 +254,11 @@ namespace Model
      * AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list,
      * then its corresponding embedded stack must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>. </p> <note> <p>Don't confuse a child stack's name
+     * <code>DELETE_FAILED</code>. </p>  <p>Don't confuse a child stack's name
      * with its corresponding logical ID defined in the parent stack. For an example of
      * a continue update rollback operation with nested stacks, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using
-     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> </note>
+     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> 
      */
     inline const Aws::Vector<Aws::String>& GetResourcesToSkip() const{ return m_resourcesToSkip; }
 
@@ -279,7 +269,7 @@ namespace Model
      * can't specify resources that are in the <code>UPDATE_FAILED</code> state for
      * other reasons, for example, because an update was cancelled. To check why a
      * resource update failed, use the <a>DescribeStackResources</a> action, and view
-     * the resource status reason. </p> <important> <p>Specify this property to skip
+     * the resource status reason. </p>  <p>Specify this property to skip
      * rolling back resources that AWS CloudFormation can't successfully roll back. We
      * recommend that you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
@@ -289,7 +279,7 @@ namespace Model
      * resources will be inconsistent with the state of the resources in the stack
      * template. Before performing another stack update, you must update the stack or
      * resources to be consistent with each other. If you don't, subsequent stack
-     * updates might fail, and the stack will become unrecoverable. </p> </important>
+     * updates might fail, and the stack will become unrecoverable. </p> 
      * <p>Specify the minimum number of resources required to successfully roll back
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
@@ -299,11 +289,11 @@ namespace Model
      * AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list,
      * then its corresponding embedded stack must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>. </p> <note> <p>Don't confuse a child stack's name
+     * <code>DELETE_FAILED</code>. </p>  <p>Don't confuse a child stack's name
      * with its corresponding logical ID defined in the parent stack. For an example of
      * a continue update rollback operation with nested stacks, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using
-     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> </note>
+     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> 
      */
     inline bool ResourcesToSkipHasBeenSet() const { return m_resourcesToSkipHasBeenSet; }
 
@@ -314,7 +304,7 @@ namespace Model
      * can't specify resources that are in the <code>UPDATE_FAILED</code> state for
      * other reasons, for example, because an update was cancelled. To check why a
      * resource update failed, use the <a>DescribeStackResources</a> action, and view
-     * the resource status reason. </p> <important> <p>Specify this property to skip
+     * the resource status reason. </p>  <p>Specify this property to skip
      * rolling back resources that AWS CloudFormation can't successfully roll back. We
      * recommend that you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
@@ -324,7 +314,7 @@ namespace Model
      * resources will be inconsistent with the state of the resources in the stack
      * template. Before performing another stack update, you must update the stack or
      * resources to be consistent with each other. If you don't, subsequent stack
-     * updates might fail, and the stack will become unrecoverable. </p> </important>
+     * updates might fail, and the stack will become unrecoverable. </p> 
      * <p>Specify the minimum number of resources required to successfully roll back
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
@@ -334,11 +324,11 @@ namespace Model
      * AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list,
      * then its corresponding embedded stack must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>. </p> <note> <p>Don't confuse a child stack's name
+     * <code>DELETE_FAILED</code>. </p>  <p>Don't confuse a child stack's name
      * with its corresponding logical ID defined in the parent stack. For an example of
      * a continue update rollback operation with nested stacks, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using
-     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> </note>
+     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> 
      */
     inline void SetResourcesToSkip(const Aws::Vector<Aws::String>& value) { m_resourcesToSkipHasBeenSet = true; m_resourcesToSkip = value; }
 
@@ -349,7 +339,7 @@ namespace Model
      * can't specify resources that are in the <code>UPDATE_FAILED</code> state for
      * other reasons, for example, because an update was cancelled. To check why a
      * resource update failed, use the <a>DescribeStackResources</a> action, and view
-     * the resource status reason. </p> <important> <p>Specify this property to skip
+     * the resource status reason. </p>  <p>Specify this property to skip
      * rolling back resources that AWS CloudFormation can't successfully roll back. We
      * recommend that you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
@@ -359,7 +349,7 @@ namespace Model
      * resources will be inconsistent with the state of the resources in the stack
      * template. Before performing another stack update, you must update the stack or
      * resources to be consistent with each other. If you don't, subsequent stack
-     * updates might fail, and the stack will become unrecoverable. </p> </important>
+     * updates might fail, and the stack will become unrecoverable. </p> 
      * <p>Specify the minimum number of resources required to successfully roll back
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
@@ -369,11 +359,11 @@ namespace Model
      * AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list,
      * then its corresponding embedded stack must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>. </p> <note> <p>Don't confuse a child stack's name
+     * <code>DELETE_FAILED</code>. </p>  <p>Don't confuse a child stack's name
      * with its corresponding logical ID defined in the parent stack. For an example of
      * a continue update rollback operation with nested stacks, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using
-     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> </note>
+     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> 
      */
     inline void SetResourcesToSkip(Aws::Vector<Aws::String>&& value) { m_resourcesToSkipHasBeenSet = true; m_resourcesToSkip = std::move(value); }
 
@@ -384,7 +374,7 @@ namespace Model
      * can't specify resources that are in the <code>UPDATE_FAILED</code> state for
      * other reasons, for example, because an update was cancelled. To check why a
      * resource update failed, use the <a>DescribeStackResources</a> action, and view
-     * the resource status reason. </p> <important> <p>Specify this property to skip
+     * the resource status reason. </p>  <p>Specify this property to skip
      * rolling back resources that AWS CloudFormation can't successfully roll back. We
      * recommend that you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
@@ -394,7 +384,7 @@ namespace Model
      * resources will be inconsistent with the state of the resources in the stack
      * template. Before performing another stack update, you must update the stack or
      * resources to be consistent with each other. If you don't, subsequent stack
-     * updates might fail, and the stack will become unrecoverable. </p> </important>
+     * updates might fail, and the stack will become unrecoverable. </p> 
      * <p>Specify the minimum number of resources required to successfully roll back
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
@@ -404,11 +394,11 @@ namespace Model
      * AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list,
      * then its corresponding embedded stack must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>. </p> <note> <p>Don't confuse a child stack's name
+     * <code>DELETE_FAILED</code>. </p>  <p>Don't confuse a child stack's name
      * with its corresponding logical ID defined in the parent stack. For an example of
      * a continue update rollback operation with nested stacks, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using
-     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> </note>
+     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> 
      */
     inline ContinueUpdateRollbackRequest& WithResourcesToSkip(const Aws::Vector<Aws::String>& value) { SetResourcesToSkip(value); return *this;}
 
@@ -419,7 +409,7 @@ namespace Model
      * can't specify resources that are in the <code>UPDATE_FAILED</code> state for
      * other reasons, for example, because an update was cancelled. To check why a
      * resource update failed, use the <a>DescribeStackResources</a> action, and view
-     * the resource status reason. </p> <important> <p>Specify this property to skip
+     * the resource status reason. </p>  <p>Specify this property to skip
      * rolling back resources that AWS CloudFormation can't successfully roll back. We
      * recommend that you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
@@ -429,7 +419,7 @@ namespace Model
      * resources will be inconsistent with the state of the resources in the stack
      * template. Before performing another stack update, you must update the stack or
      * resources to be consistent with each other. If you don't, subsequent stack
-     * updates might fail, and the stack will become unrecoverable. </p> </important>
+     * updates might fail, and the stack will become unrecoverable. </p> 
      * <p>Specify the minimum number of resources required to successfully roll back
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
@@ -439,11 +429,11 @@ namespace Model
      * AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list,
      * then its corresponding embedded stack must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>. </p> <note> <p>Don't confuse a child stack's name
+     * <code>DELETE_FAILED</code>. </p>  <p>Don't confuse a child stack's name
      * with its corresponding logical ID defined in the parent stack. For an example of
      * a continue update rollback operation with nested stacks, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using
-     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> </note>
+     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> 
      */
     inline ContinueUpdateRollbackRequest& WithResourcesToSkip(Aws::Vector<Aws::String>&& value) { SetResourcesToSkip(std::move(value)); return *this;}
 
@@ -454,7 +444,7 @@ namespace Model
      * can't specify resources that are in the <code>UPDATE_FAILED</code> state for
      * other reasons, for example, because an update was cancelled. To check why a
      * resource update failed, use the <a>DescribeStackResources</a> action, and view
-     * the resource status reason. </p> <important> <p>Specify this property to skip
+     * the resource status reason. </p>  <p>Specify this property to skip
      * rolling back resources that AWS CloudFormation can't successfully roll back. We
      * recommend that you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
@@ -464,7 +454,7 @@ namespace Model
      * resources will be inconsistent with the state of the resources in the stack
      * template. Before performing another stack update, you must update the stack or
      * resources to be consistent with each other. If you don't, subsequent stack
-     * updates might fail, and the stack will become unrecoverable. </p> </important>
+     * updates might fail, and the stack will become unrecoverable. </p> 
      * <p>Specify the minimum number of resources required to successfully roll back
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
@@ -474,11 +464,11 @@ namespace Model
      * AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list,
      * then its corresponding embedded stack must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>. </p> <note> <p>Don't confuse a child stack's name
+     * <code>DELETE_FAILED</code>. </p>  <p>Don't confuse a child stack's name
      * with its corresponding logical ID defined in the parent stack. For an example of
      * a continue update rollback operation with nested stacks, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using
-     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> </note>
+     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> 
      */
     inline ContinueUpdateRollbackRequest& AddResourcesToSkip(const Aws::String& value) { m_resourcesToSkipHasBeenSet = true; m_resourcesToSkip.push_back(value); return *this; }
 
@@ -489,7 +479,7 @@ namespace Model
      * can't specify resources that are in the <code>UPDATE_FAILED</code> state for
      * other reasons, for example, because an update was cancelled. To check why a
      * resource update failed, use the <a>DescribeStackResources</a> action, and view
-     * the resource status reason. </p> <important> <p>Specify this property to skip
+     * the resource status reason. </p>  <p>Specify this property to skip
      * rolling back resources that AWS CloudFormation can't successfully roll back. We
      * recommend that you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
@@ -499,7 +489,7 @@ namespace Model
      * resources will be inconsistent with the state of the resources in the stack
      * template. Before performing another stack update, you must update the stack or
      * resources to be consistent with each other. If you don't, subsequent stack
-     * updates might fail, and the stack will become unrecoverable. </p> </important>
+     * updates might fail, and the stack will become unrecoverable. </p> 
      * <p>Specify the minimum number of resources required to successfully roll back
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
@@ -509,11 +499,11 @@ namespace Model
      * AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list,
      * then its corresponding embedded stack must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>. </p> <note> <p>Don't confuse a child stack's name
+     * <code>DELETE_FAILED</code>. </p>  <p>Don't confuse a child stack's name
      * with its corresponding logical ID defined in the parent stack. For an example of
      * a continue update rollback operation with nested stacks, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using
-     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> </note>
+     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> 
      */
     inline ContinueUpdateRollbackRequest& AddResourcesToSkip(Aws::String&& value) { m_resourcesToSkipHasBeenSet = true; m_resourcesToSkip.push_back(std::move(value)); return *this; }
 
@@ -524,7 +514,7 @@ namespace Model
      * can't specify resources that are in the <code>UPDATE_FAILED</code> state for
      * other reasons, for example, because an update was cancelled. To check why a
      * resource update failed, use the <a>DescribeStackResources</a> action, and view
-     * the resource status reason. </p> <important> <p>Specify this property to skip
+     * the resource status reason. </p>  <p>Specify this property to skip
      * rolling back resources that AWS CloudFormation can't successfully roll back. We
      * recommend that you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
@@ -534,7 +524,7 @@ namespace Model
      * resources will be inconsistent with the state of the resources in the stack
      * template. Before performing another stack update, you must update the stack or
      * resources to be consistent with each other. If you don't, subsequent stack
-     * updates might fail, and the stack will become unrecoverable. </p> </important>
+     * updates might fail, and the stack will become unrecoverable. </p> 
      * <p>Specify the minimum number of resources required to successfully roll back
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
@@ -544,11 +534,11 @@ namespace Model
      * AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list,
      * then its corresponding embedded stack must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>. </p> <note> <p>Don't confuse a child stack's name
+     * <code>DELETE_FAILED</code>. </p>  <p>Don't confuse a child stack's name
      * with its corresponding logical ID defined in the parent stack. For an example of
      * a continue update rollback operation with nested stacks, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using
-     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> </note>
+     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> 
      */
     inline ContinueUpdateRollbackRequest& AddResourcesToSkip(const char* value) { m_resourcesToSkipHasBeenSet = true; m_resourcesToSkip.push_back(value); return *this; }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/email/SES_EXPORTS.h>
@@ -42,9 +32,9 @@ namespace Model
    * Amazon SES must have permission to access those resources. For information about
    * giving permissions, see the <a
    * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
-   * SES Developer Guide</a>.</p> <note> <p>When you save your emails to an Amazon S3
+   * SES Developer Guide</a>.</p>  <p>When you save your emails to an Amazon S3
    * bucket, the maximum email size (including headers) is 30 MB. Emails larger than
-   * that will bounce.</p> </note> <p>For information about specifying Amazon S3
+   * that will bounce.</p>  <p>For information about specifying Amazon S3
    * actions in receipt rules, see the <a
    * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-s3.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
@@ -260,7 +250,7 @@ namespace Model
      * policies, see the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * KMS Developer Guide</a>. If you do not specify a master key, Amazon SES will not
-     * encrypt your emails.</p> <important> <p>Your mail is encrypted by Amazon SES
+     * encrypt your emails.</p>  <p>Your mail is encrypted by Amazon SES
      * using the Amazon S3 encryption client before the mail is submitted to Amazon S3
      * for storage. It is not encrypted using Amazon S3 server-side encryption. This
      * means that you must use the Amazon S3 encryption client to decrypt the email
@@ -270,7 +260,7 @@ namespace Model
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * S3 Developer Guide</a>.</p> 
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
@@ -293,7 +283,7 @@ namespace Model
      * policies, see the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * KMS Developer Guide</a>. If you do not specify a master key, Amazon SES will not
-     * encrypt your emails.</p> <important> <p>Your mail is encrypted by Amazon SES
+     * encrypt your emails.</p>  <p>Your mail is encrypted by Amazon SES
      * using the Amazon S3 encryption client before the mail is submitted to Amazon S3
      * for storage. It is not encrypted using Amazon S3 server-side encryption. This
      * means that you must use the Amazon S3 encryption client to decrypt the email
@@ -303,7 +293,7 @@ namespace Model
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * S3 Developer Guide</a>.</p> 
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
@@ -326,7 +316,7 @@ namespace Model
      * policies, see the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * KMS Developer Guide</a>. If you do not specify a master key, Amazon SES will not
-     * encrypt your emails.</p> <important> <p>Your mail is encrypted by Amazon SES
+     * encrypt your emails.</p>  <p>Your mail is encrypted by Amazon SES
      * using the Amazon S3 encryption client before the mail is submitted to Amazon S3
      * for storage. It is not encrypted using Amazon S3 server-side encryption. This
      * means that you must use the Amazon S3 encryption client to decrypt the email
@@ -336,7 +326,7 @@ namespace Model
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * S3 Developer Guide</a>.</p> 
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
@@ -359,7 +349,7 @@ namespace Model
      * policies, see the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * KMS Developer Guide</a>. If you do not specify a master key, Amazon SES will not
-     * encrypt your emails.</p> <important> <p>Your mail is encrypted by Amazon SES
+     * encrypt your emails.</p>  <p>Your mail is encrypted by Amazon SES
      * using the Amazon S3 encryption client before the mail is submitted to Amazon S3
      * for storage. It is not encrypted using Amazon S3 server-side encryption. This
      * means that you must use the Amazon S3 encryption client to decrypt the email
@@ -369,7 +359,7 @@ namespace Model
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * S3 Developer Guide</a>.</p> 
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
@@ -392,7 +382,7 @@ namespace Model
      * policies, see the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * KMS Developer Guide</a>. If you do not specify a master key, Amazon SES will not
-     * encrypt your emails.</p> <important> <p>Your mail is encrypted by Amazon SES
+     * encrypt your emails.</p>  <p>Your mail is encrypted by Amazon SES
      * using the Amazon S3 encryption client before the mail is submitted to Amazon S3
      * for storage. It is not encrypted using Amazon S3 server-side encryption. This
      * means that you must use the Amazon S3 encryption client to decrypt the email
@@ -402,7 +392,7 @@ namespace Model
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * S3 Developer Guide</a>.</p> 
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
@@ -425,7 +415,7 @@ namespace Model
      * policies, see the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * KMS Developer Guide</a>. If you do not specify a master key, Amazon SES will not
-     * encrypt your emails.</p> <important> <p>Your mail is encrypted by Amazon SES
+     * encrypt your emails.</p>  <p>Your mail is encrypted by Amazon SES
      * using the Amazon S3 encryption client before the mail is submitted to Amazon S3
      * for storage. It is not encrypted using Amazon S3 server-side encryption. This
      * means that you must use the Amazon S3 encryption client to decrypt the email
@@ -435,7 +425,7 @@ namespace Model
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * S3 Developer Guide</a>.</p> 
      */
     inline S3Action& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
@@ -458,7 +448,7 @@ namespace Model
      * policies, see the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * KMS Developer Guide</a>. If you do not specify a master key, Amazon SES will not
-     * encrypt your emails.</p> <important> <p>Your mail is encrypted by Amazon SES
+     * encrypt your emails.</p>  <p>Your mail is encrypted by Amazon SES
      * using the Amazon S3 encryption client before the mail is submitted to Amazon S3
      * for storage. It is not encrypted using Amazon S3 server-side encryption. This
      * means that you must use the Amazon S3 encryption client to decrypt the email
@@ -468,7 +458,7 @@ namespace Model
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * S3 Developer Guide</a>.</p> 
      */
     inline S3Action& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
@@ -491,7 +481,7 @@ namespace Model
      * policies, see the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * KMS Developer Guide</a>. If you do not specify a master key, Amazon SES will not
-     * encrypt your emails.</p> <important> <p>Your mail is encrypted by Amazon SES
+     * encrypt your emails.</p>  <p>Your mail is encrypted by Amazon SES
      * using the Amazon S3 encryption client before the mail is submitted to Amazon S3
      * for storage. It is not encrypted using Amazon S3 server-side encryption. This
      * means that you must use the Amazon S3 encryption client to decrypt the email
@@ -501,7 +491,7 @@ namespace Model
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * S3 Developer Guide</a>.</p> 
      */
     inline S3Action& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 

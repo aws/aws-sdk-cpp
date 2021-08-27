@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
@@ -128,6 +118,88 @@ namespace Model
      */
     inline FunctionCodeLocation& WithLocation(const char* value) { SetLocation(value); return *this;}
 
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline const Aws::String& GetImageUri() const{ return m_imageUri; }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline bool ImageUriHasBeenSet() const { return m_imageUriHasBeenSet; }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline void SetImageUri(const Aws::String& value) { m_imageUriHasBeenSet = true; m_imageUri = value; }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline void SetImageUri(Aws::String&& value) { m_imageUriHasBeenSet = true; m_imageUri = std::move(value); }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline void SetImageUri(const char* value) { m_imageUriHasBeenSet = true; m_imageUri.assign(value); }
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline FunctionCodeLocation& WithImageUri(const Aws::String& value) { SetImageUri(value); return *this;}
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline FunctionCodeLocation& WithImageUri(Aws::String&& value) { SetImageUri(std::move(value)); return *this;}
+
+    /**
+     * <p>URI of a container image in the Amazon ECR registry.</p>
+     */
+    inline FunctionCodeLocation& WithImageUri(const char* value) { SetImageUri(value); return *this;}
+
+
+    /**
+     * <p>The resolved URI for the image.</p>
+     */
+    inline const Aws::String& GetResolvedImageUri() const{ return m_resolvedImageUri; }
+
+    /**
+     * <p>The resolved URI for the image.</p>
+     */
+    inline bool ResolvedImageUriHasBeenSet() const { return m_resolvedImageUriHasBeenSet; }
+
+    /**
+     * <p>The resolved URI for the image.</p>
+     */
+    inline void SetResolvedImageUri(const Aws::String& value) { m_resolvedImageUriHasBeenSet = true; m_resolvedImageUri = value; }
+
+    /**
+     * <p>The resolved URI for the image.</p>
+     */
+    inline void SetResolvedImageUri(Aws::String&& value) { m_resolvedImageUriHasBeenSet = true; m_resolvedImageUri = std::move(value); }
+
+    /**
+     * <p>The resolved URI for the image.</p>
+     */
+    inline void SetResolvedImageUri(const char* value) { m_resolvedImageUriHasBeenSet = true; m_resolvedImageUri.assign(value); }
+
+    /**
+     * <p>The resolved URI for the image.</p>
+     */
+    inline FunctionCodeLocation& WithResolvedImageUri(const Aws::String& value) { SetResolvedImageUri(value); return *this;}
+
+    /**
+     * <p>The resolved URI for the image.</p>
+     */
+    inline FunctionCodeLocation& WithResolvedImageUri(Aws::String&& value) { SetResolvedImageUri(std::move(value)); return *this;}
+
+    /**
+     * <p>The resolved URI for the image.</p>
+     */
+    inline FunctionCodeLocation& WithResolvedImageUri(const char* value) { SetResolvedImageUri(value); return *this;}
+
   private:
 
     Aws::String m_repositoryType;
@@ -135,6 +207,12 @@ namespace Model
 
     Aws::String m_location;
     bool m_locationHasBeenSet;
+
+    Aws::String m_imageUri;
+    bool m_imageUriHasBeenSet;
+
+    Aws::String m_resolvedImageUri;
+    bool m_resolvedImageUriHasBeenSet;
   };
 
 } // namespace Model

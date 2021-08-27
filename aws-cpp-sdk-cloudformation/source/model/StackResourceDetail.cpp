@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cloudformation/model/StackResourceDetail.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -42,7 +32,8 @@ StackResourceDetail::StackResourceDetail() :
     m_resourceStatusReasonHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_metadataHasBeenSet(false),
-    m_driftInformationHasBeenSet(false)
+    m_driftInformationHasBeenSet(false),
+    m_moduleInfoHasBeenSet(false)
 {
 }
 
@@ -58,7 +49,8 @@ StackResourceDetail::StackResourceDetail(const XmlNode& xmlNode) :
     m_resourceStatusReasonHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_metadataHasBeenSet(false),
-    m_driftInformationHasBeenSet(false)
+    m_driftInformationHasBeenSet(false),
+    m_moduleInfoHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -135,6 +127,12 @@ StackResourceDetail& StackResourceDetail::operator =(const XmlNode& xmlNode)
       m_driftInformation = driftInformationNode;
       m_driftInformationHasBeenSet = true;
     }
+    XmlNode moduleInfoNode = resultNode.FirstChild("ModuleInfo");
+    if(!moduleInfoNode.IsNull())
+    {
+      m_moduleInfo = moduleInfoNode;
+      m_moduleInfoHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -199,6 +197,13 @@ void StackResourceDetail::OutputToStream(Aws::OStream& oStream, const char* loca
       m_driftInformation.OutputToStream(oStream, driftInformationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_moduleInfoHasBeenSet)
+  {
+      Aws::StringStream moduleInfoLocationAndMemberSs;
+      moduleInfoLocationAndMemberSs << location << index << locationValue << ".ModuleInfo";
+      m_moduleInfo.OutputToStream(oStream, moduleInfoLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void StackResourceDetail::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -248,6 +253,12 @@ void StackResourceDetail::OutputToStream(Aws::OStream& oStream, const char* loca
       Aws::String driftInformationLocationAndMember(location);
       driftInformationLocationAndMember += ".DriftInformation";
       m_driftInformation.OutputToStream(oStream, driftInformationLocationAndMember.c_str());
+  }
+  if(m_moduleInfoHasBeenSet)
+  {
+      Aws::String moduleInfoLocationAndMember(location);
+      moduleInfoLocationAndMember += ".ModuleInfo";
+      m_moduleInfo.OutputToStream(oStream, moduleInfoLocationAndMember.c_str());
   }
 }
 

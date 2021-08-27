@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
@@ -54,114 +44,146 @@ namespace Model
 
     /**
      * <p> List of provider types for filtering that needs to be applied before
-     * displaying the result. For example, "providerTypes=[GitHub]" will list code
-     * reviews from GitHub. </p>
+     * displaying the result. For example, <code>providerTypes=[GitHub]</code> lists
+     * code reviews from GitHub. </p>
      */
     inline const Aws::Vector<ProviderType>& GetProviderTypes() const{ return m_providerTypes; }
 
     /**
      * <p> List of provider types for filtering that needs to be applied before
-     * displaying the result. For example, "providerTypes=[GitHub]" will list code
-     * reviews from GitHub. </p>
+     * displaying the result. For example, <code>providerTypes=[GitHub]</code> lists
+     * code reviews from GitHub. </p>
      */
     inline bool ProviderTypesHasBeenSet() const { return m_providerTypesHasBeenSet; }
 
     /**
      * <p> List of provider types for filtering that needs to be applied before
-     * displaying the result. For example, "providerTypes=[GitHub]" will list code
-     * reviews from GitHub. </p>
+     * displaying the result. For example, <code>providerTypes=[GitHub]</code> lists
+     * code reviews from GitHub. </p>
      */
     inline void SetProviderTypes(const Aws::Vector<ProviderType>& value) { m_providerTypesHasBeenSet = true; m_providerTypes = value; }
 
     /**
      * <p> List of provider types for filtering that needs to be applied before
-     * displaying the result. For example, "providerTypes=[GitHub]" will list code
-     * reviews from GitHub. </p>
+     * displaying the result. For example, <code>providerTypes=[GitHub]</code> lists
+     * code reviews from GitHub. </p>
      */
     inline void SetProviderTypes(Aws::Vector<ProviderType>&& value) { m_providerTypesHasBeenSet = true; m_providerTypes = std::move(value); }
 
     /**
      * <p> List of provider types for filtering that needs to be applied before
-     * displaying the result. For example, "providerTypes=[GitHub]" will list code
-     * reviews from GitHub. </p>
+     * displaying the result. For example, <code>providerTypes=[GitHub]</code> lists
+     * code reviews from GitHub. </p>
      */
     inline ListCodeReviewsRequest& WithProviderTypes(const Aws::Vector<ProviderType>& value) { SetProviderTypes(value); return *this;}
 
     /**
      * <p> List of provider types for filtering that needs to be applied before
-     * displaying the result. For example, "providerTypes=[GitHub]" will list code
-     * reviews from GitHub. </p>
+     * displaying the result. For example, <code>providerTypes=[GitHub]</code> lists
+     * code reviews from GitHub. </p>
      */
     inline ListCodeReviewsRequest& WithProviderTypes(Aws::Vector<ProviderType>&& value) { SetProviderTypes(std::move(value)); return *this;}
 
     /**
      * <p> List of provider types for filtering that needs to be applied before
-     * displaying the result. For example, "providerTypes=[GitHub]" will list code
-     * reviews from GitHub. </p>
+     * displaying the result. For example, <code>providerTypes=[GitHub]</code> lists
+     * code reviews from GitHub. </p>
      */
     inline ListCodeReviewsRequest& AddProviderTypes(const ProviderType& value) { m_providerTypesHasBeenSet = true; m_providerTypes.push_back(value); return *this; }
 
     /**
      * <p> List of provider types for filtering that needs to be applied before
-     * displaying the result. For example, "providerTypes=[GitHub]" will list code
-     * reviews from GitHub. </p>
+     * displaying the result. For example, <code>providerTypes=[GitHub]</code> lists
+     * code reviews from GitHub. </p>
      */
     inline ListCodeReviewsRequest& AddProviderTypes(ProviderType&& value) { m_providerTypesHasBeenSet = true; m_providerTypes.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p> List of states for filtering that needs to be applied before displaying the
-     * result. For example, "states=[Pending]" will list code reviews in the Pending
-     * state. </p>
+     * result. For example, <code>states=[Pending]</code> lists code reviews in the
+     * Pending state. </p> <p>The valid code review states are:</p> <ul> <li> <p>
+     * <code>Completed</code>: The code review is complete. </p> </li> <li> <p>
+     * <code>Pending</code>: The code review started and has not completed or failed.
+     * </p> </li> <li> <p> <code>Failed</code>: The code review failed. </p> </li> <li>
+     * <p> <code>Deleting</code>: The code review is being deleted. </p> </li> </ul>
      */
     inline const Aws::Vector<JobState>& GetStates() const{ return m_states; }
 
     /**
      * <p> List of states for filtering that needs to be applied before displaying the
-     * result. For example, "states=[Pending]" will list code reviews in the Pending
-     * state. </p>
+     * result. For example, <code>states=[Pending]</code> lists code reviews in the
+     * Pending state. </p> <p>The valid code review states are:</p> <ul> <li> <p>
+     * <code>Completed</code>: The code review is complete. </p> </li> <li> <p>
+     * <code>Pending</code>: The code review started and has not completed or failed.
+     * </p> </li> <li> <p> <code>Failed</code>: The code review failed. </p> </li> <li>
+     * <p> <code>Deleting</code>: The code review is being deleted. </p> </li> </ul>
      */
     inline bool StatesHasBeenSet() const { return m_statesHasBeenSet; }
 
     /**
      * <p> List of states for filtering that needs to be applied before displaying the
-     * result. For example, "states=[Pending]" will list code reviews in the Pending
-     * state. </p>
+     * result. For example, <code>states=[Pending]</code> lists code reviews in the
+     * Pending state. </p> <p>The valid code review states are:</p> <ul> <li> <p>
+     * <code>Completed</code>: The code review is complete. </p> </li> <li> <p>
+     * <code>Pending</code>: The code review started and has not completed or failed.
+     * </p> </li> <li> <p> <code>Failed</code>: The code review failed. </p> </li> <li>
+     * <p> <code>Deleting</code>: The code review is being deleted. </p> </li> </ul>
      */
     inline void SetStates(const Aws::Vector<JobState>& value) { m_statesHasBeenSet = true; m_states = value; }
 
     /**
      * <p> List of states for filtering that needs to be applied before displaying the
-     * result. For example, "states=[Pending]" will list code reviews in the Pending
-     * state. </p>
+     * result. For example, <code>states=[Pending]</code> lists code reviews in the
+     * Pending state. </p> <p>The valid code review states are:</p> <ul> <li> <p>
+     * <code>Completed</code>: The code review is complete. </p> </li> <li> <p>
+     * <code>Pending</code>: The code review started and has not completed or failed.
+     * </p> </li> <li> <p> <code>Failed</code>: The code review failed. </p> </li> <li>
+     * <p> <code>Deleting</code>: The code review is being deleted. </p> </li> </ul>
      */
     inline void SetStates(Aws::Vector<JobState>&& value) { m_statesHasBeenSet = true; m_states = std::move(value); }
 
     /**
      * <p> List of states for filtering that needs to be applied before displaying the
-     * result. For example, "states=[Pending]" will list code reviews in the Pending
-     * state. </p>
+     * result. For example, <code>states=[Pending]</code> lists code reviews in the
+     * Pending state. </p> <p>The valid code review states are:</p> <ul> <li> <p>
+     * <code>Completed</code>: The code review is complete. </p> </li> <li> <p>
+     * <code>Pending</code>: The code review started and has not completed or failed.
+     * </p> </li> <li> <p> <code>Failed</code>: The code review failed. </p> </li> <li>
+     * <p> <code>Deleting</code>: The code review is being deleted. </p> </li> </ul>
      */
     inline ListCodeReviewsRequest& WithStates(const Aws::Vector<JobState>& value) { SetStates(value); return *this;}
 
     /**
      * <p> List of states for filtering that needs to be applied before displaying the
-     * result. For example, "states=[Pending]" will list code reviews in the Pending
-     * state. </p>
+     * result. For example, <code>states=[Pending]</code> lists code reviews in the
+     * Pending state. </p> <p>The valid code review states are:</p> <ul> <li> <p>
+     * <code>Completed</code>: The code review is complete. </p> </li> <li> <p>
+     * <code>Pending</code>: The code review started and has not completed or failed.
+     * </p> </li> <li> <p> <code>Failed</code>: The code review failed. </p> </li> <li>
+     * <p> <code>Deleting</code>: The code review is being deleted. </p> </li> </ul>
      */
     inline ListCodeReviewsRequest& WithStates(Aws::Vector<JobState>&& value) { SetStates(std::move(value)); return *this;}
 
     /**
      * <p> List of states for filtering that needs to be applied before displaying the
-     * result. For example, "states=[Pending]" will list code reviews in the Pending
-     * state. </p>
+     * result. For example, <code>states=[Pending]</code> lists code reviews in the
+     * Pending state. </p> <p>The valid code review states are:</p> <ul> <li> <p>
+     * <code>Completed</code>: The code review is complete. </p> </li> <li> <p>
+     * <code>Pending</code>: The code review started and has not completed or failed.
+     * </p> </li> <li> <p> <code>Failed</code>: The code review failed. </p> </li> <li>
+     * <p> <code>Deleting</code>: The code review is being deleted. </p> </li> </ul>
      */
     inline ListCodeReviewsRequest& AddStates(const JobState& value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
 
     /**
      * <p> List of states for filtering that needs to be applied before displaying the
-     * result. For example, "states=[Pending]" will list code reviews in the Pending
-     * state. </p>
+     * result. For example, <code>states=[Pending]</code> lists code reviews in the
+     * Pending state. </p> <p>The valid code review states are:</p> <ul> <li> <p>
+     * <code>Completed</code>: The code review is complete. </p> </li> <li> <p>
+     * <code>Pending</code>: The code review started and has not completed or failed.
+     * </p> </li> <li> <p> <code>Failed</code>: The code review failed. </p> </li> <li>
+     * <p> <code>Deleting</code>: The code review is being deleted. </p> </li> </ul>
      */
     inline ListCodeReviewsRequest& AddStates(JobState&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
 

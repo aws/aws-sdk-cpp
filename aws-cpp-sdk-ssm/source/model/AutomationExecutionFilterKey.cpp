@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ssm/model/AutomationExecutionFilterKey.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -39,6 +29,9 @@ namespace Aws
         static const int StartTimeAfter_HASH = HashingUtils::HashString("StartTimeAfter");
         static const int AutomationType_HASH = HashingUtils::HashString("AutomationType");
         static const int TagKey_HASH = HashingUtils::HashString("TagKey");
+        static const int TargetResourceGroup_HASH = HashingUtils::HashString("TargetResourceGroup");
+        static const int AutomationSubtype_HASH = HashingUtils::HashString("AutomationSubtype");
+        static const int OpsItemId_HASH = HashingUtils::HashString("OpsItemId");
 
 
         AutomationExecutionFilterKey GetAutomationExecutionFilterKeyForName(const Aws::String& name)
@@ -80,6 +73,18 @@ namespace Aws
           {
             return AutomationExecutionFilterKey::TagKey;
           }
+          else if (hashCode == TargetResourceGroup_HASH)
+          {
+            return AutomationExecutionFilterKey::TargetResourceGroup;
+          }
+          else if (hashCode == AutomationSubtype_HASH)
+          {
+            return AutomationExecutionFilterKey::AutomationSubtype;
+          }
+          else if (hashCode == OpsItemId_HASH)
+          {
+            return AutomationExecutionFilterKey::OpsItemId;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -112,6 +117,12 @@ namespace Aws
             return "AutomationType";
           case AutomationExecutionFilterKey::TagKey:
             return "TagKey";
+          case AutomationExecutionFilterKey::TargetResourceGroup:
+            return "TargetResourceGroup";
+          case AutomationExecutionFilterKey::AutomationSubtype:
+            return "AutomationSubtype";
+          case AutomationExecutionFilterKey::OpsItemId:
+            return "OpsItemId";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

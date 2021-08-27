@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/DescribeModelPackageResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -27,14 +17,18 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeModelPackageResult::DescribeModelPackageResult() : 
+    m_modelPackageVersion(0),
     m_modelPackageStatus(ModelPackageStatus::NOT_SET),
-    m_certifyForMarketplace(false)
+    m_certifyForMarketplace(false),
+    m_modelApprovalStatus(ModelApprovalStatus::NOT_SET)
 {
 }
 
 DescribeModelPackageResult::DescribeModelPackageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_modelPackageVersion(0),
     m_modelPackageStatus(ModelPackageStatus::NOT_SET),
-    m_certifyForMarketplace(false)
+    m_certifyForMarketplace(false),
+    m_modelApprovalStatus(ModelApprovalStatus::NOT_SET)
 {
   *this = result;
 }
@@ -45,6 +39,18 @@ DescribeModelPackageResult& DescribeModelPackageResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("ModelPackageName"))
   {
     m_modelPackageName = jsonValue.GetString("ModelPackageName");
+
+  }
+
+  if(jsonValue.ValueExists("ModelPackageGroupName"))
+  {
+    m_modelPackageGroupName = jsonValue.GetString("ModelPackageGroupName");
+
+  }
+
+  if(jsonValue.ValueExists("ModelPackageVersion"))
+  {
+    m_modelPackageVersion = jsonValue.GetInteger("ModelPackageVersion");
 
   }
 
@@ -99,6 +105,48 @@ DescribeModelPackageResult& DescribeModelPackageResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("CertifyForMarketplace"))
   {
     m_certifyForMarketplace = jsonValue.GetBool("CertifyForMarketplace");
+
+  }
+
+  if(jsonValue.ValueExists("ModelApprovalStatus"))
+  {
+    m_modelApprovalStatus = ModelApprovalStatusMapper::GetModelApprovalStatusForName(jsonValue.GetString("ModelApprovalStatus"));
+
+  }
+
+  if(jsonValue.ValueExists("CreatedBy"))
+  {
+    m_createdBy = jsonValue.GetObject("CreatedBy");
+
+  }
+
+  if(jsonValue.ValueExists("MetadataProperties"))
+  {
+    m_metadataProperties = jsonValue.GetObject("MetadataProperties");
+
+  }
+
+  if(jsonValue.ValueExists("ModelMetrics"))
+  {
+    m_modelMetrics = jsonValue.GetObject("ModelMetrics");
+
+  }
+
+  if(jsonValue.ValueExists("LastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
+
+  }
+
+  if(jsonValue.ValueExists("LastModifiedBy"))
+  {
+    m_lastModifiedBy = jsonValue.GetObject("LastModifiedBy");
+
+  }
+
+  if(jsonValue.ValueExists("ApprovalDescription"))
+  {
+    m_approvalDescription = jsonValue.GetString("ApprovalDescription");
 
   }
 

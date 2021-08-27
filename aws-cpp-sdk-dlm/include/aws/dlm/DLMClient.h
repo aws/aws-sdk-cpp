@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dlm/DLM_EXPORTS.h>
@@ -77,14 +67,14 @@ namespace Model
         class UntagResourceRequest;
         class UpdateLifecyclePolicyRequest;
 
-        typedef Aws::Utils::Outcome<CreateLifecyclePolicyResult, Aws::Client::AWSError<DLMErrors>> CreateLifecyclePolicyOutcome;
-        typedef Aws::Utils::Outcome<DeleteLifecyclePolicyResult, Aws::Client::AWSError<DLMErrors>> DeleteLifecyclePolicyOutcome;
-        typedef Aws::Utils::Outcome<GetLifecyclePoliciesResult, Aws::Client::AWSError<DLMErrors>> GetLifecyclePoliciesOutcome;
-        typedef Aws::Utils::Outcome<GetLifecyclePolicyResult, Aws::Client::AWSError<DLMErrors>> GetLifecyclePolicyOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<DLMErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<DLMErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<DLMErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateLifecyclePolicyResult, Aws::Client::AWSError<DLMErrors>> UpdateLifecyclePolicyOutcome;
+        typedef Aws::Utils::Outcome<CreateLifecyclePolicyResult, DLMError> CreateLifecyclePolicyOutcome;
+        typedef Aws::Utils::Outcome<DeleteLifecyclePolicyResult, DLMError> DeleteLifecyclePolicyOutcome;
+        typedef Aws::Utils::Outcome<GetLifecyclePoliciesResult, DLMError> GetLifecyclePoliciesOutcome;
+        typedef Aws::Utils::Outcome<GetLifecyclePolicyResult, DLMError> GetLifecyclePolicyOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, DLMError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, DLMError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, DLMError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateLifecyclePolicyResult, DLMError> UpdateLifecyclePolicyOutcome;
 
         typedef std::future<CreateLifecyclePolicyOutcome> CreateLifecyclePolicyOutcomeCallable;
         typedef std::future<DeleteLifecyclePolicyOutcome> DeleteLifecyclePolicyOutcomeCallable;
@@ -141,8 +131,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~DLMClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "DLM"; }
 
 
         /**

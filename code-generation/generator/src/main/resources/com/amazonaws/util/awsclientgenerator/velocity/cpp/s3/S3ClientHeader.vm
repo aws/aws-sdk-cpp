@@ -4,7 +4,6 @@
 #pragma once
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}Errors.h>
-\#include <aws/$metadata.projectName/${metadata.classNamePrefix}Endpoint.h>
 \#include <aws/core/client/AWSError.h>
 \#include <aws/core/client/ClientConfiguration.h>
 \#include <aws/core/client/AWSClient.h>
@@ -79,9 +78,18 @@ namespace Aws
     class ${className};
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderEventTypeDeclarations.vm")
-    // A pair of endpoint and request region.
-    typedef std::pair<Aws::String, Aws::String> EndpointRegionPair;
-    typedef Aws::Utils::Outcome<EndpointRegionPair, Aws::Client::AWSError<${metadata.classNamePrefix}Errors>> ComputeEndpointOutcome;
+
+    // Get endpoint, signer region and signer service name after computing the endpoint.
+    struct ComputeEndpointResult
+    {
+      ComputeEndpointResult(const Aws::String& endpointName = {}, const Aws::String& region = {}, const Aws::String& serviceName = {}) :
+        endpoint(endpointName), signerRegion(region), signerServiceName(serviceName) {}
+
+      Aws::String endpoint;
+      Aws::String signerRegion;
+      Aws::String signerServiceName;
+    };
+    typedef Aws::Utils::Outcome<ComputeEndpointResult, Aws::Client::AWSError<${metadata.classNamePrefix}Errors>> ComputeEndpointOutcome;
 
     //max expiration for presigned urls in s3 is 7 days.
     static const unsigned MAX_EXPIRATION_SECONDS = 7 * 24 * 60 * 60;
@@ -163,6 +171,7 @@ namespace Aws
         virtual bool MultipartUploadSupported() const;
 
         void OverrideEndpoint(const Aws::String& endpoint);
+
     private:
         void init(const Client::ClientConfiguration& clientConfiguration);
         void Load${metadata.classNamePrefix}SpecificConfig(const Aws::String& profile);
@@ -174,7 +183,6 @@ namespace Aws
         Aws::String m_baseUri;
         Aws::String m_scheme;
         Aws::String m_configScheme;
-        Aws::String m_region;
         std::shared_ptr<Utils::Threading::Executor> m_executor;
         bool m_useVirtualAddressing;
         bool m_useDualStack;

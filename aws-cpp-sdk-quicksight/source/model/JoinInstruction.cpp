@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/quicksight/model/JoinInstruction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,6 +21,8 @@ namespace Model
 JoinInstruction::JoinInstruction() : 
     m_leftOperandHasBeenSet(false),
     m_rightOperandHasBeenSet(false),
+    m_leftJoinKeyPropertiesHasBeenSet(false),
+    m_rightJoinKeyPropertiesHasBeenSet(false),
     m_type(JoinType::NOT_SET),
     m_typeHasBeenSet(false),
     m_onClauseHasBeenSet(false)
@@ -40,6 +32,8 @@ JoinInstruction::JoinInstruction() :
 JoinInstruction::JoinInstruction(JsonView jsonValue) : 
     m_leftOperandHasBeenSet(false),
     m_rightOperandHasBeenSet(false),
+    m_leftJoinKeyPropertiesHasBeenSet(false),
+    m_rightJoinKeyPropertiesHasBeenSet(false),
     m_type(JoinType::NOT_SET),
     m_typeHasBeenSet(false),
     m_onClauseHasBeenSet(false)
@@ -61,6 +55,20 @@ JoinInstruction& JoinInstruction::operator =(JsonView jsonValue)
     m_rightOperand = jsonValue.GetString("RightOperand");
 
     m_rightOperandHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LeftJoinKeyProperties"))
+  {
+    m_leftJoinKeyProperties = jsonValue.GetObject("LeftJoinKeyProperties");
+
+    m_leftJoinKeyPropertiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RightJoinKeyProperties"))
+  {
+    m_rightJoinKeyProperties = jsonValue.GetObject("RightJoinKeyProperties");
+
+    m_rightJoinKeyPropertiesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Type"))
@@ -93,6 +101,18 @@ JsonValue JoinInstruction::Jsonize() const
   if(m_rightOperandHasBeenSet)
   {
    payload.WithString("RightOperand", m_rightOperand);
+
+  }
+
+  if(m_leftJoinKeyPropertiesHasBeenSet)
+  {
+   payload.WithObject("LeftJoinKeyProperties", m_leftJoinKeyProperties.Jsonize());
+
+  }
+
+  if(m_rightJoinKeyPropertiesHasBeenSet)
+  {
+   payload.WithObject("RightJoinKeyProperties", m_rightJoinKeyProperties.Jsonize());
 
   }
 

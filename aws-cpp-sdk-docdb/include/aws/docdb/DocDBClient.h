@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/docdb/DocDB_EXPORTS.h>
@@ -149,48 +139,48 @@ namespace Model
         class StartDBClusterRequest;
         class StopDBClusterRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DocDBErrors>> AddTagsToResourceOutcome;
-        typedef Aws::Utils::Outcome<ApplyPendingMaintenanceActionResult, Aws::Client::AWSError<DocDBErrors>> ApplyPendingMaintenanceActionOutcome;
-        typedef Aws::Utils::Outcome<CopyDBClusterParameterGroupResult, Aws::Client::AWSError<DocDBErrors>> CopyDBClusterParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<CopyDBClusterSnapshotResult, Aws::Client::AWSError<DocDBErrors>> CopyDBClusterSnapshotOutcome;
-        typedef Aws::Utils::Outcome<CreateDBClusterResult, Aws::Client::AWSError<DocDBErrors>> CreateDBClusterOutcome;
-        typedef Aws::Utils::Outcome<CreateDBClusterParameterGroupResult, Aws::Client::AWSError<DocDBErrors>> CreateDBClusterParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateDBClusterSnapshotResult, Aws::Client::AWSError<DocDBErrors>> CreateDBClusterSnapshotOutcome;
-        typedef Aws::Utils::Outcome<CreateDBInstanceResult, Aws::Client::AWSError<DocDBErrors>> CreateDBInstanceOutcome;
-        typedef Aws::Utils::Outcome<CreateDBSubnetGroupResult, Aws::Client::AWSError<DocDBErrors>> CreateDBSubnetGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteDBClusterResult, Aws::Client::AWSError<DocDBErrors>> DeleteDBClusterOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DocDBErrors>> DeleteDBClusterParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteDBClusterSnapshotResult, Aws::Client::AWSError<DocDBErrors>> DeleteDBClusterSnapshotOutcome;
-        typedef Aws::Utils::Outcome<DeleteDBInstanceResult, Aws::Client::AWSError<DocDBErrors>> DeleteDBInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DocDBErrors>> DeleteDBSubnetGroupOutcome;
-        typedef Aws::Utils::Outcome<DescribeCertificatesResult, Aws::Client::AWSError<DocDBErrors>> DescribeCertificatesOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBClusterParameterGroupsResult, Aws::Client::AWSError<DocDBErrors>> DescribeDBClusterParameterGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBClusterParametersResult, Aws::Client::AWSError<DocDBErrors>> DescribeDBClusterParametersOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBClusterSnapshotAttributesResult, Aws::Client::AWSError<DocDBErrors>> DescribeDBClusterSnapshotAttributesOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBClusterSnapshotsResult, Aws::Client::AWSError<DocDBErrors>> DescribeDBClusterSnapshotsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBClustersResult, Aws::Client::AWSError<DocDBErrors>> DescribeDBClustersOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBEngineVersionsResult, Aws::Client::AWSError<DocDBErrors>> DescribeDBEngineVersionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBInstancesResult, Aws::Client::AWSError<DocDBErrors>> DescribeDBInstancesOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBSubnetGroupsResult, Aws::Client::AWSError<DocDBErrors>> DescribeDBSubnetGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeEngineDefaultClusterParametersResult, Aws::Client::AWSError<DocDBErrors>> DescribeEngineDefaultClusterParametersOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventCategoriesResult, Aws::Client::AWSError<DocDBErrors>> DescribeEventCategoriesOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventsResult, Aws::Client::AWSError<DocDBErrors>> DescribeEventsOutcome;
-        typedef Aws::Utils::Outcome<DescribeOrderableDBInstanceOptionsResult, Aws::Client::AWSError<DocDBErrors>> DescribeOrderableDBInstanceOptionsOutcome;
-        typedef Aws::Utils::Outcome<DescribePendingMaintenanceActionsResult, Aws::Client::AWSError<DocDBErrors>> DescribePendingMaintenanceActionsOutcome;
-        typedef Aws::Utils::Outcome<FailoverDBClusterResult, Aws::Client::AWSError<DocDBErrors>> FailoverDBClusterOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<DocDBErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBClusterResult, Aws::Client::AWSError<DocDBErrors>> ModifyDBClusterOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBClusterParameterGroupResult, Aws::Client::AWSError<DocDBErrors>> ModifyDBClusterParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBClusterSnapshotAttributeResult, Aws::Client::AWSError<DocDBErrors>> ModifyDBClusterSnapshotAttributeOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBInstanceResult, Aws::Client::AWSError<DocDBErrors>> ModifyDBInstanceOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBSubnetGroupResult, Aws::Client::AWSError<DocDBErrors>> ModifyDBSubnetGroupOutcome;
-        typedef Aws::Utils::Outcome<RebootDBInstanceResult, Aws::Client::AWSError<DocDBErrors>> RebootDBInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DocDBErrors>> RemoveTagsFromResourceOutcome;
-        typedef Aws::Utils::Outcome<ResetDBClusterParameterGroupResult, Aws::Client::AWSError<DocDBErrors>> ResetDBClusterParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<RestoreDBClusterFromSnapshotResult, Aws::Client::AWSError<DocDBErrors>> RestoreDBClusterFromSnapshotOutcome;
-        typedef Aws::Utils::Outcome<RestoreDBClusterToPointInTimeResult, Aws::Client::AWSError<DocDBErrors>> RestoreDBClusterToPointInTimeOutcome;
-        typedef Aws::Utils::Outcome<StartDBClusterResult, Aws::Client::AWSError<DocDBErrors>> StartDBClusterOutcome;
-        typedef Aws::Utils::Outcome<StopDBClusterResult, Aws::Client::AWSError<DocDBErrors>> StopDBClusterOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DocDBError> AddTagsToResourceOutcome;
+        typedef Aws::Utils::Outcome<ApplyPendingMaintenanceActionResult, DocDBError> ApplyPendingMaintenanceActionOutcome;
+        typedef Aws::Utils::Outcome<CopyDBClusterParameterGroupResult, DocDBError> CopyDBClusterParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<CopyDBClusterSnapshotResult, DocDBError> CopyDBClusterSnapshotOutcome;
+        typedef Aws::Utils::Outcome<CreateDBClusterResult, DocDBError> CreateDBClusterOutcome;
+        typedef Aws::Utils::Outcome<CreateDBClusterParameterGroupResult, DocDBError> CreateDBClusterParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateDBClusterSnapshotResult, DocDBError> CreateDBClusterSnapshotOutcome;
+        typedef Aws::Utils::Outcome<CreateDBInstanceResult, DocDBError> CreateDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<CreateDBSubnetGroupResult, DocDBError> CreateDBSubnetGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteDBClusterResult, DocDBError> DeleteDBClusterOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DocDBError> DeleteDBClusterParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteDBClusterSnapshotResult, DocDBError> DeleteDBClusterSnapshotOutcome;
+        typedef Aws::Utils::Outcome<DeleteDBInstanceResult, DocDBError> DeleteDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DocDBError> DeleteDBSubnetGroupOutcome;
+        typedef Aws::Utils::Outcome<DescribeCertificatesResult, DocDBError> DescribeCertificatesOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBClusterParameterGroupsResult, DocDBError> DescribeDBClusterParameterGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBClusterParametersResult, DocDBError> DescribeDBClusterParametersOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBClusterSnapshotAttributesResult, DocDBError> DescribeDBClusterSnapshotAttributesOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBClusterSnapshotsResult, DocDBError> DescribeDBClusterSnapshotsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBClustersResult, DocDBError> DescribeDBClustersOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBEngineVersionsResult, DocDBError> DescribeDBEngineVersionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBInstancesResult, DocDBError> DescribeDBInstancesOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBSubnetGroupsResult, DocDBError> DescribeDBSubnetGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEngineDefaultClusterParametersResult, DocDBError> DescribeEngineDefaultClusterParametersOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventCategoriesResult, DocDBError> DescribeEventCategoriesOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventsResult, DocDBError> DescribeEventsOutcome;
+        typedef Aws::Utils::Outcome<DescribeOrderableDBInstanceOptionsResult, DocDBError> DescribeOrderableDBInstanceOptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribePendingMaintenanceActionsResult, DocDBError> DescribePendingMaintenanceActionsOutcome;
+        typedef Aws::Utils::Outcome<FailoverDBClusterResult, DocDBError> FailoverDBClusterOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, DocDBError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBClusterResult, DocDBError> ModifyDBClusterOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBClusterParameterGroupResult, DocDBError> ModifyDBClusterParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBClusterSnapshotAttributeResult, DocDBError> ModifyDBClusterSnapshotAttributeOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBInstanceResult, DocDBError> ModifyDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBSubnetGroupResult, DocDBError> ModifyDBSubnetGroupOutcome;
+        typedef Aws::Utils::Outcome<RebootDBInstanceResult, DocDBError> RebootDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DocDBError> RemoveTagsFromResourceOutcome;
+        typedef Aws::Utils::Outcome<ResetDBClusterParameterGroupResult, DocDBError> ResetDBClusterParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<RestoreDBClusterFromSnapshotResult, DocDBError> RestoreDBClusterFromSnapshotOutcome;
+        typedef Aws::Utils::Outcome<RestoreDBClusterToPointInTimeResult, DocDBError> RestoreDBClusterToPointInTimeOutcome;
+        typedef Aws::Utils::Outcome<StartDBClusterResult, DocDBError> StartDBClusterOutcome;
+        typedef Aws::Utils::Outcome<StopDBClusterResult, DocDBError> StopDBClusterOutcome;
 
         typedef std::future<AddTagsToResourceOutcome> AddTagsToResourceOutcomeCallable;
         typedef std::future<ApplyPendingMaintenanceActionOutcome> ApplyPendingMaintenanceActionOutcomeCallable;
@@ -310,8 +300,6 @@ namespace Model
 
         virtual ~DocDBClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "DocDB"; }
-
 
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
@@ -357,16 +345,16 @@ namespace Model
         virtual void AddTagsToResourceAsync(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Applies a pending maintenance action to a resource (for example, to a DB
-         * instance).</p><p><h3>See Also:</h3>   <a
+         * <p>Applies a pending maintenance action to a resource (for example, to an Amazon
+         * DocumentDB instance).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ApplyPendingMaintenanceAction">AWS
          * API Reference</a></p>
          */
         virtual Model::ApplyPendingMaintenanceActionOutcome ApplyPendingMaintenanceAction(const Model::ApplyPendingMaintenanceActionRequest& request) const;
 
         /**
-         * <p>Applies a pending maintenance action to a resource (for example, to a DB
-         * instance).</p><p><h3>See Also:</h3>   <a
+         * <p>Applies a pending maintenance action to a resource (for example, to an Amazon
+         * DocumentDB instance).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ApplyPendingMaintenanceAction">AWS
          * API Reference</a></p>
          *
@@ -375,8 +363,8 @@ namespace Model
         virtual Model::ApplyPendingMaintenanceActionOutcomeCallable ApplyPendingMaintenanceActionCallable(const Model::ApplyPendingMaintenanceActionRequest& request) const;
 
         /**
-         * <p>Applies a pending maintenance action to a resource (for example, to a DB
-         * instance).</p><p><h3>See Also:</h3>   <a
+         * <p>Applies a pending maintenance action to a resource (for example, to an Amazon
+         * DocumentDB instance).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ApplyPendingMaintenanceAction">AWS
          * API Reference</a></p>
          *
@@ -412,11 +400,12 @@ namespace Model
         /**
          * <p>Copies a snapshot of a cluster.</p> <p>To copy a cluster snapshot from a
          * shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
-         * must be the Amazon Resource Name (ARN) of the shared cluster snapshot.</p> <p>To
-         * cancel the copy operation after it is in progress, delete the target cluster
-         * snapshot identified by <code>TargetDBClusterSnapshotIdentifier</code> while that
-         * DB cluster snapshot is in the <i>copying</i> status.</p><p><h3>See Also:</h3>  
-         * <a
+         * must be the Amazon Resource Name (ARN) of the shared cluster snapshot. You can
+         * only copy a shared DB cluster snapshot, whether encrypted or not, in the same
+         * AWS Region.</p> <p>To cancel the copy operation after it is in progress, delete
+         * the target cluster snapshot identified by
+         * <code>TargetDBClusterSnapshotIdentifier</code> while that cluster snapshot is in
+         * the <i>copying</i> status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterSnapshot">AWS
          * API Reference</a></p>
          */
@@ -425,11 +414,12 @@ namespace Model
         /**
          * <p>Copies a snapshot of a cluster.</p> <p>To copy a cluster snapshot from a
          * shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
-         * must be the Amazon Resource Name (ARN) of the shared cluster snapshot.</p> <p>To
-         * cancel the copy operation after it is in progress, delete the target cluster
-         * snapshot identified by <code>TargetDBClusterSnapshotIdentifier</code> while that
-         * DB cluster snapshot is in the <i>copying</i> status.</p><p><h3>See Also:</h3>  
-         * <a
+         * must be the Amazon Resource Name (ARN) of the shared cluster snapshot. You can
+         * only copy a shared DB cluster snapshot, whether encrypted or not, in the same
+         * AWS Region.</p> <p>To cancel the copy operation after it is in progress, delete
+         * the target cluster snapshot identified by
+         * <code>TargetDBClusterSnapshotIdentifier</code> while that cluster snapshot is in
+         * the <i>copying</i> status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterSnapshot">AWS
          * API Reference</a></p>
          *
@@ -440,11 +430,12 @@ namespace Model
         /**
          * <p>Copies a snapshot of a cluster.</p> <p>To copy a cluster snapshot from a
          * shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
-         * must be the Amazon Resource Name (ARN) of the shared cluster snapshot.</p> <p>To
-         * cancel the copy operation after it is in progress, delete the target cluster
-         * snapshot identified by <code>TargetDBClusterSnapshotIdentifier</code> while that
-         * DB cluster snapshot is in the <i>copying</i> status.</p><p><h3>See Also:</h3>  
-         * <a
+         * must be the Amazon Resource Name (ARN) of the shared cluster snapshot. You can
+         * only copy a shared DB cluster snapshot, whether encrypted or not, in the same
+         * AWS Region.</p> <p>To cancel the copy operation after it is in progress, delete
+         * the target cluster snapshot identified by
+         * <code>TargetDBClusterSnapshotIdentifier</code> while that cluster snapshot is in
+         * the <i>copying</i> status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterSnapshot">AWS
          * API Reference</a></p>
          *
@@ -479,21 +470,21 @@ namespace Model
 
         /**
          * <p>Creates a new cluster parameter group.</p> <p>Parameters in a cluster
-         * parameter group apply to all of the instances in a DB cluster.</p> <p>A cluster
+         * parameter group apply to all of the instances in a cluster.</p> <p>A cluster
          * parameter group is initially created with the default parameters for the
-         * database engine used by instances in the cluster. To provide custom values for
-         * any of the parameters, you must modify the group after you create it. After you
-         * create a DB cluster parameter group, you must associate it with your cluster.
-         * For the new DB cluster parameter group and associated settings to take effect,
-         * you must then reboot the instances in the cluster without failover.</p>
-         * <important> <p>After you create a cluster parameter group, you should wait at
-         * least 5 minutes before creating your first cluster that uses that cluster
-         * parameter group as the default parameter group. This allows Amazon DocumentDB to
-         * fully complete the create action before the cluster parameter group is used as
-         * the default for a new cluster. This step is especially important for parameters
-         * that are critical when creating the default database for a cluster, such as the
-         * character set for the default database defined by the
-         * <code>character_set_database</code> parameter.</p> </important><p><h3>See
+         * database engine used by instances in the cluster. In Amazon DocumentDB, you
+         * cannot make modifications directly to the <code>default.docdb3.6</code> cluster
+         * parameter group. If your Amazon DocumentDB cluster is using the default cluster
+         * parameter group and you want to modify a value in it, you must first <a
+         * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-create.html">
+         * create a new parameter group</a> or <a
+         * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-copy.html">
+         * copy an existing parameter group</a>, modify it, and then apply the modified
+         * parameter group to your cluster. For the new cluster parameter group and
+         * associated settings to take effect, you must then reboot the instances in the
+         * cluster without failover. For more information, see <a
+         * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-modify.html">
+         * Modifying Amazon DocumentDB Cluster Parameter Groups</a>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>
@@ -502,21 +493,21 @@ namespace Model
 
         /**
          * <p>Creates a new cluster parameter group.</p> <p>Parameters in a cluster
-         * parameter group apply to all of the instances in a DB cluster.</p> <p>A cluster
+         * parameter group apply to all of the instances in a cluster.</p> <p>A cluster
          * parameter group is initially created with the default parameters for the
-         * database engine used by instances in the cluster. To provide custom values for
-         * any of the parameters, you must modify the group after you create it. After you
-         * create a DB cluster parameter group, you must associate it with your cluster.
-         * For the new DB cluster parameter group and associated settings to take effect,
-         * you must then reboot the instances in the cluster without failover.</p>
-         * <important> <p>After you create a cluster parameter group, you should wait at
-         * least 5 minutes before creating your first cluster that uses that cluster
-         * parameter group as the default parameter group. This allows Amazon DocumentDB to
-         * fully complete the create action before the cluster parameter group is used as
-         * the default for a new cluster. This step is especially important for parameters
-         * that are critical when creating the default database for a cluster, such as the
-         * character set for the default database defined by the
-         * <code>character_set_database</code> parameter.</p> </important><p><h3>See
+         * database engine used by instances in the cluster. In Amazon DocumentDB, you
+         * cannot make modifications directly to the <code>default.docdb3.6</code> cluster
+         * parameter group. If your Amazon DocumentDB cluster is using the default cluster
+         * parameter group and you want to modify a value in it, you must first <a
+         * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-create.html">
+         * create a new parameter group</a> or <a
+         * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-copy.html">
+         * copy an existing parameter group</a>, modify it, and then apply the modified
+         * parameter group to your cluster. For the new cluster parameter group and
+         * associated settings to take effect, you must then reboot the instances in the
+         * cluster without failover. For more information, see <a
+         * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-modify.html">
+         * Modifying Amazon DocumentDB Cluster Parameter Groups</a>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>
@@ -527,21 +518,21 @@ namespace Model
 
         /**
          * <p>Creates a new cluster parameter group.</p> <p>Parameters in a cluster
-         * parameter group apply to all of the instances in a DB cluster.</p> <p>A cluster
+         * parameter group apply to all of the instances in a cluster.</p> <p>A cluster
          * parameter group is initially created with the default parameters for the
-         * database engine used by instances in the cluster. To provide custom values for
-         * any of the parameters, you must modify the group after you create it. After you
-         * create a DB cluster parameter group, you must associate it with your cluster.
-         * For the new DB cluster parameter group and associated settings to take effect,
-         * you must then reboot the instances in the cluster without failover.</p>
-         * <important> <p>After you create a cluster parameter group, you should wait at
-         * least 5 minutes before creating your first cluster that uses that cluster
-         * parameter group as the default parameter group. This allows Amazon DocumentDB to
-         * fully complete the create action before the cluster parameter group is used as
-         * the default for a new cluster. This step is especially important for parameters
-         * that are critical when creating the default database for a cluster, such as the
-         * character set for the default database defined by the
-         * <code>character_set_database</code> parameter.</p> </important><p><h3>See
+         * database engine used by instances in the cluster. In Amazon DocumentDB, you
+         * cannot make modifications directly to the <code>default.docdb3.6</code> cluster
+         * parameter group. If your Amazon DocumentDB cluster is using the default cluster
+         * parameter group and you want to modify a value in it, you must first <a
+         * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-create.html">
+         * create a new parameter group</a> or <a
+         * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-copy.html">
+         * copy an existing parameter group</a>, modify it, and then apply the modified
+         * parameter group to your cluster. For the new cluster parameter group and
+         * associated settings to take effect, you must then reboot the instances in the
+         * cluster without failover. For more information, see <a
+         * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-modify.html">
+         * Modifying Amazon DocumentDB Cluster Parameter Groups</a>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>
@@ -692,8 +683,8 @@ namespace Model
 
         /**
          * <p>Deletes a cluster snapshot. If the snapshot is being copied, the copy
-         * operation is terminated.</p> <note> <p>The cluster snapshot must be in the
-         * <code>available</code> state to be deleted.</p> </note><p><h3>See Also:</h3>  
+         * operation is terminated.</p>  <p>The cluster snapshot must be in the
+         * <code>available</code> state to be deleted.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBClusterSnapshot">AWS
          * API Reference</a></p>
@@ -702,8 +693,8 @@ namespace Model
 
         /**
          * <p>Deletes a cluster snapshot. If the snapshot is being copied, the copy
-         * operation is terminated.</p> <note> <p>The cluster snapshot must be in the
-         * <code>available</code> state to be deleted.</p> </note><p><h3>See Also:</h3>  
+         * operation is terminated.</p>  <p>The cluster snapshot must be in the
+         * <code>available</code> state to be deleted.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBClusterSnapshot">AWS
          * API Reference</a></p>
@@ -714,8 +705,8 @@ namespace Model
 
         /**
          * <p>Deletes a cluster snapshot. If the snapshot is being copied, the copy
-         * operation is terminated.</p> <note> <p>The cluster snapshot must be in the
-         * <code>available</code> state to be deleted.</p> </note><p><h3>See Also:</h3>  
+         * operation is terminated.</p>  <p>The cluster snapshot must be in the
+         * <code>available</code> state to be deleted.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBClusterSnapshot">AWS
          * API Reference</a></p>
@@ -750,8 +741,8 @@ namespace Model
         virtual void DeleteDBInstanceAsync(const Model::DeleteDBInstanceRequest& request, const DeleteDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a subnet group.</p> <note> <p>The specified database subnet group
-         * must not be associated with any DB instances.</p> </note><p><h3>See Also:</h3>  
+         * <p>Deletes a subnet group.</p>  <p>The specified database subnet group
+         * must not be associated with any DB instances.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBSubnetGroup">AWS
          * API Reference</a></p>
@@ -759,8 +750,8 @@ namespace Model
         virtual Model::DeleteDBSubnetGroupOutcome DeleteDBSubnetGroup(const Model::DeleteDBSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes a subnet group.</p> <note> <p>The specified database subnet group
-         * must not be associated with any DB instances.</p> </note><p><h3>See Also:</h3>  
+         * <p>Deletes a subnet group.</p>  <p>The specified database subnet group
+         * must not be associated with any DB instances.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBSubnetGroup">AWS
          * API Reference</a></p>
@@ -770,8 +761,8 @@ namespace Model
         virtual Model::DeleteDBSubnetGroupOutcomeCallable DeleteDBSubnetGroupCallable(const Model::DeleteDBSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes a subnet group.</p> <note> <p>The specified database subnet group
-         * must not be associated with any DB instances.</p> </note><p><h3>See Also:</h3>  
+         * <p>Deletes a subnet group.</p>  <p>The specified database subnet group
+         * must not be associated with any DB instances.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBSubnetGroup">AWS
          * API Reference</a></p>
@@ -1323,17 +1314,17 @@ namespace Model
          * <p> Modifies the parameters of a cluster parameter group. To modify more than
          * one parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
-         * parameters can be modified in a single request. </p> <note> <p>Changes to
+         * parameters can be modified in a single request. </p>  <p>Changes to
          * dynamic parameters are applied immediately. Changes to static parameters require
-         * a reboot or maintenance window before the change can take effect.</p> </note>
-         * <important> <p>After you create a cluster parameter group, you should wait at
+         * a reboot or maintenance window before the change can take effect.</p> 
+         *  <p>After you create a cluster parameter group, you should wait at
          * least 5 minutes before creating your first cluster that uses that cluster
          * parameter group as the default parameter group. This allows Amazon DocumentDB to
          * fully complete the create action before the parameter group is used as the
          * default for a new cluster. This step is especially important for parameters that
          * are critical when creating the default database for a cluster, such as the
          * character set for the default database defined by the
-         * <code>character_set_database</code> parameter.</p> </important><p><h3>See
+         * <code>character_set_database</code> parameter.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBClusterParameterGroup">AWS
          * API Reference</a></p>
@@ -1344,17 +1335,17 @@ namespace Model
          * <p> Modifies the parameters of a cluster parameter group. To modify more than
          * one parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
-         * parameters can be modified in a single request. </p> <note> <p>Changes to
+         * parameters can be modified in a single request. </p>  <p>Changes to
          * dynamic parameters are applied immediately. Changes to static parameters require
-         * a reboot or maintenance window before the change can take effect.</p> </note>
-         * <important> <p>After you create a cluster parameter group, you should wait at
+         * a reboot or maintenance window before the change can take effect.</p> 
+         *  <p>After you create a cluster parameter group, you should wait at
          * least 5 minutes before creating your first cluster that uses that cluster
          * parameter group as the default parameter group. This allows Amazon DocumentDB to
          * fully complete the create action before the parameter group is used as the
          * default for a new cluster. This step is especially important for parameters that
          * are critical when creating the default database for a cluster, such as the
          * character set for the default database defined by the
-         * <code>character_set_database</code> parameter.</p> </important><p><h3>See
+         * <code>character_set_database</code> parameter.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBClusterParameterGroup">AWS
          * API Reference</a></p>
@@ -1367,17 +1358,17 @@ namespace Model
          * <p> Modifies the parameters of a cluster parameter group. To modify more than
          * one parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
-         * parameters can be modified in a single request. </p> <note> <p>Changes to
+         * parameters can be modified in a single request. </p>  <p>Changes to
          * dynamic parameters are applied immediately. Changes to static parameters require
-         * a reboot or maintenance window before the change can take effect.</p> </note>
-         * <important> <p>After you create a cluster parameter group, you should wait at
+         * a reboot or maintenance window before the change can take effect.</p> 
+         *  <p>After you create a cluster parameter group, you should wait at
          * least 5 minutes before creating your first cluster that uses that cluster
          * parameter group as the default parameter group. This allows Amazon DocumentDB to
          * fully complete the create action before the parameter group is used as the
          * default for a new cluster. This step is especially important for parameters that
          * are critical when creating the default database for a cluster, such as the
          * character set for the default database defined by the
-         * <code>character_set_database</code> parameter.</p> </important><p><h3>See
+         * <code>character_set_database</code> parameter.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBClusterParameterGroup">AWS
          * API Reference</a></p>
@@ -1780,7 +1771,7 @@ namespace Model
          */
         virtual void StopDBClusterAsync(const Model::StopDBClusterRequest& request, const StopDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-      
+
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);

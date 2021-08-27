@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
@@ -48,7 +38,7 @@ namespace Model
     /**
      * <p>The identifier for the secret that you want to remove tags from. You can
      * specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
+     * secret.</p>  <p>If you specify an ARN, we generally recommend that you
      * specify a complete ARN. You can specify a partial ARN too—for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
@@ -57,15 +47,20 @@ namespace Model
      * adds the hyphen and six characters to the ARN) and you try to use that as a
      * partial ARN, then those characters cause Secrets Manager to assume that you’re
      * specifying a complete ARN. This confusion can cause unexpected results. To avoid
-     * this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * this situation, we recommend that you don’t create secret names ending with a
+     * hyphen followed by six characters.</p> <p>If you specify an incomplete ARN
+     * without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix
+     * added by Secrets Manager, you receive either a <i>ResourceNotFoundException</i>
+     * or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
+     * 
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
 
     /**
      * <p>The identifier for the secret that you want to remove tags from. You can
      * specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
+     * secret.</p>  <p>If you specify an ARN, we generally recommend that you
      * specify a complete ARN. You can specify a partial ARN too—for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
@@ -74,15 +69,20 @@ namespace Model
      * adds the hyphen and six characters to the ARN) and you try to use that as a
      * partial ARN, then those characters cause Secrets Manager to assume that you’re
      * specifying a complete ARN. This confusion can cause unexpected results. To avoid
-     * this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * this situation, we recommend that you don’t create secret names ending with a
+     * hyphen followed by six characters.</p> <p>If you specify an incomplete ARN
+     * without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix
+     * added by Secrets Manager, you receive either a <i>ResourceNotFoundException</i>
+     * or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
+     * 
      */
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
 
     /**
      * <p>The identifier for the secret that you want to remove tags from. You can
      * specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
+     * secret.</p>  <p>If you specify an ARN, we generally recommend that you
      * specify a complete ARN. You can specify a partial ARN too—for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
@@ -91,15 +91,20 @@ namespace Model
      * adds the hyphen and six characters to the ARN) and you try to use that as a
      * partial ARN, then those characters cause Secrets Manager to assume that you’re
      * specifying a complete ARN. This confusion can cause unexpected results. To avoid
-     * this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * this situation, we recommend that you don’t create secret names ending with a
+     * hyphen followed by six characters.</p> <p>If you specify an incomplete ARN
+     * without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix
+     * added by Secrets Manager, you receive either a <i>ResourceNotFoundException</i>
+     * or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
+     * 
      */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
 
     /**
      * <p>The identifier for the secret that you want to remove tags from. You can
      * specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
+     * secret.</p>  <p>If you specify an ARN, we generally recommend that you
      * specify a complete ARN. You can specify a partial ARN too—for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
@@ -108,15 +113,20 @@ namespace Model
      * adds the hyphen and six characters to the ARN) and you try to use that as a
      * partial ARN, then those characters cause Secrets Manager to assume that you’re
      * specifying a complete ARN. This confusion can cause unexpected results. To avoid
-     * this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * this situation, we recommend that you don’t create secret names ending with a
+     * hyphen followed by six characters.</p> <p>If you specify an incomplete ARN
+     * without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix
+     * added by Secrets Manager, you receive either a <i>ResourceNotFoundException</i>
+     * or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
+     * 
      */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
 
     /**
      * <p>The identifier for the secret that you want to remove tags from. You can
      * specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
+     * secret.</p>  <p>If you specify an ARN, we generally recommend that you
      * specify a complete ARN. You can specify a partial ARN too—for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
@@ -125,15 +135,20 @@ namespace Model
      * adds the hyphen and six characters to the ARN) and you try to use that as a
      * partial ARN, then those characters cause Secrets Manager to assume that you’re
      * specifying a complete ARN. This confusion can cause unexpected results. To avoid
-     * this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * this situation, we recommend that you don’t create secret names ending with a
+     * hyphen followed by six characters.</p> <p>If you specify an incomplete ARN
+     * without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix
+     * added by Secrets Manager, you receive either a <i>ResourceNotFoundException</i>
+     * or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
+     * 
      */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
 
     /**
      * <p>The identifier for the secret that you want to remove tags from. You can
      * specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
+     * secret.</p>  <p>If you specify an ARN, we generally recommend that you
      * specify a complete ARN. You can specify a partial ARN too—for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
@@ -142,15 +157,20 @@ namespace Model
      * adds the hyphen and six characters to the ARN) and you try to use that as a
      * partial ARN, then those characters cause Secrets Manager to assume that you’re
      * specifying a complete ARN. This confusion can cause unexpected results. To avoid
-     * this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * this situation, we recommend that you don’t create secret names ending with a
+     * hyphen followed by six characters.</p> <p>If you specify an incomplete ARN
+     * without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix
+     * added by Secrets Manager, you receive either a <i>ResourceNotFoundException</i>
+     * or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
+     * 
      */
     inline UntagResourceRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
 
     /**
      * <p>The identifier for the secret that you want to remove tags from. You can
      * specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
+     * secret.</p>  <p>If you specify an ARN, we generally recommend that you
      * specify a complete ARN. You can specify a partial ARN too—for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
@@ -159,15 +179,20 @@ namespace Model
      * adds the hyphen and six characters to the ARN) and you try to use that as a
      * partial ARN, then those characters cause Secrets Manager to assume that you’re
      * specifying a complete ARN. This confusion can cause unexpected results. To avoid
-     * this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * this situation, we recommend that you don’t create secret names ending with a
+     * hyphen followed by six characters.</p> <p>If you specify an incomplete ARN
+     * without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix
+     * added by Secrets Manager, you receive either a <i>ResourceNotFoundException</i>
+     * or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
+     * 
      */
     inline UntagResourceRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the secret that you want to remove tags from. You can
      * specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
+     * secret.</p>  <p>If you specify an ARN, we generally recommend that you
      * specify a complete ARN. You can specify a partial ARN too—for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
@@ -176,8 +201,13 @@ namespace Model
      * adds the hyphen and six characters to the ARN) and you try to use that as a
      * partial ARN, then those characters cause Secrets Manager to assume that you’re
      * specifying a complete ARN. This confusion can cause unexpected results. To avoid
-     * this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * this situation, we recommend that you don’t create secret names ending with a
+     * hyphen followed by six characters.</p> <p>If you specify an incomplete ARN
+     * without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix
+     * added by Secrets Manager, you receive either a <i>ResourceNotFoundException</i>
+     * or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
+     * 
      */
     inline UntagResourceRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rds/model/DBInstance.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -60,11 +50,14 @@ DBInstance::DBInstance() :
     m_readReplicaSourceDBInstanceIdentifierHasBeenSet(false),
     m_readReplicaDBInstanceIdentifiersHasBeenSet(false),
     m_readReplicaDBClusterIdentifiersHasBeenSet(false),
+    m_replicaMode(ReplicaMode::NOT_SET),
+    m_replicaModeHasBeenSet(false),
     m_licenseModelHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
     m_optionGroupMembershipsHasBeenSet(false),
     m_characterSetNameHasBeenSet(false),
+    m_ncharCharacterSetNameHasBeenSet(false),
     m_secondaryAvailabilityZoneHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
@@ -104,7 +97,11 @@ DBInstance::DBInstance() :
     m_associatedRolesHasBeenSet(false),
     m_listenerEndpointHasBeenSet(false),
     m_maxAllocatedStorage(0),
-    m_maxAllocatedStorageHasBeenSet(false)
+    m_maxAllocatedStorageHasBeenSet(false),
+    m_tagListHasBeenSet(false),
+    m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false),
+    m_customerOwnedIpEnabled(false),
+    m_customerOwnedIpEnabledHasBeenSet(false)
 {
 }
 
@@ -138,11 +135,14 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_readReplicaSourceDBInstanceIdentifierHasBeenSet(false),
     m_readReplicaDBInstanceIdentifiersHasBeenSet(false),
     m_readReplicaDBClusterIdentifiersHasBeenSet(false),
+    m_replicaMode(ReplicaMode::NOT_SET),
+    m_replicaModeHasBeenSet(false),
     m_licenseModelHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
     m_optionGroupMembershipsHasBeenSet(false),
     m_characterSetNameHasBeenSet(false),
+    m_ncharCharacterSetNameHasBeenSet(false),
     m_secondaryAvailabilityZoneHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
@@ -182,7 +182,11 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_associatedRolesHasBeenSet(false),
     m_listenerEndpointHasBeenSet(false),
     m_maxAllocatedStorage(0),
-    m_maxAllocatedStorageHasBeenSet(false)
+    m_maxAllocatedStorageHasBeenSet(false),
+    m_tagListHasBeenSet(false),
+    m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false),
+    m_customerOwnedIpEnabled(false),
+    m_customerOwnedIpEnabledHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -373,6 +377,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
 
       m_readReplicaDBClusterIdentifiersHasBeenSet = true;
     }
+    XmlNode replicaModeNode = resultNode.FirstChild("ReplicaMode");
+    if(!replicaModeNode.IsNull())
+    {
+      m_replicaMode = ReplicaModeMapper::GetReplicaModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replicaModeNode.GetText()).c_str()).c_str());
+      m_replicaModeHasBeenSet = true;
+    }
     XmlNode licenseModelNode = resultNode.FirstChild("LicenseModel");
     if(!licenseModelNode.IsNull())
     {
@@ -402,6 +412,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
     {
       m_characterSetName = Aws::Utils::Xml::DecodeEscapedXmlText(characterSetNameNode.GetText());
       m_characterSetNameHasBeenSet = true;
+    }
+    XmlNode ncharCharacterSetNameNode = resultNode.FirstChild("NcharCharacterSetName");
+    if(!ncharCharacterSetNameNode.IsNull())
+    {
+      m_ncharCharacterSetName = Aws::Utils::Xml::DecodeEscapedXmlText(ncharCharacterSetNameNode.GetText());
+      m_ncharCharacterSetNameHasBeenSet = true;
     }
     XmlNode secondaryAvailabilityZoneNode = resultNode.FirstChild("SecondaryAvailabilityZone");
     if(!secondaryAvailabilityZoneNode.IsNull())
@@ -607,6 +623,36 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_maxAllocatedStorage = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxAllocatedStorageNode.GetText()).c_str()).c_str());
       m_maxAllocatedStorageHasBeenSet = true;
     }
+    XmlNode tagListNode = resultNode.FirstChild("TagList");
+    if(!tagListNode.IsNull())
+    {
+      XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      while(!tagListMember.IsNull())
+      {
+        m_tagList.push_back(tagListMember);
+        tagListMember = tagListMember.NextNode("Tag");
+      }
+
+      m_tagListHasBeenSet = true;
+    }
+    XmlNode dBInstanceAutomatedBackupsReplicationsNode = resultNode.FirstChild("DBInstanceAutomatedBackupsReplications");
+    if(!dBInstanceAutomatedBackupsReplicationsNode.IsNull())
+    {
+      XmlNode dBInstanceAutomatedBackupsReplicationsMember = dBInstanceAutomatedBackupsReplicationsNode.FirstChild("DBInstanceAutomatedBackupsReplication");
+      while(!dBInstanceAutomatedBackupsReplicationsMember.IsNull())
+      {
+        m_dBInstanceAutomatedBackupsReplications.push_back(dBInstanceAutomatedBackupsReplicationsMember);
+        dBInstanceAutomatedBackupsReplicationsMember = dBInstanceAutomatedBackupsReplicationsMember.NextNode("DBInstanceAutomatedBackupsReplication");
+      }
+
+      m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true;
+    }
+    XmlNode customerOwnedIpEnabledNode = resultNode.FirstChild("CustomerOwnedIpEnabled");
+    if(!customerOwnedIpEnabledNode.IsNull())
+    {
+      m_customerOwnedIpEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(customerOwnedIpEnabledNode.GetText()).c_str()).c_str());
+      m_customerOwnedIpEnabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -771,6 +817,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       }
   }
 
+  if(m_replicaModeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReplicaMode=" << ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode) << "&";
+  }
+
   if(m_licenseModelHasBeenSet)
   {
       oStream << location << index << locationValue << ".LicenseModel=" << StringUtils::URLEncode(m_licenseModel.c_str()) << "&";
@@ -795,6 +846,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
   if(m_characterSetNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".CharacterSetName=" << StringUtils::URLEncode(m_characterSetName.c_str()) << "&";
+  }
+
+  if(m_ncharCharacterSetNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NcharCharacterSetName=" << StringUtils::URLEncode(m_ncharCharacterSetName.c_str()) << "&";
   }
 
   if(m_secondaryAvailabilityZoneHasBeenSet)
@@ -972,6 +1028,33 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".MaxAllocatedStorage=" << m_maxAllocatedStorage << "&";
   }
 
+  if(m_tagListHasBeenSet)
+  {
+      unsigned tagListIdx = 1;
+      for(auto& item : m_tagList)
+      {
+        Aws::StringStream tagListSs;
+        tagListSs << location << index << locationValue << ".Tag." << tagListIdx++;
+        item.OutputToStream(oStream, tagListSs.str().c_str());
+      }
+  }
+
+  if(m_dBInstanceAutomatedBackupsReplicationsHasBeenSet)
+  {
+      unsigned dBInstanceAutomatedBackupsReplicationsIdx = 1;
+      for(auto& item : m_dBInstanceAutomatedBackupsReplications)
+      {
+        Aws::StringStream dBInstanceAutomatedBackupsReplicationsSs;
+        dBInstanceAutomatedBackupsReplicationsSs << location << index << locationValue << ".DBInstanceAutomatedBackupsReplication." << dBInstanceAutomatedBackupsReplicationsIdx++;
+        item.OutputToStream(oStream, dBInstanceAutomatedBackupsReplicationsSs.str().c_str());
+      }
+  }
+
+  if(m_customerOwnedIpEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CustomerOwnedIpEnabled=" << std::boolalpha << m_customerOwnedIpEnabled << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1108,6 +1191,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
         oStream << location << ".ReadReplicaDBClusterIdentifier." << readReplicaDBClusterIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+  if(m_replicaModeHasBeenSet)
+  {
+      oStream << location << ".ReplicaMode=" << ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode) << "&";
+  }
   if(m_licenseModelHasBeenSet)
   {
       oStream << location << ".LicenseModel=" << StringUtils::URLEncode(m_licenseModel.c_str()) << "&";
@@ -1129,6 +1216,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_characterSetNameHasBeenSet)
   {
       oStream << location << ".CharacterSetName=" << StringUtils::URLEncode(m_characterSetName.c_str()) << "&";
+  }
+  if(m_ncharCharacterSetNameHasBeenSet)
+  {
+      oStream << location << ".NcharCharacterSetName=" << StringUtils::URLEncode(m_ncharCharacterSetName.c_str()) << "&";
   }
   if(m_secondaryAvailabilityZoneHasBeenSet)
   {
@@ -1275,6 +1366,30 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_maxAllocatedStorageHasBeenSet)
   {
       oStream << location << ".MaxAllocatedStorage=" << m_maxAllocatedStorage << "&";
+  }
+  if(m_tagListHasBeenSet)
+  {
+      unsigned tagListIdx = 1;
+      for(auto& item : m_tagList)
+      {
+        Aws::StringStream tagListSs;
+        tagListSs << location <<  ".Tag." << tagListIdx++;
+        item.OutputToStream(oStream, tagListSs.str().c_str());
+      }
+  }
+  if(m_dBInstanceAutomatedBackupsReplicationsHasBeenSet)
+  {
+      unsigned dBInstanceAutomatedBackupsReplicationsIdx = 1;
+      for(auto& item : m_dBInstanceAutomatedBackupsReplications)
+      {
+        Aws::StringStream dBInstanceAutomatedBackupsReplicationsSs;
+        dBInstanceAutomatedBackupsReplicationsSs << location <<  ".DBInstanceAutomatedBackupsReplication." << dBInstanceAutomatedBackupsReplicationsIdx++;
+        item.OutputToStream(oStream, dBInstanceAutomatedBackupsReplicationsSs.str().c_str());
+      }
+  }
+  if(m_customerOwnedIpEnabledHasBeenSet)
+  {
+      oStream << location << ".CustomerOwnedIpEnabled=" << std::boolalpha << m_customerOwnedIpEnabled << "&";
   }
 }
 

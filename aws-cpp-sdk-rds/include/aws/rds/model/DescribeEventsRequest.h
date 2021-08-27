@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -56,128 +46,152 @@ namespace Model
     /**
      * <p>The identifier of the event source for which events are returned. If not
      * specified, then all sources are included in the response.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
-     * must also be provided.</p> </li> <li> <p>If the source type is
-     * <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be
-     * supplied.</p> </li> <li> <p>If the source type is <code>DBSecurityGroup</code>,
-     * a <code>DBSecurityGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is <code>DBParameterGroup</code>, a
-     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
-     * be supplied.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If <code>SourceIdentifier</code> is supplied,
+     * <code>SourceType</code> must also be provided.</p> </li> <li> <p>If the source
+     * type is a DB instance, a <code>DBInstanceIdentifier</code> value must be
+     * supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
+     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
+     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
+     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
+     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
+     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
 
     /**
      * <p>The identifier of the event source for which events are returned. If not
      * specified, then all sources are included in the response.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
-     * must also be provided.</p> </li> <li> <p>If the source type is
-     * <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be
-     * supplied.</p> </li> <li> <p>If the source type is <code>DBSecurityGroup</code>,
-     * a <code>DBSecurityGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is <code>DBParameterGroup</code>, a
-     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
-     * be supplied.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If <code>SourceIdentifier</code> is supplied,
+     * <code>SourceType</code> must also be provided.</p> </li> <li> <p>If the source
+     * type is a DB instance, a <code>DBInstanceIdentifier</code> value must be
+     * supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
+     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
+     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
+     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
+     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
+     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
      */
     inline bool SourceIdentifierHasBeenSet() const { return m_sourceIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier of the event source for which events are returned. If not
      * specified, then all sources are included in the response.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
-     * must also be provided.</p> </li> <li> <p>If the source type is
-     * <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be
-     * supplied.</p> </li> <li> <p>If the source type is <code>DBSecurityGroup</code>,
-     * a <code>DBSecurityGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is <code>DBParameterGroup</code>, a
-     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
-     * be supplied.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If <code>SourceIdentifier</code> is supplied,
+     * <code>SourceType</code> must also be provided.</p> </li> <li> <p>If the source
+     * type is a DB instance, a <code>DBInstanceIdentifier</code> value must be
+     * supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
+     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
+     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
+     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
+     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
+     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
      */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /**
      * <p>The identifier of the event source for which events are returned. If not
      * specified, then all sources are included in the response.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
-     * must also be provided.</p> </li> <li> <p>If the source type is
-     * <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be
-     * supplied.</p> </li> <li> <p>If the source type is <code>DBSecurityGroup</code>,
-     * a <code>DBSecurityGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is <code>DBParameterGroup</code>, a
-     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
-     * be supplied.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If <code>SourceIdentifier</code> is supplied,
+     * <code>SourceType</code> must also be provided.</p> </li> <li> <p>If the source
+     * type is a DB instance, a <code>DBInstanceIdentifier</code> value must be
+     * supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
+     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
+     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
+     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
+     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
+     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
      */
     inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the event source for which events are returned. If not
      * specified, then all sources are included in the response.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
-     * must also be provided.</p> </li> <li> <p>If the source type is
-     * <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be
-     * supplied.</p> </li> <li> <p>If the source type is <code>DBSecurityGroup</code>,
-     * a <code>DBSecurityGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is <code>DBParameterGroup</code>, a
-     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
-     * be supplied.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If <code>SourceIdentifier</code> is supplied,
+     * <code>SourceType</code> must also be provided.</p> </li> <li> <p>If the source
+     * type is a DB instance, a <code>DBInstanceIdentifier</code> value must be
+     * supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
+     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
+     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
+     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
+     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
+     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
      */
     inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
 
     /**
      * <p>The identifier of the event source for which events are returned. If not
      * specified, then all sources are included in the response.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
-     * must also be provided.</p> </li> <li> <p>If the source type is
-     * <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be
-     * supplied.</p> </li> <li> <p>If the source type is <code>DBSecurityGroup</code>,
-     * a <code>DBSecurityGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is <code>DBParameterGroup</code>, a
-     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
-     * be supplied.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If <code>SourceIdentifier</code> is supplied,
+     * <code>SourceType</code> must also be provided.</p> </li> <li> <p>If the source
+     * type is a DB instance, a <code>DBInstanceIdentifier</code> value must be
+     * supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
+     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
+     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
+     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
+     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
+     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
      */
     inline DescribeEventsRequest& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
 
     /**
      * <p>The identifier of the event source for which events are returned. If not
      * specified, then all sources are included in the response.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
-     * must also be provided.</p> </li> <li> <p>If the source type is
-     * <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be
-     * supplied.</p> </li> <li> <p>If the source type is <code>DBSecurityGroup</code>,
-     * a <code>DBSecurityGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is <code>DBParameterGroup</code>, a
-     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
-     * be supplied.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If <code>SourceIdentifier</code> is supplied,
+     * <code>SourceType</code> must also be provided.</p> </li> <li> <p>If the source
+     * type is a DB instance, a <code>DBInstanceIdentifier</code> value must be
+     * supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
+     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
+     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
+     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
+     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
+     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
      */
     inline DescribeEventsRequest& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the event source for which events are returned. If not
      * specified, then all sources are included in the response.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
-     * must also be provided.</p> </li> <li> <p>If the source type is
-     * <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be
-     * supplied.</p> </li> <li> <p>If the source type is <code>DBSecurityGroup</code>,
-     * a <code>DBSecurityGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is <code>DBParameterGroup</code>, a
-     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
-     * be supplied.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If <code>SourceIdentifier</code> is supplied,
+     * <code>SourceType</code> must also be provided.</p> </li> <li> <p>If the source
+     * type is a DB instance, a <code>DBInstanceIdentifier</code> value must be
+     * supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
+     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
+     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
+     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
+     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
+     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
      */
     inline DescribeEventsRequest& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 

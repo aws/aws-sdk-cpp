@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ds/model/CertificateInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -33,7 +23,9 @@ CertificateInfo::CertificateInfo() :
     m_commonNameHasBeenSet(false),
     m_state(CertificateState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_expiryDateTimeHasBeenSet(false)
+    m_expiryDateTimeHasBeenSet(false),
+    m_type(CertificateType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -42,7 +34,9 @@ CertificateInfo::CertificateInfo(JsonView jsonValue) :
     m_commonNameHasBeenSet(false),
     m_state(CertificateState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_expiryDateTimeHasBeenSet(false)
+    m_expiryDateTimeHasBeenSet(false),
+    m_type(CertificateType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +71,13 @@ CertificateInfo& CertificateInfo::operator =(JsonView jsonValue)
     m_expiryDateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Type"))
+  {
+    m_type = CertificateTypeMapper::GetCertificateTypeForName(jsonValue.GetString("Type"));
+
+    m_typeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -104,6 +105,11 @@ JsonValue CertificateInfo::Jsonize() const
   if(m_expiryDateTimeHasBeenSet)
   {
    payload.WithDouble("ExpiryDateTime", m_expiryDateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", CertificateTypeMapper::GetNameForCertificateType(m_type));
   }
 
   return payload;

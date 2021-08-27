@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/imagebuilder/model/Distribution.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,6 +21,7 @@ namespace Model
 Distribution::Distribution() : 
     m_regionHasBeenSet(false),
     m_amiDistributionConfigurationHasBeenSet(false),
+    m_containerDistributionConfigurationHasBeenSet(false),
     m_licenseConfigurationArnsHasBeenSet(false)
 {
 }
@@ -38,6 +29,7 @@ Distribution::Distribution() :
 Distribution::Distribution(JsonView jsonValue) : 
     m_regionHasBeenSet(false),
     m_amiDistributionConfigurationHasBeenSet(false),
+    m_containerDistributionConfigurationHasBeenSet(false),
     m_licenseConfigurationArnsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -57,6 +49,13 @@ Distribution& Distribution::operator =(JsonView jsonValue)
     m_amiDistributionConfiguration = jsonValue.GetObject("amiDistributionConfiguration");
 
     m_amiDistributionConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("containerDistributionConfiguration"))
+  {
+    m_containerDistributionConfiguration = jsonValue.GetObject("containerDistributionConfiguration");
+
+    m_containerDistributionConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("licenseConfigurationArns"))
@@ -85,6 +84,12 @@ JsonValue Distribution::Jsonize() const
   if(m_amiDistributionConfigurationHasBeenSet)
   {
    payload.WithObject("amiDistributionConfiguration", m_amiDistributionConfiguration.Jsonize());
+
+  }
+
+  if(m_containerDistributionConfigurationHasBeenSet)
+  {
+   payload.WithObject("containerDistributionConfiguration", m_containerDistributionConfiguration.Jsonize());
 
   }
 

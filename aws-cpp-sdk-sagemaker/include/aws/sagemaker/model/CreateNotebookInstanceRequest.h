@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -234,9 +224,9 @@ namespace Model
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
@@ -248,9 +238,9 @@ namespace Model
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
@@ -262,9 +252,9 @@ namespace Model
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
@@ -276,9 +266,9 @@ namespace Model
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
@@ -290,9 +280,9 @@ namespace Model
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
@@ -304,9 +294,9 @@ namespace Model
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline CreateNotebookInstanceRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
@@ -318,9 +308,9 @@ namespace Model
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline CreateNotebookInstanceRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
@@ -332,9 +322,9 @@ namespace Model
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline CreateNotebookInstanceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -429,50 +419,74 @@ namespace Model
 
 
     /**
-     * <p>A list of tags to associate with the notebook instance. You can add tags
-     * later by using the <code>CreateTags</code> API.</p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of tags to associate with the notebook instance. You can add tags
-     * later by using the <code>CreateTags</code> API.</p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A list of tags to associate with the notebook instance. You can add tags
-     * later by using the <code>CreateTags</code> API.</p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of tags to associate with the notebook instance. You can add tags
-     * later by using the <code>CreateTags</code> API.</p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A list of tags to associate with the notebook instance. You can add tags
-     * later by using the <code>CreateTags</code> API.</p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline CreateNotebookInstanceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of tags to associate with the notebook instance. You can add tags
-     * later by using the <code>CreateTags</code> API.</p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline CreateNotebookInstanceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of tags to associate with the notebook instance. You can add tags
-     * later by using the <code>CreateTags</code> API.</p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline CreateNotebookInstanceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of tags to associate with the notebook instance. You can add tags
-     * later by using the <code>CreateTags</code> API.</p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline CreateNotebookInstanceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -944,61 +958,61 @@ namespace Model
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance. The default value is <code>Enabled</code>.</p> <note> <p>Lifecycle
+     * instance. The default value is <code>Enabled</code>.</p>  <p>Lifecycle
      * configurations need root access to be able to set up a notebook instance.
      * Because of this, lifecycle configurations associated with a notebook instance
      * always run with root access even if you disable root access for users.</p>
-     * </note>
+     * 
      */
     inline const RootAccess& GetRootAccess() const{ return m_rootAccess; }
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance. The default value is <code>Enabled</code>.</p> <note> <p>Lifecycle
+     * instance. The default value is <code>Enabled</code>.</p>  <p>Lifecycle
      * configurations need root access to be able to set up a notebook instance.
      * Because of this, lifecycle configurations associated with a notebook instance
      * always run with root access even if you disable root access for users.</p>
-     * </note>
+     * 
      */
     inline bool RootAccessHasBeenSet() const { return m_rootAccessHasBeenSet; }
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance. The default value is <code>Enabled</code>.</p> <note> <p>Lifecycle
+     * instance. The default value is <code>Enabled</code>.</p>  <p>Lifecycle
      * configurations need root access to be able to set up a notebook instance.
      * Because of this, lifecycle configurations associated with a notebook instance
      * always run with root access even if you disable root access for users.</p>
-     * </note>
+     * 
      */
     inline void SetRootAccess(const RootAccess& value) { m_rootAccessHasBeenSet = true; m_rootAccess = value; }
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance. The default value is <code>Enabled</code>.</p> <note> <p>Lifecycle
+     * instance. The default value is <code>Enabled</code>.</p>  <p>Lifecycle
      * configurations need root access to be able to set up a notebook instance.
      * Because of this, lifecycle configurations associated with a notebook instance
      * always run with root access even if you disable root access for users.</p>
-     * </note>
+     * 
      */
     inline void SetRootAccess(RootAccess&& value) { m_rootAccessHasBeenSet = true; m_rootAccess = std::move(value); }
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance. The default value is <code>Enabled</code>.</p> <note> <p>Lifecycle
+     * instance. The default value is <code>Enabled</code>.</p>  <p>Lifecycle
      * configurations need root access to be able to set up a notebook instance.
      * Because of this, lifecycle configurations associated with a notebook instance
      * always run with root access even if you disable root access for users.</p>
-     * </note>
+     * 
      */
     inline CreateNotebookInstanceRequest& WithRootAccess(const RootAccess& value) { SetRootAccess(value); return *this;}
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance. The default value is <code>Enabled</code>.</p> <note> <p>Lifecycle
+     * instance. The default value is <code>Enabled</code>.</p>  <p>Lifecycle
      * configurations need root access to be able to set up a notebook instance.
      * Because of this, lifecycle configurations associated with a notebook instance
      * always run with root access even if you disable root access for users.</p>
-     * </note>
+     * 
      */
     inline CreateNotebookInstanceRequest& WithRootAccess(RootAccess&& value) { SetRootAccess(std::move(value)); return *this;}
 

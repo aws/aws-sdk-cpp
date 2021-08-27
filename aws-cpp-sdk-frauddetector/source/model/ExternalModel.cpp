@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/frauddetector/model/ExternalModel.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,13 +22,14 @@ ExternalModel::ExternalModel() :
     m_modelEndpointHasBeenSet(false),
     m_modelSource(ModelSource::NOT_SET),
     m_modelSourceHasBeenSet(false),
-    m_roleHasBeenSet(false),
+    m_invokeModelEndpointRoleArnHasBeenSet(false),
     m_inputConfigurationHasBeenSet(false),
     m_outputConfigurationHasBeenSet(false),
     m_modelEndpointStatus(ModelEndpointStatus::NOT_SET),
     m_modelEndpointStatusHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
@@ -46,13 +37,14 @@ ExternalModel::ExternalModel(JsonView jsonValue) :
     m_modelEndpointHasBeenSet(false),
     m_modelSource(ModelSource::NOT_SET),
     m_modelSourceHasBeenSet(false),
-    m_roleHasBeenSet(false),
+    m_invokeModelEndpointRoleArnHasBeenSet(false),
     m_inputConfigurationHasBeenSet(false),
     m_outputConfigurationHasBeenSet(false),
     m_modelEndpointStatus(ModelEndpointStatus::NOT_SET),
     m_modelEndpointStatusHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -73,11 +65,11 @@ ExternalModel& ExternalModel::operator =(JsonView jsonValue)
     m_modelSourceHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("role"))
+  if(jsonValue.ValueExists("invokeModelEndpointRoleArn"))
   {
-    m_role = jsonValue.GetObject("role");
+    m_invokeModelEndpointRoleArn = jsonValue.GetString("invokeModelEndpointRoleArn");
 
-    m_roleHasBeenSet = true;
+    m_invokeModelEndpointRoleArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("inputConfiguration"))
@@ -115,6 +107,13 @@ ExternalModel& ExternalModel::operator =(JsonView jsonValue)
     m_createdTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -133,9 +132,9 @@ JsonValue ExternalModel::Jsonize() const
    payload.WithString("modelSource", ModelSourceMapper::GetNameForModelSource(m_modelSource));
   }
 
-  if(m_roleHasBeenSet)
+  if(m_invokeModelEndpointRoleArnHasBeenSet)
   {
-   payload.WithObject("role", m_role.Jsonize());
+   payload.WithString("invokeModelEndpointRoleArn", m_invokeModelEndpointRoleArn);
 
   }
 
@@ -165,6 +164,12 @@ JsonValue ExternalModel::Jsonize() const
   if(m_createdTimeHasBeenSet)
   {
    payload.WithString("createdTime", m_createdTime);
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
 
   }
 

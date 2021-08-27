@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/codeguruprofiler/model/ConfigureAgentRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -24,6 +14,7 @@ using namespace Aws::Utils;
 
 ConfigureAgentRequest::ConfigureAgentRequest() : 
     m_fleetInstanceIdHasBeenSet(false),
+    m_metadataHasBeenSet(false),
     m_profilingGroupNameHasBeenSet(false)
 {
 }
@@ -35,6 +26,17 @@ Aws::String ConfigureAgentRequest::SerializePayload() const
   if(m_fleetInstanceIdHasBeenSet)
   {
    payload.WithString("fleetInstanceId", m_fleetInstanceId);
+
+  }
+
+  if(m_metadataHasBeenSet)
+  {
+   JsonValue metadataJsonMap;
+   for(auto& metadataItem : m_metadata)
+   {
+     metadataJsonMap.WithString(MetadataFieldMapper::GetNameForMetadataField(metadataItem.first), metadataItem.second);
+   }
+   payload.WithObject("metadata", std::move(metadataJsonMap));
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/email/SES_EXPORTS.h>
@@ -66,7 +56,7 @@ namespace Model
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>.</p> <note> <p>Amazon SES does not support the SMTPUTF8
+     * SES Developer Guide</a>.</p>  <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
      * <i>local part</i> of a source email address (the part of the email address that
@@ -79,7 +69,7 @@ namespace Model
      * characters. These characters must be encoded using MIME encoded-word syntax, as
      * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
      * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> </note>
+     * <code>=?charset?encoding?encoded-text?=</code>.</p> 
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
@@ -93,7 +83,7 @@ namespace Model
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>.</p> <note> <p>Amazon SES does not support the SMTPUTF8
+     * SES Developer Guide</a>.</p>  <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
      * <i>local part</i> of a source email address (the part of the email address that
@@ -106,7 +96,7 @@ namespace Model
      * characters. These characters must be encoded using MIME encoded-word syntax, as
      * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
      * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> </note>
+     * <code>=?charset?encoding?encoded-text?=</code>.</p> 
      */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
@@ -120,7 +110,7 @@ namespace Model
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>.</p> <note> <p>Amazon SES does not support the SMTPUTF8
+     * SES Developer Guide</a>.</p>  <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
      * <i>local part</i> of a source email address (the part of the email address that
@@ -133,7 +123,7 @@ namespace Model
      * characters. These characters must be encoded using MIME encoded-word syntax, as
      * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
      * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> </note>
+     * <code>=?charset?encoding?encoded-text?=</code>.</p> 
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
@@ -147,7 +137,7 @@ namespace Model
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>.</p> <note> <p>Amazon SES does not support the SMTPUTF8
+     * SES Developer Guide</a>.</p>  <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
      * <i>local part</i> of a source email address (the part of the email address that
@@ -160,7 +150,7 @@ namespace Model
      * characters. These characters must be encoded using MIME encoded-word syntax, as
      * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
      * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> </note>
+     * <code>=?charset?encoding?encoded-text?=</code>.</p> 
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
@@ -174,7 +164,7 @@ namespace Model
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>.</p> <note> <p>Amazon SES does not support the SMTPUTF8
+     * SES Developer Guide</a>.</p>  <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
      * <i>local part</i> of a source email address (the part of the email address that
@@ -187,7 +177,7 @@ namespace Model
      * characters. These characters must be encoded using MIME encoded-word syntax, as
      * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
      * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> </note>
+     * <code>=?charset?encoding?encoded-text?=</code>.</p> 
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
@@ -201,7 +191,7 @@ namespace Model
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>.</p> <note> <p>Amazon SES does not support the SMTPUTF8
+     * SES Developer Guide</a>.</p>  <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
      * <i>local part</i> of a source email address (the part of the email address that
@@ -214,7 +204,7 @@ namespace Model
      * characters. These characters must be encoded using MIME encoded-word syntax, as
      * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
      * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> </note>
+     * <code>=?charset?encoding?encoded-text?=</code>.</p> 
      */
     inline SendEmailRequest& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
@@ -228,7 +218,7 @@ namespace Model
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>.</p> <note> <p>Amazon SES does not support the SMTPUTF8
+     * SES Developer Guide</a>.</p>  <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
      * <i>local part</i> of a source email address (the part of the email address that
@@ -241,7 +231,7 @@ namespace Model
      * characters. These characters must be encoded using MIME encoded-word syntax, as
      * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
      * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> </note>
+     * <code>=?charset?encoding?encoded-text?=</code>.</p> 
      */
     inline SendEmailRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
@@ -255,7 +245,7 @@ namespace Model
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>.</p> <note> <p>Amazon SES does not support the SMTPUTF8
+     * SES Developer Guide</a>.</p>  <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
      * <i>local part</i> of a source email address (the part of the email address that
@@ -268,7 +258,7 @@ namespace Model
      * characters. These characters must be encoded using MIME encoded-word syntax, as
      * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
      * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> </note>
+     * <code>=?charset?encoding?encoded-text?=</code>.</p> 
      */
     inline SendEmailRequest& WithSource(const char* value) { SetSource(value); return *this;}
 

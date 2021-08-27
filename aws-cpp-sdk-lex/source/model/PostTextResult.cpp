@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lex/model/PostTextResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -46,6 +36,21 @@ PostTextResult& PostTextResult::operator =(const Aws::AmazonWebServiceResult<Jso
   {
     m_intentName = jsonValue.GetString("intentName");
 
+  }
+
+  if(jsonValue.ValueExists("nluIntentConfidence"))
+  {
+    m_nluIntentConfidence = jsonValue.GetObject("nluIntentConfidence");
+
+  }
+
+  if(jsonValue.ValueExists("alternativeIntents"))
+  {
+    Array<JsonView> alternativeIntentsJsonList = jsonValue.GetArray("alternativeIntents");
+    for(unsigned alternativeIntentsIndex = 0; alternativeIntentsIndex < alternativeIntentsJsonList.GetLength(); ++alternativeIntentsIndex)
+    {
+      m_alternativeIntents.push_back(alternativeIntentsJsonList[alternativeIntentsIndex].AsObject());
+    }
   }
 
   if(jsonValue.ValueExists("slots"))
@@ -106,6 +111,21 @@ PostTextResult& PostTextResult::operator =(const Aws::AmazonWebServiceResult<Jso
   {
     m_sessionId = jsonValue.GetString("sessionId");
 
+  }
+
+  if(jsonValue.ValueExists("botVersion"))
+  {
+    m_botVersion = jsonValue.GetString("botVersion");
+
+  }
+
+  if(jsonValue.ValueExists("activeContexts"))
+  {
+    Array<JsonView> activeContextsJsonList = jsonValue.GetArray("activeContexts");
+    for(unsigned activeContextsIndex = 0; activeContextsIndex < activeContextsJsonList.GetLength(); ++activeContextsIndex)
+    {
+      m_activeContexts.push_back(activeContextsJsonList[activeContextsIndex].AsObject());
+    }
   }
 
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
@@ -90,8 +80,8 @@ namespace Model
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
      * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use
-     * <a>DescribeSubscriptionFilters</a>.</p>
+     * find the name of the filter currently associated with a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline const Aws::String& GetFilterName() const{ return m_filterName; }
 
@@ -99,8 +89,8 @@ namespace Model
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
      * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use
-     * <a>DescribeSubscriptionFilters</a>.</p>
+     * find the name of the filter currently associated with a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline bool FilterNameHasBeenSet() const { return m_filterNameHasBeenSet; }
 
@@ -108,8 +98,8 @@ namespace Model
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
      * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use
-     * <a>DescribeSubscriptionFilters</a>.</p>
+     * find the name of the filter currently associated with a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline void SetFilterName(const Aws::String& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
 
@@ -117,8 +107,8 @@ namespace Model
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
      * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use
-     * <a>DescribeSubscriptionFilters</a>.</p>
+     * find the name of the filter currently associated with a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = std::move(value); }
 
@@ -126,8 +116,8 @@ namespace Model
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
      * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use
-     * <a>DescribeSubscriptionFilters</a>.</p>
+     * find the name of the filter currently associated with a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline void SetFilterName(const char* value) { m_filterNameHasBeenSet = true; m_filterName.assign(value); }
 
@@ -135,8 +125,8 @@ namespace Model
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
      * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use
-     * <a>DescribeSubscriptionFilters</a>.</p>
+     * find the name of the filter currently associated with a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline PutSubscriptionFilterRequest& WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
 
@@ -144,8 +134,8 @@ namespace Model
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
      * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use
-     * <a>DescribeSubscriptionFilters</a>.</p>
+     * find the name of the filter currently associated with a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline PutSubscriptionFilterRequest& WithFilterName(Aws::String&& value) { SetFilterName(std::move(value)); return *this;}
 
@@ -153,8 +143,8 @@ namespace Model
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
      * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use
-     * <a>DescribeSubscriptionFilters</a>.</p>
+     * find the name of the filter currently associated with a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline PutSubscriptionFilterRequest& WithFilterName(const char* value) { SetFilterName(value); return *this;}
 
@@ -363,7 +353,7 @@ namespace Model
 
 
     /**
-     * <p>The method used to distribute log data to the destination. By default log
+     * <p>The method used to distribute log data to the destination. By default, log
      * data is grouped by log stream, but the grouping can be set to random for a more
      * even distribution. This property is only applicable when the destination is an
      * Amazon Kinesis stream. </p>
@@ -371,7 +361,7 @@ namespace Model
     inline const Distribution& GetDistribution() const{ return m_distribution; }
 
     /**
-     * <p>The method used to distribute log data to the destination. By default log
+     * <p>The method used to distribute log data to the destination. By default, log
      * data is grouped by log stream, but the grouping can be set to random for a more
      * even distribution. This property is only applicable when the destination is an
      * Amazon Kinesis stream. </p>
@@ -379,7 +369,7 @@ namespace Model
     inline bool DistributionHasBeenSet() const { return m_distributionHasBeenSet; }
 
     /**
-     * <p>The method used to distribute log data to the destination. By default log
+     * <p>The method used to distribute log data to the destination. By default, log
      * data is grouped by log stream, but the grouping can be set to random for a more
      * even distribution. This property is only applicable when the destination is an
      * Amazon Kinesis stream. </p>
@@ -387,7 +377,7 @@ namespace Model
     inline void SetDistribution(const Distribution& value) { m_distributionHasBeenSet = true; m_distribution = value; }
 
     /**
-     * <p>The method used to distribute log data to the destination. By default log
+     * <p>The method used to distribute log data to the destination. By default, log
      * data is grouped by log stream, but the grouping can be set to random for a more
      * even distribution. This property is only applicable when the destination is an
      * Amazon Kinesis stream. </p>
@@ -395,7 +385,7 @@ namespace Model
     inline void SetDistribution(Distribution&& value) { m_distributionHasBeenSet = true; m_distribution = std::move(value); }
 
     /**
-     * <p>The method used to distribute log data to the destination. By default log
+     * <p>The method used to distribute log data to the destination. By default, log
      * data is grouped by log stream, but the grouping can be set to random for a more
      * even distribution. This property is only applicable when the destination is an
      * Amazon Kinesis stream. </p>
@@ -403,7 +393,7 @@ namespace Model
     inline PutSubscriptionFilterRequest& WithDistribution(const Distribution& value) { SetDistribution(value); return *this;}
 
     /**
-     * <p>The method used to distribute log data to the destination. By default log
+     * <p>The method used to distribute log data to the destination. By default, log
      * data is grouped by log stream, but the grouping can be set to random for a more
      * even distribution. This property is only applicable when the destination is an
      * Amazon Kinesis stream. </p>

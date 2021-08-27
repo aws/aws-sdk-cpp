@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
@@ -170,80 +160,80 @@ namespace Model
         class UpdateUserProfileRequest;
         class UpdateVolumeRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> AssignInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> AssignVolumeOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> AssociateElasticIpOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> AttachElasticLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<CloneStackResult, Aws::Client::AWSError<OpsWorksErrors>> CloneStackOutcome;
-        typedef Aws::Utils::Outcome<CreateAppResult, Aws::Client::AWSError<OpsWorksErrors>> CreateAppOutcome;
-        typedef Aws::Utils::Outcome<CreateDeploymentResult, Aws::Client::AWSError<OpsWorksErrors>> CreateDeploymentOutcome;
-        typedef Aws::Utils::Outcome<CreateInstanceResult, Aws::Client::AWSError<OpsWorksErrors>> CreateInstanceOutcome;
-        typedef Aws::Utils::Outcome<CreateLayerResult, Aws::Client::AWSError<OpsWorksErrors>> CreateLayerOutcome;
-        typedef Aws::Utils::Outcome<CreateStackResult, Aws::Client::AWSError<OpsWorksErrors>> CreateStackOutcome;
-        typedef Aws::Utils::Outcome<CreateUserProfileResult, Aws::Client::AWSError<OpsWorksErrors>> CreateUserProfileOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeleteAppOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeleteInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeleteLayerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeleteStackOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeleteUserProfileOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeregisterEcsClusterOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeregisterElasticIpOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeregisterInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeregisterRdsDbInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeregisterVolumeOutcome;
-        typedef Aws::Utils::Outcome<DescribeAgentVersionsResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeAgentVersionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeAppsResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeAppsOutcome;
-        typedef Aws::Utils::Outcome<DescribeCommandsResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeCommandsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDeploymentsResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeDeploymentsOutcome;
-        typedef Aws::Utils::Outcome<DescribeEcsClustersResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeEcsClustersOutcome;
-        typedef Aws::Utils::Outcome<DescribeElasticIpsResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeElasticIpsOutcome;
-        typedef Aws::Utils::Outcome<DescribeElasticLoadBalancersResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeElasticLoadBalancersOutcome;
-        typedef Aws::Utils::Outcome<DescribeInstancesResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeInstancesOutcome;
-        typedef Aws::Utils::Outcome<DescribeLayersResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeLayersOutcome;
-        typedef Aws::Utils::Outcome<DescribeLoadBasedAutoScalingResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeLoadBasedAutoScalingOutcome;
-        typedef Aws::Utils::Outcome<DescribeMyUserProfileResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeMyUserProfileOutcome;
-        typedef Aws::Utils::Outcome<DescribeOperatingSystemsResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeOperatingSystemsOutcome;
-        typedef Aws::Utils::Outcome<DescribePermissionsResult, Aws::Client::AWSError<OpsWorksErrors>> DescribePermissionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeRaidArraysResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeRaidArraysOutcome;
-        typedef Aws::Utils::Outcome<DescribeRdsDbInstancesResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeRdsDbInstancesOutcome;
-        typedef Aws::Utils::Outcome<DescribeServiceErrorsResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeServiceErrorsOutcome;
-        typedef Aws::Utils::Outcome<DescribeStackProvisioningParametersResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeStackProvisioningParametersOutcome;
-        typedef Aws::Utils::Outcome<DescribeStackSummaryResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeStackSummaryOutcome;
-        typedef Aws::Utils::Outcome<DescribeStacksResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeStacksOutcome;
-        typedef Aws::Utils::Outcome<DescribeTimeBasedAutoScalingResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeTimeBasedAutoScalingOutcome;
-        typedef Aws::Utils::Outcome<DescribeUserProfilesResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeUserProfilesOutcome;
-        typedef Aws::Utils::Outcome<DescribeVolumesResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeVolumesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DetachElasticLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DisassociateElasticIpOutcome;
-        typedef Aws::Utils::Outcome<GetHostnameSuggestionResult, Aws::Client::AWSError<OpsWorksErrors>> GetHostnameSuggestionOutcome;
-        typedef Aws::Utils::Outcome<GrantAccessResult, Aws::Client::AWSError<OpsWorksErrors>> GrantAccessOutcome;
-        typedef Aws::Utils::Outcome<ListTagsResult, Aws::Client::AWSError<OpsWorksErrors>> ListTagsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> RebootInstanceOutcome;
-        typedef Aws::Utils::Outcome<RegisterEcsClusterResult, Aws::Client::AWSError<OpsWorksErrors>> RegisterEcsClusterOutcome;
-        typedef Aws::Utils::Outcome<RegisterElasticIpResult, Aws::Client::AWSError<OpsWorksErrors>> RegisterElasticIpOutcome;
-        typedef Aws::Utils::Outcome<RegisterInstanceResult, Aws::Client::AWSError<OpsWorksErrors>> RegisterInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> RegisterRdsDbInstanceOutcome;
-        typedef Aws::Utils::Outcome<RegisterVolumeResult, Aws::Client::AWSError<OpsWorksErrors>> RegisterVolumeOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> SetLoadBasedAutoScalingOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> SetPermissionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> SetTimeBasedAutoScalingOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> StartInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> StartStackOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> StopInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> StopStackOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UnassignInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UnassignVolumeOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateAppOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateElasticIpOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateLayerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateMyUserProfileOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateRdsDbInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateStackOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateUserProfileOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateVolumeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> AssignInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> AssignVolumeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> AssociateElasticIpOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> AttachElasticLoadBalancerOutcome;
+        typedef Aws::Utils::Outcome<CloneStackResult, OpsWorksError> CloneStackOutcome;
+        typedef Aws::Utils::Outcome<CreateAppResult, OpsWorksError> CreateAppOutcome;
+        typedef Aws::Utils::Outcome<CreateDeploymentResult, OpsWorksError> CreateDeploymentOutcome;
+        typedef Aws::Utils::Outcome<CreateInstanceResult, OpsWorksError> CreateInstanceOutcome;
+        typedef Aws::Utils::Outcome<CreateLayerResult, OpsWorksError> CreateLayerOutcome;
+        typedef Aws::Utils::Outcome<CreateStackResult, OpsWorksError> CreateStackOutcome;
+        typedef Aws::Utils::Outcome<CreateUserProfileResult, OpsWorksError> CreateUserProfileOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DeleteAppOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DeleteInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DeleteLayerOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DeleteStackOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DeleteUserProfileOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DeregisterEcsClusterOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DeregisterElasticIpOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DeregisterInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DeregisterRdsDbInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DeregisterVolumeOutcome;
+        typedef Aws::Utils::Outcome<DescribeAgentVersionsResult, OpsWorksError> DescribeAgentVersionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeAppsResult, OpsWorksError> DescribeAppsOutcome;
+        typedef Aws::Utils::Outcome<DescribeCommandsResult, OpsWorksError> DescribeCommandsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDeploymentsResult, OpsWorksError> DescribeDeploymentsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEcsClustersResult, OpsWorksError> DescribeEcsClustersOutcome;
+        typedef Aws::Utils::Outcome<DescribeElasticIpsResult, OpsWorksError> DescribeElasticIpsOutcome;
+        typedef Aws::Utils::Outcome<DescribeElasticLoadBalancersResult, OpsWorksError> DescribeElasticLoadBalancersOutcome;
+        typedef Aws::Utils::Outcome<DescribeInstancesResult, OpsWorksError> DescribeInstancesOutcome;
+        typedef Aws::Utils::Outcome<DescribeLayersResult, OpsWorksError> DescribeLayersOutcome;
+        typedef Aws::Utils::Outcome<DescribeLoadBasedAutoScalingResult, OpsWorksError> DescribeLoadBasedAutoScalingOutcome;
+        typedef Aws::Utils::Outcome<DescribeMyUserProfileResult, OpsWorksError> DescribeMyUserProfileOutcome;
+        typedef Aws::Utils::Outcome<DescribeOperatingSystemsResult, OpsWorksError> DescribeOperatingSystemsOutcome;
+        typedef Aws::Utils::Outcome<DescribePermissionsResult, OpsWorksError> DescribePermissionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeRaidArraysResult, OpsWorksError> DescribeRaidArraysOutcome;
+        typedef Aws::Utils::Outcome<DescribeRdsDbInstancesResult, OpsWorksError> DescribeRdsDbInstancesOutcome;
+        typedef Aws::Utils::Outcome<DescribeServiceErrorsResult, OpsWorksError> DescribeServiceErrorsOutcome;
+        typedef Aws::Utils::Outcome<DescribeStackProvisioningParametersResult, OpsWorksError> DescribeStackProvisioningParametersOutcome;
+        typedef Aws::Utils::Outcome<DescribeStackSummaryResult, OpsWorksError> DescribeStackSummaryOutcome;
+        typedef Aws::Utils::Outcome<DescribeStacksResult, OpsWorksError> DescribeStacksOutcome;
+        typedef Aws::Utils::Outcome<DescribeTimeBasedAutoScalingResult, OpsWorksError> DescribeTimeBasedAutoScalingOutcome;
+        typedef Aws::Utils::Outcome<DescribeUserProfilesResult, OpsWorksError> DescribeUserProfilesOutcome;
+        typedef Aws::Utils::Outcome<DescribeVolumesResult, OpsWorksError> DescribeVolumesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DetachElasticLoadBalancerOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DisassociateElasticIpOutcome;
+        typedef Aws::Utils::Outcome<GetHostnameSuggestionResult, OpsWorksError> GetHostnameSuggestionOutcome;
+        typedef Aws::Utils::Outcome<GrantAccessResult, OpsWorksError> GrantAccessOutcome;
+        typedef Aws::Utils::Outcome<ListTagsResult, OpsWorksError> ListTagsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> RebootInstanceOutcome;
+        typedef Aws::Utils::Outcome<RegisterEcsClusterResult, OpsWorksError> RegisterEcsClusterOutcome;
+        typedef Aws::Utils::Outcome<RegisterElasticIpResult, OpsWorksError> RegisterElasticIpOutcome;
+        typedef Aws::Utils::Outcome<RegisterInstanceResult, OpsWorksError> RegisterInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> RegisterRdsDbInstanceOutcome;
+        typedef Aws::Utils::Outcome<RegisterVolumeResult, OpsWorksError> RegisterVolumeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> SetLoadBasedAutoScalingOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> SetPermissionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> SetTimeBasedAutoScalingOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> StartInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> StartStackOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> StopInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> StopStackOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UnassignInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UnassignVolumeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UpdateAppOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UpdateElasticIpOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UpdateInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UpdateLayerOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UpdateMyUserProfileOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UpdateRdsDbInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UpdateStackOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UpdateUserProfileOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UpdateVolumeOutcome;
 
         typedef std::future<AssignInstanceOutcome> AssignInstanceOutcomeCallable;
         typedef std::future<AssignVolumeOutcome> AssignVolumeOutcomeCallable;
@@ -448,9 +438,9 @@ namespace Model
    * Linux stacks is currently 12. Windows stacks use Chef 12.2. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
-   * Versions</a>.</p> <note> <p>You can specify Chef 12, 11.10, or 11.4 for your
+   * Versions</a>.</p>  <p>You can specify Chef 12, 11.10, or 11.4 for your
    * Linux stack. We recommend migrating your existing Linux stacks to Chef 12 as
-   * soon as possible.</p> </note>
+   * soon as possible.</p> 
    */
   class AWS_OPSWORKS_API OpsWorksClient : public Aws::Client::AWSJsonClient
   {
@@ -477,8 +467,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~OpsWorksClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "OpsWorks"; }
 
 
         /**
@@ -648,11 +636,11 @@ namespace Model
          * OpsWorks Stacks does not support Application Load Balancer. You can only use
          * Classic Load Balancer with AWS OpsWorks Stacks. For more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic
-         * Load Balancing</a>.</p> <note> <p>You must create the Elastic Load Balancing
+         * Load Balancing</a>.</p>  <p>You must create the Elastic Load Balancing
          * instance separately, by using the Elastic Load Balancing console, API, or CLI.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html">
-         * Elastic Load Balancing Developer Guide</a>.</p> </note> <p> <b>Required
+         * Elastic Load Balancing Developer Guide</a>.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Manage permissions
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
@@ -668,11 +656,11 @@ namespace Model
          * OpsWorks Stacks does not support Application Load Balancer. You can only use
          * Classic Load Balancer with AWS OpsWorks Stacks. For more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic
-         * Load Balancing</a>.</p> <note> <p>You must create the Elastic Load Balancing
+         * Load Balancing</a>.</p>  <p>You must create the Elastic Load Balancing
          * instance separately, by using the Elastic Load Balancing console, API, or CLI.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html">
-         * Elastic Load Balancing Developer Guide</a>.</p> </note> <p> <b>Required
+         * Elastic Load Balancing Developer Guide</a>.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Manage permissions
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
@@ -690,11 +678,11 @@ namespace Model
          * OpsWorks Stacks does not support Application Load Balancer. You can only use
          * Classic Load Balancer with AWS OpsWorks Stacks. For more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic
-         * Load Balancing</a>.</p> <note> <p>You must create the Elastic Load Balancing
+         * Load Balancing</a>.</p>  <p>You must create the Elastic Load Balancing
          * instance separately, by using the Elastic Load Balancing console, API, or CLI.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html">
-         * Elastic Load Balancing Developer Guide</a>.</p> </note> <p> <b>Required
+         * Elastic Load Balancing Developer Guide</a>.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Manage permissions
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
@@ -897,12 +885,12 @@ namespace Model
         /**
          * <p>Creates a layer. For more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How
-         * to Create a Layer</a>.</p> <note> <p>You should use <b>CreateLayer</b> for
+         * to Create a Layer</a>.</p>  <p>You should use <b>CreateLayer</b> for
          * noncustom layer types such as PHP App Server only if the stack does not have an
          * existing layer of that type. A stack can have at most one instance of each
          * noncustom layer; if you attempt to create a second instance, <b>CreateLayer</b>
          * fails. A stack can have an arbitrary number of custom layers, so you can call
-         * <b>CreateLayer</b> as many times as you like for that layer type.</p> </note>
+         * <b>CreateLayer</b> as many times as you like for that layer type.</p> 
          * <p> <b>Required Permissions</b>: To use this action, an IAM user must have a
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
@@ -916,12 +904,12 @@ namespace Model
         /**
          * <p>Creates a layer. For more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How
-         * to Create a Layer</a>.</p> <note> <p>You should use <b>CreateLayer</b> for
+         * to Create a Layer</a>.</p>  <p>You should use <b>CreateLayer</b> for
          * noncustom layer types such as PHP App Server only if the stack does not have an
          * existing layer of that type. A stack can have at most one instance of each
          * noncustom layer; if you attempt to create a second instance, <b>CreateLayer</b>
          * fails. A stack can have an arbitrary number of custom layers, so you can call
-         * <b>CreateLayer</b> as many times as you like for that layer type.</p> </note>
+         * <b>CreateLayer</b> as many times as you like for that layer type.</p> 
          * <p> <b>Required Permissions</b>: To use this action, an IAM user must have a
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
@@ -937,12 +925,12 @@ namespace Model
         /**
          * <p>Creates a layer. For more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How
-         * to Create a Layer</a>.</p> <note> <p>You should use <b>CreateLayer</b> for
+         * to Create a Layer</a>.</p>  <p>You should use <b>CreateLayer</b> for
          * noncustom layer types such as PHP App Server only if the stack does not have an
          * existing layer of that type. A stack can have at most one instance of each
          * noncustom layer; if you attempt to create a second instance, <b>CreateLayer</b>
          * fails. A stack can have an arbitrary number of custom layers, so you can call
-         * <b>CreateLayer</b> as many times as you like for that layer type.</p> </note>
+         * <b>CreateLayer</b> as many times as you like for that layer type.</p> 
          * <p> <b>Required Permissions</b>: To use this action, an IAM user must have a
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
@@ -1530,8 +1518,8 @@ namespace Model
         virtual void DescribeAgentVersionsAsync(const Model::DescribeAgentVersionsRequest& request, const DescribeAgentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Requests a description of a specified set of apps.</p> <note> <p>This call
-         * accepts only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Requests a description of a specified set of apps.</p>  <p>This call
+         * accepts only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1543,8 +1531,8 @@ namespace Model
         virtual Model::DescribeAppsOutcome DescribeApps(const Model::DescribeAppsRequest& request) const;
 
         /**
-         * <p>Requests a description of a specified set of apps.</p> <note> <p>This call
-         * accepts only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Requests a description of a specified set of apps.</p>  <p>This call
+         * accepts only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1558,8 +1546,8 @@ namespace Model
         virtual Model::DescribeAppsOutcomeCallable DescribeAppsCallable(const Model::DescribeAppsRequest& request) const;
 
         /**
-         * <p>Requests a description of a specified set of apps.</p> <note> <p>This call
-         * accepts only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Requests a description of a specified set of apps.</p>  <p>This call
+         * accepts only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1573,8 +1561,8 @@ namespace Model
         virtual void DescribeAppsAsync(const Model::DescribeAppsRequest& request, const DescribeAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the results of specified commands.</p> <note> <p>This call accepts
-         * only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Describes the results of specified commands.</p>  <p>This call accepts
+         * only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1586,8 +1574,8 @@ namespace Model
         virtual Model::DescribeCommandsOutcome DescribeCommands(const Model::DescribeCommandsRequest& request) const;
 
         /**
-         * <p>Describes the results of specified commands.</p> <note> <p>This call accepts
-         * only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Describes the results of specified commands.</p>  <p>This call accepts
+         * only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1601,8 +1589,8 @@ namespace Model
         virtual Model::DescribeCommandsOutcomeCallable DescribeCommandsCallable(const Model::DescribeCommandsRequest& request) const;
 
         /**
-         * <p>Describes the results of specified commands.</p> <note> <p>This call accepts
-         * only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Describes the results of specified commands.</p>  <p>This call accepts
+         * only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1616,8 +1604,8 @@ namespace Model
         virtual void DescribeCommandsAsync(const Model::DescribeCommandsRequest& request, const DescribeCommandsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Requests a description of a specified set of deployments.</p> <note> <p>This
-         * call accepts only one resource-identifying parameter.</p> </note> <p>
+         * <p>Requests a description of a specified set of deployments.</p>  <p>This
+         * call accepts only one resource-identifying parameter.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -1630,8 +1618,8 @@ namespace Model
         virtual Model::DescribeDeploymentsOutcome DescribeDeployments(const Model::DescribeDeploymentsRequest& request) const;
 
         /**
-         * <p>Requests a description of a specified set of deployments.</p> <note> <p>This
-         * call accepts only one resource-identifying parameter.</p> </note> <p>
+         * <p>Requests a description of a specified set of deployments.</p>  <p>This
+         * call accepts only one resource-identifying parameter.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -1646,8 +1634,8 @@ namespace Model
         virtual Model::DescribeDeploymentsOutcomeCallable DescribeDeploymentsCallable(const Model::DescribeDeploymentsRequest& request) const;
 
         /**
-         * <p>Requests a description of a specified set of deployments.</p> <note> <p>This
-         * call accepts only one resource-identifying parameter.</p> </note> <p>
+         * <p>Requests a description of a specified set of deployments.</p>  <p>This
+         * call accepts only one resource-identifying parameter.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -1719,8 +1707,8 @@ namespace Model
         /**
          * <p>Describes <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-         * IP addresses</a>.</p> <note> <p>This call accepts only one resource-identifying
-         * parameter.</p> </note> <p> <b>Required Permissions</b>: To use this action, an
+         * IP addresses</a>.</p>  <p>This call accepts only one resource-identifying
+         * parameter.</p>  <p> <b>Required Permissions</b>: To use this action, an
          * IAM user must have a Show, Deploy, or Manage permissions level for the stack, or
          * an attached policy that explicitly grants permissions. For more information
          * about user permissions, see <a
@@ -1734,8 +1722,8 @@ namespace Model
         /**
          * <p>Describes <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-         * IP addresses</a>.</p> <note> <p>This call accepts only one resource-identifying
-         * parameter.</p> </note> <p> <b>Required Permissions</b>: To use this action, an
+         * IP addresses</a>.</p>  <p>This call accepts only one resource-identifying
+         * parameter.</p>  <p> <b>Required Permissions</b>: To use this action, an
          * IAM user must have a Show, Deploy, or Manage permissions level for the stack, or
          * an attached policy that explicitly grants permissions. For more information
          * about user permissions, see <a
@@ -1751,8 +1739,8 @@ namespace Model
         /**
          * <p>Describes <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-         * IP addresses</a>.</p> <note> <p>This call accepts only one resource-identifying
-         * parameter.</p> </note> <p> <b>Required Permissions</b>: To use this action, an
+         * IP addresses</a>.</p>  <p>This call accepts only one resource-identifying
+         * parameter.</p>  <p> <b>Required Permissions</b>: To use this action, an
          * IAM user must have a Show, Deploy, or Manage permissions level for the stack, or
          * an attached policy that explicitly grants permissions. For more information
          * about user permissions, see <a
@@ -1766,8 +1754,8 @@ namespace Model
         virtual void DescribeElasticIpsAsync(const Model::DescribeElasticIpsRequest& request, const DescribeElasticIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a stack's Elastic Load Balancing instances.</p> <note> <p>This call
-         * accepts only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Describes a stack's Elastic Load Balancing instances.</p>  <p>This call
+         * accepts only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1779,8 +1767,8 @@ namespace Model
         virtual Model::DescribeElasticLoadBalancersOutcome DescribeElasticLoadBalancers(const Model::DescribeElasticLoadBalancersRequest& request) const;
 
         /**
-         * <p>Describes a stack's Elastic Load Balancing instances.</p> <note> <p>This call
-         * accepts only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Describes a stack's Elastic Load Balancing instances.</p>  <p>This call
+         * accepts only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1794,8 +1782,8 @@ namespace Model
         virtual Model::DescribeElasticLoadBalancersOutcomeCallable DescribeElasticLoadBalancersCallable(const Model::DescribeElasticLoadBalancersRequest& request) const;
 
         /**
-         * <p>Describes a stack's Elastic Load Balancing instances.</p> <note> <p>This call
-         * accepts only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Describes a stack's Elastic Load Balancing instances.</p>  <p>This call
+         * accepts only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1809,8 +1797,8 @@ namespace Model
         virtual void DescribeElasticLoadBalancersAsync(const Model::DescribeElasticLoadBalancersRequest& request, const DescribeElasticLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Requests a description of a set of instances.</p> <note> <p>This call accepts
-         * only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Requests a description of a set of instances.</p>  <p>This call accepts
+         * only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1822,8 +1810,8 @@ namespace Model
         virtual Model::DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest& request) const;
 
         /**
-         * <p>Requests a description of a set of instances.</p> <note> <p>This call accepts
-         * only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Requests a description of a set of instances.</p>  <p>This call accepts
+         * only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1837,8 +1825,8 @@ namespace Model
         virtual Model::DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request) const;
 
         /**
-         * <p>Requests a description of a set of instances.</p> <note> <p>This call accepts
-         * only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Requests a description of a set of instances.</p>  <p>This call accepts
+         * only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1852,8 +1840,8 @@ namespace Model
         virtual void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Requests a description of one or more layers in a specified stack.</p> <note>
-         * <p>This call accepts only one resource-identifying parameter.</p> </note> <p>
+         * <p>Requests a description of one or more layers in a specified stack.</p> 
+         * <p>This call accepts only one resource-identifying parameter.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -1866,8 +1854,8 @@ namespace Model
         virtual Model::DescribeLayersOutcome DescribeLayers(const Model::DescribeLayersRequest& request) const;
 
         /**
-         * <p>Requests a description of one or more layers in a specified stack.</p> <note>
-         * <p>This call accepts only one resource-identifying parameter.</p> </note> <p>
+         * <p>Requests a description of one or more layers in a specified stack.</p> 
+         * <p>This call accepts only one resource-identifying parameter.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -1882,8 +1870,8 @@ namespace Model
         virtual Model::DescribeLayersOutcomeCallable DescribeLayersCallable(const Model::DescribeLayersRequest& request) const;
 
         /**
-         * <p>Requests a description of one or more layers in a specified stack.</p> <note>
-         * <p>This call accepts only one resource-identifying parameter.</p> </note> <p>
+         * <p>Requests a description of one or more layers in a specified stack.</p> 
+         * <p>This call accepts only one resource-identifying parameter.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -1899,7 +1887,7 @@ namespace Model
 
         /**
          * <p>Describes load-based auto scaling configurations for specified layers.</p>
-         * <note> <p>You must specify at least one of the parameters.</p> </note> <p>
+         *  <p>You must specify at least one of the parameters.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -1913,7 +1901,7 @@ namespace Model
 
         /**
          * <p>Describes load-based auto scaling configurations for specified layers.</p>
-         * <note> <p>You must specify at least one of the parameters.</p> </note> <p>
+         *  <p>You must specify at least one of the parameters.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -1929,7 +1917,7 @@ namespace Model
 
         /**
          * <p>Describes load-based auto scaling configurations for specified layers.</p>
-         * <note> <p>You must specify at least one of the parameters.</p> </note> <p>
+         *  <p>You must specify at least one of the parameters.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -2050,8 +2038,8 @@ namespace Model
         virtual void DescribePermissionsAsync(const Model::DescribePermissionsRequest& request, const DescribePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describe an instance's RAID arrays.</p> <note> <p>This call accepts only one
-         * resource-identifying parameter.</p> </note> <p> <b>Required Permissions</b>: To
+         * <p>Describe an instance's RAID arrays.</p>  <p>This call accepts only one
+         * resource-identifying parameter.</p>  <p> <b>Required Permissions</b>: To
          * use this action, an IAM user must have a Show, Deploy, or Manage permissions
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information about user permissions, see <a
@@ -2063,8 +2051,8 @@ namespace Model
         virtual Model::DescribeRaidArraysOutcome DescribeRaidArrays(const Model::DescribeRaidArraysRequest& request) const;
 
         /**
-         * <p>Describe an instance's RAID arrays.</p> <note> <p>This call accepts only one
-         * resource-identifying parameter.</p> </note> <p> <b>Required Permissions</b>: To
+         * <p>Describe an instance's RAID arrays.</p>  <p>This call accepts only one
+         * resource-identifying parameter.</p>  <p> <b>Required Permissions</b>: To
          * use this action, an IAM user must have a Show, Deploy, or Manage permissions
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information about user permissions, see <a
@@ -2078,8 +2066,8 @@ namespace Model
         virtual Model::DescribeRaidArraysOutcomeCallable DescribeRaidArraysCallable(const Model::DescribeRaidArraysRequest& request) const;
 
         /**
-         * <p>Describe an instance's RAID arrays.</p> <note> <p>This call accepts only one
-         * resource-identifying parameter.</p> </note> <p> <b>Required Permissions</b>: To
+         * <p>Describe an instance's RAID arrays.</p>  <p>This call accepts only one
+         * resource-identifying parameter.</p>  <p> <b>Required Permissions</b>: To
          * use this action, an IAM user must have a Show, Deploy, or Manage permissions
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information about user permissions, see <a
@@ -2309,7 +2297,7 @@ namespace Model
 
         /**
          * <p>Describes time-based auto scaling configurations for specified instances.</p>
-         * <note> <p>You must specify at least one of the parameters.</p> </note> <p>
+         *  <p>You must specify at least one of the parameters.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -2323,7 +2311,7 @@ namespace Model
 
         /**
          * <p>Describes time-based auto scaling configurations for specified instances.</p>
-         * <note> <p>You must specify at least one of the parameters.</p> </note> <p>
+         *  <p>You must specify at least one of the parameters.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -2339,7 +2327,7 @@ namespace Model
 
         /**
          * <p>Describes time-based auto scaling configurations for specified instances.</p>
-         * <note> <p>You must specify at least one of the parameters.</p> </note> <p>
+         *  <p>You must specify at least one of the parameters.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -2391,8 +2379,8 @@ namespace Model
         virtual void DescribeUserProfilesAsync(const Model::DescribeUserProfilesRequest& request, const DescribeUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes an instance's Amazon EBS volumes.</p> <note> <p>This call accepts
-         * only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Describes an instance's Amazon EBS volumes.</p>  <p>This call accepts
+         * only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -2404,8 +2392,8 @@ namespace Model
         virtual Model::DescribeVolumesOutcome DescribeVolumes(const Model::DescribeVolumesRequest& request) const;
 
         /**
-         * <p>Describes an instance's Amazon EBS volumes.</p> <note> <p>This call accepts
-         * only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Describes an instance's Amazon EBS volumes.</p>  <p>This call accepts
+         * only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -2419,8 +2407,8 @@ namespace Model
         virtual Model::DescribeVolumesOutcomeCallable DescribeVolumesCallable(const Model::DescribeVolumesRequest& request) const;
 
         /**
-         * <p>Describes an instance's Amazon EBS volumes.</p> <note> <p>This call accepts
-         * only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Describes an instance's Amazon EBS volumes.</p>  <p>This call accepts
+         * only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -2563,7 +2551,7 @@ namespace Model
         virtual void GetHostnameSuggestionAsync(const Model::GetHostnameSuggestionRequest& request, const GetHostnameSuggestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This action can be used only with Windows stacks.</p> </note>
+         *  <p>This action can be used only with Windows stacks.</p> 
          * <p>Grants RDP access to a Windows instance for a specified time
          * period.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GrantAccess">AWS
@@ -2572,7 +2560,7 @@ namespace Model
         virtual Model::GrantAccessOutcome GrantAccess(const Model::GrantAccessRequest& request) const;
 
         /**
-         * <note> <p>This action can be used only with Windows stacks.</p> </note>
+         *  <p>This action can be used only with Windows stacks.</p> 
          * <p>Grants RDP access to a Windows instance for a specified time
          * period.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GrantAccess">AWS
@@ -2583,7 +2571,7 @@ namespace Model
         virtual Model::GrantAccessOutcomeCallable GrantAccessCallable(const Model::GrantAccessRequest& request) const;
 
         /**
-         * <note> <p>This action can be used only with Windows stacks.</p> </note>
+         *  <p>This action can be used only with Windows stacks.</p> 
          * <p>Grants RDP access to a Windows instance for a specified time
          * period.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GrantAccess">AWS
@@ -2776,14 +2764,14 @@ namespace Model
 
         /**
          * <p>Registers instances that were created outside of AWS OpsWorks Stacks with a
-         * specified stack.</p> <note> <p>We do not recommend using this action to register
+         * specified stack.</p>  <p>We do not recommend using this action to register
          * instances. The complete registration operation includes two tasks: installing
          * the AWS OpsWorks Stacks agent on the instance, and registering the instance with
          * the stack. <code>RegisterInstance</code> handles only the second step. You
          * should instead use the AWS CLI <code>register</code> command, which performs the
          * entire registration operation. For more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html">
-         * Registering an Instance with an AWS OpsWorks Stacks Stack</a>.</p> </note>
+         * Registering an Instance with an AWS OpsWorks Stacks Stack</a>.</p> 
          * <p>Registered instances have the same requirements as instances that are created
          * by using the <a>CreateInstance</a> API. For example, registered instances must
          * be running a supported Linux-based operating system, and they must have a
@@ -2803,14 +2791,14 @@ namespace Model
 
         /**
          * <p>Registers instances that were created outside of AWS OpsWorks Stacks with a
-         * specified stack.</p> <note> <p>We do not recommend using this action to register
+         * specified stack.</p>  <p>We do not recommend using this action to register
          * instances. The complete registration operation includes two tasks: installing
          * the AWS OpsWorks Stacks agent on the instance, and registering the instance with
          * the stack. <code>RegisterInstance</code> handles only the second step. You
          * should instead use the AWS CLI <code>register</code> command, which performs the
          * entire registration operation. For more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html">
-         * Registering an Instance with an AWS OpsWorks Stacks Stack</a>.</p> </note>
+         * Registering an Instance with an AWS OpsWorks Stacks Stack</a>.</p> 
          * <p>Registered instances have the same requirements as instances that are created
          * by using the <a>CreateInstance</a> API. For example, registered instances must
          * be running a supported Linux-based operating system, and they must have a
@@ -2832,14 +2820,14 @@ namespace Model
 
         /**
          * <p>Registers instances that were created outside of AWS OpsWorks Stacks with a
-         * specified stack.</p> <note> <p>We do not recommend using this action to register
+         * specified stack.</p>  <p>We do not recommend using this action to register
          * instances. The complete registration operation includes two tasks: installing
          * the AWS OpsWorks Stacks agent on the instance, and registering the instance with
          * the stack. <code>RegisterInstance</code> handles only the second step. You
          * should instead use the AWS CLI <code>register</code> command, which performs the
          * entire registration operation. For more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html">
-         * Registering an Instance with an AWS OpsWorks Stacks Stack</a>.</p> </note>
+         * Registering an Instance with an AWS OpsWorks Stacks Stack</a>.</p> 
          * <p>Registered instances have the same requirements as instances that are created
          * by using the <a>CreateInstance</a> API. For example, registered instances must
          * be running a supported Linux-based operating system, and they must have a
@@ -2958,11 +2946,11 @@ namespace Model
          * <p>Specify the load-based auto scaling configuration for a specified layer. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing
-         * Load with Time-based and Load-based Instances</a>.</p> <note> <p>To use
+         * Load with Time-based and Load-based Instances</a>.</p>  <p>To use
          * load-based auto scaling, you must create a set of load-based auto scaling
          * instances. Load-based auto scaling operates only on the instances from that set,
          * so you must ensure that you have created enough instances to handle the maximum
-         * anticipated load.</p> </note> <p> <b>Required Permissions</b>: To use this
+         * anticipated load.</p>  <p> <b>Required Permissions</b>: To use this
          * action, an IAM user must have a Manage permissions level for the stack, or an
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
@@ -2977,11 +2965,11 @@ namespace Model
          * <p>Specify the load-based auto scaling configuration for a specified layer. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing
-         * Load with Time-based and Load-based Instances</a>.</p> <note> <p>To use
+         * Load with Time-based and Load-based Instances</a>.</p>  <p>To use
          * load-based auto scaling, you must create a set of load-based auto scaling
          * instances. Load-based auto scaling operates only on the instances from that set,
          * so you must ensure that you have created enough instances to handle the maximum
-         * anticipated load.</p> </note> <p> <b>Required Permissions</b>: To use this
+         * anticipated load.</p>  <p> <b>Required Permissions</b>: To use this
          * action, an IAM user must have a Manage permissions level for the stack, or an
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
@@ -2998,11 +2986,11 @@ namespace Model
          * <p>Specify the load-based auto scaling configuration for a specified layer. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing
-         * Load with Time-based and Load-based Instances</a>.</p> <note> <p>To use
+         * Load with Time-based and Load-based Instances</a>.</p>  <p>To use
          * load-based auto scaling, you must create a set of load-based auto scaling
          * instances. Load-based auto scaling operates only on the instances from that set,
          * so you must ensure that you have created enough instances to handle the maximum
-         * anticipated load.</p> </note> <p> <b>Required Permissions</b>: To use this
+         * anticipated load.</p>  <p> <b>Required Permissions</b>: To use this
          * action, an IAM user must have a Manage permissions level for the stack, or an
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a

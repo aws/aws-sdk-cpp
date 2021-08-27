@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/workdocs/WorkDocs_EXPORTS.h>
@@ -131,47 +121,47 @@ namespace Model
         class UpdateFolderRequest;
         class UpdateUserRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> AbortDocumentVersionUploadOutcome;
-        typedef Aws::Utils::Outcome<ActivateUserResult, Aws::Client::AWSError<WorkDocsErrors>> ActivateUserOutcome;
-        typedef Aws::Utils::Outcome<AddResourcePermissionsResult, Aws::Client::AWSError<WorkDocsErrors>> AddResourcePermissionsOutcome;
-        typedef Aws::Utils::Outcome<CreateCommentResult, Aws::Client::AWSError<WorkDocsErrors>> CreateCommentOutcome;
-        typedef Aws::Utils::Outcome<CreateCustomMetadataResult, Aws::Client::AWSError<WorkDocsErrors>> CreateCustomMetadataOutcome;
-        typedef Aws::Utils::Outcome<CreateFolderResult, Aws::Client::AWSError<WorkDocsErrors>> CreateFolderOutcome;
-        typedef Aws::Utils::Outcome<CreateLabelsResult, Aws::Client::AWSError<WorkDocsErrors>> CreateLabelsOutcome;
-        typedef Aws::Utils::Outcome<CreateNotificationSubscriptionResult, Aws::Client::AWSError<WorkDocsErrors>> CreateNotificationSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<CreateUserResult, Aws::Client::AWSError<WorkDocsErrors>> CreateUserOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeactivateUserOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteCommentOutcome;
-        typedef Aws::Utils::Outcome<DeleteCustomMetadataResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteCustomMetadataOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteDocumentOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteFolderOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteFolderContentsOutcome;
-        typedef Aws::Utils::Outcome<DeleteLabelsResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteLabelsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteNotificationSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteUserOutcome;
-        typedef Aws::Utils::Outcome<DescribeActivitiesResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeActivitiesOutcome;
-        typedef Aws::Utils::Outcome<DescribeCommentsResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeCommentsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDocumentVersionsResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeDocumentVersionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeFolderContentsResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeFolderContentsOutcome;
-        typedef Aws::Utils::Outcome<DescribeGroupsResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeNotificationSubscriptionsResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeNotificationSubscriptionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeResourcePermissionsResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeResourcePermissionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeRootFoldersResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeRootFoldersOutcome;
-        typedef Aws::Utils::Outcome<DescribeUsersResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeUsersOutcome;
-        typedef Aws::Utils::Outcome<GetCurrentUserResult, Aws::Client::AWSError<WorkDocsErrors>> GetCurrentUserOutcome;
-        typedef Aws::Utils::Outcome<GetDocumentResult, Aws::Client::AWSError<WorkDocsErrors>> GetDocumentOutcome;
-        typedef Aws::Utils::Outcome<GetDocumentPathResult, Aws::Client::AWSError<WorkDocsErrors>> GetDocumentPathOutcome;
-        typedef Aws::Utils::Outcome<GetDocumentVersionResult, Aws::Client::AWSError<WorkDocsErrors>> GetDocumentVersionOutcome;
-        typedef Aws::Utils::Outcome<GetFolderResult, Aws::Client::AWSError<WorkDocsErrors>> GetFolderOutcome;
-        typedef Aws::Utils::Outcome<GetFolderPathResult, Aws::Client::AWSError<WorkDocsErrors>> GetFolderPathOutcome;
-        typedef Aws::Utils::Outcome<GetResourcesResult, Aws::Client::AWSError<WorkDocsErrors>> GetResourcesOutcome;
-        typedef Aws::Utils::Outcome<InitiateDocumentVersionUploadResult, Aws::Client::AWSError<WorkDocsErrors>> InitiateDocumentVersionUploadOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> RemoveAllResourcePermissionsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> RemoveResourcePermissionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> UpdateDocumentOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> UpdateDocumentVersionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> UpdateFolderOutcome;
-        typedef Aws::Utils::Outcome<UpdateUserResult, Aws::Client::AWSError<WorkDocsErrors>> UpdateUserOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, WorkDocsError> AbortDocumentVersionUploadOutcome;
+        typedef Aws::Utils::Outcome<ActivateUserResult, WorkDocsError> ActivateUserOutcome;
+        typedef Aws::Utils::Outcome<AddResourcePermissionsResult, WorkDocsError> AddResourcePermissionsOutcome;
+        typedef Aws::Utils::Outcome<CreateCommentResult, WorkDocsError> CreateCommentOutcome;
+        typedef Aws::Utils::Outcome<CreateCustomMetadataResult, WorkDocsError> CreateCustomMetadataOutcome;
+        typedef Aws::Utils::Outcome<CreateFolderResult, WorkDocsError> CreateFolderOutcome;
+        typedef Aws::Utils::Outcome<CreateLabelsResult, WorkDocsError> CreateLabelsOutcome;
+        typedef Aws::Utils::Outcome<CreateNotificationSubscriptionResult, WorkDocsError> CreateNotificationSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<CreateUserResult, WorkDocsError> CreateUserOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, WorkDocsError> DeactivateUserOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, WorkDocsError> DeleteCommentOutcome;
+        typedef Aws::Utils::Outcome<DeleteCustomMetadataResult, WorkDocsError> DeleteCustomMetadataOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, WorkDocsError> DeleteDocumentOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, WorkDocsError> DeleteFolderOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, WorkDocsError> DeleteFolderContentsOutcome;
+        typedef Aws::Utils::Outcome<DeleteLabelsResult, WorkDocsError> DeleteLabelsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, WorkDocsError> DeleteNotificationSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, WorkDocsError> DeleteUserOutcome;
+        typedef Aws::Utils::Outcome<DescribeActivitiesResult, WorkDocsError> DescribeActivitiesOutcome;
+        typedef Aws::Utils::Outcome<DescribeCommentsResult, WorkDocsError> DescribeCommentsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDocumentVersionsResult, WorkDocsError> DescribeDocumentVersionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeFolderContentsResult, WorkDocsError> DescribeFolderContentsOutcome;
+        typedef Aws::Utils::Outcome<DescribeGroupsResult, WorkDocsError> DescribeGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeNotificationSubscriptionsResult, WorkDocsError> DescribeNotificationSubscriptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeResourcePermissionsResult, WorkDocsError> DescribeResourcePermissionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeRootFoldersResult, WorkDocsError> DescribeRootFoldersOutcome;
+        typedef Aws::Utils::Outcome<DescribeUsersResult, WorkDocsError> DescribeUsersOutcome;
+        typedef Aws::Utils::Outcome<GetCurrentUserResult, WorkDocsError> GetCurrentUserOutcome;
+        typedef Aws::Utils::Outcome<GetDocumentResult, WorkDocsError> GetDocumentOutcome;
+        typedef Aws::Utils::Outcome<GetDocumentPathResult, WorkDocsError> GetDocumentPathOutcome;
+        typedef Aws::Utils::Outcome<GetDocumentVersionResult, WorkDocsError> GetDocumentVersionOutcome;
+        typedef Aws::Utils::Outcome<GetFolderResult, WorkDocsError> GetFolderOutcome;
+        typedef Aws::Utils::Outcome<GetFolderPathResult, WorkDocsError> GetFolderPathOutcome;
+        typedef Aws::Utils::Outcome<GetResourcesResult, WorkDocsError> GetResourcesOutcome;
+        typedef Aws::Utils::Outcome<InitiateDocumentVersionUploadResult, WorkDocsError> InitiateDocumentVersionUploadOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, WorkDocsError> RemoveAllResourcePermissionsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, WorkDocsError> RemoveResourcePermissionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, WorkDocsError> UpdateDocumentOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, WorkDocsError> UpdateDocumentVersionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, WorkDocsError> UpdateFolderOutcome;
+        typedef Aws::Utils::Outcome<UpdateUserResult, WorkDocsError> UpdateUserOutcome;
 
         typedef std::future<AbortDocumentVersionUploadOutcome> AbortDocumentVersionUploadOutcomeCallable;
         typedef std::future<ActivateUserOutcome> ActivateUserOutcomeCallable;
@@ -312,8 +302,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~WorkDocsClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "WorkDocs"; }
 
 
         /**

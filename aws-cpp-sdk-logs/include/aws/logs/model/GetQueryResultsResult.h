@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
@@ -105,35 +95,40 @@ namespace Model
     /**
      * <p>Includes the number of log events scanned by the query, the number of log
      * events that matched the query criteria, and the total number of bytes in the log
-     * events that were scanned.</p>
+     * events that were scanned. These values reflect the full raw results of the
+     * query.</p>
      */
     inline const QueryStatistics& GetStatistics() const{ return m_statistics; }
 
     /**
      * <p>Includes the number of log events scanned by the query, the number of log
      * events that matched the query criteria, and the total number of bytes in the log
-     * events that were scanned.</p>
+     * events that were scanned. These values reflect the full raw results of the
+     * query.</p>
      */
     inline void SetStatistics(const QueryStatistics& value) { m_statistics = value; }
 
     /**
      * <p>Includes the number of log events scanned by the query, the number of log
      * events that matched the query criteria, and the total number of bytes in the log
-     * events that were scanned.</p>
+     * events that were scanned. These values reflect the full raw results of the
+     * query.</p>
      */
     inline void SetStatistics(QueryStatistics&& value) { m_statistics = std::move(value); }
 
     /**
      * <p>Includes the number of log events scanned by the query, the number of log
      * events that matched the query criteria, and the total number of bytes in the log
-     * events that were scanned.</p>
+     * events that were scanned. These values reflect the full raw results of the
+     * query.</p>
      */
     inline GetQueryResultsResult& WithStatistics(const QueryStatistics& value) { SetStatistics(value); return *this;}
 
     /**
      * <p>Includes the number of log events scanned by the query, the number of log
      * events that matched the query criteria, and the total number of bytes in the log
-     * events that were scanned.</p>
+     * events that were scanned. These values reflect the full raw results of the
+     * query.</p>
      */
     inline GetQueryResultsResult& WithStatistics(QueryStatistics&& value) { SetStatistics(std::move(value)); return *this;}
 
@@ -143,7 +138,7 @@ namespace Model
      * <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>,
      * <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and
      * <code>Unknown</code>.</p> <p>Queries time out after 15 minutes of execution. To
-     * avoid having your queries time out, reduce the time range being searched, or
+     * avoid having your queries time out, reduce the time range being searched or
      * partition your query into a number of queries.</p>
      */
     inline const QueryStatus& GetStatus() const{ return m_status; }
@@ -153,7 +148,7 @@ namespace Model
      * <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>,
      * <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and
      * <code>Unknown</code>.</p> <p>Queries time out after 15 minutes of execution. To
-     * avoid having your queries time out, reduce the time range being searched, or
+     * avoid having your queries time out, reduce the time range being searched or
      * partition your query into a number of queries.</p>
      */
     inline void SetStatus(const QueryStatus& value) { m_status = value; }
@@ -163,7 +158,7 @@ namespace Model
      * <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>,
      * <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and
      * <code>Unknown</code>.</p> <p>Queries time out after 15 minutes of execution. To
-     * avoid having your queries time out, reduce the time range being searched, or
+     * avoid having your queries time out, reduce the time range being searched or
      * partition your query into a number of queries.</p>
      */
     inline void SetStatus(QueryStatus&& value) { m_status = std::move(value); }
@@ -173,7 +168,7 @@ namespace Model
      * <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>,
      * <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and
      * <code>Unknown</code>.</p> <p>Queries time out after 15 minutes of execution. To
-     * avoid having your queries time out, reduce the time range being searched, or
+     * avoid having your queries time out, reduce the time range being searched or
      * partition your query into a number of queries.</p>
      */
     inline GetQueryResultsResult& WithStatus(const QueryStatus& value) { SetStatus(value); return *this;}
@@ -183,7 +178,7 @@ namespace Model
      * <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>,
      * <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and
      * <code>Unknown</code>.</p> <p>Queries time out after 15 minutes of execution. To
-     * avoid having your queries time out, reduce the time range being searched, or
+     * avoid having your queries time out, reduce the time range being searched or
      * partition your query into a number of queries.</p>
      */
     inline GetQueryResultsResult& WithStatus(QueryStatus&& value) { SetStatus(std::move(value)); return *this;}

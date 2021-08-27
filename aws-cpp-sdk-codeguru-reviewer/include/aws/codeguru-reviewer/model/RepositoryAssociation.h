@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
@@ -37,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about a repository association.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a repository association. The <a
+   * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.html">
+   * <code>DescribeRepositoryAssociation</code> </a> operation returns a
+   * <code>RepositoryAssociation</code> object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/RepositoryAssociation">AWS
    * API Reference</a></p>
    */
@@ -133,6 +126,95 @@ namespace Model
 
 
     /**
+     * <p> The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection.
+     * Its format is
+     * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API
+     * Reference</i>. </p>
+     */
+    inline const Aws::String& GetConnectionArn() const{ return m_connectionArn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection.
+     * Its format is
+     * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API
+     * Reference</i>. </p>
+     */
+    inline bool ConnectionArnHasBeenSet() const { return m_connectionArnHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection.
+     * Its format is
+     * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API
+     * Reference</i>. </p>
+     */
+    inline void SetConnectionArn(const Aws::String& value) { m_connectionArnHasBeenSet = true; m_connectionArn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection.
+     * Its format is
+     * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API
+     * Reference</i>. </p>
+     */
+    inline void SetConnectionArn(Aws::String&& value) { m_connectionArnHasBeenSet = true; m_connectionArn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection.
+     * Its format is
+     * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API
+     * Reference</i>. </p>
+     */
+    inline void SetConnectionArn(const char* value) { m_connectionArnHasBeenSet = true; m_connectionArn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection.
+     * Its format is
+     * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API
+     * Reference</i>. </p>
+     */
+    inline RepositoryAssociation& WithConnectionArn(const Aws::String& value) { SetConnectionArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection.
+     * Its format is
+     * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API
+     * Reference</i>. </p>
+     */
+    inline RepositoryAssociation& WithConnectionArn(Aws::String&& value) { SetConnectionArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection.
+     * Its format is
+     * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API
+     * Reference</i>. </p>
+     */
+    inline RepositoryAssociation& WithConnectionArn(const char* value) { SetConnectionArn(value); return *this;}
+
+
+    /**
      * <p>The name of the repository.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -174,42 +256,66 @@ namespace Model
 
 
     /**
-     * <p>The owner of the repository.</p>
+     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>The owner of the repository.</p>
+     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p>The owner of the repository.</p>
+     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>The owner of the repository.</p>
+     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p>The owner of the repository.</p>
+     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
-     * <p>The owner of the repository.</p>
+     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline RepositoryAssociation& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>The owner of the repository.</p>
+     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline RepositoryAssociation& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The owner of the repository.</p>
+     * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
+     * AWS account ID of the account that owns the repository. For a GitHub, GitHub
+     * Enterprise Server, or Bitbucket repository, this is the username for the account
+     * that owns the repository.</p>
      */
     inline RepositoryAssociation& WithOwner(const char* value) { SetOwner(value); return *this;}
 
@@ -246,32 +352,158 @@ namespace Model
 
 
     /**
-     * <p>The state of the repository association.</p>
+     * <p>The state of the repository association.</p> <p>The valid repository
+     * association states are:</p> <ul> <li> <p> <b>Associated</b>: The repository
+     * association is complete. </p> </li> <li> <p> <b>Associating</b>: CodeGuru
+     * Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications. This is
+     * required for pull requests to trigger a CodeGuru Reviewer review. </p> 
+     * <p> If your repository <code>ProviderType</code> is <code>GitHub</code>,
+     * <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru
+     * Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot
+     * be triggered. </p>  </li> <li> <p> Setting up source code access. This is
+     * required for CodeGuru Reviewer to securely clone code in your repository. </p>
+     * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
+     * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
+     * removing the repository's pull request notifications and source code access.
+     * </p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully
+     * disassociated the repository. You can create a new association with this
+     * repository if you want to review source code in it later. You can control access
+     * to code reviews created in an associated repository with tags after it has been
+     * disassociated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
+     * Reviewer User Guide</i>. </p> </li> </ul>
      */
     inline const RepositoryAssociationState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the repository association.</p>
+     * <p>The state of the repository association.</p> <p>The valid repository
+     * association states are:</p> <ul> <li> <p> <b>Associated</b>: The repository
+     * association is complete. </p> </li> <li> <p> <b>Associating</b>: CodeGuru
+     * Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications. This is
+     * required for pull requests to trigger a CodeGuru Reviewer review. </p> 
+     * <p> If your repository <code>ProviderType</code> is <code>GitHub</code>,
+     * <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru
+     * Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot
+     * be triggered. </p>  </li> <li> <p> Setting up source code access. This is
+     * required for CodeGuru Reviewer to securely clone code in your repository. </p>
+     * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
+     * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
+     * removing the repository's pull request notifications and source code access.
+     * </p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully
+     * disassociated the repository. You can create a new association with this
+     * repository if you want to review source code in it later. You can control access
+     * to code reviews created in an associated repository with tags after it has been
+     * disassociated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
+     * Reviewer User Guide</i>. </p> </li> </ul>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The state of the repository association.</p>
+     * <p>The state of the repository association.</p> <p>The valid repository
+     * association states are:</p> <ul> <li> <p> <b>Associated</b>: The repository
+     * association is complete. </p> </li> <li> <p> <b>Associating</b>: CodeGuru
+     * Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications. This is
+     * required for pull requests to trigger a CodeGuru Reviewer review. </p> 
+     * <p> If your repository <code>ProviderType</code> is <code>GitHub</code>,
+     * <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru
+     * Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot
+     * be triggered. </p>  </li> <li> <p> Setting up source code access. This is
+     * required for CodeGuru Reviewer to securely clone code in your repository. </p>
+     * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
+     * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
+     * removing the repository's pull request notifications and source code access.
+     * </p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully
+     * disassociated the repository. You can create a new association with this
+     * repository if you want to review source code in it later. You can control access
+     * to code reviews created in an associated repository with tags after it has been
+     * disassociated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
+     * Reviewer User Guide</i>. </p> </li> </ul>
      */
     inline void SetState(const RepositoryAssociationState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the repository association.</p>
+     * <p>The state of the repository association.</p> <p>The valid repository
+     * association states are:</p> <ul> <li> <p> <b>Associated</b>: The repository
+     * association is complete. </p> </li> <li> <p> <b>Associating</b>: CodeGuru
+     * Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications. This is
+     * required for pull requests to trigger a CodeGuru Reviewer review. </p> 
+     * <p> If your repository <code>ProviderType</code> is <code>GitHub</code>,
+     * <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru
+     * Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot
+     * be triggered. </p>  </li> <li> <p> Setting up source code access. This is
+     * required for CodeGuru Reviewer to securely clone code in your repository. </p>
+     * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
+     * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
+     * removing the repository's pull request notifications and source code access.
+     * </p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully
+     * disassociated the repository. You can create a new association with this
+     * repository if you want to review source code in it later. You can control access
+     * to code reviews created in an associated repository with tags after it has been
+     * disassociated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
+     * Reviewer User Guide</i>. </p> </li> </ul>
      */
     inline void SetState(RepositoryAssociationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The state of the repository association.</p>
+     * <p>The state of the repository association.</p> <p>The valid repository
+     * association states are:</p> <ul> <li> <p> <b>Associated</b>: The repository
+     * association is complete. </p> </li> <li> <p> <b>Associating</b>: CodeGuru
+     * Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications. This is
+     * required for pull requests to trigger a CodeGuru Reviewer review. </p> 
+     * <p> If your repository <code>ProviderType</code> is <code>GitHub</code>,
+     * <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru
+     * Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot
+     * be triggered. </p>  </li> <li> <p> Setting up source code access. This is
+     * required for CodeGuru Reviewer to securely clone code in your repository. </p>
+     * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
+     * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
+     * removing the repository's pull request notifications and source code access.
+     * </p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully
+     * disassociated the repository. You can create a new association with this
+     * repository if you want to review source code in it later. You can control access
+     * to code reviews created in an associated repository with tags after it has been
+     * disassociated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
+     * Reviewer User Guide</i>. </p> </li> </ul>
      */
     inline RepositoryAssociation& WithState(const RepositoryAssociationState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the repository association.</p>
+     * <p>The state of the repository association.</p> <p>The valid repository
+     * association states are:</p> <ul> <li> <p> <b>Associated</b>: The repository
+     * association is complete. </p> </li> <li> <p> <b>Associating</b>: CodeGuru
+     * Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications. This is
+     * required for pull requests to trigger a CodeGuru Reviewer review. </p> 
+     * <p> If your repository <code>ProviderType</code> is <code>GitHub</code>,
+     * <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru
+     * Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot
+     * be triggered. </p>  </li> <li> <p> Setting up source code access. This is
+     * required for CodeGuru Reviewer to securely clone code in your repository. </p>
+     * </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or
+     * disassociate. </p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is
+     * removing the repository's pull request notifications and source code access.
+     * </p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully
+     * disassociated the repository. You can create a new association with this
+     * repository if you want to review source code in it later. You can control access
+     * to code reviews created in an associated repository with tags after it has been
+     * disassociated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
+     * Reviewer User Guide</i>. </p> </li> </ul>
      */
     inline RepositoryAssociation& WithState(RepositoryAssociationState&& value) { SetState(std::move(value)); return *this;}
 
@@ -397,6 +629,9 @@ namespace Model
 
     Aws::String m_associationArn;
     bool m_associationArnHasBeenSet;
+
+    Aws::String m_connectionArn;
+    bool m_connectionArnHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

@@ -1,12 +1,12 @@
 # escape=`
 
-FROM microsoft/windowsservercore
+FROM microsoft/windowsservercore:ltsc2016
 
 ADD https://download.microsoft.com/download/6/A/A/6AA4EDFF-645B-48C5-81CC-ED5963AEAD48/vc_redist.x64.exe /vc_redist.x64.exe
 RUN start /wait C:\vc_redist.x64.exe /quiet /norestart
 
 # Install chocolatey
-RUN @powershell -NoProfile -ExecutionPolicy unrestricted -Command "(iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))) >$null 2>&1"
+RUN @powershell -NoProfile -ExecutionPolicy unrestricted -Command "$env:chocolateyUseWindowsCompression = 'true'; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; (iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))) >$null 2>&1"
 
 RUN choco install git 7zip -y
 RUN choco install cmake --installargs 'ADD_CMAKE_TO_PATH=""System""' -y

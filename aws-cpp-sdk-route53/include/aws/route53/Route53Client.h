@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
@@ -22,28 +12,35 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/route53/model/ActivateKeySigningKeyResult.h>
 #include <aws/route53/model/AssociateVPCWithHostedZoneResult.h>
 #include <aws/route53/model/ChangeResourceRecordSetsResult.h>
 #include <aws/route53/model/ChangeTagsForResourceResult.h>
 #include <aws/route53/model/CreateHealthCheckResult.h>
 #include <aws/route53/model/CreateHostedZoneResult.h>
+#include <aws/route53/model/CreateKeySigningKeyResult.h>
 #include <aws/route53/model/CreateQueryLoggingConfigResult.h>
 #include <aws/route53/model/CreateReusableDelegationSetResult.h>
 #include <aws/route53/model/CreateTrafficPolicyResult.h>
 #include <aws/route53/model/CreateTrafficPolicyInstanceResult.h>
 #include <aws/route53/model/CreateTrafficPolicyVersionResult.h>
 #include <aws/route53/model/CreateVPCAssociationAuthorizationResult.h>
+#include <aws/route53/model/DeactivateKeySigningKeyResult.h>
 #include <aws/route53/model/DeleteHealthCheckResult.h>
 #include <aws/route53/model/DeleteHostedZoneResult.h>
+#include <aws/route53/model/DeleteKeySigningKeyResult.h>
 #include <aws/route53/model/DeleteQueryLoggingConfigResult.h>
 #include <aws/route53/model/DeleteReusableDelegationSetResult.h>
 #include <aws/route53/model/DeleteTrafficPolicyResult.h>
 #include <aws/route53/model/DeleteTrafficPolicyInstanceResult.h>
 #include <aws/route53/model/DeleteVPCAssociationAuthorizationResult.h>
+#include <aws/route53/model/DisableHostedZoneDNSSECResult.h>
 #include <aws/route53/model/DisassociateVPCFromHostedZoneResult.h>
+#include <aws/route53/model/EnableHostedZoneDNSSECResult.h>
 #include <aws/route53/model/GetAccountLimitResult.h>
 #include <aws/route53/model/GetChangeResult.h>
 #include <aws/route53/model/GetCheckerIpRangesResult.h>
+#include <aws/route53/model/GetDNSSECResult.h>
 #include <aws/route53/model/GetGeoLocationResult.h>
 #include <aws/route53/model/GetHealthCheckResult.h>
 #include <aws/route53/model/GetHealthCheckCountResult.h>
@@ -62,6 +59,7 @@
 #include <aws/route53/model/ListHealthChecksResult.h>
 #include <aws/route53/model/ListHostedZonesResult.h>
 #include <aws/route53/model/ListHostedZonesByNameResult.h>
+#include <aws/route53/model/ListHostedZonesByVPCResult.h>
 #include <aws/route53/model/ListQueryLoggingConfigsResult.h>
 #include <aws/route53/model/ListResourceRecordSetsResult.h>
 #include <aws/route53/model/ListReusableDelegationSetsResult.h>
@@ -123,28 +121,35 @@ namespace Route53
 
 namespace Model
 {
+        class ActivateKeySigningKeyRequest;
         class AssociateVPCWithHostedZoneRequest;
         class ChangeResourceRecordSetsRequest;
         class ChangeTagsForResourceRequest;
         class CreateHealthCheckRequest;
         class CreateHostedZoneRequest;
+        class CreateKeySigningKeyRequest;
         class CreateQueryLoggingConfigRequest;
         class CreateReusableDelegationSetRequest;
         class CreateTrafficPolicyRequest;
         class CreateTrafficPolicyInstanceRequest;
         class CreateTrafficPolicyVersionRequest;
         class CreateVPCAssociationAuthorizationRequest;
+        class DeactivateKeySigningKeyRequest;
         class DeleteHealthCheckRequest;
         class DeleteHostedZoneRequest;
+        class DeleteKeySigningKeyRequest;
         class DeleteQueryLoggingConfigRequest;
         class DeleteReusableDelegationSetRequest;
         class DeleteTrafficPolicyRequest;
         class DeleteTrafficPolicyInstanceRequest;
         class DeleteVPCAssociationAuthorizationRequest;
+        class DisableHostedZoneDNSSECRequest;
         class DisassociateVPCFromHostedZoneRequest;
+        class EnableHostedZoneDNSSECRequest;
         class GetAccountLimitRequest;
         class GetChangeRequest;
         class GetCheckerIpRangesRequest;
+        class GetDNSSECRequest;
         class GetGeoLocationRequest;
         class GetHealthCheckRequest;
         class GetHealthCheckCountRequest;
@@ -163,6 +168,7 @@ namespace Model
         class ListHealthChecksRequest;
         class ListHostedZonesRequest;
         class ListHostedZonesByNameRequest;
+        class ListHostedZonesByVPCRequest;
         class ListQueryLoggingConfigsRequest;
         class ListResourceRecordSetsRequest;
         class ListReusableDelegationSetsRequest;
@@ -180,85 +186,100 @@ namespace Model
         class UpdateTrafficPolicyCommentRequest;
         class UpdateTrafficPolicyInstanceRequest;
 
-        typedef Aws::Utils::Outcome<AssociateVPCWithHostedZoneResult, Aws::Client::AWSError<Route53Errors>> AssociateVPCWithHostedZoneOutcome;
-        typedef Aws::Utils::Outcome<ChangeResourceRecordSetsResult, Aws::Client::AWSError<Route53Errors>> ChangeResourceRecordSetsOutcome;
-        typedef Aws::Utils::Outcome<ChangeTagsForResourceResult, Aws::Client::AWSError<Route53Errors>> ChangeTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<CreateHealthCheckResult, Aws::Client::AWSError<Route53Errors>> CreateHealthCheckOutcome;
-        typedef Aws::Utils::Outcome<CreateHostedZoneResult, Aws::Client::AWSError<Route53Errors>> CreateHostedZoneOutcome;
-        typedef Aws::Utils::Outcome<CreateQueryLoggingConfigResult, Aws::Client::AWSError<Route53Errors>> CreateQueryLoggingConfigOutcome;
-        typedef Aws::Utils::Outcome<CreateReusableDelegationSetResult, Aws::Client::AWSError<Route53Errors>> CreateReusableDelegationSetOutcome;
-        typedef Aws::Utils::Outcome<CreateTrafficPolicyResult, Aws::Client::AWSError<Route53Errors>> CreateTrafficPolicyOutcome;
-        typedef Aws::Utils::Outcome<CreateTrafficPolicyInstanceResult, Aws::Client::AWSError<Route53Errors>> CreateTrafficPolicyInstanceOutcome;
-        typedef Aws::Utils::Outcome<CreateTrafficPolicyVersionResult, Aws::Client::AWSError<Route53Errors>> CreateTrafficPolicyVersionOutcome;
-        typedef Aws::Utils::Outcome<CreateVPCAssociationAuthorizationResult, Aws::Client::AWSError<Route53Errors>> CreateVPCAssociationAuthorizationOutcome;
-        typedef Aws::Utils::Outcome<DeleteHealthCheckResult, Aws::Client::AWSError<Route53Errors>> DeleteHealthCheckOutcome;
-        typedef Aws::Utils::Outcome<DeleteHostedZoneResult, Aws::Client::AWSError<Route53Errors>> DeleteHostedZoneOutcome;
-        typedef Aws::Utils::Outcome<DeleteQueryLoggingConfigResult, Aws::Client::AWSError<Route53Errors>> DeleteQueryLoggingConfigOutcome;
-        typedef Aws::Utils::Outcome<DeleteReusableDelegationSetResult, Aws::Client::AWSError<Route53Errors>> DeleteReusableDelegationSetOutcome;
-        typedef Aws::Utils::Outcome<DeleteTrafficPolicyResult, Aws::Client::AWSError<Route53Errors>> DeleteTrafficPolicyOutcome;
-        typedef Aws::Utils::Outcome<DeleteTrafficPolicyInstanceResult, Aws::Client::AWSError<Route53Errors>> DeleteTrafficPolicyInstanceOutcome;
-        typedef Aws::Utils::Outcome<DeleteVPCAssociationAuthorizationResult, Aws::Client::AWSError<Route53Errors>> DeleteVPCAssociationAuthorizationOutcome;
-        typedef Aws::Utils::Outcome<DisassociateVPCFromHostedZoneResult, Aws::Client::AWSError<Route53Errors>> DisassociateVPCFromHostedZoneOutcome;
-        typedef Aws::Utils::Outcome<GetAccountLimitResult, Aws::Client::AWSError<Route53Errors>> GetAccountLimitOutcome;
-        typedef Aws::Utils::Outcome<GetChangeResult, Aws::Client::AWSError<Route53Errors>> GetChangeOutcome;
-        typedef Aws::Utils::Outcome<GetCheckerIpRangesResult, Aws::Client::AWSError<Route53Errors>> GetCheckerIpRangesOutcome;
-        typedef Aws::Utils::Outcome<GetGeoLocationResult, Aws::Client::AWSError<Route53Errors>> GetGeoLocationOutcome;
-        typedef Aws::Utils::Outcome<GetHealthCheckResult, Aws::Client::AWSError<Route53Errors>> GetHealthCheckOutcome;
-        typedef Aws::Utils::Outcome<GetHealthCheckCountResult, Aws::Client::AWSError<Route53Errors>> GetHealthCheckCountOutcome;
-        typedef Aws::Utils::Outcome<GetHealthCheckLastFailureReasonResult, Aws::Client::AWSError<Route53Errors>> GetHealthCheckLastFailureReasonOutcome;
-        typedef Aws::Utils::Outcome<GetHealthCheckStatusResult, Aws::Client::AWSError<Route53Errors>> GetHealthCheckStatusOutcome;
-        typedef Aws::Utils::Outcome<GetHostedZoneResult, Aws::Client::AWSError<Route53Errors>> GetHostedZoneOutcome;
-        typedef Aws::Utils::Outcome<GetHostedZoneCountResult, Aws::Client::AWSError<Route53Errors>> GetHostedZoneCountOutcome;
-        typedef Aws::Utils::Outcome<GetHostedZoneLimitResult, Aws::Client::AWSError<Route53Errors>> GetHostedZoneLimitOutcome;
-        typedef Aws::Utils::Outcome<GetQueryLoggingConfigResult, Aws::Client::AWSError<Route53Errors>> GetQueryLoggingConfigOutcome;
-        typedef Aws::Utils::Outcome<GetReusableDelegationSetResult, Aws::Client::AWSError<Route53Errors>> GetReusableDelegationSetOutcome;
-        typedef Aws::Utils::Outcome<GetReusableDelegationSetLimitResult, Aws::Client::AWSError<Route53Errors>> GetReusableDelegationSetLimitOutcome;
-        typedef Aws::Utils::Outcome<GetTrafficPolicyResult, Aws::Client::AWSError<Route53Errors>> GetTrafficPolicyOutcome;
-        typedef Aws::Utils::Outcome<GetTrafficPolicyInstanceResult, Aws::Client::AWSError<Route53Errors>> GetTrafficPolicyInstanceOutcome;
-        typedef Aws::Utils::Outcome<GetTrafficPolicyInstanceCountResult, Aws::Client::AWSError<Route53Errors>> GetTrafficPolicyInstanceCountOutcome;
-        typedef Aws::Utils::Outcome<ListGeoLocationsResult, Aws::Client::AWSError<Route53Errors>> ListGeoLocationsOutcome;
-        typedef Aws::Utils::Outcome<ListHealthChecksResult, Aws::Client::AWSError<Route53Errors>> ListHealthChecksOutcome;
-        typedef Aws::Utils::Outcome<ListHostedZonesResult, Aws::Client::AWSError<Route53Errors>> ListHostedZonesOutcome;
-        typedef Aws::Utils::Outcome<ListHostedZonesByNameResult, Aws::Client::AWSError<Route53Errors>> ListHostedZonesByNameOutcome;
-        typedef Aws::Utils::Outcome<ListQueryLoggingConfigsResult, Aws::Client::AWSError<Route53Errors>> ListQueryLoggingConfigsOutcome;
-        typedef Aws::Utils::Outcome<ListResourceRecordSetsResult, Aws::Client::AWSError<Route53Errors>> ListResourceRecordSetsOutcome;
-        typedef Aws::Utils::Outcome<ListReusableDelegationSetsResult, Aws::Client::AWSError<Route53Errors>> ListReusableDelegationSetsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<Route53Errors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourcesResult, Aws::Client::AWSError<Route53Errors>> ListTagsForResourcesOutcome;
-        typedef Aws::Utils::Outcome<ListTrafficPoliciesResult, Aws::Client::AWSError<Route53Errors>> ListTrafficPoliciesOutcome;
-        typedef Aws::Utils::Outcome<ListTrafficPolicyInstancesResult, Aws::Client::AWSError<Route53Errors>> ListTrafficPolicyInstancesOutcome;
-        typedef Aws::Utils::Outcome<ListTrafficPolicyInstancesByHostedZoneResult, Aws::Client::AWSError<Route53Errors>> ListTrafficPolicyInstancesByHostedZoneOutcome;
-        typedef Aws::Utils::Outcome<ListTrafficPolicyInstancesByPolicyResult, Aws::Client::AWSError<Route53Errors>> ListTrafficPolicyInstancesByPolicyOutcome;
-        typedef Aws::Utils::Outcome<ListTrafficPolicyVersionsResult, Aws::Client::AWSError<Route53Errors>> ListTrafficPolicyVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListVPCAssociationAuthorizationsResult, Aws::Client::AWSError<Route53Errors>> ListVPCAssociationAuthorizationsOutcome;
-        typedef Aws::Utils::Outcome<TestDNSAnswerResult, Aws::Client::AWSError<Route53Errors>> TestDNSAnswerOutcome;
-        typedef Aws::Utils::Outcome<UpdateHealthCheckResult, Aws::Client::AWSError<Route53Errors>> UpdateHealthCheckOutcome;
-        typedef Aws::Utils::Outcome<UpdateHostedZoneCommentResult, Aws::Client::AWSError<Route53Errors>> UpdateHostedZoneCommentOutcome;
-        typedef Aws::Utils::Outcome<UpdateTrafficPolicyCommentResult, Aws::Client::AWSError<Route53Errors>> UpdateTrafficPolicyCommentOutcome;
-        typedef Aws::Utils::Outcome<UpdateTrafficPolicyInstanceResult, Aws::Client::AWSError<Route53Errors>> UpdateTrafficPolicyInstanceOutcome;
+        typedef Aws::Utils::Outcome<ActivateKeySigningKeyResult, Route53Error> ActivateKeySigningKeyOutcome;
+        typedef Aws::Utils::Outcome<AssociateVPCWithHostedZoneResult, Route53Error> AssociateVPCWithHostedZoneOutcome;
+        typedef Aws::Utils::Outcome<ChangeResourceRecordSetsResult, Route53Error> ChangeResourceRecordSetsOutcome;
+        typedef Aws::Utils::Outcome<ChangeTagsForResourceResult, Route53Error> ChangeTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<CreateHealthCheckResult, Route53Error> CreateHealthCheckOutcome;
+        typedef Aws::Utils::Outcome<CreateHostedZoneResult, Route53Error> CreateHostedZoneOutcome;
+        typedef Aws::Utils::Outcome<CreateKeySigningKeyResult, Route53Error> CreateKeySigningKeyOutcome;
+        typedef Aws::Utils::Outcome<CreateQueryLoggingConfigResult, Route53Error> CreateQueryLoggingConfigOutcome;
+        typedef Aws::Utils::Outcome<CreateReusableDelegationSetResult, Route53Error> CreateReusableDelegationSetOutcome;
+        typedef Aws::Utils::Outcome<CreateTrafficPolicyResult, Route53Error> CreateTrafficPolicyOutcome;
+        typedef Aws::Utils::Outcome<CreateTrafficPolicyInstanceResult, Route53Error> CreateTrafficPolicyInstanceOutcome;
+        typedef Aws::Utils::Outcome<CreateTrafficPolicyVersionResult, Route53Error> CreateTrafficPolicyVersionOutcome;
+        typedef Aws::Utils::Outcome<CreateVPCAssociationAuthorizationResult, Route53Error> CreateVPCAssociationAuthorizationOutcome;
+        typedef Aws::Utils::Outcome<DeactivateKeySigningKeyResult, Route53Error> DeactivateKeySigningKeyOutcome;
+        typedef Aws::Utils::Outcome<DeleteHealthCheckResult, Route53Error> DeleteHealthCheckOutcome;
+        typedef Aws::Utils::Outcome<DeleteHostedZoneResult, Route53Error> DeleteHostedZoneOutcome;
+        typedef Aws::Utils::Outcome<DeleteKeySigningKeyResult, Route53Error> DeleteKeySigningKeyOutcome;
+        typedef Aws::Utils::Outcome<DeleteQueryLoggingConfigResult, Route53Error> DeleteQueryLoggingConfigOutcome;
+        typedef Aws::Utils::Outcome<DeleteReusableDelegationSetResult, Route53Error> DeleteReusableDelegationSetOutcome;
+        typedef Aws::Utils::Outcome<DeleteTrafficPolicyResult, Route53Error> DeleteTrafficPolicyOutcome;
+        typedef Aws::Utils::Outcome<DeleteTrafficPolicyInstanceResult, Route53Error> DeleteTrafficPolicyInstanceOutcome;
+        typedef Aws::Utils::Outcome<DeleteVPCAssociationAuthorizationResult, Route53Error> DeleteVPCAssociationAuthorizationOutcome;
+        typedef Aws::Utils::Outcome<DisableHostedZoneDNSSECResult, Route53Error> DisableHostedZoneDNSSECOutcome;
+        typedef Aws::Utils::Outcome<DisassociateVPCFromHostedZoneResult, Route53Error> DisassociateVPCFromHostedZoneOutcome;
+        typedef Aws::Utils::Outcome<EnableHostedZoneDNSSECResult, Route53Error> EnableHostedZoneDNSSECOutcome;
+        typedef Aws::Utils::Outcome<GetAccountLimitResult, Route53Error> GetAccountLimitOutcome;
+        typedef Aws::Utils::Outcome<GetChangeResult, Route53Error> GetChangeOutcome;
+        typedef Aws::Utils::Outcome<GetCheckerIpRangesResult, Route53Error> GetCheckerIpRangesOutcome;
+        typedef Aws::Utils::Outcome<GetDNSSECResult, Route53Error> GetDNSSECOutcome;
+        typedef Aws::Utils::Outcome<GetGeoLocationResult, Route53Error> GetGeoLocationOutcome;
+        typedef Aws::Utils::Outcome<GetHealthCheckResult, Route53Error> GetHealthCheckOutcome;
+        typedef Aws::Utils::Outcome<GetHealthCheckCountResult, Route53Error> GetHealthCheckCountOutcome;
+        typedef Aws::Utils::Outcome<GetHealthCheckLastFailureReasonResult, Route53Error> GetHealthCheckLastFailureReasonOutcome;
+        typedef Aws::Utils::Outcome<GetHealthCheckStatusResult, Route53Error> GetHealthCheckStatusOutcome;
+        typedef Aws::Utils::Outcome<GetHostedZoneResult, Route53Error> GetHostedZoneOutcome;
+        typedef Aws::Utils::Outcome<GetHostedZoneCountResult, Route53Error> GetHostedZoneCountOutcome;
+        typedef Aws::Utils::Outcome<GetHostedZoneLimitResult, Route53Error> GetHostedZoneLimitOutcome;
+        typedef Aws::Utils::Outcome<GetQueryLoggingConfigResult, Route53Error> GetQueryLoggingConfigOutcome;
+        typedef Aws::Utils::Outcome<GetReusableDelegationSetResult, Route53Error> GetReusableDelegationSetOutcome;
+        typedef Aws::Utils::Outcome<GetReusableDelegationSetLimitResult, Route53Error> GetReusableDelegationSetLimitOutcome;
+        typedef Aws::Utils::Outcome<GetTrafficPolicyResult, Route53Error> GetTrafficPolicyOutcome;
+        typedef Aws::Utils::Outcome<GetTrafficPolicyInstanceResult, Route53Error> GetTrafficPolicyInstanceOutcome;
+        typedef Aws::Utils::Outcome<GetTrafficPolicyInstanceCountResult, Route53Error> GetTrafficPolicyInstanceCountOutcome;
+        typedef Aws::Utils::Outcome<ListGeoLocationsResult, Route53Error> ListGeoLocationsOutcome;
+        typedef Aws::Utils::Outcome<ListHealthChecksResult, Route53Error> ListHealthChecksOutcome;
+        typedef Aws::Utils::Outcome<ListHostedZonesResult, Route53Error> ListHostedZonesOutcome;
+        typedef Aws::Utils::Outcome<ListHostedZonesByNameResult, Route53Error> ListHostedZonesByNameOutcome;
+        typedef Aws::Utils::Outcome<ListHostedZonesByVPCResult, Route53Error> ListHostedZonesByVPCOutcome;
+        typedef Aws::Utils::Outcome<ListQueryLoggingConfigsResult, Route53Error> ListQueryLoggingConfigsOutcome;
+        typedef Aws::Utils::Outcome<ListResourceRecordSetsResult, Route53Error> ListResourceRecordSetsOutcome;
+        typedef Aws::Utils::Outcome<ListReusableDelegationSetsResult, Route53Error> ListReusableDelegationSetsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Route53Error> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourcesResult, Route53Error> ListTagsForResourcesOutcome;
+        typedef Aws::Utils::Outcome<ListTrafficPoliciesResult, Route53Error> ListTrafficPoliciesOutcome;
+        typedef Aws::Utils::Outcome<ListTrafficPolicyInstancesResult, Route53Error> ListTrafficPolicyInstancesOutcome;
+        typedef Aws::Utils::Outcome<ListTrafficPolicyInstancesByHostedZoneResult, Route53Error> ListTrafficPolicyInstancesByHostedZoneOutcome;
+        typedef Aws::Utils::Outcome<ListTrafficPolicyInstancesByPolicyResult, Route53Error> ListTrafficPolicyInstancesByPolicyOutcome;
+        typedef Aws::Utils::Outcome<ListTrafficPolicyVersionsResult, Route53Error> ListTrafficPolicyVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListVPCAssociationAuthorizationsResult, Route53Error> ListVPCAssociationAuthorizationsOutcome;
+        typedef Aws::Utils::Outcome<TestDNSAnswerResult, Route53Error> TestDNSAnswerOutcome;
+        typedef Aws::Utils::Outcome<UpdateHealthCheckResult, Route53Error> UpdateHealthCheckOutcome;
+        typedef Aws::Utils::Outcome<UpdateHostedZoneCommentResult, Route53Error> UpdateHostedZoneCommentOutcome;
+        typedef Aws::Utils::Outcome<UpdateTrafficPolicyCommentResult, Route53Error> UpdateTrafficPolicyCommentOutcome;
+        typedef Aws::Utils::Outcome<UpdateTrafficPolicyInstanceResult, Route53Error> UpdateTrafficPolicyInstanceOutcome;
 
+        typedef std::future<ActivateKeySigningKeyOutcome> ActivateKeySigningKeyOutcomeCallable;
         typedef std::future<AssociateVPCWithHostedZoneOutcome> AssociateVPCWithHostedZoneOutcomeCallable;
         typedef std::future<ChangeResourceRecordSetsOutcome> ChangeResourceRecordSetsOutcomeCallable;
         typedef std::future<ChangeTagsForResourceOutcome> ChangeTagsForResourceOutcomeCallable;
         typedef std::future<CreateHealthCheckOutcome> CreateHealthCheckOutcomeCallable;
         typedef std::future<CreateHostedZoneOutcome> CreateHostedZoneOutcomeCallable;
+        typedef std::future<CreateKeySigningKeyOutcome> CreateKeySigningKeyOutcomeCallable;
         typedef std::future<CreateQueryLoggingConfigOutcome> CreateQueryLoggingConfigOutcomeCallable;
         typedef std::future<CreateReusableDelegationSetOutcome> CreateReusableDelegationSetOutcomeCallable;
         typedef std::future<CreateTrafficPolicyOutcome> CreateTrafficPolicyOutcomeCallable;
         typedef std::future<CreateTrafficPolicyInstanceOutcome> CreateTrafficPolicyInstanceOutcomeCallable;
         typedef std::future<CreateTrafficPolicyVersionOutcome> CreateTrafficPolicyVersionOutcomeCallable;
         typedef std::future<CreateVPCAssociationAuthorizationOutcome> CreateVPCAssociationAuthorizationOutcomeCallable;
+        typedef std::future<DeactivateKeySigningKeyOutcome> DeactivateKeySigningKeyOutcomeCallable;
         typedef std::future<DeleteHealthCheckOutcome> DeleteHealthCheckOutcomeCallable;
         typedef std::future<DeleteHostedZoneOutcome> DeleteHostedZoneOutcomeCallable;
+        typedef std::future<DeleteKeySigningKeyOutcome> DeleteKeySigningKeyOutcomeCallable;
         typedef std::future<DeleteQueryLoggingConfigOutcome> DeleteQueryLoggingConfigOutcomeCallable;
         typedef std::future<DeleteReusableDelegationSetOutcome> DeleteReusableDelegationSetOutcomeCallable;
         typedef std::future<DeleteTrafficPolicyOutcome> DeleteTrafficPolicyOutcomeCallable;
         typedef std::future<DeleteTrafficPolicyInstanceOutcome> DeleteTrafficPolicyInstanceOutcomeCallable;
         typedef std::future<DeleteVPCAssociationAuthorizationOutcome> DeleteVPCAssociationAuthorizationOutcomeCallable;
+        typedef std::future<DisableHostedZoneDNSSECOutcome> DisableHostedZoneDNSSECOutcomeCallable;
         typedef std::future<DisassociateVPCFromHostedZoneOutcome> DisassociateVPCFromHostedZoneOutcomeCallable;
+        typedef std::future<EnableHostedZoneDNSSECOutcome> EnableHostedZoneDNSSECOutcomeCallable;
         typedef std::future<GetAccountLimitOutcome> GetAccountLimitOutcomeCallable;
         typedef std::future<GetChangeOutcome> GetChangeOutcomeCallable;
         typedef std::future<GetCheckerIpRangesOutcome> GetCheckerIpRangesOutcomeCallable;
+        typedef std::future<GetDNSSECOutcome> GetDNSSECOutcomeCallable;
         typedef std::future<GetGeoLocationOutcome> GetGeoLocationOutcomeCallable;
         typedef std::future<GetHealthCheckOutcome> GetHealthCheckOutcomeCallable;
         typedef std::future<GetHealthCheckCountOutcome> GetHealthCheckCountOutcomeCallable;
@@ -277,6 +298,7 @@ namespace Model
         typedef std::future<ListHealthChecksOutcome> ListHealthChecksOutcomeCallable;
         typedef std::future<ListHostedZonesOutcome> ListHostedZonesOutcomeCallable;
         typedef std::future<ListHostedZonesByNameOutcome> ListHostedZonesByNameOutcomeCallable;
+        typedef std::future<ListHostedZonesByVPCOutcome> ListHostedZonesByVPCOutcomeCallable;
         typedef std::future<ListQueryLoggingConfigsOutcome> ListQueryLoggingConfigsOutcomeCallable;
         typedef std::future<ListResourceRecordSetsOutcome> ListResourceRecordSetsOutcomeCallable;
         typedef std::future<ListReusableDelegationSetsOutcome> ListReusableDelegationSetsOutcomeCallable;
@@ -297,28 +319,35 @@ namespace Model
 
   class Route53Client;
 
+    typedef std::function<void(const Route53Client*, const Model::ActivateKeySigningKeyRequest&, const Model::ActivateKeySigningKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ActivateKeySigningKeyResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::AssociateVPCWithHostedZoneRequest&, const Model::AssociateVPCWithHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateVPCWithHostedZoneResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ChangeResourceRecordSetsRequest&, const Model::ChangeResourceRecordSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChangeResourceRecordSetsResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ChangeTagsForResourceRequest&, const Model::ChangeTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChangeTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateHealthCheckRequest&, const Model::CreateHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHealthCheckResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateHostedZoneRequest&, const Model::CreateHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHostedZoneResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::CreateKeySigningKeyRequest&, const Model::CreateKeySigningKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateKeySigningKeyResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateQueryLoggingConfigRequest&, const Model::CreateQueryLoggingConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQueryLoggingConfigResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateReusableDelegationSetRequest&, const Model::CreateReusableDelegationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReusableDelegationSetResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateTrafficPolicyRequest&, const Model::CreateTrafficPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrafficPolicyResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateTrafficPolicyInstanceRequest&, const Model::CreateTrafficPolicyInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrafficPolicyInstanceResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateTrafficPolicyVersionRequest&, const Model::CreateTrafficPolicyVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrafficPolicyVersionResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateVPCAssociationAuthorizationRequest&, const Model::CreateVPCAssociationAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVPCAssociationAuthorizationResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::DeactivateKeySigningKeyRequest&, const Model::DeactivateKeySigningKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeactivateKeySigningKeyResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteHealthCheckRequest&, const Model::DeleteHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHealthCheckResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteHostedZoneRequest&, const Model::DeleteHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHostedZoneResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::DeleteKeySigningKeyRequest&, const Model::DeleteKeySigningKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteKeySigningKeyResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteQueryLoggingConfigRequest&, const Model::DeleteQueryLoggingConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQueryLoggingConfigResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteReusableDelegationSetRequest&, const Model::DeleteReusableDelegationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReusableDelegationSetResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteTrafficPolicyRequest&, const Model::DeleteTrafficPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrafficPolicyResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteTrafficPolicyInstanceRequest&, const Model::DeleteTrafficPolicyInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrafficPolicyInstanceResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteVPCAssociationAuthorizationRequest&, const Model::DeleteVPCAssociationAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVPCAssociationAuthorizationResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::DisableHostedZoneDNSSECRequest&, const Model::DisableHostedZoneDNSSECOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableHostedZoneDNSSECResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DisassociateVPCFromHostedZoneRequest&, const Model::DisassociateVPCFromHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateVPCFromHostedZoneResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::EnableHostedZoneDNSSECRequest&, const Model::EnableHostedZoneDNSSECOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableHostedZoneDNSSECResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetAccountLimitRequest&, const Model::GetAccountLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountLimitResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetChangeRequest&, const Model::GetChangeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChangeResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetCheckerIpRangesRequest&, const Model::GetCheckerIpRangesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCheckerIpRangesResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::GetDNSSECRequest&, const Model::GetDNSSECOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDNSSECResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetGeoLocationRequest&, const Model::GetGeoLocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGeoLocationResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetHealthCheckRequest&, const Model::GetHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHealthCheckResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetHealthCheckCountRequest&, const Model::GetHealthCheckCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHealthCheckCountResponseReceivedHandler;
@@ -337,6 +366,7 @@ namespace Model
     typedef std::function<void(const Route53Client*, const Model::ListHealthChecksRequest&, const Model::ListHealthChecksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHealthChecksResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ListHostedZonesRequest&, const Model::ListHostedZonesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHostedZonesResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ListHostedZonesByNameRequest&, const Model::ListHostedZonesByNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHostedZonesByNameResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::ListHostedZonesByVPCRequest&, const Model::ListHostedZonesByVPCOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHostedZonesByVPCResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ListQueryLoggingConfigsRequest&, const Model::ListQueryLoggingConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueryLoggingConfigsResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ListResourceRecordSetsRequest&, const Model::ListResourceRecordSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceRecordSetsResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ListReusableDelegationSetsRequest&, const Model::ListReusableDelegationSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReusableDelegationSetsResponseReceivedHandler;
@@ -384,46 +414,63 @@ namespace Model
 
         virtual ~Route53Client();
 
-        inline virtual const char* GetServiceClientName() const override { return "Route 53"; }
-
 
         /**
-         * <p>Associates an Amazon VPC with a private hosted zone. </p> <note> <p>To
+         * <p>Activates a key signing key (KSK) so that it can be used for signing by
+         * DNSSEC. This operation changes the KSK status to
+         * <code>ACTIVE</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ActivateKeySigningKeyOutcome ActivateKeySigningKey(const Model::ActivateKeySigningKeyRequest& request) const;
+
+        /**
+         * <p>Activates a key signing key (KSK) so that it can be used for signing by
+         * DNSSEC. This operation changes the KSK status to
+         * <code>ACTIVE</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ActivateKeySigningKeyOutcomeCallable ActivateKeySigningKeyCallable(const Model::ActivateKeySigningKeyRequest& request) const;
+
+        /**
+         * <p>Activates a key signing key (KSK) so that it can be used for signing by
+         * DNSSEC. This operation changes the KSK status to
+         * <code>ACTIVE</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ActivateKeySigningKeyAsync(const Model::ActivateKeySigningKeyRequest& request, const ActivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates an Amazon VPC with a private hosted zone. </p>  <p>To
          * perform the association, the VPC and the private hosted zone must already exist.
-         * Also, you can't convert a public hosted zone into a private hosted zone.</p>
-         * </note> <p>If you want to associate a VPC that was created by one AWS account
-         * with a private hosted zone that was created by a different account, do one of
-         * the following:</p> <ul> <li> <p>Use the AWS account that created the private
-         * hosted zone to submit a <a
-         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateVPCAssociationAuthorization.html">CreateVPCAssociationAuthorization</a>
-         * request. Then use the account that created the VPC to submit an
-         * <code>AssociateVPCWithHostedZone</code> request.</p> </li> <li> <p>If a subnet
-         * in the VPC was shared with another account, you can use the account that the
-         * subnet was shared with to submit an <code>AssociateVPCWithHostedZone</code>
-         * request. For more information about sharing subnets, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">Working
-         * with Shared VPCs</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * You can't convert a public hosted zone into a private hosted zone.</p>
+         *   <p>If you want to associate a VPC that was created by using
+         * one AWS account with a private hosted zone that was created by using a different
+         * account, the AWS account that created the private hosted zone must first submit
+         * a <code>CreateVPCAssociationAuthorization</code> request. Then the account that
+         * created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
+         * request.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateVPCWithHostedZoneOutcome AssociateVPCWithHostedZone(const Model::AssociateVPCWithHostedZoneRequest& request) const;
 
         /**
-         * <p>Associates an Amazon VPC with a private hosted zone. </p> <note> <p>To
+         * <p>Associates an Amazon VPC with a private hosted zone. </p>  <p>To
          * perform the association, the VPC and the private hosted zone must already exist.
-         * Also, you can't convert a public hosted zone into a private hosted zone.</p>
-         * </note> <p>If you want to associate a VPC that was created by one AWS account
-         * with a private hosted zone that was created by a different account, do one of
-         * the following:</p> <ul> <li> <p>Use the AWS account that created the private
-         * hosted zone to submit a <a
-         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateVPCAssociationAuthorization.html">CreateVPCAssociationAuthorization</a>
-         * request. Then use the account that created the VPC to submit an
-         * <code>AssociateVPCWithHostedZone</code> request.</p> </li> <li> <p>If a subnet
-         * in the VPC was shared with another account, you can use the account that the
-         * subnet was shared with to submit an <code>AssociateVPCWithHostedZone</code>
-         * request. For more information about sharing subnets, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">Working
-         * with Shared VPCs</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * You can't convert a public hosted zone into a private hosted zone.</p>
+         *   <p>If you want to associate a VPC that was created by using
+         * one AWS account with a private hosted zone that was created by using a different
+         * account, the AWS account that created the private hosted zone must first submit
+         * a <code>CreateVPCAssociationAuthorization</code> request. Then the account that
+         * created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
+         * request.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone">AWS
          * API Reference</a></p>
          *
@@ -432,21 +479,15 @@ namespace Model
         virtual Model::AssociateVPCWithHostedZoneOutcomeCallable AssociateVPCWithHostedZoneCallable(const Model::AssociateVPCWithHostedZoneRequest& request) const;
 
         /**
-         * <p>Associates an Amazon VPC with a private hosted zone. </p> <note> <p>To
+         * <p>Associates an Amazon VPC with a private hosted zone. </p>  <p>To
          * perform the association, the VPC and the private hosted zone must already exist.
-         * Also, you can't convert a public hosted zone into a private hosted zone.</p>
-         * </note> <p>If you want to associate a VPC that was created by one AWS account
-         * with a private hosted zone that was created by a different account, do one of
-         * the following:</p> <ul> <li> <p>Use the AWS account that created the private
-         * hosted zone to submit a <a
-         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateVPCAssociationAuthorization.html">CreateVPCAssociationAuthorization</a>
-         * request. Then use the account that created the VPC to submit an
-         * <code>AssociateVPCWithHostedZone</code> request.</p> </li> <li> <p>If a subnet
-         * in the VPC was shared with another account, you can use the account that the
-         * subnet was shared with to submit an <code>AssociateVPCWithHostedZone</code>
-         * request. For more information about sharing subnets, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">Working
-         * with Shared VPCs</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * You can't convert a public hosted zone into a private hosted zone.</p>
+         *   <p>If you want to associate a VPC that was created by using
+         * one AWS account with a private hosted zone that was created by using a different
+         * account, the AWS account that created the private hosted zone must first submit
+         * a <code>CreateVPCAssociationAuthorization</code> request. Then the account that
+         * created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
+         * request.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone">AWS
          * API Reference</a></p>
          *
@@ -459,31 +500,33 @@ namespace Model
          * authoritative DNS information for a specified domain name or subdomain name. For
          * example, you can use <code>ChangeResourceRecordSets</code> to create a resource
          * record set that routes traffic for test.example.com to a web server that has an
-         * IP address of 192.0.2.44.</p> <p> <b>Change Batches and Transactional
+         * IP address of 192.0.2.44.</p> <p> <b>Deleting Resource Record Sets</b> </p>
+         * <p>To delete a resource record set, you must specify all the same values that
+         * you specified when you created it.</p> <p> <b>Change Batches and Transactional
          * Changes</b> </p> <p>The request body must include a document with a
          * <code>ChangeResourceRecordSetsRequest</code> element. The request body contains
          * a list of change items, known as a change batch. Change batches are considered
-         * transactional changes. When using the Amazon Route 53 API to change resource
-         * record sets, Route 53 either makes all or none of the changes in a change batch
-         * request. This ensures that Route 53 never partially implements the intended
-         * changes to the resource record sets in a hosted zone. </p> <p>For example, a
-         * change batch request that deletes the <code>CNAME</code> record for
-         * www.example.com and creates an alias resource record set for www.example.com.
-         * Route 53 deletes the first resource record set and creates the second resource
-         * record set in a single operation. If either the <code>DELETE</code> or the
-         * <code>CREATE</code> action fails, then both changes (plus any other changes in
-         * the batch) fail, and the original <code>CNAME</code> record continues to
-         * exist.</p> <important> <p>Due to the nature of transactional changes, you can't
-         * delete the same resource record set more than once in a single change batch. If
-         * you attempt to delete the same change batch more than once, Route 53 returns an
-         * <code>InvalidChangeBatch</code> error.</p> </important> <p> <b>Traffic Flow</b>
-         * </p> <p>To create resource record sets for complex routing configurations, use
-         * either the traffic flow visual editor in the Route 53 console or the API actions
-         * for traffic policies and traffic policy instances. Save the configuration as a
-         * traffic policy, then associate the traffic policy with one or more domain names
-         * (such as example.com) or subdomain names (such as www.example.com), in the same
-         * hosted zone or in multiple hosted zones. You can roll back the updates if the
-         * new configuration isn't performing as expected. For more information, see <a
+         * transactional changes. Route 53 validates the changes in the request and then
+         * either makes all or none of the changes in the change batch request. This
+         * ensures that DNS routing isn't adversely affected by partial changes to the
+         * resource record sets in a hosted zone. </p> <p>For example, suppose a change
+         * batch request contains two changes: it deletes the <code>CNAME</code> resource
+         * record set for www.example.com and creates an alias resource record set for
+         * www.example.com. If validation for both records succeeds, Route 53 deletes the
+         * first resource record set and creates the second resource record set in a single
+         * operation. If validation for either the <code>DELETE</code> or the
+         * <code>CREATE</code> action fails, then the request is canceled, and the original
+         * <code>CNAME</code> record continues to exist.</p>  <p>If you try to delete
+         * the same resource record set more than once in a single change batch, Route 53
+         * returns an <code>InvalidChangeBatch</code> error.</p>  <p> <b>Traffic
+         * Flow</b> </p> <p>To create resource record sets for complex routing
+         * configurations, use either the traffic flow visual editor in the Route 53
+         * console or the API actions for traffic policies and traffic policy instances.
+         * Save the configuration as a traffic policy, then associate the traffic policy
+         * with one or more domain names (such as example.com) or subdomain names (such as
+         * www.example.com), in the same hosted zone or in multiple hosted zones. You can
+         * roll back the updates if the new configuration isn't performing as expected. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-flow.html">Using
          * Traffic Flow to Route DNS Traffic</a> in the <i>Amazon Route 53 Developer
          * Guide</i>.</p> <p> <b>Create, Delete, and Upsert</b> </p> <p>Use
@@ -524,31 +567,33 @@ namespace Model
          * authoritative DNS information for a specified domain name or subdomain name. For
          * example, you can use <code>ChangeResourceRecordSets</code> to create a resource
          * record set that routes traffic for test.example.com to a web server that has an
-         * IP address of 192.0.2.44.</p> <p> <b>Change Batches and Transactional
+         * IP address of 192.0.2.44.</p> <p> <b>Deleting Resource Record Sets</b> </p>
+         * <p>To delete a resource record set, you must specify all the same values that
+         * you specified when you created it.</p> <p> <b>Change Batches and Transactional
          * Changes</b> </p> <p>The request body must include a document with a
          * <code>ChangeResourceRecordSetsRequest</code> element. The request body contains
          * a list of change items, known as a change batch. Change batches are considered
-         * transactional changes. When using the Amazon Route 53 API to change resource
-         * record sets, Route 53 either makes all or none of the changes in a change batch
-         * request. This ensures that Route 53 never partially implements the intended
-         * changes to the resource record sets in a hosted zone. </p> <p>For example, a
-         * change batch request that deletes the <code>CNAME</code> record for
-         * www.example.com and creates an alias resource record set for www.example.com.
-         * Route 53 deletes the first resource record set and creates the second resource
-         * record set in a single operation. If either the <code>DELETE</code> or the
-         * <code>CREATE</code> action fails, then both changes (plus any other changes in
-         * the batch) fail, and the original <code>CNAME</code> record continues to
-         * exist.</p> <important> <p>Due to the nature of transactional changes, you can't
-         * delete the same resource record set more than once in a single change batch. If
-         * you attempt to delete the same change batch more than once, Route 53 returns an
-         * <code>InvalidChangeBatch</code> error.</p> </important> <p> <b>Traffic Flow</b>
-         * </p> <p>To create resource record sets for complex routing configurations, use
-         * either the traffic flow visual editor in the Route 53 console or the API actions
-         * for traffic policies and traffic policy instances. Save the configuration as a
-         * traffic policy, then associate the traffic policy with one or more domain names
-         * (such as example.com) or subdomain names (such as www.example.com), in the same
-         * hosted zone or in multiple hosted zones. You can roll back the updates if the
-         * new configuration isn't performing as expected. For more information, see <a
+         * transactional changes. Route 53 validates the changes in the request and then
+         * either makes all or none of the changes in the change batch request. This
+         * ensures that DNS routing isn't adversely affected by partial changes to the
+         * resource record sets in a hosted zone. </p> <p>For example, suppose a change
+         * batch request contains two changes: it deletes the <code>CNAME</code> resource
+         * record set for www.example.com and creates an alias resource record set for
+         * www.example.com. If validation for both records succeeds, Route 53 deletes the
+         * first resource record set and creates the second resource record set in a single
+         * operation. If validation for either the <code>DELETE</code> or the
+         * <code>CREATE</code> action fails, then the request is canceled, and the original
+         * <code>CNAME</code> record continues to exist.</p>  <p>If you try to delete
+         * the same resource record set more than once in a single change batch, Route 53
+         * returns an <code>InvalidChangeBatch</code> error.</p>  <p> <b>Traffic
+         * Flow</b> </p> <p>To create resource record sets for complex routing
+         * configurations, use either the traffic flow visual editor in the Route 53
+         * console or the API actions for traffic policies and traffic policy instances.
+         * Save the configuration as a traffic policy, then associate the traffic policy
+         * with one or more domain names (such as example.com) or subdomain names (such as
+         * www.example.com), in the same hosted zone or in multiple hosted zones. You can
+         * roll back the updates if the new configuration isn't performing as expected. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-flow.html">Using
          * Traffic Flow to Route DNS Traffic</a> in the <i>Amazon Route 53 Developer
          * Guide</i>.</p> <p> <b>Create, Delete, and Upsert</b> </p> <p>Use
@@ -591,31 +636,33 @@ namespace Model
          * authoritative DNS information for a specified domain name or subdomain name. For
          * example, you can use <code>ChangeResourceRecordSets</code> to create a resource
          * record set that routes traffic for test.example.com to a web server that has an
-         * IP address of 192.0.2.44.</p> <p> <b>Change Batches and Transactional
+         * IP address of 192.0.2.44.</p> <p> <b>Deleting Resource Record Sets</b> </p>
+         * <p>To delete a resource record set, you must specify all the same values that
+         * you specified when you created it.</p> <p> <b>Change Batches and Transactional
          * Changes</b> </p> <p>The request body must include a document with a
          * <code>ChangeResourceRecordSetsRequest</code> element. The request body contains
          * a list of change items, known as a change batch. Change batches are considered
-         * transactional changes. When using the Amazon Route 53 API to change resource
-         * record sets, Route 53 either makes all or none of the changes in a change batch
-         * request. This ensures that Route 53 never partially implements the intended
-         * changes to the resource record sets in a hosted zone. </p> <p>For example, a
-         * change batch request that deletes the <code>CNAME</code> record for
-         * www.example.com and creates an alias resource record set for www.example.com.
-         * Route 53 deletes the first resource record set and creates the second resource
-         * record set in a single operation. If either the <code>DELETE</code> or the
-         * <code>CREATE</code> action fails, then both changes (plus any other changes in
-         * the batch) fail, and the original <code>CNAME</code> record continues to
-         * exist.</p> <important> <p>Due to the nature of transactional changes, you can't
-         * delete the same resource record set more than once in a single change batch. If
-         * you attempt to delete the same change batch more than once, Route 53 returns an
-         * <code>InvalidChangeBatch</code> error.</p> </important> <p> <b>Traffic Flow</b>
-         * </p> <p>To create resource record sets for complex routing configurations, use
-         * either the traffic flow visual editor in the Route 53 console or the API actions
-         * for traffic policies and traffic policy instances. Save the configuration as a
-         * traffic policy, then associate the traffic policy with one or more domain names
-         * (such as example.com) or subdomain names (such as www.example.com), in the same
-         * hosted zone or in multiple hosted zones. You can roll back the updates if the
-         * new configuration isn't performing as expected. For more information, see <a
+         * transactional changes. Route 53 validates the changes in the request and then
+         * either makes all or none of the changes in the change batch request. This
+         * ensures that DNS routing isn't adversely affected by partial changes to the
+         * resource record sets in a hosted zone. </p> <p>For example, suppose a change
+         * batch request contains two changes: it deletes the <code>CNAME</code> resource
+         * record set for www.example.com and creates an alias resource record set for
+         * www.example.com. If validation for both records succeeds, Route 53 deletes the
+         * first resource record set and creates the second resource record set in a single
+         * operation. If validation for either the <code>DELETE</code> or the
+         * <code>CREATE</code> action fails, then the request is canceled, and the original
+         * <code>CNAME</code> record continues to exist.</p>  <p>If you try to delete
+         * the same resource record set more than once in a single change batch, Route 53
+         * returns an <code>InvalidChangeBatch</code> error.</p>  <p> <b>Traffic
+         * Flow</b> </p> <p>To create resource record sets for complex routing
+         * configurations, use either the traffic flow visual editor in the Route 53
+         * console or the API actions for traffic policies and traffic policy instances.
+         * Save the configuration as a traffic policy, then associate the traffic policy
+         * with one or more domain names (such as example.com) or subdomain names (such as
+         * www.example.com), in the same hosted zone or in multiple hosted zones. You can
+         * roll back the updates if the new configuration isn't performing as expected. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-flow.html">Using
          * Traffic Flow to Route DNS Traffic</a> in the <i>Amazon Route 53 Developer
          * Guide</i>.</p> <p> <b>Create, Delete, and Upsert</b> </p> <p>Use
@@ -793,10 +840,10 @@ namespace Model
          * domain, such as example.com, and its subdomains (apex.example.com,
          * acme.example.com). You create records in a private hosted zone to define how you
          * want to route traffic for a domain and its subdomains within one or more Amazon
-         * Virtual Private Clouds (Amazon VPCs). </p> <important> <p>You can't convert a
+         * Virtual Private Clouds (Amazon VPCs). </p>  <p>You can't convert a
          * public hosted zone to a private hosted zone or vice versa. Instead, you must
          * create a new hosted zone with the same name and create new resource record
-         * sets.</p> </important> <p>For more information about charges for hosted zones,
+         * sets.</p>  <p>For more information about charges for hosted zones,
          * see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
          * Pricing</a>.</p> <p>Note the following:</p> <ul> <li> <p>You can't create a
          * hosted zone for a top-level domain (TLD) such as .com.</p> </li> <li> <p>For
@@ -830,10 +877,10 @@ namespace Model
          * domain, such as example.com, and its subdomains (apex.example.com,
          * acme.example.com). You create records in a private hosted zone to define how you
          * want to route traffic for a domain and its subdomains within one or more Amazon
-         * Virtual Private Clouds (Amazon VPCs). </p> <important> <p>You can't convert a
+         * Virtual Private Clouds (Amazon VPCs). </p>  <p>You can't convert a
          * public hosted zone to a private hosted zone or vice versa. Instead, you must
          * create a new hosted zone with the same name and create new resource record
-         * sets.</p> </important> <p>For more information about charges for hosted zones,
+         * sets.</p>  <p>For more information about charges for hosted zones,
          * see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
          * Pricing</a>.</p> <p>Note the following:</p> <ul> <li> <p>You can't create a
          * hosted zone for a top-level domain (TLD) such as .com.</p> </li> <li> <p>For
@@ -869,10 +916,10 @@ namespace Model
          * domain, such as example.com, and its subdomains (apex.example.com,
          * acme.example.com). You create records in a private hosted zone to define how you
          * want to route traffic for a domain and its subdomains within one or more Amazon
-         * Virtual Private Clouds (Amazon VPCs). </p> <important> <p>You can't convert a
+         * Virtual Private Clouds (Amazon VPCs). </p>  <p>You can't convert a
          * public hosted zone to a private hosted zone or vice versa. Instead, you must
          * create a new hosted zone with the same name and create new resource record
-         * sets.</p> </important> <p>For more information about charges for hosted zones,
+         * sets.</p>  <p>For more information about charges for hosted zones,
          * see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
          * Pricing</a>.</p> <p>Note the following:</p> <ul> <li> <p>You can't create a
          * hosted zone for a top-level domain (TLD) such as .com.</p> </li> <li> <p>For
@@ -903,6 +950,34 @@ namespace Model
         virtual void CreateHostedZoneAsync(const Model::CreateHostedZoneRequest& request, const CreateHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a new key signing key (KSK) associated with a hosted zone. You can
+         * only have two KSKs per hosted zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateKeySigningKeyOutcome CreateKeySigningKey(const Model::CreateKeySigningKeyRequest& request) const;
+
+        /**
+         * <p>Creates a new key signing key (KSK) associated with a hosted zone. You can
+         * only have two KSKs per hosted zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateKeySigningKeyOutcomeCallable CreateKeySigningKeyCallable(const Model::CreateKeySigningKeyRequest& request) const;
+
+        /**
+         * <p>Creates a new key signing key (KSK) associated with a hosted zone. You can
+         * only have two KSKs per hosted zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateKeySigningKeyAsync(const Model::CreateKeySigningKeyRequest& request, const CreateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a configuration for DNS query logging. After you create a query
          * logging configuration, Amazon Route 53 begins to publish log data to an Amazon
          * CloudWatch Logs log group.</p> <p>DNS query logs contain information about the
@@ -912,9 +987,9 @@ namespace Model
          * <p>DNS record type, such as A or AAAA</p> </li> <li> <p>DNS response code, such
          * as <code>NoError</code> or <code>ServFail</code> </p> </li> </ul> <dl> <dt>Log
          * Group and Resource Policy</dt> <dd> <p>Before you create a query logging
-         * configuration, perform the following operations.</p> <note> <p>If you create a
+         * configuration, perform the following operations.</p>  <p>If you create a
          * query logging configuration using the Route 53 console, Route 53 performs these
-         * operations automatically.</p> </note> <ol> <li> <p>Create a CloudWatch Logs log
+         * operations automatically.</p>  <ol> <li> <p>Create a CloudWatch Logs log
          * group, and make note of the ARN, which you specify when you create a query
          * logging configuration. Note the following:</p> <ul> <li> <p>You must create the
          * log group in the us-east-1 region.</p> </li> <li> <p>You must use the same AWS
@@ -934,9 +1009,9 @@ namespace Model
          * groups that you created for query logging configurations, replace the hosted
          * zone name with <code>*</code>, for example:</p> <p>
          * <code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/ *</code> </p>
-         * <note> <p>You can't use the CloudWatch console to create or edit a resource
+         *  <p>You can't use the CloudWatch console to create or edit a resource
          * policy. You must use the CloudWatch API, one of the AWS SDKs, or the AWS
-         * CLI.</p> </note> </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt> <dd>
+         * CLI.</p>  </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt> <dd>
          * <p>When Route 53 finishes creating the configuration for DNS query logging, it
          * does the following:</p> <ul> <li> <p>Creates a log stream for an edge location
          * the first time that the edge location responds to DNS queries for the specified
@@ -988,9 +1063,9 @@ namespace Model
          * <p>DNS record type, such as A or AAAA</p> </li> <li> <p>DNS response code, such
          * as <code>NoError</code> or <code>ServFail</code> </p> </li> </ul> <dl> <dt>Log
          * Group and Resource Policy</dt> <dd> <p>Before you create a query logging
-         * configuration, perform the following operations.</p> <note> <p>If you create a
+         * configuration, perform the following operations.</p>  <p>If you create a
          * query logging configuration using the Route 53 console, Route 53 performs these
-         * operations automatically.</p> </note> <ol> <li> <p>Create a CloudWatch Logs log
+         * operations automatically.</p>  <ol> <li> <p>Create a CloudWatch Logs log
          * group, and make note of the ARN, which you specify when you create a query
          * logging configuration. Note the following:</p> <ul> <li> <p>You must create the
          * log group in the us-east-1 region.</p> </li> <li> <p>You must use the same AWS
@@ -1010,9 +1085,9 @@ namespace Model
          * groups that you created for query logging configurations, replace the hosted
          * zone name with <code>*</code>, for example:</p> <p>
          * <code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/ *</code> </p>
-         * <note> <p>You can't use the CloudWatch console to create or edit a resource
+         *  <p>You can't use the CloudWatch console to create or edit a resource
          * policy. You must use the CloudWatch API, one of the AWS SDKs, or the AWS
-         * CLI.</p> </note> </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt> <dd>
+         * CLI.</p>  </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt> <dd>
          * <p>When Route 53 finishes creating the configuration for DNS query logging, it
          * does the following:</p> <ul> <li> <p>Creates a log stream for an edge location
          * the first time that the edge location responds to DNS queries for the specified
@@ -1066,9 +1141,9 @@ namespace Model
          * <p>DNS record type, such as A or AAAA</p> </li> <li> <p>DNS response code, such
          * as <code>NoError</code> or <code>ServFail</code> </p> </li> </ul> <dl> <dt>Log
          * Group and Resource Policy</dt> <dd> <p>Before you create a query logging
-         * configuration, perform the following operations.</p> <note> <p>If you create a
+         * configuration, perform the following operations.</p>  <p>If you create a
          * query logging configuration using the Route 53 console, Route 53 performs these
-         * operations automatically.</p> </note> <ol> <li> <p>Create a CloudWatch Logs log
+         * operations automatically.</p>  <ol> <li> <p>Create a CloudWatch Logs log
          * group, and make note of the ARN, which you specify when you create a query
          * logging configuration. Note the following:</p> <ul> <li> <p>You must create the
          * log group in the us-east-1 region.</p> </li> <li> <p>You must use the same AWS
@@ -1088,9 +1163,9 @@ namespace Model
          * groups that you created for query logging configurations, replace the hosted
          * zone name with <code>*</code>, for example:</p> <p>
          * <code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/ *</code> </p>
-         * <note> <p>You can't use the CloudWatch console to create or edit a resource
+         *  <p>You can't use the CloudWatch console to create or edit a resource
          * policy. You must use the CloudWatch API, one of the AWS SDKs, or the AWS
-         * CLI.</p> </note> </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt> <dd>
+         * CLI.</p>  </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt> <dd>
          * <p>When Route 53 finishes creating the configuration for DNS query logging, it
          * does the following:</p> <ul> <li> <p>Creates a log stream for an edge location
          * the first time that the edge location responds to DNS queries for the specified
@@ -1139,8 +1214,8 @@ namespace Model
          * multiple hosted zones that were created by the same AWS account. </p> <p>You can
          * also create a reusable delegation set that uses the four name servers that are
          * associated with an existing hosted zone. Specify the hosted zone ID in the
-         * <code>CreateReusableDelegationSet</code> request.</p> <note> <p>You can't
-         * associate a reusable delegation set with a private hosted zone.</p> </note>
+         * <code>CreateReusableDelegationSet</code> request.</p>  <p>You can't
+         * associate a reusable delegation set with a private hosted zone.</p> 
          * <p>For information about using a reusable delegation set to configure white
          * label name servers, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring
@@ -1176,8 +1251,8 @@ namespace Model
          * multiple hosted zones that were created by the same AWS account. </p> <p>You can
          * also create a reusable delegation set that uses the four name servers that are
          * associated with an existing hosted zone. Specify the hosted zone ID in the
-         * <code>CreateReusableDelegationSet</code> request.</p> <note> <p>You can't
-         * associate a reusable delegation set with a private hosted zone.</p> </note>
+         * <code>CreateReusableDelegationSet</code> request.</p>  <p>You can't
+         * associate a reusable delegation set with a private hosted zone.</p> 
          * <p>For information about using a reusable delegation set to configure white
          * label name servers, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring
@@ -1215,8 +1290,8 @@ namespace Model
          * multiple hosted zones that were created by the same AWS account. </p> <p>You can
          * also create a reusable delegation set that uses the four name servers that are
          * associated with an existing hosted zone. Specify the hosted zone ID in the
-         * <code>CreateReusableDelegationSet</code> request.</p> <note> <p>You can't
-         * associate a reusable delegation set with a private hosted zone.</p> </note>
+         * <code>CreateReusableDelegationSet</code> request.</p>  <p>You can't
+         * associate a reusable delegation set with a private hosted zone.</p> 
          * <p>For information about using a reusable delegation set to configure white
          * label name servers, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring
@@ -1376,10 +1451,10 @@ namespace Model
          * <code>CreateVPCAssociationAuthorization</code> request, you must use the account
          * that created the hosted zone. After you authorize the association, use the
          * account that created the VPC to submit an
-         * <code>AssociateVPCWithHostedZone</code> request.</p> <note> <p>If you want to
+         * <code>AssociateVPCWithHostedZone</code> request.</p>  <p>If you want to
          * associate multiple VPCs that you created by using one account with a hosted zone
          * that you created by using a different account, you must submit one authorization
-         * request for each VPC.</p> </note><p><h3>See Also:</h3>   <a
+         * request for each VPC.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization">AWS
          * API Reference</a></p>
          */
@@ -1392,10 +1467,10 @@ namespace Model
          * <code>CreateVPCAssociationAuthorization</code> request, you must use the account
          * that created the hosted zone. After you authorize the association, use the
          * account that created the VPC to submit an
-         * <code>AssociateVPCWithHostedZone</code> request.</p> <note> <p>If you want to
+         * <code>AssociateVPCWithHostedZone</code> request.</p>  <p>If you want to
          * associate multiple VPCs that you created by using one account with a hosted zone
          * that you created by using a different account, you must submit one authorization
-         * request for each VPC.</p> </note><p><h3>See Also:</h3>   <a
+         * request for each VPC.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization">AWS
          * API Reference</a></p>
          *
@@ -1410,10 +1485,10 @@ namespace Model
          * <code>CreateVPCAssociationAuthorization</code> request, you must use the account
          * that created the hosted zone. After you authorize the association, use the
          * account that created the VPC to submit an
-         * <code>AssociateVPCWithHostedZone</code> request.</p> <note> <p>If you want to
+         * <code>AssociateVPCWithHostedZone</code> request.</p>  <p>If you want to
          * associate multiple VPCs that you created by using one account with a hosted zone
          * that you created by using a different account, you must submit one authorization
-         * request for each VPC.</p> </note><p><h3>See Also:</h3>   <a
+         * request for each VPC.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization">AWS
          * API Reference</a></p>
          *
@@ -1422,7 +1497,38 @@ namespace Model
         virtual void CreateVPCAssociationAuthorizationAsync(const Model::CreateVPCAssociationAuthorizationRequest& request, const CreateVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a health check.</p> <important> <p>Amazon Route 53 does not prevent
+         * <p>Deactivates a key signing key (KSK) so that it will not be used for signing
+         * by DNSSEC. This operation changes the KSK status to
+         * <code>INACTIVE</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeactivateKeySigningKeyOutcome DeactivateKeySigningKey(const Model::DeactivateKeySigningKeyRequest& request) const;
+
+        /**
+         * <p>Deactivates a key signing key (KSK) so that it will not be used for signing
+         * by DNSSEC. This operation changes the KSK status to
+         * <code>INACTIVE</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeactivateKeySigningKeyOutcomeCallable DeactivateKeySigningKeyCallable(const Model::DeactivateKeySigningKeyRequest& request) const;
+
+        /**
+         * <p>Deactivates a key signing key (KSK) so that it will not be used for signing
+         * by DNSSEC. This operation changes the KSK status to
+         * <code>INACTIVE</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeactivateKeySigningKeyAsync(const Model::DeactivateKeySigningKeyRequest& request, const DeactivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a health check.</p>  <p>Amazon Route 53 does not prevent
          * you from deleting a health check even if the health check is associated with one
          * or more resource record sets. If you delete a health check and you don't update
          * the associated resource record sets, the future status of the health check can't
@@ -1430,7 +1536,7 @@ namespace Model
          * your DNS failover configuration. For more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing
          * and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer
-         * Guide</i>.</p> </important> <p>If you're using AWS Cloud Map and you configured
+         * Guide</i>.</p>  <p>If you're using AWS Cloud Map and you configured
          * Cloud Map to create a Route 53 health check when you register an instance, you
          * can't use the Route 53 <code>DeleteHealthCheck</code> command to delete the
          * health check. The health check is deleted automatically when you deregister the
@@ -1442,7 +1548,7 @@ namespace Model
         virtual Model::DeleteHealthCheckOutcome DeleteHealthCheck(const Model::DeleteHealthCheckRequest& request) const;
 
         /**
-         * <p>Deletes a health check.</p> <important> <p>Amazon Route 53 does not prevent
+         * <p>Deletes a health check.</p>  <p>Amazon Route 53 does not prevent
          * you from deleting a health check even if the health check is associated with one
          * or more resource record sets. If you delete a health check and you don't update
          * the associated resource record sets, the future status of the health check can't
@@ -1450,7 +1556,7 @@ namespace Model
          * your DNS failover configuration. For more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing
          * and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer
-         * Guide</i>.</p> </important> <p>If you're using AWS Cloud Map and you configured
+         * Guide</i>.</p>  <p>If you're using AWS Cloud Map and you configured
          * Cloud Map to create a Route 53 health check when you register an instance, you
          * can't use the Route 53 <code>DeleteHealthCheck</code> command to delete the
          * health check. The health check is deleted automatically when you deregister the
@@ -1464,7 +1570,7 @@ namespace Model
         virtual Model::DeleteHealthCheckOutcomeCallable DeleteHealthCheckCallable(const Model::DeleteHealthCheckRequest& request) const;
 
         /**
-         * <p>Deletes a health check.</p> <important> <p>Amazon Route 53 does not prevent
+         * <p>Deletes a health check.</p>  <p>Amazon Route 53 does not prevent
          * you from deleting a health check even if the health check is associated with one
          * or more resource record sets. If you delete a health check and you don't update
          * the associated resource record sets, the future status of the health check can't
@@ -1472,7 +1578,7 @@ namespace Model
          * your DNS failover configuration. For more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing
          * and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer
-         * Guide</i>.</p> </important> <p>If you're using AWS Cloud Map and you configured
+         * Guide</i>.</p>  <p>If you're using AWS Cloud Map and you configured
          * Cloud Map to create a Route 53 health check when you register an instance, you
          * can't use the Route 53 <code>DeleteHealthCheck</code> command to delete the
          * health check. The health check is deleted automatically when you deregister the
@@ -1495,14 +1601,14 @@ namespace Model
          * another service.)</p> <p>If you want to keep your domain registration but you
          * want to stop routing internet traffic to your website or web application, we
          * recommend that you delete resource record sets in the hosted zone instead of
-         * deleting the hosted zone.</p> <important> <p>If you delete a hosted zone, you
+         * deleting the hosted zone.</p>  <p>If you delete a hosted zone, you
          * can't undelete it. You must create a new hosted zone and update the name servers
          * for your domain registration, which can require up to 48 hours to take effect.
          * (If you delegated responsibility for a subdomain to a hosted zone and you delete
          * the child hosted zone, you must update the name servers in the parent hosted
          * zone.) In addition, if you delete a hosted zone, someone could hijack the domain
          * and route traffic to their own resources using your domain name.</p>
-         * </important> <p>If you want to avoid the monthly charge for the hosted zone, you
+         *  <p>If you want to avoid the monthly charge for the hosted zone, you
          * can transfer DNS service for the domain to a free DNS service. When you transfer
          * DNS service, you have to update the name servers for the domain registration. If
          * the domain is registered with Route 53, see <a
@@ -1539,14 +1645,14 @@ namespace Model
          * another service.)</p> <p>If you want to keep your domain registration but you
          * want to stop routing internet traffic to your website or web application, we
          * recommend that you delete resource record sets in the hosted zone instead of
-         * deleting the hosted zone.</p> <important> <p>If you delete a hosted zone, you
+         * deleting the hosted zone.</p>  <p>If you delete a hosted zone, you
          * can't undelete it. You must create a new hosted zone and update the name servers
          * for your domain registration, which can require up to 48 hours to take effect.
          * (If you delegated responsibility for a subdomain to a hosted zone and you delete
          * the child hosted zone, you must update the name servers in the parent hosted
          * zone.) In addition, if you delete a hosted zone, someone could hijack the domain
          * and route traffic to their own resources using your domain name.</p>
-         * </important> <p>If you want to avoid the monthly charge for the hosted zone, you
+         *  <p>If you want to avoid the monthly charge for the hosted zone, you
          * can transfer DNS service for the domain to a free DNS service. When you transfer
          * DNS service, you have to update the name servers for the domain registration. If
          * the domain is registered with Route 53, see <a
@@ -1585,14 +1691,14 @@ namespace Model
          * another service.)</p> <p>If you want to keep your domain registration but you
          * want to stop routing internet traffic to your website or web application, we
          * recommend that you delete resource record sets in the hosted zone instead of
-         * deleting the hosted zone.</p> <important> <p>If you delete a hosted zone, you
+         * deleting the hosted zone.</p>  <p>If you delete a hosted zone, you
          * can't undelete it. You must create a new hosted zone and update the name servers
          * for your domain registration, which can require up to 48 hours to take effect.
          * (If you delegated responsibility for a subdomain to a hosted zone and you delete
          * the child hosted zone, you must update the name servers in the parent hosted
          * zone.) In addition, if you delete a hosted zone, someone could hijack the domain
          * and route traffic to their own resources using your domain name.</p>
-         * </important> <p>If you want to avoid the monthly charge for the hosted zone, you
+         *  <p>If you want to avoid the monthly charge for the hosted zone, you
          * can transfer DNS service for the domain to a free DNS service. When you transfer
          * DNS service, you have to update the name servers for the domain registration. If
          * the domain is registered with Route 53, see <a
@@ -1620,6 +1726,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteHostedZoneAsync(const Model::DeleteHostedZoneRequest& request, const DeleteHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a key signing key (KSK). Before you can delete a KSK, you must
+         * deactivate it. The KSK must be deactived before you can delete it regardless of
+         * whether the hosted zone is enabled for DNSSEC signing.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteKeySigningKeyOutcome DeleteKeySigningKey(const Model::DeleteKeySigningKeyRequest& request) const;
+
+        /**
+         * <p>Deletes a key signing key (KSK). Before you can delete a KSK, you must
+         * deactivate it. The KSK must be deactived before you can delete it regardless of
+         * whether the hosted zone is enabled for DNSSEC signing.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteKeySigningKeyOutcomeCallable DeleteKeySigningKeyCallable(const Model::DeleteKeySigningKeyRequest& request) const;
+
+        /**
+         * <p>Deletes a key signing key (KSK). Before you can delete a KSK, you must
+         * deactivate it. The KSK must be deactived before you can delete it regardless of
+         * whether the hosted zone is enabled for DNSSEC signing.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteKeySigningKeyAsync(const Model::DeleteKeySigningKeyRequest& request, const DeleteKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a configuration for DNS query logging. If you delete a configuration,
@@ -1662,9 +1802,9 @@ namespace Model
         virtual void DeleteQueryLoggingConfigAsync(const Model::DeleteQueryLoggingConfigRequest& request, const DeleteQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a reusable delegation set.</p> <important> <p>You can delete a
+         * <p>Deletes a reusable delegation set.</p>  <p>You can delete a
          * reusable delegation set only if it isn't associated with any hosted zones.</p>
-         * </important> <p>To verify that the reusable delegation set is not associated
+         *  <p>To verify that the reusable delegation set is not associated
          * with any hosted zones, submit a <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetReusableDelegationSet.html">GetReusableDelegationSet</a>
          * request and specify the ID of the reusable delegation set that you want to
@@ -1675,9 +1815,9 @@ namespace Model
         virtual Model::DeleteReusableDelegationSetOutcome DeleteReusableDelegationSet(const Model::DeleteReusableDelegationSetRequest& request) const;
 
         /**
-         * <p>Deletes a reusable delegation set.</p> <important> <p>You can delete a
+         * <p>Deletes a reusable delegation set.</p>  <p>You can delete a
          * reusable delegation set only if it isn't associated with any hosted zones.</p>
-         * </important> <p>To verify that the reusable delegation set is not associated
+         *  <p>To verify that the reusable delegation set is not associated
          * with any hosted zones, submit a <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetReusableDelegationSet.html">GetReusableDelegationSet</a>
          * request and specify the ID of the reusable delegation set that you want to
@@ -1690,9 +1830,9 @@ namespace Model
         virtual Model::DeleteReusableDelegationSetOutcomeCallable DeleteReusableDelegationSetCallable(const Model::DeleteReusableDelegationSetRequest& request) const;
 
         /**
-         * <p>Deletes a reusable delegation set.</p> <important> <p>You can delete a
+         * <p>Deletes a reusable delegation set.</p>  <p>You can delete a
          * reusable delegation set only if it isn't associated with any hosted zones.</p>
-         * </important> <p>To verify that the reusable delegation set is not associated
+         *  <p>To verify that the reusable delegation set is not associated
          * with any hosted zones, submit a <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetReusableDelegationSet.html">GetReusableDelegationSet</a>
          * request and specify the ID of the reusable delegation set that you want to
@@ -1705,14 +1845,32 @@ namespace Model
         virtual void DeleteReusableDelegationSetAsync(const Model::DeleteReusableDelegationSetRequest& request, const DeleteReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a traffic policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a traffic policy.</p> <p>When you delete a traffic policy, Route 53
+         * sets a flag on the policy to indicate that it has been deleted. However, Route
+         * 53 never fully deletes the traffic policy. Note the following:</p> <ul> <li>
+         * <p>Deleted traffic policies aren't listed if you run <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicies.html">ListTrafficPolicies</a>.</p>
+         * </li> <li> <p> There's no way to get a list of deleted policies.</p> </li> <li>
+         * <p>If you retain the ID of the policy, you can get information about the policy,
+         * including the traffic policy document, by running <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicy.html">GetTrafficPolicy</a>.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteTrafficPolicyOutcome DeleteTrafficPolicy(const Model::DeleteTrafficPolicyRequest& request) const;
 
         /**
-         * <p>Deletes a traffic policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a traffic policy.</p> <p>When you delete a traffic policy, Route 53
+         * sets a flag on the policy to indicate that it has been deleted. However, Route
+         * 53 never fully deletes the traffic policy. Note the following:</p> <ul> <li>
+         * <p>Deleted traffic policies aren't listed if you run <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicies.html">ListTrafficPolicies</a>.</p>
+         * </li> <li> <p> There's no way to get a list of deleted policies.</p> </li> <li>
+         * <p>If you retain the ID of the policy, you can get information about the policy,
+         * including the traffic policy document, by running <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicy.html">GetTrafficPolicy</a>.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicy">AWS
          * API Reference</a></p>
          *
@@ -1721,7 +1879,16 @@ namespace Model
         virtual Model::DeleteTrafficPolicyOutcomeCallable DeleteTrafficPolicyCallable(const Model::DeleteTrafficPolicyRequest& request) const;
 
         /**
-         * <p>Deletes a traffic policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a traffic policy.</p> <p>When you delete a traffic policy, Route 53
+         * sets a flag on the policy to indicate that it has been deleted. However, Route
+         * 53 never fully deletes the traffic policy. Note the following:</p> <ul> <li>
+         * <p>Deleted traffic policies aren't listed if you run <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicies.html">ListTrafficPolicies</a>.</p>
+         * </li> <li> <p> There's no way to get a list of deleted policies.</p> </li> <li>
+         * <p>If you retain the ID of the policy, you can get information about the policy,
+         * including the traffic policy document, by running <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicy.html">GetTrafficPolicy</a>.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicy">AWS
          * API Reference</a></p>
          *
@@ -1731,9 +1898,9 @@ namespace Model
 
         /**
          * <p>Deletes a traffic policy instance and all of the resource record sets that
-         * Amazon Route 53 created when you created the instance.</p> <note> <p>In the
+         * Amazon Route 53 created when you created the instance.</p>  <p>In the
          * Route 53 console, traffic policy instances are known as policy records.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance">AWS
          * API Reference</a></p>
          */
@@ -1741,9 +1908,9 @@ namespace Model
 
         /**
          * <p>Deletes a traffic policy instance and all of the resource record sets that
-         * Amazon Route 53 created when you created the instance.</p> <note> <p>In the
+         * Amazon Route 53 created when you created the instance.</p>  <p>In the
          * Route 53 console, traffic policy instances are known as policy records.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance">AWS
          * API Reference</a></p>
          *
@@ -1753,9 +1920,9 @@ namespace Model
 
         /**
          * <p>Deletes a traffic policy instance and all of the resource record sets that
-         * Amazon Route 53 created when you created the instance.</p> <note> <p>In the
+         * Amazon Route 53 created when you created the instance.</p>  <p>In the
          * Route 53 console, traffic policy instances are known as policy records.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance">AWS
          * API Reference</a></p>
          *
@@ -1767,13 +1934,13 @@ namespace Model
          * <p>Removes authorization to submit an <code>AssociateVPCWithHostedZone</code>
          * request to associate a specified VPC with a hosted zone that was created by a
          * different account. You must use the account that created the hosted zone to
-         * submit a <code>DeleteVPCAssociationAuthorization</code> request.</p> <important>
+         * submit a <code>DeleteVPCAssociationAuthorization</code> request.</p> 
          * <p>Sending this request only prevents the AWS account that created the VPC from
          * associating the VPC with the Amazon Route 53 hosted zone in the future. If the
          * VPC is already associated with the hosted zone,
          * <code>DeleteVPCAssociationAuthorization</code> won't disassociate the VPC from
          * the hosted zone. If you want to delete an existing association, use
-         * <code>DisassociateVPCFromHostedZone</code>.</p> </important><p><h3>See
+         * <code>DisassociateVPCFromHostedZone</code>.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization">AWS
          * API Reference</a></p>
@@ -1784,13 +1951,13 @@ namespace Model
          * <p>Removes authorization to submit an <code>AssociateVPCWithHostedZone</code>
          * request to associate a specified VPC with a hosted zone that was created by a
          * different account. You must use the account that created the hosted zone to
-         * submit a <code>DeleteVPCAssociationAuthorization</code> request.</p> <important>
+         * submit a <code>DeleteVPCAssociationAuthorization</code> request.</p> 
          * <p>Sending this request only prevents the AWS account that created the VPC from
          * associating the VPC with the Amazon Route 53 hosted zone in the future. If the
          * VPC is already associated with the hosted zone,
          * <code>DeleteVPCAssociationAuthorization</code> won't disassociate the VPC from
          * the hosted zone. If you want to delete an existing association, use
-         * <code>DisassociateVPCFromHostedZone</code>.</p> </important><p><h3>See
+         * <code>DisassociateVPCFromHostedZone</code>.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization">AWS
          * API Reference</a></p>
@@ -1803,13 +1970,13 @@ namespace Model
          * <p>Removes authorization to submit an <code>AssociateVPCWithHostedZone</code>
          * request to associate a specified VPC with a hosted zone that was created by a
          * different account. You must use the account that created the hosted zone to
-         * submit a <code>DeleteVPCAssociationAuthorization</code> request.</p> <important>
+         * submit a <code>DeleteVPCAssociationAuthorization</code> request.</p> 
          * <p>Sending this request only prevents the AWS account that created the VPC from
          * associating the VPC with the Amazon Route 53 hosted zone in the future. If the
          * VPC is already associated with the hosted zone,
          * <code>DeleteVPCAssociationAuthorization</code> won't disassociate the VPC from
          * the hosted zone. If you want to delete an existing association, use
-         * <code>DisassociateVPCFromHostedZone</code>.</p> </important><p><h3>See
+         * <code>DisassociateVPCFromHostedZone</code>.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization">AWS
          * API Reference</a></p>
@@ -1819,26 +1986,79 @@ namespace Model
         virtual void DeleteVPCAssociationAuthorizationAsync(const Model::DeleteVPCAssociationAuthorizationRequest& request, const DeleteVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates a VPC from a Amazon Route 53 private hosted zone. Note the
-         * following:</p> <ul> <li> <p>You can't disassociate the last VPC from a private
-         * hosted zone.</p> </li> <li> <p>You can't convert a private hosted zone into a
-         * public hosted zone.</p> </li> <li> <p>You can submit a
-         * <code>DisassociateVPCFromHostedZone</code> request using either the account that
-         * created the hosted zone or the account that created the VPC.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <p>Disables DNSSEC signing in a specific hosted zone. This action does not
+         * deactivate any key signing keys (KSKs) that are active in the hosted
+         * zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableHostedZoneDNSSECOutcome DisableHostedZoneDNSSEC(const Model::DisableHostedZoneDNSSECRequest& request) const;
+
+        /**
+         * <p>Disables DNSSEC signing in a specific hosted zone. This action does not
+         * deactivate any key signing keys (KSKs) that are active in the hosted
+         * zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisableHostedZoneDNSSECOutcomeCallable DisableHostedZoneDNSSECCallable(const Model::DisableHostedZoneDNSSECRequest& request) const;
+
+        /**
+         * <p>Disables DNSSEC signing in a specific hosted zone. This action does not
+         * deactivate any key signing keys (KSKs) that are active in the hosted
+         * zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisableHostedZoneDNSSECAsync(const Model::DisableHostedZoneDNSSECRequest& request, const DisableHostedZoneDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Disassociates an Amazon Virtual Private Cloud (Amazon VPC) from an Amazon
+         * Route 53 private hosted zone. Note the following:</p> <ul> <li> <p>You can't
+         * disassociate the last Amazon VPC from a private hosted zone.</p> </li> <li>
+         * <p>You can't convert a private hosted zone into a public hosted zone.</p> </li>
+         * <li> <p>You can submit a <code>DisassociateVPCFromHostedZone</code> request
+         * using either the account that created the hosted zone or the account that
+         * created the Amazon VPC.</p> </li> <li> <p>Some services, such as AWS Cloud Map
+         * and Amazon Elastic File System (Amazon EFS) automatically create hosted zones
+         * and associate VPCs with the hosted zones. A service can create a hosted zone
+         * using your account or using its own account. You can disassociate a VPC from a
+         * hosted zone only if the service created the hosted zone using your account.</p>
+         * <p>When you run <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHostedZonesByVPC.html">DisassociateVPCFromHostedZone</a>,
+         * if the hosted zone has a value for <code>OwningAccount</code>, you can use
+         * <code>DisassociateVPCFromHostedZone</code>. If the hosted zone has a value for
+         * <code>OwningService</code>, you can't use
+         * <code>DisassociateVPCFromHostedZone</code>.</p> </li> </ul><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateVPCFromHostedZoneOutcome DisassociateVPCFromHostedZone(const Model::DisassociateVPCFromHostedZoneRequest& request) const;
 
         /**
-         * <p>Disassociates a VPC from a Amazon Route 53 private hosted zone. Note the
-         * following:</p> <ul> <li> <p>You can't disassociate the last VPC from a private
-         * hosted zone.</p> </li> <li> <p>You can't convert a private hosted zone into a
-         * public hosted zone.</p> </li> <li> <p>You can submit a
-         * <code>DisassociateVPCFromHostedZone</code> request using either the account that
-         * created the hosted zone or the account that created the VPC.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <p>Disassociates an Amazon Virtual Private Cloud (Amazon VPC) from an Amazon
+         * Route 53 private hosted zone. Note the following:</p> <ul> <li> <p>You can't
+         * disassociate the last Amazon VPC from a private hosted zone.</p> </li> <li>
+         * <p>You can't convert a private hosted zone into a public hosted zone.</p> </li>
+         * <li> <p>You can submit a <code>DisassociateVPCFromHostedZone</code> request
+         * using either the account that created the hosted zone or the account that
+         * created the Amazon VPC.</p> </li> <li> <p>Some services, such as AWS Cloud Map
+         * and Amazon Elastic File System (Amazon EFS) automatically create hosted zones
+         * and associate VPCs with the hosted zones. A service can create a hosted zone
+         * using your account or using its own account. You can disassociate a VPC from a
+         * hosted zone only if the service created the hosted zone using your account.</p>
+         * <p>When you run <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHostedZonesByVPC.html">DisassociateVPCFromHostedZone</a>,
+         * if the hosted zone has a value for <code>OwningAccount</code>, you can use
+         * <code>DisassociateVPCFromHostedZone</code>. If the hosted zone has a value for
+         * <code>OwningService</code>, you can't use
+         * <code>DisassociateVPCFromHostedZone</code>.</p> </li> </ul><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone">AWS
          * API Reference</a></p>
          *
@@ -1847,13 +2067,24 @@ namespace Model
         virtual Model::DisassociateVPCFromHostedZoneOutcomeCallable DisassociateVPCFromHostedZoneCallable(const Model::DisassociateVPCFromHostedZoneRequest& request) const;
 
         /**
-         * <p>Disassociates a VPC from a Amazon Route 53 private hosted zone. Note the
-         * following:</p> <ul> <li> <p>You can't disassociate the last VPC from a private
-         * hosted zone.</p> </li> <li> <p>You can't convert a private hosted zone into a
-         * public hosted zone.</p> </li> <li> <p>You can submit a
-         * <code>DisassociateVPCFromHostedZone</code> request using either the account that
-         * created the hosted zone or the account that created the VPC.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <p>Disassociates an Amazon Virtual Private Cloud (Amazon VPC) from an Amazon
+         * Route 53 private hosted zone. Note the following:</p> <ul> <li> <p>You can't
+         * disassociate the last Amazon VPC from a private hosted zone.</p> </li> <li>
+         * <p>You can't convert a private hosted zone into a public hosted zone.</p> </li>
+         * <li> <p>You can submit a <code>DisassociateVPCFromHostedZone</code> request
+         * using either the account that created the hosted zone or the account that
+         * created the Amazon VPC.</p> </li> <li> <p>Some services, such as AWS Cloud Map
+         * and Amazon Elastic File System (Amazon EFS) automatically create hosted zones
+         * and associate VPCs with the hosted zones. A service can create a hosted zone
+         * using your account or using its own account. You can disassociate a VPC from a
+         * hosted zone only if the service created the hosted zone using your account.</p>
+         * <p>When you run <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHostedZonesByVPC.html">DisassociateVPCFromHostedZone</a>,
+         * if the hosted zone has a value for <code>OwningAccount</code>, you can use
+         * <code>DisassociateVPCFromHostedZone</code>. If the hosted zone has a value for
+         * <code>OwningService</code>, you can't use
+         * <code>DisassociateVPCFromHostedZone</code>.</p> </li> </ul><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone">AWS
          * API Reference</a></p>
          *
@@ -1862,17 +2093,45 @@ namespace Model
         virtual void DisassociateVPCFromHostedZoneAsync(const Model::DisassociateVPCFromHostedZoneRequest& request, const DisassociateVPCFromHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Enables DNSSEC signing in a specific hosted zone.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/EnableHostedZoneDNSSEC">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableHostedZoneDNSSECOutcome EnableHostedZoneDNSSEC(const Model::EnableHostedZoneDNSSECRequest& request) const;
+
+        /**
+         * <p>Enables DNSSEC signing in a specific hosted zone.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/EnableHostedZoneDNSSEC">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::EnableHostedZoneDNSSECOutcomeCallable EnableHostedZoneDNSSECCallable(const Model::EnableHostedZoneDNSSECRequest& request) const;
+
+        /**
+         * <p>Enables DNSSEC signing in a specific hosted zone.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/EnableHostedZoneDNSSEC">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void EnableHostedZoneDNSSECAsync(const Model::EnableHostedZoneDNSSECRequest& request, const EnableHostedZoneDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets the specified limit for the current account, for example, the maximum
          * number of health checks that you can create using the account.</p> <p>For the
          * default limit, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
          * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
-         * a case</a>.</p> <note> <p>You can also view account limits in AWS Trusted
+         * a case</a>.</p>  <p>You can also view account limits in AWS Trusted
          * Advisor. Sign in to the AWS Management Console and open the Trusted Advisor
          * console at <a
          * href="https://console.aws.amazon.com/trustedadvisor">https://console.aws.amazon.com/trustedadvisor/</a>.
-         * Then choose <b>Service limits</b> in the navigation pane.</p> </note><p><h3>See
+         * Then choose <b>Service limits</b> in the navigation pane.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit">AWS
          * API Reference</a></p>
@@ -1886,11 +2145,11 @@ namespace Model
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
          * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
-         * a case</a>.</p> <note> <p>You can also view account limits in AWS Trusted
+         * a case</a>.</p>  <p>You can also view account limits in AWS Trusted
          * Advisor. Sign in to the AWS Management Console and open the Trusted Advisor
          * console at <a
          * href="https://console.aws.amazon.com/trustedadvisor">https://console.aws.amazon.com/trustedadvisor/</a>.
-         * Then choose <b>Service limits</b> in the navigation pane.</p> </note><p><h3>See
+         * Then choose <b>Service limits</b> in the navigation pane.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit">AWS
          * API Reference</a></p>
@@ -1906,11 +2165,11 @@ namespace Model
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
          * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
-         * a case</a>.</p> <note> <p>You can also view account limits in AWS Trusted
+         * a case</a>.</p>  <p>You can also view account limits in AWS Trusted
          * Advisor. Sign in to the AWS Management Console and open the Trusted Advisor
          * console at <a
          * href="https://console.aws.amazon.com/trustedadvisor">https://console.aws.amazon.com/trustedadvisor/</a>.
-         * Then choose <b>Service limits</b> in the navigation pane.</p> </note><p><h3>See
+         * Then choose <b>Service limits</b> in the navigation pane.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit">AWS
          * API Reference</a></p>
@@ -1960,24 +2219,24 @@ namespace Model
         virtual void GetChangeAsync(const Model::GetChangeRequest& request, const GetChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <important> <p> <code>GetCheckerIpRanges</code> still works, but we recommend
+         *  <p> <code>GetCheckerIpRanges</code> still works, but we recommend
          * that you download ip-ranges.json, which includes IP address ranges for all AWS
          * services. For more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
          * Address Ranges of Amazon Route 53 Servers</a> in the <i>Amazon Route 53
-         * Developer Guide</i>.</p> </important><p><h3>See Also:</h3>   <a
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges">AWS
          * API Reference</a></p>
          */
         virtual Model::GetCheckerIpRangesOutcome GetCheckerIpRanges(const Model::GetCheckerIpRangesRequest& request) const;
 
         /**
-         * <important> <p> <code>GetCheckerIpRanges</code> still works, but we recommend
+         *  <p> <code>GetCheckerIpRanges</code> still works, but we recommend
          * that you download ip-ranges.json, which includes IP address ranges for all AWS
          * services. For more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
          * Address Ranges of Amazon Route 53 Servers</a> in the <i>Amazon Route 53
-         * Developer Guide</i>.</p> </important><p><h3>See Also:</h3>   <a
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges">AWS
          * API Reference</a></p>
          *
@@ -1986,18 +2245,49 @@ namespace Model
         virtual Model::GetCheckerIpRangesOutcomeCallable GetCheckerIpRangesCallable(const Model::GetCheckerIpRangesRequest& request) const;
 
         /**
-         * <important> <p> <code>GetCheckerIpRanges</code> still works, but we recommend
+         *  <p> <code>GetCheckerIpRanges</code> still works, but we recommend
          * that you download ip-ranges.json, which includes IP address ranges for all AWS
          * services. For more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
          * Address Ranges of Amazon Route 53 Servers</a> in the <i>Amazon Route 53
-         * Developer Guide</i>.</p> </important><p><h3>See Also:</h3>   <a
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCheckerIpRangesAsync(const Model::GetCheckerIpRangesRequest& request, const GetCheckerIpRangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about DNSSEC for a specific hosted zone, including the
+         * key signing keys (KSKs) and zone signing keys (ZSKs) in the hosted
+         * zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDNSSECOutcome GetDNSSEC(const Model::GetDNSSECRequest& request) const;
+
+        /**
+         * <p>Returns information about DNSSEC for a specific hosted zone, including the
+         * key signing keys (KSKs) and zone signing keys (ZSKs) in the hosted
+         * zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDNSSECOutcomeCallable GetDNSSECCallable(const Model::GetDNSSECRequest& request) const;
+
+        /**
+         * <p>Returns information about DNSSEC for a specific hosted zone, including the
+         * key signing keys (KSKs) and zone signing keys (ZSKs) in the hosted
+         * zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDNSSECAsync(const Model::GetDNSSECRequest& request, const GetDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about whether a specified geographic location is supported
@@ -2377,16 +2667,22 @@ namespace Model
         virtual void GetReusableDelegationSetLimitAsync(const Model::GetReusableDelegationSetLimitRequest& request, const GetReusableDelegationSetLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a specific traffic policy version.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about a specific traffic policy version.</p> <p>For
+         * information about how of deleting a traffic policy affects the response from
+         * <code>GetTrafficPolicy</code>, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::GetTrafficPolicyOutcome GetTrafficPolicy(const Model::GetTrafficPolicyRequest& request) const;
 
         /**
-         * <p>Gets information about a specific traffic policy version.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about a specific traffic policy version.</p> <p>For
+         * information about how of deleting a traffic policy affects the response from
+         * <code>GetTrafficPolicy</code>, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicy">AWS
          * API Reference</a></p>
          *
@@ -2395,8 +2691,11 @@ namespace Model
         virtual Model::GetTrafficPolicyOutcomeCallable GetTrafficPolicyCallable(const Model::GetTrafficPolicyRequest& request) const;
 
         /**
-         * <p>Gets information about a specific traffic policy version.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about a specific traffic policy version.</p> <p>For
+         * information about how of deleting a traffic policy affects the response from
+         * <code>GetTrafficPolicy</code>, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicy">AWS
          * API Reference</a></p>
          *
@@ -2405,26 +2704,26 @@ namespace Model
         virtual void GetTrafficPolicyAsync(const Model::GetTrafficPolicyRequest& request, const GetTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a specified traffic policy instance.</p> <note>
+         * <p>Gets information about a specified traffic policy instance.</p> 
          * <p>After you submit a <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <note> <p>In the Route 53 console, traffic policy
-         * instances are known as policy records.</p> </note><p><h3>See Also:</h3>   <a
+         * response element.</p>   <p>In the Route 53 console, traffic policy
+         * instances are known as policy records.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance">AWS
          * API Reference</a></p>
          */
         virtual Model::GetTrafficPolicyInstanceOutcome GetTrafficPolicyInstance(const Model::GetTrafficPolicyInstanceRequest& request) const;
 
         /**
-         * <p>Gets information about a specified traffic policy instance.</p> <note>
+         * <p>Gets information about a specified traffic policy instance.</p> 
          * <p>After you submit a <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <note> <p>In the Route 53 console, traffic policy
-         * instances are known as policy records.</p> </note><p><h3>See Also:</h3>   <a
+         * response element.</p>   <p>In the Route 53 console, traffic policy
+         * instances are known as policy records.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance">AWS
          * API Reference</a></p>
          *
@@ -2433,13 +2732,13 @@ namespace Model
         virtual Model::GetTrafficPolicyInstanceOutcomeCallable GetTrafficPolicyInstanceCallable(const Model::GetTrafficPolicyInstanceRequest& request) const;
 
         /**
-         * <p>Gets information about a specified traffic policy instance.</p> <note>
+         * <p>Gets information about a specified traffic policy instance.</p> 
          * <p>After you submit a <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <note> <p>In the Route 53 console, traffic policy
-         * instances are known as policy records.</p> </note><p><h3>See Also:</h3>   <a
+         * response element.</p>   <p>In the Route 53 console, traffic policy
+         * instances are known as policy records.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance">AWS
          * API Reference</a></p>
          *
@@ -2727,6 +3026,61 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListHostedZonesByNameAsync(const Model::ListHostedZonesByNameRequest& request, const ListHostedZonesByNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all the private hosted zones that a specified VPC is associated with,
+         * regardless of which AWS account or AWS service owns the hosted zones. The
+         * <code>HostedZoneOwner</code> structure in the response contains one of the
+         * following values:</p> <ul> <li> <p>An <code>OwningAccount</code> element, which
+         * contains the account number of either the current AWS account or another AWS
+         * account. Some services, such as AWS Cloud Map, create hosted zones using the
+         * current account. </p> </li> <li> <p>An <code>OwningService</code> element, which
+         * identifies the AWS service that created and owns the hosted zone. For example,
+         * if a hosted zone was created by Amazon Elastic File System (Amazon EFS), the
+         * value of <code>Owner</code> is <code>efs.amazonaws.com</code>. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByVPC">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListHostedZonesByVPCOutcome ListHostedZonesByVPC(const Model::ListHostedZonesByVPCRequest& request) const;
+
+        /**
+         * <p>Lists all the private hosted zones that a specified VPC is associated with,
+         * regardless of which AWS account or AWS service owns the hosted zones. The
+         * <code>HostedZoneOwner</code> structure in the response contains one of the
+         * following values:</p> <ul> <li> <p>An <code>OwningAccount</code> element, which
+         * contains the account number of either the current AWS account or another AWS
+         * account. Some services, such as AWS Cloud Map, create hosted zones using the
+         * current account. </p> </li> <li> <p>An <code>OwningService</code> element, which
+         * identifies the AWS service that created and owns the hosted zone. For example,
+         * if a hosted zone was created by Amazon Elastic File System (Amazon EFS), the
+         * value of <code>Owner</code> is <code>efs.amazonaws.com</code>. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByVPC">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListHostedZonesByVPCOutcomeCallable ListHostedZonesByVPCCallable(const Model::ListHostedZonesByVPCRequest& request) const;
+
+        /**
+         * <p>Lists all the private hosted zones that a specified VPC is associated with,
+         * regardless of which AWS account or AWS service owns the hosted zones. The
+         * <code>HostedZoneOwner</code> structure in the response contains one of the
+         * following values:</p> <ul> <li> <p>An <code>OwningAccount</code> element, which
+         * contains the account number of either the current AWS account or another AWS
+         * account. Some services, such as AWS Cloud Map, create hosted zones using the
+         * current account. </p> </li> <li> <p>An <code>OwningService</code> element, which
+         * identifies the AWS service that created and owns the hosted zone. For example,
+         * if a hosted zone was created by Amazon Elastic File System (Amazon EFS), the
+         * value of <code>Owner</code> is <code>efs.amazonaws.com</code>. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByVPC">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListHostedZonesByVPCAsync(const Model::ListHostedZonesByVPCRequest& request, const ListHostedZonesByVPCResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the configurations for DNS query logging that are associated with the
@@ -3021,7 +3375,10 @@ namespace Model
         /**
          * <p>Gets information about the latest version for every traffic policy that is
          * associated with the current AWS account. Policies are listed in the order that
-         * they were created in. </p><p><h3>See Also:</h3>   <a
+         * they were created in. </p> <p>For information about how of deleting a traffic
+         * policy affects the response from <code>ListTrafficPolicies</code>, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies">AWS
          * API Reference</a></p>
          */
@@ -3030,7 +3387,10 @@ namespace Model
         /**
          * <p>Gets information about the latest version for every traffic policy that is
          * associated with the current AWS account. Policies are listed in the order that
-         * they were created in. </p><p><h3>See Also:</h3>   <a
+         * they were created in. </p> <p>For information about how of deleting a traffic
+         * policy affects the response from <code>ListTrafficPolicies</code>, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies">AWS
          * API Reference</a></p>
          *
@@ -3041,7 +3401,10 @@ namespace Model
         /**
          * <p>Gets information about the latest version for every traffic policy that is
          * associated with the current AWS account. Policies are listed in the order that
-         * they were created in. </p><p><h3>See Also:</h3>   <a
+         * they were created in. </p> <p>For information about how of deleting a traffic
+         * policy affects the response from <code>ListTrafficPolicies</code>, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies">AWS
          * API Reference</a></p>
          *
@@ -3051,11 +3414,11 @@ namespace Model
 
         /**
          * <p>Gets information about the traffic policy instances that you created by using
-         * the current AWS account.</p> <note> <p>After you submit an
+         * the current AWS account.</p>  <p>After you submit an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Route 53 returns a maximum of 100 items in each
+         * response element.</p>  <p>Route 53 returns a maximum of 100 items in each
          * response. If you have a lot of traffic policy instances, you can use the
          * <code>MaxItems</code> parameter to list them in groups of up to
          * 100.</p><p><h3>See Also:</h3>   <a
@@ -3066,11 +3429,11 @@ namespace Model
 
         /**
          * <p>Gets information about the traffic policy instances that you created by using
-         * the current AWS account.</p> <note> <p>After you submit an
+         * the current AWS account.</p>  <p>After you submit an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Route 53 returns a maximum of 100 items in each
+         * response element.</p>  <p>Route 53 returns a maximum of 100 items in each
          * response. If you have a lot of traffic policy instances, you can use the
          * <code>MaxItems</code> parameter to list them in groups of up to
          * 100.</p><p><h3>See Also:</h3>   <a
@@ -3083,11 +3446,11 @@ namespace Model
 
         /**
          * <p>Gets information about the traffic policy instances that you created by using
-         * the current AWS account.</p> <note> <p>After you submit an
+         * the current AWS account.</p>  <p>After you submit an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Route 53 returns a maximum of 100 items in each
+         * response element.</p>  <p>Route 53 returns a maximum of 100 items in each
          * response. If you have a lot of traffic policy instances, you can use the
          * <code>MaxItems</code> parameter to list them in groups of up to
          * 100.</p><p><h3>See Also:</h3>   <a
@@ -3100,12 +3463,12 @@ namespace Model
 
         /**
          * <p>Gets information about the traffic policy instances that you created in a
-         * specified hosted zone.</p> <note> <p>After you submit a
+         * specified hosted zone.</p>  <p>After you submit a
          * <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Route 53 returns a maximum of 100 items in each
+         * response element.</p>  <p>Route 53 returns a maximum of 100 items in each
          * response. If you have a lot of traffic policy instances, you can use the
          * <code>MaxItems</code> parameter to list them in groups of up to
          * 100.</p><p><h3>See Also:</h3>   <a
@@ -3116,12 +3479,12 @@ namespace Model
 
         /**
          * <p>Gets information about the traffic policy instances that you created in a
-         * specified hosted zone.</p> <note> <p>After you submit a
+         * specified hosted zone.</p>  <p>After you submit a
          * <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Route 53 returns a maximum of 100 items in each
+         * response element.</p>  <p>Route 53 returns a maximum of 100 items in each
          * response. If you have a lot of traffic policy instances, you can use the
          * <code>MaxItems</code> parameter to list them in groups of up to
          * 100.</p><p><h3>See Also:</h3>   <a
@@ -3134,12 +3497,12 @@ namespace Model
 
         /**
          * <p>Gets information about the traffic policy instances that you created in a
-         * specified hosted zone.</p> <note> <p>After you submit a
+         * specified hosted zone.</p>  <p>After you submit a
          * <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Route 53 returns a maximum of 100 items in each
+         * response element.</p>  <p>Route 53 returns a maximum of 100 items in each
          * response. If you have a lot of traffic policy instances, you can use the
          * <code>MaxItems</code> parameter to list them in groups of up to
          * 100.</p><p><h3>See Also:</h3>   <a
@@ -3152,12 +3515,12 @@ namespace Model
 
         /**
          * <p>Gets information about the traffic policy instances that you created by using
-         * a specify traffic policy version.</p> <note> <p>After you submit a
+         * a specify traffic policy version.</p>  <p>After you submit a
          * <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Route 53 returns a maximum of 100 items in each
+         * response element.</p>  <p>Route 53 returns a maximum of 100 items in each
          * response. If you have a lot of traffic policy instances, you can use the
          * <code>MaxItems</code> parameter to list them in groups of up to
          * 100.</p><p><h3>See Also:</h3>   <a
@@ -3168,12 +3531,12 @@ namespace Model
 
         /**
          * <p>Gets information about the traffic policy instances that you created by using
-         * a specify traffic policy version.</p> <note> <p>After you submit a
+         * a specify traffic policy version.</p>  <p>After you submit a
          * <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Route 53 returns a maximum of 100 items in each
+         * response element.</p>  <p>Route 53 returns a maximum of 100 items in each
          * response. If you have a lot of traffic policy instances, you can use the
          * <code>MaxItems</code> parameter to list them in groups of up to
          * 100.</p><p><h3>See Also:</h3>   <a
@@ -3186,12 +3549,12 @@ namespace Model
 
         /**
          * <p>Gets information about the traffic policy instances that you created by using
-         * a specify traffic policy version.</p> <note> <p>After you submit a
+         * a specify traffic policy version.</p>  <p>After you submit a
          * <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Route 53 returns a maximum of 100 items in each
+         * response element.</p>  <p>Route 53 returns a maximum of 100 items in each
          * response. If you have a lot of traffic policy instances, you can use the
          * <code>MaxItems</code> parameter to list them in groups of up to
          * 100.</p><p><h3>See Also:</h3>   <a
@@ -3464,32 +3827,39 @@ namespace Model
          */
         virtual void UpdateTrafficPolicyInstanceAsync(const Model::UpdateTrafficPolicyInstanceRequest& request, const UpdateTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-      
+
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void ActivateKeySigningKeyAsyncHelper(const Model::ActivateKeySigningKeyRequest& request, const ActivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateVPCWithHostedZoneAsyncHelper(const Model::AssociateVPCWithHostedZoneRequest& request, const AssociateVPCWithHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ChangeResourceRecordSetsAsyncHelper(const Model::ChangeResourceRecordSetsRequest& request, const ChangeResourceRecordSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ChangeTagsForResourceAsyncHelper(const Model::ChangeTagsForResourceRequest& request, const ChangeTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateHealthCheckAsyncHelper(const Model::CreateHealthCheckRequest& request, const CreateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateHostedZoneAsyncHelper(const Model::CreateHostedZoneRequest& request, const CreateHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateKeySigningKeyAsyncHelper(const Model::CreateKeySigningKeyRequest& request, const CreateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateQueryLoggingConfigAsyncHelper(const Model::CreateQueryLoggingConfigRequest& request, const CreateQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReusableDelegationSetAsyncHelper(const Model::CreateReusableDelegationSetRequest& request, const CreateReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTrafficPolicyAsyncHelper(const Model::CreateTrafficPolicyRequest& request, const CreateTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTrafficPolicyInstanceAsyncHelper(const Model::CreateTrafficPolicyInstanceRequest& request, const CreateTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTrafficPolicyVersionAsyncHelper(const Model::CreateTrafficPolicyVersionRequest& request, const CreateTrafficPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateVPCAssociationAuthorizationAsyncHelper(const Model::CreateVPCAssociationAuthorizationRequest& request, const CreateVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeactivateKeySigningKeyAsyncHelper(const Model::DeactivateKeySigningKeyRequest& request, const DeactivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteHealthCheckAsyncHelper(const Model::DeleteHealthCheckRequest& request, const DeleteHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteHostedZoneAsyncHelper(const Model::DeleteHostedZoneRequest& request, const DeleteHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteKeySigningKeyAsyncHelper(const Model::DeleteKeySigningKeyRequest& request, const DeleteKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteQueryLoggingConfigAsyncHelper(const Model::DeleteQueryLoggingConfigRequest& request, const DeleteQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteReusableDelegationSetAsyncHelper(const Model::DeleteReusableDelegationSetRequest& request, const DeleteReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTrafficPolicyAsyncHelper(const Model::DeleteTrafficPolicyRequest& request, const DeleteTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTrafficPolicyInstanceAsyncHelper(const Model::DeleteTrafficPolicyInstanceRequest& request, const DeleteTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVPCAssociationAuthorizationAsyncHelper(const Model::DeleteVPCAssociationAuthorizationRequest& request, const DeleteVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisableHostedZoneDNSSECAsyncHelper(const Model::DisableHostedZoneDNSSECRequest& request, const DisableHostedZoneDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateVPCFromHostedZoneAsyncHelper(const Model::DisassociateVPCFromHostedZoneRequest& request, const DisassociateVPCFromHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void EnableHostedZoneDNSSECAsyncHelper(const Model::EnableHostedZoneDNSSECRequest& request, const EnableHostedZoneDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccountLimitAsyncHelper(const Model::GetAccountLimitRequest& request, const GetAccountLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetChangeAsyncHelper(const Model::GetChangeRequest& request, const GetChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCheckerIpRangesAsyncHelper(const Model::GetCheckerIpRangesRequest& request, const GetCheckerIpRangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDNSSECAsyncHelper(const Model::GetDNSSECRequest& request, const GetDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGeoLocationAsyncHelper(const Model::GetGeoLocationRequest& request, const GetGeoLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetHealthCheckAsyncHelper(const Model::GetHealthCheckRequest& request, const GetHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetHealthCheckCountAsyncHelper(const Model::GetHealthCheckCountRequest& request, const GetHealthCheckCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3508,6 +3878,7 @@ namespace Model
         void ListHealthChecksAsyncHelper(const Model::ListHealthChecksRequest& request, const ListHealthChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListHostedZonesAsyncHelper(const Model::ListHostedZonesRequest& request, const ListHostedZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListHostedZonesByNameAsyncHelper(const Model::ListHostedZonesByNameRequest& request, const ListHostedZonesByNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListHostedZonesByVPCAsyncHelper(const Model::ListHostedZonesByVPCRequest& request, const ListHostedZonesByVPCResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListQueryLoggingConfigsAsyncHelper(const Model::ListQueryLoggingConfigsRequest& request, const ListQueryLoggingConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResourceRecordSetsAsyncHelper(const Model::ListResourceRecordSetsRequest& request, const ListResourceRecordSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListReusableDelegationSetsAsyncHelper(const Model::ListReusableDelegationSetsRequest& request, const ListReusableDelegationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

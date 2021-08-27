@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/redshift/Redshift_EXPORTS.h>
@@ -240,98 +230,98 @@ namespace Model
         class RevokeSnapshotAccessRequest;
         class RotateEncryptionKeyRequest;
 
-        typedef Aws::Utils::Outcome<AcceptReservedNodeExchangeResult, Aws::Client::AWSError<RedshiftErrors>> AcceptReservedNodeExchangeOutcome;
-        typedef Aws::Utils::Outcome<AuthorizeClusterSecurityGroupIngressResult, Aws::Client::AWSError<RedshiftErrors>> AuthorizeClusterSecurityGroupIngressOutcome;
-        typedef Aws::Utils::Outcome<AuthorizeSnapshotAccessResult, Aws::Client::AWSError<RedshiftErrors>> AuthorizeSnapshotAccessOutcome;
-        typedef Aws::Utils::Outcome<BatchDeleteClusterSnapshotsResult, Aws::Client::AWSError<RedshiftErrors>> BatchDeleteClusterSnapshotsOutcome;
-        typedef Aws::Utils::Outcome<BatchModifyClusterSnapshotsResult, Aws::Client::AWSError<RedshiftErrors>> BatchModifyClusterSnapshotsOutcome;
-        typedef Aws::Utils::Outcome<CancelResizeResult, Aws::Client::AWSError<RedshiftErrors>> CancelResizeOutcome;
-        typedef Aws::Utils::Outcome<CopyClusterSnapshotResult, Aws::Client::AWSError<RedshiftErrors>> CopyClusterSnapshotOutcome;
-        typedef Aws::Utils::Outcome<CreateClusterResult, Aws::Client::AWSError<RedshiftErrors>> CreateClusterOutcome;
-        typedef Aws::Utils::Outcome<CreateClusterParameterGroupResult, Aws::Client::AWSError<RedshiftErrors>> CreateClusterParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateClusterSecurityGroupResult, Aws::Client::AWSError<RedshiftErrors>> CreateClusterSecurityGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateClusterSnapshotResult, Aws::Client::AWSError<RedshiftErrors>> CreateClusterSnapshotOutcome;
-        typedef Aws::Utils::Outcome<CreateClusterSubnetGroupResult, Aws::Client::AWSError<RedshiftErrors>> CreateClusterSubnetGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateEventSubscriptionResult, Aws::Client::AWSError<RedshiftErrors>> CreateEventSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<CreateHsmClientCertificateResult, Aws::Client::AWSError<RedshiftErrors>> CreateHsmClientCertificateOutcome;
-        typedef Aws::Utils::Outcome<CreateHsmConfigurationResult, Aws::Client::AWSError<RedshiftErrors>> CreateHsmConfigurationOutcome;
-        typedef Aws::Utils::Outcome<CreateScheduledActionResult, Aws::Client::AWSError<RedshiftErrors>> CreateScheduledActionOutcome;
-        typedef Aws::Utils::Outcome<CreateSnapshotCopyGrantResult, Aws::Client::AWSError<RedshiftErrors>> CreateSnapshotCopyGrantOutcome;
-        typedef Aws::Utils::Outcome<CreateSnapshotScheduleResult, Aws::Client::AWSError<RedshiftErrors>> CreateSnapshotScheduleOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> CreateTagsOutcome;
-        typedef Aws::Utils::Outcome<CreateUsageLimitResult, Aws::Client::AWSError<RedshiftErrors>> CreateUsageLimitOutcome;
-        typedef Aws::Utils::Outcome<DeleteClusterResult, Aws::Client::AWSError<RedshiftErrors>> DeleteClusterOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteClusterParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteClusterSecurityGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteClusterSnapshotResult, Aws::Client::AWSError<RedshiftErrors>> DeleteClusterSnapshotOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteClusterSubnetGroupOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteEventSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteHsmClientCertificateOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteHsmConfigurationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteScheduledActionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteSnapshotCopyGrantOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteSnapshotScheduleOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteTagsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteUsageLimitOutcome;
-        typedef Aws::Utils::Outcome<DescribeAccountAttributesResult, Aws::Client::AWSError<RedshiftErrors>> DescribeAccountAttributesOutcome;
-        typedef Aws::Utils::Outcome<DescribeClusterDbRevisionsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClusterDbRevisionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeClusterParameterGroupsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClusterParameterGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeClusterParametersResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClusterParametersOutcome;
-        typedef Aws::Utils::Outcome<DescribeClusterSecurityGroupsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClusterSecurityGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeClusterSnapshotsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClusterSnapshotsOutcome;
-        typedef Aws::Utils::Outcome<DescribeClusterSubnetGroupsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClusterSubnetGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeClusterTracksResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClusterTracksOutcome;
-        typedef Aws::Utils::Outcome<DescribeClusterVersionsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClusterVersionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeClustersResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClustersOutcome;
-        typedef Aws::Utils::Outcome<DescribeDefaultClusterParametersResult, Aws::Client::AWSError<RedshiftErrors>> DescribeDefaultClusterParametersOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventCategoriesResult, Aws::Client::AWSError<RedshiftErrors>> DescribeEventCategoriesOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventSubscriptionsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeEventSubscriptionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeEventsOutcome;
-        typedef Aws::Utils::Outcome<DescribeHsmClientCertificatesResult, Aws::Client::AWSError<RedshiftErrors>> DescribeHsmClientCertificatesOutcome;
-        typedef Aws::Utils::Outcome<DescribeHsmConfigurationsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeHsmConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<DescribeLoggingStatusResult, Aws::Client::AWSError<RedshiftErrors>> DescribeLoggingStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribeNodeConfigurationOptionsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeNodeConfigurationOptionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeOrderableClusterOptionsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeOrderableClusterOptionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeReservedNodeOfferingsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeReservedNodeOfferingsOutcome;
-        typedef Aws::Utils::Outcome<DescribeReservedNodesResult, Aws::Client::AWSError<RedshiftErrors>> DescribeReservedNodesOutcome;
-        typedef Aws::Utils::Outcome<DescribeResizeResult, Aws::Client::AWSError<RedshiftErrors>> DescribeResizeOutcome;
-        typedef Aws::Utils::Outcome<DescribeScheduledActionsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeScheduledActionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeSnapshotCopyGrantsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeSnapshotCopyGrantsOutcome;
-        typedef Aws::Utils::Outcome<DescribeSnapshotSchedulesResult, Aws::Client::AWSError<RedshiftErrors>> DescribeSnapshotSchedulesOutcome;
-        typedef Aws::Utils::Outcome<DescribeStorageResult, Aws::Client::AWSError<RedshiftErrors>> DescribeStorageOutcome;
-        typedef Aws::Utils::Outcome<DescribeTableRestoreStatusResult, Aws::Client::AWSError<RedshiftErrors>> DescribeTableRestoreStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribeTagsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeTagsOutcome;
-        typedef Aws::Utils::Outcome<DescribeUsageLimitsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeUsageLimitsOutcome;
-        typedef Aws::Utils::Outcome<DisableLoggingResult, Aws::Client::AWSError<RedshiftErrors>> DisableLoggingOutcome;
-        typedef Aws::Utils::Outcome<DisableSnapshotCopyResult, Aws::Client::AWSError<RedshiftErrors>> DisableSnapshotCopyOutcome;
-        typedef Aws::Utils::Outcome<EnableLoggingResult, Aws::Client::AWSError<RedshiftErrors>> EnableLoggingOutcome;
-        typedef Aws::Utils::Outcome<EnableSnapshotCopyResult, Aws::Client::AWSError<RedshiftErrors>> EnableSnapshotCopyOutcome;
-        typedef Aws::Utils::Outcome<GetClusterCredentialsResult, Aws::Client::AWSError<RedshiftErrors>> GetClusterCredentialsOutcome;
-        typedef Aws::Utils::Outcome<GetReservedNodeExchangeOfferingsResult, Aws::Client::AWSError<RedshiftErrors>> GetReservedNodeExchangeOfferingsOutcome;
-        typedef Aws::Utils::Outcome<ModifyClusterResult, Aws::Client::AWSError<RedshiftErrors>> ModifyClusterOutcome;
-        typedef Aws::Utils::Outcome<ModifyClusterDbRevisionResult, Aws::Client::AWSError<RedshiftErrors>> ModifyClusterDbRevisionOutcome;
-        typedef Aws::Utils::Outcome<ModifyClusterIamRolesResult, Aws::Client::AWSError<RedshiftErrors>> ModifyClusterIamRolesOutcome;
-        typedef Aws::Utils::Outcome<ModifyClusterMaintenanceResult, Aws::Client::AWSError<RedshiftErrors>> ModifyClusterMaintenanceOutcome;
-        typedef Aws::Utils::Outcome<ModifyClusterParameterGroupResult, Aws::Client::AWSError<RedshiftErrors>> ModifyClusterParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<ModifyClusterSnapshotResult, Aws::Client::AWSError<RedshiftErrors>> ModifyClusterSnapshotOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> ModifyClusterSnapshotScheduleOutcome;
-        typedef Aws::Utils::Outcome<ModifyClusterSubnetGroupResult, Aws::Client::AWSError<RedshiftErrors>> ModifyClusterSubnetGroupOutcome;
-        typedef Aws::Utils::Outcome<ModifyEventSubscriptionResult, Aws::Client::AWSError<RedshiftErrors>> ModifyEventSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<ModifyScheduledActionResult, Aws::Client::AWSError<RedshiftErrors>> ModifyScheduledActionOutcome;
-        typedef Aws::Utils::Outcome<ModifySnapshotCopyRetentionPeriodResult, Aws::Client::AWSError<RedshiftErrors>> ModifySnapshotCopyRetentionPeriodOutcome;
-        typedef Aws::Utils::Outcome<ModifySnapshotScheduleResult, Aws::Client::AWSError<RedshiftErrors>> ModifySnapshotScheduleOutcome;
-        typedef Aws::Utils::Outcome<ModifyUsageLimitResult, Aws::Client::AWSError<RedshiftErrors>> ModifyUsageLimitOutcome;
-        typedef Aws::Utils::Outcome<PauseClusterResult, Aws::Client::AWSError<RedshiftErrors>> PauseClusterOutcome;
-        typedef Aws::Utils::Outcome<PurchaseReservedNodeOfferingResult, Aws::Client::AWSError<RedshiftErrors>> PurchaseReservedNodeOfferingOutcome;
-        typedef Aws::Utils::Outcome<RebootClusterResult, Aws::Client::AWSError<RedshiftErrors>> RebootClusterOutcome;
-        typedef Aws::Utils::Outcome<ResetClusterParameterGroupResult, Aws::Client::AWSError<RedshiftErrors>> ResetClusterParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<ResizeClusterResult, Aws::Client::AWSError<RedshiftErrors>> ResizeClusterOutcome;
-        typedef Aws::Utils::Outcome<RestoreFromClusterSnapshotResult, Aws::Client::AWSError<RedshiftErrors>> RestoreFromClusterSnapshotOutcome;
-        typedef Aws::Utils::Outcome<RestoreTableFromClusterSnapshotResult, Aws::Client::AWSError<RedshiftErrors>> RestoreTableFromClusterSnapshotOutcome;
-        typedef Aws::Utils::Outcome<ResumeClusterResult, Aws::Client::AWSError<RedshiftErrors>> ResumeClusterOutcome;
-        typedef Aws::Utils::Outcome<RevokeClusterSecurityGroupIngressResult, Aws::Client::AWSError<RedshiftErrors>> RevokeClusterSecurityGroupIngressOutcome;
-        typedef Aws::Utils::Outcome<RevokeSnapshotAccessResult, Aws::Client::AWSError<RedshiftErrors>> RevokeSnapshotAccessOutcome;
-        typedef Aws::Utils::Outcome<RotateEncryptionKeyResult, Aws::Client::AWSError<RedshiftErrors>> RotateEncryptionKeyOutcome;
+        typedef Aws::Utils::Outcome<AcceptReservedNodeExchangeResult, RedshiftError> AcceptReservedNodeExchangeOutcome;
+        typedef Aws::Utils::Outcome<AuthorizeClusterSecurityGroupIngressResult, RedshiftError> AuthorizeClusterSecurityGroupIngressOutcome;
+        typedef Aws::Utils::Outcome<AuthorizeSnapshotAccessResult, RedshiftError> AuthorizeSnapshotAccessOutcome;
+        typedef Aws::Utils::Outcome<BatchDeleteClusterSnapshotsResult, RedshiftError> BatchDeleteClusterSnapshotsOutcome;
+        typedef Aws::Utils::Outcome<BatchModifyClusterSnapshotsResult, RedshiftError> BatchModifyClusterSnapshotsOutcome;
+        typedef Aws::Utils::Outcome<CancelResizeResult, RedshiftError> CancelResizeOutcome;
+        typedef Aws::Utils::Outcome<CopyClusterSnapshotResult, RedshiftError> CopyClusterSnapshotOutcome;
+        typedef Aws::Utils::Outcome<CreateClusterResult, RedshiftError> CreateClusterOutcome;
+        typedef Aws::Utils::Outcome<CreateClusterParameterGroupResult, RedshiftError> CreateClusterParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateClusterSecurityGroupResult, RedshiftError> CreateClusterSecurityGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateClusterSnapshotResult, RedshiftError> CreateClusterSnapshotOutcome;
+        typedef Aws::Utils::Outcome<CreateClusterSubnetGroupResult, RedshiftError> CreateClusterSubnetGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateEventSubscriptionResult, RedshiftError> CreateEventSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<CreateHsmClientCertificateResult, RedshiftError> CreateHsmClientCertificateOutcome;
+        typedef Aws::Utils::Outcome<CreateHsmConfigurationResult, RedshiftError> CreateHsmConfigurationOutcome;
+        typedef Aws::Utils::Outcome<CreateScheduledActionResult, RedshiftError> CreateScheduledActionOutcome;
+        typedef Aws::Utils::Outcome<CreateSnapshotCopyGrantResult, RedshiftError> CreateSnapshotCopyGrantOutcome;
+        typedef Aws::Utils::Outcome<CreateSnapshotScheduleResult, RedshiftError> CreateSnapshotScheduleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> CreateTagsOutcome;
+        typedef Aws::Utils::Outcome<CreateUsageLimitResult, RedshiftError> CreateUsageLimitOutcome;
+        typedef Aws::Utils::Outcome<DeleteClusterResult, RedshiftError> DeleteClusterOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteClusterParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteClusterSecurityGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteClusterSnapshotResult, RedshiftError> DeleteClusterSnapshotOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteClusterSubnetGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteEventSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteHsmClientCertificateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteHsmConfigurationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteScheduledActionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteSnapshotCopyGrantOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteSnapshotScheduleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteTagsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteUsageLimitOutcome;
+        typedef Aws::Utils::Outcome<DescribeAccountAttributesResult, RedshiftError> DescribeAccountAttributesOutcome;
+        typedef Aws::Utils::Outcome<DescribeClusterDbRevisionsResult, RedshiftError> DescribeClusterDbRevisionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeClusterParameterGroupsResult, RedshiftError> DescribeClusterParameterGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeClusterParametersResult, RedshiftError> DescribeClusterParametersOutcome;
+        typedef Aws::Utils::Outcome<DescribeClusterSecurityGroupsResult, RedshiftError> DescribeClusterSecurityGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeClusterSnapshotsResult, RedshiftError> DescribeClusterSnapshotsOutcome;
+        typedef Aws::Utils::Outcome<DescribeClusterSubnetGroupsResult, RedshiftError> DescribeClusterSubnetGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeClusterTracksResult, RedshiftError> DescribeClusterTracksOutcome;
+        typedef Aws::Utils::Outcome<DescribeClusterVersionsResult, RedshiftError> DescribeClusterVersionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeClustersResult, RedshiftError> DescribeClustersOutcome;
+        typedef Aws::Utils::Outcome<DescribeDefaultClusterParametersResult, RedshiftError> DescribeDefaultClusterParametersOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventCategoriesResult, RedshiftError> DescribeEventCategoriesOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventSubscriptionsResult, RedshiftError> DescribeEventSubscriptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventsResult, RedshiftError> DescribeEventsOutcome;
+        typedef Aws::Utils::Outcome<DescribeHsmClientCertificatesResult, RedshiftError> DescribeHsmClientCertificatesOutcome;
+        typedef Aws::Utils::Outcome<DescribeHsmConfigurationsResult, RedshiftError> DescribeHsmConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeLoggingStatusResult, RedshiftError> DescribeLoggingStatusOutcome;
+        typedef Aws::Utils::Outcome<DescribeNodeConfigurationOptionsResult, RedshiftError> DescribeNodeConfigurationOptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeOrderableClusterOptionsResult, RedshiftError> DescribeOrderableClusterOptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeReservedNodeOfferingsResult, RedshiftError> DescribeReservedNodeOfferingsOutcome;
+        typedef Aws::Utils::Outcome<DescribeReservedNodesResult, RedshiftError> DescribeReservedNodesOutcome;
+        typedef Aws::Utils::Outcome<DescribeResizeResult, RedshiftError> DescribeResizeOutcome;
+        typedef Aws::Utils::Outcome<DescribeScheduledActionsResult, RedshiftError> DescribeScheduledActionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeSnapshotCopyGrantsResult, RedshiftError> DescribeSnapshotCopyGrantsOutcome;
+        typedef Aws::Utils::Outcome<DescribeSnapshotSchedulesResult, RedshiftError> DescribeSnapshotSchedulesOutcome;
+        typedef Aws::Utils::Outcome<DescribeStorageResult, RedshiftError> DescribeStorageOutcome;
+        typedef Aws::Utils::Outcome<DescribeTableRestoreStatusResult, RedshiftError> DescribeTableRestoreStatusOutcome;
+        typedef Aws::Utils::Outcome<DescribeTagsResult, RedshiftError> DescribeTagsOutcome;
+        typedef Aws::Utils::Outcome<DescribeUsageLimitsResult, RedshiftError> DescribeUsageLimitsOutcome;
+        typedef Aws::Utils::Outcome<DisableLoggingResult, RedshiftError> DisableLoggingOutcome;
+        typedef Aws::Utils::Outcome<DisableSnapshotCopyResult, RedshiftError> DisableSnapshotCopyOutcome;
+        typedef Aws::Utils::Outcome<EnableLoggingResult, RedshiftError> EnableLoggingOutcome;
+        typedef Aws::Utils::Outcome<EnableSnapshotCopyResult, RedshiftError> EnableSnapshotCopyOutcome;
+        typedef Aws::Utils::Outcome<GetClusterCredentialsResult, RedshiftError> GetClusterCredentialsOutcome;
+        typedef Aws::Utils::Outcome<GetReservedNodeExchangeOfferingsResult, RedshiftError> GetReservedNodeExchangeOfferingsOutcome;
+        typedef Aws::Utils::Outcome<ModifyClusterResult, RedshiftError> ModifyClusterOutcome;
+        typedef Aws::Utils::Outcome<ModifyClusterDbRevisionResult, RedshiftError> ModifyClusterDbRevisionOutcome;
+        typedef Aws::Utils::Outcome<ModifyClusterIamRolesResult, RedshiftError> ModifyClusterIamRolesOutcome;
+        typedef Aws::Utils::Outcome<ModifyClusterMaintenanceResult, RedshiftError> ModifyClusterMaintenanceOutcome;
+        typedef Aws::Utils::Outcome<ModifyClusterParameterGroupResult, RedshiftError> ModifyClusterParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<ModifyClusterSnapshotResult, RedshiftError> ModifyClusterSnapshotOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> ModifyClusterSnapshotScheduleOutcome;
+        typedef Aws::Utils::Outcome<ModifyClusterSubnetGroupResult, RedshiftError> ModifyClusterSubnetGroupOutcome;
+        typedef Aws::Utils::Outcome<ModifyEventSubscriptionResult, RedshiftError> ModifyEventSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<ModifyScheduledActionResult, RedshiftError> ModifyScheduledActionOutcome;
+        typedef Aws::Utils::Outcome<ModifySnapshotCopyRetentionPeriodResult, RedshiftError> ModifySnapshotCopyRetentionPeriodOutcome;
+        typedef Aws::Utils::Outcome<ModifySnapshotScheduleResult, RedshiftError> ModifySnapshotScheduleOutcome;
+        typedef Aws::Utils::Outcome<ModifyUsageLimitResult, RedshiftError> ModifyUsageLimitOutcome;
+        typedef Aws::Utils::Outcome<PauseClusterResult, RedshiftError> PauseClusterOutcome;
+        typedef Aws::Utils::Outcome<PurchaseReservedNodeOfferingResult, RedshiftError> PurchaseReservedNodeOfferingOutcome;
+        typedef Aws::Utils::Outcome<RebootClusterResult, RedshiftError> RebootClusterOutcome;
+        typedef Aws::Utils::Outcome<ResetClusterParameterGroupResult, RedshiftError> ResetClusterParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<ResizeClusterResult, RedshiftError> ResizeClusterOutcome;
+        typedef Aws::Utils::Outcome<RestoreFromClusterSnapshotResult, RedshiftError> RestoreFromClusterSnapshotOutcome;
+        typedef Aws::Utils::Outcome<RestoreTableFromClusterSnapshotResult, RedshiftError> RestoreTableFromClusterSnapshotOutcome;
+        typedef Aws::Utils::Outcome<ResumeClusterResult, RedshiftError> ResumeClusterOutcome;
+        typedef Aws::Utils::Outcome<RevokeClusterSecurityGroupIngressResult, RedshiftError> RevokeClusterSecurityGroupIngressOutcome;
+        typedef Aws::Utils::Outcome<RevokeSnapshotAccessResult, RedshiftError> RevokeSnapshotAccessOutcome;
+        typedef Aws::Utils::Outcome<RotateEncryptionKeyResult, RedshiftError> RotateEncryptionKeyOutcome;
 
         typedef std::future<AcceptReservedNodeExchangeOutcome> AcceptReservedNodeExchangeOutcomeCallable;
         typedef std::future<AuthorizeClusterSecurityGroupIngressOutcome> AuthorizeClusterSecurityGroupIngressOutcomeCallable;
@@ -571,8 +561,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~RedshiftClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "Redshift"; }
 
 
        /**
@@ -1509,18 +1497,18 @@ namespace Model
         virtual void DeleteClusterAsync(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a specified Amazon Redshift parameter group.</p> <note> <p>You cannot
+         * <p>Deletes a specified Amazon Redshift parameter group.</p>  <p>You cannot
          * delete a parameter group if it is associated with a cluster.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterParameterGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteClusterParameterGroupOutcome DeleteClusterParameterGroup(const Model::DeleteClusterParameterGroupRequest& request) const;
 
         /**
-         * <p>Deletes a specified Amazon Redshift parameter group.</p> <note> <p>You cannot
+         * <p>Deletes a specified Amazon Redshift parameter group.</p>  <p>You cannot
          * delete a parameter group if it is associated with a cluster.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -1529,9 +1517,9 @@ namespace Model
         virtual Model::DeleteClusterParameterGroupOutcomeCallable DeleteClusterParameterGroupCallable(const Model::DeleteClusterParameterGroupRequest& request) const;
 
         /**
-         * <p>Deletes a specified Amazon Redshift parameter group.</p> <note> <p>You cannot
+         * <p>Deletes a specified Amazon Redshift parameter group.</p>  <p>You cannot
          * delete a parameter group if it is associated with a cluster.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -1540,9 +1528,9 @@ namespace Model
         virtual void DeleteClusterParameterGroupAsync(const Model::DeleteClusterParameterGroupRequest& request, const DeleteClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an Amazon Redshift security group.</p> <note> <p>You cannot delete a
+         * <p>Deletes an Amazon Redshift security group.</p>  <p>You cannot delete a
          * security group that is associated with any clusters. You cannot delete the
-         * default security group.</p> </note> <p> For information about managing security
+         * default security group.</p>  <p> For information about managing security
          * groups, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
@@ -1553,9 +1541,9 @@ namespace Model
         virtual Model::DeleteClusterSecurityGroupOutcome DeleteClusterSecurityGroup(const Model::DeleteClusterSecurityGroupRequest& request) const;
 
         /**
-         * <p>Deletes an Amazon Redshift security group.</p> <note> <p>You cannot delete a
+         * <p>Deletes an Amazon Redshift security group.</p>  <p>You cannot delete a
          * security group that is associated with any clusters. You cannot delete the
-         * default security group.</p> </note> <p> For information about managing security
+         * default security group.</p>  <p> For information about managing security
          * groups, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
@@ -1568,9 +1556,9 @@ namespace Model
         virtual Model::DeleteClusterSecurityGroupOutcomeCallable DeleteClusterSecurityGroupCallable(const Model::DeleteClusterSecurityGroupRequest& request) const;
 
         /**
-         * <p>Deletes an Amazon Redshift security group.</p> <note> <p>You cannot delete a
+         * <p>Deletes an Amazon Redshift security group.</p>  <p>You cannot delete a
          * security group that is associated with any clusters. You cannot delete the
-         * default security group.</p> </note> <p> For information about managing security
+         * default security group.</p>  <p> For information about managing security
          * groups, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
@@ -4002,11 +3990,13 @@ namespace Model
          * method. With an elastic resize, your cluster is available for read and write
          * operations more quickly than with the classic resize method. </p> <p>Elastic
          * resize operations have the following restrictions:</p> <ul> <li> <p>You can only
-         * resize clusters of the following types:</p> <ul> <li> <p>dc2.large</p> </li>
-         * <li> <p>dc2.8xlarge</p> </li> <li> <p>ds2.xlarge</p> </li> <li>
-         * <p>ds2.8xlarge</p> </li> <li> <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p>
-         * </li> </ul> </li> <li> <p>The type of nodes that you add must match the node
-         * type for the cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * resize clusters of the following types:</p> <ul> <li> <p>dc1.large (if your
+         * cluster is in a VPC)</p> </li> <li> <p>dc1.8xlarge (if your cluster is in a
+         * VPC)</p> </li> <li> <p>dc2.large</p> </li> <li> <p>dc2.8xlarge</p> </li> <li>
+         * <p>ds2.xlarge</p> </li> <li> <p>ds2.8xlarge</p> </li> <li> <p>ra3.xlplus</p>
+         * </li> <li> <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li>
+         * <li> <p>The type of nodes that you add must match the node type for the
+         * cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">AWS
          * API Reference</a></p>
          */
@@ -4018,11 +4008,13 @@ namespace Model
          * method. With an elastic resize, your cluster is available for read and write
          * operations more quickly than with the classic resize method. </p> <p>Elastic
          * resize operations have the following restrictions:</p> <ul> <li> <p>You can only
-         * resize clusters of the following types:</p> <ul> <li> <p>dc2.large</p> </li>
-         * <li> <p>dc2.8xlarge</p> </li> <li> <p>ds2.xlarge</p> </li> <li>
-         * <p>ds2.8xlarge</p> </li> <li> <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p>
-         * </li> </ul> </li> <li> <p>The type of nodes that you add must match the node
-         * type for the cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * resize clusters of the following types:</p> <ul> <li> <p>dc1.large (if your
+         * cluster is in a VPC)</p> </li> <li> <p>dc1.8xlarge (if your cluster is in a
+         * VPC)</p> </li> <li> <p>dc2.large</p> </li> <li> <p>dc2.8xlarge</p> </li> <li>
+         * <p>ds2.xlarge</p> </li> <li> <p>ds2.8xlarge</p> </li> <li> <p>ra3.xlplus</p>
+         * </li> <li> <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li>
+         * <li> <p>The type of nodes that you add must match the node type for the
+         * cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">AWS
          * API Reference</a></p>
          *
@@ -4036,11 +4028,13 @@ namespace Model
          * method. With an elastic resize, your cluster is available for read and write
          * operations more quickly than with the classic resize method. </p> <p>Elastic
          * resize operations have the following restrictions:</p> <ul> <li> <p>You can only
-         * resize clusters of the following types:</p> <ul> <li> <p>dc2.large</p> </li>
-         * <li> <p>dc2.8xlarge</p> </li> <li> <p>ds2.xlarge</p> </li> <li>
-         * <p>ds2.8xlarge</p> </li> <li> <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p>
-         * </li> </ul> </li> <li> <p>The type of nodes that you add must match the node
-         * type for the cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * resize clusters of the following types:</p> <ul> <li> <p>dc1.large (if your
+         * cluster is in a VPC)</p> </li> <li> <p>dc1.8xlarge (if your cluster is in a
+         * VPC)</p> </li> <li> <p>dc2.large</p> </li> <li> <p>dc2.8xlarge</p> </li> <li>
+         * <p>ds2.xlarge</p> </li> <li> <p>ds2.8xlarge</p> </li> <li> <p>ra3.xlplus</p>
+         * </li> <li> <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li>
+         * <li> <p>The type of nodes that you add must match the node type for the
+         * cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">AWS
          * API Reference</a></p>
          *
@@ -4306,7 +4300,7 @@ namespace Model
          */
         virtual void RotateEncryptionKeyAsync(const Model::RotateEncryptionKeyRequest& request, const RotateEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-      
+
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);

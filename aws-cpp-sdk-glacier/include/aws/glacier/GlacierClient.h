@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glacier/Glacier_EXPORTS.h>
@@ -116,39 +106,39 @@ namespace Model
         class UploadArchiveRequest;
         class UploadMultipartPartRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GlacierErrors>> AbortMultipartUploadOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GlacierErrors>> AbortVaultLockOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GlacierErrors>> AddTagsToVaultOutcome;
-        typedef Aws::Utils::Outcome<CompleteMultipartUploadResult, Aws::Client::AWSError<GlacierErrors>> CompleteMultipartUploadOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GlacierErrors>> CompleteVaultLockOutcome;
-        typedef Aws::Utils::Outcome<CreateVaultResult, Aws::Client::AWSError<GlacierErrors>> CreateVaultOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GlacierErrors>> DeleteArchiveOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GlacierErrors>> DeleteVaultOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GlacierErrors>> DeleteVaultAccessPolicyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GlacierErrors>> DeleteVaultNotificationsOutcome;
-        typedef Aws::Utils::Outcome<DescribeJobResult, Aws::Client::AWSError<GlacierErrors>> DescribeJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeVaultResult, Aws::Client::AWSError<GlacierErrors>> DescribeVaultOutcome;
-        typedef Aws::Utils::Outcome<GetDataRetrievalPolicyResult, Aws::Client::AWSError<GlacierErrors>> GetDataRetrievalPolicyOutcome;
-        typedef Aws::Utils::Outcome<GetJobOutputResult, Aws::Client::AWSError<GlacierErrors>> GetJobOutputOutcome;
-        typedef Aws::Utils::Outcome<GetVaultAccessPolicyResult, Aws::Client::AWSError<GlacierErrors>> GetVaultAccessPolicyOutcome;
-        typedef Aws::Utils::Outcome<GetVaultLockResult, Aws::Client::AWSError<GlacierErrors>> GetVaultLockOutcome;
-        typedef Aws::Utils::Outcome<GetVaultNotificationsResult, Aws::Client::AWSError<GlacierErrors>> GetVaultNotificationsOutcome;
-        typedef Aws::Utils::Outcome<InitiateJobResult, Aws::Client::AWSError<GlacierErrors>> InitiateJobOutcome;
-        typedef Aws::Utils::Outcome<InitiateMultipartUploadResult, Aws::Client::AWSError<GlacierErrors>> InitiateMultipartUploadOutcome;
-        typedef Aws::Utils::Outcome<InitiateVaultLockResult, Aws::Client::AWSError<GlacierErrors>> InitiateVaultLockOutcome;
-        typedef Aws::Utils::Outcome<ListJobsResult, Aws::Client::AWSError<GlacierErrors>> ListJobsOutcome;
-        typedef Aws::Utils::Outcome<ListMultipartUploadsResult, Aws::Client::AWSError<GlacierErrors>> ListMultipartUploadsOutcome;
-        typedef Aws::Utils::Outcome<ListPartsResult, Aws::Client::AWSError<GlacierErrors>> ListPartsOutcome;
-        typedef Aws::Utils::Outcome<ListProvisionedCapacityResult, Aws::Client::AWSError<GlacierErrors>> ListProvisionedCapacityOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForVaultResult, Aws::Client::AWSError<GlacierErrors>> ListTagsForVaultOutcome;
-        typedef Aws::Utils::Outcome<ListVaultsResult, Aws::Client::AWSError<GlacierErrors>> ListVaultsOutcome;
-        typedef Aws::Utils::Outcome<PurchaseProvisionedCapacityResult, Aws::Client::AWSError<GlacierErrors>> PurchaseProvisionedCapacityOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GlacierErrors>> RemoveTagsFromVaultOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GlacierErrors>> SetDataRetrievalPolicyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GlacierErrors>> SetVaultAccessPolicyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GlacierErrors>> SetVaultNotificationsOutcome;
-        typedef Aws::Utils::Outcome<UploadArchiveResult, Aws::Client::AWSError<GlacierErrors>> UploadArchiveOutcome;
-        typedef Aws::Utils::Outcome<UploadMultipartPartResult, Aws::Client::AWSError<GlacierErrors>> UploadMultipartPartOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> AbortMultipartUploadOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> AbortVaultLockOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> AddTagsToVaultOutcome;
+        typedef Aws::Utils::Outcome<CompleteMultipartUploadResult, GlacierError> CompleteMultipartUploadOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> CompleteVaultLockOutcome;
+        typedef Aws::Utils::Outcome<CreateVaultResult, GlacierError> CreateVaultOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> DeleteArchiveOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> DeleteVaultOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> DeleteVaultAccessPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> DeleteVaultNotificationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeJobResult, GlacierError> DescribeJobOutcome;
+        typedef Aws::Utils::Outcome<DescribeVaultResult, GlacierError> DescribeVaultOutcome;
+        typedef Aws::Utils::Outcome<GetDataRetrievalPolicyResult, GlacierError> GetDataRetrievalPolicyOutcome;
+        typedef Aws::Utils::Outcome<GetJobOutputResult, GlacierError> GetJobOutputOutcome;
+        typedef Aws::Utils::Outcome<GetVaultAccessPolicyResult, GlacierError> GetVaultAccessPolicyOutcome;
+        typedef Aws::Utils::Outcome<GetVaultLockResult, GlacierError> GetVaultLockOutcome;
+        typedef Aws::Utils::Outcome<GetVaultNotificationsResult, GlacierError> GetVaultNotificationsOutcome;
+        typedef Aws::Utils::Outcome<InitiateJobResult, GlacierError> InitiateJobOutcome;
+        typedef Aws::Utils::Outcome<InitiateMultipartUploadResult, GlacierError> InitiateMultipartUploadOutcome;
+        typedef Aws::Utils::Outcome<InitiateVaultLockResult, GlacierError> InitiateVaultLockOutcome;
+        typedef Aws::Utils::Outcome<ListJobsResult, GlacierError> ListJobsOutcome;
+        typedef Aws::Utils::Outcome<ListMultipartUploadsResult, GlacierError> ListMultipartUploadsOutcome;
+        typedef Aws::Utils::Outcome<ListPartsResult, GlacierError> ListPartsOutcome;
+        typedef Aws::Utils::Outcome<ListProvisionedCapacityResult, GlacierError> ListProvisionedCapacityOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForVaultResult, GlacierError> ListTagsForVaultOutcome;
+        typedef Aws::Utils::Outcome<ListVaultsResult, GlacierError> ListVaultsOutcome;
+        typedef Aws::Utils::Outcome<PurchaseProvisionedCapacityResult, GlacierError> PurchaseProvisionedCapacityOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> RemoveTagsFromVaultOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> SetDataRetrievalPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> SetVaultAccessPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> SetVaultNotificationsOutcome;
+        typedef Aws::Utils::Outcome<UploadArchiveResult, GlacierError> UploadArchiveOutcome;
+        typedef Aws::Utils::Outcome<UploadMultipartPartResult, GlacierError> UploadMultipartPartOutcome;
 
         typedef std::future<AbortMultipartUploadOutcome> AbortMultipartUploadOutcomeCallable;
         typedef std::future<AbortVaultLockOutcome> AbortVaultLockOutcomeCallable;
@@ -274,8 +264,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~GlacierClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "Glacier"; }
 
 
         /**
@@ -1073,10 +1061,10 @@ namespace Model
          * including the job initiation date, the user who initiated the job, the job
          * status code/message and the Amazon SNS topic to notify after Amazon S3 Glacier
          * (Glacier) completes the job. For more information about initiating a job, see
-         * <a>InitiateJob</a>. </p> <note> <p>This operation enables you to check the
+         * <a>InitiateJob</a>. </p>  <p>This operation enables you to check the
          * status of your job. However, it is strongly recommended that you set up an
          * Amazon SNS topic and specify it in your initiate job request so that Glacier can
-         * notify the topic after it completes the job.</p> </note> <p>A job ID will not
+         * notify the topic after it completes the job.</p>  <p>A job ID will not
          * expire for at least 24 hours after Glacier completes the job.</p> <p>An AWS
          * account has full permission to perform all operations (actions). However, AWS
          * Identity and Access Management (IAM) users don't have any permissions by
@@ -1099,10 +1087,10 @@ namespace Model
          * including the job initiation date, the user who initiated the job, the job
          * status code/message and the Amazon SNS topic to notify after Amazon S3 Glacier
          * (Glacier) completes the job. For more information about initiating a job, see
-         * <a>InitiateJob</a>. </p> <note> <p>This operation enables you to check the
+         * <a>InitiateJob</a>. </p>  <p>This operation enables you to check the
          * status of your job. However, it is strongly recommended that you set up an
          * Amazon SNS topic and specify it in your initiate job request so that Glacier can
-         * notify the topic after it completes the job.</p> </note> <p>A job ID will not
+         * notify the topic after it completes the job.</p>  <p>A job ID will not
          * expire for at least 24 hours after Glacier completes the job.</p> <p>An AWS
          * account has full permission to perform all operations (actions). However, AWS
          * Identity and Access Management (IAM) users don't have any permissions by
@@ -1127,10 +1115,10 @@ namespace Model
          * including the job initiation date, the user who initiated the job, the job
          * status code/message and the Amazon SNS topic to notify after Amazon S3 Glacier
          * (Glacier) completes the job. For more information about initiating a job, see
-         * <a>InitiateJob</a>. </p> <note> <p>This operation enables you to check the
+         * <a>InitiateJob</a>. </p>  <p>This operation enables you to check the
          * status of your job. However, it is strongly recommended that you set up an
          * Amazon SNS topic and specify it in your initiate job request so that Glacier can
-         * notify the topic after it completes the job.</p> </note> <p>A job ID will not
+         * notify the topic after it completes the job.</p>  <p>A job ID will not
          * expire for at least 24 hours after Glacier completes the job.</p> <p>An AWS
          * account has full permission to perform all operations (actions). However, AWS
          * Identity and Access Management (IAM) users don't have any permissions by
@@ -1671,9 +1659,9 @@ namespace Model
          * last one can be the same size or smaller. For example, suppose you want to
          * upload a 16.2 MB file. If you initiate the multipart upload with a part size of
          * 4 MB, you will upload four parts of 4 MB each and one part of 0.2 MB. </p>
-         * <note> <p>You don't need to know the size of the archive when you start a
+         *  <p>You don't need to know the size of the archive when you start a
          * multipart upload because Amazon S3 Glacier does not require you to specify the
-         * overall archive size.</p> </note> <p>After you complete the multipart upload,
+         * overall archive size.</p>  <p>After you complete the multipart upload,
          * Amazon S3 Glacier (Glacier) removes the multipart upload resource referenced by
          * the ID. Glacier also removes the multipart upload resource if you cancel the
          * multipart upload or it may be removed if there is no activity for a period of 24
@@ -1707,9 +1695,9 @@ namespace Model
          * last one can be the same size or smaller. For example, suppose you want to
          * upload a 16.2 MB file. If you initiate the multipart upload with a part size of
          * 4 MB, you will upload four parts of 4 MB each and one part of 0.2 MB. </p>
-         * <note> <p>You don't need to know the size of the archive when you start a
+         *  <p>You don't need to know the size of the archive when you start a
          * multipart upload because Amazon S3 Glacier does not require you to specify the
-         * overall archive size.</p> </note> <p>After you complete the multipart upload,
+         * overall archive size.</p>  <p>After you complete the multipart upload,
          * Amazon S3 Glacier (Glacier) removes the multipart upload resource referenced by
          * the ID. Glacier also removes the multipart upload resource if you cancel the
          * multipart upload or it may be removed if there is no activity for a period of 24
@@ -1745,9 +1733,9 @@ namespace Model
          * last one can be the same size or smaller. For example, suppose you want to
          * upload a 16.2 MB file. If you initiate the multipart upload with a part size of
          * 4 MB, you will upload four parts of 4 MB each and one part of 0.2 MB. </p>
-         * <note> <p>You don't need to know the size of the archive when you start a
+         *  <p>You don't need to know the size of the archive when you start a
          * multipart upload because Amazon S3 Glacier does not require you to specify the
-         * overall archive size.</p> </note> <p>After you complete the multipart upload,
+         * overall archive size.</p>  <p>After you complete the multipart upload,
          * Amazon S3 Glacier (Glacier) removes the multipart upload resource referenced by
          * the ID. Glacier also removes the multipart upload resource if you cancel the
          * multipart upload or it may be removed if there is no activity for a period of 24
@@ -1870,7 +1858,7 @@ namespace Model
         /**
          * <p>This operation lists jobs for a vault, including jobs that are in-progress
          * and jobs that have recently finished. The List Job operation returns a list of
-         * these jobs sorted by job initiation time.</p> <note> <p>Amazon Glacier retains
+         * these jobs sorted by job initiation time.</p>  <p>Amazon Glacier retains
          * recently completed jobs for a period before deleting them; however, it
          * eventually removes completed jobs. The output of completed jobs can be
          * retrieved. Retaining completed jobs for a period of time after they have
@@ -1879,7 +1867,7 @@ namespace Model
          * suppose you start an archive retrieval job to download an archive. After the job
          * completes, you start to download the archive but encounter a network error. In
          * this scenario, you can retry and download the archive while the job exists.</p>
-         * </note> <p>The List Jobs operation supports pagination. You should always check
+         *  <p>The List Jobs operation supports pagination. You should always check
          * the response <code>Marker</code> field. If there are no more jobs to list, the
          * <code>Marker</code> field is set to <code>null</code>. If there are more jobs to
          * list, the <code>Marker</code> field is set to a non-null value, which you can
@@ -1908,7 +1896,7 @@ namespace Model
         /**
          * <p>This operation lists jobs for a vault, including jobs that are in-progress
          * and jobs that have recently finished. The List Job operation returns a list of
-         * these jobs sorted by job initiation time.</p> <note> <p>Amazon Glacier retains
+         * these jobs sorted by job initiation time.</p>  <p>Amazon Glacier retains
          * recently completed jobs for a period before deleting them; however, it
          * eventually removes completed jobs. The output of completed jobs can be
          * retrieved. Retaining completed jobs for a period of time after they have
@@ -1917,7 +1905,7 @@ namespace Model
          * suppose you start an archive retrieval job to download an archive. After the job
          * completes, you start to download the archive but encounter a network error. In
          * this scenario, you can retry and download the archive while the job exists.</p>
-         * </note> <p>The List Jobs operation supports pagination. You should always check
+         *  <p>The List Jobs operation supports pagination. You should always check
          * the response <code>Marker</code> field. If there are no more jobs to list, the
          * <code>Marker</code> field is set to <code>null</code>. If there are more jobs to
          * list, the <code>Marker</code> field is set to a non-null value, which you can
@@ -1948,7 +1936,7 @@ namespace Model
         /**
          * <p>This operation lists jobs for a vault, including jobs that are in-progress
          * and jobs that have recently finished. The List Job operation returns a list of
-         * these jobs sorted by job initiation time.</p> <note> <p>Amazon Glacier retains
+         * these jobs sorted by job initiation time.</p>  <p>Amazon Glacier retains
          * recently completed jobs for a period before deleting them; however, it
          * eventually removes completed jobs. The output of completed jobs can be
          * retrieved. Retaining completed jobs for a period of time after they have
@@ -1957,7 +1945,7 @@ namespace Model
          * suppose you start an archive retrieval job to download an archive. After the job
          * completes, you start to download the archive but encounter a network error. In
          * this scenario, you can retry and download the archive while the job exists.</p>
-         * </note> <p>The List Jobs operation supports pagination. You should always check
+         *  <p>The List Jobs operation supports pagination. You should always check
          * the response <code>Marker</code> field. If there are no more jobs to list, the
          * <code>Marker</code> field is set to <code>null</code>. If there are more jobs to
          * list, the <code>Marker</code> field is set to a non-null value, which you can
@@ -2745,11 +2733,11 @@ namespace Model
          * Checksums</a>.</p> </li> <li> <p> <b>Part size does not match</b>The size of
          * each part except the last must match the size specified in the corresponding
          * <a>InitiateMultipartUpload</a> request. The size of the last part must be the
-         * same size as, or smaller than, the specified size.</p> <note> <p>If you upload a
+         * same size as, or smaller than, the specified size.</p>  <p>If you upload a
          * part whose size is smaller than the part size you specified in your initiate
          * multipart upload request and that part is not the last part, then the upload
          * part request will succeed. However, the subsequent Complete Multipart Upload
-         * request will fail.</p> </note> </li> <li> <p> <b>Range does not align</b>The
+         * request will fail.</p>  </li> <li> <p> <b>Range does not align</b>The
          * byte range value in the request does not align with the part size specified in
          * the corresponding initiate request. For example, if you specify a part size of
          * 4194304 bytes (4 MB), then 0 to 4194303 bytes (4 MB - 1) and 4194304 (4 MB) to
@@ -2788,11 +2776,11 @@ namespace Model
          * Checksums</a>.</p> </li> <li> <p> <b>Part size does not match</b>The size of
          * each part except the last must match the size specified in the corresponding
          * <a>InitiateMultipartUpload</a> request. The size of the last part must be the
-         * same size as, or smaller than, the specified size.</p> <note> <p>If you upload a
+         * same size as, or smaller than, the specified size.</p>  <p>If you upload a
          * part whose size is smaller than the part size you specified in your initiate
          * multipart upload request and that part is not the last part, then the upload
          * part request will succeed. However, the subsequent Complete Multipart Upload
-         * request will fail.</p> </note> </li> <li> <p> <b>Range does not align</b>The
+         * request will fail.</p>  </li> <li> <p> <b>Range does not align</b>The
          * byte range value in the request does not align with the part size specified in
          * the corresponding initiate request. For example, if you specify a part size of
          * 4194304 bytes (4 MB), then 0 to 4194303 bytes (4 MB - 1) and 4194304 (4 MB) to
@@ -2833,11 +2821,11 @@ namespace Model
          * Checksums</a>.</p> </li> <li> <p> <b>Part size does not match</b>The size of
          * each part except the last must match the size specified in the corresponding
          * <a>InitiateMultipartUpload</a> request. The size of the last part must be the
-         * same size as, or smaller than, the specified size.</p> <note> <p>If you upload a
+         * same size as, or smaller than, the specified size.</p>  <p>If you upload a
          * part whose size is smaller than the part size you specified in your initiate
          * multipart upload request and that part is not the last part, then the upload
          * part request will succeed. However, the subsequent Complete Multipart Upload
-         * request will fail.</p> </note> </li> <li> <p> <b>Range does not align</b>The
+         * request will fail.</p>  </li> <li> <p> <b>Range does not align</b>The
          * byte range value in the request does not align with the part size specified in
          * the corresponding initiate request. For example, if you specify a part size of
          * 4194304 bytes (4 MB), then 0 to 4194303 bytes (4 MB - 1) and 4194304 (4 MB) to
