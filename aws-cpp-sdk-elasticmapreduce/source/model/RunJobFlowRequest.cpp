@@ -44,7 +44,8 @@ RunJobFlowRequest::RunJobFlowRequest() :
     m_stepConcurrencyLevel(0),
     m_stepConcurrencyLevelHasBeenSet(false),
     m_managedScalingPolicyHasBeenSet(false),
-    m_placementGroupConfigsHasBeenSet(false)
+    m_placementGroupConfigsHasBeenSet(false),
+    m_autoTerminationPolicyHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,12 @@ Aws::String RunJobFlowRequest::SerializePayload() const
      placementGroupConfigsJsonList[placementGroupConfigsIndex].AsObject(m_placementGroupConfigs[placementGroupConfigsIndex].Jsonize());
    }
    payload.WithArray("PlacementGroupConfigs", std::move(placementGroupConfigsJsonList));
+
+  }
+
+  if(m_autoTerminationPolicyHasBeenSet)
+  {
+   payload.WithObject("AutoTerminationPolicy", m_autoTerminationPolicy.Jsonize());
 
   }
 

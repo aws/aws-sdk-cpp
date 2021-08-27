@@ -4686,14 +4686,13 @@ namespace Aws
          * information about SSE-C, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
          * Encryption (Using Customer-Provided Encryption Keys)</a>.</p> <p>Assuming you
-         * have permission to read object tags (permission for the
-         * <code>s3:GetObjectVersionTagging</code> action), the response also returns the
+         * have the relevant permission to read object tags, the response also returns the
          * <code>x-amz-tagging-count</code> header that provides the count of number of
          * tags associated with the object. You can use <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
          * to retrieve the tag set associated with an object.</p> <p> <b>Permissions</b>
-         * </p> <p>You need the <code>s3:GetObject</code> permission for this operation.
-         * For more information, see <a
+         * </p> <p>You need the relevant read object (or version) permission for this
+         * operation. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
          * Permissions in a Policy</a>. If the object you request does not exist, the error
          * Amazon S3 returns depends on whether you also have the
@@ -4800,14 +4799,13 @@ namespace Aws
          * information about SSE-C, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
          * Encryption (Using Customer-Provided Encryption Keys)</a>.</p> <p>Assuming you
-         * have permission to read object tags (permission for the
-         * <code>s3:GetObjectVersionTagging</code> action), the response also returns the
+         * have the relevant permission to read object tags, the response also returns the
          * <code>x-amz-tagging-count</code> header that provides the count of number of
          * tags associated with the object. You can use <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
          * to retrieve the tag set associated with an object.</p> <p> <b>Permissions</b>
-         * </p> <p>You need the <code>s3:GetObject</code> permission for this operation.
-         * For more information, see <a
+         * </p> <p>You need the relevant read object (or version) permission for this
+         * operation. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
          * Permissions in a Policy</a>. If the object you request does not exist, the error
          * Amazon S3 returns depends on whether you also have the
@@ -4916,14 +4914,13 @@ namespace Aws
          * information about SSE-C, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
          * Encryption (Using Customer-Provided Encryption Keys)</a>.</p> <p>Assuming you
-         * have permission to read object tags (permission for the
-         * <code>s3:GetObjectVersionTagging</code> action), the response also returns the
+         * have the relevant permission to read object tags, the response also returns the
          * <code>x-amz-tagging-count</code> header that provides the count of number of
          * tags associated with the object. You can use <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
          * to retrieve the tag set associated with an object.</p> <p> <b>Permissions</b>
-         * </p> <p>You need the <code>s3:GetObject</code> permission for this operation.
-         * For more information, see <a
+         * </p> <p>You need the relevant read object (or version) permission for this
+         * operation. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
          * Permissions in a Policy</a>. If the object you request does not exist, the error
          * Amazon S3 returns depends on whether you also have the
@@ -5506,8 +5503,8 @@ namespace Aws
          * </li> </ul> <p>Then Amazon S3 returns the <code>304 Not Modified</code> response
          * code.</p> </li> </ul> <p>For more information about conditional requests, see <a
          * href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p> <p>
-         * <b>Permissions</b> </p> <p>You need the <code>s3:GetObject</code> permission for
-         * this operation. For more information, see <a
+         * <b>Permissions</b> </p> <p>You need the relevant read object (or version)
+         * permission for this operation. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
          * Permissions in a Policy</a>. If the object you request does not exist, the error
          * Amazon S3 returns depends on whether you also have the s3:ListBucket
@@ -5567,8 +5564,8 @@ namespace Aws
          * </li> </ul> <p>Then Amazon S3 returns the <code>304 Not Modified</code> response
          * code.</p> </li> </ul> <p>For more information about conditional requests, see <a
          * href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p> <p>
-         * <b>Permissions</b> </p> <p>You need the <code>s3:GetObject</code> permission for
-         * this operation. For more information, see <a
+         * <b>Permissions</b> </p> <p>You need the relevant read object (or version)
+         * permission for this operation. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
          * Permissions in a Policy</a>. If the object you request does not exist, the error
          * Amazon S3 returns depends on whether you also have the s3:ListBucket
@@ -5630,8 +5627,8 @@ namespace Aws
          * </li> </ul> <p>Then Amazon S3 returns the <code>304 Not Modified</code> response
          * code.</p> </li> </ul> <p>For more information about conditional requests, see <a
          * href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p> <p>
-         * <b>Permissions</b> </p> <p>You need the <code>s3:GetObject</code> permission for
-         * this operation. For more information, see <a
+         * <b>Permissions</b> </p> <p>You need the relevant read object (or version)
+         * permission for this operation. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
          * Permissions in a Policy</a>. If the object you request does not exist, the error
          * Amazon S3 returns depends on whether you also have the s3:ListBucket

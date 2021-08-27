@@ -37,6 +37,7 @@
 #include <aws/elasticmapreduce/model/DescribeSecurityConfigurationRequest.h>
 #include <aws/elasticmapreduce/model/DescribeStepRequest.h>
 #include <aws/elasticmapreduce/model/DescribeStudioRequest.h>
+#include <aws/elasticmapreduce/model/GetAutoTerminationPolicyRequest.h>
 #include <aws/elasticmapreduce/model/GetBlockPublicAccessConfigurationRequest.h>
 #include <aws/elasticmapreduce/model/GetManagedScalingPolicyRequest.h>
 #include <aws/elasticmapreduce/model/GetStudioSessionMappingRequest.h>
@@ -55,9 +56,11 @@
 #include <aws/elasticmapreduce/model/ModifyInstanceFleetRequest.h>
 #include <aws/elasticmapreduce/model/ModifyInstanceGroupsRequest.h>
 #include <aws/elasticmapreduce/model/PutAutoScalingPolicyRequest.h>
+#include <aws/elasticmapreduce/model/PutAutoTerminationPolicyRequest.h>
 #include <aws/elasticmapreduce/model/PutBlockPublicAccessConfigurationRequest.h>
 #include <aws/elasticmapreduce/model/PutManagedScalingPolicyRequest.h>
 #include <aws/elasticmapreduce/model/RemoveAutoScalingPolicyRequest.h>
+#include <aws/elasticmapreduce/model/RemoveAutoTerminationPolicyRequest.h>
 #include <aws/elasticmapreduce/model/RemoveManagedScalingPolicyRequest.h>
 #include <aws/elasticmapreduce/model/RemoveTagsRequest.h>
 #include <aws/elasticmapreduce/model/RunJobFlowRequest.h>
@@ -550,6 +553,30 @@ void EMRClient::DescribeStudioAsyncHelper(const DescribeStudioRequest& request, 
   handler(this, request, DescribeStudio(request), context);
 }
 
+GetAutoTerminationPolicyOutcome EMRClient::GetAutoTerminationPolicy(const GetAutoTerminationPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetAutoTerminationPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetAutoTerminationPolicyOutcomeCallable EMRClient::GetAutoTerminationPolicyCallable(const GetAutoTerminationPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAutoTerminationPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAutoTerminationPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::GetAutoTerminationPolicyAsync(const GetAutoTerminationPolicyRequest& request, const GetAutoTerminationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAutoTerminationPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::GetAutoTerminationPolicyAsyncHelper(const GetAutoTerminationPolicyRequest& request, const GetAutoTerminationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAutoTerminationPolicy(request), context);
+}
+
 GetBlockPublicAccessConfigurationOutcome EMRClient::GetBlockPublicAccessConfiguration(const GetBlockPublicAccessConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -982,6 +1009,30 @@ void EMRClient::PutAutoScalingPolicyAsyncHelper(const PutAutoScalingPolicyReques
   handler(this, request, PutAutoScalingPolicy(request), context);
 }
 
+PutAutoTerminationPolicyOutcome EMRClient::PutAutoTerminationPolicy(const PutAutoTerminationPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return PutAutoTerminationPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutAutoTerminationPolicyOutcomeCallable EMRClient::PutAutoTerminationPolicyCallable(const PutAutoTerminationPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutAutoTerminationPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAutoTerminationPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::PutAutoTerminationPolicyAsync(const PutAutoTerminationPolicyRequest& request, const PutAutoTerminationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutAutoTerminationPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::PutAutoTerminationPolicyAsyncHelper(const PutAutoTerminationPolicyRequest& request, const PutAutoTerminationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutAutoTerminationPolicy(request), context);
+}
+
 PutBlockPublicAccessConfigurationOutcome EMRClient::PutBlockPublicAccessConfiguration(const PutBlockPublicAccessConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1052,6 +1103,30 @@ void EMRClient::RemoveAutoScalingPolicyAsync(const RemoveAutoScalingPolicyReques
 void EMRClient::RemoveAutoScalingPolicyAsyncHelper(const RemoveAutoScalingPolicyRequest& request, const RemoveAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RemoveAutoScalingPolicy(request), context);
+}
+
+RemoveAutoTerminationPolicyOutcome EMRClient::RemoveAutoTerminationPolicy(const RemoveAutoTerminationPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return RemoveAutoTerminationPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RemoveAutoTerminationPolicyOutcomeCallable EMRClient::RemoveAutoTerminationPolicyCallable(const RemoveAutoTerminationPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemoveAutoTerminationPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveAutoTerminationPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::RemoveAutoTerminationPolicyAsync(const RemoveAutoTerminationPolicyRequest& request, const RemoveAutoTerminationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveAutoTerminationPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::RemoveAutoTerminationPolicyAsyncHelper(const RemoveAutoTerminationPolicyRequest& request, const RemoveAutoTerminationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemoveAutoTerminationPolicy(request), context);
 }
 
 RemoveManagedScalingPolicyOutcome EMRClient::RemoveManagedScalingPolicy(const RemoveManagedScalingPolicyRequest& request) const

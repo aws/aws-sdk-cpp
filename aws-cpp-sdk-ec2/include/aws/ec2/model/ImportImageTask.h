@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/BootModeValues.h>
 #include <aws/ec2/model/SnapshotDetail.h>
 #include <aws/ec2/model/Tag.h>
 #include <aws/ec2/model/ImportImageLicenseConfigurationResponse.h>
@@ -710,6 +711,37 @@ namespace Model
      */
     inline ImportImageTask& WithUsageOperation(const char* value) { SetUsageOperation(value); return *this;}
 
+
+    /**
+     * <p>The boot mode of the virtual machine.</p>
+     */
+    inline const BootModeValues& GetBootMode() const{ return m_bootMode; }
+
+    /**
+     * <p>The boot mode of the virtual machine.</p>
+     */
+    inline bool BootModeHasBeenSet() const { return m_bootModeHasBeenSet; }
+
+    /**
+     * <p>The boot mode of the virtual machine.</p>
+     */
+    inline void SetBootMode(const BootModeValues& value) { m_bootModeHasBeenSet = true; m_bootMode = value; }
+
+    /**
+     * <p>The boot mode of the virtual machine.</p>
+     */
+    inline void SetBootMode(BootModeValues&& value) { m_bootModeHasBeenSet = true; m_bootMode = std::move(value); }
+
+    /**
+     * <p>The boot mode of the virtual machine.</p>
+     */
+    inline ImportImageTask& WithBootMode(const BootModeValues& value) { SetBootMode(value); return *this;}
+
+    /**
+     * <p>The boot mode of the virtual machine.</p>
+     */
+    inline ImportImageTask& WithBootMode(BootModeValues&& value) { SetBootMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_architecture;
@@ -759,6 +791,9 @@ namespace Model
 
     Aws::String m_usageOperation;
     bool m_usageOperationHasBeenSet;
+
+    BootModeValues m_bootMode;
+    bool m_bootModeHasBeenSet;
   };
 
 } // namespace Model

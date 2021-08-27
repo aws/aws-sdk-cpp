@@ -331,29 +331,29 @@ namespace Model
 
     /**
      * <p>Specifies whether you want to delete this object even if it has a
-     * Governance-type Object Lock in place. You must have sufficient permissions to
-     * perform this operation.</p>
+     * Governance-type Object Lock in place. To use this header, you must have the
+     * <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
      */
     inline bool GetBypassGovernanceRetention() const{ return m_bypassGovernanceRetention; }
 
     /**
      * <p>Specifies whether you want to delete this object even if it has a
-     * Governance-type Object Lock in place. You must have sufficient permissions to
-     * perform this operation.</p>
+     * Governance-type Object Lock in place. To use this header, you must have the
+     * <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
      */
     inline bool BypassGovernanceRetentionHasBeenSet() const { return m_bypassGovernanceRetentionHasBeenSet; }
 
     /**
      * <p>Specifies whether you want to delete this object even if it has a
-     * Governance-type Object Lock in place. You must have sufficient permissions to
-     * perform this operation.</p>
+     * Governance-type Object Lock in place. To use this header, you must have the
+     * <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
      */
     inline void SetBypassGovernanceRetention(bool value) { m_bypassGovernanceRetentionHasBeenSet = true; m_bypassGovernanceRetention = value; }
 
     /**
      * <p>Specifies whether you want to delete this object even if it has a
-     * Governance-type Object Lock in place. You must have sufficient permissions to
-     * perform this operation.</p>
+     * Governance-type Object Lock in place. To use this header, you must have the
+     * <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
      */
     inline DeleteObjectsRequest& WithBypassGovernanceRetention(bool value) { SetBypassGovernanceRetention(value); return *this;}
 

@@ -13,6 +13,7 @@
 #include <aws/elasticmapreduce/model/RepoUpgradeOnBoot.h>
 #include <aws/elasticmapreduce/model/KerberosAttributes.h>
 #include <aws/elasticmapreduce/model/ManagedScalingPolicy.h>
+#include <aws/elasticmapreduce/model/AutoTerminationPolicy.h>
 #include <aws/elasticmapreduce/model/StepConfig.h>
 #include <aws/elasticmapreduce/model/BootstrapActionConfig.h>
 #include <aws/elasticmapreduce/model/SupportedProductConfig.h>
@@ -905,15 +906,15 @@ namespace Model
 
 
     /**
-     * <p>Set this value to <code>true</code> so that IAM principals in the account
-     * associated with the cluster can perform EMR actions on the cluster that their
-     * IAM policies allow. This value defaults to <code>true</code> for clusters
-     * created using the EMR API or the CLI <a
+     * <p>Set this value to <code>true</code> so that IAM principals in the Amazon Web
+     * Services account associated with the cluster can perform EMR actions on the
+     * cluster that their IAM policies allow. This value defaults to <code>true</code>
+     * for clusters created using the EMR API or the CLI <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
      * command.</p> <p>When set to <code>false</code>, only the IAM principal that
-     * created the cluster and the account root user can perform EMR actions for the
-     * cluster, regardless of the IAM permissions policies attached to other IAM
-     * principals. For more information, see <a
+     * created the cluster and the Amazon Web Services account root user can perform
+     * EMR actions for the cluster, regardless of the IAM permissions policies attached
+     * to other IAM principals. For more information, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
      * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement
      * Guide</i>.</p>
@@ -921,15 +922,15 @@ namespace Model
     inline bool GetVisibleToAllUsers() const{ return m_visibleToAllUsers; }
 
     /**
-     * <p>Set this value to <code>true</code> so that IAM principals in the account
-     * associated with the cluster can perform EMR actions on the cluster that their
-     * IAM policies allow. This value defaults to <code>true</code> for clusters
-     * created using the EMR API or the CLI <a
+     * <p>Set this value to <code>true</code> so that IAM principals in the Amazon Web
+     * Services account associated with the cluster can perform EMR actions on the
+     * cluster that their IAM policies allow. This value defaults to <code>true</code>
+     * for clusters created using the EMR API or the CLI <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
      * command.</p> <p>When set to <code>false</code>, only the IAM principal that
-     * created the cluster and the account root user can perform EMR actions for the
-     * cluster, regardless of the IAM permissions policies attached to other IAM
-     * principals. For more information, see <a
+     * created the cluster and the Amazon Web Services account root user can perform
+     * EMR actions for the cluster, regardless of the IAM permissions policies attached
+     * to other IAM principals. For more information, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
      * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement
      * Guide</i>.</p>
@@ -937,15 +938,15 @@ namespace Model
     inline bool VisibleToAllUsersHasBeenSet() const { return m_visibleToAllUsersHasBeenSet; }
 
     /**
-     * <p>Set this value to <code>true</code> so that IAM principals in the account
-     * associated with the cluster can perform EMR actions on the cluster that their
-     * IAM policies allow. This value defaults to <code>true</code> for clusters
-     * created using the EMR API or the CLI <a
+     * <p>Set this value to <code>true</code> so that IAM principals in the Amazon Web
+     * Services account associated with the cluster can perform EMR actions on the
+     * cluster that their IAM policies allow. This value defaults to <code>true</code>
+     * for clusters created using the EMR API or the CLI <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
      * command.</p> <p>When set to <code>false</code>, only the IAM principal that
-     * created the cluster and the account root user can perform EMR actions for the
-     * cluster, regardless of the IAM permissions policies attached to other IAM
-     * principals. For more information, see <a
+     * created the cluster and the Amazon Web Services account root user can perform
+     * EMR actions for the cluster, regardless of the IAM permissions policies attached
+     * to other IAM principals. For more information, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
      * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement
      * Guide</i>.</p>
@@ -953,15 +954,15 @@ namespace Model
     inline void SetVisibleToAllUsers(bool value) { m_visibleToAllUsersHasBeenSet = true; m_visibleToAllUsers = value; }
 
     /**
-     * <p>Set this value to <code>true</code> so that IAM principals in the account
-     * associated with the cluster can perform EMR actions on the cluster that their
-     * IAM policies allow. This value defaults to <code>true</code> for clusters
-     * created using the EMR API or the CLI <a
+     * <p>Set this value to <code>true</code> so that IAM principals in the Amazon Web
+     * Services account associated with the cluster can perform EMR actions on the
+     * cluster that their IAM policies allow. This value defaults to <code>true</code>
+     * for clusters created using the EMR API or the CLI <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
      * command.</p> <p>When set to <code>false</code>, only the IAM principal that
-     * created the cluster and the account root user can perform EMR actions for the
-     * cluster, regardless of the IAM permissions policies attached to other IAM
-     * principals. For more information, see <a
+     * created the cluster and the Amazon Web Services account root user can perform
+     * EMR actions for the cluster, regardless of the IAM permissions policies attached
+     * to other IAM principals. For more information, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
      * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement
      * Guide</i>.</p>
@@ -1715,6 +1716,25 @@ namespace Model
      */
     inline RunJobFlowRequest& AddPlacementGroupConfigs(PlacementGroupConfig&& value) { m_placementGroupConfigsHasBeenSet = true; m_placementGroupConfigs.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const AutoTerminationPolicy& GetAutoTerminationPolicy() const{ return m_autoTerminationPolicy; }
+
+    
+    inline bool AutoTerminationPolicyHasBeenSet() const { return m_autoTerminationPolicyHasBeenSet; }
+
+    
+    inline void SetAutoTerminationPolicy(const AutoTerminationPolicy& value) { m_autoTerminationPolicyHasBeenSet = true; m_autoTerminationPolicy = value; }
+
+    
+    inline void SetAutoTerminationPolicy(AutoTerminationPolicy&& value) { m_autoTerminationPolicyHasBeenSet = true; m_autoTerminationPolicy = std::move(value); }
+
+    
+    inline RunJobFlowRequest& WithAutoTerminationPolicy(const AutoTerminationPolicy& value) { SetAutoTerminationPolicy(value); return *this;}
+
+    
+    inline RunJobFlowRequest& WithAutoTerminationPolicy(AutoTerminationPolicy&& value) { SetAutoTerminationPolicy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -1797,6 +1817,9 @@ namespace Model
 
     Aws::Vector<PlacementGroupConfig> m_placementGroupConfigs;
     bool m_placementGroupConfigsHasBeenSet;
+
+    AutoTerminationPolicy m_autoTerminationPolicy;
+    bool m_autoTerminationPolicyHasBeenSet;
   };
 
 } // namespace Model

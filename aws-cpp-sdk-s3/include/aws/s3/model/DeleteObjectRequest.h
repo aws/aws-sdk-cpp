@@ -379,25 +379,29 @@ namespace Model
 
     /**
      * <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions
-     * to process this operation.</p>
+     * to process this operation. To use this header, you must have the
+     * <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
      */
     inline bool GetBypassGovernanceRetention() const{ return m_bypassGovernanceRetention; }
 
     /**
      * <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions
-     * to process this operation.</p>
+     * to process this operation. To use this header, you must have the
+     * <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
      */
     inline bool BypassGovernanceRetentionHasBeenSet() const { return m_bypassGovernanceRetentionHasBeenSet; }
 
     /**
      * <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions
-     * to process this operation.</p>
+     * to process this operation. To use this header, you must have the
+     * <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
      */
     inline void SetBypassGovernanceRetention(bool value) { m_bypassGovernanceRetentionHasBeenSet = true; m_bypassGovernanceRetention = value; }
 
     /**
      * <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions
-     * to process this operation.</p>
+     * to process this operation. To use this header, you must have the
+     * <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
      */
     inline DeleteObjectRequest& WithBypassGovernanceRetention(bool value) { SetBypassGovernanceRetention(value); return *this;}
 
