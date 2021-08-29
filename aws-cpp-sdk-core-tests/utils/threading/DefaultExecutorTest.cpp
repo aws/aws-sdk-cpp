@@ -11,6 +11,20 @@
 
 using namespace Aws::Utils::Threading;
 
+TEST(DefaultExecutor, InOrderMemoryTest)
+{
+    std::atomic<unsigned> count(10);
+    {
+        DefaultExecutor exec;
+        auto first = [&] {
+            count.fetch_add(2, std::memory_order_relaxed);
+            count.fetch_sub(3, std::memory_order_relaxed);
+        };
+        exec.Submit(first);
+    }
+    ASSERT_EQ(count.load(std::memory_order_acquire), 9);
+}
+
 TEST(DefaultExecutor, ThreadsJoinOnDestructionTest)
 {
     std::atomic<int> i(1);

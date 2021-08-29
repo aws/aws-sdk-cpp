@@ -23,15 +23,17 @@ bool DefaultExecutor::SubmitToThread(std::function<void()>&&  fx)
     do
     {
         expected = State::Free;
-        if(m_state.compare_exchange_strong(expected, State::Locked))
+        if(m_state.compare_exchange_strong(expected, State::Locked, std::memory_order_relaxed, std::memory_order_acquire))
         {
+            // On success, nothing is read into the cache, thus it can be relaxed
             std::thread t(main);
             const auto id = t.get_id(); // copy the id before we std::move the thread
             m_threads.emplace(id, std::move(t));
-            m_state = State::Free;
+            m_state.store(State::Free, std::memory_order_release);
             return true;
         }
     }
+    // But on failure of comp exch, we need acquire ordering to get an accurate comparison below
     while(expected != State::Shutdown);
     return false;
 }
@@ -42,13 +44,13 @@ void DefaultExecutor::Detach(std::thread::id id)
     do
     {
         expected = State::Free;
-        if(m_state.compare_exchange_strong(expected, State::Locked))
+        if(m_state.compare_exchange_strong(expected, State::Locked, std::memory_order_relaxed, std::memory_order_acquire))
         {
             auto it = m_threads.find(id);
             assert(it != m_threads.end());
             it->second.detach();
             m_threads.erase(it);
-            m_state = State::Free;
+            m_state.store(State::Free, std::memory_order_release);
             return;
         }
     } 
@@ -58,7 +60,8 @@ void DefaultExecutor::Detach(std::thread::id id)
 DefaultExecutor::~DefaultExecutor()
 {
     auto expected = State::Free;
-    while(!m_state.compare_exchange_strong(expected, State::Shutdown))
+    // This has to be in sync with the failure condition in the other methods
+    while(!m_state.compare_exchange_weak(expected, State::Shutdown, std::memory_order_release, std::memory_order_acquire))
     {
         //spin while currently detaching threads finish
         assert(expected == State::Locked);
