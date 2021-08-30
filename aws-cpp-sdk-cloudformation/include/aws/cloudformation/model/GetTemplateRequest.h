@@ -174,7 +174,7 @@ namespace Model
      * <p>For templates that include transforms, the stage of the template that
      * CloudFormation returns. To get the user-submitted template, specify
      * <code>Original</code>. To get the template after CloudFormation has processed
-     * all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't
+     * all transforms, specify <code>Processed</code>.</p> <p>If the template doesn't
      * include transforms, <code>Original</code> and <code>Processed</code> return the
      * same template. By default, CloudFormation specifies <code>Processed</code>.</p>
      */
@@ -184,7 +184,7 @@ namespace Model
      * <p>For templates that include transforms, the stage of the template that
      * CloudFormation returns. To get the user-submitted template, specify
      * <code>Original</code>. To get the template after CloudFormation has processed
-     * all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't
+     * all transforms, specify <code>Processed</code>.</p> <p>If the template doesn't
      * include transforms, <code>Original</code> and <code>Processed</code> return the
      * same template. By default, CloudFormation specifies <code>Processed</code>.</p>
      */
@@ -194,7 +194,7 @@ namespace Model
      * <p>For templates that include transforms, the stage of the template that
      * CloudFormation returns. To get the user-submitted template, specify
      * <code>Original</code>. To get the template after CloudFormation has processed
-     * all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't
+     * all transforms, specify <code>Processed</code>.</p> <p>If the template doesn't
      * include transforms, <code>Original</code> and <code>Processed</code> return the
      * same template. By default, CloudFormation specifies <code>Processed</code>.</p>
      */
@@ -204,7 +204,7 @@ namespace Model
      * <p>For templates that include transforms, the stage of the template that
      * CloudFormation returns. To get the user-submitted template, specify
      * <code>Original</code>. To get the template after CloudFormation has processed
-     * all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't
+     * all transforms, specify <code>Processed</code>.</p> <p>If the template doesn't
      * include transforms, <code>Original</code> and <code>Processed</code> return the
      * same template. By default, CloudFormation specifies <code>Processed</code>.</p>
      */
@@ -214,7 +214,7 @@ namespace Model
      * <p>For templates that include transforms, the stage of the template that
      * CloudFormation returns. To get the user-submitted template, specify
      * <code>Original</code>. To get the template after CloudFormation has processed
-     * all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't
+     * all transforms, specify <code>Processed</code>.</p> <p>If the template doesn't
      * include transforms, <code>Original</code> and <code>Processed</code> return the
      * same template. By default, CloudFormation specifies <code>Processed</code>.</p>
      */
@@ -224,7 +224,7 @@ namespace Model
      * <p>For templates that include transforms, the stage of the template that
      * CloudFormation returns. To get the user-submitted template, specify
      * <code>Original</code>. To get the template after CloudFormation has processed
-     * all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't
+     * all transforms, specify <code>Processed</code>.</p> <p>If the template doesn't
      * include transforms, <code>Original</code> and <code>Processed</code> return the
      * same template. By default, CloudFormation specifies <code>Processed</code>.</p>
      */

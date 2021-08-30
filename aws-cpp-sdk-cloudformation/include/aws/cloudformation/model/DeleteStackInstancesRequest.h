@@ -91,65 +91,65 @@ namespace Model
 
 
     /**
-     * <p>[Self-managed permissions] The names of the accounts that you want to delete
-     * stack instances for.</p> <p>You can specify <code>Accounts</code> or
-     * <code>DeploymentTargets</code>, but not both.</p>
+     * <p>[Self-managed permissions] The names of the Amazon Web Services accounts that
+     * you want to delete stack instances for.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
 
     /**
-     * <p>[Self-managed permissions] The names of the accounts that you want to delete
-     * stack instances for.</p> <p>You can specify <code>Accounts</code> or
-     * <code>DeploymentTargets</code>, but not both.</p>
+     * <p>[Self-managed permissions] The names of the Amazon Web Services accounts that
+     * you want to delete stack instances for.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
 
     /**
-     * <p>[Self-managed permissions] The names of the accounts that you want to delete
-     * stack instances for.</p> <p>You can specify <code>Accounts</code> or
-     * <code>DeploymentTargets</code>, but not both.</p>
+     * <p>[Self-managed permissions] The names of the Amazon Web Services accounts that
+     * you want to delete stack instances for.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline void SetAccounts(const Aws::Vector<Aws::String>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
 
     /**
-     * <p>[Self-managed permissions] The names of the accounts that you want to delete
-     * stack instances for.</p> <p>You can specify <code>Accounts</code> or
-     * <code>DeploymentTargets</code>, but not both.</p>
+     * <p>[Self-managed permissions] The names of the Amazon Web Services accounts that
+     * you want to delete stack instances for.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline void SetAccounts(Aws::Vector<Aws::String>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
 
     /**
-     * <p>[Self-managed permissions] The names of the accounts that you want to delete
-     * stack instances for.</p> <p>You can specify <code>Accounts</code> or
-     * <code>DeploymentTargets</code>, but not both.</p>
+     * <p>[Self-managed permissions] The names of the Amazon Web Services accounts that
+     * you want to delete stack instances for.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline DeleteStackInstancesRequest& WithAccounts(const Aws::Vector<Aws::String>& value) { SetAccounts(value); return *this;}
 
     /**
-     * <p>[Self-managed permissions] The names of the accounts that you want to delete
-     * stack instances for.</p> <p>You can specify <code>Accounts</code> or
-     * <code>DeploymentTargets</code>, but not both.</p>
+     * <p>[Self-managed permissions] The names of the Amazon Web Services accounts that
+     * you want to delete stack instances for.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline DeleteStackInstancesRequest& WithAccounts(Aws::Vector<Aws::String>&& value) { SetAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>[Self-managed permissions] The names of the accounts that you want to delete
-     * stack instances for.</p> <p>You can specify <code>Accounts</code> or
-     * <code>DeploymentTargets</code>, but not both.</p>
+     * <p>[Self-managed permissions] The names of the Amazon Web Services accounts that
+     * you want to delete stack instances for.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline DeleteStackInstancesRequest& AddAccounts(const Aws::String& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
     /**
-     * <p>[Self-managed permissions] The names of the accounts that you want to delete
-     * stack instances for.</p> <p>You can specify <code>Accounts</code> or
-     * <code>DeploymentTargets</code>, but not both.</p>
+     * <p>[Self-managed permissions] The names of the Amazon Web Services accounts that
+     * you want to delete stack instances for.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline DeleteStackInstancesRequest& AddAccounts(Aws::String&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>[Self-managed permissions] The names of the accounts that you want to delete
-     * stack instances for.</p> <p>You can specify <code>Accounts</code> or
-     * <code>DeploymentTargets</code>, but not both.</p>
+     * <p>[Self-managed permissions] The names of the Amazon Web Services accounts that
+     * you want to delete stack instances for.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline DeleteStackInstancesRequest& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
@@ -198,47 +198,47 @@ namespace Model
 
 
     /**
-     * <p>The Regions where you want to delete stack set instances. </p>
+     * <p>The Regions where you want to delete stack set instances.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
 
     /**
-     * <p>The Regions where you want to delete stack set instances. </p>
+     * <p>The Regions where you want to delete stack set instances.</p>
      */
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
 
     /**
-     * <p>The Regions where you want to delete stack set instances. </p>
+     * <p>The Regions where you want to delete stack set instances.</p>
      */
     inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
 
     /**
-     * <p>The Regions where you want to delete stack set instances. </p>
+     * <p>The Regions where you want to delete stack set instances.</p>
      */
     inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
 
     /**
-     * <p>The Regions where you want to delete stack set instances. </p>
+     * <p>The Regions where you want to delete stack set instances.</p>
      */
     inline DeleteStackInstancesRequest& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
 
     /**
-     * <p>The Regions where you want to delete stack set instances. </p>
+     * <p>The Regions where you want to delete stack set instances.</p>
      */
     inline DeleteStackInstancesRequest& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
 
     /**
-     * <p>The Regions where you want to delete stack set instances. </p>
+     * <p>The Regions where you want to delete stack set instances.</p>
      */
     inline DeleteStackInstancesRequest& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 
     /**
-     * <p>The Regions where you want to delete stack set instances. </p>
+     * <p>The Regions where you want to delete stack set instances.</p>
      */
     inline DeleteStackInstancesRequest& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Regions where you want to delete stack set instances. </p>
+     * <p>The Regions where you want to delete stack set instances.</p>
      */
     inline DeleteStackInstancesRequest& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 
@@ -312,98 +312,98 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for this stack set operation. </p> <p>If you don't
-     * specify an operation ID, the SDK generates one automatically. </p> <p>The
+     * <p>The unique identifier for this stack set operation.</p> <p>If you don't
+     * specify an operation ID, the SDK generates one automatically.</p> <p>The
      * operation ID also functions as an idempotency token, to ensure that
      * CloudFormation performs the stack set operation only once, even if you retry the
      * request multiple times. You can retry stack set operation requests to ensure
      * that CloudFormation successfully received them.</p> <p>Repeating this stack set
      * operation with a new operation ID retries all stack instances whose status is
-     * <code>OUTDATED</code>. </p>
+     * <code>OUTDATED</code>.</p>
      */
     inline const Aws::String& GetOperationId() const{ return m_operationId; }
 
     /**
-     * <p>The unique identifier for this stack set operation. </p> <p>If you don't
-     * specify an operation ID, the SDK generates one automatically. </p> <p>The
+     * <p>The unique identifier for this stack set operation.</p> <p>If you don't
+     * specify an operation ID, the SDK generates one automatically.</p> <p>The
      * operation ID also functions as an idempotency token, to ensure that
      * CloudFormation performs the stack set operation only once, even if you retry the
      * request multiple times. You can retry stack set operation requests to ensure
      * that CloudFormation successfully received them.</p> <p>Repeating this stack set
      * operation with a new operation ID retries all stack instances whose status is
-     * <code>OUTDATED</code>. </p>
+     * <code>OUTDATED</code>.</p>
      */
     inline bool OperationIdHasBeenSet() const { return m_operationIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for this stack set operation. </p> <p>If you don't
-     * specify an operation ID, the SDK generates one automatically. </p> <p>The
+     * <p>The unique identifier for this stack set operation.</p> <p>If you don't
+     * specify an operation ID, the SDK generates one automatically.</p> <p>The
      * operation ID also functions as an idempotency token, to ensure that
      * CloudFormation performs the stack set operation only once, even if you retry the
      * request multiple times. You can retry stack set operation requests to ensure
      * that CloudFormation successfully received them.</p> <p>Repeating this stack set
      * operation with a new operation ID retries all stack instances whose status is
-     * <code>OUTDATED</code>. </p>
+     * <code>OUTDATED</code>.</p>
      */
     inline void SetOperationId(const Aws::String& value) { m_operationIdHasBeenSet = true; m_operationId = value; }
 
     /**
-     * <p>The unique identifier for this stack set operation. </p> <p>If you don't
-     * specify an operation ID, the SDK generates one automatically. </p> <p>The
+     * <p>The unique identifier for this stack set operation.</p> <p>If you don't
+     * specify an operation ID, the SDK generates one automatically.</p> <p>The
      * operation ID also functions as an idempotency token, to ensure that
      * CloudFormation performs the stack set operation only once, even if you retry the
      * request multiple times. You can retry stack set operation requests to ensure
      * that CloudFormation successfully received them.</p> <p>Repeating this stack set
      * operation with a new operation ID retries all stack instances whose status is
-     * <code>OUTDATED</code>. </p>
+     * <code>OUTDATED</code>.</p>
      */
     inline void SetOperationId(Aws::String&& value) { m_operationIdHasBeenSet = true; m_operationId = std::move(value); }
 
     /**
-     * <p>The unique identifier for this stack set operation. </p> <p>If you don't
-     * specify an operation ID, the SDK generates one automatically. </p> <p>The
+     * <p>The unique identifier for this stack set operation.</p> <p>If you don't
+     * specify an operation ID, the SDK generates one automatically.</p> <p>The
      * operation ID also functions as an idempotency token, to ensure that
      * CloudFormation performs the stack set operation only once, even if you retry the
      * request multiple times. You can retry stack set operation requests to ensure
      * that CloudFormation successfully received them.</p> <p>Repeating this stack set
      * operation with a new operation ID retries all stack instances whose status is
-     * <code>OUTDATED</code>. </p>
+     * <code>OUTDATED</code>.</p>
      */
     inline void SetOperationId(const char* value) { m_operationIdHasBeenSet = true; m_operationId.assign(value); }
 
     /**
-     * <p>The unique identifier for this stack set operation. </p> <p>If you don't
-     * specify an operation ID, the SDK generates one automatically. </p> <p>The
+     * <p>The unique identifier for this stack set operation.</p> <p>If you don't
+     * specify an operation ID, the SDK generates one automatically.</p> <p>The
      * operation ID also functions as an idempotency token, to ensure that
      * CloudFormation performs the stack set operation only once, even if you retry the
      * request multiple times. You can retry stack set operation requests to ensure
      * that CloudFormation successfully received them.</p> <p>Repeating this stack set
      * operation with a new operation ID retries all stack instances whose status is
-     * <code>OUTDATED</code>. </p>
+     * <code>OUTDATED</code>.</p>
      */
     inline DeleteStackInstancesRequest& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
 
     /**
-     * <p>The unique identifier for this stack set operation. </p> <p>If you don't
-     * specify an operation ID, the SDK generates one automatically. </p> <p>The
+     * <p>The unique identifier for this stack set operation.</p> <p>If you don't
+     * specify an operation ID, the SDK generates one automatically.</p> <p>The
      * operation ID also functions as an idempotency token, to ensure that
      * CloudFormation performs the stack set operation only once, even if you retry the
      * request multiple times. You can retry stack set operation requests to ensure
      * that CloudFormation successfully received them.</p> <p>Repeating this stack set
      * operation with a new operation ID retries all stack instances whose status is
-     * <code>OUTDATED</code>. </p>
+     * <code>OUTDATED</code>.</p>
      */
     inline DeleteStackInstancesRequest& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for this stack set operation. </p> <p>If you don't
-     * specify an operation ID, the SDK generates one automatically. </p> <p>The
+     * <p>The unique identifier for this stack set operation.</p> <p>If you don't
+     * specify an operation ID, the SDK generates one automatically.</p> <p>The
      * operation ID also functions as an idempotency token, to ensure that
      * CloudFormation performs the stack set operation only once, even if you retry the
      * request multiple times. You can retry stack set operation requests to ensure
      * that CloudFormation successfully received them.</p> <p>Repeating this stack set
      * operation with a new operation ID retries all stack instances whose status is
-     * <code>OUTDATED</code>. </p>
+     * <code>OUTDATED</code>.</p>
      */
     inline DeleteStackInstancesRequest& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 
@@ -415,9 +415,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
@@ -431,9 +431,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
@@ -447,9 +447,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
@@ -463,9 +463,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
@@ -479,9 +479,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
@@ -495,9 +495,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>

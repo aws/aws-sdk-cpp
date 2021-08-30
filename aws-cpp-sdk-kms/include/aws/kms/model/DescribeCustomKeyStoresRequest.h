@@ -190,28 +190,28 @@ namespace Model
 
     /**
      * <p>Use this parameter to specify the maximum number of items to return. When
-     * this value is present, AWS KMS does not return more than the specified number of
+     * this value is present, KMS does not return more than the specified number of
      * items, but it might return fewer.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>Use this parameter to specify the maximum number of items to return. When
-     * this value is present, AWS KMS does not return more than the specified number of
+     * this value is present, KMS does not return more than the specified number of
      * items, but it might return fewer.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>Use this parameter to specify the maximum number of items to return. When
-     * this value is present, AWS KMS does not return more than the specified number of
+     * this value is present, KMS does not return more than the specified number of
      * items, but it might return fewer.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>Use this parameter to specify the maximum number of items to return. When
-     * this value is present, AWS KMS does not return more than the specified number of
+     * this value is present, KMS does not return more than the specified number of
      * items, but it might return fewer.</p>
      */
     inline DescribeCustomKeyStoresRequest& WithLimit(int value) { SetLimit(value); return *this;}

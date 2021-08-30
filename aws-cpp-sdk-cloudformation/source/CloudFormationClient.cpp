@@ -73,6 +73,7 @@
 #include <aws/cloudformation/model/RecordHandlerProgressRequest.h>
 #include <aws/cloudformation/model/RegisterPublisherRequest.h>
 #include <aws/cloudformation/model/RegisterTypeRequest.h>
+#include <aws/cloudformation/model/RollbackStackRequest.h>
 #include <aws/cloudformation/model/SetStackPolicyRequest.h>
 #include <aws/cloudformation/model/SetTypeConfigurationRequest.h>
 #include <aws/cloudformation/model/SetTypeDefaultVersionRequest.h>
@@ -1439,6 +1440,30 @@ void CloudFormationClient::RegisterTypeAsync(const RegisterTypeRequest& request,
 void CloudFormationClient::RegisterTypeAsyncHelper(const RegisterTypeRequest& request, const RegisterTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RegisterType(request), context);
+}
+
+RollbackStackOutcome CloudFormationClient::RollbackStack(const RollbackStackRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return RollbackStackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+RollbackStackOutcomeCallable CloudFormationClient::RollbackStackCallable(const RollbackStackRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RollbackStackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RollbackStack(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::RollbackStackAsync(const RollbackStackRequest& request, const RollbackStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RollbackStackAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::RollbackStackAsyncHelper(const RollbackStackRequest& request, const RollbackStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RollbackStack(request), context);
 }
 
 SetStackPolicyOutcome CloudFormationClient::SetStackPolicy(const SetStackPolicyRequest& request) const

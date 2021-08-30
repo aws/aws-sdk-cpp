@@ -210,6 +210,31 @@ namespace Model
      */
     inline ExecuteChangeSetRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
+    /**
+     * <p>Preserves the state of previously provisioned resources when an operation
+     * fails.</p> <p>Default: <code>True</code> </p>
+     */
+    inline bool GetDisableRollback() const{ return m_disableRollback; }
+
+    /**
+     * <p>Preserves the state of previously provisioned resources when an operation
+     * fails.</p> <p>Default: <code>True</code> </p>
+     */
+    inline bool DisableRollbackHasBeenSet() const { return m_disableRollbackHasBeenSet; }
+
+    /**
+     * <p>Preserves the state of previously provisioned resources when an operation
+     * fails.</p> <p>Default: <code>True</code> </p>
+     */
+    inline void SetDisableRollback(bool value) { m_disableRollbackHasBeenSet = true; m_disableRollback = value; }
+
+    /**
+     * <p>Preserves the state of previously provisioned resources when an operation
+     * fails.</p> <p>Default: <code>True</code> </p>
+     */
+    inline ExecuteChangeSetRequest& WithDisableRollback(bool value) { SetDisableRollback(value); return *this;}
+
   private:
 
     Aws::String m_changeSetName;
@@ -220,6 +245,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
+
+    bool m_disableRollback;
+    bool m_disableRollbackHasBeenSet;
   };
 
 } // namespace Model

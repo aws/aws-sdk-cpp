@@ -36,57 +36,57 @@ namespace Model
 
 
     /**
-     * <p>Displays details about the new replica CMK, including its Amazon Resource
+     * <p>Displays details about the new replica key, including its Amazon Resource
      * Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
      * ARN</a>) and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key
-     * state</a>. It also includes the ARN and AWS Region of its primary key and other
-     * replica keys.</p>
+     * state</a>. It also includes the ARN and Amazon Web Services Region of its
+     * primary key and other replica keys.</p>
      */
     inline const KeyMetadata& GetReplicaKeyMetadata() const{ return m_replicaKeyMetadata; }
 
     /**
-     * <p>Displays details about the new replica CMK, including its Amazon Resource
+     * <p>Displays details about the new replica key, including its Amazon Resource
      * Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
      * ARN</a>) and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key
-     * state</a>. It also includes the ARN and AWS Region of its primary key and other
-     * replica keys.</p>
+     * state</a>. It also includes the ARN and Amazon Web Services Region of its
+     * primary key and other replica keys.</p>
      */
     inline void SetReplicaKeyMetadata(const KeyMetadata& value) { m_replicaKeyMetadata = value; }
 
     /**
-     * <p>Displays details about the new replica CMK, including its Amazon Resource
+     * <p>Displays details about the new replica key, including its Amazon Resource
      * Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
      * ARN</a>) and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key
-     * state</a>. It also includes the ARN and AWS Region of its primary key and other
-     * replica keys.</p>
+     * state</a>. It also includes the ARN and Amazon Web Services Region of its
+     * primary key and other replica keys.</p>
      */
     inline void SetReplicaKeyMetadata(KeyMetadata&& value) { m_replicaKeyMetadata = std::move(value); }
 
     /**
-     * <p>Displays details about the new replica CMK, including its Amazon Resource
+     * <p>Displays details about the new replica key, including its Amazon Resource
      * Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
      * ARN</a>) and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key
-     * state</a>. It also includes the ARN and AWS Region of its primary key and other
-     * replica keys.</p>
+     * state</a>. It also includes the ARN and Amazon Web Services Region of its
+     * primary key and other replica keys.</p>
      */
     inline ReplicateKeyResult& WithReplicaKeyMetadata(const KeyMetadata& value) { SetReplicaKeyMetadata(value); return *this;}
 
     /**
-     * <p>Displays details about the new replica CMK, including its Amazon Resource
+     * <p>Displays details about the new replica key, including its Amazon Resource
      * Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
      * ARN</a>) and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key
-     * state</a>. It also includes the ARN and AWS Region of its primary key and other
-     * replica keys.</p>
+     * state</a>. It also includes the ARN and Amazon Web Services Region of its
+     * primary key and other replica keys.</p>
      */
     inline ReplicateKeyResult& WithReplicaKeyMetadata(KeyMetadata&& value) { SetReplicaKeyMetadata(std::move(value)); return *this;}
 

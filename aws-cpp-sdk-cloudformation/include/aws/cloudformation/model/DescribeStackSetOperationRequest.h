@@ -126,9 +126,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
@@ -142,9 +142,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
@@ -158,9 +158,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
@@ -174,9 +174,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
@@ -190,9 +190,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
@@ -206,9 +206,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>

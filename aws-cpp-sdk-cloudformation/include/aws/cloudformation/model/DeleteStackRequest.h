@@ -259,8 +259,8 @@ namespace Model
      * console use the token format <i>Console-StackOperation-ID</i>, which helps you
      * easily identify the stack operation . For example, if you create a stack using
      * the console, each stack event would be assigned the same token in the following
-     * format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.
-     * </p>
+     * format:
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
@@ -279,8 +279,8 @@ namespace Model
      * console use the token format <i>Console-StackOperation-ID</i>, which helps you
      * easily identify the stack operation . For example, if you create a stack using
      * the console, each stack event would be assigned the same token in the following
-     * format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.
-     * </p>
+     * format:
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
@@ -299,8 +299,8 @@ namespace Model
      * console use the token format <i>Console-StackOperation-ID</i>, which helps you
      * easily identify the stack operation . For example, if you create a stack using
      * the console, each stack event would be assigned the same token in the following
-     * format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.
-     * </p>
+     * format:
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
@@ -319,8 +319,8 @@ namespace Model
      * console use the token format <i>Console-StackOperation-ID</i>, which helps you
      * easily identify the stack operation . For example, if you create a stack using
      * the console, each stack event would be assigned the same token in the following
-     * format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.
-     * </p>
+     * format:
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
@@ -339,8 +339,8 @@ namespace Model
      * console use the token format <i>Console-StackOperation-ID</i>, which helps you
      * easily identify the stack operation . For example, if you create a stack using
      * the console, each stack event would be assigned the same token in the following
-     * format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.
-     * </p>
+     * format:
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
@@ -359,8 +359,8 @@ namespace Model
      * console use the token format <i>Console-StackOperation-ID</i>, which helps you
      * easily identify the stack operation . For example, if you create a stack using
      * the console, each stack event would be assigned the same token in the following
-     * format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.
-     * </p>
+     * format:
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline DeleteStackRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
@@ -379,8 +379,8 @@ namespace Model
      * console use the token format <i>Console-StackOperation-ID</i>, which helps you
      * easily identify the stack operation . For example, if you create a stack using
      * the console, each stack event would be assigned the same token in the following
-     * format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.
-     * </p>
+     * format:
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline DeleteStackRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
@@ -399,8 +399,8 @@ namespace Model
      * console use the token format <i>Console-StackOperation-ID</i>, which helps you
      * easily identify the stack operation . For example, if you create a stack using
      * the console, each stack event would be assigned the same token in the following
-     * format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.
-     * </p>
+     * format:
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline DeleteStackRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

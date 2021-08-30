@@ -552,15 +552,15 @@ namespace Model
      * contains certain capabilities in order for CloudFormation to update the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your account; for example, by creating
-     * new Identity and Access Management (IAM) users. For those stacks, you must
-     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
-     * following IAM resources require you to specify either the
-     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
-     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
-     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
-     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
-     * specify either of these capabilities, CloudFormation returns an
+     * resources that can affect permissions in your Amazon Web Services account; for
+     * example, by creating new Identity and Access Management (IAM) users. For those
+     * stacks, you must explicitly acknowledge this by specifying one of these
+     * capabilities.</p> <p>The following IAM resources require you to specify either
+     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
+     * capability.</p> </li> <li> <p>If you have IAM resources with custom names, you
+     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
+     * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -614,15 +614,15 @@ namespace Model
      * contains certain capabilities in order for CloudFormation to update the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your account; for example, by creating
-     * new Identity and Access Management (IAM) users. For those stacks, you must
-     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
-     * following IAM resources require you to specify either the
-     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
-     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
-     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
-     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
-     * specify either of these capabilities, CloudFormation returns an
+     * resources that can affect permissions in your Amazon Web Services account; for
+     * example, by creating new Identity and Access Management (IAM) users. For those
+     * stacks, you must explicitly acknowledge this by specifying one of these
+     * capabilities.</p> <p>The following IAM resources require you to specify either
+     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
+     * capability.</p> </li> <li> <p>If you have IAM resources with custom names, you
+     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
+     * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -676,15 +676,15 @@ namespace Model
      * contains certain capabilities in order for CloudFormation to update the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your account; for example, by creating
-     * new Identity and Access Management (IAM) users. For those stacks, you must
-     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
-     * following IAM resources require you to specify either the
-     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
-     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
-     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
-     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
-     * specify either of these capabilities, CloudFormation returns an
+     * resources that can affect permissions in your Amazon Web Services account; for
+     * example, by creating new Identity and Access Management (IAM) users. For those
+     * stacks, you must explicitly acknowledge this by specifying one of these
+     * capabilities.</p> <p>The following IAM resources require you to specify either
+     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
+     * capability.</p> </li> <li> <p>If you have IAM resources with custom names, you
+     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
+     * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -738,15 +738,15 @@ namespace Model
      * contains certain capabilities in order for CloudFormation to update the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your account; for example, by creating
-     * new Identity and Access Management (IAM) users. For those stacks, you must
-     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
-     * following IAM resources require you to specify either the
-     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
-     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
-     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
-     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
-     * specify either of these capabilities, CloudFormation returns an
+     * resources that can affect permissions in your Amazon Web Services account; for
+     * example, by creating new Identity and Access Management (IAM) users. For those
+     * stacks, you must explicitly acknowledge this by specifying one of these
+     * capabilities.</p> <p>The following IAM resources require you to specify either
+     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
+     * capability.</p> </li> <li> <p>If you have IAM resources with custom names, you
+     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
+     * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -800,15 +800,15 @@ namespace Model
      * contains certain capabilities in order for CloudFormation to update the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your account; for example, by creating
-     * new Identity and Access Management (IAM) users. For those stacks, you must
-     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
-     * following IAM resources require you to specify either the
-     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
-     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
-     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
-     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
-     * specify either of these capabilities, CloudFormation returns an
+     * resources that can affect permissions in your Amazon Web Services account; for
+     * example, by creating new Identity and Access Management (IAM) users. For those
+     * stacks, you must explicitly acknowledge this by specifying one of these
+     * capabilities.</p> <p>The following IAM resources require you to specify either
+     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
+     * capability.</p> </li> <li> <p>If you have IAM resources with custom names, you
+     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
+     * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -862,15 +862,15 @@ namespace Model
      * contains certain capabilities in order for CloudFormation to update the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your account; for example, by creating
-     * new Identity and Access Management (IAM) users. For those stacks, you must
-     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
-     * following IAM resources require you to specify either the
-     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
-     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
-     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
-     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
-     * specify either of these capabilities, CloudFormation returns an
+     * resources that can affect permissions in your Amazon Web Services account; for
+     * example, by creating new Identity and Access Management (IAM) users. For those
+     * stacks, you must explicitly acknowledge this by specifying one of these
+     * capabilities.</p> <p>The following IAM resources require you to specify either
+     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
+     * capability.</p> </li> <li> <p>If you have IAM resources with custom names, you
+     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
+     * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -924,15 +924,15 @@ namespace Model
      * contains certain capabilities in order for CloudFormation to update the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your account; for example, by creating
-     * new Identity and Access Management (IAM) users. For those stacks, you must
-     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
-     * following IAM resources require you to specify either the
-     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
-     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
-     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
-     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
-     * specify either of these capabilities, CloudFormation returns an
+     * resources that can affect permissions in your Amazon Web Services account; for
+     * example, by creating new Identity and Access Management (IAM) users. For those
+     * stacks, you must explicitly acknowledge this by specifying one of these
+     * capabilities.</p> <p>The following IAM resources require you to specify either
+     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
+     * capability.</p> </li> <li> <p>If you have IAM resources with custom names, you
+     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
+     * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -986,15 +986,15 @@ namespace Model
      * contains certain capabilities in order for CloudFormation to update the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your account; for example, by creating
-     * new Identity and Access Management (IAM) users. For those stacks, you must
-     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
-     * following IAM resources require you to specify either the
-     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
-     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
-     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
-     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
-     * specify either of these capabilities, CloudFormation returns an
+     * resources that can affect permissions in your Amazon Web Services account; for
+     * example, by creating new Identity and Access Management (IAM) users. For those
+     * stacks, you must explicitly acknowledge this by specifying one of these
+     * capabilities.</p> <p>The following IAM resources require you to specify either
+     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
+     * capability.</p> </li> <li> <p>If you have IAM resources with custom names, you
+     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
+     * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -1621,6 +1621,31 @@ namespace Model
 
 
     /**
+     * <p>Preserve the state of previously provisioned resources when an operation
+     * fails.</p> <p>Default: <code>False</code> </p>
+     */
+    inline bool GetDisableRollback() const{ return m_disableRollback; }
+
+    /**
+     * <p>Preserve the state of previously provisioned resources when an operation
+     * fails.</p> <p>Default: <code>False</code> </p>
+     */
+    inline bool DisableRollbackHasBeenSet() const { return m_disableRollbackHasBeenSet; }
+
+    /**
+     * <p>Preserve the state of previously provisioned resources when an operation
+     * fails.</p> <p>Default: <code>False</code> </p>
+     */
+    inline void SetDisableRollback(bool value) { m_disableRollbackHasBeenSet = true; m_disableRollback = value; }
+
+    /**
+     * <p>Preserve the state of previously provisioned resources when an operation
+     * fails.</p> <p>Default: <code>False</code> </p>
+     */
+    inline UpdateStackRequest& WithDisableRollback(bool value) { SetDisableRollback(value); return *this;}
+
+
+    /**
      * <p>A unique identifier for this <code>UpdateStack</code> request. Specify this
      * token if you plan to retry requests so that CloudFormation knows that you're not
      * attempting to update a stack with the same name. You might retry
@@ -1635,8 +1660,8 @@ namespace Model
      * console use the token format <i>Console-StackOperation-ID</i>, which helps you
      * easily identify the stack operation . For example, if you create a stack using
      * the console, each stack event would be assigned the same token in the following
-     * format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.
-     * </p>
+     * format:
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
@@ -1655,8 +1680,8 @@ namespace Model
      * console use the token format <i>Console-StackOperation-ID</i>, which helps you
      * easily identify the stack operation . For example, if you create a stack using
      * the console, each stack event would be assigned the same token in the following
-     * format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.
-     * </p>
+     * format:
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
@@ -1675,8 +1700,8 @@ namespace Model
      * console use the token format <i>Console-StackOperation-ID</i>, which helps you
      * easily identify the stack operation . For example, if you create a stack using
      * the console, each stack event would be assigned the same token in the following
-     * format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.
-     * </p>
+     * format:
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
@@ -1695,8 +1720,8 @@ namespace Model
      * console use the token format <i>Console-StackOperation-ID</i>, which helps you
      * easily identify the stack operation . For example, if you create a stack using
      * the console, each stack event would be assigned the same token in the following
-     * format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.
-     * </p>
+     * format:
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
@@ -1715,8 +1740,8 @@ namespace Model
      * console use the token format <i>Console-StackOperation-ID</i>, which helps you
      * easily identify the stack operation . For example, if you create a stack using
      * the console, each stack event would be assigned the same token in the following
-     * format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.
-     * </p>
+     * format:
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
@@ -1735,8 +1760,8 @@ namespace Model
      * console use the token format <i>Console-StackOperation-ID</i>, which helps you
      * easily identify the stack operation . For example, if you create a stack using
      * the console, each stack event would be assigned the same token in the following
-     * format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.
-     * </p>
+     * format:
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline UpdateStackRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
@@ -1755,8 +1780,8 @@ namespace Model
      * console use the token format <i>Console-StackOperation-ID</i>, which helps you
      * easily identify the stack operation . For example, if you create a stack using
      * the console, each stack event would be assigned the same token in the following
-     * format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.
-     * </p>
+     * format:
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline UpdateStackRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
@@ -1775,8 +1800,8 @@ namespace Model
      * console use the token format <i>Console-StackOperation-ID</i>, which helps you
      * easily identify the stack operation . For example, if you create a stack using
      * the console, each stack event would be assigned the same token in the following
-     * format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.
-     * </p>
+     * format:
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline UpdateStackRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
@@ -1826,6 +1851,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    bool m_disableRollback;
+    bool m_disableRollbackHasBeenSet;
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;

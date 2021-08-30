@@ -63,6 +63,7 @@
 #include <aws/cloudformation/model/RecordHandlerProgressResult.h>
 #include <aws/cloudformation/model/RegisterPublisherResult.h>
 #include <aws/cloudformation/model/RegisterTypeResult.h>
+#include <aws/cloudformation/model/RollbackStackResult.h>
 #include <aws/cloudformation/model/SetTypeConfigurationResult.h>
 #include <aws/cloudformation/model/SetTypeDefaultVersionResult.h>
 #include <aws/cloudformation/model/StopStackSetOperationResult.h>
@@ -171,6 +172,7 @@ namespace Model
         class RecordHandlerProgressRequest;
         class RegisterPublisherRequest;
         class RegisterTypeRequest;
+        class RollbackStackRequest;
         class SetStackPolicyRequest;
         class SetTypeConfigurationRequest;
         class SetTypeDefaultVersionRequest;
@@ -236,6 +238,7 @@ namespace Model
         typedef Aws::Utils::Outcome<RecordHandlerProgressResult, CloudFormationError> RecordHandlerProgressOutcome;
         typedef Aws::Utils::Outcome<RegisterPublisherResult, CloudFormationError> RegisterPublisherOutcome;
         typedef Aws::Utils::Outcome<RegisterTypeResult, CloudFormationError> RegisterTypeOutcome;
+        typedef Aws::Utils::Outcome<RollbackStackResult, CloudFormationError> RollbackStackOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CloudFormationError> SetStackPolicyOutcome;
         typedef Aws::Utils::Outcome<SetTypeConfigurationResult, CloudFormationError> SetTypeConfigurationOutcome;
         typedef Aws::Utils::Outcome<SetTypeDefaultVersionResult, CloudFormationError> SetTypeDefaultVersionOutcome;
@@ -301,6 +304,7 @@ namespace Model
         typedef std::future<RecordHandlerProgressOutcome> RecordHandlerProgressOutcomeCallable;
         typedef std::future<RegisterPublisherOutcome> RegisterPublisherOutcomeCallable;
         typedef std::future<RegisterTypeOutcome> RegisterTypeOutcomeCallable;
+        typedef std::future<RollbackStackOutcome> RollbackStackOutcomeCallable;
         typedef std::future<SetStackPolicyOutcome> SetStackPolicyOutcomeCallable;
         typedef std::future<SetTypeConfigurationOutcome> SetTypeConfigurationOutcomeCallable;
         typedef std::future<SetTypeDefaultVersionOutcome> SetTypeDefaultVersionOutcomeCallable;
@@ -369,6 +373,7 @@ namespace Model
     typedef std::function<void(const CloudFormationClient*, const Model::RecordHandlerProgressRequest&, const Model::RecordHandlerProgressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RecordHandlerProgressResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::RegisterPublisherRequest&, const Model::RegisterPublisherOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterPublisherResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::RegisterTypeRequest&, const Model::RegisterTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTypeResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::RollbackStackRequest&, const Model::RollbackStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RollbackStackResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::SetStackPolicyRequest&, const Model::SetStackPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetStackPolicyResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::SetTypeConfigurationRequest&, const Model::SetTypeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetTypeConfigurationResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::SetTypeDefaultVersionRequest&, const Model::SetTypeDefaultVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetTypeDefaultVersionResponseReceivedHandler;
@@ -922,16 +927,16 @@ namespace Model
         virtual void DeleteStackAsync(const Model::DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes stack instances for the specified accounts, in the specified Regions.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes stack instances for the specified accounts, in the specified
+         * Regions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackInstances">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteStackInstancesOutcome DeleteStackInstances(const Model::DeleteStackInstancesRequest& request) const;
 
         /**
-         * <p>Deletes stack instances for the specified accounts, in the specified Regions.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes stack instances for the specified accounts, in the specified
+         * Regions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackInstances">AWS
          * API Reference</a></p>
          *
@@ -940,8 +945,8 @@ namespace Model
         virtual Model::DeleteStackInstancesOutcomeCallable DeleteStackInstancesCallable(const Model::DeleteStackInstancesRequest& request) const;
 
         /**
-         * <p>Deletes stack instances for the specified accounts, in the specified Regions.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes stack instances for the specified accounts, in the specified
+         * Regions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackInstances">AWS
          * API Reference</a></p>
          *
@@ -952,7 +957,7 @@ namespace Model
         /**
          * <p>Deletes a stack set. Before you can delete a stack set, all of its member
          * stack instances must be deleted. For more information about how to do this, see
-         * <a>DeleteStackInstances</a>. </p><p><h3>See Also:</h3>   <a
+         * <a>DeleteStackInstances</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackSet">AWS
          * API Reference</a></p>
          */
@@ -961,7 +966,7 @@ namespace Model
         /**
          * <p>Deletes a stack set. Before you can delete a stack set, all of its member
          * stack instances must be deleted. For more information about how to do this, see
-         * <a>DeleteStackInstances</a>. </p><p><h3>See Also:</h3>   <a
+         * <a>DeleteStackInstances</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackSet">AWS
          * API Reference</a></p>
          *
@@ -972,7 +977,7 @@ namespace Model
         /**
          * <p>Deletes a stack set. Before you can delete a stack set, all of its member
          * stack instances must be deleted. For more information about how to do this, see
-         * <a>DeleteStackInstances</a>. </p><p><h3>See Also:</h3>   <a
+         * <a>DeleteStackInstances</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackSet">AWS
          * API Reference</a></p>
          *
@@ -1282,9 +1287,9 @@ namespace Model
 
         /**
          * <p>Returns the stack instance that's associated with the specified stack set,
-         * account, and Region.</p> <p>For a list of stack instances that are associated
-         * with a specific stack set, use <a>ListStackInstances</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Amazon Web Services account, and Region.</p> <p>For a list of stack instances
+         * that are associated with a specific stack set, use
+         * <a>ListStackInstances</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackInstance">AWS
          * API Reference</a></p>
          */
@@ -1292,9 +1297,9 @@ namespace Model
 
         /**
          * <p>Returns the stack instance that's associated with the specified stack set,
-         * account, and Region.</p> <p>For a list of stack instances that are associated
-         * with a specific stack set, use <a>ListStackInstances</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Amazon Web Services account, and Region.</p> <p>For a list of stack instances
+         * that are associated with a specific stack set, use
+         * <a>ListStackInstances</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackInstance">AWS
          * API Reference</a></p>
          *
@@ -1304,9 +1309,9 @@ namespace Model
 
         /**
          * <p>Returns the stack instance that's associated with the specified stack set,
-         * account, and Region.</p> <p>For a list of stack instances that are associated
-         * with a specific stack set, use <a>ListStackInstances</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Amazon Web Services account, and Region.</p> <p>For a list of stack instances
+         * that are associated with a specific stack set, use
+         * <a>ListStackInstances</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackInstance">AWS
          * API Reference</a></p>
          *
@@ -2036,8 +2041,8 @@ namespace Model
         /**
          * <p>Returns the template body for a specified stack. You can get the template for
          * running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the
-         * template for up to 90 days after the stack has been deleted.</p>  <p> If
-         * the template does not exist, a <code>ValidationError</code> is returned. </p>
+         * template for up to 90 days after the stack has been deleted.</p>  <p>If
+         * the template does not exist, a <code>ValidationError</code> is returned.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">AWS
          * API Reference</a></p>
@@ -2047,8 +2052,8 @@ namespace Model
         /**
          * <p>Returns the template body for a specified stack. You can get the template for
          * running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the
-         * template for up to 90 days after the stack has been deleted.</p>  <p> If
-         * the template does not exist, a <code>ValidationError</code> is returned. </p>
+         * template for up to 90 days after the stack has been deleted.</p>  <p>If
+         * the template does not exist, a <code>ValidationError</code> is returned.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">AWS
          * API Reference</a></p>
@@ -2060,8 +2065,8 @@ namespace Model
         /**
          * <p>Returns the template body for a specified stack. You can get the template for
          * running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the
-         * template for up to 90 days after the stack has been deleted.</p>  <p> If
-         * the template does not exist, a <code>ValidationError</code> is returned. </p>
+         * template for up to 90 days after the stack has been deleted.</p>  <p>If
+         * the template does not exist, a <code>ValidationError</code> is returned.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">AWS
          * API Reference</a></p>
@@ -2198,7 +2203,7 @@ namespace Model
          * this action. Use this action to see the exported output values that you can
          * import into other stacks. To import values, use the <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-         * <code>Fn::ImportValue</code> </a> function. </p> <p>For more information, see <a
+         * <code>Fn::ImportValue</code> </a> function.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
          * CloudFormation Export Stack Output Values</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListExports">AWS
@@ -2211,7 +2216,7 @@ namespace Model
          * this action. Use this action to see the exported output values that you can
          * import into other stacks. To import values, use the <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-         * <code>Fn::ImportValue</code> </a> function. </p> <p>For more information, see <a
+         * <code>Fn::ImportValue</code> </a> function.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
          * CloudFormation Export Stack Output Values</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListExports">AWS
@@ -2226,7 +2231,7 @@ namespace Model
          * this action. Use this action to see the exported output values that you can
          * import into other stacks. To import values, use the <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-         * <code>Fn::ImportValue</code> </a> function. </p> <p>For more information, see <a
+         * <code>Fn::ImportValue</code> </a> function.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
          * CloudFormation Export Stack Output Values</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListExports">AWS
@@ -2240,10 +2245,10 @@ namespace Model
          * <p>Lists all stacks that are importing an exported output value. To modify or
          * remove an exported output value, first use this action to see which stacks are
          * using it. To see the exported output values in your account, see
-         * <a>ListExports</a>. </p> <p>For more information about importing an exported
+         * <a>ListExports</a>.</p> <p>For more information about importing an exported
          * output value, see the <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-         * <code>Fn::ImportValue</code> </a> function. </p><p><h3>See Also:</h3>   <a
+         * <code>Fn::ImportValue</code> </a> function.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListImports">AWS
          * API Reference</a></p>
          */
@@ -2253,10 +2258,10 @@ namespace Model
          * <p>Lists all stacks that are importing an exported output value. To modify or
          * remove an exported output value, first use this action to see which stacks are
          * using it. To see the exported output values in your account, see
-         * <a>ListExports</a>. </p> <p>For more information about importing an exported
+         * <a>ListExports</a>.</p> <p>For more information about importing an exported
          * output value, see the <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-         * <code>Fn::ImportValue</code> </a> function. </p><p><h3>See Also:</h3>   <a
+         * <code>Fn::ImportValue</code> </a> function.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListImports">AWS
          * API Reference</a></p>
          *
@@ -2268,10 +2273,10 @@ namespace Model
          * <p>Lists all stacks that are importing an exported output value. To modify or
          * remove an exported output value, first use this action to see which stacks are
          * using it. To see the exported output values in your account, see
-         * <a>ListExports</a>. </p> <p>For more information about importing an exported
+         * <a>ListExports</a>.</p> <p>For more information about importing an exported
          * output value, see the <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-         * <code>Fn::ImportValue</code> </a> function. </p><p><h3>See Also:</h3>   <a
+         * <code>Fn::ImportValue</code> </a> function.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListImports">AWS
          * API Reference</a></p>
          *
@@ -2282,8 +2287,8 @@ namespace Model
         /**
          * <p>Returns summary information about stack instances that are associated with
          * the specified stack set. You can filter for stack instances that are associated
-         * with a specific account name or Region, or that have a specific
-         * status.</p><p><h3>See Also:</h3>   <a
+         * with a specific Amazon Web Services account name or Region, or that have a
+         * specific status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">AWS
          * API Reference</a></p>
          */
@@ -2292,8 +2297,8 @@ namespace Model
         /**
          * <p>Returns summary information about stack instances that are associated with
          * the specified stack set. You can filter for stack instances that are associated
-         * with a specific account name or Region, or that have a specific
-         * status.</p><p><h3>See Also:</h3>   <a
+         * with a specific Amazon Web Services account name or Region, or that have a
+         * specific status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">AWS
          * API Reference</a></p>
          *
@@ -2304,8 +2309,8 @@ namespace Model
         /**
          * <p>Returns summary information about stack instances that are associated with
          * the specified stack set. You can filter for stack instances that are associated
-         * with a specific account name or Region, or that have a specific
-         * status.</p><p><h3>See Also:</h3>   <a
+         * with a specific Amazon Web Services account name or Region, or that have a
+         * specific status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">AWS
          * API Reference</a></p>
          *
@@ -2404,15 +2409,15 @@ namespace Model
          * <p>Returns summary information about stack sets that are associated with the
          * user.</p> <ul> <li> <p>[Self-managed permissions] If you set the
          * <code>CallAs</code> parameter to <code>SELF</code> while signed in to your
-         * account, <code>ListStackSets</code> returns all self-managed stack sets in your
-         * account.</p> </li> <li> <p>[Service-managed permissions] If you set the
-         * <code>CallAs</code> parameter to <code>SELF</code> while signed in to the
-         * organization's management account, <code>ListStackSets</code> returns all stack
-         * sets in the management account.</p> </li> <li> <p>[Service-managed permissions]
-         * If you set the <code>CallAs</code> parameter to <code>DELEGATED_ADMIN</code>
-         * while signed in to your member account, <code>ListStackSets</code> returns all
-         * stack sets with service-managed permissions in the management account.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * Amazon Web Services account, <code>ListStackSets</code> returns all self-managed
+         * stack sets in your Amazon Web Services account.</p> </li> <li>
+         * <p>[Service-managed permissions] If you set the <code>CallAs</code> parameter to
+         * <code>SELF</code> while signed in to the organization's management account,
+         * <code>ListStackSets</code> returns all stack sets in the management account.</p>
+         * </li> <li> <p>[Service-managed permissions] If you set the <code>CallAs</code>
+         * parameter to <code>DELEGATED_ADMIN</code> while signed in to your member
+         * account, <code>ListStackSets</code> returns all stack sets with service-managed
+         * permissions in the management account.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSets">AWS
          * API Reference</a></p>
          */
@@ -2422,15 +2427,15 @@ namespace Model
          * <p>Returns summary information about stack sets that are associated with the
          * user.</p> <ul> <li> <p>[Self-managed permissions] If you set the
          * <code>CallAs</code> parameter to <code>SELF</code> while signed in to your
-         * account, <code>ListStackSets</code> returns all self-managed stack sets in your
-         * account.</p> </li> <li> <p>[Service-managed permissions] If you set the
-         * <code>CallAs</code> parameter to <code>SELF</code> while signed in to the
-         * organization's management account, <code>ListStackSets</code> returns all stack
-         * sets in the management account.</p> </li> <li> <p>[Service-managed permissions]
-         * If you set the <code>CallAs</code> parameter to <code>DELEGATED_ADMIN</code>
-         * while signed in to your member account, <code>ListStackSets</code> returns all
-         * stack sets with service-managed permissions in the management account.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * Amazon Web Services account, <code>ListStackSets</code> returns all self-managed
+         * stack sets in your Amazon Web Services account.</p> </li> <li>
+         * <p>[Service-managed permissions] If you set the <code>CallAs</code> parameter to
+         * <code>SELF</code> while signed in to the organization's management account,
+         * <code>ListStackSets</code> returns all stack sets in the management account.</p>
+         * </li> <li> <p>[Service-managed permissions] If you set the <code>CallAs</code>
+         * parameter to <code>DELEGATED_ADMIN</code> while signed in to your member
+         * account, <code>ListStackSets</code> returns all stack sets with service-managed
+         * permissions in the management account.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSets">AWS
          * API Reference</a></p>
          *
@@ -2442,15 +2447,15 @@ namespace Model
          * <p>Returns summary information about stack sets that are associated with the
          * user.</p> <ul> <li> <p>[Self-managed permissions] If you set the
          * <code>CallAs</code> parameter to <code>SELF</code> while signed in to your
-         * account, <code>ListStackSets</code> returns all self-managed stack sets in your
-         * account.</p> </li> <li> <p>[Service-managed permissions] If you set the
-         * <code>CallAs</code> parameter to <code>SELF</code> while signed in to the
-         * organization's management account, <code>ListStackSets</code> returns all stack
-         * sets in the management account.</p> </li> <li> <p>[Service-managed permissions]
-         * If you set the <code>CallAs</code> parameter to <code>DELEGATED_ADMIN</code>
-         * while signed in to your member account, <code>ListStackSets</code> returns all
-         * stack sets with service-managed permissions in the management account.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * Amazon Web Services account, <code>ListStackSets</code> returns all self-managed
+         * stack sets in your Amazon Web Services account.</p> </li> <li>
+         * <p>[Service-managed permissions] If you set the <code>CallAs</code> parameter to
+         * <code>SELF</code> while signed in to the organization's management account,
+         * <code>ListStackSets</code> returns all stack sets in the management account.</p>
+         * </li> <li> <p>[Service-managed permissions] If you set the <code>CallAs</code>
+         * parameter to <code>DELEGATED_ADMIN</code> while signed in to your member
+         * account, <code>ListStackSets</code> returns all stack sets with service-managed
+         * permissions in the management account.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSets">AWS
          * API Reference</a></p>
          *
@@ -2665,9 +2670,9 @@ namespace Model
         /**
          * <p>Registers your account as a publisher of public extensions in the
          * CloudFormation registry. Public extensions are available for use by all
-         * CloudFormation users. This publisher ID applies to your account in all
-         * Regions.</p> <p>For information on requirements for registering as a public
-         * extension publisher, see <a
+         * CloudFormation users. This publisher ID applies to your account in all Amazon
+         * Web Services Regions.</p> <p>For information on requirements for registering as
+         * a public extension publisher, see <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering
          * your account to publish CloudFormation extensions</a> in the <i>CloudFormation
          * CLI User Guide</i>.</p> <p/><p><h3>See Also:</h3>   <a
@@ -2679,9 +2684,9 @@ namespace Model
         /**
          * <p>Registers your account as a publisher of public extensions in the
          * CloudFormation registry. Public extensions are available for use by all
-         * CloudFormation users. This publisher ID applies to your account in all
-         * Regions.</p> <p>For information on requirements for registering as a public
-         * extension publisher, see <a
+         * CloudFormation users. This publisher ID applies to your account in all Amazon
+         * Web Services Regions.</p> <p>For information on requirements for registering as
+         * a public extension publisher, see <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering
          * your account to publish CloudFormation extensions</a> in the <i>CloudFormation
          * CLI User Guide</i>.</p> <p/><p><h3>See Also:</h3>   <a
@@ -2695,9 +2700,9 @@ namespace Model
         /**
          * <p>Registers your account as a publisher of public extensions in the
          * CloudFormation registry. Public extensions are available for use by all
-         * CloudFormation users. This publisher ID applies to your account in all
-         * Regions.</p> <p>For information on requirements for registering as a public
-         * extension publisher, see <a
+         * CloudFormation users. This publisher ID applies to your account in all Amazon
+         * Web Services Regions.</p> <p>For information on requirements for registering as
+         * a public extension publisher, see <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering
          * your account to publish CloudFormation extensions</a> in the <i>CloudFormation
          * CLI User Guide</i>.</p> <p/><p><h3>See Also:</h3>   <a
@@ -2710,12 +2715,12 @@ namespace Model
 
         /**
          * <p>Registers an extension with the CloudFormation service. Registering an
-         * extension makes it available for use in CloudFormation templates in your
-         * account, and includes:</p> <ul> <li> <p>Validating the extension schema</p>
-         * </li> <li> <p>Determining which handlers, if any, have been specified for the
-         * extension</p> </li> <li> <p>Making the extension available for use in your
-         * account</p> </li> </ul> <p>For more information on how to develop extensions and
-         * ready them for registeration, see <a
+         * extension makes it available for use in CloudFormation templates in your Amazon
+         * Web Services account, and includes:</p> <ul> <li> <p>Validating the extension
+         * schema</p> </li> <li> <p>Determining which handlers, if any, have been specified
+         * for the extension</p> </li> <li> <p>Making the extension available for use in
+         * your account</p> </li> </ul> <p>For more information on how to develop
+         * extensions and ready them for registeration, see <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
          * Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.</p> <p>You
          * can have a maximum of 50 resource extension versions registered at a time. This
@@ -2739,12 +2744,12 @@ namespace Model
 
         /**
          * <p>Registers an extension with the CloudFormation service. Registering an
-         * extension makes it available for use in CloudFormation templates in your
-         * account, and includes:</p> <ul> <li> <p>Validating the extension schema</p>
-         * </li> <li> <p>Determining which handlers, if any, have been specified for the
-         * extension</p> </li> <li> <p>Making the extension available for use in your
-         * account</p> </li> </ul> <p>For more information on how to develop extensions and
-         * ready them for registeration, see <a
+         * extension makes it available for use in CloudFormation templates in your Amazon
+         * Web Services account, and includes:</p> <ul> <li> <p>Validating the extension
+         * schema</p> </li> <li> <p>Determining which handlers, if any, have been specified
+         * for the extension</p> </li> <li> <p>Making the extension available for use in
+         * your account</p> </li> </ul> <p>For more information on how to develop
+         * extensions and ready them for registeration, see <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
          * Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.</p> <p>You
          * can have a maximum of 50 resource extension versions registered at a time. This
@@ -2770,12 +2775,12 @@ namespace Model
 
         /**
          * <p>Registers an extension with the CloudFormation service. Registering an
-         * extension makes it available for use in CloudFormation templates in your
-         * account, and includes:</p> <ul> <li> <p>Validating the extension schema</p>
-         * </li> <li> <p>Determining which handlers, if any, have been specified for the
-         * extension</p> </li> <li> <p>Making the extension available for use in your
-         * account</p> </li> </ul> <p>For more information on how to develop extensions and
-         * ready them for registeration, see <a
+         * extension makes it available for use in CloudFormation templates in your Amazon
+         * Web Services account, and includes:</p> <ul> <li> <p>Validating the extension
+         * schema</p> </li> <li> <p>Determining which handlers, if any, have been specified
+         * for the extension</p> </li> <li> <p>Making the extension available for use in
+         * your account</p> </li> </ul> <p>For more information on how to develop
+         * extensions and ready them for registeration, see <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
          * Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.</p> <p>You
          * can have a maximum of 50 resource extension versions registered at a time. This
@@ -2798,6 +2803,64 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RegisterTypeAsync(const Model::RegisterTypeRequest& request, const RegisterTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>When specifying <code>RollbackStack</code>, you preserve the state of
+         * previously provisioned resources when an operation fails. You can check the
+         * status of the stack through the <a>DescribeStacks</a> API.</p> <p>Rolls back the
+         * specified stack to the last known stable state from <code>CREATE_FAILED</code>
+         * or <code>UPDATE_FAILED</code> stack statuses.</p> <p>This operation will delete
+         * a stack if it doesn't contain a last known stable state. A last known stable
+         * state includes any status in a <code>*_COMPLETE</code>. This includes the
+         * following stack statuses.</p> <ul> <li> <p> <code>CREATE_COMPLETE</code> </p>
+         * </li> <li> <p> <code>UPDATE_COMPLETE</code> </p> </li> <li> <p>
+         * <code>UPDATE_ROLLBACK_COMPLETE</code> </p> </li> <li> <p>
+         * <code>IMPORT_COMPLETE</code> </p> </li> <li> <p>
+         * <code>IMPORT_ROLLBACK_COMPLETE</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackStack">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RollbackStackOutcome RollbackStack(const Model::RollbackStackRequest& request) const;
+
+        /**
+         * <p>When specifying <code>RollbackStack</code>, you preserve the state of
+         * previously provisioned resources when an operation fails. You can check the
+         * status of the stack through the <a>DescribeStacks</a> API.</p> <p>Rolls back the
+         * specified stack to the last known stable state from <code>CREATE_FAILED</code>
+         * or <code>UPDATE_FAILED</code> stack statuses.</p> <p>This operation will delete
+         * a stack if it doesn't contain a last known stable state. A last known stable
+         * state includes any status in a <code>*_COMPLETE</code>. This includes the
+         * following stack statuses.</p> <ul> <li> <p> <code>CREATE_COMPLETE</code> </p>
+         * </li> <li> <p> <code>UPDATE_COMPLETE</code> </p> </li> <li> <p>
+         * <code>UPDATE_ROLLBACK_COMPLETE</code> </p> </li> <li> <p>
+         * <code>IMPORT_COMPLETE</code> </p> </li> <li> <p>
+         * <code>IMPORT_ROLLBACK_COMPLETE</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackStack">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RollbackStackOutcomeCallable RollbackStackCallable(const Model::RollbackStackRequest& request) const;
+
+        /**
+         * <p>When specifying <code>RollbackStack</code>, you preserve the state of
+         * previously provisioned resources when an operation fails. You can check the
+         * status of the stack through the <a>DescribeStacks</a> API.</p> <p>Rolls back the
+         * specified stack to the last known stable state from <code>CREATE_FAILED</code>
+         * or <code>UPDATE_FAILED</code> stack statuses.</p> <p>This operation will delete
+         * a stack if it doesn't contain a last known stable state. A last known stable
+         * state includes any status in a <code>*_COMPLETE</code>. This includes the
+         * following stack statuses.</p> <ul> <li> <p> <code>CREATE_COMPLETE</code> </p>
+         * </li> <li> <p> <code>UPDATE_COMPLETE</code> </p> </li> <li> <p>
+         * <code>UPDATE_ROLLBACK_COMPLETE</code> </p> </li> <li> <p>
+         * <code>IMPORT_COMPLETE</code> </p> </li> <li> <p>
+         * <code>IMPORT_ROLLBACK_COMPLETE</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackStack">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RollbackStackAsync(const Model::RollbackStackRequest& request, const RollbackStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets a stack policy for a specified stack.</p><p><h3>See Also:</h3>   <a
@@ -3242,8 +3305,8 @@ namespace Model
          * delete a stack with termination protection enabled, the operation fails and the
          * stack remains unchanged. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
-         * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p> <p>
-         * For <a
+         * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
+         * <p>For <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
          * stacks</a>, termination protection is set on the root stack and cannot be
          * changed directly on the nested stack.</p><p><h3>See Also:</h3>   <a
@@ -3257,8 +3320,8 @@ namespace Model
          * delete a stack with termination protection enabled, the operation fails and the
          * stack remains unchanged. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
-         * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p> <p>
-         * For <a
+         * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
+         * <p>For <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
          * stacks</a>, termination protection is set on the root stack and cannot be
          * changed directly on the nested stack.</p><p><h3>See Also:</h3>   <a
@@ -3274,8 +3337,8 @@ namespace Model
          * delete a stack with termination protection enabled, the operation fails and the
          * stack remains unchanged. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
-         * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p> <p>
-         * For <a
+         * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
+         * <p>For <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
          * stacks</a>, termination protection is set on the root stack and cannot be
          * changed directly on the nested stack.</p><p><h3>See Also:</h3>   <a
@@ -3377,6 +3440,7 @@ namespace Model
         void RecordHandlerProgressAsyncHelper(const Model::RecordHandlerProgressRequest& request, const RecordHandlerProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterPublisherAsyncHelper(const Model::RegisterPublisherRequest& request, const RegisterPublisherResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterTypeAsyncHelper(const Model::RegisterTypeRequest& request, const RegisterTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RollbackStackAsyncHelper(const Model::RollbackStackRequest& request, const RollbackStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetStackPolicyAsyncHelper(const Model::SetStackPolicyRequest& request, const SetStackPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetTypeConfigurationAsyncHelper(const Model::SetTypeConfigurationRequest& request, const SetTypeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetTypeDefaultVersionAsyncHelper(const Model::SetTypeDefaultVersionRequest& request, const SetTypeDefaultVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

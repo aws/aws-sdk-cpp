@@ -33,10 +33,10 @@ namespace Model
 
   /**
    * <p>A structure that contains information about a stack set. A stack set enables
-   * you to provision stacks into accounts and across Regions by using a single
-   * CloudFormation template. In the stack set, you specify the template to use, as
-   * well as any parameters and capabilities that the template requires.
-   * </p><p><h3>See Also:</h3>   <a
+   * you to provision stacks into Amazon Web Services accounts and across Regions by
+   * using a single CloudFormation template. In the stack set, you specify the
+   * template to use, as well as any parameters and capabilities that the template
+   * requires. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSet">AWS
    * API Reference</a></p>
    */
@@ -305,9 +305,9 @@ namespace Model
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your account—for example,
-     * by creating new Identity and Access Management (IAM) users. For more
-     * information, see <a
+     * might include resources that can affect permissions in your Amazon Web Services
+     * account—for example, by creating new Identity and Access Management (IAM) users.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates.</a> </p>
      */
@@ -315,9 +315,9 @@ namespace Model
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your account—for example,
-     * by creating new Identity and Access Management (IAM) users. For more
-     * information, see <a
+     * might include resources that can affect permissions in your Amazon Web Services
+     * account—for example, by creating new Identity and Access Management (IAM) users.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates.</a> </p>
      */
@@ -325,9 +325,9 @@ namespace Model
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your account—for example,
-     * by creating new Identity and Access Management (IAM) users. For more
-     * information, see <a
+     * might include resources that can affect permissions in your Amazon Web Services
+     * account—for example, by creating new Identity and Access Management (IAM) users.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates.</a> </p>
      */
@@ -335,9 +335,9 @@ namespace Model
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your account—for example,
-     * by creating new Identity and Access Management (IAM) users. For more
-     * information, see <a
+     * might include resources that can affect permissions in your Amazon Web Services
+     * account—for example, by creating new Identity and Access Management (IAM) users.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates.</a> </p>
      */
@@ -345,9 +345,9 @@ namespace Model
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your account—for example,
-     * by creating new Identity and Access Management (IAM) users. For more
-     * information, see <a
+     * might include resources that can affect permissions in your Amazon Web Services
+     * account—for example, by creating new Identity and Access Management (IAM) users.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates.</a> </p>
      */
@@ -355,9 +355,9 @@ namespace Model
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your account—for example,
-     * by creating new Identity and Access Management (IAM) users. For more
-     * information, see <a
+     * might include resources that can affect permissions in your Amazon Web Services
+     * account—for example, by creating new Identity and Access Management (IAM) users.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates.</a> </p>
      */
@@ -365,9 +365,9 @@ namespace Model
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your account—for example,
-     * by creating new Identity and Access Management (IAM) users. For more
-     * information, see <a
+     * might include resources that can affect permissions in your Amazon Web Services
+     * account—for example, by creating new Identity and Access Management (IAM) users.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates.</a> </p>
      */
@@ -375,9 +375,9 @@ namespace Model
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your account—for example,
-     * by creating new Identity and Access Management (IAM) users. For more
-     * information, see <a
+     * might include resources that can affect permissions in your Amazon Web Services
+     * account—for example, by creating new Identity and Access Management (IAM) users.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates.</a> </p>
      */

@@ -35,68 +35,68 @@ namespace Model
 
 
     /**
-     * <p>The reencrypted data. When you use the HTTP API or the AWS CLI, the value is
-     * Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>The reencrypted data. When you use the HTTP API or the Amazon Web Services
+     * CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetCiphertextBlob() const{ return m_ciphertextBlob; }
 
     /**
-     * <p>The reencrypted data. When you use the HTTP API or the AWS CLI, the value is
-     * Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>The reencrypted data. When you use the HTTP API or the Amazon Web Services
+     * CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline void SetCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_ciphertextBlob = value; }
 
     /**
-     * <p>The reencrypted data. When you use the HTTP API or the AWS CLI, the value is
-     * Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>The reencrypted data. When you use the HTTP API or the Amazon Web Services
+     * CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline void SetCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_ciphertextBlob = std::move(value); }
 
     /**
-     * <p>The reencrypted data. When you use the HTTP API or the AWS CLI, the value is
-     * Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>The reencrypted data. When you use the HTTP API or the Amazon Web Services
+     * CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline ReEncryptResult& WithCiphertextBlob(const Aws::Utils::ByteBuffer& value) { SetCiphertextBlob(value); return *this;}
 
     /**
-     * <p>The reencrypted data. When you use the HTTP API or the AWS CLI, the value is
-     * Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>The reencrypted data. When you use the HTTP API or the Amazon Web Services
+     * CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline ReEncryptResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(std::move(value)); return *this;}
 
 
     /**
-     * <p>Unique identifier of the CMK used to originally encrypt the data.</p>
+     * <p>Unique identifier of the KMS key used to originally encrypt the data.</p>
      */
     inline const Aws::String& GetSourceKeyId() const{ return m_sourceKeyId; }
 
     /**
-     * <p>Unique identifier of the CMK used to originally encrypt the data.</p>
+     * <p>Unique identifier of the KMS key used to originally encrypt the data.</p>
      */
     inline void SetSourceKeyId(const Aws::String& value) { m_sourceKeyId = value; }
 
     /**
-     * <p>Unique identifier of the CMK used to originally encrypt the data.</p>
+     * <p>Unique identifier of the KMS key used to originally encrypt the data.</p>
      */
     inline void SetSourceKeyId(Aws::String&& value) { m_sourceKeyId = std::move(value); }
 
     /**
-     * <p>Unique identifier of the CMK used to originally encrypt the data.</p>
+     * <p>Unique identifier of the KMS key used to originally encrypt the data.</p>
      */
     inline void SetSourceKeyId(const char* value) { m_sourceKeyId.assign(value); }
 
     /**
-     * <p>Unique identifier of the CMK used to originally encrypt the data.</p>
+     * <p>Unique identifier of the KMS key used to originally encrypt the data.</p>
      */
     inline ReEncryptResult& WithSourceKeyId(const Aws::String& value) { SetSourceKeyId(value); return *this;}
 
     /**
-     * <p>Unique identifier of the CMK used to originally encrypt the data.</p>
+     * <p>Unique identifier of the KMS key used to originally encrypt the data.</p>
      */
     inline ReEncryptResult& WithSourceKeyId(Aws::String&& value) { SetSourceKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier of the CMK used to originally encrypt the data.</p>
+     * <p>Unique identifier of the KMS key used to originally encrypt the data.</p>
      */
     inline ReEncryptResult& WithSourceKeyId(const char* value) { SetSourceKeyId(value); return *this;}
 
@@ -104,49 +104,49 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that was used to reencrypt the data.</p>
+     * ARN</a>) of the KMS key that was used to reencrypt the data.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that was used to reencrypt the data.</p>
+     * ARN</a>) of the KMS key that was used to reencrypt the data.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that was used to reencrypt the data.</p>
+     * ARN</a>) of the KMS key that was used to reencrypt the data.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that was used to reencrypt the data.</p>
+     * ARN</a>) of the KMS key that was used to reencrypt the data.</p>
      */
     inline void SetKeyId(const char* value) { m_keyId.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that was used to reencrypt the data.</p>
+     * ARN</a>) of the KMS key that was used to reencrypt the data.</p>
      */
     inline ReEncryptResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that was used to reencrypt the data.</p>
+     * ARN</a>) of the KMS key that was used to reencrypt the data.</p>
      */
     inline ReEncryptResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that was used to reencrypt the data.</p>
+     * ARN</a>) of the KMS key that was used to reencrypt the data.</p>
      */
     inline ReEncryptResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 

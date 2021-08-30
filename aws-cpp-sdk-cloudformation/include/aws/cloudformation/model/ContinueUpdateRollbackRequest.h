@@ -236,21 +236,21 @@ namespace Model
      * resources will be inconsistent with the state of the resources in the stack
      * template. Before performing another stack update, you must update the stack or
      * resources to be consistent with each other. If you don't, subsequent stack
-     * updates might fail, and the stack will become unrecoverable. </p> 
+     * updates might fail, and the stack will become unrecoverable.</p> 
      * <p>Specify the minimum number of resources required to successfully roll back
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
-     * resources. </p> <p>To skip resources that are part of nested stacks, use the
+     * resources.</p> <p>To skip resources that are part of nested stacks, use the
      * following format: <code>NestedStackName.ResourceLogicalID</code>. If you want to
      * specify the logical ID of a stack resource (<code>Type:
      * AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list,
      * then its corresponding embedded stack must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>. </p>  <p>Don't confuse a child stack's name
+     * <code>DELETE_FAILED</code>.</p>  <p>Don't confuse a child stack's name
      * with its corresponding logical ID defined in the parent stack. For an example of
      * a continue update rollback operation with nested stacks, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using
-     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> 
+     * ResourcesToSkip to recover a nested stacks hierarchy</a>.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetResourcesToSkip() const{ return m_resourcesToSkip; }
 
@@ -271,21 +271,21 @@ namespace Model
      * resources will be inconsistent with the state of the resources in the stack
      * template. Before performing another stack update, you must update the stack or
      * resources to be consistent with each other. If you don't, subsequent stack
-     * updates might fail, and the stack will become unrecoverable. </p> 
+     * updates might fail, and the stack will become unrecoverable.</p> 
      * <p>Specify the minimum number of resources required to successfully roll back
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
-     * resources. </p> <p>To skip resources that are part of nested stacks, use the
+     * resources.</p> <p>To skip resources that are part of nested stacks, use the
      * following format: <code>NestedStackName.ResourceLogicalID</code>. If you want to
      * specify the logical ID of a stack resource (<code>Type:
      * AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list,
      * then its corresponding embedded stack must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>. </p>  <p>Don't confuse a child stack's name
+     * <code>DELETE_FAILED</code>.</p>  <p>Don't confuse a child stack's name
      * with its corresponding logical ID defined in the parent stack. For an example of
      * a continue update rollback operation with nested stacks, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using
-     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> 
+     * ResourcesToSkip to recover a nested stacks hierarchy</a>.</p> 
      */
     inline bool ResourcesToSkipHasBeenSet() const { return m_resourcesToSkipHasBeenSet; }
 
@@ -306,21 +306,21 @@ namespace Model
      * resources will be inconsistent with the state of the resources in the stack
      * template. Before performing another stack update, you must update the stack or
      * resources to be consistent with each other. If you don't, subsequent stack
-     * updates might fail, and the stack will become unrecoverable. </p> 
+     * updates might fail, and the stack will become unrecoverable.</p> 
      * <p>Specify the minimum number of resources required to successfully roll back
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
-     * resources. </p> <p>To skip resources that are part of nested stacks, use the
+     * resources.</p> <p>To skip resources that are part of nested stacks, use the
      * following format: <code>NestedStackName.ResourceLogicalID</code>. If you want to
      * specify the logical ID of a stack resource (<code>Type:
      * AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list,
      * then its corresponding embedded stack must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>. </p>  <p>Don't confuse a child stack's name
+     * <code>DELETE_FAILED</code>.</p>  <p>Don't confuse a child stack's name
      * with its corresponding logical ID defined in the parent stack. For an example of
      * a continue update rollback operation with nested stacks, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using
-     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> 
+     * ResourcesToSkip to recover a nested stacks hierarchy</a>.</p> 
      */
     inline void SetResourcesToSkip(const Aws::Vector<Aws::String>& value) { m_resourcesToSkipHasBeenSet = true; m_resourcesToSkip = value; }
 
@@ -341,21 +341,21 @@ namespace Model
      * resources will be inconsistent with the state of the resources in the stack
      * template. Before performing another stack update, you must update the stack or
      * resources to be consistent with each other. If you don't, subsequent stack
-     * updates might fail, and the stack will become unrecoverable. </p> 
+     * updates might fail, and the stack will become unrecoverable.</p> 
      * <p>Specify the minimum number of resources required to successfully roll back
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
-     * resources. </p> <p>To skip resources that are part of nested stacks, use the
+     * resources.</p> <p>To skip resources that are part of nested stacks, use the
      * following format: <code>NestedStackName.ResourceLogicalID</code>. If you want to
      * specify the logical ID of a stack resource (<code>Type:
      * AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list,
      * then its corresponding embedded stack must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>. </p>  <p>Don't confuse a child stack's name
+     * <code>DELETE_FAILED</code>.</p>  <p>Don't confuse a child stack's name
      * with its corresponding logical ID defined in the parent stack. For an example of
      * a continue update rollback operation with nested stacks, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using
-     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> 
+     * ResourcesToSkip to recover a nested stacks hierarchy</a>.</p> 
      */
     inline void SetResourcesToSkip(Aws::Vector<Aws::String>&& value) { m_resourcesToSkipHasBeenSet = true; m_resourcesToSkip = std::move(value); }
 
@@ -376,21 +376,21 @@ namespace Model
      * resources will be inconsistent with the state of the resources in the stack
      * template. Before performing another stack update, you must update the stack or
      * resources to be consistent with each other. If you don't, subsequent stack
-     * updates might fail, and the stack will become unrecoverable. </p> 
+     * updates might fail, and the stack will become unrecoverable.</p> 
      * <p>Specify the minimum number of resources required to successfully roll back
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
-     * resources. </p> <p>To skip resources that are part of nested stacks, use the
+     * resources.</p> <p>To skip resources that are part of nested stacks, use the
      * following format: <code>NestedStackName.ResourceLogicalID</code>. If you want to
      * specify the logical ID of a stack resource (<code>Type:
      * AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list,
      * then its corresponding embedded stack must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>. </p>  <p>Don't confuse a child stack's name
+     * <code>DELETE_FAILED</code>.</p>  <p>Don't confuse a child stack's name
      * with its corresponding logical ID defined in the parent stack. For an example of
      * a continue update rollback operation with nested stacks, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using
-     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> 
+     * ResourcesToSkip to recover a nested stacks hierarchy</a>.</p> 
      */
     inline ContinueUpdateRollbackRequest& WithResourcesToSkip(const Aws::Vector<Aws::String>& value) { SetResourcesToSkip(value); return *this;}
 
@@ -411,21 +411,21 @@ namespace Model
      * resources will be inconsistent with the state of the resources in the stack
      * template. Before performing another stack update, you must update the stack or
      * resources to be consistent with each other. If you don't, subsequent stack
-     * updates might fail, and the stack will become unrecoverable. </p> 
+     * updates might fail, and the stack will become unrecoverable.</p> 
      * <p>Specify the minimum number of resources required to successfully roll back
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
-     * resources. </p> <p>To skip resources that are part of nested stacks, use the
+     * resources.</p> <p>To skip resources that are part of nested stacks, use the
      * following format: <code>NestedStackName.ResourceLogicalID</code>. If you want to
      * specify the logical ID of a stack resource (<code>Type:
      * AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list,
      * then its corresponding embedded stack must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>. </p>  <p>Don't confuse a child stack's name
+     * <code>DELETE_FAILED</code>.</p>  <p>Don't confuse a child stack's name
      * with its corresponding logical ID defined in the parent stack. For an example of
      * a continue update rollback operation with nested stacks, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using
-     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> 
+     * ResourcesToSkip to recover a nested stacks hierarchy</a>.</p> 
      */
     inline ContinueUpdateRollbackRequest& WithResourcesToSkip(Aws::Vector<Aws::String>&& value) { SetResourcesToSkip(std::move(value)); return *this;}
 
@@ -446,21 +446,21 @@ namespace Model
      * resources will be inconsistent with the state of the resources in the stack
      * template. Before performing another stack update, you must update the stack or
      * resources to be consistent with each other. If you don't, subsequent stack
-     * updates might fail, and the stack will become unrecoverable. </p> 
+     * updates might fail, and the stack will become unrecoverable.</p> 
      * <p>Specify the minimum number of resources required to successfully roll back
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
-     * resources. </p> <p>To skip resources that are part of nested stacks, use the
+     * resources.</p> <p>To skip resources that are part of nested stacks, use the
      * following format: <code>NestedStackName.ResourceLogicalID</code>. If you want to
      * specify the logical ID of a stack resource (<code>Type:
      * AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list,
      * then its corresponding embedded stack must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>. </p>  <p>Don't confuse a child stack's name
+     * <code>DELETE_FAILED</code>.</p>  <p>Don't confuse a child stack's name
      * with its corresponding logical ID defined in the parent stack. For an example of
      * a continue update rollback operation with nested stacks, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using
-     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> 
+     * ResourcesToSkip to recover a nested stacks hierarchy</a>.</p> 
      */
     inline ContinueUpdateRollbackRequest& AddResourcesToSkip(const Aws::String& value) { m_resourcesToSkipHasBeenSet = true; m_resourcesToSkip.push_back(value); return *this; }
 
@@ -481,21 +481,21 @@ namespace Model
      * resources will be inconsistent with the state of the resources in the stack
      * template. Before performing another stack update, you must update the stack or
      * resources to be consistent with each other. If you don't, subsequent stack
-     * updates might fail, and the stack will become unrecoverable. </p> 
+     * updates might fail, and the stack will become unrecoverable.</p> 
      * <p>Specify the minimum number of resources required to successfully roll back
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
-     * resources. </p> <p>To skip resources that are part of nested stacks, use the
+     * resources.</p> <p>To skip resources that are part of nested stacks, use the
      * following format: <code>NestedStackName.ResourceLogicalID</code>. If you want to
      * specify the logical ID of a stack resource (<code>Type:
      * AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list,
      * then its corresponding embedded stack must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>. </p>  <p>Don't confuse a child stack's name
+     * <code>DELETE_FAILED</code>.</p>  <p>Don't confuse a child stack's name
      * with its corresponding logical ID defined in the parent stack. For an example of
      * a continue update rollback operation with nested stacks, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using
-     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> 
+     * ResourcesToSkip to recover a nested stacks hierarchy</a>.</p> 
      */
     inline ContinueUpdateRollbackRequest& AddResourcesToSkip(Aws::String&& value) { m_resourcesToSkipHasBeenSet = true; m_resourcesToSkip.push_back(std::move(value)); return *this; }
 
@@ -516,21 +516,21 @@ namespace Model
      * resources will be inconsistent with the state of the resources in the stack
      * template. Before performing another stack update, you must update the stack or
      * resources to be consistent with each other. If you don't, subsequent stack
-     * updates might fail, and the stack will become unrecoverable. </p> 
+     * updates might fail, and the stack will become unrecoverable.</p> 
      * <p>Specify the minimum number of resources required to successfully roll back
      * your stack. For example, a failed resource update might cause dependent
      * resources to fail. In this case, it might not be necessary to skip the dependent
-     * resources. </p> <p>To skip resources that are part of nested stacks, use the
+     * resources.</p> <p>To skip resources that are part of nested stacks, use the
      * following format: <code>NestedStackName.ResourceLogicalID</code>. If you want to
      * specify the logical ID of a stack resource (<code>Type:
      * AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list,
      * then its corresponding embedded stack must be in one of the following states:
      * <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>. </p>  <p>Don't confuse a child stack's name
+     * <code>DELETE_FAILED</code>.</p>  <p>Don't confuse a child stack's name
      * with its corresponding logical ID defined in the parent stack. For an example of
      * a continue update rollback operation with nested stacks, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using
-     * ResourcesToSkip to recover a nested stacks hierarchy</a>. </p> 
+     * ResourcesToSkip to recover a nested stacks hierarchy</a>.</p> 
      */
     inline ContinueUpdateRollbackRequest& AddResourcesToSkip(const char* value) { m_resourcesToSkipHasBeenSet = true; m_resourcesToSkip.push_back(value); return *this; }
 

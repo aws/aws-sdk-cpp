@@ -47,56 +47,56 @@ namespace Model
 
 
     /**
-     * <p>The names of one or more accounts for which you want to deploy stack set
-     * updates.</p>
+     * <p>The names of one or more Amazon Web Services accounts for which you want to
+     * deploy stack set updates.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
 
     /**
-     * <p>The names of one or more accounts for which you want to deploy stack set
-     * updates.</p>
+     * <p>The names of one or more Amazon Web Services accounts for which you want to
+     * deploy stack set updates.</p>
      */
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
 
     /**
-     * <p>The names of one or more accounts for which you want to deploy stack set
-     * updates.</p>
+     * <p>The names of one or more Amazon Web Services accounts for which you want to
+     * deploy stack set updates.</p>
      */
     inline void SetAccounts(const Aws::Vector<Aws::String>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
 
     /**
-     * <p>The names of one or more accounts for which you want to deploy stack set
-     * updates.</p>
+     * <p>The names of one or more Amazon Web Services accounts for which you want to
+     * deploy stack set updates.</p>
      */
     inline void SetAccounts(Aws::Vector<Aws::String>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
 
     /**
-     * <p>The names of one or more accounts for which you want to deploy stack set
-     * updates.</p>
+     * <p>The names of one or more Amazon Web Services accounts for which you want to
+     * deploy stack set updates.</p>
      */
     inline DeploymentTargets& WithAccounts(const Aws::Vector<Aws::String>& value) { SetAccounts(value); return *this;}
 
     /**
-     * <p>The names of one or more accounts for which you want to deploy stack set
-     * updates.</p>
+     * <p>The names of one or more Amazon Web Services accounts for which you want to
+     * deploy stack set updates.</p>
      */
     inline DeploymentTargets& WithAccounts(Aws::Vector<Aws::String>&& value) { SetAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>The names of one or more accounts for which you want to deploy stack set
-     * updates.</p>
+     * <p>The names of one or more Amazon Web Services accounts for which you want to
+     * deploy stack set updates.</p>
      */
     inline DeploymentTargets& AddAccounts(const Aws::String& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
     /**
-     * <p>The names of one or more accounts for which you want to deploy stack set
-     * updates.</p>
+     * <p>The names of one or more Amazon Web Services accounts for which you want to
+     * deploy stack set updates.</p>
      */
     inline DeploymentTargets& AddAccounts(Aws::String&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of one or more accounts for which you want to deploy stack set
-     * updates.</p>
+     * <p>The names of one or more Amazon Web Services accounts for which you want to
+     * deploy stack set updates.</p>
      */
     inline DeploymentTargets& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 

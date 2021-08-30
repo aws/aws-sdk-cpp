@@ -13,7 +13,7 @@ namespace KMS
 {
 namespace Model
 {
-  enum class CustomerMasterKeySpec
+  enum class KeySpec
   {
     NOT_SET,
     RSA_2048,
@@ -26,12 +26,12 @@ namespace Model
     SYMMETRIC_DEFAULT
   };
 
-namespace CustomerMasterKeySpecMapper
+namespace KeySpecMapper
 {
-AWS_KMS_API CustomerMasterKeySpec GetCustomerMasterKeySpecForName(const Aws::String& name);
+AWS_KMS_API KeySpec GetKeySpecForName(const Aws::String& name);
 
-AWS_KMS_API Aws::String GetNameForCustomerMasterKeySpec(CustomerMasterKeySpec value);
-} // namespace CustomerMasterKeySpecMapper
+AWS_KMS_API Aws::String GetNameForKeySpec(KeySpec value);
+} // namespace KeySpecMapper
 } // namespace Model
 } // namespace KMS
 } // namespace Aws

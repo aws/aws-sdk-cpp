@@ -40,8 +40,8 @@ KeyMetadata::KeyMetadata() :
     m_expirationModelHasBeenSet(false),
     m_keyManager(KeyManagerType::NOT_SET),
     m_keyManagerHasBeenSet(false),
-    m_customerMasterKeySpec(CustomerMasterKeySpec::NOT_SET),
-    m_customerMasterKeySpecHasBeenSet(false),
+    m_keySpec(KeySpec::NOT_SET),
+    m_keySpecHasBeenSet(false),
     m_encryptionAlgorithmsHasBeenSet(false),
     m_signingAlgorithmsHasBeenSet(false),
     m_multiRegion(false),
@@ -74,8 +74,8 @@ KeyMetadata::KeyMetadata(JsonView jsonValue) :
     m_expirationModelHasBeenSet(false),
     m_keyManager(KeyManagerType::NOT_SET),
     m_keyManagerHasBeenSet(false),
-    m_customerMasterKeySpec(CustomerMasterKeySpec::NOT_SET),
-    m_customerMasterKeySpecHasBeenSet(false),
+    m_keySpec(KeySpec::NOT_SET),
+    m_keySpecHasBeenSet(false),
     m_encryptionAlgorithmsHasBeenSet(false),
     m_signingAlgorithmsHasBeenSet(false),
     m_multiRegion(false),
@@ -194,11 +194,11 @@ KeyMetadata& KeyMetadata::operator =(JsonView jsonValue)
     m_keyManagerHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("CustomerMasterKeySpec"))
+  if(jsonValue.ValueExists("KeySpec"))
   {
-    m_customerMasterKeySpec = CustomerMasterKeySpecMapper::GetCustomerMasterKeySpecForName(jsonValue.GetString("CustomerMasterKeySpec"));
+    m_keySpec = KeySpecMapper::GetKeySpecForName(jsonValue.GetString("KeySpec"));
 
-    m_customerMasterKeySpecHasBeenSet = true;
+    m_keySpecHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EncryptionAlgorithms"))
@@ -331,9 +331,9 @@ JsonValue KeyMetadata::Jsonize() const
    payload.WithString("KeyManager", KeyManagerTypeMapper::GetNameForKeyManagerType(m_keyManager));
   }
 
-  if(m_customerMasterKeySpecHasBeenSet)
+  if(m_keySpecHasBeenSet)
   {
-   payload.WithString("CustomerMasterKeySpec", CustomerMasterKeySpecMapper::GetNameForCustomerMasterKeySpec(m_customerMasterKeySpec));
+   payload.WithString("KeySpec", KeySpecMapper::GetNameForKeySpec(m_keySpec));
   }
 
   if(m_encryptionAlgorithmsHasBeenSet)

@@ -165,25 +165,25 @@ namespace Model
 
     /**
      * <p>Flag that indicates whether the parameter value is shown as plain text in
-     * logs and in the Management Console.</p>
+     * logs and in the Amazon Web Services Management Console.</p>
      */
     inline bool GetNoEcho() const{ return m_noEcho; }
 
     /**
      * <p>Flag that indicates whether the parameter value is shown as plain text in
-     * logs and in the Management Console.</p>
+     * logs and in the Amazon Web Services Management Console.</p>
      */
     inline bool NoEchoHasBeenSet() const { return m_noEchoHasBeenSet; }
 
     /**
      * <p>Flag that indicates whether the parameter value is shown as plain text in
-     * logs and in the Management Console.</p>
+     * logs and in the Amazon Web Services Management Console.</p>
      */
     inline void SetNoEcho(bool value) { m_noEchoHasBeenSet = true; m_noEcho = value; }
 
     /**
      * <p>Flag that indicates whether the parameter value is shown as plain text in
-     * logs and in the Management Console.</p>
+     * logs and in the Amazon Web Services Management Console.</p>
      */
     inline ParameterDeclaration& WithNoEcho(bool value) { SetNoEcho(value); return *this;}
 

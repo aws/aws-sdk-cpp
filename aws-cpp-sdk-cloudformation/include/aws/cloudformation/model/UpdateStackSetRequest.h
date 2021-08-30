@@ -378,10 +378,10 @@ namespace Model
      * set and its associated stack instances.</p> <ul> <li> <p>
      * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
      * stack templates might include resources that can affect permissions in your
-     * account; for example, by creating new Identity and Access Management (IAM)
-     * users. For those stacks sets, you must explicitly acknowledge this by specifying
-     * one of these capabilities.</p> <p>The following IAM resources require you to
-     * specify either the <code>CAPABILITY_IAM</code> or
+     * Amazon Web Services account; for example, by creating new Identity and Access
+     * Management (IAM) users. For those stacks sets, you must explicitly acknowledge
+     * this by specifying one of these capabilities.</p> <p>The following IAM resources
+     * require you to specify either the <code>CAPABILITY_IAM</code> or
      * <code>CAPABILITY_NAMED_IAM</code> capability.</p> <ul> <li> <p>If you have IAM
      * resources, you can specify either capability. </p> </li> <li> <p>If you have IAM
      * resources with custom names, you <i>must</i> specify
@@ -433,10 +433,10 @@ namespace Model
      * set and its associated stack instances.</p> <ul> <li> <p>
      * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
      * stack templates might include resources that can affect permissions in your
-     * account; for example, by creating new Identity and Access Management (IAM)
-     * users. For those stacks sets, you must explicitly acknowledge this by specifying
-     * one of these capabilities.</p> <p>The following IAM resources require you to
-     * specify either the <code>CAPABILITY_IAM</code> or
+     * Amazon Web Services account; for example, by creating new Identity and Access
+     * Management (IAM) users. For those stacks sets, you must explicitly acknowledge
+     * this by specifying one of these capabilities.</p> <p>The following IAM resources
+     * require you to specify either the <code>CAPABILITY_IAM</code> or
      * <code>CAPABILITY_NAMED_IAM</code> capability.</p> <ul> <li> <p>If you have IAM
      * resources, you can specify either capability. </p> </li> <li> <p>If you have IAM
      * resources with custom names, you <i>must</i> specify
@@ -488,10 +488,10 @@ namespace Model
      * set and its associated stack instances.</p> <ul> <li> <p>
      * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
      * stack templates might include resources that can affect permissions in your
-     * account; for example, by creating new Identity and Access Management (IAM)
-     * users. For those stacks sets, you must explicitly acknowledge this by specifying
-     * one of these capabilities.</p> <p>The following IAM resources require you to
-     * specify either the <code>CAPABILITY_IAM</code> or
+     * Amazon Web Services account; for example, by creating new Identity and Access
+     * Management (IAM) users. For those stacks sets, you must explicitly acknowledge
+     * this by specifying one of these capabilities.</p> <p>The following IAM resources
+     * require you to specify either the <code>CAPABILITY_IAM</code> or
      * <code>CAPABILITY_NAMED_IAM</code> capability.</p> <ul> <li> <p>If you have IAM
      * resources, you can specify either capability. </p> </li> <li> <p>If you have IAM
      * resources with custom names, you <i>must</i> specify
@@ -543,10 +543,10 @@ namespace Model
      * set and its associated stack instances.</p> <ul> <li> <p>
      * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
      * stack templates might include resources that can affect permissions in your
-     * account; for example, by creating new Identity and Access Management (IAM)
-     * users. For those stacks sets, you must explicitly acknowledge this by specifying
-     * one of these capabilities.</p> <p>The following IAM resources require you to
-     * specify either the <code>CAPABILITY_IAM</code> or
+     * Amazon Web Services account; for example, by creating new Identity and Access
+     * Management (IAM) users. For those stacks sets, you must explicitly acknowledge
+     * this by specifying one of these capabilities.</p> <p>The following IAM resources
+     * require you to specify either the <code>CAPABILITY_IAM</code> or
      * <code>CAPABILITY_NAMED_IAM</code> capability.</p> <ul> <li> <p>If you have IAM
      * resources, you can specify either capability. </p> </li> <li> <p>If you have IAM
      * resources with custom names, you <i>must</i> specify
@@ -598,10 +598,10 @@ namespace Model
      * set and its associated stack instances.</p> <ul> <li> <p>
      * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
      * stack templates might include resources that can affect permissions in your
-     * account; for example, by creating new Identity and Access Management (IAM)
-     * users. For those stacks sets, you must explicitly acknowledge this by specifying
-     * one of these capabilities.</p> <p>The following IAM resources require you to
-     * specify either the <code>CAPABILITY_IAM</code> or
+     * Amazon Web Services account; for example, by creating new Identity and Access
+     * Management (IAM) users. For those stacks sets, you must explicitly acknowledge
+     * this by specifying one of these capabilities.</p> <p>The following IAM resources
+     * require you to specify either the <code>CAPABILITY_IAM</code> or
      * <code>CAPABILITY_NAMED_IAM</code> capability.</p> <ul> <li> <p>If you have IAM
      * resources, you can specify either capability. </p> </li> <li> <p>If you have IAM
      * resources with custom names, you <i>must</i> specify
@@ -653,10 +653,10 @@ namespace Model
      * set and its associated stack instances.</p> <ul> <li> <p>
      * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
      * stack templates might include resources that can affect permissions in your
-     * account; for example, by creating new Identity and Access Management (IAM)
-     * users. For those stacks sets, you must explicitly acknowledge this by specifying
-     * one of these capabilities.</p> <p>The following IAM resources require you to
-     * specify either the <code>CAPABILITY_IAM</code> or
+     * Amazon Web Services account; for example, by creating new Identity and Access
+     * Management (IAM) users. For those stacks sets, you must explicitly acknowledge
+     * this by specifying one of these capabilities.</p> <p>The following IAM resources
+     * require you to specify either the <code>CAPABILITY_IAM</code> or
      * <code>CAPABILITY_NAMED_IAM</code> capability.</p> <ul> <li> <p>If you have IAM
      * resources, you can specify either capability. </p> </li> <li> <p>If you have IAM
      * resources with custom names, you <i>must</i> specify
@@ -708,10 +708,10 @@ namespace Model
      * set and its associated stack instances.</p> <ul> <li> <p>
      * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
      * stack templates might include resources that can affect permissions in your
-     * account; for example, by creating new Identity and Access Management (IAM)
-     * users. For those stacks sets, you must explicitly acknowledge this by specifying
-     * one of these capabilities.</p> <p>The following IAM resources require you to
-     * specify either the <code>CAPABILITY_IAM</code> or
+     * Amazon Web Services account; for example, by creating new Identity and Access
+     * Management (IAM) users. For those stacks sets, you must explicitly acknowledge
+     * this by specifying one of these capabilities.</p> <p>The following IAM resources
+     * require you to specify either the <code>CAPABILITY_IAM</code> or
      * <code>CAPABILITY_NAMED_IAM</code> capability.</p> <ul> <li> <p>If you have IAM
      * resources, you can specify either capability. </p> </li> <li> <p>If you have IAM
      * resources with custom names, you <i>must</i> specify
@@ -763,10 +763,10 @@ namespace Model
      * set and its associated stack instances.</p> <ul> <li> <p>
      * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
      * stack templates might include resources that can affect permissions in your
-     * account; for example, by creating new Identity and Access Management (IAM)
-     * users. For those stacks sets, you must explicitly acknowledge this by specifying
-     * one of these capabilities.</p> <p>The following IAM resources require you to
-     * specify either the <code>CAPABILITY_IAM</code> or
+     * Amazon Web Services account; for example, by creating new Identity and Access
+     * Management (IAM) users. For those stacks sets, you must explicitly acknowledge
+     * this by specifying one of these capabilities.</p> <p>The following IAM resources
+     * require you to specify either the <code>CAPABILITY_IAM</code> or
      * <code>CAPABILITY_NAMED_IAM</code> capability.</p> <ul> <li> <p>If you have IAM
      * resources, you can specify either capability. </p> </li> <li> <p>If you have IAM
      * resources with custom names, you <i>must</i> specify
@@ -1920,9 +1920,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
@@ -1936,9 +1936,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
@@ -1952,9 +1952,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
@@ -1968,9 +1968,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
@@ -1984,9 +1984,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
@@ -2000,9 +2000,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>

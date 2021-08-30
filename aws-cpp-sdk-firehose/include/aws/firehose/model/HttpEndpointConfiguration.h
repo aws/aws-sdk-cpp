@@ -39,42 +39,82 @@ namespace Model
 
 
     /**
-     * <p>The URL of the HTTP endpoint selected as the destination.</p>
+     * <p>The URL of the HTTP endpoint selected as the destination.</p> 
+     * <p>If you choose an HTTP endpoint as your destination, review and follow the
+     * instructions in the <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix
+     * - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
+     * 
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
 
     /**
-     * <p>The URL of the HTTP endpoint selected as the destination.</p>
+     * <p>The URL of the HTTP endpoint selected as the destination.</p> 
+     * <p>If you choose an HTTP endpoint as your destination, review and follow the
+     * instructions in the <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix
+     * - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
+     * 
      */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
-     * <p>The URL of the HTTP endpoint selected as the destination.</p>
+     * <p>The URL of the HTTP endpoint selected as the destination.</p> 
+     * <p>If you choose an HTTP endpoint as your destination, review and follow the
+     * instructions in the <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix
+     * - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
+     * 
      */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
-     * <p>The URL of the HTTP endpoint selected as the destination.</p>
+     * <p>The URL of the HTTP endpoint selected as the destination.</p> 
+     * <p>If you choose an HTTP endpoint as your destination, review and follow the
+     * instructions in the <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix
+     * - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
+     * 
      */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
     /**
-     * <p>The URL of the HTTP endpoint selected as the destination.</p>
+     * <p>The URL of the HTTP endpoint selected as the destination.</p> 
+     * <p>If you choose an HTTP endpoint as your destination, review and follow the
+     * instructions in the <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix
+     * - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
+     * 
      */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
 
     /**
-     * <p>The URL of the HTTP endpoint selected as the destination.</p>
+     * <p>The URL of the HTTP endpoint selected as the destination.</p> 
+     * <p>If you choose an HTTP endpoint as your destination, review and follow the
+     * instructions in the <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix
+     * - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
+     * 
      */
     inline HttpEndpointConfiguration& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
 
     /**
-     * <p>The URL of the HTTP endpoint selected as the destination.</p>
+     * <p>The URL of the HTTP endpoint selected as the destination.</p> 
+     * <p>If you choose an HTTP endpoint as your destination, review and follow the
+     * instructions in the <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix
+     * - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
+     * 
      */
     inline HttpEndpointConfiguration& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of the HTTP endpoint selected as the destination.</p>
+     * <p>The URL of the HTTP endpoint selected as the destination.</p> 
+     * <p>If you choose an HTTP endpoint as your destination, review and follow the
+     * instructions in the <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix
+     * - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
+     * 
      */
     inline HttpEndpointConfiguration& WithUrl(const char* value) { SetUrl(value); return *this;}
 

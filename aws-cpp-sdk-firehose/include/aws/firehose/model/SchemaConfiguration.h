@@ -42,56 +42,80 @@ namespace Model
     /**
      * <p>The role that Kinesis Data Firehose can use to access AWS Glue. This role
      * must be in the same account you use for Kinesis Data Firehose. Cross-account
-     * roles aren't allowed.</p>
+     * roles aren't allowed.</p>  <p>If the <code>SchemaConfiguration</code>
+     * request parameter is used as part of invoking the
+     * <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is
+     * required and its value must be specified.</p> 
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
      * <p>The role that Kinesis Data Firehose can use to access AWS Glue. This role
      * must be in the same account you use for Kinesis Data Firehose. Cross-account
-     * roles aren't allowed.</p>
+     * roles aren't allowed.</p>  <p>If the <code>SchemaConfiguration</code>
+     * request parameter is used as part of invoking the
+     * <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is
+     * required and its value must be specified.</p> 
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
      * <p>The role that Kinesis Data Firehose can use to access AWS Glue. This role
      * must be in the same account you use for Kinesis Data Firehose. Cross-account
-     * roles aren't allowed.</p>
+     * roles aren't allowed.</p>  <p>If the <code>SchemaConfiguration</code>
+     * request parameter is used as part of invoking the
+     * <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is
+     * required and its value must be specified.</p> 
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
      * <p>The role that Kinesis Data Firehose can use to access AWS Glue. This role
      * must be in the same account you use for Kinesis Data Firehose. Cross-account
-     * roles aren't allowed.</p>
+     * roles aren't allowed.</p>  <p>If the <code>SchemaConfiguration</code>
+     * request parameter is used as part of invoking the
+     * <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is
+     * required and its value must be specified.</p> 
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The role that Kinesis Data Firehose can use to access AWS Glue. This role
      * must be in the same account you use for Kinesis Data Firehose. Cross-account
-     * roles aren't allowed.</p>
+     * roles aren't allowed.</p>  <p>If the <code>SchemaConfiguration</code>
+     * request parameter is used as part of invoking the
+     * <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is
+     * required and its value must be specified.</p> 
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
      * <p>The role that Kinesis Data Firehose can use to access AWS Glue. This role
      * must be in the same account you use for Kinesis Data Firehose. Cross-account
-     * roles aren't allowed.</p>
+     * roles aren't allowed.</p>  <p>If the <code>SchemaConfiguration</code>
+     * request parameter is used as part of invoking the
+     * <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is
+     * required and its value must be specified.</p> 
      */
     inline SchemaConfiguration& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
      * <p>The role that Kinesis Data Firehose can use to access AWS Glue. This role
      * must be in the same account you use for Kinesis Data Firehose. Cross-account
-     * roles aren't allowed.</p>
+     * roles aren't allowed.</p>  <p>If the <code>SchemaConfiguration</code>
+     * request parameter is used as part of invoking the
+     * <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is
+     * required and its value must be specified.</p> 
      */
     inline SchemaConfiguration& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The role that Kinesis Data Firehose can use to access AWS Glue. This role
      * must be in the same account you use for Kinesis Data Firehose. Cross-account
-     * roles aren't allowed.</p>
+     * roles aren't allowed.</p>  <p>If the <code>SchemaConfiguration</code>
+     * request parameter is used as part of invoking the
+     * <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is
+     * required and its value must be specified.</p> 
      */
     inline SchemaConfiguration& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
@@ -147,98 +171,146 @@ namespace Model
 
     /**
      * <p>Specifies the name of the AWS Glue database that contains the schema for the
-     * output data.</p>
+     * output data.</p>  <p>If the <code>SchemaConfiguration</code> request
+     * parameter is used as part of invoking the <code>CreateDeliveryStream</code> API,
+     * then the <code>DatabaseName</code> property is required and its value must be
+     * specified.</p> 
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
     /**
      * <p>Specifies the name of the AWS Glue database that contains the schema for the
-     * output data.</p>
+     * output data.</p>  <p>If the <code>SchemaConfiguration</code> request
+     * parameter is used as part of invoking the <code>CreateDeliveryStream</code> API,
+     * then the <code>DatabaseName</code> property is required and its value must be
+     * specified.</p> 
      */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
      * <p>Specifies the name of the AWS Glue database that contains the schema for the
-     * output data.</p>
+     * output data.</p>  <p>If the <code>SchemaConfiguration</code> request
+     * parameter is used as part of invoking the <code>CreateDeliveryStream</code> API,
+     * then the <code>DatabaseName</code> property is required and its value must be
+     * specified.</p> 
      */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
      * <p>Specifies the name of the AWS Glue database that contains the schema for the
-     * output data.</p>
+     * output data.</p>  <p>If the <code>SchemaConfiguration</code> request
+     * parameter is used as part of invoking the <code>CreateDeliveryStream</code> API,
+     * then the <code>DatabaseName</code> property is required and its value must be
+     * specified.</p> 
      */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
      * <p>Specifies the name of the AWS Glue database that contains the schema for the
-     * output data.</p>
+     * output data.</p>  <p>If the <code>SchemaConfiguration</code> request
+     * parameter is used as part of invoking the <code>CreateDeliveryStream</code> API,
+     * then the <code>DatabaseName</code> property is required and its value must be
+     * specified.</p> 
      */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
 
     /**
      * <p>Specifies the name of the AWS Glue database that contains the schema for the
-     * output data.</p>
+     * output data.</p>  <p>If the <code>SchemaConfiguration</code> request
+     * parameter is used as part of invoking the <code>CreateDeliveryStream</code> API,
+     * then the <code>DatabaseName</code> property is required and its value must be
+     * specified.</p> 
      */
     inline SchemaConfiguration& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
 
     /**
      * <p>Specifies the name of the AWS Glue database that contains the schema for the
-     * output data.</p>
+     * output data.</p>  <p>If the <code>SchemaConfiguration</code> request
+     * parameter is used as part of invoking the <code>CreateDeliveryStream</code> API,
+     * then the <code>DatabaseName</code> property is required and its value must be
+     * specified.</p> 
      */
     inline SchemaConfiguration& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the name of the AWS Glue database that contains the schema for the
-     * output data.</p>
+     * output data.</p>  <p>If the <code>SchemaConfiguration</code> request
+     * parameter is used as part of invoking the <code>CreateDeliveryStream</code> API,
+     * then the <code>DatabaseName</code> property is required and its value must be
+     * specified.</p> 
      */
     inline SchemaConfiguration& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
 
     /**
      * <p>Specifies the AWS Glue table that contains the column information that
-     * constitutes your data schema.</p>
+     * constitutes your data schema.</p>  <p>If the
+     * <code>SchemaConfiguration</code> request parameter is used as part of invoking
+     * the <code>CreateDeliveryStream</code> API, then the <code>TableName</code>
+     * property is required and its value must be specified.</p> 
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
 
     /**
      * <p>Specifies the AWS Glue table that contains the column information that
-     * constitutes your data schema.</p>
+     * constitutes your data schema.</p>  <p>If the
+     * <code>SchemaConfiguration</code> request parameter is used as part of invoking
+     * the <code>CreateDeliveryStream</code> API, then the <code>TableName</code>
+     * property is required and its value must be specified.</p> 
      */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
 
     /**
      * <p>Specifies the AWS Glue table that contains the column information that
-     * constitutes your data schema.</p>
+     * constitutes your data schema.</p>  <p>If the
+     * <code>SchemaConfiguration</code> request parameter is used as part of invoking
+     * the <code>CreateDeliveryStream</code> API, then the <code>TableName</code>
+     * property is required and its value must be specified.</p> 
      */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
      * <p>Specifies the AWS Glue table that contains the column information that
-     * constitutes your data schema.</p>
+     * constitutes your data schema.</p>  <p>If the
+     * <code>SchemaConfiguration</code> request parameter is used as part of invoking
+     * the <code>CreateDeliveryStream</code> API, then the <code>TableName</code>
+     * property is required and its value must be specified.</p> 
      */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
 
     /**
      * <p>Specifies the AWS Glue table that contains the column information that
-     * constitutes your data schema.</p>
+     * constitutes your data schema.</p>  <p>If the
+     * <code>SchemaConfiguration</code> request parameter is used as part of invoking
+     * the <code>CreateDeliveryStream</code> API, then the <code>TableName</code>
+     * property is required and its value must be specified.</p> 
      */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
 
     /**
      * <p>Specifies the AWS Glue table that contains the column information that
-     * constitutes your data schema.</p>
+     * constitutes your data schema.</p>  <p>If the
+     * <code>SchemaConfiguration</code> request parameter is used as part of invoking
+     * the <code>CreateDeliveryStream</code> API, then the <code>TableName</code>
+     * property is required and its value must be specified.</p> 
      */
     inline SchemaConfiguration& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
 
     /**
      * <p>Specifies the AWS Glue table that contains the column information that
-     * constitutes your data schema.</p>
+     * constitutes your data schema.</p>  <p>If the
+     * <code>SchemaConfiguration</code> request parameter is used as part of invoking
+     * the <code>CreateDeliveryStream</code> API, then the <code>TableName</code>
+     * property is required and its value must be specified.</p> 
      */
     inline SchemaConfiguration& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the AWS Glue table that contains the column information that
-     * constitutes your data schema.</p>
+     * constitutes your data schema.</p>  <p>If the
+     * <code>SchemaConfiguration</code> request parameter is used as part of invoking
+     * the <code>CreateDeliveryStream</code> API, then the <code>TableName</code>
+     * property is required and its value must be specified.</p> 
      */
     inline SchemaConfiguration& WithTableName(const char* value) { SetTableName(value); return *this;}
 

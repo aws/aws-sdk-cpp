@@ -337,15 +337,15 @@ namespace Model
      * contains certain capabilities in order for CloudFormation to create the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your account; for example, by creating
-     * new Identity and Access Management (IAM) users. For those stacks, you must
-     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
-     * following IAM resources require you to specify either the
-     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
-     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
-     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
-     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
-     * specify either of these capabilities, CloudFormation returns an
+     * resources that can affect permissions in your Amazon Web Services account; for
+     * example, by creating new Identity and Access Management (IAM) users. For those
+     * stacks, you must explicitly acknowledge this by specifying one of these
+     * capabilities.</p> <p>The following IAM resources require you to specify either
+     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
+     * capability.</p> </li> <li> <p>If you have IAM resources with custom names, you
+     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
+     * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -397,15 +397,15 @@ namespace Model
      * contains certain capabilities in order for CloudFormation to create the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your account; for example, by creating
-     * new Identity and Access Management (IAM) users. For those stacks, you must
-     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
-     * following IAM resources require you to specify either the
-     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
-     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
-     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
-     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
-     * specify either of these capabilities, CloudFormation returns an
+     * resources that can affect permissions in your Amazon Web Services account; for
+     * example, by creating new Identity and Access Management (IAM) users. For those
+     * stacks, you must explicitly acknowledge this by specifying one of these
+     * capabilities.</p> <p>The following IAM resources require you to specify either
+     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
+     * capability.</p> </li> <li> <p>If you have IAM resources with custom names, you
+     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
+     * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -457,15 +457,15 @@ namespace Model
      * contains certain capabilities in order for CloudFormation to create the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your account; for example, by creating
-     * new Identity and Access Management (IAM) users. For those stacks, you must
-     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
-     * following IAM resources require you to specify either the
-     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
-     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
-     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
-     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
-     * specify either of these capabilities, CloudFormation returns an
+     * resources that can affect permissions in your Amazon Web Services account; for
+     * example, by creating new Identity and Access Management (IAM) users. For those
+     * stacks, you must explicitly acknowledge this by specifying one of these
+     * capabilities.</p> <p>The following IAM resources require you to specify either
+     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
+     * capability.</p> </li> <li> <p>If you have IAM resources with custom names, you
+     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
+     * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -517,15 +517,15 @@ namespace Model
      * contains certain capabilities in order for CloudFormation to create the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your account; for example, by creating
-     * new Identity and Access Management (IAM) users. For those stacks, you must
-     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
-     * following IAM resources require you to specify either the
-     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
-     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
-     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
-     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
-     * specify either of these capabilities, CloudFormation returns an
+     * resources that can affect permissions in your Amazon Web Services account; for
+     * example, by creating new Identity and Access Management (IAM) users. For those
+     * stacks, you must explicitly acknowledge this by specifying one of these
+     * capabilities.</p> <p>The following IAM resources require you to specify either
+     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
+     * capability.</p> </li> <li> <p>If you have IAM resources with custom names, you
+     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
+     * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -577,15 +577,15 @@ namespace Model
      * contains certain capabilities in order for CloudFormation to create the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your account; for example, by creating
-     * new Identity and Access Management (IAM) users. For those stacks, you must
-     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
-     * following IAM resources require you to specify either the
-     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
-     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
-     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
-     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
-     * specify either of these capabilities, CloudFormation returns an
+     * resources that can affect permissions in your Amazon Web Services account; for
+     * example, by creating new Identity and Access Management (IAM) users. For those
+     * stacks, you must explicitly acknowledge this by specifying one of these
+     * capabilities.</p> <p>The following IAM resources require you to specify either
+     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
+     * capability.</p> </li> <li> <p>If you have IAM resources with custom names, you
+     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
+     * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -637,15 +637,15 @@ namespace Model
      * contains certain capabilities in order for CloudFormation to create the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your account; for example, by creating
-     * new Identity and Access Management (IAM) users. For those stacks, you must
-     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
-     * following IAM resources require you to specify either the
-     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
-     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
-     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
-     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
-     * specify either of these capabilities, CloudFormation returns an
+     * resources that can affect permissions in your Amazon Web Services account; for
+     * example, by creating new Identity and Access Management (IAM) users. For those
+     * stacks, you must explicitly acknowledge this by specifying one of these
+     * capabilities.</p> <p>The following IAM resources require you to specify either
+     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
+     * capability.</p> </li> <li> <p>If you have IAM resources with custom names, you
+     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
+     * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -697,15 +697,15 @@ namespace Model
      * contains certain capabilities in order for CloudFormation to create the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your account; for example, by creating
-     * new Identity and Access Management (IAM) users. For those stacks, you must
-     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
-     * following IAM resources require you to specify either the
-     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
-     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
-     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
-     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
-     * specify either of these capabilities, CloudFormation returns an
+     * resources that can affect permissions in your Amazon Web Services account; for
+     * example, by creating new Identity and Access Management (IAM) users. For those
+     * stacks, you must explicitly acknowledge this by specifying one of these
+     * capabilities.</p> <p>The following IAM resources require you to specify either
+     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
+     * capability.</p> </li> <li> <p>If you have IAM resources with custom names, you
+     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
+     * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -757,15 +757,15 @@ namespace Model
      * contains certain capabilities in order for CloudFormation to create the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your account; for example, by creating
-     * new Identity and Access Management (IAM) users. For those stacks, you must
-     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
-     * following IAM resources require you to specify either the
-     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
-     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
-     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
-     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
-     * specify either of these capabilities, CloudFormation returns an
+     * resources that can affect permissions in your Amazon Web Services account; for
+     * example, by creating new Identity and Access Management (IAM) users. For those
+     * stacks, you must explicitly acknowledge this by specifying one of these
+     * capabilities.</p> <p>The following IAM resources require you to specify either
+     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
+     * capability.</p> </li> <li> <p>If you have IAM resources with custom names, you
+     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
+     * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>

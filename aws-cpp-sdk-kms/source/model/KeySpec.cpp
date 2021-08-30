@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kms/model/CustomerMasterKeySpec.h>
+#include <aws/kms/model/KeySpec.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -17,7 +17,7 @@ namespace Aws
   {
     namespace Model
     {
-      namespace CustomerMasterKeySpecMapper
+      namespace KeySpecMapper
       {
 
         static const int RSA_2048_HASH = HashingUtils::HashString("RSA_2048");
@@ -30,70 +30,70 @@ namespace Aws
         static const int SYMMETRIC_DEFAULT_HASH = HashingUtils::HashString("SYMMETRIC_DEFAULT");
 
 
-        CustomerMasterKeySpec GetCustomerMasterKeySpecForName(const Aws::String& name)
+        KeySpec GetKeySpecForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == RSA_2048_HASH)
           {
-            return CustomerMasterKeySpec::RSA_2048;
+            return KeySpec::RSA_2048;
           }
           else if (hashCode == RSA_3072_HASH)
           {
-            return CustomerMasterKeySpec::RSA_3072;
+            return KeySpec::RSA_3072;
           }
           else if (hashCode == RSA_4096_HASH)
           {
-            return CustomerMasterKeySpec::RSA_4096;
+            return KeySpec::RSA_4096;
           }
           else if (hashCode == ECC_NIST_P256_HASH)
           {
-            return CustomerMasterKeySpec::ECC_NIST_P256;
+            return KeySpec::ECC_NIST_P256;
           }
           else if (hashCode == ECC_NIST_P384_HASH)
           {
-            return CustomerMasterKeySpec::ECC_NIST_P384;
+            return KeySpec::ECC_NIST_P384;
           }
           else if (hashCode == ECC_NIST_P521_HASH)
           {
-            return CustomerMasterKeySpec::ECC_NIST_P521;
+            return KeySpec::ECC_NIST_P521;
           }
           else if (hashCode == ECC_SECG_P256K1_HASH)
           {
-            return CustomerMasterKeySpec::ECC_SECG_P256K1;
+            return KeySpec::ECC_SECG_P256K1;
           }
           else if (hashCode == SYMMETRIC_DEFAULT_HASH)
           {
-            return CustomerMasterKeySpec::SYMMETRIC_DEFAULT;
+            return KeySpec::SYMMETRIC_DEFAULT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<CustomerMasterKeySpec>(hashCode);
+            return static_cast<KeySpec>(hashCode);
           }
 
-          return CustomerMasterKeySpec::NOT_SET;
+          return KeySpec::NOT_SET;
         }
 
-        Aws::String GetNameForCustomerMasterKeySpec(CustomerMasterKeySpec enumValue)
+        Aws::String GetNameForKeySpec(KeySpec enumValue)
         {
           switch(enumValue)
           {
-          case CustomerMasterKeySpec::RSA_2048:
+          case KeySpec::RSA_2048:
             return "RSA_2048";
-          case CustomerMasterKeySpec::RSA_3072:
+          case KeySpec::RSA_3072:
             return "RSA_3072";
-          case CustomerMasterKeySpec::RSA_4096:
+          case KeySpec::RSA_4096:
             return "RSA_4096";
-          case CustomerMasterKeySpec::ECC_NIST_P256:
+          case KeySpec::ECC_NIST_P256:
             return "ECC_NIST_P256";
-          case CustomerMasterKeySpec::ECC_NIST_P384:
+          case KeySpec::ECC_NIST_P384:
             return "ECC_NIST_P384";
-          case CustomerMasterKeySpec::ECC_NIST_P521:
+          case KeySpec::ECC_NIST_P521:
             return "ECC_NIST_P521";
-          case CustomerMasterKeySpec::ECC_SECG_P256K1:
+          case KeySpec::ECC_SECG_P256K1:
             return "ECC_SECG_P256K1";
-          case CustomerMasterKeySpec::SYMMETRIC_DEFAULT:
+          case KeySpec::SYMMETRIC_DEFAULT:
             return "SYMMETRIC_DEFAULT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
@@ -106,7 +106,7 @@ namespace Aws
           }
         }
 
-      } // namespace CustomerMasterKeySpecMapper
+      } // namespace KeySpecMapper
     } // namespace Model
   } // namespace KMS
 } // namespace Aws

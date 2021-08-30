@@ -80,50 +80,50 @@ namespace Model
 
 
     /**
-     * <p>Displays the AWS Region of a primary or replica key in a multi-Region
-     * key.</p>
+     * <p>Displays the Amazon Web Services Region of a primary or replica key in a
+     * multi-Region key.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>Displays the AWS Region of a primary or replica key in a multi-Region
-     * key.</p>
+     * <p>Displays the Amazon Web Services Region of a primary or replica key in a
+     * multi-Region key.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>Displays the AWS Region of a primary or replica key in a multi-Region
-     * key.</p>
+     * <p>Displays the Amazon Web Services Region of a primary or replica key in a
+     * multi-Region key.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>Displays the AWS Region of a primary or replica key in a multi-Region
-     * key.</p>
+     * <p>Displays the Amazon Web Services Region of a primary or replica key in a
+     * multi-Region key.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>Displays the AWS Region of a primary or replica key in a multi-Region
-     * key.</p>
+     * <p>Displays the Amazon Web Services Region of a primary or replica key in a
+     * multi-Region key.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>Displays the AWS Region of a primary or replica key in a multi-Region
-     * key.</p>
+     * <p>Displays the Amazon Web Services Region of a primary or replica key in a
+     * multi-Region key.</p>
      */
     inline MultiRegionKey& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>Displays the AWS Region of a primary or replica key in a multi-Region
-     * key.</p>
+     * <p>Displays the Amazon Web Services Region of a primary or replica key in a
+     * multi-Region key.</p>
      */
     inline MultiRegionKey& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>Displays the AWS Region of a primary or replica key in a multi-Region
-     * key.</p>
+     * <p>Displays the Amazon Web Services Region of a primary or replica key in a
+     * multi-Region key.</p>
      */
     inline MultiRegionKey& WithRegion(const char* value) { SetRegion(value); return *this;}
 

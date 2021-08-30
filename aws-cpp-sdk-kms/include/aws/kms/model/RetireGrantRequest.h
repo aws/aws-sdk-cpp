@@ -41,7 +41,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
      * token</a> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual
-     * consistency</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::String& GetGrantToken() const{ return m_grantToken; }
 
@@ -52,7 +52,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
      * token</a> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual
-     * consistency</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline bool GrantTokenHasBeenSet() const { return m_grantTokenHasBeenSet; }
 
@@ -63,7 +63,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
      * token</a> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual
-     * consistency</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantToken(const Aws::String& value) { m_grantTokenHasBeenSet = true; m_grantToken = value; }
 
@@ -74,7 +74,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
      * token</a> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual
-     * consistency</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantToken(Aws::String&& value) { m_grantTokenHasBeenSet = true; m_grantToken = std::move(value); }
 
@@ -85,7 +85,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
      * token</a> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual
-     * consistency</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantToken(const char* value) { m_grantTokenHasBeenSet = true; m_grantToken.assign(value); }
 
@@ -96,7 +96,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
      * token</a> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual
-     * consistency</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline RetireGrantRequest& WithGrantToken(const Aws::String& value) { SetGrantToken(value); return *this;}
 
@@ -107,7 +107,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
      * token</a> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual
-     * consistency</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline RetireGrantRequest& WithGrantToken(Aws::String&& value) { SetGrantToken(std::move(value)); return *this;}
 
@@ -118,13 +118,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
      * token</a> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual
-     * consistency</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline RetireGrantRequest& WithGrantToken(const char* value) { SetGrantToken(value); return *this;}
 
 
     /**
-     * <p>The key ARN CMK associated with the grant. To find the key ARN, use the
+     * <p>The key ARN KMS key associated with the grant. To find the key ARN, use the
      * <a>ListKeys</a> operation.</p> <p>For example:
      * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
@@ -132,7 +132,7 @@ namespace Model
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The key ARN CMK associated with the grant. To find the key ARN, use the
+     * <p>The key ARN KMS key associated with the grant. To find the key ARN, use the
      * <a>ListKeys</a> operation.</p> <p>For example:
      * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
@@ -140,7 +140,7 @@ namespace Model
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
-     * <p>The key ARN CMK associated with the grant. To find the key ARN, use the
+     * <p>The key ARN KMS key associated with the grant. To find the key ARN, use the
      * <a>ListKeys</a> operation.</p> <p>For example:
      * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
@@ -148,7 +148,7 @@ namespace Model
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>The key ARN CMK associated with the grant. To find the key ARN, use the
+     * <p>The key ARN KMS key associated with the grant. To find the key ARN, use the
      * <a>ListKeys</a> operation.</p> <p>For example:
      * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
@@ -156,7 +156,7 @@ namespace Model
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>The key ARN CMK associated with the grant. To find the key ARN, use the
+     * <p>The key ARN KMS key associated with the grant. To find the key ARN, use the
      * <a>ListKeys</a> operation.</p> <p>For example:
      * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
@@ -164,7 +164,7 @@ namespace Model
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>The key ARN CMK associated with the grant. To find the key ARN, use the
+     * <p>The key ARN KMS key associated with the grant. To find the key ARN, use the
      * <a>ListKeys</a> operation.</p> <p>For example:
      * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
@@ -172,7 +172,7 @@ namespace Model
     inline RetireGrantRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The key ARN CMK associated with the grant. To find the key ARN, use the
+     * <p>The key ARN KMS key associated with the grant. To find the key ARN, use the
      * <a>ListKeys</a> operation.</p> <p>For example:
      * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
@@ -180,7 +180,7 @@ namespace Model
     inline RetireGrantRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The key ARN CMK associated with the grant. To find the key ARN, use the
+     * <p>The key ARN KMS key associated with the grant. To find the key ARN, use the
      * <a>ListKeys</a> operation.</p> <p>For example:
      * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>

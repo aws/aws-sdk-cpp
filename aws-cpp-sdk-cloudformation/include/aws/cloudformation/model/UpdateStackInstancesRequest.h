@@ -92,82 +92,82 @@ namespace Model
 
 
     /**
-     * <p>[Self-managed permissions] The names of one or more accounts for which you
-     * want to update parameter values for stack instances. The overridden parameter
-     * values will be applied to all stack instances in the specified accounts and
-     * Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more Amazon Web Services
+     * accounts for which you want to update parameter values for stack instances. The
+     * overridden parameter values will be applied to all stack instances in the
+     * specified accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
 
     /**
-     * <p>[Self-managed permissions] The names of one or more accounts for which you
-     * want to update parameter values for stack instances. The overridden parameter
-     * values will be applied to all stack instances in the specified accounts and
-     * Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more Amazon Web Services
+     * accounts for which you want to update parameter values for stack instances. The
+     * overridden parameter values will be applied to all stack instances in the
+     * specified accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
 
     /**
-     * <p>[Self-managed permissions] The names of one or more accounts for which you
-     * want to update parameter values for stack instances. The overridden parameter
-     * values will be applied to all stack instances in the specified accounts and
-     * Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more Amazon Web Services
+     * accounts for which you want to update parameter values for stack instances. The
+     * overridden parameter values will be applied to all stack instances in the
+     * specified accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline void SetAccounts(const Aws::Vector<Aws::String>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
 
     /**
-     * <p>[Self-managed permissions] The names of one or more accounts for which you
-     * want to update parameter values for stack instances. The overridden parameter
-     * values will be applied to all stack instances in the specified accounts and
-     * Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more Amazon Web Services
+     * accounts for which you want to update parameter values for stack instances. The
+     * overridden parameter values will be applied to all stack instances in the
+     * specified accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline void SetAccounts(Aws::Vector<Aws::String>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
 
     /**
-     * <p>[Self-managed permissions] The names of one or more accounts for which you
-     * want to update parameter values for stack instances. The overridden parameter
-     * values will be applied to all stack instances in the specified accounts and
-     * Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more Amazon Web Services
+     * accounts for which you want to update parameter values for stack instances. The
+     * overridden parameter values will be applied to all stack instances in the
+     * specified accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline UpdateStackInstancesRequest& WithAccounts(const Aws::Vector<Aws::String>& value) { SetAccounts(value); return *this;}
 
     /**
-     * <p>[Self-managed permissions] The names of one or more accounts for which you
-     * want to update parameter values for stack instances. The overridden parameter
-     * values will be applied to all stack instances in the specified accounts and
-     * Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more Amazon Web Services
+     * accounts for which you want to update parameter values for stack instances. The
+     * overridden parameter values will be applied to all stack instances in the
+     * specified accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline UpdateStackInstancesRequest& WithAccounts(Aws::Vector<Aws::String>&& value) { SetAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>[Self-managed permissions] The names of one or more accounts for which you
-     * want to update parameter values for stack instances. The overridden parameter
-     * values will be applied to all stack instances in the specified accounts and
-     * Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more Amazon Web Services
+     * accounts for which you want to update parameter values for stack instances. The
+     * overridden parameter values will be applied to all stack instances in the
+     * specified accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline UpdateStackInstancesRequest& AddAccounts(const Aws::String& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
     /**
-     * <p>[Self-managed permissions] The names of one or more accounts for which you
-     * want to update parameter values for stack instances. The overridden parameter
-     * values will be applied to all stack instances in the specified accounts and
-     * Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more Amazon Web Services
+     * accounts for which you want to update parameter values for stack instances. The
+     * overridden parameter values will be applied to all stack instances in the
+     * specified accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline UpdateStackInstancesRequest& AddAccounts(Aws::String&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>[Self-managed permissions] The names of one or more accounts for which you
-     * want to update parameter values for stack instances. The overridden parameter
-     * values will be applied to all stack instances in the specified accounts and
-     * Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more Amazon Web Services
+     * accounts for which you want to update parameter values for stack instances. The
+     * overridden parameter values will be applied to all stack instances in the
+     * specified accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline UpdateStackInstancesRequest& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
@@ -642,9 +642,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
@@ -658,9 +658,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
@@ -674,9 +674,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
@@ -690,9 +690,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
@@ -706,9 +706,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
@@ -722,9 +722,9 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
-     * must be registered as a delegated administrator in the management account. For
-     * more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
