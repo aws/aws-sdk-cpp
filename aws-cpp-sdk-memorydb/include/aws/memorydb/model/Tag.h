@@ -29,7 +29,7 @@ namespace Model
    * resources. When you add or remove tags on clusters, those actions will be
    * replicated to all nodes in the cluster. A tag with a null Value is permitted.
    * For more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Tagging-Resources.html">Tagging
+   * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/tagging-resources.html">Tagging
    * your MemoryDB resources</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/Tag">AWS API
    * Reference</a></p>

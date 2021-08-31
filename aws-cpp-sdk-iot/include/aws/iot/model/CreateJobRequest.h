@@ -40,50 +40,58 @@ namespace Model
 
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline CreateJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline CreateJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
-     * <p>A job identifier which must be unique for your AWS account. We recommend
-     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     * <p>A job identifier which must be unique for your Amazon Web Services account.
+     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
+     * use here.</p>
      */
     inline CreateJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
 
@@ -565,9 +573,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -576,9 +584,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -587,9 +595,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -598,9 +606,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -609,9 +617,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -620,9 +628,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -631,9 +639,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -642,9 +650,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 

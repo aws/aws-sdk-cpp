@@ -317,32 +317,38 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the thing is connected to the AWS IoT service.</p>
+     * <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core
+     * service.</p>
      */
     inline const ThingConnectivity& GetConnectivity() const{ return m_connectivity; }
 
     /**
-     * <p>Indicates whether the thing is connected to the AWS IoT service.</p>
+     * <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core
+     * service.</p>
      */
     inline bool ConnectivityHasBeenSet() const { return m_connectivityHasBeenSet; }
 
     /**
-     * <p>Indicates whether the thing is connected to the AWS IoT service.</p>
+     * <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core
+     * service.</p>
      */
     inline void SetConnectivity(const ThingConnectivity& value) { m_connectivityHasBeenSet = true; m_connectivity = value; }
 
     /**
-     * <p>Indicates whether the thing is connected to the AWS IoT service.</p>
+     * <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core
+     * service.</p>
      */
     inline void SetConnectivity(ThingConnectivity&& value) { m_connectivityHasBeenSet = true; m_connectivity = std::move(value); }
 
     /**
-     * <p>Indicates whether the thing is connected to the AWS IoT service.</p>
+     * <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core
+     * service.</p>
      */
     inline ThingDocument& WithConnectivity(const ThingConnectivity& value) { SetConnectivity(value); return *this;}
 
     /**
-     * <p>Indicates whether the thing is connected to the AWS IoT service.</p>
+     * <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core
+     * service.</p>
      */
     inline ThingDocument& WithConnectivity(ThingConnectivity&& value) { SetConnectivity(std::move(value)); return *this;}
 

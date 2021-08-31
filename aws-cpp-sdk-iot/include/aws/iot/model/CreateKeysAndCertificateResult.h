@@ -76,44 +76,44 @@ namespace Model
 
 
     /**
-     * <p>The ID of the certificate. AWS IoT issues a default subject name for the
-     * certificate (for example, AWS IoT Certificate).</p>
+     * <p>The ID of the certificate. IoT issues a default subject name for the
+     * certificate (for example, IoT Certificate).</p>
      */
     inline const Aws::String& GetCertificateId() const{ return m_certificateId; }
 
     /**
-     * <p>The ID of the certificate. AWS IoT issues a default subject name for the
-     * certificate (for example, AWS IoT Certificate).</p>
+     * <p>The ID of the certificate. IoT issues a default subject name for the
+     * certificate (for example, IoT Certificate).</p>
      */
     inline void SetCertificateId(const Aws::String& value) { m_certificateId = value; }
 
     /**
-     * <p>The ID of the certificate. AWS IoT issues a default subject name for the
-     * certificate (for example, AWS IoT Certificate).</p>
+     * <p>The ID of the certificate. IoT issues a default subject name for the
+     * certificate (for example, IoT Certificate).</p>
      */
     inline void SetCertificateId(Aws::String&& value) { m_certificateId = std::move(value); }
 
     /**
-     * <p>The ID of the certificate. AWS IoT issues a default subject name for the
-     * certificate (for example, AWS IoT Certificate).</p>
+     * <p>The ID of the certificate. IoT issues a default subject name for the
+     * certificate (for example, IoT Certificate).</p>
      */
     inline void SetCertificateId(const char* value) { m_certificateId.assign(value); }
 
     /**
-     * <p>The ID of the certificate. AWS IoT issues a default subject name for the
-     * certificate (for example, AWS IoT Certificate).</p>
+     * <p>The ID of the certificate. IoT issues a default subject name for the
+     * certificate (for example, IoT Certificate).</p>
      */
     inline CreateKeysAndCertificateResult& WithCertificateId(const Aws::String& value) { SetCertificateId(value); return *this;}
 
     /**
-     * <p>The ID of the certificate. AWS IoT issues a default subject name for the
-     * certificate (for example, AWS IoT Certificate).</p>
+     * <p>The ID of the certificate. IoT issues a default subject name for the
+     * certificate (for example, IoT Certificate).</p>
      */
     inline CreateKeysAndCertificateResult& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the certificate. AWS IoT issues a default subject name for the
-     * certificate (for example, AWS IoT Certificate).</p>
+     * <p>The ID of the certificate. IoT issues a default subject name for the
+     * certificate (for example, IoT Certificate).</p>
      */
     inline CreateKeysAndCertificateResult& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 

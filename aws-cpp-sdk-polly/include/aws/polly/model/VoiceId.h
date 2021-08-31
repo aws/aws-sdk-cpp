@@ -79,7 +79,8 @@ namespace Model
     Vitoria,
     Zeina,
     Zhiyu,
-    Aria
+    Aria,
+    Ayanda
   };
 
 namespace VoiceIdMapper

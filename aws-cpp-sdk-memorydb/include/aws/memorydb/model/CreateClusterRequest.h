@@ -209,67 +209,47 @@ namespace Model
 
 
     /**
-     * <p>The number of shards the cluster will contain.</p> <p>Clusters can have up to
-     * 500 shards, with your data partitioned across the shards. For example, you can
-     * choose to configure a 500 node cluster that ranges between 83 shards (one
-     * primary and 5 replicas per shard) and 500 shards (single primary and no
-     * replicas). Make sure there are enough available IP addresses to accommodate the
-     * increase. Common pitfalls include the subnets in the subnet group have too small
-     * a CIDR range or the subnets are shared and heavily used by other clusters. </p>
+     * <p>The number of shards the cluster will contain. The default value is 1. </p>
      */
     inline int GetNumShards() const{ return m_numShards; }
 
     /**
-     * <p>The number of shards the cluster will contain.</p> <p>Clusters can have up to
-     * 500 shards, with your data partitioned across the shards. For example, you can
-     * choose to configure a 500 node cluster that ranges between 83 shards (one
-     * primary and 5 replicas per shard) and 500 shards (single primary and no
-     * replicas). Make sure there are enough available IP addresses to accommodate the
-     * increase. Common pitfalls include the subnets in the subnet group have too small
-     * a CIDR range or the subnets are shared and heavily used by other clusters. </p>
+     * <p>The number of shards the cluster will contain. The default value is 1. </p>
      */
     inline bool NumShardsHasBeenSet() const { return m_numShardsHasBeenSet; }
 
     /**
-     * <p>The number of shards the cluster will contain.</p> <p>Clusters can have up to
-     * 500 shards, with your data partitioned across the shards. For example, you can
-     * choose to configure a 500 node cluster that ranges between 83 shards (one
-     * primary and 5 replicas per shard) and 500 shards (single primary and no
-     * replicas). Make sure there are enough available IP addresses to accommodate the
-     * increase. Common pitfalls include the subnets in the subnet group have too small
-     * a CIDR range or the subnets are shared and heavily used by other clusters. </p>
+     * <p>The number of shards the cluster will contain. The default value is 1. </p>
      */
     inline void SetNumShards(int value) { m_numShardsHasBeenSet = true; m_numShards = value; }
 
     /**
-     * <p>The number of shards the cluster will contain.</p> <p>Clusters can have up to
-     * 500 shards, with your data partitioned across the shards. For example, you can
-     * choose to configure a 500 node cluster that ranges between 83 shards (one
-     * primary and 5 replicas per shard) and 500 shards (single primary and no
-     * replicas). Make sure there are enough available IP addresses to accommodate the
-     * increase. Common pitfalls include the subnets in the subnet group have too small
-     * a CIDR range or the subnets are shared and heavily used by other clusters. </p>
+     * <p>The number of shards the cluster will contain. The default value is 1. </p>
      */
     inline CreateClusterRequest& WithNumShards(int value) { SetNumShards(value); return *this;}
 
 
     /**
-     * <p>The number of replicas to apply to each shard. The limit is 5.</p>
+     * <p>The number of replicas to apply to each shard. The default value is 1. The
+     * maximum is 5. </p>
      */
     inline int GetNumReplicasPerShard() const{ return m_numReplicasPerShard; }
 
     /**
-     * <p>The number of replicas to apply to each shard. The limit is 5.</p>
+     * <p>The number of replicas to apply to each shard. The default value is 1. The
+     * maximum is 5. </p>
      */
     inline bool NumReplicasPerShardHasBeenSet() const { return m_numReplicasPerShardHasBeenSet; }
 
     /**
-     * <p>The number of replicas to apply to each shard. The limit is 5.</p>
+     * <p>The number of replicas to apply to each shard. The default value is 1. The
+     * maximum is 5. </p>
      */
     inline void SetNumReplicasPerShard(int value) { m_numReplicasPerShardHasBeenSet = true; m_numReplicasPerShard = value; }
 
     /**
-     * <p>The number of replicas to apply to each shard. The limit is 5.</p>
+     * <p>The number of replicas to apply to each shard. The default value is 1. The
+     * maximum is 5. </p>
      */
     inline CreateClusterRequest& WithNumReplicasPerShard(int value) { SetNumReplicasPerShard(value); return *this;}
 

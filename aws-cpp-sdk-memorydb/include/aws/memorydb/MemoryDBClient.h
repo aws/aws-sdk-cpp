@@ -233,8 +233,8 @@ namespace Model
     typedef std::function<void(const MemoryDBClient*, const Model::UpdateUserRequest&, const Model::UpdateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserResponseReceivedHandler;
 
   /**
-   * <p>Amazon MemoryDB for Redis is a fully managed, Redis-compatible, in-memory
-   * database that delivers ultra-fast performance and Multi-AZ durability for modern
+   * <p>MemoryDB for Redis is a fully managed, Redis-compatible, in-memory database
+   * that delivers ultra-fast performance and Multi-AZ durability for modern
    * applications built using microservices architectures. MemoryDB stores the entire
    * database in-memory, enabling low latency and high throughput data access. It is
    * compatible with Redis, a popular open source data store, enabling you to
@@ -270,7 +270,7 @@ namespace Model
         /**
          * <p>Apply the service update to a list of clusters supplied. For more information
          * on service updates and applying them, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/managing-updates.html#applying-updates">Applying
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/managing-updates.html#applying-updates">Applying
          * the service updates</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/BatchUpdateCluster">AWS
          * API Reference</a></p>
@@ -280,7 +280,7 @@ namespace Model
         /**
          * <p>Apply the service update to a list of clusters supplied. For more information
          * on service updates and applying them, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/managing-updates.html#applying-updates">Applying
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/managing-updates.html#applying-updates">Applying
          * the service updates</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/BatchUpdateCluster">AWS
          * API Reference</a></p>
@@ -292,7 +292,7 @@ namespace Model
         /**
          * <p>Apply the service update to a list of clusters supplied. For more information
          * on service updates and applying them, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/managing-updates.html#applying-updates">Applying
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/managing-updates.html#applying-updates">Applying
          * the service updates</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/BatchUpdateCluster">AWS
          * API Reference</a></p>
@@ -328,7 +328,7 @@ namespace Model
 
         /**
          * <p>Creates an Access Control List. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Clusters.ACLs.html">Authenticating
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating
          * users with Access Contol Lists (ACLs)</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateACL">AWS
          * API Reference</a></p>
@@ -337,7 +337,7 @@ namespace Model
 
         /**
          * <p>Creates an Access Control List. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Clusters.ACLs.html">Authenticating
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating
          * users with Access Contol Lists (ACLs)</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateACL">AWS
          * API Reference</a></p>
@@ -348,7 +348,7 @@ namespace Model
 
         /**
          * <p>Creates an Access Control List. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Clusters.ACLs.html">Authenticating
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating
          * users with Access Contol Lists (ACLs)</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateACL">AWS
          * API Reference</a></p>
@@ -389,7 +389,7 @@ namespace Model
          * <p>Creates a new MemoryDB parameter group. A parameter group is a collection of
          * parameters and their values that are applied to all of the nodes in any cluster.
          * For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/ParameterGroups.html">Configuring
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/parametergroups.html">Configuring
          * engine parameters using parameter groups</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateParameterGroup">AWS
          * API Reference</a></p>
@@ -400,7 +400,7 @@ namespace Model
          * <p>Creates a new MemoryDB parameter group. A parameter group is a collection of
          * parameters and their values that are applied to all of the nodes in any cluster.
          * For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/ParameterGroups.html">Configuring
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/parametergroups.html">Configuring
          * engine parameters using parameter groups</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateParameterGroup">AWS
          * API Reference</a></p>
@@ -413,7 +413,7 @@ namespace Model
          * <p>Creates a new MemoryDB parameter group. A parameter group is a collection of
          * parameters and their values that are applied to all of the nodes in any cluster.
          * For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/ParameterGroups.html">Configuring
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/parametergroups.html">Configuring
          * engine parameters using parameter groups</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateParameterGroup">AWS
          * API Reference</a></p>
@@ -457,7 +457,7 @@ namespace Model
          * must specify a subnet group. MemoryDB uses that subnet group to choose a subnet
          * and IP addresses within that subnet to associate with your nodes. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/SubnetGroups.html">Subnets
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/subnetgroups.html">Subnets
          * and subnet groups</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateSubnetGroup">AWS
          * API Reference</a></p>
@@ -471,7 +471,7 @@ namespace Model
          * must specify a subnet group. MemoryDB uses that subnet group to choose a subnet
          * and IP addresses within that subnet to associate with your nodes. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/SubnetGroups.html">Subnets
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/subnetgroups.html">Subnets
          * and subnet groups</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateSubnetGroup">AWS
          * API Reference</a></p>
@@ -487,7 +487,7 @@ namespace Model
          * must specify a subnet group. MemoryDB uses that subnet group to choose a subnet
          * and IP addresses within that subnet to associate with your nodes. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/SubnetGroups.html">Subnets
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/subnetgroups.html">Subnets
          * and subnet groups</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateSubnetGroup">AWS
          * API Reference</a></p>
@@ -498,7 +498,7 @@ namespace Model
 
         /**
          * <p>Creates a MemoryDB user. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Clusters.ACLs.html">Authenticating
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating
          * users with Access Contol Lists (ACLs)</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateUser">AWS
          * API Reference</a></p>
@@ -507,7 +507,7 @@ namespace Model
 
         /**
          * <p>Creates a MemoryDB user. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Clusters.ACLs.html">Authenticating
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating
          * users with Access Contol Lists (ACLs)</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateUser">AWS
          * API Reference</a></p>
@@ -518,7 +518,7 @@ namespace Model
 
         /**
          * <p>Creates a MemoryDB user. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Clusters.ACLs.html">Authenticating
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating
          * users with Access Contol Lists (ACLs)</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateUser">AWS
          * API Reference</a></p>
@@ -530,7 +530,7 @@ namespace Model
         /**
          * <p>Deletes an Access Control List. The ACL must first be disassociated from the
          * cluster before it can be deleted. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Clusters.ACLs.html">Authenticating
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating
          * users with Access Contol Lists (ACLs)</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteACL">AWS
          * API Reference</a></p>
@@ -540,7 +540,7 @@ namespace Model
         /**
          * <p>Deletes an Access Control List. The ACL must first be disassociated from the
          * cluster before it can be deleted. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Clusters.ACLs.html">Authenticating
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating
          * users with Access Contol Lists (ACLs)</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteACL">AWS
          * API Reference</a></p>
@@ -552,7 +552,7 @@ namespace Model
         /**
          * <p>Deletes an Access Control List. The ACL must first be disassociated from the
          * cluster before it can be deleted. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Clusters.ACLs.html">Authenticating
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating
          * users with Access Contol Lists (ACLs)</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteACL">AWS
          * API Reference</a></p>
@@ -1065,7 +1065,7 @@ namespace Model
          * <p>Lists all tags currently on a named resource. A tag is a key-value pair where
          * the key and value are case-sensitive. You can use tags to categorize and track
          * your MemoryDB resources. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Tagging-Resources.html">Tagging
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging
          * your MemoryDB resources</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ListTags">AWS
          * API Reference</a></p>
@@ -1076,7 +1076,7 @@ namespace Model
          * <p>Lists all tags currently on a named resource. A tag is a key-value pair where
          * the key and value are case-sensitive. You can use tags to categorize and track
          * your MemoryDB resources. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Tagging-Resources.html">Tagging
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging
          * your MemoryDB resources</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ListTags">AWS
          * API Reference</a></p>
@@ -1089,7 +1089,7 @@ namespace Model
          * <p>Lists all tags currently on a named resource. A tag is a key-value pair where
          * the key and value are case-sensitive. You can use tags to categorize and track
          * your MemoryDB resources. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Tagging-Resources.html">Tagging
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging
          * your MemoryDB resources</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ListTags">AWS
          * API Reference</a></p>
@@ -1137,14 +1137,14 @@ namespace Model
          * use tags to categorize and track all your MemoryDB resources. When you add or
          * remove tags on clusters, those actions will be replicated to all nodes in the
          * cluster. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/IAM.ResourceLevelPermissions.html">Resource-level
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/iam.resourcelevelpermissions.html">Resource-level
          * permissions</a>.</p> <p>For example, you can use cost-allocation tags to your
          * MemoryDB resources, Amazon generates a cost allocation report as a
          * comma-separated value (CSV) file with your usage and costs aggregated by your
          * tags. You can apply tags that represent business categories (such as cost
          * centers, application names, or owners) to organize your costs across multiple
          * services. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Tagging.html">Using
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/tagging.html">Using
          * Cost Allocation Tags</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/TagResource">AWS
          * API Reference</a></p>
@@ -1156,14 +1156,14 @@ namespace Model
          * use tags to categorize and track all your MemoryDB resources. When you add or
          * remove tags on clusters, those actions will be replicated to all nodes in the
          * cluster. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/IAM.ResourceLevelPermissions.html">Resource-level
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/iam.resourcelevelpermissions.html">Resource-level
          * permissions</a>.</p> <p>For example, you can use cost-allocation tags to your
          * MemoryDB resources, Amazon generates a cost allocation report as a
          * comma-separated value (CSV) file with your usage and costs aggregated by your
          * tags. You can apply tags that represent business categories (such as cost
          * centers, application names, or owners) to organize your costs across multiple
          * services. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Tagging.html">Using
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/tagging.html">Using
          * Cost Allocation Tags</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/TagResource">AWS
          * API Reference</a></p>
@@ -1177,14 +1177,14 @@ namespace Model
          * use tags to categorize and track all your MemoryDB resources. When you add or
          * remove tags on clusters, those actions will be replicated to all nodes in the
          * cluster. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/IAM.ResourceLevelPermissions.html">Resource-level
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/iam.resourcelevelpermissions.html">Resource-level
          * permissions</a>.</p> <p>For example, you can use cost-allocation tags to your
          * MemoryDB resources, Amazon generates a cost allocation report as a
          * comma-separated value (CSV) file with your usage and costs aggregated by your
          * tags. You can apply tags that represent business categories (such as cost
          * centers, application names, or owners) to organize your costs across multiple
          * services. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/Tagging.html">Using
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/tagging.html">Using
          * Cost Allocation Tags</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/TagResource">AWS
          * API Reference</a></p>
@@ -1310,7 +1310,7 @@ namespace Model
 
         /**
          * <p>Updates a subnet group. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/SubnetGroups.Modifying.html">Updating
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/ubnetGroups.Modifying.html">Updating
          * a subnet group</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UpdateSubnetGroup">AWS
          * API Reference</a></p>
@@ -1319,7 +1319,7 @@ namespace Model
 
         /**
          * <p>Updates a subnet group. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/SubnetGroups.Modifying.html">Updating
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/ubnetGroups.Modifying.html">Updating
          * a subnet group</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UpdateSubnetGroup">AWS
          * API Reference</a></p>
@@ -1330,7 +1330,7 @@ namespace Model
 
         /**
          * <p>Updates a subnet group. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/SubnetGroups.Modifying.html">Updating
+         * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/ubnetGroups.Modifying.html">Updating
          * a subnet group</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UpdateSubnetGroup">AWS
          * API Reference</a></p>

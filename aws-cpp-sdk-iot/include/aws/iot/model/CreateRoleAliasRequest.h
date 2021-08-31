@@ -125,22 +125,26 @@ namespace Model
 
 
     /**
-     * <p>How long (in seconds) the credentials will be valid.</p>
+     * <p>How long (in seconds) the credentials will be valid. The default value is
+     * 3,600 seconds.</p>
      */
     inline int GetCredentialDurationSeconds() const{ return m_credentialDurationSeconds; }
 
     /**
-     * <p>How long (in seconds) the credentials will be valid.</p>
+     * <p>How long (in seconds) the credentials will be valid. The default value is
+     * 3,600 seconds.</p>
      */
     inline bool CredentialDurationSecondsHasBeenSet() const { return m_credentialDurationSecondsHasBeenSet; }
 
     /**
-     * <p>How long (in seconds) the credentials will be valid.</p>
+     * <p>How long (in seconds) the credentials will be valid. The default value is
+     * 3,600 seconds.</p>
      */
     inline void SetCredentialDurationSeconds(int value) { m_credentialDurationSecondsHasBeenSet = true; m_credentialDurationSeconds = value; }
 
     /**
-     * <p>How long (in seconds) the credentials will be valid.</p>
+     * <p>How long (in seconds) the credentials will be valid. The default value is
+     * 3,600 seconds.</p>
      */
     inline CreateRoleAliasRequest& WithCredentialDurationSeconds(int value) { SetCredentialDurationSeconds(value); return *this;}
 

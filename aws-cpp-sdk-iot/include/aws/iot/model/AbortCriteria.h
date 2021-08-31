@@ -103,29 +103,29 @@ namespace Model
 
     /**
      * <p>The minimum percentage of job execution failures that must occur to initiate
-     * the job abort.</p> <p>AWS IoT supports up to two digits after the decimal (for
-     * example, 10.9 and 10.99, but not 10.999).</p>
+     * the job abort.</p> <p>Amazon Web Services IoT Core supports up to two digits
+     * after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
      */
     inline double GetThresholdPercentage() const{ return m_thresholdPercentage; }
 
     /**
      * <p>The minimum percentage of job execution failures that must occur to initiate
-     * the job abort.</p> <p>AWS IoT supports up to two digits after the decimal (for
-     * example, 10.9 and 10.99, but not 10.999).</p>
+     * the job abort.</p> <p>Amazon Web Services IoT Core supports up to two digits
+     * after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
      */
     inline bool ThresholdPercentageHasBeenSet() const { return m_thresholdPercentageHasBeenSet; }
 
     /**
      * <p>The minimum percentage of job execution failures that must occur to initiate
-     * the job abort.</p> <p>AWS IoT supports up to two digits after the decimal (for
-     * example, 10.9 and 10.99, but not 10.999).</p>
+     * the job abort.</p> <p>Amazon Web Services IoT Core supports up to two digits
+     * after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
      */
     inline void SetThresholdPercentage(double value) { m_thresholdPercentageHasBeenSet = true; m_thresholdPercentage = value; }
 
     /**
      * <p>The minimum percentage of job execution failures that must occur to initiate
-     * the job abort.</p> <p>AWS IoT supports up to two digits after the decimal (for
-     * example, 10.9 and 10.99, but not 10.999).</p>
+     * the job abort.</p> <p>Amazon Web Services IoT Core supports up to two digits
+     * after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
      */
     inline AbortCriteria& WithThresholdPercentage(double value) { SetThresholdPercentage(value); return *this;}
 

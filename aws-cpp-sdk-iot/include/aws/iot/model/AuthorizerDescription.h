@@ -377,25 +377,25 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether AWS IoT validates the token signature in an authorization
+     * <p>Specifies whether IoT validates the token signature in an authorization
      * request.</p>
      */
     inline bool GetSigningDisabled() const{ return m_signingDisabled; }
 
     /**
-     * <p>Specifies whether AWS IoT validates the token signature in an authorization
+     * <p>Specifies whether IoT validates the token signature in an authorization
      * request.</p>
      */
     inline bool SigningDisabledHasBeenSet() const { return m_signingDisabledHasBeenSet; }
 
     /**
-     * <p>Specifies whether AWS IoT validates the token signature in an authorization
+     * <p>Specifies whether IoT validates the token signature in an authorization
      * request.</p>
      */
     inline void SetSigningDisabled(bool value) { m_signingDisabledHasBeenSet = true; m_signingDisabled = value; }
 
     /**
-     * <p>Specifies whether AWS IoT validates the token signature in an authorization
+     * <p>Specifies whether IoT validates the token signature in an authorization
      * request.</p>
      */
     inline AuthorizerDescription& WithSigningDisabled(bool value) { SetSigningDisabled(value); return *this;}

@@ -43,6 +43,7 @@
 #include <aws/iot/model/CreateDimensionRequest.h>
 #include <aws/iot/model/CreateDomainConfigurationRequest.h>
 #include <aws/iot/model/CreateDynamicThingGroupRequest.h>
+#include <aws/iot/model/CreateFleetMetricRequest.h>
 #include <aws/iot/model/CreateJobRequest.h>
 #include <aws/iot/model/CreateJobTemplateRequest.h>
 #include <aws/iot/model/CreateKeysAndCertificateRequest.h>
@@ -72,6 +73,7 @@
 #include <aws/iot/model/DeleteDimensionRequest.h>
 #include <aws/iot/model/DeleteDomainConfigurationRequest.h>
 #include <aws/iot/model/DeleteDynamicThingGroupRequest.h>
+#include <aws/iot/model/DeleteFleetMetricRequest.h>
 #include <aws/iot/model/DeleteJobRequest.h>
 #include <aws/iot/model/DeleteJobExecutionRequest.h>
 #include <aws/iot/model/DeleteJobTemplateRequest.h>
@@ -109,6 +111,7 @@
 #include <aws/iot/model/DescribeDomainConfigurationRequest.h>
 #include <aws/iot/model/DescribeEndpointRequest.h>
 #include <aws/iot/model/DescribeEventConfigurationsRequest.h>
+#include <aws/iot/model/DescribeFleetMetricRequest.h>
 #include <aws/iot/model/DescribeIndexRequest.h>
 #include <aws/iot/model/DescribeJobRequest.h>
 #include <aws/iot/model/DescribeJobExecutionRequest.h>
@@ -130,6 +133,7 @@
 #include <aws/iot/model/DisableTopicRuleRequest.h>
 #include <aws/iot/model/EnableTopicRuleRequest.h>
 #include <aws/iot/model/GetBehaviorModelTrainingSummariesRequest.h>
+#include <aws/iot/model/GetBucketsAggregationRequest.h>
 #include <aws/iot/model/GetCardinalityRequest.h>
 #include <aws/iot/model/GetEffectivePoliciesRequest.h>
 #include <aws/iot/model/GetIndexingConfigurationRequest.h>
@@ -161,6 +165,7 @@
 #include <aws/iot/model/ListDetectMitigationActionsTasksRequest.h>
 #include <aws/iot/model/ListDimensionsRequest.h>
 #include <aws/iot/model/ListDomainConfigurationsRequest.h>
+#include <aws/iot/model/ListFleetMetricsRequest.h>
 #include <aws/iot/model/ListIndicesRequest.h>
 #include <aws/iot/model/ListJobExecutionsForJobRequest.h>
 #include <aws/iot/model/ListJobExecutionsForThingRequest.h>
@@ -230,6 +235,7 @@
 #include <aws/iot/model/UpdateDomainConfigurationRequest.h>
 #include <aws/iot/model/UpdateDynamicThingGroupRequest.h>
 #include <aws/iot/model/UpdateEventConfigurationsRequest.h>
+#include <aws/iot/model/UpdateFleetMetricRequest.h>
 #include <aws/iot/model/UpdateIndexingConfigurationRequest.h>
 #include <aws/iot/model/UpdateJobRequest.h>
 #include <aws/iot/model/UpdateMitigationActionRequest.h>
@@ -1023,6 +1029,37 @@ void IoTClient::CreateDynamicThingGroupAsync(const CreateDynamicThingGroupReques
 void IoTClient::CreateDynamicThingGroupAsyncHelper(const CreateDynamicThingGroupRequest& request, const CreateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateDynamicThingGroup(request), context);
+}
+
+CreateFleetMetricOutcome IoTClient::CreateFleetMetric(const CreateFleetMetricRequest& request) const
+{
+  if (!request.MetricNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateFleetMetric", "Required field: MetricName, is not set");
+    return CreateFleetMetricOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MetricName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/fleet-metric/");
+  uri.AddPathSegment(request.GetMetricName());
+  return CreateFleetMetricOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateFleetMetricOutcomeCallable IoTClient::CreateFleetMetricCallable(const CreateFleetMetricRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateFleetMetricOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFleetMetric(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::CreateFleetMetricAsync(const CreateFleetMetricRequest& request, const CreateFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateFleetMetricAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::CreateFleetMetricAsyncHelper(const CreateFleetMetricRequest& request, const CreateFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateFleetMetric(request), context);
 }
 
 CreateJobOutcome IoTClient::CreateJob(const CreateJobRequest& request) const
@@ -1895,6 +1932,37 @@ void IoTClient::DeleteDynamicThingGroupAsync(const DeleteDynamicThingGroupReques
 void IoTClient::DeleteDynamicThingGroupAsyncHelper(const DeleteDynamicThingGroupRequest& request, const DeleteDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteDynamicThingGroup(request), context);
+}
+
+DeleteFleetMetricOutcome IoTClient::DeleteFleetMetric(const DeleteFleetMetricRequest& request) const
+{
+  if (!request.MetricNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFleetMetric", "Required field: MetricName, is not set");
+    return DeleteFleetMetricOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MetricName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/fleet-metric/");
+  uri.AddPathSegment(request.GetMetricName());
+  return DeleteFleetMetricOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteFleetMetricOutcomeCallable IoTClient::DeleteFleetMetricCallable(const DeleteFleetMetricRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFleetMetricOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFleetMetric(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DeleteFleetMetricAsync(const DeleteFleetMetricRequest& request, const DeleteFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFleetMetricAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DeleteFleetMetricAsyncHelper(const DeleteFleetMetricRequest& request, const DeleteFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFleetMetric(request), context);
 }
 
 DeleteJobOutcome IoTClient::DeleteJob(const DeleteJobRequest& request) const
@@ -3041,6 +3109,37 @@ void IoTClient::DescribeEventConfigurationsAsyncHelper(const DescribeEventConfig
   handler(this, request, DescribeEventConfigurations(request), context);
 }
 
+DescribeFleetMetricOutcome IoTClient::DescribeFleetMetric(const DescribeFleetMetricRequest& request) const
+{
+  if (!request.MetricNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeFleetMetric", "Required field: MetricName, is not set");
+    return DescribeFleetMetricOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MetricName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/fleet-metric/");
+  uri.AddPathSegment(request.GetMetricName());
+  return DescribeFleetMetricOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFleetMetricOutcomeCallable IoTClient::DescribeFleetMetricCallable(const DescribeFleetMetricRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFleetMetricOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFleetMetric(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DescribeFleetMetricAsync(const DescribeFleetMetricRequest& request, const DescribeFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetMetricAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DescribeFleetMetricAsyncHelper(const DescribeFleetMetricRequest& request, const DescribeFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFleetMetric(request), context);
+}
+
 DescribeIndexOutcome IoTClient::DescribeIndex(const DescribeIndexRequest& request) const
 {
   if (!request.IndexNameHasBeenSet())
@@ -3712,6 +3811,31 @@ void IoTClient::GetBehaviorModelTrainingSummariesAsync(const GetBehaviorModelTra
 void IoTClient::GetBehaviorModelTrainingSummariesAsyncHelper(const GetBehaviorModelTrainingSummariesRequest& request, const GetBehaviorModelTrainingSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetBehaviorModelTrainingSummaries(request), context);
+}
+
+GetBucketsAggregationOutcome IoTClient::GetBucketsAggregation(const GetBucketsAggregationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/indices/buckets");
+  return GetBucketsAggregationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetBucketsAggregationOutcomeCallable IoTClient::GetBucketsAggregationCallable(const GetBucketsAggregationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBucketsAggregationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBucketsAggregation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::GetBucketsAggregationAsync(const GetBucketsAggregationRequest& request, const GetBucketsAggregationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketsAggregationAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::GetBucketsAggregationAsyncHelper(const GetBucketsAggregationRequest& request, const GetBucketsAggregationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBucketsAggregation(request), context);
 }
 
 GetCardinalityOutcome IoTClient::GetCardinality(const GetCardinalityRequest& request) const
@@ -4583,6 +4707,31 @@ void IoTClient::ListDomainConfigurationsAsync(const ListDomainConfigurationsRequ
 void IoTClient::ListDomainConfigurationsAsyncHelper(const ListDomainConfigurationsRequest& request, const ListDomainConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListDomainConfigurations(request), context);
+}
+
+ListFleetMetricsOutcome IoTClient::ListFleetMetrics(const ListFleetMetricsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/fleet-metrics");
+  return ListFleetMetricsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListFleetMetricsOutcomeCallable IoTClient::ListFleetMetricsCallable(const ListFleetMetricsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFleetMetricsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFleetMetrics(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListFleetMetricsAsync(const ListFleetMetricsRequest& request, const ListFleetMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFleetMetricsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListFleetMetricsAsyncHelper(const ListFleetMetricsRequest& request, const ListFleetMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFleetMetrics(request), context);
 }
 
 ListIndicesOutcome IoTClient::ListIndices(const ListIndicesRequest& request) const
@@ -6529,6 +6678,37 @@ void IoTClient::UpdateEventConfigurationsAsync(const UpdateEventConfigurationsRe
 void IoTClient::UpdateEventConfigurationsAsyncHelper(const UpdateEventConfigurationsRequest& request, const UpdateEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateEventConfigurations(request), context);
+}
+
+UpdateFleetMetricOutcome IoTClient::UpdateFleetMetric(const UpdateFleetMetricRequest& request) const
+{
+  if (!request.MetricNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFleetMetric", "Required field: MetricName, is not set");
+    return UpdateFleetMetricOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MetricName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/fleet-metric/");
+  uri.AddPathSegment(request.GetMetricName());
+  return UpdateFleetMetricOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateFleetMetricOutcomeCallable IoTClient::UpdateFleetMetricCallable(const UpdateFleetMetricRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFleetMetricOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFleetMetric(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::UpdateFleetMetricAsync(const UpdateFleetMetricRequest& request, const UpdateFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFleetMetricAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::UpdateFleetMetricAsyncHelper(const UpdateFleetMetricRequest& request, const UpdateFleetMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFleetMetric(request), context);
 }
 
 UpdateIndexingConfigurationOutcome IoTClient::UpdateIndexingConfiguration(const UpdateIndexingConfigurationRequest& request) const

@@ -504,99 +504,99 @@ namespace Model
 
 
     /**
-     * <p>Sends message data to an AWS IoT Analytics channel.</p>
+     * <p>Sends message data to an IoT Analytics channel.</p>
      */
     inline const IotAnalyticsAction& GetIotAnalytics() const{ return m_iotAnalytics; }
 
     /**
-     * <p>Sends message data to an AWS IoT Analytics channel.</p>
+     * <p>Sends message data to an IoT Analytics channel.</p>
      */
     inline bool IotAnalyticsHasBeenSet() const { return m_iotAnalyticsHasBeenSet; }
 
     /**
-     * <p>Sends message data to an AWS IoT Analytics channel.</p>
+     * <p>Sends message data to an IoT Analytics channel.</p>
      */
     inline void SetIotAnalytics(const IotAnalyticsAction& value) { m_iotAnalyticsHasBeenSet = true; m_iotAnalytics = value; }
 
     /**
-     * <p>Sends message data to an AWS IoT Analytics channel.</p>
+     * <p>Sends message data to an IoT Analytics channel.</p>
      */
     inline void SetIotAnalytics(IotAnalyticsAction&& value) { m_iotAnalyticsHasBeenSet = true; m_iotAnalytics = std::move(value); }
 
     /**
-     * <p>Sends message data to an AWS IoT Analytics channel.</p>
+     * <p>Sends message data to an IoT Analytics channel.</p>
      */
     inline Action& WithIotAnalytics(const IotAnalyticsAction& value) { SetIotAnalytics(value); return *this;}
 
     /**
-     * <p>Sends message data to an AWS IoT Analytics channel.</p>
+     * <p>Sends message data to an IoT Analytics channel.</p>
      */
     inline Action& WithIotAnalytics(IotAnalyticsAction&& value) { SetIotAnalytics(std::move(value)); return *this;}
 
 
     /**
-     * <p>Sends an input to an AWS IoT Events detector.</p>
+     * <p>Sends an input to an IoT Events detector.</p>
      */
     inline const IotEventsAction& GetIotEvents() const{ return m_iotEvents; }
 
     /**
-     * <p>Sends an input to an AWS IoT Events detector.</p>
+     * <p>Sends an input to an IoT Events detector.</p>
      */
     inline bool IotEventsHasBeenSet() const { return m_iotEventsHasBeenSet; }
 
     /**
-     * <p>Sends an input to an AWS IoT Events detector.</p>
+     * <p>Sends an input to an IoT Events detector.</p>
      */
     inline void SetIotEvents(const IotEventsAction& value) { m_iotEventsHasBeenSet = true; m_iotEvents = value; }
 
     /**
-     * <p>Sends an input to an AWS IoT Events detector.</p>
+     * <p>Sends an input to an IoT Events detector.</p>
      */
     inline void SetIotEvents(IotEventsAction&& value) { m_iotEventsHasBeenSet = true; m_iotEvents = std::move(value); }
 
     /**
-     * <p>Sends an input to an AWS IoT Events detector.</p>
+     * <p>Sends an input to an IoT Events detector.</p>
      */
     inline Action& WithIotEvents(const IotEventsAction& value) { SetIotEvents(value); return *this;}
 
     /**
-     * <p>Sends an input to an AWS IoT Events detector.</p>
+     * <p>Sends an input to an IoT Events detector.</p>
      */
     inline Action& WithIotEvents(IotEventsAction&& value) { SetIotEvents(std::move(value)); return *this;}
 
 
     /**
-     * <p>Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise
+     * <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise
      * asset properties.</p>
      */
     inline const IotSiteWiseAction& GetIotSiteWise() const{ return m_iotSiteWise; }
 
     /**
-     * <p>Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise
+     * <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise
      * asset properties.</p>
      */
     inline bool IotSiteWiseHasBeenSet() const { return m_iotSiteWiseHasBeenSet; }
 
     /**
-     * <p>Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise
+     * <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise
      * asset properties.</p>
      */
     inline void SetIotSiteWise(const IotSiteWiseAction& value) { m_iotSiteWiseHasBeenSet = true; m_iotSiteWise = value; }
 
     /**
-     * <p>Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise
+     * <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise
      * asset properties.</p>
      */
     inline void SetIotSiteWise(IotSiteWiseAction&& value) { m_iotSiteWiseHasBeenSet = true; m_iotSiteWise = std::move(value); }
 
     /**
-     * <p>Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise
+     * <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise
      * asset properties.</p>
      */
     inline Action& WithIotSiteWise(const IotSiteWiseAction& value) { SetIotSiteWise(value); return *this;}
 
     /**
-     * <p>Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise
+     * <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise
      * asset properties.</p>
      */
     inline Action& WithIotSiteWise(IotSiteWiseAction&& value) { SetIotSiteWise(std::move(value)); return *this;}

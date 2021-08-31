@@ -128,49 +128,49 @@ namespace Model
 
     /**
      * <p>The dynamic thing group index to update.</p>  <p>Currently one index is
-     * supported: 'AWS_Things'.</p> 
+     * supported: <code>AWS_Things</code>.</p> 
      */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
 
     /**
      * <p>The dynamic thing group index to update.</p>  <p>Currently one index is
-     * supported: 'AWS_Things'.</p> 
+     * supported: <code>AWS_Things</code>.</p> 
      */
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
 
     /**
      * <p>The dynamic thing group index to update.</p>  <p>Currently one index is
-     * supported: 'AWS_Things'.</p> 
+     * supported: <code>AWS_Things</code>.</p> 
      */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
     /**
      * <p>The dynamic thing group index to update.</p>  <p>Currently one index is
-     * supported: 'AWS_Things'.</p> 
+     * supported: <code>AWS_Things</code>.</p> 
      */
     inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
 
     /**
      * <p>The dynamic thing group index to update.</p>  <p>Currently one index is
-     * supported: 'AWS_Things'.</p> 
+     * supported: <code>AWS_Things</code>.</p> 
      */
     inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
 
     /**
      * <p>The dynamic thing group index to update.</p>  <p>Currently one index is
-     * supported: 'AWS_Things'.</p> 
+     * supported: <code>AWS_Things</code>.</p> 
      */
     inline UpdateDynamicThingGroupRequest& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
 
     /**
      * <p>The dynamic thing group index to update.</p>  <p>Currently one index is
-     * supported: 'AWS_Things'.</p> 
+     * supported: <code>AWS_Things</code>.</p> 
      */
     inline UpdateDynamicThingGroupRequest& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
 
     /**
      * <p>The dynamic thing group index to update.</p>  <p>Currently one index is
-     * supported: 'AWS_Things'.</p> 
+     * supported: <code>AWS_Things</code>.</p> 
      */
     inline UpdateDynamicThingGroupRequest& WithIndexName(const char* value) { SetIndexName(value); return *this;}
 

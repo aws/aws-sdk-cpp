@@ -139,7 +139,7 @@ namespace Model
      * used only when exporting a snapshot for external access. When using this
      * parameter to export a snapshot, be sure MemoryDB has the needed permissions to
      * this S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/snapshots-exporting.html">Step
+     * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step
      * 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
      */
     inline const Aws::String& GetTargetBucket() const{ return m_targetBucket; }
@@ -149,7 +149,7 @@ namespace Model
      * used only when exporting a snapshot for external access. When using this
      * parameter to export a snapshot, be sure MemoryDB has the needed permissions to
      * this S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/snapshots-exporting.html">Step
+     * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step
      * 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
      */
     inline bool TargetBucketHasBeenSet() const { return m_targetBucketHasBeenSet; }
@@ -159,7 +159,7 @@ namespace Model
      * used only when exporting a snapshot for external access. When using this
      * parameter to export a snapshot, be sure MemoryDB has the needed permissions to
      * this S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/snapshots-exporting.html">Step
+     * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step
      * 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
      */
     inline void SetTargetBucket(const Aws::String& value) { m_targetBucketHasBeenSet = true; m_targetBucket = value; }
@@ -169,7 +169,7 @@ namespace Model
      * used only when exporting a snapshot for external access. When using this
      * parameter to export a snapshot, be sure MemoryDB has the needed permissions to
      * this S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/snapshots-exporting.html">Step
+     * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step
      * 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
      */
     inline void SetTargetBucket(Aws::String&& value) { m_targetBucketHasBeenSet = true; m_targetBucket = std::move(value); }
@@ -179,7 +179,7 @@ namespace Model
      * used only when exporting a snapshot for external access. When using this
      * parameter to export a snapshot, be sure MemoryDB has the needed permissions to
      * this S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/snapshots-exporting.html">Step
+     * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step
      * 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
      */
     inline void SetTargetBucket(const char* value) { m_targetBucketHasBeenSet = true; m_targetBucket.assign(value); }
@@ -189,7 +189,7 @@ namespace Model
      * used only when exporting a snapshot for external access. When using this
      * parameter to export a snapshot, be sure MemoryDB has the needed permissions to
      * this S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/snapshots-exporting.html">Step
+     * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step
      * 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
      */
     inline CopySnapshotRequest& WithTargetBucket(const Aws::String& value) { SetTargetBucket(value); return *this;}
@@ -199,7 +199,7 @@ namespace Model
      * used only when exporting a snapshot for external access. When using this
      * parameter to export a snapshot, be sure MemoryDB has the needed permissions to
      * this S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/snapshots-exporting.html">Step
+     * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step
      * 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
      */
     inline CopySnapshotRequest& WithTargetBucket(Aws::String&& value) { SetTargetBucket(std::move(value)); return *this;}
@@ -209,7 +209,7 @@ namespace Model
      * used only when exporting a snapshot for external access. When using this
      * parameter to export a snapshot, be sure MemoryDB has the needed permissions to
      * this S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonMemoryDB/latest/devguide/snapshots-exporting.html">Step
+     * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step
      * 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
      */
     inline CopySnapshotRequest& WithTargetBucket(const char* value) { SetTargetBucket(value); return *this;}

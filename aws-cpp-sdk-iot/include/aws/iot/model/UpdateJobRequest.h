@@ -274,9 +274,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -285,9 +285,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -296,9 +296,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -307,9 +307,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -318,9 +318,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -329,9 +329,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -340,9 +340,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -351,9 +351,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 

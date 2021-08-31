@@ -109,28 +109,28 @@ namespace Model
 
 
     /**
-     * <p>When true, deletes the AWS job created by the OTAUpdate process even if it is
+     * <p>When true, deletes the IoT job created by the OTAUpdate process even if it is
      * "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or
      * "CANCELED") an exception will occur. The default is false.</p>
      */
     inline bool GetForceDeleteAWSJob() const{ return m_forceDeleteAWSJob; }
 
     /**
-     * <p>When true, deletes the AWS job created by the OTAUpdate process even if it is
+     * <p>When true, deletes the IoT job created by the OTAUpdate process even if it is
      * "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or
      * "CANCELED") an exception will occur. The default is false.</p>
      */
     inline bool ForceDeleteAWSJobHasBeenSet() const { return m_forceDeleteAWSJobHasBeenSet; }
 
     /**
-     * <p>When true, deletes the AWS job created by the OTAUpdate process even if it is
+     * <p>When true, deletes the IoT job created by the OTAUpdate process even if it is
      * "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or
      * "CANCELED") an exception will occur. The default is false.</p>
      */
     inline void SetForceDeleteAWSJob(bool value) { m_forceDeleteAWSJobHasBeenSet = true; m_forceDeleteAWSJob = value; }
 
     /**
-     * <p>When true, deletes the AWS job created by the OTAUpdate process even if it is
+     * <p>When true, deletes the IoT job created by the OTAUpdate process even if it is
      * "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or
      * "CANCELED") an exception will occur. The default is false.</p>
      */

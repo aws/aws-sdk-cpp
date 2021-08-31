@@ -37,58 +37,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that grants permission to AWS IoT
-     * to access information about your devices, policies, certificates, and other
-     * items as required when performing an audit.</p>
+     * <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to
+     * access information about your devices, policies, certificates, and other items
+     * as required when performing an audit.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that grants permission to AWS IoT
-     * to access information about your devices, policies, certificates, and other
-     * items as required when performing an audit.</p>
+     * <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to
+     * access information about your devices, policies, certificates, and other items
+     * as required when performing an audit.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that grants permission to AWS IoT
-     * to access information about your devices, policies, certificates, and other
-     * items as required when performing an audit.</p>
+     * <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to
+     * access information about your devices, policies, certificates, and other items
+     * as required when performing an audit.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that grants permission to AWS IoT
-     * to access information about your devices, policies, certificates, and other
-     * items as required when performing an audit.</p>
+     * <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to
+     * access information about your devices, policies, certificates, and other items
+     * as required when performing an audit.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that grants permission to AWS IoT
-     * to access information about your devices, policies, certificates, and other
-     * items as required when performing an audit.</p>
+     * <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to
+     * access information about your devices, policies, certificates, and other items
+     * as required when performing an audit.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that grants permission to AWS IoT
-     * to access information about your devices, policies, certificates, and other
-     * items as required when performing an audit.</p>
+     * <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to
+     * access information about your devices, policies, certificates, and other items
+     * as required when performing an audit.</p>
      */
     inline UpdateAccountAuditConfigurationRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that grants permission to AWS IoT
-     * to access information about your devices, policies, certificates, and other
-     * items as required when performing an audit.</p>
+     * <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to
+     * access information about your devices, policies, certificates, and other items
+     * as required when performing an audit.</p>
      */
     inline UpdateAccountAuditConfigurationRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that grants permission to AWS IoT
-     * to access information about your devices, policies, certificates, and other
-     * items as required when performing an audit.</p>
+     * <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to
+     * access information about your devices, policies, certificates, and other items
+     * as required when performing an audit.</p>
      */
     inline UpdateAccountAuditConfigurationRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

@@ -94,48 +94,48 @@ namespace Model
     /**
      * <p>Thing connectivity indexing mode. Valid values are: </p> <ul> <li> <p>STATUS
      * – Your thing index contains connectivity status. To enable thing connectivity
-     * indexing, thingIndexMode must not be set to OFF.</p> </li> <li> <p>OFF - Thing
-     * connectivity status indexing is disabled.</p> </li> </ul>
+     * indexing, <i>thingIndexMode</i> must not be set to OFF.</p> </li> <li> <p>OFF -
+     * Thing connectivity status indexing is disabled.</p> </li> </ul>
      */
     inline const ThingConnectivityIndexingMode& GetThingConnectivityIndexingMode() const{ return m_thingConnectivityIndexingMode; }
 
     /**
      * <p>Thing connectivity indexing mode. Valid values are: </p> <ul> <li> <p>STATUS
      * – Your thing index contains connectivity status. To enable thing connectivity
-     * indexing, thingIndexMode must not be set to OFF.</p> </li> <li> <p>OFF - Thing
-     * connectivity status indexing is disabled.</p> </li> </ul>
+     * indexing, <i>thingIndexMode</i> must not be set to OFF.</p> </li> <li> <p>OFF -
+     * Thing connectivity status indexing is disabled.</p> </li> </ul>
      */
     inline bool ThingConnectivityIndexingModeHasBeenSet() const { return m_thingConnectivityIndexingModeHasBeenSet; }
 
     /**
      * <p>Thing connectivity indexing mode. Valid values are: </p> <ul> <li> <p>STATUS
      * – Your thing index contains connectivity status. To enable thing connectivity
-     * indexing, thingIndexMode must not be set to OFF.</p> </li> <li> <p>OFF - Thing
-     * connectivity status indexing is disabled.</p> </li> </ul>
+     * indexing, <i>thingIndexMode</i> must not be set to OFF.</p> </li> <li> <p>OFF -
+     * Thing connectivity status indexing is disabled.</p> </li> </ul>
      */
     inline void SetThingConnectivityIndexingMode(const ThingConnectivityIndexingMode& value) { m_thingConnectivityIndexingModeHasBeenSet = true; m_thingConnectivityIndexingMode = value; }
 
     /**
      * <p>Thing connectivity indexing mode. Valid values are: </p> <ul> <li> <p>STATUS
      * – Your thing index contains connectivity status. To enable thing connectivity
-     * indexing, thingIndexMode must not be set to OFF.</p> </li> <li> <p>OFF - Thing
-     * connectivity status indexing is disabled.</p> </li> </ul>
+     * indexing, <i>thingIndexMode</i> must not be set to OFF.</p> </li> <li> <p>OFF -
+     * Thing connectivity status indexing is disabled.</p> </li> </ul>
      */
     inline void SetThingConnectivityIndexingMode(ThingConnectivityIndexingMode&& value) { m_thingConnectivityIndexingModeHasBeenSet = true; m_thingConnectivityIndexingMode = std::move(value); }
 
     /**
      * <p>Thing connectivity indexing mode. Valid values are: </p> <ul> <li> <p>STATUS
      * – Your thing index contains connectivity status. To enable thing connectivity
-     * indexing, thingIndexMode must not be set to OFF.</p> </li> <li> <p>OFF - Thing
-     * connectivity status indexing is disabled.</p> </li> </ul>
+     * indexing, <i>thingIndexMode</i> must not be set to OFF.</p> </li> <li> <p>OFF -
+     * Thing connectivity status indexing is disabled.</p> </li> </ul>
      */
     inline ThingIndexingConfiguration& WithThingConnectivityIndexingMode(const ThingConnectivityIndexingMode& value) { SetThingConnectivityIndexingMode(value); return *this;}
 
     /**
      * <p>Thing connectivity indexing mode. Valid values are: </p> <ul> <li> <p>STATUS
      * – Your thing index contains connectivity status. To enable thing connectivity
-     * indexing, thingIndexMode must not be set to OFF.</p> </li> <li> <p>OFF - Thing
-     * connectivity status indexing is disabled.</p> </li> </ul>
+     * indexing, <i>thingIndexMode</i> must not be set to OFF.</p> </li> <li> <p>OFF -
+     * Thing connectivity status indexing is disabled.</p> </li> </ul>
      */
     inline ThingIndexingConfiguration& WithThingConnectivityIndexingMode(ThingConnectivityIndexingMode&& value) { SetThingConnectivityIndexingMode(std::move(value)); return *this;}
 

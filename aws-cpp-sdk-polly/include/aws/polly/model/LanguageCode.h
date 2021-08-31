@@ -45,7 +45,8 @@ namespace Model
     ru_RU,
     sv_SE,
     tr_TR,
-    en_NZ
+    en_NZ,
+    en_ZA
   };
 
 namespace LanguageCodeMapper

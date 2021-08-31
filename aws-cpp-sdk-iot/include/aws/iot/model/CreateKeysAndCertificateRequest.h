@@ -19,8 +19,10 @@ namespace Model
 {
 
   /**
-   * <p>The input for the CreateKeysAndCertificate operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The input for the CreateKeysAndCertificate operation.</p> <p>Requires
+   * permission to access the <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateKeysAndCertificateRequest</a>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificateRequest">AWS
    * API Reference</a></p>
    */
