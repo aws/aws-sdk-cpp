@@ -27,10 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>The details of a conformance pack evaluation. Provides AWS Config rule and
-   * AWS resource type that was evaluated, the compliance of the conformance pack,
-   * related time stamps, and supplementary information. </p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The details of a conformance pack evaluation. Provides Config rule and Amazon
+   * Web Services resource type that was evaluated, the compliance of the conformance
+   * pack, related time stamps, and supplementary information. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConformancePackEvaluationResult">AWS
    * API Reference</a></p>
    */
@@ -100,63 +100,63 @@ namespace Model
 
 
     /**
-     * <p>The time when AWS Config rule evaluated AWS resource.</p>
+     * <p>The time when Config rule evaluated Amazon Web Services resource.</p>
      */
     inline const Aws::Utils::DateTime& GetConfigRuleInvokedTime() const{ return m_configRuleInvokedTime; }
 
     /**
-     * <p>The time when AWS Config rule evaluated AWS resource.</p>
+     * <p>The time when Config rule evaluated Amazon Web Services resource.</p>
      */
     inline bool ConfigRuleInvokedTimeHasBeenSet() const { return m_configRuleInvokedTimeHasBeenSet; }
 
     /**
-     * <p>The time when AWS Config rule evaluated AWS resource.</p>
+     * <p>The time when Config rule evaluated Amazon Web Services resource.</p>
      */
     inline void SetConfigRuleInvokedTime(const Aws::Utils::DateTime& value) { m_configRuleInvokedTimeHasBeenSet = true; m_configRuleInvokedTime = value; }
 
     /**
-     * <p>The time when AWS Config rule evaluated AWS resource.</p>
+     * <p>The time when Config rule evaluated Amazon Web Services resource.</p>
      */
     inline void SetConfigRuleInvokedTime(Aws::Utils::DateTime&& value) { m_configRuleInvokedTimeHasBeenSet = true; m_configRuleInvokedTime = std::move(value); }
 
     /**
-     * <p>The time when AWS Config rule evaluated AWS resource.</p>
+     * <p>The time when Config rule evaluated Amazon Web Services resource.</p>
      */
     inline ConformancePackEvaluationResult& WithConfigRuleInvokedTime(const Aws::Utils::DateTime& value) { SetConfigRuleInvokedTime(value); return *this;}
 
     /**
-     * <p>The time when AWS Config rule evaluated AWS resource.</p>
+     * <p>The time when Config rule evaluated Amazon Web Services resource.</p>
      */
     inline ConformancePackEvaluationResult& WithConfigRuleInvokedTime(Aws::Utils::DateTime&& value) { SetConfigRuleInvokedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time when AWS Config recorded the evaluation result. </p>
+     * <p>The time when Config recorded the evaluation result. </p>
      */
     inline const Aws::Utils::DateTime& GetResultRecordedTime() const{ return m_resultRecordedTime; }
 
     /**
-     * <p>The time when AWS Config recorded the evaluation result. </p>
+     * <p>The time when Config recorded the evaluation result. </p>
      */
     inline bool ResultRecordedTimeHasBeenSet() const { return m_resultRecordedTimeHasBeenSet; }
 
     /**
-     * <p>The time when AWS Config recorded the evaluation result. </p>
+     * <p>The time when Config recorded the evaluation result. </p>
      */
     inline void SetResultRecordedTime(const Aws::Utils::DateTime& value) { m_resultRecordedTimeHasBeenSet = true; m_resultRecordedTime = value; }
 
     /**
-     * <p>The time when AWS Config recorded the evaluation result. </p>
+     * <p>The time when Config recorded the evaluation result. </p>
      */
     inline void SetResultRecordedTime(Aws::Utils::DateTime&& value) { m_resultRecordedTimeHasBeenSet = true; m_resultRecordedTime = std::move(value); }
 
     /**
-     * <p>The time when AWS Config recorded the evaluation result. </p>
+     * <p>The time when Config recorded the evaluation result. </p>
      */
     inline ConformancePackEvaluationResult& WithResultRecordedTime(const Aws::Utils::DateTime& value) { SetResultRecordedTime(value); return *this;}
 
     /**
-     * <p>The time when AWS Config recorded the evaluation result. </p>
+     * <p>The time when Config recorded the evaluation result. </p>
      */
     inline ConformancePackEvaluationResult& WithResultRecordedTime(Aws::Utils::DateTime&& value) { SetResultRecordedTime(std::move(value)); return *this;}
 

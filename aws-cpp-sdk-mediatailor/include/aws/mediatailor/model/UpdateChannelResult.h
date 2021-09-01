@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediatailor/model/ChannelState.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/mediatailor/model/SlateSource.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediatailor/model/ResponseOutputItem.h>
@@ -162,6 +163,37 @@ namespace Model
 
 
     /**
+     * <p>Contains information about the slate used to fill gaps between programs in
+     * the schedule.</p>
+     */
+    inline const SlateSource& GetFillerSlate() const{ return m_fillerSlate; }
+
+    /**
+     * <p>Contains information about the slate used to fill gaps between programs in
+     * the schedule.</p>
+     */
+    inline void SetFillerSlate(const SlateSource& value) { m_fillerSlate = value; }
+
+    /**
+     * <p>Contains information about the slate used to fill gaps between programs in
+     * the schedule.</p>
+     */
+    inline void SetFillerSlate(SlateSource&& value) { m_fillerSlate = std::move(value); }
+
+    /**
+     * <p>Contains information about the slate used to fill gaps between programs in
+     * the schedule.</p>
+     */
+    inline UpdateChannelResult& WithFillerSlate(const SlateSource& value) { SetFillerSlate(value); return *this;}
+
+    /**
+     * <p>Contains information about the slate used to fill gaps between programs in
+     * the schedule.</p>
+     */
+    inline UpdateChannelResult& WithFillerSlate(SlateSource&& value) { SetFillerSlate(std::move(value)); return *this;}
+
+
+    /**
      * <p>The timestamp of when the channel was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
@@ -224,37 +256,37 @@ namespace Model
 
 
     /**
-     * <p>The type of playback for this channel. The only supported value is LOOP.</p>
+     * <p>The channel's playback mode.</p>
      */
     inline const Aws::String& GetPlaybackMode() const{ return m_playbackMode; }
 
     /**
-     * <p>The type of playback for this channel. The only supported value is LOOP.</p>
+     * <p>The channel's playback mode.</p>
      */
     inline void SetPlaybackMode(const Aws::String& value) { m_playbackMode = value; }
 
     /**
-     * <p>The type of playback for this channel. The only supported value is LOOP.</p>
+     * <p>The channel's playback mode.</p>
      */
     inline void SetPlaybackMode(Aws::String&& value) { m_playbackMode = std::move(value); }
 
     /**
-     * <p>The type of playback for this channel. The only supported value is LOOP.</p>
+     * <p>The channel's playback mode.</p>
      */
     inline void SetPlaybackMode(const char* value) { m_playbackMode.assign(value); }
 
     /**
-     * <p>The type of playback for this channel. The only supported value is LOOP.</p>
+     * <p>The channel's playback mode.</p>
      */
     inline UpdateChannelResult& WithPlaybackMode(const Aws::String& value) { SetPlaybackMode(value); return *this;}
 
     /**
-     * <p>The type of playback for this channel. The only supported value is LOOP.</p>
+     * <p>The channel's playback mode.</p>
      */
     inline UpdateChannelResult& WithPlaybackMode(Aws::String&& value) { SetPlaybackMode(std::move(value)); return *this;}
 
     /**
-     * <p>The type of playback for this channel. The only supported value is LOOP.</p>
+     * <p>The channel's playback mode.</p>
      */
     inline UpdateChannelResult& WithPlaybackMode(const char* value) { SetPlaybackMode(value); return *this;}
 
@@ -328,6 +360,8 @@ namespace Model
     ChannelState m_channelState;
 
     Aws::Utils::DateTime m_creationTime;
+
+    SlateSource m_fillerSlate;
 
     Aws::Utils::DateTime m_lastModifiedTime;
 

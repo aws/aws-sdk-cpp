@@ -115,57 +115,63 @@ namespace Model
 
 
     /**
-     * <p>Groups the result based on AWS Account ID or AWS Region.</p>
+     * <p>Groups the result based on Amazon Web Services account ID or Amazon Web
+     * Services Region.</p>
      */
     inline const AggregateConformancePackComplianceSummaryGroupKey& GetGroupByKey() const{ return m_groupByKey; }
 
     /**
-     * <p>Groups the result based on AWS Account ID or AWS Region.</p>
+     * <p>Groups the result based on Amazon Web Services account ID or Amazon Web
+     * Services Region.</p>
      */
     inline bool GroupByKeyHasBeenSet() const { return m_groupByKeyHasBeenSet; }
 
     /**
-     * <p>Groups the result based on AWS Account ID or AWS Region.</p>
+     * <p>Groups the result based on Amazon Web Services account ID or Amazon Web
+     * Services Region.</p>
      */
     inline void SetGroupByKey(const AggregateConformancePackComplianceSummaryGroupKey& value) { m_groupByKeyHasBeenSet = true; m_groupByKey = value; }
 
     /**
-     * <p>Groups the result based on AWS Account ID or AWS Region.</p>
+     * <p>Groups the result based on Amazon Web Services account ID or Amazon Web
+     * Services Region.</p>
      */
     inline void SetGroupByKey(AggregateConformancePackComplianceSummaryGroupKey&& value) { m_groupByKeyHasBeenSet = true; m_groupByKey = std::move(value); }
 
     /**
-     * <p>Groups the result based on AWS Account ID or AWS Region.</p>
+     * <p>Groups the result based on Amazon Web Services account ID or Amazon Web
+     * Services Region.</p>
      */
     inline GetAggregateConformancePackComplianceSummaryRequest& WithGroupByKey(const AggregateConformancePackComplianceSummaryGroupKey& value) { SetGroupByKey(value); return *this;}
 
     /**
-     * <p>Groups the result based on AWS Account ID or AWS Region.</p>
+     * <p>Groups the result based on Amazon Web Services account ID or Amazon Web
+     * Services Region.</p>
      */
     inline GetAggregateConformancePackComplianceSummaryRequest& WithGroupByKey(AggregateConformancePackComplianceSummaryGroupKey&& value) { SetGroupByKey(std::move(value)); return *this;}
 
 
     /**
      * <p>The maximum number of results returned on each page. The default is maximum.
-     * If you specify 0, AWS Config uses the default.</p>
+     * If you specify 0, Config uses the default.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of results returned on each page. The default is maximum.
-     * If you specify 0, AWS Config uses the default.</p>
+     * If you specify 0, Config uses the default.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of results returned on each page. The default is maximum.
-     * If you specify 0, AWS Config uses the default.</p>
+     * If you specify 0, Config uses the default.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of results returned on each page. The default is maximum.
-     * If you specify 0, AWS Config uses the default.</p>
+     * If you specify 0, Config uses the default.</p>
      */
     inline GetAggregateConformancePackComplianceSummaryRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

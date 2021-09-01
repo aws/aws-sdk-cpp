@@ -120,83 +120,83 @@ namespace Model
 
 
     /**
-     * <p>The 12-digit AWS account ID of the source account.</p>
+     * <p>The 12-digit Amazon Web Services account ID of the source account.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The 12-digit AWS account ID of the source account.</p>
+     * <p>The 12-digit Amazon Web Services account ID of the source account.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The 12-digit AWS account ID of the source account.</p>
+     * <p>The 12-digit Amazon Web Services account ID of the source account.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The 12-digit AWS account ID of the source account.</p>
+     * <p>The 12-digit Amazon Web Services account ID of the source account.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The 12-digit AWS account ID of the source account.</p>
+     * <p>The 12-digit Amazon Web Services account ID of the source account.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The 12-digit AWS account ID of the source account.</p>
+     * <p>The 12-digit Amazon Web Services account ID of the source account.</p>
      */
     inline AggregateComplianceByConformancePack& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The 12-digit AWS account ID of the source account.</p>
+     * <p>The 12-digit Amazon Web Services account ID of the source account.</p>
      */
     inline AggregateComplianceByConformancePack& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The 12-digit AWS account ID of the source account.</p>
+     * <p>The 12-digit Amazon Web Services account ID of the source account.</p>
      */
     inline AggregateComplianceByConformancePack& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
     /**
-     * <p>The source AWS Region from where the data is aggregated.</p>
+     * <p>The source Amazon Web Services Region from where the data is aggregated.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
 
     /**
-     * <p>The source AWS Region from where the data is aggregated.</p>
+     * <p>The source Amazon Web Services Region from where the data is aggregated.</p>
      */
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
-     * <p>The source AWS Region from where the data is aggregated.</p>
+     * <p>The source Amazon Web Services Region from where the data is aggregated.</p>
      */
     inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
 
     /**
-     * <p>The source AWS Region from where the data is aggregated.</p>
+     * <p>The source Amazon Web Services Region from where the data is aggregated.</p>
      */
     inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
 
     /**
-     * <p>The source AWS Region from where the data is aggregated.</p>
+     * <p>The source Amazon Web Services Region from where the data is aggregated.</p>
      */
     inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
 
     /**
-     * <p>The source AWS Region from where the data is aggregated.</p>
+     * <p>The source Amazon Web Services Region from where the data is aggregated.</p>
      */
     inline AggregateComplianceByConformancePack& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
 
     /**
-     * <p>The source AWS Region from where the data is aggregated.</p>
+     * <p>The source Amazon Web Services Region from where the data is aggregated.</p>
      */
     inline AggregateComplianceByConformancePack& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The source AWS Region from where the data is aggregated.</p>
+     * <p>The source Amazon Web Services Region from where the data is aggregated.</p>
      */
     inline AggregateComplianceByConformancePack& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
 

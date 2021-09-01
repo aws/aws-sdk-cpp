@@ -16,7 +16,8 @@ namespace Model
   enum class PlaybackMode
   {
     NOT_SET,
-    LOOP
+    LOOP,
+    LINEAR
   };
 
 namespace PlaybackModeMapper

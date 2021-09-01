@@ -40,44 +40,44 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the specified AWS resource complies each AWS Config
-     * rule.</p>
+     * <p>Indicates whether the specified Amazon Web Services resource complies each
+     * Config rule.</p>
      */
     inline const Aws::Vector<EvaluationResult>& GetEvaluationResults() const{ return m_evaluationResults; }
 
     /**
-     * <p>Indicates whether the specified AWS resource complies each AWS Config
-     * rule.</p>
+     * <p>Indicates whether the specified Amazon Web Services resource complies each
+     * Config rule.</p>
      */
     inline void SetEvaluationResults(const Aws::Vector<EvaluationResult>& value) { m_evaluationResults = value; }
 
     /**
-     * <p>Indicates whether the specified AWS resource complies each AWS Config
-     * rule.</p>
+     * <p>Indicates whether the specified Amazon Web Services resource complies each
+     * Config rule.</p>
      */
     inline void SetEvaluationResults(Aws::Vector<EvaluationResult>&& value) { m_evaluationResults = std::move(value); }
 
     /**
-     * <p>Indicates whether the specified AWS resource complies each AWS Config
-     * rule.</p>
+     * <p>Indicates whether the specified Amazon Web Services resource complies each
+     * Config rule.</p>
      */
     inline GetComplianceDetailsByResourceResult& WithEvaluationResults(const Aws::Vector<EvaluationResult>& value) { SetEvaluationResults(value); return *this;}
 
     /**
-     * <p>Indicates whether the specified AWS resource complies each AWS Config
-     * rule.</p>
+     * <p>Indicates whether the specified Amazon Web Services resource complies each
+     * Config rule.</p>
      */
     inline GetComplianceDetailsByResourceResult& WithEvaluationResults(Aws::Vector<EvaluationResult>&& value) { SetEvaluationResults(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates whether the specified AWS resource complies each AWS Config
-     * rule.</p>
+     * <p>Indicates whether the specified Amazon Web Services resource complies each
+     * Config rule.</p>
      */
     inline GetComplianceDetailsByResourceResult& AddEvaluationResults(const EvaluationResult& value) { m_evaluationResults.push_back(value); return *this; }
 
     /**
-     * <p>Indicates whether the specified AWS resource complies each AWS Config
-     * rule.</p>
+     * <p>Indicates whether the specified Amazon Web Services resource complies each
+     * Config rule.</p>
      */
     inline GetComplianceDetailsByResourceResult& AddEvaluationResults(EvaluationResult&& value) { m_evaluationResults.push_back(std::move(value)); return *this; }
 

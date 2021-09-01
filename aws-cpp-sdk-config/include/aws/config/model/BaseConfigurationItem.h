@@ -84,42 +84,42 @@ namespace Model
 
 
     /**
-     * <p>The 12-digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The 12-digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The 12-digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The 12-digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The 12-digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The 12-digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
      */
     inline BaseConfigurationItem& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The 12-digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
      */
     inline BaseConfigurationItem& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The 12-digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
      */
     inline BaseConfigurationItem& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -325,32 +325,32 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS resource.</p>
+     * <p>The type of Amazon Web Services resource.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of AWS resource.</p>
+     * <p>The type of Amazon Web Services resource.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of AWS resource.</p>
+     * <p>The type of Amazon Web Services resource.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of AWS resource.</p>
+     * <p>The type of Amazon Web Services resource.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of AWS resource.</p>
+     * <p>The type of Amazon Web Services resource.</p>
      */
     inline BaseConfigurationItem& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of AWS resource.</p>
+     * <p>The type of Amazon Web Services resource.</p>
      */
     inline BaseConfigurationItem& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
@@ -592,80 +592,80 @@ namespace Model
 
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the configuration parameter.</p>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the configuration parameter.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetSupplementaryConfiguration() const{ return m_supplementaryConfiguration; }
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the configuration parameter.</p>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the configuration parameter.</p>
      */
     inline bool SupplementaryConfigurationHasBeenSet() const { return m_supplementaryConfigurationHasBeenSet; }
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the configuration parameter.</p>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the configuration parameter.</p>
      */
     inline void SetSupplementaryConfiguration(const Aws::Map<Aws::String, Aws::String>& value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration = value; }
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the configuration parameter.</p>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the configuration parameter.</p>
      */
     inline void SetSupplementaryConfiguration(Aws::Map<Aws::String, Aws::String>&& value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration = std::move(value); }
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the configuration parameter.</p>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the configuration parameter.</p>
      */
     inline BaseConfigurationItem& WithSupplementaryConfiguration(const Aws::Map<Aws::String, Aws::String>& value) { SetSupplementaryConfiguration(value); return *this;}
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the configuration parameter.</p>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the configuration parameter.</p>
      */
     inline BaseConfigurationItem& WithSupplementaryConfiguration(Aws::Map<Aws::String, Aws::String>&& value) { SetSupplementaryConfiguration(std::move(value)); return *this;}
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the configuration parameter.</p>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the configuration parameter.</p>
      */
     inline BaseConfigurationItem& AddSupplementaryConfiguration(const Aws::String& key, const Aws::String& value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration.emplace(key, value); return *this; }
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the configuration parameter.</p>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the configuration parameter.</p>
      */
     inline BaseConfigurationItem& AddSupplementaryConfiguration(Aws::String&& key, const Aws::String& value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the configuration parameter.</p>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the configuration parameter.</p>
      */
     inline BaseConfigurationItem& AddSupplementaryConfiguration(const Aws::String& key, Aws::String&& value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the configuration parameter.</p>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the configuration parameter.</p>
      */
     inline BaseConfigurationItem& AddSupplementaryConfiguration(Aws::String&& key, Aws::String&& value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the configuration parameter.</p>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the configuration parameter.</p>
      */
     inline BaseConfigurationItem& AddSupplementaryConfiguration(const char* key, Aws::String&& value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the configuration parameter.</p>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the configuration parameter.</p>
      */
     inline BaseConfigurationItem& AddSupplementaryConfiguration(Aws::String&& key, const char* value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Configuration attributes that AWS Config returns for certain resource types
-     * to supplement the information returned for the configuration parameter.</p>
+     * <p>Configuration attributes that Config returns for certain resource types to
+     * supplement the information returned for the configuration parameter.</p>
      */
     inline BaseConfigurationItem& AddSupplementaryConfiguration(const char* key, const char* value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration.emplace(key, value); return *this; }
 

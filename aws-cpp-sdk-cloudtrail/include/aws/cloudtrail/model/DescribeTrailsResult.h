@@ -45,7 +45,7 @@ namespace Model
      * <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
      * results if a trail is configured to send SNS notifications. Similarly,
      * <code>KMSKeyId</code> only appears in results if a trail's log files are
-     * encrypted with AWS KMS-managed keys.</p>
+     * encrypted with KMS customer managed keys.</p>
      */
     inline const Aws::Vector<Trail>& GetTrailList() const{ return m_trailList; }
 
@@ -55,7 +55,7 @@ namespace Model
      * <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
      * results if a trail is configured to send SNS notifications. Similarly,
      * <code>KMSKeyId</code> only appears in results if a trail's log files are
-     * encrypted with AWS KMS-managed keys.</p>
+     * encrypted with KMS customer managed keys.</p>
      */
     inline void SetTrailList(const Aws::Vector<Trail>& value) { m_trailList = value; }
 
@@ -65,7 +65,7 @@ namespace Model
      * <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
      * results if a trail is configured to send SNS notifications. Similarly,
      * <code>KMSKeyId</code> only appears in results if a trail's log files are
-     * encrypted with AWS KMS-managed keys.</p>
+     * encrypted with KMS customer managed keys.</p>
      */
     inline void SetTrailList(Aws::Vector<Trail>&& value) { m_trailList = std::move(value); }
 
@@ -75,7 +75,7 @@ namespace Model
      * <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
      * results if a trail is configured to send SNS notifications. Similarly,
      * <code>KMSKeyId</code> only appears in results if a trail's log files are
-     * encrypted with AWS KMS-managed keys.</p>
+     * encrypted with KMS customer managed keys.</p>
      */
     inline DescribeTrailsResult& WithTrailList(const Aws::Vector<Trail>& value) { SetTrailList(value); return *this;}
 
@@ -85,7 +85,7 @@ namespace Model
      * <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
      * results if a trail is configured to send SNS notifications. Similarly,
      * <code>KMSKeyId</code> only appears in results if a trail's log files are
-     * encrypted with AWS KMS-managed keys.</p>
+     * encrypted with KMS customer managed keys.</p>
      */
     inline DescribeTrailsResult& WithTrailList(Aws::Vector<Trail>&& value) { SetTrailList(std::move(value)); return *this;}
 
@@ -95,7 +95,7 @@ namespace Model
      * <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
      * results if a trail is configured to send SNS notifications. Similarly,
      * <code>KMSKeyId</code> only appears in results if a trail's log files are
-     * encrypted with AWS KMS-managed keys.</p>
+     * encrypted with KMS customer managed keys.</p>
      */
     inline DescribeTrailsResult& AddTrailList(const Trail& value) { m_trailList.push_back(value); return *this; }
 
@@ -105,7 +105,7 @@ namespace Model
      * <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
      * results if a trail is configured to send SNS notifications. Similarly,
      * <code>KMSKeyId</code> only appears in results if a trail's log files are
-     * encrypted with AWS KMS-managed keys.</p>
+     * encrypted with KMS customer managed keys.</p>
      */
     inline DescribeTrailsResult& AddTrailList(Trail&& value) { m_trailList.push_back(std::move(value)); return *this; }
 

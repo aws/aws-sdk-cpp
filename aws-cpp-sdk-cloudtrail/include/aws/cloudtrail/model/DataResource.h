@@ -25,15 +25,15 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon S3 buckets, AWS Lambda functions, or Amazon DynamoDB tables that
-   * you specify in your event selectors for your trail to log data events. Data
-   * events provide information about the resource operations performed on or within
-   * a resource itself. These are also known as data plane operations. You can
-   * specify up to 250 data resources for a trail.</p>  <p>The total number of
-   * allowed data resources is 250. This number can be distributed between 1 and 5
-   * event selectors, but the total cannot exceed 250 across all selectors.</p> <p>If
-   * you are using advanced event selectors, the maximum total number of values for
-   * all conditions, across all advanced event selectors for the trail, is 500.</p>
+   * <p>The Amazon S3 buckets, Lambda functions, or Amazon DynamoDB tables that you
+   * specify in your event selectors for your trail to log data events. Data events
+   * provide information about the resource operations performed on or within a
+   * resource itself. These are also known as data plane operations. You can specify
+   * up to 250 data resources for a trail.</p>  <p>The total number of allowed
+   * data resources is 250. This number can be distributed between 1 and 5 event
+   * selectors, but the total cannot exceed 250 across all selectors.</p> <p>If you
+   * are using advanced event selectors, the maximum total number of values for all
+   * conditions, across all advanced event selectors for the trail, is 500.</p>
    *  <p>The following example demonstrates how logging works when you
    * configure logging of all data events for an S3 bucket named
    * <code>bucket-1</code>. In this example, the CloudTrail user specified an empty
@@ -48,17 +48,17 @@ namespace Model
    * <code>PutObject</code> API operation occurred for an object in an S3 bucket that
    * the CloudTrail user didn't specify for the trail. The trail doesn’t log the
    * event.</p> </li> </ol> <p>The following example demonstrates how logging works
-   * when you configure logging of AWS Lambda data events for a Lambda function named
-   * <i>MyLambdaFunction</i>, but not for all AWS Lambda functions.</p> <ol> <li>
-   * <p>A user runs a script that includes a call to the <i>MyLambdaFunction</i>
-   * function and the <i>MyOtherLambdaFunction</i> function.</p> </li> <li> <p>The
-   * <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an AWS Lambda
-   * API. It is recorded as a data event in CloudTrail. Because the CloudTrail user
+   * when you configure logging of Lambda data events for a Lambda function named
+   * <i>MyLambdaFunction</i>, but not for all Lambda functions.</p> <ol> <li> <p>A
+   * user runs a script that includes a call to the <i>MyLambdaFunction</i> function
+   * and the <i>MyOtherLambdaFunction</i> function.</p> </li> <li> <p>The
+   * <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an Lambda API.
+   * It is recorded as a data event in CloudTrail. Because the CloudTrail user
    * specified logging data events for <i>MyLambdaFunction</i>, any invocations of
-   * that function are logged. The trail processes and logs the event. </p> </li>
-   * <li> <p>The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is
-   * an AWS Lambda API. Because the CloudTrail user did not specify logging data
-   * events for all Lambda functions, the <code>Invoke</code> operation for
+   * that function are logged. The trail processes and logs the event.</p> </li> <li>
+   * <p>The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an
+   * Lambda API. Because the CloudTrail user did not specify logging data events for
+   * all Lambda functions, the <code>Invoke</code> operation for
    * <i>MyOtherLambdaFunction</i> does not match the function specified for the
    * trail. The trail doesn’t log the event. </p> </li> </ol><p><h3>See Also:</h3>  
    * <a
@@ -79,9 +79,10 @@ namespace Model
      * <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
      * <code>AWS::DynamoDB::Table</code> resources.</p> <p>The
      * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-     * and <code>AWS::S3ObjectLambda::AccessPoint</code> resource types are not valid
-     * in basic event selectors. To log data events on these resource types, use
-     * advanced event selectors.</p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and
+     * <code>AWS::EC2::Snapshot</code> resource types are not valid in basic event
+     * selectors. To log data events on these resource types, use advanced event
+     * selectors.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
@@ -90,9 +91,10 @@ namespace Model
      * <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
      * <code>AWS::DynamoDB::Table</code> resources.</p> <p>The
      * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-     * and <code>AWS::S3ObjectLambda::AccessPoint</code> resource types are not valid
-     * in basic event selectors. To log data events on these resource types, use
-     * advanced event selectors.</p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and
+     * <code>AWS::EC2::Snapshot</code> resource types are not valid in basic event
+     * selectors. To log data events on these resource types, use advanced event
+     * selectors.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -101,9 +103,10 @@ namespace Model
      * <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
      * <code>AWS::DynamoDB::Table</code> resources.</p> <p>The
      * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-     * and <code>AWS::S3ObjectLambda::AccessPoint</code> resource types are not valid
-     * in basic event selectors. To log data events on these resource types, use
-     * advanced event selectors.</p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and
+     * <code>AWS::EC2::Snapshot</code> resource types are not valid in basic event
+     * selectors. To log data events on these resource types, use advanced event
+     * selectors.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -112,9 +115,10 @@ namespace Model
      * <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
      * <code>AWS::DynamoDB::Table</code> resources.</p> <p>The
      * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-     * and <code>AWS::S3ObjectLambda::AccessPoint</code> resource types are not valid
-     * in basic event selectors. To log data events on these resource types, use
-     * advanced event selectors.</p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and
+     * <code>AWS::EC2::Snapshot</code> resource types are not valid in basic event
+     * selectors. To log data events on these resource types, use advanced event
+     * selectors.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -123,9 +127,10 @@ namespace Model
      * <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
      * <code>AWS::DynamoDB::Table</code> resources.</p> <p>The
      * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-     * and <code>AWS::S3ObjectLambda::AccessPoint</code> resource types are not valid
-     * in basic event selectors. To log data events on these resource types, use
-     * advanced event selectors.</p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and
+     * <code>AWS::EC2::Snapshot</code> resource types are not valid in basic event
+     * selectors. To log data events on these resource types, use advanced event
+     * selectors.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
@@ -134,9 +139,10 @@ namespace Model
      * <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
      * <code>AWS::DynamoDB::Table</code> resources.</p> <p>The
      * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-     * and <code>AWS::S3ObjectLambda::AccessPoint</code> resource types are not valid
-     * in basic event selectors. To log data events on these resource types, use
-     * advanced event selectors.</p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and
+     * <code>AWS::EC2::Snapshot</code> resource types are not valid in basic event
+     * selectors. To log data events on these resource types, use advanced event
+     * selectors.</p>
      */
     inline DataResource& WithType(const Aws::String& value) { SetType(value); return *this;}
 
@@ -145,9 +151,10 @@ namespace Model
      * <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
      * <code>AWS::DynamoDB::Table</code> resources.</p> <p>The
      * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-     * and <code>AWS::S3ObjectLambda::AccessPoint</code> resource types are not valid
-     * in basic event selectors. To log data events on these resource types, use
-     * advanced event selectors.</p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and
+     * <code>AWS::EC2::Snapshot</code> resource types are not valid in basic event
+     * selectors. To log data events on these resource types, use advanced event
+     * selectors.</p>
      */
     inline DataResource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
@@ -156,9 +163,10 @@ namespace Model
      * <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
      * <code>AWS::DynamoDB::Table</code> resources.</p> <p>The
      * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-     * and <code>AWS::S3ObjectLambda::AccessPoint</code> resource types are not valid
-     * in basic event selectors. To log data events on these resource types, use
-     * advanced event selectors.</p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and
+     * <code>AWS::EC2::Snapshot</code> resource types are not valid in basic event
+     * selectors. To log data events on these resource types, use advanced event
+     * selectors.</p>
      */
     inline DataResource& WithType(const char* value) { SetType(value); return *this;}
 
@@ -166,270 +174,288 @@ namespace Model
     /**
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
      * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
-     * buckets in your AWS account, specify the prefix as <code>arn:aws:s3:::</code>.
-     * </p>  <p>This will also enable logging of data event activity performed by
-     * any user or role in your AWS account, even if that activity is performed on a
-     * bucket that belongs to another AWS account. </p>  </li> <li> <p>To log
-     * data events for all objects in an S3 bucket, specify the bucket and an empty
-     * object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data
-     * events for all objects in this S3 bucket.</p> </li> <li> <p>To log data events
-     * for specific objects, specify the S3 bucket and object prefix such as
+     * buckets in your Amazon Web Services account, specify the prefix as
+     * <code>arn:aws:s3:::</code>.</p>  <p>This also enables logging of data
+     * event activity performed by any user or role in your Amazon Web Services
+     * account, even if that activity is performed on a bucket that belongs to another
+     * Amazon Web Services account.</p>  </li> <li> <p>To log data events for
+     * all objects in an S3 bucket, specify the bucket and an empty object prefix such
+     * as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all
+     * objects in this S3 bucket.</p> </li> <li> <p>To log data events for specific
+     * objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
-     * data events for all Lambda functions in your AWS account, specify the prefix as
-     * <code>arn:aws:lambda</code>.</p>  <p>This will also enable logging of
-     * <code>Invoke</code> activity performed by any user or role in your AWS account,
-     * even if that activity is performed on a function that belongs to another AWS
-     * account. </p>  </li> <li> <p>To log data events for a specific Lambda
-     * function, specify the function ARN.</p>  <p>Lambda function ARNs are
-     * exact. For example, if you specify a function ARN
-     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events
-     * will only be logged for
+     * data events for all Lambda functions in your Amazon Web Services account,
+     * specify the prefix as <code>arn:aws:lambda</code>.</p>  <p>This also
+     * enables logging of <code>Invoke</code> activity performed by any user or role in
+     * your Amazon Web Services account, even if that activity is performed on a
+     * function that belongs to another Amazon Web Services account. </p>  </li>
+     * <li> <p>To log data events for a specific Lambda function, specify the function
+     * ARN.</p>  <p>Lambda function ARNs are exact. For example, if you specify a
+     * function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>,
+     * data events will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not
      * be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p> 
-     * </li> <li> <p>To log data events for all DynamoDB tables in your AWS account,
-     * specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li> </ul>
+     * </li> <li> <p>To log data events for all DynamoDB tables in your Amazon Web
+     * Services account, specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li>
+     * </ul>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
     /**
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
      * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
-     * buckets in your AWS account, specify the prefix as <code>arn:aws:s3:::</code>.
-     * </p>  <p>This will also enable logging of data event activity performed by
-     * any user or role in your AWS account, even if that activity is performed on a
-     * bucket that belongs to another AWS account. </p>  </li> <li> <p>To log
-     * data events for all objects in an S3 bucket, specify the bucket and an empty
-     * object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data
-     * events for all objects in this S3 bucket.</p> </li> <li> <p>To log data events
-     * for specific objects, specify the S3 bucket and object prefix such as
+     * buckets in your Amazon Web Services account, specify the prefix as
+     * <code>arn:aws:s3:::</code>.</p>  <p>This also enables logging of data
+     * event activity performed by any user or role in your Amazon Web Services
+     * account, even if that activity is performed on a bucket that belongs to another
+     * Amazon Web Services account.</p>  </li> <li> <p>To log data events for
+     * all objects in an S3 bucket, specify the bucket and an empty object prefix such
+     * as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all
+     * objects in this S3 bucket.</p> </li> <li> <p>To log data events for specific
+     * objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
-     * data events for all Lambda functions in your AWS account, specify the prefix as
-     * <code>arn:aws:lambda</code>.</p>  <p>This will also enable logging of
-     * <code>Invoke</code> activity performed by any user or role in your AWS account,
-     * even if that activity is performed on a function that belongs to another AWS
-     * account. </p>  </li> <li> <p>To log data events for a specific Lambda
-     * function, specify the function ARN.</p>  <p>Lambda function ARNs are
-     * exact. For example, if you specify a function ARN
-     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events
-     * will only be logged for
+     * data events for all Lambda functions in your Amazon Web Services account,
+     * specify the prefix as <code>arn:aws:lambda</code>.</p>  <p>This also
+     * enables logging of <code>Invoke</code> activity performed by any user or role in
+     * your Amazon Web Services account, even if that activity is performed on a
+     * function that belongs to another Amazon Web Services account. </p>  </li>
+     * <li> <p>To log data events for a specific Lambda function, specify the function
+     * ARN.</p>  <p>Lambda function ARNs are exact. For example, if you specify a
+     * function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>,
+     * data events will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not
      * be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p> 
-     * </li> <li> <p>To log data events for all DynamoDB tables in your AWS account,
-     * specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li> </ul>
+     * </li> <li> <p>To log data events for all DynamoDB tables in your Amazon Web
+     * Services account, specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li>
+     * </ul>
      */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
      * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
-     * buckets in your AWS account, specify the prefix as <code>arn:aws:s3:::</code>.
-     * </p>  <p>This will also enable logging of data event activity performed by
-     * any user or role in your AWS account, even if that activity is performed on a
-     * bucket that belongs to another AWS account. </p>  </li> <li> <p>To log
-     * data events for all objects in an S3 bucket, specify the bucket and an empty
-     * object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data
-     * events for all objects in this S3 bucket.</p> </li> <li> <p>To log data events
-     * for specific objects, specify the S3 bucket and object prefix such as
+     * buckets in your Amazon Web Services account, specify the prefix as
+     * <code>arn:aws:s3:::</code>.</p>  <p>This also enables logging of data
+     * event activity performed by any user or role in your Amazon Web Services
+     * account, even if that activity is performed on a bucket that belongs to another
+     * Amazon Web Services account.</p>  </li> <li> <p>To log data events for
+     * all objects in an S3 bucket, specify the bucket and an empty object prefix such
+     * as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all
+     * objects in this S3 bucket.</p> </li> <li> <p>To log data events for specific
+     * objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
-     * data events for all Lambda functions in your AWS account, specify the prefix as
-     * <code>arn:aws:lambda</code>.</p>  <p>This will also enable logging of
-     * <code>Invoke</code> activity performed by any user or role in your AWS account,
-     * even if that activity is performed on a function that belongs to another AWS
-     * account. </p>  </li> <li> <p>To log data events for a specific Lambda
-     * function, specify the function ARN.</p>  <p>Lambda function ARNs are
-     * exact. For example, if you specify a function ARN
-     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events
-     * will only be logged for
+     * data events for all Lambda functions in your Amazon Web Services account,
+     * specify the prefix as <code>arn:aws:lambda</code>.</p>  <p>This also
+     * enables logging of <code>Invoke</code> activity performed by any user or role in
+     * your Amazon Web Services account, even if that activity is performed on a
+     * function that belongs to another Amazon Web Services account. </p>  </li>
+     * <li> <p>To log data events for a specific Lambda function, specify the function
+     * ARN.</p>  <p>Lambda function ARNs are exact. For example, if you specify a
+     * function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>,
+     * data events will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not
      * be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p> 
-     * </li> <li> <p>To log data events for all DynamoDB tables in your AWS account,
-     * specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li> </ul>
+     * </li> <li> <p>To log data events for all DynamoDB tables in your Amazon Web
+     * Services account, specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li>
+     * </ul>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
      * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
-     * buckets in your AWS account, specify the prefix as <code>arn:aws:s3:::</code>.
-     * </p>  <p>This will also enable logging of data event activity performed by
-     * any user or role in your AWS account, even if that activity is performed on a
-     * bucket that belongs to another AWS account. </p>  </li> <li> <p>To log
-     * data events for all objects in an S3 bucket, specify the bucket and an empty
-     * object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data
-     * events for all objects in this S3 bucket.</p> </li> <li> <p>To log data events
-     * for specific objects, specify the S3 bucket and object prefix such as
+     * buckets in your Amazon Web Services account, specify the prefix as
+     * <code>arn:aws:s3:::</code>.</p>  <p>This also enables logging of data
+     * event activity performed by any user or role in your Amazon Web Services
+     * account, even if that activity is performed on a bucket that belongs to another
+     * Amazon Web Services account.</p>  </li> <li> <p>To log data events for
+     * all objects in an S3 bucket, specify the bucket and an empty object prefix such
+     * as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all
+     * objects in this S3 bucket.</p> </li> <li> <p>To log data events for specific
+     * objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
-     * data events for all Lambda functions in your AWS account, specify the prefix as
-     * <code>arn:aws:lambda</code>.</p>  <p>This will also enable logging of
-     * <code>Invoke</code> activity performed by any user or role in your AWS account,
-     * even if that activity is performed on a function that belongs to another AWS
-     * account. </p>  </li> <li> <p>To log data events for a specific Lambda
-     * function, specify the function ARN.</p>  <p>Lambda function ARNs are
-     * exact. For example, if you specify a function ARN
-     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events
-     * will only be logged for
+     * data events for all Lambda functions in your Amazon Web Services account,
+     * specify the prefix as <code>arn:aws:lambda</code>.</p>  <p>This also
+     * enables logging of <code>Invoke</code> activity performed by any user or role in
+     * your Amazon Web Services account, even if that activity is performed on a
+     * function that belongs to another Amazon Web Services account. </p>  </li>
+     * <li> <p>To log data events for a specific Lambda function, specify the function
+     * ARN.</p>  <p>Lambda function ARNs are exact. For example, if you specify a
+     * function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>,
+     * data events will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not
      * be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p> 
-     * </li> <li> <p>To log data events for all DynamoDB tables in your AWS account,
-     * specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li> </ul>
+     * </li> <li> <p>To log data events for all DynamoDB tables in your Amazon Web
+     * Services account, specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li>
+     * </ul>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
      * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
-     * buckets in your AWS account, specify the prefix as <code>arn:aws:s3:::</code>.
-     * </p>  <p>This will also enable logging of data event activity performed by
-     * any user or role in your AWS account, even if that activity is performed on a
-     * bucket that belongs to another AWS account. </p>  </li> <li> <p>To log
-     * data events for all objects in an S3 bucket, specify the bucket and an empty
-     * object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data
-     * events for all objects in this S3 bucket.</p> </li> <li> <p>To log data events
-     * for specific objects, specify the S3 bucket and object prefix such as
+     * buckets in your Amazon Web Services account, specify the prefix as
+     * <code>arn:aws:s3:::</code>.</p>  <p>This also enables logging of data
+     * event activity performed by any user or role in your Amazon Web Services
+     * account, even if that activity is performed on a bucket that belongs to another
+     * Amazon Web Services account.</p>  </li> <li> <p>To log data events for
+     * all objects in an S3 bucket, specify the bucket and an empty object prefix such
+     * as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all
+     * objects in this S3 bucket.</p> </li> <li> <p>To log data events for specific
+     * objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
-     * data events for all Lambda functions in your AWS account, specify the prefix as
-     * <code>arn:aws:lambda</code>.</p>  <p>This will also enable logging of
-     * <code>Invoke</code> activity performed by any user or role in your AWS account,
-     * even if that activity is performed on a function that belongs to another AWS
-     * account. </p>  </li> <li> <p>To log data events for a specific Lambda
-     * function, specify the function ARN.</p>  <p>Lambda function ARNs are
-     * exact. For example, if you specify a function ARN
-     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events
-     * will only be logged for
+     * data events for all Lambda functions in your Amazon Web Services account,
+     * specify the prefix as <code>arn:aws:lambda</code>.</p>  <p>This also
+     * enables logging of <code>Invoke</code> activity performed by any user or role in
+     * your Amazon Web Services account, even if that activity is performed on a
+     * function that belongs to another Amazon Web Services account. </p>  </li>
+     * <li> <p>To log data events for a specific Lambda function, specify the function
+     * ARN.</p>  <p>Lambda function ARNs are exact. For example, if you specify a
+     * function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>,
+     * data events will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not
      * be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p> 
-     * </li> <li> <p>To log data events for all DynamoDB tables in your AWS account,
-     * specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li> </ul>
+     * </li> <li> <p>To log data events for all DynamoDB tables in your Amazon Web
+     * Services account, specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li>
+     * </ul>
      */
     inline DataResource& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
     /**
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
      * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
-     * buckets in your AWS account, specify the prefix as <code>arn:aws:s3:::</code>.
-     * </p>  <p>This will also enable logging of data event activity performed by
-     * any user or role in your AWS account, even if that activity is performed on a
-     * bucket that belongs to another AWS account. </p>  </li> <li> <p>To log
-     * data events for all objects in an S3 bucket, specify the bucket and an empty
-     * object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data
-     * events for all objects in this S3 bucket.</p> </li> <li> <p>To log data events
-     * for specific objects, specify the S3 bucket and object prefix such as
+     * buckets in your Amazon Web Services account, specify the prefix as
+     * <code>arn:aws:s3:::</code>.</p>  <p>This also enables logging of data
+     * event activity performed by any user or role in your Amazon Web Services
+     * account, even if that activity is performed on a bucket that belongs to another
+     * Amazon Web Services account.</p>  </li> <li> <p>To log data events for
+     * all objects in an S3 bucket, specify the bucket and an empty object prefix such
+     * as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all
+     * objects in this S3 bucket.</p> </li> <li> <p>To log data events for specific
+     * objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
-     * data events for all Lambda functions in your AWS account, specify the prefix as
-     * <code>arn:aws:lambda</code>.</p>  <p>This will also enable logging of
-     * <code>Invoke</code> activity performed by any user or role in your AWS account,
-     * even if that activity is performed on a function that belongs to another AWS
-     * account. </p>  </li> <li> <p>To log data events for a specific Lambda
-     * function, specify the function ARN.</p>  <p>Lambda function ARNs are
-     * exact. For example, if you specify a function ARN
-     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events
-     * will only be logged for
+     * data events for all Lambda functions in your Amazon Web Services account,
+     * specify the prefix as <code>arn:aws:lambda</code>.</p>  <p>This also
+     * enables logging of <code>Invoke</code> activity performed by any user or role in
+     * your Amazon Web Services account, even if that activity is performed on a
+     * function that belongs to another Amazon Web Services account. </p>  </li>
+     * <li> <p>To log data events for a specific Lambda function, specify the function
+     * ARN.</p>  <p>Lambda function ARNs are exact. For example, if you specify a
+     * function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>,
+     * data events will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not
      * be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p> 
-     * </li> <li> <p>To log data events for all DynamoDB tables in your AWS account,
-     * specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li> </ul>
+     * </li> <li> <p>To log data events for all DynamoDB tables in your Amazon Web
+     * Services account, specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li>
+     * </ul>
      */
     inline DataResource& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
      * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
-     * buckets in your AWS account, specify the prefix as <code>arn:aws:s3:::</code>.
-     * </p>  <p>This will also enable logging of data event activity performed by
-     * any user or role in your AWS account, even if that activity is performed on a
-     * bucket that belongs to another AWS account. </p>  </li> <li> <p>To log
-     * data events for all objects in an S3 bucket, specify the bucket and an empty
-     * object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data
-     * events for all objects in this S3 bucket.</p> </li> <li> <p>To log data events
-     * for specific objects, specify the S3 bucket and object prefix such as
+     * buckets in your Amazon Web Services account, specify the prefix as
+     * <code>arn:aws:s3:::</code>.</p>  <p>This also enables logging of data
+     * event activity performed by any user or role in your Amazon Web Services
+     * account, even if that activity is performed on a bucket that belongs to another
+     * Amazon Web Services account.</p>  </li> <li> <p>To log data events for
+     * all objects in an S3 bucket, specify the bucket and an empty object prefix such
+     * as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all
+     * objects in this S3 bucket.</p> </li> <li> <p>To log data events for specific
+     * objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
-     * data events for all Lambda functions in your AWS account, specify the prefix as
-     * <code>arn:aws:lambda</code>.</p>  <p>This will also enable logging of
-     * <code>Invoke</code> activity performed by any user or role in your AWS account,
-     * even if that activity is performed on a function that belongs to another AWS
-     * account. </p>  </li> <li> <p>To log data events for a specific Lambda
-     * function, specify the function ARN.</p>  <p>Lambda function ARNs are
-     * exact. For example, if you specify a function ARN
-     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events
-     * will only be logged for
+     * data events for all Lambda functions in your Amazon Web Services account,
+     * specify the prefix as <code>arn:aws:lambda</code>.</p>  <p>This also
+     * enables logging of <code>Invoke</code> activity performed by any user or role in
+     * your Amazon Web Services account, even if that activity is performed on a
+     * function that belongs to another Amazon Web Services account. </p>  </li>
+     * <li> <p>To log data events for a specific Lambda function, specify the function
+     * ARN.</p>  <p>Lambda function ARNs are exact. For example, if you specify a
+     * function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>,
+     * data events will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not
      * be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p> 
-     * </li> <li> <p>To log data events for all DynamoDB tables in your AWS account,
-     * specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li> </ul>
+     * </li> <li> <p>To log data events for all DynamoDB tables in your Amazon Web
+     * Services account, specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li>
+     * </ul>
      */
     inline DataResource& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
      * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
-     * buckets in your AWS account, specify the prefix as <code>arn:aws:s3:::</code>.
-     * </p>  <p>This will also enable logging of data event activity performed by
-     * any user or role in your AWS account, even if that activity is performed on a
-     * bucket that belongs to another AWS account. </p>  </li> <li> <p>To log
-     * data events for all objects in an S3 bucket, specify the bucket and an empty
-     * object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data
-     * events for all objects in this S3 bucket.</p> </li> <li> <p>To log data events
-     * for specific objects, specify the S3 bucket and object prefix such as
+     * buckets in your Amazon Web Services account, specify the prefix as
+     * <code>arn:aws:s3:::</code>.</p>  <p>This also enables logging of data
+     * event activity performed by any user or role in your Amazon Web Services
+     * account, even if that activity is performed on a bucket that belongs to another
+     * Amazon Web Services account.</p>  </li> <li> <p>To log data events for
+     * all objects in an S3 bucket, specify the bucket and an empty object prefix such
+     * as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all
+     * objects in this S3 bucket.</p> </li> <li> <p>To log data events for specific
+     * objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
-     * data events for all Lambda functions in your AWS account, specify the prefix as
-     * <code>arn:aws:lambda</code>.</p>  <p>This will also enable logging of
-     * <code>Invoke</code> activity performed by any user or role in your AWS account,
-     * even if that activity is performed on a function that belongs to another AWS
-     * account. </p>  </li> <li> <p>To log data events for a specific Lambda
-     * function, specify the function ARN.</p>  <p>Lambda function ARNs are
-     * exact. For example, if you specify a function ARN
-     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events
-     * will only be logged for
+     * data events for all Lambda functions in your Amazon Web Services account,
+     * specify the prefix as <code>arn:aws:lambda</code>.</p>  <p>This also
+     * enables logging of <code>Invoke</code> activity performed by any user or role in
+     * your Amazon Web Services account, even if that activity is performed on a
+     * function that belongs to another Amazon Web Services account. </p>  </li>
+     * <li> <p>To log data events for a specific Lambda function, specify the function
+     * ARN.</p>  <p>Lambda function ARNs are exact. For example, if you specify a
+     * function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>,
+     * data events will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not
      * be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p> 
-     * </li> <li> <p>To log data events for all DynamoDB tables in your AWS account,
-     * specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li> </ul>
+     * </li> <li> <p>To log data events for all DynamoDB tables in your Amazon Web
+     * Services account, specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li>
+     * </ul>
      */
     inline DataResource& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
      * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
-     * buckets in your AWS account, specify the prefix as <code>arn:aws:s3:::</code>.
-     * </p>  <p>This will also enable logging of data event activity performed by
-     * any user or role in your AWS account, even if that activity is performed on a
-     * bucket that belongs to another AWS account. </p>  </li> <li> <p>To log
-     * data events for all objects in an S3 bucket, specify the bucket and an empty
-     * object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data
-     * events for all objects in this S3 bucket.</p> </li> <li> <p>To log data events
-     * for specific objects, specify the S3 bucket and object prefix such as
+     * buckets in your Amazon Web Services account, specify the prefix as
+     * <code>arn:aws:s3:::</code>.</p>  <p>This also enables logging of data
+     * event activity performed by any user or role in your Amazon Web Services
+     * account, even if that activity is performed on a bucket that belongs to another
+     * Amazon Web Services account.</p>  </li> <li> <p>To log data events for
+     * all objects in an S3 bucket, specify the bucket and an empty object prefix such
+     * as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all
+     * objects in this S3 bucket.</p> </li> <li> <p>To log data events for specific
+     * objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
-     * data events for all Lambda functions in your AWS account, specify the prefix as
-     * <code>arn:aws:lambda</code>.</p>  <p>This will also enable logging of
-     * <code>Invoke</code> activity performed by any user or role in your AWS account,
-     * even if that activity is performed on a function that belongs to another AWS
-     * account. </p>  </li> <li> <p>To log data events for a specific Lambda
-     * function, specify the function ARN.</p>  <p>Lambda function ARNs are
-     * exact. For example, if you specify a function ARN
-     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events
-     * will only be logged for
+     * data events for all Lambda functions in your Amazon Web Services account,
+     * specify the prefix as <code>arn:aws:lambda</code>.</p>  <p>This also
+     * enables logging of <code>Invoke</code> activity performed by any user or role in
+     * your Amazon Web Services account, even if that activity is performed on a
+     * function that belongs to another Amazon Web Services account. </p>  </li>
+     * <li> <p>To log data events for a specific Lambda function, specify the function
+     * ARN.</p>  <p>Lambda function ARNs are exact. For example, if you specify a
+     * function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>,
+     * data events will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not
      * be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p> 
-     * </li> <li> <p>To log data events for all DynamoDB tables in your AWS account,
-     * specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li> </ul>
+     * </li> <li> <p>To log data events for all DynamoDB tables in your Amazon Web
+     * Services account, specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li>
+     * </ul>
      */
     inline DataResource& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 

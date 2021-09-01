@@ -148,24 +148,25 @@ namespace Model
     typedef std::function<void(const CloudTrailClient*, const Model::UpdateTrailRequest&, const Model::UpdateTrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrailResponseReceivedHandler;
 
   /**
-   * <fullname>AWS CloudTrail</fullname> <p>This is the CloudTrail API Reference. It
+   * <fullname>CloudTrail</fullname> <p>This is the CloudTrail API Reference. It
    * provides descriptions of actions, data types, common parameters, and common
-   * errors for CloudTrail.</p> <p>CloudTrail is a web service that records AWS API
-   * calls for your AWS account and delivers log files to an Amazon S3 bucket. The
-   * recorded information includes the identity of the user, the start time of the
-   * AWS API call, the source IP address, the request parameters, and the response
-   * elements returned by the service.</p>  <p>As an alternative to the API,
-   * you can use one of the AWS SDKs, which consist of libraries and sample code for
-   * various programming languages and platforms (Java, Ruby, .NET, iOS, Android,
-   * etc.). The SDKs provide a convenient way to create programmatic access to
-   * AWSCloudTrail. For example, the SDKs take care of cryptographically signing
-   * requests, managing errors, and retrying requests automatically. For information
-   * about the AWS SDKs, including how to download and install them, see the <a
-   * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services page</a>.</p>
-   *  <p>See the <a
-   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html">AWS
-   * CloudTrail User Guide</a> for information about the data that is included with
-   * each AWS API call listed in the log files.</p>
+   * errors for CloudTrail.</p> <p>CloudTrail is a web service that records Amazon
+   * Web Services API calls for your Amazon Web Services account and delivers log
+   * files to an Amazon S3 bucket. The recorded information includes the identity of
+   * the user, the start time of the Amazon Web Services API call, the source IP
+   * address, the request parameters, and the response elements returned by the
+   * service.</p>  <p>As an alternative to the API, you can use one of the
+   * Amazon Web Services SDKs, which consist of libraries and sample code for various
+   * programming languages and platforms (Java, Ruby, .NET, iOS, Android, etc.). The
+   * SDKs provide programmatic access to CloudTrail. For example, the SDKs handle
+   * cryptographically signing requests, managing errors, and retrying requests
+   * automatically. For more information about the Amazon Web Services SDKs,
+   * including how to download and install them, see <a
+   * href="http://aws.amazon.com/tools/">Tools to Build on Amazon Web
+   * Services</a>.</p>  <p>See the <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html">CloudTrail
+   * User Guide</a> for information about the data that is included with each Amazon
+   * Web Services API call listed in the log files.</p>
    */
   class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient
   {
@@ -200,8 +201,8 @@ namespace Model
          * must be unique for a trail; you cannot have two keys with the same name but
          * different values. If you specify a key without a value, the tag will be created
          * with the specified key and a value of null. You can tag a trail that applies to
-         * all AWS Regions only from the Region in which the trail was created (also known
-         * as its home region).</p><p><h3>See Also:</h3>   <a
+         * all Amazon Web Services Regions only from the Region in which the trail was
+         * created (also known as its home region).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">AWS
          * API Reference</a></p>
          */
@@ -213,8 +214,8 @@ namespace Model
          * must be unique for a trail; you cannot have two keys with the same name but
          * different values. If you specify a key without a value, the tag will be created
          * with the specified key and a value of null. You can tag a trail that applies to
-         * all AWS Regions only from the Region in which the trail was created (also known
-         * as its home region).</p><p><h3>See Also:</h3>   <a
+         * all Amazon Web Services Regions only from the Region in which the trail was
+         * created (also known as its home region).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">AWS
          * API Reference</a></p>
          *
@@ -228,8 +229,8 @@ namespace Model
          * must be unique for a trail; you cannot have two keys with the same name but
          * different values. If you specify a key without a value, the tag will be created
          * with the specified key and a value of null. You can tag a trail that applies to
-         * all AWS Regions only from the Region in which the trail was created (also known
-         * as its home region).</p><p><h3>See Also:</h3>   <a
+         * all Amazon Web Services Regions only from the Region in which the trail was
+         * created (also known as its home region).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">AWS
          * API Reference</a></p>
          *
@@ -337,7 +338,7 @@ namespace Model
          * resources on which you are logging data events.</p> </li> </ul> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
-         * Data and Management Events for Trails </a> in the <i>AWS CloudTrail User
+         * Data and Management Events for Trails </a> in the <i>CloudTrail User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">AWS
          * API Reference</a></p>
@@ -354,7 +355,7 @@ namespace Model
          * resources on which you are logging data events.</p> </li> </ul> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
-         * Data and Management Events for Trails </a> in the <i>AWS CloudTrail User
+         * Data and Management Events for Trails </a> in the <i>CloudTrail User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">AWS
          * API Reference</a></p>
@@ -373,7 +374,7 @@ namespace Model
          * resources on which you are logging data events.</p> </li> </ul> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
-         * Data and Management Events for Trails </a> in the <i>AWS CloudTrail User
+         * Data and Management Events for Trails </a> in the <i>CloudTrail User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">AWS
          * API Reference</a></p>
@@ -390,7 +391,7 @@ namespace Model
          * have Insights events enabled, the operation throws the exception
          * <code>InsightNotEnabledException</code> </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
-         * CloudTrail Insights Events for Trails </a> in the <i>AWS CloudTrail User
+         * CloudTrail Insights Events for Trails </a> in the <i>CloudTrail User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetInsightSelectors">AWS
          * API Reference</a></p>
@@ -405,7 +406,7 @@ namespace Model
          * have Insights events enabled, the operation throws the exception
          * <code>InsightNotEnabledException</code> </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
-         * CloudTrail Insights Events for Trails </a> in the <i>AWS CloudTrail User
+         * CloudTrail Insights Events for Trails </a> in the <i>CloudTrail User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetInsightSelectors">AWS
          * API Reference</a></p>
@@ -422,7 +423,7 @@ namespace Model
          * have Insights events enabled, the operation throws the exception
          * <code>InsightNotEnabledException</code> </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
-         * CloudTrail Insights Events for Trails </a> in the <i>AWS CloudTrail User
+         * CloudTrail Insights Events for Trails </a> in the <i>CloudTrail User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetInsightSelectors">AWS
          * API Reference</a></p>
@@ -500,10 +501,10 @@ namespace Model
          * <p>Returns all public keys whose private keys were used to sign the digest files
          * within the specified time range. The public key is needed to validate digest
          * files that were signed with its corresponding private key.</p> 
-         * <p>CloudTrail uses different private/public key pairs per region. Each digest
-         * file is signed with a private key unique to its region. Therefore, when you
-         * validate a digest file from a particular region, you must look in the same
-         * region for its corresponding public key.</p> <p><h3>See Also:</h3>   <a
+         * <p>CloudTrail uses different private and public key pairs per region. Each
+         * digest file is signed with a private key unique to its region. When you validate
+         * a digest file from a specific region, you must look in the same region for its
+         * corresponding public key.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">AWS
          * API Reference</a></p>
          */
@@ -513,10 +514,10 @@ namespace Model
          * <p>Returns all public keys whose private keys were used to sign the digest files
          * within the specified time range. The public key is needed to validate digest
          * files that were signed with its corresponding private key.</p> 
-         * <p>CloudTrail uses different private/public key pairs per region. Each digest
-         * file is signed with a private key unique to its region. Therefore, when you
-         * validate a digest file from a particular region, you must look in the same
-         * region for its corresponding public key.</p> <p><h3>See Also:</h3>   <a
+         * <p>CloudTrail uses different private and public key pairs per region. Each
+         * digest file is signed with a private key unique to its region. When you validate
+         * a digest file from a specific region, you must look in the same region for its
+         * corresponding public key.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">AWS
          * API Reference</a></p>
          *
@@ -528,10 +529,10 @@ namespace Model
          * <p>Returns all public keys whose private keys were used to sign the digest files
          * within the specified time range. The public key is needed to validate digest
          * files that were signed with its corresponding private key.</p> 
-         * <p>CloudTrail uses different private/public key pairs per region. Each digest
-         * file is signed with a private key unique to its region. Therefore, when you
-         * validate a digest file from a particular region, you must look in the same
-         * region for its corresponding public key.</p> <p><h3>See Also:</h3>   <a
+         * <p>CloudTrail uses different private and public key pairs per region. Each
+         * digest file is signed with a private key unique to its region. When you validate
+         * a digest file from a specific region, you must look in the same region for its
+         * corresponding public key.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">AWS
          * API Reference</a></p>
          *
@@ -599,17 +600,18 @@ namespace Model
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events">CloudTrail
          * Insights events</a> that are captured by CloudTrail. You can look up events that
          * occurred in a region within the last 90 days. Lookup supports the following
-         * attributes for management events:</p> <ul> <li> <p>AWS access key</p> </li> <li>
+         * attributes for management events:</p> <ul> <li> <p>Amazon Web Services access
+         * key</p> </li> <li> <p>Event ID</p> </li> <li> <p>Event name</p> </li> <li>
+         * <p>Event source</p> </li> <li> <p>Read only</p> </li> <li> <p>Resource name</p>
+         * </li> <li> <p>Resource type</p> </li> <li> <p>User name</p> </li> </ul>
+         * <p>Lookup supports the following attributes for Insights events:</p> <ul> <li>
          * <p>Event ID</p> </li> <li> <p>Event name</p> </li> <li> <p>Event source</p>
-         * </li> <li> <p>Read only</p> </li> <li> <p>Resource name</p> </li> <li>
-         * <p>Resource type</p> </li> <li> <p>User name</p> </li> </ul> <p>Lookup supports
-         * the following attributes for Insights events:</p> <ul> <li> <p>Event ID</p>
-         * </li> <li> <p>Event name</p> </li> <li> <p>Event source</p> </li> </ul> <p>All
-         * attributes are optional. The default number of results returned is 50, with a
-         * maximum of 50 possible. The response includes a token that you can use to get
-         * the next page of results.</p>  <p>The rate of lookup requests is
-         * limited to two per second, per account, per region. If this limit is exceeded, a
-         * throttling error occurs.</p> <p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>All attributes are optional. The default number of results
+         * returned is 50, with a maximum of 50 possible. The response includes a token
+         * that you can use to get the next page of results.</p>  <p>The rate of
+         * lookup requests is limited to two per second, per account, per region. If this
+         * limit is exceeded, a throttling error occurs.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">AWS
          * API Reference</a></p>
          */
@@ -622,17 +624,18 @@ namespace Model
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events">CloudTrail
          * Insights events</a> that are captured by CloudTrail. You can look up events that
          * occurred in a region within the last 90 days. Lookup supports the following
-         * attributes for management events:</p> <ul> <li> <p>AWS access key</p> </li> <li>
+         * attributes for management events:</p> <ul> <li> <p>Amazon Web Services access
+         * key</p> </li> <li> <p>Event ID</p> </li> <li> <p>Event name</p> </li> <li>
+         * <p>Event source</p> </li> <li> <p>Read only</p> </li> <li> <p>Resource name</p>
+         * </li> <li> <p>Resource type</p> </li> <li> <p>User name</p> </li> </ul>
+         * <p>Lookup supports the following attributes for Insights events:</p> <ul> <li>
          * <p>Event ID</p> </li> <li> <p>Event name</p> </li> <li> <p>Event source</p>
-         * </li> <li> <p>Read only</p> </li> <li> <p>Resource name</p> </li> <li>
-         * <p>Resource type</p> </li> <li> <p>User name</p> </li> </ul> <p>Lookup supports
-         * the following attributes for Insights events:</p> <ul> <li> <p>Event ID</p>
-         * </li> <li> <p>Event name</p> </li> <li> <p>Event source</p> </li> </ul> <p>All
-         * attributes are optional. The default number of results returned is 50, with a
-         * maximum of 50 possible. The response includes a token that you can use to get
-         * the next page of results.</p>  <p>The rate of lookup requests is
-         * limited to two per second, per account, per region. If this limit is exceeded, a
-         * throttling error occurs.</p> <p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>All attributes are optional. The default number of results
+         * returned is 50, with a maximum of 50 possible. The response includes a token
+         * that you can use to get the next page of results.</p>  <p>The rate of
+         * lookup requests is limited to two per second, per account, per region. If this
+         * limit is exceeded, a throttling error occurs.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">AWS
          * API Reference</a></p>
          *
@@ -647,17 +650,18 @@ namespace Model
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events">CloudTrail
          * Insights events</a> that are captured by CloudTrail. You can look up events that
          * occurred in a region within the last 90 days. Lookup supports the following
-         * attributes for management events:</p> <ul> <li> <p>AWS access key</p> </li> <li>
+         * attributes for management events:</p> <ul> <li> <p>Amazon Web Services access
+         * key</p> </li> <li> <p>Event ID</p> </li> <li> <p>Event name</p> </li> <li>
+         * <p>Event source</p> </li> <li> <p>Read only</p> </li> <li> <p>Resource name</p>
+         * </li> <li> <p>Resource type</p> </li> <li> <p>User name</p> </li> </ul>
+         * <p>Lookup supports the following attributes for Insights events:</p> <ul> <li>
          * <p>Event ID</p> </li> <li> <p>Event name</p> </li> <li> <p>Event source</p>
-         * </li> <li> <p>Read only</p> </li> <li> <p>Resource name</p> </li> <li>
-         * <p>Resource type</p> </li> <li> <p>User name</p> </li> </ul> <p>Lookup supports
-         * the following attributes for Insights events:</p> <ul> <li> <p>Event ID</p>
-         * </li> <li> <p>Event name</p> </li> <li> <p>Event source</p> </li> </ul> <p>All
-         * attributes are optional. The default number of results returned is 50, with a
-         * maximum of 50 possible. The response includes a token that you can use to get
-         * the next page of results.</p>  <p>The rate of lookup requests is
-         * limited to two per second, per account, per region. If this limit is exceeded, a
-         * throttling error occurs.</p> <p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>All attributes are optional. The default number of results
+         * returned is 50, with a maximum of 50 possible. The response includes a token
+         * that you can use to get the next page of results.</p>  <p>The rate of
+         * lookup requests is limited to two per second, per account, per region. If this
+         * limit is exceeded, a throttling error occurs.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">AWS
          * API Reference</a></p>
          *
@@ -673,9 +677,9 @@ namespace Model
          * data events.</p> <p>When an event occurs in your account, CloudTrail evaluates
          * the event selectors or advanced event selectors in all trails. For each trail,
          * if the event matches any event selector, the trail processes and logs the event.
-         * If the event doesn't match any event selector, the trail doesn't log the event.
-         * </p> <p>Example</p> <ol> <li> <p>You create an event selector for a trail and
-         * specify that you want write-only events.</p> </li> <li> <p>The EC2
+         * If the event doesn't match any event selector, the trail doesn't log the
+         * event.</p> <p>Example</p> <ol> <li> <p>You create an event selector for a trail
+         * and specify that you want write-only events.</p> </li> <li> <p>The EC2
          * <code>GetConsoleOutput</code> and <code>RunInstances</code> API operations occur
          * in your account.</p> </li> <li> <p>CloudTrail evaluates whether the events match
          * your event selectors.</p> </li> <li> <p>The <code>RunInstances</code> is a
@@ -690,17 +694,16 @@ namespace Model
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
          * data and management events for trails </a> and <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
-         * in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.</p> <p>You can
-         * add advanced event selectors, and conditions for your advanced event selectors,
-         * up to a maximum of 500 values for all conditions and selectors on a trail. You
-         * can use either <code>AdvancedEventSelectors</code> or
-         * <code>EventSelectors</code>, but not both. If you apply
-         * <code>AdvancedEventSelectors</code> to a trail, any existing
-         * <code>EventSelectors</code> are overwritten. For more information about advanced
-         * event selectors, see <a
+         * in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p> <p>You can add
+         * advanced event selectors, and conditions for your advanced event selectors, up
+         * to a maximum of 500 values for all conditions and selectors on a trail. You can
+         * use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>,
+         * but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any
+         * existing <code>EventSelectors</code> are overwritten. For more information about
+         * advanced event selectors, see <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-         * data events for trails</a> in the <i>AWS CloudTrail User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * data events for trails</a> in the <i>CloudTrail User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">AWS
          * API Reference</a></p>
          */
@@ -714,9 +717,9 @@ namespace Model
          * data events.</p> <p>When an event occurs in your account, CloudTrail evaluates
          * the event selectors or advanced event selectors in all trails. For each trail,
          * if the event matches any event selector, the trail processes and logs the event.
-         * If the event doesn't match any event selector, the trail doesn't log the event.
-         * </p> <p>Example</p> <ol> <li> <p>You create an event selector for a trail and
-         * specify that you want write-only events.</p> </li> <li> <p>The EC2
+         * If the event doesn't match any event selector, the trail doesn't log the
+         * event.</p> <p>Example</p> <ol> <li> <p>You create an event selector for a trail
+         * and specify that you want write-only events.</p> </li> <li> <p>The EC2
          * <code>GetConsoleOutput</code> and <code>RunInstances</code> API operations occur
          * in your account.</p> </li> <li> <p>CloudTrail evaluates whether the events match
          * your event selectors.</p> </li> <li> <p>The <code>RunInstances</code> is a
@@ -731,17 +734,16 @@ namespace Model
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
          * data and management events for trails </a> and <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
-         * in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.</p> <p>You can
-         * add advanced event selectors, and conditions for your advanced event selectors,
-         * up to a maximum of 500 values for all conditions and selectors on a trail. You
-         * can use either <code>AdvancedEventSelectors</code> or
-         * <code>EventSelectors</code>, but not both. If you apply
-         * <code>AdvancedEventSelectors</code> to a trail, any existing
-         * <code>EventSelectors</code> are overwritten. For more information about advanced
-         * event selectors, see <a
+         * in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p> <p>You can add
+         * advanced event selectors, and conditions for your advanced event selectors, up
+         * to a maximum of 500 values for all conditions and selectors on a trail. You can
+         * use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>,
+         * but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any
+         * existing <code>EventSelectors</code> are overwritten. For more information about
+         * advanced event selectors, see <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-         * data events for trails</a> in the <i>AWS CloudTrail User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * data events for trails</a> in the <i>CloudTrail User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">AWS
          * API Reference</a></p>
          *
@@ -757,9 +759,9 @@ namespace Model
          * data events.</p> <p>When an event occurs in your account, CloudTrail evaluates
          * the event selectors or advanced event selectors in all trails. For each trail,
          * if the event matches any event selector, the trail processes and logs the event.
-         * If the event doesn't match any event selector, the trail doesn't log the event.
-         * </p> <p>Example</p> <ol> <li> <p>You create an event selector for a trail and
-         * specify that you want write-only events.</p> </li> <li> <p>The EC2
+         * If the event doesn't match any event selector, the trail doesn't log the
+         * event.</p> <p>Example</p> <ol> <li> <p>You create an event selector for a trail
+         * and specify that you want write-only events.</p> </li> <li> <p>The EC2
          * <code>GetConsoleOutput</code> and <code>RunInstances</code> API operations occur
          * in your account.</p> </li> <li> <p>CloudTrail evaluates whether the events match
          * your event selectors.</p> </li> <li> <p>The <code>RunInstances</code> is a
@@ -774,17 +776,16 @@ namespace Model
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
          * data and management events for trails </a> and <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
-         * in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.</p> <p>You can
-         * add advanced event selectors, and conditions for your advanced event selectors,
-         * up to a maximum of 500 values for all conditions and selectors on a trail. You
-         * can use either <code>AdvancedEventSelectors</code> or
-         * <code>EventSelectors</code>, but not both. If you apply
-         * <code>AdvancedEventSelectors</code> to a trail, any existing
-         * <code>EventSelectors</code> are overwritten. For more information about advanced
-         * event selectors, see <a
+         * in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p> <p>You can add
+         * advanced event selectors, and conditions for your advanced event selectors, up
+         * to a maximum of 500 values for all conditions and selectors on a trail. You can
+         * use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>,
+         * but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any
+         * existing <code>EventSelectors</code> are overwritten. For more information about
+         * advanced event selectors, see <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-         * data events for trails</a> in the <i>AWS CloudTrail User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * data events for trails</a> in the <i>CloudTrail User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">AWS
          * API Reference</a></p>
          *
@@ -796,9 +797,8 @@ namespace Model
          * <p>Lets you enable Insights event logging by specifying the Insights selectors
          * that you want to enable on an existing trail. You also use
          * <code>PutInsightSelectors</code> to turn off Insights event logging, by passing
-         * an empty list of insight types. In this release, only
-         * <code>ApiCallRateInsight</code> is supported as an Insights
-         * selector.</p><p><h3>See Also:</h3>   <a
+         * an empty list of insight types. The valid Insights event type in this release is
+         * <code>ApiCallRateInsight</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutInsightSelectors">AWS
          * API Reference</a></p>
          */
@@ -808,9 +808,8 @@ namespace Model
          * <p>Lets you enable Insights event logging by specifying the Insights selectors
          * that you want to enable on an existing trail. You also use
          * <code>PutInsightSelectors</code> to turn off Insights event logging, by passing
-         * an empty list of insight types. In this release, only
-         * <code>ApiCallRateInsight</code> is supported as an Insights
-         * selector.</p><p><h3>See Also:</h3>   <a
+         * an empty list of insight types. The valid Insights event type in this release is
+         * <code>ApiCallRateInsight</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutInsightSelectors">AWS
          * API Reference</a></p>
          *
@@ -822,9 +821,8 @@ namespace Model
          * <p>Lets you enable Insights event logging by specifying the Insights selectors
          * that you want to enable on an existing trail. You also use
          * <code>PutInsightSelectors</code> to turn off Insights event logging, by passing
-         * an empty list of insight types. In this release, only
-         * <code>ApiCallRateInsight</code> is supported as an Insights
-         * selector.</p><p><h3>See Also:</h3>   <a
+         * an empty list of insight types. The valid Insights event type in this release is
+         * <code>ApiCallRateInsight</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutInsightSelectors">AWS
          * API Reference</a></p>
          *
@@ -858,22 +856,22 @@ namespace Model
         virtual void RemoveTagsAsync(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts the recording of AWS API calls and log file delivery for a trail. For
-         * a trail that is enabled in all regions, this operation must be called from the
-         * region in which the trail was created. This operation cannot be called on the
-         * shadow trails (replicated trails in other regions) of a trail that is enabled in
-         * all regions.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts the recording of Amazon Web Services API calls and log file delivery
+         * for a trail. For a trail that is enabled in all regions, this operation must be
+         * called from the region in which the trail was created. This operation cannot be
+         * called on the shadow trails (replicated trails in other regions) of a trail that
+         * is enabled in all regions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging">AWS
          * API Reference</a></p>
          */
         virtual Model::StartLoggingOutcome StartLogging(const Model::StartLoggingRequest& request) const;
 
         /**
-         * <p>Starts the recording of AWS API calls and log file delivery for a trail. For
-         * a trail that is enabled in all regions, this operation must be called from the
-         * region in which the trail was created. This operation cannot be called on the
-         * shadow trails (replicated trails in other regions) of a trail that is enabled in
-         * all regions.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts the recording of Amazon Web Services API calls and log file delivery
+         * for a trail. For a trail that is enabled in all regions, this operation must be
+         * called from the region in which the trail was created. This operation cannot be
+         * called on the shadow trails (replicated trails in other regions) of a trail that
+         * is enabled in all regions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging">AWS
          * API Reference</a></p>
          *
@@ -882,11 +880,11 @@ namespace Model
         virtual Model::StartLoggingOutcomeCallable StartLoggingCallable(const Model::StartLoggingRequest& request) const;
 
         /**
-         * <p>Starts the recording of AWS API calls and log file delivery for a trail. For
-         * a trail that is enabled in all regions, this operation must be called from the
-         * region in which the trail was created. This operation cannot be called on the
-         * shadow trails (replicated trails in other regions) of a trail that is enabled in
-         * all regions.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts the recording of Amazon Web Services API calls and log file delivery
+         * for a trail. For a trail that is enabled in all regions, this operation must be
+         * called from the region in which the trail was created. This operation cannot be
+         * called on the shadow trails (replicated trails in other regions) of a trail that
+         * is enabled in all regions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging">AWS
          * API Reference</a></p>
          *
@@ -895,11 +893,11 @@ namespace Model
         virtual void StartLoggingAsync(const Model::StartLoggingRequest& request, const StartLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Suspends the recording of AWS API calls and log file delivery for the
-         * specified trail. Under most circumstances, there is no need to use this action.
-         * You can update a trail without stopping it first. This action is the only way to
-         * stop recording. For a trail enabled in all regions, this operation must be
-         * called from the region in which the trail was created, or an
+         * <p>Suspends the recording of Amazon Web Services API calls and log file delivery
+         * for the specified trail. Under most circumstances, there is no need to use this
+         * action. You can update a trail without stopping it first. This action is the
+         * only way to stop recording. For a trail enabled in all regions, this operation
+         * must be called from the region in which the trail was created, or an
          * <code>InvalidHomeRegionException</code> will occur. This operation cannot be
          * called on the shadow trails (replicated trails in other regions) of a trail
          * enabled in all regions.</p><p><h3>See Also:</h3>   <a
@@ -909,11 +907,11 @@ namespace Model
         virtual Model::StopLoggingOutcome StopLogging(const Model::StopLoggingRequest& request) const;
 
         /**
-         * <p>Suspends the recording of AWS API calls and log file delivery for the
-         * specified trail. Under most circumstances, there is no need to use this action.
-         * You can update a trail without stopping it first. This action is the only way to
-         * stop recording. For a trail enabled in all regions, this operation must be
-         * called from the region in which the trail was created, or an
+         * <p>Suspends the recording of Amazon Web Services API calls and log file delivery
+         * for the specified trail. Under most circumstances, there is no need to use this
+         * action. You can update a trail without stopping it first. This action is the
+         * only way to stop recording. For a trail enabled in all regions, this operation
+         * must be called from the region in which the trail was created, or an
          * <code>InvalidHomeRegionException</code> will occur. This operation cannot be
          * called on the shadow trails (replicated trails in other regions) of a trail
          * enabled in all regions.</p><p><h3>See Also:</h3>   <a
@@ -925,11 +923,11 @@ namespace Model
         virtual Model::StopLoggingOutcomeCallable StopLoggingCallable(const Model::StopLoggingRequest& request) const;
 
         /**
-         * <p>Suspends the recording of AWS API calls and log file delivery for the
-         * specified trail. Under most circumstances, there is no need to use this action.
-         * You can update a trail without stopping it first. This action is the only way to
-         * stop recording. For a trail enabled in all regions, this operation must be
-         * called from the region in which the trail was created, or an
+         * <p>Suspends the recording of Amazon Web Services API calls and log file delivery
+         * for the specified trail. Under most circumstances, there is no need to use this
+         * action. You can update a trail without stopping it first. This action is the
+         * only way to stop recording. For a trail enabled in all regions, this operation
+         * must be called from the region in which the trail was created, or an
          * <code>InvalidHomeRegionException</code> will occur. This operation cannot be
          * called on the shadow trails (replicated trails in other regions) of a trail
          * enabled in all regions.</p><p><h3>See Also:</h3>   <a
@@ -941,26 +939,26 @@ namespace Model
         virtual void StopLoggingAsync(const Model::StopLoggingRequest& request, const StopLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the settings that specify delivery of log files. Changes to a trail
-         * do not require stopping the CloudTrail service. Use this action to designate an
-         * existing bucket for log delivery. If the existing bucket has previously been a
-         * target for CloudTrail log files, an IAM policy exists for the bucket.
-         * <code>UpdateTrail</code> must be called from the region in which the trail was
-         * created; otherwise, an <code>InvalidHomeRegionException</code> is
-         * thrown.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates trail settings that control what events you are logging, and how to
+         * handle log files. Changes to a trail do not require stopping the CloudTrail
+         * service. Use this action to designate an existing bucket for log delivery. If
+         * the existing bucket has previously been a target for CloudTrail log files, an
+         * IAM policy exists for the bucket. <code>UpdateTrail</code> must be called from
+         * the region in which the trail was created; otherwise, an
+         * <code>InvalidHomeRegionException</code> is thrown.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateTrailOutcome UpdateTrail(const Model::UpdateTrailRequest& request) const;
 
         /**
-         * <p>Updates the settings that specify delivery of log files. Changes to a trail
-         * do not require stopping the CloudTrail service. Use this action to designate an
-         * existing bucket for log delivery. If the existing bucket has previously been a
-         * target for CloudTrail log files, an IAM policy exists for the bucket.
-         * <code>UpdateTrail</code> must be called from the region in which the trail was
-         * created; otherwise, an <code>InvalidHomeRegionException</code> is
-         * thrown.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates trail settings that control what events you are logging, and how to
+         * handle log files. Changes to a trail do not require stopping the CloudTrail
+         * service. Use this action to designate an existing bucket for log delivery. If
+         * the existing bucket has previously been a target for CloudTrail log files, an
+         * IAM policy exists for the bucket. <code>UpdateTrail</code> must be called from
+         * the region in which the trail was created; otherwise, an
+         * <code>InvalidHomeRegionException</code> is thrown.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail">AWS
          * API Reference</a></p>
          *
@@ -969,13 +967,13 @@ namespace Model
         virtual Model::UpdateTrailOutcomeCallable UpdateTrailCallable(const Model::UpdateTrailRequest& request) const;
 
         /**
-         * <p>Updates the settings that specify delivery of log files. Changes to a trail
-         * do not require stopping the CloudTrail service. Use this action to designate an
-         * existing bucket for log delivery. If the existing bucket has previously been a
-         * target for CloudTrail log files, an IAM policy exists for the bucket.
-         * <code>UpdateTrail</code> must be called from the region in which the trail was
-         * created; otherwise, an <code>InvalidHomeRegionException</code> is
-         * thrown.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates trail settings that control what events you are logging, and how to
+         * handle log files. Changes to a trail do not require stopping the CloudTrail
+         * service. Use this action to designate an existing bucket for log delivery. If
+         * the existing bucket has previously been a target for CloudTrail log files, an
+         * IAM policy exists for the bucket. <code>UpdateTrail</code> must be called from
+         * the region in which the trail was created; otherwise, an
+         * <code>InvalidHomeRegionException</code> is thrown.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail">AWS
          * API Reference</a></p>
          *

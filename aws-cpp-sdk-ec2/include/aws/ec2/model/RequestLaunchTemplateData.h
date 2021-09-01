@@ -687,82 +687,122 @@ namespace Model
 
 
     /**
-     * <p>The Base64-encoded user data to make available to the instance. For more
-     * information, see <a
+     * <p>The user data to make available to the instance. You must provide
+     * base64-encoded text. User data is limited to 16 KB. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * Commands on Your Linux Instance at Launch</a> (Linux) or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows).</p>
+     * User Data</a> (Windows).</p> <p>If you are creating the launch template for use
+     * with Batch, the user data must be provided in the <a
+     * href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">
+     * MIME multi-part archive format</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon
+     * EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>The Base64-encoded user data to make available to the instance. For more
-     * information, see <a
+     * <p>The user data to make available to the instance. You must provide
+     * base64-encoded text. User data is limited to 16 KB. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * Commands on Your Linux Instance at Launch</a> (Linux) or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows).</p>
+     * User Data</a> (Windows).</p> <p>If you are creating the launch template for use
+     * with Batch, the user data must be provided in the <a
+     * href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">
+     * MIME multi-part archive format</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon
+     * EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
      */
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
     /**
-     * <p>The Base64-encoded user data to make available to the instance. For more
-     * information, see <a
+     * <p>The user data to make available to the instance. You must provide
+     * base64-encoded text. User data is limited to 16 KB. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * Commands on Your Linux Instance at Launch</a> (Linux) or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows).</p>
+     * User Data</a> (Windows).</p> <p>If you are creating the launch template for use
+     * with Batch, the user data must be provided in the <a
+     * href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">
+     * MIME multi-part archive format</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon
+     * EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>The Base64-encoded user data to make available to the instance. For more
-     * information, see <a
+     * <p>The user data to make available to the instance. You must provide
+     * base64-encoded text. User data is limited to 16 KB. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * Commands on Your Linux Instance at Launch</a> (Linux) or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows).</p>
+     * User Data</a> (Windows).</p> <p>If you are creating the launch template for use
+     * with Batch, the user data must be provided in the <a
+     * href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">
+     * MIME multi-part archive format</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon
+     * EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
-     * <p>The Base64-encoded user data to make available to the instance. For more
-     * information, see <a
+     * <p>The user data to make available to the instance. You must provide
+     * base64-encoded text. User data is limited to 16 KB. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * Commands on Your Linux Instance at Launch</a> (Linux) or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows).</p>
+     * User Data</a> (Windows).</p> <p>If you are creating the launch template for use
+     * with Batch, the user data must be provided in the <a
+     * href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">
+     * MIME multi-part archive format</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon
+     * EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
     /**
-     * <p>The Base64-encoded user data to make available to the instance. For more
-     * information, see <a
+     * <p>The user data to make available to the instance. You must provide
+     * base64-encoded text. User data is limited to 16 KB. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * Commands on Your Linux Instance at Launch</a> (Linux) or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows).</p>
+     * User Data</a> (Windows).</p> <p>If you are creating the launch template for use
+     * with Batch, the user data must be provided in the <a
+     * href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">
+     * MIME multi-part archive format</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon
+     * EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
      */
     inline RequestLaunchTemplateData& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The Base64-encoded user data to make available to the instance. For more
-     * information, see <a
+     * <p>The user data to make available to the instance. You must provide
+     * base64-encoded text. User data is limited to 16 KB. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * Commands on Your Linux Instance at Launch</a> (Linux) or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows).</p>
+     * User Data</a> (Windows).</p> <p>If you are creating the launch template for use
+     * with Batch, the user data must be provided in the <a
+     * href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">
+     * MIME multi-part archive format</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon
+     * EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
      */
     inline RequestLaunchTemplateData& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
-     * <p>The Base64-encoded user data to make available to the instance. For more
-     * information, see <a
+     * <p>The user data to make available to the instance. You must provide
+     * base64-encoded text. User data is limited to 16 KB. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * Commands on Your Linux Instance at Launch</a> (Linux) or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows).</p>
+     * User Data</a> (Windows).</p> <p>If you are creating the launch template for use
+     * with Batch, the user data must be provided in the <a
+     * href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">
+     * MIME multi-part archive format</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon
+     * EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
      */
     inline RequestLaunchTemplateData& WithUserData(const char* value) { SetUserData(value); return *this;}
 

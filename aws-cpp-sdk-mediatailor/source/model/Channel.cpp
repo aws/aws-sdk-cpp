@@ -23,6 +23,7 @@ Channel::Channel() :
     m_channelNameHasBeenSet(false),
     m_channelStateHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
+    m_fillerSlateHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_playbackModeHasBeenSet(false),
@@ -35,6 +36,7 @@ Channel::Channel(JsonView jsonValue) :
     m_channelNameHasBeenSet(false),
     m_channelStateHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
+    m_fillerSlateHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_playbackModeHasBeenSet(false),
@@ -71,6 +73,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_creationTime = jsonValue.GetDouble("CreationTime");
 
     m_creationTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FillerSlate"))
+  {
+    m_fillerSlate = jsonValue.GetObject("FillerSlate");
+
+    m_fillerSlateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LastModifiedTime"))
@@ -135,6 +144,12 @@ JsonValue Channel::Jsonize() const
   if(m_creationTimeHasBeenSet)
   {
    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  }
+
+  if(m_fillerSlateHasBeenSet)
+  {
+   payload.WithObject("FillerSlate", m_fillerSlate.Jsonize());
+
   }
 
   if(m_lastModifiedTimeHasBeenSet)

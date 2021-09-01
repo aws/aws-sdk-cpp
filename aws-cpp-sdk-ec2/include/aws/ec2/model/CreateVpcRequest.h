@@ -40,71 +40,6 @@ namespace Model
   public:
 
     /**
-     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
-     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
-
-    /**
-     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
-     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
-
-    /**
-     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
-     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
-
-    /**
-     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
-     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
-
-    /**
-     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
-     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
-
-    /**
-     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
-     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline CreateVpcRequest& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
-
-    /**
-     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
-     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline CreateVpcRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
-
-    /**
-     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
-     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline CreateVpcRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
-
-
-    /**
      * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the
      * VPC. You cannot specify the range of IP addresses, or the size of the CIDR
      * block.</p>
@@ -456,10 +391,72 @@ namespace Model
      */
     inline CreateVpcRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
-  private:
 
-    Aws::String m_cidrBlock;
-    bool m_cidrBlockHasBeenSet;
+    /**
+     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
+     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
+
+    /**
+     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
+     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
+
+    /**
+     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
+     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
+
+    /**
+     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
+     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
+
+    /**
+     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
+     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
+
+    /**
+     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
+     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline CreateVpcRequest& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
+
+    /**
+     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
+     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline CreateVpcRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
+     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline CreateVpcRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
+
+  private:
 
     bool m_amazonProvidedIpv6CidrBlock;
     bool m_amazonProvidedIpv6CidrBlockHasBeenSet;
@@ -481,6 +478,9 @@ namespace Model
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet;
+
+    Aws::String m_cidrBlock;
+    bool m_cidrBlockHasBeenSet;
   };
 
 } // namespace Model

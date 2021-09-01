@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>An organization config rule that has information about config rules that AWS
+   * <p>An organization config rule that has information about config rules that
    * Config creates in member accounts.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/OrganizationConfigRule">AWS
    * API Reference</a></p>

@@ -27,9 +27,9 @@ namespace Model
 
   /**
    * <p>An object that specifies organization managed rule metadata such as resource
-   * type and ID of AWS resource along with the rule identifier. It also provides the
-   * frequency with which you want AWS Config to run evaluations for the rule if the
-   * trigger type is periodic.</p><p><h3>See Also:</h3>   <a
+   * type and ID of Amazon Web Services resource along with the rule identifier. It
+   * also provides the frequency with which you want Config to run evaluations for
+   * the rule if the trigger type is periodic.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/OrganizationManagedRuleMetadata">AWS
    * API Reference</a></p>
    */
@@ -88,7 +88,7 @@ namespace Model
      * For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a
      * managed rule, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p>
+     * Config managed rules</a>.</p>
      */
     inline const Aws::String& GetRuleIdentifier() const{ return m_ruleIdentifier; }
 
@@ -97,7 +97,7 @@ namespace Model
      * For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a
      * managed rule, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p>
+     * Config managed rules</a>.</p>
      */
     inline bool RuleIdentifierHasBeenSet() const { return m_ruleIdentifierHasBeenSet; }
 
@@ -106,7 +106,7 @@ namespace Model
      * For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a
      * managed rule, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p>
+     * Config managed rules</a>.</p>
      */
     inline void SetRuleIdentifier(const Aws::String& value) { m_ruleIdentifierHasBeenSet = true; m_ruleIdentifier = value; }
 
@@ -115,7 +115,7 @@ namespace Model
      * For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a
      * managed rule, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p>
+     * Config managed rules</a>.</p>
      */
     inline void SetRuleIdentifier(Aws::String&& value) { m_ruleIdentifierHasBeenSet = true; m_ruleIdentifier = std::move(value); }
 
@@ -124,7 +124,7 @@ namespace Model
      * For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a
      * managed rule, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p>
+     * Config managed rules</a>.</p>
      */
     inline void SetRuleIdentifier(const char* value) { m_ruleIdentifierHasBeenSet = true; m_ruleIdentifier.assign(value); }
 
@@ -133,7 +133,7 @@ namespace Model
      * For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a
      * managed rule, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p>
+     * Config managed rules</a>.</p>
      */
     inline OrganizationManagedRuleMetadata& WithRuleIdentifier(const Aws::String& value) { SetRuleIdentifier(value); return *this;}
 
@@ -142,7 +142,7 @@ namespace Model
      * For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a
      * managed rule, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p>
+     * Config managed rules</a>.</p>
      */
     inline OrganizationManagedRuleMetadata& WithRuleIdentifier(Aws::String&& value) { SetRuleIdentifier(std::move(value)); return *this;}
 
@@ -151,7 +151,7 @@ namespace Model
      * For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a
      * managed rule, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p>
+     * Config managed rules</a>.</p>
      */
     inline OrganizationManagedRuleMetadata& WithRuleIdentifier(const char* value) { SetRuleIdentifier(value); return *this;}
 
@@ -206,8 +206,8 @@ namespace Model
 
 
     /**
-     * <p>The maximum frequency with which AWS Config runs evaluations for a rule. You
-     * are using an AWS managed rule that is triggered at a periodic frequency.</p>
+     * <p>The maximum frequency with which Config runs evaluations for a rule. You are
+     * using an Config managed rule that is triggered at a periodic frequency.</p>
      *  <p>By default, rules with a periodic trigger are evaluated every 24
      * hours. To change the frequency, specify a valid value for the
      * <code>MaximumExecutionFrequency</code> parameter.</p> 
@@ -215,8 +215,8 @@ namespace Model
     inline const MaximumExecutionFrequency& GetMaximumExecutionFrequency() const{ return m_maximumExecutionFrequency; }
 
     /**
-     * <p>The maximum frequency with which AWS Config runs evaluations for a rule. You
-     * are using an AWS managed rule that is triggered at a periodic frequency.</p>
+     * <p>The maximum frequency with which Config runs evaluations for a rule. You are
+     * using an Config managed rule that is triggered at a periodic frequency.</p>
      *  <p>By default, rules with a periodic trigger are evaluated every 24
      * hours. To change the frequency, specify a valid value for the
      * <code>MaximumExecutionFrequency</code> parameter.</p> 
@@ -224,8 +224,8 @@ namespace Model
     inline bool MaximumExecutionFrequencyHasBeenSet() const { return m_maximumExecutionFrequencyHasBeenSet; }
 
     /**
-     * <p>The maximum frequency with which AWS Config runs evaluations for a rule. You
-     * are using an AWS managed rule that is triggered at a periodic frequency.</p>
+     * <p>The maximum frequency with which Config runs evaluations for a rule. You are
+     * using an Config managed rule that is triggered at a periodic frequency.</p>
      *  <p>By default, rules with a periodic trigger are evaluated every 24
      * hours. To change the frequency, specify a valid value for the
      * <code>MaximumExecutionFrequency</code> parameter.</p> 
@@ -233,8 +233,8 @@ namespace Model
     inline void SetMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = value; }
 
     /**
-     * <p>The maximum frequency with which AWS Config runs evaluations for a rule. You
-     * are using an AWS managed rule that is triggered at a periodic frequency.</p>
+     * <p>The maximum frequency with which Config runs evaluations for a rule. You are
+     * using an Config managed rule that is triggered at a periodic frequency.</p>
      *  <p>By default, rules with a periodic trigger are evaluated every 24
      * hours. To change the frequency, specify a valid value for the
      * <code>MaximumExecutionFrequency</code> parameter.</p> 
@@ -242,8 +242,8 @@ namespace Model
     inline void SetMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = std::move(value); }
 
     /**
-     * <p>The maximum frequency with which AWS Config runs evaluations for a rule. You
-     * are using an AWS managed rule that is triggered at a periodic frequency.</p>
+     * <p>The maximum frequency with which Config runs evaluations for a rule. You are
+     * using an Config managed rule that is triggered at a periodic frequency.</p>
      *  <p>By default, rules with a periodic trigger are evaluated every 24
      * hours. To change the frequency, specify a valid value for the
      * <code>MaximumExecutionFrequency</code> parameter.</p> 
@@ -251,8 +251,8 @@ namespace Model
     inline OrganizationManagedRuleMetadata& WithMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { SetMaximumExecutionFrequency(value); return *this;}
 
     /**
-     * <p>The maximum frequency with which AWS Config runs evaluations for a rule. You
-     * are using an AWS managed rule that is triggered at a periodic frequency.</p>
+     * <p>The maximum frequency with which Config runs evaluations for a rule. You are
+     * using an Config managed rule that is triggered at a periodic frequency.</p>
      *  <p>By default, rules with a periodic trigger are evaluated every 24
      * hours. To change the frequency, specify a valid value for the
      * <code>MaximumExecutionFrequency</code> parameter.</p> 
@@ -261,88 +261,88 @@ namespace Model
 
 
     /**
-     * <p>The type of the AWS resource that was evaluated.</p>
+     * <p>The type of the Amazon Web Services resource that was evaluated.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceTypesScope() const{ return m_resourceTypesScope; }
 
     /**
-     * <p>The type of the AWS resource that was evaluated.</p>
+     * <p>The type of the Amazon Web Services resource that was evaluated.</p>
      */
     inline bool ResourceTypesScopeHasBeenSet() const { return m_resourceTypesScopeHasBeenSet; }
 
     /**
-     * <p>The type of the AWS resource that was evaluated.</p>
+     * <p>The type of the Amazon Web Services resource that was evaluated.</p>
      */
     inline void SetResourceTypesScope(const Aws::Vector<Aws::String>& value) { m_resourceTypesScopeHasBeenSet = true; m_resourceTypesScope = value; }
 
     /**
-     * <p>The type of the AWS resource that was evaluated.</p>
+     * <p>The type of the Amazon Web Services resource that was evaluated.</p>
      */
     inline void SetResourceTypesScope(Aws::Vector<Aws::String>&& value) { m_resourceTypesScopeHasBeenSet = true; m_resourceTypesScope = std::move(value); }
 
     /**
-     * <p>The type of the AWS resource that was evaluated.</p>
+     * <p>The type of the Amazon Web Services resource that was evaluated.</p>
      */
     inline OrganizationManagedRuleMetadata& WithResourceTypesScope(const Aws::Vector<Aws::String>& value) { SetResourceTypesScope(value); return *this;}
 
     /**
-     * <p>The type of the AWS resource that was evaluated.</p>
+     * <p>The type of the Amazon Web Services resource that was evaluated.</p>
      */
     inline OrganizationManagedRuleMetadata& WithResourceTypesScope(Aws::Vector<Aws::String>&& value) { SetResourceTypesScope(std::move(value)); return *this;}
 
     /**
-     * <p>The type of the AWS resource that was evaluated.</p>
+     * <p>The type of the Amazon Web Services resource that was evaluated.</p>
      */
     inline OrganizationManagedRuleMetadata& AddResourceTypesScope(const Aws::String& value) { m_resourceTypesScopeHasBeenSet = true; m_resourceTypesScope.push_back(value); return *this; }
 
     /**
-     * <p>The type of the AWS resource that was evaluated.</p>
+     * <p>The type of the Amazon Web Services resource that was evaluated.</p>
      */
     inline OrganizationManagedRuleMetadata& AddResourceTypesScope(Aws::String&& value) { m_resourceTypesScopeHasBeenSet = true; m_resourceTypesScope.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The type of the AWS resource that was evaluated.</p>
+     * <p>The type of the Amazon Web Services resource that was evaluated.</p>
      */
     inline OrganizationManagedRuleMetadata& AddResourceTypesScope(const char* value) { m_resourceTypesScopeHasBeenSet = true; m_resourceTypesScope.push_back(value); return *this; }
 
 
     /**
-     * <p>The ID of the AWS resource that was evaluated.</p>
+     * <p>The ID of the Amazon Web Services resource that was evaluated.</p>
      */
     inline const Aws::String& GetResourceIdScope() const{ return m_resourceIdScope; }
 
     /**
-     * <p>The ID of the AWS resource that was evaluated.</p>
+     * <p>The ID of the Amazon Web Services resource that was evaluated.</p>
      */
     inline bool ResourceIdScopeHasBeenSet() const { return m_resourceIdScopeHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS resource that was evaluated.</p>
+     * <p>The ID of the Amazon Web Services resource that was evaluated.</p>
      */
     inline void SetResourceIdScope(const Aws::String& value) { m_resourceIdScopeHasBeenSet = true; m_resourceIdScope = value; }
 
     /**
-     * <p>The ID of the AWS resource that was evaluated.</p>
+     * <p>The ID of the Amazon Web Services resource that was evaluated.</p>
      */
     inline void SetResourceIdScope(Aws::String&& value) { m_resourceIdScopeHasBeenSet = true; m_resourceIdScope = std::move(value); }
 
     /**
-     * <p>The ID of the AWS resource that was evaluated.</p>
+     * <p>The ID of the Amazon Web Services resource that was evaluated.</p>
      */
     inline void SetResourceIdScope(const char* value) { m_resourceIdScopeHasBeenSet = true; m_resourceIdScope.assign(value); }
 
     /**
-     * <p>The ID of the AWS resource that was evaluated.</p>
+     * <p>The ID of the Amazon Web Services resource that was evaluated.</p>
      */
     inline OrganizationManagedRuleMetadata& WithResourceIdScope(const Aws::String& value) { SetResourceIdScope(value); return *this;}
 
     /**
-     * <p>The ID of the AWS resource that was evaluated.</p>
+     * <p>The ID of the Amazon Web Services resource that was evaluated.</p>
      */
     inline OrganizationManagedRuleMetadata& WithResourceIdScope(Aws::String&& value) { SetResourceIdScope(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS resource that was evaluated.</p>
+     * <p>The ID of the Amazon Web Services resource that was evaluated.</p>
      */
     inline OrganizationManagedRuleMetadata& WithResourceIdScope(const char* value) { SetResourceIdScope(value); return *this;}
 

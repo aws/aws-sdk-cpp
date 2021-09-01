@@ -90,7 +90,7 @@ namespace Model
      * when one or more member accounts join or leave an organization. Config rule
      * status is deleted when the master account deletes OrganizationConfigRule in all
      * the member accounts and disables service access for
-     * <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>AWS Config sets the
+     * <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>Config sets the
      * state of the rule to:</p> <ul> <li> <p> <code>CREATE_SUCCESSFUL</code> when an
      * organization config rule has been successfully created in all the member
      * accounts. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when an
@@ -120,7 +120,7 @@ namespace Model
      * when one or more member accounts join or leave an organization. Config rule
      * status is deleted when the master account deletes OrganizationConfigRule in all
      * the member accounts and disables service access for
-     * <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>AWS Config sets the
+     * <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>Config sets the
      * state of the rule to:</p> <ul> <li> <p> <code>CREATE_SUCCESSFUL</code> when an
      * organization config rule has been successfully created in all the member
      * accounts. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when an
@@ -150,7 +150,7 @@ namespace Model
      * when one or more member accounts join or leave an organization. Config rule
      * status is deleted when the master account deletes OrganizationConfigRule in all
      * the member accounts and disables service access for
-     * <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>AWS Config sets the
+     * <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>Config sets the
      * state of the rule to:</p> <ul> <li> <p> <code>CREATE_SUCCESSFUL</code> when an
      * organization config rule has been successfully created in all the member
      * accounts. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when an
@@ -180,7 +180,7 @@ namespace Model
      * when one or more member accounts join or leave an organization. Config rule
      * status is deleted when the master account deletes OrganizationConfigRule in all
      * the member accounts and disables service access for
-     * <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>AWS Config sets the
+     * <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>Config sets the
      * state of the rule to:</p> <ul> <li> <p> <code>CREATE_SUCCESSFUL</code> when an
      * organization config rule has been successfully created in all the member
      * accounts. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when an
@@ -210,7 +210,7 @@ namespace Model
      * when one or more member accounts join or leave an organization. Config rule
      * status is deleted when the master account deletes OrganizationConfigRule in all
      * the member accounts and disables service access for
-     * <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>AWS Config sets the
+     * <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>Config sets the
      * state of the rule to:</p> <ul> <li> <p> <code>CREATE_SUCCESSFUL</code> when an
      * organization config rule has been successfully created in all the member
      * accounts. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when an
@@ -240,7 +240,7 @@ namespace Model
      * when one or more member accounts join or leave an organization. Config rule
      * status is deleted when the master account deletes OrganizationConfigRule in all
      * the member accounts and disables service access for
-     * <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>AWS Config sets the
+     * <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>Config sets the
      * state of the rule to:</p> <ul> <li> <p> <code>CREATE_SUCCESSFUL</code> when an
      * organization config rule has been successfully created in all the member
      * accounts. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when an

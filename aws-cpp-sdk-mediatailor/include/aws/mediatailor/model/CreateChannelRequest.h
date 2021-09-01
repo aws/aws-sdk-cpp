@@ -7,6 +7,7 @@
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/mediatailor/MediaTailorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediatailor/model/SlateSource.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediatailor/model/PlaybackMode.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -78,6 +79,43 @@ namespace Model
 
 
     /**
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses an LINEAR PlaybackMode.</p>
+     */
+    inline const SlateSource& GetFillerSlate() const{ return m_fillerSlate; }
+
+    /**
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses an LINEAR PlaybackMode.</p>
+     */
+    inline bool FillerSlateHasBeenSet() const { return m_fillerSlateHasBeenSet; }
+
+    /**
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses an LINEAR PlaybackMode.</p>
+     */
+    inline void SetFillerSlate(const SlateSource& value) { m_fillerSlateHasBeenSet = true; m_fillerSlate = value; }
+
+    /**
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses an LINEAR PlaybackMode.</p>
+     */
+    inline void SetFillerSlate(SlateSource&& value) { m_fillerSlateHasBeenSet = true; m_fillerSlate = std::move(value); }
+
+    /**
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses an LINEAR PlaybackMode.</p>
+     */
+    inline CreateChannelRequest& WithFillerSlate(const SlateSource& value) { SetFillerSlate(value); return *this;}
+
+    /**
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses an LINEAR PlaybackMode.</p>
+     */
+    inline CreateChannelRequest& WithFillerSlate(SlateSource&& value) { SetFillerSlate(std::move(value)); return *this;}
+
+
+    /**
      * <p>The channel's output properties.</p>
      */
     inline const Aws::Vector<RequestOutputItem>& GetOutputs() const{ return m_outputs; }
@@ -119,38 +157,56 @@ namespace Model
 
 
     /**
-     * <p>The type of playback mode for this channel. The only supported value is
-     * LOOP.</p>
+     * <p>The type of playback mode to use for this channel.</p> <p>LINEAR - The
+     * programs in the schedule play once back-to-back in the schedule.</p> <p>LOOP -
+     * The programs in the schedule play back-to-back in an endless loop. When the last
+     * program in the schedule stops playing, playback loops back to the first program
+     * in the schedule.</p>
      */
     inline const PlaybackMode& GetPlaybackMode() const{ return m_playbackMode; }
 
     /**
-     * <p>The type of playback mode for this channel. The only supported value is
-     * LOOP.</p>
+     * <p>The type of playback mode to use for this channel.</p> <p>LINEAR - The
+     * programs in the schedule play once back-to-back in the schedule.</p> <p>LOOP -
+     * The programs in the schedule play back-to-back in an endless loop. When the last
+     * program in the schedule stops playing, playback loops back to the first program
+     * in the schedule.</p>
      */
     inline bool PlaybackModeHasBeenSet() const { return m_playbackModeHasBeenSet; }
 
     /**
-     * <p>The type of playback mode for this channel. The only supported value is
-     * LOOP.</p>
+     * <p>The type of playback mode to use for this channel.</p> <p>LINEAR - The
+     * programs in the schedule play once back-to-back in the schedule.</p> <p>LOOP -
+     * The programs in the schedule play back-to-back in an endless loop. When the last
+     * program in the schedule stops playing, playback loops back to the first program
+     * in the schedule.</p>
      */
     inline void SetPlaybackMode(const PlaybackMode& value) { m_playbackModeHasBeenSet = true; m_playbackMode = value; }
 
     /**
-     * <p>The type of playback mode for this channel. The only supported value is
-     * LOOP.</p>
+     * <p>The type of playback mode to use for this channel.</p> <p>LINEAR - The
+     * programs in the schedule play once back-to-back in the schedule.</p> <p>LOOP -
+     * The programs in the schedule play back-to-back in an endless loop. When the last
+     * program in the schedule stops playing, playback loops back to the first program
+     * in the schedule.</p>
      */
     inline void SetPlaybackMode(PlaybackMode&& value) { m_playbackModeHasBeenSet = true; m_playbackMode = std::move(value); }
 
     /**
-     * <p>The type of playback mode for this channel. The only supported value is
-     * LOOP.</p>
+     * <p>The type of playback mode to use for this channel.</p> <p>LINEAR - The
+     * programs in the schedule play once back-to-back in the schedule.</p> <p>LOOP -
+     * The programs in the schedule play back-to-back in an endless loop. When the last
+     * program in the schedule stops playing, playback loops back to the first program
+     * in the schedule.</p>
      */
     inline CreateChannelRequest& WithPlaybackMode(const PlaybackMode& value) { SetPlaybackMode(value); return *this;}
 
     /**
-     * <p>The type of playback mode for this channel. The only supported value is
-     * LOOP.</p>
+     * <p>The type of playback mode to use for this channel.</p> <p>LINEAR - The
+     * programs in the schedule play once back-to-back in the schedule.</p> <p>LOOP -
+     * The programs in the schedule play back-to-back in an endless loop. When the last
+     * program in the schedule stops playing, playback loops back to the first program
+     * in the schedule.</p>
      */
     inline CreateChannelRequest& WithPlaybackMode(PlaybackMode&& value) { SetPlaybackMode(std::move(value)); return *this;}
 
@@ -224,6 +280,9 @@ namespace Model
 
     Aws::String m_channelName;
     bool m_channelNameHasBeenSet;
+
+    SlateSource m_fillerSlate;
+    bool m_fillerSlateHasBeenSet;
 
     Aws::Vector<RequestOutputItem> m_outputs;
     bool m_outputsHasBeenSet;

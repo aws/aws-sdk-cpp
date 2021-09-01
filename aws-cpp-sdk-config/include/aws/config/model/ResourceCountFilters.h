@@ -40,32 +40,32 @@ namespace Model
 
 
     /**
-     * <p>The type of the AWS resource.</p>
+     * <p>The type of the Amazon Web Services resource.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of the AWS resource.</p>
+     * <p>The type of the Amazon Web Services resource.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of the AWS resource.</p>
+     * <p>The type of the Amazon Web Services resource.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of the AWS resource.</p>
+     * <p>The type of the Amazon Web Services resource.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of the AWS resource.</p>
+     * <p>The type of the Amazon Web Services resource.</p>
      */
     inline ResourceCountFilters& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of the AWS resource.</p>
+     * <p>The type of the Amazon Web Services resource.</p>
      */
     inline ResourceCountFilters& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

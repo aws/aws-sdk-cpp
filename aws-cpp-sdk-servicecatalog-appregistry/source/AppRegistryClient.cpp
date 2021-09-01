@@ -29,6 +29,7 @@
 #include <aws/servicecatalog-appregistry/model/DisassociateAttributeGroupRequest.h>
 #include <aws/servicecatalog-appregistry/model/DisassociateResourceRequest.h>
 #include <aws/servicecatalog-appregistry/model/GetApplicationRequest.h>
+#include <aws/servicecatalog-appregistry/model/GetAssociatedResourceRequest.h>
 #include <aws/servicecatalog-appregistry/model/GetAttributeGroupRequest.h>
 #include <aws/servicecatalog-appregistry/model/ListApplicationsRequest.h>
 #include <aws/servicecatalog-appregistry/model/ListAssociatedAttributeGroupsRequest.h>
@@ -419,6 +420,50 @@ void AppRegistryClient::GetApplicationAsync(const GetApplicationRequest& request
 void AppRegistryClient::GetApplicationAsyncHelper(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetApplication(request), context);
+}
+
+GetAssociatedResourceOutcome AppRegistryClient::GetAssociatedResource(const GetAssociatedResourceRequest& request) const
+{
+  if (!request.ApplicationHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAssociatedResource", "Required field: Application, is not set");
+    return GetAssociatedResourceOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Application]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAssociatedResource", "Required field: ResourceType, is not set");
+    return GetAssociatedResourceOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  if (!request.ResourceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAssociatedResource", "Required field: Resource, is not set");
+    return GetAssociatedResourceOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Resource]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplication());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(ResourceTypeMapper::GetNameForResourceType(request.GetResourceType()));
+  uri.AddPathSegment(request.GetResource());
+  return GetAssociatedResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetAssociatedResourceOutcomeCallable AppRegistryClient::GetAssociatedResourceCallable(const GetAssociatedResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAssociatedResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAssociatedResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppRegistryClient::GetAssociatedResourceAsync(const GetAssociatedResourceRequest& request, const GetAssociatedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAssociatedResourceAsyncHelper( request, handler, context ); } );
+}
+
+void AppRegistryClient::GetAssociatedResourceAsyncHelper(const GetAssociatedResourceRequest& request, const GetAssociatedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAssociatedResource(request), context);
 }
 
 GetAttributeGroupOutcome AppRegistryClient::GetAttributeGroup(const GetAttributeGroupRequest& request) const

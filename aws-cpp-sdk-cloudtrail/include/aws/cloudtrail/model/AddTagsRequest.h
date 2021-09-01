@@ -97,42 +97,42 @@ namespace Model
 
 
     /**
-     * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
+     * <p>Contains a list of tags, up to a limit of 50</p>
      */
     inline const Aws::Vector<Tag>& GetTagsList() const{ return m_tagsList; }
 
     /**
-     * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
+     * <p>Contains a list of tags, up to a limit of 50</p>
      */
     inline bool TagsListHasBeenSet() const { return m_tagsListHasBeenSet; }
 
     /**
-     * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
+     * <p>Contains a list of tags, up to a limit of 50</p>
      */
     inline void SetTagsList(const Aws::Vector<Tag>& value) { m_tagsListHasBeenSet = true; m_tagsList = value; }
 
     /**
-     * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
+     * <p>Contains a list of tags, up to a limit of 50</p>
      */
     inline void SetTagsList(Aws::Vector<Tag>&& value) { m_tagsListHasBeenSet = true; m_tagsList = std::move(value); }
 
     /**
-     * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
+     * <p>Contains a list of tags, up to a limit of 50</p>
      */
     inline AddTagsRequest& WithTagsList(const Aws::Vector<Tag>& value) { SetTagsList(value); return *this;}
 
     /**
-     * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
+     * <p>Contains a list of tags, up to a limit of 50</p>
      */
     inline AddTagsRequest& WithTagsList(Aws::Vector<Tag>&& value) { SetTagsList(std::move(value)); return *this;}
 
     /**
-     * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
+     * <p>Contains a list of tags, up to a limit of 50</p>
      */
     inline AddTagsRequest& AddTagsList(const Tag& value) { m_tagsListHasBeenSet = true; m_tagsList.push_back(value); return *this; }
 
     /**
-     * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
+     * <p>Contains a list of tags, up to a limit of 50</p>
      */
     inline AddTagsRequest& AddTagsList(Tag&& value) { m_tagsListHasBeenSet = true; m_tagsList.push_back(std::move(value)); return *this; }
 

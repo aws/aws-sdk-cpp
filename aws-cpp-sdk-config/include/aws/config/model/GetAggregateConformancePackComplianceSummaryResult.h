@@ -78,37 +78,44 @@ namespace Model
 
 
     /**
-     * <p>Groups the result based on AWS Account ID or AWS Region.</p>
+     * <p>Groups the result based on Amazon Web Services account ID or Amazon Web
+     * Services Region.</p>
      */
     inline const Aws::String& GetGroupByKey() const{ return m_groupByKey; }
 
     /**
-     * <p>Groups the result based on AWS Account ID or AWS Region.</p>
+     * <p>Groups the result based on Amazon Web Services account ID or Amazon Web
+     * Services Region.</p>
      */
     inline void SetGroupByKey(const Aws::String& value) { m_groupByKey = value; }
 
     /**
-     * <p>Groups the result based on AWS Account ID or AWS Region.</p>
+     * <p>Groups the result based on Amazon Web Services account ID or Amazon Web
+     * Services Region.</p>
      */
     inline void SetGroupByKey(Aws::String&& value) { m_groupByKey = std::move(value); }
 
     /**
-     * <p>Groups the result based on AWS Account ID or AWS Region.</p>
+     * <p>Groups the result based on Amazon Web Services account ID or Amazon Web
+     * Services Region.</p>
      */
     inline void SetGroupByKey(const char* value) { m_groupByKey.assign(value); }
 
     /**
-     * <p>Groups the result based on AWS Account ID or AWS Region.</p>
+     * <p>Groups the result based on Amazon Web Services account ID or Amazon Web
+     * Services Region.</p>
      */
     inline GetAggregateConformancePackComplianceSummaryResult& WithGroupByKey(const Aws::String& value) { SetGroupByKey(value); return *this;}
 
     /**
-     * <p>Groups the result based on AWS Account ID or AWS Region.</p>
+     * <p>Groups the result based on Amazon Web Services account ID or Amazon Web
+     * Services Region.</p>
      */
     inline GetAggregateConformancePackComplianceSummaryResult& WithGroupByKey(Aws::String&& value) { SetGroupByKey(std::move(value)); return *this;}
 
     /**
-     * <p>Groups the result based on AWS Account ID or AWS Region.</p>
+     * <p>Groups the result based on Amazon Web Services account ID or Amazon Web
+     * Services Region.</p>
      */
     inline GetAggregateConformancePackComplianceSummaryResult& WithGroupByKey(const char* value) { SetGroupByKey(value); return *this;}
 

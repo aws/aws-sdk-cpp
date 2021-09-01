@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int LOOP_HASH = HashingUtils::HashString("LOOP");
+        static const int LINEAR_HASH = HashingUtils::HashString("LINEAR");
 
 
         PlaybackMode GetPlaybackModeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == LOOP_HASH)
           {
             return PlaybackMode::LOOP;
+          }
+          else if (hashCode == LINEAR_HASH)
+          {
+            return PlaybackMode::LINEAR;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case PlaybackMode::LOOP:
             return "LOOP";
+          case PlaybackMode::LINEAR:
+            return "LINEAR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediatailor/model/ScheduleEntryType.h>
 #include <aws/mediatailor/model/ScheduleAdBreak.h>
 #include <utility>
 
@@ -257,6 +258,37 @@ namespace Model
 
 
     /**
+     * <p>The type of schedule entry.</p> <p>Valid values: PROGRAM or FILLER_SLATE.</p>
+     */
+    inline const ScheduleEntryType& GetScheduleEntryType() const{ return m_scheduleEntryType; }
+
+    /**
+     * <p>The type of schedule entry.</p> <p>Valid values: PROGRAM or FILLER_SLATE.</p>
+     */
+    inline bool ScheduleEntryTypeHasBeenSet() const { return m_scheduleEntryTypeHasBeenSet; }
+
+    /**
+     * <p>The type of schedule entry.</p> <p>Valid values: PROGRAM or FILLER_SLATE.</p>
+     */
+    inline void SetScheduleEntryType(const ScheduleEntryType& value) { m_scheduleEntryTypeHasBeenSet = true; m_scheduleEntryType = value; }
+
+    /**
+     * <p>The type of schedule entry.</p> <p>Valid values: PROGRAM or FILLER_SLATE.</p>
+     */
+    inline void SetScheduleEntryType(ScheduleEntryType&& value) { m_scheduleEntryTypeHasBeenSet = true; m_scheduleEntryType = std::move(value); }
+
+    /**
+     * <p>The type of schedule entry.</p> <p>Valid values: PROGRAM or FILLER_SLATE.</p>
+     */
+    inline ScheduleEntry& WithScheduleEntryType(const ScheduleEntryType& value) { SetScheduleEntryType(value); return *this;}
+
+    /**
+     * <p>The type of schedule entry.</p> <p>Valid values: PROGRAM or FILLER_SLATE.</p>
+     */
+    inline ScheduleEntry& WithScheduleEntryType(ScheduleEntryType&& value) { SetScheduleEntryType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The name of the source location.</p>
      */
     inline const Aws::String& GetSourceLocationName() const{ return m_sourceLocationName; }
@@ -356,6 +388,9 @@ namespace Model
 
     Aws::Vector<ScheduleAdBreak> m_scheduleAdBreaks;
     bool m_scheduleAdBreaksHasBeenSet;
+
+    ScheduleEntryType m_scheduleEntryType;
+    bool m_scheduleEntryTypeHasBeenSet;
 
     Aws::String m_sourceLocationName;
     bool m_sourceLocationNameHasBeenSet;

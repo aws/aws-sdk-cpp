@@ -20,6 +20,7 @@
 #include <aws/servicecatalog-appregistry/model/DisassociateAttributeGroupResult.h>
 #include <aws/servicecatalog-appregistry/model/DisassociateResourceResult.h>
 #include <aws/servicecatalog-appregistry/model/GetApplicationResult.h>
+#include <aws/servicecatalog-appregistry/model/GetAssociatedResourceResult.h>
 #include <aws/servicecatalog-appregistry/model/GetAttributeGroupResult.h>
 #include <aws/servicecatalog-appregistry/model/ListApplicationsResult.h>
 #include <aws/servicecatalog-appregistry/model/ListAssociatedAttributeGroupsResult.h>
@@ -79,6 +80,7 @@ namespace Model
         class DisassociateAttributeGroupRequest;
         class DisassociateResourceRequest;
         class GetApplicationRequest;
+        class GetAssociatedResourceRequest;
         class GetAttributeGroupRequest;
         class ListApplicationsRequest;
         class ListAssociatedAttributeGroupsRequest;
@@ -100,6 +102,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociateAttributeGroupResult, AppRegistryError> DisassociateAttributeGroupOutcome;
         typedef Aws::Utils::Outcome<DisassociateResourceResult, AppRegistryError> DisassociateResourceOutcome;
         typedef Aws::Utils::Outcome<GetApplicationResult, AppRegistryError> GetApplicationOutcome;
+        typedef Aws::Utils::Outcome<GetAssociatedResourceResult, AppRegistryError> GetAssociatedResourceOutcome;
         typedef Aws::Utils::Outcome<GetAttributeGroupResult, AppRegistryError> GetAttributeGroupOutcome;
         typedef Aws::Utils::Outcome<ListApplicationsResult, AppRegistryError> ListApplicationsOutcome;
         typedef Aws::Utils::Outcome<ListAssociatedAttributeGroupsResult, AppRegistryError> ListAssociatedAttributeGroupsOutcome;
@@ -121,6 +124,7 @@ namespace Model
         typedef std::future<DisassociateAttributeGroupOutcome> DisassociateAttributeGroupOutcomeCallable;
         typedef std::future<DisassociateResourceOutcome> DisassociateResourceOutcomeCallable;
         typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
+        typedef std::future<GetAssociatedResourceOutcome> GetAssociatedResourceOutcomeCallable;
         typedef std::future<GetAttributeGroupOutcome> GetAttributeGroupOutcomeCallable;
         typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
         typedef std::future<ListAssociatedAttributeGroupsOutcome> ListAssociatedAttributeGroupsOutcomeCallable;
@@ -145,6 +149,7 @@ namespace Model
     typedef std::function<void(const AppRegistryClient*, const Model::DisassociateAttributeGroupRequest&, const Model::DisassociateAttributeGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateAttributeGroupResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::DisassociateResourceRequest&, const Model::DisassociateResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateResourceResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::GetApplicationRequest&, const Model::GetApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationResponseReceivedHandler;
+    typedef std::function<void(const AppRegistryClient*, const Model::GetAssociatedResourceRequest&, const Model::GetAssociatedResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssociatedResourceResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::GetAttributeGroupRequest&, const Model::GetAttributeGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAttributeGroupResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::ListAssociatedAttributeGroupsRequest&, const Model::ListAssociatedAttributeGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedAttributeGroupsResponseReceivedHandler;
@@ -158,10 +163,10 @@ namespace Model
     typedef std::function<void(const AppRegistryClient*, const Model::UpdateAttributeGroupRequest&, const Model::UpdateAttributeGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAttributeGroupResponseReceivedHandler;
 
   /**
-   * <p> AWS Service Catalog AppRegistry enables organizations to understand the
-   * application context of their AWS resources. AppRegistry provides a repository of
-   * your applications, their resources, and the application metadata that you use
-   * within your enterprise.</p>
+   * <p> Amazon Web Services Service Catalog AppRegistry enables organizations to
+   * understand the application context of their Amazon Web Services resources.
+   * AppRegistry provides a repository of your applications, their resources, and the
+   * application metadata that you use within your enterprise.</p>
    */
   class AWS_APPREGISTRY_API AppRegistryClient : public Aws::Client::AWSJsonClient
   {
@@ -479,6 +484,34 @@ namespace Model
         virtual void GetApplicationAsync(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the resource associated with the application.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAssociatedResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAssociatedResourceOutcome GetAssociatedResource(const Model::GetAssociatedResourceRequest& request) const;
+
+        /**
+         * <p>Gets the resource associated with the application.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAssociatedResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAssociatedResourceOutcomeCallable GetAssociatedResourceCallable(const Model::GetAssociatedResourceRequest& request) const;
+
+        /**
+         * <p>Gets the resource associated with the application.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAssociatedResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAssociatedResourceAsync(const Model::GetAssociatedResourceRequest& request, const GetAssociatedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves an attribute group, either by its name or its ID. The attribute
          * group can be specified either by its unique ID or by its name.</p><p><h3>See
          * Also:</h3>   <a
@@ -647,9 +680,9 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Syncs the resource with what is currently recorded in App registry.
-         * Specifically, the resource’s App registry system tags are synced with its
-         * associated application. The resource is removed if it is not associated with the
+         * <p>Syncs the resource with current AppRegistry records.</p> <p>Specifically, the
+         * resource’s AppRegistry system tags sync with its associated application. We
+         * remove the resource's AppRegistry system tags if it does not associate with the
          * application. The caller must have permissions to read and update the
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/SyncResource">AWS
@@ -658,9 +691,9 @@ namespace Model
         virtual Model::SyncResourceOutcome SyncResource(const Model::SyncResourceRequest& request) const;
 
         /**
-         * <p>Syncs the resource with what is currently recorded in App registry.
-         * Specifically, the resource’s App registry system tags are synced with its
-         * associated application. The resource is removed if it is not associated with the
+         * <p>Syncs the resource with current AppRegistry records.</p> <p>Specifically, the
+         * resource’s AppRegistry system tags sync with its associated application. We
+         * remove the resource's AppRegistry system tags if it does not associate with the
          * application. The caller must have permissions to read and update the
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/SyncResource">AWS
@@ -671,9 +704,9 @@ namespace Model
         virtual Model::SyncResourceOutcomeCallable SyncResourceCallable(const Model::SyncResourceRequest& request) const;
 
         /**
-         * <p>Syncs the resource with what is currently recorded in App registry.
-         * Specifically, the resource’s App registry system tags are synced with its
-         * associated application. The resource is removed if it is not associated with the
+         * <p>Syncs the resource with current AppRegistry records.</p> <p>Specifically, the
+         * resource’s AppRegistry system tags sync with its associated application. We
+         * remove the resource's AppRegistry system tags if it does not associate with the
          * application. The caller must have permissions to read and update the
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/SyncResource">AWS
@@ -817,6 +850,7 @@ namespace Model
         void DisassociateAttributeGroupAsyncHelper(const Model::DisassociateAttributeGroupRequest& request, const DisassociateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateResourceAsyncHelper(const Model::DisassociateResourceRequest& request, const DisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApplicationAsyncHelper(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAssociatedResourceAsyncHelper(const Model::GetAssociatedResourceRequest& request, const GetAssociatedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAttributeGroupAsyncHelper(const Model::GetAttributeGroupRequest& request, const GetAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListApplicationsAsyncHelper(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssociatedAttributeGroupsAsyncHelper(const Model::ListAssociatedAttributeGroupsRequest& request, const ListAssociatedAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -79,43 +79,43 @@ namespace Model
 
 
     /**
-     * <p>The number of compliant AWS Config Rules.</p>
+     * <p>The number of compliant Config Rules.</p>
      */
     inline int GetCompliantRuleCount() const{ return m_compliantRuleCount; }
 
     /**
-     * <p>The number of compliant AWS Config Rules.</p>
+     * <p>The number of compliant Config Rules.</p>
      */
     inline bool CompliantRuleCountHasBeenSet() const { return m_compliantRuleCountHasBeenSet; }
 
     /**
-     * <p>The number of compliant AWS Config Rules.</p>
+     * <p>The number of compliant Config Rules.</p>
      */
     inline void SetCompliantRuleCount(int value) { m_compliantRuleCountHasBeenSet = true; m_compliantRuleCount = value; }
 
     /**
-     * <p>The number of compliant AWS Config Rules.</p>
+     * <p>The number of compliant Config Rules.</p>
      */
     inline AggregateConformancePackCompliance& WithCompliantRuleCount(int value) { SetCompliantRuleCount(value); return *this;}
 
 
     /**
-     * <p>The number of noncompliant AWS Config Rules.</p>
+     * <p>The number of noncompliant Config Rules.</p>
      */
     inline int GetNonCompliantRuleCount() const{ return m_nonCompliantRuleCount; }
 
     /**
-     * <p>The number of noncompliant AWS Config Rules.</p>
+     * <p>The number of noncompliant Config Rules.</p>
      */
     inline bool NonCompliantRuleCountHasBeenSet() const { return m_nonCompliantRuleCountHasBeenSet; }
 
     /**
-     * <p>The number of noncompliant AWS Config Rules.</p>
+     * <p>The number of noncompliant Config Rules.</p>
      */
     inline void SetNonCompliantRuleCount(int value) { m_nonCompliantRuleCountHasBeenSet = true; m_nonCompliantRuleCount = value; }
 
     /**
-     * <p>The number of noncompliant AWS Config Rules.</p>
+     * <p>The number of noncompliant Config Rules.</p>
      */
     inline AggregateConformancePackCompliance& WithNonCompliantRuleCount(int value) { SetNonCompliantRuleCount(value); return *this;}
 

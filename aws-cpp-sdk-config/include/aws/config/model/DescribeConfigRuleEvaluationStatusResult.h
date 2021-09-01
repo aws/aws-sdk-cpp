@@ -40,37 +40,37 @@ namespace Model
 
 
     /**
-     * <p>Status information about your AWS managed Config rules.</p>
+     * <p>Status information about your Config managed rules.</p>
      */
     inline const Aws::Vector<ConfigRuleEvaluationStatus>& GetConfigRulesEvaluationStatus() const{ return m_configRulesEvaluationStatus; }
 
     /**
-     * <p>Status information about your AWS managed Config rules.</p>
+     * <p>Status information about your Config managed rules.</p>
      */
     inline void SetConfigRulesEvaluationStatus(const Aws::Vector<ConfigRuleEvaluationStatus>& value) { m_configRulesEvaluationStatus = value; }
 
     /**
-     * <p>Status information about your AWS managed Config rules.</p>
+     * <p>Status information about your Config managed rules.</p>
      */
     inline void SetConfigRulesEvaluationStatus(Aws::Vector<ConfigRuleEvaluationStatus>&& value) { m_configRulesEvaluationStatus = std::move(value); }
 
     /**
-     * <p>Status information about your AWS managed Config rules.</p>
+     * <p>Status information about your Config managed rules.</p>
      */
     inline DescribeConfigRuleEvaluationStatusResult& WithConfigRulesEvaluationStatus(const Aws::Vector<ConfigRuleEvaluationStatus>& value) { SetConfigRulesEvaluationStatus(value); return *this;}
 
     /**
-     * <p>Status information about your AWS managed Config rules.</p>
+     * <p>Status information about your Config managed rules.</p>
      */
     inline DescribeConfigRuleEvaluationStatusResult& WithConfigRulesEvaluationStatus(Aws::Vector<ConfigRuleEvaluationStatus>&& value) { SetConfigRulesEvaluationStatus(std::move(value)); return *this;}
 
     /**
-     * <p>Status information about your AWS managed Config rules.</p>
+     * <p>Status information about your Config managed rules.</p>
      */
     inline DescribeConfigRuleEvaluationStatusResult& AddConfigRulesEvaluationStatus(const ConfigRuleEvaluationStatus& value) { m_configRulesEvaluationStatus.push_back(value); return *this; }
 
     /**
-     * <p>Status information about your AWS managed Config rules.</p>
+     * <p>Status information about your Config managed rules.</p>
      */
     inline DescribeConfigRuleEvaluationStatusResult& AddConfigRulesEvaluationStatus(ConfigRuleEvaluationStatus&& value) { m_configRulesEvaluationStatus.push_back(std::move(value)); return *this; }
 

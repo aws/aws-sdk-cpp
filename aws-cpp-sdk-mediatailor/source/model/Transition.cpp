@@ -22,6 +22,8 @@ Transition::Transition() :
     m_relativePosition(RelativePosition::NOT_SET),
     m_relativePositionHasBeenSet(false),
     m_relativeProgramHasBeenSet(false),
+    m_scheduledStartTimeMillis(0),
+    m_scheduledStartTimeMillisHasBeenSet(false),
     m_typeHasBeenSet(false)
 {
 }
@@ -30,6 +32,8 @@ Transition::Transition(JsonView jsonValue) :
     m_relativePosition(RelativePosition::NOT_SET),
     m_relativePositionHasBeenSet(false),
     m_relativeProgramHasBeenSet(false),
+    m_scheduledStartTimeMillis(0),
+    m_scheduledStartTimeMillisHasBeenSet(false),
     m_typeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -49,6 +53,13 @@ Transition& Transition::operator =(JsonView jsonValue)
     m_relativeProgram = jsonValue.GetString("RelativeProgram");
 
     m_relativeProgramHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ScheduledStartTimeMillis"))
+  {
+    m_scheduledStartTimeMillis = jsonValue.GetInt64("ScheduledStartTimeMillis");
+
+    m_scheduledStartTimeMillisHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Type"))
@@ -73,6 +84,12 @@ JsonValue Transition::Jsonize() const
   if(m_relativeProgramHasBeenSet)
   {
    payload.WithString("RelativeProgram", m_relativeProgram);
+
+  }
+
+  if(m_scheduledStartTimeMillisHasBeenSet)
+  {
+   payload.WithInt64("ScheduledStartTimeMillis", m_scheduledStartTimeMillis);
 
   }
 

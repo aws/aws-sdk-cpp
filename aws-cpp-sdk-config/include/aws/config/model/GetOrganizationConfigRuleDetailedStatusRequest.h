@@ -117,29 +117,29 @@ namespace Model
 
     /**
      * <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code>
-     * returned on each page. If you do not specify a number, AWS Config uses the
-     * default. The default is 100.</p>
+     * returned on each page. If you do not specify a number, Config uses the default.
+     * The default is 100.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code>
-     * returned on each page. If you do not specify a number, AWS Config uses the
-     * default. The default is 100.</p>
+     * returned on each page. If you do not specify a number, Config uses the default.
+     * The default is 100.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code>
-     * returned on each page. If you do not specify a number, AWS Config uses the
-     * default. The default is 100.</p>
+     * returned on each page. If you do not specify a number, Config uses the default.
+     * The default is 100.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code>
-     * returned on each page. If you do not specify a number, AWS Config uses the
-     * default. The default is 100.</p>
+     * returned on each page. If you do not specify a number, Config uses the default.
+     * The default is 100.</p>
      */
     inline GetOrganizationConfigRuleDetailedStatusRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

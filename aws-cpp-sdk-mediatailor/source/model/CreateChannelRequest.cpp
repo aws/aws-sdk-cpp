@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 CreateChannelRequest::CreateChannelRequest() : 
     m_channelNameHasBeenSet(false),
+    m_fillerSlateHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_playbackMode(PlaybackMode::NOT_SET),
     m_playbackModeHasBeenSet(false),
@@ -24,6 +25,12 @@ CreateChannelRequest::CreateChannelRequest() :
 Aws::String CreateChannelRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_fillerSlateHasBeenSet)
+  {
+   payload.WithObject("FillerSlate", m_fillerSlate.Jsonize());
+
+  }
 
   if(m_outputsHasBeenSet)
   {

@@ -28,7 +28,7 @@ namespace Model
 
   /**
    * <p>An organization conformance pack that has information about conformance packs
-   * that AWS Config creates in member accounts. </p><p><h3>See Also:</h3>   <a
+   * that Config creates in member accounts. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/OrganizationConformancePack">AWS
    * API Reference</a></p>
    */
@@ -124,50 +124,50 @@ namespace Model
 
 
     /**
-     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates. </p>
-     *  <p>This field is optional.</p> 
+     * <p>The name of the Amazon S3 bucket where Config stores conformance pack
+     * templates. </p>  <p>This field is optional.</p> 
      */
     inline const Aws::String& GetDeliveryS3Bucket() const{ return m_deliveryS3Bucket; }
 
     /**
-     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates. </p>
-     *  <p>This field is optional.</p> 
+     * <p>The name of the Amazon S3 bucket where Config stores conformance pack
+     * templates. </p>  <p>This field is optional.</p> 
      */
     inline bool DeliveryS3BucketHasBeenSet() const { return m_deliveryS3BucketHasBeenSet; }
 
     /**
-     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates. </p>
-     *  <p>This field is optional.</p> 
+     * <p>The name of the Amazon S3 bucket where Config stores conformance pack
+     * templates. </p>  <p>This field is optional.</p> 
      */
     inline void SetDeliveryS3Bucket(const Aws::String& value) { m_deliveryS3BucketHasBeenSet = true; m_deliveryS3Bucket = value; }
 
     /**
-     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates. </p>
-     *  <p>This field is optional.</p> 
+     * <p>The name of the Amazon S3 bucket where Config stores conformance pack
+     * templates. </p>  <p>This field is optional.</p> 
      */
     inline void SetDeliveryS3Bucket(Aws::String&& value) { m_deliveryS3BucketHasBeenSet = true; m_deliveryS3Bucket = std::move(value); }
 
     /**
-     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates. </p>
-     *  <p>This field is optional.</p> 
+     * <p>The name of the Amazon S3 bucket where Config stores conformance pack
+     * templates. </p>  <p>This field is optional.</p> 
      */
     inline void SetDeliveryS3Bucket(const char* value) { m_deliveryS3BucketHasBeenSet = true; m_deliveryS3Bucket.assign(value); }
 
     /**
-     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates. </p>
-     *  <p>This field is optional.</p> 
+     * <p>The name of the Amazon S3 bucket where Config stores conformance pack
+     * templates. </p>  <p>This field is optional.</p> 
      */
     inline OrganizationConformancePack& WithDeliveryS3Bucket(const Aws::String& value) { SetDeliveryS3Bucket(value); return *this;}
 
     /**
-     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates. </p>
-     *  <p>This field is optional.</p> 
+     * <p>The name of the Amazon S3 bucket where Config stores conformance pack
+     * templates. </p>  <p>This field is optional.</p> 
      */
     inline OrganizationConformancePack& WithDeliveryS3Bucket(Aws::String&& value) { SetDeliveryS3Bucket(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates. </p>
-     *  <p>This field is optional.</p> 
+     * <p>The name of the Amazon S3 bucket where Config stores conformance pack
+     * templates. </p>  <p>This field is optional.</p> 
      */
     inline OrganizationConformancePack& WithDeliveryS3Bucket(const char* value) { SetDeliveryS3Bucket(value); return *this;}
 

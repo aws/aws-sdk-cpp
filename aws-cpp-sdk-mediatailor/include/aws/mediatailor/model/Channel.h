@@ -7,6 +7,7 @@
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/mediatailor/model/SlateSource.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediatailor/model/ResponseOutputItem.h>
@@ -196,6 +197,49 @@ namespace Model
 
 
     /**
+     * <p>Contains information about the slate used to fill gaps between programs in
+     * the schedule. You must configure FillerSlate if your channel uses an LINEAR
+     * PlaybackMode.</p>
+     */
+    inline const SlateSource& GetFillerSlate() const{ return m_fillerSlate; }
+
+    /**
+     * <p>Contains information about the slate used to fill gaps between programs in
+     * the schedule. You must configure FillerSlate if your channel uses an LINEAR
+     * PlaybackMode.</p>
+     */
+    inline bool FillerSlateHasBeenSet() const { return m_fillerSlateHasBeenSet; }
+
+    /**
+     * <p>Contains information about the slate used to fill gaps between programs in
+     * the schedule. You must configure FillerSlate if your channel uses an LINEAR
+     * PlaybackMode.</p>
+     */
+    inline void SetFillerSlate(const SlateSource& value) { m_fillerSlateHasBeenSet = true; m_fillerSlate = value; }
+
+    /**
+     * <p>Contains information about the slate used to fill gaps between programs in
+     * the schedule. You must configure FillerSlate if your channel uses an LINEAR
+     * PlaybackMode.</p>
+     */
+    inline void SetFillerSlate(SlateSource&& value) { m_fillerSlateHasBeenSet = true; m_fillerSlate = std::move(value); }
+
+    /**
+     * <p>Contains information about the slate used to fill gaps between programs in
+     * the schedule. You must configure FillerSlate if your channel uses an LINEAR
+     * PlaybackMode.</p>
+     */
+    inline Channel& WithFillerSlate(const SlateSource& value) { SetFillerSlate(value); return *this;}
+
+    /**
+     * <p>Contains information about the slate used to fill gaps between programs in
+     * the schedule. You must configure FillerSlate if your channel uses an LINEAR
+     * PlaybackMode.</p>
+     */
+    inline Channel& WithFillerSlate(SlateSource&& value) { SetFillerSlate(std::move(value)); return *this;}
+
+
+    /**
      * <p>The timestamp of when the channel was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
@@ -268,50 +312,66 @@ namespace Model
 
 
     /**
-     * <p>The type of playback mode for this channel. Possible values: ONCE or
-     * LOOP.</p>
+     * <p>The type of playback mode for this channel.</p> <p>LINEAR - Programs play
+     * back-to-back only once.</p> <p>LOOP - Programs play back-to-back in an endless
+     * loop. When the last program in the schedule plays, playback loops back to the
+     * first program in the schedule.</p>
      */
     inline const Aws::String& GetPlaybackMode() const{ return m_playbackMode; }
 
     /**
-     * <p>The type of playback mode for this channel. Possible values: ONCE or
-     * LOOP.</p>
+     * <p>The type of playback mode for this channel.</p> <p>LINEAR - Programs play
+     * back-to-back only once.</p> <p>LOOP - Programs play back-to-back in an endless
+     * loop. When the last program in the schedule plays, playback loops back to the
+     * first program in the schedule.</p>
      */
     inline bool PlaybackModeHasBeenSet() const { return m_playbackModeHasBeenSet; }
 
     /**
-     * <p>The type of playback mode for this channel. Possible values: ONCE or
-     * LOOP.</p>
+     * <p>The type of playback mode for this channel.</p> <p>LINEAR - Programs play
+     * back-to-back only once.</p> <p>LOOP - Programs play back-to-back in an endless
+     * loop. When the last program in the schedule plays, playback loops back to the
+     * first program in the schedule.</p>
      */
     inline void SetPlaybackMode(const Aws::String& value) { m_playbackModeHasBeenSet = true; m_playbackMode = value; }
 
     /**
-     * <p>The type of playback mode for this channel. Possible values: ONCE or
-     * LOOP.</p>
+     * <p>The type of playback mode for this channel.</p> <p>LINEAR - Programs play
+     * back-to-back only once.</p> <p>LOOP - Programs play back-to-back in an endless
+     * loop. When the last program in the schedule plays, playback loops back to the
+     * first program in the schedule.</p>
      */
     inline void SetPlaybackMode(Aws::String&& value) { m_playbackModeHasBeenSet = true; m_playbackMode = std::move(value); }
 
     /**
-     * <p>The type of playback mode for this channel. Possible values: ONCE or
-     * LOOP.</p>
+     * <p>The type of playback mode for this channel.</p> <p>LINEAR - Programs play
+     * back-to-back only once.</p> <p>LOOP - Programs play back-to-back in an endless
+     * loop. When the last program in the schedule plays, playback loops back to the
+     * first program in the schedule.</p>
      */
     inline void SetPlaybackMode(const char* value) { m_playbackModeHasBeenSet = true; m_playbackMode.assign(value); }
 
     /**
-     * <p>The type of playback mode for this channel. Possible values: ONCE or
-     * LOOP.</p>
+     * <p>The type of playback mode for this channel.</p> <p>LINEAR - Programs play
+     * back-to-back only once.</p> <p>LOOP - Programs play back-to-back in an endless
+     * loop. When the last program in the schedule plays, playback loops back to the
+     * first program in the schedule.</p>
      */
     inline Channel& WithPlaybackMode(const Aws::String& value) { SetPlaybackMode(value); return *this;}
 
     /**
-     * <p>The type of playback mode for this channel. Possible values: ONCE or
-     * LOOP.</p>
+     * <p>The type of playback mode for this channel.</p> <p>LINEAR - Programs play
+     * back-to-back only once.</p> <p>LOOP - Programs play back-to-back in an endless
+     * loop. When the last program in the schedule plays, playback loops back to the
+     * first program in the schedule.</p>
      */
     inline Channel& WithPlaybackMode(Aws::String&& value) { SetPlaybackMode(std::move(value)); return *this;}
 
     /**
-     * <p>The type of playback mode for this channel. Possible values: ONCE or
-     * LOOP.</p>
+     * <p>The type of playback mode for this channel.</p> <p>LINEAR - Programs play
+     * back-to-back only once.</p> <p>LOOP - Programs play back-to-back in an endless
+     * loop. When the last program in the schedule plays, playback loops back to the
+     * first program in the schedule.</p>
      */
     inline Channel& WithPlaybackMode(const char* value) { SetPlaybackMode(value); return *this;}
 
@@ -394,6 +454,9 @@ namespace Model
 
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
+
+    SlateSource m_fillerSlate;
+    bool m_fillerSlateHasBeenSet;
 
     Aws::Utils::DateTime m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet;

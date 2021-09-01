@@ -54,6 +54,12 @@ CreateChannelResult& CreateChannelResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("FillerSlate"))
+  {
+    m_fillerSlate = jsonValue.GetObject("FillerSlate");
+
+  }
+
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");

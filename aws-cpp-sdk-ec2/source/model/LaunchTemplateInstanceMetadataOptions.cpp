@@ -28,7 +28,9 @@ LaunchTemplateInstanceMetadataOptions::LaunchTemplateInstanceMetadataOptions() :
     m_httpPutResponseHopLimit(0),
     m_httpPutResponseHopLimitHasBeenSet(false),
     m_httpEndpoint(LaunchTemplateInstanceMetadataEndpointState::NOT_SET),
-    m_httpEndpointHasBeenSet(false)
+    m_httpEndpointHasBeenSet(false),
+    m_httpProtocolIpv6(LaunchTemplateInstanceMetadataProtocolIpv6::NOT_SET),
+    m_httpProtocolIpv6HasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ LaunchTemplateInstanceMetadataOptions::LaunchTemplateInstanceMetadataOptions(con
     m_httpPutResponseHopLimit(0),
     m_httpPutResponseHopLimitHasBeenSet(false),
     m_httpEndpoint(LaunchTemplateInstanceMetadataEndpointState::NOT_SET),
-    m_httpEndpointHasBeenSet(false)
+    m_httpEndpointHasBeenSet(false),
+    m_httpProtocolIpv6(LaunchTemplateInstanceMetadataProtocolIpv6::NOT_SET),
+    m_httpProtocolIpv6HasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -75,6 +79,12 @@ LaunchTemplateInstanceMetadataOptions& LaunchTemplateInstanceMetadataOptions::op
       m_httpEndpoint = LaunchTemplateInstanceMetadataEndpointStateMapper::GetLaunchTemplateInstanceMetadataEndpointStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpEndpointNode.GetText()).c_str()).c_str());
       m_httpEndpointHasBeenSet = true;
     }
+    XmlNode httpProtocolIpv6Node = resultNode.FirstChild("httpProtocolIpv6");
+    if(!httpProtocolIpv6Node.IsNull())
+    {
+      m_httpProtocolIpv6 = LaunchTemplateInstanceMetadataProtocolIpv6Mapper::GetLaunchTemplateInstanceMetadataProtocolIpv6ForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpProtocolIpv6Node.GetText()).c_str()).c_str());
+      m_httpProtocolIpv6HasBeenSet = true;
+    }
   }
 
   return *this;
@@ -102,6 +112,11 @@ void LaunchTemplateInstanceMetadataOptions::OutputToStream(Aws::OStream& oStream
       oStream << location << index << locationValue << ".HttpEndpoint=" << LaunchTemplateInstanceMetadataEndpointStateMapper::GetNameForLaunchTemplateInstanceMetadataEndpointState(m_httpEndpoint) << "&";
   }
 
+  if(m_httpProtocolIpv6HasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HttpProtocolIpv6=" << LaunchTemplateInstanceMetadataProtocolIpv6Mapper::GetNameForLaunchTemplateInstanceMetadataProtocolIpv6(m_httpProtocolIpv6) << "&";
+  }
+
 }
 
 void LaunchTemplateInstanceMetadataOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -121,6 +136,10 @@ void LaunchTemplateInstanceMetadataOptions::OutputToStream(Aws::OStream& oStream
   if(m_httpEndpointHasBeenSet)
   {
       oStream << location << ".HttpEndpoint=" << LaunchTemplateInstanceMetadataEndpointStateMapper::GetNameForLaunchTemplateInstanceMetadataEndpointState(m_httpEndpoint) << "&";
+  }
+  if(m_httpProtocolIpv6HasBeenSet)
+  {
+      oStream << location << ".HttpProtocolIpv6=" << LaunchTemplateInstanceMetadataProtocolIpv6Mapper::GetNameForLaunchTemplateInstanceMetadataProtocolIpv6(m_httpProtocolIpv6) << "&";
   }
 }
 

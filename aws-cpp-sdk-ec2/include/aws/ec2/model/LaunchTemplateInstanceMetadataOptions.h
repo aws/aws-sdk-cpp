@@ -9,6 +9,7 @@
 #include <aws/ec2/model/LaunchTemplateInstanceMetadataOptionsState.h>
 #include <aws/ec2/model/LaunchTemplateHttpTokensState.h>
 #include <aws/ec2/model/LaunchTemplateInstanceMetadataEndpointState.h>
+#include <aws/ec2/model/LaunchTemplateInstanceMetadataProtocolIpv6.h>
 #include <utility>
 
 namespace Aws
@@ -267,6 +268,43 @@ namespace Model
      */
     inline LaunchTemplateInstanceMetadataOptions& WithHttpEndpoint(LaunchTemplateInstanceMetadataEndpointState&& value) { SetHttpEndpoint(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     * <p>Default: <code>disabled</code> </p>
+     */
+    inline const LaunchTemplateInstanceMetadataProtocolIpv6& GetHttpProtocolIpv6() const{ return m_httpProtocolIpv6; }
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     * <p>Default: <code>disabled</code> </p>
+     */
+    inline bool HttpProtocolIpv6HasBeenSet() const { return m_httpProtocolIpv6HasBeenSet; }
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     * <p>Default: <code>disabled</code> </p>
+     */
+    inline void SetHttpProtocolIpv6(const LaunchTemplateInstanceMetadataProtocolIpv6& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = value; }
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     * <p>Default: <code>disabled</code> </p>
+     */
+    inline void SetHttpProtocolIpv6(LaunchTemplateInstanceMetadataProtocolIpv6&& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = std::move(value); }
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     * <p>Default: <code>disabled</code> </p>
+     */
+    inline LaunchTemplateInstanceMetadataOptions& WithHttpProtocolIpv6(const LaunchTemplateInstanceMetadataProtocolIpv6& value) { SetHttpProtocolIpv6(value); return *this;}
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     * <p>Default: <code>disabled</code> </p>
+     */
+    inline LaunchTemplateInstanceMetadataOptions& WithHttpProtocolIpv6(LaunchTemplateInstanceMetadataProtocolIpv6&& value) { SetHttpProtocolIpv6(std::move(value)); return *this;}
+
   private:
 
     LaunchTemplateInstanceMetadataOptionsState m_state;
@@ -280,6 +318,9 @@ namespace Model
 
     LaunchTemplateInstanceMetadataEndpointState m_httpEndpoint;
     bool m_httpEndpointHasBeenSet;
+
+    LaunchTemplateInstanceMetadataProtocolIpv6 m_httpProtocolIpv6;
+    bool m_httpProtocolIpv6HasBeenSet;
   };
 
 } // namespace Model

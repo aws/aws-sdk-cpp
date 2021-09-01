@@ -71,42 +71,50 @@ namespace Model
 
 
     /**
-     * <p>Groups the result based on AWS Account ID or AWS Region.</p>
+     * <p>Groups the result based on Amazon Web Services account ID or Amazon Web
+     * Services Region.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
-     * <p>Groups the result based on AWS Account ID or AWS Region.</p>
+     * <p>Groups the result based on Amazon Web Services account ID or Amazon Web
+     * Services Region.</p>
      */
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
-     * <p>Groups the result based on AWS Account ID or AWS Region.</p>
+     * <p>Groups the result based on Amazon Web Services account ID or Amazon Web
+     * Services Region.</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
-     * <p>Groups the result based on AWS Account ID or AWS Region.</p>
+     * <p>Groups the result based on Amazon Web Services account ID or Amazon Web
+     * Services Region.</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
-     * <p>Groups the result based on AWS Account ID or AWS Region.</p>
+     * <p>Groups the result based on Amazon Web Services account ID or Amazon Web
+     * Services Region.</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
-     * <p>Groups the result based on AWS Account ID or AWS Region.</p>
+     * <p>Groups the result based on Amazon Web Services account ID or Amazon Web
+     * Services Region.</p>
      */
     inline AggregateConformancePackComplianceSummary& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
-     * <p>Groups the result based on AWS Account ID or AWS Region.</p>
+     * <p>Groups the result based on Amazon Web Services account ID or Amazon Web
+     * Services Region.</p>
      */
     inline AggregateConformancePackComplianceSummary& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>Groups the result based on AWS Account ID or AWS Region.</p>
+     * <p>Groups the result based on Amazon Web Services account ID or Amazon Web
+     * Services Region.</p>
      */
     inline AggregateConformancePackComplianceSummary& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 

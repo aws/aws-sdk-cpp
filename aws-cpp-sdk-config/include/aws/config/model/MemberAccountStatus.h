@@ -131,7 +131,7 @@ namespace Model
      * rule status is updated in the member account. Config rule status is deleted when
      * the master account deletes <code>OrganizationConfigRule</code> and disables
      * service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>
-     * AWS Config sets the state of the rule to:</p> <ul> <li> <p>
+     * Config sets the state of the rule to:</p> <ul> <li> <p>
      * <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member
      * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when config rule is
      * being created in the member account.</p> </li> <li> <p>
@@ -157,7 +157,7 @@ namespace Model
      * rule status is updated in the member account. Config rule status is deleted when
      * the master account deletes <code>OrganizationConfigRule</code> and disables
      * service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>
-     * AWS Config sets the state of the rule to:</p> <ul> <li> <p>
+     * Config sets the state of the rule to:</p> <ul> <li> <p>
      * <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member
      * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when config rule is
      * being created in the member account.</p> </li> <li> <p>
@@ -183,7 +183,7 @@ namespace Model
      * rule status is updated in the member account. Config rule status is deleted when
      * the master account deletes <code>OrganizationConfigRule</code> and disables
      * service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>
-     * AWS Config sets the state of the rule to:</p> <ul> <li> <p>
+     * Config sets the state of the rule to:</p> <ul> <li> <p>
      * <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member
      * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when config rule is
      * being created in the member account.</p> </li> <li> <p>
@@ -209,7 +209,7 @@ namespace Model
      * rule status is updated in the member account. Config rule status is deleted when
      * the master account deletes <code>OrganizationConfigRule</code> and disables
      * service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>
-     * AWS Config sets the state of the rule to:</p> <ul> <li> <p>
+     * Config sets the state of the rule to:</p> <ul> <li> <p>
      * <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member
      * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when config rule is
      * being created in the member account.</p> </li> <li> <p>
@@ -235,7 +235,7 @@ namespace Model
      * rule status is updated in the member account. Config rule status is deleted when
      * the master account deletes <code>OrganizationConfigRule</code> and disables
      * service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>
-     * AWS Config sets the state of the rule to:</p> <ul> <li> <p>
+     * Config sets the state of the rule to:</p> <ul> <li> <p>
      * <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member
      * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when config rule is
      * being created in the member account.</p> </li> <li> <p>
@@ -261,7 +261,7 @@ namespace Model
      * rule status is updated in the member account. Config rule status is deleted when
      * the master account deletes <code>OrganizationConfigRule</code> and disables
      * service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>
-     * AWS Config sets the state of the rule to:</p> <ul> <li> <p>
+     * Config sets the state of the rule to:</p> <ul> <li> <p>
      * <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member
      * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when config rule is
      * being created in the member account.</p> </li> <li> <p>

@@ -206,6 +206,42 @@ namespace Model
 
 
     /**
+     * <p>The date and time that the program is scheduled to start in ISO 8601 format
+     * and Coordinated Universal Time (UTC). For example, the value
+     * 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
+     */
+    inline const Aws::Utils::DateTime& GetScheduledStartTime() const{ return m_scheduledStartTime; }
+
+    /**
+     * <p>The date and time that the program is scheduled to start in ISO 8601 format
+     * and Coordinated Universal Time (UTC). For example, the value
+     * 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
+     */
+    inline void SetScheduledStartTime(const Aws::Utils::DateTime& value) { m_scheduledStartTime = value; }
+
+    /**
+     * <p>The date and time that the program is scheduled to start in ISO 8601 format
+     * and Coordinated Universal Time (UTC). For example, the value
+     * 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
+     */
+    inline void SetScheduledStartTime(Aws::Utils::DateTime&& value) { m_scheduledStartTime = std::move(value); }
+
+    /**
+     * <p>The date and time that the program is scheduled to start in ISO 8601 format
+     * and Coordinated Universal Time (UTC). For example, the value
+     * 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
+     */
+    inline CreateProgramResult& WithScheduledStartTime(const Aws::Utils::DateTime& value) { SetScheduledStartTime(value); return *this;}
+
+    /**
+     * <p>The date and time that the program is scheduled to start in ISO 8601 format
+     * and Coordinated Universal Time (UTC). For example, the value
+     * 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
+     */
+    inline CreateProgramResult& WithScheduledStartTime(Aws::Utils::DateTime&& value) { SetScheduledStartTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>The source location name.</p>
      */
     inline const Aws::String& GetSourceLocationName() const{ return m_sourceLocationName; }
@@ -287,6 +323,8 @@ namespace Model
     Aws::Utils::DateTime m_creationTime;
 
     Aws::String m_programName;
+
+    Aws::Utils::DateTime m_scheduledStartTime;
 
     Aws::String m_sourceLocationName;
 

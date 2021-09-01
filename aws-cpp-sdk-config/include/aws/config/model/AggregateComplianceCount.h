@@ -81,32 +81,32 @@ namespace Model
 
 
     /**
-     * <p>The number of compliant and noncompliant AWS Config rules.</p>
+     * <p>The number of compliant and noncompliant Config rules.</p>
      */
     inline const ComplianceSummary& GetComplianceSummary() const{ return m_complianceSummary; }
 
     /**
-     * <p>The number of compliant and noncompliant AWS Config rules.</p>
+     * <p>The number of compliant and noncompliant Config rules.</p>
      */
     inline bool ComplianceSummaryHasBeenSet() const { return m_complianceSummaryHasBeenSet; }
 
     /**
-     * <p>The number of compliant and noncompliant AWS Config rules.</p>
+     * <p>The number of compliant and noncompliant Config rules.</p>
      */
     inline void SetComplianceSummary(const ComplianceSummary& value) { m_complianceSummaryHasBeenSet = true; m_complianceSummary = value; }
 
     /**
-     * <p>The number of compliant and noncompliant AWS Config rules.</p>
+     * <p>The number of compliant and noncompliant Config rules.</p>
      */
     inline void SetComplianceSummary(ComplianceSummary&& value) { m_complianceSummaryHasBeenSet = true; m_complianceSummary = std::move(value); }
 
     /**
-     * <p>The number of compliant and noncompliant AWS Config rules.</p>
+     * <p>The number of compliant and noncompliant Config rules.</p>
      */
     inline AggregateComplianceCount& WithComplianceSummary(const ComplianceSummary& value) { SetComplianceSummary(value); return *this;}
 
     /**
-     * <p>The number of compliant and noncompliant AWS Config rules.</p>
+     * <p>The number of compliant and noncompliant Config rules.</p>
      */
     inline AggregateComplianceCount& WithComplianceSummary(ComplianceSummary&& value) { SetComplianceSummary(std::move(value)); return *this;}
 

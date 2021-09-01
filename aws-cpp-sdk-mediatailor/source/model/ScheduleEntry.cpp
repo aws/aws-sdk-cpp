@@ -26,6 +26,8 @@ ScheduleEntry::ScheduleEntry() :
     m_channelNameHasBeenSet(false),
     m_programNameHasBeenSet(false),
     m_scheduleAdBreaksHasBeenSet(false),
+    m_scheduleEntryType(ScheduleEntryType::NOT_SET),
+    m_scheduleEntryTypeHasBeenSet(false),
     m_sourceLocationNameHasBeenSet(false),
     m_vodSourceNameHasBeenSet(false)
 {
@@ -39,6 +41,8 @@ ScheduleEntry::ScheduleEntry(JsonView jsonValue) :
     m_channelNameHasBeenSet(false),
     m_programNameHasBeenSet(false),
     m_scheduleAdBreaksHasBeenSet(false),
+    m_scheduleEntryType(ScheduleEntryType::NOT_SET),
+    m_scheduleEntryTypeHasBeenSet(false),
     m_sourceLocationNameHasBeenSet(false),
     m_vodSourceNameHasBeenSet(false)
 {
@@ -90,6 +94,13 @@ ScheduleEntry& ScheduleEntry::operator =(JsonView jsonValue)
       m_scheduleAdBreaks.push_back(scheduleAdBreaksJsonList[scheduleAdBreaksIndex].AsObject());
     }
     m_scheduleAdBreaksHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ScheduleEntryType"))
+  {
+    m_scheduleEntryType = ScheduleEntryTypeMapper::GetScheduleEntryTypeForName(jsonValue.GetString("ScheduleEntryType"));
+
+    m_scheduleEntryTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SourceLocationName"))
@@ -151,6 +162,11 @@ JsonValue ScheduleEntry::Jsonize() const
    }
    payload.WithArray("ScheduleAdBreaks", std::move(scheduleAdBreaksJsonList));
 
+  }
+
+  if(m_scheduleEntryTypeHasBeenSet)
+  {
+   payload.WithString("ScheduleEntryType", ScheduleEntryTypeMapper::GetNameForScheduleEntryType(m_scheduleEntryType));
   }
 
   if(m_sourceLocationNameHasBeenSet)

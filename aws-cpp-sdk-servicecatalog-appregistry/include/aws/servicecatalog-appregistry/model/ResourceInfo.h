@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about the resource.</p><p><h3>See Also:</h3>   <a
+   * <p>The information about the resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ResourceInfo">AWS
    * API Reference</a></p>
    */

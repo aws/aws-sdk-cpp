@@ -40,37 +40,37 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether each of the specified AWS Config rules is compliant.</p>
+     * <p>Indicates whether each of the specified Config rules is compliant.</p>
      */
     inline const Aws::Vector<ComplianceByConfigRule>& GetComplianceByConfigRules() const{ return m_complianceByConfigRules; }
 
     /**
-     * <p>Indicates whether each of the specified AWS Config rules is compliant.</p>
+     * <p>Indicates whether each of the specified Config rules is compliant.</p>
      */
     inline void SetComplianceByConfigRules(const Aws::Vector<ComplianceByConfigRule>& value) { m_complianceByConfigRules = value; }
 
     /**
-     * <p>Indicates whether each of the specified AWS Config rules is compliant.</p>
+     * <p>Indicates whether each of the specified Config rules is compliant.</p>
      */
     inline void SetComplianceByConfigRules(Aws::Vector<ComplianceByConfigRule>&& value) { m_complianceByConfigRules = std::move(value); }
 
     /**
-     * <p>Indicates whether each of the specified AWS Config rules is compliant.</p>
+     * <p>Indicates whether each of the specified Config rules is compliant.</p>
      */
     inline DescribeComplianceByConfigRuleResult& WithComplianceByConfigRules(const Aws::Vector<ComplianceByConfigRule>& value) { SetComplianceByConfigRules(value); return *this;}
 
     /**
-     * <p>Indicates whether each of the specified AWS Config rules is compliant.</p>
+     * <p>Indicates whether each of the specified Config rules is compliant.</p>
      */
     inline DescribeComplianceByConfigRuleResult& WithComplianceByConfigRules(Aws::Vector<ComplianceByConfigRule>&& value) { SetComplianceByConfigRules(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates whether each of the specified AWS Config rules is compliant.</p>
+     * <p>Indicates whether each of the specified Config rules is compliant.</p>
      */
     inline DescribeComplianceByConfigRuleResult& AddComplianceByConfigRules(const ComplianceByConfigRule& value) { m_complianceByConfigRules.push_back(value); return *this; }
 
     /**
-     * <p>Indicates whether each of the specified AWS Config rules is compliant.</p>
+     * <p>Indicates whether each of the specified Config rules is compliant.</p>
      */
     inline DescribeComplianceByConfigRuleResult& AddComplianceByConfigRules(ComplianceByConfigRule&& value) { m_complianceByConfigRules.push_back(std::move(value)); return *this; }
 

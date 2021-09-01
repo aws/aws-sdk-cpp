@@ -77,50 +77,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS Config rule for which you want compliance
-     * information.</p>
+     * <p>The name of the Config rule for which you want compliance information.</p>
      */
     inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
 
     /**
-     * <p>The name of the AWS Config rule for which you want compliance
-     * information.</p>
+     * <p>The name of the Config rule for which you want compliance information.</p>
      */
     inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS Config rule for which you want compliance
-     * information.</p>
+     * <p>The name of the Config rule for which you want compliance information.</p>
      */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
 
     /**
-     * <p>The name of the AWS Config rule for which you want compliance
-     * information.</p>
+     * <p>The name of the Config rule for which you want compliance information.</p>
      */
     inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
 
     /**
-     * <p>The name of the AWS Config rule for which you want compliance
-     * information.</p>
+     * <p>The name of the Config rule for which you want compliance information.</p>
      */
     inline void SetConfigRuleName(const char* value) { m_configRuleNameHasBeenSet = true; m_configRuleName.assign(value); }
 
     /**
-     * <p>The name of the AWS Config rule for which you want compliance
-     * information.</p>
+     * <p>The name of the Config rule for which you want compliance information.</p>
      */
     inline GetAggregateComplianceDetailsByConfigRuleRequest& WithConfigRuleName(const Aws::String& value) { SetConfigRuleName(value); return *this;}
 
     /**
-     * <p>The name of the AWS Config rule for which you want compliance
-     * information.</p>
+     * <p>The name of the Config rule for which you want compliance information.</p>
      */
     inline GetAggregateComplianceDetailsByConfigRuleRequest& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS Config rule for which you want compliance
-     * information.</p>
+     * <p>The name of the Config rule for which you want compliance information.</p>
      */
     inline GetAggregateComplianceDetailsByConfigRuleRequest& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
 
@@ -209,54 +201,54 @@ namespace Model
 
     /**
      * <p>The resource compliance status.</p>  <p>For the
-     * <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, AWS
-     * Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
-     * AWS Config does not support the <code>NOT_APPLICABLE</code> and
+     * <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config
+     * supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config
+     * does not support the <code>NOT_APPLICABLE</code> and
      * <code>INSUFFICIENT_DATA</code> values.</p> 
      */
     inline const ComplianceType& GetComplianceType() const{ return m_complianceType; }
 
     /**
      * <p>The resource compliance status.</p>  <p>For the
-     * <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, AWS
-     * Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
-     * AWS Config does not support the <code>NOT_APPLICABLE</code> and
+     * <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config
+     * supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config
+     * does not support the <code>NOT_APPLICABLE</code> and
      * <code>INSUFFICIENT_DATA</code> values.</p> 
      */
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
 
     /**
      * <p>The resource compliance status.</p>  <p>For the
-     * <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, AWS
-     * Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
-     * AWS Config does not support the <code>NOT_APPLICABLE</code> and
+     * <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config
+     * supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config
+     * does not support the <code>NOT_APPLICABLE</code> and
      * <code>INSUFFICIENT_DATA</code> values.</p> 
      */
     inline void SetComplianceType(const ComplianceType& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
 
     /**
      * <p>The resource compliance status.</p>  <p>For the
-     * <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, AWS
-     * Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
-     * AWS Config does not support the <code>NOT_APPLICABLE</code> and
+     * <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config
+     * supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config
+     * does not support the <code>NOT_APPLICABLE</code> and
      * <code>INSUFFICIENT_DATA</code> values.</p> 
      */
     inline void SetComplianceType(ComplianceType&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
 
     /**
      * <p>The resource compliance status.</p>  <p>For the
-     * <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, AWS
-     * Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
-     * AWS Config does not support the <code>NOT_APPLICABLE</code> and
+     * <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config
+     * supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config
+     * does not support the <code>NOT_APPLICABLE</code> and
      * <code>INSUFFICIENT_DATA</code> values.</p> 
      */
     inline GetAggregateComplianceDetailsByConfigRuleRequest& WithComplianceType(const ComplianceType& value) { SetComplianceType(value); return *this;}
 
     /**
      * <p>The resource compliance status.</p>  <p>For the
-     * <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, AWS
-     * Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
-     * AWS Config does not support the <code>NOT_APPLICABLE</code> and
+     * <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config
+     * supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config
+     * does not support the <code>NOT_APPLICABLE</code> and
      * <code>INSUFFICIENT_DATA</code> values.</p> 
      */
     inline GetAggregateComplianceDetailsByConfigRuleRequest& WithComplianceType(ComplianceType&& value) { SetComplianceType(std::move(value)); return *this;}
@@ -264,29 +256,29 @@ namespace Model
 
     /**
      * <p>The maximum number of evaluation results returned on each page. The default
-     * is 50. You cannot specify a number greater than 100. If you specify 0, AWS
-     * Config uses the default.</p>
+     * is 50. You cannot specify a number greater than 100. If you specify 0, Config
+     * uses the default.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of evaluation results returned on each page. The default
-     * is 50. You cannot specify a number greater than 100. If you specify 0, AWS
-     * Config uses the default.</p>
+     * is 50. You cannot specify a number greater than 100. If you specify 0, Config
+     * uses the default.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of evaluation results returned on each page. The default
-     * is 50. You cannot specify a number greater than 100. If you specify 0, AWS
-     * Config uses the default.</p>
+     * is 50. You cannot specify a number greater than 100. If you specify 0, Config
+     * uses the default.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of evaluation results returned on each page. The default
-     * is 50. You cannot specify a number greater than 100. If you specify 0, AWS
-     * Config uses the default.</p>
+     * is 50. You cannot specify a number greater than 100. If you specify 0, Config
+     * uses the default.</p>
      */
     inline GetAggregateComplianceDetailsByConfigRuleRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

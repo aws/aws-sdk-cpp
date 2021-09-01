@@ -38,31 +38,31 @@ namespace Model
 
 
     /**
-     * <p>The number of AWS Config rules that are compliant and the number that are
+     * <p>The number of Config rules that are compliant and the number that are
      * noncompliant, up to a maximum of 25 for each.</p>
      */
     inline const ComplianceSummary& GetComplianceSummary() const{ return m_complianceSummary; }
 
     /**
-     * <p>The number of AWS Config rules that are compliant and the number that are
+     * <p>The number of Config rules that are compliant and the number that are
      * noncompliant, up to a maximum of 25 for each.</p>
      */
     inline void SetComplianceSummary(const ComplianceSummary& value) { m_complianceSummary = value; }
 
     /**
-     * <p>The number of AWS Config rules that are compliant and the number that are
+     * <p>The number of Config rules that are compliant and the number that are
      * noncompliant, up to a maximum of 25 for each.</p>
      */
     inline void SetComplianceSummary(ComplianceSummary&& value) { m_complianceSummary = std::move(value); }
 
     /**
-     * <p>The number of AWS Config rules that are compliant and the number that are
+     * <p>The number of Config rules that are compliant and the number that are
      * noncompliant, up to a maximum of 25 for each.</p>
      */
     inline GetComplianceSummaryByConfigRuleResult& WithComplianceSummary(const ComplianceSummary& value) { SetComplianceSummary(value); return *this;}
 
     /**
-     * <p>The number of AWS Config rules that are compliant and the number that are
+     * <p>The number of Config rules that are compliant and the number that are
      * noncompliant, up to a maximum of 25 for each.</p>
      */
     inline GetComplianceSummaryByConfigRuleResult& WithComplianceSummary(ComplianceSummary&& value) { SetComplianceSummary(std::move(value)); return *this;}

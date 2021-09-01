@@ -26,8 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Identifies an AWS resource and indicates whether it complies with the AWS
-   * Config rule that it was evaluated against.</p><p><h3>See Also:</h3>   <a
+   * <p>Identifies an Amazon Web Services resource and indicates whether it complies
+   * with the Config rule that it was evaluated against.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ExternalEvaluation">AWS
    * API Reference</a></p>
    */
@@ -41,136 +42,136 @@ namespace Model
 
 
     /**
-     * <p>The evaluated compliance resource type. AWS Config accepts
+     * <p>The evaluated compliance resource type. Config accepts
      * <code>AWS::::Account</code> resource type.</p>
      */
     inline const Aws::String& GetComplianceResourceType() const{ return m_complianceResourceType; }
 
     /**
-     * <p>The evaluated compliance resource type. AWS Config accepts
+     * <p>The evaluated compliance resource type. Config accepts
      * <code>AWS::::Account</code> resource type.</p>
      */
     inline bool ComplianceResourceTypeHasBeenSet() const { return m_complianceResourceTypeHasBeenSet; }
 
     /**
-     * <p>The evaluated compliance resource type. AWS Config accepts
+     * <p>The evaluated compliance resource type. Config accepts
      * <code>AWS::::Account</code> resource type.</p>
      */
     inline void SetComplianceResourceType(const Aws::String& value) { m_complianceResourceTypeHasBeenSet = true; m_complianceResourceType = value; }
 
     /**
-     * <p>The evaluated compliance resource type. AWS Config accepts
+     * <p>The evaluated compliance resource type. Config accepts
      * <code>AWS::::Account</code> resource type.</p>
      */
     inline void SetComplianceResourceType(Aws::String&& value) { m_complianceResourceTypeHasBeenSet = true; m_complianceResourceType = std::move(value); }
 
     /**
-     * <p>The evaluated compliance resource type. AWS Config accepts
+     * <p>The evaluated compliance resource type. Config accepts
      * <code>AWS::::Account</code> resource type.</p>
      */
     inline void SetComplianceResourceType(const char* value) { m_complianceResourceTypeHasBeenSet = true; m_complianceResourceType.assign(value); }
 
     /**
-     * <p>The evaluated compliance resource type. AWS Config accepts
+     * <p>The evaluated compliance resource type. Config accepts
      * <code>AWS::::Account</code> resource type.</p>
      */
     inline ExternalEvaluation& WithComplianceResourceType(const Aws::String& value) { SetComplianceResourceType(value); return *this;}
 
     /**
-     * <p>The evaluated compliance resource type. AWS Config accepts
+     * <p>The evaluated compliance resource type. Config accepts
      * <code>AWS::::Account</code> resource type.</p>
      */
     inline ExternalEvaluation& WithComplianceResourceType(Aws::String&& value) { SetComplianceResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The evaluated compliance resource type. AWS Config accepts
+     * <p>The evaluated compliance resource type. Config accepts
      * <code>AWS::::Account</code> resource type.</p>
      */
     inline ExternalEvaluation& WithComplianceResourceType(const char* value) { SetComplianceResourceType(value); return *this;}
 
 
     /**
-     * <p>The evaluated compliance resource ID. AWS Config accepts only AWS account
-     * ID.</p>
+     * <p>The evaluated compliance resource ID. Config accepts only Amazon Web Services
+     * account ID.</p>
      */
     inline const Aws::String& GetComplianceResourceId() const{ return m_complianceResourceId; }
 
     /**
-     * <p>The evaluated compliance resource ID. AWS Config accepts only AWS account
-     * ID.</p>
+     * <p>The evaluated compliance resource ID. Config accepts only Amazon Web Services
+     * account ID.</p>
      */
     inline bool ComplianceResourceIdHasBeenSet() const { return m_complianceResourceIdHasBeenSet; }
 
     /**
-     * <p>The evaluated compliance resource ID. AWS Config accepts only AWS account
-     * ID.</p>
+     * <p>The evaluated compliance resource ID. Config accepts only Amazon Web Services
+     * account ID.</p>
      */
     inline void SetComplianceResourceId(const Aws::String& value) { m_complianceResourceIdHasBeenSet = true; m_complianceResourceId = value; }
 
     /**
-     * <p>The evaluated compliance resource ID. AWS Config accepts only AWS account
-     * ID.</p>
+     * <p>The evaluated compliance resource ID. Config accepts only Amazon Web Services
+     * account ID.</p>
      */
     inline void SetComplianceResourceId(Aws::String&& value) { m_complianceResourceIdHasBeenSet = true; m_complianceResourceId = std::move(value); }
 
     /**
-     * <p>The evaluated compliance resource ID. AWS Config accepts only AWS account
-     * ID.</p>
+     * <p>The evaluated compliance resource ID. Config accepts only Amazon Web Services
+     * account ID.</p>
      */
     inline void SetComplianceResourceId(const char* value) { m_complianceResourceIdHasBeenSet = true; m_complianceResourceId.assign(value); }
 
     /**
-     * <p>The evaluated compliance resource ID. AWS Config accepts only AWS account
-     * ID.</p>
+     * <p>The evaluated compliance resource ID. Config accepts only Amazon Web Services
+     * account ID.</p>
      */
     inline ExternalEvaluation& WithComplianceResourceId(const Aws::String& value) { SetComplianceResourceId(value); return *this;}
 
     /**
-     * <p>The evaluated compliance resource ID. AWS Config accepts only AWS account
-     * ID.</p>
+     * <p>The evaluated compliance resource ID. Config accepts only Amazon Web Services
+     * account ID.</p>
      */
     inline ExternalEvaluation& WithComplianceResourceId(Aws::String&& value) { SetComplianceResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The evaluated compliance resource ID. AWS Config accepts only AWS account
-     * ID.</p>
+     * <p>The evaluated compliance resource ID. Config accepts only Amazon Web Services
+     * account ID.</p>
      */
     inline ExternalEvaluation& WithComplianceResourceId(const char* value) { SetComplianceResourceId(value); return *this;}
 
 
     /**
-     * <p>The compliance of the AWS resource. The valid values are <code>COMPLIANT,
-     * NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
+     * <p>The compliance of the Amazon Web Services resource. The valid values are
+     * <code>COMPLIANT, NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
      */
     inline const ComplianceType& GetComplianceType() const{ return m_complianceType; }
 
     /**
-     * <p>The compliance of the AWS resource. The valid values are <code>COMPLIANT,
-     * NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
+     * <p>The compliance of the Amazon Web Services resource. The valid values are
+     * <code>COMPLIANT, NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
      */
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
 
     /**
-     * <p>The compliance of the AWS resource. The valid values are <code>COMPLIANT,
-     * NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
+     * <p>The compliance of the Amazon Web Services resource. The valid values are
+     * <code>COMPLIANT, NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
      */
     inline void SetComplianceType(const ComplianceType& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
 
     /**
-     * <p>The compliance of the AWS resource. The valid values are <code>COMPLIANT,
-     * NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
+     * <p>The compliance of the Amazon Web Services resource. The valid values are
+     * <code>COMPLIANT, NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
      */
     inline void SetComplianceType(ComplianceType&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
 
     /**
-     * <p>The compliance of the AWS resource. The valid values are <code>COMPLIANT,
-     * NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
+     * <p>The compliance of the Amazon Web Services resource. The valid values are
+     * <code>COMPLIANT, NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
      */
     inline ExternalEvaluation& WithComplianceType(const ComplianceType& value) { SetComplianceType(value); return *this;}
 
     /**
-     * <p>The compliance of the AWS resource. The valid values are <code>COMPLIANT,
-     * NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
+     * <p>The compliance of the Amazon Web Services resource. The valid values are
+     * <code>COMPLIANT, NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
      */
     inline ExternalEvaluation& WithComplianceType(ComplianceType&& value) { SetComplianceType(std::move(value)); return *this;}
 

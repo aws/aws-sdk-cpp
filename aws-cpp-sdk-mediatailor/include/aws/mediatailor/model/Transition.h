@@ -40,37 +40,37 @@ namespace Model
 
     /**
      * <p>The position where this program will be inserted relative to the
-     * RelativeProgram. Possible values are: AFTER_PROGRAM, and BEFORE_PROGRAM.</p>
+     * RelativePosition.</p>
      */
     inline const RelativePosition& GetRelativePosition() const{ return m_relativePosition; }
 
     /**
      * <p>The position where this program will be inserted relative to the
-     * RelativeProgram. Possible values are: AFTER_PROGRAM, and BEFORE_PROGRAM.</p>
+     * RelativePosition.</p>
      */
     inline bool RelativePositionHasBeenSet() const { return m_relativePositionHasBeenSet; }
 
     /**
      * <p>The position where this program will be inserted relative to the
-     * RelativeProgram. Possible values are: AFTER_PROGRAM, and BEFORE_PROGRAM.</p>
+     * RelativePosition.</p>
      */
     inline void SetRelativePosition(const RelativePosition& value) { m_relativePositionHasBeenSet = true; m_relativePosition = value; }
 
     /**
      * <p>The position where this program will be inserted relative to the
-     * RelativeProgram. Possible values are: AFTER_PROGRAM, and BEFORE_PROGRAM.</p>
+     * RelativePosition.</p>
      */
     inline void SetRelativePosition(RelativePosition&& value) { m_relativePositionHasBeenSet = true; m_relativePosition = std::move(value); }
 
     /**
      * <p>The position where this program will be inserted relative to the
-     * RelativeProgram. Possible values are: AFTER_PROGRAM, and BEFORE_PROGRAM.</p>
+     * RelativePosition.</p>
      */
     inline Transition& WithRelativePosition(const RelativePosition& value) { SetRelativePosition(value); return *this;}
 
     /**
      * <p>The position where this program will be inserted relative to the
-     * RelativeProgram. Possible values are: AFTER_PROGRAM, and BEFORE_PROGRAM.</p>
+     * RelativePosition.</p>
      */
     inline Transition& WithRelativePosition(RelativePosition&& value) { SetRelativePosition(std::move(value)); return *this;}
 
@@ -125,50 +125,139 @@ namespace Model
 
 
     /**
-     * <p>When the program should be played. RELATIVE means that programs will be
-     * played back-to-back.</p>
+     * <p>The date and time that the program is scheduled to start, in epoch
+     * milliseconds.</p>
+     */
+    inline long long GetScheduledStartTimeMillis() const{ return m_scheduledStartTimeMillis; }
+
+    /**
+     * <p>The date and time that the program is scheduled to start, in epoch
+     * milliseconds.</p>
+     */
+    inline bool ScheduledStartTimeMillisHasBeenSet() const { return m_scheduledStartTimeMillisHasBeenSet; }
+
+    /**
+     * <p>The date and time that the program is scheduled to start, in epoch
+     * milliseconds.</p>
+     */
+    inline void SetScheduledStartTimeMillis(long long value) { m_scheduledStartTimeMillisHasBeenSet = true; m_scheduledStartTimeMillis = value; }
+
+    /**
+     * <p>The date and time that the program is scheduled to start, in epoch
+     * milliseconds.</p>
+     */
+    inline Transition& WithScheduledStartTimeMillis(long long value) { SetScheduledStartTimeMillis(value); return *this;}
+
+
+    /**
+     * <p>Defines when the program plays in the schedule. You can set the value to
+     * ABSOLUTE or RELATIVE.</p> <p>ABSOLUTE - The program plays at a specific wall
+     * clock time. This setting can only be used for channels using the LINEAR
+     * PlaybackMode.</p> <p>Note the following considerations when using ABSOLUTE
+     * transitions:</p> <p>If the preceding program in the schedule has a duration that
+     * extends past the wall clock time, MediaTailor truncates the preceding program on
+     * a common segment boundary.</p> <p>If there are gaps in playback, MediaTailor
+     * plays the FillerSlate you configured for your linear channel.</p> <p>RELATIVE -
+     * The program is inserted into the schedule either before or after a program that
+     * you specify via RelativePosition.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>When the program should be played. RELATIVE means that programs will be
-     * played back-to-back.</p>
+     * <p>Defines when the program plays in the schedule. You can set the value to
+     * ABSOLUTE or RELATIVE.</p> <p>ABSOLUTE - The program plays at a specific wall
+     * clock time. This setting can only be used for channels using the LINEAR
+     * PlaybackMode.</p> <p>Note the following considerations when using ABSOLUTE
+     * transitions:</p> <p>If the preceding program in the schedule has a duration that
+     * extends past the wall clock time, MediaTailor truncates the preceding program on
+     * a common segment boundary.</p> <p>If there are gaps in playback, MediaTailor
+     * plays the FillerSlate you configured for your linear channel.</p> <p>RELATIVE -
+     * The program is inserted into the schedule either before or after a program that
+     * you specify via RelativePosition.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>When the program should be played. RELATIVE means that programs will be
-     * played back-to-back.</p>
+     * <p>Defines when the program plays in the schedule. You can set the value to
+     * ABSOLUTE or RELATIVE.</p> <p>ABSOLUTE - The program plays at a specific wall
+     * clock time. This setting can only be used for channels using the LINEAR
+     * PlaybackMode.</p> <p>Note the following considerations when using ABSOLUTE
+     * transitions:</p> <p>If the preceding program in the schedule has a duration that
+     * extends past the wall clock time, MediaTailor truncates the preceding program on
+     * a common segment boundary.</p> <p>If there are gaps in playback, MediaTailor
+     * plays the FillerSlate you configured for your linear channel.</p> <p>RELATIVE -
+     * The program is inserted into the schedule either before or after a program that
+     * you specify via RelativePosition.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>When the program should be played. RELATIVE means that programs will be
-     * played back-to-back.</p>
+     * <p>Defines when the program plays in the schedule. You can set the value to
+     * ABSOLUTE or RELATIVE.</p> <p>ABSOLUTE - The program plays at a specific wall
+     * clock time. This setting can only be used for channels using the LINEAR
+     * PlaybackMode.</p> <p>Note the following considerations when using ABSOLUTE
+     * transitions:</p> <p>If the preceding program in the schedule has a duration that
+     * extends past the wall clock time, MediaTailor truncates the preceding program on
+     * a common segment boundary.</p> <p>If there are gaps in playback, MediaTailor
+     * plays the FillerSlate you configured for your linear channel.</p> <p>RELATIVE -
+     * The program is inserted into the schedule either before or after a program that
+     * you specify via RelativePosition.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>When the program should be played. RELATIVE means that programs will be
-     * played back-to-back.</p>
+     * <p>Defines when the program plays in the schedule. You can set the value to
+     * ABSOLUTE or RELATIVE.</p> <p>ABSOLUTE - The program plays at a specific wall
+     * clock time. This setting can only be used for channels using the LINEAR
+     * PlaybackMode.</p> <p>Note the following considerations when using ABSOLUTE
+     * transitions:</p> <p>If the preceding program in the schedule has a duration that
+     * extends past the wall clock time, MediaTailor truncates the preceding program on
+     * a common segment boundary.</p> <p>If there are gaps in playback, MediaTailor
+     * plays the FillerSlate you configured for your linear channel.</p> <p>RELATIVE -
+     * The program is inserted into the schedule either before or after a program that
+     * you specify via RelativePosition.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>When the program should be played. RELATIVE means that programs will be
-     * played back-to-back.</p>
+     * <p>Defines when the program plays in the schedule. You can set the value to
+     * ABSOLUTE or RELATIVE.</p> <p>ABSOLUTE - The program plays at a specific wall
+     * clock time. This setting can only be used for channels using the LINEAR
+     * PlaybackMode.</p> <p>Note the following considerations when using ABSOLUTE
+     * transitions:</p> <p>If the preceding program in the schedule has a duration that
+     * extends past the wall clock time, MediaTailor truncates the preceding program on
+     * a common segment boundary.</p> <p>If there are gaps in playback, MediaTailor
+     * plays the FillerSlate you configured for your linear channel.</p> <p>RELATIVE -
+     * The program is inserted into the schedule either before or after a program that
+     * you specify via RelativePosition.</p>
      */
     inline Transition& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>When the program should be played. RELATIVE means that programs will be
-     * played back-to-back.</p>
+     * <p>Defines when the program plays in the schedule. You can set the value to
+     * ABSOLUTE or RELATIVE.</p> <p>ABSOLUTE - The program plays at a specific wall
+     * clock time. This setting can only be used for channels using the LINEAR
+     * PlaybackMode.</p> <p>Note the following considerations when using ABSOLUTE
+     * transitions:</p> <p>If the preceding program in the schedule has a duration that
+     * extends past the wall clock time, MediaTailor truncates the preceding program on
+     * a common segment boundary.</p> <p>If there are gaps in playback, MediaTailor
+     * plays the FillerSlate you configured for your linear channel.</p> <p>RELATIVE -
+     * The program is inserted into the schedule either before or after a program that
+     * you specify via RelativePosition.</p>
      */
     inline Transition& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>When the program should be played. RELATIVE means that programs will be
-     * played back-to-back.</p>
+     * <p>Defines when the program plays in the schedule. You can set the value to
+     * ABSOLUTE or RELATIVE.</p> <p>ABSOLUTE - The program plays at a specific wall
+     * clock time. This setting can only be used for channels using the LINEAR
+     * PlaybackMode.</p> <p>Note the following considerations when using ABSOLUTE
+     * transitions:</p> <p>If the preceding program in the schedule has a duration that
+     * extends past the wall clock time, MediaTailor truncates the preceding program on
+     * a common segment boundary.</p> <p>If there are gaps in playback, MediaTailor
+     * plays the FillerSlate you configured for your linear channel.</p> <p>RELATIVE -
+     * The program is inserted into the schedule either before or after a program that
+     * you specify via RelativePosition.</p>
      */
     inline Transition& WithType(const char* value) { SetType(value); return *this;}
 
@@ -179,6 +268,9 @@ namespace Model
 
     Aws::String m_relativeProgram;
     bool m_relativeProgramHasBeenSet;
+
+    long long m_scheduledStartTimeMillis;
+    bool m_scheduledStartTimeMillisHasBeenSet;
 
     Aws::String m_type;
     bool m_typeHasBeenSet;

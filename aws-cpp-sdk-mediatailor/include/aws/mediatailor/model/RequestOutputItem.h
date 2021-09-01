@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The ouput configuration for this channel.</p><p><h3>See Also:</h3>   <a
+   * <p>The output configuration for this channel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/RequestOutputItem">AWS
    * API Reference</a></p>
    */

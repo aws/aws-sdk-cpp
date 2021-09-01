@@ -61,6 +61,12 @@ CreateProgramResult& CreateProgramResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("ScheduledStartTime"))
+  {
+    m_scheduledStartTime = jsonValue.GetDouble("ScheduledStartTime");
+
+  }
+
   if(jsonValue.ValueExists("SourceLocationName"))
   {
     m_sourceLocationName = jsonValue.GetString("SourceLocationName");
