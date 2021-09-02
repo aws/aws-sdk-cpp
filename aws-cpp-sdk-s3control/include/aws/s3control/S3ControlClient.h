@@ -18,9 +18,12 @@
 #include <aws/s3control/model/CreateAccessPointForObjectLambdaResult.h>
 #include <aws/s3control/model/CreateBucketResult.h>
 #include <aws/s3control/model/CreateJobResult.h>
+#include <aws/s3control/model/CreateMultiRegionAccessPointResult.h>
 #include <aws/s3control/model/DeleteJobTaggingResult.h>
+#include <aws/s3control/model/DeleteMultiRegionAccessPointResult.h>
 #include <aws/s3control/model/DeleteStorageLensConfigurationTaggingResult.h>
 #include <aws/s3control/model/DescribeJobResult.h>
+#include <aws/s3control/model/DescribeMultiRegionAccessPointOperationResult.h>
 #include <aws/s3control/model/GetAccessPointResult.h>
 #include <aws/s3control/model/GetAccessPointConfigurationForObjectLambdaResult.h>
 #include <aws/s3control/model/GetAccessPointForObjectLambdaResult.h>
@@ -33,15 +36,20 @@
 #include <aws/s3control/model/GetBucketPolicyResult.h>
 #include <aws/s3control/model/GetBucketTaggingResult.h>
 #include <aws/s3control/model/GetJobTaggingResult.h>
+#include <aws/s3control/model/GetMultiRegionAccessPointResult.h>
+#include <aws/s3control/model/GetMultiRegionAccessPointPolicyResult.h>
+#include <aws/s3control/model/GetMultiRegionAccessPointPolicyStatusResult.h>
 #include <aws/s3control/model/GetPublicAccessBlockResult.h>
 #include <aws/s3control/model/GetStorageLensConfigurationResult.h>
 #include <aws/s3control/model/GetStorageLensConfigurationTaggingResult.h>
 #include <aws/s3control/model/ListAccessPointsResult.h>
 #include <aws/s3control/model/ListAccessPointsForObjectLambdaResult.h>
 #include <aws/s3control/model/ListJobsResult.h>
+#include <aws/s3control/model/ListMultiRegionAccessPointsResult.h>
 #include <aws/s3control/model/ListRegionalBucketsResult.h>
 #include <aws/s3control/model/ListStorageLensConfigurationsResult.h>
 #include <aws/s3control/model/PutJobTaggingResult.h>
+#include <aws/s3control/model/PutMultiRegionAccessPointPolicyResult.h>
 #include <aws/s3control/model/PutStorageLensConfigurationTaggingResult.h>
 #include <aws/s3control/model/UpdateJobPriorityResult.h>
 #include <aws/s3control/model/UpdateJobStatusResult.h>
@@ -93,6 +101,7 @@ namespace Aws
         class CreateAccessPointForObjectLambdaRequest;
         class CreateBucketRequest;
         class CreateJobRequest;
+        class CreateMultiRegionAccessPointRequest;
         class DeleteAccessPointRequest;
         class DeleteAccessPointForObjectLambdaRequest;
         class DeleteAccessPointPolicyRequest;
@@ -102,10 +111,12 @@ namespace Aws
         class DeleteBucketPolicyRequest;
         class DeleteBucketTaggingRequest;
         class DeleteJobTaggingRequest;
+        class DeleteMultiRegionAccessPointRequest;
         class DeletePublicAccessBlockRequest;
         class DeleteStorageLensConfigurationRequest;
         class DeleteStorageLensConfigurationTaggingRequest;
         class DescribeJobRequest;
+        class DescribeMultiRegionAccessPointOperationRequest;
         class GetAccessPointRequest;
         class GetAccessPointConfigurationForObjectLambdaRequest;
         class GetAccessPointForObjectLambdaRequest;
@@ -118,12 +129,16 @@ namespace Aws
         class GetBucketPolicyRequest;
         class GetBucketTaggingRequest;
         class GetJobTaggingRequest;
+        class GetMultiRegionAccessPointRequest;
+        class GetMultiRegionAccessPointPolicyRequest;
+        class GetMultiRegionAccessPointPolicyStatusRequest;
         class GetPublicAccessBlockRequest;
         class GetStorageLensConfigurationRequest;
         class GetStorageLensConfigurationTaggingRequest;
         class ListAccessPointsRequest;
         class ListAccessPointsForObjectLambdaRequest;
         class ListJobsRequest;
+        class ListMultiRegionAccessPointsRequest;
         class ListRegionalBucketsRequest;
         class ListStorageLensConfigurationsRequest;
         class PutAccessPointConfigurationForObjectLambdaRequest;
@@ -133,6 +148,7 @@ namespace Aws
         class PutBucketPolicyRequest;
         class PutBucketTaggingRequest;
         class PutJobTaggingRequest;
+        class PutMultiRegionAccessPointPolicyRequest;
         class PutPublicAccessBlockRequest;
         class PutStorageLensConfigurationRequest;
         class PutStorageLensConfigurationTaggingRequest;
@@ -143,6 +159,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<CreateAccessPointForObjectLambdaResult, S3ControlError> CreateAccessPointForObjectLambdaOutcome;
         typedef Aws::Utils::Outcome<CreateBucketResult, S3ControlError> CreateBucketOutcome;
         typedef Aws::Utils::Outcome<CreateJobResult, S3ControlError> CreateJobOutcome;
+        typedef Aws::Utils::Outcome<CreateMultiRegionAccessPointResult, S3ControlError> CreateMultiRegionAccessPointOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteAccessPointOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteAccessPointForObjectLambdaOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteAccessPointPolicyOutcome;
@@ -152,10 +169,12 @@ namespace Aws
         typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteBucketPolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteBucketTaggingOutcome;
         typedef Aws::Utils::Outcome<DeleteJobTaggingResult, S3ControlError> DeleteJobTaggingOutcome;
+        typedef Aws::Utils::Outcome<DeleteMultiRegionAccessPointResult, S3ControlError> DeleteMultiRegionAccessPointOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeletePublicAccessBlockOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteStorageLensConfigurationOutcome;
         typedef Aws::Utils::Outcome<DeleteStorageLensConfigurationTaggingResult, S3ControlError> DeleteStorageLensConfigurationTaggingOutcome;
         typedef Aws::Utils::Outcome<DescribeJobResult, S3ControlError> DescribeJobOutcome;
+        typedef Aws::Utils::Outcome<DescribeMultiRegionAccessPointOperationResult, S3ControlError> DescribeMultiRegionAccessPointOperationOutcome;
         typedef Aws::Utils::Outcome<GetAccessPointResult, S3ControlError> GetAccessPointOutcome;
         typedef Aws::Utils::Outcome<GetAccessPointConfigurationForObjectLambdaResult, S3ControlError> GetAccessPointConfigurationForObjectLambdaOutcome;
         typedef Aws::Utils::Outcome<GetAccessPointForObjectLambdaResult, S3ControlError> GetAccessPointForObjectLambdaOutcome;
@@ -168,12 +187,16 @@ namespace Aws
         typedef Aws::Utils::Outcome<GetBucketPolicyResult, S3ControlError> GetBucketPolicyOutcome;
         typedef Aws::Utils::Outcome<GetBucketTaggingResult, S3ControlError> GetBucketTaggingOutcome;
         typedef Aws::Utils::Outcome<GetJobTaggingResult, S3ControlError> GetJobTaggingOutcome;
+        typedef Aws::Utils::Outcome<GetMultiRegionAccessPointResult, S3ControlError> GetMultiRegionAccessPointOutcome;
+        typedef Aws::Utils::Outcome<GetMultiRegionAccessPointPolicyResult, S3ControlError> GetMultiRegionAccessPointPolicyOutcome;
+        typedef Aws::Utils::Outcome<GetMultiRegionAccessPointPolicyStatusResult, S3ControlError> GetMultiRegionAccessPointPolicyStatusOutcome;
         typedef Aws::Utils::Outcome<GetPublicAccessBlockResult, S3ControlError> GetPublicAccessBlockOutcome;
         typedef Aws::Utils::Outcome<GetStorageLensConfigurationResult, S3ControlError> GetStorageLensConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetStorageLensConfigurationTaggingResult, S3ControlError> GetStorageLensConfigurationTaggingOutcome;
         typedef Aws::Utils::Outcome<ListAccessPointsResult, S3ControlError> ListAccessPointsOutcome;
         typedef Aws::Utils::Outcome<ListAccessPointsForObjectLambdaResult, S3ControlError> ListAccessPointsForObjectLambdaOutcome;
         typedef Aws::Utils::Outcome<ListJobsResult, S3ControlError> ListJobsOutcome;
+        typedef Aws::Utils::Outcome<ListMultiRegionAccessPointsResult, S3ControlError> ListMultiRegionAccessPointsOutcome;
         typedef Aws::Utils::Outcome<ListRegionalBucketsResult, S3ControlError> ListRegionalBucketsOutcome;
         typedef Aws::Utils::Outcome<ListStorageLensConfigurationsResult, S3ControlError> ListStorageLensConfigurationsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutAccessPointConfigurationForObjectLambdaOutcome;
@@ -183,6 +206,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutBucketPolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutBucketTaggingOutcome;
         typedef Aws::Utils::Outcome<PutJobTaggingResult, S3ControlError> PutJobTaggingOutcome;
+        typedef Aws::Utils::Outcome<PutMultiRegionAccessPointPolicyResult, S3ControlError> PutMultiRegionAccessPointPolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutPublicAccessBlockOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutStorageLensConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutStorageLensConfigurationTaggingResult, S3ControlError> PutStorageLensConfigurationTaggingOutcome;
@@ -193,6 +217,7 @@ namespace Aws
         typedef std::future<CreateAccessPointForObjectLambdaOutcome> CreateAccessPointForObjectLambdaOutcomeCallable;
         typedef std::future<CreateBucketOutcome> CreateBucketOutcomeCallable;
         typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
+        typedef std::future<CreateMultiRegionAccessPointOutcome> CreateMultiRegionAccessPointOutcomeCallable;
         typedef std::future<DeleteAccessPointOutcome> DeleteAccessPointOutcomeCallable;
         typedef std::future<DeleteAccessPointForObjectLambdaOutcome> DeleteAccessPointForObjectLambdaOutcomeCallable;
         typedef std::future<DeleteAccessPointPolicyOutcome> DeleteAccessPointPolicyOutcomeCallable;
@@ -202,10 +227,12 @@ namespace Aws
         typedef std::future<DeleteBucketPolicyOutcome> DeleteBucketPolicyOutcomeCallable;
         typedef std::future<DeleteBucketTaggingOutcome> DeleteBucketTaggingOutcomeCallable;
         typedef std::future<DeleteJobTaggingOutcome> DeleteJobTaggingOutcomeCallable;
+        typedef std::future<DeleteMultiRegionAccessPointOutcome> DeleteMultiRegionAccessPointOutcomeCallable;
         typedef std::future<DeletePublicAccessBlockOutcome> DeletePublicAccessBlockOutcomeCallable;
         typedef std::future<DeleteStorageLensConfigurationOutcome> DeleteStorageLensConfigurationOutcomeCallable;
         typedef std::future<DeleteStorageLensConfigurationTaggingOutcome> DeleteStorageLensConfigurationTaggingOutcomeCallable;
         typedef std::future<DescribeJobOutcome> DescribeJobOutcomeCallable;
+        typedef std::future<DescribeMultiRegionAccessPointOperationOutcome> DescribeMultiRegionAccessPointOperationOutcomeCallable;
         typedef std::future<GetAccessPointOutcome> GetAccessPointOutcomeCallable;
         typedef std::future<GetAccessPointConfigurationForObjectLambdaOutcome> GetAccessPointConfigurationForObjectLambdaOutcomeCallable;
         typedef std::future<GetAccessPointForObjectLambdaOutcome> GetAccessPointForObjectLambdaOutcomeCallable;
@@ -218,12 +245,16 @@ namespace Aws
         typedef std::future<GetBucketPolicyOutcome> GetBucketPolicyOutcomeCallable;
         typedef std::future<GetBucketTaggingOutcome> GetBucketTaggingOutcomeCallable;
         typedef std::future<GetJobTaggingOutcome> GetJobTaggingOutcomeCallable;
+        typedef std::future<GetMultiRegionAccessPointOutcome> GetMultiRegionAccessPointOutcomeCallable;
+        typedef std::future<GetMultiRegionAccessPointPolicyOutcome> GetMultiRegionAccessPointPolicyOutcomeCallable;
+        typedef std::future<GetMultiRegionAccessPointPolicyStatusOutcome> GetMultiRegionAccessPointPolicyStatusOutcomeCallable;
         typedef std::future<GetPublicAccessBlockOutcome> GetPublicAccessBlockOutcomeCallable;
         typedef std::future<GetStorageLensConfigurationOutcome> GetStorageLensConfigurationOutcomeCallable;
         typedef std::future<GetStorageLensConfigurationTaggingOutcome> GetStorageLensConfigurationTaggingOutcomeCallable;
         typedef std::future<ListAccessPointsOutcome> ListAccessPointsOutcomeCallable;
         typedef std::future<ListAccessPointsForObjectLambdaOutcome> ListAccessPointsForObjectLambdaOutcomeCallable;
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
+        typedef std::future<ListMultiRegionAccessPointsOutcome> ListMultiRegionAccessPointsOutcomeCallable;
         typedef std::future<ListRegionalBucketsOutcome> ListRegionalBucketsOutcomeCallable;
         typedef std::future<ListStorageLensConfigurationsOutcome> ListStorageLensConfigurationsOutcomeCallable;
         typedef std::future<PutAccessPointConfigurationForObjectLambdaOutcome> PutAccessPointConfigurationForObjectLambdaOutcomeCallable;
@@ -233,6 +264,7 @@ namespace Aws
         typedef std::future<PutBucketPolicyOutcome> PutBucketPolicyOutcomeCallable;
         typedef std::future<PutBucketTaggingOutcome> PutBucketTaggingOutcomeCallable;
         typedef std::future<PutJobTaggingOutcome> PutJobTaggingOutcomeCallable;
+        typedef std::future<PutMultiRegionAccessPointPolicyOutcome> PutMultiRegionAccessPointPolicyOutcomeCallable;
         typedef std::future<PutPublicAccessBlockOutcome> PutPublicAccessBlockOutcomeCallable;
         typedef std::future<PutStorageLensConfigurationOutcome> PutStorageLensConfigurationOutcomeCallable;
         typedef std::future<PutStorageLensConfigurationTaggingOutcome> PutStorageLensConfigurationTaggingOutcomeCallable;
@@ -246,6 +278,7 @@ namespace Aws
     typedef std::function<void(const S3ControlClient*, const Model::CreateAccessPointForObjectLambdaRequest&, const Model::CreateAccessPointForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccessPointForObjectLambdaResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::CreateBucketRequest&, const Model::CreateBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBucketResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::CreateJobRequest&, const Model::CreateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::CreateMultiRegionAccessPointRequest&, const Model::CreateMultiRegionAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMultiRegionAccessPointResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteAccessPointRequest&, const Model::DeleteAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPointResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteAccessPointForObjectLambdaRequest&, const Model::DeleteAccessPointForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPointForObjectLambdaResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteAccessPointPolicyRequest&, const Model::DeleteAccessPointPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPointPolicyResponseReceivedHandler;
@@ -255,10 +288,12 @@ namespace Aws
     typedef std::function<void(const S3ControlClient*, const Model::DeleteBucketPolicyRequest&, const Model::DeleteBucketPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketPolicyResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteBucketTaggingRequest&, const Model::DeleteBucketTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketTaggingResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteJobTaggingRequest&, const Model::DeleteJobTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobTaggingResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::DeleteMultiRegionAccessPointRequest&, const Model::DeleteMultiRegionAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMultiRegionAccessPointResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeletePublicAccessBlockRequest&, const Model::DeletePublicAccessBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePublicAccessBlockResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteStorageLensConfigurationRequest&, const Model::DeleteStorageLensConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStorageLensConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteStorageLensConfigurationTaggingRequest&, const Model::DeleteStorageLensConfigurationTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStorageLensConfigurationTaggingResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DescribeJobRequest&, const Model::DescribeJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::DescribeMultiRegionAccessPointOperationRequest&, const Model::DescribeMultiRegionAccessPointOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMultiRegionAccessPointOperationResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetAccessPointRequest&, const Model::GetAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessPointResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetAccessPointConfigurationForObjectLambdaRequest&, const Model::GetAccessPointConfigurationForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessPointConfigurationForObjectLambdaResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetAccessPointForObjectLambdaRequest&, const Model::GetAccessPointForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessPointForObjectLambdaResponseReceivedHandler;
@@ -271,12 +306,16 @@ namespace Aws
     typedef std::function<void(const S3ControlClient*, const Model::GetBucketPolicyRequest&, const Model::GetBucketPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketPolicyResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetBucketTaggingRequest&, const Model::GetBucketTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketTaggingResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetJobTaggingRequest&, const Model::GetJobTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobTaggingResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::GetMultiRegionAccessPointRequest&, const Model::GetMultiRegionAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMultiRegionAccessPointResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::GetMultiRegionAccessPointPolicyRequest&, const Model::GetMultiRegionAccessPointPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMultiRegionAccessPointPolicyResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::GetMultiRegionAccessPointPolicyStatusRequest&, const Model::GetMultiRegionAccessPointPolicyStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMultiRegionAccessPointPolicyStatusResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetPublicAccessBlockRequest&, const Model::GetPublicAccessBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPublicAccessBlockResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetStorageLensConfigurationRequest&, const Model::GetStorageLensConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStorageLensConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetStorageLensConfigurationTaggingRequest&, const Model::GetStorageLensConfigurationTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStorageLensConfigurationTaggingResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListAccessPointsRequest&, const Model::ListAccessPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessPointsResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListAccessPointsForObjectLambdaRequest&, const Model::ListAccessPointsForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessPointsForObjectLambdaResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::ListMultiRegionAccessPointsRequest&, const Model::ListMultiRegionAccessPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMultiRegionAccessPointsResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListRegionalBucketsRequest&, const Model::ListRegionalBucketsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRegionalBucketsResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListStorageLensConfigurationsRequest&, const Model::ListStorageLensConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStorageLensConfigurationsResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutAccessPointConfigurationForObjectLambdaRequest&, const Model::PutAccessPointConfigurationForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccessPointConfigurationForObjectLambdaResponseReceivedHandler;
@@ -286,6 +325,7 @@ namespace Aws
     typedef std::function<void(const S3ControlClient*, const Model::PutBucketPolicyRequest&, const Model::PutBucketPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketPolicyResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutBucketTaggingRequest&, const Model::PutBucketTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketTaggingResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutJobTaggingRequest&, const Model::PutJobTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutJobTaggingResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::PutMultiRegionAccessPointPolicyRequest&, const Model::PutMultiRegionAccessPointPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMultiRegionAccessPointPolicyResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutPublicAccessBlockRequest&, const Model::PutPublicAccessBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPublicAccessBlockResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutStorageLensConfigurationRequest&, const Model::PutStorageLensConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutStorageLensConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutStorageLensConfigurationTaggingRequest&, const Model::PutStorageLensConfigurationTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutStorageLensConfigurationTaggingResponseReceivedHandler;
@@ -677,6 +717,97 @@ namespace Aws
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateJobAsync(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a Multi-Region Access Point and associates it with the specified
+         * buckets. For more information about creating Multi-Region Access Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html">Creating
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>This
+         * action will always be routed to the US West (Oregon) Region. For more
+         * information about the restrictions around managing Multi-Region Access Points,
+         * see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>This
+         * request is asynchronous, meaning that you might receive a response before the
+         * command has completed. When this request provides a response, it provides a
+         * token that you can use to monitor the status of the request with
+         * <code>DescribeMultiRegionAccessPointOperation</code>.</p> <p>The following
+         * actions are related to <code>CreateMultiRegionAccessPoint</code>:</p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateMultiRegionAccessPoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMultiRegionAccessPointOutcome CreateMultiRegionAccessPoint(const Model::CreateMultiRegionAccessPointRequest& request) const;
+
+        /**
+         * <p>Creates a Multi-Region Access Point and associates it with the specified
+         * buckets. For more information about creating Multi-Region Access Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html">Creating
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>This
+         * action will always be routed to the US West (Oregon) Region. For more
+         * information about the restrictions around managing Multi-Region Access Points,
+         * see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>This
+         * request is asynchronous, meaning that you might receive a response before the
+         * command has completed. When this request provides a response, it provides a
+         * token that you can use to monitor the status of the request with
+         * <code>DescribeMultiRegionAccessPointOperation</code>.</p> <p>The following
+         * actions are related to <code>CreateMultiRegionAccessPoint</code>:</p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateMultiRegionAccessPoint">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateMultiRegionAccessPointOutcomeCallable CreateMultiRegionAccessPointCallable(const Model::CreateMultiRegionAccessPointRequest& request) const;
+
+        /**
+         * <p>Creates a Multi-Region Access Point and associates it with the specified
+         * buckets. For more information about creating Multi-Region Access Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html">Creating
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>This
+         * action will always be routed to the US West (Oregon) Region. For more
+         * information about the restrictions around managing Multi-Region Access Points,
+         * see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>This
+         * request is asynchronous, meaning that you might receive a response before the
+         * command has completed. When this request provides a response, it provides a
+         * token that you can use to monitor the status of the request with
+         * <code>DescribeMultiRegionAccessPointOperation</code>.</p> <p>The following
+         * actions are related to <code>CreateMultiRegionAccessPoint</code>:</p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateMultiRegionAccessPoint">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateMultiRegionAccessPointAsync(const Model::CreateMultiRegionAccessPointRequest& request, const CreateMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified access point.</p> <p>All Amazon S3 on Outposts REST API
@@ -1111,20 +1242,20 @@ namespace Aws
          * in the <i>Amazon S3 API Reference</i>. </p>  <p>This implementation of
          * the DELETE action uses the policy subresource to delete the policy of a
          * specified Amazon S3 on Outposts bucket. If you are using an identity other than
-         * the root user of the account that owns the bucket, the calling identity must
-         * have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the
-         * specified Outposts bucket and belong to the bucket owner's account to use this
-         * action. For more information, see <a
+         * the root user of the Amazon Web Services account that owns the bucket, the
+         * calling identity must have the <code>s3-outposts:DeleteBucketPolicy</code>
+         * permissions on the specified Outposts bucket and belong to the bucket owner's
+         * account to use this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in <i>Amazon S3 User Guide</i>.</p> <p>If you don't
          * have <code>DeleteBucketPolicy</code> permissions, Amazon S3 returns a <code>403
          * Access Denied</code> error. If you have the correct permissions, but you're not
          * using an identity that belongs to the bucket owner's account, Amazon S3 returns
          * a <code>405 Method Not Allowed</code> error. </p>  <p>As a security
-         * precaution, the root user of the account that owns a bucket can always use this
-         * action, even if the policy explicitly denies the root user the ability to
-         * perform this action.</p>  <p>For more information about bucket
-         * policies, see <a
+         * precaution, the root user of the Amazon Web Services account that owns a bucket
+         * can always use this action, even if the policy explicitly denies the root user
+         * the ability to perform this action.</p>  <p>For more information
+         * about bucket policies, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
          * Bucket Policies and User Policies</a>. </p> <p>All Amazon S3 on Outposts REST
          * API requests for this action require an additional parameter of
@@ -1152,20 +1283,20 @@ namespace Aws
          * in the <i>Amazon S3 API Reference</i>. </p>  <p>This implementation of
          * the DELETE action uses the policy subresource to delete the policy of a
          * specified Amazon S3 on Outposts bucket. If you are using an identity other than
-         * the root user of the account that owns the bucket, the calling identity must
-         * have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the
-         * specified Outposts bucket and belong to the bucket owner's account to use this
-         * action. For more information, see <a
+         * the root user of the Amazon Web Services account that owns the bucket, the
+         * calling identity must have the <code>s3-outposts:DeleteBucketPolicy</code>
+         * permissions on the specified Outposts bucket and belong to the bucket owner's
+         * account to use this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in <i>Amazon S3 User Guide</i>.</p> <p>If you don't
          * have <code>DeleteBucketPolicy</code> permissions, Amazon S3 returns a <code>403
          * Access Denied</code> error. If you have the correct permissions, but you're not
          * using an identity that belongs to the bucket owner's account, Amazon S3 returns
          * a <code>405 Method Not Allowed</code> error. </p>  <p>As a security
-         * precaution, the root user of the account that owns a bucket can always use this
-         * action, even if the policy explicitly denies the root user the ability to
-         * perform this action.</p>  <p>For more information about bucket
-         * policies, see <a
+         * precaution, the root user of the Amazon Web Services account that owns a bucket
+         * can always use this action, even if the policy explicitly denies the root user
+         * the ability to perform this action.</p>  <p>For more information
+         * about bucket policies, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
          * Bucket Policies and User Policies</a>. </p> <p>All Amazon S3 on Outposts REST
          * API requests for this action require an additional parameter of
@@ -1195,20 +1326,20 @@ namespace Aws
          * in the <i>Amazon S3 API Reference</i>. </p>  <p>This implementation of
          * the DELETE action uses the policy subresource to delete the policy of a
          * specified Amazon S3 on Outposts bucket. If you are using an identity other than
-         * the root user of the account that owns the bucket, the calling identity must
-         * have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the
-         * specified Outposts bucket and belong to the bucket owner's account to use this
-         * action. For more information, see <a
+         * the root user of the Amazon Web Services account that owns the bucket, the
+         * calling identity must have the <code>s3-outposts:DeleteBucketPolicy</code>
+         * permissions on the specified Outposts bucket and belong to the bucket owner's
+         * account to use this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in <i>Amazon S3 User Guide</i>.</p> <p>If you don't
          * have <code>DeleteBucketPolicy</code> permissions, Amazon S3 returns a <code>403
          * Access Denied</code> error. If you have the correct permissions, but you're not
          * using an identity that belongs to the bucket owner's account, Amazon S3 returns
          * a <code>405 Method Not Allowed</code> error. </p>  <p>As a security
-         * precaution, the root user of the account that owns a bucket can always use this
-         * action, even if the policy explicitly denies the root user the ability to
-         * perform this action.</p>  <p>For more information about bucket
-         * policies, see <a
+         * precaution, the root user of the Amazon Web Services account that owns a bucket
+         * can always use this action, even if the policy explicitly denies the root user
+         * the ability to perform this action.</p>  <p>For more information
+         * about bucket policies, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
          * Bucket Policies and User Policies</a>. </p> <p>All Amazon S3 on Outposts REST
          * API requests for this action require an additional parameter of
@@ -1378,8 +1509,93 @@ namespace Aws
         virtual void DeleteJobTaggingAsync(const Model::DeleteJobTaggingRequest& request, const DeleteJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the <code>PublicAccessBlock</code> configuration for an account. For
-         * more information, see <a
+         * <p>Deletes a Multi-Region Access Point. This action does not delete the buckets
+         * associated with the Multi-Region Access Point, only the Multi-Region Access
+         * Point itself.</p> <p>This action will always be routed to the US West (Oregon)
+         * Region. For more information about the restrictions around managing Multi-Region
+         * Access Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>This
+         * request is asynchronous, meaning that you might receive a response before the
+         * command has completed. When this request provides a response, it provides a
+         * token that you can use to monitor the status of the request with
+         * <code>DescribeMultiRegionAccessPointOperation</code>.</p> <p>The following
+         * actions are related to <code>DeleteMultiRegionAccessPoint</code>:</p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteMultiRegionAccessPoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMultiRegionAccessPointOutcome DeleteMultiRegionAccessPoint(const Model::DeleteMultiRegionAccessPointRequest& request) const;
+
+        /**
+         * <p>Deletes a Multi-Region Access Point. This action does not delete the buckets
+         * associated with the Multi-Region Access Point, only the Multi-Region Access
+         * Point itself.</p> <p>This action will always be routed to the US West (Oregon)
+         * Region. For more information about the restrictions around managing Multi-Region
+         * Access Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>This
+         * request is asynchronous, meaning that you might receive a response before the
+         * command has completed. When this request provides a response, it provides a
+         * token that you can use to monitor the status of the request with
+         * <code>DescribeMultiRegionAccessPointOperation</code>.</p> <p>The following
+         * actions are related to <code>DeleteMultiRegionAccessPoint</code>:</p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteMultiRegionAccessPoint">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteMultiRegionAccessPointOutcomeCallable DeleteMultiRegionAccessPointCallable(const Model::DeleteMultiRegionAccessPointRequest& request) const;
+
+        /**
+         * <p>Deletes a Multi-Region Access Point. This action does not delete the buckets
+         * associated with the Multi-Region Access Point, only the Multi-Region Access
+         * Point itself.</p> <p>This action will always be routed to the US West (Oregon)
+         * Region. For more information about the restrictions around managing Multi-Region
+         * Access Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>This
+         * request is asynchronous, meaning that you might receive a response before the
+         * command has completed. When this request provides a response, it provides a
+         * token that you can use to monitor the status of the request with
+         * <code>DescribeMultiRegionAccessPointOperation</code>.</p> <p>The following
+         * actions are related to <code>DeleteMultiRegionAccessPoint</code>:</p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteMultiRegionAccessPoint">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteMultiRegionAccessPointAsync(const Model::DeleteMultiRegionAccessPointRequest& request, const DeleteMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web
+         * Services account. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
          * Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p>
          * <ul> <li> <p> <a
@@ -1393,8 +1609,8 @@ namespace Aws
         virtual Model::DeletePublicAccessBlockOutcome DeletePublicAccessBlock(const Model::DeletePublicAccessBlockRequest& request) const;
 
         /**
-         * <p>Removes the <code>PublicAccessBlock</code> configuration for an account. For
-         * more information, see <a
+         * <p>Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web
+         * Services account. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
          * Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p>
          * <ul> <li> <p> <a
@@ -1410,8 +1626,8 @@ namespace Aws
         virtual Model::DeletePublicAccessBlockOutcomeCallable DeletePublicAccessBlockCallable(const Model::DeletePublicAccessBlockRequest& request) const;
 
         /**
-         * <p>Removes the <code>PublicAccessBlock</code> configuration for an account. For
-         * more information, see <a
+         * <p>Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web
+         * Services account. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
          * Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p>
          * <ul> <li> <p> <a
@@ -1590,6 +1806,73 @@ namespace Aws
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeJobAsync(const Model::DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the status of an asynchronous request to manage a Multi-Region
+         * Access Point. For more information about managing Multi-Region Access Points and
+         * how asynchronous requests work, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
+         * following actions are related to <code>GetMultiRegionAccessPoint</code>:</p>
+         * <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeMultiRegionAccessPointOperation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMultiRegionAccessPointOperationOutcome DescribeMultiRegionAccessPointOperation(const Model::DescribeMultiRegionAccessPointOperationRequest& request) const;
+
+        /**
+         * <p>Retrieves the status of an asynchronous request to manage a Multi-Region
+         * Access Point. For more information about managing Multi-Region Access Points and
+         * how asynchronous requests work, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
+         * following actions are related to <code>GetMultiRegionAccessPoint</code>:</p>
+         * <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeMultiRegionAccessPointOperation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeMultiRegionAccessPointOperationOutcomeCallable DescribeMultiRegionAccessPointOperationCallable(const Model::DescribeMultiRegionAccessPointOperationRequest& request) const;
+
+        /**
+         * <p>Retrieves the status of an asynchronous request to manage a Multi-Region
+         * Access Point. For more information about managing Multi-Region Access Points and
+         * how asynchronous requests work, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
+         * following actions are related to <code>GetMultiRegionAccessPoint</code>:</p>
+         * <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeMultiRegionAccessPointOperation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeMultiRegionAccessPointOperationAsync(const Model::DescribeMultiRegionAccessPointOperationRequest& request, const DescribeMultiRegionAccessPointOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns configuration information about the specified access point.</p> <p/>
@@ -1905,8 +2188,8 @@ namespace Aws
          * <p>Gets an Amazon S3 on Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
          * Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If
-         * you are using an identity other than the root user of the account that owns the
-         * Outposts bucket, the calling identity must have the
+         * you are using an identity other than the root user of the Amazon Web Services
+         * account that owns the Outposts bucket, the calling identity must have the
          * <code>s3-outposts:GetBucket</code> permissions on the specified Outposts bucket
          * and belong to the Outposts bucket owner's account in order to use this action.
          * Only users from Outposts bucket owner account with the right permissions can
@@ -1938,8 +2221,8 @@ namespace Aws
          * <p>Gets an Amazon S3 on Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
          * Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If
-         * you are using an identity other than the root user of the account that owns the
-         * Outposts bucket, the calling identity must have the
+         * you are using an identity other than the root user of the Amazon Web Services
+         * account that owns the Outposts bucket, the calling identity must have the
          * <code>s3-outposts:GetBucket</code> permissions on the specified Outposts bucket
          * and belong to the Outposts bucket owner's account in order to use this action.
          * Only users from Outposts bucket owner account with the right permissions can
@@ -1973,8 +2256,8 @@ namespace Aws
          * <p>Gets an Amazon S3 on Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
          * Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If
-         * you are using an identity other than the root user of the account that owns the
-         * Outposts bucket, the calling identity must have the
+         * you are using an identity other than the root user of the Amazon Web Services
+         * account that owns the Outposts bucket, the calling identity must have the
          * <code>s3-outposts:GetBucket</code> permissions on the specified Outposts bucket
          * and belong to the Outposts bucket owner's account in order to use this action.
          * Only users from Outposts bucket owner account with the right permissions can
@@ -2145,18 +2428,18 @@ namespace Aws
          * specified Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you are
-         * using an identity other than the root user of the account that owns the bucket,
-         * the calling identity must have the <code>GetBucketPolicy</code> permissions on
-         * the specified bucket and belong to the bucket owner's account in order to use
-         * this action.</p> <p>Only users from Outposts bucket owner account with the right
-         * permissions can perform actions on an Outposts bucket. If you don't have
-         * <code>s3-outposts:GetBucketPolicy</code> permissions or you're not using an
-         * identity that belongs to the bucket owner's account, Amazon S3 returns a
-         * <code>403 Access Denied</code> error.</p>  <p>As a security
-         * precaution, the root user of the account that owns a bucket can always use this
-         * action, even if the policy explicitly denies the root user the ability to
-         * perform this action.</p>  <p>For more information about bucket
-         * policies, see <a
+         * using an identity other than the root user of the Amazon Web Services account
+         * that owns the bucket, the calling identity must have the
+         * <code>GetBucketPolicy</code> permissions on the specified bucket and belong to
+         * the bucket owner's account in order to use this action.</p> <p>Only users from
+         * Outposts bucket owner account with the right permissions can perform actions on
+         * an Outposts bucket. If you don't have <code>s3-outposts:GetBucketPolicy</code>
+         * permissions or you're not using an identity that belongs to the bucket owner's
+         * account, Amazon S3 returns a <code>403 Access Denied</code> error.</p>
+         *  <p>As a security precaution, the root user of the Amazon Web
+         * Services account that owns a bucket can always use this action, even if the
+         * policy explicitly denies the root user the ability to perform this action.</p>
+         *  <p>For more information about bucket policies, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
          * Bucket Policies and User Policies</a>.</p> <p>All Amazon S3 on Outposts REST API
          * requests for this action require an additional parameter of
@@ -2187,18 +2470,18 @@ namespace Aws
          * specified Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you are
-         * using an identity other than the root user of the account that owns the bucket,
-         * the calling identity must have the <code>GetBucketPolicy</code> permissions on
-         * the specified bucket and belong to the bucket owner's account in order to use
-         * this action.</p> <p>Only users from Outposts bucket owner account with the right
-         * permissions can perform actions on an Outposts bucket. If you don't have
-         * <code>s3-outposts:GetBucketPolicy</code> permissions or you're not using an
-         * identity that belongs to the bucket owner's account, Amazon S3 returns a
-         * <code>403 Access Denied</code> error.</p>  <p>As a security
-         * precaution, the root user of the account that owns a bucket can always use this
-         * action, even if the policy explicitly denies the root user the ability to
-         * perform this action.</p>  <p>For more information about bucket
-         * policies, see <a
+         * using an identity other than the root user of the Amazon Web Services account
+         * that owns the bucket, the calling identity must have the
+         * <code>GetBucketPolicy</code> permissions on the specified bucket and belong to
+         * the bucket owner's account in order to use this action.</p> <p>Only users from
+         * Outposts bucket owner account with the right permissions can perform actions on
+         * an Outposts bucket. If you don't have <code>s3-outposts:GetBucketPolicy</code>
+         * permissions or you're not using an identity that belongs to the bucket owner's
+         * account, Amazon S3 returns a <code>403 Access Denied</code> error.</p>
+         *  <p>As a security precaution, the root user of the Amazon Web
+         * Services account that owns a bucket can always use this action, even if the
+         * policy explicitly denies the root user the ability to perform this action.</p>
+         *  <p>For more information about bucket policies, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
          * Bucket Policies and User Policies</a>.</p> <p>All Amazon S3 on Outposts REST API
          * requests for this action require an additional parameter of
@@ -2231,18 +2514,18 @@ namespace Aws
          * specified Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you are
-         * using an identity other than the root user of the account that owns the bucket,
-         * the calling identity must have the <code>GetBucketPolicy</code> permissions on
-         * the specified bucket and belong to the bucket owner's account in order to use
-         * this action.</p> <p>Only users from Outposts bucket owner account with the right
-         * permissions can perform actions on an Outposts bucket. If you don't have
-         * <code>s3-outposts:GetBucketPolicy</code> permissions or you're not using an
-         * identity that belongs to the bucket owner's account, Amazon S3 returns a
-         * <code>403 Access Denied</code> error.</p>  <p>As a security
-         * precaution, the root user of the account that owns a bucket can always use this
-         * action, even if the policy explicitly denies the root user the ability to
-         * perform this action.</p>  <p>For more information about bucket
-         * policies, see <a
+         * using an identity other than the root user of the Amazon Web Services account
+         * that owns the bucket, the calling identity must have the
+         * <code>GetBucketPolicy</code> permissions on the specified bucket and belong to
+         * the bucket owner's account in order to use this action.</p> <p>Only users from
+         * Outposts bucket owner account with the right permissions can perform actions on
+         * an Outposts bucket. If you don't have <code>s3-outposts:GetBucketPolicy</code>
+         * permissions or you're not using an identity that belongs to the bucket owner's
+         * account, Amazon S3 returns a <code>403 Access Denied</code> error.</p>
+         *  <p>As a security precaution, the root user of the Amazon Web
+         * Services account that owns a bucket can always use this action, even if the
+         * policy explicitly denies the root user the ability to perform this action.</p>
+         *  <p>For more information about bucket policies, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
          * Bucket Policies and User Policies</a>.</p> <p>All Amazon S3 on Outposts REST API
          * requests for this action require an additional parameter of
@@ -2423,8 +2706,194 @@ namespace Aws
         virtual void GetJobTaggingAsync(const Model::GetJobTaggingRequest& request, const GetJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an account.
-         * For more information, see <a
+         * <p>Returns configuration information about the specified Multi-Region Access
+         * Point.</p> <p>This action will always be routed to the US West (Oregon) Region.
+         * For more information about the restrictions around managing Multi-Region Access
+         * Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
+         * following actions are related to <code>GetMultiRegionAccessPoint</code>:</p>
+         * <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMultiRegionAccessPointOutcome GetMultiRegionAccessPoint(const Model::GetMultiRegionAccessPointRequest& request) const;
+
+        /**
+         * <p>Returns configuration information about the specified Multi-Region Access
+         * Point.</p> <p>This action will always be routed to the US West (Oregon) Region.
+         * For more information about the restrictions around managing Multi-Region Access
+         * Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
+         * following actions are related to <code>GetMultiRegionAccessPoint</code>:</p>
+         * <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPoint">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMultiRegionAccessPointOutcomeCallable GetMultiRegionAccessPointCallable(const Model::GetMultiRegionAccessPointRequest& request) const;
+
+        /**
+         * <p>Returns configuration information about the specified Multi-Region Access
+         * Point.</p> <p>This action will always be routed to the US West (Oregon) Region.
+         * For more information about the restrictions around managing Multi-Region Access
+         * Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
+         * following actions are related to <code>GetMultiRegionAccessPoint</code>:</p>
+         * <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPoint">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMultiRegionAccessPointAsync(const Model::GetMultiRegionAccessPointRequest& request, const GetMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the access control policy of the specified Multi-Region Access
+         * Point.</p> <p>This action will always be routed to the US West (Oregon) Region.
+         * For more information about the restrictions around managing Multi-Region Access
+         * Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
+         * following actions are related to
+         * <code>GetMultiRegionAccessPointPolicy</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicyStatus.html">GetMultiRegionAccessPointPolicyStatus</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPointPolicy.html">PutMultiRegionAccessPointPolicy</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMultiRegionAccessPointPolicyOutcome GetMultiRegionAccessPointPolicy(const Model::GetMultiRegionAccessPointPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the access control policy of the specified Multi-Region Access
+         * Point.</p> <p>This action will always be routed to the US West (Oregon) Region.
+         * For more information about the restrictions around managing Multi-Region Access
+         * Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
+         * following actions are related to
+         * <code>GetMultiRegionAccessPointPolicy</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicyStatus.html">GetMultiRegionAccessPointPolicyStatus</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPointPolicy.html">PutMultiRegionAccessPointPolicy</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMultiRegionAccessPointPolicyOutcomeCallable GetMultiRegionAccessPointPolicyCallable(const Model::GetMultiRegionAccessPointPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the access control policy of the specified Multi-Region Access
+         * Point.</p> <p>This action will always be routed to the US West (Oregon) Region.
+         * For more information about the restrictions around managing Multi-Region Access
+         * Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
+         * following actions are related to
+         * <code>GetMultiRegionAccessPointPolicy</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicyStatus.html">GetMultiRegionAccessPointPolicyStatus</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPointPolicy.html">PutMultiRegionAccessPointPolicy</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMultiRegionAccessPointPolicyAsync(const Model::GetMultiRegionAccessPointPolicyRequest& request, const GetMultiRegionAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Indicates whether the specified Multi-Region Access Point has an access
+         * control policy that allows public access.</p> <p>This action will always be
+         * routed to the US West (Oregon) Region. For more information about the
+         * restrictions around managing Multi-Region Access Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
+         * following actions are related to
+         * <code>GetMultiRegionAccessPointPolicyStatus</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicy.html">GetMultiRegionAccessPointPolicy</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPointPolicy.html">PutMultiRegionAccessPointPolicy</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointPolicyStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMultiRegionAccessPointPolicyStatusOutcome GetMultiRegionAccessPointPolicyStatus(const Model::GetMultiRegionAccessPointPolicyStatusRequest& request) const;
+
+        /**
+         * <p>Indicates whether the specified Multi-Region Access Point has an access
+         * control policy that allows public access.</p> <p>This action will always be
+         * routed to the US West (Oregon) Region. For more information about the
+         * restrictions around managing Multi-Region Access Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
+         * following actions are related to
+         * <code>GetMultiRegionAccessPointPolicyStatus</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicy.html">GetMultiRegionAccessPointPolicy</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPointPolicy.html">PutMultiRegionAccessPointPolicy</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointPolicyStatus">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMultiRegionAccessPointPolicyStatusOutcomeCallable GetMultiRegionAccessPointPolicyStatusCallable(const Model::GetMultiRegionAccessPointPolicyStatusRequest& request) const;
+
+        /**
+         * <p>Indicates whether the specified Multi-Region Access Point has an access
+         * control policy that allows public access.</p> <p>This action will always be
+         * routed to the US West (Oregon) Region. For more information about the
+         * restrictions around managing Multi-Region Access Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
+         * following actions are related to
+         * <code>GetMultiRegionAccessPointPolicyStatus</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicy.html">GetMultiRegionAccessPointPolicy</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPointPolicy.html">PutMultiRegionAccessPointPolicy</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointPolicyStatus">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMultiRegionAccessPointPolicyStatusAsync(const Model::GetMultiRegionAccessPointPolicyStatusRequest& request, const GetMultiRegionAccessPointPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web
+         * Services account. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
          * Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p>
          * <ul> <li> <p> <a
@@ -2438,8 +2907,8 @@ namespace Aws
         virtual Model::GetPublicAccessBlockOutcome GetPublicAccessBlock(const Model::GetPublicAccessBlockRequest& request) const;
 
         /**
-         * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an account.
-         * For more information, see <a
+         * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web
+         * Services account. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
          * Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p>
          * <ul> <li> <p> <a
@@ -2455,8 +2924,8 @@ namespace Aws
         virtual Model::GetPublicAccessBlockOutcomeCallable GetPublicAccessBlockCallable(const Model::GetPublicAccessBlockRequest& request) const;
 
         /**
-         * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an account.
-         * For more information, see <a
+         * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web
+         * Services account. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
          * Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p>
          * <ul> <li> <p> <a
@@ -2714,7 +3183,8 @@ namespace Aws
 
         /**
          * <p>Lists current S3 Batch Operations jobs and jobs that have ended within the
-         * last 30 days for the account making the request. For more information, see <a
+         * last 30 days for the Amazon Web Services account making the request. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
          * Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Related actions
          * include:</p> <p/> <ul> <li> <p> <a
@@ -2733,7 +3203,8 @@ namespace Aws
 
         /**
          * <p>Lists current S3 Batch Operations jobs and jobs that have ended within the
-         * last 30 days for the account making the request. For more information, see <a
+         * last 30 days for the Amazon Web Services account making the request. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
          * Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Related actions
          * include:</p> <p/> <ul> <li> <p> <a
@@ -2754,7 +3225,8 @@ namespace Aws
 
         /**
          * <p>Lists current S3 Batch Operations jobs and jobs that have ended within the
-         * last 30 days for the account making the request. For more information, see <a
+         * last 30 days for the Amazon Web Services account making the request. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
          * Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Related actions
          * include:</p> <p/> <ul> <li> <p> <a
@@ -2772,6 +3244,82 @@ namespace Aws
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListJobsAsync(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of the Multi-Region Access Points currently associated with
+         * the specified Amazon Web Services account. Each call can return up to 100
+         * Multi-Region Access Points, the maximum number of Multi-Region Access Points
+         * that can be associated with a single account.</p> <p>This action will always be
+         * routed to the US West (Oregon) Region. For more information about the
+         * restrictions around managing Multi-Region Access Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
+         * following actions are related to <code>ListMultiRegionAccessPoint</code>:</p>
+         * <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListMultiRegionAccessPoints">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMultiRegionAccessPointsOutcome ListMultiRegionAccessPoints(const Model::ListMultiRegionAccessPointsRequest& request) const;
+
+        /**
+         * <p>Returns a list of the Multi-Region Access Points currently associated with
+         * the specified Amazon Web Services account. Each call can return up to 100
+         * Multi-Region Access Points, the maximum number of Multi-Region Access Points
+         * that can be associated with a single account.</p> <p>This action will always be
+         * routed to the US West (Oregon) Region. For more information about the
+         * restrictions around managing Multi-Region Access Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
+         * following actions are related to <code>ListMultiRegionAccessPoint</code>:</p>
+         * <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListMultiRegionAccessPoints">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMultiRegionAccessPointsOutcomeCallable ListMultiRegionAccessPointsCallable(const Model::ListMultiRegionAccessPointsRequest& request) const;
+
+        /**
+         * <p>Returns a list of the Multi-Region Access Points currently associated with
+         * the specified Amazon Web Services account. Each call can return up to 100
+         * Multi-Region Access Points, the maximum number of Multi-Region Access Points
+         * that can be associated with a single account.</p> <p>This action will always be
+         * routed to the US West (Oregon) Region. For more information about the
+         * restrictions around managing Multi-Region Access Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
+         * following actions are related to <code>ListMultiRegionAccessPoint</code>:</p>
+         * <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListMultiRegionAccessPoints">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMultiRegionAccessPointsAsync(const Model::ListMultiRegionAccessPointsRequest& request, const ListMultiRegionAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all Outposts buckets in an Outpost that are owned by the
@@ -3123,18 +3671,18 @@ namespace Aws
          * bucket policy to an Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you are
-         * using an identity other than the root user of the account that owns the Outposts
-         * bucket, the calling identity must have the <code>PutBucketPolicy</code>
-         * permissions on the specified Outposts bucket and belong to the bucket owner's
-         * account in order to use this action.</p> <p>If you don't have
-         * <code>PutBucketPolicy</code> permissions, Amazon S3 returns a <code>403 Access
-         * Denied</code> error. If you have the correct permissions, but you're not using
-         * an identity that belongs to the bucket owner's account, Amazon S3 returns a
-         * <code>405 Method Not Allowed</code> error.</p>  <p> As a security
-         * precaution, the root user of the account that owns a bucket can always use this
-         * action, even if the policy explicitly denies the root user the ability to
-         * perform this action. </p>  <p>For more information about bucket
-         * policies, see <a
+         * using an identity other than the root user of the Amazon Web Services account
+         * that owns the Outposts bucket, the calling identity must have the
+         * <code>PutBucketPolicy</code> permissions on the specified Outposts bucket and
+         * belong to the bucket owner's account in order to use this action.</p> <p>If you
+         * don't have <code>PutBucketPolicy</code> permissions, Amazon S3 returns a
+         * <code>403 Access Denied</code> error. If you have the correct permissions, but
+         * you're not using an identity that belongs to the bucket owner's account, Amazon
+         * S3 returns a <code>405 Method Not Allowed</code> error.</p>  <p> As a
+         * security precaution, the root user of the Amazon Web Services account that owns
+         * a bucket can always use this action, even if the policy explicitly denies the
+         * root user the ability to perform this action. </p>  <p>For more
+         * information about bucket policies, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
          * Bucket Policies and User Policies</a>.</p> <p>All Amazon S3 on Outposts REST API
          * requests for this action require an additional parameter of
@@ -3163,18 +3711,18 @@ namespace Aws
          * bucket policy to an Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you are
-         * using an identity other than the root user of the account that owns the Outposts
-         * bucket, the calling identity must have the <code>PutBucketPolicy</code>
-         * permissions on the specified Outposts bucket and belong to the bucket owner's
-         * account in order to use this action.</p> <p>If you don't have
-         * <code>PutBucketPolicy</code> permissions, Amazon S3 returns a <code>403 Access
-         * Denied</code> error. If you have the correct permissions, but you're not using
-         * an identity that belongs to the bucket owner's account, Amazon S3 returns a
-         * <code>405 Method Not Allowed</code> error.</p>  <p> As a security
-         * precaution, the root user of the account that owns a bucket can always use this
-         * action, even if the policy explicitly denies the root user the ability to
-         * perform this action. </p>  <p>For more information about bucket
-         * policies, see <a
+         * using an identity other than the root user of the Amazon Web Services account
+         * that owns the Outposts bucket, the calling identity must have the
+         * <code>PutBucketPolicy</code> permissions on the specified Outposts bucket and
+         * belong to the bucket owner's account in order to use this action.</p> <p>If you
+         * don't have <code>PutBucketPolicy</code> permissions, Amazon S3 returns a
+         * <code>403 Access Denied</code> error. If you have the correct permissions, but
+         * you're not using an identity that belongs to the bucket owner's account, Amazon
+         * S3 returns a <code>405 Method Not Allowed</code> error.</p>  <p> As a
+         * security precaution, the root user of the Amazon Web Services account that owns
+         * a bucket can always use this action, even if the policy explicitly denies the
+         * root user the ability to perform this action. </p>  <p>For more
+         * information about bucket policies, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
          * Bucket Policies and User Policies</a>.</p> <p>All Amazon S3 on Outposts REST API
          * requests for this action require an additional parameter of
@@ -3205,18 +3753,18 @@ namespace Aws
          * bucket policy to an Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you are
-         * using an identity other than the root user of the account that owns the Outposts
-         * bucket, the calling identity must have the <code>PutBucketPolicy</code>
-         * permissions on the specified Outposts bucket and belong to the bucket owner's
-         * account in order to use this action.</p> <p>If you don't have
-         * <code>PutBucketPolicy</code> permissions, Amazon S3 returns a <code>403 Access
-         * Denied</code> error. If you have the correct permissions, but you're not using
-         * an identity that belongs to the bucket owner's account, Amazon S3 returns a
-         * <code>405 Method Not Allowed</code> error.</p>  <p> As a security
-         * precaution, the root user of the account that owns a bucket can always use this
-         * action, even if the policy explicitly denies the root user the ability to
-         * perform this action. </p>  <p>For more information about bucket
-         * policies, see <a
+         * using an identity other than the root user of the Amazon Web Services account
+         * that owns the Outposts bucket, the calling identity must have the
+         * <code>PutBucketPolicy</code> permissions on the specified Outposts bucket and
+         * belong to the bucket owner's account in order to use this action.</p> <p>If you
+         * don't have <code>PutBucketPolicy</code> permissions, Amazon S3 returns a
+         * <code>403 Access Denied</code> error. If you have the correct permissions, but
+         * you're not using an identity that belongs to the bucket owner's account, Amazon
+         * S3 returns a <code>405 Method Not Allowed</code> error.</p>  <p> As a
+         * security precaution, the root user of the Amazon Web Services account that owns
+         * a bucket can always use this action, even if the policy explicitly denies the
+         * root user the ability to perform this action. </p>  <p>For more
+         * information about bucket policies, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
          * Bucket Policies and User Policies</a>.</p> <p>All Amazon S3 on Outposts REST API
          * requests for this action require an additional parameter of
@@ -3248,12 +3796,12 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Use tags to
          * organize your Amazon Web Services bill to reflect your own cost structure. To do
-         * this, sign up to get your account bill with tag key values included. Then, to
-         * see the cost of combined resources, organize your billing information according
-         * to resources with the same tag key values. For example, you can tag several
-         * resources with a specific application name, and then organize your billing
-         * information to see the total cost of that application across several services.
-         * For more information, see <a
+         * this, sign up to get your Amazon Web Services account bill with tag key values
+         * included. Then, to see the cost of combined resources, organize your billing
+         * information according to resources with the same tag key values. For example,
+         * you can tag several resources with a specific application name, and then
+         * organize your billing information to see the total cost of that application
+         * across several services. For more information, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
          * allocation and tagging</a>.</p>  <p>Within a bucket, if you add a tag that
          * has the same key as an existing tag, the new value overwrites the old value. For
@@ -3310,12 +3858,12 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Use tags to
          * organize your Amazon Web Services bill to reflect your own cost structure. To do
-         * this, sign up to get your account bill with tag key values included. Then, to
-         * see the cost of combined resources, organize your billing information according
-         * to resources with the same tag key values. For example, you can tag several
-         * resources with a specific application name, and then organize your billing
-         * information to see the total cost of that application across several services.
-         * For more information, see <a
+         * this, sign up to get your Amazon Web Services account bill with tag key values
+         * included. Then, to see the cost of combined resources, organize your billing
+         * information according to resources with the same tag key values. For example,
+         * you can tag several resources with a specific application name, and then
+         * organize your billing information to see the total cost of that application
+         * across several services. For more information, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
          * allocation and tagging</a>.</p>  <p>Within a bucket, if you add a tag that
          * has the same key as an existing tag, the new value overwrites the old value. For
@@ -3374,12 +3922,12 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Use tags to
          * organize your Amazon Web Services bill to reflect your own cost structure. To do
-         * this, sign up to get your account bill with tag key values included. Then, to
-         * see the cost of combined resources, organize your billing information according
-         * to resources with the same tag key values. For example, you can tag several
-         * resources with a specific application name, and then organize your billing
-         * information to see the total cost of that application across several services.
-         * For more information, see <a
+         * this, sign up to get your Amazon Web Services account bill with tag key values
+         * included. Then, to see the cost of combined resources, organize your billing
+         * information according to resources with the same tag key values. For example,
+         * you can tag several resources with a specific application name, and then
+         * organize your billing information to see the total cost of that application
+         * across several services. For more information, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
          * allocation and tagging</a>.</p>  <p>Within a bucket, if you add a tag that
          * has the same key as an existing tag, the new value overwrites the old value. For
@@ -3560,8 +4108,72 @@ namespace Aws
         virtual void PutJobTaggingAsync(const Model::PutJobTaggingRequest& request, const PutJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Associates an access control policy with the specified Multi-Region Access
+         * Point. Each Multi-Region Access Point can have only one policy, so a request
+         * made to this action replaces any existing policy that is associated with the
+         * specified Multi-Region Access Point.</p> <p>This action will always be routed to
+         * the US West (Oregon) Region. For more information about the restrictions around
+         * managing Multi-Region Access Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
+         * following actions are related to
+         * <code>PutMultiRegionAccessPointPolicy</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicy.html">GetMultiRegionAccessPointPolicy</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicyStatus.html">GetMultiRegionAccessPointPolicyStatus</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutMultiRegionAccessPointPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutMultiRegionAccessPointPolicyOutcome PutMultiRegionAccessPointPolicy(const Model::PutMultiRegionAccessPointPolicyRequest& request) const;
+
+        /**
+         * <p>Associates an access control policy with the specified Multi-Region Access
+         * Point. Each Multi-Region Access Point can have only one policy, so a request
+         * made to this action replaces any existing policy that is associated with the
+         * specified Multi-Region Access Point.</p> <p>This action will always be routed to
+         * the US West (Oregon) Region. For more information about the restrictions around
+         * managing Multi-Region Access Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
+         * following actions are related to
+         * <code>PutMultiRegionAccessPointPolicy</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicy.html">GetMultiRegionAccessPointPolicy</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicyStatus.html">GetMultiRegionAccessPointPolicyStatus</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutMultiRegionAccessPointPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutMultiRegionAccessPointPolicyOutcomeCallable PutMultiRegionAccessPointPolicyCallable(const Model::PutMultiRegionAccessPointPolicyRequest& request) const;
+
+        /**
+         * <p>Associates an access control policy with the specified Multi-Region Access
+         * Point. Each Multi-Region Access Point can have only one policy, so a request
+         * made to this action replaces any existing policy that is associated with the
+         * specified Multi-Region Access Point.</p> <p>This action will always be routed to
+         * the US West (Oregon) Region. For more information about the restrictions around
+         * managing Multi-Region Access Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
+         * following actions are related to
+         * <code>PutMultiRegionAccessPointPolicy</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicy.html">GetMultiRegionAccessPointPolicy</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicyStatus.html">GetMultiRegionAccessPointPolicyStatus</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutMultiRegionAccessPointPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutMultiRegionAccessPointPolicyAsync(const Model::PutMultiRegionAccessPointPolicyRequest& request, const PutMultiRegionAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an
-         * account. For more information, see <a
+         * Amazon Web Services account. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
          * Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p>
          * <ul> <li> <p> <a
@@ -3576,7 +4188,7 @@ namespace Aws
 
         /**
          * <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an
-         * account. For more information, see <a
+         * Amazon Web Services account. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
          * Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p>
          * <ul> <li> <p> <a
@@ -3593,7 +4205,7 @@ namespace Aws
 
         /**
          * <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an
-         * account. For more information, see <a
+         * Amazon Web Services account. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
          * Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p>
          * <ul> <li> <p> <a
@@ -3857,6 +4469,7 @@ namespace Aws
         void CreateAccessPointForObjectLambdaAsyncHelper(const Model::CreateAccessPointForObjectLambdaRequest& request, const CreateAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBucketAsyncHelper(const Model::CreateBucketRequest& request, const CreateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateJobAsyncHelper(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateMultiRegionAccessPointAsyncHelper(const Model::CreateMultiRegionAccessPointRequest& request, const CreateMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAccessPointAsyncHelper(const Model::DeleteAccessPointRequest& request, const DeleteAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAccessPointForObjectLambdaAsyncHelper(const Model::DeleteAccessPointForObjectLambdaRequest& request, const DeleteAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAccessPointPolicyAsyncHelper(const Model::DeleteAccessPointPolicyRequest& request, const DeleteAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3866,10 +4479,12 @@ namespace Aws
         void DeleteBucketPolicyAsyncHelper(const Model::DeleteBucketPolicyRequest& request, const DeleteBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBucketTaggingAsyncHelper(const Model::DeleteBucketTaggingRequest& request, const DeleteBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteJobTaggingAsyncHelper(const Model::DeleteJobTaggingRequest& request, const DeleteJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteMultiRegionAccessPointAsyncHelper(const Model::DeleteMultiRegionAccessPointRequest& request, const DeleteMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePublicAccessBlockAsyncHelper(const Model::DeletePublicAccessBlockRequest& request, const DeletePublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStorageLensConfigurationAsyncHelper(const Model::DeleteStorageLensConfigurationRequest& request, const DeleteStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStorageLensConfigurationTaggingAsyncHelper(const Model::DeleteStorageLensConfigurationTaggingRequest& request, const DeleteStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeJobAsyncHelper(const Model::DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeMultiRegionAccessPointOperationAsyncHelper(const Model::DescribeMultiRegionAccessPointOperationRequest& request, const DescribeMultiRegionAccessPointOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccessPointAsyncHelper(const Model::GetAccessPointRequest& request, const GetAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccessPointConfigurationForObjectLambdaAsyncHelper(const Model::GetAccessPointConfigurationForObjectLambdaRequest& request, const GetAccessPointConfigurationForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccessPointForObjectLambdaAsyncHelper(const Model::GetAccessPointForObjectLambdaRequest& request, const GetAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3882,12 +4497,16 @@ namespace Aws
         void GetBucketPolicyAsyncHelper(const Model::GetBucketPolicyRequest& request, const GetBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketTaggingAsyncHelper(const Model::GetBucketTaggingRequest& request, const GetBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJobTaggingAsyncHelper(const Model::GetJobTaggingRequest& request, const GetJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMultiRegionAccessPointAsyncHelper(const Model::GetMultiRegionAccessPointRequest& request, const GetMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMultiRegionAccessPointPolicyAsyncHelper(const Model::GetMultiRegionAccessPointPolicyRequest& request, const GetMultiRegionAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMultiRegionAccessPointPolicyStatusAsyncHelper(const Model::GetMultiRegionAccessPointPolicyStatusRequest& request, const GetMultiRegionAccessPointPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPublicAccessBlockAsyncHelper(const Model::GetPublicAccessBlockRequest& request, const GetPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetStorageLensConfigurationAsyncHelper(const Model::GetStorageLensConfigurationRequest& request, const GetStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetStorageLensConfigurationTaggingAsyncHelper(const Model::GetStorageLensConfigurationTaggingRequest& request, const GetStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAccessPointsAsyncHelper(const Model::ListAccessPointsRequest& request, const ListAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAccessPointsForObjectLambdaAsyncHelper(const Model::ListAccessPointsForObjectLambdaRequest& request, const ListAccessPointsForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListMultiRegionAccessPointsAsyncHelper(const Model::ListMultiRegionAccessPointsRequest& request, const ListMultiRegionAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRegionalBucketsAsyncHelper(const Model::ListRegionalBucketsRequest& request, const ListRegionalBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListStorageLensConfigurationsAsyncHelper(const Model::ListStorageLensConfigurationsRequest& request, const ListStorageLensConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAccessPointConfigurationForObjectLambdaAsyncHelper(const Model::PutAccessPointConfigurationForObjectLambdaRequest& request, const PutAccessPointConfigurationForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3897,6 +4516,7 @@ namespace Aws
         void PutBucketPolicyAsyncHelper(const Model::PutBucketPolicyRequest& request, const PutBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBucketTaggingAsyncHelper(const Model::PutBucketTaggingRequest& request, const PutBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutJobTaggingAsyncHelper(const Model::PutJobTaggingRequest& request, const PutJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutMultiRegionAccessPointPolicyAsyncHelper(const Model::PutMultiRegionAccessPointPolicyRequest& request, const PutMultiRegionAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutPublicAccessBlockAsyncHelper(const Model::PutPublicAccessBlockRequest& request, const PutPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutStorageLensConfigurationAsyncHelper(const Model::PutStorageLensConfigurationRequest& request, const PutStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutStorageLensConfigurationTaggingAsyncHelper(const Model::PutStorageLensConfigurationTaggingRequest& request, const PutStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

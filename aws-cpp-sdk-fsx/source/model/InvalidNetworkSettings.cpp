@@ -21,14 +21,16 @@ namespace Model
 InvalidNetworkSettings::InvalidNetworkSettings() : 
     m_messageHasBeenSet(false),
     m_invalidSubnetIdHasBeenSet(false),
-    m_invalidSecurityGroupIdHasBeenSet(false)
+    m_invalidSecurityGroupIdHasBeenSet(false),
+    m_invalidRouteTableIdHasBeenSet(false)
 {
 }
 
 InvalidNetworkSettings::InvalidNetworkSettings(JsonView jsonValue) : 
     m_messageHasBeenSet(false),
     m_invalidSubnetIdHasBeenSet(false),
-    m_invalidSecurityGroupIdHasBeenSet(false)
+    m_invalidSecurityGroupIdHasBeenSet(false),
+    m_invalidRouteTableIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ InvalidNetworkSettings& InvalidNetworkSettings::operator =(JsonView jsonValue)
     m_invalidSecurityGroupIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InvalidRouteTableId"))
+  {
+    m_invalidRouteTableId = jsonValue.GetString("InvalidRouteTableId");
+
+    m_invalidRouteTableIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue InvalidNetworkSettings::Jsonize() const
   if(m_invalidSecurityGroupIdHasBeenSet)
   {
    payload.WithString("InvalidSecurityGroupId", m_invalidSecurityGroupId);
+
+  }
+
+  if(m_invalidRouteTableIdHasBeenSet)
+  {
+   payload.WithString("InvalidRouteTableId", m_invalidRouteTableId);
 
   }
 

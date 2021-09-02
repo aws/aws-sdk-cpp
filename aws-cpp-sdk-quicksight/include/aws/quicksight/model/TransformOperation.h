@@ -11,6 +11,7 @@
 #include <aws/quicksight/model/RenameColumnOperation.h>
 #include <aws/quicksight/model/CastColumnTypeOperation.h>
 #include <aws/quicksight/model/TagColumnOperation.h>
+#include <aws/quicksight/model/UntagColumnOperation.h>
 #include <utility>
 
 namespace Aws
@@ -241,6 +242,25 @@ namespace Model
      */
     inline TransformOperation& WithTagColumnOperation(TagColumnOperation&& value) { SetTagColumnOperation(std::move(value)); return *this;}
 
+
+    
+    inline const UntagColumnOperation& GetUntagColumnOperation() const{ return m_untagColumnOperation; }
+
+    
+    inline bool UntagColumnOperationHasBeenSet() const { return m_untagColumnOperationHasBeenSet; }
+
+    
+    inline void SetUntagColumnOperation(const UntagColumnOperation& value) { m_untagColumnOperationHasBeenSet = true; m_untagColumnOperation = value; }
+
+    
+    inline void SetUntagColumnOperation(UntagColumnOperation&& value) { m_untagColumnOperationHasBeenSet = true; m_untagColumnOperation = std::move(value); }
+
+    
+    inline TransformOperation& WithUntagColumnOperation(const UntagColumnOperation& value) { SetUntagColumnOperation(value); return *this;}
+
+    
+    inline TransformOperation& WithUntagColumnOperation(UntagColumnOperation&& value) { SetUntagColumnOperation(std::move(value)); return *this;}
+
   private:
 
     ProjectOperation m_projectOperation;
@@ -260,6 +280,9 @@ namespace Model
 
     TagColumnOperation m_tagColumnOperation;
     bool m_tagColumnOperationHasBeenSet;
+
+    UntagColumnOperation m_untagColumnOperation;
+    bool m_untagColumnOperationHasBeenSet;
   };
 
 } // namespace Model

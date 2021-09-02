@@ -153,50 +153,58 @@ namespace Model
 
 
     /**
-     * <p> The AWS account under which the grant was issued. The account is used to
-     * propose KMS grants issued by accounts other than the owner of the key.</p>
+     * <p> The Amazon Web Services account under which the grant was issued. The
+     * account is used to propose KMS grants issued by accounts other than the owner of
+     * the key.</p>
      */
     inline const Aws::String& GetIssuingAccount() const{ return m_issuingAccount; }
 
     /**
-     * <p> The AWS account under which the grant was issued. The account is used to
-     * propose KMS grants issued by accounts other than the owner of the key.</p>
+     * <p> The Amazon Web Services account under which the grant was issued. The
+     * account is used to propose KMS grants issued by accounts other than the owner of
+     * the key.</p>
      */
     inline bool IssuingAccountHasBeenSet() const { return m_issuingAccountHasBeenSet; }
 
     /**
-     * <p> The AWS account under which the grant was issued. The account is used to
-     * propose KMS grants issued by accounts other than the owner of the key.</p>
+     * <p> The Amazon Web Services account under which the grant was issued. The
+     * account is used to propose KMS grants issued by accounts other than the owner of
+     * the key.</p>
      */
     inline void SetIssuingAccount(const Aws::String& value) { m_issuingAccountHasBeenSet = true; m_issuingAccount = value; }
 
     /**
-     * <p> The AWS account under which the grant was issued. The account is used to
-     * propose KMS grants issued by accounts other than the owner of the key.</p>
+     * <p> The Amazon Web Services account under which the grant was issued. The
+     * account is used to propose KMS grants issued by accounts other than the owner of
+     * the key.</p>
      */
     inline void SetIssuingAccount(Aws::String&& value) { m_issuingAccountHasBeenSet = true; m_issuingAccount = std::move(value); }
 
     /**
-     * <p> The AWS account under which the grant was issued. The account is used to
-     * propose KMS grants issued by accounts other than the owner of the key.</p>
+     * <p> The Amazon Web Services account under which the grant was issued. The
+     * account is used to propose KMS grants issued by accounts other than the owner of
+     * the key.</p>
      */
     inline void SetIssuingAccount(const char* value) { m_issuingAccountHasBeenSet = true; m_issuingAccount.assign(value); }
 
     /**
-     * <p> The AWS account under which the grant was issued. The account is used to
-     * propose KMS grants issued by accounts other than the owner of the key.</p>
+     * <p> The Amazon Web Services account under which the grant was issued. The
+     * account is used to propose KMS grants issued by accounts other than the owner of
+     * the key.</p>
      */
     inline KmsGrantConfiguration& WithIssuingAccount(const Aws::String& value) { SetIssuingAccount(value); return *this;}
 
     /**
-     * <p> The AWS account under which the grant was issued. The account is used to
-     * propose KMS grants issued by accounts other than the owner of the key.</p>
+     * <p> The Amazon Web Services account under which the grant was issued. The
+     * account is used to propose KMS grants issued by accounts other than the owner of
+     * the key.</p>
      */
     inline KmsGrantConfiguration& WithIssuingAccount(Aws::String&& value) { SetIssuingAccount(std::move(value)); return *this;}
 
     /**
-     * <p> The AWS account under which the grant was issued. The account is used to
-     * propose KMS grants issued by accounts other than the owner of the key.</p>
+     * <p> The Amazon Web Services account under which the grant was issued. The
+     * account is used to propose KMS grants issued by accounts other than the owner of
+     * the key.</p>
      */
     inline KmsGrantConfiguration& WithIssuingAccount(const char* value) { SetIssuingAccount(value); return *this;}
 

@@ -39,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The ID for the Amazon Web Services account; associated with your QuickSight
-     * subscription.</p>
+     * <p>The ID for the Amazon Web Services account associated with your Amazon
+     * QuickSight subscription.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID for the Amazon Web Services account; associated with your QuickSight
-     * subscription.</p>
+     * <p>The ID for the Amazon Web Services account associated with your Amazon
+     * QuickSight subscription.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID for the Amazon Web Services account; associated with your QuickSight
-     * subscription.</p>
+     * <p>The ID for the Amazon Web Services account associated with your Amazon
+     * QuickSight subscription.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID for the Amazon Web Services account; associated with your QuickSight
-     * subscription.</p>
+     * <p>The ID for the Amazon Web Services account associated with your Amazon
+     * QuickSight subscription.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID for the Amazon Web Services account; associated with your QuickSight
-     * subscription.</p>
+     * <p>The ID for the Amazon Web Services account associated with your Amazon
+     * QuickSight subscription.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID for the Amazon Web Services account; associated with your QuickSight
-     * subscription.</p>
+     * <p>The ID for the Amazon Web Services account associated with your Amazon
+     * QuickSight subscription.</p>
      */
     inline GetSessionEmbedUrlRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID for the Amazon Web Services account; associated with your QuickSight
-     * subscription.</p>
+     * <p>The ID for the Amazon Web Services account associated with your Amazon
+     * QuickSight subscription.</p>
      */
     inline GetSessionEmbedUrlRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the Amazon Web Services account; associated with your QuickSight
-     * subscription.</p>
+     * <p>The ID for the Amazon Web Services account associated with your Amazon
+     * QuickSight subscription.</p>
      */
     inline GetSessionEmbedUrlRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -93,10 +93,10 @@ namespace Model
      * </li> <li> <p> <code>/start/analyses</code> </p> </li> <li> <p>
      * <code>/start/dashboards</code> </p> </li> <li> <p> <code>/start/favorites</code>
      * </p> </li> <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where
-     * <code>DashboardId</code> is the actual ID key from the QuickSight console URL of
-     * the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i> </code> -
-     * where <code>AnalysisId</code> is the actual ID key from the QuickSight console
-     * URL of the analysis</p> </li> </ul>
+     * <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console
+     * URL of the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i>
+     * </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon
+     * QuickSight console URL of the analysis</p> </li> </ul>
      */
     inline const Aws::String& GetEntryPoint() const{ return m_entryPoint; }
 
@@ -106,10 +106,10 @@ namespace Model
      * </li> <li> <p> <code>/start/analyses</code> </p> </li> <li> <p>
      * <code>/start/dashboards</code> </p> </li> <li> <p> <code>/start/favorites</code>
      * </p> </li> <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where
-     * <code>DashboardId</code> is the actual ID key from the QuickSight console URL of
-     * the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i> </code> -
-     * where <code>AnalysisId</code> is the actual ID key from the QuickSight console
-     * URL of the analysis</p> </li> </ul>
+     * <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console
+     * URL of the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i>
+     * </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon
+     * QuickSight console URL of the analysis</p> </li> </ul>
      */
     inline bool EntryPointHasBeenSet() const { return m_entryPointHasBeenSet; }
 
@@ -119,10 +119,10 @@ namespace Model
      * </li> <li> <p> <code>/start/analyses</code> </p> </li> <li> <p>
      * <code>/start/dashboards</code> </p> </li> <li> <p> <code>/start/favorites</code>
      * </p> </li> <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where
-     * <code>DashboardId</code> is the actual ID key from the QuickSight console URL of
-     * the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i> </code> -
-     * where <code>AnalysisId</code> is the actual ID key from the QuickSight console
-     * URL of the analysis</p> </li> </ul>
+     * <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console
+     * URL of the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i>
+     * </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon
+     * QuickSight console URL of the analysis</p> </li> </ul>
      */
     inline void SetEntryPoint(const Aws::String& value) { m_entryPointHasBeenSet = true; m_entryPoint = value; }
 
@@ -132,10 +132,10 @@ namespace Model
      * </li> <li> <p> <code>/start/analyses</code> </p> </li> <li> <p>
      * <code>/start/dashboards</code> </p> </li> <li> <p> <code>/start/favorites</code>
      * </p> </li> <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where
-     * <code>DashboardId</code> is the actual ID key from the QuickSight console URL of
-     * the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i> </code> -
-     * where <code>AnalysisId</code> is the actual ID key from the QuickSight console
-     * URL of the analysis</p> </li> </ul>
+     * <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console
+     * URL of the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i>
+     * </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon
+     * QuickSight console URL of the analysis</p> </li> </ul>
      */
     inline void SetEntryPoint(Aws::String&& value) { m_entryPointHasBeenSet = true; m_entryPoint = std::move(value); }
 
@@ -145,10 +145,10 @@ namespace Model
      * </li> <li> <p> <code>/start/analyses</code> </p> </li> <li> <p>
      * <code>/start/dashboards</code> </p> </li> <li> <p> <code>/start/favorites</code>
      * </p> </li> <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where
-     * <code>DashboardId</code> is the actual ID key from the QuickSight console URL of
-     * the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i> </code> -
-     * where <code>AnalysisId</code> is the actual ID key from the QuickSight console
-     * URL of the analysis</p> </li> </ul>
+     * <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console
+     * URL of the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i>
+     * </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon
+     * QuickSight console URL of the analysis</p> </li> </ul>
      */
     inline void SetEntryPoint(const char* value) { m_entryPointHasBeenSet = true; m_entryPoint.assign(value); }
 
@@ -158,10 +158,10 @@ namespace Model
      * </li> <li> <p> <code>/start/analyses</code> </p> </li> <li> <p>
      * <code>/start/dashboards</code> </p> </li> <li> <p> <code>/start/favorites</code>
      * </p> </li> <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where
-     * <code>DashboardId</code> is the actual ID key from the QuickSight console URL of
-     * the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i> </code> -
-     * where <code>AnalysisId</code> is the actual ID key from the QuickSight console
-     * URL of the analysis</p> </li> </ul>
+     * <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console
+     * URL of the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i>
+     * </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon
+     * QuickSight console URL of the analysis</p> </li> </ul>
      */
     inline GetSessionEmbedUrlRequest& WithEntryPoint(const Aws::String& value) { SetEntryPoint(value); return *this;}
 
@@ -171,10 +171,10 @@ namespace Model
      * </li> <li> <p> <code>/start/analyses</code> </p> </li> <li> <p>
      * <code>/start/dashboards</code> </p> </li> <li> <p> <code>/start/favorites</code>
      * </p> </li> <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where
-     * <code>DashboardId</code> is the actual ID key from the QuickSight console URL of
-     * the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i> </code> -
-     * where <code>AnalysisId</code> is the actual ID key from the QuickSight console
-     * URL of the analysis</p> </li> </ul>
+     * <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console
+     * URL of the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i>
+     * </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon
+     * QuickSight console URL of the analysis</p> </li> </ul>
      */
     inline GetSessionEmbedUrlRequest& WithEntryPoint(Aws::String&& value) { SetEntryPoint(std::move(value)); return *this;}
 
@@ -184,10 +184,10 @@ namespace Model
      * </li> <li> <p> <code>/start/analyses</code> </p> </li> <li> <p>
      * <code>/start/dashboards</code> </p> </li> <li> <p> <code>/start/favorites</code>
      * </p> </li> <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where
-     * <code>DashboardId</code> is the actual ID key from the QuickSight console URL of
-     * the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i> </code> -
-     * where <code>AnalysisId</code> is the actual ID key from the QuickSight console
-     * URL of the analysis</p> </li> </ul>
+     * <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console
+     * URL of the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i>
+     * </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon
+     * QuickSight console URL of the analysis</p> </li> </ul>
      */
     inline GetSessionEmbedUrlRequest& WithEntryPoint(const char* value) { SetEntryPoint(value); return *this;}
 

@@ -189,8 +189,9 @@ namespace Model
      * log group must begin with the <code>/aws/fsx</code> prefix. The name of the
      * Amazon Kinesis Data Firehouse delivery stream must begin with the
      * <code>aws-fsx</code> prefix.</p> <p>The destination ARN (either CloudWatch Logs
-     * log group or Kinesis Data Firehose delivery stream) must be in the same AWS
-     * partition, AWS region, and AWS account as your Amazon FSx file system.</p>
+     * log group or Kinesis Data Firehose delivery stream) must be in the same Amazon
+     * Web Services partition, Amazon Web Services Region, and Amazon Web Services
+     * account as your Amazon FSx file system.</p>
      */
     inline const Aws::String& GetAuditLogDestination() const{ return m_auditLogDestination; }
 
@@ -201,8 +202,9 @@ namespace Model
      * log group must begin with the <code>/aws/fsx</code> prefix. The name of the
      * Amazon Kinesis Data Firehouse delivery stream must begin with the
      * <code>aws-fsx</code> prefix.</p> <p>The destination ARN (either CloudWatch Logs
-     * log group or Kinesis Data Firehose delivery stream) must be in the same AWS
-     * partition, AWS region, and AWS account as your Amazon FSx file system.</p>
+     * log group or Kinesis Data Firehose delivery stream) must be in the same Amazon
+     * Web Services partition, Amazon Web Services Region, and Amazon Web Services
+     * account as your Amazon FSx file system.</p>
      */
     inline bool AuditLogDestinationHasBeenSet() const { return m_auditLogDestinationHasBeenSet; }
 
@@ -213,8 +215,9 @@ namespace Model
      * log group must begin with the <code>/aws/fsx</code> prefix. The name of the
      * Amazon Kinesis Data Firehouse delivery stream must begin with the
      * <code>aws-fsx</code> prefix.</p> <p>The destination ARN (either CloudWatch Logs
-     * log group or Kinesis Data Firehose delivery stream) must be in the same AWS
-     * partition, AWS region, and AWS account as your Amazon FSx file system.</p>
+     * log group or Kinesis Data Firehose delivery stream) must be in the same Amazon
+     * Web Services partition, Amazon Web Services Region, and Amazon Web Services
+     * account as your Amazon FSx file system.</p>
      */
     inline void SetAuditLogDestination(const Aws::String& value) { m_auditLogDestinationHasBeenSet = true; m_auditLogDestination = value; }
 
@@ -225,8 +228,9 @@ namespace Model
      * log group must begin with the <code>/aws/fsx</code> prefix. The name of the
      * Amazon Kinesis Data Firehouse delivery stream must begin with the
      * <code>aws-fsx</code> prefix.</p> <p>The destination ARN (either CloudWatch Logs
-     * log group or Kinesis Data Firehose delivery stream) must be in the same AWS
-     * partition, AWS region, and AWS account as your Amazon FSx file system.</p>
+     * log group or Kinesis Data Firehose delivery stream) must be in the same Amazon
+     * Web Services partition, Amazon Web Services Region, and Amazon Web Services
+     * account as your Amazon FSx file system.</p>
      */
     inline void SetAuditLogDestination(Aws::String&& value) { m_auditLogDestinationHasBeenSet = true; m_auditLogDestination = std::move(value); }
 
@@ -237,8 +241,9 @@ namespace Model
      * log group must begin with the <code>/aws/fsx</code> prefix. The name of the
      * Amazon Kinesis Data Firehouse delivery stream must begin with the
      * <code>aws-fsx</code> prefix.</p> <p>The destination ARN (either CloudWatch Logs
-     * log group or Kinesis Data Firehose delivery stream) must be in the same AWS
-     * partition, AWS region, and AWS account as your Amazon FSx file system.</p>
+     * log group or Kinesis Data Firehose delivery stream) must be in the same Amazon
+     * Web Services partition, Amazon Web Services Region, and Amazon Web Services
+     * account as your Amazon FSx file system.</p>
      */
     inline void SetAuditLogDestination(const char* value) { m_auditLogDestinationHasBeenSet = true; m_auditLogDestination.assign(value); }
 
@@ -249,8 +254,9 @@ namespace Model
      * log group must begin with the <code>/aws/fsx</code> prefix. The name of the
      * Amazon Kinesis Data Firehouse delivery stream must begin with the
      * <code>aws-fsx</code> prefix.</p> <p>The destination ARN (either CloudWatch Logs
-     * log group or Kinesis Data Firehose delivery stream) must be in the same AWS
-     * partition, AWS region, and AWS account as your Amazon FSx file system.</p>
+     * log group or Kinesis Data Firehose delivery stream) must be in the same Amazon
+     * Web Services partition, Amazon Web Services Region, and Amazon Web Services
+     * account as your Amazon FSx file system.</p>
      */
     inline WindowsAuditLogConfiguration& WithAuditLogDestination(const Aws::String& value) { SetAuditLogDestination(value); return *this;}
 
@@ -261,8 +267,9 @@ namespace Model
      * log group must begin with the <code>/aws/fsx</code> prefix. The name of the
      * Amazon Kinesis Data Firehouse delivery stream must begin with the
      * <code>aws-fsx</code> prefix.</p> <p>The destination ARN (either CloudWatch Logs
-     * log group or Kinesis Data Firehose delivery stream) must be in the same AWS
-     * partition, AWS region, and AWS account as your Amazon FSx file system.</p>
+     * log group or Kinesis Data Firehose delivery stream) must be in the same Amazon
+     * Web Services partition, Amazon Web Services Region, and Amazon Web Services
+     * account as your Amazon FSx file system.</p>
      */
     inline WindowsAuditLogConfiguration& WithAuditLogDestination(Aws::String&& value) { SetAuditLogDestination(std::move(value)); return *this;}
 
@@ -273,8 +280,9 @@ namespace Model
      * log group must begin with the <code>/aws/fsx</code> prefix. The name of the
      * Amazon Kinesis Data Firehouse delivery stream must begin with the
      * <code>aws-fsx</code> prefix.</p> <p>The destination ARN (either CloudWatch Logs
-     * log group or Kinesis Data Firehose delivery stream) must be in the same AWS
-     * partition, AWS region, and AWS account as your Amazon FSx file system.</p>
+     * log group or Kinesis Data Firehose delivery stream) must be in the same Amazon
+     * Web Services partition, Amazon Web Services Region, and Amazon Web Services
+     * account as your Amazon FSx file system.</p>
      */
     inline WindowsAuditLogConfiguration& WithAuditLogDestination(const char* value) { SetAuditLogDestination(value); return *this;}
 

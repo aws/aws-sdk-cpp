@@ -162,46 +162,46 @@ namespace Model
     /**
      * <p>A Boolean value that, if true, creates an encrypted file system. When
      * creating an encrypted file system, you have the option of specifying
-     * <a>CreateFileSystemRequest$KmsKeyId</a> for an existing AWS Key Management
-     * Service (AWS KMS) customer master key (CMK). If you don't specify a CMK, then
-     * the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to
-     * protect the encrypted file system. </p>
+     * <a>CreateFileSystemRequest$KmsKeyId</a> for an existing Key Management Service
+     * (KMS customer master key (CMK). If you don't specify a CMK, then the default CMK
+     * for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the
+     * encrypted file system. </p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
     /**
      * <p>A Boolean value that, if true, creates an encrypted file system. When
      * creating an encrypted file system, you have the option of specifying
-     * <a>CreateFileSystemRequest$KmsKeyId</a> for an existing AWS Key Management
-     * Service (AWS KMS) customer master key (CMK). If you don't specify a CMK, then
-     * the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to
-     * protect the encrypted file system. </p>
+     * <a>CreateFileSystemRequest$KmsKeyId</a> for an existing Key Management Service
+     * (KMS customer master key (CMK). If you don't specify a CMK, then the default CMK
+     * for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the
+     * encrypted file system. </p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
     /**
      * <p>A Boolean value that, if true, creates an encrypted file system. When
      * creating an encrypted file system, you have the option of specifying
-     * <a>CreateFileSystemRequest$KmsKeyId</a> for an existing AWS Key Management
-     * Service (AWS KMS) customer master key (CMK). If you don't specify a CMK, then
-     * the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to
-     * protect the encrypted file system. </p>
+     * <a>CreateFileSystemRequest$KmsKeyId</a> for an existing Key Management Service
+     * (KMS customer master key (CMK). If you don't specify a CMK, then the default CMK
+     * for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the
+     * encrypted file system. </p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
      * <p>A Boolean value that, if true, creates an encrypted file system. When
      * creating an encrypted file system, you have the option of specifying
-     * <a>CreateFileSystemRequest$KmsKeyId</a> for an existing AWS Key Management
-     * Service (AWS KMS) customer master key (CMK). If you don't specify a CMK, then
-     * the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to
-     * protect the encrypted file system. </p>
+     * <a>CreateFileSystemRequest$KmsKeyId</a> for an existing Key Management Service
+     * (KMS customer master key (CMK). If you don't specify a CMK, then the default CMK
+     * for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the
+     * encrypted file system. </p>
      */
     inline CreateFileSystemRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
 
     /**
-     * <p>The ID of the AWS KMS CMK that you want to use to protect the encrypted file
+     * <p>The ID of the KMS CMK that you want to use to protect the encrypted file
      * system. This parameter is only required if you want to use a non-default KMS
      * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
      * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
@@ -221,7 +221,7 @@ namespace Model
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ID of the AWS KMS CMK that you want to use to protect the encrypted file
+     * <p>The ID of the KMS CMK that you want to use to protect the encrypted file
      * system. This parameter is only required if you want to use a non-default KMS
      * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
      * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
@@ -241,7 +241,7 @@ namespace Model
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS KMS CMK that you want to use to protect the encrypted file
+     * <p>The ID of the KMS CMK that you want to use to protect the encrypted file
      * system. This parameter is only required if you want to use a non-default KMS
      * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
      * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
@@ -261,7 +261,7 @@ namespace Model
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ID of the AWS KMS CMK that you want to use to protect the encrypted file
+     * <p>The ID of the KMS CMK that you want to use to protect the encrypted file
      * system. This parameter is only required if you want to use a non-default KMS
      * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
      * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
@@ -281,7 +281,7 @@ namespace Model
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS KMS CMK that you want to use to protect the encrypted file
+     * <p>The ID of the KMS CMK that you want to use to protect the encrypted file
      * system. This parameter is only required if you want to use a non-default KMS
      * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
      * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
@@ -301,7 +301,7 @@ namespace Model
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of the AWS KMS CMK that you want to use to protect the encrypted file
+     * <p>The ID of the KMS CMK that you want to use to protect the encrypted file
      * system. This parameter is only required if you want to use a non-default KMS
      * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
      * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
@@ -321,7 +321,7 @@ namespace Model
     inline CreateFileSystemRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS CMK that you want to use to protect the encrypted file
+     * <p>The ID of the KMS CMK that you want to use to protect the encrypted file
      * system. This parameter is only required if you want to use a non-default KMS
      * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
      * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
@@ -341,7 +341,7 @@ namespace Model
     inline CreateFileSystemRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS CMK that you want to use to protect the encrypted file
+     * <p>The ID of the KMS CMK that you want to use to protect the encrypted file
      * system. This parameter is only required if you want to use a non-default KMS
      * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
      * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
@@ -456,8 +456,8 @@ namespace Model
      * <p>The throughput, measured in MiB/s, that you want to provision for a file
      * system that you're creating. Valid values are 1-1024. Required if
      * <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit
-     * for throughput is 1024 MiB/s. To increase this limit, contact AWS Support. For
-     * more information, see <a
+     * for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web
+     * Services Support. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
      * EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
@@ -467,8 +467,8 @@ namespace Model
      * <p>The throughput, measured in MiB/s, that you want to provision for a file
      * system that you're creating. Valid values are 1-1024. Required if
      * <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit
-     * for throughput is 1024 MiB/s. To increase this limit, contact AWS Support. For
-     * more information, see <a
+     * for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web
+     * Services Support. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
      * EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
@@ -478,8 +478,8 @@ namespace Model
      * <p>The throughput, measured in MiB/s, that you want to provision for a file
      * system that you're creating. Valid values are 1-1024. Required if
      * <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit
-     * for throughput is 1024 MiB/s. To increase this limit, contact AWS Support. For
-     * more information, see <a
+     * for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web
+     * Services Support. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
      * EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
@@ -489,8 +489,8 @@ namespace Model
      * <p>The throughput, measured in MiB/s, that you want to provision for a file
      * system that you're creating. Valid values are 1-1024. Required if
      * <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit
-     * for throughput is 1024 MiB/s. To increase this limit, contact AWS Support. For
-     * more information, see <a
+     * for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web
+     * Services Support. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
      * EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
@@ -499,97 +499,97 @@ namespace Model
 
     /**
      * <p>Used to create a file system that uses One Zone storage classes. It specifies
-     * the AWS Availability Zone in which to create the file system. Use the format
-     * <code>us-east-1a</code> to specify the Availability Zone. For more information
-     * about One Zone storage classes, see <a
+     * the Amazon Web Services Availability Zone in which to create the file system.
+     * Use the format <code>us-east-1a</code> to specify the Availability Zone. For
+     * more information about One Zone storage classes, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
-     * storage classes are not available in all Availability Zones in AWS Regions where
-     * Amazon EFS is available.</p> 
+     * storage classes are not available in all Availability Zones in Amazon Web
+     * Services Regions where Amazon EFS is available.</p> 
      */
     inline const Aws::String& GetAvailabilityZoneName() const{ return m_availabilityZoneName; }
 
     /**
      * <p>Used to create a file system that uses One Zone storage classes. It specifies
-     * the AWS Availability Zone in which to create the file system. Use the format
-     * <code>us-east-1a</code> to specify the Availability Zone. For more information
-     * about One Zone storage classes, see <a
+     * the Amazon Web Services Availability Zone in which to create the file system.
+     * Use the format <code>us-east-1a</code> to specify the Availability Zone. For
+     * more information about One Zone storage classes, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
-     * storage classes are not available in all Availability Zones in AWS Regions where
-     * Amazon EFS is available.</p> 
+     * storage classes are not available in all Availability Zones in Amazon Web
+     * Services Regions where Amazon EFS is available.</p> 
      */
     inline bool AvailabilityZoneNameHasBeenSet() const { return m_availabilityZoneNameHasBeenSet; }
 
     /**
      * <p>Used to create a file system that uses One Zone storage classes. It specifies
-     * the AWS Availability Zone in which to create the file system. Use the format
-     * <code>us-east-1a</code> to specify the Availability Zone. For more information
-     * about One Zone storage classes, see <a
+     * the Amazon Web Services Availability Zone in which to create the file system.
+     * Use the format <code>us-east-1a</code> to specify the Availability Zone. For
+     * more information about One Zone storage classes, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
-     * storage classes are not available in all Availability Zones in AWS Regions where
-     * Amazon EFS is available.</p> 
+     * storage classes are not available in all Availability Zones in Amazon Web
+     * Services Regions where Amazon EFS is available.</p> 
      */
     inline void SetAvailabilityZoneName(const Aws::String& value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName = value; }
 
     /**
      * <p>Used to create a file system that uses One Zone storage classes. It specifies
-     * the AWS Availability Zone in which to create the file system. Use the format
-     * <code>us-east-1a</code> to specify the Availability Zone. For more information
-     * about One Zone storage classes, see <a
+     * the Amazon Web Services Availability Zone in which to create the file system.
+     * Use the format <code>us-east-1a</code> to specify the Availability Zone. For
+     * more information about One Zone storage classes, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
-     * storage classes are not available in all Availability Zones in AWS Regions where
-     * Amazon EFS is available.</p> 
+     * storage classes are not available in all Availability Zones in Amazon Web
+     * Services Regions where Amazon EFS is available.</p> 
      */
     inline void SetAvailabilityZoneName(Aws::String&& value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName = std::move(value); }
 
     /**
      * <p>Used to create a file system that uses One Zone storage classes. It specifies
-     * the AWS Availability Zone in which to create the file system. Use the format
-     * <code>us-east-1a</code> to specify the Availability Zone. For more information
-     * about One Zone storage classes, see <a
+     * the Amazon Web Services Availability Zone in which to create the file system.
+     * Use the format <code>us-east-1a</code> to specify the Availability Zone. For
+     * more information about One Zone storage classes, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
-     * storage classes are not available in all Availability Zones in AWS Regions where
-     * Amazon EFS is available.</p> 
+     * storage classes are not available in all Availability Zones in Amazon Web
+     * Services Regions where Amazon EFS is available.</p> 
      */
     inline void SetAvailabilityZoneName(const char* value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName.assign(value); }
 
     /**
      * <p>Used to create a file system that uses One Zone storage classes. It specifies
-     * the AWS Availability Zone in which to create the file system. Use the format
-     * <code>us-east-1a</code> to specify the Availability Zone. For more information
-     * about One Zone storage classes, see <a
+     * the Amazon Web Services Availability Zone in which to create the file system.
+     * Use the format <code>us-east-1a</code> to specify the Availability Zone. For
+     * more information about One Zone storage classes, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
-     * storage classes are not available in all Availability Zones in AWS Regions where
-     * Amazon EFS is available.</p> 
+     * storage classes are not available in all Availability Zones in Amazon Web
+     * Services Regions where Amazon EFS is available.</p> 
      */
     inline CreateFileSystemRequest& WithAvailabilityZoneName(const Aws::String& value) { SetAvailabilityZoneName(value); return *this;}
 
     /**
      * <p>Used to create a file system that uses One Zone storage classes. It specifies
-     * the AWS Availability Zone in which to create the file system. Use the format
-     * <code>us-east-1a</code> to specify the Availability Zone. For more information
-     * about One Zone storage classes, see <a
+     * the Amazon Web Services Availability Zone in which to create the file system.
+     * Use the format <code>us-east-1a</code> to specify the Availability Zone. For
+     * more information about One Zone storage classes, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
-     * storage classes are not available in all Availability Zones in AWS Regions where
-     * Amazon EFS is available.</p> 
+     * storage classes are not available in all Availability Zones in Amazon Web
+     * Services Regions where Amazon EFS is available.</p> 
      */
     inline CreateFileSystemRequest& WithAvailabilityZoneName(Aws::String&& value) { SetAvailabilityZoneName(std::move(value)); return *this;}
 
     /**
      * <p>Used to create a file system that uses One Zone storage classes. It specifies
-     * the AWS Availability Zone in which to create the file system. Use the format
-     * <code>us-east-1a</code> to specify the Availability Zone. For more information
-     * about One Zone storage classes, see <a
+     * the Amazon Web Services Availability Zone in which to create the file system.
+     * Use the format <code>us-east-1a</code> to specify the Availability Zone. For
+     * more information about One Zone storage classes, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
-     * storage classes are not available in all Availability Zones in AWS Regions where
-     * Amazon EFS is available.</p> 
+     * storage classes are not available in all Availability Zones in Amazon Web
+     * Services Regions where Amazon EFS is available.</p> 
      */
     inline CreateFileSystemRequest& WithAvailabilityZoneName(const char* value) { SetAvailabilityZoneName(value); return *this;}
 
@@ -603,7 +603,7 @@ namespace Model
      * backups</a> in the <i>Amazon EFS User Guide</i>.</p> <p>Default is
      * <code>false</code>. However, if you specify an
      * <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> 
-     * <p>AWS Backup is not available in all AWS Regions where Amazon EFS is
+     * <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is
      * available.</p> 
      */
     inline bool GetBackup() const{ return m_backup; }
@@ -617,7 +617,7 @@ namespace Model
      * backups</a> in the <i>Amazon EFS User Guide</i>.</p> <p>Default is
      * <code>false</code>. However, if you specify an
      * <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> 
-     * <p>AWS Backup is not available in all AWS Regions where Amazon EFS is
+     * <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is
      * available.</p> 
      */
     inline bool BackupHasBeenSet() const { return m_backupHasBeenSet; }
@@ -631,7 +631,7 @@ namespace Model
      * backups</a> in the <i>Amazon EFS User Guide</i>.</p> <p>Default is
      * <code>false</code>. However, if you specify an
      * <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> 
-     * <p>AWS Backup is not available in all AWS Regions where Amazon EFS is
+     * <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is
      * available.</p> 
      */
     inline void SetBackup(bool value) { m_backupHasBeenSet = true; m_backup = value; }
@@ -645,73 +645,97 @@ namespace Model
      * backups</a> in the <i>Amazon EFS User Guide</i>.</p> <p>Default is
      * <code>false</code>. However, if you specify an
      * <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> 
-     * <p>AWS Backup is not available in all AWS Regions where Amazon EFS is
+     * <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is
      * available.</p> 
      */
     inline CreateFileSystemRequest& WithBackup(bool value) { SetBackup(value); return *this;}
 
 
     /**
-     * <p>A value that specifies to create one or more tags associated with the file
-     * system. Each tag is a user-defined key-value pair. Name your file system on
-     * creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value
-     * pair.</p>
+     * <p>Use to create one or more tags associated with the file system. Each tag is a
+     * user-defined key-value pair. Name your file system on creation by including a
+     * <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be
+     * unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A value that specifies to create one or more tags associated with the file
-     * system. Each tag is a user-defined key-value pair. Name your file system on
-     * creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value
-     * pair.</p>
+     * <p>Use to create one or more tags associated with the file system. Each tag is a
+     * user-defined key-value pair. Name your file system on creation by including a
+     * <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be
+     * unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A value that specifies to create one or more tags associated with the file
-     * system. Each tag is a user-defined key-value pair. Name your file system on
-     * creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value
-     * pair.</p>
+     * <p>Use to create one or more tags associated with the file system. Each tag is a
+     * user-defined key-value pair. Name your file system on creation by including a
+     * <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be
+     * unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A value that specifies to create one or more tags associated with the file
-     * system. Each tag is a user-defined key-value pair. Name your file system on
-     * creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value
-     * pair.</p>
+     * <p>Use to create one or more tags associated with the file system. Each tag is a
+     * user-defined key-value pair. Name your file system on creation by including a
+     * <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be
+     * unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A value that specifies to create one or more tags associated with the file
-     * system. Each tag is a user-defined key-value pair. Name your file system on
-     * creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value
-     * pair.</p>
+     * <p>Use to create one or more tags associated with the file system. Each tag is a
+     * user-defined key-value pair. Name your file system on creation by including a
+     * <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be
+     * unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline CreateFileSystemRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A value that specifies to create one or more tags associated with the file
-     * system. Each tag is a user-defined key-value pair. Name your file system on
-     * creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value
-     * pair.</p>
+     * <p>Use to create one or more tags associated with the file system. Each tag is a
+     * user-defined key-value pair. Name your file system on creation by including a
+     * <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be
+     * unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline CreateFileSystemRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A value that specifies to create one or more tags associated with the file
-     * system. Each tag is a user-defined key-value pair. Name your file system on
-     * creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value
-     * pair.</p>
+     * <p>Use to create one or more tags associated with the file system. Each tag is a
+     * user-defined key-value pair. Name your file system on creation by including a
+     * <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be
+     * unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline CreateFileSystemRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A value that specifies to create one or more tags associated with the file
-     * system. Each tag is a user-defined key-value pair. Name your file system on
-     * creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value
-     * pair.</p>
+     * <p>Use to create one or more tags associated with the file system. Each tag is a
+     * user-defined key-value pair. Name your file system on creation by including a
+     * <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be
+     * unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline CreateFileSystemRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

@@ -109,7 +109,7 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
-     * scope-down policy to lock down the associated access to the designated home
+     * session policy to lock down the associated access to the designated home
      * directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
      * '/' and set <code>Target</code> to the <code>HomeDirectory</code> parameter
      * value.</p>
@@ -126,7 +126,7 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
-     * scope-down policy to lock down the associated access to the designated home
+     * session policy to lock down the associated access to the designated home
      * directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
      * '/' and set <code>Target</code> to the <code>HomeDirectory</code> parameter
      * value.</p>
@@ -143,7 +143,7 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
-     * scope-down policy to lock down the associated access to the designated home
+     * session policy to lock down the associated access to the designated home
      * directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
      * '/' and set <code>Target</code> to the <code>HomeDirectory</code> parameter
      * value.</p>
@@ -160,7 +160,7 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
-     * scope-down policy to lock down the associated access to the designated home
+     * session policy to lock down the associated access to the designated home
      * directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
      * '/' and set <code>Target</code> to the <code>HomeDirectory</code> parameter
      * value.</p>
@@ -177,7 +177,7 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
-     * scope-down policy to lock down the associated access to the designated home
+     * session policy to lock down the associated access to the designated home
      * directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
      * '/' and set <code>Target</code> to the <code>HomeDirectory</code> parameter
      * value.</p>
@@ -194,7 +194,7 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
-     * scope-down policy to lock down the associated access to the designated home
+     * session policy to lock down the associated access to the designated home
      * directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
      * '/' and set <code>Target</code> to the <code>HomeDirectory</code> parameter
      * value.</p>
@@ -211,7 +211,7 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
-     * scope-down policy to lock down the associated access to the designated home
+     * session policy to lock down the associated access to the designated home
      * directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
      * '/' and set <code>Target</code> to the <code>HomeDirectory</code> parameter
      * value.</p>
@@ -228,7 +228,7 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
-     * scope-down policy to lock down the associated access to the designated home
+     * session policy to lock down the associated access to the designated home
      * directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
      * '/' and set <code>Target</code> to the <code>HomeDirectory</code> parameter
      * value.</p>
@@ -240,7 +240,7 @@ namespace Model
      * <p>The type of landing directory (folder) you want your users' home directory to
      * be when they log into the server. If you set it to <code>PATH</code>, the user
      * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
      * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
      * Amazon S3 or EFS paths visible to your users.</p>
      */
@@ -250,7 +250,7 @@ namespace Model
      * <p>The type of landing directory (folder) you want your users' home directory to
      * be when they log into the server. If you set it to <code>PATH</code>, the user
      * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
      * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
      * Amazon S3 or EFS paths visible to your users.</p>
      */
@@ -260,7 +260,7 @@ namespace Model
      * <p>The type of landing directory (folder) you want your users' home directory to
      * be when they log into the server. If you set it to <code>PATH</code>, the user
      * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
      * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
      * Amazon S3 or EFS paths visible to your users.</p>
      */
@@ -270,7 +270,7 @@ namespace Model
      * <p>The type of landing directory (folder) you want your users' home directory to
      * be when they log into the server. If you set it to <code>PATH</code>, the user
      * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
      * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
      * Amazon S3 or EFS paths visible to your users.</p>
      */
@@ -280,7 +280,7 @@ namespace Model
      * <p>The type of landing directory (folder) you want your users' home directory to
      * be when they log into the server. If you set it to <code>PATH</code>, the user
      * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
      * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
      * Amazon S3 or EFS paths visible to your users.</p>
      */
@@ -290,7 +290,7 @@ namespace Model
      * <p>The type of landing directory (folder) you want your users' home directory to
      * be when they log into the server. If you set it to <code>PATH</code>, the user
      * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
      * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
      * Amazon S3 or EFS paths visible to your users.</p>
      */
@@ -298,72 +298,72 @@ namespace Model
 
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same IAM role
-     * across multiple users. This policy scopes down user access to portions of their
-     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <p>A session policy for your user so that you can use the same IAM role across
+     * multiple users. This policy scopes down user access to portions of their Amazon
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same IAM role
-     * across multiple users. This policy scopes down user access to portions of their
-     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <p>A session policy for your user so that you can use the same IAM role across
+     * multiple users. This policy scopes down user access to portions of their Amazon
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same IAM role
-     * across multiple users. This policy scopes down user access to portions of their
-     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <p>A session policy for your user so that you can use the same IAM role across
+     * multiple users. This policy scopes down user access to portions of their Amazon
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same IAM role
-     * across multiple users. This policy scopes down user access to portions of their
-     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <p>A session policy for your user so that you can use the same IAM role across
+     * multiple users. This policy scopes down user access to portions of their Amazon
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same IAM role
-     * across multiple users. This policy scopes down user access to portions of their
-     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <p>A session policy for your user so that you can use the same IAM role across
+     * multiple users. This policy scopes down user access to portions of their Amazon
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same IAM role
-     * across multiple users. This policy scopes down user access to portions of their
-     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <p>A session policy for your user so that you can use the same IAM role across
+     * multiple users. This policy scopes down user access to portions of their Amazon
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline DescribedAccess& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same IAM role
-     * across multiple users. This policy scopes down user access to portions of their
-     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <p>A session policy for your user so that you can use the same IAM role across
+     * multiple users. This policy scopes down user access to portions of their Amazon
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline DescribedAccess& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same IAM role
-     * across multiple users. This policy scopes down user access to portions of their
-     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <p>A session policy for your user so that you can use the same IAM role across
+     * multiple users. This policy scopes down user access to portions of their Amazon
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>
      */

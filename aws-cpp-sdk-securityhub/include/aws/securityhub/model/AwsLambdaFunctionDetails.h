@@ -262,49 +262,57 @@ namespace Model
 
     /**
      * <p>The KMS key that is used to encrypt the function's environment variables.
-     * This key is only returned if you've configured a customer managed CMK.</p>
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
      * <p>The KMS key that is used to encrypt the function's environment variables.
-     * This key is only returned if you've configured a customer managed CMK.</p>
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
      * <p>The KMS key that is used to encrypt the function's environment variables.
-     * This key is only returned if you've configured a customer managed CMK.</p>
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     /**
      * <p>The KMS key that is used to encrypt the function's environment variables.
-     * This key is only returned if you've configured a customer managed CMK.</p>
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
     /**
      * <p>The KMS key that is used to encrypt the function's environment variables.
-     * This key is only returned if you've configured a customer managed CMK.</p>
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     /**
      * <p>The KMS key that is used to encrypt the function's environment variables.
-     * This key is only returned if you've configured a customer managed CMK.</p>
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline AwsLambdaFunctionDetails& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
      * <p>The KMS key that is used to encrypt the function's environment variables.
-     * This key is only returned if you've configured a customer managed CMK.</p>
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline AwsLambdaFunctionDetails& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
      * <p>The KMS key that is used to encrypt the function's environment variables.
-     * This key is only returned if you've configured a customer managed CMK.</p>
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline AwsLambdaFunctionDetails& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 

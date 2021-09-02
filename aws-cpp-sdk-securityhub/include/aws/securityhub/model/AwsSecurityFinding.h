@@ -210,7 +210,7 @@ namespace Model
      * exception to this is when you use a custom integration.</p> <p>When you use the
      * Security Hub console to filter findings by product name, you use this
      * attribute.</p> <p>When you use the Security Hub API to filter findings by
-     * product name, you use the <code>aws/securityhub/ProductyName</code> attribute
+     * product name, you use the <code>aws/securityhub/ProductName</code> attribute
      * under <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those
      * two attributes.</p>
      */
@@ -223,7 +223,7 @@ namespace Model
      * exception to this is when you use a custom integration.</p> <p>When you use the
      * Security Hub console to filter findings by product name, you use this
      * attribute.</p> <p>When you use the Security Hub API to filter findings by
-     * product name, you use the <code>aws/securityhub/ProductyName</code> attribute
+     * product name, you use the <code>aws/securityhub/ProductName</code> attribute
      * under <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those
      * two attributes.</p>
      */
@@ -236,7 +236,7 @@ namespace Model
      * exception to this is when you use a custom integration.</p> <p>When you use the
      * Security Hub console to filter findings by product name, you use this
      * attribute.</p> <p>When you use the Security Hub API to filter findings by
-     * product name, you use the <code>aws/securityhub/ProductyName</code> attribute
+     * product name, you use the <code>aws/securityhub/ProductName</code> attribute
      * under <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those
      * two attributes.</p>
      */
@@ -249,7 +249,7 @@ namespace Model
      * exception to this is when you use a custom integration.</p> <p>When you use the
      * Security Hub console to filter findings by product name, you use this
      * attribute.</p> <p>When you use the Security Hub API to filter findings by
-     * product name, you use the <code>aws/securityhub/ProductyName</code> attribute
+     * product name, you use the <code>aws/securityhub/ProductName</code> attribute
      * under <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those
      * two attributes.</p>
      */
@@ -262,7 +262,7 @@ namespace Model
      * exception to this is when you use a custom integration.</p> <p>When you use the
      * Security Hub console to filter findings by product name, you use this
      * attribute.</p> <p>When you use the Security Hub API to filter findings by
-     * product name, you use the <code>aws/securityhub/ProductyName</code> attribute
+     * product name, you use the <code>aws/securityhub/ProductName</code> attribute
      * under <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those
      * two attributes.</p>
      */
@@ -275,7 +275,7 @@ namespace Model
      * exception to this is when you use a custom integration.</p> <p>When you use the
      * Security Hub console to filter findings by product name, you use this
      * attribute.</p> <p>When you use the Security Hub API to filter findings by
-     * product name, you use the <code>aws/securityhub/ProductyName</code> attribute
+     * product name, you use the <code>aws/securityhub/ProductName</code> attribute
      * under <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those
      * two attributes.</p>
      */
@@ -288,7 +288,7 @@ namespace Model
      * exception to this is when you use a custom integration.</p> <p>When you use the
      * Security Hub console to filter findings by product name, you use this
      * attribute.</p> <p>When you use the Security Hub API to filter findings by
-     * product name, you use the <code>aws/securityhub/ProductyName</code> attribute
+     * product name, you use the <code>aws/securityhub/ProductName</code> attribute
      * under <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those
      * two attributes.</p>
      */
@@ -301,7 +301,7 @@ namespace Model
      * exception to this is when you use a custom integration.</p> <p>When you use the
      * Security Hub console to filter findings by product name, you use this
      * attribute.</p> <p>When you use the Security Hub API to filter findings by
-     * product name, you use the <code>aws/securityhub/ProductyName</code> attribute
+     * product name, you use the <code>aws/securityhub/ProductName</code> attribute
      * under <code>ProductFields</code>.</p> <p>Security Hub does not synchronize those
      * two attributes.</p>
      */

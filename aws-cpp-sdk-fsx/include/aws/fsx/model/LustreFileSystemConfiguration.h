@@ -254,8 +254,8 @@ namespace Model
      * <p>You use the <code>MountName</code> value when mounting the file system.</p>
      * <p>For the <code>SCRATCH_1</code> deployment type, this value is always
      * "<code>fsx</code>". For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
-     * deployment types, this value is a string that is unique within an AWS Region.
-     * </p>
+     * deployment types, this value is a string that is unique within an Amazon Web
+     * Services Region. </p>
      */
     inline const Aws::String& GetMountName() const{ return m_mountName; }
 
@@ -263,8 +263,8 @@ namespace Model
      * <p>You use the <code>MountName</code> value when mounting the file system.</p>
      * <p>For the <code>SCRATCH_1</code> deployment type, this value is always
      * "<code>fsx</code>". For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
-     * deployment types, this value is a string that is unique within an AWS Region.
-     * </p>
+     * deployment types, this value is a string that is unique within an Amazon Web
+     * Services Region. </p>
      */
     inline bool MountNameHasBeenSet() const { return m_mountNameHasBeenSet; }
 
@@ -272,8 +272,8 @@ namespace Model
      * <p>You use the <code>MountName</code> value when mounting the file system.</p>
      * <p>For the <code>SCRATCH_1</code> deployment type, this value is always
      * "<code>fsx</code>". For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
-     * deployment types, this value is a string that is unique within an AWS Region.
-     * </p>
+     * deployment types, this value is a string that is unique within an Amazon Web
+     * Services Region. </p>
      */
     inline void SetMountName(const Aws::String& value) { m_mountNameHasBeenSet = true; m_mountName = value; }
 
@@ -281,8 +281,8 @@ namespace Model
      * <p>You use the <code>MountName</code> value when mounting the file system.</p>
      * <p>For the <code>SCRATCH_1</code> deployment type, this value is always
      * "<code>fsx</code>". For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
-     * deployment types, this value is a string that is unique within an AWS Region.
-     * </p>
+     * deployment types, this value is a string that is unique within an Amazon Web
+     * Services Region. </p>
      */
     inline void SetMountName(Aws::String&& value) { m_mountNameHasBeenSet = true; m_mountName = std::move(value); }
 
@@ -290,8 +290,8 @@ namespace Model
      * <p>You use the <code>MountName</code> value when mounting the file system.</p>
      * <p>For the <code>SCRATCH_1</code> deployment type, this value is always
      * "<code>fsx</code>". For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
-     * deployment types, this value is a string that is unique within an AWS Region.
-     * </p>
+     * deployment types, this value is a string that is unique within an Amazon Web
+     * Services Region. </p>
      */
     inline void SetMountName(const char* value) { m_mountNameHasBeenSet = true; m_mountName.assign(value); }
 
@@ -299,8 +299,8 @@ namespace Model
      * <p>You use the <code>MountName</code> value when mounting the file system.</p>
      * <p>For the <code>SCRATCH_1</code> deployment type, this value is always
      * "<code>fsx</code>". For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
-     * deployment types, this value is a string that is unique within an AWS Region.
-     * </p>
+     * deployment types, this value is a string that is unique within an Amazon Web
+     * Services Region. </p>
      */
     inline LustreFileSystemConfiguration& WithMountName(const Aws::String& value) { SetMountName(value); return *this;}
 
@@ -308,8 +308,8 @@ namespace Model
      * <p>You use the <code>MountName</code> value when mounting the file system.</p>
      * <p>For the <code>SCRATCH_1</code> deployment type, this value is always
      * "<code>fsx</code>". For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
-     * deployment types, this value is a string that is unique within an AWS Region.
-     * </p>
+     * deployment types, this value is a string that is unique within an Amazon Web
+     * Services Region. </p>
      */
     inline LustreFileSystemConfiguration& WithMountName(Aws::String&& value) { SetMountName(std::move(value)); return *this;}
 
@@ -317,8 +317,8 @@ namespace Model
      * <p>You use the <code>MountName</code> value when mounting the file system.</p>
      * <p>For the <code>SCRATCH_1</code> deployment type, this value is always
      * "<code>fsx</code>". For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
-     * deployment types, this value is a string that is unique within an AWS Region.
-     * </p>
+     * deployment types, this value is a string that is unique within an Amazon Web
+     * Services Region. </p>
      */
     inline LustreFileSystemConfiguration& WithMountName(const char* value) { SetMountName(value); return *this;}
 

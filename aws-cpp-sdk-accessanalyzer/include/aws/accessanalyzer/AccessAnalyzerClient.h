@@ -192,18 +192,20 @@ namespace Model
     typedef std::function<void(const AccessAnalyzerClient*, const Model::ValidatePolicyRequest&, const Model::ValidatePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidatePolicyResponseReceivedHandler;
 
   /**
-   * <p>AWS IAM Access Analyzer helps identify potential resource-access risks by
-   * enabling you to identify any policies that grant access to an external
-   * principal. It does this by using logic-based reasoning to analyze resource-based
-   * policies in your AWS environment. An external principal can be another AWS
-   * account, a root user, an IAM user or role, a federated user, an AWS service, or
-   * an anonymous user. You can also use Access Analyzer to preview and validate
-   * public and cross-account access to your resources before deploying permissions
-   * changes. This guide describes the AWS IAM Access Analyzer operations that you
-   * can call programmatically. For general information about Access Analyzer, see <a
-   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">AWS
-   * IAM Access Analyzer</a> in the <b>IAM User Guide</b>.</p> <p>To start using
-   * Access Analyzer, you first need to create an analyzer.</p>
+   * <p>Identity and Access Management Access Analyzer helps identify potential
+   * resource-access risks by enabling you to identify any policies that grant access
+   * to an external principal. It does this by using logic-based reasoning to analyze
+   * resource-based policies in your Amazon Web Services environment. An external
+   * principal can be another Amazon Web Services account, a root user, an IAM user
+   * or role, a federated user, an Amazon Web Services service, or an anonymous user.
+   * You can also use IAM Access Analyzer to preview and validate public and
+   * cross-account access to your resources before deploying permissions changes.
+   * This guide describes the Identity and Access Management Access Analyzer
+   * operations that you can call programmatically. For general information about IAM
+   * Access Analyzer, see <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">Identity
+   * and Access Management Access Analyzer</a> in the <b>IAM User Guide</b>.</p>
+   * <p>To start using IAM Access Analyzer, you first need to create an analyzer.</p>
    */
   class AWS_ACCESSANALYZER_API AccessAnalyzerClient : public Aws::Client::AWSJsonClient
   {
@@ -286,8 +288,8 @@ namespace Model
         virtual void CancelPolicyGenerationAsync(const Model::CancelPolicyGenerationRequest& request, const CancelPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an access preview that allows you to preview Access Analyzer findings
-         * for your resource before deploying resource permissions.</p><p><h3>See
+         * <p>Creates an access preview that allows you to preview IAM Access Analyzer
+         * findings for your resource before deploying resource permissions.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateAccessPreview">AWS
          * API Reference</a></p>
@@ -295,8 +297,8 @@ namespace Model
         virtual Model::CreateAccessPreviewOutcome CreateAccessPreview(const Model::CreateAccessPreviewRequest& request) const;
 
         /**
-         * <p>Creates an access preview that allows you to preview Access Analyzer findings
-         * for your resource before deploying resource permissions.</p><p><h3>See
+         * <p>Creates an access preview that allows you to preview IAM Access Analyzer
+         * findings for your resource before deploying resource permissions.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateAccessPreview">AWS
          * API Reference</a></p>
@@ -306,8 +308,8 @@ namespace Model
         virtual Model::CreateAccessPreviewOutcomeCallable CreateAccessPreviewCallable(const Model::CreateAccessPreviewRequest& request) const;
 
         /**
-         * <p>Creates an access preview that allows you to preview Access Analyzer findings
-         * for your resource before deploying resource permissions.</p><p><h3>See
+         * <p>Creates an access preview that allows you to preview IAM Access Analyzer
+         * findings for your resource before deploying resource permissions.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateAccessPreview">AWS
          * API Reference</a></p>
@@ -346,9 +348,9 @@ namespace Model
          * automatically archive new findings that meet the criteria you define when you
          * create the rule.</p> <p>To learn about filter keys that you can use to create an
          * archive rule, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
-         * Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See Also:</h3> 
-         * <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM
+         * Access Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateArchiveRule">AWS
          * API Reference</a></p>
          */
@@ -359,9 +361,9 @@ namespace Model
          * automatically archive new findings that meet the criteria you define when you
          * create the rule.</p> <p>To learn about filter keys that you can use to create an
          * archive rule, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
-         * Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See Also:</h3> 
-         * <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM
+         * Access Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateArchiveRule">AWS
          * API Reference</a></p>
          *
@@ -374,9 +376,9 @@ namespace Model
          * automatically archive new findings that meet the criteria you define when you
          * create the rule.</p> <p>To learn about filter keys that you can use to create an
          * archive rule, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
-         * Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See Also:</h3> 
-         * <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM
+         * Access Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateArchiveRule">AWS
          * API Reference</a></p>
          *
@@ -385,20 +387,20 @@ namespace Model
         virtual void CreateArchiveRuleAsync(const Model::CreateArchiveRuleRequest& request, const CreateArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified analyzer. When you delete an analyzer, Access Analyzer
-         * is disabled for the account or organization in the current or specific Region.
-         * All findings that were generated by the analyzer are deleted. You cannot undo
-         * this action.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified analyzer. When you delete an analyzer, IAM Access
+         * Analyzer is disabled for the account or organization in the current or specific
+         * Region. All findings that were generated by the analyzer are deleted. You cannot
+         * undo this action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/DeleteAnalyzer">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteAnalyzerOutcome DeleteAnalyzer(const Model::DeleteAnalyzerRequest& request) const;
 
         /**
-         * <p>Deletes the specified analyzer. When you delete an analyzer, Access Analyzer
-         * is disabled for the account or organization in the current or specific Region.
-         * All findings that were generated by the analyzer are deleted. You cannot undo
-         * this action.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified analyzer. When you delete an analyzer, IAM Access
+         * Analyzer is disabled for the account or organization in the current or specific
+         * Region. All findings that were generated by the analyzer are deleted. You cannot
+         * undo this action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/DeleteAnalyzer">AWS
          * API Reference</a></p>
          *
@@ -407,10 +409,10 @@ namespace Model
         virtual Model::DeleteAnalyzerOutcomeCallable DeleteAnalyzerCallable(const Model::DeleteAnalyzerRequest& request) const;
 
         /**
-         * <p>Deletes the specified analyzer. When you delete an analyzer, Access Analyzer
-         * is disabled for the account or organization in the current or specific Region.
-         * All findings that were generated by the analyzer are deleted. You cannot undo
-         * this action.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified analyzer. When you delete an analyzer, IAM Access
+         * Analyzer is disabled for the account or organization in the current or specific
+         * Region. All findings that were generated by the analyzer are deleted. You cannot
+         * undo this action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/DeleteAnalyzer">AWS
          * API Reference</a></p>
          *
@@ -530,9 +532,9 @@ namespace Model
         /**
          * <p>Retrieves information about an archive rule.</p> <p>To learn about filter
          * keys that you can use to create an archive rule, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
-         * Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See Also:</h3> 
-         * <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM
+         * Access Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetArchiveRule">AWS
          * API Reference</a></p>
          */
@@ -541,9 +543,9 @@ namespace Model
         /**
          * <p>Retrieves information about an archive rule.</p> <p>To learn about filter
          * keys that you can use to create an archive rule, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
-         * Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See Also:</h3> 
-         * <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM
+         * Access Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetArchiveRule">AWS
          * API Reference</a></p>
          *
@@ -554,9 +556,9 @@ namespace Model
         /**
          * <p>Retrieves information about an archive rule.</p> <p>To learn about filter
          * keys that you can use to create an archive rule, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
-         * Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See Also:</h3> 
-         * <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM
+         * Access Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetArchiveRule">AWS
          * API Reference</a></p>
          *
@@ -760,9 +762,9 @@ namespace Model
         /**
          * <p>Retrieves a list of findings generated by the specified analyzer.</p> <p>To
          * learn about filter keys that you can use to retrieve a list of findings, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
-         * Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See Also:</h3> 
-         * <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM
+         * Access Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListFindings">AWS
          * API Reference</a></p>
          */
@@ -771,9 +773,9 @@ namespace Model
         /**
          * <p>Retrieves a list of findings generated by the specified analyzer.</p> <p>To
          * learn about filter keys that you can use to retrieve a list of findings, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
-         * Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See Also:</h3> 
-         * <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM
+         * Access Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListFindings">AWS
          * API Reference</a></p>
          *
@@ -784,9 +786,9 @@ namespace Model
         /**
          * <p>Retrieves a list of findings generated by the specified analyzer.</p> <p>To
          * learn about filter keys that you can use to retrieve a list of findings, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
-         * Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See Also:</h3> 
-         * <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM
+         * Access Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListFindings">AWS
          * API Reference</a></p>
          *

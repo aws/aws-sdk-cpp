@@ -35,85 +35,85 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the updated customization for this Amazon
-     * Web Services account;.</p>
+     * Web Services account.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the updated customization for this Amazon
-     * Web Services account;.</p>
+     * Web Services account.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the updated customization for this Amazon
-     * Web Services account;.</p>
+     * Web Services account.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the updated customization for this Amazon
-     * Web Services account;.</p>
+     * Web Services account.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the updated customization for this Amazon
-     * Web Services account;.</p>
+     * Web Services account.</p>
      */
     inline UpdateAccountCustomizationResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the updated customization for this Amazon
-     * Web Services account;.</p>
+     * Web Services account.</p>
      */
     inline UpdateAccountCustomizationResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the updated customization for this Amazon
-     * Web Services account;.</p>
+     * Web Services account.</p>
      */
     inline UpdateAccountCustomizationResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>The ID for the Amazon Web Services account; that you want to update
+     * <p>The ID for the Amazon Web Services account that you want to update Amazon
      * QuickSight customizations for.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID for the Amazon Web Services account; that you want to update
+     * <p>The ID for the Amazon Web Services account that you want to update Amazon
      * QuickSight customizations for.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountId = value; }
 
     /**
-     * <p>The ID for the Amazon Web Services account; that you want to update
+     * <p>The ID for the Amazon Web Services account that you want to update Amazon
      * QuickSight customizations for.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID for the Amazon Web Services account; that you want to update
+     * <p>The ID for the Amazon Web Services account that you want to update Amazon
      * QuickSight customizations for.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID for the Amazon Web Services account; that you want to update
+     * <p>The ID for the Amazon Web Services account that you want to update Amazon
      * QuickSight customizations for.</p>
      */
     inline UpdateAccountCustomizationResult& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID for the Amazon Web Services account; that you want to update
+     * <p>The ID for the Amazon Web Services account that you want to update Amazon
      * QuickSight customizations for.</p>
      */
     inline UpdateAccountCustomizationResult& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the Amazon Web Services account; that you want to update
+     * <p>The ID for the Amazon Web Services account that you want to update Amazon
      * QuickSight customizations for.</p>
      */
     inline UpdateAccountCustomizationResult& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
@@ -156,32 +156,32 @@ namespace Model
 
 
     /**
-     * <p>The QuickSight customizations you're updating in the current Amazon Web
-     * Services Region;. </p>
+     * <p>The Amazon QuickSight customizations you're updating in the current Amazon
+     * Web Services Region;. </p>
      */
     inline const AccountCustomization& GetAccountCustomization() const{ return m_accountCustomization; }
 
     /**
-     * <p>The QuickSight customizations you're updating in the current Amazon Web
-     * Services Region;. </p>
+     * <p>The Amazon QuickSight customizations you're updating in the current Amazon
+     * Web Services Region;. </p>
      */
     inline void SetAccountCustomization(const AccountCustomization& value) { m_accountCustomization = value; }
 
     /**
-     * <p>The QuickSight customizations you're updating in the current Amazon Web
-     * Services Region;. </p>
+     * <p>The Amazon QuickSight customizations you're updating in the current Amazon
+     * Web Services Region;. </p>
      */
     inline void SetAccountCustomization(AccountCustomization&& value) { m_accountCustomization = std::move(value); }
 
     /**
-     * <p>The QuickSight customizations you're updating in the current Amazon Web
-     * Services Region;. </p>
+     * <p>The Amazon QuickSight customizations you're updating in the current Amazon
+     * Web Services Region;. </p>
      */
     inline UpdateAccountCustomizationResult& WithAccountCustomization(const AccountCustomization& value) { SetAccountCustomization(value); return *this;}
 
     /**
-     * <p>The QuickSight customizations you're updating in the current Amazon Web
-     * Services Region;. </p>
+     * <p>The Amazon QuickSight customizations you're updating in the current Amazon
+     * Web Services Region;. </p>
      */
     inline UpdateAccountCustomizationResult& WithAccountCustomization(AccountCustomization&& value) { SetAccountCustomization(std::move(value)); return *this;}
 

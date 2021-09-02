@@ -156,7 +156,7 @@ namespace Model
      * system.</p> </li> <li> <p>CREATE_FAILED - Amazon FSx was unable to associate the
      * DNS alias with the file system.</p> </li> <li> <p>DELETING - Amazon FSx is
      * disassociating the DNS alias from the file system and deleting it.</p> </li>
-     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassocate the DNS alias from
+     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassociate the DNS alias from
      * the file system.</p> </li> </ul>
      */
     inline const AliasLifecycle& GetLifecycle() const{ return m_lifecycle; }
@@ -168,7 +168,7 @@ namespace Model
      * system.</p> </li> <li> <p>CREATE_FAILED - Amazon FSx was unable to associate the
      * DNS alias with the file system.</p> </li> <li> <p>DELETING - Amazon FSx is
      * disassociating the DNS alias from the file system and deleting it.</p> </li>
-     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassocate the DNS alias from
+     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassociate the DNS alias from
      * the file system.</p> </li> </ul>
      */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
@@ -180,7 +180,7 @@ namespace Model
      * system.</p> </li> <li> <p>CREATE_FAILED - Amazon FSx was unable to associate the
      * DNS alias with the file system.</p> </li> <li> <p>DELETING - Amazon FSx is
      * disassociating the DNS alias from the file system and deleting it.</p> </li>
-     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassocate the DNS alias from
+     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassociate the DNS alias from
      * the file system.</p> </li> </ul>
      */
     inline void SetLifecycle(const AliasLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
@@ -192,7 +192,7 @@ namespace Model
      * system.</p> </li> <li> <p>CREATE_FAILED - Amazon FSx was unable to associate the
      * DNS alias with the file system.</p> </li> <li> <p>DELETING - Amazon FSx is
      * disassociating the DNS alias from the file system and deleting it.</p> </li>
-     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassocate the DNS alias from
+     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassociate the DNS alias from
      * the file system.</p> </li> </ul>
      */
     inline void SetLifecycle(AliasLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
@@ -204,7 +204,7 @@ namespace Model
      * system.</p> </li> <li> <p>CREATE_FAILED - Amazon FSx was unable to associate the
      * DNS alias with the file system.</p> </li> <li> <p>DELETING - Amazon FSx is
      * disassociating the DNS alias from the file system and deleting it.</p> </li>
-     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassocate the DNS alias from
+     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassociate the DNS alias from
      * the file system.</p> </li> </ul>
      */
     inline Alias& WithLifecycle(const AliasLifecycle& value) { SetLifecycle(value); return *this;}
@@ -216,7 +216,7 @@ namespace Model
      * system.</p> </li> <li> <p>CREATE_FAILED - Amazon FSx was unable to associate the
      * DNS alias with the file system.</p> </li> <li> <p>DELETING - Amazon FSx is
      * disassociating the DNS alias from the file system and deleting it.</p> </li>
-     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassocate the DNS alias from
+     * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassociate the DNS alias from
      * the file system.</p> </li> </ul>
      */
     inline Alias& WithLifecycle(AliasLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}

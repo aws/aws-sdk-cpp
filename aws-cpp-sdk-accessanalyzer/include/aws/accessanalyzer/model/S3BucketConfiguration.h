@@ -32,13 +32,14 @@ namespace Model
    * <p>Proposed access control configuration for an Amazon S3 bucket. You can
    * propose a configuration for a new Amazon S3 bucket or an existing Amazon S3
    * bucket that you own by specifying the Amazon S3 bucket policy, bucket ACLs,
-   * bucket BPA settings, and Amazon S3 access points attached to the bucket. If the
-   * configuration is for an existing Amazon S3 bucket and you do not specify the
-   * Amazon S3 bucket policy, the access preview uses the existing policy attached to
-   * the bucket. If the access preview is for a new resource and you do not specify
-   * the Amazon S3 bucket policy, the access preview assumes a bucket without a
-   * policy. To propose deletion of an existing bucket policy, you can specify an
-   * empty string. For more information about bucket policy limits, see <a
+   * bucket BPA settings, Amazon S3 access points, and multi-region access points
+   * attached to the bucket. If the configuration is for an existing Amazon S3 bucket
+   * and you do not specify the Amazon S3 bucket policy, the access preview uses the
+   * existing policy attached to the bucket. If the access preview is for a new
+   * resource and you do not specify the Amazon S3 bucket policy, the access preview
+   * assumes a bucket without a policy. To propose deletion of an existing bucket
+   * policy, you can specify an empty string. For more information about bucket
+   * policy limits, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html">Bucket
    * Policy Examples</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/S3BucketConfiguration">AWS
@@ -54,62 +55,74 @@ namespace Model
 
 
     /**
-     * <p>The configuration of Amazon S3 access points for the bucket.</p>
+     * <p>The configuration of Amazon S3 access points or multi-region access points
+     * for the bucket. You can propose up to 10 new access points per bucket.</p>
      */
     inline const Aws::Map<Aws::String, S3AccessPointConfiguration>& GetAccessPoints() const{ return m_accessPoints; }
 
     /**
-     * <p>The configuration of Amazon S3 access points for the bucket.</p>
+     * <p>The configuration of Amazon S3 access points or multi-region access points
+     * for the bucket. You can propose up to 10 new access points per bucket.</p>
      */
     inline bool AccessPointsHasBeenSet() const { return m_accessPointsHasBeenSet; }
 
     /**
-     * <p>The configuration of Amazon S3 access points for the bucket.</p>
+     * <p>The configuration of Amazon S3 access points or multi-region access points
+     * for the bucket. You can propose up to 10 new access points per bucket.</p>
      */
     inline void SetAccessPoints(const Aws::Map<Aws::String, S3AccessPointConfiguration>& value) { m_accessPointsHasBeenSet = true; m_accessPoints = value; }
 
     /**
-     * <p>The configuration of Amazon S3 access points for the bucket.</p>
+     * <p>The configuration of Amazon S3 access points or multi-region access points
+     * for the bucket. You can propose up to 10 new access points per bucket.</p>
      */
     inline void SetAccessPoints(Aws::Map<Aws::String, S3AccessPointConfiguration>&& value) { m_accessPointsHasBeenSet = true; m_accessPoints = std::move(value); }
 
     /**
-     * <p>The configuration of Amazon S3 access points for the bucket.</p>
+     * <p>The configuration of Amazon S3 access points or multi-region access points
+     * for the bucket. You can propose up to 10 new access points per bucket.</p>
      */
     inline S3BucketConfiguration& WithAccessPoints(const Aws::Map<Aws::String, S3AccessPointConfiguration>& value) { SetAccessPoints(value); return *this;}
 
     /**
-     * <p>The configuration of Amazon S3 access points for the bucket.</p>
+     * <p>The configuration of Amazon S3 access points or multi-region access points
+     * for the bucket. You can propose up to 10 new access points per bucket.</p>
      */
     inline S3BucketConfiguration& WithAccessPoints(Aws::Map<Aws::String, S3AccessPointConfiguration>&& value) { SetAccessPoints(std::move(value)); return *this;}
 
     /**
-     * <p>The configuration of Amazon S3 access points for the bucket.</p>
+     * <p>The configuration of Amazon S3 access points or multi-region access points
+     * for the bucket. You can propose up to 10 new access points per bucket.</p>
      */
     inline S3BucketConfiguration& AddAccessPoints(const Aws::String& key, const S3AccessPointConfiguration& value) { m_accessPointsHasBeenSet = true; m_accessPoints.emplace(key, value); return *this; }
 
     /**
-     * <p>The configuration of Amazon S3 access points for the bucket.</p>
+     * <p>The configuration of Amazon S3 access points or multi-region access points
+     * for the bucket. You can propose up to 10 new access points per bucket.</p>
      */
     inline S3BucketConfiguration& AddAccessPoints(Aws::String&& key, const S3AccessPointConfiguration& value) { m_accessPointsHasBeenSet = true; m_accessPoints.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The configuration of Amazon S3 access points for the bucket.</p>
+     * <p>The configuration of Amazon S3 access points or multi-region access points
+     * for the bucket. You can propose up to 10 new access points per bucket.</p>
      */
     inline S3BucketConfiguration& AddAccessPoints(const Aws::String& key, S3AccessPointConfiguration&& value) { m_accessPointsHasBeenSet = true; m_accessPoints.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The configuration of Amazon S3 access points for the bucket.</p>
+     * <p>The configuration of Amazon S3 access points or multi-region access points
+     * for the bucket. You can propose up to 10 new access points per bucket.</p>
      */
     inline S3BucketConfiguration& AddAccessPoints(Aws::String&& key, S3AccessPointConfiguration&& value) { m_accessPointsHasBeenSet = true; m_accessPoints.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The configuration of Amazon S3 access points for the bucket.</p>
+     * <p>The configuration of Amazon S3 access points or multi-region access points
+     * for the bucket. You can propose up to 10 new access points per bucket.</p>
      */
     inline S3BucketConfiguration& AddAccessPoints(const char* key, S3AccessPointConfiguration&& value) { m_accessPointsHasBeenSet = true; m_accessPoints.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The configuration of Amazon S3 access points for the bucket.</p>
+     * <p>The configuration of Amazon S3 access points or multi-region access points
+     * for the bucket. You can propose up to 10 new access points per bucket.</p>
      */
     inline S3BucketConfiguration& AddAccessPoints(const char* key, const S3AccessPointConfiguration& value) { m_accessPointsHasBeenSet = true; m_accessPoints.emplace(key, value); return *this; }
 

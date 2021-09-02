@@ -146,37 +146,37 @@ namespace Model
 
 
     /**
-     * <p>The type of permissions to use when interpretting the permissions for RLS.
+     * <p>The type of permissions to use when interpreting the permissions for RLS.
      * <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
      */
     inline const RowLevelPermissionPolicy& GetPermissionPolicy() const{ return m_permissionPolicy; }
 
     /**
-     * <p>The type of permissions to use when interpretting the permissions for RLS.
+     * <p>The type of permissions to use when interpreting the permissions for RLS.
      * <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
      */
     inline bool PermissionPolicyHasBeenSet() const { return m_permissionPolicyHasBeenSet; }
 
     /**
-     * <p>The type of permissions to use when interpretting the permissions for RLS.
+     * <p>The type of permissions to use when interpreting the permissions for RLS.
      * <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
      */
     inline void SetPermissionPolicy(const RowLevelPermissionPolicy& value) { m_permissionPolicyHasBeenSet = true; m_permissionPolicy = value; }
 
     /**
-     * <p>The type of permissions to use when interpretting the permissions for RLS.
+     * <p>The type of permissions to use when interpreting the permissions for RLS.
      * <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
      */
     inline void SetPermissionPolicy(RowLevelPermissionPolicy&& value) { m_permissionPolicyHasBeenSet = true; m_permissionPolicy = std::move(value); }
 
     /**
-     * <p>The type of permissions to use when interpretting the permissions for RLS.
+     * <p>The type of permissions to use when interpreting the permissions for RLS.
      * <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
      */
     inline RowLevelPermissionDataSet& WithPermissionPolicy(const RowLevelPermissionPolicy& value) { SetPermissionPolicy(value); return *this;}
 
     /**
-     * <p>The type of permissions to use when interpretting the permissions for RLS.
+     * <p>The type of permissions to use when interpreting the permissions for RLS.
      * <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
      */
     inline RowLevelPermissionDataSet& WithPermissionPolicy(RowLevelPermissionPolicy&& value) { SetPermissionPolicy(std::move(value)); return *this;}

@@ -78,68 +78,74 @@ namespace Model
 
 
     /**
-     * <p>Contains a Boolean value that you can use to enable a certification
-     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM Private
-     * CA will write the CRL, and an optional CNAME alias that you can use to hide the
-     * name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
-     * certificate. For more information, see the <a
+     * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
+     * support, to enable a certificate revocation list (CRL), to enable both, or to
+     * enable neither. The default is for both certificate validation mechanisms to be
+     * disabled. For more information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * and <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
-     * structure. </p>
+     * types.</p>
      */
     inline const RevocationConfiguration& GetRevocationConfiguration() const{ return m_revocationConfiguration; }
 
     /**
-     * <p>Contains a Boolean value that you can use to enable a certification
-     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM Private
-     * CA will write the CRL, and an optional CNAME alias that you can use to hide the
-     * name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
-     * certificate. For more information, see the <a
+     * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
+     * support, to enable a certificate revocation list (CRL), to enable both, or to
+     * enable neither. The default is for both certificate validation mechanisms to be
+     * disabled. For more information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * and <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
-     * structure. </p>
+     * types.</p>
      */
     inline bool RevocationConfigurationHasBeenSet() const { return m_revocationConfigurationHasBeenSet; }
 
     /**
-     * <p>Contains a Boolean value that you can use to enable a certification
-     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM Private
-     * CA will write the CRL, and an optional CNAME alias that you can use to hide the
-     * name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
-     * certificate. For more information, see the <a
+     * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
+     * support, to enable a certificate revocation list (CRL), to enable both, or to
+     * enable neither. The default is for both certificate validation mechanisms to be
+     * disabled. For more information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * and <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
-     * structure. </p>
+     * types.</p>
      */
     inline void SetRevocationConfiguration(const RevocationConfiguration& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = value; }
 
     /**
-     * <p>Contains a Boolean value that you can use to enable a certification
-     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM Private
-     * CA will write the CRL, and an optional CNAME alias that you can use to hide the
-     * name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
-     * certificate. For more information, see the <a
+     * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
+     * support, to enable a certificate revocation list (CRL), to enable both, or to
+     * enable neither. The default is for both certificate validation mechanisms to be
+     * disabled. For more information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * and <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
-     * structure. </p>
+     * types.</p>
      */
     inline void SetRevocationConfiguration(RevocationConfiguration&& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = std::move(value); }
 
     /**
-     * <p>Contains a Boolean value that you can use to enable a certification
-     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM Private
-     * CA will write the CRL, and an optional CNAME alias that you can use to hide the
-     * name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
-     * certificate. For more information, see the <a
+     * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
+     * support, to enable a certificate revocation list (CRL), to enable both, or to
+     * enable neither. The default is for both certificate validation mechanisms to be
+     * disabled. For more information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * and <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
-     * structure. </p>
+     * types.</p>
      */
     inline CreateCertificateAuthorityRequest& WithRevocationConfiguration(const RevocationConfiguration& value) { SetRevocationConfiguration(value); return *this;}
 
     /**
-     * <p>Contains a Boolean value that you can use to enable a certification
-     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM Private
-     * CA will write the CRL, and an optional CNAME alias that you can use to hide the
-     * name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
-     * certificate. For more information, see the <a
+     * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
+     * support, to enable a certificate revocation list (CRL), to enable both, or to
+     * enable neither. The default is for both certificate validation mechanisms to be
+     * disabled. For more information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * and <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
-     * structure. </p>
+     * types.</p>
      */
     inline CreateCertificateAuthorityRequest& WithRevocationConfiguration(RevocationConfiguration&& value) { SetRevocationConfiguration(std::move(value)); return *this;}
 

@@ -26,7 +26,8 @@ CreateFileSystemRequest::CreateFileSystemRequest() :
     m_tagsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_windowsConfigurationHasBeenSet(false),
-    m_lustreConfigurationHasBeenSet(false)
+    m_lustreConfigurationHasBeenSet(false),
+    m_ontapConfigurationHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,12 @@ Aws::String CreateFileSystemRequest::SerializePayload() const
   if(m_lustreConfigurationHasBeenSet)
   {
    payload.WithObject("LustreConfiguration", m_lustreConfiguration.Jsonize());
+
+  }
+
+  if(m_ontapConfigurationHasBeenSet)
+  {
+   payload.WithObject("OntapConfiguration", m_ontapConfiguration.Jsonize());
 
   }
 

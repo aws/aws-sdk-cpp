@@ -112,6 +112,9 @@ static const int NOT_SERVICE_RESOURCE_HASH = HashingUtils::HashString("NotServic
 static const int INVALID_DESTINATION_KMS_KEY_HASH = HashingUtils::HashString("InvalidDestinationKmsKey");
 static const int RESOURCE_DOES_NOT_SUPPORT_TAGGING_HASH = HashingUtils::HashString("ResourceDoesNotSupportTagging");
 static const int DATA_REPOSITORY_TASK_EXECUTING_HASH = HashingUtils::HashString("DataRepositoryTaskExecuting");
+static const int STORAGE_VIRTUAL_MACHINE_NOT_FOUND_HASH = HashingUtils::HashString("StorageVirtualMachineNotFound");
+static const int VOLUME_NOT_FOUND_HASH = HashingUtils::HashString("VolumeNotFound");
+static const int MISSING_VOLUME_CONFIGURATION_HASH = HashingUtils::HashString("MissingVolumeConfiguration");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequest");
 static const int MISSING_FILE_SYSTEM_CONFIGURATION_HASH = HashingUtils::HashString("MissingFileSystemConfiguration");
 
@@ -211,6 +214,18 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DATA_REPOSITORY_TASK_EXECUTING_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::DATA_REPOSITORY_TASK_EXECUTING), false);
+  }
+  else if (hashCode == STORAGE_VIRTUAL_MACHINE_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::STORAGE_VIRTUAL_MACHINE_NOT_FOUND), false);
+  }
+  else if (hashCode == VOLUME_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::VOLUME_NOT_FOUND), false);
+  }
+  else if (hashCode == MISSING_VOLUME_CONFIGURATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::MISSING_VOLUME_CONFIGURATION), false);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {

@@ -38,49 +38,49 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Amazon Web Services account; where you are creating an
+     * <p>The ID of the Amazon Web Services account where you are creating an
      * analysis.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID of the Amazon Web Services account; where you are creating an
+     * <p>The ID of the Amazon Web Services account where you are creating an
      * analysis.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Amazon Web Services account; where you are creating an
+     * <p>The ID of the Amazon Web Services account where you are creating an
      * analysis.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID of the Amazon Web Services account; where you are creating an
+     * <p>The ID of the Amazon Web Services account where you are creating an
      * analysis.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services account; where you are creating an
+     * <p>The ID of the Amazon Web Services account where you are creating an
      * analysis.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services account; where you are creating an
+     * <p>The ID of the Amazon Web Services account where you are creating an
      * analysis.</p>
      */
     inline CreateAnalysisRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services account; where you are creating an
+     * <p>The ID of the Amazon Web Services account where you are creating an
      * analysis.</p>
      */
     inline CreateAnalysisRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services account; where you are creating an
+     * <p>The ID of the Amazon Web Services account where you are creating an
      * analysis.</p>
      */
     inline CreateAnalysisRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
@@ -137,49 +137,49 @@ namespace Model
 
     /**
      * <p>A descriptive name for the analysis that you're creating. This name displays
-     * for the analysis in the QuickSight console. </p>
+     * for the analysis in the Amazon QuickSight console. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>A descriptive name for the analysis that you're creating. This name displays
-     * for the analysis in the QuickSight console. </p>
+     * for the analysis in the Amazon QuickSight console. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>A descriptive name for the analysis that you're creating. This name displays
-     * for the analysis in the QuickSight console. </p>
+     * for the analysis in the Amazon QuickSight console. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>A descriptive name for the analysis that you're creating. This name displays
-     * for the analysis in the QuickSight console. </p>
+     * for the analysis in the Amazon QuickSight console. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>A descriptive name for the analysis that you're creating. This name displays
-     * for the analysis in the QuickSight console. </p>
+     * for the analysis in the Amazon QuickSight console. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>A descriptive name for the analysis that you're creating. This name displays
-     * for the analysis in the QuickSight console. </p>
+     * for the analysis in the Amazon QuickSight console. </p>
      */
     inline CreateAnalysisRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>A descriptive name for the analysis that you're creating. This name displays
-     * for the analysis in the QuickSight console. </p>
+     * for the analysis in the Amazon QuickSight console. </p>
      */
     inline CreateAnalysisRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>A descriptive name for the analysis that you're creating. This name displays
-     * for the analysis in the QuickSight console. </p>
+     * for the analysis in the Amazon QuickSight console. </p>
      */
     inline CreateAnalysisRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -339,49 +339,57 @@ namespace Model
 
     /**
      * <p>The ARN for the theme to apply to the analysis that you're creating. To see
-     * the theme in the QuickSight console, make sure that you have access to it.</p>
+     * the theme in the Amazon QuickSight console, make sure that you have access to
+     * it.</p>
      */
     inline const Aws::String& GetThemeArn() const{ return m_themeArn; }
 
     /**
      * <p>The ARN for the theme to apply to the analysis that you're creating. To see
-     * the theme in the QuickSight console, make sure that you have access to it.</p>
+     * the theme in the Amazon QuickSight console, make sure that you have access to
+     * it.</p>
      */
     inline bool ThemeArnHasBeenSet() const { return m_themeArnHasBeenSet; }
 
     /**
      * <p>The ARN for the theme to apply to the analysis that you're creating. To see
-     * the theme in the QuickSight console, make sure that you have access to it.</p>
+     * the theme in the Amazon QuickSight console, make sure that you have access to
+     * it.</p>
      */
     inline void SetThemeArn(const Aws::String& value) { m_themeArnHasBeenSet = true; m_themeArn = value; }
 
     /**
      * <p>The ARN for the theme to apply to the analysis that you're creating. To see
-     * the theme in the QuickSight console, make sure that you have access to it.</p>
+     * the theme in the Amazon QuickSight console, make sure that you have access to
+     * it.</p>
      */
     inline void SetThemeArn(Aws::String&& value) { m_themeArnHasBeenSet = true; m_themeArn = std::move(value); }
 
     /**
      * <p>The ARN for the theme to apply to the analysis that you're creating. To see
-     * the theme in the QuickSight console, make sure that you have access to it.</p>
+     * the theme in the Amazon QuickSight console, make sure that you have access to
+     * it.</p>
      */
     inline void SetThemeArn(const char* value) { m_themeArnHasBeenSet = true; m_themeArn.assign(value); }
 
     /**
      * <p>The ARN for the theme to apply to the analysis that you're creating. To see
-     * the theme in the QuickSight console, make sure that you have access to it.</p>
+     * the theme in the Amazon QuickSight console, make sure that you have access to
+     * it.</p>
      */
     inline CreateAnalysisRequest& WithThemeArn(const Aws::String& value) { SetThemeArn(value); return *this;}
 
     /**
      * <p>The ARN for the theme to apply to the analysis that you're creating. To see
-     * the theme in the QuickSight console, make sure that you have access to it.</p>
+     * the theme in the Amazon QuickSight console, make sure that you have access to
+     * it.</p>
      */
     inline CreateAnalysisRequest& WithThemeArn(Aws::String&& value) { SetThemeArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN for the theme to apply to the analysis that you're creating. To see
-     * the theme in the QuickSight console, make sure that you have access to it.</p>
+     * the theme in the Amazon QuickSight console, make sure that you have access to
+     * it.</p>
      */
     inline CreateAnalysisRequest& WithThemeArn(const char* value) { SetThemeArn(value); return *this;}
 

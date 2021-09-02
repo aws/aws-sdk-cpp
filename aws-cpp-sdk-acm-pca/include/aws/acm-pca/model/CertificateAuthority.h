@@ -437,38 +437,44 @@ namespace Model
 
 
     /**
-     * <p>Information about the certificate revocation list (CRL) created and
-     * maintained by your private CA. </p>
+     * <p>Information about the Online Certificate Status Protocol (OCSP) configuration
+     * or certificate revocation list (CRL) created and maintained by your private CA.
+     * </p>
      */
     inline const RevocationConfiguration& GetRevocationConfiguration() const{ return m_revocationConfiguration; }
 
     /**
-     * <p>Information about the certificate revocation list (CRL) created and
-     * maintained by your private CA. </p>
+     * <p>Information about the Online Certificate Status Protocol (OCSP) configuration
+     * or certificate revocation list (CRL) created and maintained by your private CA.
+     * </p>
      */
     inline bool RevocationConfigurationHasBeenSet() const { return m_revocationConfigurationHasBeenSet; }
 
     /**
-     * <p>Information about the certificate revocation list (CRL) created and
-     * maintained by your private CA. </p>
+     * <p>Information about the Online Certificate Status Protocol (OCSP) configuration
+     * or certificate revocation list (CRL) created and maintained by your private CA.
+     * </p>
      */
     inline void SetRevocationConfiguration(const RevocationConfiguration& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = value; }
 
     /**
-     * <p>Information about the certificate revocation list (CRL) created and
-     * maintained by your private CA. </p>
+     * <p>Information about the Online Certificate Status Protocol (OCSP) configuration
+     * or certificate revocation list (CRL) created and maintained by your private CA.
+     * </p>
      */
     inline void SetRevocationConfiguration(RevocationConfiguration&& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = std::move(value); }
 
     /**
-     * <p>Information about the certificate revocation list (CRL) created and
-     * maintained by your private CA. </p>
+     * <p>Information about the Online Certificate Status Protocol (OCSP) configuration
+     * or certificate revocation list (CRL) created and maintained by your private CA.
+     * </p>
      */
     inline CertificateAuthority& WithRevocationConfiguration(const RevocationConfiguration& value) { SetRevocationConfiguration(value); return *this;}
 
     /**
-     * <p>Information about the certificate revocation list (CRL) created and
-     * maintained by your private CA. </p>
+     * <p>Information about the Online Certificate Status Protocol (OCSP) configuration
+     * or certificate revocation list (CRL) created and maintained by your private CA.
+     * </p>
      */
     inline CertificateAuthority& WithRevocationConfiguration(RevocationConfiguration&& value) { SetRevocationConfiguration(std::move(value)); return *this;}
 

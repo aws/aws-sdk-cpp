@@ -54,6 +54,9 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/securityhub/model/AwsRdsEventSubscriptionDetails.h>
 #include <aws/securityhub/model/AwsEcsServiceDetails.h>
+#include <aws/securityhub/model/AwsAutoScalingLaunchConfigurationDetails.h>
+#include <aws/securityhub/model/AwsEc2VpnConnectionDetails.h>
+#include <aws/securityhub/model/AwsEcrContainerImageDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -1037,32 +1040,32 @@ namespace Model
 
 
     /**
-     * <p>contains details about a Classic Load Balancer.</p>
+     * <p>Contains details about a Classic Load Balancer.</p>
      */
     inline const AwsElbLoadBalancerDetails& GetAwsElbLoadBalancer() const{ return m_awsElbLoadBalancer; }
 
     /**
-     * <p>contains details about a Classic Load Balancer.</p>
+     * <p>Contains details about a Classic Load Balancer.</p>
      */
     inline bool AwsElbLoadBalancerHasBeenSet() const { return m_awsElbLoadBalancerHasBeenSet; }
 
     /**
-     * <p>contains details about a Classic Load Balancer.</p>
+     * <p>Contains details about a Classic Load Balancer.</p>
      */
     inline void SetAwsElbLoadBalancer(const AwsElbLoadBalancerDetails& value) { m_awsElbLoadBalancerHasBeenSet = true; m_awsElbLoadBalancer = value; }
 
     /**
-     * <p>contains details about a Classic Load Balancer.</p>
+     * <p>Contains details about a Classic Load Balancer.</p>
      */
     inline void SetAwsElbLoadBalancer(AwsElbLoadBalancerDetails&& value) { m_awsElbLoadBalancerHasBeenSet = true; m_awsElbLoadBalancer = std::move(value); }
 
     /**
-     * <p>contains details about a Classic Load Balancer.</p>
+     * <p>Contains details about a Classic Load Balancer.</p>
      */
     inline ResourceDetails& WithAwsElbLoadBalancer(const AwsElbLoadBalancerDetails& value) { SetAwsElbLoadBalancer(value); return *this;}
 
     /**
-     * <p>contains details about a Classic Load Balancer.</p>
+     * <p>Contains details about a Classic Load Balancer.</p>
      */
     inline ResourceDetails& WithAwsElbLoadBalancer(AwsElbLoadBalancerDetails&& value) { SetAwsElbLoadBalancer(std::move(value)); return *this;}
 
@@ -1756,6 +1759,99 @@ namespace Model
      */
     inline ResourceDetails& WithAwsEcsService(AwsEcsServiceDetails&& value) { SetAwsEcsService(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides details about a launch configuration.</p>
+     */
+    inline const AwsAutoScalingLaunchConfigurationDetails& GetAwsAutoScalingLaunchConfiguration() const{ return m_awsAutoScalingLaunchConfiguration; }
+
+    /**
+     * <p>Provides details about a launch configuration.</p>
+     */
+    inline bool AwsAutoScalingLaunchConfigurationHasBeenSet() const { return m_awsAutoScalingLaunchConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides details about a launch configuration.</p>
+     */
+    inline void SetAwsAutoScalingLaunchConfiguration(const AwsAutoScalingLaunchConfigurationDetails& value) { m_awsAutoScalingLaunchConfigurationHasBeenSet = true; m_awsAutoScalingLaunchConfiguration = value; }
+
+    /**
+     * <p>Provides details about a launch configuration.</p>
+     */
+    inline void SetAwsAutoScalingLaunchConfiguration(AwsAutoScalingLaunchConfigurationDetails&& value) { m_awsAutoScalingLaunchConfigurationHasBeenSet = true; m_awsAutoScalingLaunchConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides details about a launch configuration.</p>
+     */
+    inline ResourceDetails& WithAwsAutoScalingLaunchConfiguration(const AwsAutoScalingLaunchConfigurationDetails& value) { SetAwsAutoScalingLaunchConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides details about a launch configuration.</p>
+     */
+    inline ResourceDetails& WithAwsAutoScalingLaunchConfiguration(AwsAutoScalingLaunchConfigurationDetails&& value) { SetAwsAutoScalingLaunchConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an EC2 VPN connection.</p>
+     */
+    inline const AwsEc2VpnConnectionDetails& GetAwsEc2VpnConnection() const{ return m_awsEc2VpnConnection; }
+
+    /**
+     * <p>Details about an EC2 VPN connection.</p>
+     */
+    inline bool AwsEc2VpnConnectionHasBeenSet() const { return m_awsEc2VpnConnectionHasBeenSet; }
+
+    /**
+     * <p>Details about an EC2 VPN connection.</p>
+     */
+    inline void SetAwsEc2VpnConnection(const AwsEc2VpnConnectionDetails& value) { m_awsEc2VpnConnectionHasBeenSet = true; m_awsEc2VpnConnection = value; }
+
+    /**
+     * <p>Details about an EC2 VPN connection.</p>
+     */
+    inline void SetAwsEc2VpnConnection(AwsEc2VpnConnectionDetails&& value) { m_awsEc2VpnConnectionHasBeenSet = true; m_awsEc2VpnConnection = std::move(value); }
+
+    /**
+     * <p>Details about an EC2 VPN connection.</p>
+     */
+    inline ResourceDetails& WithAwsEc2VpnConnection(const AwsEc2VpnConnectionDetails& value) { SetAwsEc2VpnConnection(value); return *this;}
+
+    /**
+     * <p>Details about an EC2 VPN connection.</p>
+     */
+    inline ResourceDetails& WithAwsEc2VpnConnection(AwsEc2VpnConnectionDetails&& value) { SetAwsEc2VpnConnection(std::move(value)); return *this;}
+
+
+    /**
+     * <p>information about an Amazon ECR image.</p>
+     */
+    inline const AwsEcrContainerImageDetails& GetAwsEcrContainerImage() const{ return m_awsEcrContainerImage; }
+
+    /**
+     * <p>information about an Amazon ECR image.</p>
+     */
+    inline bool AwsEcrContainerImageHasBeenSet() const { return m_awsEcrContainerImageHasBeenSet; }
+
+    /**
+     * <p>information about an Amazon ECR image.</p>
+     */
+    inline void SetAwsEcrContainerImage(const AwsEcrContainerImageDetails& value) { m_awsEcrContainerImageHasBeenSet = true; m_awsEcrContainerImage = value; }
+
+    /**
+     * <p>information about an Amazon ECR image.</p>
+     */
+    inline void SetAwsEcrContainerImage(AwsEcrContainerImageDetails&& value) { m_awsEcrContainerImageHasBeenSet = true; m_awsEcrContainerImage = std::move(value); }
+
+    /**
+     * <p>information about an Amazon ECR image.</p>
+     */
+    inline ResourceDetails& WithAwsEcrContainerImage(const AwsEcrContainerImageDetails& value) { SetAwsEcrContainerImage(value); return *this;}
+
+    /**
+     * <p>information about an Amazon ECR image.</p>
+     */
+    inline ResourceDetails& WithAwsEcrContainerImage(AwsEcrContainerImageDetails&& value) { SetAwsEcrContainerImage(std::move(value)); return *this;}
+
   private:
 
     AwsAutoScalingAutoScalingGroupDetails m_awsAutoScalingAutoScalingGroup;
@@ -1904,6 +2000,15 @@ namespace Model
 
     AwsEcsServiceDetails m_awsEcsService;
     bool m_awsEcsServiceHasBeenSet;
+
+    AwsAutoScalingLaunchConfigurationDetails m_awsAutoScalingLaunchConfiguration;
+    bool m_awsAutoScalingLaunchConfigurationHasBeenSet;
+
+    AwsEc2VpnConnectionDetails m_awsEc2VpnConnection;
+    bool m_awsEc2VpnConnectionHasBeenSet;
+
+    AwsEcrContainerImageDetails m_awsEcrContainerImage;
+    bool m_awsEcrContainerImageHasBeenSet;
   };
 
 } // namespace Model

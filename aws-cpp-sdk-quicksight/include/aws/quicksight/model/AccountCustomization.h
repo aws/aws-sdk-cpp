@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>The Amazon QuickSight customizations associated with your Amazon Web Services
-   * account; or a QuickSight namespace in a specific Amazon Web Services
+   * account or a Amazon QuickSight namespace in a specific Amazon Web Services
    * Region;.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AccountCustomization">AWS
    * API Reference</a></p>
@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The default theme for this QuickSight subscription.</p>
+     * <p>The default theme for this Amazon QuickSight subscription.</p>
      */
     inline const Aws::String& GetDefaultTheme() const{ return m_defaultTheme; }
 
     /**
-     * <p>The default theme for this QuickSight subscription.</p>
+     * <p>The default theme for this Amazon QuickSight subscription.</p>
      */
     inline bool DefaultThemeHasBeenSet() const { return m_defaultThemeHasBeenSet; }
 
     /**
-     * <p>The default theme for this QuickSight subscription.</p>
+     * <p>The default theme for this Amazon QuickSight subscription.</p>
      */
     inline void SetDefaultTheme(const Aws::String& value) { m_defaultThemeHasBeenSet = true; m_defaultTheme = value; }
 
     /**
-     * <p>The default theme for this QuickSight subscription.</p>
+     * <p>The default theme for this Amazon QuickSight subscription.</p>
      */
     inline void SetDefaultTheme(Aws::String&& value) { m_defaultThemeHasBeenSet = true; m_defaultTheme = std::move(value); }
 
     /**
-     * <p>The default theme for this QuickSight subscription.</p>
+     * <p>The default theme for this Amazon QuickSight subscription.</p>
      */
     inline void SetDefaultTheme(const char* value) { m_defaultThemeHasBeenSet = true; m_defaultTheme.assign(value); }
 
     /**
-     * <p>The default theme for this QuickSight subscription.</p>
+     * <p>The default theme for this Amazon QuickSight subscription.</p>
      */
     inline AccountCustomization& WithDefaultTheme(const Aws::String& value) { SetDefaultTheme(value); return *this;}
 
     /**
-     * <p>The default theme for this QuickSight subscription.</p>
+     * <p>The default theme for this Amazon QuickSight subscription.</p>
      */
     inline AccountCustomization& WithDefaultTheme(Aws::String&& value) { SetDefaultTheme(std::move(value)); return *this;}
 
     /**
-     * <p>The default theme for this QuickSight subscription.</p>
+     * <p>The default theme for this Amazon QuickSight subscription.</p>
      */
     inline AccountCustomization& WithDefaultTheme(const char* value) { SetDefaultTheme(value); return *this;}
 

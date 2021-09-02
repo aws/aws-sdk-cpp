@@ -36,49 +36,49 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the dashboard that
+     * <p>The ID of the Amazon Web Services account that contains the dashboard that
      * you're updating.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the dashboard that
+     * <p>The ID of the Amazon Web Services account that contains the dashboard that
      * you're updating.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the dashboard that
+     * <p>The ID of the Amazon Web Services account that contains the dashboard that
      * you're updating.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the dashboard that
+     * <p>The ID of the Amazon Web Services account that contains the dashboard that
      * you're updating.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the dashboard that
+     * <p>The ID of the Amazon Web Services account that contains the dashboard that
      * you're updating.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the dashboard that
+     * <p>The ID of the Amazon Web Services account that contains the dashboard that
      * you're updating.</p>
      */
     inline UpdateDashboardRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the dashboard that
+     * <p>The ID of the Amazon Web Services account that contains the dashboard that
      * you're updating.</p>
      */
     inline UpdateDashboardRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the dashboard that
+     * <p>The ID of the Amazon Web Services account that contains the dashboard that
      * you're updating.</p>
      */
     inline UpdateDashboardRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
@@ -174,8 +174,8 @@ namespace Model
      * analysis, first convert the analysis to a template by using the
      * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
      * the Amazon Resource Name (ARN) of the source template. The
-     * <code>SourceTemplate</code> ARN can contain any Amazon Web Services account; and
-     * any QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
+     * <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and
+     * any Amazon QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
      * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
      * the replacement datasets for the placeholders listed in the original. The schema
      * in each dataset must match its placeholder. </p>
@@ -190,8 +190,8 @@ namespace Model
      * analysis, first convert the analysis to a template by using the
      * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
      * the Amazon Resource Name (ARN) of the source template. The
-     * <code>SourceTemplate</code> ARN can contain any Amazon Web Services account; and
-     * any QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
+     * <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and
+     * any Amazon QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
      * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
      * the replacement datasets for the placeholders listed in the original. The schema
      * in each dataset must match its placeholder. </p>
@@ -206,8 +206,8 @@ namespace Model
      * analysis, first convert the analysis to a template by using the
      * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
      * the Amazon Resource Name (ARN) of the source template. The
-     * <code>SourceTemplate</code> ARN can contain any Amazon Web Services account; and
-     * any QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
+     * <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and
+     * any Amazon QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
      * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
      * the replacement datasets for the placeholders listed in the original. The schema
      * in each dataset must match its placeholder. </p>
@@ -222,8 +222,8 @@ namespace Model
      * analysis, first convert the analysis to a template by using the
      * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
      * the Amazon Resource Name (ARN) of the source template. The
-     * <code>SourceTemplate</code> ARN can contain any Amazon Web Services account; and
-     * any QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
+     * <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and
+     * any Amazon QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
      * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
      * the replacement datasets for the placeholders listed in the original. The schema
      * in each dataset must match its placeholder. </p>
@@ -238,8 +238,8 @@ namespace Model
      * analysis, first convert the analysis to a template by using the
      * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
      * the Amazon Resource Name (ARN) of the source template. The
-     * <code>SourceTemplate</code> ARN can contain any Amazon Web Services account; and
-     * any QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
+     * <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and
+     * any Amazon QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
      * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
      * the replacement datasets for the placeholders listed in the original. The schema
      * in each dataset must match its placeholder. </p>
@@ -254,8 +254,8 @@ namespace Model
      * analysis, first convert the analysis to a template by using the
      * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
      * the Amazon Resource Name (ARN) of the source template. The
-     * <code>SourceTemplate</code> ARN can contain any Amazon Web Services account; and
-     * any QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
+     * <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and
+     * any Amazon QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
      * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
      * the replacement datasets for the placeholders listed in the original. The schema
      * in each dataset must match its placeholder. </p>
@@ -351,8 +351,8 @@ namespace Model
      * <p>Options for publishing the dashboard when you create it:</p> <ul> <li> <p>
      * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
      * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-     * set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
-     * published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on
+     * the published dashboard, which can be used for ad hoc (one-time) filtering. This
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
@@ -369,8 +369,8 @@ namespace Model
      * <p>Options for publishing the dashboard when you create it:</p> <ul> <li> <p>
      * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
      * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-     * set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
-     * published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on
+     * the published dashboard, which can be used for ad hoc (one-time) filtering. This
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
@@ -387,8 +387,8 @@ namespace Model
      * <p>Options for publishing the dashboard when you create it:</p> <ul> <li> <p>
      * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
      * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-     * set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
-     * published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on
+     * the published dashboard, which can be used for ad hoc (one-time) filtering. This
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
@@ -405,8 +405,8 @@ namespace Model
      * <p>Options for publishing the dashboard when you create it:</p> <ul> <li> <p>
      * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
      * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-     * set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
-     * published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on
+     * the published dashboard, which can be used for ad hoc (one-time) filtering. This
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
@@ -423,8 +423,8 @@ namespace Model
      * <p>Options for publishing the dashboard when you create it:</p> <ul> <li> <p>
      * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
      * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-     * set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
-     * published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on
+     * the published dashboard, which can be used for ad hoc (one-time) filtering. This
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
@@ -441,8 +441,8 @@ namespace Model
      * <p>Options for publishing the dashboard when you create it:</p> <ul> <li> <p>
      * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
      * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-     * set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
-     * published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on
+     * the published dashboard, which can be used for ad hoc (one-time) filtering. This
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
@@ -460,7 +460,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
      * dashboard. If you add a value for this field, it overrides the value that was
      * originally associated with the entity. The theme ARN must exist in the same
-     * Amazon Web Services account; where you create the dashboard.</p>
+     * Amazon Web Services account where you create the dashboard.</p>
      */
     inline const Aws::String& GetThemeArn() const{ return m_themeArn; }
 
@@ -468,7 +468,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
      * dashboard. If you add a value for this field, it overrides the value that was
      * originally associated with the entity. The theme ARN must exist in the same
-     * Amazon Web Services account; where you create the dashboard.</p>
+     * Amazon Web Services account where you create the dashboard.</p>
      */
     inline bool ThemeArnHasBeenSet() const { return m_themeArnHasBeenSet; }
 
@@ -476,7 +476,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
      * dashboard. If you add a value for this field, it overrides the value that was
      * originally associated with the entity. The theme ARN must exist in the same
-     * Amazon Web Services account; where you create the dashboard.</p>
+     * Amazon Web Services account where you create the dashboard.</p>
      */
     inline void SetThemeArn(const Aws::String& value) { m_themeArnHasBeenSet = true; m_themeArn = value; }
 
@@ -484,7 +484,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
      * dashboard. If you add a value for this field, it overrides the value that was
      * originally associated with the entity. The theme ARN must exist in the same
-     * Amazon Web Services account; where you create the dashboard.</p>
+     * Amazon Web Services account where you create the dashboard.</p>
      */
     inline void SetThemeArn(Aws::String&& value) { m_themeArnHasBeenSet = true; m_themeArn = std::move(value); }
 
@@ -492,7 +492,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
      * dashboard. If you add a value for this field, it overrides the value that was
      * originally associated with the entity. The theme ARN must exist in the same
-     * Amazon Web Services account; where you create the dashboard.</p>
+     * Amazon Web Services account where you create the dashboard.</p>
      */
     inline void SetThemeArn(const char* value) { m_themeArnHasBeenSet = true; m_themeArn.assign(value); }
 
@@ -500,7 +500,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
      * dashboard. If you add a value for this field, it overrides the value that was
      * originally associated with the entity. The theme ARN must exist in the same
-     * Amazon Web Services account; where you create the dashboard.</p>
+     * Amazon Web Services account where you create the dashboard.</p>
      */
     inline UpdateDashboardRequest& WithThemeArn(const Aws::String& value) { SetThemeArn(value); return *this;}
 
@@ -508,7 +508,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
      * dashboard. If you add a value for this field, it overrides the value that was
      * originally associated with the entity. The theme ARN must exist in the same
-     * Amazon Web Services account; where you create the dashboard.</p>
+     * Amazon Web Services account where you create the dashboard.</p>
      */
     inline UpdateDashboardRequest& WithThemeArn(Aws::String&& value) { SetThemeArn(std::move(value)); return *this;}
 
@@ -516,7 +516,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
      * dashboard. If you add a value for this field, it overrides the value that was
      * originally associated with the entity. The theme ARN must exist in the same
-     * Amazon Web Services account; where you create the dashboard.</p>
+     * Amazon Web Services account where you create the dashboard.</p>
      */
     inline UpdateDashboardRequest& WithThemeArn(const char* value) { SetThemeArn(value); return *this;}
 

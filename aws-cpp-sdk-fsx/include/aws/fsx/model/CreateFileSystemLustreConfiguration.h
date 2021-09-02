@@ -397,7 +397,8 @@ namespace Model
      * protection.html">support this feature</a>. (Default = <code>SCRATCH_1</code>)
      * </p> <p>Encryption of data in-transit for <code>SCRATCH_2</code> and
      * <code>PERSISTENT_1</code> deployment types is supported when accessed from
-     * supported instance types in supported AWS Regions. To learn more, <a
+     * supported instance types in supported Amazon Web Services Regions. To learn
+     * more, <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
      * Data in Transit</a>.</p>
      */
@@ -418,7 +419,8 @@ namespace Model
      * protection.html">support this feature</a>. (Default = <code>SCRATCH_1</code>)
      * </p> <p>Encryption of data in-transit for <code>SCRATCH_2</code> and
      * <code>PERSISTENT_1</code> deployment types is supported when accessed from
-     * supported instance types in supported AWS Regions. To learn more, <a
+     * supported instance types in supported Amazon Web Services Regions. To learn
+     * more, <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
      * Data in Transit</a>.</p>
      */
@@ -439,7 +441,8 @@ namespace Model
      * protection.html">support this feature</a>. (Default = <code>SCRATCH_1</code>)
      * </p> <p>Encryption of data in-transit for <code>SCRATCH_2</code> and
      * <code>PERSISTENT_1</code> deployment types is supported when accessed from
-     * supported instance types in supported AWS Regions. To learn more, <a
+     * supported instance types in supported Amazon Web Services Regions. To learn
+     * more, <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
      * Data in Transit</a>.</p>
      */
@@ -460,7 +463,8 @@ namespace Model
      * protection.html">support this feature</a>. (Default = <code>SCRATCH_1</code>)
      * </p> <p>Encryption of data in-transit for <code>SCRATCH_2</code> and
      * <code>PERSISTENT_1</code> deployment types is supported when accessed from
-     * supported instance types in supported AWS Regions. To learn more, <a
+     * supported instance types in supported Amazon Web Services Regions. To learn
+     * more, <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
      * Data in Transit</a>.</p>
      */
@@ -481,7 +485,8 @@ namespace Model
      * protection.html">support this feature</a>. (Default = <code>SCRATCH_1</code>)
      * </p> <p>Encryption of data in-transit for <code>SCRATCH_2</code> and
      * <code>PERSISTENT_1</code> deployment types is supported when accessed from
-     * supported instance types in supported AWS Regions. To learn more, <a
+     * supported instance types in supported Amazon Web Services Regions. To learn
+     * more, <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
      * Data in Transit</a>.</p>
      */
@@ -502,7 +507,8 @@ namespace Model
      * protection.html">support this feature</a>. (Default = <code>SCRATCH_1</code>)
      * </p> <p>Encryption of data in-transit for <code>SCRATCH_2</code> and
      * <code>PERSISTENT_1</code> deployment types is supported when accessed from
-     * supported instance types in supported AWS Regions. To learn more, <a
+     * supported instance types in supported Amazon Web Services Regions. To learn
+     * more, <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
      * Data in Transit</a>.</p>
      */

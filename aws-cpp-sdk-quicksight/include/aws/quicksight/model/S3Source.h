@@ -113,58 +113,58 @@ namespace Model
 
 
     /**
-     * <p>A physical table type for an S3 data source.</p>  <p>For non-JSON
-     * files, only <code>STRING</code> data types are supported in input columns.</p>
-     * 
+     * <p>A physical table type for an S3 data source.</p>  <p>For files that
+     * aren't JSON, only <code>STRING</code> data types are supported in input
+     * columns.</p> 
      */
     inline const Aws::Vector<InputColumn>& GetInputColumns() const{ return m_inputColumns; }
 
     /**
-     * <p>A physical table type for an S3 data source.</p>  <p>For non-JSON
-     * files, only <code>STRING</code> data types are supported in input columns.</p>
-     * 
+     * <p>A physical table type for an S3 data source.</p>  <p>For files that
+     * aren't JSON, only <code>STRING</code> data types are supported in input
+     * columns.</p> 
      */
     inline bool InputColumnsHasBeenSet() const { return m_inputColumnsHasBeenSet; }
 
     /**
-     * <p>A physical table type for an S3 data source.</p>  <p>For non-JSON
-     * files, only <code>STRING</code> data types are supported in input columns.</p>
-     * 
+     * <p>A physical table type for an S3 data source.</p>  <p>For files that
+     * aren't JSON, only <code>STRING</code> data types are supported in input
+     * columns.</p> 
      */
     inline void SetInputColumns(const Aws::Vector<InputColumn>& value) { m_inputColumnsHasBeenSet = true; m_inputColumns = value; }
 
     /**
-     * <p>A physical table type for an S3 data source.</p>  <p>For non-JSON
-     * files, only <code>STRING</code> data types are supported in input columns.</p>
-     * 
+     * <p>A physical table type for an S3 data source.</p>  <p>For files that
+     * aren't JSON, only <code>STRING</code> data types are supported in input
+     * columns.</p> 
      */
     inline void SetInputColumns(Aws::Vector<InputColumn>&& value) { m_inputColumnsHasBeenSet = true; m_inputColumns = std::move(value); }
 
     /**
-     * <p>A physical table type for an S3 data source.</p>  <p>For non-JSON
-     * files, only <code>STRING</code> data types are supported in input columns.</p>
-     * 
+     * <p>A physical table type for an S3 data source.</p>  <p>For files that
+     * aren't JSON, only <code>STRING</code> data types are supported in input
+     * columns.</p> 
      */
     inline S3Source& WithInputColumns(const Aws::Vector<InputColumn>& value) { SetInputColumns(value); return *this;}
 
     /**
-     * <p>A physical table type for an S3 data source.</p>  <p>For non-JSON
-     * files, only <code>STRING</code> data types are supported in input columns.</p>
-     * 
+     * <p>A physical table type for an S3 data source.</p>  <p>For files that
+     * aren't JSON, only <code>STRING</code> data types are supported in input
+     * columns.</p> 
      */
     inline S3Source& WithInputColumns(Aws::Vector<InputColumn>&& value) { SetInputColumns(std::move(value)); return *this;}
 
     /**
-     * <p>A physical table type for an S3 data source.</p>  <p>For non-JSON
-     * files, only <code>STRING</code> data types are supported in input columns.</p>
-     * 
+     * <p>A physical table type for an S3 data source.</p>  <p>For files that
+     * aren't JSON, only <code>STRING</code> data types are supported in input
+     * columns.</p> 
      */
     inline S3Source& AddInputColumns(const InputColumn& value) { m_inputColumnsHasBeenSet = true; m_inputColumns.push_back(value); return *this; }
 
     /**
-     * <p>A physical table type for an S3 data source.</p>  <p>For non-JSON
-     * files, only <code>STRING</code> data types are supported in input columns.</p>
-     * 
+     * <p>A physical table type for an S3 data source.</p>  <p>For files that
+     * aren't JSON, only <code>STRING</code> data types are supported in input
+     * columns.</p> 
      */
     inline S3Source& AddInputColumns(InputColumn&& value) { m_inputColumnsHasBeenSet = true; m_inputColumns.push_back(std::move(value)); return *this; }
 

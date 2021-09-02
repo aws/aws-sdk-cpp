@@ -13,6 +13,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fsx/model/FileSystem.h>
 #include <aws/fsx/model/ActiveDirectoryBackupAttributes.h>
+#include <aws/fsx/model/ResourceType.h>
+#include <aws/fsx/model/Volume.h>
 #include <aws/fsx/model/Tag.h>
 #include <utility>
 
@@ -32,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>A backup of an Amazon FSx file system.</p><p><h3>See Also:</h3>   <a
+   * <p>A backup of an Amazon FSx for Windows File Server or Amazon FSx for Lustre
+   * file system, or of an Amazon FSx for NetApp ONTAP volume.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/Backup">AWS API
    * Reference</a></p>
    */
@@ -278,50 +282,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
-     * backup of the Amazon FSx file system's data at rest. </p>
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of
+     * the Amazon FSx file system's data at rest. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
-     * backup of the Amazon FSx file system's data at rest. </p>
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of
+     * the Amazon FSx file system's data at rest. </p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
-     * backup of the Amazon FSx file system's data at rest. </p>
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of
+     * the Amazon FSx file system's data at rest. </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
-     * backup of the Amazon FSx file system's data at rest. </p>
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of
+     * the Amazon FSx file system's data at rest. </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
-     * backup of the Amazon FSx file system's data at rest. </p>
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of
+     * the Amazon FSx file system's data at rest. </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
-     * backup of the Amazon FSx file system's data at rest. </p>
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of
+     * the Amazon FSx file system's data at rest. </p>
      */
     inline Backup& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
-     * backup of the Amazon FSx file system's data at rest. </p>
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of
+     * the Amazon FSx file system's data at rest. </p>
      */
     inline Backup& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
-     * backup of the Amazon FSx file system's data at rest. </p>
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of
+     * the Amazon FSx file system's data at rest. </p>
      */
     inline Backup& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -580,6 +584,56 @@ namespace Model
      */
     inline Backup& WithSourceBackupRegion(const char* value) { SetSourceBackupRegion(value); return *this;}
 
+
+    /**
+     * <p>Specifies the resource type that is backed up.</p>
+     */
+    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>Specifies the resource type that is backed up.</p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies the resource type that is backed up.</p>
+     */
+    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+
+    /**
+     * <p>Specifies the resource type that is backed up.</p>
+     */
+    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
+
+    /**
+     * <p>Specifies the resource type that is backed up.</p>
+     */
+    inline Backup& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
+
+    /**
+     * <p>Specifies the resource type that is backed up.</p>
+     */
+    inline Backup& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
+
+    
+    inline const Volume& GetVolume() const{ return m_volume; }
+
+    
+    inline bool VolumeHasBeenSet() const { return m_volumeHasBeenSet; }
+
+    
+    inline void SetVolume(const Volume& value) { m_volumeHasBeenSet = true; m_volume = value; }
+
+    
+    inline void SetVolume(Volume&& value) { m_volumeHasBeenSet = true; m_volume = std::move(value); }
+
+    
+    inline Backup& WithVolume(const Volume& value) { SetVolume(value); return *this;}
+
+    
+    inline Backup& WithVolume(Volume&& value) { SetVolume(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_backupId;
@@ -623,6 +677,12 @@ namespace Model
 
     Aws::String m_sourceBackupRegion;
     bool m_sourceBackupRegionHasBeenSet;
+
+    ResourceType m_resourceType;
+    bool m_resourceTypeHasBeenSet;
+
+    Volume m_volume;
+    bool m_volumeHasBeenSet;
   };
 
 } // namespace Model

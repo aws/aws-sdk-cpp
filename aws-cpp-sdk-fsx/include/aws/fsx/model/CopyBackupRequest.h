@@ -112,66 +112,74 @@ namespace Model
 
 
     /**
-     * <p>The source AWS Region of the backup. Specifies the AWS Region from which the
-     * backup is being copied. The source and destination Regions must be in the same
-     * AWS partition. If you don't specify a Region, it defaults to the Region where
-     * the request is sent from (in-Region copy).</p>
+     * <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web
+     * Services Region from which the backup is being copied. The source and
+     * destination Regions must be in the same Amazon Web Services partition. If you
+     * don't specify a Region, it defaults to the Region where the request is sent from
+     * (in-Region copy).</p>
      */
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
 
     /**
-     * <p>The source AWS Region of the backup. Specifies the AWS Region from which the
-     * backup is being copied. The source and destination Regions must be in the same
-     * AWS partition. If you don't specify a Region, it defaults to the Region where
-     * the request is sent from (in-Region copy).</p>
+     * <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web
+     * Services Region from which the backup is being copied. The source and
+     * destination Regions must be in the same Amazon Web Services partition. If you
+     * don't specify a Region, it defaults to the Region where the request is sent from
+     * (in-Region copy).</p>
      */
     inline bool SourceRegionHasBeenSet() const { return m_sourceRegionHasBeenSet; }
 
     /**
-     * <p>The source AWS Region of the backup. Specifies the AWS Region from which the
-     * backup is being copied. The source and destination Regions must be in the same
-     * AWS partition. If you don't specify a Region, it defaults to the Region where
-     * the request is sent from (in-Region copy).</p>
+     * <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web
+     * Services Region from which the backup is being copied. The source and
+     * destination Regions must be in the same Amazon Web Services partition. If you
+     * don't specify a Region, it defaults to the Region where the request is sent from
+     * (in-Region copy).</p>
      */
     inline void SetSourceRegion(const Aws::String& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
 
     /**
-     * <p>The source AWS Region of the backup. Specifies the AWS Region from which the
-     * backup is being copied. The source and destination Regions must be in the same
-     * AWS partition. If you don't specify a Region, it defaults to the Region where
-     * the request is sent from (in-Region copy).</p>
+     * <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web
+     * Services Region from which the backup is being copied. The source and
+     * destination Regions must be in the same Amazon Web Services partition. If you
+     * don't specify a Region, it defaults to the Region where the request is sent from
+     * (in-Region copy).</p>
      */
     inline void SetSourceRegion(Aws::String&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::move(value); }
 
     /**
-     * <p>The source AWS Region of the backup. Specifies the AWS Region from which the
-     * backup is being copied. The source and destination Regions must be in the same
-     * AWS partition. If you don't specify a Region, it defaults to the Region where
-     * the request is sent from (in-Region copy).</p>
+     * <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web
+     * Services Region from which the backup is being copied. The source and
+     * destination Regions must be in the same Amazon Web Services partition. If you
+     * don't specify a Region, it defaults to the Region where the request is sent from
+     * (in-Region copy).</p>
      */
     inline void SetSourceRegion(const char* value) { m_sourceRegionHasBeenSet = true; m_sourceRegion.assign(value); }
 
     /**
-     * <p>The source AWS Region of the backup. Specifies the AWS Region from which the
-     * backup is being copied. The source and destination Regions must be in the same
-     * AWS partition. If you don't specify a Region, it defaults to the Region where
-     * the request is sent from (in-Region copy).</p>
+     * <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web
+     * Services Region from which the backup is being copied. The source and
+     * destination Regions must be in the same Amazon Web Services partition. If you
+     * don't specify a Region, it defaults to the Region where the request is sent from
+     * (in-Region copy).</p>
      */
     inline CopyBackupRequest& WithSourceRegion(const Aws::String& value) { SetSourceRegion(value); return *this;}
 
     /**
-     * <p>The source AWS Region of the backup. Specifies the AWS Region from which the
-     * backup is being copied. The source and destination Regions must be in the same
-     * AWS partition. If you don't specify a Region, it defaults to the Region where
-     * the request is sent from (in-Region copy).</p>
+     * <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web
+     * Services Region from which the backup is being copied. The source and
+     * destination Regions must be in the same Amazon Web Services partition. If you
+     * don't specify a Region, it defaults to the Region where the request is sent from
+     * (in-Region copy).</p>
      */
     inline CopyBackupRequest& WithSourceRegion(Aws::String&& value) { SetSourceRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The source AWS Region of the backup. Specifies the AWS Region from which the
-     * backup is being copied. The source and destination Regions must be in the same
-     * AWS partition. If you don't specify a Region, it defaults to the Region where
-     * the request is sent from (in-Region copy).</p>
+     * <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web
+     * Services Region from which the backup is being copied. The source and
+     * destination Regions must be in the same Amazon Web Services partition. If you
+     * don't specify a Region, it defaults to the Region where the request is sent from
+     * (in-Region copy).</p>
      */
     inline CopyBackupRequest& WithSourceRegion(const char* value) { SetSourceRegion(value); return *this;}
 

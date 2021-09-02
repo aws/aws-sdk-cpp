@@ -28,7 +28,8 @@ AdministrativeAction::AdministrativeAction() :
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false),
     m_targetFileSystemValuesHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false)
+    m_failureDetailsHasBeenSet(false),
+    m_targetVolumeValuesHasBeenSet(false)
 {
 }
 
@@ -41,7 +42,8 @@ AdministrativeAction::AdministrativeAction(JsonView jsonValue) :
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false),
     m_targetFileSystemValuesHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false)
+    m_failureDetailsHasBeenSet(false),
+    m_targetVolumeValuesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -97,6 +99,13 @@ AdministrativeAction& AdministrativeAction::operator =(JsonView jsonValue)
     m_failureDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TargetVolumeValues"))
+  {
+    m_targetVolumeValues = jsonValue.GetObject("TargetVolumeValues");
+
+    m_targetVolumeValuesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -134,6 +143,12 @@ JsonValue AdministrativeAction::Jsonize() const
   if(m_failureDetailsHasBeenSet)
   {
    payload.WithObject("FailureDetails", m_failureDetails.Jsonize());
+
+  }
+
+  if(m_targetVolumeValuesHasBeenSet)
+  {
+   payload.WithObject("TargetVolumeValues", m_targetVolumeValues.Jsonize());
 
   }
 

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Amazon Aurora parameters.</p><p><h3>See Also:</h3>   <a
+   * <p>Parameters for Amazon Aurora.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AuroraParameters">AWS
    * API Reference</a></p>
    */

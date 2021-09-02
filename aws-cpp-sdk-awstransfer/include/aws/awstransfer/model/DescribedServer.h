@@ -14,6 +14,7 @@
 #include <aws/awstransfer/model/IdentityProviderType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/awstransfer/model/State.h>
+#include <aws/awstransfer/model/WorkflowDetails.h>
 #include <aws/awstransfer/model/Protocol.h>
 #include <aws/awstransfer/model/Tag.h>
 #include <utility>
@@ -917,6 +918,43 @@ namespace Model
      */
     inline DescribedServer& WithUserCount(int value) { SetUserCount(value); return *this;}
 
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline const WorkflowDetails& GetWorkflowDetails() const{ return m_workflowDetails; }
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline bool WorkflowDetailsHasBeenSet() const { return m_workflowDetailsHasBeenSet; }
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline void SetWorkflowDetails(const WorkflowDetails& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = value; }
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline void SetWorkflowDetails(WorkflowDetails&& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = std::move(value); }
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline DescribedServer& WithWorkflowDetails(const WorkflowDetails& value) { SetWorkflowDetails(value); return *this;}
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline DescribedServer& WithWorkflowDetails(WorkflowDetails&& value) { SetWorkflowDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -966,6 +1004,9 @@ namespace Model
 
     int m_userCount;
     bool m_userCountHasBeenSet;
+
+    WorkflowDetails m_workflowDetails;
+    bool m_workflowDetailsHasBeenSet;
   };
 
 } // namespace Model

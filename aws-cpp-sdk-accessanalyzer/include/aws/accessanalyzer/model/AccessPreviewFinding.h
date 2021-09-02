@@ -102,8 +102,8 @@ namespace Model
 
     /**
      * <p>Provides context on how the access preview finding compares to existing
-     * access identified in Access Analyzer.</p> <ul> <li> <p> <code>New</code> - The
-     * finding is for newly-introduced access.</p> </li> <li> <p>
+     * access identified in IAM Access Analyzer.</p> <ul> <li> <p> <code>New</code> -
+     * The finding is for newly-introduced access.</p> </li> <li> <p>
      * <code>Unchanged</code> - The preview finding is an existing finding that would
      * remain unchanged.</p> </li> <li> <p> <code>Changed</code> - The preview finding
      * is an existing finding with a change in status.</p> </li> </ul> <p>For example,
@@ -116,8 +116,8 @@ namespace Model
 
     /**
      * <p>Provides context on how the access preview finding compares to existing
-     * access identified in Access Analyzer.</p> <ul> <li> <p> <code>New</code> - The
-     * finding is for newly-introduced access.</p> </li> <li> <p>
+     * access identified in IAM Access Analyzer.</p> <ul> <li> <p> <code>New</code> -
+     * The finding is for newly-introduced access.</p> </li> <li> <p>
      * <code>Unchanged</code> - The preview finding is an existing finding that would
      * remain unchanged.</p> </li> <li> <p> <code>Changed</code> - The preview finding
      * is an existing finding with a change in status.</p> </li> </ul> <p>For example,
@@ -130,8 +130,8 @@ namespace Model
 
     /**
      * <p>Provides context on how the access preview finding compares to existing
-     * access identified in Access Analyzer.</p> <ul> <li> <p> <code>New</code> - The
-     * finding is for newly-introduced access.</p> </li> <li> <p>
+     * access identified in IAM Access Analyzer.</p> <ul> <li> <p> <code>New</code> -
+     * The finding is for newly-introduced access.</p> </li> <li> <p>
      * <code>Unchanged</code> - The preview finding is an existing finding that would
      * remain unchanged.</p> </li> <li> <p> <code>Changed</code> - The preview finding
      * is an existing finding with a change in status.</p> </li> </ul> <p>For example,
@@ -144,8 +144,8 @@ namespace Model
 
     /**
      * <p>Provides context on how the access preview finding compares to existing
-     * access identified in Access Analyzer.</p> <ul> <li> <p> <code>New</code> - The
-     * finding is for newly-introduced access.</p> </li> <li> <p>
+     * access identified in IAM Access Analyzer.</p> <ul> <li> <p> <code>New</code> -
+     * The finding is for newly-introduced access.</p> </li> <li> <p>
      * <code>Unchanged</code> - The preview finding is an existing finding that would
      * remain unchanged.</p> </li> <li> <p> <code>Changed</code> - The preview finding
      * is an existing finding with a change in status.</p> </li> </ul> <p>For example,
@@ -158,8 +158,8 @@ namespace Model
 
     /**
      * <p>Provides context on how the access preview finding compares to existing
-     * access identified in Access Analyzer.</p> <ul> <li> <p> <code>New</code> - The
-     * finding is for newly-introduced access.</p> </li> <li> <p>
+     * access identified in IAM Access Analyzer.</p> <ul> <li> <p> <code>New</code> -
+     * The finding is for newly-introduced access.</p> </li> <li> <p>
      * <code>Unchanged</code> - The preview finding is an existing finding that would
      * remain unchanged.</p> </li> <li> <p> <code>Changed</code> - The preview finding
      * is an existing finding with a change in status.</p> </li> </ul> <p>For example,
@@ -172,8 +172,8 @@ namespace Model
 
     /**
      * <p>Provides context on how the access preview finding compares to existing
-     * access identified in Access Analyzer.</p> <ul> <li> <p> <code>New</code> - The
-     * finding is for newly-introduced access.</p> </li> <li> <p>
+     * access identified in IAM Access Analyzer.</p> <ul> <li> <p> <code>New</code> -
+     * The finding is for newly-introduced access.</p> </li> <li> <p>
      * <code>Unchanged</code> - The preview finding is an existing finding that would
      * remain unchanged.</p> </li> <li> <p> <code>Changed</code> - The preview finding
      * is an existing finding with a change in status.</p> </li> </ul> <p>For example,
@@ -337,50 +337,50 @@ namespace Model
 
 
     /**
-     * <p>The existing ID of the finding in Access Analyzer, provided only for existing
-     * findings.</p>
+     * <p>The existing ID of the finding in IAM Access Analyzer, provided only for
+     * existing findings.</p>
      */
     inline const Aws::String& GetExistingFindingId() const{ return m_existingFindingId; }
 
     /**
-     * <p>The existing ID of the finding in Access Analyzer, provided only for existing
-     * findings.</p>
+     * <p>The existing ID of the finding in IAM Access Analyzer, provided only for
+     * existing findings.</p>
      */
     inline bool ExistingFindingIdHasBeenSet() const { return m_existingFindingIdHasBeenSet; }
 
     /**
-     * <p>The existing ID of the finding in Access Analyzer, provided only for existing
-     * findings.</p>
+     * <p>The existing ID of the finding in IAM Access Analyzer, provided only for
+     * existing findings.</p>
      */
     inline void SetExistingFindingId(const Aws::String& value) { m_existingFindingIdHasBeenSet = true; m_existingFindingId = value; }
 
     /**
-     * <p>The existing ID of the finding in Access Analyzer, provided only for existing
-     * findings.</p>
+     * <p>The existing ID of the finding in IAM Access Analyzer, provided only for
+     * existing findings.</p>
      */
     inline void SetExistingFindingId(Aws::String&& value) { m_existingFindingIdHasBeenSet = true; m_existingFindingId = std::move(value); }
 
     /**
-     * <p>The existing ID of the finding in Access Analyzer, provided only for existing
-     * findings.</p>
+     * <p>The existing ID of the finding in IAM Access Analyzer, provided only for
+     * existing findings.</p>
      */
     inline void SetExistingFindingId(const char* value) { m_existingFindingIdHasBeenSet = true; m_existingFindingId.assign(value); }
 
     /**
-     * <p>The existing ID of the finding in Access Analyzer, provided only for existing
-     * findings.</p>
+     * <p>The existing ID of the finding in IAM Access Analyzer, provided only for
+     * existing findings.</p>
      */
     inline AccessPreviewFinding& WithExistingFindingId(const Aws::String& value) { SetExistingFindingId(value); return *this;}
 
     /**
-     * <p>The existing ID of the finding in Access Analyzer, provided only for existing
-     * findings.</p>
+     * <p>The existing ID of the finding in IAM Access Analyzer, provided only for
+     * existing findings.</p>
      */
     inline AccessPreviewFinding& WithExistingFindingId(Aws::String&& value) { SetExistingFindingId(std::move(value)); return *this;}
 
     /**
-     * <p>The existing ID of the finding in Access Analyzer, provided only for existing
-     * findings.</p>
+     * <p>The existing ID of the finding in IAM Access Analyzer, provided only for
+     * existing findings.</p>
      */
     inline AccessPreviewFinding& WithExistingFindingId(const char* value) { SetExistingFindingId(value); return *this;}
 
@@ -627,50 +627,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID that owns the resource. For most AWS resources, the owning
-     * account is the account in which the resource was created.</p>
+     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
+     * Web Services resources, the owning account is the account in which the resource
+     * was created.</p>
      */
     inline const Aws::String& GetResourceOwnerAccount() const{ return m_resourceOwnerAccount; }
 
     /**
-     * <p>The AWS account ID that owns the resource. For most AWS resources, the owning
-     * account is the account in which the resource was created.</p>
+     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
+     * Web Services resources, the owning account is the account in which the resource
+     * was created.</p>
      */
     inline bool ResourceOwnerAccountHasBeenSet() const { return m_resourceOwnerAccountHasBeenSet; }
 
     /**
-     * <p>The AWS account ID that owns the resource. For most AWS resources, the owning
-     * account is the account in which the resource was created.</p>
+     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
+     * Web Services resources, the owning account is the account in which the resource
+     * was created.</p>
      */
     inline void SetResourceOwnerAccount(const Aws::String& value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount = value; }
 
     /**
-     * <p>The AWS account ID that owns the resource. For most AWS resources, the owning
-     * account is the account in which the resource was created.</p>
+     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
+     * Web Services resources, the owning account is the account in which the resource
+     * was created.</p>
      */
     inline void SetResourceOwnerAccount(Aws::String&& value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount = std::move(value); }
 
     /**
-     * <p>The AWS account ID that owns the resource. For most AWS resources, the owning
-     * account is the account in which the resource was created.</p>
+     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
+     * Web Services resources, the owning account is the account in which the resource
+     * was created.</p>
      */
     inline void SetResourceOwnerAccount(const char* value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount.assign(value); }
 
     /**
-     * <p>The AWS account ID that owns the resource. For most AWS resources, the owning
-     * account is the account in which the resource was created.</p>
+     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
+     * Web Services resources, the owning account is the account in which the resource
+     * was created.</p>
      */
     inline AccessPreviewFinding& WithResourceOwnerAccount(const Aws::String& value) { SetResourceOwnerAccount(value); return *this;}
 
     /**
-     * <p>The AWS account ID that owns the resource. For most AWS resources, the owning
-     * account is the account in which the resource was created.</p>
+     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
+     * Web Services resources, the owning account is the account in which the resource
+     * was created.</p>
      */
     inline AccessPreviewFinding& WithResourceOwnerAccount(Aws::String&& value) { SetResourceOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID that owns the resource. For most AWS resources, the owning
-     * account is the account in which the resource was created.</p>
+     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
+     * Web Services resources, the owning account is the account in which the resource
+     * was created.</p>
      */
     inline AccessPreviewFinding& WithResourceOwnerAccount(const char* value) { SetResourceOwnerAccount(value); return *this;}
 

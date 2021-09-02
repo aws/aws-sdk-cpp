@@ -26,7 +26,8 @@ CreateDataSetRequest::CreateDataSetRequest() :
     m_rowLevelPermissionDataSetHasBeenSet(false),
     m_rowLevelPermissionTagConfigurationHasBeenSet(false),
     m_columnLevelPermissionRulesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_dataSetUsageConfigurationHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,12 @@ Aws::String CreateDataSetRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_dataSetUsageConfigurationHasBeenSet)
+  {
+   payload.WithObject("DataSetUsageConfiguration", m_dataSetUsageConfiguration.Jsonize());
 
   }
 

@@ -27,17 +27,26 @@
 #include <aws/fsx/model/CreateDataRepositoryTaskRequest.h>
 #include <aws/fsx/model/CreateFileSystemRequest.h>
 #include <aws/fsx/model/CreateFileSystemFromBackupRequest.h>
+#include <aws/fsx/model/CreateStorageVirtualMachineRequest.h>
+#include <aws/fsx/model/CreateVolumeRequest.h>
+#include <aws/fsx/model/CreateVolumeFromBackupRequest.h>
 #include <aws/fsx/model/DeleteBackupRequest.h>
 #include <aws/fsx/model/DeleteFileSystemRequest.h>
+#include <aws/fsx/model/DeleteStorageVirtualMachineRequest.h>
+#include <aws/fsx/model/DeleteVolumeRequest.h>
 #include <aws/fsx/model/DescribeBackupsRequest.h>
 #include <aws/fsx/model/DescribeDataRepositoryTasksRequest.h>
 #include <aws/fsx/model/DescribeFileSystemAliasesRequest.h>
 #include <aws/fsx/model/DescribeFileSystemsRequest.h>
+#include <aws/fsx/model/DescribeStorageVirtualMachinesRequest.h>
+#include <aws/fsx/model/DescribeVolumesRequest.h>
 #include <aws/fsx/model/DisassociateFileSystemAliasesRequest.h>
 #include <aws/fsx/model/ListTagsForResourceRequest.h>
 #include <aws/fsx/model/TagResourceRequest.h>
 #include <aws/fsx/model/UntagResourceRequest.h>
 #include <aws/fsx/model/UpdateFileSystemRequest.h>
+#include <aws/fsx/model/UpdateStorageVirtualMachineRequest.h>
+#include <aws/fsx/model/UpdateVolumeRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -280,6 +289,78 @@ void FSxClient::CreateFileSystemFromBackupAsyncHelper(const CreateFileSystemFrom
   handler(this, request, CreateFileSystemFromBackup(request), context);
 }
 
+CreateStorageVirtualMachineOutcome FSxClient::CreateStorageVirtualMachine(const CreateStorageVirtualMachineRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateStorageVirtualMachineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateStorageVirtualMachineOutcomeCallable FSxClient::CreateStorageVirtualMachineCallable(const CreateStorageVirtualMachineRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateStorageVirtualMachineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStorageVirtualMachine(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::CreateStorageVirtualMachineAsync(const CreateStorageVirtualMachineRequest& request, const CreateStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateStorageVirtualMachineAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::CreateStorageVirtualMachineAsyncHelper(const CreateStorageVirtualMachineRequest& request, const CreateStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateStorageVirtualMachine(request), context);
+}
+
+CreateVolumeOutcome FSxClient::CreateVolume(const CreateVolumeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateVolumeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateVolumeOutcomeCallable FSxClient::CreateVolumeCallable(const CreateVolumeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateVolumeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVolume(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::CreateVolumeAsync(const CreateVolumeRequest& request, const CreateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateVolumeAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::CreateVolumeAsyncHelper(const CreateVolumeRequest& request, const CreateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateVolume(request), context);
+}
+
+CreateVolumeFromBackupOutcome FSxClient::CreateVolumeFromBackup(const CreateVolumeFromBackupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateVolumeFromBackupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateVolumeFromBackupOutcomeCallable FSxClient::CreateVolumeFromBackupCallable(const CreateVolumeFromBackupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateVolumeFromBackupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVolumeFromBackup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::CreateVolumeFromBackupAsync(const CreateVolumeFromBackupRequest& request, const CreateVolumeFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateVolumeFromBackupAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::CreateVolumeFromBackupAsyncHelper(const CreateVolumeFromBackupRequest& request, const CreateVolumeFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateVolumeFromBackup(request), context);
+}
+
 DeleteBackupOutcome FSxClient::DeleteBackup(const DeleteBackupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -326,6 +407,54 @@ void FSxClient::DeleteFileSystemAsync(const DeleteFileSystemRequest& request, co
 void FSxClient::DeleteFileSystemAsyncHelper(const DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteFileSystem(request), context);
+}
+
+DeleteStorageVirtualMachineOutcome FSxClient::DeleteStorageVirtualMachine(const DeleteStorageVirtualMachineRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteStorageVirtualMachineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteStorageVirtualMachineOutcomeCallable FSxClient::DeleteStorageVirtualMachineCallable(const DeleteStorageVirtualMachineRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteStorageVirtualMachineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStorageVirtualMachine(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::DeleteStorageVirtualMachineAsync(const DeleteStorageVirtualMachineRequest& request, const DeleteStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteStorageVirtualMachineAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::DeleteStorageVirtualMachineAsyncHelper(const DeleteStorageVirtualMachineRequest& request, const DeleteStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteStorageVirtualMachine(request), context);
+}
+
+DeleteVolumeOutcome FSxClient::DeleteVolume(const DeleteVolumeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteVolumeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteVolumeOutcomeCallable FSxClient::DeleteVolumeCallable(const DeleteVolumeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVolumeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVolume(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::DeleteVolumeAsync(const DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteVolumeAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::DeleteVolumeAsyncHelper(const DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteVolume(request), context);
 }
 
 DescribeBackupsOutcome FSxClient::DescribeBackups(const DescribeBackupsRequest& request) const
@@ -422,6 +551,54 @@ void FSxClient::DescribeFileSystemsAsync(const DescribeFileSystemsRequest& reque
 void FSxClient::DescribeFileSystemsAsyncHelper(const DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeFileSystems(request), context);
+}
+
+DescribeStorageVirtualMachinesOutcome FSxClient::DescribeStorageVirtualMachines(const DescribeStorageVirtualMachinesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeStorageVirtualMachinesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeStorageVirtualMachinesOutcomeCallable FSxClient::DescribeStorageVirtualMachinesCallable(const DescribeStorageVirtualMachinesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeStorageVirtualMachinesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStorageVirtualMachines(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::DescribeStorageVirtualMachinesAsync(const DescribeStorageVirtualMachinesRequest& request, const DescribeStorageVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeStorageVirtualMachinesAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::DescribeStorageVirtualMachinesAsyncHelper(const DescribeStorageVirtualMachinesRequest& request, const DescribeStorageVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeStorageVirtualMachines(request), context);
+}
+
+DescribeVolumesOutcome FSxClient::DescribeVolumes(const DescribeVolumesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeVolumesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeVolumesOutcomeCallable FSxClient::DescribeVolumesCallable(const DescribeVolumesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeVolumesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVolumes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::DescribeVolumesAsync(const DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeVolumesAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::DescribeVolumesAsyncHelper(const DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeVolumes(request), context);
 }
 
 DisassociateFileSystemAliasesOutcome FSxClient::DisassociateFileSystemAliases(const DisassociateFileSystemAliasesRequest& request) const
@@ -542,5 +719,53 @@ void FSxClient::UpdateFileSystemAsync(const UpdateFileSystemRequest& request, co
 void FSxClient::UpdateFileSystemAsyncHelper(const UpdateFileSystemRequest& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateFileSystem(request), context);
+}
+
+UpdateStorageVirtualMachineOutcome FSxClient::UpdateStorageVirtualMachine(const UpdateStorageVirtualMachineRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateStorageVirtualMachineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateStorageVirtualMachineOutcomeCallable FSxClient::UpdateStorageVirtualMachineCallable(const UpdateStorageVirtualMachineRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateStorageVirtualMachineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStorageVirtualMachine(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::UpdateStorageVirtualMachineAsync(const UpdateStorageVirtualMachineRequest& request, const UpdateStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateStorageVirtualMachineAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::UpdateStorageVirtualMachineAsyncHelper(const UpdateStorageVirtualMachineRequest& request, const UpdateStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateStorageVirtualMachine(request), context);
+}
+
+UpdateVolumeOutcome FSxClient::UpdateVolume(const UpdateVolumeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateVolumeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateVolumeOutcomeCallable FSxClient::UpdateVolumeCallable(const UpdateVolumeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateVolumeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateVolume(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::UpdateVolumeAsync(const UpdateVolumeRequest& request, const UpdateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateVolumeAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::UpdateVolumeAsyncHelper(const UpdateVolumeRequest& request, const UpdateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateVolume(request), context);
 }
 

@@ -14,6 +14,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fsx/model/WindowsFileSystemConfiguration.h>
 #include <aws/fsx/model/LustreFileSystemConfiguration.h>
+#include <aws/fsx/model/OntapFileSystemConfiguration.h>
 #include <aws/fsx/model/Tag.h>
 #include <aws/fsx/model/AdministrativeAction.h>
 #include <utility>
@@ -48,58 +49,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an AWS Identity and Access Management (IAM) user, the AWS account to which
-     * the IAM user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an Identity and Access Management (IAM) user, the Amazon
+     * Web Services account to which the IAM user belongs is the owner.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an AWS Identity and Access Management (IAM) user, the AWS account to which
-     * the IAM user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an Identity and Access Management (IAM) user, the Amazon
+     * Web Services account to which the IAM user belongs is the owner.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an AWS Identity and Access Management (IAM) user, the AWS account to which
-     * the IAM user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an Identity and Access Management (IAM) user, the Amazon
+     * Web Services account to which the IAM user belongs is the owner.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an AWS Identity and Access Management (IAM) user, the AWS account to which
-     * the IAM user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an Identity and Access Management (IAM) user, the Amazon
+     * Web Services account to which the IAM user belongs is the owner.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an AWS Identity and Access Management (IAM) user, the AWS account to which
-     * the IAM user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an Identity and Access Management (IAM) user, the Amazon
+     * Web Services account to which the IAM user belongs is the owner.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an AWS Identity and Access Management (IAM) user, the AWS account to which
-     * the IAM user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an Identity and Access Management (IAM) user, the Amazon
+     * Web Services account to which the IAM user belongs is the owner.</p>
      */
     inline FileSystem& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an AWS Identity and Access Management (IAM) user, the AWS account to which
-     * the IAM user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an Identity and Access Management (IAM) user, the Amazon
+     * Web Services account to which the IAM user belongs is the owner.</p>
      */
     inline FileSystem& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an AWS Identity and Access Management (IAM) user, the AWS account to which
-     * the IAM user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an Identity and Access Management (IAM) user, the Amazon
+     * Web Services account to which the IAM user belongs is the owner.</p>
      */
     inline FileSystem& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
@@ -183,38 +184,38 @@ namespace Model
 
 
     /**
-     * <p>The type of Amazon FSx file system, either <code>LUSTRE</code> or
-     * <code>WINDOWS</code>.</p>
+     * <p>The type of Amazon FSx file system, which can be <code>LUSTRE</code>,
+     * <code>WINDOWS</code>, or <code>ONTAP</code>.</p>
      */
     inline const FileSystemType& GetFileSystemType() const{ return m_fileSystemType; }
 
     /**
-     * <p>The type of Amazon FSx file system, either <code>LUSTRE</code> or
-     * <code>WINDOWS</code>.</p>
+     * <p>The type of Amazon FSx file system, which can be <code>LUSTRE</code>,
+     * <code>WINDOWS</code>, or <code>ONTAP</code>.</p>
      */
     inline bool FileSystemTypeHasBeenSet() const { return m_fileSystemTypeHasBeenSet; }
 
     /**
-     * <p>The type of Amazon FSx file system, either <code>LUSTRE</code> or
-     * <code>WINDOWS</code>.</p>
+     * <p>The type of Amazon FSx file system, which can be <code>LUSTRE</code>,
+     * <code>WINDOWS</code>, or <code>ONTAP</code>.</p>
      */
     inline void SetFileSystemType(const FileSystemType& value) { m_fileSystemTypeHasBeenSet = true; m_fileSystemType = value; }
 
     /**
-     * <p>The type of Amazon FSx file system, either <code>LUSTRE</code> or
-     * <code>WINDOWS</code>.</p>
+     * <p>The type of Amazon FSx file system, which can be <code>LUSTRE</code>,
+     * <code>WINDOWS</code>, or <code>ONTAP</code>.</p>
      */
     inline void SetFileSystemType(FileSystemType&& value) { m_fileSystemTypeHasBeenSet = true; m_fileSystemType = std::move(value); }
 
     /**
-     * <p>The type of Amazon FSx file system, either <code>LUSTRE</code> or
-     * <code>WINDOWS</code>.</p>
+     * <p>The type of Amazon FSx file system, which can be <code>LUSTRE</code>,
+     * <code>WINDOWS</code>, or <code>ONTAP</code>.</p>
      */
     inline FileSystem& WithFileSystemType(const FileSystemType& value) { SetFileSystemType(value); return *this;}
 
     /**
-     * <p>The type of Amazon FSx file system, either <code>LUSTRE</code> or
-     * <code>WINDOWS</code>.</p>
+     * <p>The type of Amazon FSx file system, which can be <code>LUSTRE</code>,
+     * <code>WINDOWS</code>, or <code>ONTAP</code>.</p>
      */
     inline FileSystem& WithFileSystemType(FileSystemType&& value) { SetFileSystemType(std::move(value)); return *this;}
 
@@ -442,118 +443,118 @@ namespace Model
 
     /**
      * <p>Specifies the IDs of the subnets that the file system is accessible from. For
-     * Windows <code>MULTI_AZ_1</code> file system deployment type, there are two
-     * subnet IDs, one for the preferred file server and one for the standby file
+     * Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment type, there are
+     * two subnet IDs, one for the preferred file server and one for the standby file
      * server. The preferred file server subnet identified in the
      * <code>PreferredSubnetID</code> property. All other file systems have only one
      * subnet ID.</p> <p>For Lustre file systems, and Single-AZ Windows file systems,
      * this is the ID of the subnet that contains the endpoint for the file system. For
-     * <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
-     * is available in the <code>PreferredSubnetID</code>.</p>
+     * <code>MULTI_AZ_1</code> Windows and ONTAP file systems, the endpoint for the
+     * file system is available in the <code>PreferredSubnetID</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
      * <p>Specifies the IDs of the subnets that the file system is accessible from. For
-     * Windows <code>MULTI_AZ_1</code> file system deployment type, there are two
-     * subnet IDs, one for the preferred file server and one for the standby file
+     * Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment type, there are
+     * two subnet IDs, one for the preferred file server and one for the standby file
      * server. The preferred file server subnet identified in the
      * <code>PreferredSubnetID</code> property. All other file systems have only one
      * subnet ID.</p> <p>For Lustre file systems, and Single-AZ Windows file systems,
      * this is the ID of the subnet that contains the endpoint for the file system. For
-     * <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
-     * is available in the <code>PreferredSubnetID</code>.</p>
+     * <code>MULTI_AZ_1</code> Windows and ONTAP file systems, the endpoint for the
+     * file system is available in the <code>PreferredSubnetID</code>.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>Specifies the IDs of the subnets that the file system is accessible from. For
-     * Windows <code>MULTI_AZ_1</code> file system deployment type, there are two
-     * subnet IDs, one for the preferred file server and one for the standby file
+     * Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment type, there are
+     * two subnet IDs, one for the preferred file server and one for the standby file
      * server. The preferred file server subnet identified in the
      * <code>PreferredSubnetID</code> property. All other file systems have only one
      * subnet ID.</p> <p>For Lustre file systems, and Single-AZ Windows file systems,
      * this is the ID of the subnet that contains the endpoint for the file system. For
-     * <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
-     * is available in the <code>PreferredSubnetID</code>.</p>
+     * <code>MULTI_AZ_1</code> Windows and ONTAP file systems, the endpoint for the
+     * file system is available in the <code>PreferredSubnetID</code>.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
      * <p>Specifies the IDs of the subnets that the file system is accessible from. For
-     * Windows <code>MULTI_AZ_1</code> file system deployment type, there are two
-     * subnet IDs, one for the preferred file server and one for the standby file
+     * Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment type, there are
+     * two subnet IDs, one for the preferred file server and one for the standby file
      * server. The preferred file server subnet identified in the
      * <code>PreferredSubnetID</code> property. All other file systems have only one
      * subnet ID.</p> <p>For Lustre file systems, and Single-AZ Windows file systems,
      * this is the ID of the subnet that contains the endpoint for the file system. For
-     * <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
-     * is available in the <code>PreferredSubnetID</code>.</p>
+     * <code>MULTI_AZ_1</code> Windows and ONTAP file systems, the endpoint for the
+     * file system is available in the <code>PreferredSubnetID</code>.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
      * <p>Specifies the IDs of the subnets that the file system is accessible from. For
-     * Windows <code>MULTI_AZ_1</code> file system deployment type, there are two
-     * subnet IDs, one for the preferred file server and one for the standby file
+     * Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment type, there are
+     * two subnet IDs, one for the preferred file server and one for the standby file
      * server. The preferred file server subnet identified in the
      * <code>PreferredSubnetID</code> property. All other file systems have only one
      * subnet ID.</p> <p>For Lustre file systems, and Single-AZ Windows file systems,
      * this is the ID of the subnet that contains the endpoint for the file system. For
-     * <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
-     * is available in the <code>PreferredSubnetID</code>.</p>
+     * <code>MULTI_AZ_1</code> Windows and ONTAP file systems, the endpoint for the
+     * file system is available in the <code>PreferredSubnetID</code>.</p>
      */
     inline FileSystem& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
      * <p>Specifies the IDs of the subnets that the file system is accessible from. For
-     * Windows <code>MULTI_AZ_1</code> file system deployment type, there are two
-     * subnet IDs, one for the preferred file server and one for the standby file
+     * Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment type, there are
+     * two subnet IDs, one for the preferred file server and one for the standby file
      * server. The preferred file server subnet identified in the
      * <code>PreferredSubnetID</code> property. All other file systems have only one
      * subnet ID.</p> <p>For Lustre file systems, and Single-AZ Windows file systems,
      * this is the ID of the subnet that contains the endpoint for the file system. For
-     * <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
-     * is available in the <code>PreferredSubnetID</code>.</p>
+     * <code>MULTI_AZ_1</code> Windows and ONTAP file systems, the endpoint for the
+     * file system is available in the <code>PreferredSubnetID</code>.</p>
      */
     inline FileSystem& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the IDs of the subnets that the file system is accessible from. For
-     * Windows <code>MULTI_AZ_1</code> file system deployment type, there are two
-     * subnet IDs, one for the preferred file server and one for the standby file
+     * Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment type, there are
+     * two subnet IDs, one for the preferred file server and one for the standby file
      * server. The preferred file server subnet identified in the
      * <code>PreferredSubnetID</code> property. All other file systems have only one
      * subnet ID.</p> <p>For Lustre file systems, and Single-AZ Windows file systems,
      * this is the ID of the subnet that contains the endpoint for the file system. For
-     * <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
-     * is available in the <code>PreferredSubnetID</code>.</p>
+     * <code>MULTI_AZ_1</code> Windows and ONTAP file systems, the endpoint for the
+     * file system is available in the <code>PreferredSubnetID</code>.</p>
      */
     inline FileSystem& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
      * <p>Specifies the IDs of the subnets that the file system is accessible from. For
-     * Windows <code>MULTI_AZ_1</code> file system deployment type, there are two
-     * subnet IDs, one for the preferred file server and one for the standby file
+     * Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment type, there are
+     * two subnet IDs, one for the preferred file server and one for the standby file
      * server. The preferred file server subnet identified in the
      * <code>PreferredSubnetID</code> property. All other file systems have only one
      * subnet ID.</p> <p>For Lustre file systems, and Single-AZ Windows file systems,
      * this is the ID of the subnet that contains the endpoint for the file system. For
-     * <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
-     * is available in the <code>PreferredSubnetID</code>.</p>
+     * <code>MULTI_AZ_1</code> Windows and ONTAP file systems, the endpoint for the
+     * file system is available in the <code>PreferredSubnetID</code>.</p>
      */
     inline FileSystem& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specifies the IDs of the subnets that the file system is accessible from. For
-     * Windows <code>MULTI_AZ_1</code> file system deployment type, there are two
-     * subnet IDs, one for the preferred file server and one for the standby file
+     * Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment type, there are
+     * two subnet IDs, one for the preferred file server and one for the standby file
      * server. The preferred file server subnet identified in the
      * <code>PreferredSubnetID</code> property. All other file systems have only one
      * subnet ID.</p> <p>For Lustre file systems, and Single-AZ Windows file systems,
      * this is the ID of the subnet that contains the endpoint for the file system. For
-     * <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
-     * is available in the <code>PreferredSubnetID</code>.</p>
+     * <code>MULTI_AZ_1</code> Windows and ONTAP file systems, the endpoint for the
+     * file system is available in the <code>PreferredSubnetID</code>.</p>
      */
     inline FileSystem& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
@@ -709,98 +710,98 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
-     * file system's data for Amazon FSx for Windows File Server file systems and
-     * persistent Amazon FSx for Lustre file systems at rest. In either case, if not
-     * specified, the Amazon FSx managed key is used. The scratch Amazon FSx for Lustre
-     * file systems are always encrypted at rest using Amazon FSx managed keys. For
-     * more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt the file
+     * system's data for Amazon FSx for Windows File Server file systems, Amazon FSx
+     * for NetApp ONTAP file systems, and persistent Amazon FSx for Lustre file systems
+     * at rest. If not specified, the Amazon FSx managed key is used. The scratch
+     * Amazon FSx for Lustre file systems are always encrypted at rest using Amazon FSx
+     * managed keys. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-     * in the <i>AWS Key Management Service API Reference</i>.</p>
+     * in the <i>Key Management Service API Reference</i>.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
-     * file system's data for Amazon FSx for Windows File Server file systems and
-     * persistent Amazon FSx for Lustre file systems at rest. In either case, if not
-     * specified, the Amazon FSx managed key is used. The scratch Amazon FSx for Lustre
-     * file systems are always encrypted at rest using Amazon FSx managed keys. For
-     * more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt the file
+     * system's data for Amazon FSx for Windows File Server file systems, Amazon FSx
+     * for NetApp ONTAP file systems, and persistent Amazon FSx for Lustre file systems
+     * at rest. If not specified, the Amazon FSx managed key is used. The scratch
+     * Amazon FSx for Lustre file systems are always encrypted at rest using Amazon FSx
+     * managed keys. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-     * in the <i>AWS Key Management Service API Reference</i>.</p>
+     * in the <i>Key Management Service API Reference</i>.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
-     * file system's data for Amazon FSx for Windows File Server file systems and
-     * persistent Amazon FSx for Lustre file systems at rest. In either case, if not
-     * specified, the Amazon FSx managed key is used. The scratch Amazon FSx for Lustre
-     * file systems are always encrypted at rest using Amazon FSx managed keys. For
-     * more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt the file
+     * system's data for Amazon FSx for Windows File Server file systems, Amazon FSx
+     * for NetApp ONTAP file systems, and persistent Amazon FSx for Lustre file systems
+     * at rest. If not specified, the Amazon FSx managed key is used. The scratch
+     * Amazon FSx for Lustre file systems are always encrypted at rest using Amazon FSx
+     * managed keys. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-     * in the <i>AWS Key Management Service API Reference</i>.</p>
+     * in the <i>Key Management Service API Reference</i>.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
-     * file system's data for Amazon FSx for Windows File Server file systems and
-     * persistent Amazon FSx for Lustre file systems at rest. In either case, if not
-     * specified, the Amazon FSx managed key is used. The scratch Amazon FSx for Lustre
-     * file systems are always encrypted at rest using Amazon FSx managed keys. For
-     * more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt the file
+     * system's data for Amazon FSx for Windows File Server file systems, Amazon FSx
+     * for NetApp ONTAP file systems, and persistent Amazon FSx for Lustre file systems
+     * at rest. If not specified, the Amazon FSx managed key is used. The scratch
+     * Amazon FSx for Lustre file systems are always encrypted at rest using Amazon FSx
+     * managed keys. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-     * in the <i>AWS Key Management Service API Reference</i>.</p>
+     * in the <i>Key Management Service API Reference</i>.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
-     * file system's data for Amazon FSx for Windows File Server file systems and
-     * persistent Amazon FSx for Lustre file systems at rest. In either case, if not
-     * specified, the Amazon FSx managed key is used. The scratch Amazon FSx for Lustre
-     * file systems are always encrypted at rest using Amazon FSx managed keys. For
-     * more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt the file
+     * system's data for Amazon FSx for Windows File Server file systems, Amazon FSx
+     * for NetApp ONTAP file systems, and persistent Amazon FSx for Lustre file systems
+     * at rest. If not specified, the Amazon FSx managed key is used. The scratch
+     * Amazon FSx for Lustre file systems are always encrypted at rest using Amazon FSx
+     * managed keys. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-     * in the <i>AWS Key Management Service API Reference</i>.</p>
+     * in the <i>Key Management Service API Reference</i>.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
-     * file system's data for Amazon FSx for Windows File Server file systems and
-     * persistent Amazon FSx for Lustre file systems at rest. In either case, if not
-     * specified, the Amazon FSx managed key is used. The scratch Amazon FSx for Lustre
-     * file systems are always encrypted at rest using Amazon FSx managed keys. For
-     * more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt the file
+     * system's data for Amazon FSx for Windows File Server file systems, Amazon FSx
+     * for NetApp ONTAP file systems, and persistent Amazon FSx for Lustre file systems
+     * at rest. If not specified, the Amazon FSx managed key is used. The scratch
+     * Amazon FSx for Lustre file systems are always encrypted at rest using Amazon FSx
+     * managed keys. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-     * in the <i>AWS Key Management Service API Reference</i>.</p>
+     * in the <i>Key Management Service API Reference</i>.</p>
      */
     inline FileSystem& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
-     * file system's data for Amazon FSx for Windows File Server file systems and
-     * persistent Amazon FSx for Lustre file systems at rest. In either case, if not
-     * specified, the Amazon FSx managed key is used. The scratch Amazon FSx for Lustre
-     * file systems are always encrypted at rest using Amazon FSx managed keys. For
-     * more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt the file
+     * system's data for Amazon FSx for Windows File Server file systems, Amazon FSx
+     * for NetApp ONTAP file systems, and persistent Amazon FSx for Lustre file systems
+     * at rest. If not specified, the Amazon FSx managed key is used. The scratch
+     * Amazon FSx for Lustre file systems are always encrypted at rest using Amazon FSx
+     * managed keys. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-     * in the <i>AWS Key Management Service API Reference</i>.</p>
+     * in the <i>Key Management Service API Reference</i>.</p>
      */
     inline FileSystem& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
-     * file system's data for Amazon FSx for Windows File Server file systems and
-     * persistent Amazon FSx for Lustre file systems at rest. In either case, if not
-     * specified, the Amazon FSx managed key is used. The scratch Amazon FSx for Lustre
-     * file systems are always encrypted at rest using Amazon FSx managed keys. For
-     * more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt the file
+     * system's data for Amazon FSx for Windows File Server file systems, Amazon FSx
+     * for NetApp ONTAP file systems, and persistent Amazon FSx for Lustre file systems
+     * at rest. If not specified, the Amazon FSx managed key is used. The scratch
+     * Amazon FSx for Lustre file systems are always encrypted at rest using Amazon FSx
+     * managed keys. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-     * in the <i>AWS Key Management Service API Reference</i>.</p>
+     * in the <i>Key Management Service API Reference</i>.</p>
      */
     inline FileSystem& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -955,67 +956,98 @@ namespace Model
 
     /**
      * <p>A list of administrative actions for the file system that are in process or
-     * waiting to be processed. Administrative actions describe changes to the Windows
-     * file system that you have initiated using the <code>UpdateFileSystem</code>
-     * action. </p>
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx file system that you have initiated using the <code>UpdateFileSystem</code>
+     * action.</p>
      */
     inline const Aws::Vector<AdministrativeAction>& GetAdministrativeActions() const{ return m_administrativeActions; }
 
     /**
      * <p>A list of administrative actions for the file system that are in process or
-     * waiting to be processed. Administrative actions describe changes to the Windows
-     * file system that you have initiated using the <code>UpdateFileSystem</code>
-     * action. </p>
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx file system that you have initiated using the <code>UpdateFileSystem</code>
+     * action.</p>
      */
     inline bool AdministrativeActionsHasBeenSet() const { return m_administrativeActionsHasBeenSet; }
 
     /**
      * <p>A list of administrative actions for the file system that are in process or
-     * waiting to be processed. Administrative actions describe changes to the Windows
-     * file system that you have initiated using the <code>UpdateFileSystem</code>
-     * action. </p>
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx file system that you have initiated using the <code>UpdateFileSystem</code>
+     * action.</p>
      */
     inline void SetAdministrativeActions(const Aws::Vector<AdministrativeAction>& value) { m_administrativeActionsHasBeenSet = true; m_administrativeActions = value; }
 
     /**
      * <p>A list of administrative actions for the file system that are in process or
-     * waiting to be processed. Administrative actions describe changes to the Windows
-     * file system that you have initiated using the <code>UpdateFileSystem</code>
-     * action. </p>
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx file system that you have initiated using the <code>UpdateFileSystem</code>
+     * action.</p>
      */
     inline void SetAdministrativeActions(Aws::Vector<AdministrativeAction>&& value) { m_administrativeActionsHasBeenSet = true; m_administrativeActions = std::move(value); }
 
     /**
      * <p>A list of administrative actions for the file system that are in process or
-     * waiting to be processed. Administrative actions describe changes to the Windows
-     * file system that you have initiated using the <code>UpdateFileSystem</code>
-     * action. </p>
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx file system that you have initiated using the <code>UpdateFileSystem</code>
+     * action.</p>
      */
     inline FileSystem& WithAdministrativeActions(const Aws::Vector<AdministrativeAction>& value) { SetAdministrativeActions(value); return *this;}
 
     /**
      * <p>A list of administrative actions for the file system that are in process or
-     * waiting to be processed. Administrative actions describe changes to the Windows
-     * file system that you have initiated using the <code>UpdateFileSystem</code>
-     * action. </p>
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx file system that you have initiated using the <code>UpdateFileSystem</code>
+     * action.</p>
      */
     inline FileSystem& WithAdministrativeActions(Aws::Vector<AdministrativeAction>&& value) { SetAdministrativeActions(std::move(value)); return *this;}
 
     /**
      * <p>A list of administrative actions for the file system that are in process or
-     * waiting to be processed. Administrative actions describe changes to the Windows
-     * file system that you have initiated using the <code>UpdateFileSystem</code>
-     * action. </p>
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx file system that you have initiated using the <code>UpdateFileSystem</code>
+     * action.</p>
      */
     inline FileSystem& AddAdministrativeActions(const AdministrativeAction& value) { m_administrativeActionsHasBeenSet = true; m_administrativeActions.push_back(value); return *this; }
 
     /**
      * <p>A list of administrative actions for the file system that are in process or
-     * waiting to be processed. Administrative actions describe changes to the Windows
-     * file system that you have initiated using the <code>UpdateFileSystem</code>
-     * action. </p>
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx file system that you have initiated using the <code>UpdateFileSystem</code>
+     * action.</p>
      */
     inline FileSystem& AddAdministrativeActions(AdministrativeAction&& value) { m_administrativeActionsHasBeenSet = true; m_administrativeActions.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The configuration for this FSx for NetApp ONTAP file system.</p>
+     */
+    inline const OntapFileSystemConfiguration& GetOntapConfiguration() const{ return m_ontapConfiguration; }
+
+    /**
+     * <p>The configuration for this FSx for NetApp ONTAP file system.</p>
+     */
+    inline bool OntapConfigurationHasBeenSet() const { return m_ontapConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration for this FSx for NetApp ONTAP file system.</p>
+     */
+    inline void SetOntapConfiguration(const OntapFileSystemConfiguration& value) { m_ontapConfigurationHasBeenSet = true; m_ontapConfiguration = value; }
+
+    /**
+     * <p>The configuration for this FSx for NetApp ONTAP file system.</p>
+     */
+    inline void SetOntapConfiguration(OntapFileSystemConfiguration&& value) { m_ontapConfigurationHasBeenSet = true; m_ontapConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration for this FSx for NetApp ONTAP file system.</p>
+     */
+    inline FileSystem& WithOntapConfiguration(const OntapFileSystemConfiguration& value) { SetOntapConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration for this FSx for NetApp ONTAP file system.</p>
+     */
+    inline FileSystem& WithOntapConfiguration(OntapFileSystemConfiguration&& value) { SetOntapConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -1072,6 +1104,9 @@ namespace Model
 
     Aws::Vector<AdministrativeAction> m_administrativeActions;
     bool m_administrativeActionsHasBeenSet;
+
+    OntapFileSystemConfiguration m_ontapConfiguration;
+    bool m_ontapConfigurationHasBeenSet;
   };
 
 } // namespace Model

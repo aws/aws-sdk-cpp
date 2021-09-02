@@ -35,7 +35,10 @@ Backup::Backup() :
     m_directoryInformationHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_sourceBackupIdHasBeenSet(false),
-    m_sourceBackupRegionHasBeenSet(false)
+    m_sourceBackupRegionHasBeenSet(false),
+    m_resourceType(ResourceType::NOT_SET),
+    m_resourceTypeHasBeenSet(false),
+    m_volumeHasBeenSet(false)
 {
 }
 
@@ -56,7 +59,10 @@ Backup::Backup(JsonView jsonValue) :
     m_directoryInformationHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_sourceBackupIdHasBeenSet(false),
-    m_sourceBackupRegionHasBeenSet(false)
+    m_sourceBackupRegionHasBeenSet(false),
+    m_resourceType(ResourceType::NOT_SET),
+    m_resourceTypeHasBeenSet(false),
+    m_volumeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -164,6 +170,20 @@ Backup& Backup::operator =(JsonView jsonValue)
     m_sourceBackupRegionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResourceType"))
+  {
+    m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
+
+    m_resourceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Volume"))
+  {
+    m_volume = jsonValue.GetObject("Volume");
+
+    m_volumeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -254,6 +274,17 @@ JsonValue Backup::Jsonize() const
   if(m_sourceBackupRegionHasBeenSet)
   {
    payload.WithString("SourceBackupRegion", m_sourceBackupRegion);
+
+  }
+
+  if(m_resourceTypeHasBeenSet)
+  {
+   payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  }
+
+  if(m_volumeHasBeenSet)
+  {
+   payload.WithObject("Volume", m_volume.Jsonize());
 
   }
 

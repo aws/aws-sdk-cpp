@@ -23,7 +23,8 @@ UpdateServerRequest::UpdateServerRequest() :
     m_loggingRoleHasBeenSet(false),
     m_protocolsHasBeenSet(false),
     m_securityPolicyNameHasBeenSet(false),
-    m_serverIdHasBeenSet(false)
+    m_serverIdHasBeenSet(false),
+    m_workflowDetailsHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,12 @@ Aws::String UpdateServerRequest::SerializePayload() const
   if(m_serverIdHasBeenSet)
   {
    payload.WithString("ServerId", m_serverId);
+
+  }
+
+  if(m_workflowDetailsHasBeenSet)
+  {
+   payload.WithObject("WorkflowDetails", m_workflowDetails.Jsonize());
 
   }
 

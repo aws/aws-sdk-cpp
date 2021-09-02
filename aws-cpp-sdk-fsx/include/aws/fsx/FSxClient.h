@@ -18,17 +18,26 @@
 #include <aws/fsx/model/CreateDataRepositoryTaskResult.h>
 #include <aws/fsx/model/CreateFileSystemResult.h>
 #include <aws/fsx/model/CreateFileSystemFromBackupResult.h>
+#include <aws/fsx/model/CreateStorageVirtualMachineResult.h>
+#include <aws/fsx/model/CreateVolumeResult.h>
+#include <aws/fsx/model/CreateVolumeFromBackupResult.h>
 #include <aws/fsx/model/DeleteBackupResult.h>
 #include <aws/fsx/model/DeleteFileSystemResult.h>
+#include <aws/fsx/model/DeleteStorageVirtualMachineResult.h>
+#include <aws/fsx/model/DeleteVolumeResult.h>
 #include <aws/fsx/model/DescribeBackupsResult.h>
 #include <aws/fsx/model/DescribeDataRepositoryTasksResult.h>
 #include <aws/fsx/model/DescribeFileSystemAliasesResult.h>
 #include <aws/fsx/model/DescribeFileSystemsResult.h>
+#include <aws/fsx/model/DescribeStorageVirtualMachinesResult.h>
+#include <aws/fsx/model/DescribeVolumesResult.h>
 #include <aws/fsx/model/DisassociateFileSystemAliasesResult.h>
 #include <aws/fsx/model/ListTagsForResourceResult.h>
 #include <aws/fsx/model/TagResourceResult.h>
 #include <aws/fsx/model/UntagResourceResult.h>
 #include <aws/fsx/model/UpdateFileSystemResult.h>
+#include <aws/fsx/model/UpdateStorageVirtualMachineResult.h>
+#include <aws/fsx/model/UpdateVolumeResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -75,17 +84,26 @@ namespace Model
         class CreateDataRepositoryTaskRequest;
         class CreateFileSystemRequest;
         class CreateFileSystemFromBackupRequest;
+        class CreateStorageVirtualMachineRequest;
+        class CreateVolumeRequest;
+        class CreateVolumeFromBackupRequest;
         class DeleteBackupRequest;
         class DeleteFileSystemRequest;
+        class DeleteStorageVirtualMachineRequest;
+        class DeleteVolumeRequest;
         class DescribeBackupsRequest;
         class DescribeDataRepositoryTasksRequest;
         class DescribeFileSystemAliasesRequest;
         class DescribeFileSystemsRequest;
+        class DescribeStorageVirtualMachinesRequest;
+        class DescribeVolumesRequest;
         class DisassociateFileSystemAliasesRequest;
         class ListTagsForResourceRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateFileSystemRequest;
+        class UpdateStorageVirtualMachineRequest;
+        class UpdateVolumeRequest;
 
         typedef Aws::Utils::Outcome<AssociateFileSystemAliasesResult, FSxError> AssociateFileSystemAliasesOutcome;
         typedef Aws::Utils::Outcome<CancelDataRepositoryTaskResult, FSxError> CancelDataRepositoryTaskOutcome;
@@ -94,17 +112,26 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateDataRepositoryTaskResult, FSxError> CreateDataRepositoryTaskOutcome;
         typedef Aws::Utils::Outcome<CreateFileSystemResult, FSxError> CreateFileSystemOutcome;
         typedef Aws::Utils::Outcome<CreateFileSystemFromBackupResult, FSxError> CreateFileSystemFromBackupOutcome;
+        typedef Aws::Utils::Outcome<CreateStorageVirtualMachineResult, FSxError> CreateStorageVirtualMachineOutcome;
+        typedef Aws::Utils::Outcome<CreateVolumeResult, FSxError> CreateVolumeOutcome;
+        typedef Aws::Utils::Outcome<CreateVolumeFromBackupResult, FSxError> CreateVolumeFromBackupOutcome;
         typedef Aws::Utils::Outcome<DeleteBackupResult, FSxError> DeleteBackupOutcome;
         typedef Aws::Utils::Outcome<DeleteFileSystemResult, FSxError> DeleteFileSystemOutcome;
+        typedef Aws::Utils::Outcome<DeleteStorageVirtualMachineResult, FSxError> DeleteStorageVirtualMachineOutcome;
+        typedef Aws::Utils::Outcome<DeleteVolumeResult, FSxError> DeleteVolumeOutcome;
         typedef Aws::Utils::Outcome<DescribeBackupsResult, FSxError> DescribeBackupsOutcome;
         typedef Aws::Utils::Outcome<DescribeDataRepositoryTasksResult, FSxError> DescribeDataRepositoryTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeFileSystemAliasesResult, FSxError> DescribeFileSystemAliasesOutcome;
         typedef Aws::Utils::Outcome<DescribeFileSystemsResult, FSxError> DescribeFileSystemsOutcome;
+        typedef Aws::Utils::Outcome<DescribeStorageVirtualMachinesResult, FSxError> DescribeStorageVirtualMachinesOutcome;
+        typedef Aws::Utils::Outcome<DescribeVolumesResult, FSxError> DescribeVolumesOutcome;
         typedef Aws::Utils::Outcome<DisassociateFileSystemAliasesResult, FSxError> DisassociateFileSystemAliasesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, FSxError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, FSxError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, FSxError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateFileSystemResult, FSxError> UpdateFileSystemOutcome;
+        typedef Aws::Utils::Outcome<UpdateStorageVirtualMachineResult, FSxError> UpdateStorageVirtualMachineOutcome;
+        typedef Aws::Utils::Outcome<UpdateVolumeResult, FSxError> UpdateVolumeOutcome;
 
         typedef std::future<AssociateFileSystemAliasesOutcome> AssociateFileSystemAliasesOutcomeCallable;
         typedef std::future<CancelDataRepositoryTaskOutcome> CancelDataRepositoryTaskOutcomeCallable;
@@ -113,17 +140,26 @@ namespace Model
         typedef std::future<CreateDataRepositoryTaskOutcome> CreateDataRepositoryTaskOutcomeCallable;
         typedef std::future<CreateFileSystemOutcome> CreateFileSystemOutcomeCallable;
         typedef std::future<CreateFileSystemFromBackupOutcome> CreateFileSystemFromBackupOutcomeCallable;
+        typedef std::future<CreateStorageVirtualMachineOutcome> CreateStorageVirtualMachineOutcomeCallable;
+        typedef std::future<CreateVolumeOutcome> CreateVolumeOutcomeCallable;
+        typedef std::future<CreateVolumeFromBackupOutcome> CreateVolumeFromBackupOutcomeCallable;
         typedef std::future<DeleteBackupOutcome> DeleteBackupOutcomeCallable;
         typedef std::future<DeleteFileSystemOutcome> DeleteFileSystemOutcomeCallable;
+        typedef std::future<DeleteStorageVirtualMachineOutcome> DeleteStorageVirtualMachineOutcomeCallable;
+        typedef std::future<DeleteVolumeOutcome> DeleteVolumeOutcomeCallable;
         typedef std::future<DescribeBackupsOutcome> DescribeBackupsOutcomeCallable;
         typedef std::future<DescribeDataRepositoryTasksOutcome> DescribeDataRepositoryTasksOutcomeCallable;
         typedef std::future<DescribeFileSystemAliasesOutcome> DescribeFileSystemAliasesOutcomeCallable;
         typedef std::future<DescribeFileSystemsOutcome> DescribeFileSystemsOutcomeCallable;
+        typedef std::future<DescribeStorageVirtualMachinesOutcome> DescribeStorageVirtualMachinesOutcomeCallable;
+        typedef std::future<DescribeVolumesOutcome> DescribeVolumesOutcomeCallable;
         typedef std::future<DisassociateFileSystemAliasesOutcome> DisassociateFileSystemAliasesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateFileSystemOutcome> UpdateFileSystemOutcomeCallable;
+        typedef std::future<UpdateStorageVirtualMachineOutcome> UpdateStorageVirtualMachineOutcomeCallable;
+        typedef std::future<UpdateVolumeOutcome> UpdateVolumeOutcomeCallable;
 } // namespace Model
 
   class FSxClient;
@@ -135,17 +171,26 @@ namespace Model
     typedef std::function<void(const FSxClient*, const Model::CreateDataRepositoryTaskRequest&, const Model::CreateDataRepositoryTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataRepositoryTaskResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::CreateFileSystemRequest&, const Model::CreateFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFileSystemResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::CreateFileSystemFromBackupRequest&, const Model::CreateFileSystemFromBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFileSystemFromBackupResponseReceivedHandler;
+    typedef std::function<void(const FSxClient*, const Model::CreateStorageVirtualMachineRequest&, const Model::CreateStorageVirtualMachineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStorageVirtualMachineResponseReceivedHandler;
+    typedef std::function<void(const FSxClient*, const Model::CreateVolumeRequest&, const Model::CreateVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVolumeResponseReceivedHandler;
+    typedef std::function<void(const FSxClient*, const Model::CreateVolumeFromBackupRequest&, const Model::CreateVolumeFromBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVolumeFromBackupResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DeleteBackupRequest&, const Model::DeleteBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DeleteFileSystemRequest&, const Model::DeleteFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFileSystemResponseReceivedHandler;
+    typedef std::function<void(const FSxClient*, const Model::DeleteStorageVirtualMachineRequest&, const Model::DeleteStorageVirtualMachineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStorageVirtualMachineResponseReceivedHandler;
+    typedef std::function<void(const FSxClient*, const Model::DeleteVolumeRequest&, const Model::DeleteVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVolumeResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DescribeBackupsRequest&, const Model::DescribeBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBackupsResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DescribeDataRepositoryTasksRequest&, const Model::DescribeDataRepositoryTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataRepositoryTasksResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DescribeFileSystemAliasesRequest&, const Model::DescribeFileSystemAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemAliasesResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DescribeFileSystemsRequest&, const Model::DescribeFileSystemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemsResponseReceivedHandler;
+    typedef std::function<void(const FSxClient*, const Model::DescribeStorageVirtualMachinesRequest&, const Model::DescribeStorageVirtualMachinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStorageVirtualMachinesResponseReceivedHandler;
+    typedef std::function<void(const FSxClient*, const Model::DescribeVolumesRequest&, const Model::DescribeVolumesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVolumesResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DisassociateFileSystemAliasesRequest&, const Model::DisassociateFileSystemAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateFileSystemAliasesResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::UpdateFileSystemRequest&, const Model::UpdateFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFileSystemResponseReceivedHandler;
+    typedef std::function<void(const FSxClient*, const Model::UpdateStorageVirtualMachineRequest&, const Model::UpdateStorageVirtualMachineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStorageVirtualMachineResponseReceivedHandler;
+    typedef std::function<void(const FSxClient*, const Model::UpdateVolumeRequest&, const Model::UpdateVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVolumeResponseReceivedHandler;
 
   /**
    * <p>Amazon FSx is a fully managed service that makes it easy for storage and
@@ -180,7 +225,7 @@ namespace Model
 
         /**
          * <p>Use this action to associate one or more Domain Name Server (DNS) aliases
-         * with an existing Amazon FSx for Windows File Server file system. A file systen
+         * with an existing Amazon FSx for Windows File Server file system. A file system
          * can have a maximum of 50 DNS aliases associated with it at any one time. If you
          * try to associate a DNS alias that is already associated with the file system,
          * FSx takes no action on that alias in the request. For more information, see <a
@@ -200,7 +245,7 @@ namespace Model
 
         /**
          * <p>Use this action to associate one or more Domain Name Server (DNS) aliases
-         * with an existing Amazon FSx for Windows File Server file system. A file systen
+         * with an existing Amazon FSx for Windows File Server file system. A file system
          * can have a maximum of 50 DNS aliases associated with it at any one time. If you
          * try to associate a DNS alias that is already associated with the file system,
          * FSx takes no action on that alias in the request. For more information, see <a
@@ -222,7 +267,7 @@ namespace Model
 
         /**
          * <p>Use this action to associate one or more Domain Name Server (DNS) aliases
-         * with an existing Amazon FSx for Windows File Server file system. A file systen
+         * with an existing Amazon FSx for Windows File Server file system. A file system
          * can have a maximum of 50 DNS aliases associated with it at any one time. If you
          * try to associate a DNS alias that is already associated with the file system,
          * FSx takes no action on that alias in the request. For more information, see <a
@@ -286,23 +331,24 @@ namespace Model
         virtual void CancelDataRepositoryTaskAsync(const Model::CancelDataRepositoryTaskRequest& request, const CancelDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Copies an existing backup within the same AWS account to another Region
-         * (cross-Region copy) or within the same Region (in-Region copy). You can have up
-         * to five backup copy requests in progress to a single destination Region per
-         * account.</p> <p>You can use cross-Region backup copies for cross-region disaster
-         * recovery. You periodically take backups and copy them to another Region so that
-         * in the event of a disaster in the primary Region, you can restore from backup
-         * and recover availability quickly in the other Region. You can make cross-Region
-         * copies only within your AWS partition.</p> <p> You can also use backup copies to
-         * clone your file data set to another Region or within the same Region.</p> <p>You
-         * can use the <code>SourceRegion</code> parameter to specify the AWS Region from
-         * which the backup will be copied. For example, if you make the call from the
-         * <code>us-west-1</code> Region and want to copy a backup from the
-         * <code>us-east-2</code> Region, you specify <code>us-east-2</code> in the
-         * <code>SourceRegion</code> parameter to make a cross-Region copy. If you don't
-         * specify a Region, the backup copy is created in the same Region where the
-         * request is sent from (in-Region copy).</p> <p>For more information on creating
-         * backup copies, see <a
+         * <p>Copies an existing backup within the same Amazon Web Services account to
+         * another Amazon Web Services Region (cross-Region copy) or within the same Amazon
+         * Web Services Region (in-Region copy). You can have up to five backup copy
+         * requests in progress to a single destination Region per account.</p> <p>You can
+         * use cross-Region backup copies for cross-region disaster recovery. You
+         * periodically take backups and copy them to another Region so that in the event
+         * of a disaster in the primary Region, you can restore from backup and recover
+         * availability quickly in the other Region. You can make cross-Region copies only
+         * within your Amazon Web Services partition.</p> <p> You can also use backup
+         * copies to clone your file data set to another Region or within the same
+         * Region.</p> <p>You can use the <code>SourceRegion</code> parameter to specify
+         * the Amazon Web Services Region from which the backup will be copied. For
+         * example, if you make the call from the <code>us-west-1</code> Region and want to
+         * copy a backup from the <code>us-east-2</code> Region, you specify
+         * <code>us-east-2</code> in the <code>SourceRegion</code> parameter to make a
+         * cross-Region copy. If you don't specify a Region, the backup copy is created in
+         * the same Region where the request is sent from (in-Region copy).</p> <p>For more
+         * information on creating backup copies, see <a
          * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#copy-backups">
          * Copying backups</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
          * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html#copy-backups">Copying
@@ -314,23 +360,24 @@ namespace Model
         virtual Model::CopyBackupOutcome CopyBackup(const Model::CopyBackupRequest& request) const;
 
         /**
-         * <p>Copies an existing backup within the same AWS account to another Region
-         * (cross-Region copy) or within the same Region (in-Region copy). You can have up
-         * to five backup copy requests in progress to a single destination Region per
-         * account.</p> <p>You can use cross-Region backup copies for cross-region disaster
-         * recovery. You periodically take backups and copy them to another Region so that
-         * in the event of a disaster in the primary Region, you can restore from backup
-         * and recover availability quickly in the other Region. You can make cross-Region
-         * copies only within your AWS partition.</p> <p> You can also use backup copies to
-         * clone your file data set to another Region or within the same Region.</p> <p>You
-         * can use the <code>SourceRegion</code> parameter to specify the AWS Region from
-         * which the backup will be copied. For example, if you make the call from the
-         * <code>us-west-1</code> Region and want to copy a backup from the
-         * <code>us-east-2</code> Region, you specify <code>us-east-2</code> in the
-         * <code>SourceRegion</code> parameter to make a cross-Region copy. If you don't
-         * specify a Region, the backup copy is created in the same Region where the
-         * request is sent from (in-Region copy).</p> <p>For more information on creating
-         * backup copies, see <a
+         * <p>Copies an existing backup within the same Amazon Web Services account to
+         * another Amazon Web Services Region (cross-Region copy) or within the same Amazon
+         * Web Services Region (in-Region copy). You can have up to five backup copy
+         * requests in progress to a single destination Region per account.</p> <p>You can
+         * use cross-Region backup copies for cross-region disaster recovery. You
+         * periodically take backups and copy them to another Region so that in the event
+         * of a disaster in the primary Region, you can restore from backup and recover
+         * availability quickly in the other Region. You can make cross-Region copies only
+         * within your Amazon Web Services partition.</p> <p> You can also use backup
+         * copies to clone your file data set to another Region or within the same
+         * Region.</p> <p>You can use the <code>SourceRegion</code> parameter to specify
+         * the Amazon Web Services Region from which the backup will be copied. For
+         * example, if you make the call from the <code>us-west-1</code> Region and want to
+         * copy a backup from the <code>us-east-2</code> Region, you specify
+         * <code>us-east-2</code> in the <code>SourceRegion</code> parameter to make a
+         * cross-Region copy. If you don't specify a Region, the backup copy is created in
+         * the same Region where the request is sent from (in-Region copy).</p> <p>For more
+         * information on creating backup copies, see <a
          * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#copy-backups">
          * Copying backups</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
          * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html#copy-backups">Copying
@@ -344,23 +391,24 @@ namespace Model
         virtual Model::CopyBackupOutcomeCallable CopyBackupCallable(const Model::CopyBackupRequest& request) const;
 
         /**
-         * <p>Copies an existing backup within the same AWS account to another Region
-         * (cross-Region copy) or within the same Region (in-Region copy). You can have up
-         * to five backup copy requests in progress to a single destination Region per
-         * account.</p> <p>You can use cross-Region backup copies for cross-region disaster
-         * recovery. You periodically take backups and copy them to another Region so that
-         * in the event of a disaster in the primary Region, you can restore from backup
-         * and recover availability quickly in the other Region. You can make cross-Region
-         * copies only within your AWS partition.</p> <p> You can also use backup copies to
-         * clone your file data set to another Region or within the same Region.</p> <p>You
-         * can use the <code>SourceRegion</code> parameter to specify the AWS Region from
-         * which the backup will be copied. For example, if you make the call from the
-         * <code>us-west-1</code> Region and want to copy a backup from the
-         * <code>us-east-2</code> Region, you specify <code>us-east-2</code> in the
-         * <code>SourceRegion</code> parameter to make a cross-Region copy. If you don't
-         * specify a Region, the backup copy is created in the same Region where the
-         * request is sent from (in-Region copy).</p> <p>For more information on creating
-         * backup copies, see <a
+         * <p>Copies an existing backup within the same Amazon Web Services account to
+         * another Amazon Web Services Region (cross-Region copy) or within the same Amazon
+         * Web Services Region (in-Region copy). You can have up to five backup copy
+         * requests in progress to a single destination Region per account.</p> <p>You can
+         * use cross-Region backup copies for cross-region disaster recovery. You
+         * periodically take backups and copy them to another Region so that in the event
+         * of a disaster in the primary Region, you can restore from backup and recover
+         * availability quickly in the other Region. You can make cross-Region copies only
+         * within your Amazon Web Services partition.</p> <p> You can also use backup
+         * copies to clone your file data set to another Region or within the same
+         * Region.</p> <p>You can use the <code>SourceRegion</code> parameter to specify
+         * the Amazon Web Services Region from which the backup will be copied. For
+         * example, if you make the call from the <code>us-west-1</code> Region and want to
+         * copy a backup from the <code>us-east-2</code> Region, you specify
+         * <code>us-east-2</code> in the <code>SourceRegion</code> parameter to make a
+         * cross-Region copy. If you don't specify a Region, the backup copy is created in
+         * the same Region where the request is sent from (in-Region copy).</p> <p>For more
+         * information on creating backup copies, see <a
          * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#copy-backups">
          * Copying backups</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
          * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html#copy-backups">Copying
@@ -374,22 +422,26 @@ namespace Model
         virtual void CopyBackupAsync(const Model::CopyBackupRequest& request, const CopyBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a backup of an existing Amazon FSx file system. Creating regular
-         * backups for your file system is a best practice, enabling you to restore a file
-         * system from a backup if an issue arises with the original file system.</p>
-         * <p>For Amazon FSx for Lustre file systems, you can create a backup only for file
-         * systems with the following configuration:</p> <ul> <li> <p>a Persistent
-         * deployment type</p> </li> <li> <p>is <i>not</i> linked to a data
-         * respository.</p> </li> </ul> <p>For more information about backing up Amazon FSx
-         * for Lustre file systems, see <a
+         * <p>Creates a backup of an existing Amazon FSx for Windows File Server or Amazon
+         * FSx for Lustre file system, or of an Amazon FSx for NetApp ONTAP volume.
+         * Creating regular backups is a best practice, enabling you to restore a file
+         * system or volume from a backup if an issue arises with the original file system
+         * or volume.</p> <p>For Amazon FSx for Lustre file systems, you can create a
+         * backup only for file systems with the following configuration:</p> <ul> <li>
+         * <p>a Persistent deployment type</p> </li> <li> <p>is <i>not</i> linked to a data
+         * repository.</p> </li> </ul> <p>For more information about backups, see the
+         * following:</p> <ul> <li> <p>For Amazon FSx for Lustre, see <a
          * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
-         * with FSx for Lustre backups</a>.</p> <p>For more information about backing up
-         * Amazon FSx for Windows file systems, see <a
+         * with FSx for Lustre backups</a>.</p> </li> <li> <p>For Amazon FSx for Windows,
+         * see <a
          * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
-         * with FSx for Windows backups</a>.</p> <p>If a backup with the specified client
-         * request token exists, and the parameters match, this operation returns the
-         * description of the existing backup. If a backup specified client request token
-         * exists, and the parameters don't match, this operation returns
+         * with FSx for Windows backups</a>.</p> </li> <li> <p>For Amazon FSx for NetApp
+         * ONTAP, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/using-backups.html">Working
+         * with FSx for NetApp ONTAP backups</a>.</p> </li> </ul> <p>If a backup with the
+         * specified client request token exists, and the parameters match, this operation
+         * returns the description of the existing backup. If a backup specified client
+         * request token exists, and the parameters don't match, this operation returns
          * <code>IncompatibleParameterError</code>. If a backup with the specified client
          * request token doesn't exist, <code>CreateBackup</code> does the following: </p>
          * <ul> <li> <p>Creates a new Amazon FSx backup with an assigned ID, and an initial
@@ -410,22 +462,26 @@ namespace Model
         virtual Model::CreateBackupOutcome CreateBackup(const Model::CreateBackupRequest& request) const;
 
         /**
-         * <p>Creates a backup of an existing Amazon FSx file system. Creating regular
-         * backups for your file system is a best practice, enabling you to restore a file
-         * system from a backup if an issue arises with the original file system.</p>
-         * <p>For Amazon FSx for Lustre file systems, you can create a backup only for file
-         * systems with the following configuration:</p> <ul> <li> <p>a Persistent
-         * deployment type</p> </li> <li> <p>is <i>not</i> linked to a data
-         * respository.</p> </li> </ul> <p>For more information about backing up Amazon FSx
-         * for Lustre file systems, see <a
+         * <p>Creates a backup of an existing Amazon FSx for Windows File Server or Amazon
+         * FSx for Lustre file system, or of an Amazon FSx for NetApp ONTAP volume.
+         * Creating regular backups is a best practice, enabling you to restore a file
+         * system or volume from a backup if an issue arises with the original file system
+         * or volume.</p> <p>For Amazon FSx for Lustre file systems, you can create a
+         * backup only for file systems with the following configuration:</p> <ul> <li>
+         * <p>a Persistent deployment type</p> </li> <li> <p>is <i>not</i> linked to a data
+         * repository.</p> </li> </ul> <p>For more information about backups, see the
+         * following:</p> <ul> <li> <p>For Amazon FSx for Lustre, see <a
          * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
-         * with FSx for Lustre backups</a>.</p> <p>For more information about backing up
-         * Amazon FSx for Windows file systems, see <a
+         * with FSx for Lustre backups</a>.</p> </li> <li> <p>For Amazon FSx for Windows,
+         * see <a
          * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
-         * with FSx for Windows backups</a>.</p> <p>If a backup with the specified client
-         * request token exists, and the parameters match, this operation returns the
-         * description of the existing backup. If a backup specified client request token
-         * exists, and the parameters don't match, this operation returns
+         * with FSx for Windows backups</a>.</p> </li> <li> <p>For Amazon FSx for NetApp
+         * ONTAP, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/using-backups.html">Working
+         * with FSx for NetApp ONTAP backups</a>.</p> </li> </ul> <p>If a backup with the
+         * specified client request token exists, and the parameters match, this operation
+         * returns the description of the existing backup. If a backup specified client
+         * request token exists, and the parameters don't match, this operation returns
          * <code>IncompatibleParameterError</code>. If a backup with the specified client
          * request token doesn't exist, <code>CreateBackup</code> does the following: </p>
          * <ul> <li> <p>Creates a new Amazon FSx backup with an assigned ID, and an initial
@@ -448,22 +504,26 @@ namespace Model
         virtual Model::CreateBackupOutcomeCallable CreateBackupCallable(const Model::CreateBackupRequest& request) const;
 
         /**
-         * <p>Creates a backup of an existing Amazon FSx file system. Creating regular
-         * backups for your file system is a best practice, enabling you to restore a file
-         * system from a backup if an issue arises with the original file system.</p>
-         * <p>For Amazon FSx for Lustre file systems, you can create a backup only for file
-         * systems with the following configuration:</p> <ul> <li> <p>a Persistent
-         * deployment type</p> </li> <li> <p>is <i>not</i> linked to a data
-         * respository.</p> </li> </ul> <p>For more information about backing up Amazon FSx
-         * for Lustre file systems, see <a
+         * <p>Creates a backup of an existing Amazon FSx for Windows File Server or Amazon
+         * FSx for Lustre file system, or of an Amazon FSx for NetApp ONTAP volume.
+         * Creating regular backups is a best practice, enabling you to restore a file
+         * system or volume from a backup if an issue arises with the original file system
+         * or volume.</p> <p>For Amazon FSx for Lustre file systems, you can create a
+         * backup only for file systems with the following configuration:</p> <ul> <li>
+         * <p>a Persistent deployment type</p> </li> <li> <p>is <i>not</i> linked to a data
+         * repository.</p> </li> </ul> <p>For more information about backups, see the
+         * following:</p> <ul> <li> <p>For Amazon FSx for Lustre, see <a
          * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
-         * with FSx for Lustre backups</a>.</p> <p>For more information about backing up
-         * Amazon FSx for Windows file systems, see <a
+         * with FSx for Lustre backups</a>.</p> </li> <li> <p>For Amazon FSx for Windows,
+         * see <a
          * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
-         * with FSx for Windows backups</a>.</p> <p>If a backup with the specified client
-         * request token exists, and the parameters match, this operation returns the
-         * description of the existing backup. If a backup specified client request token
-         * exists, and the parameters don't match, this operation returns
+         * with FSx for Windows backups</a>.</p> </li> <li> <p>For Amazon FSx for NetApp
+         * ONTAP, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/using-backups.html">Working
+         * with FSx for NetApp ONTAP backups</a>.</p> </li> </ul> <p>If a backup with the
+         * specified client request token exists, and the parameters match, this operation
+         * returns the description of the existing backup. If a backup specified client
+         * request token exists, and the parameters don't match, this operation returns
          * <code>IncompatibleParameterError</code>. If a backup with the specified client
          * request token doesn't exist, <code>CreateBackup</code> does the following: </p>
          * <ul> <li> <p>Creates a new Amazon FSx backup with an assigned ID, and an initial
@@ -641,25 +701,26 @@ namespace Model
         virtual void CreateFileSystemAsync(const Model::CreateFileSystemRequest& request, const CreateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new Amazon FSx file system from an existing Amazon FSx backup.</p>
-         * <p>If a file system with the specified client request token exists and the
-         * parameters match, this operation returns the description of the file system. If
-         * a client request token specified by the file system exists and the parameters
-         * don't match, this call returns <code>IncompatibleParameterError</code>. If a
-         * file system with the specified client request token doesn't exist, this
-         * operation does the following:</p> <ul> <li> <p>Creates a new Amazon FSx file
-         * system from backup with an assigned ID, and an initial lifecycle state of
-         * <code>CREATING</code>.</p> </li> <li> <p>Returns the description of the file
-         * system.</p> </li> </ul> <p>Parameters like Active Directory, default share name,
-         * automatic backup, and backup settings default to the parameters of the file
-         * system that was backed up, unless overridden. You can explicitly supply other
-         * settings.</p> <p>By using the idempotent operation, you can retry a
-         * <code>CreateFileSystemFromBackup</code> call without the risk of creating an
-         * extra file system. This approach can be useful when an initial call fails in a
-         * way that makes it unclear whether a file system was created. Examples are if a
-         * transport level timeout occurred, or your connection was reset. If you use the
-         * same client request token and the initial call created a file system, the client
-         * receives success as long as the parameters are the same.</p>  <p>The
+         * <p>Creates a new Amazon FSx for Lustre or Amazon FSx for Windows File Server
+         * file system from an existing Amazon FSx backup.</p> <p>If a file system with the
+         * specified client request token exists and the parameters match, this operation
+         * returns the description of the file system. If a client request token specified
+         * by the file system exists and the parameters don't match, this call returns
+         * <code>IncompatibleParameterError</code>. If a file system with the specified
+         * client request token doesn't exist, this operation does the following:</p> <ul>
+         * <li> <p>Creates a new Amazon FSx file system from backup with an assigned ID,
+         * and an initial lifecycle state of <code>CREATING</code>.</p> </li> <li>
+         * <p>Returns the description of the file system.</p> </li> </ul> <p>Parameters
+         * like Active Directory, default share name, automatic backup, and backup settings
+         * default to the parameters of the file system that was backed up, unless
+         * overridden. You can explicitly supply other settings.</p> <p>By using the
+         * idempotent operation, you can retry a <code>CreateFileSystemFromBackup</code>
+         * call without the risk of creating an extra file system. This approach can be
+         * useful when an initial call fails in a way that makes it unclear whether a file
+         * system was created. Examples are if a transport level timeout occurred, or your
+         * connection was reset. If you use the same client request token and the initial
+         * call created a file system, the client receives success as long as the
+         * parameters are the same.</p>  <p>The
          * <code>CreateFileSystemFromBackup</code> call returns while the file system's
          * lifecycle state is still <code>CREATING</code>. You can check the file-system
          * creation status by calling the <a>DescribeFileSystems</a> operation, which
@@ -671,25 +732,26 @@ namespace Model
         virtual Model::CreateFileSystemFromBackupOutcome CreateFileSystemFromBackup(const Model::CreateFileSystemFromBackupRequest& request) const;
 
         /**
-         * <p>Creates a new Amazon FSx file system from an existing Amazon FSx backup.</p>
-         * <p>If a file system with the specified client request token exists and the
-         * parameters match, this operation returns the description of the file system. If
-         * a client request token specified by the file system exists and the parameters
-         * don't match, this call returns <code>IncompatibleParameterError</code>. If a
-         * file system with the specified client request token doesn't exist, this
-         * operation does the following:</p> <ul> <li> <p>Creates a new Amazon FSx file
-         * system from backup with an assigned ID, and an initial lifecycle state of
-         * <code>CREATING</code>.</p> </li> <li> <p>Returns the description of the file
-         * system.</p> </li> </ul> <p>Parameters like Active Directory, default share name,
-         * automatic backup, and backup settings default to the parameters of the file
-         * system that was backed up, unless overridden. You can explicitly supply other
-         * settings.</p> <p>By using the idempotent operation, you can retry a
-         * <code>CreateFileSystemFromBackup</code> call without the risk of creating an
-         * extra file system. This approach can be useful when an initial call fails in a
-         * way that makes it unclear whether a file system was created. Examples are if a
-         * transport level timeout occurred, or your connection was reset. If you use the
-         * same client request token and the initial call created a file system, the client
-         * receives success as long as the parameters are the same.</p>  <p>The
+         * <p>Creates a new Amazon FSx for Lustre or Amazon FSx for Windows File Server
+         * file system from an existing Amazon FSx backup.</p> <p>If a file system with the
+         * specified client request token exists and the parameters match, this operation
+         * returns the description of the file system. If a client request token specified
+         * by the file system exists and the parameters don't match, this call returns
+         * <code>IncompatibleParameterError</code>. If a file system with the specified
+         * client request token doesn't exist, this operation does the following:</p> <ul>
+         * <li> <p>Creates a new Amazon FSx file system from backup with an assigned ID,
+         * and an initial lifecycle state of <code>CREATING</code>.</p> </li> <li>
+         * <p>Returns the description of the file system.</p> </li> </ul> <p>Parameters
+         * like Active Directory, default share name, automatic backup, and backup settings
+         * default to the parameters of the file system that was backed up, unless
+         * overridden. You can explicitly supply other settings.</p> <p>By using the
+         * idempotent operation, you can retry a <code>CreateFileSystemFromBackup</code>
+         * call without the risk of creating an extra file system. This approach can be
+         * useful when an initial call fails in a way that makes it unclear whether a file
+         * system was created. Examples are if a transport level timeout occurred, or your
+         * connection was reset. If you use the same client request token and the initial
+         * call created a file system, the client receives success as long as the
+         * parameters are the same.</p>  <p>The
          * <code>CreateFileSystemFromBackup</code> call returns while the file system's
          * lifecycle state is still <code>CREATING</code>. You can check the file-system
          * creation status by calling the <a>DescribeFileSystems</a> operation, which
@@ -703,25 +765,26 @@ namespace Model
         virtual Model::CreateFileSystemFromBackupOutcomeCallable CreateFileSystemFromBackupCallable(const Model::CreateFileSystemFromBackupRequest& request) const;
 
         /**
-         * <p>Creates a new Amazon FSx file system from an existing Amazon FSx backup.</p>
-         * <p>If a file system with the specified client request token exists and the
-         * parameters match, this operation returns the description of the file system. If
-         * a client request token specified by the file system exists and the parameters
-         * don't match, this call returns <code>IncompatibleParameterError</code>. If a
-         * file system with the specified client request token doesn't exist, this
-         * operation does the following:</p> <ul> <li> <p>Creates a new Amazon FSx file
-         * system from backup with an assigned ID, and an initial lifecycle state of
-         * <code>CREATING</code>.</p> </li> <li> <p>Returns the description of the file
-         * system.</p> </li> </ul> <p>Parameters like Active Directory, default share name,
-         * automatic backup, and backup settings default to the parameters of the file
-         * system that was backed up, unless overridden. You can explicitly supply other
-         * settings.</p> <p>By using the idempotent operation, you can retry a
-         * <code>CreateFileSystemFromBackup</code> call without the risk of creating an
-         * extra file system. This approach can be useful when an initial call fails in a
-         * way that makes it unclear whether a file system was created. Examples are if a
-         * transport level timeout occurred, or your connection was reset. If you use the
-         * same client request token and the initial call created a file system, the client
-         * receives success as long as the parameters are the same.</p>  <p>The
+         * <p>Creates a new Amazon FSx for Lustre or Amazon FSx for Windows File Server
+         * file system from an existing Amazon FSx backup.</p> <p>If a file system with the
+         * specified client request token exists and the parameters match, this operation
+         * returns the description of the file system. If a client request token specified
+         * by the file system exists and the parameters don't match, this call returns
+         * <code>IncompatibleParameterError</code>. If a file system with the specified
+         * client request token doesn't exist, this operation does the following:</p> <ul>
+         * <li> <p>Creates a new Amazon FSx file system from backup with an assigned ID,
+         * and an initial lifecycle state of <code>CREATING</code>.</p> </li> <li>
+         * <p>Returns the description of the file system.</p> </li> </ul> <p>Parameters
+         * like Active Directory, default share name, automatic backup, and backup settings
+         * default to the parameters of the file system that was backed up, unless
+         * overridden. You can explicitly supply other settings.</p> <p>By using the
+         * idempotent operation, you can retry a <code>CreateFileSystemFromBackup</code>
+         * call without the risk of creating an extra file system. This approach can be
+         * useful when an initial call fails in a way that makes it unclear whether a file
+         * system was created. Examples are if a transport level timeout occurred, or your
+         * connection was reset. If you use the same client request token and the initial
+         * call created a file system, the client receives success as long as the
+         * parameters are the same.</p>  <p>The
          * <code>CreateFileSystemFromBackup</code> call returns while the file system's
          * lifecycle state is still <code>CREATING</code>. You can check the file-system
          * creation status by calling the <a>DescribeFileSystems</a> operation, which
@@ -733,6 +796,90 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateFileSystemFromBackupAsync(const Model::CreateFileSystemFromBackupRequest& request, const CreateFileSystemFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a storage virtual machine (SVM) for an Amazon FSx for ONTAP file
+         * system.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateStorageVirtualMachine">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateStorageVirtualMachineOutcome CreateStorageVirtualMachine(const Model::CreateStorageVirtualMachineRequest& request) const;
+
+        /**
+         * <p>Creates a storage virtual machine (SVM) for an Amazon FSx for ONTAP file
+         * system.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateStorageVirtualMachine">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateStorageVirtualMachineOutcomeCallable CreateStorageVirtualMachineCallable(const Model::CreateStorageVirtualMachineRequest& request) const;
+
+        /**
+         * <p>Creates a storage virtual machine (SVM) for an Amazon FSx for ONTAP file
+         * system.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateStorageVirtualMachine">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateStorageVirtualMachineAsync(const Model::CreateStorageVirtualMachineRequest& request, const CreateStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an Amazon FSx for NetApp ONTAP storage volume.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateVolume">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateVolumeOutcome CreateVolume(const Model::CreateVolumeRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon FSx for NetApp ONTAP storage volume.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateVolume">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateVolumeOutcomeCallable CreateVolumeCallable(const Model::CreateVolumeRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon FSx for NetApp ONTAP storage volume.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateVolume">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateVolumeAsync(const Model::CreateVolumeRequest& request, const CreateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new Amazon FSx for NetApp ONTAP volume from an existing Amazon FSx
+         * volume backup.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateVolumeFromBackup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateVolumeFromBackupOutcome CreateVolumeFromBackup(const Model::CreateVolumeFromBackupRequest& request) const;
+
+        /**
+         * <p>Creates a new Amazon FSx for NetApp ONTAP volume from an existing Amazon FSx
+         * volume backup.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateVolumeFromBackup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateVolumeFromBackupOutcomeCallable CreateVolumeFromBackupCallable(const Model::CreateVolumeFromBackupRequest& request) const;
+
+        /**
+         * <p>Creates a new Amazon FSx for NetApp ONTAP volume from an existing Amazon FSx
+         * volume backup.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateVolumeFromBackup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateVolumeFromBackupAsync(const Model::CreateVolumeFromBackupRequest& request, const CreateVolumeFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon FSx backup, deleting its contents. After deletion, the
@@ -777,7 +924,10 @@ namespace Model
         /**
          * <p>Deletes a file system, deleting its contents. After deletion, the file system
          * no longer exists, and its data is gone. Any existing automatic backups will also
-         * be deleted.</p> <p>By default, when you delete an Amazon FSx for Windows File
+         * be deleted.</p> <p>To delete an Amazon FSx for NetApp ONTAP file system, first
+         * delete all the volumes and SVMs on the file system. Then provide a
+         * <code>FileSystemId</code> value to the <code>DeleFileSystem</code>
+         * operation.</p> <p>By default, when you delete an Amazon FSx for Windows File
          * Server file system, a final backup is created upon deletion. This final backup
          * is not subject to the file system's retention policy, and must be manually
          * deleted.</p> <p>The <code>DeleteFileSystem</code> action returns while the file
@@ -798,7 +948,10 @@ namespace Model
         /**
          * <p>Deletes a file system, deleting its contents. After deletion, the file system
          * no longer exists, and its data is gone. Any existing automatic backups will also
-         * be deleted.</p> <p>By default, when you delete an Amazon FSx for Windows File
+         * be deleted.</p> <p>To delete an Amazon FSx for NetApp ONTAP file system, first
+         * delete all the volumes and SVMs on the file system. Then provide a
+         * <code>FileSystemId</code> value to the <code>DeleFileSystem</code>
+         * operation.</p> <p>By default, when you delete an Amazon FSx for Windows File
          * Server file system, a final backup is created upon deletion. This final backup
          * is not subject to the file system's retention policy, and must be manually
          * deleted.</p> <p>The <code>DeleteFileSystem</code> action returns while the file
@@ -821,7 +974,10 @@ namespace Model
         /**
          * <p>Deletes a file system, deleting its contents. After deletion, the file system
          * no longer exists, and its data is gone. Any existing automatic backups will also
-         * be deleted.</p> <p>By default, when you delete an Amazon FSx for Windows File
+         * be deleted.</p> <p>To delete an Amazon FSx for NetApp ONTAP file system, first
+         * delete all the volumes and SVMs on the file system. Then provide a
+         * <code>FileSystemId</code> value to the <code>DeleFileSystem</code>
+         * operation.</p> <p>By default, when you delete an Amazon FSx for Windows File
          * Server file system, a final backup is created upon deletion. This final backup
          * is not subject to the file system's retention policy, and must be manually
          * deleted.</p> <p>The <code>DeleteFileSystem</code> action returns while the file
@@ -842,14 +998,82 @@ namespace Model
         virtual void DeleteFileSystemAsync(const Model::DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes an existing Amazon FSx for ONTAP storage virtual machine (SVM). Prior
+         * to deleting an SVM, you must delete all non-root volumes in the SVM, otherwise
+         * the operation will fail.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteStorageVirtualMachine">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteStorageVirtualMachineOutcome DeleteStorageVirtualMachine(const Model::DeleteStorageVirtualMachineRequest& request) const;
+
+        /**
+         * <p>Deletes an existing Amazon FSx for ONTAP storage virtual machine (SVM). Prior
+         * to deleting an SVM, you must delete all non-root volumes in the SVM, otherwise
+         * the operation will fail.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteStorageVirtualMachine">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteStorageVirtualMachineOutcomeCallable DeleteStorageVirtualMachineCallable(const Model::DeleteStorageVirtualMachineRequest& request) const;
+
+        /**
+         * <p>Deletes an existing Amazon FSx for ONTAP storage virtual machine (SVM). Prior
+         * to deleting an SVM, you must delete all non-root volumes in the SVM, otherwise
+         * the operation will fail.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteStorageVirtualMachine">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteStorageVirtualMachineAsync(const Model::DeleteStorageVirtualMachineRequest& request, const DeleteStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an Amazon FSx for NetApp ONTAP volume. When deleting a volume, you
+         * have the option of creating a final backup. If you create a final backup, you
+         * have the option to apply Tags to the backup. You need to have
+         * <code>fsx:TagResource</code> permission in order to apply tags to the
+         * backup.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteVolume">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteVolumeOutcome DeleteVolume(const Model::DeleteVolumeRequest& request) const;
+
+        /**
+         * <p>Deletes an Amazon FSx for NetApp ONTAP volume. When deleting a volume, you
+         * have the option of creating a final backup. If you create a final backup, you
+         * have the option to apply Tags to the backup. You need to have
+         * <code>fsx:TagResource</code> permission in order to apply tags to the
+         * backup.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteVolume">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteVolumeOutcomeCallable DeleteVolumeCallable(const Model::DeleteVolumeRequest& request) const;
+
+        /**
+         * <p>Deletes an Amazon FSx for NetApp ONTAP volume. When deleting a volume, you
+         * have the option of creating a final backup. If you create a final backup, you
+         * have the option to apply Tags to the backup. You need to have
+         * <code>fsx:TagResource</code> permission in order to apply tags to the
+         * backup.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteVolume">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteVolumeAsync(const Model::DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the description of specific Amazon FSx backups, if a
          * <code>BackupIds</code> value is provided for that backup. Otherwise, it returns
-         * all backups owned by your AWS account in the AWS Region of the endpoint that
-         * you're calling.</p> <p>When retrieving all backups, you can optionally specify
-         * the <code>MaxResults</code> parameter to limit the number of backups in a
-         * response. If more backups remain, Amazon FSx returns a <code>NextToken</code>
-         * value in the response. In this case, send a later request with the
-         * <code>NextToken</code> request parameter set to the value of
+         * all backups owned by your Amazon Web Services account in the Amazon Web Services
+         * Region of the endpoint that you're calling.</p> <p>When retrieving all backups,
+         * you can optionally specify the <code>MaxResults</code> parameter to limit the
+         * number of backups in a response. If more backups remain, Amazon FSx returns a
+         * <code>NextToken</code> value in the response. In this case, send a later request
+         * with the <code>NextToken</code> request parameter set to the value of
          * <code>NextToken</code> from the last response.</p> <p>This action is used in an
          * iterative process to retrieve a list of your backups.
          * <code>DescribeBackups</code> is called first without a
@@ -857,7 +1081,7 @@ namespace Model
          * <code>NextToken</code> parameter set to the value of the last
          * <code>NextToken</code> value until a response has no <code>NextToken</code>.</p>
          * <p>When using this action, keep the following in mind:</p> <ul> <li> <p>The
-         * implementation might return fewer than <code>MaxResults</code> file system
+         * implementation might return fewer than <code>MaxResults</code> backup
          * descriptions while still including a <code>NextToken</code> value.</p> </li>
          * <li> <p>The order of backups returned in the response of one
          * <code>DescribeBackups</code> call and the order of backups returned across the
@@ -871,12 +1095,12 @@ namespace Model
         /**
          * <p>Returns the description of specific Amazon FSx backups, if a
          * <code>BackupIds</code> value is provided for that backup. Otherwise, it returns
-         * all backups owned by your AWS account in the AWS Region of the endpoint that
-         * you're calling.</p> <p>When retrieving all backups, you can optionally specify
-         * the <code>MaxResults</code> parameter to limit the number of backups in a
-         * response. If more backups remain, Amazon FSx returns a <code>NextToken</code>
-         * value in the response. In this case, send a later request with the
-         * <code>NextToken</code> request parameter set to the value of
+         * all backups owned by your Amazon Web Services account in the Amazon Web Services
+         * Region of the endpoint that you're calling.</p> <p>When retrieving all backups,
+         * you can optionally specify the <code>MaxResults</code> parameter to limit the
+         * number of backups in a response. If more backups remain, Amazon FSx returns a
+         * <code>NextToken</code> value in the response. In this case, send a later request
+         * with the <code>NextToken</code> request parameter set to the value of
          * <code>NextToken</code> from the last response.</p> <p>This action is used in an
          * iterative process to retrieve a list of your backups.
          * <code>DescribeBackups</code> is called first without a
@@ -884,7 +1108,7 @@ namespace Model
          * <code>NextToken</code> parameter set to the value of the last
          * <code>NextToken</code> value until a response has no <code>NextToken</code>.</p>
          * <p>When using this action, keep the following in mind:</p> <ul> <li> <p>The
-         * implementation might return fewer than <code>MaxResults</code> file system
+         * implementation might return fewer than <code>MaxResults</code> backup
          * descriptions while still including a <code>NextToken</code> value.</p> </li>
          * <li> <p>The order of backups returned in the response of one
          * <code>DescribeBackups</code> call and the order of backups returned across the
@@ -900,12 +1124,12 @@ namespace Model
         /**
          * <p>Returns the description of specific Amazon FSx backups, if a
          * <code>BackupIds</code> value is provided for that backup. Otherwise, it returns
-         * all backups owned by your AWS account in the AWS Region of the endpoint that
-         * you're calling.</p> <p>When retrieving all backups, you can optionally specify
-         * the <code>MaxResults</code> parameter to limit the number of backups in a
-         * response. If more backups remain, Amazon FSx returns a <code>NextToken</code>
-         * value in the response. In this case, send a later request with the
-         * <code>NextToken</code> request parameter set to the value of
+         * all backups owned by your Amazon Web Services account in the Amazon Web Services
+         * Region of the endpoint that you're calling.</p> <p>When retrieving all backups,
+         * you can optionally specify the <code>MaxResults</code> parameter to limit the
+         * number of backups in a response. If more backups remain, Amazon FSx returns a
+         * <code>NextToken</code> value in the response. In this case, send a later request
+         * with the <code>NextToken</code> request parameter set to the value of
          * <code>NextToken</code> from the last response.</p> <p>This action is used in an
          * iterative process to retrieve a list of your backups.
          * <code>DescribeBackups</code> is called first without a
@@ -913,7 +1137,7 @@ namespace Model
          * <code>NextToken</code> parameter set to the value of the last
          * <code>NextToken</code> value until a response has no <code>NextToken</code>.</p>
          * <p>When using this action, keep the following in mind:</p> <ul> <li> <p>The
-         * implementation might return fewer than <code>MaxResults</code> file system
+         * implementation might return fewer than <code>MaxResults</code> backup
          * descriptions while still including a <code>NextToken</code> value.</p> </li>
          * <li> <p>The order of backups returned in the response of one
          * <code>DescribeBackups</code> call and the order of backups returned across the
@@ -932,12 +1156,12 @@ namespace Model
          * or if filters are used in the request. You can use filters to narrow the
          * response to include just tasks for specific file systems, or tasks in a specific
          * lifecycle state. Otherwise, it returns all data repository tasks owned by your
-         * AWS account in the AWS Region of the endpoint that you're calling.</p> <p>When
-         * retrieving all tasks, you can paginate the response by using the optional
-         * <code>MaxResults</code> parameter to limit the number of tasks returned in a
-         * response. If more tasks remain, Amazon FSx returns a <code>NextToken</code>
-         * value in the response. In this case, send a later request with the
-         * <code>NextToken</code> request parameter set to the value of
+         * Amazon Web Services account in the Amazon Web Services Region of the endpoint
+         * that you're calling.</p> <p>When retrieving all tasks, you can paginate the
+         * response by using the optional <code>MaxResults</code> parameter to limit the
+         * number of tasks returned in a response. If more tasks remain, Amazon FSx returns
+         * a <code>NextToken</code> value in the response. In this case, send a later
+         * request with the <code>NextToken</code> request parameter set to the value of
          * <code>NextToken</code> from the last response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryTasks">AWS
          * API Reference</a></p>
@@ -950,12 +1174,12 @@ namespace Model
          * or if filters are used in the request. You can use filters to narrow the
          * response to include just tasks for specific file systems, or tasks in a specific
          * lifecycle state. Otherwise, it returns all data repository tasks owned by your
-         * AWS account in the AWS Region of the endpoint that you're calling.</p> <p>When
-         * retrieving all tasks, you can paginate the response by using the optional
-         * <code>MaxResults</code> parameter to limit the number of tasks returned in a
-         * response. If more tasks remain, Amazon FSx returns a <code>NextToken</code>
-         * value in the response. In this case, send a later request with the
-         * <code>NextToken</code> request parameter set to the value of
+         * Amazon Web Services account in the Amazon Web Services Region of the endpoint
+         * that you're calling.</p> <p>When retrieving all tasks, you can paginate the
+         * response by using the optional <code>MaxResults</code> parameter to limit the
+         * number of tasks returned in a response. If more tasks remain, Amazon FSx returns
+         * a <code>NextToken</code> value in the response. In this case, send a later
+         * request with the <code>NextToken</code> request parameter set to the value of
          * <code>NextToken</code> from the last response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryTasks">AWS
          * API Reference</a></p>
@@ -970,12 +1194,12 @@ namespace Model
          * or if filters are used in the request. You can use filters to narrow the
          * response to include just tasks for specific file systems, or tasks in a specific
          * lifecycle state. Otherwise, it returns all data repository tasks owned by your
-         * AWS account in the AWS Region of the endpoint that you're calling.</p> <p>When
-         * retrieving all tasks, you can paginate the response by using the optional
-         * <code>MaxResults</code> parameter to limit the number of tasks returned in a
-         * response. If more tasks remain, Amazon FSx returns a <code>NextToken</code>
-         * value in the response. In this case, send a later request with the
-         * <code>NextToken</code> request parameter set to the value of
+         * Amazon Web Services account in the Amazon Web Services Region of the endpoint
+         * that you're calling.</p> <p>When retrieving all tasks, you can paginate the
+         * response by using the optional <code>MaxResults</code> parameter to limit the
+         * number of tasks returned in a response. If more tasks remain, Amazon FSx returns
+         * a <code>NextToken</code> value in the response. In this case, send a later
+         * request with the <code>NextToken</code> request parameter set to the value of
          * <code>NextToken</code> from the last response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryTasks">AWS
          * API Reference</a></p>
@@ -1024,17 +1248,18 @@ namespace Model
         /**
          * <p>Returns the description of specific Amazon FSx file systems, if a
          * <code>FileSystemIds</code> value is provided for that file system. Otherwise, it
-         * returns descriptions of all file systems owned by your AWS account in the AWS
-         * Region of the endpoint that you're calling.</p> <p>When retrieving all file
-         * system descriptions, you can optionally specify the <code>MaxResults</code>
-         * parameter to limit the number of descriptions in a response. If more file system
-         * descriptions remain, Amazon FSx returns a <code>NextToken</code> value in the
-         * response. In this case, send a later request with the <code>NextToken</code>
-         * request parameter set to the value of <code>NextToken</code> from the last
-         * response.</p> <p>This action is used in an iterative process to retrieve a list
-         * of your file system descriptions. <code>DescribeFileSystems</code> is called
-         * first without a <code>NextToken</code>value. Then the action continues to be
-         * called with the <code>NextToken</code> parameter set to the value of the last
+         * returns descriptions of all file systems owned by your Amazon Web Services
+         * account in the Amazon Web Services Region of the endpoint that you're
+         * calling.</p> <p>When retrieving all file system descriptions, you can optionally
+         * specify the <code>MaxResults</code> parameter to limit the number of
+         * descriptions in a response. If more file system descriptions remain, Amazon FSx
+         * returns a <code>NextToken</code> value in the response. In this case, send a
+         * later request with the <code>NextToken</code> request parameter set to the value
+         * of <code>NextToken</code> from the last response.</p> <p>This action is used in
+         * an iterative process to retrieve a list of your file system descriptions.
+         * <code>DescribeFileSystems</code> is called first without a
+         * <code>NextToken</code>value. Then the action continues to be called with the
+         * <code>NextToken</code> parameter set to the value of the last
          * <code>NextToken</code> value until a response has no <code>NextToken</code>.</p>
          * <p>When using this action, keep the following in mind:</p> <ul> <li> <p>The
          * implementation might return fewer than <code>MaxResults</code> file system
@@ -1051,17 +1276,18 @@ namespace Model
         /**
          * <p>Returns the description of specific Amazon FSx file systems, if a
          * <code>FileSystemIds</code> value is provided for that file system. Otherwise, it
-         * returns descriptions of all file systems owned by your AWS account in the AWS
-         * Region of the endpoint that you're calling.</p> <p>When retrieving all file
-         * system descriptions, you can optionally specify the <code>MaxResults</code>
-         * parameter to limit the number of descriptions in a response. If more file system
-         * descriptions remain, Amazon FSx returns a <code>NextToken</code> value in the
-         * response. In this case, send a later request with the <code>NextToken</code>
-         * request parameter set to the value of <code>NextToken</code> from the last
-         * response.</p> <p>This action is used in an iterative process to retrieve a list
-         * of your file system descriptions. <code>DescribeFileSystems</code> is called
-         * first without a <code>NextToken</code>value. Then the action continues to be
-         * called with the <code>NextToken</code> parameter set to the value of the last
+         * returns descriptions of all file systems owned by your Amazon Web Services
+         * account in the Amazon Web Services Region of the endpoint that you're
+         * calling.</p> <p>When retrieving all file system descriptions, you can optionally
+         * specify the <code>MaxResults</code> parameter to limit the number of
+         * descriptions in a response. If more file system descriptions remain, Amazon FSx
+         * returns a <code>NextToken</code> value in the response. In this case, send a
+         * later request with the <code>NextToken</code> request parameter set to the value
+         * of <code>NextToken</code> from the last response.</p> <p>This action is used in
+         * an iterative process to retrieve a list of your file system descriptions.
+         * <code>DescribeFileSystems</code> is called first without a
+         * <code>NextToken</code>value. Then the action continues to be called with the
+         * <code>NextToken</code> parameter set to the value of the last
          * <code>NextToken</code> value until a response has no <code>NextToken</code>.</p>
          * <p>When using this action, keep the following in mind:</p> <ul> <li> <p>The
          * implementation might return fewer than <code>MaxResults</code> file system
@@ -1080,17 +1306,18 @@ namespace Model
         /**
          * <p>Returns the description of specific Amazon FSx file systems, if a
          * <code>FileSystemIds</code> value is provided for that file system. Otherwise, it
-         * returns descriptions of all file systems owned by your AWS account in the AWS
-         * Region of the endpoint that you're calling.</p> <p>When retrieving all file
-         * system descriptions, you can optionally specify the <code>MaxResults</code>
-         * parameter to limit the number of descriptions in a response. If more file system
-         * descriptions remain, Amazon FSx returns a <code>NextToken</code> value in the
-         * response. In this case, send a later request with the <code>NextToken</code>
-         * request parameter set to the value of <code>NextToken</code> from the last
-         * response.</p> <p>This action is used in an iterative process to retrieve a list
-         * of your file system descriptions. <code>DescribeFileSystems</code> is called
-         * first without a <code>NextToken</code>value. Then the action continues to be
-         * called with the <code>NextToken</code> parameter set to the value of the last
+         * returns descriptions of all file systems owned by your Amazon Web Services
+         * account in the Amazon Web Services Region of the endpoint that you're
+         * calling.</p> <p>When retrieving all file system descriptions, you can optionally
+         * specify the <code>MaxResults</code> parameter to limit the number of
+         * descriptions in a response. If more file system descriptions remain, Amazon FSx
+         * returns a <code>NextToken</code> value in the response. In this case, send a
+         * later request with the <code>NextToken</code> request parameter set to the value
+         * of <code>NextToken</code> from the last response.</p> <p>This action is used in
+         * an iterative process to retrieve a list of your file system descriptions.
+         * <code>DescribeFileSystems</code> is called first without a
+         * <code>NextToken</code>value. Then the action continues to be called with the
+         * <code>NextToken</code> parameter set to the value of the last
          * <code>NextToken</code> value until a response has no <code>NextToken</code>.</p>
          * <p>When using this action, keep the following in mind:</p> <ul> <li> <p>The
          * implementation might return fewer than <code>MaxResults</code> file system
@@ -1105,6 +1332,62 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeFileSystemsAsync(const Model::DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes one or more Amazon FSx for NetApp ONTAP storage virtual machines
+         * (SVMs).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeStorageVirtualMachines">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeStorageVirtualMachinesOutcome DescribeStorageVirtualMachines(const Model::DescribeStorageVirtualMachinesRequest& request) const;
+
+        /**
+         * <p>Describes one or more Amazon FSx for NetApp ONTAP storage virtual machines
+         * (SVMs).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeStorageVirtualMachines">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeStorageVirtualMachinesOutcomeCallable DescribeStorageVirtualMachinesCallable(const Model::DescribeStorageVirtualMachinesRequest& request) const;
+
+        /**
+         * <p>Describes one or more Amazon FSx for NetApp ONTAP storage virtual machines
+         * (SVMs).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeStorageVirtualMachines">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeStorageVirtualMachinesAsync(const Model::DescribeStorageVirtualMachinesRequest& request, const DescribeStorageVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes one or more Amazon FSx for NetApp ONTAP volumes.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeVolumes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeVolumesOutcome DescribeVolumes(const Model::DescribeVolumesRequest& request) const;
+
+        /**
+         * <p>Describes one or more Amazon FSx for NetApp ONTAP volumes.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeVolumes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeVolumesOutcomeCallable DescribeVolumesCallable(const Model::DescribeVolumesRequest& request) const;
+
+        /**
+         * <p>Describes one or more Amazon FSx for NetApp ONTAP volumes.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeVolumes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeVolumesAsync(const Model::DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this action to disassociate, or remove, one or more Domain Name Service
@@ -1301,7 +1584,11 @@ namespace Model
          * <p>AutoImportPolicy</p> </li> <li> <p>AutomaticBackupRetentionDays</p> </li>
          * <li> <p>DailyAutomaticBackupStartTime</p> </li> <li> <p>DataCompressionType</p>
          * </li> <li> <p>StorageCapacity</p> </li> <li> <p>WeeklyMaintenanceStartTime</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>For Amazon FSx for NetApp ONTAP file systems, you can update the
+         * following properties:</p> <ul> <li> <p>AutomaticBackupRetentionDays</p> </li>
+         * <li> <p>DailyAutomaticBackupStartTime</p> </li> <li> <p>FsxAdminPassword</p>
+         * </li> <li> <p>WeeklyMaintenanceStartTime</p> </li> </ul><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem">AWS
          * API Reference</a></p>
          */
@@ -1321,7 +1608,11 @@ namespace Model
          * <p>AutoImportPolicy</p> </li> <li> <p>AutomaticBackupRetentionDays</p> </li>
          * <li> <p>DailyAutomaticBackupStartTime</p> </li> <li> <p>DataCompressionType</p>
          * </li> <li> <p>StorageCapacity</p> </li> <li> <p>WeeklyMaintenanceStartTime</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>For Amazon FSx for NetApp ONTAP file systems, you can update the
+         * following properties:</p> <ul> <li> <p>AutomaticBackupRetentionDays</p> </li>
+         * <li> <p>DailyAutomaticBackupStartTime</p> </li> <li> <p>FsxAdminPassword</p>
+         * </li> <li> <p>WeeklyMaintenanceStartTime</p> </li> </ul><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem">AWS
          * API Reference</a></p>
          *
@@ -1343,13 +1634,73 @@ namespace Model
          * <p>AutoImportPolicy</p> </li> <li> <p>AutomaticBackupRetentionDays</p> </li>
          * <li> <p>DailyAutomaticBackupStartTime</p> </li> <li> <p>DataCompressionType</p>
          * </li> <li> <p>StorageCapacity</p> </li> <li> <p>WeeklyMaintenanceStartTime</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>For Amazon FSx for NetApp ONTAP file systems, you can update the
+         * following properties:</p> <ul> <li> <p>AutomaticBackupRetentionDays</p> </li>
+         * <li> <p>DailyAutomaticBackupStartTime</p> </li> <li> <p>FsxAdminPassword</p>
+         * </li> <li> <p>WeeklyMaintenanceStartTime</p> </li> </ul><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateFileSystemAsync(const Model::UpdateFileSystemRequest& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates an Amazon FSx for ONTAP storage virtual machine (SVM).</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateStorageVirtualMachine">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateStorageVirtualMachineOutcome UpdateStorageVirtualMachine(const Model::UpdateStorageVirtualMachineRequest& request) const;
+
+        /**
+         * <p>Updates an Amazon FSx for ONTAP storage virtual machine (SVM).</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateStorageVirtualMachine">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateStorageVirtualMachineOutcomeCallable UpdateStorageVirtualMachineCallable(const Model::UpdateStorageVirtualMachineRequest& request) const;
+
+        /**
+         * <p>Updates an Amazon FSx for ONTAP storage virtual machine (SVM).</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateStorageVirtualMachine">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateStorageVirtualMachineAsync(const Model::UpdateStorageVirtualMachineRequest& request, const UpdateStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates an Amazon FSx for NetApp ONTAP volume's configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateVolume">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateVolumeOutcome UpdateVolume(const Model::UpdateVolumeRequest& request) const;
+
+        /**
+         * <p>Updates an Amazon FSx for NetApp ONTAP volume's configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateVolume">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateVolumeOutcomeCallable UpdateVolumeCallable(const Model::UpdateVolumeRequest& request) const;
+
+        /**
+         * <p>Updates an Amazon FSx for NetApp ONTAP volume's configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateVolume">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateVolumeAsync(const Model::UpdateVolumeRequest& request, const UpdateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
@@ -1362,17 +1713,26 @@ namespace Model
         void CreateDataRepositoryTaskAsyncHelper(const Model::CreateDataRepositoryTaskRequest& request, const CreateDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFileSystemAsyncHelper(const Model::CreateFileSystemRequest& request, const CreateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFileSystemFromBackupAsyncHelper(const Model::CreateFileSystemFromBackupRequest& request, const CreateFileSystemFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateStorageVirtualMachineAsyncHelper(const Model::CreateStorageVirtualMachineRequest& request, const CreateStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateVolumeAsyncHelper(const Model::CreateVolumeRequest& request, const CreateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateVolumeFromBackupAsyncHelper(const Model::CreateVolumeFromBackupRequest& request, const CreateVolumeFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBackupAsyncHelper(const Model::DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFileSystemAsyncHelper(const Model::DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteStorageVirtualMachineAsyncHelper(const Model::DeleteStorageVirtualMachineRequest& request, const DeleteStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteVolumeAsyncHelper(const Model::DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBackupsAsyncHelper(const Model::DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDataRepositoryTasksAsyncHelper(const Model::DescribeDataRepositoryTasksRequest& request, const DescribeDataRepositoryTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFileSystemAliasesAsyncHelper(const Model::DescribeFileSystemAliasesRequest& request, const DescribeFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFileSystemsAsyncHelper(const Model::DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeStorageVirtualMachinesAsyncHelper(const Model::DescribeStorageVirtualMachinesRequest& request, const DescribeStorageVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeVolumesAsyncHelper(const Model::DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateFileSystemAliasesAsyncHelper(const Model::DisassociateFileSystemAliasesRequest& request, const DisassociateFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFileSystemAsyncHelper(const Model::UpdateFileSystemRequest& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateStorageVirtualMachineAsyncHelper(const Model::UpdateStorageVirtualMachineRequest& request, const UpdateStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateVolumeAsyncHelper(const Model::UpdateVolumeRequest& request, const UpdateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

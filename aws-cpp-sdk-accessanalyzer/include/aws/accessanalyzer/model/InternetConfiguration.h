@@ -22,8 +22,9 @@ namespace Model
 {
 
   /**
-   * <p>This configuration sets the Amazon S3 access point network origin to
-   * <code>Internet</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>This configuration sets the network origin for the Amazon S3 access point or
+   * multi-region access point to <code>Internet</code>.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/InternetConfiguration">AWS
    * API Reference</a></p>
    */

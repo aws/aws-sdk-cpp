@@ -45,50 +45,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an IAM user, the parent account to which the user belongs
+     * is the owner.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an IAM user, the parent account to which the user belongs
+     * is the owner.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an IAM user, the parent account to which the user belongs
+     * is the owner.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an IAM user, the parent account to which the user belongs
+     * is the owner.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an IAM user, the parent account to which the user belongs
+     * is the owner.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an IAM user, the parent account to which the user belongs
+     * is the owner.</p>
      */
     inline FileSystemDescription& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an IAM user, the parent account to which the user belongs
+     * is the owner.</p>
      */
     inline FileSystemDescription& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an IAM user, the parent account to which the user belongs
+     * is the owner.</p>
      */
     inline FileSystemDescription& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
@@ -540,50 +548,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
-     * that was used to protect the encrypted file system.</p>
+     * <p>The ID of an Key Management Service customer master key (CMK) that was used
+     * to protect the encrypted file system.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
-     * that was used to protect the encrypted file system.</p>
+     * <p>The ID of an Key Management Service customer master key (CMK) that was used
+     * to protect the encrypted file system.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
-     * that was used to protect the encrypted file system.</p>
+     * <p>The ID of an Key Management Service customer master key (CMK) that was used
+     * to protect the encrypted file system.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
-     * that was used to protect the encrypted file system.</p>
+     * <p>The ID of an Key Management Service customer master key (CMK) that was used
+     * to protect the encrypted file system.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
-     * that was used to protect the encrypted file system.</p>
+     * <p>The ID of an Key Management Service customer master key (CMK) that was used
+     * to protect the encrypted file system.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
-     * that was used to protect the encrypted file system.</p>
+     * <p>The ID of an Key Management Service customer master key (CMK) that was used
+     * to protect the encrypted file system.</p>
      */
     inline FileSystemDescription& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
-     * that was used to protect the encrypted file system.</p>
+     * <p>The ID of an Key Management Service customer master key (CMK) that was used
+     * to protect the encrypted file system.</p>
      */
     inline FileSystemDescription& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
-     * that was used to protect the encrypted file system.</p>
+     * <p>The ID of an Key Management Service customer master key (CMK) that was used
+     * to protect the encrypted file system.</p>
      */
     inline FileSystemDescription& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -661,72 +669,72 @@ namespace Model
 
 
     /**
-     * <p>Describes the AWS Availability Zone in which the file system is located, and
-     * is valid only for file systems using One Zone storage classes. For more
-     * information, see <a
+     * <p>Describes the Amazon Web Services Availability Zone in which the file system
+     * is located, and is valid only for file systems using One Zone storage classes.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
     inline const Aws::String& GetAvailabilityZoneName() const{ return m_availabilityZoneName; }
 
     /**
-     * <p>Describes the AWS Availability Zone in which the file system is located, and
-     * is valid only for file systems using One Zone storage classes. For more
-     * information, see <a
+     * <p>Describes the Amazon Web Services Availability Zone in which the file system
+     * is located, and is valid only for file systems using One Zone storage classes.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
     inline bool AvailabilityZoneNameHasBeenSet() const { return m_availabilityZoneNameHasBeenSet; }
 
     /**
-     * <p>Describes the AWS Availability Zone in which the file system is located, and
-     * is valid only for file systems using One Zone storage classes. For more
-     * information, see <a
+     * <p>Describes the Amazon Web Services Availability Zone in which the file system
+     * is located, and is valid only for file systems using One Zone storage classes.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
     inline void SetAvailabilityZoneName(const Aws::String& value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName = value; }
 
     /**
-     * <p>Describes the AWS Availability Zone in which the file system is located, and
-     * is valid only for file systems using One Zone storage classes. For more
-     * information, see <a
+     * <p>Describes the Amazon Web Services Availability Zone in which the file system
+     * is located, and is valid only for file systems using One Zone storage classes.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
     inline void SetAvailabilityZoneName(Aws::String&& value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName = std::move(value); }
 
     /**
-     * <p>Describes the AWS Availability Zone in which the file system is located, and
-     * is valid only for file systems using One Zone storage classes. For more
-     * information, see <a
+     * <p>Describes the Amazon Web Services Availability Zone in which the file system
+     * is located, and is valid only for file systems using One Zone storage classes.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
     inline void SetAvailabilityZoneName(const char* value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName.assign(value); }
 
     /**
-     * <p>Describes the AWS Availability Zone in which the file system is located, and
-     * is valid only for file systems using One Zone storage classes. For more
-     * information, see <a
+     * <p>Describes the Amazon Web Services Availability Zone in which the file system
+     * is located, and is valid only for file systems using One Zone storage classes.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
     inline FileSystemDescription& WithAvailabilityZoneName(const Aws::String& value) { SetAvailabilityZoneName(value); return *this;}
 
     /**
-     * <p>Describes the AWS Availability Zone in which the file system is located, and
-     * is valid only for file systems using One Zone storage classes. For more
-     * information, see <a
+     * <p>Describes the Amazon Web Services Availability Zone in which the file system
+     * is located, and is valid only for file systems using One Zone storage classes.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
     inline FileSystemDescription& WithAvailabilityZoneName(Aws::String&& value) { SetAvailabilityZoneName(std::move(value)); return *this;}
 
     /**
-     * <p>Describes the AWS Availability Zone in which the file system is located, and
-     * is valid only for file systems using One Zone storage classes. For more
-     * information, see <a
+     * <p>Describes the Amazon Web Services Availability Zone in which the file system
+     * is located, and is valid only for file systems using One Zone storage classes.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
@@ -736,64 +744,64 @@ namespace Model
     /**
      * <p>The unique and consistent identifier of the Availability Zone in which the
      * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
-     * is an Availability Zone ID for the us-east-1 AWS Region, and it has the same
-     * location in every AWS account.</p>
+     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
+     * has the same location in every Amazon Web Services account.</p>
      */
     inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
 
     /**
      * <p>The unique and consistent identifier of the Availability Zone in which the
      * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
-     * is an Availability Zone ID for the us-east-1 AWS Region, and it has the same
-     * location in every AWS account.</p>
+     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
+     * has the same location in every Amazon Web Services account.</p>
      */
     inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
 
     /**
      * <p>The unique and consistent identifier of the Availability Zone in which the
      * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
-     * is an Availability Zone ID for the us-east-1 AWS Region, and it has the same
-     * location in every AWS account.</p>
+     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
+     * has the same location in every Amazon Web Services account.</p>
      */
     inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = value; }
 
     /**
      * <p>The unique and consistent identifier of the Availability Zone in which the
      * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
-     * is an Availability Zone ID for the us-east-1 AWS Region, and it has the same
-     * location in every AWS account.</p>
+     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
+     * has the same location in every Amazon Web Services account.</p>
      */
     inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::move(value); }
 
     /**
      * <p>The unique and consistent identifier of the Availability Zone in which the
      * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
-     * is an Availability Zone ID for the us-east-1 AWS Region, and it has the same
-     * location in every AWS account.</p>
+     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
+     * has the same location in every Amazon Web Services account.</p>
      */
     inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId.assign(value); }
 
     /**
      * <p>The unique and consistent identifier of the Availability Zone in which the
      * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
-     * is an Availability Zone ID for the us-east-1 AWS Region, and it has the same
-     * location in every AWS account.</p>
+     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
+     * has the same location in every Amazon Web Services account.</p>
      */
     inline FileSystemDescription& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
 
     /**
      * <p>The unique and consistent identifier of the Availability Zone in which the
      * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
-     * is an Availability Zone ID for the us-east-1 AWS Region, and it has the same
-     * location in every AWS account.</p>
+     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
+     * has the same location in every Amazon Web Services account.</p>
      */
     inline FileSystemDescription& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
 
     /**
      * <p>The unique and consistent identifier of the Availability Zone in which the
      * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
-     * is an Availability Zone ID for the us-east-1 AWS Region, and it has the same
-     * location in every AWS account.</p>
+     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
+     * has the same location in every Amazon Web Services account.</p>
      */
     inline FileSystemDescription& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
 

@@ -26,6 +26,9 @@ namespace Aws
         static const int TOTAL_USER_INITIATED_BACKUPS_HASH = HashingUtils::HashString("TOTAL_USER_INITIATED_BACKUPS");
         static const int TOTAL_USER_TAGS_HASH = HashingUtils::HashString("TOTAL_USER_TAGS");
         static const int TOTAL_IN_PROGRESS_COPY_BACKUPS_HASH = HashingUtils::HashString("TOTAL_IN_PROGRESS_COPY_BACKUPS");
+        static const int STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM_HASH = HashingUtils::HashString("STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM");
+        static const int VOLUMES_PER_FILE_SYSTEM_HASH = HashingUtils::HashString("VOLUMES_PER_FILE_SYSTEM");
+        static const int TOTAL_SSD_IOPS_HASH = HashingUtils::HashString("TOTAL_SSD_IOPS");
 
 
         ServiceLimit GetServiceLimitForName(const Aws::String& name)
@@ -55,6 +58,18 @@ namespace Aws
           {
             return ServiceLimit::TOTAL_IN_PROGRESS_COPY_BACKUPS;
           }
+          else if (hashCode == STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM_HASH)
+          {
+            return ServiceLimit::STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM;
+          }
+          else if (hashCode == VOLUMES_PER_FILE_SYSTEM_HASH)
+          {
+            return ServiceLimit::VOLUMES_PER_FILE_SYSTEM;
+          }
+          else if (hashCode == TOTAL_SSD_IOPS_HASH)
+          {
+            return ServiceLimit::TOTAL_SSD_IOPS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +96,12 @@ namespace Aws
             return "TOTAL_USER_TAGS";
           case ServiceLimit::TOTAL_IN_PROGRESS_COPY_BACKUPS:
             return "TOTAL_IN_PROGRESS_COPY_BACKUPS";
+          case ServiceLimit::STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM:
+            return "STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM";
+          case ServiceLimit::VOLUMES_PER_FILE_SYSTEM:
+            return "VOLUMES_PER_FILE_SYSTEM";
+          case ServiceLimit::TOTAL_SSD_IOPS:
+            return "TOTAL_SSD_IOPS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

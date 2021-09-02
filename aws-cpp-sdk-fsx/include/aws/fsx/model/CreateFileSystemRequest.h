@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fsx/model/CreateFileSystemWindowsConfiguration.h>
 #include <aws/fsx/model/CreateFileSystemLustreConfiguration.h>
+#include <aws/fsx/model/CreateFileSystemOntapConfiguration.h>
 #include <aws/fsx/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -48,93 +49,93 @@ namespace Model
     /**
      * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
      * idempotent creation. This string is automatically filled on your behalf when you
-     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
      * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
      * idempotent creation. This string is automatically filled on your behalf when you
-     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
      * idempotent creation. This string is automatically filled on your behalf when you
-     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
      * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
      * idempotent creation. This string is automatically filled on your behalf when you
-     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
      * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
      * idempotent creation. This string is automatically filled on your behalf when you
-     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
      * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
      * idempotent creation. This string is automatically filled on your behalf when you
-     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline CreateFileSystemRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
      * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
      * idempotent creation. This string is automatically filled on your behalf when you
-     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline CreateFileSystemRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
      * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
      * idempotent creation. This string is automatically filled on your behalf when you
-     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline CreateFileSystemRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
 
     /**
-     * <p>The type of Amazon FSx file system to create, either <code>WINDOWS</code> or
-     * <code>LUSTRE</code>.</p>
+     * <p>The type of Amazon FSx file system to create. Valid values are
+     * <code>WINDOWS</code>, <code>LUSTRE</code>, and <code>ONTAP</code>.</p>
      */
     inline const FileSystemType& GetFileSystemType() const{ return m_fileSystemType; }
 
     /**
-     * <p>The type of Amazon FSx file system to create, either <code>WINDOWS</code> or
-     * <code>LUSTRE</code>.</p>
+     * <p>The type of Amazon FSx file system to create. Valid values are
+     * <code>WINDOWS</code>, <code>LUSTRE</code>, and <code>ONTAP</code>.</p>
      */
     inline bool FileSystemTypeHasBeenSet() const { return m_fileSystemTypeHasBeenSet; }
 
     /**
-     * <p>The type of Amazon FSx file system to create, either <code>WINDOWS</code> or
-     * <code>LUSTRE</code>.</p>
+     * <p>The type of Amazon FSx file system to create. Valid values are
+     * <code>WINDOWS</code>, <code>LUSTRE</code>, and <code>ONTAP</code>.</p>
      */
     inline void SetFileSystemType(const FileSystemType& value) { m_fileSystemTypeHasBeenSet = true; m_fileSystemType = value; }
 
     /**
-     * <p>The type of Amazon FSx file system to create, either <code>WINDOWS</code> or
-     * <code>LUSTRE</code>.</p>
+     * <p>The type of Amazon FSx file system to create. Valid values are
+     * <code>WINDOWS</code>, <code>LUSTRE</code>, and <code>ONTAP</code>.</p>
      */
     inline void SetFileSystemType(FileSystemType&& value) { m_fileSystemTypeHasBeenSet = true; m_fileSystemType = std::move(value); }
 
     /**
-     * <p>The type of Amazon FSx file system to create, either <code>WINDOWS</code> or
-     * <code>LUSTRE</code>.</p>
+     * <p>The type of Amazon FSx file system to create. Valid values are
+     * <code>WINDOWS</code>, <code>LUSTRE</code>, and <code>ONTAP</code>.</p>
      */
     inline CreateFileSystemRequest& WithFileSystemType(const FileSystemType& value) { SetFileSystemType(value); return *this;}
 
     /**
-     * <p>The type of Amazon FSx file system to create, either <code>WINDOWS</code> or
-     * <code>LUSTRE</code>.</p>
+     * <p>The type of Amazon FSx file system to create. Valid values are
+     * <code>WINDOWS</code>, <code>LUSTRE</code>, and <code>ONTAP</code>.</p>
      */
     inline CreateFileSystemRequest& WithFileSystemType(FileSystemType&& value) { SetFileSystemType(std::move(value)); return *this;}
 
@@ -150,7 +151,9 @@ namespace Model
      * 2400 GiB, and increments of 3600 GiB.</p> </li> </ul> <p>For Windows file
      * systems:</p> <ul> <li> <p>If <code>StorageType=SSD</code>, valid values are 32
      * GiB - 65,536 GiB (64 TiB).</p> </li> <li> <p>If <code>StorageType=HDD</code>,
-     * valid values are 2000 GiB - 65,536 GiB (64 TiB).</p> </li> </ul>
+     * valid values are 2000 GiB - 65,536 GiB (64 TiB).</p> </li> </ul> <p>For ONTAP
+     * file systems:</p> <ul> <li> <p>Valid values are 1024 GiB - 196,608 GiB (192
+     * TiB).</p> </li> </ul>
      */
     inline int GetStorageCapacity() const{ return m_storageCapacity; }
 
@@ -165,7 +168,9 @@ namespace Model
      * 2400 GiB, and increments of 3600 GiB.</p> </li> </ul> <p>For Windows file
      * systems:</p> <ul> <li> <p>If <code>StorageType=SSD</code>, valid values are 32
      * GiB - 65,536 GiB (64 TiB).</p> </li> <li> <p>If <code>StorageType=HDD</code>,
-     * valid values are 2000 GiB - 65,536 GiB (64 TiB).</p> </li> </ul>
+     * valid values are 2000 GiB - 65,536 GiB (64 TiB).</p> </li> </ul> <p>For ONTAP
+     * file systems:</p> <ul> <li> <p>Valid values are 1024 GiB - 196,608 GiB (192
+     * TiB).</p> </li> </ul>
      */
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
 
@@ -180,7 +185,9 @@ namespace Model
      * 2400 GiB, and increments of 3600 GiB.</p> </li> </ul> <p>For Windows file
      * systems:</p> <ul> <li> <p>If <code>StorageType=SSD</code>, valid values are 32
      * GiB - 65,536 GiB (64 TiB).</p> </li> <li> <p>If <code>StorageType=HDD</code>,
-     * valid values are 2000 GiB - 65,536 GiB (64 TiB).</p> </li> </ul>
+     * valid values are 2000 GiB - 65,536 GiB (64 TiB).</p> </li> </ul> <p>For ONTAP
+     * file systems:</p> <ul> <li> <p>Valid values are 1024 GiB - 196,608 GiB (192
+     * TiB).</p> </li> </ul>
      */
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
 
@@ -195,7 +202,9 @@ namespace Model
      * 2400 GiB, and increments of 3600 GiB.</p> </li> </ul> <p>For Windows file
      * systems:</p> <ul> <li> <p>If <code>StorageType=SSD</code>, valid values are 32
      * GiB - 65,536 GiB (64 TiB).</p> </li> <li> <p>If <code>StorageType=HDD</code>,
-     * valid values are 2000 GiB - 65,536 GiB (64 TiB).</p> </li> </ul>
+     * valid values are 2000 GiB - 65,536 GiB (64 TiB).</p> </li> </ul> <p>For ONTAP
+     * file systems:</p> <ul> <li> <p>Valid values are 1024 GiB - 196,608 GiB (192
+     * TiB).</p> </li> </ul>
      */
     inline CreateFileSystemRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
 
@@ -203,9 +212,9 @@ namespace Model
     /**
      * <p>Sets the storage type for the file system you're creating. Valid values are
      * <code>SSD</code> and <code>HDD</code>.</p> <ul> <li> <p>Set to <code>SSD</code>
-     * to use solid state drive storage. SSD is supported on all Windows and Lustre
-     * deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard disk
-     * drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
+     * to use solid state drive storage. SSD is supported on all Windows, Lustre, and
+     * ONTAP deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
+     * disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types, and on
      * <code>PERSISTENT</code> Lustre file system deployment types. </p> </li> </ul>
      * <p> Default value is <code>SSD</code>. For more information, see <a
@@ -219,9 +228,9 @@ namespace Model
     /**
      * <p>Sets the storage type for the file system you're creating. Valid values are
      * <code>SSD</code> and <code>HDD</code>.</p> <ul> <li> <p>Set to <code>SSD</code>
-     * to use solid state drive storage. SSD is supported on all Windows and Lustre
-     * deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard disk
-     * drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
+     * to use solid state drive storage. SSD is supported on all Windows, Lustre, and
+     * ONTAP deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
+     * disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types, and on
      * <code>PERSISTENT</code> Lustre file system deployment types. </p> </li> </ul>
      * <p> Default value is <code>SSD</code>. For more information, see <a
@@ -235,9 +244,9 @@ namespace Model
     /**
      * <p>Sets the storage type for the file system you're creating. Valid values are
      * <code>SSD</code> and <code>HDD</code>.</p> <ul> <li> <p>Set to <code>SSD</code>
-     * to use solid state drive storage. SSD is supported on all Windows and Lustre
-     * deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard disk
-     * drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
+     * to use solid state drive storage. SSD is supported on all Windows, Lustre, and
+     * ONTAP deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
+     * disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types, and on
      * <code>PERSISTENT</code> Lustre file system deployment types. </p> </li> </ul>
      * <p> Default value is <code>SSD</code>. For more information, see <a
@@ -251,9 +260,9 @@ namespace Model
     /**
      * <p>Sets the storage type for the file system you're creating. Valid values are
      * <code>SSD</code> and <code>HDD</code>.</p> <ul> <li> <p>Set to <code>SSD</code>
-     * to use solid state drive storage. SSD is supported on all Windows and Lustre
-     * deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard disk
-     * drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
+     * to use solid state drive storage. SSD is supported on all Windows, Lustre, and
+     * ONTAP deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
+     * disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types, and on
      * <code>PERSISTENT</code> Lustre file system deployment types. </p> </li> </ul>
      * <p> Default value is <code>SSD</code>. For more information, see <a
@@ -267,9 +276,9 @@ namespace Model
     /**
      * <p>Sets the storage type for the file system you're creating. Valid values are
      * <code>SSD</code> and <code>HDD</code>.</p> <ul> <li> <p>Set to <code>SSD</code>
-     * to use solid state drive storage. SSD is supported on all Windows and Lustre
-     * deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard disk
-     * drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
+     * to use solid state drive storage. SSD is supported on all Windows, Lustre, and
+     * ONTAP deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
+     * disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types, and on
      * <code>PERSISTENT</code> Lustre file system deployment types. </p> </li> </ul>
      * <p> Default value is <code>SSD</code>. For more information, see <a
@@ -283,9 +292,9 @@ namespace Model
     /**
      * <p>Sets the storage type for the file system you're creating. Valid values are
      * <code>SSD</code> and <code>HDD</code>.</p> <ul> <li> <p>Set to <code>SSD</code>
-     * to use solid state drive storage. SSD is supported on all Windows and Lustre
-     * deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard disk
-     * drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
+     * to use solid state drive storage. SSD is supported on all Windows, Lustre, and
+     * ONTAP deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
+     * disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types, and on
      * <code>PERSISTENT</code> Lustre file system deployment types. </p> </li> </ul>
      * <p> Default value is <code>SSD</code>. For more information, see <a
@@ -299,136 +308,181 @@ namespace Model
 
     /**
      * <p>Specifies the IDs of the subnets that the file system will be accessible
-     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
-     * exactly two subnet IDs, one for the preferred file server and one for the
-     * standby file server. You specify one of these subnets as the preferred subnet
-     * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property. For
-     * more information, see <a
+     * from. For Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment
+     * types, provide exactly two subnet IDs, one for the preferred file server and one
+     * for the standby file server. You specify one of these subnets as the preferred
+     * subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> or
+     * <code>OntapConfiguration &gt; PreferredSubnetID</code> properties. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
-     * Availability and durability: Single-AZ and Multi-AZ file systems</a>.</p> <p>For
-     * Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
-     * deployment types and Lustre file systems, provide exactly one subnet ID. The
-     * file server is launched in that subnet's Availability Zone.</p>
+     * Availability and durability: Single-AZ and Multi-AZ file systems</a> in the
+     * <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">
+     * Availability and durability</a> in the <i>Amazon FSx for ONTAP User
+     * Guide</i>.</p> <p>For Windows <code>SINGLE_AZ_1</code> and
+     * <code>SINGLE_AZ_2</code> file system deployment types and Lustre file systems,
+     * provide exactly one subnet ID. The file server is launched in that subnet's
+     * Availability Zone.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
      * <p>Specifies the IDs of the subnets that the file system will be accessible
-     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
-     * exactly two subnet IDs, one for the preferred file server and one for the
-     * standby file server. You specify one of these subnets as the preferred subnet
-     * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property. For
-     * more information, see <a
+     * from. For Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment
+     * types, provide exactly two subnet IDs, one for the preferred file server and one
+     * for the standby file server. You specify one of these subnets as the preferred
+     * subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> or
+     * <code>OntapConfiguration &gt; PreferredSubnetID</code> properties. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
-     * Availability and durability: Single-AZ and Multi-AZ file systems</a>.</p> <p>For
-     * Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
-     * deployment types and Lustre file systems, provide exactly one subnet ID. The
-     * file server is launched in that subnet's Availability Zone.</p>
+     * Availability and durability: Single-AZ and Multi-AZ file systems</a> in the
+     * <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">
+     * Availability and durability</a> in the <i>Amazon FSx for ONTAP User
+     * Guide</i>.</p> <p>For Windows <code>SINGLE_AZ_1</code> and
+     * <code>SINGLE_AZ_2</code> file system deployment types and Lustre file systems,
+     * provide exactly one subnet ID. The file server is launched in that subnet's
+     * Availability Zone.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>Specifies the IDs of the subnets that the file system will be accessible
-     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
-     * exactly two subnet IDs, one for the preferred file server and one for the
-     * standby file server. You specify one of these subnets as the preferred subnet
-     * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property. For
-     * more information, see <a
+     * from. For Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment
+     * types, provide exactly two subnet IDs, one for the preferred file server and one
+     * for the standby file server. You specify one of these subnets as the preferred
+     * subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> or
+     * <code>OntapConfiguration &gt; PreferredSubnetID</code> properties. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
-     * Availability and durability: Single-AZ and Multi-AZ file systems</a>.</p> <p>For
-     * Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
-     * deployment types and Lustre file systems, provide exactly one subnet ID. The
-     * file server is launched in that subnet's Availability Zone.</p>
+     * Availability and durability: Single-AZ and Multi-AZ file systems</a> in the
+     * <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">
+     * Availability and durability</a> in the <i>Amazon FSx for ONTAP User
+     * Guide</i>.</p> <p>For Windows <code>SINGLE_AZ_1</code> and
+     * <code>SINGLE_AZ_2</code> file system deployment types and Lustre file systems,
+     * provide exactly one subnet ID. The file server is launched in that subnet's
+     * Availability Zone.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
      * <p>Specifies the IDs of the subnets that the file system will be accessible
-     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
-     * exactly two subnet IDs, one for the preferred file server and one for the
-     * standby file server. You specify one of these subnets as the preferred subnet
-     * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property. For
-     * more information, see <a
+     * from. For Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment
+     * types, provide exactly two subnet IDs, one for the preferred file server and one
+     * for the standby file server. You specify one of these subnets as the preferred
+     * subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> or
+     * <code>OntapConfiguration &gt; PreferredSubnetID</code> properties. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
-     * Availability and durability: Single-AZ and Multi-AZ file systems</a>.</p> <p>For
-     * Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
-     * deployment types and Lustre file systems, provide exactly one subnet ID. The
-     * file server is launched in that subnet's Availability Zone.</p>
+     * Availability and durability: Single-AZ and Multi-AZ file systems</a> in the
+     * <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">
+     * Availability and durability</a> in the <i>Amazon FSx for ONTAP User
+     * Guide</i>.</p> <p>For Windows <code>SINGLE_AZ_1</code> and
+     * <code>SINGLE_AZ_2</code> file system deployment types and Lustre file systems,
+     * provide exactly one subnet ID. The file server is launched in that subnet's
+     * Availability Zone.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
      * <p>Specifies the IDs of the subnets that the file system will be accessible
-     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
-     * exactly two subnet IDs, one for the preferred file server and one for the
-     * standby file server. You specify one of these subnets as the preferred subnet
-     * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property. For
-     * more information, see <a
+     * from. For Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment
+     * types, provide exactly two subnet IDs, one for the preferred file server and one
+     * for the standby file server. You specify one of these subnets as the preferred
+     * subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> or
+     * <code>OntapConfiguration &gt; PreferredSubnetID</code> properties. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
-     * Availability and durability: Single-AZ and Multi-AZ file systems</a>.</p> <p>For
-     * Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
-     * deployment types and Lustre file systems, provide exactly one subnet ID. The
-     * file server is launched in that subnet's Availability Zone.</p>
+     * Availability and durability: Single-AZ and Multi-AZ file systems</a> in the
+     * <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">
+     * Availability and durability</a> in the <i>Amazon FSx for ONTAP User
+     * Guide</i>.</p> <p>For Windows <code>SINGLE_AZ_1</code> and
+     * <code>SINGLE_AZ_2</code> file system deployment types and Lustre file systems,
+     * provide exactly one subnet ID. The file server is launched in that subnet's
+     * Availability Zone.</p>
      */
     inline CreateFileSystemRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
      * <p>Specifies the IDs of the subnets that the file system will be accessible
-     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
-     * exactly two subnet IDs, one for the preferred file server and one for the
-     * standby file server. You specify one of these subnets as the preferred subnet
-     * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property. For
-     * more information, see <a
+     * from. For Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment
+     * types, provide exactly two subnet IDs, one for the preferred file server and one
+     * for the standby file server. You specify one of these subnets as the preferred
+     * subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> or
+     * <code>OntapConfiguration &gt; PreferredSubnetID</code> properties. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
-     * Availability and durability: Single-AZ and Multi-AZ file systems</a>.</p> <p>For
-     * Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
-     * deployment types and Lustre file systems, provide exactly one subnet ID. The
-     * file server is launched in that subnet's Availability Zone.</p>
+     * Availability and durability: Single-AZ and Multi-AZ file systems</a> in the
+     * <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">
+     * Availability and durability</a> in the <i>Amazon FSx for ONTAP User
+     * Guide</i>.</p> <p>For Windows <code>SINGLE_AZ_1</code> and
+     * <code>SINGLE_AZ_2</code> file system deployment types and Lustre file systems,
+     * provide exactly one subnet ID. The file server is launched in that subnet's
+     * Availability Zone.</p>
      */
     inline CreateFileSystemRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the IDs of the subnets that the file system will be accessible
-     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
-     * exactly two subnet IDs, one for the preferred file server and one for the
-     * standby file server. You specify one of these subnets as the preferred subnet
-     * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property. For
-     * more information, see <a
+     * from. For Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment
+     * types, provide exactly two subnet IDs, one for the preferred file server and one
+     * for the standby file server. You specify one of these subnets as the preferred
+     * subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> or
+     * <code>OntapConfiguration &gt; PreferredSubnetID</code> properties. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
-     * Availability and durability: Single-AZ and Multi-AZ file systems</a>.</p> <p>For
-     * Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
-     * deployment types and Lustre file systems, provide exactly one subnet ID. The
-     * file server is launched in that subnet's Availability Zone.</p>
+     * Availability and durability: Single-AZ and Multi-AZ file systems</a> in the
+     * <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">
+     * Availability and durability</a> in the <i>Amazon FSx for ONTAP User
+     * Guide</i>.</p> <p>For Windows <code>SINGLE_AZ_1</code> and
+     * <code>SINGLE_AZ_2</code> file system deployment types and Lustre file systems,
+     * provide exactly one subnet ID. The file server is launched in that subnet's
+     * Availability Zone.</p>
      */
     inline CreateFileSystemRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
      * <p>Specifies the IDs of the subnets that the file system will be accessible
-     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
-     * exactly two subnet IDs, one for the preferred file server and one for the
-     * standby file server. You specify one of these subnets as the preferred subnet
-     * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property. For
-     * more information, see <a
+     * from. For Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment
+     * types, provide exactly two subnet IDs, one for the preferred file server and one
+     * for the standby file server. You specify one of these subnets as the preferred
+     * subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> or
+     * <code>OntapConfiguration &gt; PreferredSubnetID</code> properties. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
-     * Availability and durability: Single-AZ and Multi-AZ file systems</a>.</p> <p>For
-     * Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
-     * deployment types and Lustre file systems, provide exactly one subnet ID. The
-     * file server is launched in that subnet's Availability Zone.</p>
+     * Availability and durability: Single-AZ and Multi-AZ file systems</a> in the
+     * <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">
+     * Availability and durability</a> in the <i>Amazon FSx for ONTAP User
+     * Guide</i>.</p> <p>For Windows <code>SINGLE_AZ_1</code> and
+     * <code>SINGLE_AZ_2</code> file system deployment types and Lustre file systems,
+     * provide exactly one subnet ID. The file server is launched in that subnet's
+     * Availability Zone.</p>
      */
     inline CreateFileSystemRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specifies the IDs of the subnets that the file system will be accessible
-     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
-     * exactly two subnet IDs, one for the preferred file server and one for the
-     * standby file server. You specify one of these subnets as the preferred subnet
-     * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property. For
-     * more information, see <a
+     * from. For Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment
+     * types, provide exactly two subnet IDs, one for the preferred file server and one
+     * for the standby file server. You specify one of these subnets as the preferred
+     * subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> or
+     * <code>OntapConfiguration &gt; PreferredSubnetID</code> properties. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
-     * Availability and durability: Single-AZ and Multi-AZ file systems</a>.</p> <p>For
-     * Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
-     * deployment types and Lustre file systems, provide exactly one subnet ID. The
-     * file server is launched in that subnet's Availability Zone.</p>
+     * Availability and durability: Single-AZ and Multi-AZ file systems</a> in the
+     * <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">
+     * Availability and durability</a> in the <i>Amazon FSx for ONTAP User
+     * Guide</i>.</p> <p>For Windows <code>SINGLE_AZ_1</code> and
+     * <code>SINGLE_AZ_2</code> file system deployment types and Lustre file systems,
+     * provide exactly one subnet ID. The file server is launched in that subnet's
+     * Availability Zone.</p>
      */
     inline CreateFileSystemRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
@@ -620,6 +674,25 @@ namespace Model
     
     inline CreateFileSystemRequest& WithLustreConfiguration(CreateFileSystemLustreConfiguration&& value) { SetLustreConfiguration(std::move(value)); return *this;}
 
+
+    
+    inline const CreateFileSystemOntapConfiguration& GetOntapConfiguration() const{ return m_ontapConfiguration; }
+
+    
+    inline bool OntapConfigurationHasBeenSet() const { return m_ontapConfigurationHasBeenSet; }
+
+    
+    inline void SetOntapConfiguration(const CreateFileSystemOntapConfiguration& value) { m_ontapConfigurationHasBeenSet = true; m_ontapConfiguration = value; }
+
+    
+    inline void SetOntapConfiguration(CreateFileSystemOntapConfiguration&& value) { m_ontapConfigurationHasBeenSet = true; m_ontapConfiguration = std::move(value); }
+
+    
+    inline CreateFileSystemRequest& WithOntapConfiguration(const CreateFileSystemOntapConfiguration& value) { SetOntapConfiguration(value); return *this;}
+
+    
+    inline CreateFileSystemRequest& WithOntapConfiguration(CreateFileSystemOntapConfiguration&& value) { SetOntapConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientRequestToken;
@@ -651,6 +724,9 @@ namespace Model
 
     CreateFileSystemLustreConfiguration m_lustreConfiguration;
     bool m_lustreConfigurationHasBeenSet;
+
+    CreateFileSystemOntapConfiguration m_ontapConfiguration;
+    bool m_ontapConfigurationHasBeenSet;
   };
 
 } // namespace Model

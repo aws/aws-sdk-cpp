@@ -40,7 +40,8 @@ FileSystem::FileSystem() :
     m_tagsHasBeenSet(false),
     m_windowsConfigurationHasBeenSet(false),
     m_lustreConfigurationHasBeenSet(false),
-    m_administrativeActionsHasBeenSet(false)
+    m_administrativeActionsHasBeenSet(false),
+    m_ontapConfigurationHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ FileSystem::FileSystem(JsonView jsonValue) :
     m_tagsHasBeenSet(false),
     m_windowsConfigurationHasBeenSet(false),
     m_lustreConfigurationHasBeenSet(false),
-    m_administrativeActionsHasBeenSet(false)
+    m_administrativeActionsHasBeenSet(false),
+    m_ontapConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -211,6 +213,13 @@ FileSystem& FileSystem::operator =(JsonView jsonValue)
     m_administrativeActionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OntapConfiguration"))
+  {
+    m_ontapConfiguration = jsonValue.GetObject("OntapConfiguration");
+
+    m_ontapConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -339,6 +348,12 @@ JsonValue FileSystem::Jsonize() const
      administrativeActionsJsonList[administrativeActionsIndex].AsObject(m_administrativeActions[administrativeActionsIndex].Jsonize());
    }
    payload.WithArray("AdministrativeActions", std::move(administrativeActionsJsonList));
+
+  }
+
+  if(m_ontapConfigurationHasBeenSet)
+  {
+   payload.WithObject("OntapConfiguration", m_ontapConfiguration.Jsonize());
 
   }
 

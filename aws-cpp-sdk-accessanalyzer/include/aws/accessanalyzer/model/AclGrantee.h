@@ -41,42 +41,50 @@ namespace Model
 
 
     /**
-     * <p>The value specified is the canonical user ID of an AWS account.</p>
+     * <p>The value specified is the canonical user ID of an Amazon Web Services
+     * account.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The value specified is the canonical user ID of an AWS account.</p>
+     * <p>The value specified is the canonical user ID of an Amazon Web Services
+     * account.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The value specified is the canonical user ID of an AWS account.</p>
+     * <p>The value specified is the canonical user ID of an Amazon Web Services
+     * account.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The value specified is the canonical user ID of an AWS account.</p>
+     * <p>The value specified is the canonical user ID of an Amazon Web Services
+     * account.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The value specified is the canonical user ID of an AWS account.</p>
+     * <p>The value specified is the canonical user ID of an Amazon Web Services
+     * account.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The value specified is the canonical user ID of an AWS account.</p>
+     * <p>The value specified is the canonical user ID of an Amazon Web Services
+     * account.</p>
      */
     inline AclGrantee& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The value specified is the canonical user ID of an AWS account.</p>
+     * <p>The value specified is the canonical user ID of an Amazon Web Services
+     * account.</p>
      */
     inline AclGrantee& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The value specified is the canonical user ID of an AWS account.</p>
+     * <p>The value specified is the canonical user ID of an Amazon Web Services
+     * account.</p>
      */
     inline AclGrantee& WithId(const char* value) { SetId(value); return *this;}
 

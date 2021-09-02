@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p> The proposed virtual private cloud (VPC) configuration for the Amazon S3
-   * access point. For more information, see <a
+   * <p>The proposed virtual private cloud (VPC) configuration for the Amazon S3
+   * access point. VPC configuration does not apply to multi-region access points.
+   * For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_VpcConfiguration.html">VpcConfiguration</a>.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/VpcConfiguration">AWS

@@ -85,56 +85,56 @@ namespace Model
     /**
      * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
      * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
      * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
      * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
      * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
      * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
      * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
      * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
      * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
      * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
      * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline CreateBackupRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
      * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
      * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline CreateBackupRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
      * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline CreateBackupRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
@@ -211,6 +211,47 @@ namespace Model
      */
     inline CreateBackupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ID of he FSx for NetApp ONTAP volume to back up.</p>
+     */
+    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+
+    /**
+     * <p>The ID of he FSx for NetApp ONTAP volume to back up.</p>
+     */
+    inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
+
+    /**
+     * <p>The ID of he FSx for NetApp ONTAP volume to back up.</p>
+     */
+    inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
+
+    /**
+     * <p>The ID of he FSx for NetApp ONTAP volume to back up.</p>
+     */
+    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
+
+    /**
+     * <p>The ID of he FSx for NetApp ONTAP volume to back up.</p>
+     */
+    inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
+
+    /**
+     * <p>The ID of he FSx for NetApp ONTAP volume to back up.</p>
+     */
+    inline CreateBackupRequest& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
+
+    /**
+     * <p>The ID of he FSx for NetApp ONTAP volume to back up.</p>
+     */
+    inline CreateBackupRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of he FSx for NetApp ONTAP volume to back up.</p>
+     */
+    inline CreateBackupRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+
   private:
 
     Aws::String m_fileSystemId;
@@ -221,6 +262,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_volumeId;
+    bool m_volumeIdHasBeenSet;
   };
 
 } // namespace Model

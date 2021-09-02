@@ -35,43 +35,43 @@ namespace Model
 
 
     /**
-     * <p>The list of findings in a policy returned by Access Analyzer based on its
+     * <p>The list of findings in a policy returned by IAM Access Analyzer based on its
      * suite of policy checks.</p>
      */
     inline const Aws::Vector<ValidatePolicyFinding>& GetFindings() const{ return m_findings; }
 
     /**
-     * <p>The list of findings in a policy returned by Access Analyzer based on its
+     * <p>The list of findings in a policy returned by IAM Access Analyzer based on its
      * suite of policy checks.</p>
      */
     inline void SetFindings(const Aws::Vector<ValidatePolicyFinding>& value) { m_findings = value; }
 
     /**
-     * <p>The list of findings in a policy returned by Access Analyzer based on its
+     * <p>The list of findings in a policy returned by IAM Access Analyzer based on its
      * suite of policy checks.</p>
      */
     inline void SetFindings(Aws::Vector<ValidatePolicyFinding>&& value) { m_findings = std::move(value); }
 
     /**
-     * <p>The list of findings in a policy returned by Access Analyzer based on its
+     * <p>The list of findings in a policy returned by IAM Access Analyzer based on its
      * suite of policy checks.</p>
      */
     inline ValidatePolicyResult& WithFindings(const Aws::Vector<ValidatePolicyFinding>& value) { SetFindings(value); return *this;}
 
     /**
-     * <p>The list of findings in a policy returned by Access Analyzer based on its
+     * <p>The list of findings in a policy returned by IAM Access Analyzer based on its
      * suite of policy checks.</p>
      */
     inline ValidatePolicyResult& WithFindings(Aws::Vector<ValidatePolicyFinding>&& value) { SetFindings(std::move(value)); return *this;}
 
     /**
-     * <p>The list of findings in a policy returned by Access Analyzer based on its
+     * <p>The list of findings in a policy returned by IAM Access Analyzer based on its
      * suite of policy checks.</p>
      */
     inline ValidatePolicyResult& AddFindings(const ValidatePolicyFinding& value) { m_findings.push_back(value); return *this; }
 
     /**
-     * <p>The list of findings in a policy returned by Access Analyzer based on its
+     * <p>The list of findings in a policy returned by IAM Access Analyzer based on its
      * suite of policy checks.</p>
      */
     inline ValidatePolicyResult& AddFindings(ValidatePolicyFinding&& value) { m_findings.push_back(std::move(value)); return *this; }

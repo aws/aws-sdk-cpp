@@ -27,9 +27,9 @@ namespace Model
    * the configuration is not specified, the access preview uses the existing
    * setting. If the proposed configuration is for a new bucket and the configuration
    * is not specified, the access preview uses <code>false</code>. If the proposed
-   * configuration is for a new access point and the access point BPA configuration
-   * is not specified, the access preview uses <code>true</code>. For more
-   * information, see <a
+   * configuration is for a new access point or multi-region access point and the
+   * access point BPA configuration is not specified, the access preview uses
+   * <code>true</code>. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-publicaccessblockconfiguration.html">PublicAccessBlockConfiguration</a>.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/S3PublicAccessBlockConfiguration">AWS

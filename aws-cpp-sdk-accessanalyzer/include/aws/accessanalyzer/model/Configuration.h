@@ -168,32 +168,32 @@ namespace Model
 
 
     /**
-     * <p>The access control configuration is for an SQS queue. </p>
+     * <p>The access control configuration is for an Amazon SQS queue. </p>
      */
     inline const SqsQueueConfiguration& GetSqsQueue() const{ return m_sqsQueue; }
 
     /**
-     * <p>The access control configuration is for an SQS queue. </p>
+     * <p>The access control configuration is for an Amazon SQS queue. </p>
      */
     inline bool SqsQueueHasBeenSet() const { return m_sqsQueueHasBeenSet; }
 
     /**
-     * <p>The access control configuration is for an SQS queue. </p>
+     * <p>The access control configuration is for an Amazon SQS queue. </p>
      */
     inline void SetSqsQueue(const SqsQueueConfiguration& value) { m_sqsQueueHasBeenSet = true; m_sqsQueue = value; }
 
     /**
-     * <p>The access control configuration is for an SQS queue. </p>
+     * <p>The access control configuration is for an Amazon SQS queue. </p>
      */
     inline void SetSqsQueue(SqsQueueConfiguration&& value) { m_sqsQueueHasBeenSet = true; m_sqsQueue = std::move(value); }
 
     /**
-     * <p>The access control configuration is for an SQS queue. </p>
+     * <p>The access control configuration is for an Amazon SQS queue. </p>
      */
     inline Configuration& WithSqsQueue(const SqsQueueConfiguration& value) { SetSqsQueue(value); return *this;}
 
     /**
-     * <p>The access control configuration is for an SQS queue. </p>
+     * <p>The access control configuration is for an Amazon SQS queue. </p>
      */
     inline Configuration& WithSqsQueue(SqsQueueConfiguration&& value) { SetSqsQueue(std::move(value)); return *this;}
 

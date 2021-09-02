@@ -23,20 +23,27 @@
 #include <aws/awstransfer/model/CreateAccessRequest.h>
 #include <aws/awstransfer/model/CreateServerRequest.h>
 #include <aws/awstransfer/model/CreateUserRequest.h>
+#include <aws/awstransfer/model/CreateWorkflowRequest.h>
 #include <aws/awstransfer/model/DeleteAccessRequest.h>
 #include <aws/awstransfer/model/DeleteServerRequest.h>
 #include <aws/awstransfer/model/DeleteSshPublicKeyRequest.h>
 #include <aws/awstransfer/model/DeleteUserRequest.h>
+#include <aws/awstransfer/model/DeleteWorkflowRequest.h>
 #include <aws/awstransfer/model/DescribeAccessRequest.h>
+#include <aws/awstransfer/model/DescribeExecutionRequest.h>
 #include <aws/awstransfer/model/DescribeSecurityPolicyRequest.h>
 #include <aws/awstransfer/model/DescribeServerRequest.h>
 #include <aws/awstransfer/model/DescribeUserRequest.h>
+#include <aws/awstransfer/model/DescribeWorkflowRequest.h>
 #include <aws/awstransfer/model/ImportSshPublicKeyRequest.h>
 #include <aws/awstransfer/model/ListAccessesRequest.h>
+#include <aws/awstransfer/model/ListExecutionsRequest.h>
 #include <aws/awstransfer/model/ListSecurityPoliciesRequest.h>
 #include <aws/awstransfer/model/ListServersRequest.h>
 #include <aws/awstransfer/model/ListTagsForResourceRequest.h>
 #include <aws/awstransfer/model/ListUsersRequest.h>
+#include <aws/awstransfer/model/ListWorkflowsRequest.h>
+#include <aws/awstransfer/model/SendWorkflowStepStateRequest.h>
 #include <aws/awstransfer/model/StartServerRequest.h>
 #include <aws/awstransfer/model/StopServerRequest.h>
 #include <aws/awstransfer/model/TagResourceRequest.h>
@@ -191,6 +198,30 @@ void TransferClient::CreateUserAsyncHelper(const CreateUserRequest& request, con
   handler(this, request, CreateUser(request), context);
 }
 
+CreateWorkflowOutcome TransferClient::CreateWorkflow(const CreateWorkflowRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateWorkflowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateWorkflowOutcomeCallable TransferClient::CreateWorkflowCallable(const CreateWorkflowRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkflow(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::CreateWorkflowAsync(const CreateWorkflowRequest& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateWorkflowAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::CreateWorkflowAsyncHelper(const CreateWorkflowRequest& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateWorkflow(request), context);
+}
+
 DeleteAccessOutcome TransferClient::DeleteAccess(const DeleteAccessRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -287,6 +318,30 @@ void TransferClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, con
   handler(this, request, DeleteUser(request), context);
 }
 
+DeleteWorkflowOutcome TransferClient::DeleteWorkflow(const DeleteWorkflowRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteWorkflowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteWorkflowOutcomeCallable TransferClient::DeleteWorkflowCallable(const DeleteWorkflowRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorkflow(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::DeleteWorkflowAsync(const DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteWorkflowAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::DeleteWorkflowAsyncHelper(const DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteWorkflow(request), context);
+}
+
 DescribeAccessOutcome TransferClient::DescribeAccess(const DescribeAccessRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -309,6 +364,30 @@ void TransferClient::DescribeAccessAsync(const DescribeAccessRequest& request, c
 void TransferClient::DescribeAccessAsyncHelper(const DescribeAccessRequest& request, const DescribeAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeAccess(request), context);
+}
+
+DescribeExecutionOutcome TransferClient::DescribeExecution(const DescribeExecutionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeExecutionOutcomeCallable TransferClient::DescribeExecutionCallable(const DescribeExecutionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::DescribeExecutionAsync(const DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeExecutionAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::DescribeExecutionAsyncHelper(const DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeExecution(request), context);
 }
 
 DescribeSecurityPolicyOutcome TransferClient::DescribeSecurityPolicy(const DescribeSecurityPolicyRequest& request) const
@@ -383,6 +462,30 @@ void TransferClient::DescribeUserAsyncHelper(const DescribeUserRequest& request,
   handler(this, request, DescribeUser(request), context);
 }
 
+DescribeWorkflowOutcome TransferClient::DescribeWorkflow(const DescribeWorkflowRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeWorkflowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeWorkflowOutcomeCallable TransferClient::DescribeWorkflowCallable(const DescribeWorkflowRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWorkflow(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::DescribeWorkflowAsync(const DescribeWorkflowRequest& request, const DescribeWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorkflowAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::DescribeWorkflowAsyncHelper(const DescribeWorkflowRequest& request, const DescribeWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeWorkflow(request), context);
+}
+
 ImportSshPublicKeyOutcome TransferClient::ImportSshPublicKey(const ImportSshPublicKeyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -429,6 +532,30 @@ void TransferClient::ListAccessesAsync(const ListAccessesRequest& request, const
 void TransferClient::ListAccessesAsyncHelper(const ListAccessesRequest& request, const ListAccessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListAccesses(request), context);
+}
+
+ListExecutionsOutcome TransferClient::ListExecutions(const ListExecutionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListExecutionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListExecutionsOutcomeCallable TransferClient::ListExecutionsCallable(const ListExecutionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExecutions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::ListExecutionsAsync(const ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListExecutionsAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::ListExecutionsAsyncHelper(const ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListExecutions(request), context);
 }
 
 ListSecurityPoliciesOutcome TransferClient::ListSecurityPolicies(const ListSecurityPoliciesRequest& request) const
@@ -525,6 +652,54 @@ void TransferClient::ListUsersAsync(const ListUsersRequest& request, const ListU
 void TransferClient::ListUsersAsyncHelper(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListUsers(request), context);
+}
+
+ListWorkflowsOutcome TransferClient::ListWorkflows(const ListWorkflowsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListWorkflowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListWorkflowsOutcomeCallable TransferClient::ListWorkflowsCallable(const ListWorkflowsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListWorkflowsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorkflows(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::ListWorkflowsAsync(const ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListWorkflowsAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::ListWorkflowsAsyncHelper(const ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListWorkflows(request), context);
+}
+
+SendWorkflowStepStateOutcome TransferClient::SendWorkflowStepState(const SendWorkflowStepStateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return SendWorkflowStepStateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SendWorkflowStepStateOutcomeCallable TransferClient::SendWorkflowStepStateCallable(const SendWorkflowStepStateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SendWorkflowStepStateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendWorkflowStepState(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::SendWorkflowStepStateAsync(const SendWorkflowStepStateRequest& request, const SendWorkflowStepStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SendWorkflowStepStateAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::SendWorkflowStepStateAsyncHelper(const SendWorkflowStepStateRequest& request, const SendWorkflowStepStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SendWorkflowStepState(request), context);
 }
 
 StartServerOutcome TransferClient::StartServer(const StartServerRequest& request) const

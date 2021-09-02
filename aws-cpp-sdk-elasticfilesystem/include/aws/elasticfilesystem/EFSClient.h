@@ -174,9 +174,9 @@ namespace Model
   /**
    * <fullname>Amazon Elastic File System</fullname> <p>Amazon Elastic File System
    * (Amazon EFS) provides simple, scalable file storage for use with Amazon EC2
-   * instances in the AWS Cloud. With Amazon EFS, storage capacity is elastic,
-   * growing and shrinking automatically as you add and remove files, so your
-   * applications have the storage they need, when they need it. For more
+   * instances in the Amazon Web Services Cloud. With Amazon EFS, storage capacity is
+   * elastic, growing and shrinking automatically as you add and remove files, so
+   * your applications have the storage they need, when they need it. For more
    * information, see the <a
    * href="https://docs.aws.amazon.com/efs/latest/ug/api-reference.html">Amazon
    * Elastic File System API Reference</a> and the <a
@@ -269,22 +269,22 @@ namespace Model
          * <p>Creates a new, empty file system. The operation requires a creation token in
          * the request that Amazon EFS uses to ensure idempotent creation (calling the
          * operation with same creation token has no effect). If a file system does not
-         * currently exist that is owned by the caller's AWS account with the specified
-         * creation token, this operation does the following:</p> <ul> <li> <p>Creates a
-         * new, empty file system. The file system will have an Amazon EFS assigned ID, and
-         * an initial lifecycle state <code>creating</code>.</p> </li> <li> <p>Returns with
-         * the description of the created file system.</p> </li> </ul> <p>Otherwise, this
-         * operation returns a <code>FileSystemAlreadyExists</code> error with the ID of
-         * the existing file system.</p>  <p>For basic use cases, you can use a
-         * randomly generated UUID for the creation token.</p>  <p> The idempotent
-         * operation allows you to retry a <code>CreateFileSystem</code> call without risk
-         * of creating an extra file system. This can happen when an initial call fails in
-         * a way that leaves it uncertain whether or not a file system was actually
-         * created. An example might be that a transport level timeout occurred or your
-         * connection was reset. As long as you use the same creation token, if the initial
-         * call had succeeded in creating a file system, the client can learn of its
-         * existence from the <code>FileSystemAlreadyExists</code> error.</p> <p>For more
-         * information, see <a
+         * currently exist that is owned by the caller's Amazon Web Services account with
+         * the specified creation token, this operation does the following:</p> <ul> <li>
+         * <p>Creates a new, empty file system. The file system will have an Amazon EFS
+         * assigned ID, and an initial lifecycle state <code>creating</code>.</p> </li>
+         * <li> <p>Returns with the description of the created file system.</p> </li> </ul>
+         * <p>Otherwise, this operation returns a <code>FileSystemAlreadyExists</code>
+         * error with the ID of the existing file system.</p>  <p>For basic use
+         * cases, you can use a randomly generated UUID for the creation token.</p> 
+         * <p> The idempotent operation allows you to retry a <code>CreateFileSystem</code>
+         * call without risk of creating an extra file system. This can happen when an
+         * initial call fails in a way that leaves it uncertain whether or not a file
+         * system was actually created. An example might be that a transport level timeout
+         * occurred or your connection was reset. As long as you use the same creation
+         * token, if the initial call had succeeded in creating a file system, the client
+         * can learn of its existence from the <code>FileSystemAlreadyExists</code>
+         * error.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/creating-using-create-fs.html#creating-using-create-fs-part1">Creating
          * a file system</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>The
          * <code>CreateFileSystem</code> call returns while the file system's lifecycle
@@ -319,22 +319,22 @@ namespace Model
          * <p>Creates a new, empty file system. The operation requires a creation token in
          * the request that Amazon EFS uses to ensure idempotent creation (calling the
          * operation with same creation token has no effect). If a file system does not
-         * currently exist that is owned by the caller's AWS account with the specified
-         * creation token, this operation does the following:</p> <ul> <li> <p>Creates a
-         * new, empty file system. The file system will have an Amazon EFS assigned ID, and
-         * an initial lifecycle state <code>creating</code>.</p> </li> <li> <p>Returns with
-         * the description of the created file system.</p> </li> </ul> <p>Otherwise, this
-         * operation returns a <code>FileSystemAlreadyExists</code> error with the ID of
-         * the existing file system.</p>  <p>For basic use cases, you can use a
-         * randomly generated UUID for the creation token.</p>  <p> The idempotent
-         * operation allows you to retry a <code>CreateFileSystem</code> call without risk
-         * of creating an extra file system. This can happen when an initial call fails in
-         * a way that leaves it uncertain whether or not a file system was actually
-         * created. An example might be that a transport level timeout occurred or your
-         * connection was reset. As long as you use the same creation token, if the initial
-         * call had succeeded in creating a file system, the client can learn of its
-         * existence from the <code>FileSystemAlreadyExists</code> error.</p> <p>For more
-         * information, see <a
+         * currently exist that is owned by the caller's Amazon Web Services account with
+         * the specified creation token, this operation does the following:</p> <ul> <li>
+         * <p>Creates a new, empty file system. The file system will have an Amazon EFS
+         * assigned ID, and an initial lifecycle state <code>creating</code>.</p> </li>
+         * <li> <p>Returns with the description of the created file system.</p> </li> </ul>
+         * <p>Otherwise, this operation returns a <code>FileSystemAlreadyExists</code>
+         * error with the ID of the existing file system.</p>  <p>For basic use
+         * cases, you can use a randomly generated UUID for the creation token.</p> 
+         * <p> The idempotent operation allows you to retry a <code>CreateFileSystem</code>
+         * call without risk of creating an extra file system. This can happen when an
+         * initial call fails in a way that leaves it uncertain whether or not a file
+         * system was actually created. An example might be that a transport level timeout
+         * occurred or your connection was reset. As long as you use the same creation
+         * token, if the initial call had succeeded in creating a file system, the client
+         * can learn of its existence from the <code>FileSystemAlreadyExists</code>
+         * error.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/creating-using-create-fs.html#creating-using-create-fs-part1">Creating
          * a file system</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>The
          * <code>CreateFileSystem</code> call returns while the file system's lifecycle
@@ -371,22 +371,22 @@ namespace Model
          * <p>Creates a new, empty file system. The operation requires a creation token in
          * the request that Amazon EFS uses to ensure idempotent creation (calling the
          * operation with same creation token has no effect). If a file system does not
-         * currently exist that is owned by the caller's AWS account with the specified
-         * creation token, this operation does the following:</p> <ul> <li> <p>Creates a
-         * new, empty file system. The file system will have an Amazon EFS assigned ID, and
-         * an initial lifecycle state <code>creating</code>.</p> </li> <li> <p>Returns with
-         * the description of the created file system.</p> </li> </ul> <p>Otherwise, this
-         * operation returns a <code>FileSystemAlreadyExists</code> error with the ID of
-         * the existing file system.</p>  <p>For basic use cases, you can use a
-         * randomly generated UUID for the creation token.</p>  <p> The idempotent
-         * operation allows you to retry a <code>CreateFileSystem</code> call without risk
-         * of creating an extra file system. This can happen when an initial call fails in
-         * a way that leaves it uncertain whether or not a file system was actually
-         * created. An example might be that a transport level timeout occurred or your
-         * connection was reset. As long as you use the same creation token, if the initial
-         * call had succeeded in creating a file system, the client can learn of its
-         * existence from the <code>FileSystemAlreadyExists</code> error.</p> <p>For more
-         * information, see <a
+         * currently exist that is owned by the caller's Amazon Web Services account with
+         * the specified creation token, this operation does the following:</p> <ul> <li>
+         * <p>Creates a new, empty file system. The file system will have an Amazon EFS
+         * assigned ID, and an initial lifecycle state <code>creating</code>.</p> </li>
+         * <li> <p>Returns with the description of the created file system.</p> </li> </ul>
+         * <p>Otherwise, this operation returns a <code>FileSystemAlreadyExists</code>
+         * error with the ID of the existing file system.</p>  <p>For basic use
+         * cases, you can use a randomly generated UUID for the creation token.</p> 
+         * <p> The idempotent operation allows you to retry a <code>CreateFileSystem</code>
+         * call without risk of creating an extra file system. This can happen when an
+         * initial call fails in a way that leaves it uncertain whether or not a file
+         * system was actually created. An example might be that a transport level timeout
+         * occurred or your connection was reset. As long as you use the same creation
+         * token, if the initial call had succeeded in creating a file system, the client
+         * can learn of its existence from the <code>FileSystemAlreadyExists</code>
+         * error.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/creating-using-create-fs.html#creating-using-create-fs-part1">Creating
          * a file system</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>The
          * <code>CreateFileSystem</code> call returns while the file system's lifecycle
@@ -948,19 +948,37 @@ namespace Model
         virtual void DescribeAccessPointsAsync(const Model::DescribeAccessPointsRequest& request, const DescribeAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Returns the account preferences settings for the Amazon Web Services account
+         * associated with the user making the request, in the current Amazon Web Services
+         * Region. For more information, see <a
+         * href="efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon EFS resource
+         * IDs</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccountPreferences">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeAccountPreferencesOutcome DescribeAccountPreferences(const Model::DescribeAccountPreferencesRequest& request) const;
 
         /**
-         * 
+         * <p>Returns the account preferences settings for the Amazon Web Services account
+         * associated with the user making the request, in the current Amazon Web Services
+         * Region. For more information, see <a
+         * href="efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon EFS resource
+         * IDs</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccountPreferences">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeAccountPreferencesOutcomeCallable DescribeAccountPreferencesCallable(const Model::DescribeAccountPreferencesRequest& request) const;
 
         /**
-         * 
+         * <p>Returns the account preferences settings for the Amazon Web Services account
+         * associated with the user making the request, in the current Amazon Web Services
+         * Region. For more information, see <a
+         * href="efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon EFS resource
+         * IDs</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccountPreferences">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1032,22 +1050,23 @@ namespace Model
          * <p>Returns the description of a specific Amazon EFS file system if either the
          * file system <code>CreationToken</code> or the <code>FileSystemId</code> is
          * provided. Otherwise, it returns descriptions of all file systems owned by the
-         * caller's AWS account in the AWS Region of the endpoint that you're calling.</p>
-         * <p>When retrieving all file system descriptions, you can optionally specify the
-         * <code>MaxItems</code> parameter to limit the number of descriptions in a
-         * response. Currently, this number is automatically set to 10. If more file system
-         * descriptions remain, Amazon EFS returns a <code>NextMarker</code>, an opaque
-         * token, in the response. In this case, you should send a subsequent request with
-         * the <code>Marker</code> request parameter set to the value of
-         * <code>NextMarker</code>. </p> <p>To retrieve a list of your file system
-         * descriptions, this operation is used in an iterative process, where
-         * <code>DescribeFileSystems</code> is called first without the <code>Marker</code>
-         * and then the operation continues to call it with the <code>Marker</code>
-         * parameter set to the value of the <code>NextMarker</code> from the previous
-         * response until the response has no <code>NextMarker</code>. </p> <p> The order
-         * of file systems returned in the response of one <code>DescribeFileSystems</code>
-         * call and the order of file systems returned across the responses of a multi-call
-         * iteration is unspecified. </p> <p> This operation requires permissions for the
+         * caller's Amazon Web Services account in the Amazon Web Services Region of the
+         * endpoint that you're calling.</p> <p>When retrieving all file system
+         * descriptions, you can optionally specify the <code>MaxItems</code> parameter to
+         * limit the number of descriptions in a response. Currently, this number is
+         * automatically set to 10. If more file system descriptions remain, Amazon EFS
+         * returns a <code>NextMarker</code>, an opaque token, in the response. In this
+         * case, you should send a subsequent request with the <code>Marker</code> request
+         * parameter set to the value of <code>NextMarker</code>. </p> <p>To retrieve a
+         * list of your file system descriptions, this operation is used in an iterative
+         * process, where <code>DescribeFileSystems</code> is called first without the
+         * <code>Marker</code> and then the operation continues to call it with the
+         * <code>Marker</code> parameter set to the value of the <code>NextMarker</code>
+         * from the previous response until the response has no <code>NextMarker</code>.
+         * </p> <p> The order of file systems returned in the response of one
+         * <code>DescribeFileSystems</code> call and the order of file systems returned
+         * across the responses of a multi-call iteration is unspecified. </p> <p> This
+         * operation requires permissions for the
          * <code>elasticfilesystem:DescribeFileSystems</code> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems">AWS
@@ -1059,22 +1078,23 @@ namespace Model
          * <p>Returns the description of a specific Amazon EFS file system if either the
          * file system <code>CreationToken</code> or the <code>FileSystemId</code> is
          * provided. Otherwise, it returns descriptions of all file systems owned by the
-         * caller's AWS account in the AWS Region of the endpoint that you're calling.</p>
-         * <p>When retrieving all file system descriptions, you can optionally specify the
-         * <code>MaxItems</code> parameter to limit the number of descriptions in a
-         * response. Currently, this number is automatically set to 10. If more file system
-         * descriptions remain, Amazon EFS returns a <code>NextMarker</code>, an opaque
-         * token, in the response. In this case, you should send a subsequent request with
-         * the <code>Marker</code> request parameter set to the value of
-         * <code>NextMarker</code>. </p> <p>To retrieve a list of your file system
-         * descriptions, this operation is used in an iterative process, where
-         * <code>DescribeFileSystems</code> is called first without the <code>Marker</code>
-         * and then the operation continues to call it with the <code>Marker</code>
-         * parameter set to the value of the <code>NextMarker</code> from the previous
-         * response until the response has no <code>NextMarker</code>. </p> <p> The order
-         * of file systems returned in the response of one <code>DescribeFileSystems</code>
-         * call and the order of file systems returned across the responses of a multi-call
-         * iteration is unspecified. </p> <p> This operation requires permissions for the
+         * caller's Amazon Web Services account in the Amazon Web Services Region of the
+         * endpoint that you're calling.</p> <p>When retrieving all file system
+         * descriptions, you can optionally specify the <code>MaxItems</code> parameter to
+         * limit the number of descriptions in a response. Currently, this number is
+         * automatically set to 10. If more file system descriptions remain, Amazon EFS
+         * returns a <code>NextMarker</code>, an opaque token, in the response. In this
+         * case, you should send a subsequent request with the <code>Marker</code> request
+         * parameter set to the value of <code>NextMarker</code>. </p> <p>To retrieve a
+         * list of your file system descriptions, this operation is used in an iterative
+         * process, where <code>DescribeFileSystems</code> is called first without the
+         * <code>Marker</code> and then the operation continues to call it with the
+         * <code>Marker</code> parameter set to the value of the <code>NextMarker</code>
+         * from the previous response until the response has no <code>NextMarker</code>.
+         * </p> <p> The order of file systems returned in the response of one
+         * <code>DescribeFileSystems</code> call and the order of file systems returned
+         * across the responses of a multi-call iteration is unspecified. </p> <p> This
+         * operation requires permissions for the
          * <code>elasticfilesystem:DescribeFileSystems</code> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems">AWS
@@ -1088,22 +1108,23 @@ namespace Model
          * <p>Returns the description of a specific Amazon EFS file system if either the
          * file system <code>CreationToken</code> or the <code>FileSystemId</code> is
          * provided. Otherwise, it returns descriptions of all file systems owned by the
-         * caller's AWS account in the AWS Region of the endpoint that you're calling.</p>
-         * <p>When retrieving all file system descriptions, you can optionally specify the
-         * <code>MaxItems</code> parameter to limit the number of descriptions in a
-         * response. Currently, this number is automatically set to 10. If more file system
-         * descriptions remain, Amazon EFS returns a <code>NextMarker</code>, an opaque
-         * token, in the response. In this case, you should send a subsequent request with
-         * the <code>Marker</code> request parameter set to the value of
-         * <code>NextMarker</code>. </p> <p>To retrieve a list of your file system
-         * descriptions, this operation is used in an iterative process, where
-         * <code>DescribeFileSystems</code> is called first without the <code>Marker</code>
-         * and then the operation continues to call it with the <code>Marker</code>
-         * parameter set to the value of the <code>NextMarker</code> from the previous
-         * response until the response has no <code>NextMarker</code>. </p> <p> The order
-         * of file systems returned in the response of one <code>DescribeFileSystems</code>
-         * call and the order of file systems returned across the responses of a multi-call
-         * iteration is unspecified. </p> <p> This operation requires permissions for the
+         * caller's Amazon Web Services account in the Amazon Web Services Region of the
+         * endpoint that you're calling.</p> <p>When retrieving all file system
+         * descriptions, you can optionally specify the <code>MaxItems</code> parameter to
+         * limit the number of descriptions in a response. Currently, this number is
+         * automatically set to 10. If more file system descriptions remain, Amazon EFS
+         * returns a <code>NextMarker</code>, an opaque token, in the response. In this
+         * case, you should send a subsequent request with the <code>Marker</code> request
+         * parameter set to the value of <code>NextMarker</code>. </p> <p>To retrieve a
+         * list of your file system descriptions, this operation is used in an iterative
+         * process, where <code>DescribeFileSystems</code> is called first without the
+         * <code>Marker</code> and then the operation continues to call it with the
+         * <code>Marker</code> parameter set to the value of the <code>NextMarker</code>
+         * from the previous response until the response has no <code>NextMarker</code>.
+         * </p> <p> The order of file systems returned in the response of one
+         * <code>DescribeFileSystems</code> call and the order of file systems returned
+         * across the responses of a multi-call iteration is unspecified. </p> <p> This
+         * operation requires permissions for the
          * <code>elasticfilesystem:DescribeFileSystems</code> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems">AWS
@@ -1119,7 +1140,9 @@ namespace Model
          * <code>LifecycleConfiguration</code> object to identify which files to move to
          * the EFS Infrequent Access (IA) storage class. For a file system without a
          * <code>LifecycleConfiguration</code> object, the call returns an empty array in
-         * the response.</p> <p>This operation requires permissions for the
+         * the response.</p> <p>When EFS Intelligent Tiering is enabled,
+         * <code>TransitionToPrimaryStorageClass</code> has a value of
+         * <code>AFTER_1_ACCESS</code>.</p> <p>This operation requires permissions for the
          * <code>elasticfilesystem:DescribeLifecycleConfiguration</code>
          * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeLifecycleConfiguration">AWS
@@ -1133,7 +1156,9 @@ namespace Model
          * <code>LifecycleConfiguration</code> object to identify which files to move to
          * the EFS Infrequent Access (IA) storage class. For a file system without a
          * <code>LifecycleConfiguration</code> object, the call returns an empty array in
-         * the response.</p> <p>This operation requires permissions for the
+         * the response.</p> <p>When EFS Intelligent Tiering is enabled,
+         * <code>TransitionToPrimaryStorageClass</code> has a value of
+         * <code>AFTER_1_ACCESS</code>.</p> <p>This operation requires permissions for the
          * <code>elasticfilesystem:DescribeLifecycleConfiguration</code>
          * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeLifecycleConfiguration">AWS
@@ -1149,7 +1174,9 @@ namespace Model
          * <code>LifecycleConfiguration</code> object to identify which files to move to
          * the EFS Infrequent Access (IA) storage class. For a file system without a
          * <code>LifecycleConfiguration</code> object, the call returns an empty array in
-         * the response.</p> <p>This operation requires permissions for the
+         * the response.</p> <p>When EFS Intelligent Tiering is enabled,
+         * <code>TransitionToPrimaryStorageClass</code> has a value of
+         * <code>AFTER_1_ACCESS</code>.</p> <p>This operation requires permissions for the
          * <code>elasticfilesystem:DescribeLifecycleConfiguration</code>
          * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeLifecycleConfiguration">AWS
@@ -1347,19 +1374,46 @@ namespace Model
         virtual void ModifyMountTargetSecurityGroupsAsync(const Model::ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Use this operation to set the account preference in the current Amazon Web
+         * Services Region to use either long 17 character (63 bit) or short 8 character
+         * (32 bit) IDs for new EFS file systems and mount targets created. All existing
+         * resource IDs are not affected by any changes you make. You can set the ID
+         * preference during the opt-in period as EFS transitions to long resource IDs. For
+         * more information, see <a
+         * href="efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon EFS resource
+         * IDs</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutAccountPreferences">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutAccountPreferencesOutcome PutAccountPreferences(const Model::PutAccountPreferencesRequest& request) const;
 
         /**
-         * 
+         * <p>Use this operation to set the account preference in the current Amazon Web
+         * Services Region to use either long 17 character (63 bit) or short 8 character
+         * (32 bit) IDs for new EFS file systems and mount targets created. All existing
+         * resource IDs are not affected by any changes you make. You can set the ID
+         * preference during the opt-in period as EFS transitions to long resource IDs. For
+         * more information, see <a
+         * href="efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon EFS resource
+         * IDs</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutAccountPreferences">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutAccountPreferencesOutcomeCallable PutAccountPreferencesCallable(const Model::PutAccountPreferencesRequest& request) const;
 
         /**
-         * 
+         * <p>Use this operation to set the account preference in the current Amazon Web
+         * Services Region to use either long 17 character (63 bit) or short 8 character
+         * (32 bit) IDs for new EFS file systems and mount targets created. All existing
+         * resource IDs are not affected by any changes you make. You can set the ID
+         * preference during the opt-in period as EFS transitions to long resource IDs. For
+         * more information, see <a
+         * href="efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon EFS resource
+         * IDs</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutAccountPreferences">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1456,8 +1510,12 @@ namespace Model
          * <code>LifecycleConfiguration</code> object. A
          * <code>LifecycleConfiguration</code> object defines when files in an Amazon EFS
          * file system are automatically transitioned to the lower-cost EFS Infrequent
-         * Access (IA) storage class. A <code>LifecycleConfiguration</code> applies to all
-         * files in a file system.</p> <p>Each Amazon EFS file system supports one
+         * Access (IA) storage class. To enable EFS Intelligent Tiering, set the value of
+         * <code>TransitionToPrimaryStorageClass</code> to <code>AFTER_1_ACCESS</code>. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS
+         * Lifecycle Management</a>.</p> <p>A <code>LifecycleConfiguration</code> applies
+         * to all files in a file system.</p> <p>Each Amazon EFS file system supports one
          * lifecycle configuration, which applies to all files in the file system. If a
          * <code>LifecycleConfiguration</code> object already exists for the specified file
          * system, a <code>PutLifecycleConfiguration</code> call modifies the existing
@@ -1472,8 +1530,8 @@ namespace Model
          * item.</p> </li> </ul> <p>This operation requires permissions for the
          * <code>elasticfilesystem:PutLifecycleConfiguration</code> operation.</p> <p>To
          * apply a <code>LifecycleConfiguration</code> object to an encrypted file system,
-         * you need the same AWS Key Management Service (AWS KMS) permissions as when you
-         * created the encrypted file system. </p><p><h3>See Also:</h3>   <a
+         * you need the same Key Management Service permissions as when you created the
+         * encrypted file system. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutLifecycleConfiguration">AWS
          * API Reference</a></p>
          */
@@ -1484,8 +1542,12 @@ namespace Model
          * <code>LifecycleConfiguration</code> object. A
          * <code>LifecycleConfiguration</code> object defines when files in an Amazon EFS
          * file system are automatically transitioned to the lower-cost EFS Infrequent
-         * Access (IA) storage class. A <code>LifecycleConfiguration</code> applies to all
-         * files in a file system.</p> <p>Each Amazon EFS file system supports one
+         * Access (IA) storage class. To enable EFS Intelligent Tiering, set the value of
+         * <code>TransitionToPrimaryStorageClass</code> to <code>AFTER_1_ACCESS</code>. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS
+         * Lifecycle Management</a>.</p> <p>A <code>LifecycleConfiguration</code> applies
+         * to all files in a file system.</p> <p>Each Amazon EFS file system supports one
          * lifecycle configuration, which applies to all files in the file system. If a
          * <code>LifecycleConfiguration</code> object already exists for the specified file
          * system, a <code>PutLifecycleConfiguration</code> call modifies the existing
@@ -1500,8 +1562,8 @@ namespace Model
          * item.</p> </li> </ul> <p>This operation requires permissions for the
          * <code>elasticfilesystem:PutLifecycleConfiguration</code> operation.</p> <p>To
          * apply a <code>LifecycleConfiguration</code> object to an encrypted file system,
-         * you need the same AWS Key Management Service (AWS KMS) permissions as when you
-         * created the encrypted file system. </p><p><h3>See Also:</h3>   <a
+         * you need the same Key Management Service permissions as when you created the
+         * encrypted file system. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutLifecycleConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1514,8 +1576,12 @@ namespace Model
          * <code>LifecycleConfiguration</code> object. A
          * <code>LifecycleConfiguration</code> object defines when files in an Amazon EFS
          * file system are automatically transitioned to the lower-cost EFS Infrequent
-         * Access (IA) storage class. A <code>LifecycleConfiguration</code> applies to all
-         * files in a file system.</p> <p>Each Amazon EFS file system supports one
+         * Access (IA) storage class. To enable EFS Intelligent Tiering, set the value of
+         * <code>TransitionToPrimaryStorageClass</code> to <code>AFTER_1_ACCESS</code>. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS
+         * Lifecycle Management</a>.</p> <p>A <code>LifecycleConfiguration</code> applies
+         * to all files in a file system.</p> <p>Each Amazon EFS file system supports one
          * lifecycle configuration, which applies to all files in the file system. If a
          * <code>LifecycleConfiguration</code> object already exists for the specified file
          * system, a <code>PutLifecycleConfiguration</code> call modifies the existing
@@ -1530,8 +1596,8 @@ namespace Model
          * item.</p> </li> </ul> <p>This operation requires permissions for the
          * <code>elasticfilesystem:PutLifecycleConfiguration</code> operation.</p> <p>To
          * apply a <code>LifecycleConfiguration</code> object to an encrypted file system,
-         * you need the same AWS Key Management Service (AWS KMS) permissions as when you
-         * created the encrypted file system. </p><p><h3>See Also:</h3>   <a
+         * you need the same Key Management Service permissions as when you created the
+         * encrypted file system. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutLifecycleConfiguration">AWS
          * API Reference</a></p>
          *

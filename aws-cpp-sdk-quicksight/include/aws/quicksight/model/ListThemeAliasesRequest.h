@@ -39,49 +39,49 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the theme aliases
+     * <p>The ID of the Amazon Web Services account that contains the theme aliases
      * that you're listing.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the theme aliases
+     * <p>The ID of the Amazon Web Services account that contains the theme aliases
      * that you're listing.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the theme aliases
+     * <p>The ID of the Amazon Web Services account that contains the theme aliases
      * that you're listing.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the theme aliases
+     * <p>The ID of the Amazon Web Services account that contains the theme aliases
      * that you're listing.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the theme aliases
+     * <p>The ID of the Amazon Web Services account that contains the theme aliases
      * that you're listing.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the theme aliases
+     * <p>The ID of the Amazon Web Services account that contains the theme aliases
      * that you're listing.</p>
      */
     inline ListThemeAliasesRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the theme aliases
+     * <p>The ID of the Amazon Web Services account that contains the theme aliases
      * that you're listing.</p>
      */
     inline ListThemeAliasesRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the theme aliases
+     * <p>The ID of the Amazon Web Services account that contains the theme aliases
      * that you're listing.</p>
      */
     inline ListThemeAliasesRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}

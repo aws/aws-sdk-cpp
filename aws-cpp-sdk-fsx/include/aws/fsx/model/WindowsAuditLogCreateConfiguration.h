@@ -185,16 +185,17 @@ namespace Model
      * Amazon Kinesis Data Firehose delivery stream ARN, with the following
      * requirements:</p> <ul> <li> <p>The destination ARN that you provide (either
      * CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in
-     * the same AWS partition, AWS region, and AWS account as your Amazon FSx file
-     * system.</p> </li> <li> <p>The name of the Amazon CloudWatch Logs log group must
-     * begin with the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data
-     * Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
-     * </li> <li> <p>If you do not provide a destination in
-     * <code>AuditLogDestination</code>, Amazon FSx will create and use a log stream in
-     * the CloudWatch Logs <code>/aws/fsx/windows</code> log group.</p> </li> <li>
-     * <p>If <code>AuditLogDestination</code> is provided and the resource does not
-     * exist, the request will fail with a <code>BadRequest</code> error.</p> </li>
-     * <li> <p>If <code>FileAccessAuditLogLevel</code> and
+     * the same Amazon Web Services partition, Amazon Web Services Region, and Amazon
+     * Web Services account as your Amazon FSx file system.</p> </li> <li> <p>The name
+     * of the Amazon CloudWatch Logs log group must begin with the
+     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse
+     * delivery stream must begin with the <code>aws-fsx</code> prefix.</p> </li> <li>
+     * <p>If you do not provide a destination in <code>AuditLogDestination</code>,
+     * Amazon FSx will create and use a log stream in the CloudWatch Logs
+     * <code>/aws/fsx/windows</code> log group.</p> </li> <li> <p>If
+     * <code>AuditLogDestination</code> is provided and the resource does not exist,
+     * the request will fail with a <code>BadRequest</code> error.</p> </li> <li> <p>If
+     * <code>FileAccessAuditLogLevel</code> and
      * <code>FileShareAccessAuditLogLevel</code> are both set to <code>DISABLED</code>,
      * you cannot specify a destination in <code>AuditLogDestination</code>.</p> </li>
      * </ul>
@@ -207,16 +208,17 @@ namespace Model
      * Amazon Kinesis Data Firehose delivery stream ARN, with the following
      * requirements:</p> <ul> <li> <p>The destination ARN that you provide (either
      * CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in
-     * the same AWS partition, AWS region, and AWS account as your Amazon FSx file
-     * system.</p> </li> <li> <p>The name of the Amazon CloudWatch Logs log group must
-     * begin with the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data
-     * Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
-     * </li> <li> <p>If you do not provide a destination in
-     * <code>AuditLogDestination</code>, Amazon FSx will create and use a log stream in
-     * the CloudWatch Logs <code>/aws/fsx/windows</code> log group.</p> </li> <li>
-     * <p>If <code>AuditLogDestination</code> is provided and the resource does not
-     * exist, the request will fail with a <code>BadRequest</code> error.</p> </li>
-     * <li> <p>If <code>FileAccessAuditLogLevel</code> and
+     * the same Amazon Web Services partition, Amazon Web Services Region, and Amazon
+     * Web Services account as your Amazon FSx file system.</p> </li> <li> <p>The name
+     * of the Amazon CloudWatch Logs log group must begin with the
+     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse
+     * delivery stream must begin with the <code>aws-fsx</code> prefix.</p> </li> <li>
+     * <p>If you do not provide a destination in <code>AuditLogDestination</code>,
+     * Amazon FSx will create and use a log stream in the CloudWatch Logs
+     * <code>/aws/fsx/windows</code> log group.</p> </li> <li> <p>If
+     * <code>AuditLogDestination</code> is provided and the resource does not exist,
+     * the request will fail with a <code>BadRequest</code> error.</p> </li> <li> <p>If
+     * <code>FileAccessAuditLogLevel</code> and
      * <code>FileShareAccessAuditLogLevel</code> are both set to <code>DISABLED</code>,
      * you cannot specify a destination in <code>AuditLogDestination</code>.</p> </li>
      * </ul>
@@ -229,16 +231,17 @@ namespace Model
      * Amazon Kinesis Data Firehose delivery stream ARN, with the following
      * requirements:</p> <ul> <li> <p>The destination ARN that you provide (either
      * CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in
-     * the same AWS partition, AWS region, and AWS account as your Amazon FSx file
-     * system.</p> </li> <li> <p>The name of the Amazon CloudWatch Logs log group must
-     * begin with the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data
-     * Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
-     * </li> <li> <p>If you do not provide a destination in
-     * <code>AuditLogDestination</code>, Amazon FSx will create and use a log stream in
-     * the CloudWatch Logs <code>/aws/fsx/windows</code> log group.</p> </li> <li>
-     * <p>If <code>AuditLogDestination</code> is provided and the resource does not
-     * exist, the request will fail with a <code>BadRequest</code> error.</p> </li>
-     * <li> <p>If <code>FileAccessAuditLogLevel</code> and
+     * the same Amazon Web Services partition, Amazon Web Services Region, and Amazon
+     * Web Services account as your Amazon FSx file system.</p> </li> <li> <p>The name
+     * of the Amazon CloudWatch Logs log group must begin with the
+     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse
+     * delivery stream must begin with the <code>aws-fsx</code> prefix.</p> </li> <li>
+     * <p>If you do not provide a destination in <code>AuditLogDestination</code>,
+     * Amazon FSx will create and use a log stream in the CloudWatch Logs
+     * <code>/aws/fsx/windows</code> log group.</p> </li> <li> <p>If
+     * <code>AuditLogDestination</code> is provided and the resource does not exist,
+     * the request will fail with a <code>BadRequest</code> error.</p> </li> <li> <p>If
+     * <code>FileAccessAuditLogLevel</code> and
      * <code>FileShareAccessAuditLogLevel</code> are both set to <code>DISABLED</code>,
      * you cannot specify a destination in <code>AuditLogDestination</code>.</p> </li>
      * </ul>
@@ -251,16 +254,17 @@ namespace Model
      * Amazon Kinesis Data Firehose delivery stream ARN, with the following
      * requirements:</p> <ul> <li> <p>The destination ARN that you provide (either
      * CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in
-     * the same AWS partition, AWS region, and AWS account as your Amazon FSx file
-     * system.</p> </li> <li> <p>The name of the Amazon CloudWatch Logs log group must
-     * begin with the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data
-     * Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
-     * </li> <li> <p>If you do not provide a destination in
-     * <code>AuditLogDestination</code>, Amazon FSx will create and use a log stream in
-     * the CloudWatch Logs <code>/aws/fsx/windows</code> log group.</p> </li> <li>
-     * <p>If <code>AuditLogDestination</code> is provided and the resource does not
-     * exist, the request will fail with a <code>BadRequest</code> error.</p> </li>
-     * <li> <p>If <code>FileAccessAuditLogLevel</code> and
+     * the same Amazon Web Services partition, Amazon Web Services Region, and Amazon
+     * Web Services account as your Amazon FSx file system.</p> </li> <li> <p>The name
+     * of the Amazon CloudWatch Logs log group must begin with the
+     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse
+     * delivery stream must begin with the <code>aws-fsx</code> prefix.</p> </li> <li>
+     * <p>If you do not provide a destination in <code>AuditLogDestination</code>,
+     * Amazon FSx will create and use a log stream in the CloudWatch Logs
+     * <code>/aws/fsx/windows</code> log group.</p> </li> <li> <p>If
+     * <code>AuditLogDestination</code> is provided and the resource does not exist,
+     * the request will fail with a <code>BadRequest</code> error.</p> </li> <li> <p>If
+     * <code>FileAccessAuditLogLevel</code> and
      * <code>FileShareAccessAuditLogLevel</code> are both set to <code>DISABLED</code>,
      * you cannot specify a destination in <code>AuditLogDestination</code>.</p> </li>
      * </ul>
@@ -273,16 +277,17 @@ namespace Model
      * Amazon Kinesis Data Firehose delivery stream ARN, with the following
      * requirements:</p> <ul> <li> <p>The destination ARN that you provide (either
      * CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in
-     * the same AWS partition, AWS region, and AWS account as your Amazon FSx file
-     * system.</p> </li> <li> <p>The name of the Amazon CloudWatch Logs log group must
-     * begin with the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data
-     * Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
-     * </li> <li> <p>If you do not provide a destination in
-     * <code>AuditLogDestination</code>, Amazon FSx will create and use a log stream in
-     * the CloudWatch Logs <code>/aws/fsx/windows</code> log group.</p> </li> <li>
-     * <p>If <code>AuditLogDestination</code> is provided and the resource does not
-     * exist, the request will fail with a <code>BadRequest</code> error.</p> </li>
-     * <li> <p>If <code>FileAccessAuditLogLevel</code> and
+     * the same Amazon Web Services partition, Amazon Web Services Region, and Amazon
+     * Web Services account as your Amazon FSx file system.</p> </li> <li> <p>The name
+     * of the Amazon CloudWatch Logs log group must begin with the
+     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse
+     * delivery stream must begin with the <code>aws-fsx</code> prefix.</p> </li> <li>
+     * <p>If you do not provide a destination in <code>AuditLogDestination</code>,
+     * Amazon FSx will create and use a log stream in the CloudWatch Logs
+     * <code>/aws/fsx/windows</code> log group.</p> </li> <li> <p>If
+     * <code>AuditLogDestination</code> is provided and the resource does not exist,
+     * the request will fail with a <code>BadRequest</code> error.</p> </li> <li> <p>If
+     * <code>FileAccessAuditLogLevel</code> and
      * <code>FileShareAccessAuditLogLevel</code> are both set to <code>DISABLED</code>,
      * you cannot specify a destination in <code>AuditLogDestination</code>.</p> </li>
      * </ul>
@@ -295,16 +300,17 @@ namespace Model
      * Amazon Kinesis Data Firehose delivery stream ARN, with the following
      * requirements:</p> <ul> <li> <p>The destination ARN that you provide (either
      * CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in
-     * the same AWS partition, AWS region, and AWS account as your Amazon FSx file
-     * system.</p> </li> <li> <p>The name of the Amazon CloudWatch Logs log group must
-     * begin with the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data
-     * Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
-     * </li> <li> <p>If you do not provide a destination in
-     * <code>AuditLogDestination</code>, Amazon FSx will create and use a log stream in
-     * the CloudWatch Logs <code>/aws/fsx/windows</code> log group.</p> </li> <li>
-     * <p>If <code>AuditLogDestination</code> is provided and the resource does not
-     * exist, the request will fail with a <code>BadRequest</code> error.</p> </li>
-     * <li> <p>If <code>FileAccessAuditLogLevel</code> and
+     * the same Amazon Web Services partition, Amazon Web Services Region, and Amazon
+     * Web Services account as your Amazon FSx file system.</p> </li> <li> <p>The name
+     * of the Amazon CloudWatch Logs log group must begin with the
+     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse
+     * delivery stream must begin with the <code>aws-fsx</code> prefix.</p> </li> <li>
+     * <p>If you do not provide a destination in <code>AuditLogDestination</code>,
+     * Amazon FSx will create and use a log stream in the CloudWatch Logs
+     * <code>/aws/fsx/windows</code> log group.</p> </li> <li> <p>If
+     * <code>AuditLogDestination</code> is provided and the resource does not exist,
+     * the request will fail with a <code>BadRequest</code> error.</p> </li> <li> <p>If
+     * <code>FileAccessAuditLogLevel</code> and
      * <code>FileShareAccessAuditLogLevel</code> are both set to <code>DISABLED</code>,
      * you cannot specify a destination in <code>AuditLogDestination</code>.</p> </li>
      * </ul>
@@ -317,16 +323,17 @@ namespace Model
      * Amazon Kinesis Data Firehose delivery stream ARN, with the following
      * requirements:</p> <ul> <li> <p>The destination ARN that you provide (either
      * CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in
-     * the same AWS partition, AWS region, and AWS account as your Amazon FSx file
-     * system.</p> </li> <li> <p>The name of the Amazon CloudWatch Logs log group must
-     * begin with the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data
-     * Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
-     * </li> <li> <p>If you do not provide a destination in
-     * <code>AuditLogDestination</code>, Amazon FSx will create and use a log stream in
-     * the CloudWatch Logs <code>/aws/fsx/windows</code> log group.</p> </li> <li>
-     * <p>If <code>AuditLogDestination</code> is provided and the resource does not
-     * exist, the request will fail with a <code>BadRequest</code> error.</p> </li>
-     * <li> <p>If <code>FileAccessAuditLogLevel</code> and
+     * the same Amazon Web Services partition, Amazon Web Services Region, and Amazon
+     * Web Services account as your Amazon FSx file system.</p> </li> <li> <p>The name
+     * of the Amazon CloudWatch Logs log group must begin with the
+     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse
+     * delivery stream must begin with the <code>aws-fsx</code> prefix.</p> </li> <li>
+     * <p>If you do not provide a destination in <code>AuditLogDestination</code>,
+     * Amazon FSx will create and use a log stream in the CloudWatch Logs
+     * <code>/aws/fsx/windows</code> log group.</p> </li> <li> <p>If
+     * <code>AuditLogDestination</code> is provided and the resource does not exist,
+     * the request will fail with a <code>BadRequest</code> error.</p> </li> <li> <p>If
+     * <code>FileAccessAuditLogLevel</code> and
      * <code>FileShareAccessAuditLogLevel</code> are both set to <code>DISABLED</code>,
      * you cannot specify a destination in <code>AuditLogDestination</code>.</p> </li>
      * </ul>
@@ -339,16 +346,17 @@ namespace Model
      * Amazon Kinesis Data Firehose delivery stream ARN, with the following
      * requirements:</p> <ul> <li> <p>The destination ARN that you provide (either
      * CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in
-     * the same AWS partition, AWS region, and AWS account as your Amazon FSx file
-     * system.</p> </li> <li> <p>The name of the Amazon CloudWatch Logs log group must
-     * begin with the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data
-     * Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
-     * </li> <li> <p>If you do not provide a destination in
-     * <code>AuditLogDestination</code>, Amazon FSx will create and use a log stream in
-     * the CloudWatch Logs <code>/aws/fsx/windows</code> log group.</p> </li> <li>
-     * <p>If <code>AuditLogDestination</code> is provided and the resource does not
-     * exist, the request will fail with a <code>BadRequest</code> error.</p> </li>
-     * <li> <p>If <code>FileAccessAuditLogLevel</code> and
+     * the same Amazon Web Services partition, Amazon Web Services Region, and Amazon
+     * Web Services account as your Amazon FSx file system.</p> </li> <li> <p>The name
+     * of the Amazon CloudWatch Logs log group must begin with the
+     * <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse
+     * delivery stream must begin with the <code>aws-fsx</code> prefix.</p> </li> <li>
+     * <p>If you do not provide a destination in <code>AuditLogDestination</code>,
+     * Amazon FSx will create and use a log stream in the CloudWatch Logs
+     * <code>/aws/fsx/windows</code> log group.</p> </li> <li> <p>If
+     * <code>AuditLogDestination</code> is provided and the resource does not exist,
+     * the request will fail with a <code>BadRequest</code> error.</p> </li> <li> <p>If
+     * <code>FileAccessAuditLogLevel</code> and
      * <code>FileShareAccessAuditLogLevel</code> are both set to <code>DISABLED</code>,
      * you cannot specify a destination in <code>AuditLogDestination</code>.</p> </li>
      * </ul>

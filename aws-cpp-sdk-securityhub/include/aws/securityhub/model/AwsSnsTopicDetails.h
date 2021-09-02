@@ -40,50 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of an Amazon Web Services managed customer master key (CMK) for Amazon
-     * SNS or a custom CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SNS or a customer
+     * managed key.</p>
      */
     inline const Aws::String& GetKmsMasterKeyId() const{ return m_kmsMasterKeyId; }
 
     /**
-     * <p>The ID of an Amazon Web Services managed customer master key (CMK) for Amazon
-     * SNS or a custom CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SNS or a customer
+     * managed key.</p>
      */
     inline bool KmsMasterKeyIdHasBeenSet() const { return m_kmsMasterKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of an Amazon Web Services managed customer master key (CMK) for Amazon
-     * SNS or a custom CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SNS or a customer
+     * managed key.</p>
      */
     inline void SetKmsMasterKeyId(const Aws::String& value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId = value; }
 
     /**
-     * <p>The ID of an Amazon Web Services managed customer master key (CMK) for Amazon
-     * SNS or a custom CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SNS or a customer
+     * managed key.</p>
      */
     inline void SetKmsMasterKeyId(Aws::String&& value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId = std::move(value); }
 
     /**
-     * <p>The ID of an Amazon Web Services managed customer master key (CMK) for Amazon
-     * SNS or a custom CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SNS or a customer
+     * managed key.</p>
      */
     inline void SetKmsMasterKeyId(const char* value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId.assign(value); }
 
     /**
-     * <p>The ID of an Amazon Web Services managed customer master key (CMK) for Amazon
-     * SNS or a custom CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SNS or a customer
+     * managed key.</p>
      */
     inline AwsSnsTopicDetails& WithKmsMasterKeyId(const Aws::String& value) { SetKmsMasterKeyId(value); return *this;}
 
     /**
-     * <p>The ID of an Amazon Web Services managed customer master key (CMK) for Amazon
-     * SNS or a custom CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SNS or a customer
+     * managed key.</p>
      */
     inline AwsSnsTopicDetails& WithKmsMasterKeyId(Aws::String&& value) { SetKmsMasterKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of an Amazon Web Services managed customer master key (CMK) for Amazon
-     * SNS or a custom CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SNS or a customer
+     * managed key.</p>
      */
     inline AwsSnsTopicDetails& WithKmsMasterKeyId(const char* value) { SetKmsMasterKeyId(value); return *this;}
 

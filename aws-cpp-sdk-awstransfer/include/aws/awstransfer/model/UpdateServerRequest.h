@@ -12,6 +12,7 @@
 #include <aws/awstransfer/model/EndpointType.h>
 #include <aws/awstransfer/model/IdentityProviderDetails.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/awstransfer/model/WorkflowDetails.h>
 #include <aws/awstransfer/model/Protocol.h>
 #include <utility>
 
@@ -941,6 +942,43 @@ namespace Model
      */
     inline UpdateServerRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
 
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline const WorkflowDetails& GetWorkflowDetails() const{ return m_workflowDetails; }
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline bool WorkflowDetailsHasBeenSet() const { return m_workflowDetailsHasBeenSet; }
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline void SetWorkflowDetails(const WorkflowDetails& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = value; }
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline void SetWorkflowDetails(WorkflowDetails&& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = std::move(value); }
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline UpdateServerRequest& WithWorkflowDetails(const WorkflowDetails& value) { SetWorkflowDetails(value); return *this;}
+
+    /**
+     * <p>Specifies the workflow ID for the workflow to assign and the execution role
+     * used for executing the workflow.</p>
+     */
+    inline UpdateServerRequest& WithWorkflowDetails(WorkflowDetails&& value) { SetWorkflowDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_certificate;
@@ -972,6 +1010,9 @@ namespace Model
 
     Aws::String m_serverId;
     bool m_serverIdHasBeenSet;
+
+    WorkflowDetails m_workflowDetails;
+    bool m_workflowDetailsHasBeenSet;
   };
 
 } // namespace Model

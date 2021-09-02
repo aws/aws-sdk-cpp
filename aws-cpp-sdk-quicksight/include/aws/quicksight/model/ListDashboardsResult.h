@@ -36,43 +36,43 @@ namespace Model
 
     /**
      * <p>A structure that contains all of the dashboards in your Amazon Web Services
-     * account;. This structure provides basic information about the dashboards.</p>
+     * account. This structure provides basic information about the dashboards.</p>
      */
     inline const Aws::Vector<DashboardSummary>& GetDashboardSummaryList() const{ return m_dashboardSummaryList; }
 
     /**
      * <p>A structure that contains all of the dashboards in your Amazon Web Services
-     * account;. This structure provides basic information about the dashboards.</p>
+     * account. This structure provides basic information about the dashboards.</p>
      */
     inline void SetDashboardSummaryList(const Aws::Vector<DashboardSummary>& value) { m_dashboardSummaryList = value; }
 
     /**
      * <p>A structure that contains all of the dashboards in your Amazon Web Services
-     * account;. This structure provides basic information about the dashboards.</p>
+     * account. This structure provides basic information about the dashboards.</p>
      */
     inline void SetDashboardSummaryList(Aws::Vector<DashboardSummary>&& value) { m_dashboardSummaryList = std::move(value); }
 
     /**
      * <p>A structure that contains all of the dashboards in your Amazon Web Services
-     * account;. This structure provides basic information about the dashboards.</p>
+     * account. This structure provides basic information about the dashboards.</p>
      */
     inline ListDashboardsResult& WithDashboardSummaryList(const Aws::Vector<DashboardSummary>& value) { SetDashboardSummaryList(value); return *this;}
 
     /**
      * <p>A structure that contains all of the dashboards in your Amazon Web Services
-     * account;. This structure provides basic information about the dashboards.</p>
+     * account. This structure provides basic information about the dashboards.</p>
      */
     inline ListDashboardsResult& WithDashboardSummaryList(Aws::Vector<DashboardSummary>&& value) { SetDashboardSummaryList(std::move(value)); return *this;}
 
     /**
      * <p>A structure that contains all of the dashboards in your Amazon Web Services
-     * account;. This structure provides basic information about the dashboards.</p>
+     * account. This structure provides basic information about the dashboards.</p>
      */
     inline ListDashboardsResult& AddDashboardSummaryList(const DashboardSummary& value) { m_dashboardSummaryList.push_back(value); return *this; }
 
     /**
      * <p>A structure that contains all of the dashboards in your Amazon Web Services
-     * account;. This structure provides basic information about the dashboards.</p>
+     * account. This structure provides basic information about the dashboards.</p>
      */
     inline ListDashboardsResult& AddDashboardSummaryList(DashboardSummary&& value) { m_dashboardSummaryList.push_back(std::move(value)); return *this; }
 

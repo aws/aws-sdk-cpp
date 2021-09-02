@@ -27,7 +27,8 @@ namespace Model
     fr_FR,
     fr_CA,
     it_IT,
-    ja_JP
+    ja_JP,
+    ko_KR
   };
 
 namespace LocaleMapper

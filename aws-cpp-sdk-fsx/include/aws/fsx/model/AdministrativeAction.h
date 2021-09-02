@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/fsx/model/Status.h>
 #include <aws/fsx/model/AdministrativeActionFailureDetails.h>
+#include <aws/fsx/model/Volume.h>
 #include <utility>
 #include <memory>
 
@@ -304,6 +305,25 @@ namespace Model
     
     inline AdministrativeAction& WithFailureDetails(AdministrativeActionFailureDetails&& value) { SetFailureDetails(std::move(value)); return *this;}
 
+
+    
+    inline const Volume& GetTargetVolumeValues() const{ return m_targetVolumeValues; }
+
+    
+    inline bool TargetVolumeValuesHasBeenSet() const { return m_targetVolumeValuesHasBeenSet; }
+
+    
+    inline void SetTargetVolumeValues(const Volume& value) { m_targetVolumeValuesHasBeenSet = true; m_targetVolumeValues = value; }
+
+    
+    inline void SetTargetVolumeValues(Volume&& value) { m_targetVolumeValuesHasBeenSet = true; m_targetVolumeValues = std::move(value); }
+
+    
+    inline AdministrativeAction& WithTargetVolumeValues(const Volume& value) { SetTargetVolumeValues(value); return *this;}
+
+    
+    inline AdministrativeAction& WithTargetVolumeValues(Volume&& value) { SetTargetVolumeValues(std::move(value)); return *this;}
+
   private:
 
     AdministrativeActionType m_administrativeActionType;
@@ -323,6 +343,9 @@ namespace Model
 
     AdministrativeActionFailureDetails m_failureDetails;
     bool m_failureDetailsHasBeenSet;
+
+    Volume m_targetVolumeValues;
+    bool m_targetVolumeValuesHasBeenSet;
   };
 
 } // namespace Model

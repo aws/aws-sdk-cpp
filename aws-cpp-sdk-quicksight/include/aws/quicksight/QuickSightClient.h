@@ -689,14 +689,14 @@ namespace Model
          * Region;. Currently, you can add a custom default theme by using the
          * <code>CreateAccountCustomization</code> or
          * <code>UpdateAccountCustomization</code> API operation. To further customize
-         * QuickSight by removing QuickSight sample assets and videos for all new users,
-         * see <a
+         * Amazon QuickSight by removing Amazon QuickSight sample assets and videos for all
+         * new users, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
-         * QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> </p> <p>You can
-         * create customizations for your Amazon Web Services account; or, if you specify a
-         * namespace, for a QuickSight namespace instead. Customizations that apply to a
-         * namespace always override customizations that apply to an Amazon Web Services
-         * account;. To find out which customizations apply, use the
+         * Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> </p> <p>You
+         * can create customizations for your Amazon Web Services account or, if you
+         * specify a namespace, for a Amazon QuickSight namespace instead. Customizations
+         * that apply to a namespace always override customizations that apply to an Amazon
+         * Web Services account. To find out which customizations apply, use the
          * <code>DescribeAccountCustomization</code> API operation.</p> <p>Before you use
          * the <code>CreateAccountCustomization</code> API operation to add a theme as the
          * namespace default, make sure that you first share the theme with the namespace.
@@ -716,14 +716,14 @@ namespace Model
          * Region;. Currently, you can add a custom default theme by using the
          * <code>CreateAccountCustomization</code> or
          * <code>UpdateAccountCustomization</code> API operation. To further customize
-         * QuickSight by removing QuickSight sample assets and videos for all new users,
-         * see <a
+         * Amazon QuickSight by removing Amazon QuickSight sample assets and videos for all
+         * new users, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
-         * QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> </p> <p>You can
-         * create customizations for your Amazon Web Services account; or, if you specify a
-         * namespace, for a QuickSight namespace instead. Customizations that apply to a
-         * namespace always override customizations that apply to an Amazon Web Services
-         * account;. To find out which customizations apply, use the
+         * Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> </p> <p>You
+         * can create customizations for your Amazon Web Services account or, if you
+         * specify a namespace, for a Amazon QuickSight namespace instead. Customizations
+         * that apply to a namespace always override customizations that apply to an Amazon
+         * Web Services account. To find out which customizations apply, use the
          * <code>DescribeAccountCustomization</code> API operation.</p> <p>Before you use
          * the <code>CreateAccountCustomization</code> API operation to add a theme as the
          * namespace default, make sure that you first share the theme with the namespace.
@@ -745,14 +745,14 @@ namespace Model
          * Region;. Currently, you can add a custom default theme by using the
          * <code>CreateAccountCustomization</code> or
          * <code>UpdateAccountCustomization</code> API operation. To further customize
-         * QuickSight by removing QuickSight sample assets and videos for all new users,
-         * see <a
+         * Amazon QuickSight by removing Amazon QuickSight sample assets and videos for all
+         * new users, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
-         * QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> </p> <p>You can
-         * create customizations for your Amazon Web Services account; or, if you specify a
-         * namespace, for a QuickSight namespace instead. Customizations that apply to a
-         * namespace always override customizations that apply to an Amazon Web Services
-         * account;. To find out which customizations apply, use the
+         * Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> </p> <p>You
+         * can create customizations for your Amazon Web Services account or, if you
+         * specify a namespace, for a Amazon QuickSight namespace instead. Customizations
+         * that apply to a namespace always override customizations that apply to an Amazon
+         * Web Services account. To find out which customizations apply, use the
          * <code>DescribeAccountCustomization</code> API operation.</p> <p>Before you use
          * the <code>CreateAccountCustomization</code> API operation to add a theme as the
          * namespace default, make sure that you first share the theme with the namespace.
@@ -797,11 +797,11 @@ namespace Model
         /**
          * <p>Creates a dashboard from a template. To first create a template, see the
          * <code> <a>CreateTemplate</a> </code> API operation.</p> <p>A dashboard is an
-         * entity in QuickSight that identifies QuickSight reports, created from analyses.
-         * You can share QuickSight dashboards. With the right permissions, you can create
-         * scheduled email reports from them. If you have the correct permissions, you can
-         * create a dashboard from a template that exists in a different Amazon Web
-         * Services account;.</p><p><h3>See Also:</h3>   <a
+         * entity in Amazon QuickSight that identifies Amazon QuickSight reports, created
+         * from analyses. You can share Amazon QuickSight dashboards. With the right
+         * permissions, you can create scheduled email reports from them. If you have the
+         * correct permissions, you can create a dashboard from a template that exists in a
+         * different Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateDashboard">AWS
          * API Reference</a></p>
          */
@@ -810,11 +810,11 @@ namespace Model
         /**
          * <p>Creates a dashboard from a template. To first create a template, see the
          * <code> <a>CreateTemplate</a> </code> API operation.</p> <p>A dashboard is an
-         * entity in QuickSight that identifies QuickSight reports, created from analyses.
-         * You can share QuickSight dashboards. With the right permissions, you can create
-         * scheduled email reports from them. If you have the correct permissions, you can
-         * create a dashboard from a template that exists in a different Amazon Web
-         * Services account;.</p><p><h3>See Also:</h3>   <a
+         * entity in Amazon QuickSight that identifies Amazon QuickSight reports, created
+         * from analyses. You can share Amazon QuickSight dashboards. With the right
+         * permissions, you can create scheduled email reports from them. If you have the
+         * correct permissions, you can create a dashboard from a template that exists in a
+         * different Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateDashboard">AWS
          * API Reference</a></p>
          *
@@ -825,11 +825,11 @@ namespace Model
         /**
          * <p>Creates a dashboard from a template. To first create a template, see the
          * <code> <a>CreateTemplate</a> </code> API operation.</p> <p>A dashboard is an
-         * entity in QuickSight that identifies QuickSight reports, created from analyses.
-         * You can share QuickSight dashboards. With the right permissions, you can create
-         * scheduled email reports from them. If you have the correct permissions, you can
-         * create a dashboard from a template that exists in a different Amazon Web
-         * Services account;.</p><p><h3>See Also:</h3>   <a
+         * entity in Amazon QuickSight that identifies Amazon QuickSight reports, created
+         * from analyses. You can share Amazon QuickSight dashboards. With the right
+         * permissions, you can create scheduled email reports from them. If you have the
+         * correct permissions, you can create a dashboard from a template that exists in a
+         * different Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateDashboard">AWS
          * API Reference</a></p>
          *
@@ -1000,22 +1000,22 @@ namespace Model
         virtual void CreateGroupMembershipAsync(const Model::CreateGroupMembershipRequest& request, const CreateGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an assignment with one specified IAM policy, identified by its Amazon
+         * <p>Creates an assignment with one specified IAMpolicy, identified by its Amazon
          * Resource Name (ARN). This policy assignment is attached to the specified groups
          * or users of Amazon QuickSight. Assignment names are unique per Amazon Web
-         * Services account;. To avoid overwriting rules in other namespaces, use
-         * assignment names that are unique.</p><p><h3>See Also:</h3>   <a
+         * Services account. To avoid overwriting rules in other namespaces, use assignment
+         * names that are unique.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateIAMPolicyAssignment">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateIAMPolicyAssignmentOutcome CreateIAMPolicyAssignment(const Model::CreateIAMPolicyAssignmentRequest& request) const;
 
         /**
-         * <p>Creates an assignment with one specified IAM policy, identified by its Amazon
+         * <p>Creates an assignment with one specified IAMpolicy, identified by its Amazon
          * Resource Name (ARN). This policy assignment is attached to the specified groups
          * or users of Amazon QuickSight. Assignment names are unique per Amazon Web
-         * Services account;. To avoid overwriting rules in other namespaces, use
-         * assignment names that are unique.</p><p><h3>See Also:</h3>   <a
+         * Services account. To avoid overwriting rules in other namespaces, use assignment
+         * names that are unique.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateIAMPolicyAssignment">AWS
          * API Reference</a></p>
          *
@@ -1024,11 +1024,11 @@ namespace Model
         virtual Model::CreateIAMPolicyAssignmentOutcomeCallable CreateIAMPolicyAssignmentCallable(const Model::CreateIAMPolicyAssignmentRequest& request) const;
 
         /**
-         * <p>Creates an assignment with one specified IAM policy, identified by its Amazon
+         * <p>Creates an assignment with one specified IAMpolicy, identified by its Amazon
          * Resource Name (ARN). This policy assignment is attached to the specified groups
          * or users of Amazon QuickSight. Assignment names are unique per Amazon Web
-         * Services account;. To avoid overwriting rules in other namespaces, use
-         * assignment names that are unique.</p><p><h3>See Also:</h3>   <a
+         * Services account. To avoid overwriting rules in other namespaces, use assignment
+         * names that are unique.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateIAMPolicyAssignment">AWS
          * API Reference</a></p>
          *
@@ -1081,15 +1081,15 @@ namespace Model
 
         /**
          * <p>(Enterprise edition only) Creates a new namespace for you to use with Amazon
-         * QuickSight.</p> <p>A namespace allows you to isolate the QuickSight users and
-         * groups that are registered for that namespace. Users that access the namespace
-         * can share assets only with other users or groups in the same namespace. They
-         * can't see users and groups in other namespaces. You can create a namespace after
-         * your Amazon Web Services account; is subscribed to QuickSight. The namespace
-         * must be unique within the Amazon Web Services account;. By default, there is a
-         * limit of 100 namespaces per Amazon Web Services account;. To increase your
-         * limit, create a ticket with Amazon Web Services Support. </p><p><h3>See
-         * Also:</h3>   <a
+         * QuickSight.</p> <p>A namespace allows you to isolate the Amazon QuickSight users
+         * and groups that are registered for that namespace. Users that access the
+         * namespace can share assets only with other users or groups in the same
+         * namespace. They can't see users and groups in other namespaces. You can create a
+         * namespace after your Amazon Web Services account is subscribed to Amazon
+         * QuickSight. The namespace must be unique within the Amazon Web Services account.
+         * By default, there is a limit of 100 namespaces per Amazon Web Services account.
+         * To increase your limit, create a ticket with Amazon Web Services Support.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateNamespace">AWS
          * API Reference</a></p>
          */
@@ -1097,15 +1097,15 @@ namespace Model
 
         /**
          * <p>(Enterprise edition only) Creates a new namespace for you to use with Amazon
-         * QuickSight.</p> <p>A namespace allows you to isolate the QuickSight users and
-         * groups that are registered for that namespace. Users that access the namespace
-         * can share assets only with other users or groups in the same namespace. They
-         * can't see users and groups in other namespaces. You can create a namespace after
-         * your Amazon Web Services account; is subscribed to QuickSight. The namespace
-         * must be unique within the Amazon Web Services account;. By default, there is a
-         * limit of 100 namespaces per Amazon Web Services account;. To increase your
-         * limit, create a ticket with Amazon Web Services Support. </p><p><h3>See
-         * Also:</h3>   <a
+         * QuickSight.</p> <p>A namespace allows you to isolate the Amazon QuickSight users
+         * and groups that are registered for that namespace. Users that access the
+         * namespace can share assets only with other users or groups in the same
+         * namespace. They can't see users and groups in other namespaces. You can create a
+         * namespace after your Amazon Web Services account is subscribed to Amazon
+         * QuickSight. The namespace must be unique within the Amazon Web Services account.
+         * By default, there is a limit of 100 namespaces per Amazon Web Services account.
+         * To increase your limit, create a ticket with Amazon Web Services Support.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateNamespace">AWS
          * API Reference</a></p>
          *
@@ -1115,15 +1115,15 @@ namespace Model
 
         /**
          * <p>(Enterprise edition only) Creates a new namespace for you to use with Amazon
-         * QuickSight.</p> <p>A namespace allows you to isolate the QuickSight users and
-         * groups that are registered for that namespace. Users that access the namespace
-         * can share assets only with other users or groups in the same namespace. They
-         * can't see users and groups in other namespaces. You can create a namespace after
-         * your Amazon Web Services account; is subscribed to QuickSight. The namespace
-         * must be unique within the Amazon Web Services account;. By default, there is a
-         * limit of 100 namespaces per Amazon Web Services account;. To increase your
-         * limit, create a ticket with Amazon Web Services Support. </p><p><h3>See
-         * Also:</h3>   <a
+         * QuickSight.</p> <p>A namespace allows you to isolate the Amazon QuickSight users
+         * and groups that are registered for that namespace. Users that access the
+         * namespace can share assets only with other users or groups in the same
+         * namespace. They can't see users and groups in other namespaces. You can create a
+         * namespace after your Amazon Web Services account is subscribed to Amazon
+         * QuickSight. The namespace must be unique within the Amazon Web Services account.
+         * By default, there is a limit of 100 namespaces per Amazon Web Services account.
+         * To increase your limit, create a ticket with Amazon Web Services Support.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateNamespace">AWS
          * API Reference</a></p>
          *
@@ -1134,7 +1134,7 @@ namespace Model
         /**
          * <p>Creates a template from an existing Amazon QuickSight analysis or template.
          * You can use the resulting template to create a dashboard.</p> <p>A
-         * <i>template</i> is an entity in QuickSight that encapsulates the metadata
+         * <i>template</i> is an entity in Amazon QuickSight that encapsulates the metadata
          * required to create an analysis and that you can use to create s dashboard. A
          * template adds a layer of abstraction by using placeholders to replace the
          * dataset associated with the analysis. You can use templates to create dashboards
@@ -1149,7 +1149,7 @@ namespace Model
         /**
          * <p>Creates a template from an existing Amazon QuickSight analysis or template.
          * You can use the resulting template to create a dashboard.</p> <p>A
-         * <i>template</i> is an entity in QuickSight that encapsulates the metadata
+         * <i>template</i> is an entity in Amazon QuickSight that encapsulates the metadata
          * required to create an analysis and that you can use to create s dashboard. A
          * template adds a layer of abstraction by using placeholders to replace the
          * dataset associated with the analysis. You can use templates to create dashboards
@@ -1166,7 +1166,7 @@ namespace Model
         /**
          * <p>Creates a template from an existing Amazon QuickSight analysis or template.
          * You can use the resulting template to create a dashboard.</p> <p>A
-         * <i>template</i> is an entity in QuickSight that encapsulates the metadata
+         * <i>template</i> is an entity in Amazon QuickSight that encapsulates the metadata
          * required to create an analysis and that you can use to create s dashboard. A
          * template adds a layer of abstraction by using placeholders to replace the
          * dataset associated with the analysis. You can use templates to create dashboards
@@ -1272,7 +1272,7 @@ namespace Model
 
         /**
          * <p>Deletes all Amazon QuickSight customizations in this Amazon Web Services
-         * Region; for the specified Amazon Web Services account; and QuickSight
+         * Region; for the specified Amazon Web Services account and Amazon QuickSight
          * namespace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomization">AWS
          * API Reference</a></p>
@@ -1281,7 +1281,7 @@ namespace Model
 
         /**
          * <p>Deletes all Amazon QuickSight customizations in this Amazon Web Services
-         * Region; for the specified Amazon Web Services account; and QuickSight
+         * Region; for the specified Amazon Web Services account and Amazon QuickSight
          * namespace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomization">AWS
          * API Reference</a></p>
@@ -1292,7 +1292,7 @@ namespace Model
 
         /**
          * <p>Deletes all Amazon QuickSight customizations in this Amazon Web Services
-         * Region; for the specified Amazon Web Services account; and QuickSight
+         * Region; for the specified Amazon Web Services account and Amazon QuickSight
          * namespace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomization">AWS
          * API Reference</a></p>
@@ -1304,15 +1304,15 @@ namespace Model
         /**
          * <p>Deletes an analysis from Amazon QuickSight. You can optionally include a
          * recovery window during which you can restore the analysis. If you don't specify
-         * a recovery window value, the operation defaults to 30 days. QuickSight attaches
-         * a <code>DeletionTime</code> stamp to the response that specifies the end of the
-         * recovery window. At the end of the recovery window, QuickSight deletes the
-         * analysis permanently.</p> <p>At any time before recovery window ends, you can
-         * use the <code>RestoreAnalysis</code> API operation to remove the
+         * a recovery window value, the operation defaults to 30 days. Amazon QuickSight
+         * attaches a <code>DeletionTime</code> stamp to the response that specifies the
+         * end of the recovery window. At the end of the recovery window, Amazon QuickSight
+         * deletes the analysis permanently.</p> <p>At any time before recovery window
+         * ends, you can use the <code>RestoreAnalysis</code> API operation to remove the
          * <code>DeletionTime</code> stamp and cancel the deletion of the analysis. The
          * analysis remains visible in the API until it's deleted, so you can describe it
          * but you can't make a template from it.</p> <p>An analysis that's scheduled for
-         * deletion isn't accessible in the QuickSight console. To access it in the
+         * deletion isn't accessible in the Amazon QuickSight console. To access it in the
          * console, restore it. Deleting an analysis doesn't delete the dashboards that you
          * publish from it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAnalysis">AWS
@@ -1323,15 +1323,15 @@ namespace Model
         /**
          * <p>Deletes an analysis from Amazon QuickSight. You can optionally include a
          * recovery window during which you can restore the analysis. If you don't specify
-         * a recovery window value, the operation defaults to 30 days. QuickSight attaches
-         * a <code>DeletionTime</code> stamp to the response that specifies the end of the
-         * recovery window. At the end of the recovery window, QuickSight deletes the
-         * analysis permanently.</p> <p>At any time before recovery window ends, you can
-         * use the <code>RestoreAnalysis</code> API operation to remove the
+         * a recovery window value, the operation defaults to 30 days. Amazon QuickSight
+         * attaches a <code>DeletionTime</code> stamp to the response that specifies the
+         * end of the recovery window. At the end of the recovery window, Amazon QuickSight
+         * deletes the analysis permanently.</p> <p>At any time before recovery window
+         * ends, you can use the <code>RestoreAnalysis</code> API operation to remove the
          * <code>DeletionTime</code> stamp and cancel the deletion of the analysis. The
          * analysis remains visible in the API until it's deleted, so you can describe it
          * but you can't make a template from it.</p> <p>An analysis that's scheduled for
-         * deletion isn't accessible in the QuickSight console. To access it in the
+         * deletion isn't accessible in the Amazon QuickSight console. To access it in the
          * console, restore it. Deleting an analysis doesn't delete the dashboards that you
          * publish from it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAnalysis">AWS
@@ -1344,15 +1344,15 @@ namespace Model
         /**
          * <p>Deletes an analysis from Amazon QuickSight. You can optionally include a
          * recovery window during which you can restore the analysis. If you don't specify
-         * a recovery window value, the operation defaults to 30 days. QuickSight attaches
-         * a <code>DeletionTime</code> stamp to the response that specifies the end of the
-         * recovery window. At the end of the recovery window, QuickSight deletes the
-         * analysis permanently.</p> <p>At any time before recovery window ends, you can
-         * use the <code>RestoreAnalysis</code> API operation to remove the
+         * a recovery window value, the operation defaults to 30 days. Amazon QuickSight
+         * attaches a <code>DeletionTime</code> stamp to the response that specifies the
+         * end of the recovery window. At the end of the recovery window, Amazon QuickSight
+         * deletes the analysis permanently.</p> <p>At any time before recovery window
+         * ends, you can use the <code>RestoreAnalysis</code> API operation to remove the
          * <code>DeletionTime</code> stamp and cancel the deletion of the analysis. The
          * analysis remains visible in the API until it's deleted, so you can describe it
          * but you can't make a template from it.</p> <p>An analysis that's scheduled for
-         * deletion isn't accessible in the QuickSight console. To access it in the
+         * deletion isn't accessible in the Amazon QuickSight console. To access it in the
          * console, restore it. Deleting an analysis doesn't delete the dashboards that you
          * publish from it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAnalysis">AWS
@@ -1547,14 +1547,14 @@ namespace Model
         virtual void DeleteGroupMembershipAsync(const Model::DeleteGroupMembershipRequest& request, const DeleteGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an existing IAM policy assignment.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing IAMpolicy assignment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteIAMPolicyAssignment">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteIAMPolicyAssignmentOutcome DeleteIAMPolicyAssignment(const Model::DeleteIAMPolicyAssignmentRequest& request) const;
 
         /**
-         * <p>Deletes an existing IAM policy assignment.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing IAMpolicy assignment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteIAMPolicyAssignment">AWS
          * API Reference</a></p>
          *
@@ -1563,7 +1563,7 @@ namespace Model
         virtual Model::DeleteIAMPolicyAssignmentOutcomeCallable DeleteIAMPolicyAssignmentCallable(const Model::DeleteIAMPolicyAssignmentRequest& request) const;
 
         /**
-         * <p>Deletes an existing IAM policy assignment.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing IAMpolicy assignment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteIAMPolicyAssignment">AWS
          * API Reference</a></p>
          *
@@ -1778,25 +1778,26 @@ namespace Model
 
         /**
          * <p>Describes the customizations associated with the provided Amazon Web Services
-         * account; and Amazon QuickSight namespace in an Amazon Web Services Region;. The
-         * QuickSight console evaluates which customizations to apply by running this API
-         * operation with the <code>Resolved</code> flag included. </p> <p>To determine
-         * what customizations display when you run this command, it can help to visualize
-         * the relationship of the entities involved. </p> <ul> <li> <p> <code>Amazon Web
-         * Services account;</code> - The Amazon Web Services account; exists at the top of
-         * the hierarchy. It has the potential to use all of the Amazon Web Services
-         * Regions; and AWS Services. When you subscribe to QuickSight, you choose one
-         * Amazon Web Services Region; to use as your home Region. That's where your free
-         * SPICE capacity is located. You can use QuickSight in any supported Amazon Web
-         * Services Region;. </p> </li> <li> <p> <code>Amazon Web Services Region;</code> -
-         * In each Amazon Web Services Region; where you sign in to QuickSight at least
-         * once, QuickSight acts as a separate instance of the same service. If you have a
-         * user directory, it resides in us-east-1, which is the US East (N. Virginia).
-         * Generally speaking, these users have access to QuickSight in any Amazon Web
-         * Services Region;, unless they are constrained to a namespace. </p> <p>To run the
-         * command in a different Amazon Web Services Region;, you change your Region
-         * settings. If you're using the AWS CLI, you can use one of the following
-         * options:</p> <ul> <li> <p>Use <a
+         * account and Amazon Amazon QuickSight namespace in an Amazon Web Services
+         * Region;. The Amazon QuickSight console evaluates which customizations to apply
+         * by running this API operation with the <code>Resolved</code> flag included. </p>
+         * <p>To determine what customizations display when you run this command, it can
+         * help to visualize the relationship of the entities involved. </p> <ul> <li> <p>
+         * <code>Amazon Web Services account</code> - The Amazon Web Services account
+         * exists at the top of the hierarchy. It has the potential to use all of the
+         * Amazon Web Services Regions; and AWS Services. When you subscribe to Amazon
+         * QuickSight, you choose one Amazon Web Services Region; to use as your home
+         * Region. That's where your free SPICE capacity is located. You can use Amazon
+         * QuickSight in any supported Amazon Web Services Region;. </p> </li> <li> <p>
+         * <code>Amazon Web Services Region;</code> - In each Amazon Web Services Region;
+         * where you sign in to Amazon QuickSight at least once, Amazon QuickSight acts as
+         * a separate instance of the same service. If you have a user directory, it
+         * resides in us-east-1, which is the US East (N. Virginia). Generally speaking,
+         * these users have access to Amazon QuickSight in any Amazon Web Services Region;,
+         * unless they are constrained to a namespace. </p> <p>To run the command in a
+         * different Amazon Web Services Region;, you change your Region settings. If
+         * you're using the AWS CLI, you can use one of the following options:</p> <ul>
+         * <li> <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-options.html">command
          * line options</a>. </p> </li> <li> <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html">named
@@ -1805,16 +1806,16 @@ namespace Model
          * keys. For more information, see <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring
          * the AWS CLI</a>.</p> </li> </ul> </li> <li> <p> <code>Namespace</code> - A
-         * QuickSight namespace is a partition that contains users and assets (data
+         * Amazon QuickSight namespace is a partition that contains users and assets (data
          * sources, datasets, dashboards, and so on). To access assets that are in a
          * specific namespace, users and groups must also be part of the same namespace.
          * People who share a namespace are completely isolated from users and assets in
-         * other namespaces, even if they are in the same Amazon Web Services account; and
+         * other namespaces, even if they are in the same Amazon Web Services account and
          * Amazon Web Services Region;.</p> </li> <li> <p> <code>Applied
-         * customizations</code> - Within an Amazon Web Services Region;, a set of
-         * QuickSight customizations can apply to an Amazon Web Services account; or to a
+         * customizations</code> - Within an Amazon Web Services Region;, a set of Amazon
+         * QuickSight customizations can apply to an Amazon Web Services account or to a
          * namespace. Settings that you apply to a namespace override settings that you
-         * apply to an Amazon Web Services account;. All settings are isolated to a single
+         * apply to an Amazon Web Services account. All settings are isolated to a single
          * Amazon Web Services Region;. To apply them in other Amazon Web Services
          * Regions;, run the <code>CreateAccountCustomization</code> command in each Amazon
          * Web Services Region; where you want to apply the same customizations. </p> </li>
@@ -1826,25 +1827,26 @@ namespace Model
 
         /**
          * <p>Describes the customizations associated with the provided Amazon Web Services
-         * account; and Amazon QuickSight namespace in an Amazon Web Services Region;. The
-         * QuickSight console evaluates which customizations to apply by running this API
-         * operation with the <code>Resolved</code> flag included. </p> <p>To determine
-         * what customizations display when you run this command, it can help to visualize
-         * the relationship of the entities involved. </p> <ul> <li> <p> <code>Amazon Web
-         * Services account;</code> - The Amazon Web Services account; exists at the top of
-         * the hierarchy. It has the potential to use all of the Amazon Web Services
-         * Regions; and AWS Services. When you subscribe to QuickSight, you choose one
-         * Amazon Web Services Region; to use as your home Region. That's where your free
-         * SPICE capacity is located. You can use QuickSight in any supported Amazon Web
-         * Services Region;. </p> </li> <li> <p> <code>Amazon Web Services Region;</code> -
-         * In each Amazon Web Services Region; where you sign in to QuickSight at least
-         * once, QuickSight acts as a separate instance of the same service. If you have a
-         * user directory, it resides in us-east-1, which is the US East (N. Virginia).
-         * Generally speaking, these users have access to QuickSight in any Amazon Web
-         * Services Region;, unless they are constrained to a namespace. </p> <p>To run the
-         * command in a different Amazon Web Services Region;, you change your Region
-         * settings. If you're using the AWS CLI, you can use one of the following
-         * options:</p> <ul> <li> <p>Use <a
+         * account and Amazon Amazon QuickSight namespace in an Amazon Web Services
+         * Region;. The Amazon QuickSight console evaluates which customizations to apply
+         * by running this API operation with the <code>Resolved</code> flag included. </p>
+         * <p>To determine what customizations display when you run this command, it can
+         * help to visualize the relationship of the entities involved. </p> <ul> <li> <p>
+         * <code>Amazon Web Services account</code> - The Amazon Web Services account
+         * exists at the top of the hierarchy. It has the potential to use all of the
+         * Amazon Web Services Regions; and AWS Services. When you subscribe to Amazon
+         * QuickSight, you choose one Amazon Web Services Region; to use as your home
+         * Region. That's where your free SPICE capacity is located. You can use Amazon
+         * QuickSight in any supported Amazon Web Services Region;. </p> </li> <li> <p>
+         * <code>Amazon Web Services Region;</code> - In each Amazon Web Services Region;
+         * where you sign in to Amazon QuickSight at least once, Amazon QuickSight acts as
+         * a separate instance of the same service. If you have a user directory, it
+         * resides in us-east-1, which is the US East (N. Virginia). Generally speaking,
+         * these users have access to Amazon QuickSight in any Amazon Web Services Region;,
+         * unless they are constrained to a namespace. </p> <p>To run the command in a
+         * different Amazon Web Services Region;, you change your Region settings. If
+         * you're using the AWS CLI, you can use one of the following options:</p> <ul>
+         * <li> <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-options.html">command
          * line options</a>. </p> </li> <li> <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html">named
@@ -1853,16 +1855,16 @@ namespace Model
          * keys. For more information, see <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring
          * the AWS CLI</a>.</p> </li> </ul> </li> <li> <p> <code>Namespace</code> - A
-         * QuickSight namespace is a partition that contains users and assets (data
+         * Amazon QuickSight namespace is a partition that contains users and assets (data
          * sources, datasets, dashboards, and so on). To access assets that are in a
          * specific namespace, users and groups must also be part of the same namespace.
          * People who share a namespace are completely isolated from users and assets in
-         * other namespaces, even if they are in the same Amazon Web Services account; and
+         * other namespaces, even if they are in the same Amazon Web Services account and
          * Amazon Web Services Region;.</p> </li> <li> <p> <code>Applied
-         * customizations</code> - Within an Amazon Web Services Region;, a set of
-         * QuickSight customizations can apply to an Amazon Web Services account; or to a
+         * customizations</code> - Within an Amazon Web Services Region;, a set of Amazon
+         * QuickSight customizations can apply to an Amazon Web Services account or to a
          * namespace. Settings that you apply to a namespace override settings that you
-         * apply to an Amazon Web Services account;. All settings are isolated to a single
+         * apply to an Amazon Web Services account. All settings are isolated to a single
          * Amazon Web Services Region;. To apply them in other Amazon Web Services
          * Regions;, run the <code>CreateAccountCustomization</code> command in each Amazon
          * Web Services Region; where you want to apply the same customizations. </p> </li>
@@ -1876,25 +1878,26 @@ namespace Model
 
         /**
          * <p>Describes the customizations associated with the provided Amazon Web Services
-         * account; and Amazon QuickSight namespace in an Amazon Web Services Region;. The
-         * QuickSight console evaluates which customizations to apply by running this API
-         * operation with the <code>Resolved</code> flag included. </p> <p>To determine
-         * what customizations display when you run this command, it can help to visualize
-         * the relationship of the entities involved. </p> <ul> <li> <p> <code>Amazon Web
-         * Services account;</code> - The Amazon Web Services account; exists at the top of
-         * the hierarchy. It has the potential to use all of the Amazon Web Services
-         * Regions; and AWS Services. When you subscribe to QuickSight, you choose one
-         * Amazon Web Services Region; to use as your home Region. That's where your free
-         * SPICE capacity is located. You can use QuickSight in any supported Amazon Web
-         * Services Region;. </p> </li> <li> <p> <code>Amazon Web Services Region;</code> -
-         * In each Amazon Web Services Region; where you sign in to QuickSight at least
-         * once, QuickSight acts as a separate instance of the same service. If you have a
-         * user directory, it resides in us-east-1, which is the US East (N. Virginia).
-         * Generally speaking, these users have access to QuickSight in any Amazon Web
-         * Services Region;, unless they are constrained to a namespace. </p> <p>To run the
-         * command in a different Amazon Web Services Region;, you change your Region
-         * settings. If you're using the AWS CLI, you can use one of the following
-         * options:</p> <ul> <li> <p>Use <a
+         * account and Amazon Amazon QuickSight namespace in an Amazon Web Services
+         * Region;. The Amazon QuickSight console evaluates which customizations to apply
+         * by running this API operation with the <code>Resolved</code> flag included. </p>
+         * <p>To determine what customizations display when you run this command, it can
+         * help to visualize the relationship of the entities involved. </p> <ul> <li> <p>
+         * <code>Amazon Web Services account</code> - The Amazon Web Services account
+         * exists at the top of the hierarchy. It has the potential to use all of the
+         * Amazon Web Services Regions; and AWS Services. When you subscribe to Amazon
+         * QuickSight, you choose one Amazon Web Services Region; to use as your home
+         * Region. That's where your free SPICE capacity is located. You can use Amazon
+         * QuickSight in any supported Amazon Web Services Region;. </p> </li> <li> <p>
+         * <code>Amazon Web Services Region;</code> - In each Amazon Web Services Region;
+         * where you sign in to Amazon QuickSight at least once, Amazon QuickSight acts as
+         * a separate instance of the same service. If you have a user directory, it
+         * resides in us-east-1, which is the US East (N. Virginia). Generally speaking,
+         * these users have access to Amazon QuickSight in any Amazon Web Services Region;,
+         * unless they are constrained to a namespace. </p> <p>To run the command in a
+         * different Amazon Web Services Region;, you change your Region settings. If
+         * you're using the AWS CLI, you can use one of the following options:</p> <ul>
+         * <li> <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-options.html">command
          * line options</a>. </p> </li> <li> <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html">named
@@ -1903,16 +1906,16 @@ namespace Model
          * keys. For more information, see <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring
          * the AWS CLI</a>.</p> </li> </ul> </li> <li> <p> <code>Namespace</code> - A
-         * QuickSight namespace is a partition that contains users and assets (data
+         * Amazon QuickSight namespace is a partition that contains users and assets (data
          * sources, datasets, dashboards, and so on). To access assets that are in a
          * specific namespace, users and groups must also be part of the same namespace.
          * People who share a namespace are completely isolated from users and assets in
-         * other namespaces, even if they are in the same Amazon Web Services account; and
+         * other namespaces, even if they are in the same Amazon Web Services account and
          * Amazon Web Services Region;.</p> </li> <li> <p> <code>Applied
-         * customizations</code> - Within an Amazon Web Services Region;, a set of
-         * QuickSight customizations can apply to an Amazon Web Services account; or to a
+         * customizations</code> - Within an Amazon Web Services Region;, a set of Amazon
+         * QuickSight customizations can apply to an Amazon Web Services account or to a
          * namespace. Settings that you apply to a namespace override settings that you
-         * apply to an Amazon Web Services account;. All settings are isolated to a single
+         * apply to an Amazon Web Services account. All settings are isolated to a single
          * Amazon Web Services Region;. To apply them in other Amazon Web Services
          * Regions;, run the <code>CreateAccountCustomization</code> command in each Amazon
          * Web Services Region; where you want to apply the same customizations. </p> </li>
@@ -1925,18 +1928,18 @@ namespace Model
         virtual void DescribeAccountCustomizationAsync(const Model::DescribeAccountCustomizationRequest& request, const DescribeAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the settings that were used when your QuickSight subscription was
-         * first created in this Amazon Web Services account;.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Describes the settings that were used when your Amazon QuickSight
+         * subscription was first created in this Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountSettings">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeAccountSettingsOutcome DescribeAccountSettings(const Model::DescribeAccountSettingsRequest& request) const;
 
         /**
-         * <p>Describes the settings that were used when your QuickSight subscription was
-         * first created in this Amazon Web Services account;.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Describes the settings that were used when your Amazon QuickSight
+         * subscription was first created in this Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountSettings">AWS
          * API Reference</a></p>
          *
@@ -1945,9 +1948,9 @@ namespace Model
         virtual Model::DescribeAccountSettingsOutcomeCallable DescribeAccountSettingsCallable(const Model::DescribeAccountSettingsRequest& request) const;
 
         /**
-         * <p>Describes the settings that were used when your QuickSight subscription was
-         * first created in this Amazon Web Services account;.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Describes the settings that were used when your Amazon QuickSight
+         * subscription was first created in this Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountSettings">AWS
          * API Reference</a></p>
          *
@@ -2283,7 +2286,7 @@ namespace Model
         virtual void DescribeGroupAsync(const Model::DescribeGroupRequest& request, const DescribeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes an existing IAM policy assignment, as specified by the assignment
+         * <p>Describes an existing IAMpolicy assignment, as specified by the assignment
          * name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeIAMPolicyAssignment">AWS
          * API Reference</a></p>
@@ -2291,7 +2294,7 @@ namespace Model
         virtual Model::DescribeIAMPolicyAssignmentOutcome DescribeIAMPolicyAssignment(const Model::DescribeIAMPolicyAssignmentRequest& request) const;
 
         /**
-         * <p>Describes an existing IAM policy assignment, as specified by the assignment
+         * <p>Describes an existing IAMpolicy assignment, as specified by the assignment
          * name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeIAMPolicyAssignment">AWS
          * API Reference</a></p>
@@ -2301,7 +2304,7 @@ namespace Model
         virtual Model::DescribeIAMPolicyAssignmentOutcomeCallable DescribeIAMPolicyAssignmentCallable(const Model::DescribeIAMPolicyAssignmentRequest& request) const;
 
         /**
-         * <p>Describes an existing IAM policy assignment, as specified by the assignment
+         * <p>Describes an existing IAMpolicy assignment, as specified by the assignment
          * name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeIAMPolicyAssignment">AWS
          * API Reference</a></p>
@@ -2707,12 +2710,12 @@ namespace Model
 
         /**
          * <p>Generates a session URL and authorization code that you can use to embed an
-         * Amazon QuickSight read-only dashboard in your web server code. Before you use
-         * this command, make sure that you have configured the dashboards and permissions.
-         * </p> <p>Currently, you can use <code>GetDashboardEmbedURL</code> only from the
-         * server, not from the user's browser. The following rules apply to the
-         * combination of URL and authorization code:</p> <ul> <li> <p>They must be used
-         * together.</p> </li> <li> <p>They can be used one time only.</p> </li> <li>
+         * Amazon Amazon QuickSight read-only dashboard in your web server code. Before you
+         * use this command, make sure that you have configured the dashboards and
+         * permissions. </p> <p>Currently, you can use <code>GetDashboardEmbedURL</code>
+         * only from the server, not from the user's browser. The following rules apply to
+         * the combination of URL and authorization code:</p> <ul> <li> <p>They must be
+         * used together.</p> </li> <li> <p>They can be used one time only.</p> </li> <li>
          * <p>They are valid for 5 minutes after you run this command.</p> </li> <li>
          * <p>The resulting user session is valid for 10 hours.</p> </li> </ul> <p>For more
          * information, see <a
@@ -2730,12 +2733,12 @@ namespace Model
 
         /**
          * <p>Generates a session URL and authorization code that you can use to embed an
-         * Amazon QuickSight read-only dashboard in your web server code. Before you use
-         * this command, make sure that you have configured the dashboards and permissions.
-         * </p> <p>Currently, you can use <code>GetDashboardEmbedURL</code> only from the
-         * server, not from the user's browser. The following rules apply to the
-         * combination of URL and authorization code:</p> <ul> <li> <p>They must be used
-         * together.</p> </li> <li> <p>They can be used one time only.</p> </li> <li>
+         * Amazon Amazon QuickSight read-only dashboard in your web server code. Before you
+         * use this command, make sure that you have configured the dashboards and
+         * permissions. </p> <p>Currently, you can use <code>GetDashboardEmbedURL</code>
+         * only from the server, not from the user's browser. The following rules apply to
+         * the combination of URL and authorization code:</p> <ul> <li> <p>They must be
+         * used together.</p> </li> <li> <p>They can be used one time only.</p> </li> <li>
          * <p>They are valid for 5 minutes after you run this command.</p> </li> <li>
          * <p>The resulting user session is valid for 10 hours.</p> </li> </ul> <p>For more
          * information, see <a
@@ -2755,12 +2758,12 @@ namespace Model
 
         /**
          * <p>Generates a session URL and authorization code that you can use to embed an
-         * Amazon QuickSight read-only dashboard in your web server code. Before you use
-         * this command, make sure that you have configured the dashboards and permissions.
-         * </p> <p>Currently, you can use <code>GetDashboardEmbedURL</code> only from the
-         * server, not from the user's browser. The following rules apply to the
-         * combination of URL and authorization code:</p> <ul> <li> <p>They must be used
-         * together.</p> </li> <li> <p>They can be used one time only.</p> </li> <li>
+         * Amazon Amazon QuickSight read-only dashboard in your web server code. Before you
+         * use this command, make sure that you have configured the dashboards and
+         * permissions. </p> <p>Currently, you can use <code>GetDashboardEmbedURL</code>
+         * only from the server, not from the user's browser. The following rules apply to
+         * the combination of URL and authorization code:</p> <ul> <li> <p>They must be
+         * used together.</p> </li> <li> <p>They can be used one time only.</p> </li> <li>
          * <p>They are valid for 5 minutes after you run this command.</p> </li> <li>
          * <p>The resulting user session is valid for 10 hours.</p> </li> </ul> <p>For more
          * information, see <a
@@ -2780,19 +2783,18 @@ namespace Model
 
         /**
          * <p>Generates a session URL and authorization code that you can use to embed the
-         * Amazon QuickSight console in your web server code. Use
+         * Amazon Amazon QuickSight console in your web server code. Use
          * <code>GetSessionEmbedUrl</code> where you want to provide an authoring portal
          * that allows users to create data sources, datasets, analyses, and dashboards.
-         * The users who access an embedded QuickSight console need belong to the author or
-         * admin security cohort. If you want to restrict permissions to some of these
-         * features, add a custom permissions profile to the user with the <code>
+         * The users who access an embedded Amazon QuickSight console need belong to the
+         * author or admin security cohort. If you want to restrict permissions to some of
+         * these features, add a custom permissions profile to the user with the <code>
          * <a>UpdateUser</a> </code> API operation. Use <code> <a>RegisterUser</a> </code>
          * API operation to add a new user with a custom permission profile attached. For
          * more information, see the following sections in the <i>Amazon QuickSight User
          * Guide</i>:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users-get.html">Embedding
-         * the Amazon QuickSight Console Using GetSessionEmbedUrl</a> </p> </li> <li> <p>
-         * <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedding
+         * Analytics</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing
          * Access to the Amazon QuickSight Console</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
@@ -2803,19 +2805,18 @@ namespace Model
 
         /**
          * <p>Generates a session URL and authorization code that you can use to embed the
-         * Amazon QuickSight console in your web server code. Use
+         * Amazon Amazon QuickSight console in your web server code. Use
          * <code>GetSessionEmbedUrl</code> where you want to provide an authoring portal
          * that allows users to create data sources, datasets, analyses, and dashboards.
-         * The users who access an embedded QuickSight console need belong to the author or
-         * admin security cohort. If you want to restrict permissions to some of these
-         * features, add a custom permissions profile to the user with the <code>
+         * The users who access an embedded Amazon QuickSight console need belong to the
+         * author or admin security cohort. If you want to restrict permissions to some of
+         * these features, add a custom permissions profile to the user with the <code>
          * <a>UpdateUser</a> </code> API operation. Use <code> <a>RegisterUser</a> </code>
          * API operation to add a new user with a custom permission profile attached. For
          * more information, see the following sections in the <i>Amazon QuickSight User
          * Guide</i>:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users-get.html">Embedding
-         * the Amazon QuickSight Console Using GetSessionEmbedUrl</a> </p> </li> <li> <p>
-         * <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedding
+         * Analytics</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing
          * Access to the Amazon QuickSight Console</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
@@ -2828,19 +2829,18 @@ namespace Model
 
         /**
          * <p>Generates a session URL and authorization code that you can use to embed the
-         * Amazon QuickSight console in your web server code. Use
+         * Amazon Amazon QuickSight console in your web server code. Use
          * <code>GetSessionEmbedUrl</code> where you want to provide an authoring portal
          * that allows users to create data sources, datasets, analyses, and dashboards.
-         * The users who access an embedded QuickSight console need belong to the author or
-         * admin security cohort. If you want to restrict permissions to some of these
-         * features, add a custom permissions profile to the user with the <code>
+         * The users who access an embedded Amazon QuickSight console need belong to the
+         * author or admin security cohort. If you want to restrict permissions to some of
+         * these features, add a custom permissions profile to the user with the <code>
          * <a>UpdateUser</a> </code> API operation. Use <code> <a>RegisterUser</a> </code>
          * API operation to add a new user with a custom permission profile attached. For
          * more information, see the following sections in the <i>Amazon QuickSight User
          * Guide</i>:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users-get.html">Embedding
-         * the Amazon QuickSight Console Using GetSessionEmbedUrl</a> </p> </li> <li> <p>
-         * <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedding
+         * Analytics</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing
          * Access to the Amazon QuickSight Console</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
@@ -2853,7 +2853,7 @@ namespace Model
 
         /**
          * <p>Lists Amazon QuickSight analyses that exist in the specified Amazon Web
-         * Services account;.</p><p><h3>See Also:</h3>   <a
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAnalyses">AWS
          * API Reference</a></p>
          */
@@ -2861,7 +2861,7 @@ namespace Model
 
         /**
          * <p>Lists Amazon QuickSight analyses that exist in the specified Amazon Web
-         * Services account;.</p><p><h3>See Also:</h3>   <a
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAnalyses">AWS
          * API Reference</a></p>
          *
@@ -2871,7 +2871,7 @@ namespace Model
 
         /**
          * <p>Lists Amazon QuickSight analyses that exist in the specified Amazon Web
-         * Services account;.</p><p><h3>See Also:</h3>   <a
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAnalyses">AWS
          * API Reference</a></p>
          *
@@ -2880,7 +2880,7 @@ namespace Model
         virtual void ListAnalysesAsync(const Model::ListAnalysesRequest& request, const ListAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the versions of the dashboards in the QuickSight
+         * <p>Lists all the versions of the dashboards in the Amazon QuickSight
          * subscription.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDashboardVersions">AWS
          * API Reference</a></p>
@@ -2888,7 +2888,7 @@ namespace Model
         virtual Model::ListDashboardVersionsOutcome ListDashboardVersions(const Model::ListDashboardVersionsRequest& request) const;
 
         /**
-         * <p>Lists all the versions of the dashboards in the QuickSight
+         * <p>Lists all the versions of the dashboards in the Amazon QuickSight
          * subscription.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDashboardVersions">AWS
          * API Reference</a></p>
@@ -2898,7 +2898,7 @@ namespace Model
         virtual Model::ListDashboardVersionsOutcomeCallable ListDashboardVersionsCallable(const Model::ListDashboardVersionsRequest& request) const;
 
         /**
-         * <p>Lists all the versions of the dashboards in the QuickSight
+         * <p>Lists all the versions of the dashboards in the Amazon QuickSight
          * subscription.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDashboardVersions">AWS
          * API Reference</a></p>
@@ -2908,7 +2908,7 @@ namespace Model
         virtual void ListDashboardVersionsAsync(const Model::ListDashboardVersionsRequest& request, const ListDashboardVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists dashboards in an Amazon Web Services account;.</p><p><h3>See Also:</h3>
+         * <p>Lists dashboards in an Amazon Web Services account.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDashboards">AWS
          * API Reference</a></p>
@@ -2916,7 +2916,7 @@ namespace Model
         virtual Model::ListDashboardsOutcome ListDashboards(const Model::ListDashboardsRequest& request) const;
 
         /**
-         * <p>Lists dashboards in an Amazon Web Services account;.</p><p><h3>See Also:</h3>
+         * <p>Lists dashboards in an Amazon Web Services account.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDashboards">AWS
          * API Reference</a></p>
@@ -2926,7 +2926,7 @@ namespace Model
         virtual Model::ListDashboardsOutcomeCallable ListDashboardsCallable(const Model::ListDashboardsRequest& request) const;
 
         /**
-         * <p>Lists dashboards in an Amazon Web Services account;.</p><p><h3>See Also:</h3>
+         * <p>Lists dashboards in an Amazon Web Services account.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDashboards">AWS
          * API Reference</a></p>
@@ -2937,7 +2937,7 @@ namespace Model
 
         /**
          * <p>Lists all of the datasets belonging to the current Amazon Web Services
-         * account; in an Amazon Web Services Region;.</p> <p>The permissions resource is
+         * account in an Amazon Web Services Region;.</p> <p>The permissions resource is
          * <code>arn:aws:quicksight:region:aws-account-id:dataset/ *</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSets">AWS
@@ -2947,7 +2947,7 @@ namespace Model
 
         /**
          * <p>Lists all of the datasets belonging to the current Amazon Web Services
-         * account; in an Amazon Web Services Region;.</p> <p>The permissions resource is
+         * account in an Amazon Web Services Region;.</p> <p>The permissions resource is
          * <code>arn:aws:quicksight:region:aws-account-id:dataset/ *</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSets">AWS
@@ -2959,7 +2959,7 @@ namespace Model
 
         /**
          * <p>Lists all of the datasets belonging to the current Amazon Web Services
-         * account; in an Amazon Web Services Region;.</p> <p>The permissions resource is
+         * account in an Amazon Web Services Region;.</p> <p>The permissions resource is
          * <code>arn:aws:quicksight:region:aws-account-id:dataset/ *</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSets">AWS
@@ -2971,7 +2971,7 @@ namespace Model
 
         /**
          * <p>Lists data sources in current Amazon Web Services Region; that belong to this
-         * Amazon Web Services account;.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSources">AWS
          * API Reference</a></p>
          */
@@ -2979,7 +2979,7 @@ namespace Model
 
         /**
          * <p>Lists data sources in current Amazon Web Services Region; that belong to this
-         * Amazon Web Services account;.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSources">AWS
          * API Reference</a></p>
          *
@@ -2989,7 +2989,7 @@ namespace Model
 
         /**
          * <p>Lists data sources in current Amazon Web Services Region; that belong to this
-         * Amazon Web Services account;.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSources">AWS
          * API Reference</a></p>
          *
@@ -3101,7 +3101,7 @@ namespace Model
         virtual void ListGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists IAM policy assignments in the current Amazon QuickSight
+         * <p>Lists IAMpolicy assignments in the current Amazon QuickSight
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIAMPolicyAssignments">AWS
          * API Reference</a></p>
@@ -3109,7 +3109,7 @@ namespace Model
         virtual Model::ListIAMPolicyAssignmentsOutcome ListIAMPolicyAssignments(const Model::ListIAMPolicyAssignmentsRequest& request) const;
 
         /**
-         * <p>Lists IAM policy assignments in the current Amazon QuickSight
+         * <p>Lists IAMpolicy assignments in the current Amazon QuickSight
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIAMPolicyAssignments">AWS
          * API Reference</a></p>
@@ -3119,7 +3119,7 @@ namespace Model
         virtual Model::ListIAMPolicyAssignmentsOutcomeCallable ListIAMPolicyAssignmentsCallable(const Model::ListIAMPolicyAssignmentsRequest& request) const;
 
         /**
-         * <p>Lists IAM policy assignments in the current Amazon QuickSight
+         * <p>Lists IAMpolicy assignments in the current Amazon QuickSight
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIAMPolicyAssignments">AWS
          * API Reference</a></p>
@@ -3129,7 +3129,7 @@ namespace Model
         virtual void ListIAMPolicyAssignmentsAsync(const Model::ListIAMPolicyAssignmentsRequest& request, const ListIAMPolicyAssignmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the IAM policy assignments, including the Amazon Resource Names
+         * <p>Lists all the IAMpolicy assignments, including the Amazon Resource Names
          * (ARNs) for the IAM policies assigned to the specified user and group or groups
          * that the user belongs to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIAMPolicyAssignmentsForUser">AWS
@@ -3138,7 +3138,7 @@ namespace Model
         virtual Model::ListIAMPolicyAssignmentsForUserOutcome ListIAMPolicyAssignmentsForUser(const Model::ListIAMPolicyAssignmentsForUserRequest& request) const;
 
         /**
-         * <p>Lists all the IAM policy assignments, including the Amazon Resource Names
+         * <p>Lists all the IAMpolicy assignments, including the Amazon Resource Names
          * (ARNs) for the IAM policies assigned to the specified user and group or groups
          * that the user belongs to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIAMPolicyAssignmentsForUser">AWS
@@ -3149,7 +3149,7 @@ namespace Model
         virtual Model::ListIAMPolicyAssignmentsForUserOutcomeCallable ListIAMPolicyAssignmentsForUserCallable(const Model::ListIAMPolicyAssignmentsForUserRequest& request) const;
 
         /**
-         * <p>Lists all the IAM policy assignments, including the Amazon Resource Names
+         * <p>Lists all the IAMpolicy assignments, including the Amazon Resource Names
          * (ARNs) for the IAM policies assigned to the specified user and group or groups
          * that the user belongs to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIAMPolicyAssignmentsForUser">AWS
@@ -3189,7 +3189,7 @@ namespace Model
 
         /**
          * <p>Lists the namespaces for the specified Amazon Web Services
-         * account;.</p><p><h3>See Also:</h3>   <a
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListNamespaces">AWS
          * API Reference</a></p>
          */
@@ -3197,7 +3197,7 @@ namespace Model
 
         /**
          * <p>Lists the namespaces for the specified Amazon Web Services
-         * account;.</p><p><h3>See Also:</h3>   <a
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListNamespaces">AWS
          * API Reference</a></p>
          *
@@ -3207,7 +3207,7 @@ namespace Model
 
         /**
          * <p>Lists the namespaces for the specified Amazon Web Services
-         * account;.</p><p><h3>See Also:</h3>   <a
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListNamespaces">AWS
          * API Reference</a></p>
          *
@@ -3348,7 +3348,7 @@ namespace Model
 
         /**
          * <p>Lists all the versions of the themes in the current Amazon Web Services
-         * account;.</p><p><h3>See Also:</h3>   <a
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeVersions">AWS
          * API Reference</a></p>
          */
@@ -3356,7 +3356,7 @@ namespace Model
 
         /**
          * <p>Lists all the versions of the themes in the current Amazon Web Services
-         * account;.</p><p><h3>See Also:</h3>   <a
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeVersions">AWS
          * API Reference</a></p>
          *
@@ -3366,7 +3366,7 @@ namespace Model
 
         /**
          * <p>Lists all the versions of the themes in the current Amazon Web Services
-         * account;.</p><p><h3>See Also:</h3>   <a
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeVersions">AWS
          * API Reference</a></p>
          *
@@ -3376,7 +3376,7 @@ namespace Model
 
         /**
          * <p>Lists all the themes in the current Amazon Web Services
-         * account;.</p><p><h3>See Also:</h3>   <a
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemes">AWS
          * API Reference</a></p>
          */
@@ -3384,7 +3384,7 @@ namespace Model
 
         /**
          * <p>Lists all the themes in the current Amazon Web Services
-         * account;.</p><p><h3>See Also:</h3>   <a
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemes">AWS
          * API Reference</a></p>
          *
@@ -3394,7 +3394,7 @@ namespace Model
 
         /**
          * <p>Lists all the themes in the current Amazon Web Services
-         * account;.</p><p><h3>See Also:</h3>   <a
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemes">AWS
          * API Reference</a></p>
          *
@@ -3605,7 +3605,7 @@ namespace Model
         virtual void SearchFoldersAsync(const Model::SearchFoldersRequest& request, const SearchFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Assigns one or more tags (key-value pairs) to the specified QuickSight
+         * <p>Assigns one or more tags (key-value pairs) to the specified Amazon QuickSight
          * resource. </p> <p>Tags can help you organize and categorize your resources. You
          * can also use them to scope user permissions, by granting a user permission to
          * access or change only resources with certain tag values. You can use the
@@ -3614,20 +3614,21 @@ namespace Model
          * associated with the resource. If you specify a tag key that is already
          * associated with the resource, the new tag value that you specify replaces the
          * previous value for that tag.</p> <p>You can associate as many as 50 tags with a
-         * resource. QuickSight supports tagging on data set, data source, dashboard, and
-         * template. </p> <p>Tagging for QuickSight works in a similar way to tagging for
-         * other AWS services, except for the following:</p> <ul> <li> <p>You can't use
-         * tags to track AWS costs for QuickSight. This restriction is because QuickSight
-         * costs are based on users and SPICE capacity, which aren't taggable
-         * resources.</p> </li> <li> <p>QuickSight doesn't currently support the Tag Editor
-         * for Resource Groups.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * resource. Amazon QuickSight supports tagging on data set, data source,
+         * dashboard, and template. </p> <p>Tagging for Amazon QuickSight works in a
+         * similar way to tagging for other AWS services, except for the following:</p>
+         * <ul> <li> <p>You can't use tags to track AWS costs for Amazon QuickSight. This
+         * restriction is because Amazon QuickSight costs are based on users and SPICE
+         * capacity, which aren't taggable resources.</p> </li> <li> <p>Amazon QuickSight
+         * doesn't currently support the Tag Editor for Resource Groups.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Assigns one or more tags (key-value pairs) to the specified QuickSight
+         * <p>Assigns one or more tags (key-value pairs) to the specified Amazon QuickSight
          * resource. </p> <p>Tags can help you organize and categorize your resources. You
          * can also use them to scope user permissions, by granting a user permission to
          * access or change only resources with certain tag values. You can use the
@@ -3636,13 +3637,14 @@ namespace Model
          * associated with the resource. If you specify a tag key that is already
          * associated with the resource, the new tag value that you specify replaces the
          * previous value for that tag.</p> <p>You can associate as many as 50 tags with a
-         * resource. QuickSight supports tagging on data set, data source, dashboard, and
-         * template. </p> <p>Tagging for QuickSight works in a similar way to tagging for
-         * other AWS services, except for the following:</p> <ul> <li> <p>You can't use
-         * tags to track AWS costs for QuickSight. This restriction is because QuickSight
-         * costs are based on users and SPICE capacity, which aren't taggable
-         * resources.</p> </li> <li> <p>QuickSight doesn't currently support the Tag Editor
-         * for Resource Groups.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * resource. Amazon QuickSight supports tagging on data set, data source,
+         * dashboard, and template. </p> <p>Tagging for Amazon QuickSight works in a
+         * similar way to tagging for other AWS services, except for the following:</p>
+         * <ul> <li> <p>You can't use tags to track AWS costs for Amazon QuickSight. This
+         * restriction is because Amazon QuickSight costs are based on users and SPICE
+         * capacity, which aren't taggable resources.</p> </li> <li> <p>Amazon QuickSight
+         * doesn't currently support the Tag Editor for Resource Groups.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TagResource">AWS
          * API Reference</a></p>
          *
@@ -3651,7 +3653,7 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Assigns one or more tags (key-value pairs) to the specified QuickSight
+         * <p>Assigns one or more tags (key-value pairs) to the specified Amazon QuickSight
          * resource. </p> <p>Tags can help you organize and categorize your resources. You
          * can also use them to scope user permissions, by granting a user permission to
          * access or change only resources with certain tag values. You can use the
@@ -3660,13 +3662,14 @@ namespace Model
          * associated with the resource. If you specify a tag key that is already
          * associated with the resource, the new tag value that you specify replaces the
          * previous value for that tag.</p> <p>You can associate as many as 50 tags with a
-         * resource. QuickSight supports tagging on data set, data source, dashboard, and
-         * template. </p> <p>Tagging for QuickSight works in a similar way to tagging for
-         * other AWS services, except for the following:</p> <ul> <li> <p>You can't use
-         * tags to track AWS costs for QuickSight. This restriction is because QuickSight
-         * costs are based on users and SPICE capacity, which aren't taggable
-         * resources.</p> </li> <li> <p>QuickSight doesn't currently support the Tag Editor
-         * for Resource Groups.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * resource. Amazon QuickSight supports tagging on data set, data source,
+         * dashboard, and template. </p> <p>Tagging for Amazon QuickSight works in a
+         * similar way to tagging for other AWS services, except for the following:</p>
+         * <ul> <li> <p>You can't use tags to track AWS costs for Amazon QuickSight. This
+         * restriction is because Amazon QuickSight costs are based on users and SPICE
+         * capacity, which aren't taggable resources.</p> </li> <li> <p>Amazon QuickSight
+         * doesn't currently support the Tag Editor for Resource Groups.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TagResource">AWS
          * API Reference</a></p>
          *
@@ -3702,10 +3705,10 @@ namespace Model
         /**
          * <p>Updates Amazon QuickSight customizations the current Amazon Web Services
          * Region;. Currently, the only customization you can use is a theme.</p> <p>You
-         * can use customizations for your Amazon Web Services account; or, if you specify
-         * a namespace, for a QuickSight namespace instead. Customizations that apply to a
-         * namespace override customizations that apply to an Amazon Web Services account;.
-         * To find out which customizations apply, use the
+         * can use customizations for your Amazon Web Services account or, if you specify a
+         * namespace, for a Amazon QuickSight namespace instead. Customizations that apply
+         * to a namespace override customizations that apply to an Amazon Web Services
+         * account. To find out which customizations apply, use the
          * <code>DescribeAccountCustomization</code> API operation. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountCustomization">AWS
@@ -3716,10 +3719,10 @@ namespace Model
         /**
          * <p>Updates Amazon QuickSight customizations the current Amazon Web Services
          * Region;. Currently, the only customization you can use is a theme.</p> <p>You
-         * can use customizations for your Amazon Web Services account; or, if you specify
-         * a namespace, for a QuickSight namespace instead. Customizations that apply to a
-         * namespace override customizations that apply to an Amazon Web Services account;.
-         * To find out which customizations apply, use the
+         * can use customizations for your Amazon Web Services account or, if you specify a
+         * namespace, for a Amazon QuickSight namespace instead. Customizations that apply
+         * to a namespace override customizations that apply to an Amazon Web Services
+         * account. To find out which customizations apply, use the
          * <code>DescribeAccountCustomization</code> API operation. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountCustomization">AWS
@@ -3732,10 +3735,10 @@ namespace Model
         /**
          * <p>Updates Amazon QuickSight customizations the current Amazon Web Services
          * Region;. Currently, the only customization you can use is a theme.</p> <p>You
-         * can use customizations for your Amazon Web Services account; or, if you specify
-         * a namespace, for a QuickSight namespace instead. Customizations that apply to a
-         * namespace override customizations that apply to an Amazon Web Services account;.
-         * To find out which customizations apply, use the
+         * can use customizations for your Amazon Web Services account or, if you specify a
+         * namespace, for a Amazon QuickSight namespace instead. Customizations that apply
+         * to a namespace override customizations that apply to an Amazon Web Services
+         * account. To find out which customizations apply, use the
          * <code>DescribeAccountCustomization</code> API operation. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountCustomization">AWS
@@ -3747,7 +3750,7 @@ namespace Model
 
         /**
          * <p>Updates the Amazon QuickSight settings in your Amazon Web Services
-         * account;.</p><p><h3>See Also:</h3>   <a
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountSettings">AWS
          * API Reference</a></p>
          */
@@ -3755,7 +3758,7 @@ namespace Model
 
         /**
          * <p>Updates the Amazon QuickSight settings in your Amazon Web Services
-         * account;.</p><p><h3>See Also:</h3>   <a
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountSettings">AWS
          * API Reference</a></p>
          *
@@ -3765,7 +3768,7 @@ namespace Model
 
         /**
          * <p>Updates the Amazon QuickSight settings in your Amazon Web Services
-         * account;.</p><p><h3>See Also:</h3>   <a
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountSettings">AWS
          * API Reference</a></p>
          *
@@ -3827,22 +3830,22 @@ namespace Model
         virtual void UpdateAnalysisPermissionsAsync(const Model::UpdateAnalysisPermissionsRequest& request, const UpdateAnalysisPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a dashboard in an Amazon Web Services account;.</p> 
-         * <p>Updating a Dashboard creates a new dashboard version but does not immediately
-         * publish the new version. You can update the published version of a dashboard by
-         * using the <a>UpdateDashboardPublishedVersion</a> API operation.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Updates a dashboard in an Amazon Web Services account.</p>  <p>Updating
+         * a Dashboard creates a new dashboard version but does not immediately publish the
+         * new version. You can update the published version of a dashboard by using the
+         * <a>UpdateDashboardPublishedVersion</a> API operation.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboard">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateDashboardOutcome UpdateDashboard(const Model::UpdateDashboardRequest& request) const;
 
         /**
-         * <p>Updates a dashboard in an Amazon Web Services account;.</p> 
-         * <p>Updating a Dashboard creates a new dashboard version but does not immediately
-         * publish the new version. You can update the published version of a dashboard by
-         * using the <a>UpdateDashboardPublishedVersion</a> API operation.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Updates a dashboard in an Amazon Web Services account.</p>  <p>Updating
+         * a Dashboard creates a new dashboard version but does not immediately publish the
+         * new version. You can update the published version of a dashboard by using the
+         * <a>UpdateDashboardPublishedVersion</a> API operation.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboard">AWS
          * API Reference</a></p>
          *
@@ -3851,11 +3854,11 @@ namespace Model
         virtual Model::UpdateDashboardOutcomeCallable UpdateDashboardCallable(const Model::UpdateDashboardRequest& request) const;
 
         /**
-         * <p>Updates a dashboard in an Amazon Web Services account;.</p> 
-         * <p>Updating a Dashboard creates a new dashboard version but does not immediately
-         * publish the new version. You can update the published version of a dashboard by
-         * using the <a>UpdateDashboardPublishedVersion</a> API operation.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Updates a dashboard in an Amazon Web Services account.</p>  <p>Updating
+         * a Dashboard creates a new dashboard version but does not immediately publish the
+         * new version. You can update the published version of a dashboard by using the
+         * <a>UpdateDashboardPublishedVersion</a> API operation.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboard">AWS
          * API Reference</a></p>
          *
@@ -4098,7 +4101,7 @@ namespace Model
         virtual void UpdateGroupAsync(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing IAM policy assignment. This operation updates only the
+         * <p>Updates an existing IAMpolicy assignment. This operation updates only the
          * optional parameter or parameters that are specified in the request. This
          * overwrites all of the users included in <code>Identities</code>. </p><p><h3>See
          * Also:</h3>   <a
@@ -4108,7 +4111,7 @@ namespace Model
         virtual Model::UpdateIAMPolicyAssignmentOutcome UpdateIAMPolicyAssignment(const Model::UpdateIAMPolicyAssignmentRequest& request) const;
 
         /**
-         * <p>Updates an existing IAM policy assignment. This operation updates only the
+         * <p>Updates an existing IAMpolicy assignment. This operation updates only the
          * optional parameter or parameters that are specified in the request. This
          * overwrites all of the users included in <code>Identities</code>. </p><p><h3>See
          * Also:</h3>   <a
@@ -4120,7 +4123,7 @@ namespace Model
         virtual Model::UpdateIAMPolicyAssignmentOutcomeCallable UpdateIAMPolicyAssignmentCallable(const Model::UpdateIAMPolicyAssignmentRequest& request) const;
 
         /**
-         * <p>Updates an existing IAM policy assignment. This operation updates only the
+         * <p>Updates an existing IAMpolicy assignment. This operation updates only the
          * optional parameter or parameters that are specified in the request. This
          * overwrites all of the users included in <code>Identities</code>. </p><p><h3>See
          * Also:</h3>   <a

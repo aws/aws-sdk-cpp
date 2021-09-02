@@ -45,7 +45,12 @@ namespace Model
      * or load balancer. For example: </p> <p> <code> aws transfer update-server
      * --protocol-details PassiveIp=<i>0.0.0.0</i> </code> </p> <p>Replace <code>
      * <i>0.0.0.0</i> </code> in the example above with the actual IP address you want
-     * to use.</p>
+     * to use.</p>  <p> If you change the <code>PassiveIp</code> value, you must
+     * stop and then restart your Transfer server for the change to take effect. For
+     * details on using Passive IP (PASV) in a NAT environment, see <a
+     * href="http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/">Configuring
+     * your FTPS server behind a firewall or NAT with Amazon Web Services Transfer
+     * Family</a>. </p> 
      */
     inline const Aws::String& GetPassiveIp() const{ return m_passiveIp; }
 
@@ -55,7 +60,12 @@ namespace Model
      * or load balancer. For example: </p> <p> <code> aws transfer update-server
      * --protocol-details PassiveIp=<i>0.0.0.0</i> </code> </p> <p>Replace <code>
      * <i>0.0.0.0</i> </code> in the example above with the actual IP address you want
-     * to use.</p>
+     * to use.</p>  <p> If you change the <code>PassiveIp</code> value, you must
+     * stop and then restart your Transfer server for the change to take effect. For
+     * details on using Passive IP (PASV) in a NAT environment, see <a
+     * href="http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/">Configuring
+     * your FTPS server behind a firewall or NAT with Amazon Web Services Transfer
+     * Family</a>. </p> 
      */
     inline bool PassiveIpHasBeenSet() const { return m_passiveIpHasBeenSet; }
 
@@ -65,7 +75,12 @@ namespace Model
      * or load balancer. For example: </p> <p> <code> aws transfer update-server
      * --protocol-details PassiveIp=<i>0.0.0.0</i> </code> </p> <p>Replace <code>
      * <i>0.0.0.0</i> </code> in the example above with the actual IP address you want
-     * to use.</p>
+     * to use.</p>  <p> If you change the <code>PassiveIp</code> value, you must
+     * stop and then restart your Transfer server for the change to take effect. For
+     * details on using Passive IP (PASV) in a NAT environment, see <a
+     * href="http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/">Configuring
+     * your FTPS server behind a firewall or NAT with Amazon Web Services Transfer
+     * Family</a>. </p> 
      */
     inline void SetPassiveIp(const Aws::String& value) { m_passiveIpHasBeenSet = true; m_passiveIp = value; }
 
@@ -75,7 +90,12 @@ namespace Model
      * or load balancer. For example: </p> <p> <code> aws transfer update-server
      * --protocol-details PassiveIp=<i>0.0.0.0</i> </code> </p> <p>Replace <code>
      * <i>0.0.0.0</i> </code> in the example above with the actual IP address you want
-     * to use.</p>
+     * to use.</p>  <p> If you change the <code>PassiveIp</code> value, you must
+     * stop and then restart your Transfer server for the change to take effect. For
+     * details on using Passive IP (PASV) in a NAT environment, see <a
+     * href="http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/">Configuring
+     * your FTPS server behind a firewall or NAT with Amazon Web Services Transfer
+     * Family</a>. </p> 
      */
     inline void SetPassiveIp(Aws::String&& value) { m_passiveIpHasBeenSet = true; m_passiveIp = std::move(value); }
 
@@ -85,7 +105,12 @@ namespace Model
      * or load balancer. For example: </p> <p> <code> aws transfer update-server
      * --protocol-details PassiveIp=<i>0.0.0.0</i> </code> </p> <p>Replace <code>
      * <i>0.0.0.0</i> </code> in the example above with the actual IP address you want
-     * to use.</p>
+     * to use.</p>  <p> If you change the <code>PassiveIp</code> value, you must
+     * stop and then restart your Transfer server for the change to take effect. For
+     * details on using Passive IP (PASV) in a NAT environment, see <a
+     * href="http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/">Configuring
+     * your FTPS server behind a firewall or NAT with Amazon Web Services Transfer
+     * Family</a>. </p> 
      */
     inline void SetPassiveIp(const char* value) { m_passiveIpHasBeenSet = true; m_passiveIp.assign(value); }
 
@@ -95,7 +120,12 @@ namespace Model
      * or load balancer. For example: </p> <p> <code> aws transfer update-server
      * --protocol-details PassiveIp=<i>0.0.0.0</i> </code> </p> <p>Replace <code>
      * <i>0.0.0.0</i> </code> in the example above with the actual IP address you want
-     * to use.</p>
+     * to use.</p>  <p> If you change the <code>PassiveIp</code> value, you must
+     * stop and then restart your Transfer server for the change to take effect. For
+     * details on using Passive IP (PASV) in a NAT environment, see <a
+     * href="http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/">Configuring
+     * your FTPS server behind a firewall or NAT with Amazon Web Services Transfer
+     * Family</a>. </p> 
      */
     inline ProtocolDetails& WithPassiveIp(const Aws::String& value) { SetPassiveIp(value); return *this;}
 
@@ -105,7 +135,12 @@ namespace Model
      * or load balancer. For example: </p> <p> <code> aws transfer update-server
      * --protocol-details PassiveIp=<i>0.0.0.0</i> </code> </p> <p>Replace <code>
      * <i>0.0.0.0</i> </code> in the example above with the actual IP address you want
-     * to use.</p>
+     * to use.</p>  <p> If you change the <code>PassiveIp</code> value, you must
+     * stop and then restart your Transfer server for the change to take effect. For
+     * details on using Passive IP (PASV) in a NAT environment, see <a
+     * href="http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/">Configuring
+     * your FTPS server behind a firewall or NAT with Amazon Web Services Transfer
+     * Family</a>. </p> 
      */
     inline ProtocolDetails& WithPassiveIp(Aws::String&& value) { SetPassiveIp(std::move(value)); return *this;}
 
@@ -115,7 +150,12 @@ namespace Model
      * or load balancer. For example: </p> <p> <code> aws transfer update-server
      * --protocol-details PassiveIp=<i>0.0.0.0</i> </code> </p> <p>Replace <code>
      * <i>0.0.0.0</i> </code> in the example above with the actual IP address you want
-     * to use.</p>
+     * to use.</p>  <p> If you change the <code>PassiveIp</code> value, you must
+     * stop and then restart your Transfer server for the change to take effect. For
+     * details on using Passive IP (PASV) in a NAT environment, see <a
+     * href="http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/">Configuring
+     * your FTPS server behind a firewall or NAT with Amazon Web Services Transfer
+     * Family</a>. </p> 
      */
     inline ProtocolDetails& WithPassiveIp(const char* value) { SetPassiveIp(value); return *this;}
 

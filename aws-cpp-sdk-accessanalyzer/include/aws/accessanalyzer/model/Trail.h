@@ -41,29 +41,29 @@ namespace Model
 
     /**
      * <p>Possible values are <code>true</code> or <code>false</code>. If set to
-     * <code>true</code>, Access Analyzer retrieves CloudTrail data from all regions to
-     * analyze and generate a policy.</p>
+     * <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all
+     * regions to analyze and generate a policy.</p>
      */
     inline bool GetAllRegions() const{ return m_allRegions; }
 
     /**
      * <p>Possible values are <code>true</code> or <code>false</code>. If set to
-     * <code>true</code>, Access Analyzer retrieves CloudTrail data from all regions to
-     * analyze and generate a policy.</p>
+     * <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all
+     * regions to analyze and generate a policy.</p>
      */
     inline bool AllRegionsHasBeenSet() const { return m_allRegionsHasBeenSet; }
 
     /**
      * <p>Possible values are <code>true</code> or <code>false</code>. If set to
-     * <code>true</code>, Access Analyzer retrieves CloudTrail data from all regions to
-     * analyze and generate a policy.</p>
+     * <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all
+     * regions to analyze and generate a policy.</p>
      */
     inline void SetAllRegions(bool value) { m_allRegionsHasBeenSet = true; m_allRegions = value; }
 
     /**
      * <p>Possible values are <code>true</code> or <code>false</code>. If set to
-     * <code>true</code>, Access Analyzer retrieves CloudTrail data from all regions to
-     * analyze and generate a policy.</p>
+     * <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all
+     * regions to analyze and generate a policy.</p>
      */
     inline Trail& WithAllRegions(bool value) { SetAllRegions(value); return *this;}
 

@@ -178,11 +178,12 @@ namespace Model
      * <p>The type of policy to validate. Identity policies grant permissions to IAM
      * principals. Identity policies include managed and inline policies for IAM roles,
      * users, and groups. They also include service-control policies (SCPs) that are
-     * attached to an AWS organization, organizational unit (OU), or an account.</p>
-     * <p>Resource policies grant permissions on AWS resources. Resource policies
-     * include trust policies for IAM roles and bucket policies for S3 buckets. You can
-     * provide a generic input such as identity policy or resource policy or a specific
-     * input such as managed policy or S3 bucket policy. </p>
+     * attached to an Amazon Web Services organization, organizational unit (OU), or an
+     * account.</p> <p>Resource policies grant permissions on Amazon Web Services
+     * resources. Resource policies include trust policies for IAM roles and bucket
+     * policies for Amazon S3 buckets. You can provide a generic input such as identity
+     * policy or resource policy or a specific input such as managed policy or Amazon
+     * S3 bucket policy. </p>
      */
     inline const PolicyType& GetPolicyType() const{ return m_policyType; }
 
@@ -190,11 +191,12 @@ namespace Model
      * <p>The type of policy to validate. Identity policies grant permissions to IAM
      * principals. Identity policies include managed and inline policies for IAM roles,
      * users, and groups. They also include service-control policies (SCPs) that are
-     * attached to an AWS organization, organizational unit (OU), or an account.</p>
-     * <p>Resource policies grant permissions on AWS resources. Resource policies
-     * include trust policies for IAM roles and bucket policies for S3 buckets. You can
-     * provide a generic input such as identity policy or resource policy or a specific
-     * input such as managed policy or S3 bucket policy. </p>
+     * attached to an Amazon Web Services organization, organizational unit (OU), or an
+     * account.</p> <p>Resource policies grant permissions on Amazon Web Services
+     * resources. Resource policies include trust policies for IAM roles and bucket
+     * policies for Amazon S3 buckets. You can provide a generic input such as identity
+     * policy or resource policy or a specific input such as managed policy or Amazon
+     * S3 bucket policy. </p>
      */
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
@@ -202,11 +204,12 @@ namespace Model
      * <p>The type of policy to validate. Identity policies grant permissions to IAM
      * principals. Identity policies include managed and inline policies for IAM roles,
      * users, and groups. They also include service-control policies (SCPs) that are
-     * attached to an AWS organization, organizational unit (OU), or an account.</p>
-     * <p>Resource policies grant permissions on AWS resources. Resource policies
-     * include trust policies for IAM roles and bucket policies for S3 buckets. You can
-     * provide a generic input such as identity policy or resource policy or a specific
-     * input such as managed policy or S3 bucket policy. </p>
+     * attached to an Amazon Web Services organization, organizational unit (OU), or an
+     * account.</p> <p>Resource policies grant permissions on Amazon Web Services
+     * resources. Resource policies include trust policies for IAM roles and bucket
+     * policies for Amazon S3 buckets. You can provide a generic input such as identity
+     * policy or resource policy or a specific input such as managed policy or Amazon
+     * S3 bucket policy. </p>
      */
     inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
@@ -214,11 +217,12 @@ namespace Model
      * <p>The type of policy to validate. Identity policies grant permissions to IAM
      * principals. Identity policies include managed and inline policies for IAM roles,
      * users, and groups. They also include service-control policies (SCPs) that are
-     * attached to an AWS organization, organizational unit (OU), or an account.</p>
-     * <p>Resource policies grant permissions on AWS resources. Resource policies
-     * include trust policies for IAM roles and bucket policies for S3 buckets. You can
-     * provide a generic input such as identity policy or resource policy or a specific
-     * input such as managed policy or S3 bucket policy. </p>
+     * attached to an Amazon Web Services organization, organizational unit (OU), or an
+     * account.</p> <p>Resource policies grant permissions on Amazon Web Services
+     * resources. Resource policies include trust policies for IAM roles and bucket
+     * policies for Amazon S3 buckets. You can provide a generic input such as identity
+     * policy or resource policy or a specific input such as managed policy or Amazon
+     * S3 bucket policy. </p>
      */
     inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
@@ -226,11 +230,12 @@ namespace Model
      * <p>The type of policy to validate. Identity policies grant permissions to IAM
      * principals. Identity policies include managed and inline policies for IAM roles,
      * users, and groups. They also include service-control policies (SCPs) that are
-     * attached to an AWS organization, organizational unit (OU), or an account.</p>
-     * <p>Resource policies grant permissions on AWS resources. Resource policies
-     * include trust policies for IAM roles and bucket policies for S3 buckets. You can
-     * provide a generic input such as identity policy or resource policy or a specific
-     * input such as managed policy or S3 bucket policy. </p>
+     * attached to an Amazon Web Services organization, organizational unit (OU), or an
+     * account.</p> <p>Resource policies grant permissions on Amazon Web Services
+     * resources. Resource policies include trust policies for IAM roles and bucket
+     * policies for Amazon S3 buckets. You can provide a generic input such as identity
+     * policy or resource policy or a specific input such as managed policy or Amazon
+     * S3 bucket policy. </p>
      */
     inline ValidatePolicyRequest& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
 
@@ -238,11 +243,12 @@ namespace Model
      * <p>The type of policy to validate. Identity policies grant permissions to IAM
      * principals. Identity policies include managed and inline policies for IAM roles,
      * users, and groups. They also include service-control policies (SCPs) that are
-     * attached to an AWS organization, organizational unit (OU), or an account.</p>
-     * <p>Resource policies grant permissions on AWS resources. Resource policies
-     * include trust policies for IAM roles and bucket policies for S3 buckets. You can
-     * provide a generic input such as identity policy or resource policy or a specific
-     * input such as managed policy or S3 bucket policy. </p>
+     * attached to an Amazon Web Services organization, organizational unit (OU), or an
+     * account.</p> <p>Resource policies grant permissions on Amazon Web Services
+     * resources. Resource policies include trust policies for IAM roles and bucket
+     * policies for Amazon S3 buckets. You can provide a generic input such as identity
+     * policy or resource policy or a specific input such as managed policy or Amazon
+     * S3 bucket policy. </p>
      */
     inline ValidatePolicyRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
 

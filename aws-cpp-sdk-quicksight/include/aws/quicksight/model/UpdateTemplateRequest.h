@@ -34,49 +34,49 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the template that
+     * <p>The ID of the Amazon Web Services account that contains the template that
      * you're updating.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the template that
+     * <p>The ID of the Amazon Web Services account that contains the template that
      * you're updating.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the template that
+     * <p>The ID of the Amazon Web Services account that contains the template that
      * you're updating.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the template that
+     * <p>The ID of the Amazon Web Services account that contains the template that
      * you're updating.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the template that
+     * <p>The ID of the Amazon Web Services account that contains the template that
      * you're updating.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the template that
+     * <p>The ID of the Amazon Web Services account that contains the template that
      * you're updating.</p>
      */
     inline UpdateTemplateRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the template that
+     * <p>The ID of the Amazon Web Services account that contains the template that
      * you're updating.</p>
      */
     inline UpdateTemplateRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services account; that contains the template that
+     * <p>The ID of the Amazon Web Services account that contains the template that
      * you're updating.</p>
      */
     inline UpdateTemplateRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
@@ -131,8 +131,8 @@ namespace Model
      * Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the
      * source template. For <code>SourceAnalysis</code>, specify the ARN of the source
      * analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web
-     * Services account; and any QuickSight-supported Amazon Web Services Region;. </p>
-     * <p>Use the <code>DataSetReferences</code> entity within
+     * Services account and any Amazon QuickSight-supported Amazon Web Services
+     * Region;. </p> <p>Use the <code>DataSetReferences</code> entity within
      * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
      * replacement datasets for the placeholders listed in the original. The schema in
      * each dataset must match its placeholder. </p>
@@ -147,8 +147,8 @@ namespace Model
      * Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the
      * source template. For <code>SourceAnalysis</code>, specify the ARN of the source
      * analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web
-     * Services account; and any QuickSight-supported Amazon Web Services Region;. </p>
-     * <p>Use the <code>DataSetReferences</code> entity within
+     * Services account and any Amazon QuickSight-supported Amazon Web Services
+     * Region;. </p> <p>Use the <code>DataSetReferences</code> entity within
      * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
      * replacement datasets for the placeholders listed in the original. The schema in
      * each dataset must match its placeholder. </p>
@@ -163,8 +163,8 @@ namespace Model
      * Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the
      * source template. For <code>SourceAnalysis</code>, specify the ARN of the source
      * analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web
-     * Services account; and any QuickSight-supported Amazon Web Services Region;. </p>
-     * <p>Use the <code>DataSetReferences</code> entity within
+     * Services account and any Amazon QuickSight-supported Amazon Web Services
+     * Region;. </p> <p>Use the <code>DataSetReferences</code> entity within
      * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
      * replacement datasets for the placeholders listed in the original. The schema in
      * each dataset must match its placeholder. </p>
@@ -179,8 +179,8 @@ namespace Model
      * Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the
      * source template. For <code>SourceAnalysis</code>, specify the ARN of the source
      * analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web
-     * Services account; and any QuickSight-supported Amazon Web Services Region;. </p>
-     * <p>Use the <code>DataSetReferences</code> entity within
+     * Services account and any Amazon QuickSight-supported Amazon Web Services
+     * Region;. </p> <p>Use the <code>DataSetReferences</code> entity within
      * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
      * replacement datasets for the placeholders listed in the original. The schema in
      * each dataset must match its placeholder. </p>
@@ -195,8 +195,8 @@ namespace Model
      * Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the
      * source template. For <code>SourceAnalysis</code>, specify the ARN of the source
      * analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web
-     * Services account; and any QuickSight-supported Amazon Web Services Region;. </p>
-     * <p>Use the <code>DataSetReferences</code> entity within
+     * Services account and any Amazon QuickSight-supported Amazon Web Services
+     * Region;. </p> <p>Use the <code>DataSetReferences</code> entity within
      * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
      * replacement datasets for the placeholders listed in the original. The schema in
      * each dataset must match its placeholder. </p>
@@ -211,8 +211,8 @@ namespace Model
      * Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the
      * source template. For <code>SourceAnalysis</code>, specify the ARN of the source
      * analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web
-     * Services account; and any QuickSight-supported Amazon Web Services Region;. </p>
-     * <p>Use the <code>DataSetReferences</code> entity within
+     * Services account and any Amazon QuickSight-supported Amazon Web Services
+     * Region;. </p> <p>Use the <code>DataSetReferences</code> entity within
      * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
      * replacement datasets for the placeholders listed in the original. The schema in
      * each dataset must match its placeholder. </p>

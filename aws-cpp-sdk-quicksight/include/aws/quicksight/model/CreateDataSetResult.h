@@ -70,43 +70,43 @@ namespace Model
 
     /**
      * <p>The ID for the dataset that you want to create. This ID is unique per Amazon
-     * Web Services Region; for each Amazon Web Services account;.</p>
+     * Web Services Region; for each Amazon Web Services account.</p>
      */
     inline const Aws::String& GetDataSetId() const{ return m_dataSetId; }
 
     /**
      * <p>The ID for the dataset that you want to create. This ID is unique per Amazon
-     * Web Services Region; for each Amazon Web Services account;.</p>
+     * Web Services Region; for each Amazon Web Services account.</p>
      */
     inline void SetDataSetId(const Aws::String& value) { m_dataSetId = value; }
 
     /**
      * <p>The ID for the dataset that you want to create. This ID is unique per Amazon
-     * Web Services Region; for each Amazon Web Services account;.</p>
+     * Web Services Region; for each Amazon Web Services account.</p>
      */
     inline void SetDataSetId(Aws::String&& value) { m_dataSetId = std::move(value); }
 
     /**
      * <p>The ID for the dataset that you want to create. This ID is unique per Amazon
-     * Web Services Region; for each Amazon Web Services account;.</p>
+     * Web Services Region; for each Amazon Web Services account.</p>
      */
     inline void SetDataSetId(const char* value) { m_dataSetId.assign(value); }
 
     /**
      * <p>The ID for the dataset that you want to create. This ID is unique per Amazon
-     * Web Services Region; for each Amazon Web Services account;.</p>
+     * Web Services Region; for each Amazon Web Services account.</p>
      */
     inline CreateDataSetResult& WithDataSetId(const Aws::String& value) { SetDataSetId(value); return *this;}
 
     /**
      * <p>The ID for the dataset that you want to create. This ID is unique per Amazon
-     * Web Services Region; for each Amazon Web Services account;.</p>
+     * Web Services Region; for each Amazon Web Services account.</p>
      */
     inline CreateDataSetResult& WithDataSetId(Aws::String&& value) { SetDataSetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID for the dataset that you want to create. This ID is unique per Amazon
-     * Web Services Region; for each Amazon Web Services account;.</p>
+     * Web Services Region; for each Amazon Web Services account.</p>
      */
     inline CreateDataSetResult& WithDataSetId(const char* value) { SetDataSetId(value); return *this;}
 

@@ -41,58 +41,58 @@ namespace Model
 
 
     /**
-     * <p>The KMS customer master key (CMK) used to encrypt the build output
-     * artifacts.</p> <p>You can specify either the ARN of the CMK or, if available,
-     * the CMK alias (using the format alias/alias-name). </p>
+     * <p>The KMS key used to encrypt the build output artifacts.</p> <p>You can
+     * specify either the ARN of the KMS key or, if available, the KMS key alias (using
+     * the format alias/alias-name). </p>
      */
     inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
 
     /**
-     * <p>The KMS customer master key (CMK) used to encrypt the build output
-     * artifacts.</p> <p>You can specify either the ARN of the CMK or, if available,
-     * the CMK alias (using the format alias/alias-name). </p>
+     * <p>The KMS key used to encrypt the build output artifacts.</p> <p>You can
+     * specify either the ARN of the KMS key or, if available, the KMS key alias (using
+     * the format alias/alias-name). </p>
      */
     inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
 
     /**
-     * <p>The KMS customer master key (CMK) used to encrypt the build output
-     * artifacts.</p> <p>You can specify either the ARN of the CMK or, if available,
-     * the CMK alias (using the format alias/alias-name). </p>
+     * <p>The KMS key used to encrypt the build output artifacts.</p> <p>You can
+     * specify either the ARN of the KMS key or, if available, the KMS key alias (using
+     * the format alias/alias-name). </p>
      */
     inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
     /**
-     * <p>The KMS customer master key (CMK) used to encrypt the build output
-     * artifacts.</p> <p>You can specify either the ARN of the CMK or, if available,
-     * the CMK alias (using the format alias/alias-name). </p>
+     * <p>The KMS key used to encrypt the build output artifacts.</p> <p>You can
+     * specify either the ARN of the KMS key or, if available, the KMS key alias (using
+     * the format alias/alias-name). </p>
      */
     inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
 
     /**
-     * <p>The KMS customer master key (CMK) used to encrypt the build output
-     * artifacts.</p> <p>You can specify either the ARN of the CMK or, if available,
-     * the CMK alias (using the format alias/alias-name). </p>
+     * <p>The KMS key used to encrypt the build output artifacts.</p> <p>You can
+     * specify either the ARN of the KMS key or, if available, the KMS key alias (using
+     * the format alias/alias-name). </p>
      */
     inline void SetEncryptionKey(const char* value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey.assign(value); }
 
     /**
-     * <p>The KMS customer master key (CMK) used to encrypt the build output
-     * artifacts.</p> <p>You can specify either the ARN of the CMK or, if available,
-     * the CMK alias (using the format alias/alias-name). </p>
+     * <p>The KMS key used to encrypt the build output artifacts.</p> <p>You can
+     * specify either the ARN of the KMS key or, if available, the KMS key alias (using
+     * the format alias/alias-name). </p>
      */
     inline AwsCodeBuildProjectDetails& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
 
     /**
-     * <p>The KMS customer master key (CMK) used to encrypt the build output
-     * artifacts.</p> <p>You can specify either the ARN of the CMK or, if available,
-     * the CMK alias (using the format alias/alias-name). </p>
+     * <p>The KMS key used to encrypt the build output artifacts.</p> <p>You can
+     * specify either the ARN of the KMS key or, if available, the KMS key alias (using
+     * the format alias/alias-name). </p>
      */
     inline AwsCodeBuildProjectDetails& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
 
     /**
-     * <p>The KMS customer master key (CMK) used to encrypt the build output
-     * artifacts.</p> <p>You can specify either the ARN of the CMK or, if available,
-     * the CMK alias (using the format alias/alias-name). </p>
+     * <p>The KMS key used to encrypt the build output artifacts.</p> <p>You can
+     * specify either the ARN of the KMS key or, if available, the KMS key alias (using
+     * the format alias/alias-name). </p>
      */
     inline AwsCodeBuildProjectDetails& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
 

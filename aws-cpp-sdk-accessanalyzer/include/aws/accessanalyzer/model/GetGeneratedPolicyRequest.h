@@ -81,7 +81,7 @@ namespace Model
 
     /**
      * <p>The level of detail that you want to generate. You can specify whether to
-     * generate service-level policies. </p> <p>Access Analyzer uses
+     * generate service-level policies. </p> <p>IAM Access Analyzer uses
      * <code>iam:servicelastaccessed</code> to identify services that have been used
      * recently to create this service-level template.</p>
      */
@@ -89,7 +89,7 @@ namespace Model
 
     /**
      * <p>The level of detail that you want to generate. You can specify whether to
-     * generate service-level policies. </p> <p>Access Analyzer uses
+     * generate service-level policies. </p> <p>IAM Access Analyzer uses
      * <code>iam:servicelastaccessed</code> to identify services that have been used
      * recently to create this service-level template.</p>
      */
@@ -97,7 +97,7 @@ namespace Model
 
     /**
      * <p>The level of detail that you want to generate. You can specify whether to
-     * generate service-level policies. </p> <p>Access Analyzer uses
+     * generate service-level policies. </p> <p>IAM Access Analyzer uses
      * <code>iam:servicelastaccessed</code> to identify services that have been used
      * recently to create this service-level template.</p>
      */
@@ -105,7 +105,7 @@ namespace Model
 
     /**
      * <p>The level of detail that you want to generate. You can specify whether to
-     * generate service-level policies. </p> <p>Access Analyzer uses
+     * generate service-level policies. </p> <p>IAM Access Analyzer uses
      * <code>iam:servicelastaccessed</code> to identify services that have been used
      * recently to create this service-level template.</p>
      */

@@ -149,7 +149,7 @@ namespace Model
      * <p>The type of landing directory (folder) you want your users' home directory to
      * be when they log into the server. If you set it to <code>PATH</code>, the user
      * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
      * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
      * Amazon S3 or EFS paths visible to your users.</p>
      */
@@ -159,7 +159,7 @@ namespace Model
      * <p>The type of landing directory (folder) you want your users' home directory to
      * be when they log into the server. If you set it to <code>PATH</code>, the user
      * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
      * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
      * Amazon S3 or EFS paths visible to your users.</p>
      */
@@ -169,7 +169,7 @@ namespace Model
      * <p>The type of landing directory (folder) you want your users' home directory to
      * be when they log into the server. If you set it to <code>PATH</code>, the user
      * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
      * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
      * Amazon S3 or EFS paths visible to your users.</p>
      */
@@ -179,7 +179,7 @@ namespace Model
      * <p>The type of landing directory (folder) you want your users' home directory to
      * be when they log into the server. If you set it to <code>PATH</code>, the user
      * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
      * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
      * Amazon S3 or EFS paths visible to your users.</p>
      */
@@ -189,7 +189,7 @@ namespace Model
      * <p>The type of landing directory (folder) you want your users' home directory to
      * be when they log into the server. If you set it to <code>PATH</code>, the user
      * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
      * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
      * Amazon S3 or EFS paths visible to your users.</p>
      */
@@ -199,7 +199,7 @@ namespace Model
      * <p>The type of landing directory (folder) you want your users' home directory to
      * be when they log into the server. If you set it to <code>PATH</code>, the user
      * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
      * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
      * Amazon S3 or EFS paths visible to your users.</p>
      */

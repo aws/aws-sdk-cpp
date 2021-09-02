@@ -45,50 +45,50 @@ namespace Model
 
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory instance that
-     * the file system is joined to.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * instance that the file system is joined to.</p>
      */
     inline const Aws::String& GetActiveDirectoryId() const{ return m_activeDirectoryId; }
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory instance that
-     * the file system is joined to.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * instance that the file system is joined to.</p>
      */
     inline bool ActiveDirectoryIdHasBeenSet() const { return m_activeDirectoryIdHasBeenSet; }
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory instance that
-     * the file system is joined to.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * instance that the file system is joined to.</p>
      */
     inline void SetActiveDirectoryId(const Aws::String& value) { m_activeDirectoryIdHasBeenSet = true; m_activeDirectoryId = value; }
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory instance that
-     * the file system is joined to.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * instance that the file system is joined to.</p>
      */
     inline void SetActiveDirectoryId(Aws::String&& value) { m_activeDirectoryIdHasBeenSet = true; m_activeDirectoryId = std::move(value); }
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory instance that
-     * the file system is joined to.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * instance that the file system is joined to.</p>
      */
     inline void SetActiveDirectoryId(const char* value) { m_activeDirectoryIdHasBeenSet = true; m_activeDirectoryId.assign(value); }
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory instance that
-     * the file system is joined to.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * instance that the file system is joined to.</p>
      */
     inline WindowsFileSystemConfiguration& WithActiveDirectoryId(const Aws::String& value) { SetActiveDirectoryId(value); return *this;}
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory instance that
-     * the file system is joined to.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * instance that the file system is joined to.</p>
      */
     inline WindowsFileSystemConfiguration& WithActiveDirectoryId(Aws::String&& value) { SetActiveDirectoryId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory instance that
-     * the file system is joined to.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * instance that the file system is joined to.</p>
      */
     inline WindowsFileSystemConfiguration& WithActiveDirectoryId(const char* value) { SetActiveDirectoryId(value); return *this;}
 

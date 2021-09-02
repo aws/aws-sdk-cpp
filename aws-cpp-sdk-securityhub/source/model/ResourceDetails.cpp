@@ -67,7 +67,10 @@ ResourceDetails::ResourceDetails() :
     m_containerHasBeenSet(false),
     m_otherHasBeenSet(false),
     m_awsRdsEventSubscriptionHasBeenSet(false),
-    m_awsEcsServiceHasBeenSet(false)
+    m_awsEcsServiceHasBeenSet(false),
+    m_awsAutoScalingLaunchConfigurationHasBeenSet(false),
+    m_awsEc2VpnConnectionHasBeenSet(false),
+    m_awsEcrContainerImageHasBeenSet(false)
 {
 }
 
@@ -120,7 +123,10 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_containerHasBeenSet(false),
     m_otherHasBeenSet(false),
     m_awsRdsEventSubscriptionHasBeenSet(false),
-    m_awsEcsServiceHasBeenSet(false)
+    m_awsEcsServiceHasBeenSet(false),
+    m_awsAutoScalingLaunchConfigurationHasBeenSet(false),
+    m_awsEc2VpnConnectionHasBeenSet(false),
+    m_awsEcrContainerImageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -473,6 +479,27 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsEcsServiceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AwsAutoScalingLaunchConfiguration"))
+  {
+    m_awsAutoScalingLaunchConfiguration = jsonValue.GetObject("AwsAutoScalingLaunchConfiguration");
+
+    m_awsAutoScalingLaunchConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEc2VpnConnection"))
+  {
+    m_awsEc2VpnConnection = jsonValue.GetObject("AwsEc2VpnConnection");
+
+    m_awsEc2VpnConnectionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEcrContainerImage"))
+  {
+    m_awsEcrContainerImage = jsonValue.GetObject("AwsEcrContainerImage");
+
+    m_awsEcrContainerImageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -776,6 +803,24 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsEcsServiceHasBeenSet)
   {
    payload.WithObject("AwsEcsService", m_awsEcsService.Jsonize());
+
+  }
+
+  if(m_awsAutoScalingLaunchConfigurationHasBeenSet)
+  {
+   payload.WithObject("AwsAutoScalingLaunchConfiguration", m_awsAutoScalingLaunchConfiguration.Jsonize());
+
+  }
+
+  if(m_awsEc2VpnConnectionHasBeenSet)
+  {
+   payload.WithObject("AwsEc2VpnConnection", m_awsEc2VpnConnection.Jsonize());
+
+  }
+
+  if(m_awsEcrContainerImageHasBeenSet)
+  {
+   payload.WithObject("AwsEcrContainerImage", m_awsEcrContainerImage.Jsonize());
 
   }
 

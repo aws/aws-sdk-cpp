@@ -71,28 +71,28 @@ namespace Model
 
     /**
      * <p>This value is set to <code>true</code> if the generated policy contains all
-     * possible actions for a service that Access Analyzer identified from the
+     * possible actions for a service that IAM Access Analyzer identified from the
      * CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
      */
     inline bool GetIsComplete() const{ return m_isComplete; }
 
     /**
      * <p>This value is set to <code>true</code> if the generated policy contains all
-     * possible actions for a service that Access Analyzer identified from the
+     * possible actions for a service that IAM Access Analyzer identified from the
      * CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
      */
     inline bool IsCompleteHasBeenSet() const { return m_isCompleteHasBeenSet; }
 
     /**
      * <p>This value is set to <code>true</code> if the generated policy contains all
-     * possible actions for a service that Access Analyzer identified from the
+     * possible actions for a service that IAM Access Analyzer identified from the
      * CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
      */
     inline void SetIsComplete(bool value) { m_isCompleteHasBeenSet = true; m_isComplete = value; }
 
     /**
      * <p>This value is set to <code>true</code> if the generated policy contains all
-     * possible actions for a service that Access Analyzer identified from the
+     * possible actions for a service that IAM Access Analyzer identified from the
      * CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
      */
     inline GeneratedPolicyProperties& WithIsComplete(bool value) { SetIsComplete(value); return *this;}

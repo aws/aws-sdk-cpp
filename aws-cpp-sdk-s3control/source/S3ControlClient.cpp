@@ -26,6 +26,7 @@
 #include <aws/s3control/model/CreateAccessPointForObjectLambdaRequest.h>
 #include <aws/s3control/model/CreateBucketRequest.h>
 #include <aws/s3control/model/CreateJobRequest.h>
+#include <aws/s3control/model/CreateMultiRegionAccessPointRequest.h>
 #include <aws/s3control/model/DeleteAccessPointRequest.h>
 #include <aws/s3control/model/DeleteAccessPointForObjectLambdaRequest.h>
 #include <aws/s3control/model/DeleteAccessPointPolicyRequest.h>
@@ -35,10 +36,12 @@
 #include <aws/s3control/model/DeleteBucketPolicyRequest.h>
 #include <aws/s3control/model/DeleteBucketTaggingRequest.h>
 #include <aws/s3control/model/DeleteJobTaggingRequest.h>
+#include <aws/s3control/model/DeleteMultiRegionAccessPointRequest.h>
 #include <aws/s3control/model/DeletePublicAccessBlockRequest.h>
 #include <aws/s3control/model/DeleteStorageLensConfigurationRequest.h>
 #include <aws/s3control/model/DeleteStorageLensConfigurationTaggingRequest.h>
 #include <aws/s3control/model/DescribeJobRequest.h>
+#include <aws/s3control/model/DescribeMultiRegionAccessPointOperationRequest.h>
 #include <aws/s3control/model/GetAccessPointRequest.h>
 #include <aws/s3control/model/GetAccessPointConfigurationForObjectLambdaRequest.h>
 #include <aws/s3control/model/GetAccessPointForObjectLambdaRequest.h>
@@ -51,12 +54,16 @@
 #include <aws/s3control/model/GetBucketPolicyRequest.h>
 #include <aws/s3control/model/GetBucketTaggingRequest.h>
 #include <aws/s3control/model/GetJobTaggingRequest.h>
+#include <aws/s3control/model/GetMultiRegionAccessPointRequest.h>
+#include <aws/s3control/model/GetMultiRegionAccessPointPolicyRequest.h>
+#include <aws/s3control/model/GetMultiRegionAccessPointPolicyStatusRequest.h>
 #include <aws/s3control/model/GetPublicAccessBlockRequest.h>
 #include <aws/s3control/model/GetStorageLensConfigurationRequest.h>
 #include <aws/s3control/model/GetStorageLensConfigurationTaggingRequest.h>
 #include <aws/s3control/model/ListAccessPointsRequest.h>
 #include <aws/s3control/model/ListAccessPointsForObjectLambdaRequest.h>
 #include <aws/s3control/model/ListJobsRequest.h>
+#include <aws/s3control/model/ListMultiRegionAccessPointsRequest.h>
 #include <aws/s3control/model/ListRegionalBucketsRequest.h>
 #include <aws/s3control/model/ListStorageLensConfigurationsRequest.h>
 #include <aws/s3control/model/PutAccessPointConfigurationForObjectLambdaRequest.h>
@@ -66,6 +73,7 @@
 #include <aws/s3control/model/PutBucketPolicyRequest.h>
 #include <aws/s3control/model/PutBucketTaggingRequest.h>
 #include <aws/s3control/model/PutJobTaggingRequest.h>
+#include <aws/s3control/model/PutMultiRegionAccessPointPolicyRequest.h>
 #include <aws/s3control/model/PutPublicAccessBlockRequest.h>
 #include <aws/s3control/model/PutStorageLensConfigurationRequest.h>
 #include <aws/s3control/model/PutStorageLensConfigurationTaggingRequest.h>
@@ -362,6 +370,55 @@ void S3ControlClient::CreateJobAsync(const CreateJobRequest& request, const Crea
 void S3ControlClient::CreateJobAsyncHelper(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateJob(request), context);
+}
+
+CreateMultiRegionAccessPointOutcome S3ControlClient::CreateMultiRegionAccessPoint(const CreateMultiRegionAccessPointRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateMultiRegionAccessPoint", "Required field: AccountId, is not set");
+    return CreateMultiRegionAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return CreateMultiRegionAccessPointOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection)
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("CreateMultiRegionAccessPoint", "HostPrefix required field: AccountId, is empty");
+      return CreateMultiRegionAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("CreateMultiRegionAccessPoint", "Invalid DNS host: " << uri.GetAuthority());
+      return CreateMultiRegionAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/v20180820/async-requests/mrap/create");
+  return CreateMultiRegionAccessPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+CreateMultiRegionAccessPointOutcomeCallable S3ControlClient::CreateMultiRegionAccessPointCallable(const CreateMultiRegionAccessPointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateMultiRegionAccessPointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMultiRegionAccessPoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::CreateMultiRegionAccessPointAsync(const CreateMultiRegionAccessPointRequest& request, const CreateMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateMultiRegionAccessPointAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::CreateMultiRegionAccessPointAsyncHelper(const CreateMultiRegionAccessPointRequest& request, const CreateMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateMultiRegionAccessPoint(request), context);
 }
 
 DeleteAccessPointOutcome S3ControlClient::DeleteAccessPoint(const DeleteAccessPointRequest& request) const
@@ -897,6 +954,55 @@ void S3ControlClient::DeleteJobTaggingAsyncHelper(const DeleteJobTaggingRequest&
   handler(this, request, DeleteJobTagging(request), context);
 }
 
+DeleteMultiRegionAccessPointOutcome S3ControlClient::DeleteMultiRegionAccessPoint(const DeleteMultiRegionAccessPointRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteMultiRegionAccessPoint", "Required field: AccountId, is not set");
+    return DeleteMultiRegionAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteMultiRegionAccessPointOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection)
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("DeleteMultiRegionAccessPoint", "HostPrefix required field: AccountId, is empty");
+      return DeleteMultiRegionAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DeleteMultiRegionAccessPoint", "Invalid DNS host: " << uri.GetAuthority());
+      return DeleteMultiRegionAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/v20180820/async-requests/mrap/delete");
+  return DeleteMultiRegionAccessPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+DeleteMultiRegionAccessPointOutcomeCallable S3ControlClient::DeleteMultiRegionAccessPointCallable(const DeleteMultiRegionAccessPointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteMultiRegionAccessPointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMultiRegionAccessPoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::DeleteMultiRegionAccessPointAsync(const DeleteMultiRegionAccessPointRequest& request, const DeleteMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteMultiRegionAccessPointAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::DeleteMultiRegionAccessPointAsyncHelper(const DeleteMultiRegionAccessPointRequest& request, const DeleteMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteMultiRegionAccessPoint(request), context);
+}
+
 DeletePublicAccessBlockOutcome S3ControlClient::DeletePublicAccessBlock(const DeletePublicAccessBlockRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -1110,6 +1216,61 @@ void S3ControlClient::DescribeJobAsync(const DescribeJobRequest& request, const 
 void S3ControlClient::DescribeJobAsyncHelper(const DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeJob(request), context);
+}
+
+DescribeMultiRegionAccessPointOperationOutcome S3ControlClient::DescribeMultiRegionAccessPointOperation(const DescribeMultiRegionAccessPointOperationRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeMultiRegionAccessPointOperation", "Required field: AccountId, is not set");
+    return DescribeMultiRegionAccessPointOperationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.RequestTokenARNHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeMultiRegionAccessPointOperation", "Required field: RequestTokenARN, is not set");
+    return DescribeMultiRegionAccessPointOperationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RequestTokenARN]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DescribeMultiRegionAccessPointOperationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection)
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("DescribeMultiRegionAccessPointOperation", "HostPrefix required field: AccountId, is empty");
+      return DescribeMultiRegionAccessPointOperationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DescribeMultiRegionAccessPointOperation", "Invalid DNS host: " << uri.GetAuthority());
+      return DescribeMultiRegionAccessPointOperationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/v20180820/async-requests/mrap/");
+  uri.AddPathSegments(request.GetRequestTokenARN());
+  return DescribeMultiRegionAccessPointOperationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+DescribeMultiRegionAccessPointOperationOutcomeCallable S3ControlClient::DescribeMultiRegionAccessPointOperationCallable(const DescribeMultiRegionAccessPointOperationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeMultiRegionAccessPointOperationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMultiRegionAccessPointOperation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::DescribeMultiRegionAccessPointOperationAsync(const DescribeMultiRegionAccessPointOperationRequest& request, const DescribeMultiRegionAccessPointOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeMultiRegionAccessPointOperationAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::DescribeMultiRegionAccessPointOperationAsyncHelper(const DescribeMultiRegionAccessPointOperationRequest& request, const DescribeMultiRegionAccessPointOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeMultiRegionAccessPointOperation(request), context);
 }
 
 GetAccessPointOutcome S3ControlClient::GetAccessPoint(const GetAccessPointRequest& request) const
@@ -1825,6 +1986,185 @@ void S3ControlClient::GetJobTaggingAsyncHelper(const GetJobTaggingRequest& reque
   handler(this, request, GetJobTagging(request), context);
 }
 
+GetMultiRegionAccessPointOutcome S3ControlClient::GetMultiRegionAccessPoint(const GetMultiRegionAccessPointRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMultiRegionAccessPoint", "Required field: Name, is not set");
+    return GetMultiRegionAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  S3ControlARN arn(request.GetName());
+  if (!arn && request.GetAccountId().empty())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+          "Account ID should be specified via either accountId field or an ARN", false));
+  }
+  if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/mrap/instances/");
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetMultiRegionAccessPointOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection && !S3ControlARN(request.GetName()))
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("GetMultiRegionAccessPoint", "HostPrefix required field: AccountId, is empty");
+      return GetMultiRegionAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("GetMultiRegionAccessPoint", "Invalid DNS host: " << uri.GetAuthority());
+      return GetMultiRegionAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  return GetMultiRegionAccessPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+GetMultiRegionAccessPointOutcomeCallable S3ControlClient::GetMultiRegionAccessPointCallable(const GetMultiRegionAccessPointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMultiRegionAccessPointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMultiRegionAccessPoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::GetMultiRegionAccessPointAsync(const GetMultiRegionAccessPointRequest& request, const GetMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMultiRegionAccessPointAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::GetMultiRegionAccessPointAsyncHelper(const GetMultiRegionAccessPointRequest& request, const GetMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMultiRegionAccessPoint(request), context);
+}
+
+GetMultiRegionAccessPointPolicyOutcome S3ControlClient::GetMultiRegionAccessPointPolicy(const GetMultiRegionAccessPointPolicyRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMultiRegionAccessPointPolicy", "Required field: Name, is not set");
+    return GetMultiRegionAccessPointPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  S3ControlARN arn(request.GetName());
+  if (!arn && request.GetAccountId().empty())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+          "Account ID should be specified via either accountId field or an ARN", false));
+  }
+  if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/mrap/instances/");
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetMultiRegionAccessPointPolicyOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection && !S3ControlARN(request.GetName()))
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("GetMultiRegionAccessPointPolicy", "HostPrefix required field: AccountId, is empty");
+      return GetMultiRegionAccessPointPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("GetMultiRegionAccessPointPolicy", "Invalid DNS host: " << uri.GetAuthority());
+      return GetMultiRegionAccessPointPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/policy");
+  return GetMultiRegionAccessPointPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+GetMultiRegionAccessPointPolicyOutcomeCallable S3ControlClient::GetMultiRegionAccessPointPolicyCallable(const GetMultiRegionAccessPointPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMultiRegionAccessPointPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMultiRegionAccessPointPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::GetMultiRegionAccessPointPolicyAsync(const GetMultiRegionAccessPointPolicyRequest& request, const GetMultiRegionAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMultiRegionAccessPointPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::GetMultiRegionAccessPointPolicyAsyncHelper(const GetMultiRegionAccessPointPolicyRequest& request, const GetMultiRegionAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMultiRegionAccessPointPolicy(request), context);
+}
+
+GetMultiRegionAccessPointPolicyStatusOutcome S3ControlClient::GetMultiRegionAccessPointPolicyStatus(const GetMultiRegionAccessPointPolicyStatusRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMultiRegionAccessPointPolicyStatus", "Required field: Name, is not set");
+    return GetMultiRegionAccessPointPolicyStatusOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  S3ControlARN arn(request.GetName());
+  if (!arn && request.GetAccountId().empty())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+          "Account ID should be specified via either accountId field or an ARN", false));
+  }
+  if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/mrap/instances/");
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetMultiRegionAccessPointPolicyStatusOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection && !S3ControlARN(request.GetName()))
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("GetMultiRegionAccessPointPolicyStatus", "HostPrefix required field: AccountId, is empty");
+      return GetMultiRegionAccessPointPolicyStatusOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("GetMultiRegionAccessPointPolicyStatus", "Invalid DNS host: " << uri.GetAuthority());
+      return GetMultiRegionAccessPointPolicyStatusOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/policystatus");
+  return GetMultiRegionAccessPointPolicyStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+GetMultiRegionAccessPointPolicyStatusOutcomeCallable S3ControlClient::GetMultiRegionAccessPointPolicyStatusCallable(const GetMultiRegionAccessPointPolicyStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMultiRegionAccessPointPolicyStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMultiRegionAccessPointPolicyStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::GetMultiRegionAccessPointPolicyStatusAsync(const GetMultiRegionAccessPointPolicyStatusRequest& request, const GetMultiRegionAccessPointPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMultiRegionAccessPointPolicyStatusAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::GetMultiRegionAccessPointPolicyStatusAsyncHelper(const GetMultiRegionAccessPointPolicyStatusRequest& request, const GetMultiRegionAccessPointPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMultiRegionAccessPointPolicyStatus(request), context);
+}
+
 GetPublicAccessBlockOutcome S3ControlClient::GetPublicAccessBlock(const GetPublicAccessBlockRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -2136,6 +2476,55 @@ void S3ControlClient::ListJobsAsync(const ListJobsRequest& request, const ListJo
 void S3ControlClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListJobs(request), context);
+}
+
+ListMultiRegionAccessPointsOutcome S3ControlClient::ListMultiRegionAccessPoints(const ListMultiRegionAccessPointsRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListMultiRegionAccessPoints", "Required field: AccountId, is not set");
+    return ListMultiRegionAccessPointsOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return ListMultiRegionAccessPointsOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection)
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("ListMultiRegionAccessPoints", "HostPrefix required field: AccountId, is empty");
+      return ListMultiRegionAccessPointsOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListMultiRegionAccessPoints", "Invalid DNS host: " << uri.GetAuthority());
+      return ListMultiRegionAccessPointsOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/v20180820/mrap/instances");
+  return ListMultiRegionAccessPointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+ListMultiRegionAccessPointsOutcomeCallable S3ControlClient::ListMultiRegionAccessPointsCallable(const ListMultiRegionAccessPointsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMultiRegionAccessPointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMultiRegionAccessPoints(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::ListMultiRegionAccessPointsAsync(const ListMultiRegionAccessPointsRequest& request, const ListMultiRegionAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListMultiRegionAccessPointsAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::ListMultiRegionAccessPointsAsyncHelper(const ListMultiRegionAccessPointsRequest& request, const ListMultiRegionAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListMultiRegionAccessPoints(request), context);
 }
 
 ListRegionalBucketsOutcome S3ControlClient::ListRegionalBuckets(const ListRegionalBucketsRequest& request) const
@@ -2650,6 +3039,55 @@ void S3ControlClient::PutJobTaggingAsync(const PutJobTaggingRequest& request, co
 void S3ControlClient::PutJobTaggingAsyncHelper(const PutJobTaggingRequest& request, const PutJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutJobTagging(request), context);
+}
+
+PutMultiRegionAccessPointPolicyOutcome S3ControlClient::PutMultiRegionAccessPointPolicy(const PutMultiRegionAccessPointPolicyRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutMultiRegionAccessPointPolicy", "Required field: AccountId, is not set");
+    return PutMultiRegionAccessPointPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutMultiRegionAccessPointPolicyOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection)
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("PutMultiRegionAccessPointPolicy", "HostPrefix required field: AccountId, is empty");
+      return PutMultiRegionAccessPointPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("PutMultiRegionAccessPointPolicy", "Invalid DNS host: " << uri.GetAuthority());
+      return PutMultiRegionAccessPointPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/v20180820/async-requests/mrap/put-policy");
+  return PutMultiRegionAccessPointPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+PutMultiRegionAccessPointPolicyOutcomeCallable S3ControlClient::PutMultiRegionAccessPointPolicyCallable(const PutMultiRegionAccessPointPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutMultiRegionAccessPointPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutMultiRegionAccessPointPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::PutMultiRegionAccessPointPolicyAsync(const PutMultiRegionAccessPointPolicyRequest& request, const PutMultiRegionAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutMultiRegionAccessPointPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::PutMultiRegionAccessPointPolicyAsyncHelper(const PutMultiRegionAccessPointPolicyRequest& request, const PutMultiRegionAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutMultiRegionAccessPointPolicy(request), context);
 }
 
 PutPublicAccessBlockOutcome S3ControlClient::PutPublicAccessBlock(const PutPublicAccessBlockRequest& request) const

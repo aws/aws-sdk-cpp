@@ -20,13 +20,15 @@ namespace Model
 
 LogicalTableSource::LogicalTableSource() : 
     m_joinInstructionHasBeenSet(false),
-    m_physicalTableIdHasBeenSet(false)
+    m_physicalTableIdHasBeenSet(false),
+    m_dataSetArnHasBeenSet(false)
 {
 }
 
 LogicalTableSource::LogicalTableSource(JsonView jsonValue) : 
     m_joinInstructionHasBeenSet(false),
-    m_physicalTableIdHasBeenSet(false)
+    m_physicalTableIdHasBeenSet(false),
+    m_dataSetArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ LogicalTableSource& LogicalTableSource::operator =(JsonView jsonValue)
     m_physicalTableIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataSetArn"))
+  {
+    m_dataSetArn = jsonValue.GetString("DataSetArn");
+
+    m_dataSetArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue LogicalTableSource::Jsonize() const
   if(m_physicalTableIdHasBeenSet)
   {
    payload.WithString("PhysicalTableId", m_physicalTableId);
+
+  }
+
+  if(m_dataSetArnHasBeenSet)
+  {
+   payload.WithString("DataSetArn", m_dataSetArn);
 
   }
 

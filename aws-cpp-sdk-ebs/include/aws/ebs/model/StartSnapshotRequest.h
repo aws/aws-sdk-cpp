@@ -36,26 +36,26 @@ namespace Model
 
 
     /**
-     * <p>The size of the volume, in GiB. The maximum size is <code>16384</code> GiB
-     * (16 TiB).</p>
+     * <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB
+     * (64 TiB).</p>
      */
     inline long long GetVolumeSize() const{ return m_volumeSize; }
 
     /**
-     * <p>The size of the volume, in GiB. The maximum size is <code>16384</code> GiB
-     * (16 TiB).</p>
+     * <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB
+     * (64 TiB).</p>
      */
     inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
 
     /**
-     * <p>The size of the volume, in GiB. The maximum size is <code>16384</code> GiB
-     * (16 TiB).</p>
+     * <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB
+     * (64 TiB).</p>
      */
     inline void SetVolumeSize(long long value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
     /**
-     * <p>The size of the volume, in GiB. The maximum size is <code>16384</code> GiB
-     * (16 TiB).</p>
+     * <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB
+     * (64 TiB).</p>
      */
     inline StartSnapshotRequest& WithVolumeSize(long long value) { SetVolumeSize(value); return *this;}
 

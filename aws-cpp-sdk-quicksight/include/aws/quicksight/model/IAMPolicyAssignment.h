@@ -42,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services account; ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The Amazon Web Services account; ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services account; ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The Amazon Web Services account; ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services account; ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The Amazon Web Services account; ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline IAMPolicyAssignment& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services account; ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline IAMPolicyAssignment& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services account; ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline IAMPolicyAssignment& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -165,42 +165,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
      */
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
      */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
      */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
      */
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
      */
     inline IAMPolicyAssignment& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
      */
     inline IAMPolicyAssignment& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
      */
     inline IAMPolicyAssignment& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 

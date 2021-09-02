@@ -34,57 +34,57 @@ namespace Model
 
     /**
      * <p>A single-use URL that you can put into your server-side web page to embed
-     * your QuickSight session. This URL is valid for 5 minutes. The API operation
-     * provides the URL with an <code>auth_code</code> value that enables one (and only
-     * one) sign-on to a user session that is valid for 10 hours. </p>
+     * your Amazon QuickSight session. This URL is valid for 5 minutes. The API
+     * operation provides the URL with an <code>auth_code</code> value that enables one
+     * (and only one) sign-on to a user session that is valid for 10 hours. </p>
      */
     inline const Aws::String& GetEmbedUrl() const{ return m_embedUrl; }
 
     /**
      * <p>A single-use URL that you can put into your server-side web page to embed
-     * your QuickSight session. This URL is valid for 5 minutes. The API operation
-     * provides the URL with an <code>auth_code</code> value that enables one (and only
-     * one) sign-on to a user session that is valid for 10 hours. </p>
+     * your Amazon QuickSight session. This URL is valid for 5 minutes. The API
+     * operation provides the URL with an <code>auth_code</code> value that enables one
+     * (and only one) sign-on to a user session that is valid for 10 hours. </p>
      */
     inline void SetEmbedUrl(const Aws::String& value) { m_embedUrl = value; }
 
     /**
      * <p>A single-use URL that you can put into your server-side web page to embed
-     * your QuickSight session. This URL is valid for 5 minutes. The API operation
-     * provides the URL with an <code>auth_code</code> value that enables one (and only
-     * one) sign-on to a user session that is valid for 10 hours. </p>
+     * your Amazon QuickSight session. This URL is valid for 5 minutes. The API
+     * operation provides the URL with an <code>auth_code</code> value that enables one
+     * (and only one) sign-on to a user session that is valid for 10 hours. </p>
      */
     inline void SetEmbedUrl(Aws::String&& value) { m_embedUrl = std::move(value); }
 
     /**
      * <p>A single-use URL that you can put into your server-side web page to embed
-     * your QuickSight session. This URL is valid for 5 minutes. The API operation
-     * provides the URL with an <code>auth_code</code> value that enables one (and only
-     * one) sign-on to a user session that is valid for 10 hours. </p>
+     * your Amazon QuickSight session. This URL is valid for 5 minutes. The API
+     * operation provides the URL with an <code>auth_code</code> value that enables one
+     * (and only one) sign-on to a user session that is valid for 10 hours. </p>
      */
     inline void SetEmbedUrl(const char* value) { m_embedUrl.assign(value); }
 
     /**
      * <p>A single-use URL that you can put into your server-side web page to embed
-     * your QuickSight session. This URL is valid for 5 minutes. The API operation
-     * provides the URL with an <code>auth_code</code> value that enables one (and only
-     * one) sign-on to a user session that is valid for 10 hours. </p>
+     * your Amazon QuickSight session. This URL is valid for 5 minutes. The API
+     * operation provides the URL with an <code>auth_code</code> value that enables one
+     * (and only one) sign-on to a user session that is valid for 10 hours. </p>
      */
     inline GetSessionEmbedUrlResult& WithEmbedUrl(const Aws::String& value) { SetEmbedUrl(value); return *this;}
 
     /**
      * <p>A single-use URL that you can put into your server-side web page to embed
-     * your QuickSight session. This URL is valid for 5 minutes. The API operation
-     * provides the URL with an <code>auth_code</code> value that enables one (and only
-     * one) sign-on to a user session that is valid for 10 hours. </p>
+     * your Amazon QuickSight session. This URL is valid for 5 minutes. The API
+     * operation provides the URL with an <code>auth_code</code> value that enables one
+     * (and only one) sign-on to a user session that is valid for 10 hours. </p>
      */
     inline GetSessionEmbedUrlResult& WithEmbedUrl(Aws::String&& value) { SetEmbedUrl(std::move(value)); return *this;}
 
     /**
      * <p>A single-use URL that you can put into your server-side web page to embed
-     * your QuickSight session. This URL is valid for 5 minutes. The API operation
-     * provides the URL with an <code>auth_code</code> value that enables one (and only
-     * one) sign-on to a user session that is valid for 10 hours. </p>
+     * your Amazon QuickSight session. This URL is valid for 5 minutes. The API
+     * operation provides the URL with an <code>auth_code</code> value that enables one
+     * (and only one) sign-on to a user session that is valid for 10 hours. </p>
      */
     inline GetSessionEmbedUrlResult& WithEmbedUrl(const char* value) { SetEmbedUrl(value); return *this;}
 

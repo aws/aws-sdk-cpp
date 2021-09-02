@@ -22,6 +22,7 @@ namespace Aws
 
         static const int WINDOWS_HASH = HashingUtils::HashString("WINDOWS");
         static const int LUSTRE_HASH = HashingUtils::HashString("LUSTRE");
+        static const int ONTAP_HASH = HashingUtils::HashString("ONTAP");
 
 
         FileSystemType GetFileSystemTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == LUSTRE_HASH)
           {
             return FileSystemType::LUSTRE;
+          }
+          else if (hashCode == ONTAP_HASH)
+          {
+            return FileSystemType::ONTAP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "WINDOWS";
           case FileSystemType::LUSTRE:
             return "LUSTRE";
+          case FileSystemType::ONTAP:
+            return "ONTAP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

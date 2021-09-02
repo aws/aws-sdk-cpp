@@ -32,22 +32,52 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    
+    /**
+     * <p>Specifies the EFS resource ID preference to set for the user's Amazon Web
+     * Services account, in the current Amazon Web Services Region, either
+     * <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8
+     * characters).</p>
+     */
     inline const ResourceIdType& GetResourceIdType() const{ return m_resourceIdType; }
 
-    
+    /**
+     * <p>Specifies the EFS resource ID preference to set for the user's Amazon Web
+     * Services account, in the current Amazon Web Services Region, either
+     * <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8
+     * characters).</p>
+     */
     inline bool ResourceIdTypeHasBeenSet() const { return m_resourceIdTypeHasBeenSet; }
 
-    
+    /**
+     * <p>Specifies the EFS resource ID preference to set for the user's Amazon Web
+     * Services account, in the current Amazon Web Services Region, either
+     * <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8
+     * characters).</p>
+     */
     inline void SetResourceIdType(const ResourceIdType& value) { m_resourceIdTypeHasBeenSet = true; m_resourceIdType = value; }
 
-    
+    /**
+     * <p>Specifies the EFS resource ID preference to set for the user's Amazon Web
+     * Services account, in the current Amazon Web Services Region, either
+     * <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8
+     * characters).</p>
+     */
     inline void SetResourceIdType(ResourceIdType&& value) { m_resourceIdTypeHasBeenSet = true; m_resourceIdType = std::move(value); }
 
-    
+    /**
+     * <p>Specifies the EFS resource ID preference to set for the user's Amazon Web
+     * Services account, in the current Amazon Web Services Region, either
+     * <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8
+     * characters).</p>
+     */
     inline PutAccountPreferencesRequest& WithResourceIdType(const ResourceIdType& value) { SetResourceIdType(value); return *this;}
 
-    
+    /**
+     * <p>Specifies the EFS resource ID preference to set for the user's Amazon Web
+     * Services account, in the current Amazon Web Services Region, either
+     * <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8
+     * characters).</p>
+     */
     inline PutAccountPreferencesRequest& WithResourceIdType(ResourceIdType&& value) { SetResourceIdType(std::move(value)); return *this;}
 
   private:

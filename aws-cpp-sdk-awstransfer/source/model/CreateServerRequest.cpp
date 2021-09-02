@@ -26,7 +26,8 @@ CreateServerRequest::CreateServerRequest() :
     m_loggingRoleHasBeenSet(false),
     m_protocolsHasBeenSet(false),
     m_securityPolicyNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_workflowDetailsHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,12 @@ Aws::String CreateServerRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_workflowDetailsHasBeenSet)
+  {
+   payload.WithObject("WorkflowDetails", m_workflowDetails.Jsonize());
 
   }
 

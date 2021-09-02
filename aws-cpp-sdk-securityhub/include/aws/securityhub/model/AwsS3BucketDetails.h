@@ -9,6 +9,9 @@
 #include <aws/securityhub/model/AwsS3BucketServerSideEncryptionConfiguration.h>
 #include <aws/securityhub/model/AwsS3BucketBucketLifecycleConfigurationDetails.h>
 #include <aws/securityhub/model/AwsS3AccountPublicAccessBlockDetails.h>
+#include <aws/securityhub/model/AwsS3BucketLoggingConfiguration.h>
+#include <aws/securityhub/model/AwsS3BucketWebsiteConfiguration.h>
+#include <aws/securityhub/model/AwsS3BucketNotificationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -293,6 +296,140 @@ namespace Model
      */
     inline AwsS3BucketDetails& WithPublicAccessBlockConfiguration(AwsS3AccountPublicAccessBlockDetails&& value) { SetPublicAccessBlockConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The access control list for the S3 bucket.</p>
+     */
+    inline const Aws::String& GetAccessControlList() const{ return m_accessControlList; }
+
+    /**
+     * <p>The access control list for the S3 bucket.</p>
+     */
+    inline bool AccessControlListHasBeenSet() const { return m_accessControlListHasBeenSet; }
+
+    /**
+     * <p>The access control list for the S3 bucket.</p>
+     */
+    inline void SetAccessControlList(const Aws::String& value) { m_accessControlListHasBeenSet = true; m_accessControlList = value; }
+
+    /**
+     * <p>The access control list for the S3 bucket.</p>
+     */
+    inline void SetAccessControlList(Aws::String&& value) { m_accessControlListHasBeenSet = true; m_accessControlList = std::move(value); }
+
+    /**
+     * <p>The access control list for the S3 bucket.</p>
+     */
+    inline void SetAccessControlList(const char* value) { m_accessControlListHasBeenSet = true; m_accessControlList.assign(value); }
+
+    /**
+     * <p>The access control list for the S3 bucket.</p>
+     */
+    inline AwsS3BucketDetails& WithAccessControlList(const Aws::String& value) { SetAccessControlList(value); return *this;}
+
+    /**
+     * <p>The access control list for the S3 bucket.</p>
+     */
+    inline AwsS3BucketDetails& WithAccessControlList(Aws::String&& value) { SetAccessControlList(std::move(value)); return *this;}
+
+    /**
+     * <p>The access control list for the S3 bucket.</p>
+     */
+    inline AwsS3BucketDetails& WithAccessControlList(const char* value) { SetAccessControlList(value); return *this;}
+
+
+    /**
+     * <p>The logging configuration for the S3 bucket.</p>
+     */
+    inline const AwsS3BucketLoggingConfiguration& GetBucketLoggingConfiguration() const{ return m_bucketLoggingConfiguration; }
+
+    /**
+     * <p>The logging configuration for the S3 bucket.</p>
+     */
+    inline bool BucketLoggingConfigurationHasBeenSet() const { return m_bucketLoggingConfigurationHasBeenSet; }
+
+    /**
+     * <p>The logging configuration for the S3 bucket.</p>
+     */
+    inline void SetBucketLoggingConfiguration(const AwsS3BucketLoggingConfiguration& value) { m_bucketLoggingConfigurationHasBeenSet = true; m_bucketLoggingConfiguration = value; }
+
+    /**
+     * <p>The logging configuration for the S3 bucket.</p>
+     */
+    inline void SetBucketLoggingConfiguration(AwsS3BucketLoggingConfiguration&& value) { m_bucketLoggingConfigurationHasBeenSet = true; m_bucketLoggingConfiguration = std::move(value); }
+
+    /**
+     * <p>The logging configuration for the S3 bucket.</p>
+     */
+    inline AwsS3BucketDetails& WithBucketLoggingConfiguration(const AwsS3BucketLoggingConfiguration& value) { SetBucketLoggingConfiguration(value); return *this;}
+
+    /**
+     * <p>The logging configuration for the S3 bucket.</p>
+     */
+    inline AwsS3BucketDetails& WithBucketLoggingConfiguration(AwsS3BucketLoggingConfiguration&& value) { SetBucketLoggingConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The website configuration parameters for the S3 bucket.</p>
+     */
+    inline const AwsS3BucketWebsiteConfiguration& GetBucketWebsiteConfiguration() const{ return m_bucketWebsiteConfiguration; }
+
+    /**
+     * <p>The website configuration parameters for the S3 bucket.</p>
+     */
+    inline bool BucketWebsiteConfigurationHasBeenSet() const { return m_bucketWebsiteConfigurationHasBeenSet; }
+
+    /**
+     * <p>The website configuration parameters for the S3 bucket.</p>
+     */
+    inline void SetBucketWebsiteConfiguration(const AwsS3BucketWebsiteConfiguration& value) { m_bucketWebsiteConfigurationHasBeenSet = true; m_bucketWebsiteConfiguration = value; }
+
+    /**
+     * <p>The website configuration parameters for the S3 bucket.</p>
+     */
+    inline void SetBucketWebsiteConfiguration(AwsS3BucketWebsiteConfiguration&& value) { m_bucketWebsiteConfigurationHasBeenSet = true; m_bucketWebsiteConfiguration = std::move(value); }
+
+    /**
+     * <p>The website configuration parameters for the S3 bucket.</p>
+     */
+    inline AwsS3BucketDetails& WithBucketWebsiteConfiguration(const AwsS3BucketWebsiteConfiguration& value) { SetBucketWebsiteConfiguration(value); return *this;}
+
+    /**
+     * <p>The website configuration parameters for the S3 bucket.</p>
+     */
+    inline AwsS3BucketDetails& WithBucketWebsiteConfiguration(AwsS3BucketWebsiteConfiguration&& value) { SetBucketWebsiteConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The notification configuration for the S3 bucket.</p>
+     */
+    inline const AwsS3BucketNotificationConfiguration& GetBucketNotificationConfiguration() const{ return m_bucketNotificationConfiguration; }
+
+    /**
+     * <p>The notification configuration for the S3 bucket.</p>
+     */
+    inline bool BucketNotificationConfigurationHasBeenSet() const { return m_bucketNotificationConfigurationHasBeenSet; }
+
+    /**
+     * <p>The notification configuration for the S3 bucket.</p>
+     */
+    inline void SetBucketNotificationConfiguration(const AwsS3BucketNotificationConfiguration& value) { m_bucketNotificationConfigurationHasBeenSet = true; m_bucketNotificationConfiguration = value; }
+
+    /**
+     * <p>The notification configuration for the S3 bucket.</p>
+     */
+    inline void SetBucketNotificationConfiguration(AwsS3BucketNotificationConfiguration&& value) { m_bucketNotificationConfigurationHasBeenSet = true; m_bucketNotificationConfiguration = std::move(value); }
+
+    /**
+     * <p>The notification configuration for the S3 bucket.</p>
+     */
+    inline AwsS3BucketDetails& WithBucketNotificationConfiguration(const AwsS3BucketNotificationConfiguration& value) { SetBucketNotificationConfiguration(value); return *this;}
+
+    /**
+     * <p>The notification configuration for the S3 bucket.</p>
+     */
+    inline AwsS3BucketDetails& WithBucketNotificationConfiguration(AwsS3BucketNotificationConfiguration&& value) { SetBucketNotificationConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_ownerId;
@@ -312,6 +449,18 @@ namespace Model
 
     AwsS3AccountPublicAccessBlockDetails m_publicAccessBlockConfiguration;
     bool m_publicAccessBlockConfigurationHasBeenSet;
+
+    Aws::String m_accessControlList;
+    bool m_accessControlListHasBeenSet;
+
+    AwsS3BucketLoggingConfiguration m_bucketLoggingConfiguration;
+    bool m_bucketLoggingConfigurationHasBeenSet;
+
+    AwsS3BucketWebsiteConfiguration m_bucketWebsiteConfiguration;
+    bool m_bucketWebsiteConfigurationHasBeenSet;
+
+    AwsS3BucketNotificationConfiguration m_bucketNotificationConfiguration;
+    bool m_bucketNotificationConfigurationHasBeenSet;
   };
 
 } // namespace Model

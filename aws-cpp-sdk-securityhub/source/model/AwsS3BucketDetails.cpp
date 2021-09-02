@@ -24,7 +24,11 @@ AwsS3BucketDetails::AwsS3BucketDetails() :
     m_createdAtHasBeenSet(false),
     m_serverSideEncryptionConfigurationHasBeenSet(false),
     m_bucketLifecycleConfigurationHasBeenSet(false),
-    m_publicAccessBlockConfigurationHasBeenSet(false)
+    m_publicAccessBlockConfigurationHasBeenSet(false),
+    m_accessControlListHasBeenSet(false),
+    m_bucketLoggingConfigurationHasBeenSet(false),
+    m_bucketWebsiteConfigurationHasBeenSet(false),
+    m_bucketNotificationConfigurationHasBeenSet(false)
 {
 }
 
@@ -34,7 +38,11 @@ AwsS3BucketDetails::AwsS3BucketDetails(JsonView jsonValue) :
     m_createdAtHasBeenSet(false),
     m_serverSideEncryptionConfigurationHasBeenSet(false),
     m_bucketLifecycleConfigurationHasBeenSet(false),
-    m_publicAccessBlockConfigurationHasBeenSet(false)
+    m_publicAccessBlockConfigurationHasBeenSet(false),
+    m_accessControlListHasBeenSet(false),
+    m_bucketLoggingConfigurationHasBeenSet(false),
+    m_bucketWebsiteConfigurationHasBeenSet(false),
+    m_bucketNotificationConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +91,34 @@ AwsS3BucketDetails& AwsS3BucketDetails::operator =(JsonView jsonValue)
     m_publicAccessBlockConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AccessControlList"))
+  {
+    m_accessControlList = jsonValue.GetString("AccessControlList");
+
+    m_accessControlListHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BucketLoggingConfiguration"))
+  {
+    m_bucketLoggingConfiguration = jsonValue.GetObject("BucketLoggingConfiguration");
+
+    m_bucketLoggingConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BucketWebsiteConfiguration"))
+  {
+    m_bucketWebsiteConfiguration = jsonValue.GetObject("BucketWebsiteConfiguration");
+
+    m_bucketWebsiteConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BucketNotificationConfiguration"))
+  {
+    m_bucketNotificationConfiguration = jsonValue.GetObject("BucketNotificationConfiguration");
+
+    m_bucketNotificationConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -123,6 +159,30 @@ JsonValue AwsS3BucketDetails::Jsonize() const
   if(m_publicAccessBlockConfigurationHasBeenSet)
   {
    payload.WithObject("PublicAccessBlockConfiguration", m_publicAccessBlockConfiguration.Jsonize());
+
+  }
+
+  if(m_accessControlListHasBeenSet)
+  {
+   payload.WithString("AccessControlList", m_accessControlList);
+
+  }
+
+  if(m_bucketLoggingConfigurationHasBeenSet)
+  {
+   payload.WithObject("BucketLoggingConfiguration", m_bucketLoggingConfiguration.Jsonize());
+
+  }
+
+  if(m_bucketWebsiteConfigurationHasBeenSet)
+  {
+   payload.WithObject("BucketWebsiteConfiguration", m_bucketWebsiteConfiguration.Jsonize());
+
+  }
+
+  if(m_bucketNotificationConfigurationHasBeenSet)
+  {
+   payload.WithObject("BucketNotificationConfiguration", m_bucketNotificationConfiguration.Jsonize());
 
   }
 

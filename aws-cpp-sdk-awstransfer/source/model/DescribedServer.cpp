@@ -39,7 +39,8 @@ DescribedServer::DescribedServer() :
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_userCount(0),
-    m_userCountHasBeenSet(false)
+    m_userCountHasBeenSet(false),
+    m_workflowDetailsHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ DescribedServer::DescribedServer(JsonView jsonValue) :
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_userCount(0),
-    m_userCountHasBeenSet(false)
+    m_userCountHasBeenSet(false),
+    m_workflowDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -189,6 +191,13 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     m_userCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WorkflowDetails"))
+  {
+    m_workflowDetails = jsonValue.GetObject("WorkflowDetails");
+
+    m_workflowDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -295,6 +304,12 @@ JsonValue DescribedServer::Jsonize() const
   if(m_userCountHasBeenSet)
   {
    payload.WithInteger("UserCount", m_userCount);
+
+  }
+
+  if(m_workflowDetailsHasBeenSet)
+  {
+   payload.WithObject("WorkflowDetails", m_workflowDetails.Jsonize());
 
   }
 

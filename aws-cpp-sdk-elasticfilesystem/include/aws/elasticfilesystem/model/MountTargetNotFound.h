@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Returned if there is no mount target with the specified ID found in the
-   * caller's account.</p><p><h3>See Also:</h3>   <a
+   * caller's Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/MountTargetNotFound">AWS
    * API Reference</a></p>
    */

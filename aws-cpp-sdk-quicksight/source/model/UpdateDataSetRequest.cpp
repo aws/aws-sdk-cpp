@@ -24,7 +24,8 @@ UpdateDataSetRequest::UpdateDataSetRequest() :
     m_fieldFoldersHasBeenSet(false),
     m_rowLevelPermissionDataSetHasBeenSet(false),
     m_rowLevelPermissionTagConfigurationHasBeenSet(false),
-    m_columnLevelPermissionRulesHasBeenSet(false)
+    m_columnLevelPermissionRulesHasBeenSet(false),
+    m_dataSetUsageConfigurationHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,12 @@ Aws::String UpdateDataSetRequest::SerializePayload() const
      columnLevelPermissionRulesJsonList[columnLevelPermissionRulesIndex].AsObject(m_columnLevelPermissionRules[columnLevelPermissionRulesIndex].Jsonize());
    }
    payload.WithArray("ColumnLevelPermissionRules", std::move(columnLevelPermissionRulesJsonList));
+
+  }
+
+  if(m_dataSetUsageConfigurationHasBeenSet)
+  {
+   payload.WithObject("DataSetUsageConfiguration", m_dataSetUsageConfiguration.Jsonize());
 
   }
 

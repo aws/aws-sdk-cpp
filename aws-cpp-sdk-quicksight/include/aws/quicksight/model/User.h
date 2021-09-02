@@ -167,7 +167,7 @@ namespace Model
      * following:.</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
      * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
-     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
      * role isn't currently available for use.</p> </li> <li> <p>
      * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
@@ -180,7 +180,7 @@ namespace Model
      * following:.</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
      * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
-     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
      * role isn't currently available for use.</p> </li> <li> <p>
      * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
@@ -193,7 +193,7 @@ namespace Model
      * following:.</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
      * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
-     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
      * role isn't currently available for use.</p> </li> <li> <p>
      * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
@@ -206,7 +206,7 @@ namespace Model
      * following:.</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
      * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
-     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
      * role isn't currently available for use.</p> </li> <li> <p>
      * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
@@ -219,7 +219,7 @@ namespace Model
      * following:.</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
      * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
-     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
      * role isn't currently available for use.</p> </li> <li> <p>
      * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
@@ -232,7 +232,7 @@ namespace Model
      * following:.</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
      * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
-     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
      * role isn't currently available for use.</p> </li> <li> <p>
      * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
@@ -385,7 +385,7 @@ namespace Model
 
     /**
      * <p>The type of supported external login provider that provides identity to let
-     * the user federate into Amazon QuickSight with an associated IAM role. The type
+     * the user federate into Amazon QuickSight with an associated IAMrole. The type
      * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
      * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
      * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
@@ -394,7 +394,7 @@ namespace Model
 
     /**
      * <p>The type of supported external login provider that provides identity to let
-     * the user federate into Amazon QuickSight with an associated IAM role. The type
+     * the user federate into Amazon QuickSight with an associated IAMrole. The type
      * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
      * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
      * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
@@ -403,7 +403,7 @@ namespace Model
 
     /**
      * <p>The type of supported external login provider that provides identity to let
-     * the user federate into Amazon QuickSight with an associated IAM role. The type
+     * the user federate into Amazon QuickSight with an associated IAMrole. The type
      * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
      * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
      * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
@@ -412,7 +412,7 @@ namespace Model
 
     /**
      * <p>The type of supported external login provider that provides identity to let
-     * the user federate into Amazon QuickSight with an associated IAM role. The type
+     * the user federate into Amazon QuickSight with an associated IAMrole. The type
      * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
      * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
      * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
@@ -421,7 +421,7 @@ namespace Model
 
     /**
      * <p>The type of supported external login provider that provides identity to let
-     * the user federate into Amazon QuickSight with an associated IAM role. The type
+     * the user federate into Amazon QuickSight with an associated IAMrole. The type
      * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
      * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
      * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
@@ -430,7 +430,7 @@ namespace Model
 
     /**
      * <p>The type of supported external login provider that provides identity to let
-     * the user federate into Amazon QuickSight with an associated IAM role. The type
+     * the user federate into Amazon QuickSight with an associated IAMrole. The type
      * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
      * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
      * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
@@ -439,7 +439,7 @@ namespace Model
 
     /**
      * <p>The type of supported external login provider that provides identity to let
-     * the user federate into Amazon QuickSight with an associated IAM role. The type
+     * the user federate into Amazon QuickSight with an associated IAMrole. The type
      * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
      * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
      * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
@@ -448,7 +448,7 @@ namespace Model
 
     /**
      * <p>The type of supported external login provider that provides identity to let
-     * the user federate into Amazon QuickSight with an associated IAM role. The type
+     * the user federate into Amazon QuickSight with an associated IAMrole. The type
      * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
      * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
      * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>

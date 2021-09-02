@@ -26,8 +26,8 @@ namespace Model
 
   /**
    * <p>An error indicating that a particular service limit was exceeded. You can
-   * increase some service limits by contacting AWS Support. </p><p><h3>See
-   * Also:</h3>   <a
+   * increase some service limits by contacting Amazon Web Services
+   * Support.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/ServiceLimitExceeded">AWS
    * API Reference</a></p>
    */

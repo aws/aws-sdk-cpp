@@ -44,50 +44,50 @@ namespace Model
 
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory (AD) instance
-     * that the file system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * (AD) instance that the file system should join when it's created.</p>
      */
     inline const Aws::String& GetActiveDirectoryId() const{ return m_activeDirectoryId; }
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory (AD) instance
-     * that the file system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * (AD) instance that the file system should join when it's created.</p>
      */
     inline bool ActiveDirectoryIdHasBeenSet() const { return m_activeDirectoryIdHasBeenSet; }
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory (AD) instance
-     * that the file system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * (AD) instance that the file system should join when it's created.</p>
      */
     inline void SetActiveDirectoryId(const Aws::String& value) { m_activeDirectoryIdHasBeenSet = true; m_activeDirectoryId = value; }
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory (AD) instance
-     * that the file system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * (AD) instance that the file system should join when it's created.</p>
      */
     inline void SetActiveDirectoryId(Aws::String&& value) { m_activeDirectoryIdHasBeenSet = true; m_activeDirectoryId = std::move(value); }
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory (AD) instance
-     * that the file system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * (AD) instance that the file system should join when it's created.</p>
      */
     inline void SetActiveDirectoryId(const char* value) { m_activeDirectoryIdHasBeenSet = true; m_activeDirectoryId.assign(value); }
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory (AD) instance
-     * that the file system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * (AD) instance that the file system should join when it's created.</p>
      */
     inline CreateFileSystemWindowsConfiguration& WithActiveDirectoryId(const Aws::String& value) { SetActiveDirectoryId(value); return *this;}
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory (AD) instance
-     * that the file system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * (AD) instance that the file system should join when it's created.</p>
      */
     inline CreateFileSystemWindowsConfiguration& WithActiveDirectoryId(Aws::String&& value) { SetActiveDirectoryId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for an existing AWS Managed Microsoft Active Directory (AD) instance
-     * that the file system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * (AD) instance that the file system should join when it's created.</p>
      */
     inline CreateFileSystemWindowsConfiguration& WithActiveDirectoryId(const char* value) { SetActiveDirectoryId(value); return *this;}
 
@@ -116,13 +116,13 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Deploys a high
      * availability file system that is configured for Multi-AZ redundancy to tolerate
      * temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ
-     * file system in AWS Regions that have a minimum of three Availability Zones. Also
-     * supports HDD storage type</p> </li> <li> <p> <code>SINGLE_AZ_1</code> -
-     * (Default) Choose to deploy a file system that is configured for single AZ
-     * redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code> - The latest generation
-     * Single AZ file system. Specifies a file system that is configured for single AZ
-     * redundancy and supports HDD storage type.</p> </li> </ul> <p>For more
-     * information, see <a
+     * file system in Amazon Web Services Regions that have a minimum of three
+     * Availability Zones. Also supports HDD storage type</p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is
+     * configured for single AZ redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code>
+     * - The latest generation Single AZ file system. Specifies a file system that is
+     * configured for single AZ redundancy and supports HDD storage type.</p> </li>
+     * </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
      * Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
      */
@@ -133,13 +133,13 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Deploys a high
      * availability file system that is configured for Multi-AZ redundancy to tolerate
      * temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ
-     * file system in AWS Regions that have a minimum of three Availability Zones. Also
-     * supports HDD storage type</p> </li> <li> <p> <code>SINGLE_AZ_1</code> -
-     * (Default) Choose to deploy a file system that is configured for single AZ
-     * redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code> - The latest generation
-     * Single AZ file system. Specifies a file system that is configured for single AZ
-     * redundancy and supports HDD storage type.</p> </li> </ul> <p>For more
-     * information, see <a
+     * file system in Amazon Web Services Regions that have a minimum of three
+     * Availability Zones. Also supports HDD storage type</p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is
+     * configured for single AZ redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code>
+     * - The latest generation Single AZ file system. Specifies a file system that is
+     * configured for single AZ redundancy and supports HDD storage type.</p> </li>
+     * </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
      * Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
      */
@@ -150,13 +150,13 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Deploys a high
      * availability file system that is configured for Multi-AZ redundancy to tolerate
      * temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ
-     * file system in AWS Regions that have a minimum of three Availability Zones. Also
-     * supports HDD storage type</p> </li> <li> <p> <code>SINGLE_AZ_1</code> -
-     * (Default) Choose to deploy a file system that is configured for single AZ
-     * redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code> - The latest generation
-     * Single AZ file system. Specifies a file system that is configured for single AZ
-     * redundancy and supports HDD storage type.</p> </li> </ul> <p>For more
-     * information, see <a
+     * file system in Amazon Web Services Regions that have a minimum of three
+     * Availability Zones. Also supports HDD storage type</p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is
+     * configured for single AZ redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code>
+     * - The latest generation Single AZ file system. Specifies a file system that is
+     * configured for single AZ redundancy and supports HDD storage type.</p> </li>
+     * </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
      * Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
      */
@@ -167,13 +167,13 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Deploys a high
      * availability file system that is configured for Multi-AZ redundancy to tolerate
      * temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ
-     * file system in AWS Regions that have a minimum of three Availability Zones. Also
-     * supports HDD storage type</p> </li> <li> <p> <code>SINGLE_AZ_1</code> -
-     * (Default) Choose to deploy a file system that is configured for single AZ
-     * redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code> - The latest generation
-     * Single AZ file system. Specifies a file system that is configured for single AZ
-     * redundancy and supports HDD storage type.</p> </li> </ul> <p>For more
-     * information, see <a
+     * file system in Amazon Web Services Regions that have a minimum of three
+     * Availability Zones. Also supports HDD storage type</p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is
+     * configured for single AZ redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code>
+     * - The latest generation Single AZ file system. Specifies a file system that is
+     * configured for single AZ redundancy and supports HDD storage type.</p> </li>
+     * </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
      * Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
      */
@@ -184,13 +184,13 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Deploys a high
      * availability file system that is configured for Multi-AZ redundancy to tolerate
      * temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ
-     * file system in AWS Regions that have a minimum of three Availability Zones. Also
-     * supports HDD storage type</p> </li> <li> <p> <code>SINGLE_AZ_1</code> -
-     * (Default) Choose to deploy a file system that is configured for single AZ
-     * redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code> - The latest generation
-     * Single AZ file system. Specifies a file system that is configured for single AZ
-     * redundancy and supports HDD storage type.</p> </li> </ul> <p>For more
-     * information, see <a
+     * file system in Amazon Web Services Regions that have a minimum of three
+     * Availability Zones. Also supports HDD storage type</p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is
+     * configured for single AZ redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code>
+     * - The latest generation Single AZ file system. Specifies a file system that is
+     * configured for single AZ redundancy and supports HDD storage type.</p> </li>
+     * </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
      * Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
      */
@@ -201,13 +201,13 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Deploys a high
      * availability file system that is configured for Multi-AZ redundancy to tolerate
      * temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ
-     * file system in AWS Regions that have a minimum of three Availability Zones. Also
-     * supports HDD storage type</p> </li> <li> <p> <code>SINGLE_AZ_1</code> -
-     * (Default) Choose to deploy a file system that is configured for single AZ
-     * redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code> - The latest generation
-     * Single AZ file system. Specifies a file system that is configured for single AZ
-     * redundancy and supports HDD storage type.</p> </li> </ul> <p>For more
-     * information, see <a
+     * file system in Amazon Web Services Regions that have a minimum of three
+     * Availability Zones. Also supports HDD storage type</p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is
+     * configured for single AZ redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code>
+     * - The latest generation Single AZ file system. Specifies a file system that is
+     * configured for single AZ redundancy and supports HDD storage type.</p> </li>
+     * </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
      * Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
      */
@@ -217,72 +217,72 @@ namespace Model
     /**
      * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
      * This specifies the subnet in which you want the preferred file server to be
-     * located. For in-AWS applications, we recommend that you launch your clients in
-     * the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ
-     * data transfer costs and minimize latency. </p>
+     * located. For in-Amazon Web Services applications, we recommend that you launch
+     * your clients in the same Availability Zone (AZ) as your preferred file server to
+     * reduce cross-AZ data transfer costs and minimize latency. </p>
      */
     inline const Aws::String& GetPreferredSubnetId() const{ return m_preferredSubnetId; }
 
     /**
      * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
      * This specifies the subnet in which you want the preferred file server to be
-     * located. For in-AWS applications, we recommend that you launch your clients in
-     * the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ
-     * data transfer costs and minimize latency. </p>
+     * located. For in-Amazon Web Services applications, we recommend that you launch
+     * your clients in the same Availability Zone (AZ) as your preferred file server to
+     * reduce cross-AZ data transfer costs and minimize latency. </p>
      */
     inline bool PreferredSubnetIdHasBeenSet() const { return m_preferredSubnetIdHasBeenSet; }
 
     /**
      * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
      * This specifies the subnet in which you want the preferred file server to be
-     * located. For in-AWS applications, we recommend that you launch your clients in
-     * the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ
-     * data transfer costs and minimize latency. </p>
+     * located. For in-Amazon Web Services applications, we recommend that you launch
+     * your clients in the same Availability Zone (AZ) as your preferred file server to
+     * reduce cross-AZ data transfer costs and minimize latency. </p>
      */
     inline void SetPreferredSubnetId(const Aws::String& value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId = value; }
 
     /**
      * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
      * This specifies the subnet in which you want the preferred file server to be
-     * located. For in-AWS applications, we recommend that you launch your clients in
-     * the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ
-     * data transfer costs and minimize latency. </p>
+     * located. For in-Amazon Web Services applications, we recommend that you launch
+     * your clients in the same Availability Zone (AZ) as your preferred file server to
+     * reduce cross-AZ data transfer costs and minimize latency. </p>
      */
     inline void SetPreferredSubnetId(Aws::String&& value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId = std::move(value); }
 
     /**
      * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
      * This specifies the subnet in which you want the preferred file server to be
-     * located. For in-AWS applications, we recommend that you launch your clients in
-     * the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ
-     * data transfer costs and minimize latency. </p>
+     * located. For in-Amazon Web Services applications, we recommend that you launch
+     * your clients in the same Availability Zone (AZ) as your preferred file server to
+     * reduce cross-AZ data transfer costs and minimize latency. </p>
      */
     inline void SetPreferredSubnetId(const char* value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId.assign(value); }
 
     /**
      * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
      * This specifies the subnet in which you want the preferred file server to be
-     * located. For in-AWS applications, we recommend that you launch your clients in
-     * the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ
-     * data transfer costs and minimize latency. </p>
+     * located. For in-Amazon Web Services applications, we recommend that you launch
+     * your clients in the same Availability Zone (AZ) as your preferred file server to
+     * reduce cross-AZ data transfer costs and minimize latency. </p>
      */
     inline CreateFileSystemWindowsConfiguration& WithPreferredSubnetId(const Aws::String& value) { SetPreferredSubnetId(value); return *this;}
 
     /**
      * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
      * This specifies the subnet in which you want the preferred file server to be
-     * located. For in-AWS applications, we recommend that you launch your clients in
-     * the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ
-     * data transfer costs and minimize latency. </p>
+     * located. For in-Amazon Web Services applications, we recommend that you launch
+     * your clients in the same Availability Zone (AZ) as your preferred file server to
+     * reduce cross-AZ data transfer costs and minimize latency. </p>
      */
     inline CreateFileSystemWindowsConfiguration& WithPreferredSubnetId(Aws::String&& value) { SetPreferredSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
      * This specifies the subnet in which you want the preferred file server to be
-     * located. For in-AWS applications, we recommend that you launch your clients in
-     * the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ
-     * data transfer costs and minimize latency. </p>
+     * located. For in-Amazon Web Services applications, we recommend that you launch
+     * your clients in the same Availability Zone (AZ) as your preferred file server to
+     * reduce cross-AZ data transfer costs and minimize latency. </p>
      */
     inline CreateFileSystemWindowsConfiguration& WithPreferredSubnetId(const char* value) { SetPreferredSubnetId(value); return *this;}
 

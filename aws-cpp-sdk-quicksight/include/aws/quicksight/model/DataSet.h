@@ -12,6 +12,7 @@
 #include <aws/quicksight/model/DataSetImportMode.h>
 #include <aws/quicksight/model/RowLevelPermissionDataSet.h>
 #include <aws/quicksight/model/RowLevelPermissionTagConfiguration.h>
+#include <aws/quicksight/model/DataSetUsageConfiguration.h>
 #include <aws/quicksight/model/PhysicalTable.h>
 #include <aws/quicksight/model/LogicalTable.h>
 #include <aws/quicksight/model/OutputColumn.h>
@@ -705,6 +706,43 @@ namespace Model
      */
     inline DataSet& AddColumnLevelPermissionRules(ColumnLevelPermissionRule&& value) { m_columnLevelPermissionRulesHasBeenSet = true; m_columnLevelPermissionRules.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The usage configuration to apply to child datasets that reference this
+     * dataset as a source.</p>
+     */
+    inline const DataSetUsageConfiguration& GetDataSetUsageConfiguration() const{ return m_dataSetUsageConfiguration; }
+
+    /**
+     * <p>The usage configuration to apply to child datasets that reference this
+     * dataset as a source.</p>
+     */
+    inline bool DataSetUsageConfigurationHasBeenSet() const { return m_dataSetUsageConfigurationHasBeenSet; }
+
+    /**
+     * <p>The usage configuration to apply to child datasets that reference this
+     * dataset as a source.</p>
+     */
+    inline void SetDataSetUsageConfiguration(const DataSetUsageConfiguration& value) { m_dataSetUsageConfigurationHasBeenSet = true; m_dataSetUsageConfiguration = value; }
+
+    /**
+     * <p>The usage configuration to apply to child datasets that reference this
+     * dataset as a source.</p>
+     */
+    inline void SetDataSetUsageConfiguration(DataSetUsageConfiguration&& value) { m_dataSetUsageConfigurationHasBeenSet = true; m_dataSetUsageConfiguration = std::move(value); }
+
+    /**
+     * <p>The usage configuration to apply to child datasets that reference this
+     * dataset as a source.</p>
+     */
+    inline DataSet& WithDataSetUsageConfiguration(const DataSetUsageConfiguration& value) { SetDataSetUsageConfiguration(value); return *this;}
+
+    /**
+     * <p>The usage configuration to apply to child datasets that reference this
+     * dataset as a source.</p>
+     */
+    inline DataSet& WithDataSetUsageConfiguration(DataSetUsageConfiguration&& value) { SetDataSetUsageConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -751,6 +789,9 @@ namespace Model
 
     Aws::Vector<ColumnLevelPermissionRule> m_columnLevelPermissionRules;
     bool m_columnLevelPermissionRulesHasBeenSet;
+
+    DataSetUsageConfiguration m_dataSetUsageConfiguration;
+    bool m_dataSetUsageConfigurationHasBeenSet;
   };
 
 } // namespace Model

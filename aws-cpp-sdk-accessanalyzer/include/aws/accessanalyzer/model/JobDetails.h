@@ -72,22 +72,34 @@ namespace Model
     inline JobDetails& WithCompletedOn(Aws::Utils::DateTime&& value) { SetCompletedOn(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The job error for the policy generation request.</p>
+     */
     inline const JobError& GetJobError() const{ return m_jobError; }
 
-    
+    /**
+     * <p>The job error for the policy generation request.</p>
+     */
     inline bool JobErrorHasBeenSet() const { return m_jobErrorHasBeenSet; }
 
-    
+    /**
+     * <p>The job error for the policy generation request.</p>
+     */
     inline void SetJobError(const JobError& value) { m_jobErrorHasBeenSet = true; m_jobError = value; }
 
-    
+    /**
+     * <p>The job error for the policy generation request.</p>
+     */
     inline void SetJobError(JobError&& value) { m_jobErrorHasBeenSet = true; m_jobError = std::move(value); }
 
-    
+    /**
+     * <p>The job error for the policy generation request.</p>
+     */
     inline JobDetails& WithJobError(const JobError& value) { SetJobError(value); return *this;}
 
-    
+    /**
+     * <p>The job error for the policy generation request.</p>
+     */
     inline JobDetails& WithJobError(JobError&& value) { SetJobError(std::move(value)); return *this;}
 
 
