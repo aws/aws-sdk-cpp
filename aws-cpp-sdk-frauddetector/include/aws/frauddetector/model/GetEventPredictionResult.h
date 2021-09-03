@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/frauddetector/model/ModelScores.h>
 #include <aws/frauddetector/model/RuleResult.h>
+#include <aws/frauddetector/model/ExternalModelOutputs.h>
 #include <utility>
 
 namespace Aws
@@ -133,11 +134,49 @@ namespace Model
      */
     inline GetEventPredictionResult& AddRuleResults(RuleResult&& value) { m_ruleResults.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The model scores for Amazon SageMaker models.</p>
+     */
+    inline const Aws::Vector<ExternalModelOutputs>& GetExternalModelOutputs() const{ return m_externalModelOutputs; }
+
+    /**
+     * <p>The model scores for Amazon SageMaker models.</p>
+     */
+    inline void SetExternalModelOutputs(const Aws::Vector<ExternalModelOutputs>& value) { m_externalModelOutputs = value; }
+
+    /**
+     * <p>The model scores for Amazon SageMaker models.</p>
+     */
+    inline void SetExternalModelOutputs(Aws::Vector<ExternalModelOutputs>&& value) { m_externalModelOutputs = std::move(value); }
+
+    /**
+     * <p>The model scores for Amazon SageMaker models.</p>
+     */
+    inline GetEventPredictionResult& WithExternalModelOutputs(const Aws::Vector<ExternalModelOutputs>& value) { SetExternalModelOutputs(value); return *this;}
+
+    /**
+     * <p>The model scores for Amazon SageMaker models.</p>
+     */
+    inline GetEventPredictionResult& WithExternalModelOutputs(Aws::Vector<ExternalModelOutputs>&& value) { SetExternalModelOutputs(std::move(value)); return *this;}
+
+    /**
+     * <p>The model scores for Amazon SageMaker models.</p>
+     */
+    inline GetEventPredictionResult& AddExternalModelOutputs(const ExternalModelOutputs& value) { m_externalModelOutputs.push_back(value); return *this; }
+
+    /**
+     * <p>The model scores for Amazon SageMaker models.</p>
+     */
+    inline GetEventPredictionResult& AddExternalModelOutputs(ExternalModelOutputs&& value) { m_externalModelOutputs.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<ModelScores> m_modelScores;
 
     Aws::Vector<RuleResult> m_ruleResults;
+
+    Aws::Vector<ExternalModelOutputs> m_externalModelOutputs;
   };
 
 } // namespace Model

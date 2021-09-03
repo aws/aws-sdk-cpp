@@ -78,25 +78,39 @@ namespace Model
     inline GetOutpostInstanceTypesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline const Aws::String& GetOutpostId() const{ return m_outpostId; }
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline void SetOutpostId(const Aws::String& value) { m_outpostId = value; }
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline void SetOutpostId(Aws::String&& value) { m_outpostId = std::move(value); }
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline void SetOutpostId(const char* value) { m_outpostId.assign(value); }
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline GetOutpostInstanceTypesResult& WithOutpostId(const Aws::String& value) { SetOutpostId(value); return *this;}
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline GetOutpostInstanceTypesResult& WithOutpostId(Aws::String&& value) { SetOutpostId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline GetOutpostInstanceTypesResult& WithOutpostId(const char* value) { SetOutpostId(value); return *this;}
 
 

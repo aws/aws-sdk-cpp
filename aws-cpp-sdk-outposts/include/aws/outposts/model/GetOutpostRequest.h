@@ -32,28 +32,44 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline const Aws::String& GetOutpostId() const{ return m_outpostId; }
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline bool OutpostIdHasBeenSet() const { return m_outpostIdHasBeenSet; }
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline void SetOutpostId(const Aws::String& value) { m_outpostIdHasBeenSet = true; m_outpostId = value; }
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline void SetOutpostId(Aws::String&& value) { m_outpostIdHasBeenSet = true; m_outpostId = std::move(value); }
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline void SetOutpostId(const char* value) { m_outpostIdHasBeenSet = true; m_outpostId.assign(value); }
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline GetOutpostRequest& WithOutpostId(const Aws::String& value) { SetOutpostId(value); return *this;}
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline GetOutpostRequest& WithOutpostId(Aws::String&& value) { SetOutpostId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline GetOutpostRequest& WithOutpostId(const char* value) { SetOutpostId(value); return *this;}
 
   private:

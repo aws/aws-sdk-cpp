@@ -30,6 +30,7 @@ namespace Aws
         static const int JavaBestPractices_HASH = HashingUtils::HashString("JavaBestPractices");
         static const int ResourceLeaks_HASH = HashingUtils::HashString("ResourceLeaks");
         static const int SecurityIssues_HASH = HashingUtils::HashString("SecurityIssues");
+        static const int CodeInconsistencies_HASH = HashingUtils::HashString("CodeInconsistencies");
 
 
         RecommendationCategory GetRecommendationCategoryForName(const Aws::String& name)
@@ -75,6 +76,10 @@ namespace Aws
           {
             return RecommendationCategory::SecurityIssues;
           }
+          else if (hashCode == CodeInconsistencies_HASH)
+          {
+            return RecommendationCategory::CodeInconsistencies;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -109,6 +114,8 @@ namespace Aws
             return "ResourceLeaks";
           case RecommendationCategory::SecurityIssues:
             return "SecurityIssues";
+          case RecommendationCategory::CodeInconsistencies:
+            return "CodeInconsistencies";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -11,6 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/outposts/model/CreateOrderResult.h>
 #include <aws/outposts/model/CreateOutpostResult.h>
 #include <aws/outposts/model/DeleteOutpostResult.h>
 #include <aws/outposts/model/DeleteSiteResult.h>
@@ -60,6 +61,7 @@ namespace Outposts
 
 namespace Model
 {
+        class CreateOrderRequest;
         class CreateOutpostRequest;
         class DeleteOutpostRequest;
         class DeleteSiteRequest;
@@ -71,6 +73,7 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
 
+        typedef Aws::Utils::Outcome<CreateOrderResult, OutpostsError> CreateOrderOutcome;
         typedef Aws::Utils::Outcome<CreateOutpostResult, OutpostsError> CreateOutpostOutcome;
         typedef Aws::Utils::Outcome<DeleteOutpostResult, OutpostsError> DeleteOutpostOutcome;
         typedef Aws::Utils::Outcome<DeleteSiteResult, OutpostsError> DeleteSiteOutcome;
@@ -82,6 +85,7 @@ namespace Model
         typedef Aws::Utils::Outcome<TagResourceResult, OutpostsError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, OutpostsError> UntagResourceOutcome;
 
+        typedef std::future<CreateOrderOutcome> CreateOrderOutcomeCallable;
         typedef std::future<CreateOutpostOutcome> CreateOutpostOutcomeCallable;
         typedef std::future<DeleteOutpostOutcome> DeleteOutpostOutcomeCallable;
         typedef std::future<DeleteSiteOutcome> DeleteSiteOutcomeCallable;
@@ -96,6 +100,7 @@ namespace Model
 
   class OutpostsClient;
 
+    typedef std::function<void(const OutpostsClient*, const Model::CreateOrderRequest&, const Model::CreateOrderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateOrderResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::CreateOutpostRequest&, const Model::CreateOutpostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateOutpostResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::DeleteOutpostRequest&, const Model::DeleteOutpostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOutpostResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::DeleteSiteRequest&, const Model::DeleteSiteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSiteResponseReceivedHandler;
@@ -141,6 +146,31 @@ namespace Model
 
         virtual ~OutpostsClient();
 
+
+        /**
+         * <p>Creates an order for an Outpost.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateOrder">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateOrderOutcome CreateOrder(const Model::CreateOrderRequest& request) const;
+
+        /**
+         * <p>Creates an order for an Outpost.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateOrder">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateOrderOutcomeCallable CreateOrderCallable(const Model::CreateOrderRequest& request) const;
+
+        /**
+         * <p>Creates an order for an Outpost.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateOrder">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateOrderAsync(const Model::CreateOrderRequest& request, const CreateOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Outpost.</p> <p>You can specify <code>AvailabilityZone</code> or
@@ -417,6 +447,7 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void CreateOrderAsyncHelper(const Model::CreateOrderRequest& request, const CreateOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateOutpostAsyncHelper(const Model::CreateOutpostRequest& request, const CreateOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteOutpostAsyncHelper(const Model::DeleteOutpostRequest& request, const DeleteOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSiteAsyncHelper(const Model::DeleteSiteRequest& request, const DeleteSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

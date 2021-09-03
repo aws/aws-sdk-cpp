@@ -25,7 +25,8 @@ namespace Model
     PythonBestPractices,
     JavaBestPractices,
     ResourceLeaks,
-    SecurityIssues
+    SecurityIssues,
+    CodeInconsistencies
   };
 
 namespace RecommendationCategoryMapper
