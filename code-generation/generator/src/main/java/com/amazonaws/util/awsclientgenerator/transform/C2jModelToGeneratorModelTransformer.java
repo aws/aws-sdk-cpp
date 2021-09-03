@@ -249,6 +249,7 @@ public class C2jModelToGeneratorModelTransformer {
         shape.setEventStream(c2jShape.isEventstream());
         shape.setEvent(c2jShape.isEvent());
         shape.setException(c2jShape.isException());
+        shape.setDocument(c2jShape.isDocument());
 
         if (c2jShape.getXmlNamespace() != null) {
             XmlNamespace xmlns = new XmlNamespace();
@@ -571,6 +572,7 @@ public class C2jModelToGeneratorModelTransformer {
         cloned.setEvent(shape.isEvent());
         cloned.setException(shape.isException());
         cloned.setXmlNamespace(shape.getXmlNamespace());
+        cloned.setDocument(shape.isDocument());
         return cloned;
     }
 

@@ -34,4 +34,5 @@ public class C2jShape {
     private boolean eventstream;
     private boolean event;
     private boolean sensitive;
+    private boolean document;
 }

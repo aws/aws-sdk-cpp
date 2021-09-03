@@ -157,6 +157,11 @@ public class CppViewHelper {
             return cppType;
         }
 
+        else if(shape.isDocument())
+        {
+            return "Aws::Utils::Document";
+        }
+
         else if(shape.isStructure() || shape.isEnum())
         {
             return shape.getName();
@@ -285,6 +290,9 @@ public class CppViewHelper {
         }
         else if(shape.isList()) {
             return "<aws/core/utils/memory/stl/AWSVector.h>";
+        }
+        else if(shape.isDocument()) {
+            return "<aws/core/utils/Document.h>";
         }
         else if(shape.isEnum() || shape.isStructure()) {
             return String.format("<aws/%s/model/%s.h>", projectName, shape.getName());
