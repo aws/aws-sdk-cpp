@@ -193,8 +193,8 @@ namespace Model
     typedef std::function<void(const XRayClient*, const Model::UpdateSamplingRuleRequest&, const Model::UpdateSamplingRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSamplingRuleResponseReceivedHandler;
 
   /**
-   * <p>AWS X-Ray provides APIs for managing debug traces and retrieving service maps
-   * and other data created by processing those traces.</p>
+   * <p>Amazon Web Services X-Ray provides APIs for managing debug traces and
+   * retrieving service maps and other data created by processing those traces.</p>
    */
   class AWS_XRAY_API XRayClient : public Aws::Client::AWSJsonClient
   {
@@ -287,13 +287,15 @@ namespace Model
 
         /**
          * <p>Creates a rule to control sampling behavior for instrumented applications.
-         * Services retrieve rules with <a>GetSamplingRules</a>, and evaluate each rule in
-         * ascending order of <i>priority</i> for each request. If a rule matches, the
-         * service records a trace, borrowing it from the reservoir size. After 10 seconds,
-         * the service reports back to X-Ray with <a>GetSamplingTargets</a> to get updated
-         * versions of each in-use rule. The updated rule contains a trace quota that the
-         * service can use instead of borrowing from the reservoir.</p><p><h3>See
-         * Also:</h3>   <a
+         * Services retrieve rules with <a
+         * href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a>,
+         * and evaluate each rule in ascending order of <i>priority</i> for each request.
+         * If a rule matches, the service records a trace, borrowing it from the reservoir
+         * size. After 10 seconds, the service reports back to X-Ray with <a
+         * href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>
+         * to get updated versions of each in-use rule. The updated rule contains a trace
+         * quota that the service can use instead of borrowing from the
+         * reservoir.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateSamplingRule">AWS
          * API Reference</a></p>
          */
@@ -301,13 +303,15 @@ namespace Model
 
         /**
          * <p>Creates a rule to control sampling behavior for instrumented applications.
-         * Services retrieve rules with <a>GetSamplingRules</a>, and evaluate each rule in
-         * ascending order of <i>priority</i> for each request. If a rule matches, the
-         * service records a trace, borrowing it from the reservoir size. After 10 seconds,
-         * the service reports back to X-Ray with <a>GetSamplingTargets</a> to get updated
-         * versions of each in-use rule. The updated rule contains a trace quota that the
-         * service can use instead of borrowing from the reservoir.</p><p><h3>See
-         * Also:</h3>   <a
+         * Services retrieve rules with <a
+         * href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a>,
+         * and evaluate each rule in ascending order of <i>priority</i> for each request.
+         * If a rule matches, the service records a trace, borrowing it from the reservoir
+         * size. After 10 seconds, the service reports back to X-Ray with <a
+         * href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>
+         * to get updated versions of each in-use rule. The updated rule contains a trace
+         * quota that the service can use instead of borrowing from the
+         * reservoir.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateSamplingRule">AWS
          * API Reference</a></p>
          *
@@ -317,13 +321,15 @@ namespace Model
 
         /**
          * <p>Creates a rule to control sampling behavior for instrumented applications.
-         * Services retrieve rules with <a>GetSamplingRules</a>, and evaluate each rule in
-         * ascending order of <i>priority</i> for each request. If a rule matches, the
-         * service records a trace, borrowing it from the reservoir size. After 10 seconds,
-         * the service reports back to X-Ray with <a>GetSamplingTargets</a> to get updated
-         * versions of each in-use rule. The updated rule contains a trace quota that the
-         * service can use instead of borrowing from the reservoir.</p><p><h3>See
-         * Also:</h3>   <a
+         * Services retrieve rules with <a
+         * href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a>,
+         * and evaluate each rule in ascending order of <i>priority</i> for each request.
+         * If a rule matches, the service records a trace, borrowing it from the reservoir
+         * size. After 10 seconds, the service reports back to X-Ray with <a
+         * href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>
+         * to get updated versions of each in-use rule. The updated rule contains a trace
+         * quota that the service can use instead of borrowing from the
+         * reservoir.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateSamplingRule">AWS
          * API Reference</a></p>
          *
@@ -672,9 +678,9 @@ namespace Model
          * and downstream services that they call as a result. Root services process
          * incoming requests and make calls to downstream services. Root services are
          * applications that use the <a
-         * href="https://docs.aws.amazon.com/xray/index.html">AWS X-Ray SDK</a>. Downstream
-         * services can be other applications, AWS resources, HTTP web APIs, or SQL
-         * databases.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/xray/index.html">Amazon Web Services X-Ray
+         * SDK</a>. Downstream services can be other applications, Amazon Web Services
+         * resources, HTTP web APIs, or SQL databases.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetServiceGraph">AWS
          * API Reference</a></p>
          */
@@ -685,9 +691,9 @@ namespace Model
          * and downstream services that they call as a result. Root services process
          * incoming requests and make calls to downstream services. Root services are
          * applications that use the <a
-         * href="https://docs.aws.amazon.com/xray/index.html">AWS X-Ray SDK</a>. Downstream
-         * services can be other applications, AWS resources, HTTP web APIs, or SQL
-         * databases.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/xray/index.html">Amazon Web Services X-Ray
+         * SDK</a>. Downstream services can be other applications, Amazon Web Services
+         * resources, HTTP web APIs, or SQL databases.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetServiceGraph">AWS
          * API Reference</a></p>
          *
@@ -700,9 +706,9 @@ namespace Model
          * and downstream services that they call as a result. Root services process
          * incoming requests and make calls to downstream services. Root services are
          * applications that use the <a
-         * href="https://docs.aws.amazon.com/xray/index.html">AWS X-Ray SDK</a>. Downstream
-         * services can be other applications, AWS resources, HTTP web APIs, or SQL
-         * databases.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/xray/index.html">Amazon Web Services X-Ray
+         * SDK</a>. Downstream services can be other applications, Amazon Web Services
+         * resources, HTTP web APIs, or SQL databases.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetServiceGraph">AWS
          * API Reference</a></p>
          *
@@ -779,8 +785,8 @@ namespace Model
          * <p>For a full list of indexed fields and keywords that you can use in filter
          * expressions, see <a
          * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using
-         * Filter Expressions</a> in the <i>AWS X-Ray Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Filter Expressions</a> in the <i>Amazon Web Services X-Ray Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSummaries">AWS
          * API Reference</a></p>
          */
@@ -799,8 +805,8 @@ namespace Model
          * <p>For a full list of indexed fields and keywords that you can use in filter
          * expressions, see <a
          * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using
-         * Filter Expressions</a> in the <i>AWS X-Ray Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Filter Expressions</a> in the <i>Amazon Web Services X-Ray Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSummaries">AWS
          * API Reference</a></p>
          *
@@ -821,8 +827,8 @@ namespace Model
          * <p>For a full list of indexed fields and keywords that you can use in filter
          * expressions, see <a
          * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using
-         * Filter Expressions</a> in the <i>AWS X-Ray Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Filter Expressions</a> in the <i>Amazon Web Services X-Ray Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSummaries">AWS
          * API Reference</a></p>
          *
@@ -831,16 +837,16 @@ namespace Model
         virtual void GetTraceSummariesAsync(const Model::GetTraceSummariesRequest& request, const GetTraceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of tags that are applied to the specified AWS X-Ray group or
-         * sampling rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of tags that are applied to the specified Amazon Web Services
+         * X-Ray group or sampling rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns a list of tags that are applied to the specified AWS X-Ray group or
-         * sampling rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of tags that are applied to the specified Amazon Web Services
+         * X-Ray group or sampling rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -849,8 +855,8 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns a list of tags that are applied to the specified AWS X-Ray group or
-         * sampling rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of tags that are applied to the specified Amazon Web Services
+         * X-Ray group or sampling rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -887,16 +893,16 @@ namespace Model
         virtual void PutEncryptionConfigAsync(const Model::PutEncryptionConfigRequest& request, const PutEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Used by the AWS X-Ray daemon to upload telemetry.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Used by the Amazon Web Services X-Ray daemon to upload
+         * telemetry.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTelemetryRecords">AWS
          * API Reference</a></p>
          */
         virtual Model::PutTelemetryRecordsOutcome PutTelemetryRecords(const Model::PutTelemetryRecordsRequest& request) const;
 
         /**
-         * <p>Used by the AWS X-Ray daemon to upload telemetry.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Used by the Amazon Web Services X-Ray daemon to upload
+         * telemetry.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTelemetryRecords">AWS
          * API Reference</a></p>
          *
@@ -905,8 +911,8 @@ namespace Model
         virtual Model::PutTelemetryRecordsOutcomeCallable PutTelemetryRecordsCallable(const Model::PutTelemetryRecordsRequest& request) const;
 
         /**
-         * <p>Used by the AWS X-Ray daemon to upload telemetry.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Used by the Amazon Web Services X-Ray daemon to upload
+         * telemetry.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTelemetryRecords">AWS
          * API Reference</a></p>
          *
@@ -915,80 +921,82 @@ namespace Model
         virtual void PutTelemetryRecordsAsync(const Model::PutTelemetryRecordsRequest& request, const PutTelemetryRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Uploads segment documents to AWS X-Ray. The <a
+         * <p>Uploads segment documents to Amazon Web Services X-Ray. The <a
          * href="https://docs.aws.amazon.com/xray/index.html">X-Ray SDK</a> generates
          * segment documents and sends them to the X-Ray daemon, which uploads them in
          * batches. A segment document can be a completed segment, an in-progress segment,
          * or an array of subsegments.</p> <p>Segments must include the following fields.
          * For the full segment document schema, see <a
-         * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
-         * X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.</p> <p
-         * class="title"> <b>Required segment document fields</b> </p> <ul> <li> <p>
-         * <code>name</code> - The name of the service that handled the request.</p> </li>
-         * <li> <p> <code>id</code> - A 64-bit identifier for the segment, unique among
-         * segments in the same trace, in 16 hexadecimal digits.</p> </li> <li> <p>
-         * <code>trace_id</code> - A unique identifier that connects all segments and
-         * subsegments originating from a single client request.</p> </li> <li> <p>
-         * <code>start_time</code> - Time the segment or subsegment was created, in
-         * floating point seconds in epoch time, accurate to milliseconds. For example,
-         * <code>1480615200.010</code> or <code>1.480615200010E9</code>.</p> </li> <li> <p>
-         * <code>end_time</code> - Time the segment or subsegment was closed. For example,
-         * <code>1480615200.090</code> or <code>1.480615200090E9</code>. Specify either an
-         * <code>end_time</code> or <code>in_progress</code>.</p> </li> <li> <p>
-         * <code>in_progress</code> - Set to <code>true</code> instead of specifying an
-         * <code>end_time</code> to record that a segment has been started, but is not
-         * complete. Send an in-progress segment when your application receives a request
-         * that will take a long time to serve, to trace that the request was received.
-         * When the response is sent, send the complete segment to overwrite the
-         * in-progress segment.</p> </li> </ul> <p>A <code>trace_id</code> consists of
-         * three numbers separated by hyphens. For example,
-         * 1-58406520-a006649127e371903a2de979. This includes:</p> <p class="title">
-         * <b>Trace ID Format</b> </p> <ul> <li> <p>The version number, for instance,
-         * <code>1</code>.</p> </li> <li> <p>The time of the original request, in Unix
-         * epoch time, in 8 hexadecimal digits. For example, 10:00AM December 2nd, 2016 PST
-         * in epoch time is <code>1480615200</code> seconds, or <code>58406520</code> in
-         * hexadecimal.</p> </li> <li> <p>A 96-bit identifier for the trace, globally
-         * unique, in 24 hexadecimal digits.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">Amazon
+         * Web Services X-Ray Segment Documents</a> in the <i>Amazon Web Services X-Ray
+         * Developer Guide</i>.</p> <p class="title"> <b>Required segment document
+         * fields</b> </p> <ul> <li> <p> <code>name</code> - The name of the service that
+         * handled the request.</p> </li> <li> <p> <code>id</code> - A 64-bit identifier
+         * for the segment, unique among segments in the same trace, in 16 hexadecimal
+         * digits.</p> </li> <li> <p> <code>trace_id</code> - A unique identifier that
+         * connects all segments and subsegments originating from a single client
+         * request.</p> </li> <li> <p> <code>start_time</code> - Time the segment or
+         * subsegment was created, in floating point seconds in epoch time, accurate to
+         * milliseconds. For example, <code>1480615200.010</code> or
+         * <code>1.480615200010E9</code>.</p> </li> <li> <p> <code>end_time</code> - Time
+         * the segment or subsegment was closed. For example, <code>1480615200.090</code>
+         * or <code>1.480615200090E9</code>. Specify either an <code>end_time</code> or
+         * <code>in_progress</code>.</p> </li> <li> <p> <code>in_progress</code> - Set to
+         * <code>true</code> instead of specifying an <code>end_time</code> to record that
+         * a segment has been started, but is not complete. Send an in-progress segment
+         * when your application receives a request that will take a long time to serve, to
+         * trace that the request was received. When the response is sent, send the
+         * complete segment to overwrite the in-progress segment.</p> </li> </ul> <p>A
+         * <code>trace_id</code> consists of three numbers separated by hyphens. For
+         * example, 1-58406520-a006649127e371903a2de979. This includes:</p> <p
+         * class="title"> <b>Trace ID Format</b> </p> <ul> <li> <p>The version number, for
+         * instance, <code>1</code>.</p> </li> <li> <p>The time of the original request, in
+         * Unix epoch time, in 8 hexadecimal digits. For example, 10:00AM December 2nd,
+         * 2016 PST in epoch time is <code>1480615200</code> seconds, or
+         * <code>58406520</code> in hexadecimal.</p> </li> <li> <p>A 96-bit identifier for
+         * the trace, globally unique, in 24 hexadecimal digits.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTraceSegments">AWS
          * API Reference</a></p>
          */
         virtual Model::PutTraceSegmentsOutcome PutTraceSegments(const Model::PutTraceSegmentsRequest& request) const;
 
         /**
-         * <p>Uploads segment documents to AWS X-Ray. The <a
+         * <p>Uploads segment documents to Amazon Web Services X-Ray. The <a
          * href="https://docs.aws.amazon.com/xray/index.html">X-Ray SDK</a> generates
          * segment documents and sends them to the X-Ray daemon, which uploads them in
          * batches. A segment document can be a completed segment, an in-progress segment,
          * or an array of subsegments.</p> <p>Segments must include the following fields.
          * For the full segment document schema, see <a
-         * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
-         * X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.</p> <p
-         * class="title"> <b>Required segment document fields</b> </p> <ul> <li> <p>
-         * <code>name</code> - The name of the service that handled the request.</p> </li>
-         * <li> <p> <code>id</code> - A 64-bit identifier for the segment, unique among
-         * segments in the same trace, in 16 hexadecimal digits.</p> </li> <li> <p>
-         * <code>trace_id</code> - A unique identifier that connects all segments and
-         * subsegments originating from a single client request.</p> </li> <li> <p>
-         * <code>start_time</code> - Time the segment or subsegment was created, in
-         * floating point seconds in epoch time, accurate to milliseconds. For example,
-         * <code>1480615200.010</code> or <code>1.480615200010E9</code>.</p> </li> <li> <p>
-         * <code>end_time</code> - Time the segment or subsegment was closed. For example,
-         * <code>1480615200.090</code> or <code>1.480615200090E9</code>. Specify either an
-         * <code>end_time</code> or <code>in_progress</code>.</p> </li> <li> <p>
-         * <code>in_progress</code> - Set to <code>true</code> instead of specifying an
-         * <code>end_time</code> to record that a segment has been started, but is not
-         * complete. Send an in-progress segment when your application receives a request
-         * that will take a long time to serve, to trace that the request was received.
-         * When the response is sent, send the complete segment to overwrite the
-         * in-progress segment.</p> </li> </ul> <p>A <code>trace_id</code> consists of
-         * three numbers separated by hyphens. For example,
-         * 1-58406520-a006649127e371903a2de979. This includes:</p> <p class="title">
-         * <b>Trace ID Format</b> </p> <ul> <li> <p>The version number, for instance,
-         * <code>1</code>.</p> </li> <li> <p>The time of the original request, in Unix
-         * epoch time, in 8 hexadecimal digits. For example, 10:00AM December 2nd, 2016 PST
-         * in epoch time is <code>1480615200</code> seconds, or <code>58406520</code> in
-         * hexadecimal.</p> </li> <li> <p>A 96-bit identifier for the trace, globally
-         * unique, in 24 hexadecimal digits.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">Amazon
+         * Web Services X-Ray Segment Documents</a> in the <i>Amazon Web Services X-Ray
+         * Developer Guide</i>.</p> <p class="title"> <b>Required segment document
+         * fields</b> </p> <ul> <li> <p> <code>name</code> - The name of the service that
+         * handled the request.</p> </li> <li> <p> <code>id</code> - A 64-bit identifier
+         * for the segment, unique among segments in the same trace, in 16 hexadecimal
+         * digits.</p> </li> <li> <p> <code>trace_id</code> - A unique identifier that
+         * connects all segments and subsegments originating from a single client
+         * request.</p> </li> <li> <p> <code>start_time</code> - Time the segment or
+         * subsegment was created, in floating point seconds in epoch time, accurate to
+         * milliseconds. For example, <code>1480615200.010</code> or
+         * <code>1.480615200010E9</code>.</p> </li> <li> <p> <code>end_time</code> - Time
+         * the segment or subsegment was closed. For example, <code>1480615200.090</code>
+         * or <code>1.480615200090E9</code>. Specify either an <code>end_time</code> or
+         * <code>in_progress</code>.</p> </li> <li> <p> <code>in_progress</code> - Set to
+         * <code>true</code> instead of specifying an <code>end_time</code> to record that
+         * a segment has been started, but is not complete. Send an in-progress segment
+         * when your application receives a request that will take a long time to serve, to
+         * trace that the request was received. When the response is sent, send the
+         * complete segment to overwrite the in-progress segment.</p> </li> </ul> <p>A
+         * <code>trace_id</code> consists of three numbers separated by hyphens. For
+         * example, 1-58406520-a006649127e371903a2de979. This includes:</p> <p
+         * class="title"> <b>Trace ID Format</b> </p> <ul> <li> <p>The version number, for
+         * instance, <code>1</code>.</p> </li> <li> <p>The time of the original request, in
+         * Unix epoch time, in 8 hexadecimal digits. For example, 10:00AM December 2nd,
+         * 2016 PST in epoch time is <code>1480615200</code> seconds, or
+         * <code>58406520</code> in hexadecimal.</p> </li> <li> <p>A 96-bit identifier for
+         * the trace, globally unique, in 24 hexadecimal digits.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTraceSegments">AWS
          * API Reference</a></p>
          *
@@ -997,40 +1005,41 @@ namespace Model
         virtual Model::PutTraceSegmentsOutcomeCallable PutTraceSegmentsCallable(const Model::PutTraceSegmentsRequest& request) const;
 
         /**
-         * <p>Uploads segment documents to AWS X-Ray. The <a
+         * <p>Uploads segment documents to Amazon Web Services X-Ray. The <a
          * href="https://docs.aws.amazon.com/xray/index.html">X-Ray SDK</a> generates
          * segment documents and sends them to the X-Ray daemon, which uploads them in
          * batches. A segment document can be a completed segment, an in-progress segment,
          * or an array of subsegments.</p> <p>Segments must include the following fields.
          * For the full segment document schema, see <a
-         * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
-         * X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.</p> <p
-         * class="title"> <b>Required segment document fields</b> </p> <ul> <li> <p>
-         * <code>name</code> - The name of the service that handled the request.</p> </li>
-         * <li> <p> <code>id</code> - A 64-bit identifier for the segment, unique among
-         * segments in the same trace, in 16 hexadecimal digits.</p> </li> <li> <p>
-         * <code>trace_id</code> - A unique identifier that connects all segments and
-         * subsegments originating from a single client request.</p> </li> <li> <p>
-         * <code>start_time</code> - Time the segment or subsegment was created, in
-         * floating point seconds in epoch time, accurate to milliseconds. For example,
-         * <code>1480615200.010</code> or <code>1.480615200010E9</code>.</p> </li> <li> <p>
-         * <code>end_time</code> - Time the segment or subsegment was closed. For example,
-         * <code>1480615200.090</code> or <code>1.480615200090E9</code>. Specify either an
-         * <code>end_time</code> or <code>in_progress</code>.</p> </li> <li> <p>
-         * <code>in_progress</code> - Set to <code>true</code> instead of specifying an
-         * <code>end_time</code> to record that a segment has been started, but is not
-         * complete. Send an in-progress segment when your application receives a request
-         * that will take a long time to serve, to trace that the request was received.
-         * When the response is sent, send the complete segment to overwrite the
-         * in-progress segment.</p> </li> </ul> <p>A <code>trace_id</code> consists of
-         * three numbers separated by hyphens. For example,
-         * 1-58406520-a006649127e371903a2de979. This includes:</p> <p class="title">
-         * <b>Trace ID Format</b> </p> <ul> <li> <p>The version number, for instance,
-         * <code>1</code>.</p> </li> <li> <p>The time of the original request, in Unix
-         * epoch time, in 8 hexadecimal digits. For example, 10:00AM December 2nd, 2016 PST
-         * in epoch time is <code>1480615200</code> seconds, or <code>58406520</code> in
-         * hexadecimal.</p> </li> <li> <p>A 96-bit identifier for the trace, globally
-         * unique, in 24 hexadecimal digits.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">Amazon
+         * Web Services X-Ray Segment Documents</a> in the <i>Amazon Web Services X-Ray
+         * Developer Guide</i>.</p> <p class="title"> <b>Required segment document
+         * fields</b> </p> <ul> <li> <p> <code>name</code> - The name of the service that
+         * handled the request.</p> </li> <li> <p> <code>id</code> - A 64-bit identifier
+         * for the segment, unique among segments in the same trace, in 16 hexadecimal
+         * digits.</p> </li> <li> <p> <code>trace_id</code> - A unique identifier that
+         * connects all segments and subsegments originating from a single client
+         * request.</p> </li> <li> <p> <code>start_time</code> - Time the segment or
+         * subsegment was created, in floating point seconds in epoch time, accurate to
+         * milliseconds. For example, <code>1480615200.010</code> or
+         * <code>1.480615200010E9</code>.</p> </li> <li> <p> <code>end_time</code> - Time
+         * the segment or subsegment was closed. For example, <code>1480615200.090</code>
+         * or <code>1.480615200090E9</code>. Specify either an <code>end_time</code> or
+         * <code>in_progress</code>.</p> </li> <li> <p> <code>in_progress</code> - Set to
+         * <code>true</code> instead of specifying an <code>end_time</code> to record that
+         * a segment has been started, but is not complete. Send an in-progress segment
+         * when your application receives a request that will take a long time to serve, to
+         * trace that the request was received. When the response is sent, send the
+         * complete segment to overwrite the in-progress segment.</p> </li> </ul> <p>A
+         * <code>trace_id</code> consists of three numbers separated by hyphens. For
+         * example, 1-58406520-a006649127e371903a2de979. This includes:</p> <p
+         * class="title"> <b>Trace ID Format</b> </p> <ul> <li> <p>The version number, for
+         * instance, <code>1</code>.</p> </li> <li> <p>The time of the original request, in
+         * Unix epoch time, in 8 hexadecimal digits. For example, 10:00AM December 2nd,
+         * 2016 PST in epoch time is <code>1480615200</code> seconds, or
+         * <code>58406520</code> in hexadecimal.</p> </li> <li> <p>A 96-bit identifier for
+         * the trace, globally unique, in 24 hexadecimal digits.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTraceSegments">AWS
          * API Reference</a></p>
          *
@@ -1039,16 +1048,16 @@ namespace Model
         virtual void PutTraceSegmentsAsync(const Model::PutTraceSegmentsRequest& request, const PutTraceSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Applies tags to an existing AWS X-Ray group or sampling rule.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Applies tags to an existing Amazon Web Services X-Ray group or sampling
+         * rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Applies tags to an existing AWS X-Ray group or sampling rule.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Applies tags to an existing Amazon Web Services X-Ray group or sampling
+         * rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1057,8 +1066,8 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Applies tags to an existing AWS X-Ray group or sampling rule.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Applies tags to an existing Amazon Web Services X-Ray group or sampling
+         * rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1067,18 +1076,18 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes tags from an AWS X-Ray group or sampling rule. You cannot edit or
-         * delete system tags (those with an <code>aws:</code> prefix).</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes tags from an Amazon Web Services X-Ray group or sampling rule. You
+         * cannot edit or delete system tags (those with an <code>aws:</code>
+         * prefix).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from an AWS X-Ray group or sampling rule. You cannot edit or
-         * delete system tags (those with an <code>aws:</code> prefix).</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes tags from an Amazon Web Services X-Ray group or sampling rule. You
+         * cannot edit or delete system tags (those with an <code>aws:</code>
+         * prefix).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1087,9 +1096,9 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from an AWS X-Ray group or sampling rule. You cannot edit or
-         * delete system tags (those with an <code>aws:</code> prefix).</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes tags from an Amazon Web Services X-Ray group or sampling rule. You
+         * cannot edit or delete system tags (those with an <code>aws:</code>
+         * prefix).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UntagResource">AWS
          * API Reference</a></p>
          *

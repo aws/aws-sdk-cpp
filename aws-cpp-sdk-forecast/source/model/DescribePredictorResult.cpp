@@ -21,7 +21,8 @@ DescribePredictorResult::DescribePredictorResult() :
     m_performAutoML(false),
     m_autoMLOverrideStrategy(AutoMLOverrideStrategy::NOT_SET),
     m_performHPO(false),
-    m_estimatedTimeRemainingInMinutes(0)
+    m_estimatedTimeRemainingInMinutes(0),
+    m_optimizationMetric(OptimizationMetric::NOT_SET)
 {
 }
 
@@ -30,7 +31,8 @@ DescribePredictorResult::DescribePredictorResult(const Aws::AmazonWebServiceResu
     m_performAutoML(false),
     m_autoMLOverrideStrategy(AutoMLOverrideStrategy::NOT_SET),
     m_performHPO(false),
-    m_estimatedTimeRemainingInMinutes(0)
+    m_estimatedTimeRemainingInMinutes(0),
+    m_optimizationMetric(OptimizationMetric::NOT_SET)
 {
   *this = result;
 }
@@ -179,6 +181,12 @@ DescribePredictorResult& DescribePredictorResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("LastModificationTime"))
   {
     m_lastModificationTime = jsonValue.GetDouble("LastModificationTime");
+
+  }
+
+  if(jsonValue.ValueExists("OptimizationMetric"))
+  {
+    m_optimizationMetric = OptimizationMetricMapper::GetOptimizationMetricForName(jsonValue.GetString("OptimizationMetric"));
 
   }
 

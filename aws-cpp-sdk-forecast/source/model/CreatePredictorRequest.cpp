@@ -30,7 +30,9 @@ CreatePredictorRequest::CreatePredictorRequest() :
     m_inputDataConfigHasBeenSet(false),
     m_featurizationConfigHasBeenSet(false),
     m_encryptionConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_optimizationMetric(OptimizationMetric::NOT_SET),
+    m_optimizationMetricHasBeenSet(false)
 {
 }
 
@@ -134,6 +136,11 @@ Aws::String CreatePredictorRequest::SerializePayload() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_optimizationMetricHasBeenSet)
+  {
+   payload.WithString("OptimizationMetric", OptimizationMetricMapper::GetNameForOptimizationMetric(m_optimizationMetric));
   }
 
   return payload.View().WriteReadable();

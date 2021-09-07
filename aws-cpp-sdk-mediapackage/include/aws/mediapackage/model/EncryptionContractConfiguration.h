@@ -35,7 +35,7 @@ To configure the encryption contract, specify which audio and video
 Note the following considerations when using
    * encryptionContractConfiguration:
 encryptionContractConfiguration can be used for
-   * DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3
+   * DASH or CMAF endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3
    * specification.
 You must disable key rotation for this endpoint by setting
    * keyRotationIntervalSeconds to 0.

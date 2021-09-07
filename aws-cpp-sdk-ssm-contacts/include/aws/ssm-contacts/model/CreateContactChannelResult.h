@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the contact channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
      */
     inline const Aws::String& GetContactChannelArn() const{ return m_contactChannelArn; }
 
     /**
-     * <p>The ARN of the contact channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
      */
     inline void SetContactChannelArn(const Aws::String& value) { m_contactChannelArn = value; }
 
     /**
-     * <p>The ARN of the contact channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
      */
     inline void SetContactChannelArn(Aws::String&& value) { m_contactChannelArn = std::move(value); }
 
     /**
-     * <p>The ARN of the contact channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
      */
     inline void SetContactChannelArn(const char* value) { m_contactChannelArn.assign(value); }
 
     /**
-     * <p>The ARN of the contact channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
      */
     inline CreateContactChannelResult& WithContactChannelArn(const Aws::String& value) { SetContactChannelArn(value); return *this;}
 
     /**
-     * <p>The ARN of the contact channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
      */
     inline CreateContactChannelResult& WithContactChannelArn(Aws::String&& value) { SetContactChannelArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the contact channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
      */
     inline CreateContactChannelResult& WithContactChannelArn(const char* value) { SetContactChannelArn(value); return *this;}
 

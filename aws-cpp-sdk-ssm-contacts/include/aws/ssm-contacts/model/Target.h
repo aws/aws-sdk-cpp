@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The contact or contact channel that is being engaged.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The contact or contact channel that's being engaged.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/Target">AWS
    * API Reference</a></p>
    */

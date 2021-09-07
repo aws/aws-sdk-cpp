@@ -16,6 +16,7 @@
 #include <aws/forecast/model/EncryptionConfig.h>
 #include <aws/forecast/model/PredictorExecutionDetails.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/forecast/model/OptimizationMetric.h>
 #include <utility>
 
 namespace Aws
@@ -235,42 +236,52 @@ namespace Model
 
 
     /**
-     * <p>The AutoML strategy used to train the predictor. Unless
-     * <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes
-     * predictor accuracy.</p> <p>This parameter is only valid for predictors trained
-     * using AutoML.</p>
+     *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
+     * available in private beta. Contact AWS Support or your account manager to learn
+     * more about access privileges. </p>  <p>The AutoML strategy used to train
+     * the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML
+     * strategy optimizes predictor accuracy.</p> <p>This parameter is only valid for
+     * predictors trained using AutoML.</p>
      */
     inline const AutoMLOverrideStrategy& GetAutoMLOverrideStrategy() const{ return m_autoMLOverrideStrategy; }
 
     /**
-     * <p>The AutoML strategy used to train the predictor. Unless
-     * <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes
-     * predictor accuracy.</p> <p>This parameter is only valid for predictors trained
-     * using AutoML.</p>
+     *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
+     * available in private beta. Contact AWS Support or your account manager to learn
+     * more about access privileges. </p>  <p>The AutoML strategy used to train
+     * the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML
+     * strategy optimizes predictor accuracy.</p> <p>This parameter is only valid for
+     * predictors trained using AutoML.</p>
      */
     inline void SetAutoMLOverrideStrategy(const AutoMLOverrideStrategy& value) { m_autoMLOverrideStrategy = value; }
 
     /**
-     * <p>The AutoML strategy used to train the predictor. Unless
-     * <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes
-     * predictor accuracy.</p> <p>This parameter is only valid for predictors trained
-     * using AutoML.</p>
+     *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
+     * available in private beta. Contact AWS Support or your account manager to learn
+     * more about access privileges. </p>  <p>The AutoML strategy used to train
+     * the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML
+     * strategy optimizes predictor accuracy.</p> <p>This parameter is only valid for
+     * predictors trained using AutoML.</p>
      */
     inline void SetAutoMLOverrideStrategy(AutoMLOverrideStrategy&& value) { m_autoMLOverrideStrategy = std::move(value); }
 
     /**
-     * <p>The AutoML strategy used to train the predictor. Unless
-     * <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes
-     * predictor accuracy.</p> <p>This parameter is only valid for predictors trained
-     * using AutoML.</p>
+     *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
+     * available in private beta. Contact AWS Support or your account manager to learn
+     * more about access privileges. </p>  <p>The AutoML strategy used to train
+     * the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML
+     * strategy optimizes predictor accuracy.</p> <p>This parameter is only valid for
+     * predictors trained using AutoML.</p>
      */
     inline DescribePredictorResult& WithAutoMLOverrideStrategy(const AutoMLOverrideStrategy& value) { SetAutoMLOverrideStrategy(value); return *this;}
 
     /**
-     * <p>The AutoML strategy used to train the predictor. Unless
-     * <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes
-     * predictor accuracy.</p> <p>This parameter is only valid for predictors trained
-     * using AutoML.</p>
+     *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
+     * available in private beta. Contact AWS Support or your account manager to learn
+     * more about access privileges. </p>  <p>The AutoML strategy used to train
+     * the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML
+     * strategy optimizes predictor accuracy.</p> <p>This parameter is only valid for
+     * predictors trained using AutoML.</p>
      */
     inline DescribePredictorResult& WithAutoMLOverrideStrategy(AutoMLOverrideStrategy&& value) { SetAutoMLOverrideStrategy(std::move(value)); return *this;}
 
@@ -901,6 +912,32 @@ namespace Model
      */
     inline DescribePredictorResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The accuracy metric used to optimize the predictor.</p>
+     */
+    inline const OptimizationMetric& GetOptimizationMetric() const{ return m_optimizationMetric; }
+
+    /**
+     * <p>The accuracy metric used to optimize the predictor.</p>
+     */
+    inline void SetOptimizationMetric(const OptimizationMetric& value) { m_optimizationMetric = value; }
+
+    /**
+     * <p>The accuracy metric used to optimize the predictor.</p>
+     */
+    inline void SetOptimizationMetric(OptimizationMetric&& value) { m_optimizationMetric = std::move(value); }
+
+    /**
+     * <p>The accuracy metric used to optimize the predictor.</p>
+     */
+    inline DescribePredictorResult& WithOptimizationMetric(const OptimizationMetric& value) { SetOptimizationMetric(value); return *this;}
+
+    /**
+     * <p>The accuracy metric used to optimize the predictor.</p>
+     */
+    inline DescribePredictorResult& WithOptimizationMetric(OptimizationMetric&& value) { SetOptimizationMetric(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_predictorArn;
@@ -946,6 +983,8 @@ namespace Model
     Aws::Utils::DateTime m_creationTime;
 
     Aws::Utils::DateTime m_lastModificationTime;
+
+    OptimizationMetric m_optimizationMetric;
   };
 
 } // namespace Model

@@ -203,32 +203,32 @@ namespace Model
 
 
     /**
-     * <p>The user groups being modified.</p>
+     * <p>The user group being modified.</p>
      */
     inline const UserGroupsUpdateStatus& GetUserGroups() const{ return m_userGroups; }
 
     /**
-     * <p>The user groups being modified.</p>
+     * <p>The user group being modified.</p>
      */
     inline bool UserGroupsHasBeenSet() const { return m_userGroupsHasBeenSet; }
 
     /**
-     * <p>The user groups being modified.</p>
+     * <p>The user group being modified.</p>
      */
     inline void SetUserGroups(const UserGroupsUpdateStatus& value) { m_userGroupsHasBeenSet = true; m_userGroups = value; }
 
     /**
-     * <p>The user groups being modified.</p>
+     * <p>The user group being modified.</p>
      */
     inline void SetUserGroups(UserGroupsUpdateStatus&& value) { m_userGroupsHasBeenSet = true; m_userGroups = std::move(value); }
 
     /**
-     * <p>The user groups being modified.</p>
+     * <p>The user group being modified.</p>
      */
     inline ReplicationGroupPendingModifiedValues& WithUserGroups(const UserGroupsUpdateStatus& value) { SetUserGroups(value); return *this;}
 
     /**
-     * <p>The user groups being modified.</p>
+     * <p>The user group being modified.</p>
      */
     inline ReplicationGroupPendingModifiedValues& WithUserGroups(UserGroupsUpdateStatus&& value) { SetUserGroups(std::move(value)); return *this;}
 

@@ -193,15 +193,15 @@ namespace Model
     typedef std::function<void(const SSMContactsClient*, const Model::UpdateContactChannelRequest&, const Model::UpdateContactChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactChannelResponseReceivedHandler;
 
   /**
-   * <p>AWS Systems Manager Incident Manager is an incident management console
-   * designed to help users mitigate and recover from incidents affecting their
-   * AWS-hosted applications. An incident is any unplanned interruption or reduction
-   * in quality of services. </p> <p>Incident Manager increases incident resolution
-   * by notifying responders of impact, highlighting relevant troubleshooting data,
-   * and providing collaboration tools to get services back up and running. To
-   * achieve the primary goal of reducing the time-to-resolution of critical
-   * incidents, Incident Manager automates response plans and enables responder team
-   * escalation. </p>
+   * <p>Systems Manager Incident Manager is an incident management console designed
+   * to help users mitigate and recover from incidents affecting their Amazon Web
+   * Services-hosted applications. An incident is any unplanned interruption or
+   * reduction in quality of services. </p> <p>Incident Manager increases incident
+   * resolution by notifying responders of impact, highlighting relevant
+   * troubleshooting data, and providing collaboration tools to get services back up
+   * and running. To achieve the primary goal of reducing the time-to-resolution of
+   * critical incidents, Incident Manager automates response plans and enables
+   * responder team escalation. </p>
    */
   class AWS_SSMCONTACTS_API SSMContactsClient : public Aws::Client::AWSJsonClient
   {
@@ -817,7 +817,7 @@ namespace Model
         /**
          * <p>Sends an activation code to a contact channel. The contact can use this code
          * to activate the contact channel in the console or with the
-         * <code>ActivateChannel</code> action. Incident Manager can't engage a contact
+         * <code>ActivateChannel</code> operation. Incident Manager can't engage a contact
          * channel until it has been activated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/SendActivationCode">AWS
          * API Reference</a></p>
@@ -827,7 +827,7 @@ namespace Model
         /**
          * <p>Sends an activation code to a contact channel. The contact can use this code
          * to activate the contact channel in the console or with the
-         * <code>ActivateChannel</code> action. Incident Manager can't engage a contact
+         * <code>ActivateChannel</code> operation. Incident Manager can't engage a contact
          * channel until it has been activated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/SendActivationCode">AWS
          * API Reference</a></p>
@@ -839,7 +839,7 @@ namespace Model
         /**
          * <p>Sends an activation code to a contact channel. The contact can use this code
          * to activate the contact channel in the console or with the
-         * <code>ActivateChannel</code> action. Incident Manager can't engage a contact
+         * <code>ActivateChannel</code> operation. Incident Manager can't engage a contact
          * channel until it has been activated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/SendActivationCode">AWS
          * API Reference</a></p>

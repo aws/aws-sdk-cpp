@@ -7,6 +7,7 @@
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/eks/EKSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -175,6 +176,61 @@ namespace Model
      */
     inline ListClustersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether connected clusters are included in the returned list.
+     * Default value is 'ALL'.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetInclude() const{ return m_include; }
+
+    /**
+     * <p>Indicates whether connected clusters are included in the returned list.
+     * Default value is 'ALL'.</p>
+     */
+    inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether connected clusters are included in the returned list.
+     * Default value is 'ALL'.</p>
+     */
+    inline void SetInclude(const Aws::Vector<Aws::String>& value) { m_includeHasBeenSet = true; m_include = value; }
+
+    /**
+     * <p>Indicates whether connected clusters are included in the returned list.
+     * Default value is 'ALL'.</p>
+     */
+    inline void SetInclude(Aws::Vector<Aws::String>&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
+
+    /**
+     * <p>Indicates whether connected clusters are included in the returned list.
+     * Default value is 'ALL'.</p>
+     */
+    inline ListClustersRequest& WithInclude(const Aws::Vector<Aws::String>& value) { SetInclude(value); return *this;}
+
+    /**
+     * <p>Indicates whether connected clusters are included in the returned list.
+     * Default value is 'ALL'.</p>
+     */
+    inline ListClustersRequest& WithInclude(Aws::Vector<Aws::String>&& value) { SetInclude(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates whether connected clusters are included in the returned list.
+     * Default value is 'ALL'.</p>
+     */
+    inline ListClustersRequest& AddInclude(const Aws::String& value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
+
+    /**
+     * <p>Indicates whether connected clusters are included in the returned list.
+     * Default value is 'ALL'.</p>
+     */
+    inline ListClustersRequest& AddInclude(Aws::String&& value) { m_includeHasBeenSet = true; m_include.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Indicates whether connected clusters are included in the returned list.
+     * Default value is 'ALL'.</p>
+     */
+    inline ListClustersRequest& AddInclude(const char* value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
+
   private:
 
     int m_maxResults;
@@ -182,6 +238,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    Aws::Vector<Aws::String> m_include;
+    bool m_includeHasBeenSet;
   };
 
 } // namespace Model

@@ -215,32 +215,32 @@ namespace Model
 
 
     /**
-     * <p>A list of updates being applied to the user groups.</p>
+     * <p>A list of updates being applied to the user group.</p>
      */
     inline const UserGroupPendingChanges& GetPendingChanges() const{ return m_pendingChanges; }
 
     /**
-     * <p>A list of updates being applied to the user groups.</p>
+     * <p>A list of updates being applied to the user group.</p>
      */
     inline bool PendingChangesHasBeenSet() const { return m_pendingChangesHasBeenSet; }
 
     /**
-     * <p>A list of updates being applied to the user groups.</p>
+     * <p>A list of updates being applied to the user group.</p>
      */
     inline void SetPendingChanges(const UserGroupPendingChanges& value) { m_pendingChangesHasBeenSet = true; m_pendingChanges = value; }
 
     /**
-     * <p>A list of updates being applied to the user groups.</p>
+     * <p>A list of updates being applied to the user group.</p>
      */
     inline void SetPendingChanges(UserGroupPendingChanges&& value) { m_pendingChangesHasBeenSet = true; m_pendingChanges = std::move(value); }
 
     /**
-     * <p>A list of updates being applied to the user groups.</p>
+     * <p>A list of updates being applied to the user group.</p>
      */
     inline UserGroup& WithPendingChanges(const UserGroupPendingChanges& value) { SetPendingChanges(value); return *this;}
 
     /**
-     * <p>A list of updates being applied to the user groups.</p>
+     * <p>A list of updates being applied to the user group.</p>
      */
     inline UserGroup& WithPendingChanges(UserGroupPendingChanges&& value) { SetPendingChanges(std::move(value)); return *this;}
 

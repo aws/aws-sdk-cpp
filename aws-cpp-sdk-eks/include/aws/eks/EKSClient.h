@@ -21,6 +21,7 @@
 #include <aws/eks/model/DeleteClusterResult.h>
 #include <aws/eks/model/DeleteFargateProfileResult.h>
 #include <aws/eks/model/DeleteNodegroupResult.h>
+#include <aws/eks/model/DeregisterClusterResult.h>
 #include <aws/eks/model/DescribeAddonResult.h>
 #include <aws/eks/model/DescribeAddonVersionsResult.h>
 #include <aws/eks/model/DescribeClusterResult.h>
@@ -36,6 +37,7 @@
 #include <aws/eks/model/ListNodegroupsResult.h>
 #include <aws/eks/model/ListTagsForResourceResult.h>
 #include <aws/eks/model/ListUpdatesResult.h>
+#include <aws/eks/model/RegisterClusterResult.h>
 #include <aws/eks/model/TagResourceResult.h>
 #include <aws/eks/model/UntagResourceResult.h>
 #include <aws/eks/model/UpdateAddonResult.h>
@@ -92,6 +94,7 @@ namespace Model
         class DeleteClusterRequest;
         class DeleteFargateProfileRequest;
         class DeleteNodegroupRequest;
+        class DeregisterClusterRequest;
         class DescribeAddonRequest;
         class DescribeAddonVersionsRequest;
         class DescribeClusterRequest;
@@ -107,6 +110,7 @@ namespace Model
         class ListNodegroupsRequest;
         class ListTagsForResourceRequest;
         class ListUpdatesRequest;
+        class RegisterClusterRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateAddonRequest;
@@ -125,6 +129,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteClusterResult, EKSError> DeleteClusterOutcome;
         typedef Aws::Utils::Outcome<DeleteFargateProfileResult, EKSError> DeleteFargateProfileOutcome;
         typedef Aws::Utils::Outcome<DeleteNodegroupResult, EKSError> DeleteNodegroupOutcome;
+        typedef Aws::Utils::Outcome<DeregisterClusterResult, EKSError> DeregisterClusterOutcome;
         typedef Aws::Utils::Outcome<DescribeAddonResult, EKSError> DescribeAddonOutcome;
         typedef Aws::Utils::Outcome<DescribeAddonVersionsResult, EKSError> DescribeAddonVersionsOutcome;
         typedef Aws::Utils::Outcome<DescribeClusterResult, EKSError> DescribeClusterOutcome;
@@ -140,6 +145,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListNodegroupsResult, EKSError> ListNodegroupsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, EKSError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListUpdatesResult, EKSError> ListUpdatesOutcome;
+        typedef Aws::Utils::Outcome<RegisterClusterResult, EKSError> RegisterClusterOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, EKSError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, EKSError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateAddonResult, EKSError> UpdateAddonOutcome;
@@ -158,6 +164,7 @@ namespace Model
         typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
         typedef std::future<DeleteFargateProfileOutcome> DeleteFargateProfileOutcomeCallable;
         typedef std::future<DeleteNodegroupOutcome> DeleteNodegroupOutcomeCallable;
+        typedef std::future<DeregisterClusterOutcome> DeregisterClusterOutcomeCallable;
         typedef std::future<DescribeAddonOutcome> DescribeAddonOutcomeCallable;
         typedef std::future<DescribeAddonVersionsOutcome> DescribeAddonVersionsOutcomeCallable;
         typedef std::future<DescribeClusterOutcome> DescribeClusterOutcomeCallable;
@@ -173,6 +180,7 @@ namespace Model
         typedef std::future<ListNodegroupsOutcome> ListNodegroupsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListUpdatesOutcome> ListUpdatesOutcomeCallable;
+        typedef std::future<RegisterClusterOutcome> RegisterClusterOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateAddonOutcome> UpdateAddonOutcomeCallable;
@@ -194,6 +202,7 @@ namespace Model
     typedef std::function<void(const EKSClient*, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClusterResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DeleteFargateProfileRequest&, const Model::DeleteFargateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFargateProfileResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DeleteNodegroupRequest&, const Model::DeleteNodegroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNodegroupResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::DeregisterClusterRequest&, const Model::DeregisterClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterClusterResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeAddonRequest&, const Model::DescribeAddonOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAddonResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeAddonVersionsRequest&, const Model::DescribeAddonVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAddonVersionsResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeClusterRequest&, const Model::DescribeClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterResponseReceivedHandler;
@@ -209,6 +218,7 @@ namespace Model
     typedef std::function<void(const EKSClient*, const Model::ListNodegroupsRequest&, const Model::ListNodegroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNodegroupsResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListUpdatesRequest&, const Model::ListUpdatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUpdatesResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::RegisterClusterRequest&, const Model::RegisterClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterClusterResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::UpdateAddonRequest&, const Model::UpdateAddonOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAddonResponseReceivedHandler;
@@ -799,6 +809,34 @@ namespace Model
         virtual void DeleteNodegroupAsync(const Model::DeleteNodegroupRequest& request, const DeleteNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deregisters a connected cluster to remove it from the Amazon EKS control
+         * plane.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeregisterCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeregisterClusterOutcome DeregisterCluster(const Model::DeregisterClusterRequest& request) const;
+
+        /**
+         * <p>Deregisters a connected cluster to remove it from the Amazon EKS control
+         * plane.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeregisterCluster">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeregisterClusterOutcomeCallable DeregisterClusterCallable(const Model::DeregisterClusterRequest& request) const;
+
+        /**
+         * <p>Deregisters a connected cluster to remove it from the Amazon EKS control
+         * plane.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeregisterCluster">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeregisterClusterAsync(const Model::DeregisterClusterRequest& request, const DeregisterClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes an Amazon EKS add-on.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddon">AWS
          * API Reference</a></p>
@@ -1249,6 +1287,67 @@ namespace Model
         virtual void ListUpdatesAsync(const Model::ListUpdatesRequest& request, const ListUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Connects a Kubernetes cluster to the Amazon EKS control plane. </p> <p>Any
+         * Kubernetes cluster can be connected to the Amazon EKS control plane to view
+         * current information about the cluster and its nodes. </p> <p>Cluster connection
+         * requires two steps. First, send a <code> <a>RegisterClusterRequest</a> </code>
+         * to add it to the Amazon EKS control plane.</p> <p>Second, a <a
+         * href="https://amazon-eks.s3.us-west-2.amazonaws.com/eks-connector/manifests/eks-connector/latest/eks-connector.yaml">Manifest</a>
+         * containing the <code>activationID</code> and <code>activationCode</code> must be
+         * applied to the Kubernetes cluster through it's native provider to provide
+         * visibility.</p> <p>After the Manifest is updated and applied, then the connected
+         * cluster is visible to the Amazon EKS control plane. If the Manifest is not
+         * applied within a set amount of time, then the connected cluster will no longer
+         * be visible and must be deregistered. See <a>DeregisterCluster</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/RegisterCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RegisterClusterOutcome RegisterCluster(const Model::RegisterClusterRequest& request) const;
+
+        /**
+         * <p>Connects a Kubernetes cluster to the Amazon EKS control plane. </p> <p>Any
+         * Kubernetes cluster can be connected to the Amazon EKS control plane to view
+         * current information about the cluster and its nodes. </p> <p>Cluster connection
+         * requires two steps. First, send a <code> <a>RegisterClusterRequest</a> </code>
+         * to add it to the Amazon EKS control plane.</p> <p>Second, a <a
+         * href="https://amazon-eks.s3.us-west-2.amazonaws.com/eks-connector/manifests/eks-connector/latest/eks-connector.yaml">Manifest</a>
+         * containing the <code>activationID</code> and <code>activationCode</code> must be
+         * applied to the Kubernetes cluster through it's native provider to provide
+         * visibility.</p> <p>After the Manifest is updated and applied, then the connected
+         * cluster is visible to the Amazon EKS control plane. If the Manifest is not
+         * applied within a set amount of time, then the connected cluster will no longer
+         * be visible and must be deregistered. See <a>DeregisterCluster</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/RegisterCluster">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RegisterClusterOutcomeCallable RegisterClusterCallable(const Model::RegisterClusterRequest& request) const;
+
+        /**
+         * <p>Connects a Kubernetes cluster to the Amazon EKS control plane. </p> <p>Any
+         * Kubernetes cluster can be connected to the Amazon EKS control plane to view
+         * current information about the cluster and its nodes. </p> <p>Cluster connection
+         * requires two steps. First, send a <code> <a>RegisterClusterRequest</a> </code>
+         * to add it to the Amazon EKS control plane.</p> <p>Second, a <a
+         * href="https://amazon-eks.s3.us-west-2.amazonaws.com/eks-connector/manifests/eks-connector/latest/eks-connector.yaml">Manifest</a>
+         * containing the <code>activationID</code> and <code>activationCode</code> must be
+         * applied to the Kubernetes cluster through it's native provider to provide
+         * visibility.</p> <p>After the Manifest is updated and applied, then the connected
+         * cluster is visible to the Amazon EKS control plane. If the Manifest is not
+         * applied within a set amount of time, then the connected cluster will no longer
+         * be visible and must be deregistered. See <a>DeregisterCluster</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/RegisterCluster">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RegisterClusterAsync(const Model::RegisterClusterRequest& request, const RegisterClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Associates the specified tags to a resource with the specified
          * <code>resourceArn</code>. If existing tags on a resource are not specified in
          * the request parameters, they are not changed. When a resource is deleted, the
@@ -1632,6 +1731,7 @@ namespace Model
         void DeleteClusterAsyncHelper(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFargateProfileAsyncHelper(const Model::DeleteFargateProfileRequest& request, const DeleteFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNodegroupAsyncHelper(const Model::DeleteNodegroupRequest& request, const DeleteNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeregisterClusterAsyncHelper(const Model::DeregisterClusterRequest& request, const DeregisterClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAddonAsyncHelper(const Model::DescribeAddonRequest& request, const DescribeAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAddonVersionsAsyncHelper(const Model::DescribeAddonVersionsRequest& request, const DescribeAddonVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClusterAsyncHelper(const Model::DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1647,6 +1747,7 @@ namespace Model
         void ListNodegroupsAsyncHelper(const Model::ListNodegroupsRequest& request, const ListNodegroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUpdatesAsyncHelper(const Model::ListUpdatesRequest& request, const ListUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RegisterClusterAsyncHelper(const Model::RegisterClusterRequest& request, const RegisterClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAddonAsyncHelper(const Model::UpdateAddonRequest& request, const UpdateAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

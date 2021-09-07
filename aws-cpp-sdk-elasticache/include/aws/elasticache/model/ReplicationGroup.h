@@ -1021,47 +1021,47 @@ namespace Model
 
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserGroupIds() const{ return m_userGroupIds; }
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline bool UserGroupIdsHasBeenSet() const { return m_userGroupIdsHasBeenSet; }
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline void SetUserGroupIds(const Aws::Vector<Aws::String>& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds = value; }
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline void SetUserGroupIds(Aws::Vector<Aws::String>&& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds = std::move(value); }
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline ReplicationGroup& WithUserGroupIds(const Aws::Vector<Aws::String>& value) { SetUserGroupIds(value); return *this;}
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline ReplicationGroup& WithUserGroupIds(Aws::Vector<Aws::String>&& value) { SetUserGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline ReplicationGroup& AddUserGroupIds(const Aws::String& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline ReplicationGroup& AddUserGroupIds(Aws::String&& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline ReplicationGroup& AddUserGroupIds(const char* value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(value); return *this; }
 

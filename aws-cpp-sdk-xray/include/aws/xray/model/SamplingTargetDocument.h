@@ -27,8 +27,9 @@ namespace Model
   /**
    * <p>Temporary changes to a sampling rule configuration. To meet the global
    * sampling target for a rule, X-Ray calculates a new reservoir for each service
-   * based on the recent sampling results of all services that called
-   * <a>GetSamplingTargets</a>.</p><p><h3>See Also:</h3>   <a
+   * based on the recent sampling results of all services that called <a
+   * href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/SamplingTargetDocument">AWS
    * API Reference</a></p>
    */

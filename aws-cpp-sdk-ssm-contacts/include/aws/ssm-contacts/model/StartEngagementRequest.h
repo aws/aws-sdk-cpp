@@ -355,49 +355,49 @@ namespace Model
 
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline StartEngagementRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline StartEngagementRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline StartEngagementRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}

@@ -30,6 +30,7 @@
 #include <aws/eks/model/DeleteClusterRequest.h>
 #include <aws/eks/model/DeleteFargateProfileRequest.h>
 #include <aws/eks/model/DeleteNodegroupRequest.h>
+#include <aws/eks/model/DeregisterClusterRequest.h>
 #include <aws/eks/model/DescribeAddonRequest.h>
 #include <aws/eks/model/DescribeAddonVersionsRequest.h>
 #include <aws/eks/model/DescribeClusterRequest.h>
@@ -45,6 +46,7 @@
 #include <aws/eks/model/ListNodegroupsRequest.h>
 #include <aws/eks/model/ListTagsForResourceRequest.h>
 #include <aws/eks/model/ListUpdatesRequest.h>
+#include <aws/eks/model/RegisterClusterRequest.h>
 #include <aws/eks/model/TagResourceRequest.h>
 #include <aws/eks/model/UntagResourceRequest.h>
 #include <aws/eks/model/UpdateAddonRequest.h>
@@ -454,6 +456,37 @@ void EKSClient::DeleteNodegroupAsync(const DeleteNodegroupRequest& request, cons
 void EKSClient::DeleteNodegroupAsyncHelper(const DeleteNodegroupRequest& request, const DeleteNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteNodegroup(request), context);
+}
+
+DeregisterClusterOutcome EKSClient::DeregisterCluster(const DeregisterClusterRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeregisterCluster", "Required field: Name, is not set");
+    return DeregisterClusterOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/cluster-registrations/");
+  uri.AddPathSegment(request.GetName());
+  return DeregisterClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeregisterClusterOutcomeCallable EKSClient::DeregisterClusterCallable(const DeregisterClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::DeregisterClusterAsync(const DeregisterClusterRequest& request, const DeregisterClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeregisterClusterAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::DeregisterClusterAsyncHelper(const DeregisterClusterRequest& request, const DeregisterClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeregisterCluster(request), context);
 }
 
 DescribeAddonOutcome EKSClient::DescribeAddon(const DescribeAddonRequest& request) const
@@ -942,6 +975,31 @@ void EKSClient::ListUpdatesAsync(const ListUpdatesRequest& request, const ListUp
 void EKSClient::ListUpdatesAsyncHelper(const ListUpdatesRequest& request, const ListUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListUpdates(request), context);
+}
+
+RegisterClusterOutcome EKSClient::RegisterCluster(const RegisterClusterRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/cluster-registrations");
+  return RegisterClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RegisterClusterOutcomeCallable EKSClient::RegisterClusterCallable(const RegisterClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RegisterClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::RegisterClusterAsync(const RegisterClusterRequest& request, const RegisterClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RegisterClusterAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::RegisterClusterAsyncHelper(const RegisterClusterRequest& request, const RegisterClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RegisterCluster(request), context);
 }
 
 TagResourceOutcome EKSClient::TagResource(const TagResourceRequest& request) const
