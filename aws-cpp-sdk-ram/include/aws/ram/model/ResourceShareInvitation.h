@@ -164,83 +164,83 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that sent the invitation.</p>
+     * <p>The ID of the Amazon Web Services account that sent the invitation.</p>
      */
     inline const Aws::String& GetSenderAccountId() const{ return m_senderAccountId; }
 
     /**
-     * <p>The ID of the AWS account that sent the invitation.</p>
+     * <p>The ID of the Amazon Web Services account that sent the invitation.</p>
      */
     inline bool SenderAccountIdHasBeenSet() const { return m_senderAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that sent the invitation.</p>
+     * <p>The ID of the Amazon Web Services account that sent the invitation.</p>
      */
     inline void SetSenderAccountId(const Aws::String& value) { m_senderAccountIdHasBeenSet = true; m_senderAccountId = value; }
 
     /**
-     * <p>The ID of the AWS account that sent the invitation.</p>
+     * <p>The ID of the Amazon Web Services account that sent the invitation.</p>
      */
     inline void SetSenderAccountId(Aws::String&& value) { m_senderAccountIdHasBeenSet = true; m_senderAccountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that sent the invitation.</p>
+     * <p>The ID of the Amazon Web Services account that sent the invitation.</p>
      */
     inline void SetSenderAccountId(const char* value) { m_senderAccountIdHasBeenSet = true; m_senderAccountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that sent the invitation.</p>
+     * <p>The ID of the Amazon Web Services account that sent the invitation.</p>
      */
     inline ResourceShareInvitation& WithSenderAccountId(const Aws::String& value) { SetSenderAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that sent the invitation.</p>
+     * <p>The ID of the Amazon Web Services account that sent the invitation.</p>
      */
     inline ResourceShareInvitation& WithSenderAccountId(Aws::String&& value) { SetSenderAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that sent the invitation.</p>
+     * <p>The ID of the Amazon Web Services account that sent the invitation.</p>
      */
     inline ResourceShareInvitation& WithSenderAccountId(const char* value) { SetSenderAccountId(value); return *this;}
 
 
     /**
-     * <p>The ID of the AWS account that received the invitation.</p>
+     * <p>The ID of the Amazon Web Services account that received the invitation.</p>
      */
     inline const Aws::String& GetReceiverAccountId() const{ return m_receiverAccountId; }
 
     /**
-     * <p>The ID of the AWS account that received the invitation.</p>
+     * <p>The ID of the Amazon Web Services account that received the invitation.</p>
      */
     inline bool ReceiverAccountIdHasBeenSet() const { return m_receiverAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that received the invitation.</p>
+     * <p>The ID of the Amazon Web Services account that received the invitation.</p>
      */
     inline void SetReceiverAccountId(const Aws::String& value) { m_receiverAccountIdHasBeenSet = true; m_receiverAccountId = value; }
 
     /**
-     * <p>The ID of the AWS account that received the invitation.</p>
+     * <p>The ID of the Amazon Web Services account that received the invitation.</p>
      */
     inline void SetReceiverAccountId(Aws::String&& value) { m_receiverAccountIdHasBeenSet = true; m_receiverAccountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that received the invitation.</p>
+     * <p>The ID of the Amazon Web Services account that received the invitation.</p>
      */
     inline void SetReceiverAccountId(const char* value) { m_receiverAccountIdHasBeenSet = true; m_receiverAccountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that received the invitation.</p>
+     * <p>The ID of the Amazon Web Services account that received the invitation.</p>
      */
     inline ResourceShareInvitation& WithReceiverAccountId(const Aws::String& value) { SetReceiverAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that received the invitation.</p>
+     * <p>The ID of the Amazon Web Services account that received the invitation.</p>
      */
     inline ResourceShareInvitation& WithReceiverAccountId(Aws::String&& value) { SetReceiverAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that received the invitation.</p>
+     * <p>The ID of the Amazon Web Services account that received the invitation.</p>
      */
     inline ResourceShareInvitation& WithReceiverAccountId(const char* value) { SetReceiverAccountId(value); return *this;}
 

@@ -39,6 +39,7 @@
 #include <aws/kafka/model/UpdateClusterConfigurationResult.h>
 #include <aws/kafka/model/UpdateClusterKafkaVersionResult.h>
 #include <aws/kafka/model/UpdateMonitoringResult.h>
+#include <aws/kafka/model/UpdateSecurityResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -109,6 +110,7 @@ namespace Model
         class UpdateClusterConfigurationRequest;
         class UpdateClusterKafkaVersionRequest;
         class UpdateMonitoringRequest;
+        class UpdateSecurityRequest;
 
         typedef Aws::Utils::Outcome<BatchAssociateScramSecretResult, KafkaError> BatchAssociateScramSecretOutcome;
         typedef Aws::Utils::Outcome<CreateClusterResult, KafkaError> CreateClusterOutcome;
@@ -140,6 +142,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateClusterConfigurationResult, KafkaError> UpdateClusterConfigurationOutcome;
         typedef Aws::Utils::Outcome<UpdateClusterKafkaVersionResult, KafkaError> UpdateClusterKafkaVersionOutcome;
         typedef Aws::Utils::Outcome<UpdateMonitoringResult, KafkaError> UpdateMonitoringOutcome;
+        typedef Aws::Utils::Outcome<UpdateSecurityResult, KafkaError> UpdateSecurityOutcome;
 
         typedef std::future<BatchAssociateScramSecretOutcome> BatchAssociateScramSecretOutcomeCallable;
         typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
@@ -171,6 +174,7 @@ namespace Model
         typedef std::future<UpdateClusterConfigurationOutcome> UpdateClusterConfigurationOutcomeCallable;
         typedef std::future<UpdateClusterKafkaVersionOutcome> UpdateClusterKafkaVersionOutcomeCallable;
         typedef std::future<UpdateMonitoringOutcome> UpdateMonitoringOutcomeCallable;
+        typedef std::future<UpdateSecurityOutcome> UpdateSecurityOutcomeCallable;
 } // namespace Model
 
   class KafkaClient;
@@ -205,6 +209,7 @@ namespace Model
     typedef std::function<void(const KafkaClient*, const Model::UpdateClusterConfigurationRequest&, const Model::UpdateClusterConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterConfigurationResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::UpdateClusterKafkaVersionRequest&, const Model::UpdateClusterKafkaVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterKafkaVersionResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::UpdateMonitoringRequest&, const Model::UpdateMonitoringOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMonitoringResponseReceivedHandler;
+    typedef std::function<void(const KafkaClient*, const Model::UpdateSecurityRequest&, const Model::UpdateSecurityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecurityResponseReceivedHandler;
 
   /**
    * 
@@ -1256,6 +1261,43 @@ namespace Model
          */
         virtual void UpdateMonitoringAsync(const Model::UpdateMonitoringRequest& request, const UpdateMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * 
+            <p>Updates the security settings for the cluster. You can use this
+         * operation to specify encryption and authentication on existing clusters.</p>
+   
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateSecurity">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSecurityOutcome UpdateSecurity(const Model::UpdateSecurityRequest& request) const;
+
+        /**
+         * 
+            <p>Updates the security settings for the cluster. You can use this
+         * operation to specify encryption and authentication on existing clusters.</p>
+   
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateSecurity">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateSecurityOutcomeCallable UpdateSecurityCallable(const Model::UpdateSecurityRequest& request) const;
+
+        /**
+         * 
+            <p>Updates the security settings for the cluster. You can use this
+         * operation to specify encryption and authentication on existing clusters.</p>
+   
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateSecurity">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateSecurityAsync(const Model::UpdateSecurityRequest& request, const UpdateSecurityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -1290,6 +1332,7 @@ namespace Model
         void UpdateClusterConfigurationAsyncHelper(const Model::UpdateClusterConfigurationRequest& request, const UpdateClusterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateClusterKafkaVersionAsyncHelper(const Model::UpdateClusterKafkaVersionRequest& request, const UpdateClusterKafkaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateMonitoringAsyncHelper(const Model::UpdateMonitoringRequest& request, const UpdateMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateSecurityAsyncHelper(const Model::UpdateSecurityRequest& request, const UpdateSecurityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

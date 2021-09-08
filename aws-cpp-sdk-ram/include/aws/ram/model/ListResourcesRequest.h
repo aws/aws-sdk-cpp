@@ -122,8 +122,10 @@ namespace Model
      * <code>network-firewall:StatefulRuleGroup</code> |
      * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
      * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:ResolverQueryLogConfig</code> |
-     * <code>route53resolver:ResolverRule</code> </p>
+     * <code>route53resolver:FirewallRuleGroup</code>
+     * |<code>route53resolver:ResolverQueryLogConfig</code> |
+     * <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> |
+     * <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code> </p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
@@ -143,8 +145,10 @@ namespace Model
      * <code>network-firewall:StatefulRuleGroup</code> |
      * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
      * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:ResolverQueryLogConfig</code> |
-     * <code>route53resolver:ResolverRule</code> </p>
+     * <code>route53resolver:FirewallRuleGroup</code>
+     * |<code>route53resolver:ResolverQueryLogConfig</code> |
+     * <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> |
+     * <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code> </p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
@@ -164,8 +168,10 @@ namespace Model
      * <code>network-firewall:StatefulRuleGroup</code> |
      * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
      * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:ResolverQueryLogConfig</code> |
-     * <code>route53resolver:ResolverRule</code> </p>
+     * <code>route53resolver:FirewallRuleGroup</code>
+     * |<code>route53resolver:ResolverQueryLogConfig</code> |
+     * <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> |
+     * <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code> </p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
@@ -185,8 +191,10 @@ namespace Model
      * <code>network-firewall:StatefulRuleGroup</code> |
      * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
      * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:ResolverQueryLogConfig</code> |
-     * <code>route53resolver:ResolverRule</code> </p>
+     * <code>route53resolver:FirewallRuleGroup</code>
+     * |<code>route53resolver:ResolverQueryLogConfig</code> |
+     * <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> |
+     * <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code> </p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
@@ -206,8 +214,10 @@ namespace Model
      * <code>network-firewall:StatefulRuleGroup</code> |
      * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
      * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:ResolverQueryLogConfig</code> |
-     * <code>route53resolver:ResolverRule</code> </p>
+     * <code>route53resolver:FirewallRuleGroup</code>
+     * |<code>route53resolver:ResolverQueryLogConfig</code> |
+     * <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> |
+     * <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code> </p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
@@ -227,8 +237,10 @@ namespace Model
      * <code>network-firewall:StatefulRuleGroup</code> |
      * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
      * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:ResolverQueryLogConfig</code> |
-     * <code>route53resolver:ResolverRule</code> </p>
+     * <code>route53resolver:FirewallRuleGroup</code>
+     * |<code>route53resolver:ResolverQueryLogConfig</code> |
+     * <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> |
+     * <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code> </p>
      */
     inline ListResourcesRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
@@ -248,8 +260,10 @@ namespace Model
      * <code>network-firewall:StatefulRuleGroup</code> |
      * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
      * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:ResolverQueryLogConfig</code> |
-     * <code>route53resolver:ResolverRule</code> </p>
+     * <code>route53resolver:FirewallRuleGroup</code>
+     * |<code>route53resolver:ResolverQueryLogConfig</code> |
+     * <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> |
+     * <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code> </p>
      */
     inline ListResourcesRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
@@ -269,54 +283,56 @@ namespace Model
      * <code>network-firewall:StatefulRuleGroup</code> |
      * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
      * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:ResolverQueryLogConfig</code> |
-     * <code>route53resolver:ResolverRule</code> </p>
+     * <code>route53resolver:FirewallRuleGroup</code>
+     * |<code>route53resolver:ResolverQueryLogConfig</code> |
+     * <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> |
+     * <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code> </p>
      */
     inline ListResourcesRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline ListResourcesRequest& WithResourceArns(const Aws::Vector<Aws::String>& value) { SetResourceArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline ListResourcesRequest& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline ListResourcesRequest& AddResourceArns(const Aws::String& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline ListResourcesRequest& AddResourceArns(Aws::String&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline ListResourcesRequest& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 

@@ -123,58 +123,82 @@ namespace Model
 
 
     /**
-     * <p>The associated entity. For resource associations, this is the ARN of the
-     * resource. For principal associations, this is the ID of an AWS account or the
-     * ARN of an OU or organization from AWS Organizations.</p>
+     * <p>The associated entity. For resource associations, this is the Amazon Resource
+     * Name (ARN) of the resource. For principal associations, this is one of the
+     * following:</p> <ul> <li> <p>An Amazon Web Services account ID</p> </li> <li>
+     * <p>An ARN of an organization in Organizations</p> </li> <li> <p>An ARN of an
+     * organizational unit (OU) in Organizations</p> </li> <li> <p>An ARN of an IAM
+     * role</p> </li> <li> <p>An ARN of an IAM user</p> </li> </ul>
      */
     inline const Aws::String& GetAssociatedEntity() const{ return m_associatedEntity; }
 
     /**
-     * <p>The associated entity. For resource associations, this is the ARN of the
-     * resource. For principal associations, this is the ID of an AWS account or the
-     * ARN of an OU or organization from AWS Organizations.</p>
+     * <p>The associated entity. For resource associations, this is the Amazon Resource
+     * Name (ARN) of the resource. For principal associations, this is one of the
+     * following:</p> <ul> <li> <p>An Amazon Web Services account ID</p> </li> <li>
+     * <p>An ARN of an organization in Organizations</p> </li> <li> <p>An ARN of an
+     * organizational unit (OU) in Organizations</p> </li> <li> <p>An ARN of an IAM
+     * role</p> </li> <li> <p>An ARN of an IAM user</p> </li> </ul>
      */
     inline bool AssociatedEntityHasBeenSet() const { return m_associatedEntityHasBeenSet; }
 
     /**
-     * <p>The associated entity. For resource associations, this is the ARN of the
-     * resource. For principal associations, this is the ID of an AWS account or the
-     * ARN of an OU or organization from AWS Organizations.</p>
+     * <p>The associated entity. For resource associations, this is the Amazon Resource
+     * Name (ARN) of the resource. For principal associations, this is one of the
+     * following:</p> <ul> <li> <p>An Amazon Web Services account ID</p> </li> <li>
+     * <p>An ARN of an organization in Organizations</p> </li> <li> <p>An ARN of an
+     * organizational unit (OU) in Organizations</p> </li> <li> <p>An ARN of an IAM
+     * role</p> </li> <li> <p>An ARN of an IAM user</p> </li> </ul>
      */
     inline void SetAssociatedEntity(const Aws::String& value) { m_associatedEntityHasBeenSet = true; m_associatedEntity = value; }
 
     /**
-     * <p>The associated entity. For resource associations, this is the ARN of the
-     * resource. For principal associations, this is the ID of an AWS account or the
-     * ARN of an OU or organization from AWS Organizations.</p>
+     * <p>The associated entity. For resource associations, this is the Amazon Resource
+     * Name (ARN) of the resource. For principal associations, this is one of the
+     * following:</p> <ul> <li> <p>An Amazon Web Services account ID</p> </li> <li>
+     * <p>An ARN of an organization in Organizations</p> </li> <li> <p>An ARN of an
+     * organizational unit (OU) in Organizations</p> </li> <li> <p>An ARN of an IAM
+     * role</p> </li> <li> <p>An ARN of an IAM user</p> </li> </ul>
      */
     inline void SetAssociatedEntity(Aws::String&& value) { m_associatedEntityHasBeenSet = true; m_associatedEntity = std::move(value); }
 
     /**
-     * <p>The associated entity. For resource associations, this is the ARN of the
-     * resource. For principal associations, this is the ID of an AWS account or the
-     * ARN of an OU or organization from AWS Organizations.</p>
+     * <p>The associated entity. For resource associations, this is the Amazon Resource
+     * Name (ARN) of the resource. For principal associations, this is one of the
+     * following:</p> <ul> <li> <p>An Amazon Web Services account ID</p> </li> <li>
+     * <p>An ARN of an organization in Organizations</p> </li> <li> <p>An ARN of an
+     * organizational unit (OU) in Organizations</p> </li> <li> <p>An ARN of an IAM
+     * role</p> </li> <li> <p>An ARN of an IAM user</p> </li> </ul>
      */
     inline void SetAssociatedEntity(const char* value) { m_associatedEntityHasBeenSet = true; m_associatedEntity.assign(value); }
 
     /**
-     * <p>The associated entity. For resource associations, this is the ARN of the
-     * resource. For principal associations, this is the ID of an AWS account or the
-     * ARN of an OU or organization from AWS Organizations.</p>
+     * <p>The associated entity. For resource associations, this is the Amazon Resource
+     * Name (ARN) of the resource. For principal associations, this is one of the
+     * following:</p> <ul> <li> <p>An Amazon Web Services account ID</p> </li> <li>
+     * <p>An ARN of an organization in Organizations</p> </li> <li> <p>An ARN of an
+     * organizational unit (OU) in Organizations</p> </li> <li> <p>An ARN of an IAM
+     * role</p> </li> <li> <p>An ARN of an IAM user</p> </li> </ul>
      */
     inline ResourceShareAssociation& WithAssociatedEntity(const Aws::String& value) { SetAssociatedEntity(value); return *this;}
 
     /**
-     * <p>The associated entity. For resource associations, this is the ARN of the
-     * resource. For principal associations, this is the ID of an AWS account or the
-     * ARN of an OU or organization from AWS Organizations.</p>
+     * <p>The associated entity. For resource associations, this is the Amazon Resource
+     * Name (ARN) of the resource. For principal associations, this is one of the
+     * following:</p> <ul> <li> <p>An Amazon Web Services account ID</p> </li> <li>
+     * <p>An ARN of an organization in Organizations</p> </li> <li> <p>An ARN of an
+     * organizational unit (OU) in Organizations</p> </li> <li> <p>An ARN of an IAM
+     * role</p> </li> <li> <p>An ARN of an IAM user</p> </li> </ul>
      */
     inline ResourceShareAssociation& WithAssociatedEntity(Aws::String&& value) { SetAssociatedEntity(std::move(value)); return *this;}
 
     /**
-     * <p>The associated entity. For resource associations, this is the ARN of the
-     * resource. For principal associations, this is the ID of an AWS account or the
-     * ARN of an OU or organization from AWS Organizations.</p>
+     * <p>The associated entity. For resource associations, this is the Amazon Resource
+     * Name (ARN) of the resource. For principal associations, this is one of the
+     * following:</p> <ul> <li> <p>An Amazon Web Services account ID</p> </li> <li>
+     * <p>An ARN of an organization in Organizations</p> </li> <li> <p>An ARN of an
+     * organizational unit (OU) in Organizations</p> </li> <li> <p>An ARN of an IAM
+     * role</p> </li> <li> <p>An ARN of an IAM user</p> </li> </ul>
      */
     inline ResourceShareAssociation& WithAssociatedEntity(const char* value) { SetAssociatedEntity(value); return *this;}
 
@@ -345,26 +369,30 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the principal belongs to the same AWS organization as the
-     * AWS account that owns the resource share.</p>
+     * <p>Indicates whether the principal belongs to the same organization in
+     * Organizations as the Amazon Web Services account that owns the resource
+     * share.</p>
      */
     inline bool GetExternal() const{ return m_external; }
 
     /**
-     * <p>Indicates whether the principal belongs to the same AWS organization as the
-     * AWS account that owns the resource share.</p>
+     * <p>Indicates whether the principal belongs to the same organization in
+     * Organizations as the Amazon Web Services account that owns the resource
+     * share.</p>
      */
     inline bool ExternalHasBeenSet() const { return m_externalHasBeenSet; }
 
     /**
-     * <p>Indicates whether the principal belongs to the same AWS organization as the
-     * AWS account that owns the resource share.</p>
+     * <p>Indicates whether the principal belongs to the same organization in
+     * Organizations as the Amazon Web Services account that owns the resource
+     * share.</p>
      */
     inline void SetExternal(bool value) { m_externalHasBeenSet = true; m_external = value; }
 
     /**
-     * <p>Indicates whether the principal belongs to the same AWS organization as the
-     * AWS account that owns the resource share.</p>
+     * <p>Indicates whether the principal belongs to the same organization in
+     * Organizations as the Amazon Web Services account that owns the resource
+     * share.</p>
      */
     inline ResourceShareAssociation& WithExternal(bool value) { SetExternal(value); return *this;}
 

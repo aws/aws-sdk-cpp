@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a principal for use with AWS Resource Access Manager.</p><p><h3>See
+   * <p>Describes a principal for use with Resource Access Manager.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/Principal">AWS API
    * Reference</a></p>
@@ -184,26 +184,30 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the principal belongs to the same AWS organization as the
-     * AWS account that owns the resource share.</p>
+     * <p>Indicates whether the principal belongs to the same organization in
+     * Organizations as the Amazon Web Services account that owns the resource
+     * share.</p>
      */
     inline bool GetExternal() const{ return m_external; }
 
     /**
-     * <p>Indicates whether the principal belongs to the same AWS organization as the
-     * AWS account that owns the resource share.</p>
+     * <p>Indicates whether the principal belongs to the same organization in
+     * Organizations as the Amazon Web Services account that owns the resource
+     * share.</p>
      */
     inline bool ExternalHasBeenSet() const { return m_externalHasBeenSet; }
 
     /**
-     * <p>Indicates whether the principal belongs to the same AWS organization as the
-     * AWS account that owns the resource share.</p>
+     * <p>Indicates whether the principal belongs to the same organization in
+     * Organizations as the Amazon Web Services account that owns the resource
+     * share.</p>
      */
     inline void SetExternal(bool value) { m_externalHasBeenSet = true; m_external = value; }
 
     /**
-     * <p>Indicates whether the principal belongs to the same AWS organization as the
-     * AWS account that owns the resource share.</p>
+     * <p>Indicates whether the principal belongs to the same organization in
+     * Organizations as the Amazon Web Services account that owns the resource
+     * share.</p>
      */
     inline Principal& WithExternal(bool value) { SetExternal(value); return *this;}
 

@@ -164,50 +164,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the resource group. This value is returned only if the resource is
-     * a resource group.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource group. This value is returned
+     * only if the resource is a resource group.</p>
      */
     inline const Aws::String& GetResourceGroupArn() const{ return m_resourceGroupArn; }
 
     /**
-     * <p>The ARN of the resource group. This value is returned only if the resource is
-     * a resource group.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource group. This value is returned
+     * only if the resource is a resource group.</p>
      */
     inline bool ResourceGroupArnHasBeenSet() const { return m_resourceGroupArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the resource group. This value is returned only if the resource is
-     * a resource group.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource group. This value is returned
+     * only if the resource is a resource group.</p>
      */
     inline void SetResourceGroupArn(const Aws::String& value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn = value; }
 
     /**
-     * <p>The ARN of the resource group. This value is returned only if the resource is
-     * a resource group.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource group. This value is returned
+     * only if the resource is a resource group.</p>
      */
     inline void SetResourceGroupArn(Aws::String&& value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn = std::move(value); }
 
     /**
-     * <p>The ARN of the resource group. This value is returned only if the resource is
-     * a resource group.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource group. This value is returned
+     * only if the resource is a resource group.</p>
      */
     inline void SetResourceGroupArn(const char* value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn.assign(value); }
 
     /**
-     * <p>The ARN of the resource group. This value is returned only if the resource is
-     * a resource group.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource group. This value is returned
+     * only if the resource is a resource group.</p>
      */
     inline Resource& WithResourceGroupArn(const Aws::String& value) { SetResourceGroupArn(value); return *this;}
 
     /**
-     * <p>The ARN of the resource group. This value is returned only if the resource is
-     * a resource group.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource group. This value is returned
+     * only if the resource is a resource group.</p>
      */
     inline Resource& WithResourceGroupArn(Aws::String&& value) { SetResourceGroupArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the resource group. This value is returned only if the resource is
-     * a resource group.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource group. This value is returned
+     * only if the resource is a resource group.</p>
      */
     inline Resource& WithResourceGroupArn(const char* value) { SetResourceGroupArn(value); return *this;}
 

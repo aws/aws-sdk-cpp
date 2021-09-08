@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The shareable resource types supported by AWS RAM.</p>
+     * <p>The shareable resource types supported by RAM.</p>
      */
     inline const Aws::Vector<ServiceNameAndResourceType>& GetResourceTypes() const{ return m_resourceTypes; }
 
     /**
-     * <p>The shareable resource types supported by AWS RAM.</p>
+     * <p>The shareable resource types supported by RAM.</p>
      */
     inline void SetResourceTypes(const Aws::Vector<ServiceNameAndResourceType>& value) { m_resourceTypes = value; }
 
     /**
-     * <p>The shareable resource types supported by AWS RAM.</p>
+     * <p>The shareable resource types supported by RAM.</p>
      */
     inline void SetResourceTypes(Aws::Vector<ServiceNameAndResourceType>&& value) { m_resourceTypes = std::move(value); }
 
     /**
-     * <p>The shareable resource types supported by AWS RAM.</p>
+     * <p>The shareable resource types supported by RAM.</p>
      */
     inline ListResourceTypesResult& WithResourceTypes(const Aws::Vector<ServiceNameAndResourceType>& value) { SetResourceTypes(value); return *this;}
 
     /**
-     * <p>The shareable resource types supported by AWS RAM.</p>
+     * <p>The shareable resource types supported by RAM.</p>
      */
     inline ListResourceTypesResult& WithResourceTypes(Aws::Vector<ServiceNameAndResourceType>&& value) { SetResourceTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The shareable resource types supported by AWS RAM.</p>
+     * <p>The shareable resource types supported by RAM.</p>
      */
     inline ListResourceTypesResult& AddResourceTypes(const ServiceNameAndResourceType& value) { m_resourceTypes.push_back(value); return *this; }
 
     /**
-     * <p>The shareable resource types supported by AWS RAM.</p>
+     * <p>The shareable resource types supported by RAM.</p>
      */
     inline ListResourceTypesResult& AddResourceTypes(ServiceNameAndResourceType&& value) { m_resourceTypes.push_back(std::move(value)); return *this; }
 

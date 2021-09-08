@@ -76,120 +76,174 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources to associate with the
-     * resource share.</p>
+     * <p>The ARNs of the resources to associate with the resource share.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources to associate with the
-     * resource share.</p>
+     * <p>The ARNs of the resources to associate with the resource share.</p>
      */
     inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources to associate with the
-     * resource share.</p>
+     * <p>The ARNs of the resources to associate with the resource share.</p>
      */
     inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources to associate with the
-     * resource share.</p>
+     * <p>The ARNs of the resources to associate with the resource share.</p>
      */
     inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources to associate with the
-     * resource share.</p>
+     * <p>The ARNs of the resources to associate with the resource share.</p>
      */
     inline CreateResourceShareRequest& WithResourceArns(const Aws::Vector<Aws::String>& value) { SetResourceArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources to associate with the
-     * resource share.</p>
+     * <p>The ARNs of the resources to associate with the resource share.</p>
      */
     inline CreateResourceShareRequest& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources to associate with the
-     * resource share.</p>
+     * <p>The ARNs of the resources to associate with the resource share.</p>
      */
     inline CreateResourceShareRequest& AddResourceArns(const Aws::String& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources to associate with the
-     * resource share.</p>
+     * <p>The ARNs of the resources to associate with the resource share.</p>
      */
     inline CreateResourceShareRequest& AddResourceArns(Aws::String&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources to associate with the
-     * resource share.</p>
+     * <p>The ARNs of the resources to associate with the resource share.</p>
      */
     inline CreateResourceShareRequest& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
 
     /**
-     * <p>The principals to associate with the resource share. The possible values are
-     * IDs of AWS accounts, the ARN of an OU or organization from AWS
-     * Organizations.</p>
+     * <p>The principals to associate with the resource share. The possible values
+     * are:</p> <ul> <li> <p>An Amazon Web Services account ID</p> </li> <li> <p>An
+     * Amazon Resource Name (ARN) of an organization in Organizations</p> </li> <li>
+     * <p>An ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>An
+     * ARN of an IAM role</p> </li> <li> <p>An ARN of an IAM user</p> </li> </ul>
+     *  <p>Not all resource types can be shared with IAM roles and IAM users. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing
+     * with IAM roles and IAM users</a> in the <i>Resource Access Manager User
+     * Guide</i>.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetPrincipals() const{ return m_principals; }
 
     /**
-     * <p>The principals to associate with the resource share. The possible values are
-     * IDs of AWS accounts, the ARN of an OU or organization from AWS
-     * Organizations.</p>
+     * <p>The principals to associate with the resource share. The possible values
+     * are:</p> <ul> <li> <p>An Amazon Web Services account ID</p> </li> <li> <p>An
+     * Amazon Resource Name (ARN) of an organization in Organizations</p> </li> <li>
+     * <p>An ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>An
+     * ARN of an IAM role</p> </li> <li> <p>An ARN of an IAM user</p> </li> </ul>
+     *  <p>Not all resource types can be shared with IAM roles and IAM users. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing
+     * with IAM roles and IAM users</a> in the <i>Resource Access Manager User
+     * Guide</i>.</p> 
      */
     inline bool PrincipalsHasBeenSet() const { return m_principalsHasBeenSet; }
 
     /**
-     * <p>The principals to associate with the resource share. The possible values are
-     * IDs of AWS accounts, the ARN of an OU or organization from AWS
-     * Organizations.</p>
+     * <p>The principals to associate with the resource share. The possible values
+     * are:</p> <ul> <li> <p>An Amazon Web Services account ID</p> </li> <li> <p>An
+     * Amazon Resource Name (ARN) of an organization in Organizations</p> </li> <li>
+     * <p>An ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>An
+     * ARN of an IAM role</p> </li> <li> <p>An ARN of an IAM user</p> </li> </ul>
+     *  <p>Not all resource types can be shared with IAM roles and IAM users. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing
+     * with IAM roles and IAM users</a> in the <i>Resource Access Manager User
+     * Guide</i>.</p> 
      */
     inline void SetPrincipals(const Aws::Vector<Aws::String>& value) { m_principalsHasBeenSet = true; m_principals = value; }
 
     /**
-     * <p>The principals to associate with the resource share. The possible values are
-     * IDs of AWS accounts, the ARN of an OU or organization from AWS
-     * Organizations.</p>
+     * <p>The principals to associate with the resource share. The possible values
+     * are:</p> <ul> <li> <p>An Amazon Web Services account ID</p> </li> <li> <p>An
+     * Amazon Resource Name (ARN) of an organization in Organizations</p> </li> <li>
+     * <p>An ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>An
+     * ARN of an IAM role</p> </li> <li> <p>An ARN of an IAM user</p> </li> </ul>
+     *  <p>Not all resource types can be shared with IAM roles and IAM users. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing
+     * with IAM roles and IAM users</a> in the <i>Resource Access Manager User
+     * Guide</i>.</p> 
      */
     inline void SetPrincipals(Aws::Vector<Aws::String>&& value) { m_principalsHasBeenSet = true; m_principals = std::move(value); }
 
     /**
-     * <p>The principals to associate with the resource share. The possible values are
-     * IDs of AWS accounts, the ARN of an OU or organization from AWS
-     * Organizations.</p>
+     * <p>The principals to associate with the resource share. The possible values
+     * are:</p> <ul> <li> <p>An Amazon Web Services account ID</p> </li> <li> <p>An
+     * Amazon Resource Name (ARN) of an organization in Organizations</p> </li> <li>
+     * <p>An ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>An
+     * ARN of an IAM role</p> </li> <li> <p>An ARN of an IAM user</p> </li> </ul>
+     *  <p>Not all resource types can be shared with IAM roles and IAM users. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing
+     * with IAM roles and IAM users</a> in the <i>Resource Access Manager User
+     * Guide</i>.</p> 
      */
     inline CreateResourceShareRequest& WithPrincipals(const Aws::Vector<Aws::String>& value) { SetPrincipals(value); return *this;}
 
     /**
-     * <p>The principals to associate with the resource share. The possible values are
-     * IDs of AWS accounts, the ARN of an OU or organization from AWS
-     * Organizations.</p>
+     * <p>The principals to associate with the resource share. The possible values
+     * are:</p> <ul> <li> <p>An Amazon Web Services account ID</p> </li> <li> <p>An
+     * Amazon Resource Name (ARN) of an organization in Organizations</p> </li> <li>
+     * <p>An ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>An
+     * ARN of an IAM role</p> </li> <li> <p>An ARN of an IAM user</p> </li> </ul>
+     *  <p>Not all resource types can be shared with IAM roles and IAM users. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing
+     * with IAM roles and IAM users</a> in the <i>Resource Access Manager User
+     * Guide</i>.</p> 
      */
     inline CreateResourceShareRequest& WithPrincipals(Aws::Vector<Aws::String>&& value) { SetPrincipals(std::move(value)); return *this;}
 
     /**
-     * <p>The principals to associate with the resource share. The possible values are
-     * IDs of AWS accounts, the ARN of an OU or organization from AWS
-     * Organizations.</p>
+     * <p>The principals to associate with the resource share. The possible values
+     * are:</p> <ul> <li> <p>An Amazon Web Services account ID</p> </li> <li> <p>An
+     * Amazon Resource Name (ARN) of an organization in Organizations</p> </li> <li>
+     * <p>An ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>An
+     * ARN of an IAM role</p> </li> <li> <p>An ARN of an IAM user</p> </li> </ul>
+     *  <p>Not all resource types can be shared with IAM roles and IAM users. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing
+     * with IAM roles and IAM users</a> in the <i>Resource Access Manager User
+     * Guide</i>.</p> 
      */
     inline CreateResourceShareRequest& AddPrincipals(const Aws::String& value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
 
     /**
-     * <p>The principals to associate with the resource share. The possible values are
-     * IDs of AWS accounts, the ARN of an OU or organization from AWS
-     * Organizations.</p>
+     * <p>The principals to associate with the resource share. The possible values
+     * are:</p> <ul> <li> <p>An Amazon Web Services account ID</p> </li> <li> <p>An
+     * Amazon Resource Name (ARN) of an organization in Organizations</p> </li> <li>
+     * <p>An ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>An
+     * ARN of an IAM role</p> </li> <li> <p>An ARN of an IAM user</p> </li> </ul>
+     *  <p>Not all resource types can be shared with IAM roles and IAM users. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing
+     * with IAM roles and IAM users</a> in the <i>Resource Access Manager User
+     * Guide</i>.</p> 
      */
     inline CreateResourceShareRequest& AddPrincipals(Aws::String&& value) { m_principalsHasBeenSet = true; m_principals.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The principals to associate with the resource share. The possible values are
-     * IDs of AWS accounts, the ARN of an OU or organization from AWS
-     * Organizations.</p>
+     * <p>The principals to associate with the resource share. The possible values
+     * are:</p> <ul> <li> <p>An Amazon Web Services account ID</p> </li> <li> <p>An
+     * Amazon Resource Name (ARN) of an organization in Organizations</p> </li> <li>
+     * <p>An ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>An
+     * ARN of an IAM role</p> </li> <li> <p>An ARN of an IAM user</p> </li> </ul>
+     *  <p>Not all resource types can be shared with IAM roles and IAM users. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing
+     * with IAM roles and IAM users</a> in the <i>Resource Access Manager User
+     * Guide</i>.</p> 
      */
     inline CreateResourceShareRequest& AddPrincipals(const char* value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
 
@@ -236,26 +290,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether principals outside your AWS organization can be associated
-     * with a resource share.</p>
+     * <p>Indicates whether principals outside your organization in Organizations can
+     * be associated with a resource share.</p>
      */
     inline bool GetAllowExternalPrincipals() const{ return m_allowExternalPrincipals; }
 
     /**
-     * <p>Indicates whether principals outside your AWS organization can be associated
-     * with a resource share.</p>
+     * <p>Indicates whether principals outside your organization in Organizations can
+     * be associated with a resource share.</p>
      */
     inline bool AllowExternalPrincipalsHasBeenSet() const { return m_allowExternalPrincipalsHasBeenSet; }
 
     /**
-     * <p>Indicates whether principals outside your AWS organization can be associated
-     * with a resource share.</p>
+     * <p>Indicates whether principals outside your organization in Organizations can
+     * be associated with a resource share.</p>
      */
     inline void SetAllowExternalPrincipals(bool value) { m_allowExternalPrincipalsHasBeenSet = true; m_allowExternalPrincipals = value; }
 
     /**
-     * <p>Indicates whether principals outside your AWS organization can be associated
-     * with a resource share.</p>
+     * <p>Indicates whether principals outside your organization in Organizations can
+     * be associated with a resource share.</p>
      */
     inline CreateResourceShareRequest& WithAllowExternalPrincipals(bool value) { SetAllowExternalPrincipals(value); return *this;}
 
@@ -310,65 +364,83 @@ namespace Model
 
 
     /**
-     * <p>The ARNs of the permissions to associate with the resource share. If you do
-     * not specify an ARN for the permission, AWS RAM automatically attaches the
-     * default version of the permission for each resource type.</p>
+     * <p>The Amazon Resource Names (ARNs) of the permissions to associate with the
+     * resource share. If you do not specify an ARN for the permission, RAM
+     * automatically attaches the default version of the permission for each resource
+     * type. Only one permission can be associated with each resource type in a
+     * resource share.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPermissionArns() const{ return m_permissionArns; }
 
     /**
-     * <p>The ARNs of the permissions to associate with the resource share. If you do
-     * not specify an ARN for the permission, AWS RAM automatically attaches the
-     * default version of the permission for each resource type.</p>
+     * <p>The Amazon Resource Names (ARNs) of the permissions to associate with the
+     * resource share. If you do not specify an ARN for the permission, RAM
+     * automatically attaches the default version of the permission for each resource
+     * type. Only one permission can be associated with each resource type in a
+     * resource share.</p>
      */
     inline bool PermissionArnsHasBeenSet() const { return m_permissionArnsHasBeenSet; }
 
     /**
-     * <p>The ARNs of the permissions to associate with the resource share. If you do
-     * not specify an ARN for the permission, AWS RAM automatically attaches the
-     * default version of the permission for each resource type.</p>
+     * <p>The Amazon Resource Names (ARNs) of the permissions to associate with the
+     * resource share. If you do not specify an ARN for the permission, RAM
+     * automatically attaches the default version of the permission for each resource
+     * type. Only one permission can be associated with each resource type in a
+     * resource share.</p>
      */
     inline void SetPermissionArns(const Aws::Vector<Aws::String>& value) { m_permissionArnsHasBeenSet = true; m_permissionArns = value; }
 
     /**
-     * <p>The ARNs of the permissions to associate with the resource share. If you do
-     * not specify an ARN for the permission, AWS RAM automatically attaches the
-     * default version of the permission for each resource type.</p>
+     * <p>The Amazon Resource Names (ARNs) of the permissions to associate with the
+     * resource share. If you do not specify an ARN for the permission, RAM
+     * automatically attaches the default version of the permission for each resource
+     * type. Only one permission can be associated with each resource type in a
+     * resource share.</p>
      */
     inline void SetPermissionArns(Aws::Vector<Aws::String>&& value) { m_permissionArnsHasBeenSet = true; m_permissionArns = std::move(value); }
 
     /**
-     * <p>The ARNs of the permissions to associate with the resource share. If you do
-     * not specify an ARN for the permission, AWS RAM automatically attaches the
-     * default version of the permission for each resource type.</p>
+     * <p>The Amazon Resource Names (ARNs) of the permissions to associate with the
+     * resource share. If you do not specify an ARN for the permission, RAM
+     * automatically attaches the default version of the permission for each resource
+     * type. Only one permission can be associated with each resource type in a
+     * resource share.</p>
      */
     inline CreateResourceShareRequest& WithPermissionArns(const Aws::Vector<Aws::String>& value) { SetPermissionArns(value); return *this;}
 
     /**
-     * <p>The ARNs of the permissions to associate with the resource share. If you do
-     * not specify an ARN for the permission, AWS RAM automatically attaches the
-     * default version of the permission for each resource type.</p>
+     * <p>The Amazon Resource Names (ARNs) of the permissions to associate with the
+     * resource share. If you do not specify an ARN for the permission, RAM
+     * automatically attaches the default version of the permission for each resource
+     * type. Only one permission can be associated with each resource type in a
+     * resource share.</p>
      */
     inline CreateResourceShareRequest& WithPermissionArns(Aws::Vector<Aws::String>&& value) { SetPermissionArns(std::move(value)); return *this;}
 
     /**
-     * <p>The ARNs of the permissions to associate with the resource share. If you do
-     * not specify an ARN for the permission, AWS RAM automatically attaches the
-     * default version of the permission for each resource type.</p>
+     * <p>The Amazon Resource Names (ARNs) of the permissions to associate with the
+     * resource share. If you do not specify an ARN for the permission, RAM
+     * automatically attaches the default version of the permission for each resource
+     * type. Only one permission can be associated with each resource type in a
+     * resource share.</p>
      */
     inline CreateResourceShareRequest& AddPermissionArns(const Aws::String& value) { m_permissionArnsHasBeenSet = true; m_permissionArns.push_back(value); return *this; }
 
     /**
-     * <p>The ARNs of the permissions to associate with the resource share. If you do
-     * not specify an ARN for the permission, AWS RAM automatically attaches the
-     * default version of the permission for each resource type.</p>
+     * <p>The Amazon Resource Names (ARNs) of the permissions to associate with the
+     * resource share. If you do not specify an ARN for the permission, RAM
+     * automatically attaches the default version of the permission for each resource
+     * type. Only one permission can be associated with each resource type in a
+     * resource share.</p>
      */
     inline CreateResourceShareRequest& AddPermissionArns(Aws::String&& value) { m_permissionArnsHasBeenSet = true; m_permissionArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The ARNs of the permissions to associate with the resource share. If you do
-     * not specify an ARN for the permission, AWS RAM automatically attaches the
-     * default version of the permission for each resource type.</p>
+     * <p>The Amazon Resource Names (ARNs) of the permissions to associate with the
+     * resource share. If you do not specify an ARN for the permission, RAM
+     * automatically attaches the default version of the permission for each resource
+     * type. Only one permission can be associated with each resource type in a
+     * resource share.</p>
      */
     inline CreateResourceShareRequest& AddPermissionArns(const char* value) { m_permissionArnsHasBeenSet = true; m_permissionArns.push_back(value); return *this; }
 

@@ -74,42 +74,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the permission to disassociate from the resource share.</p>
+     * <p>The Amazon Resource Name (ARN) of the permission to disassociate from the
+     * resource share.</p>
      */
     inline const Aws::String& GetPermissionArn() const{ return m_permissionArn; }
 
     /**
-     * <p>The ARN of the permission to disassociate from the resource share.</p>
+     * <p>The Amazon Resource Name (ARN) of the permission to disassociate from the
+     * resource share.</p>
      */
     inline bool PermissionArnHasBeenSet() const { return m_permissionArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the permission to disassociate from the resource share.</p>
+     * <p>The Amazon Resource Name (ARN) of the permission to disassociate from the
+     * resource share.</p>
      */
     inline void SetPermissionArn(const Aws::String& value) { m_permissionArnHasBeenSet = true; m_permissionArn = value; }
 
     /**
-     * <p>The ARN of the permission to disassociate from the resource share.</p>
+     * <p>The Amazon Resource Name (ARN) of the permission to disassociate from the
+     * resource share.</p>
      */
     inline void SetPermissionArn(Aws::String&& value) { m_permissionArnHasBeenSet = true; m_permissionArn = std::move(value); }
 
     /**
-     * <p>The ARN of the permission to disassociate from the resource share.</p>
+     * <p>The Amazon Resource Name (ARN) of the permission to disassociate from the
+     * resource share.</p>
      */
     inline void SetPermissionArn(const char* value) { m_permissionArnHasBeenSet = true; m_permissionArn.assign(value); }
 
     /**
-     * <p>The ARN of the permission to disassociate from the resource share.</p>
+     * <p>The Amazon Resource Name (ARN) of the permission to disassociate from the
+     * resource share.</p>
      */
     inline DisassociateResourceSharePermissionRequest& WithPermissionArn(const Aws::String& value) { SetPermissionArn(value); return *this;}
 
     /**
-     * <p>The ARN of the permission to disassociate from the resource share.</p>
+     * <p>The Amazon Resource Name (ARN) of the permission to disassociate from the
+     * resource share.</p>
      */
     inline DisassociateResourceSharePermissionRequest& WithPermissionArn(Aws::String&& value) { SetPermissionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the permission to disassociate from the resource share.</p>
+     * <p>The Amazon Resource Name (ARN) of the permission to disassociate from the
+     * resource share.</p>
      */
     inline DisassociateResourceSharePermissionRequest& WithPermissionArn(const char* value) { SetPermissionArn(value); return *this;}
 

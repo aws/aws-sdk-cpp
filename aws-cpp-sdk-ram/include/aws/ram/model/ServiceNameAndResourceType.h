@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about the shareable resource types and the AWS services to which
-   * they belong.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the shareable resource types and the Amazon Web Services
+   * services to which they belong.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ServiceNameAndResourceType">AWS
    * API Reference</a></p>
    */
@@ -80,42 +80,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS services to which the resources belong.</p>
+     * <p>The name of the Amazon Web Services services to which the resources
+     * belong.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
-     * <p>The name of the AWS services to which the resources belong.</p>
+     * <p>The name of the Amazon Web Services services to which the resources
+     * belong.</p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS services to which the resources belong.</p>
+     * <p>The name of the Amazon Web Services services to which the resources
+     * belong.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
-     * <p>The name of the AWS services to which the resources belong.</p>
+     * <p>The name of the Amazon Web Services services to which the resources
+     * belong.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
-     * <p>The name of the AWS services to which the resources belong.</p>
+     * <p>The name of the Amazon Web Services services to which the resources
+     * belong.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
-     * <p>The name of the AWS services to which the resources belong.</p>
+     * <p>The name of the Amazon Web Services services to which the resources
+     * belong.</p>
      */
     inline ServiceNameAndResourceType& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
-     * <p>The name of the AWS services to which the resources belong.</p>
+     * <p>The name of the Amazon Web Services services to which the resources
+     * belong.</p>
      */
     inline ServiceNameAndResourceType& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS services to which the resources belong.</p>
+     * <p>The name of the Amazon Web Services services to which the resources
+     * belong.</p>
      */
     inline ServiceNameAndResourceType& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 

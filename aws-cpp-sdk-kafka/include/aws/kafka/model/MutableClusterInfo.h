@@ -11,6 +11,8 @@
 #include <aws/kafka/model/OpenMonitoring.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kafka/model/LoggingInfo.h>
+#include <aws/kafka/model/ClientAuthentication.h>
+#include <aws/kafka/model/EncryptionInfo.h>
 #include <aws/kafka/model/BrokerEBSVolumeInfo.h>
 #include <utility>
 
@@ -338,22 +340,58 @@ namespace Model
     inline MutableClusterInfo& WithKafkaVersion(const char* value) { SetKafkaVersion(value); return *this;}
 
 
-    
+    /**
+     * 
+            <p>You can configure your MSK cluster to send broker logs to
+     * different destination types. This is a container for the configuration details
+     * related to broker logs.</p>
+            
+     */
     inline const LoggingInfo& GetLoggingInfo() const{ return m_loggingInfo; }
 
-    
+    /**
+     * 
+            <p>You can configure your MSK cluster to send broker logs to
+     * different destination types. This is a container for the configuration details
+     * related to broker logs.</p>
+            
+     */
     inline bool LoggingInfoHasBeenSet() const { return m_loggingInfoHasBeenSet; }
 
-    
+    /**
+     * 
+            <p>You can configure your MSK cluster to send broker logs to
+     * different destination types. This is a container for the configuration details
+     * related to broker logs.</p>
+            
+     */
     inline void SetLoggingInfo(const LoggingInfo& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = value; }
 
-    
+    /**
+     * 
+            <p>You can configure your MSK cluster to send broker logs to
+     * different destination types. This is a container for the configuration details
+     * related to broker logs.</p>
+            
+     */
     inline void SetLoggingInfo(LoggingInfo&& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = std::move(value); }
 
-    
+    /**
+     * 
+            <p>You can configure your MSK cluster to send broker logs to
+     * different destination types. This is a container for the configuration details
+     * related to broker logs.</p>
+            
+     */
     inline MutableClusterInfo& WithLoggingInfo(const LoggingInfo& value) { SetLoggingInfo(value); return *this;}
 
-    
+    /**
+     * 
+            <p>You can configure your MSK cluster to send broker logs to
+     * different destination types. This is a container for the configuration details
+     * related to broker logs.</p>
+            
+     */
     inline MutableClusterInfo& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}
 
 
@@ -413,6 +451,92 @@ namespace Model
      */
     inline MutableClusterInfo& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
+    /**
+     * 
+            <p>Includes all client authentication information.</p>
+         
+     */
+    inline const ClientAuthentication& GetClientAuthentication() const{ return m_clientAuthentication; }
+
+    /**
+     * 
+            <p>Includes all client authentication information.</p>
+         
+     */
+    inline bool ClientAuthenticationHasBeenSet() const { return m_clientAuthenticationHasBeenSet; }
+
+    /**
+     * 
+            <p>Includes all client authentication information.</p>
+         
+     */
+    inline void SetClientAuthentication(const ClientAuthentication& value) { m_clientAuthenticationHasBeenSet = true; m_clientAuthentication = value; }
+
+    /**
+     * 
+            <p>Includes all client authentication information.</p>
+         
+     */
+    inline void SetClientAuthentication(ClientAuthentication&& value) { m_clientAuthenticationHasBeenSet = true; m_clientAuthentication = std::move(value); }
+
+    /**
+     * 
+            <p>Includes all client authentication information.</p>
+         
+     */
+    inline MutableClusterInfo& WithClientAuthentication(const ClientAuthentication& value) { SetClientAuthentication(value); return *this;}
+
+    /**
+     * 
+            <p>Includes all client authentication information.</p>
+         
+     */
+    inline MutableClusterInfo& WithClientAuthentication(ClientAuthentication&& value) { SetClientAuthentication(std::move(value)); return *this;}
+
+
+    /**
+     * 
+            <p>Includes all encryption-related information.</p>
+         
+     */
+    inline const EncryptionInfo& GetEncryptionInfo() const{ return m_encryptionInfo; }
+
+    /**
+     * 
+            <p>Includes all encryption-related information.</p>
+         
+     */
+    inline bool EncryptionInfoHasBeenSet() const { return m_encryptionInfoHasBeenSet; }
+
+    /**
+     * 
+            <p>Includes all encryption-related information.</p>
+         
+     */
+    inline void SetEncryptionInfo(const EncryptionInfo& value) { m_encryptionInfoHasBeenSet = true; m_encryptionInfo = value; }
+
+    /**
+     * 
+            <p>Includes all encryption-related information.</p>
+         
+     */
+    inline void SetEncryptionInfo(EncryptionInfo&& value) { m_encryptionInfoHasBeenSet = true; m_encryptionInfo = std::move(value); }
+
+    /**
+     * 
+            <p>Includes all encryption-related information.</p>
+         
+     */
+    inline MutableClusterInfo& WithEncryptionInfo(const EncryptionInfo& value) { SetEncryptionInfo(value); return *this;}
+
+    /**
+     * 
+            <p>Includes all encryption-related information.</p>
+         
+     */
+    inline MutableClusterInfo& WithEncryptionInfo(EncryptionInfo&& value) { SetEncryptionInfo(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<BrokerEBSVolumeInfo> m_brokerEBSVolumeInfo;
@@ -438,6 +562,12 @@ namespace Model
 
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
+    ClientAuthentication m_clientAuthentication;
+    bool m_clientAuthenticationHasBeenSet;
+
+    EncryptionInfo m_encryptionInfo;
+    bool m_encryptionInfoHasBeenSet;
   };
 
 } // namespace Model
