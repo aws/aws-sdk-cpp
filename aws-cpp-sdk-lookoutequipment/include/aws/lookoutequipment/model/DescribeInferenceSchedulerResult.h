@@ -472,44 +472,44 @@ namespace Model
 
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt inference scheduler
+     * data by Amazon Lookout for Equipment. </p>
      */
     inline const Aws::String& GetServerSideKmsKeyId() const{ return m_serverSideKmsKeyId; }
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt inference scheduler
+     * data by Amazon Lookout for Equipment. </p>
      */
     inline void SetServerSideKmsKeyId(const Aws::String& value) { m_serverSideKmsKeyId = value; }
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt inference scheduler
+     * data by Amazon Lookout for Equipment. </p>
      */
     inline void SetServerSideKmsKeyId(Aws::String&& value) { m_serverSideKmsKeyId = std::move(value); }
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt inference scheduler
+     * data by Amazon Lookout for Equipment. </p>
      */
     inline void SetServerSideKmsKeyId(const char* value) { m_serverSideKmsKeyId.assign(value); }
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt inference scheduler
+     * data by Amazon Lookout for Equipment. </p>
      */
     inline DescribeInferenceSchedulerResult& WithServerSideKmsKeyId(const Aws::String& value) { SetServerSideKmsKeyId(value); return *this;}
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt inference scheduler
+     * data by Amazon Lookout for Equipment. </p>
      */
     inline DescribeInferenceSchedulerResult& WithServerSideKmsKeyId(Aws::String&& value) { SetServerSideKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt inference scheduler
+     * data by Amazon Lookout for Equipment. </p>
      */
     inline DescribeInferenceSchedulerResult& WithServerSideKmsKeyId(const char* value) { SetServerSideKmsKeyId(value); return *this;}
 

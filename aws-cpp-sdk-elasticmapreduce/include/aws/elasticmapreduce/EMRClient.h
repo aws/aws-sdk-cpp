@@ -475,9 +475,10 @@ namespace Model
         virtual void AddJobFlowStepsAsync(const Model::AddJobFlowStepsRequest& request, const AddJobFlowStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds tags to an Amazon EMR resource. Tags make it easier to associate
-         * clusters in various ways, such as grouping clusters to track your Amazon EMR
-         * resource allocation costs. For more information, see <a
+         * <p>Adds tags to an Amazon EMR resource, such as a cluster or an Amazon EMR
+         * Studio. Tags make it easier to associate resources in various ways, such as
+         * grouping clusters to track your Amazon EMR resource allocation costs. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
          * Clusters</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddTags">AWS
@@ -486,9 +487,10 @@ namespace Model
         virtual Model::AddTagsOutcome AddTags(const Model::AddTagsRequest& request) const;
 
         /**
-         * <p>Adds tags to an Amazon EMR resource. Tags make it easier to associate
-         * clusters in various ways, such as grouping clusters to track your Amazon EMR
-         * resource allocation costs. For more information, see <a
+         * <p>Adds tags to an Amazon EMR resource, such as a cluster or an Amazon EMR
+         * Studio. Tags make it easier to associate resources in various ways, such as
+         * grouping clusters to track your Amazon EMR resource allocation costs. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
          * Clusters</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddTags">AWS
@@ -499,9 +501,10 @@ namespace Model
         virtual Model::AddTagsOutcomeCallable AddTagsCallable(const Model::AddTagsRequest& request) const;
 
         /**
-         * <p>Adds tags to an Amazon EMR resource. Tags make it easier to associate
-         * clusters in various ways, such as grouping clusters to track your Amazon EMR
-         * resource allocation costs. For more information, see <a
+         * <p>Adds tags to an Amazon EMR resource, such as a cluster or an Amazon EMR
+         * Studio. Tags make it easier to associate resources in various ways, such as
+         * grouping clusters to track your Amazon EMR resource allocation costs. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
          * Clusters</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddTags">AWS
@@ -616,7 +619,12 @@ namespace Model
         /**
          * <p>Maps a user or group to the Amazon EMR Studio specified by
          * <code>StudioId</code>, and applies a session policy to refine Studio permissions
-         * for that user or group.</p><p><h3>See Also:</h3>   <a
+         * for that user or group. Use <code>CreateStudioSessionMapping</code> to assign
+         * users to a Studio when you use Amazon Web Services SSO authentication. For
+         * instructions on how to assign users to a Studio when you use IAM authentication,
+         * see <a
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-manage-users.html#emr-studio-assign-users-groups">Assign
+         * a user or group to your EMR Studio</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudioSessionMapping">AWS
          * API Reference</a></p>
          */
@@ -625,7 +633,12 @@ namespace Model
         /**
          * <p>Maps a user or group to the Amazon EMR Studio specified by
          * <code>StudioId</code>, and applies a session policy to refine Studio permissions
-         * for that user or group.</p><p><h3>See Also:</h3>   <a
+         * for that user or group. Use <code>CreateStudioSessionMapping</code> to assign
+         * users to a Studio when you use Amazon Web Services SSO authentication. For
+         * instructions on how to assign users to a Studio when you use IAM authentication,
+         * see <a
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-manage-users.html#emr-studio-assign-users-groups">Assign
+         * a user or group to your EMR Studio</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudioSessionMapping">AWS
          * API Reference</a></p>
          *
@@ -636,7 +649,12 @@ namespace Model
         /**
          * <p>Maps a user or group to the Amazon EMR Studio specified by
          * <code>StudioId</code>, and applies a session policy to refine Studio permissions
-         * for that user or group.</p><p><h3>See Also:</h3>   <a
+         * for that user or group. Use <code>CreateStudioSessionMapping</code> to assign
+         * users to a Studio when you use Amazon Web Services SSO authentication. For
+         * instructions on how to assign users to a Studio when you use IAM authentication,
+         * see <a
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-manage-users.html#emr-studio-assign-users-groups">Assign
+         * a user or group to your EMR Studio</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudioSessionMapping">AWS
          * API Reference</a></p>
          *
@@ -1711,9 +1729,10 @@ namespace Model
         virtual void RemoveManagedScalingPolicyAsync(const Model::RemoveManagedScalingPolicyRequest& request, const RemoveManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes tags from an Amazon EMR resource. Tags make it easier to associate
-         * clusters in various ways, such as grouping clusters to track your Amazon EMR
-         * resource allocation costs. For more information, see <a
+         * <p>Removes tags from an Amazon EMR resource, such as a cluster or Amazon EMR
+         * Studio. Tags make it easier to associate resources in various ways, such as
+         * grouping clusters to track your Amazon EMR resource allocation costs. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
          * Clusters</a>. </p> <p>The following example removes the stack tag with value
          * Prod from a cluster:</p><p><h3>See Also:</h3>   <a
@@ -1723,9 +1742,10 @@ namespace Model
         virtual Model::RemoveTagsOutcome RemoveTags(const Model::RemoveTagsRequest& request) const;
 
         /**
-         * <p>Removes tags from an Amazon EMR resource. Tags make it easier to associate
-         * clusters in various ways, such as grouping clusters to track your Amazon EMR
-         * resource allocation costs. For more information, see <a
+         * <p>Removes tags from an Amazon EMR resource, such as a cluster or Amazon EMR
+         * Studio. Tags make it easier to associate resources in various ways, such as
+         * grouping clusters to track your Amazon EMR resource allocation costs. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
          * Clusters</a>. </p> <p>The following example removes the stack tag with value
          * Prod from a cluster:</p><p><h3>See Also:</h3>   <a
@@ -1737,9 +1757,10 @@ namespace Model
         virtual Model::RemoveTagsOutcomeCallable RemoveTagsCallable(const Model::RemoveTagsRequest& request) const;
 
         /**
-         * <p>Removes tags from an Amazon EMR resource. Tags make it easier to associate
-         * clusters in various ways, such as grouping clusters to track your Amazon EMR
-         * resource allocation costs. For more information, see <a
+         * <p>Removes tags from an Amazon EMR resource, such as a cluster or Amazon EMR
+         * Studio. Tags make it easier to associate resources in various ways, such as
+         * grouping clusters to track your Amazon EMR resource allocation costs. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
          * Clusters</a>. </p> <p>The following example removes the stack tag with value
          * Prod from a cluster:</p><p><h3>See Also:</h3>   <a

@@ -26,7 +26,8 @@ CreateModelRequest::CreateModelRequest() :
     m_roleArnHasBeenSet(false),
     m_dataPreProcessingConfigurationHasBeenSet(false),
     m_serverSideKmsKeyIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_offConditionHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,12 @@ Aws::String CreateModelRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_offConditionHasBeenSet)
+  {
+   payload.WithString("OffCondition", m_offCondition);
 
   }
 

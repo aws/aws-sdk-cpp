@@ -27,7 +27,10 @@ RecommendationSummary::RecommendationSummary() :
     m_endLineHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_recommendationCategory(RecommendationCategory::NOT_SET),
-    m_recommendationCategoryHasBeenSet(false)
+    m_recommendationCategoryHasBeenSet(false),
+    m_ruleMetadataHasBeenSet(false),
+    m_severity(Severity::NOT_SET),
+    m_severityHasBeenSet(false)
 {
 }
 
@@ -40,7 +43,10 @@ RecommendationSummary::RecommendationSummary(JsonView jsonValue) :
     m_endLineHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_recommendationCategory(RecommendationCategory::NOT_SET),
-    m_recommendationCategoryHasBeenSet(false)
+    m_recommendationCategoryHasBeenSet(false),
+    m_ruleMetadataHasBeenSet(false),
+    m_severity(Severity::NOT_SET),
+    m_severityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -89,6 +95,20 @@ RecommendationSummary& RecommendationSummary::operator =(JsonView jsonValue)
     m_recommendationCategoryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RuleMetadata"))
+  {
+    m_ruleMetadata = jsonValue.GetObject("RuleMetadata");
+
+    m_ruleMetadataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Severity"))
+  {
+    m_severity = SeverityMapper::GetSeverityForName(jsonValue.GetString("Severity"));
+
+    m_severityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -129,6 +149,17 @@ JsonValue RecommendationSummary::Jsonize() const
   if(m_recommendationCategoryHasBeenSet)
   {
    payload.WithString("RecommendationCategory", RecommendationCategoryMapper::GetNameForRecommendationCategory(m_recommendationCategory));
+  }
+
+  if(m_ruleMetadataHasBeenSet)
+  {
+   payload.WithObject("RuleMetadata", m_ruleMetadata.Jsonize());
+
+  }
+
+  if(m_severityHasBeenSet)
+  {
+   payload.WithString("Severity", SeverityMapper::GetNameForSeverity(m_severity));
   }
 
   return payload;

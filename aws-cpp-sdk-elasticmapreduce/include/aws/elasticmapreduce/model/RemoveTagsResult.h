@@ -23,7 +23,7 @@ namespace EMR
 namespace Model
 {
   /**
-   * <p>This output indicates the result of removing tags from a
+   * <p>This output indicates the result of removing tags from the
    * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveTagsOutput">AWS
    * API Reference</a></p>

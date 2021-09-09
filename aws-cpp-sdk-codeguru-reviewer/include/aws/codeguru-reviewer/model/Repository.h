@@ -26,10 +26,11 @@ namespace Model
 {
 
   /**
-   * <p> Information about an associated AWS CodeCommit repository or an associated
-   * repository that is managed by AWS CodeStar Connections (for example, Bitbucket).
-   * This <code>Repository</code> object is not used if your source code is in an
-   * associated GitHub repository. </p><p><h3>See Also:</h3>   <a
+   * <p> Information about an associated Amazon Web Services CodeCommit repository or
+   * an associated repository that is managed by Amazon Web Services CodeStar
+   * Connections (for example, Bitbucket). This <code>Repository</code> object is not
+   * used if your source code is in an associated GitHub repository. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/Repository">AWS
    * API Reference</a></p>
    */
@@ -43,32 +44,32 @@ namespace Model
 
 
     /**
-     * <p>Information about an AWS CodeCommit repository.</p>
+     * <p>Information about an Amazon Web Services CodeCommit repository.</p>
      */
     inline const CodeCommitRepository& GetCodeCommit() const{ return m_codeCommit; }
 
     /**
-     * <p>Information about an AWS CodeCommit repository.</p>
+     * <p>Information about an Amazon Web Services CodeCommit repository.</p>
      */
     inline bool CodeCommitHasBeenSet() const { return m_codeCommitHasBeenSet; }
 
     /**
-     * <p>Information about an AWS CodeCommit repository.</p>
+     * <p>Information about an Amazon Web Services CodeCommit repository.</p>
      */
     inline void SetCodeCommit(const CodeCommitRepository& value) { m_codeCommitHasBeenSet = true; m_codeCommit = value; }
 
     /**
-     * <p>Information about an AWS CodeCommit repository.</p>
+     * <p>Information about an Amazon Web Services CodeCommit repository.</p>
      */
     inline void SetCodeCommit(CodeCommitRepository&& value) { m_codeCommitHasBeenSet = true; m_codeCommit = std::move(value); }
 
     /**
-     * <p>Information about an AWS CodeCommit repository.</p>
+     * <p>Information about an Amazon Web Services CodeCommit repository.</p>
      */
     inline Repository& WithCodeCommit(const CodeCommitRepository& value) { SetCodeCommit(value); return *this;}
 
     /**
-     * <p>Information about an AWS CodeCommit repository.</p>
+     * <p>Information about an Amazon Web Services CodeCommit repository.</p>
      */
     inline Repository& WithCodeCommit(CodeCommitRepository&& value) { SetCodeCommit(std::move(value)); return *this;}
 

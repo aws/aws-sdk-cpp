@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticmapreduce/model/AuthMode.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -254,6 +255,43 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether the Studio authenticates users using IAM or Amazon Web
+     * Services SSO.</p>
+     */
+    inline const AuthMode& GetAuthMode() const{ return m_authMode; }
+
+    /**
+     * <p>Specifies whether the Studio authenticates users using IAM or Amazon Web
+     * Services SSO.</p>
+     */
+    inline bool AuthModeHasBeenSet() const { return m_authModeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the Studio authenticates users using IAM or Amazon Web
+     * Services SSO.</p>
+     */
+    inline void SetAuthMode(const AuthMode& value) { m_authModeHasBeenSet = true; m_authMode = value; }
+
+    /**
+     * <p>Specifies whether the Studio authenticates users using IAM or Amazon Web
+     * Services SSO.</p>
+     */
+    inline void SetAuthMode(AuthMode&& value) { m_authModeHasBeenSet = true; m_authMode = std::move(value); }
+
+    /**
+     * <p>Specifies whether the Studio authenticates users using IAM or Amazon Web
+     * Services SSO.</p>
+     */
+    inline StudioSummary& WithAuthMode(const AuthMode& value) { SetAuthMode(value); return *this;}
+
+    /**
+     * <p>Specifies whether the Studio authenticates users using IAM or Amazon Web
+     * Services SSO.</p>
+     */
+    inline StudioSummary& WithAuthMode(AuthMode&& value) { SetAuthMode(std::move(value)); return *this;}
+
+
+    /**
      * <p>The time when the Amazon EMR Studio was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
@@ -299,6 +337,9 @@ namespace Model
 
     Aws::String m_url;
     bool m_urlHasBeenSet;
+
+    AuthMode m_authMode;
+    bool m_authModeHasBeenSet;
 
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;

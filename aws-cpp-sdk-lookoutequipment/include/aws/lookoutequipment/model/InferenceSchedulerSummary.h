@@ -245,8 +245,8 @@ namespace Model
 
 
     /**
-     * <p>&gt; A period of time (in minutes) by which inference on the data is delayed
-     * after the data starts. For instance, if an offset delay time of five minutes was
+     * <p>A period of time (in minutes) by which inference on the data is delayed after
+     * the data starts. For instance, if an offset delay time of five minutes was
      * selected, inference will not begin on the data until the first data measurement
      * after the five minute mark. For example, if five minutes is selected, the
      * inference scheduler will wake up at the configured frequency with the additional
@@ -257,8 +257,8 @@ namespace Model
     inline long long GetDataDelayOffsetInMinutes() const{ return m_dataDelayOffsetInMinutes; }
 
     /**
-     * <p>&gt; A period of time (in minutes) by which inference on the data is delayed
-     * after the data starts. For instance, if an offset delay time of five minutes was
+     * <p>A period of time (in minutes) by which inference on the data is delayed after
+     * the data starts. For instance, if an offset delay time of five minutes was
      * selected, inference will not begin on the data until the first data measurement
      * after the five minute mark. For example, if five minutes is selected, the
      * inference scheduler will wake up at the configured frequency with the additional
@@ -269,8 +269,8 @@ namespace Model
     inline bool DataDelayOffsetInMinutesHasBeenSet() const { return m_dataDelayOffsetInMinutesHasBeenSet; }
 
     /**
-     * <p>&gt; A period of time (in minutes) by which inference on the data is delayed
-     * after the data starts. For instance, if an offset delay time of five minutes was
+     * <p>A period of time (in minutes) by which inference on the data is delayed after
+     * the data starts. For instance, if an offset delay time of five minutes was
      * selected, inference will not begin on the data until the first data measurement
      * after the five minute mark. For example, if five minutes is selected, the
      * inference scheduler will wake up at the configured frequency with the additional
@@ -281,8 +281,8 @@ namespace Model
     inline void SetDataDelayOffsetInMinutes(long long value) { m_dataDelayOffsetInMinutesHasBeenSet = true; m_dataDelayOffsetInMinutes = value; }
 
     /**
-     * <p>&gt; A period of time (in minutes) by which inference on the data is delayed
-     * after the data starts. For instance, if an offset delay time of five minutes was
+     * <p>A period of time (in minutes) by which inference on the data is delayed after
+     * the data starts. For instance, if an offset delay time of five minutes was
      * selected, inference will not begin on the data until the first data measurement
      * after the five minute mark. For example, if five minutes is selected, the
      * inference scheduler will wake up at the configured frequency with the additional

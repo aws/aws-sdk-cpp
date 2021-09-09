@@ -450,16 +450,16 @@ namespace Model
         virtual void DescribeDataIngestionJobAsync(const Model::DescribeDataIngestionJobRequest& request, const DescribeDataIngestionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides information on a specified dataset such as the schema location,
-         * status, and so on.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides a JSON description of the data that is in each time series dataset,
+         * including names, column names, and data types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataset">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDatasetOutcome DescribeDataset(const Model::DescribeDatasetRequest& request) const;
 
         /**
-         * <p>Provides information on a specified dataset such as the schema location,
-         * status, and so on.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides a JSON description of the data that is in each time series dataset,
+         * including names, column names, and data types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataset">AWS
          * API Reference</a></p>
          *
@@ -468,8 +468,8 @@ namespace Model
         virtual Model::DescribeDatasetOutcomeCallable DescribeDatasetCallable(const Model::DescribeDatasetRequest& request) const;
 
         /**
-         * <p>Provides information on a specified dataset such as the schema location,
-         * status, and so on.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides a JSON description of the data that is in each time series dataset,
+         * including names, column names, and data types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataset">AWS
          * API Reference</a></p>
          *
@@ -506,18 +506,18 @@ namespace Model
         virtual void DescribeInferenceSchedulerAsync(const Model::DescribeInferenceSchedulerRequest& request, const DescribeInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides overall information about a specific ML model, including model name
-         * and ARN, dataset, training and evaluation information, status, and so on.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Provides a JSON containing the overall information about a specific ML model,
+         * including model name and ARN, dataset, training and evaluation information,
+         * status, and so on. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModel">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeModelOutcome DescribeModel(const Model::DescribeModelRequest& request) const;
 
         /**
-         * <p>Provides overall information about a specific ML model, including model name
-         * and ARN, dataset, training and evaluation information, status, and so on.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Provides a JSON containing the overall information about a specific ML model,
+         * including model name and ARN, dataset, training and evaluation information,
+         * status, and so on. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModel">AWS
          * API Reference</a></p>
          *
@@ -526,9 +526,9 @@ namespace Model
         virtual Model::DescribeModelOutcomeCallable DescribeModelCallable(const Model::DescribeModelRequest& request) const;
 
         /**
-         * <p>Provides overall information about a specific ML model, including model name
-         * and ARN, dataset, training and evaluation information, status, and so on.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Provides a JSON containing the overall information about a specific ML model,
+         * including model name and ARN, dataset, training and evaluation information,
+         * status, and so on. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModel">AWS
          * API Reference</a></p>
          *

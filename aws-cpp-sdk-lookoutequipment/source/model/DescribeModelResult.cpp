@@ -150,6 +150,12 @@ DescribeModelResult& DescribeModelResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("OffCondition"))
+  {
+    m_offCondition = jsonValue.GetString("OffCondition");
+
+  }
+
 
 
   return *this;

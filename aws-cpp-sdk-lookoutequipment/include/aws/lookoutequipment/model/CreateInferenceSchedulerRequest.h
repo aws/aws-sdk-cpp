@@ -131,8 +131,8 @@ namespace Model
 
 
     /**
-     * <p> A period of time (in minutes) by which inference on the data is delayed
-     * after the data starts. For instance, if you select an offset delay time of five
+     * <p>A period of time (in minutes) by which inference on the data is delayed after
+     * the data starts. For instance, if you select an offset delay time of five
      * minutes, inference will not begin on the data until the first data measurement
      * after the five minute mark. For example, if five minutes is selected, the
      * inference scheduler will wake up at the configured frequency with the additional
@@ -143,8 +143,8 @@ namespace Model
     inline long long GetDataDelayOffsetInMinutes() const{ return m_dataDelayOffsetInMinutes; }
 
     /**
-     * <p> A period of time (in minutes) by which inference on the data is delayed
-     * after the data starts. For instance, if you select an offset delay time of five
+     * <p>A period of time (in minutes) by which inference on the data is delayed after
+     * the data starts. For instance, if you select an offset delay time of five
      * minutes, inference will not begin on the data until the first data measurement
      * after the five minute mark. For example, if five minutes is selected, the
      * inference scheduler will wake up at the configured frequency with the additional
@@ -155,8 +155,8 @@ namespace Model
     inline bool DataDelayOffsetInMinutesHasBeenSet() const { return m_dataDelayOffsetInMinutesHasBeenSet; }
 
     /**
-     * <p> A period of time (in minutes) by which inference on the data is delayed
-     * after the data starts. For instance, if you select an offset delay time of five
+     * <p>A period of time (in minutes) by which inference on the data is delayed after
+     * the data starts. For instance, if you select an offset delay time of five
      * minutes, inference will not begin on the data until the first data measurement
      * after the five minute mark. For example, if five minutes is selected, the
      * inference scheduler will wake up at the configured frequency with the additional
@@ -167,8 +167,8 @@ namespace Model
     inline void SetDataDelayOffsetInMinutes(long long value) { m_dataDelayOffsetInMinutesHasBeenSet = true; m_dataDelayOffsetInMinutes = value; }
 
     /**
-     * <p> A period of time (in minutes) by which inference on the data is delayed
-     * after the data starts. For instance, if you select an offset delay time of five
+     * <p>A period of time (in minutes) by which inference on the data is delayed after
+     * the data starts. For instance, if you select an offset delay time of five
      * minutes, inference will not begin on the data until the first data measurement
      * after the five minute mark. For example, if five minutes is selected, the
      * inference scheduler will wake up at the configured frequency with the additional
@@ -364,50 +364,50 @@ namespace Model
 
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt inference scheduler
+     * data by Amazon Lookout for Equipment. </p>
      */
     inline const Aws::String& GetServerSideKmsKeyId() const{ return m_serverSideKmsKeyId; }
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt inference scheduler
+     * data by Amazon Lookout for Equipment. </p>
      */
     inline bool ServerSideKmsKeyIdHasBeenSet() const { return m_serverSideKmsKeyIdHasBeenSet; }
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt inference scheduler
+     * data by Amazon Lookout for Equipment. </p>
      */
     inline void SetServerSideKmsKeyId(const Aws::String& value) { m_serverSideKmsKeyIdHasBeenSet = true; m_serverSideKmsKeyId = value; }
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt inference scheduler
+     * data by Amazon Lookout for Equipment. </p>
      */
     inline void SetServerSideKmsKeyId(Aws::String&& value) { m_serverSideKmsKeyIdHasBeenSet = true; m_serverSideKmsKeyId = std::move(value); }
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt inference scheduler
+     * data by Amazon Lookout for Equipment. </p>
      */
     inline void SetServerSideKmsKeyId(const char* value) { m_serverSideKmsKeyIdHasBeenSet = true; m_serverSideKmsKeyId.assign(value); }
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt inference scheduler
+     * data by Amazon Lookout for Equipment. </p>
      */
     inline CreateInferenceSchedulerRequest& WithServerSideKmsKeyId(const Aws::String& value) { SetServerSideKmsKeyId(value); return *this;}
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt inference scheduler
+     * data by Amazon Lookout for Equipment. </p>
      */
     inline CreateInferenceSchedulerRequest& WithServerSideKmsKeyId(Aws::String&& value) { SetServerSideKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt inference scheduler
+     * data by Amazon Lookout for Equipment. </p>
      */
     inline CreateInferenceSchedulerRequest& WithServerSideKmsKeyId(const char* value) { SetServerSideKmsKeyId(value); return *this;}
 

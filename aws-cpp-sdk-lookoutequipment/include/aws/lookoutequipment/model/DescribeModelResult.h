@@ -728,46 +728,96 @@ namespace Model
 
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt model data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt model data by Amazon
+     * Lookout for Equipment. </p>
      */
     inline const Aws::String& GetServerSideKmsKeyId() const{ return m_serverSideKmsKeyId; }
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt model data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt model data by Amazon
+     * Lookout for Equipment. </p>
      */
     inline void SetServerSideKmsKeyId(const Aws::String& value) { m_serverSideKmsKeyId = value; }
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt model data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt model data by Amazon
+     * Lookout for Equipment. </p>
      */
     inline void SetServerSideKmsKeyId(Aws::String&& value) { m_serverSideKmsKeyId = std::move(value); }
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt model data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt model data by Amazon
+     * Lookout for Equipment. </p>
      */
     inline void SetServerSideKmsKeyId(const char* value) { m_serverSideKmsKeyId.assign(value); }
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt model data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt model data by Amazon
+     * Lookout for Equipment. </p>
      */
     inline DescribeModelResult& WithServerSideKmsKeyId(const Aws::String& value) { SetServerSideKmsKeyId(value); return *this;}
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt model data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt model data by Amazon
+     * Lookout for Equipment. </p>
      */
     inline DescribeModelResult& WithServerSideKmsKeyId(Aws::String&& value) { SetServerSideKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt model data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt model data by Amazon
+     * Lookout for Equipment. </p>
      */
     inline DescribeModelResult& WithServerSideKmsKeyId(const char* value) { SetServerSideKmsKeyId(value); return *this;}
+
+
+    /**
+     * <p>Indicates that the asset associated with this sensor has been shut off. As
+     * long as this condition is met, Lookout for Equipment will not use data from this
+     * asset for training, evaluation, or inference.</p>
+     */
+    inline const Aws::String& GetOffCondition() const{ return m_offCondition; }
+
+    /**
+     * <p>Indicates that the asset associated with this sensor has been shut off. As
+     * long as this condition is met, Lookout for Equipment will not use data from this
+     * asset for training, evaluation, or inference.</p>
+     */
+    inline void SetOffCondition(const Aws::String& value) { m_offCondition = value; }
+
+    /**
+     * <p>Indicates that the asset associated with this sensor has been shut off. As
+     * long as this condition is met, Lookout for Equipment will not use data from this
+     * asset for training, evaluation, or inference.</p>
+     */
+    inline void SetOffCondition(Aws::String&& value) { m_offCondition = std::move(value); }
+
+    /**
+     * <p>Indicates that the asset associated with this sensor has been shut off. As
+     * long as this condition is met, Lookout for Equipment will not use data from this
+     * asset for training, evaluation, or inference.</p>
+     */
+    inline void SetOffCondition(const char* value) { m_offCondition.assign(value); }
+
+    /**
+     * <p>Indicates that the asset associated with this sensor has been shut off. As
+     * long as this condition is met, Lookout for Equipment will not use data from this
+     * asset for training, evaluation, or inference.</p>
+     */
+    inline DescribeModelResult& WithOffCondition(const Aws::String& value) { SetOffCondition(value); return *this;}
+
+    /**
+     * <p>Indicates that the asset associated with this sensor has been shut off. As
+     * long as this condition is met, Lookout for Equipment will not use data from this
+     * asset for training, evaluation, or inference.</p>
+     */
+    inline DescribeModelResult& WithOffCondition(Aws::String&& value) { SetOffCondition(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates that the asset associated with this sensor has been shut off. As
+     * long as this condition is met, Lookout for Equipment will not use data from this
+     * asset for training, evaluation, or inference.</p>
+     */
+    inline DescribeModelResult& WithOffCondition(const char* value) { SetOffCondition(value); return *this;}
 
   private:
 
@@ -810,6 +860,8 @@ namespace Model
     Aws::Utils::DateTime m_createdAt;
 
     Aws::String m_serverSideKmsKeyId;
+
+    Aws::String m_offCondition;
   };
 
 } // namespace Model

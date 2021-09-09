@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>&gt; Specifies configuration information for the input data for the
-   * inference, including S3 location of input data.. </p><p><h3>See Also:</h3>   <a
+   * <p>Specifies configuration information for the input data for the inference,
+   * including S3 location of input data.. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/InferenceInputConfiguration">AWS
    * API Reference</a></p>
    */
@@ -127,38 +127,38 @@ namespace Model
 
 
     /**
-     * <p>&gt; Specifies configuration information for the input data for the
-     * inference, including timestamp format and delimiter. </p>
+     * <p>Specifies configuration information for the input data for the inference,
+     * including timestamp format and delimiter. </p>
      */
     inline const InferenceInputNameConfiguration& GetInferenceInputNameConfiguration() const{ return m_inferenceInputNameConfiguration; }
 
     /**
-     * <p>&gt; Specifies configuration information for the input data for the
-     * inference, including timestamp format and delimiter. </p>
+     * <p>Specifies configuration information for the input data for the inference,
+     * including timestamp format and delimiter. </p>
      */
     inline bool InferenceInputNameConfigurationHasBeenSet() const { return m_inferenceInputNameConfigurationHasBeenSet; }
 
     /**
-     * <p>&gt; Specifies configuration information for the input data for the
-     * inference, including timestamp format and delimiter. </p>
+     * <p>Specifies configuration information for the input data for the inference,
+     * including timestamp format and delimiter. </p>
      */
     inline void SetInferenceInputNameConfiguration(const InferenceInputNameConfiguration& value) { m_inferenceInputNameConfigurationHasBeenSet = true; m_inferenceInputNameConfiguration = value; }
 
     /**
-     * <p>&gt; Specifies configuration information for the input data for the
-     * inference, including timestamp format and delimiter. </p>
+     * <p>Specifies configuration information for the input data for the inference,
+     * including timestamp format and delimiter. </p>
      */
     inline void SetInferenceInputNameConfiguration(InferenceInputNameConfiguration&& value) { m_inferenceInputNameConfigurationHasBeenSet = true; m_inferenceInputNameConfiguration = std::move(value); }
 
     /**
-     * <p>&gt; Specifies configuration information for the input data for the
-     * inference, including timestamp format and delimiter. </p>
+     * <p>Specifies configuration information for the input data for the inference,
+     * including timestamp format and delimiter. </p>
      */
     inline InferenceInputConfiguration& WithInferenceInputNameConfiguration(const InferenceInputNameConfiguration& value) { SetInferenceInputNameConfiguration(value); return *this;}
 
     /**
-     * <p>&gt; Specifies configuration information for the input data for the
-     * inference, including timestamp format and delimiter. </p>
+     * <p>Specifies configuration information for the input data for the inference,
+     * including timestamp format and delimiter. </p>
      */
     inline InferenceInputConfiguration& WithInferenceInputNameConfiguration(InferenceInputNameConfiguration&& value) { SetInferenceInputNameConfiguration(std::move(value)); return *this;}
 

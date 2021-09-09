@@ -26,11 +26,11 @@ namespace Model
 
   /**
    * <p>An object that contains:</p> <ul> <li> <p>The encryption option for a
-   * repository association. It is either owned by AWS Key Management Service (KMS)
-   * (<code>AWS_OWNED_CMK</code>) or customer managed
-   * (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li> <li> <p>The ID of the AWS KMS key
-   * that is associated with a respository association.</p> </li> </ul><p><h3>See
-   * Also:</h3>   <a
+   * repository association. It is either owned by Amazon Web Services Key Management
+   * Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed
+   * (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li> <li> <p>The ID of the Amazon Web
+   * Services KMS key that is associated with a respository association.</p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/KMSKeyDetails">AWS
    * API Reference</a></p>
    */
@@ -44,93 +44,93 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS KMS key that is associated with a respository
-     * association.</p>
+     * <p>The ID of the Amazon Web Services KMS key that is associated with a
+     * respository association.</p>
      */
     inline const Aws::String& GetKMSKeyId() const{ return m_kMSKeyId; }
 
     /**
-     * <p>The ID of the AWS KMS key that is associated with a respository
-     * association.</p>
+     * <p>The ID of the Amazon Web Services KMS key that is associated with a
+     * respository association.</p>
      */
     inline bool KMSKeyIdHasBeenSet() const { return m_kMSKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS KMS key that is associated with a respository
-     * association.</p>
+     * <p>The ID of the Amazon Web Services KMS key that is associated with a
+     * respository association.</p>
      */
     inline void SetKMSKeyId(const Aws::String& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = value; }
 
     /**
-     * <p>The ID of the AWS KMS key that is associated with a respository
-     * association.</p>
+     * <p>The ID of the Amazon Web Services KMS key that is associated with a
+     * respository association.</p>
      */
     inline void SetKMSKeyId(Aws::String&& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS KMS key that is associated with a respository
-     * association.</p>
+     * <p>The ID of the Amazon Web Services KMS key that is associated with a
+     * respository association.</p>
      */
     inline void SetKMSKeyId(const char* value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId.assign(value); }
 
     /**
-     * <p>The ID of the AWS KMS key that is associated with a respository
-     * association.</p>
+     * <p>The ID of the Amazon Web Services KMS key that is associated with a
+     * respository association.</p>
      */
     inline KMSKeyDetails& WithKMSKeyId(const Aws::String& value) { SetKMSKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS key that is associated with a respository
-     * association.</p>
+     * <p>The ID of the Amazon Web Services KMS key that is associated with a
+     * respository association.</p>
      */
     inline KMSKeyDetails& WithKMSKeyId(Aws::String&& value) { SetKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS key that is associated with a respository
-     * association.</p>
+     * <p>The ID of the Amazon Web Services KMS key that is associated with a
+     * respository association.</p>
      */
     inline KMSKeyDetails& WithKMSKeyId(const char* value) { SetKMSKeyId(value); return *this;}
 
 
     /**
-     * <p>The encryption option for a repository association. It is either owned by AWS
-     * Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed
-     * (<code>CUSTOMER_MANAGED_CMK</code>).</p>
+     * <p>The encryption option for a repository association. It is either owned by
+     * Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or
+     * customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
      */
     inline const EncryptionOption& GetEncryptionOption() const{ return m_encryptionOption; }
 
     /**
-     * <p>The encryption option for a repository association. It is either owned by AWS
-     * Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed
-     * (<code>CUSTOMER_MANAGED_CMK</code>).</p>
+     * <p>The encryption option for a repository association. It is either owned by
+     * Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or
+     * customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
      */
     inline bool EncryptionOptionHasBeenSet() const { return m_encryptionOptionHasBeenSet; }
 
     /**
-     * <p>The encryption option for a repository association. It is either owned by AWS
-     * Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed
-     * (<code>CUSTOMER_MANAGED_CMK</code>).</p>
+     * <p>The encryption option for a repository association. It is either owned by
+     * Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or
+     * customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
      */
     inline void SetEncryptionOption(const EncryptionOption& value) { m_encryptionOptionHasBeenSet = true; m_encryptionOption = value; }
 
     /**
-     * <p>The encryption option for a repository association. It is either owned by AWS
-     * Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed
-     * (<code>CUSTOMER_MANAGED_CMK</code>).</p>
+     * <p>The encryption option for a repository association. It is either owned by
+     * Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or
+     * customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
      */
     inline void SetEncryptionOption(EncryptionOption&& value) { m_encryptionOptionHasBeenSet = true; m_encryptionOption = std::move(value); }
 
     /**
-     * <p>The encryption option for a repository association. It is either owned by AWS
-     * Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed
-     * (<code>CUSTOMER_MANAGED_CMK</code>).</p>
+     * <p>The encryption option for a repository association. It is either owned by
+     * Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or
+     * customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
      */
     inline KMSKeyDetails& WithEncryptionOption(const EncryptionOption& value) { SetEncryptionOption(value); return *this;}
 
     /**
-     * <p>The encryption option for a repository association. It is either owned by AWS
-     * Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed
-     * (<code>CUSTOMER_MANAGED_CMK</code>).</p>
+     * <p>The encryption option for a repository association. It is either owned by
+     * Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or
+     * customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
      */
     inline KMSKeyDetails& WithEncryptionOption(EncryptionOption&& value) { SetEncryptionOption(std::move(value)); return *this;}
 

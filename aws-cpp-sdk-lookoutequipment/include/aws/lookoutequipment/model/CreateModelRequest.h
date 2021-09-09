@@ -517,50 +517,50 @@ namespace Model
 
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt model data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt model data by Amazon
+     * Lookout for Equipment. </p>
      */
     inline const Aws::String& GetServerSideKmsKeyId() const{ return m_serverSideKmsKeyId; }
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt model data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt model data by Amazon
+     * Lookout for Equipment. </p>
      */
     inline bool ServerSideKmsKeyIdHasBeenSet() const { return m_serverSideKmsKeyIdHasBeenSet; }
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt model data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt model data by Amazon
+     * Lookout for Equipment. </p>
      */
     inline void SetServerSideKmsKeyId(const Aws::String& value) { m_serverSideKmsKeyIdHasBeenSet = true; m_serverSideKmsKeyId = value; }
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt model data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt model data by Amazon
+     * Lookout for Equipment. </p>
      */
     inline void SetServerSideKmsKeyId(Aws::String&& value) { m_serverSideKmsKeyIdHasBeenSet = true; m_serverSideKmsKeyId = std::move(value); }
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt model data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt model data by Amazon
+     * Lookout for Equipment. </p>
      */
     inline void SetServerSideKmsKeyId(const char* value) { m_serverSideKmsKeyIdHasBeenSet = true; m_serverSideKmsKeyId.assign(value); }
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt model data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt model data by Amazon
+     * Lookout for Equipment. </p>
      */
     inline CreateModelRequest& WithServerSideKmsKeyId(const Aws::String& value) { SetServerSideKmsKeyId(value); return *this;}
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt model data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt model data by Amazon
+     * Lookout for Equipment. </p>
      */
     inline CreateModelRequest& WithServerSideKmsKeyId(Aws::String&& value) { SetServerSideKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the identifier of the AWS KMS customer master key (CMK) used to
-     * encrypt model data by Amazon Lookout for Equipment. </p>
+     * <p>Provides the identifier of the KMS key used to encrypt model data by Amazon
+     * Lookout for Equipment. </p>
      */
     inline CreateModelRequest& WithServerSideKmsKeyId(const char* value) { SetServerSideKmsKeyId(value); return *this;}
 
@@ -605,6 +605,63 @@ namespace Model
      */
     inline CreateModelRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates that the asset associated with this sensor has been shut off. As
+     * long as this condition is met, Lookout for Equipment will not use data from this
+     * asset for training, evaluation, or inference.</p>
+     */
+    inline const Aws::String& GetOffCondition() const{ return m_offCondition; }
+
+    /**
+     * <p>Indicates that the asset associated with this sensor has been shut off. As
+     * long as this condition is met, Lookout for Equipment will not use data from this
+     * asset for training, evaluation, or inference.</p>
+     */
+    inline bool OffConditionHasBeenSet() const { return m_offConditionHasBeenSet; }
+
+    /**
+     * <p>Indicates that the asset associated with this sensor has been shut off. As
+     * long as this condition is met, Lookout for Equipment will not use data from this
+     * asset for training, evaluation, or inference.</p>
+     */
+    inline void SetOffCondition(const Aws::String& value) { m_offConditionHasBeenSet = true; m_offCondition = value; }
+
+    /**
+     * <p>Indicates that the asset associated with this sensor has been shut off. As
+     * long as this condition is met, Lookout for Equipment will not use data from this
+     * asset for training, evaluation, or inference.</p>
+     */
+    inline void SetOffCondition(Aws::String&& value) { m_offConditionHasBeenSet = true; m_offCondition = std::move(value); }
+
+    /**
+     * <p>Indicates that the asset associated with this sensor has been shut off. As
+     * long as this condition is met, Lookout for Equipment will not use data from this
+     * asset for training, evaluation, or inference.</p>
+     */
+    inline void SetOffCondition(const char* value) { m_offConditionHasBeenSet = true; m_offCondition.assign(value); }
+
+    /**
+     * <p>Indicates that the asset associated with this sensor has been shut off. As
+     * long as this condition is met, Lookout for Equipment will not use data from this
+     * asset for training, evaluation, or inference.</p>
+     */
+    inline CreateModelRequest& WithOffCondition(const Aws::String& value) { SetOffCondition(value); return *this;}
+
+    /**
+     * <p>Indicates that the asset associated with this sensor has been shut off. As
+     * long as this condition is met, Lookout for Equipment will not use data from this
+     * asset for training, evaluation, or inference.</p>
+     */
+    inline CreateModelRequest& WithOffCondition(Aws::String&& value) { SetOffCondition(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates that the asset associated with this sensor has been shut off. As
+     * long as this condition is met, Lookout for Equipment will not use data from this
+     * asset for training, evaluation, or inference.</p>
+     */
+    inline CreateModelRequest& WithOffCondition(const char* value) { SetOffCondition(value); return *this;}
+
   private:
 
     Aws::String m_modelName;
@@ -645,6 +702,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_offCondition;
+    bool m_offConditionHasBeenSet;
   };
 
 } // namespace Model

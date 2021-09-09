@@ -752,50 +752,50 @@ namespace Model
 
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon
-     * Web Services resources on your behalf.</p>
+     * <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services
+     * resources on your behalf.</p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon
-     * Web Services resources on your behalf.</p>
+     * <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services
+     * resources on your behalf.</p>
      */
     inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon
-     * Web Services resources on your behalf.</p>
+     * <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services
+     * resources on your behalf.</p>
      */
     inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon
-     * Web Services resources on your behalf.</p>
+     * <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services
+     * resources on your behalf.</p>
      */
     inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon
-     * Web Services resources on your behalf.</p>
+     * <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services
+     * resources on your behalf.</p>
      */
     inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon
-     * Web Services resources on your behalf.</p>
+     * <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services
+     * resources on your behalf.</p>
      */
     inline Cluster& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon
-     * Web Services resources on your behalf.</p>
+     * <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services
+     * resources on your behalf.</p>
      */
     inline Cluster& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon
-     * Web Services resources on your behalf.</p>
+     * <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services
+     * resources on your behalf.</p>
      */
     inline Cluster& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
