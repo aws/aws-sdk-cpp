@@ -45,7 +45,8 @@ namespace Model
     x86_win32,
     x86_win64,
     coreml,
-    jacinto_tda4vm
+    jacinto_tda4vm,
+    imx8mplus
   };
 
 namespace TargetDeviceMapper

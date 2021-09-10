@@ -24,6 +24,7 @@ StartMedicalTranscriptionJobRequest::StartMedicalTranscriptionJobRequest() :
     m_outputBucketNameHasBeenSet(false),
     m_outputKeyHasBeenSet(false),
     m_outputEncryptionKMSKeyIdHasBeenSet(false),
+    m_kMSEncryptionContextHasBeenSet(false),
     m_settingsHasBeenSet(false),
     m_contentIdentificationType(MedicalContentIdentificationType::NOT_SET),
     m_contentIdentificationTypeHasBeenSet(false),
@@ -82,6 +83,17 @@ Aws::String StartMedicalTranscriptionJobRequest::SerializePayload() const
   if(m_outputEncryptionKMSKeyIdHasBeenSet)
   {
    payload.WithString("OutputEncryptionKMSKeyId", m_outputEncryptionKMSKeyId);
+
+  }
+
+  if(m_kMSEncryptionContextHasBeenSet)
+  {
+   JsonValue kMSEncryptionContextJsonMap;
+   for(auto& kMSEncryptionContextItem : m_kMSEncryptionContext)
+   {
+     kMSEncryptionContextJsonMap.WithString(kMSEncryptionContextItem.first, kMSEncryptionContextItem.second);
+   }
+   payload.WithObject("KMSEncryptionContext", std::move(kMSEncryptionContextJsonMap));
 
   }
 

@@ -8,6 +8,7 @@
 #include <aws/sagemaker/model/ResourceSpec.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/CustomImage.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -124,6 +125,61 @@ namespace Model
      */
     inline KernelGatewayAppSettings& AddCustomImages(CustomImage&& value) { m_customImagesHasBeenSet = true; m_customImages.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the KernelGatewayApp.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetLifecycleConfigArns() const{ return m_lifecycleConfigArns; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the KernelGatewayApp.</p>
+     */
+    inline bool LifecycleConfigArnsHasBeenSet() const { return m_lifecycleConfigArnsHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the KernelGatewayApp.</p>
+     */
+    inline void SetLifecycleConfigArns(const Aws::Vector<Aws::String>& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the KernelGatewayApp.</p>
+     */
+    inline void SetLifecycleConfigArns(Aws::Vector<Aws::String>&& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the KernelGatewayApp.</p>
+     */
+    inline KernelGatewayAppSettings& WithLifecycleConfigArns(const Aws::Vector<Aws::String>& value) { SetLifecycleConfigArns(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the KernelGatewayApp.</p>
+     */
+    inline KernelGatewayAppSettings& WithLifecycleConfigArns(Aws::Vector<Aws::String>&& value) { SetLifecycleConfigArns(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the KernelGatewayApp.</p>
+     */
+    inline KernelGatewayAppSettings& AddLifecycleConfigArns(const Aws::String& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.push_back(value); return *this; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the KernelGatewayApp.</p>
+     */
+    inline KernelGatewayAppSettings& AddLifecycleConfigArns(Aws::String&& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the KernelGatewayApp.</p>
+     */
+    inline KernelGatewayAppSettings& AddLifecycleConfigArns(const char* value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.push_back(value); return *this; }
+
   private:
 
     ResourceSpec m_defaultResourceSpec;
@@ -131,6 +187,9 @@ namespace Model
 
     Aws::Vector<CustomImage> m_customImages;
     bool m_customImagesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_lifecycleConfigArns;
+    bool m_lifecycleConfigArnsHasBeenSet;
   };
 
 } // namespace Model

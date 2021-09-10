@@ -49,6 +49,7 @@
 #include <aws/sagemaker/model/CreatePresignedNotebookInstanceUrlResult.h>
 #include <aws/sagemaker/model/CreateProcessingJobResult.h>
 #include <aws/sagemaker/model/CreateProjectResult.h>
+#include <aws/sagemaker/model/CreateStudioLifecycleConfigResult.h>
 #include <aws/sagemaker/model/CreateTrainingJobResult.h>
 #include <aws/sagemaker/model/CreateTransformJobResult.h>
 #include <aws/sagemaker/model/CreateTrialResult.h>
@@ -109,6 +110,7 @@
 #include <aws/sagemaker/model/DescribePipelineExecutionResult.h>
 #include <aws/sagemaker/model/DescribeProcessingJobResult.h>
 #include <aws/sagemaker/model/DescribeProjectResult.h>
+#include <aws/sagemaker/model/DescribeStudioLifecycleConfigResult.h>
 #include <aws/sagemaker/model/DescribeSubscribedWorkteamResult.h>
 #include <aws/sagemaker/model/DescribeTrainingJobResult.h>
 #include <aws/sagemaker/model/DescribeTransformJobResult.h>
@@ -167,6 +169,7 @@
 #include <aws/sagemaker/model/ListPipelinesResult.h>
 #include <aws/sagemaker/model/ListProcessingJobsResult.h>
 #include <aws/sagemaker/model/ListProjectsResult.h>
+#include <aws/sagemaker/model/ListStudioLifecycleConfigsResult.h>
 #include <aws/sagemaker/model/ListSubscribedWorkteamsResult.h>
 #include <aws/sagemaker/model/ListTagsResult.h>
 #include <aws/sagemaker/model/ListTrainingJobsResult.h>
@@ -286,6 +289,7 @@ namespace Model
         class CreatePresignedNotebookInstanceUrlRequest;
         class CreateProcessingJobRequest;
         class CreateProjectRequest;
+        class CreateStudioLifecycleConfigRequest;
         class CreateTrainingJobRequest;
         class CreateTransformJobRequest;
         class CreateTrialRequest;
@@ -324,6 +328,7 @@ namespace Model
         class DeleteNotebookInstanceLifecycleConfigRequest;
         class DeletePipelineRequest;
         class DeleteProjectRequest;
+        class DeleteStudioLifecycleConfigRequest;
         class DeleteTagsRequest;
         class DeleteTrialRequest;
         class DeleteTrialComponentRequest;
@@ -369,6 +374,7 @@ namespace Model
         class DescribePipelineExecutionRequest;
         class DescribeProcessingJobRequest;
         class DescribeProjectRequest;
+        class DescribeStudioLifecycleConfigRequest;
         class DescribeSubscribedWorkteamRequest;
         class DescribeTrainingJobRequest;
         class DescribeTransformJobRequest;
@@ -427,6 +433,7 @@ namespace Model
         class ListPipelinesRequest;
         class ListProcessingJobsRequest;
         class ListProjectsRequest;
+        class ListStudioLifecycleConfigsRequest;
         class ListSubscribedWorkteamsRequest;
         class ListTagsRequest;
         class ListTrainingJobsRequest;
@@ -522,6 +529,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreatePresignedNotebookInstanceUrlResult, SageMakerError> CreatePresignedNotebookInstanceUrlOutcome;
         typedef Aws::Utils::Outcome<CreateProcessingJobResult, SageMakerError> CreateProcessingJobOutcome;
         typedef Aws::Utils::Outcome<CreateProjectResult, SageMakerError> CreateProjectOutcome;
+        typedef Aws::Utils::Outcome<CreateStudioLifecycleConfigResult, SageMakerError> CreateStudioLifecycleConfigOutcome;
         typedef Aws::Utils::Outcome<CreateTrainingJobResult, SageMakerError> CreateTrainingJobOutcome;
         typedef Aws::Utils::Outcome<CreateTransformJobResult, SageMakerError> CreateTransformJobOutcome;
         typedef Aws::Utils::Outcome<CreateTrialResult, SageMakerError> CreateTrialOutcome;
@@ -560,6 +568,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteNotebookInstanceLifecycleConfigOutcome;
         typedef Aws::Utils::Outcome<DeletePipelineResult, SageMakerError> DeletePipelineOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteProjectOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteStudioLifecycleConfigOutcome;
         typedef Aws::Utils::Outcome<DeleteTagsResult, SageMakerError> DeleteTagsOutcome;
         typedef Aws::Utils::Outcome<DeleteTrialResult, SageMakerError> DeleteTrialOutcome;
         typedef Aws::Utils::Outcome<DeleteTrialComponentResult, SageMakerError> DeleteTrialComponentOutcome;
@@ -605,6 +614,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribePipelineExecutionResult, SageMakerError> DescribePipelineExecutionOutcome;
         typedef Aws::Utils::Outcome<DescribeProcessingJobResult, SageMakerError> DescribeProcessingJobOutcome;
         typedef Aws::Utils::Outcome<DescribeProjectResult, SageMakerError> DescribeProjectOutcome;
+        typedef Aws::Utils::Outcome<DescribeStudioLifecycleConfigResult, SageMakerError> DescribeStudioLifecycleConfigOutcome;
         typedef Aws::Utils::Outcome<DescribeSubscribedWorkteamResult, SageMakerError> DescribeSubscribedWorkteamOutcome;
         typedef Aws::Utils::Outcome<DescribeTrainingJobResult, SageMakerError> DescribeTrainingJobOutcome;
         typedef Aws::Utils::Outcome<DescribeTransformJobResult, SageMakerError> DescribeTransformJobOutcome;
@@ -663,6 +673,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListPipelinesResult, SageMakerError> ListPipelinesOutcome;
         typedef Aws::Utils::Outcome<ListProcessingJobsResult, SageMakerError> ListProcessingJobsOutcome;
         typedef Aws::Utils::Outcome<ListProjectsResult, SageMakerError> ListProjectsOutcome;
+        typedef Aws::Utils::Outcome<ListStudioLifecycleConfigsResult, SageMakerError> ListStudioLifecycleConfigsOutcome;
         typedef Aws::Utils::Outcome<ListSubscribedWorkteamsResult, SageMakerError> ListSubscribedWorkteamsOutcome;
         typedef Aws::Utils::Outcome<ListTagsResult, SageMakerError> ListTagsOutcome;
         typedef Aws::Utils::Outcome<ListTrainingJobsResult, SageMakerError> ListTrainingJobsOutcome;
@@ -758,6 +769,7 @@ namespace Model
         typedef std::future<CreatePresignedNotebookInstanceUrlOutcome> CreatePresignedNotebookInstanceUrlOutcomeCallable;
         typedef std::future<CreateProcessingJobOutcome> CreateProcessingJobOutcomeCallable;
         typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
+        typedef std::future<CreateStudioLifecycleConfigOutcome> CreateStudioLifecycleConfigOutcomeCallable;
         typedef std::future<CreateTrainingJobOutcome> CreateTrainingJobOutcomeCallable;
         typedef std::future<CreateTransformJobOutcome> CreateTransformJobOutcomeCallable;
         typedef std::future<CreateTrialOutcome> CreateTrialOutcomeCallable;
@@ -796,6 +808,7 @@ namespace Model
         typedef std::future<DeleteNotebookInstanceLifecycleConfigOutcome> DeleteNotebookInstanceLifecycleConfigOutcomeCallable;
         typedef std::future<DeletePipelineOutcome> DeletePipelineOutcomeCallable;
         typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
+        typedef std::future<DeleteStudioLifecycleConfigOutcome> DeleteStudioLifecycleConfigOutcomeCallable;
         typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
         typedef std::future<DeleteTrialOutcome> DeleteTrialOutcomeCallable;
         typedef std::future<DeleteTrialComponentOutcome> DeleteTrialComponentOutcomeCallable;
@@ -841,6 +854,7 @@ namespace Model
         typedef std::future<DescribePipelineExecutionOutcome> DescribePipelineExecutionOutcomeCallable;
         typedef std::future<DescribeProcessingJobOutcome> DescribeProcessingJobOutcomeCallable;
         typedef std::future<DescribeProjectOutcome> DescribeProjectOutcomeCallable;
+        typedef std::future<DescribeStudioLifecycleConfigOutcome> DescribeStudioLifecycleConfigOutcomeCallable;
         typedef std::future<DescribeSubscribedWorkteamOutcome> DescribeSubscribedWorkteamOutcomeCallable;
         typedef std::future<DescribeTrainingJobOutcome> DescribeTrainingJobOutcomeCallable;
         typedef std::future<DescribeTransformJobOutcome> DescribeTransformJobOutcomeCallable;
@@ -899,6 +913,7 @@ namespace Model
         typedef std::future<ListPipelinesOutcome> ListPipelinesOutcomeCallable;
         typedef std::future<ListProcessingJobsOutcome> ListProcessingJobsOutcomeCallable;
         typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
+        typedef std::future<ListStudioLifecycleConfigsOutcome> ListStudioLifecycleConfigsOutcomeCallable;
         typedef std::future<ListSubscribedWorkteamsOutcome> ListSubscribedWorkteamsOutcomeCallable;
         typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
         typedef std::future<ListTrainingJobsOutcome> ListTrainingJobsOutcomeCallable;
@@ -997,6 +1012,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::CreatePresignedNotebookInstanceUrlRequest&, const Model::CreatePresignedNotebookInstanceUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePresignedNotebookInstanceUrlResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateProcessingJobRequest&, const Model::CreateProcessingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProcessingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateStudioLifecycleConfigRequest&, const Model::CreateStudioLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStudioLifecycleConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateTrainingJobRequest&, const Model::CreateTrainingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrainingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateTransformJobRequest&, const Model::CreateTransformJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTransformJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateTrialRequest&, const Model::CreateTrialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrialResponseReceivedHandler;
@@ -1035,6 +1051,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::DeleteNotebookInstanceLifecycleConfigRequest&, const Model::DeleteNotebookInstanceLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNotebookInstanceLifecycleConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeletePipelineRequest&, const Model::DeletePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePipelineResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteStudioLifecycleConfigRequest&, const Model::DeleteStudioLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStudioLifecycleConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteTrialRequest&, const Model::DeleteTrialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrialResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteTrialComponentRequest&, const Model::DeleteTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrialComponentResponseReceivedHandler;
@@ -1080,6 +1097,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::DescribePipelineExecutionRequest&, const Model::DescribePipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePipelineExecutionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeProcessingJobRequest&, const Model::DescribeProcessingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProcessingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeProjectRequest&, const Model::DescribeProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProjectResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeStudioLifecycleConfigRequest&, const Model::DescribeStudioLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStudioLifecycleConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeSubscribedWorkteamRequest&, const Model::DescribeSubscribedWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSubscribedWorkteamResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeTrainingJobRequest&, const Model::DescribeTrainingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrainingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeTransformJobRequest&, const Model::DescribeTransformJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTransformJobResponseReceivedHandler;
@@ -1138,6 +1156,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::ListPipelinesRequest&, const Model::ListPipelinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelinesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListProcessingJobsRequest&, const Model::ListProcessingJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProcessingJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListStudioLifecycleConfigsRequest&, const Model::ListStudioLifecycleConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStudioLifecycleConfigsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListSubscribedWorkteamsRequest&, const Model::ListSubscribedWorkteamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscribedWorkteamsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListTrainingJobsRequest&, const Model::ListTrainingJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrainingJobsResponseReceivedHandler;
@@ -1399,11 +1418,7 @@ namespace Model
          * Generally, an action involves at least one input or output artifact. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
-         * SageMaker ML Lineage Tracking</a>.</p>  <p> <code>CreateAction</code> can
-         * only be invoked from within an SageMaker managed environment. This includes
-         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
-         * notebooks. A call to <code>CreateAction</code> from outside one of these
-         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
+         * SageMaker ML Lineage Tracking</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAction">AWS
          * API Reference</a></p>
          */
@@ -1415,11 +1430,7 @@ namespace Model
          * Generally, an action involves at least one input or output artifact. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
-         * SageMaker ML Lineage Tracking</a>.</p>  <p> <code>CreateAction</code> can
-         * only be invoked from within an SageMaker managed environment. This includes
-         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
-         * notebooks. A call to <code>CreateAction</code> from outside one of these
-         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
+         * SageMaker ML Lineage Tracking</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAction">AWS
          * API Reference</a></p>
          *
@@ -1433,11 +1444,7 @@ namespace Model
          * Generally, an action involves at least one input or output artifact. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
-         * SageMaker ML Lineage Tracking</a>.</p>  <p> <code>CreateAction</code> can
-         * only be invoked from within an SageMaker managed environment. This includes
-         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
-         * notebooks. A call to <code>CreateAction</code> from outside one of these
-         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
+         * SageMaker ML Lineage Tracking</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAction">AWS
          * API Reference</a></p>
          *
@@ -1549,11 +1556,7 @@ namespace Model
          * represents a URI addressable object or data. Some examples are the S3 URI of a
          * dataset and the ECR registry path of an image. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
-         * SageMaker ML Lineage Tracking</a>.</p>  <p> <code>CreateArtifact</code>
-         * can only be invoked from within an SageMaker managed environment. This includes
-         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
-         * notebooks. A call to <code>CreateArtifact</code> from outside one of these
-         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
+         * SageMaker ML Lineage Tracking</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateArtifact">AWS
          * API Reference</a></p>
          */
@@ -1564,11 +1567,7 @@ namespace Model
          * represents a URI addressable object or data. Some examples are the S3 URI of a
          * dataset and the ECR registry path of an image. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
-         * SageMaker ML Lineage Tracking</a>.</p>  <p> <code>CreateArtifact</code>
-         * can only be invoked from within an SageMaker managed environment. This includes
-         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
-         * notebooks. A call to <code>CreateArtifact</code> from outside one of these
-         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
+         * SageMaker ML Lineage Tracking</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateArtifact">AWS
          * API Reference</a></p>
          *
@@ -1581,11 +1580,7 @@ namespace Model
          * represents a URI addressable object or data. Some examples are the S3 URI of a
          * dataset and the ECR registry path of an image. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
-         * SageMaker ML Lineage Tracking</a>.</p>  <p> <code>CreateArtifact</code>
-         * can only be invoked from within an SageMaker managed environment. This includes
-         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
-         * notebooks. A call to <code>CreateArtifact</code> from outside one of these
-         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
+         * SageMaker ML Lineage Tracking</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateArtifact">AWS
          * API Reference</a></p>
          *
@@ -1766,11 +1761,7 @@ namespace Model
          * represents a logical grouping of other tracking or experiment entities. Some
          * examples are an endpoint and a model package. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
-         * SageMaker ML Lineage Tracking</a>.</p>  <p> <code>CreateContext</code> can
-         * only be invoked from within an SageMaker managed environment. This includes
-         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
-         * notebooks. A call to <code>CreateContext</code> from outside one of these
-         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
+         * SageMaker ML Lineage Tracking</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateContext">AWS
          * API Reference</a></p>
          */
@@ -1781,11 +1772,7 @@ namespace Model
          * represents a logical grouping of other tracking or experiment entities. Some
          * examples are an endpoint and a model package. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
-         * SageMaker ML Lineage Tracking</a>.</p>  <p> <code>CreateContext</code> can
-         * only be invoked from within an SageMaker managed environment. This includes
-         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
-         * notebooks. A call to <code>CreateContext</code> from outside one of these
-         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
+         * SageMaker ML Lineage Tracking</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateContext">AWS
          * API Reference</a></p>
          *
@@ -1798,11 +1785,7 @@ namespace Model
          * represents a logical grouping of other tracking or experiment entities. Some
          * examples are an endpoint and a model package. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
-         * SageMaker ML Lineage Tracking</a>.</p>  <p> <code>CreateContext</code> can
-         * only be invoked from within an SageMaker managed environment. This includes
-         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
-         * notebooks. A call to <code>CreateContext</code> from outside one of these
-         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
+         * SageMaker ML Lineage Tracking</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateContext">AWS
          * API Reference</a></p>
          *
@@ -2238,13 +2221,9 @@ namespace Model
          * allocate to each model. For example, suppose that you want to host two models, A
          * and B, and you assign traffic weight 2 for model A and 1 for model B. Amazon
          * SageMaker distributes two-thirds of the traffic to Model A, and one-third to
-         * model B. </p> <p>For an example that calls this method when deploying a model to
-         * Amazon SageMaker hosting services, see <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-         * the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for
-         * Python (Boto 3)).</a> </p>  <p>When you call <a>CreateEndpoint</a>, a load
-         * call is made to DynamoDB to verify that your endpoint configuration exists. When
-         * you read data from a DynamoDB table supporting <a
+         * model B. </p>  <p>When you call <a>CreateEndpoint</a>, a load call is made
+         * to DynamoDB to verify that your endpoint configuration exists. When you read
+         * data from a DynamoDB table supporting <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
          * <code>Eventually Consistent Reads</code> </a>, the response might not reflect
          * the results of a recently completed write operation. The response might include
@@ -2275,13 +2254,9 @@ namespace Model
          * allocate to each model. For example, suppose that you want to host two models, A
          * and B, and you assign traffic weight 2 for model A and 1 for model B. Amazon
          * SageMaker distributes two-thirds of the traffic to Model A, and one-third to
-         * model B. </p> <p>For an example that calls this method when deploying a model to
-         * Amazon SageMaker hosting services, see <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-         * the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for
-         * Python (Boto 3)).</a> </p>  <p>When you call <a>CreateEndpoint</a>, a load
-         * call is made to DynamoDB to verify that your endpoint configuration exists. When
-         * you read data from a DynamoDB table supporting <a
+         * model B. </p>  <p>When you call <a>CreateEndpoint</a>, a load call is made
+         * to DynamoDB to verify that your endpoint configuration exists. When you read
+         * data from a DynamoDB table supporting <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
          * <code>Eventually Consistent Reads</code> </a>, the response might not reflect
          * the results of a recently completed write operation. The response might include
@@ -2314,13 +2289,9 @@ namespace Model
          * allocate to each model. For example, suppose that you want to host two models, A
          * and B, and you assign traffic weight 2 for model A and 1 for model B. Amazon
          * SageMaker distributes two-thirds of the traffic to Model A, and one-third to
-         * model B. </p> <p>For an example that calls this method when deploying a model to
-         * Amazon SageMaker hosting services, see <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-         * the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for
-         * Python (Boto 3)).</a> </p>  <p>When you call <a>CreateEndpoint</a>, a load
-         * call is made to DynamoDB to verify that your endpoint configuration exists. When
-         * you read data from a DynamoDB table supporting <a
+         * model B. </p>  <p>When you call <a>CreateEndpoint</a>, a load call is made
+         * to DynamoDB to verify that your endpoint configuration exists. When you read
+         * data from a DynamoDB table supporting <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
          * <code>Eventually Consistent Reads</code> </a>, the response might not reflect
          * the results of a recently completed write operation. The response might include
@@ -3487,6 +3458,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new Studio Lifecycle Configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateStudioLifecycleConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateStudioLifecycleConfigOutcome CreateStudioLifecycleConfig(const Model::CreateStudioLifecycleConfigRequest& request) const;
+
+        /**
+         * <p>Creates a new Studio Lifecycle Configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateStudioLifecycleConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateStudioLifecycleConfigOutcomeCallable CreateStudioLifecycleConfigCallable(const Model::CreateStudioLifecycleConfigRequest& request) const;
+
+        /**
+         * <p>Creates a new Studio Lifecycle Configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateStudioLifecycleConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateStudioLifecycleConfigAsync(const Model::CreateStudioLifecycleConfigRequest& request, const CreateStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a model training job. After training completes, Amazon SageMaker saves
@@ -4904,6 +4900,40 @@ namespace Model
         virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the Studio Lifecycle Configuration. In order to delete the Lifecycle
+         * Configuration, there must be no running apps using the Lifecycle Configuration.
+         * You must also remove the Lifecycle Configuration from UserSettings in all
+         * Domains and UserProfiles.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteStudioLifecycleConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteStudioLifecycleConfigOutcome DeleteStudioLifecycleConfig(const Model::DeleteStudioLifecycleConfigRequest& request) const;
+
+        /**
+         * <p>Deletes the Studio Lifecycle Configuration. In order to delete the Lifecycle
+         * Configuration, there must be no running apps using the Lifecycle Configuration.
+         * You must also remove the Lifecycle Configuration from UserSettings in all
+         * Domains and UserProfiles.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteStudioLifecycleConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteStudioLifecycleConfigOutcomeCallable DeleteStudioLifecycleConfigCallable(const Model::DeleteStudioLifecycleConfigRequest& request) const;
+
+        /**
+         * <p>Deletes the Studio Lifecycle Configuration. In order to delete the Lifecycle
+         * Configuration, there must be no running apps using the Lifecycle Configuration.
+         * You must also remove the Lifecycle Configuration from UserSettings in all
+         * Domains and UserProfiles.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteStudioLifecycleConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteStudioLifecycleConfigAsync(const Model::DeleteStudioLifecycleConfigRequest& request, const DeleteStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified tags from an Amazon SageMaker resource.</p> <p>To list
          * a resource's tags, use the <code>ListTags</code> API. </p>  <p>When you
          * call this API to delete tags from a hyperparameter tuning job, the deleted tags
@@ -6177,6 +6207,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeProjectAsync(const Model::DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the Studio Lifecycle Configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeStudioLifecycleConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeStudioLifecycleConfigOutcome DescribeStudioLifecycleConfig(const Model::DescribeStudioLifecycleConfigRequest& request) const;
+
+        /**
+         * <p>Describes the Studio Lifecycle Configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeStudioLifecycleConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeStudioLifecycleConfigOutcomeCallable DescribeStudioLifecycleConfigCallable(const Model::DescribeStudioLifecycleConfigRequest& request) const;
+
+        /**
+         * <p>Describes the Studio Lifecycle Configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeStudioLifecycleConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeStudioLifecycleConfigAsync(const Model::DescribeStudioLifecycleConfigRequest& request, const DescribeStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a work team provided by a vendor. It returns details
@@ -7840,6 +7895,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the Studio Lifecycle Configurations in your Amazon Web Services
+         * Account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListStudioLifecycleConfigs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStudioLifecycleConfigsOutcome ListStudioLifecycleConfigs(const Model::ListStudioLifecycleConfigsRequest& request) const;
+
+        /**
+         * <p>Lists the Studio Lifecycle Configurations in your Amazon Web Services
+         * Account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListStudioLifecycleConfigs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListStudioLifecycleConfigsOutcomeCallable ListStudioLifecycleConfigsCallable(const Model::ListStudioLifecycleConfigsRequest& request) const;
+
+        /**
+         * <p>Lists the Studio Lifecycle Configurations in your Amazon Web Services
+         * Account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListStudioLifecycleConfigs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListStudioLifecycleConfigsAsync(const Model::ListStudioLifecycleConfigsRequest& request, const ListStudioLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of the work teams that you are subscribed to in the Amazon Web
@@ -9688,6 +9771,7 @@ namespace Model
         void CreatePresignedNotebookInstanceUrlAsyncHelper(const Model::CreatePresignedNotebookInstanceUrlRequest& request, const CreatePresignedNotebookInstanceUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateProcessingJobAsyncHelper(const Model::CreateProcessingJobRequest& request, const CreateProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateProjectAsyncHelper(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateStudioLifecycleConfigAsyncHelper(const Model::CreateStudioLifecycleConfigRequest& request, const CreateStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTrainingJobAsyncHelper(const Model::CreateTrainingJobRequest& request, const CreateTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTransformJobAsyncHelper(const Model::CreateTransformJobRequest& request, const CreateTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTrialAsyncHelper(const Model::CreateTrialRequest& request, const CreateTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -9726,6 +9810,7 @@ namespace Model
         void DeleteNotebookInstanceLifecycleConfigAsyncHelper(const Model::DeleteNotebookInstanceLifecycleConfigRequest& request, const DeleteNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePipelineAsyncHelper(const Model::DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProjectAsyncHelper(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteStudioLifecycleConfigAsyncHelper(const Model::DeleteStudioLifecycleConfigRequest& request, const DeleteStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTagsAsyncHelper(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTrialAsyncHelper(const Model::DeleteTrialRequest& request, const DeleteTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTrialComponentAsyncHelper(const Model::DeleteTrialComponentRequest& request, const DeleteTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -9771,6 +9856,7 @@ namespace Model
         void DescribePipelineExecutionAsyncHelper(const Model::DescribePipelineExecutionRequest& request, const DescribePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProcessingJobAsyncHelper(const Model::DescribeProcessingJobRequest& request, const DescribeProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProjectAsyncHelper(const Model::DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeStudioLifecycleConfigAsyncHelper(const Model::DescribeStudioLifecycleConfigRequest& request, const DescribeStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSubscribedWorkteamAsyncHelper(const Model::DescribeSubscribedWorkteamRequest& request, const DescribeSubscribedWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTrainingJobAsyncHelper(const Model::DescribeTrainingJobRequest& request, const DescribeTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTransformJobAsyncHelper(const Model::DescribeTransformJobRequest& request, const DescribeTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -9829,6 +9915,7 @@ namespace Model
         void ListPipelinesAsyncHelper(const Model::ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProcessingJobsAsyncHelper(const Model::ListProcessingJobsRequest& request, const ListProcessingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProjectsAsyncHelper(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListStudioLifecycleConfigsAsyncHelper(const Model::ListStudioLifecycleConfigsRequest& request, const ListStudioLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSubscribedWorkteamsAsyncHelper(const Model::ListSubscribedWorkteamsRequest& request, const ListSubscribedWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsAsyncHelper(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTrainingJobsAsyncHelper(const Model::ListTrainingJobsRequest& request, const ListTrainingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

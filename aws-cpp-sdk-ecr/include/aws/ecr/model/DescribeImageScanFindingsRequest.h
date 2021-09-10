@@ -36,58 +36,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to describe the image scan findings for. If you do not specify a
-     * registry, the default registry is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository in which to describe the image scan findings for. If you do not
+     * specify a registry, the default registry is assumed.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to describe the image scan findings for. If you do not specify a
-     * registry, the default registry is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository in which to describe the image scan findings for. If you do not
+     * specify a registry, the default registry is assumed.</p>
      */
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to describe the image scan findings for. If you do not specify a
-     * registry, the default registry is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository in which to describe the image scan findings for. If you do not
+     * specify a registry, the default registry is assumed.</p>
      */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to describe the image scan findings for. If you do not specify a
-     * registry, the default registry is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository in which to describe the image scan findings for. If you do not
+     * specify a registry, the default registry is assumed.</p>
      */
     inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to describe the image scan findings for. If you do not specify a
-     * registry, the default registry is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository in which to describe the image scan findings for. If you do not
+     * specify a registry, the default registry is assumed.</p>
      */
     inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to describe the image scan findings for. If you do not specify a
-     * registry, the default registry is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository in which to describe the image scan findings for. If you do not
+     * specify a registry, the default registry is assumed.</p>
      */
     inline DescribeImageScanFindingsRequest& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to describe the image scan findings for. If you do not specify a
-     * registry, the default registry is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository in which to describe the image scan findings for. If you do not
+     * specify a registry, the default registry is assumed.</p>
      */
     inline DescribeImageScanFindingsRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to describe the image scan findings for. If you do not specify a
-     * registry, the default registry is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository in which to describe the image scan findings for. If you do not
+     * specify a registry, the default registry is assumed.</p>
      */
     inline DescribeImageScanFindingsRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 

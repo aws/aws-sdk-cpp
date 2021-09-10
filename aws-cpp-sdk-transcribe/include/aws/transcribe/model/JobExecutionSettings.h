@@ -44,7 +44,8 @@ namespace Model
      * <code>AllowDeferredExecution</code> field is true, jobs are queued and executed
      * when the number of executing jobs falls below the concurrent execution limit. If
      * the field is false, Amazon Transcribe returns a
-     * <code>LimitExceededException</code> exception.</p> <p>If you specify the
+     * <code>LimitExceededException</code> exception.</p> <p>Note that job queuing is
+     * enabled by default for call analytics jobs.</p> <p>If you specify the
      * <code>AllowDeferredExecution</code> field, you must specify the
      * <code>DataAccessRoleArn</code> field.</p>
      */
@@ -56,7 +57,8 @@ namespace Model
      * <code>AllowDeferredExecution</code> field is true, jobs are queued and executed
      * when the number of executing jobs falls below the concurrent execution limit. If
      * the field is false, Amazon Transcribe returns a
-     * <code>LimitExceededException</code> exception.</p> <p>If you specify the
+     * <code>LimitExceededException</code> exception.</p> <p>Note that job queuing is
+     * enabled by default for call analytics jobs.</p> <p>If you specify the
      * <code>AllowDeferredExecution</code> field, you must specify the
      * <code>DataAccessRoleArn</code> field.</p>
      */
@@ -68,7 +70,8 @@ namespace Model
      * <code>AllowDeferredExecution</code> field is true, jobs are queued and executed
      * when the number of executing jobs falls below the concurrent execution limit. If
      * the field is false, Amazon Transcribe returns a
-     * <code>LimitExceededException</code> exception.</p> <p>If you specify the
+     * <code>LimitExceededException</code> exception.</p> <p>Note that job queuing is
+     * enabled by default for call analytics jobs.</p> <p>If you specify the
      * <code>AllowDeferredExecution</code> field, you must specify the
      * <code>DataAccessRoleArn</code> field.</p>
      */
@@ -80,7 +83,8 @@ namespace Model
      * <code>AllowDeferredExecution</code> field is true, jobs are queued and executed
      * when the number of executing jobs falls below the concurrent execution limit. If
      * the field is false, Amazon Transcribe returns a
-     * <code>LimitExceededException</code> exception.</p> <p>If you specify the
+     * <code>LimitExceededException</code> exception.</p> <p>Note that job queuing is
+     * enabled by default for call analytics jobs.</p> <p>If you specify the
      * <code>AllowDeferredExecution</code> field, you must specify the
      * <code>DataAccessRoleArn</code> field.</p>
      */

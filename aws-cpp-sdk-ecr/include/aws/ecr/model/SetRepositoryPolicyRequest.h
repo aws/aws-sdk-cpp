@@ -35,50 +35,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository.
-     * If you do not specify a registry, the default registry is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository. If you do not specify a registry, the default registry is
+     * assumed.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository.
-     * If you do not specify a registry, the default registry is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository. If you do not specify a registry, the default registry is
+     * assumed.</p>
      */
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository.
-     * If you do not specify a registry, the default registry is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository. If you do not specify a registry, the default registry is
+     * assumed.</p>
      */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository.
-     * If you do not specify a registry, the default registry is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository. If you do not specify a registry, the default registry is
+     * assumed.</p>
      */
     inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository.
-     * If you do not specify a registry, the default registry is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository. If you do not specify a registry, the default registry is
+     * assumed.</p>
      */
     inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository.
-     * If you do not specify a registry, the default registry is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository. If you do not specify a registry, the default registry is
+     * assumed.</p>
      */
     inline SetRepositoryPolicyRequest& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository.
-     * If you do not specify a registry, the default registry is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository. If you do not specify a registry, the default registry is
+     * assumed.</p>
      */
     inline SetRepositoryPolicyRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository.
-     * If you do not specify a registry, the default registry is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository. If you do not specify a registry, the default registry is
+     * assumed.</p>
      */
     inline SetRepositoryPolicyRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
@@ -128,7 +136,7 @@ namespace Model
      * <p>The JSON repository policy text to apply to the repository. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon
-     * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
+     * ECR repository policies</a> in the <i>Amazon Elastic Container Registry User
      * Guide</i>.</p>
      */
     inline const Aws::String& GetPolicyText() const{ return m_policyText; }
@@ -137,7 +145,7 @@ namespace Model
      * <p>The JSON repository policy text to apply to the repository. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon
-     * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
+     * ECR repository policies</a> in the <i>Amazon Elastic Container Registry User
      * Guide</i>.</p>
      */
     inline bool PolicyTextHasBeenSet() const { return m_policyTextHasBeenSet; }
@@ -146,7 +154,7 @@ namespace Model
      * <p>The JSON repository policy text to apply to the repository. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon
-     * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
+     * ECR repository policies</a> in the <i>Amazon Elastic Container Registry User
      * Guide</i>.</p>
      */
     inline void SetPolicyText(const Aws::String& value) { m_policyTextHasBeenSet = true; m_policyText = value; }
@@ -155,7 +163,7 @@ namespace Model
      * <p>The JSON repository policy text to apply to the repository. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon
-     * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
+     * ECR repository policies</a> in the <i>Amazon Elastic Container Registry User
      * Guide</i>.</p>
      */
     inline void SetPolicyText(Aws::String&& value) { m_policyTextHasBeenSet = true; m_policyText = std::move(value); }
@@ -164,7 +172,7 @@ namespace Model
      * <p>The JSON repository policy text to apply to the repository. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon
-     * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
+     * ECR repository policies</a> in the <i>Amazon Elastic Container Registry User
      * Guide</i>.</p>
      */
     inline void SetPolicyText(const char* value) { m_policyTextHasBeenSet = true; m_policyText.assign(value); }
@@ -173,7 +181,7 @@ namespace Model
      * <p>The JSON repository policy text to apply to the repository. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon
-     * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
+     * ECR repository policies</a> in the <i>Amazon Elastic Container Registry User
      * Guide</i>.</p>
      */
     inline SetRepositoryPolicyRequest& WithPolicyText(const Aws::String& value) { SetPolicyText(value); return *this;}
@@ -182,7 +190,7 @@ namespace Model
      * <p>The JSON repository policy text to apply to the repository. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon
-     * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
+     * ECR repository policies</a> in the <i>Amazon Elastic Container Registry User
      * Guide</i>.</p>
      */
     inline SetRepositoryPolicyRequest& WithPolicyText(Aws::String&& value) { SetPolicyText(std::move(value)); return *this;}
@@ -191,7 +199,7 @@ namespace Model
      * <p>The JSON repository policy text to apply to the repository. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon
-     * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
+     * ECR repository policies</a> in the <i>Amazon Elastic Container Registry User
      * Guide</i>.</p>
      */
     inline SetRepositoryPolicyRequest& WithPolicyText(const char* value) { SetPolicyText(value); return *this;}

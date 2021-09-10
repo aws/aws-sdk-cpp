@@ -38,7 +38,8 @@ DataSourceParameters::DataSourceParameters() :
     m_sparkParametersHasBeenSet(false),
     m_sqlServerParametersHasBeenSet(false),
     m_teradataParametersHasBeenSet(false),
-    m_twitterParametersHasBeenSet(false)
+    m_twitterParametersHasBeenSet(false),
+    m_amazonOpenSearchParametersHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ DataSourceParameters::DataSourceParameters(JsonView jsonValue) :
     m_sparkParametersHasBeenSet(false),
     m_sqlServerParametersHasBeenSet(false),
     m_teradataParametersHasBeenSet(false),
-    m_twitterParametersHasBeenSet(false)
+    m_twitterParametersHasBeenSet(false),
+    m_amazonOpenSearchParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -209,6 +211,13 @@ DataSourceParameters& DataSourceParameters::operator =(JsonView jsonValue)
     m_twitterParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AmazonOpenSearchParameters"))
+  {
+    m_amazonOpenSearchParameters = jsonValue.GetObject("AmazonOpenSearchParameters");
+
+    m_amazonOpenSearchParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -333,6 +342,12 @@ JsonValue DataSourceParameters::Jsonize() const
   if(m_twitterParametersHasBeenSet)
   {
    payload.WithObject("TwitterParameters", m_twitterParameters.Jsonize());
+
+  }
+
+  if(m_amazonOpenSearchParametersHasBeenSet)
+  {
+   payload.WithObject("AmazonOpenSearchParameters", m_amazonOpenSearchParameters.Jsonize());
 
   }
 

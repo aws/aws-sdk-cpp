@@ -60,6 +60,7 @@
 #include <aws/sagemaker/model/CreatePresignedNotebookInstanceUrlRequest.h>
 #include <aws/sagemaker/model/CreateProcessingJobRequest.h>
 #include <aws/sagemaker/model/CreateProjectRequest.h>
+#include <aws/sagemaker/model/CreateStudioLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/CreateTrainingJobRequest.h>
 #include <aws/sagemaker/model/CreateTransformJobRequest.h>
 #include <aws/sagemaker/model/CreateTrialRequest.h>
@@ -98,6 +99,7 @@
 #include <aws/sagemaker/model/DeleteNotebookInstanceLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/DeletePipelineRequest.h>
 #include <aws/sagemaker/model/DeleteProjectRequest.h>
+#include <aws/sagemaker/model/DeleteStudioLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/DeleteTagsRequest.h>
 #include <aws/sagemaker/model/DeleteTrialRequest.h>
 #include <aws/sagemaker/model/DeleteTrialComponentRequest.h>
@@ -143,6 +145,7 @@
 #include <aws/sagemaker/model/DescribePipelineExecutionRequest.h>
 #include <aws/sagemaker/model/DescribeProcessingJobRequest.h>
 #include <aws/sagemaker/model/DescribeProjectRequest.h>
+#include <aws/sagemaker/model/DescribeStudioLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/DescribeSubscribedWorkteamRequest.h>
 #include <aws/sagemaker/model/DescribeTrainingJobRequest.h>
 #include <aws/sagemaker/model/DescribeTransformJobRequest.h>
@@ -201,6 +204,7 @@
 #include <aws/sagemaker/model/ListPipelinesRequest.h>
 #include <aws/sagemaker/model/ListProcessingJobsRequest.h>
 #include <aws/sagemaker/model/ListProjectsRequest.h>
+#include <aws/sagemaker/model/ListStudioLifecycleConfigsRequest.h>
 #include <aws/sagemaker/model/ListSubscribedWorkteamsRequest.h>
 #include <aws/sagemaker/model/ListTagsRequest.h>
 #include <aws/sagemaker/model/ListTrainingJobsRequest.h>
@@ -1289,6 +1293,30 @@ void SageMakerClient::CreateProjectAsyncHelper(const CreateProjectRequest& reque
   handler(this, request, CreateProject(request), context);
 }
 
+CreateStudioLifecycleConfigOutcome SageMakerClient::CreateStudioLifecycleConfig(const CreateStudioLifecycleConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateStudioLifecycleConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateStudioLifecycleConfigOutcomeCallable SageMakerClient::CreateStudioLifecycleConfigCallable(const CreateStudioLifecycleConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateStudioLifecycleConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStudioLifecycleConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::CreateStudioLifecycleConfigAsync(const CreateStudioLifecycleConfigRequest& request, const CreateStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateStudioLifecycleConfigAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::CreateStudioLifecycleConfigAsyncHelper(const CreateStudioLifecycleConfigRequest& request, const CreateStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateStudioLifecycleConfig(request), context);
+}
+
 CreateTrainingJobOutcome SageMakerClient::CreateTrainingJob(const CreateTrainingJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -2199,6 +2227,30 @@ void SageMakerClient::DeleteProjectAsync(const DeleteProjectRequest& request, co
 void SageMakerClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteProject(request), context);
+}
+
+DeleteStudioLifecycleConfigOutcome SageMakerClient::DeleteStudioLifecycleConfig(const DeleteStudioLifecycleConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteStudioLifecycleConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteStudioLifecycleConfigOutcomeCallable SageMakerClient::DeleteStudioLifecycleConfigCallable(const DeleteStudioLifecycleConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteStudioLifecycleConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStudioLifecycleConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DeleteStudioLifecycleConfigAsync(const DeleteStudioLifecycleConfigRequest& request, const DeleteStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteStudioLifecycleConfigAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::DeleteStudioLifecycleConfigAsyncHelper(const DeleteStudioLifecycleConfigRequest& request, const DeleteStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteStudioLifecycleConfig(request), context);
 }
 
 DeleteTagsOutcome SageMakerClient::DeleteTags(const DeleteTagsRequest& request) const
@@ -3279,6 +3331,30 @@ void SageMakerClient::DescribeProjectAsync(const DescribeProjectRequest& request
 void SageMakerClient::DescribeProjectAsyncHelper(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeProject(request), context);
+}
+
+DescribeStudioLifecycleConfigOutcome SageMakerClient::DescribeStudioLifecycleConfig(const DescribeStudioLifecycleConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeStudioLifecycleConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeStudioLifecycleConfigOutcomeCallable SageMakerClient::DescribeStudioLifecycleConfigCallable(const DescribeStudioLifecycleConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeStudioLifecycleConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStudioLifecycleConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DescribeStudioLifecycleConfigAsync(const DescribeStudioLifecycleConfigRequest& request, const DescribeStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeStudioLifecycleConfigAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::DescribeStudioLifecycleConfigAsyncHelper(const DescribeStudioLifecycleConfigRequest& request, const DescribeStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeStudioLifecycleConfig(request), context);
 }
 
 DescribeSubscribedWorkteamOutcome SageMakerClient::DescribeSubscribedWorkteam(const DescribeSubscribedWorkteamRequest& request) const
@@ -4671,6 +4747,30 @@ void SageMakerClient::ListProjectsAsync(const ListProjectsRequest& request, cons
 void SageMakerClient::ListProjectsAsyncHelper(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListProjects(request), context);
+}
+
+ListStudioLifecycleConfigsOutcome SageMakerClient::ListStudioLifecycleConfigs(const ListStudioLifecycleConfigsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListStudioLifecycleConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListStudioLifecycleConfigsOutcomeCallable SageMakerClient::ListStudioLifecycleConfigsCallable(const ListStudioLifecycleConfigsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListStudioLifecycleConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStudioLifecycleConfigs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListStudioLifecycleConfigsAsync(const ListStudioLifecycleConfigsRequest& request, const ListStudioLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListStudioLifecycleConfigsAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::ListStudioLifecycleConfigsAsyncHelper(const ListStudioLifecycleConfigsRequest& request, const ListStudioLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListStudioLifecycleConfigs(request), context);
 }
 
 ListSubscribedWorkteamsOutcome SageMakerClient::ListSubscribedWorkteams(const ListSubscribedWorkteamsRequest& request) const

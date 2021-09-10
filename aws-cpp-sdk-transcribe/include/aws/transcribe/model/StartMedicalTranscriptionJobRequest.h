@@ -10,6 +10,7 @@
 #include <aws/transcribe/model/LanguageCode.h>
 #include <aws/transcribe/model/MediaFormat.h>
 #include <aws/transcribe/model/Media.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/transcribe/model/MedicalTranscriptionSetting.h>
 #include <aws/transcribe/model/MedicalContentIdentificationType.h>
 #include <aws/transcribe/model/Specialty.h>
@@ -694,6 +695,85 @@ namespace Model
 
 
     /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetKMSEncryptionContext() const{ return m_kMSEncryptionContext; }
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline bool KMSEncryptionContextHasBeenSet() const { return m_kMSEncryptionContextHasBeenSet; }
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline void SetKMSEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext = value; }
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline void SetKMSEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext = std::move(value); }
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& WithKMSEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { SetKMSEncryptionContext(value); return *this;}
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& WithKMSEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetKMSEncryptionContext(std::move(value)); return *this;}
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(const Aws::String& key, const Aws::String& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(Aws::String&& key, const Aws::String& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(const Aws::String& key, Aws::String&& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(Aws::String&& key, Aws::String&& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(const char* key, Aws::String&& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(Aws::String&& key, const char* value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of plain text, non-secret key:value pairs, known as encryption context
+     * pairs, that provide an added layer of security for your data.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(const char* key, const char* value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(key, value); return *this; }
+
+
+    /**
      * <p>Optional settings for the medical transcription job.</p>
      */
     inline const MedicalTranscriptionSetting& GetSettings() const{ return m_settings; }
@@ -918,6 +998,9 @@ namespace Model
 
     Aws::String m_outputEncryptionKMSKeyId;
     bool m_outputEncryptionKMSKeyIdHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_kMSEncryptionContext;
+    bool m_kMSEncryptionContextHasBeenSet;
 
     MedicalTranscriptionSetting m_settings;
     bool m_settingsHasBeenSet;

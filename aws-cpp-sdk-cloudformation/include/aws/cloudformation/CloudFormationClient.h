@@ -1355,7 +1355,7 @@ namespace Model
          * in the specified stack. This includes actual and expected configuration values
          * for resources where CloudFormation detects configuration drift.</p> <p>For a
          * given stack, there will be one <code>StackResourceDrift</code> for each stack
-         * resource that has been checked for drift. Resources that have not yet been
+         * resource that has been checked for drift. Resources that haven't yet been
          * checked for drift are not included. Resources that do not currently support
          * drift detection are not checked, and so not included. For a list of resources
          * that support drift detection, see <a
@@ -1373,7 +1373,7 @@ namespace Model
          * in the specified stack. This includes actual and expected configuration values
          * for resources where CloudFormation detects configuration drift.</p> <p>For a
          * given stack, there will be one <code>StackResourceDrift</code> for each stack
-         * resource that has been checked for drift. Resources that have not yet been
+         * resource that has been checked for drift. Resources that haven't yet been
          * checked for drift are not included. Resources that do not currently support
          * drift detection are not checked, and so not included. For a list of resources
          * that support drift detection, see <a
@@ -1393,7 +1393,7 @@ namespace Model
          * in the specified stack. This includes actual and expected configuration values
          * for resources where CloudFormation detects configuration drift.</p> <p>For a
          * given stack, there will be one <code>StackResourceDrift</code> for each stack
-         * resource that has been checked for drift. Resources that have not yet been
+         * resource that has been checked for drift. Resources that haven't yet been
          * checked for drift are not included. Resources that do not currently support
          * drift detection are not checked, and so not included. For a list of resources
          * that support drift detection, see <a
@@ -1540,9 +1540,8 @@ namespace Model
         /**
          * <p>Returns the description for the specified stack; if no stack name was
          * specified, then it returns the description for all the stacks created.</p>
-         *  <p>If the stack does not exist, an
-         * <code>AmazonCloudFormationException</code> is returned.</p> <p><h3>See
-         * Also:</h3>   <a
+         *  <p>If the stack does not exist, an <code>ValidationError</code> is
+         * returned.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">AWS
          * API Reference</a></p>
          */
@@ -1551,9 +1550,8 @@ namespace Model
         /**
          * <p>Returns the description for the specified stack; if no stack name was
          * specified, then it returns the description for all the stacks created.</p>
-         *  <p>If the stack does not exist, an
-         * <code>AmazonCloudFormationException</code> is returned.</p> <p><h3>See
-         * Also:</h3>   <a
+         *  <p>If the stack does not exist, an <code>ValidationError</code> is
+         * returned.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">AWS
          * API Reference</a></p>
          *
@@ -1564,9 +1562,8 @@ namespace Model
         /**
          * <p>Returns the description for the specified stack; if no stack name was
          * specified, then it returns the description for all the stacks created.</p>
-         *  <p>If the stack does not exist, an
-         * <code>AmazonCloudFormationException</code> is returned.</p> <p><h3>See
-         * Also:</h3>   <a
+         *  <p>If the stack does not exist, an <code>ValidationError</code> is
+         * returned.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">AWS
          * API Reference</a></p>
          *

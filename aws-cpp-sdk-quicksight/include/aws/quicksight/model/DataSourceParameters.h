@@ -25,6 +25,7 @@
 #include <aws/quicksight/model/SqlServerParameters.h>
 #include <aws/quicksight/model/TeradataParameters.h>
 #include <aws/quicksight/model/TwitterParameters.h>
+#include <aws/quicksight/model/AmazonOpenSearchParameters.h>
 #include <utility>
 
 namespace Aws
@@ -677,6 +678,25 @@ namespace Model
      */
     inline DataSourceParameters& WithTwitterParameters(TwitterParameters&& value) { SetTwitterParameters(std::move(value)); return *this;}
 
+
+    
+    inline const AmazonOpenSearchParameters& GetAmazonOpenSearchParameters() const{ return m_amazonOpenSearchParameters; }
+
+    
+    inline bool AmazonOpenSearchParametersHasBeenSet() const { return m_amazonOpenSearchParametersHasBeenSet; }
+
+    
+    inline void SetAmazonOpenSearchParameters(const AmazonOpenSearchParameters& value) { m_amazonOpenSearchParametersHasBeenSet = true; m_amazonOpenSearchParameters = value; }
+
+    
+    inline void SetAmazonOpenSearchParameters(AmazonOpenSearchParameters&& value) { m_amazonOpenSearchParametersHasBeenSet = true; m_amazonOpenSearchParameters = std::move(value); }
+
+    
+    inline DataSourceParameters& WithAmazonOpenSearchParameters(const AmazonOpenSearchParameters& value) { SetAmazonOpenSearchParameters(value); return *this;}
+
+    
+    inline DataSourceParameters& WithAmazonOpenSearchParameters(AmazonOpenSearchParameters&& value) { SetAmazonOpenSearchParameters(std::move(value)); return *this;}
+
   private:
 
     AmazonElasticsearchParameters m_amazonElasticsearchParameters;
@@ -738,6 +758,9 @@ namespace Model
 
     TwitterParameters m_twitterParameters;
     bool m_twitterParametersHasBeenSet;
+
+    AmazonOpenSearchParameters m_amazonOpenSearchParameters;
+    bool m_amazonOpenSearchParametersHasBeenSet;
   };
 
 } // namespace Model

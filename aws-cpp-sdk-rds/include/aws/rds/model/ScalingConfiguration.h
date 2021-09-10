@@ -335,6 +335,35 @@ namespace Model
      */
     inline ScalingConfiguration& WithTimeoutAction(const char* value) { SetTimeoutAction(value); return *this;}
 
+
+    /**
+     * <p>The amount of time, in seconds, that Aurora Serverless tries to find a
+     * scaling point to perform seamless scaling before enforcing the timeout action.
+     * The default is 300.</p> <p>Specify a value between 60 and 600 seconds.</p>
+     */
+    inline int GetSecondsBeforeTimeout() const{ return m_secondsBeforeTimeout; }
+
+    /**
+     * <p>The amount of time, in seconds, that Aurora Serverless tries to find a
+     * scaling point to perform seamless scaling before enforcing the timeout action.
+     * The default is 300.</p> <p>Specify a value between 60 and 600 seconds.</p>
+     */
+    inline bool SecondsBeforeTimeoutHasBeenSet() const { return m_secondsBeforeTimeoutHasBeenSet; }
+
+    /**
+     * <p>The amount of time, in seconds, that Aurora Serverless tries to find a
+     * scaling point to perform seamless scaling before enforcing the timeout action.
+     * The default is 300.</p> <p>Specify a value between 60 and 600 seconds.</p>
+     */
+    inline void SetSecondsBeforeTimeout(int value) { m_secondsBeforeTimeoutHasBeenSet = true; m_secondsBeforeTimeout = value; }
+
+    /**
+     * <p>The amount of time, in seconds, that Aurora Serverless tries to find a
+     * scaling point to perform seamless scaling before enforcing the timeout action.
+     * The default is 300.</p> <p>Specify a value between 60 and 600 seconds.</p>
+     */
+    inline ScalingConfiguration& WithSecondsBeforeTimeout(int value) { SetSecondsBeforeTimeout(value); return *this;}
+
   private:
 
     int m_minCapacity;
@@ -351,6 +380,9 @@ namespace Model
 
     Aws::String m_timeoutAction;
     bool m_timeoutActionHasBeenSet;
+
+    int m_secondsBeforeTimeout;
+    bool m_secondsBeforeTimeoutHasBeenSet;
   };
 
 } // namespace Model

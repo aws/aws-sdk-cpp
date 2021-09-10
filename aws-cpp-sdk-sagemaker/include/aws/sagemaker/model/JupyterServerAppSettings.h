@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ResourceSpec.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -73,10 +75,68 @@ namespace Model
      */
     inline JupyterServerAppSettings& WithDefaultResourceSpec(ResourceSpec&& value) { SetDefaultResourceSpec(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the JupyterServerApp.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetLifecycleConfigArns() const{ return m_lifecycleConfigArns; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the JupyterServerApp.</p>
+     */
+    inline bool LifecycleConfigArnsHasBeenSet() const { return m_lifecycleConfigArnsHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the JupyterServerApp.</p>
+     */
+    inline void SetLifecycleConfigArns(const Aws::Vector<Aws::String>& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the JupyterServerApp.</p>
+     */
+    inline void SetLifecycleConfigArns(Aws::Vector<Aws::String>&& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the JupyterServerApp.</p>
+     */
+    inline JupyterServerAppSettings& WithLifecycleConfigArns(const Aws::Vector<Aws::String>& value) { SetLifecycleConfigArns(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the JupyterServerApp.</p>
+     */
+    inline JupyterServerAppSettings& WithLifecycleConfigArns(Aws::Vector<Aws::String>&& value) { SetLifecycleConfigArns(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the JupyterServerApp.</p>
+     */
+    inline JupyterServerAppSettings& AddLifecycleConfigArns(const Aws::String& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.push_back(value); return *this; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the JupyterServerApp.</p>
+     */
+    inline JupyterServerAppSettings& AddLifecycleConfigArns(Aws::String&& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the JupyterServerApp.</p>
+     */
+    inline JupyterServerAppSettings& AddLifecycleConfigArns(const char* value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.push_back(value); return *this; }
+
   private:
 
     ResourceSpec m_defaultResourceSpec;
     bool m_defaultResourceSpecHasBeenSet;
+
+    Aws::Vector<Aws::String> m_lifecycleConfigArns;
+    bool m_lifecycleConfigArnsHasBeenSet;
   };
 
 } // namespace Model

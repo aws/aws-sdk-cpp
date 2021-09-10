@@ -4525,8 +4525,8 @@ namespace Aws
          * scaling points, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
          * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
-         * Guide</i>.</p>   <p>This action only applies to Aurora DB
-         * clusters.</p> <p><h3>See Also:</h3>   <a
+         * Guide</i>.</p>   <p>This action only applies to Aurora
+         * Serverless DB clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCurrentDBClusterCapacity">AWS
          * API Reference</a></p>
          */
@@ -4550,8 +4550,8 @@ namespace Aws
          * scaling points, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
          * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
-         * Guide</i>.</p>   <p>This action only applies to Aurora DB
-         * clusters.</p> <p><h3>See Also:</h3>   <a
+         * Guide</i>.</p>   <p>This action only applies to Aurora
+         * Serverless DB clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCurrentDBClusterCapacity">AWS
          * API Reference</a></p>
          *
@@ -4577,8 +4577,8 @@ namespace Aws
          * scaling points, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
          * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
-         * Guide</i>.</p>   <p>This action only applies to Aurora DB
-         * clusters.</p> <p><h3>See Also:</h3>   <a
+         * Guide</i>.</p>   <p>This action only applies to Aurora
+         * Serverless DB clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCurrentDBClusterCapacity">AWS
          * API Reference</a></p>
          *
