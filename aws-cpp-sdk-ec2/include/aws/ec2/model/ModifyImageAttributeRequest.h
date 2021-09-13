@@ -46,57 +46,49 @@ namespace Model
 
     /**
      * <p>The name of the attribute to modify. The valid values are
-     * <code>description</code>, <code>launchPermission</code>, and
-     * <code>productCodes</code>.</p>
+     * <code>description</code> and <code>launchPermission</code>.</p>
      */
     inline const Aws::String& GetAttribute() const{ return m_attribute; }
 
     /**
      * <p>The name of the attribute to modify. The valid values are
-     * <code>description</code>, <code>launchPermission</code>, and
-     * <code>productCodes</code>.</p>
+     * <code>description</code> and <code>launchPermission</code>.</p>
      */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
 
     /**
      * <p>The name of the attribute to modify. The valid values are
-     * <code>description</code>, <code>launchPermission</code>, and
-     * <code>productCodes</code>.</p>
+     * <code>description</code> and <code>launchPermission</code>.</p>
      */
     inline void SetAttribute(const Aws::String& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
      * <p>The name of the attribute to modify. The valid values are
-     * <code>description</code>, <code>launchPermission</code>, and
-     * <code>productCodes</code>.</p>
+     * <code>description</code> and <code>launchPermission</code>.</p>
      */
     inline void SetAttribute(Aws::String&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
      * <p>The name of the attribute to modify. The valid values are
-     * <code>description</code>, <code>launchPermission</code>, and
-     * <code>productCodes</code>.</p>
+     * <code>description</code> and <code>launchPermission</code>.</p>
      */
     inline void SetAttribute(const char* value) { m_attributeHasBeenSet = true; m_attribute.assign(value); }
 
     /**
      * <p>The name of the attribute to modify. The valid values are
-     * <code>description</code>, <code>launchPermission</code>, and
-     * <code>productCodes</code>.</p>
+     * <code>description</code> and <code>launchPermission</code>.</p>
      */
     inline ModifyImageAttributeRequest& WithAttribute(const Aws::String& value) { SetAttribute(value); return *this;}
 
     /**
      * <p>The name of the attribute to modify. The valid values are
-     * <code>description</code>, <code>launchPermission</code>, and
-     * <code>productCodes</code>.</p>
+     * <code>description</code> and <code>launchPermission</code>.</p>
      */
     inline ModifyImageAttributeRequest& WithAttribute(Aws::String&& value) { SetAttribute(std::move(value)); return *this;}
 
     /**
      * <p>The name of the attribute to modify. The valid values are
-     * <code>description</code>, <code>launchPermission</code>, and
-     * <code>productCodes</code>.</p>
+     * <code>description</code> and <code>launchPermission</code>.</p>
      */
     inline ModifyImageAttributeRequest& WithAttribute(const char* value) { SetAttribute(value); return *this;}
 
@@ -242,56 +234,47 @@ namespace Model
 
 
     /**
-     * <p>The DevPay product codes. After you add a product code to an AMI, it can't be
-     * removed.</p>
+     * <p>Not supported.</p>
      */
     inline const Aws::Vector<Aws::String>& GetProductCodes() const{ return m_productCodes; }
 
     /**
-     * <p>The DevPay product codes. After you add a product code to an AMI, it can't be
-     * removed.</p>
+     * <p>Not supported.</p>
      */
     inline bool ProductCodesHasBeenSet() const { return m_productCodesHasBeenSet; }
 
     /**
-     * <p>The DevPay product codes. After you add a product code to an AMI, it can't be
-     * removed.</p>
+     * <p>Not supported.</p>
      */
     inline void SetProductCodes(const Aws::Vector<Aws::String>& value) { m_productCodesHasBeenSet = true; m_productCodes = value; }
 
     /**
-     * <p>The DevPay product codes. After you add a product code to an AMI, it can't be
-     * removed.</p>
+     * <p>Not supported.</p>
      */
     inline void SetProductCodes(Aws::Vector<Aws::String>&& value) { m_productCodesHasBeenSet = true; m_productCodes = std::move(value); }
 
     /**
-     * <p>The DevPay product codes. After you add a product code to an AMI, it can't be
-     * removed.</p>
+     * <p>Not supported.</p>
      */
     inline ModifyImageAttributeRequest& WithProductCodes(const Aws::Vector<Aws::String>& value) { SetProductCodes(value); return *this;}
 
     /**
-     * <p>The DevPay product codes. After you add a product code to an AMI, it can't be
-     * removed.</p>
+     * <p>Not supported.</p>
      */
     inline ModifyImageAttributeRequest& WithProductCodes(Aws::Vector<Aws::String>&& value) { SetProductCodes(std::move(value)); return *this;}
 
     /**
-     * <p>The DevPay product codes. After you add a product code to an AMI, it can't be
-     * removed.</p>
+     * <p>Not supported.</p>
      */
     inline ModifyImageAttributeRequest& AddProductCodes(const Aws::String& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(value); return *this; }
 
     /**
-     * <p>The DevPay product codes. After you add a product code to an AMI, it can't be
-     * removed.</p>
+     * <p>Not supported.</p>
      */
     inline ModifyImageAttributeRequest& AddProductCodes(Aws::String&& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The DevPay product codes. After you add a product code to an AMI, it can't be
-     * removed.</p>
+     * <p>Not supported.</p>
      */
     inline ModifyImageAttributeRequest& AddProductCodes(const char* value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(value); return *this; }
 
@@ -352,55 +335,55 @@ namespace Model
 
 
     /**
-     * <p>The AWS account IDs. This parameter can be used only when the
+     * <p>The Amazon Web Services account IDs. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserIds() const{ return m_userIds; }
 
     /**
-     * <p>The AWS account IDs. This parameter can be used only when the
+     * <p>The Amazon Web Services account IDs. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline bool UserIdsHasBeenSet() const { return m_userIdsHasBeenSet; }
 
     /**
-     * <p>The AWS account IDs. This parameter can be used only when the
+     * <p>The Amazon Web Services account IDs. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline void SetUserIds(const Aws::Vector<Aws::String>& value) { m_userIdsHasBeenSet = true; m_userIds = value; }
 
     /**
-     * <p>The AWS account IDs. This parameter can be used only when the
+     * <p>The Amazon Web Services account IDs. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline void SetUserIds(Aws::Vector<Aws::String>&& value) { m_userIdsHasBeenSet = true; m_userIds = std::move(value); }
 
     /**
-     * <p>The AWS account IDs. This parameter can be used only when the
+     * <p>The Amazon Web Services account IDs. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline ModifyImageAttributeRequest& WithUserIds(const Aws::Vector<Aws::String>& value) { SetUserIds(value); return *this;}
 
     /**
-     * <p>The AWS account IDs. This parameter can be used only when the
+     * <p>The Amazon Web Services account IDs. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline ModifyImageAttributeRequest& WithUserIds(Aws::Vector<Aws::String>&& value) { SetUserIds(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account IDs. This parameter can be used only when the
+     * <p>The Amazon Web Services account IDs. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline ModifyImageAttributeRequest& AddUserIds(const Aws::String& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
 
     /**
-     * <p>The AWS account IDs. This parameter can be used only when the
+     * <p>The Amazon Web Services account IDs. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline ModifyImageAttributeRequest& AddUserIds(Aws::String&& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The AWS account IDs. This parameter can be used only when the
+     * <p>The Amazon Web Services account IDs. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline ModifyImageAttributeRequest& AddUserIds(const char* value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
@@ -408,57 +391,49 @@ namespace Model
 
     /**
      * <p>The value of the attribute being modified. This parameter can be used only
-     * when the <code>Attribute</code> parameter is <code>description</code> or
-     * <code>productCodes</code>.</p>
+     * when the <code>Attribute</code> parameter is <code>description</code>.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
      * <p>The value of the attribute being modified. This parameter can be used only
-     * when the <code>Attribute</code> parameter is <code>description</code> or
-     * <code>productCodes</code>.</p>
+     * when the <code>Attribute</code> parameter is <code>description</code>.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value of the attribute being modified. This parameter can be used only
-     * when the <code>Attribute</code> parameter is <code>description</code> or
-     * <code>productCodes</code>.</p>
+     * when the <code>Attribute</code> parameter is <code>description</code>.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
      * <p>The value of the attribute being modified. This parameter can be used only
-     * when the <code>Attribute</code> parameter is <code>description</code> or
-     * <code>productCodes</code>.</p>
+     * when the <code>Attribute</code> parameter is <code>description</code>.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of the attribute being modified. This parameter can be used only
-     * when the <code>Attribute</code> parameter is <code>description</code> or
-     * <code>productCodes</code>.</p>
+     * when the <code>Attribute</code> parameter is <code>description</code>.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
      * <p>The value of the attribute being modified. This parameter can be used only
-     * when the <code>Attribute</code> parameter is <code>description</code> or
-     * <code>productCodes</code>.</p>
+     * when the <code>Attribute</code> parameter is <code>description</code>.</p>
      */
     inline ModifyImageAttributeRequest& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
      * <p>The value of the attribute being modified. This parameter can be used only
-     * when the <code>Attribute</code> parameter is <code>description</code> or
-     * <code>productCodes</code>.</p>
+     * when the <code>Attribute</code> parameter is <code>description</code>.</p>
      */
     inline ModifyImageAttributeRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the attribute being modified. This parameter can be used only
-     * when the <code>Attribute</code> parameter is <code>description</code> or
-     * <code>productCodes</code>.</p>
+     * when the <code>Attribute</code> parameter is <code>description</code>.</p>
      */
     inline ModifyImageAttributeRequest& WithValue(const char* value) { SetValue(value); return *this;}
 

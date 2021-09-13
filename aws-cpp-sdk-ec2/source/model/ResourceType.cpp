@@ -20,8 +20,10 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
+        static const int capacity_reservation_HASH = HashingUtils::HashString("capacity-reservation");
         static const int client_vpn_endpoint_HASH = HashingUtils::HashString("client-vpn-endpoint");
         static const int customer_gateway_HASH = HashingUtils::HashString("customer-gateway");
+        static const int carrier_gateway_HASH = HashingUtils::HashString("carrier-gateway");
         static const int dedicated_host_HASH = HashingUtils::HashString("dedicated-host");
         static const int dhcp_options_HASH = HashingUtils::HashString("dhcp-options");
         static const int egress_only_internet_gateway_HASH = HashingUtils::HashString("egress-only-internet-gateway");
@@ -38,15 +40,24 @@ namespace Aws
         static const int instance_HASH = HashingUtils::HashString("instance");
         static const int instance_event_window_HASH = HashingUtils::HashString("instance-event-window");
         static const int internet_gateway_HASH = HashingUtils::HashString("internet-gateway");
+        static const int ipv4pool_ec2_HASH = HashingUtils::HashString("ipv4pool-ec2");
+        static const int ipv6pool_ec2_HASH = HashingUtils::HashString("ipv6pool-ec2");
         static const int key_pair_HASH = HashingUtils::HashString("key-pair");
         static const int launch_template_HASH = HashingUtils::HashString("launch-template");
+        static const int local_gateway_HASH = HashingUtils::HashString("local-gateway");
+        static const int local_gateway_route_table_HASH = HashingUtils::HashString("local-gateway-route-table");
+        static const int local_gateway_virtual_interface_HASH = HashingUtils::HashString("local-gateway-virtual-interface");
+        static const int local_gateway_virtual_interface_group_HASH = HashingUtils::HashString("local-gateway-virtual-interface-group");
         static const int local_gateway_route_table_vpc_association_HASH = HashingUtils::HashString("local-gateway-route-table-vpc-association");
+        static const int local_gateway_route_table_virtual_interface_group_association_HASH = HashingUtils::HashString("local-gateway-route-table-virtual-interface-group-association");
         static const int natgateway_HASH = HashingUtils::HashString("natgateway");
         static const int network_acl_HASH = HashingUtils::HashString("network-acl");
         static const int network_interface_HASH = HashingUtils::HashString("network-interface");
         static const int network_insights_analysis_HASH = HashingUtils::HashString("network-insights-analysis");
         static const int network_insights_path_HASH = HashingUtils::HashString("network-insights-path");
         static const int placement_group_HASH = HashingUtils::HashString("placement-group");
+        static const int prefix_list_HASH = HashingUtils::HashString("prefix-list");
+        static const int replace_root_volume_task_HASH = HashingUtils::HashString("replace-root-volume-task");
         static const int reserved_instances_HASH = HashingUtils::HashString("reserved-instances");
         static const int route_table_HASH = HashingUtils::HashString("route-table");
         static const int security_group_HASH = HashingUtils::HashString("security-group");
@@ -65,6 +76,8 @@ namespace Aws
         static const int transit_gateway_route_table_HASH = HashingUtils::HashString("transit-gateway-route-table");
         static const int volume_HASH = HashingUtils::HashString("volume");
         static const int vpc_HASH = HashingUtils::HashString("vpc");
+        static const int vpc_endpoint_HASH = HashingUtils::HashString("vpc-endpoint");
+        static const int vpc_endpoint_service_HASH = HashingUtils::HashString("vpc-endpoint-service");
         static const int vpc_peering_connection_HASH = HashingUtils::HashString("vpc-peering-connection");
         static const int vpn_connection_HASH = HashingUtils::HashString("vpn-connection");
         static const int vpn_gateway_HASH = HashingUtils::HashString("vpn-gateway");
@@ -74,13 +87,21 @@ namespace Aws
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == client_vpn_endpoint_HASH)
+          if (hashCode == capacity_reservation_HASH)
+          {
+            return ResourceType::capacity_reservation;
+          }
+          else if (hashCode == client_vpn_endpoint_HASH)
           {
             return ResourceType::client_vpn_endpoint;
           }
           else if (hashCode == customer_gateway_HASH)
           {
             return ResourceType::customer_gateway;
+          }
+          else if (hashCode == carrier_gateway_HASH)
+          {
+            return ResourceType::carrier_gateway;
           }
           else if (hashCode == dedicated_host_HASH)
           {
@@ -146,6 +167,14 @@ namespace Aws
           {
             return ResourceType::internet_gateway;
           }
+          else if (hashCode == ipv4pool_ec2_HASH)
+          {
+            return ResourceType::ipv4pool_ec2;
+          }
+          else if (hashCode == ipv6pool_ec2_HASH)
+          {
+            return ResourceType::ipv6pool_ec2;
+          }
           else if (hashCode == key_pair_HASH)
           {
             return ResourceType::key_pair;
@@ -154,9 +183,29 @@ namespace Aws
           {
             return ResourceType::launch_template;
           }
+          else if (hashCode == local_gateway_HASH)
+          {
+            return ResourceType::local_gateway;
+          }
+          else if (hashCode == local_gateway_route_table_HASH)
+          {
+            return ResourceType::local_gateway_route_table;
+          }
+          else if (hashCode == local_gateway_virtual_interface_HASH)
+          {
+            return ResourceType::local_gateway_virtual_interface;
+          }
+          else if (hashCode == local_gateway_virtual_interface_group_HASH)
+          {
+            return ResourceType::local_gateway_virtual_interface_group;
+          }
           else if (hashCode == local_gateway_route_table_vpc_association_HASH)
           {
             return ResourceType::local_gateway_route_table_vpc_association;
+          }
+          else if (hashCode == local_gateway_route_table_virtual_interface_group_association_HASH)
+          {
+            return ResourceType::local_gateway_route_table_virtual_interface_group_association;
           }
           else if (hashCode == natgateway_HASH)
           {
@@ -181,6 +230,14 @@ namespace Aws
           else if (hashCode == placement_group_HASH)
           {
             return ResourceType::placement_group;
+          }
+          else if (hashCode == prefix_list_HASH)
+          {
+            return ResourceType::prefix_list;
+          }
+          else if (hashCode == replace_root_volume_task_HASH)
+          {
+            return ResourceType::replace_root_volume_task;
           }
           else if (hashCode == reserved_instances_HASH)
           {
@@ -254,6 +311,14 @@ namespace Aws
           {
             return ResourceType::vpc;
           }
+          else if (hashCode == vpc_endpoint_HASH)
+          {
+            return ResourceType::vpc_endpoint;
+          }
+          else if (hashCode == vpc_endpoint_service_HASH)
+          {
+            return ResourceType::vpc_endpoint_service;
+          }
           else if (hashCode == vpc_peering_connection_HASH)
           {
             return ResourceType::vpc_peering_connection;
@@ -284,10 +349,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::capacity_reservation:
+            return "capacity-reservation";
           case ResourceType::client_vpn_endpoint:
             return "client-vpn-endpoint";
           case ResourceType::customer_gateway:
             return "customer-gateway";
+          case ResourceType::carrier_gateway:
+            return "carrier-gateway";
           case ResourceType::dedicated_host:
             return "dedicated-host";
           case ResourceType::dhcp_options:
@@ -320,12 +389,26 @@ namespace Aws
             return "instance-event-window";
           case ResourceType::internet_gateway:
             return "internet-gateway";
+          case ResourceType::ipv4pool_ec2:
+            return "ipv4pool-ec2";
+          case ResourceType::ipv6pool_ec2:
+            return "ipv6pool-ec2";
           case ResourceType::key_pair:
             return "key-pair";
           case ResourceType::launch_template:
             return "launch-template";
+          case ResourceType::local_gateway:
+            return "local-gateway";
+          case ResourceType::local_gateway_route_table:
+            return "local-gateway-route-table";
+          case ResourceType::local_gateway_virtual_interface:
+            return "local-gateway-virtual-interface";
+          case ResourceType::local_gateway_virtual_interface_group:
+            return "local-gateway-virtual-interface-group";
           case ResourceType::local_gateway_route_table_vpc_association:
             return "local-gateway-route-table-vpc-association";
+          case ResourceType::local_gateway_route_table_virtual_interface_group_association:
+            return "local-gateway-route-table-virtual-interface-group-association";
           case ResourceType::natgateway:
             return "natgateway";
           case ResourceType::network_acl:
@@ -338,6 +421,10 @@ namespace Aws
             return "network-insights-path";
           case ResourceType::placement_group:
             return "placement-group";
+          case ResourceType::prefix_list:
+            return "prefix-list";
+          case ResourceType::replace_root_volume_task:
+            return "replace-root-volume-task";
           case ResourceType::reserved_instances:
             return "reserved-instances";
           case ResourceType::route_table:
@@ -374,6 +461,10 @@ namespace Aws
             return "volume";
           case ResourceType::vpc:
             return "vpc";
+          case ResourceType::vpc_endpoint:
+            return "vpc-endpoint";
+          case ResourceType::vpc_endpoint_service:
+            return "vpc-endpoint-service";
           case ResourceType::vpc_peering_connection:
             return "vpc-peering-connection";
           case ResourceType::vpn_connection:

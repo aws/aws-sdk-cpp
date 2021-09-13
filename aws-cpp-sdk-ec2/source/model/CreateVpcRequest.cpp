@@ -11,6 +11,7 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CreateVpcRequest::CreateVpcRequest() : 
+    m_cidrBlockHasBeenSet(false),
     m_amazonProvidedIpv6CidrBlock(false),
     m_amazonProvidedIpv6CidrBlockHasBeenSet(false),
     m_ipv6PoolHasBeenSet(false),
@@ -20,8 +21,7 @@ CreateVpcRequest::CreateVpcRequest() :
     m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false),
     m_ipv6CidrBlockNetworkBorderGroupHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false)
+    m_tagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -29,6 +29,11 @@ Aws::String CreateVpcRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateVpc&";
+  if(m_cidrBlockHasBeenSet)
+  {
+    ss << "CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
+  }
+
   if(m_amazonProvidedIpv6CidrBlockHasBeenSet)
   {
     ss << "AmazonProvidedIpv6CidrBlock=" << std::boolalpha << m_amazonProvidedIpv6CidrBlock << "&";
@@ -67,11 +72,6 @@ Aws::String CreateVpcRequest::SerializePayload() const
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
-  }
-
-  if(m_cidrBlockHasBeenSet)
-  {
-    ss << "CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

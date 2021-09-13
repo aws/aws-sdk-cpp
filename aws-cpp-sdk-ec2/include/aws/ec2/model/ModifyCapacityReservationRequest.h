@@ -80,26 +80,30 @@ namespace Model
 
 
     /**
-     * <p>The number of instances for which to reserve capacity.</p> <p>Valid range: 1
-     * - 1000</p>
+     * <p>The number of instances for which to reserve capacity. The number of
+     * instances can't be increased or decreased by more than <code>1000</code> in a
+     * single request.</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
-     * <p>The number of instances for which to reserve capacity.</p> <p>Valid range: 1
-     * - 1000</p>
+     * <p>The number of instances for which to reserve capacity. The number of
+     * instances can't be increased or decreased by more than <code>1000</code> in a
+     * single request.</p>
      */
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
 
     /**
-     * <p>The number of instances for which to reserve capacity.</p> <p>Valid range: 1
-     * - 1000</p>
+     * <p>The number of instances for which to reserve capacity. The number of
+     * instances can't be increased or decreased by more than <code>1000</code> in a
+     * single request.</p>
      */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
-     * <p>The number of instances for which to reserve capacity.</p> <p>Valid range: 1
-     * - 1000</p>
+     * <p>The number of instances for which to reserve capacity. The number of
+     * instances can't be increased or decreased by more than <code>1000</code> in a
+     * single request.</p>
      */
     inline ModifyCapacityReservationRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 

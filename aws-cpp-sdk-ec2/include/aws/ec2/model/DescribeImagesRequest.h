@@ -39,65 +39,65 @@ namespace Model
   public:
 
     /**
-     * <p>Scopes the images by users with explicit launch permissions. Specify an AWS
-     * account ID, <code>self</code> (the sender of the request), or <code>all</code>
-     * (public AMIs).</p>
+     * <p>Scopes the images by users with explicit launch permissions. Specify an
+     * Amazon Web Services account ID, <code>self</code> (the sender of the request),
+     * or <code>all</code> (public AMIs).</p>
      */
     inline const Aws::Vector<Aws::String>& GetExecutableUsers() const{ return m_executableUsers; }
 
     /**
-     * <p>Scopes the images by users with explicit launch permissions. Specify an AWS
-     * account ID, <code>self</code> (the sender of the request), or <code>all</code>
-     * (public AMIs).</p>
+     * <p>Scopes the images by users with explicit launch permissions. Specify an
+     * Amazon Web Services account ID, <code>self</code> (the sender of the request),
+     * or <code>all</code> (public AMIs).</p>
      */
     inline bool ExecutableUsersHasBeenSet() const { return m_executableUsersHasBeenSet; }
 
     /**
-     * <p>Scopes the images by users with explicit launch permissions. Specify an AWS
-     * account ID, <code>self</code> (the sender of the request), or <code>all</code>
-     * (public AMIs).</p>
+     * <p>Scopes the images by users with explicit launch permissions. Specify an
+     * Amazon Web Services account ID, <code>self</code> (the sender of the request),
+     * or <code>all</code> (public AMIs).</p>
      */
     inline void SetExecutableUsers(const Aws::Vector<Aws::String>& value) { m_executableUsersHasBeenSet = true; m_executableUsers = value; }
 
     /**
-     * <p>Scopes the images by users with explicit launch permissions. Specify an AWS
-     * account ID, <code>self</code> (the sender of the request), or <code>all</code>
-     * (public AMIs).</p>
+     * <p>Scopes the images by users with explicit launch permissions. Specify an
+     * Amazon Web Services account ID, <code>self</code> (the sender of the request),
+     * or <code>all</code> (public AMIs).</p>
      */
     inline void SetExecutableUsers(Aws::Vector<Aws::String>&& value) { m_executableUsersHasBeenSet = true; m_executableUsers = std::move(value); }
 
     /**
-     * <p>Scopes the images by users with explicit launch permissions. Specify an AWS
-     * account ID, <code>self</code> (the sender of the request), or <code>all</code>
-     * (public AMIs).</p>
+     * <p>Scopes the images by users with explicit launch permissions. Specify an
+     * Amazon Web Services account ID, <code>self</code> (the sender of the request),
+     * or <code>all</code> (public AMIs).</p>
      */
     inline DescribeImagesRequest& WithExecutableUsers(const Aws::Vector<Aws::String>& value) { SetExecutableUsers(value); return *this;}
 
     /**
-     * <p>Scopes the images by users with explicit launch permissions. Specify an AWS
-     * account ID, <code>self</code> (the sender of the request), or <code>all</code>
-     * (public AMIs).</p>
+     * <p>Scopes the images by users with explicit launch permissions. Specify an
+     * Amazon Web Services account ID, <code>self</code> (the sender of the request),
+     * or <code>all</code> (public AMIs).</p>
      */
     inline DescribeImagesRequest& WithExecutableUsers(Aws::Vector<Aws::String>&& value) { SetExecutableUsers(std::move(value)); return *this;}
 
     /**
-     * <p>Scopes the images by users with explicit launch permissions. Specify an AWS
-     * account ID, <code>self</code> (the sender of the request), or <code>all</code>
-     * (public AMIs).</p>
+     * <p>Scopes the images by users with explicit launch permissions. Specify an
+     * Amazon Web Services account ID, <code>self</code> (the sender of the request),
+     * or <code>all</code> (public AMIs).</p>
      */
     inline DescribeImagesRequest& AddExecutableUsers(const Aws::String& value) { m_executableUsersHasBeenSet = true; m_executableUsers.push_back(value); return *this; }
 
     /**
-     * <p>Scopes the images by users with explicit launch permissions. Specify an AWS
-     * account ID, <code>self</code> (the sender of the request), or <code>all</code>
-     * (public AMIs).</p>
+     * <p>Scopes the images by users with explicit launch permissions. Specify an
+     * Amazon Web Services account ID, <code>self</code> (the sender of the request),
+     * or <code>all</code> (public AMIs).</p>
      */
     inline DescribeImagesRequest& AddExecutableUsers(Aws::String&& value) { m_executableUsersHasBeenSet = true; m_executableUsers.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Scopes the images by users with explicit launch permissions. Specify an AWS
-     * account ID, <code>self</code> (the sender of the request), or <code>all</code>
-     * (public AMIs).</p>
+     * <p>Scopes the images by users with explicit launch permissions. Specify an
+     * Amazon Web Services account ID, <code>self</code> (the sender of the request),
+     * or <code>all</code> (public AMIs).</p>
      */
     inline DescribeImagesRequest& AddExecutableUsers(const char* value) { m_executableUsersHasBeenSet = true; m_executableUsers.push_back(value); return *this; }
 
@@ -112,17 +112,19 @@ namespace Model
      * block device mapping (for example, <code>/dev/sdh</code> or
      * <code>xvdh</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for
-     * the EBS volume.</p> </li> <li> <p> <code>block-device-mapping.volume-size</code>
-     * - The volume size of the EBS volume, in GiB.</p> </li> <li> <p>
-     * <code>block-device-mapping.volume-type</code> - The volume type of the EBS
-     * volume (<code>gp2</code> | <code>io1</code> | <code>io2</code> | <code>st1
-     * </code>| <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
+     * the Amazon EBS volume.</p> </li> <li> <p>
+     * <code>block-device-mapping.volume-size</code> - The volume size of the Amazon
+     * EBS volume, in GiB.</p> </li> <li> <p>
+     * <code>block-device-mapping.volume-type</code> - The volume type of the Amazon
+     * EBS volume (<code>io1</code> | <code>io2</code> | <code>gp2</code> |
+     * <code>gp3</code> | <code>sc1 </code>| <code>st1</code> |
+     * <code>standard</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether
-     * the EBS volume is encrypted.</p> </li> <li> <p> <code>description</code> - The
-     * description of the image (provided during image creation).</p> </li> <li> <p>
-     * <code>ena-support</code> - A Boolean that indicates whether enhanced networking
-     * with ENA is enabled.</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor
-     * type (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p>
+     * the Amazon EBS volume is encrypted.</p> </li> <li> <p> <code>description</code>
+     * - The description of the image (provided during image creation).</p> </li> <li>
+     * <p> <code>ena-support</code> - A Boolean that indicates whether enhanced
+     * networking with ENA is enabled.</p> </li> <li> <p> <code>hypervisor</code> - The
+     * hypervisor type (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p>
      * <code>image-id</code> - The ID of the image.</p> </li> <li> <p>
      * <code>image-type</code> - The image type (<code>machine</code> |
      * <code>kernel</code> | <code>ramdisk</code>).</p> </li> <li> <p>
@@ -132,18 +134,18 @@ namespace Model
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
      * alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid aliases
-     * are defined in an Amazon-maintained list. This is not the AWS account alias that
-     * can be set using the IAM console. We recommend that you use the <b>Owner</b>
-     * request parameter instead of this filter.</p> </li> <li> <p>
-     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you
-     * use the <b>Owner</b> request parameter instead of this filter.</p> </li> <li>
-     * <p> <code>platform</code> - The platform. To only list Windows-based AMIs, use
-     * <code>windows</code>.</p> </li> <li> <p> <code>product-code</code> - The product
-     * code.</p> </li> <li> <p> <code>product-code.type</code> - The type of the
-     * product code (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
-     * <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The device name of the root device volume (for
-     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * are defined in an Amazon-maintained list. This is not the Amazon Web Services
+     * account alias that can be set using the IAM console. We recommend that you use
+     * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
+     * recommend that you use the <b>Owner</b> request parameter instead of this
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
+     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * <code>product-code</code> - The product code.</p> </li> <li> <p>
+     * <code>product-code.type</code> - The type of the product code
+     * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
+     * disk ID.</p> </li> <li> <p> <code>root-device-name</code> - The device name of
+     * the root device volume (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the image (<code>available</code> |
@@ -175,17 +177,19 @@ namespace Model
      * block device mapping (for example, <code>/dev/sdh</code> or
      * <code>xvdh</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for
-     * the EBS volume.</p> </li> <li> <p> <code>block-device-mapping.volume-size</code>
-     * - The volume size of the EBS volume, in GiB.</p> </li> <li> <p>
-     * <code>block-device-mapping.volume-type</code> - The volume type of the EBS
-     * volume (<code>gp2</code> | <code>io1</code> | <code>io2</code> | <code>st1
-     * </code>| <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
+     * the Amazon EBS volume.</p> </li> <li> <p>
+     * <code>block-device-mapping.volume-size</code> - The volume size of the Amazon
+     * EBS volume, in GiB.</p> </li> <li> <p>
+     * <code>block-device-mapping.volume-type</code> - The volume type of the Amazon
+     * EBS volume (<code>io1</code> | <code>io2</code> | <code>gp2</code> |
+     * <code>gp3</code> | <code>sc1 </code>| <code>st1</code> |
+     * <code>standard</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether
-     * the EBS volume is encrypted.</p> </li> <li> <p> <code>description</code> - The
-     * description of the image (provided during image creation).</p> </li> <li> <p>
-     * <code>ena-support</code> - A Boolean that indicates whether enhanced networking
-     * with ENA is enabled.</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor
-     * type (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p>
+     * the Amazon EBS volume is encrypted.</p> </li> <li> <p> <code>description</code>
+     * - The description of the image (provided during image creation).</p> </li> <li>
+     * <p> <code>ena-support</code> - A Boolean that indicates whether enhanced
+     * networking with ENA is enabled.</p> </li> <li> <p> <code>hypervisor</code> - The
+     * hypervisor type (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p>
      * <code>image-id</code> - The ID of the image.</p> </li> <li> <p>
      * <code>image-type</code> - The image type (<code>machine</code> |
      * <code>kernel</code> | <code>ramdisk</code>).</p> </li> <li> <p>
@@ -195,18 +199,18 @@ namespace Model
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
      * alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid aliases
-     * are defined in an Amazon-maintained list. This is not the AWS account alias that
-     * can be set using the IAM console. We recommend that you use the <b>Owner</b>
-     * request parameter instead of this filter.</p> </li> <li> <p>
-     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you
-     * use the <b>Owner</b> request parameter instead of this filter.</p> </li> <li>
-     * <p> <code>platform</code> - The platform. To only list Windows-based AMIs, use
-     * <code>windows</code>.</p> </li> <li> <p> <code>product-code</code> - The product
-     * code.</p> </li> <li> <p> <code>product-code.type</code> - The type of the
-     * product code (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
-     * <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The device name of the root device volume (for
-     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * are defined in an Amazon-maintained list. This is not the Amazon Web Services
+     * account alias that can be set using the IAM console. We recommend that you use
+     * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
+     * recommend that you use the <b>Owner</b> request parameter instead of this
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
+     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * <code>product-code</code> - The product code.</p> </li> <li> <p>
+     * <code>product-code.type</code> - The type of the product code
+     * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
+     * disk ID.</p> </li> <li> <p> <code>root-device-name</code> - The device name of
+     * the root device volume (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the image (<code>available</code> |
@@ -238,17 +242,19 @@ namespace Model
      * block device mapping (for example, <code>/dev/sdh</code> or
      * <code>xvdh</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for
-     * the EBS volume.</p> </li> <li> <p> <code>block-device-mapping.volume-size</code>
-     * - The volume size of the EBS volume, in GiB.</p> </li> <li> <p>
-     * <code>block-device-mapping.volume-type</code> - The volume type of the EBS
-     * volume (<code>gp2</code> | <code>io1</code> | <code>io2</code> | <code>st1
-     * </code>| <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
+     * the Amazon EBS volume.</p> </li> <li> <p>
+     * <code>block-device-mapping.volume-size</code> - The volume size of the Amazon
+     * EBS volume, in GiB.</p> </li> <li> <p>
+     * <code>block-device-mapping.volume-type</code> - The volume type of the Amazon
+     * EBS volume (<code>io1</code> | <code>io2</code> | <code>gp2</code> |
+     * <code>gp3</code> | <code>sc1 </code>| <code>st1</code> |
+     * <code>standard</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether
-     * the EBS volume is encrypted.</p> </li> <li> <p> <code>description</code> - The
-     * description of the image (provided during image creation).</p> </li> <li> <p>
-     * <code>ena-support</code> - A Boolean that indicates whether enhanced networking
-     * with ENA is enabled.</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor
-     * type (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p>
+     * the Amazon EBS volume is encrypted.</p> </li> <li> <p> <code>description</code>
+     * - The description of the image (provided during image creation).</p> </li> <li>
+     * <p> <code>ena-support</code> - A Boolean that indicates whether enhanced
+     * networking with ENA is enabled.</p> </li> <li> <p> <code>hypervisor</code> - The
+     * hypervisor type (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p>
      * <code>image-id</code> - The ID of the image.</p> </li> <li> <p>
      * <code>image-type</code> - The image type (<code>machine</code> |
      * <code>kernel</code> | <code>ramdisk</code>).</p> </li> <li> <p>
@@ -258,18 +264,18 @@ namespace Model
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
      * alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid aliases
-     * are defined in an Amazon-maintained list. This is not the AWS account alias that
-     * can be set using the IAM console. We recommend that you use the <b>Owner</b>
-     * request parameter instead of this filter.</p> </li> <li> <p>
-     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you
-     * use the <b>Owner</b> request parameter instead of this filter.</p> </li> <li>
-     * <p> <code>platform</code> - The platform. To only list Windows-based AMIs, use
-     * <code>windows</code>.</p> </li> <li> <p> <code>product-code</code> - The product
-     * code.</p> </li> <li> <p> <code>product-code.type</code> - The type of the
-     * product code (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
-     * <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The device name of the root device volume (for
-     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * are defined in an Amazon-maintained list. This is not the Amazon Web Services
+     * account alias that can be set using the IAM console. We recommend that you use
+     * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
+     * recommend that you use the <b>Owner</b> request parameter instead of this
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
+     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * <code>product-code</code> - The product code.</p> </li> <li> <p>
+     * <code>product-code.type</code> - The type of the product code
+     * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
+     * disk ID.</p> </li> <li> <p> <code>root-device-name</code> - The device name of
+     * the root device volume (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the image (<code>available</code> |
@@ -301,17 +307,19 @@ namespace Model
      * block device mapping (for example, <code>/dev/sdh</code> or
      * <code>xvdh</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for
-     * the EBS volume.</p> </li> <li> <p> <code>block-device-mapping.volume-size</code>
-     * - The volume size of the EBS volume, in GiB.</p> </li> <li> <p>
-     * <code>block-device-mapping.volume-type</code> - The volume type of the EBS
-     * volume (<code>gp2</code> | <code>io1</code> | <code>io2</code> | <code>st1
-     * </code>| <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
+     * the Amazon EBS volume.</p> </li> <li> <p>
+     * <code>block-device-mapping.volume-size</code> - The volume size of the Amazon
+     * EBS volume, in GiB.</p> </li> <li> <p>
+     * <code>block-device-mapping.volume-type</code> - The volume type of the Amazon
+     * EBS volume (<code>io1</code> | <code>io2</code> | <code>gp2</code> |
+     * <code>gp3</code> | <code>sc1 </code>| <code>st1</code> |
+     * <code>standard</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether
-     * the EBS volume is encrypted.</p> </li> <li> <p> <code>description</code> - The
-     * description of the image (provided during image creation).</p> </li> <li> <p>
-     * <code>ena-support</code> - A Boolean that indicates whether enhanced networking
-     * with ENA is enabled.</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor
-     * type (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p>
+     * the Amazon EBS volume is encrypted.</p> </li> <li> <p> <code>description</code>
+     * - The description of the image (provided during image creation).</p> </li> <li>
+     * <p> <code>ena-support</code> - A Boolean that indicates whether enhanced
+     * networking with ENA is enabled.</p> </li> <li> <p> <code>hypervisor</code> - The
+     * hypervisor type (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p>
      * <code>image-id</code> - The ID of the image.</p> </li> <li> <p>
      * <code>image-type</code> - The image type (<code>machine</code> |
      * <code>kernel</code> | <code>ramdisk</code>).</p> </li> <li> <p>
@@ -321,18 +329,18 @@ namespace Model
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
      * alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid aliases
-     * are defined in an Amazon-maintained list. This is not the AWS account alias that
-     * can be set using the IAM console. We recommend that you use the <b>Owner</b>
-     * request parameter instead of this filter.</p> </li> <li> <p>
-     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you
-     * use the <b>Owner</b> request parameter instead of this filter.</p> </li> <li>
-     * <p> <code>platform</code> - The platform. To only list Windows-based AMIs, use
-     * <code>windows</code>.</p> </li> <li> <p> <code>product-code</code> - The product
-     * code.</p> </li> <li> <p> <code>product-code.type</code> - The type of the
-     * product code (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
-     * <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The device name of the root device volume (for
-     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * are defined in an Amazon-maintained list. This is not the Amazon Web Services
+     * account alias that can be set using the IAM console. We recommend that you use
+     * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
+     * recommend that you use the <b>Owner</b> request parameter instead of this
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
+     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * <code>product-code</code> - The product code.</p> </li> <li> <p>
+     * <code>product-code.type</code> - The type of the product code
+     * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
+     * disk ID.</p> </li> <li> <p> <code>root-device-name</code> - The device name of
+     * the root device volume (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the image (<code>available</code> |
@@ -364,17 +372,19 @@ namespace Model
      * block device mapping (for example, <code>/dev/sdh</code> or
      * <code>xvdh</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for
-     * the EBS volume.</p> </li> <li> <p> <code>block-device-mapping.volume-size</code>
-     * - The volume size of the EBS volume, in GiB.</p> </li> <li> <p>
-     * <code>block-device-mapping.volume-type</code> - The volume type of the EBS
-     * volume (<code>gp2</code> | <code>io1</code> | <code>io2</code> | <code>st1
-     * </code>| <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
+     * the Amazon EBS volume.</p> </li> <li> <p>
+     * <code>block-device-mapping.volume-size</code> - The volume size of the Amazon
+     * EBS volume, in GiB.</p> </li> <li> <p>
+     * <code>block-device-mapping.volume-type</code> - The volume type of the Amazon
+     * EBS volume (<code>io1</code> | <code>io2</code> | <code>gp2</code> |
+     * <code>gp3</code> | <code>sc1 </code>| <code>st1</code> |
+     * <code>standard</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether
-     * the EBS volume is encrypted.</p> </li> <li> <p> <code>description</code> - The
-     * description of the image (provided during image creation).</p> </li> <li> <p>
-     * <code>ena-support</code> - A Boolean that indicates whether enhanced networking
-     * with ENA is enabled.</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor
-     * type (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p>
+     * the Amazon EBS volume is encrypted.</p> </li> <li> <p> <code>description</code>
+     * - The description of the image (provided during image creation).</p> </li> <li>
+     * <p> <code>ena-support</code> - A Boolean that indicates whether enhanced
+     * networking with ENA is enabled.</p> </li> <li> <p> <code>hypervisor</code> - The
+     * hypervisor type (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p>
      * <code>image-id</code> - The ID of the image.</p> </li> <li> <p>
      * <code>image-type</code> - The image type (<code>machine</code> |
      * <code>kernel</code> | <code>ramdisk</code>).</p> </li> <li> <p>
@@ -384,18 +394,18 @@ namespace Model
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
      * alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid aliases
-     * are defined in an Amazon-maintained list. This is not the AWS account alias that
-     * can be set using the IAM console. We recommend that you use the <b>Owner</b>
-     * request parameter instead of this filter.</p> </li> <li> <p>
-     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you
-     * use the <b>Owner</b> request parameter instead of this filter.</p> </li> <li>
-     * <p> <code>platform</code> - The platform. To only list Windows-based AMIs, use
-     * <code>windows</code>.</p> </li> <li> <p> <code>product-code</code> - The product
-     * code.</p> </li> <li> <p> <code>product-code.type</code> - The type of the
-     * product code (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
-     * <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The device name of the root device volume (for
-     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * are defined in an Amazon-maintained list. This is not the Amazon Web Services
+     * account alias that can be set using the IAM console. We recommend that you use
+     * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
+     * recommend that you use the <b>Owner</b> request parameter instead of this
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
+     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * <code>product-code</code> - The product code.</p> </li> <li> <p>
+     * <code>product-code.type</code> - The type of the product code
+     * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
+     * disk ID.</p> </li> <li> <p> <code>root-device-name</code> - The device name of
+     * the root device volume (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the image (<code>available</code> |
@@ -427,17 +437,19 @@ namespace Model
      * block device mapping (for example, <code>/dev/sdh</code> or
      * <code>xvdh</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for
-     * the EBS volume.</p> </li> <li> <p> <code>block-device-mapping.volume-size</code>
-     * - The volume size of the EBS volume, in GiB.</p> </li> <li> <p>
-     * <code>block-device-mapping.volume-type</code> - The volume type of the EBS
-     * volume (<code>gp2</code> | <code>io1</code> | <code>io2</code> | <code>st1
-     * </code>| <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
+     * the Amazon EBS volume.</p> </li> <li> <p>
+     * <code>block-device-mapping.volume-size</code> - The volume size of the Amazon
+     * EBS volume, in GiB.</p> </li> <li> <p>
+     * <code>block-device-mapping.volume-type</code> - The volume type of the Amazon
+     * EBS volume (<code>io1</code> | <code>io2</code> | <code>gp2</code> |
+     * <code>gp3</code> | <code>sc1 </code>| <code>st1</code> |
+     * <code>standard</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether
-     * the EBS volume is encrypted.</p> </li> <li> <p> <code>description</code> - The
-     * description of the image (provided during image creation).</p> </li> <li> <p>
-     * <code>ena-support</code> - A Boolean that indicates whether enhanced networking
-     * with ENA is enabled.</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor
-     * type (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p>
+     * the Amazon EBS volume is encrypted.</p> </li> <li> <p> <code>description</code>
+     * - The description of the image (provided during image creation).</p> </li> <li>
+     * <p> <code>ena-support</code> - A Boolean that indicates whether enhanced
+     * networking with ENA is enabled.</p> </li> <li> <p> <code>hypervisor</code> - The
+     * hypervisor type (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p>
      * <code>image-id</code> - The ID of the image.</p> </li> <li> <p>
      * <code>image-type</code> - The image type (<code>machine</code> |
      * <code>kernel</code> | <code>ramdisk</code>).</p> </li> <li> <p>
@@ -447,18 +459,18 @@ namespace Model
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
      * alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid aliases
-     * are defined in an Amazon-maintained list. This is not the AWS account alias that
-     * can be set using the IAM console. We recommend that you use the <b>Owner</b>
-     * request parameter instead of this filter.</p> </li> <li> <p>
-     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you
-     * use the <b>Owner</b> request parameter instead of this filter.</p> </li> <li>
-     * <p> <code>platform</code> - The platform. To only list Windows-based AMIs, use
-     * <code>windows</code>.</p> </li> <li> <p> <code>product-code</code> - The product
-     * code.</p> </li> <li> <p> <code>product-code.type</code> - The type of the
-     * product code (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
-     * <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The device name of the root device volume (for
-     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * are defined in an Amazon-maintained list. This is not the Amazon Web Services
+     * account alias that can be set using the IAM console. We recommend that you use
+     * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
+     * recommend that you use the <b>Owner</b> request parameter instead of this
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
+     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * <code>product-code</code> - The product code.</p> </li> <li> <p>
+     * <code>product-code.type</code> - The type of the product code
+     * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
+     * disk ID.</p> </li> <li> <p> <code>root-device-name</code> - The device name of
+     * the root device volume (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the image (<code>available</code> |
@@ -490,17 +502,19 @@ namespace Model
      * block device mapping (for example, <code>/dev/sdh</code> or
      * <code>xvdh</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for
-     * the EBS volume.</p> </li> <li> <p> <code>block-device-mapping.volume-size</code>
-     * - The volume size of the EBS volume, in GiB.</p> </li> <li> <p>
-     * <code>block-device-mapping.volume-type</code> - The volume type of the EBS
-     * volume (<code>gp2</code> | <code>io1</code> | <code>io2</code> | <code>st1
-     * </code>| <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
+     * the Amazon EBS volume.</p> </li> <li> <p>
+     * <code>block-device-mapping.volume-size</code> - The volume size of the Amazon
+     * EBS volume, in GiB.</p> </li> <li> <p>
+     * <code>block-device-mapping.volume-type</code> - The volume type of the Amazon
+     * EBS volume (<code>io1</code> | <code>io2</code> | <code>gp2</code> |
+     * <code>gp3</code> | <code>sc1 </code>| <code>st1</code> |
+     * <code>standard</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether
-     * the EBS volume is encrypted.</p> </li> <li> <p> <code>description</code> - The
-     * description of the image (provided during image creation).</p> </li> <li> <p>
-     * <code>ena-support</code> - A Boolean that indicates whether enhanced networking
-     * with ENA is enabled.</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor
-     * type (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p>
+     * the Amazon EBS volume is encrypted.</p> </li> <li> <p> <code>description</code>
+     * - The description of the image (provided during image creation).</p> </li> <li>
+     * <p> <code>ena-support</code> - A Boolean that indicates whether enhanced
+     * networking with ENA is enabled.</p> </li> <li> <p> <code>hypervisor</code> - The
+     * hypervisor type (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p>
      * <code>image-id</code> - The ID of the image.</p> </li> <li> <p>
      * <code>image-type</code> - The image type (<code>machine</code> |
      * <code>kernel</code> | <code>ramdisk</code>).</p> </li> <li> <p>
@@ -510,18 +524,18 @@ namespace Model
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
      * alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid aliases
-     * are defined in an Amazon-maintained list. This is not the AWS account alias that
-     * can be set using the IAM console. We recommend that you use the <b>Owner</b>
-     * request parameter instead of this filter.</p> </li> <li> <p>
-     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you
-     * use the <b>Owner</b> request parameter instead of this filter.</p> </li> <li>
-     * <p> <code>platform</code> - The platform. To only list Windows-based AMIs, use
-     * <code>windows</code>.</p> </li> <li> <p> <code>product-code</code> - The product
-     * code.</p> </li> <li> <p> <code>product-code.type</code> - The type of the
-     * product code (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
-     * <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The device name of the root device volume (for
-     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * are defined in an Amazon-maintained list. This is not the Amazon Web Services
+     * account alias that can be set using the IAM console. We recommend that you use
+     * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
+     * recommend that you use the <b>Owner</b> request parameter instead of this
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
+     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * <code>product-code</code> - The product code.</p> </li> <li> <p>
+     * <code>product-code.type</code> - The type of the product code
+     * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
+     * disk ID.</p> </li> <li> <p> <code>root-device-name</code> - The device name of
+     * the root device volume (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the image (<code>available</code> |
@@ -553,17 +567,19 @@ namespace Model
      * block device mapping (for example, <code>/dev/sdh</code> or
      * <code>xvdh</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for
-     * the EBS volume.</p> </li> <li> <p> <code>block-device-mapping.volume-size</code>
-     * - The volume size of the EBS volume, in GiB.</p> </li> <li> <p>
-     * <code>block-device-mapping.volume-type</code> - The volume type of the EBS
-     * volume (<code>gp2</code> | <code>io1</code> | <code>io2</code> | <code>st1
-     * </code>| <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
+     * the Amazon EBS volume.</p> </li> <li> <p>
+     * <code>block-device-mapping.volume-size</code> - The volume size of the Amazon
+     * EBS volume, in GiB.</p> </li> <li> <p>
+     * <code>block-device-mapping.volume-type</code> - The volume type of the Amazon
+     * EBS volume (<code>io1</code> | <code>io2</code> | <code>gp2</code> |
+     * <code>gp3</code> | <code>sc1 </code>| <code>st1</code> |
+     * <code>standard</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.encrypted</code> - A Boolean that indicates whether
-     * the EBS volume is encrypted.</p> </li> <li> <p> <code>description</code> - The
-     * description of the image (provided during image creation).</p> </li> <li> <p>
-     * <code>ena-support</code> - A Boolean that indicates whether enhanced networking
-     * with ENA is enabled.</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor
-     * type (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p>
+     * the Amazon EBS volume is encrypted.</p> </li> <li> <p> <code>description</code>
+     * - The description of the image (provided during image creation).</p> </li> <li>
+     * <p> <code>ena-support</code> - A Boolean that indicates whether enhanced
+     * networking with ENA is enabled.</p> </li> <li> <p> <code>hypervisor</code> - The
+     * hypervisor type (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p>
      * <code>image-id</code> - The ID of the image.</p> </li> <li> <p>
      * <code>image-type</code> - The image type (<code>machine</code> |
      * <code>kernel</code> | <code>ramdisk</code>).</p> </li> <li> <p>
@@ -573,18 +589,18 @@ namespace Model
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
      * alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid aliases
-     * are defined in an Amazon-maintained list. This is not the AWS account alias that
-     * can be set using the IAM console. We recommend that you use the <b>Owner</b>
-     * request parameter instead of this filter.</p> </li> <li> <p>
-     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you
-     * use the <b>Owner</b> request parameter instead of this filter.</p> </li> <li>
-     * <p> <code>platform</code> - The platform. To only list Windows-based AMIs, use
-     * <code>windows</code>.</p> </li> <li> <p> <code>product-code</code> - The product
-     * code.</p> </li> <li> <p> <code>product-code.type</code> - The type of the
-     * product code (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
-     * <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The device name of the root device volume (for
-     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * are defined in an Amazon-maintained list. This is not the Amazon Web Services
+     * account alias that can be set using the IAM console. We recommend that you use
+     * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
+     * recommend that you use the <b>Owner</b> request parameter instead of this
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
+     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * <code>product-code</code> - The product code.</p> </li> <li> <p>
+     * <code>product-code.type</code> - The type of the product code
+     * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
+     * disk ID.</p> </li> <li> <p> <code>root-device-name</code> - The device name of
+     * the root device volume (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the image (<code>available</code> |
@@ -655,73 +671,82 @@ namespace Model
 
     /**
      * <p>Scopes the results to images with the specified owners. You can specify a
-     * combination of AWS account IDs, <code>self</code>, <code>amazon</code>, and
-     * <code>aws-marketplace</code>. If you omit this parameter, the results include
-     * all images for which you have launch permissions, regardless of ownership.</p>
+     * combination of Amazon Web Services account IDs, <code>self</code>,
+     * <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this
+     * parameter, the results include all images for which you have launch permissions,
+     * regardless of ownership.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOwners() const{ return m_owners; }
 
     /**
      * <p>Scopes the results to images with the specified owners. You can specify a
-     * combination of AWS account IDs, <code>self</code>, <code>amazon</code>, and
-     * <code>aws-marketplace</code>. If you omit this parameter, the results include
-     * all images for which you have launch permissions, regardless of ownership.</p>
+     * combination of Amazon Web Services account IDs, <code>self</code>,
+     * <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this
+     * parameter, the results include all images for which you have launch permissions,
+     * regardless of ownership.</p>
      */
     inline bool OwnersHasBeenSet() const { return m_ownersHasBeenSet; }
 
     /**
      * <p>Scopes the results to images with the specified owners. You can specify a
-     * combination of AWS account IDs, <code>self</code>, <code>amazon</code>, and
-     * <code>aws-marketplace</code>. If you omit this parameter, the results include
-     * all images for which you have launch permissions, regardless of ownership.</p>
+     * combination of Amazon Web Services account IDs, <code>self</code>,
+     * <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this
+     * parameter, the results include all images for which you have launch permissions,
+     * regardless of ownership.</p>
      */
     inline void SetOwners(const Aws::Vector<Aws::String>& value) { m_ownersHasBeenSet = true; m_owners = value; }
 
     /**
      * <p>Scopes the results to images with the specified owners. You can specify a
-     * combination of AWS account IDs, <code>self</code>, <code>amazon</code>, and
-     * <code>aws-marketplace</code>. If you omit this parameter, the results include
-     * all images for which you have launch permissions, regardless of ownership.</p>
+     * combination of Amazon Web Services account IDs, <code>self</code>,
+     * <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this
+     * parameter, the results include all images for which you have launch permissions,
+     * regardless of ownership.</p>
      */
     inline void SetOwners(Aws::Vector<Aws::String>&& value) { m_ownersHasBeenSet = true; m_owners = std::move(value); }
 
     /**
      * <p>Scopes the results to images with the specified owners. You can specify a
-     * combination of AWS account IDs, <code>self</code>, <code>amazon</code>, and
-     * <code>aws-marketplace</code>. If you omit this parameter, the results include
-     * all images for which you have launch permissions, regardless of ownership.</p>
+     * combination of Amazon Web Services account IDs, <code>self</code>,
+     * <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this
+     * parameter, the results include all images for which you have launch permissions,
+     * regardless of ownership.</p>
      */
     inline DescribeImagesRequest& WithOwners(const Aws::Vector<Aws::String>& value) { SetOwners(value); return *this;}
 
     /**
      * <p>Scopes the results to images with the specified owners. You can specify a
-     * combination of AWS account IDs, <code>self</code>, <code>amazon</code>, and
-     * <code>aws-marketplace</code>. If you omit this parameter, the results include
-     * all images for which you have launch permissions, regardless of ownership.</p>
+     * combination of Amazon Web Services account IDs, <code>self</code>,
+     * <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this
+     * parameter, the results include all images for which you have launch permissions,
+     * regardless of ownership.</p>
      */
     inline DescribeImagesRequest& WithOwners(Aws::Vector<Aws::String>&& value) { SetOwners(std::move(value)); return *this;}
 
     /**
      * <p>Scopes the results to images with the specified owners. You can specify a
-     * combination of AWS account IDs, <code>self</code>, <code>amazon</code>, and
-     * <code>aws-marketplace</code>. If you omit this parameter, the results include
-     * all images for which you have launch permissions, regardless of ownership.</p>
+     * combination of Amazon Web Services account IDs, <code>self</code>,
+     * <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this
+     * parameter, the results include all images for which you have launch permissions,
+     * regardless of ownership.</p>
      */
     inline DescribeImagesRequest& AddOwners(const Aws::String& value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
 
     /**
      * <p>Scopes the results to images with the specified owners. You can specify a
-     * combination of AWS account IDs, <code>self</code>, <code>amazon</code>, and
-     * <code>aws-marketplace</code>. If you omit this parameter, the results include
-     * all images for which you have launch permissions, regardless of ownership.</p>
+     * combination of Amazon Web Services account IDs, <code>self</code>,
+     * <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this
+     * parameter, the results include all images for which you have launch permissions,
+     * regardless of ownership.</p>
      */
     inline DescribeImagesRequest& AddOwners(Aws::String&& value) { m_ownersHasBeenSet = true; m_owners.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Scopes the results to images with the specified owners. You can specify a
-     * combination of AWS account IDs, <code>self</code>, <code>amazon</code>, and
-     * <code>aws-marketplace</code>. If you omit this parameter, the results include
-     * all images for which you have launch permissions, regardless of ownership.</p>
+     * combination of Amazon Web Services account IDs, <code>self</code>,
+     * <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this
+     * parameter, the results include all images for which you have launch permissions,
+     * regardless of ownership.</p>
      */
     inline DescribeImagesRequest& AddOwners(const char* value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
 

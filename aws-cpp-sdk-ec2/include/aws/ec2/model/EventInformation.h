@@ -105,9 +105,7 @@ namespace Model
      * <li> <p> <code>modify_in_progress</code> - A request to modify the EC2 Fleet or
      * Spot Fleet request was accepted and is in progress.</p> </li> <li> <p>
      * <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was
-     * modified.</p> </li> <li> <p> <code>price_update</code> - The price for a launch
-     * configuration was adjusted because it was too high. This change is
-     * permanent.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
+     * modified.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
      * Fleet request is being evaluated and Amazon EC2 is preparing to launch the
      * target number of Spot Instances.</p> </li> </ul> <p>The following are the
      * <code>instanceChange</code> events:</p> <ul> <li> <p> <code>launched</code> - A
@@ -150,9 +148,7 @@ namespace Model
      * <li> <p> <code>modify_in_progress</code> - A request to modify the EC2 Fleet or
      * Spot Fleet request was accepted and is in progress.</p> </li> <li> <p>
      * <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was
-     * modified.</p> </li> <li> <p> <code>price_update</code> - The price for a launch
-     * configuration was adjusted because it was too high. This change is
-     * permanent.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
+     * modified.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
      * Fleet request is being evaluated and Amazon EC2 is preparing to launch the
      * target number of Spot Instances.</p> </li> </ul> <p>The following are the
      * <code>instanceChange</code> events:</p> <ul> <li> <p> <code>launched</code> - A
@@ -195,9 +191,7 @@ namespace Model
      * <li> <p> <code>modify_in_progress</code> - A request to modify the EC2 Fleet or
      * Spot Fleet request was accepted and is in progress.</p> </li> <li> <p>
      * <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was
-     * modified.</p> </li> <li> <p> <code>price_update</code> - The price for a launch
-     * configuration was adjusted because it was too high. This change is
-     * permanent.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
+     * modified.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
      * Fleet request is being evaluated and Amazon EC2 is preparing to launch the
      * target number of Spot Instances.</p> </li> </ul> <p>The following are the
      * <code>instanceChange</code> events:</p> <ul> <li> <p> <code>launched</code> - A
@@ -240,9 +234,7 @@ namespace Model
      * <li> <p> <code>modify_in_progress</code> - A request to modify the EC2 Fleet or
      * Spot Fleet request was accepted and is in progress.</p> </li> <li> <p>
      * <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was
-     * modified.</p> </li> <li> <p> <code>price_update</code> - The price for a launch
-     * configuration was adjusted because it was too high. This change is
-     * permanent.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
+     * modified.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
      * Fleet request is being evaluated and Amazon EC2 is preparing to launch the
      * target number of Spot Instances.</p> </li> </ul> <p>The following are the
      * <code>instanceChange</code> events:</p> <ul> <li> <p> <code>launched</code> - A
@@ -285,9 +277,7 @@ namespace Model
      * <li> <p> <code>modify_in_progress</code> - A request to modify the EC2 Fleet or
      * Spot Fleet request was accepted and is in progress.</p> </li> <li> <p>
      * <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was
-     * modified.</p> </li> <li> <p> <code>price_update</code> - The price for a launch
-     * configuration was adjusted because it was too high. This change is
-     * permanent.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
+     * modified.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
      * Fleet request is being evaluated and Amazon EC2 is preparing to launch the
      * target number of Spot Instances.</p> </li> </ul> <p>The following are the
      * <code>instanceChange</code> events:</p> <ul> <li> <p> <code>launched</code> - A
@@ -330,9 +320,7 @@ namespace Model
      * <li> <p> <code>modify_in_progress</code> - A request to modify the EC2 Fleet or
      * Spot Fleet request was accepted and is in progress.</p> </li> <li> <p>
      * <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was
-     * modified.</p> </li> <li> <p> <code>price_update</code> - The price for a launch
-     * configuration was adjusted because it was too high. This change is
-     * permanent.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
+     * modified.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
      * Fleet request is being evaluated and Amazon EC2 is preparing to launch the
      * target number of Spot Instances.</p> </li> </ul> <p>The following are the
      * <code>instanceChange</code> events:</p> <ul> <li> <p> <code>launched</code> - A
@@ -375,9 +363,7 @@ namespace Model
      * <li> <p> <code>modify_in_progress</code> - A request to modify the EC2 Fleet or
      * Spot Fleet request was accepted and is in progress.</p> </li> <li> <p>
      * <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was
-     * modified.</p> </li> <li> <p> <code>price_update</code> - The price for a launch
-     * configuration was adjusted because it was too high. This change is
-     * permanent.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
+     * modified.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
      * Fleet request is being evaluated and Amazon EC2 is preparing to launch the
      * target number of Spot Instances.</p> </li> </ul> <p>The following are the
      * <code>instanceChange</code> events:</p> <ul> <li> <p> <code>launched</code> - A
@@ -420,9 +406,7 @@ namespace Model
      * <li> <p> <code>modify_in_progress</code> - A request to modify the EC2 Fleet or
      * Spot Fleet request was accepted and is in progress.</p> </li> <li> <p>
      * <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was
-     * modified.</p> </li> <li> <p> <code>price_update</code> - The price for a launch
-     * configuration was adjusted because it was too high. This change is
-     * permanent.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
+     * modified.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
      * Fleet request is being evaluated and Amazon EC2 is preparing to launch the
      * target number of Spot Instances.</p> </li> </ul> <p>The following are the
      * <code>instanceChange</code> events:</p> <ul> <li> <p> <code>launched</code> - A

@@ -1813,7 +1813,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
      * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a
-     * instances)</p>
+     * instances)</p> <p>For T3 instances with <code>host</code> tenancy, only
+     * <code>standard</code> is supported.</p>
      */
     inline const CreditSpecificationRequest& GetCreditSpecification() const{ return m_creditSpecification; }
 
@@ -1826,7 +1827,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
      * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a
-     * instances)</p>
+     * instances)</p> <p>For T3 instances with <code>host</code> tenancy, only
+     * <code>standard</code> is supported.</p>
      */
     inline bool CreditSpecificationHasBeenSet() const { return m_creditSpecificationHasBeenSet; }
 
@@ -1839,7 +1841,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
      * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a
-     * instances)</p>
+     * instances)</p> <p>For T3 instances with <code>host</code> tenancy, only
+     * <code>standard</code> is supported.</p>
      */
     inline void SetCreditSpecification(const CreditSpecificationRequest& value) { m_creditSpecificationHasBeenSet = true; m_creditSpecification = value; }
 
@@ -1852,7 +1855,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
      * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a
-     * instances)</p>
+     * instances)</p> <p>For T3 instances with <code>host</code> tenancy, only
+     * <code>standard</code> is supported.</p>
      */
     inline void SetCreditSpecification(CreditSpecificationRequest&& value) { m_creditSpecificationHasBeenSet = true; m_creditSpecification = std::move(value); }
 
@@ -1865,7 +1869,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
      * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a
-     * instances)</p>
+     * instances)</p> <p>For T3 instances with <code>host</code> tenancy, only
+     * <code>standard</code> is supported.</p>
      */
     inline RunInstancesRequest& WithCreditSpecification(const CreditSpecificationRequest& value) { SetCreditSpecification(value); return *this;}
 
@@ -1878,7 +1883,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
      * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a
-     * instances)</p>
+     * instances)</p> <p>For T3 instances with <code>host</code> tenancy, only
+     * <code>standard</code> is supported.</p>
      */
     inline RunInstancesRequest& WithCreditSpecification(CreditSpecificationRequest&& value) { SetCreditSpecification(std::move(value)); return *this;}
 

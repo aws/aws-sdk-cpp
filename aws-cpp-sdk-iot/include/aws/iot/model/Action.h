@@ -26,6 +26,7 @@
 #include <aws/iot/model/TimestreamAction.h>
 #include <aws/iot/model/HttpAction.h>
 #include <aws/iot/model/KafkaAction.h>
+#include <aws/iot/model/OpenSearchAction.h>
 #include <utility>
 
 namespace Aws
@@ -442,32 +443,50 @@ namespace Model
 
 
     /**
-     * <p>Write data to an Amazon Elasticsearch Service domain.</p>
+     * <p>Write data to an Amazon Elasticsearch Service domain.</p>  <p>This
+     * action is deprecated. Use the <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearch
+     * action</a> instead.</p> 
      */
     inline const ElasticsearchAction& GetElasticsearch() const{ return m_elasticsearch; }
 
     /**
-     * <p>Write data to an Amazon Elasticsearch Service domain.</p>
+     * <p>Write data to an Amazon Elasticsearch Service domain.</p>  <p>This
+     * action is deprecated. Use the <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearch
+     * action</a> instead.</p> 
      */
     inline bool ElasticsearchHasBeenSet() const { return m_elasticsearchHasBeenSet; }
 
     /**
-     * <p>Write data to an Amazon Elasticsearch Service domain.</p>
+     * <p>Write data to an Amazon Elasticsearch Service domain.</p>  <p>This
+     * action is deprecated. Use the <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearch
+     * action</a> instead.</p> 
      */
     inline void SetElasticsearch(const ElasticsearchAction& value) { m_elasticsearchHasBeenSet = true; m_elasticsearch = value; }
 
     /**
-     * <p>Write data to an Amazon Elasticsearch Service domain.</p>
+     * <p>Write data to an Amazon Elasticsearch Service domain.</p>  <p>This
+     * action is deprecated. Use the <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearch
+     * action</a> instead.</p> 
      */
     inline void SetElasticsearch(ElasticsearchAction&& value) { m_elasticsearchHasBeenSet = true; m_elasticsearch = std::move(value); }
 
     /**
-     * <p>Write data to an Amazon Elasticsearch Service domain.</p>
+     * <p>Write data to an Amazon Elasticsearch Service domain.</p>  <p>This
+     * action is deprecated. Use the <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearch
+     * action</a> instead.</p> 
      */
     inline Action& WithElasticsearch(const ElasticsearchAction& value) { SetElasticsearch(value); return *this;}
 
     /**
-     * <p>Write data to an Amazon Elasticsearch Service domain.</p>
+     * <p>Write data to an Amazon Elasticsearch Service domain.</p>  <p>This
+     * action is deprecated. Use the <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearch
+     * action</a> instead.</p> 
      */
     inline Action& WithElasticsearch(ElasticsearchAction&& value) { SetElasticsearch(std::move(value)); return *this;}
 
@@ -749,6 +768,37 @@ namespace Model
      */
     inline Action& WithKafka(KafkaAction&& value) { SetKafka(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Write data to an Amazon OpenSearch Service domain.</p>
+     */
+    inline const OpenSearchAction& GetOpenSearch() const{ return m_openSearch; }
+
+    /**
+     * <p>Write data to an Amazon OpenSearch Service domain.</p>
+     */
+    inline bool OpenSearchHasBeenSet() const { return m_openSearchHasBeenSet; }
+
+    /**
+     * <p>Write data to an Amazon OpenSearch Service domain.</p>
+     */
+    inline void SetOpenSearch(const OpenSearchAction& value) { m_openSearchHasBeenSet = true; m_openSearch = value; }
+
+    /**
+     * <p>Write data to an Amazon OpenSearch Service domain.</p>
+     */
+    inline void SetOpenSearch(OpenSearchAction&& value) { m_openSearchHasBeenSet = true; m_openSearch = std::move(value); }
+
+    /**
+     * <p>Write data to an Amazon OpenSearch Service domain.</p>
+     */
+    inline Action& WithOpenSearch(const OpenSearchAction& value) { SetOpenSearch(value); return *this;}
+
+    /**
+     * <p>Write data to an Amazon OpenSearch Service domain.</p>
+     */
+    inline Action& WithOpenSearch(OpenSearchAction&& value) { SetOpenSearch(std::move(value)); return *this;}
+
   private:
 
     DynamoDBAction m_dynamoDB;
@@ -813,6 +863,9 @@ namespace Model
 
     KafkaAction m_kafka;
     bool m_kafkaHasBeenSet;
+
+    OpenSearchAction m_openSearch;
+    bool m_openSearchHasBeenSet;
   };
 
 } // namespace Model

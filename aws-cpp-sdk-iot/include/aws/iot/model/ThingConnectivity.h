@@ -92,42 +92,58 @@ namespace Model
 
 
     /**
-     * <p>The reason why the client is disconnected.</p>
+     * <p>The reason why the client is disconnected. If the thing has been disconnected
+     * for approximately an hour, the <code>disconnectReason</code> value might be
+     * missing.</p>
      */
     inline const Aws::String& GetDisconnectReason() const{ return m_disconnectReason; }
 
     /**
-     * <p>The reason why the client is disconnected.</p>
+     * <p>The reason why the client is disconnected. If the thing has been disconnected
+     * for approximately an hour, the <code>disconnectReason</code> value might be
+     * missing.</p>
      */
     inline bool DisconnectReasonHasBeenSet() const { return m_disconnectReasonHasBeenSet; }
 
     /**
-     * <p>The reason why the client is disconnected.</p>
+     * <p>The reason why the client is disconnected. If the thing has been disconnected
+     * for approximately an hour, the <code>disconnectReason</code> value might be
+     * missing.</p>
      */
     inline void SetDisconnectReason(const Aws::String& value) { m_disconnectReasonHasBeenSet = true; m_disconnectReason = value; }
 
     /**
-     * <p>The reason why the client is disconnected.</p>
+     * <p>The reason why the client is disconnected. If the thing has been disconnected
+     * for approximately an hour, the <code>disconnectReason</code> value might be
+     * missing.</p>
      */
     inline void SetDisconnectReason(Aws::String&& value) { m_disconnectReasonHasBeenSet = true; m_disconnectReason = std::move(value); }
 
     /**
-     * <p>The reason why the client is disconnected.</p>
+     * <p>The reason why the client is disconnected. If the thing has been disconnected
+     * for approximately an hour, the <code>disconnectReason</code> value might be
+     * missing.</p>
      */
     inline void SetDisconnectReason(const char* value) { m_disconnectReasonHasBeenSet = true; m_disconnectReason.assign(value); }
 
     /**
-     * <p>The reason why the client is disconnected.</p>
+     * <p>The reason why the client is disconnected. If the thing has been disconnected
+     * for approximately an hour, the <code>disconnectReason</code> value might be
+     * missing.</p>
      */
     inline ThingConnectivity& WithDisconnectReason(const Aws::String& value) { SetDisconnectReason(value); return *this;}
 
     /**
-     * <p>The reason why the client is disconnected.</p>
+     * <p>The reason why the client is disconnected. If the thing has been disconnected
+     * for approximately an hour, the <code>disconnectReason</code> value might be
+     * missing.</p>
      */
     inline ThingConnectivity& WithDisconnectReason(Aws::String&& value) { SetDisconnectReason(std::move(value)); return *this;}
 
     /**
-     * <p>The reason why the client is disconnected.</p>
+     * <p>The reason why the client is disconnected. If the thing has been disconnected
+     * for approximately an hour, the <code>disconnectReason</code> value might be
+     * missing.</p>
      */
     inline ThingConnectivity& WithDisconnectReason(const char* value) { SetDisconnectReason(value); return *this;}
 

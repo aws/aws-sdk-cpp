@@ -160,12 +160,12 @@ namespace Model
 
 
     /**
-     * <p>The block device mapping entries.</p> <p>If you specify an EBS volume using
-     * the ID of an EBS snapshot, you can't specify the encryption state of the
-     * volume.</p> <p>If you create an AMI on an Outpost, then all backing snapshots
-     * must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost
-     * that include local snapshots can be used to launch instances on the same Outpost
-     * only. For more information, <a
+     * <p>The block device mapping entries.</p> <p>If you specify an Amazon EBS volume
+     * using the ID of an Amazon EBS snapshot, you can't specify the encryption state
+     * of the volume.</p> <p>If you create an AMI on an Outpost, then all backing
+     * snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on
+     * an Outpost that include local snapshots can be used to launch instances on the
+     * same Outpost only. For more information, <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
      * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
      * Cloud User Guide</i>.</p>
@@ -173,12 +173,12 @@ namespace Model
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
     /**
-     * <p>The block device mapping entries.</p> <p>If you specify an EBS volume using
-     * the ID of an EBS snapshot, you can't specify the encryption state of the
-     * volume.</p> <p>If you create an AMI on an Outpost, then all backing snapshots
-     * must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost
-     * that include local snapshots can be used to launch instances on the same Outpost
-     * only. For more information, <a
+     * <p>The block device mapping entries.</p> <p>If you specify an Amazon EBS volume
+     * using the ID of an Amazon EBS snapshot, you can't specify the encryption state
+     * of the volume.</p> <p>If you create an AMI on an Outpost, then all backing
+     * snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on
+     * an Outpost that include local snapshots can be used to launch instances on the
+     * same Outpost only. For more information, <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
      * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
      * Cloud User Guide</i>.</p>
@@ -186,12 +186,12 @@ namespace Model
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
 
     /**
-     * <p>The block device mapping entries.</p> <p>If you specify an EBS volume using
-     * the ID of an EBS snapshot, you can't specify the encryption state of the
-     * volume.</p> <p>If you create an AMI on an Outpost, then all backing snapshots
-     * must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost
-     * that include local snapshots can be used to launch instances on the same Outpost
-     * only. For more information, <a
+     * <p>The block device mapping entries.</p> <p>If you specify an Amazon EBS volume
+     * using the ID of an Amazon EBS snapshot, you can't specify the encryption state
+     * of the volume.</p> <p>If you create an AMI on an Outpost, then all backing
+     * snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on
+     * an Outpost that include local snapshots can be used to launch instances on the
+     * same Outpost only. For more information, <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
      * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
      * Cloud User Guide</i>.</p>
@@ -199,12 +199,12 @@ namespace Model
     inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
-     * <p>The block device mapping entries.</p> <p>If you specify an EBS volume using
-     * the ID of an EBS snapshot, you can't specify the encryption state of the
-     * volume.</p> <p>If you create an AMI on an Outpost, then all backing snapshots
-     * must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost
-     * that include local snapshots can be used to launch instances on the same Outpost
-     * only. For more information, <a
+     * <p>The block device mapping entries.</p> <p>If you specify an Amazon EBS volume
+     * using the ID of an Amazon EBS snapshot, you can't specify the encryption state
+     * of the volume.</p> <p>If you create an AMI on an Outpost, then all backing
+     * snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on
+     * an Outpost that include local snapshots can be used to launch instances on the
+     * same Outpost only. For more information, <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
      * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
      * Cloud User Guide</i>.</p>
@@ -212,12 +212,12 @@ namespace Model
     inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
     /**
-     * <p>The block device mapping entries.</p> <p>If you specify an EBS volume using
-     * the ID of an EBS snapshot, you can't specify the encryption state of the
-     * volume.</p> <p>If you create an AMI on an Outpost, then all backing snapshots
-     * must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost
-     * that include local snapshots can be used to launch instances on the same Outpost
-     * only. For more information, <a
+     * <p>The block device mapping entries.</p> <p>If you specify an Amazon EBS volume
+     * using the ID of an Amazon EBS snapshot, you can't specify the encryption state
+     * of the volume.</p> <p>If you create an AMI on an Outpost, then all backing
+     * snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on
+     * an Outpost that include local snapshots can be used to launch instances on the
+     * same Outpost only. For more information, <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
      * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
      * Cloud User Guide</i>.</p>
@@ -225,12 +225,12 @@ namespace Model
     inline RegisterImageRequest& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
 
     /**
-     * <p>The block device mapping entries.</p> <p>If you specify an EBS volume using
-     * the ID of an EBS snapshot, you can't specify the encryption state of the
-     * volume.</p> <p>If you create an AMI on an Outpost, then all backing snapshots
-     * must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost
-     * that include local snapshots can be used to launch instances on the same Outpost
-     * only. For more information, <a
+     * <p>The block device mapping entries.</p> <p>If you specify an Amazon EBS volume
+     * using the ID of an Amazon EBS snapshot, you can't specify the encryption state
+     * of the volume.</p> <p>If you create an AMI on an Outpost, then all backing
+     * snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on
+     * an Outpost that include local snapshots can be used to launch instances on the
+     * same Outpost only. For more information, <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
      * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
      * Cloud User Guide</i>.</p>
@@ -238,12 +238,12 @@ namespace Model
     inline RegisterImageRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
-     * <p>The block device mapping entries.</p> <p>If you specify an EBS volume using
-     * the ID of an EBS snapshot, you can't specify the encryption state of the
-     * volume.</p> <p>If you create an AMI on an Outpost, then all backing snapshots
-     * must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost
-     * that include local snapshots can be used to launch instances on the same Outpost
-     * only. For more information, <a
+     * <p>The block device mapping entries.</p> <p>If you specify an Amazon EBS volume
+     * using the ID of an Amazon EBS snapshot, you can't specify the encryption state
+     * of the volume.</p> <p>If you create an AMI on an Outpost, then all backing
+     * snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on
+     * an Outpost that include local snapshots can be used to launch instances on the
+     * same Outpost only. For more information, <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
      * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
      * Cloud User Guide</i>.</p>
@@ -251,12 +251,12 @@ namespace Model
     inline RegisterImageRequest& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /**
-     * <p>The block device mapping entries.</p> <p>If you specify an EBS volume using
-     * the ID of an EBS snapshot, you can't specify the encryption state of the
-     * volume.</p> <p>If you create an AMI on an Outpost, then all backing snapshots
-     * must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost
-     * that include local snapshots can be used to launch instances on the same Outpost
-     * only. For more information, <a
+     * <p>The block device mapping entries.</p> <p>If you specify an Amazon EBS volume
+     * using the ID of an Amazon EBS snapshot, you can't specify the encryption state
+     * of the volume.</p> <p>If you create an AMI on an Outpost, then all backing
+     * snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on
+     * an Outpost that include local snapshots can be used to launch instances on the
+     * same Outpost only. For more information, <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
      * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
      * Cloud User Guide</i>.</p>
@@ -471,64 +471,64 @@ namespace Model
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
-     * product codes. Otherwise, you can use the AWS Marketplace to bill for the use of
-     * an AMI.</p>
+     * product codes. Otherwise, you can use the Amazon Web Services Marketplace to
+     * bill for the use of an AMI.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBillingProducts() const{ return m_billingProducts; }
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
-     * product codes. Otherwise, you can use the AWS Marketplace to bill for the use of
-     * an AMI.</p>
+     * product codes. Otherwise, you can use the Amazon Web Services Marketplace to
+     * bill for the use of an AMI.</p>
      */
     inline bool BillingProductsHasBeenSet() const { return m_billingProductsHasBeenSet; }
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
-     * product codes. Otherwise, you can use the AWS Marketplace to bill for the use of
-     * an AMI.</p>
+     * product codes. Otherwise, you can use the Amazon Web Services Marketplace to
+     * bill for the use of an AMI.</p>
      */
     inline void SetBillingProducts(const Aws::Vector<Aws::String>& value) { m_billingProductsHasBeenSet = true; m_billingProducts = value; }
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
-     * product codes. Otherwise, you can use the AWS Marketplace to bill for the use of
-     * an AMI.</p>
+     * product codes. Otherwise, you can use the Amazon Web Services Marketplace to
+     * bill for the use of an AMI.</p>
      */
     inline void SetBillingProducts(Aws::Vector<Aws::String>&& value) { m_billingProductsHasBeenSet = true; m_billingProducts = std::move(value); }
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
-     * product codes. Otherwise, you can use the AWS Marketplace to bill for the use of
-     * an AMI.</p>
+     * product codes. Otherwise, you can use the Amazon Web Services Marketplace to
+     * bill for the use of an AMI.</p>
      */
     inline RegisterImageRequest& WithBillingProducts(const Aws::Vector<Aws::String>& value) { SetBillingProducts(value); return *this;}
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
-     * product codes. Otherwise, you can use the AWS Marketplace to bill for the use of
-     * an AMI.</p>
+     * product codes. Otherwise, you can use the Amazon Web Services Marketplace to
+     * bill for the use of an AMI.</p>
      */
     inline RegisterImageRequest& WithBillingProducts(Aws::Vector<Aws::String>&& value) { SetBillingProducts(std::move(value)); return *this;}
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
-     * product codes. Otherwise, you can use the AWS Marketplace to bill for the use of
-     * an AMI.</p>
+     * product codes. Otherwise, you can use the Amazon Web Services Marketplace to
+     * bill for the use of an AMI.</p>
      */
     inline RegisterImageRequest& AddBillingProducts(const Aws::String& value) { m_billingProductsHasBeenSet = true; m_billingProducts.push_back(value); return *this; }
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
-     * product codes. Otherwise, you can use the AWS Marketplace to bill for the use of
-     * an AMI.</p>
+     * product codes. Otherwise, you can use the Amazon Web Services Marketplace to
+     * bill for the use of an AMI.</p>
      */
     inline RegisterImageRequest& AddBillingProducts(Aws::String&& value) { m_billingProductsHasBeenSet = true; m_billingProducts.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
-     * product codes. Otherwise, you can use the AWS Marketplace to bill for the use of
-     * an AMI.</p>
+     * product codes. Otherwise, you can use the Amazon Web Services Marketplace to
+     * bill for the use of an AMI.</p>
      */
     inline RegisterImageRequest& AddBillingProducts(const char* value) { m_billingProductsHasBeenSet = true; m_billingProducts.push_back(value); return *this; }
 
