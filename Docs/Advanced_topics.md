@@ -12,11 +12,11 @@ __This section includes the following topics:__
 ### Uninstalling:
 To uninstall these libraries:
 ```sh
-sudo make uninstall
+make uninstall
 ```
 You may define a custom uninstall target when you are using SDK as a sub-project, but make sure it comes before the default definition in `CMakeLists.txt`, and you can uninstall SDK related libraries by:
 ```sh
-sudo make uninstall-awssdk
+make uninstall-awssdk
 ```
 
 ### Overriding your Http Client
