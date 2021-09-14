@@ -112,8 +112,8 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
+     * group reference statement at the top level inside a web ACL. </p>
      */
     inline const RuleGroupReferenceStatement& GetRuleGroupReferenceStatement() const{ return m_ruleGroupReferenceStatement; }
 
@@ -122,8 +122,8 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
+     * group reference statement at the top level inside a web ACL. </p>
      */
     inline bool RuleGroupReferenceStatementHasBeenSet() const { return m_ruleGroupReferenceStatementHasBeenSet; }
 
@@ -132,8 +132,8 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
+     * group reference statement at the top level inside a web ACL. </p>
      */
     inline void SetRuleGroupReferenceStatement(const RuleGroupReferenceStatement& value) { m_ruleGroupReferenceStatementHasBeenSet = true; m_ruleGroupReferenceStatement = value; }
 
@@ -142,8 +142,8 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
+     * group reference statement at the top level inside a web ACL. </p>
      */
     inline void SetRuleGroupReferenceStatement(RuleGroupReferenceStatement&& value) { m_ruleGroupReferenceStatementHasBeenSet = true; m_ruleGroupReferenceStatement = std::move(value); }
 
@@ -152,8 +152,8 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
+     * group reference statement at the top level inside a web ACL. </p>
      */
     inline FirewallManagerStatement& WithRuleGroupReferenceStatement(const RuleGroupReferenceStatement& value) { SetRuleGroupReferenceStatement(value); return *this;}
 
@@ -162,8 +162,8 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
+     * group reference statement at the top level inside a web ACL. </p>
      */
     inline FirewallManagerStatement& WithRuleGroupReferenceStatement(RuleGroupReferenceStatement&& value) { SetRuleGroupReferenceStatement(std::move(value)); return *this;}
 

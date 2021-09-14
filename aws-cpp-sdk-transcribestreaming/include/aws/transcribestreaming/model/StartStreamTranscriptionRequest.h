@@ -15,6 +15,8 @@
 #include <aws/transcribestreaming/model/AudioStream.h>
 #include <aws/transcribestreaming/model/VocabularyFilterMethod.h>
 #include <aws/transcribestreaming/model/PartialResultsStability.h>
+#include <aws/transcribestreaming/model/ContentIdentificationType.h>
+#include <aws/transcribestreaming/model/ContentRedactionType.h>
 #include <utility>
 
 namespace Aws
@@ -97,26 +99,26 @@ namespace Model
 
 
     /**
-     * <p>The sample rate, in Hertz, of the input audio. We suggest that you use 8000
-     * Hz for low quality audio and 16000 Hz for high quality audio.</p>
+     * <p>The sample rate, in Hertz, of the input audio. We suggest that you use 8,000
+     * Hz for low quality audio and 16,000 Hz for high quality audio.</p>
      */
     inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
 
     /**
-     * <p>The sample rate, in Hertz, of the input audio. We suggest that you use 8000
-     * Hz for low quality audio and 16000 Hz for high quality audio.</p>
+     * <p>The sample rate, in Hertz, of the input audio. We suggest that you use 8,000
+     * Hz for low quality audio and 16,000 Hz for high quality audio.</p>
      */
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
 
     /**
-     * <p>The sample rate, in Hertz, of the input audio. We suggest that you use 8000
-     * Hz for low quality audio and 16000 Hz for high quality audio.</p>
+     * <p>The sample rate, in Hertz, of the input audio. We suggest that you use 8,000
+     * Hz for low quality audio and 16,000 Hz for high quality audio.</p>
      */
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
 
     /**
-     * <p>The sample rate, in Hertz, of the input audio. We suggest that you use 8000
-     * Hz for low quality audio and 16000 Hz for high quality audio.</p>
+     * <p>The sample rate, in Hertz, of the input audio. We suggest that you use 8,000
+     * Hz for low quality audio and 16,000 Hz for high quality audio.</p>
      */
     inline StartStreamTranscriptionRequest& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
 
@@ -251,68 +253,68 @@ namespace Model
 
 
     /**
-     * <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP2
+     * <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP/2
      * data frame.</p>
      */
     std::shared_ptr<AudioStream> GetAudioStream() const { return m_audioStream; }
 
     /**
-     * <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP2
+     * <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP/2
      * data frame.</p>
      */
     void SetAudioStream(const std::shared_ptr<AudioStream>& value) { m_audioStream = value; }
 
     /**
-     * <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP2
+     * <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP/2
      * data frame.</p>
      */
     StartStreamTranscriptionRequest& WithAudioStream(const std::shared_ptr<AudioStream>& value) { SetAudioStream(value); return *this;}
 
 
     /**
-     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * <p>The name of the vocabulary filter you've created that is unique to your
      * account. Provide the name in this field to successfully use it in a stream.</p>
      */
     inline const Aws::String& GetVocabularyFilterName() const{ return m_vocabularyFilterName; }
 
     /**
-     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * <p>The name of the vocabulary filter you've created that is unique to your
      * account. Provide the name in this field to successfully use it in a stream.</p>
      */
     inline bool VocabularyFilterNameHasBeenSet() const { return m_vocabularyFilterNameHasBeenSet; }
 
     /**
-     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * <p>The name of the vocabulary filter you've created that is unique to your
      * account. Provide the name in this field to successfully use it in a stream.</p>
      */
     inline void SetVocabularyFilterName(const Aws::String& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = value; }
 
     /**
-     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * <p>The name of the vocabulary filter you've created that is unique to your
      * account. Provide the name in this field to successfully use it in a stream.</p>
      */
     inline void SetVocabularyFilterName(Aws::String&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::move(value); }
 
     /**
-     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * <p>The name of the vocabulary filter you've created that is unique to your
      * account. Provide the name in this field to successfully use it in a stream.</p>
      */
     inline void SetVocabularyFilterName(const char* value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName.assign(value); }
 
     /**
-     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * <p>The name of the vocabulary filter you've created that is unique to your
      * account. Provide the name in this field to successfully use it in a stream.</p>
      */
     inline StartStreamTranscriptionRequest& WithVocabularyFilterName(const Aws::String& value) { SetVocabularyFilterName(value); return *this;}
 
     /**
-     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * <p>The name of the vocabulary filter you've created that is unique to your
      * account. Provide the name in this field to successfully use it in a stream.</p>
      */
     inline StartStreamTranscriptionRequest& WithVocabularyFilterName(Aws::String&& value) { SetVocabularyFilterName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * <p>The name of the vocabulary filter you've created that is unique to your
      * account. Provide the name in this field to successfully use it in a stream.</p>
      */
     inline StartStreamTranscriptionRequest& WithVocabularyFilterName(const char* value) { SetVocabularyFilterName(value); return *this;}
@@ -321,7 +323,7 @@ namespace Model
     /**
      * <p>The manner in which you use your vocabulary filter to filter words in your
      * transcript. <code>Remove</code> removes filtered words from your transcription
-     * results. <code>Mask</code> masks those words with a <code>***</code> in your
+     * results. <code>Mask</code> masks filtered words with a <code>***</code> in your
      * transcription results. <code>Tag</code> keeps the filtered words in your
      * transcription results and tags them. The tag appears as
      * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
@@ -331,7 +333,7 @@ namespace Model
     /**
      * <p>The manner in which you use your vocabulary filter to filter words in your
      * transcript. <code>Remove</code> removes filtered words from your transcription
-     * results. <code>Mask</code> masks those words with a <code>***</code> in your
+     * results. <code>Mask</code> masks filtered words with a <code>***</code> in your
      * transcription results. <code>Tag</code> keeps the filtered words in your
      * transcription results and tags them. The tag appears as
      * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
@@ -341,7 +343,7 @@ namespace Model
     /**
      * <p>The manner in which you use your vocabulary filter to filter words in your
      * transcript. <code>Remove</code> removes filtered words from your transcription
-     * results. <code>Mask</code> masks those words with a <code>***</code> in your
+     * results. <code>Mask</code> masks filtered words with a <code>***</code> in your
      * transcription results. <code>Tag</code> keeps the filtered words in your
      * transcription results and tags them. The tag appears as
      * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
@@ -351,7 +353,7 @@ namespace Model
     /**
      * <p>The manner in which you use your vocabulary filter to filter words in your
      * transcript. <code>Remove</code> removes filtered words from your transcription
-     * results. <code>Mask</code> masks those words with a <code>***</code> in your
+     * results. <code>Mask</code> masks filtered words with a <code>***</code> in your
      * transcription results. <code>Tag</code> keeps the filtered words in your
      * transcription results and tags them. The tag appears as
      * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
@@ -361,7 +363,7 @@ namespace Model
     /**
      * <p>The manner in which you use your vocabulary filter to filter words in your
      * transcript. <code>Remove</code> removes filtered words from your transcription
-     * results. <code>Mask</code> masks those words with a <code>***</code> in your
+     * results. <code>Mask</code> masks filtered words with a <code>***</code> in your
      * transcription results. <code>Tag</code> keeps the filtered words in your
      * transcription results and tags them. The tag appears as
      * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
@@ -371,7 +373,7 @@ namespace Model
     /**
      * <p>The manner in which you use your vocabulary filter to filter words in your
      * transcript. <code>Remove</code> removes filtered words from your transcription
-     * results. <code>Mask</code> masks those words with a <code>***</code> in your
+     * results. <code>Mask</code> masks filtered words with a <code>***</code> in your
      * transcription results. <code>Tag</code> keeps the filtered words in your
      * transcription results and tags them. The tag appears as
      * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
@@ -555,6 +557,241 @@ namespace Model
      */
     inline StartStreamTranscriptionRequest& WithPartialResultsStability(PartialResultsStability&& value) { SetPartialResultsStability(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Set this field to PII to identify personally identifiable information (PII)
+     * in the transcription output. Content identification is performed only upon
+     * complete transcription of the audio segments.</p> <p>You can’t set both
+     * <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in
+     * the same request. If you set both, your request returns a
+     * <code>BadRequestException</code>.</p>
+     */
+    inline const ContentIdentificationType& GetContentIdentificationType() const{ return m_contentIdentificationType; }
+
+    /**
+     * <p>Set this field to PII to identify personally identifiable information (PII)
+     * in the transcription output. Content identification is performed only upon
+     * complete transcription of the audio segments.</p> <p>You can’t set both
+     * <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in
+     * the same request. If you set both, your request returns a
+     * <code>BadRequestException</code>.</p>
+     */
+    inline bool ContentIdentificationTypeHasBeenSet() const { return m_contentIdentificationTypeHasBeenSet; }
+
+    /**
+     * <p>Set this field to PII to identify personally identifiable information (PII)
+     * in the transcription output. Content identification is performed only upon
+     * complete transcription of the audio segments.</p> <p>You can’t set both
+     * <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in
+     * the same request. If you set both, your request returns a
+     * <code>BadRequestException</code>.</p>
+     */
+    inline void SetContentIdentificationType(const ContentIdentificationType& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
+
+    /**
+     * <p>Set this field to PII to identify personally identifiable information (PII)
+     * in the transcription output. Content identification is performed only upon
+     * complete transcription of the audio segments.</p> <p>You can’t set both
+     * <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in
+     * the same request. If you set both, your request returns a
+     * <code>BadRequestException</code>.</p>
+     */
+    inline void SetContentIdentificationType(ContentIdentificationType&& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = std::move(value); }
+
+    /**
+     * <p>Set this field to PII to identify personally identifiable information (PII)
+     * in the transcription output. Content identification is performed only upon
+     * complete transcription of the audio segments.</p> <p>You can’t set both
+     * <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in
+     * the same request. If you set both, your request returns a
+     * <code>BadRequestException</code>.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithContentIdentificationType(const ContentIdentificationType& value) { SetContentIdentificationType(value); return *this;}
+
+    /**
+     * <p>Set this field to PII to identify personally identifiable information (PII)
+     * in the transcription output. Content identification is performed only upon
+     * complete transcription of the audio segments.</p> <p>You can’t set both
+     * <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in
+     * the same request. If you set both, your request returns a
+     * <code>BadRequestException</code>.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithContentIdentificationType(ContentIdentificationType&& value) { SetContentIdentificationType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Set this field to PII to redact personally identifiable information (PII) in
+     * the transcription output. Content redaction is performed only upon complete
+     * transcription of the audio segments.</p> <p>You can’t set both
+     * <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in
+     * the same request. If you set both, your request returns a
+     * <code>BadRequestException</code>.</p>
+     */
+    inline const ContentRedactionType& GetContentRedactionType() const{ return m_contentRedactionType; }
+
+    /**
+     * <p>Set this field to PII to redact personally identifiable information (PII) in
+     * the transcription output. Content redaction is performed only upon complete
+     * transcription of the audio segments.</p> <p>You can’t set both
+     * <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in
+     * the same request. If you set both, your request returns a
+     * <code>BadRequestException</code>.</p>
+     */
+    inline bool ContentRedactionTypeHasBeenSet() const { return m_contentRedactionTypeHasBeenSet; }
+
+    /**
+     * <p>Set this field to PII to redact personally identifiable information (PII) in
+     * the transcription output. Content redaction is performed only upon complete
+     * transcription of the audio segments.</p> <p>You can’t set both
+     * <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in
+     * the same request. If you set both, your request returns a
+     * <code>BadRequestException</code>.</p>
+     */
+    inline void SetContentRedactionType(const ContentRedactionType& value) { m_contentRedactionTypeHasBeenSet = true; m_contentRedactionType = value; }
+
+    /**
+     * <p>Set this field to PII to redact personally identifiable information (PII) in
+     * the transcription output. Content redaction is performed only upon complete
+     * transcription of the audio segments.</p> <p>You can’t set both
+     * <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in
+     * the same request. If you set both, your request returns a
+     * <code>BadRequestException</code>.</p>
+     */
+    inline void SetContentRedactionType(ContentRedactionType&& value) { m_contentRedactionTypeHasBeenSet = true; m_contentRedactionType = std::move(value); }
+
+    /**
+     * <p>Set this field to PII to redact personally identifiable information (PII) in
+     * the transcription output. Content redaction is performed only upon complete
+     * transcription of the audio segments.</p> <p>You can’t set both
+     * <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in
+     * the same request. If you set both, your request returns a
+     * <code>BadRequestException</code>.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithContentRedactionType(const ContentRedactionType& value) { SetContentRedactionType(value); return *this;}
+
+    /**
+     * <p>Set this field to PII to redact personally identifiable information (PII) in
+     * the transcription output. Content redaction is performed only upon complete
+     * transcription of the audio segments.</p> <p>You can’t set both
+     * <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in
+     * the same request. If you set both, your request returns a
+     * <code>BadRequestException</code>.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithContentRedactionType(ContentRedactionType&& value) { SetContentRedactionType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>List the PII entity types you want to identify or redact. In order to specify
+     * entity types, you must have either <code>ContentIdentificationType</code> or
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
+     * must be comma-separated; the available values are:
+     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
+     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
+     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
+     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
+     * parameter with a default value of <code>ALL</code>.</p>
+     */
+    inline const Aws::String& GetPiiEntityTypes() const{ return m_piiEntityTypes; }
+
+    /**
+     * <p>List the PII entity types you want to identify or redact. In order to specify
+     * entity types, you must have either <code>ContentIdentificationType</code> or
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
+     * must be comma-separated; the available values are:
+     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
+     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
+     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
+     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
+     * parameter with a default value of <code>ALL</code>.</p>
+     */
+    inline bool PiiEntityTypesHasBeenSet() const { return m_piiEntityTypesHasBeenSet; }
+
+    /**
+     * <p>List the PII entity types you want to identify or redact. In order to specify
+     * entity types, you must have either <code>ContentIdentificationType</code> or
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
+     * must be comma-separated; the available values are:
+     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
+     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
+     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
+     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
+     * parameter with a default value of <code>ALL</code>.</p>
+     */
+    inline void SetPiiEntityTypes(const Aws::String& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = value; }
+
+    /**
+     * <p>List the PII entity types you want to identify or redact. In order to specify
+     * entity types, you must have either <code>ContentIdentificationType</code> or
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
+     * must be comma-separated; the available values are:
+     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
+     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
+     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
+     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
+     * parameter with a default value of <code>ALL</code>.</p>
+     */
+    inline void SetPiiEntityTypes(Aws::String&& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = std::move(value); }
+
+    /**
+     * <p>List the PII entity types you want to identify or redact. In order to specify
+     * entity types, you must have either <code>ContentIdentificationType</code> or
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
+     * must be comma-separated; the available values are:
+     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
+     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
+     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
+     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
+     * parameter with a default value of <code>ALL</code>.</p>
+     */
+    inline void SetPiiEntityTypes(const char* value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes.assign(value); }
+
+    /**
+     * <p>List the PII entity types you want to identify or redact. In order to specify
+     * entity types, you must have either <code>ContentIdentificationType</code> or
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
+     * must be comma-separated; the available values are:
+     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
+     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
+     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
+     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
+     * parameter with a default value of <code>ALL</code>.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithPiiEntityTypes(const Aws::String& value) { SetPiiEntityTypes(value); return *this;}
+
+    /**
+     * <p>List the PII entity types you want to identify or redact. In order to specify
+     * entity types, you must have either <code>ContentIdentificationType</code> or
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
+     * must be comma-separated; the available values are:
+     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
+     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
+     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
+     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
+     * parameter with a default value of <code>ALL</code>.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithPiiEntityTypes(Aws::String&& value) { SetPiiEntityTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>List the PII entity types you want to identify or redact. In order to specify
+     * entity types, you must have either <code>ContentIdentificationType</code> or
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
+     * must be comma-separated; the available values are:
+     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
+     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
+     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
+     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
+     * parameter with a default value of <code>ALL</code>.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithPiiEntityTypes(const char* value) { SetPiiEntityTypes(value); return *this;}
+
   private:
 
     LanguageCode m_languageCode;
@@ -594,6 +831,15 @@ namespace Model
 
     PartialResultsStability m_partialResultsStability;
     bool m_partialResultsStabilityHasBeenSet;
+
+    ContentIdentificationType m_contentIdentificationType;
+    bool m_contentIdentificationTypeHasBeenSet;
+
+    ContentRedactionType m_contentRedactionType;
+    bool m_contentRedactionTypeHasBeenSet;
+
+    Aws::String m_piiEntityTypes;
+    bool m_piiEntityTypesHasBeenSet;
     Aws::Utils::Event::EventStreamDecoder m_decoder;
     StartStreamTranscriptionHandler m_handler;
 

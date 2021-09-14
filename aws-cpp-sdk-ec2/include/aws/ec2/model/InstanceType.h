@@ -432,7 +432,10 @@ namespace Model
     x2gd_8xlarge,
     x2gd_12xlarge,
     x2gd_16xlarge,
-    x2gd_metal
+    x2gd_metal,
+    vt1_3xlarge,
+    vt1_6xlarge,
+    vt1_24xlarge
   };
 
 namespace InstanceTypeMapper

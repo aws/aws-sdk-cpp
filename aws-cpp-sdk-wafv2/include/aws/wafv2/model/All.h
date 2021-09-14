@@ -26,7 +26,8 @@ namespace Model
    * request JSON body that are within the <a>JsonBody</a> <code>MatchScope</code>.
    * This is used with the <a>FieldToMatch</a> option <code>JsonBody</code>. </p>
    * <p>This is used only to indicate the web request component for WAF to inspect,
-   * in the <a>FieldToMatch</a> specification. </p><p><h3>See Also:</h3>   <a
+   * in the <a>FieldToMatch</a> specification. </p> <p>JSON specification:
+   * <code>"All": {}</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/All">AWS API
    * Reference</a></p>
    */

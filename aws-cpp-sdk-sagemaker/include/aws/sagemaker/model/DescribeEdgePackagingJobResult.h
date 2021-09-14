@@ -293,37 +293,44 @@ namespace Model
 
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the job run on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the job
+     * run on.</p>
      */
     inline const Aws::String& GetResourceKey() const{ return m_resourceKey; }
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the job run on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the job
+     * run on.</p>
      */
     inline void SetResourceKey(const Aws::String& value) { m_resourceKey = value; }
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the job run on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the job
+     * run on.</p>
      */
     inline void SetResourceKey(Aws::String&& value) { m_resourceKey = std::move(value); }
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the job run on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the job
+     * run on.</p>
      */
     inline void SetResourceKey(const char* value) { m_resourceKey.assign(value); }
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the job run on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the job
+     * run on.</p>
      */
     inline DescribeEdgePackagingJobResult& WithResourceKey(const Aws::String& value) { SetResourceKey(value); return *this;}
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the job run on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the job
+     * run on.</p>
      */
     inline DescribeEdgePackagingJobResult& WithResourceKey(Aws::String&& value) { SetResourceKey(std::move(value)); return *this;}
 
     /**
-     * <p>The CMK to use when encrypting the EBS volume the job run on.</p>
+     * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the job
+     * run on.</p>
      */
     inline DescribeEdgePackagingJobResult& WithResourceKey(const char* value) { SetResourceKey(value); return *this;}
 

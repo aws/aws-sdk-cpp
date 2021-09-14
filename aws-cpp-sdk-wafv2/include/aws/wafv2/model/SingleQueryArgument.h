@@ -26,7 +26,8 @@ namespace Model
   /**
    * <p>One query argument in a web request, identified by name, for example
    * <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long
-   * and isn't case sensitive. </p><p><h3>See Also:</h3>   <a
+   * and isn't case sensitive. </p> <p>Example JSON: <code>"SingleQueryArgument": {
+   * "Name": "myArgument" }</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/SingleQueryArgument">AWS
    * API Reference</a></p>
    */

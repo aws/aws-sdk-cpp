@@ -128,55 +128,55 @@ namespace Model
 
     /**
      * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
-     * the KernelGatewayApp.</p>
+     * the the user profile or domain.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLifecycleConfigArns() const{ return m_lifecycleConfigArns; }
 
     /**
      * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
-     * the KernelGatewayApp.</p>
+     * the the user profile or domain.</p>
      */
     inline bool LifecycleConfigArnsHasBeenSet() const { return m_lifecycleConfigArnsHasBeenSet; }
 
     /**
      * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
-     * the KernelGatewayApp.</p>
+     * the the user profile or domain.</p>
      */
     inline void SetLifecycleConfigArns(const Aws::Vector<Aws::String>& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns = value; }
 
     /**
      * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
-     * the KernelGatewayApp.</p>
+     * the the user profile or domain.</p>
      */
     inline void SetLifecycleConfigArns(Aws::Vector<Aws::String>&& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns = std::move(value); }
 
     /**
      * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
-     * the KernelGatewayApp.</p>
+     * the the user profile or domain.</p>
      */
     inline KernelGatewayAppSettings& WithLifecycleConfigArns(const Aws::Vector<Aws::String>& value) { SetLifecycleConfigArns(value); return *this;}
 
     /**
      * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
-     * the KernelGatewayApp.</p>
+     * the the user profile or domain.</p>
      */
     inline KernelGatewayAppSettings& WithLifecycleConfigArns(Aws::Vector<Aws::String>&& value) { SetLifecycleConfigArns(std::move(value)); return *this;}
 
     /**
      * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
-     * the KernelGatewayApp.</p>
+     * the the user profile or domain.</p>
      */
     inline KernelGatewayAppSettings& AddLifecycleConfigArns(const Aws::String& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.push_back(value); return *this; }
 
     /**
      * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
-     * the KernelGatewayApp.</p>
+     * the the user profile or domain.</p>
      */
     inline KernelGatewayAppSettings& AddLifecycleConfigArns(Aws::String&& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
-     * the KernelGatewayApp.</p>
+     * the the user profile or domain.</p>
      */
     inline KernelGatewayAppSettings& AddLifecycleConfigArns(const char* value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.push_back(value); return *this; }
 

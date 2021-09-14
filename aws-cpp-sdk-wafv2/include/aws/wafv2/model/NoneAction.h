@@ -26,7 +26,8 @@ namespace Model
    * rule without performing any actions. You set the <code>OverrideAction</code> on
    * the <a>Rule</a>. </p> <p>This is used in the context of other settings, for
    * example to specify values for <a>RuleAction</a> and web ACL
-   * <a>DefaultAction</a>. </p><p><h3>See Also:</h3>   <a
+   * <a>DefaultAction</a>. </p> <p>JSON specification: <code>"None": {}</code>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/NoneAction">AWS
    * API Reference</a></p>
    */

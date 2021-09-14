@@ -104,26 +104,22 @@ namespace Model
 
 
     /**
-     * <p>The sample rate of the input audio in Hertz. Sample rates of 16000 Hz or
-     * higher are accepted.</p>
+     * <p>The sample rate of the input audio in Hertz.</p>
      */
     inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
 
     /**
-     * <p>The sample rate of the input audio in Hertz. Sample rates of 16000 Hz or
-     * higher are accepted.</p>
+     * <p>The sample rate of the input audio in Hertz.</p>
      */
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
 
     /**
-     * <p>The sample rate of the input audio in Hertz. Sample rates of 16000 Hz or
-     * higher are accepted.</p>
+     * <p>The sample rate of the input audio in Hertz.</p>
      */
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
 
     /**
-     * <p>The sample rate of the input audio in Hertz. Sample rates of 16000 Hz or
-     * higher are accepted.</p>
+     * <p>The sample rate of the input audio in Hertz.</p>
      */
     inline StartMedicalStreamTranscriptionRequest& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
 

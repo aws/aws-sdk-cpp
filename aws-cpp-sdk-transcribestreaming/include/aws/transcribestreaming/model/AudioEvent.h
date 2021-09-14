@@ -16,9 +16,12 @@ namespace Model
 {
   /**
    * <p>Provides a wrapper for the audio chunks that you are sending.</p> <p>For
-   * information on audio encoding in Amazon Transcribe, see <a>input</a>. For
-   * information on audio encoding formats in Amazon Transcribe Medical, see
-   * <a>input-med</a>.</p><p><h3>See Also:</h3>   <a
+   * information on audio encoding in Amazon Transcribe, see <a
+   * href="https://docs.aws.amazon.com/transcribe/latest/dg/input.html">Speech
+   * input</a>. For information on audio encoding formats in Amazon Transcribe
+   * Medical, see <a
+   * href="https://docs.aws.amazon.com/transcribe/latest/dg/input-med.html">Speech
+   * input</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/AudioEvent">AWS
    * API Reference</a></p>
    */

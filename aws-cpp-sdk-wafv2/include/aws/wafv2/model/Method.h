@@ -25,7 +25,8 @@ namespace Model
    * <p>The HTTP method of a web request. The method indicates the type of operation
    * that the request is asking the origin to perform. </p> <p>This is used only to
    * indicate the web request component for WAF to inspect, in the
-   * <a>FieldToMatch</a> specification. </p><p><h3>See Also:</h3>   <a
+   * <a>FieldToMatch</a> specification. </p> <p>JSON specification: <code>"Method":
+   * {}</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Method">AWS API
    * Reference</a></p>
    */

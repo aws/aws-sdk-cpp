@@ -1863,9 +1863,9 @@ namespace Model
          * the domain. Each user receives a private home directory within the EFS volume
          * for notebooks, Git repositories, and data files.</p> <p>SageMaker uses the
          * Amazon Web Services Key Management Service (Amazon Web Services KMS) to encrypt
-         * the EFS volume attached to the domain with an Amazon Web Services managed
-         * customer master key (CMK) by default. For more control, you can specify a
-         * customer managed CMK. For more information, see <a
+         * the EFS volume attached to the domain with an Amazon Web Services managed key by
+         * default. For more control, you can specify a customer managed key. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html">Protect
          * Data at Rest Using Encryption</a>.</p> <p> <b>VPC configuration</b> </p> <p>All
          * SageMaker Studio traffic between the domain and the EFS volume is through the
@@ -1903,9 +1903,9 @@ namespace Model
          * the domain. Each user receives a private home directory within the EFS volume
          * for notebooks, Git repositories, and data files.</p> <p>SageMaker uses the
          * Amazon Web Services Key Management Service (Amazon Web Services KMS) to encrypt
-         * the EFS volume attached to the domain with an Amazon Web Services managed
-         * customer master key (CMK) by default. For more control, you can specify a
-         * customer managed CMK. For more information, see <a
+         * the EFS volume attached to the domain with an Amazon Web Services managed key by
+         * default. For more control, you can specify a customer managed key. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html">Protect
          * Data at Rest Using Encryption</a>.</p> <p> <b>VPC configuration</b> </p> <p>All
          * SageMaker Studio traffic between the domain and the EFS volume is through the
@@ -1945,9 +1945,9 @@ namespace Model
          * the domain. Each user receives a private home directory within the EFS volume
          * for notebooks, Git repositories, and data files.</p> <p>SageMaker uses the
          * Amazon Web Services Key Management Service (Amazon Web Services KMS) to encrypt
-         * the EFS volume attached to the domain with an Amazon Web Services managed
-         * customer master key (CMK) by default. For more control, you can specify a
-         * customer managed CMK. For more information, see <a
+         * the EFS volume attached to the domain with an Amazon Web Services managed key by
+         * default. For more control, you can specify a customer managed key. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html">Protect
          * Data at Rest Using Encryption</a>.</p> <p> <b>VPC configuration</b> </p> <p>All
          * SageMaker Studio traffic between the domain and the EFS volume is through the

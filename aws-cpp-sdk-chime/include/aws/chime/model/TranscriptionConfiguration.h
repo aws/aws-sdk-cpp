@@ -72,32 +72,38 @@ namespace Model
 
 
     /**
-     * <p>The transcription configuration settings passed to Amazon Transcribe.</p>
+     * <p>The transcription configuration settings passed to Amazon Transcribe
+     * Medical.</p>
      */
     inline const EngineTranscribeMedicalSettings& GetEngineTranscribeMedicalSettings() const{ return m_engineTranscribeMedicalSettings; }
 
     /**
-     * <p>The transcription configuration settings passed to Amazon Transcribe.</p>
+     * <p>The transcription configuration settings passed to Amazon Transcribe
+     * Medical.</p>
      */
     inline bool EngineTranscribeMedicalSettingsHasBeenSet() const { return m_engineTranscribeMedicalSettingsHasBeenSet; }
 
     /**
-     * <p>The transcription configuration settings passed to Amazon Transcribe.</p>
+     * <p>The transcription configuration settings passed to Amazon Transcribe
+     * Medical.</p>
      */
     inline void SetEngineTranscribeMedicalSettings(const EngineTranscribeMedicalSettings& value) { m_engineTranscribeMedicalSettingsHasBeenSet = true; m_engineTranscribeMedicalSettings = value; }
 
     /**
-     * <p>The transcription configuration settings passed to Amazon Transcribe.</p>
+     * <p>The transcription configuration settings passed to Amazon Transcribe
+     * Medical.</p>
      */
     inline void SetEngineTranscribeMedicalSettings(EngineTranscribeMedicalSettings&& value) { m_engineTranscribeMedicalSettingsHasBeenSet = true; m_engineTranscribeMedicalSettings = std::move(value); }
 
     /**
-     * <p>The transcription configuration settings passed to Amazon Transcribe.</p>
+     * <p>The transcription configuration settings passed to Amazon Transcribe
+     * Medical.</p>
      */
     inline TranscriptionConfiguration& WithEngineTranscribeMedicalSettings(const EngineTranscribeMedicalSettings& value) { SetEngineTranscribeMedicalSettings(value); return *this;}
 
     /**
-     * <p>The transcription configuration settings passed to Amazon Transcribe.</p>
+     * <p>The transcription configuration settings passed to Amazon Transcribe
+     * Medical.</p>
      */
     inline TranscriptionConfiguration& WithEngineTranscribeMedicalSettings(EngineTranscribeMedicalSettings&& value) { SetEngineTranscribeMedicalSettings(std::move(value)); return *this;}
 

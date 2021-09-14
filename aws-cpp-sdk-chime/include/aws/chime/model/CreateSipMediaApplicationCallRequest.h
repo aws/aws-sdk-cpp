@@ -7,6 +7,7 @@
 #include <aws/chime/Chime_EXPORTS.h>
 #include <aws/chime/ChimeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -162,6 +163,72 @@ namespace Model
      */
     inline CreateSipMediaApplicationCallRequest& WithSipMediaApplicationId(const char* value) { SetSipMediaApplicationId(value); return *this;}
 
+
+    /**
+     * <p>The SIP headers added to an outbound call leg.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetSipHeaders() const{ return m_sipHeaders; }
+
+    /**
+     * <p>The SIP headers added to an outbound call leg.</p>
+     */
+    inline bool SipHeadersHasBeenSet() const { return m_sipHeadersHasBeenSet; }
+
+    /**
+     * <p>The SIP headers added to an outbound call leg.</p>
+     */
+    inline void SetSipHeaders(const Aws::Map<Aws::String, Aws::String>& value) { m_sipHeadersHasBeenSet = true; m_sipHeaders = value; }
+
+    /**
+     * <p>The SIP headers added to an outbound call leg.</p>
+     */
+    inline void SetSipHeaders(Aws::Map<Aws::String, Aws::String>&& value) { m_sipHeadersHasBeenSet = true; m_sipHeaders = std::move(value); }
+
+    /**
+     * <p>The SIP headers added to an outbound call leg.</p>
+     */
+    inline CreateSipMediaApplicationCallRequest& WithSipHeaders(const Aws::Map<Aws::String, Aws::String>& value) { SetSipHeaders(value); return *this;}
+
+    /**
+     * <p>The SIP headers added to an outbound call leg.</p>
+     */
+    inline CreateSipMediaApplicationCallRequest& WithSipHeaders(Aws::Map<Aws::String, Aws::String>&& value) { SetSipHeaders(std::move(value)); return *this;}
+
+    /**
+     * <p>The SIP headers added to an outbound call leg.</p>
+     */
+    inline CreateSipMediaApplicationCallRequest& AddSipHeaders(const Aws::String& key, const Aws::String& value) { m_sipHeadersHasBeenSet = true; m_sipHeaders.emplace(key, value); return *this; }
+
+    /**
+     * <p>The SIP headers added to an outbound call leg.</p>
+     */
+    inline CreateSipMediaApplicationCallRequest& AddSipHeaders(Aws::String&& key, const Aws::String& value) { m_sipHeadersHasBeenSet = true; m_sipHeaders.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The SIP headers added to an outbound call leg.</p>
+     */
+    inline CreateSipMediaApplicationCallRequest& AddSipHeaders(const Aws::String& key, Aws::String&& value) { m_sipHeadersHasBeenSet = true; m_sipHeaders.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The SIP headers added to an outbound call leg.</p>
+     */
+    inline CreateSipMediaApplicationCallRequest& AddSipHeaders(Aws::String&& key, Aws::String&& value) { m_sipHeadersHasBeenSet = true; m_sipHeaders.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The SIP headers added to an outbound call leg.</p>
+     */
+    inline CreateSipMediaApplicationCallRequest& AddSipHeaders(const char* key, Aws::String&& value) { m_sipHeadersHasBeenSet = true; m_sipHeaders.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The SIP headers added to an outbound call leg.</p>
+     */
+    inline CreateSipMediaApplicationCallRequest& AddSipHeaders(Aws::String&& key, const char* value) { m_sipHeadersHasBeenSet = true; m_sipHeaders.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The SIP headers added to an outbound call leg.</p>
+     */
+    inline CreateSipMediaApplicationCallRequest& AddSipHeaders(const char* key, const char* value) { m_sipHeadersHasBeenSet = true; m_sipHeaders.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_fromPhoneNumber;
@@ -172,6 +239,9 @@ namespace Model
 
     Aws::String m_sipMediaApplicationId;
     bool m_sipMediaApplicationIdHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_sipHeaders;
+    bool m_sipHeadersHasBeenSet;
   };
 
 } // namespace Model

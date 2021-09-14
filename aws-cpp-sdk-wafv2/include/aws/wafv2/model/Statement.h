@@ -374,8 +374,8 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
+     * group reference statement at the top level inside a web ACL. </p>
      */
     inline const RuleGroupReferenceStatement& GetRuleGroupReferenceStatement() const{ return m_ruleGroupReferenceStatement; }
 
@@ -384,8 +384,8 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
+     * group reference statement at the top level inside a web ACL. </p>
      */
     inline bool RuleGroupReferenceStatementHasBeenSet() const { return m_ruleGroupReferenceStatementHasBeenSet; }
 
@@ -394,8 +394,8 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
+     * group reference statement at the top level inside a web ACL. </p>
      */
     inline void SetRuleGroupReferenceStatement(const RuleGroupReferenceStatement& value) { m_ruleGroupReferenceStatementHasBeenSet = true; m_ruleGroupReferenceStatement = value; }
 
@@ -404,8 +404,8 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
+     * group reference statement at the top level inside a web ACL. </p>
      */
     inline void SetRuleGroupReferenceStatement(RuleGroupReferenceStatement&& value) { m_ruleGroupReferenceStatementHasBeenSet = true; m_ruleGroupReferenceStatement = std::move(value); }
 
@@ -414,8 +414,8 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
+     * group reference statement at the top level inside a web ACL. </p>
      */
     inline Statement& WithRuleGroupReferenceStatement(const RuleGroupReferenceStatement& value) { SetRuleGroupReferenceStatement(value); return *this;}
 
@@ -424,8 +424,8 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
+     * group reference statement at the top level inside a web ACL. </p>
      */
     inline Statement& WithRuleGroupReferenceStatement(RuleGroupReferenceStatement&& value) { SetRuleGroupReferenceStatement(std::move(value)); return *this;}
 
@@ -593,8 +593,15 @@ namespace Model
      * address, and triggers the rule action when the rate exceeds a limit that you
      * specify on the number of requests in any 5-minute time span. You can use this to
      * put a temporary block on requests from an IP address that is sending excessive
-     * requests.</p> <p>When the rule action triggers, WAF blocks additional requests
-     * from the IP address until the request rate falls below the limit.</p> <p>You can
+     * requests. </p> <p>WAF tracks and manages web requests separately for each
+     * instance of a rate-based rule that you use. For example, if you provide the same
+     * rate-based rule settings in two web ACLs, each of the two rule statements
+     * represents a separate instance of the rate-based rule and gets its own tracking
+     * and management by WAF. If you define a rate-based rule inside a rule group, and
+     * then use that rule group in multiple places, each use creates a separate
+     * instance of the rate-based rule that gets its own tracking and management by
+     * WAF. </p> <p>When the rule action triggers, WAF blocks additional requests from
+     * the IP address until the request rate falls below the limit.</p> <p>You can
      * optionally nest another statement inside the rate-based statement, to narrow the
      * scope of the rule so that it only counts requests that match the nested
      * statement. For example, based on recent requests that you have seen from an
@@ -607,9 +614,10 @@ namespace Model
      * of the conditions in the statements are counted. If the count exceeds 1,000
      * requests per five minutes, the rule action triggers. Requests that do not meet
      * both conditions are not counted towards the rate limit and are not affected by
-     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code>, for example
-     * for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can
-     * only be referenced as a top-level statement within a rule.</p>
+     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code> inside
+     * another statement, for example inside a <code>NotStatement</code> or
+     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
+     * inside a web ACL and inside a rule group. </p>
      */
     const RateBasedStatement& GetRateBasedStatement() const;
 
@@ -618,8 +626,15 @@ namespace Model
      * address, and triggers the rule action when the rate exceeds a limit that you
      * specify on the number of requests in any 5-minute time span. You can use this to
      * put a temporary block on requests from an IP address that is sending excessive
-     * requests.</p> <p>When the rule action triggers, WAF blocks additional requests
-     * from the IP address until the request rate falls below the limit.</p> <p>You can
+     * requests. </p> <p>WAF tracks and manages web requests separately for each
+     * instance of a rate-based rule that you use. For example, if you provide the same
+     * rate-based rule settings in two web ACLs, each of the two rule statements
+     * represents a separate instance of the rate-based rule and gets its own tracking
+     * and management by WAF. If you define a rate-based rule inside a rule group, and
+     * then use that rule group in multiple places, each use creates a separate
+     * instance of the rate-based rule that gets its own tracking and management by
+     * WAF. </p> <p>When the rule action triggers, WAF blocks additional requests from
+     * the IP address until the request rate falls below the limit.</p> <p>You can
      * optionally nest another statement inside the rate-based statement, to narrow the
      * scope of the rule so that it only counts requests that match the nested
      * statement. For example, based on recent requests that you have seen from an
@@ -632,9 +647,10 @@ namespace Model
      * of the conditions in the statements are counted. If the count exceeds 1,000
      * requests per five minutes, the rule action triggers. Requests that do not meet
      * both conditions are not counted towards the rate limit and are not affected by
-     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code>, for example
-     * for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can
-     * only be referenced as a top-level statement within a rule.</p>
+     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code> inside
+     * another statement, for example inside a <code>NotStatement</code> or
+     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
+     * inside a web ACL and inside a rule group. </p>
      */
     bool RateBasedStatementHasBeenSet() const;
 
@@ -643,8 +659,15 @@ namespace Model
      * address, and triggers the rule action when the rate exceeds a limit that you
      * specify on the number of requests in any 5-minute time span. You can use this to
      * put a temporary block on requests from an IP address that is sending excessive
-     * requests.</p> <p>When the rule action triggers, WAF blocks additional requests
-     * from the IP address until the request rate falls below the limit.</p> <p>You can
+     * requests. </p> <p>WAF tracks and manages web requests separately for each
+     * instance of a rate-based rule that you use. For example, if you provide the same
+     * rate-based rule settings in two web ACLs, each of the two rule statements
+     * represents a separate instance of the rate-based rule and gets its own tracking
+     * and management by WAF. If you define a rate-based rule inside a rule group, and
+     * then use that rule group in multiple places, each use creates a separate
+     * instance of the rate-based rule that gets its own tracking and management by
+     * WAF. </p> <p>When the rule action triggers, WAF blocks additional requests from
+     * the IP address until the request rate falls below the limit.</p> <p>You can
      * optionally nest another statement inside the rate-based statement, to narrow the
      * scope of the rule so that it only counts requests that match the nested
      * statement. For example, based on recent requests that you have seen from an
@@ -657,9 +680,10 @@ namespace Model
      * of the conditions in the statements are counted. If the count exceeds 1,000
      * requests per five minutes, the rule action triggers. Requests that do not meet
      * both conditions are not counted towards the rate limit and are not affected by
-     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code>, for example
-     * for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can
-     * only be referenced as a top-level statement within a rule.</p>
+     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code> inside
+     * another statement, for example inside a <code>NotStatement</code> or
+     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
+     * inside a web ACL and inside a rule group. </p>
      */
     void SetRateBasedStatement(const RateBasedStatement& value);
 
@@ -668,8 +692,15 @@ namespace Model
      * address, and triggers the rule action when the rate exceeds a limit that you
      * specify on the number of requests in any 5-minute time span. You can use this to
      * put a temporary block on requests from an IP address that is sending excessive
-     * requests.</p> <p>When the rule action triggers, WAF blocks additional requests
-     * from the IP address until the request rate falls below the limit.</p> <p>You can
+     * requests. </p> <p>WAF tracks and manages web requests separately for each
+     * instance of a rate-based rule that you use. For example, if you provide the same
+     * rate-based rule settings in two web ACLs, each of the two rule statements
+     * represents a separate instance of the rate-based rule and gets its own tracking
+     * and management by WAF. If you define a rate-based rule inside a rule group, and
+     * then use that rule group in multiple places, each use creates a separate
+     * instance of the rate-based rule that gets its own tracking and management by
+     * WAF. </p> <p>When the rule action triggers, WAF blocks additional requests from
+     * the IP address until the request rate falls below the limit.</p> <p>You can
      * optionally nest another statement inside the rate-based statement, to narrow the
      * scope of the rule so that it only counts requests that match the nested
      * statement. For example, based on recent requests that you have seen from an
@@ -682,9 +713,10 @@ namespace Model
      * of the conditions in the statements are counted. If the count exceeds 1,000
      * requests per five minutes, the rule action triggers. Requests that do not meet
      * both conditions are not counted towards the rate limit and are not affected by
-     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code>, for example
-     * for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can
-     * only be referenced as a top-level statement within a rule.</p>
+     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code> inside
+     * another statement, for example inside a <code>NotStatement</code> or
+     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
+     * inside a web ACL and inside a rule group. </p>
      */
     void SetRateBasedStatement(RateBasedStatement&& value);
 
@@ -693,8 +725,15 @@ namespace Model
      * address, and triggers the rule action when the rate exceeds a limit that you
      * specify on the number of requests in any 5-minute time span. You can use this to
      * put a temporary block on requests from an IP address that is sending excessive
-     * requests.</p> <p>When the rule action triggers, WAF blocks additional requests
-     * from the IP address until the request rate falls below the limit.</p> <p>You can
+     * requests. </p> <p>WAF tracks and manages web requests separately for each
+     * instance of a rate-based rule that you use. For example, if you provide the same
+     * rate-based rule settings in two web ACLs, each of the two rule statements
+     * represents a separate instance of the rate-based rule and gets its own tracking
+     * and management by WAF. If you define a rate-based rule inside a rule group, and
+     * then use that rule group in multiple places, each use creates a separate
+     * instance of the rate-based rule that gets its own tracking and management by
+     * WAF. </p> <p>When the rule action triggers, WAF blocks additional requests from
+     * the IP address until the request rate falls below the limit.</p> <p>You can
      * optionally nest another statement inside the rate-based statement, to narrow the
      * scope of the rule so that it only counts requests that match the nested
      * statement. For example, based on recent requests that you have seen from an
@@ -707,9 +746,10 @@ namespace Model
      * of the conditions in the statements are counted. If the count exceeds 1,000
      * requests per five minutes, the rule action triggers. Requests that do not meet
      * both conditions are not counted towards the rate limit and are not affected by
-     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code>, for example
-     * for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can
-     * only be referenced as a top-level statement within a rule.</p>
+     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code> inside
+     * another statement, for example inside a <code>NotStatement</code> or
+     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
+     * inside a web ACL and inside a rule group. </p>
      */
     Statement& WithRateBasedStatement(const RateBasedStatement& value);
 
@@ -718,8 +758,15 @@ namespace Model
      * address, and triggers the rule action when the rate exceeds a limit that you
      * specify on the number of requests in any 5-minute time span. You can use this to
      * put a temporary block on requests from an IP address that is sending excessive
-     * requests.</p> <p>When the rule action triggers, WAF blocks additional requests
-     * from the IP address until the request rate falls below the limit.</p> <p>You can
+     * requests. </p> <p>WAF tracks and manages web requests separately for each
+     * instance of a rate-based rule that you use. For example, if you provide the same
+     * rate-based rule settings in two web ACLs, each of the two rule statements
+     * represents a separate instance of the rate-based rule and gets its own tracking
+     * and management by WAF. If you define a rate-based rule inside a rule group, and
+     * then use that rule group in multiple places, each use creates a separate
+     * instance of the rate-based rule that gets its own tracking and management by
+     * WAF. </p> <p>When the rule action triggers, WAF blocks additional requests from
+     * the IP address until the request rate falls below the limit.</p> <p>You can
      * optionally nest another statement inside the rate-based statement, to narrow the
      * scope of the rule so that it only counts requests that match the nested
      * statement. For example, based on recent requests that you have seen from an
@@ -732,9 +779,10 @@ namespace Model
      * of the conditions in the statements are counted. If the count exceeds 1,000
      * requests per five minutes, the rule action triggers. Requests that do not meet
      * both conditions are not counted towards the rate limit and are not affected by
-     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code>, for example
-     * for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can
-     * only be referenced as a top-level statement within a rule.</p>
+     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code> inside
+     * another statement, for example inside a <code>NotStatement</code> or
+     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
+     * inside a web ACL and inside a rule group. </p>
      */
     Statement& WithRateBasedStatement(RateBasedStatement&& value);
 

@@ -948,10 +948,11 @@ namespace Model
         /**
          * <p>Retrieves the specified managed rule set. </p>  <p>This is intended for
          * use only by vendors of managed rule sets. Vendors are Amazon Web Services and
-         * Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs to
-         * provide controlled rollout of your versioned managed rule group offerings for
-         * your customers. The APIs are <code>ListManagedRuleSets</code>,
-         * <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and
+         * Amazon Web Services Marketplace sellers. </p> <p>Vendors, you can use the
+         * managed rule set APIs to provide controlled rollout of your versioned managed
+         * rule group offerings for your customers. The APIs are
+         * <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>,
+         * <code>PutManagedRuleSetVersions</code>, and
          * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetManagedRuleSet">AWS
@@ -962,10 +963,11 @@ namespace Model
         /**
          * <p>Retrieves the specified managed rule set. </p>  <p>This is intended for
          * use only by vendors of managed rule sets. Vendors are Amazon Web Services and
-         * Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs to
-         * provide controlled rollout of your versioned managed rule group offerings for
-         * your customers. The APIs are <code>ListManagedRuleSets</code>,
-         * <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and
+         * Amazon Web Services Marketplace sellers. </p> <p>Vendors, you can use the
+         * managed rule set APIs to provide controlled rollout of your versioned managed
+         * rule group offerings for your customers. The APIs are
+         * <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>,
+         * <code>PutManagedRuleSetVersions</code>, and
          * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetManagedRuleSet">AWS
@@ -978,10 +980,11 @@ namespace Model
         /**
          * <p>Retrieves the specified managed rule set. </p>  <p>This is intended for
          * use only by vendors of managed rule sets. Vendors are Amazon Web Services and
-         * Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs to
-         * provide controlled rollout of your versioned managed rule group offerings for
-         * your customers. The APIs are <code>ListManagedRuleSets</code>,
-         * <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and
+         * Amazon Web Services Marketplace sellers. </p> <p>Vendors, you can use the
+         * managed rule set APIs to provide controlled rollout of your versioned managed
+         * rule group offerings for your customers. The APIs are
+         * <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>,
+         * <code>PutManagedRuleSetVersions</code>, and
          * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetManagedRuleSet">AWS
@@ -1023,20 +1026,40 @@ namespace Model
         virtual void GetPermissionPolicyAsync(const Model::GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the keys that are currently blocked by a rate-based rule. The
-         * maximum number of managed keys that can be blocked for a single rate-based rule
-         * is 10,000. If more than 10,000 addresses exceed the rate limit, those with the
-         * highest rates are blocked.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the keys that are currently blocked by a rate-based rule instance.
+         * The maximum number of managed keys that can be blocked for a single rate-based
+         * rule instance is 10,000. If more than 10,000 addresses exceed the rate limit,
+         * those with the highest rates are blocked.</p> <p>For a rate-based rule that
+         * you've defined inside a rule group, provide the name of the rule group reference
+         * statement in your request, in addition to the rate-based rule name and the web
+         * ACL name. </p> <p>WAF monitors web requests and manages keys independently for
+         * each unique combination of web ACL, optional rule group, and rate-based rule.
+         * For example, if you define a rate-based rule inside a rule group, and then use
+         * the rule group in a web ACL, WAF monitors web requests and manages keys for that
+         * web ACL, rule group reference statement, and rate-based rule instance. If you
+         * use the same rule group in a second web ACL, WAF monitors web requests and
+         * manages keys for this second usage completely independent of your first.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRateBasedStatementManagedKeys">AWS
          * API Reference</a></p>
          */
         virtual Model::GetRateBasedStatementManagedKeysOutcome GetRateBasedStatementManagedKeys(const Model::GetRateBasedStatementManagedKeysRequest& request) const;
 
         /**
-         * <p>Retrieves the keys that are currently blocked by a rate-based rule. The
-         * maximum number of managed keys that can be blocked for a single rate-based rule
-         * is 10,000. If more than 10,000 addresses exceed the rate limit, those with the
-         * highest rates are blocked.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the keys that are currently blocked by a rate-based rule instance.
+         * The maximum number of managed keys that can be blocked for a single rate-based
+         * rule instance is 10,000. If more than 10,000 addresses exceed the rate limit,
+         * those with the highest rates are blocked.</p> <p>For a rate-based rule that
+         * you've defined inside a rule group, provide the name of the rule group reference
+         * statement in your request, in addition to the rate-based rule name and the web
+         * ACL name. </p> <p>WAF monitors web requests and manages keys independently for
+         * each unique combination of web ACL, optional rule group, and rate-based rule.
+         * For example, if you define a rate-based rule inside a rule group, and then use
+         * the rule group in a web ACL, WAF monitors web requests and manages keys for that
+         * web ACL, rule group reference statement, and rate-based rule instance. If you
+         * use the same rule group in a second web ACL, WAF monitors web requests and
+         * manages keys for this second usage completely independent of your first.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRateBasedStatementManagedKeys">AWS
          * API Reference</a></p>
          *
@@ -1045,10 +1068,20 @@ namespace Model
         virtual Model::GetRateBasedStatementManagedKeysOutcomeCallable GetRateBasedStatementManagedKeysCallable(const Model::GetRateBasedStatementManagedKeysRequest& request) const;
 
         /**
-         * <p>Retrieves the keys that are currently blocked by a rate-based rule. The
-         * maximum number of managed keys that can be blocked for a single rate-based rule
-         * is 10,000. If more than 10,000 addresses exceed the rate limit, those with the
-         * highest rates are blocked.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the keys that are currently blocked by a rate-based rule instance.
+         * The maximum number of managed keys that can be blocked for a single rate-based
+         * rule instance is 10,000. If more than 10,000 addresses exceed the rate limit,
+         * those with the highest rates are blocked.</p> <p>For a rate-based rule that
+         * you've defined inside a rule group, provide the name of the rule group reference
+         * statement in your request, in addition to the rate-based rule name and the web
+         * ACL name. </p> <p>WAF monitors web requests and manages keys independently for
+         * each unique combination of web ACL, optional rule group, and rate-based rule.
+         * For example, if you define a rate-based rule inside a rule group, and then use
+         * the rule group in a web ACL, WAF monitors web requests and manages keys for that
+         * web ACL, rule group reference statement, and rate-based rule instance. If you
+         * use the same rule group in a second web ACL, WAF monitors web requests and
+         * manages keys for this second usage completely independent of your first.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRateBasedStatementManagedKeys">AWS
          * API Reference</a></p>
          *
@@ -1245,8 +1278,8 @@ namespace Model
         /**
          * <p>Retrieves an array of managed rule groups that are available for you to use.
          * This list includes all Amazon Web Services Managed Rules rule groups and all of
-         * the Marketplace managed rule groups that you're subscribed to.</p><p><h3>See
-         * Also:</h3>   <a
+         * the Amazon Web Services Marketplace managed rule groups that you're subscribed
+         * to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroups">AWS
          * API Reference</a></p>
          */
@@ -1255,8 +1288,8 @@ namespace Model
         /**
          * <p>Retrieves an array of managed rule groups that are available for you to use.
          * This list includes all Amazon Web Services Managed Rules rule groups and all of
-         * the Marketplace managed rule groups that you're subscribed to.</p><p><h3>See
-         * Also:</h3>   <a
+         * the Amazon Web Services Marketplace managed rule groups that you're subscribed
+         * to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroups">AWS
          * API Reference</a></p>
          *
@@ -1267,8 +1300,8 @@ namespace Model
         /**
          * <p>Retrieves an array of managed rule groups that are available for you to use.
          * This list includes all Amazon Web Services Managed Rules rule groups and all of
-         * the Marketplace managed rule groups that you're subscribed to.</p><p><h3>See
-         * Also:</h3>   <a
+         * the Amazon Web Services Marketplace managed rule groups that you're subscribed
+         * to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroups">AWS
          * API Reference</a></p>
          *
@@ -1335,10 +1368,11 @@ namespace Model
         /**
          * <p>Retrieves the managed rule sets that you own. </p>  <p>This is intended
          * for use only by vendors of managed rule sets. Vendors are Amazon Web Services
-         * and Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs
-         * to provide controlled rollout of your versioned managed rule group offerings for
-         * your customers. The APIs are <code>ListManagedRuleSets</code>,
-         * <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and
+         * and Amazon Web Services Marketplace sellers. </p> <p>Vendors, you can use the
+         * managed rule set APIs to provide controlled rollout of your versioned managed
+         * rule group offerings for your customers. The APIs are
+         * <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>,
+         * <code>PutManagedRuleSetVersions</code>, and
          * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListManagedRuleSets">AWS
@@ -1349,10 +1383,11 @@ namespace Model
         /**
          * <p>Retrieves the managed rule sets that you own. </p>  <p>This is intended
          * for use only by vendors of managed rule sets. Vendors are Amazon Web Services
-         * and Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs
-         * to provide controlled rollout of your versioned managed rule group offerings for
-         * your customers. The APIs are <code>ListManagedRuleSets</code>,
-         * <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and
+         * and Amazon Web Services Marketplace sellers. </p> <p>Vendors, you can use the
+         * managed rule set APIs to provide controlled rollout of your versioned managed
+         * rule group offerings for your customers. The APIs are
+         * <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>,
+         * <code>PutManagedRuleSetVersions</code>, and
          * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListManagedRuleSets">AWS
@@ -1365,10 +1400,11 @@ namespace Model
         /**
          * <p>Retrieves the managed rule sets that you own. </p>  <p>This is intended
          * for use only by vendors of managed rule sets. Vendors are Amazon Web Services
-         * and Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs
-         * to provide controlled rollout of your versioned managed rule group offerings for
-         * your customers. The APIs are <code>ListManagedRuleSets</code>,
-         * <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and
+         * and Amazon Web Services Marketplace sellers. </p> <p>Vendors, you can use the
+         * managed rule set APIs to provide controlled rollout of your versioned managed
+         * rule group offerings for your customers. The APIs are
+         * <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>,
+         * <code>PutManagedRuleSetVersions</code>, and
          * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListManagedRuleSets">AWS
@@ -1637,11 +1673,11 @@ namespace Model
          * <p>Defines the versions of your managed rule set that you are offering to the
          * customers. Customers see your offerings as managed rule groups with
          * versioning.</p>  <p>This is intended for use only by vendors of managed
-         * rule sets. Vendors are Amazon Web Services and Marketplace sellers. </p>
-         * <p>Vendors, you can use the managed rule set APIs to provide controlled rollout
-         * of your versioned managed rule group offerings for your customers. The APIs are
-         * <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>,
-         * <code>PutManagedRuleSetVersions</code>, and
+         * rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace
+         * sellers. </p> <p>Vendors, you can use the managed rule set APIs to provide
+         * controlled rollout of your versioned managed rule group offerings for your
+         * customers. The APIs are <code>ListManagedRuleSets</code>,
+         * <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and
          * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>  <p>Customers
          * retrieve their managed rule group list by calling
          * <a>ListAvailableManagedRuleGroups</a>. The name that you provide here for your
@@ -1661,11 +1697,11 @@ namespace Model
          * <p>Defines the versions of your managed rule set that you are offering to the
          * customers. Customers see your offerings as managed rule groups with
          * versioning.</p>  <p>This is intended for use only by vendors of managed
-         * rule sets. Vendors are Amazon Web Services and Marketplace sellers. </p>
-         * <p>Vendors, you can use the managed rule set APIs to provide controlled rollout
-         * of your versioned managed rule group offerings for your customers. The APIs are
-         * <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>,
-         * <code>PutManagedRuleSetVersions</code>, and
+         * rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace
+         * sellers. </p> <p>Vendors, you can use the managed rule set APIs to provide
+         * controlled rollout of your versioned managed rule group offerings for your
+         * customers. The APIs are <code>ListManagedRuleSets</code>,
+         * <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and
          * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>  <p>Customers
          * retrieve their managed rule group list by calling
          * <a>ListAvailableManagedRuleGroups</a>. The name that you provide here for your
@@ -1687,11 +1723,11 @@ namespace Model
          * <p>Defines the versions of your managed rule set that you are offering to the
          * customers. Customers see your offerings as managed rule groups with
          * versioning.</p>  <p>This is intended for use only by vendors of managed
-         * rule sets. Vendors are Amazon Web Services and Marketplace sellers. </p>
-         * <p>Vendors, you can use the managed rule set APIs to provide controlled rollout
-         * of your versioned managed rule group offerings for your customers. The APIs are
-         * <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>,
-         * <code>PutManagedRuleSetVersions</code>, and
+         * rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace
+         * sellers. </p> <p>Vendors, you can use the managed rule set APIs to provide
+         * controlled rollout of your versioned managed rule group offerings for your
+         * customers. The APIs are <code>ListManagedRuleSets</code>,
+         * <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and
          * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>  <p>Customers
          * retrieve their managed rule group list by calling
          * <a>ListAvailableManagedRuleGroups</a>. The name that you provide here for your
@@ -1884,9 +1920,9 @@ namespace Model
          * expiration for a version, WAF excludes it from the reponse to
          * <a>ListAvailableManagedRuleGroupVersions</a> for the managed rule group. </p>
          *  <p>This is intended for use only by vendors of managed rule sets. Vendors
-         * are Amazon Web Services and Marketplace sellers. </p> <p>Vendors, you can use
-         * the managed rule set APIs to provide controlled rollout of your versioned
-         * managed rule group offerings for your customers. The APIs are
+         * are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
+         * <p>Vendors, you can use the managed rule set APIs to provide controlled rollout
+         * of your versioned managed rule group offerings for your customers. The APIs are
          * <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>,
          * <code>PutManagedRuleSetVersions</code>, and
          * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> <p><h3>See
@@ -1902,9 +1938,9 @@ namespace Model
          * expiration for a version, WAF excludes it from the reponse to
          * <a>ListAvailableManagedRuleGroupVersions</a> for the managed rule group. </p>
          *  <p>This is intended for use only by vendors of managed rule sets. Vendors
-         * are Amazon Web Services and Marketplace sellers. </p> <p>Vendors, you can use
-         * the managed rule set APIs to provide controlled rollout of your versioned
-         * managed rule group offerings for your customers. The APIs are
+         * are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
+         * <p>Vendors, you can use the managed rule set APIs to provide controlled rollout
+         * of your versioned managed rule group offerings for your customers. The APIs are
          * <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>,
          * <code>PutManagedRuleSetVersions</code>, and
          * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> <p><h3>See
@@ -1922,9 +1958,9 @@ namespace Model
          * expiration for a version, WAF excludes it from the reponse to
          * <a>ListAvailableManagedRuleGroupVersions</a> for the managed rule group. </p>
          *  <p>This is intended for use only by vendors of managed rule sets. Vendors
-         * are Amazon Web Services and Marketplace sellers. </p> <p>Vendors, you can use
-         * the managed rule set APIs to provide controlled rollout of your versioned
-         * managed rule group offerings for your customers. The APIs are
+         * are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
+         * <p>Vendors, you can use the managed rule set APIs to provide controlled rollout
+         * of your versioned managed rule group offerings for your customers. The APIs are
          * <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>,
          * <code>PutManagedRuleSetVersions</code>, and
          * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> <p><h3>See

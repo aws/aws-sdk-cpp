@@ -27,8 +27,9 @@ namespace Model
    * <p>One of the headers in a web request, identified by name, for example,
    * <code>User-Agent</code> or <code>Referer</code>. This setting isn't case
    * sensitive.</p> <p>This is used only to indicate the web request component for
-   * WAF to inspect, in the <a>FieldToMatch</a> specification. </p><p><h3>See
-   * Also:</h3>   <a
+   * WAF to inspect, in the <a>FieldToMatch</a> specification. </p> <p>Example JSON:
+   * <code>"SingleHeader": { "Name": "haystack" }</code> </p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/SingleHeader">AWS
    * API Reference</a></p>
    */

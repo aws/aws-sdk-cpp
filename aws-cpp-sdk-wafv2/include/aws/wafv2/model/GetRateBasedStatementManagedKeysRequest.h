@@ -215,42 +215,115 @@ namespace Model
 
 
     /**
-     * <p>The name of the rate-based rule to get the keys for.</p>
+     * <p>The name of the rule group reference statement in your web ACL. This is
+     * required only when you have the rate-based rule nested inside a rule group. </p>
+     */
+    inline const Aws::String& GetRuleGroupRuleName() const{ return m_ruleGroupRuleName; }
+
+    /**
+     * <p>The name of the rule group reference statement in your web ACL. This is
+     * required only when you have the rate-based rule nested inside a rule group. </p>
+     */
+    inline bool RuleGroupRuleNameHasBeenSet() const { return m_ruleGroupRuleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the rule group reference statement in your web ACL. This is
+     * required only when you have the rate-based rule nested inside a rule group. </p>
+     */
+    inline void SetRuleGroupRuleName(const Aws::String& value) { m_ruleGroupRuleNameHasBeenSet = true; m_ruleGroupRuleName = value; }
+
+    /**
+     * <p>The name of the rule group reference statement in your web ACL. This is
+     * required only when you have the rate-based rule nested inside a rule group. </p>
+     */
+    inline void SetRuleGroupRuleName(Aws::String&& value) { m_ruleGroupRuleNameHasBeenSet = true; m_ruleGroupRuleName = std::move(value); }
+
+    /**
+     * <p>The name of the rule group reference statement in your web ACL. This is
+     * required only when you have the rate-based rule nested inside a rule group. </p>
+     */
+    inline void SetRuleGroupRuleName(const char* value) { m_ruleGroupRuleNameHasBeenSet = true; m_ruleGroupRuleName.assign(value); }
+
+    /**
+     * <p>The name of the rule group reference statement in your web ACL. This is
+     * required only when you have the rate-based rule nested inside a rule group. </p>
+     */
+    inline GetRateBasedStatementManagedKeysRequest& WithRuleGroupRuleName(const Aws::String& value) { SetRuleGroupRuleName(value); return *this;}
+
+    /**
+     * <p>The name of the rule group reference statement in your web ACL. This is
+     * required only when you have the rate-based rule nested inside a rule group. </p>
+     */
+    inline GetRateBasedStatementManagedKeysRequest& WithRuleGroupRuleName(Aws::String&& value) { SetRuleGroupRuleName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the rule group reference statement in your web ACL. This is
+     * required only when you have the rate-based rule nested inside a rule group. </p>
+     */
+    inline GetRateBasedStatementManagedKeysRequest& WithRuleGroupRuleName(const char* value) { SetRuleGroupRuleName(value); return *this;}
+
+
+    /**
+     * <p>The name of the rate-based rule to get the keys for. If you have the rule
+     * defined inside a rule group that you're using in your web ACL, also provide the
+     * name of the rule group reference statement in the request parameter
+     * <code>RuleGroupRuleName</code>.</p>
      */
     inline const Aws::String& GetRuleName() const{ return m_ruleName; }
 
     /**
-     * <p>The name of the rate-based rule to get the keys for.</p>
+     * <p>The name of the rate-based rule to get the keys for. If you have the rule
+     * defined inside a rule group that you're using in your web ACL, also provide the
+     * name of the rule group reference statement in the request parameter
+     * <code>RuleGroupRuleName</code>.</p>
      */
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
 
     /**
-     * <p>The name of the rate-based rule to get the keys for.</p>
+     * <p>The name of the rate-based rule to get the keys for. If you have the rule
+     * defined inside a rule group that you're using in your web ACL, also provide the
+     * name of the rule group reference statement in the request parameter
+     * <code>RuleGroupRuleName</code>.</p>
      */
     inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
 
     /**
-     * <p>The name of the rate-based rule to get the keys for.</p>
+     * <p>The name of the rate-based rule to get the keys for. If you have the rule
+     * defined inside a rule group that you're using in your web ACL, also provide the
+     * name of the rule group reference statement in the request parameter
+     * <code>RuleGroupRuleName</code>.</p>
      */
     inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
 
     /**
-     * <p>The name of the rate-based rule to get the keys for.</p>
+     * <p>The name of the rate-based rule to get the keys for. If you have the rule
+     * defined inside a rule group that you're using in your web ACL, also provide the
+     * name of the rule group reference statement in the request parameter
+     * <code>RuleGroupRuleName</code>.</p>
      */
     inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
 
     /**
-     * <p>The name of the rate-based rule to get the keys for.</p>
+     * <p>The name of the rate-based rule to get the keys for. If you have the rule
+     * defined inside a rule group that you're using in your web ACL, also provide the
+     * name of the rule group reference statement in the request parameter
+     * <code>RuleGroupRuleName</code>.</p>
      */
     inline GetRateBasedStatementManagedKeysRequest& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
 
     /**
-     * <p>The name of the rate-based rule to get the keys for.</p>
+     * <p>The name of the rate-based rule to get the keys for. If you have the rule
+     * defined inside a rule group that you're using in your web ACL, also provide the
+     * name of the rule group reference statement in the request parameter
+     * <code>RuleGroupRuleName</code>.</p>
      */
     inline GetRateBasedStatementManagedKeysRequest& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the rate-based rule to get the keys for.</p>
+     * <p>The name of the rate-based rule to get the keys for. If you have the rule
+     * defined inside a rule group that you're using in your web ACL, also provide the
+     * name of the rule group reference statement in the request parameter
+     * <code>RuleGroupRuleName</code>.</p>
      */
     inline GetRateBasedStatementManagedKeysRequest& WithRuleName(const char* value) { SetRuleName(value); return *this;}
 
@@ -264,6 +337,9 @@ namespace Model
 
     Aws::String m_webACLId;
     bool m_webACLIdHasBeenSet;
+
+    Aws::String m_ruleGroupRuleName;
+    bool m_ruleGroupRuleNameHasBeenSet;
 
     Aws::String m_ruleName;
     bool m_ruleNameHasBeenSet;

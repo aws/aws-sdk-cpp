@@ -7,6 +7,7 @@
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/comprehend/model/AugmentedManifestsDocumentTypeFormat.h>
 #include <utility>
 
 namespace Aws
@@ -189,6 +190,177 @@ namespace Model
      */
     inline AugmentedManifestsListItem& AddAttributeNames(const char* value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
+
+    /**
+     * <p>The S3 prefix to the annotation files that are referred in the augmented
+     * manifest file.</p>
+     */
+    inline const Aws::String& GetAnnotationDataS3Uri() const{ return m_annotationDataS3Uri; }
+
+    /**
+     * <p>The S3 prefix to the annotation files that are referred in the augmented
+     * manifest file.</p>
+     */
+    inline bool AnnotationDataS3UriHasBeenSet() const { return m_annotationDataS3UriHasBeenSet; }
+
+    /**
+     * <p>The S3 prefix to the annotation files that are referred in the augmented
+     * manifest file.</p>
+     */
+    inline void SetAnnotationDataS3Uri(const Aws::String& value) { m_annotationDataS3UriHasBeenSet = true; m_annotationDataS3Uri = value; }
+
+    /**
+     * <p>The S3 prefix to the annotation files that are referred in the augmented
+     * manifest file.</p>
+     */
+    inline void SetAnnotationDataS3Uri(Aws::String&& value) { m_annotationDataS3UriHasBeenSet = true; m_annotationDataS3Uri = std::move(value); }
+
+    /**
+     * <p>The S3 prefix to the annotation files that are referred in the augmented
+     * manifest file.</p>
+     */
+    inline void SetAnnotationDataS3Uri(const char* value) { m_annotationDataS3UriHasBeenSet = true; m_annotationDataS3Uri.assign(value); }
+
+    /**
+     * <p>The S3 prefix to the annotation files that are referred in the augmented
+     * manifest file.</p>
+     */
+    inline AugmentedManifestsListItem& WithAnnotationDataS3Uri(const Aws::String& value) { SetAnnotationDataS3Uri(value); return *this;}
+
+    /**
+     * <p>The S3 prefix to the annotation files that are referred in the augmented
+     * manifest file.</p>
+     */
+    inline AugmentedManifestsListItem& WithAnnotationDataS3Uri(Aws::String&& value) { SetAnnotationDataS3Uri(std::move(value)); return *this;}
+
+    /**
+     * <p>The S3 prefix to the annotation files that are referred in the augmented
+     * manifest file.</p>
+     */
+    inline AugmentedManifestsListItem& WithAnnotationDataS3Uri(const char* value) { SetAnnotationDataS3Uri(value); return *this;}
+
+
+    /**
+     * <p>The S3 prefix to the source files (PDFs) that are referred to in the
+     * augmented manifest file.</p>
+     */
+    inline const Aws::String& GetSourceDocumentsS3Uri() const{ return m_sourceDocumentsS3Uri; }
+
+    /**
+     * <p>The S3 prefix to the source files (PDFs) that are referred to in the
+     * augmented manifest file.</p>
+     */
+    inline bool SourceDocumentsS3UriHasBeenSet() const { return m_sourceDocumentsS3UriHasBeenSet; }
+
+    /**
+     * <p>The S3 prefix to the source files (PDFs) that are referred to in the
+     * augmented manifest file.</p>
+     */
+    inline void SetSourceDocumentsS3Uri(const Aws::String& value) { m_sourceDocumentsS3UriHasBeenSet = true; m_sourceDocumentsS3Uri = value; }
+
+    /**
+     * <p>The S3 prefix to the source files (PDFs) that are referred to in the
+     * augmented manifest file.</p>
+     */
+    inline void SetSourceDocumentsS3Uri(Aws::String&& value) { m_sourceDocumentsS3UriHasBeenSet = true; m_sourceDocumentsS3Uri = std::move(value); }
+
+    /**
+     * <p>The S3 prefix to the source files (PDFs) that are referred to in the
+     * augmented manifest file.</p>
+     */
+    inline void SetSourceDocumentsS3Uri(const char* value) { m_sourceDocumentsS3UriHasBeenSet = true; m_sourceDocumentsS3Uri.assign(value); }
+
+    /**
+     * <p>The S3 prefix to the source files (PDFs) that are referred to in the
+     * augmented manifest file.</p>
+     */
+    inline AugmentedManifestsListItem& WithSourceDocumentsS3Uri(const Aws::String& value) { SetSourceDocumentsS3Uri(value); return *this;}
+
+    /**
+     * <p>The S3 prefix to the source files (PDFs) that are referred to in the
+     * augmented manifest file.</p>
+     */
+    inline AugmentedManifestsListItem& WithSourceDocumentsS3Uri(Aws::String&& value) { SetSourceDocumentsS3Uri(std::move(value)); return *this;}
+
+    /**
+     * <p>The S3 prefix to the source files (PDFs) that are referred to in the
+     * augmented manifest file.</p>
+     */
+    inline AugmentedManifestsListItem& WithSourceDocumentsS3Uri(const char* value) { SetSourceDocumentsS3Uri(value); return *this;}
+
+
+    /**
+     * <p>The type of augmented manifest. PlainTextDocument or SemiStructuredDocument.
+     * If you don't specify, the default is PlainTextDocument. </p> <ul> <li> <p>
+     * <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode
+     * text that is encoded in UTF-8.</p> </li> <li> <p>
+     * <code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and
+     * structural context, like a PDF. For training with Amazon Comprehend, only PDFs
+     * are supported. For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p>
+     * </li> </ul>
+     */
+    inline const AugmentedManifestsDocumentTypeFormat& GetDocumentType() const{ return m_documentType; }
+
+    /**
+     * <p>The type of augmented manifest. PlainTextDocument or SemiStructuredDocument.
+     * If you don't specify, the default is PlainTextDocument. </p> <ul> <li> <p>
+     * <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode
+     * text that is encoded in UTF-8.</p> </li> <li> <p>
+     * <code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and
+     * structural context, like a PDF. For training with Amazon Comprehend, only PDFs
+     * are supported. For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p>
+     * </li> </ul>
+     */
+    inline bool DocumentTypeHasBeenSet() const { return m_documentTypeHasBeenSet; }
+
+    /**
+     * <p>The type of augmented manifest. PlainTextDocument or SemiStructuredDocument.
+     * If you don't specify, the default is PlainTextDocument. </p> <ul> <li> <p>
+     * <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode
+     * text that is encoded in UTF-8.</p> </li> <li> <p>
+     * <code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and
+     * structural context, like a PDF. For training with Amazon Comprehend, only PDFs
+     * are supported. For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p>
+     * </li> </ul>
+     */
+    inline void SetDocumentType(const AugmentedManifestsDocumentTypeFormat& value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
+
+    /**
+     * <p>The type of augmented manifest. PlainTextDocument or SemiStructuredDocument.
+     * If you don't specify, the default is PlainTextDocument. </p> <ul> <li> <p>
+     * <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode
+     * text that is encoded in UTF-8.</p> </li> <li> <p>
+     * <code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and
+     * structural context, like a PDF. For training with Amazon Comprehend, only PDFs
+     * are supported. For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p>
+     * </li> </ul>
+     */
+    inline void SetDocumentType(AugmentedManifestsDocumentTypeFormat&& value) { m_documentTypeHasBeenSet = true; m_documentType = std::move(value); }
+
+    /**
+     * <p>The type of augmented manifest. PlainTextDocument or SemiStructuredDocument.
+     * If you don't specify, the default is PlainTextDocument. </p> <ul> <li> <p>
+     * <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode
+     * text that is encoded in UTF-8.</p> </li> <li> <p>
+     * <code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and
+     * structural context, like a PDF. For training with Amazon Comprehend, only PDFs
+     * are supported. For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p>
+     * </li> </ul>
+     */
+    inline AugmentedManifestsListItem& WithDocumentType(const AugmentedManifestsDocumentTypeFormat& value) { SetDocumentType(value); return *this;}
+
+    /**
+     * <p>The type of augmented manifest. PlainTextDocument or SemiStructuredDocument.
+     * If you don't specify, the default is PlainTextDocument. </p> <ul> <li> <p>
+     * <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode
+     * text that is encoded in UTF-8.</p> </li> <li> <p>
+     * <code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and
+     * structural context, like a PDF. For training with Amazon Comprehend, only PDFs
+     * are supported. For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p>
+     * </li> </ul>
+     */
+    inline AugmentedManifestsListItem& WithDocumentType(AugmentedManifestsDocumentTypeFormat&& value) { SetDocumentType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_s3Uri;
@@ -196,6 +368,15 @@ namespace Model
 
     Aws::Vector<Aws::String> m_attributeNames;
     bool m_attributeNamesHasBeenSet;
+
+    Aws::String m_annotationDataS3Uri;
+    bool m_annotationDataS3UriHasBeenSet;
+
+    Aws::String m_sourceDocumentsS3Uri;
+    bool m_sourceDocumentsS3UriHasBeenSet;
+
+    AugmentedManifestsDocumentTypeFormat m_documentType;
+    bool m_documentTypeHasBeenSet;
   };
 
 } // namespace Model

@@ -90,7 +90,7 @@ namespace Model
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
-     * </ul> <p>If you use a KMS key ID or an alias of your master key, the Amazon
+     * </ul> <p>If you use a KMS key ID or an alias of your KMS key, the Amazon
      * SageMaker execution role must include permissions to call
      * <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker
      * uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker
@@ -122,7 +122,7 @@ namespace Model
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
-     * </ul> <p>If you use a KMS key ID or an alias of your master key, the Amazon
+     * </ul> <p>If you use a KMS key ID or an alias of your KMS key, the Amazon
      * SageMaker execution role must include permissions to call
      * <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker
      * uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker
@@ -154,7 +154,7 @@ namespace Model
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
-     * </ul> <p>If you use a KMS key ID or an alias of your master key, the Amazon
+     * </ul> <p>If you use a KMS key ID or an alias of your KMS key, the Amazon
      * SageMaker execution role must include permissions to call
      * <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker
      * uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker
@@ -186,7 +186,7 @@ namespace Model
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
-     * </ul> <p>If you use a KMS key ID or an alias of your master key, the Amazon
+     * </ul> <p>If you use a KMS key ID or an alias of your KMS key, the Amazon
      * SageMaker execution role must include permissions to call
      * <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker
      * uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker
@@ -218,7 +218,7 @@ namespace Model
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
-     * </ul> <p>If you use a KMS key ID or an alias of your master key, the Amazon
+     * </ul> <p>If you use a KMS key ID or an alias of your KMS key, the Amazon
      * SageMaker execution role must include permissions to call
      * <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker
      * uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker
@@ -250,7 +250,7 @@ namespace Model
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
-     * </ul> <p>If you use a KMS key ID or an alias of your master key, the Amazon
+     * </ul> <p>If you use a KMS key ID or an alias of your KMS key, the Amazon
      * SageMaker execution role must include permissions to call
      * <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker
      * uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker
@@ -282,7 +282,7 @@ namespace Model
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
-     * </ul> <p>If you use a KMS key ID or an alias of your master key, the Amazon
+     * </ul> <p>If you use a KMS key ID or an alias of your KMS key, the Amazon
      * SageMaker execution role must include permissions to call
      * <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker
      * uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker
@@ -314,7 +314,7 @@ namespace Model
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
-     * </ul> <p>If you use a KMS key ID or an alias of your master key, the Amazon
+     * </ul> <p>If you use a KMS key ID or an alias of your KMS key, the Amazon
      * SageMaker execution role must include permissions to call
      * <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker
      * uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker

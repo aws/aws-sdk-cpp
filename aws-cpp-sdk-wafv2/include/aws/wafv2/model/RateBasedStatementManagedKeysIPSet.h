@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The set of IP addresses that are currently blocked for a rate-based
-   * statement.</p><p><h3>See Also:</h3>   <a
+   * <p>The set of IP addresses that are currently blocked for a
+   * <a>RateBasedStatement</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RateBasedStatementManagedKeysIPSet">AWS
    * API Reference</a></p>
    */

@@ -27,8 +27,9 @@ namespace Model
   /**
    * <p>Origination routes define call distribution properties for your SIP hosts to
    * receive inbound calls using your Amazon Chime Voice Connector. Limit: Ten
-   * origination routes for each Amazon Chime Voice Connector.</p><p><h3>See
-   * Also:</h3>   <a
+   * origination routes for each Amazon Chime Voice Connector.</p>  <p>The
+   * parameters listed below are not required, but you must use at least one. </p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/OriginationRoute">AWS
    * API Reference</a></p>
    */

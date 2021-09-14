@@ -73,6 +73,9 @@ namespace Aws
         static const int BODY_PARSING_FALLBACK_BEHAVIOR_HASH = HashingUtils::HashString("BODY_PARSING_FALLBACK_BEHAVIOR");
         static const int LOGGING_FILTER_HASH = HashingUtils::HashString("LOGGING_FILTER");
         static const int FILTER_CONDITION_HASH = HashingUtils::HashString("FILTER_CONDITION");
+        static const int EXPIRE_TIMESTAMP_HASH = HashingUtils::HashString("EXPIRE_TIMESTAMP");
+        static const int CHANGE_PROPAGATION_STATUS_HASH = HashingUtils::HashString("CHANGE_PROPAGATION_STATUS");
+        static const int ASSOCIABLE_RESOURCE_HASH = HashingUtils::HashString("ASSOCIABLE_RESOURCE");
 
 
         ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name)
@@ -290,6 +293,18 @@ namespace Aws
           {
             return ParameterExceptionField::FILTER_CONDITION;
           }
+          else if (hashCode == EXPIRE_TIMESTAMP_HASH)
+          {
+            return ParameterExceptionField::EXPIRE_TIMESTAMP;
+          }
+          else if (hashCode == CHANGE_PROPAGATION_STATUS_HASH)
+          {
+            return ParameterExceptionField::CHANGE_PROPAGATION_STATUS;
+          }
+          else if (hashCode == ASSOCIABLE_RESOURCE_HASH)
+          {
+            return ParameterExceptionField::ASSOCIABLE_RESOURCE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -410,6 +425,12 @@ namespace Aws
             return "LOGGING_FILTER";
           case ParameterExceptionField::FILTER_CONDITION:
             return "FILTER_CONDITION";
+          case ParameterExceptionField::EXPIRE_TIMESTAMP:
+            return "EXPIRE_TIMESTAMP";
+          case ParameterExceptionField::CHANGE_PROPAGATION_STATUS:
+            return "CHANGE_PROPAGATION_STATUS";
+          case ParameterExceptionField::ASSOCIABLE_RESOURCE:
+            return "ASSOCIABLE_RESOURCE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -26,9 +26,9 @@ namespace Model
    * request that identifies a resource. For example,
    * <code>/images/daily-ad.jpg</code>.</p> <p>This is used only to indicate the web
    * request component for WAF to inspect, in the <a>FieldToMatch</a> specification.
-   * </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UriPath">AWS API
-   * Reference</a></p>
+   * </p> <p>JSON specification: <code>"UriPath": {}</code> </p><p><h3>See Also:</h3>
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UriPath">AWS
+   * API Reference</a></p>
    */
   class AWS_WAFV2_API UriPath
   {

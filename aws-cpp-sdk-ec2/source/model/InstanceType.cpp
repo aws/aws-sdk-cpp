@@ -437,6 +437,9 @@ namespace Aws
         static const int x2gd_12xlarge_HASH = HashingUtils::HashString("x2gd.12xlarge");
         static const int x2gd_16xlarge_HASH = HashingUtils::HashString("x2gd.16xlarge");
         static const int x2gd_metal_HASH = HashingUtils::HashString("x2gd.metal");
+        static const int vt1_3xlarge_HASH = HashingUtils::HashString("vt1.3xlarge");
+        static const int vt1_6xlarge_HASH = HashingUtils::HashString("vt1.6xlarge");
+        static const int vt1_24xlarge_HASH = HashingUtils::HashString("vt1.24xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -2542,6 +2545,21 @@ namespace Aws
             enumValue = InstanceType::x2gd_metal;
             return true;
           }
+          else if (hashCode == vt1_3xlarge_HASH)
+          {
+            enumValue = InstanceType::vt1_3xlarge;
+            return true;
+          }
+          else if (hashCode == vt1_6xlarge_HASH)
+          {
+            enumValue = InstanceType::vt1_6xlarge;
+            return true;
+          }
+          else if (hashCode == vt1_24xlarge_HASH)
+          {
+            enumValue = InstanceType::vt1_24xlarge;
+            return true;
+          }
           return false;
         }
 
@@ -3823,6 +3841,15 @@ namespace Aws
             return true;
           case InstanceType::x2gd_metal:
             value = "x2gd.metal";
+            return true;
+          case InstanceType::vt1_3xlarge:
+            value = "vt1.3xlarge";
+            return true;
+          case InstanceType::vt1_6xlarge:
+            value = "vt1.6xlarge";
+            return true;
+          case InstanceType::vt1_24xlarge:
+            value = "vt1.24xlarge";
             return true;
           default:
             return false;

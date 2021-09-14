@@ -36,7 +36,11 @@ namespace Model
    * specifications as needed, according to the type. You specify a single request
    * component in <code>FieldToMatch</code> for each rule statement that requires it.
    * To inspect more than one component of a web request, create a separate rule
-   * statement for each component.</p><p><h3>See Also:</h3>   <a
+   * statement for each component.</p> <p>JSON specification for a
+   * <code>QueryString</code> field to match: </p> <p> <code> "FieldToMatch": {
+   * "QueryString": {} }</code> </p> <p>Example JSON for a <code>Method</code> field
+   * to match specification:</p> <p> <code> "FieldToMatch": { "Method": { "Name":
+   * "DELETE" } }</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/FieldToMatch">AWS
    * API Reference</a></p>
    */

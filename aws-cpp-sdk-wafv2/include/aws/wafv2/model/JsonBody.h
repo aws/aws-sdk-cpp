@@ -30,8 +30,9 @@ namespace Model
    * the request headers. This is used in the <a>FieldToMatch</a> specification.</p>
    * <p>Use the specifications in this object to indicate which parts of the JSON
    * body to inspect using the rule's inspection criteria. WAF inspects only the
-   * parts of the JSON that result from the matches that you indicate. </p><p><h3>See
-   * Also:</h3>   <a
+   * parts of the JSON that result from the matches that you indicate. </p>
+   * <p>Example JSON: <code>"JsonBody": { "MatchPattern": { "All": {} },
+   * "MatchScope": "ALL" }</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/JsonBody">AWS API
    * Reference</a></p>
    */

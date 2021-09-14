@@ -153,49 +153,49 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
      * the Resource.</p>
      */
     inline const Aws::String& GetLifecycleConfigArn() const{ return m_lifecycleConfigArn; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
      * the Resource.</p>
      */
     inline bool LifecycleConfigArnHasBeenSet() const { return m_lifecycleConfigArnHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
      * the Resource.</p>
      */
     inline void SetLifecycleConfigArn(const Aws::String& value) { m_lifecycleConfigArnHasBeenSet = true; m_lifecycleConfigArn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
      * the Resource.</p>
      */
     inline void SetLifecycleConfigArn(Aws::String&& value) { m_lifecycleConfigArnHasBeenSet = true; m_lifecycleConfigArn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
      * the Resource.</p>
      */
     inline void SetLifecycleConfigArn(const char* value) { m_lifecycleConfigArnHasBeenSet = true; m_lifecycleConfigArn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
      * the Resource.</p>
      */
     inline ResourceSpec& WithLifecycleConfigArn(const Aws::String& value) { SetLifecycleConfigArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
      * the Resource.</p>
      */
     inline ResourceSpec& WithLifecycleConfigArn(Aws::String&& value) { SetLifecycleConfigArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
      * the Resource.</p>
      */
     inline ResourceSpec& WithLifecycleConfigArn(const char* value) { SetLifecycleConfigArn(value); return *this;}

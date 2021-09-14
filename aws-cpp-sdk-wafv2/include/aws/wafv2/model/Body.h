@@ -24,7 +24,8 @@ namespace Model
   /**
    * <p>The body of a web request. This immediately follows the request headers.</p>
    * <p>This is used only to indicate the web request component for WAF to inspect,
-   * in the <a>FieldToMatch</a> specification. </p><p><h3>See Also:</h3>   <a
+   * in the <a>FieldToMatch</a> specification. </p> <p>JSON specification:
+   * <code>"Body": {}</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Body">AWS API
    * Reference</a></p>
    */

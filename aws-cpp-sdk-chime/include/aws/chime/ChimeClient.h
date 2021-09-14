@@ -6276,7 +6276,7 @@ namespace Model
         virtual void SendChannelMessageAsync(const Model::SendChannelMessageRequest& request, const SendChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Start transcription for the specified <code>meetingId</code>. </p><p><h3>See
+         * <p>Starts transcription for the specified <code>meetingId</code>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StartMeetingTranscription">AWS
          * API Reference</a></p>
@@ -6284,7 +6284,7 @@ namespace Model
         virtual Model::StartMeetingTranscriptionOutcome StartMeetingTranscription(const Model::StartMeetingTranscriptionRequest& request) const;
 
         /**
-         * <p>Start transcription for the specified <code>meetingId</code>. </p><p><h3>See
+         * <p>Starts transcription for the specified <code>meetingId</code>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StartMeetingTranscription">AWS
          * API Reference</a></p>
@@ -6294,7 +6294,7 @@ namespace Model
         virtual Model::StartMeetingTranscriptionOutcomeCallable StartMeetingTranscriptionCallable(const Model::StartMeetingTranscriptionRequest& request) const;
 
         /**
-         * <p>Start transcription for the specified <code>meetingId</code>. </p><p><h3>See
+         * <p>Starts transcription for the specified <code>meetingId</code>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StartMeetingTranscription">AWS
          * API Reference</a></p>
