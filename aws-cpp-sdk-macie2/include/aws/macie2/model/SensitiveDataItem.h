@@ -45,8 +45,8 @@ namespace Model
      * for credentials data such as private keys or Amazon Web Services secret keys;
      * FINANCIAL_INFORMATION, for financial data such as credit card numbers; or,
      * PERSONAL_INFORMATION, for personal health information, such as health insurance
-     * identification numbers, or personally identifiable information, such as driver's
-     * license identification numbers.</p>
+     * identification numbers, or personally identifiable information, such as passport
+     * numbers.</p>
      */
     inline const SensitiveDataItemCategory& GetCategory() const{ return m_category; }
 
@@ -55,8 +55,8 @@ namespace Model
      * for credentials data such as private keys or Amazon Web Services secret keys;
      * FINANCIAL_INFORMATION, for financial data such as credit card numbers; or,
      * PERSONAL_INFORMATION, for personal health information, such as health insurance
-     * identification numbers, or personally identifiable information, such as driver's
-     * license identification numbers.</p>
+     * identification numbers, or personally identifiable information, such as passport
+     * numbers.</p>
      */
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
 
@@ -65,8 +65,8 @@ namespace Model
      * for credentials data such as private keys or Amazon Web Services secret keys;
      * FINANCIAL_INFORMATION, for financial data such as credit card numbers; or,
      * PERSONAL_INFORMATION, for personal health information, such as health insurance
-     * identification numbers, or personally identifiable information, such as driver's
-     * license identification numbers.</p>
+     * identification numbers, or personally identifiable information, such as passport
+     * numbers.</p>
      */
     inline void SetCategory(const SensitiveDataItemCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
 
@@ -75,8 +75,8 @@ namespace Model
      * for credentials data such as private keys or Amazon Web Services secret keys;
      * FINANCIAL_INFORMATION, for financial data such as credit card numbers; or,
      * PERSONAL_INFORMATION, for personal health information, such as health insurance
-     * identification numbers, or personally identifiable information, such as driver's
-     * license identification numbers.</p>
+     * identification numbers, or personally identifiable information, such as passport
+     * numbers.</p>
      */
     inline void SetCategory(SensitiveDataItemCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
 
@@ -85,8 +85,8 @@ namespace Model
      * for credentials data such as private keys or Amazon Web Services secret keys;
      * FINANCIAL_INFORMATION, for financial data such as credit card numbers; or,
      * PERSONAL_INFORMATION, for personal health information, such as health insurance
-     * identification numbers, or personally identifiable information, such as driver's
-     * license identification numbers.</p>
+     * identification numbers, or personally identifiable information, such as passport
+     * numbers.</p>
      */
     inline SensitiveDataItem& WithCategory(const SensitiveDataItemCategory& value) { SetCategory(value); return *this;}
 
@@ -95,8 +95,8 @@ namespace Model
      * for credentials data such as private keys or Amazon Web Services secret keys;
      * FINANCIAL_INFORMATION, for financial data such as credit card numbers; or,
      * PERSONAL_INFORMATION, for personal health information, such as health insurance
-     * identification numbers, or personally identifiable information, such as driver's
-     * license identification numbers.</p>
+     * identification numbers, or personally identifiable information, such as passport
+     * numbers.</p>
      */
     inline SensitiveDataItem& WithCategory(SensitiveDataItemCategory&& value) { SetCategory(std::move(value)); return *this;}
 

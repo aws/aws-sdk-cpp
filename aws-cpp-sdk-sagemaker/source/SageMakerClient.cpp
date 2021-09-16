@@ -218,6 +218,7 @@
 #include <aws/sagemaker/model/PutModelPackageGroupPolicyRequest.h>
 #include <aws/sagemaker/model/RegisterDevicesRequest.h>
 #include <aws/sagemaker/model/RenderUiTemplateRequest.h>
+#include <aws/sagemaker/model/RetryPipelineExecutionRequest.h>
 #include <aws/sagemaker/model/SearchRequest.h>
 #include <aws/sagemaker/model/SendPipelineExecutionStepFailureRequest.h>
 #include <aws/sagemaker/model/SendPipelineExecutionStepSuccessRequest.h>
@@ -5083,6 +5084,30 @@ void SageMakerClient::RenderUiTemplateAsync(const RenderUiTemplateRequest& reque
 void SageMakerClient::RenderUiTemplateAsyncHelper(const RenderUiTemplateRequest& request, const RenderUiTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RenderUiTemplate(request), context);
+}
+
+RetryPipelineExecutionOutcome SageMakerClient::RetryPipelineExecution(const RetryPipelineExecutionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return RetryPipelineExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RetryPipelineExecutionOutcomeCallable SageMakerClient::RetryPipelineExecutionCallable(const RetryPipelineExecutionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RetryPipelineExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RetryPipelineExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::RetryPipelineExecutionAsync(const RetryPipelineExecutionRequest& request, const RetryPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RetryPipelineExecutionAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::RetryPipelineExecutionAsyncHelper(const RetryPipelineExecutionRequest& request, const RetryPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RetryPipelineExecution(request), context);
 }
 
 SearchOutcome SageMakerClient::Search(const SearchRequest& request) const

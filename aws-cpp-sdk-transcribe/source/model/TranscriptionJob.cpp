@@ -43,7 +43,8 @@ TranscriptionJob::TranscriptionJob() :
     m_languageOptionsHasBeenSet(false),
     m_identifiedLanguageScore(0.0),
     m_identifiedLanguageScoreHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_subtitlesHasBeenSet(false)
 {
 }
 
@@ -72,7 +73,8 @@ TranscriptionJob::TranscriptionJob(JsonView jsonValue) :
     m_languageOptionsHasBeenSet(false),
     m_identifiedLanguageScore(0.0),
     m_identifiedLanguageScoreHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_subtitlesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -218,6 +220,13 @@ TranscriptionJob& TranscriptionJob::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Subtitles"))
+  {
+    m_subtitles = jsonValue.GetObject("Subtitles");
+
+    m_subtitlesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -340,6 +349,12 @@ JsonValue TranscriptionJob::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_subtitlesHasBeenSet)
+  {
+   payload.WithObject("Subtitles", m_subtitles.Jsonize());
 
   }
 

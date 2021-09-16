@@ -7,6 +7,7 @@
 #include <aws/robomaker/RoboMaker_EXPORTS.h>
 #include <aws/robomaker/RoboMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -121,6 +122,110 @@ namespace Model
      */
     inline CreateSimulationApplicationVersionRequest& WithCurrentRevisionId(const char* value) { SetCurrentRevisionId(value); return *this;}
 
+
+    /**
+     * <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create
+     * the simulation application.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetS3Etags() const{ return m_s3Etags; }
+
+    /**
+     * <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create
+     * the simulation application.</p>
+     */
+    inline bool S3EtagsHasBeenSet() const { return m_s3EtagsHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create
+     * the simulation application.</p>
+     */
+    inline void SetS3Etags(const Aws::Vector<Aws::String>& value) { m_s3EtagsHasBeenSet = true; m_s3Etags = value; }
+
+    /**
+     * <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create
+     * the simulation application.</p>
+     */
+    inline void SetS3Etags(Aws::Vector<Aws::String>&& value) { m_s3EtagsHasBeenSet = true; m_s3Etags = std::move(value); }
+
+    /**
+     * <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create
+     * the simulation application.</p>
+     */
+    inline CreateSimulationApplicationVersionRequest& WithS3Etags(const Aws::Vector<Aws::String>& value) { SetS3Etags(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create
+     * the simulation application.</p>
+     */
+    inline CreateSimulationApplicationVersionRequest& WithS3Etags(Aws::Vector<Aws::String>&& value) { SetS3Etags(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create
+     * the simulation application.</p>
+     */
+    inline CreateSimulationApplicationVersionRequest& AddS3Etags(const Aws::String& value) { m_s3EtagsHasBeenSet = true; m_s3Etags.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create
+     * the simulation application.</p>
+     */
+    inline CreateSimulationApplicationVersionRequest& AddS3Etags(Aws::String&& value) { m_s3EtagsHasBeenSet = true; m_s3Etags.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create
+     * the simulation application.</p>
+     */
+    inline CreateSimulationApplicationVersionRequest& AddS3Etags(const char* value) { m_s3EtagsHasBeenSet = true; m_s3Etags.push_back(value); return *this; }
+
+
+    /**
+     * <p>The SHA256 digest used to identify the Docker image URI used to created the
+     * simulation application.</p>
+     */
+    inline const Aws::String& GetImageDigest() const{ return m_imageDigest; }
+
+    /**
+     * <p>The SHA256 digest used to identify the Docker image URI used to created the
+     * simulation application.</p>
+     */
+    inline bool ImageDigestHasBeenSet() const { return m_imageDigestHasBeenSet; }
+
+    /**
+     * <p>The SHA256 digest used to identify the Docker image URI used to created the
+     * simulation application.</p>
+     */
+    inline void SetImageDigest(const Aws::String& value) { m_imageDigestHasBeenSet = true; m_imageDigest = value; }
+
+    /**
+     * <p>The SHA256 digest used to identify the Docker image URI used to created the
+     * simulation application.</p>
+     */
+    inline void SetImageDigest(Aws::String&& value) { m_imageDigestHasBeenSet = true; m_imageDigest = std::move(value); }
+
+    /**
+     * <p>The SHA256 digest used to identify the Docker image URI used to created the
+     * simulation application.</p>
+     */
+    inline void SetImageDigest(const char* value) { m_imageDigestHasBeenSet = true; m_imageDigest.assign(value); }
+
+    /**
+     * <p>The SHA256 digest used to identify the Docker image URI used to created the
+     * simulation application.</p>
+     */
+    inline CreateSimulationApplicationVersionRequest& WithImageDigest(const Aws::String& value) { SetImageDigest(value); return *this;}
+
+    /**
+     * <p>The SHA256 digest used to identify the Docker image URI used to created the
+     * simulation application.</p>
+     */
+    inline CreateSimulationApplicationVersionRequest& WithImageDigest(Aws::String&& value) { SetImageDigest(std::move(value)); return *this;}
+
+    /**
+     * <p>The SHA256 digest used to identify the Docker image URI used to created the
+     * simulation application.</p>
+     */
+    inline CreateSimulationApplicationVersionRequest& WithImageDigest(const char* value) { SetImageDigest(value); return *this;}
+
   private:
 
     Aws::String m_application;
@@ -128,6 +233,12 @@ namespace Model
 
     Aws::String m_currentRevisionId;
     bool m_currentRevisionIdHasBeenSet;
+
+    Aws::Vector<Aws::String> m_s3Etags;
+    bool m_s3EtagsHasBeenSet;
+
+    Aws::String m_imageDigest;
+    bool m_imageDigestHasBeenSet;
   };
 
 } // namespace Model

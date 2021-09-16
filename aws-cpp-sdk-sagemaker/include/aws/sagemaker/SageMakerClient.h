@@ -182,6 +182,7 @@
 #include <aws/sagemaker/model/ListWorkteamsResult.h>
 #include <aws/sagemaker/model/PutModelPackageGroupPolicyResult.h>
 #include <aws/sagemaker/model/RenderUiTemplateResult.h>
+#include <aws/sagemaker/model/RetryPipelineExecutionResult.h>
 #include <aws/sagemaker/model/SearchResult.h>
 #include <aws/sagemaker/model/SendPipelineExecutionStepFailureResult.h>
 #include <aws/sagemaker/model/SendPipelineExecutionStepSuccessResult.h>
@@ -447,6 +448,7 @@ namespace Model
         class PutModelPackageGroupPolicyRequest;
         class RegisterDevicesRequest;
         class RenderUiTemplateRequest;
+        class RetryPipelineExecutionRequest;
         class SearchRequest;
         class SendPipelineExecutionStepFailureRequest;
         class SendPipelineExecutionStepSuccessRequest;
@@ -687,6 +689,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutModelPackageGroupPolicyResult, SageMakerError> PutModelPackageGroupPolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> RegisterDevicesOutcome;
         typedef Aws::Utils::Outcome<RenderUiTemplateResult, SageMakerError> RenderUiTemplateOutcome;
+        typedef Aws::Utils::Outcome<RetryPipelineExecutionResult, SageMakerError> RetryPipelineExecutionOutcome;
         typedef Aws::Utils::Outcome<SearchResult, SageMakerError> SearchOutcome;
         typedef Aws::Utils::Outcome<SendPipelineExecutionStepFailureResult, SageMakerError> SendPipelineExecutionStepFailureOutcome;
         typedef Aws::Utils::Outcome<SendPipelineExecutionStepSuccessResult, SageMakerError> SendPipelineExecutionStepSuccessOutcome;
@@ -927,6 +930,7 @@ namespace Model
         typedef std::future<PutModelPackageGroupPolicyOutcome> PutModelPackageGroupPolicyOutcomeCallable;
         typedef std::future<RegisterDevicesOutcome> RegisterDevicesOutcomeCallable;
         typedef std::future<RenderUiTemplateOutcome> RenderUiTemplateOutcomeCallable;
+        typedef std::future<RetryPipelineExecutionOutcome> RetryPipelineExecutionOutcomeCallable;
         typedef std::future<SearchOutcome> SearchOutcomeCallable;
         typedef std::future<SendPipelineExecutionStepFailureOutcome> SendPipelineExecutionStepFailureOutcomeCallable;
         typedef std::future<SendPipelineExecutionStepSuccessOutcome> SendPipelineExecutionStepSuccessOutcomeCallable;
@@ -1170,6 +1174,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::PutModelPackageGroupPolicyRequest&, const Model::PutModelPackageGroupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutModelPackageGroupPolicyResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::RegisterDevicesRequest&, const Model::RegisterDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterDevicesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::RenderUiTemplateRequest&, const Model::RenderUiTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RenderUiTemplateResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::RetryPipelineExecutionRequest&, const Model::RetryPipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RetryPipelineExecutionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::SearchRequest&, const Model::SearchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::SendPipelineExecutionStepFailureRequest&, const Model::SendPipelineExecutionStepFailureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendPipelineExecutionStepFailureResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::SendPipelineExecutionStepSuccessRequest&, const Model::SendPipelineExecutionStepSuccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendPipelineExecutionStepSuccessResponseReceivedHandler;
@@ -8361,6 +8366,31 @@ namespace Model
         virtual void RenderUiTemplateAsync(const Model::RenderUiTemplateRequest& request, const RenderUiTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retry the execution of the pipeline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RetryPipelineExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RetryPipelineExecutionOutcome RetryPipelineExecution(const Model::RetryPipelineExecutionRequest& request) const;
+
+        /**
+         * <p>Retry the execution of the pipeline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RetryPipelineExecution">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RetryPipelineExecutionOutcomeCallable RetryPipelineExecutionCallable(const Model::RetryPipelineExecutionRequest& request) const;
+
+        /**
+         * <p>Retry the execution of the pipeline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RetryPipelineExecution">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RetryPipelineExecutionAsync(const Model::RetryPipelineExecutionRequest& request, const RetryPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Finds Amazon SageMaker resources that match a search query. Matching
          * resources are returned as a list of <code>SearchRecord</code> objects in the
          * response. You can sort the search results by any resource property in a
@@ -9929,6 +9959,7 @@ namespace Model
         void PutModelPackageGroupPolicyAsyncHelper(const Model::PutModelPackageGroupPolicyRequest& request, const PutModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterDevicesAsyncHelper(const Model::RegisterDevicesRequest& request, const RegisterDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RenderUiTemplateAsyncHelper(const Model::RenderUiTemplateRequest& request, const RenderUiTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RetryPipelineExecutionAsyncHelper(const Model::RetryPipelineExecutionRequest& request, const RetryPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchAsyncHelper(const Model::SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendPipelineExecutionStepFailureAsyncHelper(const Model::SendPipelineExecutionStepFailureRequest& request, const SendPipelineExecutionStepFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendPipelineExecutionStepSuccessAsyncHelper(const Model::SendPipelineExecutionStepSuccessRequest& request, const SendPipelineExecutionStepSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

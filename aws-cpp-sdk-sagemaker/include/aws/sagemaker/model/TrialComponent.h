@@ -331,22 +331,34 @@ namespace Model
     inline TrialComponent& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Who created the trial component.</p>
+     */
     inline const UserContext& GetCreatedBy() const{ return m_createdBy; }
 
-    
+    /**
+     * <p>Who created the trial component.</p>
+     */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
-    
+    /**
+     * <p>Who created the trial component.</p>
+     */
     inline void SetCreatedBy(const UserContext& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
-    
+    /**
+     * <p>Who created the trial component.</p>
+     */
     inline void SetCreatedBy(UserContext&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
-    
+    /**
+     * <p>Who created the trial component.</p>
+     */
     inline TrialComponent& WithCreatedBy(const UserContext& value) { SetCreatedBy(value); return *this;}
 
-    
+    /**
+     * <p>Who created the trial component.</p>
+     */
     inline TrialComponent& WithCreatedBy(UserContext&& value) { SetCreatedBy(std::move(value)); return *this;}
 
 

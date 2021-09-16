@@ -53,6 +53,7 @@
 #include <aws/macie2/model/ListFindingsResult.h>
 #include <aws/macie2/model/ListFindingsFiltersResult.h>
 #include <aws/macie2/model/ListInvitationsResult.h>
+#include <aws/macie2/model/ListManagedDataIdentifiersResult.h>
 #include <aws/macie2/model/ListMembersResult.h>
 #include <aws/macie2/model/ListOrganizationAdminAccountsResult.h>
 #include <aws/macie2/model/ListTagsForResourceResult.h>
@@ -148,6 +149,7 @@ namespace Model
         class ListFindingsRequest;
         class ListFindingsFiltersRequest;
         class ListInvitationsRequest;
+        class ListManagedDataIdentifiersRequest;
         class ListMembersRequest;
         class ListOrganizationAdminAccountsRequest;
         class ListTagsForResourceRequest;
@@ -205,6 +207,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListFindingsResult, Macie2Error> ListFindingsOutcome;
         typedef Aws::Utils::Outcome<ListFindingsFiltersResult, Macie2Error> ListFindingsFiltersOutcome;
         typedef Aws::Utils::Outcome<ListInvitationsResult, Macie2Error> ListInvitationsOutcome;
+        typedef Aws::Utils::Outcome<ListManagedDataIdentifiersResult, Macie2Error> ListManagedDataIdentifiersOutcome;
         typedef Aws::Utils::Outcome<ListMembersResult, Macie2Error> ListMembersOutcome;
         typedef Aws::Utils::Outcome<ListOrganizationAdminAccountsResult, Macie2Error> ListOrganizationAdminAccountsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Macie2Error> ListTagsForResourceOutcome;
@@ -262,6 +265,7 @@ namespace Model
         typedef std::future<ListFindingsOutcome> ListFindingsOutcomeCallable;
         typedef std::future<ListFindingsFiltersOutcome> ListFindingsFiltersOutcomeCallable;
         typedef std::future<ListInvitationsOutcome> ListInvitationsOutcomeCallable;
+        typedef std::future<ListManagedDataIdentifiersOutcome> ListManagedDataIdentifiersOutcomeCallable;
         typedef std::future<ListMembersOutcome> ListMembersOutcomeCallable;
         typedef std::future<ListOrganizationAdminAccountsOutcome> ListOrganizationAdminAccountsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -322,6 +326,7 @@ namespace Model
     typedef std::function<void(const Macie2Client*, const Model::ListFindingsRequest&, const Model::ListFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFindingsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::ListFindingsFiltersRequest&, const Model::ListFindingsFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFindingsFiltersResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::ListInvitationsRequest&, const Model::ListInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInvitationsResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::ListManagedDataIdentifiersRequest&, const Model::ListManagedDataIdentifiersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListManagedDataIdentifiersResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::ListMembersRequest&, const Model::ListMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMembersResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::ListOrganizationAdminAccountsRequest&, const Model::ListOrganizationAdminAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOrganizationAdminAccountsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
@@ -1526,16 +1531,16 @@ namespace Model
         virtual void ListFindingsFiltersAsync(const Model::ListFindingsFiltersRequest& request, const ListFindingsFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about all the Amazon Macie membership invitations that
-         * were received by an account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about the Amazon Macie membership invitations that were
+         * received by an account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListInvitations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListInvitationsOutcome ListInvitations(const Model::ListInvitationsRequest& request) const;
 
         /**
-         * <p>Retrieves information about all the Amazon Macie membership invitations that
-         * were received by an account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about the Amazon Macie membership invitations that were
+         * received by an account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListInvitations">AWS
          * API Reference</a></p>
          *
@@ -1544,14 +1549,42 @@ namespace Model
         virtual Model::ListInvitationsOutcomeCallable ListInvitationsCallable(const Model::ListInvitationsRequest& request) const;
 
         /**
-         * <p>Retrieves information about all the Amazon Macie membership invitations that
-         * were received by an account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about the Amazon Macie membership invitations that were
+         * received by an account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListInvitations">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListInvitationsAsync(const Model::ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves information about all the managed data identifiers that Amazon
+         * Macie currently provides.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListManagedDataIdentifiers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListManagedDataIdentifiersOutcome ListManagedDataIdentifiers(const Model::ListManagedDataIdentifiersRequest& request) const;
+
+        /**
+         * <p>Retrieves information about all the managed data identifiers that Amazon
+         * Macie currently provides.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListManagedDataIdentifiers">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListManagedDataIdentifiersOutcomeCallable ListManagedDataIdentifiersCallable(const Model::ListManagedDataIdentifiersRequest& request) const;
+
+        /**
+         * <p>Retrieves information about all the managed data identifiers that Amazon
+         * Macie currently provides.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListManagedDataIdentifiers">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListManagedDataIdentifiersAsync(const Model::ListManagedDataIdentifiersRequest& request, const ListManagedDataIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about the accounts that are associated with an Amazon
@@ -1997,6 +2030,7 @@ namespace Model
         void ListFindingsAsyncHelper(const Model::ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFindingsFiltersAsyncHelper(const Model::ListFindingsFiltersRequest& request, const ListFindingsFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInvitationsAsyncHelper(const Model::ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListManagedDataIdentifiersAsyncHelper(const Model::ListManagedDataIdentifiersRequest& request, const ListManagedDataIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMembersAsyncHelper(const Model::ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOrganizationAdminAccountsAsyncHelper(const Model::ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

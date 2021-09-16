@@ -19,7 +19,8 @@ namespace Model
     EMAIL,
     SMS,
     VOICE,
-    PUSH
+    PUSH,
+    INAPP
   };
 
 namespace TemplateTypeMapper

@@ -278,22 +278,34 @@ namespace Model
     inline Project& WithProjectStatus(ProjectStatus&& value) { SetProjectStatus(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Who created the project.</p>
+     */
     inline const UserContext& GetCreatedBy() const{ return m_createdBy; }
 
-    
+    /**
+     * <p>Who created the project.</p>
+     */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
-    
+    /**
+     * <p>Who created the project.</p>
+     */
     inline void SetCreatedBy(const UserContext& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
-    
+    /**
+     * <p>Who created the project.</p>
+     */
     inline void SetCreatedBy(UserContext&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
-    
+    /**
+     * <p>Who created the project.</p>
+     */
     inline Project& WithCreatedBy(const UserContext& value) { SetCreatedBy(value); return *this;}
 
-    
+    /**
+     * <p>Who created the project.</p>
+     */
     inline Project& WithCreatedBy(UserContext&& value) { SetCreatedBy(std::move(value)); return *this;}
 
 

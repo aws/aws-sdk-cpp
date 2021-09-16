@@ -161,8 +161,8 @@ namespace Model
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4-90 characters. Ignore words
-     * are case sensitive.</p>
+     * as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore
+     * words are case sensitive.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIgnoreWords() const{ return m_ignoreWords; }
 
@@ -170,8 +170,8 @@ namespace Model
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4-90 characters. Ignore words
-     * are case sensitive.</p>
+     * as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore
+     * words are case sensitive.</p>
      */
     inline bool IgnoreWordsHasBeenSet() const { return m_ignoreWordsHasBeenSet; }
 
@@ -179,8 +179,8 @@ namespace Model
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4-90 characters. Ignore words
-     * are case sensitive.</p>
+     * as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore
+     * words are case sensitive.</p>
      */
     inline void SetIgnoreWords(const Aws::Vector<Aws::String>& value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords = value; }
 
@@ -188,8 +188,8 @@ namespace Model
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4-90 characters. Ignore words
-     * are case sensitive.</p>
+     * as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore
+     * words are case sensitive.</p>
      */
     inline void SetIgnoreWords(Aws::Vector<Aws::String>&& value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords = std::move(value); }
 
@@ -197,8 +197,8 @@ namespace Model
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4-90 characters. Ignore words
-     * are case sensitive.</p>
+     * as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore
+     * words are case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithIgnoreWords(const Aws::Vector<Aws::String>& value) { SetIgnoreWords(value); return *this;}
 
@@ -206,8 +206,8 @@ namespace Model
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4-90 characters. Ignore words
-     * are case sensitive.</p>
+     * as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore
+     * words are case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithIgnoreWords(Aws::Vector<Aws::String>&& value) { SetIgnoreWords(std::move(value)); return *this;}
 
@@ -215,8 +215,8 @@ namespace Model
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4-90 characters. Ignore words
-     * are case sensitive.</p>
+     * as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore
+     * words are case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddIgnoreWords(const Aws::String& value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords.push_back(value); return *this; }
 
@@ -224,8 +224,8 @@ namespace Model
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4-90 characters. Ignore words
-     * are case sensitive.</p>
+     * as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore
+     * words are case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddIgnoreWords(Aws::String&& value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords.push_back(std::move(value)); return *this; }
 
@@ -233,8 +233,8 @@ namespace Model
      * <p>An array that lists specific character sequences (ignore words) to exclude
      * from the results. If the text matched by the regular expression is the same as
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4-90 characters. Ignore words
-     * are case sensitive.</p>
+     * as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore
+     * words are case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddIgnoreWords(const char* value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords.push_back(value); return *this; }
 
@@ -243,7 +243,7 @@ namespace Model
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
      * match. The array can contain as many as 50 keywords. Each keyword can contain
-     * 3-90 characters. Keywords aren't case sensitive.</p>
+     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline const Aws::Vector<Aws::String>& GetKeywords() const{ return m_keywords; }
 
@@ -251,7 +251,7 @@ namespace Model
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
      * match. The array can contain as many as 50 keywords. Each keyword can contain
-     * 3-90 characters. Keywords aren't case sensitive.</p>
+     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline bool KeywordsHasBeenSet() const { return m_keywordsHasBeenSet; }
 
@@ -259,7 +259,7 @@ namespace Model
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
      * match. The array can contain as many as 50 keywords. Each keyword can contain
-     * 3-90 characters. Keywords aren't case sensitive.</p>
+     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline void SetKeywords(const Aws::Vector<Aws::String>& value) { m_keywordsHasBeenSet = true; m_keywords = value; }
 
@@ -267,7 +267,7 @@ namespace Model
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
      * match. The array can contain as many as 50 keywords. Each keyword can contain
-     * 3-90 characters. Keywords aren't case sensitive.</p>
+     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline void SetKeywords(Aws::Vector<Aws::String>&& value) { m_keywordsHasBeenSet = true; m_keywords = std::move(value); }
 
@@ -275,7 +275,7 @@ namespace Model
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
      * match. The array can contain as many as 50 keywords. Each keyword can contain
-     * 3-90 characters. Keywords aren't case sensitive.</p>
+     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithKeywords(const Aws::Vector<Aws::String>& value) { SetKeywords(value); return *this;}
 
@@ -283,7 +283,7 @@ namespace Model
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
      * match. The array can contain as many as 50 keywords. Each keyword can contain
-     * 3-90 characters. Keywords aren't case sensitive.</p>
+     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithKeywords(Aws::Vector<Aws::String>&& value) { SetKeywords(std::move(value)); return *this;}
 
@@ -291,7 +291,7 @@ namespace Model
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
      * match. The array can contain as many as 50 keywords. Each keyword can contain
-     * 3-90 characters. Keywords aren't case sensitive.</p>
+     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddKeywords(const Aws::String& value) { m_keywordsHasBeenSet = true; m_keywords.push_back(value); return *this; }
 
@@ -299,7 +299,7 @@ namespace Model
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
      * match. The array can contain as many as 50 keywords. Each keyword can contain
-     * 3-90 characters. Keywords aren't case sensitive.</p>
+     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddKeywords(Aws::String&& value) { m_keywordsHasBeenSet = true; m_keywords.push_back(std::move(value)); return *this; }
 
@@ -307,44 +307,44 @@ namespace Model
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
      * match. The array can contain as many as 50 keywords. Each keyword can contain
-     * 3-90 characters. Keywords aren't case sensitive.</p>
+     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddKeywords(const char* value) { m_keywordsHasBeenSet = true; m_keywords.push_back(value); return *this; }
 
 
     /**
      * <p>The maximum number of characters that can exist between text that matches the
-     * regex pattern and the character sequences specified by the keywords array. Macie
-     * includes or excludes a result based on the proximity of a keyword to text that
-     * matches the regex pattern. The distance can be 1-300 characters. The default
-     * value is 50.</p>
+     * regex pattern and the character sequences specified by the keywords array.
+     * Amazon Macie includes or excludes a result based on the proximity of a keyword
+     * to text that matches the regex pattern. The distance can be 1-300 characters.
+     * The default value is 50.</p>
      */
     inline int GetMaximumMatchDistance() const{ return m_maximumMatchDistance; }
 
     /**
      * <p>The maximum number of characters that can exist between text that matches the
-     * regex pattern and the character sequences specified by the keywords array. Macie
-     * includes or excludes a result based on the proximity of a keyword to text that
-     * matches the regex pattern. The distance can be 1-300 characters. The default
-     * value is 50.</p>
+     * regex pattern and the character sequences specified by the keywords array.
+     * Amazon Macie includes or excludes a result based on the proximity of a keyword
+     * to text that matches the regex pattern. The distance can be 1-300 characters.
+     * The default value is 50.</p>
      */
     inline bool MaximumMatchDistanceHasBeenSet() const { return m_maximumMatchDistanceHasBeenSet; }
 
     /**
      * <p>The maximum number of characters that can exist between text that matches the
-     * regex pattern and the character sequences specified by the keywords array. Macie
-     * includes or excludes a result based on the proximity of a keyword to text that
-     * matches the regex pattern. The distance can be 1-300 characters. The default
-     * value is 50.</p>
+     * regex pattern and the character sequences specified by the keywords array.
+     * Amazon Macie includes or excludes a result based on the proximity of a keyword
+     * to text that matches the regex pattern. The distance can be 1-300 characters.
+     * The default value is 50.</p>
      */
     inline void SetMaximumMatchDistance(int value) { m_maximumMatchDistanceHasBeenSet = true; m_maximumMatchDistance = value; }
 
     /**
      * <p>The maximum number of characters that can exist between text that matches the
-     * regex pattern and the character sequences specified by the keywords array. Macie
-     * includes or excludes a result based on the proximity of a keyword to text that
-     * matches the regex pattern. The distance can be 1-300 characters. The default
-     * value is 50.</p>
+     * regex pattern and the character sequences specified by the keywords array.
+     * Amazon Macie includes or excludes a result based on the proximity of a keyword
+     * to text that matches the regex pattern. The distance can be 1-300 characters.
+     * The default value is 50.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithMaximumMatchDistance(int value) { SetMaximumMatchDistance(value); return *this;}
 

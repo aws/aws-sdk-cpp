@@ -16,6 +16,7 @@
 #include <aws/transcribe/model/JobExecutionSettings.h>
 #include <aws/transcribe/model/ContentRedaction.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/transcribe/model/Subtitles.h>
 #include <aws/transcribe/model/Tag.h>
 #include <utility>
 
@@ -1086,6 +1087,37 @@ namespace Model
 
 
     /**
+     * <p>Add subtitles to your batch transcription job.</p>
+     */
+    inline const Subtitles& GetSubtitles() const{ return m_subtitles; }
+
+    /**
+     * <p>Add subtitles to your batch transcription job.</p>
+     */
+    inline bool SubtitlesHasBeenSet() const { return m_subtitlesHasBeenSet; }
+
+    /**
+     * <p>Add subtitles to your batch transcription job.</p>
+     */
+    inline void SetSubtitles(const Subtitles& value) { m_subtitlesHasBeenSet = true; m_subtitles = value; }
+
+    /**
+     * <p>Add subtitles to your batch transcription job.</p>
+     */
+    inline void SetSubtitles(Subtitles&& value) { m_subtitlesHasBeenSet = true; m_subtitles = std::move(value); }
+
+    /**
+     * <p>Add subtitles to your batch transcription job.</p>
+     */
+    inline StartTranscriptionJobRequest& WithSubtitles(const Subtitles& value) { SetSubtitles(value); return *this;}
+
+    /**
+     * <p>Add subtitles to your batch transcription job.</p>
+     */
+    inline StartTranscriptionJobRequest& WithSubtitles(Subtitles&& value) { SetSubtitles(std::move(value)); return *this;}
+
+
+    /**
      * <p>Add tags to an Amazon Transcribe transcription job.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -1171,6 +1203,9 @@ namespace Model
 
     Aws::Vector<LanguageCode> m_languageOptions;
     bool m_languageOptionsHasBeenSet;
+
+    Subtitles m_subtitles;
+    bool m_subtitlesHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

@@ -320,25 +320,25 @@ namespace Model
 
     /**
      * <p>The maximum number of characters that can exist between text that matches the
-     * regex pattern and the character sequences specified by the keywords array. Macie
-     * includes or excludes a result based on the proximity of a keyword to text that
-     * matches the regex pattern.</p>
+     * regex pattern and the character sequences specified by the keywords array.
+     * Amazon Macie includes or excludes a result based on the proximity of a keyword
+     * to text that matches the regex pattern.</p>
      */
     inline int GetMaximumMatchDistance() const{ return m_maximumMatchDistance; }
 
     /**
      * <p>The maximum number of characters that can exist between text that matches the
-     * regex pattern and the character sequences specified by the keywords array. Macie
-     * includes or excludes a result based on the proximity of a keyword to text that
-     * matches the regex pattern.</p>
+     * regex pattern and the character sequences specified by the keywords array.
+     * Amazon Macie includes or excludes a result based on the proximity of a keyword
+     * to text that matches the regex pattern.</p>
      */
     inline void SetMaximumMatchDistance(int value) { m_maximumMatchDistance = value; }
 
     /**
      * <p>The maximum number of characters that can exist between text that matches the
-     * regex pattern and the character sequences specified by the keywords array. Macie
-     * includes or excludes a result based on the proximity of a keyword to text that
-     * matches the regex pattern.</p>
+     * regex pattern and the character sequences specified by the keywords array.
+     * Amazon Macie includes or excludes a result based on the proximity of a keyword
+     * to text that matches the regex pattern.</p>
      */
     inline GetCustomDataIdentifierResult& WithMaximumMatchDistance(int value) { SetMaximumMatchDistance(value); return *this;}
 

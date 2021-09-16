@@ -1391,12 +1391,12 @@ namespace Model
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
      * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
      * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
-     * customer master key (CMK) that was used for the object. If you specify
+     * key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
-     * Web Services managed CMK in Amazon Web Services to protect the data. If the KMS
-     * key does not exist in the same account issuing the command, you must use the
-     * full ARN and not just the ID. </p>
+     * Web Services managed key to protect the data. If the KMS key does not exist in
+     * the same account issuing the command, you must use the full ARN and not just the
+     * ID. </p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
@@ -1404,12 +1404,12 @@ namespace Model
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
      * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
      * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
-     * customer master key (CMK) that was used for the object. If you specify
+     * key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
-     * Web Services managed CMK in Amazon Web Services to protect the data. If the KMS
-     * key does not exist in the same account issuing the command, you must use the
-     * full ARN and not just the ID. </p>
+     * Web Services managed key to protect the data. If the KMS key does not exist in
+     * the same account issuing the command, you must use the full ARN and not just the
+     * ID. </p>
      */
     inline bool SSEKMSKeyIdHasBeenSet() const { return m_sSEKMSKeyIdHasBeenSet; }
 
@@ -1417,12 +1417,12 @@ namespace Model
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
      * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
      * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
-     * customer master key (CMK) that was used for the object. If you specify
+     * key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
-     * Web Services managed CMK in Amazon Web Services to protect the data. If the KMS
-     * key does not exist in the same account issuing the command, you must use the
-     * full ARN and not just the ID. </p>
+     * Web Services managed key to protect the data. If the KMS key does not exist in
+     * the same account issuing the command, you must use the full ARN and not just the
+     * ID. </p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
 
@@ -1430,12 +1430,12 @@ namespace Model
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
      * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
      * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
-     * customer master key (CMK) that was used for the object. If you specify
+     * key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
-     * Web Services managed CMK in Amazon Web Services to protect the data. If the KMS
-     * key does not exist in the same account issuing the command, you must use the
-     * full ARN and not just the ID. </p>
+     * Web Services managed key to protect the data. If the KMS key does not exist in
+     * the same account issuing the command, you must use the full ARN and not just the
+     * ID. </p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
 
@@ -1443,12 +1443,12 @@ namespace Model
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
      * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
      * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
-     * customer master key (CMK) that was used for the object. If you specify
+     * key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
-     * Web Services managed CMK in Amazon Web Services to protect the data. If the KMS
-     * key does not exist in the same account issuing the command, you must use the
-     * full ARN and not just the ID. </p>
+     * Web Services managed key to protect the data. If the KMS key does not exist in
+     * the same account issuing the command, you must use the full ARN and not just the
+     * ID. </p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId.assign(value); }
 
@@ -1456,12 +1456,12 @@ namespace Model
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
      * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
      * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
-     * customer master key (CMK) that was used for the object. If you specify
+     * key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
-     * Web Services managed CMK in Amazon Web Services to protect the data. If the KMS
-     * key does not exist in the same account issuing the command, you must use the
-     * full ARN and not just the ID. </p>
+     * Web Services managed key to protect the data. If the KMS key does not exist in
+     * the same account issuing the command, you must use the full ARN and not just the
+     * ID. </p>
      */
     inline PutObjectRequest& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
@@ -1469,12 +1469,12 @@ namespace Model
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
      * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
      * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
-     * customer master key (CMK) that was used for the object. If you specify
+     * key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
-     * Web Services managed CMK in Amazon Web Services to protect the data. If the KMS
-     * key does not exist in the same account issuing the command, you must use the
-     * full ARN and not just the ID. </p>
+     * Web Services managed key to protect the data. If the KMS key does not exist in
+     * the same account issuing the command, you must use the full ARN and not just the
+     * ID. </p>
      */
     inline PutObjectRequest& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
@@ -1482,12 +1482,12 @@ namespace Model
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
      * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
      * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
-     * customer master key (CMK) that was used for the object. If you specify
+     * key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
-     * Web Services managed CMK in Amazon Web Services to protect the data. If the KMS
-     * key does not exist in the same account issuing the command, you must use the
-     * full ARN and not just the ID. </p>
+     * Web Services managed key to protect the data. If the KMS key does not exist in
+     * the same account issuing the command, you must use the full ARN and not just the
+     * ID. </p>
      */
     inline PutObjectRequest& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 

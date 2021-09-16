@@ -204,16 +204,16 @@ namespace Model
      * Amazon Macie finished processing the data specified for the job. This value
      * doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the
      * previous scheduled run is complete and the next scheduled run is pending. This
-     * value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Amazon Macie
-     * started running the job but additional processing would exceed the monthly
-     * sensitive data discovery quota for your account or one or more member accounts
-     * that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job,
-     * the job is in progress. For a recurring job, a scheduled run is in
-     * progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the
-     * job while it had a status of RUNNING and you don't resume it within 30 days of
-     * pausing it, the job or job run will expire and be cancelled, depending on the
-     * job's type. To check the expiration date, refer to the
-     * UserPausedDetails.jobExpiresAt property.</p></li></ul>
+     * value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started
+     * running the job but additional processing would exceed the monthly sensitive
+     * data discovery quota for your account or one or more member accounts that the
+     * job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is
+     * in progress. For a recurring job, a scheduled run is in progress.</p></li>
+     * <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a
+     * status of RUNNING and you don't resume it within 30 days of pausing it, the job
+     * or job run will expire and be cancelled, depending on the job's type. To check
+     * the expiration date, refer to the UserPausedDetails.jobExpiresAt
+     * property.</p></li></ul>
      */
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
 
@@ -224,16 +224,16 @@ namespace Model
      * Amazon Macie finished processing the data specified for the job. This value
      * doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the
      * previous scheduled run is complete and the next scheduled run is pending. This
-     * value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Amazon Macie
-     * started running the job but additional processing would exceed the monthly
-     * sensitive data discovery quota for your account or one or more member accounts
-     * that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job,
-     * the job is in progress. For a recurring job, a scheduled run is in
-     * progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the
-     * job while it had a status of RUNNING and you don't resume it within 30 days of
-     * pausing it, the job or job run will expire and be cancelled, depending on the
-     * job's type. To check the expiration date, refer to the
-     * UserPausedDetails.jobExpiresAt property.</p></li></ul>
+     * value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started
+     * running the job but additional processing would exceed the monthly sensitive
+     * data discovery quota for your account or one or more member accounts that the
+     * job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is
+     * in progress. For a recurring job, a scheduled run is in progress.</p></li>
+     * <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a
+     * status of RUNNING and you don't resume it within 30 days of pausing it, the job
+     * or job run will expire and be cancelled, depending on the job's type. To check
+     * the expiration date, refer to the UserPausedDetails.jobExpiresAt
+     * property.</p></li></ul>
      */
     inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
 
@@ -244,16 +244,16 @@ namespace Model
      * Amazon Macie finished processing the data specified for the job. This value
      * doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the
      * previous scheduled run is complete and the next scheduled run is pending. This
-     * value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Amazon Macie
-     * started running the job but additional processing would exceed the monthly
-     * sensitive data discovery quota for your account or one or more member accounts
-     * that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job,
-     * the job is in progress. For a recurring job, a scheduled run is in
-     * progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the
-     * job while it had a status of RUNNING and you don't resume it within 30 days of
-     * pausing it, the job or job run will expire and be cancelled, depending on the
-     * job's type. To check the expiration date, refer to the
-     * UserPausedDetails.jobExpiresAt property.</p></li></ul>
+     * value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started
+     * running the job but additional processing would exceed the monthly sensitive
+     * data discovery quota for your account or one or more member accounts that the
+     * job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is
+     * in progress. For a recurring job, a scheduled run is in progress.</p></li>
+     * <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a
+     * status of RUNNING and you don't resume it within 30 days of pausing it, the job
+     * or job run will expire and be cancelled, depending on the job's type. To check
+     * the expiration date, refer to the UserPausedDetails.jobExpiresAt
+     * property.</p></li></ul>
      */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
 
@@ -264,16 +264,16 @@ namespace Model
      * Amazon Macie finished processing the data specified for the job. This value
      * doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the
      * previous scheduled run is complete and the next scheduled run is pending. This
-     * value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Amazon Macie
-     * started running the job but additional processing would exceed the monthly
-     * sensitive data discovery quota for your account or one or more member accounts
-     * that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job,
-     * the job is in progress. For a recurring job, a scheduled run is in
-     * progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the
-     * job while it had a status of RUNNING and you don't resume it within 30 days of
-     * pausing it, the job or job run will expire and be cancelled, depending on the
-     * job's type. To check the expiration date, refer to the
-     * UserPausedDetails.jobExpiresAt property.</p></li></ul>
+     * value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started
+     * running the job but additional processing would exceed the monthly sensitive
+     * data discovery quota for your account or one or more member accounts that the
+     * job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is
+     * in progress. For a recurring job, a scheduled run is in progress.</p></li>
+     * <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a
+     * status of RUNNING and you don't resume it within 30 days of pausing it, the job
+     * or job run will expire and be cancelled, depending on the job's type. To check
+     * the expiration date, refer to the UserPausedDetails.jobExpiresAt
+     * property.</p></li></ul>
      */
     inline void SetJobStatus(JobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = std::move(value); }
 
@@ -284,16 +284,16 @@ namespace Model
      * Amazon Macie finished processing the data specified for the job. This value
      * doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the
      * previous scheduled run is complete and the next scheduled run is pending. This
-     * value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Amazon Macie
-     * started running the job but additional processing would exceed the monthly
-     * sensitive data discovery quota for your account or one or more member accounts
-     * that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job,
-     * the job is in progress. For a recurring job, a scheduled run is in
-     * progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the
-     * job while it had a status of RUNNING and you don't resume it within 30 days of
-     * pausing it, the job or job run will expire and be cancelled, depending on the
-     * job's type. To check the expiration date, refer to the
-     * UserPausedDetails.jobExpiresAt property.</p></li></ul>
+     * value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started
+     * running the job but additional processing would exceed the monthly sensitive
+     * data discovery quota for your account or one or more member accounts that the
+     * job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is
+     * in progress. For a recurring job, a scheduled run is in progress.</p></li>
+     * <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a
+     * status of RUNNING and you don't resume it within 30 days of pausing it, the job
+     * or job run will expire and be cancelled, depending on the job's type. To check
+     * the expiration date, refer to the UserPausedDetails.jobExpiresAt
+     * property.</p></li></ul>
      */
     inline JobSummary& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
 
@@ -304,16 +304,16 @@ namespace Model
      * Amazon Macie finished processing the data specified for the job. This value
      * doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the
      * previous scheduled run is complete and the next scheduled run is pending. This
-     * value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Amazon Macie
-     * started running the job but additional processing would exceed the monthly
-     * sensitive data discovery quota for your account or one or more member accounts
-     * that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job,
-     * the job is in progress. For a recurring job, a scheduled run is in
-     * progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the
-     * job while it had a status of RUNNING and you don't resume it within 30 days of
-     * pausing it, the job or job run will expire and be cancelled, depending on the
-     * job's type. To check the expiration date, refer to the
-     * UserPausedDetails.jobExpiresAt property.</p></li></ul>
+     * value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started
+     * running the job but additional processing would exceed the monthly sensitive
+     * data discovery quota for your account or one or more member accounts that the
+     * job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is
+     * in progress. For a recurring job, a scheduled run is in progress.</p></li>
+     * <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a
+     * status of RUNNING and you don't resume it within 30 days of pausing it, the job
+     * or job run will expire and be cancelled, depending on the job's type. To check
+     * the expiration date, refer to the UserPausedDetails.jobExpiresAt
+     * property.</p></li></ul>
      */
     inline JobSummary& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
 

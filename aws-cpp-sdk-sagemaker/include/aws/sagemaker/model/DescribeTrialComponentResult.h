@@ -298,27 +298,27 @@ namespace Model
 
 
     /**
-     * <p>Who created the component.</p>
+     * <p>Who created the trial component.</p>
      */
     inline const UserContext& GetCreatedBy() const{ return m_createdBy; }
 
     /**
-     * <p>Who created the component.</p>
+     * <p>Who created the trial component.</p>
      */
     inline void SetCreatedBy(const UserContext& value) { m_createdBy = value; }
 
     /**
-     * <p>Who created the component.</p>
+     * <p>Who created the trial component.</p>
      */
     inline void SetCreatedBy(UserContext&& value) { m_createdBy = std::move(value); }
 
     /**
-     * <p>Who created the component.</p>
+     * <p>Who created the trial component.</p>
      */
     inline DescribeTrialComponentResult& WithCreatedBy(const UserContext& value) { SetCreatedBy(value); return *this;}
 
     /**
-     * <p>Who created the component.</p>
+     * <p>Who created the trial component.</p>
      */
     inline DescribeTrialComponentResult& WithCreatedBy(UserContext&& value) { SetCreatedBy(std::move(value)); return *this;}
 

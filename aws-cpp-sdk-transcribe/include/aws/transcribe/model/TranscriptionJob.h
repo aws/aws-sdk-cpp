@@ -17,6 +17,7 @@
 #include <aws/transcribe/model/JobExecutionSettings.h>
 #include <aws/transcribe/model/ContentRedaction.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/transcribe/model/SubtitlesOutput.h>
 #include <aws/transcribe/model/Tag.h>
 #include <utility>
 
@@ -900,6 +901,37 @@ namespace Model
      */
     inline TranscriptionJob& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Generate subtitles for your batch transcription job.</p>
+     */
+    inline const SubtitlesOutput& GetSubtitles() const{ return m_subtitles; }
+
+    /**
+     * <p>Generate subtitles for your batch transcription job.</p>
+     */
+    inline bool SubtitlesHasBeenSet() const { return m_subtitlesHasBeenSet; }
+
+    /**
+     * <p>Generate subtitles for your batch transcription job.</p>
+     */
+    inline void SetSubtitles(const SubtitlesOutput& value) { m_subtitlesHasBeenSet = true; m_subtitles = value; }
+
+    /**
+     * <p>Generate subtitles for your batch transcription job.</p>
+     */
+    inline void SetSubtitles(SubtitlesOutput&& value) { m_subtitlesHasBeenSet = true; m_subtitles = std::move(value); }
+
+    /**
+     * <p>Generate subtitles for your batch transcription job.</p>
+     */
+    inline TranscriptionJob& WithSubtitles(const SubtitlesOutput& value) { SetSubtitles(value); return *this;}
+
+    /**
+     * <p>Generate subtitles for your batch transcription job.</p>
+     */
+    inline TranscriptionJob& WithSubtitles(SubtitlesOutput&& value) { SetSubtitles(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_transcriptionJobName;
@@ -958,6 +990,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    SubtitlesOutput m_subtitles;
+    bool m_subtitlesHasBeenSet;
   };
 
 } // namespace Model

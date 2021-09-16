@@ -299,38 +299,38 @@ namespace Model
 
 
     /**
-     * <p>The display name and Amazon Web Services account ID for the user who owns the
-     * bucket.</p>
+     * <p>The display name and canonical user ID for the Amazon Web Services account
+     * that owns the bucket.</p>
      */
     inline const S3BucketOwner& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>The display name and Amazon Web Services account ID for the user who owns the
-     * bucket.</p>
+     * <p>The display name and canonical user ID for the Amazon Web Services account
+     * that owns the bucket.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p>The display name and Amazon Web Services account ID for the user who owns the
-     * bucket.</p>
+     * <p>The display name and canonical user ID for the Amazon Web Services account
+     * that owns the bucket.</p>
      */
     inline void SetOwner(const S3BucketOwner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>The display name and Amazon Web Services account ID for the user who owns the
-     * bucket.</p>
+     * <p>The display name and canonical user ID for the Amazon Web Services account
+     * that owns the bucket.</p>
      */
     inline void SetOwner(S3BucketOwner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p>The display name and Amazon Web Services account ID for the user who owns the
-     * bucket.</p>
+     * <p>The display name and canonical user ID for the Amazon Web Services account
+     * that owns the bucket.</p>
      */
     inline S3Bucket& WithOwner(const S3BucketOwner& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>The display name and Amazon Web Services account ID for the user who owns the
-     * bucket.</p>
+     * <p>The display name and canonical user ID for the Amazon Web Services account
+     * that owns the bucket.</p>
      */
     inline S3Bucket& WithOwner(S3BucketOwner&& value) { SetOwner(std::move(value)); return *this;}
 

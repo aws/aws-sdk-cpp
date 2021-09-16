@@ -29,7 +29,7 @@ namespace Model
 
   /**
    * <p>Specifies the location of 1-15 occurrences of sensitive data that was
-   * detected by managed data identifiers or a custom data identifier and produced a
+   * detected by a managed data identifier or a custom data identifier and produced a
    * sensitive data finding.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Occurrences">AWS
    * API Reference</a></p>

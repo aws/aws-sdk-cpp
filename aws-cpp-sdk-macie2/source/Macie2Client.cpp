@@ -62,6 +62,7 @@
 #include <aws/macie2/model/ListFindingsRequest.h>
 #include <aws/macie2/model/ListFindingsFiltersRequest.h>
 #include <aws/macie2/model/ListInvitationsRequest.h>
+#include <aws/macie2/model/ListManagedDataIdentifiersRequest.h>
 #include <aws/macie2/model/ListMembersRequest.h>
 #include <aws/macie2/model/ListOrganizationAdminAccountsRequest.h>
 #include <aws/macie2/model/ListTagsForResourceRequest.h>
@@ -1251,6 +1252,31 @@ void Macie2Client::ListInvitationsAsync(const ListInvitationsRequest& request, c
 void Macie2Client::ListInvitationsAsyncHelper(const ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListInvitations(request), context);
+}
+
+ListManagedDataIdentifiersOutcome Macie2Client::ListManagedDataIdentifiers(const ListManagedDataIdentifiersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/managed-data-identifiers/list");
+  return ListManagedDataIdentifiersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListManagedDataIdentifiersOutcomeCallable Macie2Client::ListManagedDataIdentifiersCallable(const ListManagedDataIdentifiersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListManagedDataIdentifiersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListManagedDataIdentifiers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::ListManagedDataIdentifiersAsync(const ListManagedDataIdentifiersRequest& request, const ListManagedDataIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListManagedDataIdentifiersAsyncHelper( request, handler, context ); } );
+}
+
+void Macie2Client::ListManagedDataIdentifiersAsyncHelper(const ListManagedDataIdentifiersRequest& request, const ListManagedDataIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListManagedDataIdentifiers(request), context);
 }
 
 ListMembersOutcome Macie2Client::ListMembers(const ListMembersRequest& request) const
