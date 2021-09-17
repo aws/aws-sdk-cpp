@@ -827,78 +827,72 @@ namespace Model
     /**
      * <p>The settings in JSON format for the DMS transfer type of source endpoint.
      * </p> <p>Attributes include the following:</p> <ul> <li> <p>serviceAccessRoleArn
-     * - The Identity and Access Management (IAM) role that has permission to access
-     * the Amazon S3 bucket. The role must allow the <code>iam:PassRole</code>
-     * action.</p> </li> <li> <p>BucketName - The name of the S3 bucket to use.</p>
-     * </li> </ul> <p>Shorthand syntax for these settings is as follows:
-     * <code>ServiceAccessRoleArn=string ,BucketName=string</code> </p> <p>JSON syntax
-     * for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
-     * "BucketName": "string"} </code> </p>
+     * - The Amazon Resource Name (ARN) used by the service access IAM role. The role
+     * must allow the <code>iam:PassRole</code> action.</p> </li> <li> <p>BucketName -
+     * The name of the S3 bucket to use.</p> </li> </ul> <p>Shorthand syntax for these
+     * settings is as follows: <code>ServiceAccessRoleArn=string
+     * ,BucketName=string</code> </p> <p>JSON syntax for these settings is as follows:
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code> </p>
      */
     inline const DmsTransferSettings& GetDmsTransferSettings() const{ return m_dmsTransferSettings; }
 
     /**
      * <p>The settings in JSON format for the DMS transfer type of source endpoint.
      * </p> <p>Attributes include the following:</p> <ul> <li> <p>serviceAccessRoleArn
-     * - The Identity and Access Management (IAM) role that has permission to access
-     * the Amazon S3 bucket. The role must allow the <code>iam:PassRole</code>
-     * action.</p> </li> <li> <p>BucketName - The name of the S3 bucket to use.</p>
-     * </li> </ul> <p>Shorthand syntax for these settings is as follows:
-     * <code>ServiceAccessRoleArn=string ,BucketName=string</code> </p> <p>JSON syntax
-     * for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
-     * "BucketName": "string"} </code> </p>
+     * - The Amazon Resource Name (ARN) used by the service access IAM role. The role
+     * must allow the <code>iam:PassRole</code> action.</p> </li> <li> <p>BucketName -
+     * The name of the S3 bucket to use.</p> </li> </ul> <p>Shorthand syntax for these
+     * settings is as follows: <code>ServiceAccessRoleArn=string
+     * ,BucketName=string</code> </p> <p>JSON syntax for these settings is as follows:
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code> </p>
      */
     inline bool DmsTransferSettingsHasBeenSet() const { return m_dmsTransferSettingsHasBeenSet; }
 
     /**
      * <p>The settings in JSON format for the DMS transfer type of source endpoint.
      * </p> <p>Attributes include the following:</p> <ul> <li> <p>serviceAccessRoleArn
-     * - The Identity and Access Management (IAM) role that has permission to access
-     * the Amazon S3 bucket. The role must allow the <code>iam:PassRole</code>
-     * action.</p> </li> <li> <p>BucketName - The name of the S3 bucket to use.</p>
-     * </li> </ul> <p>Shorthand syntax for these settings is as follows:
-     * <code>ServiceAccessRoleArn=string ,BucketName=string</code> </p> <p>JSON syntax
-     * for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
-     * "BucketName": "string"} </code> </p>
+     * - The Amazon Resource Name (ARN) used by the service access IAM role. The role
+     * must allow the <code>iam:PassRole</code> action.</p> </li> <li> <p>BucketName -
+     * The name of the S3 bucket to use.</p> </li> </ul> <p>Shorthand syntax for these
+     * settings is as follows: <code>ServiceAccessRoleArn=string
+     * ,BucketName=string</code> </p> <p>JSON syntax for these settings is as follows:
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code> </p>
      */
     inline void SetDmsTransferSettings(const DmsTransferSettings& value) { m_dmsTransferSettingsHasBeenSet = true; m_dmsTransferSettings = value; }
 
     /**
      * <p>The settings in JSON format for the DMS transfer type of source endpoint.
      * </p> <p>Attributes include the following:</p> <ul> <li> <p>serviceAccessRoleArn
-     * - The Identity and Access Management (IAM) role that has permission to access
-     * the Amazon S3 bucket. The role must allow the <code>iam:PassRole</code>
-     * action.</p> </li> <li> <p>BucketName - The name of the S3 bucket to use.</p>
-     * </li> </ul> <p>Shorthand syntax for these settings is as follows:
-     * <code>ServiceAccessRoleArn=string ,BucketName=string</code> </p> <p>JSON syntax
-     * for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
-     * "BucketName": "string"} </code> </p>
+     * - The Amazon Resource Name (ARN) used by the service access IAM role. The role
+     * must allow the <code>iam:PassRole</code> action.</p> </li> <li> <p>BucketName -
+     * The name of the S3 bucket to use.</p> </li> </ul> <p>Shorthand syntax for these
+     * settings is as follows: <code>ServiceAccessRoleArn=string
+     * ,BucketName=string</code> </p> <p>JSON syntax for these settings is as follows:
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code> </p>
      */
     inline void SetDmsTransferSettings(DmsTransferSettings&& value) { m_dmsTransferSettingsHasBeenSet = true; m_dmsTransferSettings = std::move(value); }
 
     /**
      * <p>The settings in JSON format for the DMS transfer type of source endpoint.
      * </p> <p>Attributes include the following:</p> <ul> <li> <p>serviceAccessRoleArn
-     * - The Identity and Access Management (IAM) role that has permission to access
-     * the Amazon S3 bucket. The role must allow the <code>iam:PassRole</code>
-     * action.</p> </li> <li> <p>BucketName - The name of the S3 bucket to use.</p>
-     * </li> </ul> <p>Shorthand syntax for these settings is as follows:
-     * <code>ServiceAccessRoleArn=string ,BucketName=string</code> </p> <p>JSON syntax
-     * for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
-     * "BucketName": "string"} </code> </p>
+     * - The Amazon Resource Name (ARN) used by the service access IAM role. The role
+     * must allow the <code>iam:PassRole</code> action.</p> </li> <li> <p>BucketName -
+     * The name of the S3 bucket to use.</p> </li> </ul> <p>Shorthand syntax for these
+     * settings is as follows: <code>ServiceAccessRoleArn=string
+     * ,BucketName=string</code> </p> <p>JSON syntax for these settings is as follows:
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code> </p>
      */
     inline ModifyEndpointRequest& WithDmsTransferSettings(const DmsTransferSettings& value) { SetDmsTransferSettings(value); return *this;}
 
     /**
      * <p>The settings in JSON format for the DMS transfer type of source endpoint.
      * </p> <p>Attributes include the following:</p> <ul> <li> <p>serviceAccessRoleArn
-     * - The Identity and Access Management (IAM) role that has permission to access
-     * the Amazon S3 bucket. The role must allow the <code>iam:PassRole</code>
-     * action.</p> </li> <li> <p>BucketName - The name of the S3 bucket to use.</p>
-     * </li> </ul> <p>Shorthand syntax for these settings is as follows:
-     * <code>ServiceAccessRoleArn=string ,BucketName=string</code> </p> <p>JSON syntax
-     * for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
-     * "BucketName": "string"} </code> </p>
+     * - The Amazon Resource Name (ARN) used by the service access IAM role. The role
+     * must allow the <code>iam:PassRole</code> action.</p> </li> <li> <p>BucketName -
+     * The name of the S3 bucket to use.</p> </li> </ul> <p>Shorthand syntax for these
+     * settings is as follows: <code>ServiceAccessRoleArn=string
+     * ,BucketName=string</code> </p> <p>JSON syntax for these settings is as follows:
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code> </p>
      */
     inline ModifyEndpointRequest& WithDmsTransferSettings(DmsTransferSettings&& value) { SetDmsTransferSettings(std::move(value)); return *this;}
 

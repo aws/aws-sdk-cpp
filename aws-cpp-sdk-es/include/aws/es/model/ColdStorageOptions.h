@@ -22,7 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies settings for cold storage.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the configuration for cold storage options such as
+   * enabled</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ColdStorageOptions">AWS
    * API Reference</a></p>
    */
@@ -36,22 +37,22 @@ namespace Model
 
 
     /**
-     * <p>True to enable cold storage for an Elasticsearch domain.</p>
+     * <p>Enable cold storage option. Accepted values true or false</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>True to enable cold storage for an Elasticsearch domain.</p>
+     * <p>Enable cold storage option. Accepted values true or false</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p>True to enable cold storage for an Elasticsearch domain.</p>
+     * <p>Enable cold storage option. Accepted values true or false</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>True to enable cold storage for an Elasticsearch domain.</p>
+     * <p>Enable cold storage option. Accepted values true or false</p>
      */
     inline ColdStorageOptions& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

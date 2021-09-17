@@ -950,8 +950,8 @@ namespace Model
     /**
      * <p>The settings in JSON format for the DMS transfer type of source endpoint.
      * </p> <p>Possible settings include the following:</p> <ul> <li> <p>
-     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access
-     * the Amazon S3 bucket. The role must allow the <code>iam:PassRole</code>
+     * <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the
+     * service access IAM role. The role must allow the <code>iam:PassRole</code>
      * action.</p> </li> <li> <p> <code>BucketName</code> - The name of the S3 bucket
      * to use.</p> </li> </ul> <p>Shorthand syntax for these settings is as follows:
      * <code>ServiceAccessRoleArn=string,BucketName=string</code> </p> <p>JSON syntax
@@ -963,8 +963,8 @@ namespace Model
     /**
      * <p>The settings in JSON format for the DMS transfer type of source endpoint.
      * </p> <p>Possible settings include the following:</p> <ul> <li> <p>
-     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access
-     * the Amazon S3 bucket. The role must allow the <code>iam:PassRole</code>
+     * <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the
+     * service access IAM role. The role must allow the <code>iam:PassRole</code>
      * action.</p> </li> <li> <p> <code>BucketName</code> - The name of the S3 bucket
      * to use.</p> </li> </ul> <p>Shorthand syntax for these settings is as follows:
      * <code>ServiceAccessRoleArn=string,BucketName=string</code> </p> <p>JSON syntax
@@ -976,8 +976,8 @@ namespace Model
     /**
      * <p>The settings in JSON format for the DMS transfer type of source endpoint.
      * </p> <p>Possible settings include the following:</p> <ul> <li> <p>
-     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access
-     * the Amazon S3 bucket. The role must allow the <code>iam:PassRole</code>
+     * <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the
+     * service access IAM role. The role must allow the <code>iam:PassRole</code>
      * action.</p> </li> <li> <p> <code>BucketName</code> - The name of the S3 bucket
      * to use.</p> </li> </ul> <p>Shorthand syntax for these settings is as follows:
      * <code>ServiceAccessRoleArn=string,BucketName=string</code> </p> <p>JSON syntax
@@ -989,8 +989,8 @@ namespace Model
     /**
      * <p>The settings in JSON format for the DMS transfer type of source endpoint.
      * </p> <p>Possible settings include the following:</p> <ul> <li> <p>
-     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access
-     * the Amazon S3 bucket. The role must allow the <code>iam:PassRole</code>
+     * <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the
+     * service access IAM role. The role must allow the <code>iam:PassRole</code>
      * action.</p> </li> <li> <p> <code>BucketName</code> - The name of the S3 bucket
      * to use.</p> </li> </ul> <p>Shorthand syntax for these settings is as follows:
      * <code>ServiceAccessRoleArn=string,BucketName=string</code> </p> <p>JSON syntax
@@ -1002,8 +1002,8 @@ namespace Model
     /**
      * <p>The settings in JSON format for the DMS transfer type of source endpoint.
      * </p> <p>Possible settings include the following:</p> <ul> <li> <p>
-     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access
-     * the Amazon S3 bucket. The role must allow the <code>iam:PassRole</code>
+     * <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the
+     * service access IAM role. The role must allow the <code>iam:PassRole</code>
      * action.</p> </li> <li> <p> <code>BucketName</code> - The name of the S3 bucket
      * to use.</p> </li> </ul> <p>Shorthand syntax for these settings is as follows:
      * <code>ServiceAccessRoleArn=string,BucketName=string</code> </p> <p>JSON syntax
@@ -1015,8 +1015,8 @@ namespace Model
     /**
      * <p>The settings in JSON format for the DMS transfer type of source endpoint.
      * </p> <p>Possible settings include the following:</p> <ul> <li> <p>
-     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access
-     * the Amazon S3 bucket. The role must allow the <code>iam:PassRole</code>
+     * <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the
+     * service access IAM role. The role must allow the <code>iam:PassRole</code>
      * action.</p> </li> <li> <p> <code>BucketName</code> - The name of the S3 bucket
      * to use.</p> </li> </ul> <p>Shorthand syntax for these settings is as follows:
      * <code>ServiceAccessRoleArn=string,BucketName=string</code> </p> <p>JSON syntax

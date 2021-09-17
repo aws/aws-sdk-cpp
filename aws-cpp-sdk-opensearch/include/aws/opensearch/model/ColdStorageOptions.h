@@ -21,6 +21,12 @@ namespace OpenSearchService
 namespace Model
 {
 
+  /**
+   * <p>Specifies the configuration for cold storage options such as
+   * enabled</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ColdStorageOptions">AWS
+   * API Reference</a></p>
+   */
   class AWS_OPENSEARCHSERVICE_API ColdStorageOptions
   {
   public:
@@ -30,16 +36,24 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>Enable cold storage option. Accepted values true or false</p>
+     */
     inline bool GetEnabled() const{ return m_enabled; }
 
-    
+    /**
+     * <p>Enable cold storage option. Accepted values true or false</p>
+     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
-    
+    /**
+     * <p>Enable cold storage option. Accepted values true or false</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
-    
+    /**
+     * <p>Enable cold storage option. Accepted values true or false</p>
+     */
     inline ColdStorageOptions& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:

@@ -328,38 +328,38 @@ namespace Model
 
 
     /**
-     * <p>Specifies the <code>ColdStorageOptions</code> configuration for an
-     * Elasticsearch domain.</p>
+     * <p>Specifies the <code>ColdStorageOptions</code> config for Elasticsearch
+     * Domain</p>
      */
     inline const ColdStorageOptions& GetColdStorageOptions() const{ return m_coldStorageOptions; }
 
     /**
-     * <p>Specifies the <code>ColdStorageOptions</code> configuration for an
-     * Elasticsearch domain.</p>
+     * <p>Specifies the <code>ColdStorageOptions</code> config for Elasticsearch
+     * Domain</p>
      */
     inline bool ColdStorageOptionsHasBeenSet() const { return m_coldStorageOptionsHasBeenSet; }
 
     /**
-     * <p>Specifies the <code>ColdStorageOptions</code> configuration for an
-     * Elasticsearch domain.</p>
+     * <p>Specifies the <code>ColdStorageOptions</code> config for Elasticsearch
+     * Domain</p>
      */
     inline void SetColdStorageOptions(const ColdStorageOptions& value) { m_coldStorageOptionsHasBeenSet = true; m_coldStorageOptions = value; }
 
     /**
-     * <p>Specifies the <code>ColdStorageOptions</code> configuration for an
-     * Elasticsearch domain.</p>
+     * <p>Specifies the <code>ColdStorageOptions</code> config for Elasticsearch
+     * Domain</p>
      */
     inline void SetColdStorageOptions(ColdStorageOptions&& value) { m_coldStorageOptionsHasBeenSet = true; m_coldStorageOptions = std::move(value); }
 
     /**
-     * <p>Specifies the <code>ColdStorageOptions</code> configuration for an
-     * Elasticsearch domain.</p>
+     * <p>Specifies the <code>ColdStorageOptions</code> config for Elasticsearch
+     * Domain</p>
      */
     inline ElasticsearchClusterConfig& WithColdStorageOptions(const ColdStorageOptions& value) { SetColdStorageOptions(value); return *this;}
 
     /**
-     * <p>Specifies the <code>ColdStorageOptions</code> configuration for an
-     * Elasticsearch domain.</p>
+     * <p>Specifies the <code>ColdStorageOptions</code> config for Elasticsearch
+     * Domain</p>
      */
     inline ElasticsearchClusterConfig& WithColdStorageOptions(ColdStorageOptions&& value) { SetColdStorageOptions(std::move(value)); return *this;}
 

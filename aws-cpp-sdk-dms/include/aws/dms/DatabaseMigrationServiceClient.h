@@ -641,7 +641,10 @@ namespace Model
 
         /**
          * <p>Creates a replication subnet group given a list of the subnet IDs in a
-         * VPC.</p><p><h3>See Also:</h3>   <a
+         * VPC.</p> <p>The VPC needs to have at least one subnet in at least two
+         * availability zones in the Amazon Web Services Region, otherwise the service will
+         * throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code>
+         * exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup">AWS
          * API Reference</a></p>
          */
@@ -649,7 +652,10 @@ namespace Model
 
         /**
          * <p>Creates a replication subnet group given a list of the subnet IDs in a
-         * VPC.</p><p><h3>See Also:</h3>   <a
+         * VPC.</p> <p>The VPC needs to have at least one subnet in at least two
+         * availability zones in the Amazon Web Services Region, otherwise the service will
+         * throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code>
+         * exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup">AWS
          * API Reference</a></p>
          *
@@ -659,7 +665,10 @@ namespace Model
 
         /**
          * <p>Creates a replication subnet group given a list of the subnet IDs in a
-         * VPC.</p><p><h3>See Also:</h3>   <a
+         * VPC.</p> <p>The VPC needs to have at least one subnet in at least two
+         * availability zones in the Amazon Web Services Region, otherwise the service will
+         * throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code>
+         * exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup">AWS
          * API Reference</a></p>
          *
@@ -2005,16 +2014,20 @@ namespace Model
         virtual void RefreshSchemasAsync(const Model::RefreshSchemasRequest& request, const RefreshSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Reloads the target database table with the source data. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Reloads the target database table with the source data. </p> <p>You can only
+         * use this operation with a task in the <code>RUNNING</code> state, otherwise the
+         * service will throw an <code>InvalidResourceStateFault</code>
+         * exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadTables">AWS
          * API Reference</a></p>
          */
         virtual Model::ReloadTablesOutcome ReloadTables(const Model::ReloadTablesRequest& request) const;
 
         /**
-         * <p>Reloads the target database table with the source data. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Reloads the target database table with the source data. </p> <p>You can only
+         * use this operation with a task in the <code>RUNNING</code> state, otherwise the
+         * service will throw an <code>InvalidResourceStateFault</code>
+         * exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadTables">AWS
          * API Reference</a></p>
          *
@@ -2023,8 +2036,10 @@ namespace Model
         virtual Model::ReloadTablesOutcomeCallable ReloadTablesCallable(const Model::ReloadTablesRequest& request) const;
 
         /**
-         * <p>Reloads the target database table with the source data. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Reloads the target database table with the source data. </p> <p>You can only
+         * use this operation with a task in the <code>RUNNING</code> state, otherwise the
+         * service will throw an <code>InvalidResourceStateFault</code>
+         * exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadTables">AWS
          * API Reference</a></p>
          *

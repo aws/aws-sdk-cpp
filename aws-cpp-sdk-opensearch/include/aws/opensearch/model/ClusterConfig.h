@@ -335,22 +335,34 @@ namespace Model
     inline ClusterConfig& WithWarmCount(int value) { SetWarmCount(value); return *this;}
 
 
-    
+    /**
+     * <p>Specifies the <code>ColdStorageOptions</code> config for a Domain</p>
+     */
     inline const ColdStorageOptions& GetColdStorageOptions() const{ return m_coldStorageOptions; }
 
-    
+    /**
+     * <p>Specifies the <code>ColdStorageOptions</code> config for a Domain</p>
+     */
     inline bool ColdStorageOptionsHasBeenSet() const { return m_coldStorageOptionsHasBeenSet; }
 
-    
+    /**
+     * <p>Specifies the <code>ColdStorageOptions</code> config for a Domain</p>
+     */
     inline void SetColdStorageOptions(const ColdStorageOptions& value) { m_coldStorageOptionsHasBeenSet = true; m_coldStorageOptions = value; }
 
-    
+    /**
+     * <p>Specifies the <code>ColdStorageOptions</code> config for a Domain</p>
+     */
     inline void SetColdStorageOptions(ColdStorageOptions&& value) { m_coldStorageOptionsHasBeenSet = true; m_coldStorageOptions = std::move(value); }
 
-    
+    /**
+     * <p>Specifies the <code>ColdStorageOptions</code> config for a Domain</p>
+     */
     inline ClusterConfig& WithColdStorageOptions(const ColdStorageOptions& value) { SetColdStorageOptions(value); return *this;}
 
-    
+    /**
+     * <p>Specifies the <code>ColdStorageOptions</code> config for a Domain</p>
+     */
     inline ClusterConfig& WithColdStorageOptions(ColdStorageOptions&& value) { SetColdStorageOptions(std::move(value)); return *this;}
 
   private:
