@@ -119,56 +119,56 @@ namespace Model
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
      * User Guide</a>.</p>
      */
     inline const Aws::String& GetServerCertificateArn() const{ return m_serverCertificateArn; }
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
      * User Guide</a>.</p>
      */
     inline bool ServerCertificateArnHasBeenSet() const { return m_serverCertificateArnHasBeenSet; }
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
      * User Guide</a>.</p>
      */
     inline void SetServerCertificateArn(const Aws::String& value) { m_serverCertificateArnHasBeenSet = true; m_serverCertificateArn = value; }
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
      * User Guide</a>.</p>
      */
     inline void SetServerCertificateArn(Aws::String&& value) { m_serverCertificateArnHasBeenSet = true; m_serverCertificateArn = std::move(value); }
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
      * User Guide</a>.</p>
      */
     inline void SetServerCertificateArn(const char* value) { m_serverCertificateArnHasBeenSet = true; m_serverCertificateArn.assign(value); }
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
      * User Guide</a>.</p>
      */
     inline CreateClientVpnEndpointRequest& WithServerCertificateArn(const Aws::String& value) { SetServerCertificateArn(value); return *this;}
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
      * User Guide</a>.</p>
      */
     inline CreateClientVpnEndpointRequest& WithServerCertificateArn(Aws::String&& value) { SetServerCertificateArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
      * User Guide</a>.</p>
      */
     inline CreateClientVpnEndpointRequest& WithServerCertificateArn(const char* value) { SetServerCertificateArn(value); return *this;}
@@ -456,42 +456,38 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.</p>
+     * <p>Indicates whether split-tunnel is enabled on the Client VPN endpoint.</p>
      * <p>By default, split-tunnel on a VPN endpoint is disabled.</p> <p>For
      * information about split-tunnel VPN endpoints, see <a
-     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
-     * AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-tunnel
+     * Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
      */
     inline bool GetSplitTunnel() const{ return m_splitTunnel; }
 
     /**
-     * <p>Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.</p>
+     * <p>Indicates whether split-tunnel is enabled on the Client VPN endpoint.</p>
      * <p>By default, split-tunnel on a VPN endpoint is disabled.</p> <p>For
      * information about split-tunnel VPN endpoints, see <a
-     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
-     * AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-tunnel
+     * Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
      */
     inline bool SplitTunnelHasBeenSet() const { return m_splitTunnelHasBeenSet; }
 
     /**
-     * <p>Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.</p>
+     * <p>Indicates whether split-tunnel is enabled on the Client VPN endpoint.</p>
      * <p>By default, split-tunnel on a VPN endpoint is disabled.</p> <p>For
      * information about split-tunnel VPN endpoints, see <a
-     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
-     * AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-tunnel
+     * Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
      */
     inline void SetSplitTunnel(bool value) { m_splitTunnelHasBeenSet = true; m_splitTunnel = value; }
 
     /**
-     * <p>Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.</p>
+     * <p>Indicates whether split-tunnel is enabled on the Client VPN endpoint.</p>
      * <p>By default, split-tunnel on a VPN endpoint is disabled.</p> <p>For
      * information about split-tunnel VPN endpoints, see <a
-     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
-     * AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-tunnel
+     * Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
      */
     inline CreateClientVpnEndpointRequest& WithSplitTunnel(bool value) { SetSplitTunnel(value); return *this;}
 
@@ -533,7 +529,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -541,7 +537,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -549,7 +545,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -557,7 +553,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -565,7 +561,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -573,7 +569,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline CreateClientVpnEndpointRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -581,7 +577,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline CreateClientVpnEndpointRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -589,7 +585,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline CreateClientVpnEndpointRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

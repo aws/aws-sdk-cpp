@@ -84,6 +84,71 @@ namespace Model
 
 
     /**
+     * <p>The version name given to the newly created classifier. Version names can
+     * have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and
+     * underscores (_) are allowed. The version name must be unique among all models
+     * with the same classifier name in the account/AWS Region.</p>
+     */
+    inline const Aws::String& GetVersionName() const{ return m_versionName; }
+
+    /**
+     * <p>The version name given to the newly created classifier. Version names can
+     * have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and
+     * underscores (_) are allowed. The version name must be unique among all models
+     * with the same classifier name in the account/AWS Region.</p>
+     */
+    inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
+
+    /**
+     * <p>The version name given to the newly created classifier. Version names can
+     * have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and
+     * underscores (_) are allowed. The version name must be unique among all models
+     * with the same classifier name in the account/AWS Region.</p>
+     */
+    inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
+
+    /**
+     * <p>The version name given to the newly created classifier. Version names can
+     * have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and
+     * underscores (_) are allowed. The version name must be unique among all models
+     * with the same classifier name in the account/AWS Region.</p>
+     */
+    inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
+
+    /**
+     * <p>The version name given to the newly created classifier. Version names can
+     * have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and
+     * underscores (_) are allowed. The version name must be unique among all models
+     * with the same classifier name in the account/AWS Region.</p>
+     */
+    inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
+
+    /**
+     * <p>The version name given to the newly created classifier. Version names can
+     * have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and
+     * underscores (_) are allowed. The version name must be unique among all models
+     * with the same classifier name in the account/AWS Region.</p>
+     */
+    inline CreateDocumentClassifierRequest& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
+
+    /**
+     * <p>The version name given to the newly created classifier. Version names can
+     * have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and
+     * underscores (_) are allowed. The version name must be unique among all models
+     * with the same classifier name in the account/AWS Region.</p>
+     */
+    inline CreateDocumentClassifierRequest& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The version name given to the newly created classifier. Version names can
+     * have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and
+     * underscores (_) are allowed. The version name must be unique among all models
+     * with the same classifier name in the account/AWS Region.</p>
+     */
+    inline CreateDocumentClassifierRequest& WithVersionName(const char* value) { SetVersionName(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
      * that grants Amazon Comprehend read access to your input data.</p>
      */
@@ -668,6 +733,9 @@ namespace Model
 
     Aws::String m_documentClassifierName;
     bool m_documentClassifierNameHasBeenSet;
+
+    Aws::String m_versionName;
+    bool m_versionNameHasBeenSet;
 
     Aws::String m_dataAccessRoleArn;
     bool m_dataAccessRoleArnHasBeenSet;

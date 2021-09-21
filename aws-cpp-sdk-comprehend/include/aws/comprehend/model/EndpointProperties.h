@@ -215,6 +215,55 @@ namespace Model
 
 
     /**
+     * <p>ARN of the new model to use for updating an existing endpoint. This ARN is
+     * going to be different from the model ARN when the update is in progress</p>
+     */
+    inline const Aws::String& GetDesiredModelArn() const{ return m_desiredModelArn; }
+
+    /**
+     * <p>ARN of the new model to use for updating an existing endpoint. This ARN is
+     * going to be different from the model ARN when the update is in progress</p>
+     */
+    inline bool DesiredModelArnHasBeenSet() const { return m_desiredModelArnHasBeenSet; }
+
+    /**
+     * <p>ARN of the new model to use for updating an existing endpoint. This ARN is
+     * going to be different from the model ARN when the update is in progress</p>
+     */
+    inline void SetDesiredModelArn(const Aws::String& value) { m_desiredModelArnHasBeenSet = true; m_desiredModelArn = value; }
+
+    /**
+     * <p>ARN of the new model to use for updating an existing endpoint. This ARN is
+     * going to be different from the model ARN when the update is in progress</p>
+     */
+    inline void SetDesiredModelArn(Aws::String&& value) { m_desiredModelArnHasBeenSet = true; m_desiredModelArn = std::move(value); }
+
+    /**
+     * <p>ARN of the new model to use for updating an existing endpoint. This ARN is
+     * going to be different from the model ARN when the update is in progress</p>
+     */
+    inline void SetDesiredModelArn(const char* value) { m_desiredModelArnHasBeenSet = true; m_desiredModelArn.assign(value); }
+
+    /**
+     * <p>ARN of the new model to use for updating an existing endpoint. This ARN is
+     * going to be different from the model ARN when the update is in progress</p>
+     */
+    inline EndpointProperties& WithDesiredModelArn(const Aws::String& value) { SetDesiredModelArn(value); return *this;}
+
+    /**
+     * <p>ARN of the new model to use for updating an existing endpoint. This ARN is
+     * going to be different from the model ARN when the update is in progress</p>
+     */
+    inline EndpointProperties& WithDesiredModelArn(Aws::String&& value) { SetDesiredModelArn(std::move(value)); return *this;}
+
+    /**
+     * <p>ARN of the new model to use for updating an existing endpoint. This ARN is
+     * going to be different from the model ARN when the update is in progress</p>
+     */
+    inline EndpointProperties& WithDesiredModelArn(const char* value) { SetDesiredModelArn(value); return *this;}
+
+
+    /**
      * <p>The desired number of inference units to be used by the model using this
      * endpoint. Each inference unit represents of a throughput of 100 characters per
      * second.</p>
@@ -386,6 +435,55 @@ namespace Model
      */
     inline EndpointProperties& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 
+
+    /**
+     * <p>Data access role ARN to use in case the new model is encrypted with a
+     * customer KMS key.</p>
+     */
+    inline const Aws::String& GetDesiredDataAccessRoleArn() const{ return m_desiredDataAccessRoleArn; }
+
+    /**
+     * <p>Data access role ARN to use in case the new model is encrypted with a
+     * customer KMS key.</p>
+     */
+    inline bool DesiredDataAccessRoleArnHasBeenSet() const { return m_desiredDataAccessRoleArnHasBeenSet; }
+
+    /**
+     * <p>Data access role ARN to use in case the new model is encrypted with a
+     * customer KMS key.</p>
+     */
+    inline void SetDesiredDataAccessRoleArn(const Aws::String& value) { m_desiredDataAccessRoleArnHasBeenSet = true; m_desiredDataAccessRoleArn = value; }
+
+    /**
+     * <p>Data access role ARN to use in case the new model is encrypted with a
+     * customer KMS key.</p>
+     */
+    inline void SetDesiredDataAccessRoleArn(Aws::String&& value) { m_desiredDataAccessRoleArnHasBeenSet = true; m_desiredDataAccessRoleArn = std::move(value); }
+
+    /**
+     * <p>Data access role ARN to use in case the new model is encrypted with a
+     * customer KMS key.</p>
+     */
+    inline void SetDesiredDataAccessRoleArn(const char* value) { m_desiredDataAccessRoleArnHasBeenSet = true; m_desiredDataAccessRoleArn.assign(value); }
+
+    /**
+     * <p>Data access role ARN to use in case the new model is encrypted with a
+     * customer KMS key.</p>
+     */
+    inline EndpointProperties& WithDesiredDataAccessRoleArn(const Aws::String& value) { SetDesiredDataAccessRoleArn(value); return *this;}
+
+    /**
+     * <p>Data access role ARN to use in case the new model is encrypted with a
+     * customer KMS key.</p>
+     */
+    inline EndpointProperties& WithDesiredDataAccessRoleArn(Aws::String&& value) { SetDesiredDataAccessRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Data access role ARN to use in case the new model is encrypted with a
+     * customer KMS key.</p>
+     */
+    inline EndpointProperties& WithDesiredDataAccessRoleArn(const char* value) { SetDesiredDataAccessRoleArn(value); return *this;}
+
   private:
 
     Aws::String m_endpointArn;
@@ -399,6 +497,9 @@ namespace Model
 
     Aws::String m_modelArn;
     bool m_modelArnHasBeenSet;
+
+    Aws::String m_desiredModelArn;
+    bool m_desiredModelArnHasBeenSet;
 
     int m_desiredInferenceUnits;
     bool m_desiredInferenceUnitsHasBeenSet;
@@ -414,6 +515,9 @@ namespace Model
 
     Aws::String m_dataAccessRoleArn;
     bool m_dataAccessRoleArnHasBeenSet;
+
+    Aws::String m_desiredDataAccessRoleArn;
+    bool m_desiredDataAccessRoleArnHasBeenSet;
   };
 
 } // namespace Model

@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 CreateEntityRecognizerRequest::CreateEntityRecognizerRequest() : 
     m_recognizerNameHasBeenSet(false),
+    m_versionNameHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
@@ -34,6 +35,12 @@ Aws::String CreateEntityRecognizerRequest::SerializePayload() const
   if(m_recognizerNameHasBeenSet)
   {
    payload.WithString("RecognizerName", m_recognizerName);
+
+  }
+
+  if(m_versionNameHasBeenSet)
+  {
+   payload.WithString("VersionName", m_versionName);
 
   }
 

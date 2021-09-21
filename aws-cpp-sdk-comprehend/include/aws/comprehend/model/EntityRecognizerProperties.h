@@ -669,6 +669,47 @@ namespace Model
      */
     inline EntityRecognizerProperties& WithModelKmsKeyId(const char* value) { SetModelKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>The version name you assigned to the entity recognizer.</p>
+     */
+    inline const Aws::String& GetVersionName() const{ return m_versionName; }
+
+    /**
+     * <p>The version name you assigned to the entity recognizer.</p>
+     */
+    inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
+
+    /**
+     * <p>The version name you assigned to the entity recognizer.</p>
+     */
+    inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
+
+    /**
+     * <p>The version name you assigned to the entity recognizer.</p>
+     */
+    inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
+
+    /**
+     * <p>The version name you assigned to the entity recognizer.</p>
+     */
+    inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
+
+    /**
+     * <p>The version name you assigned to the entity recognizer.</p>
+     */
+    inline EntityRecognizerProperties& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
+
+    /**
+     * <p>The version name you assigned to the entity recognizer.</p>
+     */
+    inline EntityRecognizerProperties& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The version name you assigned to the entity recognizer.</p>
+     */
+    inline EntityRecognizerProperties& WithVersionName(const char* value) { SetVersionName(value); return *this;}
+
   private:
 
     Aws::String m_entityRecognizerArn;
@@ -712,6 +753,9 @@ namespace Model
 
     Aws::String m_modelKmsKeyId;
     bool m_modelKmsKeyIdHasBeenSet;
+
+    Aws::String m_versionName;
+    bool m_versionNameHasBeenSet;
   };
 
 } // namespace Model

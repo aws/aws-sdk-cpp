@@ -14,8 +14,10 @@ using namespace Aws::Utils;
 
 UpdateEndpointRequest::UpdateEndpointRequest() : 
     m_endpointArnHasBeenSet(false),
+    m_desiredModelArnHasBeenSet(false),
     m_desiredInferenceUnits(0),
-    m_desiredInferenceUnitsHasBeenSet(false)
+    m_desiredInferenceUnitsHasBeenSet(false),
+    m_desiredDataAccessRoleArnHasBeenSet(false)
 {
 }
 
@@ -29,9 +31,21 @@ Aws::String UpdateEndpointRequest::SerializePayload() const
 
   }
 
+  if(m_desiredModelArnHasBeenSet)
+  {
+   payload.WithString("DesiredModelArn", m_desiredModelArn);
+
+  }
+
   if(m_desiredInferenceUnitsHasBeenSet)
   {
    payload.WithInteger("DesiredInferenceUnits", m_desiredInferenceUnits);
+
+  }
+
+  if(m_desiredDataAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("DesiredDataAccessRoleArn", m_desiredDataAccessRoleArn);
 
   }
 

@@ -20,6 +20,8 @@ namespace Model
 
 AugmentedManifestsListItem::AugmentedManifestsListItem() : 
     m_s3UriHasBeenSet(false),
+    m_split(Split::NOT_SET),
+    m_splitHasBeenSet(false),
     m_attributeNamesHasBeenSet(false),
     m_annotationDataS3UriHasBeenSet(false),
     m_sourceDocumentsS3UriHasBeenSet(false),
@@ -30,6 +32,8 @@ AugmentedManifestsListItem::AugmentedManifestsListItem() :
 
 AugmentedManifestsListItem::AugmentedManifestsListItem(JsonView jsonValue) : 
     m_s3UriHasBeenSet(false),
+    m_split(Split::NOT_SET),
+    m_splitHasBeenSet(false),
     m_attributeNamesHasBeenSet(false),
     m_annotationDataS3UriHasBeenSet(false),
     m_sourceDocumentsS3UriHasBeenSet(false),
@@ -46,6 +50,13 @@ AugmentedManifestsListItem& AugmentedManifestsListItem::operator =(JsonView json
     m_s3Uri = jsonValue.GetString("S3Uri");
 
     m_s3UriHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Split"))
+  {
+    m_split = SplitMapper::GetSplitForName(jsonValue.GetString("Split"));
+
+    m_splitHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AttributeNames"))
@@ -90,6 +101,11 @@ JsonValue AugmentedManifestsListItem::Jsonize() const
   {
    payload.WithString("S3Uri", m_s3Uri);
 
+  }
+
+  if(m_splitHasBeenSet)
+  {
+   payload.WithString("Split", SplitMapper::GetNameForSplit(m_split));
   }
 
   if(m_attributeNamesHasBeenSet)

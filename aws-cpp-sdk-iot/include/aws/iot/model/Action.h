@@ -443,50 +443,62 @@ namespace Model
 
 
     /**
-     * <p>Write data to an Amazon Elasticsearch Service domain.</p>  <p>This
-     * action is deprecated. Use the <a
-     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearch
-     * action</a> instead.</p> 
+     * <p>Write data to an Amazon OpenSearch Service domain.</p>  <p>The
+     * <code>Elasticsearch</code> action can only be used by existing rule actions. To
+     * create a new rule action or to update an existing rule action, use the
+     * <code>OpenSearch</code> rule action instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
+     * 
      */
     inline const ElasticsearchAction& GetElasticsearch() const{ return m_elasticsearch; }
 
     /**
-     * <p>Write data to an Amazon Elasticsearch Service domain.</p>  <p>This
-     * action is deprecated. Use the <a
-     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearch
-     * action</a> instead.</p> 
+     * <p>Write data to an Amazon OpenSearch Service domain.</p>  <p>The
+     * <code>Elasticsearch</code> action can only be used by existing rule actions. To
+     * create a new rule action or to update an existing rule action, use the
+     * <code>OpenSearch</code> rule action instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
+     * 
      */
     inline bool ElasticsearchHasBeenSet() const { return m_elasticsearchHasBeenSet; }
 
     /**
-     * <p>Write data to an Amazon Elasticsearch Service domain.</p>  <p>This
-     * action is deprecated. Use the <a
-     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearch
-     * action</a> instead.</p> 
+     * <p>Write data to an Amazon OpenSearch Service domain.</p>  <p>The
+     * <code>Elasticsearch</code> action can only be used by existing rule actions. To
+     * create a new rule action or to update an existing rule action, use the
+     * <code>OpenSearch</code> rule action instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
+     * 
      */
     inline void SetElasticsearch(const ElasticsearchAction& value) { m_elasticsearchHasBeenSet = true; m_elasticsearch = value; }
 
     /**
-     * <p>Write data to an Amazon Elasticsearch Service domain.</p>  <p>This
-     * action is deprecated. Use the <a
-     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearch
-     * action</a> instead.</p> 
+     * <p>Write data to an Amazon OpenSearch Service domain.</p>  <p>The
+     * <code>Elasticsearch</code> action can only be used by existing rule actions. To
+     * create a new rule action or to update an existing rule action, use the
+     * <code>OpenSearch</code> rule action instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
+     * 
      */
     inline void SetElasticsearch(ElasticsearchAction&& value) { m_elasticsearchHasBeenSet = true; m_elasticsearch = std::move(value); }
 
     /**
-     * <p>Write data to an Amazon Elasticsearch Service domain.</p>  <p>This
-     * action is deprecated. Use the <a
-     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearch
-     * action</a> instead.</p> 
+     * <p>Write data to an Amazon OpenSearch Service domain.</p>  <p>The
+     * <code>Elasticsearch</code> action can only be used by existing rule actions. To
+     * create a new rule action or to update an existing rule action, use the
+     * <code>OpenSearch</code> rule action instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
+     * 
      */
     inline Action& WithElasticsearch(const ElasticsearchAction& value) { SetElasticsearch(value); return *this;}
 
     /**
-     * <p>Write data to an Amazon Elasticsearch Service domain.</p>  <p>This
-     * action is deprecated. Use the <a
-     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearch
-     * action</a> instead.</p> 
+     * <p>Write data to an Amazon OpenSearch Service domain.</p>  <p>The
+     * <code>Elasticsearch</code> action can only be used by existing rule actions. To
+     * create a new rule action or to update an existing rule action, use the
+     * <code>OpenSearch</code> rule action instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
+     * 
      */
     inline Action& WithElasticsearch(ElasticsearchAction&& value) { SetElasticsearch(std::move(value)); return *this;}
 

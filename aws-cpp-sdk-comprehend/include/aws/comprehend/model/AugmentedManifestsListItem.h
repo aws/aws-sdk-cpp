@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/comprehend/model/Split.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/comprehend/model/AugmentedManifestsDocumentTypeFormat.h>
 #include <utility>
@@ -80,6 +81,67 @@ namespace Model
      * <p>The Amazon S3 location of the augmented manifest file.</p>
      */
     inline AugmentedManifestsListItem& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+
+
+    /**
+     * <p>The purpose of the data you've provided in the augmented manifest. You can
+     * either train or test this data. If you don't specify, the default is train.</p>
+     * <p>TRAIN - all of the documents in the manifest will be used for training. If no
+     * test documents are provided, Amazon Comprehend will automatically reserve a
+     * portion of the training documents for testing.</p> <p> TEST - all of the
+     * documents in the manifest will be used for testing.</p>
+     */
+    inline const Split& GetSplit() const{ return m_split; }
+
+    /**
+     * <p>The purpose of the data you've provided in the augmented manifest. You can
+     * either train or test this data. If you don't specify, the default is train.</p>
+     * <p>TRAIN - all of the documents in the manifest will be used for training. If no
+     * test documents are provided, Amazon Comprehend will automatically reserve a
+     * portion of the training documents for testing.</p> <p> TEST - all of the
+     * documents in the manifest will be used for testing.</p>
+     */
+    inline bool SplitHasBeenSet() const { return m_splitHasBeenSet; }
+
+    /**
+     * <p>The purpose of the data you've provided in the augmented manifest. You can
+     * either train or test this data. If you don't specify, the default is train.</p>
+     * <p>TRAIN - all of the documents in the manifest will be used for training. If no
+     * test documents are provided, Amazon Comprehend will automatically reserve a
+     * portion of the training documents for testing.</p> <p> TEST - all of the
+     * documents in the manifest will be used for testing.</p>
+     */
+    inline void SetSplit(const Split& value) { m_splitHasBeenSet = true; m_split = value; }
+
+    /**
+     * <p>The purpose of the data you've provided in the augmented manifest. You can
+     * either train or test this data. If you don't specify, the default is train.</p>
+     * <p>TRAIN - all of the documents in the manifest will be used for training. If no
+     * test documents are provided, Amazon Comprehend will automatically reserve a
+     * portion of the training documents for testing.</p> <p> TEST - all of the
+     * documents in the manifest will be used for testing.</p>
+     */
+    inline void SetSplit(Split&& value) { m_splitHasBeenSet = true; m_split = std::move(value); }
+
+    /**
+     * <p>The purpose of the data you've provided in the augmented manifest. You can
+     * either train or test this data. If you don't specify, the default is train.</p>
+     * <p>TRAIN - all of the documents in the manifest will be used for training. If no
+     * test documents are provided, Amazon Comprehend will automatically reserve a
+     * portion of the training documents for testing.</p> <p> TEST - all of the
+     * documents in the manifest will be used for testing.</p>
+     */
+    inline AugmentedManifestsListItem& WithSplit(const Split& value) { SetSplit(value); return *this;}
+
+    /**
+     * <p>The purpose of the data you've provided in the augmented manifest. You can
+     * either train or test this data. If you don't specify, the default is train.</p>
+     * <p>TRAIN - all of the documents in the manifest will be used for training. If no
+     * test documents are provided, Amazon Comprehend will automatically reserve a
+     * portion of the training documents for testing.</p> <p> TEST - all of the
+     * documents in the manifest will be used for testing.</p>
+     */
+    inline AugmentedManifestsListItem& WithSplit(Split&& value) { SetSplit(std::move(value)); return *this;}
 
 
     /**
@@ -365,6 +427,9 @@ namespace Model
 
     Aws::String m_s3Uri;
     bool m_s3UriHasBeenSet;
+
+    Split m_split;
+    bool m_splitHasBeenSet;
 
     Aws::Vector<Aws::String> m_attributeNames;
     bool m_attributeNamesHasBeenSet;

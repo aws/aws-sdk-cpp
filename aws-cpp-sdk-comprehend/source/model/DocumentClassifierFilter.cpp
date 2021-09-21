@@ -21,6 +21,7 @@ namespace Model
 DocumentClassifierFilter::DocumentClassifierFilter() : 
     m_status(ModelStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_documentClassifierNameHasBeenSet(false),
     m_submitTimeBeforeHasBeenSet(false),
     m_submitTimeAfterHasBeenSet(false)
 {
@@ -29,6 +30,7 @@ DocumentClassifierFilter::DocumentClassifierFilter() :
 DocumentClassifierFilter::DocumentClassifierFilter(JsonView jsonValue) : 
     m_status(ModelStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_documentClassifierNameHasBeenSet(false),
     m_submitTimeBeforeHasBeenSet(false),
     m_submitTimeAfterHasBeenSet(false)
 {
@@ -42,6 +44,13 @@ DocumentClassifierFilter& DocumentClassifierFilter::operator =(JsonView jsonValu
     m_status = ModelStatusMapper::GetModelStatusForName(jsonValue.GetString("Status"));
 
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DocumentClassifierName"))
+  {
+    m_documentClassifierName = jsonValue.GetString("DocumentClassifierName");
+
+    m_documentClassifierNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SubmitTimeBefore"))
@@ -68,6 +77,12 @@ JsonValue DocumentClassifierFilter::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", ModelStatusMapper::GetNameForModelStatus(m_status));
+  }
+
+  if(m_documentClassifierNameHasBeenSet)
+  {
+   payload.WithString("DocumentClassifierName", m_documentClassifierName);
+
   }
 
   if(m_submitTimeBeforeHasBeenSet)

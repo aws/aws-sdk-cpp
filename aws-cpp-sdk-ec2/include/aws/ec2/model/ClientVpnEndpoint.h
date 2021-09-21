@@ -387,38 +387,34 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether split-tunnel is enabled in the AWS Client VPN endpoint.</p>
+     * <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p>
      * <p>For information about split-tunnel VPN endpoints, see <a
      * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
-     * AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator
-     * Guide</i>.</p>
+     * Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
      */
     inline bool GetSplitTunnel() const{ return m_splitTunnel; }
 
     /**
-     * <p>Indicates whether split-tunnel is enabled in the AWS Client VPN endpoint.</p>
+     * <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p>
      * <p>For information about split-tunnel VPN endpoints, see <a
      * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
-     * AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator
-     * Guide</i>.</p>
+     * Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
      */
     inline bool SplitTunnelHasBeenSet() const { return m_splitTunnelHasBeenSet; }
 
     /**
-     * <p>Indicates whether split-tunnel is enabled in the AWS Client VPN endpoint.</p>
+     * <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p>
      * <p>For information about split-tunnel VPN endpoints, see <a
      * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
-     * AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator
-     * Guide</i>.</p>
+     * Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
      */
     inline void SetSplitTunnel(bool value) { m_splitTunnelHasBeenSet = true; m_splitTunnel = value; }
 
     /**
-     * <p>Indicates whether split-tunnel is enabled in the AWS Client VPN endpoint.</p>
+     * <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p>
      * <p>For information about split-tunnel VPN endpoints, see <a
      * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
-     * AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator
-     * Guide</i>.</p>
+     * Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
      */
     inline ClientVpnEndpoint& WithSplitTunnel(bool value) { SetSplitTunnel(value); return *this;}
 

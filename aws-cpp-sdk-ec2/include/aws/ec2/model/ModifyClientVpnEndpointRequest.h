@@ -84,49 +84,49 @@ namespace Model
 
     /**
      * <p>The ARN of the server certificate to be used. The server certificate must be
-     * provisioned in AWS Certificate Manager (ACM).</p>
+     * provisioned in Certificate Manager (ACM).</p>
      */
     inline const Aws::String& GetServerCertificateArn() const{ return m_serverCertificateArn; }
 
     /**
      * <p>The ARN of the server certificate to be used. The server certificate must be
-     * provisioned in AWS Certificate Manager (ACM).</p>
+     * provisioned in Certificate Manager (ACM).</p>
      */
     inline bool ServerCertificateArnHasBeenSet() const { return m_serverCertificateArnHasBeenSet; }
 
     /**
      * <p>The ARN of the server certificate to be used. The server certificate must be
-     * provisioned in AWS Certificate Manager (ACM).</p>
+     * provisioned in Certificate Manager (ACM).</p>
      */
     inline void SetServerCertificateArn(const Aws::String& value) { m_serverCertificateArnHasBeenSet = true; m_serverCertificateArn = value; }
 
     /**
      * <p>The ARN of the server certificate to be used. The server certificate must be
-     * provisioned in AWS Certificate Manager (ACM).</p>
+     * provisioned in Certificate Manager (ACM).</p>
      */
     inline void SetServerCertificateArn(Aws::String&& value) { m_serverCertificateArnHasBeenSet = true; m_serverCertificateArn = std::move(value); }
 
     /**
      * <p>The ARN of the server certificate to be used. The server certificate must be
-     * provisioned in AWS Certificate Manager (ACM).</p>
+     * provisioned in Certificate Manager (ACM).</p>
      */
     inline void SetServerCertificateArn(const char* value) { m_serverCertificateArnHasBeenSet = true; m_serverCertificateArn.assign(value); }
 
     /**
      * <p>The ARN of the server certificate to be used. The server certificate must be
-     * provisioned in AWS Certificate Manager (ACM).</p>
+     * provisioned in Certificate Manager (ACM).</p>
      */
     inline ModifyClientVpnEndpointRequest& WithServerCertificateArn(const Aws::String& value) { SetServerCertificateArn(value); return *this;}
 
     /**
      * <p>The ARN of the server certificate to be used. The server certificate must be
-     * provisioned in AWS Certificate Manager (ACM).</p>
+     * provisioned in Certificate Manager (ACM).</p>
      */
     inline ModifyClientVpnEndpointRequest& WithServerCertificateArn(Aws::String&& value) { SetServerCertificateArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the server certificate to be used. The server certificate must be
-     * provisioned in AWS Certificate Manager (ACM).</p>
+     * provisioned in Certificate Manager (ACM).</p>
      */
     inline ModifyClientVpnEndpointRequest& WithServerCertificateArn(const char* value) { SetServerCertificateArn(value); return *this;}
 
@@ -302,36 +302,32 @@ namespace Model
     /**
      * <p>Indicates whether the VPN is split-tunnel.</p> <p>For information about
      * split-tunnel VPN endpoints, see <a
-     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
-     * AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-tunnel
+     * Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
      */
     inline bool GetSplitTunnel() const{ return m_splitTunnel; }
 
     /**
      * <p>Indicates whether the VPN is split-tunnel.</p> <p>For information about
      * split-tunnel VPN endpoints, see <a
-     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
-     * AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-tunnel
+     * Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
      */
     inline bool SplitTunnelHasBeenSet() const { return m_splitTunnelHasBeenSet; }
 
     /**
      * <p>Indicates whether the VPN is split-tunnel.</p> <p>For information about
      * split-tunnel VPN endpoints, see <a
-     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
-     * AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-tunnel
+     * Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
      */
     inline void SetSplitTunnel(bool value) { m_splitTunnelHasBeenSet = true; m_splitTunnel = value; }
 
     /**
      * <p>Indicates whether the VPN is split-tunnel.</p> <p>For information about
      * split-tunnel VPN endpoints, see <a
-     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
-     * AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-tunnel
+     * Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
      */
     inline ModifyClientVpnEndpointRequest& WithSplitTunnel(bool value) { SetSplitTunnel(value); return *this;}
 

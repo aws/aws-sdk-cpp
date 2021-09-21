@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 CreateDocumentClassifierRequest::CreateDocumentClassifierRequest() : 
     m_documentClassifierNameHasBeenSet(false),
+    m_versionNameHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
@@ -37,6 +38,12 @@ Aws::String CreateDocumentClassifierRequest::SerializePayload() const
   if(m_documentClassifierNameHasBeenSet)
   {
    payload.WithString("DocumentClassifierName", m_documentClassifierName);
+
+  }
+
+  if(m_versionNameHasBeenSet)
+  {
+   payload.WithString("VersionName", m_versionName);
 
   }
 

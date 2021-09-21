@@ -19,12 +19,14 @@ namespace Model
 {
 
 EntityRecognizerAnnotations::EntityRecognizerAnnotations() : 
-    m_s3UriHasBeenSet(false)
+    m_s3UriHasBeenSet(false),
+    m_testS3UriHasBeenSet(false)
 {
 }
 
 EntityRecognizerAnnotations::EntityRecognizerAnnotations(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false)
+    m_s3UriHasBeenSet(false),
+    m_testS3UriHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ EntityRecognizerAnnotations& EntityRecognizerAnnotations::operator =(JsonView js
     m_s3UriHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TestS3Uri"))
+  {
+    m_testS3Uri = jsonValue.GetString("TestS3Uri");
+
+    m_testS3UriHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue EntityRecognizerAnnotations::Jsonize() const
   if(m_s3UriHasBeenSet)
   {
    payload.WithString("S3Uri", m_s3Uri);
+
+  }
+
+  if(m_testS3UriHasBeenSet)
+  {
+   payload.WithString("TestS3Uri", m_testS3Uri);
 
   }
 

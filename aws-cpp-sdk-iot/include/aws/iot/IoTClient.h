@@ -174,6 +174,7 @@
 #include <aws/iot/model/ListTopicRulesResult.h>
 #include <aws/iot/model/ListV2LoggingLevelsResult.h>
 #include <aws/iot/model/ListViolationEventsResult.h>
+#include <aws/iot/model/PutVerificationStateOnViolationResult.h>
 #include <aws/iot/model/RegisterCACertificateResult.h>
 #include <aws/iot/model/RegisterCertificateResult.h>
 #include <aws/iot/model/RegisterCertificateWithoutCAResult.h>
@@ -433,6 +434,7 @@ namespace Model
         class ListTopicRulesRequest;
         class ListV2LoggingLevelsRequest;
         class ListViolationEventsRequest;
+        class PutVerificationStateOnViolationRequest;
         class RegisterCACertificateRequest;
         class RegisterCertificateRequest;
         class RegisterCertificateWithoutCARequest;
@@ -663,6 +665,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTopicRulesResult, IoTError> ListTopicRulesOutcome;
         typedef Aws::Utils::Outcome<ListV2LoggingLevelsResult, IoTError> ListV2LoggingLevelsOutcome;
         typedef Aws::Utils::Outcome<ListViolationEventsResult, IoTError> ListViolationEventsOutcome;
+        typedef Aws::Utils::Outcome<PutVerificationStateOnViolationResult, IoTError> PutVerificationStateOnViolationOutcome;
         typedef Aws::Utils::Outcome<RegisterCACertificateResult, IoTError> RegisterCACertificateOutcome;
         typedef Aws::Utils::Outcome<RegisterCertificateResult, IoTError> RegisterCertificateOutcome;
         typedef Aws::Utils::Outcome<RegisterCertificateWithoutCAResult, IoTError> RegisterCertificateWithoutCAOutcome;
@@ -893,6 +896,7 @@ namespace Model
         typedef std::future<ListTopicRulesOutcome> ListTopicRulesOutcomeCallable;
         typedef std::future<ListV2LoggingLevelsOutcome> ListV2LoggingLevelsOutcomeCallable;
         typedef std::future<ListViolationEventsOutcome> ListViolationEventsOutcomeCallable;
+        typedef std::future<PutVerificationStateOnViolationOutcome> PutVerificationStateOnViolationOutcomeCallable;
         typedef std::future<RegisterCACertificateOutcome> RegisterCACertificateOutcomeCallable;
         typedef std::future<RegisterCertificateOutcome> RegisterCertificateOutcomeCallable;
         typedef std::future<RegisterCertificateWithoutCAOutcome> RegisterCertificateWithoutCAOutcomeCallable;
@@ -1126,6 +1130,7 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::ListTopicRulesRequest&, const Model::ListTopicRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTopicRulesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListV2LoggingLevelsRequest&, const Model::ListV2LoggingLevelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListV2LoggingLevelsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListViolationEventsRequest&, const Model::ListViolationEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListViolationEventsResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::PutVerificationStateOnViolationRequest&, const Model::PutVerificationStateOnViolationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVerificationStateOnViolationResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::RegisterCACertificateRequest&, const Model::RegisterCACertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterCACertificateResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::RegisterCertificateRequest&, const Model::RegisterCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterCertificateResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::RegisterCertificateWithoutCARequest&, const Model::RegisterCertificateWithoutCAOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterCertificateWithoutCAResponseReceivedHandler;
@@ -7589,6 +7594,34 @@ namespace Model
         virtual void ListViolationEventsAsync(const Model::ListViolationEventsRequest& request, const ListViolationEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Set a verification state and provide a description of that verification state
+         * on a violation (detect alarm).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/PutVerificationStateOnViolation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutVerificationStateOnViolationOutcome PutVerificationStateOnViolation(const Model::PutVerificationStateOnViolationRequest& request) const;
+
+        /**
+         * <p>Set a verification state and provide a description of that verification state
+         * on a violation (detect alarm).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/PutVerificationStateOnViolation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutVerificationStateOnViolationOutcomeCallable PutVerificationStateOnViolationCallable(const Model::PutVerificationStateOnViolationRequest& request) const;
+
+        /**
+         * <p>Set a verification state and provide a description of that verification state
+         * on a violation (detect alarm).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/PutVerificationStateOnViolation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutVerificationStateOnViolationAsync(const Model::PutVerificationStateOnViolationRequest& request, const PutVerificationStateOnViolationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Registers a CA certificate with IoT. This CA certificate can then be used to
          * sign device certificates, which can be then registered with IoT. You can
          * register up to 10 CA certificates per Amazon Web Services account that have the
@@ -9531,6 +9564,7 @@ namespace Model
         void ListTopicRulesAsyncHelper(const Model::ListTopicRulesRequest& request, const ListTopicRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListV2LoggingLevelsAsyncHelper(const Model::ListV2LoggingLevelsRequest& request, const ListV2LoggingLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListViolationEventsAsyncHelper(const Model::ListViolationEventsRequest& request, const ListViolationEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutVerificationStateOnViolationAsyncHelper(const Model::PutVerificationStateOnViolationRequest& request, const PutVerificationStateOnViolationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterCACertificateAsyncHelper(const Model::RegisterCACertificateRequest& request, const RegisterCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterCertificateAsyncHelper(const Model::RegisterCertificateRequest& request, const RegisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterCertificateWithoutCAAsyncHelper(const Model::RegisterCertificateWithoutCARequest& request, const RegisterCertificateWithoutCAResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

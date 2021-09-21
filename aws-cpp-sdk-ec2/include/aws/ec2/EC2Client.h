@@ -332,6 +332,8 @@
 #include <aws/ec2/model/GetTransitGatewayPrefixListReferencesResponse.h>
 #include <aws/ec2/model/GetTransitGatewayRouteTableAssociationsResponse.h>
 #include <aws/ec2/model/GetTransitGatewayRouteTablePropagationsResponse.h>
+#include <aws/ec2/model/GetVpnConnectionDeviceSampleConfigurationResponse.h>
+#include <aws/ec2/model/GetVpnConnectionDeviceTypesResponse.h>
 #include <aws/ec2/model/ImportClientVpnClientCertificateRevocationListResponse.h>
 #include <aws/ec2/model/ImportImageResponse.h>
 #include <aws/ec2/model/ImportInstanceResponse.h>
@@ -823,6 +825,8 @@ namespace Model
         class GetTransitGatewayPrefixListReferencesRequest;
         class GetTransitGatewayRouteTableAssociationsRequest;
         class GetTransitGatewayRouteTablePropagationsRequest;
+        class GetVpnConnectionDeviceSampleConfigurationRequest;
+        class GetVpnConnectionDeviceTypesRequest;
         class ImportClientVpnClientCertificateRevocationListRequest;
         class ImportImageRequest;
         class ImportInstanceRequest;
@@ -1289,6 +1293,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetTransitGatewayPrefixListReferencesResponse, EC2Error> GetTransitGatewayPrefixListReferencesOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayRouteTableAssociationsResponse, EC2Error> GetTransitGatewayRouteTableAssociationsOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayRouteTablePropagationsResponse, EC2Error> GetTransitGatewayRouteTablePropagationsOutcome;
+        typedef Aws::Utils::Outcome<GetVpnConnectionDeviceSampleConfigurationResponse, EC2Error> GetVpnConnectionDeviceSampleConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetVpnConnectionDeviceTypesResponse, EC2Error> GetVpnConnectionDeviceTypesOutcome;
         typedef Aws::Utils::Outcome<ImportClientVpnClientCertificateRevocationListResponse, EC2Error> ImportClientVpnClientCertificateRevocationListOutcome;
         typedef Aws::Utils::Outcome<ImportImageResponse, EC2Error> ImportImageOutcome;
         typedef Aws::Utils::Outcome<ImportInstanceResponse, EC2Error> ImportInstanceOutcome;
@@ -1755,6 +1761,8 @@ namespace Model
         typedef std::future<GetTransitGatewayPrefixListReferencesOutcome> GetTransitGatewayPrefixListReferencesOutcomeCallable;
         typedef std::future<GetTransitGatewayRouteTableAssociationsOutcome> GetTransitGatewayRouteTableAssociationsOutcomeCallable;
         typedef std::future<GetTransitGatewayRouteTablePropagationsOutcome> GetTransitGatewayRouteTablePropagationsOutcomeCallable;
+        typedef std::future<GetVpnConnectionDeviceSampleConfigurationOutcome> GetVpnConnectionDeviceSampleConfigurationOutcomeCallable;
+        typedef std::future<GetVpnConnectionDeviceTypesOutcome> GetVpnConnectionDeviceTypesOutcomeCallable;
         typedef std::future<ImportClientVpnClientCertificateRevocationListOutcome> ImportClientVpnClientCertificateRevocationListOutcomeCallable;
         typedef std::future<ImportImageOutcome> ImportImageOutcomeCallable;
         typedef std::future<ImportInstanceOutcome> ImportInstanceOutcomeCallable;
@@ -2224,6 +2232,8 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayPrefixListReferencesRequest&, const Model::GetTransitGatewayPrefixListReferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayPrefixListReferencesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayRouteTableAssociationsRequest&, const Model::GetTransitGatewayRouteTableAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayRouteTableAssociationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayRouteTablePropagationsRequest&, const Model::GetTransitGatewayRouteTablePropagationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayRouteTablePropagationsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetVpnConnectionDeviceSampleConfigurationRequest&, const Model::GetVpnConnectionDeviceSampleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVpnConnectionDeviceSampleConfigurationResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetVpnConnectionDeviceTypesRequest&, const Model::GetVpnConnectionDeviceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVpnConnectionDeviceTypesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ImportClientVpnClientCertificateRevocationListRequest&, const Model::ImportClientVpnClientCertificateRevocationListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportClientVpnClientCertificateRevocationListResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ImportImageRequest&, const Model::ImportImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ImportInstanceRequest&, const Model::ImportInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportInstanceResponseReceivedHandler;
@@ -3765,9 +3775,9 @@ namespace Model
         /**
          * <p>Attaches a virtual private gateway to a VPC. You can attach one virtual
          * private gateway to one VPC at a time.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web
+         * Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway">AWS
          * API Reference</a></p>
          */
@@ -3776,9 +3786,9 @@ namespace Model
         /**
          * <p>Attaches a virtual private gateway to a VPC. You can attach one virtual
          * private gateway to one VPC at a time.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web
+         * Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway">AWS
          * API Reference</a></p>
          *
@@ -3789,9 +3799,9 @@ namespace Model
         /**
          * <p>Attaches a virtual private gateway to a VPC. You can attach one virtual
          * private gateway to one VPC at a time.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web
+         * Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway">AWS
          * API Reference</a></p>
          *
@@ -3803,7 +3813,7 @@ namespace Model
          * <p>Adds an ingress authorization rule to a Client VPN endpoint. Ingress
          * authorization rules act as firewall rules that grant access to networks. You
          * must configure ingress authorization rules to enable clients to access resources
-         * in AWS or on-premises networks.</p><p><h3>See Also:</h3>   <a
+         * in Amazon Web Services or on-premises networks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeClientVpnIngress">AWS
          * API Reference</a></p>
          */
@@ -3813,7 +3823,7 @@ namespace Model
          * <p>Adds an ingress authorization rule to a Client VPN endpoint. Ingress
          * authorization rules act as firewall rules that grant access to networks. You
          * must configure ingress authorization rules to enable clients to access resources
-         * in AWS or on-premises networks.</p><p><h3>See Also:</h3>   <a
+         * in Amazon Web Services or on-premises networks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeClientVpnIngress">AWS
          * API Reference</a></p>
          *
@@ -3825,7 +3835,7 @@ namespace Model
          * <p>Adds an ingress authorization rule to a Client VPN endpoint. Ingress
          * authorization rules act as firewall rules that grant access to networks. You
          * must configure ingress authorization rules to enable clients to access resources
-         * in AWS or on-premises networks.</p><p><h3>See Also:</h3>   <a
+         * in Amazon Web Services or on-premises networks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeClientVpnIngress">AWS
          * API Reference</a></p>
          *
@@ -4720,56 +4730,58 @@ namespace Model
         virtual void CreateClientVpnRouteAsync(const Model::CreateClientVpnRouteRequest& request, const CreateClientVpnRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides information to AWS about your VPN customer gateway device. The
-         * customer gateway is the appliance at your end of the VPN connection. (The device
-         * on the AWS side of the VPN connection is the virtual private gateway.) You must
-         * provide the internet-routable IP address of the customer gateway's external
-         * interface. The IP address must be static and can be behind a device performing
-         * network address translation (NAT).</p> <p>For devices that use Border Gateway
-         * Protocol (BGP), you can also provide the device's BGP Autonomous System Number
-         * (ASN). You can use an existing ASN assigned to your network. If you don't have
-         * an ASN already, you can use a private ASN (in the 64512 - 65534 range).</p>
-         *  <p>Amazon EC2 supports all 4-byte ASN numbers in the range of 1 -
-         * 2147483647, with the exception of the following:</p> <ul> <li> <p>7224 -
-         * reserved in the <code>us-east-1</code> Region</p> </li> <li> <p>9059 - reserved
-         * in the <code>eu-west-1</code> Region</p> </li> <li> <p>17943 - reserved in the
-         * <code>ap-southeast-1</code> Region</p> </li> <li> <p>10124 - reserved in the
-         * <code>ap-northeast-1</code> Region</p> </li> </ul>  <p>For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
-         *  <p>To create more than one customer gateway with the same VPN type,
-         * IP address, and BGP ASN, specify a unique device name for each customer gateway.
-         * Identical requests return information about the existing customer gateway and do
-         * not create new customer gateways.</p> <p><h3>See Also:</h3>   <a
+         * <p>Provides information to Amazon Web Services about your VPN customer gateway
+         * device. The customer gateway is the appliance at your end of the VPN connection.
+         * (The device on the Amazon Web Services side of the VPN connection is the virtual
+         * private gateway.) You must provide the internet-routable IP address of the
+         * customer gateway's external interface. The IP address must be static and can be
+         * behind a device performing network address translation (NAT).</p> <p>For devices
+         * that use Border Gateway Protocol (BGP), you can also provide the device's BGP
+         * Autonomous System Number (ASN). You can use an existing ASN assigned to your
+         * network. If you don't have an ASN already, you can use a private ASN (in the
+         * 64512 - 65534 range).</p>  <p>Amazon EC2 supports all 4-byte ASN numbers
+         * in the range of 1 - 2147483647, with the exception of the following:</p> <ul>
+         * <li> <p>7224 - reserved in the <code>us-east-1</code> Region</p> </li> <li>
+         * <p>9059 - reserved in the <code>eu-west-1</code> Region</p> </li> <li> <p>17943
+         * - reserved in the <code>ap-southeast-1</code> Region</p> </li> <li> <p>10124 -
+         * reserved in the <code>ap-northeast-1</code> Region</p> </li> </ul> 
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web
+         * Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p>  <p>To create more than one customer gateway with
+         * the same VPN type, IP address, and BGP ASN, specify a unique device name for
+         * each customer gateway. Identical requests return information about the existing
+         * customer gateway and do not create new customer gateways.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateCustomerGatewayOutcome CreateCustomerGateway(const Model::CreateCustomerGatewayRequest& request) const;
 
         /**
-         * <p>Provides information to AWS about your VPN customer gateway device. The
-         * customer gateway is the appliance at your end of the VPN connection. (The device
-         * on the AWS side of the VPN connection is the virtual private gateway.) You must
-         * provide the internet-routable IP address of the customer gateway's external
-         * interface. The IP address must be static and can be behind a device performing
-         * network address translation (NAT).</p> <p>For devices that use Border Gateway
-         * Protocol (BGP), you can also provide the device's BGP Autonomous System Number
-         * (ASN). You can use an existing ASN assigned to your network. If you don't have
-         * an ASN already, you can use a private ASN (in the 64512 - 65534 range).</p>
-         *  <p>Amazon EC2 supports all 4-byte ASN numbers in the range of 1 -
-         * 2147483647, with the exception of the following:</p> <ul> <li> <p>7224 -
-         * reserved in the <code>us-east-1</code> Region</p> </li> <li> <p>9059 - reserved
-         * in the <code>eu-west-1</code> Region</p> </li> <li> <p>17943 - reserved in the
-         * <code>ap-southeast-1</code> Region</p> </li> <li> <p>10124 - reserved in the
-         * <code>ap-northeast-1</code> Region</p> </li> </ul>  <p>For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
-         *  <p>To create more than one customer gateway with the same VPN type,
-         * IP address, and BGP ASN, specify a unique device name for each customer gateway.
-         * Identical requests return information about the existing customer gateway and do
-         * not create new customer gateways.</p> <p><h3>See Also:</h3>   <a
+         * <p>Provides information to Amazon Web Services about your VPN customer gateway
+         * device. The customer gateway is the appliance at your end of the VPN connection.
+         * (The device on the Amazon Web Services side of the VPN connection is the virtual
+         * private gateway.) You must provide the internet-routable IP address of the
+         * customer gateway's external interface. The IP address must be static and can be
+         * behind a device performing network address translation (NAT).</p> <p>For devices
+         * that use Border Gateway Protocol (BGP), you can also provide the device's BGP
+         * Autonomous System Number (ASN). You can use an existing ASN assigned to your
+         * network. If you don't have an ASN already, you can use a private ASN (in the
+         * 64512 - 65534 range).</p>  <p>Amazon EC2 supports all 4-byte ASN numbers
+         * in the range of 1 - 2147483647, with the exception of the following:</p> <ul>
+         * <li> <p>7224 - reserved in the <code>us-east-1</code> Region</p> </li> <li>
+         * <p>9059 - reserved in the <code>eu-west-1</code> Region</p> </li> <li> <p>17943
+         * - reserved in the <code>ap-southeast-1</code> Region</p> </li> <li> <p>10124 -
+         * reserved in the <code>ap-northeast-1</code> Region</p> </li> </ul> 
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web
+         * Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p>  <p>To create more than one customer gateway with
+         * the same VPN type, IP address, and BGP ASN, specify a unique device name for
+         * each customer gateway. Identical requests return information about the existing
+         * customer gateway and do not create new customer gateways.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">AWS
          * API Reference</a></p>
          *
@@ -4778,28 +4790,29 @@ namespace Model
         virtual Model::CreateCustomerGatewayOutcomeCallable CreateCustomerGatewayCallable(const Model::CreateCustomerGatewayRequest& request) const;
 
         /**
-         * <p>Provides information to AWS about your VPN customer gateway device. The
-         * customer gateway is the appliance at your end of the VPN connection. (The device
-         * on the AWS side of the VPN connection is the virtual private gateway.) You must
-         * provide the internet-routable IP address of the customer gateway's external
-         * interface. The IP address must be static and can be behind a device performing
-         * network address translation (NAT).</p> <p>For devices that use Border Gateway
-         * Protocol (BGP), you can also provide the device's BGP Autonomous System Number
-         * (ASN). You can use an existing ASN assigned to your network. If you don't have
-         * an ASN already, you can use a private ASN (in the 64512 - 65534 range).</p>
-         *  <p>Amazon EC2 supports all 4-byte ASN numbers in the range of 1 -
-         * 2147483647, with the exception of the following:</p> <ul> <li> <p>7224 -
-         * reserved in the <code>us-east-1</code> Region</p> </li> <li> <p>9059 - reserved
-         * in the <code>eu-west-1</code> Region</p> </li> <li> <p>17943 - reserved in the
-         * <code>ap-southeast-1</code> Region</p> </li> <li> <p>10124 - reserved in the
-         * <code>ap-northeast-1</code> Region</p> </li> </ul>  <p>For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
-         *  <p>To create more than one customer gateway with the same VPN type,
-         * IP address, and BGP ASN, specify a unique device name for each customer gateway.
-         * Identical requests return information about the existing customer gateway and do
-         * not create new customer gateways.</p> <p><h3>See Also:</h3>   <a
+         * <p>Provides information to Amazon Web Services about your VPN customer gateway
+         * device. The customer gateway is the appliance at your end of the VPN connection.
+         * (The device on the Amazon Web Services side of the VPN connection is the virtual
+         * private gateway.) You must provide the internet-routable IP address of the
+         * customer gateway's external interface. The IP address must be static and can be
+         * behind a device performing network address translation (NAT).</p> <p>For devices
+         * that use Border Gateway Protocol (BGP), you can also provide the device's BGP
+         * Autonomous System Number (ASN). You can use an existing ASN assigned to your
+         * network. If you don't have an ASN already, you can use a private ASN (in the
+         * 64512 - 65534 range).</p>  <p>Amazon EC2 supports all 4-byte ASN numbers
+         * in the range of 1 - 2147483647, with the exception of the following:</p> <ul>
+         * <li> <p>7224 - reserved in the <code>us-east-1</code> Region</p> </li> <li>
+         * <p>9059 - reserved in the <code>eu-west-1</code> Region</p> </li> <li> <p>17943
+         * - reserved in the <code>ap-southeast-1</code> Region</p> </li> <li> <p>10124 -
+         * reserved in the <code>ap-northeast-1</code> Region</p> </li> </ul> 
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web
+         * Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p>  <p>To create more than one customer gateway with
+         * the same VPN type, IP address, and BGP ASN, specify a unique device name for
+         * each customer gateway. Identical requests return information about the existing
+         * customer gateway and do not create new customer gateways.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">AWS
          * API Reference</a></p>
          *
@@ -7753,9 +7766,9 @@ namespace Model
          * returned from this call.</p> <p>This is an idempotent operation. If you perform
          * the operation more than once, Amazon EC2 doesn't return an error.</p> <p>For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web
+         * Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection">AWS
          * API Reference</a></p>
          */
@@ -7774,9 +7787,9 @@ namespace Model
          * returned from this call.</p> <p>This is an idempotent operation. If you perform
          * the operation more than once, Amazon EC2 doesn't return an error.</p> <p>For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web
+         * Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection">AWS
          * API Reference</a></p>
          *
@@ -7797,9 +7810,9 @@ namespace Model
          * returned from this call.</p> <p>This is an idempotent operation. If you perform
          * the operation more than once, Amazon EC2 doesn't return an error.</p> <p>For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web
+         * Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection">AWS
          * API Reference</a></p>
          *
@@ -7812,9 +7825,9 @@ namespace Model
          * virtual private gateway and a VPN customer gateway. The static route allows
          * traffic to be routed from the virtual private gateway to the VPN customer
          * gateway.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web
+         * Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute">AWS
          * API Reference</a></p>
          */
@@ -7825,9 +7838,9 @@ namespace Model
          * virtual private gateway and a VPN customer gateway. The static route allows
          * traffic to be routed from the virtual private gateway to the VPN customer
          * gateway.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web
+         * Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute">AWS
          * API Reference</a></p>
          *
@@ -7840,9 +7853,9 @@ namespace Model
          * virtual private gateway and a VPN customer gateway. The static route allows
          * traffic to be routed from the virtual private gateway to the VPN customer
          * gateway.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web
+         * Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute">AWS
          * API Reference</a></p>
          *
@@ -7854,9 +7867,9 @@ namespace Model
          * <p>Creates a virtual private gateway. A virtual private gateway is the endpoint
          * on the VPC side of your VPN connection. You can create a virtual private gateway
          * before creating the VPC itself.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web
+         * Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway">AWS
          * API Reference</a></p>
          */
@@ -7866,9 +7879,9 @@ namespace Model
          * <p>Creates a virtual private gateway. A virtual private gateway is the endpoint
          * on the VPC side of your VPN connection. You can create a virtual private gateway
          * before creating the VPC itself.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web
+         * Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway">AWS
          * API Reference</a></p>
          *
@@ -7880,9 +7893,9 @@ namespace Model
          * <p>Creates a virtual private gateway. A virtual private gateway is the endpoint
          * on the VPC side of your VPN connection. You can create a virtual private gateway
          * before creating the VPC itself.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web
+         * Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway">AWS
          * API Reference</a></p>
          *
@@ -9593,10 +9606,10 @@ namespace Model
          * keys, without needing to delete the VPC or virtual private gateway. If you
          * create a new VPN connection, you must reconfigure the customer gateway device
          * using the new configuration information returned with the new VPN connection
-         * ID.</p> <p>For certificate-based authentication, delete all AWS Certificate
-         * Manager (ACM) private certificates used for the AWS-side tunnel endpoints for
-         * the VPN connection before deleting the VPN connection.</p><p><h3>See Also:</h3> 
-         * <a
+         * ID.</p> <p>For certificate-based authentication, delete all Certificate Manager
+         * (ACM) private certificates used for the Amazon Web Services-side tunnel
+         * endpoints for the VPN connection before deleting the VPN
+         * connection.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnection">AWS
          * API Reference</a></p>
          */
@@ -9611,10 +9624,10 @@ namespace Model
          * keys, without needing to delete the VPC or virtual private gateway. If you
          * create a new VPN connection, you must reconfigure the customer gateway device
          * using the new configuration information returned with the new VPN connection
-         * ID.</p> <p>For certificate-based authentication, delete all AWS Certificate
-         * Manager (ACM) private certificates used for the AWS-side tunnel endpoints for
-         * the VPN connection before deleting the VPN connection.</p><p><h3>See Also:</h3> 
-         * <a
+         * ID.</p> <p>For certificate-based authentication, delete all Certificate Manager
+         * (ACM) private certificates used for the Amazon Web Services-side tunnel
+         * endpoints for the VPN connection before deleting the VPN
+         * connection.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnection">AWS
          * API Reference</a></p>
          *
@@ -9631,10 +9644,10 @@ namespace Model
          * keys, without needing to delete the VPC or virtual private gateway. If you
          * create a new VPN connection, you must reconfigure the customer gateway device
          * using the new configuration information returned with the new VPN connection
-         * ID.</p> <p>For certificate-based authentication, delete all AWS Certificate
-         * Manager (ACM) private certificates used for the AWS-side tunnel endpoints for
-         * the VPN connection before deleting the VPN connection.</p><p><h3>See Also:</h3> 
-         * <a
+         * ID.</p> <p>For certificate-based authentication, delete all Certificate Manager
+         * (ACM) private certificates used for the Amazon Web Services-side tunnel
+         * endpoints for the VPN connection before deleting the VPN
+         * connection.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnection">AWS
          * API Reference</a></p>
          *
@@ -10539,9 +10552,9 @@ namespace Model
         /**
          * <p>Describes one or more of your VPN customer gateways.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web
+         * Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">AWS
          * API Reference</a></p>
          */
@@ -10550,9 +10563,9 @@ namespace Model
         /**
          * <p>Describes one or more of your VPN customer gateways.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web
+         * Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">AWS
          * API Reference</a></p>
          *
@@ -10563,9 +10576,9 @@ namespace Model
         /**
          * <p>Describes one or more of your VPN customer gateways.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web
+         * Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">AWS
          * API Reference</a></p>
          *
@@ -14691,9 +14704,9 @@ namespace Model
 
         /**
          * <p>Describes one or more of your VPN connections.</p> <p>For more information,
-         * see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+         * Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">AWS
          * API Reference</a></p>
          */
@@ -14701,9 +14714,9 @@ namespace Model
 
         /**
          * <p>Describes one or more of your VPN connections.</p> <p>For more information,
-         * see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+         * Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">AWS
          * API Reference</a></p>
          *
@@ -14713,9 +14726,9 @@ namespace Model
 
         /**
          * <p>Describes one or more of your VPN connections.</p> <p>For more information,
-         * see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+         * Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">AWS
          * API Reference</a></p>
          *
@@ -14726,9 +14739,9 @@ namespace Model
         /**
          * <p>Describes one or more of your virtual private gateways.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web
+         * Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">AWS
          * API Reference</a></p>
          */
@@ -14737,9 +14750,9 @@ namespace Model
         /**
          * <p>Describes one or more of your virtual private gateways.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web
+         * Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">AWS
          * API Reference</a></p>
          *
@@ -14750,9 +14763,9 @@ namespace Model
         /**
          * <p>Describes one or more of your virtual private gateways.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web
+         * Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">AWS
          * API Reference</a></p>
          *
@@ -17031,6 +17044,77 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetTransitGatewayRouteTablePropagationsAsync(const Model::GetTransitGatewayRouteTablePropagationsRequest& request, const GetTransitGatewayRouteTablePropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Download an AWS-provided sample configuration file to be used with the
+         * customer gateway device specified for your Site-to-Site VPN
+         * connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnConnectionDeviceSampleConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetVpnConnectionDeviceSampleConfigurationOutcome GetVpnConnectionDeviceSampleConfiguration(const Model::GetVpnConnectionDeviceSampleConfigurationRequest& request) const;
+
+        /**
+         * <p>Download an AWS-provided sample configuration file to be used with the
+         * customer gateway device specified for your Site-to-Site VPN
+         * connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnConnectionDeviceSampleConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetVpnConnectionDeviceSampleConfigurationOutcomeCallable GetVpnConnectionDeviceSampleConfigurationCallable(const Model::GetVpnConnectionDeviceSampleConfigurationRequest& request) const;
+
+        /**
+         * <p>Download an AWS-provided sample configuration file to be used with the
+         * customer gateway device specified for your Site-to-Site VPN
+         * connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnConnectionDeviceSampleConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetVpnConnectionDeviceSampleConfigurationAsync(const Model::GetVpnConnectionDeviceSampleConfigurationRequest& request, const GetVpnConnectionDeviceSampleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Obtain a list of customer gateway devices for which sample configuration
+         * files can be provided. The request has no additional parameters. You can also
+         * see the list of device types with sample configuration files available under <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html">Your customer
+         * gateway device</a> in the <i>Amazon Web Services Site-to-Site VPN User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnConnectionDeviceTypes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetVpnConnectionDeviceTypesOutcome GetVpnConnectionDeviceTypes(const Model::GetVpnConnectionDeviceTypesRequest& request) const;
+
+        /**
+         * <p>Obtain a list of customer gateway devices for which sample configuration
+         * files can be provided. The request has no additional parameters. You can also
+         * see the list of device types with sample configuration files available under <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html">Your customer
+         * gateway device</a> in the <i>Amazon Web Services Site-to-Site VPN User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnConnectionDeviceTypes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetVpnConnectionDeviceTypesOutcomeCallable GetVpnConnectionDeviceTypesCallable(const Model::GetVpnConnectionDeviceTypesRequest& request) const;
+
+        /**
+         * <p>Obtain a list of customer gateway devices for which sample configuration
+         * files can be provided. The request has no additional parameters. You can also
+         * see the list of device types with sample configuration files available under <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html">Your customer
+         * gateway device</a> in the <i>Amazon Web Services Site-to-Site VPN User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnConnectionDeviceTypes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetVpnConnectionDeviceTypesAsync(const Model::GetVpnConnectionDeviceTypesRequest& request, const GetVpnConnectionDeviceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Uploads a client certificate revocation list to the specified Client VPN
@@ -19361,32 +19445,33 @@ namespace Model
         virtual void ModifyVpcTenancyAsync(const Model::ModifyVpcTenancyRequest& request, const ModifyVpcTenancyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the customer gateway or the target gateway of an AWS Site-to-Site
-         * VPN connection. To modify the target gateway, the following migration options
-         * are available:</p> <ul> <li> <p>An existing virtual private gateway to a new
-         * virtual private gateway</p> </li> <li> <p>An existing virtual private gateway to
-         * a transit gateway</p> </li> <li> <p>An existing transit gateway to a new transit
-         * gateway</p> </li> <li> <p>An existing transit gateway to a virtual private
-         * gateway</p> </li> </ul> <p>Before you perform the migration to the new gateway,
-         * you must configure the new gateway. Use <a>CreateVpnGateway</a> to create a
-         * virtual private gateway, or <a>CreateTransitGateway</a> to create a transit
-         * gateway.</p> <p>This step is required when you migrate from a virtual private
-         * gateway with static routes to a transit gateway. </p> <p>You must delete the
-         * static routes before you migrate to the new gateway.</p> <p>Keep a copy of the
-         * static route before you delete it. You will need to add back these routes to the
-         * transit gateway after the VPN connection migration is complete.</p> <p>After you
-         * migrate to the new gateway, you might need to modify your VPC route table. Use
-         * <a>CreateRoute</a> and <a>DeleteRoute</a> to make the changes described in <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/modify-vpn-target.html#step-update-routing">VPN
-         * Gateway Target Modification Required VPC Route Table Updates</a> in the <i>AWS
-         * Site-to-Site VPN User Guide</i>.</p> <p> When the new gateway is a transit
-         * gateway, modify the transit gateway route table to allow traffic between the VPC
-         * and the AWS Site-to-Site VPN connection. Use <a>CreateTransitGatewayRoute</a> to
-         * add the routes.</p> <p> If you deleted VPN static routes, you must add the
-         * static routes to the transit gateway route table.</p> <p>After you perform this
-         * operation, the AWS VPN endpoint's IP addresses on the AWS side and the tunnel
-         * options remain intact. Your AWS Site-to-Site VPN connection will be temporarily
-         * unavailable for a brief period while we provision the new
+         * <p>Modifies the customer gateway or the target gateway of an Amazon Web Services
+         * Site-to-Site VPN connection. To modify the target gateway, the following
+         * migration options are available:</p> <ul> <li> <p>An existing virtual private
+         * gateway to a new virtual private gateway</p> </li> <li> <p>An existing virtual
+         * private gateway to a transit gateway</p> </li> <li> <p>An existing transit
+         * gateway to a new transit gateway</p> </li> <li> <p>An existing transit gateway
+         * to a virtual private gateway</p> </li> </ul> <p>Before you perform the migration
+         * to the new gateway, you must configure the new gateway. Use
+         * <a>CreateVpnGateway</a> to create a virtual private gateway, or
+         * <a>CreateTransitGateway</a> to create a transit gateway.</p> <p>This step is
+         * required when you migrate from a virtual private gateway with static routes to a
+         * transit gateway. </p> <p>You must delete the static routes before you migrate to
+         * the new gateway.</p> <p>Keep a copy of the static route before you delete it.
+         * You will need to add back these routes to the transit gateway after the VPN
+         * connection migration is complete.</p> <p>After you migrate to the new gateway,
+         * you might need to modify your VPC route table. Use <a>CreateRoute</a> and
+         * <a>DeleteRoute</a> to make the changes described in <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/modify-vpn-target.html#step-update-routing">Update
+         * VPC route tables</a> in the <i>Amazon Web Services Site-to-Site VPN User
+         * Guide</i>.</p> <p>When the new gateway is a transit gateway, modify the transit
+         * gateway route table to allow traffic between the VPC and the Amazon Web Services
+         * Site-to-Site VPN connection. Use <a>CreateTransitGatewayRoute</a> to add the
+         * routes.</p> <p> If you deleted VPN static routes, you must add the static routes
+         * to the transit gateway route table.</p> <p>After you perform this operation, the
+         * VPN endpoint's IP addresses on the Amazon Web Services side and the tunnel
+         * options remain intact. Your Amazon Web Services Site-to-Site VPN connection will
+         * be temporarily unavailable for a brief period while we provision the new
          * endpoints.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnection">AWS
          * API Reference</a></p>
@@ -19394,32 +19479,33 @@ namespace Model
         virtual Model::ModifyVpnConnectionOutcome ModifyVpnConnection(const Model::ModifyVpnConnectionRequest& request) const;
 
         /**
-         * <p>Modifies the customer gateway or the target gateway of an AWS Site-to-Site
-         * VPN connection. To modify the target gateway, the following migration options
-         * are available:</p> <ul> <li> <p>An existing virtual private gateway to a new
-         * virtual private gateway</p> </li> <li> <p>An existing virtual private gateway to
-         * a transit gateway</p> </li> <li> <p>An existing transit gateway to a new transit
-         * gateway</p> </li> <li> <p>An existing transit gateway to a virtual private
-         * gateway</p> </li> </ul> <p>Before you perform the migration to the new gateway,
-         * you must configure the new gateway. Use <a>CreateVpnGateway</a> to create a
-         * virtual private gateway, or <a>CreateTransitGateway</a> to create a transit
-         * gateway.</p> <p>This step is required when you migrate from a virtual private
-         * gateway with static routes to a transit gateway. </p> <p>You must delete the
-         * static routes before you migrate to the new gateway.</p> <p>Keep a copy of the
-         * static route before you delete it. You will need to add back these routes to the
-         * transit gateway after the VPN connection migration is complete.</p> <p>After you
-         * migrate to the new gateway, you might need to modify your VPC route table. Use
-         * <a>CreateRoute</a> and <a>DeleteRoute</a> to make the changes described in <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/modify-vpn-target.html#step-update-routing">VPN
-         * Gateway Target Modification Required VPC Route Table Updates</a> in the <i>AWS
-         * Site-to-Site VPN User Guide</i>.</p> <p> When the new gateway is a transit
-         * gateway, modify the transit gateway route table to allow traffic between the VPC
-         * and the AWS Site-to-Site VPN connection. Use <a>CreateTransitGatewayRoute</a> to
-         * add the routes.</p> <p> If you deleted VPN static routes, you must add the
-         * static routes to the transit gateway route table.</p> <p>After you perform this
-         * operation, the AWS VPN endpoint's IP addresses on the AWS side and the tunnel
-         * options remain intact. Your AWS Site-to-Site VPN connection will be temporarily
-         * unavailable for a brief period while we provision the new
+         * <p>Modifies the customer gateway or the target gateway of an Amazon Web Services
+         * Site-to-Site VPN connection. To modify the target gateway, the following
+         * migration options are available:</p> <ul> <li> <p>An existing virtual private
+         * gateway to a new virtual private gateway</p> </li> <li> <p>An existing virtual
+         * private gateway to a transit gateway</p> </li> <li> <p>An existing transit
+         * gateway to a new transit gateway</p> </li> <li> <p>An existing transit gateway
+         * to a virtual private gateway</p> </li> </ul> <p>Before you perform the migration
+         * to the new gateway, you must configure the new gateway. Use
+         * <a>CreateVpnGateway</a> to create a virtual private gateway, or
+         * <a>CreateTransitGateway</a> to create a transit gateway.</p> <p>This step is
+         * required when you migrate from a virtual private gateway with static routes to a
+         * transit gateway. </p> <p>You must delete the static routes before you migrate to
+         * the new gateway.</p> <p>Keep a copy of the static route before you delete it.
+         * You will need to add back these routes to the transit gateway after the VPN
+         * connection migration is complete.</p> <p>After you migrate to the new gateway,
+         * you might need to modify your VPC route table. Use <a>CreateRoute</a> and
+         * <a>DeleteRoute</a> to make the changes described in <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/modify-vpn-target.html#step-update-routing">Update
+         * VPC route tables</a> in the <i>Amazon Web Services Site-to-Site VPN User
+         * Guide</i>.</p> <p>When the new gateway is a transit gateway, modify the transit
+         * gateway route table to allow traffic between the VPC and the Amazon Web Services
+         * Site-to-Site VPN connection. Use <a>CreateTransitGatewayRoute</a> to add the
+         * routes.</p> <p> If you deleted VPN static routes, you must add the static routes
+         * to the transit gateway route table.</p> <p>After you perform this operation, the
+         * VPN endpoint's IP addresses on the Amazon Web Services side and the tunnel
+         * options remain intact. Your Amazon Web Services Site-to-Site VPN connection will
+         * be temporarily unavailable for a brief period while we provision the new
          * endpoints.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnection">AWS
          * API Reference</a></p>
@@ -19429,32 +19515,33 @@ namespace Model
         virtual Model::ModifyVpnConnectionOutcomeCallable ModifyVpnConnectionCallable(const Model::ModifyVpnConnectionRequest& request) const;
 
         /**
-         * <p>Modifies the customer gateway or the target gateway of an AWS Site-to-Site
-         * VPN connection. To modify the target gateway, the following migration options
-         * are available:</p> <ul> <li> <p>An existing virtual private gateway to a new
-         * virtual private gateway</p> </li> <li> <p>An existing virtual private gateway to
-         * a transit gateway</p> </li> <li> <p>An existing transit gateway to a new transit
-         * gateway</p> </li> <li> <p>An existing transit gateway to a virtual private
-         * gateway</p> </li> </ul> <p>Before you perform the migration to the new gateway,
-         * you must configure the new gateway. Use <a>CreateVpnGateway</a> to create a
-         * virtual private gateway, or <a>CreateTransitGateway</a> to create a transit
-         * gateway.</p> <p>This step is required when you migrate from a virtual private
-         * gateway with static routes to a transit gateway. </p> <p>You must delete the
-         * static routes before you migrate to the new gateway.</p> <p>Keep a copy of the
-         * static route before you delete it. You will need to add back these routes to the
-         * transit gateway after the VPN connection migration is complete.</p> <p>After you
-         * migrate to the new gateway, you might need to modify your VPC route table. Use
-         * <a>CreateRoute</a> and <a>DeleteRoute</a> to make the changes described in <a
-         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/modify-vpn-target.html#step-update-routing">VPN
-         * Gateway Target Modification Required VPC Route Table Updates</a> in the <i>AWS
-         * Site-to-Site VPN User Guide</i>.</p> <p> When the new gateway is a transit
-         * gateway, modify the transit gateway route table to allow traffic between the VPC
-         * and the AWS Site-to-Site VPN connection. Use <a>CreateTransitGatewayRoute</a> to
-         * add the routes.</p> <p> If you deleted VPN static routes, you must add the
-         * static routes to the transit gateway route table.</p> <p>After you perform this
-         * operation, the AWS VPN endpoint's IP addresses on the AWS side and the tunnel
-         * options remain intact. Your AWS Site-to-Site VPN connection will be temporarily
-         * unavailable for a brief period while we provision the new
+         * <p>Modifies the customer gateway or the target gateway of an Amazon Web Services
+         * Site-to-Site VPN connection. To modify the target gateway, the following
+         * migration options are available:</p> <ul> <li> <p>An existing virtual private
+         * gateway to a new virtual private gateway</p> </li> <li> <p>An existing virtual
+         * private gateway to a transit gateway</p> </li> <li> <p>An existing transit
+         * gateway to a new transit gateway</p> </li> <li> <p>An existing transit gateway
+         * to a virtual private gateway</p> </li> </ul> <p>Before you perform the migration
+         * to the new gateway, you must configure the new gateway. Use
+         * <a>CreateVpnGateway</a> to create a virtual private gateway, or
+         * <a>CreateTransitGateway</a> to create a transit gateway.</p> <p>This step is
+         * required when you migrate from a virtual private gateway with static routes to a
+         * transit gateway. </p> <p>You must delete the static routes before you migrate to
+         * the new gateway.</p> <p>Keep a copy of the static route before you delete it.
+         * You will need to add back these routes to the transit gateway after the VPN
+         * connection migration is complete.</p> <p>After you migrate to the new gateway,
+         * you might need to modify your VPC route table. Use <a>CreateRoute</a> and
+         * <a>DeleteRoute</a> to make the changes described in <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/modify-vpn-target.html#step-update-routing">Update
+         * VPC route tables</a> in the <i>Amazon Web Services Site-to-Site VPN User
+         * Guide</i>.</p> <p>When the new gateway is a transit gateway, modify the transit
+         * gateway route table to allow traffic between the VPC and the Amazon Web Services
+         * Site-to-Site VPN connection. Use <a>CreateTransitGatewayRoute</a> to add the
+         * routes.</p> <p> If you deleted VPN static routes, you must add the static routes
+         * to the transit gateway route table.</p> <p>After you perform this operation, the
+         * VPN endpoint's IP addresses on the Amazon Web Services side and the tunnel
+         * options remain intact. Your Amazon Web Services Site-to-Site VPN connection will
+         * be temporarily unavailable for a brief period while we provision the new
          * endpoints.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnection">AWS
          * API Reference</a></p>
@@ -19466,9 +19553,9 @@ namespace Model
         /**
          * <p>Modifies the connection options for your Site-to-Site VPN connection.</p>
          * <p>When you modify the VPN connection options, the VPN endpoint IP addresses on
-         * the AWS side do not change, and the tunnel options do not change. Your VPN
-         * connection will be temporarily unavailable for a brief period while the VPN
-         * connection is updated.</p><p><h3>See Also:</h3>   <a
+         * the Amazon Web Services side do not change, and the tunnel options do not
+         * change. Your VPN connection will be temporarily unavailable for a brief period
+         * while the VPN connection is updated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnectionOptions">AWS
          * API Reference</a></p>
          */
@@ -19477,9 +19564,9 @@ namespace Model
         /**
          * <p>Modifies the connection options for your Site-to-Site VPN connection.</p>
          * <p>When you modify the VPN connection options, the VPN endpoint IP addresses on
-         * the AWS side do not change, and the tunnel options do not change. Your VPN
-         * connection will be temporarily unavailable for a brief period while the VPN
-         * connection is updated.</p><p><h3>See Also:</h3>   <a
+         * the Amazon Web Services side do not change, and the tunnel options do not
+         * change. Your VPN connection will be temporarily unavailable for a brief period
+         * while the VPN connection is updated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnectionOptions">AWS
          * API Reference</a></p>
          *
@@ -19490,9 +19577,9 @@ namespace Model
         /**
          * <p>Modifies the connection options for your Site-to-Site VPN connection.</p>
          * <p>When you modify the VPN connection options, the VPN endpoint IP addresses on
-         * the AWS side do not change, and the tunnel options do not change. Your VPN
-         * connection will be temporarily unavailable for a brief period while the VPN
-         * connection is updated.</p><p><h3>See Also:</h3>   <a
+         * the Amazon Web Services side do not change, and the tunnel options do not
+         * change. Your VPN connection will be temporarily unavailable for a brief period
+         * while the VPN connection is updated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnectionOptions">AWS
          * API Reference</a></p>
          *
@@ -19526,24 +19613,26 @@ namespace Model
         virtual void ModifyVpnTunnelCertificateAsync(const Model::ModifyVpnTunnelCertificateRequest& request, const ModifyVpnTunnelCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the options for a VPN tunnel in an AWS Site-to-Site VPN connection.
-         * You can modify multiple options for a tunnel in a single request, but you can
-         * only modify one tunnel at a time. For more information, see <a
+         * <p>Modifies the options for a VPN tunnel in an Amazon Web Services Site-to-Site
+         * VPN connection. You can modify multiple options for a tunnel in a single
+         * request, but you can only modify one tunnel at a time. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html">Site-to-Site
-         * VPN Tunnel Options for Your Site-to-Site VPN Connection</a> in the <i>AWS
-         * Site-to-Site VPN User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * VPN tunnel options for your Site-to-Site VPN connection</a> in the <i>Amazon Web
+         * Services Site-to-Site VPN User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelOptions">AWS
          * API Reference</a></p>
          */
         virtual Model::ModifyVpnTunnelOptionsOutcome ModifyVpnTunnelOptions(const Model::ModifyVpnTunnelOptionsRequest& request) const;
 
         /**
-         * <p>Modifies the options for a VPN tunnel in an AWS Site-to-Site VPN connection.
-         * You can modify multiple options for a tunnel in a single request, but you can
-         * only modify one tunnel at a time. For more information, see <a
+         * <p>Modifies the options for a VPN tunnel in an Amazon Web Services Site-to-Site
+         * VPN connection. You can modify multiple options for a tunnel in a single
+         * request, but you can only modify one tunnel at a time. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html">Site-to-Site
-         * VPN Tunnel Options for Your Site-to-Site VPN Connection</a> in the <i>AWS
-         * Site-to-Site VPN User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * VPN tunnel options for your Site-to-Site VPN connection</a> in the <i>Amazon Web
+         * Services Site-to-Site VPN User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelOptions">AWS
          * API Reference</a></p>
          *
@@ -19552,12 +19641,13 @@ namespace Model
         virtual Model::ModifyVpnTunnelOptionsOutcomeCallable ModifyVpnTunnelOptionsCallable(const Model::ModifyVpnTunnelOptionsRequest& request) const;
 
         /**
-         * <p>Modifies the options for a VPN tunnel in an AWS Site-to-Site VPN connection.
-         * You can modify multiple options for a tunnel in a single request, but you can
-         * only modify one tunnel at a time. For more information, see <a
+         * <p>Modifies the options for a VPN tunnel in an Amazon Web Services Site-to-Site
+         * VPN connection. You can modify multiple options for a tunnel in a single
+         * request, but you can only modify one tunnel at a time. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html">Site-to-Site
-         * VPN Tunnel Options for Your Site-to-Site VPN Connection</a> in the <i>AWS
-         * Site-to-Site VPN User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * VPN tunnel options for your Site-to-Site VPN connection</a> in the <i>Amazon Web
+         * Services Site-to-Site VPN User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelOptions">AWS
          * API Reference</a></p>
          *
@@ -22712,6 +22802,8 @@ namespace Model
         void GetTransitGatewayPrefixListReferencesAsyncHelper(const Model::GetTransitGatewayPrefixListReferencesRequest& request, const GetTransitGatewayPrefixListReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayRouteTableAssociationsAsyncHelper(const Model::GetTransitGatewayRouteTableAssociationsRequest& request, const GetTransitGatewayRouteTableAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayRouteTablePropagationsAsyncHelper(const Model::GetTransitGatewayRouteTablePropagationsRequest& request, const GetTransitGatewayRouteTablePropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetVpnConnectionDeviceSampleConfigurationAsyncHelper(const Model::GetVpnConnectionDeviceSampleConfigurationRequest& request, const GetVpnConnectionDeviceSampleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetVpnConnectionDeviceTypesAsyncHelper(const Model::GetVpnConnectionDeviceTypesRequest& request, const GetVpnConnectionDeviceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportClientVpnClientCertificateRevocationListAsyncHelper(const Model::ImportClientVpnClientCertificateRevocationListRequest& request, const ImportClientVpnClientCertificateRevocationListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportImageAsyncHelper(const Model::ImportImageRequest& request, const ImportImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportInstanceAsyncHelper(const Model::ImportInstanceRequest& request, const ImportInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

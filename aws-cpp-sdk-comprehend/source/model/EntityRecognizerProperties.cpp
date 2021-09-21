@@ -34,7 +34,8 @@ EntityRecognizerProperties::EntityRecognizerProperties() :
     m_dataAccessRoleArnHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
-    m_modelKmsKeyIdHasBeenSet(false)
+    m_modelKmsKeyIdHasBeenSet(false),
+    m_versionNameHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ EntityRecognizerProperties::EntityRecognizerProperties(JsonView jsonValue) :
     m_dataAccessRoleArnHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
-    m_modelKmsKeyIdHasBeenSet(false)
+    m_modelKmsKeyIdHasBeenSet(false),
+    m_versionNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -159,6 +161,13 @@ EntityRecognizerProperties& EntityRecognizerProperties::operator =(JsonView json
     m_modelKmsKeyIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VersionName"))
+  {
+    m_versionName = jsonValue.GetString("VersionName");
+
+    m_versionNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -241,6 +250,12 @@ JsonValue EntityRecognizerProperties::Jsonize() const
   if(m_modelKmsKeyIdHasBeenSet)
   {
    payload.WithString("ModelKmsKeyId", m_modelKmsKeyId);
+
+  }
+
+  if(m_versionNameHasBeenSet)
+  {
+   payload.WithString("VersionName", m_versionName);
 
   }
 

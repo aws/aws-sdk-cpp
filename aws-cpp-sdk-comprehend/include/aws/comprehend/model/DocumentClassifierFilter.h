@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/comprehend/model/ModelStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -69,6 +70,47 @@ namespace Model
      * <p>Filters the list of classifiers based on status.</p>
      */
     inline DocumentClassifierFilter& WithStatus(ModelStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The name that you assigned to the document classifier</p>
+     */
+    inline const Aws::String& GetDocumentClassifierName() const{ return m_documentClassifierName; }
+
+    /**
+     * <p>The name that you assigned to the document classifier</p>
+     */
+    inline bool DocumentClassifierNameHasBeenSet() const { return m_documentClassifierNameHasBeenSet; }
+
+    /**
+     * <p>The name that you assigned to the document classifier</p>
+     */
+    inline void SetDocumentClassifierName(const Aws::String& value) { m_documentClassifierNameHasBeenSet = true; m_documentClassifierName = value; }
+
+    /**
+     * <p>The name that you assigned to the document classifier</p>
+     */
+    inline void SetDocumentClassifierName(Aws::String&& value) { m_documentClassifierNameHasBeenSet = true; m_documentClassifierName = std::move(value); }
+
+    /**
+     * <p>The name that you assigned to the document classifier</p>
+     */
+    inline void SetDocumentClassifierName(const char* value) { m_documentClassifierNameHasBeenSet = true; m_documentClassifierName.assign(value); }
+
+    /**
+     * <p>The name that you assigned to the document classifier</p>
+     */
+    inline DocumentClassifierFilter& WithDocumentClassifierName(const Aws::String& value) { SetDocumentClassifierName(value); return *this;}
+
+    /**
+     * <p>The name that you assigned to the document classifier</p>
+     */
+    inline DocumentClassifierFilter& WithDocumentClassifierName(Aws::String&& value) { SetDocumentClassifierName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name that you assigned to the document classifier</p>
+     */
+    inline DocumentClassifierFilter& WithDocumentClassifierName(const char* value) { SetDocumentClassifierName(value); return *this;}
 
 
     /**
@@ -166,6 +208,9 @@ namespace Model
 
     ModelStatus m_status;
     bool m_statusHasBeenSet;
+
+    Aws::String m_documentClassifierName;
+    bool m_documentClassifierNameHasBeenSet;
 
     Aws::Utils::DateTime m_submitTimeBefore;
     bool m_submitTimeBeforeHasBeenSet;
