@@ -93,6 +93,11 @@ namespace Aws
                 PooledThreadExecutor(PooledThreadExecutor&&) = delete;
                 PooledThreadExecutor& operator =(PooledThreadExecutor&&) = delete;
 
+                /**
+                * Call to ensure the threadpool can be safely destroyed. It blocks until all threads finished.
+                */
+                void WaitUntilStopped();
+
             protected:
                 bool SubmitToThread(std::function<void()>&&) override;
 
@@ -103,6 +108,7 @@ namespace Aws
                 Aws::Vector<ThreadTask*> m_threadTaskHandles;
                 size_t m_poolSize;
                 OverflowPolicy m_overflowPolicy;
+                bool m_stopped{false};
 
                 /**
                  * Once you call this, you are responsible for freeing the memory pointed to by task.
