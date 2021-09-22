@@ -89,6 +89,15 @@ PooledThreadExecutor::PooledThreadExecutor(size_t poolSize, OverflowPolicy overf
 
 PooledThreadExecutor::~PooledThreadExecutor()
 {
+    WaitUntilStopped();
+}
+
+void PooledThreadExecutor::WaitUntilStopped()
+{
+    {
+        std::lock_guard<std::mutex> locker(m_queueLock);
+        m_stopped = true;
+    }
     for(auto threadTask : m_threadTaskHandles)
     {
         threadTask->StopProcessingWork();
@@ -100,6 +109,7 @@ PooledThreadExecutor::~PooledThreadExecutor()
     {
         Aws::Delete(threadTask);
     }
+    m_threadTaskHandles.clear();
 
     while(m_tasks.size() > 0)
     {
@@ -111,7 +121,6 @@ PooledThreadExecutor::~PooledThreadExecutor()
             Aws::Delete(fn);
         }
     }
-
 }
 
 bool PooledThreadExecutor::SubmitToThread(std::function<void()>&& fn)
@@ -122,7 +131,7 @@ bool PooledThreadExecutor::SubmitToThread(std::function<void()>&& fn)
     {
         std::lock_guard<std::mutex> locker(m_queueLock);
 
-        if (m_overflowPolicy == OverflowPolicy::REJECT_IMMEDIATELY && m_tasks.size() >= m_poolSize)
+        if (m_stopped || (m_overflowPolicy == OverflowPolicy::REJECT_IMMEDIATELY && m_tasks.size() >= m_poolSize))
         {
             Aws::Delete(fnCpy);
             return false;
