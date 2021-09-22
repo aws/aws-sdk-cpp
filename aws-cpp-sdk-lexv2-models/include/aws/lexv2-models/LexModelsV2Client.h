@@ -31,6 +31,7 @@
 #include <aws/lexv2-models/model/DeleteImportResult.h>
 #include <aws/lexv2-models/model/DeleteResourcePolicyResult.h>
 #include <aws/lexv2-models/model/DeleteResourcePolicyStatementResult.h>
+#include <aws/lexv2-models/model/DeleteUtterancesResult.h>
 #include <aws/lexv2-models/model/DescribeBotResult.h>
 #include <aws/lexv2-models/model/DescribeBotAliasResult.h>
 #include <aws/lexv2-models/model/DescribeBotLocaleResult.h>
@@ -41,6 +42,7 @@
 #include <aws/lexv2-models/model/DescribeResourcePolicyResult.h>
 #include <aws/lexv2-models/model/DescribeSlotResult.h>
 #include <aws/lexv2-models/model/DescribeSlotTypeResult.h>
+#include <aws/lexv2-models/model/ListAggregatedUtterancesResult.h>
 #include <aws/lexv2-models/model/ListBotAliasesResult.h>
 #include <aws/lexv2-models/model/ListBotLocalesResult.h>
 #include <aws/lexv2-models/model/ListBotVersionsResult.h>
@@ -127,6 +129,7 @@ namespace Model
         class DeleteResourcePolicyStatementRequest;
         class DeleteSlotRequest;
         class DeleteSlotTypeRequest;
+        class DeleteUtterancesRequest;
         class DescribeBotRequest;
         class DescribeBotAliasRequest;
         class DescribeBotLocaleRequest;
@@ -137,6 +140,7 @@ namespace Model
         class DescribeResourcePolicyRequest;
         class DescribeSlotRequest;
         class DescribeSlotTypeRequest;
+        class ListAggregatedUtterancesRequest;
         class ListBotAliasesRequest;
         class ListBotLocalesRequest;
         class ListBotVersionsRequest;
@@ -184,6 +188,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteResourcePolicyStatementResult, LexModelsV2Error> DeleteResourcePolicyStatementOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, LexModelsV2Error> DeleteSlotOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, LexModelsV2Error> DeleteSlotTypeOutcome;
+        typedef Aws::Utils::Outcome<DeleteUtterancesResult, LexModelsV2Error> DeleteUtterancesOutcome;
         typedef Aws::Utils::Outcome<DescribeBotResult, LexModelsV2Error> DescribeBotOutcome;
         typedef Aws::Utils::Outcome<DescribeBotAliasResult, LexModelsV2Error> DescribeBotAliasOutcome;
         typedef Aws::Utils::Outcome<DescribeBotLocaleResult, LexModelsV2Error> DescribeBotLocaleOutcome;
@@ -194,6 +199,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeResourcePolicyResult, LexModelsV2Error> DescribeResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<DescribeSlotResult, LexModelsV2Error> DescribeSlotOutcome;
         typedef Aws::Utils::Outcome<DescribeSlotTypeResult, LexModelsV2Error> DescribeSlotTypeOutcome;
+        typedef Aws::Utils::Outcome<ListAggregatedUtterancesResult, LexModelsV2Error> ListAggregatedUtterancesOutcome;
         typedef Aws::Utils::Outcome<ListBotAliasesResult, LexModelsV2Error> ListBotAliasesOutcome;
         typedef Aws::Utils::Outcome<ListBotLocalesResult, LexModelsV2Error> ListBotLocalesOutcome;
         typedef Aws::Utils::Outcome<ListBotVersionsResult, LexModelsV2Error> ListBotVersionsOutcome;
@@ -241,6 +247,7 @@ namespace Model
         typedef std::future<DeleteResourcePolicyStatementOutcome> DeleteResourcePolicyStatementOutcomeCallable;
         typedef std::future<DeleteSlotOutcome> DeleteSlotOutcomeCallable;
         typedef std::future<DeleteSlotTypeOutcome> DeleteSlotTypeOutcomeCallable;
+        typedef std::future<DeleteUtterancesOutcome> DeleteUtterancesOutcomeCallable;
         typedef std::future<DescribeBotOutcome> DescribeBotOutcomeCallable;
         typedef std::future<DescribeBotAliasOutcome> DescribeBotAliasOutcomeCallable;
         typedef std::future<DescribeBotLocaleOutcome> DescribeBotLocaleOutcomeCallable;
@@ -251,6 +258,7 @@ namespace Model
         typedef std::future<DescribeResourcePolicyOutcome> DescribeResourcePolicyOutcomeCallable;
         typedef std::future<DescribeSlotOutcome> DescribeSlotOutcomeCallable;
         typedef std::future<DescribeSlotTypeOutcome> DescribeSlotTypeOutcomeCallable;
+        typedef std::future<ListAggregatedUtterancesOutcome> ListAggregatedUtterancesOutcomeCallable;
         typedef std::future<ListBotAliasesOutcome> ListBotAliasesOutcomeCallable;
         typedef std::future<ListBotLocalesOutcome> ListBotLocalesOutcomeCallable;
         typedef std::future<ListBotVersionsOutcome> ListBotVersionsOutcomeCallable;
@@ -301,6 +309,7 @@ namespace Model
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteResourcePolicyStatementRequest&, const Model::DeleteResourcePolicyStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyStatementResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteSlotRequest&, const Model::DeleteSlotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSlotResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteSlotTypeRequest&, const Model::DeleteSlotTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSlotTypeResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::DeleteUtterancesRequest&, const Model::DeleteUtterancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUtterancesResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotRequest&, const Model::DescribeBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBotResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotAliasRequest&, const Model::DescribeBotAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBotAliasResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotLocaleRequest&, const Model::DescribeBotLocaleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBotLocaleResponseReceivedHandler;
@@ -311,6 +320,7 @@ namespace Model
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeResourcePolicyRequest&, const Model::DescribeResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeSlotRequest&, const Model::DescribeSlotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSlotResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeSlotTypeRequest&, const Model::DescribeSlotTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSlotTypeResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::ListAggregatedUtterancesRequest&, const Model::ListAggregatedUtterancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAggregatedUtterancesResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBotAliasesRequest&, const Model::ListBotAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotAliasesResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBotLocalesRequest&, const Model::ListBotLocalesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotLocalesResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBotVersionsRequest&, const Model::ListBotVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotVersionsResponseReceivedHandler;
@@ -1151,6 +1161,55 @@ namespace Model
         virtual void DeleteSlotTypeAsync(const Model::DeleteSlotTypeRequest& request, const DeleteSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
+         * send to your bot. Utterances are stored for 15 days for use with the operation,
+         * and then stored indefinitely for use in improving the ability of your bot to
+         * respond to user input..</p> <p>Use the <code>DeleteUtterances</code> operation
+         * to manually delete utterances for a specific session. When you use the
+         * <code>DeleteUtterances</code> operation, utterances stored for improving your
+         * bot's ability to respond to user input are deleted immediately. Utterances
+         * stored for use with the <code>ListAggregatedUtterances</code> operation are
+         * deleted after 15 days.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteUtterances">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteUtterancesOutcome DeleteUtterances(const Model::DeleteUtterancesRequest& request) const;
+
+        /**
+         * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
+         * send to your bot. Utterances are stored for 15 days for use with the operation,
+         * and then stored indefinitely for use in improving the ability of your bot to
+         * respond to user input..</p> <p>Use the <code>DeleteUtterances</code> operation
+         * to manually delete utterances for a specific session. When you use the
+         * <code>DeleteUtterances</code> operation, utterances stored for improving your
+         * bot's ability to respond to user input are deleted immediately. Utterances
+         * stored for use with the <code>ListAggregatedUtterances</code> operation are
+         * deleted after 15 days.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteUtterances">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteUtterancesOutcomeCallable DeleteUtterancesCallable(const Model::DeleteUtterancesRequest& request) const;
+
+        /**
+         * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
+         * send to your bot. Utterances are stored for 15 days for use with the operation,
+         * and then stored indefinitely for use in improving the ability of your bot to
+         * respond to user input..</p> <p>Use the <code>DeleteUtterances</code> operation
+         * to manually delete utterances for a specific session. When you use the
+         * <code>DeleteUtterances</code> operation, utterances stored for improving your
+         * bot's ability to respond to user input are deleted immediately. Utterances
+         * stored for use with the <code>ListAggregatedUtterances</code> operation are
+         * deleted after 15 days.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteUtterances">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteUtterancesAsync(const Model::DeleteUtterancesRequest& request, const DeleteUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Provides metadata information about a bot. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBot">AWS
          * API Reference</a></p>
@@ -1405,6 +1464,67 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeSlotTypeAsync(const Model::DescribeSlotTypeRequest& request, const DescribeSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides a list of utterances that users have sent to the bot.</p>
+         * <p>Utterances are aggregated by the text of the utterance. For example, all
+         * instances where customers used the phrase "I want to order pizza" are aggregated
+         * into the same line in the response.</p> <p>You can see both detected utterances
+         * and missed utterances. A detected utterance is where the bot properly recognized
+         * the utterance and activated the associated intent. A missed utterance was not
+         * recognized by the bot and didn't activate an intent.</p> <p>Utterances can be
+         * aggregated for a bot alias or for a bot version, but not both at the same
+         * time.</p> <p>Utterances statistics are not generated under the following
+         * conditions:</p> <ul> <li> <p>The <code>childDirected</code> field was set to
+         * true when the bot was created.</p> </li> <li> <p>You are using slot obfuscation
+         * with one or more slots.</p> </li> <li> <p>You opted out of participating in
+         * improving Amazon Lex.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListAggregatedUtterances">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAggregatedUtterancesOutcome ListAggregatedUtterances(const Model::ListAggregatedUtterancesRequest& request) const;
+
+        /**
+         * <p>Provides a list of utterances that users have sent to the bot.</p>
+         * <p>Utterances are aggregated by the text of the utterance. For example, all
+         * instances where customers used the phrase "I want to order pizza" are aggregated
+         * into the same line in the response.</p> <p>You can see both detected utterances
+         * and missed utterances. A detected utterance is where the bot properly recognized
+         * the utterance and activated the associated intent. A missed utterance was not
+         * recognized by the bot and didn't activate an intent.</p> <p>Utterances can be
+         * aggregated for a bot alias or for a bot version, but not both at the same
+         * time.</p> <p>Utterances statistics are not generated under the following
+         * conditions:</p> <ul> <li> <p>The <code>childDirected</code> field was set to
+         * true when the bot was created.</p> </li> <li> <p>You are using slot obfuscation
+         * with one or more slots.</p> </li> <li> <p>You opted out of participating in
+         * improving Amazon Lex.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListAggregatedUtterances">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAggregatedUtterancesOutcomeCallable ListAggregatedUtterancesCallable(const Model::ListAggregatedUtterancesRequest& request) const;
+
+        /**
+         * <p>Provides a list of utterances that users have sent to the bot.</p>
+         * <p>Utterances are aggregated by the text of the utterance. For example, all
+         * instances where customers used the phrase "I want to order pizza" are aggregated
+         * into the same line in the response.</p> <p>You can see both detected utterances
+         * and missed utterances. A detected utterance is where the bot properly recognized
+         * the utterance and activated the associated intent. A missed utterance was not
+         * recognized by the bot and didn't activate an intent.</p> <p>Utterances can be
+         * aggregated for a bot alias or for a bot version, but not both at the same
+         * time.</p> <p>Utterances statistics are not generated under the following
+         * conditions:</p> <ul> <li> <p>The <code>childDirected</code> field was set to
+         * true when the bot was created.</p> </li> <li> <p>You are using slot obfuscation
+         * with one or more slots.</p> </li> <li> <p>You opted out of participating in
+         * improving Amazon Lex.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListAggregatedUtterances">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAggregatedUtterancesAsync(const Model::ListAggregatedUtterancesRequest& request, const ListAggregatedUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of aliases for the specified bot.</p><p><h3>See Also:</h3>   <a
@@ -2098,6 +2218,7 @@ namespace Model
         void DeleteResourcePolicyStatementAsyncHelper(const Model::DeleteResourcePolicyStatementRequest& request, const DeleteResourcePolicyStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSlotAsyncHelper(const Model::DeleteSlotRequest& request, const DeleteSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSlotTypeAsyncHelper(const Model::DeleteSlotTypeRequest& request, const DeleteSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteUtterancesAsyncHelper(const Model::DeleteUtterancesRequest& request, const DeleteUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBotAsyncHelper(const Model::DescribeBotRequest& request, const DescribeBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBotAliasAsyncHelper(const Model::DescribeBotAliasRequest& request, const DescribeBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBotLocaleAsyncHelper(const Model::DescribeBotLocaleRequest& request, const DescribeBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2108,6 +2229,7 @@ namespace Model
         void DescribeResourcePolicyAsyncHelper(const Model::DescribeResourcePolicyRequest& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSlotAsyncHelper(const Model::DescribeSlotRequest& request, const DescribeSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSlotTypeAsyncHelper(const Model::DescribeSlotTypeRequest& request, const DescribeSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAggregatedUtterancesAsyncHelper(const Model::ListAggregatedUtterancesRequest& request, const ListAggregatedUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBotAliasesAsyncHelper(const Model::ListBotAliasesRequest& request, const ListBotAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBotLocalesAsyncHelper(const Model::ListBotLocalesRequest& request, const ListBotLocalesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBotVersionsAsyncHelper(const Model::ListBotVersionsRequest& request, const ListBotVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

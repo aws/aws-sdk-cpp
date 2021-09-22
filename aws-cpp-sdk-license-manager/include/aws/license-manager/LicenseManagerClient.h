@@ -19,6 +19,7 @@
 #include <aws/license-manager/model/CreateGrantVersionResult.h>
 #include <aws/license-manager/model/CreateLicenseResult.h>
 #include <aws/license-manager/model/CreateLicenseConfigurationResult.h>
+#include <aws/license-manager/model/CreateLicenseConversionTaskForResourceResult.h>
 #include <aws/license-manager/model/CreateLicenseManagerReportGeneratorResult.h>
 #include <aws/license-manager/model/CreateLicenseVersionResult.h>
 #include <aws/license-manager/model/CreateTokenResult.h>
@@ -32,6 +33,7 @@
 #include <aws/license-manager/model/GetGrantResult.h>
 #include <aws/license-manager/model/GetLicenseResult.h>
 #include <aws/license-manager/model/GetLicenseConfigurationResult.h>
+#include <aws/license-manager/model/GetLicenseConversionTaskResult.h>
 #include <aws/license-manager/model/GetLicenseManagerReportGeneratorResult.h>
 #include <aws/license-manager/model/GetLicenseUsageResult.h>
 #include <aws/license-manager/model/GetServiceSettingsResult.h>
@@ -39,6 +41,7 @@
 #include <aws/license-manager/model/ListDistributedGrantsResult.h>
 #include <aws/license-manager/model/ListFailuresForLicenseConfigurationOperationsResult.h>
 #include <aws/license-manager/model/ListLicenseConfigurationsResult.h>
+#include <aws/license-manager/model/ListLicenseConversionTasksResult.h>
 #include <aws/license-manager/model/ListLicenseManagerReportGeneratorsResult.h>
 #include <aws/license-manager/model/ListLicenseSpecificationsForResourceResult.h>
 #include <aws/license-manager/model/ListLicenseVersionsResult.h>
@@ -103,6 +106,7 @@ namespace Model
         class CreateGrantVersionRequest;
         class CreateLicenseRequest;
         class CreateLicenseConfigurationRequest;
+        class CreateLicenseConversionTaskForResourceRequest;
         class CreateLicenseManagerReportGeneratorRequest;
         class CreateLicenseVersionRequest;
         class CreateTokenRequest;
@@ -116,6 +120,7 @@ namespace Model
         class GetGrantRequest;
         class GetLicenseRequest;
         class GetLicenseConfigurationRequest;
+        class GetLicenseConversionTaskRequest;
         class GetLicenseManagerReportGeneratorRequest;
         class GetLicenseUsageRequest;
         class GetServiceSettingsRequest;
@@ -123,6 +128,7 @@ namespace Model
         class ListDistributedGrantsRequest;
         class ListFailuresForLicenseConfigurationOperationsRequest;
         class ListLicenseConfigurationsRequest;
+        class ListLicenseConversionTasksRequest;
         class ListLicenseManagerReportGeneratorsRequest;
         class ListLicenseSpecificationsForResourceRequest;
         class ListLicenseVersionsRequest;
@@ -149,6 +155,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateGrantVersionResult, LicenseManagerError> CreateGrantVersionOutcome;
         typedef Aws::Utils::Outcome<CreateLicenseResult, LicenseManagerError> CreateLicenseOutcome;
         typedef Aws::Utils::Outcome<CreateLicenseConfigurationResult, LicenseManagerError> CreateLicenseConfigurationOutcome;
+        typedef Aws::Utils::Outcome<CreateLicenseConversionTaskForResourceResult, LicenseManagerError> CreateLicenseConversionTaskForResourceOutcome;
         typedef Aws::Utils::Outcome<CreateLicenseManagerReportGeneratorResult, LicenseManagerError> CreateLicenseManagerReportGeneratorOutcome;
         typedef Aws::Utils::Outcome<CreateLicenseVersionResult, LicenseManagerError> CreateLicenseVersionOutcome;
         typedef Aws::Utils::Outcome<CreateTokenResult, LicenseManagerError> CreateTokenOutcome;
@@ -162,6 +169,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetGrantResult, LicenseManagerError> GetGrantOutcome;
         typedef Aws::Utils::Outcome<GetLicenseResult, LicenseManagerError> GetLicenseOutcome;
         typedef Aws::Utils::Outcome<GetLicenseConfigurationResult, LicenseManagerError> GetLicenseConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetLicenseConversionTaskResult, LicenseManagerError> GetLicenseConversionTaskOutcome;
         typedef Aws::Utils::Outcome<GetLicenseManagerReportGeneratorResult, LicenseManagerError> GetLicenseManagerReportGeneratorOutcome;
         typedef Aws::Utils::Outcome<GetLicenseUsageResult, LicenseManagerError> GetLicenseUsageOutcome;
         typedef Aws::Utils::Outcome<GetServiceSettingsResult, LicenseManagerError> GetServiceSettingsOutcome;
@@ -169,6 +177,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListDistributedGrantsResult, LicenseManagerError> ListDistributedGrantsOutcome;
         typedef Aws::Utils::Outcome<ListFailuresForLicenseConfigurationOperationsResult, LicenseManagerError> ListFailuresForLicenseConfigurationOperationsOutcome;
         typedef Aws::Utils::Outcome<ListLicenseConfigurationsResult, LicenseManagerError> ListLicenseConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<ListLicenseConversionTasksResult, LicenseManagerError> ListLicenseConversionTasksOutcome;
         typedef Aws::Utils::Outcome<ListLicenseManagerReportGeneratorsResult, LicenseManagerError> ListLicenseManagerReportGeneratorsOutcome;
         typedef Aws::Utils::Outcome<ListLicenseSpecificationsForResourceResult, LicenseManagerError> ListLicenseSpecificationsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListLicenseVersionsResult, LicenseManagerError> ListLicenseVersionsOutcome;
@@ -195,6 +204,7 @@ namespace Model
         typedef std::future<CreateGrantVersionOutcome> CreateGrantVersionOutcomeCallable;
         typedef std::future<CreateLicenseOutcome> CreateLicenseOutcomeCallable;
         typedef std::future<CreateLicenseConfigurationOutcome> CreateLicenseConfigurationOutcomeCallable;
+        typedef std::future<CreateLicenseConversionTaskForResourceOutcome> CreateLicenseConversionTaskForResourceOutcomeCallable;
         typedef std::future<CreateLicenseManagerReportGeneratorOutcome> CreateLicenseManagerReportGeneratorOutcomeCallable;
         typedef std::future<CreateLicenseVersionOutcome> CreateLicenseVersionOutcomeCallable;
         typedef std::future<CreateTokenOutcome> CreateTokenOutcomeCallable;
@@ -208,6 +218,7 @@ namespace Model
         typedef std::future<GetGrantOutcome> GetGrantOutcomeCallable;
         typedef std::future<GetLicenseOutcome> GetLicenseOutcomeCallable;
         typedef std::future<GetLicenseConfigurationOutcome> GetLicenseConfigurationOutcomeCallable;
+        typedef std::future<GetLicenseConversionTaskOutcome> GetLicenseConversionTaskOutcomeCallable;
         typedef std::future<GetLicenseManagerReportGeneratorOutcome> GetLicenseManagerReportGeneratorOutcomeCallable;
         typedef std::future<GetLicenseUsageOutcome> GetLicenseUsageOutcomeCallable;
         typedef std::future<GetServiceSettingsOutcome> GetServiceSettingsOutcomeCallable;
@@ -215,6 +226,7 @@ namespace Model
         typedef std::future<ListDistributedGrantsOutcome> ListDistributedGrantsOutcomeCallable;
         typedef std::future<ListFailuresForLicenseConfigurationOperationsOutcome> ListFailuresForLicenseConfigurationOperationsOutcomeCallable;
         typedef std::future<ListLicenseConfigurationsOutcome> ListLicenseConfigurationsOutcomeCallable;
+        typedef std::future<ListLicenseConversionTasksOutcome> ListLicenseConversionTasksOutcomeCallable;
         typedef std::future<ListLicenseManagerReportGeneratorsOutcome> ListLicenseManagerReportGeneratorsOutcomeCallable;
         typedef std::future<ListLicenseSpecificationsForResourceOutcome> ListLicenseSpecificationsForResourceOutcomeCallable;
         typedef std::future<ListLicenseVersionsOutcome> ListLicenseVersionsOutcomeCallable;
@@ -244,6 +256,7 @@ namespace Model
     typedef std::function<void(const LicenseManagerClient*, const Model::CreateGrantVersionRequest&, const Model::CreateGrantVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGrantVersionResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::CreateLicenseRequest&, const Model::CreateLicenseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLicenseResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::CreateLicenseConfigurationRequest&, const Model::CreateLicenseConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLicenseConfigurationResponseReceivedHandler;
+    typedef std::function<void(const LicenseManagerClient*, const Model::CreateLicenseConversionTaskForResourceRequest&, const Model::CreateLicenseConversionTaskForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLicenseConversionTaskForResourceResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::CreateLicenseManagerReportGeneratorRequest&, const Model::CreateLicenseManagerReportGeneratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLicenseManagerReportGeneratorResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::CreateLicenseVersionRequest&, const Model::CreateLicenseVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLicenseVersionResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::CreateTokenRequest&, const Model::CreateTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTokenResponseReceivedHandler;
@@ -257,6 +270,7 @@ namespace Model
     typedef std::function<void(const LicenseManagerClient*, const Model::GetGrantRequest&, const Model::GetGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGrantResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::GetLicenseRequest&, const Model::GetLicenseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLicenseResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::GetLicenseConfigurationRequest&, const Model::GetLicenseConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLicenseConfigurationResponseReceivedHandler;
+    typedef std::function<void(const LicenseManagerClient*, const Model::GetLicenseConversionTaskRequest&, const Model::GetLicenseConversionTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLicenseConversionTaskResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::GetLicenseManagerReportGeneratorRequest&, const Model::GetLicenseManagerReportGeneratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLicenseManagerReportGeneratorResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::GetLicenseUsageRequest&, const Model::GetLicenseUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLicenseUsageResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::GetServiceSettingsRequest&, const Model::GetServiceSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceSettingsResponseReceivedHandler;
@@ -264,6 +278,7 @@ namespace Model
     typedef std::function<void(const LicenseManagerClient*, const Model::ListDistributedGrantsRequest&, const Model::ListDistributedGrantsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDistributedGrantsResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::ListFailuresForLicenseConfigurationOperationsRequest&, const Model::ListFailuresForLicenseConfigurationOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFailuresForLicenseConfigurationOperationsResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::ListLicenseConfigurationsRequest&, const Model::ListLicenseConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLicenseConfigurationsResponseReceivedHandler;
+    typedef std::function<void(const LicenseManagerClient*, const Model::ListLicenseConversionTasksRequest&, const Model::ListLicenseConversionTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLicenseConversionTasksResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::ListLicenseManagerReportGeneratorsRequest&, const Model::ListLicenseManagerReportGeneratorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLicenseManagerReportGeneratorsResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::ListLicenseSpecificationsForResourceRequest&, const Model::ListLicenseSpecificationsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLicenseSpecificationsForResourceResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::ListLicenseVersionsRequest&, const Model::ListLicenseVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLicenseVersionsResponseReceivedHandler;
@@ -283,9 +298,8 @@ namespace Model
     typedef std::function<void(const LicenseManagerClient*, const Model::UpdateServiceSettingsRequest&, const Model::UpdateServiceSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceSettingsResponseReceivedHandler;
 
   /**
-   * <fullname> AWS License Manager </fullname> <p>AWS License Manager makes it
-   * easier to manage licenses from software vendors across multiple AWS accounts and
-   * on-premises servers.</p>
+   * <p>License Manager makes it easier to manage licenses from software vendors
+   * across multiple Amazon Web Services accounts and on-premises servers.</p>
    */
   class AWS_LICENSEMANAGER_API LicenseManagerClient : public Aws::Client::AWSJsonClient
   {
@@ -422,7 +436,8 @@ namespace Model
 
         /**
          * <p>Creates a grant for the specified license. A grant shares the use of license
-         * entitlements with specific AWS accounts.</p><p><h3>See Also:</h3>   <a
+         * entitlements with specific Amazon Web Services accounts.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateGrant">AWS
          * API Reference</a></p>
          */
@@ -430,7 +445,8 @@ namespace Model
 
         /**
          * <p>Creates a grant for the specified license. A grant shares the use of license
-         * entitlements with specific AWS accounts.</p><p><h3>See Also:</h3>   <a
+         * entitlements with specific Amazon Web Services accounts.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateGrant">AWS
          * API Reference</a></p>
          *
@@ -440,7 +456,8 @@ namespace Model
 
         /**
          * <p>Creates a grant for the specified license. A grant shares the use of license
-         * entitlements with specific AWS accounts.</p><p><h3>See Also:</h3>   <a
+         * entitlements with specific Amazon Web Services accounts.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateGrant">AWS
          * API Reference</a></p>
          *
@@ -542,14 +559,39 @@ namespace Model
         virtual void CreateLicenseConfigurationAsync(const Model::CreateLicenseConfigurationRequest& request, const CreateLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new report generator.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new license conversion task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseConversionTaskForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLicenseConversionTaskForResourceOutcome CreateLicenseConversionTaskForResource(const Model::CreateLicenseConversionTaskForResourceRequest& request) const;
+
+        /**
+         * <p>Creates a new license conversion task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseConversionTaskForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateLicenseConversionTaskForResourceOutcomeCallable CreateLicenseConversionTaskForResourceCallable(const Model::CreateLicenseConversionTaskForResourceRequest& request) const;
+
+        /**
+         * <p>Creates a new license conversion task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseConversionTaskForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateLicenseConversionTaskForResourceAsync(const Model::CreateLicenseConversionTaskForResourceRequest& request, const CreateLicenseConversionTaskForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a report generator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseManagerReportGenerator">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateLicenseManagerReportGeneratorOutcome CreateLicenseManagerReportGenerator(const Model::CreateLicenseManagerReportGeneratorRequest& request) const;
 
         /**
-         * <p>Creates a new report generator.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a report generator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseManagerReportGenerator">AWS
          * API Reference</a></p>
          *
@@ -558,7 +600,7 @@ namespace Model
         virtual Model::CreateLicenseManagerReportGeneratorOutcomeCallable CreateLicenseManagerReportGeneratorCallable(const Model::CreateLicenseManagerReportGeneratorRequest& request) const;
 
         /**
-         * <p>Creates a new report generator.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a report generator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseManagerReportGenerator">AWS
          * API Reference</a></p>
          *
@@ -704,20 +746,20 @@ namespace Model
         virtual void DeleteLicenseConfigurationAsync(const Model::DeleteLicenseConfigurationRequest& request, const DeleteLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Delete an existing report generator.</p> <p>This action deletes the report
-         * generator, which stops it from generating future reports and cannot be reversed.
-         * However, the previous reports from this generator will remain in your S3
-         * bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified report generator.</p> <p>This action deletes the report
+         * generator, which stops it from generating future reports. The action cannot be
+         * reversed. It has no effect on the previous reports from this
+         * generator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicenseManagerReportGenerator">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteLicenseManagerReportGeneratorOutcome DeleteLicenseManagerReportGenerator(const Model::DeleteLicenseManagerReportGeneratorRequest& request) const;
 
         /**
-         * <p>Delete an existing report generator.</p> <p>This action deletes the report
-         * generator, which stops it from generating future reports and cannot be reversed.
-         * However, the previous reports from this generator will remain in your S3
-         * bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified report generator.</p> <p>This action deletes the report
+         * generator, which stops it from generating future reports. The action cannot be
+         * reversed. It has no effect on the previous reports from this
+         * generator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicenseManagerReportGenerator">AWS
          * API Reference</a></p>
          *
@@ -726,10 +768,10 @@ namespace Model
         virtual Model::DeleteLicenseManagerReportGeneratorOutcomeCallable DeleteLicenseManagerReportGeneratorCallable(const Model::DeleteLicenseManagerReportGeneratorRequest& request) const;
 
         /**
-         * <p>Delete an existing report generator.</p> <p>This action deletes the report
-         * generator, which stops it from generating future reports and cannot be reversed.
-         * However, the previous reports from this generator will remain in your S3
-         * bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified report generator.</p> <p>This action deletes the report
+         * generator, which stops it from generating future reports. The action cannot be
+         * reversed. It has no effect on the previous reports from this
+         * generator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicenseManagerReportGenerator">AWS
          * API Reference</a></p>
          *
@@ -906,16 +948,44 @@ namespace Model
         virtual void GetLicenseConfigurationAsync(const Model::GetLicenseConfigurationRequest& request, const GetLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information on the specified report generator.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Gets information about the specified license type conversion
+         * task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseConversionTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLicenseConversionTaskOutcome GetLicenseConversionTask(const Model::GetLicenseConversionTaskRequest& request) const;
+
+        /**
+         * <p>Gets information about the specified license type conversion
+         * task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseConversionTask">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLicenseConversionTaskOutcomeCallable GetLicenseConversionTaskCallable(const Model::GetLicenseConversionTaskRequest& request) const;
+
+        /**
+         * <p>Gets information about the specified license type conversion
+         * task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseConversionTask">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLicenseConversionTaskAsync(const Model::GetLicenseConversionTaskRequest& request, const GetLicenseConversionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets information about the specified report generator.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseManagerReportGenerator">AWS
          * API Reference</a></p>
          */
         virtual Model::GetLicenseManagerReportGeneratorOutcome GetLicenseManagerReportGenerator(const Model::GetLicenseManagerReportGeneratorRequest& request) const;
 
         /**
-         * <p>Gets information on the specified report generator.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Gets information about the specified report generator.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseManagerReportGenerator">AWS
          * API Reference</a></p>
          *
@@ -924,8 +994,8 @@ namespace Model
         virtual Model::GetLicenseManagerReportGeneratorOutcomeCallable GetLicenseManagerReportGeneratorCallable(const Model::GetLicenseManagerReportGeneratorRequest& request) const;
 
         /**
-         * <p>Gets information on the specified report generator.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Gets information about the specified report generator.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseManagerReportGenerator">AWS
          * API Reference</a></p>
          *
@@ -1106,6 +1176,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListLicenseConfigurationsAsync(const Model::ListLicenseConfigurationsRequest& request, const ListLicenseConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the license type conversion tasks for your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseConversionTasks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLicenseConversionTasksOutcome ListLicenseConversionTasks(const Model::ListLicenseConversionTasksRequest& request) const;
+
+        /**
+         * <p>Lists the license type conversion tasks for your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseConversionTasks">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListLicenseConversionTasksOutcomeCallable ListLicenseConversionTasksCallable(const Model::ListLicenseConversionTasksRequest& request) const;
+
+        /**
+         * <p>Lists the license type conversion tasks for your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseConversionTasks">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListLicenseConversionTasksAsync(const Model::ListLicenseConversionTasksRequest& request, const ListLicenseConversionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the report generators for your account.</p><p><h3>See Also:</h3>   <a
@@ -1489,7 +1587,7 @@ namespace Model
 
         /**
          * <p>Updates a report generator.</p> <p>After you make changes to a report
-         * generator, it will start generating new reports within 60 minutes of being
+         * generator, it starts generating new reports within 60 minutes of being
          * updated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseManagerReportGenerator">AWS
          * API Reference</a></p>
@@ -1498,7 +1596,7 @@ namespace Model
 
         /**
          * <p>Updates a report generator.</p> <p>After you make changes to a report
-         * generator, it will start generating new reports within 60 minutes of being
+         * generator, it starts generating new reports within 60 minutes of being
          * updated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseManagerReportGenerator">AWS
          * API Reference</a></p>
@@ -1509,7 +1607,7 @@ namespace Model
 
         /**
          * <p>Updates a report generator.</p> <p>After you make changes to a report
-         * generator, it will start generating new reports within 60 minutes of being
+         * generator, it starts generating new reports within 60 minutes of being
          * updated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseManagerReportGenerator">AWS
          * API Reference</a></p>
@@ -1519,22 +1617,22 @@ namespace Model
         virtual void UpdateLicenseManagerReportGeneratorAsync(const Model::UpdateLicenseManagerReportGeneratorRequest& request, const UpdateLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds or removes the specified license configurations for the specified AWS
-         * resource.</p> <p>You can update the license specifications of AMIs, instances,
-         * and hosts. You cannot update the license specifications for launch templates and
-         * AWS CloudFormation templates, as they send license configurations to the
-         * operation that creates the resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or removes the specified license configurations for the specified Amazon
+         * Web Services resource.</p> <p>You can update the license specifications of AMIs,
+         * instances, and hosts. You cannot update the license specifications for launch
+         * templates and CloudFormation templates, as they send license configurations to
+         * the operation that creates the resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseSpecificationsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateLicenseSpecificationsForResourceOutcome UpdateLicenseSpecificationsForResource(const Model::UpdateLicenseSpecificationsForResourceRequest& request) const;
 
         /**
-         * <p>Adds or removes the specified license configurations for the specified AWS
-         * resource.</p> <p>You can update the license specifications of AMIs, instances,
-         * and hosts. You cannot update the license specifications for launch templates and
-         * AWS CloudFormation templates, as they send license configurations to the
-         * operation that creates the resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or removes the specified license configurations for the specified Amazon
+         * Web Services resource.</p> <p>You can update the license specifications of AMIs,
+         * instances, and hosts. You cannot update the license specifications for launch
+         * templates and CloudFormation templates, as they send license configurations to
+         * the operation that creates the resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseSpecificationsForResource">AWS
          * API Reference</a></p>
          *
@@ -1543,11 +1641,11 @@ namespace Model
         virtual Model::UpdateLicenseSpecificationsForResourceOutcomeCallable UpdateLicenseSpecificationsForResourceCallable(const Model::UpdateLicenseSpecificationsForResourceRequest& request) const;
 
         /**
-         * <p>Adds or removes the specified license configurations for the specified AWS
-         * resource.</p> <p>You can update the license specifications of AMIs, instances,
-         * and hosts. You cannot update the license specifications for launch templates and
-         * AWS CloudFormation templates, as they send license configurations to the
-         * operation that creates the resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or removes the specified license configurations for the specified Amazon
+         * Web Services resource.</p> <p>You can update the license specifications of AMIs,
+         * instances, and hosts. You cannot update the license specifications for launch
+         * templates and CloudFormation templates, as they send license configurations to
+         * the operation that creates the resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseSpecificationsForResource">AWS
          * API Reference</a></p>
          *
@@ -1595,6 +1693,7 @@ namespace Model
         void CreateGrantVersionAsyncHelper(const Model::CreateGrantVersionRequest& request, const CreateGrantVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLicenseAsyncHelper(const Model::CreateLicenseRequest& request, const CreateLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLicenseConfigurationAsyncHelper(const Model::CreateLicenseConfigurationRequest& request, const CreateLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateLicenseConversionTaskForResourceAsyncHelper(const Model::CreateLicenseConversionTaskForResourceRequest& request, const CreateLicenseConversionTaskForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLicenseManagerReportGeneratorAsyncHelper(const Model::CreateLicenseManagerReportGeneratorRequest& request, const CreateLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLicenseVersionAsyncHelper(const Model::CreateLicenseVersionRequest& request, const CreateLicenseVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTokenAsyncHelper(const Model::CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1608,6 +1707,7 @@ namespace Model
         void GetGrantAsyncHelper(const Model::GetGrantRequest& request, const GetGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLicenseAsyncHelper(const Model::GetLicenseRequest& request, const GetLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLicenseConfigurationAsyncHelper(const Model::GetLicenseConfigurationRequest& request, const GetLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetLicenseConversionTaskAsyncHelper(const Model::GetLicenseConversionTaskRequest& request, const GetLicenseConversionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLicenseManagerReportGeneratorAsyncHelper(const Model::GetLicenseManagerReportGeneratorRequest& request, const GetLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLicenseUsageAsyncHelper(const Model::GetLicenseUsageRequest& request, const GetLicenseUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetServiceSettingsAsyncHelper(const Model::GetServiceSettingsRequest& request, const GetServiceSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1615,6 +1715,7 @@ namespace Model
         void ListDistributedGrantsAsyncHelper(const Model::ListDistributedGrantsRequest& request, const ListDistributedGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFailuresForLicenseConfigurationOperationsAsyncHelper(const Model::ListFailuresForLicenseConfigurationOperationsRequest& request, const ListFailuresForLicenseConfigurationOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLicenseConfigurationsAsyncHelper(const Model::ListLicenseConfigurationsRequest& request, const ListLicenseConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListLicenseConversionTasksAsyncHelper(const Model::ListLicenseConversionTasksRequest& request, const ListLicenseConversionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLicenseManagerReportGeneratorsAsyncHelper(const Model::ListLicenseManagerReportGeneratorsRequest& request, const ListLicenseManagerReportGeneratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLicenseSpecificationsForResourceAsyncHelper(const Model::ListLicenseSpecificationsForResourceRequest& request, const ListLicenseSpecificationsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLicenseVersionsAsyncHelper(const Model::ListLicenseVersionsRequest& request, const ListLicenseVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

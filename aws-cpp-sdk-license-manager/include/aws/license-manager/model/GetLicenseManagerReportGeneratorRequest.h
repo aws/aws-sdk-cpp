@@ -35,50 +35,42 @@ namespace Model
 
 
     /**
-     * <p>mazon Resource Number (ARN) of the report generator to retrieve information
-     * on.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator.</p>
      */
     inline const Aws::String& GetLicenseManagerReportGeneratorArn() const{ return m_licenseManagerReportGeneratorArn; }
 
     /**
-     * <p>mazon Resource Number (ARN) of the report generator to retrieve information
-     * on.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator.</p>
      */
     inline bool LicenseManagerReportGeneratorArnHasBeenSet() const { return m_licenseManagerReportGeneratorArnHasBeenSet; }
 
     /**
-     * <p>mazon Resource Number (ARN) of the report generator to retrieve information
-     * on.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator.</p>
      */
     inline void SetLicenseManagerReportGeneratorArn(const Aws::String& value) { m_licenseManagerReportGeneratorArnHasBeenSet = true; m_licenseManagerReportGeneratorArn = value; }
 
     /**
-     * <p>mazon Resource Number (ARN) of the report generator to retrieve information
-     * on.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator.</p>
      */
     inline void SetLicenseManagerReportGeneratorArn(Aws::String&& value) { m_licenseManagerReportGeneratorArnHasBeenSet = true; m_licenseManagerReportGeneratorArn = std::move(value); }
 
     /**
-     * <p>mazon Resource Number (ARN) of the report generator to retrieve information
-     * on.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator.</p>
      */
     inline void SetLicenseManagerReportGeneratorArn(const char* value) { m_licenseManagerReportGeneratorArnHasBeenSet = true; m_licenseManagerReportGeneratorArn.assign(value); }
 
     /**
-     * <p>mazon Resource Number (ARN) of the report generator to retrieve information
-     * on.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator.</p>
      */
     inline GetLicenseManagerReportGeneratorRequest& WithLicenseManagerReportGeneratorArn(const Aws::String& value) { SetLicenseManagerReportGeneratorArn(value); return *this;}
 
     /**
-     * <p>mazon Resource Number (ARN) of the report generator to retrieve information
-     * on.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator.</p>
      */
     inline GetLicenseManagerReportGeneratorRequest& WithLicenseManagerReportGeneratorArn(Aws::String&& value) { SetLicenseManagerReportGeneratorArn(std::move(value)); return *this;}
 
     /**
-     * <p>mazon Resource Number (ARN) of the report generator to retrieve information
-     * on.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator.</p>
      */
     inline GetLicenseManagerReportGeneratorRequest& WithLicenseManagerReportGeneratorArn(const char* value) { SetLicenseManagerReportGeneratorArn(value); return *this;}
 

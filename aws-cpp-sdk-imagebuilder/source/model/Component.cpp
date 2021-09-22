@@ -29,6 +29,7 @@ Component::Component() :
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
     m_supportedOsVersionsHasBeenSet(false),
+    m_stateHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_dataHasBeenSet(false),
@@ -51,6 +52,7 @@ Component::Component(JsonView jsonValue) :
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
     m_supportedOsVersionsHasBeenSet(false),
+    m_stateHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_dataHasBeenSet(false),
@@ -122,6 +124,13 @@ Component& Component::operator =(JsonView jsonValue)
       m_supportedOsVersions.push_back(supportedOsVersionsJsonList[supportedOsVersionsIndex].AsString());
     }
     m_supportedOsVersionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("state"))
+  {
+    m_state = jsonValue.GetObject("state");
+
+    m_stateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("parameters"))
@@ -234,6 +243,12 @@ JsonValue Component::Jsonize() const
      supportedOsVersionsJsonList[supportedOsVersionsIndex].AsString(m_supportedOsVersions[supportedOsVersionsIndex]);
    }
    payload.WithArray("supportedOsVersions", std::move(supportedOsVersionsJsonList));
+
+  }
+
+  if(m_stateHasBeenSet)
+  {
+   payload.WithObject("state", m_state.Jsonize());
 
   }
 

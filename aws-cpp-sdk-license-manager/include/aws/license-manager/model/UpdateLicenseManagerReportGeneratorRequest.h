@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>Amazon Resource Number (ARN) of the report generator to update.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator to update.</p>
      */
     inline const Aws::String& GetLicenseManagerReportGeneratorArn() const{ return m_licenseManagerReportGeneratorArn; }
 
     /**
-     * <p>Amazon Resource Number (ARN) of the report generator to update.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator to update.</p>
      */
     inline bool LicenseManagerReportGeneratorArnHasBeenSet() const { return m_licenseManagerReportGeneratorArnHasBeenSet; }
 
     /**
-     * <p>Amazon Resource Number (ARN) of the report generator to update.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator to update.</p>
      */
     inline void SetLicenseManagerReportGeneratorArn(const Aws::String& value) { m_licenseManagerReportGeneratorArnHasBeenSet = true; m_licenseManagerReportGeneratorArn = value; }
 
     /**
-     * <p>Amazon Resource Number (ARN) of the report generator to update.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator to update.</p>
      */
     inline void SetLicenseManagerReportGeneratorArn(Aws::String&& value) { m_licenseManagerReportGeneratorArnHasBeenSet = true; m_licenseManagerReportGeneratorArn = std::move(value); }
 
     /**
-     * <p>Amazon Resource Number (ARN) of the report generator to update.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator to update.</p>
      */
     inline void SetLicenseManagerReportGeneratorArn(const char* value) { m_licenseManagerReportGeneratorArnHasBeenSet = true; m_licenseManagerReportGeneratorArn.assign(value); }
 
     /**
-     * <p>Amazon Resource Number (ARN) of the report generator to update.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator to update.</p>
      */
     inline UpdateLicenseManagerReportGeneratorRequest& WithLicenseManagerReportGeneratorArn(const Aws::String& value) { SetLicenseManagerReportGeneratorArn(value); return *this;}
 
     /**
-     * <p>Amazon Resource Number (ARN) of the report generator to update.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator to update.</p>
      */
     inline UpdateLicenseManagerReportGeneratorRequest& WithLicenseManagerReportGeneratorArn(Aws::String&& value) { SetLicenseManagerReportGeneratorArn(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Number (ARN) of the report generator to update.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator to update.</p>
      */
     inline UpdateLicenseManagerReportGeneratorRequest& WithLicenseManagerReportGeneratorArn(const char* value) { SetLicenseManagerReportGeneratorArn(value); return *this;}
 
@@ -121,142 +121,136 @@ namespace Model
 
 
     /**
-     * <p>Type of reports to generate. The following report types an be generated:</p>
-     * <ul> <li> <p>License configuration report - Reports on the number and details of
+     * <p>Type of reports to generate. The following report types are supported:</p>
+     * <ul> <li> <p>License configuration report - Reports the number and details of
      * consumed licenses for a license configuration.</p> </li> <li> <p>Resource report
-     * - Reports on the tracked licenses and resource consumption for a license
+     * - Reports the tracked licenses and resource consumption for a license
      * configuration.</p> </li> </ul>
      */
     inline const Aws::Vector<ReportType>& GetType() const{ return m_type; }
 
     /**
-     * <p>Type of reports to generate. The following report types an be generated:</p>
-     * <ul> <li> <p>License configuration report - Reports on the number and details of
+     * <p>Type of reports to generate. The following report types are supported:</p>
+     * <ul> <li> <p>License configuration report - Reports the number and details of
      * consumed licenses for a license configuration.</p> </li> <li> <p>Resource report
-     * - Reports on the tracked licenses and resource consumption for a license
+     * - Reports the tracked licenses and resource consumption for a license
      * configuration.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>Type of reports to generate. The following report types an be generated:</p>
-     * <ul> <li> <p>License configuration report - Reports on the number and details of
+     * <p>Type of reports to generate. The following report types are supported:</p>
+     * <ul> <li> <p>License configuration report - Reports the number and details of
      * consumed licenses for a license configuration.</p> </li> <li> <p>Resource report
-     * - Reports on the tracked licenses and resource consumption for a license
+     * - Reports the tracked licenses and resource consumption for a license
      * configuration.</p> </li> </ul>
      */
     inline void SetType(const Aws::Vector<ReportType>& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Type of reports to generate. The following report types an be generated:</p>
-     * <ul> <li> <p>License configuration report - Reports on the number and details of
+     * <p>Type of reports to generate. The following report types are supported:</p>
+     * <ul> <li> <p>License configuration report - Reports the number and details of
      * consumed licenses for a license configuration.</p> </li> <li> <p>Resource report
-     * - Reports on the tracked licenses and resource consumption for a license
+     * - Reports the tracked licenses and resource consumption for a license
      * configuration.</p> </li> </ul>
      */
     inline void SetType(Aws::Vector<ReportType>&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Type of reports to generate. The following report types an be generated:</p>
-     * <ul> <li> <p>License configuration report - Reports on the number and details of
+     * <p>Type of reports to generate. The following report types are supported:</p>
+     * <ul> <li> <p>License configuration report - Reports the number and details of
      * consumed licenses for a license configuration.</p> </li> <li> <p>Resource report
-     * - Reports on the tracked licenses and resource consumption for a license
+     * - Reports the tracked licenses and resource consumption for a license
      * configuration.</p> </li> </ul>
      */
     inline UpdateLicenseManagerReportGeneratorRequest& WithType(const Aws::Vector<ReportType>& value) { SetType(value); return *this;}
 
     /**
-     * <p>Type of reports to generate. The following report types an be generated:</p>
-     * <ul> <li> <p>License configuration report - Reports on the number and details of
+     * <p>Type of reports to generate. The following report types are supported:</p>
+     * <ul> <li> <p>License configuration report - Reports the number and details of
      * consumed licenses for a license configuration.</p> </li> <li> <p>Resource report
-     * - Reports on the tracked licenses and resource consumption for a license
+     * - Reports the tracked licenses and resource consumption for a license
      * configuration.</p> </li> </ul>
      */
     inline UpdateLicenseManagerReportGeneratorRequest& WithType(Aws::Vector<ReportType>&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>Type of reports to generate. The following report types an be generated:</p>
-     * <ul> <li> <p>License configuration report - Reports on the number and details of
+     * <p>Type of reports to generate. The following report types are supported:</p>
+     * <ul> <li> <p>License configuration report - Reports the number and details of
      * consumed licenses for a license configuration.</p> </li> <li> <p>Resource report
-     * - Reports on the tracked licenses and resource consumption for a license
+     * - Reports the tracked licenses and resource consumption for a license
      * configuration.</p> </li> </ul>
      */
     inline UpdateLicenseManagerReportGeneratorRequest& AddType(const ReportType& value) { m_typeHasBeenSet = true; m_type.push_back(value); return *this; }
 
     /**
-     * <p>Type of reports to generate. The following report types an be generated:</p>
-     * <ul> <li> <p>License configuration report - Reports on the number and details of
+     * <p>Type of reports to generate. The following report types are supported:</p>
+     * <ul> <li> <p>License configuration report - Reports the number and details of
      * consumed licenses for a license configuration.</p> </li> <li> <p>Resource report
-     * - Reports on the tracked licenses and resource consumption for a license
+     * - Reports the tracked licenses and resource consumption for a license
      * configuration.</p> </li> </ul>
      */
     inline UpdateLicenseManagerReportGeneratorRequest& AddType(ReportType&& value) { m_typeHasBeenSet = true; m_type.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>?</p>
+     * <p>The report context.</p>
      */
     inline const ReportContext& GetReportContext() const{ return m_reportContext; }
 
     /**
-     * <p>?</p>
+     * <p>The report context.</p>
      */
     inline bool ReportContextHasBeenSet() const { return m_reportContextHasBeenSet; }
 
     /**
-     * <p>?</p>
+     * <p>The report context.</p>
      */
     inline void SetReportContext(const ReportContext& value) { m_reportContextHasBeenSet = true; m_reportContext = value; }
 
     /**
-     * <p>?</p>
+     * <p>The report context.</p>
      */
     inline void SetReportContext(ReportContext&& value) { m_reportContextHasBeenSet = true; m_reportContext = std::move(value); }
 
     /**
-     * <p>?</p>
+     * <p>The report context.</p>
      */
     inline UpdateLicenseManagerReportGeneratorRequest& WithReportContext(const ReportContext& value) { SetReportContext(value); return *this;}
 
     /**
-     * <p>?</p>
+     * <p>The report context.</p>
      */
     inline UpdateLicenseManagerReportGeneratorRequest& WithReportContext(ReportContext&& value) { SetReportContext(std::move(value)); return *this;}
 
 
     /**
-     * <p>Frequency by which reports are generated. The following options are
-     * avaiable:</p> <p>??? What are the APi value options?</p>
+     * <p>Frequency by which reports are generated.</p>
      */
     inline const ReportFrequency& GetReportFrequency() const{ return m_reportFrequency; }
 
     /**
-     * <p>Frequency by which reports are generated. The following options are
-     * avaiable:</p> <p>??? What are the APi value options?</p>
+     * <p>Frequency by which reports are generated.</p>
      */
     inline bool ReportFrequencyHasBeenSet() const { return m_reportFrequencyHasBeenSet; }
 
     /**
-     * <p>Frequency by which reports are generated. The following options are
-     * avaiable:</p> <p>??? What are the APi value options?</p>
+     * <p>Frequency by which reports are generated.</p>
      */
     inline void SetReportFrequency(const ReportFrequency& value) { m_reportFrequencyHasBeenSet = true; m_reportFrequency = value; }
 
     /**
-     * <p>Frequency by which reports are generated. The following options are
-     * avaiable:</p> <p>??? What are the APi value options?</p>
+     * <p>Frequency by which reports are generated.</p>
      */
     inline void SetReportFrequency(ReportFrequency&& value) { m_reportFrequencyHasBeenSet = true; m_reportFrequency = std::move(value); }
 
     /**
-     * <p>Frequency by which reports are generated. The following options are
-     * avaiable:</p> <p>??? What are the APi value options?</p>
+     * <p>Frequency by which reports are generated.</p>
      */
     inline UpdateLicenseManagerReportGeneratorRequest& WithReportFrequency(const ReportFrequency& value) { SetReportFrequency(value); return *this;}
 
     /**
-     * <p>Frequency by which reports are generated. The following options are
-     * avaiable:</p> <p>??? What are the APi value options?</p>
+     * <p>Frequency by which reports are generated.</p>
      */
     inline UpdateLicenseManagerReportGeneratorRequest& WithReportFrequency(ReportFrequency&& value) { SetReportFrequency(std::move(value)); return *this;}
 

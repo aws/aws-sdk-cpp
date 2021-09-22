@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the new report generator.</p>
+     * <p>The Amazon Resource Name (ARN) of the new report generator.</p>
      */
     inline const Aws::String& GetLicenseManagerReportGeneratorArn() const{ return m_licenseManagerReportGeneratorArn; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the new report generator.</p>
+     * <p>The Amazon Resource Name (ARN) of the new report generator.</p>
      */
     inline void SetLicenseManagerReportGeneratorArn(const Aws::String& value) { m_licenseManagerReportGeneratorArn = value; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the new report generator.</p>
+     * <p>The Amazon Resource Name (ARN) of the new report generator.</p>
      */
     inline void SetLicenseManagerReportGeneratorArn(Aws::String&& value) { m_licenseManagerReportGeneratorArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the new report generator.</p>
+     * <p>The Amazon Resource Name (ARN) of the new report generator.</p>
      */
     inline void SetLicenseManagerReportGeneratorArn(const char* value) { m_licenseManagerReportGeneratorArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the new report generator.</p>
+     * <p>The Amazon Resource Name (ARN) of the new report generator.</p>
      */
     inline CreateLicenseManagerReportGeneratorResult& WithLicenseManagerReportGeneratorArn(const Aws::String& value) { SetLicenseManagerReportGeneratorArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the new report generator.</p>
+     * <p>The Amazon Resource Name (ARN) of the new report generator.</p>
      */
     inline CreateLicenseManagerReportGeneratorResult& WithLicenseManagerReportGeneratorArn(Aws::String&& value) { SetLicenseManagerReportGeneratorArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the new report generator.</p>
+     * <p>The Amazon Resource Name (ARN) of the new report generator.</p>
      */
     inline CreateLicenseManagerReportGeneratorResult& WithLicenseManagerReportGeneratorArn(const char* value) { SetLicenseManagerReportGeneratorArn(value); return *this;}
 

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/imagebuilder/model/Logging.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/imagebuilder/model/InstanceMetadataOptions.h>
 #include <utility>
 
 namespace Aws
@@ -632,6 +633,43 @@ namespace Model
 
 
     /**
+     * <p>The instance metadata option settings for the infrastructure
+     * configuration.</p>
+     */
+    inline const InstanceMetadataOptions& GetInstanceMetadataOptions() const{ return m_instanceMetadataOptions; }
+
+    /**
+     * <p>The instance metadata option settings for the infrastructure
+     * configuration.</p>
+     */
+    inline bool InstanceMetadataOptionsHasBeenSet() const { return m_instanceMetadataOptionsHasBeenSet; }
+
+    /**
+     * <p>The instance metadata option settings for the infrastructure
+     * configuration.</p>
+     */
+    inline void SetInstanceMetadataOptions(const InstanceMetadataOptions& value) { m_instanceMetadataOptionsHasBeenSet = true; m_instanceMetadataOptions = value; }
+
+    /**
+     * <p>The instance metadata option settings for the infrastructure
+     * configuration.</p>
+     */
+    inline void SetInstanceMetadataOptions(InstanceMetadataOptions&& value) { m_instanceMetadataOptionsHasBeenSet = true; m_instanceMetadataOptions = std::move(value); }
+
+    /**
+     * <p>The instance metadata option settings for the infrastructure
+     * configuration.</p>
+     */
+    inline InfrastructureConfiguration& WithInstanceMetadataOptions(const InstanceMetadataOptions& value) { SetInstanceMetadataOptions(value); return *this;}
+
+    /**
+     * <p>The instance metadata option settings for the infrastructure
+     * configuration.</p>
+     */
+    inline InfrastructureConfiguration& WithInstanceMetadataOptions(InstanceMetadataOptions&& value) { SetInstanceMetadataOptions(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tags of the infrastructure configuration.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -739,6 +777,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_resourceTags;
     bool m_resourceTagsHasBeenSet;
+
+    InstanceMetadataOptions m_instanceMetadataOptions;
+    bool m_instanceMetadataOptionsHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

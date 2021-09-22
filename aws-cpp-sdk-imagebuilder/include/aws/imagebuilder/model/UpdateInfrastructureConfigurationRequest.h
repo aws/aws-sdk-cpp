@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/imagebuilder/model/Logging.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/imagebuilder/model/InstanceMetadataOptions.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -375,49 +376,49 @@ namespace Model
 
 
     /**
-     * <p>The key pair of the infrastructure configuration. This can be used to log on
+     * <p>The key pair of the infrastructure configuration. You can use this to log on
      * to and debug the instance used to create your image.</p>
      */
     inline const Aws::String& GetKeyPair() const{ return m_keyPair; }
 
     /**
-     * <p>The key pair of the infrastructure configuration. This can be used to log on
+     * <p>The key pair of the infrastructure configuration. You can use this to log on
      * to and debug the instance used to create your image.</p>
      */
     inline bool KeyPairHasBeenSet() const { return m_keyPairHasBeenSet; }
 
     /**
-     * <p>The key pair of the infrastructure configuration. This can be used to log on
+     * <p>The key pair of the infrastructure configuration. You can use this to log on
      * to and debug the instance used to create your image.</p>
      */
     inline void SetKeyPair(const Aws::String& value) { m_keyPairHasBeenSet = true; m_keyPair = value; }
 
     /**
-     * <p>The key pair of the infrastructure configuration. This can be used to log on
+     * <p>The key pair of the infrastructure configuration. You can use this to log on
      * to and debug the instance used to create your image.</p>
      */
     inline void SetKeyPair(Aws::String&& value) { m_keyPairHasBeenSet = true; m_keyPair = std::move(value); }
 
     /**
-     * <p>The key pair of the infrastructure configuration. This can be used to log on
+     * <p>The key pair of the infrastructure configuration. You can use this to log on
      * to and debug the instance used to create your image.</p>
      */
     inline void SetKeyPair(const char* value) { m_keyPairHasBeenSet = true; m_keyPair.assign(value); }
 
     /**
-     * <p>The key pair of the infrastructure configuration. This can be used to log on
+     * <p>The key pair of the infrastructure configuration. You can use this to log on
      * to and debug the instance used to create your image.</p>
      */
     inline UpdateInfrastructureConfigurationRequest& WithKeyPair(const Aws::String& value) { SetKeyPair(value); return *this;}
 
     /**
-     * <p>The key pair of the infrastructure configuration. This can be used to log on
+     * <p>The key pair of the infrastructure configuration. You can use this to log on
      * to and debug the instance used to create your image.</p>
      */
     inline UpdateInfrastructureConfigurationRequest& WithKeyPair(Aws::String&& value) { SetKeyPair(std::move(value)); return *this;}
 
     /**
-     * <p>The key pair of the infrastructure configuration. This can be used to log on
+     * <p>The key pair of the infrastructure configuration. You can use this to log on
      * to and debug the instance used to create your image.</p>
      */
     inline UpdateInfrastructureConfigurationRequest& WithKeyPair(const char* value) { SetKeyPair(value); return *this;}
@@ -603,6 +604,91 @@ namespace Model
      */
     inline UpdateInfrastructureConfigurationRequest& AddResourceTags(const char* key, const char* value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The instance metadata options that you can set for the HTTP requests that
+     * pipeline builds use to launch EC2 build and test instances. For more information
+     * about instance metadata options, see one of the following links:</p> <ul> <li>
+     * <p> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
+     * the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i>
+     * for Linux instances.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
+     * the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i>
+     * </i> for Windows instances.</p> </li> </ul>
+     */
+    inline const InstanceMetadataOptions& GetInstanceMetadataOptions() const{ return m_instanceMetadataOptions; }
+
+    /**
+     * <p>The instance metadata options that you can set for the HTTP requests that
+     * pipeline builds use to launch EC2 build and test instances. For more information
+     * about instance metadata options, see one of the following links:</p> <ul> <li>
+     * <p> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
+     * the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i>
+     * for Linux instances.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
+     * the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i>
+     * </i> for Windows instances.</p> </li> </ul>
+     */
+    inline bool InstanceMetadataOptionsHasBeenSet() const { return m_instanceMetadataOptionsHasBeenSet; }
+
+    /**
+     * <p>The instance metadata options that you can set for the HTTP requests that
+     * pipeline builds use to launch EC2 build and test instances. For more information
+     * about instance metadata options, see one of the following links:</p> <ul> <li>
+     * <p> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
+     * the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i>
+     * for Linux instances.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
+     * the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i>
+     * </i> for Windows instances.</p> </li> </ul>
+     */
+    inline void SetInstanceMetadataOptions(const InstanceMetadataOptions& value) { m_instanceMetadataOptionsHasBeenSet = true; m_instanceMetadataOptions = value; }
+
+    /**
+     * <p>The instance metadata options that you can set for the HTTP requests that
+     * pipeline builds use to launch EC2 build and test instances. For more information
+     * about instance metadata options, see one of the following links:</p> <ul> <li>
+     * <p> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
+     * the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i>
+     * for Linux instances.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
+     * the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i>
+     * </i> for Windows instances.</p> </li> </ul>
+     */
+    inline void SetInstanceMetadataOptions(InstanceMetadataOptions&& value) { m_instanceMetadataOptionsHasBeenSet = true; m_instanceMetadataOptions = std::move(value); }
+
+    /**
+     * <p>The instance metadata options that you can set for the HTTP requests that
+     * pipeline builds use to launch EC2 build and test instances. For more information
+     * about instance metadata options, see one of the following links:</p> <ul> <li>
+     * <p> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
+     * the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i>
+     * for Linux instances.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
+     * the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i>
+     * </i> for Windows instances.</p> </li> </ul>
+     */
+    inline UpdateInfrastructureConfigurationRequest& WithInstanceMetadataOptions(const InstanceMetadataOptions& value) { SetInstanceMetadataOptions(value); return *this;}
+
+    /**
+     * <p>The instance metadata options that you can set for the HTTP requests that
+     * pipeline builds use to launch EC2 build and test instances. For more information
+     * about instance metadata options, see one of the following links:</p> <ul> <li>
+     * <p> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
+     * the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i>
+     * for Linux instances.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
+     * the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i>
+     * </i> for Windows instances.</p> </li> </ul>
+     */
+    inline UpdateInfrastructureConfigurationRequest& WithInstanceMetadataOptions(InstanceMetadataOptions&& value) { SetInstanceMetadataOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_infrastructureConfigurationArn;
@@ -640,6 +726,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_resourceTags;
     bool m_resourceTagsHasBeenSet;
+
+    InstanceMetadataOptions m_instanceMetadataOptions;
+    bool m_instanceMetadataOptionsHasBeenSet;
   };
 
 } // namespace Model

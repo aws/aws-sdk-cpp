@@ -924,11 +924,11 @@ namespace Model
 
 
     /**
-     * <p>An ARN representing the account ID that specifies the owner of any simulated
-     * resource that does not identify its owner in the resource ARN. Examples of
-     * resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is
-     * specified, it is also used as the account owner of any
-     * <code>ResourcePolicy</code> included in the simulation. If the
+     * <p>An ARN representing the Amazon Web Services account ID that specifies the
+     * owner of any simulated resource that does not identify its owner in the resource
+     * ARN. Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of
+     * any <code>ResourcePolicy</code> included in the simulation. If the
      * <code>ResourceOwner</code> parameter is not specified, then the owner of the
      * resources and the resource policy defaults to the account of the identity
      * provided in <code>CallerArn</code>. This parameter is required only if you
@@ -942,11 +942,11 @@ namespace Model
     inline const Aws::String& GetResourceOwner() const{ return m_resourceOwner; }
 
     /**
-     * <p>An ARN representing the account ID that specifies the owner of any simulated
-     * resource that does not identify its owner in the resource ARN. Examples of
-     * resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is
-     * specified, it is also used as the account owner of any
-     * <code>ResourcePolicy</code> included in the simulation. If the
+     * <p>An ARN representing the Amazon Web Services account ID that specifies the
+     * owner of any simulated resource that does not identify its owner in the resource
+     * ARN. Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of
+     * any <code>ResourcePolicy</code> included in the simulation. If the
      * <code>ResourceOwner</code> parameter is not specified, then the owner of the
      * resources and the resource policy defaults to the account of the identity
      * provided in <code>CallerArn</code>. This parameter is required only if you
@@ -960,11 +960,11 @@ namespace Model
     inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
 
     /**
-     * <p>An ARN representing the account ID that specifies the owner of any simulated
-     * resource that does not identify its owner in the resource ARN. Examples of
-     * resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is
-     * specified, it is also used as the account owner of any
-     * <code>ResourcePolicy</code> included in the simulation. If the
+     * <p>An ARN representing the Amazon Web Services account ID that specifies the
+     * owner of any simulated resource that does not identify its owner in the resource
+     * ARN. Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of
+     * any <code>ResourcePolicy</code> included in the simulation. If the
      * <code>ResourceOwner</code> parameter is not specified, then the owner of the
      * resources and the resource policy defaults to the account of the identity
      * provided in <code>CallerArn</code>. This parameter is required only if you
@@ -978,11 +978,11 @@ namespace Model
     inline void SetResourceOwner(const Aws::String& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = value; }
 
     /**
-     * <p>An ARN representing the account ID that specifies the owner of any simulated
-     * resource that does not identify its owner in the resource ARN. Examples of
-     * resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is
-     * specified, it is also used as the account owner of any
-     * <code>ResourcePolicy</code> included in the simulation. If the
+     * <p>An ARN representing the Amazon Web Services account ID that specifies the
+     * owner of any simulated resource that does not identify its owner in the resource
+     * ARN. Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of
+     * any <code>ResourcePolicy</code> included in the simulation. If the
      * <code>ResourceOwner</code> parameter is not specified, then the owner of the
      * resources and the resource policy defaults to the account of the identity
      * provided in <code>CallerArn</code>. This parameter is required only if you
@@ -996,11 +996,11 @@ namespace Model
     inline void SetResourceOwner(Aws::String&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::move(value); }
 
     /**
-     * <p>An ARN representing the account ID that specifies the owner of any simulated
-     * resource that does not identify its owner in the resource ARN. Examples of
-     * resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is
-     * specified, it is also used as the account owner of any
-     * <code>ResourcePolicy</code> included in the simulation. If the
+     * <p>An ARN representing the Amazon Web Services account ID that specifies the
+     * owner of any simulated resource that does not identify its owner in the resource
+     * ARN. Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of
+     * any <code>ResourcePolicy</code> included in the simulation. If the
      * <code>ResourceOwner</code> parameter is not specified, then the owner of the
      * resources and the resource policy defaults to the account of the identity
      * provided in <code>CallerArn</code>. This parameter is required only if you
@@ -1014,11 +1014,11 @@ namespace Model
     inline void SetResourceOwner(const char* value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner.assign(value); }
 
     /**
-     * <p>An ARN representing the account ID that specifies the owner of any simulated
-     * resource that does not identify its owner in the resource ARN. Examples of
-     * resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is
-     * specified, it is also used as the account owner of any
-     * <code>ResourcePolicy</code> included in the simulation. If the
+     * <p>An ARN representing the Amazon Web Services account ID that specifies the
+     * owner of any simulated resource that does not identify its owner in the resource
+     * ARN. Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of
+     * any <code>ResourcePolicy</code> included in the simulation. If the
      * <code>ResourceOwner</code> parameter is not specified, then the owner of the
      * resources and the resource policy defaults to the account of the identity
      * provided in <code>CallerArn</code>. This parameter is required only if you
@@ -1032,11 +1032,11 @@ namespace Model
     inline SimulateCustomPolicyRequest& WithResourceOwner(const Aws::String& value) { SetResourceOwner(value); return *this;}
 
     /**
-     * <p>An ARN representing the account ID that specifies the owner of any simulated
-     * resource that does not identify its owner in the resource ARN. Examples of
-     * resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is
-     * specified, it is also used as the account owner of any
-     * <code>ResourcePolicy</code> included in the simulation. If the
+     * <p>An ARN representing the Amazon Web Services account ID that specifies the
+     * owner of any simulated resource that does not identify its owner in the resource
+     * ARN. Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of
+     * any <code>ResourcePolicy</code> included in the simulation. If the
      * <code>ResourceOwner</code> parameter is not specified, then the owner of the
      * resources and the resource policy defaults to the account of the identity
      * provided in <code>CallerArn</code>. This parameter is required only if you
@@ -1050,11 +1050,11 @@ namespace Model
     inline SimulateCustomPolicyRequest& WithResourceOwner(Aws::String&& value) { SetResourceOwner(std::move(value)); return *this;}
 
     /**
-     * <p>An ARN representing the account ID that specifies the owner of any simulated
-     * resource that does not identify its owner in the resource ARN. Examples of
-     * resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is
-     * specified, it is also used as the account owner of any
-     * <code>ResourcePolicy</code> included in the simulation. If the
+     * <p>An ARN representing the Amazon Web Services account ID that specifies the
+     * owner of any simulated resource that does not identify its owner in the resource
+     * ARN. Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of
+     * any <code>ResourcePolicy</code> included in the simulation. If the
      * <code>ResourceOwner</code> parameter is not specified, then the owner of the
      * resources and the resource policy defaults to the account of the identity
      * provided in <code>CallerArn</code>. This parameter is required only if you

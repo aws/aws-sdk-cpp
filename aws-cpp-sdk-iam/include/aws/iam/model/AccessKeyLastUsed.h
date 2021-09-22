@@ -186,96 +186,96 @@ namespace Model
 
 
     /**
-     * <p>The Region where this access key was most recently used. The value for this
-     * field is "N/A" in the following situations:</p> <ul> <li> <p>The user does not
-     * have an access key.</p> </li> <li> <p>An access key exists but has not been used
-     * since IAM began tracking this information.</p> </li> <li> <p>There is no sign-in
-     * data associated with the user.</p> </li> </ul> <p>For more information about
-     * Regions, see <a
+     * <p>The Amazon Web Services Region where this access key was most recently used.
+     * The value for this field is "N/A" in the following situations:</p> <ul> <li>
+     * <p>The user does not have an access key.</p> </li> <li> <p>An access key exists
+     * but has not been used since IAM began tracking this information.</p> </li> <li>
+     * <p>There is no sign-in data associated with the user.</p> </li> </ul> <p>For
+     * more information about Amazon Web Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * endpoints</a> in the Amazon Web Services General Reference.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The Region where this access key was most recently used. The value for this
-     * field is "N/A" in the following situations:</p> <ul> <li> <p>The user does not
-     * have an access key.</p> </li> <li> <p>An access key exists but has not been used
-     * since IAM began tracking this information.</p> </li> <li> <p>There is no sign-in
-     * data associated with the user.</p> </li> </ul> <p>For more information about
-     * Regions, see <a
+     * <p>The Amazon Web Services Region where this access key was most recently used.
+     * The value for this field is "N/A" in the following situations:</p> <ul> <li>
+     * <p>The user does not have an access key.</p> </li> <li> <p>An access key exists
+     * but has not been used since IAM began tracking this information.</p> </li> <li>
+     * <p>There is no sign-in data associated with the user.</p> </li> </ul> <p>For
+     * more information about Amazon Web Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * endpoints</a> in the Amazon Web Services General Reference.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The Region where this access key was most recently used. The value for this
-     * field is "N/A" in the following situations:</p> <ul> <li> <p>The user does not
-     * have an access key.</p> </li> <li> <p>An access key exists but has not been used
-     * since IAM began tracking this information.</p> </li> <li> <p>There is no sign-in
-     * data associated with the user.</p> </li> </ul> <p>For more information about
-     * Regions, see <a
+     * <p>The Amazon Web Services Region where this access key was most recently used.
+     * The value for this field is "N/A" in the following situations:</p> <ul> <li>
+     * <p>The user does not have an access key.</p> </li> <li> <p>An access key exists
+     * but has not been used since IAM began tracking this information.</p> </li> <li>
+     * <p>There is no sign-in data associated with the user.</p> </li> </ul> <p>For
+     * more information about Amazon Web Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * endpoints</a> in the Amazon Web Services General Reference.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The Region where this access key was most recently used. The value for this
-     * field is "N/A" in the following situations:</p> <ul> <li> <p>The user does not
-     * have an access key.</p> </li> <li> <p>An access key exists but has not been used
-     * since IAM began tracking this information.</p> </li> <li> <p>There is no sign-in
-     * data associated with the user.</p> </li> </ul> <p>For more information about
-     * Regions, see <a
+     * <p>The Amazon Web Services Region where this access key was most recently used.
+     * The value for this field is "N/A" in the following situations:</p> <ul> <li>
+     * <p>The user does not have an access key.</p> </li> <li> <p>An access key exists
+     * but has not been used since IAM began tracking this information.</p> </li> <li>
+     * <p>There is no sign-in data associated with the user.</p> </li> </ul> <p>For
+     * more information about Amazon Web Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * endpoints</a> in the Amazon Web Services General Reference.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The Region where this access key was most recently used. The value for this
-     * field is "N/A" in the following situations:</p> <ul> <li> <p>The user does not
-     * have an access key.</p> </li> <li> <p>An access key exists but has not been used
-     * since IAM began tracking this information.</p> </li> <li> <p>There is no sign-in
-     * data associated with the user.</p> </li> </ul> <p>For more information about
-     * Regions, see <a
+     * <p>The Amazon Web Services Region where this access key was most recently used.
+     * The value for this field is "N/A" in the following situations:</p> <ul> <li>
+     * <p>The user does not have an access key.</p> </li> <li> <p>An access key exists
+     * but has not been used since IAM began tracking this information.</p> </li> <li>
+     * <p>There is no sign-in data associated with the user.</p> </li> </ul> <p>For
+     * more information about Amazon Web Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * endpoints</a> in the Amazon Web Services General Reference.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The Region where this access key was most recently used. The value for this
-     * field is "N/A" in the following situations:</p> <ul> <li> <p>The user does not
-     * have an access key.</p> </li> <li> <p>An access key exists but has not been used
-     * since IAM began tracking this information.</p> </li> <li> <p>There is no sign-in
-     * data associated with the user.</p> </li> </ul> <p>For more information about
-     * Regions, see <a
+     * <p>The Amazon Web Services Region where this access key was most recently used.
+     * The value for this field is "N/A" in the following situations:</p> <ul> <li>
+     * <p>The user does not have an access key.</p> </li> <li> <p>An access key exists
+     * but has not been used since IAM began tracking this information.</p> </li> <li>
+     * <p>There is no sign-in data associated with the user.</p> </li> </ul> <p>For
+     * more information about Amazon Web Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * endpoints</a> in the Amazon Web Services General Reference.</p>
      */
     inline AccessKeyLastUsed& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The Region where this access key was most recently used. The value for this
-     * field is "N/A" in the following situations:</p> <ul> <li> <p>The user does not
-     * have an access key.</p> </li> <li> <p>An access key exists but has not been used
-     * since IAM began tracking this information.</p> </li> <li> <p>There is no sign-in
-     * data associated with the user.</p> </li> </ul> <p>For more information about
-     * Regions, see <a
+     * <p>The Amazon Web Services Region where this access key was most recently used.
+     * The value for this field is "N/A" in the following situations:</p> <ul> <li>
+     * <p>The user does not have an access key.</p> </li> <li> <p>An access key exists
+     * but has not been used since IAM began tracking this information.</p> </li> <li>
+     * <p>There is no sign-in data associated with the user.</p> </li> </ul> <p>For
+     * more information about Amazon Web Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * endpoints</a> in the Amazon Web Services General Reference.</p>
      */
     inline AccessKeyLastUsed& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The Region where this access key was most recently used. The value for this
-     * field is "N/A" in the following situations:</p> <ul> <li> <p>The user does not
-     * have an access key.</p> </li> <li> <p>An access key exists but has not been used
-     * since IAM began tracking this information.</p> </li> <li> <p>There is no sign-in
-     * data associated with the user.</p> </li> </ul> <p>For more information about
-     * Regions, see <a
+     * <p>The Amazon Web Services Region where this access key was most recently used.
+     * The value for this field is "N/A" in the following situations:</p> <ul> <li>
+     * <p>The user does not have an access key.</p> </li> <li> <p>An access key exists
+     * but has not been used since IAM began tracking this information.</p> </li> <li>
+     * <p>There is no sign-in data associated with the user.</p> </li> </ul> <p>For
+     * more information about Amazon Web Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * endpoints</a> in the Amazon Web Services General Reference.</p>
      */

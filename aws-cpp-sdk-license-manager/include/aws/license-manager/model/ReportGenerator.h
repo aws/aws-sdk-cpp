@@ -126,104 +126,104 @@ namespace Model
 
 
     /**
-     * <p>License configuration type this generator reports on.</p>
+     * <p>License configuration type for this generator.</p>
      */
     inline const ReportContext& GetReportContext() const{ return m_reportContext; }
 
     /**
-     * <p>License configuration type this generator reports on.</p>
+     * <p>License configuration type for this generator.</p>
      */
     inline bool ReportContextHasBeenSet() const { return m_reportContextHasBeenSet; }
 
     /**
-     * <p>License configuration type this generator reports on.</p>
+     * <p>License configuration type for this generator.</p>
      */
     inline void SetReportContext(const ReportContext& value) { m_reportContextHasBeenSet = true; m_reportContext = value; }
 
     /**
-     * <p>License configuration type this generator reports on.</p>
+     * <p>License configuration type for this generator.</p>
      */
     inline void SetReportContext(ReportContext&& value) { m_reportContextHasBeenSet = true; m_reportContext = std::move(value); }
 
     /**
-     * <p>License configuration type this generator reports on.</p>
+     * <p>License configuration type for this generator.</p>
      */
     inline ReportGenerator& WithReportContext(const ReportContext& value) { SetReportContext(value); return *this;}
 
     /**
-     * <p>License configuration type this generator reports on.</p>
+     * <p>License configuration type for this generator.</p>
      */
     inline ReportGenerator& WithReportContext(ReportContext&& value) { SetReportContext(std::move(value)); return *this;}
 
 
     /**
-     * <p>Details on how frequently reports are generated.</p>
+     * <p>Details about how frequently reports are generated.</p>
      */
     inline const ReportFrequency& GetReportFrequency() const{ return m_reportFrequency; }
 
     /**
-     * <p>Details on how frequently reports are generated.</p>
+     * <p>Details about how frequently reports are generated.</p>
      */
     inline bool ReportFrequencyHasBeenSet() const { return m_reportFrequencyHasBeenSet; }
 
     /**
-     * <p>Details on how frequently reports are generated.</p>
+     * <p>Details about how frequently reports are generated.</p>
      */
     inline void SetReportFrequency(const ReportFrequency& value) { m_reportFrequencyHasBeenSet = true; m_reportFrequency = value; }
 
     /**
-     * <p>Details on how frequently reports are generated.</p>
+     * <p>Details about how frequently reports are generated.</p>
      */
     inline void SetReportFrequency(ReportFrequency&& value) { m_reportFrequencyHasBeenSet = true; m_reportFrequency = std::move(value); }
 
     /**
-     * <p>Details on how frequently reports are generated.</p>
+     * <p>Details about how frequently reports are generated.</p>
      */
     inline ReportGenerator& WithReportFrequency(const ReportFrequency& value) { SetReportFrequency(value); return *this;}
 
     /**
-     * <p>Details on how frequently reports are generated.</p>
+     * <p>Details about how frequently reports are generated.</p>
      */
     inline ReportGenerator& WithReportFrequency(ReportFrequency&& value) { SetReportFrequency(std::move(value)); return *this;}
 
 
     /**
-     * <p>Amazon Resource Number (ARN) of the report generator.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator.</p>
      */
     inline const Aws::String& GetLicenseManagerReportGeneratorArn() const{ return m_licenseManagerReportGeneratorArn; }
 
     /**
-     * <p>Amazon Resource Number (ARN) of the report generator.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator.</p>
      */
     inline bool LicenseManagerReportGeneratorArnHasBeenSet() const { return m_licenseManagerReportGeneratorArnHasBeenSet; }
 
     /**
-     * <p>Amazon Resource Number (ARN) of the report generator.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator.</p>
      */
     inline void SetLicenseManagerReportGeneratorArn(const Aws::String& value) { m_licenseManagerReportGeneratorArnHasBeenSet = true; m_licenseManagerReportGeneratorArn = value; }
 
     /**
-     * <p>Amazon Resource Number (ARN) of the report generator.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator.</p>
      */
     inline void SetLicenseManagerReportGeneratorArn(Aws::String&& value) { m_licenseManagerReportGeneratorArnHasBeenSet = true; m_licenseManagerReportGeneratorArn = std::move(value); }
 
     /**
-     * <p>Amazon Resource Number (ARN) of the report generator.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator.</p>
      */
     inline void SetLicenseManagerReportGeneratorArn(const char* value) { m_licenseManagerReportGeneratorArnHasBeenSet = true; m_licenseManagerReportGeneratorArn.assign(value); }
 
     /**
-     * <p>Amazon Resource Number (ARN) of the report generator.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator.</p>
      */
     inline ReportGenerator& WithLicenseManagerReportGeneratorArn(const Aws::String& value) { SetLicenseManagerReportGeneratorArn(value); return *this;}
 
     /**
-     * <p>Amazon Resource Number (ARN) of the report generator.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator.</p>
      */
     inline ReportGenerator& WithLicenseManagerReportGeneratorArn(Aws::String&& value) { SetLicenseManagerReportGeneratorArn(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Number (ARN) of the report generator.</p>
+     * <p>Amazon Resource Name (ARN) of the report generator.</p>
      */
     inline ReportGenerator& WithLicenseManagerReportGeneratorArn(const char* value) { SetLicenseManagerReportGeneratorArn(value); return *this;}
 
@@ -352,42 +352,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID used to create the report generator.</p>
+     * <p>The Amazon Web Services account ID used to create the report generator.</p>
      */
     inline const Aws::String& GetReportCreatorAccount() const{ return m_reportCreatorAccount; }
 
     /**
-     * <p>The AWS account ID used to create the report generator.</p>
+     * <p>The Amazon Web Services account ID used to create the report generator.</p>
      */
     inline bool ReportCreatorAccountHasBeenSet() const { return m_reportCreatorAccountHasBeenSet; }
 
     /**
-     * <p>The AWS account ID used to create the report generator.</p>
+     * <p>The Amazon Web Services account ID used to create the report generator.</p>
      */
     inline void SetReportCreatorAccount(const Aws::String& value) { m_reportCreatorAccountHasBeenSet = true; m_reportCreatorAccount = value; }
 
     /**
-     * <p>The AWS account ID used to create the report generator.</p>
+     * <p>The Amazon Web Services account ID used to create the report generator.</p>
      */
     inline void SetReportCreatorAccount(Aws::String&& value) { m_reportCreatorAccountHasBeenSet = true; m_reportCreatorAccount = std::move(value); }
 
     /**
-     * <p>The AWS account ID used to create the report generator.</p>
+     * <p>The Amazon Web Services account ID used to create the report generator.</p>
      */
     inline void SetReportCreatorAccount(const char* value) { m_reportCreatorAccountHasBeenSet = true; m_reportCreatorAccount.assign(value); }
 
     /**
-     * <p>The AWS account ID used to create the report generator.</p>
+     * <p>The Amazon Web Services account ID used to create the report generator.</p>
      */
     inline ReportGenerator& WithReportCreatorAccount(const Aws::String& value) { SetReportCreatorAccount(value); return *this;}
 
     /**
-     * <p>The AWS account ID used to create the report generator.</p>
+     * <p>The Amazon Web Services account ID used to create the report generator.</p>
      */
     inline ReportGenerator& WithReportCreatorAccount(Aws::String&& value) { SetReportCreatorAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID used to create the report generator.</p>
+     * <p>The Amazon Web Services account ID used to create the report generator.</p>
      */
     inline ReportGenerator& WithReportCreatorAccount(const char* value) { SetReportCreatorAccount(value); return *this;}
 

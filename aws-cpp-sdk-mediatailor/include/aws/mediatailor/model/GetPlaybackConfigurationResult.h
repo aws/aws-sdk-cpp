@@ -13,6 +13,7 @@
 #include <aws/mediatailor/model/DashConfiguration.h>
 #include <aws/mediatailor/model/HlsConfiguration.h>
 #include <aws/mediatailor/model/LivePreRollConfiguration.h>
+#include <aws/mediatailor/model/LogConfiguration.h>
 #include <aws/mediatailor/model/ManifestProcessingRules.h>
 #include <utility>
 
@@ -382,6 +383,32 @@ namespace Model
      * <p>The configuration for pre-roll ad insertion.</p>
      */
     inline GetPlaybackConfigurationResult& WithLivePreRollConfiguration(LivePreRollConfiguration&& value) { SetLivePreRollConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+     */
+    inline const LogConfiguration& GetLogConfiguration() const{ return m_logConfiguration; }
+
+    /**
+     * <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+     */
+    inline void SetLogConfiguration(const LogConfiguration& value) { m_logConfiguration = value; }
+
+    /**
+     * <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+     */
+    inline void SetLogConfiguration(LogConfiguration&& value) { m_logConfiguration = std::move(value); }
+
+    /**
+     * <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+     */
+    inline GetPlaybackConfigurationResult& WithLogConfiguration(const LogConfiguration& value) { SetLogConfiguration(value); return *this;}
+
+    /**
+     * <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+     */
+    inline GetPlaybackConfigurationResult& WithLogConfiguration(LogConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -861,6 +888,8 @@ namespace Model
     HlsConfiguration m_hlsConfiguration;
 
     LivePreRollConfiguration m_livePreRollConfiguration;
+
+    LogConfiguration m_logConfiguration;
 
     ManifestProcessingRules m_manifestProcessingRules;
 

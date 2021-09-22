@@ -43,6 +43,7 @@
 #include <aws/lexv2-models/model/DeleteResourcePolicyStatementRequest.h>
 #include <aws/lexv2-models/model/DeleteSlotRequest.h>
 #include <aws/lexv2-models/model/DeleteSlotTypeRequest.h>
+#include <aws/lexv2-models/model/DeleteUtterancesRequest.h>
 #include <aws/lexv2-models/model/DescribeBotRequest.h>
 #include <aws/lexv2-models/model/DescribeBotAliasRequest.h>
 #include <aws/lexv2-models/model/DescribeBotLocaleRequest.h>
@@ -53,6 +54,7 @@
 #include <aws/lexv2-models/model/DescribeResourcePolicyRequest.h>
 #include <aws/lexv2-models/model/DescribeSlotRequest.h>
 #include <aws/lexv2-models/model/DescribeSlotTypeRequest.h>
+#include <aws/lexv2-models/model/ListAggregatedUtterancesRequest.h>
 #include <aws/lexv2-models/model/ListBotAliasesRequest.h>
 #include <aws/lexv2-models/model/ListBotLocalesRequest.h>
 #include <aws/lexv2-models/model/ListBotVersionsRequest.h>
@@ -1027,6 +1029,38 @@ void LexModelsV2Client::DeleteSlotTypeAsyncHelper(const DeleteSlotTypeRequest& r
   handler(this, request, DeleteSlotType(request), context);
 }
 
+DeleteUtterancesOutcome LexModelsV2Client::DeleteUtterances(const DeleteUtterancesRequest& request) const
+{
+  if (!request.BotIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteUtterances", "Required field: BotId, is not set");
+    return DeleteUtterancesOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotId());
+  uri.AddPathSegments("/utterances/");
+  return DeleteUtterancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteUtterancesOutcomeCallable LexModelsV2Client::DeleteUtterancesCallable(const DeleteUtterancesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteUtterancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUtterances(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::DeleteUtterancesAsync(const DeleteUtterancesRequest& request, const DeleteUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteUtterancesAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelsV2Client::DeleteUtterancesAsyncHelper(const DeleteUtterancesRequest& request, const DeleteUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteUtterances(request), context);
+}
+
 DescribeBotOutcome LexModelsV2Client::DescribeBot(const DescribeBotRequest& request) const
 {
   if (!request.BotIdHasBeenSet())
@@ -1433,6 +1467,38 @@ void LexModelsV2Client::DescribeSlotTypeAsync(const DescribeSlotTypeRequest& req
 void LexModelsV2Client::DescribeSlotTypeAsyncHelper(const DescribeSlotTypeRequest& request, const DescribeSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeSlotType(request), context);
+}
+
+ListAggregatedUtterancesOutcome LexModelsV2Client::ListAggregatedUtterances(const ListAggregatedUtterancesRequest& request) const
+{
+  if (!request.BotIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAggregatedUtterances", "Required field: BotId, is not set");
+    return ListAggregatedUtterancesOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotId());
+  uri.AddPathSegments("/aggregatedutterances/");
+  return ListAggregatedUtterancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAggregatedUtterancesOutcomeCallable LexModelsV2Client::ListAggregatedUtterancesCallable(const ListAggregatedUtterancesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAggregatedUtterancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAggregatedUtterances(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::ListAggregatedUtterancesAsync(const ListAggregatedUtterancesRequest& request, const ListAggregatedUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAggregatedUtterancesAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelsV2Client::ListAggregatedUtterancesAsyncHelper(const ListAggregatedUtterancesRequest& request, const ListAggregatedUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAggregatedUtterances(request), context);
 }
 
 ListBotAliasesOutcome LexModelsV2Client::ListBotAliases(const ListBotAliasesRequest& request) const

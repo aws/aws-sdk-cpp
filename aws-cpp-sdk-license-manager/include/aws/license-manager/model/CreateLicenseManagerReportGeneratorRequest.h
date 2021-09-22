@@ -82,72 +82,72 @@ namespace Model
 
     /**
      * <p>Type of reports to generate. The following report types an be generated:</p>
-     * <ul> <li> <p>License configuration report - Reports on the number and details of
+     * <ul> <li> <p>License configuration report - Reports the number and details of
      * consumed licenses for a license configuration.</p> </li> <li> <p>Resource report
-     * - Reports on the tracked licenses and resource consumption for a license
+     * - Reports the tracked licenses and resource consumption for a license
      * configuration.</p> </li> </ul>
      */
     inline const Aws::Vector<ReportType>& GetType() const{ return m_type; }
 
     /**
      * <p>Type of reports to generate. The following report types an be generated:</p>
-     * <ul> <li> <p>License configuration report - Reports on the number and details of
+     * <ul> <li> <p>License configuration report - Reports the number and details of
      * consumed licenses for a license configuration.</p> </li> <li> <p>Resource report
-     * - Reports on the tracked licenses and resource consumption for a license
+     * - Reports the tracked licenses and resource consumption for a license
      * configuration.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>Type of reports to generate. The following report types an be generated:</p>
-     * <ul> <li> <p>License configuration report - Reports on the number and details of
+     * <ul> <li> <p>License configuration report - Reports the number and details of
      * consumed licenses for a license configuration.</p> </li> <li> <p>Resource report
-     * - Reports on the tracked licenses and resource consumption for a license
+     * - Reports the tracked licenses and resource consumption for a license
      * configuration.</p> </li> </ul>
      */
     inline void SetType(const Aws::Vector<ReportType>& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>Type of reports to generate. The following report types an be generated:</p>
-     * <ul> <li> <p>License configuration report - Reports on the number and details of
+     * <ul> <li> <p>License configuration report - Reports the number and details of
      * consumed licenses for a license configuration.</p> </li> <li> <p>Resource report
-     * - Reports on the tracked licenses and resource consumption for a license
+     * - Reports the tracked licenses and resource consumption for a license
      * configuration.</p> </li> </ul>
      */
     inline void SetType(Aws::Vector<ReportType>&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>Type of reports to generate. The following report types an be generated:</p>
-     * <ul> <li> <p>License configuration report - Reports on the number and details of
+     * <ul> <li> <p>License configuration report - Reports the number and details of
      * consumed licenses for a license configuration.</p> </li> <li> <p>Resource report
-     * - Reports on the tracked licenses and resource consumption for a license
+     * - Reports the tracked licenses and resource consumption for a license
      * configuration.</p> </li> </ul>
      */
     inline CreateLicenseManagerReportGeneratorRequest& WithType(const Aws::Vector<ReportType>& value) { SetType(value); return *this;}
 
     /**
      * <p>Type of reports to generate. The following report types an be generated:</p>
-     * <ul> <li> <p>License configuration report - Reports on the number and details of
+     * <ul> <li> <p>License configuration report - Reports the number and details of
      * consumed licenses for a license configuration.</p> </li> <li> <p>Resource report
-     * - Reports on the tracked licenses and resource consumption for a license
+     * - Reports the tracked licenses and resource consumption for a license
      * configuration.</p> </li> </ul>
      */
     inline CreateLicenseManagerReportGeneratorRequest& WithType(Aws::Vector<ReportType>&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>Type of reports to generate. The following report types an be generated:</p>
-     * <ul> <li> <p>License configuration report - Reports on the number and details of
+     * <ul> <li> <p>License configuration report - Reports the number and details of
      * consumed licenses for a license configuration.</p> </li> <li> <p>Resource report
-     * - Reports on the tracked licenses and resource consumption for a license
+     * - Reports the tracked licenses and resource consumption for a license
      * configuration.</p> </li> </ul>
      */
     inline CreateLicenseManagerReportGeneratorRequest& AddType(const ReportType& value) { m_typeHasBeenSet = true; m_type.push_back(value); return *this; }
 
     /**
      * <p>Type of reports to generate. The following report types an be generated:</p>
-     * <ul> <li> <p>License configuration report - Reports on the number and details of
+     * <ul> <li> <p>License configuration report - Reports the number and details of
      * consumed licenses for a license configuration.</p> </li> <li> <p>Resource report
-     * - Reports on the tracked licenses and resource consumption for a license
+     * - Reports the tracked licenses and resource consumption for a license
      * configuration.</p> </li> </ul>
      */
     inline CreateLicenseManagerReportGeneratorRequest& AddType(ReportType&& value) { m_typeHasBeenSet = true; m_type.push_back(std::move(value)); return *this; }

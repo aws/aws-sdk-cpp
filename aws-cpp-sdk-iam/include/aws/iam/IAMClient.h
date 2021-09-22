@@ -1129,11 +1129,12 @@ namespace Model
         /**
          * <p>Changes the password of the IAM user who is calling this operation. This
          * operation can be performed using the CLI, the Amazon Web Services API, or the
-         * <b>My Security Credentials</b> page in the Management Console. The account root
-         * user password is not affected by this operation.</p> <p>Use
-         * <a>UpdateLoginProfile</a> to use the CLI, the Amazon Web Services API, or the
-         * <b>Users</b> page in the IAM console to change the password for any IAM user.
-         * For more information about modifying passwords, see <a
+         * <b>My Security Credentials</b> page in the Amazon Web Services Management
+         * Console. The Amazon Web Services account root user password is not affected by
+         * this operation.</p> <p>Use <a>UpdateLoginProfile</a> to use the CLI, the Amazon
+         * Web Services API, or the <b>Users</b> page in the IAM console to change the
+         * password for any IAM user. For more information about modifying passwords, see
+         * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
          * passwords</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ChangePassword">AWS
@@ -1144,11 +1145,12 @@ namespace Model
         /**
          * <p>Changes the password of the IAM user who is calling this operation. This
          * operation can be performed using the CLI, the Amazon Web Services API, or the
-         * <b>My Security Credentials</b> page in the Management Console. The account root
-         * user password is not affected by this operation.</p> <p>Use
-         * <a>UpdateLoginProfile</a> to use the CLI, the Amazon Web Services API, or the
-         * <b>Users</b> page in the IAM console to change the password for any IAM user.
-         * For more information about modifying passwords, see <a
+         * <b>My Security Credentials</b> page in the Amazon Web Services Management
+         * Console. The Amazon Web Services account root user password is not affected by
+         * this operation.</p> <p>Use <a>UpdateLoginProfile</a> to use the CLI, the Amazon
+         * Web Services API, or the <b>Users</b> page in the IAM console to change the
+         * password for any IAM user. For more information about modifying passwords, see
+         * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
          * passwords</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ChangePassword">AWS
@@ -1161,11 +1163,12 @@ namespace Model
         /**
          * <p>Changes the password of the IAM user who is calling this operation. This
          * operation can be performed using the CLI, the Amazon Web Services API, or the
-         * <b>My Security Credentials</b> page in the Management Console. The account root
-         * user password is not affected by this operation.</p> <p>Use
-         * <a>UpdateLoginProfile</a> to use the CLI, the Amazon Web Services API, or the
-         * <b>Users</b> page in the IAM console to change the password for any IAM user.
-         * For more information about modifying passwords, see <a
+         * <b>My Security Credentials</b> page in the Amazon Web Services Management
+         * Console. The Amazon Web Services account root user password is not affected by
+         * this operation.</p> <p>Use <a>UpdateLoginProfile</a> to use the CLI, the Amazon
+         * Web Services API, or the <b>Users</b> page in the IAM console to change the
+         * password for any IAM user. For more information about modifying passwords, see
+         * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
          * passwords</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ChangePassword">AWS
@@ -1180,17 +1183,18 @@ namespace Model
          * Web Services access key ID for the specified user. The default status for new
          * keys is <code>Active</code>.</p> <p>If you do not specify a user name, IAM
          * determines the user name implicitly based on the Amazon Web Services access key
-         * ID signing the request. This operation works for access keys under the account.
-         * Consequently, you can use this operation to manage account root user
-         * credentials. This is true even if the account has no associated users.</p> <p>
-         * For information about quotas on the number of keys you can create, see <a
+         * ID signing the request. This operation works for access keys under the Amazon
+         * Web Services account. Consequently, you can use this operation to manage Amazon
+         * Web Services account root user credentials. This is true even if the Amazon Web
+         * Services account has no associated users.</p> <p> For information about quotas
+         * on the number of keys you can create, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
          * and STS quotas</a> in the <i>IAM User Guide</i>.</p>  <p>To ensure
-         * the security of your account, the secret access key is accessible only during
-         * key and user creation. You must save the key (for example, in a text file) if
-         * you want to be able to access it again. If a secret key is lost, you can delete
-         * the access keys for the associated user and then create new keys.</p>
-         * <p><h3>See Also:</h3>   <a
+         * the security of your Amazon Web Services account, the secret access key is
+         * accessible only during key and user creation. You must save the key (for
+         * example, in a text file) if you want to be able to access it again. If a secret
+         * key is lost, you can delete the access keys for the associated user and then
+         * create new keys.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccessKey">AWS
          * API Reference</a></p>
          */
@@ -1201,17 +1205,18 @@ namespace Model
          * Web Services access key ID for the specified user. The default status for new
          * keys is <code>Active</code>.</p> <p>If you do not specify a user name, IAM
          * determines the user name implicitly based on the Amazon Web Services access key
-         * ID signing the request. This operation works for access keys under the account.
-         * Consequently, you can use this operation to manage account root user
-         * credentials. This is true even if the account has no associated users.</p> <p>
-         * For information about quotas on the number of keys you can create, see <a
+         * ID signing the request. This operation works for access keys under the Amazon
+         * Web Services account. Consequently, you can use this operation to manage Amazon
+         * Web Services account root user credentials. This is true even if the Amazon Web
+         * Services account has no associated users.</p> <p> For information about quotas
+         * on the number of keys you can create, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
          * and STS quotas</a> in the <i>IAM User Guide</i>.</p>  <p>To ensure
-         * the security of your account, the secret access key is accessible only during
-         * key and user creation. You must save the key (for example, in a text file) if
-         * you want to be able to access it again. If a secret key is lost, you can delete
-         * the access keys for the associated user and then create new keys.</p>
-         * <p><h3>See Also:</h3>   <a
+         * the security of your Amazon Web Services account, the secret access key is
+         * accessible only during key and user creation. You must save the key (for
+         * example, in a text file) if you want to be able to access it again. If a secret
+         * key is lost, you can delete the access keys for the associated user and then
+         * create new keys.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccessKey">AWS
          * API Reference</a></p>
          *
@@ -1224,17 +1229,18 @@ namespace Model
          * Web Services access key ID for the specified user. The default status for new
          * keys is <code>Active</code>.</p> <p>If you do not specify a user name, IAM
          * determines the user name implicitly based on the Amazon Web Services access key
-         * ID signing the request. This operation works for access keys under the account.
-         * Consequently, you can use this operation to manage account root user
-         * credentials. This is true even if the account has no associated users.</p> <p>
-         * For information about quotas on the number of keys you can create, see <a
+         * ID signing the request. This operation works for access keys under the Amazon
+         * Web Services account. Consequently, you can use this operation to manage Amazon
+         * Web Services account root user credentials. This is true even if the Amazon Web
+         * Services account has no associated users.</p> <p> For information about quotas
+         * on the number of keys you can create, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
          * and STS quotas</a> in the <i>IAM User Guide</i>.</p>  <p>To ensure
-         * the security of your account, the secret access key is accessible only during
-         * key and user creation. You must save the key (for example, in a text file) if
-         * you want to be able to access it again. If a secret key is lost, you can delete
-         * the access keys for the associated user and then create new keys.</p>
-         * <p><h3>See Also:</h3>   <a
+         * the security of your Amazon Web Services account, the secret access key is
+         * accessible only during key and user creation. You must save the key (for
+         * example, in a text file) if you want to be able to access it again. If a secret
+         * key is lost, you can delete the access keys for the associated user and then
+         * create new keys.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccessKey">AWS
          * API Reference</a></p>
          *
@@ -1243,22 +1249,22 @@ namespace Model
         virtual void CreateAccessKeyAsync(const Model::CreateAccessKeyRequest& request, const CreateAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an alias for your account. For information about using an account
-         * alias, see <a
+         * <p>Creates an alias for your Amazon Web Services account. For information about
+         * using an Amazon Web Services account alias, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-         * an alias for your account ID</a> in the <i>IAM User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * an alias for your Amazon Web Services account ID</a> in the <i>IAM User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccountAlias">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateAccountAliasOutcome CreateAccountAlias(const Model::CreateAccountAliasRequest& request) const;
 
         /**
-         * <p>Creates an alias for your account. For information about using an account
-         * alias, see <a
+         * <p>Creates an alias for your Amazon Web Services account. For information about
+         * using an Amazon Web Services account alias, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-         * an alias for your account ID</a> in the <i>IAM User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * an alias for your Amazon Web Services account ID</a> in the <i>IAM User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccountAlias">AWS
          * API Reference</a></p>
          *
@@ -1267,11 +1273,11 @@ namespace Model
         virtual Model::CreateAccountAliasOutcomeCallable CreateAccountAliasCallable(const Model::CreateAccountAliasRequest& request) const;
 
         /**
-         * <p>Creates an alias for your account. For information about using an account
-         * alias, see <a
+         * <p>Creates an alias for your Amazon Web Services account. For information about
+         * using an Amazon Web Services account alias, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-         * an alias for your account ID</a> in the <i>IAM User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * an alias for your Amazon Web Services account ID</a> in the <i>IAM User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccountAlias">AWS
          * API Reference</a></p>
          *
@@ -1364,12 +1370,12 @@ namespace Model
 
         /**
          * <p>Creates a password for the specified IAM user. A password allows an IAM user
-         * to access Amazon Web Services services through the Management Console.</p>
-         * <p>You can use the CLI, the Amazon Web Services API, or the <b>Users</b> page in
-         * the IAM console to create a password for any IAM user. Use <a>ChangePassword</a>
-         * to update your own existing password in the <b>My Security Credentials</b> page
-         * in the Management Console.</p> <p>For more information about managing passwords,
-         * see <a
+         * to access Amazon Web Services services through the Amazon Web Services
+         * Management Console.</p> <p>You can use the CLI, the Amazon Web Services API, or
+         * the <b>Users</b> page in the IAM console to create a password for any IAM user.
+         * Use <a>ChangePassword</a> to update your own existing password in the <b>My
+         * Security Credentials</b> page in the Amazon Web Services Management Console.</p>
+         * <p>For more information about managing passwords, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
          * passwords</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateLoginProfile">AWS
@@ -1379,12 +1385,12 @@ namespace Model
 
         /**
          * <p>Creates a password for the specified IAM user. A password allows an IAM user
-         * to access Amazon Web Services services through the Management Console.</p>
-         * <p>You can use the CLI, the Amazon Web Services API, or the <b>Users</b> page in
-         * the IAM console to create a password for any IAM user. Use <a>ChangePassword</a>
-         * to update your own existing password in the <b>My Security Credentials</b> page
-         * in the Management Console.</p> <p>For more information about managing passwords,
-         * see <a
+         * to access Amazon Web Services services through the Amazon Web Services
+         * Management Console.</p> <p>You can use the CLI, the Amazon Web Services API, or
+         * the <b>Users</b> page in the IAM console to create a password for any IAM user.
+         * Use <a>ChangePassword</a> to update your own existing password in the <b>My
+         * Security Credentials</b> page in the Amazon Web Services Management Console.</p>
+         * <p>For more information about managing passwords, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
          * passwords</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateLoginProfile">AWS
@@ -1396,12 +1402,12 @@ namespace Model
 
         /**
          * <p>Creates a password for the specified IAM user. A password allows an IAM user
-         * to access Amazon Web Services services through the Management Console.</p>
-         * <p>You can use the CLI, the Amazon Web Services API, or the <b>Users</b> page in
-         * the IAM console to create a password for any IAM user. Use <a>ChangePassword</a>
-         * to update your own existing password in the <b>My Security Credentials</b> page
-         * in the Management Console.</p> <p>For more information about managing passwords,
-         * see <a
+         * to access Amazon Web Services services through the Amazon Web Services
+         * Management Console.</p> <p>You can use the CLI, the Amazon Web Services API, or
+         * the <b>Users</b> page in the IAM console to create a password for any IAM user.
+         * Use <a>ChangePassword</a> to update your own existing password in the <b>My
+         * Security Credentials</b> page in the Amazon Web Services Management Console.</p>
+         * <p>For more information about managing passwords, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
          * passwords</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateLoginProfile">AWS
@@ -1430,17 +1436,17 @@ namespace Model
          * identify the application or applications allowed to authenticate using the OIDC
          * provider</p> </li> <li> <p>A list of thumbprints of one or more server
          * certificates that the IdP uses</p> </li> </ul> <p>You get all of this
-         * information from the OIDC IdP that you want to use to access Amazon Web
-         * Services.</p>  <p>Amazon Web Services secures communication with some OIDC
-         * identity providers (IdPs) through our library of trusted certificate authorities
-         * (CAs) instead of using a certificate thumbprint to verify your IdP server
-         * certificate. These OIDC IdPs include Google, and those that use an Amazon S3
-         * bucket to host a JSON Web Key Set (JWKS) endpoint. In these cases, your legacy
-         * thumbprint remains in your configuration, but is no longer used for
-         * validation.</p>   <p>The trust for the OIDC provider is derived
-         * from the IAM provider that this operation creates. Therefore, it is best to
-         * limit access to the <a>CreateOpenIDConnectProvider</a> operation to highly
-         * privileged users.</p> <p><h3>See Also:</h3>   <a
+         * information from the OIDC IdP you want to use to access Amazon Web Services.</p>
+         *  <p>Amazon Web Services secures communication with some OIDC identity
+         * providers (IdPs) through our library of trusted certificate authorities (CAs)
+         * instead of using a certificate thumbprint to verify your IdP server certificate.
+         * These OIDC IdPs include Google, and those that use an Amazon S3 bucket to host a
+         * JSON Web Key Set (JWKS) endpoint. In these cases, your legacy thumbprint remains
+         * in your configuration, but is no longer used for validation.</p>  
+         * <p>The trust for the OIDC provider is derived from the IAM provider that this
+         * operation creates. Therefore, it is best to limit access to the
+         * <a>CreateOpenIDConnectProvider</a> operation to highly privileged users.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateOpenIDConnectProvider">AWS
          * API Reference</a></p>
          */
@@ -1465,17 +1471,17 @@ namespace Model
          * identify the application or applications allowed to authenticate using the OIDC
          * provider</p> </li> <li> <p>A list of thumbprints of one or more server
          * certificates that the IdP uses</p> </li> </ul> <p>You get all of this
-         * information from the OIDC IdP that you want to use to access Amazon Web
-         * Services.</p>  <p>Amazon Web Services secures communication with some OIDC
-         * identity providers (IdPs) through our library of trusted certificate authorities
-         * (CAs) instead of using a certificate thumbprint to verify your IdP server
-         * certificate. These OIDC IdPs include Google, and those that use an Amazon S3
-         * bucket to host a JSON Web Key Set (JWKS) endpoint. In these cases, your legacy
-         * thumbprint remains in your configuration, but is no longer used for
-         * validation.</p>   <p>The trust for the OIDC provider is derived
-         * from the IAM provider that this operation creates. Therefore, it is best to
-         * limit access to the <a>CreateOpenIDConnectProvider</a> operation to highly
-         * privileged users.</p> <p><h3>See Also:</h3>   <a
+         * information from the OIDC IdP you want to use to access Amazon Web Services.</p>
+         *  <p>Amazon Web Services secures communication with some OIDC identity
+         * providers (IdPs) through our library of trusted certificate authorities (CAs)
+         * instead of using a certificate thumbprint to verify your IdP server certificate.
+         * These OIDC IdPs include Google, and those that use an Amazon S3 bucket to host a
+         * JSON Web Key Set (JWKS) endpoint. In these cases, your legacy thumbprint remains
+         * in your configuration, but is no longer used for validation.</p>  
+         * <p>The trust for the OIDC provider is derived from the IAM provider that this
+         * operation creates. Therefore, it is best to limit access to the
+         * <a>CreateOpenIDConnectProvider</a> operation to highly privileged users.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateOpenIDConnectProvider">AWS
          * API Reference</a></p>
          *
@@ -1502,17 +1508,17 @@ namespace Model
          * identify the application or applications allowed to authenticate using the OIDC
          * provider</p> </li> <li> <p>A list of thumbprints of one or more server
          * certificates that the IdP uses</p> </li> </ul> <p>You get all of this
-         * information from the OIDC IdP that you want to use to access Amazon Web
-         * Services.</p>  <p>Amazon Web Services secures communication with some OIDC
-         * identity providers (IdPs) through our library of trusted certificate authorities
-         * (CAs) instead of using a certificate thumbprint to verify your IdP server
-         * certificate. These OIDC IdPs include Google, and those that use an Amazon S3
-         * bucket to host a JSON Web Key Set (JWKS) endpoint. In these cases, your legacy
-         * thumbprint remains in your configuration, but is no longer used for
-         * validation.</p>   <p>The trust for the OIDC provider is derived
-         * from the IAM provider that this operation creates. Therefore, it is best to
-         * limit access to the <a>CreateOpenIDConnectProvider</a> operation to highly
-         * privileged users.</p> <p><h3>See Also:</h3>   <a
+         * information from the OIDC IdP you want to use to access Amazon Web Services.</p>
+         *  <p>Amazon Web Services secures communication with some OIDC identity
+         * providers (IdPs) through our library of trusted certificate authorities (CAs)
+         * instead of using a certificate thumbprint to verify your IdP server certificate.
+         * These OIDC IdPs include Google, and those that use an Amazon S3 bucket to host a
+         * JSON Web Key Set (JWKS) endpoint. In these cases, your legacy thumbprint remains
+         * in your configuration, but is no longer used for validation.</p>  
+         * <p>The trust for the OIDC provider is derived from the IAM provider that this
+         * operation creates. Therefore, it is best to limit access to the
+         * <a>CreateOpenIDConnectProvider</a> operation to highly privileged users.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateOpenIDConnectProvider">AWS
          * API Reference</a></p>
          *
@@ -1521,9 +1527,10 @@ namespace Model
         virtual void CreateOpenIDConnectProviderAsync(const Model::CreateOpenIDConnectProviderRequest& request, const CreateOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new managed policy for your account.</p> <p>This operation creates
-         * a policy version with a version identifier of <code>v1</code> and sets v1 as the
-         * policy's default version. For more information about policy versions, see <a
+         * <p>Creates a new managed policy for your Amazon Web Services account.</p>
+         * <p>This operation creates a policy version with a version identifier of
+         * <code>v1</code> and sets v1 as the policy's default version. For more
+         * information about policy versions, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
          * for managed policies</a> in the <i>IAM User Guide</i>.</p> <p>As a best
          * practice, you can validate your IAM policies. To learn more, see <a
@@ -1539,9 +1546,10 @@ namespace Model
         virtual Model::CreatePolicyOutcome CreatePolicy(const Model::CreatePolicyRequest& request) const;
 
         /**
-         * <p>Creates a new managed policy for your account.</p> <p>This operation creates
-         * a policy version with a version identifier of <code>v1</code> and sets v1 as the
-         * policy's default version. For more information about policy versions, see <a
+         * <p>Creates a new managed policy for your Amazon Web Services account.</p>
+         * <p>This operation creates a policy version with a version identifier of
+         * <code>v1</code> and sets v1 as the policy's default version. For more
+         * information about policy versions, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
          * for managed policies</a> in the <i>IAM User Guide</i>.</p> <p>As a best
          * practice, you can validate your IAM policies. To learn more, see <a
@@ -1559,9 +1567,10 @@ namespace Model
         virtual Model::CreatePolicyOutcomeCallable CreatePolicyCallable(const Model::CreatePolicyRequest& request) const;
 
         /**
-         * <p>Creates a new managed policy for your account.</p> <p>This operation creates
-         * a policy version with a version identifier of <code>v1</code> and sets v1 as the
-         * policy's default version. For more information about policy versions, see <a
+         * <p>Creates a new managed policy for your Amazon Web Services account.</p>
+         * <p>This operation creates a policy version with a version identifier of
+         * <code>v1</code> and sets v1 as the policy's default version. For more
+         * information about policy versions, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
          * for managed policies</a> in the <i>IAM User Guide</i>.</p> <p>As a best
          * practice, you can validate your IAM policies. To learn more, see <a
@@ -1634,7 +1643,8 @@ namespace Model
         virtual void CreatePolicyVersionAsync(const Model::CreatePolicyVersionRequest& request, const CreatePolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new role for your account. For more information about roles, see <a
+         * <p>Creates a new role for your Amazon Web Services account. For more information
+         * about roles, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM
          * roles</a>. For information about quotas for role names and the number of roles
          * you can create, see <a
@@ -1646,7 +1656,8 @@ namespace Model
         virtual Model::CreateRoleOutcome CreateRole(const Model::CreateRoleRequest& request) const;
 
         /**
-         * <p>Creates a new role for your account. For more information about roles, see <a
+         * <p>Creates a new role for your Amazon Web Services account. For more information
+         * about roles, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM
          * roles</a>. For information about quotas for role names and the number of roles
          * you can create, see <a
@@ -1660,7 +1671,8 @@ namespace Model
         virtual Model::CreateRoleOutcomeCallable CreateRoleCallable(const Model::CreateRoleRequest& request) const;
 
         /**
-         * <p>Creates a new role for your account. For more information about roles, see <a
+         * <p>Creates a new role for your Amazon Web Services account. For more information
+         * about roles, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM
          * roles</a>. For information about quotas for role names and the number of roles
          * you can create, see <a
@@ -1679,17 +1691,18 @@ namespace Model
          * operation can be used as a principal in an IAM role's trust policy. Such a
          * policy can enable federated users who sign in using the SAML IdP to assume the
          * role. You can create an IAM role that supports Web-based single sign-on (SSO) to
-         * the Management Console or one that supports API access to Amazon Web
-         * Services.</p> <p>When you create the SAML provider resource, you upload a SAML
-         * metadata document that you get from your IdP. That document includes the
-         * issuer's name, expiration information, and keys that can be used to validate the
-         * SAML authentication response (assertions) that the IdP sends. You must generate
-         * the metadata document using the identity management software that is used as
-         * your organization's IdP.</p>  <p> This operation requires <a
+         * the Amazon Web Services Management Console or one that supports API access to
+         * Amazon Web Services.</p> <p>When you create the SAML provider resource, you
+         * upload a SAML metadata document that you get from your IdP. That document
+         * includes the issuer's name, expiration information, and keys that can be used to
+         * validate the SAML authentication response (assertions) that the IdP sends. You
+         * must generate the metadata document using the identity management software that
+         * is used as your organization's IdP.</p>  <p> This operation requires <a
          * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
          * Version 4</a>.</p>  <p> For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html">Enabling
-         * SAML 2.0 federated users to access the Management Console</a> and <a
+         * SAML 2.0 federated users to access the Amazon Web Services Management
+         * Console</a> and <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
          * SAML 2.0-based federation</a> in the <i>IAM User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1704,17 +1717,18 @@ namespace Model
          * operation can be used as a principal in an IAM role's trust policy. Such a
          * policy can enable federated users who sign in using the SAML IdP to assume the
          * role. You can create an IAM role that supports Web-based single sign-on (SSO) to
-         * the Management Console or one that supports API access to Amazon Web
-         * Services.</p> <p>When you create the SAML provider resource, you upload a SAML
-         * metadata document that you get from your IdP. That document includes the
-         * issuer's name, expiration information, and keys that can be used to validate the
-         * SAML authentication response (assertions) that the IdP sends. You must generate
-         * the metadata document using the identity management software that is used as
-         * your organization's IdP.</p>  <p> This operation requires <a
+         * the Amazon Web Services Management Console or one that supports API access to
+         * Amazon Web Services.</p> <p>When you create the SAML provider resource, you
+         * upload a SAML metadata document that you get from your IdP. That document
+         * includes the issuer's name, expiration information, and keys that can be used to
+         * validate the SAML authentication response (assertions) that the IdP sends. You
+         * must generate the metadata document using the identity management software that
+         * is used as your organization's IdP.</p>  <p> This operation requires <a
          * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
          * Version 4</a>.</p>  <p> For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html">Enabling
-         * SAML 2.0 federated users to access the Management Console</a> and <a
+         * SAML 2.0 federated users to access the Amazon Web Services Management
+         * Console</a> and <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
          * SAML 2.0-based federation</a> in the <i>IAM User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1731,17 +1745,18 @@ namespace Model
          * operation can be used as a principal in an IAM role's trust policy. Such a
          * policy can enable federated users who sign in using the SAML IdP to assume the
          * role. You can create an IAM role that supports Web-based single sign-on (SSO) to
-         * the Management Console or one that supports API access to Amazon Web
-         * Services.</p> <p>When you create the SAML provider resource, you upload a SAML
-         * metadata document that you get from your IdP. That document includes the
-         * issuer's name, expiration information, and keys that can be used to validate the
-         * SAML authentication response (assertions) that the IdP sends. You must generate
-         * the metadata document using the identity management software that is used as
-         * your organization's IdP.</p>  <p> This operation requires <a
+         * the Amazon Web Services Management Console or one that supports API access to
+         * Amazon Web Services.</p> <p>When you create the SAML provider resource, you
+         * upload a SAML metadata document that you get from your IdP. That document
+         * includes the issuer's name, expiration information, and keys that can be used to
+         * validate the SAML authentication response (assertions) that the IdP sends. You
+         * must generate the metadata document using the identity management software that
+         * is used as your organization's IdP.</p>  <p> This operation requires <a
          * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
          * Version 4</a>.</p>  <p> For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html">Enabling
-         * SAML 2.0 federated users to access the Management Console</a> and <a
+         * SAML 2.0 federated users to access the Amazon Web Services Management
+         * Console</a> and <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
          * SAML 2.0-based federation</a> in the <i>IAM User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1866,8 +1881,8 @@ namespace Model
         virtual void CreateServiceSpecificCredentialAsync(const Model::CreateServiceSpecificCredentialRequest& request, const CreateServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new IAM user for your account.</p> <p> For information about quotas
-         * for the number of IAM users you can create, see <a
+         * <p>Creates a new IAM user for your Amazon Web Services account.</p> <p> For
+         * information about quotas for the number of IAM users you can create, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
          * and STS quotas</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateUser">AWS API
@@ -1876,8 +1891,8 @@ namespace Model
         virtual Model::CreateUserOutcome CreateUser(const Model::CreateUserRequest& request) const;
 
         /**
-         * <p>Creates a new IAM user for your account.</p> <p> For information about quotas
-         * for the number of IAM users you can create, see <a
+         * <p>Creates a new IAM user for your Amazon Web Services account.</p> <p> For
+         * information about quotas for the number of IAM users you can create, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
          * and STS quotas</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateUser">AWS API
@@ -1888,8 +1903,8 @@ namespace Model
         virtual Model::CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request) const;
 
         /**
-         * <p>Creates a new IAM user for your account.</p> <p> For information about quotas
-         * for the number of IAM users you can create, see <a
+         * <p>Creates a new IAM user for your Amazon Web Services account.</p> <p> For
+         * information about quotas for the number of IAM users you can create, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
          * and STS quotas</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateUser">AWS API
@@ -1900,9 +1915,10 @@ namespace Model
         virtual void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new virtual MFA device for the account. After creating the virtual
-         * MFA, use <a>EnableMFADevice</a> to attach the MFA device to an IAM user. For
-         * more information about creating and working with virtual MFA devices, see <a
+         * <p>Creates a new virtual MFA device for the Amazon Web Services account. After
+         * creating the virtual MFA, use <a>EnableMFADevice</a> to attach the MFA device to
+         * an IAM user. For more information about creating and working with virtual MFA
+         * devices, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
          * a virtual MFA device</a> in the <i>IAM User Guide</i>.</p> <p>For information
          * about the maximum number of MFA devices you can create, see <a
@@ -1920,9 +1936,10 @@ namespace Model
         virtual Model::CreateVirtualMFADeviceOutcome CreateVirtualMFADevice(const Model::CreateVirtualMFADeviceRequest& request) const;
 
         /**
-         * <p>Creates a new virtual MFA device for the account. After creating the virtual
-         * MFA, use <a>EnableMFADevice</a> to attach the MFA device to an IAM user. For
-         * more information about creating and working with virtual MFA devices, see <a
+         * <p>Creates a new virtual MFA device for the Amazon Web Services account. After
+         * creating the virtual MFA, use <a>EnableMFADevice</a> to attach the MFA device to
+         * an IAM user. For more information about creating and working with virtual MFA
+         * devices, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
          * a virtual MFA device</a> in the <i>IAM User Guide</i>.</p> <p>For information
          * about the maximum number of MFA devices you can create, see <a
@@ -1942,9 +1959,10 @@ namespace Model
         virtual Model::CreateVirtualMFADeviceOutcomeCallable CreateVirtualMFADeviceCallable(const Model::CreateVirtualMFADeviceRequest& request) const;
 
         /**
-         * <p>Creates a new virtual MFA device for the account. After creating the virtual
-         * MFA, use <a>EnableMFADevice</a> to attach the MFA device to an IAM user. For
-         * more information about creating and working with virtual MFA devices, see <a
+         * <p>Creates a new virtual MFA device for the Amazon Web Services account. After
+         * creating the virtual MFA, use <a>EnableMFADevice</a> to attach the MFA device to
+         * an IAM user. For more information about creating and working with virtual MFA
+         * devices, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
          * a virtual MFA device</a> in the <i>IAM User Guide</i>.</p> <p>For information
          * about the maximum number of MFA devices you can create, see <a
@@ -2007,9 +2025,10 @@ namespace Model
          * <p>Deletes the access key pair associated with the specified IAM user.</p> <p>If
          * you do not specify a user name, IAM determines the user name implicitly based on
          * the Amazon Web Services access key ID signing the request. This operation works
-         * for access keys under the account. Consequently, you can use this operation to
-         * manage account root user credentials even if the account has no associated
-         * users.</p><p><h3>See Also:</h3>   <a
+         * for access keys under the Amazon Web Services account. Consequently, you can use
+         * this operation to manage Amazon Web Services account root user credentials even
+         * if the Amazon Web Services account has no associated users.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccessKey">AWS
          * API Reference</a></p>
          */
@@ -2019,9 +2038,10 @@ namespace Model
          * <p>Deletes the access key pair associated with the specified IAM user.</p> <p>If
          * you do not specify a user name, IAM determines the user name implicitly based on
          * the Amazon Web Services access key ID signing the request. This operation works
-         * for access keys under the account. Consequently, you can use this operation to
-         * manage account root user credentials even if the account has no associated
-         * users.</p><p><h3>See Also:</h3>   <a
+         * for access keys under the Amazon Web Services account. Consequently, you can use
+         * this operation to manage Amazon Web Services account root user credentials even
+         * if the Amazon Web Services account has no associated users.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccessKey">AWS
          * API Reference</a></p>
          *
@@ -2033,9 +2053,10 @@ namespace Model
          * <p>Deletes the access key pair associated with the specified IAM user.</p> <p>If
          * you do not specify a user name, IAM determines the user name implicitly based on
          * the Amazon Web Services access key ID signing the request. This operation works
-         * for access keys under the account. Consequently, you can use this operation to
-         * manage account root user credentials even if the account has no associated
-         * users.</p><p><h3>See Also:</h3>   <a
+         * for access keys under the Amazon Web Services account. Consequently, you can use
+         * this operation to manage Amazon Web Services account root user credentials even
+         * if the Amazon Web Services account has no associated users.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccessKey">AWS
          * API Reference</a></p>
          *
@@ -2044,22 +2065,22 @@ namespace Model
         virtual void DeleteAccessKeyAsync(const Model::DeleteAccessKeyRequest& request, const DeleteAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Deletes the specified account alias. For information about using an Amazon
-         * Web Services account alias, see <a
+         * <p> Deletes the specified Amazon Web Services account alias. For information
+         * about using an Amazon Web Services account alias, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-         * an alias for your account ID</a> in the <i>IAM User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * an alias for your Amazon Web Services account ID</a> in the <i>IAM User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountAlias">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteAccountAliasOutcome DeleteAccountAlias(const Model::DeleteAccountAliasRequest& request) const;
 
         /**
-         * <p> Deletes the specified account alias. For information about using an Amazon
-         * Web Services account alias, see <a
+         * <p> Deletes the specified Amazon Web Services account alias. For information
+         * about using an Amazon Web Services account alias, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-         * an alias for your account ID</a> in the <i>IAM User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * an alias for your Amazon Web Services account ID</a> in the <i>IAM User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountAlias">AWS
          * API Reference</a></p>
          *
@@ -2068,11 +2089,11 @@ namespace Model
         virtual Model::DeleteAccountAliasOutcomeCallable DeleteAccountAliasCallable(const Model::DeleteAccountAliasRequest& request) const;
 
         /**
-         * <p> Deletes the specified account alias. For information about using an Amazon
-         * Web Services account alias, see <a
+         * <p> Deletes the specified Amazon Web Services account alias. For information
+         * about using an Amazon Web Services account alias, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-         * an alias for your account ID</a> in the <i>IAM User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * an alias for your Amazon Web Services account ID</a> in the <i>IAM User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountAlias">AWS
          * API Reference</a></p>
          *
@@ -2081,7 +2102,7 @@ namespace Model
         virtual void DeleteAccountAliasAsync(const Model::DeleteAccountAliasRequest& request, const DeleteAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the password policy for the account. There are no
+         * <p>Deletes the password policy for the Amazon Web Services account. There are no
          * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountPasswordPolicy">AWS
          * API Reference</a></p>
@@ -2089,7 +2110,7 @@ namespace Model
         virtual Model::DeleteAccountPasswordPolicyOutcome DeleteAccountPasswordPolicy(const Model::DeleteAccountPasswordPolicyRequest& request) const;
 
         /**
-         * <p>Deletes the password policy for the account. There are no
+         * <p>Deletes the password policy for the Amazon Web Services account. There are no
          * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountPasswordPolicy">AWS
          * API Reference</a></p>
@@ -2099,7 +2120,7 @@ namespace Model
         virtual Model::DeleteAccountPasswordPolicyOutcomeCallable DeleteAccountPasswordPolicyCallable(const Model::DeleteAccountPasswordPolicyRequest& request) const;
 
         /**
-         * <p>Deletes the password policy for the account. There are no
+         * <p>Deletes the password policy for the Amazon Web Services account. There are no
          * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountPasswordPolicy">AWS
          * API Reference</a></p>
@@ -2227,16 +2248,16 @@ namespace Model
 
         /**
          * <p>Deletes the password for the specified IAM user, which terminates the user's
-         * ability to access Amazon Web Services services through the Management
-         * Console.</p> <p>You can use the CLI, the Amazon Web Services API, or the
-         * <b>Users</b> page in the IAM console to delete a password for any IAM user. You
-         * can use <a>ChangePassword</a> to update, but not delete, your own password in
-         * the <b>My Security Credentials</b> page in the Management Console.</p>
-         *  <p> Deleting a user's password does not prevent a user from
-         * accessing Amazon Web Services through the command line interface or the API. To
-         * prevent all user access, you must also either make any access keys inactive or
-         * delete them. For more information about making keys inactive or deleting them,
-         * see <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>. </p>
+         * ability to access Amazon Web Services services through the Amazon Web Services
+         * Management Console.</p> <p>You can use the CLI, the Amazon Web Services API, or
+         * the <b>Users</b> page in the IAM console to delete a password for any IAM user.
+         * You can use <a>ChangePassword</a> to update, but not delete, your own password
+         * in the <b>My Security Credentials</b> page in the Amazon Web Services Management
+         * Console.</p>  <p> Deleting a user's password does not prevent a user
+         * from accessing Amazon Web Services through the command line interface or the
+         * API. To prevent all user access, you must also either make any access keys
+         * inactive or delete them. For more information about making keys inactive or
+         * deleting them, see <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>. </p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteLoginProfile">AWS
          * API Reference</a></p>
@@ -2245,16 +2266,16 @@ namespace Model
 
         /**
          * <p>Deletes the password for the specified IAM user, which terminates the user's
-         * ability to access Amazon Web Services services through the Management
-         * Console.</p> <p>You can use the CLI, the Amazon Web Services API, or the
-         * <b>Users</b> page in the IAM console to delete a password for any IAM user. You
-         * can use <a>ChangePassword</a> to update, but not delete, your own password in
-         * the <b>My Security Credentials</b> page in the Management Console.</p>
-         *  <p> Deleting a user's password does not prevent a user from
-         * accessing Amazon Web Services through the command line interface or the API. To
-         * prevent all user access, you must also either make any access keys inactive or
-         * delete them. For more information about making keys inactive or deleting them,
-         * see <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>. </p>
+         * ability to access Amazon Web Services services through the Amazon Web Services
+         * Management Console.</p> <p>You can use the CLI, the Amazon Web Services API, or
+         * the <b>Users</b> page in the IAM console to delete a password for any IAM user.
+         * You can use <a>ChangePassword</a> to update, but not delete, your own password
+         * in the <b>My Security Credentials</b> page in the Amazon Web Services Management
+         * Console.</p>  <p> Deleting a user's password does not prevent a user
+         * from accessing Amazon Web Services through the command line interface or the
+         * API. To prevent all user access, you must also either make any access keys
+         * inactive or delete them. For more information about making keys inactive or
+         * deleting them, see <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>. </p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteLoginProfile">AWS
          * API Reference</a></p>
@@ -2265,16 +2286,16 @@ namespace Model
 
         /**
          * <p>Deletes the password for the specified IAM user, which terminates the user's
-         * ability to access Amazon Web Services services through the Management
-         * Console.</p> <p>You can use the CLI, the Amazon Web Services API, or the
-         * <b>Users</b> page in the IAM console to delete a password for any IAM user. You
-         * can use <a>ChangePassword</a> to update, but not delete, your own password in
-         * the <b>My Security Credentials</b> page in the Management Console.</p>
-         *  <p> Deleting a user's password does not prevent a user from
-         * accessing Amazon Web Services through the command line interface or the API. To
-         * prevent all user access, you must also either make any access keys inactive or
-         * delete them. For more information about making keys inactive or deleting them,
-         * see <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>. </p>
+         * ability to access Amazon Web Services services through the Amazon Web Services
+         * Management Console.</p> <p>You can use the CLI, the Amazon Web Services API, or
+         * the <b>Users</b> page in the IAM console to delete a password for any IAM user.
+         * You can use <a>ChangePassword</a> to update, but not delete, your own password
+         * in the <b>My Security Credentials</b> page in the Amazon Web Services Management
+         * Console.</p>  <p> Deleting a user's password does not prevent a user
+         * from accessing Amazon Web Services through the command line interface or the
+         * API. To prevent all user access, you must also either make any access keys
+         * inactive or delete them. For more information about making keys inactive or
+         * deleting them, see <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>. </p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteLoginProfile">AWS
          * API Reference</a></p>
@@ -2841,9 +2862,10 @@ namespace Model
          * <p>Deletes a signing certificate associated with the specified IAM user.</p>
          * <p>If you do not specify a user name, IAM determines the user name implicitly
          * based on the Amazon Web Services access key ID signing the request. This
-         * operation works for access keys under the account. Consequently, you can use
-         * this operation to manage account root user credentials even if the account has
-         * no associated IAM users.</p><p><h3>See Also:</h3>   <a
+         * operation works for access keys under the Amazon Web Services account.
+         * Consequently, you can use this operation to manage Amazon Web Services account
+         * root user credentials even if the Amazon Web Services account has no associated
+         * IAM users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSigningCertificate">AWS
          * API Reference</a></p>
          */
@@ -2853,9 +2875,10 @@ namespace Model
          * <p>Deletes a signing certificate associated with the specified IAM user.</p>
          * <p>If you do not specify a user name, IAM determines the user name implicitly
          * based on the Amazon Web Services access key ID signing the request. This
-         * operation works for access keys under the account. Consequently, you can use
-         * this operation to manage account root user credentials even if the account has
-         * no associated IAM users.</p><p><h3>See Also:</h3>   <a
+         * operation works for access keys under the Amazon Web Services account.
+         * Consequently, you can use this operation to manage Amazon Web Services account
+         * root user credentials even if the Amazon Web Services account has no associated
+         * IAM users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSigningCertificate">AWS
          * API Reference</a></p>
          *
@@ -2867,9 +2890,10 @@ namespace Model
          * <p>Deletes a signing certificate associated with the specified IAM user.</p>
          * <p>If you do not specify a user name, IAM determines the user name implicitly
          * based on the Amazon Web Services access key ID signing the request. This
-         * operation works for access keys under the account. Consequently, you can use
-         * this operation to manage account root user credentials even if the account has
-         * no associated IAM users.</p><p><h3>See Also:</h3>   <a
+         * operation works for access keys under the Amazon Web Services account.
+         * Consequently, you can use this operation to manage Amazon Web Services account
+         * root user credentials even if the Amazon Web Services account has no associated
+         * IAM users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSigningCertificate">AWS
          * API Reference</a></p>
          *
@@ -2878,9 +2902,10 @@ namespace Model
         virtual void DeleteSigningCertificateAsync(const Model::DeleteSigningCertificateRequest& request, const DeleteSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified IAM user. Unlike the Management Console, when you
-         * delete a user programmatically, you must delete the items attached to the user
-         * manually, or the deletion fails. For more information, see <a
+         * <p>Deletes the specified IAM user. Unlike the Amazon Web Services Management
+         * Console, when you delete a user programmatically, you must delete the items
+         * attached to the user manually, or the deletion fails. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_deleting_cli">Deleting
          * an IAM user</a>. Before attempting to delete a user, remove the following
          * items:</p> <ul> <li> <p>Password (<a>DeleteLoginProfile</a>)</p> </li> <li>
@@ -2899,9 +2924,10 @@ namespace Model
         virtual Model::DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest& request) const;
 
         /**
-         * <p>Deletes the specified IAM user. Unlike the Management Console, when you
-         * delete a user programmatically, you must delete the items attached to the user
-         * manually, or the deletion fails. For more information, see <a
+         * <p>Deletes the specified IAM user. Unlike the Amazon Web Services Management
+         * Console, when you delete a user programmatically, you must delete the items
+         * attached to the user manually, or the deletion fails. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_deleting_cli">Deleting
          * an IAM user</a>. Before attempting to delete a user, remove the following
          * items:</p> <ul> <li> <p>Password (<a>DeleteLoginProfile</a>)</p> </li> <li>
@@ -2922,9 +2948,10 @@ namespace Model
         virtual Model::DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request) const;
 
         /**
-         * <p>Deletes the specified IAM user. Unlike the Management Console, when you
-         * delete a user programmatically, you must delete the items attached to the user
-         * manually, or the deletion fails. For more information, see <a
+         * <p>Deletes the specified IAM user. Unlike the Amazon Web Services Management
+         * Console, when you delete a user programmatically, you must delete the items
+         * attached to the user manually, or the deletion fails. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_deleting_cli">Deleting
          * an IAM user</a>. Before attempting to delete a user, remove the following
          * items:</p> <ul> <li> <p>Password (<a>DeleteLoginProfile</a>)</p> </li> <li>
@@ -3207,8 +3234,8 @@ namespace Model
         virtual void EnableMFADeviceAsync(const Model::EnableMFADeviceRequest& request, const EnableMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Generates a credential report for the account. For more information about
-         * the credential report, see <a
+         * <p> Generates a credential report for the Amazon Web Services account. For more
+         * information about the credential report, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
          * credential reports</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>  
          * <a
@@ -3218,8 +3245,8 @@ namespace Model
         virtual Model::GenerateCredentialReportOutcome GenerateCredentialReport(const Model::GenerateCredentialReportRequest& request) const;
 
         /**
-         * <p> Generates a credential report for the account. For more information about
-         * the credential report, see <a
+         * <p> Generates a credential report for the Amazon Web Services account. For more
+         * information about the credential report, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
          * credential reports</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>  
          * <a
@@ -3231,8 +3258,8 @@ namespace Model
         virtual Model::GenerateCredentialReportOutcomeCallable GenerateCredentialReportCallable(const Model::GenerateCredentialReportRequest& request) const;
 
         /**
-         * <p> Generates a credential report for the account. For more information about
-         * the credential report, see <a
+         * <p> Generates a credential report for the Amazon Web Services account. For more
+         * information about the credential report, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
          * credential reports</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>  
          * <a
@@ -3268,12 +3295,12 @@ namespace Model
          * permissions using service last accessed data</a> in the <i>IAM User
          * Guide</i>.</p>  <p>The data includes all attempts to access Amazon
          * Web Services, not just the successful ones. This includes all attempts that were
-         * made using the Management Console, the Amazon Web Services API through any of
-         * the SDKs, or any of the command line tools. An unexpected entry in the service
-         * last accessed data does not mean that an account has been compromised, because
-         * the request might have been denied. Refer to your CloudTrail logs as the
-         * authoritative source for information about all API calls and whether they were
-         * successful or denied access. For more information, see <a
+         * made using the Amazon Web Services Management Console, the Amazon Web Services
+         * API through any of the SDKs, or any of the command line tools. An unexpected
+         * entry in the service last accessed data does not mean that an account has been
+         * compromised, because the request might have been denied. Refer to your
+         * CloudTrail logs as the authoritative source for information about all API calls
+         * and whether they were successful or denied access. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
          * IAM events with CloudTrail</a> in the <i>IAM User Guide</i>.</p> 
          * <p>This operation returns a <code>JobId</code>. Use this parameter in the <code>
@@ -3370,12 +3397,12 @@ namespace Model
          * permissions using service last accessed data</a> in the <i>IAM User
          * Guide</i>.</p>  <p>The data includes all attempts to access Amazon
          * Web Services, not just the successful ones. This includes all attempts that were
-         * made using the Management Console, the Amazon Web Services API through any of
-         * the SDKs, or any of the command line tools. An unexpected entry in the service
-         * last accessed data does not mean that an account has been compromised, because
-         * the request might have been denied. Refer to your CloudTrail logs as the
-         * authoritative source for information about all API calls and whether they were
-         * successful or denied access. For more information, see <a
+         * made using the Amazon Web Services Management Console, the Amazon Web Services
+         * API through any of the SDKs, or any of the command line tools. An unexpected
+         * entry in the service last accessed data does not mean that an account has been
+         * compromised, because the request might have been denied. Refer to your
+         * CloudTrail logs as the authoritative source for information about all API calls
+         * and whether they were successful or denied access. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
          * IAM events with CloudTrail</a> in the <i>IAM User Guide</i>.</p> 
          * <p>This operation returns a <code>JobId</code>. Use this parameter in the <code>
@@ -3474,12 +3501,12 @@ namespace Model
          * permissions using service last accessed data</a> in the <i>IAM User
          * Guide</i>.</p>  <p>The data includes all attempts to access Amazon
          * Web Services, not just the successful ones. This includes all attempts that were
-         * made using the Management Console, the Amazon Web Services API through any of
-         * the SDKs, or any of the command line tools. An unexpected entry in the service
-         * last accessed data does not mean that an account has been compromised, because
-         * the request might have been denied. Refer to your CloudTrail logs as the
-         * authoritative source for information about all API calls and whether they were
-         * successful or denied access. For more information, see <a
+         * made using the Amazon Web Services Management Console, the Amazon Web Services
+         * API through any of the SDKs, or any of the command line tools. An unexpected
+         * entry in the service last accessed data does not mean that an account has been
+         * compromised, because the request might have been denied. Refer to your
+         * CloudTrail logs as the authoritative source for information about all API calls
+         * and whether they were successful or denied access. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
          * IAM events with CloudTrail</a> in the <i>IAM User Guide</i>.</p> 
          * <p>This operation returns a <code>JobId</code>. Use this parameter in the <code>
@@ -3562,13 +3589,13 @@ namespace Model
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
          * where data is tracked</a>.</p>  <p>The service last accessed data
          * includes all attempts to access an Amazon Web Services API, not just the
-         * successful ones. This includes all attempts that were made using the Management
-         * Console, the Amazon Web Services API through any of the SDKs, or any of the
-         * command line tools. An unexpected entry in the service last accessed data does
-         * not mean that your account has been compromised, because the request might have
-         * been denied. Refer to your CloudTrail logs as the authoritative source for
-         * information about all API calls and whether they were successful or denied
-         * access. For more information, see <a
+         * successful ones. This includes all attempts that were made using the Amazon Web
+         * Services Management Console, the Amazon Web Services API through any of the
+         * SDKs, or any of the command line tools. An unexpected entry in the service last
+         * accessed data does not mean that your account has been compromised, because the
+         * request might have been denied. Refer to your CloudTrail logs as the
+         * authoritative source for information about all API calls and whether they were
+         * successful or denied access. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
          * IAM events with CloudTrail</a> in the <i>IAM User Guide</i>.</p> 
          * <p>The <code>GenerateServiceLastAccessedDetails</code> operation returns a
@@ -3616,13 +3643,13 @@ namespace Model
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
          * where data is tracked</a>.</p>  <p>The service last accessed data
          * includes all attempts to access an Amazon Web Services API, not just the
-         * successful ones. This includes all attempts that were made using the Management
-         * Console, the Amazon Web Services API through any of the SDKs, or any of the
-         * command line tools. An unexpected entry in the service last accessed data does
-         * not mean that your account has been compromised, because the request might have
-         * been denied. Refer to your CloudTrail logs as the authoritative source for
-         * information about all API calls and whether they were successful or denied
-         * access. For more information, see <a
+         * successful ones. This includes all attempts that were made using the Amazon Web
+         * Services Management Console, the Amazon Web Services API through any of the
+         * SDKs, or any of the command line tools. An unexpected entry in the service last
+         * accessed data does not mean that your account has been compromised, because the
+         * request might have been denied. Refer to your CloudTrail logs as the
+         * authoritative source for information about all API calls and whether they were
+         * successful or denied access. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
          * IAM events with CloudTrail</a> in the <i>IAM User Guide</i>.</p> 
          * <p>The <code>GenerateServiceLastAccessedDetails</code> operation returns a
@@ -3672,13 +3699,13 @@ namespace Model
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
          * where data is tracked</a>.</p>  <p>The service last accessed data
          * includes all attempts to access an Amazon Web Services API, not just the
-         * successful ones. This includes all attempts that were made using the Management
-         * Console, the Amazon Web Services API through any of the SDKs, or any of the
-         * command line tools. An unexpected entry in the service last accessed data does
-         * not mean that your account has been compromised, because the request might have
-         * been denied. Refer to your CloudTrail logs as the authoritative source for
-         * information about all API calls and whether they were successful or denied
-         * access. For more information, see <a
+         * successful ones. This includes all attempts that were made using the Amazon Web
+         * Services Management Console, the Amazon Web Services API through any of the
+         * SDKs, or any of the command line tools. An unexpected entry in the service last
+         * accessed data does not mean that your account has been compromised, because the
+         * request might have been denied. Refer to your CloudTrail logs as the
+         * authoritative source for information about all API calls and whether they were
+         * successful or denied access. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
          * IAM events with CloudTrail</a> in the <i>IAM User Guide</i>.</p> 
          * <p>The <code>GenerateServiceLastAccessedDetails</code> operation returns a
@@ -3815,9 +3842,10 @@ namespace Model
         virtual void GetAccountAuthorizationDetailsAsync(const Model::GetAccountAuthorizationDetailsRequest& request, const GetAccountAuthorizationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the password policy for the account. This tells you the complexity
-         * requirements and mandatory rotation periods for the IAM user passwords in your
-         * account. For more information about using a password policy, see <a
+         * <p>Retrieves the password policy for the Amazon Web Services account. This tells
+         * you the complexity requirements and mandatory rotation periods for the IAM user
+         * passwords in your account. For more information about using a password policy,
+         * see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
          * an IAM password policy</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountPasswordPolicy">AWS
@@ -3826,9 +3854,10 @@ namespace Model
         virtual Model::GetAccountPasswordPolicyOutcome GetAccountPasswordPolicy(const Model::GetAccountPasswordPolicyRequest& request) const;
 
         /**
-         * <p>Retrieves the password policy for the account. This tells you the complexity
-         * requirements and mandatory rotation periods for the IAM user passwords in your
-         * account. For more information about using a password policy, see <a
+         * <p>Retrieves the password policy for the Amazon Web Services account. This tells
+         * you the complexity requirements and mandatory rotation periods for the IAM user
+         * passwords in your account. For more information about using a password policy,
+         * see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
          * an IAM password policy</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountPasswordPolicy">AWS
@@ -3839,9 +3868,10 @@ namespace Model
         virtual Model::GetAccountPasswordPolicyOutcomeCallable GetAccountPasswordPolicyCallable(const Model::GetAccountPasswordPolicyRequest& request) const;
 
         /**
-         * <p>Retrieves the password policy for the account. This tells you the complexity
-         * requirements and mandatory rotation periods for the IAM user passwords in your
-         * account. For more information about using a password policy, see <a
+         * <p>Retrieves the password policy for the Amazon Web Services account. This tells
+         * you the complexity requirements and mandatory rotation periods for the IAM user
+         * passwords in your account. For more information about using a password policy,
+         * see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
          * an IAM password policy</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountPasswordPolicy">AWS
@@ -4011,8 +4041,8 @@ namespace Model
         virtual void GetContextKeysForPrincipalPolicyAsync(const Model::GetContextKeysForPrincipalPolicyRequest& request, const GetContextKeysForPrincipalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Retrieves a credential report for the account. For more information about
-         * the credential report, see <a
+         * <p> Retrieves a credential report for the Amazon Web Services account. For more
+         * information about the credential report, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
          * credential reports</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>  
          * <a
@@ -4022,8 +4052,8 @@ namespace Model
         virtual Model::GetCredentialReportOutcome GetCredentialReport(const Model::GetCredentialReportRequest& request) const;
 
         /**
-         * <p> Retrieves a credential report for the account. For more information about
-         * the credential report, see <a
+         * <p> Retrieves a credential report for the Amazon Web Services account. For more
+         * information about the credential report, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
          * credential reports</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>  
          * <a
@@ -4035,8 +4065,8 @@ namespace Model
         virtual Model::GetCredentialReportOutcomeCallable GetCredentialReportCallable(const Model::GetCredentialReportRequest& request) const;
 
         /**
-         * <p> Retrieves a credential report for the account. For more information about
-         * the credential report, see <a
+         * <p> Retrieves a credential report for the Amazon Web Services account. For more
+         * information about the credential report, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
          * credential reports</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>  
          * <a
@@ -4184,15 +4214,16 @@ namespace Model
 
         /**
          * <p>Retrieves the user name for the specified IAM user. A login profile is
-         * created when you create a password for the user to access the Management
-         * Console. If the user does not exist or does not have a password, the operation
-         * returns a 404 (<code>NoSuchEntity</code>) error.</p> <p>If you create an IAM
-         * user with access to the console, the <code>CreateDate</code> reflects the date
-         * you created the initial password for the user.</p> <p>If you create an IAM user
-         * with programmatic access, and then later add a password for the user to access
-         * the Management Console, the <code>CreateDate</code> reflects the initial
-         * password creation date. A user with programmatic access does not have a login
-         * profile unless you create a password for the user to access the Management
+         * created when you create a password for the user to access the Amazon Web
+         * Services Management Console. If the user does not exist or does not have a
+         * password, the operation returns a 404 (<code>NoSuchEntity</code>) error.</p>
+         * <p>If you create an IAM user with access to the console, the
+         * <code>CreateDate</code> reflects the date you created the initial password for
+         * the user.</p> <p>If you create an IAM user with programmatic access, and then
+         * later add a password for the user to access the Amazon Web Services Management
+         * Console, the <code>CreateDate</code> reflects the initial password creation
+         * date. A user with programmatic access does not have a login profile unless you
+         * create a password for the user to access the Amazon Web Services Management
          * Console.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetLoginProfile">AWS
          * API Reference</a></p>
@@ -4201,15 +4232,16 @@ namespace Model
 
         /**
          * <p>Retrieves the user name for the specified IAM user. A login profile is
-         * created when you create a password for the user to access the Management
-         * Console. If the user does not exist or does not have a password, the operation
-         * returns a 404 (<code>NoSuchEntity</code>) error.</p> <p>If you create an IAM
-         * user with access to the console, the <code>CreateDate</code> reflects the date
-         * you created the initial password for the user.</p> <p>If you create an IAM user
-         * with programmatic access, and then later add a password for the user to access
-         * the Management Console, the <code>CreateDate</code> reflects the initial
-         * password creation date. A user with programmatic access does not have a login
-         * profile unless you create a password for the user to access the Management
+         * created when you create a password for the user to access the Amazon Web
+         * Services Management Console. If the user does not exist or does not have a
+         * password, the operation returns a 404 (<code>NoSuchEntity</code>) error.</p>
+         * <p>If you create an IAM user with access to the console, the
+         * <code>CreateDate</code> reflects the date you created the initial password for
+         * the user.</p> <p>If you create an IAM user with programmatic access, and then
+         * later add a password for the user to access the Amazon Web Services Management
+         * Console, the <code>CreateDate</code> reflects the initial password creation
+         * date. A user with programmatic access does not have a login profile unless you
+         * create a password for the user to access the Amazon Web Services Management
          * Console.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetLoginProfile">AWS
          * API Reference</a></p>
@@ -4220,15 +4252,16 @@ namespace Model
 
         /**
          * <p>Retrieves the user name for the specified IAM user. A login profile is
-         * created when you create a password for the user to access the Management
-         * Console. If the user does not exist or does not have a password, the operation
-         * returns a 404 (<code>NoSuchEntity</code>) error.</p> <p>If you create an IAM
-         * user with access to the console, the <code>CreateDate</code> reflects the date
-         * you created the initial password for the user.</p> <p>If you create an IAM user
-         * with programmatic access, and then later add a password for the user to access
-         * the Management Console, the <code>CreateDate</code> reflects the initial
-         * password creation date. A user with programmatic access does not have a login
-         * profile unless you create a password for the user to access the Management
+         * created when you create a password for the user to access the Amazon Web
+         * Services Management Console. If the user does not exist or does not have a
+         * password, the operation returns a 404 (<code>NoSuchEntity</code>) error.</p>
+         * <p>If you create an IAM user with access to the console, the
+         * <code>CreateDate</code> reflects the date you created the initial password for
+         * the user.</p> <p>If you create an IAM user with programmatic access, and then
+         * later add a password for the user to access the Amazon Web Services Management
+         * Console, the <code>CreateDate</code> reflects the initial password creation
+         * date. A user with programmatic access does not have a login profile unless you
+         * create a password for the user to access the Amazon Web Services Management
          * Console.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetLoginProfile">AWS
          * API Reference</a></p>
@@ -5092,11 +5125,12 @@ namespace Model
          * results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          * <p>If the <code>UserName</code> field is not specified, the user name is
          * determined implicitly based on the Amazon Web Services access key ID used to
-         * sign the request. This operation works for access keys under the account.
-         * Consequently, you can use this operation to manage account root user credentials
-         * even if the account has no associated users.</p>  <p>To ensure the
-         * security of your account, the secret access key is accessible only during key
-         * and user creation.</p> <p><h3>See Also:</h3>   <a
+         * sign the request. This operation works for access keys under the Amazon Web
+         * Services account. Consequently, you can use this operation to manage Amazon Web
+         * Services account root user credentials even if the Amazon Web Services account
+         * has no associated users.</p>  <p>To ensure the security of your Amazon Web
+         * Services account, the secret access key is accessible only during key and user
+         * creation.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccessKeys">AWS
          * API Reference</a></p>
          */
@@ -5109,11 +5143,12 @@ namespace Model
          * results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          * <p>If the <code>UserName</code> field is not specified, the user name is
          * determined implicitly based on the Amazon Web Services access key ID used to
-         * sign the request. This operation works for access keys under the account.
-         * Consequently, you can use this operation to manage account root user credentials
-         * even if the account has no associated users.</p>  <p>To ensure the
-         * security of your account, the secret access key is accessible only during key
-         * and user creation.</p> <p><h3>See Also:</h3>   <a
+         * sign the request. This operation works for access keys under the Amazon Web
+         * Services account. Consequently, you can use this operation to manage Amazon Web
+         * Services account root user credentials even if the Amazon Web Services account
+         * has no associated users.</p>  <p>To ensure the security of your Amazon Web
+         * Services account, the secret access key is accessible only during key and user
+         * creation.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccessKeys">AWS
          * API Reference</a></p>
          *
@@ -5128,11 +5163,12 @@ namespace Model
          * results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          * <p>If the <code>UserName</code> field is not specified, the user name is
          * determined implicitly based on the Amazon Web Services access key ID used to
-         * sign the request. This operation works for access keys under the account.
-         * Consequently, you can use this operation to manage account root user credentials
-         * even if the account has no associated users.</p>  <p>To ensure the
-         * security of your account, the secret access key is accessible only during key
-         * and user creation.</p> <p><h3>See Also:</h3>   <a
+         * sign the request. This operation works for access keys under the Amazon Web
+         * Services account. Consequently, you can use this operation to manage Amazon Web
+         * Services account root user credentials even if the Amazon Web Services account
+         * has no associated users.</p>  <p>To ensure the security of your Amazon Web
+         * Services account, the secret access key is accessible only during key and user
+         * creation.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccessKeys">AWS
          * API Reference</a></p>
          *
@@ -5141,22 +5177,24 @@ namespace Model
         virtual void ListAccessKeysAsync(const Model::ListAccessKeysRequest& request, const ListAccessKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the account alias associated with the account (Note: you can have only
-         * one). For information about using an account alias, see <a
+         * <p>Lists the account alias associated with the Amazon Web Services account
+         * (Note: you can have only one). For information about using an Amazon Web
+         * Services account alias, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-         * an alias for your account ID</a> in the <i>IAM User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * an alias for your Amazon Web Services account ID</a> in the <i>IAM User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccountAliases">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAccountAliasesOutcome ListAccountAliases(const Model::ListAccountAliasesRequest& request) const;
 
         /**
-         * <p>Lists the account alias associated with the account (Note: you can have only
-         * one). For information about using an account alias, see <a
+         * <p>Lists the account alias associated with the Amazon Web Services account
+         * (Note: you can have only one). For information about using an Amazon Web
+         * Services account alias, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-         * an alias for your account ID</a> in the <i>IAM User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * an alias for your Amazon Web Services account ID</a> in the <i>IAM User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccountAliases">AWS
          * API Reference</a></p>
          *
@@ -5165,11 +5203,12 @@ namespace Model
         virtual Model::ListAccountAliasesOutcomeCallable ListAccountAliasesCallable(const Model::ListAccountAliasesRequest& request) const;
 
         /**
-         * <p>Lists the account alias associated with the account (Note: you can have only
-         * one). For information about using an account alias, see <a
+         * <p>Lists the account alias associated with the Amazon Web Services account
+         * (Note: you can have only one). For information about using an Amazon Web
+         * Services account alias, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-         * an alias for your account ID</a> in the <i>IAM User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * an alias for your Amazon Web Services account ID</a> in the <i>IAM User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccountAliases">AWS
          * API Reference</a></p>
          *
@@ -5756,11 +5795,12 @@ namespace Model
 
         /**
          * <p>Lists information about the IAM OpenID Connect (OIDC) provider resource
-         * objects defined in the account.</p>  <p>IAM resource-listing operations
-         * return a subset of the available attributes for the resource. For example, this
-         * operation does not return tags, even though they are an attribute of the
-         * returned object. To view all of the information for an OIDC provider, see
-         * <a>GetOpenIDConnectProvider</a>.</p> <p><h3>See Also:</h3>   <a
+         * objects defined in the Amazon Web Services account.</p>  <p>IAM
+         * resource-listing operations return a subset of the available attributes for the
+         * resource. For example, this operation does not return tags, even though they are
+         * an attribute of the returned object. To view all of the information for an OIDC
+         * provider, see <a>GetOpenIDConnectProvider</a>.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOpenIDConnectProviders">AWS
          * API Reference</a></p>
          */
@@ -5768,11 +5808,12 @@ namespace Model
 
         /**
          * <p>Lists information about the IAM OpenID Connect (OIDC) provider resource
-         * objects defined in the account.</p>  <p>IAM resource-listing operations
-         * return a subset of the available attributes for the resource. For example, this
-         * operation does not return tags, even though they are an attribute of the
-         * returned object. To view all of the information for an OIDC provider, see
-         * <a>GetOpenIDConnectProvider</a>.</p> <p><h3>See Also:</h3>   <a
+         * objects defined in the Amazon Web Services account.</p>  <p>IAM
+         * resource-listing operations return a subset of the available attributes for the
+         * resource. For example, this operation does not return tags, even though they are
+         * an attribute of the returned object. To view all of the information for an OIDC
+         * provider, see <a>GetOpenIDConnectProvider</a>.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOpenIDConnectProviders">AWS
          * API Reference</a></p>
          *
@@ -5782,11 +5823,12 @@ namespace Model
 
         /**
          * <p>Lists information about the IAM OpenID Connect (OIDC) provider resource
-         * objects defined in the account.</p>  <p>IAM resource-listing operations
-         * return a subset of the available attributes for the resource. For example, this
-         * operation does not return tags, even though they are an attribute of the
-         * returned object. To view all of the information for an OIDC provider, see
-         * <a>GetOpenIDConnectProvider</a>.</p> <p><h3>See Also:</h3>   <a
+         * objects defined in the Amazon Web Services account.</p>  <p>IAM
+         * resource-listing operations return a subset of the available attributes for the
+         * resource. For example, this operation does not return tags, even though they are
+         * an attribute of the returned object. To view all of the information for an OIDC
+         * provider, see <a>GetOpenIDConnectProvider</a>.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOpenIDConnectProviders">AWS
          * API Reference</a></p>
          *
@@ -5795,10 +5837,10 @@ namespace Model
         virtual void ListOpenIDConnectProvidersAsync(const Model::ListOpenIDConnectProvidersRequest& request, const ListOpenIDConnectProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the managed policies that are available in your account, including
-         * your own customer-defined managed policies and all Amazon Web Services managed
-         * policies.</p> <p>You can filter the list of policies that is returned using the
-         * optional <code>OnlyAttached</code>, <code>Scope</code>, and
+         * <p>Lists all the managed policies that are available in your Amazon Web Services
+         * account, including your own customer-defined managed policies and all Amazon Web
+         * Services managed policies.</p> <p>You can filter the list of policies that is
+         * returned using the optional <code>OnlyAttached</code>, <code>Scope</code>, and
          * <code>PathPrefix</code> parameters. For example, to list only the customer
          * managed policies in your Amazon Web Services account, set <code>Scope</code> to
          * <code>Local</code>. To list only Amazon Web Services managed policies, set
@@ -5817,10 +5859,10 @@ namespace Model
         virtual Model::ListPoliciesOutcome ListPolicies(const Model::ListPoliciesRequest& request) const;
 
         /**
-         * <p>Lists all the managed policies that are available in your account, including
-         * your own customer-defined managed policies and all Amazon Web Services managed
-         * policies.</p> <p>You can filter the list of policies that is returned using the
-         * optional <code>OnlyAttached</code>, <code>Scope</code>, and
+         * <p>Lists all the managed policies that are available in your Amazon Web Services
+         * account, including your own customer-defined managed policies and all Amazon Web
+         * Services managed policies.</p> <p>You can filter the list of policies that is
+         * returned using the optional <code>OnlyAttached</code>, <code>Scope</code>, and
          * <code>PathPrefix</code> parameters. For example, to list only the customer
          * managed policies in your Amazon Web Services account, set <code>Scope</code> to
          * <code>Local</code>. To list only Amazon Web Services managed policies, set
@@ -5841,10 +5883,10 @@ namespace Model
         virtual Model::ListPoliciesOutcomeCallable ListPoliciesCallable(const Model::ListPoliciesRequest& request) const;
 
         /**
-         * <p>Lists all the managed policies that are available in your account, including
-         * your own customer-defined managed policies and all Amazon Web Services managed
-         * policies.</p> <p>You can filter the list of policies that is returned using the
-         * optional <code>OnlyAttached</code>, <code>Scope</code>, and
+         * <p>Lists all the managed policies that are available in your Amazon Web Services
+         * account, including your own customer-defined managed policies and all Amazon Web
+         * Services managed policies.</p> <p>You can filter the list of policies that is
+         * returned using the optional <code>OnlyAttached</code>, <code>Scope</code>, and
          * <code>PathPrefix</code> parameters. For example, to list only the customer
          * managed policies in your Amazon Web Services account, set <code>Scope</code> to
          * <code>Local</code>. To list only Amazon Web Services managed policies, set
@@ -6493,9 +6535,10 @@ namespace Model
          * <code>Marker</code> parameters.</p> <p>If the <code>UserName</code> field is not
          * specified, the user name is determined implicitly based on the Amazon Web
          * Services access key ID used to sign the request for this operation. This
-         * operation works for access keys under the account. Consequently, you can use
-         * this operation to manage account root user credentials even if the account has
-         * no associated users.</p><p><h3>See Also:</h3>   <a
+         * operation works for access keys under the Amazon Web Services account.
+         * Consequently, you can use this operation to manage Amazon Web Services account
+         * root user credentials even if the Amazon Web Services account has no associated
+         * users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSigningCertificates">AWS
          * API Reference</a></p>
          */
@@ -6509,9 +6552,10 @@ namespace Model
          * <code>Marker</code> parameters.</p> <p>If the <code>UserName</code> field is not
          * specified, the user name is determined implicitly based on the Amazon Web
          * Services access key ID used to sign the request for this operation. This
-         * operation works for access keys under the account. Consequently, you can use
-         * this operation to manage account root user credentials even if the account has
-         * no associated users.</p><p><h3>See Also:</h3>   <a
+         * operation works for access keys under the Amazon Web Services account.
+         * Consequently, you can use this operation to manage Amazon Web Services account
+         * root user credentials even if the Amazon Web Services account has no associated
+         * users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSigningCertificates">AWS
          * API Reference</a></p>
          *
@@ -6527,9 +6571,10 @@ namespace Model
          * <code>Marker</code> parameters.</p> <p>If the <code>UserName</code> field is not
          * specified, the user name is determined implicitly based on the Amazon Web
          * Services access key ID used to sign the request for this operation. This
-         * operation works for access keys under the account. Consequently, you can use
-         * this operation to manage account root user credentials even if the account has
-         * no associated users.</p><p><h3>See Also:</h3>   <a
+         * operation works for access keys under the Amazon Web Services account.
+         * Consequently, you can use this operation to manage Amazon Web Services account
+         * root user credentials even if the Amazon Web Services account has no associated
+         * users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSigningCertificates">AWS
          * API Reference</a></p>
          *
@@ -6622,12 +6667,12 @@ namespace Model
 
         /**
          * <p>Lists the IAM users that have the specified path prefix. If no path prefix is
-         * specified, the operation returns all users in the account. If there are none,
-         * the operation returns an empty list.</p>  <p>IAM resource-listing
-         * operations return a subset of the available attributes for the resource. For
-         * example, this operation does not return tags, even though they are an attribute
-         * of the returned object. To view all of the information for a user, see
-         * <a>GetUser</a>.</p>  <p>You can paginate the results using the
+         * specified, the operation returns all users in the Amazon Web Services account.
+         * If there are none, the operation returns an empty list.</p>  <p>IAM
+         * resource-listing operations return a subset of the available attributes for the
+         * resource. For example, this operation does not return tags, even though they are
+         * an attribute of the returned object. To view all of the information for a user,
+         * see <a>GetUser</a>.</p>  <p>You can paginate the results using the
          * <code>MaxItems</code> and <code>Marker</code> parameters.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUsers">AWS API
@@ -6637,12 +6682,12 @@ namespace Model
 
         /**
          * <p>Lists the IAM users that have the specified path prefix. If no path prefix is
-         * specified, the operation returns all users in the account. If there are none,
-         * the operation returns an empty list.</p>  <p>IAM resource-listing
-         * operations return a subset of the available attributes for the resource. For
-         * example, this operation does not return tags, even though they are an attribute
-         * of the returned object. To view all of the information for a user, see
-         * <a>GetUser</a>.</p>  <p>You can paginate the results using the
+         * specified, the operation returns all users in the Amazon Web Services account.
+         * If there are none, the operation returns an empty list.</p>  <p>IAM
+         * resource-listing operations return a subset of the available attributes for the
+         * resource. For example, this operation does not return tags, even though they are
+         * an attribute of the returned object. To view all of the information for a user,
+         * see <a>GetUser</a>.</p>  <p>You can paginate the results using the
          * <code>MaxItems</code> and <code>Marker</code> parameters.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUsers">AWS API
@@ -6654,12 +6699,12 @@ namespace Model
 
         /**
          * <p>Lists the IAM users that have the specified path prefix. If no path prefix is
-         * specified, the operation returns all users in the account. If there are none,
-         * the operation returns an empty list.</p>  <p>IAM resource-listing
-         * operations return a subset of the available attributes for the resource. For
-         * example, this operation does not return tags, even though they are an attribute
-         * of the returned object. To view all of the information for a user, see
-         * <a>GetUser</a>.</p>  <p>You can paginate the results using the
+         * specified, the operation returns all users in the Amazon Web Services account.
+         * If there are none, the operation returns an empty list.</p>  <p>IAM
+         * resource-listing operations return a subset of the available attributes for the
+         * resource. For example, this operation does not return tags, even though they are
+         * an attribute of the returned object. To view all of the information for a user,
+         * see <a>GetUser</a>.</p>  <p>You can paginate the results using the
          * <code>MaxItems</code> and <code>Marker</code> parameters.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUsers">AWS API
@@ -6670,15 +6715,15 @@ namespace Model
         virtual void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the virtual MFA devices defined in the account by assignment status. If
-         * you do not specify an assignment status, the operation returns a list of all
-         * virtual MFA devices. Assignment status can be <code>Assigned</code>,
-         * <code>Unassigned</code>, or <code>Any</code>.</p>  <p>IAM resource-listing
-         * operations return a subset of the available attributes for the resource. For
-         * example, this operation does not return tags, even though they are an attribute
-         * of the returned object. To view all of the information for a virtual MFA device,
-         * see <a>ListVirtualMFADevices</a>.</p>  <p>You can paginate the results
-         * using the <code>MaxItems</code> and <code>Marker</code>
+         * <p>Lists the virtual MFA devices defined in the Amazon Web Services account by
+         * assignment status. If you do not specify an assignment status, the operation
+         * returns a list of all virtual MFA devices. Assignment status can be
+         * <code>Assigned</code>, <code>Unassigned</code>, or <code>Any</code>.</p> 
+         * <p>IAM resource-listing operations return a subset of the available attributes
+         * for the resource. For example, this operation does not return tags, even though
+         * they are an attribute of the returned object. To view all of the information for
+         * a virtual MFA device, see <a>ListVirtualMFADevices</a>.</p>  <p>You can
+         * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevices">AWS
          * API Reference</a></p>
@@ -6686,15 +6731,15 @@ namespace Model
         virtual Model::ListVirtualMFADevicesOutcome ListVirtualMFADevices(const Model::ListVirtualMFADevicesRequest& request) const;
 
         /**
-         * <p>Lists the virtual MFA devices defined in the account by assignment status. If
-         * you do not specify an assignment status, the operation returns a list of all
-         * virtual MFA devices. Assignment status can be <code>Assigned</code>,
-         * <code>Unassigned</code>, or <code>Any</code>.</p>  <p>IAM resource-listing
-         * operations return a subset of the available attributes for the resource. For
-         * example, this operation does not return tags, even though they are an attribute
-         * of the returned object. To view all of the information for a virtual MFA device,
-         * see <a>ListVirtualMFADevices</a>.</p>  <p>You can paginate the results
-         * using the <code>MaxItems</code> and <code>Marker</code>
+         * <p>Lists the virtual MFA devices defined in the Amazon Web Services account by
+         * assignment status. If you do not specify an assignment status, the operation
+         * returns a list of all virtual MFA devices. Assignment status can be
+         * <code>Assigned</code>, <code>Unassigned</code>, or <code>Any</code>.</p> 
+         * <p>IAM resource-listing operations return a subset of the available attributes
+         * for the resource. For example, this operation does not return tags, even though
+         * they are an attribute of the returned object. To view all of the information for
+         * a virtual MFA device, see <a>ListVirtualMFADevices</a>.</p>  <p>You can
+         * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevices">AWS
          * API Reference</a></p>
@@ -6704,15 +6749,15 @@ namespace Model
         virtual Model::ListVirtualMFADevicesOutcomeCallable ListVirtualMFADevicesCallable(const Model::ListVirtualMFADevicesRequest& request) const;
 
         /**
-         * <p>Lists the virtual MFA devices defined in the account by assignment status. If
-         * you do not specify an assignment status, the operation returns a list of all
-         * virtual MFA devices. Assignment status can be <code>Assigned</code>,
-         * <code>Unassigned</code>, or <code>Any</code>.</p>  <p>IAM resource-listing
-         * operations return a subset of the available attributes for the resource. For
-         * example, this operation does not return tags, even though they are an attribute
-         * of the returned object. To view all of the information for a virtual MFA device,
-         * see <a>ListVirtualMFADevices</a>.</p>  <p>You can paginate the results
-         * using the <code>MaxItems</code> and <code>Marker</code>
+         * <p>Lists the virtual MFA devices defined in the Amazon Web Services account by
+         * assignment status. If you do not specify an assignment status, the operation
+         * returns a list of all virtual MFA devices. Assignment status can be
+         * <code>Assigned</code>, <code>Unassigned</code>, or <code>Any</code>.</p> 
+         * <p>IAM resource-listing operations return a subset of the available attributes
+         * for the resource. For example, this operation does not return tags, even though
+         * they are an attribute of the returned object. To view all of the information for
+         * a virtual MFA device, see <a>ListVirtualMFADevices</a>.</p>  <p>You can
+         * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevices">AWS
          * API Reference</a></p>
@@ -7307,23 +7352,25 @@ namespace Model
 
         /**
          * <p>Sets the specified version of the global endpoint token as the token version
-         * used for the account.</p> <p>By default, Security Token Service (STS) is
-         * available as a global service, and all STS requests go to a single endpoint at
-         * <code>https://sts.amazonaws.com</code>. Amazon Web Services recommends using
-         * Regional STS endpoints to reduce latency, build in redundancy, and increase
-         * session token availability. For information about Regional endpoints for STS,
-         * see <a href="https://docs.aws.amazon.com/general/latest/gr/sts.html">Security
-         * Token Service endpoints and quotas</a> in the <i>Amazon Web Services General
+         * used for the Amazon Web Services account.</p> <p>By default, Security Token
+         * Service (STS) is available as a global service, and all STS requests go to a
+         * single endpoint at <code>https://sts.amazonaws.com</code>. Amazon Web Services
+         * recommends using Regional STS endpoints to reduce latency, build in redundancy,
+         * and increase session token availability. For information about Regional
+         * endpoints for STS, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/sts.html">Security Token
+         * Service endpoints and quotas</a> in the <i>Amazon Web Services General
          * Reference</i>.</p> <p>If you make an STS call to the global endpoint, the
          * resulting session tokens might be valid in some Regions but not others. It
          * depends on the version that is set in this operation. Version 1 tokens are valid
-         * only in Regions that are available by default. These tokens do not work in
-         * manually enabled Regions, such as Asia Pacific (Hong Kong). Version 2 tokens are
-         * valid in all Regions. However, version 2 tokens are longer and might affect
-         * systems where you temporarily store tokens. For information, see <a
+         * only in Amazon Web Services Regions that are available by default. These tokens
+         * do not work in manually enabled Regions, such as Asia Pacific (Hong Kong).
+         * Version 2 tokens are valid in all Regions. However, version 2 tokens are longer
+         * and might affect systems where you temporarily store tokens. For information,
+         * see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and deactivating STS in an Region</a> in the <i>IAM User Guide</i>.</p> <p>To
-         * view the current session token version, see the
+         * and deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User
+         * Guide</i>.</p> <p>To view the current session token version, see the
          * <code>GlobalEndpointTokenVersion</code> entry in the response of the
          * <a>GetAccountSummary</a> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SetSecurityTokenServicePreferences">AWS
@@ -7333,23 +7380,25 @@ namespace Model
 
         /**
          * <p>Sets the specified version of the global endpoint token as the token version
-         * used for the account.</p> <p>By default, Security Token Service (STS) is
-         * available as a global service, and all STS requests go to a single endpoint at
-         * <code>https://sts.amazonaws.com</code>. Amazon Web Services recommends using
-         * Regional STS endpoints to reduce latency, build in redundancy, and increase
-         * session token availability. For information about Regional endpoints for STS,
-         * see <a href="https://docs.aws.amazon.com/general/latest/gr/sts.html">Security
-         * Token Service endpoints and quotas</a> in the <i>Amazon Web Services General
+         * used for the Amazon Web Services account.</p> <p>By default, Security Token
+         * Service (STS) is available as a global service, and all STS requests go to a
+         * single endpoint at <code>https://sts.amazonaws.com</code>. Amazon Web Services
+         * recommends using Regional STS endpoints to reduce latency, build in redundancy,
+         * and increase session token availability. For information about Regional
+         * endpoints for STS, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/sts.html">Security Token
+         * Service endpoints and quotas</a> in the <i>Amazon Web Services General
          * Reference</i>.</p> <p>If you make an STS call to the global endpoint, the
          * resulting session tokens might be valid in some Regions but not others. It
          * depends on the version that is set in this operation. Version 1 tokens are valid
-         * only in Regions that are available by default. These tokens do not work in
-         * manually enabled Regions, such as Asia Pacific (Hong Kong). Version 2 tokens are
-         * valid in all Regions. However, version 2 tokens are longer and might affect
-         * systems where you temporarily store tokens. For information, see <a
+         * only in Amazon Web Services Regions that are available by default. These tokens
+         * do not work in manually enabled Regions, such as Asia Pacific (Hong Kong).
+         * Version 2 tokens are valid in all Regions. However, version 2 tokens are longer
+         * and might affect systems where you temporarily store tokens. For information,
+         * see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and deactivating STS in an Region</a> in the <i>IAM User Guide</i>.</p> <p>To
-         * view the current session token version, see the
+         * and deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User
+         * Guide</i>.</p> <p>To view the current session token version, see the
          * <code>GlobalEndpointTokenVersion</code> entry in the response of the
          * <a>GetAccountSummary</a> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SetSecurityTokenServicePreferences">AWS
@@ -7361,23 +7410,25 @@ namespace Model
 
         /**
          * <p>Sets the specified version of the global endpoint token as the token version
-         * used for the account.</p> <p>By default, Security Token Service (STS) is
-         * available as a global service, and all STS requests go to a single endpoint at
-         * <code>https://sts.amazonaws.com</code>. Amazon Web Services recommends using
-         * Regional STS endpoints to reduce latency, build in redundancy, and increase
-         * session token availability. For information about Regional endpoints for STS,
-         * see <a href="https://docs.aws.amazon.com/general/latest/gr/sts.html">Security
-         * Token Service endpoints and quotas</a> in the <i>Amazon Web Services General
+         * used for the Amazon Web Services account.</p> <p>By default, Security Token
+         * Service (STS) is available as a global service, and all STS requests go to a
+         * single endpoint at <code>https://sts.amazonaws.com</code>. Amazon Web Services
+         * recommends using Regional STS endpoints to reduce latency, build in redundancy,
+         * and increase session token availability. For information about Regional
+         * endpoints for STS, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/sts.html">Security Token
+         * Service endpoints and quotas</a> in the <i>Amazon Web Services General
          * Reference</i>.</p> <p>If you make an STS call to the global endpoint, the
          * resulting session tokens might be valid in some Regions but not others. It
          * depends on the version that is set in this operation. Version 1 tokens are valid
-         * only in Regions that are available by default. These tokens do not work in
-         * manually enabled Regions, such as Asia Pacific (Hong Kong). Version 2 tokens are
-         * valid in all Regions. However, version 2 tokens are longer and might affect
-         * systems where you temporarily store tokens. For information, see <a
+         * only in Amazon Web Services Regions that are available by default. These tokens
+         * do not work in manually enabled Regions, such as Asia Pacific (Hong Kong).
+         * Version 2 tokens are valid in all Regions. However, version 2 tokens are longer
+         * and might affect systems where you temporarily store tokens. For information,
+         * see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and deactivating STS in an Region</a> in the <i>IAM User Guide</i>.</p> <p>To
-         * view the current session token version, see the
+         * and deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User
+         * Guide</i>.</p> <p>To view the current session token version, see the
          * <code>GlobalEndpointTokenVersion</code> entry in the response of the
          * <a>GetAccountSummary</a> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SetSecurityTokenServicePreferences">AWS
@@ -8680,9 +8731,10 @@ namespace Model
          * rotation workflow.</p> <p>If the <code>UserName</code> is not specified, the
          * user name is determined implicitly based on the Amazon Web Services access key
          * ID used to sign the request. This operation works for access keys under the
-         * account. Consequently, you can use this operation to manage account root user
-         * credentials even if the account has no associated users.</p> <p>For information
-         * about rotating keys, see <a
+         * Amazon Web Services account. Consequently, you can use this operation to manage
+         * Amazon Web Services account root user credentials even if the Amazon Web
+         * Services account has no associated users.</p> <p>For information about rotating
+         * keys, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
          * keys and certificates</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>
          * <a
@@ -8697,9 +8749,10 @@ namespace Model
          * rotation workflow.</p> <p>If the <code>UserName</code> is not specified, the
          * user name is determined implicitly based on the Amazon Web Services access key
          * ID used to sign the request. This operation works for access keys under the
-         * account. Consequently, you can use this operation to manage account root user
-         * credentials even if the account has no associated users.</p> <p>For information
-         * about rotating keys, see <a
+         * Amazon Web Services account. Consequently, you can use this operation to manage
+         * Amazon Web Services account root user credentials even if the Amazon Web
+         * Services account has no associated users.</p> <p>For information about rotating
+         * keys, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
          * keys and certificates</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>
          * <a
@@ -8716,9 +8769,10 @@ namespace Model
          * rotation workflow.</p> <p>If the <code>UserName</code> is not specified, the
          * user name is determined implicitly based on the Amazon Web Services access key
          * ID used to sign the request. This operation works for access keys under the
-         * account. Consequently, you can use this operation to manage account root user
-         * credentials even if the account has no associated users.</p> <p>For information
-         * about rotating keys, see <a
+         * Amazon Web Services account. Consequently, you can use this operation to manage
+         * Amazon Web Services account root user credentials even if the Amazon Web
+         * Services account has no associated users.</p> <p>For information about rotating
+         * keys, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
          * keys and certificates</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>
          * <a
@@ -8730,14 +8784,14 @@ namespace Model
         virtual void UpdateAccessKeyAsync(const Model::UpdateAccessKeyRequest& request, const UpdateAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the password policy settings for the account.</p>  <ul> <li>
-         * <p>This operation does not support partial updates. No parameters are required,
-         * but if you do not specify a parameter, that parameter's value reverts to its
-         * default value. See the <b>Request Parameters</b> section for each parameter's
-         * default value. Also note that some parameters do not allow the default parameter
-         * to be explicitly set. Instead, to invoke the default value, do not include that
-         * parameter when you invoke the operation.</p> </li> </ul>  <p> For more
-         * information about using a password policy, see <a
+         * <p>Updates the password policy settings for the Amazon Web Services account.</p>
+         *  <ul> <li> <p>This operation does not support partial updates. No
+         * parameters are required, but if you do not specify a parameter, that parameter's
+         * value reverts to its default value. See the <b>Request Parameters</b> section
+         * for each parameter's default value. Also note that some parameters do not allow
+         * the default parameter to be explicitly set. Instead, to invoke the default
+         * value, do not include that parameter when you invoke the operation.</p> </li>
+         * </ul>  <p> For more information about using a password policy, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
          * an IAM password policy</a> in the <i>IAM User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -8747,14 +8801,14 @@ namespace Model
         virtual Model::UpdateAccountPasswordPolicyOutcome UpdateAccountPasswordPolicy(const Model::UpdateAccountPasswordPolicyRequest& request) const;
 
         /**
-         * <p>Updates the password policy settings for the account.</p>  <ul> <li>
-         * <p>This operation does not support partial updates. No parameters are required,
-         * but if you do not specify a parameter, that parameter's value reverts to its
-         * default value. See the <b>Request Parameters</b> section for each parameter's
-         * default value. Also note that some parameters do not allow the default parameter
-         * to be explicitly set. Instead, to invoke the default value, do not include that
-         * parameter when you invoke the operation.</p> </li> </ul>  <p> For more
-         * information about using a password policy, see <a
+         * <p>Updates the password policy settings for the Amazon Web Services account.</p>
+         *  <ul> <li> <p>This operation does not support partial updates. No
+         * parameters are required, but if you do not specify a parameter, that parameter's
+         * value reverts to its default value. See the <b>Request Parameters</b> section
+         * for each parameter's default value. Also note that some parameters do not allow
+         * the default parameter to be explicitly set. Instead, to invoke the default
+         * value, do not include that parameter when you invoke the operation.</p> </li>
+         * </ul>  <p> For more information about using a password policy, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
          * an IAM password policy</a> in the <i>IAM User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -8766,14 +8820,14 @@ namespace Model
         virtual Model::UpdateAccountPasswordPolicyOutcomeCallable UpdateAccountPasswordPolicyCallable(const Model::UpdateAccountPasswordPolicyRequest& request) const;
 
         /**
-         * <p>Updates the password policy settings for the account.</p>  <ul> <li>
-         * <p>This operation does not support partial updates. No parameters are required,
-         * but if you do not specify a parameter, that parameter's value reverts to its
-         * default value. See the <b>Request Parameters</b> section for each parameter's
-         * default value. Also note that some parameters do not allow the default parameter
-         * to be explicitly set. Instead, to invoke the default value, do not include that
-         * parameter when you invoke the operation.</p> </li> </ul>  <p> For more
-         * information about using a password policy, see <a
+         * <p>Updates the password policy settings for the Amazon Web Services account.</p>
+         *  <ul> <li> <p>This operation does not support partial updates. No
+         * parameters are required, but if you do not specify a parameter, that parameter's
+         * value reverts to its default value. See the <b>Request Parameters</b> section
+         * for each parameter's default value. Also note that some parameters do not allow
+         * the default parameter to be explicitly set. Instead, to invoke the default
+         * value, do not include that parameter when you invoke the operation.</p> </li>
+         * </ul>  <p> For more information about using a password policy, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
          * an IAM password policy</a> in the <i>IAM User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -8889,8 +8943,9 @@ namespace Model
          * <p>Changes the password for the specified IAM user. You can use the CLI, the
          * Amazon Web Services API, or the <b>Users</b> page in the IAM console to change
          * the password for any IAM user. Use <a>ChangePassword</a> to change your own
-         * password in the <b>My Security Credentials</b> page in the Management
-         * Console.</p> <p>For more information about modifying passwords, see <a
+         * password in the <b>My Security Credentials</b> page in the Amazon Web Services
+         * Management Console.</p> <p>For more information about modifying passwords, see
+         * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
          * passwords</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateLoginProfile">AWS
@@ -8902,8 +8957,9 @@ namespace Model
          * <p>Changes the password for the specified IAM user. You can use the CLI, the
          * Amazon Web Services API, or the <b>Users</b> page in the IAM console to change
          * the password for any IAM user. Use <a>ChangePassword</a> to change your own
-         * password in the <b>My Security Credentials</b> page in the Management
-         * Console.</p> <p>For more information about modifying passwords, see <a
+         * password in the <b>My Security Credentials</b> page in the Amazon Web Services
+         * Management Console.</p> <p>For more information about modifying passwords, see
+         * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
          * passwords</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateLoginProfile">AWS
@@ -8917,8 +8973,9 @@ namespace Model
          * <p>Changes the password for the specified IAM user. You can use the CLI, the
          * Amazon Web Services API, or the <b>Users</b> page in the IAM console to change
          * the password for any IAM user. Use <a>ChangePassword</a> to change your own
-         * password in the <b>My Security Credentials</b> page in the Management
-         * Console.</p> <p>For more information about modifying passwords, see <a
+         * password in the <b>My Security Credentials</b> page in the Amazon Web Services
+         * Management Console.</p> <p>For more information about modifying passwords, see
+         * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
          * passwords</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateLoginProfile">AWS
@@ -9280,9 +9337,10 @@ namespace Model
          * signing certificate as part of a certificate rotation work flow.</p> <p>If the
          * <code>UserName</code> field is not specified, the user name is determined
          * implicitly based on the Amazon Web Services access key ID used to sign the
-         * request. This operation works for access keys under the account. Consequently,
-         * you can use this operation to manage account root user credentials even if the
-         * account has no associated users.</p><p><h3>See Also:</h3>   <a
+         * request. This operation works for access keys under the Amazon Web Services
+         * account. Consequently, you can use this operation to manage Amazon Web Services
+         * account root user credentials even if the Amazon Web Services account has no
+         * associated users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSigningCertificate">AWS
          * API Reference</a></p>
          */
@@ -9294,9 +9352,10 @@ namespace Model
          * signing certificate as part of a certificate rotation work flow.</p> <p>If the
          * <code>UserName</code> field is not specified, the user name is determined
          * implicitly based on the Amazon Web Services access key ID used to sign the
-         * request. This operation works for access keys under the account. Consequently,
-         * you can use this operation to manage account root user credentials even if the
-         * account has no associated users.</p><p><h3>See Also:</h3>   <a
+         * request. This operation works for access keys under the Amazon Web Services
+         * account. Consequently, you can use this operation to manage Amazon Web Services
+         * account root user credentials even if the Amazon Web Services account has no
+         * associated users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSigningCertificate">AWS
          * API Reference</a></p>
          *
@@ -9310,9 +9369,10 @@ namespace Model
          * signing certificate as part of a certificate rotation work flow.</p> <p>If the
          * <code>UserName</code> field is not specified, the user name is determined
          * implicitly based on the Amazon Web Services access key ID used to sign the
-         * request. This operation works for access keys under the account. Consequently,
-         * you can use this operation to manage account root user credentials even if the
-         * account has no associated users.</p><p><h3>See Also:</h3>   <a
+         * request. This operation works for access keys under the Amazon Web Services
+         * account. Consequently, you can use this operation to manage Amazon Web Services
+         * account root user credentials even if the Amazon Web Services account has no
+         * associated users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSigningCertificate">AWS
          * API Reference</a></p>
          *
@@ -9428,14 +9488,14 @@ namespace Model
         virtual void UploadSSHPublicKeyAsync(const Model::UploadSSHPublicKeyRequest& request, const UploadSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Uploads a server certificate entity for the account. The server certificate
-         * entity includes a public key certificate, a private key, and an optional
-         * certificate chain, which should all be PEM-encoded.</p> <p>We recommend that you
-         * use <a href="https://docs.aws.amazon.com/acm/">Certificate Manager</a> to
-         * provision, manage, and deploy your server certificates. With ACM you can request
-         * a certificate, deploy it to Amazon Web Services resources, and let ACM handle
-         * certificate renewals for you. Certificates provided by ACM are free. For more
-         * information about using ACM, see the <a
+         * <p>Uploads a server certificate entity for the Amazon Web Services account. The
+         * server certificate entity includes a public key certificate, a private key, and
+         * an optional certificate chain, which should all be PEM-encoded.</p> <p>We
+         * recommend that you use <a href="https://docs.aws.amazon.com/acm/">Certificate
+         * Manager</a> to provision, manage, and deploy your server certificates. With ACM
+         * you can request a certificate, deploy it to Amazon Web Services resources, and
+         * let ACM handle certificate renewals for you. Certificates provided by ACM are
+         * free. For more information about using ACM, see the <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
          * User Guide</a>.</p> <p>For more information about working with server
          * certificates, see <a
@@ -9463,14 +9523,14 @@ namespace Model
         virtual Model::UploadServerCertificateOutcome UploadServerCertificate(const Model::UploadServerCertificateRequest& request) const;
 
         /**
-         * <p>Uploads a server certificate entity for the account. The server certificate
-         * entity includes a public key certificate, a private key, and an optional
-         * certificate chain, which should all be PEM-encoded.</p> <p>We recommend that you
-         * use <a href="https://docs.aws.amazon.com/acm/">Certificate Manager</a> to
-         * provision, manage, and deploy your server certificates. With ACM you can request
-         * a certificate, deploy it to Amazon Web Services resources, and let ACM handle
-         * certificate renewals for you. Certificates provided by ACM are free. For more
-         * information about using ACM, see the <a
+         * <p>Uploads a server certificate entity for the Amazon Web Services account. The
+         * server certificate entity includes a public key certificate, a private key, and
+         * an optional certificate chain, which should all be PEM-encoded.</p> <p>We
+         * recommend that you use <a href="https://docs.aws.amazon.com/acm/">Certificate
+         * Manager</a> to provision, manage, and deploy your server certificates. With ACM
+         * you can request a certificate, deploy it to Amazon Web Services resources, and
+         * let ACM handle certificate renewals for you. Certificates provided by ACM are
+         * free. For more information about using ACM, see the <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
          * User Guide</a>.</p> <p>For more information about working with server
          * certificates, see <a
@@ -9500,14 +9560,14 @@ namespace Model
         virtual Model::UploadServerCertificateOutcomeCallable UploadServerCertificateCallable(const Model::UploadServerCertificateRequest& request) const;
 
         /**
-         * <p>Uploads a server certificate entity for the account. The server certificate
-         * entity includes a public key certificate, a private key, and an optional
-         * certificate chain, which should all be PEM-encoded.</p> <p>We recommend that you
-         * use <a href="https://docs.aws.amazon.com/acm/">Certificate Manager</a> to
-         * provision, manage, and deploy your server certificates. With ACM you can request
-         * a certificate, deploy it to Amazon Web Services resources, and let ACM handle
-         * certificate renewals for you. Certificates provided by ACM are free. For more
-         * information about using ACM, see the <a
+         * <p>Uploads a server certificate entity for the Amazon Web Services account. The
+         * server certificate entity includes a public key certificate, a private key, and
+         * an optional certificate chain, which should all be PEM-encoded.</p> <p>We
+         * recommend that you use <a href="https://docs.aws.amazon.com/acm/">Certificate
+         * Manager</a> to provision, manage, and deploy your server certificates. With ACM
+         * you can request a certificate, deploy it to Amazon Web Services resources, and
+         * let ACM handle certificate renewals for you. Certificates provided by ACM are
+         * free. For more information about using ACM, see the <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
          * User Guide</a>.</p> <p>For more information about working with server
          * certificates, see <a
@@ -9546,10 +9606,11 @@ namespace Model
          * server certificates in IAM</a> in the <i>IAM User Guide</i>.</p> <p>If the
          * <code>UserName</code> is not specified, the IAM user name is determined
          * implicitly based on the Amazon Web Services access key ID used to sign the
-         * request. This operation works for access keys under the account. Consequently,
-         * you can use this operation to manage account root user credentials even if the
-         * account has no associated users.</p>  <p>Because the body of an X.509
-         * certificate can be large, you should use POST rather than GET when calling
+         * request. This operation works for access keys under the Amazon Web Services
+         * account. Consequently, you can use this operation to manage Amazon Web Services
+         * account root user credentials even if the Amazon Web Services account has no
+         * associated users.</p>  <p>Because the body of an X.509 certificate can be
+         * large, you should use POST rather than GET when calling
          * <code>UploadSigningCertificate</code>. For information about setting up
          * signatures and authorization through the API, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
@@ -9574,10 +9635,11 @@ namespace Model
          * server certificates in IAM</a> in the <i>IAM User Guide</i>.</p> <p>If the
          * <code>UserName</code> is not specified, the IAM user name is determined
          * implicitly based on the Amazon Web Services access key ID used to sign the
-         * request. This operation works for access keys under the account. Consequently,
-         * you can use this operation to manage account root user credentials even if the
-         * account has no associated users.</p>  <p>Because the body of an X.509
-         * certificate can be large, you should use POST rather than GET when calling
+         * request. This operation works for access keys under the Amazon Web Services
+         * account. Consequently, you can use this operation to manage Amazon Web Services
+         * account root user credentials even if the Amazon Web Services account has no
+         * associated users.</p>  <p>Because the body of an X.509 certificate can be
+         * large, you should use POST rather than GET when calling
          * <code>UploadSigningCertificate</code>. For information about setting up
          * signatures and authorization through the API, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
@@ -9604,10 +9666,11 @@ namespace Model
          * server certificates in IAM</a> in the <i>IAM User Guide</i>.</p> <p>If the
          * <code>UserName</code> is not specified, the IAM user name is determined
          * implicitly based on the Amazon Web Services access key ID used to sign the
-         * request. This operation works for access keys under the account. Consequently,
-         * you can use this operation to manage account root user credentials even if the
-         * account has no associated users.</p>  <p>Because the body of an X.509
-         * certificate can be large, you should use POST rather than GET when calling
+         * request. This operation works for access keys under the Amazon Web Services
+         * account. Consequently, you can use this operation to manage Amazon Web Services
+         * account root user credentials even if the Amazon Web Services account has no
+         * associated users.</p>  <p>Because the body of an X.509 certificate can be
+         * large, you should use POST rather than GET when calling
          * <code>UploadSigningCertificate</code>. For information about setting up
          * signatures and authorization through the API, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing

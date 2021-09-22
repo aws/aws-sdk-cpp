@@ -72,28 +72,44 @@ namespace Model
     inline ReceivedMetadata& WithReceivedStatus(ReceivedStatus&& value) { SetReceivedStatus(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Received status reason.</p>
+     */
     inline const Aws::String& GetReceivedStatusReason() const{ return m_receivedStatusReason; }
 
-    
+    /**
+     * <p>Received status reason.</p>
+     */
     inline bool ReceivedStatusReasonHasBeenSet() const { return m_receivedStatusReasonHasBeenSet; }
 
-    
+    /**
+     * <p>Received status reason.</p>
+     */
     inline void SetReceivedStatusReason(const Aws::String& value) { m_receivedStatusReasonHasBeenSet = true; m_receivedStatusReason = value; }
 
-    
+    /**
+     * <p>Received status reason.</p>
+     */
     inline void SetReceivedStatusReason(Aws::String&& value) { m_receivedStatusReasonHasBeenSet = true; m_receivedStatusReason = std::move(value); }
 
-    
+    /**
+     * <p>Received status reason.</p>
+     */
     inline void SetReceivedStatusReason(const char* value) { m_receivedStatusReasonHasBeenSet = true; m_receivedStatusReason.assign(value); }
 
-    
+    /**
+     * <p>Received status reason.</p>
+     */
     inline ReceivedMetadata& WithReceivedStatusReason(const Aws::String& value) { SetReceivedStatusReason(value); return *this;}
 
-    
+    /**
+     * <p>Received status reason.</p>
+     */
     inline ReceivedMetadata& WithReceivedStatusReason(Aws::String&& value) { SetReceivedStatusReason(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Received status reason.</p>
+     */
     inline ReceivedMetadata& WithReceivedStatusReason(const char* value) { SetReceivedStatusReason(value); return *this;}
 
 

@@ -75,28 +75,44 @@ namespace Model
     inline DeleteGrantRequest& WithGrantArn(const char* value) { SetGrantArn(value); return *this;}
 
 
-    
+    /**
+     * <p>The Status reason for the delete request.</p>
+     */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
 
-    
+    /**
+     * <p>The Status reason for the delete request.</p>
+     */
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
-    
+    /**
+     * <p>The Status reason for the delete request.</p>
+     */
     inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
 
-    
+    /**
+     * <p>The Status reason for the delete request.</p>
+     */
     inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
 
-    
+    /**
+     * <p>The Status reason for the delete request.</p>
+     */
     inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
 
-    
+    /**
+     * <p>The Status reason for the delete request.</p>
+     */
     inline DeleteGrantRequest& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
 
-    
+    /**
+     * <p>The Status reason for the delete request.</p>
+     */
     inline DeleteGrantRequest& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The Status reason for the delete request.</p>
+     */
     inline DeleteGrantRequest& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
 

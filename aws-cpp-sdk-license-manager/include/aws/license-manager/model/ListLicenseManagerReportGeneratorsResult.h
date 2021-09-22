@@ -35,43 +35,43 @@ namespace Model
 
 
     /**
-     * <p>A report generator that creates periodic reports on your license
+     * <p>A report generator that creates periodic reports about your license
      * configurations.</p>
      */
     inline const Aws::Vector<ReportGenerator>& GetReportGenerators() const{ return m_reportGenerators; }
 
     /**
-     * <p>A report generator that creates periodic reports on your license
+     * <p>A report generator that creates periodic reports about your license
      * configurations.</p>
      */
     inline void SetReportGenerators(const Aws::Vector<ReportGenerator>& value) { m_reportGenerators = value; }
 
     /**
-     * <p>A report generator that creates periodic reports on your license
+     * <p>A report generator that creates periodic reports about your license
      * configurations.</p>
      */
     inline void SetReportGenerators(Aws::Vector<ReportGenerator>&& value) { m_reportGenerators = std::move(value); }
 
     /**
-     * <p>A report generator that creates periodic reports on your license
+     * <p>A report generator that creates periodic reports about your license
      * configurations.</p>
      */
     inline ListLicenseManagerReportGeneratorsResult& WithReportGenerators(const Aws::Vector<ReportGenerator>& value) { SetReportGenerators(value); return *this;}
 
     /**
-     * <p>A report generator that creates periodic reports on your license
+     * <p>A report generator that creates periodic reports about your license
      * configurations.</p>
      */
     inline ListLicenseManagerReportGeneratorsResult& WithReportGenerators(Aws::Vector<ReportGenerator>&& value) { SetReportGenerators(std::move(value)); return *this;}
 
     /**
-     * <p>A report generator that creates periodic reports on your license
+     * <p>A report generator that creates periodic reports about your license
      * configurations.</p>
      */
     inline ListLicenseManagerReportGeneratorsResult& AddReportGenerators(const ReportGenerator& value) { m_reportGenerators.push_back(value); return *this; }
 
     /**
-     * <p>A report generator that creates periodic reports on your license
+     * <p>A report generator that creates periodic reports about your license
      * configurations.</p>
      */
     inline ListLicenseManagerReportGeneratorsResult& AddReportGenerators(ReportGenerator&& value) { m_reportGenerators.push_back(std::move(value)); return *this; }

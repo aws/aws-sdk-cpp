@@ -14,6 +14,7 @@
 #include <aws/wafv2/model/IPSetReferenceStatement.h>
 #include <aws/wafv2/model/RegexPatternSetReferenceStatement.h>
 #include <aws/wafv2/model/LabelMatchStatement.h>
+#include <aws/wafv2/model/RegexMatchStatement.h>
 #include <utility>
 #include <memory>
 
@@ -1061,6 +1062,43 @@ namespace Model
      */
     inline Statement& WithLabelMatchStatement(LabelMatchStatement&& value) { SetLabelMatchStatement(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A rule statement used to search web request components for a match against a
+     * single regular expression. </p>
+     */
+    inline const RegexMatchStatement& GetRegexMatchStatement() const{ return m_regexMatchStatement; }
+
+    /**
+     * <p>A rule statement used to search web request components for a match against a
+     * single regular expression. </p>
+     */
+    inline bool RegexMatchStatementHasBeenSet() const { return m_regexMatchStatementHasBeenSet; }
+
+    /**
+     * <p>A rule statement used to search web request components for a match against a
+     * single regular expression. </p>
+     */
+    inline void SetRegexMatchStatement(const RegexMatchStatement& value) { m_regexMatchStatementHasBeenSet = true; m_regexMatchStatement = value; }
+
+    /**
+     * <p>A rule statement used to search web request components for a match against a
+     * single regular expression. </p>
+     */
+    inline void SetRegexMatchStatement(RegexMatchStatement&& value) { m_regexMatchStatementHasBeenSet = true; m_regexMatchStatement = std::move(value); }
+
+    /**
+     * <p>A rule statement used to search web request components for a match against a
+     * single regular expression. </p>
+     */
+    inline Statement& WithRegexMatchStatement(const RegexMatchStatement& value) { SetRegexMatchStatement(value); return *this;}
+
+    /**
+     * <p>A rule statement used to search web request components for a match against a
+     * single regular expression. </p>
+     */
+    inline Statement& WithRegexMatchStatement(RegexMatchStatement&& value) { SetRegexMatchStatement(std::move(value)); return *this;}
+
   private:
 
     ByteMatchStatement m_byteMatchStatement;
@@ -1104,6 +1142,9 @@ namespace Model
 
     LabelMatchStatement m_labelMatchStatement;
     bool m_labelMatchStatementHasBeenSet;
+
+    RegexMatchStatement m_regexMatchStatement;
+    bool m_regexMatchStatementHasBeenSet;
   };
 
 } // namespace Model

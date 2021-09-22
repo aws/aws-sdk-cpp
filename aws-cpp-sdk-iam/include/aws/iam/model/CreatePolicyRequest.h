@@ -113,7 +113,8 @@ namespace Model
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p>
+     * and lowercased letters.</p>  <p>You cannot use an asterisk (*) in the path
+     * name.</p> 
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
@@ -127,7 +128,8 @@ namespace Model
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p>
+     * and lowercased letters.</p>  <p>You cannot use an asterisk (*) in the path
+     * name.</p> 
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
@@ -141,7 +143,8 @@ namespace Model
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p>
+     * and lowercased letters.</p>  <p>You cannot use an asterisk (*) in the path
+     * name.</p> 
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
@@ -155,7 +158,8 @@ namespace Model
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p>
+     * and lowercased letters.</p>  <p>You cannot use an asterisk (*) in the path
+     * name.</p> 
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
@@ -169,7 +173,8 @@ namespace Model
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p>
+     * and lowercased letters.</p>  <p>You cannot use an asterisk (*) in the path
+     * name.</p> 
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
@@ -183,7 +188,8 @@ namespace Model
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p>
+     * and lowercased letters.</p>  <p>You cannot use an asterisk (*) in the path
+     * name.</p> 
      */
     inline CreatePolicyRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
@@ -197,7 +203,8 @@ namespace Model
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p>
+     * and lowercased letters.</p>  <p>You cannot use an asterisk (*) in the path
+     * name.</p> 
      */
     inline CreatePolicyRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
@@ -211,7 +218,8 @@ namespace Model
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p>
+     * and lowercased letters.</p>  <p>You cannot use an asterisk (*) in the path
+     * name.</p> 
      */
     inline CreatePolicyRequest& WithPath(const char* value) { SetPath(value); return *this;}
 

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Details on how frequently reports are generated.</p><p><h3>See Also:</h3>  
+   * <p>Details about how frequently reports are generated.</p><p><h3>See Also:</h3> 
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ReportFrequency">AWS
    * API Reference</a></p>
@@ -39,26 +39,26 @@ namespace Model
 
 
     /**
-     * <p>Number of times within the frequency period that a report will be generated.
-     * Currently only <code>1</code> is supported.</p>
+     * <p>Number of times within the frequency period that a report is generated. The
+     * only supported value is <code>1</code>.</p>
      */
     inline int GetValue() const{ return m_value; }
 
     /**
-     * <p>Number of times within the frequency period that a report will be generated.
-     * Currently only <code>1</code> is supported.</p>
+     * <p>Number of times within the frequency period that a report is generated. The
+     * only supported value is <code>1</code>.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>Number of times within the frequency period that a report will be generated.
-     * Currently only <code>1</code> is supported.</p>
+     * <p>Number of times within the frequency period that a report is generated. The
+     * only supported value is <code>1</code>.</p>
      */
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>Number of times within the frequency period that a report will be generated.
-     * Currently only <code>1</code> is supported.</p>
+     * <p>Number of times within the frequency period that a report is generated. The
+     * only supported value is <code>1</code>.</p>
      */
     inline ReportFrequency& WithValue(int value) { SetValue(value); return *this;}
 

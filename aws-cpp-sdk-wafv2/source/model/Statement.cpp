@@ -37,7 +37,8 @@ Statement::Statement() :
     m_orStatementHasBeenSet(false),
     m_notStatementHasBeenSet(false),
     m_managedRuleGroupStatementHasBeenSet(false),
-    m_labelMatchStatementHasBeenSet(false)
+    m_labelMatchStatementHasBeenSet(false),
+    m_regexMatchStatementHasBeenSet(false)
 {
 }
 
@@ -55,7 +56,8 @@ Statement::Statement(JsonView jsonValue) :
     m_orStatementHasBeenSet(false),
     m_notStatementHasBeenSet(false),
     m_managedRuleGroupStatementHasBeenSet(false),
-    m_labelMatchStatementHasBeenSet(false)
+    m_labelMatchStatementHasBeenSet(false),
+    m_regexMatchStatementHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -195,6 +197,13 @@ Statement& Statement::operator =(JsonView jsonValue)
     m_labelMatchStatementHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RegexMatchStatement"))
+  {
+    m_regexMatchStatement = jsonValue.GetObject("RegexMatchStatement");
+
+    m_regexMatchStatementHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -283,6 +292,12 @@ JsonValue Statement::Jsonize() const
   if(m_labelMatchStatementHasBeenSet)
   {
    payload.WithObject("LabelMatchStatement", m_labelMatchStatement.Jsonize());
+
+  }
+
+  if(m_regexMatchStatementHasBeenSet)
+  {
+   payload.WithObject("RegexMatchStatement", m_regexMatchStatement.Jsonize());
 
   }
 

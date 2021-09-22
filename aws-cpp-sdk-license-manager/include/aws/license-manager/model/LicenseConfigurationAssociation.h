@@ -113,42 +113,50 @@ namespace Model
 
 
     /**
-     * <p>ID of the AWS account that owns the resource consuming licenses.</p>
+     * <p>ID of the Amazon Web Services account that owns the resource consuming
+     * licenses.</p>
      */
     inline const Aws::String& GetResourceOwnerId() const{ return m_resourceOwnerId; }
 
     /**
-     * <p>ID of the AWS account that owns the resource consuming licenses.</p>
+     * <p>ID of the Amazon Web Services account that owns the resource consuming
+     * licenses.</p>
      */
     inline bool ResourceOwnerIdHasBeenSet() const { return m_resourceOwnerIdHasBeenSet; }
 
     /**
-     * <p>ID of the AWS account that owns the resource consuming licenses.</p>
+     * <p>ID of the Amazon Web Services account that owns the resource consuming
+     * licenses.</p>
      */
     inline void SetResourceOwnerId(const Aws::String& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = value; }
 
     /**
-     * <p>ID of the AWS account that owns the resource consuming licenses.</p>
+     * <p>ID of the Amazon Web Services account that owns the resource consuming
+     * licenses.</p>
      */
     inline void SetResourceOwnerId(Aws::String&& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = std::move(value); }
 
     /**
-     * <p>ID of the AWS account that owns the resource consuming licenses.</p>
+     * <p>ID of the Amazon Web Services account that owns the resource consuming
+     * licenses.</p>
      */
     inline void SetResourceOwnerId(const char* value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId.assign(value); }
 
     /**
-     * <p>ID of the AWS account that owns the resource consuming licenses.</p>
+     * <p>ID of the Amazon Web Services account that owns the resource consuming
+     * licenses.</p>
      */
     inline LicenseConfigurationAssociation& WithResourceOwnerId(const Aws::String& value) { SetResourceOwnerId(value); return *this;}
 
     /**
-     * <p>ID of the AWS account that owns the resource consuming licenses.</p>
+     * <p>ID of the Amazon Web Services account that owns the resource consuming
+     * licenses.</p>
      */
     inline LicenseConfigurationAssociation& WithResourceOwnerId(Aws::String&& value) { SetResourceOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of the AWS account that owns the resource consuming licenses.</p>
+     * <p>ID of the Amazon Web Services account that owns the resource consuming
+     * licenses.</p>
      */
     inline LicenseConfigurationAssociation& WithResourceOwnerId(const char* value) { SetResourceOwnerId(value); return *this;}
 

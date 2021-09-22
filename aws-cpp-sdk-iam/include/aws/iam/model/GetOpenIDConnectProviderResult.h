@@ -201,31 +201,31 @@ namespace Model
 
     /**
      * <p>The date and time when the IAM OIDC provider resource object was created in
-     * the account.</p>
+     * the Amazon Web Services account.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
 
     /**
      * <p>The date and time when the IAM OIDC provider resource object was created in
-     * the account.</p>
+     * the Amazon Web Services account.</p>
      */
     inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDate = value; }
 
     /**
      * <p>The date and time when the IAM OIDC provider resource object was created in
-     * the account.</p>
+     * the Amazon Web Services account.</p>
      */
     inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDate = std::move(value); }
 
     /**
      * <p>The date and time when the IAM OIDC provider resource object was created in
-     * the account.</p>
+     * the Amazon Web Services account.</p>
      */
     inline GetOpenIDConnectProviderResult& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
 
     /**
      * <p>The date and time when the IAM OIDC provider resource object was created in
-     * the account.</p>
+     * the Amazon Web Services account.</p>
      */
     inline GetOpenIDConnectProviderResult& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 

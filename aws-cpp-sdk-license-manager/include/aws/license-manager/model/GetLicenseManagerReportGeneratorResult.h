@@ -33,31 +33,31 @@ namespace Model
 
 
     /**
-     * <p>A report generator that creates periodic reports on your license
+     * <p>A report generator that creates periodic reports about your license
      * configurations.</p>
      */
     inline const ReportGenerator& GetReportGenerator() const{ return m_reportGenerator; }
 
     /**
-     * <p>A report generator that creates periodic reports on your license
+     * <p>A report generator that creates periodic reports about your license
      * configurations.</p>
      */
     inline void SetReportGenerator(const ReportGenerator& value) { m_reportGenerator = value; }
 
     /**
-     * <p>A report generator that creates periodic reports on your license
+     * <p>A report generator that creates periodic reports about your license
      * configurations.</p>
      */
     inline void SetReportGenerator(ReportGenerator&& value) { m_reportGenerator = std::move(value); }
 
     /**
-     * <p>A report generator that creates periodic reports on your license
+     * <p>A report generator that creates periodic reports about your license
      * configurations.</p>
      */
     inline GetLicenseManagerReportGeneratorResult& WithReportGenerator(const ReportGenerator& value) { SetReportGenerator(value); return *this;}
 
     /**
-     * <p>A report generator that creates periodic reports on your license
+     * <p>A report generator that creates periodic reports about your license
      * configurations.</p>
      */
     inline GetLicenseManagerReportGeneratorResult& WithReportGenerator(ReportGenerator&& value) { SetReportGenerator(std::move(value)); return *this;}

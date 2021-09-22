@@ -20,6 +20,7 @@
 #include <aws/mediatailor/MediaTailorClient.h>
 #include <aws/mediatailor/MediaTailorEndpoint.h>
 #include <aws/mediatailor/MediaTailorErrorMarshaller.h>
+#include <aws/mediatailor/model/ConfigureLogsForPlaybackConfigurationRequest.h>
 #include <aws/mediatailor/model/CreateChannelRequest.h>
 #include <aws/mediatailor/model/CreateProgramRequest.h>
 #include <aws/mediatailor/model/CreateSourceLocationRequest.h>
@@ -124,6 +125,31 @@ void MediaTailorClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+ConfigureLogsForPlaybackConfigurationOutcome MediaTailorClient::ConfigureLogsForPlaybackConfiguration(const ConfigureLogsForPlaybackConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/configureLogs/playbackConfiguration");
+  return ConfigureLogsForPlaybackConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+ConfigureLogsForPlaybackConfigurationOutcomeCallable MediaTailorClient::ConfigureLogsForPlaybackConfigurationCallable(const ConfigureLogsForPlaybackConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ConfigureLogsForPlaybackConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ConfigureLogsForPlaybackConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaTailorClient::ConfigureLogsForPlaybackConfigurationAsync(const ConfigureLogsForPlaybackConfigurationRequest& request, const ConfigureLogsForPlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ConfigureLogsForPlaybackConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void MediaTailorClient::ConfigureLogsForPlaybackConfigurationAsyncHelper(const ConfigureLogsForPlaybackConfigurationRequest& request, const ConfigureLogsForPlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ConfigureLogsForPlaybackConfiguration(request), context);
 }
 
 CreateChannelOutcome MediaTailorClient::CreateChannel(const CreateChannelRequest& request) const

@@ -87,6 +87,12 @@ PutPlaybackConfigurationResult& PutPlaybackConfigurationResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("LogConfiguration"))
+  {
+    m_logConfiguration = jsonValue.GetObject("LogConfiguration");
+
+  }
+
   if(jsonValue.ValueExists("ManifestProcessingRules"))
   {
     m_manifestProcessingRules = jsonValue.GetObject("ManifestProcessingRules");

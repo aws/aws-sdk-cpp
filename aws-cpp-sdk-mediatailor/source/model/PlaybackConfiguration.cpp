@@ -27,6 +27,7 @@ PlaybackConfiguration::PlaybackConfiguration() :
     m_dashConfigurationHasBeenSet(false),
     m_hlsConfigurationHasBeenSet(false),
     m_livePreRollConfigurationHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false),
     m_manifestProcessingRulesHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_personalizationThresholdSeconds(0),
@@ -50,6 +51,7 @@ PlaybackConfiguration::PlaybackConfiguration(JsonView jsonValue) :
     m_dashConfigurationHasBeenSet(false),
     m_hlsConfigurationHasBeenSet(false),
     m_livePreRollConfigurationHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false),
     m_manifestProcessingRulesHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_personalizationThresholdSeconds(0),
@@ -130,6 +132,13 @@ PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
     m_livePreRollConfiguration = jsonValue.GetObject("LivePreRollConfiguration");
 
     m_livePreRollConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LogConfiguration"))
+  {
+    m_logConfiguration = jsonValue.GetObject("LogConfiguration");
+
+    m_logConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ManifestProcessingRules"))
@@ -267,6 +276,12 @@ JsonValue PlaybackConfiguration::Jsonize() const
   if(m_livePreRollConfigurationHasBeenSet)
   {
    payload.WithObject("LivePreRollConfiguration", m_livePreRollConfiguration.Jsonize());
+
+  }
+
+  if(m_logConfigurationHasBeenSet)
+  {
+   payload.WithObject("LogConfiguration", m_logConfiguration.Jsonize());
 
   }
 

@@ -208,8 +208,8 @@ namespace Model
 
 
     /**
-     * <p> Allows all IAM users in your account to use the Management Console to change
-     * their own passwords. For more information, see <a
+     * <p> Allows all IAM users in your account to use the Amazon Web Services
+     * Management Console to change their own passwords. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
      * IAM users change their own passwords</a> in the <i>IAM User Guide</i>.</p> <p>If
      * you do not specify a value for this parameter, then the operation uses the
@@ -219,8 +219,8 @@ namespace Model
     inline bool GetAllowUsersToChangePassword() const{ return m_allowUsersToChangePassword; }
 
     /**
-     * <p> Allows all IAM users in your account to use the Management Console to change
-     * their own passwords. For more information, see <a
+     * <p> Allows all IAM users in your account to use the Amazon Web Services
+     * Management Console to change their own passwords. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
      * IAM users change their own passwords</a> in the <i>IAM User Guide</i>.</p> <p>If
      * you do not specify a value for this parameter, then the operation uses the
@@ -230,8 +230,8 @@ namespace Model
     inline bool AllowUsersToChangePasswordHasBeenSet() const { return m_allowUsersToChangePasswordHasBeenSet; }
 
     /**
-     * <p> Allows all IAM users in your account to use the Management Console to change
-     * their own passwords. For more information, see <a
+     * <p> Allows all IAM users in your account to use the Amazon Web Services
+     * Management Console to change their own passwords. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
      * IAM users change their own passwords</a> in the <i>IAM User Guide</i>.</p> <p>If
      * you do not specify a value for this parameter, then the operation uses the
@@ -241,8 +241,8 @@ namespace Model
     inline void SetAllowUsersToChangePassword(bool value) { m_allowUsersToChangePasswordHasBeenSet = true; m_allowUsersToChangePassword = value; }
 
     /**
-     * <p> Allows all IAM users in your account to use the Management Console to change
-     * their own passwords. For more information, see <a
+     * <p> Allows all IAM users in your account to use the Amazon Web Services
+     * Management Console to change their own passwords. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
      * IAM users change their own passwords</a> in the <i>IAM User Guide</i>.</p> <p>If
      * you do not specify a value for this parameter, then the operation uses the

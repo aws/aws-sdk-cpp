@@ -9,6 +9,7 @@
 #include <aws/imagebuilder/model/ComponentType.h>
 #include <aws/imagebuilder/model/Platform.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/imagebuilder/model/ComponentState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/imagebuilder/model/ComponentParameterDetail.h>
 #include <utility>
@@ -380,6 +381,43 @@ namespace Model
 
 
     /**
+     * <p>Describes the current status of the component. This is used for components
+     * that are no longer active.</p>
+     */
+    inline const ComponentState& GetState() const{ return m_state; }
+
+    /**
+     * <p>Describes the current status of the component. This is used for components
+     * that are no longer active.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>Describes the current status of the component. This is used for components
+     * that are no longer active.</p>
+     */
+    inline void SetState(const ComponentState& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /**
+     * <p>Describes the current status of the component. This is used for components
+     * that are no longer active.</p>
+     */
+    inline void SetState(ComponentState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+
+    /**
+     * <p>Describes the current status of the component. This is used for components
+     * that are no longer active.</p>
+     */
+    inline Component& WithState(const ComponentState& value) { SetState(value); return *this;}
+
+    /**
+     * <p>Describes the current status of the component. This is used for components
+     * that are no longer active.</p>
+     */
+    inline Component& WithState(ComponentState&& value) { SetState(std::move(value)); return *this;}
+
+
+    /**
      * <p>Contains parameter details for each of the parameters that are defined for
      * the component.</p>
      */
@@ -703,6 +741,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_supportedOsVersions;
     bool m_supportedOsVersionsHasBeenSet;
+
+    ComponentState m_state;
+    bool m_stateHasBeenSet;
 
     Aws::Vector<ComponentParameterDetail> m_parameters;
     bool m_parametersHasBeenSet;

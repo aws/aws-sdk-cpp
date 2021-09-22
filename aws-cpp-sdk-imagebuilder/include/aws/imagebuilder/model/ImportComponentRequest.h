@@ -83,12 +83,10 @@ namespace Model
      * version syntax.</p>  <p>The semantic version has four nodes:
      * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
      * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
-     * When you retrieve or reference a resource with a semantic version, you can use
-     * wildcards (x) to filter your results. When you use a wildcard in any node, all
-     * nodes to the right of the first wildcard must also be wildcards. For example,
-     * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
-     * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
-     * Builder automatically uses a wildcard for that, if applicable.</p> 
+     * With semantic versioning, you have the flexibility to use wildcards (x) to
+     * specify the most recent versions or nodes when selecting the source image or
+     * components for your recipe. When you use a wildcard in any node, all nodes to
+     * the right of the first wildcard must also be wildcards.</p> 
      */
     inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
 
@@ -97,12 +95,10 @@ namespace Model
      * version syntax.</p>  <p>The semantic version has four nodes:
      * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
      * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
-     * When you retrieve or reference a resource with a semantic version, you can use
-     * wildcards (x) to filter your results. When you use a wildcard in any node, all
-     * nodes to the right of the first wildcard must also be wildcards. For example,
-     * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
-     * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
-     * Builder automatically uses a wildcard for that, if applicable.</p> 
+     * With semantic versioning, you have the flexibility to use wildcards (x) to
+     * specify the most recent versions or nodes when selecting the source image or
+     * components for your recipe. When you use a wildcard in any node, all nodes to
+     * the right of the first wildcard must also be wildcards.</p> 
      */
     inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
 
@@ -111,12 +107,10 @@ namespace Model
      * version syntax.</p>  <p>The semantic version has four nodes:
      * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
      * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
-     * When you retrieve or reference a resource with a semantic version, you can use
-     * wildcards (x) to filter your results. When you use a wildcard in any node, all
-     * nodes to the right of the first wildcard must also be wildcards. For example,
-     * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
-     * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
-     * Builder automatically uses a wildcard for that, if applicable.</p> 
+     * With semantic versioning, you have the flexibility to use wildcards (x) to
+     * specify the most recent versions or nodes when selecting the source image or
+     * components for your recipe. When you use a wildcard in any node, all nodes to
+     * the right of the first wildcard must also be wildcards.</p> 
      */
     inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
 
@@ -125,12 +119,10 @@ namespace Model
      * version syntax.</p>  <p>The semantic version has four nodes:
      * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
      * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
-     * When you retrieve or reference a resource with a semantic version, you can use
-     * wildcards (x) to filter your results. When you use a wildcard in any node, all
-     * nodes to the right of the first wildcard must also be wildcards. For example,
-     * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
-     * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
-     * Builder automatically uses a wildcard for that, if applicable.</p> 
+     * With semantic versioning, you have the flexibility to use wildcards (x) to
+     * specify the most recent versions or nodes when selecting the source image or
+     * components for your recipe. When you use a wildcard in any node, all nodes to
+     * the right of the first wildcard must also be wildcards.</p> 
      */
     inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::move(value); }
 
@@ -139,12 +131,10 @@ namespace Model
      * version syntax.</p>  <p>The semantic version has four nodes:
      * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
      * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
-     * When you retrieve or reference a resource with a semantic version, you can use
-     * wildcards (x) to filter your results. When you use a wildcard in any node, all
-     * nodes to the right of the first wildcard must also be wildcards. For example,
-     * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
-     * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
-     * Builder automatically uses a wildcard for that, if applicable.</p> 
+     * With semantic versioning, you have the flexibility to use wildcards (x) to
+     * specify the most recent versions or nodes when selecting the source image or
+     * components for your recipe. When you use a wildcard in any node, all nodes to
+     * the right of the first wildcard must also be wildcards.</p> 
      */
     inline void SetSemanticVersion(const char* value) { m_semanticVersionHasBeenSet = true; m_semanticVersion.assign(value); }
 
@@ -153,12 +143,10 @@ namespace Model
      * version syntax.</p>  <p>The semantic version has four nodes:
      * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
      * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
-     * When you retrieve or reference a resource with a semantic version, you can use
-     * wildcards (x) to filter your results. When you use a wildcard in any node, all
-     * nodes to the right of the first wildcard must also be wildcards. For example,
-     * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
-     * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
-     * Builder automatically uses a wildcard for that, if applicable.</p> 
+     * With semantic versioning, you have the flexibility to use wildcards (x) to
+     * specify the most recent versions or nodes when selecting the source image or
+     * components for your recipe. When you use a wildcard in any node, all nodes to
+     * the right of the first wildcard must also be wildcards.</p> 
      */
     inline ImportComponentRequest& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
 
@@ -167,12 +155,10 @@ namespace Model
      * version syntax.</p>  <p>The semantic version has four nodes:
      * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
      * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
-     * When you retrieve or reference a resource with a semantic version, you can use
-     * wildcards (x) to filter your results. When you use a wildcard in any node, all
-     * nodes to the right of the first wildcard must also be wildcards. For example,
-     * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
-     * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
-     * Builder automatically uses a wildcard for that, if applicable.</p> 
+     * With semantic versioning, you have the flexibility to use wildcards (x) to
+     * specify the most recent versions or nodes when selecting the source image or
+     * components for your recipe. When you use a wildcard in any node, all nodes to
+     * the right of the first wildcard must also be wildcards.</p> 
      */
     inline ImportComponentRequest& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
 
@@ -181,12 +167,10 @@ namespace Model
      * version syntax.</p>  <p>The semantic version has four nodes:
      * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
      * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
-     * When you retrieve or reference a resource with a semantic version, you can use
-     * wildcards (x) to filter your results. When you use a wildcard in any node, all
-     * nodes to the right of the first wildcard must also be wildcards. For example,
-     * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
-     * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
-     * Builder automatically uses a wildcard for that, if applicable.</p> 
+     * With semantic versioning, you have the flexibility to use wildcards (x) to
+     * specify the most recent versions or nodes when selecting the source image or
+     * components for your recipe. When you use a wildcard in any node, all nodes to
+     * the right of the first wildcard must also be wildcards.</p> 
      */
     inline ImportComponentRequest& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
 

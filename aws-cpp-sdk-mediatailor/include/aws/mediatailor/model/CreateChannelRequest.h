@@ -80,37 +80,37 @@ namespace Model
 
     /**
      * <p>The slate used to fill gaps between programs in the schedule. You must
-     * configure filler slate if your channel uses an LINEAR PlaybackMode.</p>
+     * configure filler slate if your channel uses a LINEAR PlaybackMode.</p>
      */
     inline const SlateSource& GetFillerSlate() const{ return m_fillerSlate; }
 
     /**
      * <p>The slate used to fill gaps between programs in the schedule. You must
-     * configure filler slate if your channel uses an LINEAR PlaybackMode.</p>
+     * configure filler slate if your channel uses a LINEAR PlaybackMode.</p>
      */
     inline bool FillerSlateHasBeenSet() const { return m_fillerSlateHasBeenSet; }
 
     /**
      * <p>The slate used to fill gaps between programs in the schedule. You must
-     * configure filler slate if your channel uses an LINEAR PlaybackMode.</p>
+     * configure filler slate if your channel uses a LINEAR PlaybackMode.</p>
      */
     inline void SetFillerSlate(const SlateSource& value) { m_fillerSlateHasBeenSet = true; m_fillerSlate = value; }
 
     /**
      * <p>The slate used to fill gaps between programs in the schedule. You must
-     * configure filler slate if your channel uses an LINEAR PlaybackMode.</p>
+     * configure filler slate if your channel uses a LINEAR PlaybackMode.</p>
      */
     inline void SetFillerSlate(SlateSource&& value) { m_fillerSlateHasBeenSet = true; m_fillerSlate = std::move(value); }
 
     /**
      * <p>The slate used to fill gaps between programs in the schedule. You must
-     * configure filler slate if your channel uses an LINEAR PlaybackMode.</p>
+     * configure filler slate if your channel uses a LINEAR PlaybackMode.</p>
      */
     inline CreateChannelRequest& WithFillerSlate(const SlateSource& value) { SetFillerSlate(value); return *this;}
 
     /**
      * <p>The slate used to fill gaps between programs in the schedule. You must
-     * configure filler slate if your channel uses an LINEAR PlaybackMode.</p>
+     * configure filler slate if your channel uses a LINEAR PlaybackMode.</p>
      */
     inline CreateChannelRequest& WithFillerSlate(SlateSource&& value) { SetFillerSlate(std::move(value)); return *this;}
 
