@@ -74,12 +74,12 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the lambda function to be called for authorization. This may be a
+     * <p>The ARN of the Lambda function to be called for authorization. This may be a
      * standard Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p> <p>
      * <i>Note</i>: This Lambda function must have the following resource-based policy
      * assigned to it. When configuring Lambda authorizers in the Console, this is done
-     * for you. To do so with the AWS CLI, run the following:</p> <p> <code>aws lambda
-     * add-permission --function-name
+     * for you. To do so with the Amazon Web Services CLI, run the following:</p> <p>
+     * <code>aws lambda add-permission --function-name
      * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
      * "appsync" --principal appsync.amazonaws.com --action
      * lambda:InvokeFunction</code> </p>
@@ -87,12 +87,12 @@ namespace Model
     inline const Aws::String& GetAuthorizerUri() const{ return m_authorizerUri; }
 
     /**
-     * <p>The ARN of the lambda function to be called for authorization. This may be a
+     * <p>The ARN of the Lambda function to be called for authorization. This may be a
      * standard Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p> <p>
      * <i>Note</i>: This Lambda function must have the following resource-based policy
      * assigned to it. When configuring Lambda authorizers in the Console, this is done
-     * for you. To do so with the AWS CLI, run the following:</p> <p> <code>aws lambda
-     * add-permission --function-name
+     * for you. To do so with the Amazon Web Services CLI, run the following:</p> <p>
+     * <code>aws lambda add-permission --function-name
      * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
      * "appsync" --principal appsync.amazonaws.com --action
      * lambda:InvokeFunction</code> </p>
@@ -100,12 +100,12 @@ namespace Model
     inline bool AuthorizerUriHasBeenSet() const { return m_authorizerUriHasBeenSet; }
 
     /**
-     * <p>The ARN of the lambda function to be called for authorization. This may be a
+     * <p>The ARN of the Lambda function to be called for authorization. This may be a
      * standard Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p> <p>
      * <i>Note</i>: This Lambda function must have the following resource-based policy
      * assigned to it. When configuring Lambda authorizers in the Console, this is done
-     * for you. To do so with the AWS CLI, run the following:</p> <p> <code>aws lambda
-     * add-permission --function-name
+     * for you. To do so with the Amazon Web Services CLI, run the following:</p> <p>
+     * <code>aws lambda add-permission --function-name
      * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
      * "appsync" --principal appsync.amazonaws.com --action
      * lambda:InvokeFunction</code> </p>
@@ -113,12 +113,12 @@ namespace Model
     inline void SetAuthorizerUri(const Aws::String& value) { m_authorizerUriHasBeenSet = true; m_authorizerUri = value; }
 
     /**
-     * <p>The ARN of the lambda function to be called for authorization. This may be a
+     * <p>The ARN of the Lambda function to be called for authorization. This may be a
      * standard Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p> <p>
      * <i>Note</i>: This Lambda function must have the following resource-based policy
      * assigned to it. When configuring Lambda authorizers in the Console, this is done
-     * for you. To do so with the AWS CLI, run the following:</p> <p> <code>aws lambda
-     * add-permission --function-name
+     * for you. To do so with the Amazon Web Services CLI, run the following:</p> <p>
+     * <code>aws lambda add-permission --function-name
      * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
      * "appsync" --principal appsync.amazonaws.com --action
      * lambda:InvokeFunction</code> </p>
@@ -126,12 +126,12 @@ namespace Model
     inline void SetAuthorizerUri(Aws::String&& value) { m_authorizerUriHasBeenSet = true; m_authorizerUri = std::move(value); }
 
     /**
-     * <p>The ARN of the lambda function to be called for authorization. This may be a
+     * <p>The ARN of the Lambda function to be called for authorization. This may be a
      * standard Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p> <p>
      * <i>Note</i>: This Lambda function must have the following resource-based policy
      * assigned to it. When configuring Lambda authorizers in the Console, this is done
-     * for you. To do so with the AWS CLI, run the following:</p> <p> <code>aws lambda
-     * add-permission --function-name
+     * for you. To do so with the Amazon Web Services CLI, run the following:</p> <p>
+     * <code>aws lambda add-permission --function-name
      * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
      * "appsync" --principal appsync.amazonaws.com --action
      * lambda:InvokeFunction</code> </p>
@@ -139,12 +139,12 @@ namespace Model
     inline void SetAuthorizerUri(const char* value) { m_authorizerUriHasBeenSet = true; m_authorizerUri.assign(value); }
 
     /**
-     * <p>The ARN of the lambda function to be called for authorization. This may be a
+     * <p>The ARN of the Lambda function to be called for authorization. This may be a
      * standard Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p> <p>
      * <i>Note</i>: This Lambda function must have the following resource-based policy
      * assigned to it. When configuring Lambda authorizers in the Console, this is done
-     * for you. To do so with the AWS CLI, run the following:</p> <p> <code>aws lambda
-     * add-permission --function-name
+     * for you. To do so with the Amazon Web Services CLI, run the following:</p> <p>
+     * <code>aws lambda add-permission --function-name
      * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
      * "appsync" --principal appsync.amazonaws.com --action
      * lambda:InvokeFunction</code> </p>
@@ -152,12 +152,12 @@ namespace Model
     inline LambdaAuthorizerConfig& WithAuthorizerUri(const Aws::String& value) { SetAuthorizerUri(value); return *this;}
 
     /**
-     * <p>The ARN of the lambda function to be called for authorization. This may be a
+     * <p>The ARN of the Lambda function to be called for authorization. This may be a
      * standard Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p> <p>
      * <i>Note</i>: This Lambda function must have the following resource-based policy
      * assigned to it. When configuring Lambda authorizers in the Console, this is done
-     * for you. To do so with the AWS CLI, run the following:</p> <p> <code>aws lambda
-     * add-permission --function-name
+     * for you. To do so with the Amazon Web Services CLI, run the following:</p> <p>
+     * <code>aws lambda add-permission --function-name
      * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
      * "appsync" --principal appsync.amazonaws.com --action
      * lambda:InvokeFunction</code> </p>
@@ -165,12 +165,12 @@ namespace Model
     inline LambdaAuthorizerConfig& WithAuthorizerUri(Aws::String&& value) { SetAuthorizerUri(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the lambda function to be called for authorization. This may be a
+     * <p>The ARN of the Lambda function to be called for authorization. This may be a
      * standard Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p> <p>
      * <i>Note</i>: This Lambda function must have the following resource-based policy
      * assigned to it. When configuring Lambda authorizers in the Console, this is done
-     * for you. To do so with the AWS CLI, run the following:</p> <p> <code>aws lambda
-     * add-permission --function-name
+     * for you. To do so with the Amazon Web Services CLI, run the following:</p> <p>
+     * <code>aws lambda add-permission --function-name
      * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
      * "appsync" --principal appsync.amazonaws.com --action
      * lambda:InvokeFunction</code> </p>
@@ -179,49 +179,49 @@ namespace Model
 
 
     /**
-     * <p>A regular expression for validation of tokens before the Lambda Function is
+     * <p>A regular expression for validation of tokens before the Lambda function is
      * called.</p>
      */
     inline const Aws::String& GetIdentityValidationExpression() const{ return m_identityValidationExpression; }
 
     /**
-     * <p>A regular expression for validation of tokens before the Lambda Function is
+     * <p>A regular expression for validation of tokens before the Lambda function is
      * called.</p>
      */
     inline bool IdentityValidationExpressionHasBeenSet() const { return m_identityValidationExpressionHasBeenSet; }
 
     /**
-     * <p>A regular expression for validation of tokens before the Lambda Function is
+     * <p>A regular expression for validation of tokens before the Lambda function is
      * called.</p>
      */
     inline void SetIdentityValidationExpression(const Aws::String& value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression = value; }
 
     /**
-     * <p>A regular expression for validation of tokens before the Lambda Function is
+     * <p>A regular expression for validation of tokens before the Lambda function is
      * called.</p>
      */
     inline void SetIdentityValidationExpression(Aws::String&& value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression = std::move(value); }
 
     /**
-     * <p>A regular expression for validation of tokens before the Lambda Function is
+     * <p>A regular expression for validation of tokens before the Lambda function is
      * called.</p>
      */
     inline void SetIdentityValidationExpression(const char* value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression.assign(value); }
 
     /**
-     * <p>A regular expression for validation of tokens before the Lambda Function is
+     * <p>A regular expression for validation of tokens before the Lambda function is
      * called.</p>
      */
     inline LambdaAuthorizerConfig& WithIdentityValidationExpression(const Aws::String& value) { SetIdentityValidationExpression(value); return *this;}
 
     /**
-     * <p>A regular expression for validation of tokens before the Lambda Function is
+     * <p>A regular expression for validation of tokens before the Lambda function is
      * called.</p>
      */
     inline LambdaAuthorizerConfig& WithIdentityValidationExpression(Aws::String&& value) { SetIdentityValidationExpression(std::move(value)); return *this;}
 
     /**
-     * <p>A regular expression for validation of tokens before the Lambda Function is
+     * <p>A regular expression for validation of tokens before the Lambda function is
      * called.</p>
      */
     inline LambdaAuthorizerConfig& WithIdentityValidationExpression(const char* value) { SetIdentityValidationExpression(value); return *this;}

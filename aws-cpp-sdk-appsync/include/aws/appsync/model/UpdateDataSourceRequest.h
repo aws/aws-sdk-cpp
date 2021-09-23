@@ -11,6 +11,7 @@
 #include <aws/appsync/model/DynamodbDataSourceConfig.h>
 #include <aws/appsync/model/LambdaDataSourceConfig.h>
 #include <aws/appsync/model/ElasticsearchDataSourceConfig.h>
+#include <aws/appsync/model/OpenSearchServiceDataSourceConfig.h>
 #include <aws/appsync/model/HttpDataSourceConfig.h>
 #include <aws/appsync/model/RelationalDatabaseDataSourceConfig.h>
 #include <utility>
@@ -296,34 +297,83 @@ namespace Model
 
 
     /**
-     * <p>The new Elasticsearch Service configuration.</p>
+     * <p>The new OpenSearch configuration.</p> <p>As of September 2021, Amazon
+     * Elasticsearch service is Amazon OpenSearch Service. This configuration is
+     * deprecated. Instead, use <a>UpdateDataSourceRequest$openSearchServiceConfig</a>
+     * to update an OpenSearch data source.</p>
      */
     inline const ElasticsearchDataSourceConfig& GetElasticsearchConfig() const{ return m_elasticsearchConfig; }
 
     /**
-     * <p>The new Elasticsearch Service configuration.</p>
+     * <p>The new OpenSearch configuration.</p> <p>As of September 2021, Amazon
+     * Elasticsearch service is Amazon OpenSearch Service. This configuration is
+     * deprecated. Instead, use <a>UpdateDataSourceRequest$openSearchServiceConfig</a>
+     * to update an OpenSearch data source.</p>
      */
     inline bool ElasticsearchConfigHasBeenSet() const { return m_elasticsearchConfigHasBeenSet; }
 
     /**
-     * <p>The new Elasticsearch Service configuration.</p>
+     * <p>The new OpenSearch configuration.</p> <p>As of September 2021, Amazon
+     * Elasticsearch service is Amazon OpenSearch Service. This configuration is
+     * deprecated. Instead, use <a>UpdateDataSourceRequest$openSearchServiceConfig</a>
+     * to update an OpenSearch data source.</p>
      */
     inline void SetElasticsearchConfig(const ElasticsearchDataSourceConfig& value) { m_elasticsearchConfigHasBeenSet = true; m_elasticsearchConfig = value; }
 
     /**
-     * <p>The new Elasticsearch Service configuration.</p>
+     * <p>The new OpenSearch configuration.</p> <p>As of September 2021, Amazon
+     * Elasticsearch service is Amazon OpenSearch Service. This configuration is
+     * deprecated. Instead, use <a>UpdateDataSourceRequest$openSearchServiceConfig</a>
+     * to update an OpenSearch data source.</p>
      */
     inline void SetElasticsearchConfig(ElasticsearchDataSourceConfig&& value) { m_elasticsearchConfigHasBeenSet = true; m_elasticsearchConfig = std::move(value); }
 
     /**
-     * <p>The new Elasticsearch Service configuration.</p>
+     * <p>The new OpenSearch configuration.</p> <p>As of September 2021, Amazon
+     * Elasticsearch service is Amazon OpenSearch Service. This configuration is
+     * deprecated. Instead, use <a>UpdateDataSourceRequest$openSearchServiceConfig</a>
+     * to update an OpenSearch data source.</p>
      */
     inline UpdateDataSourceRequest& WithElasticsearchConfig(const ElasticsearchDataSourceConfig& value) { SetElasticsearchConfig(value); return *this;}
 
     /**
-     * <p>The new Elasticsearch Service configuration.</p>
+     * <p>The new OpenSearch configuration.</p> <p>As of September 2021, Amazon
+     * Elasticsearch service is Amazon OpenSearch Service. This configuration is
+     * deprecated. Instead, use <a>UpdateDataSourceRequest$openSearchServiceConfig</a>
+     * to update an OpenSearch data source.</p>
      */
     inline UpdateDataSourceRequest& WithElasticsearchConfig(ElasticsearchDataSourceConfig&& value) { SetElasticsearchConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The new OpenSearch configuration.</p>
+     */
+    inline const OpenSearchServiceDataSourceConfig& GetOpenSearchServiceConfig() const{ return m_openSearchServiceConfig; }
+
+    /**
+     * <p>The new OpenSearch configuration.</p>
+     */
+    inline bool OpenSearchServiceConfigHasBeenSet() const { return m_openSearchServiceConfigHasBeenSet; }
+
+    /**
+     * <p>The new OpenSearch configuration.</p>
+     */
+    inline void SetOpenSearchServiceConfig(const OpenSearchServiceDataSourceConfig& value) { m_openSearchServiceConfigHasBeenSet = true; m_openSearchServiceConfig = value; }
+
+    /**
+     * <p>The new OpenSearch configuration.</p>
+     */
+    inline void SetOpenSearchServiceConfig(OpenSearchServiceDataSourceConfig&& value) { m_openSearchServiceConfigHasBeenSet = true; m_openSearchServiceConfig = std::move(value); }
+
+    /**
+     * <p>The new OpenSearch configuration.</p>
+     */
+    inline UpdateDataSourceRequest& WithOpenSearchServiceConfig(const OpenSearchServiceDataSourceConfig& value) { SetOpenSearchServiceConfig(value); return *this;}
+
+    /**
+     * <p>The new OpenSearch configuration.</p>
+     */
+    inline UpdateDataSourceRequest& WithOpenSearchServiceConfig(OpenSearchServiceDataSourceConfig&& value) { SetOpenSearchServiceConfig(std::move(value)); return *this;}
 
 
     /**
@@ -412,6 +462,9 @@ namespace Model
 
     ElasticsearchDataSourceConfig m_elasticsearchConfig;
     bool m_elasticsearchConfigHasBeenSet;
+
+    OpenSearchServiceDataSourceConfig m_openSearchServiceConfig;
+    bool m_openSearchServiceConfigHasBeenSet;
 
     HttpDataSourceConfig m_httpConfig;
     bool m_httpConfigHasBeenSet;

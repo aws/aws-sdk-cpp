@@ -300,88 +300,104 @@ namespace Model
     /**
      * <p>The name of the Amazon Web Services Systems Manager document (SSM document)
      * to run. This can be a public document or a custom document. To run a shared
-     * document belonging to another account, specify the document ARN. For more
-     * information about how to use shared documents, see <a
+     * document belonging to another account, specify the document Amazon Resource Name
+     * (ARN). For more information about how to use shared documents, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
      * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.</p>
+     * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
+     * shared with your account, you receive an <code>InvalidDocument</code> error.
+     * </p> 
      */
     inline const Aws::String& GetDocumentName() const{ return m_documentName; }
 
     /**
      * <p>The name of the Amazon Web Services Systems Manager document (SSM document)
      * to run. This can be a public document or a custom document. To run a shared
-     * document belonging to another account, specify the document ARN. For more
-     * information about how to use shared documents, see <a
+     * document belonging to another account, specify the document Amazon Resource Name
+     * (ARN). For more information about how to use shared documents, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
      * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.</p>
+     * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
+     * shared with your account, you receive an <code>InvalidDocument</code> error.
+     * </p> 
      */
     inline bool DocumentNameHasBeenSet() const { return m_documentNameHasBeenSet; }
 
     /**
      * <p>The name of the Amazon Web Services Systems Manager document (SSM document)
      * to run. This can be a public document or a custom document. To run a shared
-     * document belonging to another account, specify the document ARN. For more
-     * information about how to use shared documents, see <a
+     * document belonging to another account, specify the document Amazon Resource Name
+     * (ARN). For more information about how to use shared documents, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
      * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.</p>
+     * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
+     * shared with your account, you receive an <code>InvalidDocument</code> error.
+     * </p> 
      */
     inline void SetDocumentName(const Aws::String& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
 
     /**
      * <p>The name of the Amazon Web Services Systems Manager document (SSM document)
      * to run. This can be a public document or a custom document. To run a shared
-     * document belonging to another account, specify the document ARN. For more
-     * information about how to use shared documents, see <a
+     * document belonging to another account, specify the document Amazon Resource Name
+     * (ARN). For more information about how to use shared documents, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
      * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.</p>
+     * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
+     * shared with your account, you receive an <code>InvalidDocument</code> error.
+     * </p> 
      */
     inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = std::move(value); }
 
     /**
      * <p>The name of the Amazon Web Services Systems Manager document (SSM document)
      * to run. This can be a public document or a custom document. To run a shared
-     * document belonging to another account, specify the document ARN. For more
-     * information about how to use shared documents, see <a
+     * document belonging to another account, specify the document Amazon Resource Name
+     * (ARN). For more information about how to use shared documents, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
      * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.</p>
+     * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
+     * shared with your account, you receive an <code>InvalidDocument</code> error.
+     * </p> 
      */
     inline void SetDocumentName(const char* value) { m_documentNameHasBeenSet = true; m_documentName.assign(value); }
 
     /**
      * <p>The name of the Amazon Web Services Systems Manager document (SSM document)
      * to run. This can be a public document or a custom document. To run a shared
-     * document belonging to another account, specify the document ARN. For more
-     * information about how to use shared documents, see <a
+     * document belonging to another account, specify the document Amazon Resource Name
+     * (ARN). For more information about how to use shared documents, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
      * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.</p>
+     * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
+     * shared with your account, you receive an <code>InvalidDocument</code> error.
+     * </p> 
      */
     inline SendCommandRequest& WithDocumentName(const Aws::String& value) { SetDocumentName(value); return *this;}
 
     /**
      * <p>The name of the Amazon Web Services Systems Manager document (SSM document)
      * to run. This can be a public document or a custom document. To run a shared
-     * document belonging to another account, specify the document ARN. For more
-     * information about how to use shared documents, see <a
+     * document belonging to another account, specify the document Amazon Resource Name
+     * (ARN). For more information about how to use shared documents, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
      * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.</p>
+     * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
+     * shared with your account, you receive an <code>InvalidDocument</code> error.
+     * </p> 
      */
     inline SendCommandRequest& WithDocumentName(Aws::String&& value) { SetDocumentName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Amazon Web Services Systems Manager document (SSM document)
      * to run. This can be a public document or a custom document. To run a shared
-     * document belonging to another account, specify the document ARN. For more
-     * information about how to use shared documents, see <a
+     * document belonging to another account, specify the document Amazon Resource Name
+     * (ARN). For more information about how to use shared documents, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
      * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.</p>
+     * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
+     * shared with your account, you receive an <code>InvalidDocument</code> error.
+     * </p> 
      */
     inline SendCommandRequest& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
 

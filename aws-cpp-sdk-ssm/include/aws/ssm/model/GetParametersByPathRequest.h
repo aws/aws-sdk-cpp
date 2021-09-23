@@ -163,81 +163,81 @@ namespace Model
 
 
     /**
-     * <p>Filters to limit the request results.</p>  <p>For
-     * <code>GetParametersByPath</code>, the following filter <code>Key</code> names
-     * are supported: <code>Type</code>, <code>KeyId</code>, <code>Label</code>, and
-     * <code>DataType</code>.</p> <p>The following <code>Key</code> values are not
-     * supported for <code>GetParametersByPath</code>: <code>tag</code>,
+     * <p>Filters to limit the request results.</p>  <p>The following
+     * <code>Key</code> values are supported for <code>GetParametersByPath</code>:
+     * <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p> <p>The
+     * following <code>Key</code> values aren't supported for
+     * <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>,
      * <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> 
      */
     inline const Aws::Vector<ParameterStringFilter>& GetParameterFilters() const{ return m_parameterFilters; }
 
     /**
-     * <p>Filters to limit the request results.</p>  <p>For
-     * <code>GetParametersByPath</code>, the following filter <code>Key</code> names
-     * are supported: <code>Type</code>, <code>KeyId</code>, <code>Label</code>, and
-     * <code>DataType</code>.</p> <p>The following <code>Key</code> values are not
-     * supported for <code>GetParametersByPath</code>: <code>tag</code>,
+     * <p>Filters to limit the request results.</p>  <p>The following
+     * <code>Key</code> values are supported for <code>GetParametersByPath</code>:
+     * <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p> <p>The
+     * following <code>Key</code> values aren't supported for
+     * <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>,
      * <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> 
      */
     inline bool ParameterFiltersHasBeenSet() const { return m_parameterFiltersHasBeenSet; }
 
     /**
-     * <p>Filters to limit the request results.</p>  <p>For
-     * <code>GetParametersByPath</code>, the following filter <code>Key</code> names
-     * are supported: <code>Type</code>, <code>KeyId</code>, <code>Label</code>, and
-     * <code>DataType</code>.</p> <p>The following <code>Key</code> values are not
-     * supported for <code>GetParametersByPath</code>: <code>tag</code>,
+     * <p>Filters to limit the request results.</p>  <p>The following
+     * <code>Key</code> values are supported for <code>GetParametersByPath</code>:
+     * <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p> <p>The
+     * following <code>Key</code> values aren't supported for
+     * <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>,
      * <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> 
      */
     inline void SetParameterFilters(const Aws::Vector<ParameterStringFilter>& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters = value; }
 
     /**
-     * <p>Filters to limit the request results.</p>  <p>For
-     * <code>GetParametersByPath</code>, the following filter <code>Key</code> names
-     * are supported: <code>Type</code>, <code>KeyId</code>, <code>Label</code>, and
-     * <code>DataType</code>.</p> <p>The following <code>Key</code> values are not
-     * supported for <code>GetParametersByPath</code>: <code>tag</code>,
+     * <p>Filters to limit the request results.</p>  <p>The following
+     * <code>Key</code> values are supported for <code>GetParametersByPath</code>:
+     * <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p> <p>The
+     * following <code>Key</code> values aren't supported for
+     * <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>,
      * <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> 
      */
     inline void SetParameterFilters(Aws::Vector<ParameterStringFilter>&& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters = std::move(value); }
 
     /**
-     * <p>Filters to limit the request results.</p>  <p>For
-     * <code>GetParametersByPath</code>, the following filter <code>Key</code> names
-     * are supported: <code>Type</code>, <code>KeyId</code>, <code>Label</code>, and
-     * <code>DataType</code>.</p> <p>The following <code>Key</code> values are not
-     * supported for <code>GetParametersByPath</code>: <code>tag</code>,
+     * <p>Filters to limit the request results.</p>  <p>The following
+     * <code>Key</code> values are supported for <code>GetParametersByPath</code>:
+     * <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p> <p>The
+     * following <code>Key</code> values aren't supported for
+     * <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>,
      * <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> 
      */
     inline GetParametersByPathRequest& WithParameterFilters(const Aws::Vector<ParameterStringFilter>& value) { SetParameterFilters(value); return *this;}
 
     /**
-     * <p>Filters to limit the request results.</p>  <p>For
-     * <code>GetParametersByPath</code>, the following filter <code>Key</code> names
-     * are supported: <code>Type</code>, <code>KeyId</code>, <code>Label</code>, and
-     * <code>DataType</code>.</p> <p>The following <code>Key</code> values are not
-     * supported for <code>GetParametersByPath</code>: <code>tag</code>,
+     * <p>Filters to limit the request results.</p>  <p>The following
+     * <code>Key</code> values are supported for <code>GetParametersByPath</code>:
+     * <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p> <p>The
+     * following <code>Key</code> values aren't supported for
+     * <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>,
      * <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> 
      */
     inline GetParametersByPathRequest& WithParameterFilters(Aws::Vector<ParameterStringFilter>&& value) { SetParameterFilters(std::move(value)); return *this;}
 
     /**
-     * <p>Filters to limit the request results.</p>  <p>For
-     * <code>GetParametersByPath</code>, the following filter <code>Key</code> names
-     * are supported: <code>Type</code>, <code>KeyId</code>, <code>Label</code>, and
-     * <code>DataType</code>.</p> <p>The following <code>Key</code> values are not
-     * supported for <code>GetParametersByPath</code>: <code>tag</code>,
+     * <p>Filters to limit the request results.</p>  <p>The following
+     * <code>Key</code> values are supported for <code>GetParametersByPath</code>:
+     * <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p> <p>The
+     * following <code>Key</code> values aren't supported for
+     * <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>,
      * <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> 
      */
     inline GetParametersByPathRequest& AddParameterFilters(const ParameterStringFilter& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters.push_back(value); return *this; }
 
     /**
-     * <p>Filters to limit the request results.</p>  <p>For
-     * <code>GetParametersByPath</code>, the following filter <code>Key</code> names
-     * are supported: <code>Type</code>, <code>KeyId</code>, <code>Label</code>, and
-     * <code>DataType</code>.</p> <p>The following <code>Key</code> values are not
-     * supported for <code>GetParametersByPath</code>: <code>tag</code>,
+     * <p>Filters to limit the request results.</p>  <p>The following
+     * <code>Key</code> values are supported for <code>GetParametersByPath</code>:
+     * <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p> <p>The
+     * following <code>Key</code> values aren't supported for
+     * <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>,
      * <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> 
      */
     inline GetParametersByPathRequest& AddParameterFilters(ParameterStringFilter&& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters.push_back(std::move(value)); return *this; }

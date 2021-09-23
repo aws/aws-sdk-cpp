@@ -332,32 +332,32 @@ namespace Model
 
 
     /**
-     * <p>Configuration for AWS Lambda function authorization.</p>
+     * <p>Configuration for Amazon Web Services Lambda function authorization.</p>
      */
     inline const LambdaAuthorizerConfig& GetLambdaAuthorizerConfig() const{ return m_lambdaAuthorizerConfig; }
 
     /**
-     * <p>Configuration for AWS Lambda function authorization.</p>
+     * <p>Configuration for Amazon Web Services Lambda function authorization.</p>
      */
     inline bool LambdaAuthorizerConfigHasBeenSet() const { return m_lambdaAuthorizerConfigHasBeenSet; }
 
     /**
-     * <p>Configuration for AWS Lambda function authorization.</p>
+     * <p>Configuration for Amazon Web Services Lambda function authorization.</p>
      */
     inline void SetLambdaAuthorizerConfig(const LambdaAuthorizerConfig& value) { m_lambdaAuthorizerConfigHasBeenSet = true; m_lambdaAuthorizerConfig = value; }
 
     /**
-     * <p>Configuration for AWS Lambda function authorization.</p>
+     * <p>Configuration for Amazon Web Services Lambda function authorization.</p>
      */
     inline void SetLambdaAuthorizerConfig(LambdaAuthorizerConfig&& value) { m_lambdaAuthorizerConfigHasBeenSet = true; m_lambdaAuthorizerConfig = std::move(value); }
 
     /**
-     * <p>Configuration for AWS Lambda function authorization.</p>
+     * <p>Configuration for Amazon Web Services Lambda function authorization.</p>
      */
     inline UpdateGraphqlApiRequest& WithLambdaAuthorizerConfig(const LambdaAuthorizerConfig& value) { SetLambdaAuthorizerConfig(value); return *this;}
 
     /**
-     * <p>Configuration for AWS Lambda function authorization.</p>
+     * <p>Configuration for Amazon Web Services Lambda function authorization.</p>
      */
     inline UpdateGraphqlApiRequest& WithLambdaAuthorizerConfig(LambdaAuthorizerConfig&& value) { SetLambdaAuthorizerConfig(std::move(value)); return *this;}
 

@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm/model/MaintenanceWindowTaskInvocationParameters.h>
 #include <aws/ssm/model/LoggingInfo.h>
+#include <aws/ssm/model/MaintenanceWindowTaskCutoffBehavior.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/MaintenanceWindowTaskParameterValueExpression.h>
 #include <utility>
@@ -715,6 +716,57 @@ namespace Model
      */
     inline GetMaintenanceWindowTaskResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>The action to take on tasks when the maintenance window cutoff time is
+     * reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For
+     * Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that
+     * currently running task invocations continue, but no new task invocations are
+     * started. For Run Command tasks, <code>CANCEL_TASK</code> means the system
+     * attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
+     */
+    inline const MaintenanceWindowTaskCutoffBehavior& GetCutoffBehavior() const{ return m_cutoffBehavior; }
+
+    /**
+     * <p>The action to take on tasks when the maintenance window cutoff time is
+     * reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For
+     * Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that
+     * currently running task invocations continue, but no new task invocations are
+     * started. For Run Command tasks, <code>CANCEL_TASK</code> means the system
+     * attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
+     */
+    inline void SetCutoffBehavior(const MaintenanceWindowTaskCutoffBehavior& value) { m_cutoffBehavior = value; }
+
+    /**
+     * <p>The action to take on tasks when the maintenance window cutoff time is
+     * reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For
+     * Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that
+     * currently running task invocations continue, but no new task invocations are
+     * started. For Run Command tasks, <code>CANCEL_TASK</code> means the system
+     * attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
+     */
+    inline void SetCutoffBehavior(MaintenanceWindowTaskCutoffBehavior&& value) { m_cutoffBehavior = std::move(value); }
+
+    /**
+     * <p>The action to take on tasks when the maintenance window cutoff time is
+     * reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For
+     * Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that
+     * currently running task invocations continue, but no new task invocations are
+     * started. For Run Command tasks, <code>CANCEL_TASK</code> means the system
+     * attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
+     */
+    inline GetMaintenanceWindowTaskResult& WithCutoffBehavior(const MaintenanceWindowTaskCutoffBehavior& value) { SetCutoffBehavior(value); return *this;}
+
+    /**
+     * <p>The action to take on tasks when the maintenance window cutoff time is
+     * reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For
+     * Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that
+     * currently running task invocations continue, but no new task invocations are
+     * started. For Run Command tasks, <code>CANCEL_TASK</code> means the system
+     * attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
+     */
+    inline GetMaintenanceWindowTaskResult& WithCutoffBehavior(MaintenanceWindowTaskCutoffBehavior&& value) { SetCutoffBehavior(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_windowId;
@@ -744,6 +796,8 @@ namespace Model
     Aws::String m_name;
 
     Aws::String m_description;
+
+    MaintenanceWindowTaskCutoffBehavior m_cutoffBehavior;
   };
 
 } // namespace Model

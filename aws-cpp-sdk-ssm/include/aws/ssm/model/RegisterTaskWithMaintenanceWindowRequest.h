@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm/model/MaintenanceWindowTaskInvocationParameters.h>
 #include <aws/ssm/model/LoggingInfo.h>
+#include <aws/ssm/model/MaintenanceWindowTaskCutoffBehavior.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/MaintenanceWindowTaskParameterValueExpression.h>
 #include <utility>
@@ -963,6 +964,103 @@ namespace Model
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether tasks should continue to run after the cutoff time
+     * specified in the maintenance windows is reached. </p> <ul> <li> <p>
+     * <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are
+     * running continue. The default value.</p> </li> <li> <p>
+     * <code>CANCEL_TASK</code>:</p> <ul> <li> <p>For Automation, Lambda, Step
+     * Functions tasks: When the cutoff time is reached, any task invocations that are
+     * already running continue, but no new task invocations are started.</p> </li>
+     * <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends
+     * a <a>CancelCommand</a> operation that attempts to cancel the command associated
+     * with the task. However, there is no guarantee that the command will be
+     * terminated and the underlying process stopped.</p> </li> </ul> <p>The status for
+     * tasks that are not completed is <code>TIMED_OUT</code>.</p> </li> </ul>
+     */
+    inline const MaintenanceWindowTaskCutoffBehavior& GetCutoffBehavior() const{ return m_cutoffBehavior; }
+
+    /**
+     * <p>Indicates whether tasks should continue to run after the cutoff time
+     * specified in the maintenance windows is reached. </p> <ul> <li> <p>
+     * <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are
+     * running continue. The default value.</p> </li> <li> <p>
+     * <code>CANCEL_TASK</code>:</p> <ul> <li> <p>For Automation, Lambda, Step
+     * Functions tasks: When the cutoff time is reached, any task invocations that are
+     * already running continue, but no new task invocations are started.</p> </li>
+     * <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends
+     * a <a>CancelCommand</a> operation that attempts to cancel the command associated
+     * with the task. However, there is no guarantee that the command will be
+     * terminated and the underlying process stopped.</p> </li> </ul> <p>The status for
+     * tasks that are not completed is <code>TIMED_OUT</code>.</p> </li> </ul>
+     */
+    inline bool CutoffBehaviorHasBeenSet() const { return m_cutoffBehaviorHasBeenSet; }
+
+    /**
+     * <p>Indicates whether tasks should continue to run after the cutoff time
+     * specified in the maintenance windows is reached. </p> <ul> <li> <p>
+     * <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are
+     * running continue. The default value.</p> </li> <li> <p>
+     * <code>CANCEL_TASK</code>:</p> <ul> <li> <p>For Automation, Lambda, Step
+     * Functions tasks: When the cutoff time is reached, any task invocations that are
+     * already running continue, but no new task invocations are started.</p> </li>
+     * <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends
+     * a <a>CancelCommand</a> operation that attempts to cancel the command associated
+     * with the task. However, there is no guarantee that the command will be
+     * terminated and the underlying process stopped.</p> </li> </ul> <p>The status for
+     * tasks that are not completed is <code>TIMED_OUT</code>.</p> </li> </ul>
+     */
+    inline void SetCutoffBehavior(const MaintenanceWindowTaskCutoffBehavior& value) { m_cutoffBehaviorHasBeenSet = true; m_cutoffBehavior = value; }
+
+    /**
+     * <p>Indicates whether tasks should continue to run after the cutoff time
+     * specified in the maintenance windows is reached. </p> <ul> <li> <p>
+     * <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are
+     * running continue. The default value.</p> </li> <li> <p>
+     * <code>CANCEL_TASK</code>:</p> <ul> <li> <p>For Automation, Lambda, Step
+     * Functions tasks: When the cutoff time is reached, any task invocations that are
+     * already running continue, but no new task invocations are started.</p> </li>
+     * <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends
+     * a <a>CancelCommand</a> operation that attempts to cancel the command associated
+     * with the task. However, there is no guarantee that the command will be
+     * terminated and the underlying process stopped.</p> </li> </ul> <p>The status for
+     * tasks that are not completed is <code>TIMED_OUT</code>.</p> </li> </ul>
+     */
+    inline void SetCutoffBehavior(MaintenanceWindowTaskCutoffBehavior&& value) { m_cutoffBehaviorHasBeenSet = true; m_cutoffBehavior = std::move(value); }
+
+    /**
+     * <p>Indicates whether tasks should continue to run after the cutoff time
+     * specified in the maintenance windows is reached. </p> <ul> <li> <p>
+     * <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are
+     * running continue. The default value.</p> </li> <li> <p>
+     * <code>CANCEL_TASK</code>:</p> <ul> <li> <p>For Automation, Lambda, Step
+     * Functions tasks: When the cutoff time is reached, any task invocations that are
+     * already running continue, but no new task invocations are started.</p> </li>
+     * <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends
+     * a <a>CancelCommand</a> operation that attempts to cancel the command associated
+     * with the task. However, there is no guarantee that the command will be
+     * terminated and the underlying process stopped.</p> </li> </ul> <p>The status for
+     * tasks that are not completed is <code>TIMED_OUT</code>.</p> </li> </ul>
+     */
+    inline RegisterTaskWithMaintenanceWindowRequest& WithCutoffBehavior(const MaintenanceWindowTaskCutoffBehavior& value) { SetCutoffBehavior(value); return *this;}
+
+    /**
+     * <p>Indicates whether tasks should continue to run after the cutoff time
+     * specified in the maintenance windows is reached. </p> <ul> <li> <p>
+     * <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are
+     * running continue. The default value.</p> </li> <li> <p>
+     * <code>CANCEL_TASK</code>:</p> <ul> <li> <p>For Automation, Lambda, Step
+     * Functions tasks: When the cutoff time is reached, any task invocations that are
+     * already running continue, but no new task invocations are started.</p> </li>
+     * <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends
+     * a <a>CancelCommand</a> operation that attempts to cancel the command associated
+     * with the task. However, there is no guarantee that the command will be
+     * terminated and the underlying process stopped.</p> </li> </ul> <p>The status for
+     * tasks that are not completed is <code>TIMED_OUT</code>.</p> </li> </ul>
+     */
+    inline RegisterTaskWithMaintenanceWindowRequest& WithCutoffBehavior(MaintenanceWindowTaskCutoffBehavior&& value) { SetCutoffBehavior(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_windowId;
@@ -1006,6 +1104,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
+    MaintenanceWindowTaskCutoffBehavior m_cutoffBehavior;
+    bool m_cutoffBehaviorHasBeenSet;
   };
 
 } // namespace Model

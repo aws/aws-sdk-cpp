@@ -6,11 +6,15 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/BurninSubtitleAlignment.h>
+#include <aws/mediaconvert/model/BurninSubtitleApplyFontColor.h>
 #include <aws/mediaconvert/model/BurninSubtitleBackgroundColor.h>
+#include <aws/mediaconvert/model/BurninSubtitleFallbackFont.h>
 #include <aws/mediaconvert/model/BurninSubtitleFontColor.h>
 #include <aws/mediaconvert/model/FontScript.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/BurninSubtitleOutlineColor.h>
 #include <aws/mediaconvert/model/BurninSubtitleShadowColor.h>
+#include <aws/mediaconvert/model/BurnInSubtitleStylePassthrough.h>
 #include <aws/mediaconvert/model/BurninSubtitleTeletextSpacing.h>
 #include <utility>
 
@@ -122,6 +126,79 @@ namespace Model
 
 
     /**
+     * Ignore this setting unless your input captions are STL, any type of 608,
+     * teletext, or TTML, and your output captions are burned in. Specify how the
+     * service applies the color specified in the setting Font color
+     * (BurninSubtitleFontColor). By default, this color is white. When you choose
+     * WHITE_TEXT_ONLY, the service uses the specified font color only for text that is
+     * white in the input. When you choose ALL_TEXT, the service uses the specified
+     * font color for all output captions text. If you leave both settings at their
+     * default value, your output font color is the same as your input font color.
+     */
+    inline const BurninSubtitleApplyFontColor& GetApplyFontColor() const{ return m_applyFontColor; }
+
+    /**
+     * Ignore this setting unless your input captions are STL, any type of 608,
+     * teletext, or TTML, and your output captions are burned in. Specify how the
+     * service applies the color specified in the setting Font color
+     * (BurninSubtitleFontColor). By default, this color is white. When you choose
+     * WHITE_TEXT_ONLY, the service uses the specified font color only for text that is
+     * white in the input. When you choose ALL_TEXT, the service uses the specified
+     * font color for all output captions text. If you leave both settings at their
+     * default value, your output font color is the same as your input font color.
+     */
+    inline bool ApplyFontColorHasBeenSet() const { return m_applyFontColorHasBeenSet; }
+
+    /**
+     * Ignore this setting unless your input captions are STL, any type of 608,
+     * teletext, or TTML, and your output captions are burned in. Specify how the
+     * service applies the color specified in the setting Font color
+     * (BurninSubtitleFontColor). By default, this color is white. When you choose
+     * WHITE_TEXT_ONLY, the service uses the specified font color only for text that is
+     * white in the input. When you choose ALL_TEXT, the service uses the specified
+     * font color for all output captions text. If you leave both settings at their
+     * default value, your output font color is the same as your input font color.
+     */
+    inline void SetApplyFontColor(const BurninSubtitleApplyFontColor& value) { m_applyFontColorHasBeenSet = true; m_applyFontColor = value; }
+
+    /**
+     * Ignore this setting unless your input captions are STL, any type of 608,
+     * teletext, or TTML, and your output captions are burned in. Specify how the
+     * service applies the color specified in the setting Font color
+     * (BurninSubtitleFontColor). By default, this color is white. When you choose
+     * WHITE_TEXT_ONLY, the service uses the specified font color only for text that is
+     * white in the input. When you choose ALL_TEXT, the service uses the specified
+     * font color for all output captions text. If you leave both settings at their
+     * default value, your output font color is the same as your input font color.
+     */
+    inline void SetApplyFontColor(BurninSubtitleApplyFontColor&& value) { m_applyFontColorHasBeenSet = true; m_applyFontColor = std::move(value); }
+
+    /**
+     * Ignore this setting unless your input captions are STL, any type of 608,
+     * teletext, or TTML, and your output captions are burned in. Specify how the
+     * service applies the color specified in the setting Font color
+     * (BurninSubtitleFontColor). By default, this color is white. When you choose
+     * WHITE_TEXT_ONLY, the service uses the specified font color only for text that is
+     * white in the input. When you choose ALL_TEXT, the service uses the specified
+     * font color for all output captions text. If you leave both settings at their
+     * default value, your output font color is the same as your input font color.
+     */
+    inline BurninDestinationSettings& WithApplyFontColor(const BurninSubtitleApplyFontColor& value) { SetApplyFontColor(value); return *this;}
+
+    /**
+     * Ignore this setting unless your input captions are STL, any type of 608,
+     * teletext, or TTML, and your output captions are burned in. Specify how the
+     * service applies the color specified in the setting Font color
+     * (BurninSubtitleFontColor). By default, this color is white. When you choose
+     * WHITE_TEXT_ONLY, the service uses the specified font color only for text that is
+     * white in the input. When you choose ALL_TEXT, the service uses the specified
+     * font color for all output captions text. If you leave both settings at their
+     * default value, your output font color is the same as your input font color.
+     */
+    inline BurninDestinationSettings& WithApplyFontColor(BurninSubtitleApplyFontColor&& value) { SetApplyFontColor(std::move(value)); return *this;}
+
+
+    /**
      * Specifies the color of the rectangle behind the captions.
 All burn-in and
      * DVB-Sub font settings must match.
@@ -191,6 +268,79 @@ All burn-in and
      * (transparent). All burn-in and DVB-Sub font settings must match.
      */
     inline BurninDestinationSettings& WithBackgroundOpacity(int value) { SetBackgroundOpacity(value); return *this;}
+
+
+    /**
+     * Specify the font that you want the service to use for your burn in captions when
+     * your input captions specify a font that MediaConvert doesn't support. When you
+     * keep the default value, Best match (BEST_MATCH), MediaConvert uses a supported
+     * font that most closely matches the font that your input captions specify. When
+     * there are multiple unsupported fonts in your input captions, MediaConvert
+     * matches each font with the supported font that matches best. When you explicitly
+     * choose a replacement font, MediaConvert uses that font to replace all
+     * unsupported fonts from your input.
+     */
+    inline const BurninSubtitleFallbackFont& GetFallbackFont() const{ return m_fallbackFont; }
+
+    /**
+     * Specify the font that you want the service to use for your burn in captions when
+     * your input captions specify a font that MediaConvert doesn't support. When you
+     * keep the default value, Best match (BEST_MATCH), MediaConvert uses a supported
+     * font that most closely matches the font that your input captions specify. When
+     * there are multiple unsupported fonts in your input captions, MediaConvert
+     * matches each font with the supported font that matches best. When you explicitly
+     * choose a replacement font, MediaConvert uses that font to replace all
+     * unsupported fonts from your input.
+     */
+    inline bool FallbackFontHasBeenSet() const { return m_fallbackFontHasBeenSet; }
+
+    /**
+     * Specify the font that you want the service to use for your burn in captions when
+     * your input captions specify a font that MediaConvert doesn't support. When you
+     * keep the default value, Best match (BEST_MATCH), MediaConvert uses a supported
+     * font that most closely matches the font that your input captions specify. When
+     * there are multiple unsupported fonts in your input captions, MediaConvert
+     * matches each font with the supported font that matches best. When you explicitly
+     * choose a replacement font, MediaConvert uses that font to replace all
+     * unsupported fonts from your input.
+     */
+    inline void SetFallbackFont(const BurninSubtitleFallbackFont& value) { m_fallbackFontHasBeenSet = true; m_fallbackFont = value; }
+
+    /**
+     * Specify the font that you want the service to use for your burn in captions when
+     * your input captions specify a font that MediaConvert doesn't support. When you
+     * keep the default value, Best match (BEST_MATCH), MediaConvert uses a supported
+     * font that most closely matches the font that your input captions specify. When
+     * there are multiple unsupported fonts in your input captions, MediaConvert
+     * matches each font with the supported font that matches best. When you explicitly
+     * choose a replacement font, MediaConvert uses that font to replace all
+     * unsupported fonts from your input.
+     */
+    inline void SetFallbackFont(BurninSubtitleFallbackFont&& value) { m_fallbackFontHasBeenSet = true; m_fallbackFont = std::move(value); }
+
+    /**
+     * Specify the font that you want the service to use for your burn in captions when
+     * your input captions specify a font that MediaConvert doesn't support. When you
+     * keep the default value, Best match (BEST_MATCH), MediaConvert uses a supported
+     * font that most closely matches the font that your input captions specify. When
+     * there are multiple unsupported fonts in your input captions, MediaConvert
+     * matches each font with the supported font that matches best. When you explicitly
+     * choose a replacement font, MediaConvert uses that font to replace all
+     * unsupported fonts from your input.
+     */
+    inline BurninDestinationSettings& WithFallbackFont(const BurninSubtitleFallbackFont& value) { SetFallbackFont(value); return *this;}
+
+    /**
+     * Specify the font that you want the service to use for your burn in captions when
+     * your input captions specify a font that MediaConvert doesn't support. When you
+     * keep the default value, Best match (BEST_MATCH), MediaConvert uses a supported
+     * font that most closely matches the font that your input captions specify. When
+     * there are multiple unsupported fonts in your input captions, MediaConvert
+     * matches each font with the supported font that matches best. When you explicitly
+     * choose a replacement font, MediaConvert uses that font to replace all
+     * unsupported fonts from your input.
+     */
+    inline BurninDestinationSettings& WithFallbackFont(BurninSubtitleFallbackFont&& value) { SetFallbackFont(std::move(value)); return *this;}
 
 
     /**
@@ -372,6 +522,79 @@ All burn-in and
      * automatic font size selection. All burn-in and DVB-Sub font settings must match.
      */
     inline BurninDestinationSettings& WithFontSize(int value) { SetFontSize(value); return *this;}
+
+
+    /**
+     * Ignore this setting unless your BurninSubtitleFontColor setting is HEX. Format
+     * is six or eight hexidecimal digits, representing the red, green, and blue
+     * components, with the two extra digits used for an optional alpha value. For
+     * example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a
+     * blue value of 0xAA, and an alpha value of 0xBB.
+     */
+    inline const Aws::String& GetHexFontColor() const{ return m_hexFontColor; }
+
+    /**
+     * Ignore this setting unless your BurninSubtitleFontColor setting is HEX. Format
+     * is six or eight hexidecimal digits, representing the red, green, and blue
+     * components, with the two extra digits used for an optional alpha value. For
+     * example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a
+     * blue value of 0xAA, and an alpha value of 0xBB.
+     */
+    inline bool HexFontColorHasBeenSet() const { return m_hexFontColorHasBeenSet; }
+
+    /**
+     * Ignore this setting unless your BurninSubtitleFontColor setting is HEX. Format
+     * is six or eight hexidecimal digits, representing the red, green, and blue
+     * components, with the two extra digits used for an optional alpha value. For
+     * example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a
+     * blue value of 0xAA, and an alpha value of 0xBB.
+     */
+    inline void SetHexFontColor(const Aws::String& value) { m_hexFontColorHasBeenSet = true; m_hexFontColor = value; }
+
+    /**
+     * Ignore this setting unless your BurninSubtitleFontColor setting is HEX. Format
+     * is six or eight hexidecimal digits, representing the red, green, and blue
+     * components, with the two extra digits used for an optional alpha value. For
+     * example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a
+     * blue value of 0xAA, and an alpha value of 0xBB.
+     */
+    inline void SetHexFontColor(Aws::String&& value) { m_hexFontColorHasBeenSet = true; m_hexFontColor = std::move(value); }
+
+    /**
+     * Ignore this setting unless your BurninSubtitleFontColor setting is HEX. Format
+     * is six or eight hexidecimal digits, representing the red, green, and blue
+     * components, with the two extra digits used for an optional alpha value. For
+     * example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a
+     * blue value of 0xAA, and an alpha value of 0xBB.
+     */
+    inline void SetHexFontColor(const char* value) { m_hexFontColorHasBeenSet = true; m_hexFontColor.assign(value); }
+
+    /**
+     * Ignore this setting unless your BurninSubtitleFontColor setting is HEX. Format
+     * is six or eight hexidecimal digits, representing the red, green, and blue
+     * components, with the two extra digits used for an optional alpha value. For
+     * example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a
+     * blue value of 0xAA, and an alpha value of 0xBB.
+     */
+    inline BurninDestinationSettings& WithHexFontColor(const Aws::String& value) { SetHexFontColor(value); return *this;}
+
+    /**
+     * Ignore this setting unless your BurninSubtitleFontColor setting is HEX. Format
+     * is six or eight hexidecimal digits, representing the red, green, and blue
+     * components, with the two extra digits used for an optional alpha value. For
+     * example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a
+     * blue value of 0xAA, and an alpha value of 0xBB.
+     */
+    inline BurninDestinationSettings& WithHexFontColor(Aws::String&& value) { SetHexFontColor(std::move(value)); return *this;}
+
+    /**
+     * Ignore this setting unless your BurninSubtitleFontColor setting is HEX. Format
+     * is six or eight hexidecimal digits, representing the red, green, and blue
+     * components, with the two extra digits used for an optional alpha value. For
+     * example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a
+     * blue value of 0xAA, and an alpha value of 0xBB.
+     */
+    inline BurninDestinationSettings& WithHexFontColor(const char* value) { SetHexFontColor(value); return *this;}
 
 
     /**
@@ -587,6 +810,73 @@ All burn-in and DVB-Sub
 
 
     /**
+     * Ignore this setting unless your output captions are burned in. Choose which set
+     * of style and position values the service applies to your output captions. When
+     * you choose ENABLED, the service uses the input style and position information
+     * from your input. When you choose DISABLED, the service uses any style values
+     * that you specify in your output settings. If you don't specify values, the
+     * service uses default style and position values. When you choose DISABLED, the
+     * service ignores all style and position values from your input.
+     */
+    inline const BurnInSubtitleStylePassthrough& GetStylePassthrough() const{ return m_stylePassthrough; }
+
+    /**
+     * Ignore this setting unless your output captions are burned in. Choose which set
+     * of style and position values the service applies to your output captions. When
+     * you choose ENABLED, the service uses the input style and position information
+     * from your input. When you choose DISABLED, the service uses any style values
+     * that you specify in your output settings. If you don't specify values, the
+     * service uses default style and position values. When you choose DISABLED, the
+     * service ignores all style and position values from your input.
+     */
+    inline bool StylePassthroughHasBeenSet() const { return m_stylePassthroughHasBeenSet; }
+
+    /**
+     * Ignore this setting unless your output captions are burned in. Choose which set
+     * of style and position values the service applies to your output captions. When
+     * you choose ENABLED, the service uses the input style and position information
+     * from your input. When you choose DISABLED, the service uses any style values
+     * that you specify in your output settings. If you don't specify values, the
+     * service uses default style and position values. When you choose DISABLED, the
+     * service ignores all style and position values from your input.
+     */
+    inline void SetStylePassthrough(const BurnInSubtitleStylePassthrough& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = value; }
+
+    /**
+     * Ignore this setting unless your output captions are burned in. Choose which set
+     * of style and position values the service applies to your output captions. When
+     * you choose ENABLED, the service uses the input style and position information
+     * from your input. When you choose DISABLED, the service uses any style values
+     * that you specify in your output settings. If you don't specify values, the
+     * service uses default style and position values. When you choose DISABLED, the
+     * service ignores all style and position values from your input.
+     */
+    inline void SetStylePassthrough(BurnInSubtitleStylePassthrough&& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = std::move(value); }
+
+    /**
+     * Ignore this setting unless your output captions are burned in. Choose which set
+     * of style and position values the service applies to your output captions. When
+     * you choose ENABLED, the service uses the input style and position information
+     * from your input. When you choose DISABLED, the service uses any style values
+     * that you specify in your output settings. If you don't specify values, the
+     * service uses default style and position values. When you choose DISABLED, the
+     * service ignores all style and position values from your input.
+     */
+    inline BurninDestinationSettings& WithStylePassthrough(const BurnInSubtitleStylePassthrough& value) { SetStylePassthrough(value); return *this;}
+
+    /**
+     * Ignore this setting unless your output captions are burned in. Choose which set
+     * of style and position values the service applies to your output captions. When
+     * you choose ENABLED, the service uses the input style and position information
+     * from your input. When you choose DISABLED, the service uses any style values
+     * that you specify in your output settings. If you don't specify values, the
+     * service uses default style and position values. When you choose DISABLED, the
+     * service ignores all style and position values from your input.
+     */
+    inline BurninDestinationSettings& WithStylePassthrough(BurnInSubtitleStylePassthrough&& value) { SetStylePassthrough(std::move(value)); return *this;}
+
+
+    /**
      * Only applies to jobs with input captions in Teletext or STL formats. Specify
      * whether the spacing between letters in your captions is set by the captions grid
      * or varies depending on letter width. Choose fixed grid to conform to the spacing
@@ -735,11 +1025,17 @@ All burn-in and DVB-Sub
     BurninSubtitleAlignment m_alignment;
     bool m_alignmentHasBeenSet;
 
+    BurninSubtitleApplyFontColor m_applyFontColor;
+    bool m_applyFontColorHasBeenSet;
+
     BurninSubtitleBackgroundColor m_backgroundColor;
     bool m_backgroundColorHasBeenSet;
 
     int m_backgroundOpacity;
     bool m_backgroundOpacityHasBeenSet;
+
+    BurninSubtitleFallbackFont m_fallbackFont;
+    bool m_fallbackFontHasBeenSet;
 
     BurninSubtitleFontColor m_fontColor;
     bool m_fontColorHasBeenSet;
@@ -755,6 +1051,9 @@ All burn-in and DVB-Sub
 
     int m_fontSize;
     bool m_fontSizeHasBeenSet;
+
+    Aws::String m_hexFontColor;
+    bool m_hexFontColorHasBeenSet;
 
     BurninSubtitleOutlineColor m_outlineColor;
     bool m_outlineColorHasBeenSet;
@@ -773,6 +1072,9 @@ All burn-in and DVB-Sub
 
     int m_shadowYOffset;
     bool m_shadowYOffsetHasBeenSet;
+
+    BurnInSubtitleStylePassthrough m_stylePassthrough;
+    bool m_stylePassthroughHasBeenSet;
 
     BurninSubtitleTeletextSpacing m_teletextSpacing;
     bool m_teletextSpacingHasBeenSet;

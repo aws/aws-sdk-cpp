@@ -23,6 +23,7 @@ namespace Aws
         static const int NONE_HASH = HashingUtils::HashString("NONE");
         static const int THUMBNAIL_HASH = HashingUtils::HashString("THUMBNAIL");
         static const int THUMBNAIL_AND_FULLFRAME_HASH = HashingUtils::HashString("THUMBNAIL_AND_FULLFRAME");
+        static const int ADVANCED_HASH = HashingUtils::HashString("ADVANCED");
 
 
         HlsImageBasedTrickPlay GetHlsImageBasedTrickPlayForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == THUMBNAIL_AND_FULLFRAME_HASH)
           {
             return HlsImageBasedTrickPlay::THUMBNAIL_AND_FULLFRAME;
+          }
+          else if (hashCode == ADVANCED_HASH)
+          {
+            return HlsImageBasedTrickPlay::ADVANCED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "THUMBNAIL";
           case HlsImageBasedTrickPlay::THUMBNAIL_AND_FULLFRAME:
             return "THUMBNAIL_AND_FULLFRAME";
+          case HlsImageBasedTrickPlay::ADVANCED:
+            return "ADVANCED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

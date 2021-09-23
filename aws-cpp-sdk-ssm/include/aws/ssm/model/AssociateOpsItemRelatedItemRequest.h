@@ -144,8 +144,7 @@ namespace Model
      * <p>The type of resource that you want to associate with an OpsItem. OpsCenter
      * supports the following types:</p> <p>
      * <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.
-     * Incident Manager is a capability of Amazon Web Services Systems Manager.</p> <p>
-     * <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+     * </p> <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
@@ -153,8 +152,7 @@ namespace Model
      * <p>The type of resource that you want to associate with an OpsItem. OpsCenter
      * supports the following types:</p> <p>
      * <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.
-     * Incident Manager is a capability of Amazon Web Services Systems Manager.</p> <p>
-     * <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+     * </p> <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
@@ -162,8 +160,7 @@ namespace Model
      * <p>The type of resource that you want to associate with an OpsItem. OpsCenter
      * supports the following types:</p> <p>
      * <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.
-     * Incident Manager is a capability of Amazon Web Services Systems Manager.</p> <p>
-     * <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+     * </p> <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
@@ -171,8 +168,7 @@ namespace Model
      * <p>The type of resource that you want to associate with an OpsItem. OpsCenter
      * supports the following types:</p> <p>
      * <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.
-     * Incident Manager is a capability of Amazon Web Services Systems Manager.</p> <p>
-     * <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+     * </p> <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
@@ -180,8 +176,7 @@ namespace Model
      * <p>The type of resource that you want to associate with an OpsItem. OpsCenter
      * supports the following types:</p> <p>
      * <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.
-     * Incident Manager is a capability of Amazon Web Services Systems Manager.</p> <p>
-     * <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+     * </p> <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
@@ -189,8 +184,7 @@ namespace Model
      * <p>The type of resource that you want to associate with an OpsItem. OpsCenter
      * supports the following types:</p> <p>
      * <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.
-     * Incident Manager is a capability of Amazon Web Services Systems Manager.</p> <p>
-     * <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+     * </p> <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
      */
     inline AssociateOpsItemRelatedItemRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
@@ -198,8 +192,7 @@ namespace Model
      * <p>The type of resource that you want to associate with an OpsItem. OpsCenter
      * supports the following types:</p> <p>
      * <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.
-     * Incident Manager is a capability of Amazon Web Services Systems Manager.</p> <p>
-     * <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+     * </p> <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
      */
     inline AssociateOpsItemRelatedItemRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
@@ -207,8 +200,7 @@ namespace Model
      * <p>The type of resource that you want to associate with an OpsItem. OpsCenter
      * supports the following types:</p> <p>
      * <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.
-     * Incident Manager is a capability of Amazon Web Services Systems Manager.</p> <p>
-     * <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+     * </p> <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
      */
     inline AssociateOpsItemRelatedItemRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

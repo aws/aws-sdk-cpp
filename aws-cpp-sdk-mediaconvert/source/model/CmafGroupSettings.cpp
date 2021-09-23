@@ -32,6 +32,7 @@ CmafGroupSettings::CmafGroupSettings() :
     m_fragmentLengthHasBeenSet(false),
     m_imageBasedTrickPlay(CmafImageBasedTrickPlay::NOT_SET),
     m_imageBasedTrickPlayHasBeenSet(false),
+    m_imageBasedTrickPlaySettingsHasBeenSet(false),
     m_manifestCompression(CmafManifestCompression::NOT_SET),
     m_manifestCompressionHasBeenSet(false),
     m_manifestDurationFormat(CmafManifestDurationFormat::NOT_SET),
@@ -77,6 +78,7 @@ CmafGroupSettings::CmafGroupSettings(JsonView jsonValue) :
     m_fragmentLengthHasBeenSet(false),
     m_imageBasedTrickPlay(CmafImageBasedTrickPlay::NOT_SET),
     m_imageBasedTrickPlayHasBeenSet(false),
+    m_imageBasedTrickPlaySettingsHasBeenSet(false),
     m_manifestCompression(CmafManifestCompression::NOT_SET),
     m_manifestCompressionHasBeenSet(false),
     m_manifestDurationFormat(CmafManifestDurationFormat::NOT_SET),
@@ -175,6 +177,13 @@ CmafGroupSettings& CmafGroupSettings::operator =(JsonView jsonValue)
     m_imageBasedTrickPlay = CmafImageBasedTrickPlayMapper::GetCmafImageBasedTrickPlayForName(jsonValue.GetString("imageBasedTrickPlay"));
 
     m_imageBasedTrickPlayHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("imageBasedTrickPlaySettings"))
+  {
+    m_imageBasedTrickPlaySettings = jsonValue.GetObject("imageBasedTrickPlaySettings");
+
+    m_imageBasedTrickPlaySettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("manifestCompression"))
@@ -336,6 +345,12 @@ JsonValue CmafGroupSettings::Jsonize() const
   if(m_imageBasedTrickPlayHasBeenSet)
   {
    payload.WithString("imageBasedTrickPlay", CmafImageBasedTrickPlayMapper::GetNameForCmafImageBasedTrickPlay(m_imageBasedTrickPlay));
+  }
+
+  if(m_imageBasedTrickPlaySettingsHasBeenSet)
+  {
+   payload.WithObject("imageBasedTrickPlaySettings", m_imageBasedTrickPlaySettings.Jsonize());
+
   }
 
   if(m_manifestCompressionHasBeenSet)

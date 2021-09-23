@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * Hexadecimal value as per EIA-608 Line 21 Data Services, section 9.5.1.5 05h
+   * If your source content has EIA-608 Line 21 Data Services, enable this feature to
+   * specify what MediaConvert does with the Extended Data Services (XDS) packets.
+   * You can choose to pass through XDS packets, or remove them from the output. For
+   * more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h
    * Content Advisory.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ExtendedDataServices">AWS
    * API Reference</a></p>

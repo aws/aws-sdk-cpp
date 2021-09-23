@@ -26,6 +26,7 @@ namespace Aws
         static const int RED_HASH = HashingUtils::HashString("RED");
         static const int GREEN_HASH = HashingUtils::HashString("GREEN");
         static const int BLUE_HASH = HashingUtils::HashString("BLUE");
+        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
 
 
         BurninSubtitleOutlineColor GetBurninSubtitleOutlineColorForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return BurninSubtitleOutlineColor::BLUE;
           }
+          else if (hashCode == AUTO_HASH)
+          {
+            return BurninSubtitleOutlineColor::AUTO;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "GREEN";
           case BurninSubtitleOutlineColor::BLUE:
             return "BLUE";
+          case BurninSubtitleOutlineColor::AUTO:
+            return "AUTO";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

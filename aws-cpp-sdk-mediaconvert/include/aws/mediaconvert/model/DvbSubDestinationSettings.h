@@ -6,12 +6,16 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/DvbSubtitleAlignment.h>
+#include <aws/mediaconvert/model/DvbSubtitleApplyFontColor.h>
 #include <aws/mediaconvert/model/DvbSubtitleBackgroundColor.h>
 #include <aws/mediaconvert/model/DvbddsHandling.h>
+#include <aws/mediaconvert/model/DvbSubSubtitleFallbackFont.h>
 #include <aws/mediaconvert/model/DvbSubtitleFontColor.h>
 #include <aws/mediaconvert/model/FontScript.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/DvbSubtitleOutlineColor.h>
 #include <aws/mediaconvert/model/DvbSubtitleShadowColor.h>
+#include <aws/mediaconvert/model/DvbSubtitleStylePassthrough.h>
 #include <aws/mediaconvert/model/DvbSubtitlingType.h>
 #include <aws/mediaconvert/model/DvbSubtitleTeletextSpacing.h>
 #include <utility>
@@ -121,6 +125,79 @@ namespace Model
      * All burn-in and DVB-Sub font settings must match.
      */
     inline DvbSubDestinationSettings& WithAlignment(DvbSubtitleAlignment&& value) { SetAlignment(std::move(value)); return *this;}
+
+
+    /**
+     * Ignore this setting unless your input captions are STL, any type of 608,
+     * teletext, or TTML, and your output captions are DVB-SUB. Specify how the service
+     * applies the color specified in the setting Font color (DvbSubtitleFontColor). By
+     * default, this color is white. When you choose WHITE_TEXT_ONLY, the service uses
+     * the specified font color only for text that is white in the input. When you
+     * choose ALL_TEXT, the service uses the specified font color for all output
+     * captions text. If you leave both settings at their default value, your output
+     * font color is the same as your input font color.
+     */
+    inline const DvbSubtitleApplyFontColor& GetApplyFontColor() const{ return m_applyFontColor; }
+
+    /**
+     * Ignore this setting unless your input captions are STL, any type of 608,
+     * teletext, or TTML, and your output captions are DVB-SUB. Specify how the service
+     * applies the color specified in the setting Font color (DvbSubtitleFontColor). By
+     * default, this color is white. When you choose WHITE_TEXT_ONLY, the service uses
+     * the specified font color only for text that is white in the input. When you
+     * choose ALL_TEXT, the service uses the specified font color for all output
+     * captions text. If you leave both settings at their default value, your output
+     * font color is the same as your input font color.
+     */
+    inline bool ApplyFontColorHasBeenSet() const { return m_applyFontColorHasBeenSet; }
+
+    /**
+     * Ignore this setting unless your input captions are STL, any type of 608,
+     * teletext, or TTML, and your output captions are DVB-SUB. Specify how the service
+     * applies the color specified in the setting Font color (DvbSubtitleFontColor). By
+     * default, this color is white. When you choose WHITE_TEXT_ONLY, the service uses
+     * the specified font color only for text that is white in the input. When you
+     * choose ALL_TEXT, the service uses the specified font color for all output
+     * captions text. If you leave both settings at their default value, your output
+     * font color is the same as your input font color.
+     */
+    inline void SetApplyFontColor(const DvbSubtitleApplyFontColor& value) { m_applyFontColorHasBeenSet = true; m_applyFontColor = value; }
+
+    /**
+     * Ignore this setting unless your input captions are STL, any type of 608,
+     * teletext, or TTML, and your output captions are DVB-SUB. Specify how the service
+     * applies the color specified in the setting Font color (DvbSubtitleFontColor). By
+     * default, this color is white. When you choose WHITE_TEXT_ONLY, the service uses
+     * the specified font color only for text that is white in the input. When you
+     * choose ALL_TEXT, the service uses the specified font color for all output
+     * captions text. If you leave both settings at their default value, your output
+     * font color is the same as your input font color.
+     */
+    inline void SetApplyFontColor(DvbSubtitleApplyFontColor&& value) { m_applyFontColorHasBeenSet = true; m_applyFontColor = std::move(value); }
+
+    /**
+     * Ignore this setting unless your input captions are STL, any type of 608,
+     * teletext, or TTML, and your output captions are DVB-SUB. Specify how the service
+     * applies the color specified in the setting Font color (DvbSubtitleFontColor). By
+     * default, this color is white. When you choose WHITE_TEXT_ONLY, the service uses
+     * the specified font color only for text that is white in the input. When you
+     * choose ALL_TEXT, the service uses the specified font color for all output
+     * captions text. If you leave both settings at their default value, your output
+     * font color is the same as your input font color.
+     */
+    inline DvbSubDestinationSettings& WithApplyFontColor(const DvbSubtitleApplyFontColor& value) { SetApplyFontColor(value); return *this;}
+
+    /**
+     * Ignore this setting unless your input captions are STL, any type of 608,
+     * teletext, or TTML, and your output captions are DVB-SUB. Specify how the service
+     * applies the color specified in the setting Font color (DvbSubtitleFontColor). By
+     * default, this color is white. When you choose WHITE_TEXT_ONLY, the service uses
+     * the specified font color only for text that is white in the input. When you
+     * choose ALL_TEXT, the service uses the specified font color for all output
+     * captions text. If you leave both settings at their default value, your output
+     * font color is the same as your input font color.
+     */
+    inline DvbSubDestinationSettings& WithApplyFontColor(DvbSubtitleApplyFontColor&& value) { SetApplyFontColor(std::move(value)); return *this;}
 
 
     /**
@@ -405,6 +482,79 @@ All burn-in and
 
 
     /**
+     * Specify the font that you want the service to use for your burn in captions when
+     * your input captions specify a font that MediaConvert doesn't support. When you
+     * keep the default value, Best match (BEST_MATCH), MediaConvert uses a supported
+     * font that most closely matches the font that your input captions specify. When
+     * there are multiple unsupported fonts in your input captions, MediaConvert
+     * matches each font with the supported font that matches best. When you explicitly
+     * choose a replacement font, MediaConvert uses that font to replace all
+     * unsupported fonts from your input.
+     */
+    inline const DvbSubSubtitleFallbackFont& GetFallbackFont() const{ return m_fallbackFont; }
+
+    /**
+     * Specify the font that you want the service to use for your burn in captions when
+     * your input captions specify a font that MediaConvert doesn't support. When you
+     * keep the default value, Best match (BEST_MATCH), MediaConvert uses a supported
+     * font that most closely matches the font that your input captions specify. When
+     * there are multiple unsupported fonts in your input captions, MediaConvert
+     * matches each font with the supported font that matches best. When you explicitly
+     * choose a replacement font, MediaConvert uses that font to replace all
+     * unsupported fonts from your input.
+     */
+    inline bool FallbackFontHasBeenSet() const { return m_fallbackFontHasBeenSet; }
+
+    /**
+     * Specify the font that you want the service to use for your burn in captions when
+     * your input captions specify a font that MediaConvert doesn't support. When you
+     * keep the default value, Best match (BEST_MATCH), MediaConvert uses a supported
+     * font that most closely matches the font that your input captions specify. When
+     * there are multiple unsupported fonts in your input captions, MediaConvert
+     * matches each font with the supported font that matches best. When you explicitly
+     * choose a replacement font, MediaConvert uses that font to replace all
+     * unsupported fonts from your input.
+     */
+    inline void SetFallbackFont(const DvbSubSubtitleFallbackFont& value) { m_fallbackFontHasBeenSet = true; m_fallbackFont = value; }
+
+    /**
+     * Specify the font that you want the service to use for your burn in captions when
+     * your input captions specify a font that MediaConvert doesn't support. When you
+     * keep the default value, Best match (BEST_MATCH), MediaConvert uses a supported
+     * font that most closely matches the font that your input captions specify. When
+     * there are multiple unsupported fonts in your input captions, MediaConvert
+     * matches each font with the supported font that matches best. When you explicitly
+     * choose a replacement font, MediaConvert uses that font to replace all
+     * unsupported fonts from your input.
+     */
+    inline void SetFallbackFont(DvbSubSubtitleFallbackFont&& value) { m_fallbackFontHasBeenSet = true; m_fallbackFont = std::move(value); }
+
+    /**
+     * Specify the font that you want the service to use for your burn in captions when
+     * your input captions specify a font that MediaConvert doesn't support. When you
+     * keep the default value, Best match (BEST_MATCH), MediaConvert uses a supported
+     * font that most closely matches the font that your input captions specify. When
+     * there are multiple unsupported fonts in your input captions, MediaConvert
+     * matches each font with the supported font that matches best. When you explicitly
+     * choose a replacement font, MediaConvert uses that font to replace all
+     * unsupported fonts from your input.
+     */
+    inline DvbSubDestinationSettings& WithFallbackFont(const DvbSubSubtitleFallbackFont& value) { SetFallbackFont(value); return *this;}
+
+    /**
+     * Specify the font that you want the service to use for your burn in captions when
+     * your input captions specify a font that MediaConvert doesn't support. When you
+     * keep the default value, Best match (BEST_MATCH), MediaConvert uses a supported
+     * font that most closely matches the font that your input captions specify. When
+     * there are multiple unsupported fonts in your input captions, MediaConvert
+     * matches each font with the supported font that matches best. When you explicitly
+     * choose a replacement font, MediaConvert uses that font to replace all
+     * unsupported fonts from your input.
+     */
+    inline DvbSubDestinationSettings& WithFallbackFont(DvbSubSubtitleFallbackFont&& value) { SetFallbackFont(std::move(value)); return *this;}
+
+
+    /**
      * Specifies the color of the DVB-SUB captions. This option is not valid for source
      * captions that are STL, 608/embedded or teletext. These source settings are
      * already pre-defined by the caption stream. All burn-in and DVB-Sub font settings
@@ -619,6 +769,79 @@ All burn-in and
 
 
     /**
+     * Ignore this setting unless your DvbSubtitleFontColor setting is HEX. Format is
+     * six or eight hexidecimal digits, representing the red, green, and blue
+     * components, with the two extra digits used for an optional alpha value. For
+     * example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a
+     * blue value of 0xAA, and an alpha value of 0xBB.
+     */
+    inline const Aws::String& GetHexFontColor() const{ return m_hexFontColor; }
+
+    /**
+     * Ignore this setting unless your DvbSubtitleFontColor setting is HEX. Format is
+     * six or eight hexidecimal digits, representing the red, green, and blue
+     * components, with the two extra digits used for an optional alpha value. For
+     * example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a
+     * blue value of 0xAA, and an alpha value of 0xBB.
+     */
+    inline bool HexFontColorHasBeenSet() const { return m_hexFontColorHasBeenSet; }
+
+    /**
+     * Ignore this setting unless your DvbSubtitleFontColor setting is HEX. Format is
+     * six or eight hexidecimal digits, representing the red, green, and blue
+     * components, with the two extra digits used for an optional alpha value. For
+     * example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a
+     * blue value of 0xAA, and an alpha value of 0xBB.
+     */
+    inline void SetHexFontColor(const Aws::String& value) { m_hexFontColorHasBeenSet = true; m_hexFontColor = value; }
+
+    /**
+     * Ignore this setting unless your DvbSubtitleFontColor setting is HEX. Format is
+     * six or eight hexidecimal digits, representing the red, green, and blue
+     * components, with the two extra digits used for an optional alpha value. For
+     * example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a
+     * blue value of 0xAA, and an alpha value of 0xBB.
+     */
+    inline void SetHexFontColor(Aws::String&& value) { m_hexFontColorHasBeenSet = true; m_hexFontColor = std::move(value); }
+
+    /**
+     * Ignore this setting unless your DvbSubtitleFontColor setting is HEX. Format is
+     * six or eight hexidecimal digits, representing the red, green, and blue
+     * components, with the two extra digits used for an optional alpha value. For
+     * example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a
+     * blue value of 0xAA, and an alpha value of 0xBB.
+     */
+    inline void SetHexFontColor(const char* value) { m_hexFontColorHasBeenSet = true; m_hexFontColor.assign(value); }
+
+    /**
+     * Ignore this setting unless your DvbSubtitleFontColor setting is HEX. Format is
+     * six or eight hexidecimal digits, representing the red, green, and blue
+     * components, with the two extra digits used for an optional alpha value. For
+     * example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a
+     * blue value of 0xAA, and an alpha value of 0xBB.
+     */
+    inline DvbSubDestinationSettings& WithHexFontColor(const Aws::String& value) { SetHexFontColor(value); return *this;}
+
+    /**
+     * Ignore this setting unless your DvbSubtitleFontColor setting is HEX. Format is
+     * six or eight hexidecimal digits, representing the red, green, and blue
+     * components, with the two extra digits used for an optional alpha value. For
+     * example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a
+     * blue value of 0xAA, and an alpha value of 0xBB.
+     */
+    inline DvbSubDestinationSettings& WithHexFontColor(Aws::String&& value) { SetHexFontColor(std::move(value)); return *this;}
+
+    /**
+     * Ignore this setting unless your DvbSubtitleFontColor setting is HEX. Format is
+     * six or eight hexidecimal digits, representing the red, green, and blue
+     * components, with the two extra digits used for an optional alpha value. For
+     * example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a
+     * blue value of 0xAA, and an alpha value of 0xBB.
+     */
+    inline DvbSubDestinationSettings& WithHexFontColor(const char* value) { SetHexFontColor(value); return *this;}
+
+
+    /**
      * Specifies font outline color. This option is not valid for source captions that
      * are either 608/embedded or teletext. These source settings are already
      * pre-defined by the caption stream. All burn-in and DVB-Sub font settings must
@@ -828,6 +1051,67 @@ All burn-in and DVB-Sub
      * burn-in and DVB-Sub font settings must match.
      */
     inline DvbSubDestinationSettings& WithShadowYOffset(int value) { SetShadowYOffset(value); return *this;}
+
+
+    /**
+     * Choose which set of style and position values the service applies to your output
+     * captions. When you choose ENABLED, the service uses the input style and position
+     * information from your input. When you choose DISABLED, the service uses any
+     * style values that you specify in your output settings. If you don't specify
+     * values, the service uses default style and position values. When you choose
+     * DISABLED, the service ignores all style and position values from your input.
+     */
+    inline const DvbSubtitleStylePassthrough& GetStylePassthrough() const{ return m_stylePassthrough; }
+
+    /**
+     * Choose which set of style and position values the service applies to your output
+     * captions. When you choose ENABLED, the service uses the input style and position
+     * information from your input. When you choose DISABLED, the service uses any
+     * style values that you specify in your output settings. If you don't specify
+     * values, the service uses default style and position values. When you choose
+     * DISABLED, the service ignores all style and position values from your input.
+     */
+    inline bool StylePassthroughHasBeenSet() const { return m_stylePassthroughHasBeenSet; }
+
+    /**
+     * Choose which set of style and position values the service applies to your output
+     * captions. When you choose ENABLED, the service uses the input style and position
+     * information from your input. When you choose DISABLED, the service uses any
+     * style values that you specify in your output settings. If you don't specify
+     * values, the service uses default style and position values. When you choose
+     * DISABLED, the service ignores all style and position values from your input.
+     */
+    inline void SetStylePassthrough(const DvbSubtitleStylePassthrough& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = value; }
+
+    /**
+     * Choose which set of style and position values the service applies to your output
+     * captions. When you choose ENABLED, the service uses the input style and position
+     * information from your input. When you choose DISABLED, the service uses any
+     * style values that you specify in your output settings. If you don't specify
+     * values, the service uses default style and position values. When you choose
+     * DISABLED, the service ignores all style and position values from your input.
+     */
+    inline void SetStylePassthrough(DvbSubtitleStylePassthrough&& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = std::move(value); }
+
+    /**
+     * Choose which set of style and position values the service applies to your output
+     * captions. When you choose ENABLED, the service uses the input style and position
+     * information from your input. When you choose DISABLED, the service uses any
+     * style values that you specify in your output settings. If you don't specify
+     * values, the service uses default style and position values. When you choose
+     * DISABLED, the service ignores all style and position values from your input.
+     */
+    inline DvbSubDestinationSettings& WithStylePassthrough(const DvbSubtitleStylePassthrough& value) { SetStylePassthrough(value); return *this;}
+
+    /**
+     * Choose which set of style and position values the service applies to your output
+     * captions. When you choose ENABLED, the service uses the input style and position
+     * information from your input. When you choose DISABLED, the service uses any
+     * style values that you specify in your output settings. If you don't specify
+     * values, the service uses default style and position values. When you choose
+     * DISABLED, the service ignores all style and position values from your input.
+     */
+    inline DvbSubDestinationSettings& WithStylePassthrough(DvbSubtitleStylePassthrough&& value) { SetStylePassthrough(std::move(value)); return *this;}
 
 
     /**
@@ -1055,6 +1339,9 @@ All burn-in and DVB-Sub
     DvbSubtitleAlignment m_alignment;
     bool m_alignmentHasBeenSet;
 
+    DvbSubtitleApplyFontColor m_applyFontColor;
+    bool m_applyFontColorHasBeenSet;
+
     DvbSubtitleBackgroundColor m_backgroundColor;
     bool m_backgroundColorHasBeenSet;
 
@@ -1069,6 +1356,9 @@ All burn-in and DVB-Sub
 
     int m_ddsYCoordinate;
     bool m_ddsYCoordinateHasBeenSet;
+
+    DvbSubSubtitleFallbackFont m_fallbackFont;
+    bool m_fallbackFontHasBeenSet;
 
     DvbSubtitleFontColor m_fontColor;
     bool m_fontColorHasBeenSet;
@@ -1088,6 +1378,9 @@ All burn-in and DVB-Sub
     int m_height;
     bool m_heightHasBeenSet;
 
+    Aws::String m_hexFontColor;
+    bool m_hexFontColorHasBeenSet;
+
     DvbSubtitleOutlineColor m_outlineColor;
     bool m_outlineColorHasBeenSet;
 
@@ -1105,6 +1398,9 @@ All burn-in and DVB-Sub
 
     int m_shadowYOffset;
     bool m_shadowYOffsetHasBeenSet;
+
+    DvbSubtitleStylePassthrough m_stylePassthrough;
+    bool m_stylePassthroughHasBeenSet;
 
     DvbSubtitlingType m_subtitlingType;
     bool m_subtitlingTypeHasBeenSet;

@@ -21,6 +21,8 @@ namespace Model
 DvbSubDestinationSettings::DvbSubDestinationSettings() : 
     m_alignment(DvbSubtitleAlignment::NOT_SET),
     m_alignmentHasBeenSet(false),
+    m_applyFontColor(DvbSubtitleApplyFontColor::NOT_SET),
+    m_applyFontColorHasBeenSet(false),
     m_backgroundColor(DvbSubtitleBackgroundColor::NOT_SET),
     m_backgroundColorHasBeenSet(false),
     m_backgroundOpacity(0),
@@ -31,6 +33,8 @@ DvbSubDestinationSettings::DvbSubDestinationSettings() :
     m_ddsXCoordinateHasBeenSet(false),
     m_ddsYCoordinate(0),
     m_ddsYCoordinateHasBeenSet(false),
+    m_fallbackFont(DvbSubSubtitleFallbackFont::NOT_SET),
+    m_fallbackFontHasBeenSet(false),
     m_fontColor(DvbSubtitleFontColor::NOT_SET),
     m_fontColorHasBeenSet(false),
     m_fontOpacity(0),
@@ -43,6 +47,7 @@ DvbSubDestinationSettings::DvbSubDestinationSettings() :
     m_fontSizeHasBeenSet(false),
     m_height(0),
     m_heightHasBeenSet(false),
+    m_hexFontColorHasBeenSet(false),
     m_outlineColor(DvbSubtitleOutlineColor::NOT_SET),
     m_outlineColorHasBeenSet(false),
     m_outlineSize(0),
@@ -55,6 +60,8 @@ DvbSubDestinationSettings::DvbSubDestinationSettings() :
     m_shadowXOffsetHasBeenSet(false),
     m_shadowYOffset(0),
     m_shadowYOffsetHasBeenSet(false),
+    m_stylePassthrough(DvbSubtitleStylePassthrough::NOT_SET),
+    m_stylePassthroughHasBeenSet(false),
     m_subtitlingType(DvbSubtitlingType::NOT_SET),
     m_subtitlingTypeHasBeenSet(false),
     m_teletextSpacing(DvbSubtitleTeletextSpacing::NOT_SET),
@@ -71,6 +78,8 @@ DvbSubDestinationSettings::DvbSubDestinationSettings() :
 DvbSubDestinationSettings::DvbSubDestinationSettings(JsonView jsonValue) : 
     m_alignment(DvbSubtitleAlignment::NOT_SET),
     m_alignmentHasBeenSet(false),
+    m_applyFontColor(DvbSubtitleApplyFontColor::NOT_SET),
+    m_applyFontColorHasBeenSet(false),
     m_backgroundColor(DvbSubtitleBackgroundColor::NOT_SET),
     m_backgroundColorHasBeenSet(false),
     m_backgroundOpacity(0),
@@ -81,6 +90,8 @@ DvbSubDestinationSettings::DvbSubDestinationSettings(JsonView jsonValue) :
     m_ddsXCoordinateHasBeenSet(false),
     m_ddsYCoordinate(0),
     m_ddsYCoordinateHasBeenSet(false),
+    m_fallbackFont(DvbSubSubtitleFallbackFont::NOT_SET),
+    m_fallbackFontHasBeenSet(false),
     m_fontColor(DvbSubtitleFontColor::NOT_SET),
     m_fontColorHasBeenSet(false),
     m_fontOpacity(0),
@@ -93,6 +104,7 @@ DvbSubDestinationSettings::DvbSubDestinationSettings(JsonView jsonValue) :
     m_fontSizeHasBeenSet(false),
     m_height(0),
     m_heightHasBeenSet(false),
+    m_hexFontColorHasBeenSet(false),
     m_outlineColor(DvbSubtitleOutlineColor::NOT_SET),
     m_outlineColorHasBeenSet(false),
     m_outlineSize(0),
@@ -105,6 +117,8 @@ DvbSubDestinationSettings::DvbSubDestinationSettings(JsonView jsonValue) :
     m_shadowXOffsetHasBeenSet(false),
     m_shadowYOffset(0),
     m_shadowYOffsetHasBeenSet(false),
+    m_stylePassthrough(DvbSubtitleStylePassthrough::NOT_SET),
+    m_stylePassthroughHasBeenSet(false),
     m_subtitlingType(DvbSubtitlingType::NOT_SET),
     m_subtitlingTypeHasBeenSet(false),
     m_teletextSpacing(DvbSubtitleTeletextSpacing::NOT_SET),
@@ -126,6 +140,13 @@ DvbSubDestinationSettings& DvbSubDestinationSettings::operator =(JsonView jsonVa
     m_alignment = DvbSubtitleAlignmentMapper::GetDvbSubtitleAlignmentForName(jsonValue.GetString("alignment"));
 
     m_alignmentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("applyFontColor"))
+  {
+    m_applyFontColor = DvbSubtitleApplyFontColorMapper::GetDvbSubtitleApplyFontColorForName(jsonValue.GetString("applyFontColor"));
+
+    m_applyFontColorHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("backgroundColor"))
@@ -161,6 +182,13 @@ DvbSubDestinationSettings& DvbSubDestinationSettings::operator =(JsonView jsonVa
     m_ddsYCoordinate = jsonValue.GetInteger("ddsYCoordinate");
 
     m_ddsYCoordinateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fallbackFont"))
+  {
+    m_fallbackFont = DvbSubSubtitleFallbackFontMapper::GetDvbSubSubtitleFallbackFontForName(jsonValue.GetString("fallbackFont"));
+
+    m_fallbackFontHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("fontColor"))
@@ -205,6 +233,13 @@ DvbSubDestinationSettings& DvbSubDestinationSettings::operator =(JsonView jsonVa
     m_heightHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("hexFontColor"))
+  {
+    m_hexFontColor = jsonValue.GetString("hexFontColor");
+
+    m_hexFontColorHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("outlineColor"))
   {
     m_outlineColor = DvbSubtitleOutlineColorMapper::GetDvbSubtitleOutlineColorForName(jsonValue.GetString("outlineColor"));
@@ -245,6 +280,13 @@ DvbSubDestinationSettings& DvbSubDestinationSettings::operator =(JsonView jsonVa
     m_shadowYOffset = jsonValue.GetInteger("shadowYOffset");
 
     m_shadowYOffsetHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("stylePassthrough"))
+  {
+    m_stylePassthrough = DvbSubtitleStylePassthroughMapper::GetDvbSubtitleStylePassthroughForName(jsonValue.GetString("stylePassthrough"));
+
+    m_stylePassthroughHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("subtitlingType"))
@@ -294,6 +336,11 @@ JsonValue DvbSubDestinationSettings::Jsonize() const
    payload.WithString("alignment", DvbSubtitleAlignmentMapper::GetNameForDvbSubtitleAlignment(m_alignment));
   }
 
+  if(m_applyFontColorHasBeenSet)
+  {
+   payload.WithString("applyFontColor", DvbSubtitleApplyFontColorMapper::GetNameForDvbSubtitleApplyFontColor(m_applyFontColor));
+  }
+
   if(m_backgroundColorHasBeenSet)
   {
    payload.WithString("backgroundColor", DvbSubtitleBackgroundColorMapper::GetNameForDvbSubtitleBackgroundColor(m_backgroundColor));
@@ -320,6 +367,11 @@ JsonValue DvbSubDestinationSettings::Jsonize() const
   {
    payload.WithInteger("ddsYCoordinate", m_ddsYCoordinate);
 
+  }
+
+  if(m_fallbackFontHasBeenSet)
+  {
+   payload.WithString("fallbackFont", DvbSubSubtitleFallbackFontMapper::GetNameForDvbSubSubtitleFallbackFont(m_fallbackFont));
   }
 
   if(m_fontColorHasBeenSet)
@@ -356,6 +408,12 @@ JsonValue DvbSubDestinationSettings::Jsonize() const
 
   }
 
+  if(m_hexFontColorHasBeenSet)
+  {
+   payload.WithString("hexFontColor", m_hexFontColor);
+
+  }
+
   if(m_outlineColorHasBeenSet)
   {
    payload.WithString("outlineColor", DvbSubtitleOutlineColorMapper::GetNameForDvbSubtitleOutlineColor(m_outlineColor));
@@ -388,6 +446,11 @@ JsonValue DvbSubDestinationSettings::Jsonize() const
   {
    payload.WithInteger("shadowYOffset", m_shadowYOffset);
 
+  }
+
+  if(m_stylePassthroughHasBeenSet)
+  {
+   payload.WithString("stylePassthrough", DvbSubtitleStylePassthroughMapper::GetNameForDvbSubtitleStylePassthrough(m_stylePassthrough));
   }
 
   if(m_subtitlingTypeHasBeenSet)

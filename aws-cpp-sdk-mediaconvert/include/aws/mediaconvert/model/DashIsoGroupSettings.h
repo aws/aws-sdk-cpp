@@ -12,6 +12,7 @@
 #include <aws/mediaconvert/model/DashIsoEncryptionSettings.h>
 #include <aws/mediaconvert/model/DashIsoHbbtvCompliance.h>
 #include <aws/mediaconvert/model/DashIsoImageBasedTrickPlay.h>
+#include <aws/mediaconvert/model/DashIsoImageBasedTrickPlaySettings.h>
 #include <aws/mediaconvert/model/DashIsoMpdProfile.h>
 #include <aws/mediaconvert/model/DashIsoPtsOffsetHandlingForBFrames.h>
 #include <aws/mediaconvert/model/DashIsoSegmentControl.h>
@@ -547,6 +548,37 @@ namespace Model
 
 
     /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline const DashIsoImageBasedTrickPlaySettings& GetImageBasedTrickPlaySettings() const{ return m_imageBasedTrickPlaySettings; }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline bool ImageBasedTrickPlaySettingsHasBeenSet() const { return m_imageBasedTrickPlaySettingsHasBeenSet; }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline void SetImageBasedTrickPlaySettings(const DashIsoImageBasedTrickPlaySettings& value) { m_imageBasedTrickPlaySettingsHasBeenSet = true; m_imageBasedTrickPlaySettings = value; }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline void SetImageBasedTrickPlaySettings(DashIsoImageBasedTrickPlaySettings&& value) { m_imageBasedTrickPlaySettingsHasBeenSet = true; m_imageBasedTrickPlaySettings = std::move(value); }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline DashIsoGroupSettings& WithImageBasedTrickPlaySettings(const DashIsoImageBasedTrickPlaySettings& value) { SetImageBasedTrickPlaySettings(value); return *this;}
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline DashIsoGroupSettings& WithImageBasedTrickPlaySettings(DashIsoImageBasedTrickPlaySettings&& value) { SetImageBasedTrickPlaySettings(std::move(value)); return *this;}
+
+
+    /**
      * Minimum time of initially buffered media that is needed to ensure smooth
      * playout.
      */
@@ -1005,6 +1037,9 @@ namespace Model
 
     DashIsoImageBasedTrickPlay m_imageBasedTrickPlay;
     bool m_imageBasedTrickPlayHasBeenSet;
+
+    DashIsoImageBasedTrickPlaySettings m_imageBasedTrickPlaySettings;
+    bool m_imageBasedTrickPlaySettingsHasBeenSet;
 
     int m_minBufferTime;
     bool m_minBufferTimeHasBeenSet;

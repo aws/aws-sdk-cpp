@@ -12,6 +12,7 @@
 #include <aws/mediaconvert/model/DestinationSettings.h>
 #include <aws/mediaconvert/model/CmafEncryptionSettings.h>
 #include <aws/mediaconvert/model/CmafImageBasedTrickPlay.h>
+#include <aws/mediaconvert/model/CmafImageBasedTrickPlaySettings.h>
 #include <aws/mediaconvert/model/CmafManifestCompression.h>
 #include <aws/mediaconvert/model/CmafManifestDurationFormat.h>
 #include <aws/mediaconvert/model/CmafMpdProfile.h>
@@ -552,6 +553,37 @@ namespace Model
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      */
     inline CmafGroupSettings& WithImageBasedTrickPlay(CmafImageBasedTrickPlay&& value) { SetImageBasedTrickPlay(std::move(value)); return *this;}
+
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline const CmafImageBasedTrickPlaySettings& GetImageBasedTrickPlaySettings() const{ return m_imageBasedTrickPlaySettings; }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline bool ImageBasedTrickPlaySettingsHasBeenSet() const { return m_imageBasedTrickPlaySettingsHasBeenSet; }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline void SetImageBasedTrickPlaySettings(const CmafImageBasedTrickPlaySettings& value) { m_imageBasedTrickPlaySettingsHasBeenSet = true; m_imageBasedTrickPlaySettings = value; }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline void SetImageBasedTrickPlaySettings(CmafImageBasedTrickPlaySettings&& value) { m_imageBasedTrickPlaySettingsHasBeenSet = true; m_imageBasedTrickPlaySettings = std::move(value); }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline CmafGroupSettings& WithImageBasedTrickPlaySettings(const CmafImageBasedTrickPlaySettings& value) { SetImageBasedTrickPlaySettings(value); return *this;}
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline CmafGroupSettings& WithImageBasedTrickPlaySettings(CmafImageBasedTrickPlaySettings&& value) { SetImageBasedTrickPlaySettings(std::move(value)); return *this;}
 
 
     /**
@@ -1265,6 +1297,9 @@ namespace Model
 
     CmafImageBasedTrickPlay m_imageBasedTrickPlay;
     bool m_imageBasedTrickPlayHasBeenSet;
+
+    CmafImageBasedTrickPlaySettings m_imageBasedTrickPlaySettings;
+    bool m_imageBasedTrickPlaySettingsHasBeenSet;
 
     CmafManifestCompression m_manifestCompression;
     bool m_manifestCompressionHasBeenSet;

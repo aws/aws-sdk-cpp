@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     NONE,
     THUMBNAIL,
-    THUMBNAIL_AND_FULLFRAME
+    THUMBNAIL_AND_FULLFRAME,
+    ADVANCED
   };
 
 namespace DashIsoImageBasedTrickPlayMapper

@@ -10,6 +10,7 @@
 #include <aws/appsync/model/DynamodbDataSourceConfig.h>
 #include <aws/appsync/model/LambdaDataSourceConfig.h>
 #include <aws/appsync/model/ElasticsearchDataSourceConfig.h>
+#include <aws/appsync/model/OpenSearchServiceDataSourceConfig.h>
 #include <aws/appsync/model/HttpDataSourceConfig.h>
 #include <aws/appsync/model/RelationalDatabaseDataSourceConfig.h>
 #include <utility>
@@ -167,92 +168,98 @@ namespace Model
 
 
     /**
-     * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
-     * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
-     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
-     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an Amazon Web
-     * Services Lambda function.</p> </li> <li> <p> <b>NONE</b>: There is no data
-     * source. This type is used when you wish to invoke a GraphQL operation without
-     * connecting to a data source, such as performing data transformation with
-     * resolvers or triggering a subscription to be invoked from a mutation.</p> </li>
-     * <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> <li> <p>
-     * <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
-     * </ul>
+     * <p>The type of the data source.</p> <ul> <li> <p> <b>AWS_LAMBDA</b>: The data
+     * source is an Amazon Web Services Lambda function.</p> </li> <li> <p>
+     * <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p> </li>
+     * <li> <p> <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch
+     * Service domain.</p> </li> <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data
+     * source is an Amazon OpenSearch Service domain.</p> </li> <li> <p> <b>NONE</b>:
+     * There is no data source. This type is used when you wish to invoke a GraphQL
+     * operation without connecting to a data source, such as performing data
+     * transformation with resolvers or triggering a subscription to be invoked from a
+     * mutation.</p> </li> <li> <p> <b>HTTP</b>: The data source is an HTTP
+     * endpoint.</p> </li> <li> <p> <b>RELATIONAL_DATABASE</b>: The data source is a
+     * relational database.</p> </li> </ul>
      */
     inline const DataSourceType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
-     * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
-     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
-     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an Amazon Web
-     * Services Lambda function.</p> </li> <li> <p> <b>NONE</b>: There is no data
-     * source. This type is used when you wish to invoke a GraphQL operation without
-     * connecting to a data source, such as performing data transformation with
-     * resolvers or triggering a subscription to be invoked from a mutation.</p> </li>
-     * <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> <li> <p>
-     * <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
-     * </ul>
+     * <p>The type of the data source.</p> <ul> <li> <p> <b>AWS_LAMBDA</b>: The data
+     * source is an Amazon Web Services Lambda function.</p> </li> <li> <p>
+     * <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p> </li>
+     * <li> <p> <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch
+     * Service domain.</p> </li> <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data
+     * source is an Amazon OpenSearch Service domain.</p> </li> <li> <p> <b>NONE</b>:
+     * There is no data source. This type is used when you wish to invoke a GraphQL
+     * operation without connecting to a data source, such as performing data
+     * transformation with resolvers or triggering a subscription to be invoked from a
+     * mutation.</p> </li> <li> <p> <b>HTTP</b>: The data source is an HTTP
+     * endpoint.</p> </li> <li> <p> <b>RELATIONAL_DATABASE</b>: The data source is a
+     * relational database.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
-     * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
-     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
-     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an Amazon Web
-     * Services Lambda function.</p> </li> <li> <p> <b>NONE</b>: There is no data
-     * source. This type is used when you wish to invoke a GraphQL operation without
-     * connecting to a data source, such as performing data transformation with
-     * resolvers or triggering a subscription to be invoked from a mutation.</p> </li>
-     * <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> <li> <p>
-     * <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
-     * </ul>
+     * <p>The type of the data source.</p> <ul> <li> <p> <b>AWS_LAMBDA</b>: The data
+     * source is an Amazon Web Services Lambda function.</p> </li> <li> <p>
+     * <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p> </li>
+     * <li> <p> <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch
+     * Service domain.</p> </li> <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data
+     * source is an Amazon OpenSearch Service domain.</p> </li> <li> <p> <b>NONE</b>:
+     * There is no data source. This type is used when you wish to invoke a GraphQL
+     * operation without connecting to a data source, such as performing data
+     * transformation with resolvers or triggering a subscription to be invoked from a
+     * mutation.</p> </li> <li> <p> <b>HTTP</b>: The data source is an HTTP
+     * endpoint.</p> </li> <li> <p> <b>RELATIONAL_DATABASE</b>: The data source is a
+     * relational database.</p> </li> </ul>
      */
     inline void SetType(const DataSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
-     * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
-     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
-     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an Amazon Web
-     * Services Lambda function.</p> </li> <li> <p> <b>NONE</b>: There is no data
-     * source. This type is used when you wish to invoke a GraphQL operation without
-     * connecting to a data source, such as performing data transformation with
-     * resolvers or triggering a subscription to be invoked from a mutation.</p> </li>
-     * <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> <li> <p>
-     * <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
-     * </ul>
+     * <p>The type of the data source.</p> <ul> <li> <p> <b>AWS_LAMBDA</b>: The data
+     * source is an Amazon Web Services Lambda function.</p> </li> <li> <p>
+     * <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p> </li>
+     * <li> <p> <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch
+     * Service domain.</p> </li> <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data
+     * source is an Amazon OpenSearch Service domain.</p> </li> <li> <p> <b>NONE</b>:
+     * There is no data source. This type is used when you wish to invoke a GraphQL
+     * operation without connecting to a data source, such as performing data
+     * transformation with resolvers or triggering a subscription to be invoked from a
+     * mutation.</p> </li> <li> <p> <b>HTTP</b>: The data source is an HTTP
+     * endpoint.</p> </li> <li> <p> <b>RELATIONAL_DATABASE</b>: The data source is a
+     * relational database.</p> </li> </ul>
      */
     inline void SetType(DataSourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
-     * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
-     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
-     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an Amazon Web
-     * Services Lambda function.</p> </li> <li> <p> <b>NONE</b>: There is no data
-     * source. This type is used when you wish to invoke a GraphQL operation without
-     * connecting to a data source, such as performing data transformation with
-     * resolvers or triggering a subscription to be invoked from a mutation.</p> </li>
-     * <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> <li> <p>
-     * <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
-     * </ul>
+     * <p>The type of the data source.</p> <ul> <li> <p> <b>AWS_LAMBDA</b>: The data
+     * source is an Amazon Web Services Lambda function.</p> </li> <li> <p>
+     * <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p> </li>
+     * <li> <p> <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch
+     * Service domain.</p> </li> <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data
+     * source is an Amazon OpenSearch Service domain.</p> </li> <li> <p> <b>NONE</b>:
+     * There is no data source. This type is used when you wish to invoke a GraphQL
+     * operation without connecting to a data source, such as performing data
+     * transformation with resolvers or triggering a subscription to be invoked from a
+     * mutation.</p> </li> <li> <p> <b>HTTP</b>: The data source is an HTTP
+     * endpoint.</p> </li> <li> <p> <b>RELATIONAL_DATABASE</b>: The data source is a
+     * relational database.</p> </li> </ul>
      */
     inline DataSource& WithType(const DataSourceType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
-     * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
-     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
-     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an Amazon Web
-     * Services Lambda function.</p> </li> <li> <p> <b>NONE</b>: There is no data
-     * source. This type is used when you wish to invoke a GraphQL operation without
-     * connecting to a data source, such as performing data transformation with
-     * resolvers or triggering a subscription to be invoked from a mutation.</p> </li>
-     * <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> <li> <p>
-     * <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
-     * </ul>
+     * <p>The type of the data source.</p> <ul> <li> <p> <b>AWS_LAMBDA</b>: The data
+     * source is an Amazon Web Services Lambda function.</p> </li> <li> <p>
+     * <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p> </li>
+     * <li> <p> <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch
+     * Service domain.</p> </li> <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data
+     * source is an Amazon OpenSearch Service domain.</p> </li> <li> <p> <b>NONE</b>:
+     * There is no data source. This type is used when you wish to invoke a GraphQL
+     * operation without connecting to a data source, such as performing data
+     * transformation with resolvers or triggering a subscription to be invoked from a
+     * mutation.</p> </li> <li> <p> <b>HTTP</b>: The data source is an HTTP
+     * endpoint.</p> </li> <li> <p> <b>RELATIONAL_DATABASE</b>: The data source is a
+     * relational database.</p> </li> </ul>
      */
     inline DataSource& WithType(DataSourceType&& value) { SetType(std::move(value)); return *this;}
 
@@ -369,34 +376,65 @@ namespace Model
 
 
     /**
-     * <p>Amazon Elasticsearch Service settings.</p>
+     * <p>Amazon OpenSearch Service settings.</p>
      */
     inline const ElasticsearchDataSourceConfig& GetElasticsearchConfig() const{ return m_elasticsearchConfig; }
 
     /**
-     * <p>Amazon Elasticsearch Service settings.</p>
+     * <p>Amazon OpenSearch Service settings.</p>
      */
     inline bool ElasticsearchConfigHasBeenSet() const { return m_elasticsearchConfigHasBeenSet; }
 
     /**
-     * <p>Amazon Elasticsearch Service settings.</p>
+     * <p>Amazon OpenSearch Service settings.</p>
      */
     inline void SetElasticsearchConfig(const ElasticsearchDataSourceConfig& value) { m_elasticsearchConfigHasBeenSet = true; m_elasticsearchConfig = value; }
 
     /**
-     * <p>Amazon Elasticsearch Service settings.</p>
+     * <p>Amazon OpenSearch Service settings.</p>
      */
     inline void SetElasticsearchConfig(ElasticsearchDataSourceConfig&& value) { m_elasticsearchConfigHasBeenSet = true; m_elasticsearchConfig = std::move(value); }
 
     /**
-     * <p>Amazon Elasticsearch Service settings.</p>
+     * <p>Amazon OpenSearch Service settings.</p>
      */
     inline DataSource& WithElasticsearchConfig(const ElasticsearchDataSourceConfig& value) { SetElasticsearchConfig(value); return *this;}
 
     /**
-     * <p>Amazon Elasticsearch Service settings.</p>
+     * <p>Amazon OpenSearch Service settings.</p>
      */
     inline DataSource& WithElasticsearchConfig(ElasticsearchDataSourceConfig&& value) { SetElasticsearchConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Amazon OpenSearch Service settings.</p>
+     */
+    inline const OpenSearchServiceDataSourceConfig& GetOpenSearchServiceConfig() const{ return m_openSearchServiceConfig; }
+
+    /**
+     * <p>Amazon OpenSearch Service settings.</p>
+     */
+    inline bool OpenSearchServiceConfigHasBeenSet() const { return m_openSearchServiceConfigHasBeenSet; }
+
+    /**
+     * <p>Amazon OpenSearch Service settings.</p>
+     */
+    inline void SetOpenSearchServiceConfig(const OpenSearchServiceDataSourceConfig& value) { m_openSearchServiceConfigHasBeenSet = true; m_openSearchServiceConfig = value; }
+
+    /**
+     * <p>Amazon OpenSearch Service settings.</p>
+     */
+    inline void SetOpenSearchServiceConfig(OpenSearchServiceDataSourceConfig&& value) { m_openSearchServiceConfigHasBeenSet = true; m_openSearchServiceConfig = std::move(value); }
+
+    /**
+     * <p>Amazon OpenSearch Service settings.</p>
+     */
+    inline DataSource& WithOpenSearchServiceConfig(const OpenSearchServiceDataSourceConfig& value) { SetOpenSearchServiceConfig(value); return *this;}
+
+    /**
+     * <p>Amazon OpenSearch Service settings.</p>
+     */
+    inline DataSource& WithOpenSearchServiceConfig(OpenSearchServiceDataSourceConfig&& value) { SetOpenSearchServiceConfig(std::move(value)); return *this;}
 
 
     /**
@@ -485,6 +523,9 @@ namespace Model
 
     ElasticsearchDataSourceConfig m_elasticsearchConfig;
     bool m_elasticsearchConfigHasBeenSet;
+
+    OpenSearchServiceDataSourceConfig m_openSearchServiceConfig;
+    bool m_openSearchServiceConfigHasBeenSet;
 
     HttpDataSourceConfig m_httpConfig;
     bool m_httpConfigHasBeenSet;

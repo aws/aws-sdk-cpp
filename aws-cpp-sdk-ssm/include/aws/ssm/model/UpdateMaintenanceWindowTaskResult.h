@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm/model/MaintenanceWindowTaskInvocationParameters.h>
 #include <aws/ssm/model/LoggingInfo.h>
+#include <aws/ssm/model/MaintenanceWindowTaskCutoffBehavior.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/MaintenanceWindowTaskParameterValueExpression.h>
 #include <utility>
@@ -589,6 +590,37 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTaskResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>The specification for whether tasks should continue to run after the cutoff
+     * time specified in the maintenance windows is reached. </p>
+     */
+    inline const MaintenanceWindowTaskCutoffBehavior& GetCutoffBehavior() const{ return m_cutoffBehavior; }
+
+    /**
+     * <p>The specification for whether tasks should continue to run after the cutoff
+     * time specified in the maintenance windows is reached. </p>
+     */
+    inline void SetCutoffBehavior(const MaintenanceWindowTaskCutoffBehavior& value) { m_cutoffBehavior = value; }
+
+    /**
+     * <p>The specification for whether tasks should continue to run after the cutoff
+     * time specified in the maintenance windows is reached. </p>
+     */
+    inline void SetCutoffBehavior(MaintenanceWindowTaskCutoffBehavior&& value) { m_cutoffBehavior = std::move(value); }
+
+    /**
+     * <p>The specification for whether tasks should continue to run after the cutoff
+     * time specified in the maintenance windows is reached. </p>
+     */
+    inline UpdateMaintenanceWindowTaskResult& WithCutoffBehavior(const MaintenanceWindowTaskCutoffBehavior& value) { SetCutoffBehavior(value); return *this;}
+
+    /**
+     * <p>The specification for whether tasks should continue to run after the cutoff
+     * time specified in the maintenance windows is reached. </p>
+     */
+    inline UpdateMaintenanceWindowTaskResult& WithCutoffBehavior(MaintenanceWindowTaskCutoffBehavior&& value) { SetCutoffBehavior(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_windowId;
@@ -616,6 +648,8 @@ namespace Model
     Aws::String m_name;
 
     Aws::String m_description;
+
+    MaintenanceWindowTaskCutoffBehavior m_cutoffBehavior;
   };
 
 } // namespace Model

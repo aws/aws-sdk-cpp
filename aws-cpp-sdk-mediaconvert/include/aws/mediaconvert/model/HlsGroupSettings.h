@@ -15,6 +15,7 @@
 #include <aws/mediaconvert/model/HlsDirectoryStructure.h>
 #include <aws/mediaconvert/model/HlsEncryptionSettings.h>
 #include <aws/mediaconvert/model/HlsImageBasedTrickPlay.h>
+#include <aws/mediaconvert/model/HlsImageBasedTrickPlaySettings.h>
 #include <aws/mediaconvert/model/HlsManifestCompression.h>
 #include <aws/mediaconvert/model/HlsManifestDurationFormat.h>
 #include <aws/mediaconvert/model/HlsOutputSelection.h>
@@ -748,6 +749,37 @@ namespace Model
 
 
     /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline const HlsImageBasedTrickPlaySettings& GetImageBasedTrickPlaySettings() const{ return m_imageBasedTrickPlaySettings; }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline bool ImageBasedTrickPlaySettingsHasBeenSet() const { return m_imageBasedTrickPlaySettingsHasBeenSet; }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline void SetImageBasedTrickPlaySettings(const HlsImageBasedTrickPlaySettings& value) { m_imageBasedTrickPlaySettingsHasBeenSet = true; m_imageBasedTrickPlaySettings = value; }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline void SetImageBasedTrickPlaySettings(HlsImageBasedTrickPlaySettings&& value) { m_imageBasedTrickPlaySettingsHasBeenSet = true; m_imageBasedTrickPlaySettings = std::move(value); }
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline HlsGroupSettings& WithImageBasedTrickPlaySettings(const HlsImageBasedTrickPlaySettings& value) { SetImageBasedTrickPlaySettings(value); return *this;}
+
+    /**
+     * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+     */
+    inline HlsGroupSettings& WithImageBasedTrickPlaySettings(HlsImageBasedTrickPlaySettings&& value) { SetImageBasedTrickPlaySettings(std::move(value)); return *this;}
+
+
+    /**
      * When set to GZIP, compresses HLS playlist.
      */
     inline const HlsManifestCompression& GetManifestCompression() const{ return m_manifestCompression; }
@@ -1394,6 +1426,9 @@ namespace Model
 
     HlsImageBasedTrickPlay m_imageBasedTrickPlay;
     bool m_imageBasedTrickPlayHasBeenSet;
+
+    HlsImageBasedTrickPlaySettings m_imageBasedTrickPlaySettings;
+    bool m_imageBasedTrickPlaySettingsHasBeenSet;
 
     HlsManifestCompression m_manifestCompression;
     bool m_manifestCompressionHasBeenSet;

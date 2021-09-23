@@ -884,20 +884,20 @@ namespace Model
         virtual void AddTagsToResourceAsync(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates a related resource to a Systems Manager OpsCenter OpsItem. For
+         * <p>Associates a related item to a Systems Manager OpsCenter OpsItem. For
          * example, you can associate an Incident Manager incident or analysis with an
-         * OpsItem. Incident Manager is a capability of Amazon Web Services Systems
-         * Manager.</p><p><h3>See Also:</h3>   <a
+         * OpsItem. Incident Manager and OpsCenter are capabilities of Amazon Web Services
+         * Systems Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociateOpsItemRelatedItem">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateOpsItemRelatedItemOutcome AssociateOpsItemRelatedItem(const Model::AssociateOpsItemRelatedItemRequest& request) const;
 
         /**
-         * <p>Associates a related resource to a Systems Manager OpsCenter OpsItem. For
+         * <p>Associates a related item to a Systems Manager OpsCenter OpsItem. For
          * example, you can associate an Incident Manager incident or analysis with an
-         * OpsItem. Incident Manager is a capability of Amazon Web Services Systems
-         * Manager.</p><p><h3>See Also:</h3>   <a
+         * OpsItem. Incident Manager and OpsCenter are capabilities of Amazon Web Services
+         * Systems Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociateOpsItemRelatedItem">AWS
          * API Reference</a></p>
          *
@@ -906,10 +906,10 @@ namespace Model
         virtual Model::AssociateOpsItemRelatedItemOutcomeCallable AssociateOpsItemRelatedItemCallable(const Model::AssociateOpsItemRelatedItemRequest& request) const;
 
         /**
-         * <p>Associates a related resource to a Systems Manager OpsCenter OpsItem. For
+         * <p>Associates a related item to a Systems Manager OpsCenter OpsItem. For
          * example, you can associate an Incident Manager incident or analysis with an
-         * OpsItem. Incident Manager is a capability of Amazon Web Services Systems
-         * Manager.</p><p><h3>See Also:</h3>   <a
+         * OpsItem. Incident Manager and OpsCenter are capabilities of Amazon Web Services
+         * Systems Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociateOpsItemRelatedItem">AWS
          * API Reference</a></p>
          *
@@ -2704,7 +2704,11 @@ namespace Model
          * If the service reaches an internal limit while processing the results, it stops
          * the operation and returns the matching values up to that point and a
          * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
-         * subsequent call to get the next set of results.</p><p><h3>See Also:</h3>   <a
+         * subsequent call to get the next set of results.</p>  <p>If you change
+         * the KMS key alias for the KMS key used to encrypt a parameter, then you must
+         * also update the key alias the parameter uses to reference KMS. Otherwise,
+         * <code>DescribeParameters</code> retrieves whatever the original key alias was
+         * referencing.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">AWS
          * API Reference</a></p>
          */
@@ -2718,7 +2722,11 @@ namespace Model
          * If the service reaches an internal limit while processing the results, it stops
          * the operation and returns the matching values up to that point and a
          * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
-         * subsequent call to get the next set of results.</p><p><h3>See Also:</h3>   <a
+         * subsequent call to get the next set of results.</p>  <p>If you change
+         * the KMS key alias for the KMS key used to encrypt a parameter, then you must
+         * also update the key alias the parameter uses to reference KMS. Otherwise,
+         * <code>DescribeParameters</code> retrieves whatever the original key alias was
+         * referencing.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">AWS
          * API Reference</a></p>
          *
@@ -2734,7 +2742,11 @@ namespace Model
          * If the service reaches an internal limit while processing the results, it stops
          * the operation and returns the matching values up to that point and a
          * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
-         * subsequent call to get the next set of results.</p><p><h3>See Also:</h3>   <a
+         * subsequent call to get the next set of results.</p>  <p>If you change
+         * the KMS key alias for the KMS key used to encrypt a parameter, then you must
+         * also update the key alias the parameter uses to reference KMS. Otherwise,
+         * <code>DescribeParameters</code> retrieves whatever the original key alias was
+         * referencing.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">AWS
          * API Reference</a></p>
          *
@@ -2952,9 +2964,9 @@ namespace Model
         virtual void DescribeSessionsAsync(const Model::DescribeSessionsRequest& request, const DescribeSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the association between an OpsItem and a related resource. For
-         * example, this API operation can delete an Incident Manager incident from an
-         * OpsItem. Incident Manager is a capability of Amazon Web Services Systems
+         * <p>Deletes the association between an OpsItem and a related item. For example,
+         * this API operation can delete an Incident Manager incident from an OpsItem.
+         * Incident Manager is a capability of Amazon Web Services Systems
          * Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DisassociateOpsItemRelatedItem">AWS
          * API Reference</a></p>
@@ -2962,9 +2974,9 @@ namespace Model
         virtual Model::DisassociateOpsItemRelatedItemOutcome DisassociateOpsItemRelatedItem(const Model::DisassociateOpsItemRelatedItemRequest& request) const;
 
         /**
-         * <p>Deletes the association between an OpsItem and a related resource. For
-         * example, this API operation can delete an Incident Manager incident from an
-         * OpsItem. Incident Manager is a capability of Amazon Web Services Systems
+         * <p>Deletes the association between an OpsItem and a related item. For example,
+         * this API operation can delete an Incident Manager incident from an OpsItem.
+         * Incident Manager is a capability of Amazon Web Services Systems
          * Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DisassociateOpsItemRelatedItem">AWS
          * API Reference</a></p>
@@ -2974,9 +2986,9 @@ namespace Model
         virtual Model::DisassociateOpsItemRelatedItemOutcomeCallable DisassociateOpsItemRelatedItemCallable(const Model::DisassociateOpsItemRelatedItemRequest& request) const;
 
         /**
-         * <p>Deletes the association between an OpsItem and a related resource. For
-         * example, this API operation can delete an Incident Manager incident from an
-         * OpsItem. Incident Manager is a capability of Amazon Web Services Systems
+         * <p>Deletes the association between an OpsItem and a related item. For example,
+         * this API operation can delete an Incident Manager incident from an OpsItem.
+         * Incident Manager is a capability of Amazon Web Services Systems
          * Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DisassociateOpsItemRelatedItem">AWS
          * API Reference</a></p>
@@ -3634,16 +3646,22 @@ namespace Model
         virtual void GetParameterAsync(const Model::GetParameterRequest& request, const GetParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the history of all changes to a parameter.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Retrieves the history of all changes to a parameter.</p>  <p>If
+         * you change the KMS key alias for the KMS key used to encrypt a parameter, then
+         * you must also update the key alias the parameter uses to reference KMS.
+         * Otherwise, <code>GetParameterHistory</code> retrieves whatever the original key
+         * alias was referencing.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">AWS
          * API Reference</a></p>
          */
         virtual Model::GetParameterHistoryOutcome GetParameterHistory(const Model::GetParameterHistoryRequest& request) const;
 
         /**
-         * <p>Retrieves the history of all changes to a parameter.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Retrieves the history of all changes to a parameter.</p>  <p>If
+         * you change the KMS key alias for the KMS key used to encrypt a parameter, then
+         * you must also update the key alias the parameter uses to reference KMS.
+         * Otherwise, <code>GetParameterHistory</code> retrieves whatever the original key
+         * alias was referencing.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">AWS
          * API Reference</a></p>
          *
@@ -3652,8 +3670,11 @@ namespace Model
         virtual Model::GetParameterHistoryOutcomeCallable GetParameterHistoryCallable(const Model::GetParameterHistoryRequest& request) const;
 
         /**
-         * <p>Retrieves the history of all changes to a parameter.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Retrieves the history of all changes to a parameter.</p>  <p>If
+         * you change the KMS key alias for the KMS key used to encrypt a parameter, then
+         * you must also update the key alias the parameter uses to reference KMS.
+         * Otherwise, <code>GetParameterHistory</code> retrieves whatever the original key
+         * alias was referencing.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">AWS
          * API Reference</a></p>
          *
@@ -4300,16 +4321,18 @@ namespace Model
         virtual void ListOpsItemEventsAsync(const Model::ListOpsItemEventsRequest& request, const ListOpsItemEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all related-item resources associated with an OpsItem.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all related-item resources associated with a Systems Manager OpsCenter
+         * OpsItem. OpsCenter is a capability of Amazon Web Services Systems
+         * Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemRelatedItems">AWS
          * API Reference</a></p>
          */
         virtual Model::ListOpsItemRelatedItemsOutcome ListOpsItemRelatedItems(const Model::ListOpsItemRelatedItemsRequest& request) const;
 
         /**
-         * <p>Lists all related-item resources associated with an OpsItem.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all related-item resources associated with a Systems Manager OpsCenter
+         * OpsItem. OpsCenter is a capability of Amazon Web Services Systems
+         * Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemRelatedItems">AWS
          * API Reference</a></p>
          *
@@ -4318,8 +4341,9 @@ namespace Model
         virtual Model::ListOpsItemRelatedItemsOutcomeCallable ListOpsItemRelatedItemsCallable(const Model::ListOpsItemRelatedItemsRequest& request) const;
 
         /**
-         * <p>Lists all related-item resources associated with an OpsItem.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all related-item resources associated with a Systems Manager OpsCenter
+         * OpsItem. OpsCenter is a capability of Amazon Web Services Systems
+         * Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemRelatedItems">AWS
          * API Reference</a></p>
          *
