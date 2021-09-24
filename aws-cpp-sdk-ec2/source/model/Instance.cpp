@@ -81,7 +81,10 @@ Instance::Instance() :
     m_metadataOptionsHasBeenSet(false),
     m_enclaveOptionsHasBeenSet(false),
     m_bootMode(BootModeValues::NOT_SET),
-    m_bootModeHasBeenSet(false)
+    m_bootModeHasBeenSet(false),
+    m_platformDetailsHasBeenSet(false),
+    m_usageOperationHasBeenSet(false),
+    m_usageOperationUpdateTimeHasBeenSet(false)
 {
 }
 
@@ -146,7 +149,10 @@ Instance::Instance(const XmlNode& xmlNode) :
     m_metadataOptionsHasBeenSet(false),
     m_enclaveOptionsHasBeenSet(false),
     m_bootMode(BootModeValues::NOT_SET),
-    m_bootModeHasBeenSet(false)
+    m_bootModeHasBeenSet(false),
+    m_platformDetailsHasBeenSet(false),
+    m_usageOperationHasBeenSet(false),
+    m_usageOperationUpdateTimeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -499,6 +505,24 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
       m_bootMode = BootModeValuesMapper::GetBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bootModeNode.GetText()).c_str()).c_str());
       m_bootModeHasBeenSet = true;
     }
+    XmlNode platformDetailsNode = resultNode.FirstChild("platformDetails");
+    if(!platformDetailsNode.IsNull())
+    {
+      m_platformDetails = Aws::Utils::Xml::DecodeEscapedXmlText(platformDetailsNode.GetText());
+      m_platformDetailsHasBeenSet = true;
+    }
+    XmlNode usageOperationNode = resultNode.FirstChild("usageOperation");
+    if(!usageOperationNode.IsNull())
+    {
+      m_usageOperation = Aws::Utils::Xml::DecodeEscapedXmlText(usageOperationNode.GetText());
+      m_usageOperationHasBeenSet = true;
+    }
+    XmlNode usageOperationUpdateTimeNode = resultNode.FirstChild("usageOperationUpdateTime");
+    if(!usageOperationUpdateTimeNode.IsNull())
+    {
+      m_usageOperationUpdateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usageOperationUpdateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_usageOperationUpdateTimeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -819,6 +843,21 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
   }
 
+  if(m_platformDetailsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PlatformDetails=" << StringUtils::URLEncode(m_platformDetails.c_str()) << "&";
+  }
+
+  if(m_usageOperationHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".UsageOperation=" << StringUtils::URLEncode(m_usageOperation.c_str()) << "&";
+  }
+
+  if(m_usageOperationUpdateTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".UsageOperationUpdateTime=" << StringUtils::URLEncode(m_usageOperationUpdateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
 }
 
 void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1086,6 +1125,18 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_bootModeHasBeenSet)
   {
       oStream << location << ".BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
+  }
+  if(m_platformDetailsHasBeenSet)
+  {
+      oStream << location << ".PlatformDetails=" << StringUtils::URLEncode(m_platformDetails.c_str()) << "&";
+  }
+  if(m_usageOperationHasBeenSet)
+  {
+      oStream << location << ".UsageOperation=" << StringUtils::URLEncode(m_usageOperation.c_str()) << "&";
+  }
+  if(m_usageOperationUpdateTimeHasBeenSet)
+  {
+      oStream << location << ".UsageOperationUpdateTime=" << StringUtils::URLEncode(m_usageOperationUpdateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

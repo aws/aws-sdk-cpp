@@ -75,6 +75,12 @@ CheckoutLicenseResult& CheckoutLicenseResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("LicenseArn"))
+  {
+    m_licenseArn = jsonValue.GetString("LicenseArn");
+
+  }
+
 
 
   return *this;

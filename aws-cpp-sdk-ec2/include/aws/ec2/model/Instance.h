@@ -1825,42 +1825,42 @@ namespace Model
 
 
     /**
-     * <p>The license configurations.</p>
+     * <p>The license configurations for the instance.</p>
      */
     inline const Aws::Vector<LicenseConfiguration>& GetLicenses() const{ return m_licenses; }
 
     /**
-     * <p>The license configurations.</p>
+     * <p>The license configurations for the instance.</p>
      */
     inline bool LicensesHasBeenSet() const { return m_licensesHasBeenSet; }
 
     /**
-     * <p>The license configurations.</p>
+     * <p>The license configurations for the instance.</p>
      */
     inline void SetLicenses(const Aws::Vector<LicenseConfiguration>& value) { m_licensesHasBeenSet = true; m_licenses = value; }
 
     /**
-     * <p>The license configurations.</p>
+     * <p>The license configurations for the instance.</p>
      */
     inline void SetLicenses(Aws::Vector<LicenseConfiguration>&& value) { m_licensesHasBeenSet = true; m_licenses = std::move(value); }
 
     /**
-     * <p>The license configurations.</p>
+     * <p>The license configurations for the instance.</p>
      */
     inline Instance& WithLicenses(const Aws::Vector<LicenseConfiguration>& value) { SetLicenses(value); return *this;}
 
     /**
-     * <p>The license configurations.</p>
+     * <p>The license configurations for the instance.</p>
      */
     inline Instance& WithLicenses(Aws::Vector<LicenseConfiguration>&& value) { SetLicenses(std::move(value)); return *this;}
 
     /**
-     * <p>The license configurations.</p>
+     * <p>The license configurations for the instance.</p>
      */
     inline Instance& AddLicenses(const LicenseConfiguration& value) { m_licensesHasBeenSet = true; m_licenses.push_back(value); return *this; }
 
     /**
-     * <p>The license configurations.</p>
+     * <p>The license configurations for the instance.</p>
      */
     inline Instance& AddLicenses(LicenseConfiguration&& value) { m_licensesHasBeenSet = true; m_licenses.push_back(std::move(value)); return *this; }
 
@@ -1974,6 +1974,151 @@ namespace Model
      * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline Instance& WithBootMode(BootModeValues&& value) { SetBootMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The platform details value for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
+     * billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline const Aws::String& GetPlatformDetails() const{ return m_platformDetails; }
+
+    /**
+     * <p>The platform details value for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
+     * billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline bool PlatformDetailsHasBeenSet() const { return m_platformDetailsHasBeenSet; }
+
+    /**
+     * <p>The platform details value for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
+     * billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline void SetPlatformDetails(const Aws::String& value) { m_platformDetailsHasBeenSet = true; m_platformDetails = value; }
+
+    /**
+     * <p>The platform details value for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
+     * billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline void SetPlatformDetails(Aws::String&& value) { m_platformDetailsHasBeenSet = true; m_platformDetails = std::move(value); }
+
+    /**
+     * <p>The platform details value for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
+     * billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline void SetPlatformDetails(const char* value) { m_platformDetailsHasBeenSet = true; m_platformDetails.assign(value); }
+
+    /**
+     * <p>The platform details value for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
+     * billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline Instance& WithPlatformDetails(const Aws::String& value) { SetPlatformDetails(value); return *this;}
+
+    /**
+     * <p>The platform details value for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
+     * billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline Instance& WithPlatformDetails(Aws::String&& value) { SetPlatformDetails(std::move(value)); return *this;}
+
+    /**
+     * <p>The platform details value for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
+     * billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline Instance& WithPlatformDetails(const char* value) { SetPlatformDetails(value); return *this;}
+
+
+    /**
+     * <p>The usage operation value for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
+     * billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline const Aws::String& GetUsageOperation() const{ return m_usageOperation; }
+
+    /**
+     * <p>The usage operation value for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
+     * billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline bool UsageOperationHasBeenSet() const { return m_usageOperationHasBeenSet; }
+
+    /**
+     * <p>The usage operation value for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
+     * billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline void SetUsageOperation(const Aws::String& value) { m_usageOperationHasBeenSet = true; m_usageOperation = value; }
+
+    /**
+     * <p>The usage operation value for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
+     * billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline void SetUsageOperation(Aws::String&& value) { m_usageOperationHasBeenSet = true; m_usageOperation = std::move(value); }
+
+    /**
+     * <p>The usage operation value for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
+     * billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline void SetUsageOperation(const char* value) { m_usageOperationHasBeenSet = true; m_usageOperation.assign(value); }
+
+    /**
+     * <p>The usage operation value for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
+     * billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline Instance& WithUsageOperation(const Aws::String& value) { SetUsageOperation(value); return *this;}
+
+    /**
+     * <p>The usage operation value for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
+     * billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline Instance& WithUsageOperation(Aws::String&& value) { SetUsageOperation(std::move(value)); return *this;}
+
+    /**
+     * <p>The usage operation value for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
+     * billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline Instance& WithUsageOperation(const char* value) { SetUsageOperation(value); return *this;}
+
+
+    /**
+     * <p>The time that the usage operation was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUsageOperationUpdateTime() const{ return m_usageOperationUpdateTime; }
+
+    /**
+     * <p>The time that the usage operation was last updated.</p>
+     */
+    inline bool UsageOperationUpdateTimeHasBeenSet() const { return m_usageOperationUpdateTimeHasBeenSet; }
+
+    /**
+     * <p>The time that the usage operation was last updated.</p>
+     */
+    inline void SetUsageOperationUpdateTime(const Aws::Utils::DateTime& value) { m_usageOperationUpdateTimeHasBeenSet = true; m_usageOperationUpdateTime = value; }
+
+    /**
+     * <p>The time that the usage operation was last updated.</p>
+     */
+    inline void SetUsageOperationUpdateTime(Aws::Utils::DateTime&& value) { m_usageOperationUpdateTimeHasBeenSet = true; m_usageOperationUpdateTime = std::move(value); }
+
+    /**
+     * <p>The time that the usage operation was last updated.</p>
+     */
+    inline Instance& WithUsageOperationUpdateTime(const Aws::Utils::DateTime& value) { SetUsageOperationUpdateTime(value); return *this;}
+
+    /**
+     * <p>The time that the usage operation was last updated.</p>
+     */
+    inline Instance& WithUsageOperationUpdateTime(Aws::Utils::DateTime&& value) { SetUsageOperationUpdateTime(std::move(value)); return *this;}
 
   private:
 
@@ -2123,6 +2268,15 @@ namespace Model
 
     BootModeValues m_bootMode;
     bool m_bootModeHasBeenSet;
+
+    Aws::String m_platformDetails;
+    bool m_platformDetailsHasBeenSet;
+
+    Aws::String m_usageOperation;
+    bool m_usageOperationHasBeenSet;
+
+    Aws::Utils::DateTime m_usageOperationUpdateTime;
+    bool m_usageOperationUpdateTimeHasBeenSet;
   };
 
 } // namespace Model

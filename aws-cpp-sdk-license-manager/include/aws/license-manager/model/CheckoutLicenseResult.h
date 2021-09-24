@@ -276,6 +276,42 @@ namespace Model
      */
     inline CheckoutLicenseResult& WithExpiration(const char* value) { SetExpiration(value); return *this;}
 
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the checkout license.</p>
+     */
+    inline const Aws::String& GetLicenseArn() const{ return m_licenseArn; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the checkout license.</p>
+     */
+    inline void SetLicenseArn(const Aws::String& value) { m_licenseArn = value; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the checkout license.</p>
+     */
+    inline void SetLicenseArn(Aws::String&& value) { m_licenseArn = std::move(value); }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the checkout license.</p>
+     */
+    inline void SetLicenseArn(const char* value) { m_licenseArn.assign(value); }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the checkout license.</p>
+     */
+    inline CheckoutLicenseResult& WithLicenseArn(const Aws::String& value) { SetLicenseArn(value); return *this;}
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the checkout license.</p>
+     */
+    inline CheckoutLicenseResult& WithLicenseArn(Aws::String&& value) { SetLicenseArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the checkout license.</p>
+     */
+    inline CheckoutLicenseResult& WithLicenseArn(const char* value) { SetLicenseArn(value); return *this;}
+
   private:
 
     CheckoutType m_checkoutType;
@@ -291,6 +327,8 @@ namespace Model
     Aws::String m_issuedAt;
 
     Aws::String m_expiration;
+
+    Aws::String m_licenseArn;
   };
 
 } // namespace Model

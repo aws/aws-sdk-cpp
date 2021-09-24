@@ -18352,9 +18352,8 @@ namespace Model
          * launched, it is automatically associated with the host on which it lands. If the
          * instance is restarted or rebooted, this relationship persists.</p> </li> <li>
          * <p>Change the Dedicated Host with which an instance is associated.</p> </li>
-         * <li> <p>Change the instance tenancy of an instance from <code>host</code> to
-         * <code>dedicated</code>, or from <code>dedicated</code> to <code>host</code>.</p>
-         * </li> <li> <p>Move an instance to or from a <a
+         * <li> <p>Change the instance tenancy of an instance.</p> </li> <li> <p>Move an
+         * instance to or from a <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">placement
          * group</a>.</p> </li> </ul> <p>At least one attribute for affinity, host ID,
          * tenancy, or placement group name must be specified in the request. Affinity and
@@ -18375,9 +18374,8 @@ namespace Model
          * launched, it is automatically associated with the host on which it lands. If the
          * instance is restarted or rebooted, this relationship persists.</p> </li> <li>
          * <p>Change the Dedicated Host with which an instance is associated.</p> </li>
-         * <li> <p>Change the instance tenancy of an instance from <code>host</code> to
-         * <code>dedicated</code>, or from <code>dedicated</code> to <code>host</code>.</p>
-         * </li> <li> <p>Move an instance to or from a <a
+         * <li> <p>Change the instance tenancy of an instance.</p> </li> <li> <p>Move an
+         * instance to or from a <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">placement
          * group</a>.</p> </li> </ul> <p>At least one attribute for affinity, host ID,
          * tenancy, or placement group name must be specified in the request. Affinity and
@@ -18400,9 +18398,8 @@ namespace Model
          * launched, it is automatically associated with the host on which it lands. If the
          * instance is restarted or rebooted, this relationship persists.</p> </li> <li>
          * <p>Change the Dedicated Host with which an instance is associated.</p> </li>
-         * <li> <p>Change the instance tenancy of an instance from <code>host</code> to
-         * <code>dedicated</code>, or from <code>dedicated</code> to <code>host</code>.</p>
-         * </li> <li> <p>Move an instance to or from a <a
+         * <li> <p>Change the instance tenancy of an instance.</p> </li> <li> <p>Move an
+         * instance to or from a <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">placement
          * group</a>.</p> </li> </ul> <p>At least one attribute for affinity, host ID,
          * tenancy, or placement group name must be specified in the request. Affinity and

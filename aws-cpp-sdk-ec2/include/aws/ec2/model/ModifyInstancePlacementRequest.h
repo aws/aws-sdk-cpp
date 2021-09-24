@@ -225,56 +225,56 @@ namespace Model
 
 
     /**
-     * <p>The tenancy for the instance.</p> <p>For T3 instances, you can't change the
-     * tenancy from <code>dedicated</code> to <code>host</code>, or from
+     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you can't
+     * change the tenancy from <code>dedicated</code> to <code>host</code>, or from
      * <code>host</code> to <code>dedicated</code>. Attempting to make one of these
      * unsupported tenancy changes results in the <code>InvalidTenancy</code> error
-     * code.</p>
+     * code.</p> 
      */
     inline const HostTenancy& GetTenancy() const{ return m_tenancy; }
 
     /**
-     * <p>The tenancy for the instance.</p> <p>For T3 instances, you can't change the
-     * tenancy from <code>dedicated</code> to <code>host</code>, or from
+     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you can't
+     * change the tenancy from <code>dedicated</code> to <code>host</code>, or from
      * <code>host</code> to <code>dedicated</code>. Attempting to make one of these
      * unsupported tenancy changes results in the <code>InvalidTenancy</code> error
-     * code.</p>
+     * code.</p> 
      */
     inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
 
     /**
-     * <p>The tenancy for the instance.</p> <p>For T3 instances, you can't change the
-     * tenancy from <code>dedicated</code> to <code>host</code>, or from
+     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you can't
+     * change the tenancy from <code>dedicated</code> to <code>host</code>, or from
      * <code>host</code> to <code>dedicated</code>. Attempting to make one of these
      * unsupported tenancy changes results in the <code>InvalidTenancy</code> error
-     * code.</p>
+     * code.</p> 
      */
     inline void SetTenancy(const HostTenancy& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
 
     /**
-     * <p>The tenancy for the instance.</p> <p>For T3 instances, you can't change the
-     * tenancy from <code>dedicated</code> to <code>host</code>, or from
+     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you can't
+     * change the tenancy from <code>dedicated</code> to <code>host</code>, or from
      * <code>host</code> to <code>dedicated</code>. Attempting to make one of these
      * unsupported tenancy changes results in the <code>InvalidTenancy</code> error
-     * code.</p>
+     * code.</p> 
      */
     inline void SetTenancy(HostTenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
 
     /**
-     * <p>The tenancy for the instance.</p> <p>For T3 instances, you can't change the
-     * tenancy from <code>dedicated</code> to <code>host</code>, or from
+     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you can't
+     * change the tenancy from <code>dedicated</code> to <code>host</code>, or from
      * <code>host</code> to <code>dedicated</code>. Attempting to make one of these
      * unsupported tenancy changes results in the <code>InvalidTenancy</code> error
-     * code.</p>
+     * code.</p> 
      */
     inline ModifyInstancePlacementRequest& WithTenancy(const HostTenancy& value) { SetTenancy(value); return *this;}
 
     /**
-     * <p>The tenancy for the instance.</p> <p>For T3 instances, you can't change the
-     * tenancy from <code>dedicated</code> to <code>host</code>, or from
+     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you can't
+     * change the tenancy from <code>dedicated</code> to <code>host</code>, or from
      * <code>host</code> to <code>dedicated</code>. Attempting to make one of these
      * unsupported tenancy changes results in the <code>InvalidTenancy</code> error
-     * code.</p>
+     * code.</p> 
      */
     inline ModifyInstancePlacementRequest& WithTenancy(HostTenancy&& value) { SetTenancy(std::move(value)); return *this;}
 
