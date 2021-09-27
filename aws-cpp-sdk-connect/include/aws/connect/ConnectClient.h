@@ -1008,7 +1008,7 @@ namespace Model
         virtual void CreateInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Create an AppIntegration association with an Amazon Connect
+         * <p>Creates an AWS resource association with an Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">AWS
          * API Reference</a></p>
@@ -1016,7 +1016,7 @@ namespace Model
         virtual Model::CreateIntegrationAssociationOutcome CreateIntegrationAssociation(const Model::CreateIntegrationAssociationRequest& request) const;
 
         /**
-         * <p>Create an AppIntegration association with an Amazon Connect
+         * <p>Creates an AWS resource association with an Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">AWS
          * API Reference</a></p>
@@ -1026,7 +1026,7 @@ namespace Model
         virtual Model::CreateIntegrationAssociationOutcomeCallable CreateIntegrationAssociationCallable(const Model::CreateIntegrationAssociationRequest& request) const;
 
         /**
-         * <p>Create an AppIntegration association with an Amazon Connect
+         * <p>Creates an AWS resource association with an Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">AWS
          * API Reference</a></p>
@@ -1120,16 +1120,16 @@ namespace Model
         virtual void CreateRoutingProfileAsync(const Model::CreateRoutingProfileRequest& request, const CreateRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a use case for an AppIntegration association.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a use case for an integration association.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUseCase">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateUseCaseOutcome CreateUseCase(const Model::CreateUseCaseRequest& request) const;
 
         /**
-         * <p>Creates a use case for an AppIntegration association.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a use case for an integration association.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUseCase">AWS
          * API Reference</a></p>
          *
@@ -1138,8 +1138,8 @@ namespace Model
         virtual Model::CreateUseCaseOutcomeCallable CreateUseCaseCallable(const Model::CreateUseCaseRequest& request) const;
 
         /**
-         * <p>Creates a use case for an AppIntegration association.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a use case for an integration association.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUseCase">AWS
          * API Reference</a></p>
          *
@@ -1284,7 +1284,7 @@ namespace Model
         virtual void DeleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an AppIntegration association from an Amazon Connect instance. The
+         * <p>Deletes an AWS resource association from an Amazon Connect instance. The
          * association must not have any use cases associated with it.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation">AWS
@@ -1293,7 +1293,7 @@ namespace Model
         virtual Model::DeleteIntegrationAssociationOutcome DeleteIntegrationAssociation(const Model::DeleteIntegrationAssociationRequest& request) const;
 
         /**
-         * <p>Deletes an AppIntegration association from an Amazon Connect instance. The
+         * <p>Deletes an AWS resource association from an Amazon Connect instance. The
          * association must not have any use cases associated with it.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation">AWS
@@ -1304,7 +1304,7 @@ namespace Model
         virtual Model::DeleteIntegrationAssociationOutcomeCallable DeleteIntegrationAssociationCallable(const Model::DeleteIntegrationAssociationRequest& request) const;
 
         /**
-         * <p>Deletes an AppIntegration association from an Amazon Connect instance. The
+         * <p>Deletes an AWS resource association from an Amazon Connect instance. The
          * association must not have any use cases associated with it.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation">AWS
@@ -1340,16 +1340,16 @@ namespace Model
         virtual void DeleteQuickConnectAsync(const Model::DeleteQuickConnectRequest& request, const DeleteQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a use case from an AppIntegration association.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a use case from an integration association.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUseCase">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteUseCaseOutcome DeleteUseCase(const Model::DeleteUseCaseRequest& request) const;
 
         /**
-         * <p>Deletes a use case from an AppIntegration association.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a use case from an integration association.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUseCase">AWS
          * API Reference</a></p>
          *
@@ -1358,8 +1358,8 @@ namespace Model
         virtual Model::DeleteUseCaseOutcomeCallable DeleteUseCaseCallable(const Model::DeleteUseCaseRequest& request) const;
 
         /**
-         * <p>Deletes a use case from an AppIntegration association.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a use case from an integration association.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUseCase">AWS
          * API Reference</a></p>
          *
@@ -2452,7 +2452,7 @@ namespace Model
         virtual void ListInstancesAsync(const Model::ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides summary information about the AppIntegration associations for the
+         * <p>Provides summary information about the AWS resource associations for the
          * specified Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations">AWS
          * API Reference</a></p>
@@ -2460,7 +2460,7 @@ namespace Model
         virtual Model::ListIntegrationAssociationsOutcome ListIntegrationAssociations(const Model::ListIntegrationAssociationsRequest& request) const;
 
         /**
-         * <p>Provides summary information about the AppIntegration associations for the
+         * <p>Provides summary information about the AWS resource associations for the
          * specified Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations">AWS
          * API Reference</a></p>
@@ -2470,7 +2470,7 @@ namespace Model
         virtual Model::ListIntegrationAssociationsOutcomeCallable ListIntegrationAssociationsCallable(const Model::ListIntegrationAssociationsRequest& request) const;
 
         /**
-         * <p>Provides summary information about the AppIntegration associations for the
+         * <p>Provides summary information about the AWS resource associations for the
          * specified Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations">AWS
          * API Reference</a></p>
@@ -2900,14 +2900,16 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the use cases. </p><p><h3>See Also:</h3>   <a
+         * <p>Lists the use cases for the integration association. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCases">AWS
          * API Reference</a></p>
          */
         virtual Model::ListUseCasesOutcome ListUseCases(const Model::ListUseCasesRequest& request) const;
 
         /**
-         * <p>Lists the use cases. </p><p><h3>See Also:</h3>   <a
+         * <p>Lists the use cases for the integration association. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCases">AWS
          * API Reference</a></p>
          *
@@ -2916,7 +2918,8 @@ namespace Model
         virtual Model::ListUseCasesOutcomeCallable ListUseCasesCallable(const Model::ListUseCasesRequest& request) const;
 
         /**
-         * <p>Lists the use cases. </p><p><h3>See Also:</h3>   <a
+         * <p>Lists the use cases for the integration association. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCases">AWS
          * API Reference</a></p>
          *
@@ -3161,6 +3164,11 @@ namespace Model
          * quota increase request. For more information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
          * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+         * </p>   <p>Campaign calls are not allowed by default. Before you can
+         * make a call with <code>TrafficType</code> = <code>CAMPAIGN</code>, you must
+         * submit a service quota increase request. For more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+         * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
          * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundVoiceContact">AWS
          * API Reference</a></p>
@@ -3178,6 +3186,11 @@ namespace Model
          * seconds, it fails.</p>  <p>UK numbers with a 447 prefix are not allowed by
          * default. Before you can dial these UK mobile numbers, you must submit a service
          * quota increase request. For more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+         * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+         * </p>   <p>Campaign calls are not allowed by default. Before you can
+         * make a call with <code>TrafficType</code> = <code>CAMPAIGN</code>, you must
+         * submit a service quota increase request. For more information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
          * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
          * </p> <p><h3>See Also:</h3>   <a
@@ -3199,6 +3212,11 @@ namespace Model
          * seconds, it fails.</p>  <p>UK numbers with a 447 prefix are not allowed by
          * default. Before you can dial these UK mobile numbers, you must submit a service
          * quota increase request. For more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+         * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+         * </p>   <p>Campaign calls are not allowed by default. Before you can
+         * make a call with <code>TrafficType</code> = <code>CAMPAIGN</code>, you must
+         * submit a service quota increase request. For more information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
          * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
          * </p> <p><h3>See Also:</h3>   <a

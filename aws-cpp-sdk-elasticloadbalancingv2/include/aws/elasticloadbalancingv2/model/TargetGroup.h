@@ -557,48 +557,54 @@ namespace Model
     /**
      * <p>The type of target that you must specify when registering targets with this
      * target group. The possible values are <code>instance</code> (register targets by
-     * instance ID), <code>ip</code> (register targets by IP address), or
-     * <code>lambda</code> (register a single Lambda function as a target).</p>
+     * instance ID), <code>ip</code> (register targets by IP address),
+     * <code>lambda</code> (register a single Lambda function as a target), or
+     * <code>alb</code> (register a single Application Load Balancer as a target).</p>
      */
     inline const TargetTypeEnum& GetTargetType() const{ return m_targetType; }
 
     /**
      * <p>The type of target that you must specify when registering targets with this
      * target group. The possible values are <code>instance</code> (register targets by
-     * instance ID), <code>ip</code> (register targets by IP address), or
-     * <code>lambda</code> (register a single Lambda function as a target).</p>
+     * instance ID), <code>ip</code> (register targets by IP address),
+     * <code>lambda</code> (register a single Lambda function as a target), or
+     * <code>alb</code> (register a single Application Load Balancer as a target).</p>
      */
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
 
     /**
      * <p>The type of target that you must specify when registering targets with this
      * target group. The possible values are <code>instance</code> (register targets by
-     * instance ID), <code>ip</code> (register targets by IP address), or
-     * <code>lambda</code> (register a single Lambda function as a target).</p>
+     * instance ID), <code>ip</code> (register targets by IP address),
+     * <code>lambda</code> (register a single Lambda function as a target), or
+     * <code>alb</code> (register a single Application Load Balancer as a target).</p>
      */
     inline void SetTargetType(const TargetTypeEnum& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
 
     /**
      * <p>The type of target that you must specify when registering targets with this
      * target group. The possible values are <code>instance</code> (register targets by
-     * instance ID), <code>ip</code> (register targets by IP address), or
-     * <code>lambda</code> (register a single Lambda function as a target).</p>
+     * instance ID), <code>ip</code> (register targets by IP address),
+     * <code>lambda</code> (register a single Lambda function as a target), or
+     * <code>alb</code> (register a single Application Load Balancer as a target).</p>
      */
     inline void SetTargetType(TargetTypeEnum&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
 
     /**
      * <p>The type of target that you must specify when registering targets with this
      * target group. The possible values are <code>instance</code> (register targets by
-     * instance ID), <code>ip</code> (register targets by IP address), or
-     * <code>lambda</code> (register a single Lambda function as a target).</p>
+     * instance ID), <code>ip</code> (register targets by IP address),
+     * <code>lambda</code> (register a single Lambda function as a target), or
+     * <code>alb</code> (register a single Application Load Balancer as a target).</p>
      */
     inline TargetGroup& WithTargetType(const TargetTypeEnum& value) { SetTargetType(value); return *this;}
 
     /**
      * <p>The type of target that you must specify when registering targets with this
      * target group. The possible values are <code>instance</code> (register targets by
-     * instance ID), <code>ip</code> (register targets by IP address), or
-     * <code>lambda</code> (register a single Lambda function as a target).</p>
+     * instance ID), <code>ip</code> (register targets by IP address),
+     * <code>lambda</code> (register a single Lambda function as a target), or
+     * <code>alb</code> (register a single Application Load Balancer as a target).</p>
      */
     inline TargetGroup& WithTargetType(TargetTypeEnum&& value) { SetTargetType(std::move(value)); return *this;}
 

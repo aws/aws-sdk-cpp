@@ -12,6 +12,7 @@
 #include <aws/pinpoint/model/JourneySchedule.h>
 #include <aws/pinpoint/model/StartCondition.h>
 #include <aws/pinpoint/model/State.h>
+#include <aws/pinpoint/model/JourneyChannelSettings.h>
 #include <aws/pinpoint/model/Activity.h>
 #include <utility>
 
@@ -870,6 +871,37 @@ namespace Model
      */
     inline JourneyResponse& WithRefreshOnSegmentUpdate(bool value) { SetRefreshOnSegmentUpdate(value); return *this;}
 
+
+    /**
+     * <p>The channel-specific configurations for the journey.</p>
+     */
+    inline const JourneyChannelSettings& GetJourneyChannelSettings() const{ return m_journeyChannelSettings; }
+
+    /**
+     * <p>The channel-specific configurations for the journey.</p>
+     */
+    inline bool JourneyChannelSettingsHasBeenSet() const { return m_journeyChannelSettingsHasBeenSet; }
+
+    /**
+     * <p>The channel-specific configurations for the journey.</p>
+     */
+    inline void SetJourneyChannelSettings(const JourneyChannelSettings& value) { m_journeyChannelSettingsHasBeenSet = true; m_journeyChannelSettings = value; }
+
+    /**
+     * <p>The channel-specific configurations for the journey.</p>
+     */
+    inline void SetJourneyChannelSettings(JourneyChannelSettings&& value) { m_journeyChannelSettingsHasBeenSet = true; m_journeyChannelSettings = std::move(value); }
+
+    /**
+     * <p>The channel-specific configurations for the journey.</p>
+     */
+    inline JourneyResponse& WithJourneyChannelSettings(const JourneyChannelSettings& value) { SetJourneyChannelSettings(value); return *this;}
+
+    /**
+     * <p>The channel-specific configurations for the journey.</p>
+     */
+    inline JourneyResponse& WithJourneyChannelSettings(JourneyChannelSettings&& value) { SetJourneyChannelSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::Map<Aws::String, Activity> m_activities;
@@ -922,6 +954,9 @@ namespace Model
 
     bool m_refreshOnSegmentUpdate;
     bool m_refreshOnSegmentUpdateHasBeenSet;
+
+    JourneyChannelSettings m_journeyChannelSettings;
+    bool m_journeyChannelSettingsHasBeenSet;
   };
 
 } // namespace Model

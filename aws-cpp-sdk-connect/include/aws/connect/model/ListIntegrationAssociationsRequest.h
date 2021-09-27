@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/ConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connect/model/IntegrationType.h>
 #include <utility>
 
 namespace Aws
@@ -88,6 +89,37 @@ namespace Model
 
 
     /**
+     * <p/>
+     */
+    inline const IntegrationType& GetIntegrationType() const{ return m_integrationType; }
+
+    /**
+     * <p/>
+     */
+    inline bool IntegrationTypeHasBeenSet() const { return m_integrationTypeHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetIntegrationType(const IntegrationType& value) { m_integrationTypeHasBeenSet = true; m_integrationType = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetIntegrationType(IntegrationType&& value) { m_integrationTypeHasBeenSet = true; m_integrationType = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline ListIntegrationAssociationsRequest& WithIntegrationType(const IntegrationType& value) { SetIntegrationType(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline ListIntegrationAssociationsRequest& WithIntegrationType(IntegrationType&& value) { SetIntegrationType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
      */
@@ -160,6 +192,9 @@ namespace Model
 
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
+    IntegrationType m_integrationType;
+    bool m_integrationTypeHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

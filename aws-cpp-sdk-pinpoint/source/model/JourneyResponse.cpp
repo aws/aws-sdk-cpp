@@ -39,7 +39,8 @@ JourneyResponse::JourneyResponse() :
     m_waitForQuietTime(false),
     m_waitForQuietTimeHasBeenSet(false),
     m_refreshOnSegmentUpdate(false),
-    m_refreshOnSegmentUpdateHasBeenSet(false)
+    m_refreshOnSegmentUpdateHasBeenSet(false),
+    m_journeyChannelSettingsHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ JourneyResponse::JourneyResponse(JsonView jsonValue) :
     m_waitForQuietTime(false),
     m_waitForQuietTimeHasBeenSet(false),
     m_refreshOnSegmentUpdate(false),
-    m_refreshOnSegmentUpdateHasBeenSet(false)
+    m_refreshOnSegmentUpdateHasBeenSet(false),
+    m_journeyChannelSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -196,6 +198,13 @@ JourneyResponse& JourneyResponse::operator =(JsonView jsonValue)
     m_refreshOnSegmentUpdateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("JourneyChannelSettings"))
+  {
+    m_journeyChannelSettings = jsonValue.GetObject("JourneyChannelSettings");
+
+    m_journeyChannelSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -311,6 +320,12 @@ JsonValue JourneyResponse::Jsonize() const
   if(m_refreshOnSegmentUpdateHasBeenSet)
   {
    payload.WithBool("RefreshOnSegmentUpdate", m_refreshOnSegmentUpdate);
+
+  }
+
+  if(m_journeyChannelSettingsHasBeenSet)
+  {
+   payload.WithObject("JourneyChannelSettings", m_journeyChannelSettings.Jsonize());
 
   }
 

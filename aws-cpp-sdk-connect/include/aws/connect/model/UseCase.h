@@ -121,38 +121,38 @@ namespace Model
 
 
     /**
-     * <p>The type of use case to associate to the AppIntegration association. Each
-     * AppIntegration association can have only one of each use case type.</p>
+     * <p>The type of use case to associate to the integration association. Each
+     * integration association can have only one of each use case type.</p>
      */
     inline const UseCaseType& GetUseCaseType() const{ return m_useCaseType; }
 
     /**
-     * <p>The type of use case to associate to the AppIntegration association. Each
-     * AppIntegration association can have only one of each use case type.</p>
+     * <p>The type of use case to associate to the integration association. Each
+     * integration association can have only one of each use case type.</p>
      */
     inline bool UseCaseTypeHasBeenSet() const { return m_useCaseTypeHasBeenSet; }
 
     /**
-     * <p>The type of use case to associate to the AppIntegration association. Each
-     * AppIntegration association can have only one of each use case type.</p>
+     * <p>The type of use case to associate to the integration association. Each
+     * integration association can have only one of each use case type.</p>
      */
     inline void SetUseCaseType(const UseCaseType& value) { m_useCaseTypeHasBeenSet = true; m_useCaseType = value; }
 
     /**
-     * <p>The type of use case to associate to the AppIntegration association. Each
-     * AppIntegration association can have only one of each use case type.</p>
+     * <p>The type of use case to associate to the integration association. Each
+     * integration association can have only one of each use case type.</p>
      */
     inline void SetUseCaseType(UseCaseType&& value) { m_useCaseTypeHasBeenSet = true; m_useCaseType = std::move(value); }
 
     /**
-     * <p>The type of use case to associate to the AppIntegration association. Each
-     * AppIntegration association can have only one of each use case type.</p>
+     * <p>The type of use case to associate to the integration association. Each
+     * integration association can have only one of each use case type.</p>
      */
     inline UseCase& WithUseCaseType(const UseCaseType& value) { SetUseCaseType(value); return *this;}
 
     /**
-     * <p>The type of use case to associate to the AppIntegration association. Each
-     * AppIntegration association can have only one of each use case type.</p>
+     * <p>The type of use case to associate to the integration association. Each
+     * integration association can have only one of each use case type.</p>
      */
     inline UseCase& WithUseCaseType(UseCaseType&& value) { SetUseCaseType(std::move(value)); return *this;}
 

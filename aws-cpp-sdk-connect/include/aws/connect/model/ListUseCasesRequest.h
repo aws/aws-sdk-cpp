@@ -21,8 +21,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides summary information about the use cases for the specified Amazon
-   * Connect AppIntegration association.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides summary information about the use cases for the specified
+   * integration association.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCasesRequest">AWS
    * API Reference</a></p>
    */

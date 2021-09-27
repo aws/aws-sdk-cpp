@@ -16,7 +16,8 @@ namespace Model
   enum class UseCaseType
   {
     NOT_SET,
-    RULES_EVALUATION
+    RULES_EVALUATION,
+    CONNECT_CAMPAIGNS
   };
 
 namespace UseCaseTypeMapper

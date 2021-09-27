@@ -251,11 +251,12 @@ namespace Model
      * in real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
      * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
-     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
-     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
-     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
-     * report: <a
+     * groupings, Unit says SECONDS and the Value is returned in SECONDS. </p> <p>When
+     * you do not use groupings, Unit says SECONDS but the Value is returned in
+     * MILLISECONDS. For example, if you get a response like this:</p> <p> <code>{
+     * "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
+     * </code>}</p> <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in
+     * real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
      * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
      * metrics report: <a
@@ -303,11 +304,12 @@ namespace Model
      * in real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
      * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
-     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
-     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
-     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
-     * report: <a
+     * groupings, Unit says SECONDS and the Value is returned in SECONDS. </p> <p>When
+     * you do not use groupings, Unit says SECONDS but the Value is returned in
+     * MILLISECONDS. For example, if you get a response like this:</p> <p> <code>{
+     * "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
+     * </code>}</p> <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in
+     * real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
      * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
      * metrics report: <a
@@ -355,11 +357,12 @@ namespace Model
      * in real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
      * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
-     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
-     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
-     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
-     * report: <a
+     * groupings, Unit says SECONDS and the Value is returned in SECONDS. </p> <p>When
+     * you do not use groupings, Unit says SECONDS but the Value is returned in
+     * MILLISECONDS. For example, if you get a response like this:</p> <p> <code>{
+     * "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
+     * </code>}</p> <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in
+     * real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
      * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
      * metrics report: <a
@@ -407,11 +410,12 @@ namespace Model
      * in real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
      * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
-     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
-     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
-     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
-     * report: <a
+     * groupings, Unit says SECONDS and the Value is returned in SECONDS. </p> <p>When
+     * you do not use groupings, Unit says SECONDS but the Value is returned in
+     * MILLISECONDS. For example, if you get a response like this:</p> <p> <code>{
+     * "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
+     * </code>}</p> <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in
+     * real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
      * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
      * metrics report: <a
@@ -459,11 +463,12 @@ namespace Model
      * in real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
      * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
-     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
-     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
-     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
-     * report: <a
+     * groupings, Unit says SECONDS and the Value is returned in SECONDS. </p> <p>When
+     * you do not use groupings, Unit says SECONDS but the Value is returned in
+     * MILLISECONDS. For example, if you get a response like this:</p> <p> <code>{
+     * "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
+     * </code>}</p> <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in
+     * real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
      * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
      * metrics report: <a
@@ -511,11 +516,12 @@ namespace Model
      * in real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
      * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
-     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
-     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
-     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
-     * report: <a
+     * groupings, Unit says SECONDS and the Value is returned in SECONDS. </p> <p>When
+     * you do not use groupings, Unit says SECONDS but the Value is returned in
+     * MILLISECONDS. For example, if you get a response like this:</p> <p> <code>{
+     * "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
+     * </code>}</p> <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in
+     * real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
      * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
      * metrics report: <a
@@ -563,11 +569,12 @@ namespace Model
      * in real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
      * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
-     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
-     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
-     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
-     * report: <a
+     * groupings, Unit says SECONDS and the Value is returned in SECONDS. </p> <p>When
+     * you do not use groupings, Unit says SECONDS but the Value is returned in
+     * MILLISECONDS. For example, if you get a response like this:</p> <p> <code>{
+     * "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
+     * </code>}</p> <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in
+     * real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
      * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
      * metrics report: <a
@@ -615,11 +622,12 @@ namespace Model
      * in real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
      * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
-     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
-     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
-     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
-     * report: <a
+     * groupings, Unit says SECONDS and the Value is returned in SECONDS. </p> <p>When
+     * you do not use groupings, Unit says SECONDS but the Value is returned in
+     * MILLISECONDS. For example, if you get a response like this:</p> <p> <code>{
+     * "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
+     * </code>}</p> <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in
+     * real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
      * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
      * metrics report: <a

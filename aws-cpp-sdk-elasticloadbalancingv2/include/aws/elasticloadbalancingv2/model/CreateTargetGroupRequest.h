@@ -451,32 +451,32 @@ namespace Model
     /**
      * <p>Indicates whether health checks are enabled. If the target type is
      * <code>lambda</code>, health checks are disabled by default but can be enabled.
-     * If the target type is <code>instance</code> or <code>ip</code>, health checks
-     * are always enabled and cannot be disabled.</p>
+     * If the target type is <code>instance</code>, <code>ip</code>, or
+     * <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
      */
     inline bool GetHealthCheckEnabled() const{ return m_healthCheckEnabled; }
 
     /**
      * <p>Indicates whether health checks are enabled. If the target type is
      * <code>lambda</code>, health checks are disabled by default but can be enabled.
-     * If the target type is <code>instance</code> or <code>ip</code>, health checks
-     * are always enabled and cannot be disabled.</p>
+     * If the target type is <code>instance</code>, <code>ip</code>, or
+     * <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
      */
     inline bool HealthCheckEnabledHasBeenSet() const { return m_healthCheckEnabledHasBeenSet; }
 
     /**
      * <p>Indicates whether health checks are enabled. If the target type is
      * <code>lambda</code>, health checks are disabled by default but can be enabled.
-     * If the target type is <code>instance</code> or <code>ip</code>, health checks
-     * are always enabled and cannot be disabled.</p>
+     * If the target type is <code>instance</code>, <code>ip</code>, or
+     * <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
      */
     inline void SetHealthCheckEnabled(bool value) { m_healthCheckEnabledHasBeenSet = true; m_healthCheckEnabled = value; }
 
     /**
      * <p>Indicates whether health checks are enabled. If the target type is
      * <code>lambda</code>, health checks are disabled by default but can be enabled.
-     * If the target type is <code>instance</code> or <code>ip</code>, health checks
-     * are always enabled and cannot be disabled.</p>
+     * If the target type is <code>instance</code>, <code>ip</code>, or
+     * <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckEnabled(bool value) { SetHealthCheckEnabled(value); return *this;}
 
@@ -753,7 +753,8 @@ namespace Model
      * (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
      * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
      * <li> <p> <code>lambda</code> - Register a single Lambda function as a
-     * target.</p> </li> </ul>
+     * target.</p> </li> <li> <p> <code>alb</code> - Register a single Application Load
+     * Balancer as a target.</p> </li> </ul>
      */
     inline const TargetTypeEnum& GetTargetType() const{ return m_targetType; }
 
@@ -767,7 +768,8 @@ namespace Model
      * (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
      * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
      * <li> <p> <code>lambda</code> - Register a single Lambda function as a
-     * target.</p> </li> </ul>
+     * target.</p> </li> <li> <p> <code>alb</code> - Register a single Application Load
+     * Balancer as a target.</p> </li> </ul>
      */
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
 
@@ -781,7 +783,8 @@ namespace Model
      * (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
      * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
      * <li> <p> <code>lambda</code> - Register a single Lambda function as a
-     * target.</p> </li> </ul>
+     * target.</p> </li> <li> <p> <code>alb</code> - Register a single Application Load
+     * Balancer as a target.</p> </li> </ul>
      */
     inline void SetTargetType(const TargetTypeEnum& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
 
@@ -795,7 +798,8 @@ namespace Model
      * (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
      * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
      * <li> <p> <code>lambda</code> - Register a single Lambda function as a
-     * target.</p> </li> </ul>
+     * target.</p> </li> <li> <p> <code>alb</code> - Register a single Application Load
+     * Balancer as a target.</p> </li> </ul>
      */
     inline void SetTargetType(TargetTypeEnum&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
 
@@ -809,7 +813,8 @@ namespace Model
      * (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
      * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
      * <li> <p> <code>lambda</code> - Register a single Lambda function as a
-     * target.</p> </li> </ul>
+     * target.</p> </li> <li> <p> <code>alb</code> - Register a single Application Load
+     * Balancer as a target.</p> </li> </ul>
      */
     inline CreateTargetGroupRequest& WithTargetType(const TargetTypeEnum& value) { SetTargetType(value); return *this;}
 
@@ -823,7 +828,8 @@ namespace Model
      * (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
      * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
      * <li> <p> <code>lambda</code> - Register a single Lambda function as a
-     * target.</p> </li> </ul>
+     * target.</p> </li> <li> <p> <code>alb</code> - Register a single Application Load
+     * Balancer as a target.</p> </li> </ul>
      */
     inline CreateTargetGroupRequest& WithTargetType(TargetTypeEnum&& value) { SetTargetType(std::move(value)); return *this;}
 

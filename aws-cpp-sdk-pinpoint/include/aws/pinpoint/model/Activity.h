@@ -15,6 +15,7 @@
 #include <aws/pinpoint/model/RandomSplitActivity.h>
 #include <aws/pinpoint/model/SMSMessageActivity.h>
 #include <aws/pinpoint/model/WaitActivity.h>
+#include <aws/pinpoint/model/ContactCenterActivity.h>
 #include <utility>
 
 namespace Aws
@@ -444,6 +445,43 @@ namespace Model
      */
     inline Activity& WithWait(WaitActivity&& value) { SetWait(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The settings for a connect activity. This type of activity initiates a
+     * contact center call to participants.</p>
+     */
+    inline const ContactCenterActivity& GetContactCenter() const{ return m_contactCenter; }
+
+    /**
+     * <p>The settings for a connect activity. This type of activity initiates a
+     * contact center call to participants.</p>
+     */
+    inline bool ContactCenterHasBeenSet() const { return m_contactCenterHasBeenSet; }
+
+    /**
+     * <p>The settings for a connect activity. This type of activity initiates a
+     * contact center call to participants.</p>
+     */
+    inline void SetContactCenter(const ContactCenterActivity& value) { m_contactCenterHasBeenSet = true; m_contactCenter = value; }
+
+    /**
+     * <p>The settings for a connect activity. This type of activity initiates a
+     * contact center call to participants.</p>
+     */
+    inline void SetContactCenter(ContactCenterActivity&& value) { m_contactCenterHasBeenSet = true; m_contactCenter = std::move(value); }
+
+    /**
+     * <p>The settings for a connect activity. This type of activity initiates a
+     * contact center call to participants.</p>
+     */
+    inline Activity& WithContactCenter(const ContactCenterActivity& value) { SetContactCenter(value); return *this;}
+
+    /**
+     * <p>The settings for a connect activity. This type of activity initiates a
+     * contact center call to participants.</p>
+     */
+    inline Activity& WithContactCenter(ContactCenterActivity&& value) { SetContactCenter(std::move(value)); return *this;}
+
   private:
 
     CustomMessageActivity m_cUSTOM;
@@ -475,6 +513,9 @@ namespace Model
 
     WaitActivity m_wait;
     bool m_waitHasBeenSet;
+
+    ContactCenterActivity m_contactCenter;
+    bool m_contactCenterHasBeenSet;
   };
 
 } // namespace Model

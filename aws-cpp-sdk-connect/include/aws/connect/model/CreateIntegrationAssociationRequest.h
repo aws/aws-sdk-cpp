@@ -157,114 +157,136 @@ namespace Model
 
 
     /**
-     * <p>The URL for the external application.</p>
+     * <p>The URL for the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline const Aws::String& GetSourceApplicationUrl() const{ return m_sourceApplicationUrl; }
 
     /**
-     * <p>The URL for the external application.</p>
+     * <p>The URL for the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline bool SourceApplicationUrlHasBeenSet() const { return m_sourceApplicationUrlHasBeenSet; }
 
     /**
-     * <p>The URL for the external application.</p>
+     * <p>The URL for the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline void SetSourceApplicationUrl(const Aws::String& value) { m_sourceApplicationUrlHasBeenSet = true; m_sourceApplicationUrl = value; }
 
     /**
-     * <p>The URL for the external application.</p>
+     * <p>The URL for the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline void SetSourceApplicationUrl(Aws::String&& value) { m_sourceApplicationUrlHasBeenSet = true; m_sourceApplicationUrl = std::move(value); }
 
     /**
-     * <p>The URL for the external application.</p>
+     * <p>The URL for the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline void SetSourceApplicationUrl(const char* value) { m_sourceApplicationUrlHasBeenSet = true; m_sourceApplicationUrl.assign(value); }
 
     /**
-     * <p>The URL for the external application.</p>
+     * <p>The URL for the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline CreateIntegrationAssociationRequest& WithSourceApplicationUrl(const Aws::String& value) { SetSourceApplicationUrl(value); return *this;}
 
     /**
-     * <p>The URL for the external application.</p>
+     * <p>The URL for the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline CreateIntegrationAssociationRequest& WithSourceApplicationUrl(Aws::String&& value) { SetSourceApplicationUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL for the external application.</p>
+     * <p>The URL for the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline CreateIntegrationAssociationRequest& WithSourceApplicationUrl(const char* value) { SetSourceApplicationUrl(value); return *this;}
 
 
     /**
-     * <p>The name of the external application.</p>
+     * <p>The name of the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline const Aws::String& GetSourceApplicationName() const{ return m_sourceApplicationName; }
 
     /**
-     * <p>The name of the external application.</p>
+     * <p>The name of the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline bool SourceApplicationNameHasBeenSet() const { return m_sourceApplicationNameHasBeenSet; }
 
     /**
-     * <p>The name of the external application.</p>
+     * <p>The name of the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline void SetSourceApplicationName(const Aws::String& value) { m_sourceApplicationNameHasBeenSet = true; m_sourceApplicationName = value; }
 
     /**
-     * <p>The name of the external application.</p>
+     * <p>The name of the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline void SetSourceApplicationName(Aws::String&& value) { m_sourceApplicationNameHasBeenSet = true; m_sourceApplicationName = std::move(value); }
 
     /**
-     * <p>The name of the external application.</p>
+     * <p>The name of the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline void SetSourceApplicationName(const char* value) { m_sourceApplicationNameHasBeenSet = true; m_sourceApplicationName.assign(value); }
 
     /**
-     * <p>The name of the external application.</p>
+     * <p>The name of the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline CreateIntegrationAssociationRequest& WithSourceApplicationName(const Aws::String& value) { SetSourceApplicationName(value); return *this;}
 
     /**
-     * <p>The name of the external application.</p>
+     * <p>The name of the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline CreateIntegrationAssociationRequest& WithSourceApplicationName(Aws::String&& value) { SetSourceApplicationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the external application.</p>
+     * <p>The name of the external application. This field is only required for the
+     * EVENT integration type.</p>
      */
     inline CreateIntegrationAssociationRequest& WithSourceApplicationName(const char* value) { SetSourceApplicationName(value); return *this;}
 
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source. This field is only required for the EVENT
+     * integration type.</p>
      */
     inline const SourceType& GetSourceType() const{ return m_sourceType; }
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source. This field is only required for the EVENT
+     * integration type.</p>
      */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source. This field is only required for the EVENT
+     * integration type.</p>
      */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source. This field is only required for the EVENT
+     * integration type.</p>
      */
     inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source. This field is only required for the EVENT
+     * integration type.</p>
      */
     inline CreateIntegrationAssociationRequest& WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source. This field is only required for the EVENT
+     * integration type.</p>
      */
     inline CreateIntegrationAssociationRequest& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
 
