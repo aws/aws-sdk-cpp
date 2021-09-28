@@ -181,7 +181,7 @@ namespace Model
      * <p>The condition configures when the pipeline should trigger a new image build.
      * When the <code>pipelineExecutionStartCondition</code> is set to
      * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use
-     * semantic version filters on the source image or components in your image recipe,
+     * semantic version filters on the base image or components in your image recipe,
      * EC2 Image Builder will build a new image only when there are new versions of the
      * image or components in your recipe that match the semantic version filter. When
      * it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every
@@ -196,7 +196,7 @@ namespace Model
      * <p>The condition configures when the pipeline should trigger a new image build.
      * When the <code>pipelineExecutionStartCondition</code> is set to
      * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use
-     * semantic version filters on the source image or components in your image recipe,
+     * semantic version filters on the base image or components in your image recipe,
      * EC2 Image Builder will build a new image only when there are new versions of the
      * image or components in your recipe that match the semantic version filter. When
      * it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every
@@ -211,7 +211,7 @@ namespace Model
      * <p>The condition configures when the pipeline should trigger a new image build.
      * When the <code>pipelineExecutionStartCondition</code> is set to
      * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use
-     * semantic version filters on the source image or components in your image recipe,
+     * semantic version filters on the base image or components in your image recipe,
      * EC2 Image Builder will build a new image only when there are new versions of the
      * image or components in your recipe that match the semantic version filter. When
      * it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every
@@ -226,7 +226,7 @@ namespace Model
      * <p>The condition configures when the pipeline should trigger a new image build.
      * When the <code>pipelineExecutionStartCondition</code> is set to
      * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use
-     * semantic version filters on the source image or components in your image recipe,
+     * semantic version filters on the base image or components in your image recipe,
      * EC2 Image Builder will build a new image only when there are new versions of the
      * image or components in your recipe that match the semantic version filter. When
      * it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every
@@ -241,7 +241,7 @@ namespace Model
      * <p>The condition configures when the pipeline should trigger a new image build.
      * When the <code>pipelineExecutionStartCondition</code> is set to
      * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use
-     * semantic version filters on the source image or components in your image recipe,
+     * semantic version filters on the base image or components in your image recipe,
      * EC2 Image Builder will build a new image only when there are new versions of the
      * image or components in your recipe that match the semantic version filter. When
      * it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every
@@ -256,7 +256,7 @@ namespace Model
      * <p>The condition configures when the pipeline should trigger a new image build.
      * When the <code>pipelineExecutionStartCondition</code> is set to
      * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use
-     * semantic version filters on the source image or components in your image recipe,
+     * semantic version filters on the base image or components in your image recipe,
      * EC2 Image Builder will build a new image only when there are new versions of the
      * image or components in your recipe that match the semantic version filter. When
      * it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every

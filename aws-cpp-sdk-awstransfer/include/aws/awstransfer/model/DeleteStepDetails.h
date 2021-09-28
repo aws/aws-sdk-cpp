@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The name of the step, used to identify the step that is being
-   * deleted.</p><p><h3>See Also:</h3>   <a
+   * <p>The name of the step, used to identify the delete step.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteStepDetails">AWS
    * API Reference</a></p>
    */

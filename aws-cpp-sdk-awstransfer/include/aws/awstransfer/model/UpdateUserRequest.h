@@ -166,13 +166,12 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry":
-     * "your-personal-report.pdf", "Target":
-     * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code> </p> <p>In
-     * most cases, you can use this value instead of the session policy to lock down
-     * your user to the designated home directory ("<code>chroot</code>"). To do this,
-     * you can set <code>Entry</code> to '/' and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
+     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
+     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
+     * can use this value instead of the session policy to lock down your user to the
+     * designated home directory ("<code>chroot</code>"). To do this, you can set
+     * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
+     * parameter value.</p> <p>The following is an <code>Entry</code> and
      * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
      * "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> 
      * <p>If the target of a logical directory entry does not exist in Amazon S3 or
@@ -196,13 +195,12 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry":
-     * "your-personal-report.pdf", "Target":
-     * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code> </p> <p>In
-     * most cases, you can use this value instead of the session policy to lock down
-     * your user to the designated home directory ("<code>chroot</code>"). To do this,
-     * you can set <code>Entry</code> to '/' and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
+     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
+     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
+     * can use this value instead of the session policy to lock down your user to the
+     * designated home directory ("<code>chroot</code>"). To do this, you can set
+     * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
+     * parameter value.</p> <p>The following is an <code>Entry</code> and
      * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
      * "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> 
      * <p>If the target of a logical directory entry does not exist in Amazon S3 or
@@ -226,13 +224,12 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry":
-     * "your-personal-report.pdf", "Target":
-     * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code> </p> <p>In
-     * most cases, you can use this value instead of the session policy to lock down
-     * your user to the designated home directory ("<code>chroot</code>"). To do this,
-     * you can set <code>Entry</code> to '/' and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
+     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
+     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
+     * can use this value instead of the session policy to lock down your user to the
+     * designated home directory ("<code>chroot</code>"). To do this, you can set
+     * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
+     * parameter value.</p> <p>The following is an <code>Entry</code> and
      * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
      * "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> 
      * <p>If the target of a logical directory entry does not exist in Amazon S3 or
@@ -256,13 +253,12 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry":
-     * "your-personal-report.pdf", "Target":
-     * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code> </p> <p>In
-     * most cases, you can use this value instead of the session policy to lock down
-     * your user to the designated home directory ("<code>chroot</code>"). To do this,
-     * you can set <code>Entry</code> to '/' and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
+     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
+     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
+     * can use this value instead of the session policy to lock down your user to the
+     * designated home directory ("<code>chroot</code>"). To do this, you can set
+     * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
+     * parameter value.</p> <p>The following is an <code>Entry</code> and
      * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
      * "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> 
      * <p>If the target of a logical directory entry does not exist in Amazon S3 or
@@ -286,13 +282,12 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry":
-     * "your-personal-report.pdf", "Target":
-     * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code> </p> <p>In
-     * most cases, you can use this value instead of the session policy to lock down
-     * your user to the designated home directory ("<code>chroot</code>"). To do this,
-     * you can set <code>Entry</code> to '/' and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
+     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
+     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
+     * can use this value instead of the session policy to lock down your user to the
+     * designated home directory ("<code>chroot</code>"). To do this, you can set
+     * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
+     * parameter value.</p> <p>The following is an <code>Entry</code> and
      * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
      * "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> 
      * <p>If the target of a logical directory entry does not exist in Amazon S3 or
@@ -316,13 +311,12 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry":
-     * "your-personal-report.pdf", "Target":
-     * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code> </p> <p>In
-     * most cases, you can use this value instead of the session policy to lock down
-     * your user to the designated home directory ("<code>chroot</code>"). To do this,
-     * you can set <code>Entry</code> to '/' and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
+     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
+     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
+     * can use this value instead of the session policy to lock down your user to the
+     * designated home directory ("<code>chroot</code>"). To do this, you can set
+     * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
+     * parameter value.</p> <p>The following is an <code>Entry</code> and
      * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
      * "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> 
      * <p>If the target of a logical directory entry does not exist in Amazon S3 or
@@ -346,13 +340,12 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry":
-     * "your-personal-report.pdf", "Target":
-     * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code> </p> <p>In
-     * most cases, you can use this value instead of the session policy to lock down
-     * your user to the designated home directory ("<code>chroot</code>"). To do this,
-     * you can set <code>Entry</code> to '/' and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
+     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
+     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
+     * can use this value instead of the session policy to lock down your user to the
+     * designated home directory ("<code>chroot</code>"). To do this, you can set
+     * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
+     * parameter value.</p> <p>The following is an <code>Entry</code> and
      * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
      * "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> 
      * <p>If the target of a logical directory entry does not exist in Amazon S3 or
@@ -376,13 +369,12 @@ namespace Model
      * Access Management (IAM) role provides access to paths in <code>Target</code>.
      * This value can only be set when <code>HomeDirectoryType</code> is set to
      * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry":
-     * "your-personal-report.pdf", "Target":
-     * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code> </p> <p>In
-     * most cases, you can use this value instead of the session policy to lock down
-     * your user to the designated home directory ("<code>chroot</code>"). To do this,
-     * you can set <code>Entry</code> to '/' and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
+     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
+     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
+     * can use this value instead of the session policy to lock down your user to the
+     * designated home directory ("<code>chroot</code>"). To do this, you can set
+     * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
+     * parameter value.</p> <p>The following is an <code>Entry</code> and
      * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
      * "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> 
      * <p>If the target of a logical directory entry does not exist in Amazon S3 or

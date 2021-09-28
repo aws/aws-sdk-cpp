@@ -92,7 +92,7 @@ namespace Model
 
     /**
      * <p>Details for a step that performs a file copy.</p> <p> Consists of the
-     * following values: </p> <ul> <li> <p>A description</p> </li> <li> <p>An S3 or EFS
+     * following values: </p> <ul> <li> <p>A description</p> </li> <li> <p>An S3
      * location for the destination of the file copy.</p> </li> <li> <p>A flag that
      * indicates whether or not to overwrite an existing file of the same name. The
      * default is <code>FALSE</code>.</p> </li> </ul>
@@ -101,7 +101,7 @@ namespace Model
 
     /**
      * <p>Details for a step that performs a file copy.</p> <p> Consists of the
-     * following values: </p> <ul> <li> <p>A description</p> </li> <li> <p>An S3 or EFS
+     * following values: </p> <ul> <li> <p>A description</p> </li> <li> <p>An S3
      * location for the destination of the file copy.</p> </li> <li> <p>A flag that
      * indicates whether or not to overwrite an existing file of the same name. The
      * default is <code>FALSE</code>.</p> </li> </ul>
@@ -110,7 +110,7 @@ namespace Model
 
     /**
      * <p>Details for a step that performs a file copy.</p> <p> Consists of the
-     * following values: </p> <ul> <li> <p>A description</p> </li> <li> <p>An S3 or EFS
+     * following values: </p> <ul> <li> <p>A description</p> </li> <li> <p>An S3
      * location for the destination of the file copy.</p> </li> <li> <p>A flag that
      * indicates whether or not to overwrite an existing file of the same name. The
      * default is <code>FALSE</code>.</p> </li> </ul>
@@ -119,7 +119,7 @@ namespace Model
 
     /**
      * <p>Details for a step that performs a file copy.</p> <p> Consists of the
-     * following values: </p> <ul> <li> <p>A description</p> </li> <li> <p>An S3 or EFS
+     * following values: </p> <ul> <li> <p>A description</p> </li> <li> <p>An S3
      * location for the destination of the file copy.</p> </li> <li> <p>A flag that
      * indicates whether or not to overwrite an existing file of the same name. The
      * default is <code>FALSE</code>.</p> </li> </ul>
@@ -128,7 +128,7 @@ namespace Model
 
     /**
      * <p>Details for a step that performs a file copy.</p> <p> Consists of the
-     * following values: </p> <ul> <li> <p>A description</p> </li> <li> <p>An S3 or EFS
+     * following values: </p> <ul> <li> <p>A description</p> </li> <li> <p>An S3
      * location for the destination of the file copy.</p> </li> <li> <p>A flag that
      * indicates whether or not to overwrite an existing file of the same name. The
      * default is <code>FALSE</code>.</p> </li> </ul>
@@ -137,7 +137,7 @@ namespace Model
 
     /**
      * <p>Details for a step that performs a file copy.</p> <p> Consists of the
-     * following values: </p> <ul> <li> <p>A description</p> </li> <li> <p>An S3 or EFS
+     * following values: </p> <ul> <li> <p>A description</p> </li> <li> <p>An S3
      * location for the destination of the file copy.</p> </li> <li> <p>A flag that
      * indicates whether or not to overwrite an existing file of the same name. The
      * default is <code>FALSE</code>.</p> </li> </ul>
@@ -183,32 +183,32 @@ namespace Model
 
 
     /**
-     * <p>You need to specify the name of the file to be deleted.</p>
+     * <p>Details for a step that deletes the file.</p>
      */
     inline const DeleteStepDetails& GetDeleteStepDetails() const{ return m_deleteStepDetails; }
 
     /**
-     * <p>You need to specify the name of the file to be deleted.</p>
+     * <p>Details for a step that deletes the file.</p>
      */
     inline bool DeleteStepDetailsHasBeenSet() const { return m_deleteStepDetailsHasBeenSet; }
 
     /**
-     * <p>You need to specify the name of the file to be deleted.</p>
+     * <p>Details for a step that deletes the file.</p>
      */
     inline void SetDeleteStepDetails(const DeleteStepDetails& value) { m_deleteStepDetailsHasBeenSet = true; m_deleteStepDetails = value; }
 
     /**
-     * <p>You need to specify the name of the file to be deleted.</p>
+     * <p>Details for a step that deletes the file.</p>
      */
     inline void SetDeleteStepDetails(DeleteStepDetails&& value) { m_deleteStepDetailsHasBeenSet = true; m_deleteStepDetails = std::move(value); }
 
     /**
-     * <p>You need to specify the name of the file to be deleted.</p>
+     * <p>Details for a step that deletes the file.</p>
      */
     inline WorkflowStep& WithDeleteStepDetails(const DeleteStepDetails& value) { SetDeleteStepDetails(value); return *this;}
 
     /**
-     * <p>You need to specify the name of the file to be deleted.</p>
+     * <p>Details for a step that deletes the file.</p>
      */
     inline WorkflowStep& WithDeleteStepDetails(DeleteStepDetails&& value) { SetDeleteStepDetails(std::move(value)); return *this;}
 

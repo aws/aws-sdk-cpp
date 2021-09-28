@@ -71,32 +71,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies the details for the Amazon EFS file being copied.</p>
+     * <p>Reserved for future use.</p>
      */
     inline const EfsFileLocation& GetEfsFileLocation() const{ return m_efsFileLocation; }
 
     /**
-     * <p>Specifies the details for the Amazon EFS file being copied.</p>
+     * <p>Reserved for future use.</p>
      */
     inline bool EfsFileLocationHasBeenSet() const { return m_efsFileLocationHasBeenSet; }
 
     /**
-     * <p>Specifies the details for the Amazon EFS file being copied.</p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetEfsFileLocation(const EfsFileLocation& value) { m_efsFileLocationHasBeenSet = true; m_efsFileLocation = value; }
 
     /**
-     * <p>Specifies the details for the Amazon EFS file being copied.</p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetEfsFileLocation(EfsFileLocation&& value) { m_efsFileLocationHasBeenSet = true; m_efsFileLocation = std::move(value); }
 
     /**
-     * <p>Specifies the details for the Amazon EFS file being copied.</p>
+     * <p>Reserved for future use.</p>
      */
     inline InputFileLocation& WithEfsFileLocation(const EfsFileLocation& value) { SetEfsFileLocation(value); return *this;}
 
     /**
-     * <p>Specifies the details for the Amazon EFS file being copied.</p>
+     * <p>Reserved for future use.</p>
      */
     inline InputFileLocation& WithEfsFileLocation(EfsFileLocation&& value) { SetEfsFileLocation(std::move(value)); return *this;}
 

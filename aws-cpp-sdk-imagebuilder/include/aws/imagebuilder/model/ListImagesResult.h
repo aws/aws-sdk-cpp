@@ -76,7 +76,7 @@ namespace Model
      * assign values for the first three, and can filter on all of them.</p> <p>
      * <b>Filtering:</b> With semantic versioning, you have the flexibility to use
      * wildcards (x) to specify the most recent versions or nodes when selecting the
-     * source image or components for your recipe. When you use a wildcard in any node,
+     * base image or components for your recipe. When you use a wildcard in any node,
      * all nodes to the right of the first wildcard must also be wildcards.</p> 
      */
     inline const Aws::Vector<ImageVersion>& GetImageVersionList() const{ return m_imageVersionList; }
@@ -87,7 +87,7 @@ namespace Model
      * assign values for the first three, and can filter on all of them.</p> <p>
      * <b>Filtering:</b> With semantic versioning, you have the flexibility to use
      * wildcards (x) to specify the most recent versions or nodes when selecting the
-     * source image or components for your recipe. When you use a wildcard in any node,
+     * base image or components for your recipe. When you use a wildcard in any node,
      * all nodes to the right of the first wildcard must also be wildcards.</p> 
      */
     inline void SetImageVersionList(const Aws::Vector<ImageVersion>& value) { m_imageVersionList = value; }
@@ -98,7 +98,7 @@ namespace Model
      * assign values for the first three, and can filter on all of them.</p> <p>
      * <b>Filtering:</b> With semantic versioning, you have the flexibility to use
      * wildcards (x) to specify the most recent versions or nodes when selecting the
-     * source image or components for your recipe. When you use a wildcard in any node,
+     * base image or components for your recipe. When you use a wildcard in any node,
      * all nodes to the right of the first wildcard must also be wildcards.</p> 
      */
     inline void SetImageVersionList(Aws::Vector<ImageVersion>&& value) { m_imageVersionList = std::move(value); }
@@ -109,7 +109,7 @@ namespace Model
      * assign values for the first three, and can filter on all of them.</p> <p>
      * <b>Filtering:</b> With semantic versioning, you have the flexibility to use
      * wildcards (x) to specify the most recent versions or nodes when selecting the
-     * source image or components for your recipe. When you use a wildcard in any node,
+     * base image or components for your recipe. When you use a wildcard in any node,
      * all nodes to the right of the first wildcard must also be wildcards.</p> 
      */
     inline ListImagesResult& WithImageVersionList(const Aws::Vector<ImageVersion>& value) { SetImageVersionList(value); return *this;}
@@ -120,7 +120,7 @@ namespace Model
      * assign values for the first three, and can filter on all of them.</p> <p>
      * <b>Filtering:</b> With semantic versioning, you have the flexibility to use
      * wildcards (x) to specify the most recent versions or nodes when selecting the
-     * source image or components for your recipe. When you use a wildcard in any node,
+     * base image or components for your recipe. When you use a wildcard in any node,
      * all nodes to the right of the first wildcard must also be wildcards.</p> 
      */
     inline ListImagesResult& WithImageVersionList(Aws::Vector<ImageVersion>&& value) { SetImageVersionList(std::move(value)); return *this;}
@@ -131,7 +131,7 @@ namespace Model
      * assign values for the first three, and can filter on all of them.</p> <p>
      * <b>Filtering:</b> With semantic versioning, you have the flexibility to use
      * wildcards (x) to specify the most recent versions or nodes when selecting the
-     * source image or components for your recipe. When you use a wildcard in any node,
+     * base image or components for your recipe. When you use a wildcard in any node,
      * all nodes to the right of the first wildcard must also be wildcards.</p> 
      */
     inline ListImagesResult& AddImageVersionList(const ImageVersion& value) { m_imageVersionList.push_back(value); return *this; }
@@ -142,7 +142,7 @@ namespace Model
      * assign values for the first three, and can filter on all of them.</p> <p>
      * <b>Filtering:</b> With semantic versioning, you have the flexibility to use
      * wildcards (x) to specify the most recent versions or nodes when selecting the
-     * source image or components for your recipe. When you use a wildcard in any node,
+     * base image or components for your recipe. When you use a wildcard in any node,
      * all nodes to the right of the first wildcard must also be wildcards.</p> 
      */
     inline ListImagesResult& AddImageVersionList(ImageVersion&& value) { m_imageVersionList.push_back(std::move(value)); return *this; }

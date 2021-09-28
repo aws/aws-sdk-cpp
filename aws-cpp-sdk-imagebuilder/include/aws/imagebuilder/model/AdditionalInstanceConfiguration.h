@@ -79,7 +79,7 @@ namespace Model
      * any commands that Image Builder might have added to ensure that Systems Manager
      * is installed on your Linux build instance. If you override the user data, make
      * sure that you add commands to install Systems Manager, if it is not
-     * pre-installed on your source image.</p> 
+     * pre-installed on your base image.</p> 
      */
     inline const Aws::String& GetUserDataOverride() const{ return m_userDataOverride; }
 
@@ -89,7 +89,7 @@ namespace Model
      * any commands that Image Builder might have added to ensure that Systems Manager
      * is installed on your Linux build instance. If you override the user data, make
      * sure that you add commands to install Systems Manager, if it is not
-     * pre-installed on your source image.</p> 
+     * pre-installed on your base image.</p> 
      */
     inline bool UserDataOverrideHasBeenSet() const { return m_userDataOverrideHasBeenSet; }
 
@@ -99,7 +99,7 @@ namespace Model
      * any commands that Image Builder might have added to ensure that Systems Manager
      * is installed on your Linux build instance. If you override the user data, make
      * sure that you add commands to install Systems Manager, if it is not
-     * pre-installed on your source image.</p> 
+     * pre-installed on your base image.</p> 
      */
     inline void SetUserDataOverride(const Aws::String& value) { m_userDataOverrideHasBeenSet = true; m_userDataOverride = value; }
 
@@ -109,7 +109,7 @@ namespace Model
      * any commands that Image Builder might have added to ensure that Systems Manager
      * is installed on your Linux build instance. If you override the user data, make
      * sure that you add commands to install Systems Manager, if it is not
-     * pre-installed on your source image.</p> 
+     * pre-installed on your base image.</p> 
      */
     inline void SetUserDataOverride(Aws::String&& value) { m_userDataOverrideHasBeenSet = true; m_userDataOverride = std::move(value); }
 
@@ -119,7 +119,7 @@ namespace Model
      * any commands that Image Builder might have added to ensure that Systems Manager
      * is installed on your Linux build instance. If you override the user data, make
      * sure that you add commands to install Systems Manager, if it is not
-     * pre-installed on your source image.</p> 
+     * pre-installed on your base image.</p> 
      */
     inline void SetUserDataOverride(const char* value) { m_userDataOverrideHasBeenSet = true; m_userDataOverride.assign(value); }
 
@@ -129,7 +129,7 @@ namespace Model
      * any commands that Image Builder might have added to ensure that Systems Manager
      * is installed on your Linux build instance. If you override the user data, make
      * sure that you add commands to install Systems Manager, if it is not
-     * pre-installed on your source image.</p> 
+     * pre-installed on your base image.</p> 
      */
     inline AdditionalInstanceConfiguration& WithUserDataOverride(const Aws::String& value) { SetUserDataOverride(value); return *this;}
 
@@ -139,7 +139,7 @@ namespace Model
      * any commands that Image Builder might have added to ensure that Systems Manager
      * is installed on your Linux build instance. If you override the user data, make
      * sure that you add commands to install Systems Manager, if it is not
-     * pre-installed on your source image.</p> 
+     * pre-installed on your base image.</p> 
      */
     inline AdditionalInstanceConfiguration& WithUserDataOverride(Aws::String&& value) { SetUserDataOverride(std::move(value)); return *this;}
 
@@ -149,7 +149,7 @@ namespace Model
      * any commands that Image Builder might have added to ensure that Systems Manager
      * is installed on your Linux build instance. If you override the user data, make
      * sure that you add commands to install Systems Manager, if it is not
-     * pre-installed on your source image.</p> 
+     * pre-installed on your base image.</p> 
      */
     inline AdditionalInstanceConfiguration& WithUserDataOverride(const char* value) { SetUserDataOverride(value); return *this;}
 

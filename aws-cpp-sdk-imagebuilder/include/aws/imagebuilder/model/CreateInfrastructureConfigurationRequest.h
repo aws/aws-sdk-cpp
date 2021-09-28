@@ -120,128 +120,65 @@ namespace Model
 
 
     /**
-     * <p>The instance metadata options that you can set for the HTTP requests that
-     * pipeline builds use to launch EC2 build and test instances. For more information
-     * about instance metadata options, see one of the following links:</p> <ul> <li>
-     * <p> <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
-     * the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i>
-     * for Linux instances.</p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
-     * the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i>
-     * </i> for Windows instances.</p> </li> </ul>
+     * <p>The instance types of the infrastructure configuration. You can specify one
+     * or more instance types to use for this build. The service will pick one of these
+     * instance types based on availability.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceTypes() const{ return m_instanceTypes; }
 
     /**
-     * <p>The instance metadata options that you can set for the HTTP requests that
-     * pipeline builds use to launch EC2 build and test instances. For more information
-     * about instance metadata options, see one of the following links:</p> <ul> <li>
-     * <p> <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
-     * the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i>
-     * for Linux instances.</p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
-     * the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i>
-     * </i> for Windows instances.</p> </li> </ul>
+     * <p>The instance types of the infrastructure configuration. You can specify one
+     * or more instance types to use for this build. The service will pick one of these
+     * instance types based on availability.</p>
      */
     inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
 
     /**
-     * <p>The instance metadata options that you can set for the HTTP requests that
-     * pipeline builds use to launch EC2 build and test instances. For more information
-     * about instance metadata options, see one of the following links:</p> <ul> <li>
-     * <p> <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
-     * the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i>
-     * for Linux instances.</p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
-     * the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i>
-     * </i> for Windows instances.</p> </li> </ul>
+     * <p>The instance types of the infrastructure configuration. You can specify one
+     * or more instance types to use for this build. The service will pick one of these
+     * instance types based on availability.</p>
      */
     inline void SetInstanceTypes(const Aws::Vector<Aws::String>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
 
     /**
-     * <p>The instance metadata options that you can set for the HTTP requests that
-     * pipeline builds use to launch EC2 build and test instances. For more information
-     * about instance metadata options, see one of the following links:</p> <ul> <li>
-     * <p> <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
-     * the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i>
-     * for Linux instances.</p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
-     * the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i>
-     * </i> for Windows instances.</p> </li> </ul>
+     * <p>The instance types of the infrastructure configuration. You can specify one
+     * or more instance types to use for this build. The service will pick one of these
+     * instance types based on availability.</p>
      */
     inline void SetInstanceTypes(Aws::Vector<Aws::String>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
 
     /**
-     * <p>The instance metadata options that you can set for the HTTP requests that
-     * pipeline builds use to launch EC2 build and test instances. For more information
-     * about instance metadata options, see one of the following links:</p> <ul> <li>
-     * <p> <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
-     * the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i>
-     * for Linux instances.</p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
-     * the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i>
-     * </i> for Windows instances.</p> </li> </ul>
+     * <p>The instance types of the infrastructure configuration. You can specify one
+     * or more instance types to use for this build. The service will pick one of these
+     * instance types based on availability.</p>
      */
     inline CreateInfrastructureConfigurationRequest& WithInstanceTypes(const Aws::Vector<Aws::String>& value) { SetInstanceTypes(value); return *this;}
 
     /**
-     * <p>The instance metadata options that you can set for the HTTP requests that
-     * pipeline builds use to launch EC2 build and test instances. For more information
-     * about instance metadata options, see one of the following links:</p> <ul> <li>
-     * <p> <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
-     * the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i>
-     * for Linux instances.</p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
-     * the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i>
-     * </i> for Windows instances.</p> </li> </ul>
+     * <p>The instance types of the infrastructure configuration. You can specify one
+     * or more instance types to use for this build. The service will pick one of these
+     * instance types based on availability.</p>
      */
     inline CreateInfrastructureConfigurationRequest& WithInstanceTypes(Aws::Vector<Aws::String>&& value) { SetInstanceTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The instance metadata options that you can set for the HTTP requests that
-     * pipeline builds use to launch EC2 build and test instances. For more information
-     * about instance metadata options, see one of the following links:</p> <ul> <li>
-     * <p> <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
-     * the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i>
-     * for Linux instances.</p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
-     * the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i>
-     * </i> for Windows instances.</p> </li> </ul>
+     * <p>The instance types of the infrastructure configuration. You can specify one
+     * or more instance types to use for this build. The service will pick one of these
+     * instance types based on availability.</p>
      */
     inline CreateInfrastructureConfigurationRequest& AddInstanceTypes(const Aws::String& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 
     /**
-     * <p>The instance metadata options that you can set for the HTTP requests that
-     * pipeline builds use to launch EC2 build and test instances. For more information
-     * about instance metadata options, see one of the following links:</p> <ul> <li>
-     * <p> <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
-     * the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i>
-     * for Linux instances.</p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
-     * the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i>
-     * </i> for Windows instances.</p> </li> </ul>
+     * <p>The instance types of the infrastructure configuration. You can specify one
+     * or more instance types to use for this build. The service will pick one of these
+     * instance types based on availability.</p>
      */
     inline CreateInfrastructureConfigurationRequest& AddInstanceTypes(Aws::String&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The instance metadata options that you can set for the HTTP requests that
-     * pipeline builds use to launch EC2 build and test instances. For more information
-     * about instance metadata options, see one of the following links:</p> <ul> <li>
-     * <p> <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
-     * the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i>
-     * for Linux instances.</p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
-     * the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i>
-     * </i> for Windows instances.</p> </li> </ul>
+     * <p>The instance types of the infrastructure configuration. You can specify one
+     * or more instance types to use for this build. The service will pick one of these
+     * instance types based on availability.</p>
      */
     inline CreateInfrastructureConfigurationRequest& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 

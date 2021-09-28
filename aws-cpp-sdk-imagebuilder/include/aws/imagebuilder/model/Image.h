@@ -239,7 +239,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -257,7 +257,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -275,7 +275,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -293,7 +293,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -311,7 +311,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -329,7 +329,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -347,7 +347,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -365,7 +365,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */

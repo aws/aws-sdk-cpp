@@ -443,120 +443,114 @@ namespace Model
 
 
     /**
-     * <p>Specifies the operating system platform when you use a custom source
-     * image.</p>
+     * <p>Specifies the operating system platform when you use a custom base image.</p>
      */
     inline const Platform& GetPlatformOverride() const{ return m_platformOverride; }
 
     /**
-     * <p>Specifies the operating system platform when you use a custom source
-     * image.</p>
+     * <p>Specifies the operating system platform when you use a custom base image.</p>
      */
     inline bool PlatformOverrideHasBeenSet() const { return m_platformOverrideHasBeenSet; }
 
     /**
-     * <p>Specifies the operating system platform when you use a custom source
-     * image.</p>
+     * <p>Specifies the operating system platform when you use a custom base image.</p>
      */
     inline void SetPlatformOverride(const Platform& value) { m_platformOverrideHasBeenSet = true; m_platformOverride = value; }
 
     /**
-     * <p>Specifies the operating system platform when you use a custom source
-     * image.</p>
+     * <p>Specifies the operating system platform when you use a custom base image.</p>
      */
     inline void SetPlatformOverride(Platform&& value) { m_platformOverrideHasBeenSet = true; m_platformOverride = std::move(value); }
 
     /**
-     * <p>Specifies the operating system platform when you use a custom source
-     * image.</p>
+     * <p>Specifies the operating system platform when you use a custom base image.</p>
      */
     inline CreateContainerRecipeRequest& WithPlatformOverride(const Platform& value) { SetPlatformOverride(value); return *this;}
 
     /**
-     * <p>Specifies the operating system platform when you use a custom source
-     * image.</p>
+     * <p>Specifies the operating system platform when you use a custom base image.</p>
      */
     inline CreateContainerRecipeRequest& WithPlatformOverride(Platform&& value) { SetPlatformOverride(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline const Aws::String& GetImageOsVersionOverride() const{ return m_imageOsVersionOverride; }
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline bool ImageOsVersionOverrideHasBeenSet() const { return m_imageOsVersionOverrideHasBeenSet; }
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline void SetImageOsVersionOverride(const Aws::String& value) { m_imageOsVersionOverrideHasBeenSet = true; m_imageOsVersionOverride = value; }
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline void SetImageOsVersionOverride(Aws::String&& value) { m_imageOsVersionOverrideHasBeenSet = true; m_imageOsVersionOverride = std::move(value); }
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline void SetImageOsVersionOverride(const char* value) { m_imageOsVersionOverrideHasBeenSet = true; m_imageOsVersionOverride.assign(value); }
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline CreateContainerRecipeRequest& WithImageOsVersionOverride(const Aws::String& value) { SetImageOsVersionOverride(value); return *this;}
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline CreateContainerRecipeRequest& WithImageOsVersionOverride(Aws::String&& value) { SetImageOsVersionOverride(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the operating system version for the source image.</p>
+     * <p>Specifies the operating system version for the base image.</p>
      */
     inline CreateContainerRecipeRequest& WithImageOsVersionOverride(const char* value) { SetImageOsVersionOverride(value); return *this;}
 
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline const Aws::String& GetParentImage() const{ return m_parentImage; }
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline bool ParentImageHasBeenSet() const { return m_parentImageHasBeenSet; }
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline void SetParentImage(const Aws::String& value) { m_parentImageHasBeenSet = true; m_parentImage = value; }
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline void SetParentImage(Aws::String&& value) { m_parentImageHasBeenSet = true; m_parentImage = std::move(value); }
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline void SetParentImage(const char* value) { m_parentImageHasBeenSet = true; m_parentImage.assign(value); }
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline CreateContainerRecipeRequest& WithParentImage(const Aws::String& value) { SetParentImage(value); return *this;}
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline CreateContainerRecipeRequest& WithParentImage(Aws::String&& value) { SetParentImage(std::move(value)); return *this;}
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline CreateContainerRecipeRequest& WithParentImage(const char* value) { SetParentImage(value); return *this;}
 

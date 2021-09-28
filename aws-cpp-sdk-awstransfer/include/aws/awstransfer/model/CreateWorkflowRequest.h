@@ -84,7 +84,8 @@ namespace Model
      * taken for this step. </p> <ul> <li> <p> <i>Copy</i>: copy the file to another
      * location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda target</p>
      * </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p> <i>Tag</i>: add
-     * a tag to the file</p> </li> </ul> <p> For file location, you specify either the
+     * a tag to the file</p> </li> </ul>  <p> Currently, copying and tagging are
+     * supported only on S3. </p>  <p> For file location, you specify either the
      * S3 bucket and key, or the EFS filesystem ID and path. </p>
      */
     inline const Aws::Vector<WorkflowStep>& GetSteps() const{ return m_steps; }
@@ -95,7 +96,8 @@ namespace Model
      * taken for this step. </p> <ul> <li> <p> <i>Copy</i>: copy the file to another
      * location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda target</p>
      * </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p> <i>Tag</i>: add
-     * a tag to the file</p> </li> </ul> <p> For file location, you specify either the
+     * a tag to the file</p> </li> </ul>  <p> Currently, copying and tagging are
+     * supported only on S3. </p>  <p> For file location, you specify either the
      * S3 bucket and key, or the EFS filesystem ID and path. </p>
      */
     inline bool StepsHasBeenSet() const { return m_stepsHasBeenSet; }
@@ -106,7 +108,8 @@ namespace Model
      * taken for this step. </p> <ul> <li> <p> <i>Copy</i>: copy the file to another
      * location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda target</p>
      * </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p> <i>Tag</i>: add
-     * a tag to the file</p> </li> </ul> <p> For file location, you specify either the
+     * a tag to the file</p> </li> </ul>  <p> Currently, copying and tagging are
+     * supported only on S3. </p>  <p> For file location, you specify either the
      * S3 bucket and key, or the EFS filesystem ID and path. </p>
      */
     inline void SetSteps(const Aws::Vector<WorkflowStep>& value) { m_stepsHasBeenSet = true; m_steps = value; }
@@ -117,7 +120,8 @@ namespace Model
      * taken for this step. </p> <ul> <li> <p> <i>Copy</i>: copy the file to another
      * location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda target</p>
      * </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p> <i>Tag</i>: add
-     * a tag to the file</p> </li> </ul> <p> For file location, you specify either the
+     * a tag to the file</p> </li> </ul>  <p> Currently, copying and tagging are
+     * supported only on S3. </p>  <p> For file location, you specify either the
      * S3 bucket and key, or the EFS filesystem ID and path. </p>
      */
     inline void SetSteps(Aws::Vector<WorkflowStep>&& value) { m_stepsHasBeenSet = true; m_steps = std::move(value); }
@@ -128,7 +132,8 @@ namespace Model
      * taken for this step. </p> <ul> <li> <p> <i>Copy</i>: copy the file to another
      * location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda target</p>
      * </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p> <i>Tag</i>: add
-     * a tag to the file</p> </li> </ul> <p> For file location, you specify either the
+     * a tag to the file</p> </li> </ul>  <p> Currently, copying and tagging are
+     * supported only on S3. </p>  <p> For file location, you specify either the
      * S3 bucket and key, or the EFS filesystem ID and path. </p>
      */
     inline CreateWorkflowRequest& WithSteps(const Aws::Vector<WorkflowStep>& value) { SetSteps(value); return *this;}
@@ -139,7 +144,8 @@ namespace Model
      * taken for this step. </p> <ul> <li> <p> <i>Copy</i>: copy the file to another
      * location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda target</p>
      * </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p> <i>Tag</i>: add
-     * a tag to the file</p> </li> </ul> <p> For file location, you specify either the
+     * a tag to the file</p> </li> </ul>  <p> Currently, copying and tagging are
+     * supported only on S3. </p>  <p> For file location, you specify either the
      * S3 bucket and key, or the EFS filesystem ID and path. </p>
      */
     inline CreateWorkflowRequest& WithSteps(Aws::Vector<WorkflowStep>&& value) { SetSteps(std::move(value)); return *this;}
@@ -150,7 +156,8 @@ namespace Model
      * taken for this step. </p> <ul> <li> <p> <i>Copy</i>: copy the file to another
      * location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda target</p>
      * </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p> <i>Tag</i>: add
-     * a tag to the file</p> </li> </ul> <p> For file location, you specify either the
+     * a tag to the file</p> </li> </ul>  <p> Currently, copying and tagging are
+     * supported only on S3. </p>  <p> For file location, you specify either the
      * S3 bucket and key, or the EFS filesystem ID and path. </p>
      */
     inline CreateWorkflowRequest& AddSteps(const WorkflowStep& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
@@ -161,57 +168,82 @@ namespace Model
      * taken for this step. </p> <ul> <li> <p> <i>Copy</i>: copy the file to another
      * location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda target</p>
      * </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p> <i>Tag</i>: add
-     * a tag to the file</p> </li> </ul> <p> For file location, you specify either the
+     * a tag to the file</p> </li> </ul>  <p> Currently, copying and tagging are
+     * supported only on S3. </p>  <p> For file location, you specify either the
      * S3 bucket and key, or the EFS filesystem ID and path. </p>
      */
     inline CreateWorkflowRequest& AddSteps(WorkflowStep&& value) { m_stepsHasBeenSet = true; m_steps.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Specifies the steps (actions) to take if any errors are encountered during
-     * execution of the workflow.</p>
+     * <p>Specifies the steps (actions) to take if errors are encountered during
+     * execution of the workflow.</p>  <p>For custom steps, the lambda function
+     * needs to send <code>FAILURE</code> to the call back API to kick off the
+     * exception steps. Additionally, if the lambda does not send <code>SUCCESS</code>
+     * before it times out, the exception steps are executed.</p> 
      */
     inline const Aws::Vector<WorkflowStep>& GetOnExceptionSteps() const{ return m_onExceptionSteps; }
 
     /**
-     * <p>Specifies the steps (actions) to take if any errors are encountered during
-     * execution of the workflow.</p>
+     * <p>Specifies the steps (actions) to take if errors are encountered during
+     * execution of the workflow.</p>  <p>For custom steps, the lambda function
+     * needs to send <code>FAILURE</code> to the call back API to kick off the
+     * exception steps. Additionally, if the lambda does not send <code>SUCCESS</code>
+     * before it times out, the exception steps are executed.</p> 
      */
     inline bool OnExceptionStepsHasBeenSet() const { return m_onExceptionStepsHasBeenSet; }
 
     /**
-     * <p>Specifies the steps (actions) to take if any errors are encountered during
-     * execution of the workflow.</p>
+     * <p>Specifies the steps (actions) to take if errors are encountered during
+     * execution of the workflow.</p>  <p>For custom steps, the lambda function
+     * needs to send <code>FAILURE</code> to the call back API to kick off the
+     * exception steps. Additionally, if the lambda does not send <code>SUCCESS</code>
+     * before it times out, the exception steps are executed.</p> 
      */
     inline void SetOnExceptionSteps(const Aws::Vector<WorkflowStep>& value) { m_onExceptionStepsHasBeenSet = true; m_onExceptionSteps = value; }
 
     /**
-     * <p>Specifies the steps (actions) to take if any errors are encountered during
-     * execution of the workflow.</p>
+     * <p>Specifies the steps (actions) to take if errors are encountered during
+     * execution of the workflow.</p>  <p>For custom steps, the lambda function
+     * needs to send <code>FAILURE</code> to the call back API to kick off the
+     * exception steps. Additionally, if the lambda does not send <code>SUCCESS</code>
+     * before it times out, the exception steps are executed.</p> 
      */
     inline void SetOnExceptionSteps(Aws::Vector<WorkflowStep>&& value) { m_onExceptionStepsHasBeenSet = true; m_onExceptionSteps = std::move(value); }
 
     /**
-     * <p>Specifies the steps (actions) to take if any errors are encountered during
-     * execution of the workflow.</p>
+     * <p>Specifies the steps (actions) to take if errors are encountered during
+     * execution of the workflow.</p>  <p>For custom steps, the lambda function
+     * needs to send <code>FAILURE</code> to the call back API to kick off the
+     * exception steps. Additionally, if the lambda does not send <code>SUCCESS</code>
+     * before it times out, the exception steps are executed.</p> 
      */
     inline CreateWorkflowRequest& WithOnExceptionSteps(const Aws::Vector<WorkflowStep>& value) { SetOnExceptionSteps(value); return *this;}
 
     /**
-     * <p>Specifies the steps (actions) to take if any errors are encountered during
-     * execution of the workflow.</p>
+     * <p>Specifies the steps (actions) to take if errors are encountered during
+     * execution of the workflow.</p>  <p>For custom steps, the lambda function
+     * needs to send <code>FAILURE</code> to the call back API to kick off the
+     * exception steps. Additionally, if the lambda does not send <code>SUCCESS</code>
+     * before it times out, the exception steps are executed.</p> 
      */
     inline CreateWorkflowRequest& WithOnExceptionSteps(Aws::Vector<WorkflowStep>&& value) { SetOnExceptionSteps(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the steps (actions) to take if any errors are encountered during
-     * execution of the workflow.</p>
+     * <p>Specifies the steps (actions) to take if errors are encountered during
+     * execution of the workflow.</p>  <p>For custom steps, the lambda function
+     * needs to send <code>FAILURE</code> to the call back API to kick off the
+     * exception steps. Additionally, if the lambda does not send <code>SUCCESS</code>
+     * before it times out, the exception steps are executed.</p> 
      */
     inline CreateWorkflowRequest& AddOnExceptionSteps(const WorkflowStep& value) { m_onExceptionStepsHasBeenSet = true; m_onExceptionSteps.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the steps (actions) to take if any errors are encountered during
-     * execution of the workflow.</p>
+     * <p>Specifies the steps (actions) to take if errors are encountered during
+     * execution of the workflow.</p>  <p>For custom steps, the lambda function
+     * needs to send <code>FAILURE</code> to the call back API to kick off the
+     * exception steps. Additionally, if the lambda does not send <code>SUCCESS</code>
+     * before it times out, the exception steps are executed.</p> 
      */
     inline CreateWorkflowRequest& AddOnExceptionSteps(WorkflowStep&& value) { m_onExceptionStepsHasBeenSet = true; m_onExceptionSteps.push_back(std::move(value)); return *this; }
 

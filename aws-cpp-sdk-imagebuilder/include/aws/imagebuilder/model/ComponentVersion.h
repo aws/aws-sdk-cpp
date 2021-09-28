@@ -199,7 +199,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -217,7 +217,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -235,7 +235,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -253,7 +253,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -271,7 +271,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -289,7 +289,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -307,7 +307,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -325,7 +325,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -406,64 +406,64 @@ namespace Model
 
     /**
      * <p>he operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the parent image
-     * OS version during image recipe creation.</p>
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedOsVersions() const{ return m_supportedOsVersions; }
 
     /**
      * <p>he operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the parent image
-     * OS version during image recipe creation.</p>
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
      */
     inline bool SupportedOsVersionsHasBeenSet() const { return m_supportedOsVersionsHasBeenSet; }
 
     /**
      * <p>he operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the parent image
-     * OS version during image recipe creation.</p>
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
      */
     inline void SetSupportedOsVersions(const Aws::Vector<Aws::String>& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions = value; }
 
     /**
      * <p>he operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the parent image
-     * OS version during image recipe creation.</p>
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
      */
     inline void SetSupportedOsVersions(Aws::Vector<Aws::String>&& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions = std::move(value); }
 
     /**
      * <p>he operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the parent image
-     * OS version during image recipe creation.</p>
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
      */
     inline ComponentVersion& WithSupportedOsVersions(const Aws::Vector<Aws::String>& value) { SetSupportedOsVersions(value); return *this;}
 
     /**
      * <p>he operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the parent image
-     * OS version during image recipe creation.</p>
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
      */
     inline ComponentVersion& WithSupportedOsVersions(Aws::Vector<Aws::String>&& value) { SetSupportedOsVersions(std::move(value)); return *this;}
 
     /**
      * <p>he operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the parent image
-     * OS version during image recipe creation.</p>
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
      */
     inline ComponentVersion& AddSupportedOsVersions(const Aws::String& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(value); return *this; }
 
     /**
      * <p>he operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the parent image
-     * OS version during image recipe creation.</p>
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
      */
     inline ComponentVersion& AddSupportedOsVersions(Aws::String&& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>he operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the parent image
-     * OS version during image recipe creation.</p>
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
      */
     inline ComponentVersion& AddSupportedOsVersions(const char* value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(value); return *this; }
 

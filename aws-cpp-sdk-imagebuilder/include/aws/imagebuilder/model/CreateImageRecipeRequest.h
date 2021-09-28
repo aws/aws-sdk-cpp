@@ -283,8 +283,8 @@ namespace Model
 
 
     /**
-     * <p>The parent image of the image recipe. The value of the string can be the ARN
-     * of the parent image or an AMI ID. The format for the ARN follows this example:
+     * <p>The base image of the image recipe. The value of the string can be the ARN of
+     * the base image or an AMI ID. The format for the ARN follows this example:
      * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
      * You can provide the specific version that you want to use, or you can use a
      * wildcard in all of the fields. If you enter an AMI ID for the string value, you
@@ -294,8 +294,8 @@ namespace Model
     inline const Aws::String& GetParentImage() const{ return m_parentImage; }
 
     /**
-     * <p>The parent image of the image recipe. The value of the string can be the ARN
-     * of the parent image or an AMI ID. The format for the ARN follows this example:
+     * <p>The base image of the image recipe. The value of the string can be the ARN of
+     * the base image or an AMI ID. The format for the ARN follows this example:
      * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
      * You can provide the specific version that you want to use, or you can use a
      * wildcard in all of the fields. If you enter an AMI ID for the string value, you
@@ -305,8 +305,8 @@ namespace Model
     inline bool ParentImageHasBeenSet() const { return m_parentImageHasBeenSet; }
 
     /**
-     * <p>The parent image of the image recipe. The value of the string can be the ARN
-     * of the parent image or an AMI ID. The format for the ARN follows this example:
+     * <p>The base image of the image recipe. The value of the string can be the ARN of
+     * the base image or an AMI ID. The format for the ARN follows this example:
      * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
      * You can provide the specific version that you want to use, or you can use a
      * wildcard in all of the fields. If you enter an AMI ID for the string value, you
@@ -316,8 +316,8 @@ namespace Model
     inline void SetParentImage(const Aws::String& value) { m_parentImageHasBeenSet = true; m_parentImage = value; }
 
     /**
-     * <p>The parent image of the image recipe. The value of the string can be the ARN
-     * of the parent image or an AMI ID. The format for the ARN follows this example:
+     * <p>The base image of the image recipe. The value of the string can be the ARN of
+     * the base image or an AMI ID. The format for the ARN follows this example:
      * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
      * You can provide the specific version that you want to use, or you can use a
      * wildcard in all of the fields. If you enter an AMI ID for the string value, you
@@ -327,8 +327,8 @@ namespace Model
     inline void SetParentImage(Aws::String&& value) { m_parentImageHasBeenSet = true; m_parentImage = std::move(value); }
 
     /**
-     * <p>The parent image of the image recipe. The value of the string can be the ARN
-     * of the parent image or an AMI ID. The format for the ARN follows this example:
+     * <p>The base image of the image recipe. The value of the string can be the ARN of
+     * the base image or an AMI ID. The format for the ARN follows this example:
      * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
      * You can provide the specific version that you want to use, or you can use a
      * wildcard in all of the fields. If you enter an AMI ID for the string value, you
@@ -338,8 +338,8 @@ namespace Model
     inline void SetParentImage(const char* value) { m_parentImageHasBeenSet = true; m_parentImage.assign(value); }
 
     /**
-     * <p>The parent image of the image recipe. The value of the string can be the ARN
-     * of the parent image or an AMI ID. The format for the ARN follows this example:
+     * <p>The base image of the image recipe. The value of the string can be the ARN of
+     * the base image or an AMI ID. The format for the ARN follows this example:
      * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
      * You can provide the specific version that you want to use, or you can use a
      * wildcard in all of the fields. If you enter an AMI ID for the string value, you
@@ -349,8 +349,8 @@ namespace Model
     inline CreateImageRecipeRequest& WithParentImage(const Aws::String& value) { SetParentImage(value); return *this;}
 
     /**
-     * <p>The parent image of the image recipe. The value of the string can be the ARN
-     * of the parent image or an AMI ID. The format for the ARN follows this example:
+     * <p>The base image of the image recipe. The value of the string can be the ARN of
+     * the base image or an AMI ID. The format for the ARN follows this example:
      * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
      * You can provide the specific version that you want to use, or you can use a
      * wildcard in all of the fields. If you enter an AMI ID for the string value, you
@@ -360,8 +360,8 @@ namespace Model
     inline CreateImageRecipeRequest& WithParentImage(Aws::String&& value) { SetParentImage(std::move(value)); return *this;}
 
     /**
-     * <p>The parent image of the image recipe. The value of the string can be the ARN
-     * of the parent image or an AMI ID. The format for the ARN follows this example:
+     * <p>The base image of the image recipe. The value of the string can be the ARN of
+     * the base image or an AMI ID. The format for the ARN follows this example:
      * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
      * You can provide the specific version that you want to use, or you can use a
      * wildcard in all of the fields. If you enter an AMI ID for the string value, you

@@ -346,7 +346,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -364,7 +364,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -382,7 +382,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -400,7 +400,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -418,7 +418,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -436,7 +436,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -454,7 +454,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -472,7 +472,7 @@ namespace Model
      * might choose a software version pattern, such as 1.0.0, or a date, such as
      * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
      * flexibility to use wildcards (x) to specify the most recent versions or nodes
-     * when selecting the source image or components for your recipe. When you use a
+     * when selecting the base image or components for your recipe. When you use a
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
@@ -693,42 +693,42 @@ namespace Model
 
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline const Aws::String& GetParentImage() const{ return m_parentImage; }
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline bool ParentImageHasBeenSet() const { return m_parentImageHasBeenSet; }
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline void SetParentImage(const Aws::String& value) { m_parentImageHasBeenSet = true; m_parentImage = value; }
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline void SetParentImage(Aws::String&& value) { m_parentImageHasBeenSet = true; m_parentImage = std::move(value); }
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline void SetParentImage(const char* value) { m_parentImageHasBeenSet = true; m_parentImage.assign(value); }
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline ContainerRecipe& WithParentImage(const Aws::String& value) { SetParentImage(value); return *this;}
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline ContainerRecipe& WithParentImage(Aws::String&& value) { SetParentImage(std::move(value)); return *this;}
 
     /**
-     * <p>The source image for the container recipe.</p>
+     * <p>The base image for the container recipe.</p>
      */
     inline ContainerRecipe& WithParentImage(const char* value) { SetParentImage(value); return *this;}
 
