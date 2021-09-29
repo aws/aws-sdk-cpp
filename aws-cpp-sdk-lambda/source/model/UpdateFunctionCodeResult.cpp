@@ -238,6 +238,15 @@ UpdateFunctionCodeResult& UpdateFunctionCodeResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("Architectures"))
+  {
+    Array<JsonView> architecturesJsonList = jsonValue.GetArray("Architectures");
+    for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
+    {
+      m_architectures.push_back(ArchitectureMapper::GetArchitectureForName(architecturesJsonList[architecturesIndex].AsString()));
+    }
+  }
+
 
 
   return *this;

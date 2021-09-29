@@ -20,6 +20,7 @@
 #include <aws/lambda/model/ImageConfigResponse.h>
 #include <aws/lambda/model/Layer.h>
 #include <aws/lambda/model/FileSystemConfig.h>
+#include <aws/lambda/model/Architecture.h>
 #include <utility>
 
 namespace Aws
@@ -1247,6 +1248,63 @@ namespace Model
      */
     inline FunctionConfiguration& WithSigningJobArn(const char* value) { SetSigningJobArn(value); return *this;}
 
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline const Aws::Vector<Architecture>& GetArchitectures() const{ return m_architectures; }
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline bool ArchitecturesHasBeenSet() const { return m_architecturesHasBeenSet; }
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline void SetArchitectures(const Aws::Vector<Architecture>& value) { m_architecturesHasBeenSet = true; m_architectures = value; }
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline void SetArchitectures(Aws::Vector<Architecture>&& value) { m_architecturesHasBeenSet = true; m_architectures = std::move(value); }
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline FunctionConfiguration& WithArchitectures(const Aws::Vector<Architecture>& value) { SetArchitectures(value); return *this;}
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline FunctionConfiguration& WithArchitectures(Aws::Vector<Architecture>&& value) { SetArchitectures(std::move(value)); return *this;}
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline FunctionConfiguration& AddArchitectures(const Architecture& value) { m_architecturesHasBeenSet = true; m_architectures.push_back(value); return *this; }
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline FunctionConfiguration& AddArchitectures(Architecture&& value) { m_architecturesHasBeenSet = true; m_architectures.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_functionName;
@@ -1341,6 +1399,9 @@ namespace Model
 
     Aws::String m_signingJobArn;
     bool m_signingJobArnHasBeenSet;
+
+    Aws::Vector<Architecture> m_architectures;
+    bool m_architecturesHasBeenSet;
   };
 
 } // namespace Model

@@ -24,8 +24,8 @@ namespace Model
    * v2. You also gain the ability to perform predictive inbox placement tests.</p>
    * <p>When you use the Deliverability dashboard, you pay a monthly subscription
    * charge, in addition to any other fees that you accrue by using Amazon SES and
-   * other AWS services. For more information about the features and cost of a
-   * Deliverability dashboard subscription, see <a
+   * other Amazon Web Services services. For more information about the features and
+   * cost of a Deliverability dashboard subscription, see <a
    * href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint
    * Pricing</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDeliverabilityDashboardOptionRequest">AWS

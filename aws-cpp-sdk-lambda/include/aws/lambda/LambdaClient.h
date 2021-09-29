@@ -416,9 +416,10 @@ namespace Model
          * function. You can apply the policy at the function level, or specify a qualifier
          * to restrict access to a single version or alias. If you use a qualifier, the
          * invoker must use the full Amazon Resource Name (ARN) of that version or alias to
-         * invoke the function.</p> <p>To grant permission to another account, specify the
-         * account ID as the <code>Principal</code>. For Amazon Web Services services, the
-         * principal is a domain-style identifier defined by the service, like
+         * invoke the function. Note: Lambda does not support adding policies to version
+         * $LATEST.</p> <p>To grant permission to another account, specify the account ID
+         * as the <code>Principal</code>. For Amazon Web Services services, the principal
+         * is a domain-style identifier defined by the service, like
          * <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>. For Amazon Web
          * Services services, you can also specify the ARN of the associated resource as
          * the <code>SourceArn</code>. If you grant permission to a service principal
@@ -438,9 +439,10 @@ namespace Model
          * function. You can apply the policy at the function level, or specify a qualifier
          * to restrict access to a single version or alias. If you use a qualifier, the
          * invoker must use the full Amazon Resource Name (ARN) of that version or alias to
-         * invoke the function.</p> <p>To grant permission to another account, specify the
-         * account ID as the <code>Principal</code>. For Amazon Web Services services, the
-         * principal is a domain-style identifier defined by the service, like
+         * invoke the function. Note: Lambda does not support adding policies to version
+         * $LATEST.</p> <p>To grant permission to another account, specify the account ID
+         * as the <code>Principal</code>. For Amazon Web Services services, the principal
+         * is a domain-style identifier defined by the service, like
          * <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>. For Amazon Web
          * Services services, you can also specify the ARN of the associated resource as
          * the <code>SourceArn</code>. If you grant permission to a service principal
@@ -462,9 +464,10 @@ namespace Model
          * function. You can apply the policy at the function level, or specify a qualifier
          * to restrict access to a single version or alias. If you use a qualifier, the
          * invoker must use the full Amazon Resource Name (ARN) of that version or alias to
-         * invoke the function.</p> <p>To grant permission to another account, specify the
-         * account ID as the <code>Principal</code>. For Amazon Web Services services, the
-         * principal is a domain-style identifier defined by the service, like
+         * invoke the function. Note: Lambda does not support adding policies to version
+         * $LATEST.</p> <p>To grant permission to another account, specify the account ID
+         * as the <code>Principal</code>. For Amazon Web Services services, the principal
+         * is a domain-style identifier defined by the service, like
          * <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>. For Amazon Web
          * Services services, you can also specify the ARN of the associated resource as
          * the <code>SourceArn</code>. If you grant permission to a service principal
@@ -567,15 +570,13 @@ namespace Model
         /**
          * <p>Creates a mapping between an event source and an Lambda function. Lambda
          * reads items from the event source and triggers the function.</p> <p>For details
-         * about each event source type, see the following topics. In particular, each of
-         * the topics describes the required and optional parameters for the specific event
-         * source. </p> <ul> <li> <p> <a
+         * about each event source type, see the following topics. </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-dynamodb-eventsourcemapping">
          * Configuring a Dynamo DB stream as an event source</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-eventsourcemapping">
          * Configuring a Kinesis stream as an event source</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-eventsource">
-         * Configuring an SQS queue as an event source</a> </p> </li> <li> <p> <a
+         * Configuring an Amazon SQS queue as an event source</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html#services-mq-eventsourcemapping">
          * Configuring an MQ broker as an event source</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html"> Configuring
@@ -602,15 +603,13 @@ namespace Model
         /**
          * <p>Creates a mapping between an event source and an Lambda function. Lambda
          * reads items from the event source and triggers the function.</p> <p>For details
-         * about each event source type, see the following topics. In particular, each of
-         * the topics describes the required and optional parameters for the specific event
-         * source. </p> <ul> <li> <p> <a
+         * about each event source type, see the following topics. </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-dynamodb-eventsourcemapping">
          * Configuring a Dynamo DB stream as an event source</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-eventsourcemapping">
          * Configuring a Kinesis stream as an event source</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-eventsource">
-         * Configuring an SQS queue as an event source</a> </p> </li> <li> <p> <a
+         * Configuring an Amazon SQS queue as an event source</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html#services-mq-eventsourcemapping">
          * Configuring an MQ broker as an event source</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html"> Configuring
@@ -639,15 +638,13 @@ namespace Model
         /**
          * <p>Creates a mapping between an event source and an Lambda function. Lambda
          * reads items from the event source and triggers the function.</p> <p>For details
-         * about each event source type, see the following topics. In particular, each of
-         * the topics describes the required and optional parameters for the specific event
-         * source. </p> <ul> <li> <p> <a
+         * about each event source type, see the following topics. </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-dynamodb-eventsourcemapping">
          * Configuring a Dynamo DB stream as an event source</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-eventsourcemapping">
          * Configuring a Kinesis stream as an event source</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-eventsource">
-         * Configuring an SQS queue as an event source</a> </p> </li> <li> <p> <a
+         * Configuring an Amazon SQS queue as an event source</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html#services-mq-eventsourcemapping">
          * Configuring an MQ broker as an event source</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html"> Configuring
@@ -691,11 +688,14 @@ namespace Model
          * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
          * file archive</a>. For a .zip file archive, the code property specifies the
          * location of the .zip file. You must also specify the handler and runtime
-         * properties.</p> <p>When you create a function, Lambda provisions an instance of
-         * the function and its supporting resources. If your function connects to a VPC,
-         * this process can take a minute or so. During this time, you can't invoke or
-         * modify the function. The <code>State</code>, <code>StateReason</code>, and
-         * <code>StateReasonCode</code> fields in the response from
+         * properties. The code in the deployment package must be compatible with the
+         * target instruction set architecture of the function (<code>x86-64</code> or
+         * <code>arm64</code>). If you do not specify the architecture, the default value
+         * is <code>x86-64</code>.</p> <p>When you create a function, Lambda provisions an
+         * instance of the function and its supporting resources. If your function connects
+         * to a VPC, this process can take a minute or so. During this time, you can't
+         * invoke or modify the function. The <code>State</code>, <code>StateReason</code>,
+         * and <code>StateReasonCode</code> fields in the response from
          * <a>GetFunctionConfiguration</a> indicate when the function is ready to invoke.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
@@ -749,11 +749,14 @@ namespace Model
          * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
          * file archive</a>. For a .zip file archive, the code property specifies the
          * location of the .zip file. You must also specify the handler and runtime
-         * properties.</p> <p>When you create a function, Lambda provisions an instance of
-         * the function and its supporting resources. If your function connects to a VPC,
-         * this process can take a minute or so. During this time, you can't invoke or
-         * modify the function. The <code>State</code>, <code>StateReason</code>, and
-         * <code>StateReasonCode</code> fields in the response from
+         * properties. The code in the deployment package must be compatible with the
+         * target instruction set architecture of the function (<code>x86-64</code> or
+         * <code>arm64</code>). If you do not specify the architecture, the default value
+         * is <code>x86-64</code>.</p> <p>When you create a function, Lambda provisions an
+         * instance of the function and its supporting resources. If your function connects
+         * to a VPC, this process can take a minute or so. During this time, you can't
+         * invoke or modify the function. The <code>State</code>, <code>StateReason</code>,
+         * and <code>StateReasonCode</code> fields in the response from
          * <a>GetFunctionConfiguration</a> indicate when the function is ready to invoke.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
@@ -809,11 +812,14 @@ namespace Model
          * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
          * file archive</a>. For a .zip file archive, the code property specifies the
          * location of the .zip file. You must also specify the handler and runtime
-         * properties.</p> <p>When you create a function, Lambda provisions an instance of
-         * the function and its supporting resources. If your function connects to a VPC,
-         * this process can take a minute or so. During this time, you can't invoke or
-         * modify the function. The <code>State</code>, <code>StateReason</code>, and
-         * <code>StateReasonCode</code> fields in the response from
+         * properties. The code in the deployment package must be compatible with the
+         * target instruction set architecture of the function (<code>x86-64</code> or
+         * <code>arm64</code>). If you do not specify the architecture, the default value
+         * is <code>x86-64</code>.</p> <p>When you create a function, Lambda provisions an
+         * instance of the function and its supporting resources. If your function connects
+         * to a VPC, this process can take a minute or so. During this time, you can't
+         * invoke or modify the function. The <code>State</code>, <code>StateReason</code>,
+         * and <code>StateReasonCode</code> fields in the response from
          * <a>GetFunctionConfiguration</a> indicate when the function is ready to invoke.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
@@ -1940,7 +1946,8 @@ namespace Model
          * layer</a>. Versions that have been deleted aren't listed. Specify a <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
          * identifier</a> to list only versions that indicate that they're compatible with
-         * that runtime.</p><p><h3>See Also:</h3>   <a
+         * that runtime. Specify a compatible architecture to include only layer versions
+         * that are compatible with that architecture.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayerVersions">AWS
          * API Reference</a></p>
          */
@@ -1952,7 +1959,8 @@ namespace Model
          * layer</a>. Versions that have been deleted aren't listed. Specify a <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
          * identifier</a> to list only versions that indicate that they're compatible with
-         * that runtime.</p><p><h3>See Also:</h3>   <a
+         * that runtime. Specify a compatible architecture to include only layer versions
+         * that are compatible with that architecture.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayerVersions">AWS
          * API Reference</a></p>
          *
@@ -1966,7 +1974,8 @@ namespace Model
          * layer</a>. Versions that have been deleted aren't listed. Specify a <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
          * identifier</a> to list only versions that indicate that they're compatible with
-         * that runtime.</p><p><h3>See Also:</h3>   <a
+         * that runtime. Specify a compatible architecture to include only layer versions
+         * that are compatible with that architecture.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayerVersions">AWS
          * API Reference</a></p>
          *
@@ -1976,11 +1985,14 @@ namespace Model
 
         /**
          * <p>Lists <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-layers.html">Lambda
          * layers</a> and shows information about the latest version of each. Specify a <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
          * identifier</a> to list only layers that indicate that they're compatible with
-         * that runtime.</p><p><h3>See Also:</h3>   <a
+         * that runtime. Specify a compatible architecture to include only layers that are
+         * compatible with that <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+         * set architecture</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers">AWS
          * API Reference</a></p>
          */
@@ -1988,11 +2000,14 @@ namespace Model
 
         /**
          * <p>Lists <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-layers.html">Lambda
          * layers</a> and shows information about the latest version of each. Specify a <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
          * identifier</a> to list only layers that indicate that they're compatible with
-         * that runtime.</p><p><h3>See Also:</h3>   <a
+         * that runtime. Specify a compatible architecture to include only layers that are
+         * compatible with that <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+         * set architecture</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers">AWS
          * API Reference</a></p>
          *
@@ -2002,11 +2017,14 @@ namespace Model
 
         /**
          * <p>Lists <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-layers.html">Lambda
          * layers</a> and shows information about the latest version of each. Specify a <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
          * identifier</a> to list only layers that indicate that they're compatible with
-         * that runtime.</p><p><h3>See Also:</h3>   <a
+         * that runtime. Specify a compatible architecture to include only layers that are
+         * compatible with that <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+         * set architecture</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers">AWS
          * API Reference</a></p>
          *

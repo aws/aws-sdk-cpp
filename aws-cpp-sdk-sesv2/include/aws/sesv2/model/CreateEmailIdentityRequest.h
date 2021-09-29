@@ -40,99 +40,99 @@ namespace Model
 
 
     /**
-     * <p>The email address or domain that you want to verify.</p>
+     * <p>The email address or domain to verify.</p>
      */
     inline const Aws::String& GetEmailIdentity() const{ return m_emailIdentity; }
 
     /**
-     * <p>The email address or domain that you want to verify.</p>
+     * <p>The email address or domain to verify.</p>
      */
     inline bool EmailIdentityHasBeenSet() const { return m_emailIdentityHasBeenSet; }
 
     /**
-     * <p>The email address or domain that you want to verify.</p>
+     * <p>The email address or domain to verify.</p>
      */
     inline void SetEmailIdentity(const Aws::String& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = value; }
 
     /**
-     * <p>The email address or domain that you want to verify.</p>
+     * <p>The email address or domain to verify.</p>
      */
     inline void SetEmailIdentity(Aws::String&& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = std::move(value); }
 
     /**
-     * <p>The email address or domain that you want to verify.</p>
+     * <p>The email address or domain to verify.</p>
      */
     inline void SetEmailIdentity(const char* value) { m_emailIdentityHasBeenSet = true; m_emailIdentity.assign(value); }
 
     /**
-     * <p>The email address or domain that you want to verify.</p>
+     * <p>The email address or domain to verify.</p>
      */
     inline CreateEmailIdentityRequest& WithEmailIdentity(const Aws::String& value) { SetEmailIdentity(value); return *this;}
 
     /**
-     * <p>The email address or domain that you want to verify.</p>
+     * <p>The email address or domain to verify.</p>
      */
     inline CreateEmailIdentityRequest& WithEmailIdentity(Aws::String&& value) { SetEmailIdentity(std::move(value)); return *this;}
 
     /**
-     * <p>The email address or domain that you want to verify.</p>
+     * <p>The email address or domain to verify.</p>
      */
     inline CreateEmailIdentityRequest& WithEmailIdentity(const char* value) { SetEmailIdentity(value); return *this;}
 
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the email identity.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the email identity.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the email identity.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the email identity.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the email identity.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the email identity.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the email identity.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the email identity.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the email identity.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the email identity.</p>
      */
     inline CreateEmailIdentityRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the email identity.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the email identity.</p>
      */
     inline CreateEmailIdentityRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the email identity.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the email identity.</p>
      */
     inline CreateEmailIdentityRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the email identity.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the email identity.</p>
      */
     inline CreateEmailIdentityRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>If your request includes this object, Amazon SES configures the identity to
-     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, as opposed
-     * to the default method, <a
+     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or,
+     * configures the key length to be used for <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
      * DKIM</a>.</p> <p>You can only specify this object if the email identity is a
      * domain, as opposed to an address.</p>
@@ -141,8 +141,8 @@ namespace Model
 
     /**
      * <p>If your request includes this object, Amazon SES configures the identity to
-     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, as opposed
-     * to the default method, <a
+     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or,
+     * configures the key length to be used for <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
      * DKIM</a>.</p> <p>You can only specify this object if the email identity is a
      * domain, as opposed to an address.</p>
@@ -151,8 +151,8 @@ namespace Model
 
     /**
      * <p>If your request includes this object, Amazon SES configures the identity to
-     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, as opposed
-     * to the default method, <a
+     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or,
+     * configures the key length to be used for <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
      * DKIM</a>.</p> <p>You can only specify this object if the email identity is a
      * domain, as opposed to an address.</p>
@@ -161,8 +161,8 @@ namespace Model
 
     /**
      * <p>If your request includes this object, Amazon SES configures the identity to
-     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, as opposed
-     * to the default method, <a
+     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or,
+     * configures the key length to be used for <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
      * DKIM</a>.</p> <p>You can only specify this object if the email identity is a
      * domain, as opposed to an address.</p>
@@ -171,8 +171,8 @@ namespace Model
 
     /**
      * <p>If your request includes this object, Amazon SES configures the identity to
-     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, as opposed
-     * to the default method, <a
+     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or,
+     * configures the key length to be used for <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
      * DKIM</a>.</p> <p>You can only specify this object if the email identity is a
      * domain, as opposed to an address.</p>
@@ -181,8 +181,8 @@ namespace Model
 
     /**
      * <p>If your request includes this object, Amazon SES configures the identity to
-     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, as opposed
-     * to the default method, <a
+     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or,
+     * configures the key length to be used for <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
      * DKIM</a>.</p> <p>You can only specify this object if the email identity is a
      * domain, as opposed to an address.</p>

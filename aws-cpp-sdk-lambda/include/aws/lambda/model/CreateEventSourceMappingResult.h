@@ -149,36 +149,63 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of items to retrieve in a single batch.</p>
+     * <p>The maximum number of records in each batch that Lambda pulls from your
+     * stream or queue and sends to your function. Lambda passes all of the records in
+     * the batch to the function in a single call, up to the payload limit for
+     * synchronous invocation (6 MB).</p> <p>Default value: Varies by service. For
+     * Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+     * <p>Related setting: When you set <code>BatchSize</code> to a value greater than
+     * 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
      */
     inline int GetBatchSize() const{ return m_batchSize; }
 
     /**
-     * <p>The maximum number of items to retrieve in a single batch.</p>
+     * <p>The maximum number of records in each batch that Lambda pulls from your
+     * stream or queue and sends to your function. Lambda passes all of the records in
+     * the batch to the function in a single call, up to the payload limit for
+     * synchronous invocation (6 MB).</p> <p>Default value: Varies by service. For
+     * Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+     * <p>Related setting: When you set <code>BatchSize</code> to a value greater than
+     * 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
      */
     inline void SetBatchSize(int value) { m_batchSize = value; }
 
     /**
-     * <p>The maximum number of items to retrieve in a single batch.</p>
+     * <p>The maximum number of records in each batch that Lambda pulls from your
+     * stream or queue and sends to your function. Lambda passes all of the records in
+     * the batch to the function in a single call, up to the payload limit for
+     * synchronous invocation (6 MB).</p> <p>Default value: Varies by service. For
+     * Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+     * <p>Related setting: When you set <code>BatchSize</code> to a value greater than
+     * 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
      */
     inline CreateEventSourceMappingResult& WithBatchSize(int value) { SetBatchSize(value); return *this;}
 
 
     /**
-     * <p>(Streams and Amazon SQS standard queues) The maximum amount of time to gather
-     * records before invoking the function, in seconds. The default value is zero.</p>
+     * <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in
+     * seconds, that Lambda spends gathering records before invoking the function.</p>
+     * <p>Default: 0</p> <p>Related setting: When you set <code>BatchSize</code> to a
+     * value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code>
+     * to at least 1.</p>
      */
     inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
 
     /**
-     * <p>(Streams and Amazon SQS standard queues) The maximum amount of time to gather
-     * records before invoking the function, in seconds. The default value is zero.</p>
+     * <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in
+     * seconds, that Lambda spends gathering records before invoking the function.</p>
+     * <p>Default: 0</p> <p>Related setting: When you set <code>BatchSize</code> to a
+     * value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code>
+     * to at least 1.</p>
      */
     inline void SetMaximumBatchingWindowInSeconds(int value) { m_maximumBatchingWindowInSeconds = value; }
 
     /**
-     * <p>(Streams and Amazon SQS standard queues) The maximum amount of time to gather
-     * records before invoking the function, in seconds. The default value is zero.</p>
+     * <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in
+     * seconds, that Lambda spends gathering records before invoking the function.</p>
+     * <p>Default: 0</p> <p>Related setting: When you set <code>BatchSize</code> to a
+     * value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code>
+     * to at least 1.</p>
      */
     inline CreateEventSourceMappingResult& WithMaximumBatchingWindowInSeconds(int value) { SetMaximumBatchingWindowInSeconds(value); return *this;}
 

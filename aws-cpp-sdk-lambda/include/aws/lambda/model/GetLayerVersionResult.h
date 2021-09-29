@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lambda/model/Runtime.h>
+#include <aws/lambda/model/Architecture.h>
 #include <utility>
 
 namespace Aws
@@ -306,6 +307,56 @@ namespace Model
      */
     inline GetLayerVersionResult& WithLicenseInfo(const char* value) { SetLicenseInfo(value); return *this;}
 
+
+    /**
+     * <p>A list of compatible <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+     * set architectures</a>.</p>
+     */
+    inline const Aws::Vector<Architecture>& GetCompatibleArchitectures() const{ return m_compatibleArchitectures; }
+
+    /**
+     * <p>A list of compatible <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+     * set architectures</a>.</p>
+     */
+    inline void SetCompatibleArchitectures(const Aws::Vector<Architecture>& value) { m_compatibleArchitectures = value; }
+
+    /**
+     * <p>A list of compatible <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+     * set architectures</a>.</p>
+     */
+    inline void SetCompatibleArchitectures(Aws::Vector<Architecture>&& value) { m_compatibleArchitectures = std::move(value); }
+
+    /**
+     * <p>A list of compatible <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+     * set architectures</a>.</p>
+     */
+    inline GetLayerVersionResult& WithCompatibleArchitectures(const Aws::Vector<Architecture>& value) { SetCompatibleArchitectures(value); return *this;}
+
+    /**
+     * <p>A list of compatible <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+     * set architectures</a>.</p>
+     */
+    inline GetLayerVersionResult& WithCompatibleArchitectures(Aws::Vector<Architecture>&& value) { SetCompatibleArchitectures(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of compatible <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+     * set architectures</a>.</p>
+     */
+    inline GetLayerVersionResult& AddCompatibleArchitectures(const Architecture& value) { m_compatibleArchitectures.push_back(value); return *this; }
+
+    /**
+     * <p>A list of compatible <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+     * set architectures</a>.</p>
+     */
+    inline GetLayerVersionResult& AddCompatibleArchitectures(Architecture&& value) { m_compatibleArchitectures.push_back(std::move(value)); return *this; }
+
   private:
 
     LayerVersionContentOutput m_content;
@@ -323,6 +374,8 @@ namespace Model
     Aws::Vector<Runtime> m_compatibleRuntimes;
 
     Aws::String m_licenseInfo;
+
+    Aws::Vector<Architecture> m_compatibleArchitectures;
   };
 
 } // namespace Model

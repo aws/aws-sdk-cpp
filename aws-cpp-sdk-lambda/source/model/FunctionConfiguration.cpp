@@ -58,7 +58,8 @@ FunctionConfiguration::FunctionConfiguration() :
     m_packageTypeHasBeenSet(false),
     m_imageConfigResponseHasBeenSet(false),
     m_signingProfileVersionArnHasBeenSet(false),
-    m_signingJobArnHasBeenSet(false)
+    m_signingJobArnHasBeenSet(false),
+    m_architecturesHasBeenSet(false)
 {
 }
 
@@ -102,7 +103,8 @@ FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) :
     m_packageTypeHasBeenSet(false),
     m_imageConfigResponseHasBeenSet(false),
     m_signingProfileVersionArnHasBeenSet(false),
-    m_signingJobArnHasBeenSet(false)
+    m_signingJobArnHasBeenSet(false),
+    m_architecturesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -332,6 +334,16 @@ FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
     m_signingJobArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Architectures"))
+  {
+    Array<JsonView> architecturesJsonList = jsonValue.GetArray("Architectures");
+    for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
+    {
+      m_architectures.push_back(ArchitectureMapper::GetArchitectureForName(architecturesJsonList[architecturesIndex].AsString()));
+    }
+    m_architecturesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -526,6 +538,17 @@ JsonValue FunctionConfiguration::Jsonize() const
   if(m_signingJobArnHasBeenSet)
   {
    payload.WithString("SigningJobArn", m_signingJobArn);
+
+  }
+
+  if(m_architecturesHasBeenSet)
+  {
+   Array<JsonValue> architecturesJsonList(m_architectures.size());
+   for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
+   {
+     architecturesJsonList[architecturesIndex].AsString(ArchitectureMapper::GetNameForArchitecture(m_architectures[architecturesIndex]));
+   }
+   payload.WithArray("Architectures", std::move(architecturesJsonList));
 
   }
 

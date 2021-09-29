@@ -309,56 +309,64 @@ namespace Model
     /**
      * <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource
      * that invokes the function. For example, an Amazon S3 bucket or Amazon SNS
-     * topic.</p>
+     * topic.</p> <p>Note that Lambda configures the comparison using the
+     * <code>StringLike</code> operator.</p>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
 
     /**
      * <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource
      * that invokes the function. For example, an Amazon S3 bucket or Amazon SNS
-     * topic.</p>
+     * topic.</p> <p>Note that Lambda configures the comparison using the
+     * <code>StringLike</code> operator.</p>
      */
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
 
     /**
      * <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource
      * that invokes the function. For example, an Amazon S3 bucket or Amazon SNS
-     * topic.</p>
+     * topic.</p> <p>Note that Lambda configures the comparison using the
+     * <code>StringLike</code> operator.</p>
      */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
 
     /**
      * <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource
      * that invokes the function. For example, an Amazon S3 bucket or Amazon SNS
-     * topic.</p>
+     * topic.</p> <p>Note that Lambda configures the comparison using the
+     * <code>StringLike</code> operator.</p>
      */
     inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
 
     /**
      * <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource
      * that invokes the function. For example, an Amazon S3 bucket or Amazon SNS
-     * topic.</p>
+     * topic.</p> <p>Note that Lambda configures the comparison using the
+     * <code>StringLike</code> operator.</p>
      */
     inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
 
     /**
      * <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource
      * that invokes the function. For example, an Amazon S3 bucket or Amazon SNS
-     * topic.</p>
+     * topic.</p> <p>Note that Lambda configures the comparison using the
+     * <code>StringLike</code> operator.</p>
      */
     inline AddPermissionRequest& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
 
     /**
      * <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource
      * that invokes the function. For example, an Amazon S3 bucket or Amazon SNS
-     * topic.</p>
+     * topic.</p> <p>Note that Lambda configures the comparison using the
+     * <code>StringLike</code> operator.</p>
      */
     inline AddPermissionRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
 
     /**
      * <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource
      * that invokes the function. For example, an Amazon S3 bucket or Amazon SNS
-     * topic.</p>
+     * topic.</p> <p>Note that Lambda configures the comparison using the
+     * <code>StringLike</code> operator.</p>
      */
     inline AddPermissionRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 

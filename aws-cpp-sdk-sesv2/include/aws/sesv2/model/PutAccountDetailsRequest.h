@@ -247,57 +247,57 @@ namespace Model
 
     /**
      * <p>Indicates whether or not your account should have production access in the
-     * current AWS Region.</p> <p>If the value is <code>false</code>, then your account
-     * is in the <i>sandbox</i>. When your account is in the sandbox, you can only send
-     * email to verified identities. Additionally, the maximum number of emails you can
-     * send in a 24-hour period (your sending quota) is 200, and the maximum number of
-     * emails you can send per second (your maximum sending rate) is 1.</p> <p>If the
-     * value is <code>true</code>, then your account has production access. When your
-     * account has production access, you can send email to any address. The sending
-     * quota and maximum sending rate for your account vary based on your specific use
-     * case.</p>
+     * current Amazon Web Services Region.</p> <p>If the value is <code>false</code>,
+     * then your account is in the <i>sandbox</i>. When your account is in the sandbox,
+     * you can only send email to verified identities. Additionally, the maximum number
+     * of emails you can send in a 24-hour period (your sending quota) is 200, and the
+     * maximum number of emails you can send per second (your maximum sending rate) is
+     * 1.</p> <p>If the value is <code>true</code>, then your account has production
+     * access. When your account has production access, you can send email to any
+     * address. The sending quota and maximum sending rate for your account vary based
+     * on your specific use case.</p>
      */
     inline bool GetProductionAccessEnabled() const{ return m_productionAccessEnabled; }
 
     /**
      * <p>Indicates whether or not your account should have production access in the
-     * current AWS Region.</p> <p>If the value is <code>false</code>, then your account
-     * is in the <i>sandbox</i>. When your account is in the sandbox, you can only send
-     * email to verified identities. Additionally, the maximum number of emails you can
-     * send in a 24-hour period (your sending quota) is 200, and the maximum number of
-     * emails you can send per second (your maximum sending rate) is 1.</p> <p>If the
-     * value is <code>true</code>, then your account has production access. When your
-     * account has production access, you can send email to any address. The sending
-     * quota and maximum sending rate for your account vary based on your specific use
-     * case.</p>
+     * current Amazon Web Services Region.</p> <p>If the value is <code>false</code>,
+     * then your account is in the <i>sandbox</i>. When your account is in the sandbox,
+     * you can only send email to verified identities. Additionally, the maximum number
+     * of emails you can send in a 24-hour period (your sending quota) is 200, and the
+     * maximum number of emails you can send per second (your maximum sending rate) is
+     * 1.</p> <p>If the value is <code>true</code>, then your account has production
+     * access. When your account has production access, you can send email to any
+     * address. The sending quota and maximum sending rate for your account vary based
+     * on your specific use case.</p>
      */
     inline bool ProductionAccessEnabledHasBeenSet() const { return m_productionAccessEnabledHasBeenSet; }
 
     /**
      * <p>Indicates whether or not your account should have production access in the
-     * current AWS Region.</p> <p>If the value is <code>false</code>, then your account
-     * is in the <i>sandbox</i>. When your account is in the sandbox, you can only send
-     * email to verified identities. Additionally, the maximum number of emails you can
-     * send in a 24-hour period (your sending quota) is 200, and the maximum number of
-     * emails you can send per second (your maximum sending rate) is 1.</p> <p>If the
-     * value is <code>true</code>, then your account has production access. When your
-     * account has production access, you can send email to any address. The sending
-     * quota and maximum sending rate for your account vary based on your specific use
-     * case.</p>
+     * current Amazon Web Services Region.</p> <p>If the value is <code>false</code>,
+     * then your account is in the <i>sandbox</i>. When your account is in the sandbox,
+     * you can only send email to verified identities. Additionally, the maximum number
+     * of emails you can send in a 24-hour period (your sending quota) is 200, and the
+     * maximum number of emails you can send per second (your maximum sending rate) is
+     * 1.</p> <p>If the value is <code>true</code>, then your account has production
+     * access. When your account has production access, you can send email to any
+     * address. The sending quota and maximum sending rate for your account vary based
+     * on your specific use case.</p>
      */
     inline void SetProductionAccessEnabled(bool value) { m_productionAccessEnabledHasBeenSet = true; m_productionAccessEnabled = value; }
 
     /**
      * <p>Indicates whether or not your account should have production access in the
-     * current AWS Region.</p> <p>If the value is <code>false</code>, then your account
-     * is in the <i>sandbox</i>. When your account is in the sandbox, you can only send
-     * email to verified identities. Additionally, the maximum number of emails you can
-     * send in a 24-hour period (your sending quota) is 200, and the maximum number of
-     * emails you can send per second (your maximum sending rate) is 1.</p> <p>If the
-     * value is <code>true</code>, then your account has production access. When your
-     * account has production access, you can send email to any address. The sending
-     * quota and maximum sending rate for your account vary based on your specific use
-     * case.</p>
+     * current Amazon Web Services Region.</p> <p>If the value is <code>false</code>,
+     * then your account is in the <i>sandbox</i>. When your account is in the sandbox,
+     * you can only send email to verified identities. Additionally, the maximum number
+     * of emails you can send in a 24-hour period (your sending quota) is 200, and the
+     * maximum number of emails you can send per second (your maximum sending rate) is
+     * 1.</p> <p>If the value is <code>true</code>, then your account has production
+     * access. When your account has production access, you can send email to any
+     * address. The sending quota and maximum sending rate for your account vary based
+     * on your specific use case.</p>
      */
     inline PutAccountDetailsRequest& WithProductionAccessEnabled(bool value) { SetProductionAccessEnabled(value); return *this;}
 

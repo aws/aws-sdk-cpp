@@ -26,8 +26,8 @@ namespace Model
 
   /**
    * <p>An object that contains information about the email address suppression
-   * preferences for your account in the current AWS Region.</p><p><h3>See Also:</h3>
-   * <a
+   * preferences for your account in the current Amazon Web Services
+   * Region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SuppressionAttributes">AWS
    * API Reference</a></p>
    */

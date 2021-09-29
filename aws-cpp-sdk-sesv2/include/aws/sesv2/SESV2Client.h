@@ -463,32 +463,14 @@ namespace Model
     typedef std::function<void(const SESV2Client*, const Model::UpdateEmailTemplateRequest&, const Model::UpdateEmailTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEmailTemplateResponseReceivedHandler;
 
   /**
-   * <fullname>Amazon SES API v2</fullname> <p>Welcome to the Amazon SES API v2
-   * Reference. This guide provides information about the Amazon SES API v2,
-   * including supported operations, data types, parameters, and schemas.</p> <p> <a
-   * href="https://aws.amazon.com/pinpoint">Amazon SES</a> is an AWS service that you
-   * can use to send email messages to your customers.</p> <p>If you're new to Amazon
-   * SES API v2, you might find it helpful to also review the <a
+   * <fullname>Amazon SES API v2</fullname> <p> <a
+   * href="http://aws.amazon.com/ses">Amazon SES</a> is an Amazon Web Services
+   * service that you can use to send email messages to your customers.</p> <p>If
+   * you're new to Amazon SES API v2, you might find it helpful to review the <a
    * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/">Amazon Simple
    * Email Service Developer Guide</a>. The <i>Amazon SES Developer Guide</i>
    * provides information and code samples that demonstrate how to use Amazon SES API
-   * v2 features programmatically.</p> <p>The Amazon SES API v2 is available in
-   * several AWS Regions and it provides an endpoint for each of these Regions. For a
-   * list of all the Regions and endpoints where the API is currently available, see
-   * <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region">AWS
-   * Service Endpoints</a> in the <i>Amazon Web Services General Reference</i>. To
-   * learn more about AWS Regions, see <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing
-   * AWS Regions</a> in the <i>Amazon Web Services General Reference</i>.</p> <p>In
-   * each Region, AWS maintains multiple Availability Zones. These Availability Zones
-   * are physically isolated from each other, but are united by private, low-latency,
-   * high-throughput, and highly redundant network connections. These Availability
-   * Zones enable us to provide very high levels of availability and redundancy,
-   * while also minimizing latency. To learn more about the number of Availability
-   * Zones that are available in each Region, see <a
-   * href="http://aws.amazon.com/about-aws/global-infrastructure/">AWS Global
-   * Infrastructure</a>.</p>
+   * v2 features programmatically.</p>
    */
   class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient
   {
@@ -695,10 +677,10 @@ namespace Model
 
         /**
          * <p>Create a new pool of dedicated IP addresses. A pool can include one or more
-         * dedicated IP addresses that are associated with your AWS account. You can
-         * associate a pool with a configuration set. When you send an email that uses that
-         * configuration set, the message is sent from one of the addresses in the
-         * associated pool.</p><p><h3>See Also:</h3>   <a
+         * dedicated IP addresses that are associated with your Amazon Web Services
+         * account. You can associate a pool with a configuration set. When you send an
+         * email that uses that configuration set, the message is sent from one of the
+         * addresses in the associated pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateDedicatedIpPool">AWS
          * API Reference</a></p>
          */
@@ -706,10 +688,10 @@ namespace Model
 
         /**
          * <p>Create a new pool of dedicated IP addresses. A pool can include one or more
-         * dedicated IP addresses that are associated with your AWS account. You can
-         * associate a pool with a configuration set. When you send an email that uses that
-         * configuration set, the message is sent from one of the addresses in the
-         * associated pool.</p><p><h3>See Also:</h3>   <a
+         * dedicated IP addresses that are associated with your Amazon Web Services
+         * account. You can associate a pool with a configuration set. When you send an
+         * email that uses that configuration set, the message is sent from one of the
+         * addresses in the associated pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateDedicatedIpPool">AWS
          * API Reference</a></p>
          *
@@ -719,10 +701,10 @@ namespace Model
 
         /**
          * <p>Create a new pool of dedicated IP addresses. A pool can include one or more
-         * dedicated IP addresses that are associated with your AWS account. You can
-         * associate a pool with a configuration set. When you send an email that uses that
-         * configuration set, the message is sent from one of the addresses in the
-         * associated pool.</p><p><h3>See Also:</h3>   <a
+         * dedicated IP addresses that are associated with your Amazon Web Services
+         * account. You can associate a pool with a configuration set. When you send an
+         * email that uses that configuration set, the message is sent from one of the
+         * addresses in the associated pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateDedicatedIpPool">AWS
          * API Reference</a></p>
          *
@@ -797,14 +779,14 @@ namespace Model
          * <code>CreateEmailIdentity</code> operation has to include the
          * <code>DkimSigningAttributes</code> object. When you specify this object, you
          * provide a selector (a component of the DNS record name that identifies the
-         * public key that you want to use for DKIM authentication) and a private key.</p>
-         * <p>When you verify a domain, this operation provides a set of DKIM tokens, which
-         * you can convert into CNAME tokens. You add these CNAME tokens to the DNS
-         * configuration for your domain. Your domain is verified when Amazon SES detects
-         * these records in the DNS configuration for your domain. For some DNS providers,
-         * it can take 72 hours or more to complete the domain verification process.</p>
-         * <p>Additionally, you can associate an existing configuration set with the email
-         * identity that you're verifying.</p><p><h3>See Also:</h3>   <a
+         * public key to use for DKIM authentication) and a private key.</p> <p>When you
+         * verify a domain, this operation provides a set of DKIM tokens, which you can
+         * convert into CNAME tokens. You add these CNAME tokens to the DNS configuration
+         * for your domain. Your domain is verified when Amazon SES detects these records
+         * in the DNS configuration for your domain. For some DNS providers, it can take 72
+         * hours or more to complete the domain verification process.</p> <p>Additionally,
+         * you can associate an existing configuration set with the email identity that
+         * you're verifying.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateEmailIdentity">AWS
          * API Reference</a></p>
          */
@@ -831,14 +813,14 @@ namespace Model
          * <code>CreateEmailIdentity</code> operation has to include the
          * <code>DkimSigningAttributes</code> object. When you specify this object, you
          * provide a selector (a component of the DNS record name that identifies the
-         * public key that you want to use for DKIM authentication) and a private key.</p>
-         * <p>When you verify a domain, this operation provides a set of DKIM tokens, which
-         * you can convert into CNAME tokens. You add these CNAME tokens to the DNS
-         * configuration for your domain. Your domain is verified when Amazon SES detects
-         * these records in the DNS configuration for your domain. For some DNS providers,
-         * it can take 72 hours or more to complete the domain verification process.</p>
-         * <p>Additionally, you can associate an existing configuration set with the email
-         * identity that you're verifying.</p><p><h3>See Also:</h3>   <a
+         * public key to use for DKIM authentication) and a private key.</p> <p>When you
+         * verify a domain, this operation provides a set of DKIM tokens, which you can
+         * convert into CNAME tokens. You add these CNAME tokens to the DNS configuration
+         * for your domain. Your domain is verified when Amazon SES detects these records
+         * in the DNS configuration for your domain. For some DNS providers, it can take 72
+         * hours or more to complete the domain verification process.</p> <p>Additionally,
+         * you can associate an existing configuration set with the email identity that
+         * you're verifying.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateEmailIdentity">AWS
          * API Reference</a></p>
          *
@@ -867,14 +849,14 @@ namespace Model
          * <code>CreateEmailIdentity</code> operation has to include the
          * <code>DkimSigningAttributes</code> object. When you specify this object, you
          * provide a selector (a component of the DNS record name that identifies the
-         * public key that you want to use for DKIM authentication) and a private key.</p>
-         * <p>When you verify a domain, this operation provides a set of DKIM tokens, which
-         * you can convert into CNAME tokens. You add these CNAME tokens to the DNS
-         * configuration for your domain. Your domain is verified when Amazon SES detects
-         * these records in the DNS configuration for your domain. For some DNS providers,
-         * it can take 72 hours or more to complete the domain verification process.</p>
-         * <p>Additionally, you can associate an existing configuration set with the email
-         * identity that you're verifying.</p><p><h3>See Also:</h3>   <a
+         * public key to use for DKIM authentication) and a private key.</p> <p>When you
+         * verify a domain, this operation provides a set of DKIM tokens, which you can
+         * convert into CNAME tokens. You add these CNAME tokens to the DNS configuration
+         * for your domain. Your domain is verified when Amazon SES detects these records
+         * in the DNS configuration for your domain. For some DNS providers, it can take 72
+         * hours or more to complete the domain verification process.</p> <p>Additionally,
+         * you can associate an existing configuration set with the email identity that
+         * you're verifying.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateEmailIdentity">AWS
          * API Reference</a></p>
          *
@@ -1132,7 +1114,7 @@ namespace Model
         /**
          * <p>Deletes an existing custom verification email template.</p> <p>For more
          * information about custom verification email templates, see <a
-         * href="https://docs.aws.amazon.com/es/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
+         * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
          * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
          * Guide</i>.</p> <p>You can execute this operation no more than once per
          * second.</p><p><h3>See Also:</h3>   <a
@@ -1144,7 +1126,7 @@ namespace Model
         /**
          * <p>Deletes an existing custom verification email template.</p> <p>For more
          * information about custom verification email templates, see <a
-         * href="https://docs.aws.amazon.com/es/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
+         * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
          * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
          * Guide</i>.</p> <p>You can execute this operation no more than once per
          * second.</p><p><h3>See Also:</h3>   <a
@@ -1158,7 +1140,7 @@ namespace Model
         /**
          * <p>Deletes an existing custom verification email template.</p> <p>For more
          * information about custom verification email templates, see <a
-         * href="https://docs.aws.amazon.com/es/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
+         * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
          * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
          * Guide</i>.</p> <p>You can execute this operation no more than once per
          * second.</p><p><h3>See Also:</h3>   <a
@@ -1332,7 +1314,8 @@ namespace Model
 
         /**
          * <p>Obtain information about the email-sending status and capabilities of your
-         * Amazon SES account in the current AWS Region.</p><p><h3>See Also:</h3>   <a
+         * Amazon SES account in the current Amazon Web Services Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetAccount">AWS
          * API Reference</a></p>
          */
@@ -1340,7 +1323,8 @@ namespace Model
 
         /**
          * <p>Obtain information about the email-sending status and capabilities of your
-         * Amazon SES account in the current AWS Region.</p><p><h3>See Also:</h3>   <a
+         * Amazon SES account in the current Amazon Web Services Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetAccount">AWS
          * API Reference</a></p>
          *
@@ -1350,7 +1334,8 @@ namespace Model
 
         /**
          * <p>Obtain information about the email-sending status and capabilities of your
-         * Amazon SES account in the current AWS Region.</p><p><h3>See Also:</h3>   <a
+         * Amazon SES account in the current Amazon Web Services Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetAccount">AWS
          * API Reference</a></p>
          *
@@ -1600,16 +1585,16 @@ namespace Model
         virtual void GetDedicatedIpAsync(const Model::GetDedicatedIpRequest& request, const GetDedicatedIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List the dedicated IP addresses that are associated with your AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>List the dedicated IP addresses that are associated with your Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDedicatedIps">AWS
          * API Reference</a></p>
          */
         virtual Model::GetDedicatedIpsOutcome GetDedicatedIps(const Model::GetDedicatedIpsRequest& request) const;
 
         /**
-         * <p>List the dedicated IP addresses that are associated with your AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>List the dedicated IP addresses that are associated with your Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDedicatedIps">AWS
          * API Reference</a></p>
          *
@@ -1618,8 +1603,8 @@ namespace Model
         virtual Model::GetDedicatedIpsOutcomeCallable GetDedicatedIpsCallable(const Model::GetDedicatedIpsRequest& request) const;
 
         /**
-         * <p>List the dedicated IP addresses that are associated with your AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>List the dedicated IP addresses that are associated with your Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDedicatedIps">AWS
          * API Reference</a></p>
          *
@@ -1634,8 +1619,8 @@ namespace Model
          * send email. You also gain the ability to perform predictive inbox placement
          * tests.</p> <p>When you use the Deliverability dashboard, you pay a monthly
          * subscription charge, in addition to any other fees that you accrue by using
-         * Amazon SES and other AWS services. For more information about the features and
-         * cost of a Deliverability dashboard subscription, see <a
+         * Amazon SES and other Amazon Web Services services. For more information about
+         * the features and cost of a Deliverability dashboard subscription, see <a
          * href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDeliverabilityDashboardOptions">AWS
@@ -1650,8 +1635,8 @@ namespace Model
          * send email. You also gain the ability to perform predictive inbox placement
          * tests.</p> <p>When you use the Deliverability dashboard, you pay a monthly
          * subscription charge, in addition to any other fees that you accrue by using
-         * Amazon SES and other AWS services. For more information about the features and
-         * cost of a Deliverability dashboard subscription, see <a
+         * Amazon SES and other Amazon Web Services services. For more information about
+         * the features and cost of a Deliverability dashboard subscription, see <a
          * href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDeliverabilityDashboardOptions">AWS
@@ -1668,8 +1653,8 @@ namespace Model
          * send email. You also gain the ability to perform predictive inbox placement
          * tests.</p> <p>When you use the Deliverability dashboard, you pay a monthly
          * subscription charge, in addition to any other fees that you accrue by using
-         * Amazon SES and other AWS services. For more information about the features and
-         * cost of a Deliverability dashboard subscription, see <a
+         * Amazon SES and other Amazon Web Services services. For more information about
+         * the features and cost of a Deliverability dashboard subscription, see <a
          * href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDeliverabilityDashboardOptions">AWS
@@ -2031,8 +2016,8 @@ namespace Model
 
         /**
          * <p>Lists the existing custom verification email templates for your account in
-         * the current AWS Region.</p> <p>For more information about custom verification
-         * email templates, see <a
+         * the current Amazon Web Services Region.</p> <p>For more information about custom
+         * verification email templates, see <a
          * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
          * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
          * Guide</i>.</p> <p>You can execute this operation no more than once per
@@ -2044,8 +2029,8 @@ namespace Model
 
         /**
          * <p>Lists the existing custom verification email templates for your account in
-         * the current AWS Region.</p> <p>For more information about custom verification
-         * email templates, see <a
+         * the current Amazon Web Services Region.</p> <p>For more information about custom
+         * verification email templates, see <a
          * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
          * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
          * Guide</i>.</p> <p>You can execute this operation no more than once per
@@ -2059,8 +2044,8 @@ namespace Model
 
         /**
          * <p>Lists the existing custom verification email templates for your account in
-         * the current AWS Region.</p> <p>For more information about custom verification
-         * email templates, see <a
+         * the current Amazon Web Services Region.</p> <p>For more information about custom
+         * verification email templates, see <a
          * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
          * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
          * Guide</i>.</p> <p>You can execute this operation no more than once per
@@ -2073,16 +2058,16 @@ namespace Model
         virtual void ListCustomVerificationEmailTemplatesAsync(const Model::ListCustomVerificationEmailTemplatesRequest& request, const ListCustomVerificationEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List all of the dedicated IP pools that exist in your AWS account in the
-         * current Region.</p><p><h3>See Also:</h3>   <a
+         * <p>List all of the dedicated IP pools that exist in your Amazon Web Services
+         * account in the current Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListDedicatedIpPools">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDedicatedIpPoolsOutcome ListDedicatedIpPools(const Model::ListDedicatedIpPoolsRequest& request) const;
 
         /**
-         * <p>List all of the dedicated IP pools that exist in your AWS account in the
-         * current Region.</p><p><h3>See Also:</h3>   <a
+         * <p>List all of the dedicated IP pools that exist in your Amazon Web Services
+         * account in the current Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListDedicatedIpPools">AWS
          * API Reference</a></p>
          *
@@ -2091,8 +2076,8 @@ namespace Model
         virtual Model::ListDedicatedIpPoolsOutcomeCallable ListDedicatedIpPoolsCallable(const Model::ListDedicatedIpPoolsRequest& request) const;
 
         /**
-         * <p>List all of the dedicated IP pools that exist in your AWS account in the
-         * current Region.</p><p><h3>See Also:</h3>   <a
+         * <p>List all of the dedicated IP pools that exist in your Amazon Web Services
+         * account in the current Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListDedicatedIpPools">AWS
          * API Reference</a></p>
          *
@@ -2170,10 +2155,10 @@ namespace Model
 
         /**
          * <p>Returns a list of all of the email identities that are associated with your
-         * AWS account. An identity can be either an email address or a domain. This
-         * operation returns identities that are verified as well as those that aren't.
-         * This operation returns identities that are associated with Amazon SES and Amazon
-         * Pinpoint.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services account. An identity can be either an email address or a
+         * domain. This operation returns identities that are verified as well as those
+         * that aren't. This operation returns identities that are associated with Amazon
+         * SES and Amazon Pinpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListEmailIdentities">AWS
          * API Reference</a></p>
          */
@@ -2181,10 +2166,10 @@ namespace Model
 
         /**
          * <p>Returns a list of all of the email identities that are associated with your
-         * AWS account. An identity can be either an email address or a domain. This
-         * operation returns identities that are verified as well as those that aren't.
-         * This operation returns identities that are associated with Amazon SES and Amazon
-         * Pinpoint.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services account. An identity can be either an email address or a
+         * domain. This operation returns identities that are verified as well as those
+         * that aren't. This operation returns identities that are associated with Amazon
+         * SES and Amazon Pinpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListEmailIdentities">AWS
          * API Reference</a></p>
          *
@@ -2194,10 +2179,10 @@ namespace Model
 
         /**
          * <p>Returns a list of all of the email identities that are associated with your
-         * AWS account. An identity can be either an email address or a domain. This
-         * operation returns identities that are verified as well as those that aren't.
-         * This operation returns identities that are associated with Amazon SES and Amazon
-         * Pinpoint.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services account. An identity can be either an email address or a
+         * domain. This operation returns identities that are verified as well as those
+         * that aren't. This operation returns identities that are associated with Amazon
+         * SES and Amazon Pinpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListEmailIdentities">AWS
          * API Reference</a></p>
          *
@@ -2207,8 +2192,8 @@ namespace Model
 
         /**
          * <p>Lists the email templates present in your Amazon SES account in the current
-         * AWS Region.</p> <p>You can execute this operation no more than once per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services Region.</p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListEmailTemplates">AWS
          * API Reference</a></p>
          */
@@ -2216,8 +2201,8 @@ namespace Model
 
         /**
          * <p>Lists the email templates present in your Amazon SES account in the current
-         * AWS Region.</p> <p>You can execute this operation no more than once per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services Region.</p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListEmailTemplates">AWS
          * API Reference</a></p>
          *
@@ -2227,8 +2212,8 @@ namespace Model
 
         /**
          * <p>Lists the email templates present in your Amazon SES account in the current
-         * AWS Region.</p> <p>You can execute this operation no more than once per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services Region.</p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListEmailTemplates">AWS
          * API Reference</a></p>
          *
@@ -2471,8 +2456,8 @@ namespace Model
 
         /**
          * <p>Enable or disable collection of reputation metrics for emails that you send
-         * using a particular configuration set in a specific AWS Region.</p><p><h3>See
-         * Also:</h3>   <a
+         * using a particular configuration set in a specific Amazon Web Services
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetReputationOptions">AWS
          * API Reference</a></p>
          */
@@ -2480,8 +2465,8 @@ namespace Model
 
         /**
          * <p>Enable or disable collection of reputation metrics for emails that you send
-         * using a particular configuration set in a specific AWS Region.</p><p><h3>See
-         * Also:</h3>   <a
+         * using a particular configuration set in a specific Amazon Web Services
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetReputationOptions">AWS
          * API Reference</a></p>
          *
@@ -2491,8 +2476,8 @@ namespace Model
 
         /**
          * <p>Enable or disable collection of reputation metrics for emails that you send
-         * using a particular configuration set in a specific AWS Region.</p><p><h3>See
-         * Also:</h3>   <a
+         * using a particular configuration set in a specific Amazon Web Services
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetReputationOptions">AWS
          * API Reference</a></p>
          *
@@ -2502,7 +2487,8 @@ namespace Model
 
         /**
          * <p>Enable or disable email sending for messages that use a particular
-         * configuration set in a specific AWS Region.</p><p><h3>See Also:</h3>   <a
+         * configuration set in a specific Amazon Web Services Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSendingOptions">AWS
          * API Reference</a></p>
          */
@@ -2510,7 +2496,8 @@ namespace Model
 
         /**
          * <p>Enable or disable email sending for messages that use a particular
-         * configuration set in a specific AWS Region.</p><p><h3>See Also:</h3>   <a
+         * configuration set in a specific Amazon Web Services Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSendingOptions">AWS
          * API Reference</a></p>
          *
@@ -2520,7 +2507,8 @@ namespace Model
 
         /**
          * <p>Enable or disable email sending for messages that use a particular
-         * configuration set in a specific AWS Region.</p><p><h3>See Also:</h3>   <a
+         * configuration set in a specific Amazon Web Services Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSendingOptions">AWS
          * API Reference</a></p>
          *
@@ -2587,8 +2575,8 @@ namespace Model
         /**
          * <p>Move a dedicated IP address to an existing dedicated IP pool.</p> 
          * <p>The dedicated IP address that you specify must already exist, and must be
-         * associated with your AWS account. </p> <p>The dedicated IP pool you specify must
-         * already exist. You can create a new pool by using the
+         * associated with your Amazon Web Services account. </p> <p>The dedicated IP pool
+         * you specify must already exist. You can create a new pool by using the
          * <code>CreateDedicatedIpPool</code> operation.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDedicatedIpInPool">AWS
@@ -2599,8 +2587,8 @@ namespace Model
         /**
          * <p>Move a dedicated IP address to an existing dedicated IP pool.</p> 
          * <p>The dedicated IP address that you specify must already exist, and must be
-         * associated with your AWS account. </p> <p>The dedicated IP pool you specify must
-         * already exist. You can create a new pool by using the
+         * associated with your Amazon Web Services account. </p> <p>The dedicated IP pool
+         * you specify must already exist. You can create a new pool by using the
          * <code>CreateDedicatedIpPool</code> operation.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDedicatedIpInPool">AWS
@@ -2613,8 +2601,8 @@ namespace Model
         /**
          * <p>Move a dedicated IP address to an existing dedicated IP pool.</p> 
          * <p>The dedicated IP address that you specify must already exist, and must be
-         * associated with your AWS account. </p> <p>The dedicated IP pool you specify must
-         * already exist. You can create a new pool by using the
+         * associated with your Amazon Web Services account. </p> <p>The dedicated IP pool
+         * you specify must already exist. You can create a new pool by using the
          * <code>CreateDedicatedIpPool</code> operation.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDedicatedIpInPool">AWS
@@ -2655,10 +2643,10 @@ namespace Model
          * other metrics for the domains that you use to send email. You also gain the
          * ability to perform predictive inbox placement tests.</p> <p>When you use the
          * Deliverability dashboard, you pay a monthly subscription charge, in addition to
-         * any other fees that you accrue by using Amazon SES and other AWS services. For
-         * more information about the features and cost of a Deliverability dashboard
-         * subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES
-         * Pricing</a>.</p><p><h3>See Also:</h3>   <a
+         * any other fees that you accrue by using Amazon SES and other Amazon Web Services
+         * services. For more information about the features and cost of a Deliverability
+         * dashboard subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon
+         * SES Pricing</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDeliverabilityDashboardOption">AWS
          * API Reference</a></p>
          */
@@ -2670,10 +2658,10 @@ namespace Model
          * other metrics for the domains that you use to send email. You also gain the
          * ability to perform predictive inbox placement tests.</p> <p>When you use the
          * Deliverability dashboard, you pay a monthly subscription charge, in addition to
-         * any other fees that you accrue by using Amazon SES and other AWS services. For
-         * more information about the features and cost of a Deliverability dashboard
-         * subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES
-         * Pricing</a>.</p><p><h3>See Also:</h3>   <a
+         * any other fees that you accrue by using Amazon SES and other Amazon Web Services
+         * services. For more information about the features and cost of a Deliverability
+         * dashboard subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon
+         * SES Pricing</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDeliverabilityDashboardOption">AWS
          * API Reference</a></p>
          *
@@ -2687,10 +2675,10 @@ namespace Model
          * other metrics for the domains that you use to send email. You also gain the
          * ability to perform predictive inbox placement tests.</p> <p>When you use the
          * Deliverability dashboard, you pay a monthly subscription charge, in addition to
-         * any other fees that you accrue by using Amazon SES and other AWS services. For
-         * more information about the features and cost of a Deliverability dashboard
-         * subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES
-         * Pricing</a>.</p><p><h3>See Also:</h3>   <a
+         * any other fees that you accrue by using Amazon SES and other Amazon Web Services
+         * services. For more information about the features and cost of a Deliverability
+         * dashboard subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon
+         * SES Pricing</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDeliverabilityDashboardOption">AWS
          * API Reference</a></p>
          *
@@ -2758,11 +2746,12 @@ namespace Model
          * <p>Used to configure or change the DKIM authentication settings for an email
          * domain identity. You can use this operation to do any of the following:</p> <ul>
          * <li> <p>Update the signing attributes for an identity that uses Bring Your Own
-         * DKIM (BYODKIM).</p> </li> <li> <p>Change from using no DKIM authentication to
-         * using Easy DKIM.</p> </li> <li> <p>Change from using no DKIM authentication to
-         * using BYODKIM.</p> </li> <li> <p>Change from using Easy DKIM to using
-         * BYODKIM.</p> </li> <li> <p>Change from using BYODKIM to using Easy DKIM.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * DKIM (BYODKIM).</p> </li> <li> <p>Update the key length that should be used for
+         * Easy DKIM.</p> </li> <li> <p>Change from using no DKIM authentication to using
+         * Easy DKIM.</p> </li> <li> <p>Change from using no DKIM authentication to using
+         * BYODKIM.</p> </li> <li> <p>Change from using Easy DKIM to using BYODKIM.</p>
+         * </li> <li> <p>Change from using BYODKIM to using Easy DKIM.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityDkimSigningAttributes">AWS
          * API Reference</a></p>
          */
@@ -2772,11 +2761,12 @@ namespace Model
          * <p>Used to configure or change the DKIM authentication settings for an email
          * domain identity. You can use this operation to do any of the following:</p> <ul>
          * <li> <p>Update the signing attributes for an identity that uses Bring Your Own
-         * DKIM (BYODKIM).</p> </li> <li> <p>Change from using no DKIM authentication to
-         * using Easy DKIM.</p> </li> <li> <p>Change from using no DKIM authentication to
-         * using BYODKIM.</p> </li> <li> <p>Change from using Easy DKIM to using
-         * BYODKIM.</p> </li> <li> <p>Change from using BYODKIM to using Easy DKIM.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * DKIM (BYODKIM).</p> </li> <li> <p>Update the key length that should be used for
+         * Easy DKIM.</p> </li> <li> <p>Change from using no DKIM authentication to using
+         * Easy DKIM.</p> </li> <li> <p>Change from using no DKIM authentication to using
+         * BYODKIM.</p> </li> <li> <p>Change from using Easy DKIM to using BYODKIM.</p>
+         * </li> <li> <p>Change from using BYODKIM to using Easy DKIM.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityDkimSigningAttributes">AWS
          * API Reference</a></p>
          *
@@ -2788,11 +2778,12 @@ namespace Model
          * <p>Used to configure or change the DKIM authentication settings for an email
          * domain identity. You can use this operation to do any of the following:</p> <ul>
          * <li> <p>Update the signing attributes for an identity that uses Bring Your Own
-         * DKIM (BYODKIM).</p> </li> <li> <p>Change from using no DKIM authentication to
-         * using Easy DKIM.</p> </li> <li> <p>Change from using no DKIM authentication to
-         * using BYODKIM.</p> </li> <li> <p>Change from using Easy DKIM to using
-         * BYODKIM.</p> </li> <li> <p>Change from using BYODKIM to using Easy DKIM.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * DKIM (BYODKIM).</p> </li> <li> <p>Update the key length that should be used for
+         * Easy DKIM.</p> </li> <li> <p>Change from using no DKIM authentication to using
+         * Easy DKIM.</p> </li> <li> <p>Change from using no DKIM authentication to using
+         * BYODKIM.</p> </li> <li> <p>Change from using Easy DKIM to using BYODKIM.</p>
+         * </li> <li> <p>Change from using BYODKIM to using Easy DKIM.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityDkimSigningAttributes">AWS
          * API Reference</a></p>
          *
@@ -2938,9 +2929,9 @@ namespace Model
 
         /**
          * <p>Adds an email address to the list of identities for your Amazon SES account
-         * in the current AWS Region and attempts to verify it. As a result of executing
-         * this operation, a customized verification email is sent to the specified
-         * address.</p> <p>To use this operation, you must first create a custom
+         * in the current Amazon Web Services Region and attempts to verify it. As a result
+         * of executing this operation, a customized verification email is sent to the
+         * specified address.</p> <p>To use this operation, you must first create a custom
          * verification email template. For more information about creating and using
          * custom verification email templates, see <a
          * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
@@ -2954,9 +2945,9 @@ namespace Model
 
         /**
          * <p>Adds an email address to the list of identities for your Amazon SES account
-         * in the current AWS Region and attempts to verify it. As a result of executing
-         * this operation, a customized verification email is sent to the specified
-         * address.</p> <p>To use this operation, you must first create a custom
+         * in the current Amazon Web Services Region and attempts to verify it. As a result
+         * of executing this operation, a customized verification email is sent to the
+         * specified address.</p> <p>To use this operation, you must first create a custom
          * verification email template. For more information about creating and using
          * custom verification email templates, see <a
          * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
@@ -2972,9 +2963,9 @@ namespace Model
 
         /**
          * <p>Adds an email address to the list of identities for your Amazon SES account
-         * in the current AWS Region and attempts to verify it. As a result of executing
-         * this operation, a customized verification email is sent to the specified
-         * address.</p> <p>To use this operation, you must first create a custom
+         * in the current Amazon Web Services Region and attempts to verify it. As a result
+         * of executing this operation, a customized verification email is sent to the
+         * specified address.</p> <p>To use this operation, you must first create a custom
          * verification email template. For more information about creating and using
          * custom verification email templates, see <a
          * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
@@ -2989,34 +2980,36 @@ namespace Model
         virtual void SendCustomVerificationEmailAsync(const Model::SendCustomVerificationEmailRequest& request, const SendCustomVerificationEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sends an email message. You can use the Amazon SES API v2 to send two types
-         * of messages:</p> <ul> <li> <p> <b>Simple</b> – A standard email message. When
-         * you create this type of message, you specify the sender, the recipient, and the
-         * message body, and Amazon SES assembles the message for you.</p> </li> <li> <p>
-         * <b>Raw</b> – A raw, MIME-formatted email message. When you send this type of
-         * email, you have to specify all of the message headers, as well as the message
-         * body. You can use this message type to send messages that contain attachments.
-         * The message that you specify has to be a valid MIME message.</p> </li> <li> <p>
-         * <b>Templated</b> – A message that contains personalization tags. When you send
-         * this type of email, Amazon SES API v2 automatically replaces the tags with
-         * values that you specify.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Sends an email message. You can use the Amazon SES API v2 to send the
+         * following types of messages:</p> <ul> <li> <p> <b>Simple</b> – A standard email
+         * message. When you create this type of message, you specify the sender, the
+         * recipient, and the message body, and Amazon SES assembles the message for
+         * you.</p> </li> <li> <p> <b>Raw</b> – A raw, MIME-formatted email message. When
+         * you send this type of email, you have to specify all of the message headers, as
+         * well as the message body. You can use this message type to send messages that
+         * contain attachments. The message that you specify has to be a valid MIME
+         * message.</p> </li> <li> <p> <b>Templated</b> – A message that contains
+         * personalization tags. When you send this type of email, Amazon SES API v2
+         * automatically replaces the tags with values that you specify.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendEmail">AWS API
          * Reference</a></p>
          */
         virtual Model::SendEmailOutcome SendEmail(const Model::SendEmailRequest& request) const;
 
         /**
-         * <p>Sends an email message. You can use the Amazon SES API v2 to send two types
-         * of messages:</p> <ul> <li> <p> <b>Simple</b> – A standard email message. When
-         * you create this type of message, you specify the sender, the recipient, and the
-         * message body, and Amazon SES assembles the message for you.</p> </li> <li> <p>
-         * <b>Raw</b> – A raw, MIME-formatted email message. When you send this type of
-         * email, you have to specify all of the message headers, as well as the message
-         * body. You can use this message type to send messages that contain attachments.
-         * The message that you specify has to be a valid MIME message.</p> </li> <li> <p>
-         * <b>Templated</b> – A message that contains personalization tags. When you send
-         * this type of email, Amazon SES API v2 automatically replaces the tags with
-         * values that you specify.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Sends an email message. You can use the Amazon SES API v2 to send the
+         * following types of messages:</p> <ul> <li> <p> <b>Simple</b> – A standard email
+         * message. When you create this type of message, you specify the sender, the
+         * recipient, and the message body, and Amazon SES assembles the message for
+         * you.</p> </li> <li> <p> <b>Raw</b> – A raw, MIME-formatted email message. When
+         * you send this type of email, you have to specify all of the message headers, as
+         * well as the message body. You can use this message type to send messages that
+         * contain attachments. The message that you specify has to be a valid MIME
+         * message.</p> </li> <li> <p> <b>Templated</b> – A message that contains
+         * personalization tags. When you send this type of email, Amazon SES API v2
+         * automatically replaces the tags with values that you specify.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendEmail">AWS API
          * Reference</a></p>
          *
@@ -3025,17 +3018,18 @@ namespace Model
         virtual Model::SendEmailOutcomeCallable SendEmailCallable(const Model::SendEmailRequest& request) const;
 
         /**
-         * <p>Sends an email message. You can use the Amazon SES API v2 to send two types
-         * of messages:</p> <ul> <li> <p> <b>Simple</b> – A standard email message. When
-         * you create this type of message, you specify the sender, the recipient, and the
-         * message body, and Amazon SES assembles the message for you.</p> </li> <li> <p>
-         * <b>Raw</b> – A raw, MIME-formatted email message. When you send this type of
-         * email, you have to specify all of the message headers, as well as the message
-         * body. You can use this message type to send messages that contain attachments.
-         * The message that you specify has to be a valid MIME message.</p> </li> <li> <p>
-         * <b>Templated</b> – A message that contains personalization tags. When you send
-         * this type of email, Amazon SES API v2 automatically replaces the tags with
-         * values that you specify.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Sends an email message. You can use the Amazon SES API v2 to send the
+         * following types of messages:</p> <ul> <li> <p> <b>Simple</b> – A standard email
+         * message. When you create this type of message, you specify the sender, the
+         * recipient, and the message body, and Amazon SES assembles the message for
+         * you.</p> </li> <li> <p> <b>Raw</b> – A raw, MIME-formatted email message. When
+         * you send this type of email, you have to specify all of the message headers, as
+         * well as the message body. You can use this message type to send messages that
+         * contain attachments. The message that you specify has to be a valid MIME
+         * message.</p> </li> <li> <p> <b>Templated</b> – A message that contains
+         * personalization tags. When you send this type of email, Amazon SES API v2
+         * automatically replaces the tags with values that you specify.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendEmail">AWS API
          * Reference</a></p>
          *

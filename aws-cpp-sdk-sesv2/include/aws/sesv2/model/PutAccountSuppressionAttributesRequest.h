@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>A list that contains the reasons that email addresses will be automatically
      * added to the suppression list for your account. This list can contain any or all
-     * of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> �� Amazon SES adds an
+     * of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> – Amazon SES adds an
      * email address to the suppression list for your account when a message sent to
      * that address results in a complaint.</p> </li> <li> <p> <code>BOUNCE</code> –
      * Amazon SES adds an email address to the suppression list for your account when a
@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>A list that contains the reasons that email addresses will be automatically
      * added to the suppression list for your account. This list can contain any or all
-     * of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> �� Amazon SES adds an
+     * of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> – Amazon SES adds an
      * email address to the suppression list for your account when a message sent to
      * that address results in a complaint.</p> </li> <li> <p> <code>BOUNCE</code> –
      * Amazon SES adds an email address to the suppression list for your account when a
@@ -62,7 +62,7 @@ namespace Model
     /**
      * <p>A list that contains the reasons that email addresses will be automatically
      * added to the suppression list for your account. This list can contain any or all
-     * of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> �� Amazon SES adds an
+     * of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> – Amazon SES adds an
      * email address to the suppression list for your account when a message sent to
      * that address results in a complaint.</p> </li> <li> <p> <code>BOUNCE</code> –
      * Amazon SES adds an email address to the suppression list for your account when a
@@ -73,7 +73,7 @@ namespace Model
     /**
      * <p>A list that contains the reasons that email addresses will be automatically
      * added to the suppression list for your account. This list can contain any or all
-     * of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> �� Amazon SES adds an
+     * of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> – Amazon SES adds an
      * email address to the suppression list for your account when a message sent to
      * that address results in a complaint.</p> </li> <li> <p> <code>BOUNCE</code> –
      * Amazon SES adds an email address to the suppression list for your account when a
@@ -84,7 +84,7 @@ namespace Model
     /**
      * <p>A list that contains the reasons that email addresses will be automatically
      * added to the suppression list for your account. This list can contain any or all
-     * of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> �� Amazon SES adds an
+     * of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> – Amazon SES adds an
      * email address to the suppression list for your account when a message sent to
      * that address results in a complaint.</p> </li> <li> <p> <code>BOUNCE</code> –
      * Amazon SES adds an email address to the suppression list for your account when a
@@ -95,7 +95,7 @@ namespace Model
     /**
      * <p>A list that contains the reasons that email addresses will be automatically
      * added to the suppression list for your account. This list can contain any or all
-     * of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> �� Amazon SES adds an
+     * of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> – Amazon SES adds an
      * email address to the suppression list for your account when a message sent to
      * that address results in a complaint.</p> </li> <li> <p> <code>BOUNCE</code> –
      * Amazon SES adds an email address to the suppression list for your account when a
@@ -106,7 +106,7 @@ namespace Model
     /**
      * <p>A list that contains the reasons that email addresses will be automatically
      * added to the suppression list for your account. This list can contain any or all
-     * of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> �� Amazon SES adds an
+     * of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> – Amazon SES adds an
      * email address to the suppression list for your account when a message sent to
      * that address results in a complaint.</p> </li> <li> <p> <code>BOUNCE</code> –
      * Amazon SES adds an email address to the suppression list for your account when a
@@ -117,7 +117,7 @@ namespace Model
     /**
      * <p>A list that contains the reasons that email addresses will be automatically
      * added to the suppression list for your account. This list can contain any or all
-     * of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> �� Amazon SES adds an
+     * of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> – Amazon SES adds an
      * email address to the suppression list for your account when a message sent to
      * that address results in a complaint.</p> </li> <li> <p> <code>BOUNCE</code> –
      * Amazon SES adds an email address to the suppression list for your account when a
