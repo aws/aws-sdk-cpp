@@ -20,13 +20,15 @@ namespace Model
 
 RuleGroup::RuleGroup() : 
     m_ruleVariablesHasBeenSet(false),
-    m_rulesSourceHasBeenSet(false)
+    m_rulesSourceHasBeenSet(false),
+    m_statefulRuleOptionsHasBeenSet(false)
 {
 }
 
 RuleGroup::RuleGroup(JsonView jsonValue) : 
     m_ruleVariablesHasBeenSet(false),
-    m_rulesSourceHasBeenSet(false)
+    m_rulesSourceHasBeenSet(false),
+    m_statefulRuleOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ RuleGroup& RuleGroup::operator =(JsonView jsonValue)
     m_rulesSourceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StatefulRuleOptions"))
+  {
+    m_statefulRuleOptions = jsonValue.GetObject("StatefulRuleOptions");
+
+    m_statefulRuleOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue RuleGroup::Jsonize() const
   if(m_rulesSourceHasBeenSet)
   {
    payload.WithObject("RulesSource", m_rulesSource.Jsonize());
+
+  }
+
+  if(m_statefulRuleOptionsHasBeenSet)
+  {
+   payload.WithObject("StatefulRuleOptions", m_statefulRuleOptions.Jsonize());
 
   }
 

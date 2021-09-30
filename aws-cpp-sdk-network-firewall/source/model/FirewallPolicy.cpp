@@ -23,7 +23,9 @@ FirewallPolicy::FirewallPolicy() :
     m_statelessDefaultActionsHasBeenSet(false),
     m_statelessFragmentDefaultActionsHasBeenSet(false),
     m_statelessCustomActionsHasBeenSet(false),
-    m_statefulRuleGroupReferencesHasBeenSet(false)
+    m_statefulRuleGroupReferencesHasBeenSet(false),
+    m_statefulDefaultActionsHasBeenSet(false),
+    m_statefulEngineOptionsHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ FirewallPolicy::FirewallPolicy(JsonView jsonValue) :
     m_statelessDefaultActionsHasBeenSet(false),
     m_statelessFragmentDefaultActionsHasBeenSet(false),
     m_statelessCustomActionsHasBeenSet(false),
-    m_statefulRuleGroupReferencesHasBeenSet(false)
+    m_statefulRuleGroupReferencesHasBeenSet(false),
+    m_statefulDefaultActionsHasBeenSet(false),
+    m_statefulEngineOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -87,6 +91,23 @@ FirewallPolicy& FirewallPolicy::operator =(JsonView jsonValue)
       m_statefulRuleGroupReferences.push_back(statefulRuleGroupReferencesJsonList[statefulRuleGroupReferencesIndex].AsObject());
     }
     m_statefulRuleGroupReferencesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StatefulDefaultActions"))
+  {
+    Array<JsonView> statefulDefaultActionsJsonList = jsonValue.GetArray("StatefulDefaultActions");
+    for(unsigned statefulDefaultActionsIndex = 0; statefulDefaultActionsIndex < statefulDefaultActionsJsonList.GetLength(); ++statefulDefaultActionsIndex)
+    {
+      m_statefulDefaultActions.push_back(statefulDefaultActionsJsonList[statefulDefaultActionsIndex].AsString());
+    }
+    m_statefulDefaultActionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StatefulEngineOptions"))
+  {
+    m_statefulEngineOptions = jsonValue.GetObject("StatefulEngineOptions");
+
+    m_statefulEngineOptionsHasBeenSet = true;
   }
 
   return *this;
@@ -148,6 +169,23 @@ JsonValue FirewallPolicy::Jsonize() const
      statefulRuleGroupReferencesJsonList[statefulRuleGroupReferencesIndex].AsObject(m_statefulRuleGroupReferences[statefulRuleGroupReferencesIndex].Jsonize());
    }
    payload.WithArray("StatefulRuleGroupReferences", std::move(statefulRuleGroupReferencesJsonList));
+
+  }
+
+  if(m_statefulDefaultActionsHasBeenSet)
+  {
+   Array<JsonValue> statefulDefaultActionsJsonList(m_statefulDefaultActions.size());
+   for(unsigned statefulDefaultActionsIndex = 0; statefulDefaultActionsIndex < statefulDefaultActionsJsonList.GetLength(); ++statefulDefaultActionsIndex)
+   {
+     statefulDefaultActionsJsonList[statefulDefaultActionsIndex].AsString(m_statefulDefaultActions[statefulDefaultActionsIndex]);
+   }
+   payload.WithArray("StatefulDefaultActions", std::move(statefulDefaultActionsJsonList));
+
+  }
+
+  if(m_statefulEngineOptionsHasBeenSet)
+  {
+   payload.WithObject("StatefulEngineOptions", m_statefulEngineOptions.Jsonize());
 
   }
 

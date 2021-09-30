@@ -37,7 +37,7 @@ namespace Model
    * <a>RuleVariables</a> in this guide and <a
    * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/stateful-rule-groups-domain-names.html">Stateful
    * domain list rule groups in AWS Network Firewall</a> in the <i>Network Firewall
-   * Developer Guide</i> </p><p><h3>See Also:</h3>   <a
+   * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/RulesSourceList">AWS
    * API Reference</a></p>
    */
@@ -170,56 +170,56 @@ namespace Model
 
     /**
      * <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for
-     * <code>HTTPS</code>. Specity <code>HTTP_HOST</code> for <code>HTTP</code>. You
+     * <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You
      * can specify either or both. </p>
      */
     inline const Aws::Vector<TargetType>& GetTargetTypes() const{ return m_targetTypes; }
 
     /**
      * <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for
-     * <code>HTTPS</code>. Specity <code>HTTP_HOST</code> for <code>HTTP</code>. You
+     * <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You
      * can specify either or both. </p>
      */
     inline bool TargetTypesHasBeenSet() const { return m_targetTypesHasBeenSet; }
 
     /**
      * <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for
-     * <code>HTTPS</code>. Specity <code>HTTP_HOST</code> for <code>HTTP</code>. You
+     * <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You
      * can specify either or both. </p>
      */
     inline void SetTargetTypes(const Aws::Vector<TargetType>& value) { m_targetTypesHasBeenSet = true; m_targetTypes = value; }
 
     /**
      * <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for
-     * <code>HTTPS</code>. Specity <code>HTTP_HOST</code> for <code>HTTP</code>. You
+     * <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You
      * can specify either or both. </p>
      */
     inline void SetTargetTypes(Aws::Vector<TargetType>&& value) { m_targetTypesHasBeenSet = true; m_targetTypes = std::move(value); }
 
     /**
      * <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for
-     * <code>HTTPS</code>. Specity <code>HTTP_HOST</code> for <code>HTTP</code>. You
+     * <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You
      * can specify either or both. </p>
      */
     inline RulesSourceList& WithTargetTypes(const Aws::Vector<TargetType>& value) { SetTargetTypes(value); return *this;}
 
     /**
      * <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for
-     * <code>HTTPS</code>. Specity <code>HTTP_HOST</code> for <code>HTTP</code>. You
+     * <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You
      * can specify either or both. </p>
      */
     inline RulesSourceList& WithTargetTypes(Aws::Vector<TargetType>&& value) { SetTargetTypes(std::move(value)); return *this;}
 
     /**
      * <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for
-     * <code>HTTPS</code>. Specity <code>HTTP_HOST</code> for <code>HTTP</code>. You
+     * <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You
      * can specify either or both. </p>
      */
     inline RulesSourceList& AddTargetTypes(const TargetType& value) { m_targetTypesHasBeenSet = true; m_targetTypes.push_back(value); return *this; }
 
     /**
      * <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for
-     * <code>HTTPS</code>. Specity <code>HTTP_HOST</code> for <code>HTTP</code>. You
+     * <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You
      * can specify either or both. </p>
      */
     inline RulesSourceList& AddTargetTypes(TargetType&& value) { m_targetTypesHasBeenSet = true; m_targetTypes.push_back(std::move(value)); return *this; }

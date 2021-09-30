@@ -29,7 +29,11 @@ RuleGroupResponse::RuleGroupResponse() :
     m_capacityHasBeenSet(false),
     m_ruleGroupStatus(ResourceStatus::NOT_SET),
     m_ruleGroupStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_consumedCapacity(0),
+    m_consumedCapacityHasBeenSet(false),
+    m_numberOfAssociations(0),
+    m_numberOfAssociationsHasBeenSet(false)
 {
 }
 
@@ -44,7 +48,11 @@ RuleGroupResponse::RuleGroupResponse(JsonView jsonValue) :
     m_capacityHasBeenSet(false),
     m_ruleGroupStatus(ResourceStatus::NOT_SET),
     m_ruleGroupStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_consumedCapacity(0),
+    m_consumedCapacityHasBeenSet(false),
+    m_numberOfAssociations(0),
+    m_numberOfAssociationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -110,6 +118,20 @@ RuleGroupResponse& RuleGroupResponse::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ConsumedCapacity"))
+  {
+    m_consumedCapacity = jsonValue.GetInteger("ConsumedCapacity");
+
+    m_consumedCapacityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NumberOfAssociations"))
+  {
+    m_numberOfAssociations = jsonValue.GetInteger("NumberOfAssociations");
+
+    m_numberOfAssociationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -165,6 +187,18 @@ JsonValue RuleGroupResponse::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_consumedCapacityHasBeenSet)
+  {
+   payload.WithInteger("ConsumedCapacity", m_consumedCapacity);
+
+  }
+
+  if(m_numberOfAssociationsHasBeenSet)
+  {
+   payload.WithInteger("NumberOfAssociations", m_numberOfAssociations);
 
   }
 

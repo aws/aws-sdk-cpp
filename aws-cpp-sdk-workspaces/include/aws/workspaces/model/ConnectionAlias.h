@@ -174,42 +174,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS account that owns the connection alias.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the connection
+     * alias.</p>
      */
     inline const Aws::String& GetOwnerAccountId() const{ return m_ownerAccountId; }
 
     /**
-     * <p>The identifier of the AWS account that owns the connection alias.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the connection
+     * alias.</p>
      */
     inline bool OwnerAccountIdHasBeenSet() const { return m_ownerAccountIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the AWS account that owns the connection alias.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the connection
+     * alias.</p>
      */
     inline void SetOwnerAccountId(const Aws::String& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = value; }
 
     /**
-     * <p>The identifier of the AWS account that owns the connection alias.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the connection
+     * alias.</p>
      */
     inline void SetOwnerAccountId(Aws::String&& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS account that owns the connection alias.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the connection
+     * alias.</p>
      */
     inline void SetOwnerAccountId(const char* value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId.assign(value); }
 
     /**
-     * <p>The identifier of the AWS account that owns the connection alias.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the connection
+     * alias.</p>
      */
     inline ConnectionAlias& WithOwnerAccountId(const Aws::String& value) { SetOwnerAccountId(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS account that owns the connection alias.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the connection
+     * alias.</p>
      */
     inline ConnectionAlias& WithOwnerAccountId(Aws::String&& value) { SetOwnerAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS account that owns the connection alias.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the connection
+     * alias.</p>
      */
     inline ConnectionAlias& WithOwnerAccountId(const char* value) { SetOwnerAccountId(value); return *this;}
 

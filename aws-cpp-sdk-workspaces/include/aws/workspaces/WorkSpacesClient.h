@@ -18,6 +18,7 @@
 #include <aws/workspaces/model/CreateConnectionAliasResult.h>
 #include <aws/workspaces/model/CreateIpGroupResult.h>
 #include <aws/workspaces/model/CreateTagsResult.h>
+#include <aws/workspaces/model/CreateUpdatedWorkspaceImageResult.h>
 #include <aws/workspaces/model/CreateWorkspaceBundleResult.h>
 #include <aws/workspaces/model/CreateWorkspacesResult.h>
 #include <aws/workspaces/model/DeleteConnectionAliasResult.h>
@@ -110,6 +111,7 @@ namespace Model
         class CreateConnectionAliasRequest;
         class CreateIpGroupRequest;
         class CreateTagsRequest;
+        class CreateUpdatedWorkspaceImageRequest;
         class CreateWorkspaceBundleRequest;
         class CreateWorkspacesRequest;
         class DeleteConnectionAliasRequest;
@@ -164,6 +166,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateConnectionAliasResult, WorkSpacesError> CreateConnectionAliasOutcome;
         typedef Aws::Utils::Outcome<CreateIpGroupResult, WorkSpacesError> CreateIpGroupOutcome;
         typedef Aws::Utils::Outcome<CreateTagsResult, WorkSpacesError> CreateTagsOutcome;
+        typedef Aws::Utils::Outcome<CreateUpdatedWorkspaceImageResult, WorkSpacesError> CreateUpdatedWorkspaceImageOutcome;
         typedef Aws::Utils::Outcome<CreateWorkspaceBundleResult, WorkSpacesError> CreateWorkspaceBundleOutcome;
         typedef Aws::Utils::Outcome<CreateWorkspacesResult, WorkSpacesError> CreateWorkspacesOutcome;
         typedef Aws::Utils::Outcome<DeleteConnectionAliasResult, WorkSpacesError> DeleteConnectionAliasOutcome;
@@ -218,6 +221,7 @@ namespace Model
         typedef std::future<CreateConnectionAliasOutcome> CreateConnectionAliasOutcomeCallable;
         typedef std::future<CreateIpGroupOutcome> CreateIpGroupOutcomeCallable;
         typedef std::future<CreateTagsOutcome> CreateTagsOutcomeCallable;
+        typedef std::future<CreateUpdatedWorkspaceImageOutcome> CreateUpdatedWorkspaceImageOutcomeCallable;
         typedef std::future<CreateWorkspaceBundleOutcome> CreateWorkspaceBundleOutcomeCallable;
         typedef std::future<CreateWorkspacesOutcome> CreateWorkspacesOutcomeCallable;
         typedef std::future<DeleteConnectionAliasOutcome> DeleteConnectionAliasOutcomeCallable;
@@ -275,6 +279,7 @@ namespace Model
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateConnectionAliasRequest&, const Model::CreateConnectionAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConnectionAliasResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateIpGroupRequest&, const Model::CreateIpGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIpGroupResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateTagsRequest&, const Model::CreateTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTagsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::CreateUpdatedWorkspaceImageRequest&, const Model::CreateUpdatedWorkspaceImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUpdatedWorkspaceImageResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateWorkspaceBundleRequest&, const Model::CreateWorkspaceBundleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspaceBundleResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateWorkspacesRequest&, const Model::CreateWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspacesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DeleteConnectionAliasRequest&, const Model::DeleteConnectionAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectionAliasResponseReceivedHandler;
@@ -463,13 +468,13 @@ namespace Model
          * <p>Copies the specified image from the specified Region to the current Region.
          * For more information about copying images, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/copy-custom-image.html">
-         * Copy a Custom WorkSpaces Image</a>.</p>  <p>In the China (Ningxia) Region,
-         * you can copy images only within the same Region.</p> <p>In the AWS GovCloud
-         * (US-West) Region, to copy images to and from other AWS Regions, contact AWS
-         * Support.</p>   <p>Before copying a shared image, be sure to
-         * verify that it has been shared from the correct AWS account. To determine if an
-         * image has been shared and to see the AWS account ID that owns an image, use the
-         * <a
+         * Copy a Custom WorkSpaces Image</a>.</p> <p>In the China (Ningxia) Region, you
+         * can copy images only within the same Region.</p> <p>In Amazon Web Services
+         * GovCloud (US), to copy images to and from other Regions, contact Amazon Web
+         * Services Support.</p>  <p>Before copying a shared image, be sure to
+         * verify that it has been shared from the correct Amazon Web Services account. To
+         * determine if an image has been shared and to see the ID of the Amazon Web
+         * Services account that owns an image, use the <a
          * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">DescribeWorkSpaceImages</a>
          * and <a
          * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImagePermissions.html">DescribeWorkspaceImagePermissions</a>
@@ -483,13 +488,13 @@ namespace Model
          * <p>Copies the specified image from the specified Region to the current Region.
          * For more information about copying images, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/copy-custom-image.html">
-         * Copy a Custom WorkSpaces Image</a>.</p>  <p>In the China (Ningxia) Region,
-         * you can copy images only within the same Region.</p> <p>In the AWS GovCloud
-         * (US-West) Region, to copy images to and from other AWS Regions, contact AWS
-         * Support.</p>   <p>Before copying a shared image, be sure to
-         * verify that it has been shared from the correct AWS account. To determine if an
-         * image has been shared and to see the AWS account ID that owns an image, use the
-         * <a
+         * Copy a Custom WorkSpaces Image</a>.</p> <p>In the China (Ningxia) Region, you
+         * can copy images only within the same Region.</p> <p>In Amazon Web Services
+         * GovCloud (US), to copy images to and from other Regions, contact Amazon Web
+         * Services Support.</p>  <p>Before copying a shared image, be sure to
+         * verify that it has been shared from the correct Amazon Web Services account. To
+         * determine if an image has been shared and to see the ID of the Amazon Web
+         * Services account that owns an image, use the <a
          * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">DescribeWorkSpaceImages</a>
          * and <a
          * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImagePermissions.html">DescribeWorkspaceImagePermissions</a>
@@ -505,13 +510,13 @@ namespace Model
          * <p>Copies the specified image from the specified Region to the current Region.
          * For more information about copying images, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/copy-custom-image.html">
-         * Copy a Custom WorkSpaces Image</a>.</p>  <p>In the China (Ningxia) Region,
-         * you can copy images only within the same Region.</p> <p>In the AWS GovCloud
-         * (US-West) Region, to copy images to and from other AWS Regions, contact AWS
-         * Support.</p>   <p>Before copying a shared image, be sure to
-         * verify that it has been shared from the correct AWS account. To determine if an
-         * image has been shared and to see the AWS account ID that owns an image, use the
-         * <a
+         * Copy a Custom WorkSpaces Image</a>.</p> <p>In the China (Ningxia) Region, you
+         * can copy images only within the same Region.</p> <p>In Amazon Web Services
+         * GovCloud (US), to copy images to and from other Regions, contact Amazon Web
+         * Services Support.</p>  <p>Before copying a shared image, be sure to
+         * verify that it has been shared from the correct Amazon Web Services account. To
+         * determine if an image has been shared and to see the ID of the Amazon Web
+         * Services account that owns an image, use the <a
          * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">DescribeWorkSpaceImages</a>
          * and <a
          * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImagePermissions.html">DescribeWorkspaceImagePermissions</a>
@@ -642,6 +647,64 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateTagsAsync(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new updated WorkSpace image based on the specified source image.
+         * The new updated WorkSpace image has the latest drivers and other updates
+         * required by the Amazon WorkSpaces components.</p> <p>To determine which
+         * WorkSpace images need to be updated with the latest Amazon WorkSpaces
+         * requirements, use <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">
+         * DescribeWorkspaceImages</a>.</p>  <ul> <li> <p>Only Windows 10 WorkSpace
+         * images can be programmatically updated at this time.</p> </li> <li> <p>Microsoft
+         * Windows updates and other application updates are not included in the update
+         * process.</p> </li> <li> <p>The source WorkSpace image is not deleted. You can
+         * delete the source image after you've verified your new updated image and created
+         * a new bundle. </p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateUpdatedWorkspaceImage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateUpdatedWorkspaceImageOutcome CreateUpdatedWorkspaceImage(const Model::CreateUpdatedWorkspaceImageRequest& request) const;
+
+        /**
+         * <p>Creates a new updated WorkSpace image based on the specified source image.
+         * The new updated WorkSpace image has the latest drivers and other updates
+         * required by the Amazon WorkSpaces components.</p> <p>To determine which
+         * WorkSpace images need to be updated with the latest Amazon WorkSpaces
+         * requirements, use <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">
+         * DescribeWorkspaceImages</a>.</p>  <ul> <li> <p>Only Windows 10 WorkSpace
+         * images can be programmatically updated at this time.</p> </li> <li> <p>Microsoft
+         * Windows updates and other application updates are not included in the update
+         * process.</p> </li> <li> <p>The source WorkSpace image is not deleted. You can
+         * delete the source image after you've verified your new updated image and created
+         * a new bundle. </p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateUpdatedWorkspaceImage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateUpdatedWorkspaceImageOutcomeCallable CreateUpdatedWorkspaceImageCallable(const Model::CreateUpdatedWorkspaceImageRequest& request) const;
+
+        /**
+         * <p>Creates a new updated WorkSpace image based on the specified source image.
+         * The new updated WorkSpace image has the latest drivers and other updates
+         * required by the Amazon WorkSpaces components.</p> <p>To determine which
+         * WorkSpace images need to be updated with the latest Amazon WorkSpaces
+         * requirements, use <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">
+         * DescribeWorkspaceImages</a>.</p>  <ul> <li> <p>Only Windows 10 WorkSpace
+         * images can be programmatically updated at this time.</p> </li> <li> <p>Microsoft
+         * Windows updates and other application updates are not included in the update
+         * process.</p> </li> <li> <p>The source WorkSpace image is not deleted. You can
+         * delete the source image after you've verified your new updated image and created
+         * a new bundle. </p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateUpdatedWorkspaceImage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateUpdatedWorkspaceImageAsync(const Model::CreateUpdatedWorkspaceImageRequest& request, const CreateUpdatedWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the specified WorkSpace bundle. For more information about creating
@@ -902,8 +965,8 @@ namespace Model
          * with your Simple AD or AD Connector directory for 30 consecutive days, this
          * directory will be automatically deregistered for use with Amazon WorkSpaces, and
          * you will be charged for this directory as per the <a
-         * href="http://aws.amazon.com/directoryservice/pricing/">AWS Directory Services
-         * pricing terms</a>.</p> <p>To delete empty directories, see <a
+         * href="http://aws.amazon.com/directoryservice/pricing/">Directory Service pricing
+         * terms</a>.</p> <p>To delete empty directories, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html">
          * Delete the Directory for Your WorkSpaces</a>. If you delete your Simple AD or AD
          * Connector directory, you can always create a new one when you want to start
@@ -922,8 +985,8 @@ namespace Model
          * with your Simple AD or AD Connector directory for 30 consecutive days, this
          * directory will be automatically deregistered for use with Amazon WorkSpaces, and
          * you will be charged for this directory as per the <a
-         * href="http://aws.amazon.com/directoryservice/pricing/">AWS Directory Services
-         * pricing terms</a>.</p> <p>To delete empty directories, see <a
+         * href="http://aws.amazon.com/directoryservice/pricing/">Directory Service pricing
+         * terms</a>.</p> <p>To delete empty directories, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html">
          * Delete the Directory for Your WorkSpaces</a>. If you delete your Simple AD or AD
          * Connector directory, you can always create a new one when you want to start
@@ -944,8 +1007,8 @@ namespace Model
          * with your Simple AD or AD Connector directory for 30 consecutive days, this
          * directory will be automatically deregistered for use with Amazon WorkSpaces, and
          * you will be charged for this directory as per the <a
-         * href="http://aws.amazon.com/directoryservice/pricing/">AWS Directory Services
-         * pricing terms</a>.</p> <p>To delete empty directories, see <a
+         * href="http://aws.amazon.com/directoryservice/pricing/">Directory Service pricing
+         * terms</a>.</p> <p>To delete empty directories, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html">
          * Delete the Directory for Your WorkSpaces</a>. If you delete your Simple AD or AD
          * Connector directory, you can always create a new one when you want to start
@@ -1043,8 +1106,8 @@ namespace Model
 
         /**
          * <p>Describes the permissions that the owner of a connection alias has granted to
-         * another AWS account for the specified connection alias. For more information,
-         * see <a
+         * another Amazon Web Services account for the specified connection alias. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
          * Cross-Region Redirection for Amazon WorkSpaces</a>.</p><p><h3>See Also:</h3>  
          * <a
@@ -1055,8 +1118,8 @@ namespace Model
 
         /**
          * <p>Describes the permissions that the owner of a connection alias has granted to
-         * another AWS account for the specified connection alias. For more information,
-         * see <a
+         * another Amazon Web Services account for the specified connection alias. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
          * Cross-Region Redirection for Amazon WorkSpaces</a>.</p><p><h3>See Also:</h3>  
          * <a
@@ -1069,8 +1132,8 @@ namespace Model
 
         /**
          * <p>Describes the permissions that the owner of a connection alias has granted to
-         * another AWS account for the specified connection alias. For more information,
-         * see <a
+         * another Amazon Web Services account for the specified connection alias. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
          * Cross-Region Redirection for Amazon WorkSpaces</a>.</p><p><h3>See Also:</h3>  
          * <a
@@ -1234,16 +1297,16 @@ namespace Model
         virtual void DescribeWorkspaceDirectoriesAsync(const Model::DescribeWorkspaceDirectoriesRequest& request, const DescribeWorkspaceDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the permissions that the owner of an image has granted to other AWS
-         * accounts for an image.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the permissions that the owner of an image has granted to other
+         * Amazon Web Services accounts for an image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImagePermissions">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeWorkspaceImagePermissionsOutcome DescribeWorkspaceImagePermissions(const Model::DescribeWorkspaceImagePermissionsRequest& request) const;
 
         /**
-         * <p>Describes the permissions that the owner of an image has granted to other AWS
-         * accounts for an image.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the permissions that the owner of an image has granted to other
+         * Amazon Web Services accounts for an image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImagePermissions">AWS
          * API Reference</a></p>
          *
@@ -1252,8 +1315,8 @@ namespace Model
         virtual Model::DescribeWorkspaceImagePermissionsOutcomeCallable DescribeWorkspaceImagePermissionsCallable(const Model::DescribeWorkspaceImagePermissionsRequest& request) const;
 
         /**
-         * <p>Describes the permissions that the owner of an image has granted to other AWS
-         * accounts for an image.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the permissions that the owner of an image has granted to other
+         * Amazon Web Services accounts for an image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImagePermissions">AWS
          * API Reference</a></p>
          *
@@ -1382,7 +1445,7 @@ namespace Model
         /**
          * <p>Disassociates a connection alias from a directory. Disassociating a
          * connection alias disables cross-Region redirection between two directories in
-         * different AWS Regions. For more information, see <a
+         * different Regions. For more information, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
          * Cross-Region Redirection for Amazon WorkSpaces</a>.</p>  <p>Before
          * performing this operation, call <a
@@ -1397,7 +1460,7 @@ namespace Model
         /**
          * <p>Disassociates a connection alias from a directory. Disassociating a
          * connection alias disables cross-Region redirection between two directories in
-         * different AWS Regions. For more information, see <a
+         * different Regions. For more information, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
          * Cross-Region Redirection for Amazon WorkSpaces</a>.</p>  <p>Before
          * performing this operation, call <a
@@ -1414,7 +1477,7 @@ namespace Model
         /**
          * <p>Disassociates a connection alias from a directory. Disassociating a
          * connection alias disables cross-Region redirection between two directories in
-         * different AWS Regions. For more information, see <a
+         * different Regions. For more information, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
          * Cross-Region Redirection for Amazon WorkSpaces</a>.</p>  <p>Before
          * performing this operation, call <a
@@ -1459,8 +1522,8 @@ namespace Model
         /**
          * <p>Imports the specified Windows 10 Bring Your Own License (BYOL) image into
          * Amazon WorkSpaces. The image must be an already licensed Amazon EC2 image that
-         * is in your AWS account, and you must own the image. For more information about
-         * creating BYOL images, see <a
+         * is in your Amazon Web Services account, and you must own the image. For more
+         * information about creating BYOL images, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
          * Bring Your Own Windows Desktop Licenses</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportWorkspaceImage">AWS
@@ -1471,8 +1534,8 @@ namespace Model
         /**
          * <p>Imports the specified Windows 10 Bring Your Own License (BYOL) image into
          * Amazon WorkSpaces. The image must be an already licensed Amazon EC2 image that
-         * is in your AWS account, and you must own the image. For more information about
-         * creating BYOL images, see <a
+         * is in your Amazon Web Services account, and you must own the image. For more
+         * information about creating BYOL images, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
          * Bring Your Own Windows Desktop Licenses</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportWorkspaceImage">AWS
@@ -1485,8 +1548,8 @@ namespace Model
         /**
          * <p>Imports the specified Windows 10 Bring Your Own License (BYOL) image into
          * Amazon WorkSpaces. The image must be an already licensed Amazon EC2 image that
-         * is in your AWS account, and you must own the image. For more information about
-         * creating BYOL images, see <a
+         * is in your Amazon Web Services account, and you must own the image. For more
+         * information about creating BYOL images, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
          * Bring Your Own Windows Desktop Licenses</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportWorkspaceImage">AWS
@@ -1499,13 +1562,13 @@ namespace Model
         /**
          * <p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that
          * you can use for the network management interface when you enable Bring Your Own
-         * License (BYOL). </p> <p>This operation can be run only by AWS accounts that are
-         * enabled for BYOL. If your account isn't enabled for BYOL, you'll receive an
-         * <code>AccessDeniedException</code> error.</p> <p>The management network
-         * interface is connected to a secure Amazon WorkSpaces management network. It is
-         * used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces
-         * clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p><p><h3>See
-         * Also:</h3>   <a
+         * License (BYOL). </p> <p>This operation can be run only by Amazon Web Services
+         * accounts that are enabled for BYOL. If your account isn't enabled for BYOL,
+         * you'll receive an <code>AccessDeniedException</code> error.</p> <p>The
+         * management network interface is connected to a secure Amazon WorkSpaces
+         * management network. It is used for interactive streaming of the WorkSpace
+         * desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage
+         * the WorkSpace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAvailableManagementCidrRanges">AWS
          * API Reference</a></p>
          */
@@ -1514,13 +1577,13 @@ namespace Model
         /**
          * <p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that
          * you can use for the network management interface when you enable Bring Your Own
-         * License (BYOL). </p> <p>This operation can be run only by AWS accounts that are
-         * enabled for BYOL. If your account isn't enabled for BYOL, you'll receive an
-         * <code>AccessDeniedException</code> error.</p> <p>The management network
-         * interface is connected to a secure Amazon WorkSpaces management network. It is
-         * used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces
-         * clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p><p><h3>See
-         * Also:</h3>   <a
+         * License (BYOL). </p> <p>This operation can be run only by Amazon Web Services
+         * accounts that are enabled for BYOL. If your account isn't enabled for BYOL,
+         * you'll receive an <code>AccessDeniedException</code> error.</p> <p>The
+         * management network interface is connected to a secure Amazon WorkSpaces
+         * management network. It is used for interactive streaming of the WorkSpace
+         * desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage
+         * the WorkSpace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAvailableManagementCidrRanges">AWS
          * API Reference</a></p>
          *
@@ -1531,13 +1594,13 @@ namespace Model
         /**
          * <p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that
          * you can use for the network management interface when you enable Bring Your Own
-         * License (BYOL). </p> <p>This operation can be run only by AWS accounts that are
-         * enabled for BYOL. If your account isn't enabled for BYOL, you'll receive an
-         * <code>AccessDeniedException</code> error.</p> <p>The management network
-         * interface is connected to a secure Amazon WorkSpaces management network. It is
-         * used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces
-         * clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p><p><h3>See
-         * Also:</h3>   <a
+         * License (BYOL). </p> <p>This operation can be run only by Amazon Web Services
+         * accounts that are enabled for BYOL. If your account isn't enabled for BYOL,
+         * you'll receive an <code>AccessDeniedException</code> error.</p> <p>The
+         * management network interface is connected to a secure Amazon WorkSpaces
+         * management network. It is used for interactive streaming of the WorkSpace
+         * desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage
+         * the WorkSpace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAvailableManagementCidrRanges">AWS
          * API Reference</a></p>
          *
@@ -2094,14 +2157,14 @@ namespace Model
         /**
          * <p>Terminates the specified WorkSpaces.</p>  <p>Terminating a
          * WorkSpace is a permanent action and cannot be undone. The user's data is
-         * destroyed. If you need to archive any user data, contact AWS Support before
-         * terminating the WorkSpace.</p>  <p>You can terminate a WorkSpace
-         * that is in any state except <code>SUSPENDED</code>.</p> <p>This operation is
-         * asynchronous and returns before the WorkSpaces have been completely terminated.
-         * After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned
-         * only briefly before the WorkSpace directory metadata is cleaned up, so this
-         * state is rarely returned. To confirm that a WorkSpace is terminated, check for
-         * the WorkSpace ID by using <a
+         * destroyed. If you need to archive any user data, contact Amazon Web Services
+         * Support before terminating the WorkSpace.</p>  <p>You can terminate
+         * a WorkSpace that is in any state except <code>SUSPENDED</code>.</p> <p>This
+         * operation is asynchronous and returns before the WorkSpaces have been completely
+         * terminated. After a WorkSpace is terminated, the <code>TERMINATED</code> state
+         * is returned only briefly before the WorkSpace directory metadata is cleaned up,
+         * so this state is rarely returned. To confirm that a WorkSpace is terminated,
+         * check for the WorkSpace ID by using <a
          * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
          * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
          * has been successfully terminated.</p>  <p>Simple AD and AD Connector are
@@ -2109,8 +2172,8 @@ namespace Model
          * WorkSpaces being used with your Simple AD or AD Connector directory for 30
          * consecutive days, this directory will be automatically deregistered for use with
          * Amazon WorkSpaces, and you will be charged for this directory as per the <a
-         * href="http://aws.amazon.com/directoryservice/pricing/">AWS Directory Services
-         * pricing terms</a>.</p> <p>To delete empty directories, see <a
+         * href="http://aws.amazon.com/directoryservice/pricing/">Directory Service pricing
+         * terms</a>.</p> <p>To delete empty directories, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html">
          * Delete the Directory for Your WorkSpaces</a>. If you delete your Simple AD or AD
          * Connector directory, you can always create a new one when you want to start
@@ -2123,14 +2186,14 @@ namespace Model
         /**
          * <p>Terminates the specified WorkSpaces.</p>  <p>Terminating a
          * WorkSpace is a permanent action and cannot be undone. The user's data is
-         * destroyed. If you need to archive any user data, contact AWS Support before
-         * terminating the WorkSpace.</p>  <p>You can terminate a WorkSpace
-         * that is in any state except <code>SUSPENDED</code>.</p> <p>This operation is
-         * asynchronous and returns before the WorkSpaces have been completely terminated.
-         * After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned
-         * only briefly before the WorkSpace directory metadata is cleaned up, so this
-         * state is rarely returned. To confirm that a WorkSpace is terminated, check for
-         * the WorkSpace ID by using <a
+         * destroyed. If you need to archive any user data, contact Amazon Web Services
+         * Support before terminating the WorkSpace.</p>  <p>You can terminate
+         * a WorkSpace that is in any state except <code>SUSPENDED</code>.</p> <p>This
+         * operation is asynchronous and returns before the WorkSpaces have been completely
+         * terminated. After a WorkSpace is terminated, the <code>TERMINATED</code> state
+         * is returned only briefly before the WorkSpace directory metadata is cleaned up,
+         * so this state is rarely returned. To confirm that a WorkSpace is terminated,
+         * check for the WorkSpace ID by using <a
          * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
          * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
          * has been successfully terminated.</p>  <p>Simple AD and AD Connector are
@@ -2138,8 +2201,8 @@ namespace Model
          * WorkSpaces being used with your Simple AD or AD Connector directory for 30
          * consecutive days, this directory will be automatically deregistered for use with
          * Amazon WorkSpaces, and you will be charged for this directory as per the <a
-         * href="http://aws.amazon.com/directoryservice/pricing/">AWS Directory Services
-         * pricing terms</a>.</p> <p>To delete empty directories, see <a
+         * href="http://aws.amazon.com/directoryservice/pricing/">Directory Service pricing
+         * terms</a>.</p> <p>To delete empty directories, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html">
          * Delete the Directory for Your WorkSpaces</a>. If you delete your Simple AD or AD
          * Connector directory, you can always create a new one when you want to start
@@ -2154,14 +2217,14 @@ namespace Model
         /**
          * <p>Terminates the specified WorkSpaces.</p>  <p>Terminating a
          * WorkSpace is a permanent action and cannot be undone. The user's data is
-         * destroyed. If you need to archive any user data, contact AWS Support before
-         * terminating the WorkSpace.</p>  <p>You can terminate a WorkSpace
-         * that is in any state except <code>SUSPENDED</code>.</p> <p>This operation is
-         * asynchronous and returns before the WorkSpaces have been completely terminated.
-         * After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned
-         * only briefly before the WorkSpace directory metadata is cleaned up, so this
-         * state is rarely returned. To confirm that a WorkSpace is terminated, check for
-         * the WorkSpace ID by using <a
+         * destroyed. If you need to archive any user data, contact Amazon Web Services
+         * Support before terminating the WorkSpace.</p>  <p>You can terminate
+         * a WorkSpace that is in any state except <code>SUSPENDED</code>.</p> <p>This
+         * operation is asynchronous and returns before the WorkSpaces have been completely
+         * terminated. After a WorkSpace is terminated, the <code>TERMINATED</code> state
+         * is returned only briefly before the WorkSpace directory metadata is cleaned up,
+         * so this state is rarely returned. To confirm that a WorkSpace is terminated,
+         * check for the WorkSpace ID by using <a
          * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
          * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
          * has been successfully terminated.</p>  <p>Simple AD and AD Connector are
@@ -2169,8 +2232,8 @@ namespace Model
          * WorkSpaces being used with your Simple AD or AD Connector directory for 30
          * consecutive days, this directory will be automatically deregistered for use with
          * Amazon WorkSpaces, and you will be charged for this directory as per the <a
-         * href="http://aws.amazon.com/directoryservice/pricing/">AWS Directory Services
-         * pricing terms</a>.</p> <p>To delete empty directories, see <a
+         * href="http://aws.amazon.com/directoryservice/pricing/">Directory Service pricing
+         * terms</a>.</p> <p>To delete empty directories, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html">
          * Delete the Directory for Your WorkSpaces</a>. If you delete your Simple AD or AD
          * Connector directory, you can always create a new one when you want to start
@@ -2330,44 +2393,46 @@ namespace Model
         virtual void UpdateWorkspaceBundleAsync(const Model::UpdateWorkspaceBundleRequest& request, const UpdateWorkspaceBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Shares or unshares an image with one account in the same AWS Region by
-         * specifying whether that account has permission to copy the image. If the copy
-         * image permission is granted, the image is shared with that account. If the copy
-         * image permission is revoked, the image is unshared with the account.</p>
-         * <p>After an image has been shared, the recipient account can copy the image to
-         * other AWS Regions as needed.</p>  <p>In the China (Ningxia) Region, you
-         * can copy images only within the same Region.</p> <p>In the AWS GovCloud
-         * (US-West) Region, to copy images to and from other AWS Regions, contact AWS
-         * Support.</p>  <p>For more information about sharing images, see <a
+         * <p>Shares or unshares an image with one account in the same Amazon Web Services
+         * Region by specifying whether that account has permission to copy the image. If
+         * the copy image permission is granted, the image is shared with that account. If
+         * the copy image permission is revoked, the image is unshared with the
+         * account.</p> <p>After an image has been shared, the recipient account can copy
+         * the image to other Regions as needed.</p> <p>In the China (Ningxia) Region, you
+         * can copy images only within the same Region.</p> <p>In Amazon Web Services
+         * GovCloud (US), to copy images to and from other Regions, contact Amazon Web
+         * Services Support.</p> <p>For more information about sharing images, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html">
          * Share or Unshare a Custom WorkSpaces Image</a>.</p>  <ul> <li> <p>To
          * delete an image that has been shared, you must unshare the image before you
          * delete it.</p> </li> <li> <p>Sharing Bring Your Own License (BYOL) images across
-         * AWS accounts isn't supported at this time in the AWS GovCloud (US-West) Region.
-         * To share BYOL images across accounts in the AWS GovCloud (US-West) Region,
-         * contact AWS Support.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * Amazon Web Services accounts isn't supported at this time in Amazon Web Services
+         * GovCloud (US). To share BYOL images across accounts in Amazon Web Services
+         * GovCloud (US), contact Amazon Web Services Support.</p> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceImagePermission">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateWorkspaceImagePermissionOutcome UpdateWorkspaceImagePermission(const Model::UpdateWorkspaceImagePermissionRequest& request) const;
 
         /**
-         * <p>Shares or unshares an image with one account in the same AWS Region by
-         * specifying whether that account has permission to copy the image. If the copy
-         * image permission is granted, the image is shared with that account. If the copy
-         * image permission is revoked, the image is unshared with the account.</p>
-         * <p>After an image has been shared, the recipient account can copy the image to
-         * other AWS Regions as needed.</p>  <p>In the China (Ningxia) Region, you
-         * can copy images only within the same Region.</p> <p>In the AWS GovCloud
-         * (US-West) Region, to copy images to and from other AWS Regions, contact AWS
-         * Support.</p>  <p>For more information about sharing images, see <a
+         * <p>Shares or unshares an image with one account in the same Amazon Web Services
+         * Region by specifying whether that account has permission to copy the image. If
+         * the copy image permission is granted, the image is shared with that account. If
+         * the copy image permission is revoked, the image is unshared with the
+         * account.</p> <p>After an image has been shared, the recipient account can copy
+         * the image to other Regions as needed.</p> <p>In the China (Ningxia) Region, you
+         * can copy images only within the same Region.</p> <p>In Amazon Web Services
+         * GovCloud (US), to copy images to and from other Regions, contact Amazon Web
+         * Services Support.</p> <p>For more information about sharing images, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html">
          * Share or Unshare a Custom WorkSpaces Image</a>.</p>  <ul> <li> <p>To
          * delete an image that has been shared, you must unshare the image before you
          * delete it.</p> </li> <li> <p>Sharing Bring Your Own License (BYOL) images across
-         * AWS accounts isn't supported at this time in the AWS GovCloud (US-West) Region.
-         * To share BYOL images across accounts in the AWS GovCloud (US-West) Region,
-         * contact AWS Support.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * Amazon Web Services accounts isn't supported at this time in Amazon Web Services
+         * GovCloud (US). To share BYOL images across accounts in Amazon Web Services
+         * GovCloud (US), contact Amazon Web Services Support.</p> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceImagePermission">AWS
          * API Reference</a></p>
          *
@@ -2376,22 +2441,23 @@ namespace Model
         virtual Model::UpdateWorkspaceImagePermissionOutcomeCallable UpdateWorkspaceImagePermissionCallable(const Model::UpdateWorkspaceImagePermissionRequest& request) const;
 
         /**
-         * <p>Shares or unshares an image with one account in the same AWS Region by
-         * specifying whether that account has permission to copy the image. If the copy
-         * image permission is granted, the image is shared with that account. If the copy
-         * image permission is revoked, the image is unshared with the account.</p>
-         * <p>After an image has been shared, the recipient account can copy the image to
-         * other AWS Regions as needed.</p>  <p>In the China (Ningxia) Region, you
-         * can copy images only within the same Region.</p> <p>In the AWS GovCloud
-         * (US-West) Region, to copy images to and from other AWS Regions, contact AWS
-         * Support.</p>  <p>For more information about sharing images, see <a
+         * <p>Shares or unshares an image with one account in the same Amazon Web Services
+         * Region by specifying whether that account has permission to copy the image. If
+         * the copy image permission is granted, the image is shared with that account. If
+         * the copy image permission is revoked, the image is unshared with the
+         * account.</p> <p>After an image has been shared, the recipient account can copy
+         * the image to other Regions as needed.</p> <p>In the China (Ningxia) Region, you
+         * can copy images only within the same Region.</p> <p>In Amazon Web Services
+         * GovCloud (US), to copy images to and from other Regions, contact Amazon Web
+         * Services Support.</p> <p>For more information about sharing images, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html">
          * Share or Unshare a Custom WorkSpaces Image</a>.</p>  <ul> <li> <p>To
          * delete an image that has been shared, you must unshare the image before you
          * delete it.</p> </li> <li> <p>Sharing Bring Your Own License (BYOL) images across
-         * AWS accounts isn't supported at this time in the AWS GovCloud (US-West) Region.
-         * To share BYOL images across accounts in the AWS GovCloud (US-West) Region,
-         * contact AWS Support.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * Amazon Web Services accounts isn't supported at this time in Amazon Web Services
+         * GovCloud (US). To share BYOL images across accounts in Amazon Web Services
+         * GovCloud (US), contact Amazon Web Services Support.</p> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceImagePermission">AWS
          * API Reference</a></p>
          *
@@ -2410,6 +2476,7 @@ namespace Model
         void CreateConnectionAliasAsyncHelper(const Model::CreateConnectionAliasRequest& request, const CreateConnectionAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateIpGroupAsyncHelper(const Model::CreateIpGroupRequest& request, const CreateIpGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTagsAsyncHelper(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateUpdatedWorkspaceImageAsyncHelper(const Model::CreateUpdatedWorkspaceImageRequest& request, const CreateUpdatedWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateWorkspaceBundleAsyncHelper(const Model::CreateWorkspaceBundleRequest& request, const CreateWorkspaceBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateWorkspacesAsyncHelper(const Model::CreateWorkspacesRequest& request, const CreateWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConnectionAliasAsyncHelper(const Model::DeleteConnectionAliasRequest& request, const DeleteConnectionAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -42,55 +42,55 @@ namespace Model
 
     /**
      * <p>The value for the property matches (equals) the specified value. If you
-     * specify multiple values, Macie uses OR logic to join the values.</p>
+     * specify multiple values, Amazon Macie uses OR logic to join the values.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEq() const{ return m_eq; }
 
     /**
      * <p>The value for the property matches (equals) the specified value. If you
-     * specify multiple values, Macie uses OR logic to join the values.</p>
+     * specify multiple values, Amazon Macie uses OR logic to join the values.</p>
      */
     inline bool EqHasBeenSet() const { return m_eqHasBeenSet; }
 
     /**
      * <p>The value for the property matches (equals) the specified value. If you
-     * specify multiple values, Macie uses OR logic to join the values.</p>
+     * specify multiple values, Amazon Macie uses OR logic to join the values.</p>
      */
     inline void SetEq(const Aws::Vector<Aws::String>& value) { m_eqHasBeenSet = true; m_eq = value; }
 
     /**
      * <p>The value for the property matches (equals) the specified value. If you
-     * specify multiple values, Macie uses OR logic to join the values.</p>
+     * specify multiple values, Amazon Macie uses OR logic to join the values.</p>
      */
     inline void SetEq(Aws::Vector<Aws::String>&& value) { m_eqHasBeenSet = true; m_eq = std::move(value); }
 
     /**
      * <p>The value for the property matches (equals) the specified value. If you
-     * specify multiple values, Macie uses OR logic to join the values.</p>
+     * specify multiple values, Amazon Macie uses OR logic to join the values.</p>
      */
     inline BucketCriteriaAdditionalProperties& WithEq(const Aws::Vector<Aws::String>& value) { SetEq(value); return *this;}
 
     /**
      * <p>The value for the property matches (equals) the specified value. If you
-     * specify multiple values, Macie uses OR logic to join the values.</p>
+     * specify multiple values, Amazon Macie uses OR logic to join the values.</p>
      */
     inline BucketCriteriaAdditionalProperties& WithEq(Aws::Vector<Aws::String>&& value) { SetEq(std::move(value)); return *this;}
 
     /**
      * <p>The value for the property matches (equals) the specified value. If you
-     * specify multiple values, Macie uses OR logic to join the values.</p>
+     * specify multiple values, Amazon Macie uses OR logic to join the values.</p>
      */
     inline BucketCriteriaAdditionalProperties& AddEq(const Aws::String& value) { m_eqHasBeenSet = true; m_eq.push_back(value); return *this; }
 
     /**
      * <p>The value for the property matches (equals) the specified value. If you
-     * specify multiple values, Macie uses OR logic to join the values.</p>
+     * specify multiple values, Amazon Macie uses OR logic to join the values.</p>
      */
     inline BucketCriteriaAdditionalProperties& AddEq(Aws::String&& value) { m_eqHasBeenSet = true; m_eq.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The value for the property matches (equals) the specified value. If you
-     * specify multiple values, Macie uses OR logic to join the values.</p>
+     * specify multiple values, Amazon Macie uses OR logic to join the values.</p>
      */
     inline BucketCriteriaAdditionalProperties& AddEq(const char* value) { m_eqHasBeenSet = true; m_eq.push_back(value); return *this; }
 

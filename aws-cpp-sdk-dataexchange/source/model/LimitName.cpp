@@ -32,6 +32,9 @@ namespace Aws
         static const int Concurrent_in_progress_jobs_to_import_assets_from_a_signed_URL_HASH = HashingUtils::HashString("Concurrent in progress jobs to import assets from a signed URL");
         static const int Concurrent_in_progress_jobs_to_export_assets_to_Amazon_S3_HASH = HashingUtils::HashString("Concurrent in progress jobs to export assets to Amazon S3");
         static const int Concurrent_in_progress_jobs_to_export_assets_to_a_signed_URL_HASH = HashingUtils::HashString("Concurrent in progress jobs to export assets to a signed URL");
+        static const int Concurrent_in_progress_jobs_to_export_revisions_to_Amazon_S3_HASH = HashingUtils::HashString("Concurrent in progress jobs to export revisions to Amazon S3");
+        static const int Event_actions_per_account_HASH = HashingUtils::HashString("Event actions per account");
+        static const int Auto_export_event_actions_per_data_set_HASH = HashingUtils::HashString("Auto export event actions per data set");
 
 
         LimitName GetLimitNameForName(const Aws::String& name)
@@ -85,6 +88,18 @@ namespace Aws
           {
             return LimitName::Concurrent_in_progress_jobs_to_export_assets_to_a_signed_URL;
           }
+          else if (hashCode == Concurrent_in_progress_jobs_to_export_revisions_to_Amazon_S3_HASH)
+          {
+            return LimitName::Concurrent_in_progress_jobs_to_export_revisions_to_Amazon_S3;
+          }
+          else if (hashCode == Event_actions_per_account_HASH)
+          {
+            return LimitName::Event_actions_per_account;
+          }
+          else if (hashCode == Auto_export_event_actions_per_data_set_HASH)
+          {
+            return LimitName::Auto_export_event_actions_per_data_set;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -123,6 +138,12 @@ namespace Aws
             return "Concurrent in progress jobs to export assets to Amazon S3";
           case LimitName::Concurrent_in_progress_jobs_to_export_assets_to_a_signed_URL:
             return "Concurrent in progress jobs to export assets to a signed URL";
+          case LimitName::Concurrent_in_progress_jobs_to_export_revisions_to_Amazon_S3:
+            return "Concurrent in progress jobs to export revisions to Amazon S3";
+          case LimitName::Event_actions_per_account:
+            return "Event actions per account";
+          case LimitName::Auto_export_event_actions_per_data_set:
+            return "Auto export event actions per data set";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

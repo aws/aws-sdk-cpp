@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/model/BucketMetadataErrorCode.h>
 #include <aws/macie2/model/JobDetails.h>
 #include <aws/macie2/model/ObjectCountByEncryptionType.h>
 #include <aws/macie2/model/ObjectLevelStatistics.h>
@@ -28,7 +29,11 @@ namespace Model
 
   /**
    * <p>Provides statistical data and other information about an S3 bucket that
-   * Amazon Macie monitors and analyzes.</p><p><h3>See Also:</h3>   <a
+   * Amazon Macie monitors and analyzes for your account. If an error occurs when
+   * Macie attempts to retrieve and process information about the bucket or the
+   * bucket's objects, the value for most of these properties is null. Exceptions are
+   * accountId and bucketName. To identify the cause of the error, refer to the
+   * errorCode and errorMessage values.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/MatchingBucket">AWS
    * API Reference</a></p>
    */
@@ -206,6 +211,132 @@ namespace Model
 
 
     /**
+     * <p>Specifies the error code for an error that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon
+     * S3 denied the request. If this value is null, Macie was able to retrieve and
+     * process the information.</p>
+     */
+    inline const BucketMetadataErrorCode& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p>Specifies the error code for an error that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon
+     * S3 denied the request. If this value is null, Macie was able to retrieve and
+     * process the information.</p>
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+
+    /**
+     * <p>Specifies the error code for an error that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon
+     * S3 denied the request. If this value is null, Macie was able to retrieve and
+     * process the information.</p>
+     */
+    inline void SetErrorCode(const BucketMetadataErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+
+    /**
+     * <p>Specifies the error code for an error that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon
+     * S3 denied the request. If this value is null, Macie was able to retrieve and
+     * process the information.</p>
+     */
+    inline void SetErrorCode(BucketMetadataErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
+
+    /**
+     * <p>Specifies the error code for an error that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon
+     * S3 denied the request. If this value is null, Macie was able to retrieve and
+     * process the information.</p>
+     */
+    inline MatchingBucket& WithErrorCode(const BucketMetadataErrorCode& value) { SetErrorCode(value); return *this;}
+
+    /**
+     * <p>Specifies the error code for an error that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon
+     * S3 denied the request. If this value is null, Macie was able to retrieve and
+     * process the information.</p>
+     */
+    inline MatchingBucket& WithErrorCode(BucketMetadataErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * This value is null if Macie was able to retrieve and process the
+     * information.</p>
+     */
+    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * This value is null if Macie was able to retrieve and process the
+     * information.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+
+    /**
+     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * This value is null if Macie was able to retrieve and process the
+     * information.</p>
+     */
+    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
+
+    /**
+     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * This value is null if Macie was able to retrieve and process the
+     * information.</p>
+     */
+    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
+
+    /**
+     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * This value is null if Macie was able to retrieve and process the
+     * information.</p>
+     */
+    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
+
+    /**
+     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * This value is null if Macie was able to retrieve and process the
+     * information.</p>
+     */
+    inline MatchingBucket& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
+
+    /**
+     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * This value is null if Macie was able to retrieve and process the
+     * information.</p>
+     */
+    inline MatchingBucket& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
+     * retrieving and processing information about the bucket and the bucket's objects.
+     * This value is null if Macie was able to retrieve and process the
+     * information.</p>
+     */
+    inline MatchingBucket& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+
+
+    /**
      * <p>Specifies whether any one-time or recurring classification jobs are
      * configured to analyze objects in the bucket, and, if so, the details of the job
      * that ran most recently.</p>
@@ -348,36 +479,36 @@ namespace Model
     /**
      * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
      * .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the
-     * bucket, Macie calculates this value based on the size of the latest version of
-     * each applicable object in the bucket. This value doesn't reflect the storage
-     * size of all versions of each applicable object in the bucket.</p>
+     * bucket, Amazon Macie calculates this value based on the size of the latest
+     * version of each applicable object in the bucket. This value doesn't reflect the
+     * storage size of all versions of each applicable object in the bucket.</p>
      */
     inline long long GetSizeInBytesCompressed() const{ return m_sizeInBytesCompressed; }
 
     /**
      * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
      * .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the
-     * bucket, Macie calculates this value based on the size of the latest version of
-     * each applicable object in the bucket. This value doesn't reflect the storage
-     * size of all versions of each applicable object in the bucket.</p>
+     * bucket, Amazon Macie calculates this value based on the size of the latest
+     * version of each applicable object in the bucket. This value doesn't reflect the
+     * storage size of all versions of each applicable object in the bucket.</p>
      */
     inline bool SizeInBytesCompressedHasBeenSet() const { return m_sizeInBytesCompressedHasBeenSet; }
 
     /**
      * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
      * .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the
-     * bucket, Macie calculates this value based on the size of the latest version of
-     * each applicable object in the bucket. This value doesn't reflect the storage
-     * size of all versions of each applicable object in the bucket.</p>
+     * bucket, Amazon Macie calculates this value based on the size of the latest
+     * version of each applicable object in the bucket. This value doesn't reflect the
+     * storage size of all versions of each applicable object in the bucket.</p>
      */
     inline void SetSizeInBytesCompressed(long long value) { m_sizeInBytesCompressedHasBeenSet = true; m_sizeInBytesCompressed = value; }
 
     /**
      * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
      * .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the
-     * bucket, Macie calculates this value based on the size of the latest version of
-     * each applicable object in the bucket. This value doesn't reflect the storage
-     * size of all versions of each applicable object in the bucket.</p>
+     * bucket, Amazon Macie calculates this value based on the size of the latest
+     * version of each applicable object in the bucket. This value doesn't reflect the
+     * storage size of all versions of each applicable object in the bucket.</p>
      */
     inline MatchingBucket& WithSizeInBytesCompressed(long long value) { SetSizeInBytesCompressed(value); return *this;}
 
@@ -480,6 +611,12 @@ namespace Model
 
     long long m_classifiableSizeInBytes;
     bool m_classifiableSizeInBytesHasBeenSet;
+
+    BucketMetadataErrorCode m_errorCode;
+    bool m_errorCodeHasBeenSet;
+
+    Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet;
 
     JobDetails m_jobDetails;
     bool m_jobDetailsHasBeenSet;

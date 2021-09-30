@@ -25,7 +25,13 @@ FirewallPolicyResponse::FirewallPolicyResponse() :
     m_descriptionHasBeenSet(false),
     m_firewallPolicyStatus(ResourceStatus::NOT_SET),
     m_firewallPolicyStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_consumedStatelessRuleCapacity(0),
+    m_consumedStatelessRuleCapacityHasBeenSet(false),
+    m_consumedStatefulRuleCapacity(0),
+    m_consumedStatefulRuleCapacityHasBeenSet(false),
+    m_numberOfAssociations(0),
+    m_numberOfAssociationsHasBeenSet(false)
 {
 }
 
@@ -36,7 +42,13 @@ FirewallPolicyResponse::FirewallPolicyResponse(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_firewallPolicyStatus(ResourceStatus::NOT_SET),
     m_firewallPolicyStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_consumedStatelessRuleCapacity(0),
+    m_consumedStatelessRuleCapacityHasBeenSet(false),
+    m_consumedStatefulRuleCapacity(0),
+    m_consumedStatefulRuleCapacityHasBeenSet(false),
+    m_numberOfAssociations(0),
+    m_numberOfAssociationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -88,6 +100,27 @@ FirewallPolicyResponse& FirewallPolicyResponse::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ConsumedStatelessRuleCapacity"))
+  {
+    m_consumedStatelessRuleCapacity = jsonValue.GetInteger("ConsumedStatelessRuleCapacity");
+
+    m_consumedStatelessRuleCapacityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConsumedStatefulRuleCapacity"))
+  {
+    m_consumedStatefulRuleCapacity = jsonValue.GetInteger("ConsumedStatefulRuleCapacity");
+
+    m_consumedStatefulRuleCapacityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NumberOfAssociations"))
+  {
+    m_numberOfAssociations = jsonValue.GetInteger("NumberOfAssociations");
+
+    m_numberOfAssociationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -132,6 +165,24 @@ JsonValue FirewallPolicyResponse::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_consumedStatelessRuleCapacityHasBeenSet)
+  {
+   payload.WithInteger("ConsumedStatelessRuleCapacity", m_consumedStatelessRuleCapacity);
+
+  }
+
+  if(m_consumedStatefulRuleCapacityHasBeenSet)
+  {
+   payload.WithInteger("ConsumedStatefulRuleCapacity", m_consumedStatefulRuleCapacity);
+
+  }
+
+  if(m_numberOfAssociationsHasBeenSet)
+  {
+   payload.WithInteger("NumberOfAssociations", m_numberOfAssociations);
 
   }
 

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     REVISION,
-    ASSET
+    ASSET,
+    DATA_SET
   };
 
 namespace JobErrorResourceTypesMapper

@@ -7,6 +7,7 @@
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/RuleVariables.h>
 #include <aws/network-firewall/model/RulesSource.h>
+#include <aws/network-firewall/model/StatefulRuleOptions.h>
 #include <utility>
 
 namespace Aws
@@ -114,6 +115,49 @@ namespace Model
      */
     inline RuleGroup& WithRulesSource(RulesSource&& value) { SetRulesSource(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Additional options governing how Network Firewall handles stateful rules. The
+     * policies where you use your stateful rule group must have stateful rule options
+     * settings that are compatible with these settings.</p>
+     */
+    inline const StatefulRuleOptions& GetStatefulRuleOptions() const{ return m_statefulRuleOptions; }
+
+    /**
+     * <p>Additional options governing how Network Firewall handles stateful rules. The
+     * policies where you use your stateful rule group must have stateful rule options
+     * settings that are compatible with these settings.</p>
+     */
+    inline bool StatefulRuleOptionsHasBeenSet() const { return m_statefulRuleOptionsHasBeenSet; }
+
+    /**
+     * <p>Additional options governing how Network Firewall handles stateful rules. The
+     * policies where you use your stateful rule group must have stateful rule options
+     * settings that are compatible with these settings.</p>
+     */
+    inline void SetStatefulRuleOptions(const StatefulRuleOptions& value) { m_statefulRuleOptionsHasBeenSet = true; m_statefulRuleOptions = value; }
+
+    /**
+     * <p>Additional options governing how Network Firewall handles stateful rules. The
+     * policies where you use your stateful rule group must have stateful rule options
+     * settings that are compatible with these settings.</p>
+     */
+    inline void SetStatefulRuleOptions(StatefulRuleOptions&& value) { m_statefulRuleOptionsHasBeenSet = true; m_statefulRuleOptions = std::move(value); }
+
+    /**
+     * <p>Additional options governing how Network Firewall handles stateful rules. The
+     * policies where you use your stateful rule group must have stateful rule options
+     * settings that are compatible with these settings.</p>
+     */
+    inline RuleGroup& WithStatefulRuleOptions(const StatefulRuleOptions& value) { SetStatefulRuleOptions(value); return *this;}
+
+    /**
+     * <p>Additional options governing how Network Firewall handles stateful rules. The
+     * policies where you use your stateful rule group must have stateful rule options
+     * settings that are compatible with these settings.</p>
+     */
+    inline RuleGroup& WithStatefulRuleOptions(StatefulRuleOptions&& value) { SetStatefulRuleOptions(std::move(value)); return *this;}
+
   private:
 
     RuleVariables m_ruleVariables;
@@ -121,6 +165,9 @@ namespace Model
 
     RulesSource m_rulesSource;
     bool m_rulesSourceHasBeenSet;
+
+    StatefulRuleOptions m_statefulRuleOptions;
+    bool m_statefulRuleOptionsHasBeenSet;
   };
 
 } // namespace Model

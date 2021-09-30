@@ -22,17 +22,21 @@
 #include <aws/dataexchange/DataExchangeErrorMarshaller.h>
 #include <aws/dataexchange/model/CancelJobRequest.h>
 #include <aws/dataexchange/model/CreateDataSetRequest.h>
+#include <aws/dataexchange/model/CreateEventActionRequest.h>
 #include <aws/dataexchange/model/CreateJobRequest.h>
 #include <aws/dataexchange/model/CreateRevisionRequest.h>
 #include <aws/dataexchange/model/DeleteAssetRequest.h>
 #include <aws/dataexchange/model/DeleteDataSetRequest.h>
+#include <aws/dataexchange/model/DeleteEventActionRequest.h>
 #include <aws/dataexchange/model/DeleteRevisionRequest.h>
 #include <aws/dataexchange/model/GetAssetRequest.h>
 #include <aws/dataexchange/model/GetDataSetRequest.h>
+#include <aws/dataexchange/model/GetEventActionRequest.h>
 #include <aws/dataexchange/model/GetJobRequest.h>
 #include <aws/dataexchange/model/GetRevisionRequest.h>
 #include <aws/dataexchange/model/ListDataSetRevisionsRequest.h>
 #include <aws/dataexchange/model/ListDataSetsRequest.h>
+#include <aws/dataexchange/model/ListEventActionsRequest.h>
 #include <aws/dataexchange/model/ListJobsRequest.h>
 #include <aws/dataexchange/model/ListRevisionAssetsRequest.h>
 #include <aws/dataexchange/model/ListTagsForResourceRequest.h>
@@ -41,6 +45,7 @@
 #include <aws/dataexchange/model/UntagResourceRequest.h>
 #include <aws/dataexchange/model/UpdateAssetRequest.h>
 #include <aws/dataexchange/model/UpdateDataSetRequest.h>
+#include <aws/dataexchange/model/UpdateEventActionRequest.h>
 #include <aws/dataexchange/model/UpdateRevisionRequest.h>
 
 using namespace Aws;
@@ -170,6 +175,31 @@ void DataExchangeClient::CreateDataSetAsync(const CreateDataSetRequest& request,
 void DataExchangeClient::CreateDataSetAsyncHelper(const CreateDataSetRequest& request, const CreateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateDataSet(request), context);
+}
+
+CreateEventActionOutcome DataExchangeClient::CreateEventAction(const CreateEventActionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/event-actions");
+  return CreateEventActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateEventActionOutcomeCallable DataExchangeClient::CreateEventActionCallable(const CreateEventActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateEventActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEventAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataExchangeClient::CreateEventActionAsync(const CreateEventActionRequest& request, const CreateEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateEventActionAsyncHelper( request, handler, context ); } );
+}
+
+void DataExchangeClient::CreateEventActionAsyncHelper(const CreateEventActionRequest& request, const CreateEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateEventAction(request), context);
 }
 
 CreateJobOutcome DataExchangeClient::CreateJob(const CreateJobRequest& request) const
@@ -305,6 +335,37 @@ void DataExchangeClient::DeleteDataSetAsyncHelper(const DeleteDataSetRequest& re
   handler(this, request, DeleteDataSet(request), context);
 }
 
+DeleteEventActionOutcome DataExchangeClient::DeleteEventAction(const DeleteEventActionRequest& request) const
+{
+  if (!request.EventActionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteEventAction", "Required field: EventActionId, is not set");
+    return DeleteEventActionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventActionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/event-actions/");
+  uri.AddPathSegment(request.GetEventActionId());
+  return DeleteEventActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteEventActionOutcomeCallable DataExchangeClient::DeleteEventActionCallable(const DeleteEventActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEventActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEventAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataExchangeClient::DeleteEventActionAsync(const DeleteEventActionRequest& request, const DeleteEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEventActionAsyncHelper( request, handler, context ); } );
+}
+
+void DataExchangeClient::DeleteEventActionAsyncHelper(const DeleteEventActionRequest& request, const DeleteEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteEventAction(request), context);
+}
+
 DeleteRevisionOutcome DataExchangeClient::DeleteRevision(const DeleteRevisionRequest& request) const
 {
   if (!request.DataSetIdHasBeenSet())
@@ -417,6 +478,37 @@ void DataExchangeClient::GetDataSetAsync(const GetDataSetRequest& request, const
 void DataExchangeClient::GetDataSetAsyncHelper(const GetDataSetRequest& request, const GetDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetDataSet(request), context);
+}
+
+GetEventActionOutcome DataExchangeClient::GetEventAction(const GetEventActionRequest& request) const
+{
+  if (!request.EventActionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetEventAction", "Required field: EventActionId, is not set");
+    return GetEventActionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventActionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/event-actions/");
+  uri.AddPathSegment(request.GetEventActionId());
+  return GetEventActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetEventActionOutcomeCallable DataExchangeClient::GetEventActionCallable(const GetEventActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetEventActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEventAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataExchangeClient::GetEventActionAsync(const GetEventActionRequest& request, const GetEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetEventActionAsyncHelper( request, handler, context ); } );
+}
+
+void DataExchangeClient::GetEventActionAsyncHelper(const GetEventActionRequest& request, const GetEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetEventAction(request), context);
 }
 
 GetJobOutcome DataExchangeClient::GetJob(const GetJobRequest& request) const
@@ -543,6 +635,31 @@ void DataExchangeClient::ListDataSetsAsync(const ListDataSetsRequest& request, c
 void DataExchangeClient::ListDataSetsAsyncHelper(const ListDataSetsRequest& request, const ListDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListDataSets(request), context);
+}
+
+ListEventActionsOutcome DataExchangeClient::ListEventActions(const ListEventActionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/event-actions");
+  return ListEventActionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListEventActionsOutcomeCallable DataExchangeClient::ListEventActionsCallable(const ListEventActionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListEventActionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEventActions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataExchangeClient::ListEventActionsAsync(const ListEventActionsRequest& request, const ListEventActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListEventActionsAsyncHelper( request, handler, context ); } );
+}
+
+void DataExchangeClient::ListEventActionsAsyncHelper(const ListEventActionsRequest& request, const ListEventActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListEventActions(request), context);
 }
 
 ListJobsOutcome DataExchangeClient::ListJobs(const ListJobsRequest& request) const
@@ -812,6 +929,37 @@ void DataExchangeClient::UpdateDataSetAsync(const UpdateDataSetRequest& request,
 void DataExchangeClient::UpdateDataSetAsyncHelper(const UpdateDataSetRequest& request, const UpdateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDataSet(request), context);
+}
+
+UpdateEventActionOutcome DataExchangeClient::UpdateEventAction(const UpdateEventActionRequest& request) const
+{
+  if (!request.EventActionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateEventAction", "Required field: EventActionId, is not set");
+    return UpdateEventActionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventActionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/event-actions/");
+  uri.AddPathSegment(request.GetEventActionId());
+  return UpdateEventActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateEventActionOutcomeCallable DataExchangeClient::UpdateEventActionCallable(const UpdateEventActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateEventActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEventAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataExchangeClient::UpdateEventActionAsync(const UpdateEventActionRequest& request, const UpdateEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateEventActionAsyncHelper( request, handler, context ); } );
+}
+
+void DataExchangeClient::UpdateEventActionAsyncHelper(const UpdateEventActionRequest& request, const UpdateEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateEventAction(request), context);
 }
 
 UpdateRevisionOutcome DataExchangeClient::UpdateRevision(const UpdateRevisionRequest& request) const

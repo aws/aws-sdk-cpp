@@ -25,6 +25,9 @@ MatchingBucket::MatchingBucket() :
     m_classifiableObjectCountHasBeenSet(false),
     m_classifiableSizeInBytes(0),
     m_classifiableSizeInBytesHasBeenSet(false),
+    m_errorCode(BucketMetadataErrorCode::NOT_SET),
+    m_errorCodeHasBeenSet(false),
+    m_errorMessageHasBeenSet(false),
     m_jobDetailsHasBeenSet(false),
     m_objectCount(0),
     m_objectCountHasBeenSet(false),
@@ -45,6 +48,9 @@ MatchingBucket::MatchingBucket(JsonView jsonValue) :
     m_classifiableObjectCountHasBeenSet(false),
     m_classifiableSizeInBytes(0),
     m_classifiableSizeInBytesHasBeenSet(false),
+    m_errorCode(BucketMetadataErrorCode::NOT_SET),
+    m_errorCodeHasBeenSet(false),
+    m_errorMessageHasBeenSet(false),
     m_jobDetailsHasBeenSet(false),
     m_objectCount(0),
     m_objectCountHasBeenSet(false),
@@ -87,6 +93,20 @@ MatchingBucket& MatchingBucket::operator =(JsonView jsonValue)
     m_classifiableSizeInBytes = jsonValue.GetInt64("classifiableSizeInBytes");
 
     m_classifiableSizeInBytesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("errorCode"))
+  {
+    m_errorCode = BucketMetadataErrorCodeMapper::GetBucketMetadataErrorCodeForName(jsonValue.GetString("errorCode"));
+
+    m_errorCodeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("errorMessage"))
+  {
+    m_errorMessage = jsonValue.GetString("errorMessage");
+
+    m_errorMessageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("jobDetails"))
@@ -166,6 +186,17 @@ JsonValue MatchingBucket::Jsonize() const
   if(m_classifiableSizeInBytesHasBeenSet)
   {
    payload.WithInt64("classifiableSizeInBytes", m_classifiableSizeInBytes);
+
+  }
+
+  if(m_errorCodeHasBeenSet)
+  {
+   payload.WithString("errorCode", BucketMetadataErrorCodeMapper::GetNameForBucketMetadataErrorCode(m_errorCode));
+  }
+
+  if(m_errorMessageHasBeenSet)
+  {
+   payload.WithString("errorMessage", m_errorMessage);
 
   }
 

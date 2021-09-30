@@ -12,20 +12,24 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dataexchange/model/CreateDataSetResult.h>
+#include <aws/dataexchange/model/CreateEventActionResult.h>
 #include <aws/dataexchange/model/CreateJobResult.h>
 #include <aws/dataexchange/model/CreateRevisionResult.h>
 #include <aws/dataexchange/model/GetAssetResult.h>
 #include <aws/dataexchange/model/GetDataSetResult.h>
+#include <aws/dataexchange/model/GetEventActionResult.h>
 #include <aws/dataexchange/model/GetJobResult.h>
 #include <aws/dataexchange/model/GetRevisionResult.h>
 #include <aws/dataexchange/model/ListDataSetRevisionsResult.h>
 #include <aws/dataexchange/model/ListDataSetsResult.h>
+#include <aws/dataexchange/model/ListEventActionsResult.h>
 #include <aws/dataexchange/model/ListJobsResult.h>
 #include <aws/dataexchange/model/ListRevisionAssetsResult.h>
 #include <aws/dataexchange/model/ListTagsForResourceResult.h>
 #include <aws/dataexchange/model/StartJobResult.h>
 #include <aws/dataexchange/model/UpdateAssetResult.h>
 #include <aws/dataexchange/model/UpdateDataSetResult.h>
+#include <aws/dataexchange/model/UpdateEventActionResult.h>
 #include <aws/dataexchange/model/UpdateRevisionResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -69,17 +73,21 @@ namespace Model
 {
         class CancelJobRequest;
         class CreateDataSetRequest;
+        class CreateEventActionRequest;
         class CreateJobRequest;
         class CreateRevisionRequest;
         class DeleteAssetRequest;
         class DeleteDataSetRequest;
+        class DeleteEventActionRequest;
         class DeleteRevisionRequest;
         class GetAssetRequest;
         class GetDataSetRequest;
+        class GetEventActionRequest;
         class GetJobRequest;
         class GetRevisionRequest;
         class ListDataSetRevisionsRequest;
         class ListDataSetsRequest;
+        class ListEventActionsRequest;
         class ListJobsRequest;
         class ListRevisionAssetsRequest;
         class ListTagsForResourceRequest;
@@ -88,21 +96,26 @@ namespace Model
         class UntagResourceRequest;
         class UpdateAssetRequest;
         class UpdateDataSetRequest;
+        class UpdateEventActionRequest;
         class UpdateRevisionRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> CancelJobOutcome;
         typedef Aws::Utils::Outcome<CreateDataSetResult, DataExchangeError> CreateDataSetOutcome;
+        typedef Aws::Utils::Outcome<CreateEventActionResult, DataExchangeError> CreateEventActionOutcome;
         typedef Aws::Utils::Outcome<CreateJobResult, DataExchangeError> CreateJobOutcome;
         typedef Aws::Utils::Outcome<CreateRevisionResult, DataExchangeError> CreateRevisionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> DeleteAssetOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> DeleteDataSetOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> DeleteEventActionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> DeleteRevisionOutcome;
         typedef Aws::Utils::Outcome<GetAssetResult, DataExchangeError> GetAssetOutcome;
         typedef Aws::Utils::Outcome<GetDataSetResult, DataExchangeError> GetDataSetOutcome;
+        typedef Aws::Utils::Outcome<GetEventActionResult, DataExchangeError> GetEventActionOutcome;
         typedef Aws::Utils::Outcome<GetJobResult, DataExchangeError> GetJobOutcome;
         typedef Aws::Utils::Outcome<GetRevisionResult, DataExchangeError> GetRevisionOutcome;
         typedef Aws::Utils::Outcome<ListDataSetRevisionsResult, DataExchangeError> ListDataSetRevisionsOutcome;
         typedef Aws::Utils::Outcome<ListDataSetsResult, DataExchangeError> ListDataSetsOutcome;
+        typedef Aws::Utils::Outcome<ListEventActionsResult, DataExchangeError> ListEventActionsOutcome;
         typedef Aws::Utils::Outcome<ListJobsResult, DataExchangeError> ListJobsOutcome;
         typedef Aws::Utils::Outcome<ListRevisionAssetsResult, DataExchangeError> ListRevisionAssetsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, DataExchangeError> ListTagsForResourceOutcome;
@@ -111,21 +124,26 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateAssetResult, DataExchangeError> UpdateAssetOutcome;
         typedef Aws::Utils::Outcome<UpdateDataSetResult, DataExchangeError> UpdateDataSetOutcome;
+        typedef Aws::Utils::Outcome<UpdateEventActionResult, DataExchangeError> UpdateEventActionOutcome;
         typedef Aws::Utils::Outcome<UpdateRevisionResult, DataExchangeError> UpdateRevisionOutcome;
 
         typedef std::future<CancelJobOutcome> CancelJobOutcomeCallable;
         typedef std::future<CreateDataSetOutcome> CreateDataSetOutcomeCallable;
+        typedef std::future<CreateEventActionOutcome> CreateEventActionOutcomeCallable;
         typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
         typedef std::future<CreateRevisionOutcome> CreateRevisionOutcomeCallable;
         typedef std::future<DeleteAssetOutcome> DeleteAssetOutcomeCallable;
         typedef std::future<DeleteDataSetOutcome> DeleteDataSetOutcomeCallable;
+        typedef std::future<DeleteEventActionOutcome> DeleteEventActionOutcomeCallable;
         typedef std::future<DeleteRevisionOutcome> DeleteRevisionOutcomeCallable;
         typedef std::future<GetAssetOutcome> GetAssetOutcomeCallable;
         typedef std::future<GetDataSetOutcome> GetDataSetOutcomeCallable;
+        typedef std::future<GetEventActionOutcome> GetEventActionOutcomeCallable;
         typedef std::future<GetJobOutcome> GetJobOutcomeCallable;
         typedef std::future<GetRevisionOutcome> GetRevisionOutcomeCallable;
         typedef std::future<ListDataSetRevisionsOutcome> ListDataSetRevisionsOutcomeCallable;
         typedef std::future<ListDataSetsOutcome> ListDataSetsOutcomeCallable;
+        typedef std::future<ListEventActionsOutcome> ListEventActionsOutcomeCallable;
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
         typedef std::future<ListRevisionAssetsOutcome> ListRevisionAssetsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -134,6 +152,7 @@ namespace Model
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateAssetOutcome> UpdateAssetOutcomeCallable;
         typedef std::future<UpdateDataSetOutcome> UpdateDataSetOutcomeCallable;
+        typedef std::future<UpdateEventActionOutcome> UpdateEventActionOutcomeCallable;
         typedef std::future<UpdateRevisionOutcome> UpdateRevisionOutcomeCallable;
 } // namespace Model
 
@@ -141,17 +160,21 @@ namespace Model
 
     typedef std::function<void(const DataExchangeClient*, const Model::CancelJobRequest&, const Model::CancelJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelJobResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::CreateDataSetRequest&, const Model::CreateDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSetResponseReceivedHandler;
+    typedef std::function<void(const DataExchangeClient*, const Model::CreateEventActionRequest&, const Model::CreateEventActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventActionResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::CreateJobRequest&, const Model::CreateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::CreateRevisionRequest&, const Model::CreateRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRevisionResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::DeleteAssetRequest&, const Model::DeleteAssetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssetResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::DeleteDataSetRequest&, const Model::DeleteDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataSetResponseReceivedHandler;
+    typedef std::function<void(const DataExchangeClient*, const Model::DeleteEventActionRequest&, const Model::DeleteEventActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventActionResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::DeleteRevisionRequest&, const Model::DeleteRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRevisionResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::GetAssetRequest&, const Model::GetAssetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::GetDataSetRequest&, const Model::GetDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataSetResponseReceivedHandler;
+    typedef std::function<void(const DataExchangeClient*, const Model::GetEventActionRequest&, const Model::GetEventActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventActionResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::GetJobRequest&, const Model::GetJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::GetRevisionRequest&, const Model::GetRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRevisionResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::ListDataSetRevisionsRequest&, const Model::ListDataSetRevisionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSetRevisionsResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::ListDataSetsRequest&, const Model::ListDataSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSetsResponseReceivedHandler;
+    typedef std::function<void(const DataExchangeClient*, const Model::ListEventActionsRequest&, const Model::ListEventActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventActionsResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::ListRevisionAssetsRequest&, const Model::ListRevisionAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRevisionAssetsResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
@@ -160,6 +183,7 @@ namespace Model
     typedef std::function<void(const DataExchangeClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::UpdateAssetRequest&, const Model::UpdateAssetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAssetResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::UpdateDataSetRequest&, const Model::UpdateDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataSetResponseReceivedHandler;
+    typedef std::function<void(const DataExchangeClient*, const Model::UpdateEventActionRequest&, const Model::UpdateEventActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEventActionResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::UpdateRevisionRequest&, const Model::UpdateRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRevisionResponseReceivedHandler;
 
   /**
@@ -260,6 +284,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDataSetAsync(const Model::CreateDataSetRequest& request, const CreateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This operation creates an event action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateEventAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateEventActionOutcome CreateEventAction(const Model::CreateEventActionRequest& request) const;
+
+        /**
+         * <p>This operation creates an event action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateEventAction">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateEventActionOutcomeCallable CreateEventActionCallable(const Model::CreateEventActionRequest& request) const;
+
+        /**
+         * <p>This operation creates an event action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateEventAction">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateEventActionAsync(const Model::CreateEventActionRequest& request, const CreateEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation creates a job.</p><p><h3>See Also:</h3>   <a
@@ -365,6 +414,31 @@ namespace Model
         virtual void DeleteDataSetAsync(const Model::DeleteDataSetRequest& request, const DeleteDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>This operation deletes the event action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteEventAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteEventActionOutcome DeleteEventAction(const Model::DeleteEventActionRequest& request) const;
+
+        /**
+         * <p>This operation deletes the event action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteEventAction">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteEventActionOutcomeCallable DeleteEventActionCallable(const Model::DeleteEventActionRequest& request) const;
+
+        /**
+         * <p>This operation deletes the event action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteEventAction">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteEventActionAsync(const Model::DeleteEventActionRequest& request, const DeleteEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>This operation deletes a revision.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteRevision">AWS
          * API Reference</a></p>
@@ -444,6 +518,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDataSetAsync(const Model::GetDataSetRequest& request, const GetDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This operation retrieves information about an event action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetEventAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEventActionOutcome GetEventAction(const Model::GetEventActionRequest& request) const;
+
+        /**
+         * <p>This operation retrieves information about an event action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetEventAction">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetEventActionOutcomeCallable GetEventActionCallable(const Model::GetEventActionRequest& request) const;
+
+        /**
+         * <p>This operation retrieves information about an event action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetEventAction">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetEventActionAsync(const Model::GetEventActionRequest& request, const GetEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation returns information about a job.</p><p><h3>See Also:</h3>   <a
@@ -559,6 +661,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDataSetsAsync(const Model::ListDataSetsRequest& request, const ListDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This operation lists your event actions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListEventActions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEventActionsOutcome ListEventActions(const Model::ListEventActionsRequest& request) const;
+
+        /**
+         * <p>This operation lists your event actions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListEventActions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListEventActionsOutcomeCallable ListEventActionsCallable(const Model::ListEventActionsRequest& request) const;
+
+        /**
+         * <p>This operation lists your event actions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListEventActions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListEventActionsAsync(const Model::ListEventActionsRequest& request, const ListEventActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation lists your jobs sorted by CreatedAt in descending
@@ -770,6 +897,31 @@ namespace Model
         virtual void UpdateDataSetAsync(const Model::UpdateDataSetRequest& request, const UpdateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>This operation updates the event action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateEventAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateEventActionOutcome UpdateEventAction(const Model::UpdateEventActionRequest& request) const;
+
+        /**
+         * <p>This operation updates the event action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateEventAction">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateEventActionOutcomeCallable UpdateEventActionCallable(const Model::UpdateEventActionRequest& request) const;
+
+        /**
+         * <p>This operation updates the event action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateEventAction">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateEventActionAsync(const Model::UpdateEventActionRequest& request, const UpdateEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>This operation updates a revision.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateRevision">AWS
          * API Reference</a></p>
@@ -800,17 +952,21 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void CancelJobAsyncHelper(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDataSetAsyncHelper(const Model::CreateDataSetRequest& request, const CreateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateEventActionAsyncHelper(const Model::CreateEventActionRequest& request, const CreateEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateJobAsyncHelper(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRevisionAsyncHelper(const Model::CreateRevisionRequest& request, const CreateRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAssetAsyncHelper(const Model::DeleteAssetRequest& request, const DeleteAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDataSetAsyncHelper(const Model::DeleteDataSetRequest& request, const DeleteDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteEventActionAsyncHelper(const Model::DeleteEventActionRequest& request, const DeleteEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRevisionAsyncHelper(const Model::DeleteRevisionRequest& request, const DeleteRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAssetAsyncHelper(const Model::GetAssetRequest& request, const GetAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDataSetAsyncHelper(const Model::GetDataSetRequest& request, const GetDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetEventActionAsyncHelper(const Model::GetEventActionRequest& request, const GetEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJobAsyncHelper(const Model::GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRevisionAsyncHelper(const Model::GetRevisionRequest& request, const GetRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDataSetRevisionsAsyncHelper(const Model::ListDataSetRevisionsRequest& request, const ListDataSetRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDataSetsAsyncHelper(const Model::ListDataSetsRequest& request, const ListDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListEventActionsAsyncHelper(const Model::ListEventActionsRequest& request, const ListEventActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRevisionAssetsAsyncHelper(const Model::ListRevisionAssetsRequest& request, const ListRevisionAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -819,6 +975,7 @@ namespace Model
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAssetAsyncHelper(const Model::UpdateAssetRequest& request, const UpdateAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDataSetAsyncHelper(const Model::UpdateDataSetRequest& request, const UpdateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateEventActionAsyncHelper(const Model::UpdateEventActionRequest& request, const UpdateEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRevisionAsyncHelper(const Model::UpdateRevisionRequest& request, const UpdateRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

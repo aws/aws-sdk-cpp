@@ -292,25 +292,25 @@ namespace Model
 
     /**
      * <p>The total storage size, in bytes, of the buckets.</p> <p>If versioning is
-     * enabled for any of the buckets, Macie calculates this value based on the size of
-     * the latest version of each object in those buckets. This value doesn't reflect
-     * the storage size of all versions of the objects in the buckets.</p>
+     * enabled for any of the buckets, Amazon Macie calculates this value based on the
+     * size of the latest version of each object in those buckets. This value doesn't
+     * reflect the storage size of all versions of the objects in the buckets.</p>
      */
     inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
 
     /**
      * <p>The total storage size, in bytes, of the buckets.</p> <p>If versioning is
-     * enabled for any of the buckets, Macie calculates this value based on the size of
-     * the latest version of each object in those buckets. This value doesn't reflect
-     * the storage size of all versions of the objects in the buckets.</p>
+     * enabled for any of the buckets, Amazon Macie calculates this value based on the
+     * size of the latest version of each object in those buckets. This value doesn't
+     * reflect the storage size of all versions of the objects in the buckets.</p>
      */
     inline void SetSizeInBytes(long long value) { m_sizeInBytes = value; }
 
     /**
      * <p>The total storage size, in bytes, of the buckets.</p> <p>If versioning is
-     * enabled for any of the buckets, Macie calculates this value based on the size of
-     * the latest version of each object in those buckets. This value doesn't reflect
-     * the storage size of all versions of the objects in the buckets.</p>
+     * enabled for any of the buckets, Amazon Macie calculates this value based on the
+     * size of the latest version of each object in those buckets. This value doesn't
+     * reflect the storage size of all versions of the objects in the buckets.</p>
      */
     inline GetBucketStatisticsResult& WithSizeInBytes(long long value) { SetSizeInBytes(value); return *this;}
 
@@ -318,27 +318,27 @@ namespace Model
     /**
      * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
      * .gzip, .zip) files in the buckets.</p> <p>If versioning is enabled for any of
-     * the buckets, Macie calculates this value based on the size of the latest version
-     * of each applicable object in those buckets. This value doesn't reflect the
-     * storage size of all versions of the applicable objects in the buckets.</p>
+     * the buckets, Amazon Macie calculates this value based on the size of the latest
+     * version of each applicable object in those buckets. This value doesn't reflect
+     * the storage size of all versions of the applicable objects in the buckets.</p>
      */
     inline long long GetSizeInBytesCompressed() const{ return m_sizeInBytesCompressed; }
 
     /**
      * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
      * .gzip, .zip) files in the buckets.</p> <p>If versioning is enabled for any of
-     * the buckets, Macie calculates this value based on the size of the latest version
-     * of each applicable object in those buckets. This value doesn't reflect the
-     * storage size of all versions of the applicable objects in the buckets.</p>
+     * the buckets, Amazon Macie calculates this value based on the size of the latest
+     * version of each applicable object in those buckets. This value doesn't reflect
+     * the storage size of all versions of the applicable objects in the buckets.</p>
      */
     inline void SetSizeInBytesCompressed(long long value) { m_sizeInBytesCompressed = value; }
 
     /**
      * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
      * .gzip, .zip) files in the buckets.</p> <p>If versioning is enabled for any of
-     * the buckets, Macie calculates this value based on the size of the latest version
-     * of each applicable object in those buckets. This value doesn't reflect the
-     * storage size of all versions of the applicable objects in the buckets.</p>
+     * the buckets, Amazon Macie calculates this value based on the size of the latest
+     * version of each applicable object in those buckets. This value doesn't reflect
+     * the storage size of all versions of the applicable objects in the buckets.</p>
      */
     inline GetBucketStatisticsResult& WithSizeInBytesCompressed(long long value) { SetSizeInBytesCompressed(value); return *this;}
 

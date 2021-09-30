@@ -322,6 +322,77 @@ namespace Model
      */
     inline FirewallPolicyResponse& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The number of capacity units currently consumed by the policy's stateless
+     * rules.</p>
+     */
+    inline int GetConsumedStatelessRuleCapacity() const{ return m_consumedStatelessRuleCapacity; }
+
+    /**
+     * <p>The number of capacity units currently consumed by the policy's stateless
+     * rules.</p>
+     */
+    inline bool ConsumedStatelessRuleCapacityHasBeenSet() const { return m_consumedStatelessRuleCapacityHasBeenSet; }
+
+    /**
+     * <p>The number of capacity units currently consumed by the policy's stateless
+     * rules.</p>
+     */
+    inline void SetConsumedStatelessRuleCapacity(int value) { m_consumedStatelessRuleCapacityHasBeenSet = true; m_consumedStatelessRuleCapacity = value; }
+
+    /**
+     * <p>The number of capacity units currently consumed by the policy's stateless
+     * rules.</p>
+     */
+    inline FirewallPolicyResponse& WithConsumedStatelessRuleCapacity(int value) { SetConsumedStatelessRuleCapacity(value); return *this;}
+
+
+    /**
+     * <p>The number of capacity units currently consumed by the policy's stateful
+     * rules.</p>
+     */
+    inline int GetConsumedStatefulRuleCapacity() const{ return m_consumedStatefulRuleCapacity; }
+
+    /**
+     * <p>The number of capacity units currently consumed by the policy's stateful
+     * rules.</p>
+     */
+    inline bool ConsumedStatefulRuleCapacityHasBeenSet() const { return m_consumedStatefulRuleCapacityHasBeenSet; }
+
+    /**
+     * <p>The number of capacity units currently consumed by the policy's stateful
+     * rules.</p>
+     */
+    inline void SetConsumedStatefulRuleCapacity(int value) { m_consumedStatefulRuleCapacityHasBeenSet = true; m_consumedStatefulRuleCapacity = value; }
+
+    /**
+     * <p>The number of capacity units currently consumed by the policy's stateful
+     * rules.</p>
+     */
+    inline FirewallPolicyResponse& WithConsumedStatefulRuleCapacity(int value) { SetConsumedStatefulRuleCapacity(value); return *this;}
+
+
+    /**
+     * <p>The number of firewalls that are associated with this firewall policy.</p>
+     */
+    inline int GetNumberOfAssociations() const{ return m_numberOfAssociations; }
+
+    /**
+     * <p>The number of firewalls that are associated with this firewall policy.</p>
+     */
+    inline bool NumberOfAssociationsHasBeenSet() const { return m_numberOfAssociationsHasBeenSet; }
+
+    /**
+     * <p>The number of firewalls that are associated with this firewall policy.</p>
+     */
+    inline void SetNumberOfAssociations(int value) { m_numberOfAssociationsHasBeenSet = true; m_numberOfAssociations = value; }
+
+    /**
+     * <p>The number of firewalls that are associated with this firewall policy.</p>
+     */
+    inline FirewallPolicyResponse& WithNumberOfAssociations(int value) { SetNumberOfAssociations(value); return *this;}
+
   private:
 
     Aws::String m_firewallPolicyName;
@@ -341,6 +412,15 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    int m_consumedStatelessRuleCapacity;
+    bool m_consumedStatelessRuleCapacityHasBeenSet;
+
+    int m_consumedStatefulRuleCapacity;
+    bool m_consumedStatefulRuleCapacityHasBeenSet;
+
+    int m_numberOfAssociations;
+    bool m_numberOfAssociationsHasBeenSet;
   };
 
 } // namespace Model

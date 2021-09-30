@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/network-firewall/model/StatefulEngineOptions.h>
 #include <aws/network-firewall/model/StatelessRuleGroupReference.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/network-firewall/model/CustomAction.h>
@@ -424,52 +425,150 @@ namespace Model
 
 
     /**
-     * <p>References to the stateless rule groups that are used in the policy. These
+     * <p>References to the stateful rule groups that are used in the policy. These
      * define the inspection criteria in stateful rules. </p>
      */
     inline const Aws::Vector<StatefulRuleGroupReference>& GetStatefulRuleGroupReferences() const{ return m_statefulRuleGroupReferences; }
 
     /**
-     * <p>References to the stateless rule groups that are used in the policy. These
+     * <p>References to the stateful rule groups that are used in the policy. These
      * define the inspection criteria in stateful rules. </p>
      */
     inline bool StatefulRuleGroupReferencesHasBeenSet() const { return m_statefulRuleGroupReferencesHasBeenSet; }
 
     /**
-     * <p>References to the stateless rule groups that are used in the policy. These
+     * <p>References to the stateful rule groups that are used in the policy. These
      * define the inspection criteria in stateful rules. </p>
      */
     inline void SetStatefulRuleGroupReferences(const Aws::Vector<StatefulRuleGroupReference>& value) { m_statefulRuleGroupReferencesHasBeenSet = true; m_statefulRuleGroupReferences = value; }
 
     /**
-     * <p>References to the stateless rule groups that are used in the policy. These
+     * <p>References to the stateful rule groups that are used in the policy. These
      * define the inspection criteria in stateful rules. </p>
      */
     inline void SetStatefulRuleGroupReferences(Aws::Vector<StatefulRuleGroupReference>&& value) { m_statefulRuleGroupReferencesHasBeenSet = true; m_statefulRuleGroupReferences = std::move(value); }
 
     /**
-     * <p>References to the stateless rule groups that are used in the policy. These
+     * <p>References to the stateful rule groups that are used in the policy. These
      * define the inspection criteria in stateful rules. </p>
      */
     inline FirewallPolicy& WithStatefulRuleGroupReferences(const Aws::Vector<StatefulRuleGroupReference>& value) { SetStatefulRuleGroupReferences(value); return *this;}
 
     /**
-     * <p>References to the stateless rule groups that are used in the policy. These
+     * <p>References to the stateful rule groups that are used in the policy. These
      * define the inspection criteria in stateful rules. </p>
      */
     inline FirewallPolicy& WithStatefulRuleGroupReferences(Aws::Vector<StatefulRuleGroupReference>&& value) { SetStatefulRuleGroupReferences(std::move(value)); return *this;}
 
     /**
-     * <p>References to the stateless rule groups that are used in the policy. These
+     * <p>References to the stateful rule groups that are used in the policy. These
      * define the inspection criteria in stateful rules. </p>
      */
     inline FirewallPolicy& AddStatefulRuleGroupReferences(const StatefulRuleGroupReference& value) { m_statefulRuleGroupReferencesHasBeenSet = true; m_statefulRuleGroupReferences.push_back(value); return *this; }
 
     /**
-     * <p>References to the stateless rule groups that are used in the policy. These
+     * <p>References to the stateful rule groups that are used in the policy. These
      * define the inspection criteria in stateful rules. </p>
      */
     inline FirewallPolicy& AddStatefulRuleGroupReferences(StatefulRuleGroupReference&& value) { m_statefulRuleGroupReferencesHasBeenSet = true; m_statefulRuleGroupReferences.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The default actions to take on a packet that doesn't match any stateful
+     * rules.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetStatefulDefaultActions() const{ return m_statefulDefaultActions; }
+
+    /**
+     * <p>The default actions to take on a packet that doesn't match any stateful
+     * rules.</p>
+     */
+    inline bool StatefulDefaultActionsHasBeenSet() const { return m_statefulDefaultActionsHasBeenSet; }
+
+    /**
+     * <p>The default actions to take on a packet that doesn't match any stateful
+     * rules.</p>
+     */
+    inline void SetStatefulDefaultActions(const Aws::Vector<Aws::String>& value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions = value; }
+
+    /**
+     * <p>The default actions to take on a packet that doesn't match any stateful
+     * rules.</p>
+     */
+    inline void SetStatefulDefaultActions(Aws::Vector<Aws::String>&& value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions = std::move(value); }
+
+    /**
+     * <p>The default actions to take on a packet that doesn't match any stateful
+     * rules.</p>
+     */
+    inline FirewallPolicy& WithStatefulDefaultActions(const Aws::Vector<Aws::String>& value) { SetStatefulDefaultActions(value); return *this;}
+
+    /**
+     * <p>The default actions to take on a packet that doesn't match any stateful
+     * rules.</p>
+     */
+    inline FirewallPolicy& WithStatefulDefaultActions(Aws::Vector<Aws::String>&& value) { SetStatefulDefaultActions(std::move(value)); return *this;}
+
+    /**
+     * <p>The default actions to take on a packet that doesn't match any stateful
+     * rules.</p>
+     */
+    inline FirewallPolicy& AddStatefulDefaultActions(const Aws::String& value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions.push_back(value); return *this; }
+
+    /**
+     * <p>The default actions to take on a packet that doesn't match any stateful
+     * rules.</p>
+     */
+    inline FirewallPolicy& AddStatefulDefaultActions(Aws::String&& value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The default actions to take on a packet that doesn't match any stateful
+     * rules.</p>
+     */
+    inline FirewallPolicy& AddStatefulDefaultActions(const char* value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions.push_back(value); return *this; }
+
+
+    /**
+     * <p>Additional options governing how Network Firewall handles stateful rules. The
+     * stateful rule groups that you use in your policy must have stateful rule options
+     * settings that are compatible with these settings.</p>
+     */
+    inline const StatefulEngineOptions& GetStatefulEngineOptions() const{ return m_statefulEngineOptions; }
+
+    /**
+     * <p>Additional options governing how Network Firewall handles stateful rules. The
+     * stateful rule groups that you use in your policy must have stateful rule options
+     * settings that are compatible with these settings.</p>
+     */
+    inline bool StatefulEngineOptionsHasBeenSet() const { return m_statefulEngineOptionsHasBeenSet; }
+
+    /**
+     * <p>Additional options governing how Network Firewall handles stateful rules. The
+     * stateful rule groups that you use in your policy must have stateful rule options
+     * settings that are compatible with these settings.</p>
+     */
+    inline void SetStatefulEngineOptions(const StatefulEngineOptions& value) { m_statefulEngineOptionsHasBeenSet = true; m_statefulEngineOptions = value; }
+
+    /**
+     * <p>Additional options governing how Network Firewall handles stateful rules. The
+     * stateful rule groups that you use in your policy must have stateful rule options
+     * settings that are compatible with these settings.</p>
+     */
+    inline void SetStatefulEngineOptions(StatefulEngineOptions&& value) { m_statefulEngineOptionsHasBeenSet = true; m_statefulEngineOptions = std::move(value); }
+
+    /**
+     * <p>Additional options governing how Network Firewall handles stateful rules. The
+     * stateful rule groups that you use in your policy must have stateful rule options
+     * settings that are compatible with these settings.</p>
+     */
+    inline FirewallPolicy& WithStatefulEngineOptions(const StatefulEngineOptions& value) { SetStatefulEngineOptions(value); return *this;}
+
+    /**
+     * <p>Additional options governing how Network Firewall handles stateful rules. The
+     * stateful rule groups that you use in your policy must have stateful rule options
+     * settings that are compatible with these settings.</p>
+     */
+    inline FirewallPolicy& WithStatefulEngineOptions(StatefulEngineOptions&& value) { SetStatefulEngineOptions(std::move(value)); return *this;}
 
   private:
 
@@ -487,6 +586,12 @@ namespace Model
 
     Aws::Vector<StatefulRuleGroupReference> m_statefulRuleGroupReferences;
     bool m_statefulRuleGroupReferencesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_statefulDefaultActions;
+    bool m_statefulDefaultActionsHasBeenSet;
+
+    StatefulEngineOptions m_statefulEngineOptions;
+    bool m_statefulEngineOptionsHasBeenSet;
   };
 
 } // namespace Model

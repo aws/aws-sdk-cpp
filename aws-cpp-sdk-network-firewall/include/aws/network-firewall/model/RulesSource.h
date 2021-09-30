@@ -157,58 +157,82 @@ namespace Model
 
 
     /**
-     * <p>The 5-tuple stateful inspection criteria. This contains an array of
-     * individual 5-tuple stateful rules to be used together in a stateful rule group.
-     * </p>
+     * <p>An array of individual stateful rules inspection criteria to be used together
+     * in a stateful rule group. Use this option to specify simple Suricata rules with
+     * protocol, source and destination, ports, direction, and rule options. For
+     * information about the Suricata <code>Rules</code> format, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules
+     * Format</a>. </p>
      */
     inline const Aws::Vector<StatefulRule>& GetStatefulRules() const{ return m_statefulRules; }
 
     /**
-     * <p>The 5-tuple stateful inspection criteria. This contains an array of
-     * individual 5-tuple stateful rules to be used together in a stateful rule group.
-     * </p>
+     * <p>An array of individual stateful rules inspection criteria to be used together
+     * in a stateful rule group. Use this option to specify simple Suricata rules with
+     * protocol, source and destination, ports, direction, and rule options. For
+     * information about the Suricata <code>Rules</code> format, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules
+     * Format</a>. </p>
      */
     inline bool StatefulRulesHasBeenSet() const { return m_statefulRulesHasBeenSet; }
 
     /**
-     * <p>The 5-tuple stateful inspection criteria. This contains an array of
-     * individual 5-tuple stateful rules to be used together in a stateful rule group.
-     * </p>
+     * <p>An array of individual stateful rules inspection criteria to be used together
+     * in a stateful rule group. Use this option to specify simple Suricata rules with
+     * protocol, source and destination, ports, direction, and rule options. For
+     * information about the Suricata <code>Rules</code> format, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules
+     * Format</a>. </p>
      */
     inline void SetStatefulRules(const Aws::Vector<StatefulRule>& value) { m_statefulRulesHasBeenSet = true; m_statefulRules = value; }
 
     /**
-     * <p>The 5-tuple stateful inspection criteria. This contains an array of
-     * individual 5-tuple stateful rules to be used together in a stateful rule group.
-     * </p>
+     * <p>An array of individual stateful rules inspection criteria to be used together
+     * in a stateful rule group. Use this option to specify simple Suricata rules with
+     * protocol, source and destination, ports, direction, and rule options. For
+     * information about the Suricata <code>Rules</code> format, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules
+     * Format</a>. </p>
      */
     inline void SetStatefulRules(Aws::Vector<StatefulRule>&& value) { m_statefulRulesHasBeenSet = true; m_statefulRules = std::move(value); }
 
     /**
-     * <p>The 5-tuple stateful inspection criteria. This contains an array of
-     * individual 5-tuple stateful rules to be used together in a stateful rule group.
-     * </p>
+     * <p>An array of individual stateful rules inspection criteria to be used together
+     * in a stateful rule group. Use this option to specify simple Suricata rules with
+     * protocol, source and destination, ports, direction, and rule options. For
+     * information about the Suricata <code>Rules</code> format, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules
+     * Format</a>. </p>
      */
     inline RulesSource& WithStatefulRules(const Aws::Vector<StatefulRule>& value) { SetStatefulRules(value); return *this;}
 
     /**
-     * <p>The 5-tuple stateful inspection criteria. This contains an array of
-     * individual 5-tuple stateful rules to be used together in a stateful rule group.
-     * </p>
+     * <p>An array of individual stateful rules inspection criteria to be used together
+     * in a stateful rule group. Use this option to specify simple Suricata rules with
+     * protocol, source and destination, ports, direction, and rule options. For
+     * information about the Suricata <code>Rules</code> format, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules
+     * Format</a>. </p>
      */
     inline RulesSource& WithStatefulRules(Aws::Vector<StatefulRule>&& value) { SetStatefulRules(std::move(value)); return *this;}
 
     /**
-     * <p>The 5-tuple stateful inspection criteria. This contains an array of
-     * individual 5-tuple stateful rules to be used together in a stateful rule group.
-     * </p>
+     * <p>An array of individual stateful rules inspection criteria to be used together
+     * in a stateful rule group. Use this option to specify simple Suricata rules with
+     * protocol, source and destination, ports, direction, and rule options. For
+     * information about the Suricata <code>Rules</code> format, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules
+     * Format</a>. </p>
      */
     inline RulesSource& AddStatefulRules(const StatefulRule& value) { m_statefulRulesHasBeenSet = true; m_statefulRules.push_back(value); return *this; }
 
     /**
-     * <p>The 5-tuple stateful inspection criteria. This contains an array of
-     * individual 5-tuple stateful rules to be used together in a stateful rule group.
-     * </p>
+     * <p>An array of individual stateful rules inspection criteria to be used together
+     * in a stateful rule group. Use this option to specify simple Suricata rules with
+     * protocol, source and destination, ports, direction, and rule options. For
+     * information about the Suricata <code>Rules</code> format, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules
+     * Format</a>. </p>
      */
     inline RulesSource& AddStatefulRules(StatefulRule&& value) { m_statefulRulesHasBeenSet = true; m_statefulRules.push_back(std::move(value)); return *this; }
 

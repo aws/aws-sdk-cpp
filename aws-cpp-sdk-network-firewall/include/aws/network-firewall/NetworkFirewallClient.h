@@ -224,18 +224,19 @@ namespace Model
    * traffic at the perimeter of your VPC. This includes filtering traffic going to
    * and coming from an internet gateway, NAT gateway, or over VPN or AWS Direct
    * Connect. Network Firewall uses rules that are compatible with Suricata, a free,
-   * open source intrusion detection system (IDS) engine. For information about
-   * Suricata, see the <a href="https://suricata-ids.org/">Suricata website</a>.</p>
-   * <p>You can use Network Firewall to monitor and protect your VPC traffic in a
-   * number of ways. The following are just a few examples: </p> <ul> <li> <p>Allow
-   * domains or IP addresses for known AWS service endpoints, such as Amazon S3, and
-   * block all other forms of traffic.</p> </li> <li> <p>Use custom lists of known
-   * bad domains to limit the types of domain names that your applications can
-   * access.</p> </li> <li> <p>Perform deep packet inspection on traffic entering or
-   * leaving your VPC.</p> </li> <li> <p>Use stateful protocol detection to filter
-   * protocols like HTTPS, regardless of the port used.</p> </li> </ul> <p>To enable
-   * Network Firewall for your VPCs, you perform steps in both Amazon VPC and in
-   * Network Firewall. For information about using Amazon VPC, see <a
+   * open source intrusion detection system (IDS) engine. AWS Network Firewall
+   * supports Suricata version 5.0.2. For information about Suricata, see the <a
+   * href="https://suricata-ids.org/">Suricata website</a>.</p> <p>You can use
+   * Network Firewall to monitor and protect your VPC traffic in a number of ways.
+   * The following are just a few examples: </p> <ul> <li> <p>Allow domains or IP
+   * addresses for known AWS service endpoints, such as Amazon S3, and block all
+   * other forms of traffic.</p> </li> <li> <p>Use custom lists of known bad domains
+   * to limit the types of domain names that your applications can access.</p> </li>
+   * <li> <p>Perform deep packet inspection on traffic entering or leaving your
+   * VPC.</p> </li> <li> <p>Use stateful protocol detection to filter protocols like
+   * HTTPS, regardless of the port used.</p> </li> </ul> <p>To enable Network
+   * Firewall for your VPCs, you perform steps in both Amazon VPC and in Network
+   * Firewall. For information about using Amazon VPC, see <a
    * href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon VPC User
    * Guide</a>.</p> <p>To start using Network Firewall, do the following: </p> <ol>
    * <li> <p>(Optional) If you don't already have a VPC that you want to protect,

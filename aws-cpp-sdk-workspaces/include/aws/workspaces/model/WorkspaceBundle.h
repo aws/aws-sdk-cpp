@@ -125,49 +125,49 @@ namespace Model
 
     /**
      * <p>The owner of the bundle. This is the account identifier of the owner, or
-     * <code>AMAZON</code> if the bundle is provided by AWS.</p>
+     * <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
      * <p>The owner of the bundle. This is the account identifier of the owner, or
-     * <code>AMAZON</code> if the bundle is provided by AWS.</p>
+     * <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
      * <p>The owner of the bundle. This is the account identifier of the owner, or
-     * <code>AMAZON</code> if the bundle is provided by AWS.</p>
+     * <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
      * <p>The owner of the bundle. This is the account identifier of the owner, or
-     * <code>AMAZON</code> if the bundle is provided by AWS.</p>
+     * <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
      * <p>The owner of the bundle. This is the account identifier of the owner, or
-     * <code>AMAZON</code> if the bundle is provided by AWS.</p>
+     * <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
      * <p>The owner of the bundle. This is the account identifier of the owner, or
-     * <code>AMAZON</code> if the bundle is provided by AWS.</p>
+     * <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
      */
     inline WorkspaceBundle& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
      * <p>The owner of the bundle. This is the account identifier of the owner, or
-     * <code>AMAZON</code> if the bundle is provided by AWS.</p>
+     * <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
      */
     inline WorkspaceBundle& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
      * <p>The owner of the bundle. This is the account identifier of the owner, or
-     * <code>AMAZON</code> if the bundle is provided by AWS.</p>
+     * <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
      */
     inline WorkspaceBundle& WithOwner(const char* value) { SetOwner(value); return *this;}
 

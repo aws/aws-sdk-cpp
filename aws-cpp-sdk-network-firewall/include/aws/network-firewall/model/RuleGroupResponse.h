@@ -398,6 +398,48 @@ namespace Model
      */
     inline RuleGroupResponse& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The number of capacity units currently consumed by the rule group rules. </p>
+     */
+    inline int GetConsumedCapacity() const{ return m_consumedCapacity; }
+
+    /**
+     * <p>The number of capacity units currently consumed by the rule group rules. </p>
+     */
+    inline bool ConsumedCapacityHasBeenSet() const { return m_consumedCapacityHasBeenSet; }
+
+    /**
+     * <p>The number of capacity units currently consumed by the rule group rules. </p>
+     */
+    inline void SetConsumedCapacity(int value) { m_consumedCapacityHasBeenSet = true; m_consumedCapacity = value; }
+
+    /**
+     * <p>The number of capacity units currently consumed by the rule group rules. </p>
+     */
+    inline RuleGroupResponse& WithConsumedCapacity(int value) { SetConsumedCapacity(value); return *this;}
+
+
+    /**
+     * <p>The number of firewall policies that use this rule group.</p>
+     */
+    inline int GetNumberOfAssociations() const{ return m_numberOfAssociations; }
+
+    /**
+     * <p>The number of firewall policies that use this rule group.</p>
+     */
+    inline bool NumberOfAssociationsHasBeenSet() const { return m_numberOfAssociationsHasBeenSet; }
+
+    /**
+     * <p>The number of firewall policies that use this rule group.</p>
+     */
+    inline void SetNumberOfAssociations(int value) { m_numberOfAssociationsHasBeenSet = true; m_numberOfAssociations = value; }
+
+    /**
+     * <p>The number of firewall policies that use this rule group.</p>
+     */
+    inline RuleGroupResponse& WithNumberOfAssociations(int value) { SetNumberOfAssociations(value); return *this;}
+
   private:
 
     Aws::String m_ruleGroupArn;
@@ -423,6 +465,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    int m_consumedCapacity;
+    bool m_consumedCapacityHasBeenSet;
+
+    int m_numberOfAssociations;
+    bool m_numberOfAssociationsHasBeenSet;
   };
 
 } // namespace Model

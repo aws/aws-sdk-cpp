@@ -76,13 +76,12 @@ namespace Model
 
 
     /**
-     * <p>A setting that indicates the order in which to run this rule relative to all
-     * of the rules that are defined for a stateless rule group. Network Firewall
-     * evaluates the rules in a rule group starting with the lowest priority setting.
-     * You must ensure that the priority settings are unique for the rule group. </p>
-     * <p>Each stateless rule group uses exactly one
-     * <code>StatelessRulesAndCustomActions</code> object, and each
-     * <code>StatelessRulesAndCustomActions</code> contains exactly one
+     * <p>Indicates the order in which to run this rule relative to all of the rules
+     * that are defined for a stateless rule group. Network Firewall evaluates the
+     * rules in a rule group starting with the lowest priority setting. You must ensure
+     * that the priority settings are unique for the rule group. </p> <p>Each stateless
+     * rule group uses exactly one <code>StatelessRulesAndCustomActions</code> object,
+     * and each <code>StatelessRulesAndCustomActions</code> contains exactly one
      * <code>StatelessRules</code> object. To ensure unique priority settings for your
      * rule groups, set unique priorities for the stateless rules that you define
      * inside any single <code>StatelessRules</code> object.</p> <p>You can change the
@@ -93,13 +92,12 @@ namespace Model
     inline int GetPriority() const{ return m_priority; }
 
     /**
-     * <p>A setting that indicates the order in which to run this rule relative to all
-     * of the rules that are defined for a stateless rule group. Network Firewall
-     * evaluates the rules in a rule group starting with the lowest priority setting.
-     * You must ensure that the priority settings are unique for the rule group. </p>
-     * <p>Each stateless rule group uses exactly one
-     * <code>StatelessRulesAndCustomActions</code> object, and each
-     * <code>StatelessRulesAndCustomActions</code> contains exactly one
+     * <p>Indicates the order in which to run this rule relative to all of the rules
+     * that are defined for a stateless rule group. Network Firewall evaluates the
+     * rules in a rule group starting with the lowest priority setting. You must ensure
+     * that the priority settings are unique for the rule group. </p> <p>Each stateless
+     * rule group uses exactly one <code>StatelessRulesAndCustomActions</code> object,
+     * and each <code>StatelessRulesAndCustomActions</code> contains exactly one
      * <code>StatelessRules</code> object. To ensure unique priority settings for your
      * rule groups, set unique priorities for the stateless rules that you define
      * inside any single <code>StatelessRules</code> object.</p> <p>You can change the
@@ -110,13 +108,12 @@ namespace Model
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
-     * <p>A setting that indicates the order in which to run this rule relative to all
-     * of the rules that are defined for a stateless rule group. Network Firewall
-     * evaluates the rules in a rule group starting with the lowest priority setting.
-     * You must ensure that the priority settings are unique for the rule group. </p>
-     * <p>Each stateless rule group uses exactly one
-     * <code>StatelessRulesAndCustomActions</code> object, and each
-     * <code>StatelessRulesAndCustomActions</code> contains exactly one
+     * <p>Indicates the order in which to run this rule relative to all of the rules
+     * that are defined for a stateless rule group. Network Firewall evaluates the
+     * rules in a rule group starting with the lowest priority setting. You must ensure
+     * that the priority settings are unique for the rule group. </p> <p>Each stateless
+     * rule group uses exactly one <code>StatelessRulesAndCustomActions</code> object,
+     * and each <code>StatelessRulesAndCustomActions</code> contains exactly one
      * <code>StatelessRules</code> object. To ensure unique priority settings for your
      * rule groups, set unique priorities for the stateless rules that you define
      * inside any single <code>StatelessRules</code> object.</p> <p>You can change the
@@ -127,13 +124,12 @@ namespace Model
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p>A setting that indicates the order in which to run this rule relative to all
-     * of the rules that are defined for a stateless rule group. Network Firewall
-     * evaluates the rules in a rule group starting with the lowest priority setting.
-     * You must ensure that the priority settings are unique for the rule group. </p>
-     * <p>Each stateless rule group uses exactly one
-     * <code>StatelessRulesAndCustomActions</code> object, and each
-     * <code>StatelessRulesAndCustomActions</code> contains exactly one
+     * <p>Indicates the order in which to run this rule relative to all of the rules
+     * that are defined for a stateless rule group. Network Firewall evaluates the
+     * rules in a rule group starting with the lowest priority setting. You must ensure
+     * that the priority settings are unique for the rule group. </p> <p>Each stateless
+     * rule group uses exactly one <code>StatelessRulesAndCustomActions</code> object,
+     * and each <code>StatelessRulesAndCustomActions</code> contains exactly one
      * <code>StatelessRules</code> object. To ensure unique priority settings for your
      * rule groups, set unique priorities for the stateless rules that you define
      * inside any single <code>StatelessRules</code> object.</p> <p>You can change the

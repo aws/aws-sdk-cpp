@@ -92,7 +92,7 @@ namespace Model
 
     /**
      * <p>The owner of the bundles. You cannot combine this parameter with any other
-     * filter.</p> <p>To describe the bundles provided by AWS, specify
+     * filter.</p> <p>To describe the bundles provided by Amazon Web Services, specify
      * <code>AMAZON</code>. To describe the bundles that belong to your account, don't
      * specify a value.</p>
      */
@@ -100,7 +100,7 @@ namespace Model
 
     /**
      * <p>The owner of the bundles. You cannot combine this parameter with any other
-     * filter.</p> <p>To describe the bundles provided by AWS, specify
+     * filter.</p> <p>To describe the bundles provided by Amazon Web Services, specify
      * <code>AMAZON</code>. To describe the bundles that belong to your account, don't
      * specify a value.</p>
      */
@@ -108,7 +108,7 @@ namespace Model
 
     /**
      * <p>The owner of the bundles. You cannot combine this parameter with any other
-     * filter.</p> <p>To describe the bundles provided by AWS, specify
+     * filter.</p> <p>To describe the bundles provided by Amazon Web Services, specify
      * <code>AMAZON</code>. To describe the bundles that belong to your account, don't
      * specify a value.</p>
      */
@@ -116,7 +116,7 @@ namespace Model
 
     /**
      * <p>The owner of the bundles. You cannot combine this parameter with any other
-     * filter.</p> <p>To describe the bundles provided by AWS, specify
+     * filter.</p> <p>To describe the bundles provided by Amazon Web Services, specify
      * <code>AMAZON</code>. To describe the bundles that belong to your account, don't
      * specify a value.</p>
      */
@@ -124,7 +124,7 @@ namespace Model
 
     /**
      * <p>The owner of the bundles. You cannot combine this parameter with any other
-     * filter.</p> <p>To describe the bundles provided by AWS, specify
+     * filter.</p> <p>To describe the bundles provided by Amazon Web Services, specify
      * <code>AMAZON</code>. To describe the bundles that belong to your account, don't
      * specify a value.</p>
      */
@@ -132,7 +132,7 @@ namespace Model
 
     /**
      * <p>The owner of the bundles. You cannot combine this parameter with any other
-     * filter.</p> <p>To describe the bundles provided by AWS, specify
+     * filter.</p> <p>To describe the bundles provided by Amazon Web Services, specify
      * <code>AMAZON</code>. To describe the bundles that belong to your account, don't
      * specify a value.</p>
      */
@@ -140,7 +140,7 @@ namespace Model
 
     /**
      * <p>The owner of the bundles. You cannot combine this parameter with any other
-     * filter.</p> <p>To describe the bundles provided by AWS, specify
+     * filter.</p> <p>To describe the bundles provided by Amazon Web Services, specify
      * <code>AMAZON</code>. To describe the bundles that belong to your account, don't
      * specify a value.</p>
      */
@@ -148,7 +148,7 @@ namespace Model
 
     /**
      * <p>The owner of the bundles. You cannot combine this parameter with any other
-     * filter.</p> <p>To describe the bundles provided by AWS, specify
+     * filter.</p> <p>To describe the bundles provided by Amazon Web Services, specify
      * <code>AMAZON</code>. To describe the bundles that belong to your account, don't
      * specify a value.</p>
      */
