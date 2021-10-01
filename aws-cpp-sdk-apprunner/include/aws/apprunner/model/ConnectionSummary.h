@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides summary information about an AWS App Runner connection
+   * <p>Provides summary information about an App Runner connection
    * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ConnectionSummary">AWS
    * API Reference</a></p>

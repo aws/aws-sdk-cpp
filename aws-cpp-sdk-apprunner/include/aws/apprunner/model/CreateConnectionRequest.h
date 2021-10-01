@@ -39,49 +39,57 @@ namespace Model
 
     /**
      * <p>A name for the new connection. It must be unique across all App Runner
-     * connections for the AWS account in the AWS Region.</p>
+     * connections for the Amazon Web Services account in the Amazon Web Services
+     * Region.</p>
      */
     inline const Aws::String& GetConnectionName() const{ return m_connectionName; }
 
     /**
      * <p>A name for the new connection. It must be unique across all App Runner
-     * connections for the AWS account in the AWS Region.</p>
+     * connections for the Amazon Web Services account in the Amazon Web Services
+     * Region.</p>
      */
     inline bool ConnectionNameHasBeenSet() const { return m_connectionNameHasBeenSet; }
 
     /**
      * <p>A name for the new connection. It must be unique across all App Runner
-     * connections for the AWS account in the AWS Region.</p>
+     * connections for the Amazon Web Services account in the Amazon Web Services
+     * Region.</p>
      */
     inline void SetConnectionName(const Aws::String& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
 
     /**
      * <p>A name for the new connection. It must be unique across all App Runner
-     * connections for the AWS account in the AWS Region.</p>
+     * connections for the Amazon Web Services account in the Amazon Web Services
+     * Region.</p>
      */
     inline void SetConnectionName(Aws::String&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::move(value); }
 
     /**
      * <p>A name for the new connection. It must be unique across all App Runner
-     * connections for the AWS account in the AWS Region.</p>
+     * connections for the Amazon Web Services account in the Amazon Web Services
+     * Region.</p>
      */
     inline void SetConnectionName(const char* value) { m_connectionNameHasBeenSet = true; m_connectionName.assign(value); }
 
     /**
      * <p>A name for the new connection. It must be unique across all App Runner
-     * connections for the AWS account in the AWS Region.</p>
+     * connections for the Amazon Web Services account in the Amazon Web Services
+     * Region.</p>
      */
     inline CreateConnectionRequest& WithConnectionName(const Aws::String& value) { SetConnectionName(value); return *this;}
 
     /**
      * <p>A name for the new connection. It must be unique across all App Runner
-     * connections for the AWS account in the AWS Region.</p>
+     * connections for the Amazon Web Services account in the Amazon Web Services
+     * Region.</p>
      */
     inline CreateConnectionRequest& WithConnectionName(Aws::String&& value) { SetConnectionName(std::move(value)); return *this;}
 
     /**
      * <p>A name for the new connection. It must be unique across all App Runner
-     * connections for the AWS account in the AWS Region.</p>
+     * connections for the Amazon Web Services account in the Amazon Web Services
+     * Region.</p>
      */
     inline CreateConnectionRequest& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
 

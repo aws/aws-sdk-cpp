@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides summary information about an AWS App Runner automatic scaling
+   * <p>Provides summary information about an App Runner automatic scaling
    * configuration resource.</p> <p>This type contains limited information about an
    * auto scaling configuration. It includes only identification information, without
    * configuration details. It's returned by the <a>ListAutoScalingConfigurations</a>

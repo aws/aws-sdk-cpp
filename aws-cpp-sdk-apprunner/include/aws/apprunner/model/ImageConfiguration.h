@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the configuration that AWS App Runner uses to run an App Runner
-   * service using an image pulled from a source image repository.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Describes the configuration that App Runner uses to run an App Runner service
+   * using an image pulled from a source image repository.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ImageConfiguration">AWS
    * API Reference</a></p>
    */

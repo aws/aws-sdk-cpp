@@ -19,6 +19,8 @@ StartChangeRequestExecutionRequest::StartChangeRequestExecutionRequest() :
     m_parametersHasBeenSet(false),
     m_changeRequestNameHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
+    m_autoApprove(false),
+    m_autoApproveHasBeenSet(false),
     m_runbooksHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_scheduledEndTimeHasBeenSet(false),
@@ -72,6 +74,12 @@ Aws::String StartChangeRequestExecutionRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("ClientToken", m_clientToken);
+
+  }
+
+  if(m_autoApproveHasBeenSet)
+  {
+   payload.WithBool("AutoApprove", m_autoApprove);
 
   }
 

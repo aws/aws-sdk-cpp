@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a tag that is applied to an AWS App Runner resource. A tag is a
+   * <p>Describes a tag that is applied to an App Runner resource. A tag is a
    * metadata item consisting of a key-value pair.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/Tag">AWS API
    * Reference</a></p>

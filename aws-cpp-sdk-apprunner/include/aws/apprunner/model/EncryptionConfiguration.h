@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a custom encryption key that AWS App Runner uses to encrypt copies
-   * of the source repository and service logs.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a custom encryption key that App Runner uses to encrypt copies of
+   * the source repository and service logs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/EncryptionConfiguration">AWS
    * API Reference</a></p>
    */

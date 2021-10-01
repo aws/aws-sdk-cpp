@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the settings for the health check that AWS App Runner performs to
+   * <p>Describes the settings for the health check that App Runner performs to
    * monitor the health of a service.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/HealthCheckConfiguration">AWS
    * API Reference</a></p>
@@ -197,50 +197,50 @@ namespace Model
 
     /**
      * <p>The number of consecutive checks that must succeed before App Runner decides
-     * that the service is healthy.</p> <p>Default: <code>3</code> </p>
+     * that the service is healthy.</p> <p>Default: <code>1</code> </p>
      */
     inline int GetHealthyThreshold() const{ return m_healthyThreshold; }
 
     /**
      * <p>The number of consecutive checks that must succeed before App Runner decides
-     * that the service is healthy.</p> <p>Default: <code>3</code> </p>
+     * that the service is healthy.</p> <p>Default: <code>1</code> </p>
      */
     inline bool HealthyThresholdHasBeenSet() const { return m_healthyThresholdHasBeenSet; }
 
     /**
      * <p>The number of consecutive checks that must succeed before App Runner decides
-     * that the service is healthy.</p> <p>Default: <code>3</code> </p>
+     * that the service is healthy.</p> <p>Default: <code>1</code> </p>
      */
     inline void SetHealthyThreshold(int value) { m_healthyThresholdHasBeenSet = true; m_healthyThreshold = value; }
 
     /**
      * <p>The number of consecutive checks that must succeed before App Runner decides
-     * that the service is healthy.</p> <p>Default: <code>3</code> </p>
+     * that the service is healthy.</p> <p>Default: <code>1</code> </p>
      */
     inline HealthCheckConfiguration& WithHealthyThreshold(int value) { SetHealthyThreshold(value); return *this;}
 
 
     /**
      * <p>The number of consecutive checks that must fail before App Runner decides
-     * that the service is unhealthy.</p> <p>Default: <code>3</code> </p>
+     * that the service is unhealthy.</p> <p>Default: <code>5</code> </p>
      */
     inline int GetUnhealthyThreshold() const{ return m_unhealthyThreshold; }
 
     /**
      * <p>The number of consecutive checks that must fail before App Runner decides
-     * that the service is unhealthy.</p> <p>Default: <code>3</code> </p>
+     * that the service is unhealthy.</p> <p>Default: <code>5</code> </p>
      */
     inline bool UnhealthyThresholdHasBeenSet() const { return m_unhealthyThresholdHasBeenSet; }
 
     /**
      * <p>The number of consecutive checks that must fail before App Runner decides
-     * that the service is unhealthy.</p> <p>Default: <code>3</code> </p>
+     * that the service is unhealthy.</p> <p>Default: <code>5</code> </p>
      */
     inline void SetUnhealthyThreshold(int value) { m_unhealthyThresholdHasBeenSet = true; m_unhealthyThreshold = value; }
 
     /**
      * <p>The number of consecutive checks that must fail before App Runner decides
-     * that the service is unhealthy.</p> <p>Default: <code>3</code> </p>
+     * that the service is unhealthy.</p> <p>Default: <code>5</code> </p>
      */
     inline HealthCheckConfiguration& WithUnhealthyThreshold(int value) { SetUnhealthyThreshold(value); return *this;}
 

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the runtime configuration of an AWS App Runner service instance
+   * <p>Describes the runtime configuration of an App Runner service instance
    * (scaling unit).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/InstanceConfiguration">AWS
    * API Reference</a></p>
@@ -139,56 +139,56 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to
      * your App Runner service. These are permissions that your code needs when it
-     * calls any AWS APIs.</p>
+     * calls any Amazon Web Services APIs.</p>
      */
     inline const Aws::String& GetInstanceRoleArn() const{ return m_instanceRoleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to
      * your App Runner service. These are permissions that your code needs when it
-     * calls any AWS APIs.</p>
+     * calls any Amazon Web Services APIs.</p>
      */
     inline bool InstanceRoleArnHasBeenSet() const { return m_instanceRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to
      * your App Runner service. These are permissions that your code needs when it
-     * calls any AWS APIs.</p>
+     * calls any Amazon Web Services APIs.</p>
      */
     inline void SetInstanceRoleArn(const Aws::String& value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to
      * your App Runner service. These are permissions that your code needs when it
-     * calls any AWS APIs.</p>
+     * calls any Amazon Web Services APIs.</p>
      */
     inline void SetInstanceRoleArn(Aws::String&& value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to
      * your App Runner service. These are permissions that your code needs when it
-     * calls any AWS APIs.</p>
+     * calls any Amazon Web Services APIs.</p>
      */
     inline void SetInstanceRoleArn(const char* value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to
      * your App Runner service. These are permissions that your code needs when it
-     * calls any AWS APIs.</p>
+     * calls any Amazon Web Services APIs.</p>
      */
     inline InstanceConfiguration& WithInstanceRoleArn(const Aws::String& value) { SetInstanceRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to
      * your App Runner service. These are permissions that your code needs when it
-     * calls any AWS APIs.</p>
+     * calls any Amazon Web Services APIs.</p>
      */
     inline InstanceConfiguration& WithInstanceRoleArn(Aws::String&& value) { SetInstanceRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to
      * your App Runner service. These are permissions that your code needs when it
-     * calls any AWS APIs.</p>
+     * calls any Amazon Web Services APIs.</p>
      */
     inline InstanceConfiguration& WithInstanceRoleArn(const char* value) { SetInstanceRoleArn(value); return *this;}
 

@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the basic configuration needed for building and running an AWS App
+   * <p>Describes the basic configuration needed for building and running an App
    * Runner service. This type doesn't support the full set of possible configuration
    * options. Fur full configuration capabilities, use a <code>apprunner.yaml</code>
    * file in the source code repository.</p><p><h3>See Also:</h3>   <a

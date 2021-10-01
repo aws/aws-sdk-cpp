@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides summary information for an operation that occurred on an AWS App
-   * Runner service.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides summary information for an operation that occurred on an App Runner
+   * service.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/OperationSummary">AWS
    * API Reference</a></p>
    */

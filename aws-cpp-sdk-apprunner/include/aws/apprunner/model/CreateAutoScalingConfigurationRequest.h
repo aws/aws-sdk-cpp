@@ -38,65 +38,65 @@ namespace Model
 
     /**
      * <p>A name for the auto scaling configuration. When you use it for the first time
-     * in an AWS Region, App Runner creates revision number <code>1</code> of this
-     * name. When you use the same name in subsequent calls, App Runner creates
-     * incremental revisions of the configuration.</p>
+     * in an Amazon Web Services Region, App Runner creates revision number
+     * <code>1</code> of this name. When you use the same name in subsequent calls, App
+     * Runner creates incremental revisions of the configuration.</p>
      */
     inline const Aws::String& GetAutoScalingConfigurationName() const{ return m_autoScalingConfigurationName; }
 
     /**
      * <p>A name for the auto scaling configuration. When you use it for the first time
-     * in an AWS Region, App Runner creates revision number <code>1</code> of this
-     * name. When you use the same name in subsequent calls, App Runner creates
-     * incremental revisions of the configuration.</p>
+     * in an Amazon Web Services Region, App Runner creates revision number
+     * <code>1</code> of this name. When you use the same name in subsequent calls, App
+     * Runner creates incremental revisions of the configuration.</p>
      */
     inline bool AutoScalingConfigurationNameHasBeenSet() const { return m_autoScalingConfigurationNameHasBeenSet; }
 
     /**
      * <p>A name for the auto scaling configuration. When you use it for the first time
-     * in an AWS Region, App Runner creates revision number <code>1</code> of this
-     * name. When you use the same name in subsequent calls, App Runner creates
-     * incremental revisions of the configuration.</p>
+     * in an Amazon Web Services Region, App Runner creates revision number
+     * <code>1</code> of this name. When you use the same name in subsequent calls, App
+     * Runner creates incremental revisions of the configuration.</p>
      */
     inline void SetAutoScalingConfigurationName(const Aws::String& value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName = value; }
 
     /**
      * <p>A name for the auto scaling configuration. When you use it for the first time
-     * in an AWS Region, App Runner creates revision number <code>1</code> of this
-     * name. When you use the same name in subsequent calls, App Runner creates
-     * incremental revisions of the configuration.</p>
+     * in an Amazon Web Services Region, App Runner creates revision number
+     * <code>1</code> of this name. When you use the same name in subsequent calls, App
+     * Runner creates incremental revisions of the configuration.</p>
      */
     inline void SetAutoScalingConfigurationName(Aws::String&& value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName = std::move(value); }
 
     /**
      * <p>A name for the auto scaling configuration. When you use it for the first time
-     * in an AWS Region, App Runner creates revision number <code>1</code> of this
-     * name. When you use the same name in subsequent calls, App Runner creates
-     * incremental revisions of the configuration.</p>
+     * in an Amazon Web Services Region, App Runner creates revision number
+     * <code>1</code> of this name. When you use the same name in subsequent calls, App
+     * Runner creates incremental revisions of the configuration.</p>
      */
     inline void SetAutoScalingConfigurationName(const char* value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName.assign(value); }
 
     /**
      * <p>A name for the auto scaling configuration. When you use it for the first time
-     * in an AWS Region, App Runner creates revision number <code>1</code> of this
-     * name. When you use the same name in subsequent calls, App Runner creates
-     * incremental revisions of the configuration.</p>
+     * in an Amazon Web Services Region, App Runner creates revision number
+     * <code>1</code> of this name. When you use the same name in subsequent calls, App
+     * Runner creates incremental revisions of the configuration.</p>
      */
     inline CreateAutoScalingConfigurationRequest& WithAutoScalingConfigurationName(const Aws::String& value) { SetAutoScalingConfigurationName(value); return *this;}
 
     /**
      * <p>A name for the auto scaling configuration. When you use it for the first time
-     * in an AWS Region, App Runner creates revision number <code>1</code> of this
-     * name. When you use the same name in subsequent calls, App Runner creates
-     * incremental revisions of the configuration.</p>
+     * in an Amazon Web Services Region, App Runner creates revision number
+     * <code>1</code> of this name. When you use the same name in subsequent calls, App
+     * Runner creates incremental revisions of the configuration.</p>
      */
     inline CreateAutoScalingConfigurationRequest& WithAutoScalingConfigurationName(Aws::String&& value) { SetAutoScalingConfigurationName(std::move(value)); return *this;}
 
     /**
      * <p>A name for the auto scaling configuration. When you use it for the first time
-     * in an AWS Region, App Runner creates revision number <code>1</code> of this
-     * name. When you use the same name in subsequent calls, App Runner creates
-     * incremental revisions of the configuration.</p>
+     * in an Amazon Web Services Region, App Runner creates revision number
+     * <code>1</code> of this name. When you use the same name in subsequent calls, App
+     * Runner creates incremental revisions of the configuration.</p>
      */
     inline CreateAutoScalingConfigurationRequest& WithAutoScalingConfigurationName(const char* value) { SetAutoScalingConfigurationName(value); return *this;}
 

@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides summary information for an AWS App Runner service.</p> <p>This type
+   * <p>Provides summary information for an App Runner service.</p> <p>This type
    * contains limited information about a service. It doesn't include configuration
    * details. It's returned by the <a
    * href="https://docs.aws.amazon.com/apprunner/latest/api/API_ListServices.html">ListServices</a>
@@ -93,50 +93,50 @@ namespace Model
 
 
     /**
-     * <p>An ID that App Runner generated for this service. It's unique within the AWS
-     * Region.</p>
+     * <p>An ID that App Runner generated for this service. It's unique within the
+     * Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetServiceId() const{ return m_serviceId; }
 
     /**
-     * <p>An ID that App Runner generated for this service. It's unique within the AWS
-     * Region.</p>
+     * <p>An ID that App Runner generated for this service. It's unique within the
+     * Amazon Web Services Region.</p>
      */
     inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
 
     /**
-     * <p>An ID that App Runner generated for this service. It's unique within the AWS
-     * Region.</p>
+     * <p>An ID that App Runner generated for this service. It's unique within the
+     * Amazon Web Services Region.</p>
      */
     inline void SetServiceId(const Aws::String& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
 
     /**
-     * <p>An ID that App Runner generated for this service. It's unique within the AWS
-     * Region.</p>
+     * <p>An ID that App Runner generated for this service. It's unique within the
+     * Amazon Web Services Region.</p>
      */
     inline void SetServiceId(Aws::String&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::move(value); }
 
     /**
-     * <p>An ID that App Runner generated for this service. It's unique within the AWS
-     * Region.</p>
+     * <p>An ID that App Runner generated for this service. It's unique within the
+     * Amazon Web Services Region.</p>
      */
     inline void SetServiceId(const char* value) { m_serviceIdHasBeenSet = true; m_serviceId.assign(value); }
 
     /**
-     * <p>An ID that App Runner generated for this service. It's unique within the AWS
-     * Region.</p>
+     * <p>An ID that App Runner generated for this service. It's unique within the
+     * Amazon Web Services Region.</p>
      */
     inline ServiceSummary& WithServiceId(const Aws::String& value) { SetServiceId(value); return *this;}
 
     /**
-     * <p>An ID that App Runner generated for this service. It's unique within the AWS
-     * Region.</p>
+     * <p>An ID that App Runner generated for this service. It's unique within the
+     * Amazon Web Services Region.</p>
      */
     inline ServiceSummary& WithServiceId(Aws::String&& value) { SetServiceId(std::move(value)); return *this;}
 
     /**
-     * <p>An ID that App Runner generated for this service. It's unique within the AWS
-     * Region.</p>
+     * <p>An ID that App Runner generated for this service. It's unique within the
+     * Amazon Web Services Region.</p>
      */
     inline ServiceSummary& WithServiceId(const char* value) { SetServiceId(value); return *this;}
 

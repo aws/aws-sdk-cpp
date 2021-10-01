@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a custom domain that's associated with an AWS App Runner
+   * <p>Describes a custom domain that's associated with an App Runner
    * service.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CustomDomain">AWS
    * API Reference</a></p>

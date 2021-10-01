@@ -42,49 +42,57 @@ namespace Model
 
     /**
      * <p>A name for the new service. It must be unique across all the running App
-     * Runner services in your AWS account in the AWS Region.</p>
+     * Runner services in your Amazon Web Services account in the Amazon Web Services
+     * Region.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
      * <p>A name for the new service. It must be unique across all the running App
-     * Runner services in your AWS account in the AWS Region.</p>
+     * Runner services in your Amazon Web Services account in the Amazon Web Services
+     * Region.</p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
      * <p>A name for the new service. It must be unique across all the running App
-     * Runner services in your AWS account in the AWS Region.</p>
+     * Runner services in your Amazon Web Services account in the Amazon Web Services
+     * Region.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
      * <p>A name for the new service. It must be unique across all the running App
-     * Runner services in your AWS account in the AWS Region.</p>
+     * Runner services in your Amazon Web Services account in the Amazon Web Services
+     * Region.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
      * <p>A name for the new service. It must be unique across all the running App
-     * Runner services in your AWS account in the AWS Region.</p>
+     * Runner services in your Amazon Web Services account in the Amazon Web Services
+     * Region.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
      * <p>A name for the new service. It must be unique across all the running App
-     * Runner services in your AWS account in the AWS Region.</p>
+     * Runner services in your Amazon Web Services account in the Amazon Web Services
+     * Region.</p>
      */
     inline CreateServiceRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
      * <p>A name for the new service. It must be unique across all the running App
-     * Runner services in your AWS account in the AWS Region.</p>
+     * Runner services in your Amazon Web Services account in the Amazon Web Services
+     * Region.</p>
      */
     inline CreateServiceRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
      * <p>A name for the new service. It must be unique across all the running App
-     * Runner services in your AWS account in the AWS Region.</p>
+     * Runner services in your Amazon Web Services account in the Amazon Web Services
+     * Region.</p>
      */
     inline CreateServiceRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
@@ -215,78 +223,78 @@ namespace Model
     /**
      * <p>An optional custom encryption key that App Runner uses to encrypt the copy of
      * your source repository that it maintains and your service logs. By default, App
-     * Runner uses an AWS managed CMK.</p>
+     * Runner uses an Amazon Web Services managed CMK.</p>
      */
     inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
 
     /**
      * <p>An optional custom encryption key that App Runner uses to encrypt the copy of
      * your source repository that it maintains and your service logs. By default, App
-     * Runner uses an AWS managed CMK.</p>
+     * Runner uses an Amazon Web Services managed CMK.</p>
      */
     inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
 
     /**
      * <p>An optional custom encryption key that App Runner uses to encrypt the copy of
      * your source repository that it maintains and your service logs. By default, App
-     * Runner uses an AWS managed CMK.</p>
+     * Runner uses an Amazon Web Services managed CMK.</p>
      */
     inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
 
     /**
      * <p>An optional custom encryption key that App Runner uses to encrypt the copy of
      * your source repository that it maintains and your service logs. By default, App
-     * Runner uses an AWS managed CMK.</p>
+     * Runner uses an Amazon Web Services managed CMK.</p>
      */
     inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
 
     /**
      * <p>An optional custom encryption key that App Runner uses to encrypt the copy of
      * your source repository that it maintains and your service logs. By default, App
-     * Runner uses an AWS managed CMK.</p>
+     * Runner uses an Amazon Web Services managed CMK.</p>
      */
     inline CreateServiceRequest& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
 
     /**
      * <p>An optional custom encryption key that App Runner uses to encrypt the copy of
      * your source repository that it maintains and your service logs. By default, App
-     * Runner uses an AWS managed CMK.</p>
+     * Runner uses an Amazon Web Services managed CMK.</p>
      */
     inline CreateServiceRequest& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>The settings for the health check that AWS App Runner performs to monitor the
+     * <p>The settings for the health check that App Runner performs to monitor the
      * health of your service.</p>
      */
     inline const HealthCheckConfiguration& GetHealthCheckConfiguration() const{ return m_healthCheckConfiguration; }
 
     /**
-     * <p>The settings for the health check that AWS App Runner performs to monitor the
+     * <p>The settings for the health check that App Runner performs to monitor the
      * health of your service.</p>
      */
     inline bool HealthCheckConfigurationHasBeenSet() const { return m_healthCheckConfigurationHasBeenSet; }
 
     /**
-     * <p>The settings for the health check that AWS App Runner performs to monitor the
+     * <p>The settings for the health check that App Runner performs to monitor the
      * health of your service.</p>
      */
     inline void SetHealthCheckConfiguration(const HealthCheckConfiguration& value) { m_healthCheckConfigurationHasBeenSet = true; m_healthCheckConfiguration = value; }
 
     /**
-     * <p>The settings for the health check that AWS App Runner performs to monitor the
+     * <p>The settings for the health check that App Runner performs to monitor the
      * health of your service.</p>
      */
     inline void SetHealthCheckConfiguration(HealthCheckConfiguration&& value) { m_healthCheckConfigurationHasBeenSet = true; m_healthCheckConfiguration = std::move(value); }
 
     /**
-     * <p>The settings for the health check that AWS App Runner performs to monitor the
+     * <p>The settings for the health check that App Runner performs to monitor the
      * health of your service.</p>
      */
     inline CreateServiceRequest& WithHealthCheckConfiguration(const HealthCheckConfiguration& value) { SetHealthCheckConfiguration(value); return *this;}
 
     /**
-     * <p>The settings for the health check that AWS App Runner performs to monitor the
+     * <p>The settings for the health check that App Runner performs to monitor the
      * health of your service.</p>
      */
     inline CreateServiceRequest& WithHealthCheckConfiguration(HealthCheckConfiguration&& value) { SetHealthCheckConfiguration(std::move(value)); return *this;}

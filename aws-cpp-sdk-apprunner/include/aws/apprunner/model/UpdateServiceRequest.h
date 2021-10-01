@@ -246,37 +246,37 @@ namespace Model
 
 
     /**
-     * <p>The settings for the health check that AWS App Runner performs to monitor the
+     * <p>The settings for the health check that App Runner performs to monitor the
      * health of your service.</p>
      */
     inline const HealthCheckConfiguration& GetHealthCheckConfiguration() const{ return m_healthCheckConfiguration; }
 
     /**
-     * <p>The settings for the health check that AWS App Runner performs to monitor the
+     * <p>The settings for the health check that App Runner performs to monitor the
      * health of your service.</p>
      */
     inline bool HealthCheckConfigurationHasBeenSet() const { return m_healthCheckConfigurationHasBeenSet; }
 
     /**
-     * <p>The settings for the health check that AWS App Runner performs to monitor the
+     * <p>The settings for the health check that App Runner performs to monitor the
      * health of your service.</p>
      */
     inline void SetHealthCheckConfiguration(const HealthCheckConfiguration& value) { m_healthCheckConfigurationHasBeenSet = true; m_healthCheckConfiguration = value; }
 
     /**
-     * <p>The settings for the health check that AWS App Runner performs to monitor the
+     * <p>The settings for the health check that App Runner performs to monitor the
      * health of your service.</p>
      */
     inline void SetHealthCheckConfiguration(HealthCheckConfiguration&& value) { m_healthCheckConfigurationHasBeenSet = true; m_healthCheckConfiguration = std::move(value); }
 
     /**
-     * <p>The settings for the health check that AWS App Runner performs to monitor the
+     * <p>The settings for the health check that App Runner performs to monitor the
      * health of your service.</p>
      */
     inline UpdateServiceRequest& WithHealthCheckConfiguration(const HealthCheckConfiguration& value) { SetHealthCheckConfiguration(value); return *this;}
 
     /**
-     * <p>The settings for the health check that AWS App Runner performs to monitor the
+     * <p>The settings for the health check that App Runner performs to monitor the
      * health of your service.</p>
      */
     inline UpdateServiceRequest& WithHealthCheckConfiguration(HealthCheckConfiguration&& value) { SetHealthCheckConfiguration(std::move(value)); return *this;}

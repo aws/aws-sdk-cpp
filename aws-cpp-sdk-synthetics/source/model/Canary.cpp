@@ -36,7 +36,8 @@ Canary::Canary() :
     m_runtimeVersionHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
     m_visualReferenceHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_artifactConfigHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ Canary::Canary(JsonView jsonValue) :
     m_runtimeVersionHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
     m_visualReferenceHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_artifactConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -180,6 +182,13 @@ Canary& Canary::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ArtifactConfig"))
+  {
+    m_artifactConfig = jsonValue.GetObject("ArtifactConfig");
+
+    m_artifactConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -285,6 +294,12 @@ JsonValue Canary::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_artifactConfigHasBeenSet)
+  {
+   payload.WithObject("ArtifactConfig", m_artifactConfig.Jsonize());
 
   }
 

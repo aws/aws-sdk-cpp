@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the source deployed to an AWS App Runner service. It can be a code
-   * or an image repository.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the source deployed to an App Runner service. It can be a code or
+   * an image repository.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/SourceConfiguration">AWS
    * API Reference</a></p>
    */
@@ -116,33 +116,49 @@ namespace Model
 
     /**
      * <p>If <code>true</code>, continuous integration from the source repository is
-     * enabled for the App Runner service. Each repository change (source code commit
-     * or new image version) starts a deployment.</p> <p>Default: <code>true</code>
-     * </p>
+     * enabled for the App Runner service. Each repository change (including any source
+     * code commit or new image version) starts a deployment.</p> <p>Default: App
+     * Runner sets to <code>false</code> for a source image that uses an ECR Public
+     * repository or an ECR repository that's in an Amazon Web Services account other
+     * than the one that the service is in. App Runner sets to <code>true</code> in all
+     * other cases (which currently include a source code repository or a source image
+     * using a same-account ECR repository).</p>
      */
     inline bool GetAutoDeploymentsEnabled() const{ return m_autoDeploymentsEnabled; }
 
     /**
      * <p>If <code>true</code>, continuous integration from the source repository is
-     * enabled for the App Runner service. Each repository change (source code commit
-     * or new image version) starts a deployment.</p> <p>Default: <code>true</code>
-     * </p>
+     * enabled for the App Runner service. Each repository change (including any source
+     * code commit or new image version) starts a deployment.</p> <p>Default: App
+     * Runner sets to <code>false</code> for a source image that uses an ECR Public
+     * repository or an ECR repository that's in an Amazon Web Services account other
+     * than the one that the service is in. App Runner sets to <code>true</code> in all
+     * other cases (which currently include a source code repository or a source image
+     * using a same-account ECR repository).</p>
      */
     inline bool AutoDeploymentsEnabledHasBeenSet() const { return m_autoDeploymentsEnabledHasBeenSet; }
 
     /**
      * <p>If <code>true</code>, continuous integration from the source repository is
-     * enabled for the App Runner service. Each repository change (source code commit
-     * or new image version) starts a deployment.</p> <p>Default: <code>true</code>
-     * </p>
+     * enabled for the App Runner service. Each repository change (including any source
+     * code commit or new image version) starts a deployment.</p> <p>Default: App
+     * Runner sets to <code>false</code> for a source image that uses an ECR Public
+     * repository or an ECR repository that's in an Amazon Web Services account other
+     * than the one that the service is in. App Runner sets to <code>true</code> in all
+     * other cases (which currently include a source code repository or a source image
+     * using a same-account ECR repository).</p>
      */
     inline void SetAutoDeploymentsEnabled(bool value) { m_autoDeploymentsEnabledHasBeenSet = true; m_autoDeploymentsEnabled = value; }
 
     /**
      * <p>If <code>true</code>, continuous integration from the source repository is
-     * enabled for the App Runner service. Each repository change (source code commit
-     * or new image version) starts a deployment.</p> <p>Default: <code>true</code>
-     * </p>
+     * enabled for the App Runner service. Each repository change (including any source
+     * code commit or new image version) starts a deployment.</p> <p>Default: App
+     * Runner sets to <code>false</code> for a source image that uses an ECR Public
+     * repository or an ECR repository that's in an Amazon Web Services account other
+     * than the one that the service is in. App Runner sets to <code>true</code> in all
+     * other cases (which currently include a source code repository or a source image
+     * using a same-account ECR repository).</p>
      */
     inline SourceConfiguration& WithAutoDeploymentsEnabled(bool value) { SetAutoDeploymentsEnabled(value); return *this;}
 

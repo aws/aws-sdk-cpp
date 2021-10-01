@@ -12,6 +12,7 @@
 #include <aws/synthetics/model/CanaryRunConfigInput.h>
 #include <aws/synthetics/model/VpcConfigInput.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/synthetics/model/ArtifactConfigInput.h>
 #include <utility>
 
 namespace Aws
@@ -708,6 +709,49 @@ namespace Model
      */
     inline CreateCanaryRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A structure that contains the configuration for canary artifacts, including
+     * the encryption-at-rest settings for artifacts that the canary uploads to Amazon
+     * S3.</p>
+     */
+    inline const ArtifactConfigInput& GetArtifactConfig() const{ return m_artifactConfig; }
+
+    /**
+     * <p>A structure that contains the configuration for canary artifacts, including
+     * the encryption-at-rest settings for artifacts that the canary uploads to Amazon
+     * S3.</p>
+     */
+    inline bool ArtifactConfigHasBeenSet() const { return m_artifactConfigHasBeenSet; }
+
+    /**
+     * <p>A structure that contains the configuration for canary artifacts, including
+     * the encryption-at-rest settings for artifacts that the canary uploads to Amazon
+     * S3.</p>
+     */
+    inline void SetArtifactConfig(const ArtifactConfigInput& value) { m_artifactConfigHasBeenSet = true; m_artifactConfig = value; }
+
+    /**
+     * <p>A structure that contains the configuration for canary artifacts, including
+     * the encryption-at-rest settings for artifacts that the canary uploads to Amazon
+     * S3.</p>
+     */
+    inline void SetArtifactConfig(ArtifactConfigInput&& value) { m_artifactConfigHasBeenSet = true; m_artifactConfig = std::move(value); }
+
+    /**
+     * <p>A structure that contains the configuration for canary artifacts, including
+     * the encryption-at-rest settings for artifacts that the canary uploads to Amazon
+     * S3.</p>
+     */
+    inline CreateCanaryRequest& WithArtifactConfig(const ArtifactConfigInput& value) { SetArtifactConfig(value); return *this;}
+
+    /**
+     * <p>A structure that contains the configuration for canary artifacts, including
+     * the encryption-at-rest settings for artifacts that the canary uploads to Amazon
+     * S3.</p>
+     */
+    inline CreateCanaryRequest& WithArtifactConfig(ArtifactConfigInput&& value) { SetArtifactConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -742,6 +786,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    ArtifactConfigInput m_artifactConfig;
+    bool m_artifactConfigHasBeenSet;
   };
 
 } // namespace Model

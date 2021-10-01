@@ -256,42 +256,58 @@ namespace Model
 
 
     /**
-     * <p>The instances targeted by the request to create an association. </p>
+     * <p>The instances targeted by the request to create an association. You can
+     * target all instances in an Amazon Web Services account by specifying the
+     * <code>InstanceIds</code> key with a value of <code>*</code>.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The instances targeted by the request to create an association. </p>
+     * <p>The instances targeted by the request to create an association. You can
+     * target all instances in an Amazon Web Services account by specifying the
+     * <code>InstanceIds</code> key with a value of <code>*</code>.</p>
      */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
-     * <p>The instances targeted by the request to create an association. </p>
+     * <p>The instances targeted by the request to create an association. You can
+     * target all instances in an Amazon Web Services account by specifying the
+     * <code>InstanceIds</code> key with a value of <code>*</code>.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The instances targeted by the request to create an association. </p>
+     * <p>The instances targeted by the request to create an association. You can
+     * target all instances in an Amazon Web Services account by specifying the
+     * <code>InstanceIds</code> key with a value of <code>*</code>.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>The instances targeted by the request to create an association. </p>
+     * <p>The instances targeted by the request to create an association. You can
+     * target all instances in an Amazon Web Services account by specifying the
+     * <code>InstanceIds</code> key with a value of <code>*</code>.</p>
      */
     inline Association& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The instances targeted by the request to create an association. </p>
+     * <p>The instances targeted by the request to create an association. You can
+     * target all instances in an Amazon Web Services account by specifying the
+     * <code>InstanceIds</code> key with a value of <code>*</code>.</p>
      */
     inline Association& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The instances targeted by the request to create an association. </p>
+     * <p>The instances targeted by the request to create an association. You can
+     * target all instances in an Amazon Web Services account by specifying the
+     * <code>InstanceIds</code> key with a value of <code>*</code>.</p>
      */
     inline Association& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>The instances targeted by the request to create an association. </p>
+     * <p>The instances targeted by the request to create an association. You can
+     * target all instances in an Amazon Web Services account by specifying the
+     * <code>InstanceIds</code> key with a value of <code>*</code>.</p>
      */
     inline Association& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 

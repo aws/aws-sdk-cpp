@@ -358,6 +358,59 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether the change request can be approved automatically without
+     * the need for manual approvals.</p> <p>If <code>AutoApprovable</code> is enabled
+     * in a change template, then setting <code>AutoApprove</code> to <code>true</code>
+     * in <code>StartChangeRequestExecution</code> creates a change request that
+     * bypasses approver review.</p>  <p>Change Calendar restrictions are not
+     * bypassed in this scenario. If the state of an associated calendar is
+     * <code>CLOSED</code>, change freeze approvers must still grant permission for
+     * this change request to run. If they don't, the change won't be processed until
+     * the calendar state is again <code>OPEN</code>. </p> 
+     */
+    inline bool GetAutoApprove() const{ return m_autoApprove; }
+
+    /**
+     * <p>Indicates whether the change request can be approved automatically without
+     * the need for manual approvals.</p> <p>If <code>AutoApprovable</code> is enabled
+     * in a change template, then setting <code>AutoApprove</code> to <code>true</code>
+     * in <code>StartChangeRequestExecution</code> creates a change request that
+     * bypasses approver review.</p>  <p>Change Calendar restrictions are not
+     * bypassed in this scenario. If the state of an associated calendar is
+     * <code>CLOSED</code>, change freeze approvers must still grant permission for
+     * this change request to run. If they don't, the change won't be processed until
+     * the calendar state is again <code>OPEN</code>. </p> 
+     */
+    inline bool AutoApproveHasBeenSet() const { return m_autoApproveHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the change request can be approved automatically without
+     * the need for manual approvals.</p> <p>If <code>AutoApprovable</code> is enabled
+     * in a change template, then setting <code>AutoApprove</code> to <code>true</code>
+     * in <code>StartChangeRequestExecution</code> creates a change request that
+     * bypasses approver review.</p>  <p>Change Calendar restrictions are not
+     * bypassed in this scenario. If the state of an associated calendar is
+     * <code>CLOSED</code>, change freeze approvers must still grant permission for
+     * this change request to run. If they don't, the change won't be processed until
+     * the calendar state is again <code>OPEN</code>. </p> 
+     */
+    inline void SetAutoApprove(bool value) { m_autoApproveHasBeenSet = true; m_autoApprove = value; }
+
+    /**
+     * <p>Indicates whether the change request can be approved automatically without
+     * the need for manual approvals.</p> <p>If <code>AutoApprovable</code> is enabled
+     * in a change template, then setting <code>AutoApprove</code> to <code>true</code>
+     * in <code>StartChangeRequestExecution</code> creates a change request that
+     * bypasses approver review.</p>  <p>Change Calendar restrictions are not
+     * bypassed in this scenario. If the state of an associated calendar is
+     * <code>CLOSED</code>, change freeze approvers must still grant permission for
+     * this change request to run. If they don't, the change won't be processed until
+     * the calendar state is again <code>OPEN</code>. </p> 
+     */
+    inline StartChangeRequestExecutionRequest& WithAutoApprove(bool value) { SetAutoApprove(value); return *this;}
+
+
+    /**
      * <p>Information about the Automation runbooks that are run during the runbook
      * workflow.</p>  <p>The Automation runbooks specified for the runbook
      * workflow can't run until all required approvals for the change request have been
@@ -629,6 +682,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
+    bool m_autoApprove;
+    bool m_autoApproveHasBeenSet;
 
     Aws::Vector<Runbook> m_runbooks;
     bool m_runbooksHasBeenSet;

@@ -168,24 +168,26 @@ namespace Model
     typedef std::function<void(const AppRunnerClient*, const Model::UpdateServiceRequest&, const Model::UpdateServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceResponseReceivedHandler;
 
   /**
-   * <fullname>AWS App Runner</fullname> <p>AWS App Runner is an application service
-   * that provides a fast, simple, and cost-effective way to go directly from an
-   * existing container image or source code to a running service in the AWS cloud in
-   * seconds. You don't need to learn new technologies, decide which compute service
-   * to use, or understand how to provision and configure AWS resources.</p> <p>App
-   * Runner connects directly to your container registry or source code repository.
-   * It provides an automatic delivery pipeline with fully managed operations, high
-   * performance, scalability, and security.</p> <p>For more information about App
-   * Runner, see the <a href="https://docs.aws.amazon.com/apprunner/latest/dg/">AWS
-   * App Runner Developer Guide</a>. For release information, see the <a
-   * href="https://docs.aws.amazon.com/apprunner/latest/relnotes/">AWS App Runner
-   * Release Notes</a>.</p> <p> To install the Software Development Kits (SDKs),
-   * Integrated Development Environment (IDE) Toolkits, and command line tools that
-   * you can use to access the API, see <a href="http://aws.amazon.com/tools/">Tools
-   * for Amazon Web Services</a>.</p> <p> <b>Endpoints</b> </p> <p>For a list of
-   * Region-specific endpoints that App Runner supports, see <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">AWS App
-   * Runner endpoints and quotas</a> in the <i>AWS General Reference</i>.</p>
+   * <fullname>App Runner</fullname> <p>App Runner is an application service that
+   * provides a fast, simple, and cost-effective way to go directly from an existing
+   * container image or source code to a running service in the Amazon Web Services
+   * Cloud in seconds. You don't need to learn new technologies, decide which compute
+   * service to use, or understand how to provision and configure Amazon Web Services
+   * resources.</p> <p>App Runner connects directly to your container registry or
+   * source code repository. It provides an automatic delivery pipeline with fully
+   * managed operations, high performance, scalability, and security.</p> <p>For more
+   * information about App Runner, see the <a
+   * href="https://docs.aws.amazon.com/apprunner/latest/dg/">App Runner Developer
+   * Guide</a>. For release information, see the <a
+   * href="https://docs.aws.amazon.com/apprunner/latest/relnotes/">App Runner Release
+   * Notes</a>.</p> <p> To install the Software Development Kits (SDKs), Integrated
+   * Development Environment (IDE) Toolkits, and command line tools that you can use
+   * to access the API, see <a href="http://aws.amazon.com/tools/">Tools for Amazon
+   * Web Services</a>.</p> <p> <b>Endpoints</b> </p> <p>For a list of Region-specific
+   * endpoints that App Runner supports, see <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App Runner
+   * endpoints and quotas</a> in the <i>Amazon Web Services General
+   * Reference</i>.</p>
    */
   class AWS_APPRUNNER_API AppRunnerClient : public Aws::Client::AWSJsonClient
   {
@@ -215,8 +217,8 @@ namespace Model
 
 
         /**
-         * <p>Associate your own domain name with the AWS App Runner subdomain URL of your
-         * App Runner service.</p> <p>After you call <code>AssociateCustomDomain</code> and
+         * <p>Associate your own domain name with the App Runner subdomain URL of your App
+         * Runner service.</p> <p>After you call <code>AssociateCustomDomain</code> and
          * receive a successful response, use the information in the <a>CustomDomain</a>
          * record that's returned to add CNAME records to your Domain Name System (DNS).
          * For each mapped domain name, add a mapping to the target App Runner subdomain
@@ -231,8 +233,8 @@ namespace Model
         virtual Model::AssociateCustomDomainOutcome AssociateCustomDomain(const Model::AssociateCustomDomainRequest& request) const;
 
         /**
-         * <p>Associate your own domain name with the AWS App Runner subdomain URL of your
-         * App Runner service.</p> <p>After you call <code>AssociateCustomDomain</code> and
+         * <p>Associate your own domain name with the App Runner subdomain URL of your App
+         * Runner service.</p> <p>After you call <code>AssociateCustomDomain</code> and
          * receive a successful response, use the information in the <a>CustomDomain</a>
          * record that's returned to add CNAME records to your Domain Name System (DNS).
          * For each mapped domain name, add a mapping to the target App Runner subdomain
@@ -249,8 +251,8 @@ namespace Model
         virtual Model::AssociateCustomDomainOutcomeCallable AssociateCustomDomainCallable(const Model::AssociateCustomDomainRequest& request) const;
 
         /**
-         * <p>Associate your own domain name with the AWS App Runner subdomain URL of your
-         * App Runner service.</p> <p>After you call <code>AssociateCustomDomain</code> and
+         * <p>Associate your own domain name with the App Runner subdomain URL of your App
+         * Runner service.</p> <p>After you call <code>AssociateCustomDomain</code> and
          * receive a successful response, use the information in the <a>CustomDomain</a>
          * record that's returned to add CNAME records to your Domain Name System (DNS).
          * For each mapped domain name, add a mapping to the target App Runner subdomain
@@ -267,7 +269,7 @@ namespace Model
         virtual void AssociateCustomDomainAsync(const Model::AssociateCustomDomainRequest& request, const AssociateCustomDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Create an AWS App Runner automatic scaling configuration resource. App Runner
+         * <p>Create an App Runner automatic scaling configuration resource. App Runner
          * requires this resource when you create App Runner services that require
          * non-default auto scaling settings. You can share an auto scaling configuration
          * across multiple services.</p> <p>Create multiple revisions of a configuration by
@@ -276,16 +278,17 @@ namespace Model
          * you can set it to use the latest active revision of an auto scaling
          * configuration or a specific revision.</p> <p>Configure a higher
          * <code>MinSize</code> to increase the spread of your App Runner service over more
-         * Availability Zones in the AWS Region. The tradeoff is a higher minimal cost.</p>
-         * <p>Configure a lower <code>MaxSize</code> to control your cost. The tradeoff is
-         * lower responsiveness during peak demand.</p><p><h3>See Also:</h3>   <a
+         * Availability Zones in the Amazon Web Services Region. The tradeoff is a higher
+         * minimal cost.</p> <p>Configure a lower <code>MaxSize</code> to control your
+         * cost. The tradeoff is lower responsiveness during peak demand.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateAutoScalingConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateAutoScalingConfigurationOutcome CreateAutoScalingConfiguration(const Model::CreateAutoScalingConfigurationRequest& request) const;
 
         /**
-         * <p>Create an AWS App Runner automatic scaling configuration resource. App Runner
+         * <p>Create an App Runner automatic scaling configuration resource. App Runner
          * requires this resource when you create App Runner services that require
          * non-default auto scaling settings. You can share an auto scaling configuration
          * across multiple services.</p> <p>Create multiple revisions of a configuration by
@@ -294,9 +297,10 @@ namespace Model
          * you can set it to use the latest active revision of an auto scaling
          * configuration or a specific revision.</p> <p>Configure a higher
          * <code>MinSize</code> to increase the spread of your App Runner service over more
-         * Availability Zones in the AWS Region. The tradeoff is a higher minimal cost.</p>
-         * <p>Configure a lower <code>MaxSize</code> to control your cost. The tradeoff is
-         * lower responsiveness during peak demand.</p><p><h3>See Also:</h3>   <a
+         * Availability Zones in the Amazon Web Services Region. The tradeoff is a higher
+         * minimal cost.</p> <p>Configure a lower <code>MaxSize</code> to control your
+         * cost. The tradeoff is lower responsiveness during peak demand.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateAutoScalingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -305,7 +309,7 @@ namespace Model
         virtual Model::CreateAutoScalingConfigurationOutcomeCallable CreateAutoScalingConfigurationCallable(const Model::CreateAutoScalingConfigurationRequest& request) const;
 
         /**
-         * <p>Create an AWS App Runner automatic scaling configuration resource. App Runner
+         * <p>Create an App Runner automatic scaling configuration resource. App Runner
          * requires this resource when you create App Runner services that require
          * non-default auto scaling settings. You can share an auto scaling configuration
          * across multiple services.</p> <p>Create multiple revisions of a configuration by
@@ -314,9 +318,10 @@ namespace Model
          * you can set it to use the latest active revision of an auto scaling
          * configuration or a specific revision.</p> <p>Configure a higher
          * <code>MinSize</code> to increase the spread of your App Runner service over more
-         * Availability Zones in the AWS Region. The tradeoff is a higher minimal cost.</p>
-         * <p>Configure a lower <code>MaxSize</code> to control your cost. The tradeoff is
-         * lower responsiveness during peak demand.</p><p><h3>See Also:</h3>   <a
+         * Availability Zones in the Amazon Web Services Region. The tradeoff is a higher
+         * minimal cost.</p> <p>Configure a lower <code>MaxSize</code> to control your
+         * cost. The tradeoff is lower responsiveness during peak demand.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateAutoScalingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -325,26 +330,24 @@ namespace Model
         virtual void CreateAutoScalingConfigurationAsync(const Model::CreateAutoScalingConfigurationRequest& request, const CreateAutoScalingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Create an AWS App Runner connection resource. App Runner requires a
-         * connection resource when you create App Runner services that access private
-         * repositories from certain third-party providers. You can share a connection
-         * across multiple services.</p> <p>A connection resource is needed to access
-         * GitHub repositories. GitHub requires a user interface approval process through
-         * the App Runner console before you can use the connection.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Create an App Runner connection resource. App Runner requires a connection
+         * resource when you create App Runner services that access private repositories
+         * from certain third-party providers. You can share a connection across multiple
+         * services.</p> <p>A connection resource is needed to access GitHub repositories.
+         * GitHub requires a user interface approval process through the App Runner console
+         * before you can use the connection.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateConnection">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateConnectionOutcome CreateConnection(const Model::CreateConnectionRequest& request) const;
 
         /**
-         * <p>Create an AWS App Runner connection resource. App Runner requires a
-         * connection resource when you create App Runner services that access private
-         * repositories from certain third-party providers. You can share a connection
-         * across multiple services.</p> <p>A connection resource is needed to access
-         * GitHub repositories. GitHub requires a user interface approval process through
-         * the App Runner console before you can use the connection.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Create an App Runner connection resource. App Runner requires a connection
+         * resource when you create App Runner services that access private repositories
+         * from certain third-party providers. You can share a connection across multiple
+         * services.</p> <p>A connection resource is needed to access GitHub repositories.
+         * GitHub requires a user interface approval process through the App Runner console
+         * before you can use the connection.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateConnection">AWS
          * API Reference</a></p>
          *
@@ -353,13 +356,12 @@ namespace Model
         virtual Model::CreateConnectionOutcomeCallable CreateConnectionCallable(const Model::CreateConnectionRequest& request) const;
 
         /**
-         * <p>Create an AWS App Runner connection resource. App Runner requires a
-         * connection resource when you create App Runner services that access private
-         * repositories from certain third-party providers. You can share a connection
-         * across multiple services.</p> <p>A connection resource is needed to access
-         * GitHub repositories. GitHub requires a user interface approval process through
-         * the App Runner console before you can use the connection.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Create an App Runner connection resource. App Runner requires a connection
+         * resource when you create App Runner services that access private repositories
+         * from certain third-party providers. You can share a connection across multiple
+         * services.</p> <p>A connection resource is needed to access GitHub repositories.
+         * GitHub requires a user interface approval process through the App Runner console
+         * before you can use the connection.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateConnection">AWS
          * API Reference</a></p>
          *
@@ -368,10 +370,9 @@ namespace Model
         virtual void CreateConnectionAsync(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Create an AWS App Runner service. After the service is created, the action
-         * also automatically starts a deployment.</p> <p>This is an asynchronous
-         * operation. On a successful call, you can use the returned
-         * <code>OperationId</code> and the <a
+         * <p>Create an App Runner service. After the service is created, the action also
+         * automatically starts a deployment.</p> <p>This is an asynchronous operation. On
+         * a successful call, you can use the returned <code>OperationId</code> and the <a
          * href="https://docs.aws.amazon.com/apprunner/latest/api/API_ListOperations.html">ListOperations</a>
          * call to track the operation's progress.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateService">AWS
@@ -380,10 +381,9 @@ namespace Model
         virtual Model::CreateServiceOutcome CreateService(const Model::CreateServiceRequest& request) const;
 
         /**
-         * <p>Create an AWS App Runner service. After the service is created, the action
-         * also automatically starts a deployment.</p> <p>This is an asynchronous
-         * operation. On a successful call, you can use the returned
-         * <code>OperationId</code> and the <a
+         * <p>Create an App Runner service. After the service is created, the action also
+         * automatically starts a deployment.</p> <p>This is an asynchronous operation. On
+         * a successful call, you can use the returned <code>OperationId</code> and the <a
          * href="https://docs.aws.amazon.com/apprunner/latest/api/API_ListOperations.html">ListOperations</a>
          * call to track the operation's progress.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateService">AWS
@@ -394,10 +394,9 @@ namespace Model
         virtual Model::CreateServiceOutcomeCallable CreateServiceCallable(const Model::CreateServiceRequest& request) const;
 
         /**
-         * <p>Create an AWS App Runner service. After the service is created, the action
-         * also automatically starts a deployment.</p> <p>This is an asynchronous
-         * operation. On a successful call, you can use the returned
-         * <code>OperationId</code> and the <a
+         * <p>Create an App Runner service. After the service is created, the action also
+         * automatically starts a deployment.</p> <p>This is an asynchronous operation. On
+         * a successful call, you can use the returned <code>OperationId</code> and the <a
          * href="https://docs.aws.amazon.com/apprunner/latest/api/API_ListOperations.html">ListOperations</a>
          * call to track the operation's progress.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateService">AWS
@@ -408,8 +407,8 @@ namespace Model
         virtual void CreateServiceAsync(const Model::CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Delete an AWS App Runner automatic scaling configuration resource. You can
-         * delete a specific revision or the latest active revision. You can't delete a
+         * <p>Delete an App Runner automatic scaling configuration resource. You can delete
+         * a specific revision or the latest active revision. You can't delete a
          * configuration that's used by one or more App Runner services.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteAutoScalingConfiguration">AWS
@@ -418,8 +417,8 @@ namespace Model
         virtual Model::DeleteAutoScalingConfigurationOutcome DeleteAutoScalingConfiguration(const Model::DeleteAutoScalingConfigurationRequest& request) const;
 
         /**
-         * <p>Delete an AWS App Runner automatic scaling configuration resource. You can
-         * delete a specific revision or the latest active revision. You can't delete a
+         * <p>Delete an App Runner automatic scaling configuration resource. You can delete
+         * a specific revision or the latest active revision. You can't delete a
          * configuration that's used by one or more App Runner services.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteAutoScalingConfiguration">AWS
@@ -430,8 +429,8 @@ namespace Model
         virtual Model::DeleteAutoScalingConfigurationOutcomeCallable DeleteAutoScalingConfigurationCallable(const Model::DeleteAutoScalingConfigurationRequest& request) const;
 
         /**
-         * <p>Delete an AWS App Runner automatic scaling configuration resource. You can
-         * delete a specific revision or the latest active revision. You can't delete a
+         * <p>Delete an App Runner automatic scaling configuration resource. You can delete
+         * a specific revision or the latest active revision. You can't delete a
          * configuration that's used by one or more App Runner services.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteAutoScalingConfiguration">AWS
@@ -442,7 +441,7 @@ namespace Model
         virtual void DeleteAutoScalingConfigurationAsync(const Model::DeleteAutoScalingConfigurationRequest& request, const DeleteAutoScalingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Delete an AWS App Runner connection. You must first ensure that there are no
+         * <p>Delete an App Runner connection. You must first ensure that there are no
          * running App Runner services that use this connection. If there are any, the
          * <code>DeleteConnection</code> action fails.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteConnection">AWS
@@ -451,7 +450,7 @@ namespace Model
         virtual Model::DeleteConnectionOutcome DeleteConnection(const Model::DeleteConnectionRequest& request) const;
 
         /**
-         * <p>Delete an AWS App Runner connection. You must first ensure that there are no
+         * <p>Delete an App Runner connection. You must first ensure that there are no
          * running App Runner services that use this connection. If there are any, the
          * <code>DeleteConnection</code> action fails.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteConnection">AWS
@@ -462,7 +461,7 @@ namespace Model
         virtual Model::DeleteConnectionOutcomeCallable DeleteConnectionCallable(const Model::DeleteConnectionRequest& request) const;
 
         /**
-         * <p>Delete an AWS App Runner connection. You must first ensure that there are no
+         * <p>Delete an App Runner connection. You must first ensure that there are no
          * running App Runner services that use this connection. If there are any, the
          * <code>DeleteConnection</code> action fails.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteConnection">AWS
@@ -473,8 +472,8 @@ namespace Model
         virtual void DeleteConnectionAsync(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Delete an AWS App Runner service.</p> <p>This is an asynchronous operation.
-         * On a successful call, you can use the returned <code>OperationId</code> and the
+         * <p>Delete an App Runner service.</p> <p>This is an asynchronous operation. On a
+         * successful call, you can use the returned <code>OperationId</code> and the
          * <a>ListOperations</a> call to track the operation's progress.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteService">AWS
@@ -483,8 +482,8 @@ namespace Model
         virtual Model::DeleteServiceOutcome DeleteService(const Model::DeleteServiceRequest& request) const;
 
         /**
-         * <p>Delete an AWS App Runner service.</p> <p>This is an asynchronous operation.
-         * On a successful call, you can use the returned <code>OperationId</code> and the
+         * <p>Delete an App Runner service.</p> <p>This is an asynchronous operation. On a
+         * successful call, you can use the returned <code>OperationId</code> and the
          * <a>ListOperations</a> call to track the operation's progress.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteService">AWS
@@ -495,8 +494,8 @@ namespace Model
         virtual Model::DeleteServiceOutcomeCallable DeleteServiceCallable(const Model::DeleteServiceRequest& request) const;
 
         /**
-         * <p>Delete an AWS App Runner service.</p> <p>This is an asynchronous operation.
-         * On a successful call, you can use the returned <code>OperationId</code> and the
+         * <p>Delete an App Runner service.</p> <p>This is an asynchronous operation. On a
+         * successful call, you can use the returned <code>OperationId</code> and the
          * <a>ListOperations</a> call to track the operation's progress.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteService">AWS
@@ -507,16 +506,16 @@ namespace Model
         virtual void DeleteServiceAsync(const Model::DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Return a full description of an AWS App Runner automatic scaling
-         * configuration resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Return a full description of an App Runner automatic scaling configuration
+         * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeAutoScalingConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeAutoScalingConfigurationOutcome DescribeAutoScalingConfiguration(const Model::DescribeAutoScalingConfigurationRequest& request) const;
 
         /**
-         * <p>Return a full description of an AWS App Runner automatic scaling
-         * configuration resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Return a full description of an App Runner automatic scaling configuration
+         * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeAutoScalingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -525,8 +524,8 @@ namespace Model
         virtual Model::DescribeAutoScalingConfigurationOutcomeCallable DescribeAutoScalingConfigurationCallable(const Model::DescribeAutoScalingConfigurationRequest& request) const;
 
         /**
-         * <p>Return a full description of an AWS App Runner automatic scaling
-         * configuration resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Return a full description of an App Runner automatic scaling configuration
+         * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeAutoScalingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -535,16 +534,16 @@ namespace Model
         virtual void DescribeAutoScalingConfigurationAsync(const Model::DescribeAutoScalingConfigurationRequest& request, const DescribeAutoScalingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Return a description of custom domain names that are associated with an AWS
-         * App Runner service.</p><p><h3>See Also:</h3>   <a
+         * <p>Return a description of custom domain names that are associated with an App
+         * Runner service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeCustomDomains">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeCustomDomainsOutcome DescribeCustomDomains(const Model::DescribeCustomDomainsRequest& request) const;
 
         /**
-         * <p>Return a description of custom domain names that are associated with an AWS
-         * App Runner service.</p><p><h3>See Also:</h3>   <a
+         * <p>Return a description of custom domain names that are associated with an App
+         * Runner service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeCustomDomains">AWS
          * API Reference</a></p>
          *
@@ -553,8 +552,8 @@ namespace Model
         virtual Model::DescribeCustomDomainsOutcomeCallable DescribeCustomDomainsCallable(const Model::DescribeCustomDomainsRequest& request) const;
 
         /**
-         * <p>Return a description of custom domain names that are associated with an AWS
-         * App Runner service.</p><p><h3>See Also:</h3>   <a
+         * <p>Return a description of custom domain names that are associated with an App
+         * Runner service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeCustomDomains">AWS
          * API Reference</a></p>
          *
@@ -563,16 +562,16 @@ namespace Model
         virtual void DescribeCustomDomainsAsync(const Model::DescribeCustomDomainsRequest& request, const DescribeCustomDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Return a full description of an AWS App Runner service.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Return a full description of an App Runner service.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeService">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeServiceOutcome DescribeService(const Model::DescribeServiceRequest& request) const;
 
         /**
-         * <p>Return a full description of an AWS App Runner service.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Return a full description of an App Runner service.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeService">AWS
          * API Reference</a></p>
          *
@@ -581,8 +580,8 @@ namespace Model
         virtual Model::DescribeServiceOutcomeCallable DescribeServiceCallable(const Model::DescribeServiceRequest& request) const;
 
         /**
-         * <p>Return a full description of an AWS App Runner service.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Return a full description of an App Runner service.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeService">AWS
          * API Reference</a></p>
          *
@@ -591,7 +590,7 @@ namespace Model
         virtual void DescribeServiceAsync(const Model::DescribeServiceRequest& request, const DescribeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociate a custom domain name from an AWS App Runner service.</p>
+         * <p>Disassociate a custom domain name from an App Runner service.</p>
          * <p>Certificates tracking domain validity are associated with a custom domain and
          * are stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide">AWS
          * Certificate Manager (ACM)</a>. These certificates aren't deleted as part of this
@@ -603,7 +602,7 @@ namespace Model
         virtual Model::DisassociateCustomDomainOutcome DisassociateCustomDomain(const Model::DisassociateCustomDomainRequest& request) const;
 
         /**
-         * <p>Disassociate a custom domain name from an AWS App Runner service.</p>
+         * <p>Disassociate a custom domain name from an App Runner service.</p>
          * <p>Certificates tracking domain validity are associated with a custom domain and
          * are stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide">AWS
          * Certificate Manager (ACM)</a>. These certificates aren't deleted as part of this
@@ -617,7 +616,7 @@ namespace Model
         virtual Model::DisassociateCustomDomainOutcomeCallable DisassociateCustomDomainCallable(const Model::DisassociateCustomDomainRequest& request) const;
 
         /**
-         * <p>Disassociate a custom domain name from an AWS App Runner service.</p>
+         * <p>Disassociate a custom domain name from an App Runner service.</p>
          * <p>Certificates tracking domain validity are associated with a custom domain and
          * are stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide">AWS
          * Certificate Manager (ACM)</a>. These certificates aren't deleted as part of this
@@ -631,20 +630,22 @@ namespace Model
         virtual void DisassociateCustomDomainAsync(const Model::DisassociateCustomDomainRequest& request, const DisassociateCustomDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of AWS App Runner automatic scaling configurations in your AWS
-         * account. You can query the revisions for a specific configuration name or the
-         * revisions for all configurations in your account. You can optionally query only
-         * the latest revision of each requested name.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of App Runner automatic scaling configurations in your Amazon
+         * Web Services account. You can query the revisions for a specific configuration
+         * name or the revisions for all configurations in your account. You can optionally
+         * query only the latest revision of each requested name.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListAutoScalingConfigurations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAutoScalingConfigurationsOutcome ListAutoScalingConfigurations(const Model::ListAutoScalingConfigurationsRequest& request) const;
 
         /**
-         * <p>Returns a list of AWS App Runner automatic scaling configurations in your AWS
-         * account. You can query the revisions for a specific configuration name or the
-         * revisions for all configurations in your account. You can optionally query only
-         * the latest revision of each requested name.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of App Runner automatic scaling configurations in your Amazon
+         * Web Services account. You can query the revisions for a specific configuration
+         * name or the revisions for all configurations in your account. You can optionally
+         * query only the latest revision of each requested name.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListAutoScalingConfigurations">AWS
          * API Reference</a></p>
          *
@@ -653,10 +654,11 @@ namespace Model
         virtual Model::ListAutoScalingConfigurationsOutcomeCallable ListAutoScalingConfigurationsCallable(const Model::ListAutoScalingConfigurationsRequest& request) const;
 
         /**
-         * <p>Returns a list of AWS App Runner automatic scaling configurations in your AWS
-         * account. You can query the revisions for a specific configuration name or the
-         * revisions for all configurations in your account. You can optionally query only
-         * the latest revision of each requested name.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of App Runner automatic scaling configurations in your Amazon
+         * Web Services account. You can query the revisions for a specific configuration
+         * name or the revisions for all configurations in your account. You can optionally
+         * query only the latest revision of each requested name.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListAutoScalingConfigurations">AWS
          * API Reference</a></p>
          *
@@ -665,16 +667,16 @@ namespace Model
         virtual void ListAutoScalingConfigurationsAsync(const Model::ListAutoScalingConfigurationsRequest& request, const ListAutoScalingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of AWS App Runner connections that are associated with your
-         * AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of App Runner connections that are associated with your Amazon
+         * Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListConnections">AWS
          * API Reference</a></p>
          */
         virtual Model::ListConnectionsOutcome ListConnections(const Model::ListConnectionsRequest& request) const;
 
         /**
-         * <p>Returns a list of AWS App Runner connections that are associated with your
-         * AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of App Runner connections that are associated with your Amazon
+         * Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListConnections">AWS
          * API Reference</a></p>
          *
@@ -683,8 +685,8 @@ namespace Model
         virtual Model::ListConnectionsOutcomeCallable ListConnectionsCallable(const Model::ListConnectionsRequest& request) const;
 
         /**
-         * <p>Returns a list of AWS App Runner connections that are associated with your
-         * AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of App Runner connections that are associated with your Amazon
+         * Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListConnections">AWS
          * API Reference</a></p>
          *
@@ -693,7 +695,7 @@ namespace Model
         virtual void ListConnectionsAsync(const Model::ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Return a list of operations that occurred on an AWS App Runner service.</p>
+         * <p>Return a list of operations that occurred on an App Runner service.</p>
          * <p>The resulting list of <a>OperationSummary</a> objects is sorted in reverse
          * chronological order. The first object on the list represents the last started
          * operation.</p><p><h3>See Also:</h3>   <a
@@ -703,7 +705,7 @@ namespace Model
         virtual Model::ListOperationsOutcome ListOperations(const Model::ListOperationsRequest& request) const;
 
         /**
-         * <p>Return a list of operations that occurred on an AWS App Runner service.</p>
+         * <p>Return a list of operations that occurred on an App Runner service.</p>
          * <p>The resulting list of <a>OperationSummary</a> objects is sorted in reverse
          * chronological order. The first object on the list represents the last started
          * operation.</p><p><h3>See Also:</h3>   <a
@@ -715,7 +717,7 @@ namespace Model
         virtual Model::ListOperationsOutcomeCallable ListOperationsCallable(const Model::ListOperationsRequest& request) const;
 
         /**
-         * <p>Return a list of operations that occurred on an AWS App Runner service.</p>
+         * <p>Return a list of operations that occurred on an App Runner service.</p>
          * <p>The resulting list of <a>OperationSummary</a> objects is sorted in reverse
          * chronological order. The first object on the list represents the last started
          * operation.</p><p><h3>See Also:</h3>   <a
@@ -727,7 +729,7 @@ namespace Model
         virtual void ListOperationsAsync(const Model::ListOperationsRequest& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of running AWS App Runner services in your AWS
+         * <p>Returns a list of running App Runner services in your Amazon Web Services
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListServices">AWS
          * API Reference</a></p>
@@ -735,7 +737,7 @@ namespace Model
         virtual Model::ListServicesOutcome ListServices(const Model::ListServicesRequest& request) const;
 
         /**
-         * <p>Returns a list of running AWS App Runner services in your AWS
+         * <p>Returns a list of running App Runner services in your Amazon Web Services
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListServices">AWS
          * API Reference</a></p>
@@ -745,7 +747,7 @@ namespace Model
         virtual Model::ListServicesOutcomeCallable ListServicesCallable(const Model::ListServicesRequest& request) const;
 
         /**
-         * <p>Returns a list of running AWS App Runner services in your AWS
+         * <p>Returns a list of running App Runner services in your Amazon Web Services
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListServices">AWS
          * API Reference</a></p>
@@ -755,16 +757,16 @@ namespace Model
         virtual void ListServicesAsync(const Model::ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List tags that are associated with for an AWS App Runner resource. The
-         * response contains a list of tag key-value pairs.</p><p><h3>See Also:</h3>   <a
+         * <p>List tags that are associated with for an App Runner resource. The response
+         * contains a list of tag key-value pairs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>List tags that are associated with for an AWS App Runner resource. The
-         * response contains a list of tag key-value pairs.</p><p><h3>See Also:</h3>   <a
+         * <p>List tags that are associated with for an App Runner resource. The response
+         * contains a list of tag key-value pairs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -773,8 +775,8 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>List tags that are associated with for an AWS App Runner resource. The
-         * response contains a list of tag key-value pairs.</p><p><h3>See Also:</h3>   <a
+         * <p>List tags that are associated with for an App Runner resource. The response
+         * contains a list of tag key-value pairs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -783,8 +785,8 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Pause an active AWS App Runner service. App Runner reduces compute capacity
-         * for the service to zero and loses state (for example, ephemeral storage is
+         * <p>Pause an active App Runner service. App Runner reduces compute capacity for
+         * the service to zero and loses state (for example, ephemeral storage is
          * removed).</p> <p>This is an asynchronous operation. On a successful call, you
          * can use the returned <code>OperationId</code> and the <a>ListOperations</a> call
          * to track the operation's progress.</p><p><h3>See Also:</h3>   <a
@@ -794,8 +796,8 @@ namespace Model
         virtual Model::PauseServiceOutcome PauseService(const Model::PauseServiceRequest& request) const;
 
         /**
-         * <p>Pause an active AWS App Runner service. App Runner reduces compute capacity
-         * for the service to zero and loses state (for example, ephemeral storage is
+         * <p>Pause an active App Runner service. App Runner reduces compute capacity for
+         * the service to zero and loses state (for example, ephemeral storage is
          * removed).</p> <p>This is an asynchronous operation. On a successful call, you
          * can use the returned <code>OperationId</code> and the <a>ListOperations</a> call
          * to track the operation's progress.</p><p><h3>See Also:</h3>   <a
@@ -807,8 +809,8 @@ namespace Model
         virtual Model::PauseServiceOutcomeCallable PauseServiceCallable(const Model::PauseServiceRequest& request) const;
 
         /**
-         * <p>Pause an active AWS App Runner service. App Runner reduces compute capacity
-         * for the service to zero and loses state (for example, ephemeral storage is
+         * <p>Pause an active App Runner service. App Runner reduces compute capacity for
+         * the service to zero and loses state (for example, ephemeral storage is
          * removed).</p> <p>This is an asynchronous operation. On a successful call, you
          * can use the returned <code>OperationId</code> and the <a>ListOperations</a> call
          * to track the operation's progress.</p><p><h3>See Also:</h3>   <a
@@ -820,22 +822,20 @@ namespace Model
         virtual void PauseServiceAsync(const Model::PauseServiceRequest& request, const PauseServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Resume an active AWS App Runner service. App Runner provisions compute
-         * capacity for the service.</p> <p>This is an asynchronous operation. On a
-         * successful call, you can use the returned <code>OperationId</code> and the
-         * <a>ListOperations</a> call to track the operation's progress.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Resume an active App Runner service. App Runner provisions compute capacity
+         * for the service.</p> <p>This is an asynchronous operation. On a successful call,
+         * you can use the returned <code>OperationId</code> and the <a>ListOperations</a>
+         * call to track the operation's progress.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ResumeService">AWS
          * API Reference</a></p>
          */
         virtual Model::ResumeServiceOutcome ResumeService(const Model::ResumeServiceRequest& request) const;
 
         /**
-         * <p>Resume an active AWS App Runner service. App Runner provisions compute
-         * capacity for the service.</p> <p>This is an asynchronous operation. On a
-         * successful call, you can use the returned <code>OperationId</code> and the
-         * <a>ListOperations</a> call to track the operation's progress.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Resume an active App Runner service. App Runner provisions compute capacity
+         * for the service.</p> <p>This is an asynchronous operation. On a successful call,
+         * you can use the returned <code>OperationId</code> and the <a>ListOperations</a>
+         * call to track the operation's progress.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ResumeService">AWS
          * API Reference</a></p>
          *
@@ -844,11 +844,10 @@ namespace Model
         virtual Model::ResumeServiceOutcomeCallable ResumeServiceCallable(const Model::ResumeServiceRequest& request) const;
 
         /**
-         * <p>Resume an active AWS App Runner service. App Runner provisions compute
-         * capacity for the service.</p> <p>This is an asynchronous operation. On a
-         * successful call, you can use the returned <code>OperationId</code> and the
-         * <a>ListOperations</a> call to track the operation's progress.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Resume an active App Runner service. App Runner provisions compute capacity
+         * for the service.</p> <p>This is an asynchronous operation. On a successful call,
+         * you can use the returned <code>OperationId</code> and the <a>ListOperations</a>
+         * call to track the operation's progress.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ResumeService">AWS
          * API Reference</a></p>
          *
@@ -858,11 +857,11 @@ namespace Model
 
         /**
          * <p>Initiate a manual deployment of the latest commit in a source code repository
-         * or the latest image in a source image repository to an AWS App Runner
-         * service.</p> <p>For a source code repository, App Runner retrieves the commit
-         * and builds a Docker image. For a source image repository, App Runner retrieves
-         * the latest Docker image. In both cases, App Runner then deploys the new image to
-         * your service and starts a new container instance.</p> <p>This is an asynchronous
+         * or the latest image in a source image repository to an App Runner service.</p>
+         * <p>For a source code repository, App Runner retrieves the commit and builds a
+         * Docker image. For a source image repository, App Runner retrieves the latest
+         * Docker image. In both cases, App Runner then deploys the new image to your
+         * service and starts a new container instance.</p> <p>This is an asynchronous
          * operation. On a successful call, you can use the returned
          * <code>OperationId</code> and the <a>ListOperations</a> call to track the
          * operation's progress.</p><p><h3>See Also:</h3>   <a
@@ -873,11 +872,11 @@ namespace Model
 
         /**
          * <p>Initiate a manual deployment of the latest commit in a source code repository
-         * or the latest image in a source image repository to an AWS App Runner
-         * service.</p> <p>For a source code repository, App Runner retrieves the commit
-         * and builds a Docker image. For a source image repository, App Runner retrieves
-         * the latest Docker image. In both cases, App Runner then deploys the new image to
-         * your service and starts a new container instance.</p> <p>This is an asynchronous
+         * or the latest image in a source image repository to an App Runner service.</p>
+         * <p>For a source code repository, App Runner retrieves the commit and builds a
+         * Docker image. For a source image repository, App Runner retrieves the latest
+         * Docker image. In both cases, App Runner then deploys the new image to your
+         * service and starts a new container instance.</p> <p>This is an asynchronous
          * operation. On a successful call, you can use the returned
          * <code>OperationId</code> and the <a>ListOperations</a> call to track the
          * operation's progress.</p><p><h3>See Also:</h3>   <a
@@ -890,11 +889,11 @@ namespace Model
 
         /**
          * <p>Initiate a manual deployment of the latest commit in a source code repository
-         * or the latest image in a source image repository to an AWS App Runner
-         * service.</p> <p>For a source code repository, App Runner retrieves the commit
-         * and builds a Docker image. For a source image repository, App Runner retrieves
-         * the latest Docker image. In both cases, App Runner then deploys the new image to
-         * your service and starts a new container instance.</p> <p>This is an asynchronous
+         * or the latest image in a source image repository to an App Runner service.</p>
+         * <p>For a source code repository, App Runner retrieves the commit and builds a
+         * Docker image. For a source image repository, App Runner retrieves the latest
+         * Docker image. In both cases, App Runner then deploys the new image to your
+         * service and starts a new container instance.</p> <p>This is an asynchronous
          * operation. On a successful call, you can use the returned
          * <code>OperationId</code> and the <a>ListOperations</a> call to track the
          * operation's progress.</p><p><h3>See Also:</h3>   <a
@@ -959,7 +958,7 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Update an AWS App Runner service. You can update the source configuration and
+         * <p>Update an App Runner service. You can update the source configuration and
          * instance configuration of the service. You can also update the ARN of the auto
          * scaling configuration resource that's associated with the service. However, you
          * can't change the name or the encryption configuration of the service. These can
@@ -975,7 +974,7 @@ namespace Model
         virtual Model::UpdateServiceOutcome UpdateService(const Model::UpdateServiceRequest& request) const;
 
         /**
-         * <p>Update an AWS App Runner service. You can update the source configuration and
+         * <p>Update an App Runner service. You can update the source configuration and
          * instance configuration of the service. You can also update the ARN of the auto
          * scaling configuration resource that's associated with the service. However, you
          * can't change the name or the encryption configuration of the service. These can
@@ -993,7 +992,7 @@ namespace Model
         virtual Model::UpdateServiceOutcomeCallable UpdateServiceCallable(const Model::UpdateServiceRequest& request) const;
 
         /**
-         * <p>Update an AWS App Runner service. You can update the source configuration and
+         * <p>Update an App Runner service. You can update the source configuration and
          * instance configuration of the service. You can also update the ARN of the auto
          * scaling configuration resource that's associated with the service. However, you
          * can't change the name or the encryption configuration of the service. These can

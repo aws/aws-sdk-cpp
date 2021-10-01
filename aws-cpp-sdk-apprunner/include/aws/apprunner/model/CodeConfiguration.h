@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the configuration that AWS App Runner uses to build and run an App
+   * <p>Describes the configuration that App Runner uses to build and run an App
    * Runner service from a source code repository.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CodeConfiguration">AWS
    * API Reference</a></p>

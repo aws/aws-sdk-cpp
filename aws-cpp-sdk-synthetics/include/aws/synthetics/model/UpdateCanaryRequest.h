@@ -12,6 +12,7 @@
 #include <aws/synthetics/model/CanaryRunConfigInput.h>
 #include <aws/synthetics/model/VpcConfigInput.h>
 #include <aws/synthetics/model/VisualReferenceInput.h>
+#include <aws/synthetics/model/ArtifactConfigInput.h>
 #include <utility>
 
 namespace Aws
@@ -572,6 +573,106 @@ namespace Model
      */
     inline UpdateCanaryRequest& WithVisualReference(VisualReferenceInput&& value) { SetVisualReference(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The location in Amazon S3 where Synthetics stores artifacts from the test
+     * runs of this canary. Artifacts include the log file, screenshots, and HAR files.
+     * The name of the S3 bucket can't include a period (.).</p>
+     */
+    inline const Aws::String& GetArtifactS3Location() const{ return m_artifactS3Location; }
+
+    /**
+     * <p>The location in Amazon S3 where Synthetics stores artifacts from the test
+     * runs of this canary. Artifacts include the log file, screenshots, and HAR files.
+     * The name of the S3 bucket can't include a period (.).</p>
+     */
+    inline bool ArtifactS3LocationHasBeenSet() const { return m_artifactS3LocationHasBeenSet; }
+
+    /**
+     * <p>The location in Amazon S3 where Synthetics stores artifacts from the test
+     * runs of this canary. Artifacts include the log file, screenshots, and HAR files.
+     * The name of the S3 bucket can't include a period (.).</p>
+     */
+    inline void SetArtifactS3Location(const Aws::String& value) { m_artifactS3LocationHasBeenSet = true; m_artifactS3Location = value; }
+
+    /**
+     * <p>The location in Amazon S3 where Synthetics stores artifacts from the test
+     * runs of this canary. Artifacts include the log file, screenshots, and HAR files.
+     * The name of the S3 bucket can't include a period (.).</p>
+     */
+    inline void SetArtifactS3Location(Aws::String&& value) { m_artifactS3LocationHasBeenSet = true; m_artifactS3Location = std::move(value); }
+
+    /**
+     * <p>The location in Amazon S3 where Synthetics stores artifacts from the test
+     * runs of this canary. Artifacts include the log file, screenshots, and HAR files.
+     * The name of the S3 bucket can't include a period (.).</p>
+     */
+    inline void SetArtifactS3Location(const char* value) { m_artifactS3LocationHasBeenSet = true; m_artifactS3Location.assign(value); }
+
+    /**
+     * <p>The location in Amazon S3 where Synthetics stores artifacts from the test
+     * runs of this canary. Artifacts include the log file, screenshots, and HAR files.
+     * The name of the S3 bucket can't include a period (.).</p>
+     */
+    inline UpdateCanaryRequest& WithArtifactS3Location(const Aws::String& value) { SetArtifactS3Location(value); return *this;}
+
+    /**
+     * <p>The location in Amazon S3 where Synthetics stores artifacts from the test
+     * runs of this canary. Artifacts include the log file, screenshots, and HAR files.
+     * The name of the S3 bucket can't include a period (.).</p>
+     */
+    inline UpdateCanaryRequest& WithArtifactS3Location(Aws::String&& value) { SetArtifactS3Location(std::move(value)); return *this;}
+
+    /**
+     * <p>The location in Amazon S3 where Synthetics stores artifacts from the test
+     * runs of this canary. Artifacts include the log file, screenshots, and HAR files.
+     * The name of the S3 bucket can't include a period (.).</p>
+     */
+    inline UpdateCanaryRequest& WithArtifactS3Location(const char* value) { SetArtifactS3Location(value); return *this;}
+
+
+    /**
+     * <p>A structure that contains the configuration for canary artifacts, including
+     * the encryption-at-rest settings for artifacts that the canary uploads to Amazon
+     * S3.</p>
+     */
+    inline const ArtifactConfigInput& GetArtifactConfig() const{ return m_artifactConfig; }
+
+    /**
+     * <p>A structure that contains the configuration for canary artifacts, including
+     * the encryption-at-rest settings for artifacts that the canary uploads to Amazon
+     * S3.</p>
+     */
+    inline bool ArtifactConfigHasBeenSet() const { return m_artifactConfigHasBeenSet; }
+
+    /**
+     * <p>A structure that contains the configuration for canary artifacts, including
+     * the encryption-at-rest settings for artifacts that the canary uploads to Amazon
+     * S3.</p>
+     */
+    inline void SetArtifactConfig(const ArtifactConfigInput& value) { m_artifactConfigHasBeenSet = true; m_artifactConfig = value; }
+
+    /**
+     * <p>A structure that contains the configuration for canary artifacts, including
+     * the encryption-at-rest settings for artifacts that the canary uploads to Amazon
+     * S3.</p>
+     */
+    inline void SetArtifactConfig(ArtifactConfigInput&& value) { m_artifactConfigHasBeenSet = true; m_artifactConfig = std::move(value); }
+
+    /**
+     * <p>A structure that contains the configuration for canary artifacts, including
+     * the encryption-at-rest settings for artifacts that the canary uploads to Amazon
+     * S3.</p>
+     */
+    inline UpdateCanaryRequest& WithArtifactConfig(const ArtifactConfigInput& value) { SetArtifactConfig(value); return *this;}
+
+    /**
+     * <p>A structure that contains the configuration for canary artifacts, including
+     * the encryption-at-rest settings for artifacts that the canary uploads to Amazon
+     * S3.</p>
+     */
+    inline UpdateCanaryRequest& WithArtifactConfig(ArtifactConfigInput&& value) { SetArtifactConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -603,6 +704,12 @@ namespace Model
 
     VisualReferenceInput m_visualReference;
     bool m_visualReferenceHasBeenSet;
+
+    Aws::String m_artifactS3Location;
+    bool m_artifactS3LocationHasBeenSet;
+
+    ArtifactConfigInput m_artifactConfig;
+    bool m_artifactConfigHasBeenSet;
   };
 
 } // namespace Model

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Identifies a version of code that AWS App Runner refers to within a source
-   * code repository.</p><p><h3>See Also:</h3>   <a
+   * <p>Identifies a version of code that App Runner refers to within a source code
+   * repository.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/SourceCodeVersion">AWS
    * API Reference</a></p>
    */

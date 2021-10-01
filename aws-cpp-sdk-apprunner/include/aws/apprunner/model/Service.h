@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an AWS App Runner service. It can describe a service in any state,
+   * <p>Describes an App Runner service. It can describe a service in any state,
    * including deleted services.</p> <p>This type contains the full information about
    * a service, including configuration details. It's returned by the <a
    * href="https://docs.aws.amazon.com/apprunner/latest/api/API_CreateService.html">CreateService</a>,
@@ -98,50 +98,50 @@ namespace Model
 
 
     /**
-     * <p>An ID that App Runner generated for this service. It's unique within the AWS
-     * Region.</p>
+     * <p>An ID that App Runner generated for this service. It's unique within the
+     * Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetServiceId() const{ return m_serviceId; }
 
     /**
-     * <p>An ID that App Runner generated for this service. It's unique within the AWS
-     * Region.</p>
+     * <p>An ID that App Runner generated for this service. It's unique within the
+     * Amazon Web Services Region.</p>
      */
     inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
 
     /**
-     * <p>An ID that App Runner generated for this service. It's unique within the AWS
-     * Region.</p>
+     * <p>An ID that App Runner generated for this service. It's unique within the
+     * Amazon Web Services Region.</p>
      */
     inline void SetServiceId(const Aws::String& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
 
     /**
-     * <p>An ID that App Runner generated for this service. It's unique within the AWS
-     * Region.</p>
+     * <p>An ID that App Runner generated for this service. It's unique within the
+     * Amazon Web Services Region.</p>
      */
     inline void SetServiceId(Aws::String&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::move(value); }
 
     /**
-     * <p>An ID that App Runner generated for this service. It's unique within the AWS
-     * Region.</p>
+     * <p>An ID that App Runner generated for this service. It's unique within the
+     * Amazon Web Services Region.</p>
      */
     inline void SetServiceId(const char* value) { m_serviceIdHasBeenSet = true; m_serviceId.assign(value); }
 
     /**
-     * <p>An ID that App Runner generated for this service. It's unique within the AWS
-     * Region.</p>
+     * <p>An ID that App Runner generated for this service. It's unique within the
+     * Amazon Web Services Region.</p>
      */
     inline Service& WithServiceId(const Aws::String& value) { SetServiceId(value); return *this;}
 
     /**
-     * <p>An ID that App Runner generated for this service. It's unique within the AWS
-     * Region.</p>
+     * <p>An ID that App Runner generated for this service. It's unique within the
+     * Amazon Web Services Region.</p>
      */
     inline Service& WithServiceId(Aws::String&& value) { SetServiceId(std::move(value)); return *this;}
 
     /**
-     * <p>An ID that App Runner generated for this service. It's unique within the AWS
-     * Region.</p>
+     * <p>An ID that App Runner generated for this service. It's unique within the
+     * Amazon Web Services Region.</p>
      */
     inline Service& WithServiceId(const char* value) { SetServiceId(value); return *this;}
 
@@ -497,42 +497,48 @@ namespace Model
     /**
      * <p>The encryption key that App Runner uses to encrypt the service logs and the
      * copy of the source repository that App Runner maintains for the service. It can
-     * be either a customer-provided encryption key or an AWS managed CMK.</p>
+     * be either a customer-provided encryption key or an Amazon Web Services managed
+     * CMK.</p>
      */
     inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
 
     /**
      * <p>The encryption key that App Runner uses to encrypt the service logs and the
      * copy of the source repository that App Runner maintains for the service. It can
-     * be either a customer-provided encryption key or an AWS managed CMK.</p>
+     * be either a customer-provided encryption key or an Amazon Web Services managed
+     * CMK.</p>
      */
     inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
 
     /**
      * <p>The encryption key that App Runner uses to encrypt the service logs and the
      * copy of the source repository that App Runner maintains for the service. It can
-     * be either a customer-provided encryption key or an AWS managed CMK.</p>
+     * be either a customer-provided encryption key or an Amazon Web Services managed
+     * CMK.</p>
      */
     inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
 
     /**
      * <p>The encryption key that App Runner uses to encrypt the service logs and the
      * copy of the source repository that App Runner maintains for the service. It can
-     * be either a customer-provided encryption key or an AWS managed CMK.</p>
+     * be either a customer-provided encryption key or an Amazon Web Services managed
+     * CMK.</p>
      */
     inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
 
     /**
      * <p>The encryption key that App Runner uses to encrypt the service logs and the
      * copy of the source repository that App Runner maintains for the service. It can
-     * be either a customer-provided encryption key or an AWS managed CMK.</p>
+     * be either a customer-provided encryption key or an Amazon Web Services managed
+     * CMK.</p>
      */
     inline Service& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
 
     /**
      * <p>The encryption key that App Runner uses to encrypt the service logs and the
      * copy of the source repository that App Runner maintains for the service. It can
-     * be either a customer-provided encryption key or an AWS managed CMK.</p>
+     * be either a customer-provided encryption key or an Amazon Web Services managed
+     * CMK.</p>
      */
     inline Service& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
 
