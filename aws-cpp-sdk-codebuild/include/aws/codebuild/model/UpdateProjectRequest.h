@@ -493,42 +493,42 @@ namespace Model
 
 
     /**
-     * <p> An array of <code>ProjectSource</code> objects. </p>
+     * <p> An array of <code>ProjectArtifact</code> objects. </p>
      */
     inline const Aws::Vector<ProjectArtifacts>& GetSecondaryArtifacts() const{ return m_secondaryArtifacts; }
 
     /**
-     * <p> An array of <code>ProjectSource</code> objects. </p>
+     * <p> An array of <code>ProjectArtifact</code> objects. </p>
      */
     inline bool SecondaryArtifactsHasBeenSet() const { return m_secondaryArtifactsHasBeenSet; }
 
     /**
-     * <p> An array of <code>ProjectSource</code> objects. </p>
+     * <p> An array of <code>ProjectArtifact</code> objects. </p>
      */
     inline void SetSecondaryArtifacts(const Aws::Vector<ProjectArtifacts>& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts = value; }
 
     /**
-     * <p> An array of <code>ProjectSource</code> objects. </p>
+     * <p> An array of <code>ProjectArtifact</code> objects. </p>
      */
     inline void SetSecondaryArtifacts(Aws::Vector<ProjectArtifacts>&& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts = std::move(value); }
 
     /**
-     * <p> An array of <code>ProjectSource</code> objects. </p>
+     * <p> An array of <code>ProjectArtifact</code> objects. </p>
      */
     inline UpdateProjectRequest& WithSecondaryArtifacts(const Aws::Vector<ProjectArtifacts>& value) { SetSecondaryArtifacts(value); return *this;}
 
     /**
-     * <p> An array of <code>ProjectSource</code> objects. </p>
+     * <p> An array of <code>ProjectArtifact</code> objects. </p>
      */
     inline UpdateProjectRequest& WithSecondaryArtifacts(Aws::Vector<ProjectArtifacts>&& value) { SetSecondaryArtifacts(std::move(value)); return *this;}
 
     /**
-     * <p> An array of <code>ProjectSource</code> objects. </p>
+     * <p> An array of <code>ProjectArtifact</code> objects. </p>
      */
     inline UpdateProjectRequest& AddSecondaryArtifacts(const ProjectArtifacts& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts.push_back(value); return *this; }
 
     /**
-     * <p> An array of <code>ProjectSource</code> objects. </p>
+     * <p> An array of <code>ProjectArtifact</code> objects. </p>
      */
     inline UpdateProjectRequest& AddSecondaryArtifacts(ProjectArtifacts&& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts.push_back(std::move(value)); return *this; }
 

@@ -5917,11 +5917,12 @@ namespace Model
          * <a>DisconnectCustomKeyStore</a>. To reconnect the custom key store after the
          * update completes, use <a>ConnectCustomKeyStore</a>. To find the connection state
          * of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
-         * <p>Use the parameters of <code>UpdateCustomKeyStore</code> to edit your keystore
-         * settings.</p> <ul> <li> <p>Use the <b>NewCustomKeyStoreName</b> parameter to
-         * change the friendly name of the custom key store to the value that you
-         * specify.</p> <p> </p> </li> <li> <p>Use the <b>KeyStorePassword</b> parameter
-         * tell KMS the current password of the <a
+         * <p>The <code>CustomKeyStoreId</code> parameter is required in all commands. Use
+         * the other parameters of <code>UpdateCustomKeyStore</code> to edit your key store
+         * settings.</p> <ul> <li> <p>Use the <code>NewCustomKeyStoreName</code> parameter
+         * to change the friendly name of the custom key store to the value that you
+         * specify.</p> <p> </p> </li> <li> <p>Use the <code>KeyStorePassword</code>
+         * parameter tell KMS the current password of the <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
          * <code>kmsuser</code> crypto user (CU)</a> in the associated CloudHSM cluster.
          * You can use this parameter to <a
@@ -5929,12 +5930,12 @@ namespace Model
          * connection failures</a> that occur when KMS cannot log into the associated
          * cluster because the <code>kmsuser</code> password has changed. This value does
          * not change the password in the CloudHSM cluster.</p> <p> </p> </li> <li> <p>Use
-         * the <b>CloudHsmClusterId</b> parameter to associate the custom key store with a
-         * different, but related, CloudHSM cluster. You can use this parameter to repair a
-         * custom key store if its CloudHSM cluster becomes corrupted or is deleted, or
-         * when you need to create or restore a cluster from a backup. </p> </li> </ul>
-         * <p>If the operation succeeds, it returns a JSON object with no properties.</p>
-         * <p>This operation is part of the <a
+         * the <code>CloudHsmClusterId</code> parameter to associate the custom key store
+         * with a different, but related, CloudHSM cluster. You can use this parameter to
+         * repair a custom key store if its CloudHSM cluster becomes corrupted or is
+         * deleted, or when you need to create or restore a cluster from a backup. </p>
+         * </li> </ul> <p>If the operation succeeds, it returns a JSON object with no
+         * properties.</p> <p>This operation is part of the <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
          * Key Store feature</a> feature in KMS, which combines the convenience and
          * extensive integration of KMS with the isolation and control of a single-tenant
@@ -5961,11 +5962,12 @@ namespace Model
          * <a>DisconnectCustomKeyStore</a>. To reconnect the custom key store after the
          * update completes, use <a>ConnectCustomKeyStore</a>. To find the connection state
          * of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
-         * <p>Use the parameters of <code>UpdateCustomKeyStore</code> to edit your keystore
-         * settings.</p> <ul> <li> <p>Use the <b>NewCustomKeyStoreName</b> parameter to
-         * change the friendly name of the custom key store to the value that you
-         * specify.</p> <p> </p> </li> <li> <p>Use the <b>KeyStorePassword</b> parameter
-         * tell KMS the current password of the <a
+         * <p>The <code>CustomKeyStoreId</code> parameter is required in all commands. Use
+         * the other parameters of <code>UpdateCustomKeyStore</code> to edit your key store
+         * settings.</p> <ul> <li> <p>Use the <code>NewCustomKeyStoreName</code> parameter
+         * to change the friendly name of the custom key store to the value that you
+         * specify.</p> <p> </p> </li> <li> <p>Use the <code>KeyStorePassword</code>
+         * parameter tell KMS the current password of the <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
          * <code>kmsuser</code> crypto user (CU)</a> in the associated CloudHSM cluster.
          * You can use this parameter to <a
@@ -5973,12 +5975,12 @@ namespace Model
          * connection failures</a> that occur when KMS cannot log into the associated
          * cluster because the <code>kmsuser</code> password has changed. This value does
          * not change the password in the CloudHSM cluster.</p> <p> </p> </li> <li> <p>Use
-         * the <b>CloudHsmClusterId</b> parameter to associate the custom key store with a
-         * different, but related, CloudHSM cluster. You can use this parameter to repair a
-         * custom key store if its CloudHSM cluster becomes corrupted or is deleted, or
-         * when you need to create or restore a cluster from a backup. </p> </li> </ul>
-         * <p>If the operation succeeds, it returns a JSON object with no properties.</p>
-         * <p>This operation is part of the <a
+         * the <code>CloudHsmClusterId</code> parameter to associate the custom key store
+         * with a different, but related, CloudHSM cluster. You can use this parameter to
+         * repair a custom key store if its CloudHSM cluster becomes corrupted or is
+         * deleted, or when you need to create or restore a cluster from a backup. </p>
+         * </li> </ul> <p>If the operation succeeds, it returns a JSON object with no
+         * properties.</p> <p>This operation is part of the <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
          * Key Store feature</a> feature in KMS, which combines the convenience and
          * extensive integration of KMS with the isolation and control of a single-tenant
@@ -6007,11 +6009,12 @@ namespace Model
          * <a>DisconnectCustomKeyStore</a>. To reconnect the custom key store after the
          * update completes, use <a>ConnectCustomKeyStore</a>. To find the connection state
          * of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
-         * <p>Use the parameters of <code>UpdateCustomKeyStore</code> to edit your keystore
-         * settings.</p> <ul> <li> <p>Use the <b>NewCustomKeyStoreName</b> parameter to
-         * change the friendly name of the custom key store to the value that you
-         * specify.</p> <p> </p> </li> <li> <p>Use the <b>KeyStorePassword</b> parameter
-         * tell KMS the current password of the <a
+         * <p>The <code>CustomKeyStoreId</code> parameter is required in all commands. Use
+         * the other parameters of <code>UpdateCustomKeyStore</code> to edit your key store
+         * settings.</p> <ul> <li> <p>Use the <code>NewCustomKeyStoreName</code> parameter
+         * to change the friendly name of the custom key store to the value that you
+         * specify.</p> <p> </p> </li> <li> <p>Use the <code>KeyStorePassword</code>
+         * parameter tell KMS the current password of the <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
          * <code>kmsuser</code> crypto user (CU)</a> in the associated CloudHSM cluster.
          * You can use this parameter to <a
@@ -6019,12 +6022,12 @@ namespace Model
          * connection failures</a> that occur when KMS cannot log into the associated
          * cluster because the <code>kmsuser</code> password has changed. This value does
          * not change the password in the CloudHSM cluster.</p> <p> </p> </li> <li> <p>Use
-         * the <b>CloudHsmClusterId</b> parameter to associate the custom key store with a
-         * different, but related, CloudHSM cluster. You can use this parameter to repair a
-         * custom key store if its CloudHSM cluster becomes corrupted or is deleted, or
-         * when you need to create or restore a cluster from a backup. </p> </li> </ul>
-         * <p>If the operation succeeds, it returns a JSON object with no properties.</p>
-         * <p>This operation is part of the <a
+         * the <code>CloudHsmClusterId</code> parameter to associate the custom key store
+         * with a different, but related, CloudHSM cluster. You can use this parameter to
+         * repair a custom key store if its CloudHSM cluster becomes corrupted or is
+         * deleted, or when you need to create or restore a cluster from a backup. </p>
+         * </li> </ul> <p>If the operation succeeds, it returns a JSON object with no
+         * properties.</p> <p>This operation is part of the <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
          * Key Store feature</a> feature in KMS, which combines the convenience and
          * extensive integration of KMS with the isolation and control of a single-tenant
