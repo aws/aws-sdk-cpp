@@ -244,7 +244,7 @@ namespace Model
      * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
+     * days. Therefore, the “expire after days�� setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
      * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
@@ -256,7 +256,7 @@ namespace Model
      * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
+     * days. Therefore, the “expire after days�� setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
      * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
@@ -268,7 +268,7 @@ namespace Model
      * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
+     * days. Therefore, the “expire after days�� setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
      * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
@@ -280,7 +280,7 @@ namespace Model
      * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
+     * days. Therefore, the “expire after days�� setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
      * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
@@ -292,7 +292,7 @@ namespace Model
      * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
+     * days. Therefore, the “expire after days�� setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
      * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
@@ -304,7 +304,7 @@ namespace Model
      * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
+     * days. Therefore, the “expire after days�� setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
      * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>

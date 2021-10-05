@@ -76,9 +76,9 @@ namespace Model
      * <p>The data provider of geospatial data. Indicates one of the available
      * providers:</p> <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p>
      * <code>Here</code> </p> </li> </ul> <p>For additional details on data providers,
-     * see the <a
+     * see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers page</a>.</p>
+     * Location Service data providers</a>.</p>
      */
     inline const Aws::String& GetDataSource() const{ return m_dataSource; }
 
@@ -86,9 +86,9 @@ namespace Model
      * <p>The data provider of geospatial data. Indicates one of the available
      * providers:</p> <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p>
      * <code>Here</code> </p> </li> </ul> <p>For additional details on data providers,
-     * see the <a
+     * see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers page</a>.</p>
+     * Location Service data providers</a>.</p>
      */
     inline void SetDataSource(const Aws::String& value) { m_dataSource = value; }
 
@@ -96,9 +96,9 @@ namespace Model
      * <p>The data provider of geospatial data. Indicates one of the available
      * providers:</p> <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p>
      * <code>Here</code> </p> </li> </ul> <p>For additional details on data providers,
-     * see the <a
+     * see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers page</a>.</p>
+     * Location Service data providers</a>.</p>
      */
     inline void SetDataSource(Aws::String&& value) { m_dataSource = std::move(value); }
 
@@ -106,9 +106,9 @@ namespace Model
      * <p>The data provider of geospatial data. Indicates one of the available
      * providers:</p> <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p>
      * <code>Here</code> </p> </li> </ul> <p>For additional details on data providers,
-     * see the <a
+     * see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers page</a>.</p>
+     * Location Service data providers</a>.</p>
      */
     inline void SetDataSource(const char* value) { m_dataSource.assign(value); }
 
@@ -116,9 +116,9 @@ namespace Model
      * <p>The data provider of geospatial data. Indicates one of the available
      * providers:</p> <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p>
      * <code>Here</code> </p> </li> </ul> <p>For additional details on data providers,
-     * see the <a
+     * see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers page</a>.</p>
+     * Location Service data providers</a>.</p>
      */
     inline DescribePlaceIndexResult& WithDataSource(const Aws::String& value) { SetDataSource(value); return *this;}
 
@@ -126,9 +126,9 @@ namespace Model
      * <p>The data provider of geospatial data. Indicates one of the available
      * providers:</p> <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p>
      * <code>Here</code> </p> </li> </ul> <p>For additional details on data providers,
-     * see the <a
+     * see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers page</a>.</p>
+     * Location Service data providers</a>.</p>
      */
     inline DescribePlaceIndexResult& WithDataSource(Aws::String&& value) { SetDataSource(std::move(value)); return *this;}
 
@@ -136,9 +136,9 @@ namespace Model
      * <p>The data provider of geospatial data. Indicates one of the available
      * providers:</p> <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p>
      * <code>Here</code> </p> </li> </ul> <p>For additional details on data providers,
-     * see the <a
+     * see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers page</a>.</p>
+     * Location Service data providers</a>.</p>
      */
     inline DescribePlaceIndexResult& WithDataSource(const char* value) { SetDataSource(value); return *this;}
 
@@ -300,41 +300,41 @@ namespace Model
 
     /**
      * <p>The pricing plan selected for the specified place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
 
     /**
      * <p>The pricing plan selected for the specified place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlan = value; }
 
     /**
      * <p>The pricing plan selected for the specified place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlan = std::move(value); }
 
     /**
      * <p>The pricing plan selected for the specified place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline DescribePlaceIndexResult& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
 
     /**
      * <p>The pricing plan selected for the specified place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline DescribePlaceIndexResult& WithPricingPlan(PricingPlan&& value) { SetPricingPlan(std::move(value)); return *this;}
 

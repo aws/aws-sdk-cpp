@@ -40,6 +40,7 @@ namespace Aws
         static const int ElastiCachePrimaryEngineCPUUtilization_HASH = HashingUtils::HashString("ElastiCachePrimaryEngineCPUUtilization");
         static const int ElastiCacheReplicaEngineCPUUtilization_HASH = HashingUtils::HashString("ElastiCacheReplicaEngineCPUUtilization");
         static const int ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage_HASH = HashingUtils::HashString("ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage");
+        static const int NeptuneReaderAverageCPUUtilization_HASH = HashingUtils::HashString("NeptuneReaderAverageCPUUtilization");
 
 
         MetricType GetMetricTypeForName(const Aws::String& name)
@@ -125,6 +126,10 @@ namespace Aws
           {
             return MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage;
           }
+          else if (hashCode == NeptuneReaderAverageCPUUtilization_HASH)
+          {
+            return MetricType::NeptuneReaderAverageCPUUtilization;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -179,6 +184,8 @@ namespace Aws
             return "ElastiCacheReplicaEngineCPUUtilization";
           case MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage:
             return "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage";
+          case MetricType::NeptuneReaderAverageCPUUtilization:
+            return "NeptuneReaderAverageCPUUtilization";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -17,11 +17,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeTrackerResult::DescribeTrackerResult() : 
+    m_positionFiltering(PositionFiltering::NOT_SET),
     m_pricingPlan(PricingPlan::NOT_SET)
 {
 }
 
 DescribeTrackerResult::DescribeTrackerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_positionFiltering(PositionFiltering::NOT_SET),
     m_pricingPlan(PricingPlan::NOT_SET)
 {
   *this = result;
@@ -45,6 +47,12 @@ DescribeTrackerResult& DescribeTrackerResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+
+  }
+
+  if(jsonValue.ValueExists("PositionFiltering"))
+  {
+    m_positionFiltering = PositionFilteringMapper::GetPositionFilteringForName(jsonValue.GetString("PositionFiltering"));
 
   }
 

@@ -165,16 +165,16 @@ namespace Model
      * initiating scale-out activity is calculated as part of the desired capacity for
      * the next scale-out activity.</p> <p>Application Auto Scaling provides a default
      * value of 600 for Amazon ElastiCache replication groups and a default value of
-     * 300 for the following scalable targets:</p> <ul> <li> <p>ECS services</p> </li>
-     * <li> <p>Spot Fleet requests</p> </li> <li> <p>EMR clusters</p> </li> <li>
-     * <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li>
-     * <p>Amazon SageMaker endpoint variants</p> </li> <li> <p>Custom resources</p>
-     * </li> </ul> <p>For all other scalable targets, the default value is 0:</p> <ul>
-     * <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB global secondary indexes</p>
-     * </li> <li> <p>Amazon Comprehend document classification and entity recognizer
-     * endpoints</p> </li> <li> <p>Lambda provisioned concurrency</p> </li> <li>
-     * <p>Amazon Keyspaces tables</p> </li> <li> <p>Amazon MSK broker storage</p> </li>
-     * </ul>
+     * 300 for the following scalable targets:</p> <ul> <li> <p>AppStream 2.0
+     * fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li> <p>ECS services</p>
+     * </li> <li> <p>EMR clusters</p> </li> <li> <p> Neptune clusters</p> </li> <li>
+     * <p>SageMaker endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li>
+     * <p>Custom resources</p> </li> </ul> <p>For all other scalable targets, the
+     * default value is 0:</p> <ul> <li> <p>Amazon Comprehend document classification
+     * and entity recognizer endpoints</p> </li> <li> <p>DynamoDB tables and global
+     * secondary indexes</p> </li> <li> <p>Amazon Keyspaces tables</p> </li> <li>
+     * <p>Lambda provisioned concurrency</p> </li> <li> <p>Amazon MSK broker
+     * storage</p> </li> </ul>
      */
     inline int GetScaleOutCooldown() const{ return m_scaleOutCooldown; }
 
@@ -189,16 +189,16 @@ namespace Model
      * initiating scale-out activity is calculated as part of the desired capacity for
      * the next scale-out activity.</p> <p>Application Auto Scaling provides a default
      * value of 600 for Amazon ElastiCache replication groups and a default value of
-     * 300 for the following scalable targets:</p> <ul> <li> <p>ECS services</p> </li>
-     * <li> <p>Spot Fleet requests</p> </li> <li> <p>EMR clusters</p> </li> <li>
-     * <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li>
-     * <p>Amazon SageMaker endpoint variants</p> </li> <li> <p>Custom resources</p>
-     * </li> </ul> <p>For all other scalable targets, the default value is 0:</p> <ul>
-     * <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB global secondary indexes</p>
-     * </li> <li> <p>Amazon Comprehend document classification and entity recognizer
-     * endpoints</p> </li> <li> <p>Lambda provisioned concurrency</p> </li> <li>
-     * <p>Amazon Keyspaces tables</p> </li> <li> <p>Amazon MSK broker storage</p> </li>
-     * </ul>
+     * 300 for the following scalable targets:</p> <ul> <li> <p>AppStream 2.0
+     * fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li> <p>ECS services</p>
+     * </li> <li> <p>EMR clusters</p> </li> <li> <p> Neptune clusters</p> </li> <li>
+     * <p>SageMaker endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li>
+     * <p>Custom resources</p> </li> </ul> <p>For all other scalable targets, the
+     * default value is 0:</p> <ul> <li> <p>Amazon Comprehend document classification
+     * and entity recognizer endpoints</p> </li> <li> <p>DynamoDB tables and global
+     * secondary indexes</p> </li> <li> <p>Amazon Keyspaces tables</p> </li> <li>
+     * <p>Lambda provisioned concurrency</p> </li> <li> <p>Amazon MSK broker
+     * storage</p> </li> </ul>
      */
     inline bool ScaleOutCooldownHasBeenSet() const { return m_scaleOutCooldownHasBeenSet; }
 
@@ -213,16 +213,16 @@ namespace Model
      * initiating scale-out activity is calculated as part of the desired capacity for
      * the next scale-out activity.</p> <p>Application Auto Scaling provides a default
      * value of 600 for Amazon ElastiCache replication groups and a default value of
-     * 300 for the following scalable targets:</p> <ul> <li> <p>ECS services</p> </li>
-     * <li> <p>Spot Fleet requests</p> </li> <li> <p>EMR clusters</p> </li> <li>
-     * <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li>
-     * <p>Amazon SageMaker endpoint variants</p> </li> <li> <p>Custom resources</p>
-     * </li> </ul> <p>For all other scalable targets, the default value is 0:</p> <ul>
-     * <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB global secondary indexes</p>
-     * </li> <li> <p>Amazon Comprehend document classification and entity recognizer
-     * endpoints</p> </li> <li> <p>Lambda provisioned concurrency</p> </li> <li>
-     * <p>Amazon Keyspaces tables</p> </li> <li> <p>Amazon MSK broker storage</p> </li>
-     * </ul>
+     * 300 for the following scalable targets:</p> <ul> <li> <p>AppStream 2.0
+     * fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li> <p>ECS services</p>
+     * </li> <li> <p>EMR clusters</p> </li> <li> <p> Neptune clusters</p> </li> <li>
+     * <p>SageMaker endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li>
+     * <p>Custom resources</p> </li> </ul> <p>For all other scalable targets, the
+     * default value is 0:</p> <ul> <li> <p>Amazon Comprehend document classification
+     * and entity recognizer endpoints</p> </li> <li> <p>DynamoDB tables and global
+     * secondary indexes</p> </li> <li> <p>Amazon Keyspaces tables</p> </li> <li>
+     * <p>Lambda provisioned concurrency</p> </li> <li> <p>Amazon MSK broker
+     * storage</p> </li> </ul>
      */
     inline void SetScaleOutCooldown(int value) { m_scaleOutCooldownHasBeenSet = true; m_scaleOutCooldown = value; }
 
@@ -237,16 +237,16 @@ namespace Model
      * initiating scale-out activity is calculated as part of the desired capacity for
      * the next scale-out activity.</p> <p>Application Auto Scaling provides a default
      * value of 600 for Amazon ElastiCache replication groups and a default value of
-     * 300 for the following scalable targets:</p> <ul> <li> <p>ECS services</p> </li>
-     * <li> <p>Spot Fleet requests</p> </li> <li> <p>EMR clusters</p> </li> <li>
-     * <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li>
-     * <p>Amazon SageMaker endpoint variants</p> </li> <li> <p>Custom resources</p>
-     * </li> </ul> <p>For all other scalable targets, the default value is 0:</p> <ul>
-     * <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB global secondary indexes</p>
-     * </li> <li> <p>Amazon Comprehend document classification and entity recognizer
-     * endpoints</p> </li> <li> <p>Lambda provisioned concurrency</p> </li> <li>
-     * <p>Amazon Keyspaces tables</p> </li> <li> <p>Amazon MSK broker storage</p> </li>
-     * </ul>
+     * 300 for the following scalable targets:</p> <ul> <li> <p>AppStream 2.0
+     * fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li> <p>ECS services</p>
+     * </li> <li> <p>EMR clusters</p> </li> <li> <p> Neptune clusters</p> </li> <li>
+     * <p>SageMaker endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li>
+     * <p>Custom resources</p> </li> </ul> <p>For all other scalable targets, the
+     * default value is 0:</p> <ul> <li> <p>Amazon Comprehend document classification
+     * and entity recognizer endpoints</p> </li> <li> <p>DynamoDB tables and global
+     * secondary indexes</p> </li> <li> <p>Amazon Keyspaces tables</p> </li> <li>
+     * <p>Lambda provisioned concurrency</p> </li> <li> <p>Amazon MSK broker
+     * storage</p> </li> </ul>
      */
     inline TargetTrackingScalingPolicyConfiguration& WithScaleOutCooldown(int value) { SetScaleOutCooldown(value); return *this;}
 
@@ -261,15 +261,16 @@ namespace Model
      * out the target immediately. In this case, the scale-in cooldown period stops and
      * doesn't complete.</p> <p>Application Auto Scaling provides a default value of
      * 600 for Amazon ElastiCache replication groups and a default value of 300 for the
-     * following scalable targets:</p> <ul> <li> <p>ECS services</p> </li> <li> <p>Spot
-     * Fleet requests</p> </li> <li> <p>EMR clusters</p> </li> <li> <p>AppStream 2.0
-     * fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li> <p>Amazon SageMaker
-     * endpoint variants</p> </li> <li> <p>Custom resources</p> </li> </ul> <p>For all
-     * other scalable targets, the default value is 0:</p> <ul> <li> <p>DynamoDB
-     * tables</p> </li> <li> <p>DynamoDB global secondary indexes</p> </li> <li>
-     * <p>Amazon Comprehend document classification and entity recognizer endpoints</p>
-     * </li> <li> <p>Lambda provisioned concurrency</p> </li> <li> <p>Amazon Keyspaces
-     * tables</p> </li> <li> <p>Amazon MSK broker storage</p> </li> </ul>
+     * following scalable targets:</p> <ul> <li> <p>AppStream 2.0 fleets</p> </li> <li>
+     * <p>Aurora DB clusters</p> </li> <li> <p>ECS services</p> </li> <li> <p>EMR
+     * clusters</p> </li> <li> <p> Neptune clusters</p> </li> <li> <p>SageMaker
+     * endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li> <p>Custom
+     * resources</p> </li> </ul> <p>For all other scalable targets, the default value
+     * is 0:</p> <ul> <li> <p>Amazon Comprehend document classification and entity
+     * recognizer endpoints</p> </li> <li> <p>DynamoDB tables and global secondary
+     * indexes</p> </li> <li> <p>Amazon Keyspaces tables</p> </li> <li> <p>Lambda
+     * provisioned concurrency</p> </li> <li> <p>Amazon MSK broker storage</p> </li>
+     * </ul>
      */
     inline int GetScaleInCooldown() const{ return m_scaleInCooldown; }
 
@@ -283,15 +284,16 @@ namespace Model
      * out the target immediately. In this case, the scale-in cooldown period stops and
      * doesn't complete.</p> <p>Application Auto Scaling provides a default value of
      * 600 for Amazon ElastiCache replication groups and a default value of 300 for the
-     * following scalable targets:</p> <ul> <li> <p>ECS services</p> </li> <li> <p>Spot
-     * Fleet requests</p> </li> <li> <p>EMR clusters</p> </li> <li> <p>AppStream 2.0
-     * fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li> <p>Amazon SageMaker
-     * endpoint variants</p> </li> <li> <p>Custom resources</p> </li> </ul> <p>For all
-     * other scalable targets, the default value is 0:</p> <ul> <li> <p>DynamoDB
-     * tables</p> </li> <li> <p>DynamoDB global secondary indexes</p> </li> <li>
-     * <p>Amazon Comprehend document classification and entity recognizer endpoints</p>
-     * </li> <li> <p>Lambda provisioned concurrency</p> </li> <li> <p>Amazon Keyspaces
-     * tables</p> </li> <li> <p>Amazon MSK broker storage</p> </li> </ul>
+     * following scalable targets:</p> <ul> <li> <p>AppStream 2.0 fleets</p> </li> <li>
+     * <p>Aurora DB clusters</p> </li> <li> <p>ECS services</p> </li> <li> <p>EMR
+     * clusters</p> </li> <li> <p> Neptune clusters</p> </li> <li> <p>SageMaker
+     * endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li> <p>Custom
+     * resources</p> </li> </ul> <p>For all other scalable targets, the default value
+     * is 0:</p> <ul> <li> <p>Amazon Comprehend document classification and entity
+     * recognizer endpoints</p> </li> <li> <p>DynamoDB tables and global secondary
+     * indexes</p> </li> <li> <p>Amazon Keyspaces tables</p> </li> <li> <p>Lambda
+     * provisioned concurrency</p> </li> <li> <p>Amazon MSK broker storage</p> </li>
+     * </ul>
      */
     inline bool ScaleInCooldownHasBeenSet() const { return m_scaleInCooldownHasBeenSet; }
 
@@ -305,15 +307,16 @@ namespace Model
      * out the target immediately. In this case, the scale-in cooldown period stops and
      * doesn't complete.</p> <p>Application Auto Scaling provides a default value of
      * 600 for Amazon ElastiCache replication groups and a default value of 300 for the
-     * following scalable targets:</p> <ul> <li> <p>ECS services</p> </li> <li> <p>Spot
-     * Fleet requests</p> </li> <li> <p>EMR clusters</p> </li> <li> <p>AppStream 2.0
-     * fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li> <p>Amazon SageMaker
-     * endpoint variants</p> </li> <li> <p>Custom resources</p> </li> </ul> <p>For all
-     * other scalable targets, the default value is 0:</p> <ul> <li> <p>DynamoDB
-     * tables</p> </li> <li> <p>DynamoDB global secondary indexes</p> </li> <li>
-     * <p>Amazon Comprehend document classification and entity recognizer endpoints</p>
-     * </li> <li> <p>Lambda provisioned concurrency</p> </li> <li> <p>Amazon Keyspaces
-     * tables</p> </li> <li> <p>Amazon MSK broker storage</p> </li> </ul>
+     * following scalable targets:</p> <ul> <li> <p>AppStream 2.0 fleets</p> </li> <li>
+     * <p>Aurora DB clusters</p> </li> <li> <p>ECS services</p> </li> <li> <p>EMR
+     * clusters</p> </li> <li> <p> Neptune clusters</p> </li> <li> <p>SageMaker
+     * endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li> <p>Custom
+     * resources</p> </li> </ul> <p>For all other scalable targets, the default value
+     * is 0:</p> <ul> <li> <p>Amazon Comprehend document classification and entity
+     * recognizer endpoints</p> </li> <li> <p>DynamoDB tables and global secondary
+     * indexes</p> </li> <li> <p>Amazon Keyspaces tables</p> </li> <li> <p>Lambda
+     * provisioned concurrency</p> </li> <li> <p>Amazon MSK broker storage</p> </li>
+     * </ul>
      */
     inline void SetScaleInCooldown(int value) { m_scaleInCooldownHasBeenSet = true; m_scaleInCooldown = value; }
 
@@ -327,15 +330,16 @@ namespace Model
      * out the target immediately. In this case, the scale-in cooldown period stops and
      * doesn't complete.</p> <p>Application Auto Scaling provides a default value of
      * 600 for Amazon ElastiCache replication groups and a default value of 300 for the
-     * following scalable targets:</p> <ul> <li> <p>ECS services</p> </li> <li> <p>Spot
-     * Fleet requests</p> </li> <li> <p>EMR clusters</p> </li> <li> <p>AppStream 2.0
-     * fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li> <p>Amazon SageMaker
-     * endpoint variants</p> </li> <li> <p>Custom resources</p> </li> </ul> <p>For all
-     * other scalable targets, the default value is 0:</p> <ul> <li> <p>DynamoDB
-     * tables</p> </li> <li> <p>DynamoDB global secondary indexes</p> </li> <li>
-     * <p>Amazon Comprehend document classification and entity recognizer endpoints</p>
-     * </li> <li> <p>Lambda provisioned concurrency</p> </li> <li> <p>Amazon Keyspaces
-     * tables</p> </li> <li> <p>Amazon MSK broker storage</p> </li> </ul>
+     * following scalable targets:</p> <ul> <li> <p>AppStream 2.0 fleets</p> </li> <li>
+     * <p>Aurora DB clusters</p> </li> <li> <p>ECS services</p> </li> <li> <p>EMR
+     * clusters</p> </li> <li> <p> Neptune clusters</p> </li> <li> <p>SageMaker
+     * endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li> <p>Custom
+     * resources</p> </li> </ul> <p>For all other scalable targets, the default value
+     * is 0:</p> <ul> <li> <p>Amazon Comprehend document classification and entity
+     * recognizer endpoints</p> </li> <li> <p>DynamoDB tables and global secondary
+     * indexes</p> </li> <li> <p>Amazon Keyspaces tables</p> </li> <li> <p>Lambda
+     * provisioned concurrency</p> </li> <li> <p>Amazon MSK broker storage</p> </li>
+     * </ul>
      */
     inline TargetTrackingScalingPolicyConfiguration& WithScaleInCooldown(int value) { SetScaleInCooldown(value); return *this;}
 

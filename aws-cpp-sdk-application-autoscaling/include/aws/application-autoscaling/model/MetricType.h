@@ -35,7 +35,8 @@ namespace Model
     KafkaBrokerStorageUtilization,
     ElastiCachePrimaryEngineCPUUtilization,
     ElastiCacheReplicaEngineCPUUtilization,
-    ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage
+    ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage,
+    NeptuneReaderAverageCPUUtilization
   };
 
 namespace MetricTypeMapper

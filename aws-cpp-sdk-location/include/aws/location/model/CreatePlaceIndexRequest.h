@@ -46,7 +46,7 @@ namespace Model
      * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
      * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a>'s coverage in your region of interest, see <a
+     * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
      * details on goecoding coverage</a>.</p>  <p>Place index resources
      * using HERE Technologies as a data provider can't <a
@@ -71,7 +71,7 @@ namespace Model
      * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
      * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a>'s coverage in your region of interest, see <a
+     * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
      * details on goecoding coverage</a>.</p>  <p>Place index resources
      * using HERE Technologies as a data provider can't <a
@@ -96,7 +96,7 @@ namespace Model
      * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
      * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a>'s coverage in your region of interest, see <a
+     * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
      * details on goecoding coverage</a>.</p>  <p>Place index resources
      * using HERE Technologies as a data provider can't <a
@@ -121,7 +121,7 @@ namespace Model
      * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
      * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a>'s coverage in your region of interest, see <a
+     * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
      * details on goecoding coverage</a>.</p>  <p>Place index resources
      * using HERE Technologies as a data provider can't <a
@@ -146,7 +146,7 @@ namespace Model
      * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
      * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a>'s coverage in your region of interest, see <a
+     * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
      * details on goecoding coverage</a>.</p>  <p>Place index resources
      * using HERE Technologies as a data provider can't <a
@@ -171,7 +171,7 @@ namespace Model
      * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
      * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a>'s coverage in your region of interest, see <a
+     * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
      * details on goecoding coverage</a>.</p>  <p>Place index resources
      * using HERE Technologies as a data provider can't <a
@@ -196,7 +196,7 @@ namespace Model
      * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
      * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a>'s coverage in your region of interest, see <a
+     * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
      * details on goecoding coverage</a>.</p>  <p>Place index resources
      * using HERE Technologies as a data provider can't <a
@@ -221,7 +221,7 @@ namespace Model
      * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
      * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a>'s coverage in your region of interest, see <a
+     * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
      * details on goecoding coverage</a>.</p>  <p>Place index resources
      * using HERE Technologies as a data provider can't <a
@@ -383,49 +383,49 @@ namespace Model
 
     /**
      * <p>Specifies the pricing plan for your place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
 
     /**
      * <p>Specifies the pricing plan for your place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline bool PricingPlanHasBeenSet() const { return m_pricingPlanHasBeenSet; }
 
     /**
      * <p>Specifies the pricing plan for your place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = value; }
 
     /**
      * <p>Specifies the pricing plan for your place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = std::move(value); }
 
     /**
      * <p>Specifies the pricing plan for your place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline CreatePlaceIndexRequest& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
 
     /**
      * <p>Specifies the pricing plan for your place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline CreatePlaceIndexRequest& WithPricingPlan(PricingPlan&& value) { SetPricingPlan(std::move(value)); return *this;}
 

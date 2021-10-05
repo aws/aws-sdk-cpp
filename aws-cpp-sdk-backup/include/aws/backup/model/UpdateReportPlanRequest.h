@@ -186,43 +186,67 @@ namespace Model
 
     /**
      * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are:</p> <p> <code>BACKUP_JOB_REPORT |
-     * COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+     * report template. The report templates are:</p> <p>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> <p>If the report template is
+     * <code>RESOURCE_COMPLIANCE_REPORT</code> or
+     * <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the
+     * report coverage by Amazon Web Services Regions and frameworks.</p>
      */
     inline const ReportSetting& GetReportSetting() const{ return m_reportSetting; }
 
     /**
      * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are:</p> <p> <code>BACKUP_JOB_REPORT |
-     * COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+     * report template. The report templates are:</p> <p>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> <p>If the report template is
+     * <code>RESOURCE_COMPLIANCE_REPORT</code> or
+     * <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the
+     * report coverage by Amazon Web Services Regions and frameworks.</p>
      */
     inline bool ReportSettingHasBeenSet() const { return m_reportSettingHasBeenSet; }
 
     /**
      * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are:</p> <p> <code>BACKUP_JOB_REPORT |
-     * COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+     * report template. The report templates are:</p> <p>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> <p>If the report template is
+     * <code>RESOURCE_COMPLIANCE_REPORT</code> or
+     * <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the
+     * report coverage by Amazon Web Services Regions and frameworks.</p>
      */
     inline void SetReportSetting(const ReportSetting& value) { m_reportSettingHasBeenSet = true; m_reportSetting = value; }
 
     /**
      * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are:</p> <p> <code>BACKUP_JOB_REPORT |
-     * COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+     * report template. The report templates are:</p> <p>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> <p>If the report template is
+     * <code>RESOURCE_COMPLIANCE_REPORT</code> or
+     * <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the
+     * report coverage by Amazon Web Services Regions and frameworks.</p>
      */
     inline void SetReportSetting(ReportSetting&& value) { m_reportSettingHasBeenSet = true; m_reportSetting = std::move(value); }
 
     /**
      * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are:</p> <p> <code>BACKUP_JOB_REPORT |
-     * COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+     * report template. The report templates are:</p> <p>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> <p>If the report template is
+     * <code>RESOURCE_COMPLIANCE_REPORT</code> or
+     * <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the
+     * report coverage by Amazon Web Services Regions and frameworks.</p>
      */
     inline UpdateReportPlanRequest& WithReportSetting(const ReportSetting& value) { SetReportSetting(value); return *this;}
 
     /**
      * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are:</p> <p> <code>BACKUP_JOB_REPORT |
-     * COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+     * report template. The report templates are:</p> <p>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> <p>If the report template is
+     * <code>RESOURCE_COMPLIANCE_REPORT</code> or
+     * <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the
+     * report coverage by Amazon Web Services Regions and frameworks.</p>
      */
     inline UpdateReportPlanRequest& WithReportSetting(ReportSetting&& value) { SetReportSetting(std::move(value)); return *this;}
 

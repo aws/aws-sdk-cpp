@@ -968,6 +968,63 @@ namespace Model
      */
     inline CapacityReservation& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
 
+
+    /**
+     * <p>The ID of the Capacity Reservation Fleet to which the Capacity Reservation
+     * belongs. Only valid for Capacity Reservations that were created by a Capacity
+     * Reservation Fleet.</p>
+     */
+    inline const Aws::String& GetCapacityReservationFleetId() const{ return m_capacityReservationFleetId; }
+
+    /**
+     * <p>The ID of the Capacity Reservation Fleet to which the Capacity Reservation
+     * belongs. Only valid for Capacity Reservations that were created by a Capacity
+     * Reservation Fleet.</p>
+     */
+    inline bool CapacityReservationFleetIdHasBeenSet() const { return m_capacityReservationFleetIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Capacity Reservation Fleet to which the Capacity Reservation
+     * belongs. Only valid for Capacity Reservations that were created by a Capacity
+     * Reservation Fleet.</p>
+     */
+    inline void SetCapacityReservationFleetId(const Aws::String& value) { m_capacityReservationFleetIdHasBeenSet = true; m_capacityReservationFleetId = value; }
+
+    /**
+     * <p>The ID of the Capacity Reservation Fleet to which the Capacity Reservation
+     * belongs. Only valid for Capacity Reservations that were created by a Capacity
+     * Reservation Fleet.</p>
+     */
+    inline void SetCapacityReservationFleetId(Aws::String&& value) { m_capacityReservationFleetIdHasBeenSet = true; m_capacityReservationFleetId = std::move(value); }
+
+    /**
+     * <p>The ID of the Capacity Reservation Fleet to which the Capacity Reservation
+     * belongs. Only valid for Capacity Reservations that were created by a Capacity
+     * Reservation Fleet.</p>
+     */
+    inline void SetCapacityReservationFleetId(const char* value) { m_capacityReservationFleetIdHasBeenSet = true; m_capacityReservationFleetId.assign(value); }
+
+    /**
+     * <p>The ID of the Capacity Reservation Fleet to which the Capacity Reservation
+     * belongs. Only valid for Capacity Reservations that were created by a Capacity
+     * Reservation Fleet.</p>
+     */
+    inline CapacityReservation& WithCapacityReservationFleetId(const Aws::String& value) { SetCapacityReservationFleetId(value); return *this;}
+
+    /**
+     * <p>The ID of the Capacity Reservation Fleet to which the Capacity Reservation
+     * belongs. Only valid for Capacity Reservations that were created by a Capacity
+     * Reservation Fleet.</p>
+     */
+    inline CapacityReservation& WithCapacityReservationFleetId(Aws::String&& value) { SetCapacityReservationFleetId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Capacity Reservation Fleet to which the Capacity Reservation
+     * belongs. Only valid for Capacity Reservations that were created by a Capacity
+     * Reservation Fleet.</p>
+     */
+    inline CapacityReservation& WithCapacityReservationFleetId(const char* value) { SetCapacityReservationFleetId(value); return *this;}
+
   private:
 
     Aws::String m_capacityReservationId;
@@ -1029,6 +1086,9 @@ namespace Model
 
     Aws::String m_outpostArn;
     bool m_outpostArnHasBeenSet;
+
+    Aws::String m_capacityReservationFleetId;
+    bool m_capacityReservationFleetIdHasBeenSet;
   };
 
 } // namespace Model

@@ -7,6 +7,7 @@
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/location/model/PositionFiltering.h>
 #include <aws/location/model/PricingPlan.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -158,42 +159,68 @@ namespace Model
 
 
     /**
+     * <p>The position filtering method of the tracker resource.</p>
+     */
+    inline const PositionFiltering& GetPositionFiltering() const{ return m_positionFiltering; }
+
+    /**
+     * <p>The position filtering method of the tracker resource.</p>
+     */
+    inline void SetPositionFiltering(const PositionFiltering& value) { m_positionFiltering = value; }
+
+    /**
+     * <p>The position filtering method of the tracker resource.</p>
+     */
+    inline void SetPositionFiltering(PositionFiltering&& value) { m_positionFiltering = std::move(value); }
+
+    /**
+     * <p>The position filtering method of the tracker resource.</p>
+     */
+    inline DescribeTrackerResult& WithPositionFiltering(const PositionFiltering& value) { SetPositionFiltering(value); return *this;}
+
+    /**
+     * <p>The position filtering method of the tracker resource.</p>
+     */
+    inline DescribeTrackerResult& WithPositionFiltering(PositionFiltering&& value) { SetPositionFiltering(std::move(value)); return *this;}
+
+
+    /**
      * <p>The pricing plan selected for the specified tracker resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
 
     /**
      * <p>The pricing plan selected for the specified tracker resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlan = value; }
 
     /**
      * <p>The pricing plan selected for the specified tracker resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlan = std::move(value); }
 
     /**
      * <p>The pricing plan selected for the specified tracker resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline DescribeTrackerResult& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
 
     /**
      * <p>The pricing plan selected for the specified tracker resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * additional details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline DescribeTrackerResult& WithPricingPlan(PricingPlan&& value) { SetPricingPlan(std::move(value)); return *this;}
 
@@ -430,6 +457,8 @@ namespace Model
     Aws::String m_description;
 
     Aws::String m_kmsKeyId;
+
+    PositionFiltering m_positionFiltering;
 
     PricingPlan m_pricingPlan;
 

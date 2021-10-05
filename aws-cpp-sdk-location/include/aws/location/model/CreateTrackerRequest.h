@@ -7,6 +7,7 @@
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/location/LocationServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/location/model/PositionFiltering.h>
 #include <aws/location/model/PricingPlan.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -141,50 +142,147 @@ namespace Model
 
 
     /**
+     * <p>Specifies the position filtering for the tracker resource.</p> <p>Valid
+     * values:</p> <ul> <li> <p> <code>TimeBased</code> - Location updates are
+     * evaluated against linked geofence collections, but not every location update is
+     * stored. If your update frequency is more often than 30 seconds, only one update
+     * per 30 seconds is stored for each unique device ID. </p> </li> <li> <p>
+     * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft),
+     * location updates are ignored. Location updates within this distance are neither
+     * evaluated against linked geofence collections, nor stored. This helps control
+     * costs by reducing the number of geofence evaluations and device positions to
+     * retrieve. Distance-based filtering can also reduce the jitter effect when
+     * displaying device trajectory on a map. </p> </li> </ul> <p>This field is
+     * optional. If not specified, the default value is <code>TimeBased</code>.</p>
+     */
+    inline const PositionFiltering& GetPositionFiltering() const{ return m_positionFiltering; }
+
+    /**
+     * <p>Specifies the position filtering for the tracker resource.</p> <p>Valid
+     * values:</p> <ul> <li> <p> <code>TimeBased</code> - Location updates are
+     * evaluated against linked geofence collections, but not every location update is
+     * stored. If your update frequency is more often than 30 seconds, only one update
+     * per 30 seconds is stored for each unique device ID. </p> </li> <li> <p>
+     * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft),
+     * location updates are ignored. Location updates within this distance are neither
+     * evaluated against linked geofence collections, nor stored. This helps control
+     * costs by reducing the number of geofence evaluations and device positions to
+     * retrieve. Distance-based filtering can also reduce the jitter effect when
+     * displaying device trajectory on a map. </p> </li> </ul> <p>This field is
+     * optional. If not specified, the default value is <code>TimeBased</code>.</p>
+     */
+    inline bool PositionFilteringHasBeenSet() const { return m_positionFilteringHasBeenSet; }
+
+    /**
+     * <p>Specifies the position filtering for the tracker resource.</p> <p>Valid
+     * values:</p> <ul> <li> <p> <code>TimeBased</code> - Location updates are
+     * evaluated against linked geofence collections, but not every location update is
+     * stored. If your update frequency is more often than 30 seconds, only one update
+     * per 30 seconds is stored for each unique device ID. </p> </li> <li> <p>
+     * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft),
+     * location updates are ignored. Location updates within this distance are neither
+     * evaluated against linked geofence collections, nor stored. This helps control
+     * costs by reducing the number of geofence evaluations and device positions to
+     * retrieve. Distance-based filtering can also reduce the jitter effect when
+     * displaying device trajectory on a map. </p> </li> </ul> <p>This field is
+     * optional. If not specified, the default value is <code>TimeBased</code>.</p>
+     */
+    inline void SetPositionFiltering(const PositionFiltering& value) { m_positionFilteringHasBeenSet = true; m_positionFiltering = value; }
+
+    /**
+     * <p>Specifies the position filtering for the tracker resource.</p> <p>Valid
+     * values:</p> <ul> <li> <p> <code>TimeBased</code> - Location updates are
+     * evaluated against linked geofence collections, but not every location update is
+     * stored. If your update frequency is more often than 30 seconds, only one update
+     * per 30 seconds is stored for each unique device ID. </p> </li> <li> <p>
+     * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft),
+     * location updates are ignored. Location updates within this distance are neither
+     * evaluated against linked geofence collections, nor stored. This helps control
+     * costs by reducing the number of geofence evaluations and device positions to
+     * retrieve. Distance-based filtering can also reduce the jitter effect when
+     * displaying device trajectory on a map. </p> </li> </ul> <p>This field is
+     * optional. If not specified, the default value is <code>TimeBased</code>.</p>
+     */
+    inline void SetPositionFiltering(PositionFiltering&& value) { m_positionFilteringHasBeenSet = true; m_positionFiltering = std::move(value); }
+
+    /**
+     * <p>Specifies the position filtering for the tracker resource.</p> <p>Valid
+     * values:</p> <ul> <li> <p> <code>TimeBased</code> - Location updates are
+     * evaluated against linked geofence collections, but not every location update is
+     * stored. If your update frequency is more often than 30 seconds, only one update
+     * per 30 seconds is stored for each unique device ID. </p> </li> <li> <p>
+     * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft),
+     * location updates are ignored. Location updates within this distance are neither
+     * evaluated against linked geofence collections, nor stored. This helps control
+     * costs by reducing the number of geofence evaluations and device positions to
+     * retrieve. Distance-based filtering can also reduce the jitter effect when
+     * displaying device trajectory on a map. </p> </li> </ul> <p>This field is
+     * optional. If not specified, the default value is <code>TimeBased</code>.</p>
+     */
+    inline CreateTrackerRequest& WithPositionFiltering(const PositionFiltering& value) { SetPositionFiltering(value); return *this;}
+
+    /**
+     * <p>Specifies the position filtering for the tracker resource.</p> <p>Valid
+     * values:</p> <ul> <li> <p> <code>TimeBased</code> - Location updates are
+     * evaluated against linked geofence collections, but not every location update is
+     * stored. If your update frequency is more often than 30 seconds, only one update
+     * per 30 seconds is stored for each unique device ID. </p> </li> <li> <p>
+     * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft),
+     * location updates are ignored. Location updates within this distance are neither
+     * evaluated against linked geofence collections, nor stored. This helps control
+     * costs by reducing the number of geofence evaluations and device positions to
+     * retrieve. Distance-based filtering can also reduce the jitter effect when
+     * displaying device trajectory on a map. </p> </li> </ul> <p>This field is
+     * optional. If not specified, the default value is <code>TimeBased</code>.</p>
+     */
+    inline CreateTrackerRequest& WithPositionFiltering(PositionFiltering&& value) { SetPositionFiltering(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies the pricing plan for the tracker resource.</p> <p>For additional
-     * details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
 
     /**
      * <p>Specifies the pricing plan for the tracker resource.</p> <p>For additional
-     * details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline bool PricingPlanHasBeenSet() const { return m_pricingPlanHasBeenSet; }
 
     /**
      * <p>Specifies the pricing plan for the tracker resource.</p> <p>For additional
-     * details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = value; }
 
     /**
      * <p>Specifies the pricing plan for the tracker resource.</p> <p>For additional
-     * details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = std::move(value); }
 
     /**
      * <p>Specifies the pricing plan for the tracker resource.</p> <p>For additional
-     * details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline CreateTrackerRequest& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
 
     /**
      * <p>Specifies the pricing plan for the tracker resource.</p> <p>For additional
-     * details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
+     * details and restrictions on each pricing plan option, see <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+     * pricing</a>.</p>
      */
     inline CreateTrackerRequest& WithPricingPlan(PricingPlan&& value) { SetPricingPlan(std::move(value)); return *this;}
 
@@ -199,7 +297,7 @@ namespace Model
      * Location Service only uses <code>PricingPlanDataSource</code> to calculate
      * billing for your tracker resource. Your data will not be shared with the data
      * provider, and will remain in your AWS account or Region unless you move it.</p>
-     *  <p>Valid Values: <code>Esri</code> | <code>Here</code> </p>
+     *  <p>Valid values: <code>Esri</code> | <code>Here</code> </p>
      */
     inline const Aws::String& GetPricingPlanDataSource() const{ return m_pricingPlanDataSource; }
 
@@ -213,7 +311,7 @@ namespace Model
      * Location Service only uses <code>PricingPlanDataSource</code> to calculate
      * billing for your tracker resource. Your data will not be shared with the data
      * provider, and will remain in your AWS account or Region unless you move it.</p>
-     *  <p>Valid Values: <code>Esri</code> | <code>Here</code> </p>
+     *  <p>Valid values: <code>Esri</code> | <code>Here</code> </p>
      */
     inline bool PricingPlanDataSourceHasBeenSet() const { return m_pricingPlanDataSourceHasBeenSet; }
 
@@ -227,7 +325,7 @@ namespace Model
      * Location Service only uses <code>PricingPlanDataSource</code> to calculate
      * billing for your tracker resource. Your data will not be shared with the data
      * provider, and will remain in your AWS account or Region unless you move it.</p>
-     *  <p>Valid Values: <code>Esri</code> | <code>Here</code> </p>
+     *  <p>Valid values: <code>Esri</code> | <code>Here</code> </p>
      */
     inline void SetPricingPlanDataSource(const Aws::String& value) { m_pricingPlanDataSourceHasBeenSet = true; m_pricingPlanDataSource = value; }
 
@@ -241,7 +339,7 @@ namespace Model
      * Location Service only uses <code>PricingPlanDataSource</code> to calculate
      * billing for your tracker resource. Your data will not be shared with the data
      * provider, and will remain in your AWS account or Region unless you move it.</p>
-     *  <p>Valid Values: <code>Esri</code> | <code>Here</code> </p>
+     *  <p>Valid values: <code>Esri</code> | <code>Here</code> </p>
      */
     inline void SetPricingPlanDataSource(Aws::String&& value) { m_pricingPlanDataSourceHasBeenSet = true; m_pricingPlanDataSource = std::move(value); }
 
@@ -255,7 +353,7 @@ namespace Model
      * Location Service only uses <code>PricingPlanDataSource</code> to calculate
      * billing for your tracker resource. Your data will not be shared with the data
      * provider, and will remain in your AWS account or Region unless you move it.</p>
-     *  <p>Valid Values: <code>Esri</code> | <code>Here</code> </p>
+     *  <p>Valid values: <code>Esri</code> | <code>Here</code> </p>
      */
     inline void SetPricingPlanDataSource(const char* value) { m_pricingPlanDataSourceHasBeenSet = true; m_pricingPlanDataSource.assign(value); }
 
@@ -269,7 +367,7 @@ namespace Model
      * Location Service only uses <code>PricingPlanDataSource</code> to calculate
      * billing for your tracker resource. Your data will not be shared with the data
      * provider, and will remain in your AWS account or Region unless you move it.</p>
-     *  <p>Valid Values: <code>Esri</code> | <code>Here</code> </p>
+     *  <p>Valid values: <code>Esri</code> | <code>Here</code> </p>
      */
     inline CreateTrackerRequest& WithPricingPlanDataSource(const Aws::String& value) { SetPricingPlanDataSource(value); return *this;}
 
@@ -283,7 +381,7 @@ namespace Model
      * Location Service only uses <code>PricingPlanDataSource</code> to calculate
      * billing for your tracker resource. Your data will not be shared with the data
      * provider, and will remain in your AWS account or Region unless you move it.</p>
-     *  <p>Valid Values: <code>Esri</code> | <code>Here</code> </p>
+     *  <p>Valid values: <code>Esri</code> | <code>Here</code> </p>
      */
     inline CreateTrackerRequest& WithPricingPlanDataSource(Aws::String&& value) { SetPricingPlanDataSource(std::move(value)); return *this;}
 
@@ -297,7 +395,7 @@ namespace Model
      * Location Service only uses <code>PricingPlanDataSource</code> to calculate
      * billing for your tracker resource. Your data will not be shared with the data
      * provider, and will remain in your AWS account or Region unless you move it.</p>
-     *  <p>Valid Values: <code>Esri</code> | <code>Here</code> </p>
+     *  <p>Valid values: <code>Esri</code> | <code>Here</code> </p>
      */
     inline CreateTrackerRequest& WithPricingPlanDataSource(const char* value) { SetPricingPlanDataSource(value); return *this;}
 
@@ -538,6 +636,9 @@ namespace Model
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
+    PositionFiltering m_positionFiltering;
+    bool m_positionFilteringHasBeenSet;
 
     PricingPlan m_pricingPlan;
     bool m_pricingPlanHasBeenSet;

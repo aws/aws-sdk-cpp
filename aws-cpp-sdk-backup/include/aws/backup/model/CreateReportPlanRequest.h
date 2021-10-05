@@ -187,122 +187,146 @@ namespace Model
 
     /**
      * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are:</p> <p> <code>BACKUP_JOB_REPORT |
-     * COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+     * report template. The report templates are:</p> <p>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> <p>If the report template is
+     * <code>RESOURCE_COMPLIANCE_REPORT</code> or
+     * <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the
+     * report coverage by Amazon Web Services Regions and frameworks.</p>
      */
     inline const ReportSetting& GetReportSetting() const{ return m_reportSetting; }
 
     /**
      * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are:</p> <p> <code>BACKUP_JOB_REPORT |
-     * COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+     * report template. The report templates are:</p> <p>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> <p>If the report template is
+     * <code>RESOURCE_COMPLIANCE_REPORT</code> or
+     * <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the
+     * report coverage by Amazon Web Services Regions and frameworks.</p>
      */
     inline bool ReportSettingHasBeenSet() const { return m_reportSettingHasBeenSet; }
 
     /**
      * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are:</p> <p> <code>BACKUP_JOB_REPORT |
-     * COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+     * report template. The report templates are:</p> <p>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> <p>If the report template is
+     * <code>RESOURCE_COMPLIANCE_REPORT</code> or
+     * <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the
+     * report coverage by Amazon Web Services Regions and frameworks.</p>
      */
     inline void SetReportSetting(const ReportSetting& value) { m_reportSettingHasBeenSet = true; m_reportSetting = value; }
 
     /**
      * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are:</p> <p> <code>BACKUP_JOB_REPORT |
-     * COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+     * report template. The report templates are:</p> <p>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> <p>If the report template is
+     * <code>RESOURCE_COMPLIANCE_REPORT</code> or
+     * <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the
+     * report coverage by Amazon Web Services Regions and frameworks.</p>
      */
     inline void SetReportSetting(ReportSetting&& value) { m_reportSettingHasBeenSet = true; m_reportSetting = std::move(value); }
 
     /**
      * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are:</p> <p> <code>BACKUP_JOB_REPORT |
-     * COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+     * report template. The report templates are:</p> <p>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> <p>If the report template is
+     * <code>RESOURCE_COMPLIANCE_REPORT</code> or
+     * <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the
+     * report coverage by Amazon Web Services Regions and frameworks.</p>
      */
     inline CreateReportPlanRequest& WithReportSetting(const ReportSetting& value) { SetReportSetting(value); return *this;}
 
     /**
      * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are:</p> <p> <code>BACKUP_JOB_REPORT |
-     * COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+     * report template. The report templates are:</p> <p>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> <p>If the report template is
+     * <code>RESOURCE_COMPLIANCE_REPORT</code> or
+     * <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the
+     * report coverage by Amazon Web Services Regions and frameworks.</p>
      */
     inline CreateReportPlanRequest& WithReportSetting(ReportSetting&& value) { SetReportSetting(std::move(value)); return *this;}
 
 
     /**
-     * <p>Metadata that you can assign to help organize the frameworks that you create.
-     * Each tag is a key-value pair.</p>
+     * <p>Metadata that you can assign to help organize the report plans that you
+     * create. Each tag is a key-value pair.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetReportPlanTags() const{ return m_reportPlanTags; }
 
     /**
-     * <p>Metadata that you can assign to help organize the frameworks that you create.
-     * Each tag is a key-value pair.</p>
+     * <p>Metadata that you can assign to help organize the report plans that you
+     * create. Each tag is a key-value pair.</p>
      */
     inline bool ReportPlanTagsHasBeenSet() const { return m_reportPlanTagsHasBeenSet; }
 
     /**
-     * <p>Metadata that you can assign to help organize the frameworks that you create.
-     * Each tag is a key-value pair.</p>
+     * <p>Metadata that you can assign to help organize the report plans that you
+     * create. Each tag is a key-value pair.</p>
      */
     inline void SetReportPlanTags(const Aws::Map<Aws::String, Aws::String>& value) { m_reportPlanTagsHasBeenSet = true; m_reportPlanTags = value; }
 
     /**
-     * <p>Metadata that you can assign to help organize the frameworks that you create.
-     * Each tag is a key-value pair.</p>
+     * <p>Metadata that you can assign to help organize the report plans that you
+     * create. Each tag is a key-value pair.</p>
      */
     inline void SetReportPlanTags(Aws::Map<Aws::String, Aws::String>&& value) { m_reportPlanTagsHasBeenSet = true; m_reportPlanTags = std::move(value); }
 
     /**
-     * <p>Metadata that you can assign to help organize the frameworks that you create.
-     * Each tag is a key-value pair.</p>
+     * <p>Metadata that you can assign to help organize the report plans that you
+     * create. Each tag is a key-value pair.</p>
      */
     inline CreateReportPlanRequest& WithReportPlanTags(const Aws::Map<Aws::String, Aws::String>& value) { SetReportPlanTags(value); return *this;}
 
     /**
-     * <p>Metadata that you can assign to help organize the frameworks that you create.
-     * Each tag is a key-value pair.</p>
+     * <p>Metadata that you can assign to help organize the report plans that you
+     * create. Each tag is a key-value pair.</p>
      */
     inline CreateReportPlanRequest& WithReportPlanTags(Aws::Map<Aws::String, Aws::String>&& value) { SetReportPlanTags(std::move(value)); return *this;}
 
     /**
-     * <p>Metadata that you can assign to help organize the frameworks that you create.
-     * Each tag is a key-value pair.</p>
+     * <p>Metadata that you can assign to help organize the report plans that you
+     * create. Each tag is a key-value pair.</p>
      */
     inline CreateReportPlanRequest& AddReportPlanTags(const Aws::String& key, const Aws::String& value) { m_reportPlanTagsHasBeenSet = true; m_reportPlanTags.emplace(key, value); return *this; }
 
     /**
-     * <p>Metadata that you can assign to help organize the frameworks that you create.
-     * Each tag is a key-value pair.</p>
+     * <p>Metadata that you can assign to help organize the report plans that you
+     * create. Each tag is a key-value pair.</p>
      */
     inline CreateReportPlanRequest& AddReportPlanTags(Aws::String&& key, const Aws::String& value) { m_reportPlanTagsHasBeenSet = true; m_reportPlanTags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Metadata that you can assign to help organize the frameworks that you create.
-     * Each tag is a key-value pair.</p>
+     * <p>Metadata that you can assign to help organize the report plans that you
+     * create. Each tag is a key-value pair.</p>
      */
     inline CreateReportPlanRequest& AddReportPlanTags(const Aws::String& key, Aws::String&& value) { m_reportPlanTagsHasBeenSet = true; m_reportPlanTags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Metadata that you can assign to help organize the frameworks that you create.
-     * Each tag is a key-value pair.</p>
+     * <p>Metadata that you can assign to help organize the report plans that you
+     * create. Each tag is a key-value pair.</p>
      */
     inline CreateReportPlanRequest& AddReportPlanTags(Aws::String&& key, Aws::String&& value) { m_reportPlanTagsHasBeenSet = true; m_reportPlanTags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Metadata that you can assign to help organize the frameworks that you create.
-     * Each tag is a key-value pair.</p>
+     * <p>Metadata that you can assign to help organize the report plans that you
+     * create. Each tag is a key-value pair.</p>
      */
     inline CreateReportPlanRequest& AddReportPlanTags(const char* key, Aws::String&& value) { m_reportPlanTagsHasBeenSet = true; m_reportPlanTags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Metadata that you can assign to help organize the frameworks that you create.
-     * Each tag is a key-value pair.</p>
+     * <p>Metadata that you can assign to help organize the report plans that you
+     * create. Each tag is a key-value pair.</p>
      */
     inline CreateReportPlanRequest& AddReportPlanTags(Aws::String&& key, const char* value) { m_reportPlanTagsHasBeenSet = true; m_reportPlanTags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Metadata that you can assign to help organize the frameworks that you create.
-     * Each tag is a key-value pair.</p>
+     * <p>Metadata that you can assign to help organize the report plans that you
+     * create. Each tag is a key-value pair.</p>
      */
     inline CreateReportPlanRequest& AddReportPlanTags(const char* key, const char* value) { m_reportPlanTagsHasBeenSet = true; m_reportPlanTags.emplace(key, value); return *this; }
 

@@ -572,16 +572,36 @@ namespace Model
     inline GetPartitionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
-    
+    /**
+     * <p>When true, specifies not returning the partition column schema. Useful when
+     * you are interested only in other partition attributes such as partition values
+     * or location. This approach avoids the problem of a large response by not
+     * returning duplicate data.</p>
+     */
     inline bool GetExcludeColumnSchema() const{ return m_excludeColumnSchema; }
 
-    
+    /**
+     * <p>When true, specifies not returning the partition column schema. Useful when
+     * you are interested only in other partition attributes such as partition values
+     * or location. This approach avoids the problem of a large response by not
+     * returning duplicate data.</p>
+     */
     inline bool ExcludeColumnSchemaHasBeenSet() const { return m_excludeColumnSchemaHasBeenSet; }
 
-    
+    /**
+     * <p>When true, specifies not returning the partition column schema. Useful when
+     * you are interested only in other partition attributes such as partition values
+     * or location. This approach avoids the problem of a large response by not
+     * returning duplicate data.</p>
+     */
     inline void SetExcludeColumnSchema(bool value) { m_excludeColumnSchemaHasBeenSet = true; m_excludeColumnSchema = value; }
 
-    
+    /**
+     * <p>When true, specifies not returning the partition column schema. Useful when
+     * you are interested only in other partition attributes such as partition values
+     * or location. This approach avoids the problem of a large response by not
+     * returning duplicate data.</p>
+     */
     inline GetPartitionsRequest& WithExcludeColumnSchema(bool value) { SetExcludeColumnSchema(value); return *this;}
 
   private:

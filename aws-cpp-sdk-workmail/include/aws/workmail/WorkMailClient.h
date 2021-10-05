@@ -32,6 +32,7 @@
 #include <aws/workmail/model/DeleteUserResult.h>
 #include <aws/workmail/model/DeregisterFromWorkMailResult.h>
 #include <aws/workmail/model/DescribeGroupResult.h>
+#include <aws/workmail/model/DescribeInboundDmarcSettingsResult.h>
 #include <aws/workmail/model/DescribeMailboxExportJobResult.h>
 #include <aws/workmail/model/DescribeOrganizationResult.h>
 #include <aws/workmail/model/DescribeResourceResult.h>
@@ -57,6 +58,7 @@
 #include <aws/workmail/model/ListTagsForResourceResult.h>
 #include <aws/workmail/model/ListUsersResult.h>
 #include <aws/workmail/model/PutAccessControlRuleResult.h>
+#include <aws/workmail/model/PutInboundDmarcSettingsResult.h>
 #include <aws/workmail/model/PutMailboxPermissionsResult.h>
 #include <aws/workmail/model/PutMobileDeviceAccessOverrideResult.h>
 #include <aws/workmail/model/PutRetentionPolicyResult.h>
@@ -129,6 +131,7 @@ namespace Model
         class DeleteUserRequest;
         class DeregisterFromWorkMailRequest;
         class DescribeGroupRequest;
+        class DescribeInboundDmarcSettingsRequest;
         class DescribeMailboxExportJobRequest;
         class DescribeOrganizationRequest;
         class DescribeResourceRequest;
@@ -154,6 +157,7 @@ namespace Model
         class ListTagsForResourceRequest;
         class ListUsersRequest;
         class PutAccessControlRuleRequest;
+        class PutInboundDmarcSettingsRequest;
         class PutMailboxPermissionsRequest;
         class PutMobileDeviceAccessOverrideRequest;
         class PutRetentionPolicyRequest;
@@ -188,6 +192,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteUserResult, WorkMailError> DeleteUserOutcome;
         typedef Aws::Utils::Outcome<DeregisterFromWorkMailResult, WorkMailError> DeregisterFromWorkMailOutcome;
         typedef Aws::Utils::Outcome<DescribeGroupResult, WorkMailError> DescribeGroupOutcome;
+        typedef Aws::Utils::Outcome<DescribeInboundDmarcSettingsResult, WorkMailError> DescribeInboundDmarcSettingsOutcome;
         typedef Aws::Utils::Outcome<DescribeMailboxExportJobResult, WorkMailError> DescribeMailboxExportJobOutcome;
         typedef Aws::Utils::Outcome<DescribeOrganizationResult, WorkMailError> DescribeOrganizationOutcome;
         typedef Aws::Utils::Outcome<DescribeResourceResult, WorkMailError> DescribeResourceOutcome;
@@ -213,6 +218,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, WorkMailError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListUsersResult, WorkMailError> ListUsersOutcome;
         typedef Aws::Utils::Outcome<PutAccessControlRuleResult, WorkMailError> PutAccessControlRuleOutcome;
+        typedef Aws::Utils::Outcome<PutInboundDmarcSettingsResult, WorkMailError> PutInboundDmarcSettingsOutcome;
         typedef Aws::Utils::Outcome<PutMailboxPermissionsResult, WorkMailError> PutMailboxPermissionsOutcome;
         typedef Aws::Utils::Outcome<PutMobileDeviceAccessOverrideResult, WorkMailError> PutMobileDeviceAccessOverrideOutcome;
         typedef Aws::Utils::Outcome<PutRetentionPolicyResult, WorkMailError> PutRetentionPolicyOutcome;
@@ -247,6 +253,7 @@ namespace Model
         typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
         typedef std::future<DeregisterFromWorkMailOutcome> DeregisterFromWorkMailOutcomeCallable;
         typedef std::future<DescribeGroupOutcome> DescribeGroupOutcomeCallable;
+        typedef std::future<DescribeInboundDmarcSettingsOutcome> DescribeInboundDmarcSettingsOutcomeCallable;
         typedef std::future<DescribeMailboxExportJobOutcome> DescribeMailboxExportJobOutcomeCallable;
         typedef std::future<DescribeOrganizationOutcome> DescribeOrganizationOutcomeCallable;
         typedef std::future<DescribeResourceOutcome> DescribeResourceOutcomeCallable;
@@ -272,6 +279,7 @@ namespace Model
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
         typedef std::future<PutAccessControlRuleOutcome> PutAccessControlRuleOutcomeCallable;
+        typedef std::future<PutInboundDmarcSettingsOutcome> PutInboundDmarcSettingsOutcomeCallable;
         typedef std::future<PutMailboxPermissionsOutcome> PutMailboxPermissionsOutcomeCallable;
         typedef std::future<PutMobileDeviceAccessOverrideOutcome> PutMobileDeviceAccessOverrideOutcomeCallable;
         typedef std::future<PutRetentionPolicyOutcome> PutRetentionPolicyOutcomeCallable;
@@ -309,6 +317,7 @@ namespace Model
     typedef std::function<void(const WorkMailClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DeregisterFromWorkMailRequest&, const Model::DeregisterFromWorkMailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterFromWorkMailResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DescribeGroupRequest&, const Model::DescribeGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGroupResponseReceivedHandler;
+    typedef std::function<void(const WorkMailClient*, const Model::DescribeInboundDmarcSettingsRequest&, const Model::DescribeInboundDmarcSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInboundDmarcSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DescribeMailboxExportJobRequest&, const Model::DescribeMailboxExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMailboxExportJobResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DescribeOrganizationRequest&, const Model::DescribeOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrganizationResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DescribeResourceRequest&, const Model::DescribeResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourceResponseReceivedHandler;
@@ -334,6 +343,7 @@ namespace Model
     typedef std::function<void(const WorkMailClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::PutAccessControlRuleRequest&, const Model::PutAccessControlRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccessControlRuleResponseReceivedHandler;
+    typedef std::function<void(const WorkMailClient*, const Model::PutInboundDmarcSettingsRequest&, const Model::PutInboundDmarcSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutInboundDmarcSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::PutMailboxPermissionsRequest&, const Model::PutMailboxPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMailboxPermissionsResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::PutMobileDeviceAccessOverrideRequest&, const Model::PutMobileDeviceAccessOverrideOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMobileDeviceAccessOverrideResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::PutRetentionPolicyRequest&, const Model::PutRetentionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRetentionPolicyResponseReceivedHandler;
@@ -1056,6 +1066,34 @@ namespace Model
         virtual void DescribeGroupAsync(const Model::DescribeGroupRequest& request, const DescribeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the settings in a DMARC policy for a specified
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeInboundDmarcSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeInboundDmarcSettingsOutcome DescribeInboundDmarcSettings(const Model::DescribeInboundDmarcSettingsRequest& request) const;
+
+        /**
+         * <p>Lists the settings in a DMARC policy for a specified
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeInboundDmarcSettings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeInboundDmarcSettingsOutcomeCallable DescribeInboundDmarcSettingsCallable(const Model::DescribeInboundDmarcSettingsRequest& request) const;
+
+        /**
+         * <p>Lists the settings in a DMARC policy for a specified
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeInboundDmarcSettings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeInboundDmarcSettingsAsync(const Model::DescribeInboundDmarcSettingsRequest& request, const DescribeInboundDmarcSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the current status of a mailbox export job.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeMailboxExportJob">AWS
@@ -1759,6 +1797,34 @@ namespace Model
         virtual void PutAccessControlRuleAsync(const Model::PutAccessControlRuleRequest& request, const PutAccessControlRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Enables or disables a DMARC policy for a given organization.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutInboundDmarcSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutInboundDmarcSettingsOutcome PutInboundDmarcSettings(const Model::PutInboundDmarcSettingsRequest& request) const;
+
+        /**
+         * <p>Enables or disables a DMARC policy for a given organization.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutInboundDmarcSettings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutInboundDmarcSettingsOutcomeCallable PutInboundDmarcSettingsCallable(const Model::PutInboundDmarcSettingsRequest& request) const;
+
+        /**
+         * <p>Enables or disables a DMARC policy for a given organization.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutInboundDmarcSettings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutInboundDmarcSettingsAsync(const Model::PutInboundDmarcSettingsRequest& request, const PutInboundDmarcSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Sets permissions for a user, group, or resource. This replaces any
          * pre-existing permissions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutMailboxPermissions">AWS
@@ -2167,6 +2233,7 @@ namespace Model
         void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeregisterFromWorkMailAsyncHelper(const Model::DeregisterFromWorkMailRequest& request, const DeregisterFromWorkMailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGroupAsyncHelper(const Model::DescribeGroupRequest& request, const DescribeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeInboundDmarcSettingsAsyncHelper(const Model::DescribeInboundDmarcSettingsRequest& request, const DescribeInboundDmarcSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMailboxExportJobAsyncHelper(const Model::DescribeMailboxExportJobRequest& request, const DescribeMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeOrganizationAsyncHelper(const Model::DescribeOrganizationRequest& request, const DescribeOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeResourceAsyncHelper(const Model::DescribeResourceRequest& request, const DescribeResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2192,6 +2259,7 @@ namespace Model
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUsersAsyncHelper(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAccessControlRuleAsyncHelper(const Model::PutAccessControlRuleRequest& request, const PutAccessControlRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutInboundDmarcSettingsAsyncHelper(const Model::PutInboundDmarcSettingsRequest& request, const PutInboundDmarcSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutMailboxPermissionsAsyncHelper(const Model::PutMailboxPermissionsRequest& request, const PutMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutMobileDeviceAccessOverrideAsyncHelper(const Model::PutMobileDeviceAccessOverrideRequest& request, const PutMobileDeviceAccessOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRetentionPolicyAsyncHelper(const Model::PutRetentionPolicyRequest& request, const PutRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

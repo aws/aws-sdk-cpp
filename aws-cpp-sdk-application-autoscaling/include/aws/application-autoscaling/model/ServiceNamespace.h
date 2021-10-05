@@ -28,7 +28,8 @@ namespace Model
     lambda,
     cassandra,
     kafka,
-    elasticache
+    elasticache,
+    neptune
   };
 
 namespace ServiceNamespaceMapper

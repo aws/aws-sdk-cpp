@@ -41,6 +41,7 @@
 #include <aws/workmail/model/DeleteUserRequest.h>
 #include <aws/workmail/model/DeregisterFromWorkMailRequest.h>
 #include <aws/workmail/model/DescribeGroupRequest.h>
+#include <aws/workmail/model/DescribeInboundDmarcSettingsRequest.h>
 #include <aws/workmail/model/DescribeMailboxExportJobRequest.h>
 #include <aws/workmail/model/DescribeOrganizationRequest.h>
 #include <aws/workmail/model/DescribeResourceRequest.h>
@@ -66,6 +67,7 @@
 #include <aws/workmail/model/ListTagsForResourceRequest.h>
 #include <aws/workmail/model/ListUsersRequest.h>
 #include <aws/workmail/model/PutAccessControlRuleRequest.h>
+#include <aws/workmail/model/PutInboundDmarcSettingsRequest.h>
 #include <aws/workmail/model/PutMailboxPermissionsRequest.h>
 #include <aws/workmail/model/PutMobileDeviceAccessOverrideRequest.h>
 #include <aws/workmail/model/PutRetentionPolicyRequest.h>
@@ -654,6 +656,30 @@ void WorkMailClient::DescribeGroupAsync(const DescribeGroupRequest& request, con
 void WorkMailClient::DescribeGroupAsyncHelper(const DescribeGroupRequest& request, const DescribeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeGroup(request), context);
+}
+
+DescribeInboundDmarcSettingsOutcome WorkMailClient::DescribeInboundDmarcSettings(const DescribeInboundDmarcSettingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeInboundDmarcSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeInboundDmarcSettingsOutcomeCallable WorkMailClient::DescribeInboundDmarcSettingsCallable(const DescribeInboundDmarcSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeInboundDmarcSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInboundDmarcSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::DescribeInboundDmarcSettingsAsync(const DescribeInboundDmarcSettingsRequest& request, const DescribeInboundDmarcSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeInboundDmarcSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::DescribeInboundDmarcSettingsAsyncHelper(const DescribeInboundDmarcSettingsRequest& request, const DescribeInboundDmarcSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeInboundDmarcSettings(request), context);
 }
 
 DescribeMailboxExportJobOutcome WorkMailClient::DescribeMailboxExportJob(const DescribeMailboxExportJobRequest& request) const
@@ -1254,6 +1280,30 @@ void WorkMailClient::PutAccessControlRuleAsync(const PutAccessControlRuleRequest
 void WorkMailClient::PutAccessControlRuleAsyncHelper(const PutAccessControlRuleRequest& request, const PutAccessControlRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutAccessControlRule(request), context);
+}
+
+PutInboundDmarcSettingsOutcome WorkMailClient::PutInboundDmarcSettings(const PutInboundDmarcSettingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return PutInboundDmarcSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutInboundDmarcSettingsOutcomeCallable WorkMailClient::PutInboundDmarcSettingsCallable(const PutInboundDmarcSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutInboundDmarcSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutInboundDmarcSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::PutInboundDmarcSettingsAsync(const PutInboundDmarcSettingsRequest& request, const PutInboundDmarcSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutInboundDmarcSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::PutInboundDmarcSettingsAsyncHelper(const PutInboundDmarcSettingsRequest& request, const PutInboundDmarcSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutInboundDmarcSettings(request), context);
 }
 
 PutMailboxPermissionsOutcome WorkMailClient::PutMailboxPermissions(const PutMailboxPermissionsRequest& request) const

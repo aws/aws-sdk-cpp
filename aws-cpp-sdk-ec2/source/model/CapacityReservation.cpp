@@ -49,7 +49,8 @@ CapacityReservation::CapacityReservation() :
     m_instanceMatchCriteriaHasBeenSet(false),
     m_createDateHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_outpostArnHasBeenSet(false)
+    m_outpostArnHasBeenSet(false),
+    m_capacityReservationFleetIdHasBeenSet(false)
 {
 }
 
@@ -82,7 +83,8 @@ CapacityReservation::CapacityReservation(const XmlNode& xmlNode) :
     m_instanceMatchCriteriaHasBeenSet(false),
     m_createDateHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_outpostArnHasBeenSet(false)
+    m_outpostArnHasBeenSet(false),
+    m_capacityReservationFleetIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -219,6 +221,12 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
       m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
       m_outpostArnHasBeenSet = true;
     }
+    XmlNode capacityReservationFleetIdNode = resultNode.FirstChild("capacityReservationFleetId");
+    if(!capacityReservationFleetIdNode.IsNull())
+    {
+      m_capacityReservationFleetId = Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationFleetIdNode.GetText());
+      m_capacityReservationFleetIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -332,6 +340,11 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
 
+  if(m_capacityReservationFleetIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CapacityReservationFleetId=" << StringUtils::URLEncode(m_capacityReservationFleetId.c_str()) << "&";
+  }
+
 }
 
 void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -421,6 +434,10 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_outpostArnHasBeenSet)
   {
       oStream << location << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+  if(m_capacityReservationFleetIdHasBeenSet)
+  {
+      oStream << location << ".CapacityReservationFleetId=" << StringUtils::URLEncode(m_capacityReservationFleetId.c_str()) << "&";
   }
 }
 

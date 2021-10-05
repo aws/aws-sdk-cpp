@@ -122,33 +122,37 @@ namespace Model
 
     /**
      * <p>The total distance covered by the route. The sum of the distance travelled
-     * between every stop on the route.</p>  <p>The route <code>distance</code>
-     * can't be greater than 250 km. If the route exceeds 250 km, the response returns
-     * a <code>400 RoutesValidationException</code> error.</p> 
+     * between every stop on the route.</p>  <p>If Esri is the data source for
+     * the route calculator, the route distance can’t be greater than 400 km. If the
+     * route exceeds 400 km, the response is a <code>400
+     * RoutesValidationException</code> error.</p> 
      */
     inline double GetDistance() const{ return m_distance; }
 
     /**
      * <p>The total distance covered by the route. The sum of the distance travelled
-     * between every stop on the route.</p>  <p>The route <code>distance</code>
-     * can't be greater than 250 km. If the route exceeds 250 km, the response returns
-     * a <code>400 RoutesValidationException</code> error.</p> 
+     * between every stop on the route.</p>  <p>If Esri is the data source for
+     * the route calculator, the route distance can’t be greater than 400 km. If the
+     * route exceeds 400 km, the response is a <code>400
+     * RoutesValidationException</code> error.</p> 
      */
     inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }
 
     /**
      * <p>The total distance covered by the route. The sum of the distance travelled
-     * between every stop on the route.</p>  <p>The route <code>distance</code>
-     * can't be greater than 250 km. If the route exceeds 250 km, the response returns
-     * a <code>400 RoutesValidationException</code> error.</p> 
+     * between every stop on the route.</p>  <p>If Esri is the data source for
+     * the route calculator, the route distance can’t be greater than 400 km. If the
+     * route exceeds 400 km, the response is a <code>400
+     * RoutesValidationException</code> error.</p> 
      */
     inline void SetDistance(double value) { m_distanceHasBeenSet = true; m_distance = value; }
 
     /**
      * <p>The total distance covered by the route. The sum of the distance travelled
-     * between every stop on the route.</p>  <p>The route <code>distance</code>
-     * can't be greater than 250 km. If the route exceeds 250 km, the response returns
-     * a <code>400 RoutesValidationException</code> error.</p> 
+     * between every stop on the route.</p>  <p>If Esri is the data source for
+     * the route calculator, the route distance can’t be greater than 400 km. If the
+     * route exceeds 400 km, the response is a <code>400
+     * RoutesValidationException</code> error.</p> 
      */
     inline CalculateRouteSummary& WithDistance(double value) { SetDistance(value); return *this;}
 
@@ -220,7 +224,7 @@ namespace Model
      * describe the upper northeast corner: </p> <ul> <li> <p>The third
      * <code>bbox</code> position is the X coordinate, or longitude of the upper
      * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
-     * the Y coordinate, or longitude of the upper northeast corner. </p> </li> </ul>
+     * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
      */
     inline const Aws::Vector<double>& GetRouteBBox() const{ return m_routeBBox; }
 
@@ -235,7 +239,7 @@ namespace Model
      * describe the upper northeast corner: </p> <ul> <li> <p>The third
      * <code>bbox</code> position is the X coordinate, or longitude of the upper
      * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
-     * the Y coordinate, or longitude of the upper northeast corner. </p> </li> </ul>
+     * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
      */
     inline bool RouteBBoxHasBeenSet() const { return m_routeBBoxHasBeenSet; }
 
@@ -250,7 +254,7 @@ namespace Model
      * describe the upper northeast corner: </p> <ul> <li> <p>The third
      * <code>bbox</code> position is the X coordinate, or longitude of the upper
      * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
-     * the Y coordinate, or longitude of the upper northeast corner. </p> </li> </ul>
+     * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
      */
     inline void SetRouteBBox(const Aws::Vector<double>& value) { m_routeBBoxHasBeenSet = true; m_routeBBox = value; }
 
@@ -265,7 +269,7 @@ namespace Model
      * describe the upper northeast corner: </p> <ul> <li> <p>The third
      * <code>bbox</code> position is the X coordinate, or longitude of the upper
      * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
-     * the Y coordinate, or longitude of the upper northeast corner. </p> </li> </ul>
+     * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
      */
     inline void SetRouteBBox(Aws::Vector<double>&& value) { m_routeBBoxHasBeenSet = true; m_routeBBox = std::move(value); }
 
@@ -280,7 +284,7 @@ namespace Model
      * describe the upper northeast corner: </p> <ul> <li> <p>The third
      * <code>bbox</code> position is the X coordinate, or longitude of the upper
      * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
-     * the Y coordinate, or longitude of the upper northeast corner. </p> </li> </ul>
+     * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
      */
     inline CalculateRouteSummary& WithRouteBBox(const Aws::Vector<double>& value) { SetRouteBBox(value); return *this;}
 
@@ -295,7 +299,7 @@ namespace Model
      * describe the upper northeast corner: </p> <ul> <li> <p>The third
      * <code>bbox</code> position is the X coordinate, or longitude of the upper
      * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
-     * the Y coordinate, or longitude of the upper northeast corner. </p> </li> </ul>
+     * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
      */
     inline CalculateRouteSummary& WithRouteBBox(Aws::Vector<double>&& value) { SetRouteBBox(std::move(value)); return *this;}
 
@@ -310,7 +314,7 @@ namespace Model
      * describe the upper northeast corner: </p> <ul> <li> <p>The third
      * <code>bbox</code> position is the X coordinate, or longitude of the upper
      * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
-     * the Y coordinate, or longitude of the upper northeast corner. </p> </li> </ul>
+     * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
      */
     inline CalculateRouteSummary& AddRouteBBox(double value) { m_routeBBoxHasBeenSet = true; m_routeBBox.push_back(value); return *this; }
 

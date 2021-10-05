@@ -117,19 +117,20 @@ namespace Model
    * (replication groups)</p> </li> <li> <p>Amazon EMR clusters</p> </li> <li>
    * <p>Amazon Keyspaces (for Apache Cassandra) tables</p> </li> <li> <p>Lambda
    * function provisioned concurrency</p> </li> <li> <p>Amazon Managed Streaming for
-   * Apache Kafka broker storage</p> </li> <li> <p>Amazon SageMaker endpoint
-   * variants</p> </li> <li> <p>Spot Fleet (Amazon EC2) requests</p> </li> <li>
-   * <p>Custom resources provided by your own applications or services</p> </li>
-   * </ul> <p> <b>API Summary</b> </p> <p>The Application Auto Scaling service API
-   * includes three key sets of actions: </p> <ul> <li> <p>Register and manage
-   * scalable targets - Register Amazon Web Services or custom resources as scalable
-   * targets (a resource that Application Auto Scaling can scale), set minimum and
-   * maximum capacity limits, and retrieve information on existing scalable
-   * targets.</p> </li> <li> <p>Configure and manage automatic scaling - Define
-   * scaling policies to dynamically scale your resources in response to CloudWatch
-   * alarms, schedule one-time or recurring scaling actions, and retrieve your recent
-   * scaling activity history.</p> </li> <li> <p>Suspend and resume scaling -
-   * Temporarily suspend and later resume automatic scaling by calling the <a
+   * Apache Kafka broker storage</p> </li> <li> <p>Amazon Neptune clusters</p> </li>
+   * <li> <p>Amazon SageMaker endpoint variants</p> </li> <li> <p>Spot Fleets (Amazon
+   * EC2)</p> </li> <li> <p>Custom resources provided by your own applications or
+   * services</p> </li> </ul> <p> <b>API Summary</b> </p> <p>The Application Auto
+   * Scaling service API includes three key sets of actions: </p> <ul> <li>
+   * <p>Register and manage scalable targets - Register Amazon Web Services or custom
+   * resources as scalable targets (a resource that Application Auto Scaling can
+   * scale), set minimum and maximum capacity limits, and retrieve information on
+   * existing scalable targets.</p> </li> <li> <p>Configure and manage automatic
+   * scaling - Define scaling policies to dynamically scale your resources in
+   * response to CloudWatch alarms, schedule one-time or recurring scaling actions,
+   * and retrieve your recent scaling activity history.</p> </li> <li> <p>Suspend and
+   * resume scaling - Temporarily suspend and later resume automatic scaling by
+   * calling the <a
    * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html">RegisterScalableTarget</a>
    * API action for any Application Auto Scaling scalable target. You can suspend and
    * resume (individually or in combination) scale-out activities that are triggered
@@ -654,7 +655,14 @@ namespace Model
          * <p>To update a scalable target, specify the parameters that you want to change.
          * Include the parameters that identify the scalable target: resource ID, scalable
          * dimension, and namespace. Any parameters that you don't specify are not changed
-         * by this update request. </p><p><h3>See Also:</h3>   <a
+         * by this update request. </p>  <p>If you call the
+         * <code>RegisterScalableTarget</code> API to update an existing scalable target,
+         * Application Auto Scaling retrieves the current capacity of the resource. If it
+         * is below the minimum capacity or above the maximum capacity, Application Auto
+         * Scaling adjusts the capacity of the scalable target to place it within these
+         * bounds, even if you don't include the <code>MinCapacity</code> or
+         * <code>MaxCapacity</code> request parameters.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/RegisterScalableTarget">AWS
          * API Reference</a></p>
          */
@@ -679,7 +687,14 @@ namespace Model
          * <p>To update a scalable target, specify the parameters that you want to change.
          * Include the parameters that identify the scalable target: resource ID, scalable
          * dimension, and namespace. Any parameters that you don't specify are not changed
-         * by this update request. </p><p><h3>See Also:</h3>   <a
+         * by this update request. </p>  <p>If you call the
+         * <code>RegisterScalableTarget</code> API to update an existing scalable target,
+         * Application Auto Scaling retrieves the current capacity of the resource. If it
+         * is below the minimum capacity or above the maximum capacity, Application Auto
+         * Scaling adjusts the capacity of the scalable target to place it within these
+         * bounds, even if you don't include the <code>MinCapacity</code> or
+         * <code>MaxCapacity</code> request parameters.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/RegisterScalableTarget">AWS
          * API Reference</a></p>
          *
@@ -706,7 +721,14 @@ namespace Model
          * <p>To update a scalable target, specify the parameters that you want to change.
          * Include the parameters that identify the scalable target: resource ID, scalable
          * dimension, and namespace. Any parameters that you don't specify are not changed
-         * by this update request. </p><p><h3>See Also:</h3>   <a
+         * by this update request. </p>  <p>If you call the
+         * <code>RegisterScalableTarget</code> API to update an existing scalable target,
+         * Application Auto Scaling retrieves the current capacity of the resource. If it
+         * is below the minimum capacity or above the maximum capacity, Application Auto
+         * Scaling adjusts the capacity of the scalable target to place it within these
+         * bounds, even if you don't include the <code>MinCapacity</code> or
+         * <code>MaxCapacity</code> request parameters.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/RegisterScalableTarget">AWS
          * API Reference</a></p>
          *

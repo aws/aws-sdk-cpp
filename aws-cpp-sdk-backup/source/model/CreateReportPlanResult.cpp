@@ -40,6 +40,12 @@ CreateReportPlanResult& CreateReportPlanResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("CreationTime"))
+  {
+    m_creationTime = jsonValue.GetDouble("CreationTime");
+
+  }
+
 
 
   return *this;

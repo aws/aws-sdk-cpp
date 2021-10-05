@@ -259,45 +259,40 @@ namespace Model
     /**
      * <p>The pricing plan selected for the specified map resource.</p> <pre><code>
      * &lt;p&gt;For additional details and restrictions on each pricing plan option,
-     * see the &lt;a
-     * href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location
-     * Service pricing page&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     * see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon
+     * Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code></pre>
      */
     inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
 
     /**
      * <p>The pricing plan selected for the specified map resource.</p> <pre><code>
      * &lt;p&gt;For additional details and restrictions on each pricing plan option,
-     * see the &lt;a
-     * href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location
-     * Service pricing page&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     * see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon
+     * Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code></pre>
      */
     inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlan = value; }
 
     /**
      * <p>The pricing plan selected for the specified map resource.</p> <pre><code>
      * &lt;p&gt;For additional details and restrictions on each pricing plan option,
-     * see the &lt;a
-     * href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location
-     * Service pricing page&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     * see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon
+     * Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code></pre>
      */
     inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlan = std::move(value); }
 
     /**
      * <p>The pricing plan selected for the specified map resource.</p> <pre><code>
      * &lt;p&gt;For additional details and restrictions on each pricing plan option,
-     * see the &lt;a
-     * href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location
-     * Service pricing page&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     * see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon
+     * Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code></pre>
      */
     inline DescribeMapResult& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
 
     /**
      * <p>The pricing plan selected for the specified map resource.</p> <pre><code>
      * &lt;p&gt;For additional details and restrictions on each pricing plan option,
-     * see the &lt;a
-     * href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location
-     * Service pricing page&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     * see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon
+     * Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code></pre>
      */
     inline DescribeMapResult& WithPricingPlan(PricingPlan&& value) { SetPricingPlan(std::move(value)); return *this;}
 

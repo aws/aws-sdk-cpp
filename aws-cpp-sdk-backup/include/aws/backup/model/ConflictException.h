@@ -88,53 +88,85 @@ namespace Model
     inline ConflictException& WithMessage(const char* value) { SetMessage(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetType() const{ return m_type; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ConflictException& WithType(const Aws::String& value) { SetType(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ConflictException& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ConflictException& WithType(const char* value) { SetType(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetContext() const{ return m_context; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetContext(const Aws::String& value) { m_contextHasBeenSet = true; m_context = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetContext(Aws::String&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetContext(const char* value) { m_contextHasBeenSet = true; m_context.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ConflictException& WithContext(const Aws::String& value) { SetContext(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ConflictException& WithContext(Aws::String&& value) { SetContext(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ConflictException& WithContext(const char* value) { SetContext(value); return *this;}
 
   private:

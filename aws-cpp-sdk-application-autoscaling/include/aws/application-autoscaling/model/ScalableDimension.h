@@ -34,7 +34,8 @@ namespace Model
     cassandra_table_WriteCapacityUnits,
     kafka_broker_storage_VolumeSize,
     elasticache_replication_group_NodeGroups,
-    elasticache_replication_group_Replicas
+    elasticache_replication_group_Replicas,
+    neptune_cluster_ReadReplicaCount
   };
 
 namespace ScalableDimensionMapper

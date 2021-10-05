@@ -149,57 +149,65 @@ namespace Model
 
     /**
      * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are: </p> <p> <code>BACKUP_JOB_REPORT |
-     * COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+     * report template. The report templates are: </p> <p>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
      */
     inline const Aws::String& GetReportTemplate() const{ return m_reportTemplate; }
 
     /**
      * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are: </p> <p> <code>BACKUP_JOB_REPORT |
-     * COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+     * report template. The report templates are: </p> <p>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
      */
     inline bool ReportTemplateHasBeenSet() const { return m_reportTemplateHasBeenSet; }
 
     /**
      * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are: </p> <p> <code>BACKUP_JOB_REPORT |
-     * COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+     * report template. The report templates are: </p> <p>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
      */
     inline void SetReportTemplate(const Aws::String& value) { m_reportTemplateHasBeenSet = true; m_reportTemplate = value; }
 
     /**
      * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are: </p> <p> <code>BACKUP_JOB_REPORT |
-     * COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+     * report template. The report templates are: </p> <p>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
      */
     inline void SetReportTemplate(Aws::String&& value) { m_reportTemplateHasBeenSet = true; m_reportTemplate = std::move(value); }
 
     /**
      * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are: </p> <p> <code>BACKUP_JOB_REPORT |
-     * COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+     * report template. The report templates are: </p> <p>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
      */
     inline void SetReportTemplate(const char* value) { m_reportTemplateHasBeenSet = true; m_reportTemplate.assign(value); }
 
     /**
      * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are: </p> <p> <code>BACKUP_JOB_REPORT |
-     * COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+     * report template. The report templates are: </p> <p>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
      */
     inline ReportJob& WithReportTemplate(const Aws::String& value) { SetReportTemplate(value); return *this;}
 
     /**
      * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are: </p> <p> <code>BACKUP_JOB_REPORT |
-     * COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+     * report template. The report templates are: </p> <p>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
      */
     inline ReportJob& WithReportTemplate(Aws::String&& value) { SetReportTemplate(std::move(value)); return *this;}
 
     /**
      * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are: </p> <p> <code>BACKUP_JOB_REPORT |
-     * COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+     * report template. The report templates are: </p> <p>
+     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
      */
     inline ReportJob& WithReportTemplate(const char* value) { SetReportTemplate(value); return *this;}
 

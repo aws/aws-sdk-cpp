@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -110,11 +111,54 @@ namespace Model
      */
     inline CreateReportPlanResult& WithReportPlanArn(const char* value) { SetReportPlanArn(value); return *this;}
 
+
+    /**
+     * <p>The date and time a backup vault is created, in Unix format and Coordinated
+     * Universal Time (UTC). The value of <code>CreationTime</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>The date and time a backup vault is created, in Unix format and Coordinated
+     * Universal Time (UTC). The value of <code>CreationTime</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
+
+    /**
+     * <p>The date and time a backup vault is created, in Unix format and Coordinated
+     * Universal Time (UTC). The value of <code>CreationTime</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
+
+    /**
+     * <p>The date and time a backup vault is created, in Unix format and Coordinated
+     * Universal Time (UTC). The value of <code>CreationTime</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
+     */
+    inline CreateReportPlanResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>The date and time a backup vault is created, in Unix format and Coordinated
+     * Universal Time (UTC). The value of <code>CreationTime</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
+     */
+    inline CreateReportPlanResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_reportPlanName;
 
     Aws::String m_reportPlanArn;
+
+    Aws::Utils::DateTime m_creationTime;
   };
 
 } // namespace Model

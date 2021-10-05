@@ -46,56 +46,56 @@ namespace Model
 
 
     /**
-     * <p>Describes whether the control scope includes a specific resource identified
-     * by its unique Amazon Resource Name (ARN).</p>
+     * <p>The ID of the only Amazon Web Services resource that you want your control
+     * scope to contain.</p>
      */
     inline const Aws::Vector<Aws::String>& GetComplianceResourceIds() const{ return m_complianceResourceIds; }
 
     /**
-     * <p>Describes whether the control scope includes a specific resource identified
-     * by its unique Amazon Resource Name (ARN).</p>
+     * <p>The ID of the only Amazon Web Services resource that you want your control
+     * scope to contain.</p>
      */
     inline bool ComplianceResourceIdsHasBeenSet() const { return m_complianceResourceIdsHasBeenSet; }
 
     /**
-     * <p>Describes whether the control scope includes a specific resource identified
-     * by its unique Amazon Resource Name (ARN).</p>
+     * <p>The ID of the only Amazon Web Services resource that you want your control
+     * scope to contain.</p>
      */
     inline void SetComplianceResourceIds(const Aws::Vector<Aws::String>& value) { m_complianceResourceIdsHasBeenSet = true; m_complianceResourceIds = value; }
 
     /**
-     * <p>Describes whether the control scope includes a specific resource identified
-     * by its unique Amazon Resource Name (ARN).</p>
+     * <p>The ID of the only Amazon Web Services resource that you want your control
+     * scope to contain.</p>
      */
     inline void SetComplianceResourceIds(Aws::Vector<Aws::String>&& value) { m_complianceResourceIdsHasBeenSet = true; m_complianceResourceIds = std::move(value); }
 
     /**
-     * <p>Describes whether the control scope includes a specific resource identified
-     * by its unique Amazon Resource Name (ARN).</p>
+     * <p>The ID of the only Amazon Web Services resource that you want your control
+     * scope to contain.</p>
      */
     inline ControlScope& WithComplianceResourceIds(const Aws::Vector<Aws::String>& value) { SetComplianceResourceIds(value); return *this;}
 
     /**
-     * <p>Describes whether the control scope includes a specific resource identified
-     * by its unique Amazon Resource Name (ARN).</p>
+     * <p>The ID of the only Amazon Web Services resource that you want your control
+     * scope to contain.</p>
      */
     inline ControlScope& WithComplianceResourceIds(Aws::Vector<Aws::String>&& value) { SetComplianceResourceIds(std::move(value)); return *this;}
 
     /**
-     * <p>Describes whether the control scope includes a specific resource identified
-     * by its unique Amazon Resource Name (ARN).</p>
+     * <p>The ID of the only Amazon Web Services resource that you want your control
+     * scope to contain.</p>
      */
     inline ControlScope& AddComplianceResourceIds(const Aws::String& value) { m_complianceResourceIdsHasBeenSet = true; m_complianceResourceIds.push_back(value); return *this; }
 
     /**
-     * <p>Describes whether the control scope includes a specific resource identified
-     * by its unique Amazon Resource Name (ARN).</p>
+     * <p>The ID of the only Amazon Web Services resource that you want your control
+     * scope to contain.</p>
      */
     inline ControlScope& AddComplianceResourceIds(Aws::String&& value) { m_complianceResourceIdsHasBeenSet = true; m_complianceResourceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Describes whether the control scope includes a specific resource identified
-     * by its unique Amazon Resource Name (ARN).</p>
+     * <p>The ID of the only Amazon Web Services resource that you want your control
+     * scope to contain.</p>
      */
     inline ControlScope& AddComplianceResourceIds(const char* value) { m_complianceResourceIdsHasBeenSet = true; m_complianceResourceIds.push_back(value); return *this; }
 

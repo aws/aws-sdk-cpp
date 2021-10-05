@@ -552,9 +552,8 @@ namespace Model
          * <p>Creates a framework with one or more controls. A framework is a collection of
          * controls that you can use to evaluate your backup practices. By using pre-built
          * customizable controls to define your policies, you can evaluate whether your
-         * backup practices comply with your policies. To get insights into the compliance
-         * status of your frameworks, you can set up automatic daily reports.</p><p><h3>See
-         * Also:</h3>   <a
+         * backup practices comply with your policies and which resources are not yet in
+         * compliance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateFramework">AWS
          * API Reference</a></p>
          */
@@ -564,9 +563,8 @@ namespace Model
          * <p>Creates a framework with one or more controls. A framework is a collection of
          * controls that you can use to evaluate your backup practices. By using pre-built
          * customizable controls to define your policies, you can evaluate whether your
-         * backup practices comply with your policies. To get insights into the compliance
-         * status of your frameworks, you can set up automatic daily reports.</p><p><h3>See
-         * Also:</h3>   <a
+         * backup practices comply with your policies and which resources are not yet in
+         * compliance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateFramework">AWS
          * API Reference</a></p>
          *
@@ -578,9 +576,8 @@ namespace Model
          * <p>Creates a framework with one or more controls. A framework is a collection of
          * controls that you can use to evaluate your backup practices. By using pre-built
          * customizable controls to define your policies, you can evaluate whether your
-         * backup practices comply with your policies. To get insights into the compliance
-         * status of your frameworks, you can set up automatic daily reports.</p><p><h3>See
-         * Also:</h3>   <a
+         * backup practices comply with your policies and which resources are not yet in
+         * compliance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateFramework">AWS
          * API Reference</a></p>
          *

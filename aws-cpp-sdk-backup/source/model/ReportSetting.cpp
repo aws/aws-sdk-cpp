@@ -19,12 +19,18 @@ namespace Model
 {
 
 ReportSetting::ReportSetting() : 
-    m_reportTemplateHasBeenSet(false)
+    m_reportTemplateHasBeenSet(false),
+    m_frameworkArnsHasBeenSet(false),
+    m_numberOfFrameworks(0),
+    m_numberOfFrameworksHasBeenSet(false)
 {
 }
 
 ReportSetting::ReportSetting(JsonView jsonValue) : 
-    m_reportTemplateHasBeenSet(false)
+    m_reportTemplateHasBeenSet(false),
+    m_frameworkArnsHasBeenSet(false),
+    m_numberOfFrameworks(0),
+    m_numberOfFrameworksHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +44,23 @@ ReportSetting& ReportSetting::operator =(JsonView jsonValue)
     m_reportTemplateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FrameworkArns"))
+  {
+    Array<JsonView> frameworkArnsJsonList = jsonValue.GetArray("FrameworkArns");
+    for(unsigned frameworkArnsIndex = 0; frameworkArnsIndex < frameworkArnsJsonList.GetLength(); ++frameworkArnsIndex)
+    {
+      m_frameworkArns.push_back(frameworkArnsJsonList[frameworkArnsIndex].AsString());
+    }
+    m_frameworkArnsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NumberOfFrameworks"))
+  {
+    m_numberOfFrameworks = jsonValue.GetInteger("NumberOfFrameworks");
+
+    m_numberOfFrameworksHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +71,23 @@ JsonValue ReportSetting::Jsonize() const
   if(m_reportTemplateHasBeenSet)
   {
    payload.WithString("ReportTemplate", m_reportTemplate);
+
+  }
+
+  if(m_frameworkArnsHasBeenSet)
+  {
+   Array<JsonValue> frameworkArnsJsonList(m_frameworkArns.size());
+   for(unsigned frameworkArnsIndex = 0; frameworkArnsIndex < frameworkArnsJsonList.GetLength(); ++frameworkArnsIndex)
+   {
+     frameworkArnsJsonList[frameworkArnsIndex].AsString(m_frameworkArns[frameworkArnsIndex]);
+   }
+   payload.WithArray("FrameworkArns", std::move(frameworkArnsJsonList));
+
+  }
+
+  if(m_numberOfFrameworksHasBeenSet)
+  {
+   payload.WithInteger("NumberOfFrameworks", m_numberOfFrameworks);
 
   }
 

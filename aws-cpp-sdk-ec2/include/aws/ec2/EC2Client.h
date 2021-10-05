@@ -45,6 +45,7 @@
 #include <aws/ec2/model/BundleInstanceResponse.h>
 #include <aws/ec2/model/CancelBundleTaskResponse.h>
 #include <aws/ec2/model/CancelCapacityReservationResponse.h>
+#include <aws/ec2/model/CancelCapacityReservationFleetsResponse.h>
 #include <aws/ec2/model/CancelImportTaskResponse.h>
 #include <aws/ec2/model/CancelReservedInstancesListingResponse.h>
 #include <aws/ec2/model/CancelSpotFleetRequestsResponse.h>
@@ -54,6 +55,7 @@
 #include <aws/ec2/model/CopyImageResponse.h>
 #include <aws/ec2/model/CopySnapshotResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationResponse.h>
+#include <aws/ec2/model/CreateCapacityReservationFleetResponse.h>
 #include <aws/ec2/model/CreateCarrierGatewayResponse.h>
 #include <aws/ec2/model/CreateClientVpnEndpointResponse.h>
 #include <aws/ec2/model/CreateClientVpnRouteResponse.h>
@@ -161,6 +163,7 @@
 #include <aws/ec2/model/DescribeAvailabilityZonesResponse.h>
 #include <aws/ec2/model/DescribeBundleTasksResponse.h>
 #include <aws/ec2/model/DescribeByoipCidrsResponse.h>
+#include <aws/ec2/model/DescribeCapacityReservationFleetsResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationsResponse.h>
 #include <aws/ec2/model/DescribeCarrierGatewaysResponse.h>
 #include <aws/ec2/model/DescribeClassicLinkInstancesResponse.h>
@@ -343,6 +346,7 @@
 #include <aws/ec2/model/ModifyAddressAttributeResponse.h>
 #include <aws/ec2/model/ModifyAvailabilityZoneGroupResponse.h>
 #include <aws/ec2/model/ModifyCapacityReservationResponse.h>
+#include <aws/ec2/model/ModifyCapacityReservationFleetResponse.h>
 #include <aws/ec2/model/ModifyClientVpnEndpointResponse.h>
 #include <aws/ec2/model/ModifyDefaultCreditSpecificationResponse.h>
 #include <aws/ec2/model/ModifyEbsDefaultKmsKeyIdResponse.h>
@@ -504,6 +508,7 @@ namespace Model
         class BundleInstanceRequest;
         class CancelBundleTaskRequest;
         class CancelCapacityReservationRequest;
+        class CancelCapacityReservationFleetsRequest;
         class CancelConversionTaskRequest;
         class CancelExportTaskRequest;
         class CancelImportTaskRequest;
@@ -515,6 +520,7 @@ namespace Model
         class CopyImageRequest;
         class CopySnapshotRequest;
         class CreateCapacityReservationRequest;
+        class CreateCapacityReservationFleetRequest;
         class CreateCarrierGatewayRequest;
         class CreateClientVpnEndpointRequest;
         class CreateClientVpnRouteRequest;
@@ -646,6 +652,7 @@ namespace Model
         class DescribeAvailabilityZonesRequest;
         class DescribeBundleTasksRequest;
         class DescribeByoipCidrsRequest;
+        class DescribeCapacityReservationFleetsRequest;
         class DescribeCapacityReservationsRequest;
         class DescribeCarrierGatewaysRequest;
         class DescribeClassicLinkInstancesRequest;
@@ -836,6 +843,7 @@ namespace Model
         class ModifyAddressAttributeRequest;
         class ModifyAvailabilityZoneGroupRequest;
         class ModifyCapacityReservationRequest;
+        class ModifyCapacityReservationFleetRequest;
         class ModifyClientVpnEndpointRequest;
         class ModifyDefaultCreditSpecificationRequest;
         class ModifyEbsDefaultKmsKeyIdRequest;
@@ -972,6 +980,7 @@ namespace Model
         typedef Aws::Utils::Outcome<BundleInstanceResponse, EC2Error> BundleInstanceOutcome;
         typedef Aws::Utils::Outcome<CancelBundleTaskResponse, EC2Error> CancelBundleTaskOutcome;
         typedef Aws::Utils::Outcome<CancelCapacityReservationResponse, EC2Error> CancelCapacityReservationOutcome;
+        typedef Aws::Utils::Outcome<CancelCapacityReservationFleetsResponse, EC2Error> CancelCapacityReservationFleetsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> CancelConversionTaskOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> CancelExportTaskOutcome;
         typedef Aws::Utils::Outcome<CancelImportTaskResponse, EC2Error> CancelImportTaskOutcome;
@@ -983,6 +992,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CopyImageResponse, EC2Error> CopyImageOutcome;
         typedef Aws::Utils::Outcome<CopySnapshotResponse, EC2Error> CopySnapshotOutcome;
         typedef Aws::Utils::Outcome<CreateCapacityReservationResponse, EC2Error> CreateCapacityReservationOutcome;
+        typedef Aws::Utils::Outcome<CreateCapacityReservationFleetResponse, EC2Error> CreateCapacityReservationFleetOutcome;
         typedef Aws::Utils::Outcome<CreateCarrierGatewayResponse, EC2Error> CreateCarrierGatewayOutcome;
         typedef Aws::Utils::Outcome<CreateClientVpnEndpointResponse, EC2Error> CreateClientVpnEndpointOutcome;
         typedef Aws::Utils::Outcome<CreateClientVpnRouteResponse, EC2Error> CreateClientVpnRouteOutcome;
@@ -1114,6 +1124,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeAvailabilityZonesResponse, EC2Error> DescribeAvailabilityZonesOutcome;
         typedef Aws::Utils::Outcome<DescribeBundleTasksResponse, EC2Error> DescribeBundleTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeByoipCidrsResponse, EC2Error> DescribeByoipCidrsOutcome;
+        typedef Aws::Utils::Outcome<DescribeCapacityReservationFleetsResponse, EC2Error> DescribeCapacityReservationFleetsOutcome;
         typedef Aws::Utils::Outcome<DescribeCapacityReservationsResponse, EC2Error> DescribeCapacityReservationsOutcome;
         typedef Aws::Utils::Outcome<DescribeCarrierGatewaysResponse, EC2Error> DescribeCarrierGatewaysOutcome;
         typedef Aws::Utils::Outcome<DescribeClassicLinkInstancesResponse, EC2Error> DescribeClassicLinkInstancesOutcome;
@@ -1304,6 +1315,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyAddressAttributeResponse, EC2Error> ModifyAddressAttributeOutcome;
         typedef Aws::Utils::Outcome<ModifyAvailabilityZoneGroupResponse, EC2Error> ModifyAvailabilityZoneGroupOutcome;
         typedef Aws::Utils::Outcome<ModifyCapacityReservationResponse, EC2Error> ModifyCapacityReservationOutcome;
+        typedef Aws::Utils::Outcome<ModifyCapacityReservationFleetResponse, EC2Error> ModifyCapacityReservationFleetOutcome;
         typedef Aws::Utils::Outcome<ModifyClientVpnEndpointResponse, EC2Error> ModifyClientVpnEndpointOutcome;
         typedef Aws::Utils::Outcome<ModifyDefaultCreditSpecificationResponse, EC2Error> ModifyDefaultCreditSpecificationOutcome;
         typedef Aws::Utils::Outcome<ModifyEbsDefaultKmsKeyIdResponse, EC2Error> ModifyEbsDefaultKmsKeyIdOutcome;
@@ -1440,6 +1452,7 @@ namespace Model
         typedef std::future<BundleInstanceOutcome> BundleInstanceOutcomeCallable;
         typedef std::future<CancelBundleTaskOutcome> CancelBundleTaskOutcomeCallable;
         typedef std::future<CancelCapacityReservationOutcome> CancelCapacityReservationOutcomeCallable;
+        typedef std::future<CancelCapacityReservationFleetsOutcome> CancelCapacityReservationFleetsOutcomeCallable;
         typedef std::future<CancelConversionTaskOutcome> CancelConversionTaskOutcomeCallable;
         typedef std::future<CancelExportTaskOutcome> CancelExportTaskOutcomeCallable;
         typedef std::future<CancelImportTaskOutcome> CancelImportTaskOutcomeCallable;
@@ -1451,6 +1464,7 @@ namespace Model
         typedef std::future<CopyImageOutcome> CopyImageOutcomeCallable;
         typedef std::future<CopySnapshotOutcome> CopySnapshotOutcomeCallable;
         typedef std::future<CreateCapacityReservationOutcome> CreateCapacityReservationOutcomeCallable;
+        typedef std::future<CreateCapacityReservationFleetOutcome> CreateCapacityReservationFleetOutcomeCallable;
         typedef std::future<CreateCarrierGatewayOutcome> CreateCarrierGatewayOutcomeCallable;
         typedef std::future<CreateClientVpnEndpointOutcome> CreateClientVpnEndpointOutcomeCallable;
         typedef std::future<CreateClientVpnRouteOutcome> CreateClientVpnRouteOutcomeCallable;
@@ -1582,6 +1596,7 @@ namespace Model
         typedef std::future<DescribeAvailabilityZonesOutcome> DescribeAvailabilityZonesOutcomeCallable;
         typedef std::future<DescribeBundleTasksOutcome> DescribeBundleTasksOutcomeCallable;
         typedef std::future<DescribeByoipCidrsOutcome> DescribeByoipCidrsOutcomeCallable;
+        typedef std::future<DescribeCapacityReservationFleetsOutcome> DescribeCapacityReservationFleetsOutcomeCallable;
         typedef std::future<DescribeCapacityReservationsOutcome> DescribeCapacityReservationsOutcomeCallable;
         typedef std::future<DescribeCarrierGatewaysOutcome> DescribeCarrierGatewaysOutcomeCallable;
         typedef std::future<DescribeClassicLinkInstancesOutcome> DescribeClassicLinkInstancesOutcomeCallable;
@@ -1772,6 +1787,7 @@ namespace Model
         typedef std::future<ModifyAddressAttributeOutcome> ModifyAddressAttributeOutcomeCallable;
         typedef std::future<ModifyAvailabilityZoneGroupOutcome> ModifyAvailabilityZoneGroupOutcomeCallable;
         typedef std::future<ModifyCapacityReservationOutcome> ModifyCapacityReservationOutcomeCallable;
+        typedef std::future<ModifyCapacityReservationFleetOutcome> ModifyCapacityReservationFleetOutcomeCallable;
         typedef std::future<ModifyClientVpnEndpointOutcome> ModifyClientVpnEndpointOutcomeCallable;
         typedef std::future<ModifyDefaultCreditSpecificationOutcome> ModifyDefaultCreditSpecificationOutcomeCallable;
         typedef std::future<ModifyEbsDefaultKmsKeyIdOutcome> ModifyEbsDefaultKmsKeyIdOutcomeCallable;
@@ -1911,6 +1927,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::BundleInstanceRequest&, const Model::BundleInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BundleInstanceResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CancelBundleTaskRequest&, const Model::CancelBundleTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelBundleTaskResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CancelCapacityReservationRequest&, const Model::CancelCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelCapacityReservationResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CancelCapacityReservationFleetsRequest&, const Model::CancelCapacityReservationFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelCapacityReservationFleetsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CancelConversionTaskRequest&, const Model::CancelConversionTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelConversionTaskResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CancelExportTaskRequest&, const Model::CancelExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelExportTaskResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CancelImportTaskRequest&, const Model::CancelImportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelImportTaskResponseReceivedHandler;
@@ -1922,6 +1939,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::CopyImageRequest&, const Model::CopyImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CopySnapshotRequest&, const Model::CopySnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopySnapshotResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateCapacityReservationRequest&, const Model::CreateCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCapacityReservationResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateCapacityReservationFleetRequest&, const Model::CreateCapacityReservationFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCapacityReservationFleetResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateCarrierGatewayRequest&, const Model::CreateCarrierGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCarrierGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateClientVpnEndpointRequest&, const Model::CreateClientVpnEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClientVpnEndpointResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateClientVpnRouteRequest&, const Model::CreateClientVpnRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClientVpnRouteResponseReceivedHandler;
@@ -2053,6 +2071,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeAvailabilityZonesRequest&, const Model::DescribeAvailabilityZonesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAvailabilityZonesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeBundleTasksRequest&, const Model::DescribeBundleTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBundleTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeByoipCidrsRequest&, const Model::DescribeByoipCidrsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeByoipCidrsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeCapacityReservationFleetsRequest&, const Model::DescribeCapacityReservationFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityReservationFleetsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeCapacityReservationsRequest&, const Model::DescribeCapacityReservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityReservationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeCarrierGatewaysRequest&, const Model::DescribeCarrierGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCarrierGatewaysResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeClassicLinkInstancesRequest&, const Model::DescribeClassicLinkInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClassicLinkInstancesResponseReceivedHandler;
@@ -2243,6 +2262,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ModifyAddressAttributeRequest&, const Model::ModifyAddressAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAddressAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyAvailabilityZoneGroupRequest&, const Model::ModifyAvailabilityZoneGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAvailabilityZoneGroupResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyCapacityReservationRequest&, const Model::ModifyCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCapacityReservationResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyCapacityReservationFleetRequest&, const Model::ModifyCapacityReservationFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCapacityReservationFleetResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyClientVpnEndpointRequest&, const Model::ModifyClientVpnEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClientVpnEndpointResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyDefaultCreditSpecificationRequest&, const Model::ModifyDefaultCreditSpecificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDefaultCreditSpecificationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyEbsDefaultKmsKeyIdRequest&, const Model::ModifyEbsDefaultKmsKeyIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyEbsDefaultKmsKeyIdResponseReceivedHandler;
@@ -4071,6 +4091,49 @@ namespace Model
         virtual void CancelCapacityReservationAsync(const Model::CancelCapacityReservationRequest& request, const CancelCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Cancels one or more Capacity Reservation Fleets. When you cancel a Capacity
+         * Reservation Fleet, the following happens:</p> <ul> <li> <p>The Capacity
+         * Reservation Fleet's status changes to <code>cancelled</code>.</p> </li> <li>
+         * <p>The individual Capacity Reservations in the Fleet are cancelled. Instances
+         * running in the Capacity Reservations at the time of cancelling the Fleet
+         * continue to run in shared capacity.</p> </li> <li> <p>The Fleet stops creating
+         * new Capacity Reservations.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelCapacityReservationFleets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelCapacityReservationFleetsOutcome CancelCapacityReservationFleets(const Model::CancelCapacityReservationFleetsRequest& request) const;
+
+        /**
+         * <p>Cancels one or more Capacity Reservation Fleets. When you cancel a Capacity
+         * Reservation Fleet, the following happens:</p> <ul> <li> <p>The Capacity
+         * Reservation Fleet's status changes to <code>cancelled</code>.</p> </li> <li>
+         * <p>The individual Capacity Reservations in the Fleet are cancelled. Instances
+         * running in the Capacity Reservations at the time of cancelling the Fleet
+         * continue to run in shared capacity.</p> </li> <li> <p>The Fleet stops creating
+         * new Capacity Reservations.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelCapacityReservationFleets">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CancelCapacityReservationFleetsOutcomeCallable CancelCapacityReservationFleetsCallable(const Model::CancelCapacityReservationFleetsRequest& request) const;
+
+        /**
+         * <p>Cancels one or more Capacity Reservation Fleets. When you cancel a Capacity
+         * Reservation Fleet, the following happens:</p> <ul> <li> <p>The Capacity
+         * Reservation Fleet's status changes to <code>cancelled</code>.</p> </li> <li>
+         * <p>The individual Capacity Reservations in the Fleet are cancelled. Instances
+         * running in the Capacity Reservations at the time of cancelling the Fleet
+         * continue to run in shared capacity.</p> </li> <li> <p>The Fleet stops creating
+         * new Capacity Reservations.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelCapacityReservationFleets">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CancelCapacityReservationFleetsAsync(const Model::CancelCapacityReservationFleetsRequest& request, const CancelCapacityReservationFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Cancels an active conversion task. The task can be the import of an instance
          * or volume. The action removes all artifacts of the conversion, including a
          * partially uploaded volume or instance. If the conversion is complete or is in
@@ -4623,6 +4686,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateCapacityReservationAsync(const Model::CreateCapacityReservationRequest& request, const CreateCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a Capacity Reservation Fleet. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-cr-fleets.html#create-crfleet">Create
+         * a Capacity Reservation Fleet</a> in the Amazon EC2 User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationFleet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCapacityReservationFleetOutcome CreateCapacityReservationFleet(const Model::CreateCapacityReservationFleetRequest& request) const;
+
+        /**
+         * <p>Creates a Capacity Reservation Fleet. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-cr-fleets.html#create-crfleet">Create
+         * a Capacity Reservation Fleet</a> in the Amazon EC2 User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationFleet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateCapacityReservationFleetOutcomeCallable CreateCapacityReservationFleetCallable(const Model::CreateCapacityReservationFleetRequest& request) const;
+
+        /**
+         * <p>Creates a Capacity Reservation Fleet. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-cr-fleets.html#create-crfleet">Create
+         * a Capacity Reservation Fleet</a> in the Amazon EC2 User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationFleet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateCapacityReservationFleetAsync(const Model::CreateCapacityReservationFleetRequest& request, const CreateCapacityReservationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a carrier gateway. For more information about carrier gateways, see
@@ -10244,6 +10341,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeByoipCidrsAsync(const Model::DescribeByoipCidrsRequest& request, const DescribeByoipCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes one or more Capacity Reservation Fleets.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationFleets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCapacityReservationFleetsOutcome DescribeCapacityReservationFleets(const Model::DescribeCapacityReservationFleetsRequest& request) const;
+
+        /**
+         * <p>Describes one or more Capacity Reservation Fleets.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationFleets">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeCapacityReservationFleetsOutcomeCallable DescribeCapacityReservationFleetsCallable(const Model::DescribeCapacityReservationFleetsRequest& request) const;
+
+        /**
+         * <p>Describes one or more Capacity Reservation Fleets.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationFleets">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeCapacityReservationFleetsAsync(const Model::DescribeCapacityReservationFleetsRequest& request, const DescribeCapacityReservationFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your Capacity Reservations. The results describe
@@ -17501,6 +17626,46 @@ namespace Model
         virtual void ModifyCapacityReservationAsync(const Model::ModifyCapacityReservationRequest& request, const ModifyCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies a Capacity Reservation Fleet.</p> <p>When you modify the total
+         * target capacity of a Capacity Reservation Fleet, the Fleet automatically creates
+         * new Capacity Reservations, or modifies or cancels existing Capacity Reservations
+         * in the Fleet to meet the new total target capacity. When you modify the end date
+         * for the Fleet, the end dates for all of the individual Capacity Reservations in
+         * the Fleet are updated accordingly.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyCapacityReservationFleet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyCapacityReservationFleetOutcome ModifyCapacityReservationFleet(const Model::ModifyCapacityReservationFleetRequest& request) const;
+
+        /**
+         * <p>Modifies a Capacity Reservation Fleet.</p> <p>When you modify the total
+         * target capacity of a Capacity Reservation Fleet, the Fleet automatically creates
+         * new Capacity Reservations, or modifies or cancels existing Capacity Reservations
+         * in the Fleet to meet the new total target capacity. When you modify the end date
+         * for the Fleet, the end dates for all of the individual Capacity Reservations in
+         * the Fleet are updated accordingly.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyCapacityReservationFleet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyCapacityReservationFleetOutcomeCallable ModifyCapacityReservationFleetCallable(const Model::ModifyCapacityReservationFleetRequest& request) const;
+
+        /**
+         * <p>Modifies a Capacity Reservation Fleet.</p> <p>When you modify the total
+         * target capacity of a Capacity Reservation Fleet, the Fleet automatically creates
+         * new Capacity Reservations, or modifies or cancels existing Capacity Reservations
+         * in the Fleet to meet the new total target capacity. When you modify the end date
+         * for the Fleet, the end dates for all of the individual Capacity Reservations in
+         * the Fleet are updated accordingly.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyCapacityReservationFleet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyCapacityReservationFleetAsync(const Model::ModifyCapacityReservationFleetRequest& request, const ModifyCapacityReservationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies the specified Client VPN endpoint. Modifying the DNS server resets
          * existing client connections.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpoint">AWS
@@ -22478,6 +22643,7 @@ namespace Model
         void BundleInstanceAsyncHelper(const Model::BundleInstanceRequest& request, const BundleInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelBundleTaskAsyncHelper(const Model::CancelBundleTaskRequest& request, const CancelBundleTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelCapacityReservationAsyncHelper(const Model::CancelCapacityReservationRequest& request, const CancelCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CancelCapacityReservationFleetsAsyncHelper(const Model::CancelCapacityReservationFleetsRequest& request, const CancelCapacityReservationFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelConversionTaskAsyncHelper(const Model::CancelConversionTaskRequest& request, const CancelConversionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelExportTaskAsyncHelper(const Model::CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelImportTaskAsyncHelper(const Model::CancelImportTaskRequest& request, const CancelImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -22489,6 +22655,7 @@ namespace Model
         void CopyImageAsyncHelper(const Model::CopyImageRequest& request, const CopyImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CopySnapshotAsyncHelper(const Model::CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCapacityReservationAsyncHelper(const Model::CreateCapacityReservationRequest& request, const CreateCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateCapacityReservationFleetAsyncHelper(const Model::CreateCapacityReservationFleetRequest& request, const CreateCapacityReservationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCarrierGatewayAsyncHelper(const Model::CreateCarrierGatewayRequest& request, const CreateCarrierGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateClientVpnEndpointAsyncHelper(const Model::CreateClientVpnEndpointRequest& request, const CreateClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateClientVpnRouteAsyncHelper(const Model::CreateClientVpnRouteRequest& request, const CreateClientVpnRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -22620,6 +22787,7 @@ namespace Model
         void DescribeAvailabilityZonesAsyncHelper(const Model::DescribeAvailabilityZonesRequest& request, const DescribeAvailabilityZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBundleTasksAsyncHelper(const Model::DescribeBundleTasksRequest& request, const DescribeBundleTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeByoipCidrsAsyncHelper(const Model::DescribeByoipCidrsRequest& request, const DescribeByoipCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeCapacityReservationFleetsAsyncHelper(const Model::DescribeCapacityReservationFleetsRequest& request, const DescribeCapacityReservationFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCapacityReservationsAsyncHelper(const Model::DescribeCapacityReservationsRequest& request, const DescribeCapacityReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCarrierGatewaysAsyncHelper(const Model::DescribeCarrierGatewaysRequest& request, const DescribeCarrierGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClassicLinkInstancesAsyncHelper(const Model::DescribeClassicLinkInstancesRequest& request, const DescribeClassicLinkInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -22810,6 +22978,7 @@ namespace Model
         void ModifyAddressAttributeAsyncHelper(const Model::ModifyAddressAttributeRequest& request, const ModifyAddressAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyAvailabilityZoneGroupAsyncHelper(const Model::ModifyAvailabilityZoneGroupRequest& request, const ModifyAvailabilityZoneGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyCapacityReservationAsyncHelper(const Model::ModifyCapacityReservationRequest& request, const ModifyCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyCapacityReservationFleetAsyncHelper(const Model::ModifyCapacityReservationFleetRequest& request, const ModifyCapacityReservationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClientVpnEndpointAsyncHelper(const Model::ModifyClientVpnEndpointRequest& request, const ModifyClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyDefaultCreditSpecificationAsyncHelper(const Model::ModifyDefaultCreditSpecificationRequest& request, const ModifyDefaultCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyEbsDefaultKmsKeyIdAsyncHelper(const Model::ModifyEbsDefaultKmsKeyIdRequest& request, const ModifyEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

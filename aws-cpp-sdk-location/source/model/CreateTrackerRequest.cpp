@@ -15,6 +15,8 @@ using namespace Aws::Utils;
 CreateTrackerRequest::CreateTrackerRequest() : 
     m_descriptionHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
+    m_positionFiltering(PositionFiltering::NOT_SET),
+    m_positionFilteringHasBeenSet(false),
     m_pricingPlan(PricingPlan::NOT_SET),
     m_pricingPlanHasBeenSet(false),
     m_pricingPlanDataSourceHasBeenSet(false),
@@ -37,6 +39,11 @@ Aws::String CreateTrackerRequest::SerializePayload() const
   {
    payload.WithString("KmsKeyId", m_kmsKeyId);
 
+  }
+
+  if(m_positionFilteringHasBeenSet)
+  {
+   payload.WithString("PositionFiltering", PositionFilteringMapper::GetNameForPositionFiltering(m_positionFiltering));
   }
 
   if(m_pricingPlanHasBeenSet)
