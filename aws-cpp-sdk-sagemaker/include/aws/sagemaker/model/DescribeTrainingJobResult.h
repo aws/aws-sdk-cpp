@@ -1243,7 +1243,7 @@ namespace Model
      * <p>The billable time in seconds. Billable time refers to the absolute wall-clock
      * time.</p> <p>Multiply <code>BillableTimeInSeconds</code> by the number of
      * instances (<code>InstanceCount</code>) in your training cluster to get the total
-     * compute time Amazon SageMaker will bill you if you run distributed training. The
+     * compute time SageMaker will bill you if you run distributed training. The
      * formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .</p>
      * <p>You can calculate the savings from using managed spot training using the
      * formula <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>.
@@ -1256,7 +1256,7 @@ namespace Model
      * <p>The billable time in seconds. Billable time refers to the absolute wall-clock
      * time.</p> <p>Multiply <code>BillableTimeInSeconds</code> by the number of
      * instances (<code>InstanceCount</code>) in your training cluster to get the total
-     * compute time Amazon SageMaker will bill you if you run distributed training. The
+     * compute time SageMaker will bill you if you run distributed training. The
      * formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .</p>
      * <p>You can calculate the savings from using managed spot training using the
      * formula <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>.
@@ -1269,7 +1269,7 @@ namespace Model
      * <p>The billable time in seconds. Billable time refers to the absolute wall-clock
      * time.</p> <p>Multiply <code>BillableTimeInSeconds</code> by the number of
      * instances (<code>InstanceCount</code>) in your training cluster to get the total
-     * compute time Amazon SageMaker will bill you if you run distributed training. The
+     * compute time SageMaker will bill you if you run distributed training. The
      * formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .</p>
      * <p>You can calculate the savings from using managed spot training using the
      * formula <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>.

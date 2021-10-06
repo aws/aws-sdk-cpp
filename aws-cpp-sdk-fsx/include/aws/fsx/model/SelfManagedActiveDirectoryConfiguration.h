@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The configuration that Amazon FSx uses to join a Amazon FSx for Windows File
-   * Server file system or an ONTAP storage virtual machine (SVM) to a self-managed
+   * <p>The configuration that Amazon FSx uses to join a FSx for Windows File Server
+   * file system or an ONTAP storage virtual machine (SVM) to a self-managed
    * (including on-premises) Microsoft Active Directory (AD) directory. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html">
@@ -395,56 +395,56 @@ namespace Model
 
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory. </p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory. </p>
      */
     inline const Aws::Vector<Aws::String>& GetDnsIps() const{ return m_dnsIps; }
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory. </p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory. </p>
      */
     inline bool DnsIpsHasBeenSet() const { return m_dnsIpsHasBeenSet; }
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory. </p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory. </p>
      */
     inline void SetDnsIps(const Aws::Vector<Aws::String>& value) { m_dnsIpsHasBeenSet = true; m_dnsIps = value; }
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory. </p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory. </p>
      */
     inline void SetDnsIps(Aws::Vector<Aws::String>&& value) { m_dnsIpsHasBeenSet = true; m_dnsIps = std::move(value); }
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory. </p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory. </p>
      */
     inline SelfManagedActiveDirectoryConfiguration& WithDnsIps(const Aws::Vector<Aws::String>& value) { SetDnsIps(value); return *this;}
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory. </p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory. </p>
      */
     inline SelfManagedActiveDirectoryConfiguration& WithDnsIps(Aws::Vector<Aws::String>&& value) { SetDnsIps(std::move(value)); return *this;}
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory. </p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory. </p>
      */
     inline SelfManagedActiveDirectoryConfiguration& AddDnsIps(const Aws::String& value) { m_dnsIpsHasBeenSet = true; m_dnsIps.push_back(value); return *this; }
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory. </p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory. </p>
      */
     inline SelfManagedActiveDirectoryConfiguration& AddDnsIps(Aws::String&& value) { m_dnsIpsHasBeenSet = true; m_dnsIps.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory. </p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory. </p>
      */
     inline SelfManagedActiveDirectoryConfiguration& AddDnsIps(const char* value) { m_dnsIpsHasBeenSet = true; m_dnsIps.push_back(value); return *this; }
 

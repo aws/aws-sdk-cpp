@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/model/CapacityUnitsConfiguration.h>
 #include <aws/kendra/model/UserContextPolicy.h>
+#include <aws/kendra/model/UserGroupResolutionConfiguration.h>
 #include <aws/kendra/model/DocumentMetadataConfiguration.h>
 #include <aws/kendra/model/UserTokenConfiguration.h>
 #include <utility>
@@ -343,34 +344,77 @@ namespace Model
 
 
     /**
-     * <p>The user user token context policy.</p>
+     * <p>The user context policy.</p>
      */
     inline const UserContextPolicy& GetUserContextPolicy() const{ return m_userContextPolicy; }
 
     /**
-     * <p>The user user token context policy.</p>
+     * <p>The user context policy.</p>
      */
     inline bool UserContextPolicyHasBeenSet() const { return m_userContextPolicyHasBeenSet; }
 
     /**
-     * <p>The user user token context policy.</p>
+     * <p>The user context policy.</p>
      */
     inline void SetUserContextPolicy(const UserContextPolicy& value) { m_userContextPolicyHasBeenSet = true; m_userContextPolicy = value; }
 
     /**
-     * <p>The user user token context policy.</p>
+     * <p>The user context policy.</p>
      */
     inline void SetUserContextPolicy(UserContextPolicy&& value) { m_userContextPolicyHasBeenSet = true; m_userContextPolicy = std::move(value); }
 
     /**
-     * <p>The user user token context policy.</p>
+     * <p>The user context policy.</p>
      */
     inline UpdateIndexRequest& WithUserContextPolicy(const UserContextPolicy& value) { SetUserContextPolicy(value); return *this;}
 
     /**
-     * <p>The user user token context policy.</p>
+     * <p>The user context policy.</p>
      */
     inline UpdateIndexRequest& WithUserContextPolicy(UserContextPolicy&& value) { SetUserContextPolicy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Enables fetching access levels of groups and users from an AWS Single Sign-On
+     * identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     */
+    inline const UserGroupResolutionConfiguration& GetUserGroupResolutionConfiguration() const{ return m_userGroupResolutionConfiguration; }
+
+    /**
+     * <p>Enables fetching access levels of groups and users from an AWS Single Sign-On
+     * identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     */
+    inline bool UserGroupResolutionConfigurationHasBeenSet() const { return m_userGroupResolutionConfigurationHasBeenSet; }
+
+    /**
+     * <p>Enables fetching access levels of groups and users from an AWS Single Sign-On
+     * identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     */
+    inline void SetUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = value; }
+
+    /**
+     * <p>Enables fetching access levels of groups and users from an AWS Single Sign-On
+     * identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     */
+    inline void SetUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = std::move(value); }
+
+    /**
+     * <p>Enables fetching access levels of groups and users from an AWS Single Sign-On
+     * identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     */
+    inline UpdateIndexRequest& WithUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { SetUserGroupResolutionConfiguration(value); return *this;}
+
+    /**
+     * <p>Enables fetching access levels of groups and users from an AWS Single Sign-On
+     * identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     */
+    inline UpdateIndexRequest& WithUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { SetUserGroupResolutionConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -397,6 +441,9 @@ namespace Model
 
     UserContextPolicy m_userContextPolicy;
     bool m_userContextPolicyHasBeenSet;
+
+    UserGroupResolutionConfiguration m_userGroupResolutionConfiguration;
+    bool m_userGroupResolutionConfigurationHasBeenSet;
   };
 
 } // namespace Model

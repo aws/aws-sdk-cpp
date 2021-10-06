@@ -536,6 +536,95 @@ namespace Model
     
     inline CreateFileSystemFromBackupRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>Sets the version for the Amazon FSx for Lustre file system you're creating
+     * from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+     * <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will
+     * be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you
+     * choose to specify <code>FileSystemTypeVersion</code> when creating from backup,
+     * the value must match the backup's <code>FileSystemTypeVersion</code>
+     * setting.</p>
+     */
+    inline const Aws::String& GetFileSystemTypeVersion() const{ return m_fileSystemTypeVersion; }
+
+    /**
+     * <p>Sets the version for the Amazon FSx for Lustre file system you're creating
+     * from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+     * <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will
+     * be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you
+     * choose to specify <code>FileSystemTypeVersion</code> when creating from backup,
+     * the value must match the backup's <code>FileSystemTypeVersion</code>
+     * setting.</p>
+     */
+    inline bool FileSystemTypeVersionHasBeenSet() const { return m_fileSystemTypeVersionHasBeenSet; }
+
+    /**
+     * <p>Sets the version for the Amazon FSx for Lustre file system you're creating
+     * from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+     * <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will
+     * be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you
+     * choose to specify <code>FileSystemTypeVersion</code> when creating from backup,
+     * the value must match the backup's <code>FileSystemTypeVersion</code>
+     * setting.</p>
+     */
+    inline void SetFileSystemTypeVersion(const Aws::String& value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion = value; }
+
+    /**
+     * <p>Sets the version for the Amazon FSx for Lustre file system you're creating
+     * from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+     * <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will
+     * be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you
+     * choose to specify <code>FileSystemTypeVersion</code> when creating from backup,
+     * the value must match the backup's <code>FileSystemTypeVersion</code>
+     * setting.</p>
+     */
+    inline void SetFileSystemTypeVersion(Aws::String&& value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion = std::move(value); }
+
+    /**
+     * <p>Sets the version for the Amazon FSx for Lustre file system you're creating
+     * from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+     * <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will
+     * be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you
+     * choose to specify <code>FileSystemTypeVersion</code> when creating from backup,
+     * the value must match the backup's <code>FileSystemTypeVersion</code>
+     * setting.</p>
+     */
+    inline void SetFileSystemTypeVersion(const char* value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion.assign(value); }
+
+    /**
+     * <p>Sets the version for the Amazon FSx for Lustre file system you're creating
+     * from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+     * <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will
+     * be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you
+     * choose to specify <code>FileSystemTypeVersion</code> when creating from backup,
+     * the value must match the backup's <code>FileSystemTypeVersion</code>
+     * setting.</p>
+     */
+    inline CreateFileSystemFromBackupRequest& WithFileSystemTypeVersion(const Aws::String& value) { SetFileSystemTypeVersion(value); return *this;}
+
+    /**
+     * <p>Sets the version for the Amazon FSx for Lustre file system you're creating
+     * from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+     * <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will
+     * be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you
+     * choose to specify <code>FileSystemTypeVersion</code> when creating from backup,
+     * the value must match the backup's <code>FileSystemTypeVersion</code>
+     * setting.</p>
+     */
+    inline CreateFileSystemFromBackupRequest& WithFileSystemTypeVersion(Aws::String&& value) { SetFileSystemTypeVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Sets the version for the Amazon FSx for Lustre file system you're creating
+     * from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+     * <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will
+     * be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you
+     * choose to specify <code>FileSystemTypeVersion</code> when creating from backup,
+     * the value must match the backup's <code>FileSystemTypeVersion</code>
+     * setting.</p>
+     */
+    inline CreateFileSystemFromBackupRequest& WithFileSystemTypeVersion(const char* value) { SetFileSystemTypeVersion(value); return *this;}
+
   private:
 
     Aws::String m_backupId;
@@ -564,6 +653,9 @@ namespace Model
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
+    Aws::String m_fileSystemTypeVersion;
+    bool m_fileSystemTypeVersionHasBeenSet;
   };
 
 } // namespace Model

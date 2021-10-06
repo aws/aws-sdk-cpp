@@ -27,7 +27,8 @@ CreateFileSystemRequest::CreateFileSystemRequest() :
     m_kmsKeyIdHasBeenSet(false),
     m_windowsConfigurationHasBeenSet(false),
     m_lustreConfigurationHasBeenSet(false),
-    m_ontapConfigurationHasBeenSet(false)
+    m_ontapConfigurationHasBeenSet(false),
+    m_fileSystemTypeVersionHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,12 @@ Aws::String CreateFileSystemRequest::SerializePayload() const
   if(m_ontapConfigurationHasBeenSet)
   {
    payload.WithObject("OntapConfiguration", m_ontapConfiguration.Jsonize());
+
+  }
+
+  if(m_fileSystemTypeVersionHasBeenSet)
+  {
+   payload.WithString("FileSystemTypeVersion", m_fileSystemTypeVersion);
 
   }
 

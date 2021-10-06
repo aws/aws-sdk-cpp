@@ -41,7 +41,8 @@ FileSystem::FileSystem() :
     m_windowsConfigurationHasBeenSet(false),
     m_lustreConfigurationHasBeenSet(false),
     m_administrativeActionsHasBeenSet(false),
-    m_ontapConfigurationHasBeenSet(false)
+    m_ontapConfigurationHasBeenSet(false),
+    m_fileSystemTypeVersionHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ FileSystem::FileSystem(JsonView jsonValue) :
     m_windowsConfigurationHasBeenSet(false),
     m_lustreConfigurationHasBeenSet(false),
     m_administrativeActionsHasBeenSet(false),
-    m_ontapConfigurationHasBeenSet(false)
+    m_ontapConfigurationHasBeenSet(false),
+    m_fileSystemTypeVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -220,6 +222,13 @@ FileSystem& FileSystem::operator =(JsonView jsonValue)
     m_ontapConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FileSystemTypeVersion"))
+  {
+    m_fileSystemTypeVersion = jsonValue.GetString("FileSystemTypeVersion");
+
+    m_fileSystemTypeVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -354,6 +363,12 @@ JsonValue FileSystem::Jsonize() const
   if(m_ontapConfigurationHasBeenSet)
   {
    payload.WithObject("OntapConfiguration", m_ontapConfiguration.Jsonize());
+
+  }
+
+  if(m_fileSystemTypeVersionHasBeenSet)
+  {
+   payload.WithString("FileSystemTypeVersion", m_fileSystemTypeVersion);
 
   }
 

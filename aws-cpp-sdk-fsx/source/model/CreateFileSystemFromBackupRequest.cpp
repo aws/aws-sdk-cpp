@@ -23,7 +23,8 @@ CreateFileSystemFromBackupRequest::CreateFileSystemFromBackupRequest() :
     m_lustreConfigurationHasBeenSet(false),
     m_storageType(StorageType::NOT_SET),
     m_storageTypeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_fileSystemTypeVersionHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,12 @@ Aws::String CreateFileSystemFromBackupRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
    payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_fileSystemTypeVersionHasBeenSet)
+  {
+   payload.WithString("FileSystemTypeVersion", m_fileSystemTypeVersion);
 
   }
 

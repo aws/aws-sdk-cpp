@@ -254,27 +254,27 @@ namespace Model
 
 
     /**
-     * <p>Shows the date-time a block list for query suggestions was last created.</p>
+     * <p>Shows the date-time a block list for query suggestions was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>Shows the date-time a block list for query suggestions was last created.</p>
+     * <p>Shows the date-time a block list for query suggestions was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
 
     /**
-     * <p>Shows the date-time a block list for query suggestions was last created.</p>
+     * <p>Shows the date-time a block list for query suggestions was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
 
     /**
-     * <p>Shows the date-time a block list for query suggestions was last created.</p>
+     * <p>Shows the date-time a block list for query suggestions was created.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>Shows the date-time a block list for query suggestions was last created.</p>
+     * <p>Shows the date-time a block list for query suggestions was created.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 

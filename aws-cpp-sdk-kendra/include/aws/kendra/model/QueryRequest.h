@@ -583,32 +583,32 @@ namespace Model
 
 
     /**
-     * <p>The user context token.</p>
+     * <p>The user context token or user and group information.</p>
      */
     inline const UserContext& GetUserContext() const{ return m_userContext; }
 
     /**
-     * <p>The user context token.</p>
+     * <p>The user context token or user and group information.</p>
      */
     inline bool UserContextHasBeenSet() const { return m_userContextHasBeenSet; }
 
     /**
-     * <p>The user context token.</p>
+     * <p>The user context token or user and group information.</p>
      */
     inline void SetUserContext(const UserContext& value) { m_userContextHasBeenSet = true; m_userContext = value; }
 
     /**
-     * <p>The user context token.</p>
+     * <p>The user context token or user and group information.</p>
      */
     inline void SetUserContext(UserContext&& value) { m_userContextHasBeenSet = true; m_userContext = std::move(value); }
 
     /**
-     * <p>The user context token.</p>
+     * <p>The user context token or user and group information.</p>
      */
     inline QueryRequest& WithUserContext(const UserContext& value) { SetUserContext(value); return *this;}
 
     /**
-     * <p>The user context token.</p>
+     * <p>The user context token or user and group information.</p>
      */
     inline QueryRequest& WithUserContext(UserContext&& value) { SetUserContext(std::move(value)); return *this;}
 

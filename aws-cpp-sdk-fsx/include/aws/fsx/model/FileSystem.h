@@ -1049,6 +1049,55 @@ namespace Model
      */
     inline FileSystem& WithOntapConfiguration(OntapFileSystemConfiguration&& value) { SetOntapConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The version of your Amazon FSx for Lustre file system, either
+     * <code>2.10</code> or <code>2.12</code>.</p>
+     */
+    inline const Aws::String& GetFileSystemTypeVersion() const{ return m_fileSystemTypeVersion; }
+
+    /**
+     * <p>The version of your Amazon FSx for Lustre file system, either
+     * <code>2.10</code> or <code>2.12</code>.</p>
+     */
+    inline bool FileSystemTypeVersionHasBeenSet() const { return m_fileSystemTypeVersionHasBeenSet; }
+
+    /**
+     * <p>The version of your Amazon FSx for Lustre file system, either
+     * <code>2.10</code> or <code>2.12</code>.</p>
+     */
+    inline void SetFileSystemTypeVersion(const Aws::String& value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion = value; }
+
+    /**
+     * <p>The version of your Amazon FSx for Lustre file system, either
+     * <code>2.10</code> or <code>2.12</code>.</p>
+     */
+    inline void SetFileSystemTypeVersion(Aws::String&& value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion = std::move(value); }
+
+    /**
+     * <p>The version of your Amazon FSx for Lustre file system, either
+     * <code>2.10</code> or <code>2.12</code>.</p>
+     */
+    inline void SetFileSystemTypeVersion(const char* value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion.assign(value); }
+
+    /**
+     * <p>The version of your Amazon FSx for Lustre file system, either
+     * <code>2.10</code> or <code>2.12</code>.</p>
+     */
+    inline FileSystem& WithFileSystemTypeVersion(const Aws::String& value) { SetFileSystemTypeVersion(value); return *this;}
+
+    /**
+     * <p>The version of your Amazon FSx for Lustre file system, either
+     * <code>2.10</code> or <code>2.12</code>.</p>
+     */
+    inline FileSystem& WithFileSystemTypeVersion(Aws::String&& value) { SetFileSystemTypeVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of your Amazon FSx for Lustre file system, either
+     * <code>2.10</code> or <code>2.12</code>.</p>
+     */
+    inline FileSystem& WithFileSystemTypeVersion(const char* value) { SetFileSystemTypeVersion(value); return *this;}
+
   private:
 
     Aws::String m_ownerId;
@@ -1107,6 +1156,9 @@ namespace Model
 
     OntapFileSystemConfiguration m_ontapConfiguration;
     bool m_ontapConfigurationHasBeenSet;
+
+    Aws::String m_fileSystemTypeVersion;
+    bool m_fileSystemTypeVersionHasBeenSet;
   };
 
 } // namespace Model

@@ -34,10 +34,10 @@ namespace Model
    * </p> </li> </ol> <p>If you use more than 2 layers, you receive a
    * <code>ValidationException</code> exception with the message
    * "<code>AttributeFilter</code> cannot have a depth of more than 2."</p> <p>If you
-   * use more than 10 attribute filters, you receive a
-   * <code>ValidationException</code> exception with the message
-   * "<code>AttributeFilter</code> cannot have a length of more than
-   * 10".</p><p><h3>See Also:</h3>   <a
+   * use more than 10 attribute filters in a given list for
+   * <code>AndAllFilters</code> or <code>OrAllFilters</code>, you receive a
+   * <code>ValidationException</code> with the message "<code>AttributeFilter</code>
+   * cannot have a length of more than 10".</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AttributeFilter">AWS
    * API Reference</a></p>
    */
@@ -282,148 +282,148 @@ namespace Model
 
     /**
      * <p>Performs a greater than operation on two document attributes. Use with a
-     * document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline const DocumentAttribute& GetGreaterThan() const{ return m_greaterThan; }
 
     /**
      * <p>Performs a greater than operation on two document attributes. Use with a
-     * document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline bool GreaterThanHasBeenSet() const { return m_greaterThanHasBeenSet; }
 
     /**
      * <p>Performs a greater than operation on two document attributes. Use with a
-     * document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline void SetGreaterThan(const DocumentAttribute& value) { m_greaterThanHasBeenSet = true; m_greaterThan = value; }
 
     /**
      * <p>Performs a greater than operation on two document attributes. Use with a
-     * document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline void SetGreaterThan(DocumentAttribute&& value) { m_greaterThanHasBeenSet = true; m_greaterThan = std::move(value); }
 
     /**
      * <p>Performs a greater than operation on two document attributes. Use with a
-     * document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline AttributeFilter& WithGreaterThan(const DocumentAttribute& value) { SetGreaterThan(value); return *this;}
 
     /**
      * <p>Performs a greater than operation on two document attributes. Use with a
-     * document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline AttributeFilter& WithGreaterThan(DocumentAttribute&& value) { SetGreaterThan(std::move(value)); return *this;}
 
 
     /**
      * <p>Performs a greater or equals than operation on two document attributes. Use
-     * with a document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline const DocumentAttribute& GetGreaterThanOrEquals() const{ return m_greaterThanOrEquals; }
 
     /**
      * <p>Performs a greater or equals than operation on two document attributes. Use
-     * with a document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline bool GreaterThanOrEqualsHasBeenSet() const { return m_greaterThanOrEqualsHasBeenSet; }
 
     /**
      * <p>Performs a greater or equals than operation on two document attributes. Use
-     * with a document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline void SetGreaterThanOrEquals(const DocumentAttribute& value) { m_greaterThanOrEqualsHasBeenSet = true; m_greaterThanOrEquals = value; }
 
     /**
      * <p>Performs a greater or equals than operation on two document attributes. Use
-     * with a document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline void SetGreaterThanOrEquals(DocumentAttribute&& value) { m_greaterThanOrEqualsHasBeenSet = true; m_greaterThanOrEquals = std::move(value); }
 
     /**
      * <p>Performs a greater or equals than operation on two document attributes. Use
-     * with a document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline AttributeFilter& WithGreaterThanOrEquals(const DocumentAttribute& value) { SetGreaterThanOrEquals(value); return *this;}
 
     /**
      * <p>Performs a greater or equals than operation on two document attributes. Use
-     * with a document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline AttributeFilter& WithGreaterThanOrEquals(DocumentAttribute&& value) { SetGreaterThanOrEquals(std::move(value)); return *this;}
 
 
     /**
      * <p>Performs a less than operation on two document attributes. Use with a
-     * document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline const DocumentAttribute& GetLessThan() const{ return m_lessThan; }
 
     /**
      * <p>Performs a less than operation on two document attributes. Use with a
-     * document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline bool LessThanHasBeenSet() const { return m_lessThanHasBeenSet; }
 
     /**
      * <p>Performs a less than operation on two document attributes. Use with a
-     * document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline void SetLessThan(const DocumentAttribute& value) { m_lessThanHasBeenSet = true; m_lessThan = value; }
 
     /**
      * <p>Performs a less than operation on two document attributes. Use with a
-     * document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline void SetLessThan(DocumentAttribute&& value) { m_lessThanHasBeenSet = true; m_lessThan = std::move(value); }
 
     /**
      * <p>Performs a less than operation on two document attributes. Use with a
-     * document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline AttributeFilter& WithLessThan(const DocumentAttribute& value) { SetLessThan(value); return *this;}
 
     /**
      * <p>Performs a less than operation on two document attributes. Use with a
-     * document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline AttributeFilter& WithLessThan(DocumentAttribute&& value) { SetLessThan(std::move(value)); return *this;}
 
 
     /**
      * <p>Performs a less than or equals operation on two document attributes. Use with
-     * a document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * a document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline const DocumentAttribute& GetLessThanOrEquals() const{ return m_lessThanOrEquals; }
 
     /**
      * <p>Performs a less than or equals operation on two document attributes. Use with
-     * a document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * a document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline bool LessThanOrEqualsHasBeenSet() const { return m_lessThanOrEqualsHasBeenSet; }
 
     /**
      * <p>Performs a less than or equals operation on two document attributes. Use with
-     * a document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * a document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline void SetLessThanOrEquals(const DocumentAttribute& value) { m_lessThanOrEqualsHasBeenSet = true; m_lessThanOrEquals = value; }
 
     /**
      * <p>Performs a less than or equals operation on two document attributes. Use with
-     * a document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * a document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline void SetLessThanOrEquals(DocumentAttribute&& value) { m_lessThanOrEqualsHasBeenSet = true; m_lessThanOrEquals = std::move(value); }
 
     /**
      * <p>Performs a less than or equals operation on two document attributes. Use with
-     * a document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * a document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline AttributeFilter& WithLessThanOrEquals(const DocumentAttribute& value) { SetLessThanOrEquals(value); return *this;}
 
     /**
      * <p>Performs a less than or equals operation on two document attributes. Use with
-     * a document attribute of type <code>Integer</code> or <code>Long</code>.</p>
+     * a document attribute of type <code>Date</code> or <code>Long</code>.</p>
      */
     inline AttributeFilter& WithLessThanOrEquals(DocumentAttribute&& value) { SetLessThanOrEquals(std::move(value)); return *this;}
 

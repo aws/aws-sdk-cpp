@@ -14,6 +14,7 @@
 #include <aws/kendra/model/IndexStatistics.h>
 #include <aws/kendra/model/CapacityUnitsConfiguration.h>
 #include <aws/kendra/model/UserContextPolicy.h>
+#include <aws/kendra/model/UserGroupResolutionConfiguration.h>
 #include <aws/kendra/model/DocumentMetadataConfiguration.h>
 #include <aws/kendra/model/UserTokenConfiguration.h>
 #include <utility>
@@ -567,6 +568,37 @@ namespace Model
      */
     inline DescribeIndexResult& WithUserContextPolicy(UserContextPolicy&& value) { SetUserContextPolicy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Shows whether you have enabled the configuration for fetching access levels
+     * of groups and users from an AWS Single Sign-On identity source.</p>
+     */
+    inline const UserGroupResolutionConfiguration& GetUserGroupResolutionConfiguration() const{ return m_userGroupResolutionConfiguration; }
+
+    /**
+     * <p>Shows whether you have enabled the configuration for fetching access levels
+     * of groups and users from an AWS Single Sign-On identity source.</p>
+     */
+    inline void SetUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { m_userGroupResolutionConfiguration = value; }
+
+    /**
+     * <p>Shows whether you have enabled the configuration for fetching access levels
+     * of groups and users from an AWS Single Sign-On identity source.</p>
+     */
+    inline void SetUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { m_userGroupResolutionConfiguration = std::move(value); }
+
+    /**
+     * <p>Shows whether you have enabled the configuration for fetching access levels
+     * of groups and users from an AWS Single Sign-On identity source.</p>
+     */
+    inline DescribeIndexResult& WithUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { SetUserGroupResolutionConfiguration(value); return *this;}
+
+    /**
+     * <p>Shows whether you have enabled the configuration for fetching access levels
+     * of groups and users from an AWS Single Sign-On identity source.</p>
+     */
+    inline DescribeIndexResult& WithUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { SetUserGroupResolutionConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -598,6 +630,8 @@ namespace Model
     Aws::Vector<UserTokenConfiguration> m_userTokenConfigurations;
 
     UserContextPolicy m_userContextPolicy;
+
+    UserGroupResolutionConfiguration m_userGroupResolutionConfiguration;
   };
 
 } // namespace Model

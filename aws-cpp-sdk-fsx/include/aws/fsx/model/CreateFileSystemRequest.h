@@ -693,6 +693,79 @@ namespace Model
     
     inline CreateFileSystemRequest& WithOntapConfiguration(CreateFileSystemOntapConfiguration&& value) { SetOntapConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Sets the version of the Amazon FSx for Lustre file system you're creating.
+     * Valid values are <code>2.10</code> and <code>2.12</code>.</p> <ul> <li> <p>Set
+     * the value to <code>2.10</code> to create a Lustre 2.10 file system.</p> </li>
+     * <li> <p>Set the value to <code>2.12</code> to create a Lustre 2.12 file
+     * system.</p> </li> </ul> <p>Default value is <code>2.10</code>.</p>
+     */
+    inline const Aws::String& GetFileSystemTypeVersion() const{ return m_fileSystemTypeVersion; }
+
+    /**
+     * <p>Sets the version of the Amazon FSx for Lustre file system you're creating.
+     * Valid values are <code>2.10</code> and <code>2.12</code>.</p> <ul> <li> <p>Set
+     * the value to <code>2.10</code> to create a Lustre 2.10 file system.</p> </li>
+     * <li> <p>Set the value to <code>2.12</code> to create a Lustre 2.12 file
+     * system.</p> </li> </ul> <p>Default value is <code>2.10</code>.</p>
+     */
+    inline bool FileSystemTypeVersionHasBeenSet() const { return m_fileSystemTypeVersionHasBeenSet; }
+
+    /**
+     * <p>Sets the version of the Amazon FSx for Lustre file system you're creating.
+     * Valid values are <code>2.10</code> and <code>2.12</code>.</p> <ul> <li> <p>Set
+     * the value to <code>2.10</code> to create a Lustre 2.10 file system.</p> </li>
+     * <li> <p>Set the value to <code>2.12</code> to create a Lustre 2.12 file
+     * system.</p> </li> </ul> <p>Default value is <code>2.10</code>.</p>
+     */
+    inline void SetFileSystemTypeVersion(const Aws::String& value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion = value; }
+
+    /**
+     * <p>Sets the version of the Amazon FSx for Lustre file system you're creating.
+     * Valid values are <code>2.10</code> and <code>2.12</code>.</p> <ul> <li> <p>Set
+     * the value to <code>2.10</code> to create a Lustre 2.10 file system.</p> </li>
+     * <li> <p>Set the value to <code>2.12</code> to create a Lustre 2.12 file
+     * system.</p> </li> </ul> <p>Default value is <code>2.10</code>.</p>
+     */
+    inline void SetFileSystemTypeVersion(Aws::String&& value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion = std::move(value); }
+
+    /**
+     * <p>Sets the version of the Amazon FSx for Lustre file system you're creating.
+     * Valid values are <code>2.10</code> and <code>2.12</code>.</p> <ul> <li> <p>Set
+     * the value to <code>2.10</code> to create a Lustre 2.10 file system.</p> </li>
+     * <li> <p>Set the value to <code>2.12</code> to create a Lustre 2.12 file
+     * system.</p> </li> </ul> <p>Default value is <code>2.10</code>.</p>
+     */
+    inline void SetFileSystemTypeVersion(const char* value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion.assign(value); }
+
+    /**
+     * <p>Sets the version of the Amazon FSx for Lustre file system you're creating.
+     * Valid values are <code>2.10</code> and <code>2.12</code>.</p> <ul> <li> <p>Set
+     * the value to <code>2.10</code> to create a Lustre 2.10 file system.</p> </li>
+     * <li> <p>Set the value to <code>2.12</code> to create a Lustre 2.12 file
+     * system.</p> </li> </ul> <p>Default value is <code>2.10</code>.</p>
+     */
+    inline CreateFileSystemRequest& WithFileSystemTypeVersion(const Aws::String& value) { SetFileSystemTypeVersion(value); return *this;}
+
+    /**
+     * <p>Sets the version of the Amazon FSx for Lustre file system you're creating.
+     * Valid values are <code>2.10</code> and <code>2.12</code>.</p> <ul> <li> <p>Set
+     * the value to <code>2.10</code> to create a Lustre 2.10 file system.</p> </li>
+     * <li> <p>Set the value to <code>2.12</code> to create a Lustre 2.12 file
+     * system.</p> </li> </ul> <p>Default value is <code>2.10</code>.</p>
+     */
+    inline CreateFileSystemRequest& WithFileSystemTypeVersion(Aws::String&& value) { SetFileSystemTypeVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Sets the version of the Amazon FSx for Lustre file system you're creating.
+     * Valid values are <code>2.10</code> and <code>2.12</code>.</p> <ul> <li> <p>Set
+     * the value to <code>2.10</code> to create a Lustre 2.10 file system.</p> </li>
+     * <li> <p>Set the value to <code>2.12</code> to create a Lustre 2.12 file
+     * system.</p> </li> </ul> <p>Default value is <code>2.10</code>.</p>
+     */
+    inline CreateFileSystemRequest& WithFileSystemTypeVersion(const char* value) { SetFileSystemTypeVersion(value); return *this;}
+
   private:
 
     Aws::String m_clientRequestToken;
@@ -727,6 +800,9 @@ namespace Model
 
     CreateFileSystemOntapConfiguration m_ontapConfiguration;
     bool m_ontapConfigurationHasBeenSet;
+
+    Aws::String m_fileSystemTypeVersion;
+    bool m_fileSystemTypeVersionHasBeenSet;
   };
 
 } // namespace Model

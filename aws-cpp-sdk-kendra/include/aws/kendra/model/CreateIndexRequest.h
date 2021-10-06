@@ -11,6 +11,7 @@
 #include <aws/kendra/model/ServerSideEncryptionConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/model/UserContextPolicy.h>
+#include <aws/kendra/model/UserGroupResolutionConfiguration.h>
 #include <aws/kendra/model/Tag.h>
 #include <aws/kendra/model/UserTokenConfiguration.h>
 #include <utility>
@@ -447,63 +448,118 @@ namespace Model
 
     /**
      * <p>The user context policy.</p> <dl> <dt>ATTRIBUTE_FILTER</dt> <dd> <p>All
-     * indexed content is searchable and displayable for all users. If there is an
-     * access control list, it is ignored. You can filter on user and group attributes.
-     * </p> </dd> <dt>USER_TOKEN</dt> <dd> <p>Enables SSO and token-based user access
-     * control. All documents with no access control and all documents accessible to
+     * indexed content is searchable and displayable for all users. If you want to
+     * filter search results on user context, you can use the attribute filters of
+     * <code>_user_id</code> and <code>_group_ids</code> or you can provide user and
+     * group information in <code>UserContext</code>. </p> </dd> <dt>USER_TOKEN</dt>
+     * <dd> <p>Enables token-based user access control to filter search results on user
+     * context. All documents with no access control and all documents accessible to
      * the user will be searchable and displayable. </p> </dd> </dl>
      */
     inline const UserContextPolicy& GetUserContextPolicy() const{ return m_userContextPolicy; }
 
     /**
      * <p>The user context policy.</p> <dl> <dt>ATTRIBUTE_FILTER</dt> <dd> <p>All
-     * indexed content is searchable and displayable for all users. If there is an
-     * access control list, it is ignored. You can filter on user and group attributes.
-     * </p> </dd> <dt>USER_TOKEN</dt> <dd> <p>Enables SSO and token-based user access
-     * control. All documents with no access control and all documents accessible to
+     * indexed content is searchable and displayable for all users. If you want to
+     * filter search results on user context, you can use the attribute filters of
+     * <code>_user_id</code> and <code>_group_ids</code> or you can provide user and
+     * group information in <code>UserContext</code>. </p> </dd> <dt>USER_TOKEN</dt>
+     * <dd> <p>Enables token-based user access control to filter search results on user
+     * context. All documents with no access control and all documents accessible to
      * the user will be searchable and displayable. </p> </dd> </dl>
      */
     inline bool UserContextPolicyHasBeenSet() const { return m_userContextPolicyHasBeenSet; }
 
     /**
      * <p>The user context policy.</p> <dl> <dt>ATTRIBUTE_FILTER</dt> <dd> <p>All
-     * indexed content is searchable and displayable for all users. If there is an
-     * access control list, it is ignored. You can filter on user and group attributes.
-     * </p> </dd> <dt>USER_TOKEN</dt> <dd> <p>Enables SSO and token-based user access
-     * control. All documents with no access control and all documents accessible to
+     * indexed content is searchable and displayable for all users. If you want to
+     * filter search results on user context, you can use the attribute filters of
+     * <code>_user_id</code> and <code>_group_ids</code> or you can provide user and
+     * group information in <code>UserContext</code>. </p> </dd> <dt>USER_TOKEN</dt>
+     * <dd> <p>Enables token-based user access control to filter search results on user
+     * context. All documents with no access control and all documents accessible to
      * the user will be searchable and displayable. </p> </dd> </dl>
      */
     inline void SetUserContextPolicy(const UserContextPolicy& value) { m_userContextPolicyHasBeenSet = true; m_userContextPolicy = value; }
 
     /**
      * <p>The user context policy.</p> <dl> <dt>ATTRIBUTE_FILTER</dt> <dd> <p>All
-     * indexed content is searchable and displayable for all users. If there is an
-     * access control list, it is ignored. You can filter on user and group attributes.
-     * </p> </dd> <dt>USER_TOKEN</dt> <dd> <p>Enables SSO and token-based user access
-     * control. All documents with no access control and all documents accessible to
+     * indexed content is searchable and displayable for all users. If you want to
+     * filter search results on user context, you can use the attribute filters of
+     * <code>_user_id</code> and <code>_group_ids</code> or you can provide user and
+     * group information in <code>UserContext</code>. </p> </dd> <dt>USER_TOKEN</dt>
+     * <dd> <p>Enables token-based user access control to filter search results on user
+     * context. All documents with no access control and all documents accessible to
      * the user will be searchable and displayable. </p> </dd> </dl>
      */
     inline void SetUserContextPolicy(UserContextPolicy&& value) { m_userContextPolicyHasBeenSet = true; m_userContextPolicy = std::move(value); }
 
     /**
      * <p>The user context policy.</p> <dl> <dt>ATTRIBUTE_FILTER</dt> <dd> <p>All
-     * indexed content is searchable and displayable for all users. If there is an
-     * access control list, it is ignored. You can filter on user and group attributes.
-     * </p> </dd> <dt>USER_TOKEN</dt> <dd> <p>Enables SSO and token-based user access
-     * control. All documents with no access control and all documents accessible to
+     * indexed content is searchable and displayable for all users. If you want to
+     * filter search results on user context, you can use the attribute filters of
+     * <code>_user_id</code> and <code>_group_ids</code> or you can provide user and
+     * group information in <code>UserContext</code>. </p> </dd> <dt>USER_TOKEN</dt>
+     * <dd> <p>Enables token-based user access control to filter search results on user
+     * context. All documents with no access control and all documents accessible to
      * the user will be searchable and displayable. </p> </dd> </dl>
      */
     inline CreateIndexRequest& WithUserContextPolicy(const UserContextPolicy& value) { SetUserContextPolicy(value); return *this;}
 
     /**
      * <p>The user context policy.</p> <dl> <dt>ATTRIBUTE_FILTER</dt> <dd> <p>All
-     * indexed content is searchable and displayable for all users. If there is an
-     * access control list, it is ignored. You can filter on user and group attributes.
-     * </p> </dd> <dt>USER_TOKEN</dt> <dd> <p>Enables SSO and token-based user access
-     * control. All documents with no access control and all documents accessible to
+     * indexed content is searchable and displayable for all users. If you want to
+     * filter search results on user context, you can use the attribute filters of
+     * <code>_user_id</code> and <code>_group_ids</code> or you can provide user and
+     * group information in <code>UserContext</code>. </p> </dd> <dt>USER_TOKEN</dt>
+     * <dd> <p>Enables token-based user access control to filter search results on user
+     * context. All documents with no access control and all documents accessible to
      * the user will be searchable and displayable. </p> </dd> </dl>
      */
     inline CreateIndexRequest& WithUserContextPolicy(UserContextPolicy&& value) { SetUserContextPolicy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Enables fetching access levels of groups and users from an AWS Single Sign-On
+     * identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     */
+    inline const UserGroupResolutionConfiguration& GetUserGroupResolutionConfiguration() const{ return m_userGroupResolutionConfiguration; }
+
+    /**
+     * <p>Enables fetching access levels of groups and users from an AWS Single Sign-On
+     * identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     */
+    inline bool UserGroupResolutionConfigurationHasBeenSet() const { return m_userGroupResolutionConfigurationHasBeenSet; }
+
+    /**
+     * <p>Enables fetching access levels of groups and users from an AWS Single Sign-On
+     * identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     */
+    inline void SetUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = value; }
+
+    /**
+     * <p>Enables fetching access levels of groups and users from an AWS Single Sign-On
+     * identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     */
+    inline void SetUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = std::move(value); }
+
+    /**
+     * <p>Enables fetching access levels of groups and users from an AWS Single Sign-On
+     * identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     */
+    inline CreateIndexRequest& WithUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { SetUserGroupResolutionConfiguration(value); return *this;}
+
+    /**
+     * <p>Enables fetching access levels of groups and users from an AWS Single Sign-On
+     * identity source. To configure this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     */
+    inline CreateIndexRequest& WithUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { SetUserGroupResolutionConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -533,6 +589,9 @@ namespace Model
 
     UserContextPolicy m_userContextPolicy;
     bool m_userContextPolicyHasBeenSet;
+
+    UserGroupResolutionConfiguration m_userGroupResolutionConfiguration;
+    bool m_userGroupResolutionConfigurationHasBeenSet;
   };
 
 } // namespace Model

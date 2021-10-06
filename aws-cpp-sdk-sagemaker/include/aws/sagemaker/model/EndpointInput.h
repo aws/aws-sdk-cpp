@@ -139,7 +139,7 @@ namespace Model
 
     /**
      * <p>Whether the <code>Pipe</code> or <code>File</code> is used as the input mode
-     * for transfering data for the monitoring job. <code>Pipe</code> mode is
+     * for transferring data for the monitoring job. <code>Pipe</code> mode is
      * recommended for large datasets. <code>File</code> mode is useful for small files
      * that fit in memory. Defaults to <code>File</code>.</p>
      */
@@ -147,7 +147,7 @@ namespace Model
 
     /**
      * <p>Whether the <code>Pipe</code> or <code>File</code> is used as the input mode
-     * for transfering data for the monitoring job. <code>Pipe</code> mode is
+     * for transferring data for the monitoring job. <code>Pipe</code> mode is
      * recommended for large datasets. <code>File</code> mode is useful for small files
      * that fit in memory. Defaults to <code>File</code>.</p>
      */
@@ -155,7 +155,7 @@ namespace Model
 
     /**
      * <p>Whether the <code>Pipe</code> or <code>File</code> is used as the input mode
-     * for transfering data for the monitoring job. <code>Pipe</code> mode is
+     * for transferring data for the monitoring job. <code>Pipe</code> mode is
      * recommended for large datasets. <code>File</code> mode is useful for small files
      * that fit in memory. Defaults to <code>File</code>.</p>
      */
@@ -163,7 +163,7 @@ namespace Model
 
     /**
      * <p>Whether the <code>Pipe</code> or <code>File</code> is used as the input mode
-     * for transfering data for the monitoring job. <code>Pipe</code> mode is
+     * for transferring data for the monitoring job. <code>Pipe</code> mode is
      * recommended for large datasets. <code>File</code> mode is useful for small files
      * that fit in memory. Defaults to <code>File</code>.</p>
      */
@@ -171,7 +171,7 @@ namespace Model
 
     /**
      * <p>Whether the <code>Pipe</code> or <code>File</code> is used as the input mode
-     * for transfering data for the monitoring job. <code>Pipe</code> mode is
+     * for transferring data for the monitoring job. <code>Pipe</code> mode is
      * recommended for large datasets. <code>File</code> mode is useful for small files
      * that fit in memory. Defaults to <code>File</code>.</p>
      */
@@ -179,7 +179,7 @@ namespace Model
 
     /**
      * <p>Whether the <code>Pipe</code> or <code>File</code> is used as the input mode
-     * for transfering data for the monitoring job. <code>Pipe</code> mode is
+     * for transferring data for the monitoring job. <code>Pipe</code> mode is
      * recommended for large datasets. <code>File</code> mode is useful for small files
      * that fit in memory. Defaults to <code>File</code>.</p>
      */

@@ -26,11 +26,11 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about the user context for a Amazon Kendra index.</p>
+   * <p>Provides information about the user context for an Amazon Kendra index.</p>
    * <p>This is used for filtering search results for different users based on their
    * access to documents.</p> <p>You provide one of the following:</p> <ul> <li>
-   * <p>User token</p> </li> <li> <p>User ID, the groups the user belongs to, and the
-   * data sources the groups can access</p> </li> </ul> <p>If you provide both, an
+   * <p>User token</p> </li> <li> <p>User ID, the groups the user belongs to, and any
+   * data sources the groups can access.</p> </li> </ul> <p>If you provide both, an
    * exception is thrown.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UserContext">AWS
    * API Reference</a></p>

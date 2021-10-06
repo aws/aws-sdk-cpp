@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     Pipe,
-    File
+    File,
+    FastFile
   };
 
 namespace TrainingInputModeMapper

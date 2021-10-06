@@ -153,6 +153,12 @@ namespace Model
      * need to provide the path to the S3 file that lists your users and sub groups for
      * a group. Your sub groups can contain more than 1000 users, but the list of sub
      * groups that belong to a group (and/or users) must be no more than 1000.</p>
+     * <p>You can download this <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/samples/group_members.zip">example
+     * S3 file</a> that uses the correct format for listing group members. Note,
+     * <code>dataSourceId</code> is optional. The value of <code>type</code> for a
+     * group is always <code>GROUP</code> and for a user it is always
+     * <code>USER</code>.</p>
      */
     inline const S3Path& GetS3PathforGroupMembers() const{ return m_s3PathforGroupMembers; }
 
@@ -161,6 +167,12 @@ namespace Model
      * need to provide the path to the S3 file that lists your users and sub groups for
      * a group. Your sub groups can contain more than 1000 users, but the list of sub
      * groups that belong to a group (and/or users) must be no more than 1000.</p>
+     * <p>You can download this <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/samples/group_members.zip">example
+     * S3 file</a> that uses the correct format for listing group members. Note,
+     * <code>dataSourceId</code> is optional. The value of <code>type</code> for a
+     * group is always <code>GROUP</code> and for a user it is always
+     * <code>USER</code>.</p>
      */
     inline bool S3PathforGroupMembersHasBeenSet() const { return m_s3PathforGroupMembersHasBeenSet; }
 
@@ -169,6 +181,12 @@ namespace Model
      * need to provide the path to the S3 file that lists your users and sub groups for
      * a group. Your sub groups can contain more than 1000 users, but the list of sub
      * groups that belong to a group (and/or users) must be no more than 1000.</p>
+     * <p>You can download this <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/samples/group_members.zip">example
+     * S3 file</a> that uses the correct format for listing group members. Note,
+     * <code>dataSourceId</code> is optional. The value of <code>type</code> for a
+     * group is always <code>GROUP</code> and for a user it is always
+     * <code>USER</code>.</p>
      */
     inline void SetS3PathforGroupMembers(const S3Path& value) { m_s3PathforGroupMembersHasBeenSet = true; m_s3PathforGroupMembers = value; }
 
@@ -177,6 +195,12 @@ namespace Model
      * need to provide the path to the S3 file that lists your users and sub groups for
      * a group. Your sub groups can contain more than 1000 users, but the list of sub
      * groups that belong to a group (and/or users) must be no more than 1000.</p>
+     * <p>You can download this <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/samples/group_members.zip">example
+     * S3 file</a> that uses the correct format for listing group members. Note,
+     * <code>dataSourceId</code> is optional. The value of <code>type</code> for a
+     * group is always <code>GROUP</code> and for a user it is always
+     * <code>USER</code>.</p>
      */
     inline void SetS3PathforGroupMembers(S3Path&& value) { m_s3PathforGroupMembersHasBeenSet = true; m_s3PathforGroupMembers = std::move(value); }
 
@@ -185,6 +209,12 @@ namespace Model
      * need to provide the path to the S3 file that lists your users and sub groups for
      * a group. Your sub groups can contain more than 1000 users, but the list of sub
      * groups that belong to a group (and/or users) must be no more than 1000.</p>
+     * <p>You can download this <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/samples/group_members.zip">example
+     * S3 file</a> that uses the correct format for listing group members. Note,
+     * <code>dataSourceId</code> is optional. The value of <code>type</code> for a
+     * group is always <code>GROUP</code> and for a user it is always
+     * <code>USER</code>.</p>
      */
     inline GroupMembers& WithS3PathforGroupMembers(const S3Path& value) { SetS3PathforGroupMembers(value); return *this;}
 
@@ -193,6 +223,12 @@ namespace Model
      * need to provide the path to the S3 file that lists your users and sub groups for
      * a group. Your sub groups can contain more than 1000 users, but the list of sub
      * groups that belong to a group (and/or users) must be no more than 1000.</p>
+     * <p>You can download this <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/samples/group_members.zip">example
+     * S3 file</a> that uses the correct format for listing group members. Note,
+     * <code>dataSourceId</code> is optional. The value of <code>type</code> for a
+     * group is always <code>GROUP</code> and for a user it is always
+     * <code>USER</code>.</p>
      */
     inline GroupMembers& WithS3PathforGroupMembers(S3Path&& value) { SetS3PathforGroupMembers(std::move(value)); return *this;}
 
