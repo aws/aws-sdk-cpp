@@ -20,7 +20,8 @@ CreateMediaCapturePipelineRequest::CreateMediaCapturePipelineRequest() :
     m_sinkTypeHasBeenSet(false),
     m_sinkArnHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
+    m_clientRequestTokenHasBeenSet(true),
+    m_chimeSdkMeetingConfigurationHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,12 @@ Aws::String CreateMediaCapturePipelineRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
    payload.WithString("ClientRequestToken", m_clientRequestToken);
+
+  }
+
+  if(m_chimeSdkMeetingConfigurationHasBeenSet)
+  {
+   payload.WithObject("ChimeSdkMeetingConfiguration", m_chimeSdkMeetingConfiguration.Jsonize());
 
   }
 

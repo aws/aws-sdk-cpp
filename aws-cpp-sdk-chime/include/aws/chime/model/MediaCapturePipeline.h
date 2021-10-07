@@ -10,6 +10,7 @@
 #include <aws/chime/model/MediaPipelineStatus.h>
 #include <aws/chime/model/MediaPipelineSinkType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/chime/model/ChimeSdkMeetingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -28,8 +29,9 @@ namespace Model
 {
 
   /**
-   * <p>A media capture pipeline object. A string consisting of an ID, source type, a
-   * source ARN, a sink type, and a sink ARN.</p><p><h3>See Also:</h3>   <a
+   * <p>A media capture pipeline object consisting of an ID, source type, source ARN,
+   * a sink type, a sink ARN, and a configuration object.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/MediaCapturePipeline">AWS
    * API Reference</a></p>
    */
@@ -331,6 +333,43 @@ namespace Model
      */
     inline MediaCapturePipeline& WithUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetUpdatedTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration for a specified media capture pipeline.
+     * <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+     */
+    inline const ChimeSdkMeetingConfiguration& GetChimeSdkMeetingConfiguration() const{ return m_chimeSdkMeetingConfiguration; }
+
+    /**
+     * <p>The configuration for a specified media capture pipeline.
+     * <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+     */
+    inline bool ChimeSdkMeetingConfigurationHasBeenSet() const { return m_chimeSdkMeetingConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration for a specified media capture pipeline.
+     * <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+     */
+    inline void SetChimeSdkMeetingConfiguration(const ChimeSdkMeetingConfiguration& value) { m_chimeSdkMeetingConfigurationHasBeenSet = true; m_chimeSdkMeetingConfiguration = value; }
+
+    /**
+     * <p>The configuration for a specified media capture pipeline.
+     * <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+     */
+    inline void SetChimeSdkMeetingConfiguration(ChimeSdkMeetingConfiguration&& value) { m_chimeSdkMeetingConfigurationHasBeenSet = true; m_chimeSdkMeetingConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration for a specified media capture pipeline.
+     * <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+     */
+    inline MediaCapturePipeline& WithChimeSdkMeetingConfiguration(const ChimeSdkMeetingConfiguration& value) { SetChimeSdkMeetingConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration for a specified media capture pipeline.
+     * <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+     */
+    inline MediaCapturePipeline& WithChimeSdkMeetingConfiguration(ChimeSdkMeetingConfiguration&& value) { SetChimeSdkMeetingConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_mediaPipelineId;
@@ -356,6 +395,9 @@ namespace Model
 
     Aws::Utils::DateTime m_updatedTimestamp;
     bool m_updatedTimestampHasBeenSet;
+
+    ChimeSdkMeetingConfiguration m_chimeSdkMeetingConfiguration;
+    bool m_chimeSdkMeetingConfigurationHasBeenSet;
   };
 
 } // namespace Model

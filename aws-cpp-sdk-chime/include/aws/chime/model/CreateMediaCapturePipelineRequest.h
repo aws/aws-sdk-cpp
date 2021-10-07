@@ -9,6 +9,7 @@
 #include <aws/chime/model/MediaPipelineSourceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/chime/model/MediaPipelineSinkType.h>
+#include <aws/chime/model/ChimeSdkMeetingConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -231,6 +232,43 @@ namespace Model
      */
     inline CreateMediaCapturePipelineRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
+    /**
+     * <p>The configuration for a specified media capture pipeline.
+     * <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+     */
+    inline const ChimeSdkMeetingConfiguration& GetChimeSdkMeetingConfiguration() const{ return m_chimeSdkMeetingConfiguration; }
+
+    /**
+     * <p>The configuration for a specified media capture pipeline.
+     * <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+     */
+    inline bool ChimeSdkMeetingConfigurationHasBeenSet() const { return m_chimeSdkMeetingConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration for a specified media capture pipeline.
+     * <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+     */
+    inline void SetChimeSdkMeetingConfiguration(const ChimeSdkMeetingConfiguration& value) { m_chimeSdkMeetingConfigurationHasBeenSet = true; m_chimeSdkMeetingConfiguration = value; }
+
+    /**
+     * <p>The configuration for a specified media capture pipeline.
+     * <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+     */
+    inline void SetChimeSdkMeetingConfiguration(ChimeSdkMeetingConfiguration&& value) { m_chimeSdkMeetingConfigurationHasBeenSet = true; m_chimeSdkMeetingConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration for a specified media capture pipeline.
+     * <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+     */
+    inline CreateMediaCapturePipelineRequest& WithChimeSdkMeetingConfiguration(const ChimeSdkMeetingConfiguration& value) { SetChimeSdkMeetingConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration for a specified media capture pipeline.
+     * <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+     */
+    inline CreateMediaCapturePipelineRequest& WithChimeSdkMeetingConfiguration(ChimeSdkMeetingConfiguration&& value) { SetChimeSdkMeetingConfiguration(std::move(value)); return *this;}
+
   private:
 
     MediaPipelineSourceType m_sourceType;
@@ -247,6 +285,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
+
+    ChimeSdkMeetingConfiguration m_chimeSdkMeetingConfiguration;
+    bool m_chimeSdkMeetingConfigurationHasBeenSet;
   };
 
 } // namespace Model

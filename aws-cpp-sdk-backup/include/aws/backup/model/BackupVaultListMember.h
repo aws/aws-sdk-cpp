@@ -335,6 +335,212 @@ namespace Model
      */
     inline BackupVaultListMember& WithNumberOfRecoveryPoints(long long value) { SetNumberOfRecoveryPoints(value); return *this;}
 
+
+    /**
+     * <p>A Boolean value that indicates whether Backup Vault Lock applies to the
+     * selected backup vault. If <code>true</code>, Vault Lock prevents delete and
+     * update operations on the recovery points in the selected vault.</p>
+     */
+    inline bool GetLocked() const{ return m_locked; }
+
+    /**
+     * <p>A Boolean value that indicates whether Backup Vault Lock applies to the
+     * selected backup vault. If <code>true</code>, Vault Lock prevents delete and
+     * update operations on the recovery points in the selected vault.</p>
+     */
+    inline bool LockedHasBeenSet() const { return m_lockedHasBeenSet; }
+
+    /**
+     * <p>A Boolean value that indicates whether Backup Vault Lock applies to the
+     * selected backup vault. If <code>true</code>, Vault Lock prevents delete and
+     * update operations on the recovery points in the selected vault.</p>
+     */
+    inline void SetLocked(bool value) { m_lockedHasBeenSet = true; m_locked = value; }
+
+    /**
+     * <p>A Boolean value that indicates whether Backup Vault Lock applies to the
+     * selected backup vault. If <code>true</code>, Vault Lock prevents delete and
+     * update operations on the recovery points in the selected vault.</p>
+     */
+    inline BackupVaultListMember& WithLocked(bool value) { SetLocked(value); return *this;}
+
+
+    /**
+     * <p>The Backup Vault Lock setting that specifies the minimum retention period
+     * that the vault retains its recovery points. If this parameter is not specified,
+     * Vault Lock does not enforce a minimum retention period.</p> <p>If specified, any
+     * backup or copy job to the vault must have a lifecycle policy with a retention
+     * period equal to or longer than the minimum retention period. If the job's
+     * retention period is shorter than that minimum retention period, then the vault
+     * fails the backup or copy job, and you should either modify your lifecycle
+     * settings or use a different vault. Recovery points already stored in the vault
+     * prior to Vault Lock are not affected.</p>
+     */
+    inline long long GetMinRetentionDays() const{ return m_minRetentionDays; }
+
+    /**
+     * <p>The Backup Vault Lock setting that specifies the minimum retention period
+     * that the vault retains its recovery points. If this parameter is not specified,
+     * Vault Lock does not enforce a minimum retention period.</p> <p>If specified, any
+     * backup or copy job to the vault must have a lifecycle policy with a retention
+     * period equal to or longer than the minimum retention period. If the job's
+     * retention period is shorter than that minimum retention period, then the vault
+     * fails the backup or copy job, and you should either modify your lifecycle
+     * settings or use a different vault. Recovery points already stored in the vault
+     * prior to Vault Lock are not affected.</p>
+     */
+    inline bool MinRetentionDaysHasBeenSet() const { return m_minRetentionDaysHasBeenSet; }
+
+    /**
+     * <p>The Backup Vault Lock setting that specifies the minimum retention period
+     * that the vault retains its recovery points. If this parameter is not specified,
+     * Vault Lock does not enforce a minimum retention period.</p> <p>If specified, any
+     * backup or copy job to the vault must have a lifecycle policy with a retention
+     * period equal to or longer than the minimum retention period. If the job's
+     * retention period is shorter than that minimum retention period, then the vault
+     * fails the backup or copy job, and you should either modify your lifecycle
+     * settings or use a different vault. Recovery points already stored in the vault
+     * prior to Vault Lock are not affected.</p>
+     */
+    inline void SetMinRetentionDays(long long value) { m_minRetentionDaysHasBeenSet = true; m_minRetentionDays = value; }
+
+    /**
+     * <p>The Backup Vault Lock setting that specifies the minimum retention period
+     * that the vault retains its recovery points. If this parameter is not specified,
+     * Vault Lock does not enforce a minimum retention period.</p> <p>If specified, any
+     * backup or copy job to the vault must have a lifecycle policy with a retention
+     * period equal to or longer than the minimum retention period. If the job's
+     * retention period is shorter than that minimum retention period, then the vault
+     * fails the backup or copy job, and you should either modify your lifecycle
+     * settings or use a different vault. Recovery points already stored in the vault
+     * prior to Vault Lock are not affected.</p>
+     */
+    inline BackupVaultListMember& WithMinRetentionDays(long long value) { SetMinRetentionDays(value); return *this;}
+
+
+    /**
+     * <p>The Backup Vault Lock setting that specifies the maximum retention period
+     * that the vault retains its recovery points. If this parameter is not specified,
+     * Vault Lock does not enforce a maximum retention period on the recovery points in
+     * the vault (allowing indefinite storage).</p> <p>If specified, any backup or copy
+     * job to the vault must have a lifecycle policy with a retention period equal to
+     * or shorter than the maximum retention period. If the job's retention period is
+     * longer than that maximum retention period, then the vault fails the backup or
+     * copy job, and you should either modify your lifecycle settings or use a
+     * different vault. Recovery points already stored in the vault prior to Vault Lock
+     * are not affected.</p>
+     */
+    inline long long GetMaxRetentionDays() const{ return m_maxRetentionDays; }
+
+    /**
+     * <p>The Backup Vault Lock setting that specifies the maximum retention period
+     * that the vault retains its recovery points. If this parameter is not specified,
+     * Vault Lock does not enforce a maximum retention period on the recovery points in
+     * the vault (allowing indefinite storage).</p> <p>If specified, any backup or copy
+     * job to the vault must have a lifecycle policy with a retention period equal to
+     * or shorter than the maximum retention period. If the job's retention period is
+     * longer than that maximum retention period, then the vault fails the backup or
+     * copy job, and you should either modify your lifecycle settings or use a
+     * different vault. Recovery points already stored in the vault prior to Vault Lock
+     * are not affected.</p>
+     */
+    inline bool MaxRetentionDaysHasBeenSet() const { return m_maxRetentionDaysHasBeenSet; }
+
+    /**
+     * <p>The Backup Vault Lock setting that specifies the maximum retention period
+     * that the vault retains its recovery points. If this parameter is not specified,
+     * Vault Lock does not enforce a maximum retention period on the recovery points in
+     * the vault (allowing indefinite storage).</p> <p>If specified, any backup or copy
+     * job to the vault must have a lifecycle policy with a retention period equal to
+     * or shorter than the maximum retention period. If the job's retention period is
+     * longer than that maximum retention period, then the vault fails the backup or
+     * copy job, and you should either modify your lifecycle settings or use a
+     * different vault. Recovery points already stored in the vault prior to Vault Lock
+     * are not affected.</p>
+     */
+    inline void SetMaxRetentionDays(long long value) { m_maxRetentionDaysHasBeenSet = true; m_maxRetentionDays = value; }
+
+    /**
+     * <p>The Backup Vault Lock setting that specifies the maximum retention period
+     * that the vault retains its recovery points. If this parameter is not specified,
+     * Vault Lock does not enforce a maximum retention period on the recovery points in
+     * the vault (allowing indefinite storage).</p> <p>If specified, any backup or copy
+     * job to the vault must have a lifecycle policy with a retention period equal to
+     * or shorter than the maximum retention period. If the job's retention period is
+     * longer than that maximum retention period, then the vault fails the backup or
+     * copy job, and you should either modify your lifecycle settings or use a
+     * different vault. Recovery points already stored in the vault prior to Vault Lock
+     * are not affected.</p>
+     */
+    inline BackupVaultListMember& WithMaxRetentionDays(long long value) { SetMaxRetentionDays(value); return *this;}
+
+
+    /**
+     * <p>The date and time when Backup Vault Lock configuration becomes immutable,
+     * meaning it cannot be changed or deleted.</p> <p>If you applied Vault Lock to
+     * your vault without specifying a lock date, you can change your Vault Lock
+     * settings, or delete Vault Lock from the vault entirely, at any time.</p> <p>This
+     * value is in Unix format, Coordinated Universal Time (UTC), and accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLockDate() const{ return m_lockDate; }
+
+    /**
+     * <p>The date and time when Backup Vault Lock configuration becomes immutable,
+     * meaning it cannot be changed or deleted.</p> <p>If you applied Vault Lock to
+     * your vault without specifying a lock date, you can change your Vault Lock
+     * settings, or delete Vault Lock from the vault entirely, at any time.</p> <p>This
+     * value is in Unix format, Coordinated Universal Time (UTC), and accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
+     */
+    inline bool LockDateHasBeenSet() const { return m_lockDateHasBeenSet; }
+
+    /**
+     * <p>The date and time when Backup Vault Lock configuration becomes immutable,
+     * meaning it cannot be changed or deleted.</p> <p>If you applied Vault Lock to
+     * your vault without specifying a lock date, you can change your Vault Lock
+     * settings, or delete Vault Lock from the vault entirely, at any time.</p> <p>This
+     * value is in Unix format, Coordinated Universal Time (UTC), and accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
+     */
+    inline void SetLockDate(const Aws::Utils::DateTime& value) { m_lockDateHasBeenSet = true; m_lockDate = value; }
+
+    /**
+     * <p>The date and time when Backup Vault Lock configuration becomes immutable,
+     * meaning it cannot be changed or deleted.</p> <p>If you applied Vault Lock to
+     * your vault without specifying a lock date, you can change your Vault Lock
+     * settings, or delete Vault Lock from the vault entirely, at any time.</p> <p>This
+     * value is in Unix format, Coordinated Universal Time (UTC), and accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
+     */
+    inline void SetLockDate(Aws::Utils::DateTime&& value) { m_lockDateHasBeenSet = true; m_lockDate = std::move(value); }
+
+    /**
+     * <p>The date and time when Backup Vault Lock configuration becomes immutable,
+     * meaning it cannot be changed or deleted.</p> <p>If you applied Vault Lock to
+     * your vault without specifying a lock date, you can change your Vault Lock
+     * settings, or delete Vault Lock from the vault entirely, at any time.</p> <p>This
+     * value is in Unix format, Coordinated Universal Time (UTC), and accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
+     */
+    inline BackupVaultListMember& WithLockDate(const Aws::Utils::DateTime& value) { SetLockDate(value); return *this;}
+
+    /**
+     * <p>The date and time when Backup Vault Lock configuration becomes immutable,
+     * meaning it cannot be changed or deleted.</p> <p>If you applied Vault Lock to
+     * your vault without specifying a lock date, you can change your Vault Lock
+     * settings, or delete Vault Lock from the vault entirely, at any time.</p> <p>This
+     * value is in Unix format, Coordinated Universal Time (UTC), and accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
+     */
+    inline BackupVaultListMember& WithLockDate(Aws::Utils::DateTime&& value) { SetLockDate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_backupVaultName;
@@ -354,6 +560,18 @@ namespace Model
 
     long long m_numberOfRecoveryPoints;
     bool m_numberOfRecoveryPointsHasBeenSet;
+
+    bool m_locked;
+    bool m_lockedHasBeenSet;
+
+    long long m_minRetentionDays;
+    bool m_minRetentionDaysHasBeenSet;
+
+    long long m_maxRetentionDays;
+    bool m_maxRetentionDaysHasBeenSet;
+
+    Aws::Utils::DateTime m_lockDate;
+    bool m_lockDateHasBeenSet;
   };
 
 } // namespace Model

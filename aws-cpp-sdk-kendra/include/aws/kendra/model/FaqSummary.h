@@ -252,6 +252,79 @@ namespace Model
      */
     inline FaqSummary& WithFileFormat(FaqFileFormat&& value) { SetFileFormat(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The code for a language. This shows a supported language for the FAQ document
+     * as part of the summary information for FAQs. English is supported by default.
+     * For more information on supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
+
+    /**
+     * <p>The code for a language. This shows a supported language for the FAQ document
+     * as part of the summary information for FAQs. English is supported by default.
+     * For more information on supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
+
+    /**
+     * <p>The code for a language. This shows a supported language for the FAQ document
+     * as part of the summary information for FAQs. English is supported by default.
+     * For more information on supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline void SetLanguageCode(const Aws::String& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+
+    /**
+     * <p>The code for a language. This shows a supported language for the FAQ document
+     * as part of the summary information for FAQs. English is supported by default.
+     * For more information on supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline void SetLanguageCode(Aws::String&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
+
+    /**
+     * <p>The code for a language. This shows a supported language for the FAQ document
+     * as part of the summary information for FAQs. English is supported by default.
+     * For more information on supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline void SetLanguageCode(const char* value) { m_languageCodeHasBeenSet = true; m_languageCode.assign(value); }
+
+    /**
+     * <p>The code for a language. This shows a supported language for the FAQ document
+     * as part of the summary information for FAQs. English is supported by default.
+     * For more information on supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline FaqSummary& WithLanguageCode(const Aws::String& value) { SetLanguageCode(value); return *this;}
+
+    /**
+     * <p>The code for a language. This shows a supported language for the FAQ document
+     * as part of the summary information for FAQs. English is supported by default.
+     * For more information on supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline FaqSummary& WithLanguageCode(Aws::String&& value) { SetLanguageCode(std::move(value)); return *this;}
+
+    /**
+     * <p>The code for a language. This shows a supported language for the FAQ document
+     * as part of the summary information for FAQs. English is supported by default.
+     * For more information on supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline FaqSummary& WithLanguageCode(const char* value) { SetLanguageCode(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -271,6 +344,9 @@ namespace Model
 
     FaqFileFormat m_fileFormat;
     bool m_fileFormatHasBeenSet;
+
+    Aws::String m_languageCode;
+    bool m_languageCodeHasBeenSet;
   };
 
 } // namespace Model

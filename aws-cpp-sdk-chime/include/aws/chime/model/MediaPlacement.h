@@ -326,42 +326,42 @@ namespace Model
 
 
     /**
-     * <p>The URL of the S3 bucket used to store the captured media.</p>
+     * <p>The event ingestion URL.</p>
      */
     inline const Aws::String& GetEventIngestionUrl() const{ return m_eventIngestionUrl; }
 
     /**
-     * <p>The URL of the S3 bucket used to store the captured media.</p>
+     * <p>The event ingestion URL.</p>
      */
     inline bool EventIngestionUrlHasBeenSet() const { return m_eventIngestionUrlHasBeenSet; }
 
     /**
-     * <p>The URL of the S3 bucket used to store the captured media.</p>
+     * <p>The event ingestion URL.</p>
      */
     inline void SetEventIngestionUrl(const Aws::String& value) { m_eventIngestionUrlHasBeenSet = true; m_eventIngestionUrl = value; }
 
     /**
-     * <p>The URL of the S3 bucket used to store the captured media.</p>
+     * <p>The event ingestion URL.</p>
      */
     inline void SetEventIngestionUrl(Aws::String&& value) { m_eventIngestionUrlHasBeenSet = true; m_eventIngestionUrl = std::move(value); }
 
     /**
-     * <p>The URL of the S3 bucket used to store the captured media.</p>
+     * <p>The event ingestion URL.</p>
      */
     inline void SetEventIngestionUrl(const char* value) { m_eventIngestionUrlHasBeenSet = true; m_eventIngestionUrl.assign(value); }
 
     /**
-     * <p>The URL of the S3 bucket used to store the captured media.</p>
+     * <p>The event ingestion URL.</p>
      */
     inline MediaPlacement& WithEventIngestionUrl(const Aws::String& value) { SetEventIngestionUrl(value); return *this;}
 
     /**
-     * <p>The URL of the S3 bucket used to store the captured media.</p>
+     * <p>The event ingestion URL.</p>
      */
     inline MediaPlacement& WithEventIngestionUrl(Aws::String&& value) { SetEventIngestionUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of the S3 bucket used to store the captured media.</p>
+     * <p>The event ingestion URL.</p>
      */
     inline MediaPlacement& WithEventIngestionUrl(const char* value) { SetEventIngestionUrl(value); return *this;}
 

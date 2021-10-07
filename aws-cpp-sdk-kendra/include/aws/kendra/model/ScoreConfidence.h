@@ -19,7 +19,8 @@ namespace Model
     VERY_HIGH,
     HIGH,
     MEDIUM,
-    LOW
+    LOW,
+    NOT_AVAILABLE
   };
 
 namespace ScoreConfidenceMapper

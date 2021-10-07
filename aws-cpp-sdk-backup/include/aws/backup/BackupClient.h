@@ -109,6 +109,7 @@ namespace Model
         class DeleteBackupSelectionRequest;
         class DeleteBackupVaultRequest;
         class DeleteBackupVaultAccessPolicyRequest;
+        class DeleteBackupVaultLockConfigurationRequest;
         class DeleteBackupVaultNotificationsRequest;
         class DeleteFrameworkRequest;
         class DeleteRecoveryPointRequest;
@@ -149,6 +150,7 @@ namespace Model
         class ListRestoreJobsRequest;
         class ListTagsRequest;
         class PutBackupVaultAccessPolicyRequest;
+        class PutBackupVaultLockConfigurationRequest;
         class PutBackupVaultNotificationsRequest;
         class StartBackupJobRequest;
         class StartCopyJobRequest;
@@ -173,6 +175,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteBackupSelectionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteBackupVaultOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteBackupVaultAccessPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteBackupVaultLockConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteBackupVaultNotificationsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteFrameworkOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteRecoveryPointOutcome;
@@ -214,6 +217,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListRestoreJobsResult, BackupError> ListRestoreJobsOutcome;
         typedef Aws::Utils::Outcome<ListTagsResult, BackupError> ListTagsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> PutBackupVaultAccessPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> PutBackupVaultLockConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> PutBackupVaultNotificationsOutcome;
         typedef Aws::Utils::Outcome<StartBackupJobResult, BackupError> StartBackupJobOutcome;
         typedef Aws::Utils::Outcome<StartCopyJobResult, BackupError> StartCopyJobOutcome;
@@ -238,6 +242,7 @@ namespace Model
         typedef std::future<DeleteBackupSelectionOutcome> DeleteBackupSelectionOutcomeCallable;
         typedef std::future<DeleteBackupVaultOutcome> DeleteBackupVaultOutcomeCallable;
         typedef std::future<DeleteBackupVaultAccessPolicyOutcome> DeleteBackupVaultAccessPolicyOutcomeCallable;
+        typedef std::future<DeleteBackupVaultLockConfigurationOutcome> DeleteBackupVaultLockConfigurationOutcomeCallable;
         typedef std::future<DeleteBackupVaultNotificationsOutcome> DeleteBackupVaultNotificationsOutcomeCallable;
         typedef std::future<DeleteFrameworkOutcome> DeleteFrameworkOutcomeCallable;
         typedef std::future<DeleteRecoveryPointOutcome> DeleteRecoveryPointOutcomeCallable;
@@ -279,6 +284,7 @@ namespace Model
         typedef std::future<ListRestoreJobsOutcome> ListRestoreJobsOutcomeCallable;
         typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
         typedef std::future<PutBackupVaultAccessPolicyOutcome> PutBackupVaultAccessPolicyOutcomeCallable;
+        typedef std::future<PutBackupVaultLockConfigurationOutcome> PutBackupVaultLockConfigurationOutcomeCallable;
         typedef std::future<PutBackupVaultNotificationsOutcome> PutBackupVaultNotificationsOutcomeCallable;
         typedef std::future<StartBackupJobOutcome> StartBackupJobOutcomeCallable;
         typedef std::future<StartCopyJobOutcome> StartCopyJobOutcomeCallable;
@@ -306,6 +312,7 @@ namespace Model
     typedef std::function<void(const BackupClient*, const Model::DeleteBackupSelectionRequest&, const Model::DeleteBackupSelectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupSelectionResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::DeleteBackupVaultRequest&, const Model::DeleteBackupVaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupVaultResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::DeleteBackupVaultAccessPolicyRequest&, const Model::DeleteBackupVaultAccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupVaultAccessPolicyResponseReceivedHandler;
+    typedef std::function<void(const BackupClient*, const Model::DeleteBackupVaultLockConfigurationRequest&, const Model::DeleteBackupVaultLockConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupVaultLockConfigurationResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::DeleteBackupVaultNotificationsRequest&, const Model::DeleteBackupVaultNotificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupVaultNotificationsResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::DeleteFrameworkRequest&, const Model::DeleteFrameworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFrameworkResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::DeleteRecoveryPointRequest&, const Model::DeleteRecoveryPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRecoveryPointResponseReceivedHandler;
@@ -347,6 +354,7 @@ namespace Model
     typedef std::function<void(const BackupClient*, const Model::ListRestoreJobsRequest&, const Model::ListRestoreJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRestoreJobsResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::PutBackupVaultAccessPolicyRequest&, const Model::PutBackupVaultAccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBackupVaultAccessPolicyResponseReceivedHandler;
+    typedef std::function<void(const BackupClient*, const Model::PutBackupVaultLockConfigurationRequest&, const Model::PutBackupVaultLockConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBackupVaultLockConfigurationResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::PutBackupVaultNotificationsRequest&, const Model::PutBackupVaultNotificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBackupVaultNotificationsResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::StartBackupJobRequest&, const Model::StartBackupJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartBackupJobResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::StartCopyJobRequest&, const Model::StartCopyJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCopyJobResponseReceivedHandler;
@@ -736,6 +744,49 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteBackupVaultAccessPolicyAsync(const Model::DeleteBackupVaultAccessPolicyRequest& request, const DeleteBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes Backup Vault Lock from a backup vault specified by a backup vault
+         * name.</p> <p>If the Vault Lock configuration is immutable, then you cannot
+         * delete Vault Lock using API operations, and you will receive an
+         * <code>InvalidRequestException</code> if you attempt to do so. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/vault-lock.html">Vault
+         * Lock</a> in the <i>Backup Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteBackupVaultLockConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteBackupVaultLockConfigurationOutcome DeleteBackupVaultLockConfiguration(const Model::DeleteBackupVaultLockConfigurationRequest& request) const;
+
+        /**
+         * <p>Deletes Backup Vault Lock from a backup vault specified by a backup vault
+         * name.</p> <p>If the Vault Lock configuration is immutable, then you cannot
+         * delete Vault Lock using API operations, and you will receive an
+         * <code>InvalidRequestException</code> if you attempt to do so. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/vault-lock.html">Vault
+         * Lock</a> in the <i>Backup Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteBackupVaultLockConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteBackupVaultLockConfigurationOutcomeCallable DeleteBackupVaultLockConfigurationCallable(const Model::DeleteBackupVaultLockConfigurationRequest& request) const;
+
+        /**
+         * <p>Deletes Backup Vault Lock from a backup vault specified by a backup vault
+         * name.</p> <p>If the Vault Lock configuration is immutable, then you cannot
+         * delete Vault Lock using API operations, and you will receive an
+         * <code>InvalidRequestException</code> if you attempt to do so. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/vault-lock.html">Vault
+         * Lock</a> in the <i>Backup Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteBackupVaultLockConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteBackupVaultLockConfigurationAsync(const Model::DeleteBackupVaultLockConfigurationRequest& request, const DeleteBackupVaultLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes event notifications for the specified backup vault.</p><p><h3>See
@@ -1948,6 +1999,46 @@ namespace Model
         virtual void PutBackupVaultAccessPolicyAsync(const Model::PutBackupVaultAccessPolicyRequest& request, const PutBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Applies Backup Vault Lock to a backup vault, preventing attempts to delete
+         * any recovery point stored in or created in a backup vault. Vault Lock also
+         * prevents attempts to update the lifecycle policy that controls the retention
+         * period of any recovery point currently stored in a backup vault. If specified,
+         * Vault Lock enforces a minimum and maximum retention period for future backup and
+         * copy jobs that target a backup vault.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutBackupVaultLockConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutBackupVaultLockConfigurationOutcome PutBackupVaultLockConfiguration(const Model::PutBackupVaultLockConfigurationRequest& request) const;
+
+        /**
+         * <p>Applies Backup Vault Lock to a backup vault, preventing attempts to delete
+         * any recovery point stored in or created in a backup vault. Vault Lock also
+         * prevents attempts to update the lifecycle policy that controls the retention
+         * period of any recovery point currently stored in a backup vault. If specified,
+         * Vault Lock enforces a minimum and maximum retention period for future backup and
+         * copy jobs that target a backup vault.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutBackupVaultLockConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutBackupVaultLockConfigurationOutcomeCallable PutBackupVaultLockConfigurationCallable(const Model::PutBackupVaultLockConfigurationRequest& request) const;
+
+        /**
+         * <p>Applies Backup Vault Lock to a backup vault, preventing attempts to delete
+         * any recovery point stored in or created in a backup vault. Vault Lock also
+         * prevents attempts to update the lifecycle policy that controls the retention
+         * period of any recovery point currently stored in a backup vault. If specified,
+         * Vault Lock enforces a minimum and maximum retention period for future backup and
+         * copy jobs that target a backup vault.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutBackupVaultLockConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutBackupVaultLockConfigurationAsync(const Model::PutBackupVaultLockConfigurationRequest& request, const PutBackupVaultLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Turns on notifications on a backup vault for the specified topic and
          * events.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutBackupVaultNotifications">AWS
@@ -2400,6 +2491,7 @@ namespace Model
         void DeleteBackupSelectionAsyncHelper(const Model::DeleteBackupSelectionRequest& request, const DeleteBackupSelectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBackupVaultAsyncHelper(const Model::DeleteBackupVaultRequest& request, const DeleteBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBackupVaultAccessPolicyAsyncHelper(const Model::DeleteBackupVaultAccessPolicyRequest& request, const DeleteBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteBackupVaultLockConfigurationAsyncHelper(const Model::DeleteBackupVaultLockConfigurationRequest& request, const DeleteBackupVaultLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBackupVaultNotificationsAsyncHelper(const Model::DeleteBackupVaultNotificationsRequest& request, const DeleteBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFrameworkAsyncHelper(const Model::DeleteFrameworkRequest& request, const DeleteFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRecoveryPointAsyncHelper(const Model::DeleteRecoveryPointRequest& request, const DeleteRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2441,6 +2533,7 @@ namespace Model
         void ListRestoreJobsAsyncHelper(const Model::ListRestoreJobsRequest& request, const ListRestoreJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsAsyncHelper(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBackupVaultAccessPolicyAsyncHelper(const Model::PutBackupVaultAccessPolicyRequest& request, const PutBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutBackupVaultLockConfigurationAsyncHelper(const Model::PutBackupVaultLockConfigurationRequest& request, const PutBackupVaultLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBackupVaultNotificationsAsyncHelper(const Model::PutBackupVaultNotificationsRequest& request, const PutBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartBackupJobAsyncHelper(const Model::StartBackupJobRequest& request, const StartBackupJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartCopyJobAsyncHelper(const Model::StartCopyJobRequest& request, const StartCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

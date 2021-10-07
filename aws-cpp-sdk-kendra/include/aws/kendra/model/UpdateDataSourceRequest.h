@@ -323,6 +323,79 @@ namespace Model
      */
     inline UpdateDataSourceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
+    /**
+     * <p>The code for a language. This allows you to support a language for all
+     * documents when updating the data source. English is supported by default. For
+     * more information on supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
+
+    /**
+     * <p>The code for a language. This allows you to support a language for all
+     * documents when updating the data source. English is supported by default. For
+     * more information on supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
+
+    /**
+     * <p>The code for a language. This allows you to support a language for all
+     * documents when updating the data source. English is supported by default. For
+     * more information on supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline void SetLanguageCode(const Aws::String& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+
+    /**
+     * <p>The code for a language. This allows you to support a language for all
+     * documents when updating the data source. English is supported by default. For
+     * more information on supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline void SetLanguageCode(Aws::String&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
+
+    /**
+     * <p>The code for a language. This allows you to support a language for all
+     * documents when updating the data source. English is supported by default. For
+     * more information on supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline void SetLanguageCode(const char* value) { m_languageCodeHasBeenSet = true; m_languageCode.assign(value); }
+
+    /**
+     * <p>The code for a language. This allows you to support a language for all
+     * documents when updating the data source. English is supported by default. For
+     * more information on supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline UpdateDataSourceRequest& WithLanguageCode(const Aws::String& value) { SetLanguageCode(value); return *this;}
+
+    /**
+     * <p>The code for a language. This allows you to support a language for all
+     * documents when updating the data source. English is supported by default. For
+     * more information on supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline UpdateDataSourceRequest& WithLanguageCode(Aws::String&& value) { SetLanguageCode(std::move(value)); return *this;}
+
+    /**
+     * <p>The code for a language. This allows you to support a language for all
+     * documents when updating the data source. English is supported by default. For
+     * more information on supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline UpdateDataSourceRequest& WithLanguageCode(const char* value) { SetLanguageCode(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -345,6 +418,9 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
+    Aws::String m_languageCode;
+    bool m_languageCodeHasBeenSet;
   };
 
 } // namespace Model

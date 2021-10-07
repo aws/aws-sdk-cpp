@@ -29,7 +29,8 @@ MediaCapturePipeline::MediaCapturePipeline() :
     m_sinkTypeHasBeenSet(false),
     m_sinkArnHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
+    m_updatedTimestampHasBeenSet(false),
+    m_chimeSdkMeetingConfigurationHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ MediaCapturePipeline::MediaCapturePipeline(JsonView jsonValue) :
     m_sinkTypeHasBeenSet(false),
     m_sinkArnHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
+    m_updatedTimestampHasBeenSet(false),
+    m_chimeSdkMeetingConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -107,6 +109,13 @@ MediaCapturePipeline& MediaCapturePipeline::operator =(JsonView jsonValue)
     m_updatedTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ChimeSdkMeetingConfiguration"))
+  {
+    m_chimeSdkMeetingConfiguration = jsonValue.GetObject("ChimeSdkMeetingConfiguration");
+
+    m_chimeSdkMeetingConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -155,6 +164,12 @@ JsonValue MediaCapturePipeline::Jsonize() const
   if(m_updatedTimestampHasBeenSet)
   {
    payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(DateFormat::ISO_8601));
+  }
+
+  if(m_chimeSdkMeetingConfigurationHasBeenSet)
+  {
+   payload.WithObject("ChimeSdkMeetingConfiguration", m_chimeSdkMeetingConfiguration.Jsonize());
+
   }
 
   return payload;

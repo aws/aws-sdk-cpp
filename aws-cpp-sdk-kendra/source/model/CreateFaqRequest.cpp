@@ -22,7 +22,8 @@ CreateFaqRequest::CreateFaqRequest() :
     m_fileFormat(FaqFileFormat::NOT_SET),
     m_fileFormatHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_languageCodeHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,12 @@ Aws::String CreateFaqRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("ClientToken", m_clientToken);
+
+  }
+
+  if(m_languageCodeHasBeenSet)
+  {
+   payload.WithString("LanguageCode", m_languageCode);
 
   }
 

@@ -29,6 +29,7 @@
 #include <aws/backup/model/DeleteBackupSelectionRequest.h>
 #include <aws/backup/model/DeleteBackupVaultRequest.h>
 #include <aws/backup/model/DeleteBackupVaultAccessPolicyRequest.h>
+#include <aws/backup/model/DeleteBackupVaultLockConfigurationRequest.h>
 #include <aws/backup/model/DeleteBackupVaultNotificationsRequest.h>
 #include <aws/backup/model/DeleteFrameworkRequest.h>
 #include <aws/backup/model/DeleteRecoveryPointRequest.h>
@@ -69,6 +70,7 @@
 #include <aws/backup/model/ListRestoreJobsRequest.h>
 #include <aws/backup/model/ListTagsRequest.h>
 #include <aws/backup/model/PutBackupVaultAccessPolicyRequest.h>
+#include <aws/backup/model/PutBackupVaultLockConfigurationRequest.h>
 #include <aws/backup/model/PutBackupVaultNotificationsRequest.h>
 #include <aws/backup/model/StartBackupJobRequest.h>
 #include <aws/backup/model/StartCopyJobRequest.h>
@@ -425,6 +427,38 @@ void BackupClient::DeleteBackupVaultAccessPolicyAsync(const DeleteBackupVaultAcc
 void BackupClient::DeleteBackupVaultAccessPolicyAsyncHelper(const DeleteBackupVaultAccessPolicyRequest& request, const DeleteBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteBackupVaultAccessPolicy(request), context);
+}
+
+DeleteBackupVaultLockConfigurationOutcome BackupClient::DeleteBackupVaultLockConfiguration(const DeleteBackupVaultLockConfigurationRequest& request) const
+{
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBackupVaultLockConfiguration", "Required field: BackupVaultName, is not set");
+    return DeleteBackupVaultLockConfigurationOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/backup-vaults/");
+  uri.AddPathSegment(request.GetBackupVaultName());
+  uri.AddPathSegments("/vault-lock");
+  return DeleteBackupVaultLockConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteBackupVaultLockConfigurationOutcomeCallable BackupClient::DeleteBackupVaultLockConfigurationCallable(const DeleteBackupVaultLockConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBackupVaultLockConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBackupVaultLockConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::DeleteBackupVaultLockConfigurationAsync(const DeleteBackupVaultLockConfigurationRequest& request, const DeleteBackupVaultLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackupVaultLockConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::DeleteBackupVaultLockConfigurationAsyncHelper(const DeleteBackupVaultLockConfigurationRequest& request, const DeleteBackupVaultLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBackupVaultLockConfiguration(request), context);
 }
 
 DeleteBackupVaultNotificationsOutcome BackupClient::DeleteBackupVaultNotifications(const DeleteBackupVaultNotificationsRequest& request) const
@@ -1659,6 +1693,38 @@ void BackupClient::PutBackupVaultAccessPolicyAsync(const PutBackupVaultAccessPol
 void BackupClient::PutBackupVaultAccessPolicyAsyncHelper(const PutBackupVaultAccessPolicyRequest& request, const PutBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutBackupVaultAccessPolicy(request), context);
+}
+
+PutBackupVaultLockConfigurationOutcome BackupClient::PutBackupVaultLockConfiguration(const PutBackupVaultLockConfigurationRequest& request) const
+{
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBackupVaultLockConfiguration", "Required field: BackupVaultName, is not set");
+    return PutBackupVaultLockConfigurationOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/backup-vaults/");
+  uri.AddPathSegment(request.GetBackupVaultName());
+  uri.AddPathSegments("/vault-lock");
+  return PutBackupVaultLockConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutBackupVaultLockConfigurationOutcomeCallable BackupClient::PutBackupVaultLockConfigurationCallable(const PutBackupVaultLockConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutBackupVaultLockConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutBackupVaultLockConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::PutBackupVaultLockConfigurationAsync(const PutBackupVaultLockConfigurationRequest& request, const PutBackupVaultLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutBackupVaultLockConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::PutBackupVaultLockConfigurationAsyncHelper(const PutBackupVaultLockConfigurationRequest& request, const PutBackupVaultLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutBackupVaultLockConfiguration(request), context);
 }
 
 PutBackupVaultNotificationsOutcome BackupClient::PutBackupVaultNotifications(const PutBackupVaultNotificationsRequest& request) const

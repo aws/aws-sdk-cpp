@@ -104,6 +104,12 @@ DescribeDataSourceResult& DescribeDataSourceResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("LanguageCode"))
+  {
+    m_languageCode = jsonValue.GetString("LanguageCode");
+
+  }
+
 
 
   return *this;
