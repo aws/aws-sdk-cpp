@@ -13,9 +13,9 @@ using namespace Aws::Utils;
 CreateLocalGatewayRouteRequest::CreateLocalGatewayRouteRequest() : 
     m_destinationCidrBlockHasBeenSet(false),
     m_localGatewayRouteTableIdHasBeenSet(false),
+    m_localGatewayVirtualInterfaceGroupIdHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_localGatewayVirtualInterfaceGroupIdHasBeenSet(false)
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -33,14 +33,14 @@ Aws::String CreateLocalGatewayRouteRequest::SerializePayload() const
     ss << "LocalGatewayRouteTableId=" << StringUtils::URLEncode(m_localGatewayRouteTableId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
   if(m_localGatewayVirtualInterfaceGroupIdHasBeenSet)
   {
     ss << "LocalGatewayVirtualInterfaceGroupId=" << StringUtils::URLEncode(m_localGatewayVirtualInterfaceGroupId.c_str()) << "&";
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

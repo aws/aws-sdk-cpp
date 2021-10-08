@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a Lambda function that verifies requests to a bot or fulfilles the
+   * <p>Specifies a Lambda function that verifies requests to a bot or fulfills the
    * user's request to a bot.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/LambdaCodeHook">AWS
    * API Reference</a></p>

@@ -20,7 +20,8 @@ namespace Model
     ConfirmIntent,
     Delegate,
     ElicitIntent,
-    ElicitSlot
+    ElicitSlot,
+    None
   };
 
 namespace DialogActionTypeMapper

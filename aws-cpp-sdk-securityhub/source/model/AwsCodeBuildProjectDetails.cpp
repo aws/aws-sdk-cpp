@@ -20,20 +20,24 @@ namespace Model
 
 AwsCodeBuildProjectDetails::AwsCodeBuildProjectDetails() : 
     m_encryptionKeyHasBeenSet(false),
+    m_artifactsHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
+    m_logsConfigHasBeenSet(false),
     m_vpcConfigHasBeenSet(false)
 {
 }
 
 AwsCodeBuildProjectDetails::AwsCodeBuildProjectDetails(JsonView jsonValue) : 
     m_encryptionKeyHasBeenSet(false),
+    m_artifactsHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
+    m_logsConfigHasBeenSet(false),
     m_vpcConfigHasBeenSet(false)
 {
   *this = jsonValue;
@@ -46,6 +50,16 @@ AwsCodeBuildProjectDetails& AwsCodeBuildProjectDetails::operator =(JsonView json
     m_encryptionKey = jsonValue.GetString("EncryptionKey");
 
     m_encryptionKeyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Artifacts"))
+  {
+    Array<JsonView> artifactsJsonList = jsonValue.GetArray("Artifacts");
+    for(unsigned artifactsIndex = 0; artifactsIndex < artifactsJsonList.GetLength(); ++artifactsIndex)
+    {
+      m_artifacts.push_back(artifactsJsonList[artifactsIndex].AsObject());
+    }
+    m_artifactsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Environment"))
@@ -76,6 +90,13 @@ AwsCodeBuildProjectDetails& AwsCodeBuildProjectDetails::operator =(JsonView json
     m_serviceRoleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LogsConfig"))
+  {
+    m_logsConfig = jsonValue.GetObject("LogsConfig");
+
+    m_logsConfigHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("VpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
@@ -93,6 +114,17 @@ JsonValue AwsCodeBuildProjectDetails::Jsonize() const
   if(m_encryptionKeyHasBeenSet)
   {
    payload.WithString("EncryptionKey", m_encryptionKey);
+
+  }
+
+  if(m_artifactsHasBeenSet)
+  {
+   Array<JsonValue> artifactsJsonList(m_artifacts.size());
+   for(unsigned artifactsIndex = 0; artifactsIndex < artifactsJsonList.GetLength(); ++artifactsIndex)
+   {
+     artifactsJsonList[artifactsIndex].AsObject(m_artifacts[artifactsIndex].Jsonize());
+   }
+   payload.WithArray("Artifacts", std::move(artifactsJsonList));
 
   }
 
@@ -117,6 +149,12 @@ JsonValue AwsCodeBuildProjectDetails::Jsonize() const
   if(m_serviceRoleHasBeenSet)
   {
    payload.WithString("ServiceRole", m_serviceRole);
+
+  }
+
+  if(m_logsConfigHasBeenSet)
+  {
+   payload.WithObject("LogsConfig", m_logsConfig.Jsonize());
 
   }
 

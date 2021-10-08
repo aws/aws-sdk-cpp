@@ -25,6 +25,7 @@ namespace Aws
         static const int InProgress_HASH = HashingUtils::HashString("InProgress");
         static const int ReadyForFulfillment_HASH = HashingUtils::HashString("ReadyForFulfillment");
         static const int Waiting_HASH = HashingUtils::HashString("Waiting");
+        static const int FulfillmentInProgress_HASH = HashingUtils::HashString("FulfillmentInProgress");
 
 
         IntentState GetIntentStateForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return IntentState::Waiting;
           }
+          else if (hashCode == FulfillmentInProgress_HASH)
+          {
+            return IntentState::FulfillmentInProgress;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "ReadyForFulfillment";
           case IntentState::Waiting:
             return "Waiting";
+          case IntentState::FulfillmentInProgress:
+            return "FulfillmentInProgress";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

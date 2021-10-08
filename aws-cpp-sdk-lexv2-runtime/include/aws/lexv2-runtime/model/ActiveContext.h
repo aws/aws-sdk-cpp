@@ -124,119 +124,119 @@ namespace Model
 
 
     /**
-     * <p>A lis tof contexts active for the request. A context can be activated when a
+     * <p>A list of contexts active for the request. A context can be activated when a
      * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex will use the current list
-     * of contexts for the session. If you specify an empty list, all contexts for the
-     * session are cleared. </p>
+     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
+     * list of contexts for the session. If you specify an empty list, all contexts for
+     * the session are cleared. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetContextAttributes() const{ return m_contextAttributes; }
 
     /**
-     * <p>A lis tof contexts active for the request. A context can be activated when a
+     * <p>A list of contexts active for the request. A context can be activated when a
      * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex will use the current list
-     * of contexts for the session. If you specify an empty list, all contexts for the
-     * session are cleared. </p>
+     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
+     * list of contexts for the session. If you specify an empty list, all contexts for
+     * the session are cleared. </p>
      */
     inline bool ContextAttributesHasBeenSet() const { return m_contextAttributesHasBeenSet; }
 
     /**
-     * <p>A lis tof contexts active for the request. A context can be activated when a
+     * <p>A list of contexts active for the request. A context can be activated when a
      * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex will use the current list
-     * of contexts for the session. If you specify an empty list, all contexts for the
-     * session are cleared. </p>
+     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
+     * list of contexts for the session. If you specify an empty list, all contexts for
+     * the session are cleared. </p>
      */
     inline void SetContextAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes = value; }
 
     /**
-     * <p>A lis tof contexts active for the request. A context can be activated when a
+     * <p>A list of contexts active for the request. A context can be activated when a
      * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex will use the current list
-     * of contexts for the session. If you specify an empty list, all contexts for the
-     * session are cleared. </p>
+     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
+     * list of contexts for the session. If you specify an empty list, all contexts for
+     * the session are cleared. </p>
      */
     inline void SetContextAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes = std::move(value); }
 
     /**
-     * <p>A lis tof contexts active for the request. A context can be activated when a
+     * <p>A list of contexts active for the request. A context can be activated when a
      * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex will use the current list
-     * of contexts for the session. If you specify an empty list, all contexts for the
-     * session are cleared. </p>
+     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
+     * list of contexts for the session. If you specify an empty list, all contexts for
+     * the session are cleared. </p>
      */
     inline ActiveContext& WithContextAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetContextAttributes(value); return *this;}
 
     /**
-     * <p>A lis tof contexts active for the request. A context can be activated when a
+     * <p>A list of contexts active for the request. A context can be activated when a
      * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex will use the current list
-     * of contexts for the session. If you specify an empty list, all contexts for the
-     * session are cleared. </p>
+     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
+     * list of contexts for the session. If you specify an empty list, all contexts for
+     * the session are cleared. </p>
      */
     inline ActiveContext& WithContextAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetContextAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>A lis tof contexts active for the request. A context can be activated when a
+     * <p>A list of contexts active for the request. A context can be activated when a
      * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex will use the current list
-     * of contexts for the session. If you specify an empty list, all contexts for the
-     * session are cleared. </p>
+     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
+     * list of contexts for the session. If you specify an empty list, all contexts for
+     * the session are cleared. </p>
      */
     inline ActiveContext& AddContextAttributes(const Aws::String& key, const Aws::String& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(key, value); return *this; }
 
     /**
-     * <p>A lis tof contexts active for the request. A context can be activated when a
+     * <p>A list of contexts active for the request. A context can be activated when a
      * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex will use the current list
-     * of contexts for the session. If you specify an empty list, all contexts for the
-     * session are cleared. </p>
+     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
+     * list of contexts for the session. If you specify an empty list, all contexts for
+     * the session are cleared. </p>
      */
     inline ActiveContext& AddContextAttributes(Aws::String&& key, const Aws::String& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A lis tof contexts active for the request. A context can be activated when a
+     * <p>A list of contexts active for the request. A context can be activated when a
      * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex will use the current list
-     * of contexts for the session. If you specify an empty list, all contexts for the
-     * session are cleared. </p>
+     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
+     * list of contexts for the session. If you specify an empty list, all contexts for
+     * the session are cleared. </p>
      */
     inline ActiveContext& AddContextAttributes(const Aws::String& key, Aws::String&& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A lis tof contexts active for the request. A context can be activated when a
+     * <p>A list of contexts active for the request. A context can be activated when a
      * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex will use the current list
-     * of contexts for the session. If you specify an empty list, all contexts for the
-     * session are cleared. </p>
+     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
+     * list of contexts for the session. If you specify an empty list, all contexts for
+     * the session are cleared. </p>
      */
     inline ActiveContext& AddContextAttributes(Aws::String&& key, Aws::String&& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A lis tof contexts active for the request. A context can be activated when a
+     * <p>A list of contexts active for the request. A context can be activated when a
      * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex will use the current list
-     * of contexts for the session. If you specify an empty list, all contexts for the
-     * session are cleared. </p>
+     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
+     * list of contexts for the session. If you specify an empty list, all contexts for
+     * the session are cleared. </p>
      */
     inline ActiveContext& AddContextAttributes(const char* key, Aws::String&& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A lis tof contexts active for the request. A context can be activated when a
+     * <p>A list of contexts active for the request. A context can be activated when a
      * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex will use the current list
-     * of contexts for the session. If you specify an empty list, all contexts for the
-     * session are cleared. </p>
+     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
+     * list of contexts for the session. If you specify an empty list, all contexts for
+     * the session are cleared. </p>
      */
     inline ActiveContext& AddContextAttributes(Aws::String&& key, const char* value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A lis tof contexts active for the request. A context can be activated when a
+     * <p>A list of contexts active for the request. A context can be activated when a
      * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex will use the current list
-     * of contexts for the session. If you specify an empty list, all contexts for the
-     * session are cleared. </p>
+     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
+     * list of contexts for the session. If you specify an empty list, all contexts for
+     * the session are cleared. </p>
      */
     inline ActiveContext& AddContextAttributes(const char* key, const char* value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(key, value); return *this; }
 

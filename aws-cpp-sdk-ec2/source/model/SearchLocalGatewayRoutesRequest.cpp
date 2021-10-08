@@ -12,12 +12,12 @@ using namespace Aws::Utils;
 
 SearchLocalGatewayRoutesRequest::SearchLocalGatewayRoutesRequest() : 
     m_localGatewayRouteTableIdHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -28,6 +28,16 @@ Aws::String SearchLocalGatewayRoutesRequest::SerializePayload() const
   if(m_localGatewayRouteTableIdHasBeenSet)
   {
     ss << "LocalGatewayRouteTableId=" << StringUtils::URLEncode(m_localGatewayRouteTableId.c_str()) << "&";
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
+    }
   }
 
   if(m_maxResultsHasBeenSet)
@@ -43,16 +53,6 @@ Aws::String SearchLocalGatewayRoutesRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
-  if(m_filtersHasBeenSet)
-  {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
-      filtersCount++;
-    }
   }
 
   ss << "Version=2016-11-15";

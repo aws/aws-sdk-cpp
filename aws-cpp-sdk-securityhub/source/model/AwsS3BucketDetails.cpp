@@ -21,6 +21,7 @@ namespace Model
 AwsS3BucketDetails::AwsS3BucketDetails() : 
     m_ownerIdHasBeenSet(false),
     m_ownerNameHasBeenSet(false),
+    m_ownerAccountIdHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_serverSideEncryptionConfigurationHasBeenSet(false),
     m_bucketLifecycleConfigurationHasBeenSet(false),
@@ -35,6 +36,7 @@ AwsS3BucketDetails::AwsS3BucketDetails() :
 AwsS3BucketDetails::AwsS3BucketDetails(JsonView jsonValue) : 
     m_ownerIdHasBeenSet(false),
     m_ownerNameHasBeenSet(false),
+    m_ownerAccountIdHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_serverSideEncryptionConfigurationHasBeenSet(false),
     m_bucketLifecycleConfigurationHasBeenSet(false),
@@ -61,6 +63,13 @@ AwsS3BucketDetails& AwsS3BucketDetails::operator =(JsonView jsonValue)
     m_ownerName = jsonValue.GetString("OwnerName");
 
     m_ownerNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OwnerAccountId"))
+  {
+    m_ownerAccountId = jsonValue.GetString("OwnerAccountId");
+
+    m_ownerAccountIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreatedAt"))
@@ -135,6 +144,12 @@ JsonValue AwsS3BucketDetails::Jsonize() const
   if(m_ownerNameHasBeenSet)
   {
    payload.WithString("OwnerName", m_ownerName);
+
+  }
+
+  if(m_ownerAccountIdHasBeenSet)
+  {
+   payload.WithString("OwnerAccountId", m_ownerAccountId);
 
   }
 

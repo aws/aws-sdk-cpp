@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>Provides information about the bot or bot locale that you want to import. You
-   * can sepcifiy the <code>botImportSpecification</code> or the
+   * can specify the <code>botImportSpecification</code> or the
    * <code>botLocaleImportSpecification</code>, but not both.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ImportResourceSpecification">AWS

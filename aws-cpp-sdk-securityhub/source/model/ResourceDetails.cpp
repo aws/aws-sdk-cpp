@@ -70,7 +70,14 @@ ResourceDetails::ResourceDetails() :
     m_awsEcsServiceHasBeenSet(false),
     m_awsAutoScalingLaunchConfigurationHasBeenSet(false),
     m_awsEc2VpnConnectionHasBeenSet(false),
-    m_awsEcrContainerImageHasBeenSet(false)
+    m_awsEcrContainerImageHasBeenSet(false),
+    m_awsOpenSearchServiceDomainHasBeenSet(false),
+    m_awsEc2VpcEndpointServiceHasBeenSet(false),
+    m_awsXrayEncryptionConfigHasBeenSet(false),
+    m_awsWafRateBasedRuleHasBeenSet(false),
+    m_awsWafRegionalRateBasedRuleHasBeenSet(false),
+    m_awsEcrRepositoryHasBeenSet(false),
+    m_awsEksClusterHasBeenSet(false)
 {
 }
 
@@ -126,7 +133,14 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsEcsServiceHasBeenSet(false),
     m_awsAutoScalingLaunchConfigurationHasBeenSet(false),
     m_awsEc2VpnConnectionHasBeenSet(false),
-    m_awsEcrContainerImageHasBeenSet(false)
+    m_awsEcrContainerImageHasBeenSet(false),
+    m_awsOpenSearchServiceDomainHasBeenSet(false),
+    m_awsEc2VpcEndpointServiceHasBeenSet(false),
+    m_awsXrayEncryptionConfigHasBeenSet(false),
+    m_awsWafRateBasedRuleHasBeenSet(false),
+    m_awsWafRegionalRateBasedRuleHasBeenSet(false),
+    m_awsEcrRepositoryHasBeenSet(false),
+    m_awsEksClusterHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -500,6 +514,55 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsEcrContainerImageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AwsOpenSearchServiceDomain"))
+  {
+    m_awsOpenSearchServiceDomain = jsonValue.GetObject("AwsOpenSearchServiceDomain");
+
+    m_awsOpenSearchServiceDomainHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEc2VpcEndpointService"))
+  {
+    m_awsEc2VpcEndpointService = jsonValue.GetObject("AwsEc2VpcEndpointService");
+
+    m_awsEc2VpcEndpointServiceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsXrayEncryptionConfig"))
+  {
+    m_awsXrayEncryptionConfig = jsonValue.GetObject("AwsXrayEncryptionConfig");
+
+    m_awsXrayEncryptionConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsWafRateBasedRule"))
+  {
+    m_awsWafRateBasedRule = jsonValue.GetObject("AwsWafRateBasedRule");
+
+    m_awsWafRateBasedRuleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsWafRegionalRateBasedRule"))
+  {
+    m_awsWafRegionalRateBasedRule = jsonValue.GetObject("AwsWafRegionalRateBasedRule");
+
+    m_awsWafRegionalRateBasedRuleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEcrRepository"))
+  {
+    m_awsEcrRepository = jsonValue.GetObject("AwsEcrRepository");
+
+    m_awsEcrRepositoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEksCluster"))
+  {
+    m_awsEksCluster = jsonValue.GetObject("AwsEksCluster");
+
+    m_awsEksClusterHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -821,6 +884,48 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsEcrContainerImageHasBeenSet)
   {
    payload.WithObject("AwsEcrContainerImage", m_awsEcrContainerImage.Jsonize());
+
+  }
+
+  if(m_awsOpenSearchServiceDomainHasBeenSet)
+  {
+   payload.WithObject("AwsOpenSearchServiceDomain", m_awsOpenSearchServiceDomain.Jsonize());
+
+  }
+
+  if(m_awsEc2VpcEndpointServiceHasBeenSet)
+  {
+   payload.WithObject("AwsEc2VpcEndpointService", m_awsEc2VpcEndpointService.Jsonize());
+
+  }
+
+  if(m_awsXrayEncryptionConfigHasBeenSet)
+  {
+   payload.WithObject("AwsXrayEncryptionConfig", m_awsXrayEncryptionConfig.Jsonize());
+
+  }
+
+  if(m_awsWafRateBasedRuleHasBeenSet)
+  {
+   payload.WithObject("AwsWafRateBasedRule", m_awsWafRateBasedRule.Jsonize());
+
+  }
+
+  if(m_awsWafRegionalRateBasedRuleHasBeenSet)
+  {
+   payload.WithObject("AwsWafRegionalRateBasedRule", m_awsWafRegionalRateBasedRule.Jsonize());
+
+  }
+
+  if(m_awsEcrRepositoryHasBeenSet)
+  {
+   payload.WithObject("AwsEcrRepository", m_awsEcrRepository.Jsonize());
+
+  }
+
+  if(m_awsEksClusterHasBeenSet)
+  {
+   payload.WithObject("AwsEksCluster", m_awsEksCluster.Jsonize());
 
   }
 

@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityhub/model/AwsCodeBuildProjectEnvironmentRegistryCredential.h>
+#include <aws/securityhub/model/AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails.h>
 #include <utility>
 
 namespace Aws
@@ -78,6 +80,80 @@ namespace Model
      * <p>The certificate to use with this build project.</p>
      */
     inline AwsCodeBuildProjectEnvironment& WithCertificate(const char* value) { SetCertificate(value); return *this;}
+
+
+    /**
+     * <p>A set of environment variables to make available to builds for the build
+     * project.</p>
+     */
+    inline const Aws::Vector<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>& GetEnvironmentVariables() const{ return m_environmentVariables; }
+
+    /**
+     * <p>A set of environment variables to make available to builds for the build
+     * project.</p>
+     */
+    inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
+
+    /**
+     * <p>A set of environment variables to make available to builds for the build
+     * project.</p>
+     */
+    inline void SetEnvironmentVariables(const Aws::Vector<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = value; }
+
+    /**
+     * <p>A set of environment variables to make available to builds for the build
+     * project.</p>
+     */
+    inline void SetEnvironmentVariables(Aws::Vector<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = std::move(value); }
+
+    /**
+     * <p>A set of environment variables to make available to builds for the build
+     * project.</p>
+     */
+    inline AwsCodeBuildProjectEnvironment& WithEnvironmentVariables(const Aws::Vector<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>& value) { SetEnvironmentVariables(value); return *this;}
+
+    /**
+     * <p>A set of environment variables to make available to builds for the build
+     * project.</p>
+     */
+    inline AwsCodeBuildProjectEnvironment& WithEnvironmentVariables(Aws::Vector<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>&& value) { SetEnvironmentVariables(std::move(value)); return *this;}
+
+    /**
+     * <p>A set of environment variables to make available to builds for the build
+     * project.</p>
+     */
+    inline AwsCodeBuildProjectEnvironment& AddEnvironmentVariables(const AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.push_back(value); return *this; }
+
+    /**
+     * <p>A set of environment variables to make available to builds for the build
+     * project.</p>
+     */
+    inline AwsCodeBuildProjectEnvironment& AddEnvironmentVariables(AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Whether to allow the Docker daemon to run inside a Docker container. Set to
+     * <code>true</code> if the build project is used to build Docker images.</p>
+     */
+    inline bool GetPrivilegedMode() const{ return m_privilegedMode; }
+
+    /**
+     * <p>Whether to allow the Docker daemon to run inside a Docker container. Set to
+     * <code>true</code> if the build project is used to build Docker images.</p>
+     */
+    inline bool PrivilegedModeHasBeenSet() const { return m_privilegedModeHasBeenSet; }
+
+    /**
+     * <p>Whether to allow the Docker daemon to run inside a Docker container. Set to
+     * <code>true</code> if the build project is used to build Docker images.</p>
+     */
+    inline void SetPrivilegedMode(bool value) { m_privilegedModeHasBeenSet = true; m_privilegedMode = value; }
+
+    /**
+     * <p>Whether to allow the Docker daemon to run inside a Docker container. Set to
+     * <code>true</code> if the build project is used to build Docker images.</p>
+     */
+    inline AwsCodeBuildProjectEnvironment& WithPrivilegedMode(bool value) { SetPrivilegedMode(value); return *this;}
 
 
     /**
@@ -380,6 +456,12 @@ namespace Model
 
     Aws::String m_certificate;
     bool m_certificateHasBeenSet;
+
+    Aws::Vector<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails> m_environmentVariables;
+    bool m_environmentVariablesHasBeenSet;
+
+    bool m_privilegedMode;
+    bool m_privilegedModeHasBeenSet;
 
     Aws::String m_imagePullCredentialsType;
     bool m_imagePullCredentialsTypeHasBeenSet;

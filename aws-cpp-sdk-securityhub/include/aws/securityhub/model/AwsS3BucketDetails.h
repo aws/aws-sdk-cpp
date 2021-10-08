@@ -126,6 +126,55 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Web Services account identifier of the account that owns the S3
+     * bucket.</p>
+     */
+    inline const Aws::String& GetOwnerAccountId() const{ return m_ownerAccountId; }
+
+    /**
+     * <p>The Amazon Web Services account identifier of the account that owns the S3
+     * bucket.</p>
+     */
+    inline bool OwnerAccountIdHasBeenSet() const { return m_ownerAccountIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services account identifier of the account that owns the S3
+     * bucket.</p>
+     */
+    inline void SetOwnerAccountId(const Aws::String& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = value; }
+
+    /**
+     * <p>The Amazon Web Services account identifier of the account that owns the S3
+     * bucket.</p>
+     */
+    inline void SetOwnerAccountId(Aws::String&& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services account identifier of the account that owns the S3
+     * bucket.</p>
+     */
+    inline void SetOwnerAccountId(const char* value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services account identifier of the account that owns the S3
+     * bucket.</p>
+     */
+    inline AwsS3BucketDetails& WithOwnerAccountId(const Aws::String& value) { SetOwnerAccountId(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account identifier of the account that owns the S3
+     * bucket.</p>
+     */
+    inline AwsS3BucketDetails& WithOwnerAccountId(Aws::String&& value) { SetOwnerAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account identifier of the account that owns the S3
+     * bucket.</p>
+     */
+    inline AwsS3BucketDetails& WithOwnerAccountId(const char* value) { SetOwnerAccountId(value); return *this;}
+
+
+    /**
      * <p>Indicates when the S3 bucket was created.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
@@ -437,6 +486,9 @@ namespace Model
 
     Aws::String m_ownerName;
     bool m_ownerNameHasBeenSet;
+
+    Aws::String m_ownerAccountId;
+    bool m_ownerAccountIdHasBeenSet;
 
     Aws::String m_createdAt;
     bool m_createdAtHasBeenSet;

@@ -57,6 +57,13 @@
 #include <aws/securityhub/model/AwsAutoScalingLaunchConfigurationDetails.h>
 #include <aws/securityhub/model/AwsEc2VpnConnectionDetails.h>
 #include <aws/securityhub/model/AwsEcrContainerImageDetails.h>
+#include <aws/securityhub/model/AwsOpenSearchServiceDomainDetails.h>
+#include <aws/securityhub/model/AwsEc2VpcEndpointServiceDetails.h>
+#include <aws/securityhub/model/AwsXrayEncryptionConfigDetails.h>
+#include <aws/securityhub/model/AwsWafRateBasedRuleDetails.h>
+#include <aws/securityhub/model/AwsWafRegionalRateBasedRuleDetails.h>
+#include <aws/securityhub/model/AwsEcrRepositoryDetails.h>
+#include <aws/securityhub/model/AwsEksClusterDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -1823,34 +1830,251 @@ namespace Model
 
 
     /**
-     * <p>information about an Amazon ECR image.</p>
+     * <p>Information about an Amazon ECR image.</p>
      */
     inline const AwsEcrContainerImageDetails& GetAwsEcrContainerImage() const{ return m_awsEcrContainerImage; }
 
     /**
-     * <p>information about an Amazon ECR image.</p>
+     * <p>Information about an Amazon ECR image.</p>
      */
     inline bool AwsEcrContainerImageHasBeenSet() const { return m_awsEcrContainerImageHasBeenSet; }
 
     /**
-     * <p>information about an Amazon ECR image.</p>
+     * <p>Information about an Amazon ECR image.</p>
      */
     inline void SetAwsEcrContainerImage(const AwsEcrContainerImageDetails& value) { m_awsEcrContainerImageHasBeenSet = true; m_awsEcrContainerImage = value; }
 
     /**
-     * <p>information about an Amazon ECR image.</p>
+     * <p>Information about an Amazon ECR image.</p>
      */
     inline void SetAwsEcrContainerImage(AwsEcrContainerImageDetails&& value) { m_awsEcrContainerImageHasBeenSet = true; m_awsEcrContainerImage = std::move(value); }
 
     /**
-     * <p>information about an Amazon ECR image.</p>
+     * <p>Information about an Amazon ECR image.</p>
      */
     inline ResourceDetails& WithAwsEcrContainerImage(const AwsEcrContainerImageDetails& value) { SetAwsEcrContainerImage(value); return *this;}
 
     /**
-     * <p>information about an Amazon ECR image.</p>
+     * <p>Information about an Amazon ECR image.</p>
      */
     inline ResourceDetails& WithAwsEcrContainerImage(AwsEcrContainerImageDetails&& value) { SetAwsEcrContainerImage(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an Amazon OpenSearch Service domain.</p>
+     */
+    inline const AwsOpenSearchServiceDomainDetails& GetAwsOpenSearchServiceDomain() const{ return m_awsOpenSearchServiceDomain; }
+
+    /**
+     * <p>Details about an Amazon OpenSearch Service domain.</p>
+     */
+    inline bool AwsOpenSearchServiceDomainHasBeenSet() const { return m_awsOpenSearchServiceDomainHasBeenSet; }
+
+    /**
+     * <p>Details about an Amazon OpenSearch Service domain.</p>
+     */
+    inline void SetAwsOpenSearchServiceDomain(const AwsOpenSearchServiceDomainDetails& value) { m_awsOpenSearchServiceDomainHasBeenSet = true; m_awsOpenSearchServiceDomain = value; }
+
+    /**
+     * <p>Details about an Amazon OpenSearch Service domain.</p>
+     */
+    inline void SetAwsOpenSearchServiceDomain(AwsOpenSearchServiceDomainDetails&& value) { m_awsOpenSearchServiceDomainHasBeenSet = true; m_awsOpenSearchServiceDomain = std::move(value); }
+
+    /**
+     * <p>Details about an Amazon OpenSearch Service domain.</p>
+     */
+    inline ResourceDetails& WithAwsOpenSearchServiceDomain(const AwsOpenSearchServiceDomainDetails& value) { SetAwsOpenSearchServiceDomain(value); return *this;}
+
+    /**
+     * <p>Details about an Amazon OpenSearch Service domain.</p>
+     */
+    inline ResourceDetails& WithAwsOpenSearchServiceDomain(AwsOpenSearchServiceDomainDetails&& value) { SetAwsOpenSearchServiceDomain(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about the service configuration for a VPC endpoint service.</p>
+     */
+    inline const AwsEc2VpcEndpointServiceDetails& GetAwsEc2VpcEndpointService() const{ return m_awsEc2VpcEndpointService; }
+
+    /**
+     * <p>Details about the service configuration for a VPC endpoint service.</p>
+     */
+    inline bool AwsEc2VpcEndpointServiceHasBeenSet() const { return m_awsEc2VpcEndpointServiceHasBeenSet; }
+
+    /**
+     * <p>Details about the service configuration for a VPC endpoint service.</p>
+     */
+    inline void SetAwsEc2VpcEndpointService(const AwsEc2VpcEndpointServiceDetails& value) { m_awsEc2VpcEndpointServiceHasBeenSet = true; m_awsEc2VpcEndpointService = value; }
+
+    /**
+     * <p>Details about the service configuration for a VPC endpoint service.</p>
+     */
+    inline void SetAwsEc2VpcEndpointService(AwsEc2VpcEndpointServiceDetails&& value) { m_awsEc2VpcEndpointServiceHasBeenSet = true; m_awsEc2VpcEndpointService = std::move(value); }
+
+    /**
+     * <p>Details about the service configuration for a VPC endpoint service.</p>
+     */
+    inline ResourceDetails& WithAwsEc2VpcEndpointService(const AwsEc2VpcEndpointServiceDetails& value) { SetAwsEc2VpcEndpointService(value); return *this;}
+
+    /**
+     * <p>Details about the service configuration for a VPC endpoint service.</p>
+     */
+    inline ResourceDetails& WithAwsEc2VpcEndpointService(AwsEc2VpcEndpointServiceDetails&& value) { SetAwsEc2VpcEndpointService(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the encryption configuration for X-Ray.</p>
+     */
+    inline const AwsXrayEncryptionConfigDetails& GetAwsXrayEncryptionConfig() const{ return m_awsXrayEncryptionConfig; }
+
+    /**
+     * <p>Information about the encryption configuration for X-Ray.</p>
+     */
+    inline bool AwsXrayEncryptionConfigHasBeenSet() const { return m_awsXrayEncryptionConfigHasBeenSet; }
+
+    /**
+     * <p>Information about the encryption configuration for X-Ray.</p>
+     */
+    inline void SetAwsXrayEncryptionConfig(const AwsXrayEncryptionConfigDetails& value) { m_awsXrayEncryptionConfigHasBeenSet = true; m_awsXrayEncryptionConfig = value; }
+
+    /**
+     * <p>Information about the encryption configuration for X-Ray.</p>
+     */
+    inline void SetAwsXrayEncryptionConfig(AwsXrayEncryptionConfigDetails&& value) { m_awsXrayEncryptionConfigHasBeenSet = true; m_awsXrayEncryptionConfig = std::move(value); }
+
+    /**
+     * <p>Information about the encryption configuration for X-Ray.</p>
+     */
+    inline ResourceDetails& WithAwsXrayEncryptionConfig(const AwsXrayEncryptionConfigDetails& value) { SetAwsXrayEncryptionConfig(value); return *this;}
+
+    /**
+     * <p>Information about the encryption configuration for X-Ray.</p>
+     */
+    inline ResourceDetails& WithAwsXrayEncryptionConfig(AwsXrayEncryptionConfigDetails&& value) { SetAwsXrayEncryptionConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about a rate-based rule for global resources.</p>
+     */
+    inline const AwsWafRateBasedRuleDetails& GetAwsWafRateBasedRule() const{ return m_awsWafRateBasedRule; }
+
+    /**
+     * <p>Details about a rate-based rule for global resources.</p>
+     */
+    inline bool AwsWafRateBasedRuleHasBeenSet() const { return m_awsWafRateBasedRuleHasBeenSet; }
+
+    /**
+     * <p>Details about a rate-based rule for global resources.</p>
+     */
+    inline void SetAwsWafRateBasedRule(const AwsWafRateBasedRuleDetails& value) { m_awsWafRateBasedRuleHasBeenSet = true; m_awsWafRateBasedRule = value; }
+
+    /**
+     * <p>Details about a rate-based rule for global resources.</p>
+     */
+    inline void SetAwsWafRateBasedRule(AwsWafRateBasedRuleDetails&& value) { m_awsWafRateBasedRuleHasBeenSet = true; m_awsWafRateBasedRule = std::move(value); }
+
+    /**
+     * <p>Details about a rate-based rule for global resources.</p>
+     */
+    inline ResourceDetails& WithAwsWafRateBasedRule(const AwsWafRateBasedRuleDetails& value) { SetAwsWafRateBasedRule(value); return *this;}
+
+    /**
+     * <p>Details about a rate-based rule for global resources.</p>
+     */
+    inline ResourceDetails& WithAwsWafRateBasedRule(AwsWafRateBasedRuleDetails&& value) { SetAwsWafRateBasedRule(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about a rate-based rule for Regional resources.</p>
+     */
+    inline const AwsWafRegionalRateBasedRuleDetails& GetAwsWafRegionalRateBasedRule() const{ return m_awsWafRegionalRateBasedRule; }
+
+    /**
+     * <p>Details about a rate-based rule for Regional resources.</p>
+     */
+    inline bool AwsWafRegionalRateBasedRuleHasBeenSet() const { return m_awsWafRegionalRateBasedRuleHasBeenSet; }
+
+    /**
+     * <p>Details about a rate-based rule for Regional resources.</p>
+     */
+    inline void SetAwsWafRegionalRateBasedRule(const AwsWafRegionalRateBasedRuleDetails& value) { m_awsWafRegionalRateBasedRuleHasBeenSet = true; m_awsWafRegionalRateBasedRule = value; }
+
+    /**
+     * <p>Details about a rate-based rule for Regional resources.</p>
+     */
+    inline void SetAwsWafRegionalRateBasedRule(AwsWafRegionalRateBasedRuleDetails&& value) { m_awsWafRegionalRateBasedRuleHasBeenSet = true; m_awsWafRegionalRateBasedRule = std::move(value); }
+
+    /**
+     * <p>Details about a rate-based rule for Regional resources.</p>
+     */
+    inline ResourceDetails& WithAwsWafRegionalRateBasedRule(const AwsWafRegionalRateBasedRuleDetails& value) { SetAwsWafRegionalRateBasedRule(value); return *this;}
+
+    /**
+     * <p>Details about a rate-based rule for Regional resources.</p>
+     */
+    inline ResourceDetails& WithAwsWafRegionalRateBasedRule(AwsWafRegionalRateBasedRuleDetails&& value) { SetAwsWafRegionalRateBasedRule(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about an Amazon Elastic Container Registry repository.</p>
+     */
+    inline const AwsEcrRepositoryDetails& GetAwsEcrRepository() const{ return m_awsEcrRepository; }
+
+    /**
+     * <p>Information about an Amazon Elastic Container Registry repository.</p>
+     */
+    inline bool AwsEcrRepositoryHasBeenSet() const { return m_awsEcrRepositoryHasBeenSet; }
+
+    /**
+     * <p>Information about an Amazon Elastic Container Registry repository.</p>
+     */
+    inline void SetAwsEcrRepository(const AwsEcrRepositoryDetails& value) { m_awsEcrRepositoryHasBeenSet = true; m_awsEcrRepository = value; }
+
+    /**
+     * <p>Information about an Amazon Elastic Container Registry repository.</p>
+     */
+    inline void SetAwsEcrRepository(AwsEcrRepositoryDetails&& value) { m_awsEcrRepositoryHasBeenSet = true; m_awsEcrRepository = std::move(value); }
+
+    /**
+     * <p>Information about an Amazon Elastic Container Registry repository.</p>
+     */
+    inline ResourceDetails& WithAwsEcrRepository(const AwsEcrRepositoryDetails& value) { SetAwsEcrRepository(value); return *this;}
+
+    /**
+     * <p>Information about an Amazon Elastic Container Registry repository.</p>
+     */
+    inline ResourceDetails& WithAwsEcrRepository(AwsEcrRepositoryDetails&& value) { SetAwsEcrRepository(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an Amazon EKS cluster.</p>
+     */
+    inline const AwsEksClusterDetails& GetAwsEksCluster() const{ return m_awsEksCluster; }
+
+    /**
+     * <p>Details about an Amazon EKS cluster.</p>
+     */
+    inline bool AwsEksClusterHasBeenSet() const { return m_awsEksClusterHasBeenSet; }
+
+    /**
+     * <p>Details about an Amazon EKS cluster.</p>
+     */
+    inline void SetAwsEksCluster(const AwsEksClusterDetails& value) { m_awsEksClusterHasBeenSet = true; m_awsEksCluster = value; }
+
+    /**
+     * <p>Details about an Amazon EKS cluster.</p>
+     */
+    inline void SetAwsEksCluster(AwsEksClusterDetails&& value) { m_awsEksClusterHasBeenSet = true; m_awsEksCluster = std::move(value); }
+
+    /**
+     * <p>Details about an Amazon EKS cluster.</p>
+     */
+    inline ResourceDetails& WithAwsEksCluster(const AwsEksClusterDetails& value) { SetAwsEksCluster(value); return *this;}
+
+    /**
+     * <p>Details about an Amazon EKS cluster.</p>
+     */
+    inline ResourceDetails& WithAwsEksCluster(AwsEksClusterDetails&& value) { SetAwsEksCluster(std::move(value)); return *this;}
 
   private:
 
@@ -2009,6 +2233,27 @@ namespace Model
 
     AwsEcrContainerImageDetails m_awsEcrContainerImage;
     bool m_awsEcrContainerImageHasBeenSet;
+
+    AwsOpenSearchServiceDomainDetails m_awsOpenSearchServiceDomain;
+    bool m_awsOpenSearchServiceDomainHasBeenSet;
+
+    AwsEc2VpcEndpointServiceDetails m_awsEc2VpcEndpointService;
+    bool m_awsEc2VpcEndpointServiceHasBeenSet;
+
+    AwsXrayEncryptionConfigDetails m_awsXrayEncryptionConfig;
+    bool m_awsXrayEncryptionConfigHasBeenSet;
+
+    AwsWafRateBasedRuleDetails m_awsWafRateBasedRule;
+    bool m_awsWafRateBasedRuleHasBeenSet;
+
+    AwsWafRegionalRateBasedRuleDetails m_awsWafRegionalRateBasedRule;
+    bool m_awsWafRegionalRateBasedRuleHasBeenSet;
+
+    AwsEcrRepositoryDetails m_awsEcrRepository;
+    bool m_awsEcrRepositoryHasBeenSet;
+
+    AwsEksClusterDetails m_awsEksCluster;
+    bool m_awsEksClusterHasBeenSet;
   };
 
 } // namespace Model

@@ -11,6 +11,7 @@
 #include <aws/securityhub/model/AwsCloudFrontDistributionLogging.h>
 #include <aws/securityhub/model/AwsCloudFrontDistributionOrigins.h>
 #include <aws/securityhub/model/AwsCloudFrontDistributionOriginGroups.h>
+#include <aws/securityhub/model/AwsCloudFrontDistributionViewerCertificate.h>
 #include <utility>
 
 namespace Aws
@@ -430,6 +431,43 @@ namespace Model
 
 
     /**
+     * <p>Provides information about the TLS/SSL configuration that the distribution
+     * uses to communicate with viewers.</p>
+     */
+    inline const AwsCloudFrontDistributionViewerCertificate& GetViewerCertificate() const{ return m_viewerCertificate; }
+
+    /**
+     * <p>Provides information about the TLS/SSL configuration that the distribution
+     * uses to communicate with viewers.</p>
+     */
+    inline bool ViewerCertificateHasBeenSet() const { return m_viewerCertificateHasBeenSet; }
+
+    /**
+     * <p>Provides information about the TLS/SSL configuration that the distribution
+     * uses to communicate with viewers.</p>
+     */
+    inline void SetViewerCertificate(const AwsCloudFrontDistributionViewerCertificate& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = value; }
+
+    /**
+     * <p>Provides information about the TLS/SSL configuration that the distribution
+     * uses to communicate with viewers.</p>
+     */
+    inline void SetViewerCertificate(AwsCloudFrontDistributionViewerCertificate&& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = std::move(value); }
+
+    /**
+     * <p>Provides information about the TLS/SSL configuration that the distribution
+     * uses to communicate with viewers.</p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithViewerCertificate(const AwsCloudFrontDistributionViewerCertificate& value) { SetViewerCertificate(value); return *this;}
+
+    /**
+     * <p>Provides information about the TLS/SSL configuration that the distribution
+     * uses to communicate with viewers.</p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithViewerCertificate(AwsCloudFrontDistributionViewerCertificate&& value) { SetViewerCertificate(std::move(value)); return *this;}
+
+
+    /**
      * <p>Indicates the current status of the distribution.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
@@ -546,6 +584,9 @@ namespace Model
 
     AwsCloudFrontDistributionOriginGroups m_originGroups;
     bool m_originGroupsHasBeenSet;
+
+    AwsCloudFrontDistributionViewerCertificate m_viewerCertificate;
+    bool m_viewerCertificateHasBeenSet;
 
     Aws::String m_status;
     bool m_statusHasBeenSet;

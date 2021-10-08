@@ -25,6 +25,7 @@ namespace Aws
         static const int Delegate_HASH = HashingUtils::HashString("Delegate");
         static const int ElicitIntent_HASH = HashingUtils::HashString("ElicitIntent");
         static const int ElicitSlot_HASH = HashingUtils::HashString("ElicitSlot");
+        static const int None_HASH = HashingUtils::HashString("None");
 
 
         DialogActionType GetDialogActionTypeForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return DialogActionType::ElicitSlot;
           }
+          else if (hashCode == None_HASH)
+          {
+            return DialogActionType::None;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "ElicitIntent";
           case DialogActionType::ElicitSlot:
             return "ElicitSlot";
+          case DialogActionType::None:
+            return "None";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

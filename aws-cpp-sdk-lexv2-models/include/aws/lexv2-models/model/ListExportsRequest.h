@@ -241,7 +241,7 @@ namespace Model
 
 
     /**
-     * <p>If the response from the <code>ListExports</code> operation contans more
+     * <p>If the response from the <code>ListExports</code> operation contains more
      * results that specified in the <code>maxResults</code> parameter, a token is
      * returned in the response. Use that token in the <code>nextToken</code> parameter
      * to return the next page of results.</p>
@@ -249,7 +249,7 @@ namespace Model
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If the response from the <code>ListExports</code> operation contans more
+     * <p>If the response from the <code>ListExports</code> operation contains more
      * results that specified in the <code>maxResults</code> parameter, a token is
      * returned in the response. Use that token in the <code>nextToken</code> parameter
      * to return the next page of results.</p>
@@ -257,7 +257,7 @@ namespace Model
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>If the response from the <code>ListExports</code> operation contans more
+     * <p>If the response from the <code>ListExports</code> operation contains more
      * results that specified in the <code>maxResults</code> parameter, a token is
      * returned in the response. Use that token in the <code>nextToken</code> parameter
      * to return the next page of results.</p>
@@ -265,7 +265,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>If the response from the <code>ListExports</code> operation contans more
+     * <p>If the response from the <code>ListExports</code> operation contains more
      * results that specified in the <code>maxResults</code> parameter, a token is
      * returned in the response. Use that token in the <code>nextToken</code> parameter
      * to return the next page of results.</p>
@@ -273,7 +273,7 @@ namespace Model
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>If the response from the <code>ListExports</code> operation contans more
+     * <p>If the response from the <code>ListExports</code> operation contains more
      * results that specified in the <code>maxResults</code> parameter, a token is
      * returned in the response. Use that token in the <code>nextToken</code> parameter
      * to return the next page of results.</p>
@@ -281,7 +281,7 @@ namespace Model
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>If the response from the <code>ListExports</code> operation contans more
+     * <p>If the response from the <code>ListExports</code> operation contains more
      * results that specified in the <code>maxResults</code> parameter, a token is
      * returned in the response. Use that token in the <code>nextToken</code> parameter
      * to return the next page of results.</p>
@@ -289,7 +289,7 @@ namespace Model
     inline ListExportsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If the response from the <code>ListExports</code> operation contans more
+     * <p>If the response from the <code>ListExports</code> operation contains more
      * results that specified in the <code>maxResults</code> parameter, a token is
      * returned in the response. Use that token in the <code>nextToken</code> parameter
      * to return the next page of results.</p>
@@ -297,7 +297,7 @@ namespace Model
     inline ListExportsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If the response from the <code>ListExports</code> operation contans more
+     * <p>If the response from the <code>ListExports</code> operation contains more
      * results that specified in the <code>maxResults</code> parameter, a token is
      * returned in the response. Use that token in the <code>nextToken</code> parameter
      * to return the next page of results.</p>

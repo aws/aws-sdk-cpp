@@ -46,42 +46,42 @@ namespace Model
     /**
      * <p>A list of default values for a slot. Default values are used when Amazon Lex
      * hasn't determined a value for a slot. You can specify default values from
-     * context variables, sesion attributes, and defined values.</p>
+     * context variables, session attributes, and defined values.</p>
      */
     inline const SlotDefaultValueSpecification& GetDefaultValueSpecification() const{ return m_defaultValueSpecification; }
 
     /**
      * <p>A list of default values for a slot. Default values are used when Amazon Lex
      * hasn't determined a value for a slot. You can specify default values from
-     * context variables, sesion attributes, and defined values.</p>
+     * context variables, session attributes, and defined values.</p>
      */
     inline bool DefaultValueSpecificationHasBeenSet() const { return m_defaultValueSpecificationHasBeenSet; }
 
     /**
      * <p>A list of default values for a slot. Default values are used when Amazon Lex
      * hasn't determined a value for a slot. You can specify default values from
-     * context variables, sesion attributes, and defined values.</p>
+     * context variables, session attributes, and defined values.</p>
      */
     inline void SetDefaultValueSpecification(const SlotDefaultValueSpecification& value) { m_defaultValueSpecificationHasBeenSet = true; m_defaultValueSpecification = value; }
 
     /**
      * <p>A list of default values for a slot. Default values are used when Amazon Lex
      * hasn't determined a value for a slot. You can specify default values from
-     * context variables, sesion attributes, and defined values.</p>
+     * context variables, session attributes, and defined values.</p>
      */
     inline void SetDefaultValueSpecification(SlotDefaultValueSpecification&& value) { m_defaultValueSpecificationHasBeenSet = true; m_defaultValueSpecification = std::move(value); }
 
     /**
      * <p>A list of default values for a slot. Default values are used when Amazon Lex
      * hasn't determined a value for a slot. You can specify default values from
-     * context variables, sesion attributes, and defined values.</p>
+     * context variables, session attributes, and defined values.</p>
      */
     inline SlotValueElicitationSetting& WithDefaultValueSpecification(const SlotDefaultValueSpecification& value) { SetDefaultValueSpecification(value); return *this;}
 
     /**
      * <p>A list of default values for a slot. Default values are used when Amazon Lex
      * hasn't determined a value for a slot. You can specify default values from
-     * context variables, sesion attributes, and defined values.</p>
+     * context variables, session attributes, and defined values.</p>
      */
     inline SlotValueElicitationSetting& WithDefaultValueSpecification(SlotDefaultValueSpecification&& value) { SetDefaultValueSpecification(std::move(value)); return *this;}
 

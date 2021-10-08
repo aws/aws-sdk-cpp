@@ -40,176 +40,64 @@ namespace Model
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p>  <p>If you specify an ARN, we generally
-     * recommend that you specify a complete ARN. You can specify a partial ARN too—for
-     * example, if you don’t include the final hyphen and six random characters that
-     * Secrets Manager adds at the end of the ARN when you created the secret. A
-     * partial ARN match can work as long as it uniquely matches only one secret.
-     * However, if your secret has a name that ends in a hyphen followed by six
-     * characters (before Secrets Manager adds the hyphen and six characters to the
-     * ARN) and you try to use that as a partial ARN, then those characters cause
-     * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
-     * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names ending with a hyphen followed by six characters.</p>
-     * <p>If you specify an incomplete ARN without the random suffix, and instead
-     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
-     * you do include the random suffix added by Secrets Manager, you receive either a
-     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
-     * depending on your permissions.</p> 
+     * secret must already exist.</p> <p>For an ARN, we recommend that you specify a
+     * complete ARN rather than a partial ARN.</p>
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
 
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p>  <p>If you specify an ARN, we generally
-     * recommend that you specify a complete ARN. You can specify a partial ARN too—for
-     * example, if you don’t include the final hyphen and six random characters that
-     * Secrets Manager adds at the end of the ARN when you created the secret. A
-     * partial ARN match can work as long as it uniquely matches only one secret.
-     * However, if your secret has a name that ends in a hyphen followed by six
-     * characters (before Secrets Manager adds the hyphen and six characters to the
-     * ARN) and you try to use that as a partial ARN, then those characters cause
-     * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
-     * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names ending with a hyphen followed by six characters.</p>
-     * <p>If you specify an incomplete ARN without the random suffix, and instead
-     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
-     * you do include the random suffix added by Secrets Manager, you receive either a
-     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
-     * depending on your permissions.</p> 
+     * secret must already exist.</p> <p>For an ARN, we recommend that you specify a
+     * complete ARN rather than a partial ARN.</p>
      */
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
 
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p>  <p>If you specify an ARN, we generally
-     * recommend that you specify a complete ARN. You can specify a partial ARN too—for
-     * example, if you don’t include the final hyphen and six random characters that
-     * Secrets Manager adds at the end of the ARN when you created the secret. A
-     * partial ARN match can work as long as it uniquely matches only one secret.
-     * However, if your secret has a name that ends in a hyphen followed by six
-     * characters (before Secrets Manager adds the hyphen and six characters to the
-     * ARN) and you try to use that as a partial ARN, then those characters cause
-     * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
-     * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names ending with a hyphen followed by six characters.</p>
-     * <p>If you specify an incomplete ARN without the random suffix, and instead
-     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
-     * you do include the random suffix added by Secrets Manager, you receive either a
-     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
-     * depending on your permissions.</p> 
+     * secret must already exist.</p> <p>For an ARN, we recommend that you specify a
+     * complete ARN rather than a partial ARN.</p>
      */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
 
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p>  <p>If you specify an ARN, we generally
-     * recommend that you specify a complete ARN. You can specify a partial ARN too—for
-     * example, if you don’t include the final hyphen and six random characters that
-     * Secrets Manager adds at the end of the ARN when you created the secret. A
-     * partial ARN match can work as long as it uniquely matches only one secret.
-     * However, if your secret has a name that ends in a hyphen followed by six
-     * characters (before Secrets Manager adds the hyphen and six characters to the
-     * ARN) and you try to use that as a partial ARN, then those characters cause
-     * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
-     * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names ending with a hyphen followed by six characters.</p>
-     * <p>If you specify an incomplete ARN without the random suffix, and instead
-     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
-     * you do include the random suffix added by Secrets Manager, you receive either a
-     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
-     * depending on your permissions.</p> 
+     * secret must already exist.</p> <p>For an ARN, we recommend that you specify a
+     * complete ARN rather than a partial ARN.</p>
      */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
 
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p>  <p>If you specify an ARN, we generally
-     * recommend that you specify a complete ARN. You can specify a partial ARN too—for
-     * example, if you don’t include the final hyphen and six random characters that
-     * Secrets Manager adds at the end of the ARN when you created the secret. A
-     * partial ARN match can work as long as it uniquely matches only one secret.
-     * However, if your secret has a name that ends in a hyphen followed by six
-     * characters (before Secrets Manager adds the hyphen and six characters to the
-     * ARN) and you try to use that as a partial ARN, then those characters cause
-     * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
-     * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names ending with a hyphen followed by six characters.</p>
-     * <p>If you specify an incomplete ARN without the random suffix, and instead
-     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
-     * you do include the random suffix added by Secrets Manager, you receive either a
-     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
-     * depending on your permissions.</p> 
+     * secret must already exist.</p> <p>For an ARN, we recommend that you specify a
+     * complete ARN rather than a partial ARN.</p>
      */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
 
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p>  <p>If you specify an ARN, we generally
-     * recommend that you specify a complete ARN. You can specify a partial ARN too—for
-     * example, if you don’t include the final hyphen and six random characters that
-     * Secrets Manager adds at the end of the ARN when you created the secret. A
-     * partial ARN match can work as long as it uniquely matches only one secret.
-     * However, if your secret has a name that ends in a hyphen followed by six
-     * characters (before Secrets Manager adds the hyphen and six characters to the
-     * ARN) and you try to use that as a partial ARN, then those characters cause
-     * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
-     * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names ending with a hyphen followed by six characters.</p>
-     * <p>If you specify an incomplete ARN without the random suffix, and instead
-     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
-     * you do include the random suffix added by Secrets Manager, you receive either a
-     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
-     * depending on your permissions.</p> 
+     * secret must already exist.</p> <p>For an ARN, we recommend that you specify a
+     * complete ARN rather than a partial ARN.</p>
      */
     inline PutSecretValueRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
 
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p>  <p>If you specify an ARN, we generally
-     * recommend that you specify a complete ARN. You can specify a partial ARN too—for
-     * example, if you don’t include the final hyphen and six random characters that
-     * Secrets Manager adds at the end of the ARN when you created the secret. A
-     * partial ARN match can work as long as it uniquely matches only one secret.
-     * However, if your secret has a name that ends in a hyphen followed by six
-     * characters (before Secrets Manager adds the hyphen and six characters to the
-     * ARN) and you try to use that as a partial ARN, then those characters cause
-     * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
-     * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names ending with a hyphen followed by six characters.</p>
-     * <p>If you specify an incomplete ARN without the random suffix, and instead
-     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
-     * you do include the random suffix added by Secrets Manager, you receive either a
-     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
-     * depending on your permissions.</p> 
+     * secret must already exist.</p> <p>For an ARN, we recommend that you specify a
+     * complete ARN rather than a partial ARN.</p>
      */
     inline PutSecretValueRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the secret to which you want to add a new version. You can specify
      * either the Amazon Resource Name (ARN) or the friendly name of the secret. The
-     * secret must already exist.</p>  <p>If you specify an ARN, we generally
-     * recommend that you specify a complete ARN. You can specify a partial ARN too—for
-     * example, if you don’t include the final hyphen and six random characters that
-     * Secrets Manager adds at the end of the ARN when you created the secret. A
-     * partial ARN match can work as long as it uniquely matches only one secret.
-     * However, if your secret has a name that ends in a hyphen followed by six
-     * characters (before Secrets Manager adds the hyphen and six characters to the
-     * ARN) and you try to use that as a partial ARN, then those characters cause
-     * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
-     * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names ending with a hyphen followed by six characters.</p>
-     * <p>If you specify an incomplete ARN without the random suffix, and instead
-     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
-     * you do include the random suffix added by Secrets Manager, you receive either a
-     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
-     * depending on your permissions.</p> 
+     * secret must already exist.</p> <p>For an ARN, we recommend that you specify a
+     * complete ARN rather than a partial ARN.</p>
      */
     inline PutSecretValueRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
 
@@ -516,14 +404,10 @@ namespace Model
      * information as a JSON structure of key/value pairs that the default Lambda
      * rotation function knows how to parse.</p> <p>For storing multiple values, we
      * recommend that you use a JSON text string argument and specify key/value pairs.
-     * For information on how to format a JSON parameter for the various command line
-     * tool environments, see <a
-     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p> <p> For example:</p>
-     * <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If
-     * your command-line tool or SDK requires quotation marks around the parameter, you
-     * should use single quotes to avoid confusion with the double quotes required in
-     * the JSON text.</p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying
+     * parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services
+     * CLI User Guide.</p>
      */
     inline const Aws::String& GetSecretString() const{ return m_secretString; }
 
@@ -537,14 +421,10 @@ namespace Model
      * information as a JSON structure of key/value pairs that the default Lambda
      * rotation function knows how to parse.</p> <p>For storing multiple values, we
      * recommend that you use a JSON text string argument and specify key/value pairs.
-     * For information on how to format a JSON parameter for the various command line
-     * tool environments, see <a
-     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p> <p> For example:</p>
-     * <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If
-     * your command-line tool or SDK requires quotation marks around the parameter, you
-     * should use single quotes to avoid confusion with the double quotes required in
-     * the JSON text.</p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying
+     * parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services
+     * CLI User Guide.</p>
      */
     inline bool SecretStringHasBeenSet() const { return m_secretStringHasBeenSet; }
 
@@ -558,14 +438,10 @@ namespace Model
      * information as a JSON structure of key/value pairs that the default Lambda
      * rotation function knows how to parse.</p> <p>For storing multiple values, we
      * recommend that you use a JSON text string argument and specify key/value pairs.
-     * For information on how to format a JSON parameter for the various command line
-     * tool environments, see <a
-     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p> <p> For example:</p>
-     * <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If
-     * your command-line tool or SDK requires quotation marks around the parameter, you
-     * should use single quotes to avoid confusion with the double quotes required in
-     * the JSON text.</p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying
+     * parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services
+     * CLI User Guide.</p>
      */
     inline void SetSecretString(const Aws::String& value) { m_secretStringHasBeenSet = true; m_secretString = value; }
 
@@ -579,14 +455,10 @@ namespace Model
      * information as a JSON structure of key/value pairs that the default Lambda
      * rotation function knows how to parse.</p> <p>For storing multiple values, we
      * recommend that you use a JSON text string argument and specify key/value pairs.
-     * For information on how to format a JSON parameter for the various command line
-     * tool environments, see <a
-     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p> <p> For example:</p>
-     * <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If
-     * your command-line tool or SDK requires quotation marks around the parameter, you
-     * should use single quotes to avoid confusion with the double quotes required in
-     * the JSON text.</p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying
+     * parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services
+     * CLI User Guide.</p>
      */
     inline void SetSecretString(Aws::String&& value) { m_secretStringHasBeenSet = true; m_secretString = std::move(value); }
 
@@ -600,14 +472,10 @@ namespace Model
      * information as a JSON structure of key/value pairs that the default Lambda
      * rotation function knows how to parse.</p> <p>For storing multiple values, we
      * recommend that you use a JSON text string argument and specify key/value pairs.
-     * For information on how to format a JSON parameter for the various command line
-     * tool environments, see <a
-     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p> <p> For example:</p>
-     * <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If
-     * your command-line tool or SDK requires quotation marks around the parameter, you
-     * should use single quotes to avoid confusion with the double quotes required in
-     * the JSON text.</p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying
+     * parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services
+     * CLI User Guide.</p>
      */
     inline void SetSecretString(const char* value) { m_secretStringHasBeenSet = true; m_secretString.assign(value); }
 
@@ -621,14 +489,10 @@ namespace Model
      * information as a JSON structure of key/value pairs that the default Lambda
      * rotation function knows how to parse.</p> <p>For storing multiple values, we
      * recommend that you use a JSON text string argument and specify key/value pairs.
-     * For information on how to format a JSON parameter for the various command line
-     * tool environments, see <a
-     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p> <p> For example:</p>
-     * <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If
-     * your command-line tool or SDK requires quotation marks around the parameter, you
-     * should use single quotes to avoid confusion with the double quotes required in
-     * the JSON text.</p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying
+     * parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services
+     * CLI User Guide.</p>
      */
     inline PutSecretValueRequest& WithSecretString(const Aws::String& value) { SetSecretString(value); return *this;}
 
@@ -642,14 +506,10 @@ namespace Model
      * information as a JSON structure of key/value pairs that the default Lambda
      * rotation function knows how to parse.</p> <p>For storing multiple values, we
      * recommend that you use a JSON text string argument and specify key/value pairs.
-     * For information on how to format a JSON parameter for the various command line
-     * tool environments, see <a
-     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p> <p> For example:</p>
-     * <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If
-     * your command-line tool or SDK requires quotation marks around the parameter, you
-     * should use single quotes to avoid confusion with the double quotes required in
-     * the JSON text.</p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying
+     * parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services
+     * CLI User Guide.</p>
      */
     inline PutSecretValueRequest& WithSecretString(Aws::String&& value) { SetSecretString(std::move(value)); return *this;}
 
@@ -663,14 +523,10 @@ namespace Model
      * information as a JSON structure of key/value pairs that the default Lambda
      * rotation function knows how to parse.</p> <p>For storing multiple values, we
      * recommend that you use a JSON text string argument and specify key/value pairs.
-     * For information on how to format a JSON parameter for the various command line
-     * tool environments, see <a
-     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p> <p> For example:</p>
-     * <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If
-     * your command-line tool or SDK requires quotation marks around the parameter, you
-     * should use single quotes to avoid confusion with the double quotes required in
-     * the JSON text.</p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying
+     * parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services
+     * CLI User Guide.</p>
      */
     inline PutSecretValueRequest& WithSecretString(const char* value) { SetSecretString(value); return *this;}
 

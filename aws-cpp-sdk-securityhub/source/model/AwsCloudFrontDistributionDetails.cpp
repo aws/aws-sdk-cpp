@@ -28,6 +28,7 @@ AwsCloudFrontDistributionDetails::AwsCloudFrontDistributionDetails() :
     m_loggingHasBeenSet(false),
     m_originsHasBeenSet(false),
     m_originGroupsHasBeenSet(false),
+    m_viewerCertificateHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_webAclIdHasBeenSet(false)
 {
@@ -43,6 +44,7 @@ AwsCloudFrontDistributionDetails::AwsCloudFrontDistributionDetails(JsonView json
     m_loggingHasBeenSet(false),
     m_originsHasBeenSet(false),
     m_originGroupsHasBeenSet(false),
+    m_viewerCertificateHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_webAclIdHasBeenSet(false)
 {
@@ -112,6 +114,13 @@ AwsCloudFrontDistributionDetails& AwsCloudFrontDistributionDetails::operator =(J
     m_originGroups = jsonValue.GetObject("OriginGroups");
 
     m_originGroupsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ViewerCertificate"))
+  {
+    m_viewerCertificate = jsonValue.GetObject("ViewerCertificate");
+
+    m_viewerCertificateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Status"))
@@ -186,6 +195,12 @@ JsonValue AwsCloudFrontDistributionDetails::Jsonize() const
   if(m_originGroupsHasBeenSet)
   {
    payload.WithObject("OriginGroups", m_originGroups.Jsonize());
+
+  }
+
+  if(m_viewerCertificateHasBeenSet)
+  {
+   payload.WithObject("ViewerCertificate", m_viewerCertificate.Jsonize());
 
   }
 

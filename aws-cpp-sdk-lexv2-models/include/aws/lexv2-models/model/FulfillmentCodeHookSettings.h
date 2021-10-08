@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
+#include <aws/lexv2-models/model/PostFulfillmentStatusSpecification.h>
+#include <aws/lexv2-models/model/FulfillmentUpdatesSpecification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,10 +63,102 @@ namespace Model
      */
     inline FulfillmentCodeHookSettings& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
+
+    /**
+     * <p>Provides settings for messages sent to the user for after the Lambda
+     * fulfillment function completes. Post-fulfillment messages can be sent for both
+     * streaming and non-streaming conversations.</p>
+     */
+    inline const PostFulfillmentStatusSpecification& GetPostFulfillmentStatusSpecification() const{ return m_postFulfillmentStatusSpecification; }
+
+    /**
+     * <p>Provides settings for messages sent to the user for after the Lambda
+     * fulfillment function completes. Post-fulfillment messages can be sent for both
+     * streaming and non-streaming conversations.</p>
+     */
+    inline bool PostFulfillmentStatusSpecificationHasBeenSet() const { return m_postFulfillmentStatusSpecificationHasBeenSet; }
+
+    /**
+     * <p>Provides settings for messages sent to the user for after the Lambda
+     * fulfillment function completes. Post-fulfillment messages can be sent for both
+     * streaming and non-streaming conversations.</p>
+     */
+    inline void SetPostFulfillmentStatusSpecification(const PostFulfillmentStatusSpecification& value) { m_postFulfillmentStatusSpecificationHasBeenSet = true; m_postFulfillmentStatusSpecification = value; }
+
+    /**
+     * <p>Provides settings for messages sent to the user for after the Lambda
+     * fulfillment function completes. Post-fulfillment messages can be sent for both
+     * streaming and non-streaming conversations.</p>
+     */
+    inline void SetPostFulfillmentStatusSpecification(PostFulfillmentStatusSpecification&& value) { m_postFulfillmentStatusSpecificationHasBeenSet = true; m_postFulfillmentStatusSpecification = std::move(value); }
+
+    /**
+     * <p>Provides settings for messages sent to the user for after the Lambda
+     * fulfillment function completes. Post-fulfillment messages can be sent for both
+     * streaming and non-streaming conversations.</p>
+     */
+    inline FulfillmentCodeHookSettings& WithPostFulfillmentStatusSpecification(const PostFulfillmentStatusSpecification& value) { SetPostFulfillmentStatusSpecification(value); return *this;}
+
+    /**
+     * <p>Provides settings for messages sent to the user for after the Lambda
+     * fulfillment function completes. Post-fulfillment messages can be sent for both
+     * streaming and non-streaming conversations.</p>
+     */
+    inline FulfillmentCodeHookSettings& WithPostFulfillmentStatusSpecification(PostFulfillmentStatusSpecification&& value) { SetPostFulfillmentStatusSpecification(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides settings for update messages sent to the user for long-running
+     * Lambda fulfillment functions. Fulfillment updates can be used only with
+     * streaming conversations.</p>
+     */
+    inline const FulfillmentUpdatesSpecification& GetFulfillmentUpdatesSpecification() const{ return m_fulfillmentUpdatesSpecification; }
+
+    /**
+     * <p>Provides settings for update messages sent to the user for long-running
+     * Lambda fulfillment functions. Fulfillment updates can be used only with
+     * streaming conversations.</p>
+     */
+    inline bool FulfillmentUpdatesSpecificationHasBeenSet() const { return m_fulfillmentUpdatesSpecificationHasBeenSet; }
+
+    /**
+     * <p>Provides settings for update messages sent to the user for long-running
+     * Lambda fulfillment functions. Fulfillment updates can be used only with
+     * streaming conversations.</p>
+     */
+    inline void SetFulfillmentUpdatesSpecification(const FulfillmentUpdatesSpecification& value) { m_fulfillmentUpdatesSpecificationHasBeenSet = true; m_fulfillmentUpdatesSpecification = value; }
+
+    /**
+     * <p>Provides settings for update messages sent to the user for long-running
+     * Lambda fulfillment functions. Fulfillment updates can be used only with
+     * streaming conversations.</p>
+     */
+    inline void SetFulfillmentUpdatesSpecification(FulfillmentUpdatesSpecification&& value) { m_fulfillmentUpdatesSpecificationHasBeenSet = true; m_fulfillmentUpdatesSpecification = std::move(value); }
+
+    /**
+     * <p>Provides settings for update messages sent to the user for long-running
+     * Lambda fulfillment functions. Fulfillment updates can be used only with
+     * streaming conversations.</p>
+     */
+    inline FulfillmentCodeHookSettings& WithFulfillmentUpdatesSpecification(const FulfillmentUpdatesSpecification& value) { SetFulfillmentUpdatesSpecification(value); return *this;}
+
+    /**
+     * <p>Provides settings for update messages sent to the user for long-running
+     * Lambda fulfillment functions. Fulfillment updates can be used only with
+     * streaming conversations.</p>
+     */
+    inline FulfillmentCodeHookSettings& WithFulfillmentUpdatesSpecification(FulfillmentUpdatesSpecification&& value) { SetFulfillmentUpdatesSpecification(std::move(value)); return *this;}
+
   private:
 
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
+    PostFulfillmentStatusSpecification m_postFulfillmentStatusSpecification;
+    bool m_postFulfillmentStatusSpecificationHasBeenSet;
+
+    FulfillmentUpdatesSpecification m_fulfillmentUpdatesSpecification;
+    bool m_fulfillmentUpdatesSpecificationHasBeenSet;
   };
 
 } // namespace Model

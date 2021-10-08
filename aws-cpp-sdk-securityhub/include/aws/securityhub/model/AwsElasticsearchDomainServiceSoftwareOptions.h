@@ -40,56 +40,56 @@ namespace Model
 
     /**
      * <p>The epoch time when the deployment window closes for required updates. After
-     * this time, Amazon Elasticsearch Service schedules the software upgrade
+     * this time, Amazon OpenSearch Service schedules the software upgrade
      * automatically.</p>
      */
     inline const Aws::String& GetAutomatedUpdateDate() const{ return m_automatedUpdateDate; }
 
     /**
      * <p>The epoch time when the deployment window closes for required updates. After
-     * this time, Amazon Elasticsearch Service schedules the software upgrade
+     * this time, Amazon OpenSearch Service schedules the software upgrade
      * automatically.</p>
      */
     inline bool AutomatedUpdateDateHasBeenSet() const { return m_automatedUpdateDateHasBeenSet; }
 
     /**
      * <p>The epoch time when the deployment window closes for required updates. After
-     * this time, Amazon Elasticsearch Service schedules the software upgrade
+     * this time, Amazon OpenSearch Service schedules the software upgrade
      * automatically.</p>
      */
     inline void SetAutomatedUpdateDate(const Aws::String& value) { m_automatedUpdateDateHasBeenSet = true; m_automatedUpdateDate = value; }
 
     /**
      * <p>The epoch time when the deployment window closes for required updates. After
-     * this time, Amazon Elasticsearch Service schedules the software upgrade
+     * this time, Amazon OpenSearch Service schedules the software upgrade
      * automatically.</p>
      */
     inline void SetAutomatedUpdateDate(Aws::String&& value) { m_automatedUpdateDateHasBeenSet = true; m_automatedUpdateDate = std::move(value); }
 
     /**
      * <p>The epoch time when the deployment window closes for required updates. After
-     * this time, Amazon Elasticsearch Service schedules the software upgrade
+     * this time, Amazon OpenSearch Service schedules the software upgrade
      * automatically.</p>
      */
     inline void SetAutomatedUpdateDate(const char* value) { m_automatedUpdateDateHasBeenSet = true; m_automatedUpdateDate.assign(value); }
 
     /**
      * <p>The epoch time when the deployment window closes for required updates. After
-     * this time, Amazon Elasticsearch Service schedules the software upgrade
+     * this time, Amazon OpenSearch Service schedules the software upgrade
      * automatically.</p>
      */
     inline AwsElasticsearchDomainServiceSoftwareOptions& WithAutomatedUpdateDate(const Aws::String& value) { SetAutomatedUpdateDate(value); return *this;}
 
     /**
      * <p>The epoch time when the deployment window closes for required updates. After
-     * this time, Amazon Elasticsearch Service schedules the software upgrade
+     * this time, Amazon OpenSearch Service schedules the software upgrade
      * automatically.</p>
      */
     inline AwsElasticsearchDomainServiceSoftwareOptions& WithAutomatedUpdateDate(Aws::String&& value) { SetAutomatedUpdateDate(std::move(value)); return *this;}
 
     /**
      * <p>The epoch time when the deployment window closes for required updates. After
-     * this time, Amazon Elasticsearch Service schedules the software upgrade
+     * this time, Amazon OpenSearch Service schedules the software upgrade
      * automatically.</p>
      */
     inline AwsElasticsearchDomainServiceSoftwareOptions& WithAutomatedUpdateDate(const char* value) { SetAutomatedUpdateDate(value); return *this;}

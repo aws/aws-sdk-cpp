@@ -293,27 +293,32 @@ namespace Model
 
 
     /**
-     * <p>A structure with the rotation configuration for this secret.</p>
+     * <p>A structure with the rotation configuration for this secret. This field is
+     * only populated if rotation is configured.</p>
      */
     inline const RotationRulesType& GetRotationRules() const{ return m_rotationRules; }
 
     /**
-     * <p>A structure with the rotation configuration for this secret.</p>
+     * <p>A structure with the rotation configuration for this secret. This field is
+     * only populated if rotation is configured.</p>
      */
     inline void SetRotationRules(const RotationRulesType& value) { m_rotationRules = value; }
 
     /**
-     * <p>A structure with the rotation configuration for this secret.</p>
+     * <p>A structure with the rotation configuration for this secret. This field is
+     * only populated if rotation is configured.</p>
      */
     inline void SetRotationRules(RotationRulesType&& value) { m_rotationRules = std::move(value); }
 
     /**
-     * <p>A structure with the rotation configuration for this secret.</p>
+     * <p>A structure with the rotation configuration for this secret. This field is
+     * only populated if rotation is configured.</p>
      */
     inline DescribeSecretResult& WithRotationRules(const RotationRulesType& value) { SetRotationRules(value); return *this;}
 
     /**
-     * <p>A structure with the rotation configuration for this secret.</p>
+     * <p>A structure with the rotation configuration for this secret. This field is
+     * only populated if rotation is configured.</p>
      */
     inline DescribeSecretResult& WithRotationRules(RotationRulesType&& value) { SetRotationRules(std::move(value)); return *this;}
 

@@ -252,49 +252,49 @@ namespace Model
 
     /**
      * <p>If the <code>importStatus</code> field is <code>Failed</code>, this provides
-     * one or more reasons for the failture.</p>
+     * one or more reasons for the failure.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFailureReasons() const{ return m_failureReasons; }
 
     /**
      * <p>If the <code>importStatus</code> field is <code>Failed</code>, this provides
-     * one or more reasons for the failture.</p>
+     * one or more reasons for the failure.</p>
      */
     inline void SetFailureReasons(const Aws::Vector<Aws::String>& value) { m_failureReasons = value; }
 
     /**
      * <p>If the <code>importStatus</code> field is <code>Failed</code>, this provides
-     * one or more reasons for the failture.</p>
+     * one or more reasons for the failure.</p>
      */
     inline void SetFailureReasons(Aws::Vector<Aws::String>&& value) { m_failureReasons = std::move(value); }
 
     /**
      * <p>If the <code>importStatus</code> field is <code>Failed</code>, this provides
-     * one or more reasons for the failture.</p>
+     * one or more reasons for the failure.</p>
      */
     inline DescribeImportResult& WithFailureReasons(const Aws::Vector<Aws::String>& value) { SetFailureReasons(value); return *this;}
 
     /**
      * <p>If the <code>importStatus</code> field is <code>Failed</code>, this provides
-     * one or more reasons for the failture.</p>
+     * one or more reasons for the failure.</p>
      */
     inline DescribeImportResult& WithFailureReasons(Aws::Vector<Aws::String>&& value) { SetFailureReasons(std::move(value)); return *this;}
 
     /**
      * <p>If the <code>importStatus</code> field is <code>Failed</code>, this provides
-     * one or more reasons for the failture.</p>
+     * one or more reasons for the failure.</p>
      */
     inline DescribeImportResult& AddFailureReasons(const Aws::String& value) { m_failureReasons.push_back(value); return *this; }
 
     /**
      * <p>If the <code>importStatus</code> field is <code>Failed</code>, this provides
-     * one or more reasons for the failture.</p>
+     * one or more reasons for the failure.</p>
      */
     inline DescribeImportResult& AddFailureReasons(Aws::String&& value) { m_failureReasons.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If the <code>importStatus</code> field is <code>Failed</code>, this provides
-     * one or more reasons for the failture.</p>
+     * one or more reasons for the failure.</p>
      */
     inline DescribeImportResult& AddFailureReasons(const char* value) { m_failureReasons.push_back(value); return *this; }
 

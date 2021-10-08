@@ -1116,46 +1116,49 @@ namespace Model
          * operation creates a new version and attaches it to the secret. The version can
          * contain a new <code>SecretString</code> value or a new <code>SecretBinary</code>
          * value. You can also specify the staging labels that are initially attached to
-         * the new version.</p>  <p>The Secrets Manager console uses only the
-         * <code>SecretString</code> field. To add binary data to a secret with the
-         * <code>SecretBinary</code> field you must use the Amazon Web Services CLI or one
-         * of the Amazon Web Services SDKs.</p>  <ul> <li> <p>If this operation
-         * creates the first version for the secret then Secrets Manager automatically
-         * attaches the staging label <code>AWSCURRENT</code> to the new version.</p> </li>
-         * <li> <p>If you do not specify a value for VersionStages then Secrets Manager
-         * automatically moves the staging label <code>AWSCURRENT</code> to this new
-         * version.</p> </li> <li> <p>If this operation moves the staging label
-         * <code>AWSCURRENT</code> from another version to this version, then Secrets
-         * Manager also automatically moves the staging label <code>AWSPREVIOUS</code> to
-         * the version that <code>AWSCURRENT</code> was removed from.</p> </li> <li>
-         * <p>This operation is idempotent. If a version with a <code>VersionId</code> with
-         * the same value as the <code>ClientRequestToken</code> parameter already exists
-         * and you specify the same secret data, the operation succeeds but does nothing.
-         * However, if the secret data is different, then the operation fails because you
-         * cannot modify an existing version; you can only create new ones.</p> </li> </ul>
-         *  <ul> <li> <p>If you call an operation to encrypt or decrypt the
-         * <code>SecretString</code> or <code>SecretBinary</code> for a secret in the same
-         * account as the calling user and that secret doesn't specify a Amazon Web
-         * Services KMS encryption key, Secrets Manager uses the account's default Amazon
-         * Web Services managed customer master key (CMK) with the alias
-         * <code>aws/secretsmanager</code>. If this key doesn't already exist in your
-         * account then Secrets Manager creates it for you automatically. All users and
-         * roles in the same Amazon Web Services account automatically have access to use
-         * the default CMK. Note that if an Secrets Manager API call results in Amazon Web
-         * Services creating the account's Amazon Web Services-managed CMK, it can result
-         * in a one-time significant delay in returning the result.</p> </li> <li> <p>If
-         * the secret resides in a different Amazon Web Services account from the
-         * credentials calling an API that requires encryption or decryption of the secret
-         * value then you must create and use a custom Amazon Web Services KMS CMK because
-         * you can't access the default CMK for the account using credentials from a
-         * different Amazon Web Services account. Store the ARN of the CMK in the secret
-         * when you create the secret or when you update it by including it in the
-         * <code>KMSKeyId</code>. If you call an API that must encrypt or decrypt
-         * <code>SecretString</code> or <code>SecretBinary</code> using credentials from a
-         * different account then the Amazon Web Services KMS key policy must grant
-         * cross-account access to that other account's user or role for both the
-         * kms:GenerateDataKey and kms:Decrypt operations.</p> </li> </ul>  <p>
-         * <b>Minimum permissions</b> </p> <p>To run this command, you must have the
+         * the new version.</p> <p>We recommend you avoid calling
+         * <code>PutSecretValue</code> at a sustained rate of more than once every 10
+         * minutes. When you update the secret value, Secrets Manager creates a new version
+         * of the secret. Secrets Manager removes outdated versions when there are more
+         * than 100, but it does not remove versions created less than 24 hours ago. If you
+         * call <code>PutSecretValue</code> more than once every 10 minutes, you create
+         * more versions than Secrets Manager removes, and you will reach the quota for
+         * secret versions.</p> <ul> <li> <p>If this operation creates the first version
+         * for the secret then Secrets Manager automatically attaches the staging label
+         * <code>AWSCURRENT</code> to the new version.</p> </li> <li> <p>If you do not
+         * specify a value for VersionStages then Secrets Manager automatically moves the
+         * staging label <code>AWSCURRENT</code> to this new version.</p> </li> <li> <p>If
+         * this operation moves the staging label <code>AWSCURRENT</code> from another
+         * version to this version, then Secrets Manager also automatically moves the
+         * staging label <code>AWSPREVIOUS</code> to the version that
+         * <code>AWSCURRENT</code> was removed from.</p> </li> <li> <p>This operation is
+         * idempotent. If a version with a <code>VersionId</code> with the same value as
+         * the <code>ClientRequestToken</code> parameter already exists and you specify the
+         * same secret data, the operation succeeds but does nothing. However, if the
+         * secret data is different, then the operation fails because you cannot modify an
+         * existing version; you can only create new ones.</p> </li> </ul>  <ul> <li>
+         * <p>If you call an operation to encrypt or decrypt the <code>SecretString</code>
+         * or <code>SecretBinary</code> for a secret in the same account as the calling
+         * user and that secret doesn't specify a Amazon Web Services KMS encryption key,
+         * Secrets Manager uses the account's default Amazon Web Services managed customer
+         * master key (CMK) with the alias <code>aws/secretsmanager</code>. If this key
+         * doesn't already exist in your account then Secrets Manager creates it for you
+         * automatically. All users and roles in the same Amazon Web Services account
+         * automatically have access to use the default CMK. Note that if an Secrets
+         * Manager API call results in Amazon Web Services creating the account's Amazon
+         * Web Services-managed CMK, it can result in a one-time significant delay in
+         * returning the result.</p> </li> <li> <p>If the secret resides in a different
+         * Amazon Web Services account from the credentials calling an API that requires
+         * encryption or decryption of the secret value then you must create and use a
+         * custom Amazon Web Services KMS CMK because you can't access the default CMK for
+         * the account using credentials from a different Amazon Web Services account.
+         * Store the ARN of the CMK in the secret when you create the secret or when you
+         * update it by including it in the <code>KMSKeyId</code>. If you call an API that
+         * must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code>
+         * using credentials from a different account then the Amazon Web Services KMS key
+         * policy must grant cross-account access to that other account's user or role for
+         * both the kms:GenerateDataKey and kms:Decrypt operations.</p> </li> </ul> 
+         * <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the
          * following permissions:</p> <ul> <li> <p>secretsmanager:PutSecretValue</p> </li>
          * <li> <p>kms:GenerateDataKey - needed only if you use a customer-managed Amazon
          * Web Services KMS key to encrypt the secret. You do not need this permission to
@@ -1177,46 +1180,49 @@ namespace Model
          * operation creates a new version and attaches it to the secret. The version can
          * contain a new <code>SecretString</code> value or a new <code>SecretBinary</code>
          * value. You can also specify the staging labels that are initially attached to
-         * the new version.</p>  <p>The Secrets Manager console uses only the
-         * <code>SecretString</code> field. To add binary data to a secret with the
-         * <code>SecretBinary</code> field you must use the Amazon Web Services CLI or one
-         * of the Amazon Web Services SDKs.</p>  <ul> <li> <p>If this operation
-         * creates the first version for the secret then Secrets Manager automatically
-         * attaches the staging label <code>AWSCURRENT</code> to the new version.</p> </li>
-         * <li> <p>If you do not specify a value for VersionStages then Secrets Manager
-         * automatically moves the staging label <code>AWSCURRENT</code> to this new
-         * version.</p> </li> <li> <p>If this operation moves the staging label
-         * <code>AWSCURRENT</code> from another version to this version, then Secrets
-         * Manager also automatically moves the staging label <code>AWSPREVIOUS</code> to
-         * the version that <code>AWSCURRENT</code> was removed from.</p> </li> <li>
-         * <p>This operation is idempotent. If a version with a <code>VersionId</code> with
-         * the same value as the <code>ClientRequestToken</code> parameter already exists
-         * and you specify the same secret data, the operation succeeds but does nothing.
-         * However, if the secret data is different, then the operation fails because you
-         * cannot modify an existing version; you can only create new ones.</p> </li> </ul>
-         *  <ul> <li> <p>If you call an operation to encrypt or decrypt the
-         * <code>SecretString</code> or <code>SecretBinary</code> for a secret in the same
-         * account as the calling user and that secret doesn't specify a Amazon Web
-         * Services KMS encryption key, Secrets Manager uses the account's default Amazon
-         * Web Services managed customer master key (CMK) with the alias
-         * <code>aws/secretsmanager</code>. If this key doesn't already exist in your
-         * account then Secrets Manager creates it for you automatically. All users and
-         * roles in the same Amazon Web Services account automatically have access to use
-         * the default CMK. Note that if an Secrets Manager API call results in Amazon Web
-         * Services creating the account's Amazon Web Services-managed CMK, it can result
-         * in a one-time significant delay in returning the result.</p> </li> <li> <p>If
-         * the secret resides in a different Amazon Web Services account from the
-         * credentials calling an API that requires encryption or decryption of the secret
-         * value then you must create and use a custom Amazon Web Services KMS CMK because
-         * you can't access the default CMK for the account using credentials from a
-         * different Amazon Web Services account. Store the ARN of the CMK in the secret
-         * when you create the secret or when you update it by including it in the
-         * <code>KMSKeyId</code>. If you call an API that must encrypt or decrypt
-         * <code>SecretString</code> or <code>SecretBinary</code> using credentials from a
-         * different account then the Amazon Web Services KMS key policy must grant
-         * cross-account access to that other account's user or role for both the
-         * kms:GenerateDataKey and kms:Decrypt operations.</p> </li> </ul>  <p>
-         * <b>Minimum permissions</b> </p> <p>To run this command, you must have the
+         * the new version.</p> <p>We recommend you avoid calling
+         * <code>PutSecretValue</code> at a sustained rate of more than once every 10
+         * minutes. When you update the secret value, Secrets Manager creates a new version
+         * of the secret. Secrets Manager removes outdated versions when there are more
+         * than 100, but it does not remove versions created less than 24 hours ago. If you
+         * call <code>PutSecretValue</code> more than once every 10 minutes, you create
+         * more versions than Secrets Manager removes, and you will reach the quota for
+         * secret versions.</p> <ul> <li> <p>If this operation creates the first version
+         * for the secret then Secrets Manager automatically attaches the staging label
+         * <code>AWSCURRENT</code> to the new version.</p> </li> <li> <p>If you do not
+         * specify a value for VersionStages then Secrets Manager automatically moves the
+         * staging label <code>AWSCURRENT</code> to this new version.</p> </li> <li> <p>If
+         * this operation moves the staging label <code>AWSCURRENT</code> from another
+         * version to this version, then Secrets Manager also automatically moves the
+         * staging label <code>AWSPREVIOUS</code> to the version that
+         * <code>AWSCURRENT</code> was removed from.</p> </li> <li> <p>This operation is
+         * idempotent. If a version with a <code>VersionId</code> with the same value as
+         * the <code>ClientRequestToken</code> parameter already exists and you specify the
+         * same secret data, the operation succeeds but does nothing. However, if the
+         * secret data is different, then the operation fails because you cannot modify an
+         * existing version; you can only create new ones.</p> </li> </ul>  <ul> <li>
+         * <p>If you call an operation to encrypt or decrypt the <code>SecretString</code>
+         * or <code>SecretBinary</code> for a secret in the same account as the calling
+         * user and that secret doesn't specify a Amazon Web Services KMS encryption key,
+         * Secrets Manager uses the account's default Amazon Web Services managed customer
+         * master key (CMK) with the alias <code>aws/secretsmanager</code>. If this key
+         * doesn't already exist in your account then Secrets Manager creates it for you
+         * automatically. All users and roles in the same Amazon Web Services account
+         * automatically have access to use the default CMK. Note that if an Secrets
+         * Manager API call results in Amazon Web Services creating the account's Amazon
+         * Web Services-managed CMK, it can result in a one-time significant delay in
+         * returning the result.</p> </li> <li> <p>If the secret resides in a different
+         * Amazon Web Services account from the credentials calling an API that requires
+         * encryption or decryption of the secret value then you must create and use a
+         * custom Amazon Web Services KMS CMK because you can't access the default CMK for
+         * the account using credentials from a different Amazon Web Services account.
+         * Store the ARN of the CMK in the secret when you create the secret or when you
+         * update it by including it in the <code>KMSKeyId</code>. If you call an API that
+         * must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code>
+         * using credentials from a different account then the Amazon Web Services KMS key
+         * policy must grant cross-account access to that other account's user or role for
+         * both the kms:GenerateDataKey and kms:Decrypt operations.</p> </li> </ul> 
+         * <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the
          * following permissions:</p> <ul> <li> <p>secretsmanager:PutSecretValue</p> </li>
          * <li> <p>kms:GenerateDataKey - needed only if you use a customer-managed Amazon
          * Web Services KMS key to encrypt the secret. You do not need this permission to
@@ -1240,46 +1246,49 @@ namespace Model
          * operation creates a new version and attaches it to the secret. The version can
          * contain a new <code>SecretString</code> value or a new <code>SecretBinary</code>
          * value. You can also specify the staging labels that are initially attached to
-         * the new version.</p>  <p>The Secrets Manager console uses only the
-         * <code>SecretString</code> field. To add binary data to a secret with the
-         * <code>SecretBinary</code> field you must use the Amazon Web Services CLI or one
-         * of the Amazon Web Services SDKs.</p>  <ul> <li> <p>If this operation
-         * creates the first version for the secret then Secrets Manager automatically
-         * attaches the staging label <code>AWSCURRENT</code> to the new version.</p> </li>
-         * <li> <p>If you do not specify a value for VersionStages then Secrets Manager
-         * automatically moves the staging label <code>AWSCURRENT</code> to this new
-         * version.</p> </li> <li> <p>If this operation moves the staging label
-         * <code>AWSCURRENT</code> from another version to this version, then Secrets
-         * Manager also automatically moves the staging label <code>AWSPREVIOUS</code> to
-         * the version that <code>AWSCURRENT</code> was removed from.</p> </li> <li>
-         * <p>This operation is idempotent. If a version with a <code>VersionId</code> with
-         * the same value as the <code>ClientRequestToken</code> parameter already exists
-         * and you specify the same secret data, the operation succeeds but does nothing.
-         * However, if the secret data is different, then the operation fails because you
-         * cannot modify an existing version; you can only create new ones.</p> </li> </ul>
-         *  <ul> <li> <p>If you call an operation to encrypt or decrypt the
-         * <code>SecretString</code> or <code>SecretBinary</code> for a secret in the same
-         * account as the calling user and that secret doesn't specify a Amazon Web
-         * Services KMS encryption key, Secrets Manager uses the account's default Amazon
-         * Web Services managed customer master key (CMK) with the alias
-         * <code>aws/secretsmanager</code>. If this key doesn't already exist in your
-         * account then Secrets Manager creates it for you automatically. All users and
-         * roles in the same Amazon Web Services account automatically have access to use
-         * the default CMK. Note that if an Secrets Manager API call results in Amazon Web
-         * Services creating the account's Amazon Web Services-managed CMK, it can result
-         * in a one-time significant delay in returning the result.</p> </li> <li> <p>If
-         * the secret resides in a different Amazon Web Services account from the
-         * credentials calling an API that requires encryption or decryption of the secret
-         * value then you must create and use a custom Amazon Web Services KMS CMK because
-         * you can't access the default CMK for the account using credentials from a
-         * different Amazon Web Services account. Store the ARN of the CMK in the secret
-         * when you create the secret or when you update it by including it in the
-         * <code>KMSKeyId</code>. If you call an API that must encrypt or decrypt
-         * <code>SecretString</code> or <code>SecretBinary</code> using credentials from a
-         * different account then the Amazon Web Services KMS key policy must grant
-         * cross-account access to that other account's user or role for both the
-         * kms:GenerateDataKey and kms:Decrypt operations.</p> </li> </ul>  <p>
-         * <b>Minimum permissions</b> </p> <p>To run this command, you must have the
+         * the new version.</p> <p>We recommend you avoid calling
+         * <code>PutSecretValue</code> at a sustained rate of more than once every 10
+         * minutes. When you update the secret value, Secrets Manager creates a new version
+         * of the secret. Secrets Manager removes outdated versions when there are more
+         * than 100, but it does not remove versions created less than 24 hours ago. If you
+         * call <code>PutSecretValue</code> more than once every 10 minutes, you create
+         * more versions than Secrets Manager removes, and you will reach the quota for
+         * secret versions.</p> <ul> <li> <p>If this operation creates the first version
+         * for the secret then Secrets Manager automatically attaches the staging label
+         * <code>AWSCURRENT</code> to the new version.</p> </li> <li> <p>If you do not
+         * specify a value for VersionStages then Secrets Manager automatically moves the
+         * staging label <code>AWSCURRENT</code> to this new version.</p> </li> <li> <p>If
+         * this operation moves the staging label <code>AWSCURRENT</code> from another
+         * version to this version, then Secrets Manager also automatically moves the
+         * staging label <code>AWSPREVIOUS</code> to the version that
+         * <code>AWSCURRENT</code> was removed from.</p> </li> <li> <p>This operation is
+         * idempotent. If a version with a <code>VersionId</code> with the same value as
+         * the <code>ClientRequestToken</code> parameter already exists and you specify the
+         * same secret data, the operation succeeds but does nothing. However, if the
+         * secret data is different, then the operation fails because you cannot modify an
+         * existing version; you can only create new ones.</p> </li> </ul>  <ul> <li>
+         * <p>If you call an operation to encrypt or decrypt the <code>SecretString</code>
+         * or <code>SecretBinary</code> for a secret in the same account as the calling
+         * user and that secret doesn't specify a Amazon Web Services KMS encryption key,
+         * Secrets Manager uses the account's default Amazon Web Services managed customer
+         * master key (CMK) with the alias <code>aws/secretsmanager</code>. If this key
+         * doesn't already exist in your account then Secrets Manager creates it for you
+         * automatically. All users and roles in the same Amazon Web Services account
+         * automatically have access to use the default CMK. Note that if an Secrets
+         * Manager API call results in Amazon Web Services creating the account's Amazon
+         * Web Services-managed CMK, it can result in a one-time significant delay in
+         * returning the result.</p> </li> <li> <p>If the secret resides in a different
+         * Amazon Web Services account from the credentials calling an API that requires
+         * encryption or decryption of the secret value then you must create and use a
+         * custom Amazon Web Services KMS CMK because you can't access the default CMK for
+         * the account using credentials from a different Amazon Web Services account.
+         * Store the ARN of the CMK in the secret when you create the secret or when you
+         * update it by including it in the <code>KMSKeyId</code>. If you call an API that
+         * must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code>
+         * using credentials from a different account then the Amazon Web Services KMS key
+         * policy must grant cross-account access to that other account's user or role for
+         * both the kms:GenerateDataKey and kms:Decrypt operations.</p> </li> </ul> 
+         * <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the
          * following permissions:</p> <ul> <li> <p>secretsmanager:PutSecretValue</p> </li>
          * <li> <p>kms:GenerateDataKey - needed only if you use a customer-managed Amazon
          * Web Services KMS key to encrypt the secret. You do not need this permission to
@@ -1726,44 +1735,49 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies many of the details of the specified secret. If you include a
-         * <code>ClientRequestToken</code> and <i>either</i> <code>SecretString</code> or
-         * <code>SecretBinary</code> then it also creates a new version attached to the
-         * secret.</p> <p>To modify the rotation configuration of a secret, use
-         * <a>RotateSecret</a> instead.</p>  <p>The Secrets Manager console uses only
-         * the <code>SecretString</code> parameter and therefore limits you to encrypting
-         * and storing only a text string. To encrypt and store binary data as part of the
-         * version of a secret, you must use either the Amazon Web Services CLI or one of
-         * the Amazon Web Services SDKs.</p>  <ul> <li> <p>If a version with a
-         * <code>VersionId</code> with the same value as the
-         * <code>ClientRequestToken</code> parameter already exists, the operation results
-         * in an error. You cannot modify an existing version, you can only create a new
-         * version.</p> </li> <li> <p>If you include <code>SecretString</code> or
-         * <code>SecretBinary</code> to create a new secret version, Secrets Manager
-         * automatically attaches the staging label <code>AWSCURRENT</code> to the new
-         * version. </p> </li> </ul>  <ul> <li> <p>If you call an operation to
-         * encrypt or decrypt the <code>SecretString</code> or <code>SecretBinary</code>
-         * for a secret in the same account as the calling user and that secret doesn't
-         * specify a Amazon Web Services KMS encryption key, Secrets Manager uses the
-         * account's default Amazon Web Services managed customer master key (CMK) with the
-         * alias <code>aws/secretsmanager</code>. If this key doesn't already exist in your
-         * account then Secrets Manager creates it for you automatically. All users and
-         * roles in the same Amazon Web Services account automatically have access to use
-         * the default CMK. Note that if an Secrets Manager API call results in Amazon Web
-         * Services creating the account's Amazon Web Services-managed CMK, it can result
-         * in a one-time significant delay in returning the result.</p> </li> <li> <p>If
-         * the secret resides in a different Amazon Web Services account from the
-         * credentials calling an API that requires encryption or decryption of the secret
-         * value then you must create and use a custom Amazon Web Services KMS CMK because
-         * you can't access the default CMK for the account using credentials from a
-         * different Amazon Web Services account. Store the ARN of the CMK in the secret
-         * when you create the secret or when you update it by including it in the
-         * <code>KMSKeyId</code>. If you call an API that must encrypt or decrypt
-         * <code>SecretString</code> or <code>SecretBinary</code> using credentials from a
-         * different account then the Amazon Web Services KMS key policy must grant
-         * cross-account access to that other account's user or role for both the
-         * kms:GenerateDataKey and kms:Decrypt operations.</p> </li> </ul>  <p>
-         * <b>Minimum permissions</b> </p> <p>To run this command, you must have the
+         * <p>Modifies many of the details of the specified secret. </p> <p>To change the
+         * secret value, you can also use <a>PutSecretValue</a>.</p> <p>To change the
+         * rotation configuration of a secret, use <a>RotateSecret</a> instead.</p> <p>We
+         * recommend you avoid calling <code>UpdateSecret</code> at a sustained rate of
+         * more than once every 10 minutes. When you call <code>UpdateSecret</code> to
+         * update the secret value, Secrets Manager creates a new version of the secret.
+         * Secrets Manager removes outdated versions when there are more than 100, but it
+         * does not remove versions created less than 24 hours ago. If you update the
+         * secret value more than once every 10 minutes, you create more versions than
+         * Secrets Manager removes, and you will reach the quota for secret versions.</p>
+         *  <p>The Secrets Manager console uses only the <code>SecretString</code>
+         * parameter and therefore limits you to encrypting and storing only a text string.
+         * To encrypt and store binary data as part of the version of a secret, you must
+         * use either the Amazon Web Services CLI or one of the Amazon Web Services
+         * SDKs.</p>  <ul> <li> <p>If a version with a <code>VersionId</code> with
+         * the same value as the <code>ClientRequestToken</code> parameter already exists,
+         * the operation results in an error. You cannot modify an existing version, you
+         * can only create a new version.</p> </li> <li> <p>If you include
+         * <code>SecretString</code> or <code>SecretBinary</code> to create a new secret
+         * version, Secrets Manager automatically attaches the staging label
+         * <code>AWSCURRENT</code> to the new version. </p> </li> </ul>  <ul> <li>
+         * <p>If you call an operation to encrypt or decrypt the <code>SecretString</code>
+         * or <code>SecretBinary</code> for a secret in the same account as the calling
+         * user and that secret doesn't specify a Amazon Web Services KMS encryption key,
+         * Secrets Manager uses the account's default Amazon Web Services managed customer
+         * master key (CMK) with the alias <code>aws/secretsmanager</code>. If this key
+         * doesn't already exist in your account then Secrets Manager creates it for you
+         * automatically. All users and roles in the same Amazon Web Services account
+         * automatically have access to use the default CMK. Note that if an Secrets
+         * Manager API call results in Amazon Web Services creating the account's Amazon
+         * Web Services-managed CMK, it can result in a one-time significant delay in
+         * returning the result.</p> </li> <li> <p>If the secret resides in a different
+         * Amazon Web Services account from the credentials calling an API that requires
+         * encryption or decryption of the secret value then you must create and use a
+         * custom Amazon Web Services KMS CMK because you can't access the default CMK for
+         * the account using credentials from a different Amazon Web Services account.
+         * Store the ARN of the CMK in the secret when you create the secret or when you
+         * update it by including it in the <code>KMSKeyId</code>. If you call an API that
+         * must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code>
+         * using credentials from a different account then the Amazon Web Services KMS key
+         * policy must grant cross-account access to that other account's user or role for
+         * both the kms:GenerateDataKey and kms:Decrypt operations.</p> </li> </ul> 
+         * <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the
          * following permissions:</p> <ul> <li> <p>secretsmanager:UpdateSecret</p> </li>
          * <li> <p>kms:GenerateDataKey - needed only if you use a custom Amazon Web
          * Services KMS key to encrypt the secret. You do not need this permission to use
@@ -1783,44 +1797,49 @@ namespace Model
         virtual Model::UpdateSecretOutcome UpdateSecret(const Model::UpdateSecretRequest& request) const;
 
         /**
-         * <p>Modifies many of the details of the specified secret. If you include a
-         * <code>ClientRequestToken</code> and <i>either</i> <code>SecretString</code> or
-         * <code>SecretBinary</code> then it also creates a new version attached to the
-         * secret.</p> <p>To modify the rotation configuration of a secret, use
-         * <a>RotateSecret</a> instead.</p>  <p>The Secrets Manager console uses only
-         * the <code>SecretString</code> parameter and therefore limits you to encrypting
-         * and storing only a text string. To encrypt and store binary data as part of the
-         * version of a secret, you must use either the Amazon Web Services CLI or one of
-         * the Amazon Web Services SDKs.</p>  <ul> <li> <p>If a version with a
-         * <code>VersionId</code> with the same value as the
-         * <code>ClientRequestToken</code> parameter already exists, the operation results
-         * in an error. You cannot modify an existing version, you can only create a new
-         * version.</p> </li> <li> <p>If you include <code>SecretString</code> or
-         * <code>SecretBinary</code> to create a new secret version, Secrets Manager
-         * automatically attaches the staging label <code>AWSCURRENT</code> to the new
-         * version. </p> </li> </ul>  <ul> <li> <p>If you call an operation to
-         * encrypt or decrypt the <code>SecretString</code> or <code>SecretBinary</code>
-         * for a secret in the same account as the calling user and that secret doesn't
-         * specify a Amazon Web Services KMS encryption key, Secrets Manager uses the
-         * account's default Amazon Web Services managed customer master key (CMK) with the
-         * alias <code>aws/secretsmanager</code>. If this key doesn't already exist in your
-         * account then Secrets Manager creates it for you automatically. All users and
-         * roles in the same Amazon Web Services account automatically have access to use
-         * the default CMK. Note that if an Secrets Manager API call results in Amazon Web
-         * Services creating the account's Amazon Web Services-managed CMK, it can result
-         * in a one-time significant delay in returning the result.</p> </li> <li> <p>If
-         * the secret resides in a different Amazon Web Services account from the
-         * credentials calling an API that requires encryption or decryption of the secret
-         * value then you must create and use a custom Amazon Web Services KMS CMK because
-         * you can't access the default CMK for the account using credentials from a
-         * different Amazon Web Services account. Store the ARN of the CMK in the secret
-         * when you create the secret or when you update it by including it in the
-         * <code>KMSKeyId</code>. If you call an API that must encrypt or decrypt
-         * <code>SecretString</code> or <code>SecretBinary</code> using credentials from a
-         * different account then the Amazon Web Services KMS key policy must grant
-         * cross-account access to that other account's user or role for both the
-         * kms:GenerateDataKey and kms:Decrypt operations.</p> </li> </ul>  <p>
-         * <b>Minimum permissions</b> </p> <p>To run this command, you must have the
+         * <p>Modifies many of the details of the specified secret. </p> <p>To change the
+         * secret value, you can also use <a>PutSecretValue</a>.</p> <p>To change the
+         * rotation configuration of a secret, use <a>RotateSecret</a> instead.</p> <p>We
+         * recommend you avoid calling <code>UpdateSecret</code> at a sustained rate of
+         * more than once every 10 minutes. When you call <code>UpdateSecret</code> to
+         * update the secret value, Secrets Manager creates a new version of the secret.
+         * Secrets Manager removes outdated versions when there are more than 100, but it
+         * does not remove versions created less than 24 hours ago. If you update the
+         * secret value more than once every 10 minutes, you create more versions than
+         * Secrets Manager removes, and you will reach the quota for secret versions.</p>
+         *  <p>The Secrets Manager console uses only the <code>SecretString</code>
+         * parameter and therefore limits you to encrypting and storing only a text string.
+         * To encrypt and store binary data as part of the version of a secret, you must
+         * use either the Amazon Web Services CLI or one of the Amazon Web Services
+         * SDKs.</p>  <ul> <li> <p>If a version with a <code>VersionId</code> with
+         * the same value as the <code>ClientRequestToken</code> parameter already exists,
+         * the operation results in an error. You cannot modify an existing version, you
+         * can only create a new version.</p> </li> <li> <p>If you include
+         * <code>SecretString</code> or <code>SecretBinary</code> to create a new secret
+         * version, Secrets Manager automatically attaches the staging label
+         * <code>AWSCURRENT</code> to the new version. </p> </li> </ul>  <ul> <li>
+         * <p>If you call an operation to encrypt or decrypt the <code>SecretString</code>
+         * or <code>SecretBinary</code> for a secret in the same account as the calling
+         * user and that secret doesn't specify a Amazon Web Services KMS encryption key,
+         * Secrets Manager uses the account's default Amazon Web Services managed customer
+         * master key (CMK) with the alias <code>aws/secretsmanager</code>. If this key
+         * doesn't already exist in your account then Secrets Manager creates it for you
+         * automatically. All users and roles in the same Amazon Web Services account
+         * automatically have access to use the default CMK. Note that if an Secrets
+         * Manager API call results in Amazon Web Services creating the account's Amazon
+         * Web Services-managed CMK, it can result in a one-time significant delay in
+         * returning the result.</p> </li> <li> <p>If the secret resides in a different
+         * Amazon Web Services account from the credentials calling an API that requires
+         * encryption or decryption of the secret value then you must create and use a
+         * custom Amazon Web Services KMS CMK because you can't access the default CMK for
+         * the account using credentials from a different Amazon Web Services account.
+         * Store the ARN of the CMK in the secret when you create the secret or when you
+         * update it by including it in the <code>KMSKeyId</code>. If you call an API that
+         * must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code>
+         * using credentials from a different account then the Amazon Web Services KMS key
+         * policy must grant cross-account access to that other account's user or role for
+         * both the kms:GenerateDataKey and kms:Decrypt operations.</p> </li> </ul> 
+         * <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the
          * following permissions:</p> <ul> <li> <p>secretsmanager:UpdateSecret</p> </li>
          * <li> <p>kms:GenerateDataKey - needed only if you use a custom Amazon Web
          * Services KMS key to encrypt the secret. You do not need this permission to use
@@ -1842,44 +1861,49 @@ namespace Model
         virtual Model::UpdateSecretOutcomeCallable UpdateSecretCallable(const Model::UpdateSecretRequest& request) const;
 
         /**
-         * <p>Modifies many of the details of the specified secret. If you include a
-         * <code>ClientRequestToken</code> and <i>either</i> <code>SecretString</code> or
-         * <code>SecretBinary</code> then it also creates a new version attached to the
-         * secret.</p> <p>To modify the rotation configuration of a secret, use
-         * <a>RotateSecret</a> instead.</p>  <p>The Secrets Manager console uses only
-         * the <code>SecretString</code> parameter and therefore limits you to encrypting
-         * and storing only a text string. To encrypt and store binary data as part of the
-         * version of a secret, you must use either the Amazon Web Services CLI or one of
-         * the Amazon Web Services SDKs.</p>  <ul> <li> <p>If a version with a
-         * <code>VersionId</code> with the same value as the
-         * <code>ClientRequestToken</code> parameter already exists, the operation results
-         * in an error. You cannot modify an existing version, you can only create a new
-         * version.</p> </li> <li> <p>If you include <code>SecretString</code> or
-         * <code>SecretBinary</code> to create a new secret version, Secrets Manager
-         * automatically attaches the staging label <code>AWSCURRENT</code> to the new
-         * version. </p> </li> </ul>  <ul> <li> <p>If you call an operation to
-         * encrypt or decrypt the <code>SecretString</code> or <code>SecretBinary</code>
-         * for a secret in the same account as the calling user and that secret doesn't
-         * specify a Amazon Web Services KMS encryption key, Secrets Manager uses the
-         * account's default Amazon Web Services managed customer master key (CMK) with the
-         * alias <code>aws/secretsmanager</code>. If this key doesn't already exist in your
-         * account then Secrets Manager creates it for you automatically. All users and
-         * roles in the same Amazon Web Services account automatically have access to use
-         * the default CMK. Note that if an Secrets Manager API call results in Amazon Web
-         * Services creating the account's Amazon Web Services-managed CMK, it can result
-         * in a one-time significant delay in returning the result.</p> </li> <li> <p>If
-         * the secret resides in a different Amazon Web Services account from the
-         * credentials calling an API that requires encryption or decryption of the secret
-         * value then you must create and use a custom Amazon Web Services KMS CMK because
-         * you can't access the default CMK for the account using credentials from a
-         * different Amazon Web Services account. Store the ARN of the CMK in the secret
-         * when you create the secret or when you update it by including it in the
-         * <code>KMSKeyId</code>. If you call an API that must encrypt or decrypt
-         * <code>SecretString</code> or <code>SecretBinary</code> using credentials from a
-         * different account then the Amazon Web Services KMS key policy must grant
-         * cross-account access to that other account's user or role for both the
-         * kms:GenerateDataKey and kms:Decrypt operations.</p> </li> </ul>  <p>
-         * <b>Minimum permissions</b> </p> <p>To run this command, you must have the
+         * <p>Modifies many of the details of the specified secret. </p> <p>To change the
+         * secret value, you can also use <a>PutSecretValue</a>.</p> <p>To change the
+         * rotation configuration of a secret, use <a>RotateSecret</a> instead.</p> <p>We
+         * recommend you avoid calling <code>UpdateSecret</code> at a sustained rate of
+         * more than once every 10 minutes. When you call <code>UpdateSecret</code> to
+         * update the secret value, Secrets Manager creates a new version of the secret.
+         * Secrets Manager removes outdated versions when there are more than 100, but it
+         * does not remove versions created less than 24 hours ago. If you update the
+         * secret value more than once every 10 minutes, you create more versions than
+         * Secrets Manager removes, and you will reach the quota for secret versions.</p>
+         *  <p>The Secrets Manager console uses only the <code>SecretString</code>
+         * parameter and therefore limits you to encrypting and storing only a text string.
+         * To encrypt and store binary data as part of the version of a secret, you must
+         * use either the Amazon Web Services CLI or one of the Amazon Web Services
+         * SDKs.</p>  <ul> <li> <p>If a version with a <code>VersionId</code> with
+         * the same value as the <code>ClientRequestToken</code> parameter already exists,
+         * the operation results in an error. You cannot modify an existing version, you
+         * can only create a new version.</p> </li> <li> <p>If you include
+         * <code>SecretString</code> or <code>SecretBinary</code> to create a new secret
+         * version, Secrets Manager automatically attaches the staging label
+         * <code>AWSCURRENT</code> to the new version. </p> </li> </ul>  <ul> <li>
+         * <p>If you call an operation to encrypt or decrypt the <code>SecretString</code>
+         * or <code>SecretBinary</code> for a secret in the same account as the calling
+         * user and that secret doesn't specify a Amazon Web Services KMS encryption key,
+         * Secrets Manager uses the account's default Amazon Web Services managed customer
+         * master key (CMK) with the alias <code>aws/secretsmanager</code>. If this key
+         * doesn't already exist in your account then Secrets Manager creates it for you
+         * automatically. All users and roles in the same Amazon Web Services account
+         * automatically have access to use the default CMK. Note that if an Secrets
+         * Manager API call results in Amazon Web Services creating the account's Amazon
+         * Web Services-managed CMK, it can result in a one-time significant delay in
+         * returning the result.</p> </li> <li> <p>If the secret resides in a different
+         * Amazon Web Services account from the credentials calling an API that requires
+         * encryption or decryption of the secret value then you must create and use a
+         * custom Amazon Web Services KMS CMK because you can't access the default CMK for
+         * the account using credentials from a different Amazon Web Services account.
+         * Store the ARN of the CMK in the secret when you create the secret or when you
+         * update it by including it in the <code>KMSKeyId</code>. If you call an API that
+         * must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code>
+         * using credentials from a different account then the Amazon Web Services KMS key
+         * policy must grant cross-account access to that other account's user or role for
+         * both the kms:GenerateDataKey and kms:Decrypt operations.</p> </li> </ul> 
+         * <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the
          * following permissions:</p> <ul> <li> <p>secretsmanager:UpdateSecret</p> </li>
          * <li> <p>kms:GenerateDataKey - needed only if you use a custom Amazon Web
          * Services KMS key to encrypt the secret. You do not need this permission to use

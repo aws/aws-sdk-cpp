@@ -89,25 +89,25 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of times the bot tries to elicit a resonse from the user
+     * <p>The maximum number of times the bot tries to elicit a response from the user
      * using this prompt.</p>
      */
     inline int GetMaxRetries() const{ return m_maxRetries; }
 
     /**
-     * <p>The maximum number of times the bot tries to elicit a resonse from the user
+     * <p>The maximum number of times the bot tries to elicit a response from the user
      * using this prompt.</p>
      */
     inline bool MaxRetriesHasBeenSet() const { return m_maxRetriesHasBeenSet; }
 
     /**
-     * <p>The maximum number of times the bot tries to elicit a resonse from the user
+     * <p>The maximum number of times the bot tries to elicit a response from the user
      * using this prompt.</p>
      */
     inline void SetMaxRetries(int value) { m_maxRetriesHasBeenSet = true; m_maxRetries = value; }
 
     /**
-     * <p>The maximum number of times the bot tries to elicit a resonse from the user
+     * <p>The maximum number of times the bot tries to elicit a response from the user
      * using this prompt.</p>
      */
     inline PromptSpecification& WithMaxRetries(int value) { SetMaxRetries(value); return *this;}

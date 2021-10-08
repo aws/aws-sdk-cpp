@@ -32,8 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about an Amazon Elasticsearch Service domain.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information about an Elasticsearch domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElasticsearchDomainDetails">AWS
    * API Reference</a></p>
    */
@@ -369,73 +368,73 @@ namespace Model
 
 
     /**
-     * <p>Elasticsearch version.</p>
+     * <p>OpenSearch version.</p>
      */
     inline const Aws::String& GetElasticsearchVersion() const{ return m_elasticsearchVersion; }
 
     /**
-     * <p>Elasticsearch version.</p>
+     * <p>OpenSearch version.</p>
      */
     inline bool ElasticsearchVersionHasBeenSet() const { return m_elasticsearchVersionHasBeenSet; }
 
     /**
-     * <p>Elasticsearch version.</p>
+     * <p>OpenSearch version.</p>
      */
     inline void SetElasticsearchVersion(const Aws::String& value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion = value; }
 
     /**
-     * <p>Elasticsearch version.</p>
+     * <p>OpenSearch version.</p>
      */
     inline void SetElasticsearchVersion(Aws::String&& value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion = std::move(value); }
 
     /**
-     * <p>Elasticsearch version.</p>
+     * <p>OpenSearch version.</p>
      */
     inline void SetElasticsearchVersion(const char* value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion.assign(value); }
 
     /**
-     * <p>Elasticsearch version.</p>
+     * <p>OpenSearch version.</p>
      */
     inline AwsElasticsearchDomainDetails& WithElasticsearchVersion(const Aws::String& value) { SetElasticsearchVersion(value); return *this;}
 
     /**
-     * <p>Elasticsearch version.</p>
+     * <p>OpenSearch version.</p>
      */
     inline AwsElasticsearchDomainDetails& WithElasticsearchVersion(Aws::String&& value) { SetElasticsearchVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Elasticsearch version.</p>
+     * <p>OpenSearch version.</p>
      */
     inline AwsElasticsearchDomainDetails& WithElasticsearchVersion(const char* value) { SetElasticsearchVersion(value); return *this;}
 
 
     /**
-     * <p>Information about an Elasticsearch cluster configuration.</p>
+     * <p>Information about an OpenSearch cluster configuration.</p>
      */
     inline const AwsElasticsearchDomainElasticsearchClusterConfigDetails& GetElasticsearchClusterConfig() const{ return m_elasticsearchClusterConfig; }
 
     /**
-     * <p>Information about an Elasticsearch cluster configuration.</p>
+     * <p>Information about an OpenSearch cluster configuration.</p>
      */
     inline bool ElasticsearchClusterConfigHasBeenSet() const { return m_elasticsearchClusterConfigHasBeenSet; }
 
     /**
-     * <p>Information about an Elasticsearch cluster configuration.</p>
+     * <p>Information about an OpenSearch cluster configuration.</p>
      */
     inline void SetElasticsearchClusterConfig(const AwsElasticsearchDomainElasticsearchClusterConfigDetails& value) { m_elasticsearchClusterConfigHasBeenSet = true; m_elasticsearchClusterConfig = value; }
 
     /**
-     * <p>Information about an Elasticsearch cluster configuration.</p>
+     * <p>Information about an OpenSearch cluster configuration.</p>
      */
     inline void SetElasticsearchClusterConfig(AwsElasticsearchDomainElasticsearchClusterConfigDetails&& value) { m_elasticsearchClusterConfigHasBeenSet = true; m_elasticsearchClusterConfig = std::move(value); }
 
     /**
-     * <p>Information about an Elasticsearch cluster configuration.</p>
+     * <p>Information about an OpenSearch cluster configuration.</p>
      */
     inline AwsElasticsearchDomainDetails& WithElasticsearchClusterConfig(const AwsElasticsearchDomainElasticsearchClusterConfigDetails& value) { SetElasticsearchClusterConfig(value); return *this;}
 
     /**
-     * <p>Information about an Elasticsearch cluster configuration.</p>
+     * <p>Information about an OpenSearch cluster configuration.</p>
      */
     inline AwsElasticsearchDomainDetails& WithElasticsearchClusterConfig(AwsElasticsearchDomainElasticsearchClusterConfigDetails&& value) { SetElasticsearchClusterConfig(std::move(value)); return *this;}
 
@@ -571,38 +570,38 @@ namespace Model
 
 
     /**
-     * <p>Information that Elasticsearch derives based on <code>VPCOptions</code> for
-     * the domain.</p>
+     * <p>Information that OpenSearch derives based on <code>VPCOptions</code> for the
+     * domain.</p>
      */
     inline const AwsElasticsearchDomainVPCOptions& GetVPCOptions() const{ return m_vPCOptions; }
 
     /**
-     * <p>Information that Elasticsearch derives based on <code>VPCOptions</code> for
-     * the domain.</p>
+     * <p>Information that OpenSearch derives based on <code>VPCOptions</code> for the
+     * domain.</p>
      */
     inline bool VPCOptionsHasBeenSet() const { return m_vPCOptionsHasBeenSet; }
 
     /**
-     * <p>Information that Elasticsearch derives based on <code>VPCOptions</code> for
-     * the domain.</p>
+     * <p>Information that OpenSearch derives based on <code>VPCOptions</code> for the
+     * domain.</p>
      */
     inline void SetVPCOptions(const AwsElasticsearchDomainVPCOptions& value) { m_vPCOptionsHasBeenSet = true; m_vPCOptions = value; }
 
     /**
-     * <p>Information that Elasticsearch derives based on <code>VPCOptions</code> for
-     * the domain.</p>
+     * <p>Information that OpenSearch derives based on <code>VPCOptions</code> for the
+     * domain.</p>
      */
     inline void SetVPCOptions(AwsElasticsearchDomainVPCOptions&& value) { m_vPCOptionsHasBeenSet = true; m_vPCOptions = std::move(value); }
 
     /**
-     * <p>Information that Elasticsearch derives based on <code>VPCOptions</code> for
-     * the domain.</p>
+     * <p>Information that OpenSearch derives based on <code>VPCOptions</code> for the
+     * domain.</p>
      */
     inline AwsElasticsearchDomainDetails& WithVPCOptions(const AwsElasticsearchDomainVPCOptions& value) { SetVPCOptions(value); return *this;}
 
     /**
-     * <p>Information that Elasticsearch derives based on <code>VPCOptions</code> for
-     * the domain.</p>
+     * <p>Information that OpenSearch derives based on <code>VPCOptions</code> for the
+     * domain.</p>
      */
     inline AwsElasticsearchDomainDetails& WithVPCOptions(AwsElasticsearchDomainVPCOptions&& value) { SetVPCOptions(std::move(value)); return *this;}
 

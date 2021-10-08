@@ -20,7 +20,8 @@ namespace Model
     Fulfilled,
     InProgress,
     ReadyForFulfillment,
-    Waiting
+    Waiting,
+    FulfillmentInProgress
   };
 
 namespace IntentStateMapper

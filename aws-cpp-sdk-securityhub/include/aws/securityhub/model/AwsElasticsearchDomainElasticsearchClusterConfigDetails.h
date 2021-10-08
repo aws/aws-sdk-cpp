@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>details about the configuration of an Elasticsearch cluster.</p><p><h3>See
+   * <p>details about the configuration of an OpenSearch cluster.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElasticsearchDomainElasticsearchClusterConfigDetails">AWS
    * API Reference</a></p>
@@ -271,33 +271,33 @@ namespace Model
 
     /**
      * <p>Whether to enable zone awareness for the Elasticsearch domain. When zone
-     * awareness is enabled, Elasticsearch allocates the cluster's nodes and replica
-     * index shards across Availability Zones in the same Region. This prevents data
-     * loss and minimizes downtime if a node or data center fails.</p>
+     * awareness is enabled, OpenSearch allocates the cluster's nodes and replica index
+     * shards across Availability Zones in the same Region. This prevents data loss and
+     * minimizes downtime if a node or data center fails.</p>
      */
     inline bool GetZoneAwarenessEnabled() const{ return m_zoneAwarenessEnabled; }
 
     /**
      * <p>Whether to enable zone awareness for the Elasticsearch domain. When zone
-     * awareness is enabled, Elasticsearch allocates the cluster's nodes and replica
-     * index shards across Availability Zones in the same Region. This prevents data
-     * loss and minimizes downtime if a node or data center fails.</p>
+     * awareness is enabled, OpenSearch allocates the cluster's nodes and replica index
+     * shards across Availability Zones in the same Region. This prevents data loss and
+     * minimizes downtime if a node or data center fails.</p>
      */
     inline bool ZoneAwarenessEnabledHasBeenSet() const { return m_zoneAwarenessEnabledHasBeenSet; }
 
     /**
      * <p>Whether to enable zone awareness for the Elasticsearch domain. When zone
-     * awareness is enabled, Elasticsearch allocates the cluster's nodes and replica
-     * index shards across Availability Zones in the same Region. This prevents data
-     * loss and minimizes downtime if a node or data center fails.</p>
+     * awareness is enabled, OpenSearch allocates the cluster's nodes and replica index
+     * shards across Availability Zones in the same Region. This prevents data loss and
+     * minimizes downtime if a node or data center fails.</p>
      */
     inline void SetZoneAwarenessEnabled(bool value) { m_zoneAwarenessEnabledHasBeenSet = true; m_zoneAwarenessEnabled = value; }
 
     /**
      * <p>Whether to enable zone awareness for the Elasticsearch domain. When zone
-     * awareness is enabled, Elasticsearch allocates the cluster's nodes and replica
-     * index shards across Availability Zones in the same Region. This prevents data
-     * loss and minimizes downtime if a node or data center fails.</p>
+     * awareness is enabled, OpenSearch allocates the cluster's nodes and replica index
+     * shards across Availability Zones in the same Region. This prevents data loss and
+     * minimizes downtime if a node or data center fails.</p>
      */
     inline AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithZoneAwarenessEnabled(bool value) { SetZoneAwarenessEnabled(value); return *this;}
 

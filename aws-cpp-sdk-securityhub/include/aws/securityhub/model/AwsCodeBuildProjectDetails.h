@@ -6,9 +6,12 @@
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityhub/model/AwsCodeBuildProjectEnvironment.h>
 #include <aws/securityhub/model/AwsCodeBuildProjectSource.h>
+#include <aws/securityhub/model/AwsCodeBuildProjectLogsConfigDetails.h>
 #include <aws/securityhub/model/AwsCodeBuildProjectVpcConfig.h>
+#include <aws/securityhub/model/AwsCodeBuildProjectArtifactsDetails.h>
 #include <utility>
 
 namespace Aws
@@ -95,6 +98,47 @@ namespace Model
      * the format alias/alias-name). </p>
      */
     inline AwsCodeBuildProjectDetails& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
+
+
+    /**
+     * <p>Information about the build artifacts for the CodeBuild project.</p>
+     */
+    inline const Aws::Vector<AwsCodeBuildProjectArtifactsDetails>& GetArtifacts() const{ return m_artifacts; }
+
+    /**
+     * <p>Information about the build artifacts for the CodeBuild project.</p>
+     */
+    inline bool ArtifactsHasBeenSet() const { return m_artifactsHasBeenSet; }
+
+    /**
+     * <p>Information about the build artifacts for the CodeBuild project.</p>
+     */
+    inline void SetArtifacts(const Aws::Vector<AwsCodeBuildProjectArtifactsDetails>& value) { m_artifactsHasBeenSet = true; m_artifacts = value; }
+
+    /**
+     * <p>Information about the build artifacts for the CodeBuild project.</p>
+     */
+    inline void SetArtifacts(Aws::Vector<AwsCodeBuildProjectArtifactsDetails>&& value) { m_artifactsHasBeenSet = true; m_artifacts = std::move(value); }
+
+    /**
+     * <p>Information about the build artifacts for the CodeBuild project.</p>
+     */
+    inline AwsCodeBuildProjectDetails& WithArtifacts(const Aws::Vector<AwsCodeBuildProjectArtifactsDetails>& value) { SetArtifacts(value); return *this;}
+
+    /**
+     * <p>Information about the build artifacts for the CodeBuild project.</p>
+     */
+    inline AwsCodeBuildProjectDetails& WithArtifacts(Aws::Vector<AwsCodeBuildProjectArtifactsDetails>&& value) { SetArtifacts(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the build artifacts for the CodeBuild project.</p>
+     */
+    inline AwsCodeBuildProjectDetails& AddArtifacts(const AwsCodeBuildProjectArtifactsDetails& value) { m_artifactsHasBeenSet = true; m_artifacts.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the build artifacts for the CodeBuild project.</p>
+     */
+    inline AwsCodeBuildProjectDetails& AddArtifacts(AwsCodeBuildProjectArtifactsDetails&& value) { m_artifactsHasBeenSet = true; m_artifacts.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -250,6 +294,37 @@ namespace Model
 
 
     /**
+     * <p>Information about logs for the build project.</p>
+     */
+    inline const AwsCodeBuildProjectLogsConfigDetails& GetLogsConfig() const{ return m_logsConfig; }
+
+    /**
+     * <p>Information about logs for the build project.</p>
+     */
+    inline bool LogsConfigHasBeenSet() const { return m_logsConfigHasBeenSet; }
+
+    /**
+     * <p>Information about logs for the build project.</p>
+     */
+    inline void SetLogsConfig(const AwsCodeBuildProjectLogsConfigDetails& value) { m_logsConfigHasBeenSet = true; m_logsConfig = value; }
+
+    /**
+     * <p>Information about logs for the build project.</p>
+     */
+    inline void SetLogsConfig(AwsCodeBuildProjectLogsConfigDetails&& value) { m_logsConfigHasBeenSet = true; m_logsConfig = std::move(value); }
+
+    /**
+     * <p>Information about logs for the build project.</p>
+     */
+    inline AwsCodeBuildProjectDetails& WithLogsConfig(const AwsCodeBuildProjectLogsConfigDetails& value) { SetLogsConfig(value); return *this;}
+
+    /**
+     * <p>Information about logs for the build project.</p>
+     */
+    inline AwsCodeBuildProjectDetails& WithLogsConfig(AwsCodeBuildProjectLogsConfigDetails&& value) { SetLogsConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>Information about the VPC configuration that CodeBuild accesses.</p>
      */
     inline const AwsCodeBuildProjectVpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
@@ -284,6 +359,9 @@ namespace Model
     Aws::String m_encryptionKey;
     bool m_encryptionKeyHasBeenSet;
 
+    Aws::Vector<AwsCodeBuildProjectArtifactsDetails> m_artifacts;
+    bool m_artifactsHasBeenSet;
+
     AwsCodeBuildProjectEnvironment m_environment;
     bool m_environmentHasBeenSet;
 
@@ -295,6 +373,9 @@ namespace Model
 
     Aws::String m_serviceRole;
     bool m_serviceRoleHasBeenSet;
+
+    AwsCodeBuildProjectLogsConfigDetails m_logsConfig;
+    bool m_logsConfigHasBeenSet;
 
     AwsCodeBuildProjectVpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet;

@@ -347,29 +347,41 @@ namespace Model
 
     /**
      * <p>Determines whether Amazon Lex V2 should send audio responses to the client
-     * application. When this parameter if <code>false</code>, the client application
-     * needs to create responses for the user. </p>
+     * application. </p> <p>Set this field to false when the client is operating in a
+     * playback mode where audio responses are played to the user. If the client isn't
+     * operating in playback mode, such as a text chat application, set this to true so
+     * that Amazon Lex V2 doesn't wait for the prompt to finish playing on the
+     * client.</p>
      */
     inline bool GetDisablePlayback() const{ return m_disablePlayback; }
 
     /**
      * <p>Determines whether Amazon Lex V2 should send audio responses to the client
-     * application. When this parameter if <code>false</code>, the client application
-     * needs to create responses for the user. </p>
+     * application. </p> <p>Set this field to false when the client is operating in a
+     * playback mode where audio responses are played to the user. If the client isn't
+     * operating in playback mode, such as a text chat application, set this to true so
+     * that Amazon Lex V2 doesn't wait for the prompt to finish playing on the
+     * client.</p>
      */
     inline bool DisablePlaybackHasBeenSet() const { return m_disablePlaybackHasBeenSet; }
 
     /**
      * <p>Determines whether Amazon Lex V2 should send audio responses to the client
-     * application. When this parameter if <code>false</code>, the client application
-     * needs to create responses for the user. </p>
+     * application. </p> <p>Set this field to false when the client is operating in a
+     * playback mode where audio responses are played to the user. If the client isn't
+     * operating in playback mode, such as a text chat application, set this to true so
+     * that Amazon Lex V2 doesn't wait for the prompt to finish playing on the
+     * client.</p>
      */
     inline void SetDisablePlayback(bool value) { m_disablePlaybackHasBeenSet = true; m_disablePlayback = value; }
 
     /**
      * <p>Determines whether Amazon Lex V2 should send audio responses to the client
-     * application. When this parameter if <code>false</code>, the client application
-     * needs to create responses for the user. </p>
+     * application. </p> <p>Set this field to false when the client is operating in a
+     * playback mode where audio responses are played to the user. If the client isn't
+     * operating in playback mode, such as a text chat application, set this to true so
+     * that Amazon Lex V2 doesn't wait for the prompt to finish playing on the
+     * client.</p>
      */
     inline ConfigurationEvent& WithDisablePlayback(bool value) { SetDisablePlayback(value); return *this;}
 

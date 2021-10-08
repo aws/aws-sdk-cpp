@@ -77,33 +77,29 @@ namespace Model
 
     /**
      * <p>Specifies whether an intent's closing response is used. When this field is
-     * false, the closing response isn't sent to the user and no closing input from the
-     * user is used. If the <code>active</code> field isn't specified, the default is
-     * true.</p>
+     * false, the closing response isn't sent to the user. If the <code>active</code>
+     * field isn't specified, the default is true.</p>
      */
     inline bool GetActive() const{ return m_active; }
 
     /**
      * <p>Specifies whether an intent's closing response is used. When this field is
-     * false, the closing response isn't sent to the user and no closing input from the
-     * user is used. If the <code>active</code> field isn't specified, the default is
-     * true.</p>
+     * false, the closing response isn't sent to the user. If the <code>active</code>
+     * field isn't specified, the default is true.</p>
      */
     inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
 
     /**
      * <p>Specifies whether an intent's closing response is used. When this field is
-     * false, the closing response isn't sent to the user and no closing input from the
-     * user is used. If the <code>active</code> field isn't specified, the default is
-     * true.</p>
+     * false, the closing response isn't sent to the user. If the <code>active</code>
+     * field isn't specified, the default is true.</p>
      */
     inline void SetActive(bool value) { m_activeHasBeenSet = true; m_active = value; }
 
     /**
      * <p>Specifies whether an intent's closing response is used. When this field is
-     * false, the closing response isn't sent to the user and no closing input from the
-     * user is used. If the <code>active</code> field isn't specified, the default is
-     * true.</p>
+     * false, the closing response isn't sent to the user. If the <code>active</code>
+     * field isn't specified, the default is true.</p>
      */
     inline IntentClosingSetting& WithActive(bool value) { SetActive(value); return *this;}
 

@@ -18,12 +18,14 @@
 #include <aws/mediaconvert/model/CreatePresetResult.h>
 #include <aws/mediaconvert/model/CreateQueueResult.h>
 #include <aws/mediaconvert/model/DeleteJobTemplateResult.h>
+#include <aws/mediaconvert/model/DeletePolicyResult.h>
 #include <aws/mediaconvert/model/DeletePresetResult.h>
 #include <aws/mediaconvert/model/DeleteQueueResult.h>
 #include <aws/mediaconvert/model/DescribeEndpointsResult.h>
 #include <aws/mediaconvert/model/DisassociateCertificateResult.h>
 #include <aws/mediaconvert/model/GetJobResult.h>
 #include <aws/mediaconvert/model/GetJobTemplateResult.h>
+#include <aws/mediaconvert/model/GetPolicyResult.h>
 #include <aws/mediaconvert/model/GetPresetResult.h>
 #include <aws/mediaconvert/model/GetQueueResult.h>
 #include <aws/mediaconvert/model/ListJobTemplatesResult.h>
@@ -31,6 +33,7 @@
 #include <aws/mediaconvert/model/ListPresetsResult.h>
 #include <aws/mediaconvert/model/ListQueuesResult.h>
 #include <aws/mediaconvert/model/ListTagsForResourceResult.h>
+#include <aws/mediaconvert/model/PutPolicyResult.h>
 #include <aws/mediaconvert/model/TagResourceResult.h>
 #include <aws/mediaconvert/model/UntagResourceResult.h>
 #include <aws/mediaconvert/model/UpdateJobTemplateResult.h>
@@ -82,12 +85,14 @@ namespace Model
         class CreatePresetRequest;
         class CreateQueueRequest;
         class DeleteJobTemplateRequest;
+        class DeletePolicyRequest;
         class DeletePresetRequest;
         class DeleteQueueRequest;
         class DescribeEndpointsRequest;
         class DisassociateCertificateRequest;
         class GetJobRequest;
         class GetJobTemplateRequest;
+        class GetPolicyRequest;
         class GetPresetRequest;
         class GetQueueRequest;
         class ListJobTemplatesRequest;
@@ -95,6 +100,7 @@ namespace Model
         class ListPresetsRequest;
         class ListQueuesRequest;
         class ListTagsForResourceRequest;
+        class PutPolicyRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateJobTemplateRequest;
@@ -108,12 +114,14 @@ namespace Model
         typedef Aws::Utils::Outcome<CreatePresetResult, MediaConvertError> CreatePresetOutcome;
         typedef Aws::Utils::Outcome<CreateQueueResult, MediaConvertError> CreateQueueOutcome;
         typedef Aws::Utils::Outcome<DeleteJobTemplateResult, MediaConvertError> DeleteJobTemplateOutcome;
+        typedef Aws::Utils::Outcome<DeletePolicyResult, MediaConvertError> DeletePolicyOutcome;
         typedef Aws::Utils::Outcome<DeletePresetResult, MediaConvertError> DeletePresetOutcome;
         typedef Aws::Utils::Outcome<DeleteQueueResult, MediaConvertError> DeleteQueueOutcome;
         typedef Aws::Utils::Outcome<DescribeEndpointsResult, MediaConvertError> DescribeEndpointsOutcome;
         typedef Aws::Utils::Outcome<DisassociateCertificateResult, MediaConvertError> DisassociateCertificateOutcome;
         typedef Aws::Utils::Outcome<GetJobResult, MediaConvertError> GetJobOutcome;
         typedef Aws::Utils::Outcome<GetJobTemplateResult, MediaConvertError> GetJobTemplateOutcome;
+        typedef Aws::Utils::Outcome<GetPolicyResult, MediaConvertError> GetPolicyOutcome;
         typedef Aws::Utils::Outcome<GetPresetResult, MediaConvertError> GetPresetOutcome;
         typedef Aws::Utils::Outcome<GetQueueResult, MediaConvertError> GetQueueOutcome;
         typedef Aws::Utils::Outcome<ListJobTemplatesResult, MediaConvertError> ListJobTemplatesOutcome;
@@ -121,6 +129,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListPresetsResult, MediaConvertError> ListPresetsOutcome;
         typedef Aws::Utils::Outcome<ListQueuesResult, MediaConvertError> ListQueuesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, MediaConvertError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<PutPolicyResult, MediaConvertError> PutPolicyOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, MediaConvertError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, MediaConvertError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateJobTemplateResult, MediaConvertError> UpdateJobTemplateOutcome;
@@ -134,12 +143,14 @@ namespace Model
         typedef std::future<CreatePresetOutcome> CreatePresetOutcomeCallable;
         typedef std::future<CreateQueueOutcome> CreateQueueOutcomeCallable;
         typedef std::future<DeleteJobTemplateOutcome> DeleteJobTemplateOutcomeCallable;
+        typedef std::future<DeletePolicyOutcome> DeletePolicyOutcomeCallable;
         typedef std::future<DeletePresetOutcome> DeletePresetOutcomeCallable;
         typedef std::future<DeleteQueueOutcome> DeleteQueueOutcomeCallable;
         typedef std::future<DescribeEndpointsOutcome> DescribeEndpointsOutcomeCallable;
         typedef std::future<DisassociateCertificateOutcome> DisassociateCertificateOutcomeCallable;
         typedef std::future<GetJobOutcome> GetJobOutcomeCallable;
         typedef std::future<GetJobTemplateOutcome> GetJobTemplateOutcomeCallable;
+        typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
         typedef std::future<GetPresetOutcome> GetPresetOutcomeCallable;
         typedef std::future<GetQueueOutcome> GetQueueOutcomeCallable;
         typedef std::future<ListJobTemplatesOutcome> ListJobTemplatesOutcomeCallable;
@@ -147,6 +158,7 @@ namespace Model
         typedef std::future<ListPresetsOutcome> ListPresetsOutcomeCallable;
         typedef std::future<ListQueuesOutcome> ListQueuesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<PutPolicyOutcome> PutPolicyOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateJobTemplateOutcome> UpdateJobTemplateOutcomeCallable;
@@ -163,12 +175,14 @@ namespace Model
     typedef std::function<void(const MediaConvertClient*, const Model::CreatePresetRequest&, const Model::CreatePresetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePresetResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::CreateQueueRequest&, const Model::CreateQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQueueResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::DeleteJobTemplateRequest&, const Model::DeleteJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobTemplateResponseReceivedHandler;
+    typedef std::function<void(const MediaConvertClient*, const Model::DeletePolicyRequest&, const Model::DeletePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePolicyResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::DeletePresetRequest&, const Model::DeletePresetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePresetResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::DeleteQueueRequest&, const Model::DeleteQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQueueResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::DescribeEndpointsRequest&, const Model::DescribeEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointsResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::DisassociateCertificateRequest&, const Model::DisassociateCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateCertificateResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::GetJobRequest&, const Model::GetJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::GetJobTemplateRequest&, const Model::GetJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobTemplateResponseReceivedHandler;
+    typedef std::function<void(const MediaConvertClient*, const Model::GetPolicyRequest&, const Model::GetPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPolicyResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::GetPresetRequest&, const Model::GetPresetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPresetResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::GetQueueRequest&, const Model::GetQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueueResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::ListJobTemplatesRequest&, const Model::ListJobTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobTemplatesResponseReceivedHandler;
@@ -176,6 +190,7 @@ namespace Model
     typedef std::function<void(const MediaConvertClient*, const Model::ListPresetsRequest&, const Model::ListPresetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPresetsResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::ListQueuesRequest&, const Model::ListQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueuesResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const MediaConvertClient*, const Model::PutPolicyRequest&, const Model::PutPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPolicyResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::UpdateJobTemplateRequest&, const Model::UpdateJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobTemplateResponseReceivedHandler;
@@ -427,6 +442,31 @@ namespace Model
         virtual void DeleteJobTemplateAsync(const Model::DeleteJobTemplateRequest& request, const DeleteJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Permanently delete a policy that you created.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DeletePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePolicyOutcome DeletePolicy(const Model::DeletePolicyRequest& request) const;
+
+        /**
+         * Permanently delete a policy that you created.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DeletePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeletePolicyOutcomeCallable DeletePolicyCallable(const Model::DeletePolicyRequest& request) const;
+
+        /**
+         * Permanently delete a policy that you created.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DeletePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeletePolicyAsync(const Model::DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Permanently delete a preset you have created.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DeletePreset">AWS
          * API Reference</a></p>
@@ -587,6 +627,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetJobTemplateAsync(const Model::GetJobTemplateRequest& request, const GetJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Retrieve the JSON for your policy.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPolicyOutcome GetPolicy(const Model::GetPolicyRequest& request) const;
+
+        /**
+         * Retrieve the JSON for your policy.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPolicyOutcomeCallable GetPolicyCallable(const Model::GetPolicyRequest& request) const;
+
+        /**
+         * Retrieve the JSON for your policy.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPolicyAsync(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Retrieve the JSON for a specific preset.<p><h3>See Also:</h3>   <a
@@ -800,6 +865,40 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Create or change your policy. For more information about policies, see the user
+         * guide at
+         * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/PutPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutPolicyOutcome PutPolicy(const Model::PutPolicyRequest& request) const;
+
+        /**
+         * Create or change your policy. For more information about policies, see the user
+         * guide at
+         * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/PutPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutPolicyOutcomeCallable PutPolicyCallable(const Model::PutPolicyRequest& request) const;
+
+        /**
+         * Create or change your policy. For more information about policies, see the user
+         * guide at
+         * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/PutPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutPolicyAsync(const Model::PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Add tags to a MediaConvert queue, preset, or job template. For information about
          * tagging, see the User Guide at
          * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html<p><h3>See
@@ -953,12 +1052,14 @@ namespace Model
         void CreatePresetAsyncHelper(const Model::CreatePresetRequest& request, const CreatePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateQueueAsyncHelper(const Model::CreateQueueRequest& request, const CreateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteJobTemplateAsyncHelper(const Model::DeleteJobTemplateRequest& request, const DeleteJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeletePolicyAsyncHelper(const Model::DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePresetAsyncHelper(const Model::DeletePresetRequest& request, const DeletePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteQueueAsyncHelper(const Model::DeleteQueueRequest& request, const DeleteQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEndpointsAsyncHelper(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateCertificateAsyncHelper(const Model::DisassociateCertificateRequest& request, const DisassociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJobAsyncHelper(const Model::GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJobTemplateAsyncHelper(const Model::GetJobTemplateRequest& request, const GetJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetPolicyAsyncHelper(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPresetAsyncHelper(const Model::GetPresetRequest& request, const GetPresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetQueueAsyncHelper(const Model::GetQueueRequest& request, const GetQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobTemplatesAsyncHelper(const Model::ListJobTemplatesRequest& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -966,6 +1067,7 @@ namespace Model
         void ListPresetsAsyncHelper(const Model::ListPresetsRequest& request, const ListPresetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListQueuesAsyncHelper(const Model::ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutPolicyAsyncHelper(const Model::PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateJobTemplateAsyncHelper(const Model::UpdateJobTemplateRequest& request, const UpdateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

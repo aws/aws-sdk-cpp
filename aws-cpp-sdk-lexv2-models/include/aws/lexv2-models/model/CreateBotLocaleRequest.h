@@ -261,9 +261,9 @@ namespace Model
      * for the bot.</p> <p>For example, suppose a bot is configured with the confidence
      * threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns
      * three alternative intents with the following confidence scores: IntentA (0.70),
-     * IntentB (0.60), IntentC (0.50). The response from the PostText operation would
-     * be:</p> <ul> <li> <p>AMAZON.FallbackIntent</p> </li> <li> <p>IntentA</p> </li>
-     * <li> <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
+     * IntentB (0.60), IntentC (0.50). The response from the <code>RecognizeText</code>
+     * operation would be:</p> <ul> <li> <p>AMAZON.FallbackIntent</p> </li> <li>
+     * <p>IntentA</p> </li> <li> <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
      */
     inline double GetNluIntentConfidenceThreshold() const{ return m_nluIntentConfidenceThreshold; }
 
@@ -275,9 +275,9 @@ namespace Model
      * for the bot.</p> <p>For example, suppose a bot is configured with the confidence
      * threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns
      * three alternative intents with the following confidence scores: IntentA (0.70),
-     * IntentB (0.60), IntentC (0.50). The response from the PostText operation would
-     * be:</p> <ul> <li> <p>AMAZON.FallbackIntent</p> </li> <li> <p>IntentA</p> </li>
-     * <li> <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
+     * IntentB (0.60), IntentC (0.50). The response from the <code>RecognizeText</code>
+     * operation would be:</p> <ul> <li> <p>AMAZON.FallbackIntent</p> </li> <li>
+     * <p>IntentA</p> </li> <li> <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
      */
     inline bool NluIntentConfidenceThresholdHasBeenSet() const { return m_nluIntentConfidenceThresholdHasBeenSet; }
 
@@ -289,9 +289,9 @@ namespace Model
      * for the bot.</p> <p>For example, suppose a bot is configured with the confidence
      * threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns
      * three alternative intents with the following confidence scores: IntentA (0.70),
-     * IntentB (0.60), IntentC (0.50). The response from the PostText operation would
-     * be:</p> <ul> <li> <p>AMAZON.FallbackIntent</p> </li> <li> <p>IntentA</p> </li>
-     * <li> <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
+     * IntentB (0.60), IntentC (0.50). The response from the <code>RecognizeText</code>
+     * operation would be:</p> <ul> <li> <p>AMAZON.FallbackIntent</p> </li> <li>
+     * <p>IntentA</p> </li> <li> <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
      */
     inline void SetNluIntentConfidenceThreshold(double value) { m_nluIntentConfidenceThresholdHasBeenSet = true; m_nluIntentConfidenceThreshold = value; }
 
@@ -303,9 +303,9 @@ namespace Model
      * for the bot.</p> <p>For example, suppose a bot is configured with the confidence
      * threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns
      * three alternative intents with the following confidence scores: IntentA (0.70),
-     * IntentB (0.60), IntentC (0.50). The response from the PostText operation would
-     * be:</p> <ul> <li> <p>AMAZON.FallbackIntent</p> </li> <li> <p>IntentA</p> </li>
-     * <li> <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
+     * IntentB (0.60), IntentC (0.50). The response from the <code>RecognizeText</code>
+     * operation would be:</p> <ul> <li> <p>AMAZON.FallbackIntent</p> </li> <li>
+     * <p>IntentA</p> </li> <li> <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
      */
     inline CreateBotLocaleRequest& WithNluIntentConfidenceThreshold(double value) { SetNluIntentConfidenceThreshold(value); return *this;}
 
