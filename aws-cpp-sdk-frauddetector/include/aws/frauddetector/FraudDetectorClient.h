@@ -13,19 +13,23 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/frauddetector/model/BatchCreateVariableResult.h>
 #include <aws/frauddetector/model/BatchGetVariableResult.h>
+#include <aws/frauddetector/model/CancelBatchImportJobResult.h>
 #include <aws/frauddetector/model/CancelBatchPredictionJobResult.h>
+#include <aws/frauddetector/model/CreateBatchImportJobResult.h>
 #include <aws/frauddetector/model/CreateBatchPredictionJobResult.h>
 #include <aws/frauddetector/model/CreateDetectorVersionResult.h>
 #include <aws/frauddetector/model/CreateModelResult.h>
 #include <aws/frauddetector/model/CreateModelVersionResult.h>
 #include <aws/frauddetector/model/CreateRuleResult.h>
 #include <aws/frauddetector/model/CreateVariableResult.h>
+#include <aws/frauddetector/model/DeleteBatchImportJobResult.h>
 #include <aws/frauddetector/model/DeleteBatchPredictionJobResult.h>
 #include <aws/frauddetector/model/DeleteDetectorResult.h>
 #include <aws/frauddetector/model/DeleteDetectorVersionResult.h>
 #include <aws/frauddetector/model/DeleteEntityTypeResult.h>
 #include <aws/frauddetector/model/DeleteEventResult.h>
 #include <aws/frauddetector/model/DeleteEventTypeResult.h>
+#include <aws/frauddetector/model/DeleteEventsByEventTypeResult.h>
 #include <aws/frauddetector/model/DeleteExternalModelResult.h>
 #include <aws/frauddetector/model/DeleteLabelResult.h>
 #include <aws/frauddetector/model/DeleteModelResult.h>
@@ -35,10 +39,13 @@
 #include <aws/frauddetector/model/DeleteVariableResult.h>
 #include <aws/frauddetector/model/DescribeDetectorResult.h>
 #include <aws/frauddetector/model/DescribeModelVersionsResult.h>
+#include <aws/frauddetector/model/GetBatchImportJobsResult.h>
 #include <aws/frauddetector/model/GetBatchPredictionJobsResult.h>
+#include <aws/frauddetector/model/GetDeleteEventsByEventTypeStatusResult.h>
 #include <aws/frauddetector/model/GetDetectorVersionResult.h>
 #include <aws/frauddetector/model/GetDetectorsResult.h>
 #include <aws/frauddetector/model/GetEntityTypesResult.h>
+#include <aws/frauddetector/model/GetEventResult.h>
 #include <aws/frauddetector/model/GetEventPredictionResult.h>
 #include <aws/frauddetector/model/GetEventTypesResult.h>
 #include <aws/frauddetector/model/GetExternalModelsResult.h>
@@ -57,11 +64,13 @@
 #include <aws/frauddetector/model/PutKMSEncryptionKeyResult.h>
 #include <aws/frauddetector/model/PutLabelResult.h>
 #include <aws/frauddetector/model/PutOutcomeResult.h>
+#include <aws/frauddetector/model/SendEventResult.h>
 #include <aws/frauddetector/model/TagResourceResult.h>
 #include <aws/frauddetector/model/UntagResourceResult.h>
 #include <aws/frauddetector/model/UpdateDetectorVersionResult.h>
 #include <aws/frauddetector/model/UpdateDetectorVersionMetadataResult.h>
 #include <aws/frauddetector/model/UpdateDetectorVersionStatusResult.h>
+#include <aws/frauddetector/model/UpdateEventLabelResult.h>
 #include <aws/frauddetector/model/UpdateModelResult.h>
 #include <aws/frauddetector/model/UpdateModelVersionResult.h>
 #include <aws/frauddetector/model/UpdateModelVersionStatusResult.h>
@@ -109,19 +118,23 @@ namespace Model
 {
         class BatchCreateVariableRequest;
         class BatchGetVariableRequest;
+        class CancelBatchImportJobRequest;
         class CancelBatchPredictionJobRequest;
+        class CreateBatchImportJobRequest;
         class CreateBatchPredictionJobRequest;
         class CreateDetectorVersionRequest;
         class CreateModelRequest;
         class CreateModelVersionRequest;
         class CreateRuleRequest;
         class CreateVariableRequest;
+        class DeleteBatchImportJobRequest;
         class DeleteBatchPredictionJobRequest;
         class DeleteDetectorRequest;
         class DeleteDetectorVersionRequest;
         class DeleteEntityTypeRequest;
         class DeleteEventRequest;
         class DeleteEventTypeRequest;
+        class DeleteEventsByEventTypeRequest;
         class DeleteExternalModelRequest;
         class DeleteLabelRequest;
         class DeleteModelRequest;
@@ -131,10 +144,13 @@ namespace Model
         class DeleteVariableRequest;
         class DescribeDetectorRequest;
         class DescribeModelVersionsRequest;
+        class GetBatchImportJobsRequest;
         class GetBatchPredictionJobsRequest;
+        class GetDeleteEventsByEventTypeStatusRequest;
         class GetDetectorVersionRequest;
         class GetDetectorsRequest;
         class GetEntityTypesRequest;
+        class GetEventRequest;
         class GetEventPredictionRequest;
         class GetEventTypesRequest;
         class GetExternalModelsRequest;
@@ -152,11 +168,13 @@ namespace Model
         class PutKMSEncryptionKeyRequest;
         class PutLabelRequest;
         class PutOutcomeRequest;
+        class SendEventRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateDetectorVersionRequest;
         class UpdateDetectorVersionMetadataRequest;
         class UpdateDetectorVersionStatusRequest;
+        class UpdateEventLabelRequest;
         class UpdateModelRequest;
         class UpdateModelVersionRequest;
         class UpdateModelVersionStatusRequest;
@@ -166,19 +184,23 @@ namespace Model
 
         typedef Aws::Utils::Outcome<BatchCreateVariableResult, FraudDetectorError> BatchCreateVariableOutcome;
         typedef Aws::Utils::Outcome<BatchGetVariableResult, FraudDetectorError> BatchGetVariableOutcome;
+        typedef Aws::Utils::Outcome<CancelBatchImportJobResult, FraudDetectorError> CancelBatchImportJobOutcome;
         typedef Aws::Utils::Outcome<CancelBatchPredictionJobResult, FraudDetectorError> CancelBatchPredictionJobOutcome;
+        typedef Aws::Utils::Outcome<CreateBatchImportJobResult, FraudDetectorError> CreateBatchImportJobOutcome;
         typedef Aws::Utils::Outcome<CreateBatchPredictionJobResult, FraudDetectorError> CreateBatchPredictionJobOutcome;
         typedef Aws::Utils::Outcome<CreateDetectorVersionResult, FraudDetectorError> CreateDetectorVersionOutcome;
         typedef Aws::Utils::Outcome<CreateModelResult, FraudDetectorError> CreateModelOutcome;
         typedef Aws::Utils::Outcome<CreateModelVersionResult, FraudDetectorError> CreateModelVersionOutcome;
         typedef Aws::Utils::Outcome<CreateRuleResult, FraudDetectorError> CreateRuleOutcome;
         typedef Aws::Utils::Outcome<CreateVariableResult, FraudDetectorError> CreateVariableOutcome;
+        typedef Aws::Utils::Outcome<DeleteBatchImportJobResult, FraudDetectorError> DeleteBatchImportJobOutcome;
         typedef Aws::Utils::Outcome<DeleteBatchPredictionJobResult, FraudDetectorError> DeleteBatchPredictionJobOutcome;
         typedef Aws::Utils::Outcome<DeleteDetectorResult, FraudDetectorError> DeleteDetectorOutcome;
         typedef Aws::Utils::Outcome<DeleteDetectorVersionResult, FraudDetectorError> DeleteDetectorVersionOutcome;
         typedef Aws::Utils::Outcome<DeleteEntityTypeResult, FraudDetectorError> DeleteEntityTypeOutcome;
         typedef Aws::Utils::Outcome<DeleteEventResult, FraudDetectorError> DeleteEventOutcome;
         typedef Aws::Utils::Outcome<DeleteEventTypeResult, FraudDetectorError> DeleteEventTypeOutcome;
+        typedef Aws::Utils::Outcome<DeleteEventsByEventTypeResult, FraudDetectorError> DeleteEventsByEventTypeOutcome;
         typedef Aws::Utils::Outcome<DeleteExternalModelResult, FraudDetectorError> DeleteExternalModelOutcome;
         typedef Aws::Utils::Outcome<DeleteLabelResult, FraudDetectorError> DeleteLabelOutcome;
         typedef Aws::Utils::Outcome<DeleteModelResult, FraudDetectorError> DeleteModelOutcome;
@@ -188,10 +210,13 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteVariableResult, FraudDetectorError> DeleteVariableOutcome;
         typedef Aws::Utils::Outcome<DescribeDetectorResult, FraudDetectorError> DescribeDetectorOutcome;
         typedef Aws::Utils::Outcome<DescribeModelVersionsResult, FraudDetectorError> DescribeModelVersionsOutcome;
+        typedef Aws::Utils::Outcome<GetBatchImportJobsResult, FraudDetectorError> GetBatchImportJobsOutcome;
         typedef Aws::Utils::Outcome<GetBatchPredictionJobsResult, FraudDetectorError> GetBatchPredictionJobsOutcome;
+        typedef Aws::Utils::Outcome<GetDeleteEventsByEventTypeStatusResult, FraudDetectorError> GetDeleteEventsByEventTypeStatusOutcome;
         typedef Aws::Utils::Outcome<GetDetectorVersionResult, FraudDetectorError> GetDetectorVersionOutcome;
         typedef Aws::Utils::Outcome<GetDetectorsResult, FraudDetectorError> GetDetectorsOutcome;
         typedef Aws::Utils::Outcome<GetEntityTypesResult, FraudDetectorError> GetEntityTypesOutcome;
+        typedef Aws::Utils::Outcome<GetEventResult, FraudDetectorError> GetEventOutcome;
         typedef Aws::Utils::Outcome<GetEventPredictionResult, FraudDetectorError> GetEventPredictionOutcome;
         typedef Aws::Utils::Outcome<GetEventTypesResult, FraudDetectorError> GetEventTypesOutcome;
         typedef Aws::Utils::Outcome<GetExternalModelsResult, FraudDetectorError> GetExternalModelsOutcome;
@@ -210,11 +235,13 @@ namespace Model
         typedef Aws::Utils::Outcome<PutKMSEncryptionKeyResult, FraudDetectorError> PutKMSEncryptionKeyOutcome;
         typedef Aws::Utils::Outcome<PutLabelResult, FraudDetectorError> PutLabelOutcome;
         typedef Aws::Utils::Outcome<PutOutcomeResult, FraudDetectorError> PutOutcomeOutcome;
+        typedef Aws::Utils::Outcome<SendEventResult, FraudDetectorError> SendEventOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, FraudDetectorError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, FraudDetectorError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateDetectorVersionResult, FraudDetectorError> UpdateDetectorVersionOutcome;
         typedef Aws::Utils::Outcome<UpdateDetectorVersionMetadataResult, FraudDetectorError> UpdateDetectorVersionMetadataOutcome;
         typedef Aws::Utils::Outcome<UpdateDetectorVersionStatusResult, FraudDetectorError> UpdateDetectorVersionStatusOutcome;
+        typedef Aws::Utils::Outcome<UpdateEventLabelResult, FraudDetectorError> UpdateEventLabelOutcome;
         typedef Aws::Utils::Outcome<UpdateModelResult, FraudDetectorError> UpdateModelOutcome;
         typedef Aws::Utils::Outcome<UpdateModelVersionResult, FraudDetectorError> UpdateModelVersionOutcome;
         typedef Aws::Utils::Outcome<UpdateModelVersionStatusResult, FraudDetectorError> UpdateModelVersionStatusOutcome;
@@ -224,19 +251,23 @@ namespace Model
 
         typedef std::future<BatchCreateVariableOutcome> BatchCreateVariableOutcomeCallable;
         typedef std::future<BatchGetVariableOutcome> BatchGetVariableOutcomeCallable;
+        typedef std::future<CancelBatchImportJobOutcome> CancelBatchImportJobOutcomeCallable;
         typedef std::future<CancelBatchPredictionJobOutcome> CancelBatchPredictionJobOutcomeCallable;
+        typedef std::future<CreateBatchImportJobOutcome> CreateBatchImportJobOutcomeCallable;
         typedef std::future<CreateBatchPredictionJobOutcome> CreateBatchPredictionJobOutcomeCallable;
         typedef std::future<CreateDetectorVersionOutcome> CreateDetectorVersionOutcomeCallable;
         typedef std::future<CreateModelOutcome> CreateModelOutcomeCallable;
         typedef std::future<CreateModelVersionOutcome> CreateModelVersionOutcomeCallable;
         typedef std::future<CreateRuleOutcome> CreateRuleOutcomeCallable;
         typedef std::future<CreateVariableOutcome> CreateVariableOutcomeCallable;
+        typedef std::future<DeleteBatchImportJobOutcome> DeleteBatchImportJobOutcomeCallable;
         typedef std::future<DeleteBatchPredictionJobOutcome> DeleteBatchPredictionJobOutcomeCallable;
         typedef std::future<DeleteDetectorOutcome> DeleteDetectorOutcomeCallable;
         typedef std::future<DeleteDetectorVersionOutcome> DeleteDetectorVersionOutcomeCallable;
         typedef std::future<DeleteEntityTypeOutcome> DeleteEntityTypeOutcomeCallable;
         typedef std::future<DeleteEventOutcome> DeleteEventOutcomeCallable;
         typedef std::future<DeleteEventTypeOutcome> DeleteEventTypeOutcomeCallable;
+        typedef std::future<DeleteEventsByEventTypeOutcome> DeleteEventsByEventTypeOutcomeCallable;
         typedef std::future<DeleteExternalModelOutcome> DeleteExternalModelOutcomeCallable;
         typedef std::future<DeleteLabelOutcome> DeleteLabelOutcomeCallable;
         typedef std::future<DeleteModelOutcome> DeleteModelOutcomeCallable;
@@ -246,10 +277,13 @@ namespace Model
         typedef std::future<DeleteVariableOutcome> DeleteVariableOutcomeCallable;
         typedef std::future<DescribeDetectorOutcome> DescribeDetectorOutcomeCallable;
         typedef std::future<DescribeModelVersionsOutcome> DescribeModelVersionsOutcomeCallable;
+        typedef std::future<GetBatchImportJobsOutcome> GetBatchImportJobsOutcomeCallable;
         typedef std::future<GetBatchPredictionJobsOutcome> GetBatchPredictionJobsOutcomeCallable;
+        typedef std::future<GetDeleteEventsByEventTypeStatusOutcome> GetDeleteEventsByEventTypeStatusOutcomeCallable;
         typedef std::future<GetDetectorVersionOutcome> GetDetectorVersionOutcomeCallable;
         typedef std::future<GetDetectorsOutcome> GetDetectorsOutcomeCallable;
         typedef std::future<GetEntityTypesOutcome> GetEntityTypesOutcomeCallable;
+        typedef std::future<GetEventOutcome> GetEventOutcomeCallable;
         typedef std::future<GetEventPredictionOutcome> GetEventPredictionOutcomeCallable;
         typedef std::future<GetEventTypesOutcome> GetEventTypesOutcomeCallable;
         typedef std::future<GetExternalModelsOutcome> GetExternalModelsOutcomeCallable;
@@ -268,11 +302,13 @@ namespace Model
         typedef std::future<PutKMSEncryptionKeyOutcome> PutKMSEncryptionKeyOutcomeCallable;
         typedef std::future<PutLabelOutcome> PutLabelOutcomeCallable;
         typedef std::future<PutOutcomeOutcome> PutOutcomeOutcomeCallable;
+        typedef std::future<SendEventOutcome> SendEventOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateDetectorVersionOutcome> UpdateDetectorVersionOutcomeCallable;
         typedef std::future<UpdateDetectorVersionMetadataOutcome> UpdateDetectorVersionMetadataOutcomeCallable;
         typedef std::future<UpdateDetectorVersionStatusOutcome> UpdateDetectorVersionStatusOutcomeCallable;
+        typedef std::future<UpdateEventLabelOutcome> UpdateEventLabelOutcomeCallable;
         typedef std::future<UpdateModelOutcome> UpdateModelOutcomeCallable;
         typedef std::future<UpdateModelVersionOutcome> UpdateModelVersionOutcomeCallable;
         typedef std::future<UpdateModelVersionStatusOutcome> UpdateModelVersionStatusOutcomeCallable;
@@ -285,19 +321,23 @@ namespace Model
 
     typedef std::function<void(const FraudDetectorClient*, const Model::BatchCreateVariableRequest&, const Model::BatchCreateVariableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchCreateVariableResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::BatchGetVariableRequest&, const Model::BatchGetVariableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetVariableResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::CancelBatchImportJobRequest&, const Model::CancelBatchImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelBatchImportJobResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::CancelBatchPredictionJobRequest&, const Model::CancelBatchPredictionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelBatchPredictionJobResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::CreateBatchImportJobRequest&, const Model::CreateBatchImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBatchImportJobResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::CreateBatchPredictionJobRequest&, const Model::CreateBatchPredictionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBatchPredictionJobResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::CreateDetectorVersionRequest&, const Model::CreateDetectorVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDetectorVersionResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::CreateModelRequest&, const Model::CreateModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::CreateModelVersionRequest&, const Model::CreateModelVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelVersionResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::CreateRuleRequest&, const Model::CreateRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRuleResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::CreateVariableRequest&, const Model::CreateVariableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVariableResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::DeleteBatchImportJobRequest&, const Model::DeleteBatchImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBatchImportJobResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteBatchPredictionJobRequest&, const Model::DeleteBatchPredictionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBatchPredictionJobResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteDetectorRequest&, const Model::DeleteDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDetectorResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteDetectorVersionRequest&, const Model::DeleteDetectorVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDetectorVersionResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteEntityTypeRequest&, const Model::DeleteEntityTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEntityTypeResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteEventRequest&, const Model::DeleteEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteEventTypeRequest&, const Model::DeleteEventTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventTypeResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::DeleteEventsByEventTypeRequest&, const Model::DeleteEventsByEventTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventsByEventTypeResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteExternalModelRequest&, const Model::DeleteExternalModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteExternalModelResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteLabelRequest&, const Model::DeleteLabelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLabelResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteModelRequest&, const Model::DeleteModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelResponseReceivedHandler;
@@ -307,10 +347,13 @@ namespace Model
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteVariableRequest&, const Model::DeleteVariableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVariableResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DescribeDetectorRequest&, const Model::DescribeDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDetectorResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DescribeModelVersionsRequest&, const Model::DescribeModelVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelVersionsResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::GetBatchImportJobsRequest&, const Model::GetBatchImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBatchImportJobsResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetBatchPredictionJobsRequest&, const Model::GetBatchPredictionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBatchPredictionJobsResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::GetDeleteEventsByEventTypeStatusRequest&, const Model::GetDeleteEventsByEventTypeStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeleteEventsByEventTypeStatusResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetDetectorVersionRequest&, const Model::GetDetectorVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDetectorVersionResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetDetectorsRequest&, const Model::GetDetectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDetectorsResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetEntityTypesRequest&, const Model::GetEntityTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEntityTypesResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::GetEventRequest&, const Model::GetEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetEventPredictionRequest&, const Model::GetEventPredictionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventPredictionResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetEventTypesRequest&, const Model::GetEventTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventTypesResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetExternalModelsRequest&, const Model::GetExternalModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExternalModelsResponseReceivedHandler;
@@ -329,11 +372,13 @@ namespace Model
     typedef std::function<void(const FraudDetectorClient*, const Model::PutKMSEncryptionKeyRequest&, const Model::PutKMSEncryptionKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutKMSEncryptionKeyResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::PutLabelRequest&, const Model::PutLabelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLabelResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::PutOutcomeRequest&, const Model::PutOutcomeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutOutcomeResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::SendEventRequest&, const Model::SendEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendEventResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::UpdateDetectorVersionRequest&, const Model::UpdateDetectorVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDetectorVersionResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::UpdateDetectorVersionMetadataRequest&, const Model::UpdateDetectorVersionMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDetectorVersionMetadataResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::UpdateDetectorVersionStatusRequest&, const Model::UpdateDetectorVersionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDetectorVersionStatusResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::UpdateEventLabelRequest&, const Model::UpdateEventLabelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEventLabelResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::UpdateModelRequest&, const Model::UpdateModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateModelResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::UpdateModelVersionRequest&, const Model::UpdateModelVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateModelVersionResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::UpdateModelVersionStatusRequest&, const Model::UpdateModelVersionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateModelVersionStatusResponseReceivedHandler;
@@ -426,6 +471,31 @@ namespace Model
         virtual void BatchGetVariableAsync(const Model::BatchGetVariableRequest& request, const BatchGetVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Cancels an in-progress batch import job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CancelBatchImportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelBatchImportJobOutcome CancelBatchImportJob(const Model::CancelBatchImportJobRequest& request) const;
+
+        /**
+         * <p> Cancels an in-progress batch import job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CancelBatchImportJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CancelBatchImportJobOutcomeCallable CancelBatchImportJobCallable(const Model::CancelBatchImportJobRequest& request) const;
+
+        /**
+         * <p> Cancels an in-progress batch import job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CancelBatchImportJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CancelBatchImportJobAsync(const Model::CancelBatchImportJobRequest& request, const CancelBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Cancels the specified batch prediction job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CancelBatchPredictionJob">AWS
          * API Reference</a></p>
@@ -449,6 +519,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CancelBatchPredictionJobAsync(const Model::CancelBatchPredictionJobRequest& request, const CancelBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a batch import job. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateBatchImportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateBatchImportJobOutcome CreateBatchImportJob(const Model::CreateBatchImportJobRequest& request) const;
+
+        /**
+         * <p>Creates a batch import job. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateBatchImportJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateBatchImportJobOutcomeCallable CreateBatchImportJobCallable(const Model::CreateBatchImportJobRequest& request) const;
+
+        /**
+         * <p>Creates a batch import job. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateBatchImportJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateBatchImportJobAsync(const Model::CreateBatchImportJobRequest& request, const CreateBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a batch prediction job.</p><p><h3>See Also:</h3>   <a
@@ -608,6 +703,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateVariableAsync(const Model::CreateVariableRequest& request, const CreateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes data that was batch imported to Amazon Fraud Detector. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteBatchImportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteBatchImportJobOutcome DeleteBatchImportJob(const Model::DeleteBatchImportJobRequest& request) const;
+
+        /**
+         * <p>Deletes data that was batch imported to Amazon Fraud Detector. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteBatchImportJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteBatchImportJobOutcomeCallable DeleteBatchImportJobCallable(const Model::DeleteBatchImportJobRequest& request) const;
+
+        /**
+         * <p>Deletes data that was batch imported to Amazon Fraud Detector. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteBatchImportJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteBatchImportJobAsync(const Model::DeleteBatchImportJobRequest& request, const DeleteBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a batch prediction job.</p><p><h3>See Also:</h3>   <a
@@ -772,9 +895,9 @@ namespace Model
 
         /**
          * <p>Deletes an event type.</p> <p>You cannot delete an event type that is used in
-         * a detector or a model.</p> <p>When you delete an entity type, Amazon Fraud
-         * Detector permanently deletes that entity type and the data is no longer stored
-         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * a detector or a model.</p> <p>When you delete an event type, Amazon Fraud
+         * Detector permanently deletes that event type and the data is no longer stored in
+         * Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventType">AWS
          * API Reference</a></p>
          */
@@ -782,9 +905,9 @@ namespace Model
 
         /**
          * <p>Deletes an event type.</p> <p>You cannot delete an event type that is used in
-         * a detector or a model.</p> <p>When you delete an entity type, Amazon Fraud
-         * Detector permanently deletes that entity type and the data is no longer stored
-         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * a detector or a model.</p> <p>When you delete an event type, Amazon Fraud
+         * Detector permanently deletes that event type and the data is no longer stored in
+         * Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventType">AWS
          * API Reference</a></p>
          *
@@ -794,15 +917,40 @@ namespace Model
 
         /**
          * <p>Deletes an event type.</p> <p>You cannot delete an event type that is used in
-         * a detector or a model.</p> <p>When you delete an entity type, Amazon Fraud
-         * Detector permanently deletes that entity type and the data is no longer stored
-         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * a detector or a model.</p> <p>When you delete an event type, Amazon Fraud
+         * Detector permanently deletes that event type and the data is no longer stored in
+         * Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventType">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteEventTypeAsync(const Model::DeleteEventTypeRequest& request, const DeleteEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes all events of a particular event type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventsByEventType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteEventsByEventTypeOutcome DeleteEventsByEventType(const Model::DeleteEventsByEventTypeRequest& request) const;
+
+        /**
+         * <p>Deletes all events of a particular event type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventsByEventType">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteEventsByEventTypeOutcomeCallable DeleteEventsByEventTypeCallable(const Model::DeleteEventsByEventTypeRequest& request) const;
+
+        /**
+         * <p>Deletes all events of a particular event type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventsByEventType">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteEventsByEventTypeAsync(const Model::DeleteEventsByEventTypeRequest& request, const DeleteEventsByEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a SageMaker model from Amazon Fraud Detector.</p> <p>You can remove
@@ -1117,6 +1265,52 @@ namespace Model
         virtual void DescribeModelVersionsAsync(const Model::DescribeModelVersionsRequest& request, const DescribeModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets all batch import jobs or a specific job of the specified ID. This is a
+         * paginated API. If you provide a null <code>maxResults</code>, this action
+         * retrieves a maximum of 50 records per page. If you provide a
+         * <code>maxResults</code>, the value must be between 1 and 50. To get the next
+         * page results, provide the pagination token from the
+         * <code>GetBatchImportJobsResponse</code> as part of your request. A null
+         * pagination token fetches the records from the beginning.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetBatchImportJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetBatchImportJobsOutcome GetBatchImportJobs(const Model::GetBatchImportJobsRequest& request) const;
+
+        /**
+         * <p>Gets all batch import jobs or a specific job of the specified ID. This is a
+         * paginated API. If you provide a null <code>maxResults</code>, this action
+         * retrieves a maximum of 50 records per page. If you provide a
+         * <code>maxResults</code>, the value must be between 1 and 50. To get the next
+         * page results, provide the pagination token from the
+         * <code>GetBatchImportJobsResponse</code> as part of your request. A null
+         * pagination token fetches the records from the beginning.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetBatchImportJobs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetBatchImportJobsOutcomeCallable GetBatchImportJobsCallable(const Model::GetBatchImportJobsRequest& request) const;
+
+        /**
+         * <p>Gets all batch import jobs or a specific job of the specified ID. This is a
+         * paginated API. If you provide a null <code>maxResults</code>, this action
+         * retrieves a maximum of 50 records per page. If you provide a
+         * <code>maxResults</code>, the value must be between 1 and 50. To get the next
+         * page results, provide the pagination token from the
+         * <code>GetBatchImportJobsResponse</code> as part of your request. A null
+         * pagination token fetches the records from the beginning.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetBatchImportJobs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetBatchImportJobsAsync(const Model::GetBatchImportJobsRequest& request, const GetBatchImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets all batch prediction jobs or a specific job if you specify a job ID.
          * This is a paginated API. If you provide a null maxResults, this action retrieves
          * a maximum of 50 records per page. If you provide a maxResults, the value must be
@@ -1158,6 +1352,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetBatchPredictionJobsAsync(const Model::GetBatchPredictionJobsRequest& request, const GetBatchPredictionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the status of a <code>DeleteEventsByEventType</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetDeleteEventsByEventTypeStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDeleteEventsByEventTypeStatusOutcome GetDeleteEventsByEventTypeStatus(const Model::GetDeleteEventsByEventTypeStatusRequest& request) const;
+
+        /**
+         * <p>Retrieves the status of a <code>DeleteEventsByEventType</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetDeleteEventsByEventTypeStatus">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDeleteEventsByEventTypeStatusOutcomeCallable GetDeleteEventsByEventTypeStatusCallable(const Model::GetDeleteEventsByEventTypeStatusRequest& request) const;
+
+        /**
+         * <p>Retrieves the status of a <code>DeleteEventsByEventType</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetDeleteEventsByEventTypeStatus">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDeleteEventsByEventTypeStatusAsync(const Model::GetDeleteEventsByEventTypeStatusRequest& request, const GetDeleteEventsByEventTypeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a particular detector version. </p><p><h3>See Also:</h3>   <a
@@ -1269,6 +1491,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetEntityTypesAsync(const Model::GetEntityTypesRequest& request, const GetEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves details of events stored with Amazon Fraud Detector. This action
+         * does not retrieve prediction results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEvent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEventOutcome GetEvent(const Model::GetEventRequest& request) const;
+
+        /**
+         * <p>Retrieves details of events stored with Amazon Fraud Detector. This action
+         * does not retrieve prediction results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEvent">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetEventOutcomeCallable GetEventCallable(const Model::GetEventRequest& request) const;
+
+        /**
+         * <p>Retrieves details of events stored with Amazon Fraud Detector. This action
+         * does not retrieve prediction results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEvent">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetEventAsync(const Model::GetEventRequest& request, const GetEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Evaluates an event against a detector version. If a version ID is not
@@ -1388,18 +1638,16 @@ namespace Model
         virtual void GetExternalModelsAsync(const Model::GetExternalModelsRequest& request, const GetExternalModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the encryption key if a Key Management Service (KMS) customer master key
-         * (CMK) has been specified to be used to encrypt content in Amazon Fraud
-         * Detector.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the encryption key if a KMS key has been specified to be used to encrypt
+         * content in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetKMSEncryptionKey">AWS
          * API Reference</a></p>
          */
         virtual Model::GetKMSEncryptionKeyOutcome GetKMSEncryptionKey() const;
 
         /**
-         * <p>Gets the encryption key if a Key Management Service (KMS) customer master key
-         * (CMK) has been specified to be used to encrypt content in Amazon Fraud
-         * Detector.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the encryption key if a KMS key has been specified to be used to encrypt
+         * content in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetKMSEncryptionKey">AWS
          * API Reference</a></p>
          *
@@ -1408,9 +1656,8 @@ namespace Model
         virtual Model::GetKMSEncryptionKeyOutcomeCallable GetKMSEncryptionKeyCallable() const;
 
         /**
-         * <p>Gets the encryption key if a Key Management Service (KMS) customer master key
-         * (CMK) has been specified to be used to encrypt content in Amazon Fraud
-         * Detector.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the encryption key if a KMS key has been specified to be used to encrypt
+         * content in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetKMSEncryptionKey">AWS
          * API Reference</a></p>
          *
@@ -1840,16 +2087,16 @@ namespace Model
         virtual void PutExternalModelAsync(const Model::PutExternalModelRequest& request, const PutExternalModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Specifies the Key Management Service (KMS) customer master key (CMK) to be
-         * used to encrypt content in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * <p>Specifies the KMS key to be used to encrypt content in Amazon Fraud
+         * Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutKMSEncryptionKey">AWS
          * API Reference</a></p>
          */
         virtual Model::PutKMSEncryptionKeyOutcome PutKMSEncryptionKey(const Model::PutKMSEncryptionKeyRequest& request) const;
 
         /**
-         * <p>Specifies the Key Management Service (KMS) customer master key (CMK) to be
-         * used to encrypt content in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * <p>Specifies the KMS key to be used to encrypt content in Amazon Fraud
+         * Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutKMSEncryptionKey">AWS
          * API Reference</a></p>
          *
@@ -1858,8 +2105,8 @@ namespace Model
         virtual Model::PutKMSEncryptionKeyOutcomeCallable PutKMSEncryptionKeyCallable(const Model::PutKMSEncryptionKeyRequest& request) const;
 
         /**
-         * <p>Specifies the Key Management Service (KMS) customer master key (CMK) to be
-         * used to encrypt content in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * <p>Specifies the KMS key to be used to encrypt content in Amazon Fraud
+         * Detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutKMSEncryptionKey">AWS
          * API Reference</a></p>
          *
@@ -1922,6 +2169,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutOutcomeAsync(const Model::PutOutcomeRequest& request, const PutOutcomeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stores events in Amazon Fraud Detector without generating fraud predictions
+         * for those events. For example, you can use <code>SendEvent</code> to upload a
+         * historical dataset, which you can then later use to train a model.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/SendEvent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SendEventOutcome SendEvent(const Model::SendEventRequest& request) const;
+
+        /**
+         * <p>Stores events in Amazon Fraud Detector without generating fraud predictions
+         * for those events. For example, you can use <code>SendEvent</code> to upload a
+         * historical dataset, which you can then later use to train a model.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/SendEvent">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SendEventOutcomeCallable SendEventCallable(const Model::SendEventRequest& request) const;
+
+        /**
+         * <p>Stores events in Amazon Fraud Detector without generating fraud predictions
+         * for those events. For example, you can use <code>SendEvent</code> to upload a
+         * historical dataset, which you can then later use to train a model.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/SendEvent">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SendEventAsync(const Model::SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns tags to a resource.</p><p><h3>See Also:</h3>   <a
@@ -2076,16 +2357,39 @@ namespace Model
         virtual void UpdateDetectorVersionStatusAsync(const Model::UpdateDetectorVersionStatusRequest& request, const UpdateDetectorVersionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a model. You can update the description attribute using this
-         * action.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified event with a new label.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateEventLabel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateEventLabelOutcome UpdateEventLabel(const Model::UpdateEventLabelRequest& request) const;
+
+        /**
+         * <p>Updates the specified event with a new label.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateEventLabel">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateEventLabelOutcomeCallable UpdateEventLabelCallable(const Model::UpdateEventLabelRequest& request) const;
+
+        /**
+         * <p>Updates the specified event with a new label.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateEventLabel">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateEventLabelAsync(const Model::UpdateEventLabelRequest& request, const UpdateEventLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates model description.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModel">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateModelOutcome UpdateModel(const Model::UpdateModelRequest& request) const;
 
         /**
-         * <p>Updates a model. You can update the description attribute using this
-         * action.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates model description.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModel">AWS
          * API Reference</a></p>
          *
@@ -2094,8 +2398,7 @@ namespace Model
         virtual Model::UpdateModelOutcomeCallable UpdateModelCallable(const Model::UpdateModelRequest& request) const;
 
         /**
-         * <p>Updates a model. You can update the description attribute using this
-         * action.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates model description.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModel">AWS
          * API Reference</a></p>
          *
@@ -2146,7 +2449,7 @@ namespace Model
         /**
          * <p>Updates the status of a model version.</p> <p>You can perform the following
          * status updates:</p> <ol> <li> <p>Change the <code>TRAINING_COMPLETE</code>
-         * status to <code>ACTIVE</code>.</p> </li> <li> <p>Change <code>ACTIVE</code>to
+         * status to <code>ACTIVE</code>.</p> </li> <li> <p>Change <code>ACTIVE</code> to
          * <code>INACTIVE</code>.</p> </li> </ol><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModelVersionStatus">AWS
          * API Reference</a></p>
@@ -2156,7 +2459,7 @@ namespace Model
         /**
          * <p>Updates the status of a model version.</p> <p>You can perform the following
          * status updates:</p> <ol> <li> <p>Change the <code>TRAINING_COMPLETE</code>
-         * status to <code>ACTIVE</code>.</p> </li> <li> <p>Change <code>ACTIVE</code>to
+         * status to <code>ACTIVE</code>.</p> </li> <li> <p>Change <code>ACTIVE</code> to
          * <code>INACTIVE</code>.</p> </li> </ol><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModelVersionStatus">AWS
          * API Reference</a></p>
@@ -2168,7 +2471,7 @@ namespace Model
         /**
          * <p>Updates the status of a model version.</p> <p>You can perform the following
          * status updates:</p> <ol> <li> <p>Change the <code>TRAINING_COMPLETE</code>
-         * status to <code>ACTIVE</code>.</p> </li> <li> <p>Change <code>ACTIVE</code>to
+         * status to <code>ACTIVE</code>.</p> </li> <li> <p>Change <code>ACTIVE</code> to
          * <code>INACTIVE</code>.</p> </li> </ol><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModelVersionStatus">AWS
          * API Reference</a></p>
@@ -2267,19 +2570,23 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void BatchCreateVariableAsyncHelper(const Model::BatchCreateVariableRequest& request, const BatchCreateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetVariableAsyncHelper(const Model::BatchGetVariableRequest& request, const BatchGetVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CancelBatchImportJobAsyncHelper(const Model::CancelBatchImportJobRequest& request, const CancelBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelBatchPredictionJobAsyncHelper(const Model::CancelBatchPredictionJobRequest& request, const CancelBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateBatchImportJobAsyncHelper(const Model::CreateBatchImportJobRequest& request, const CreateBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBatchPredictionJobAsyncHelper(const Model::CreateBatchPredictionJobRequest& request, const CreateBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDetectorVersionAsyncHelper(const Model::CreateDetectorVersionRequest& request, const CreateDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateModelAsyncHelper(const Model::CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateModelVersionAsyncHelper(const Model::CreateModelVersionRequest& request, const CreateModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRuleAsyncHelper(const Model::CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateVariableAsyncHelper(const Model::CreateVariableRequest& request, const CreateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteBatchImportJobAsyncHelper(const Model::DeleteBatchImportJobRequest& request, const DeleteBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBatchPredictionJobAsyncHelper(const Model::DeleteBatchPredictionJobRequest& request, const DeleteBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDetectorAsyncHelper(const Model::DeleteDetectorRequest& request, const DeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDetectorVersionAsyncHelper(const Model::DeleteDetectorVersionRequest& request, const DeleteDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEntityTypeAsyncHelper(const Model::DeleteEntityTypeRequest& request, const DeleteEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventAsyncHelper(const Model::DeleteEventRequest& request, const DeleteEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventTypeAsyncHelper(const Model::DeleteEventTypeRequest& request, const DeleteEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteEventsByEventTypeAsyncHelper(const Model::DeleteEventsByEventTypeRequest& request, const DeleteEventsByEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteExternalModelAsyncHelper(const Model::DeleteExternalModelRequest& request, const DeleteExternalModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteLabelAsyncHelper(const Model::DeleteLabelRequest& request, const DeleteLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteModelAsyncHelper(const Model::DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2289,10 +2596,13 @@ namespace Model
         void DeleteVariableAsyncHelper(const Model::DeleteVariableRequest& request, const DeleteVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDetectorAsyncHelper(const Model::DescribeDetectorRequest& request, const DescribeDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeModelVersionsAsyncHelper(const Model::DescribeModelVersionsRequest& request, const DescribeModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetBatchImportJobsAsyncHelper(const Model::GetBatchImportJobsRequest& request, const GetBatchImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBatchPredictionJobsAsyncHelper(const Model::GetBatchPredictionJobsRequest& request, const GetBatchPredictionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDeleteEventsByEventTypeStatusAsyncHelper(const Model::GetDeleteEventsByEventTypeStatusRequest& request, const GetDeleteEventsByEventTypeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDetectorVersionAsyncHelper(const Model::GetDetectorVersionRequest& request, const GetDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDetectorsAsyncHelper(const Model::GetDetectorsRequest& request, const GetDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEntityTypesAsyncHelper(const Model::GetEntityTypesRequest& request, const GetEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetEventAsyncHelper(const Model::GetEventRequest& request, const GetEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEventPredictionAsyncHelper(const Model::GetEventPredictionRequest& request, const GetEventPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEventTypesAsyncHelper(const Model::GetEventTypesRequest& request, const GetEventTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetExternalModelsAsyncHelper(const Model::GetExternalModelsRequest& request, const GetExternalModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2311,11 +2621,13 @@ namespace Model
         void PutKMSEncryptionKeyAsyncHelper(const Model::PutKMSEncryptionKeyRequest& request, const PutKMSEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLabelAsyncHelper(const Model::PutLabelRequest& request, const PutLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutOutcomeAsyncHelper(const Model::PutOutcomeRequest& request, const PutOutcomeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SendEventAsyncHelper(const Model::SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDetectorVersionAsyncHelper(const Model::UpdateDetectorVersionRequest& request, const UpdateDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDetectorVersionMetadataAsyncHelper(const Model::UpdateDetectorVersionMetadataRequest& request, const UpdateDetectorVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDetectorVersionStatusAsyncHelper(const Model::UpdateDetectorVersionStatusRequest& request, const UpdateDetectorVersionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateEventLabelAsyncHelper(const Model::UpdateEventLabelRequest& request, const UpdateEventLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateModelAsyncHelper(const Model::UpdateModelRequest& request, const UpdateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateModelVersionAsyncHelper(const Model::UpdateModelVersionRequest& request, const UpdateModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateModelVersionStatusAsyncHelper(const Model::UpdateModelVersionStatusRequest& request, const UpdateModelVersionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

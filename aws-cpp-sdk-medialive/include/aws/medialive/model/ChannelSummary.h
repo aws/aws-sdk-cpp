@@ -612,32 +612,32 @@ one destination per
 
 
     /**
-     * Settings for VPC output
+     * Settings for any VPC outputs.
      */
     inline const VpcOutputSettingsDescription& GetVpc() const{ return m_vpc; }
 
     /**
-     * Settings for VPC output
+     * Settings for any VPC outputs.
      */
     inline bool VpcHasBeenSet() const { return m_vpcHasBeenSet; }
 
     /**
-     * Settings for VPC output
+     * Settings for any VPC outputs.
      */
     inline void SetVpc(const VpcOutputSettingsDescription& value) { m_vpcHasBeenSet = true; m_vpc = value; }
 
     /**
-     * Settings for VPC output
+     * Settings for any VPC outputs.
      */
     inline void SetVpc(VpcOutputSettingsDescription&& value) { m_vpcHasBeenSet = true; m_vpc = std::move(value); }
 
     /**
-     * Settings for VPC output
+     * Settings for any VPC outputs.
      */
     inline ChannelSummary& WithVpc(const VpcOutputSettingsDescription& value) { SetVpc(value); return *this;}
 
     /**
-     * Settings for VPC output
+     * Settings for any VPC outputs.
      */
     inline ChannelSummary& WithVpc(VpcOutputSettingsDescription&& value) { SetVpc(std::move(value)); return *this;}
 

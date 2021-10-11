@@ -395,7 +395,7 @@ SINGLE_PIPELINE - You can
      * Certain pull input sources can be dynamic, meaning that they can have their
      * URL's dynamically changes
 during input switch actions. Presently, this
-     * functionality only works with MP4_FILE inputs.
+     * functionality only works with MP4_FILE and TS_FILE inputs.
 
      */
     inline const InputSourceType& GetInputSourceType() const{ return m_inputSourceType; }
@@ -404,7 +404,7 @@ during input switch actions. Presently, this
      * Certain pull input sources can be dynamic, meaning that they can have their
      * URL's dynamically changes
 during input switch actions. Presently, this
-     * functionality only works with MP4_FILE inputs.
+     * functionality only works with MP4_FILE and TS_FILE inputs.
 
      */
     inline bool InputSourceTypeHasBeenSet() const { return m_inputSourceTypeHasBeenSet; }
@@ -413,7 +413,7 @@ during input switch actions. Presently, this
      * Certain pull input sources can be dynamic, meaning that they can have their
      * URL's dynamically changes
 during input switch actions. Presently, this
-     * functionality only works with MP4_FILE inputs.
+     * functionality only works with MP4_FILE and TS_FILE inputs.
 
      */
     inline void SetInputSourceType(const InputSourceType& value) { m_inputSourceTypeHasBeenSet = true; m_inputSourceType = value; }
@@ -422,7 +422,7 @@ during input switch actions. Presently, this
      * Certain pull input sources can be dynamic, meaning that they can have their
      * URL's dynamically changes
 during input switch actions. Presently, this
-     * functionality only works with MP4_FILE inputs.
+     * functionality only works with MP4_FILE and TS_FILE inputs.
 
      */
     inline void SetInputSourceType(InputSourceType&& value) { m_inputSourceTypeHasBeenSet = true; m_inputSourceType = std::move(value); }
@@ -431,7 +431,7 @@ during input switch actions. Presently, this
      * Certain pull input sources can be dynamic, meaning that they can have their
      * URL's dynamically changes
 during input switch actions. Presently, this
-     * functionality only works with MP4_FILE inputs.
+     * functionality only works with MP4_FILE and TS_FILE inputs.
 
      */
     inline Input& WithInputSourceType(const InputSourceType& value) { SetInputSourceType(value); return *this;}
@@ -440,7 +440,7 @@ during input switch actions. Presently, this
      * Certain pull input sources can be dynamic, meaning that they can have their
      * URL's dynamically changes
 during input switch actions. Presently, this
-     * functionality only works with MP4_FILE inputs.
+     * functionality only works with MP4_FILE and TS_FILE inputs.
 
      */
     inline Input& WithInputSourceType(InputSourceType&& value) { SetInputSourceType(std::move(value)); return *this;}

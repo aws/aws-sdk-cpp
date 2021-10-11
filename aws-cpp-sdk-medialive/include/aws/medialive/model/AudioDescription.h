@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/model/AudioType.h>
 #include <aws/medialive/model/AudioDescriptionAudioTypeControl.h>
+#include <aws/medialive/model/AudioWatermarkSettings.h>
 #include <aws/medialive/model/AudioCodecSettings.h>
 #include <aws/medialive/model/AudioDescriptionLanguageCodeControl.h>
 #include <aws/medialive/model/RemixSettings.h>
@@ -229,6 +230,43 @@ Note
      * broadcasterMixedAd.
      */
     inline AudioDescription& WithAudioTypeControl(AudioDescriptionAudioTypeControl&& value) { SetAudioTypeControl(std::move(value)); return *this;}
+
+
+    /**
+     * Settings to configure one or more solutions that insert audio watermarks in the
+     * audio encode
+     */
+    inline const AudioWatermarkSettings& GetAudioWatermarkingSettings() const{ return m_audioWatermarkingSettings; }
+
+    /**
+     * Settings to configure one or more solutions that insert audio watermarks in the
+     * audio encode
+     */
+    inline bool AudioWatermarkingSettingsHasBeenSet() const { return m_audioWatermarkingSettingsHasBeenSet; }
+
+    /**
+     * Settings to configure one or more solutions that insert audio watermarks in the
+     * audio encode
+     */
+    inline void SetAudioWatermarkingSettings(const AudioWatermarkSettings& value) { m_audioWatermarkingSettingsHasBeenSet = true; m_audioWatermarkingSettings = value; }
+
+    /**
+     * Settings to configure one or more solutions that insert audio watermarks in the
+     * audio encode
+     */
+    inline void SetAudioWatermarkingSettings(AudioWatermarkSettings&& value) { m_audioWatermarkingSettingsHasBeenSet = true; m_audioWatermarkingSettings = std::move(value); }
+
+    /**
+     * Settings to configure one or more solutions that insert audio watermarks in the
+     * audio encode
+     */
+    inline AudioDescription& WithAudioWatermarkingSettings(const AudioWatermarkSettings& value) { SetAudioWatermarkingSettings(value); return *this;}
+
+    /**
+     * Settings to configure one or more solutions that insert audio watermarks in the
+     * audio encode
+     */
+    inline AudioDescription& WithAudioWatermarkingSettings(AudioWatermarkSettings&& value) { SetAudioWatermarkingSettings(std::move(value)); return *this;}
 
 
     /**
@@ -523,6 +561,9 @@ Note
 
     AudioDescriptionAudioTypeControl m_audioTypeControl;
     bool m_audioTypeControlHasBeenSet;
+
+    AudioWatermarkSettings m_audioWatermarkingSettings;
+    bool m_audioWatermarkingSettingsHasBeenSet;
 
     AudioCodecSettings m_codecSettings;
     bool m_codecSettingsHasBeenSet;

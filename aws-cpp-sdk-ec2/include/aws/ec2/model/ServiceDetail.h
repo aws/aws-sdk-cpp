@@ -214,42 +214,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the service owner.</p>
+     * <p>The Amazon Web Services account ID of the service owner.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>The AWS account ID of the service owner.</p>
+     * <p>The Amazon Web Services account ID of the service owner.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the service owner.</p>
+     * <p>The Amazon Web Services account ID of the service owner.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>The AWS account ID of the service owner.</p>
+     * <p>The Amazon Web Services account ID of the service owner.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the service owner.</p>
+     * <p>The Amazon Web Services account ID of the service owner.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
-     * <p>The AWS account ID of the service owner.</p>
+     * <p>The Amazon Web Services account ID of the service owner.</p>
      */
     inline ServiceDetail& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the service owner.</p>
+     * <p>The Amazon Web Services account ID of the service owner.</p>
      */
     inline ServiceDetail& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the service owner.</p>
+     * <p>The Amazon Web Services account ID of the service owner.</p>
      */
     inline ServiceDetail& WithOwner(const char* value) { SetOwner(value); return *this;}
 

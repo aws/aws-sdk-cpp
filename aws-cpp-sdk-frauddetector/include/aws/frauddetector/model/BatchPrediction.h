@@ -193,42 +193,42 @@ namespace Model
 
 
     /**
-     * <p>Timestamp of when the batch prediction job comleted.</p>
+     * <p>Timestamp of when the batch prediction job completed.</p>
      */
     inline const Aws::String& GetCompletionTime() const{ return m_completionTime; }
 
     /**
-     * <p>Timestamp of when the batch prediction job comleted.</p>
+     * <p>Timestamp of when the batch prediction job completed.</p>
      */
     inline bool CompletionTimeHasBeenSet() const { return m_completionTimeHasBeenSet; }
 
     /**
-     * <p>Timestamp of when the batch prediction job comleted.</p>
+     * <p>Timestamp of when the batch prediction job completed.</p>
      */
     inline void SetCompletionTime(const Aws::String& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
 
     /**
-     * <p>Timestamp of when the batch prediction job comleted.</p>
+     * <p>Timestamp of when the batch prediction job completed.</p>
      */
     inline void SetCompletionTime(Aws::String&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::move(value); }
 
     /**
-     * <p>Timestamp of when the batch prediction job comleted.</p>
+     * <p>Timestamp of when the batch prediction job completed.</p>
      */
     inline void SetCompletionTime(const char* value) { m_completionTimeHasBeenSet = true; m_completionTime.assign(value); }
 
     /**
-     * <p>Timestamp of when the batch prediction job comleted.</p>
+     * <p>Timestamp of when the batch prediction job completed.</p>
      */
     inline BatchPrediction& WithCompletionTime(const Aws::String& value) { SetCompletionTime(value); return *this;}
 
     /**
-     * <p>Timestamp of when the batch prediction job comleted.</p>
+     * <p>Timestamp of when the batch prediction job completed.</p>
      */
     inline BatchPrediction& WithCompletionTime(Aws::String&& value) { SetCompletionTime(std::move(value)); return *this;}
 
     /**
-     * <p>Timestamp of when the batch prediction job comleted.</p>
+     * <p>Timestamp of when the batch prediction job completed.</p>
      */
     inline BatchPrediction& WithCompletionTime(const char* value) { SetCompletionTime(value); return *this;}
 

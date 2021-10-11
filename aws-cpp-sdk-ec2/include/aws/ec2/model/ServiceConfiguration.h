@@ -246,26 +246,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether requests from other AWS accounts to create an endpoint to
-     * the service must first be accepted.</p>
+     * <p>Indicates whether requests from other Amazon Web Services accounts to create
+     * an endpoint to the service must first be accepted.</p>
      */
     inline bool GetAcceptanceRequired() const{ return m_acceptanceRequired; }
 
     /**
-     * <p>Indicates whether requests from other AWS accounts to create an endpoint to
-     * the service must first be accepted.</p>
+     * <p>Indicates whether requests from other Amazon Web Services accounts to create
+     * an endpoint to the service must first be accepted.</p>
      */
     inline bool AcceptanceRequiredHasBeenSet() const { return m_acceptanceRequiredHasBeenSet; }
 
     /**
-     * <p>Indicates whether requests from other AWS accounts to create an endpoint to
-     * the service must first be accepted.</p>
+     * <p>Indicates whether requests from other Amazon Web Services accounts to create
+     * an endpoint to the service must first be accepted.</p>
      */
     inline void SetAcceptanceRequired(bool value) { m_acceptanceRequiredHasBeenSet = true; m_acceptanceRequired = value; }
 
     /**
-     * <p>Indicates whether requests from other AWS accounts to create an endpoint to
-     * the service must first be accepted.</p>
+     * <p>Indicates whether requests from other Amazon Web Services accounts to create
+     * an endpoint to the service must first be accepted.</p>
      */
     inline ServiceConfiguration& WithAcceptanceRequired(bool value) { SetAcceptanceRequired(value); return *this;}
 

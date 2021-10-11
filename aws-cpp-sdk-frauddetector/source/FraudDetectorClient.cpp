@@ -22,19 +22,23 @@
 #include <aws/frauddetector/FraudDetectorErrorMarshaller.h>
 #include <aws/frauddetector/model/BatchCreateVariableRequest.h>
 #include <aws/frauddetector/model/BatchGetVariableRequest.h>
+#include <aws/frauddetector/model/CancelBatchImportJobRequest.h>
 #include <aws/frauddetector/model/CancelBatchPredictionJobRequest.h>
+#include <aws/frauddetector/model/CreateBatchImportJobRequest.h>
 #include <aws/frauddetector/model/CreateBatchPredictionJobRequest.h>
 #include <aws/frauddetector/model/CreateDetectorVersionRequest.h>
 #include <aws/frauddetector/model/CreateModelRequest.h>
 #include <aws/frauddetector/model/CreateModelVersionRequest.h>
 #include <aws/frauddetector/model/CreateRuleRequest.h>
 #include <aws/frauddetector/model/CreateVariableRequest.h>
+#include <aws/frauddetector/model/DeleteBatchImportJobRequest.h>
 #include <aws/frauddetector/model/DeleteBatchPredictionJobRequest.h>
 #include <aws/frauddetector/model/DeleteDetectorRequest.h>
 #include <aws/frauddetector/model/DeleteDetectorVersionRequest.h>
 #include <aws/frauddetector/model/DeleteEntityTypeRequest.h>
 #include <aws/frauddetector/model/DeleteEventRequest.h>
 #include <aws/frauddetector/model/DeleteEventTypeRequest.h>
+#include <aws/frauddetector/model/DeleteEventsByEventTypeRequest.h>
 #include <aws/frauddetector/model/DeleteExternalModelRequest.h>
 #include <aws/frauddetector/model/DeleteLabelRequest.h>
 #include <aws/frauddetector/model/DeleteModelRequest.h>
@@ -44,10 +48,13 @@
 #include <aws/frauddetector/model/DeleteVariableRequest.h>
 #include <aws/frauddetector/model/DescribeDetectorRequest.h>
 #include <aws/frauddetector/model/DescribeModelVersionsRequest.h>
+#include <aws/frauddetector/model/GetBatchImportJobsRequest.h>
 #include <aws/frauddetector/model/GetBatchPredictionJobsRequest.h>
+#include <aws/frauddetector/model/GetDeleteEventsByEventTypeStatusRequest.h>
 #include <aws/frauddetector/model/GetDetectorVersionRequest.h>
 #include <aws/frauddetector/model/GetDetectorsRequest.h>
 #include <aws/frauddetector/model/GetEntityTypesRequest.h>
+#include <aws/frauddetector/model/GetEventRequest.h>
 #include <aws/frauddetector/model/GetEventPredictionRequest.h>
 #include <aws/frauddetector/model/GetEventTypesRequest.h>
 #include <aws/frauddetector/model/GetExternalModelsRequest.h>
@@ -65,11 +72,13 @@
 #include <aws/frauddetector/model/PutKMSEncryptionKeyRequest.h>
 #include <aws/frauddetector/model/PutLabelRequest.h>
 #include <aws/frauddetector/model/PutOutcomeRequest.h>
+#include <aws/frauddetector/model/SendEventRequest.h>
 #include <aws/frauddetector/model/TagResourceRequest.h>
 #include <aws/frauddetector/model/UntagResourceRequest.h>
 #include <aws/frauddetector/model/UpdateDetectorVersionRequest.h>
 #include <aws/frauddetector/model/UpdateDetectorVersionMetadataRequest.h>
 #include <aws/frauddetector/model/UpdateDetectorVersionStatusRequest.h>
+#include <aws/frauddetector/model/UpdateEventLabelRequest.h>
 #include <aws/frauddetector/model/UpdateModelRequest.h>
 #include <aws/frauddetector/model/UpdateModelVersionRequest.h>
 #include <aws/frauddetector/model/UpdateModelVersionStatusRequest.h>
@@ -198,6 +207,30 @@ void FraudDetectorClient::BatchGetVariableAsyncHelper(const BatchGetVariableRequ
   handler(this, request, BatchGetVariable(request), context);
 }
 
+CancelBatchImportJobOutcome FraudDetectorClient::CancelBatchImportJob(const CancelBatchImportJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CancelBatchImportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CancelBatchImportJobOutcomeCallable FraudDetectorClient::CancelBatchImportJobCallable(const CancelBatchImportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelBatchImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelBatchImportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FraudDetectorClient::CancelBatchImportJobAsync(const CancelBatchImportJobRequest& request, const CancelBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelBatchImportJobAsyncHelper( request, handler, context ); } );
+}
+
+void FraudDetectorClient::CancelBatchImportJobAsyncHelper(const CancelBatchImportJobRequest& request, const CancelBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelBatchImportJob(request), context);
+}
+
 CancelBatchPredictionJobOutcome FraudDetectorClient::CancelBatchPredictionJob(const CancelBatchPredictionJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -220,6 +253,30 @@ void FraudDetectorClient::CancelBatchPredictionJobAsync(const CancelBatchPredict
 void FraudDetectorClient::CancelBatchPredictionJobAsyncHelper(const CancelBatchPredictionJobRequest& request, const CancelBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CancelBatchPredictionJob(request), context);
+}
+
+CreateBatchImportJobOutcome FraudDetectorClient::CreateBatchImportJob(const CreateBatchImportJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateBatchImportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateBatchImportJobOutcomeCallable FraudDetectorClient::CreateBatchImportJobCallable(const CreateBatchImportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateBatchImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBatchImportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FraudDetectorClient::CreateBatchImportJobAsync(const CreateBatchImportJobRequest& request, const CreateBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateBatchImportJobAsyncHelper( request, handler, context ); } );
+}
+
+void FraudDetectorClient::CreateBatchImportJobAsyncHelper(const CreateBatchImportJobRequest& request, const CreateBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateBatchImportJob(request), context);
 }
 
 CreateBatchPredictionJobOutcome FraudDetectorClient::CreateBatchPredictionJob(const CreateBatchPredictionJobRequest& request) const
@@ -366,6 +423,30 @@ void FraudDetectorClient::CreateVariableAsyncHelper(const CreateVariableRequest&
   handler(this, request, CreateVariable(request), context);
 }
 
+DeleteBatchImportJobOutcome FraudDetectorClient::DeleteBatchImportJob(const DeleteBatchImportJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteBatchImportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteBatchImportJobOutcomeCallable FraudDetectorClient::DeleteBatchImportJobCallable(const DeleteBatchImportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBatchImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBatchImportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FraudDetectorClient::DeleteBatchImportJobAsync(const DeleteBatchImportJobRequest& request, const DeleteBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBatchImportJobAsyncHelper( request, handler, context ); } );
+}
+
+void FraudDetectorClient::DeleteBatchImportJobAsyncHelper(const DeleteBatchImportJobRequest& request, const DeleteBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBatchImportJob(request), context);
+}
+
 DeleteBatchPredictionJobOutcome FraudDetectorClient::DeleteBatchPredictionJob(const DeleteBatchPredictionJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -508,6 +589,30 @@ void FraudDetectorClient::DeleteEventTypeAsync(const DeleteEventTypeRequest& req
 void FraudDetectorClient::DeleteEventTypeAsyncHelper(const DeleteEventTypeRequest& request, const DeleteEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteEventType(request), context);
+}
+
+DeleteEventsByEventTypeOutcome FraudDetectorClient::DeleteEventsByEventType(const DeleteEventsByEventTypeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteEventsByEventTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteEventsByEventTypeOutcomeCallable FraudDetectorClient::DeleteEventsByEventTypeCallable(const DeleteEventsByEventTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEventsByEventTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEventsByEventType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FraudDetectorClient::DeleteEventsByEventTypeAsync(const DeleteEventsByEventTypeRequest& request, const DeleteEventsByEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEventsByEventTypeAsyncHelper( request, handler, context ); } );
+}
+
+void FraudDetectorClient::DeleteEventsByEventTypeAsyncHelper(const DeleteEventsByEventTypeRequest& request, const DeleteEventsByEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteEventsByEventType(request), context);
 }
 
 DeleteExternalModelOutcome FraudDetectorClient::DeleteExternalModel(const DeleteExternalModelRequest& request) const
@@ -726,6 +831,30 @@ void FraudDetectorClient::DescribeModelVersionsAsyncHelper(const DescribeModelVe
   handler(this, request, DescribeModelVersions(request), context);
 }
 
+GetBatchImportJobsOutcome FraudDetectorClient::GetBatchImportJobs(const GetBatchImportJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetBatchImportJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetBatchImportJobsOutcomeCallable FraudDetectorClient::GetBatchImportJobsCallable(const GetBatchImportJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBatchImportJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBatchImportJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FraudDetectorClient::GetBatchImportJobsAsync(const GetBatchImportJobsRequest& request, const GetBatchImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBatchImportJobsAsyncHelper( request, handler, context ); } );
+}
+
+void FraudDetectorClient::GetBatchImportJobsAsyncHelper(const GetBatchImportJobsRequest& request, const GetBatchImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBatchImportJobs(request), context);
+}
+
 GetBatchPredictionJobsOutcome FraudDetectorClient::GetBatchPredictionJobs(const GetBatchPredictionJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -748,6 +877,30 @@ void FraudDetectorClient::GetBatchPredictionJobsAsync(const GetBatchPredictionJo
 void FraudDetectorClient::GetBatchPredictionJobsAsyncHelper(const GetBatchPredictionJobsRequest& request, const GetBatchPredictionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetBatchPredictionJobs(request), context);
+}
+
+GetDeleteEventsByEventTypeStatusOutcome FraudDetectorClient::GetDeleteEventsByEventTypeStatus(const GetDeleteEventsByEventTypeStatusRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetDeleteEventsByEventTypeStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetDeleteEventsByEventTypeStatusOutcomeCallable FraudDetectorClient::GetDeleteEventsByEventTypeStatusCallable(const GetDeleteEventsByEventTypeStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDeleteEventsByEventTypeStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeleteEventsByEventTypeStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FraudDetectorClient::GetDeleteEventsByEventTypeStatusAsync(const GetDeleteEventsByEventTypeStatusRequest& request, const GetDeleteEventsByEventTypeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDeleteEventsByEventTypeStatusAsyncHelper( request, handler, context ); } );
+}
+
+void FraudDetectorClient::GetDeleteEventsByEventTypeStatusAsyncHelper(const GetDeleteEventsByEventTypeStatusRequest& request, const GetDeleteEventsByEventTypeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDeleteEventsByEventTypeStatus(request), context);
 }
 
 GetDetectorVersionOutcome FraudDetectorClient::GetDetectorVersion(const GetDetectorVersionRequest& request) const
@@ -820,6 +973,30 @@ void FraudDetectorClient::GetEntityTypesAsync(const GetEntityTypesRequest& reque
 void FraudDetectorClient::GetEntityTypesAsyncHelper(const GetEntityTypesRequest& request, const GetEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetEntityTypes(request), context);
+}
+
+GetEventOutcome FraudDetectorClient::GetEvent(const GetEventRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetEventOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetEventOutcomeCallable FraudDetectorClient::GetEventCallable(const GetEventRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetEventOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEvent(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FraudDetectorClient::GetEventAsync(const GetEventRequest& request, const GetEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetEventAsyncHelper( request, handler, context ); } );
+}
+
+void FraudDetectorClient::GetEventAsyncHelper(const GetEventRequest& request, const GetEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetEvent(request), context);
 }
 
 GetEventPredictionOutcome FraudDetectorClient::GetEventPrediction(const GetEventPredictionRequest& request) const
@@ -1255,6 +1432,30 @@ void FraudDetectorClient::PutOutcomeAsyncHelper(const PutOutcomeRequest& request
   handler(this, request, PutOutcome(request), context);
 }
 
+SendEventOutcome FraudDetectorClient::SendEvent(const SendEventRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return SendEventOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SendEventOutcomeCallable FraudDetectorClient::SendEventCallable(const SendEventRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SendEventOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendEvent(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FraudDetectorClient::SendEventAsync(const SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SendEventAsyncHelper( request, handler, context ); } );
+}
+
+void FraudDetectorClient::SendEventAsyncHelper(const SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SendEvent(request), context);
+}
+
 TagResourceOutcome FraudDetectorClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1373,6 +1574,30 @@ void FraudDetectorClient::UpdateDetectorVersionStatusAsync(const UpdateDetectorV
 void FraudDetectorClient::UpdateDetectorVersionStatusAsyncHelper(const UpdateDetectorVersionStatusRequest& request, const UpdateDetectorVersionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDetectorVersionStatus(request), context);
+}
+
+UpdateEventLabelOutcome FraudDetectorClient::UpdateEventLabel(const UpdateEventLabelRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateEventLabelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateEventLabelOutcomeCallable FraudDetectorClient::UpdateEventLabelCallable(const UpdateEventLabelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateEventLabelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEventLabel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FraudDetectorClient::UpdateEventLabelAsync(const UpdateEventLabelRequest& request, const UpdateEventLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateEventLabelAsyncHelper( request, handler, context ); } );
+}
+
+void FraudDetectorClient::UpdateEventLabelAsyncHelper(const UpdateEventLabelRequest& request, const UpdateEventLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateEventLabel(request), context);
 }
 
 UpdateModelOutcome FraudDetectorClient::UpdateModel(const UpdateModelRequest& request) const

@@ -876,65 +876,57 @@ namespace Model
 
     /**
      * <p>The usage operation value. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
-     * billing information fields</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing
+     * options</a> in the <i>VM Import/Export User Guide</i>.</p>
      */
     inline const Aws::String& GetUsageOperation() const{ return m_usageOperation; }
 
     /**
      * <p>The usage operation value. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
-     * billing information fields</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing
+     * options</a> in the <i>VM Import/Export User Guide</i>.</p>
      */
     inline bool UsageOperationHasBeenSet() const { return m_usageOperationHasBeenSet; }
 
     /**
      * <p>The usage operation value. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
-     * billing information fields</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing
+     * options</a> in the <i>VM Import/Export User Guide</i>.</p>
      */
     inline void SetUsageOperation(const Aws::String& value) { m_usageOperationHasBeenSet = true; m_usageOperation = value; }
 
     /**
      * <p>The usage operation value. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
-     * billing information fields</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing
+     * options</a> in the <i>VM Import/Export User Guide</i>.</p>
      */
     inline void SetUsageOperation(Aws::String&& value) { m_usageOperationHasBeenSet = true; m_usageOperation = std::move(value); }
 
     /**
      * <p>The usage operation value. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
-     * billing information fields</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing
+     * options</a> in the <i>VM Import/Export User Guide</i>.</p>
      */
     inline void SetUsageOperation(const char* value) { m_usageOperationHasBeenSet = true; m_usageOperation.assign(value); }
 
     /**
      * <p>The usage operation value. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
-     * billing information fields</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing
+     * options</a> in the <i>VM Import/Export User Guide</i>.</p>
      */
     inline ImportImageRequest& WithUsageOperation(const Aws::String& value) { SetUsageOperation(value); return *this;}
 
     /**
      * <p>The usage operation value. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
-     * billing information fields</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing
+     * options</a> in the <i>VM Import/Export User Guide</i>.</p>
      */
     inline ImportImageRequest& WithUsageOperation(Aws::String&& value) { SetUsageOperation(std::move(value)); return *this;}
 
     /**
      * <p>The usage operation value. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
-     * billing information fields</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing
+     * options</a> in the <i>VM Import/Export User Guide</i>.</p>
      */
     inline ImportImageRequest& WithUsageOperation(const char* value) { SetUsageOperation(value); return *this;}
 

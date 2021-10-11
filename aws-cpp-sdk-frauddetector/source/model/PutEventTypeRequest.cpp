@@ -18,6 +18,8 @@ PutEventTypeRequest::PutEventTypeRequest() :
     m_eventVariablesHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_entityTypesHasBeenSet(false),
+    m_eventIngestion(EventIngestion::NOT_SET),
+    m_eventIngestionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -69,6 +71,11 @@ Aws::String PutEventTypeRequest::SerializePayload() const
    }
    payload.WithArray("entityTypes", std::move(entityTypesJsonList));
 
+  }
+
+  if(m_eventIngestionHasBeenSet)
+  {
+   payload.WithString("eventIngestion", EventIngestionMapper::GetNameForEventIngestion(m_eventIngestion));
   }
 
   if(m_tagsHasBeenSet)

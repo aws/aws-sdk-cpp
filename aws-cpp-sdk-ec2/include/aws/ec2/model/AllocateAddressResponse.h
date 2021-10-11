@@ -151,43 +151,43 @@ namespace Model
 
     /**
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
-     * AWS advertises IP addresses.</p>
+     * Amazon Web Services advertises IP addresses.</p>
      */
     inline const Aws::String& GetNetworkBorderGroup() const{ return m_networkBorderGroup; }
 
     /**
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
-     * AWS advertises IP addresses.</p>
+     * Amazon Web Services advertises IP addresses.</p>
      */
     inline void SetNetworkBorderGroup(const Aws::String& value) { m_networkBorderGroup = value; }
 
     /**
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
-     * AWS advertises IP addresses.</p>
+     * Amazon Web Services advertises IP addresses.</p>
      */
     inline void SetNetworkBorderGroup(Aws::String&& value) { m_networkBorderGroup = std::move(value); }
 
     /**
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
-     * AWS advertises IP addresses.</p>
+     * Amazon Web Services advertises IP addresses.</p>
      */
     inline void SetNetworkBorderGroup(const char* value) { m_networkBorderGroup.assign(value); }
 
     /**
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
-     * AWS advertises IP addresses.</p>
+     * Amazon Web Services advertises IP addresses.</p>
      */
     inline AllocateAddressResponse& WithNetworkBorderGroup(const Aws::String& value) { SetNetworkBorderGroup(value); return *this;}
 
     /**
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
-     * AWS advertises IP addresses.</p>
+     * Amazon Web Services advertises IP addresses.</p>
      */
     inline AllocateAddressResponse& WithNetworkBorderGroup(Aws::String&& value) { SetNetworkBorderGroup(std::move(value)); return *this;}
 
     /**
      * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
-     * AWS advertises IP addresses.</p>
+     * Amazon Web Services advertises IP addresses.</p>
      */
     inline AllocateAddressResponse& WithNetworkBorderGroup(const char* value) { SetNetworkBorderGroup(value); return *this;}
 

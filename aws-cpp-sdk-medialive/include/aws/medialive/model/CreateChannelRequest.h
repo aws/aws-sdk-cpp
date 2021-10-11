@@ -483,32 +483,32 @@ creating multiple resources.
 
 
     /**
-     * Settings for VPC output
+     * Settings for the VPC outputs
      */
     inline const VpcOutputSettings& GetVpc() const{ return m_vpc; }
 
     /**
-     * Settings for VPC output
+     * Settings for the VPC outputs
      */
     inline bool VpcHasBeenSet() const { return m_vpcHasBeenSet; }
 
     /**
-     * Settings for VPC output
+     * Settings for the VPC outputs
      */
     inline void SetVpc(const VpcOutputSettings& value) { m_vpcHasBeenSet = true; m_vpc = value; }
 
     /**
-     * Settings for VPC output
+     * Settings for the VPC outputs
      */
     inline void SetVpc(VpcOutputSettings&& value) { m_vpcHasBeenSet = true; m_vpc = std::move(value); }
 
     /**
-     * Settings for VPC output
+     * Settings for the VPC outputs
      */
     inline CreateChannelRequest& WithVpc(const VpcOutputSettings& value) { SetVpc(value); return *this;}
 
     /**
-     * Settings for VPC output
+     * Settings for the VPC outputs
      */
     inline CreateChannelRequest& WithVpc(VpcOutputSettings&& value) { SetVpc(std::move(value)); return *this;}
 

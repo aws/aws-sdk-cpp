@@ -11,6 +11,7 @@
 #include <aws/elasticloadbalancingv2/model/Matcher.h>
 #include <aws/elasticloadbalancingv2/model/TargetTypeEnum.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticloadbalancingv2/model/TargetGroupIpAddressTypeEnum.h>
 #include <aws/elasticloadbalancingv2/model/Tag.h>
 #include <utility>
 
@@ -874,6 +875,49 @@ namespace Model
      */
     inline CreateTargetGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline const TargetGroupIpAddressTypeEnum& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline void SetIpAddressType(const TargetGroupIpAddressTypeEnum& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline void SetIpAddressType(TargetGroupIpAddressTypeEnum&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline CreateTargetGroupRequest& WithIpAddressType(const TargetGroupIpAddressTypeEnum& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline CreateTargetGroupRequest& WithIpAddressType(TargetGroupIpAddressTypeEnum&& value) { SetIpAddressType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -923,6 +967,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    TargetGroupIpAddressTypeEnum m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet;
   };
 
 } // namespace Model

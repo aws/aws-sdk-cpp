@@ -115,6 +115,31 @@ namespace Model
      */
     inline DeleteEventRequest& WithEventTypeName(const char* value) { SetEventTypeName(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether or not to delete any predictions associated with the
+     * event.</p>
+     */
+    inline bool GetDeleteAuditHistory() const{ return m_deleteAuditHistory; }
+
+    /**
+     * <p>Specifies whether or not to delete any predictions associated with the
+     * event.</p>
+     */
+    inline bool DeleteAuditHistoryHasBeenSet() const { return m_deleteAuditHistoryHasBeenSet; }
+
+    /**
+     * <p>Specifies whether or not to delete any predictions associated with the
+     * event.</p>
+     */
+    inline void SetDeleteAuditHistory(bool value) { m_deleteAuditHistoryHasBeenSet = true; m_deleteAuditHistory = value; }
+
+    /**
+     * <p>Specifies whether or not to delete any predictions associated with the
+     * event.</p>
+     */
+    inline DeleteEventRequest& WithDeleteAuditHistory(bool value) { SetDeleteAuditHistory(value); return *this;}
+
   private:
 
     Aws::String m_eventId;
@@ -122,6 +147,9 @@ namespace Model
 
     Aws::String m_eventTypeName;
     bool m_eventTypeNameHasBeenSet;
+
+    bool m_deleteAuditHistory;
+    bool m_deleteAuditHistoryHasBeenSet;
   };
 
 } // namespace Model

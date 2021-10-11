@@ -210,42 +210,50 @@ namespace Model
 
 
     /**
-     * <p>The version of the AWS Shell that was used to create the bitstream.</p>
+     * <p>The version of the Amazon Web Services Shell that was used to create the
+     * bitstream.</p>
      */
     inline const Aws::String& GetShellVersion() const{ return m_shellVersion; }
 
     /**
-     * <p>The version of the AWS Shell that was used to create the bitstream.</p>
+     * <p>The version of the Amazon Web Services Shell that was used to create the
+     * bitstream.</p>
      */
     inline bool ShellVersionHasBeenSet() const { return m_shellVersionHasBeenSet; }
 
     /**
-     * <p>The version of the AWS Shell that was used to create the bitstream.</p>
+     * <p>The version of the Amazon Web Services Shell that was used to create the
+     * bitstream.</p>
      */
     inline void SetShellVersion(const Aws::String& value) { m_shellVersionHasBeenSet = true; m_shellVersion = value; }
 
     /**
-     * <p>The version of the AWS Shell that was used to create the bitstream.</p>
+     * <p>The version of the Amazon Web Services Shell that was used to create the
+     * bitstream.</p>
      */
     inline void SetShellVersion(Aws::String&& value) { m_shellVersionHasBeenSet = true; m_shellVersion = std::move(value); }
 
     /**
-     * <p>The version of the AWS Shell that was used to create the bitstream.</p>
+     * <p>The version of the Amazon Web Services Shell that was used to create the
+     * bitstream.</p>
      */
     inline void SetShellVersion(const char* value) { m_shellVersionHasBeenSet = true; m_shellVersion.assign(value); }
 
     /**
-     * <p>The version of the AWS Shell that was used to create the bitstream.</p>
+     * <p>The version of the Amazon Web Services Shell that was used to create the
+     * bitstream.</p>
      */
     inline FpgaImage& WithShellVersion(const Aws::String& value) { SetShellVersion(value); return *this;}
 
     /**
-     * <p>The version of the AWS Shell that was used to create the bitstream.</p>
+     * <p>The version of the Amazon Web Services Shell that was used to create the
+     * bitstream.</p>
      */
     inline FpgaImage& WithShellVersion(Aws::String&& value) { SetShellVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the AWS Shell that was used to create the bitstream.</p>
+     * <p>The version of the Amazon Web Services Shell that was used to create the
+     * bitstream.</p>
      */
     inline FpgaImage& WithShellVersion(const char* value) { SetShellVersion(value); return *this;}
 
@@ -375,42 +383,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the AFI owner.</p>
+     * <p>The ID of the Amazon Web Services account that owns the AFI.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The AWS account ID of the AFI owner.</p>
+     * <p>The ID of the Amazon Web Services account that owns the AFI.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the AFI owner.</p>
+     * <p>The ID of the Amazon Web Services account that owns the AFI.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>The AWS account ID of the AFI owner.</p>
+     * <p>The ID of the Amazon Web Services account that owns the AFI.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the AFI owner.</p>
+     * <p>The ID of the Amazon Web Services account that owns the AFI.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the AFI owner.</p>
+     * <p>The ID of the Amazon Web Services account that owns the AFI.</p>
      */
     inline FpgaImage& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the AFI owner.</p>
+     * <p>The ID of the Amazon Web Services account that owns the AFI.</p>
      */
     inline FpgaImage& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the AFI owner.</p>
+     * <p>The ID of the Amazon Web Services account that owns the AFI.</p>
      */
     inline FpgaImage& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 

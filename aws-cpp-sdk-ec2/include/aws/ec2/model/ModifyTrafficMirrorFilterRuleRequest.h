@@ -83,38 +83,32 @@ namespace Model
 
 
     /**
-     * <p>The type of traffic (<code>ingress</code> | <code>egress</code>) to assign to
-     * the rule.</p>
+     * <p>The type of traffic to assign to the rule.</p>
      */
     inline const TrafficDirection& GetTrafficDirection() const{ return m_trafficDirection; }
 
     /**
-     * <p>The type of traffic (<code>ingress</code> | <code>egress</code>) to assign to
-     * the rule.</p>
+     * <p>The type of traffic to assign to the rule.</p>
      */
     inline bool TrafficDirectionHasBeenSet() const { return m_trafficDirectionHasBeenSet; }
 
     /**
-     * <p>The type of traffic (<code>ingress</code> | <code>egress</code>) to assign to
-     * the rule.</p>
+     * <p>The type of traffic to assign to the rule.</p>
      */
     inline void SetTrafficDirection(const TrafficDirection& value) { m_trafficDirectionHasBeenSet = true; m_trafficDirection = value; }
 
     /**
-     * <p>The type of traffic (<code>ingress</code> | <code>egress</code>) to assign to
-     * the rule.</p>
+     * <p>The type of traffic to assign to the rule.</p>
      */
     inline void SetTrafficDirection(TrafficDirection&& value) { m_trafficDirectionHasBeenSet = true; m_trafficDirection = std::move(value); }
 
     /**
-     * <p>The type of traffic (<code>ingress</code> | <code>egress</code>) to assign to
-     * the rule.</p>
+     * <p>The type of traffic to assign to the rule.</p>
      */
     inline ModifyTrafficMirrorFilterRuleRequest& WithTrafficDirection(const TrafficDirection& value) { SetTrafficDirection(value); return *this;}
 
     /**
-     * <p>The type of traffic (<code>ingress</code> | <code>egress</code>) to assign to
-     * the rule.</p>
+     * <p>The type of traffic to assign to the rule.</p>
      */
     inline ModifyTrafficMirrorFilterRuleRequest& WithTrafficDirection(TrafficDirection&& value) { SetTrafficDirection(std::move(value)); return *this;}
 

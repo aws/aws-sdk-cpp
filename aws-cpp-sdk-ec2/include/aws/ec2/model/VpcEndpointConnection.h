@@ -127,42 +127,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the owner of the VPC endpoint.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
      */
     inline const Aws::String& GetVpcEndpointOwner() const{ return m_vpcEndpointOwner; }
 
     /**
-     * <p>The AWS account ID of the owner of the VPC endpoint.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
      */
     inline bool VpcEndpointOwnerHasBeenSet() const { return m_vpcEndpointOwnerHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the owner of the VPC endpoint.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
      */
     inline void SetVpcEndpointOwner(const Aws::String& value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner = value; }
 
     /**
-     * <p>The AWS account ID of the owner of the VPC endpoint.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
      */
     inline void SetVpcEndpointOwner(Aws::String&& value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the VPC endpoint.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
      */
     inline void SetVpcEndpointOwner(const char* value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner.assign(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the VPC endpoint.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
      */
     inline VpcEndpointConnection& WithVpcEndpointOwner(const Aws::String& value) { SetVpcEndpointOwner(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the VPC endpoint.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
      */
     inline VpcEndpointConnection& WithVpcEndpointOwner(Aws::String&& value) { SetVpcEndpointOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the VPC endpoint.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
      */
     inline VpcEndpointConnection& WithVpcEndpointOwner(const char* value) { SetVpcEndpointOwner(value); return *this;}
 

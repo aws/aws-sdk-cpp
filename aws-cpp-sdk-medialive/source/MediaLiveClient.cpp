@@ -26,6 +26,7 @@
 #include <aws/medialive/model/BatchStopRequest.h>
 #include <aws/medialive/model/BatchUpdateScheduleRequest.h>
 #include <aws/medialive/model/CancelInputDeviceTransferRequest.h>
+#include <aws/medialive/model/ClaimDeviceRequest.h>
 #include <aws/medialive/model/CreateChannelRequest.h>
 #include <aws/medialive/model/CreateInputRequest.h>
 #include <aws/medialive/model/CreateInputSecurityGroupRequest.h>
@@ -319,6 +320,31 @@ void MediaLiveClient::CancelInputDeviceTransferAsync(const CancelInputDeviceTran
 void MediaLiveClient::CancelInputDeviceTransferAsyncHelper(const CancelInputDeviceTransferRequest& request, const CancelInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CancelInputDeviceTransfer(request), context);
+}
+
+ClaimDeviceOutcome MediaLiveClient::ClaimDevice(const ClaimDeviceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/prod/claimDevice");
+  return ClaimDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ClaimDeviceOutcomeCallable MediaLiveClient::ClaimDeviceCallable(const ClaimDeviceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ClaimDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ClaimDevice(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::ClaimDeviceAsync(const ClaimDeviceRequest& request, const ClaimDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ClaimDeviceAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::ClaimDeviceAsyncHelper(const ClaimDeviceRequest& request, const ClaimDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ClaimDevice(request), context);
 }
 
 CreateChannelOutcome MediaLiveClient::CreateChannel(const CreateChannelRequest& request) const
