@@ -22,12 +22,14 @@
 #include <aws/mediatailor/MediaTailorErrorMarshaller.h>
 #include <aws/mediatailor/model/ConfigureLogsForPlaybackConfigurationRequest.h>
 #include <aws/mediatailor/model/CreateChannelRequest.h>
+#include <aws/mediatailor/model/CreatePrefetchScheduleRequest.h>
 #include <aws/mediatailor/model/CreateProgramRequest.h>
 #include <aws/mediatailor/model/CreateSourceLocationRequest.h>
 #include <aws/mediatailor/model/CreateVodSourceRequest.h>
 #include <aws/mediatailor/model/DeleteChannelRequest.h>
 #include <aws/mediatailor/model/DeleteChannelPolicyRequest.h>
 #include <aws/mediatailor/model/DeletePlaybackConfigurationRequest.h>
+#include <aws/mediatailor/model/DeletePrefetchScheduleRequest.h>
 #include <aws/mediatailor/model/DeleteProgramRequest.h>
 #include <aws/mediatailor/model/DeleteSourceLocationRequest.h>
 #include <aws/mediatailor/model/DeleteVodSourceRequest.h>
@@ -38,9 +40,11 @@
 #include <aws/mediatailor/model/GetChannelPolicyRequest.h>
 #include <aws/mediatailor/model/GetChannelScheduleRequest.h>
 #include <aws/mediatailor/model/GetPlaybackConfigurationRequest.h>
+#include <aws/mediatailor/model/GetPrefetchScheduleRequest.h>
 #include <aws/mediatailor/model/ListAlertsRequest.h>
 #include <aws/mediatailor/model/ListChannelsRequest.h>
 #include <aws/mediatailor/model/ListPlaybackConfigurationsRequest.h>
+#include <aws/mediatailor/model/ListPrefetchSchedulesRequest.h>
 #include <aws/mediatailor/model/ListSourceLocationsRequest.h>
 #include <aws/mediatailor/model/ListTagsForResourceRequest.h>
 #include <aws/mediatailor/model/ListVodSourcesRequest.h>
@@ -181,6 +185,43 @@ void MediaTailorClient::CreateChannelAsync(const CreateChannelRequest& request, 
 void MediaTailorClient::CreateChannelAsyncHelper(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateChannel(request), context);
+}
+
+CreatePrefetchScheduleOutcome MediaTailorClient::CreatePrefetchSchedule(const CreatePrefetchScheduleRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreatePrefetchSchedule", "Required field: Name, is not set");
+    return CreatePrefetchScheduleOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.PlaybackConfigurationNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreatePrefetchSchedule", "Required field: PlaybackConfigurationName, is not set");
+    return CreatePrefetchScheduleOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PlaybackConfigurationName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/prefetchSchedule/");
+  uri.AddPathSegment(request.GetPlaybackConfigurationName());
+  uri.AddPathSegment(request.GetName());
+  return CreatePrefetchScheduleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreatePrefetchScheduleOutcomeCallable MediaTailorClient::CreatePrefetchScheduleCallable(const CreatePrefetchScheduleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreatePrefetchScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePrefetchSchedule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaTailorClient::CreatePrefetchScheduleAsync(const CreatePrefetchScheduleRequest& request, const CreatePrefetchScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreatePrefetchScheduleAsyncHelper( request, handler, context ); } );
+}
+
+void MediaTailorClient::CreatePrefetchScheduleAsyncHelper(const CreatePrefetchScheduleRequest& request, const CreatePrefetchScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreatePrefetchSchedule(request), context);
 }
 
 CreateProgramOutcome MediaTailorClient::CreateProgram(const CreateProgramRequest& request) const
@@ -382,6 +423,43 @@ void MediaTailorClient::DeletePlaybackConfigurationAsync(const DeletePlaybackCon
 void MediaTailorClient::DeletePlaybackConfigurationAsyncHelper(const DeletePlaybackConfigurationRequest& request, const DeletePlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeletePlaybackConfiguration(request), context);
+}
+
+DeletePrefetchScheduleOutcome MediaTailorClient::DeletePrefetchSchedule(const DeletePrefetchScheduleRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePrefetchSchedule", "Required field: Name, is not set");
+    return DeletePrefetchScheduleOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.PlaybackConfigurationNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePrefetchSchedule", "Required field: PlaybackConfigurationName, is not set");
+    return DeletePrefetchScheduleOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PlaybackConfigurationName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/prefetchSchedule/");
+  uri.AddPathSegment(request.GetPlaybackConfigurationName());
+  uri.AddPathSegment(request.GetName());
+  return DeletePrefetchScheduleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeletePrefetchScheduleOutcomeCallable MediaTailorClient::DeletePrefetchScheduleCallable(const DeletePrefetchScheduleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePrefetchScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePrefetchSchedule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaTailorClient::DeletePrefetchScheduleAsync(const DeletePrefetchScheduleRequest& request, const DeletePrefetchScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePrefetchScheduleAsyncHelper( request, handler, context ); } );
+}
+
+void MediaTailorClient::DeletePrefetchScheduleAsyncHelper(const DeletePrefetchScheduleRequest& request, const DeletePrefetchScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePrefetchSchedule(request), context);
 }
 
 DeleteProgramOutcome MediaTailorClient::DeleteProgram(const DeleteProgramRequest& request) const
@@ -724,6 +802,43 @@ void MediaTailorClient::GetPlaybackConfigurationAsyncHelper(const GetPlaybackCon
   handler(this, request, GetPlaybackConfiguration(request), context);
 }
 
+GetPrefetchScheduleOutcome MediaTailorClient::GetPrefetchSchedule(const GetPrefetchScheduleRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPrefetchSchedule", "Required field: Name, is not set");
+    return GetPrefetchScheduleOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.PlaybackConfigurationNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPrefetchSchedule", "Required field: PlaybackConfigurationName, is not set");
+    return GetPrefetchScheduleOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PlaybackConfigurationName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/prefetchSchedule/");
+  uri.AddPathSegment(request.GetPlaybackConfigurationName());
+  uri.AddPathSegment(request.GetName());
+  return GetPrefetchScheduleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetPrefetchScheduleOutcomeCallable MediaTailorClient::GetPrefetchScheduleCallable(const GetPrefetchScheduleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPrefetchScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPrefetchSchedule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaTailorClient::GetPrefetchScheduleAsync(const GetPrefetchScheduleRequest& request, const GetPrefetchScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPrefetchScheduleAsyncHelper( request, handler, context ); } );
+}
+
+void MediaTailorClient::GetPrefetchScheduleAsyncHelper(const GetPrefetchScheduleRequest& request, const GetPrefetchScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPrefetchSchedule(request), context);
+}
+
 ListAlertsOutcome MediaTailorClient::ListAlerts(const ListAlertsRequest& request) const
 {
   if (!request.ResourceArnHasBeenSet())
@@ -802,6 +917,37 @@ void MediaTailorClient::ListPlaybackConfigurationsAsync(const ListPlaybackConfig
 void MediaTailorClient::ListPlaybackConfigurationsAsyncHelper(const ListPlaybackConfigurationsRequest& request, const ListPlaybackConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListPlaybackConfigurations(request), context);
+}
+
+ListPrefetchSchedulesOutcome MediaTailorClient::ListPrefetchSchedules(const ListPrefetchSchedulesRequest& request) const
+{
+  if (!request.PlaybackConfigurationNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListPrefetchSchedules", "Required field: PlaybackConfigurationName, is not set");
+    return ListPrefetchSchedulesOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PlaybackConfigurationName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/prefetchSchedule/");
+  uri.AddPathSegment(request.GetPlaybackConfigurationName());
+  return ListPrefetchSchedulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListPrefetchSchedulesOutcomeCallable MediaTailorClient::ListPrefetchSchedulesCallable(const ListPrefetchSchedulesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPrefetchSchedulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPrefetchSchedules(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaTailorClient::ListPrefetchSchedulesAsync(const ListPrefetchSchedulesRequest& request, const ListPrefetchSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPrefetchSchedulesAsyncHelper( request, handler, context ); } );
+}
+
+void MediaTailorClient::ListPrefetchSchedulesAsyncHelper(const ListPrefetchSchedulesRequest& request, const ListPrefetchSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPrefetchSchedules(request), context);
 }
 
 ListSourceLocationsOutcome MediaTailorClient::ListSourceLocations(const ListSourceLocationsRequest& request) const

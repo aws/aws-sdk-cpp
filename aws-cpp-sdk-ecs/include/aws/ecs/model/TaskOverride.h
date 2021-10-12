@@ -166,49 +166,73 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the task execution IAM role override for
-     * the task.</p>
+     * the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the task execution IAM role override for
-     * the task.</p>
+     * the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the task execution IAM role override for
-     * the task.</p>
+     * the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the task execution IAM role override for
-     * the task.</p>
+     * the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the task execution IAM role override for
-     * the task.</p>
+     * the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the task execution IAM role override for
-     * the task.</p>
+     * the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline TaskOverride& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the task execution IAM role override for
-     * the task.</p>
+     * the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline TaskOverride& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the task execution IAM role override for
-     * the task.</p>
+     * the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline TaskOverride& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
 
@@ -257,56 +281,80 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
      * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * specified in this role. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Role for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetTaskRoleArn() const{ return m_taskRoleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
      * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * specified in this role. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Role for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline bool TaskRoleArnHasBeenSet() const { return m_taskRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
      * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * specified in this role. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Role for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetTaskRoleArn(const Aws::String& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
      * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * specified in this role. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Role for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetTaskRoleArn(Aws::String&& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
      * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * specified in this role. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Role for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetTaskRoleArn(const char* value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
      * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * specified in this role. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Role for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline TaskOverride& WithTaskRoleArn(const Aws::String& value) { SetTaskRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
      * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * specified in this role. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Role for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline TaskOverride& WithTaskRoleArn(Aws::String&& value) { SetTaskRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
      * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * specified in this role. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Role for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline TaskOverride& WithTaskRoleArn(const char* value) { SetTaskRoleArn(value); return *this;}
 

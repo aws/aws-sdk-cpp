@@ -1199,7 +1199,12 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p>
+     * is used.</p> <p>The full ARN value must match the value that you specified ias
+     * the <code>Resource</code> of the IAM principal's permissions policy. For
+     * example, if the <code>Resource</code> is
+     * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
+     * <code>taskDefinition</code> ARN value must be
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
      */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
 
@@ -1207,7 +1212,12 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p>
+     * is used.</p> <p>The full ARN value must match the value that you specified ias
+     * the <code>Resource</code> of the IAM principal's permissions policy. For
+     * example, if the <code>Resource</code> is
+     * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
+     * <code>taskDefinition</code> ARN value must be
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
      */
     inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
 
@@ -1215,7 +1225,12 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p>
+     * is used.</p> <p>The full ARN value must match the value that you specified ias
+     * the <code>Resource</code> of the IAM principal's permissions policy. For
+     * example, if the <code>Resource</code> is
+     * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
+     * <code>taskDefinition</code> ARN value must be
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
      */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
@@ -1223,7 +1238,12 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p>
+     * is used.</p> <p>The full ARN value must match the value that you specified ias
+     * the <code>Resource</code> of the IAM principal's permissions policy. For
+     * example, if the <code>Resource</code> is
+     * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
+     * <code>taskDefinition</code> ARN value must be
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
      */
     inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
 
@@ -1231,7 +1251,12 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p>
+     * is used.</p> <p>The full ARN value must match the value that you specified ias
+     * the <code>Resource</code> of the IAM principal's permissions policy. For
+     * example, if the <code>Resource</code> is
+     * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
+     * <code>taskDefinition</code> ARN value must be
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
      */
     inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
 
@@ -1239,7 +1264,12 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p>
+     * is used.</p> <p>The full ARN value must match the value that you specified ias
+     * the <code>Resource</code> of the IAM principal's permissions policy. For
+     * example, if the <code>Resource</code> is
+     * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
+     * <code>taskDefinition</code> ARN value must be
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
      */
     inline RunTaskRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
 
@@ -1247,7 +1277,12 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p>
+     * is used.</p> <p>The full ARN value must match the value that you specified ias
+     * the <code>Resource</code> of the IAM principal's permissions policy. For
+     * example, if the <code>Resource</code> is
+     * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
+     * <code>taskDefinition</code> ARN value must be
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
      */
     inline RunTaskRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
@@ -1255,7 +1290,12 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p>
+     * is used.</p> <p>The full ARN value must match the value that you specified ias
+     * the <code>Resource</code> of the IAM principal's permissions policy. For
+     * example, if the <code>Resource</code> is
+     * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
+     * <code>taskDefinition</code> ARN value must be
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
      */
     inline RunTaskRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 

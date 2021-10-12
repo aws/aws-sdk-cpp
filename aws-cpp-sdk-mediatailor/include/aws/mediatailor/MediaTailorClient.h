@@ -13,12 +13,14 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediatailor/model/ConfigureLogsForPlaybackConfigurationResult.h>
 #include <aws/mediatailor/model/CreateChannelResult.h>
+#include <aws/mediatailor/model/CreatePrefetchScheduleResult.h>
 #include <aws/mediatailor/model/CreateProgramResult.h>
 #include <aws/mediatailor/model/CreateSourceLocationResult.h>
 #include <aws/mediatailor/model/CreateVodSourceResult.h>
 #include <aws/mediatailor/model/DeleteChannelResult.h>
 #include <aws/mediatailor/model/DeleteChannelPolicyResult.h>
 #include <aws/mediatailor/model/DeletePlaybackConfigurationResult.h>
+#include <aws/mediatailor/model/DeletePrefetchScheduleResult.h>
 #include <aws/mediatailor/model/DeleteProgramResult.h>
 #include <aws/mediatailor/model/DeleteSourceLocationResult.h>
 #include <aws/mediatailor/model/DeleteVodSourceResult.h>
@@ -29,9 +31,11 @@
 #include <aws/mediatailor/model/GetChannelPolicyResult.h>
 #include <aws/mediatailor/model/GetChannelScheduleResult.h>
 #include <aws/mediatailor/model/GetPlaybackConfigurationResult.h>
+#include <aws/mediatailor/model/GetPrefetchScheduleResult.h>
 #include <aws/mediatailor/model/ListAlertsResult.h>
 #include <aws/mediatailor/model/ListChannelsResult.h>
 #include <aws/mediatailor/model/ListPlaybackConfigurationsResult.h>
+#include <aws/mediatailor/model/ListPrefetchSchedulesResult.h>
 #include <aws/mediatailor/model/ListSourceLocationsResult.h>
 #include <aws/mediatailor/model/ListTagsForResourceResult.h>
 #include <aws/mediatailor/model/ListVodSourcesResult.h>
@@ -84,12 +88,14 @@ namespace Model
 {
         class ConfigureLogsForPlaybackConfigurationRequest;
         class CreateChannelRequest;
+        class CreatePrefetchScheduleRequest;
         class CreateProgramRequest;
         class CreateSourceLocationRequest;
         class CreateVodSourceRequest;
         class DeleteChannelRequest;
         class DeleteChannelPolicyRequest;
         class DeletePlaybackConfigurationRequest;
+        class DeletePrefetchScheduleRequest;
         class DeleteProgramRequest;
         class DeleteSourceLocationRequest;
         class DeleteVodSourceRequest;
@@ -100,9 +106,11 @@ namespace Model
         class GetChannelPolicyRequest;
         class GetChannelScheduleRequest;
         class GetPlaybackConfigurationRequest;
+        class GetPrefetchScheduleRequest;
         class ListAlertsRequest;
         class ListChannelsRequest;
         class ListPlaybackConfigurationsRequest;
+        class ListPrefetchSchedulesRequest;
         class ListSourceLocationsRequest;
         class ListTagsForResourceRequest;
         class ListVodSourcesRequest;
@@ -118,12 +126,14 @@ namespace Model
 
         typedef Aws::Utils::Outcome<ConfigureLogsForPlaybackConfigurationResult, MediaTailorError> ConfigureLogsForPlaybackConfigurationOutcome;
         typedef Aws::Utils::Outcome<CreateChannelResult, MediaTailorError> CreateChannelOutcome;
+        typedef Aws::Utils::Outcome<CreatePrefetchScheduleResult, MediaTailorError> CreatePrefetchScheduleOutcome;
         typedef Aws::Utils::Outcome<CreateProgramResult, MediaTailorError> CreateProgramOutcome;
         typedef Aws::Utils::Outcome<CreateSourceLocationResult, MediaTailorError> CreateSourceLocationOutcome;
         typedef Aws::Utils::Outcome<CreateVodSourceResult, MediaTailorError> CreateVodSourceOutcome;
         typedef Aws::Utils::Outcome<DeleteChannelResult, MediaTailorError> DeleteChannelOutcome;
         typedef Aws::Utils::Outcome<DeleteChannelPolicyResult, MediaTailorError> DeleteChannelPolicyOutcome;
         typedef Aws::Utils::Outcome<DeletePlaybackConfigurationResult, MediaTailorError> DeletePlaybackConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DeletePrefetchScheduleResult, MediaTailorError> DeletePrefetchScheduleOutcome;
         typedef Aws::Utils::Outcome<DeleteProgramResult, MediaTailorError> DeleteProgramOutcome;
         typedef Aws::Utils::Outcome<DeleteSourceLocationResult, MediaTailorError> DeleteSourceLocationOutcome;
         typedef Aws::Utils::Outcome<DeleteVodSourceResult, MediaTailorError> DeleteVodSourceOutcome;
@@ -134,9 +144,11 @@ namespace Model
         typedef Aws::Utils::Outcome<GetChannelPolicyResult, MediaTailorError> GetChannelPolicyOutcome;
         typedef Aws::Utils::Outcome<GetChannelScheduleResult, MediaTailorError> GetChannelScheduleOutcome;
         typedef Aws::Utils::Outcome<GetPlaybackConfigurationResult, MediaTailorError> GetPlaybackConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetPrefetchScheduleResult, MediaTailorError> GetPrefetchScheduleOutcome;
         typedef Aws::Utils::Outcome<ListAlertsResult, MediaTailorError> ListAlertsOutcome;
         typedef Aws::Utils::Outcome<ListChannelsResult, MediaTailorError> ListChannelsOutcome;
         typedef Aws::Utils::Outcome<ListPlaybackConfigurationsResult, MediaTailorError> ListPlaybackConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<ListPrefetchSchedulesResult, MediaTailorError> ListPrefetchSchedulesOutcome;
         typedef Aws::Utils::Outcome<ListSourceLocationsResult, MediaTailorError> ListSourceLocationsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, MediaTailorError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListVodSourcesResult, MediaTailorError> ListVodSourcesOutcome;
@@ -152,12 +164,14 @@ namespace Model
 
         typedef std::future<ConfigureLogsForPlaybackConfigurationOutcome> ConfigureLogsForPlaybackConfigurationOutcomeCallable;
         typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
+        typedef std::future<CreatePrefetchScheduleOutcome> CreatePrefetchScheduleOutcomeCallable;
         typedef std::future<CreateProgramOutcome> CreateProgramOutcomeCallable;
         typedef std::future<CreateSourceLocationOutcome> CreateSourceLocationOutcomeCallable;
         typedef std::future<CreateVodSourceOutcome> CreateVodSourceOutcomeCallable;
         typedef std::future<DeleteChannelOutcome> DeleteChannelOutcomeCallable;
         typedef std::future<DeleteChannelPolicyOutcome> DeleteChannelPolicyOutcomeCallable;
         typedef std::future<DeletePlaybackConfigurationOutcome> DeletePlaybackConfigurationOutcomeCallable;
+        typedef std::future<DeletePrefetchScheduleOutcome> DeletePrefetchScheduleOutcomeCallable;
         typedef std::future<DeleteProgramOutcome> DeleteProgramOutcomeCallable;
         typedef std::future<DeleteSourceLocationOutcome> DeleteSourceLocationOutcomeCallable;
         typedef std::future<DeleteVodSourceOutcome> DeleteVodSourceOutcomeCallable;
@@ -168,9 +182,11 @@ namespace Model
         typedef std::future<GetChannelPolicyOutcome> GetChannelPolicyOutcomeCallable;
         typedef std::future<GetChannelScheduleOutcome> GetChannelScheduleOutcomeCallable;
         typedef std::future<GetPlaybackConfigurationOutcome> GetPlaybackConfigurationOutcomeCallable;
+        typedef std::future<GetPrefetchScheduleOutcome> GetPrefetchScheduleOutcomeCallable;
         typedef std::future<ListAlertsOutcome> ListAlertsOutcomeCallable;
         typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
         typedef std::future<ListPlaybackConfigurationsOutcome> ListPlaybackConfigurationsOutcomeCallable;
+        typedef std::future<ListPrefetchSchedulesOutcome> ListPrefetchSchedulesOutcomeCallable;
         typedef std::future<ListSourceLocationsOutcome> ListSourceLocationsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListVodSourcesOutcome> ListVodSourcesOutcomeCallable;
@@ -189,12 +205,14 @@ namespace Model
 
     typedef std::function<void(const MediaTailorClient*, const Model::ConfigureLogsForPlaybackConfigurationRequest&, const Model::ConfigureLogsForPlaybackConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfigureLogsForPlaybackConfigurationResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::CreateChannelRequest&, const Model::CreateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelResponseReceivedHandler;
+    typedef std::function<void(const MediaTailorClient*, const Model::CreatePrefetchScheduleRequest&, const Model::CreatePrefetchScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePrefetchScheduleResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::CreateProgramRequest&, const Model::CreateProgramOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProgramResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::CreateSourceLocationRequest&, const Model::CreateSourceLocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSourceLocationResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::CreateVodSourceRequest&, const Model::CreateVodSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVodSourceResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::DeleteChannelRequest&, const Model::DeleteChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::DeleteChannelPolicyRequest&, const Model::DeleteChannelPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelPolicyResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::DeletePlaybackConfigurationRequest&, const Model::DeletePlaybackConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePlaybackConfigurationResponseReceivedHandler;
+    typedef std::function<void(const MediaTailorClient*, const Model::DeletePrefetchScheduleRequest&, const Model::DeletePrefetchScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePrefetchScheduleResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::DeleteProgramRequest&, const Model::DeleteProgramOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProgramResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::DeleteSourceLocationRequest&, const Model::DeleteSourceLocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSourceLocationResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::DeleteVodSourceRequest&, const Model::DeleteVodSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVodSourceResponseReceivedHandler;
@@ -205,9 +223,11 @@ namespace Model
     typedef std::function<void(const MediaTailorClient*, const Model::GetChannelPolicyRequest&, const Model::GetChannelPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChannelPolicyResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::GetChannelScheduleRequest&, const Model::GetChannelScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChannelScheduleResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::GetPlaybackConfigurationRequest&, const Model::GetPlaybackConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPlaybackConfigurationResponseReceivedHandler;
+    typedef std::function<void(const MediaTailorClient*, const Model::GetPrefetchScheduleRequest&, const Model::GetPrefetchScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPrefetchScheduleResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::ListAlertsRequest&, const Model::ListAlertsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAlertsResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::ListPlaybackConfigurationsRequest&, const Model::ListPlaybackConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPlaybackConfigurationsResponseReceivedHandler;
+    typedef std::function<void(const MediaTailorClient*, const Model::ListPrefetchSchedulesRequest&, const Model::ListPrefetchSchedulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPrefetchSchedulesResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::ListSourceLocationsRequest&, const Model::ListSourceLocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSourceLocationsResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::ListVodSourcesRequest&, const Model::ListVodSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVodSourcesResponseReceivedHandler;
@@ -313,6 +333,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateChannelAsync(const Model::CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new prefetch schedule for the specified playback
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreatePrefetchSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePrefetchScheduleOutcome CreatePrefetchSchedule(const Model::CreatePrefetchScheduleRequest& request) const;
+
+        /**
+         * <p>Creates a new prefetch schedule for the specified playback
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreatePrefetchSchedule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreatePrefetchScheduleOutcomeCallable CreatePrefetchScheduleCallable(const Model::CreatePrefetchScheduleRequest& request) const;
+
+        /**
+         * <p>Creates a new prefetch schedule for the specified playback
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreatePrefetchSchedule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreatePrefetchScheduleAsync(const Model::CreatePrefetchScheduleRequest& request, const CreatePrefetchScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a program.</p><p><h3>See Also:</h3>   <a
@@ -475,6 +523,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeletePlaybackConfigurationAsync(const Model::DeletePlaybackConfigurationRequest& request, const DeletePlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a prefetch schedule for a specific playback configuration. If you
+         * call DeletePrefetchSchedule on an expired prefetch schedule, MediaTailor returns
+         * an HTTP 404 status code.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeletePrefetchSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePrefetchScheduleOutcome DeletePrefetchSchedule(const Model::DeletePrefetchScheduleRequest& request) const;
+
+        /**
+         * <p>Deletes a prefetch schedule for a specific playback configuration. If you
+         * call DeletePrefetchSchedule on an expired prefetch schedule, MediaTailor returns
+         * an HTTP 404 status code.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeletePrefetchSchedule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeletePrefetchScheduleOutcomeCallable DeletePrefetchScheduleCallable(const Model::DeletePrefetchScheduleRequest& request) const;
+
+        /**
+         * <p>Deletes a prefetch schedule for a specific playback configuration. If you
+         * call DeletePrefetchSchedule on an expired prefetch schedule, MediaTailor returns
+         * an HTTP 404 status code.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeletePrefetchSchedule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeletePrefetchScheduleAsync(const Model::DeletePrefetchScheduleRequest& request, const DeletePrefetchScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specific program on a specific channel.</p><p><h3>See Also:</h3>  
@@ -754,6 +833,37 @@ namespace Model
         virtual void GetPlaybackConfigurationAsync(const Model::GetPlaybackConfigurationRequest& request, const GetPlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns information about the prefetch schedule for a specific playback
+         * configuration. If you call GetPrefetchSchedule on an expired prefetch schedule,
+         * MediaTailor returns an HTTP 404 status code.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPrefetchSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPrefetchScheduleOutcome GetPrefetchSchedule(const Model::GetPrefetchScheduleRequest& request) const;
+
+        /**
+         * <p>Returns information about the prefetch schedule for a specific playback
+         * configuration. If you call GetPrefetchSchedule on an expired prefetch schedule,
+         * MediaTailor returns an HTTP 404 status code.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPrefetchSchedule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPrefetchScheduleOutcomeCallable GetPrefetchScheduleCallable(const Model::GetPrefetchScheduleRequest& request) const;
+
+        /**
+         * <p>Returns information about the prefetch schedule for a specific playback
+         * configuration. If you call GetPrefetchSchedule on an expired prefetch schedule,
+         * MediaTailor returns an HTTP 404 status code.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPrefetchSchedule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPrefetchScheduleAsync(const Model::GetPrefetchScheduleRequest& request, const GetPrefetchScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of alerts for the given resource.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListAlerts">AWS
@@ -848,6 +958,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListPlaybackConfigurationsAsync(const Model::ListPlaybackConfigurationsRequest& request, const ListPlaybackConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new prefetch schedule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrefetchSchedules">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPrefetchSchedulesOutcome ListPrefetchSchedules(const Model::ListPrefetchSchedulesRequest& request) const;
+
+        /**
+         * <p>Creates a new prefetch schedule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrefetchSchedules">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListPrefetchSchedulesOutcomeCallable ListPrefetchSchedulesCallable(const Model::ListPrefetchSchedulesRequest& request) const;
+
+        /**
+         * <p>Creates a new prefetch schedule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrefetchSchedules">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListPrefetchSchedulesAsync(const Model::ListPrefetchSchedulesRequest& request, const ListPrefetchSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of source locations.</p><p><h3>See Also:</h3>   <a
@@ -1173,12 +1308,14 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void ConfigureLogsForPlaybackConfigurationAsyncHelper(const Model::ConfigureLogsForPlaybackConfigurationRequest& request, const ConfigureLogsForPlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateChannelAsyncHelper(const Model::CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreatePrefetchScheduleAsyncHelper(const Model::CreatePrefetchScheduleRequest& request, const CreatePrefetchScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateProgramAsyncHelper(const Model::CreateProgramRequest& request, const CreateProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSourceLocationAsyncHelper(const Model::CreateSourceLocationRequest& request, const CreateSourceLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateVodSourceAsyncHelper(const Model::CreateVodSourceRequest& request, const CreateVodSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteChannelAsyncHelper(const Model::DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteChannelPolicyAsyncHelper(const Model::DeleteChannelPolicyRequest& request, const DeleteChannelPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePlaybackConfigurationAsyncHelper(const Model::DeletePlaybackConfigurationRequest& request, const DeletePlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeletePrefetchScheduleAsyncHelper(const Model::DeletePrefetchScheduleRequest& request, const DeletePrefetchScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProgramAsyncHelper(const Model::DeleteProgramRequest& request, const DeleteProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSourceLocationAsyncHelper(const Model::DeleteSourceLocationRequest& request, const DeleteSourceLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVodSourceAsyncHelper(const Model::DeleteVodSourceRequest& request, const DeleteVodSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1189,9 +1326,11 @@ namespace Model
         void GetChannelPolicyAsyncHelper(const Model::GetChannelPolicyRequest& request, const GetChannelPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetChannelScheduleAsyncHelper(const Model::GetChannelScheduleRequest& request, const GetChannelScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPlaybackConfigurationAsyncHelper(const Model::GetPlaybackConfigurationRequest& request, const GetPlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetPrefetchScheduleAsyncHelper(const Model::GetPrefetchScheduleRequest& request, const GetPrefetchScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAlertsAsyncHelper(const Model::ListAlertsRequest& request, const ListAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListChannelsAsyncHelper(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPlaybackConfigurationsAsyncHelper(const Model::ListPlaybackConfigurationsRequest& request, const ListPlaybackConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListPrefetchSchedulesAsyncHelper(const Model::ListPrefetchSchedulesRequest& request, const ListPrefetchSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSourceLocationsAsyncHelper(const Model::ListSourceLocationsRequest& request, const ListSourceLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVodSourcesAsyncHelper(const Model::ListVodSourcesRequest& request, const ListVodSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

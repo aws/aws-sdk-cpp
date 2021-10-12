@@ -1945,8 +1945,8 @@ namespace Model
      * <p>Specifies whether to propagate the tags from the task definition or the
      * service to the tasks in the service. If no value is specified, the tags are not
      * propagated. Tags can only be propagated to the tasks within the service during
-     * service creation. To add tags to a task after service creation, use the
-     * <a>TagResource</a> API action.</p>
+     * service creation. To add tags to a task after service creation or task creation,
+     * use the <a>TagResource</a> API action.</p>
      */
     inline const PropagateTags& GetPropagateTags() const{ return m_propagateTags; }
 
@@ -1954,8 +1954,8 @@ namespace Model
      * <p>Specifies whether to propagate the tags from the task definition or the
      * service to the tasks in the service. If no value is specified, the tags are not
      * propagated. Tags can only be propagated to the tasks within the service during
-     * service creation. To add tags to a task after service creation, use the
-     * <a>TagResource</a> API action.</p>
+     * service creation. To add tags to a task after service creation or task creation,
+     * use the <a>TagResource</a> API action.</p>
      */
     inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
 
@@ -1963,8 +1963,8 @@ namespace Model
      * <p>Specifies whether to propagate the tags from the task definition or the
      * service to the tasks in the service. If no value is specified, the tags are not
      * propagated. Tags can only be propagated to the tasks within the service during
-     * service creation. To add tags to a task after service creation, use the
-     * <a>TagResource</a> API action.</p>
+     * service creation. To add tags to a task after service creation or task creation,
+     * use the <a>TagResource</a> API action.</p>
      */
     inline void SetPropagateTags(const PropagateTags& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
 
@@ -1972,8 +1972,8 @@ namespace Model
      * <p>Specifies whether to propagate the tags from the task definition or the
      * service to the tasks in the service. If no value is specified, the tags are not
      * propagated. Tags can only be propagated to the tasks within the service during
-     * service creation. To add tags to a task after service creation, use the
-     * <a>TagResource</a> API action.</p>
+     * service creation. To add tags to a task after service creation or task creation,
+     * use the <a>TagResource</a> API action.</p>
      */
     inline void SetPropagateTags(PropagateTags&& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = std::move(value); }
 
@@ -1981,8 +1981,8 @@ namespace Model
      * <p>Specifies whether to propagate the tags from the task definition or the
      * service to the tasks in the service. If no value is specified, the tags are not
      * propagated. Tags can only be propagated to the tasks within the service during
-     * service creation. To add tags to a task after service creation, use the
-     * <a>TagResource</a> API action.</p>
+     * service creation. To add tags to a task after service creation or task creation,
+     * use the <a>TagResource</a> API action.</p>
      */
     inline CreateServiceRequest& WithPropagateTags(const PropagateTags& value) { SetPropagateTags(value); return *this;}
 
@@ -1990,8 +1990,8 @@ namespace Model
      * <p>Specifies whether to propagate the tags from the task definition or the
      * service to the tasks in the service. If no value is specified, the tags are not
      * propagated. Tags can only be propagated to the tasks within the service during
-     * service creation. To add tags to a task after service creation, use the
-     * <a>TagResource</a> API action.</p>
+     * service creation. To add tags to a task after service creation or task creation,
+     * use the <a>TagResource</a> API action.</p>
      */
     inline CreateServiceRequest& WithPropagateTags(PropagateTags&& value) { SetPropagateTags(std::move(value)); return *this;}
 

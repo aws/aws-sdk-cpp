@@ -174,10 +174,12 @@ namespace Model
      * size of each instance storage disk, in GB.</p> </li> <li> <p>
      * <code>instance-storage-info.disk.type</code> - The storage technology for the
      * local instance storage disks (<code>hdd</code> | <code>ssd</code>).</p> </li>
-     * <li> <p> <code>instance-storage-info.nvme-support</code> - Indicates whether
-     * non-volatile memory express (NVMe) is supported for instance store
-     * (<code>required</code> | <code>supported</code>) |
+     * <li> <p> <code>instance-storage-info.encryption-supported</code> - Indicates
+     * whether data is encrypted at rest (<code>required</code> |
      * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile
+     * memory express (NVMe) is supported for instance store (<code>required</code> |
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
      * <code>instance-storage-info.total-size-in-gb</code> - The total amount of
      * storage available from all local instance storage, in GB.</p> </li> <li> <p>
      * <code>instance-storage-supported</code> - Indicates whether the instance type
@@ -274,10 +276,12 @@ namespace Model
      * size of each instance storage disk, in GB.</p> </li> <li> <p>
      * <code>instance-storage-info.disk.type</code> - The storage technology for the
      * local instance storage disks (<code>hdd</code> | <code>ssd</code>).</p> </li>
-     * <li> <p> <code>instance-storage-info.nvme-support</code> - Indicates whether
-     * non-volatile memory express (NVMe) is supported for instance store
-     * (<code>required</code> | <code>supported</code>) |
+     * <li> <p> <code>instance-storage-info.encryption-supported</code> - Indicates
+     * whether data is encrypted at rest (<code>required</code> |
      * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile
+     * memory express (NVMe) is supported for instance store (<code>required</code> |
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
      * <code>instance-storage-info.total-size-in-gb</code> - The total amount of
      * storage available from all local instance storage, in GB.</p> </li> <li> <p>
      * <code>instance-storage-supported</code> - Indicates whether the instance type
@@ -374,10 +378,12 @@ namespace Model
      * size of each instance storage disk, in GB.</p> </li> <li> <p>
      * <code>instance-storage-info.disk.type</code> - The storage technology for the
      * local instance storage disks (<code>hdd</code> | <code>ssd</code>).</p> </li>
-     * <li> <p> <code>instance-storage-info.nvme-support</code> - Indicates whether
-     * non-volatile memory express (NVMe) is supported for instance store
-     * (<code>required</code> | <code>supported</code>) |
+     * <li> <p> <code>instance-storage-info.encryption-supported</code> - Indicates
+     * whether data is encrypted at rest (<code>required</code> |
      * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile
+     * memory express (NVMe) is supported for instance store (<code>required</code> |
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
      * <code>instance-storage-info.total-size-in-gb</code> - The total amount of
      * storage available from all local instance storage, in GB.</p> </li> <li> <p>
      * <code>instance-storage-supported</code> - Indicates whether the instance type
@@ -474,10 +480,12 @@ namespace Model
      * size of each instance storage disk, in GB.</p> </li> <li> <p>
      * <code>instance-storage-info.disk.type</code> - The storage technology for the
      * local instance storage disks (<code>hdd</code> | <code>ssd</code>).</p> </li>
-     * <li> <p> <code>instance-storage-info.nvme-support</code> - Indicates whether
-     * non-volatile memory express (NVMe) is supported for instance store
-     * (<code>required</code> | <code>supported</code>) |
+     * <li> <p> <code>instance-storage-info.encryption-supported</code> - Indicates
+     * whether data is encrypted at rest (<code>required</code> |
      * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile
+     * memory express (NVMe) is supported for instance store (<code>required</code> |
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
      * <code>instance-storage-info.total-size-in-gb</code> - The total amount of
      * storage available from all local instance storage, in GB.</p> </li> <li> <p>
      * <code>instance-storage-supported</code> - Indicates whether the instance type
@@ -574,10 +582,12 @@ namespace Model
      * size of each instance storage disk, in GB.</p> </li> <li> <p>
      * <code>instance-storage-info.disk.type</code> - The storage technology for the
      * local instance storage disks (<code>hdd</code> | <code>ssd</code>).</p> </li>
-     * <li> <p> <code>instance-storage-info.nvme-support</code> - Indicates whether
-     * non-volatile memory express (NVMe) is supported for instance store
-     * (<code>required</code> | <code>supported</code>) |
+     * <li> <p> <code>instance-storage-info.encryption-supported</code> - Indicates
+     * whether data is encrypted at rest (<code>required</code> |
      * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile
+     * memory express (NVMe) is supported for instance store (<code>required</code> |
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
      * <code>instance-storage-info.total-size-in-gb</code> - The total amount of
      * storage available from all local instance storage, in GB.</p> </li> <li> <p>
      * <code>instance-storage-supported</code> - Indicates whether the instance type
@@ -674,10 +684,12 @@ namespace Model
      * size of each instance storage disk, in GB.</p> </li> <li> <p>
      * <code>instance-storage-info.disk.type</code> - The storage technology for the
      * local instance storage disks (<code>hdd</code> | <code>ssd</code>).</p> </li>
-     * <li> <p> <code>instance-storage-info.nvme-support</code> - Indicates whether
-     * non-volatile memory express (NVMe) is supported for instance store
-     * (<code>required</code> | <code>supported</code>) |
+     * <li> <p> <code>instance-storage-info.encryption-supported</code> - Indicates
+     * whether data is encrypted at rest (<code>required</code> |
      * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile
+     * memory express (NVMe) is supported for instance store (<code>required</code> |
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
      * <code>instance-storage-info.total-size-in-gb</code> - The total amount of
      * storage available from all local instance storage, in GB.</p> </li> <li> <p>
      * <code>instance-storage-supported</code> - Indicates whether the instance type
@@ -774,10 +786,12 @@ namespace Model
      * size of each instance storage disk, in GB.</p> </li> <li> <p>
      * <code>instance-storage-info.disk.type</code> - The storage technology for the
      * local instance storage disks (<code>hdd</code> | <code>ssd</code>).</p> </li>
-     * <li> <p> <code>instance-storage-info.nvme-support</code> - Indicates whether
-     * non-volatile memory express (NVMe) is supported for instance store
-     * (<code>required</code> | <code>supported</code>) |
+     * <li> <p> <code>instance-storage-info.encryption-supported</code> - Indicates
+     * whether data is encrypted at rest (<code>required</code> |
      * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile
+     * memory express (NVMe) is supported for instance store (<code>required</code> |
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
      * <code>instance-storage-info.total-size-in-gb</code> - The total amount of
      * storage available from all local instance storage, in GB.</p> </li> <li> <p>
      * <code>instance-storage-supported</code> - Indicates whether the instance type
@@ -874,10 +888,12 @@ namespace Model
      * size of each instance storage disk, in GB.</p> </li> <li> <p>
      * <code>instance-storage-info.disk.type</code> - The storage technology for the
      * local instance storage disks (<code>hdd</code> | <code>ssd</code>).</p> </li>
-     * <li> <p> <code>instance-storage-info.nvme-support</code> - Indicates whether
-     * non-volatile memory express (NVMe) is supported for instance store
-     * (<code>required</code> | <code>supported</code>) |
+     * <li> <p> <code>instance-storage-info.encryption-supported</code> - Indicates
+     * whether data is encrypted at rest (<code>required</code> |
      * <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile
+     * memory express (NVMe) is supported for instance store (<code>required</code> |
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
      * <code>instance-storage-info.total-size-in-gb</code> - The total amount of
      * storage available from all local instance storage, in GB.</p> </li> <li> <p>
      * <code>instance-storage-supported</code> - Indicates whether the instance type
