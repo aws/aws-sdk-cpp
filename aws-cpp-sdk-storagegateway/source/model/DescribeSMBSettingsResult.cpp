@@ -72,6 +72,12 @@ DescribeSMBSettingsResult& DescribeSMBSettingsResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("SMBLocalGroups"))
+  {
+    m_sMBLocalGroups = jsonValue.GetObject("SMBLocalGroups");
+
+  }
+
 
 
   return *this;

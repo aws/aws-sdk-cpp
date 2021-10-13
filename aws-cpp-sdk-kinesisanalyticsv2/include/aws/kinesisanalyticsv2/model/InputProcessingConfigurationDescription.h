@@ -26,7 +26,7 @@ namespace Model
   /**
    * <p>For a SQL-based Kinesis Data Analytics application, provides the
    * configuration information about an input processor. Currently, the only input
-   * processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS
+   * processor available is <a href="https://docs.aws.amazon.com/lambda/">Amazon
    * Lambda</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/InputProcessingConfigurationDescription">AWS
    * API Reference</a></p>

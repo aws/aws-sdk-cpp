@@ -106,6 +106,7 @@
 #include <aws/storagegateway/model/UpdateNFSFileShareRequest.h>
 #include <aws/storagegateway/model/UpdateSMBFileShareRequest.h>
 #include <aws/storagegateway/model/UpdateSMBFileShareVisibilityRequest.h>
+#include <aws/storagegateway/model/UpdateSMBLocalGroupsRequest.h>
 #include <aws/storagegateway/model/UpdateSMBSecurityStrategyRequest.h>
 #include <aws/storagegateway/model/UpdateSnapshotScheduleRequest.h>
 #include <aws/storagegateway/model/UpdateVTLDeviceTypeRequest.h>
@@ -2245,6 +2246,30 @@ void StorageGatewayClient::UpdateSMBFileShareVisibilityAsync(const UpdateSMBFile
 void StorageGatewayClient::UpdateSMBFileShareVisibilityAsyncHelper(const UpdateSMBFileShareVisibilityRequest& request, const UpdateSMBFileShareVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateSMBFileShareVisibility(request), context);
+}
+
+UpdateSMBLocalGroupsOutcome StorageGatewayClient::UpdateSMBLocalGroups(const UpdateSMBLocalGroupsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateSMBLocalGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateSMBLocalGroupsOutcomeCallable StorageGatewayClient::UpdateSMBLocalGroupsCallable(const UpdateSMBLocalGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSMBLocalGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSMBLocalGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::UpdateSMBLocalGroupsAsync(const UpdateSMBLocalGroupsRequest& request, const UpdateSMBLocalGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateSMBLocalGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::UpdateSMBLocalGroupsAsyncHelper(const UpdateSMBLocalGroupsRequest& request, const UpdateSMBLocalGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateSMBLocalGroups(request), context);
 }
 
 UpdateSMBSecurityStrategyOutcome StorageGatewayClient::UpdateSMBSecurityStrategy(const UpdateSMBSecurityStrategyRequest& request) const

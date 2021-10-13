@@ -28,8 +28,8 @@ namespace Aws
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int AUTOSCALING_HASH = HashingUtils::HashString("AUTOSCALING");
         static const int FORCE_STOPPING_HASH = HashingUtils::HashString("FORCE_STOPPING");
-        static const int MAINTENANCE_HASH = HashingUtils::HashString("MAINTENANCE");
         static const int ROLLING_BACK_HASH = HashingUtils::HashString("ROLLING_BACK");
+        static const int MAINTENANCE_HASH = HashingUtils::HashString("MAINTENANCE");
         static const int ROLLED_BACK_HASH = HashingUtils::HashString("ROLLED_BACK");
 
 
@@ -68,13 +68,13 @@ namespace Aws
           {
             return ApplicationStatus::FORCE_STOPPING;
           }
-          else if (hashCode == MAINTENANCE_HASH)
-          {
-            return ApplicationStatus::MAINTENANCE;
-          }
           else if (hashCode == ROLLING_BACK_HASH)
           {
             return ApplicationStatus::ROLLING_BACK;
+          }
+          else if (hashCode == MAINTENANCE_HASH)
+          {
+            return ApplicationStatus::MAINTENANCE;
           }
           else if (hashCode == ROLLED_BACK_HASH)
           {
@@ -110,10 +110,10 @@ namespace Aws
             return "AUTOSCALING";
           case ApplicationStatus::FORCE_STOPPING:
             return "FORCE_STOPPING";
-          case ApplicationStatus::MAINTENANCE:
-            return "MAINTENANCE";
           case ApplicationStatus::ROLLING_BACK:
             return "ROLLING_BACK";
+          case ApplicationStatus::MAINTENANCE:
+            return "MAINTENANCE";
           case ApplicationStatus::ROLLED_BACK:
             return "ROLLED_BACK";
           default:

@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Updates to the configuration information required to deploy an Amazon Data
-   * Analytics Studio notebook as an application with durable state..</p><p><h3>See
+   * Analytics Studio notebook as an application with durable state.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeployAsApplicationConfigurationUpdate">AWS
    * API Reference</a></p>

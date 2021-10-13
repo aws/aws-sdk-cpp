@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/storagegateway/model/ActiveDirectoryStatus.h>
 #include <aws/storagegateway/model/SMBSecurityStrategy.h>
+#include <aws/storagegateway/model/SMBLocalGroups.h>
 #include <utility>
 
 namespace Aws
@@ -307,6 +308,37 @@ namespace Model
      */
     inline DescribeSMBSettingsResult& WithFileSharesVisible(bool value) { SetFileSharesVisible(value); return *this;}
 
+
+    /**
+     * <p>A list of Active Directory users and groups that have special permissions for
+     * SMB file shares on the gateway.</p>
+     */
+    inline const SMBLocalGroups& GetSMBLocalGroups() const{ return m_sMBLocalGroups; }
+
+    /**
+     * <p>A list of Active Directory users and groups that have special permissions for
+     * SMB file shares on the gateway.</p>
+     */
+    inline void SetSMBLocalGroups(const SMBLocalGroups& value) { m_sMBLocalGroups = value; }
+
+    /**
+     * <p>A list of Active Directory users and groups that have special permissions for
+     * SMB file shares on the gateway.</p>
+     */
+    inline void SetSMBLocalGroups(SMBLocalGroups&& value) { m_sMBLocalGroups = std::move(value); }
+
+    /**
+     * <p>A list of Active Directory users and groups that have special permissions for
+     * SMB file shares on the gateway.</p>
+     */
+    inline DescribeSMBSettingsResult& WithSMBLocalGroups(const SMBLocalGroups& value) { SetSMBLocalGroups(value); return *this;}
+
+    /**
+     * <p>A list of Active Directory users and groups that have special permissions for
+     * SMB file shares on the gateway.</p>
+     */
+    inline DescribeSMBSettingsResult& WithSMBLocalGroups(SMBLocalGroups&& value) { SetSMBLocalGroups(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_gatewayARN;
@@ -320,6 +352,8 @@ namespace Model
     SMBSecurityStrategy m_sMBSecurityStrategy;
 
     bool m_fileSharesVisible;
+
+    SMBLocalGroups m_sMBLocalGroups;
   };
 
 } // namespace Model

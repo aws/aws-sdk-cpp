@@ -438,37 +438,37 @@ namespace Model
 
 
     /**
-     * <p>The Region where the Amazon EC2 instance is located.</p>
+     * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
     inline const Aws::String& GetEc2InstanceRegion() const{ return m_ec2InstanceRegion; }
 
     /**
-     * <p>The Region where the Amazon EC2 instance is located.</p>
+     * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
     inline void SetEc2InstanceRegion(const Aws::String& value) { m_ec2InstanceRegion = value; }
 
     /**
-     * <p>The Region where the Amazon EC2 instance is located.</p>
+     * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
     inline void SetEc2InstanceRegion(Aws::String&& value) { m_ec2InstanceRegion = std::move(value); }
 
     /**
-     * <p>The Region where the Amazon EC2 instance is located.</p>
+     * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
     inline void SetEc2InstanceRegion(const char* value) { m_ec2InstanceRegion.assign(value); }
 
     /**
-     * <p>The Region where the Amazon EC2 instance is located.</p>
+     * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
     inline DescribeGatewayInformationResult& WithEc2InstanceRegion(const Aws::String& value) { SetEc2InstanceRegion(value); return *this;}
 
     /**
-     * <p>The Region where the Amazon EC2 instance is located.</p>
+     * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
     inline DescribeGatewayInformationResult& WithEc2InstanceRegion(Aws::String&& value) { SetEc2InstanceRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The Region where the Amazon EC2 instance is located.</p>
+     * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
     inline DescribeGatewayInformationResult& WithEc2InstanceRegion(const char* value) { SetEc2InstanceRegion(value); return *this;}
 

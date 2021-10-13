@@ -40,6 +40,7 @@
 #include <aws/workmail/model/DeleteRetentionPolicyRequest.h>
 #include <aws/workmail/model/DeleteUserRequest.h>
 #include <aws/workmail/model/DeregisterFromWorkMailRequest.h>
+#include <aws/workmail/model/DeregisterMailDomainRequest.h>
 #include <aws/workmail/model/DescribeGroupRequest.h>
 #include <aws/workmail/model/DescribeInboundDmarcSettingsRequest.h>
 #include <aws/workmail/model/DescribeMailboxExportJobRequest.h>
@@ -50,6 +51,7 @@
 #include <aws/workmail/model/DisassociateMemberFromGroupRequest.h>
 #include <aws/workmail/model/GetAccessControlEffectRequest.h>
 #include <aws/workmail/model/GetDefaultRetentionPolicyRequest.h>
+#include <aws/workmail/model/GetMailDomainRequest.h>
 #include <aws/workmail/model/GetMailboxDetailsRequest.h>
 #include <aws/workmail/model/GetMobileDeviceAccessEffectRequest.h>
 #include <aws/workmail/model/GetMobileDeviceAccessOverrideRequest.h>
@@ -57,6 +59,7 @@
 #include <aws/workmail/model/ListAliasesRequest.h>
 #include <aws/workmail/model/ListGroupMembersRequest.h>
 #include <aws/workmail/model/ListGroupsRequest.h>
+#include <aws/workmail/model/ListMailDomainsRequest.h>
 #include <aws/workmail/model/ListMailboxExportJobsRequest.h>
 #include <aws/workmail/model/ListMailboxPermissionsRequest.h>
 #include <aws/workmail/model/ListMobileDeviceAccessOverridesRequest.h>
@@ -71,11 +74,13 @@
 #include <aws/workmail/model/PutMailboxPermissionsRequest.h>
 #include <aws/workmail/model/PutMobileDeviceAccessOverrideRequest.h>
 #include <aws/workmail/model/PutRetentionPolicyRequest.h>
+#include <aws/workmail/model/RegisterMailDomainRequest.h>
 #include <aws/workmail/model/RegisterToWorkMailRequest.h>
 #include <aws/workmail/model/ResetPasswordRequest.h>
 #include <aws/workmail/model/StartMailboxExportJobRequest.h>
 #include <aws/workmail/model/TagResourceRequest.h>
 #include <aws/workmail/model/UntagResourceRequest.h>
+#include <aws/workmail/model/UpdateDefaultMailDomainRequest.h>
 #include <aws/workmail/model/UpdateMailboxQuotaRequest.h>
 #include <aws/workmail/model/UpdateMobileDeviceAccessRuleRequest.h>
 #include <aws/workmail/model/UpdatePrimaryEmailAddressRequest.h>
@@ -634,6 +639,30 @@ void WorkMailClient::DeregisterFromWorkMailAsyncHelper(const DeregisterFromWorkM
   handler(this, request, DeregisterFromWorkMail(request), context);
 }
 
+DeregisterMailDomainOutcome WorkMailClient::DeregisterMailDomain(const DeregisterMailDomainRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeregisterMailDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeregisterMailDomainOutcomeCallable WorkMailClient::DeregisterMailDomainCallable(const DeregisterMailDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterMailDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterMailDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::DeregisterMailDomainAsync(const DeregisterMailDomainRequest& request, const DeregisterMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeregisterMailDomainAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::DeregisterMailDomainAsyncHelper(const DeregisterMailDomainRequest& request, const DeregisterMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeregisterMailDomain(request), context);
+}
+
 DescribeGroupOutcome WorkMailClient::DescribeGroup(const DescribeGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -874,6 +903,30 @@ void WorkMailClient::GetDefaultRetentionPolicyAsyncHelper(const GetDefaultRetent
   handler(this, request, GetDefaultRetentionPolicy(request), context);
 }
 
+GetMailDomainOutcome WorkMailClient::GetMailDomain(const GetMailDomainRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetMailDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetMailDomainOutcomeCallable WorkMailClient::GetMailDomainCallable(const GetMailDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMailDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMailDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::GetMailDomainAsync(const GetMailDomainRequest& request, const GetMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMailDomainAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::GetMailDomainAsyncHelper(const GetMailDomainRequest& request, const GetMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMailDomain(request), context);
+}
+
 GetMailboxDetailsOutcome WorkMailClient::GetMailboxDetails(const GetMailboxDetailsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1040,6 +1093,30 @@ void WorkMailClient::ListGroupsAsync(const ListGroupsRequest& request, const Lis
 void WorkMailClient::ListGroupsAsyncHelper(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListGroups(request), context);
+}
+
+ListMailDomainsOutcome WorkMailClient::ListMailDomains(const ListMailDomainsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListMailDomainsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListMailDomainsOutcomeCallable WorkMailClient::ListMailDomainsCallable(const ListMailDomainsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMailDomainsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMailDomains(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::ListMailDomainsAsync(const ListMailDomainsRequest& request, const ListMailDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListMailDomainsAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::ListMailDomainsAsyncHelper(const ListMailDomainsRequest& request, const ListMailDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListMailDomains(request), context);
 }
 
 ListMailboxExportJobsOutcome WorkMailClient::ListMailboxExportJobs(const ListMailboxExportJobsRequest& request) const
@@ -1378,6 +1455,30 @@ void WorkMailClient::PutRetentionPolicyAsyncHelper(const PutRetentionPolicyReque
   handler(this, request, PutRetentionPolicy(request), context);
 }
 
+RegisterMailDomainOutcome WorkMailClient::RegisterMailDomain(const RegisterMailDomainRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return RegisterMailDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RegisterMailDomainOutcomeCallable WorkMailClient::RegisterMailDomainCallable(const RegisterMailDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RegisterMailDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterMailDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::RegisterMailDomainAsync(const RegisterMailDomainRequest& request, const RegisterMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RegisterMailDomainAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::RegisterMailDomainAsyncHelper(const RegisterMailDomainRequest& request, const RegisterMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RegisterMailDomain(request), context);
+}
+
 RegisterToWorkMailOutcome WorkMailClient::RegisterToWorkMail(const RegisterToWorkMailRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1496,6 +1597,30 @@ void WorkMailClient::UntagResourceAsync(const UntagResourceRequest& request, con
 void WorkMailClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateDefaultMailDomainOutcome WorkMailClient::UpdateDefaultMailDomain(const UpdateDefaultMailDomainRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateDefaultMailDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateDefaultMailDomainOutcomeCallable WorkMailClient::UpdateDefaultMailDomainCallable(const UpdateDefaultMailDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDefaultMailDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDefaultMailDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::UpdateDefaultMailDomainAsync(const UpdateDefaultMailDomainRequest& request, const UpdateDefaultMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateDefaultMailDomainAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::UpdateDefaultMailDomainAsyncHelper(const UpdateDefaultMailDomainRequest& request, const UpdateDefaultMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateDefaultMailDomain(request), context);
 }
 
 UpdateMailboxQuotaOutcome WorkMailClient::UpdateMailboxQuota(const UpdateMailboxQuotaRequest& request) const

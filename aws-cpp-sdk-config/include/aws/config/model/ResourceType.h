@@ -123,7 +123,8 @@ namespace Model
     AWS_ECS_TaskDefinition,
     AWS_EFS_AccessPoint,
     AWS_EFS_FileSystem,
-    AWS_EKS_Cluster
+    AWS_EKS_Cluster,
+    AWS_OpenSearch_Domain
   };
 
 namespace ResourceTypeMapper

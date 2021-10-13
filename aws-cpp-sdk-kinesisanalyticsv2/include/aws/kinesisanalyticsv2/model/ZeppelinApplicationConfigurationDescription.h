@@ -74,75 +74,75 @@ namespace Model
 
 
     /**
-     * <p>The AWS Glue Data Catalog that is associated with the Kinesis Data Analytics
-     * Studio notebook.</p>
+     * <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data
+     * Analytics Studio notebook.</p>
      */
     inline const CatalogConfigurationDescription& GetCatalogConfigurationDescription() const{ return m_catalogConfigurationDescription; }
 
     /**
-     * <p>The AWS Glue Data Catalog that is associated with the Kinesis Data Analytics
-     * Studio notebook.</p>
+     * <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data
+     * Analytics Studio notebook.</p>
      */
     inline bool CatalogConfigurationDescriptionHasBeenSet() const { return m_catalogConfigurationDescriptionHasBeenSet; }
 
     /**
-     * <p>The AWS Glue Data Catalog that is associated with the Kinesis Data Analytics
-     * Studio notebook.</p>
+     * <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data
+     * Analytics Studio notebook.</p>
      */
     inline void SetCatalogConfigurationDescription(const CatalogConfigurationDescription& value) { m_catalogConfigurationDescriptionHasBeenSet = true; m_catalogConfigurationDescription = value; }
 
     /**
-     * <p>The AWS Glue Data Catalog that is associated with the Kinesis Data Analytics
-     * Studio notebook.</p>
+     * <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data
+     * Analytics Studio notebook.</p>
      */
     inline void SetCatalogConfigurationDescription(CatalogConfigurationDescription&& value) { m_catalogConfigurationDescriptionHasBeenSet = true; m_catalogConfigurationDescription = std::move(value); }
 
     /**
-     * <p>The AWS Glue Data Catalog that is associated with the Kinesis Data Analytics
-     * Studio notebook.</p>
+     * <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data
+     * Analytics Studio notebook.</p>
      */
     inline ZeppelinApplicationConfigurationDescription& WithCatalogConfigurationDescription(const CatalogConfigurationDescription& value) { SetCatalogConfigurationDescription(value); return *this;}
 
     /**
-     * <p>The AWS Glue Data Catalog that is associated with the Kinesis Data Analytics
-     * Studio notebook.</p>
+     * <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data
+     * Analytics Studio notebook.</p>
      */
     inline ZeppelinApplicationConfigurationDescription& WithCatalogConfigurationDescription(CatalogConfigurationDescription&& value) { SetCatalogConfigurationDescription(std::move(value)); return *this;}
 
 
     /**
      * <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as
-     * an application with durable state..</p>
+     * an application with durable state.</p>
      */
     inline const DeployAsApplicationConfigurationDescription& GetDeployAsApplicationConfigurationDescription() const{ return m_deployAsApplicationConfigurationDescription; }
 
     /**
      * <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as
-     * an application with durable state..</p>
+     * an application with durable state.</p>
      */
     inline bool DeployAsApplicationConfigurationDescriptionHasBeenSet() const { return m_deployAsApplicationConfigurationDescriptionHasBeenSet; }
 
     /**
      * <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as
-     * an application with durable state..</p>
+     * an application with durable state.</p>
      */
     inline void SetDeployAsApplicationConfigurationDescription(const DeployAsApplicationConfigurationDescription& value) { m_deployAsApplicationConfigurationDescriptionHasBeenSet = true; m_deployAsApplicationConfigurationDescription = value; }
 
     /**
      * <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as
-     * an application with durable state..</p>
+     * an application with durable state.</p>
      */
     inline void SetDeployAsApplicationConfigurationDescription(DeployAsApplicationConfigurationDescription&& value) { m_deployAsApplicationConfigurationDescriptionHasBeenSet = true; m_deployAsApplicationConfigurationDescription = std::move(value); }
 
     /**
      * <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as
-     * an application with durable state..</p>
+     * an application with durable state.</p>
      */
     inline ZeppelinApplicationConfigurationDescription& WithDeployAsApplicationConfigurationDescription(const DeployAsApplicationConfigurationDescription& value) { SetDeployAsApplicationConfigurationDescription(value); return *this;}
 
     /**
      * <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as
-     * an application with durable state..</p>
+     * an application with durable state.</p>
      */
     inline ZeppelinApplicationConfigurationDescription& WithDeployAsApplicationConfigurationDescription(DeployAsApplicationConfigurationDescription&& value) { SetDeployAsApplicationConfigurationDescription(std::move(value)); return *this;}
 

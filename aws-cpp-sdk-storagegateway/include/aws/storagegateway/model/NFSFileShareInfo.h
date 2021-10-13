@@ -624,56 +624,64 @@ namespace Model
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline const Aws::String& GetFileShareName() const{ return m_fileShareName; }
 
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline bool FileShareNameHasBeenSet() const { return m_fileShareNameHasBeenSet; }
 
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline void SetFileShareName(const Aws::String& value) { m_fileShareNameHasBeenSet = true; m_fileShareName = value; }
 
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline void SetFileShareName(Aws::String&& value) { m_fileShareNameHasBeenSet = true; m_fileShareName = std::move(value); }
 
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline void SetFileShareName(const char* value) { m_fileShareNameHasBeenSet = true; m_fileShareName.assign(value); }
 
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline NFSFileShareInfo& WithFileShareName(const Aws::String& value) { SetFileShareName(value); return *this;}
 
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline NFSFileShareInfo& WithFileShareName(Aws::String&& value) { SetFileShareName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline NFSFileShareInfo& WithFileShareName(const char* value) { SetFileShareName(value); return *this;}
 
@@ -967,6 +975,47 @@ namespace Model
      */
     inline NFSFileShareInfo& WithBucketRegion(const char* value) { SetBucketRegion(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline const Aws::String& GetAuditDestinationARN() const{ return m_auditDestinationARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline bool AuditDestinationARNHasBeenSet() const { return m_auditDestinationARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline void SetAuditDestinationARN(const Aws::String& value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline void SetAuditDestinationARN(Aws::String&& value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline void SetAuditDestinationARN(const char* value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline NFSFileShareInfo& WithAuditDestinationARN(const Aws::String& value) { SetAuditDestinationARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline NFSFileShareInfo& WithAuditDestinationARN(Aws::String&& value) { SetAuditDestinationARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline NFSFileShareInfo& WithAuditDestinationARN(const char* value) { SetAuditDestinationARN(value); return *this;}
+
   private:
 
     NFSFileShareDefaults m_nFSFileShareDefaults;
@@ -1037,6 +1086,9 @@ namespace Model
 
     Aws::String m_bucketRegion;
     bool m_bucketRegionHasBeenSet;
+
+    Aws::String m_auditDestinationARN;
+    bool m_auditDestinationARNHasBeenSet;
   };
 
 } // namespace Model

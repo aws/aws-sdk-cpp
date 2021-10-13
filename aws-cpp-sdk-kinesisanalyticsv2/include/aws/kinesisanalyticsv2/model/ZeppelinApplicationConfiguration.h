@@ -74,75 +74,75 @@ namespace Model
 
 
     /**
-     * <p>The AWS Glue Data Catalog that you use in queries in a Kinesis Data Analytics
-     * Studio notebook.</p>
+     * <p>The Amazon Glue Data Catalog that you use in queries in a Kinesis Data
+     * Analytics Studio notebook.</p>
      */
     inline const CatalogConfiguration& GetCatalogConfiguration() const{ return m_catalogConfiguration; }
 
     /**
-     * <p>The AWS Glue Data Catalog that you use in queries in a Kinesis Data Analytics
-     * Studio notebook.</p>
+     * <p>The Amazon Glue Data Catalog that you use in queries in a Kinesis Data
+     * Analytics Studio notebook.</p>
      */
     inline bool CatalogConfigurationHasBeenSet() const { return m_catalogConfigurationHasBeenSet; }
 
     /**
-     * <p>The AWS Glue Data Catalog that you use in queries in a Kinesis Data Analytics
-     * Studio notebook.</p>
+     * <p>The Amazon Glue Data Catalog that you use in queries in a Kinesis Data
+     * Analytics Studio notebook.</p>
      */
     inline void SetCatalogConfiguration(const CatalogConfiguration& value) { m_catalogConfigurationHasBeenSet = true; m_catalogConfiguration = value; }
 
     /**
-     * <p>The AWS Glue Data Catalog that you use in queries in a Kinesis Data Analytics
-     * Studio notebook.</p>
+     * <p>The Amazon Glue Data Catalog that you use in queries in a Kinesis Data
+     * Analytics Studio notebook.</p>
      */
     inline void SetCatalogConfiguration(CatalogConfiguration&& value) { m_catalogConfigurationHasBeenSet = true; m_catalogConfiguration = std::move(value); }
 
     /**
-     * <p>The AWS Glue Data Catalog that you use in queries in a Kinesis Data Analytics
-     * Studio notebook.</p>
+     * <p>The Amazon Glue Data Catalog that you use in queries in a Kinesis Data
+     * Analytics Studio notebook.</p>
      */
     inline ZeppelinApplicationConfiguration& WithCatalogConfiguration(const CatalogConfiguration& value) { SetCatalogConfiguration(value); return *this;}
 
     /**
-     * <p>The AWS Glue Data Catalog that you use in queries in a Kinesis Data Analytics
-     * Studio notebook.</p>
+     * <p>The Amazon Glue Data Catalog that you use in queries in a Kinesis Data
+     * Analytics Studio notebook.</p>
      */
     inline ZeppelinApplicationConfiguration& WithCatalogConfiguration(CatalogConfiguration&& value) { SetCatalogConfiguration(std::move(value)); return *this;}
 
 
     /**
      * <p>The information required to deploy a Kinesis Data Analytics Studio notebook
-     * as an application with durable state..</p>
+     * as an application with durable state.</p>
      */
     inline const DeployAsApplicationConfiguration& GetDeployAsApplicationConfiguration() const{ return m_deployAsApplicationConfiguration; }
 
     /**
      * <p>The information required to deploy a Kinesis Data Analytics Studio notebook
-     * as an application with durable state..</p>
+     * as an application with durable state.</p>
      */
     inline bool DeployAsApplicationConfigurationHasBeenSet() const { return m_deployAsApplicationConfigurationHasBeenSet; }
 
     /**
      * <p>The information required to deploy a Kinesis Data Analytics Studio notebook
-     * as an application with durable state..</p>
+     * as an application with durable state.</p>
      */
     inline void SetDeployAsApplicationConfiguration(const DeployAsApplicationConfiguration& value) { m_deployAsApplicationConfigurationHasBeenSet = true; m_deployAsApplicationConfiguration = value; }
 
     /**
      * <p>The information required to deploy a Kinesis Data Analytics Studio notebook
-     * as an application with durable state..</p>
+     * as an application with durable state.</p>
      */
     inline void SetDeployAsApplicationConfiguration(DeployAsApplicationConfiguration&& value) { m_deployAsApplicationConfigurationHasBeenSet = true; m_deployAsApplicationConfiguration = std::move(value); }
 
     /**
      * <p>The information required to deploy a Kinesis Data Analytics Studio notebook
-     * as an application with durable state..</p>
+     * as an application with durable state.</p>
      */
     inline ZeppelinApplicationConfiguration& WithDeployAsApplicationConfiguration(const DeployAsApplicationConfiguration& value) { SetDeployAsApplicationConfiguration(value); return *this;}
 
     /**
      * <p>The information required to deploy a Kinesis Data Analytics Studio notebook
-     * as an application with durable state..</p>
+     * as an application with durable state.</p>
      */
     inline ZeppelinApplicationConfiguration& WithDeployAsApplicationConfiguration(DeployAsApplicationConfiguration&& value) { SetDeployAsApplicationConfiguration(std::move(value)); return *this;}
 

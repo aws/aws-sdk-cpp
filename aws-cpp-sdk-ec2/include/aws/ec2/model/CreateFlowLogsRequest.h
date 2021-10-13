@@ -11,6 +11,7 @@
 #include <aws/ec2/model/FlowLogsResourceType.h>
 #include <aws/ec2/model/TrafficType.h>
 #include <aws/ec2/model/LogDestinationType.h>
+#include <aws/ec2/model/DestinationOptionsRequest.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
@@ -405,66 +406,66 @@ namespace Model
 
 
     /**
-     * <p>Specifies the type of destination to which the flow log data is to be
-     * published. Flow log data can be published to CloudWatch Logs or Amazon S3. To
-     * publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>.
-     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>If you
-     * specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <p>The type of destination to which the flow log data is to be published. Flow
+     * log data can be published to CloudWatch Logs or Amazon S3. To publish flow log
+     * data to CloudWatch Logs, specify <code>cloud-watch-logs</code>. To publish flow
+     * log data to Amazon S3, specify <code>s3</code>.</p> <p>If you specify
+     * <code>LogDestinationType</code> as <code>s3</code>, do not specify
      * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
      * <p>Default: <code>cloud-watch-logs</code> </p>
      */
     inline const LogDestinationType& GetLogDestinationType() const{ return m_logDestinationType; }
 
     /**
-     * <p>Specifies the type of destination to which the flow log data is to be
-     * published. Flow log data can be published to CloudWatch Logs or Amazon S3. To
-     * publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>.
-     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>If you
-     * specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <p>The type of destination to which the flow log data is to be published. Flow
+     * log data can be published to CloudWatch Logs or Amazon S3. To publish flow log
+     * data to CloudWatch Logs, specify <code>cloud-watch-logs</code>. To publish flow
+     * log data to Amazon S3, specify <code>s3</code>.</p> <p>If you specify
+     * <code>LogDestinationType</code> as <code>s3</code>, do not specify
      * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
      * <p>Default: <code>cloud-watch-logs</code> </p>
      */
     inline bool LogDestinationTypeHasBeenSet() const { return m_logDestinationTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the type of destination to which the flow log data is to be
-     * published. Flow log data can be published to CloudWatch Logs or Amazon S3. To
-     * publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>.
-     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>If you
-     * specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <p>The type of destination to which the flow log data is to be published. Flow
+     * log data can be published to CloudWatch Logs or Amazon S3. To publish flow log
+     * data to CloudWatch Logs, specify <code>cloud-watch-logs</code>. To publish flow
+     * log data to Amazon S3, specify <code>s3</code>.</p> <p>If you specify
+     * <code>LogDestinationType</code> as <code>s3</code>, do not specify
      * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
      * <p>Default: <code>cloud-watch-logs</code> </p>
      */
     inline void SetLogDestinationType(const LogDestinationType& value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = value; }
 
     /**
-     * <p>Specifies the type of destination to which the flow log data is to be
-     * published. Flow log data can be published to CloudWatch Logs or Amazon S3. To
-     * publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>.
-     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>If you
-     * specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <p>The type of destination to which the flow log data is to be published. Flow
+     * log data can be published to CloudWatch Logs or Amazon S3. To publish flow log
+     * data to CloudWatch Logs, specify <code>cloud-watch-logs</code>. To publish flow
+     * log data to Amazon S3, specify <code>s3</code>.</p> <p>If you specify
+     * <code>LogDestinationType</code> as <code>s3</code>, do not specify
      * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
      * <p>Default: <code>cloud-watch-logs</code> </p>
      */
     inline void SetLogDestinationType(LogDestinationType&& value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = std::move(value); }
 
     /**
-     * <p>Specifies the type of destination to which the flow log data is to be
-     * published. Flow log data can be published to CloudWatch Logs or Amazon S3. To
-     * publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>.
-     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>If you
-     * specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <p>The type of destination to which the flow log data is to be published. Flow
+     * log data can be published to CloudWatch Logs or Amazon S3. To publish flow log
+     * data to CloudWatch Logs, specify <code>cloud-watch-logs</code>. To publish flow
+     * log data to Amazon S3, specify <code>s3</code>.</p> <p>If you specify
+     * <code>LogDestinationType</code> as <code>s3</code>, do not specify
      * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
      * <p>Default: <code>cloud-watch-logs</code> </p>
      */
     inline CreateFlowLogsRequest& WithLogDestinationType(const LogDestinationType& value) { SetLogDestinationType(value); return *this;}
 
     /**
-     * <p>Specifies the type of destination to which the flow log data is to be
-     * published. Flow log data can be published to CloudWatch Logs or Amazon S3. To
-     * publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>.
-     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>If you
-     * specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <p>The type of destination to which the flow log data is to be published. Flow
+     * log data can be published to CloudWatch Logs or Amazon S3. To publish flow log
+     * data to CloudWatch Logs, specify <code>cloud-watch-logs</code>. To publish flow
+     * log data to Amazon S3, specify <code>s3</code>.</p> <p>If you specify
+     * <code>LogDestinationType</code> as <code>s3</code>, do not specify
      * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
      * <p>Default: <code>cloud-watch-logs</code> </p>
      */
@@ -472,9 +473,9 @@ namespace Model
 
 
     /**
-     * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
-     * The value specified for this parameter depends on the value specified for
+     * <p>The destination to which the flow log data is to be published. Flow log data
+     * can be published to a CloudWatch Logs log group or an Amazon S3 bucket. The
+     * value specified for this parameter depends on the value specified for
      * <code>LogDestinationType</code>.</p> <p>If <code>LogDestinationType</code> is
      * not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
      * (ARN) of the CloudWatch Logs log group. For example, to publish to a log group
@@ -492,9 +493,9 @@ namespace Model
     inline const Aws::String& GetLogDestination() const{ return m_logDestination; }
 
     /**
-     * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
-     * The value specified for this parameter depends on the value specified for
+     * <p>The destination to which the flow log data is to be published. Flow log data
+     * can be published to a CloudWatch Logs log group or an Amazon S3 bucket. The
+     * value specified for this parameter depends on the value specified for
      * <code>LogDestinationType</code>.</p> <p>If <code>LogDestinationType</code> is
      * not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
      * (ARN) of the CloudWatch Logs log group. For example, to publish to a log group
@@ -512,9 +513,9 @@ namespace Model
     inline bool LogDestinationHasBeenSet() const { return m_logDestinationHasBeenSet; }
 
     /**
-     * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
-     * The value specified for this parameter depends on the value specified for
+     * <p>The destination to which the flow log data is to be published. Flow log data
+     * can be published to a CloudWatch Logs log group or an Amazon S3 bucket. The
+     * value specified for this parameter depends on the value specified for
      * <code>LogDestinationType</code>.</p> <p>If <code>LogDestinationType</code> is
      * not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
      * (ARN) of the CloudWatch Logs log group. For example, to publish to a log group
@@ -532,9 +533,9 @@ namespace Model
     inline void SetLogDestination(const Aws::String& value) { m_logDestinationHasBeenSet = true; m_logDestination = value; }
 
     /**
-     * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
-     * The value specified for this parameter depends on the value specified for
+     * <p>The destination to which the flow log data is to be published. Flow log data
+     * can be published to a CloudWatch Logs log group or an Amazon S3 bucket. The
+     * value specified for this parameter depends on the value specified for
      * <code>LogDestinationType</code>.</p> <p>If <code>LogDestinationType</code> is
      * not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
      * (ARN) of the CloudWatch Logs log group. For example, to publish to a log group
@@ -552,9 +553,9 @@ namespace Model
     inline void SetLogDestination(Aws::String&& value) { m_logDestinationHasBeenSet = true; m_logDestination = std::move(value); }
 
     /**
-     * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
-     * The value specified for this parameter depends on the value specified for
+     * <p>The destination to which the flow log data is to be published. Flow log data
+     * can be published to a CloudWatch Logs log group or an Amazon S3 bucket. The
+     * value specified for this parameter depends on the value specified for
      * <code>LogDestinationType</code>.</p> <p>If <code>LogDestinationType</code> is
      * not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
      * (ARN) of the CloudWatch Logs log group. For example, to publish to a log group
@@ -572,9 +573,9 @@ namespace Model
     inline void SetLogDestination(const char* value) { m_logDestinationHasBeenSet = true; m_logDestination.assign(value); }
 
     /**
-     * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
-     * The value specified for this parameter depends on the value specified for
+     * <p>The destination to which the flow log data is to be published. Flow log data
+     * can be published to a CloudWatch Logs log group or an Amazon S3 bucket. The
+     * value specified for this parameter depends on the value specified for
      * <code>LogDestinationType</code>.</p> <p>If <code>LogDestinationType</code> is
      * not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
      * (ARN) of the CloudWatch Logs log group. For example, to publish to a log group
@@ -592,9 +593,9 @@ namespace Model
     inline CreateFlowLogsRequest& WithLogDestination(const Aws::String& value) { SetLogDestination(value); return *this;}
 
     /**
-     * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
-     * The value specified for this parameter depends on the value specified for
+     * <p>The destination to which the flow log data is to be published. Flow log data
+     * can be published to a CloudWatch Logs log group or an Amazon S3 bucket. The
+     * value specified for this parameter depends on the value specified for
      * <code>LogDestinationType</code>.</p> <p>If <code>LogDestinationType</code> is
      * not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
      * (ARN) of the CloudWatch Logs log group. For example, to publish to a log group
@@ -612,9 +613,9 @@ namespace Model
     inline CreateFlowLogsRequest& WithLogDestination(Aws::String&& value) { SetLogDestination(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
-     * The value specified for this parameter depends on the value specified for
+     * <p>The destination to which the flow log data is to be published. Flow log data
+     * can be published to a CloudWatch Logs log group or an Amazon S3 bucket. The
+     * value specified for this parameter depends on the value specified for
      * <code>LogDestinationType</code>.</p> <p>If <code>LogDestinationType</code> is
      * not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
      * (ARN) of the CloudWatch Logs log group. For example, to publish to a log group
@@ -810,6 +811,37 @@ namespace Model
      */
     inline CreateFlowLogsRequest& WithMaxAggregationInterval(int value) { SetMaxAggregationInterval(value); return *this;}
 
+
+    /**
+     * <p>The destination options.</p>
+     */
+    inline const DestinationOptionsRequest& GetDestinationOptions() const{ return m_destinationOptions; }
+
+    /**
+     * <p>The destination options.</p>
+     */
+    inline bool DestinationOptionsHasBeenSet() const { return m_destinationOptionsHasBeenSet; }
+
+    /**
+     * <p>The destination options.</p>
+     */
+    inline void SetDestinationOptions(const DestinationOptionsRequest& value) { m_destinationOptionsHasBeenSet = true; m_destinationOptions = value; }
+
+    /**
+     * <p>The destination options.</p>
+     */
+    inline void SetDestinationOptions(DestinationOptionsRequest&& value) { m_destinationOptionsHasBeenSet = true; m_destinationOptions = std::move(value); }
+
+    /**
+     * <p>The destination options.</p>
+     */
+    inline CreateFlowLogsRequest& WithDestinationOptions(const DestinationOptionsRequest& value) { SetDestinationOptions(value); return *this;}
+
+    /**
+     * <p>The destination options.</p>
+     */
+    inline CreateFlowLogsRequest& WithDestinationOptions(DestinationOptionsRequest&& value) { SetDestinationOptions(std::move(value)); return *this;}
+
   private:
 
     bool m_dryRun;
@@ -847,6 +879,9 @@ namespace Model
 
     int m_maxAggregationInterval;
     bool m_maxAggregationIntervalHasBeenSet;
+
+    DestinationOptionsRequest m_destinationOptions;
+    bool m_destinationOptionsHasBeenSet;
   };
 
 } // namespace Model

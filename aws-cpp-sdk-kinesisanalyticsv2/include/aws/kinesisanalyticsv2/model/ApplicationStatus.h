@@ -24,8 +24,8 @@ namespace Model
     UPDATING,
     AUTOSCALING,
     FORCE_STOPPING,
-    MAINTENANCE,
     ROLLING_BACK,
+    MAINTENANCE,
     ROLLED_BACK
   };
 

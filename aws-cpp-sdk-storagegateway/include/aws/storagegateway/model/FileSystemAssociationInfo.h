@@ -10,6 +10,7 @@
 #include <aws/storagegateway/model/CacheAttributes.h>
 #include <aws/storagegateway/model/EndpointNetworkConfiguration.h>
 #include <aws/storagegateway/model/Tag.h>
+#include <aws/storagegateway/model/FileSystemAssociationStatusDetail.h>
 #include <utility>
 
 namespace Aws
@@ -387,6 +388,55 @@ namespace Model
      */
     inline FileSystemAssociationInfo& WithEndpointNetworkConfiguration(EndpointNetworkConfiguration&& value) { SetEndpointNetworkConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An array containing the FileSystemAssociationStatusDetail data type, which
+     * provides detailed information on file system association status.</p>
+     */
+    inline const Aws::Vector<FileSystemAssociationStatusDetail>& GetFileSystemAssociationStatusDetails() const{ return m_fileSystemAssociationStatusDetails; }
+
+    /**
+     * <p>An array containing the FileSystemAssociationStatusDetail data type, which
+     * provides detailed information on file system association status.</p>
+     */
+    inline bool FileSystemAssociationStatusDetailsHasBeenSet() const { return m_fileSystemAssociationStatusDetailsHasBeenSet; }
+
+    /**
+     * <p>An array containing the FileSystemAssociationStatusDetail data type, which
+     * provides detailed information on file system association status.</p>
+     */
+    inline void SetFileSystemAssociationStatusDetails(const Aws::Vector<FileSystemAssociationStatusDetail>& value) { m_fileSystemAssociationStatusDetailsHasBeenSet = true; m_fileSystemAssociationStatusDetails = value; }
+
+    /**
+     * <p>An array containing the FileSystemAssociationStatusDetail data type, which
+     * provides detailed information on file system association status.</p>
+     */
+    inline void SetFileSystemAssociationStatusDetails(Aws::Vector<FileSystemAssociationStatusDetail>&& value) { m_fileSystemAssociationStatusDetailsHasBeenSet = true; m_fileSystemAssociationStatusDetails = std::move(value); }
+
+    /**
+     * <p>An array containing the FileSystemAssociationStatusDetail data type, which
+     * provides detailed information on file system association status.</p>
+     */
+    inline FileSystemAssociationInfo& WithFileSystemAssociationStatusDetails(const Aws::Vector<FileSystemAssociationStatusDetail>& value) { SetFileSystemAssociationStatusDetails(value); return *this;}
+
+    /**
+     * <p>An array containing the FileSystemAssociationStatusDetail data type, which
+     * provides detailed information on file system association status.</p>
+     */
+    inline FileSystemAssociationInfo& WithFileSystemAssociationStatusDetails(Aws::Vector<FileSystemAssociationStatusDetail>&& value) { SetFileSystemAssociationStatusDetails(std::move(value)); return *this;}
+
+    /**
+     * <p>An array containing the FileSystemAssociationStatusDetail data type, which
+     * provides detailed information on file system association status.</p>
+     */
+    inline FileSystemAssociationInfo& AddFileSystemAssociationStatusDetails(const FileSystemAssociationStatusDetail& value) { m_fileSystemAssociationStatusDetailsHasBeenSet = true; m_fileSystemAssociationStatusDetails.push_back(value); return *this; }
+
+    /**
+     * <p>An array containing the FileSystemAssociationStatusDetail data type, which
+     * provides detailed information on file system association status.</p>
+     */
+    inline FileSystemAssociationInfo& AddFileSystemAssociationStatusDetails(FileSystemAssociationStatusDetail&& value) { m_fileSystemAssociationStatusDetailsHasBeenSet = true; m_fileSystemAssociationStatusDetails.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_fileSystemAssociationARN;
@@ -412,6 +462,9 @@ namespace Model
 
     EndpointNetworkConfiguration m_endpointNetworkConfiguration;
     bool m_endpointNetworkConfigurationHasBeenSet;
+
+    Aws::Vector<FileSystemAssociationStatusDetail> m_fileSystemAssociationStatusDetails;
+    bool m_fileSystemAssociationStatusDetailsHasBeenSet;
   };
 
 } // namespace Model

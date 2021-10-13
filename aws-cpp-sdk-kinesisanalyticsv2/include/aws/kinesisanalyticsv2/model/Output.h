@@ -149,32 +149,32 @@ namespace Model
 
 
     /**
-     * <p>Identifies an AWS Lambda function as the destination.</p>
+     * <p>Identifies an Amazon Lambda function as the destination.</p>
      */
     inline const LambdaOutput& GetLambdaOutput() const{ return m_lambdaOutput; }
 
     /**
-     * <p>Identifies an AWS Lambda function as the destination.</p>
+     * <p>Identifies an Amazon Lambda function as the destination.</p>
      */
     inline bool LambdaOutputHasBeenSet() const { return m_lambdaOutputHasBeenSet; }
 
     /**
-     * <p>Identifies an AWS Lambda function as the destination.</p>
+     * <p>Identifies an Amazon Lambda function as the destination.</p>
      */
     inline void SetLambdaOutput(const LambdaOutput& value) { m_lambdaOutputHasBeenSet = true; m_lambdaOutput = value; }
 
     /**
-     * <p>Identifies an AWS Lambda function as the destination.</p>
+     * <p>Identifies an Amazon Lambda function as the destination.</p>
      */
     inline void SetLambdaOutput(LambdaOutput&& value) { m_lambdaOutputHasBeenSet = true; m_lambdaOutput = std::move(value); }
 
     /**
-     * <p>Identifies an AWS Lambda function as the destination.</p>
+     * <p>Identifies an Amazon Lambda function as the destination.</p>
      */
     inline Output& WithLambdaOutput(const LambdaOutput& value) { SetLambdaOutput(value); return *this;}
 
     /**
-     * <p>Identifies an AWS Lambda function as the destination.</p>
+     * <p>Identifies an Amazon Lambda function as the destination.</p>
      */
     inline Output& WithLambdaOutput(LambdaOutput&& value) { SetLambdaOutput(std::move(value)); return *this;}
 

@@ -315,122 +315,138 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the backend storage used for storing file data. A prefix name can
-     * be added to the S3 bucket name. It must end with a "/".</p>  <p>You can
-     * specify a bucket attached to an access point using a complete ARN that includes
-     * the bucket region as shown:</p> <p>
-     * <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
-     * </code> </p> <p>If you specify a bucket attached to an access point, the bucket
-     * policy must be configured to delegate access control to the access point. For
-     * information, see <a
+     * <p>A custom ARN for the backend storage used for storing data for file shares.
+     * It includes a resource ARN with an optional prefix concatenation. The prefix
+     * must end with a forward slash (/).</p>  <p>You can specify LocationARN as
+     * a bucket ARN, access point ARN or access point alias, as shown in the following
+     * examples.</p> <p>Bucket ARN:</p> <p> <code>arn:aws:s3:::my-bucket/prefix/</code>
+     * </p> <p>Access point ARN:</p> <p>
+     * <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code>
+     * </p> <p>If you specify an access point, the bucket policy must be configured to
+     * delegate access control to the access point. For information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating
      * access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-     * 
+     * <p>Access point alias:</p> <p>
+     * <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> 
      */
     inline const Aws::String& GetLocationARN() const{ return m_locationARN; }
 
     /**
-     * <p>The ARN of the backend storage used for storing file data. A prefix name can
-     * be added to the S3 bucket name. It must end with a "/".</p>  <p>You can
-     * specify a bucket attached to an access point using a complete ARN that includes
-     * the bucket region as shown:</p> <p>
-     * <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
-     * </code> </p> <p>If you specify a bucket attached to an access point, the bucket
-     * policy must be configured to delegate access control to the access point. For
-     * information, see <a
+     * <p>A custom ARN for the backend storage used for storing data for file shares.
+     * It includes a resource ARN with an optional prefix concatenation. The prefix
+     * must end with a forward slash (/).</p>  <p>You can specify LocationARN as
+     * a bucket ARN, access point ARN or access point alias, as shown in the following
+     * examples.</p> <p>Bucket ARN:</p> <p> <code>arn:aws:s3:::my-bucket/prefix/</code>
+     * </p> <p>Access point ARN:</p> <p>
+     * <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code>
+     * </p> <p>If you specify an access point, the bucket policy must be configured to
+     * delegate access control to the access point. For information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating
      * access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-     * 
+     * <p>Access point alias:</p> <p>
+     * <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> 
      */
     inline bool LocationARNHasBeenSet() const { return m_locationARNHasBeenSet; }
 
     /**
-     * <p>The ARN of the backend storage used for storing file data. A prefix name can
-     * be added to the S3 bucket name. It must end with a "/".</p>  <p>You can
-     * specify a bucket attached to an access point using a complete ARN that includes
-     * the bucket region as shown:</p> <p>
-     * <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
-     * </code> </p> <p>If you specify a bucket attached to an access point, the bucket
-     * policy must be configured to delegate access control to the access point. For
-     * information, see <a
+     * <p>A custom ARN for the backend storage used for storing data for file shares.
+     * It includes a resource ARN with an optional prefix concatenation. The prefix
+     * must end with a forward slash (/).</p>  <p>You can specify LocationARN as
+     * a bucket ARN, access point ARN or access point alias, as shown in the following
+     * examples.</p> <p>Bucket ARN:</p> <p> <code>arn:aws:s3:::my-bucket/prefix/</code>
+     * </p> <p>Access point ARN:</p> <p>
+     * <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code>
+     * </p> <p>If you specify an access point, the bucket policy must be configured to
+     * delegate access control to the access point. For information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating
      * access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-     * 
+     * <p>Access point alias:</p> <p>
+     * <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> 
      */
     inline void SetLocationARN(const Aws::String& value) { m_locationARNHasBeenSet = true; m_locationARN = value; }
 
     /**
-     * <p>The ARN of the backend storage used for storing file data. A prefix name can
-     * be added to the S3 bucket name. It must end with a "/".</p>  <p>You can
-     * specify a bucket attached to an access point using a complete ARN that includes
-     * the bucket region as shown:</p> <p>
-     * <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
-     * </code> </p> <p>If you specify a bucket attached to an access point, the bucket
-     * policy must be configured to delegate access control to the access point. For
-     * information, see <a
+     * <p>A custom ARN for the backend storage used for storing data for file shares.
+     * It includes a resource ARN with an optional prefix concatenation. The prefix
+     * must end with a forward slash (/).</p>  <p>You can specify LocationARN as
+     * a bucket ARN, access point ARN or access point alias, as shown in the following
+     * examples.</p> <p>Bucket ARN:</p> <p> <code>arn:aws:s3:::my-bucket/prefix/</code>
+     * </p> <p>Access point ARN:</p> <p>
+     * <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code>
+     * </p> <p>If you specify an access point, the bucket policy must be configured to
+     * delegate access control to the access point. For information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating
      * access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-     * 
+     * <p>Access point alias:</p> <p>
+     * <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> 
      */
     inline void SetLocationARN(Aws::String&& value) { m_locationARNHasBeenSet = true; m_locationARN = std::move(value); }
 
     /**
-     * <p>The ARN of the backend storage used for storing file data. A prefix name can
-     * be added to the S3 bucket name. It must end with a "/".</p>  <p>You can
-     * specify a bucket attached to an access point using a complete ARN that includes
-     * the bucket region as shown:</p> <p>
-     * <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
-     * </code> </p> <p>If you specify a bucket attached to an access point, the bucket
-     * policy must be configured to delegate access control to the access point. For
-     * information, see <a
+     * <p>A custom ARN for the backend storage used for storing data for file shares.
+     * It includes a resource ARN with an optional prefix concatenation. The prefix
+     * must end with a forward slash (/).</p>  <p>You can specify LocationARN as
+     * a bucket ARN, access point ARN or access point alias, as shown in the following
+     * examples.</p> <p>Bucket ARN:</p> <p> <code>arn:aws:s3:::my-bucket/prefix/</code>
+     * </p> <p>Access point ARN:</p> <p>
+     * <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code>
+     * </p> <p>If you specify an access point, the bucket policy must be configured to
+     * delegate access control to the access point. For information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating
      * access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-     * 
+     * <p>Access point alias:</p> <p>
+     * <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> 
      */
     inline void SetLocationARN(const char* value) { m_locationARNHasBeenSet = true; m_locationARN.assign(value); }
 
     /**
-     * <p>The ARN of the backend storage used for storing file data. A prefix name can
-     * be added to the S3 bucket name. It must end with a "/".</p>  <p>You can
-     * specify a bucket attached to an access point using a complete ARN that includes
-     * the bucket region as shown:</p> <p>
-     * <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
-     * </code> </p> <p>If you specify a bucket attached to an access point, the bucket
-     * policy must be configured to delegate access control to the access point. For
-     * information, see <a
+     * <p>A custom ARN for the backend storage used for storing data for file shares.
+     * It includes a resource ARN with an optional prefix concatenation. The prefix
+     * must end with a forward slash (/).</p>  <p>You can specify LocationARN as
+     * a bucket ARN, access point ARN or access point alias, as shown in the following
+     * examples.</p> <p>Bucket ARN:</p> <p> <code>arn:aws:s3:::my-bucket/prefix/</code>
+     * </p> <p>Access point ARN:</p> <p>
+     * <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code>
+     * </p> <p>If you specify an access point, the bucket policy must be configured to
+     * delegate access control to the access point. For information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating
      * access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-     * 
+     * <p>Access point alias:</p> <p>
+     * <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> 
      */
     inline CreateNFSFileShareRequest& WithLocationARN(const Aws::String& value) { SetLocationARN(value); return *this;}
 
     /**
-     * <p>The ARN of the backend storage used for storing file data. A prefix name can
-     * be added to the S3 bucket name. It must end with a "/".</p>  <p>You can
-     * specify a bucket attached to an access point using a complete ARN that includes
-     * the bucket region as shown:</p> <p>
-     * <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
-     * </code> </p> <p>If you specify a bucket attached to an access point, the bucket
-     * policy must be configured to delegate access control to the access point. For
-     * information, see <a
+     * <p>A custom ARN for the backend storage used for storing data for file shares.
+     * It includes a resource ARN with an optional prefix concatenation. The prefix
+     * must end with a forward slash (/).</p>  <p>You can specify LocationARN as
+     * a bucket ARN, access point ARN or access point alias, as shown in the following
+     * examples.</p> <p>Bucket ARN:</p> <p> <code>arn:aws:s3:::my-bucket/prefix/</code>
+     * </p> <p>Access point ARN:</p> <p>
+     * <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code>
+     * </p> <p>If you specify an access point, the bucket policy must be configured to
+     * delegate access control to the access point. For information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating
      * access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-     * 
+     * <p>Access point alias:</p> <p>
+     * <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> 
      */
     inline CreateNFSFileShareRequest& WithLocationARN(Aws::String&& value) { SetLocationARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the backend storage used for storing file data. A prefix name can
-     * be added to the S3 bucket name. It must end with a "/".</p>  <p>You can
-     * specify a bucket attached to an access point using a complete ARN that includes
-     * the bucket region as shown:</p> <p>
-     * <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
-     * </code> </p> <p>If you specify a bucket attached to an access point, the bucket
-     * policy must be configured to delegate access control to the access point. For
-     * information, see <a
+     * <p>A custom ARN for the backend storage used for storing data for file shares.
+     * It includes a resource ARN with an optional prefix concatenation. The prefix
+     * must end with a forward slash (/).</p>  <p>You can specify LocationARN as
+     * a bucket ARN, access point ARN or access point alias, as shown in the following
+     * examples.</p> <p>Bucket ARN:</p> <p> <code>arn:aws:s3:::my-bucket/prefix/</code>
+     * </p> <p>Access point ARN:</p> <p>
+     * <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code>
+     * </p> <p>If you specify an access point, the bucket policy must be configured to
+     * delegate access control to the access point. For information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating
      * access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-     * 
+     * <p>Access point alias:</p> <p>
+     * <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> 
      */
     inline CreateNFSFileShareRequest& WithLocationARN(const char* value) { SetLocationARN(value); return *this;}
 
@@ -874,56 +890,64 @@ namespace Model
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline const Aws::String& GetFileShareName() const{ return m_fileShareName; }
 
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline bool FileShareNameHasBeenSet() const { return m_fileShareNameHasBeenSet; }
 
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline void SetFileShareName(const Aws::String& value) { m_fileShareNameHasBeenSet = true; m_fileShareName = value; }
 
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline void SetFileShareName(Aws::String&& value) { m_fileShareNameHasBeenSet = true; m_fileShareName = std::move(value); }
 
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline void SetFileShareName(const char* value) { m_fileShareNameHasBeenSet = true; m_fileShareName.assign(value); }
 
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline CreateNFSFileShareRequest& WithFileShareName(const Aws::String& value) { SetFileShareName(value); return *this;}
 
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline CreateNFSFileShareRequest& WithFileShareName(Aws::String&& value) { SetFileShareName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline CreateNFSFileShareRequest& WithFileShareName(const char* value) { SetFileShareName(value); return *this;}
 
@@ -1217,6 +1241,47 @@ namespace Model
      */
     inline CreateNFSFileShareRequest& WithBucketRegion(const char* value) { SetBucketRegion(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline const Aws::String& GetAuditDestinationARN() const{ return m_auditDestinationARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline bool AuditDestinationARNHasBeenSet() const { return m_auditDestinationARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline void SetAuditDestinationARN(const Aws::String& value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline void SetAuditDestinationARN(Aws::String&& value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline void SetAuditDestinationARN(const char* value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline CreateNFSFileShareRequest& WithAuditDestinationARN(const Aws::String& value) { SetAuditDestinationARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline CreateNFSFileShareRequest& WithAuditDestinationARN(Aws::String&& value) { SetAuditDestinationARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline CreateNFSFileShareRequest& WithAuditDestinationARN(const char* value) { SetAuditDestinationARN(value); return *this;}
+
   private:
 
     Aws::String m_clientToken;
@@ -1278,6 +1343,9 @@ namespace Model
 
     Aws::String m_bucketRegion;
     bool m_bucketRegionHasBeenSet;
+
+    Aws::String m_auditDestinationARN;
+    bool m_auditDestinationARNHasBeenSet;
   };
 
 } // namespace Model

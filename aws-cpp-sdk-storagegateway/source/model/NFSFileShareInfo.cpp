@@ -46,7 +46,8 @@ NFSFileShareInfo::NFSFileShareInfo() :
     m_cacheAttributesHasBeenSet(false),
     m_notificationPolicyHasBeenSet(false),
     m_vPCEndpointDNSNameHasBeenSet(false),
-    m_bucketRegionHasBeenSet(false)
+    m_bucketRegionHasBeenSet(false),
+    m_auditDestinationARNHasBeenSet(false)
 {
 }
 
@@ -78,7 +79,8 @@ NFSFileShareInfo::NFSFileShareInfo(JsonView jsonValue) :
     m_cacheAttributesHasBeenSet(false),
     m_notificationPolicyHasBeenSet(false),
     m_vPCEndpointDNSNameHasBeenSet(false),
-    m_bucketRegionHasBeenSet(false)
+    m_bucketRegionHasBeenSet(false),
+    m_auditDestinationARNHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -252,6 +254,13 @@ NFSFileShareInfo& NFSFileShareInfo::operator =(JsonView jsonValue)
     m_bucketRegionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AuditDestinationARN"))
+  {
+    m_auditDestinationARN = jsonValue.GetString("AuditDestinationARN");
+
+    m_auditDestinationARNHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -403,6 +412,12 @@ JsonValue NFSFileShareInfo::Jsonize() const
   if(m_bucketRegionHasBeenSet)
   {
    payload.WithString("BucketRegion", m_bucketRegion);
+
+  }
+
+  if(m_auditDestinationARNHasBeenSet)
+  {
+   payload.WithString("AuditDestinationARN", m_auditDestinationARN);
 
   }
 

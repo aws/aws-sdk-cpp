@@ -26,7 +26,8 @@ FileSystemAssociationInfo::FileSystemAssociationInfo() :
     m_gatewayARNHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_cacheAttributesHasBeenSet(false),
-    m_endpointNetworkConfigurationHasBeenSet(false)
+    m_endpointNetworkConfigurationHasBeenSet(false),
+    m_fileSystemAssociationStatusDetailsHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ FileSystemAssociationInfo::FileSystemAssociationInfo(JsonView jsonValue) :
     m_gatewayARNHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_cacheAttributesHasBeenSet(false),
-    m_endpointNetworkConfigurationHasBeenSet(false)
+    m_endpointNetworkConfigurationHasBeenSet(false),
+    m_fileSystemAssociationStatusDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +106,16 @@ FileSystemAssociationInfo& FileSystemAssociationInfo::operator =(JsonView jsonVa
     m_endpointNetworkConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FileSystemAssociationStatusDetails"))
+  {
+    Array<JsonView> fileSystemAssociationStatusDetailsJsonList = jsonValue.GetArray("FileSystemAssociationStatusDetails");
+    for(unsigned fileSystemAssociationStatusDetailsIndex = 0; fileSystemAssociationStatusDetailsIndex < fileSystemAssociationStatusDetailsJsonList.GetLength(); ++fileSystemAssociationStatusDetailsIndex)
+    {
+      m_fileSystemAssociationStatusDetails.push_back(fileSystemAssociationStatusDetailsJsonList[fileSystemAssociationStatusDetailsIndex].AsObject());
+    }
+    m_fileSystemAssociationStatusDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -161,6 +173,17 @@ JsonValue FileSystemAssociationInfo::Jsonize() const
   if(m_endpointNetworkConfigurationHasBeenSet)
   {
    payload.WithObject("EndpointNetworkConfiguration", m_endpointNetworkConfiguration.Jsonize());
+
+  }
+
+  if(m_fileSystemAssociationStatusDetailsHasBeenSet)
+  {
+   Array<JsonValue> fileSystemAssociationStatusDetailsJsonList(m_fileSystemAssociationStatusDetails.size());
+   for(unsigned fileSystemAssociationStatusDetailsIndex = 0; fileSystemAssociationStatusDetailsIndex < fileSystemAssociationStatusDetailsJsonList.GetLength(); ++fileSystemAssociationStatusDetailsIndex)
+   {
+     fileSystemAssociationStatusDetailsJsonList[fileSystemAssociationStatusDetailsIndex].AsObject(m_fileSystemAssociationStatusDetails[fileSystemAssociationStatusDetailsIndex].Jsonize());
+   }
+   payload.WithArray("FileSystemAssociationStatusDetails", std::move(fileSystemAssociationStatusDetailsJsonList));
 
   }
 

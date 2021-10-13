@@ -267,10 +267,11 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates the Region where you want to store your data. The
-     * gateway Region specified must be the same Region as the Region in your
+     * <p>A value that indicates the Amazon Web Services Region where you want to store
+     * your data. The gateway Amazon Web Services Region specified must be the same
+     * Amazon Web Services Region as the Amazon Web Services Region in your
      * <code>Host</code> header in the request. For more information about available
-     * Regions and endpoints for Storage Gateway, see <a
+     * Amazon Web Services Regions and endpoints for Storage Gateway, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
      * endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p> <p>Valid Values: See <a
@@ -281,10 +282,11 @@ namespace Model
     inline const Aws::String& GetGatewayRegion() const{ return m_gatewayRegion; }
 
     /**
-     * <p>A value that indicates the Region where you want to store your data. The
-     * gateway Region specified must be the same Region as the Region in your
+     * <p>A value that indicates the Amazon Web Services Region where you want to store
+     * your data. The gateway Amazon Web Services Region specified must be the same
+     * Amazon Web Services Region as the Amazon Web Services Region in your
      * <code>Host</code> header in the request. For more information about available
-     * Regions and endpoints for Storage Gateway, see <a
+     * Amazon Web Services Regions and endpoints for Storage Gateway, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
      * endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p> <p>Valid Values: See <a
@@ -295,10 +297,11 @@ namespace Model
     inline bool GatewayRegionHasBeenSet() const { return m_gatewayRegionHasBeenSet; }
 
     /**
-     * <p>A value that indicates the Region where you want to store your data. The
-     * gateway Region specified must be the same Region as the Region in your
+     * <p>A value that indicates the Amazon Web Services Region where you want to store
+     * your data. The gateway Amazon Web Services Region specified must be the same
+     * Amazon Web Services Region as the Amazon Web Services Region in your
      * <code>Host</code> header in the request. For more information about available
-     * Regions and endpoints for Storage Gateway, see <a
+     * Amazon Web Services Regions and endpoints for Storage Gateway, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
      * endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p> <p>Valid Values: See <a
@@ -309,10 +312,11 @@ namespace Model
     inline void SetGatewayRegion(const Aws::String& value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion = value; }
 
     /**
-     * <p>A value that indicates the Region where you want to store your data. The
-     * gateway Region specified must be the same Region as the Region in your
+     * <p>A value that indicates the Amazon Web Services Region where you want to store
+     * your data. The gateway Amazon Web Services Region specified must be the same
+     * Amazon Web Services Region as the Amazon Web Services Region in your
      * <code>Host</code> header in the request. For more information about available
-     * Regions and endpoints for Storage Gateway, see <a
+     * Amazon Web Services Regions and endpoints for Storage Gateway, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
      * endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p> <p>Valid Values: See <a
@@ -323,10 +327,11 @@ namespace Model
     inline void SetGatewayRegion(Aws::String&& value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion = std::move(value); }
 
     /**
-     * <p>A value that indicates the Region where you want to store your data. The
-     * gateway Region specified must be the same Region as the Region in your
+     * <p>A value that indicates the Amazon Web Services Region where you want to store
+     * your data. The gateway Amazon Web Services Region specified must be the same
+     * Amazon Web Services Region as the Amazon Web Services Region in your
      * <code>Host</code> header in the request. For more information about available
-     * Regions and endpoints for Storage Gateway, see <a
+     * Amazon Web Services Regions and endpoints for Storage Gateway, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
      * endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p> <p>Valid Values: See <a
@@ -337,10 +342,11 @@ namespace Model
     inline void SetGatewayRegion(const char* value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion.assign(value); }
 
     /**
-     * <p>A value that indicates the Region where you want to store your data. The
-     * gateway Region specified must be the same Region as the Region in your
+     * <p>A value that indicates the Amazon Web Services Region where you want to store
+     * your data. The gateway Amazon Web Services Region specified must be the same
+     * Amazon Web Services Region as the Amazon Web Services Region in your
      * <code>Host</code> header in the request. For more information about available
-     * Regions and endpoints for Storage Gateway, see <a
+     * Amazon Web Services Regions and endpoints for Storage Gateway, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
      * endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p> <p>Valid Values: See <a
@@ -351,10 +357,11 @@ namespace Model
     inline ActivateGatewayRequest& WithGatewayRegion(const Aws::String& value) { SetGatewayRegion(value); return *this;}
 
     /**
-     * <p>A value that indicates the Region where you want to store your data. The
-     * gateway Region specified must be the same Region as the Region in your
+     * <p>A value that indicates the Amazon Web Services Region where you want to store
+     * your data. The gateway Amazon Web Services Region specified must be the same
+     * Amazon Web Services Region as the Amazon Web Services Region in your
      * <code>Host</code> header in the request. For more information about available
-     * Regions and endpoints for Storage Gateway, see <a
+     * Amazon Web Services Regions and endpoints for Storage Gateway, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
      * endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p> <p>Valid Values: See <a
@@ -365,10 +372,11 @@ namespace Model
     inline ActivateGatewayRequest& WithGatewayRegion(Aws::String&& value) { SetGatewayRegion(std::move(value)); return *this;}
 
     /**
-     * <p>A value that indicates the Region where you want to store your data. The
-     * gateway Region specified must be the same Region as the Region in your
+     * <p>A value that indicates the Amazon Web Services Region where you want to store
+     * your data. The gateway Amazon Web Services Region specified must be the same
+     * Amazon Web Services Region as the Amazon Web Services Region in your
      * <code>Host</code> header in the request. For more information about available
-     * Regions and endpoints for Storage Gateway, see <a
+     * Amazon Web Services Regions and endpoints for Storage Gateway, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
      * endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p> <p>Valid Values: See <a

@@ -80,38 +80,38 @@ namespace Model
 
 
     /**
-     * <p>Updates to the configuration of the AWS Glue Data Catalog that is associated
-     * with the Kinesis Data Analytics Studio notebook.</p>
+     * <p>Updates to the configuration of the Amazon Glue Data Catalog that is
+     * associated with the Kinesis Data Analytics Studio notebook.</p>
      */
     inline const CatalogConfigurationUpdate& GetCatalogConfigurationUpdate() const{ return m_catalogConfigurationUpdate; }
 
     /**
-     * <p>Updates to the configuration of the AWS Glue Data Catalog that is associated
-     * with the Kinesis Data Analytics Studio notebook.</p>
+     * <p>Updates to the configuration of the Amazon Glue Data Catalog that is
+     * associated with the Kinesis Data Analytics Studio notebook.</p>
      */
     inline bool CatalogConfigurationUpdateHasBeenSet() const { return m_catalogConfigurationUpdateHasBeenSet; }
 
     /**
-     * <p>Updates to the configuration of the AWS Glue Data Catalog that is associated
-     * with the Kinesis Data Analytics Studio notebook.</p>
+     * <p>Updates to the configuration of the Amazon Glue Data Catalog that is
+     * associated with the Kinesis Data Analytics Studio notebook.</p>
      */
     inline void SetCatalogConfigurationUpdate(const CatalogConfigurationUpdate& value) { m_catalogConfigurationUpdateHasBeenSet = true; m_catalogConfigurationUpdate = value; }
 
     /**
-     * <p>Updates to the configuration of the AWS Glue Data Catalog that is associated
-     * with the Kinesis Data Analytics Studio notebook.</p>
+     * <p>Updates to the configuration of the Amazon Glue Data Catalog that is
+     * associated with the Kinesis Data Analytics Studio notebook.</p>
      */
     inline void SetCatalogConfigurationUpdate(CatalogConfigurationUpdate&& value) { m_catalogConfigurationUpdateHasBeenSet = true; m_catalogConfigurationUpdate = std::move(value); }
 
     /**
-     * <p>Updates to the configuration of the AWS Glue Data Catalog that is associated
-     * with the Kinesis Data Analytics Studio notebook.</p>
+     * <p>Updates to the configuration of the Amazon Glue Data Catalog that is
+     * associated with the Kinesis Data Analytics Studio notebook.</p>
      */
     inline ZeppelinApplicationConfigurationUpdate& WithCatalogConfigurationUpdate(const CatalogConfigurationUpdate& value) { SetCatalogConfigurationUpdate(value); return *this;}
 
     /**
-     * <p>Updates to the configuration of the AWS Glue Data Catalog that is associated
-     * with the Kinesis Data Analytics Studio notebook.</p>
+     * <p>Updates to the configuration of the Amazon Glue Data Catalog that is
+     * associated with the Kinesis Data Analytics Studio notebook.</p>
      */
     inline ZeppelinApplicationConfigurationUpdate& WithCatalogConfigurationUpdate(CatalogConfigurationUpdate&& value) { SetCatalogConfigurationUpdate(std::move(value)); return *this;}
 

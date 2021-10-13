@@ -97,6 +97,7 @@
 #include <aws/storagegateway/model/UpdateNFSFileShareResult.h>
 #include <aws/storagegateway/model/UpdateSMBFileShareResult.h>
 #include <aws/storagegateway/model/UpdateSMBFileShareVisibilityResult.h>
+#include <aws/storagegateway/model/UpdateSMBLocalGroupsResult.h>
 #include <aws/storagegateway/model/UpdateSMBSecurityStrategyResult.h>
 #include <aws/storagegateway/model/UpdateSnapshotScheduleResult.h>
 #include <aws/storagegateway/model/UpdateVTLDeviceTypeResult.h>
@@ -225,6 +226,7 @@ namespace Model
         class UpdateNFSFileShareRequest;
         class UpdateSMBFileShareRequest;
         class UpdateSMBFileShareVisibilityRequest;
+        class UpdateSMBLocalGroupsRequest;
         class UpdateSMBSecurityStrategyRequest;
         class UpdateSnapshotScheduleRequest;
         class UpdateVTLDeviceTypeRequest;
@@ -315,6 +317,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateNFSFileShareResult, StorageGatewayError> UpdateNFSFileShareOutcome;
         typedef Aws::Utils::Outcome<UpdateSMBFileShareResult, StorageGatewayError> UpdateSMBFileShareOutcome;
         typedef Aws::Utils::Outcome<UpdateSMBFileShareVisibilityResult, StorageGatewayError> UpdateSMBFileShareVisibilityOutcome;
+        typedef Aws::Utils::Outcome<UpdateSMBLocalGroupsResult, StorageGatewayError> UpdateSMBLocalGroupsOutcome;
         typedef Aws::Utils::Outcome<UpdateSMBSecurityStrategyResult, StorageGatewayError> UpdateSMBSecurityStrategyOutcome;
         typedef Aws::Utils::Outcome<UpdateSnapshotScheduleResult, StorageGatewayError> UpdateSnapshotScheduleOutcome;
         typedef Aws::Utils::Outcome<UpdateVTLDeviceTypeResult, StorageGatewayError> UpdateVTLDeviceTypeOutcome;
@@ -405,6 +408,7 @@ namespace Model
         typedef std::future<UpdateNFSFileShareOutcome> UpdateNFSFileShareOutcomeCallable;
         typedef std::future<UpdateSMBFileShareOutcome> UpdateSMBFileShareOutcomeCallable;
         typedef std::future<UpdateSMBFileShareVisibilityOutcome> UpdateSMBFileShareVisibilityOutcomeCallable;
+        typedef std::future<UpdateSMBLocalGroupsOutcome> UpdateSMBLocalGroupsOutcomeCallable;
         typedef std::future<UpdateSMBSecurityStrategyOutcome> UpdateSMBSecurityStrategyOutcomeCallable;
         typedef std::future<UpdateSnapshotScheduleOutcome> UpdateSnapshotScheduleOutcomeCallable;
         typedef std::future<UpdateVTLDeviceTypeOutcome> UpdateVTLDeviceTypeOutcomeCallable;
@@ -498,6 +502,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateNFSFileShareRequest&, const Model::UpdateNFSFileShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNFSFileShareResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateSMBFileShareRequest&, const Model::UpdateSMBFileShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSMBFileShareResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateSMBFileShareVisibilityRequest&, const Model::UpdateSMBFileShareVisibilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSMBFileShareVisibilityResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::UpdateSMBLocalGroupsRequest&, const Model::UpdateSMBLocalGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSMBLocalGroupsResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateSMBSecurityStrategyRequest&, const Model::UpdateSMBSecurityStrategyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSMBSecurityStrategyResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateSnapshotScheduleRequest&, const Model::UpdateSnapshotScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSnapshotScheduleResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateVTLDeviceTypeRequest&, const Model::UpdateVTLDeviceTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVTLDeviceTypeResponseReceivedHandler;
@@ -507,9 +512,10 @@ namespace Model
    * that connects an on-premises software appliance with cloud-based storage to
    * provide seamless and secure integration between an organization's on-premises IT
    * environment and the Amazon Web Services storage infrastructure. The service
-   * enables you to securely upload data to the Cloud for cost effective backup and
-   * rapid disaster recovery.</p> <p>Use the following links to get started using the
-   * <i>Storage Gateway Service API Reference</i>:</p> <ul> <li> <p> <a
+   * enables you to securely upload data to the Amazon Web Services Cloud for cost
+   * effective backup and rapid disaster recovery.</p> <p>Use the following links to
+   * get started using the <i>Storage Gateway Service API Reference</i>:</p> <ul>
+   * <li> <p> <a
    * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders">Storage
    * Gateway required request headers</a>: Describes the required headers that you
    * must send with every POST request to Storage Gateway.</p> </li> <li> <p> <a
@@ -524,19 +530,19 @@ namespace Model
    * operations, their request parameters, response elements, possible errors, and
    * examples of requests and responses.</p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/general/latest/gr/sg.html">Storage Gateway
-   * endpoints and quotas</a>: Provides a list of each Region and the endpoints
-   * available for use with Storage Gateway.</p> </li> </ul>  <p>Storage
-   * Gateway resource IDs are in uppercase. When you use these resource IDs with the
-   * Amazon EC2 API, EC2 expects resource IDs in lowercase. You must change your
-   * resource ID to lowercase to use it with the EC2 API. For example, in Storage
-   * Gateway the ID for a volume might be <code>vol-AA22BB012345DAF670</code>. When
-   * you use this ID with the EC2 API, you must change it to
-   * <code>vol-aa22bb012345daf670</code>. Otherwise, the EC2 API might not behave as
-   * expected.</p>   <p>IDs for Storage Gateway volumes and Amazon
-   * EBS snapshots created from gateway volumes are changing to a longer format.
-   * Starting in December 2016, all new volumes and snapshots will be created with a
-   * 17-character string. Starting in April 2016, you will be able to use these
-   * longer IDs so you can test your systems with the new format. For more
+   * endpoints and quotas</a>: Provides a list of each Amazon Web Services Region and
+   * the endpoints available for use with Storage Gateway.</p> </li> </ul> 
+   * <p>Storage Gateway resource IDs are in uppercase. When you use these resource
+   * IDs with the Amazon EC2 API, EC2 expects resource IDs in lowercase. You must
+   * change your resource ID to lowercase to use it with the EC2 API. For example, in
+   * Storage Gateway the ID for a volume might be
+   * <code>vol-AA22BB012345DAF670</code>. When you use this ID with the EC2 API, you
+   * must change it to <code>vol-aa22bb012345daf670</code>. Otherwise, the EC2 API
+   * might not behave as expected.</p>   <p>IDs for Storage Gateway
+   * volumes and Amazon EBS snapshots created from gateway volumes are changing to a
+   * longer format. Starting in December 2016, all new volumes and snapshots will be
+   * created with a 17-character string. Starting in April 2016, you will be able to
+   * use these longer IDs so you can test your systems with the new format. For more
    * information, see <a href="http://aws.amazon.com/ec2/faqs/#longer-ids">Longer EC2
    * and EBS resource IDs</a>.</p> <p>For example, a volume Amazon Resource Name
    * (ARN) with the longer volume ID format looks like the following:</p> <p>
@@ -576,13 +582,13 @@ namespace Model
 
         /**
          * <p>Activates the gateway you previously deployed on your host. In the activation
-         * process, you specify information such as the Region that you want to use for
-         * storing snapshots or tapes, the time zone for scheduled snapshots the gateway
-         * snapshot schedule window, an activation key, and a name for your gateway. The
-         * activation process also associates your gateway with your account. For more
-         * information, see <a>UpdateGatewayInformation</a>.</p>  <p>You must turn on
-         * the gateway VM before you can activate your gateway.</p> <p><h3>See
-         * Also:</h3>   <a
+         * process, you specify information such as the Amazon Web Services Region that you
+         * want to use for storing snapshots or tapes, the time zone for scheduled
+         * snapshots the gateway snapshot schedule window, an activation key, and a name
+         * for your gateway. The activation process also associates your gateway with your
+         * account. For more information, see <a>UpdateGatewayInformation</a>.</p> 
+         * <p>You must turn on the gateway VM before you can activate your gateway.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGateway">AWS
          * API Reference</a></p>
          */
@@ -590,13 +596,13 @@ namespace Model
 
         /**
          * <p>Activates the gateway you previously deployed on your host. In the activation
-         * process, you specify information such as the Region that you want to use for
-         * storing snapshots or tapes, the time zone for scheduled snapshots the gateway
-         * snapshot schedule window, an activation key, and a name for your gateway. The
-         * activation process also associates your gateway with your account. For more
-         * information, see <a>UpdateGatewayInformation</a>.</p>  <p>You must turn on
-         * the gateway VM before you can activate your gateway.</p> <p><h3>See
-         * Also:</h3>   <a
+         * process, you specify information such as the Amazon Web Services Region that you
+         * want to use for storing snapshots or tapes, the time zone for scheduled
+         * snapshots the gateway snapshot schedule window, an activation key, and a name
+         * for your gateway. The activation process also associates your gateway with your
+         * account. For more information, see <a>UpdateGatewayInformation</a>.</p> 
+         * <p>You must turn on the gateway VM before you can activate your gateway.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGateway">AWS
          * API Reference</a></p>
          *
@@ -606,13 +612,13 @@ namespace Model
 
         /**
          * <p>Activates the gateway you previously deployed on your host. In the activation
-         * process, you specify information such as the Region that you want to use for
-         * storing snapshots or tapes, the time zone for scheduled snapshots the gateway
-         * snapshot schedule window, an activation key, and a name for your gateway. The
-         * activation process also associates your gateway with your account. For more
-         * information, see <a>UpdateGatewayInformation</a>.</p>  <p>You must turn on
-         * the gateway VM before you can activate your gateway.</p> <p><h3>See
-         * Also:</h3>   <a
+         * process, you specify information such as the Amazon Web Services Region that you
+         * want to use for storing snapshots or tapes, the time zone for scheduled
+         * snapshots the gateway snapshot schedule window, an activation key, and a name
+         * for your gateway. The activation process also associates your gateway with your
+         * account. For more information, see <a>UpdateGatewayInformation</a>.</p> 
+         * <p>You must turn on the gateway VM before you can activate your gateway.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGateway">AWS
          * API Reference</a></p>
          *
@@ -1046,14 +1052,17 @@ namespace Model
          * Gateway. In Storage Gateway, a file share is a file system mount point backed by
          * Amazon S3 cloud storage. Storage Gateway exposes file shares using an NFS
          * interface. This operation is only supported for S3 File Gateways.</p>
-         *  <p>S3 File gateway requires Security Token Service (STS) to be
-         * activated to enable you to create a file share. Make sure STS is activated in
-         * the Region you are creating your S3 File Gateway in. If STS is not activated in
-         * the Region, activate it. For information about how to activate STS, see <a
+         *  <p>S3 File gateway requires Security Token Service (Amazon Web
+         * Services STS) to be activated to enable you to create a file share. Make sure
+         * Amazon Web Services STS is activated in the Amazon Web Services Region you are
+         * creating your S3 File Gateway in. If Amazon Web Services STS is not activated in
+         * the Amazon Web Services Region, activate it. For information about how to
+         * activate Amazon Web Services STS, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and deactivating STS in an Region</a> in the <i>Identity and Access Management
-         * User Guide</i>.</p> <p>S3 File Gateways do not support creating hard or symbolic
-         * links on a file share.</p> <p><h3>See Also:</h3>   <a
+         * and deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in
+         * the <i>Identity and Access Management User Guide</i>.</p> <p>S3 File Gateways do
+         * not support creating hard or symbolic links on a file share.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateNFSFileShare">AWS
          * API Reference</a></p>
          */
@@ -1064,14 +1073,17 @@ namespace Model
          * Gateway. In Storage Gateway, a file share is a file system mount point backed by
          * Amazon S3 cloud storage. Storage Gateway exposes file shares using an NFS
          * interface. This operation is only supported for S3 File Gateways.</p>
-         *  <p>S3 File gateway requires Security Token Service (STS) to be
-         * activated to enable you to create a file share. Make sure STS is activated in
-         * the Region you are creating your S3 File Gateway in. If STS is not activated in
-         * the Region, activate it. For information about how to activate STS, see <a
+         *  <p>S3 File gateway requires Security Token Service (Amazon Web
+         * Services STS) to be activated to enable you to create a file share. Make sure
+         * Amazon Web Services STS is activated in the Amazon Web Services Region you are
+         * creating your S3 File Gateway in. If Amazon Web Services STS is not activated in
+         * the Amazon Web Services Region, activate it. For information about how to
+         * activate Amazon Web Services STS, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and deactivating STS in an Region</a> in the <i>Identity and Access Management
-         * User Guide</i>.</p> <p>S3 File Gateways do not support creating hard or symbolic
-         * links on a file share.</p> <p><h3>See Also:</h3>   <a
+         * and deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in
+         * the <i>Identity and Access Management User Guide</i>.</p> <p>S3 File Gateways do
+         * not support creating hard or symbolic links on a file share.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateNFSFileShare">AWS
          * API Reference</a></p>
          *
@@ -1084,14 +1096,17 @@ namespace Model
          * Gateway. In Storage Gateway, a file share is a file system mount point backed by
          * Amazon S3 cloud storage. Storage Gateway exposes file shares using an NFS
          * interface. This operation is only supported for S3 File Gateways.</p>
-         *  <p>S3 File gateway requires Security Token Service (STS) to be
-         * activated to enable you to create a file share. Make sure STS is activated in
-         * the Region you are creating your S3 File Gateway in. If STS is not activated in
-         * the Region, activate it. For information about how to activate STS, see <a
+         *  <p>S3 File gateway requires Security Token Service (Amazon Web
+         * Services STS) to be activated to enable you to create a file share. Make sure
+         * Amazon Web Services STS is activated in the Amazon Web Services Region you are
+         * creating your S3 File Gateway in. If Amazon Web Services STS is not activated in
+         * the Amazon Web Services Region, activate it. For information about how to
+         * activate Amazon Web Services STS, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and deactivating STS in an Region</a> in the <i>Identity and Access Management
-         * User Guide</i>.</p> <p>S3 File Gateways do not support creating hard or symbolic
-         * links on a file share.</p> <p><h3>See Also:</h3>   <a
+         * and deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in
+         * the <i>Identity and Access Management User Guide</i>.</p> <p>S3 File Gateways do
+         * not support creating hard or symbolic links on a file share.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateNFSFileShare">AWS
          * API Reference</a></p>
          *
@@ -1104,14 +1119,17 @@ namespace Model
          * Gateway. In Storage Gateway, a file share is a file system mount point backed by
          * Amazon S3 cloud storage. Storage Gateway exposes file shares using an SMB
          * interface. This operation is only supported for S3 File Gateways.</p>
-         *  <p>S3 File Gateways require Security Token Service (STS) to be
-         * activated to enable you to create a file share. Make sure that STS is activated
-         * in the Region you are creating your S3 File Gateway in. If STS is not activated
-         * in this Region, activate it. For information about how to activate STS, see <a
+         *  <p>S3 File Gateways require Security Token Service (Amazon Web
+         * Services STS) to be activated to enable you to create a file share. Make sure
+         * that Amazon Web Services STS is activated in the Amazon Web Services Region you
+         * are creating your S3 File Gateway in. If Amazon Web Services STS is not
+         * activated in this Amazon Web Services Region, activate it. For information about
+         * how to activate Amazon Web Services STS, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and deactivating STS in an Region</a> in the <i>Identity and Access Management
-         * User Guide</i>.</p> <p>File gateways don't support creating hard or symbolic
-         * links on a file share.</p> <p><h3>See Also:</h3>   <a
+         * and deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in
+         * the <i>Identity and Access Management User Guide</i>.</p> <p>File gateways don't
+         * support creating hard or symbolic links on a file share.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSMBFileShare">AWS
          * API Reference</a></p>
          */
@@ -1122,14 +1140,17 @@ namespace Model
          * Gateway. In Storage Gateway, a file share is a file system mount point backed by
          * Amazon S3 cloud storage. Storage Gateway exposes file shares using an SMB
          * interface. This operation is only supported for S3 File Gateways.</p>
-         *  <p>S3 File Gateways require Security Token Service (STS) to be
-         * activated to enable you to create a file share. Make sure that STS is activated
-         * in the Region you are creating your S3 File Gateway in. If STS is not activated
-         * in this Region, activate it. For information about how to activate STS, see <a
+         *  <p>S3 File Gateways require Security Token Service (Amazon Web
+         * Services STS) to be activated to enable you to create a file share. Make sure
+         * that Amazon Web Services STS is activated in the Amazon Web Services Region you
+         * are creating your S3 File Gateway in. If Amazon Web Services STS is not
+         * activated in this Amazon Web Services Region, activate it. For information about
+         * how to activate Amazon Web Services STS, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and deactivating STS in an Region</a> in the <i>Identity and Access Management
-         * User Guide</i>.</p> <p>File gateways don't support creating hard or symbolic
-         * links on a file share.</p> <p><h3>See Also:</h3>   <a
+         * and deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in
+         * the <i>Identity and Access Management User Guide</i>.</p> <p>File gateways don't
+         * support creating hard or symbolic links on a file share.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSMBFileShare">AWS
          * API Reference</a></p>
          *
@@ -1142,14 +1163,17 @@ namespace Model
          * Gateway. In Storage Gateway, a file share is a file system mount point backed by
          * Amazon S3 cloud storage. Storage Gateway exposes file shares using an SMB
          * interface. This operation is only supported for S3 File Gateways.</p>
-         *  <p>S3 File Gateways require Security Token Service (STS) to be
-         * activated to enable you to create a file share. Make sure that STS is activated
-         * in the Region you are creating your S3 File Gateway in. If STS is not activated
-         * in this Region, activate it. For information about how to activate STS, see <a
+         *  <p>S3 File Gateways require Security Token Service (Amazon Web
+         * Services STS) to be activated to enable you to create a file share. Make sure
+         * that Amazon Web Services STS is activated in the Amazon Web Services Region you
+         * are creating your S3 File Gateway in. If Amazon Web Services STS is not
+         * activated in this Amazon Web Services Region, activate it. For information about
+         * how to activate Amazon Web Services STS, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and deactivating STS in an Region</a> in the <i>Identity and Access Management
-         * User Guide</i>.</p> <p>File gateways don't support creating hard or symbolic
-         * links on a file share.</p> <p><h3>See Also:</h3>   <a
+         * and deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in
+         * the <i>Identity and Access Management User Guide</i>.</p> <p>File gateways don't
+         * support creating hard or symbolic links on a file share.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSMBFileShare">AWS
          * API Reference</a></p>
          *
@@ -2878,28 +2902,30 @@ namespace Model
         virtual void ListFileSystemAssociationsAsync(const Model::ListFileSystemAssociationsRequest& request, const ListFileSystemAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists gateways owned by an account in an Region specified in the request. The
-         * returned list is ordered by gateway Amazon Resource Name (ARN).</p> <p>By
-         * default, the operation returns a maximum of 100 gateways. This operation
-         * supports pagination that allows you to optionally reduce the number of gateways
-         * returned in a response.</p> <p>If you have more gateways than are returned in a
-         * response (that is, the response returns only a truncated list of your gateways),
-         * the response contains a marker that you can specify in your next request to
-         * fetch the next page of gateways.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists gateways owned by an Amazon Web Services account in an Amazon Web
+         * Services Region specified in the request. The returned list is ordered by
+         * gateway Amazon Resource Name (ARN).</p> <p>By default, the operation returns a
+         * maximum of 100 gateways. This operation supports pagination that allows you to
+         * optionally reduce the number of gateways returned in a response.</p> <p>If you
+         * have more gateways than are returned in a response (that is, the response
+         * returns only a truncated list of your gateways), the response contains a marker
+         * that you can specify in your next request to fetch the next page of
+         * gateways.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListGateways">AWS
          * API Reference</a></p>
          */
         virtual Model::ListGatewaysOutcome ListGateways(const Model::ListGatewaysRequest& request) const;
 
         /**
-         * <p>Lists gateways owned by an account in an Region specified in the request. The
-         * returned list is ordered by gateway Amazon Resource Name (ARN).</p> <p>By
-         * default, the operation returns a maximum of 100 gateways. This operation
-         * supports pagination that allows you to optionally reduce the number of gateways
-         * returned in a response.</p> <p>If you have more gateways than are returned in a
-         * response (that is, the response returns only a truncated list of your gateways),
-         * the response contains a marker that you can specify in your next request to
-         * fetch the next page of gateways.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists gateways owned by an Amazon Web Services account in an Amazon Web
+         * Services Region specified in the request. The returned list is ordered by
+         * gateway Amazon Resource Name (ARN).</p> <p>By default, the operation returns a
+         * maximum of 100 gateways. This operation supports pagination that allows you to
+         * optionally reduce the number of gateways returned in a response.</p> <p>If you
+         * have more gateways than are returned in a response (that is, the response
+         * returns only a truncated list of your gateways), the response contains a marker
+         * that you can specify in your next request to fetch the next page of
+         * gateways.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListGateways">AWS
          * API Reference</a></p>
          *
@@ -2908,14 +2934,15 @@ namespace Model
         virtual Model::ListGatewaysOutcomeCallable ListGatewaysCallable(const Model::ListGatewaysRequest& request) const;
 
         /**
-         * <p>Lists gateways owned by an account in an Region specified in the request. The
-         * returned list is ordered by gateway Amazon Resource Name (ARN).</p> <p>By
-         * default, the operation returns a maximum of 100 gateways. This operation
-         * supports pagination that allows you to optionally reduce the number of gateways
-         * returned in a response.</p> <p>If you have more gateways than are returned in a
-         * response (that is, the response returns only a truncated list of your gateways),
-         * the response contains a marker that you can specify in your next request to
-         * fetch the next page of gateways.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists gateways owned by an Amazon Web Services account in an Amazon Web
+         * Services Region specified in the request. The returned list is ordered by
+         * gateway Amazon Resource Name (ARN).</p> <p>By default, the operation returns a
+         * maximum of 100 gateways. This operation supports pagination that allows you to
+         * optionally reduce the number of gateways returned in a response.</p> <p>If you
+         * have more gateways than are returned in a response (that is, the response
+         * returns only a truncated list of your gateways), the response contains a marker
+         * that you can specify in your next request to fetch the next page of
+         * gateways.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListGateways">AWS
          * API Reference</a></p>
          *
@@ -4199,14 +4226,17 @@ namespace Model
          * <p>Updates a Server Message Block (SMB) file share. This operation is only
          * supported for S3 File Gateways.</p>  <p>To leave a file share field
          * unchanged, set the corresponding input field to null.</p>  
-         * <p>File gateways require Security Token Service (STS) to be activated to enable
-         * you to create a file share. Make sure that STS is activated in the Region you
-         * are creating your file gateway in. If STS is not activated in this Region,
-         * activate it. For information about how to activate STS, see <a
+         * <p>File gateways require Security Token Service (Amazon Web Services STS) to be
+         * activated to enable you to create a file share. Make sure that Amazon Web
+         * Services STS is activated in the Amazon Web Services Region you are creating
+         * your file gateway in. If Amazon Web Services STS is not activated in this Amazon
+         * Web Services Region, activate it. For information about how to activate Amazon
+         * Web Services STS, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and deactivating STS in an Region</a> in the <i>Identity and Access Management
-         * User Guide</i>.</p> <p>File gateways don't support creating hard or symbolic
-         * links on a file share.</p> <p><h3>See Also:</h3>   <a
+         * and deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in
+         * the <i>Identity and Access Management User Guide</i>.</p> <p>File gateways don't
+         * support creating hard or symbolic links on a file share.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShare">AWS
          * API Reference</a></p>
          */
@@ -4216,14 +4246,17 @@ namespace Model
          * <p>Updates a Server Message Block (SMB) file share. This operation is only
          * supported for S3 File Gateways.</p>  <p>To leave a file share field
          * unchanged, set the corresponding input field to null.</p>  
-         * <p>File gateways require Security Token Service (STS) to be activated to enable
-         * you to create a file share. Make sure that STS is activated in the Region you
-         * are creating your file gateway in. If STS is not activated in this Region,
-         * activate it. For information about how to activate STS, see <a
+         * <p>File gateways require Security Token Service (Amazon Web Services STS) to be
+         * activated to enable you to create a file share. Make sure that Amazon Web
+         * Services STS is activated in the Amazon Web Services Region you are creating
+         * your file gateway in. If Amazon Web Services STS is not activated in this Amazon
+         * Web Services Region, activate it. For information about how to activate Amazon
+         * Web Services STS, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and deactivating STS in an Region</a> in the <i>Identity and Access Management
-         * User Guide</i>.</p> <p>File gateways don't support creating hard or symbolic
-         * links on a file share.</p> <p><h3>See Also:</h3>   <a
+         * and deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in
+         * the <i>Identity and Access Management User Guide</i>.</p> <p>File gateways don't
+         * support creating hard or symbolic links on a file share.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShare">AWS
          * API Reference</a></p>
          *
@@ -4235,14 +4268,17 @@ namespace Model
          * <p>Updates a Server Message Block (SMB) file share. This operation is only
          * supported for S3 File Gateways.</p>  <p>To leave a file share field
          * unchanged, set the corresponding input field to null.</p>  
-         * <p>File gateways require Security Token Service (STS) to be activated to enable
-         * you to create a file share. Make sure that STS is activated in the Region you
-         * are creating your file gateway in. If STS is not activated in this Region,
-         * activate it. For information about how to activate STS, see <a
+         * <p>File gateways require Security Token Service (Amazon Web Services STS) to be
+         * activated to enable you to create a file share. Make sure that Amazon Web
+         * Services STS is activated in the Amazon Web Services Region you are creating
+         * your file gateway in. If Amazon Web Services STS is not activated in this Amazon
+         * Web Services Region, activate it. For information about how to activate Amazon
+         * Web Services STS, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and deactivating STS in an Region</a> in the <i>Identity and Access Management
-         * User Guide</i>.</p> <p>File gateways don't support creating hard or symbolic
-         * links on a file share.</p> <p><h3>See Also:</h3>   <a
+         * and deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in
+         * the <i>Identity and Access Management User Guide</i>.</p> <p>File gateways don't
+         * support creating hard or symbolic links on a file share.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShare">AWS
          * API Reference</a></p>
          *
@@ -4280,6 +4316,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateSMBFileShareVisibilityAsync(const Model::UpdateSMBFileShareVisibilityRequest& request, const UpdateSMBFileShareVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the list of Active Directory users and groups that have special
+         * permissions for SMB file shares on the gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBLocalGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSMBLocalGroupsOutcome UpdateSMBLocalGroups(const Model::UpdateSMBLocalGroupsRequest& request) const;
+
+        /**
+         * <p>Updates the list of Active Directory users and groups that have special
+         * permissions for SMB file shares on the gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBLocalGroups">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateSMBLocalGroupsOutcomeCallable UpdateSMBLocalGroupsCallable(const Model::UpdateSMBLocalGroupsRequest& request) const;
+
+        /**
+         * <p>Updates the list of Active Directory users and groups that have special
+         * permissions for SMB file shares on the gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBLocalGroups">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateSMBLocalGroupsAsync(const Model::UpdateSMBLocalGroupsRequest& request, const UpdateSMBLocalGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the SMB security strategy on a file gateway. This action is only
@@ -4488,6 +4552,7 @@ namespace Model
         void UpdateNFSFileShareAsyncHelper(const Model::UpdateNFSFileShareRequest& request, const UpdateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSMBFileShareAsyncHelper(const Model::UpdateSMBFileShareRequest& request, const UpdateSMBFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSMBFileShareVisibilityAsyncHelper(const Model::UpdateSMBFileShareVisibilityRequest& request, const UpdateSMBFileShareVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateSMBLocalGroupsAsyncHelper(const Model::UpdateSMBLocalGroupsRequest& request, const UpdateSMBLocalGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSMBSecurityStrategyAsyncHelper(const Model::UpdateSMBSecurityStrategyRequest& request, const UpdateSMBSecurityStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSnapshotScheduleAsyncHelper(const Model::UpdateSnapshotScheduleRequest& request, const UpdateSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVTLDeviceTypeAsyncHelper(const Model::UpdateVTLDeviceTypeRequest& request, const UpdateVTLDeviceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

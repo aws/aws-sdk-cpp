@@ -121,7 +121,7 @@ namespace Model
      * <p>An array of objects, each describing one output configuration. In the output
      * configuration, you specify the name of an in-application stream, a destination
      * (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an
-     * AWS Lambda function), and record the formation to use when writing to the
+     * Amazon Lambda function), and record the formation to use when writing to the
      * destination.</p>
      */
     inline const Output& GetOutput() const{ return m_output; }
@@ -130,7 +130,7 @@ namespace Model
      * <p>An array of objects, each describing one output configuration. In the output
      * configuration, you specify the name of an in-application stream, a destination
      * (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an
-     * AWS Lambda function), and record the formation to use when writing to the
+     * Amazon Lambda function), and record the formation to use when writing to the
      * destination.</p>
      */
     inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
@@ -139,7 +139,7 @@ namespace Model
      * <p>An array of objects, each describing one output configuration. In the output
      * configuration, you specify the name of an in-application stream, a destination
      * (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an
-     * AWS Lambda function), and record the formation to use when writing to the
+     * Amazon Lambda function), and record the formation to use when writing to the
      * destination.</p>
      */
     inline void SetOutput(const Output& value) { m_outputHasBeenSet = true; m_output = value; }
@@ -148,7 +148,7 @@ namespace Model
      * <p>An array of objects, each describing one output configuration. In the output
      * configuration, you specify the name of an in-application stream, a destination
      * (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an
-     * AWS Lambda function), and record the formation to use when writing to the
+     * Amazon Lambda function), and record the formation to use when writing to the
      * destination.</p>
      */
     inline void SetOutput(Output&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
@@ -157,7 +157,7 @@ namespace Model
      * <p>An array of objects, each describing one output configuration. In the output
      * configuration, you specify the name of an in-application stream, a destination
      * (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an
-     * AWS Lambda function), and record the formation to use when writing to the
+     * Amazon Lambda function), and record the formation to use when writing to the
      * destination.</p>
      */
     inline AddApplicationOutputRequest& WithOutput(const Output& value) { SetOutput(value); return *this;}
@@ -166,7 +166,7 @@ namespace Model
      * <p>An array of objects, each describing one output configuration. In the output
      * configuration, you specify the name of an in-application stream, a destination
      * (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an
-     * AWS Lambda function), and record the formation to use when writing to the
+     * Amazon Lambda function), and record the formation to use when writing to the
      * destination.</p>
      */
     inline AddApplicationOutputRequest& WithOutput(Output&& value) { SetOutput(std::move(value)); return *this;}

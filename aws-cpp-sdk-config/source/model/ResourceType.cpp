@@ -128,6 +128,7 @@ namespace Aws
         static const int AWS_EFS_AccessPoint_HASH = HashingUtils::HashString("AWS::EFS::AccessPoint");
         static const int AWS_EFS_FileSystem_HASH = HashingUtils::HashString("AWS::EFS::FileSystem");
         static const int AWS_EKS_Cluster_HASH = HashingUtils::HashString("AWS::EKS::Cluster");
+        static const int AWS_OpenSearch_Domain_HASH = HashingUtils::HashString("AWS::OpenSearch::Domain");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -565,6 +566,10 @@ namespace Aws
           {
             return ResourceType::AWS_EKS_Cluster;
           }
+          else if (hashCode == AWS_OpenSearch_Domain_HASH)
+          {
+            return ResourceType::AWS_OpenSearch_Domain;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -795,6 +800,8 @@ namespace Aws
             return "AWS::EFS::FileSystem";
           case ResourceType::AWS_EKS_Cluster:
             return "AWS::EKS::Cluster";
+          case ResourceType::AWS_OpenSearch_Domain:
+            return "AWS::OpenSearch::Domain";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
