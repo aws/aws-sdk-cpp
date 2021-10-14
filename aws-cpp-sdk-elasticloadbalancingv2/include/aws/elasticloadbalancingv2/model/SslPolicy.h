@@ -169,6 +169,52 @@ namespace Model
      */
     inline SslPolicy& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p> The supported load balancers. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedLoadBalancerTypes() const{ return m_supportedLoadBalancerTypes; }
+
+    /**
+     * <p> The supported load balancers. </p>
+     */
+    inline bool SupportedLoadBalancerTypesHasBeenSet() const { return m_supportedLoadBalancerTypesHasBeenSet; }
+
+    /**
+     * <p> The supported load balancers. </p>
+     */
+    inline void SetSupportedLoadBalancerTypes(const Aws::Vector<Aws::String>& value) { m_supportedLoadBalancerTypesHasBeenSet = true; m_supportedLoadBalancerTypes = value; }
+
+    /**
+     * <p> The supported load balancers. </p>
+     */
+    inline void SetSupportedLoadBalancerTypes(Aws::Vector<Aws::String>&& value) { m_supportedLoadBalancerTypesHasBeenSet = true; m_supportedLoadBalancerTypes = std::move(value); }
+
+    /**
+     * <p> The supported load balancers. </p>
+     */
+    inline SslPolicy& WithSupportedLoadBalancerTypes(const Aws::Vector<Aws::String>& value) { SetSupportedLoadBalancerTypes(value); return *this;}
+
+    /**
+     * <p> The supported load balancers. </p>
+     */
+    inline SslPolicy& WithSupportedLoadBalancerTypes(Aws::Vector<Aws::String>&& value) { SetSupportedLoadBalancerTypes(std::move(value)); return *this;}
+
+    /**
+     * <p> The supported load balancers. </p>
+     */
+    inline SslPolicy& AddSupportedLoadBalancerTypes(const Aws::String& value) { m_supportedLoadBalancerTypesHasBeenSet = true; m_supportedLoadBalancerTypes.push_back(value); return *this; }
+
+    /**
+     * <p> The supported load balancers. </p>
+     */
+    inline SslPolicy& AddSupportedLoadBalancerTypes(Aws::String&& value) { m_supportedLoadBalancerTypesHasBeenSet = true; m_supportedLoadBalancerTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p> The supported load balancers. </p>
+     */
+    inline SslPolicy& AddSupportedLoadBalancerTypes(const char* value) { m_supportedLoadBalancerTypesHasBeenSet = true; m_supportedLoadBalancerTypes.push_back(value); return *this; }
+
   private:
 
     Aws::Vector<Aws::String> m_sslProtocols;
@@ -179,6 +225,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::Vector<Aws::String> m_supportedLoadBalancerTypes;
+    bool m_supportedLoadBalancerTypesHasBeenSet;
   };
 
 } // namespace Model

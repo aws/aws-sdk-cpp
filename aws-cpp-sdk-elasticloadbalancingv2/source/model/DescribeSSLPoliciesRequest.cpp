@@ -14,7 +14,9 @@ DescribeSSLPoliciesRequest::DescribeSSLPoliciesRequest() :
     m_namesHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_loadBalancerType(LoadBalancerTypeEnum::NOT_SET),
+    m_loadBalancerTypeHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,11 @@ Aws::String DescribeSSLPoliciesRequest::SerializePayload() const
   if(m_pageSizeHasBeenSet)
   {
     ss << "PageSize=" << m_pageSize << "&";
+  }
+
+  if(m_loadBalancerTypeHasBeenSet)
+  {
+    ss << "LoadBalancerType=" << LoadBalancerTypeEnumMapper::GetNameForLoadBalancerTypeEnum(m_loadBalancerType) << "&";
   }
 
   ss << "Version=2015-12-01";

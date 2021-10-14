@@ -8,6 +8,7 @@
 #include <aws/autoscaling/AutoScalingRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/autoscaling/model/Filter.h>
 #include <utility>
 
 namespace Aws
@@ -183,6 +184,47 @@ namespace Model
      */
     inline DescribeAutoScalingGroupsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
+
+    /**
+     * <p>One or more filters to limit the results based on specific tags. </p>
+     */
+    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters to limit the results based on specific tags. </p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>One or more filters to limit the results based on specific tags. </p>
+     */
+    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>One or more filters to limit the results based on specific tags. </p>
+     */
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    /**
+     * <p>One or more filters to limit the results based on specific tags. </p>
+     */
+    inline DescribeAutoScalingGroupsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>One or more filters to limit the results based on specific tags. </p>
+     */
+    inline DescribeAutoScalingGroupsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more filters to limit the results based on specific tags. </p>
+     */
+    inline DescribeAutoScalingGroupsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
+     * <p>One or more filters to limit the results based on specific tags. </p>
+     */
+    inline DescribeAutoScalingGroupsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<Aws::String> m_autoScalingGroupNames;
@@ -193,6 +235,9 @@ namespace Model
 
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet;
   };
 
 } // namespace Model

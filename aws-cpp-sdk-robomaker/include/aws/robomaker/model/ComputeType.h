@@ -13,20 +13,19 @@ namespace RoboMaker
 {
 namespace Model
 {
-  enum class RobotSoftwareSuiteType
+  enum class ComputeType
   {
     NOT_SET,
-    ROS,
-    ROS2,
-    General
+    CPU,
+    GPU_AND_CPU
   };
 
-namespace RobotSoftwareSuiteTypeMapper
+namespace ComputeTypeMapper
 {
-AWS_ROBOMAKER_API RobotSoftwareSuiteType GetRobotSoftwareSuiteTypeForName(const Aws::String& name);
+AWS_ROBOMAKER_API ComputeType GetComputeTypeForName(const Aws::String& name);
 
-AWS_ROBOMAKER_API Aws::String GetNameForRobotSoftwareSuiteType(RobotSoftwareSuiteType value);
-} // namespace RobotSoftwareSuiteTypeMapper
+AWS_ROBOMAKER_API Aws::String GetNameForComputeType(ComputeType value);
+} // namespace ComputeTypeMapper
 } // namespace Model
 } // namespace RoboMaker
 } // namespace Aws

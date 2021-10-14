@@ -121,7 +121,9 @@ namespace Model
 
     /**
      * <p>The product ID and provisioning artifact ID to provision a service catalog.
-     * For information, see <a
+     * The provisioning artifact ID will default to the latest provisioning artifact ID
+     * of the product, if you don't provide the provisioning artifact ID. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
      * is Amazon Web Services Service Catalog</a>.</p>
      */
@@ -129,7 +131,9 @@ namespace Model
 
     /**
      * <p>The product ID and provisioning artifact ID to provision a service catalog.
-     * For information, see <a
+     * The provisioning artifact ID will default to the latest provisioning artifact ID
+     * of the product, if you don't provide the provisioning artifact ID. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
      * is Amazon Web Services Service Catalog</a>.</p>
      */
@@ -137,7 +141,9 @@ namespace Model
 
     /**
      * <p>The product ID and provisioning artifact ID to provision a service catalog.
-     * For information, see <a
+     * The provisioning artifact ID will default to the latest provisioning artifact ID
+     * of the product, if you don't provide the provisioning artifact ID. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
      * is Amazon Web Services Service Catalog</a>.</p>
      */
@@ -145,7 +151,9 @@ namespace Model
 
     /**
      * <p>The product ID and provisioning artifact ID to provision a service catalog.
-     * For information, see <a
+     * The provisioning artifact ID will default to the latest provisioning artifact ID
+     * of the product, if you don't provide the provisioning artifact ID. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
      * is Amazon Web Services Service Catalog</a>.</p>
      */
@@ -153,7 +161,9 @@ namespace Model
 
     /**
      * <p>The product ID and provisioning artifact ID to provision a service catalog.
-     * For information, see <a
+     * The provisioning artifact ID will default to the latest provisioning artifact ID
+     * of the product, if you don't provide the provisioning artifact ID. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
      * is Amazon Web Services Service Catalog</a>.</p>
      */
@@ -161,7 +171,9 @@ namespace Model
 
     /**
      * <p>The product ID and provisioning artifact ID to provision a service catalog.
-     * For information, see <a
+     * The provisioning artifact ID will default to the latest provisioning artifact ID
+     * of the product, if you don't provide the provisioning artifact ID. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
      * is Amazon Web Services Service Catalog</a>.</p>
      */

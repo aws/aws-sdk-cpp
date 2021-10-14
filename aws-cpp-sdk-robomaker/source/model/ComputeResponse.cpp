@@ -20,13 +20,21 @@ namespace Model
 
 ComputeResponse::ComputeResponse() : 
     m_simulationUnitLimit(0),
-    m_simulationUnitLimitHasBeenSet(false)
+    m_simulationUnitLimitHasBeenSet(false),
+    m_computeType(ComputeType::NOT_SET),
+    m_computeTypeHasBeenSet(false),
+    m_gpuUnitLimit(0),
+    m_gpuUnitLimitHasBeenSet(false)
 {
 }
 
 ComputeResponse::ComputeResponse(JsonView jsonValue) : 
     m_simulationUnitLimit(0),
-    m_simulationUnitLimitHasBeenSet(false)
+    m_simulationUnitLimitHasBeenSet(false),
+    m_computeType(ComputeType::NOT_SET),
+    m_computeTypeHasBeenSet(false),
+    m_gpuUnitLimit(0),
+    m_gpuUnitLimitHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +48,20 @@ ComputeResponse& ComputeResponse::operator =(JsonView jsonValue)
     m_simulationUnitLimitHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("computeType"))
+  {
+    m_computeType = ComputeTypeMapper::GetComputeTypeForName(jsonValue.GetString("computeType"));
+
+    m_computeTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("gpuUnitLimit"))
+  {
+    m_gpuUnitLimit = jsonValue.GetInteger("gpuUnitLimit");
+
+    m_gpuUnitLimitHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +72,17 @@ JsonValue ComputeResponse::Jsonize() const
   if(m_simulationUnitLimitHasBeenSet)
   {
    payload.WithInteger("simulationUnitLimit", m_simulationUnitLimit);
+
+  }
+
+  if(m_computeTypeHasBeenSet)
+  {
+   payload.WithString("computeType", ComputeTypeMapper::GetNameForComputeType(m_computeType));
+  }
+
+  if(m_gpuUnitLimitHasBeenSet)
+  {
+   payload.WithInteger("gpuUnitLimit", m_gpuUnitLimit);
 
   }
 

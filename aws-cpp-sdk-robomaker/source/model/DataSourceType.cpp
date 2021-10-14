@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/robomaker/model/RobotSoftwareSuiteType.h>
+#include <aws/robomaker/model/DataSourceType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -17,49 +17,49 @@ namespace Aws
   {
     namespace Model
     {
-      namespace RobotSoftwareSuiteTypeMapper
+      namespace DataSourceTypeMapper
       {
 
-        static const int ROS_HASH = HashingUtils::HashString("ROS");
-        static const int ROS2_HASH = HashingUtils::HashString("ROS2");
-        static const int General_HASH = HashingUtils::HashString("General");
+        static const int Prefix_HASH = HashingUtils::HashString("Prefix");
+        static const int Archive_HASH = HashingUtils::HashString("Archive");
+        static const int File_HASH = HashingUtils::HashString("File");
 
 
-        RobotSoftwareSuiteType GetRobotSoftwareSuiteTypeForName(const Aws::String& name)
+        DataSourceType GetDataSourceTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ROS_HASH)
+          if (hashCode == Prefix_HASH)
           {
-            return RobotSoftwareSuiteType::ROS;
+            return DataSourceType::Prefix;
           }
-          else if (hashCode == ROS2_HASH)
+          else if (hashCode == Archive_HASH)
           {
-            return RobotSoftwareSuiteType::ROS2;
+            return DataSourceType::Archive;
           }
-          else if (hashCode == General_HASH)
+          else if (hashCode == File_HASH)
           {
-            return RobotSoftwareSuiteType::General;
+            return DataSourceType::File;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<RobotSoftwareSuiteType>(hashCode);
+            return static_cast<DataSourceType>(hashCode);
           }
 
-          return RobotSoftwareSuiteType::NOT_SET;
+          return DataSourceType::NOT_SET;
         }
 
-        Aws::String GetNameForRobotSoftwareSuiteType(RobotSoftwareSuiteType enumValue)
+        Aws::String GetNameForDataSourceType(DataSourceType enumValue)
         {
           switch(enumValue)
           {
-          case RobotSoftwareSuiteType::ROS:
-            return "ROS";
-          case RobotSoftwareSuiteType::ROS2:
-            return "ROS2";
-          case RobotSoftwareSuiteType::General:
-            return "General";
+          case DataSourceType::Prefix:
+            return "Prefix";
+          case DataSourceType::Archive:
+            return "Archive";
+          case DataSourceType::File:
+            return "File";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -71,7 +71,7 @@ namespace Aws
           }
         }
 
-      } // namespace RobotSoftwareSuiteTypeMapper
+      } // namespace DataSourceTypeMapper
     } // namespace Model
   } // namespace RoboMaker
 } // namespace Aws

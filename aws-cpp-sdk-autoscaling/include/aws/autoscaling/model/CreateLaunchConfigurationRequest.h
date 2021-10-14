@@ -1264,7 +1264,7 @@ namespace Model
      * for an instance type that is not EBS-optimized by default. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
-     * EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>The default value is <code>false</code>.</p>
      */
     inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
@@ -1278,7 +1278,7 @@ namespace Model
      * for an instance type that is not EBS-optimized by default. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
-     * EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>The default value is <code>false</code>.</p>
      */
     inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
@@ -1292,7 +1292,7 @@ namespace Model
      * for an instance type that is not EBS-optimized by default. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
-     * EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>The default value is <code>false</code>.</p>
      */
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
@@ -1306,7 +1306,7 @@ namespace Model
      * for an instance type that is not EBS-optimized by default. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
-     * EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>The default value is <code>false</code>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}

@@ -141,7 +141,7 @@ namespace Model
     /**
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
+     * EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
@@ -150,7 +150,7 @@ namespace Model
     /**
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
+     * EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
@@ -159,7 +159,7 @@ namespace Model
     /**
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
+     * EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
@@ -168,7 +168,7 @@ namespace Model
     /**
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
+     * EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
@@ -177,7 +177,7 @@ namespace Model
     /**
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
+     * EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
@@ -186,7 +186,7 @@ namespace Model
     /**
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
+     * EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
@@ -195,7 +195,7 @@ namespace Model
     /**
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
+     * EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
@@ -204,7 +204,7 @@ namespace Model
     /**
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
+     * EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
@@ -318,26 +318,17 @@ namespace Model
      * only be attached to instances that support Amazon EBS encryption. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * Instance Types</a>. If your AMI uses encrypted volumes, you can also only launch
+     * instance types</a>. If your AMI uses encrypted volumes, you can also only launch
      * it on supported instance types.</p>  <p>If you are creating a volume from
-     * a snapshot, you cannot specify an encryption value. Volumes that are created
-     * from encrypted snapshots are automatically encrypted, and volumes that are
-     * created from unencrypted snapshots are automatically unencrypted. By default,
-     * encrypted snapshots use the Amazon Web Services managed CMK that is used for EBS
-     * encryption, but you can specify a custom CMK when you create the snapshot. The
-     * ability to encrypt a snapshot during copying also allows you to apply a new CMK
-     * to an already-encrypted snapshot. Volumes restored from the resulting copy are
-     * only accessible using the new CMK.</p> <p>Enabling <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">encryption
-     * by default</a> results in all EBS volumes being encrypted with the Amazon Web
-     * Services managed CMK or a customer managed CMK, whether or not the snapshot was
-     * encrypted.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
-     * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html">Required
-     * CMK key policy for use with encrypted volumes</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p>
+     * a snapshot, you cannot create an unencrypted volume from an encrypted snapshot.
+     * Also, you cannot specify a KMS key ID when using a launch configuration.</p>
+     * <p>If you enable encryption by default, the EBS volumes that you create are
+     * always encrypted, either using the Amazon Web Services managed KMS key or a
+     * customer-managed KMS key, regardless of whether the snapshot was encrypted. </p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Using
+     * Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon
+     * EC2 Auto Scaling User Guide</i>.</p> 
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
@@ -346,26 +337,17 @@ namespace Model
      * only be attached to instances that support Amazon EBS encryption. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * Instance Types</a>. If your AMI uses encrypted volumes, you can also only launch
+     * instance types</a>. If your AMI uses encrypted volumes, you can also only launch
      * it on supported instance types.</p>  <p>If you are creating a volume from
-     * a snapshot, you cannot specify an encryption value. Volumes that are created
-     * from encrypted snapshots are automatically encrypted, and volumes that are
-     * created from unencrypted snapshots are automatically unencrypted. By default,
-     * encrypted snapshots use the Amazon Web Services managed CMK that is used for EBS
-     * encryption, but you can specify a custom CMK when you create the snapshot. The
-     * ability to encrypt a snapshot during copying also allows you to apply a new CMK
-     * to an already-encrypted snapshot. Volumes restored from the resulting copy are
-     * only accessible using the new CMK.</p> <p>Enabling <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">encryption
-     * by default</a> results in all EBS volumes being encrypted with the Amazon Web
-     * Services managed CMK or a customer managed CMK, whether or not the snapshot was
-     * encrypted.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
-     * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html">Required
-     * CMK key policy for use with encrypted volumes</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p>
+     * a snapshot, you cannot create an unencrypted volume from an encrypted snapshot.
+     * Also, you cannot specify a KMS key ID when using a launch configuration.</p>
+     * <p>If you enable encryption by default, the EBS volumes that you create are
+     * always encrypted, either using the Amazon Web Services managed KMS key or a
+     * customer-managed KMS key, regardless of whether the snapshot was encrypted. </p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Using
+     * Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon
+     * EC2 Auto Scaling User Guide</i>.</p> 
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
@@ -374,26 +356,17 @@ namespace Model
      * only be attached to instances that support Amazon EBS encryption. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * Instance Types</a>. If your AMI uses encrypted volumes, you can also only launch
+     * instance types</a>. If your AMI uses encrypted volumes, you can also only launch
      * it on supported instance types.</p>  <p>If you are creating a volume from
-     * a snapshot, you cannot specify an encryption value. Volumes that are created
-     * from encrypted snapshots are automatically encrypted, and volumes that are
-     * created from unencrypted snapshots are automatically unencrypted. By default,
-     * encrypted snapshots use the Amazon Web Services managed CMK that is used for EBS
-     * encryption, but you can specify a custom CMK when you create the snapshot. The
-     * ability to encrypt a snapshot during copying also allows you to apply a new CMK
-     * to an already-encrypted snapshot. Volumes restored from the resulting copy are
-     * only accessible using the new CMK.</p> <p>Enabling <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">encryption
-     * by default</a> results in all EBS volumes being encrypted with the Amazon Web
-     * Services managed CMK or a customer managed CMK, whether or not the snapshot was
-     * encrypted.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
-     * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html">Required
-     * CMK key policy for use with encrypted volumes</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p>
+     * a snapshot, you cannot create an unencrypted volume from an encrypted snapshot.
+     * Also, you cannot specify a KMS key ID when using a launch configuration.</p>
+     * <p>If you enable encryption by default, the EBS volumes that you create are
+     * always encrypted, either using the Amazon Web Services managed KMS key or a
+     * customer-managed KMS key, regardless of whether the snapshot was encrypted. </p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Using
+     * Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon
+     * EC2 Auto Scaling User Guide</i>.</p> 
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
@@ -402,26 +375,17 @@ namespace Model
      * only be attached to instances that support Amazon EBS encryption. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * Instance Types</a>. If your AMI uses encrypted volumes, you can also only launch
+     * instance types</a>. If your AMI uses encrypted volumes, you can also only launch
      * it on supported instance types.</p>  <p>If you are creating a volume from
-     * a snapshot, you cannot specify an encryption value. Volumes that are created
-     * from encrypted snapshots are automatically encrypted, and volumes that are
-     * created from unencrypted snapshots are automatically unencrypted. By default,
-     * encrypted snapshots use the Amazon Web Services managed CMK that is used for EBS
-     * encryption, but you can specify a custom CMK when you create the snapshot. The
-     * ability to encrypt a snapshot during copying also allows you to apply a new CMK
-     * to an already-encrypted snapshot. Volumes restored from the resulting copy are
-     * only accessible using the new CMK.</p> <p>Enabling <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">encryption
-     * by default</a> results in all EBS volumes being encrypted with the Amazon Web
-     * Services managed CMK or a customer managed CMK, whether or not the snapshot was
-     * encrypted.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
-     * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html">Required
-     * CMK key policy for use with encrypted volumes</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p>
+     * a snapshot, you cannot create an unencrypted volume from an encrypted snapshot.
+     * Also, you cannot specify a KMS key ID when using a launch configuration.</p>
+     * <p>If you enable encryption by default, the EBS volumes that you create are
+     * always encrypted, either using the Amazon Web Services managed KMS key or a
+     * customer-managed KMS key, regardless of whether the snapshot was encrypted. </p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Using
+     * Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon
+     * EC2 Auto Scaling User Guide</i>.</p> 
      */
     inline Ebs& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
