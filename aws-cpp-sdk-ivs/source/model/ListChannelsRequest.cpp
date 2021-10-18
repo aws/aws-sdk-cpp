@@ -15,9 +15,9 @@ using namespace Aws::Utils;
 ListChannelsRequest::ListChannelsRequest() : 
     m_filterByNameHasBeenSet(false),
     m_filterByRecordingConfigurationArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 
@@ -37,15 +37,15 @@ Aws::String ListChannelsRequest::SerializePayload() const
 
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
-  }
-
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("maxResults", m_maxResults);
+
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("nextToken", m_nextToken);
 
   }
 

@@ -7,6 +7,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/QuickSightRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/model/IngestionType.h>
 #include <utility>
 
 namespace Aws
@@ -154,6 +155,37 @@ namespace Model
      */
     inline CreateIngestionRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
+
+    /**
+     * <p>The type of ingestion that you want to create.</p>
+     */
+    inline const IngestionType& GetIngestionType() const{ return m_ingestionType; }
+
+    /**
+     * <p>The type of ingestion that you want to create.</p>
+     */
+    inline bool IngestionTypeHasBeenSet() const { return m_ingestionTypeHasBeenSet; }
+
+    /**
+     * <p>The type of ingestion that you want to create.</p>
+     */
+    inline void SetIngestionType(const IngestionType& value) { m_ingestionTypeHasBeenSet = true; m_ingestionType = value; }
+
+    /**
+     * <p>The type of ingestion that you want to create.</p>
+     */
+    inline void SetIngestionType(IngestionType&& value) { m_ingestionTypeHasBeenSet = true; m_ingestionType = std::move(value); }
+
+    /**
+     * <p>The type of ingestion that you want to create.</p>
+     */
+    inline CreateIngestionRequest& WithIngestionType(const IngestionType& value) { SetIngestionType(value); return *this;}
+
+    /**
+     * <p>The type of ingestion that you want to create.</p>
+     */
+    inline CreateIngestionRequest& WithIngestionType(IngestionType&& value) { SetIngestionType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_dataSetId;
@@ -164,6 +196,9 @@ namespace Model
 
     Aws::String m_awsAccountId;
     bool m_awsAccountIdHasBeenSet;
+
+    IngestionType m_ingestionType;
+    bool m_ingestionTypeHasBeenSet;
   };
 
 } // namespace Model

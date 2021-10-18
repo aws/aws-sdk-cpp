@@ -33,6 +33,27 @@ namespace Model
 
 
     /**
+     * <p>Maximum number of recording configurations to return. Default: 50. </p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Maximum number of recording configurations to return. Default: 50. </p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>Maximum number of recording configurations to return. Default: 50. </p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>Maximum number of recording configurations to return. Default: 50. </p>
+     */
+    inline ListRecordingConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+
+    /**
      * <p>The first recording configuration to retrieve. This is used for pagination;
      * see the <code>nextToken</code> response field.</p>
      */
@@ -80,34 +101,13 @@ namespace Model
      */
     inline ListRecordingConfigurationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-
-    /**
-     * <p>Maximum number of recording configurations to return. Default: 50. </p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Maximum number of recording configurations to return. Default: 50. </p>
-     */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of recording configurations to return. Default: 50. </p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Maximum number of recording configurations to return. Default: 50. </p>
-     */
-    inline ListRecordingConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
   private:
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
   };
 
 } // namespace Model

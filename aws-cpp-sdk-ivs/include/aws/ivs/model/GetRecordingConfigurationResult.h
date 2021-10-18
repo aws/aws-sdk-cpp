@@ -32,19 +32,29 @@ namespace Model
     GetRecordingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <zonbook></zonbook><xhtml></xhtml>
+     */
     inline const RecordingConfiguration& GetRecordingConfiguration() const{ return m_recordingConfiguration; }
 
-    
+    /**
+     * <zonbook></zonbook><xhtml></xhtml>
+     */
     inline void SetRecordingConfiguration(const RecordingConfiguration& value) { m_recordingConfiguration = value; }
 
-    
+    /**
+     * <zonbook></zonbook><xhtml></xhtml>
+     */
     inline void SetRecordingConfiguration(RecordingConfiguration&& value) { m_recordingConfiguration = std::move(value); }
 
-    
+    /**
+     * <zonbook></zonbook><xhtml></xhtml>
+     */
     inline GetRecordingConfigurationResult& WithRecordingConfiguration(const RecordingConfiguration& value) { SetRecordingConfiguration(value); return *this;}
 
-    
+    /**
+     * <zonbook></zonbook><xhtml></xhtml>
+     */
     inline GetRecordingConfigurationResult& WithRecordingConfiguration(RecordingConfiguration&& value) { SetRecordingConfiguration(std::move(value)); return *this;}
 
   private:

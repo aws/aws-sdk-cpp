@@ -83,63 +83,6 @@ namespace Model
 
 
     /**
-     * <p>An arbitrary string (a nickname) assigned to a recording configuration that
-     * helps the customer identify that resource. The value does not need to be
-     * unique.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>An arbitrary string (a nickname) assigned to a recording configuration that
-     * helps the customer identify that resource. The value does not need to be
-     * unique.</p>
-     */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>An arbitrary string (a nickname) assigned to a recording configuration that
-     * helps the customer identify that resource. The value does not need to be
-     * unique.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>An arbitrary string (a nickname) assigned to a recording configuration that
-     * helps the customer identify that resource. The value does not need to be
-     * unique.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>An arbitrary string (a nickname) assigned to a recording configuration that
-     * helps the customer identify that resource. The value does not need to be
-     * unique.</p>
-     */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>An arbitrary string (a nickname) assigned to a recording configuration that
-     * helps the customer identify that resource. The value does not need to be
-     * unique.</p>
-     */
-    inline RecordingConfiguration& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>An arbitrary string (a nickname) assigned to a recording configuration that
-     * helps the customer identify that resource. The value does not need to be
-     * unique.</p>
-     */
-    inline RecordingConfiguration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>An arbitrary string (a nickname) assigned to a recording configuration that
-     * helps the customer identify that resource. The value does not need to be
-     * unique.</p>
-     */
-    inline RecordingConfiguration& WithName(const char* value) { SetName(value); return *this;}
-
-
-    /**
      * <p>A complex type that contains information about where recorded video will be
      * stored.</p>
      */
@@ -174,6 +117,47 @@ namespace Model
      * stored.</p>
      */
     inline RecordingConfiguration& WithDestinationConfiguration(DestinationConfiguration&& value) { SetDestinationConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Recording-configuration name. The value does not need to be unique.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>Recording-configuration name. The value does not need to be unique.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Recording-configuration name. The value does not need to be unique.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>Recording-configuration name. The value does not need to be unique.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>Recording-configuration name. The value does not need to be unique.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>Recording-configuration name. The value does not need to be unique.</p>
+     */
+    inline RecordingConfiguration& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>Recording-configuration name. The value does not need to be unique.</p>
+     */
+    inline RecordingConfiguration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>Recording-configuration name. The value does not need to be unique.</p>
+     */
+    inline RecordingConfiguration& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -302,11 +286,11 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet;
-
     DestinationConfiguration m_destinationConfiguration;
     bool m_destinationConfigurationHasBeenSet;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
 
     RecordingConfigurationState m_state;
     bool m_stateHasBeenSet;

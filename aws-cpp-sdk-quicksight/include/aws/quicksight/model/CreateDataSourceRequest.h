@@ -82,49 +82,49 @@ namespace Model
 
 
     /**
-     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region;
+     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region
      * for each Amazon Web Services account. </p>
      */
     inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
 
     /**
-     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region;
+     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region
      * for each Amazon Web Services account. </p>
      */
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
 
     /**
-     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region;
+     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region
      * for each Amazon Web Services account. </p>
      */
     inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
 
     /**
-     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region;
+     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region
      * for each Amazon Web Services account. </p>
      */
     inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
 
     /**
-     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region;
+     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region
      * for each Amazon Web Services account. </p>
      */
     inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
 
     /**
-     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region;
+     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region
      * for each Amazon Web Services account. </p>
      */
     inline CreateDataSourceRequest& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
 
     /**
-     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region;
+     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region
      * for each Amazon Web Services account. </p>
      */
     inline CreateDataSourceRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
 
     /**
-     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region;
+     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region
      * for each Amazon Web Services account. </p>
      */
     inline CreateDataSourceRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
@@ -174,42 +174,42 @@ namespace Model
     /**
      * <p>The type of the data source. To return a list of all data sources, use
      * <code>ListDataSources</code>.</p> <p>Use <code>AMAZON_ELASTICSEARCH</code> for
-     * Amazon Elasticsearch Service.</p>
+     * Amazon OpenSearch Service.</p>
      */
     inline const DataSourceType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of the data source. To return a list of all data sources, use
      * <code>ListDataSources</code>.</p> <p>Use <code>AMAZON_ELASTICSEARCH</code> for
-     * Amazon Elasticsearch Service.</p>
+     * Amazon OpenSearch Service.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of the data source. To return a list of all data sources, use
      * <code>ListDataSources</code>.</p> <p>Use <code>AMAZON_ELASTICSEARCH</code> for
-     * Amazon Elasticsearch Service.</p>
+     * Amazon OpenSearch Service.</p>
      */
     inline void SetType(const DataSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of the data source. To return a list of all data sources, use
      * <code>ListDataSources</code>.</p> <p>Use <code>AMAZON_ELASTICSEARCH</code> for
-     * Amazon Elasticsearch Service.</p>
+     * Amazon OpenSearch Service.</p>
      */
     inline void SetType(DataSourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of the data source. To return a list of all data sources, use
      * <code>ListDataSources</code>.</p> <p>Use <code>AMAZON_ELASTICSEARCH</code> for
-     * Amazon Elasticsearch Service.</p>
+     * Amazon OpenSearch Service.</p>
      */
     inline CreateDataSourceRequest& WithType(const DataSourceType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of the data source. To return a list of all data sources, use
      * <code>ListDataSources</code>.</p> <p>Use <code>AMAZON_ELASTICSEARCH</code> for
-     * Amazon Elasticsearch Service.</p>
+     * Amazon OpenSearch Service.</p>
      */
     inline CreateDataSourceRequest& WithType(DataSourceType&& value) { SetType(std::move(value)); return *this;}
 

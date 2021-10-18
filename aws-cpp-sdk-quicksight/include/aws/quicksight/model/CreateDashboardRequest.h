@@ -286,7 +286,7 @@ namespace Model
      * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
      * the Amazon Resource Name (ARN) of the source template. The
      * <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and
-     * any Amazon QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
+     * any Amazon QuickSight-supported Amazon Web Services Region. </p> <p>Use the
      * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
      * the replacement datasets for the placeholders listed in the original. The schema
      * in each dataset must match its placeholder. </p>
@@ -302,7 +302,7 @@ namespace Model
      * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
      * the Amazon Resource Name (ARN) of the source template. The
      * <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and
-     * any Amazon QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
+     * any Amazon QuickSight-supported Amazon Web Services Region. </p> <p>Use the
      * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
      * the replacement datasets for the placeholders listed in the original. The schema
      * in each dataset must match its placeholder. </p>
@@ -318,7 +318,7 @@ namespace Model
      * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
      * the Amazon Resource Name (ARN) of the source template. The
      * <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and
-     * any Amazon QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
+     * any Amazon QuickSight-supported Amazon Web Services Region. </p> <p>Use the
      * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
      * the replacement datasets for the placeholders listed in the original. The schema
      * in each dataset must match its placeholder. </p>
@@ -334,7 +334,7 @@ namespace Model
      * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
      * the Amazon Resource Name (ARN) of the source template. The
      * <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and
-     * any Amazon QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
+     * any Amazon QuickSight-supported Amazon Web Services Region. </p> <p>Use the
      * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
      * the replacement datasets for the placeholders listed in the original. The schema
      * in each dataset must match its placeholder. </p>
@@ -350,7 +350,7 @@ namespace Model
      * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
      * the Amazon Resource Name (ARN) of the source template. The
      * <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and
-     * any Amazon QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
+     * any Amazon QuickSight-supported Amazon Web Services Region. </p> <p>Use the
      * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
      * the replacement datasets for the placeholders listed in the original. The schema
      * in each dataset must match its placeholder. </p>
@@ -366,7 +366,7 @@ namespace Model
      * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
      * the Amazon Resource Name (ARN) of the source template. The
      * <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and
-     * any Amazon QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
+     * any Amazon QuickSight-supported Amazon Web Services Region. </p> <p>Use the
      * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
      * the replacement datasets for the placeholders listed in the original. The schema
      * in each dataset must match its placeholder. </p>

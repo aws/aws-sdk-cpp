@@ -76,44 +76,24 @@ namespace Model
 
 
     /**
-     * <p>Channel name.</p>
+     * <p>Whether the channel is private (enabled for playback authorization).</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline bool GetAuthorized() const{ return m_authorized; }
 
     /**
-     * <p>Channel name.</p>
+     * <p>Whether the channel is private (enabled for playback authorization).</p>
      */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    inline bool AuthorizedHasBeenSet() const { return m_authorizedHasBeenSet; }
 
     /**
-     * <p>Channel name.</p>
+     * <p>Whether the channel is private (enabled for playback authorization).</p>
      */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetAuthorized(bool value) { m_authorizedHasBeenSet = true; m_authorized = value; }
 
     /**
-     * <p>Channel name.</p>
+     * <p>Whether the channel is private (enabled for playback authorization).</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>Channel name.</p>
-     */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>Channel name.</p>
-     */
-    inline UpdateChannelRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>Channel name.</p>
-     */
-    inline UpdateChannelRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Channel name.</p>
-     */
-    inline UpdateChannelRequest& WithName(const char* value) { SetName(value); return *this;}
+    inline UpdateChannelRequest& WithAuthorized(bool value) { SetAuthorized(value); return *this;}
 
 
     /**
@@ -166,109 +146,44 @@ namespace Model
 
 
     /**
-     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
-     * you exceed the allowable resolution or bitrate, the stream probably will
-     * disconnect immediately</i>. Valid values:</p> <ul> <li> <p>
-     * <code>STANDARD</code>: Multiple qualities are generated from the original input,
-     * to automatically give viewers the best experience for their devices and network
-     * conditions. Vertical resolution can be up to 1080 and bitrate can be up to 8.5
-     * Mbps.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS delivers the original
-     * input to viewers. The viewer’s video-quality choice is limited to the original
-     * input. Vertical resolution can be up to 480 and bitrate can be up to 1.5
-     * Mbps.</p> </li> </ul>
+     * <p>Channel name.</p>
      */
-    inline const ChannelType& GetType() const{ return m_type; }
+    inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
-     * you exceed the allowable resolution or bitrate, the stream probably will
-     * disconnect immediately</i>. Valid values:</p> <ul> <li> <p>
-     * <code>STANDARD</code>: Multiple qualities are generated from the original input,
-     * to automatically give viewers the best experience for their devices and network
-     * conditions. Vertical resolution can be up to 1080 and bitrate can be up to 8.5
-     * Mbps.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS delivers the original
-     * input to viewers. The viewer’s video-quality choice is limited to the original
-     * input. Vertical resolution can be up to 480 and bitrate can be up to 1.5
-     * Mbps.</p> </li> </ul>
+     * <p>Channel name.</p>
      */
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
-     * you exceed the allowable resolution or bitrate, the stream probably will
-     * disconnect immediately</i>. Valid values:</p> <ul> <li> <p>
-     * <code>STANDARD</code>: Multiple qualities are generated from the original input,
-     * to automatically give viewers the best experience for their devices and network
-     * conditions. Vertical resolution can be up to 1080 and bitrate can be up to 8.5
-     * Mbps.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS delivers the original
-     * input to viewers. The viewer’s video-quality choice is limited to the original
-     * input. Vertical resolution can be up to 480 and bitrate can be up to 1.5
-     * Mbps.</p> </li> </ul>
+     * <p>Channel name.</p>
      */
-    inline void SetType(const ChannelType& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
-     * you exceed the allowable resolution or bitrate, the stream probably will
-     * disconnect immediately</i>. Valid values:</p> <ul> <li> <p>
-     * <code>STANDARD</code>: Multiple qualities are generated from the original input,
-     * to automatically give viewers the best experience for their devices and network
-     * conditions. Vertical resolution can be up to 1080 and bitrate can be up to 8.5
-     * Mbps.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS delivers the original
-     * input to viewers. The viewer’s video-quality choice is limited to the original
-     * input. Vertical resolution can be up to 480 and bitrate can be up to 1.5
-     * Mbps.</p> </li> </ul>
+     * <p>Channel name.</p>
      */
-    inline void SetType(ChannelType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
-     * you exceed the allowable resolution or bitrate, the stream probably will
-     * disconnect immediately</i>. Valid values:</p> <ul> <li> <p>
-     * <code>STANDARD</code>: Multiple qualities are generated from the original input,
-     * to automatically give viewers the best experience for their devices and network
-     * conditions. Vertical resolution can be up to 1080 and bitrate can be up to 8.5
-     * Mbps.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS delivers the original
-     * input to viewers. The viewer’s video-quality choice is limited to the original
-     * input. Vertical resolution can be up to 480 and bitrate can be up to 1.5
-     * Mbps.</p> </li> </ul>
+     * <p>Channel name.</p>
      */
-    inline UpdateChannelRequest& WithType(const ChannelType& value) { SetType(value); return *this;}
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
-     * you exceed the allowable resolution or bitrate, the stream probably will
-     * disconnect immediately</i>. Valid values:</p> <ul> <li> <p>
-     * <code>STANDARD</code>: Multiple qualities are generated from the original input,
-     * to automatically give viewers the best experience for their devices and network
-     * conditions. Vertical resolution can be up to 1080 and bitrate can be up to 8.5
-     * Mbps.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS delivers the original
-     * input to viewers. The viewer’s video-quality choice is limited to the original
-     * input. Vertical resolution can be up to 480 and bitrate can be up to 1.5
-     * Mbps.</p> </li> </ul>
+     * <p>Channel name.</p>
      */
-    inline UpdateChannelRequest& WithType(ChannelType&& value) { SetType(std::move(value)); return *this;}
-
+    inline UpdateChannelRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Whether the channel is private (enabled for playback authorization).</p>
+     * <p>Channel name.</p>
      */
-    inline bool GetAuthorized() const{ return m_authorized; }
+    inline UpdateChannelRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Whether the channel is private (enabled for playback authorization).</p>
+     * <p>Channel name.</p>
      */
-    inline bool AuthorizedHasBeenSet() const { return m_authorizedHasBeenSet; }
-
-    /**
-     * <p>Whether the channel is private (enabled for playback authorization).</p>
-     */
-    inline void SetAuthorized(bool value) { m_authorizedHasBeenSet = true; m_authorized = value; }
-
-    /**
-     * <p>Whether the channel is private (enabled for playback authorization).</p>
-     */
-    inline UpdateChannelRequest& WithAuthorized(bool value) { SetAuthorized(value); return *this;}
+    inline UpdateChannelRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -327,25 +242,116 @@ namespace Model
      */
     inline UpdateChannelRequest& WithRecordingConfigurationArn(const char* value) { SetRecordingConfigurationArn(value); return *this;}
 
+
+    /**
+     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
+     * you exceed the allowable resolution or bitrate, the stream probably will
+     * disconnect immediately</i>. Valid values:</p> <ul> <li> <p>
+     * <code>STANDARD</code>: Multiple qualities are generated from the original input,
+     * to automatically give viewers the best experience for their devices and network
+     * conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps.
+     * Audio is transcoded only for renditions 360p and below; above that, audio is
+     * passed through.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS delivers the
+     * original input to viewers. The viewer’s video-quality choice is limited to the
+     * original input. Resolution can be up to 480p and bitrate can be up to 1.5
+     * Mbps.</p> </li> </ul>
+     */
+    inline const ChannelType& GetType() const{ return m_type; }
+
+    /**
+     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
+     * you exceed the allowable resolution or bitrate, the stream probably will
+     * disconnect immediately</i>. Valid values:</p> <ul> <li> <p>
+     * <code>STANDARD</code>: Multiple qualities are generated from the original input,
+     * to automatically give viewers the best experience for their devices and network
+     * conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps.
+     * Audio is transcoded only for renditions 360p and below; above that, audio is
+     * passed through.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS delivers the
+     * original input to viewers. The viewer’s video-quality choice is limited to the
+     * original input. Resolution can be up to 480p and bitrate can be up to 1.5
+     * Mbps.</p> </li> </ul>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
+     * you exceed the allowable resolution or bitrate, the stream probably will
+     * disconnect immediately</i>. Valid values:</p> <ul> <li> <p>
+     * <code>STANDARD</code>: Multiple qualities are generated from the original input,
+     * to automatically give viewers the best experience for their devices and network
+     * conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps.
+     * Audio is transcoded only for renditions 360p and below; above that, audio is
+     * passed through.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS delivers the
+     * original input to viewers. The viewer’s video-quality choice is limited to the
+     * original input. Resolution can be up to 480p and bitrate can be up to 1.5
+     * Mbps.</p> </li> </ul>
+     */
+    inline void SetType(const ChannelType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
+     * you exceed the allowable resolution or bitrate, the stream probably will
+     * disconnect immediately</i>. Valid values:</p> <ul> <li> <p>
+     * <code>STANDARD</code>: Multiple qualities are generated from the original input,
+     * to automatically give viewers the best experience for their devices and network
+     * conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps.
+     * Audio is transcoded only for renditions 360p and below; above that, audio is
+     * passed through.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS delivers the
+     * original input to viewers. The viewer’s video-quality choice is limited to the
+     * original input. Resolution can be up to 480p and bitrate can be up to 1.5
+     * Mbps.</p> </li> </ul>
+     */
+    inline void SetType(ChannelType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
+     * you exceed the allowable resolution or bitrate, the stream probably will
+     * disconnect immediately</i>. Valid values:</p> <ul> <li> <p>
+     * <code>STANDARD</code>: Multiple qualities are generated from the original input,
+     * to automatically give viewers the best experience for their devices and network
+     * conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps.
+     * Audio is transcoded only for renditions 360p and below; above that, audio is
+     * passed through.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS delivers the
+     * original input to viewers. The viewer’s video-quality choice is limited to the
+     * original input. Resolution can be up to 480p and bitrate can be up to 1.5
+     * Mbps.</p> </li> </ul>
+     */
+    inline UpdateChannelRequest& WithType(const ChannelType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
+     * you exceed the allowable resolution or bitrate, the stream probably will
+     * disconnect immediately</i>. Valid values:</p> <ul> <li> <p>
+     * <code>STANDARD</code>: Multiple qualities are generated from the original input,
+     * to automatically give viewers the best experience for their devices and network
+     * conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps.
+     * Audio is transcoded only for renditions 360p and below; above that, audio is
+     * passed through.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS delivers the
+     * original input to viewers. The viewer’s video-quality choice is limited to the
+     * original input. Resolution can be up to 480p and bitrate can be up to 1.5
+     * Mbps.</p> </li> </ul>
+     */
+    inline UpdateChannelRequest& WithType(ChannelType&& value) { SetType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_authorized;
+    bool m_authorizedHasBeenSet;
 
     ChannelLatencyMode m_latencyMode;
     bool m_latencyModeHasBeenSet;
 
-    ChannelType m_type;
-    bool m_typeHasBeenSet;
-
-    bool m_authorized;
-    bool m_authorizedHasBeenSet;
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
 
     Aws::String m_recordingConfigurationArn;
     bool m_recordingConfigurationArnHasBeenSet;
+
+    ChannelType m_type;
+    bool m_typeHasBeenSet;
   };
 
 } // namespace Model

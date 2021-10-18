@@ -60,32 +60,32 @@ namespace Model
 
 
     /**
-     * <p>The parameters for Elasticsearch.</p>
+     * <p>The parameters for OpenSearch.</p>
      */
     inline const AmazonElasticsearchParameters& GetAmazonElasticsearchParameters() const{ return m_amazonElasticsearchParameters; }
 
     /**
-     * <p>The parameters for Elasticsearch.</p>
+     * <p>The parameters for OpenSearch.</p>
      */
     inline bool AmazonElasticsearchParametersHasBeenSet() const { return m_amazonElasticsearchParametersHasBeenSet; }
 
     /**
-     * <p>The parameters for Elasticsearch.</p>
+     * <p>The parameters for OpenSearch.</p>
      */
     inline void SetAmazonElasticsearchParameters(const AmazonElasticsearchParameters& value) { m_amazonElasticsearchParametersHasBeenSet = true; m_amazonElasticsearchParameters = value; }
 
     /**
-     * <p>The parameters for Elasticsearch.</p>
+     * <p>The parameters for OpenSearch.</p>
      */
     inline void SetAmazonElasticsearchParameters(AmazonElasticsearchParameters&& value) { m_amazonElasticsearchParametersHasBeenSet = true; m_amazonElasticsearchParameters = std::move(value); }
 
     /**
-     * <p>The parameters for Elasticsearch.</p>
+     * <p>The parameters for OpenSearch.</p>
      */
     inline DataSourceParameters& WithAmazonElasticsearchParameters(const AmazonElasticsearchParameters& value) { SetAmazonElasticsearchParameters(value); return *this;}
 
     /**
-     * <p>The parameters for Elasticsearch.</p>
+     * <p>The parameters for OpenSearch.</p>
      */
     inline DataSourceParameters& WithAmazonElasticsearchParameters(AmazonElasticsearchParameters&& value) { SetAmazonElasticsearchParameters(std::move(value)); return *this;}
 

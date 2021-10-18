@@ -61,6 +61,7 @@
 #include <aws/quicksight/model/DescribeGroupResult.h>
 #include <aws/quicksight/model/DescribeIAMPolicyAssignmentResult.h>
 #include <aws/quicksight/model/DescribeIngestionResult.h>
+#include <aws/quicksight/model/DescribeIpRestrictionResult.h>
 #include <aws/quicksight/model/DescribeNamespaceResult.h>
 #include <aws/quicksight/model/DescribeTemplateResult.h>
 #include <aws/quicksight/model/DescribeTemplateAliasResult.h>
@@ -117,6 +118,7 @@
 #include <aws/quicksight/model/UpdateFolderPermissionsResult.h>
 #include <aws/quicksight/model/UpdateGroupResult.h>
 #include <aws/quicksight/model/UpdateIAMPolicyAssignmentResult.h>
+#include <aws/quicksight/model/UpdateIpRestrictionResult.h>
 #include <aws/quicksight/model/UpdateTemplateResult.h>
 #include <aws/quicksight/model/UpdateTemplateAliasResult.h>
 #include <aws/quicksight/model/UpdateTemplatePermissionsResult.h>
@@ -213,6 +215,7 @@ namespace Model
         class DescribeGroupRequest;
         class DescribeIAMPolicyAssignmentRequest;
         class DescribeIngestionRequest;
+        class DescribeIpRestrictionRequest;
         class DescribeNamespaceRequest;
         class DescribeTemplateRequest;
         class DescribeTemplateAliasRequest;
@@ -269,6 +272,7 @@ namespace Model
         class UpdateFolderPermissionsRequest;
         class UpdateGroupRequest;
         class UpdateIAMPolicyAssignmentRequest;
+        class UpdateIpRestrictionRequest;
         class UpdateTemplateRequest;
         class UpdateTemplateAliasRequest;
         class UpdateTemplatePermissionsRequest;
@@ -327,6 +331,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeGroupResult, QuickSightError> DescribeGroupOutcome;
         typedef Aws::Utils::Outcome<DescribeIAMPolicyAssignmentResult, QuickSightError> DescribeIAMPolicyAssignmentOutcome;
         typedef Aws::Utils::Outcome<DescribeIngestionResult, QuickSightError> DescribeIngestionOutcome;
+        typedef Aws::Utils::Outcome<DescribeIpRestrictionResult, QuickSightError> DescribeIpRestrictionOutcome;
         typedef Aws::Utils::Outcome<DescribeNamespaceResult, QuickSightError> DescribeNamespaceOutcome;
         typedef Aws::Utils::Outcome<DescribeTemplateResult, QuickSightError> DescribeTemplateOutcome;
         typedef Aws::Utils::Outcome<DescribeTemplateAliasResult, QuickSightError> DescribeTemplateAliasOutcome;
@@ -383,6 +388,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateFolderPermissionsResult, QuickSightError> UpdateFolderPermissionsOutcome;
         typedef Aws::Utils::Outcome<UpdateGroupResult, QuickSightError> UpdateGroupOutcome;
         typedef Aws::Utils::Outcome<UpdateIAMPolicyAssignmentResult, QuickSightError> UpdateIAMPolicyAssignmentOutcome;
+        typedef Aws::Utils::Outcome<UpdateIpRestrictionResult, QuickSightError> UpdateIpRestrictionOutcome;
         typedef Aws::Utils::Outcome<UpdateTemplateResult, QuickSightError> UpdateTemplateOutcome;
         typedef Aws::Utils::Outcome<UpdateTemplateAliasResult, QuickSightError> UpdateTemplateAliasOutcome;
         typedef Aws::Utils::Outcome<UpdateTemplatePermissionsResult, QuickSightError> UpdateTemplatePermissionsOutcome;
@@ -441,6 +447,7 @@ namespace Model
         typedef std::future<DescribeGroupOutcome> DescribeGroupOutcomeCallable;
         typedef std::future<DescribeIAMPolicyAssignmentOutcome> DescribeIAMPolicyAssignmentOutcomeCallable;
         typedef std::future<DescribeIngestionOutcome> DescribeIngestionOutcomeCallable;
+        typedef std::future<DescribeIpRestrictionOutcome> DescribeIpRestrictionOutcomeCallable;
         typedef std::future<DescribeNamespaceOutcome> DescribeNamespaceOutcomeCallable;
         typedef std::future<DescribeTemplateOutcome> DescribeTemplateOutcomeCallable;
         typedef std::future<DescribeTemplateAliasOutcome> DescribeTemplateAliasOutcomeCallable;
@@ -497,6 +504,7 @@ namespace Model
         typedef std::future<UpdateFolderPermissionsOutcome> UpdateFolderPermissionsOutcomeCallable;
         typedef std::future<UpdateGroupOutcome> UpdateGroupOutcomeCallable;
         typedef std::future<UpdateIAMPolicyAssignmentOutcome> UpdateIAMPolicyAssignmentOutcomeCallable;
+        typedef std::future<UpdateIpRestrictionOutcome> UpdateIpRestrictionOutcomeCallable;
         typedef std::future<UpdateTemplateOutcome> UpdateTemplateOutcomeCallable;
         typedef std::future<UpdateTemplateAliasOutcome> UpdateTemplateAliasOutcomeCallable;
         typedef std::future<UpdateTemplatePermissionsOutcome> UpdateTemplatePermissionsOutcomeCallable;
@@ -558,6 +566,7 @@ namespace Model
     typedef std::function<void(const QuickSightClient*, const Model::DescribeGroupRequest&, const Model::DescribeGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGroupResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeIAMPolicyAssignmentRequest&, const Model::DescribeIAMPolicyAssignmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIAMPolicyAssignmentResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeIngestionRequest&, const Model::DescribeIngestionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIngestionResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeIpRestrictionRequest&, const Model::DescribeIpRestrictionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIpRestrictionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeNamespaceRequest&, const Model::DescribeNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNamespaceResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeTemplateRequest&, const Model::DescribeTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTemplateResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeTemplateAliasRequest&, const Model::DescribeTemplateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTemplateAliasResponseReceivedHandler;
@@ -614,6 +623,7 @@ namespace Model
     typedef std::function<void(const QuickSightClient*, const Model::UpdateFolderPermissionsRequest&, const Model::UpdateFolderPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFolderPermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateGroupRequest&, const Model::UpdateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGroupResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateIAMPolicyAssignmentRequest&, const Model::UpdateIAMPolicyAssignmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIAMPolicyAssignmentResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::UpdateIpRestrictionRequest&, const Model::UpdateIpRestrictionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIpRestrictionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateTemplateRequest&, const Model::UpdateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTemplateResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateTemplateAliasRequest&, const Model::UpdateTemplateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTemplateAliasResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateTemplatePermissionsRequest&, const Model::UpdateTemplatePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTemplatePermissionsResponseReceivedHandler;
@@ -686,7 +696,7 @@ namespace Model
 
         /**
          * <p>Creates Amazon QuickSight customizations the current Amazon Web Services
-         * Region;. Currently, you can add a custom default theme by using the
+         * Region. Currently, you can add a custom default theme by using the
          * <code>CreateAccountCustomization</code> or
          * <code>UpdateAccountCustomization</code> API operation. To further customize
          * Amazon QuickSight by removing Amazon QuickSight sample assets and videos for all
@@ -713,7 +723,7 @@ namespace Model
 
         /**
          * <p>Creates Amazon QuickSight customizations the current Amazon Web Services
-         * Region;. Currently, you can add a custom default theme by using the
+         * Region. Currently, you can add a custom default theme by using the
          * <code>CreateAccountCustomization</code> or
          * <code>UpdateAccountCustomization</code> API operation. To further customize
          * Amazon QuickSight by removing Amazon QuickSight sample assets and videos for all
@@ -742,7 +752,7 @@ namespace Model
 
         /**
          * <p>Creates Amazon QuickSight customizations the current Amazon Web Services
-         * Region;. Currently, you can add a custom default theme by using the
+         * Region. Currently, you can add a custom default theme by using the
          * <code>CreateAccountCustomization</code> or
          * <code>UpdateAccountCustomization</code> API operation. To further customize
          * Amazon QuickSight by removing Amazon QuickSight sample assets and videos for all
@@ -1272,7 +1282,7 @@ namespace Model
 
         /**
          * <p>Deletes all Amazon QuickSight customizations in this Amazon Web Services
-         * Region; for the specified Amazon Web Services account and Amazon QuickSight
+         * Region for the specified Amazon Web Services account and Amazon QuickSight
          * namespace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomization">AWS
          * API Reference</a></p>
@@ -1281,7 +1291,7 @@ namespace Model
 
         /**
          * <p>Deletes all Amazon QuickSight customizations in this Amazon Web Services
-         * Region; for the specified Amazon Web Services account and Amazon QuickSight
+         * Region for the specified Amazon Web Services account and Amazon QuickSight
          * namespace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomization">AWS
          * API Reference</a></p>
@@ -1292,7 +1302,7 @@ namespace Model
 
         /**
          * <p>Deletes all Amazon QuickSight customizations in this Amazon Web Services
-         * Region; for the specified Amazon Web Services account and Amazon QuickSight
+         * Region for the specified Amazon Web Services account and Amazon QuickSight
          * namespace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomization">AWS
          * API Reference</a></p>
@@ -1778,31 +1788,31 @@ namespace Model
 
         /**
          * <p>Describes the customizations associated with the provided Amazon Web Services
-         * account and Amazon Amazon QuickSight namespace in an Amazon Web Services
-         * Region;. The Amazon QuickSight console evaluates which customizations to apply
-         * by running this API operation with the <code>Resolved</code> flag included. </p>
-         * <p>To determine what customizations display when you run this command, it can
-         * help to visualize the relationship of the entities involved. </p> <ul> <li> <p>
+         * account and Amazon Amazon QuickSight namespace in an Amazon Web Services Region.
+         * The Amazon QuickSight console evaluates which customizations to apply by running
+         * this API operation with the <code>Resolved</code> flag included. </p> <p>To
+         * determine what customizations display when you run this command, it can help to
+         * visualize the relationship of the entities involved. </p> <ul> <li> <p>
          * <code>Amazon Web Services account</code> - The Amazon Web Services account
          * exists at the top of the hierarchy. It has the potential to use all of the
-         * Amazon Web Services Regions; and AWS Services. When you subscribe to Amazon
-         * QuickSight, you choose one Amazon Web Services Region; to use as your home
+         * Amazon Web Services Regions and AWS Services. When you subscribe to Amazon
+         * QuickSight, you choose one Amazon Web Services Region to use as your home
          * Region. That's where your free SPICE capacity is located. You can use Amazon
-         * QuickSight in any supported Amazon Web Services Region;. </p> </li> <li> <p>
-         * <code>Amazon Web Services Region;</code> - In each Amazon Web Services Region;
+         * QuickSight in any supported Amazon Web Services Region. </p> </li> <li> <p>
+         * <code>Amazon Web Services Region</code> - In each Amazon Web Services Region
          * where you sign in to Amazon QuickSight at least once, Amazon QuickSight acts as
          * a separate instance of the same service. If you have a user directory, it
          * resides in us-east-1, which is the US East (N. Virginia). Generally speaking,
-         * these users have access to Amazon QuickSight in any Amazon Web Services Region;,
+         * these users have access to Amazon QuickSight in any Amazon Web Services Region,
          * unless they are constrained to a namespace. </p> <p>To run the command in a
-         * different Amazon Web Services Region;, you change your Region settings. If
-         * you're using the AWS CLI, you can use one of the following options:</p> <ul>
-         * <li> <p>Use <a
+         * different Amazon Web Services Region, you change your Region settings. If you're
+         * using the AWS CLI, you can use one of the following options:</p> <ul> <li>
+         * <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-options.html">command
          * line options</a>. </p> </li> <li> <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html">named
          * profiles</a>. </p> </li> <li> <p>Run <code>aws configure</code> to change your
-         * default Amazon Web Services Region;. Use Enter to key the same settings for your
+         * default Amazon Web Services Region. Use Enter to key the same settings for your
          * keys. For more information, see <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring
          * the AWS CLI</a>.</p> </li> </ul> </li> <li> <p> <code>Namespace</code> - A
@@ -1811,14 +1821,14 @@ namespace Model
          * specific namespace, users and groups must also be part of the same namespace.
          * People who share a namespace are completely isolated from users and assets in
          * other namespaces, even if they are in the same Amazon Web Services account and
-         * Amazon Web Services Region;.</p> </li> <li> <p> <code>Applied
-         * customizations</code> - Within an Amazon Web Services Region;, a set of Amazon
+         * Amazon Web Services Region.</p> </li> <li> <p> <code>Applied
+         * customizations</code> - Within an Amazon Web Services Region, a set of Amazon
          * QuickSight customizations can apply to an Amazon Web Services account or to a
          * namespace. Settings that you apply to a namespace override settings that you
          * apply to an Amazon Web Services account. All settings are isolated to a single
-         * Amazon Web Services Region;. To apply them in other Amazon Web Services
-         * Regions;, run the <code>CreateAccountCustomization</code> command in each Amazon
-         * Web Services Region; where you want to apply the same customizations. </p> </li>
+         * Amazon Web Services Region. To apply them in other Amazon Web Services Regions,
+         * run the <code>CreateAccountCustomization</code> command in each Amazon Web
+         * Services Region where you want to apply the same customizations. </p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountCustomization">AWS
          * API Reference</a></p>
@@ -1827,31 +1837,31 @@ namespace Model
 
         /**
          * <p>Describes the customizations associated with the provided Amazon Web Services
-         * account and Amazon Amazon QuickSight namespace in an Amazon Web Services
-         * Region;. The Amazon QuickSight console evaluates which customizations to apply
-         * by running this API operation with the <code>Resolved</code> flag included. </p>
-         * <p>To determine what customizations display when you run this command, it can
-         * help to visualize the relationship of the entities involved. </p> <ul> <li> <p>
+         * account and Amazon Amazon QuickSight namespace in an Amazon Web Services Region.
+         * The Amazon QuickSight console evaluates which customizations to apply by running
+         * this API operation with the <code>Resolved</code> flag included. </p> <p>To
+         * determine what customizations display when you run this command, it can help to
+         * visualize the relationship of the entities involved. </p> <ul> <li> <p>
          * <code>Amazon Web Services account</code> - The Amazon Web Services account
          * exists at the top of the hierarchy. It has the potential to use all of the
-         * Amazon Web Services Regions; and AWS Services. When you subscribe to Amazon
-         * QuickSight, you choose one Amazon Web Services Region; to use as your home
+         * Amazon Web Services Regions and AWS Services. When you subscribe to Amazon
+         * QuickSight, you choose one Amazon Web Services Region to use as your home
          * Region. That's where your free SPICE capacity is located. You can use Amazon
-         * QuickSight in any supported Amazon Web Services Region;. </p> </li> <li> <p>
-         * <code>Amazon Web Services Region;</code> - In each Amazon Web Services Region;
+         * QuickSight in any supported Amazon Web Services Region. </p> </li> <li> <p>
+         * <code>Amazon Web Services Region</code> - In each Amazon Web Services Region
          * where you sign in to Amazon QuickSight at least once, Amazon QuickSight acts as
          * a separate instance of the same service. If you have a user directory, it
          * resides in us-east-1, which is the US East (N. Virginia). Generally speaking,
-         * these users have access to Amazon QuickSight in any Amazon Web Services Region;,
+         * these users have access to Amazon QuickSight in any Amazon Web Services Region,
          * unless they are constrained to a namespace. </p> <p>To run the command in a
-         * different Amazon Web Services Region;, you change your Region settings. If
-         * you're using the AWS CLI, you can use one of the following options:</p> <ul>
-         * <li> <p>Use <a
+         * different Amazon Web Services Region, you change your Region settings. If you're
+         * using the AWS CLI, you can use one of the following options:</p> <ul> <li>
+         * <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-options.html">command
          * line options</a>. </p> </li> <li> <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html">named
          * profiles</a>. </p> </li> <li> <p>Run <code>aws configure</code> to change your
-         * default Amazon Web Services Region;. Use Enter to key the same settings for your
+         * default Amazon Web Services Region. Use Enter to key the same settings for your
          * keys. For more information, see <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring
          * the AWS CLI</a>.</p> </li> </ul> </li> <li> <p> <code>Namespace</code> - A
@@ -1860,14 +1870,14 @@ namespace Model
          * specific namespace, users and groups must also be part of the same namespace.
          * People who share a namespace are completely isolated from users and assets in
          * other namespaces, even if they are in the same Amazon Web Services account and
-         * Amazon Web Services Region;.</p> </li> <li> <p> <code>Applied
-         * customizations</code> - Within an Amazon Web Services Region;, a set of Amazon
+         * Amazon Web Services Region.</p> </li> <li> <p> <code>Applied
+         * customizations</code> - Within an Amazon Web Services Region, a set of Amazon
          * QuickSight customizations can apply to an Amazon Web Services account or to a
          * namespace. Settings that you apply to a namespace override settings that you
          * apply to an Amazon Web Services account. All settings are isolated to a single
-         * Amazon Web Services Region;. To apply them in other Amazon Web Services
-         * Regions;, run the <code>CreateAccountCustomization</code> command in each Amazon
-         * Web Services Region; where you want to apply the same customizations. </p> </li>
+         * Amazon Web Services Region. To apply them in other Amazon Web Services Regions,
+         * run the <code>CreateAccountCustomization</code> command in each Amazon Web
+         * Services Region where you want to apply the same customizations. </p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountCustomization">AWS
          * API Reference</a></p>
@@ -1878,31 +1888,31 @@ namespace Model
 
         /**
          * <p>Describes the customizations associated with the provided Amazon Web Services
-         * account and Amazon Amazon QuickSight namespace in an Amazon Web Services
-         * Region;. The Amazon QuickSight console evaluates which customizations to apply
-         * by running this API operation with the <code>Resolved</code> flag included. </p>
-         * <p>To determine what customizations display when you run this command, it can
-         * help to visualize the relationship of the entities involved. </p> <ul> <li> <p>
+         * account and Amazon Amazon QuickSight namespace in an Amazon Web Services Region.
+         * The Amazon QuickSight console evaluates which customizations to apply by running
+         * this API operation with the <code>Resolved</code> flag included. </p> <p>To
+         * determine what customizations display when you run this command, it can help to
+         * visualize the relationship of the entities involved. </p> <ul> <li> <p>
          * <code>Amazon Web Services account</code> - The Amazon Web Services account
          * exists at the top of the hierarchy. It has the potential to use all of the
-         * Amazon Web Services Regions; and AWS Services. When you subscribe to Amazon
-         * QuickSight, you choose one Amazon Web Services Region; to use as your home
+         * Amazon Web Services Regions and AWS Services. When you subscribe to Amazon
+         * QuickSight, you choose one Amazon Web Services Region to use as your home
          * Region. That's where your free SPICE capacity is located. You can use Amazon
-         * QuickSight in any supported Amazon Web Services Region;. </p> </li> <li> <p>
-         * <code>Amazon Web Services Region;</code> - In each Amazon Web Services Region;
+         * QuickSight in any supported Amazon Web Services Region. </p> </li> <li> <p>
+         * <code>Amazon Web Services Region</code> - In each Amazon Web Services Region
          * where you sign in to Amazon QuickSight at least once, Amazon QuickSight acts as
          * a separate instance of the same service. If you have a user directory, it
          * resides in us-east-1, which is the US East (N. Virginia). Generally speaking,
-         * these users have access to Amazon QuickSight in any Amazon Web Services Region;,
+         * these users have access to Amazon QuickSight in any Amazon Web Services Region,
          * unless they are constrained to a namespace. </p> <p>To run the command in a
-         * different Amazon Web Services Region;, you change your Region settings. If
-         * you're using the AWS CLI, you can use one of the following options:</p> <ul>
-         * <li> <p>Use <a
+         * different Amazon Web Services Region, you change your Region settings. If you're
+         * using the AWS CLI, you can use one of the following options:</p> <ul> <li>
+         * <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-options.html">command
          * line options</a>. </p> </li> <li> <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html">named
          * profiles</a>. </p> </li> <li> <p>Run <code>aws configure</code> to change your
-         * default Amazon Web Services Region;. Use Enter to key the same settings for your
+         * default Amazon Web Services Region. Use Enter to key the same settings for your
          * keys. For more information, see <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring
          * the AWS CLI</a>.</p> </li> </ul> </li> <li> <p> <code>Namespace</code> - A
@@ -1911,14 +1921,14 @@ namespace Model
          * specific namespace, users and groups must also be part of the same namespace.
          * People who share a namespace are completely isolated from users and assets in
          * other namespaces, even if they are in the same Amazon Web Services account and
-         * Amazon Web Services Region;.</p> </li> <li> <p> <code>Applied
-         * customizations</code> - Within an Amazon Web Services Region;, a set of Amazon
+         * Amazon Web Services Region.</p> </li> <li> <p> <code>Applied
+         * customizations</code> - Within an Amazon Web Services Region, a set of Amazon
          * QuickSight customizations can apply to an Amazon Web Services account or to a
          * namespace. Settings that you apply to a namespace override settings that you
          * apply to an Amazon Web Services account. All settings are isolated to a single
-         * Amazon Web Services Region;. To apply them in other Amazon Web Services
-         * Regions;, run the <code>CreateAccountCustomization</code> command in each Amazon
-         * Web Services Region; where you want to apply the same customizations. </p> </li>
+         * Amazon Web Services Region. To apply them in other Amazon Web Services Regions,
+         * run the <code>CreateAccountCustomization</code> command in each Amazon Web
+         * Services Region where you want to apply the same customizations. </p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountCustomization">AWS
          * API Reference</a></p>
@@ -2337,6 +2347,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeIngestionAsync(const Model::DescribeIngestionRequest& request, const DescribeIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides a summary and status of IP Rules.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeIpRestriction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeIpRestrictionOutcome DescribeIpRestriction(const Model::DescribeIpRestrictionRequest& request) const;
+
+        /**
+         * <p>Provides a summary and status of IP Rules.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeIpRestriction">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeIpRestrictionOutcomeCallable DescribeIpRestrictionCallable(const Model::DescribeIpRestrictionRequest& request) const;
+
+        /**
+         * <p>Provides a summary and status of IP Rules.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeIpRestriction">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeIpRestrictionAsync(const Model::DescribeIpRestrictionRequest& request, const DescribeIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the current namespace.</p><p><h3>See Also:</h3>   <a
@@ -2937,7 +2972,7 @@ namespace Model
 
         /**
          * <p>Lists all of the datasets belonging to the current Amazon Web Services
-         * account in an Amazon Web Services Region;.</p> <p>The permissions resource is
+         * account in an Amazon Web Services Region.</p> <p>The permissions resource is
          * <code>arn:aws:quicksight:region:aws-account-id:dataset/ *</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSets">AWS
@@ -2947,7 +2982,7 @@ namespace Model
 
         /**
          * <p>Lists all of the datasets belonging to the current Amazon Web Services
-         * account in an Amazon Web Services Region;.</p> <p>The permissions resource is
+         * account in an Amazon Web Services Region.</p> <p>The permissions resource is
          * <code>arn:aws:quicksight:region:aws-account-id:dataset/ *</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSets">AWS
@@ -2959,7 +2994,7 @@ namespace Model
 
         /**
          * <p>Lists all of the datasets belonging to the current Amazon Web Services
-         * account in an Amazon Web Services Region;.</p> <p>The permissions resource is
+         * account in an Amazon Web Services Region.</p> <p>The permissions resource is
          * <code>arn:aws:quicksight:region:aws-account-id:dataset/ *</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSets">AWS
@@ -2970,7 +3005,7 @@ namespace Model
         virtual void ListDataSetsAsync(const Model::ListDataSetsRequest& request, const ListDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists data sources in current Amazon Web Services Region; that belong to this
+         * <p>Lists data sources in current Amazon Web Services Region that belong to this
          * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSources">AWS
          * API Reference</a></p>
@@ -2978,7 +3013,7 @@ namespace Model
         virtual Model::ListDataSourcesOutcome ListDataSources(const Model::ListDataSourcesRequest& request) const;
 
         /**
-         * <p>Lists data sources in current Amazon Web Services Region; that belong to this
+         * <p>Lists data sources in current Amazon Web Services Region that belong to this
          * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSources">AWS
          * API Reference</a></p>
@@ -2988,7 +3023,7 @@ namespace Model
         virtual Model::ListDataSourcesOutcomeCallable ListDataSourcesCallable(const Model::ListDataSourcesRequest& request) const;
 
         /**
-         * <p>Lists data sources in current Amazon Web Services Region; that belong to this
+         * <p>Lists data sources in current Amazon Web Services Region that belong to this
          * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSources">AWS
          * API Reference</a></p>
@@ -3704,8 +3739,8 @@ namespace Model
 
         /**
          * <p>Updates Amazon QuickSight customizations the current Amazon Web Services
-         * Region;. Currently, the only customization you can use is a theme.</p> <p>You
-         * can use customizations for your Amazon Web Services account or, if you specify a
+         * Region. Currently, the only customization you can use is a theme.</p> <p>You can
+         * use customizations for your Amazon Web Services account or, if you specify a
          * namespace, for a Amazon QuickSight namespace instead. Customizations that apply
          * to a namespace override customizations that apply to an Amazon Web Services
          * account. To find out which customizations apply, use the
@@ -3718,8 +3753,8 @@ namespace Model
 
         /**
          * <p>Updates Amazon QuickSight customizations the current Amazon Web Services
-         * Region;. Currently, the only customization you can use is a theme.</p> <p>You
-         * can use customizations for your Amazon Web Services account or, if you specify a
+         * Region. Currently, the only customization you can use is a theme.</p> <p>You can
+         * use customizations for your Amazon Web Services account or, if you specify a
          * namespace, for a Amazon QuickSight namespace instead. Customizations that apply
          * to a namespace override customizations that apply to an Amazon Web Services
          * account. To find out which customizations apply, use the
@@ -3734,8 +3769,8 @@ namespace Model
 
         /**
          * <p>Updates Amazon QuickSight customizations the current Amazon Web Services
-         * Region;. Currently, the only customization you can use is a theme.</p> <p>You
-         * can use customizations for your Amazon Web Services account or, if you specify a
+         * Region. Currently, the only customization you can use is a theme.</p> <p>You can
+         * use customizations for your Amazon Web Services account or, if you specify a
          * namespace, for a Amazon QuickSight namespace instead. Customizations that apply
          * to a namespace override customizations that apply to an Amazon Web Services
          * account. To find out which customizations apply, use the
@@ -4135,6 +4170,31 @@ namespace Model
         virtual void UpdateIAMPolicyAssignmentAsync(const Model::UpdateIAMPolicyAssignmentRequest& request, const UpdateIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates content and status of IP Rules.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIpRestriction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateIpRestrictionOutcome UpdateIpRestriction(const Model::UpdateIpRestrictionRequest& request) const;
+
+        /**
+         * <p>Updates content and status of IP Rules.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIpRestriction">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateIpRestrictionOutcomeCallable UpdateIpRestrictionCallable(const Model::UpdateIpRestrictionRequest& request) const;
+
+        /**
+         * <p>Updates content and status of IP Rules.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIpRestriction">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateIpRestrictionAsync(const Model::UpdateIpRestrictionRequest& request, const UpdateIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a template from an existing Amazon QuickSight analysis or another
          * template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTemplate">AWS
@@ -4432,6 +4492,7 @@ namespace Model
         void DescribeGroupAsyncHelper(const Model::DescribeGroupRequest& request, const DescribeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeIAMPolicyAssignmentAsyncHelper(const Model::DescribeIAMPolicyAssignmentRequest& request, const DescribeIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeIngestionAsyncHelper(const Model::DescribeIngestionRequest& request, const DescribeIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeIpRestrictionAsyncHelper(const Model::DescribeIpRestrictionRequest& request, const DescribeIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNamespaceAsyncHelper(const Model::DescribeNamespaceRequest& request, const DescribeNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTemplateAsyncHelper(const Model::DescribeTemplateRequest& request, const DescribeTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTemplateAliasAsyncHelper(const Model::DescribeTemplateAliasRequest& request, const DescribeTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4488,6 +4549,7 @@ namespace Model
         void UpdateFolderPermissionsAsyncHelper(const Model::UpdateFolderPermissionsRequest& request, const UpdateFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGroupAsyncHelper(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIAMPolicyAssignmentAsyncHelper(const Model::UpdateIAMPolicyAssignmentRequest& request, const UpdateIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateIpRestrictionAsyncHelper(const Model::UpdateIpRestrictionRequest& request, const UpdateIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTemplateAsyncHelper(const Model::UpdateTemplateRequest& request, const UpdateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTemplateAliasAsyncHelper(const Model::UpdateTemplateAliasRequest& request, const UpdateTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTemplatePermissionsAsyncHelper(const Model::UpdateTemplatePermissionsRequest& request, const UpdateTemplatePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

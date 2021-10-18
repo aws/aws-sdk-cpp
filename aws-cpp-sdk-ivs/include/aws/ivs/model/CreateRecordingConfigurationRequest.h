@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/ivs/IVSRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ivs/model/DestinationConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -32,55 +32,6 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "CreateRecordingConfiguration"; }
 
     Aws::String SerializePayload() const override;
-
-
-    /**
-     * <p>An arbitrary string (a nickname) that helps the customer identify that
-     * resource. The value does not need to be unique.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>An arbitrary string (a nickname) that helps the customer identify that
-     * resource. The value does not need to be unique.</p>
-     */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>An arbitrary string (a nickname) that helps the customer identify that
-     * resource. The value does not need to be unique.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>An arbitrary string (a nickname) that helps the customer identify that
-     * resource. The value does not need to be unique.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>An arbitrary string (a nickname) that helps the customer identify that
-     * resource. The value does not need to be unique.</p>
-     */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>An arbitrary string (a nickname) that helps the customer identify that
-     * resource. The value does not need to be unique.</p>
-     */
-    inline CreateRecordingConfigurationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>An arbitrary string (a nickname) that helps the customer identify that
-     * resource. The value does not need to be unique.</p>
-     */
-    inline CreateRecordingConfigurationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>An arbitrary string (a nickname) that helps the customer identify that
-     * resource. The value does not need to be unique.</p>
-     */
-    inline CreateRecordingConfigurationRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -118,6 +69,47 @@ namespace Model
      * video will be stored.</p>
      */
     inline CreateRecordingConfigurationRequest& WithDestinationConfiguration(DestinationConfiguration&& value) { SetDestinationConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Recording-configuration name. The value does not need to be unique.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>Recording-configuration name. The value does not need to be unique.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Recording-configuration name. The value does not need to be unique.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>Recording-configuration name. The value does not need to be unique.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>Recording-configuration name. The value does not need to be unique.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>Recording-configuration name. The value does not need to be unique.</p>
+     */
+    inline CreateRecordingConfigurationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>Recording-configuration name. The value does not need to be unique.</p>
+     */
+    inline CreateRecordingConfigurationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>Recording-configuration name. The value does not need to be unique.</p>
+     */
+    inline CreateRecordingConfigurationRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -200,11 +192,11 @@ namespace Model
 
   private:
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet;
-
     DestinationConfiguration m_destinationConfiguration;
     bool m_destinationConfigurationHasBeenSet;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

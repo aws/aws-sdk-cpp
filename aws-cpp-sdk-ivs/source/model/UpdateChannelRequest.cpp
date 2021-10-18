@@ -14,14 +14,14 @@ using namespace Aws::Utils;
 
 UpdateChannelRequest::UpdateChannelRequest() : 
     m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_latencyMode(ChannelLatencyMode::NOT_SET),
-    m_latencyModeHasBeenSet(false),
-    m_type(ChannelType::NOT_SET),
-    m_typeHasBeenSet(false),
     m_authorized(false),
     m_authorizedHasBeenSet(false),
-    m_recordingConfigurationArnHasBeenSet(false)
+    m_latencyMode(ChannelLatencyMode::NOT_SET),
+    m_latencyModeHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_recordingConfigurationArnHasBeenSet(false),
+    m_type(ChannelType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -35,9 +35,9 @@ Aws::String UpdateChannelRequest::SerializePayload() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_authorizedHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithBool("authorized", m_authorized);
 
   }
 
@@ -46,14 +46,9 @@ Aws::String UpdateChannelRequest::SerializePayload() const
    payload.WithString("latencyMode", ChannelLatencyModeMapper::GetNameForChannelLatencyMode(m_latencyMode));
   }
 
-  if(m_typeHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("type", ChannelTypeMapper::GetNameForChannelType(m_type));
-  }
-
-  if(m_authorizedHasBeenSet)
-  {
-   payload.WithBool("authorized", m_authorized);
+   payload.WithString("name", m_name);
 
   }
 
@@ -61,6 +56,11 @@ Aws::String UpdateChannelRequest::SerializePayload() const
   {
    payload.WithString("recordingConfigurationArn", m_recordingConfigurationArn);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", ChannelTypeMapper::GetNameForChannelType(m_type));
   }
 
   return payload.View().WriteReadable();

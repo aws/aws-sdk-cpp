@@ -81,44 +81,28 @@ namespace Model
 
 
     /**
-     * <p>Channel name.</p>
+     * <p>Whether the channel is private (enabled for playback authorization). Default:
+     * <code>false</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline bool GetAuthorized() const{ return m_authorized; }
 
     /**
-     * <p>Channel name.</p>
+     * <p>Whether the channel is private (enabled for playback authorization). Default:
+     * <code>false</code>.</p>
      */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    inline bool AuthorizedHasBeenSet() const { return m_authorizedHasBeenSet; }
 
     /**
-     * <p>Channel name.</p>
+     * <p>Whether the channel is private (enabled for playback authorization). Default:
+     * <code>false</code>.</p>
      */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetAuthorized(bool value) { m_authorizedHasBeenSet = true; m_authorized = value; }
 
     /**
-     * <p>Channel name.</p>
+     * <p>Whether the channel is private (enabled for playback authorization). Default:
+     * <code>false</code>.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>Channel name.</p>
-     */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>Channel name.</p>
-     */
-    inline ChannelSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>Channel name.</p>
-     */
-    inline ChannelSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Channel name.</p>
-     */
-    inline ChannelSummary& WithName(const char* value) { SetName(value); return *this;}
+    inline ChannelSummary& WithAuthorized(bool value) { SetAuthorized(value); return *this;}
 
 
     /**
@@ -177,28 +161,44 @@ namespace Model
 
 
     /**
-     * <p>Whether the channel is private (enabled for playback authorization). Default:
-     * <code>false</code>.</p>
+     * <p>Channel name.</p>
      */
-    inline bool GetAuthorized() const{ return m_authorized; }
+    inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Whether the channel is private (enabled for playback authorization). Default:
-     * <code>false</code>.</p>
+     * <p>Channel name.</p>
      */
-    inline bool AuthorizedHasBeenSet() const { return m_authorizedHasBeenSet; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Whether the channel is private (enabled for playback authorization). Default:
-     * <code>false</code>.</p>
+     * <p>Channel name.</p>
      */
-    inline void SetAuthorized(bool value) { m_authorizedHasBeenSet = true; m_authorized = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Whether the channel is private (enabled for playback authorization). Default:
-     * <code>false</code>.</p>
+     * <p>Channel name.</p>
      */
-    inline ChannelSummary& WithAuthorized(bool value) { SetAuthorized(value); return *this;}
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>Channel name.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>Channel name.</p>
+     */
+    inline ChannelSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>Channel name.</p>
+     */
+    inline ChannelSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>Channel name.</p>
+     */
+    inline ChannelSummary& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -341,14 +341,14 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_authorized;
+    bool m_authorizedHasBeenSet;
 
     ChannelLatencyMode m_latencyMode;
     bool m_latencyModeHasBeenSet;
 
-    bool m_authorized;
-    bool m_authorizedHasBeenSet;
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
 
     Aws::String m_recordingConfigurationArn;
     bool m_recordingConfigurationArnHasBeenSet;
