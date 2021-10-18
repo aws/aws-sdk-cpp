@@ -11,16 +11,18 @@ jobs:
         python-version: [3.9]
 
     steps:
-      - name: Checkout main
+      - name: Checkout target
         uses: actions/checkout@v2
         with:
-          repository: aws/aws-sdk-cpp
-          path: aws-sdk-cpp
-          ref: main
+          path: sdkmain
+          ref: ${{ github.base_ref }}
       - name: Checkout this ref
         uses: actions/checkout@v2
         with:
           path: new-ref
+          fetch-depth: 0
+      - name: Get Diff
+        run: git --git-dir ./new-ref/.git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }}| xargs > fileList.txt
       - name: Checkout scancode
         uses: actions/checkout@v2
         with:
@@ -35,10 +37,10 @@ jobs:
       - name: Self-configure scancode
         working-directory: ./scancode-toolkit
         run: ./scancode --help
-      - name: Run Scan code
-        run: |
-          ./scancode-toolkit/scancode -l -n 30 --json-pp - ./aws-sdk-cpp/aws-cpp-sdk-core | grep short_name | sed -e 's/\"short_name\": //' -e 's/\"\,\?//g' | sort | uniq > old-licenses.txt
-          ./scancode-toolkit/scancode -l -n 30 --json-pp - ./new-ref/aws-cpp-sdk-core | grep short_name | sed -e 's/\"short_name\": //' -e 's/\"\,\?//g' | sort | uniq > new-licenses.txt
+      - name: Run Scan code on pr ref
+        run: for filename in $(< fileList.txt); do ./scancode-toolkit/scancode -l -n 30 --json-pp - ./sdkmain/$filename | grep short_name | sort | uniq >> old-licenses.txt; done
+      - name: Run Scan code on target
+        run: for filename in $(< fileList.txt); do ./scancode-toolkit/scancode -l -n 30 --json-pp - ./new-ref/$filename | grep short_name | sort | uniq >> new-licenses.txt; done
       # compare
       - name: License test
         run: if ! cmp old-licenses.txt new-licenses.txt; then echo "Licenses differ! Failing."; exit -1; else echo "Licenses are the same. Success."; exit 0; fi
