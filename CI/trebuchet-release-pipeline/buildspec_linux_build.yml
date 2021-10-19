@@ -1,4 +1,4 @@
-version: 0.2
+version: 0.3
 phases:
   build:
     commands:
@@ -10,7 +10,9 @@ phases:
       - python ./scripts/endpoints_checker.py
       - cd ../build
       - cmake ../aws-sdk-cpp -DCMAKE_BUILD_TYPE=Debug -DENABLE_ADDRESS_SANITIZER=ON -DMINIMIZE_SIZE=ON
-      - make -j 3
+      - cmake --build .
+      - sudo cmake --build . --target install
+      - ../CI/aws-sdk-cpp/validate_install.sh
   post_build:
      commands:
       - cd /tmp

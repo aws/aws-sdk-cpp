@@ -7,17 +7,17 @@ set -e
 MANIFEST=install_manifest.txt
 TOTAL_FILES=$(wc -l $MANIFEST)
 UNEXPECTED_FILES=$( cat $MANIFEST \
-                | grep -v '^/usr/local/lib64/cmake' \
-            | grep -v '^/usr/local/include/aws' \
-                    | grep -v '^/usr/local/lib64/libaws-' \
-                    | grep -v '^/usr/local/lib64/pkgconfig/aws-cpp-sdk-' \
-                    | grep -v '^/usr/local/lib64/aws-crt-cpp' \
-                    | grep -v '^/usr/local/lib64/aws-c' \
-                    | grep -v '^/usr/local/lib64/s2n' \
-                    | grep -v '^/usr/local/lib64/libs2n' \
-                    | grep -v '^/usr/local/include/s2n.h' \
-            | grep -v '^/usr/local/lib64/libtesting-resources' \
-            | grep -v '^/usr/local/lib64/pkgconfig/testing-resources.pc' ) \
+                  | grep -v '^/usr/local/include/aws' \
+                  | grep -v '^/usr/local/include/s2n.h' \
+                  | grep -v '^/usr/local/lib\(64\)\?/cmake' \
+                  | grep -v '^/usr/local/lib\(64\)\?/libaws-' \
+                  | grep -v '^/usr/local/lib\(64\)\?/pkgconfig/aws-cpp-sdk-' \
+                  | grep -v '^/usr/local/lib\(64\)\?/aws-crt-cpp' \
+                  | grep -v '^/usr/local/lib\(64\)\?/aws-c' \
+                  | grep -v '^/usr/local/lib\(64\)\?/s2n' \
+                  | grep -v '^/usr/local/lib\(64\)\?/libs2n' \
+                  | grep -v '^/usr/local/lib\(64\)\?/libtesting-resources' \
+                  | grep -v '^/usr/local/lib\(64\)\?/pkgconfig/testing-resources.pc' ) \
             || [[ $? == 1 ]] # 1 is grep error code for empty result
 if [[ !  -z  $UNEXPECTED_FILES  ]]
 then
