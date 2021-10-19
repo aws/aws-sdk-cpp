@@ -11,7 +11,7 @@ phases:
       - cd ../build
       - cmake ../aws-sdk-cpp -DCMAKE_BUILD_TYPE=Debug -DENABLE_ADDRESS_SANITIZER=ON -DMINIMIZE_SIZE=ON
       - make -j 6
-      - sudo cmake --build . --target install
+      - cmake --build . --target install
       - ../CI/aws-sdk-cpp/validate_install.sh
   post_build:
      commands:
