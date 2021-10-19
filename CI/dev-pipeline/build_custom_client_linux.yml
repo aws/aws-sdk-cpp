@@ -1,4 +1,4 @@
-version: 0.2
+version: 0.3
 phases:
   build:
     commands:
@@ -47,3 +47,11 @@ phases:
       - cmake $SDK_ROOT/aws-cpp-sdk-custom-service-integration-tests -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH="$SDK_ROOT/install_all" -DAWSSDK_ROOT_DIR="$SDK_ROOT/install_all" -DBUILD_SHARED_LIBS=ON -DSTANDALONE=OFF
       - make -j 8
       - $SDK_ROOT/build_tests/aws-cpp-sdk-custom-service-integration-tests
+      -
+      # Build to default location (not recommended, requires sudo)
+      - mkdir -p $SDK_ROOT/build_default
+      - cd $SDK_ROOT/build_default
+      - cmake $SDK_ROOT
+      - cmake --build .
+      - sudo cmake --build . --target install
+      - $SDK_ROOT/validate_install.sh
