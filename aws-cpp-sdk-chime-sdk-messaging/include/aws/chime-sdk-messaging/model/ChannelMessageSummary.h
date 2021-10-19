@@ -9,6 +9,7 @@
 #include <aws/chime-sdk-messaging/model/ChannelMessageType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/chime-sdk-messaging/model/Identity.h>
+#include <aws/chime-sdk-messaging/model/ChannelMessageStatusStructure.h>
 #include <utility>
 
 namespace Aws
@@ -339,6 +340,49 @@ namespace Model
      */
     inline ChannelMessageSummary& WithRedacted(bool value) { SetRedacted(value); return *this;}
 
+
+    /**
+     * <p>The message status. The status value is <code>SENT</code> for messages sent
+     * to a channel without a channel flow. For channels associated with channel flow,
+     * the value determines the processing stage.</p>
+     */
+    inline const ChannelMessageStatusStructure& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The message status. The status value is <code>SENT</code> for messages sent
+     * to a channel without a channel flow. For channels associated with channel flow,
+     * the value determines the processing stage.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The message status. The status value is <code>SENT</code> for messages sent
+     * to a channel without a channel flow. For channels associated with channel flow,
+     * the value determines the processing stage.</p>
+     */
+    inline void SetStatus(const ChannelMessageStatusStructure& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The message status. The status value is <code>SENT</code> for messages sent
+     * to a channel without a channel flow. For channels associated with channel flow,
+     * the value determines the processing stage.</p>
+     */
+    inline void SetStatus(ChannelMessageStatusStructure&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The message status. The status value is <code>SENT</code> for messages sent
+     * to a channel without a channel flow. For channels associated with channel flow,
+     * the value determines the processing stage.</p>
+     */
+    inline ChannelMessageSummary& WithStatus(const ChannelMessageStatusStructure& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The message status. The status value is <code>SENT</code> for messages sent
+     * to a channel without a channel flow. For channels associated with channel flow,
+     * the value determines the processing stage.</p>
+     */
+    inline ChannelMessageSummary& WithStatus(ChannelMessageStatusStructure&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_messageId;
@@ -367,6 +411,9 @@ namespace Model
 
     bool m_redacted;
     bool m_redactedHasBeenSet;
+
+    ChannelMessageStatusStructure m_status;
+    bool m_statusHasBeenSet;
   };
 
 } // namespace Model

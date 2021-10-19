@@ -27,10 +27,11 @@ namespace Model
 {
 
   /**
-   * <p>An asset in AWS Data Exchange is a piece of data that can be stored as an S3
-   * object. The asset can be a structured data file, an image file, or some other
-   * data file. When you create an import job for your files, you create an asset in
-   * AWS Data Exchange for each of those files.</p><p><h3>See Also:</h3>   <a
+   * <p>An asset in AWS Data Exchange is a piece of data. The asset can be a
+   * structured data file, an image file, or some other data file that can be stored
+   * as an S3 object, or an Amazon Redshift datashare (Preview). When you create an
+   * import job for your files, you create an asset in AWS Data Exchange for each of
+   * those files.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/AssetEntry">AWS
    * API Reference</a></p>
    */
@@ -85,69 +86,63 @@ namespace Model
 
 
     /**
-     * <p>Information about the asset, including its size.</p>
+     * <p>Information about the asset.</p>
      */
     inline const AssetDetails& GetAssetDetails() const{ return m_assetDetails; }
 
     /**
-     * <p>Information about the asset, including its size.</p>
+     * <p>Information about the asset.</p>
      */
     inline bool AssetDetailsHasBeenSet() const { return m_assetDetailsHasBeenSet; }
 
     /**
-     * <p>Information about the asset, including its size.</p>
+     * <p>Information about the asset.</p>
      */
     inline void SetAssetDetails(const AssetDetails& value) { m_assetDetailsHasBeenSet = true; m_assetDetails = value; }
 
     /**
-     * <p>Information about the asset, including its size.</p>
+     * <p>Information about the asset.</p>
      */
     inline void SetAssetDetails(AssetDetails&& value) { m_assetDetailsHasBeenSet = true; m_assetDetails = std::move(value); }
 
     /**
-     * <p>Information about the asset, including its size.</p>
+     * <p>Information about the asset.</p>
      */
     inline AssetEntry& WithAssetDetails(const AssetDetails& value) { SetAssetDetails(value); return *this;}
 
     /**
-     * <p>Information about the asset, including its size.</p>
+     * <p>Information about the asset.</p>
      */
     inline AssetEntry& WithAssetDetails(AssetDetails&& value) { SetAssetDetails(std::move(value)); return *this;}
 
 
     /**
-     * <p>The type of file your data is stored in. Currently, the supported asset type
-     * is S3_SNAPSHOT.</p>
+     * <p>The type of asset that is added to a data set.</p>
      */
     inline const AssetType& GetAssetType() const{ return m_assetType; }
 
     /**
-     * <p>The type of file your data is stored in. Currently, the supported asset type
-     * is S3_SNAPSHOT.</p>
+     * <p>The type of asset that is added to a data set.</p>
      */
     inline bool AssetTypeHasBeenSet() const { return m_assetTypeHasBeenSet; }
 
     /**
-     * <p>The type of file your data is stored in. Currently, the supported asset type
-     * is S3_SNAPSHOT.</p>
+     * <p>The type of asset that is added to a data set.</p>
      */
     inline void SetAssetType(const AssetType& value) { m_assetTypeHasBeenSet = true; m_assetType = value; }
 
     /**
-     * <p>The type of file your data is stored in. Currently, the supported asset type
-     * is S3_SNAPSHOT.</p>
+     * <p>The type of asset that is added to a data set.</p>
      */
     inline void SetAssetType(AssetType&& value) { m_assetTypeHasBeenSet = true; m_assetType = std::move(value); }
 
     /**
-     * <p>The type of file your data is stored in. Currently, the supported asset type
-     * is S3_SNAPSHOT.</p>
+     * <p>The type of asset that is added to a data set.</p>
      */
     inline AssetEntry& WithAssetType(const AssetType& value) { SetAssetType(value); return *this;}
 
     /**
-     * <p>The type of file your data is stored in. Currently, the supported asset type
-     * is S3_SNAPSHOT.</p>
+     * <p>The type of asset that is added to a data set.</p>
      */
     inline AssetEntry& WithAssetType(AssetType&& value) { SetAssetType(std::move(value)); return *this;}
 

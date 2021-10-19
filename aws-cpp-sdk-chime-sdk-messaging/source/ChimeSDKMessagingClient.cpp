@@ -20,34 +20,47 @@
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingClient.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingEndpoint.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingErrorMarshaller.h>
+#include <aws/chime-sdk-messaging/model/AssociateChannelFlowRequest.h>
 #include <aws/chime-sdk-messaging/model/BatchCreateChannelMembershipRequest.h>
+#include <aws/chime-sdk-messaging/model/ChannelFlowCallbackRequest.h>
 #include <aws/chime-sdk-messaging/model/CreateChannelRequest.h>
 #include <aws/chime-sdk-messaging/model/CreateChannelBanRequest.h>
+#include <aws/chime-sdk-messaging/model/CreateChannelFlowRequest.h>
 #include <aws/chime-sdk-messaging/model/CreateChannelMembershipRequest.h>
 #include <aws/chime-sdk-messaging/model/CreateChannelModeratorRequest.h>
 #include <aws/chime-sdk-messaging/model/DeleteChannelRequest.h>
 #include <aws/chime-sdk-messaging/model/DeleteChannelBanRequest.h>
+#include <aws/chime-sdk-messaging/model/DeleteChannelFlowRequest.h>
 #include <aws/chime-sdk-messaging/model/DeleteChannelMembershipRequest.h>
 #include <aws/chime-sdk-messaging/model/DeleteChannelMessageRequest.h>
 #include <aws/chime-sdk-messaging/model/DeleteChannelModeratorRequest.h>
 #include <aws/chime-sdk-messaging/model/DescribeChannelRequest.h>
 #include <aws/chime-sdk-messaging/model/DescribeChannelBanRequest.h>
+#include <aws/chime-sdk-messaging/model/DescribeChannelFlowRequest.h>
 #include <aws/chime-sdk-messaging/model/DescribeChannelMembershipRequest.h>
 #include <aws/chime-sdk-messaging/model/DescribeChannelMembershipForAppInstanceUserRequest.h>
 #include <aws/chime-sdk-messaging/model/DescribeChannelModeratedByAppInstanceUserRequest.h>
 #include <aws/chime-sdk-messaging/model/DescribeChannelModeratorRequest.h>
+#include <aws/chime-sdk-messaging/model/DisassociateChannelFlowRequest.h>
 #include <aws/chime-sdk-messaging/model/GetChannelMessageRequest.h>
+#include <aws/chime-sdk-messaging/model/GetChannelMessageStatusRequest.h>
 #include <aws/chime-sdk-messaging/model/GetMessagingSessionEndpointRequest.h>
 #include <aws/chime-sdk-messaging/model/ListChannelBansRequest.h>
+#include <aws/chime-sdk-messaging/model/ListChannelFlowsRequest.h>
 #include <aws/chime-sdk-messaging/model/ListChannelMembershipsRequest.h>
 #include <aws/chime-sdk-messaging/model/ListChannelMembershipsForAppInstanceUserRequest.h>
 #include <aws/chime-sdk-messaging/model/ListChannelMessagesRequest.h>
 #include <aws/chime-sdk-messaging/model/ListChannelModeratorsRequest.h>
 #include <aws/chime-sdk-messaging/model/ListChannelsRequest.h>
+#include <aws/chime-sdk-messaging/model/ListChannelsAssociatedWithChannelFlowRequest.h>
 #include <aws/chime-sdk-messaging/model/ListChannelsModeratedByAppInstanceUserRequest.h>
+#include <aws/chime-sdk-messaging/model/ListTagsForResourceRequest.h>
 #include <aws/chime-sdk-messaging/model/RedactChannelMessageRequest.h>
 #include <aws/chime-sdk-messaging/model/SendChannelMessageRequest.h>
+#include <aws/chime-sdk-messaging/model/TagResourceRequest.h>
+#include <aws/chime-sdk-messaging/model/UntagResourceRequest.h>
 #include <aws/chime-sdk-messaging/model/UpdateChannelRequest.h>
+#include <aws/chime-sdk-messaging/model/UpdateChannelFlowRequest.h>
 #include <aws/chime-sdk-messaging/model/UpdateChannelMessageRequest.h>
 #include <aws/chime-sdk-messaging/model/UpdateChannelReadMarkerRequest.h>
 
@@ -124,6 +137,43 @@ void ChimeSDKMessagingClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+AssociateChannelFlowOutcome ChimeSDKMessagingClient::AssociateChannelFlow(const AssociateChannelFlowRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateChannelFlow", "Required field: ChannelArn, is not set");
+    return AssociateChannelFlowOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  if (!request.ChimeBearerHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateChannelFlow", "Required field: ChimeBearer, is not set");
+    return AssociateChannelFlowOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/channel-flow");
+  return AssociateChannelFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateChannelFlowOutcomeCallable ChimeSDKMessagingClient::AssociateChannelFlowCallable(const AssociateChannelFlowRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateChannelFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateChannelFlow(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMessagingClient::AssociateChannelFlowAsync(const AssociateChannelFlowRequest& request, const AssociateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateChannelFlowAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMessagingClient::AssociateChannelFlowAsyncHelper(const AssociateChannelFlowRequest& request, const AssociateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateChannelFlow(request), context);
+}
+
 BatchCreateChannelMembershipOutcome ChimeSDKMessagingClient::BatchCreateChannelMembership(const BatchCreateChannelMembershipRequest& request) const
 {
   if (!request.ChannelArnHasBeenSet())
@@ -162,6 +212,40 @@ void ChimeSDKMessagingClient::BatchCreateChannelMembershipAsync(const BatchCreat
 void ChimeSDKMessagingClient::BatchCreateChannelMembershipAsyncHelper(const BatchCreateChannelMembershipRequest& request, const BatchCreateChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchCreateChannelMembership(request), context);
+}
+
+ChannelFlowCallbackOutcome ChimeSDKMessagingClient::ChannelFlowCallback(const ChannelFlowCallbackRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ChannelFlowCallback", "Required field: ChannelArn, is not set");
+    return ChannelFlowCallbackOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  ss.str("?operation=channel-flow-callback");
+  uri.SetQueryString(ss.str());
+  return ChannelFlowCallbackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ChannelFlowCallbackOutcomeCallable ChimeSDKMessagingClient::ChannelFlowCallbackCallable(const ChannelFlowCallbackRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ChannelFlowCallbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ChannelFlowCallback(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMessagingClient::ChannelFlowCallbackAsync(const ChannelFlowCallbackRequest& request, const ChannelFlowCallbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ChannelFlowCallbackAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMessagingClient::ChannelFlowCallbackAsyncHelper(const ChannelFlowCallbackRequest& request, const ChannelFlowCallbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ChannelFlowCallback(request), context);
 }
 
 CreateChannelOutcome ChimeSDKMessagingClient::CreateChannel(const CreateChannelRequest& request) const
@@ -229,6 +313,31 @@ void ChimeSDKMessagingClient::CreateChannelBanAsync(const CreateChannelBanReques
 void ChimeSDKMessagingClient::CreateChannelBanAsyncHelper(const CreateChannelBanRequest& request, const CreateChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateChannelBan(request), context);
+}
+
+CreateChannelFlowOutcome ChimeSDKMessagingClient::CreateChannelFlow(const CreateChannelFlowRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/channel-flows");
+  return CreateChannelFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateChannelFlowOutcomeCallable ChimeSDKMessagingClient::CreateChannelFlowCallable(const CreateChannelFlowRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateChannelFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateChannelFlow(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMessagingClient::CreateChannelFlowAsync(const CreateChannelFlowRequest& request, const CreateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateChannelFlowAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMessagingClient::CreateChannelFlowAsyncHelper(const CreateChannelFlowRequest& request, const CreateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateChannelFlow(request), context);
 }
 
 CreateChannelMembershipOutcome ChimeSDKMessagingClient::CreateChannelMembership(const CreateChannelMembershipRequest& request) const
@@ -382,6 +491,37 @@ void ChimeSDKMessagingClient::DeleteChannelBanAsync(const DeleteChannelBanReques
 void ChimeSDKMessagingClient::DeleteChannelBanAsyncHelper(const DeleteChannelBanRequest& request, const DeleteChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteChannelBan(request), context);
+}
+
+DeleteChannelFlowOutcome ChimeSDKMessagingClient::DeleteChannelFlow(const DeleteChannelFlowRequest& request) const
+{
+  if (!request.ChannelFlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteChannelFlow", "Required field: ChannelFlowArn, is not set");
+    return DeleteChannelFlowOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelFlowArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/channel-flows/");
+  uri.AddPathSegment(request.GetChannelFlowArn());
+  return DeleteChannelFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteChannelFlowOutcomeCallable ChimeSDKMessagingClient::DeleteChannelFlowCallable(const DeleteChannelFlowRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteChannelFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteChannelFlow(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMessagingClient::DeleteChannelFlowAsync(const DeleteChannelFlowRequest& request, const DeleteChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteChannelFlowAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMessagingClient::DeleteChannelFlowAsyncHelper(const DeleteChannelFlowRequest& request, const DeleteChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteChannelFlow(request), context);
 }
 
 DeleteChannelMembershipOutcome ChimeSDKMessagingClient::DeleteChannelMembership(const DeleteChannelMembershipRequest& request) const
@@ -592,6 +732,37 @@ void ChimeSDKMessagingClient::DescribeChannelBanAsyncHelper(const DescribeChanne
   handler(this, request, DescribeChannelBan(request), context);
 }
 
+DescribeChannelFlowOutcome ChimeSDKMessagingClient::DescribeChannelFlow(const DescribeChannelFlowRequest& request) const
+{
+  if (!request.ChannelFlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeChannelFlow", "Required field: ChannelFlowArn, is not set");
+    return DescribeChannelFlowOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelFlowArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/channel-flows/");
+  uri.AddPathSegment(request.GetChannelFlowArn());
+  return DescribeChannelFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeChannelFlowOutcomeCallable ChimeSDKMessagingClient::DescribeChannelFlowCallable(const DescribeChannelFlowRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeChannelFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeChannelFlow(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMessagingClient::DescribeChannelFlowAsync(const DescribeChannelFlowRequest& request, const DescribeChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeChannelFlowAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMessagingClient::DescribeChannelFlowAsyncHelper(const DescribeChannelFlowRequest& request, const DescribeChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeChannelFlow(request), context);
+}
+
 DescribeChannelMembershipOutcome ChimeSDKMessagingClient::DescribeChannelMembership(const DescribeChannelMembershipRequest& request) const
 {
   if (!request.ChannelArnHasBeenSet())
@@ -766,6 +937,49 @@ void ChimeSDKMessagingClient::DescribeChannelModeratorAsyncHelper(const Describe
   handler(this, request, DescribeChannelModerator(request), context);
 }
 
+DisassociateChannelFlowOutcome ChimeSDKMessagingClient::DisassociateChannelFlow(const DisassociateChannelFlowRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateChannelFlow", "Required field: ChannelArn, is not set");
+    return DisassociateChannelFlowOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  if (!request.ChannelFlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateChannelFlow", "Required field: ChannelFlowArn, is not set");
+    return DisassociateChannelFlowOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelFlowArn]", false));
+  }
+  if (!request.ChimeBearerHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateChannelFlow", "Required field: ChimeBearer, is not set");
+    return DisassociateChannelFlowOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/channel-flow/");
+  uri.AddPathSegment(request.GetChannelFlowArn());
+  return DisassociateChannelFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateChannelFlowOutcomeCallable ChimeSDKMessagingClient::DisassociateChannelFlowCallable(const DisassociateChannelFlowRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateChannelFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateChannelFlow(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMessagingClient::DisassociateChannelFlowAsync(const DisassociateChannelFlowRequest& request, const DisassociateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateChannelFlowAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMessagingClient::DisassociateChannelFlowAsyncHelper(const DisassociateChannelFlowRequest& request, const DisassociateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateChannelFlow(request), context);
+}
+
 GetChannelMessageOutcome ChimeSDKMessagingClient::GetChannelMessage(const GetChannelMessageRequest& request) const
 {
   if (!request.ChannelArnHasBeenSet())
@@ -807,6 +1021,52 @@ void ChimeSDKMessagingClient::GetChannelMessageAsync(const GetChannelMessageRequ
 void ChimeSDKMessagingClient::GetChannelMessageAsyncHelper(const GetChannelMessageRequest& request, const GetChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetChannelMessage(request), context);
+}
+
+GetChannelMessageStatusOutcome ChimeSDKMessagingClient::GetChannelMessageStatus(const GetChannelMessageStatusRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetChannelMessageStatus", "Required field: ChannelArn, is not set");
+    return GetChannelMessageStatusOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  if (!request.MessageIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetChannelMessageStatus", "Required field: MessageId, is not set");
+    return GetChannelMessageStatusOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MessageId]", false));
+  }
+  if (!request.ChimeBearerHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetChannelMessageStatus", "Required field: ChimeBearer, is not set");
+    return GetChannelMessageStatusOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/messages/");
+  uri.AddPathSegment(request.GetMessageId());
+  ss.str("?scope=message-status");
+  uri.SetQueryString(ss.str());
+  return GetChannelMessageStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetChannelMessageStatusOutcomeCallable ChimeSDKMessagingClient::GetChannelMessageStatusCallable(const GetChannelMessageStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetChannelMessageStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetChannelMessageStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMessagingClient::GetChannelMessageStatusAsync(const GetChannelMessageStatusRequest& request, const GetChannelMessageStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetChannelMessageStatusAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMessagingClient::GetChannelMessageStatusAsyncHelper(const GetChannelMessageStatusRequest& request, const GetChannelMessageStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetChannelMessageStatus(request), context);
 }
 
 GetMessagingSessionEndpointOutcome ChimeSDKMessagingClient::GetMessagingSessionEndpoint(const GetMessagingSessionEndpointRequest& request) const
@@ -869,6 +1129,36 @@ void ChimeSDKMessagingClient::ListChannelBansAsync(const ListChannelBansRequest&
 void ChimeSDKMessagingClient::ListChannelBansAsyncHelper(const ListChannelBansRequest& request, const ListChannelBansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListChannelBans(request), context);
+}
+
+ListChannelFlowsOutcome ChimeSDKMessagingClient::ListChannelFlows(const ListChannelFlowsRequest& request) const
+{
+  if (!request.AppInstanceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListChannelFlows", "Required field: AppInstanceArn, is not set");
+    return ListChannelFlowsOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/channel-flows");
+  return ListChannelFlowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListChannelFlowsOutcomeCallable ChimeSDKMessagingClient::ListChannelFlowsCallable(const ListChannelFlowsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListChannelFlowsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListChannelFlows(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMessagingClient::ListChannelFlowsAsync(const ListChannelFlowsRequest& request, const ListChannelFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListChannelFlowsAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMessagingClient::ListChannelFlowsAsyncHelper(const ListChannelFlowsRequest& request, const ListChannelFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListChannelFlows(request), context);
 }
 
 ListChannelMembershipsOutcome ChimeSDKMessagingClient::ListChannelMemberships(const ListChannelMembershipsRequest& request) const
@@ -1050,6 +1340,39 @@ void ChimeSDKMessagingClient::ListChannelsAsyncHelper(const ListChannelsRequest&
   handler(this, request, ListChannels(request), context);
 }
 
+ListChannelsAssociatedWithChannelFlowOutcome ChimeSDKMessagingClient::ListChannelsAssociatedWithChannelFlow(const ListChannelsAssociatedWithChannelFlowRequest& request) const
+{
+  if (!request.ChannelFlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListChannelsAssociatedWithChannelFlow", "Required field: ChannelFlowArn, is not set");
+    return ListChannelsAssociatedWithChannelFlowOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelFlowArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  uri.AddPathSegments("/channels");
+  ss.str("?scope=channel-flow-associations");
+  uri.SetQueryString(ss.str());
+  return ListChannelsAssociatedWithChannelFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListChannelsAssociatedWithChannelFlowOutcomeCallable ChimeSDKMessagingClient::ListChannelsAssociatedWithChannelFlowCallable(const ListChannelsAssociatedWithChannelFlowRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListChannelsAssociatedWithChannelFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListChannelsAssociatedWithChannelFlow(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMessagingClient::ListChannelsAssociatedWithChannelFlowAsync(const ListChannelsAssociatedWithChannelFlowRequest& request, const ListChannelsAssociatedWithChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListChannelsAssociatedWithChannelFlowAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMessagingClient::ListChannelsAssociatedWithChannelFlowAsyncHelper(const ListChannelsAssociatedWithChannelFlowRequest& request, const ListChannelsAssociatedWithChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListChannelsAssociatedWithChannelFlow(request), context);
+}
+
 ListChannelsModeratedByAppInstanceUserOutcome ChimeSDKMessagingClient::ListChannelsModeratedByAppInstanceUser(const ListChannelsModeratedByAppInstanceUserRequest& request) const
 {
   if (!request.ChimeBearerHasBeenSet())
@@ -1081,6 +1404,36 @@ void ChimeSDKMessagingClient::ListChannelsModeratedByAppInstanceUserAsync(const 
 void ChimeSDKMessagingClient::ListChannelsModeratedByAppInstanceUserAsyncHelper(const ListChannelsModeratedByAppInstanceUserRequest& request, const ListChannelsModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListChannelsModeratedByAppInstanceUser(request), context);
+}
+
+ListTagsForResourceOutcome ChimeSDKMessagingClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
+{
+  if (!request.ResourceARNHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceARN, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceARN]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/tags");
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListTagsForResourceOutcomeCallable ChimeSDKMessagingClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMessagingClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMessagingClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForResource(request), context);
 }
 
 RedactChannelMessageOutcome ChimeSDKMessagingClient::RedactChannelMessage(const RedactChannelMessageRequest& request) const
@@ -1166,6 +1519,62 @@ void ChimeSDKMessagingClient::SendChannelMessageAsyncHelper(const SendChannelMes
   handler(this, request, SendChannelMessage(request), context);
 }
 
+TagResourceOutcome ChimeSDKMessagingClient::TagResource(const TagResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  uri.AddPathSegments("/tags");
+  ss.str("?operation=tag-resource");
+  uri.SetQueryString(ss.str());
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+TagResourceOutcomeCallable ChimeSDKMessagingClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMessagingClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMessagingClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
+UntagResourceOutcome ChimeSDKMessagingClient::UntagResource(const UntagResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  uri.AddPathSegments("/tags");
+  ss.str("?operation=untag-resource");
+  uri.SetQueryString(ss.str());
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UntagResourceOutcomeCallable ChimeSDKMessagingClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMessagingClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMessagingClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
+}
+
 UpdateChannelOutcome ChimeSDKMessagingClient::UpdateChannel(const UpdateChannelRequest& request) const
 {
   if (!request.ChannelArnHasBeenSet())
@@ -1200,6 +1609,37 @@ void ChimeSDKMessagingClient::UpdateChannelAsync(const UpdateChannelRequest& req
 void ChimeSDKMessagingClient::UpdateChannelAsyncHelper(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateChannel(request), context);
+}
+
+UpdateChannelFlowOutcome ChimeSDKMessagingClient::UpdateChannelFlow(const UpdateChannelFlowRequest& request) const
+{
+  if (!request.ChannelFlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateChannelFlow", "Required field: ChannelFlowArn, is not set");
+    return UpdateChannelFlowOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelFlowArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/channel-flows/");
+  uri.AddPathSegment(request.GetChannelFlowArn());
+  return UpdateChannelFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateChannelFlowOutcomeCallable ChimeSDKMessagingClient::UpdateChannelFlowCallable(const UpdateChannelFlowRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateChannelFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateChannelFlow(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMessagingClient::UpdateChannelFlowAsync(const UpdateChannelFlowRequest& request, const UpdateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateChannelFlowAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMessagingClient::UpdateChannelFlowAsyncHelper(const UpdateChannelFlowRequest& request, const UpdateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateChannelFlow(request), context);
 }
 
 UpdateChannelMessageOutcome ChimeSDKMessagingClient::UpdateChannelMessage(const UpdateChannelMessageRequest& request) const

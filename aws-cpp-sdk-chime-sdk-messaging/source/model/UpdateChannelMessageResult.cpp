@@ -40,6 +40,12 @@ UpdateChannelMessageResult& UpdateChannelMessageResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = jsonValue.GetObject("Status");
+
+  }
+
 
 
   return *this;

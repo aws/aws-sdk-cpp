@@ -10,6 +10,7 @@
 #include <aws/dataexchange/model/ExportRevisionsToS3RequestDetails.h>
 #include <aws/dataexchange/model/ImportAssetFromSignedUrlRequestDetails.h>
 #include <aws/dataexchange/model/ImportAssetsFromS3RequestDetails.h>
+#include <aws/dataexchange/model/ImportAssetsFromRedshiftDataSharesRequestDetails.h>
 #include <utility>
 
 namespace Aws
@@ -195,6 +196,37 @@ namespace Model
      */
     inline RequestDetails& WithImportAssetsFromS3(ImportAssetsFromS3RequestDetails&& value) { SetImportAssetsFromS3(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Details from an import from Amazon Redshift datashare request.</p>
+     */
+    inline const ImportAssetsFromRedshiftDataSharesRequestDetails& GetImportAssetsFromRedshiftDataShares() const{ return m_importAssetsFromRedshiftDataShares; }
+
+    /**
+     * <p>Details from an import from Amazon Redshift datashare request.</p>
+     */
+    inline bool ImportAssetsFromRedshiftDataSharesHasBeenSet() const { return m_importAssetsFromRedshiftDataSharesHasBeenSet; }
+
+    /**
+     * <p>Details from an import from Amazon Redshift datashare request.</p>
+     */
+    inline void SetImportAssetsFromRedshiftDataShares(const ImportAssetsFromRedshiftDataSharesRequestDetails& value) { m_importAssetsFromRedshiftDataSharesHasBeenSet = true; m_importAssetsFromRedshiftDataShares = value; }
+
+    /**
+     * <p>Details from an import from Amazon Redshift datashare request.</p>
+     */
+    inline void SetImportAssetsFromRedshiftDataShares(ImportAssetsFromRedshiftDataSharesRequestDetails&& value) { m_importAssetsFromRedshiftDataSharesHasBeenSet = true; m_importAssetsFromRedshiftDataShares = std::move(value); }
+
+    /**
+     * <p>Details from an import from Amazon Redshift datashare request.</p>
+     */
+    inline RequestDetails& WithImportAssetsFromRedshiftDataShares(const ImportAssetsFromRedshiftDataSharesRequestDetails& value) { SetImportAssetsFromRedshiftDataShares(value); return *this;}
+
+    /**
+     * <p>Details from an import from Amazon Redshift datashare request.</p>
+     */
+    inline RequestDetails& WithImportAssetsFromRedshiftDataShares(ImportAssetsFromRedshiftDataSharesRequestDetails&& value) { SetImportAssetsFromRedshiftDataShares(std::move(value)); return *this;}
+
   private:
 
     ExportAssetToSignedUrlRequestDetails m_exportAssetToSignedUrl;
@@ -211,6 +243,9 @@ namespace Model
 
     ImportAssetsFromS3RequestDetails m_importAssetsFromS3;
     bool m_importAssetsFromS3HasBeenSet;
+
+    ImportAssetsFromRedshiftDataSharesRequestDetails m_importAssetsFromRedshiftDataShares;
+    bool m_importAssetsFromRedshiftDataSharesHasBeenSet;
   };
 
 } // namespace Model

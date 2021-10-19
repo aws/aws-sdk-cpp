@@ -153,6 +153,47 @@ namespace Model
      */
     inline ExportRevisionsToS3ResponseDetails& AddRevisionDestinations(RevisionDestinationEntry&& value) { m_revisionDestinationsHasBeenSet = true; m_revisionDestinations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the event action.</p>
+     */
+    inline const Aws::String& GetEventActionArn() const{ return m_eventActionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the event action.</p>
+     */
+    inline bool EventActionArnHasBeenSet() const { return m_eventActionArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the event action.</p>
+     */
+    inline void SetEventActionArn(const Aws::String& value) { m_eventActionArnHasBeenSet = true; m_eventActionArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the event action.</p>
+     */
+    inline void SetEventActionArn(Aws::String&& value) { m_eventActionArnHasBeenSet = true; m_eventActionArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the event action.</p>
+     */
+    inline void SetEventActionArn(const char* value) { m_eventActionArnHasBeenSet = true; m_eventActionArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the event action.</p>
+     */
+    inline ExportRevisionsToS3ResponseDetails& WithEventActionArn(const Aws::String& value) { SetEventActionArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the event action.</p>
+     */
+    inline ExportRevisionsToS3ResponseDetails& WithEventActionArn(Aws::String&& value) { SetEventActionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the event action.</p>
+     */
+    inline ExportRevisionsToS3ResponseDetails& WithEventActionArn(const char* value) { SetEventActionArn(value); return *this;}
+
   private:
 
     Aws::String m_dataSetId;
@@ -163,6 +204,9 @@ namespace Model
 
     Aws::Vector<RevisionDestinationEntry> m_revisionDestinations;
     bool m_revisionDestinationsHasBeenSet;
+
+    Aws::String m_eventActionArn;
+    bool m_eventActionArnHasBeenSet;
   };
 
 } // namespace Model

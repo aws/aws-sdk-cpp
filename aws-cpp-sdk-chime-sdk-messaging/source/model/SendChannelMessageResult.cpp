@@ -40,6 +40,12 @@ SendChannelMessageResult& SendChannelMessageResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = jsonValue.GetObject("Status");
+
+  }
+
 
 
   return *this;

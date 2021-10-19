@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime-sdk-messaging/ChimeSDKMessaging_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/chime-sdk-messaging/model/ChannelMessageStatusStructure.h>
 #include <utility>
 
 namespace Aws
@@ -103,11 +104,39 @@ namespace Model
      */
     inline SendChannelMessageResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 
+
+    /**
+     * <p>The status of the channel message.</p>
+     */
+    inline const ChannelMessageStatusStructure& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the channel message.</p>
+     */
+    inline void SetStatus(const ChannelMessageStatusStructure& value) { m_status = value; }
+
+    /**
+     * <p>The status of the channel message.</p>
+     */
+    inline void SetStatus(ChannelMessageStatusStructure&& value) { m_status = std::move(value); }
+
+    /**
+     * <p>The status of the channel message.</p>
+     */
+    inline SendChannelMessageResult& WithStatus(const ChannelMessageStatusStructure& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the channel message.</p>
+     */
+    inline SendChannelMessageResult& WithStatus(ChannelMessageStatusStructure&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_channelArn;
 
     Aws::String m_messageId;
+
+    ChannelMessageStatusStructure m_status;
   };
 
 } // namespace Model

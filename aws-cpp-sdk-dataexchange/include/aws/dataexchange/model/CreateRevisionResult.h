@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN for the revision</p>
+     * <p>The ARN for the revision.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN for the revision</p>
+     * <p>The ARN for the revision.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The ARN for the revision</p>
+     * <p>The ARN for the revision.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The ARN for the revision</p>
+     * <p>The ARN for the revision.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The ARN for the revision</p>
+     * <p>The ARN for the revision.</p>
      */
     inline CreateRevisionResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN for the revision</p>
+     * <p>The ARN for the revision.</p>
      */
     inline CreateRevisionResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN for the revision</p>
+     * <p>The ARN for the revision.</p>
      */
     inline CreateRevisionResult& WithArn(const char* value) { SetArn(value); return *this;}
 

@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/chime-sdk-messaging/model/Identity.h>
 #include <aws/chime-sdk-messaging/model/ChannelMessagePersistenceType.h>
+#include <aws/chime-sdk-messaging/model/ChannelMessageStatusStructure.h>
 #include <utility>
 
 namespace Aws
@@ -411,6 +412,37 @@ namespace Model
      */
     inline ChannelMessage& WithPersistence(ChannelMessagePersistenceType&& value) { SetPersistence(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The status of the channel message.</p>
+     */
+    inline const ChannelMessageStatusStructure& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the channel message.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the channel message.</p>
+     */
+    inline void SetStatus(const ChannelMessageStatusStructure& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The status of the channel message.</p>
+     */
+    inline void SetStatus(ChannelMessageStatusStructure&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The status of the channel message.</p>
+     */
+    inline ChannelMessage& WithStatus(const ChannelMessageStatusStructure& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the channel message.</p>
+     */
+    inline ChannelMessage& WithStatus(ChannelMessageStatusStructure&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_channelArn;
@@ -445,6 +477,9 @@ namespace Model
 
     ChannelMessagePersistenceType m_persistence;
     bool m_persistenceHasBeenSet;
+
+    ChannelMessageStatusStructure m_status;
+    bool m_statusHasBeenSet;
   };
 
 } // namespace Model

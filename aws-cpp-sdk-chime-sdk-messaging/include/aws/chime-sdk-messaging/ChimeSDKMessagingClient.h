@@ -12,28 +12,36 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/chime-sdk-messaging/model/BatchCreateChannelMembershipResult.h>
+#include <aws/chime-sdk-messaging/model/ChannelFlowCallbackResult.h>
 #include <aws/chime-sdk-messaging/model/CreateChannelResult.h>
 #include <aws/chime-sdk-messaging/model/CreateChannelBanResult.h>
+#include <aws/chime-sdk-messaging/model/CreateChannelFlowResult.h>
 #include <aws/chime-sdk-messaging/model/CreateChannelMembershipResult.h>
 #include <aws/chime-sdk-messaging/model/CreateChannelModeratorResult.h>
 #include <aws/chime-sdk-messaging/model/DescribeChannelResult.h>
 #include <aws/chime-sdk-messaging/model/DescribeChannelBanResult.h>
+#include <aws/chime-sdk-messaging/model/DescribeChannelFlowResult.h>
 #include <aws/chime-sdk-messaging/model/DescribeChannelMembershipResult.h>
 #include <aws/chime-sdk-messaging/model/DescribeChannelMembershipForAppInstanceUserResult.h>
 #include <aws/chime-sdk-messaging/model/DescribeChannelModeratedByAppInstanceUserResult.h>
 #include <aws/chime-sdk-messaging/model/DescribeChannelModeratorResult.h>
 #include <aws/chime-sdk-messaging/model/GetChannelMessageResult.h>
+#include <aws/chime-sdk-messaging/model/GetChannelMessageStatusResult.h>
 #include <aws/chime-sdk-messaging/model/GetMessagingSessionEndpointResult.h>
 #include <aws/chime-sdk-messaging/model/ListChannelBansResult.h>
+#include <aws/chime-sdk-messaging/model/ListChannelFlowsResult.h>
 #include <aws/chime-sdk-messaging/model/ListChannelMembershipsResult.h>
 #include <aws/chime-sdk-messaging/model/ListChannelMembershipsForAppInstanceUserResult.h>
 #include <aws/chime-sdk-messaging/model/ListChannelMessagesResult.h>
 #include <aws/chime-sdk-messaging/model/ListChannelModeratorsResult.h>
 #include <aws/chime-sdk-messaging/model/ListChannelsResult.h>
+#include <aws/chime-sdk-messaging/model/ListChannelsAssociatedWithChannelFlowResult.h>
 #include <aws/chime-sdk-messaging/model/ListChannelsModeratedByAppInstanceUserResult.h>
+#include <aws/chime-sdk-messaging/model/ListTagsForResourceResult.h>
 #include <aws/chime-sdk-messaging/model/RedactChannelMessageResult.h>
 #include <aws/chime-sdk-messaging/model/SendChannelMessageResult.h>
 #include <aws/chime-sdk-messaging/model/UpdateChannelResult.h>
+#include <aws/chime-sdk-messaging/model/UpdateChannelFlowResult.h>
 #include <aws/chime-sdk-messaging/model/UpdateChannelMessageResult.h>
 #include <aws/chime-sdk-messaging/model/UpdateChannelReadMarkerResult.h>
 #include <aws/core/NoResult.h>
@@ -76,130 +84,182 @@ namespace ChimeSDKMessaging
 
 namespace Model
 {
+        class AssociateChannelFlowRequest;
         class BatchCreateChannelMembershipRequest;
+        class ChannelFlowCallbackRequest;
         class CreateChannelRequest;
         class CreateChannelBanRequest;
+        class CreateChannelFlowRequest;
         class CreateChannelMembershipRequest;
         class CreateChannelModeratorRequest;
         class DeleteChannelRequest;
         class DeleteChannelBanRequest;
+        class DeleteChannelFlowRequest;
         class DeleteChannelMembershipRequest;
         class DeleteChannelMessageRequest;
         class DeleteChannelModeratorRequest;
         class DescribeChannelRequest;
         class DescribeChannelBanRequest;
+        class DescribeChannelFlowRequest;
         class DescribeChannelMembershipRequest;
         class DescribeChannelMembershipForAppInstanceUserRequest;
         class DescribeChannelModeratedByAppInstanceUserRequest;
         class DescribeChannelModeratorRequest;
+        class DisassociateChannelFlowRequest;
         class GetChannelMessageRequest;
+        class GetChannelMessageStatusRequest;
         class GetMessagingSessionEndpointRequest;
         class ListChannelBansRequest;
+        class ListChannelFlowsRequest;
         class ListChannelMembershipsRequest;
         class ListChannelMembershipsForAppInstanceUserRequest;
         class ListChannelMessagesRequest;
         class ListChannelModeratorsRequest;
         class ListChannelsRequest;
+        class ListChannelsAssociatedWithChannelFlowRequest;
         class ListChannelsModeratedByAppInstanceUserRequest;
+        class ListTagsForResourceRequest;
         class RedactChannelMessageRequest;
         class SendChannelMessageRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateChannelRequest;
+        class UpdateChannelFlowRequest;
         class UpdateChannelMessageRequest;
         class UpdateChannelReadMarkerRequest;
 
+        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMessagingError> AssociateChannelFlowOutcome;
         typedef Aws::Utils::Outcome<BatchCreateChannelMembershipResult, ChimeSDKMessagingError> BatchCreateChannelMembershipOutcome;
+        typedef Aws::Utils::Outcome<ChannelFlowCallbackResult, ChimeSDKMessagingError> ChannelFlowCallbackOutcome;
         typedef Aws::Utils::Outcome<CreateChannelResult, ChimeSDKMessagingError> CreateChannelOutcome;
         typedef Aws::Utils::Outcome<CreateChannelBanResult, ChimeSDKMessagingError> CreateChannelBanOutcome;
+        typedef Aws::Utils::Outcome<CreateChannelFlowResult, ChimeSDKMessagingError> CreateChannelFlowOutcome;
         typedef Aws::Utils::Outcome<CreateChannelMembershipResult, ChimeSDKMessagingError> CreateChannelMembershipOutcome;
         typedef Aws::Utils::Outcome<CreateChannelModeratorResult, ChimeSDKMessagingError> CreateChannelModeratorOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMessagingError> DeleteChannelOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMessagingError> DeleteChannelBanOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMessagingError> DeleteChannelFlowOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMessagingError> DeleteChannelMembershipOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMessagingError> DeleteChannelMessageOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMessagingError> DeleteChannelModeratorOutcome;
         typedef Aws::Utils::Outcome<DescribeChannelResult, ChimeSDKMessagingError> DescribeChannelOutcome;
         typedef Aws::Utils::Outcome<DescribeChannelBanResult, ChimeSDKMessagingError> DescribeChannelBanOutcome;
+        typedef Aws::Utils::Outcome<DescribeChannelFlowResult, ChimeSDKMessagingError> DescribeChannelFlowOutcome;
         typedef Aws::Utils::Outcome<DescribeChannelMembershipResult, ChimeSDKMessagingError> DescribeChannelMembershipOutcome;
         typedef Aws::Utils::Outcome<DescribeChannelMembershipForAppInstanceUserResult, ChimeSDKMessagingError> DescribeChannelMembershipForAppInstanceUserOutcome;
         typedef Aws::Utils::Outcome<DescribeChannelModeratedByAppInstanceUserResult, ChimeSDKMessagingError> DescribeChannelModeratedByAppInstanceUserOutcome;
         typedef Aws::Utils::Outcome<DescribeChannelModeratorResult, ChimeSDKMessagingError> DescribeChannelModeratorOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMessagingError> DisassociateChannelFlowOutcome;
         typedef Aws::Utils::Outcome<GetChannelMessageResult, ChimeSDKMessagingError> GetChannelMessageOutcome;
+        typedef Aws::Utils::Outcome<GetChannelMessageStatusResult, ChimeSDKMessagingError> GetChannelMessageStatusOutcome;
         typedef Aws::Utils::Outcome<GetMessagingSessionEndpointResult, ChimeSDKMessagingError> GetMessagingSessionEndpointOutcome;
         typedef Aws::Utils::Outcome<ListChannelBansResult, ChimeSDKMessagingError> ListChannelBansOutcome;
+        typedef Aws::Utils::Outcome<ListChannelFlowsResult, ChimeSDKMessagingError> ListChannelFlowsOutcome;
         typedef Aws::Utils::Outcome<ListChannelMembershipsResult, ChimeSDKMessagingError> ListChannelMembershipsOutcome;
         typedef Aws::Utils::Outcome<ListChannelMembershipsForAppInstanceUserResult, ChimeSDKMessagingError> ListChannelMembershipsForAppInstanceUserOutcome;
         typedef Aws::Utils::Outcome<ListChannelMessagesResult, ChimeSDKMessagingError> ListChannelMessagesOutcome;
         typedef Aws::Utils::Outcome<ListChannelModeratorsResult, ChimeSDKMessagingError> ListChannelModeratorsOutcome;
         typedef Aws::Utils::Outcome<ListChannelsResult, ChimeSDKMessagingError> ListChannelsOutcome;
+        typedef Aws::Utils::Outcome<ListChannelsAssociatedWithChannelFlowResult, ChimeSDKMessagingError> ListChannelsAssociatedWithChannelFlowOutcome;
         typedef Aws::Utils::Outcome<ListChannelsModeratedByAppInstanceUserResult, ChimeSDKMessagingError> ListChannelsModeratedByAppInstanceUserOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ChimeSDKMessagingError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<RedactChannelMessageResult, ChimeSDKMessagingError> RedactChannelMessageOutcome;
         typedef Aws::Utils::Outcome<SendChannelMessageResult, ChimeSDKMessagingError> SendChannelMessageOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMessagingError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMessagingError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateChannelResult, ChimeSDKMessagingError> UpdateChannelOutcome;
+        typedef Aws::Utils::Outcome<UpdateChannelFlowResult, ChimeSDKMessagingError> UpdateChannelFlowOutcome;
         typedef Aws::Utils::Outcome<UpdateChannelMessageResult, ChimeSDKMessagingError> UpdateChannelMessageOutcome;
         typedef Aws::Utils::Outcome<UpdateChannelReadMarkerResult, ChimeSDKMessagingError> UpdateChannelReadMarkerOutcome;
 
+        typedef std::future<AssociateChannelFlowOutcome> AssociateChannelFlowOutcomeCallable;
         typedef std::future<BatchCreateChannelMembershipOutcome> BatchCreateChannelMembershipOutcomeCallable;
+        typedef std::future<ChannelFlowCallbackOutcome> ChannelFlowCallbackOutcomeCallable;
         typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
         typedef std::future<CreateChannelBanOutcome> CreateChannelBanOutcomeCallable;
+        typedef std::future<CreateChannelFlowOutcome> CreateChannelFlowOutcomeCallable;
         typedef std::future<CreateChannelMembershipOutcome> CreateChannelMembershipOutcomeCallable;
         typedef std::future<CreateChannelModeratorOutcome> CreateChannelModeratorOutcomeCallable;
         typedef std::future<DeleteChannelOutcome> DeleteChannelOutcomeCallable;
         typedef std::future<DeleteChannelBanOutcome> DeleteChannelBanOutcomeCallable;
+        typedef std::future<DeleteChannelFlowOutcome> DeleteChannelFlowOutcomeCallable;
         typedef std::future<DeleteChannelMembershipOutcome> DeleteChannelMembershipOutcomeCallable;
         typedef std::future<DeleteChannelMessageOutcome> DeleteChannelMessageOutcomeCallable;
         typedef std::future<DeleteChannelModeratorOutcome> DeleteChannelModeratorOutcomeCallable;
         typedef std::future<DescribeChannelOutcome> DescribeChannelOutcomeCallable;
         typedef std::future<DescribeChannelBanOutcome> DescribeChannelBanOutcomeCallable;
+        typedef std::future<DescribeChannelFlowOutcome> DescribeChannelFlowOutcomeCallable;
         typedef std::future<DescribeChannelMembershipOutcome> DescribeChannelMembershipOutcomeCallable;
         typedef std::future<DescribeChannelMembershipForAppInstanceUserOutcome> DescribeChannelMembershipForAppInstanceUserOutcomeCallable;
         typedef std::future<DescribeChannelModeratedByAppInstanceUserOutcome> DescribeChannelModeratedByAppInstanceUserOutcomeCallable;
         typedef std::future<DescribeChannelModeratorOutcome> DescribeChannelModeratorOutcomeCallable;
+        typedef std::future<DisassociateChannelFlowOutcome> DisassociateChannelFlowOutcomeCallable;
         typedef std::future<GetChannelMessageOutcome> GetChannelMessageOutcomeCallable;
+        typedef std::future<GetChannelMessageStatusOutcome> GetChannelMessageStatusOutcomeCallable;
         typedef std::future<GetMessagingSessionEndpointOutcome> GetMessagingSessionEndpointOutcomeCallable;
         typedef std::future<ListChannelBansOutcome> ListChannelBansOutcomeCallable;
+        typedef std::future<ListChannelFlowsOutcome> ListChannelFlowsOutcomeCallable;
         typedef std::future<ListChannelMembershipsOutcome> ListChannelMembershipsOutcomeCallable;
         typedef std::future<ListChannelMembershipsForAppInstanceUserOutcome> ListChannelMembershipsForAppInstanceUserOutcomeCallable;
         typedef std::future<ListChannelMessagesOutcome> ListChannelMessagesOutcomeCallable;
         typedef std::future<ListChannelModeratorsOutcome> ListChannelModeratorsOutcomeCallable;
         typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
+        typedef std::future<ListChannelsAssociatedWithChannelFlowOutcome> ListChannelsAssociatedWithChannelFlowOutcomeCallable;
         typedef std::future<ListChannelsModeratedByAppInstanceUserOutcome> ListChannelsModeratedByAppInstanceUserOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<RedactChannelMessageOutcome> RedactChannelMessageOutcomeCallable;
         typedef std::future<SendChannelMessageOutcome> SendChannelMessageOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
+        typedef std::future<UpdateChannelFlowOutcome> UpdateChannelFlowOutcomeCallable;
         typedef std::future<UpdateChannelMessageOutcome> UpdateChannelMessageOutcomeCallable;
         typedef std::future<UpdateChannelReadMarkerOutcome> UpdateChannelReadMarkerOutcomeCallable;
 } // namespace Model
 
   class ChimeSDKMessagingClient;
 
+    typedef std::function<void(const ChimeSDKMessagingClient*, const Model::AssociateChannelFlowRequest&, const Model::AssociateChannelFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateChannelFlowResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::BatchCreateChannelMembershipRequest&, const Model::BatchCreateChannelMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchCreateChannelMembershipResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ChannelFlowCallbackRequest&, const Model::ChannelFlowCallbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChannelFlowCallbackResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::CreateChannelRequest&, const Model::CreateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::CreateChannelBanRequest&, const Model::CreateChannelBanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelBanResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMessagingClient*, const Model::CreateChannelFlowRequest&, const Model::CreateChannelFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelFlowResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::CreateChannelMembershipRequest&, const Model::CreateChannelMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelMembershipResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::CreateChannelModeratorRequest&, const Model::CreateChannelModeratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelModeratorResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DeleteChannelRequest&, const Model::DeleteChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DeleteChannelBanRequest&, const Model::DeleteChannelBanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelBanResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DeleteChannelFlowRequest&, const Model::DeleteChannelFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelFlowResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DeleteChannelMembershipRequest&, const Model::DeleteChannelMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelMembershipResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DeleteChannelMessageRequest&, const Model::DeleteChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelMessageResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DeleteChannelModeratorRequest&, const Model::DeleteChannelModeratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelModeratorResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DescribeChannelRequest&, const Model::DescribeChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChannelResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DescribeChannelBanRequest&, const Model::DescribeChannelBanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChannelBanResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DescribeChannelFlowRequest&, const Model::DescribeChannelFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChannelFlowResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DescribeChannelMembershipRequest&, const Model::DescribeChannelMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChannelMembershipResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DescribeChannelMembershipForAppInstanceUserRequest&, const Model::DescribeChannelMembershipForAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChannelMembershipForAppInstanceUserResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DescribeChannelModeratedByAppInstanceUserRequest&, const Model::DescribeChannelModeratedByAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChannelModeratedByAppInstanceUserResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DescribeChannelModeratorRequest&, const Model::DescribeChannelModeratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChannelModeratorResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DisassociateChannelFlowRequest&, const Model::DisassociateChannelFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateChannelFlowResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::GetChannelMessageRequest&, const Model::GetChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChannelMessageResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMessagingClient*, const Model::GetChannelMessageStatusRequest&, const Model::GetChannelMessageStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChannelMessageStatusResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::GetMessagingSessionEndpointRequest&, const Model::GetMessagingSessionEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMessagingSessionEndpointResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListChannelBansRequest&, const Model::ListChannelBansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelBansResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListChannelFlowsRequest&, const Model::ListChannelFlowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelFlowsResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListChannelMembershipsRequest&, const Model::ListChannelMembershipsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelMembershipsResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListChannelMembershipsForAppInstanceUserRequest&, const Model::ListChannelMembershipsForAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelMembershipsForAppInstanceUserResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListChannelMessagesRequest&, const Model::ListChannelMessagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelMessagesResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListChannelModeratorsRequest&, const Model::ListChannelModeratorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelModeratorsResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListChannelsAssociatedWithChannelFlowRequest&, const Model::ListChannelsAssociatedWithChannelFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsAssociatedWithChannelFlowResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListChannelsModeratedByAppInstanceUserRequest&, const Model::ListChannelsModeratedByAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsModeratedByAppInstanceUserResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::RedactChannelMessageRequest&, const Model::RedactChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RedactChannelMessageResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::SendChannelMessageRequest&, const Model::SendChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendChannelMessageResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMessagingClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMessagingClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::UpdateChannelRequest&, const Model::UpdateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMessagingClient*, const Model::UpdateChannelFlowRequest&, const Model::UpdateChannelFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelFlowResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::UpdateChannelMessageRequest&, const Model::UpdateChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelMessageResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::UpdateChannelReadMarkerRequest&, const Model::UpdateChannelReadMarkerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelReadMarkerResponseReceivedHandler;
 
@@ -239,6 +299,49 @@ namespace Model
 
 
         /**
+         * <p>Associates a channel flow with a channel. Once associated, all messages to
+         * that channel go through channel flow processors. To stop processing, use the
+         * <code>DisassociateChannelFlow</code> API.</p>  <p>Only administrators or
+         * channel moderators can associate a channel flow. The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/AssociateChannelFlow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateChannelFlowOutcome AssociateChannelFlow(const Model::AssociateChannelFlowRequest& request) const;
+
+        /**
+         * <p>Associates a channel flow with a channel. Once associated, all messages to
+         * that channel go through channel flow processors. To stop processing, use the
+         * <code>DisassociateChannelFlow</code> API.</p>  <p>Only administrators or
+         * channel moderators can associate a channel flow. The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/AssociateChannelFlow">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateChannelFlowOutcomeCallable AssociateChannelFlowCallable(const Model::AssociateChannelFlowRequest& request) const;
+
+        /**
+         * <p>Associates a channel flow with a channel. Once associated, all messages to
+         * that channel go through channel flow processors. To stop processing, use the
+         * <code>DisassociateChannelFlow</code> API.</p>  <p>Only administrators or
+         * channel moderators can associate a channel flow. The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/AssociateChannelFlow">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateChannelFlowAsync(const Model::AssociateChannelFlowRequest& request, const AssociateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds a specified number of users to a channel. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/BatchCreateChannelMembership">AWS
          * API Reference</a></p>
@@ -262,6 +365,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchCreateChannelMembershipAsync(const Model::BatchCreateChannelMembershipRequest& request, const BatchCreateChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Calls back Chime SDK Messaging with a processing response message. This
+         * should be invoked from the processor Lambda. This is a developer API.</p> <p>You
+         * can return one of the following processing responses:</p> <ul> <li> <p>Update
+         * message content or metadata</p> </li> <li> <p>Deny a message</p> </li> <li>
+         * <p>Make no changes to the message</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ChannelFlowCallback">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ChannelFlowCallbackOutcome ChannelFlowCallback(const Model::ChannelFlowCallbackRequest& request) const;
+
+        /**
+         * <p>Calls back Chime SDK Messaging with a processing response message. This
+         * should be invoked from the processor Lambda. This is a developer API.</p> <p>You
+         * can return one of the following processing responses:</p> <ul> <li> <p>Update
+         * message content or metadata</p> </li> <li> <p>Deny a message</p> </li> <li>
+         * <p>Make no changes to the message</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ChannelFlowCallback">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ChannelFlowCallbackOutcomeCallable ChannelFlowCallbackCallable(const Model::ChannelFlowCallbackRequest& request) const;
+
+        /**
+         * <p>Calls back Chime SDK Messaging with a processing response message. This
+         * should be invoked from the processor Lambda. This is a developer API.</p> <p>You
+         * can return one of the following processing responses:</p> <ul> <li> <p>Update
+         * message content or metadata</p> </li> <li> <p>Deny a message</p> </li> <li>
+         * <p>Make no changes to the message</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ChannelFlowCallback">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ChannelFlowCallbackAsync(const Model::ChannelFlowCallbackRequest& request, const ChannelFlowCallbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a channel to which you can add users and send messages.</p> <p>
@@ -345,6 +485,64 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateChannelBanAsync(const Model::CreateChannelBanRequest& request, const CreateChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a channel flow, a container for processors. Processors are AWS Lambda
+         * functions that perform actions on chat messages, such as stripping out
+         * profanity. You can associate channel flows with channels, and the processors in
+         * the channel flow then take action on all messages sent to that channel. This is
+         * a developer API.</p> <p>Channel flows process the following items:</p> <ol> <li>
+         * <p>New and updated messages</p> </li> <li> <p>Persistent and non-persistent
+         * messages</p> </li> <li> <p>The Standard message type</p> </li> </ol> 
+         * <p>Channel flows don't process Control or System messages. For more information
+         * about the message types provided by Chime SDK Messaging, refer to <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message
+         * types</a> in the <i>Amazon Chime developer guide</i>.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/CreateChannelFlow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateChannelFlowOutcome CreateChannelFlow(const Model::CreateChannelFlowRequest& request) const;
+
+        /**
+         * <p>Creates a channel flow, a container for processors. Processors are AWS Lambda
+         * functions that perform actions on chat messages, such as stripping out
+         * profanity. You can associate channel flows with channels, and the processors in
+         * the channel flow then take action on all messages sent to that channel. This is
+         * a developer API.</p> <p>Channel flows process the following items:</p> <ol> <li>
+         * <p>New and updated messages</p> </li> <li> <p>Persistent and non-persistent
+         * messages</p> </li> <li> <p>The Standard message type</p> </li> </ol> 
+         * <p>Channel flows don't process Control or System messages. For more information
+         * about the message types provided by Chime SDK Messaging, refer to <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message
+         * types</a> in the <i>Amazon Chime developer guide</i>.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/CreateChannelFlow">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateChannelFlowOutcomeCallable CreateChannelFlowCallable(const Model::CreateChannelFlowRequest& request) const;
+
+        /**
+         * <p>Creates a channel flow, a container for processors. Processors are AWS Lambda
+         * functions that perform actions on chat messages, such as stripping out
+         * profanity. You can associate channel flows with channels, and the processors in
+         * the channel flow then take action on all messages sent to that channel. This is
+         * a developer API.</p> <p>Channel flows process the following items:</p> <ol> <li>
+         * <p>New and updated messages</p> </li> <li> <p>Persistent and non-persistent
+         * messages</p> </li> <li> <p>The Standard message type</p> </li> </ol> 
+         * <p>Channel flows don't process Control or System messages. For more information
+         * about the message types provided by Chime SDK Messaging, refer to <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message
+         * types</a> in the <i>Amazon Chime developer guide</i>.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/CreateChannelFlow">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateChannelFlowAsync(const Model::CreateChannelFlowRequest& request, const CreateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a user to a channel. The <code>InvitedBy</code> response field is
@@ -517,6 +715,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteChannelBanAsync(const Model::DeleteChannelBanRequest& request, const DeleteChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a channel flow, an irreversible process. This is a developer API.</p>
+         *  <p> This API works only when the channel flow is not associated with any
+         * channel. To get a list of all channels that a channel flow is associated with,
+         * use the <code>ListChannelsAssociatedWithChannelFlow</code> API. Use the
+         * <code>DisassociateChannelFlow</code> API to disassociate a channel flow from all
+         * channels. </p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DeleteChannelFlow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteChannelFlowOutcome DeleteChannelFlow(const Model::DeleteChannelFlowRequest& request) const;
+
+        /**
+         * <p>Deletes a channel flow, an irreversible process. This is a developer API.</p>
+         *  <p> This API works only when the channel flow is not associated with any
+         * channel. To get a list of all channels that a channel flow is associated with,
+         * use the <code>ListChannelsAssociatedWithChannelFlow</code> API. Use the
+         * <code>DisassociateChannelFlow</code> API to disassociate a channel flow from all
+         * channels. </p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DeleteChannelFlow">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteChannelFlowOutcomeCallable DeleteChannelFlowCallable(const Model::DeleteChannelFlowRequest& request) const;
+
+        /**
+         * <p>Deletes a channel flow, an irreversible process. This is a developer API.</p>
+         *  <p> This API works only when the channel flow is not associated with any
+         * channel. To get a list of all channels that a channel flow is associated with,
+         * use the <code>ListChannelsAssociatedWithChannelFlow</code> API. Use the
+         * <code>DisassociateChannelFlow</code> API to disassociate a channel flow from all
+         * channels. </p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DeleteChannelFlow">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteChannelFlowAsync(const Model::DeleteChannelFlowRequest& request, const DeleteChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a member from a channel.</p>  <p>The
@@ -698,6 +936,34 @@ namespace Model
         virtual void DescribeChannelBanAsync(const Model::DescribeChannelBanRequest& request, const DescribeChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the full details of a channel flow in an Amazon Chime
+         * <code>AppInstance</code>. This is a developer API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DescribeChannelFlow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeChannelFlowOutcome DescribeChannelFlow(const Model::DescribeChannelFlowRequest& request) const;
+
+        /**
+         * <p>Returns the full details of a channel flow in an Amazon Chime
+         * <code>AppInstance</code>. This is a developer API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DescribeChannelFlow">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeChannelFlowOutcomeCallable DescribeChannelFlowCallable(const Model::DescribeChannelFlowRequest& request) const;
+
+        /**
+         * <p>Returns the full details of a channel flow in an Amazon Chime
+         * <code>AppInstance</code>. This is a developer API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DescribeChannelFlow">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeChannelFlowAsync(const Model::DescribeChannelFlowRequest& request, const DescribeChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the full details of a user's channel membership.</p>  <p>The
          * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
          * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
@@ -840,6 +1106,46 @@ namespace Model
         virtual void DescribeChannelModeratorAsync(const Model::DescribeChannelModeratorRequest& request, const DescribeChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disassociates a channel flow from all its channels. Once disassociated, all
+         * messages to that channel stop going through the channel flow processor.</p>
+         *  <p>Only administrators or channel moderators can disassociate a channel
+         * flow. The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DisassociateChannelFlow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateChannelFlowOutcome DisassociateChannelFlow(const Model::DisassociateChannelFlowRequest& request) const;
+
+        /**
+         * <p>Disassociates a channel flow from all its channels. Once disassociated, all
+         * messages to that channel stop going through the channel flow processor.</p>
+         *  <p>Only administrators or channel moderators can disassociate a channel
+         * flow. The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DisassociateChannelFlow">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateChannelFlowOutcomeCallable DisassociateChannelFlowCallable(const Model::DisassociateChannelFlowRequest& request) const;
+
+        /**
+         * <p>Disassociates a channel flow from all its channels. Once disassociated, all
+         * messages to that channel stop going through the channel flow processor.</p>
+         *  <p>Only administrators or channel moderators can disassociate a channel
+         * flow. The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DisassociateChannelFlow">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateChannelFlowAsync(const Model::DisassociateChannelFlowRequest& request, const DisassociateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets the full details of a channel message.</p>  <p>The
          * x-amz-chime-bearer request header is mandatory. Use the
          * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
@@ -872,6 +1178,70 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetChannelMessageAsync(const Model::GetChannelMessageRequest& request, const GetChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets message status for a specified <code>messageId</code>. Use this API to
+         * determine the intermediate status of messages going through channel flow
+         * processing. The API provides an alternative to retrieving message status if the
+         * event was not received because a client wasn't connected to a websocket. </p>
+         * <p>Messages can have any one of these statuses.</p> <dl> <dt>SENT</dt> <dd>
+         * <p>Message processed successfully</p> </dd> <dt>PENDING</dt> <dd> <p>Ongoing
+         * processing</p> </dd> <dt>FAILED</dt> <dd> <p>Processing failed</p> </dd>
+         * <dt>DENIED</dt> <dd> <p>Messasge denied by the processor</p> </dd> </dl> 
+         * <ul> <li> <p>This API does not return statuses for denied messages, because we
+         * don't store them once the processor denies them. </p> </li> <li> <p>Only the
+         * message sender can invoke this API.</p> </li> <li> <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetChannelMessageStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetChannelMessageStatusOutcome GetChannelMessageStatus(const Model::GetChannelMessageStatusRequest& request) const;
+
+        /**
+         * <p>Gets message status for a specified <code>messageId</code>. Use this API to
+         * determine the intermediate status of messages going through channel flow
+         * processing. The API provides an alternative to retrieving message status if the
+         * event was not received because a client wasn't connected to a websocket. </p>
+         * <p>Messages can have any one of these statuses.</p> <dl> <dt>SENT</dt> <dd>
+         * <p>Message processed successfully</p> </dd> <dt>PENDING</dt> <dd> <p>Ongoing
+         * processing</p> </dd> <dt>FAILED</dt> <dd> <p>Processing failed</p> </dd>
+         * <dt>DENIED</dt> <dd> <p>Messasge denied by the processor</p> </dd> </dl> 
+         * <ul> <li> <p>This API does not return statuses for denied messages, because we
+         * don't store them once the processor denies them. </p> </li> <li> <p>Only the
+         * message sender can invoke this API.</p> </li> <li> <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetChannelMessageStatus">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetChannelMessageStatusOutcomeCallable GetChannelMessageStatusCallable(const Model::GetChannelMessageStatusRequest& request) const;
+
+        /**
+         * <p>Gets message status for a specified <code>messageId</code>. Use this API to
+         * determine the intermediate status of messages going through channel flow
+         * processing. The API provides an alternative to retrieving message status if the
+         * event was not received because a client wasn't connected to a websocket. </p>
+         * <p>Messages can have any one of these statuses.</p> <dl> <dt>SENT</dt> <dd>
+         * <p>Message processed successfully</p> </dd> <dt>PENDING</dt> <dd> <p>Ongoing
+         * processing</p> </dd> <dt>FAILED</dt> <dd> <p>Processing failed</p> </dd>
+         * <dt>DENIED</dt> <dd> <p>Messasge denied by the processor</p> </dd> </dl> 
+         * <ul> <li> <p>This API does not return statuses for denied messages, because we
+         * don't store them once the processor denies them. </p> </li> <li> <p>Only the
+         * message sender can invoke this API.</p> </li> <li> <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetChannelMessageStatus">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetChannelMessageStatusAsync(const Model::GetChannelMessageStatusRequest& request, const GetChannelMessageStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The details of the endpoint for the messaging session.</p><p><h3>See
@@ -934,6 +1304,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListChannelBansAsync(const Model::ListChannelBansRequest& request, const ListChannelBansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a paginated lists of all the channel flows created under a single
+         * Chime. This is a developer API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelFlows">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListChannelFlowsOutcome ListChannelFlows(const Model::ListChannelFlowsRequest& request) const;
+
+        /**
+         * <p>Returns a paginated lists of all the channel flows created under a single
+         * Chime. This is a developer API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelFlows">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListChannelFlowsOutcomeCallable ListChannelFlowsCallable(const Model::ListChannelFlowsRequest& request) const;
+
+        /**
+         * <p>Returns a paginated lists of all the channel flows created under a single
+         * Chime. This is a developer API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelFlows">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListChannelFlowsAsync(const Model::ListChannelFlowsRequest& request, const ListChannelFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all channel memberships in a channel.</p>  <p>The
@@ -1139,6 +1537,40 @@ namespace Model
         virtual void ListChannelsAsync(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists all channels associated with a specified channel flow. You can
+         * associate a channel flow with multiple channels, but you can only associate a
+         * channel with one channel flow. This is a developer API.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelsAssociatedWithChannelFlow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListChannelsAssociatedWithChannelFlowOutcome ListChannelsAssociatedWithChannelFlow(const Model::ListChannelsAssociatedWithChannelFlowRequest& request) const;
+
+        /**
+         * <p>Lists all channels associated with a specified channel flow. You can
+         * associate a channel flow with multiple channels, but you can only associate a
+         * channel with one channel flow. This is a developer API.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelsAssociatedWithChannelFlow">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListChannelsAssociatedWithChannelFlowOutcomeCallable ListChannelsAssociatedWithChannelFlowCallable(const Model::ListChannelsAssociatedWithChannelFlowRequest& request) const;
+
+        /**
+         * <p>Lists all channels associated with a specified channel flow. You can
+         * associate a channel flow with multiple channels, but you can only associate a
+         * channel with one channel flow. This is a developer API.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelsAssociatedWithChannelFlow">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListChannelsAssociatedWithChannelFlowAsync(const Model::ListChannelsAssociatedWithChannelFlowRequest& request, const ListChannelsAssociatedWithChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>A list of the channels moderated by an <code>AppInstanceUser</code>.</p>
          *  <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use
          * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
@@ -1171,6 +1603,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListChannelsModeratedByAppInstanceUserAsync(const Model::ListChannelsModeratedByAppInstanceUserRequest& request, const ListChannelsModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the tags applied to an Amazon Chime SDK messaging
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists the tags applied to an Amazon Chime SDK messaging
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists the tags applied to an Amazon Chime SDK messaging
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Redacts message content, but not metadata. The message exists in the back
@@ -1250,6 +1710,62 @@ namespace Model
         virtual void SendChannelMessageAsync(const Model::SendChannelMessageRequest& request, const SendChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Applies the specified tags to the specified Amazon Chime SDK messaging
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Applies the specified tags to the specified Amazon Chime SDK messaging
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Applies the specified tags to the specified Amazon Chime SDK messaging
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes the specified tags from the specified Amazon Chime SDK messaging
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes the specified tags from the specified Amazon Chime SDK messaging
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes the specified tags from the specified Amazon Chime SDK messaging
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Update a channel's attributes.</p> <p> <b>Restriction</b>: You can't change a
          * channel's privacy. </p>  <p>The <code>x-amz-chime-bearer</code> request
          * header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that
@@ -1285,6 +1801,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateChannelAsync(const Model::UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates channel flow attributes. This is a developer API.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/UpdateChannelFlow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateChannelFlowOutcome UpdateChannelFlow(const Model::UpdateChannelFlowRequest& request) const;
+
+        /**
+         * <p>Updates channel flow attributes. This is a developer API.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/UpdateChannelFlow">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateChannelFlowOutcomeCallable UpdateChannelFlowCallable(const Model::UpdateChannelFlowRequest& request) const;
+
+        /**
+         * <p>Updates channel flow attributes. This is a developer API.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/UpdateChannelFlow">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateChannelFlowAsync(const Model::UpdateChannelFlowRequest& request, const UpdateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the content of a message.</p>  <p>The
@@ -1358,34 +1902,47 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void AssociateChannelFlowAsyncHelper(const Model::AssociateChannelFlowRequest& request, const AssociateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchCreateChannelMembershipAsyncHelper(const Model::BatchCreateChannelMembershipRequest& request, const BatchCreateChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ChannelFlowCallbackAsyncHelper(const Model::ChannelFlowCallbackRequest& request, const ChannelFlowCallbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateChannelAsyncHelper(const Model::CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateChannelBanAsyncHelper(const Model::CreateChannelBanRequest& request, const CreateChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateChannelFlowAsyncHelper(const Model::CreateChannelFlowRequest& request, const CreateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateChannelMembershipAsyncHelper(const Model::CreateChannelMembershipRequest& request, const CreateChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateChannelModeratorAsyncHelper(const Model::CreateChannelModeratorRequest& request, const CreateChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteChannelAsyncHelper(const Model::DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteChannelBanAsyncHelper(const Model::DeleteChannelBanRequest& request, const DeleteChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteChannelFlowAsyncHelper(const Model::DeleteChannelFlowRequest& request, const DeleteChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteChannelMembershipAsyncHelper(const Model::DeleteChannelMembershipRequest& request, const DeleteChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteChannelMessageAsyncHelper(const Model::DeleteChannelMessageRequest& request, const DeleteChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteChannelModeratorAsyncHelper(const Model::DeleteChannelModeratorRequest& request, const DeleteChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeChannelAsyncHelper(const Model::DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeChannelBanAsyncHelper(const Model::DescribeChannelBanRequest& request, const DescribeChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeChannelFlowAsyncHelper(const Model::DescribeChannelFlowRequest& request, const DescribeChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeChannelMembershipAsyncHelper(const Model::DescribeChannelMembershipRequest& request, const DescribeChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeChannelMembershipForAppInstanceUserAsyncHelper(const Model::DescribeChannelMembershipForAppInstanceUserRequest& request, const DescribeChannelMembershipForAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeChannelModeratedByAppInstanceUserAsyncHelper(const Model::DescribeChannelModeratedByAppInstanceUserRequest& request, const DescribeChannelModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeChannelModeratorAsyncHelper(const Model::DescribeChannelModeratorRequest& request, const DescribeChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateChannelFlowAsyncHelper(const Model::DisassociateChannelFlowRequest& request, const DisassociateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetChannelMessageAsyncHelper(const Model::GetChannelMessageRequest& request, const GetChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetChannelMessageStatusAsyncHelper(const Model::GetChannelMessageStatusRequest& request, const GetChannelMessageStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMessagingSessionEndpointAsyncHelper(const Model::GetMessagingSessionEndpointRequest& request, const GetMessagingSessionEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListChannelBansAsyncHelper(const Model::ListChannelBansRequest& request, const ListChannelBansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListChannelFlowsAsyncHelper(const Model::ListChannelFlowsRequest& request, const ListChannelFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListChannelMembershipsAsyncHelper(const Model::ListChannelMembershipsRequest& request, const ListChannelMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListChannelMembershipsForAppInstanceUserAsyncHelper(const Model::ListChannelMembershipsForAppInstanceUserRequest& request, const ListChannelMembershipsForAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListChannelMessagesAsyncHelper(const Model::ListChannelMessagesRequest& request, const ListChannelMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListChannelModeratorsAsyncHelper(const Model::ListChannelModeratorsRequest& request, const ListChannelModeratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListChannelsAsyncHelper(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListChannelsAssociatedWithChannelFlowAsyncHelper(const Model::ListChannelsAssociatedWithChannelFlowRequest& request, const ListChannelsAssociatedWithChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListChannelsModeratedByAppInstanceUserAsyncHelper(const Model::ListChannelsModeratedByAppInstanceUserRequest& request, const ListChannelsModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RedactChannelMessageAsyncHelper(const Model::RedactChannelMessageRequest& request, const RedactChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendChannelMessageAsyncHelper(const Model::SendChannelMessageRequest& request, const SendChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateChannelAsyncHelper(const Model::UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateChannelFlowAsyncHelper(const Model::UpdateChannelFlowRequest& request, const UpdateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateChannelMessageAsyncHelper(const Model::UpdateChannelMessageRequest& request, const UpdateChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateChannelReadMarkerAsyncHelper(const Model::UpdateChannelReadMarkerRequest& request, const UpdateChannelReadMarkerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

@@ -29,7 +29,8 @@ ChannelMessageSummary::ChannelMessageSummary() :
     m_lastEditedTimestampHasBeenSet(false),
     m_senderHasBeenSet(false),
     m_redacted(false),
-    m_redactedHasBeenSet(false)
+    m_redactedHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ ChannelMessageSummary::ChannelMessageSummary(JsonView jsonValue) :
     m_lastEditedTimestampHasBeenSet(false),
     m_senderHasBeenSet(false),
     m_redacted(false),
-    m_redactedHasBeenSet(false)
+    m_redactedHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -114,6 +116,13 @@ ChannelMessageSummary& ChannelMessageSummary::operator =(JsonView jsonValue)
     m_redactedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = jsonValue.GetObject("Status");
+
+    m_statusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -168,6 +177,12 @@ JsonValue ChannelMessageSummary::Jsonize() const
   if(m_redactedHasBeenSet)
   {
    payload.WithBool("Redacted", m_redacted);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithObject("Status", m_status.Jsonize());
 
   }
 

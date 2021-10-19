@@ -21,14 +21,16 @@ namespace Model
 ExportRevisionsToS3ResponseDetails::ExportRevisionsToS3ResponseDetails() : 
     m_dataSetIdHasBeenSet(false),
     m_encryptionHasBeenSet(false),
-    m_revisionDestinationsHasBeenSet(false)
+    m_revisionDestinationsHasBeenSet(false),
+    m_eventActionArnHasBeenSet(false)
 {
 }
 
 ExportRevisionsToS3ResponseDetails::ExportRevisionsToS3ResponseDetails(JsonView jsonValue) : 
     m_dataSetIdHasBeenSet(false),
     m_encryptionHasBeenSet(false),
-    m_revisionDestinationsHasBeenSet(false)
+    m_revisionDestinationsHasBeenSet(false),
+    m_eventActionArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,13 @@ ExportRevisionsToS3ResponseDetails& ExportRevisionsToS3ResponseDetails::operator
     m_revisionDestinationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EventActionArn"))
+  {
+    m_eventActionArn = jsonValue.GetString("EventActionArn");
+
+    m_eventActionArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -86,6 +95,12 @@ JsonValue ExportRevisionsToS3ResponseDetails::Jsonize() const
      revisionDestinationsJsonList[revisionDestinationsIndex].AsObject(m_revisionDestinations[revisionDestinationsIndex].Jsonize());
    }
    payload.WithArray("RevisionDestinations", std::move(revisionDestinationsJsonList));
+
+  }
+
+  if(m_eventActionArnHasBeenSet)
+  {
+   payload.WithString("EventActionArn", m_eventActionArn);
 
   }
 

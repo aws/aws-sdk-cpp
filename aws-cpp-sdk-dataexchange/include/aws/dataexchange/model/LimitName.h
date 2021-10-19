@@ -24,13 +24,17 @@ namespace Model
     Assets_per_import_job_from_Amazon_S3,
     Asset_per_export_job_from_Amazon_S3,
     Asset_size_in_GB,
-    Concurrent_in_progress_jobs_to_import_assets_from_Amazon_S3,
-    Concurrent_in_progress_jobs_to_import_assets_from_a_signed_URL,
     Concurrent_in_progress_jobs_to_export_assets_to_Amazon_S3,
     Concurrent_in_progress_jobs_to_export_assets_to_a_signed_URL,
+    Concurrent_in_progress_jobs_to_import_assets_from_Amazon_S3,
+    Concurrent_in_progress_jobs_to_import_assets_from_a_signed_URL,
     Concurrent_in_progress_jobs_to_export_revisions_to_Amazon_S3,
     Event_actions_per_account,
-    Auto_export_event_actions_per_data_set
+    Auto_export_event_actions_per_data_set,
+    Amazon_Redshift_datashare_assets_per_import_job_from_Redshift,
+    Concurrent_in_progress_jobs_to_import_assets_from_Amazon_Redshift_datashares,
+    Revisions_per_Amazon_Redshift_datashare_data_set,
+    Amazon_Redshift_datashare_assets_per_revision
   };
 
 namespace LimitNameMapper

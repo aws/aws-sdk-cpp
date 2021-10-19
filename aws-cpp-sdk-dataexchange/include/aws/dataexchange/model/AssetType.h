@@ -16,7 +16,8 @@ namespace Model
   enum class AssetType
   {
     NOT_SET,
-    S3_SNAPSHOT
+    S3_SNAPSHOT,
+    REDSHIFT_DATA_SHARE
   };
 
 namespace AssetTypeMapper
