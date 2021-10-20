@@ -119,50 +119,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the account that owns the virtual private gateway or transit
-     * gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * gateway or transit gateway.</p>
      */
     inline const Aws::String& GetAssociatedGatewayOwnerAccount() const{ return m_associatedGatewayOwnerAccount; }
 
     /**
-     * <p>The ID of the account that owns the virtual private gateway or transit
-     * gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * gateway or transit gateway.</p>
      */
     inline bool AssociatedGatewayOwnerAccountHasBeenSet() const { return m_associatedGatewayOwnerAccountHasBeenSet; }
 
     /**
-     * <p>The ID of the account that owns the virtual private gateway or transit
-     * gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * gateway or transit gateway.</p>
      */
     inline void SetAssociatedGatewayOwnerAccount(const Aws::String& value) { m_associatedGatewayOwnerAccountHasBeenSet = true; m_associatedGatewayOwnerAccount = value; }
 
     /**
-     * <p>The ID of the account that owns the virtual private gateway or transit
-     * gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * gateway or transit gateway.</p>
      */
     inline void SetAssociatedGatewayOwnerAccount(Aws::String&& value) { m_associatedGatewayOwnerAccountHasBeenSet = true; m_associatedGatewayOwnerAccount = std::move(value); }
 
     /**
-     * <p>The ID of the account that owns the virtual private gateway or transit
-     * gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * gateway or transit gateway.</p>
      */
     inline void SetAssociatedGatewayOwnerAccount(const char* value) { m_associatedGatewayOwnerAccountHasBeenSet = true; m_associatedGatewayOwnerAccount.assign(value); }
 
     /**
-     * <p>The ID of the account that owns the virtual private gateway or transit
-     * gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * gateway or transit gateway.</p>
      */
     inline AcceptDirectConnectGatewayAssociationProposalRequest& WithAssociatedGatewayOwnerAccount(const Aws::String& value) { SetAssociatedGatewayOwnerAccount(value); return *this;}
 
     /**
-     * <p>The ID of the account that owns the virtual private gateway or transit
-     * gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * gateway or transit gateway.</p>
      */
     inline AcceptDirectConnectGatewayAssociationProposalRequest& WithAssociatedGatewayOwnerAccount(Aws::String&& value) { SetAssociatedGatewayOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the account that owns the virtual private gateway or transit
-     * gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * gateway or transit gateway.</p>
      */
     inline AcceptDirectConnectGatewayAssociationProposalRequest& WithAssociatedGatewayOwnerAccount(const char* value) { SetAssociatedGatewayOwnerAccount(value); return *this;}
 

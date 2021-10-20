@@ -30,6 +30,7 @@
 #include <aws/directconnect/model/AssociateMacSecKeyRequest.h>
 #include <aws/directconnect/model/AssociateVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/ConfirmConnectionRequest.h>
+#include <aws/directconnect/model/ConfirmCustomerAgreementRequest.h>
 #include <aws/directconnect/model/ConfirmPrivateVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/ConfirmPublicVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/ConfirmTransitVirtualInterfaceRequest.h>
@@ -60,6 +61,7 @@
 #include <aws/directconnect/model/DescribeInterconnectsRequest.h>
 #include <aws/directconnect/model/DescribeLagsRequest.h>
 #include <aws/directconnect/model/DescribeLoaRequest.h>
+#include <aws/directconnect/model/DescribeRouterConfigurationRequest.h>
 #include <aws/directconnect/model/DescribeTagsRequest.h>
 #include <aws/directconnect/model/DescribeVirtualInterfacesRequest.h>
 #include <aws/directconnect/model/DisassociateConnectionFromLagRequest.h>
@@ -70,6 +72,7 @@
 #include <aws/directconnect/model/TagResourceRequest.h>
 #include <aws/directconnect/model/UntagResourceRequest.h>
 #include <aws/directconnect/model/UpdateConnectionRequest.h>
+#include <aws/directconnect/model/UpdateDirectConnectGatewayRequest.h>
 #include <aws/directconnect/model/UpdateDirectConnectGatewayAssociationRequest.h>
 #include <aws/directconnect/model/UpdateLagRequest.h>
 #include <aws/directconnect/model/UpdateVirtualInterfaceAttributesRequest.h>
@@ -385,6 +388,30 @@ void DirectConnectClient::ConfirmConnectionAsync(const ConfirmConnectionRequest&
 void DirectConnectClient::ConfirmConnectionAsyncHelper(const ConfirmConnectionRequest& request, const ConfirmConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ConfirmConnection(request), context);
+}
+
+ConfirmCustomerAgreementOutcome DirectConnectClient::ConfirmCustomerAgreement(const ConfirmCustomerAgreementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ConfirmCustomerAgreementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ConfirmCustomerAgreementOutcomeCallable DirectConnectClient::ConfirmCustomerAgreementCallable(const ConfirmCustomerAgreementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ConfirmCustomerAgreementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ConfirmCustomerAgreement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::ConfirmCustomerAgreementAsync(const ConfirmCustomerAgreementRequest& request, const ConfirmCustomerAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ConfirmCustomerAgreementAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::ConfirmCustomerAgreementAsyncHelper(const ConfirmCustomerAgreementRequest& request, const ConfirmCustomerAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ConfirmCustomerAgreement(request), context);
 }
 
 ConfirmPrivateVirtualInterfaceOutcome DirectConnectClient::ConfirmPrivateVirtualInterface(const ConfirmPrivateVirtualInterfaceRequest& request) const
@@ -915,6 +942,31 @@ void DirectConnectClient::DescribeConnectionsAsyncHelper(const DescribeConnectio
   handler(this, request, DescribeConnections(request), context);
 }
 
+DescribeCustomerMetadataOutcome DirectConnectClient::DescribeCustomerMetadata() const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  return DescribeCustomerMetadataOutcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "DescribeCustomerMetadata"));
+}
+
+DescribeCustomerMetadataOutcomeCallable DirectConnectClient::DescribeCustomerMetadataCallable() const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeCustomerMetadataOutcome() > >(ALLOCATION_TAG, [this](){ return this->DescribeCustomerMetadata(); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::DescribeCustomerMetadataAsync(const DescribeCustomerMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, handler, context](){ this->DescribeCustomerMetadataAsyncHelper( handler, context ); } );
+}
+
+void DirectConnectClient::DescribeCustomerMetadataAsyncHelper(const DescribeCustomerMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, DescribeCustomerMetadata(), context);
+}
+
 DescribeDirectConnectGatewayAssociationProposalsOutcome DirectConnectClient::DescribeDirectConnectGatewayAssociationProposals(const DescribeDirectConnectGatewayAssociationProposalsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1130,6 +1182,30 @@ void DirectConnectClient::DescribeLocationsAsync(const DescribeLocationsResponse
 void DirectConnectClient::DescribeLocationsAsyncHelper(const DescribeLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, DescribeLocations(), context);
+}
+
+DescribeRouterConfigurationOutcome DirectConnectClient::DescribeRouterConfiguration(const DescribeRouterConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeRouterConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeRouterConfigurationOutcomeCallable DirectConnectClient::DescribeRouterConfigurationCallable(const DescribeRouterConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRouterConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRouterConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::DescribeRouterConfigurationAsync(const DescribeRouterConfigurationRequest& request, const DescribeRouterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeRouterConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::DescribeRouterConfigurationAsyncHelper(const DescribeRouterConfigurationRequest& request, const DescribeRouterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeRouterConfiguration(request), context);
 }
 
 DescribeTagsOutcome DirectConnectClient::DescribeTags(const DescribeTagsRequest& request) const
@@ -1395,6 +1471,30 @@ void DirectConnectClient::UpdateConnectionAsync(const UpdateConnectionRequest& r
 void DirectConnectClient::UpdateConnectionAsyncHelper(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateConnection(request), context);
+}
+
+UpdateDirectConnectGatewayOutcome DirectConnectClient::UpdateDirectConnectGateway(const UpdateDirectConnectGatewayRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateDirectConnectGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateDirectConnectGatewayOutcomeCallable DirectConnectClient::UpdateDirectConnectGatewayCallable(const UpdateDirectConnectGatewayRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDirectConnectGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDirectConnectGateway(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::UpdateDirectConnectGatewayAsync(const UpdateDirectConnectGatewayRequest& request, const UpdateDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateDirectConnectGatewayAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::UpdateDirectConnectGatewayAsyncHelper(const UpdateDirectConnectGatewayRequest& request, const UpdateDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateDirectConnectGateway(request), context);
 }
 
 UpdateDirectConnectGatewayAssociationOutcome DirectConnectClient::UpdateDirectConnectGatewayAssociation(const UpdateDirectConnectGatewayAssociationRequest& request) const

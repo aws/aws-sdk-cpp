@@ -21,6 +21,7 @@
 #include <aws/directconnect/model/AssociateMacSecKeyResult.h>
 #include <aws/directconnect/model/AssociateVirtualInterfaceResult.h>
 #include <aws/directconnect/model/ConfirmConnectionResult.h>
+#include <aws/directconnect/model/ConfirmCustomerAgreementResult.h>
 #include <aws/directconnect/model/ConfirmPrivateVirtualInterfaceResult.h>
 #include <aws/directconnect/model/ConfirmPublicVirtualInterfaceResult.h>
 #include <aws/directconnect/model/ConfirmTransitVirtualInterfaceResult.h>
@@ -43,6 +44,7 @@
 #include <aws/directconnect/model/DeleteLagResult.h>
 #include <aws/directconnect/model/DeleteVirtualInterfaceResult.h>
 #include <aws/directconnect/model/DescribeConnectionsResult.h>
+#include <aws/directconnect/model/DescribeCustomerMetadataResult.h>
 #include <aws/directconnect/model/DescribeDirectConnectGatewayAssociationProposalsResult.h>
 #include <aws/directconnect/model/DescribeDirectConnectGatewayAssociationsResult.h>
 #include <aws/directconnect/model/DescribeDirectConnectGatewayAttachmentsResult.h>
@@ -52,6 +54,7 @@
 #include <aws/directconnect/model/DescribeLagsResult.h>
 #include <aws/directconnect/model/DescribeLoaResult.h>
 #include <aws/directconnect/model/DescribeLocationsResult.h>
+#include <aws/directconnect/model/DescribeRouterConfigurationResult.h>
 #include <aws/directconnect/model/DescribeTagsResult.h>
 #include <aws/directconnect/model/DescribeVirtualGatewaysResult.h>
 #include <aws/directconnect/model/DescribeVirtualInterfacesResult.h>
@@ -63,6 +66,7 @@
 #include <aws/directconnect/model/TagResourceResult.h>
 #include <aws/directconnect/model/UntagResourceResult.h>
 #include <aws/directconnect/model/UpdateConnectionResult.h>
+#include <aws/directconnect/model/UpdateDirectConnectGatewayResult.h>
 #include <aws/directconnect/model/UpdateDirectConnectGatewayAssociationResult.h>
 #include <aws/directconnect/model/UpdateLagResult.h>
 #include <aws/directconnect/model/UpdateVirtualInterfaceAttributesResult.h>
@@ -115,6 +119,7 @@ namespace Model
         class AssociateMacSecKeyRequest;
         class AssociateVirtualInterfaceRequest;
         class ConfirmConnectionRequest;
+        class ConfirmCustomerAgreementRequest;
         class ConfirmPrivateVirtualInterfaceRequest;
         class ConfirmPublicVirtualInterfaceRequest;
         class ConfirmTransitVirtualInterfaceRequest;
@@ -145,6 +150,7 @@ namespace Model
         class DescribeInterconnectsRequest;
         class DescribeLagsRequest;
         class DescribeLoaRequest;
+        class DescribeRouterConfigurationRequest;
         class DescribeTagsRequest;
         class DescribeVirtualInterfacesRequest;
         class DisassociateConnectionFromLagRequest;
@@ -155,6 +161,7 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateConnectionRequest;
+        class UpdateDirectConnectGatewayRequest;
         class UpdateDirectConnectGatewayAssociationRequest;
         class UpdateLagRequest;
         class UpdateVirtualInterfaceAttributesRequest;
@@ -169,6 +176,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AssociateMacSecKeyResult, DirectConnectError> AssociateMacSecKeyOutcome;
         typedef Aws::Utils::Outcome<AssociateVirtualInterfaceResult, DirectConnectError> AssociateVirtualInterfaceOutcome;
         typedef Aws::Utils::Outcome<ConfirmConnectionResult, DirectConnectError> ConfirmConnectionOutcome;
+        typedef Aws::Utils::Outcome<ConfirmCustomerAgreementResult, DirectConnectError> ConfirmCustomerAgreementOutcome;
         typedef Aws::Utils::Outcome<ConfirmPrivateVirtualInterfaceResult, DirectConnectError> ConfirmPrivateVirtualInterfaceOutcome;
         typedef Aws::Utils::Outcome<ConfirmPublicVirtualInterfaceResult, DirectConnectError> ConfirmPublicVirtualInterfaceOutcome;
         typedef Aws::Utils::Outcome<ConfirmTransitVirtualInterfaceResult, DirectConnectError> ConfirmTransitVirtualInterfaceOutcome;
@@ -191,6 +199,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteLagResult, DirectConnectError> DeleteLagOutcome;
         typedef Aws::Utils::Outcome<DeleteVirtualInterfaceResult, DirectConnectError> DeleteVirtualInterfaceOutcome;
         typedef Aws::Utils::Outcome<DescribeConnectionsResult, DirectConnectError> DescribeConnectionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeCustomerMetadataResult, DirectConnectError> DescribeCustomerMetadataOutcome;
         typedef Aws::Utils::Outcome<DescribeDirectConnectGatewayAssociationProposalsResult, DirectConnectError> DescribeDirectConnectGatewayAssociationProposalsOutcome;
         typedef Aws::Utils::Outcome<DescribeDirectConnectGatewayAssociationsResult, DirectConnectError> DescribeDirectConnectGatewayAssociationsOutcome;
         typedef Aws::Utils::Outcome<DescribeDirectConnectGatewayAttachmentsResult, DirectConnectError> DescribeDirectConnectGatewayAttachmentsOutcome;
@@ -200,6 +209,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeLagsResult, DirectConnectError> DescribeLagsOutcome;
         typedef Aws::Utils::Outcome<DescribeLoaResult, DirectConnectError> DescribeLoaOutcome;
         typedef Aws::Utils::Outcome<DescribeLocationsResult, DirectConnectError> DescribeLocationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeRouterConfigurationResult, DirectConnectError> DescribeRouterConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeTagsResult, DirectConnectError> DescribeTagsOutcome;
         typedef Aws::Utils::Outcome<DescribeVirtualGatewaysResult, DirectConnectError> DescribeVirtualGatewaysOutcome;
         typedef Aws::Utils::Outcome<DescribeVirtualInterfacesResult, DirectConnectError> DescribeVirtualInterfacesOutcome;
@@ -211,6 +221,7 @@ namespace Model
         typedef Aws::Utils::Outcome<TagResourceResult, DirectConnectError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, DirectConnectError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateConnectionResult, DirectConnectError> UpdateConnectionOutcome;
+        typedef Aws::Utils::Outcome<UpdateDirectConnectGatewayResult, DirectConnectError> UpdateDirectConnectGatewayOutcome;
         typedef Aws::Utils::Outcome<UpdateDirectConnectGatewayAssociationResult, DirectConnectError> UpdateDirectConnectGatewayAssociationOutcome;
         typedef Aws::Utils::Outcome<UpdateLagResult, DirectConnectError> UpdateLagOutcome;
         typedef Aws::Utils::Outcome<UpdateVirtualInterfaceAttributesResult, DirectConnectError> UpdateVirtualInterfaceAttributesOutcome;
@@ -225,6 +236,7 @@ namespace Model
         typedef std::future<AssociateMacSecKeyOutcome> AssociateMacSecKeyOutcomeCallable;
         typedef std::future<AssociateVirtualInterfaceOutcome> AssociateVirtualInterfaceOutcomeCallable;
         typedef std::future<ConfirmConnectionOutcome> ConfirmConnectionOutcomeCallable;
+        typedef std::future<ConfirmCustomerAgreementOutcome> ConfirmCustomerAgreementOutcomeCallable;
         typedef std::future<ConfirmPrivateVirtualInterfaceOutcome> ConfirmPrivateVirtualInterfaceOutcomeCallable;
         typedef std::future<ConfirmPublicVirtualInterfaceOutcome> ConfirmPublicVirtualInterfaceOutcomeCallable;
         typedef std::future<ConfirmTransitVirtualInterfaceOutcome> ConfirmTransitVirtualInterfaceOutcomeCallable;
@@ -247,6 +259,7 @@ namespace Model
         typedef std::future<DeleteLagOutcome> DeleteLagOutcomeCallable;
         typedef std::future<DeleteVirtualInterfaceOutcome> DeleteVirtualInterfaceOutcomeCallable;
         typedef std::future<DescribeConnectionsOutcome> DescribeConnectionsOutcomeCallable;
+        typedef std::future<DescribeCustomerMetadataOutcome> DescribeCustomerMetadataOutcomeCallable;
         typedef std::future<DescribeDirectConnectGatewayAssociationProposalsOutcome> DescribeDirectConnectGatewayAssociationProposalsOutcomeCallable;
         typedef std::future<DescribeDirectConnectGatewayAssociationsOutcome> DescribeDirectConnectGatewayAssociationsOutcomeCallable;
         typedef std::future<DescribeDirectConnectGatewayAttachmentsOutcome> DescribeDirectConnectGatewayAttachmentsOutcomeCallable;
@@ -256,6 +269,7 @@ namespace Model
         typedef std::future<DescribeLagsOutcome> DescribeLagsOutcomeCallable;
         typedef std::future<DescribeLoaOutcome> DescribeLoaOutcomeCallable;
         typedef std::future<DescribeLocationsOutcome> DescribeLocationsOutcomeCallable;
+        typedef std::future<DescribeRouterConfigurationOutcome> DescribeRouterConfigurationOutcomeCallable;
         typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
         typedef std::future<DescribeVirtualGatewaysOutcome> DescribeVirtualGatewaysOutcomeCallable;
         typedef std::future<DescribeVirtualInterfacesOutcome> DescribeVirtualInterfacesOutcomeCallable;
@@ -267,6 +281,7 @@ namespace Model
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateConnectionOutcome> UpdateConnectionOutcomeCallable;
+        typedef std::future<UpdateDirectConnectGatewayOutcome> UpdateDirectConnectGatewayOutcomeCallable;
         typedef std::future<UpdateDirectConnectGatewayAssociationOutcome> UpdateDirectConnectGatewayAssociationOutcomeCallable;
         typedef std::future<UpdateLagOutcome> UpdateLagOutcomeCallable;
         typedef std::future<UpdateVirtualInterfaceAttributesOutcome> UpdateVirtualInterfaceAttributesOutcomeCallable;
@@ -284,6 +299,7 @@ namespace Model
     typedef std::function<void(const DirectConnectClient*, const Model::AssociateMacSecKeyRequest&, const Model::AssociateMacSecKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateMacSecKeyResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::AssociateVirtualInterfaceRequest&, const Model::AssociateVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateVirtualInterfaceResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::ConfirmConnectionRequest&, const Model::ConfirmConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmConnectionResponseReceivedHandler;
+    typedef std::function<void(const DirectConnectClient*, const Model::ConfirmCustomerAgreementRequest&, const Model::ConfirmCustomerAgreementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmCustomerAgreementResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::ConfirmPrivateVirtualInterfaceRequest&, const Model::ConfirmPrivateVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmPrivateVirtualInterfaceResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::ConfirmPublicVirtualInterfaceRequest&, const Model::ConfirmPublicVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmPublicVirtualInterfaceResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::ConfirmTransitVirtualInterfaceRequest&, const Model::ConfirmTransitVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmTransitVirtualInterfaceResponseReceivedHandler;
@@ -306,6 +322,7 @@ namespace Model
     typedef std::function<void(const DirectConnectClient*, const Model::DeleteLagRequest&, const Model::DeleteLagOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLagResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DeleteVirtualInterfaceRequest&, const Model::DeleteVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVirtualInterfaceResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DescribeConnectionsRequest&, const Model::DescribeConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectionsResponseReceivedHandler;
+    typedef std::function<void(const DirectConnectClient*, const Model::DescribeCustomerMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomerMetadataResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DescribeDirectConnectGatewayAssociationProposalsRequest&, const Model::DescribeDirectConnectGatewayAssociationProposalsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDirectConnectGatewayAssociationProposalsResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DescribeDirectConnectGatewayAssociationsRequest&, const Model::DescribeDirectConnectGatewayAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDirectConnectGatewayAssociationsResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DescribeDirectConnectGatewayAttachmentsRequest&, const Model::DescribeDirectConnectGatewayAttachmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDirectConnectGatewayAttachmentsResponseReceivedHandler;
@@ -315,6 +332,7 @@ namespace Model
     typedef std::function<void(const DirectConnectClient*, const Model::DescribeLagsRequest&, const Model::DescribeLagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLagsResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DescribeLoaRequest&, const Model::DescribeLoaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoaResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DescribeLocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocationsResponseReceivedHandler;
+    typedef std::function<void(const DirectConnectClient*, const Model::DescribeRouterConfigurationRequest&, const Model::DescribeRouterConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRouterConfigurationResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagsResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DescribeVirtualGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVirtualGatewaysResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DescribeVirtualInterfacesRequest&, const Model::DescribeVirtualInterfacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVirtualInterfacesResponseReceivedHandler;
@@ -326,6 +344,7 @@ namespace Model
     typedef std::function<void(const DirectConnectClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::UpdateConnectionRequest&, const Model::UpdateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectionResponseReceivedHandler;
+    typedef std::function<void(const DirectConnectClient*, const Model::UpdateDirectConnectGatewayRequest&, const Model::UpdateDirectConnectGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDirectConnectGatewayResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::UpdateDirectConnectGatewayAssociationRequest&, const Model::UpdateDirectConnectGatewayAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDirectConnectGatewayAssociationResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::UpdateLagRequest&, const Model::UpdateLagOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLagResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::UpdateVirtualInterfaceAttributesRequest&, const Model::UpdateVirtualInterfaceAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVirtualInterfaceAttributesResponseReceivedHandler;
@@ -334,12 +353,12 @@ namespace Model
    * <p>Direct Connect links your internal network to an Direct Connect location over
    * a standard Ethernet fiber-optic cable. One end of the cable is connected to your
    * router, the other to an Direct Connect router. With this connection in place,
-   * you can create virtual interfaces directly to the Cloud (for example, to Amazon
-   * EC2 and Amazon S3) and to Amazon VPC, bypassing Internet service providers in
-   * your network path. A connection provides access to all Regions except the China
-   * (Beijing) and (China) Ningxia Regions. Amazon Web Services resources in the
-   * China Regions can only be accessed through locations associated with those
-   * Regions.</p>
+   * you can create virtual interfaces directly to the Amazon Web Services Cloud (for
+   * example, to Amazon EC2 and Amazon S3) and to Amazon VPC, bypassing Internet
+   * service providers in your network path. A connection provides access to all
+   * Amazon Web Services Regions except the China (Beijing) and (China) Ningxia
+   * Regions. Amazon Web Services resources in the China Regions can only be accessed
+   * through locations associated with those Regions.</p>
    */
   class AWS_DIRECTCONNECT_API DirectConnectClient : public Aws::Client::AWSJsonClient
   {
@@ -443,22 +462,22 @@ namespace Model
         virtual void AllocateHostedConnectionAsync(const Model::AllocateHostedConnectionRequest& request, const AllocateHostedConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provisions a private virtual interface to be owned by the specified
-         * account.</p> <p>Virtual interfaces created using this action must be confirmed
-         * by the owner using <a>ConfirmPrivateVirtualInterface</a>. Until then, the
-         * virtual interface is in the <code>Confirming</code> state and is not available
-         * to handle traffic.</p><p><h3>See Also:</h3>   <a
+         * <p>Provisions a private virtual interface to be owned by the specified Amazon
+         * Web Services account.</p> <p>Virtual interfaces created using this action must
+         * be confirmed by the owner using <a>ConfirmPrivateVirtualInterface</a>. Until
+         * then, the virtual interface is in the <code>Confirming</code> state and is not
+         * available to handle traffic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface">AWS
          * API Reference</a></p>
          */
         virtual Model::AllocatePrivateVirtualInterfaceOutcome AllocatePrivateVirtualInterface(const Model::AllocatePrivateVirtualInterfaceRequest& request) const;
 
         /**
-         * <p>Provisions a private virtual interface to be owned by the specified
-         * account.</p> <p>Virtual interfaces created using this action must be confirmed
-         * by the owner using <a>ConfirmPrivateVirtualInterface</a>. Until then, the
-         * virtual interface is in the <code>Confirming</code> state and is not available
-         * to handle traffic.</p><p><h3>See Also:</h3>   <a
+         * <p>Provisions a private virtual interface to be owned by the specified Amazon
+         * Web Services account.</p> <p>Virtual interfaces created using this action must
+         * be confirmed by the owner using <a>ConfirmPrivateVirtualInterface</a>. Until
+         * then, the virtual interface is in the <code>Confirming</code> state and is not
+         * available to handle traffic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -467,11 +486,11 @@ namespace Model
         virtual Model::AllocatePrivateVirtualInterfaceOutcomeCallable AllocatePrivateVirtualInterfaceCallable(const Model::AllocatePrivateVirtualInterfaceRequest& request) const;
 
         /**
-         * <p>Provisions a private virtual interface to be owned by the specified
-         * account.</p> <p>Virtual interfaces created using this action must be confirmed
-         * by the owner using <a>ConfirmPrivateVirtualInterface</a>. Until then, the
-         * virtual interface is in the <code>Confirming</code> state and is not available
-         * to handle traffic.</p><p><h3>See Also:</h3>   <a
+         * <p>Provisions a private virtual interface to be owned by the specified Amazon
+         * Web Services account.</p> <p>Virtual interfaces created using this action must
+         * be confirmed by the owner using <a>ConfirmPrivateVirtualInterface</a>. Until
+         * then, the virtual interface is in the <code>Confirming</code> state and is not
+         * available to handle traffic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -480,32 +499,32 @@ namespace Model
         virtual void AllocatePrivateVirtualInterfaceAsync(const Model::AllocatePrivateVirtualInterfaceRequest& request, const AllocatePrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provisions a public virtual interface to be owned by the specified
-         * account.</p> <p>The owner of a connection calls this function to provision a
-         * public virtual interface to be owned by the specified account.</p> <p>Virtual
-         * interfaces created using this function must be confirmed by the owner using
-         * <a>ConfirmPublicVirtualInterface</a>. Until this step has been completed, the
-         * virtual interface is in the <code>confirming</code> state and is not available
-         * to handle traffic.</p> <p>When creating an IPv6 public virtual interface, omit
-         * the Amazon address and customer address. IPv6 addresses are automatically
-         * assigned from the Amazon pool of IPv6 addresses; you cannot specify custom IPv6
-         * addresses.</p><p><h3>See Also:</h3>   <a
+         * <p>Provisions a public virtual interface to be owned by the specified Amazon Web
+         * Services account.</p> <p>The owner of a connection calls this function to
+         * provision a public virtual interface to be owned by the specified Amazon Web
+         * Services account.</p> <p>Virtual interfaces created using this function must be
+         * confirmed by the owner using <a>ConfirmPublicVirtualInterface</a>. Until this
+         * step has been completed, the virtual interface is in the <code>confirming</code>
+         * state and is not available to handle traffic.</p> <p>When creating an IPv6
+         * public virtual interface, omit the Amazon address and customer address. IPv6
+         * addresses are automatically assigned from the Amazon pool of IPv6 addresses; you
+         * cannot specify custom IPv6 addresses.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface">AWS
          * API Reference</a></p>
          */
         virtual Model::AllocatePublicVirtualInterfaceOutcome AllocatePublicVirtualInterface(const Model::AllocatePublicVirtualInterfaceRequest& request) const;
 
         /**
-         * <p>Provisions a public virtual interface to be owned by the specified
-         * account.</p> <p>The owner of a connection calls this function to provision a
-         * public virtual interface to be owned by the specified account.</p> <p>Virtual
-         * interfaces created using this function must be confirmed by the owner using
-         * <a>ConfirmPublicVirtualInterface</a>. Until this step has been completed, the
-         * virtual interface is in the <code>confirming</code> state and is not available
-         * to handle traffic.</p> <p>When creating an IPv6 public virtual interface, omit
-         * the Amazon address and customer address. IPv6 addresses are automatically
-         * assigned from the Amazon pool of IPv6 addresses; you cannot specify custom IPv6
-         * addresses.</p><p><h3>See Also:</h3>   <a
+         * <p>Provisions a public virtual interface to be owned by the specified Amazon Web
+         * Services account.</p> <p>The owner of a connection calls this function to
+         * provision a public virtual interface to be owned by the specified Amazon Web
+         * Services account.</p> <p>Virtual interfaces created using this function must be
+         * confirmed by the owner using <a>ConfirmPublicVirtualInterface</a>. Until this
+         * step has been completed, the virtual interface is in the <code>confirming</code>
+         * state and is not available to handle traffic.</p> <p>When creating an IPv6
+         * public virtual interface, omit the Amazon address and customer address. IPv6
+         * addresses are automatically assigned from the Amazon pool of IPv6 addresses; you
+         * cannot specify custom IPv6 addresses.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -514,16 +533,16 @@ namespace Model
         virtual Model::AllocatePublicVirtualInterfaceOutcomeCallable AllocatePublicVirtualInterfaceCallable(const Model::AllocatePublicVirtualInterfaceRequest& request) const;
 
         /**
-         * <p>Provisions a public virtual interface to be owned by the specified
-         * account.</p> <p>The owner of a connection calls this function to provision a
-         * public virtual interface to be owned by the specified account.</p> <p>Virtual
-         * interfaces created using this function must be confirmed by the owner using
-         * <a>ConfirmPublicVirtualInterface</a>. Until this step has been completed, the
-         * virtual interface is in the <code>confirming</code> state and is not available
-         * to handle traffic.</p> <p>When creating an IPv6 public virtual interface, omit
-         * the Amazon address and customer address. IPv6 addresses are automatically
-         * assigned from the Amazon pool of IPv6 addresses; you cannot specify custom IPv6
-         * addresses.</p><p><h3>See Also:</h3>   <a
+         * <p>Provisions a public virtual interface to be owned by the specified Amazon Web
+         * Services account.</p> <p>The owner of a connection calls this function to
+         * provision a public virtual interface to be owned by the specified Amazon Web
+         * Services account.</p> <p>Virtual interfaces created using this function must be
+         * confirmed by the owner using <a>ConfirmPublicVirtualInterface</a>. Until this
+         * step has been completed, the virtual interface is in the <code>confirming</code>
+         * state and is not available to handle traffic.</p> <p>When creating an IPv6
+         * public virtual interface, omit the Amazon address and customer address. IPv6
+         * addresses are automatically assigned from the Amazon pool of IPv6 addresses; you
+         * cannot specify custom IPv6 addresses.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -532,28 +551,30 @@ namespace Model
         virtual void AllocatePublicVirtualInterfaceAsync(const Model::AllocatePublicVirtualInterfaceRequest& request, const AllocatePublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provisions a transit virtual interface to be owned by the specified account.
-         * Use this type of interface to connect a transit gateway to your Direct Connect
-         * gateway.</p> <p>The owner of a connection provisions a transit virtual interface
-         * to be owned by the specified account.</p> <p>After you create a transit virtual
-         * interface, it must be confirmed by the owner using
-         * <a>ConfirmTransitVirtualInterface</a>. Until this step has been completed, the
-         * transit virtual interface is in the <code>requested</code> state and is not
-         * available to handle traffic.</p><p><h3>See Also:</h3>   <a
+         * <p>Provisions a transit virtual interface to be owned by the specified Amazon
+         * Web Services account. Use this type of interface to connect a transit gateway to
+         * your Direct Connect gateway.</p> <p>The owner of a connection provisions a
+         * transit virtual interface to be owned by the specified Amazon Web Services
+         * account.</p> <p>After you create a transit virtual interface, it must be
+         * confirmed by the owner using <a>ConfirmTransitVirtualInterface</a>. Until this
+         * step has been completed, the transit virtual interface is in the
+         * <code>requested</code> state and is not available to handle
+         * traffic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateTransitVirtualInterface">AWS
          * API Reference</a></p>
          */
         virtual Model::AllocateTransitVirtualInterfaceOutcome AllocateTransitVirtualInterface(const Model::AllocateTransitVirtualInterfaceRequest& request) const;
 
         /**
-         * <p>Provisions a transit virtual interface to be owned by the specified account.
-         * Use this type of interface to connect a transit gateway to your Direct Connect
-         * gateway.</p> <p>The owner of a connection provisions a transit virtual interface
-         * to be owned by the specified account.</p> <p>After you create a transit virtual
-         * interface, it must be confirmed by the owner using
-         * <a>ConfirmTransitVirtualInterface</a>. Until this step has been completed, the
-         * transit virtual interface is in the <code>requested</code> state and is not
-         * available to handle traffic.</p><p><h3>See Also:</h3>   <a
+         * <p>Provisions a transit virtual interface to be owned by the specified Amazon
+         * Web Services account. Use this type of interface to connect a transit gateway to
+         * your Direct Connect gateway.</p> <p>The owner of a connection provisions a
+         * transit virtual interface to be owned by the specified Amazon Web Services
+         * account.</p> <p>After you create a transit virtual interface, it must be
+         * confirmed by the owner using <a>ConfirmTransitVirtualInterface</a>. Until this
+         * step has been completed, the transit virtual interface is in the
+         * <code>requested</code> state and is not available to handle
+         * traffic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateTransitVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -562,14 +583,15 @@ namespace Model
         virtual Model::AllocateTransitVirtualInterfaceOutcomeCallable AllocateTransitVirtualInterfaceCallable(const Model::AllocateTransitVirtualInterfaceRequest& request) const;
 
         /**
-         * <p>Provisions a transit virtual interface to be owned by the specified account.
-         * Use this type of interface to connect a transit gateway to your Direct Connect
-         * gateway.</p> <p>The owner of a connection provisions a transit virtual interface
-         * to be owned by the specified account.</p> <p>After you create a transit virtual
-         * interface, it must be confirmed by the owner using
-         * <a>ConfirmTransitVirtualInterface</a>. Until this step has been completed, the
-         * transit virtual interface is in the <code>requested</code> state and is not
-         * available to handle traffic.</p><p><h3>See Also:</h3>   <a
+         * <p>Provisions a transit virtual interface to be owned by the specified Amazon
+         * Web Services account. Use this type of interface to connect a transit gateway to
+         * your Direct Connect gateway.</p> <p>The owner of a connection provisions a
+         * transit virtual interface to be owned by the specified Amazon Web Services
+         * account.</p> <p>After you create a transit virtual interface, it must be
+         * confirmed by the owner using <a>ConfirmTransitVirtualInterface</a>. Until this
+         * step has been completed, the transit virtual interface is in the
+         * <code>requested</code> state and is not available to handle
+         * traffic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateTransitVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -823,22 +845,50 @@ namespace Model
         virtual void ConfirmConnectionAsync(const Model::ConfirmConnectionRequest& request, const ConfirmConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Accepts ownership of a private virtual interface created by another
-         * account.</p> <p>After the virtual interface owner makes this call, the virtual
-         * interface is created and attached to the specified virtual private gateway or
-         * Direct Connect gateway, and is made available to handle traffic.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p> The confirmation of the terms of agreement when creating the connection/link
+         * aggregation group (LAG). </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmCustomerAgreement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ConfirmCustomerAgreementOutcome ConfirmCustomerAgreement(const Model::ConfirmCustomerAgreementRequest& request) const;
+
+        /**
+         * <p> The confirmation of the terms of agreement when creating the connection/link
+         * aggregation group (LAG). </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmCustomerAgreement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ConfirmCustomerAgreementOutcomeCallable ConfirmCustomerAgreementCallable(const Model::ConfirmCustomerAgreementRequest& request) const;
+
+        /**
+         * <p> The confirmation of the terms of agreement when creating the connection/link
+         * aggregation group (LAG). </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmCustomerAgreement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ConfirmCustomerAgreementAsync(const Model::ConfirmCustomerAgreementRequest& request, const ConfirmCustomerAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Accepts ownership of a private virtual interface created by another Amazon
+         * Web Services account.</p> <p>After the virtual interface owner makes this call,
+         * the virtual interface is created and attached to the specified virtual private
+         * gateway or Direct Connect gateway, and is made available to handle
+         * traffic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPrivateVirtualInterface">AWS
          * API Reference</a></p>
          */
         virtual Model::ConfirmPrivateVirtualInterfaceOutcome ConfirmPrivateVirtualInterface(const Model::ConfirmPrivateVirtualInterfaceRequest& request) const;
 
         /**
-         * <p>Accepts ownership of a private virtual interface created by another
-         * account.</p> <p>After the virtual interface owner makes this call, the virtual
-         * interface is created and attached to the specified virtual private gateway or
-         * Direct Connect gateway, and is made available to handle traffic.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Accepts ownership of a private virtual interface created by another Amazon
+         * Web Services account.</p> <p>After the virtual interface owner makes this call,
+         * the virtual interface is created and attached to the specified virtual private
+         * gateway or Direct Connect gateway, and is made available to handle
+         * traffic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPrivateVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -847,11 +897,11 @@ namespace Model
         virtual Model::ConfirmPrivateVirtualInterfaceOutcomeCallable ConfirmPrivateVirtualInterfaceCallable(const Model::ConfirmPrivateVirtualInterfaceRequest& request) const;
 
         /**
-         * <p>Accepts ownership of a private virtual interface created by another
-         * account.</p> <p>After the virtual interface owner makes this call, the virtual
-         * interface is created and attached to the specified virtual private gateway or
-         * Direct Connect gateway, and is made available to handle traffic.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Accepts ownership of a private virtual interface created by another Amazon
+         * Web Services account.</p> <p>After the virtual interface owner makes this call,
+         * the virtual interface is created and attached to the specified virtual private
+         * gateway or Direct Connect gateway, and is made available to handle
+         * traffic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPrivateVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -860,20 +910,20 @@ namespace Model
         virtual void ConfirmPrivateVirtualInterfaceAsync(const Model::ConfirmPrivateVirtualInterfaceRequest& request, const ConfirmPrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Accepts ownership of a public virtual interface created by another
-         * account.</p> <p>After the virtual interface owner makes this call, the specified
-         * virtual interface is created and made available to handle traffic.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Accepts ownership of a public virtual interface created by another Amazon Web
+         * Services account.</p> <p>After the virtual interface owner makes this call, the
+         * specified virtual interface is created and made available to handle
+         * traffic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPublicVirtualInterface">AWS
          * API Reference</a></p>
          */
         virtual Model::ConfirmPublicVirtualInterfaceOutcome ConfirmPublicVirtualInterface(const Model::ConfirmPublicVirtualInterfaceRequest& request) const;
 
         /**
-         * <p>Accepts ownership of a public virtual interface created by another
-         * account.</p> <p>After the virtual interface owner makes this call, the specified
-         * virtual interface is created and made available to handle traffic.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Accepts ownership of a public virtual interface created by another Amazon Web
+         * Services account.</p> <p>After the virtual interface owner makes this call, the
+         * specified virtual interface is created and made available to handle
+         * traffic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPublicVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -882,10 +932,10 @@ namespace Model
         virtual Model::ConfirmPublicVirtualInterfaceOutcomeCallable ConfirmPublicVirtualInterfaceCallable(const Model::ConfirmPublicVirtualInterfaceRequest& request) const;
 
         /**
-         * <p>Accepts ownership of a public virtual interface created by another
-         * account.</p> <p>After the virtual interface owner makes this call, the specified
-         * virtual interface is created and made available to handle traffic.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Accepts ownership of a public virtual interface created by another Amazon Web
+         * Services account.</p> <p>After the virtual interface owner makes this call, the
+         * specified virtual interface is created and made available to handle
+         * traffic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPublicVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -894,20 +944,20 @@ namespace Model
         virtual void ConfirmPublicVirtualInterfaceAsync(const Model::ConfirmPublicVirtualInterfaceRequest& request, const ConfirmPublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Accepts ownership of a transit virtual interface created by another
-         * account.</p> <p> After the owner of the transit virtual interface makes this
-         * call, the specified transit virtual interface is created and made available to
-         * handle traffic.</p><p><h3>See Also:</h3>   <a
+         * <p>Accepts ownership of a transit virtual interface created by another Amazon
+         * Web Services account.</p> <p> After the owner of the transit virtual interface
+         * makes this call, the specified transit virtual interface is created and made
+         * available to handle traffic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmTransitVirtualInterface">AWS
          * API Reference</a></p>
          */
         virtual Model::ConfirmTransitVirtualInterfaceOutcome ConfirmTransitVirtualInterface(const Model::ConfirmTransitVirtualInterfaceRequest& request) const;
 
         /**
-         * <p>Accepts ownership of a transit virtual interface created by another
-         * account.</p> <p> After the owner of the transit virtual interface makes this
-         * call, the specified transit virtual interface is created and made available to
-         * handle traffic.</p><p><h3>See Also:</h3>   <a
+         * <p>Accepts ownership of a transit virtual interface created by another Amazon
+         * Web Services account.</p> <p> After the owner of the transit virtual interface
+         * makes this call, the specified transit virtual interface is created and made
+         * available to handle traffic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmTransitVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -916,10 +966,10 @@ namespace Model
         virtual Model::ConfirmTransitVirtualInterfaceOutcomeCallable ConfirmTransitVirtualInterfaceCallable(const Model::ConfirmTransitVirtualInterfaceRequest& request) const;
 
         /**
-         * <p>Accepts ownership of a transit virtual interface created by another
-         * account.</p> <p> After the owner of the transit virtual interface makes this
-         * call, the specified transit virtual interface is created and made available to
-         * handle traffic.</p><p><h3>See Also:</h3>   <a
+         * <p>Accepts ownership of a transit virtual interface created by another Amazon
+         * Web Services account.</p> <p> After the owner of the transit virtual interface
+         * makes this call, the specified transit virtual interface is created and made
+         * available to handle traffic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmTransitVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -1037,12 +1087,12 @@ namespace Model
         /**
          * <p>Creates a Direct Connect gateway, which is an intermediate object that
          * enables you to connect a set of virtual interfaces and virtual private gateways.
-         * A Direct Connect gateway is global and visible in any Region after it is
-         * created. The virtual interfaces and virtual private gateways that are connected
-         * through a Direct Connect gateway can be in different Regions. This enables you
-         * to connect to a VPC in any Region, regardless of the Region in which the virtual
-         * interfaces are located, and pass traffic between them.</p><p><h3>See Also:</h3> 
-         * <a
+         * A Direct Connect gateway is global and visible in any Amazon Web Services Region
+         * after it is created. The virtual interfaces and virtual private gateways that
+         * are connected through a Direct Connect gateway can be in different Amazon Web
+         * Services Regions. This enables you to connect to a VPC in any Region, regardless
+         * of the Region in which the virtual interfaces are located, and pass traffic
+         * between them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGateway">AWS
          * API Reference</a></p>
          */
@@ -1051,12 +1101,12 @@ namespace Model
         /**
          * <p>Creates a Direct Connect gateway, which is an intermediate object that
          * enables you to connect a set of virtual interfaces and virtual private gateways.
-         * A Direct Connect gateway is global and visible in any Region after it is
-         * created. The virtual interfaces and virtual private gateways that are connected
-         * through a Direct Connect gateway can be in different Regions. This enables you
-         * to connect to a VPC in any Region, regardless of the Region in which the virtual
-         * interfaces are located, and pass traffic between them.</p><p><h3>See Also:</h3> 
-         * <a
+         * A Direct Connect gateway is global and visible in any Amazon Web Services Region
+         * after it is created. The virtual interfaces and virtual private gateways that
+         * are connected through a Direct Connect gateway can be in different Amazon Web
+         * Services Regions. This enables you to connect to a VPC in any Region, regardless
+         * of the Region in which the virtual interfaces are located, and pass traffic
+         * between them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGateway">AWS
          * API Reference</a></p>
          *
@@ -1067,12 +1117,12 @@ namespace Model
         /**
          * <p>Creates a Direct Connect gateway, which is an intermediate object that
          * enables you to connect a set of virtual interfaces and virtual private gateways.
-         * A Direct Connect gateway is global and visible in any Region after it is
-         * created. The virtual interfaces and virtual private gateways that are connected
-         * through a Direct Connect gateway can be in different Regions. This enables you
-         * to connect to a VPC in any Region, regardless of the Region in which the virtual
-         * interfaces are located, and pass traffic between them.</p><p><h3>See Also:</h3> 
-         * <a
+         * A Direct Connect gateway is global and visible in any Amazon Web Services Region
+         * after it is created. The virtual interfaces and virtual private gateways that
+         * are connected through a Direct Connect gateway can be in different Amazon Web
+         * Services Regions. This enables you to connect to a VPC in any Region, regardless
+         * of the Region in which the virtual interfaces are located, and pass traffic
+         * between them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGateway">AWS
          * API Reference</a></p>
          *
@@ -1115,7 +1165,8 @@ namespace Model
          * <p>Creates a proposal to associate the specified virtual private gateway or
          * transit gateway with the specified Direct Connect gateway.</p> <p>You can
          * associate a Direct Connect gateway and virtual private gateway or transit
-         * gateway that is owned by any account. </p><p><h3>See Also:</h3>   <a
+         * gateway that is owned by any Amazon Web Services account. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociationProposal">AWS
          * API Reference</a></p>
          */
@@ -1125,7 +1176,8 @@ namespace Model
          * <p>Creates a proposal to associate the specified virtual private gateway or
          * transit gateway with the specified Direct Connect gateway.</p> <p>You can
          * associate a Direct Connect gateway and virtual private gateway or transit
-         * gateway that is owned by any account. </p><p><h3>See Also:</h3>   <a
+         * gateway that is owned by any Amazon Web Services account. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociationProposal">AWS
          * API Reference</a></p>
          *
@@ -1137,7 +1189,8 @@ namespace Model
          * <p>Creates a proposal to associate the specified virtual private gateway or
          * transit gateway with the specified Direct Connect gateway.</p> <p>You can
          * associate a Direct Connect gateway and virtual private gateway or transit
-         * gateway that is owned by any account. </p><p><h3>See Also:</h3>   <a
+         * gateway that is owned by any Amazon Web Services account. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociationProposal">AWS
          * API Reference</a></p>
          *
@@ -1237,10 +1290,11 @@ namespace Model
          * a member of the LAG. The LAG will be created on the same Direct Connect endpoint
          * to which the dedicated connection terminates. Any virtual interfaces associated
          * with the dedicated connection are automatically disassociated and re-associated
-         * with the LAG. The connection ID does not change.</p> <p>If the account used to
-         * create a LAG is a registered Direct Connect Partner, the LAG is automatically
-         * enabled to host sub-connections. For a LAG owned by a partner, any associated
-         * virtual interfaces cannot be directly configured.</p><p><h3>See Also:</h3>   <a
+         * with the LAG. The connection ID does not change.</p> <p>If the Amazon Web
+         * Services account used to create a LAG is a registered Direct Connect Partner,
+         * the LAG is automatically enabled to host sub-connections. For a LAG owned by a
+         * partner, any associated virtual interfaces cannot be directly
+         * configured.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateLag">AWS
          * API Reference</a></p>
          */
@@ -1262,10 +1316,11 @@ namespace Model
          * a member of the LAG. The LAG will be created on the same Direct Connect endpoint
          * to which the dedicated connection terminates. Any virtual interfaces associated
          * with the dedicated connection are automatically disassociated and re-associated
-         * with the LAG. The connection ID does not change.</p> <p>If the account used to
-         * create a LAG is a registered Direct Connect Partner, the LAG is automatically
-         * enabled to host sub-connections. For a LAG owned by a partner, any associated
-         * virtual interfaces cannot be directly configured.</p><p><h3>See Also:</h3>   <a
+         * with the LAG. The connection ID does not change.</p> <p>If the Amazon Web
+         * Services account used to create a LAG is a registered Direct Connect Partner,
+         * the LAG is automatically enabled to host sub-connections. For a LAG owned by a
+         * partner, any associated virtual interfaces cannot be directly
+         * configured.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateLag">AWS
          * API Reference</a></p>
          *
@@ -1289,10 +1344,11 @@ namespace Model
          * a member of the LAG. The LAG will be created on the same Direct Connect endpoint
          * to which the dedicated connection terminates. Any virtual interfaces associated
          * with the dedicated connection are automatically disassociated and re-associated
-         * with the LAG. The connection ID does not change.</p> <p>If the account used to
-         * create a LAG is a registered Direct Connect Partner, the LAG is automatically
-         * enabled to host sub-connections. For a LAG owned by a partner, any associated
-         * virtual interfaces cannot be directly configured.</p><p><h3>See Also:</h3>   <a
+         * with the LAG. The connection ID does not change.</p> <p>If the Amazon Web
+         * Services account used to create a LAG is a registered Direct Connect Partner,
+         * the LAG is automatically enabled to host sub-connections. For a LAG owned by a
+         * partner, any associated virtual interfaces cannot be directly
+         * configured.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateLag">AWS
          * API Reference</a></p>
          *
@@ -1305,16 +1361,16 @@ namespace Model
          * transports Direct Connect traffic. A private virtual interface can be connected
          * to either a Direct Connect gateway or a Virtual Private Gateway (VGW).
          * Connecting the private virtual interface to a Direct Connect gateway enables the
-         * possibility for connecting to multiple VPCs, including VPCs in different
-         * Regions. Connecting the private virtual interface to a VGW only provides access
-         * to a single VPC within the same Region.</p> <p>Setting the MTU of a virtual
-         * interface to 9001 (jumbo frames) can cause an update to the underlying physical
-         * connection if it wasn't updated to support jumbo frames. Updating the connection
-         * disrupts network connectivity for all virtual interfaces associated with the
-         * connection for up to 30 seconds. To check whether your connection supports jumbo
-         * frames, call <a>DescribeConnections</a>. To check whether your virtual interface
-         * supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * possibility for connecting to multiple VPCs, including VPCs in different Amazon
+         * Web Services Regions. Connecting the private virtual interface to a VGW only
+         * provides access to a single VPC within the same Region.</p> <p>Setting the MTU
+         * of a virtual interface to 9001 (jumbo frames) can cause an update to the
+         * underlying physical connection if it wasn't updated to support jumbo frames.
+         * Updating the connection disrupts network connectivity for all virtual interfaces
+         * associated with the connection for up to 30 seconds. To check whether your
+         * connection supports jumbo frames, call <a>DescribeConnections</a>. To check
+         * whether your virtual interface supports jumbo frames, call
+         * <a>DescribeVirtualInterfaces</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface">AWS
          * API Reference</a></p>
          */
@@ -1325,16 +1381,16 @@ namespace Model
          * transports Direct Connect traffic. A private virtual interface can be connected
          * to either a Direct Connect gateway or a Virtual Private Gateway (VGW).
          * Connecting the private virtual interface to a Direct Connect gateway enables the
-         * possibility for connecting to multiple VPCs, including VPCs in different
-         * Regions. Connecting the private virtual interface to a VGW only provides access
-         * to a single VPC within the same Region.</p> <p>Setting the MTU of a virtual
-         * interface to 9001 (jumbo frames) can cause an update to the underlying physical
-         * connection if it wasn't updated to support jumbo frames. Updating the connection
-         * disrupts network connectivity for all virtual interfaces associated with the
-         * connection for up to 30 seconds. To check whether your connection supports jumbo
-         * frames, call <a>DescribeConnections</a>. To check whether your virtual interface
-         * supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * possibility for connecting to multiple VPCs, including VPCs in different Amazon
+         * Web Services Regions. Connecting the private virtual interface to a VGW only
+         * provides access to a single VPC within the same Region.</p> <p>Setting the MTU
+         * of a virtual interface to 9001 (jumbo frames) can cause an update to the
+         * underlying physical connection if it wasn't updated to support jumbo frames.
+         * Updating the connection disrupts network connectivity for all virtual interfaces
+         * associated with the connection for up to 30 seconds. To check whether your
+         * connection supports jumbo frames, call <a>DescribeConnections</a>. To check
+         * whether your virtual interface supports jumbo frames, call
+         * <a>DescribeVirtualInterfaces</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -1347,16 +1403,16 @@ namespace Model
          * transports Direct Connect traffic. A private virtual interface can be connected
          * to either a Direct Connect gateway or a Virtual Private Gateway (VGW).
          * Connecting the private virtual interface to a Direct Connect gateway enables the
-         * possibility for connecting to multiple VPCs, including VPCs in different
-         * Regions. Connecting the private virtual interface to a VGW only provides access
-         * to a single VPC within the same Region.</p> <p>Setting the MTU of a virtual
-         * interface to 9001 (jumbo frames) can cause an update to the underlying physical
-         * connection if it wasn't updated to support jumbo frames. Updating the connection
-         * disrupts network connectivity for all virtual interfaces associated with the
-         * connection for up to 30 seconds. To check whether your connection supports jumbo
-         * frames, call <a>DescribeConnections</a>. To check whether your virtual interface
-         * supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * possibility for connecting to multiple VPCs, including VPCs in different Amazon
+         * Web Services Regions. Connecting the private virtual interface to a VGW only
+         * provides access to a single VPC within the same Region.</p> <p>Setting the MTU
+         * of a virtual interface to 9001 (jumbo frames) can cause an update to the
+         * underlying physical connection if it wasn't updated to support jumbo frames.
+         * Updating the connection disrupts network connectivity for all virtual interfaces
+         * associated with the connection for up to 30 seconds. To check whether your
+         * connection supports jumbo frames, call <a>DescribeConnections</a>. To check
+         * whether your virtual interface supports jumbo frames, call
+         * <a>DescribeVirtualInterfaces</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -1760,6 +1816,36 @@ namespace Model
         virtual void DescribeConnectionsAsync(const Model::DescribeConnectionsRequest& request, const DescribeConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Get and view a list of customer agreements, along with their signed status
+         * and whether the customer is an NNIPartner, NNIPartnerV2, or a nonPartner.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeCustomerMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCustomerMetadataOutcome DescribeCustomerMetadata() const;
+
+        /**
+         * <p>Get and view a list of customer agreements, along with their signed status
+         * and whether the customer is an NNIPartner, NNIPartnerV2, or a nonPartner.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeCustomerMetadata">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeCustomerMetadataOutcomeCallable DescribeCustomerMetadataCallable() const;
+
+        /**
+         * <p>Get and view a list of customer agreements, along with their signed status
+         * and whether the customer is an NNIPartner, NNIPartnerV2, or a nonPartner.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeCustomerMetadata">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeCustomerMetadataAsync(const DescribeCustomerMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        /**
          * <p>Describes one or more association proposals for connection between a virtual
          * private gateway or transit gateway and a Direct Connect gateway. </p><p><h3>See
          * Also:</h3>   <a
@@ -1957,16 +2043,16 @@ namespace Model
         virtual void DescribeHostedConnectionsAsync(const Model::DescribeHostedConnectionsRequest& request, const DescribeHostedConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the interconnects owned by the account or only the specified
-         * interconnect.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the interconnects owned by the Amazon Web Services account or only the
+         * specified interconnect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeInterconnectsOutcome DescribeInterconnects(const Model::DescribeInterconnectsRequest& request) const;
 
         /**
-         * <p>Lists the interconnects owned by the account or only the specified
-         * interconnect.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the interconnects owned by the Amazon Web Services account or only the
+         * specified interconnect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects">AWS
          * API Reference</a></p>
          *
@@ -1975,8 +2061,8 @@ namespace Model
         virtual Model::DescribeInterconnectsOutcomeCallable DescribeInterconnectsCallable(const Model::DescribeInterconnectsRequest& request) const;
 
         /**
-         * <p>Lists the interconnects owned by the account or only the specified
-         * interconnect.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the interconnects owned by the Amazon Web Services account or only the
+         * specified interconnect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects">AWS
          * API Reference</a></p>
          *
@@ -2056,18 +2142,20 @@ namespace Model
         virtual void DescribeLoaAsync(const Model::DescribeLoaRequest& request, const DescribeLoaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the Direct Connect locations in the current Region. These are the
-         * locations that can be selected when calling <a>CreateConnection</a> or
-         * <a>CreateInterconnect</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Direct Connect locations in the current Amazon Web Services Region.
+         * These are the locations that can be selected when calling
+         * <a>CreateConnection</a> or <a>CreateInterconnect</a>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeLocationsOutcome DescribeLocations() const;
 
         /**
-         * <p>Lists the Direct Connect locations in the current Region. These are the
-         * locations that can be selected when calling <a>CreateConnection</a> or
-         * <a>CreateInterconnect</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Direct Connect locations in the current Amazon Web Services Region.
+         * These are the locations that can be selected when calling
+         * <a>CreateConnection</a> or <a>CreateInterconnect</a>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations">AWS
          * API Reference</a></p>
          *
@@ -2076,15 +2164,41 @@ namespace Model
         virtual Model::DescribeLocationsOutcomeCallable DescribeLocationsCallable() const;
 
         /**
-         * <p>Lists the Direct Connect locations in the current Region. These are the
-         * locations that can be selected when calling <a>CreateConnection</a> or
-         * <a>CreateInterconnect</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Direct Connect locations in the current Amazon Web Services Region.
+         * These are the locations that can be selected when calling
+         * <a>CreateConnection</a> or <a>CreateInterconnect</a>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeLocationsAsync(const DescribeLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        /**
+         * <p> Details about the router. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeRouterConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRouterConfigurationOutcome DescribeRouterConfiguration(const Model::DescribeRouterConfigurationRequest& request) const;
+
+        /**
+         * <p> Details about the router. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeRouterConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeRouterConfigurationOutcomeCallable DescribeRouterConfigurationCallable(const Model::DescribeRouterConfigurationRequest& request) const;
+
+        /**
+         * <p> Details about the router. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeRouterConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeRouterConfigurationAsync(const Model::DescribeRouterConfigurationRequest& request, const DescribeRouterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
         /**
          * <p>Describes the tags associated with the specified Direct Connect
          * resources.</p><p><h3>See Also:</h3>   <a
@@ -2114,18 +2228,18 @@ namespace Model
         virtual void DescribeTagsAsync(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the virtual private gateways owned by the account.</p> <p>You can
-         * create one or more Direct Connect private virtual interfaces linked to a virtual
-         * private gateway.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the virtual private gateways owned by the Amazon Web Services
+         * account.</p> <p>You can create one or more Direct Connect private virtual
+         * interfaces linked to a virtual private gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeVirtualGatewaysOutcome DescribeVirtualGateways() const;
 
         /**
-         * <p>Lists the virtual private gateways owned by the account.</p> <p>You can
-         * create one or more Direct Connect private virtual interfaces linked to a virtual
-         * private gateway.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the virtual private gateways owned by the Amazon Web Services
+         * account.</p> <p>You can create one or more Direct Connect private virtual
+         * interfaces linked to a virtual private gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways">AWS
          * API Reference</a></p>
          *
@@ -2134,9 +2248,9 @@ namespace Model
         virtual Model::DescribeVirtualGatewaysOutcomeCallable DescribeVirtualGatewaysCallable() const;
 
         /**
-         * <p>Lists the virtual private gateways owned by the account.</p> <p>You can
-         * create one or more Direct Connect private virtual interfaces linked to a virtual
-         * private gateway.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the virtual private gateways owned by the Amazon Web Services
+         * account.</p> <p>You can create one or more Direct Connect private virtual
+         * interfaces linked to a virtual private gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways">AWS
          * API Reference</a></p>
          *
@@ -2144,11 +2258,11 @@ namespace Model
          */
         virtual void DescribeVirtualGatewaysAsync(const DescribeVirtualGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
         /**
-         * <p>Displays all virtual interfaces for an account. Virtual interfaces deleted
-         * fewer than 15 minutes before you make the request are also returned. If you
-         * specify a connection ID, only the virtual interfaces associated with the
-         * connection are returned. If you specify a virtual interface ID, then only a
-         * single virtual interface is returned.</p> <p>A virtual interface (VLAN)
+         * <p>Displays all virtual interfaces for an Amazon Web Services account. Virtual
+         * interfaces deleted fewer than 15 minutes before you make the request are also
+         * returned. If you specify a connection ID, only the virtual interfaces associated
+         * with the connection are returned. If you specify a virtual interface ID, then
+         * only a single virtual interface is returned.</p> <p>A virtual interface (VLAN)
          * transmits the traffic between the Direct Connect location and the customer
          * network.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces">AWS
@@ -2157,11 +2271,11 @@ namespace Model
         virtual Model::DescribeVirtualInterfacesOutcome DescribeVirtualInterfaces(const Model::DescribeVirtualInterfacesRequest& request) const;
 
         /**
-         * <p>Displays all virtual interfaces for an account. Virtual interfaces deleted
-         * fewer than 15 minutes before you make the request are also returned. If you
-         * specify a connection ID, only the virtual interfaces associated with the
-         * connection are returned. If you specify a virtual interface ID, then only a
-         * single virtual interface is returned.</p> <p>A virtual interface (VLAN)
+         * <p>Displays all virtual interfaces for an Amazon Web Services account. Virtual
+         * interfaces deleted fewer than 15 minutes before you make the request are also
+         * returned. If you specify a connection ID, only the virtual interfaces associated
+         * with the connection are returned. If you specify a virtual interface ID, then
+         * only a single virtual interface is returned.</p> <p>A virtual interface (VLAN)
          * transmits the traffic between the Direct Connect location and the customer
          * network.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces">AWS
@@ -2172,11 +2286,11 @@ namespace Model
         virtual Model::DescribeVirtualInterfacesOutcomeCallable DescribeVirtualInterfacesCallable(const Model::DescribeVirtualInterfacesRequest& request) const;
 
         /**
-         * <p>Displays all virtual interfaces for an account. Virtual interfaces deleted
-         * fewer than 15 minutes before you make the request are also returned. If you
-         * specify a connection ID, only the virtual interfaces associated with the
-         * connection are returned. If you specify a virtual interface ID, then only a
-         * single virtual interface is returned.</p> <p>A virtual interface (VLAN)
+         * <p>Displays all virtual interfaces for an Amazon Web Services account. Virtual
+         * interfaces deleted fewer than 15 minutes before you make the request are also
+         * returned. If you specify a connection ID, only the virtual interfaces associated
+         * with the connection are returned. If you specify a virtual interface ID, then
+         * only a single virtual interface is returned.</p> <p>A virtual interface (VLAN)
          * transmits the traffic between the Direct Connect location and the customer
          * network.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces">AWS
@@ -2471,6 +2585,34 @@ namespace Model
         virtual void UpdateConnectionAsync(const Model::UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the name of a current Direct Connect gateway.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateDirectConnectGateway">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDirectConnectGatewayOutcome UpdateDirectConnectGateway(const Model::UpdateDirectConnectGatewayRequest& request) const;
+
+        /**
+         * <p>Updates the name of a current Direct Connect gateway.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateDirectConnectGateway">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateDirectConnectGatewayOutcomeCallable UpdateDirectConnectGatewayCallable(const Model::UpdateDirectConnectGatewayRequest& request) const;
+
+        /**
+         * <p>Updates the name of a current Direct Connect gateway.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateDirectConnectGateway">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateDirectConnectGatewayAsync(const Model::UpdateDirectConnectGatewayRequest& request, const UpdateDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the specified attributes of the Direct Connect gateway
          * association.</p> <p>Add or remove prefixes from the association.</p><p><h3>See
          * Also:</h3>   <a
@@ -2616,6 +2758,7 @@ namespace Model
         void AssociateMacSecKeyAsyncHelper(const Model::AssociateMacSecKeyRequest& request, const AssociateMacSecKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateVirtualInterfaceAsyncHelper(const Model::AssociateVirtualInterfaceRequest& request, const AssociateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ConfirmConnectionAsyncHelper(const Model::ConfirmConnectionRequest& request, const ConfirmConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ConfirmCustomerAgreementAsyncHelper(const Model::ConfirmCustomerAgreementRequest& request, const ConfirmCustomerAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ConfirmPrivateVirtualInterfaceAsyncHelper(const Model::ConfirmPrivateVirtualInterfaceRequest& request, const ConfirmPrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ConfirmPublicVirtualInterfaceAsyncHelper(const Model::ConfirmPublicVirtualInterfaceRequest& request, const ConfirmPublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ConfirmTransitVirtualInterfaceAsyncHelper(const Model::ConfirmTransitVirtualInterfaceRequest& request, const ConfirmTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2638,6 +2781,7 @@ namespace Model
         void DeleteLagAsyncHelper(const Model::DeleteLagRequest& request, const DeleteLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVirtualInterfaceAsyncHelper(const Model::DeleteVirtualInterfaceRequest& request, const DeleteVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeConnectionsAsyncHelper(const Model::DescribeConnectionsRequest& request, const DescribeConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeCustomerMetadataAsyncHelper(const DescribeCustomerMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDirectConnectGatewayAssociationProposalsAsyncHelper(const Model::DescribeDirectConnectGatewayAssociationProposalsRequest& request, const DescribeDirectConnectGatewayAssociationProposalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDirectConnectGatewayAssociationsAsyncHelper(const Model::DescribeDirectConnectGatewayAssociationsRequest& request, const DescribeDirectConnectGatewayAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDirectConnectGatewayAttachmentsAsyncHelper(const Model::DescribeDirectConnectGatewayAttachmentsRequest& request, const DescribeDirectConnectGatewayAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2647,6 +2791,7 @@ namespace Model
         void DescribeLagsAsyncHelper(const Model::DescribeLagsRequest& request, const DescribeLagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLoaAsyncHelper(const Model::DescribeLoaRequest& request, const DescribeLoaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLocationsAsyncHelper(const DescribeLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeRouterConfigurationAsyncHelper(const Model::DescribeRouterConfigurationRequest& request, const DescribeRouterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTagsAsyncHelper(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeVirtualGatewaysAsyncHelper(const DescribeVirtualGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeVirtualInterfacesAsyncHelper(const Model::DescribeVirtualInterfacesRequest& request, const DescribeVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2658,6 +2803,7 @@ namespace Model
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateConnectionAsyncHelper(const Model::UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateDirectConnectGatewayAsyncHelper(const Model::UpdateDirectConnectGatewayRequest& request, const UpdateDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDirectConnectGatewayAssociationAsyncHelper(const Model::UpdateDirectConnectGatewayAssociationRequest& request, const UpdateDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateLagAsyncHelper(const Model::UpdateLagRequest& request, const UpdateLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVirtualInterfaceAttributesAsyncHelper(const Model::UpdateVirtualInterfaceAttributesRequest& request, const UpdateVirtualInterfaceAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

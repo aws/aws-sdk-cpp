@@ -41,6 +41,7 @@ StartStreamTranscriptionRequest::StartStreamTranscriptionRequest() :
     m_contentRedactionType(ContentRedactionType::NOT_SET),
     m_contentRedactionTypeHasBeenSet(false),
     m_piiEntityTypesHasBeenSet(false),
+    m_languageModelNameHasBeenSet(false),
     m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
@@ -146,6 +147,13 @@ Aws::Http::HeaderValueCollection StartStreamTranscriptionRequest::GetRequestSpec
   {
     ss << m_piiEntityTypes;
     headers.emplace("x-amzn-transcribe-pii-entity-types",  ss.str());
+    ss.str("");
+  }
+
+  if(m_languageModelNameHasBeenSet)
+  {
+    ss << m_languageModelName;
+    headers.emplace("x-amzn-transcribe-language-model-name",  ss.str());
     ss.str("");
   }
 

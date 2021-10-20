@@ -17,10 +17,12 @@
 #include <aws/securityhub/model/BatchImportFindingsResult.h>
 #include <aws/securityhub/model/BatchUpdateFindingsResult.h>
 #include <aws/securityhub/model/CreateActionTargetResult.h>
+#include <aws/securityhub/model/CreateFindingAggregatorResult.h>
 #include <aws/securityhub/model/CreateInsightResult.h>
 #include <aws/securityhub/model/CreateMembersResult.h>
 #include <aws/securityhub/model/DeclineInvitationsResult.h>
 #include <aws/securityhub/model/DeleteActionTargetResult.h>
+#include <aws/securityhub/model/DeleteFindingAggregatorResult.h>
 #include <aws/securityhub/model/DeleteInsightResult.h>
 #include <aws/securityhub/model/DeleteInvitationsResult.h>
 #include <aws/securityhub/model/DeleteMembersResult.h>
@@ -40,6 +42,7 @@
 #include <aws/securityhub/model/EnableSecurityHubResult.h>
 #include <aws/securityhub/model/GetAdministratorAccountResult.h>
 #include <aws/securityhub/model/GetEnabledStandardsResult.h>
+#include <aws/securityhub/model/GetFindingAggregatorResult.h>
 #include <aws/securityhub/model/GetFindingsResult.h>
 #include <aws/securityhub/model/GetInsightResultsResult.h>
 #include <aws/securityhub/model/GetInsightsResult.h>
@@ -47,6 +50,7 @@
 #include <aws/securityhub/model/GetMembersResult.h>
 #include <aws/securityhub/model/InviteMembersResult.h>
 #include <aws/securityhub/model/ListEnabledProductsForImportResult.h>
+#include <aws/securityhub/model/ListFindingAggregatorsResult.h>
 #include <aws/securityhub/model/ListInvitationsResult.h>
 #include <aws/securityhub/model/ListMembersResult.h>
 #include <aws/securityhub/model/ListOrganizationAdminAccountsResult.h>
@@ -54,6 +58,7 @@
 #include <aws/securityhub/model/TagResourceResult.h>
 #include <aws/securityhub/model/UntagResourceResult.h>
 #include <aws/securityhub/model/UpdateActionTargetResult.h>
+#include <aws/securityhub/model/UpdateFindingAggregatorResult.h>
 #include <aws/securityhub/model/UpdateFindingsResult.h>
 #include <aws/securityhub/model/UpdateInsightResult.h>
 #include <aws/securityhub/model/UpdateOrganizationConfigurationResult.h>
@@ -104,10 +109,12 @@ namespace Model
         class BatchImportFindingsRequest;
         class BatchUpdateFindingsRequest;
         class CreateActionTargetRequest;
+        class CreateFindingAggregatorRequest;
         class CreateInsightRequest;
         class CreateMembersRequest;
         class DeclineInvitationsRequest;
         class DeleteActionTargetRequest;
+        class DeleteFindingAggregatorRequest;
         class DeleteInsightRequest;
         class DeleteInvitationsRequest;
         class DeleteMembersRequest;
@@ -127,6 +134,7 @@ namespace Model
         class EnableSecurityHubRequest;
         class GetAdministratorAccountRequest;
         class GetEnabledStandardsRequest;
+        class GetFindingAggregatorRequest;
         class GetFindingsRequest;
         class GetInsightResultsRequest;
         class GetInsightsRequest;
@@ -134,6 +142,7 @@ namespace Model
         class GetMembersRequest;
         class InviteMembersRequest;
         class ListEnabledProductsForImportRequest;
+        class ListFindingAggregatorsRequest;
         class ListInvitationsRequest;
         class ListMembersRequest;
         class ListOrganizationAdminAccountsRequest;
@@ -141,6 +150,7 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateActionTargetRequest;
+        class UpdateFindingAggregatorRequest;
         class UpdateFindingsRequest;
         class UpdateInsightRequest;
         class UpdateOrganizationConfigurationRequest;
@@ -153,10 +163,12 @@ namespace Model
         typedef Aws::Utils::Outcome<BatchImportFindingsResult, SecurityHubError> BatchImportFindingsOutcome;
         typedef Aws::Utils::Outcome<BatchUpdateFindingsResult, SecurityHubError> BatchUpdateFindingsOutcome;
         typedef Aws::Utils::Outcome<CreateActionTargetResult, SecurityHubError> CreateActionTargetOutcome;
+        typedef Aws::Utils::Outcome<CreateFindingAggregatorResult, SecurityHubError> CreateFindingAggregatorOutcome;
         typedef Aws::Utils::Outcome<CreateInsightResult, SecurityHubError> CreateInsightOutcome;
         typedef Aws::Utils::Outcome<CreateMembersResult, SecurityHubError> CreateMembersOutcome;
         typedef Aws::Utils::Outcome<DeclineInvitationsResult, SecurityHubError> DeclineInvitationsOutcome;
         typedef Aws::Utils::Outcome<DeleteActionTargetResult, SecurityHubError> DeleteActionTargetOutcome;
+        typedef Aws::Utils::Outcome<DeleteFindingAggregatorResult, SecurityHubError> DeleteFindingAggregatorOutcome;
         typedef Aws::Utils::Outcome<DeleteInsightResult, SecurityHubError> DeleteInsightOutcome;
         typedef Aws::Utils::Outcome<DeleteInvitationsResult, SecurityHubError> DeleteInvitationsOutcome;
         typedef Aws::Utils::Outcome<DeleteMembersResult, SecurityHubError> DeleteMembersOutcome;
@@ -176,6 +188,7 @@ namespace Model
         typedef Aws::Utils::Outcome<EnableSecurityHubResult, SecurityHubError> EnableSecurityHubOutcome;
         typedef Aws::Utils::Outcome<GetAdministratorAccountResult, SecurityHubError> GetAdministratorAccountOutcome;
         typedef Aws::Utils::Outcome<GetEnabledStandardsResult, SecurityHubError> GetEnabledStandardsOutcome;
+        typedef Aws::Utils::Outcome<GetFindingAggregatorResult, SecurityHubError> GetFindingAggregatorOutcome;
         typedef Aws::Utils::Outcome<GetFindingsResult, SecurityHubError> GetFindingsOutcome;
         typedef Aws::Utils::Outcome<GetInsightResultsResult, SecurityHubError> GetInsightResultsOutcome;
         typedef Aws::Utils::Outcome<GetInsightsResult, SecurityHubError> GetInsightsOutcome;
@@ -183,6 +196,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetMembersResult, SecurityHubError> GetMembersOutcome;
         typedef Aws::Utils::Outcome<InviteMembersResult, SecurityHubError> InviteMembersOutcome;
         typedef Aws::Utils::Outcome<ListEnabledProductsForImportResult, SecurityHubError> ListEnabledProductsForImportOutcome;
+        typedef Aws::Utils::Outcome<ListFindingAggregatorsResult, SecurityHubError> ListFindingAggregatorsOutcome;
         typedef Aws::Utils::Outcome<ListInvitationsResult, SecurityHubError> ListInvitationsOutcome;
         typedef Aws::Utils::Outcome<ListMembersResult, SecurityHubError> ListMembersOutcome;
         typedef Aws::Utils::Outcome<ListOrganizationAdminAccountsResult, SecurityHubError> ListOrganizationAdminAccountsOutcome;
@@ -190,6 +204,7 @@ namespace Model
         typedef Aws::Utils::Outcome<TagResourceResult, SecurityHubError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, SecurityHubError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateActionTargetResult, SecurityHubError> UpdateActionTargetOutcome;
+        typedef Aws::Utils::Outcome<UpdateFindingAggregatorResult, SecurityHubError> UpdateFindingAggregatorOutcome;
         typedef Aws::Utils::Outcome<UpdateFindingsResult, SecurityHubError> UpdateFindingsOutcome;
         typedef Aws::Utils::Outcome<UpdateInsightResult, SecurityHubError> UpdateInsightOutcome;
         typedef Aws::Utils::Outcome<UpdateOrganizationConfigurationResult, SecurityHubError> UpdateOrganizationConfigurationOutcome;
@@ -202,10 +217,12 @@ namespace Model
         typedef std::future<BatchImportFindingsOutcome> BatchImportFindingsOutcomeCallable;
         typedef std::future<BatchUpdateFindingsOutcome> BatchUpdateFindingsOutcomeCallable;
         typedef std::future<CreateActionTargetOutcome> CreateActionTargetOutcomeCallable;
+        typedef std::future<CreateFindingAggregatorOutcome> CreateFindingAggregatorOutcomeCallable;
         typedef std::future<CreateInsightOutcome> CreateInsightOutcomeCallable;
         typedef std::future<CreateMembersOutcome> CreateMembersOutcomeCallable;
         typedef std::future<DeclineInvitationsOutcome> DeclineInvitationsOutcomeCallable;
         typedef std::future<DeleteActionTargetOutcome> DeleteActionTargetOutcomeCallable;
+        typedef std::future<DeleteFindingAggregatorOutcome> DeleteFindingAggregatorOutcomeCallable;
         typedef std::future<DeleteInsightOutcome> DeleteInsightOutcomeCallable;
         typedef std::future<DeleteInvitationsOutcome> DeleteInvitationsOutcomeCallable;
         typedef std::future<DeleteMembersOutcome> DeleteMembersOutcomeCallable;
@@ -225,6 +242,7 @@ namespace Model
         typedef std::future<EnableSecurityHubOutcome> EnableSecurityHubOutcomeCallable;
         typedef std::future<GetAdministratorAccountOutcome> GetAdministratorAccountOutcomeCallable;
         typedef std::future<GetEnabledStandardsOutcome> GetEnabledStandardsOutcomeCallable;
+        typedef std::future<GetFindingAggregatorOutcome> GetFindingAggregatorOutcomeCallable;
         typedef std::future<GetFindingsOutcome> GetFindingsOutcomeCallable;
         typedef std::future<GetInsightResultsOutcome> GetInsightResultsOutcomeCallable;
         typedef std::future<GetInsightsOutcome> GetInsightsOutcomeCallable;
@@ -232,6 +250,7 @@ namespace Model
         typedef std::future<GetMembersOutcome> GetMembersOutcomeCallable;
         typedef std::future<InviteMembersOutcome> InviteMembersOutcomeCallable;
         typedef std::future<ListEnabledProductsForImportOutcome> ListEnabledProductsForImportOutcomeCallable;
+        typedef std::future<ListFindingAggregatorsOutcome> ListFindingAggregatorsOutcomeCallable;
         typedef std::future<ListInvitationsOutcome> ListInvitationsOutcomeCallable;
         typedef std::future<ListMembersOutcome> ListMembersOutcomeCallable;
         typedef std::future<ListOrganizationAdminAccountsOutcome> ListOrganizationAdminAccountsOutcomeCallable;
@@ -239,6 +258,7 @@ namespace Model
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateActionTargetOutcome> UpdateActionTargetOutcomeCallable;
+        typedef std::future<UpdateFindingAggregatorOutcome> UpdateFindingAggregatorOutcomeCallable;
         typedef std::future<UpdateFindingsOutcome> UpdateFindingsOutcomeCallable;
         typedef std::future<UpdateInsightOutcome> UpdateInsightOutcomeCallable;
         typedef std::future<UpdateOrganizationConfigurationOutcome> UpdateOrganizationConfigurationOutcomeCallable;
@@ -254,10 +274,12 @@ namespace Model
     typedef std::function<void(const SecurityHubClient*, const Model::BatchImportFindingsRequest&, const Model::BatchImportFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchImportFindingsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::BatchUpdateFindingsRequest&, const Model::BatchUpdateFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateFindingsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::CreateActionTargetRequest&, const Model::CreateActionTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateActionTargetResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::CreateFindingAggregatorRequest&, const Model::CreateFindingAggregatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFindingAggregatorResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::CreateInsightRequest&, const Model::CreateInsightOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInsightResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::CreateMembersRequest&, const Model::CreateMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMembersResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DeclineInvitationsRequest&, const Model::DeclineInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeclineInvitationsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DeleteActionTargetRequest&, const Model::DeleteActionTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteActionTargetResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::DeleteFindingAggregatorRequest&, const Model::DeleteFindingAggregatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFindingAggregatorResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DeleteInsightRequest&, const Model::DeleteInsightOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInsightResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DeleteInvitationsRequest&, const Model::DeleteInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInvitationsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DeleteMembersRequest&, const Model::DeleteMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMembersResponseReceivedHandler;
@@ -277,6 +299,7 @@ namespace Model
     typedef std::function<void(const SecurityHubClient*, const Model::EnableSecurityHubRequest&, const Model::EnableSecurityHubOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableSecurityHubResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::GetAdministratorAccountRequest&, const Model::GetAdministratorAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAdministratorAccountResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::GetEnabledStandardsRequest&, const Model::GetEnabledStandardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnabledStandardsResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::GetFindingAggregatorRequest&, const Model::GetFindingAggregatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingAggregatorResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::GetFindingsRequest&, const Model::GetFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::GetInsightResultsRequest&, const Model::GetInsightResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightResultsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::GetInsightsRequest&, const Model::GetInsightsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightsResponseReceivedHandler;
@@ -284,6 +307,7 @@ namespace Model
     typedef std::function<void(const SecurityHubClient*, const Model::GetMembersRequest&, const Model::GetMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMembersResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::InviteMembersRequest&, const Model::InviteMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InviteMembersResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::ListEnabledProductsForImportRequest&, const Model::ListEnabledProductsForImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnabledProductsForImportResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::ListFindingAggregatorsRequest&, const Model::ListFindingAggregatorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFindingAggregatorsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::ListInvitationsRequest&, const Model::ListInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInvitationsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::ListMembersRequest&, const Model::ListMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMembersResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::ListOrganizationAdminAccountsRequest&, const Model::ListOrganizationAdminAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOrganizationAdminAccountsResponseReceivedHandler;
@@ -291,6 +315,7 @@ namespace Model
     typedef std::function<void(const SecurityHubClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::UpdateActionTargetRequest&, const Model::UpdateActionTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateActionTargetResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::UpdateFindingAggregatorRequest&, const Model::UpdateFindingAggregatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFindingAggregatorResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::UpdateFindingsRequest&, const Model::UpdateFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFindingsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::UpdateInsightRequest&, const Model::UpdateInsightOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInsightResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::UpdateOrganizationConfigurationRequest&, const Model::UpdateOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOrganizationConfigurationResponseReceivedHandler;
@@ -654,6 +679,43 @@ namespace Model
         virtual void CreateActionTargetAsync(const Model::CreateActionTargetRequest& request, const CreateActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Used to enable finding aggregation. Must be called from the aggregation
+         * Region.</p> <p>For more details about cross-Region replication, see <a
+         * href="securityhub/latest/userguide/finding-aggregation.html">Configuring finding
+         * aggregation</a> in the <i>Security Hub User Guide</i>. </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateFindingAggregator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFindingAggregatorOutcome CreateFindingAggregator(const Model::CreateFindingAggregatorRequest& request) const;
+
+        /**
+         * <p>Used to enable finding aggregation. Must be called from the aggregation
+         * Region.</p> <p>For more details about cross-Region replication, see <a
+         * href="securityhub/latest/userguide/finding-aggregation.html">Configuring finding
+         * aggregation</a> in the <i>Security Hub User Guide</i>. </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateFindingAggregator">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateFindingAggregatorOutcomeCallable CreateFindingAggregatorCallable(const Model::CreateFindingAggregatorRequest& request) const;
+
+        /**
+         * <p>Used to enable finding aggregation. Must be called from the aggregation
+         * Region.</p> <p>For more details about cross-Region replication, see <a
+         * href="securityhub/latest/userguide/finding-aggregation.html">Configuring finding
+         * aggregation</a> in the <i>Security Hub User Guide</i>. </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateFindingAggregator">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateFindingAggregatorAsync(const Model::CreateFindingAggregatorRequest& request, const CreateFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a custom insight in Security Hub. An insight is a consolidation of
          * findings that relate to a security issue that requires attention or
          * remediation.</p> <p>To group the related findings in the insight, use the
@@ -860,6 +922,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteActionTargetAsync(const Model::DeleteActionTargetRequest& request, const DeleteActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a finding aggregator. When you delete the finding aggregator, you
+         * stop finding aggregation.</p> <p>When you stop finding aggregation, findings
+         * that were already aggregated to the aggregation Region are still visible from
+         * the aggregation Region. New findings and finding updates are not aggregated.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteFindingAggregator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFindingAggregatorOutcome DeleteFindingAggregator(const Model::DeleteFindingAggregatorRequest& request) const;
+
+        /**
+         * <p>Deletes a finding aggregator. When you delete the finding aggregator, you
+         * stop finding aggregation.</p> <p>When you stop finding aggregation, findings
+         * that were already aggregated to the aggregation Region are still visible from
+         * the aggregation Region. New findings and finding updates are not aggregated.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteFindingAggregator">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteFindingAggregatorOutcomeCallable DeleteFindingAggregatorCallable(const Model::DeleteFindingAggregatorRequest& request) const;
+
+        /**
+         * <p>Deletes a finding aggregator. When you delete the finding aggregator, you
+         * stop finding aggregation.</p> <p>When you stop finding aggregation, findings
+         * that were already aggregated to the aggregation Region are still visible from
+         * the aggregation Region. New findings and finding updates are not aggregated.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteFindingAggregator">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteFindingAggregatorAsync(const Model::DeleteFindingAggregatorRequest& request, const DeleteFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the insight specified by the <code>InsightArn</code>.</p><p><h3>See
@@ -1523,16 +1622,50 @@ namespace Model
         virtual void GetEnabledStandardsAsync(const Model::GetEnabledStandardsRequest& request, const GetEnabledStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of findings that match the specified criteria.</p><p><h3>See
+         * <p>Returns the current finding aggregation configuration.</p><p><h3>See
          * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingAggregator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFindingAggregatorOutcome GetFindingAggregator(const Model::GetFindingAggregatorRequest& request) const;
+
+        /**
+         * <p>Returns the current finding aggregation configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingAggregator">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetFindingAggregatorOutcomeCallable GetFindingAggregatorCallable(const Model::GetFindingAggregatorRequest& request) const;
+
+        /**
+         * <p>Returns the current finding aggregation configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingAggregator">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetFindingAggregatorAsync(const Model::GetFindingAggregatorRequest& request, const GetFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of findings that match the specified criteria.</p> <p>If
+         * finding aggregation is enabled, then when you call <code>GetFindings</code> from
+         * the aggregation Region, the results include all of the matching findings from
+         * both the aggregation Region and the linked Regions.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindings">AWS
          * API Reference</a></p>
          */
         virtual Model::GetFindingsOutcome GetFindings(const Model::GetFindingsRequest& request) const;
 
         /**
-         * <p>Returns a list of findings that match the specified criteria.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of findings that match the specified criteria.</p> <p>If
+         * finding aggregation is enabled, then when you call <code>GetFindings</code> from
+         * the aggregation Region, the results include all of the matching findings from
+         * both the aggregation Region and the linked Regions.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindings">AWS
          * API Reference</a></p>
          *
@@ -1541,8 +1674,11 @@ namespace Model
         virtual Model::GetFindingsOutcomeCallable GetFindingsCallable(const Model::GetFindingsRequest& request) const;
 
         /**
-         * <p>Returns a list of findings that match the specified criteria.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of findings that match the specified criteria.</p> <p>If
+         * finding aggregation is enabled, then when you call <code>GetFindings</code> from
+         * the aggregation Region, the results include all of the matching findings from
+         * both the aggregation Region and the linked Regions.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindings">AWS
          * API Reference</a></p>
          *
@@ -1755,6 +1891,37 @@ namespace Model
         virtual void ListEnabledProductsForImportAsync(const Model::ListEnabledProductsForImportRequest& request, const ListEnabledProductsForImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>If finding aggregation is enabled, then <code>ListFindingAggregators</code>
+         * returns the ARN of the finding aggregator. You can run this operation from any
+         * Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListFindingAggregators">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFindingAggregatorsOutcome ListFindingAggregators(const Model::ListFindingAggregatorsRequest& request) const;
+
+        /**
+         * <p>If finding aggregation is enabled, then <code>ListFindingAggregators</code>
+         * returns the ARN of the finding aggregator. You can run this operation from any
+         * Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListFindingAggregators">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListFindingAggregatorsOutcomeCallable ListFindingAggregatorsCallable(const Model::ListFindingAggregatorsRequest& request) const;
+
+        /**
+         * <p>If finding aggregation is enabled, then <code>ListFindingAggregators</code>
+         * returns the ARN of the finding aggregator. You can run this operation from any
+         * Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListFindingAggregators">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListFindingAggregatorsAsync(const Model::ListFindingAggregatorsRequest& request, const ListFindingAggregatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists all Security Hub membership invitations that were sent to the current
          * Amazon Web Services account.</p> <p>This operation is only used by accounts that
          * are managed by invitation. Accounts that are managed using the integration with
@@ -1957,6 +2124,43 @@ namespace Model
         virtual void UpdateActionTargetAsync(const Model::UpdateActionTargetRequest& request, const UpdateActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the finding aggregation configuration. Used to update the Region
+         * linking mode and the list of included or excluded Regions. You cannot use
+         * <code>UpdateFindingAggregator</code> to change the aggregation Region.</p>
+         * <p>You must run <code>UpdateFindingAggregator</code> from the current
+         * aggregation Region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateFindingAggregator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFindingAggregatorOutcome UpdateFindingAggregator(const Model::UpdateFindingAggregatorRequest& request) const;
+
+        /**
+         * <p>Updates the finding aggregation configuration. Used to update the Region
+         * linking mode and the list of included or excluded Regions. You cannot use
+         * <code>UpdateFindingAggregator</code> to change the aggregation Region.</p>
+         * <p>You must run <code>UpdateFindingAggregator</code> from the current
+         * aggregation Region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateFindingAggregator">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateFindingAggregatorOutcomeCallable UpdateFindingAggregatorCallable(const Model::UpdateFindingAggregatorRequest& request) const;
+
+        /**
+         * <p>Updates the finding aggregation configuration. Used to update the Region
+         * linking mode and the list of included or excluded Regions. You cannot use
+         * <code>UpdateFindingAggregator</code> to change the aggregation Region.</p>
+         * <p>You must run <code>UpdateFindingAggregator</code> from the current
+         * aggregation Region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateFindingAggregator">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateFindingAggregatorAsync(const Model::UpdateFindingAggregatorRequest& request, const UpdateFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> <code>UpdateFindings</code> is deprecated. Instead of
          * <code>UpdateFindings</code>, use <code>BatchUpdateFindings</code>.</p>
          * <p>Updates the <code>Note</code> and <code>RecordState</code> of the Security
@@ -2115,10 +2319,12 @@ namespace Model
         void BatchImportFindingsAsyncHelper(const Model::BatchImportFindingsRequest& request, const BatchImportFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchUpdateFindingsAsyncHelper(const Model::BatchUpdateFindingsRequest& request, const BatchUpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateActionTargetAsyncHelper(const Model::CreateActionTargetRequest& request, const CreateActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateFindingAggregatorAsyncHelper(const Model::CreateFindingAggregatorRequest& request, const CreateFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInsightAsyncHelper(const Model::CreateInsightRequest& request, const CreateInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMembersAsyncHelper(const Model::CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeclineInvitationsAsyncHelper(const Model::DeclineInvitationsRequest& request, const DeclineInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteActionTargetAsyncHelper(const Model::DeleteActionTargetRequest& request, const DeleteActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteFindingAggregatorAsyncHelper(const Model::DeleteFindingAggregatorRequest& request, const DeleteFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInsightAsyncHelper(const Model::DeleteInsightRequest& request, const DeleteInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInvitationsAsyncHelper(const Model::DeleteInvitationsRequest& request, const DeleteInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMembersAsyncHelper(const Model::DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2138,6 +2344,7 @@ namespace Model
         void EnableSecurityHubAsyncHelper(const Model::EnableSecurityHubRequest& request, const EnableSecurityHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAdministratorAccountAsyncHelper(const Model::GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEnabledStandardsAsyncHelper(const Model::GetEnabledStandardsRequest& request, const GetEnabledStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetFindingAggregatorAsyncHelper(const Model::GetFindingAggregatorRequest& request, const GetFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFindingsAsyncHelper(const Model::GetFindingsRequest& request, const GetFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetInsightResultsAsyncHelper(const Model::GetInsightResultsRequest& request, const GetInsightResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetInsightsAsyncHelper(const Model::GetInsightsRequest& request, const GetInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2145,6 +2352,7 @@ namespace Model
         void GetMembersAsyncHelper(const Model::GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InviteMembersAsyncHelper(const Model::InviteMembersRequest& request, const InviteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEnabledProductsForImportAsyncHelper(const Model::ListEnabledProductsForImportRequest& request, const ListEnabledProductsForImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListFindingAggregatorsAsyncHelper(const Model::ListFindingAggregatorsRequest& request, const ListFindingAggregatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInvitationsAsyncHelper(const Model::ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMembersAsyncHelper(const Model::ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOrganizationAdminAccountsAsyncHelper(const Model::ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2152,6 +2360,7 @@ namespace Model
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateActionTargetAsyncHelper(const Model::UpdateActionTargetRequest& request, const UpdateActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateFindingAggregatorAsyncHelper(const Model::UpdateFindingAggregatorRequest& request, const UpdateFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFindingsAsyncHelper(const Model::UpdateFindingsRequest& request, const UpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateInsightAsyncHelper(const Model::UpdateInsightRequest& request, const UpdateInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateOrganizationConfigurationAsyncHelper(const Model::UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

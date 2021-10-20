@@ -191,37 +191,37 @@ namespace Model
 
 
     /**
-     * <p>The Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_region = value; }
 
     /**
-     * <p>The Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_region = std::move(value); }
 
     /**
-     * <p>The Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline void SetRegion(const char* value) { m_region.assign(value); }
 
     /**
-     * <p>The Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline CreateInterconnectResult& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline CreateInterconnectResult& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline CreateInterconnectResult& WithRegion(const char* value) { SetRegion(value); return *this;}
 

@@ -129,42 +129,42 @@ namespace Model
 
 
     /**
-     * <p>The Region for the location.</p>
+     * <p>The Amazon Web Services Region for the location.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The Region for the location.</p>
+     * <p>The Amazon Web Services Region for the location.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The Region for the location.</p>
+     * <p>The Amazon Web Services Region for the location.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The Region for the location.</p>
+     * <p>The Amazon Web Services Region for the location.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The Region for the location.</p>
+     * <p>The Amazon Web Services Region for the location.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The Region for the location.</p>
+     * <p>The Amazon Web Services Region for the location.</p>
      */
     inline Location& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The Region for the location.</p>
+     * <p>The Amazon Web Services Region for the location.</p>
      */
     inline Location& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The Region for the location.</p>
+     * <p>The Amazon Web Services Region for the location.</p>
      */
     inline Location& WithRegion(const char* value) { SetRegion(value); return *this;}
 

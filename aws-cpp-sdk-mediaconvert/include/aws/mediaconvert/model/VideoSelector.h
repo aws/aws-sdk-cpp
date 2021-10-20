@@ -503,86 +503,74 @@ namespace Model
 
 
     /**
-     * Use this setting when your input video codec is AVC-Intra. Ignore this setting
-     * for all other inputs. If the sample range metadata in your input video is
-     * accurate, or if you don't know about sample range, keep the default value,
-     * Follow (FOLLOW), for this setting. When you do, the service automatically
-     * detects your input sample range. If your input video has metadata indicating the
-     * wrong sample range, specify the accurate sample range here. When you do,
-     * MediaConvert ignores any sample range information in the input metadata.
-     * Regardless of whether MediaConvert uses the input sample range or the sample
-     * range that you specify, MediaConvert uses the sample range for transcoding and
-     * also writes it to the output metadata.
+     * If the sample range metadata in your input video is accurate, or if you don't
+     * know about sample range, keep the default value, Follow (FOLLOW), for this
+     * setting. When you do, the service automatically detects your input sample range.
+     * If your input video has metadata indicating the wrong sample range, specify the
+     * accurate sample range here. When you do, MediaConvert ignores any sample range
+     * information in the input metadata. Regardless of whether MediaConvert uses the
+     * input sample range or the sample range that you specify, MediaConvert uses the
+     * sample range for transcoding and also writes it to the output metadata.
      */
     inline const InputSampleRange& GetSampleRange() const{ return m_sampleRange; }
 
     /**
-     * Use this setting when your input video codec is AVC-Intra. Ignore this setting
-     * for all other inputs. If the sample range metadata in your input video is
-     * accurate, or if you don't know about sample range, keep the default value,
-     * Follow (FOLLOW), for this setting. When you do, the service automatically
-     * detects your input sample range. If your input video has metadata indicating the
-     * wrong sample range, specify the accurate sample range here. When you do,
-     * MediaConvert ignores any sample range information in the input metadata.
-     * Regardless of whether MediaConvert uses the input sample range or the sample
-     * range that you specify, MediaConvert uses the sample range for transcoding and
-     * also writes it to the output metadata.
+     * If the sample range metadata in your input video is accurate, or if you don't
+     * know about sample range, keep the default value, Follow (FOLLOW), for this
+     * setting. When you do, the service automatically detects your input sample range.
+     * If your input video has metadata indicating the wrong sample range, specify the
+     * accurate sample range here. When you do, MediaConvert ignores any sample range
+     * information in the input metadata. Regardless of whether MediaConvert uses the
+     * input sample range or the sample range that you specify, MediaConvert uses the
+     * sample range for transcoding and also writes it to the output metadata.
      */
     inline bool SampleRangeHasBeenSet() const { return m_sampleRangeHasBeenSet; }
 
     /**
-     * Use this setting when your input video codec is AVC-Intra. Ignore this setting
-     * for all other inputs. If the sample range metadata in your input video is
-     * accurate, or if you don't know about sample range, keep the default value,
-     * Follow (FOLLOW), for this setting. When you do, the service automatically
-     * detects your input sample range. If your input video has metadata indicating the
-     * wrong sample range, specify the accurate sample range here. When you do,
-     * MediaConvert ignores any sample range information in the input metadata.
-     * Regardless of whether MediaConvert uses the input sample range or the sample
-     * range that you specify, MediaConvert uses the sample range for transcoding and
-     * also writes it to the output metadata.
+     * If the sample range metadata in your input video is accurate, or if you don't
+     * know about sample range, keep the default value, Follow (FOLLOW), for this
+     * setting. When you do, the service automatically detects your input sample range.
+     * If your input video has metadata indicating the wrong sample range, specify the
+     * accurate sample range here. When you do, MediaConvert ignores any sample range
+     * information in the input metadata. Regardless of whether MediaConvert uses the
+     * input sample range or the sample range that you specify, MediaConvert uses the
+     * sample range for transcoding and also writes it to the output metadata.
      */
     inline void SetSampleRange(const InputSampleRange& value) { m_sampleRangeHasBeenSet = true; m_sampleRange = value; }
 
     /**
-     * Use this setting when your input video codec is AVC-Intra. Ignore this setting
-     * for all other inputs. If the sample range metadata in your input video is
-     * accurate, or if you don't know about sample range, keep the default value,
-     * Follow (FOLLOW), for this setting. When you do, the service automatically
-     * detects your input sample range. If your input video has metadata indicating the
-     * wrong sample range, specify the accurate sample range here. When you do,
-     * MediaConvert ignores any sample range information in the input metadata.
-     * Regardless of whether MediaConvert uses the input sample range or the sample
-     * range that you specify, MediaConvert uses the sample range for transcoding and
-     * also writes it to the output metadata.
+     * If the sample range metadata in your input video is accurate, or if you don't
+     * know about sample range, keep the default value, Follow (FOLLOW), for this
+     * setting. When you do, the service automatically detects your input sample range.
+     * If your input video has metadata indicating the wrong sample range, specify the
+     * accurate sample range here. When you do, MediaConvert ignores any sample range
+     * information in the input metadata. Regardless of whether MediaConvert uses the
+     * input sample range or the sample range that you specify, MediaConvert uses the
+     * sample range for transcoding and also writes it to the output metadata.
      */
     inline void SetSampleRange(InputSampleRange&& value) { m_sampleRangeHasBeenSet = true; m_sampleRange = std::move(value); }
 
     /**
-     * Use this setting when your input video codec is AVC-Intra. Ignore this setting
-     * for all other inputs. If the sample range metadata in your input video is
-     * accurate, or if you don't know about sample range, keep the default value,
-     * Follow (FOLLOW), for this setting. When you do, the service automatically
-     * detects your input sample range. If your input video has metadata indicating the
-     * wrong sample range, specify the accurate sample range here. When you do,
-     * MediaConvert ignores any sample range information in the input metadata.
-     * Regardless of whether MediaConvert uses the input sample range or the sample
-     * range that you specify, MediaConvert uses the sample range for transcoding and
-     * also writes it to the output metadata.
+     * If the sample range metadata in your input video is accurate, or if you don't
+     * know about sample range, keep the default value, Follow (FOLLOW), for this
+     * setting. When you do, the service automatically detects your input sample range.
+     * If your input video has metadata indicating the wrong sample range, specify the
+     * accurate sample range here. When you do, MediaConvert ignores any sample range
+     * information in the input metadata. Regardless of whether MediaConvert uses the
+     * input sample range or the sample range that you specify, MediaConvert uses the
+     * sample range for transcoding and also writes it to the output metadata.
      */
     inline VideoSelector& WithSampleRange(const InputSampleRange& value) { SetSampleRange(value); return *this;}
 
     /**
-     * Use this setting when your input video codec is AVC-Intra. Ignore this setting
-     * for all other inputs. If the sample range metadata in your input video is
-     * accurate, or if you don't know about sample range, keep the default value,
-     * Follow (FOLLOW), for this setting. When you do, the service automatically
-     * detects your input sample range. If your input video has metadata indicating the
-     * wrong sample range, specify the accurate sample range here. When you do,
-     * MediaConvert ignores any sample range information in the input metadata.
-     * Regardless of whether MediaConvert uses the input sample range or the sample
-     * range that you specify, MediaConvert uses the sample range for transcoding and
-     * also writes it to the output metadata.
+     * If the sample range metadata in your input video is accurate, or if you don't
+     * know about sample range, keep the default value, Follow (FOLLOW), for this
+     * setting. When you do, the service automatically detects your input sample range.
+     * If your input video has metadata indicating the wrong sample range, specify the
+     * accurate sample range here. When you do, MediaConvert ignores any sample range
+     * information in the input metadata. Regardless of whether MediaConvert uses the
+     * input sample range or the sample range that you specify, MediaConvert uses the
+     * sample range for transcoding and also writes it to the output metadata.
      */
     inline VideoSelector& WithSampleRange(InputSampleRange&& value) { SetSampleRange(std::move(value)); return *this;}
 

@@ -683,114 +683,107 @@ namespace Model
     /**
      * <p>List the PII entity types you want to identify or redact. In order to specify
      * entity types, you must have either <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
-     * must be comma-separated; the available values are:
-     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
-     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
-     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
-     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
-     * parameter with a default value of <code>ALL</code>.</p>
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PiiEntityTypes</code>
+     * is an optional parameter with a default value of <code>ALL</code>.</p>
      */
     inline const Aws::String& GetPiiEntityTypes() const{ return m_piiEntityTypes; }
 
     /**
      * <p>List the PII entity types you want to identify or redact. In order to specify
      * entity types, you must have either <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
-     * must be comma-separated; the available values are:
-     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
-     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
-     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
-     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
-     * parameter with a default value of <code>ALL</code>.</p>
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PiiEntityTypes</code>
+     * is an optional parameter with a default value of <code>ALL</code>.</p>
      */
     inline bool PiiEntityTypesHasBeenSet() const { return m_piiEntityTypesHasBeenSet; }
 
     /**
      * <p>List the PII entity types you want to identify or redact. In order to specify
      * entity types, you must have either <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
-     * must be comma-separated; the available values are:
-     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
-     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
-     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
-     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
-     * parameter with a default value of <code>ALL</code>.</p>
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PiiEntityTypes</code>
+     * is an optional parameter with a default value of <code>ALL</code>.</p>
      */
     inline void SetPiiEntityTypes(const Aws::String& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = value; }
 
     /**
      * <p>List the PII entity types you want to identify or redact. In order to specify
      * entity types, you must have either <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
-     * must be comma-separated; the available values are:
-     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
-     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
-     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
-     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
-     * parameter with a default value of <code>ALL</code>.</p>
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PiiEntityTypes</code>
+     * is an optional parameter with a default value of <code>ALL</code>.</p>
      */
     inline void SetPiiEntityTypes(Aws::String&& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = std::move(value); }
 
     /**
      * <p>List the PII entity types you want to identify or redact. In order to specify
      * entity types, you must have either <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
-     * must be comma-separated; the available values are:
-     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
-     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
-     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
-     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
-     * parameter with a default value of <code>ALL</code>.</p>
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PiiEntityTypes</code>
+     * is an optional parameter with a default value of <code>ALL</code>.</p>
      */
     inline void SetPiiEntityTypes(const char* value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes.assign(value); }
 
     /**
      * <p>List the PII entity types you want to identify or redact. In order to specify
      * entity types, you must have either <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
-     * must be comma-separated; the available values are:
-     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
-     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
-     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
-     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
-     * parameter with a default value of <code>ALL</code>.</p>
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PiiEntityTypes</code>
+     * is an optional parameter with a default value of <code>ALL</code>.</p>
      */
     inline StartStreamTranscriptionRequest& WithPiiEntityTypes(const Aws::String& value) { SetPiiEntityTypes(value); return *this;}
 
     /**
      * <p>List the PII entity types you want to identify or redact. In order to specify
      * entity types, you must have either <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
-     * must be comma-separated; the available values are:
-     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
-     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
-     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
-     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
-     * parameter with a default value of <code>ALL</code>.</p>
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PiiEntityTypes</code>
+     * is an optional parameter with a default value of <code>ALL</code>.</p>
      */
     inline StartStreamTranscriptionRequest& WithPiiEntityTypes(Aws::String&& value) { SetPiiEntityTypes(std::move(value)); return *this;}
 
     /**
      * <p>List the PII entity types you want to identify or redact. In order to specify
      * entity types, you must have either <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
-     * must be comma-separated; the available values are:
-     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
-     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
-     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
-     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
-     * parameter with a default value of <code>ALL</code>.</p>
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PiiEntityTypes</code>
+     * is an optional parameter with a default value of <code>ALL</code>.</p>
      */
     inline StartStreamTranscriptionRequest& WithPiiEntityTypes(const char* value) { SetPiiEntityTypes(value); return *this;}
+
+
+    /**
+     * <p>The name of the language model you want to use.</p>
+     */
+    inline const Aws::String& GetLanguageModelName() const{ return m_languageModelName; }
+
+    /**
+     * <p>The name of the language model you want to use.</p>
+     */
+    inline bool LanguageModelNameHasBeenSet() const { return m_languageModelNameHasBeenSet; }
+
+    /**
+     * <p>The name of the language model you want to use.</p>
+     */
+    inline void SetLanguageModelName(const Aws::String& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = value; }
+
+    /**
+     * <p>The name of the language model you want to use.</p>
+     */
+    inline void SetLanguageModelName(Aws::String&& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = std::move(value); }
+
+    /**
+     * <p>The name of the language model you want to use.</p>
+     */
+    inline void SetLanguageModelName(const char* value) { m_languageModelNameHasBeenSet = true; m_languageModelName.assign(value); }
+
+    /**
+     * <p>The name of the language model you want to use.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithLanguageModelName(const Aws::String& value) { SetLanguageModelName(value); return *this;}
+
+    /**
+     * <p>The name of the language model you want to use.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithLanguageModelName(Aws::String&& value) { SetLanguageModelName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the language model you want to use.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithLanguageModelName(const char* value) { SetLanguageModelName(value); return *this;}
 
   private:
 
@@ -840,6 +833,9 @@ namespace Model
 
     Aws::String m_piiEntityTypes;
     bool m_piiEntityTypesHasBeenSet;
+
+    Aws::String m_languageModelName;
+    bool m_languageModelNameHasBeenSet;
     Aws::Utils::Event::EventStreamDecoder m_decoder;
     StartStreamTranscriptionHandler m_handler;
 

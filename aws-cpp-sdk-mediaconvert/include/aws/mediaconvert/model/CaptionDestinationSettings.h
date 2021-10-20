@@ -53,8 +53,10 @@ namespace Model
 
 
     /**
-     * Settings related to burn-in captions. Set up burn-in captions in the same output
-     * as your video. For more information, see
+     * Burn-in is a captions delivery method, rather than a captions format. Burn-in
+     * writes the captions directly on your video frames, replacing pixels of video
+     * content with the captions. Set up burn-in captions in the same output as your
+     * video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html.
      * When you work directly in your JSON job specification, include this object and
      * any required children when you set destinationType to BURN_IN.
@@ -62,8 +64,10 @@ namespace Model
     inline const BurninDestinationSettings& GetBurninDestinationSettings() const{ return m_burninDestinationSettings; }
 
     /**
-     * Settings related to burn-in captions. Set up burn-in captions in the same output
-     * as your video. For more information, see
+     * Burn-in is a captions delivery method, rather than a captions format. Burn-in
+     * writes the captions directly on your video frames, replacing pixels of video
+     * content with the captions. Set up burn-in captions in the same output as your
+     * video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html.
      * When you work directly in your JSON job specification, include this object and
      * any required children when you set destinationType to BURN_IN.
@@ -71,8 +75,10 @@ namespace Model
     inline bool BurninDestinationSettingsHasBeenSet() const { return m_burninDestinationSettingsHasBeenSet; }
 
     /**
-     * Settings related to burn-in captions. Set up burn-in captions in the same output
-     * as your video. For more information, see
+     * Burn-in is a captions delivery method, rather than a captions format. Burn-in
+     * writes the captions directly on your video frames, replacing pixels of video
+     * content with the captions. Set up burn-in captions in the same output as your
+     * video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html.
      * When you work directly in your JSON job specification, include this object and
      * any required children when you set destinationType to BURN_IN.
@@ -80,8 +86,10 @@ namespace Model
     inline void SetBurninDestinationSettings(const BurninDestinationSettings& value) { m_burninDestinationSettingsHasBeenSet = true; m_burninDestinationSettings = value; }
 
     /**
-     * Settings related to burn-in captions. Set up burn-in captions in the same output
-     * as your video. For more information, see
+     * Burn-in is a captions delivery method, rather than a captions format. Burn-in
+     * writes the captions directly on your video frames, replacing pixels of video
+     * content with the captions. Set up burn-in captions in the same output as your
+     * video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html.
      * When you work directly in your JSON job specification, include this object and
      * any required children when you set destinationType to BURN_IN.
@@ -89,8 +97,10 @@ namespace Model
     inline void SetBurninDestinationSettings(BurninDestinationSettings&& value) { m_burninDestinationSettingsHasBeenSet = true; m_burninDestinationSettings = std::move(value); }
 
     /**
-     * Settings related to burn-in captions. Set up burn-in captions in the same output
-     * as your video. For more information, see
+     * Burn-in is a captions delivery method, rather than a captions format. Burn-in
+     * writes the captions directly on your video frames, replacing pixels of video
+     * content with the captions. Set up burn-in captions in the same output as your
+     * video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html.
      * When you work directly in your JSON job specification, include this object and
      * any required children when you set destinationType to BURN_IN.
@@ -98,8 +108,10 @@ namespace Model
     inline CaptionDestinationSettings& WithBurninDestinationSettings(const BurninDestinationSettings& value) { SetBurninDestinationSettings(value); return *this;}
 
     /**
-     * Settings related to burn-in captions. Set up burn-in captions in the same output
-     * as your video. For more information, see
+     * Burn-in is a captions delivery method, rather than a captions format. Burn-in
+     * writes the captions directly on your video frames, replacing pixels of video
+     * content with the captions. Set up burn-in captions in the same output as your
+     * video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html.
      * When you work directly in your JSON job specification, include this object and
      * any required children when you set destinationType to BURN_IN.
@@ -437,32 +449,56 @@ namespace Model
 
 
     /**
-     * SRT Destination Settings
+     * Settings related to SRT captions. SRT is a sidecar format that holds captions in
+     * a file that is separate from the video container. Set up sidecar captions in the
+     * same output group, but different output from your video. When you work directly
+     * in your JSON job specification, include this object and any required children
+     * when you set destinationType to SRT.
      */
     inline const SrtDestinationSettings& GetSrtDestinationSettings() const{ return m_srtDestinationSettings; }
 
     /**
-     * SRT Destination Settings
+     * Settings related to SRT captions. SRT is a sidecar format that holds captions in
+     * a file that is separate from the video container. Set up sidecar captions in the
+     * same output group, but different output from your video. When you work directly
+     * in your JSON job specification, include this object and any required children
+     * when you set destinationType to SRT.
      */
     inline bool SrtDestinationSettingsHasBeenSet() const { return m_srtDestinationSettingsHasBeenSet; }
 
     /**
-     * SRT Destination Settings
+     * Settings related to SRT captions. SRT is a sidecar format that holds captions in
+     * a file that is separate from the video container. Set up sidecar captions in the
+     * same output group, but different output from your video. When you work directly
+     * in your JSON job specification, include this object and any required children
+     * when you set destinationType to SRT.
      */
     inline void SetSrtDestinationSettings(const SrtDestinationSettings& value) { m_srtDestinationSettingsHasBeenSet = true; m_srtDestinationSettings = value; }
 
     /**
-     * SRT Destination Settings
+     * Settings related to SRT captions. SRT is a sidecar format that holds captions in
+     * a file that is separate from the video container. Set up sidecar captions in the
+     * same output group, but different output from your video. When you work directly
+     * in your JSON job specification, include this object and any required children
+     * when you set destinationType to SRT.
      */
     inline void SetSrtDestinationSettings(SrtDestinationSettings&& value) { m_srtDestinationSettingsHasBeenSet = true; m_srtDestinationSettings = std::move(value); }
 
     /**
-     * SRT Destination Settings
+     * Settings related to SRT captions. SRT is a sidecar format that holds captions in
+     * a file that is separate from the video container. Set up sidecar captions in the
+     * same output group, but different output from your video. When you work directly
+     * in your JSON job specification, include this object and any required children
+     * when you set destinationType to SRT.
      */
     inline CaptionDestinationSettings& WithSrtDestinationSettings(const SrtDestinationSettings& value) { SetSrtDestinationSettings(value); return *this;}
 
     /**
-     * SRT Destination Settings
+     * Settings related to SRT captions. SRT is a sidecar format that holds captions in
+     * a file that is separate from the video container. Set up sidecar captions in the
+     * same output group, but different output from your video. When you work directly
+     * in your JSON job specification, include this object and any required children
+     * when you set destinationType to SRT.
      */
     inline CaptionDestinationSettings& WithSrtDestinationSettings(SrtDestinationSettings&& value) { SetSrtDestinationSettings(std::move(value)); return *this;}
 
@@ -590,32 +626,68 @@ namespace Model
 
 
     /**
-     * WEBVTT Destination Settings
+     * Settings related to WebVTT captions. WebVTT is a sidecar format that holds
+     * captions in a file that is separate from the video container. Set up sidecar
+     * captions in the same output group, but different output from your video. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
+     * When you work directly in your JSON job specification, include this object and
+     * any required children when you set destinationType to WebVTT.
      */
     inline const WebvttDestinationSettings& GetWebvttDestinationSettings() const{ return m_webvttDestinationSettings; }
 
     /**
-     * WEBVTT Destination Settings
+     * Settings related to WebVTT captions. WebVTT is a sidecar format that holds
+     * captions in a file that is separate from the video container. Set up sidecar
+     * captions in the same output group, but different output from your video. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
+     * When you work directly in your JSON job specification, include this object and
+     * any required children when you set destinationType to WebVTT.
      */
     inline bool WebvttDestinationSettingsHasBeenSet() const { return m_webvttDestinationSettingsHasBeenSet; }
 
     /**
-     * WEBVTT Destination Settings
+     * Settings related to WebVTT captions. WebVTT is a sidecar format that holds
+     * captions in a file that is separate from the video container. Set up sidecar
+     * captions in the same output group, but different output from your video. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
+     * When you work directly in your JSON job specification, include this object and
+     * any required children when you set destinationType to WebVTT.
      */
     inline void SetWebvttDestinationSettings(const WebvttDestinationSettings& value) { m_webvttDestinationSettingsHasBeenSet = true; m_webvttDestinationSettings = value; }
 
     /**
-     * WEBVTT Destination Settings
+     * Settings related to WebVTT captions. WebVTT is a sidecar format that holds
+     * captions in a file that is separate from the video container. Set up sidecar
+     * captions in the same output group, but different output from your video. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
+     * When you work directly in your JSON job specification, include this object and
+     * any required children when you set destinationType to WebVTT.
      */
     inline void SetWebvttDestinationSettings(WebvttDestinationSettings&& value) { m_webvttDestinationSettingsHasBeenSet = true; m_webvttDestinationSettings = std::move(value); }
 
     /**
-     * WEBVTT Destination Settings
+     * Settings related to WebVTT captions. WebVTT is a sidecar format that holds
+     * captions in a file that is separate from the video container. Set up sidecar
+     * captions in the same output group, but different output from your video. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
+     * When you work directly in your JSON job specification, include this object and
+     * any required children when you set destinationType to WebVTT.
      */
     inline CaptionDestinationSettings& WithWebvttDestinationSettings(const WebvttDestinationSettings& value) { SetWebvttDestinationSettings(value); return *this;}
 
     /**
-     * WEBVTT Destination Settings
+     * Settings related to WebVTT captions. WebVTT is a sidecar format that holds
+     * captions in a file that is separate from the video container. Set up sidecar
+     * captions in the same output group, but different output from your video. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
+     * When you work directly in your JSON job specification, include this object and
+     * any required children when you set destinationType to WebVTT.
      */
     inline CaptionDestinationSettings& WithWebvttDestinationSettings(WebvttDestinationSettings&& value) { SetWebvttDestinationSettings(std::move(value)); return *this;}
 
