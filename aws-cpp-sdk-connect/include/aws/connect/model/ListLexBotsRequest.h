@@ -137,22 +137,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page. If no value is specified,
+     * the default is 10. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page. If no value is specified,
+     * the default is 10. </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page. If no value is specified,
+     * the default is 10. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page. If no value is specified,
+     * the default is 10. </p>
      */
     inline ListLexBotsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
