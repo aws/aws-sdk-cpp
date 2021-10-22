@@ -7,7 +7,7 @@
         // General
         "SDK's", "sdks", "awssdk", "executables", "debuggable",
         // AWS general
-        "Arns", "AMZN", "amzn",
+        "Arns", "AMZN", "amzn", "Paulo", "Ningxia", "ISOB", "isob",
         // AWS Signature
         "SIGV", "AUTHV",
         // CMake
