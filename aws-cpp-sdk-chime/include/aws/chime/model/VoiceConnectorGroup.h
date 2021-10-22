@@ -240,6 +240,47 @@ namespace Model
      */
     inline VoiceConnectorGroup& WithUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetUpdatedTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ARN of the specified Amazon Chime Voice Connector group.</p>
+     */
+    inline const Aws::String& GetVoiceConnectorGroupArn() const{ return m_voiceConnectorGroupArn; }
+
+    /**
+     * <p>The ARN of the specified Amazon Chime Voice Connector group.</p>
+     */
+    inline bool VoiceConnectorGroupArnHasBeenSet() const { return m_voiceConnectorGroupArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the specified Amazon Chime Voice Connector group.</p>
+     */
+    inline void SetVoiceConnectorGroupArn(const Aws::String& value) { m_voiceConnectorGroupArnHasBeenSet = true; m_voiceConnectorGroupArn = value; }
+
+    /**
+     * <p>The ARN of the specified Amazon Chime Voice Connector group.</p>
+     */
+    inline void SetVoiceConnectorGroupArn(Aws::String&& value) { m_voiceConnectorGroupArnHasBeenSet = true; m_voiceConnectorGroupArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the specified Amazon Chime Voice Connector group.</p>
+     */
+    inline void SetVoiceConnectorGroupArn(const char* value) { m_voiceConnectorGroupArnHasBeenSet = true; m_voiceConnectorGroupArn.assign(value); }
+
+    /**
+     * <p>The ARN of the specified Amazon Chime Voice Connector group.</p>
+     */
+    inline VoiceConnectorGroup& WithVoiceConnectorGroupArn(const Aws::String& value) { SetVoiceConnectorGroupArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the specified Amazon Chime Voice Connector group.</p>
+     */
+    inline VoiceConnectorGroup& WithVoiceConnectorGroupArn(Aws::String&& value) { SetVoiceConnectorGroupArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the specified Amazon Chime Voice Connector group.</p>
+     */
+    inline VoiceConnectorGroup& WithVoiceConnectorGroupArn(const char* value) { SetVoiceConnectorGroupArn(value); return *this;}
+
   private:
 
     Aws::String m_voiceConnectorGroupId;
@@ -256,6 +297,9 @@ namespace Model
 
     Aws::Utils::DateTime m_updatedTimestamp;
     bool m_updatedTimestampHasBeenSet;
+
+    Aws::String m_voiceConnectorGroupArn;
+    bool m_voiceConnectorGroupArnHasBeenSet;
   };
 
 } // namespace Model

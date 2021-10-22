@@ -23,7 +23,8 @@ VoiceConnectorGroup::VoiceConnectorGroup() :
     m_nameHasBeenSet(false),
     m_voiceConnectorItemsHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
+    m_updatedTimestampHasBeenSet(false),
+    m_voiceConnectorGroupArnHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ VoiceConnectorGroup::VoiceConnectorGroup(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_voiceConnectorItemsHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
+    m_updatedTimestampHasBeenSet(false),
+    m_voiceConnectorGroupArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +79,13 @@ VoiceConnectorGroup& VoiceConnectorGroup::operator =(JsonView jsonValue)
     m_updatedTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VoiceConnectorGroupArn"))
+  {
+    m_voiceConnectorGroupArn = jsonValue.GetString("VoiceConnectorGroupArn");
+
+    m_voiceConnectorGroupArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -115,6 +124,12 @@ JsonValue VoiceConnectorGroup::Jsonize() const
   if(m_updatedTimestampHasBeenSet)
   {
    payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(DateFormat::ISO_8601));
+  }
+
+  if(m_voiceConnectorGroupArnHasBeenSet)
+  {
+   payload.WithString("VoiceConnectorGroupArn", m_voiceConnectorGroupArn);
+
   }
 
   return payload;

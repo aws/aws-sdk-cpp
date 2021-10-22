@@ -85,32 +85,32 @@ namespace Model
 
 
     /**
-     * <p> The account associated with the assessment. </p>
+     * <p> The Amazon Web Services account associated with the assessment. </p>
      */
     inline const AWSAccount& GetAwsAccount() const{ return m_awsAccount; }
 
     /**
-     * <p> The account associated with the assessment. </p>
+     * <p> The Amazon Web Services account associated with the assessment. </p>
      */
     inline bool AwsAccountHasBeenSet() const { return m_awsAccountHasBeenSet; }
 
     /**
-     * <p> The account associated with the assessment. </p>
+     * <p> The Amazon Web Services account associated with the assessment. </p>
      */
     inline void SetAwsAccount(const AWSAccount& value) { m_awsAccountHasBeenSet = true; m_awsAccount = value; }
 
     /**
-     * <p> The account associated with the assessment. </p>
+     * <p> The Amazon Web Services account associated with the assessment. </p>
      */
     inline void SetAwsAccount(AWSAccount&& value) { m_awsAccountHasBeenSet = true; m_awsAccount = std::move(value); }
 
     /**
-     * <p> The account associated with the assessment. </p>
+     * <p> The Amazon Web Services account associated with the assessment. </p>
      */
     inline Assessment& WithAwsAccount(const AWSAccount& value) { SetAwsAccount(value); return *this;}
 
     /**
-     * <p> The account associated with the assessment. </p>
+     * <p> The Amazon Web Services account associated with the assessment. </p>
      */
     inline Assessment& WithAwsAccount(AWSAccount&& value) { SetAwsAccount(std::move(value)); return *this;}
 

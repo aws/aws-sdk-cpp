@@ -286,6 +286,47 @@ namespace Model
      */
     inline VoiceConnector& WithUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetUpdatedTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ARN of the specified Amazon Chime Voice Connector.</p>
+     */
+    inline const Aws::String& GetVoiceConnectorArn() const{ return m_voiceConnectorArn; }
+
+    /**
+     * <p>The ARN of the specified Amazon Chime Voice Connector.</p>
+     */
+    inline bool VoiceConnectorArnHasBeenSet() const { return m_voiceConnectorArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the specified Amazon Chime Voice Connector.</p>
+     */
+    inline void SetVoiceConnectorArn(const Aws::String& value) { m_voiceConnectorArnHasBeenSet = true; m_voiceConnectorArn = value; }
+
+    /**
+     * <p>The ARN of the specified Amazon Chime Voice Connector.</p>
+     */
+    inline void SetVoiceConnectorArn(Aws::String&& value) { m_voiceConnectorArnHasBeenSet = true; m_voiceConnectorArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the specified Amazon Chime Voice Connector.</p>
+     */
+    inline void SetVoiceConnectorArn(const char* value) { m_voiceConnectorArnHasBeenSet = true; m_voiceConnectorArn.assign(value); }
+
+    /**
+     * <p>The ARN of the specified Amazon Chime Voice Connector.</p>
+     */
+    inline VoiceConnector& WithVoiceConnectorArn(const Aws::String& value) { SetVoiceConnectorArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the specified Amazon Chime Voice Connector.</p>
+     */
+    inline VoiceConnector& WithVoiceConnectorArn(Aws::String&& value) { SetVoiceConnectorArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the specified Amazon Chime Voice Connector.</p>
+     */
+    inline VoiceConnector& WithVoiceConnectorArn(const char* value) { SetVoiceConnectorArn(value); return *this;}
+
   private:
 
     Aws::String m_voiceConnectorId;
@@ -308,6 +349,9 @@ namespace Model
 
     Aws::Utils::DateTime m_updatedTimestamp;
     bool m_updatedTimestampHasBeenSet;
+
+    Aws::String m_voiceConnectorArn;
+    bool m_voiceConnectorArnHasBeenSet;
   };
 
 } // namespace Model

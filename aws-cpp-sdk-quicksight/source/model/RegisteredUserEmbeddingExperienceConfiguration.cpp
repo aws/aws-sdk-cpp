@@ -20,13 +20,15 @@ namespace Model
 
 RegisteredUserEmbeddingExperienceConfiguration::RegisteredUserEmbeddingExperienceConfiguration() : 
     m_dashboardHasBeenSet(false),
-    m_quickSightConsoleHasBeenSet(false)
+    m_quickSightConsoleHasBeenSet(false),
+    m_qSearchBarHasBeenSet(false)
 {
 }
 
 RegisteredUserEmbeddingExperienceConfiguration::RegisteredUserEmbeddingExperienceConfiguration(JsonView jsonValue) : 
     m_dashboardHasBeenSet(false),
-    m_quickSightConsoleHasBeenSet(false)
+    m_quickSightConsoleHasBeenSet(false),
+    m_qSearchBarHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ RegisteredUserEmbeddingExperienceConfiguration& RegisteredUserEmbeddingExperienc
     m_quickSightConsoleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("QSearchBar"))
+  {
+    m_qSearchBar = jsonValue.GetObject("QSearchBar");
+
+    m_qSearchBarHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue RegisteredUserEmbeddingExperienceConfiguration::Jsonize() const
   if(m_quickSightConsoleHasBeenSet)
   {
    payload.WithObject("QuickSightConsole", m_quickSightConsole.Jsonize());
+
+  }
+
+  if(m_qSearchBarHasBeenSet)
+  {
+   payload.WithObject("QSearchBar", m_qSearchBar.Jsonize());
 
   }
 

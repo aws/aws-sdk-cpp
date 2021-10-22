@@ -33,37 +33,44 @@ namespace Model
 
 
     /**
-     * <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
+     * <p>The embed URL for the Amazon QuickSight dashboard, console, or Q search
+     * bar.</p>
      */
     inline const Aws::String& GetEmbedUrl() const{ return m_embedUrl; }
 
     /**
-     * <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
+     * <p>The embed URL for the Amazon QuickSight dashboard, console, or Q search
+     * bar.</p>
      */
     inline void SetEmbedUrl(const Aws::String& value) { m_embedUrl = value; }
 
     /**
-     * <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
+     * <p>The embed URL for the Amazon QuickSight dashboard, console, or Q search
+     * bar.</p>
      */
     inline void SetEmbedUrl(Aws::String&& value) { m_embedUrl = std::move(value); }
 
     /**
-     * <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
+     * <p>The embed URL for the Amazon QuickSight dashboard, console, or Q search
+     * bar.</p>
      */
     inline void SetEmbedUrl(const char* value) { m_embedUrl.assign(value); }
 
     /**
-     * <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
+     * <p>The embed URL for the Amazon QuickSight dashboard, console, or Q search
+     * bar.</p>
      */
     inline GenerateEmbedUrlForRegisteredUserResult& WithEmbedUrl(const Aws::String& value) { SetEmbedUrl(value); return *this;}
 
     /**
-     * <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
+     * <p>The embed URL for the Amazon QuickSight dashboard, console, or Q search
+     * bar.</p>
      */
     inline GenerateEmbedUrlForRegisteredUserResult& WithEmbedUrl(Aws::String&& value) { SetEmbedUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
+     * <p>The embed URL for the Amazon QuickSight dashboard, console, or Q search
+     * bar.</p>
      */
     inline GenerateEmbedUrlForRegisteredUserResult& WithEmbedUrl(const char* value) { SetEmbedUrl(value); return *this;}
 

@@ -769,26 +769,26 @@ namespace Model
         virtual void DeregisterAccountAsync(const Model::DeregisterAccountRequest& request, const DeregisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified member account as a delegated administrator for Audit
-         * Manager. </p>  <p>When you remove a delegated administrator from your
-         * Audit Manager settings, or when you deregister a delegated administrator from
-         * Organizations, you continue to have access to the evidence that you previously
-         * collected under that account. However, Audit Manager will stop collecting and
-         * attaching evidence to that delegated administrator account moving forward.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Removes the specified member Amazon Web Services account as a delegated
+         * administrator for Audit Manager. </p>  <p>When you remove a delegated
+         * administrator from your Audit Manager settings, or when you deregister a
+         * delegated administrator from Organizations, you continue to have access to the
+         * evidence that you previously collected under that account. However, Audit
+         * Manager will stop collecting and attaching evidence to that delegated
+         * administrator account moving forward.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeregisterOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::DeregisterOrganizationAdminAccountOutcome DeregisterOrganizationAdminAccount(const Model::DeregisterOrganizationAdminAccountRequest& request) const;
 
         /**
-         * <p>Removes the specified member account as a delegated administrator for Audit
-         * Manager. </p>  <p>When you remove a delegated administrator from your
-         * Audit Manager settings, or when you deregister a delegated administrator from
-         * Organizations, you continue to have access to the evidence that you previously
-         * collected under that account. However, Audit Manager will stop collecting and
-         * attaching evidence to that delegated administrator account moving forward.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Removes the specified member Amazon Web Services account as a delegated
+         * administrator for Audit Manager. </p>  <p>When you remove a delegated
+         * administrator from your Audit Manager settings, or when you deregister a
+         * delegated administrator from Organizations, you continue to have access to the
+         * evidence that you previously collected under that account. However, Audit
+         * Manager will stop collecting and attaching evidence to that delegated
+         * administrator account moving forward.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeregisterOrganizationAdminAccount">AWS
          * API Reference</a></p>
          *
@@ -797,13 +797,13 @@ namespace Model
         virtual Model::DeregisterOrganizationAdminAccountOutcomeCallable DeregisterOrganizationAdminAccountCallable(const Model::DeregisterOrganizationAdminAccountRequest& request) const;
 
         /**
-         * <p>Removes the specified member account as a delegated administrator for Audit
-         * Manager. </p>  <p>When you remove a delegated administrator from your
-         * Audit Manager settings, or when you deregister a delegated administrator from
-         * Organizations, you continue to have access to the evidence that you previously
-         * collected under that account. However, Audit Manager will stop collecting and
-         * attaching evidence to that delegated administrator account moving forward.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Removes the specified member Amazon Web Services account as a delegated
+         * administrator for Audit Manager. </p>  <p>When you remove a delegated
+         * administrator from your Audit Manager settings, or when you deregister a
+         * delegated administrator from Organizations, you continue to have access to the
+         * evidence that you previously collected under that account. However, Audit
+         * Manager will stop collecting and attaching evidence to that delegated
+         * administrator account moving forward.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeregisterOrganizationAdminAccount">AWS
          * API Reference</a></p>
          *
@@ -1220,16 +1220,16 @@ namespace Model
         virtual void GetServicesInScopeAsync(const Model::GetServicesInScopeRequest& request, const GetServicesInScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns the settings for the specified account. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p> Returns the settings for the specified Amazon Web Services account.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetSettings">AWS
          * API Reference</a></p>
          */
         virtual Model::GetSettingsOutcome GetSettings(const Model::GetSettingsRequest& request) const;
 
         /**
-         * <p> Returns the settings for the specified account. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p> Returns the settings for the specified Amazon Web Services account.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetSettings">AWS
          * API Reference</a></p>
          *
@@ -1238,8 +1238,8 @@ namespace Model
         virtual Model::GetSettingsOutcomeCallable GetSettingsCallable(const Model::GetSettingsRequest& request) const;
 
         /**
-         * <p> Returns the settings for the specified account. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p> Returns the settings for the specified Amazon Web Services account.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetSettings">AWS
          * API Reference</a></p>
          *
@@ -1444,16 +1444,16 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Enables Audit Manager for the specified account. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p> Enables Audit Manager for the specified Amazon Web Services account.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/RegisterAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::RegisterAccountOutcome RegisterAccount(const Model::RegisterAccountRequest& request) const;
 
         /**
-         * <p> Enables Audit Manager for the specified account. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p> Enables Audit Manager for the specified Amazon Web Services account.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/RegisterAccount">AWS
          * API Reference</a></p>
          *
@@ -1462,8 +1462,8 @@ namespace Model
         virtual Model::RegisterAccountOutcomeCallable RegisterAccountCallable(const Model::RegisterAccountRequest& request) const;
 
         /**
-         * <p> Enables Audit Manager for the specified account. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p> Enables Audit Manager for the specified Amazon Web Services account.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/RegisterAccount">AWS
          * API Reference</a></p>
          *
@@ -1472,16 +1472,16 @@ namespace Model
         virtual void RegisterAccountAsync(const Model::RegisterAccountRequest& request, const RegisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Enables an account within the organization as the delegated administrator
-         * for Audit Manager. </p><p><h3>See Also:</h3>   <a
+         * <p> Enables an Amazon Web Services account within the organization as the
+         * delegated administrator for Audit Manager. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/RegisterOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::RegisterOrganizationAdminAccountOutcome RegisterOrganizationAdminAccount(const Model::RegisterOrganizationAdminAccountRequest& request) const;
 
         /**
-         * <p> Enables an account within the organization as the delegated administrator
-         * for Audit Manager. </p><p><h3>See Also:</h3>   <a
+         * <p> Enables an Amazon Web Services account within the organization as the
+         * delegated administrator for Audit Manager. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/RegisterOrganizationAdminAccount">AWS
          * API Reference</a></p>
          *
@@ -1490,8 +1490,8 @@ namespace Model
         virtual Model::RegisterOrganizationAdminAccountOutcomeCallable RegisterOrganizationAdminAccountCallable(const Model::RegisterOrganizationAdminAccountRequest& request) const;
 
         /**
-         * <p> Enables an account within the organization as the delegated administrator
-         * for Audit Manager. </p><p><h3>See Also:</h3>   <a
+         * <p> Enables an Amazon Web Services account within the organization as the
+         * delegated administrator for Audit Manager. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/RegisterOrganizationAdminAccount">AWS
          * API Reference</a></p>
          *

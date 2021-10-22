@@ -86,42 +86,42 @@ namespace Model
 
 
     /**
-     * <p> The identifier for the specified account. </p>
+     * <p> The identifier for the specified Amazon Web Services account. </p>
      */
     inline const Aws::String& GetEvidenceAwsAccountId() const{ return m_evidenceAwsAccountId; }
 
     /**
-     * <p> The identifier for the specified account. </p>
+     * <p> The identifier for the specified Amazon Web Services account. </p>
      */
     inline bool EvidenceAwsAccountIdHasBeenSet() const { return m_evidenceAwsAccountIdHasBeenSet; }
 
     /**
-     * <p> The identifier for the specified account. </p>
+     * <p> The identifier for the specified Amazon Web Services account. </p>
      */
     inline void SetEvidenceAwsAccountId(const Aws::String& value) { m_evidenceAwsAccountIdHasBeenSet = true; m_evidenceAwsAccountId = value; }
 
     /**
-     * <p> The identifier for the specified account. </p>
+     * <p> The identifier for the specified Amazon Web Services account. </p>
      */
     inline void SetEvidenceAwsAccountId(Aws::String&& value) { m_evidenceAwsAccountIdHasBeenSet = true; m_evidenceAwsAccountId = std::move(value); }
 
     /**
-     * <p> The identifier for the specified account. </p>
+     * <p> The identifier for the specified Amazon Web Services account. </p>
      */
     inline void SetEvidenceAwsAccountId(const char* value) { m_evidenceAwsAccountIdHasBeenSet = true; m_evidenceAwsAccountId.assign(value); }
 
     /**
-     * <p> The identifier for the specified account. </p>
+     * <p> The identifier for the specified Amazon Web Services account. </p>
      */
     inline Evidence& WithEvidenceAwsAccountId(const Aws::String& value) { SetEvidenceAwsAccountId(value); return *this;}
 
     /**
-     * <p> The identifier for the specified account. </p>
+     * <p> The identifier for the specified Amazon Web Services account. </p>
      */
     inline Evidence& WithEvidenceAwsAccountId(Aws::String&& value) { SetEvidenceAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p> The identifier for the specified account. </p>
+     * <p> The identifier for the specified Amazon Web Services account. </p>
      */
     inline Evidence& WithEvidenceAwsAccountId(const char* value) { SetEvidenceAwsAccountId(value); return *this;}
 
@@ -528,91 +528,91 @@ namespace Model
 
 
     /**
-     * <p> The account from which the evidence is collected, and its organization path.
-     * </p>
+     * <p> The Amazon Web Services account from which the evidence is collected, and
+     * its organization path. </p>
      */
     inline const Aws::String& GetAwsOrganization() const{ return m_awsOrganization; }
 
     /**
-     * <p> The account from which the evidence is collected, and its organization path.
-     * </p>
+     * <p> The Amazon Web Services account from which the evidence is collected, and
+     * its organization path. </p>
      */
     inline bool AwsOrganizationHasBeenSet() const { return m_awsOrganizationHasBeenSet; }
 
     /**
-     * <p> The account from which the evidence is collected, and its organization path.
-     * </p>
+     * <p> The Amazon Web Services account from which the evidence is collected, and
+     * its organization path. </p>
      */
     inline void SetAwsOrganization(const Aws::String& value) { m_awsOrganizationHasBeenSet = true; m_awsOrganization = value; }
 
     /**
-     * <p> The account from which the evidence is collected, and its organization path.
-     * </p>
+     * <p> The Amazon Web Services account from which the evidence is collected, and
+     * its organization path. </p>
      */
     inline void SetAwsOrganization(Aws::String&& value) { m_awsOrganizationHasBeenSet = true; m_awsOrganization = std::move(value); }
 
     /**
-     * <p> The account from which the evidence is collected, and its organization path.
-     * </p>
+     * <p> The Amazon Web Services account from which the evidence is collected, and
+     * its organization path. </p>
      */
     inline void SetAwsOrganization(const char* value) { m_awsOrganizationHasBeenSet = true; m_awsOrganization.assign(value); }
 
     /**
-     * <p> The account from which the evidence is collected, and its organization path.
-     * </p>
+     * <p> The Amazon Web Services account from which the evidence is collected, and
+     * its organization path. </p>
      */
     inline Evidence& WithAwsOrganization(const Aws::String& value) { SetAwsOrganization(value); return *this;}
 
     /**
-     * <p> The account from which the evidence is collected, and its organization path.
-     * </p>
+     * <p> The Amazon Web Services account from which the evidence is collected, and
+     * its organization path. </p>
      */
     inline Evidence& WithAwsOrganization(Aws::String&& value) { SetAwsOrganization(std::move(value)); return *this;}
 
     /**
-     * <p> The account from which the evidence is collected, and its organization path.
-     * </p>
+     * <p> The Amazon Web Services account from which the evidence is collected, and
+     * its organization path. </p>
      */
     inline Evidence& WithAwsOrganization(const char* value) { SetAwsOrganization(value); return *this;}
 
 
     /**
-     * <p> The identifier for the specified account. </p>
+     * <p> The identifier for the specified Amazon Web Services account. </p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p> The identifier for the specified account. </p>
+     * <p> The identifier for the specified Amazon Web Services account. </p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p> The identifier for the specified account. </p>
+     * <p> The identifier for the specified Amazon Web Services account. </p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p> The identifier for the specified account. </p>
+     * <p> The identifier for the specified Amazon Web Services account. </p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p> The identifier for the specified account. </p>
+     * <p> The identifier for the specified Amazon Web Services account. </p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p> The identifier for the specified account. </p>
+     * <p> The identifier for the specified Amazon Web Services account. </p>
      */
     inline Evidence& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p> The identifier for the specified account. </p>
+     * <p> The identifier for the specified Amazon Web Services account. </p>
      */
     inline Evidence& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p> The identifier for the specified account. </p>
+     * <p> The identifier for the specified Amazon Web Services account. </p>
      */
     inline Evidence& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
